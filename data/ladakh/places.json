@@ -1,0 +1,282 @@
+[
+  {
+    "id": "pangong-tso-lake",
+    "name": "Pangong Tso Lake",
+    "state": "Ladakh",
+    "city": "Leh Ladakh",
+    "country": "India",
+    "category": "nature",
+    "summary": "World's highest endorheic saltwater lake at 4,225m altitude, famed for shifting colors from turquoise to deep azure.",
+    "description": "Stretching over 134 km across India and Tibet, Pangong Tso is one of the most mesmerizing high-altitude natural wonders on earth. Situated at 4,225 meters (13,862 ft) above sea level in the Changthang region of Ladakh, the lake is famous for its crystal clear, hypersaline waters that change hues from brilliant aquamarine to deep indigo depending on the sun's angle.",
+    "history": "Formed in ancient geological eras during the rise of the Himalayas. The lake has been an international borderland and an ancient pastoral corridor for Changpa nomadic yak herders.",
+    "culture": "A protected Ramsar wetland candidate hosting rare bar-headed geese, Brahmini ducks, and Himalayan marmots. Internationally iconic for cinematic landscape backdrops.",
+    "coordinates": {
+      "lat": 33.7595,
+      "lng": 78.6674
+    },
+    "rating": 4.9,
+    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "best_time_to_visit": "May to September (Road passes open and unfrozen water)",
+    "visiting_hours": "Open 24 Hours",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR"
+    },
+    "visiting_info": {
+      "best_time_to_visit": "May to September",
+      "visiting_hours": "Open 24 Hours (Daylight for photography)",
+      "recommended_duration": "Full Day or Overnight Camp",
+      "tips": [
+        "Obtain Inner Line Permit (ILP) for domestic travelers or Protected Area Permit (PAP) for foreign nationals.",
+        "Acclimatize in Leh for at least 48 hours before crossing Chang La Pass (5,360m).",
+        "Carry thermal down jackets as temperatures plunge below freezing at night even in mid-summer."
+      ]
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "model_3d": {
+      "has_model": true,
+      "available": true
+    },
+    "tags": [
+      "pangong",
+      "lake",
+      "ladakh",
+      "leh",
+      "nature",
+      "tourist_places",
+      "famous"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": true
+    }
+  },
+  {
+    "id": "leh-palace",
+    "name": "Leh Palace & Tsemo Fort",
+    "state": "Ladakh",
+    "city": "Leh Ladakh",
+    "country": "India",
+    "category": "heritage",
+    "summary": "17th-century nine-storey royal cliffside palace modeled on the Potala Palace of Lhasa.",
+    "description": "Dominating the Leh skyline from atop the Namgyal Hill, Leh Palace (Lhachen Palkhar) was constructed by King Sengge Namgyal around 1600 CE. Constructed in traditional Tibetan stone, mud-brick, and cedar architecture, its nine storeys housed royal chambers, Buddhist shrines, and watchtowers with sweeping panoramas of the Stok Kangri peak and Indus Valley.",
+    "history": "Served as the seat of the Namgyal dynasty until Dogra forces captured Ladakh in the mid-19th century, forcing the royal family to relocate to Stok Palace across the Indus River.",
+    "culture": "Maintained by the Archaeological Survey of India (ASI). Houses priceless collections of 450-year-old Tibetan Thangka paintings, royal ceremonial crowns, and Buddhist wooden carvings.",
+    "coordinates": {
+      "lat": 34.1663,
+      "lng": 77.5857
+    },
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80",
+    "best_time_to_visit": "May to October",
+    "visiting_hours": "07:00 AM - 06:00 PM",
+    "entry_fee": {
+      "domestic": 25,
+      "international": 300,
+      "currency": "INR"
+    },
+    "visiting_info": {
+      "best_time_to_visit": "Late afternoon before sunset",
+      "visiting_hours": "07:00 AM - 06:00 PM",
+      "recommended_duration": "1.5 - 2 hours",
+      "tips": [
+        "Climb up to the royal rooftop terrace for the ultimate sunset over Leh old town and the Indus valley.",
+        "Combine your visit with Tsemo Fort perched directly above the palace."
+      ]
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "model_3d": {
+      "has_model": true,
+      "available": true
+    },
+    "tags": [
+      "palace",
+      "heritage",
+      "monument",
+      "leh",
+      "ladakh",
+      "tourist_places",
+      "famous"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": true
+    }
+  },
+  {
+    "id": "nubra-valley-hunder",
+    "name": "Nubra Valley & Hunder Sand Dunes",
+    "state": "Ladakh",
+    "city": "Nubra Valley",
+    "country": "India",
+    "category": "tourist_places",
+    "summary": "High-altitude desert valley with white sand dunes, double-humped Bactrian camels, and Diskit Gompa.",
+    "description": "Known historically as Ldumra ('Valley of Flowers'), Nubra Valley is a dramatic high-altitude desert wonderland carved by the Shyok and Nubra rivers. At Hunder, high-altitude sand dunes sit flanked by snow-capped Himalayan ranges, where rare double-humped Bactrian camels roam—living relics of the ancient Silk Route.",
+    "history": "Nubra was an indispensable juncture on the Silk Road connecting Central Asia, Yarkand, and India across the Khardung La Pass (5,359m).",
+    "culture": "Celebrated for Diskit Monastery—the oldest and largest Gompa in Nubra—crowned by a magnificent 106-foot statue of Jampa (Maitreya) Buddha overlooking the Shyok River.",
+    "coordinates": {
+      "lat": 34.5802,
+      "lng": 77.4721
+    },
+    "rating": 4.9,
+    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "best_time_to_visit": "May to September",
+    "visiting_hours": "Open 24 Hours (Camel safaris operate 08:00 AM - 06:30 PM)",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR"
+    },
+    "visiting_info": {
+      "best_time_to_visit": "May to September (accessible via Khardung La)",
+      "visiting_hours": "Daylight hours",
+      "recommended_duration": "2 Days / 1 Night",
+      "tips": [
+        "Take a ride on the iconic Bactrian double-humped camels along the Hunder dunes at sunset.",
+        "Visit Diskit Gompa and receive blessings before the 32-meter Maitreya Buddha statue.",
+        "Explore Turtuk, India's northernmost village, known for its unique Balti culture and apricot orchards."
+      ]
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "model_3d": {
+      "has_model": true,
+      "available": true
+    },
+    "tags": [
+      "nubra",
+      "sand dunes",
+      "camels",
+      "ladakh",
+      "tourist_places",
+      "famous"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": true
+    }
+  },
+  {
+    "id": "shanti-stupa-leh",
+    "name": "Shanti Stupa",
+    "state": "Ladakh",
+    "city": "Leh Ladakh",
+    "country": "India",
+    "category": "heritage",
+    "summary": "White-domed Buddhist Chorten perched atop Changspa hill inaugurated by the 14th Dalai Lama.",
+    "description": "Constructed between 1983 and 1991 by Japanese Buddhist Bhikshu Gyomyo Nakamura and Ladakhi Buddhists as part of the Peace Pagoda mission, Shanti Stupa is a brilliant white-domed stupa holding relics of the Buddha. It provides unhindered 360-degree views of Leh town, the Indus valley, and the rugged Zanskar mountain range.",
+    "history": "Inaugurated in August 1991 by His Holiness the 14th Dalai Lama, Tenzin Gyatso, to promote world peace, interfaith harmony, and commemorate 2,500 years of Buddhism.",
+    "culture": "A serene sanctuary featuring golden relief carvings depicting the birth of Siddhartha Gautama, his victory over the demon Mara, and his Mahaparinirvana.",
+    "coordinates": {
+      "lat": 34.1724,
+      "lng": 77.5752
+    },
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80",
+    "best_time_to_visit": "Sunrise or sunset",
+    "visiting_hours": "05:00 AM - 09:00 PM",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR"
+    },
+    "visiting_info": {
+      "best_time_to_visit": "05:30 PM for sunset when the white dome glows in golden twilight",
+      "visiting_hours": "05:00 AM - 09:00 PM",
+      "recommended_duration": "1 - 2 hours",
+      "tips": [
+        "Drive up the winding motorable road or climb the 500 stone stairs from Changspa village.",
+        "Stay until dusk when the stupa is illuminated with colorful decorative spotlights."
+      ]
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "model_3d": {
+      "has_model": true,
+      "available": true
+    },
+    "tags": [
+      "stupa",
+      "buddhist",
+      "leh",
+      "ladakh",
+      "heritage",
+      "tourist_places",
+      "famous"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": true
+    }
+  },
+  {
+    "id": "magnetic-hill-ladakh",
+    "name": "Magnetic Hill",
+    "state": "Ladakh",
+    "city": "Leh Ladakh",
+    "country": "India",
+    "category": "tourist_places",
+    "summary": "Fascinating gravity-defying optical illusion hill on the Leh-Kargil National Highway.",
+    "description": "Located 30 km from Leh along the Srinagar-Leh Highway (NH 1), the Magnetic Hill is a world-famous natural curiosity. Due to the layout of the surrounding mountainous horizon, an optical illusion is created where a gentle downward slope appears to be an uphill incline, causing vehicles in neutral gear to apparently roll uphill against gravity at speeds of up to 20 km/h.",
+    "history": "Known in local folklore for generations and marked officially by the Border Roads Organisation (BRO) with a designated observation box on the highway.",
+    "culture": "A staple travel rite of passage for motorists, motorcyclists, and road-trippers navigating the high passes of Ladakh.",
+    "coordinates": {
+      "lat": 34.1833,
+      "lng": 77.3486
+    },
+    "rating": 4.6,
+    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "best_time_to_visit": "May to October",
+    "visiting_hours": "Open 24 Hours",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR"
+    },
+    "visiting_info": {
+      "best_time_to_visit": "Daytime during highway transit",
+      "visiting_hours": "Open 24 Hours",
+      "recommended_duration": "30 - 45 mins",
+      "tips": [
+        "Park your vehicle inside the yellow square marked on the road, put it in neutral, and watch it roll uphill.",
+        "Visit the nearby Gurdwara Pathar Sahib and the confluence (Sangam) of the Indus and Zanskar rivers nearby."
+      ]
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "model_3d": {
+      "has_model": true,
+      "available": true
+    },
+    "tags": [
+      "magnetic hill",
+      "adventure",
+      "ladakh",
+      "leh",
+      "tourist_places",
+      "famous"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": true
+    }
+  }
+]

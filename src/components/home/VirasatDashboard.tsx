@@ -1,0 +1,1567 @@
+import React, { useState, useEffect, useRef } from 'react';
+import {
+  Search,
+  MapPin,
+  ArrowRight,
+  Landmark,
+  Compass,
+  Map,
+  MessageSquare,
+  Sparkles,
+  Star,
+  Clock,
+  Ticket,
+  ChevronLeft,
+  ChevronRight,
+  ShieldCheck,
+  Loader2,
+  Navigation,
+  Box,
+  RotateCcw,
+  CheckCircle2,
+  SlidersHorizontal,
+  ExternalLink,
+  Layers,
+  Bot
+} from 'lucide-react';
+import { NavTab } from '../layout/Sidebar';
+import { PlaceSummary } from '../../types';
+import { api } from '../../services/api';
+import { InteractiveHeritageMonument3D } from '../threed/InteractiveHeritageMonument3D';
+import {
+  AshokaChakra,
+  FlowingTricolourRibbon,
+  IncredibleIndiaBadge,
+  HeritageSkylineSilhouette,
+  VirasatLogoMark,
+  NorthIndiaIcon,
+  SouthIndiaIcon,
+  EastIndiaIcon,
+  WestIndiaIcon,
+  CentralIndiaIcon,
+  NortheastIndiaIcon,
+  IndiaIllustratedMapGraphic,
+  RoyalBengalTigerEmblem,
+} from '../common/TricolourBranding';
+import { IndiaHeritageMapPreview } from './IndiaHeritageMapPreview';
+
+interface VirasatDashboardProps {
+  onSearch: (query: string) => void;
+  onNavigateTab: (tab: NavTab) => void;
+  onSelectPlace?: (placeId: string) => void;
+  onSelectCity?: (city: string) => void;
+  onOpenAIChat?: (prompt?: string) => void;
+  places?: PlaceSummary[];
+}
+
+// -------------------------------------------------------------
+// Vector Icons & Silhouettes
+// -------------------------------------------------------------
+const HeroBranchFoliage: React.FC<{ className?: string }> = ({ className = '' }) => (
+  <svg
+    viewBox="0 0 320 220"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={`${className} pointer-events-none select-none`}
+    aria-hidden="true"
+  >
+    {/* Dark woody bough flowing from top-left */}
+    <path
+      d="M-30 -20 C40 15, 110 20, 180 12 C230 6, 270 24, 310 14"
+      stroke="#2D1E12"
+      strokeWidth="7"
+      strokeLinecap="round"
+    />
+    <path
+      d="M80 16 C120 48, 170 60, 210 82"
+      stroke="#3E2723"
+      strokeWidth="4"
+      strokeLinecap="round"
+    />
+    <path
+      d="M175 14 C205 38, 240 44, 270 68"
+      stroke="#3E2723"
+      strokeWidth="3"
+      strokeLinecap="round"
+    />
+    <path
+      d="M30 4 C50 35, 75 55, 95 75"
+      stroke="#3E2723"
+      strokeWidth="3"
+      strokeLinecap="round"
+    />
+
+    {/* Lush Green Leaves in layered natural tones */}
+    <g fill="#1B5E20" opacity="0.95">
+      <ellipse cx="60" cy="28" rx="18" ry="9" transform="rotate(25 60 28)" />
+      <ellipse cx="100" cy="38" rx="20" ry="10" transform="rotate(35 100 38)" />
+      <ellipse cx="145" cy="42" rx="22" ry="11" transform="rotate(15 145 42)" />
+      <ellipse cx="190" cy="32" rx="19" ry="10" transform="rotate(-10 190 32)" />
+      <ellipse cx="235" cy="26" rx="20" ry="10" transform="rotate(20 235 26)" />
+      <ellipse cx="280" cy="22" rx="18" ry="9" transform="rotate(40 280 22)" />
+      <ellipse cx="310" cy="28" rx="15" ry="8" transform="rotate(50 310 28)" />
+    </g>
+    <g fill="#2E7D32" opacity="0.9">
+      <ellipse cx="120" cy="62" rx="20" ry="10" transform="rotate(45 120 62)" />
+      <ellipse cx="165" cy="72" rx="22" ry="10" transform="rotate(30 165 72)" />
+      <ellipse cx="210" cy="88" rx="20" ry="9" transform="rotate(20 210 88)" />
+      <ellipse cx="245" cy="56" rx="18" ry="10" transform="rotate(35 245 56)" />
+      <ellipse cx="290" cy="50" rx="16" ry="9" transform="rotate(15 290 50)" />
+      <ellipse cx="195" cy="52" rx="18" ry="9" transform="rotate(-25 195 52)" />
+      <ellipse cx="80" cy="68" rx="17" ry="9" transform="rotate(40 80 68)" />
+    </g>
+    <g fill="#388E3C" opacity="0.85">
+      <ellipse cx="40" cy="20" rx="15" ry="8" transform="rotate(10 40 20)" />
+      <ellipse cx="138" cy="52" rx="17" ry="9" transform="rotate(20 138 52)" />
+      <ellipse cx="225" cy="74" rx="17" ry="8" transform="rotate(40 225 74)" />
+      <ellipse cx="265" cy="38" rx="15" ry="8" transform="rotate(-15 265 38)" />
+      <ellipse cx="178" cy="85" rx="16" ry="8" transform="rotate(10 178 85)" />
+    </g>
+    <g fill="#66BB6A" opacity="0.8">
+      <ellipse cx="105" cy="26" rx="13" ry="7" transform="rotate(25 105 26)" />
+      <ellipse cx="200" cy="35" rx="13" ry="7" transform="rotate(-5 200 35)" />
+      <ellipse cx="295" cy="32" rx="12" ry="6" transform="rotate(30 295 32)" />
+      <ellipse cx="150" cy="88" rx="12" ry="6" transform="rotate(15 150 88)" />
+    </g>
+  </svg>
+);
+const CuteAiRobot: React.FC<{ className?: string }> = ({ className = 'w-24 h-24' }) => (
+  <svg
+    viewBox="0 0 170 160"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    className={`${className} filter drop-shadow-md select-none`}
+  >
+    <defs>
+      <linearGradient id="robotWhite3D" x1="20%" y1="0%" x2="80%" y2="100%">
+        <stop offset="0%" stopColor="#FFFFFF" />
+        <stop offset="60%" stopColor="#F8FAFC" />
+        <stop offset="100%" stopColor="#CBD5E1" />
+      </linearGradient>
+      <linearGradient id="robotVisor" x1="0%" y1="0%" x2="0%" y2="100%">
+        <stop offset="0%" stopColor="#0F172A" />
+        <stop offset="100%" stopColor="#1E293B" />
+      </linearGradient>
+      <linearGradient id="robotBlueAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#FF671F" />
+        <stop offset="100%" stopColor="#046A38" />
+      </linearGradient>
+      <filter id="eyeGlow" x="-20%" y="-20%" width="140%" height="140%">
+        <feGaussianBlur stdDeviation="2" result="blur" />
+        <feMerge>
+          <feMergeNode in="blur" />
+          <feMergeNode in="SourceGraphic" />
+        </feMerge>
+      </filter>
+    </defs>
+    <path
+      d="M52 110 C52 95, 108 95, 108 110 L112 144 C112 154, 48 154, 48 144 Z"
+      fill="url(#robotWhite3D)"
+    />
+    <ellipse cx="80" cy="124" rx="8" ry="8" fill="#FF671F" opacity="0.9" />
+    <ellipse cx="80" cy="124" rx="5" ry="5" fill="#FAF8F5" />
+    <path
+      d="M50 114 C42 120, 36 130, 42 140 C46 146, 52 142, 53 134 C54 126, 54 120, 50 114 Z"
+      fill="url(#robotWhite3D)"
+    />
+    {/* Right Arm waving */}
+    <path
+      d="M108 112 C118 106, 126 94, 134 84 C139 78, 145 84, 140 91 C132 103, 122 118, 114 122 Z"
+      fill="url(#robotWhite3D)"
+    />
+    <ellipse cx="137" cy="80" rx="9" ry="8" fill="url(#robotWhite3D)" />
+    <circle cx="135" cy="72" r="3.2" fill="url(#robotWhite3D)" />
+    <circle cx="142" cy="74" r="3.2" fill="url(#robotWhite3D)" />
+    <circle cx="146" cy="80" r="3" fill="url(#robotWhite3D)" />
+    <circle cx="129" cy="79" r="2.8" fill="url(#robotWhite3D)" />
+
+    {/* Indian Tricolour Flag held by Robot */}
+    <line x1="140" y1="92" x2="140" y2="35" stroke="#78716C" strokeWidth="2.5" strokeLinecap="round" />
+    <circle cx="140" cy="34" r="2" fill="#D97706" />
+    <g transform="translate(141, 35)">
+      {/* Saffron Stripe */}
+      <path d="M0 0 C8 -2, 16 2, 24 0 L24 6 C16 8, 8 4, 0 6 Z" fill="#FF671F" />
+      {/* White Stripe */}
+      <path d="M0 6 C8 4, 16 8, 24 6 L24 12 C16 14, 8 10, 0 12 Z" fill="#FFFFFF" stroke="#E5E7EB" strokeWidth="0.3" />
+      {/* Ashoka Chakra */}
+      <circle cx="12" cy="9" r="2.2" stroke="#000080" strokeWidth="0.6" fill="none" />
+      {/* India Green Stripe */}
+      <path d="M0 12 C8 10, 16 14, 24 12 L24 18 C16 20, 8 16, 0 18 Z" fill="#046A38" />
+    </g>
+
+    <rect x="73" y="94" width="14" height="8" rx="4" fill="#94A3B8" />
+    <rect x="35" y="28" width="90" height="72" rx="34" fill="url(#robotWhite3D)" />
+    <rect x="29" y="50" width="8" height="28" rx="4" fill="#FF671F" />
+    <rect x="123" y="50" width="8" height="28" rx="4" fill="#046A38" />
+    <rect x="43" y="38" width="74" height="52" rx="22" fill="url(#robotVisor)" />
+    <path d="M57 60 C57 53, 69 53, 69 60 C69 67, 57 67, 57 60 Z" fill="#38BDF8" filter="url(#eyeGlow)" />
+    <circle cx="63" cy="59" r="2.5" fill="#FFFFFF" />
+    <path d="M91 60 C91 53, 103 53, 103 60 C103 67, 91 67, 91 60 Z" fill="#38BDF8" filter="url(#eyeGlow)" />
+    <circle cx="97" cy="59" r="2.5" fill="#FFFFFF" />
+    <path d="M74 74 Q80 79 86 74" stroke="#38BDF8" strokeWidth="2.5" strokeLinecap="round" />
+  </svg>
+);
+
+export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
+  onSearch,
+  onNavigateTab,
+  onSelectPlace,
+  onSelectCity,
+  onOpenAIChat,
+}) => {
+  // Search state
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchSuggestions, setSearchSuggestions] = useState<PlaceSummary[]>([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [isSearching, setIsSearching] = useState(false);
+  const searchContainerRef = useRef<HTMLDivElement>(null);
+
+  // Popular destinations category filter
+  const [activePopularCategory, setActivePopularCategory] = useState<'All' | 'Forts' | 'Temples' | 'UNESCO'>('All');
+
+  // Near You Geolocation State
+  const [locationStatus, setLocationStatus] = useState<'idle' | 'detecting' | 'ready' | 'denied' | 'error'>('idle');
+  const [userCoords, setUserCoords] = useState<{ lat: number; lng: number } | null>(null);
+  const [nearbyPlaces, setNearbyPlaces] = useState<any[]>([]);
+  const [nearbyRadius, setNearbyRadius] = useState<number>(50);
+  const [detectedCityName, setDetectedCityName] = useState<string>('');
+
+  // Heritage Spotlight 3D model toggle
+  const [showSpotlight3D, setShowSpotlight3D] = useState(false);
+
+  // Close search suggestions on click outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (searchContainerRef.current && !searchContainerRef.current.contains(e.target as Node)) {
+        setShowSuggestions(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  // Debounced search suggestions
+  useEffect(() => {
+    if (!searchQuery.trim() || searchQuery.length < 2) {
+      setSearchSuggestions([]);
+      return;
+    }
+    const timer = setTimeout(async () => {
+      setIsSearching(true);
+      try {
+        const results = await api.searchPlaces(searchQuery.trim());
+        setSearchSuggestions(results.slice(0, 5));
+        setShowSuggestions(true);
+      } catch {
+        setSearchSuggestions([]);
+      } finally {
+        setIsSearching(false);
+      }
+    }, 220);
+    return () => clearTimeout(timer);
+  }, [searchQuery]);
+
+  const handleSearchSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setShowSuggestions(false);
+    if (searchQuery.trim()) {
+      onSearch(searchQuery.trim());
+    }
+  };
+
+  // Real Near You Geolocation Detection
+  const handleDetectLocation = () => {
+    if (typeof navigator === 'undefined' || !navigator.geolocation) {
+      setLocationStatus('error');
+      return;
+    }
+    setLocationStatus('detecting');
+
+    try {
+      navigator.geolocation.getCurrentPosition(
+        async (pos) => {
+          const { latitude, longitude } = pos.coords;
+          setUserCoords({ lat: latitude, lng: longitude });
+          await fetchNearbyPlaces(latitude, longitude, nearbyRadius, 'Your Detected Location');
+        },
+        (err) => {
+          console.warn('Geolocation denied or unavailable:', err);
+          setLocationStatus('denied');
+        },
+        { timeout: 10000, enableHighAccuracy: true }
+      );
+    } catch (geoErr) {
+      console.warn('Geolocation access failed:', geoErr);
+      setLocationStatus('denied');
+    }
+  };
+
+  const fetchNearbyPlaces = async (lat: number, lng: number, radius: number, cityName?: string) => {
+    setLocationStatus('detecting');
+    try {
+      const resp = await api.getNearbyPlaces(lat, lng, radius, 6);
+      const list = resp?.results || resp?.data || (Array.isArray(resp) ? resp : []);
+      setNearbyPlaces(list);
+      setDetectedCityName(cityName || `${lat.toFixed(2)}°N, ${lng.toFixed(2)}°E`);
+      setLocationStatus('ready');
+    } catch {
+      setNearbyPlaces([]);
+      setLocationStatus('error');
+    }
+  };
+
+  // Quick City fallback for Near You
+  const handleSelectFallbackCity = (city: { name: string; lat: number; lng: number }) => {
+    setUserCoords({ lat: city.lat, lng: city.lng });
+    fetchNearbyPlaces(city.lat, city.lng, nearbyRadius, city.name);
+  };
+
+  // Quick Chips matching template
+  const quickChips = [
+    { name: 'Red Fort', placeId: 'red-fort' },
+    { name: 'Hampi', placeId: 'hampi-monuments' },
+    { name: 'Varanasi', city: 'Varanasi' },
+    { name: 'Jaipur', city: 'Jaipur' },
+    { name: 'Konark', placeId: 'sun-temple-konark' },
+    { name: 'Rani ki Vav', placeId: 'rani-ki-vav' },
+  ];
+
+  // Popular Destinations (Exact 6 cards from template)
+  const popularDestinationsList = [
+    {
+      id: 'red-fort',
+      name: 'Red Fort (Lal Qila)',
+      location: 'Old Delhi, Delhi',
+      category: 'UNESCO World Heritage',
+      categoryType: 'UNESCO',
+      rating: 4.9,
+      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Delhi_fort.jpg/1280px-Delhi_fort.jpg',
+      badge: 'UNESCO',
+    },
+    {
+      id: 'hampi-monuments',
+      name: 'Hampi',
+      location: 'Karnataka',
+      category: 'Temples & Spiritual',
+      categoryType: 'Temples',
+      rating: 4.8,
+      imageUrl: 'https://images.unsplash.com/photo-1600100397608-f010f443b780?w=800&auto=format&fit=crop&q=80',
+      badge: 'UNESCO',
+    },
+    {
+      id: 'amber-palace',
+      name: 'Amber Palace',
+      location: 'Jaipur, Rajasthan',
+      category: 'Forts & Palaces',
+      categoryType: 'Forts',
+      rating: 4.8,
+      imageUrl: 'https://images.unsplash.com/photo-1603288967527-24861e6878b3?w=800&auto=format&fit=crop&q=80',
+      badge: 'Hill Forts',
+    },
+    {
+      id: 'varanasi-ghats',
+      name: 'Varanasi',
+      location: 'Uttar Pradesh',
+      category: 'Spiritual & Ghats',
+      categoryType: 'Temples',
+      rating: 4.9,
+      imageUrl: 'https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=800&auto=format&fit=crop&q=80',
+      badge: 'Sacred Ghats',
+    },
+    {
+      id: 'sun-temple-konark',
+      name: 'Konark Sun Temple',
+      location: 'Odisha',
+      category: 'Temples & Spiritual',
+      categoryType: 'Temples',
+      rating: 4.8,
+      imageUrl: 'https://images.unsplash.com/photo-1609137144822-79f972b901fc?w=800&auto=format&fit=crop&q=80',
+      badge: 'Stone Chariot',
+    },
+    {
+      id: 'kaziranga-park',
+      name: 'Kaziranga',
+      location: 'Assam',
+      category: 'Natural Heritage & Wildlife',
+      categoryType: 'UNESCO',
+      rating: 4.7,
+      imageUrl: 'https://images.unsplash.com/photo-1575550959106-5a7defe28b56?w=800&auto=format&fit=crop&q=80',
+      badge: 'UNESCO Park',
+    },
+  ];
+
+  const filteredPopular = popularDestinationsList.filter((item) => {
+    if (activePopularCategory === 'All') return true;
+    if (activePopularCategory === 'Forts') return item.categoryType === 'Forts';
+    if (activePopularCategory === 'Temples') return item.categoryType === 'Temples';
+    if (activePopularCategory === 'UNESCO') return item.categoryType === 'UNESCO';
+    return true;
+  });
+
+  // Beyond the Famous / Lesser-Known India
+  const lesserKnownMonuments = [
+    {
+      id: 'rani-ki-vav',
+      name: "Rani ki Vav (Queen's Stepwell)",
+      location: 'Patan, Gujarat',
+      era: '1063 CE • Solanki Dynasty',
+      description: 'Inverted subterranean temple descending 7 tiers with 500+ master sculptures honoring sacred water; depicted on the ₹100 banknote.',
+      imageUrl: 'https://images.unsplash.com/photo-1609137144822-79f972b901fc?w=800&auto=format&fit=crop&q=80',
+      tag: 'UNESCO Subterranean Marvel',
+    },
+    {
+      id: 'pattadakal-monuments',
+      name: 'Pattadakal Temple Complex',
+      location: 'Bagalkot, Karnataka',
+      era: '7th-8th Century CE • Chalukya',
+      description: 'The ancient cradle of temple architecture where Rekha-Nagara and Dravida vimana designs were harmoniously fused.',
+      imageUrl: 'https://images.unsplash.com/photo-1600100397608-f010f443b780?w=800&auto=format&fit=crop&q=80',
+      tag: 'Architectural Synthesis',
+    },
+    {
+      id: 'sanchi-stupa',
+      name: 'Great Stupa at Sanchi',
+      location: 'Raisen, Madhya Pradesh',
+      era: '3rd Century BCE • Emperor Ashoka',
+      description: 'India’s oldest stone sanctuary crowned with ornate torana gateways narrating Jataka tales in microscopic sandstone relief.',
+      imageUrl: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&auto=format&fit=crop&q=80',
+      tag: 'Ancient Ashokan Monolith',
+    },
+    {
+      id: 'bekal-fort',
+      name: 'Bekal Sea Bastion',
+      location: 'Kasaragod, Kerala',
+      era: '1650 CE • Keladi Nayakas',
+      description: 'The largest keyhole-shaped coastal sea fort in Kerala, thrusting directly into the Arabian Sea with fortified observation towers.',
+      imageUrl: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80',
+      tag: 'Coastal Citadel',
+    },
+  ];
+
+  // Explore India by Region
+  const indiaRegions = [
+    {
+      id: 'north',
+      name: 'North India',
+      statesCount: '9 States & UTs',
+      highlight: 'Himalayan monasteries, Rajput hill fortresses, and the eternal Ganga ghats.',
+      image: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop&q=80',
+      places: ['Taj Mahal', 'Amber Palace', 'Golden Temple', 'Kashi Vishwanath'],
+      actionQuery: 'North India',
+    },
+    {
+      id: 'south',
+      name: 'South India',
+      statesCount: '5 States & 2 UTs',
+      highlight: 'Dravidian gopurams, Hoysala stone lace, serene backwaters, and spice coasts.',
+      image: 'https://images.unsplash.com/photo-1600100397608-f010f443b780?w=800&auto=format&fit=crop&q=80',
+      places: ['Hampi', 'Brihadisvara Temple', 'Meenakshi Amman', 'Fort Kochi'],
+      actionQuery: 'South India',
+    },
+    {
+      id: 'west',
+      name: 'West India',
+      statesCount: '3 States & 2 UTs',
+      highlight: 'Subterranean stepwells, Maratha hill citadels, and Ajanta-Ellora cave sanctuaries.',
+      image: 'https://images.unsplash.com/photo-1603288967527-24861e6878b3?w=800&auto=format&fit=crop&q=80',
+      places: ['Gateway of India', 'Rani ki Vav', 'Ajanta Caves', 'Jaisalmer Fort'],
+      actionQuery: 'Western India',
+    },
+    {
+      id: 'east',
+      name: 'East India',
+      statesCount: '4 States',
+      highlight: 'Kalinga stone chariots, ancient Nalanda university ruins, and colonial heritage.',
+      image: 'https://images.unsplash.com/photo-1609137144822-79f972b901fc?w=800&auto=format&fit=crop&q=80',
+      places: ['Konark Sun Temple', 'Nalanda Ruins', 'Victoria Memorial', 'Bodh Gaya'],
+      actionQuery: 'Eastern India',
+    },
+    {
+      id: 'central',
+      name: 'Central India',
+      statesCount: '2 States',
+      highlight: 'Paleolithic Bhimbetka cave art, Khajuraho temples, and the Great Sanchi Stupa.',
+      image: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&auto=format&fit=crop&q=80',
+      places: ['Khajuraho Group', 'Sanchi Stupa', 'Bhimbetka Shelters', 'Gwalior Fort'],
+      actionQuery: 'Central India',
+    },
+    {
+      id: 'northeast',
+      name: 'Northeast India',
+      statesCount: '8 States',
+      highlight: 'Ahom dynasty monoliths, living root bridges, and Unakoti rock-cut deities.',
+      image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80',
+      places: ['Kamakhya Temple', 'Kaziranga', 'Unakoti Carvings', 'Living Root Bridges'],
+      actionQuery: 'Northeast India',
+    },
+  ];
+
+  // 6 Regional Hubs with bespoke architectural vector icons matching template
+  const regionalHubs = [
+    {
+      id: 'north',
+      name: 'North India',
+      icon: NorthIndiaIcon,
+      bgColor: 'bg-[#FFF6ED]',
+      borderColor: 'border-[#FCE1CE]',
+      iconColor: 'text-[#FF671F]',
+      query: 'North India',
+    },
+    {
+      id: 'south',
+      name: 'South India',
+      icon: SouthIndiaIcon,
+      bgColor: 'bg-[#F0F8F3]',
+      borderColor: 'border-[#CEEBD9]',
+      iconColor: 'text-[#046A38]',
+      query: 'South India',
+    },
+    {
+      id: 'east',
+      name: 'East India',
+      icon: EastIndiaIcon,
+      bgColor: 'bg-[#F0F7FD]',
+      borderColor: 'border-[#CCE4F8]',
+      iconColor: 'text-[#0284C7]',
+      query: 'East India',
+    },
+    {
+      id: 'west',
+      name: 'West India',
+      icon: WestIndiaIcon,
+      bgColor: 'bg-[#FFF4EC]',
+      borderColor: 'border-[#FBDBC6]',
+      iconColor: 'text-[#EA580C]',
+      query: 'West India',
+    },
+    {
+      id: 'central',
+      name: 'Central India',
+      icon: CentralIndiaIcon,
+      bgColor: 'bg-[#EEF8F5]',
+      borderColor: 'border-[#CAECE0]',
+      iconColor: 'text-[#059669]',
+      query: 'Central India',
+    },
+    {
+      id: 'northeast',
+      name: 'Northeast India',
+      icon: NortheastIndiaIcon,
+      bgColor: 'bg-[#F0F4FC]',
+      borderColor: 'border-[#CCD8F7]',
+      iconColor: 'text-[#3B82F6]',
+      query: 'Northeast India',
+    },
+  ];
+
+  return (
+    <div className="w-full space-y-10 sm:space-y-14 animate-fadeIn pb-16 font-sans text-stone-800">
+      {/* ========================================================================= */}
+      {/* 1. HERO SECTION: UNIVERSAL SEARCH & HERITAGE BANNER                       */}
+      {/* ========================================================================= */}
+      <section className="relative w-full rounded-3xl sm:rounded-[36px] overflow-hidden border border-[#EFE8DF] shadow-sm min-h-[500px] sm:min-h-[530px] lg:min-h-[550px] flex flex-col justify-between p-6 sm:p-8 lg:p-10 bg-gradient-to-r from-[#FAF8F5] via-[#F4F8FB] to-[#E9F3F9]">
+        {/* Top-Left Hanging Botanical Foliage Accent */}
+        <HeroBranchFoliage className="absolute -top-3 -left-4 w-60 sm:w-80 md:w-96 h-auto z-10 opacity-95 pointer-events-none" />
+
+        {/* Ashoka Chakra Translucent Watermark in Far Sky */}
+        <div className="absolute top-2 left-1/4 -translate-x-1/2 z-0 pointer-events-none opacity-[0.07] hidden md:block">
+          <AshokaChakra size={260} color="#0B407A" />
+        </div>
+
+        {/* Full Hero Red Fort Background with Progressive Visibility:
+            - Left (behind Discover text): very low visibility (~6-10% bleed) for crisp legibility
+            - Center: medium visibility (~50%)
+            - Right: full 100% visibility of the grand Lal Qila battlements & Lahori Gate
+        */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Red_Fort_in_Delhi_03-2016_img1.jpg/1280px-Red_Fort_in_Delhi_03-2016_img1.jpg"
+            alt="Red Fort Lal Qila Delhi"
+            referrerPolicy="no-referrer"
+            onError={(e) => {
+              (e.target as HTMLImageElement).src =
+                'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Delhi_fort.jpg/1280px-Delhi_fort.jpg';
+            }}
+            className="w-full h-full object-cover object-[72%_32%] select-none filter contrast-[1.04] brightness-[1.02] saturate-[1.04]"
+          />
+
+          {/* Desktop/Tablet Progressive Visibility Gradient:
+              0% - 30%: ~94-90% opacity wash -> very low visibility behind "Discover" text & search
+              35% - 60%: ~50% opacity wash -> medium visibility in center
+              78% - 100%: 0% opacity wash -> full 100% visibility of Red Fort on right
+          */}
+          <div
+            className="absolute inset-0 hidden sm:block pointer-events-none"
+            style={{
+              background:
+                'linear-gradient(to right, rgba(250, 248, 245, 0.94) 0%, rgba(250, 248, 245, 0.90) 28%, rgba(250, 248, 245, 0.50) 52%, rgba(250, 248, 245, 0.15) 72%, rgba(250, 248, 245, 0) 84%)',
+            }}
+          />
+
+          {/* Mobile Progressive Vertical Overlay: ensures top title readability with lower fort visible */}
+          <div
+            className="absolute inset-0 sm:hidden pointer-events-none"
+            style={{
+              background:
+                'linear-gradient(to bottom, rgba(250, 248, 245, 0.95) 0%, rgba(250, 248, 245, 0.86) 45%, rgba(250, 248, 245, 0.30) 75%, rgba(250, 248, 245, 0) 100%)',
+            }}
+          />
+
+          {/* Silhouetted Birds in Morning Sky above Fort Ramparts */}
+          <svg className="absolute top-10 right-28 sm:right-44 w-28 h-14 pointer-events-none select-none opacity-40" viewBox="0 0 100 50" fill="#2C3E50">
+            <path d="M8 16 Q14 10 19 15 Q24 10 30 16 Q24 13 19 15 Q14 13 8 16 Z" />
+            <path d="M38 10 Q42 5 46 9 Q50 5 54 10 Q50 7 46 9 Q42 7 38 10 Z" />
+            <path d="M62 20 Q66 14 70 19 Q74 14 78 20 Q74 17 70 19 Q66 17 62 20 Z" />
+          </svg>
+        </div>
+
+        {/* Top Right "From Our Heritage To A Brighter Tomorrow" Banner */}
+        <div className="absolute top-5 right-5 sm:top-8 sm:right-8 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-white/90 shadow-sm flex items-center gap-3 text-stone-800 z-10 select-none">
+          <div className="w-9 h-9 rounded-xl bg-orange-50 border border-orange-200/80 flex items-center justify-center text-[#FF671F] shrink-0">
+            <Landmark className="w-4.5 h-4.5 text-[#FF671F]" />
+          </div>
+          <div className="leading-tight text-left">
+            <div className="text-[10px] font-bold text-[#0B192C] uppercase tracking-wider">From Our Heritage To</div>
+            <div className="text-xs font-serif font-bold mt-0.5">
+              <span className="text-[#046A38]">A Brighter</span> <span className="text-[#FF671F]">Tomorrow</span>
+            </div>
+            <div className="w-16 h-0.5 rounded-full bg-gradient-to-r from-[#FF671F] via-[#EFE8DF] to-[#046A38] mt-1" />
+          </div>
+        </div>
+
+        {/* Main Content Area (Left side) */}
+        <div className="relative z-10 max-w-xl sm:max-w-2xl pt-2 sm:pt-4">
+          <IncredibleIndiaBadge className="mb-3" />
+
+          <h1 className="font-serif text-3xl sm:text-4xl lg:text-[44px] xl:text-[48px] font-bold tracking-tight text-[#0B192C] leading-[1.12]">
+            <span>Discover India&apos;s</span>
+            <span className="block mt-1">
+              <span className="text-[#FF671F]">Living</span>{' '}
+              <span className="text-[#046A38]">Heritage</span>
+            </span>
+          </h1>
+
+          <p className="text-xs sm:text-sm md:text-base text-stone-600 max-w-lg mt-3 sm:mt-3.5 leading-relaxed font-normal">
+            Explore monuments, cultures, natural wonders and hidden gems across every region of India.
+          </p>
+
+          {/* Universal Search Input Bar with Live Suggestions Dropdown */}
+          <div ref={searchContainerRef} className="relative mt-6 max-w-xl">
+            <form onSubmit={handleSearchSubmit}>
+              <div className="bg-white rounded-full p-1.5 pl-4 sm:pl-5 shadow-sm border border-stone-200/90 flex items-center gap-3 transition-all focus-within:ring-2 focus-within:ring-[#FF671F]/30 focus-within:border-[#FF671F]">
+                <Search className="w-4 h-4 sm:w-5 sm:h-5 text-stone-400 shrink-0" />
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  onFocus={() => {
+                    if (searchSuggestions.length > 0) setShowSuggestions(true);
+                  }}
+                  placeholder="Search destinations, monuments, cities, or experiences..."
+                  className="w-full bg-transparent text-xs sm:text-sm text-stone-800 placeholder-stone-400 focus:outline-none"
+                />
+                {isSearching && <Loader2 className="w-4 h-4 text-amber-600 animate-spin mr-1 shrink-0" />}
+                <button
+                  type="submit"
+                  className="bg-[#FF671F] hover:bg-[#E65100] text-white px-5 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold flex items-center gap-1.5 transition active:scale-95 shrink-0 shadow-xs cursor-pointer"
+                >
+                  <span>Search</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </button>
+              </div>
+            </form>
+
+            {/* Live Suggestions Dropdown */}
+            {showSuggestions && searchSuggestions.length > 0 && (
+              <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-xl border border-stone-200 overflow-hidden z-30 animate-fadeIn">
+                <div className="p-2 border-b border-stone-100 text-[11px] font-bold text-stone-400 px-3 uppercase tracking-wider">
+                  Verified Heritage Results
+                </div>
+                <div className="divide-y divide-stone-100 max-h-64 overflow-y-auto">
+                  {searchSuggestions.map((item) => (
+                    <div
+                      key={item.id}
+                      onClick={() => {
+                        setShowSuggestions(false);
+                        if (onSelectPlace) {
+                          onSelectPlace(item.id);
+                        } else {
+                          onSearch(item.name);
+                        }
+                      }}
+                      className="p-3 hover:bg-orange-50/60 cursor-pointer transition flex items-center justify-between gap-3"
+                    >
+                      <div className="flex items-center gap-3">
+                        <img
+                          src={item.thumbnail_url || item.image_url || 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=200'}
+                          alt={item.name}
+                          className="w-10 h-10 rounded-xl object-cover shrink-0"
+                        />
+                        <div className="text-left">
+                          <h4 className="font-serif text-xs font-bold text-stone-900">{item.name}</h4>
+                          <p className="text-[11px] text-stone-500">{item.city}, {item.state}</p>
+                        </div>
+                      </div>
+                      <span className="text-[10px] font-semibold text-orange-950 bg-orange-100/70 px-2 py-0.5 rounded-md shrink-0">
+                        {item.category}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Destination Quick Chips */}
+          <div className="flex flex-wrap items-center gap-2 sm:gap-2.5 mt-4 sm:mt-5">
+            {quickChips.map((chip) => (
+              <button
+                key={chip.name}
+                type="button"
+                onClick={() => {
+                  if (chip.placeId && onSelectPlace) {
+                    onSelectPlace(chip.placeId);
+                  } else if (chip.city && onSelectCity) {
+                    onSelectCity(chip.city);
+                    onNavigateTab('dashboard');
+                  } else {
+                    onSearch(chip.name);
+                  }
+                }}
+                className="px-3.5 py-1.5 rounded-full bg-white border border-stone-200/90 hover:border-[#FF671F] hover:bg-white text-xs font-semibold text-stone-800 shadow-2xs hover:shadow-xs transition flex items-center gap-1.5 cursor-pointer active:scale-95"
+              >
+                <MapPin className="w-3.5 h-3.5 text-[#FF671F] shrink-0" />
+                <span>{chip.name}</span>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Bottom Right Red Fort Details Badge */}
+        <div className="relative z-10 self-end sm:self-auto sm:absolute sm:bottom-8 sm:right-8 text-right flex flex-col items-end mt-8 sm:mt-0">
+          <button
+            type="button"
+            onClick={() => {
+              if (onSelectPlace) {
+                onSelectPlace('red-fort');
+              } else if (onSelectCity) {
+                onSelectCity('Delhi');
+                onNavigateTab('dashboard');
+              } else {
+                onSearch('Red Fort');
+              }
+            }}
+            className="px-4 py-2.5 rounded-2xl bg-white/95 hover:bg-white text-[#0B192C] text-left shadow-lg border border-stone-200/90 flex items-center gap-3 transition active:scale-95 cursor-pointer group"
+          >
+            <div className="w-8 h-8 rounded-full bg-orange-50 border border-orange-200 flex items-center justify-center text-[#FF671F] shrink-0">
+              <MapPin className="w-4 h-4 text-[#FF671F]" />
+            </div>
+            <div className="leading-tight">
+              <div className="text-xs font-bold text-stone-900">Red Fort (Lal Qila)</div>
+              <div className="text-[11px] text-stone-500 font-medium">Old Delhi</div>
+            </div>
+            <div className="w-7 h-7 rounded-full bg-[#FF671F] text-white flex items-center justify-center ml-2 group-hover:translate-x-0.5 transition-transform shadow-2xs">
+              <ArrowRight className="w-3.5 h-3.5" />
+            </div>
+          </button>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 2. THE 4 FEATURE CARDS (EXPLORE, HERITAGE, MAP, AI ASSISTANT)             */}
+      {/* ========================================================================= */}
+      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+        {/* Card 1: Explore Destinations */}
+        <div
+          onClick={() => onNavigateTab('dashboard')}
+          className="group cursor-pointer rounded-3xl bg-white border border-[#EFE8DF] hover:border-[#FF671F]/50 p-5 shadow-2xs hover:shadow-md transition-all duration-200 flex flex-col justify-between h-[320px] overflow-hidden"
+        >
+          <div>
+            <div className="flex items-center justify-between">
+              <div className="w-11 h-11 rounded-full bg-[#FF671F] text-white flex items-center justify-center shadow-xs">
+                <MapPin className="w-5 h-5 fill-white/20" />
+              </div>
+              <div className="w-8 h-8 rounded-full bg-stone-50 border border-stone-200 text-stone-600 group-hover:bg-[#FF671F] group-hover:text-white group-hover:border-[#FF671F] flex items-center justify-center group-hover:translate-x-0.5 transition-all shadow-2xs">
+                <ArrowRight className="w-4 h-4" />
+              </div>
+            </div>
+            <h3 className="font-serif text-lg font-bold text-stone-900 mt-3.5 tracking-tight">
+              Explore Destinations
+            </h3>
+            <p className="text-xs text-stone-500 mt-1 leading-relaxed">
+              Discover amazing places, cities and unique experiences.
+            </p>
+            <div className="mt-2.5">
+              <span className="text-xs font-bold text-[#FF671F] flex items-center gap-1 group-hover:gap-1.5 transition-all">
+                Start Exploring <ArrowRight className="w-3 h-3" />
+              </span>
+            </div>
+          </div>
+          <div className="h-28 w-full rounded-2xl overflow-hidden mt-3 shadow-inner bg-stone-100 relative">
+            <img
+              src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80"
+              alt="Coastal Shoreline Experience"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+        </div>
+
+        {/* Card 2: Heritage Sites */}
+        <div
+          onClick={() => onNavigateTab('heritage')}
+          className="group cursor-pointer rounded-3xl bg-white border border-[#EFE8DF] hover:border-[#046A38]/50 p-5 shadow-2xs hover:shadow-md transition-all duration-200 flex flex-col justify-between h-[320px] overflow-hidden"
+        >
+          <div>
+            <div className="flex items-center justify-between">
+              <div className="w-11 h-11 rounded-full bg-[#046A38] text-white flex items-center justify-center shadow-xs">
+                <Landmark className="w-5 h-5 text-white" />
+              </div>
+              <div className="w-8 h-8 rounded-full bg-stone-50 border border-stone-200 text-stone-600 group-hover:bg-[#046A38] group-hover:text-white group-hover:border-[#046A38] flex items-center justify-center group-hover:translate-x-0.5 transition-all shadow-2xs">
+                <ArrowRight className="w-4 h-4" />
+              </div>
+            </div>
+            <h3 className="font-serif text-lg font-bold text-stone-900 mt-3.5 tracking-tight">
+              Heritage Sites
+            </h3>
+            <p className="text-xs text-stone-500 mt-1 leading-relaxed">
+              UNESCO sites, monuments, dynasties and sacred spaces.
+            </p>
+            <div className="mt-2.5">
+              <span className="text-xs font-bold text-[#046A38] flex items-center gap-1 group-hover:gap-1.5 transition-all">
+                Discover Heritage <ArrowRight className="w-3 h-3" />
+              </span>
+            </div>
+          </div>
+          <div className="h-28 w-full rounded-2xl overflow-hidden mt-3 shadow-inner bg-stone-100 relative">
+            <img
+              src="https://images.unsplash.com/photo-1600100397608-f010f443b780?w=800&auto=format&fit=crop&q=80"
+              alt="Hampi Stone Temple"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+        </div>
+
+        {/* Card 3: Interactive Map */}
+        <div
+          onClick={() => onNavigateTab('map')}
+          className="group cursor-pointer rounded-3xl bg-white border border-[#EFE8DF] hover:border-[#0284C7]/50 p-5 shadow-2xs hover:shadow-md transition-all duration-200 flex flex-col justify-between h-[320px] overflow-hidden"
+        >
+          <div>
+            <div className="flex items-center justify-between">
+              <div className="w-11 h-11 rounded-full bg-[#0284C7] text-white flex items-center justify-center shadow-xs">
+                <Compass className="w-5 h-5" />
+              </div>
+              <div className="w-8 h-8 rounded-full bg-stone-50 border border-stone-200 text-stone-600 group-hover:bg-[#0284C7] group-hover:text-white group-hover:border-[#0284C7] flex items-center justify-center group-hover:translate-x-0.5 transition-all shadow-2xs">
+                <ArrowRight className="w-4 h-4" />
+              </div>
+            </div>
+            <h3 className="font-serif text-lg font-bold text-stone-900 mt-3.5 tracking-tight">
+              Interactive Map
+            </h3>
+            <p className="text-xs text-stone-500 mt-1 leading-relaxed">
+              Explore locations, plan routes and find nearby attractions.
+            </p>
+            <div className="mt-2.5">
+              <span className="text-xs font-bold text-[#0284C7] flex items-center gap-1 group-hover:gap-1.5 transition-all">
+                Open Map <ArrowRight className="w-3 h-3" />
+              </span>
+            </div>
+          </div>
+          <div className="h-28 w-full rounded-2xl overflow-hidden mt-3 shadow-inner bg-stone-100 relative">
+            <img
+              src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80"
+              alt="Mountain River Valley"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+        </div>
+
+        {/* Card 4: Virasat Assistant */}
+        <div
+          onClick={() => {
+            const aiElem = document.getElementById('ai-assistant-section');
+            if (aiElem) {
+              aiElem.scrollIntoView({ behavior: 'smooth' });
+            } else if (onOpenAIChat) {
+              onOpenAIChat('How can I help you explore India today?');
+            } else {
+              onNavigateTab('ai');
+            }
+          }}
+          className="group cursor-pointer rounded-3xl bg-white border border-[#EFE8DF] hover:border-[#4F46E5]/50 p-5 shadow-2xs hover:shadow-md transition-all duration-200 flex flex-col justify-between h-[320px] overflow-hidden relative"
+        >
+          <div>
+            <div className="flex items-center justify-between">
+              <div className="w-11 h-11 rounded-full bg-[#4F46E5] text-white flex items-center justify-center shadow-xs">
+                <Bot className="w-5 h-5 text-white" />
+              </div>
+              <div className="w-8 h-8 rounded-full bg-stone-50 border border-stone-200 text-stone-600 group-hover:bg-[#4F46E5] group-hover:text-white group-hover:border-[#4F46E5] flex items-center justify-center group-hover:translate-x-0.5 transition-all shadow-2xs">
+                <ArrowRight className="w-4 h-4" />
+              </div>
+            </div>
+            <h3 className="font-serif text-lg font-bold text-stone-900 mt-3.5 tracking-tight">
+              Virasat Assistant
+            </h3>
+            <p className="text-xs text-stone-500 mt-1 leading-relaxed">
+              Get travel advice, plan itineraries and explore with AI.
+            </p>
+            <div className="mt-2.5">
+              <span className="text-xs font-bold text-[#4F46E5] flex items-center gap-1 group-hover:gap-1.5 transition-all">
+                Chat Now <ArrowRight className="w-3 h-3" />
+              </span>
+            </div>
+          </div>
+          <div className="flex items-center justify-between mt-1 pt-1 relative">
+            <div className="bg-[#FAF8F5] rounded-2xl p-2.5 px-3 shadow-2xs border border-stone-200 text-[11px] leading-snug font-medium text-stone-800 relative max-w-[130px]">
+              <p className="font-bold text-[#0B192C] text-[11px]">Namaste!</p>
+              <p className="text-stone-600 mt-0.5 text-[10px] leading-tight">
+                Ask me about any heritage monument or circuit.
+              </p>
+              <div className="absolute -right-1.5 top-1/2 -translate-y-1/2 w-2.5 h-2.5 bg-[#FAF8F5] border-t border-r border-stone-200 transform rotate-45" />
+            </div>
+            <div className="group-hover:scale-105 transition-transform duration-300 -mr-1">
+              <CuteAiRobot className="w-22 h-22 sm:w-24 sm:h-24 shrink-0" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 3. POPULAR DESTINATIONS                                                   */}
+      {/* ========================================================================= */}
+      <section className="space-y-5">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+          <div>
+            <div className="inline-flex items-center gap-1 text-xs font-bold text-[#FF671F] uppercase tracking-wider mb-1">
+              <Star className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
+              <span>Curated Highlights</span>
+            </div>
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">
+              Popular Destinations
+            </h2>
+            <p className="text-xs sm:text-sm text-stone-500 mt-1 font-normal">
+              Iconic places that inspire every journey
+            </p>
+          </div>
+
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => onNavigateTab('dashboard')}
+              className="text-xs font-bold text-[#FF671F] hover:text-[#E65100] px-3.5 py-1.5 rounded-full hover:bg-orange-50/60 transition flex items-center gap-1 cursor-pointer"
+            >
+              <span>View All Destinations</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+
+            {/* Carousel Arrow Controls */}
+            <div className="flex items-center gap-1.5">
+              <button
+                type="button"
+                aria-label="Previous destination"
+                onClick={() => {
+                  const el = document.getElementById('popular-destinations-grid');
+                  if (el) el.scrollBy({ left: -260, behavior: 'smooth' });
+                }}
+                className="w-8 h-8 rounded-full bg-white border border-stone-200 text-stone-600 hover:text-stone-900 hover:border-stone-400 flex items-center justify-center shadow-2xs transition active:scale-95 cursor-pointer"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </button>
+              <button
+                type="button"
+                aria-label="Next destination"
+                onClick={() => {
+                  const el = document.getElementById('popular-destinations-grid');
+                  if (el) el.scrollBy({ left: 260, behavior: 'smooth' });
+                }}
+                className="w-8 h-8 rounded-full bg-white border border-stone-200 text-stone-600 hover:text-stone-900 hover:border-stone-400 flex items-center justify-center shadow-2xs transition active:scale-95 cursor-pointer"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* 6 Destination Cards Grid */}
+        <div
+          id="popular-destinations-grid"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 overflow-x-auto pb-1 scrollbar-none"
+        >
+          {popularDestinationsList.map((place) => (
+            <div
+              key={place.id}
+              onClick={() => {
+                if (onSelectPlace) {
+                  onSelectPlace(place.id);
+                } else {
+                  onNavigateTab('heritage');
+                }
+              }}
+              className="group cursor-pointer rounded-2xl bg-white border border-[#EFE8DF] overflow-hidden shadow-2xs hover:shadow-md hover:border-[#FF671F]/50 transition-all duration-200 flex flex-col justify-between"
+            >
+              <div className="h-36 sm:h-40 w-full overflow-hidden bg-stone-100 relative">
+                <img
+                  src={place.imageUrl}
+                  alt={place.name}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                />
+              </div>
+
+              <div className="p-3.5 flex items-center justify-between gap-2">
+                <div className="min-w-0 flex-1">
+                  <h4 className="font-serif text-sm font-bold text-stone-900 group-hover:text-[#FF671F] transition truncate">
+                    {place.name}
+                  </h4>
+                  <p className="text-xs text-stone-500 truncate mt-0.5 font-medium">
+                    {place.location}
+                  </p>
+                </div>
+                <div className="w-7 h-7 rounded-full bg-stone-100 group-hover:bg-[#FF671F] group-hover:text-white text-stone-600 flex items-center justify-center shrink-0 transition-colors shadow-2xs">
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 4. EXPLORE INDIA BY REGION                                                */}
+      {/* ========================================================================= */}
+      <section className="space-y-5">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+          <div>
+            <div className="inline-flex items-center gap-1 text-xs font-bold text-[#FF671F] uppercase tracking-wider mb-1">
+              <Layers className="w-3.5 h-3.5 text-[#FF671F]" />
+              <span>Pan-India Cultural Geographies</span>
+            </div>
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">
+              Explore India by Region
+            </h2>
+            <p className="text-xs sm:text-sm text-stone-500 mt-1 font-normal">
+              Discover the diverse beauty of every region
+            </p>
+          </div>
+
+          <button
+            onClick={() => onNavigateTab('india')}
+            className="text-xs font-bold text-[#FF671F] hover:text-[#E65100] flex items-center gap-1 self-start sm:self-auto cursor-pointer"
+          >
+            <span>View All Regions</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </button>
+        </div>
+
+        {/* 2-Column Layout matching template */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
+          {/* Left: 6 Region Cards in 3x2 Grid */}
+          <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-3.5">
+            {regionalHubs.map((reg) => {
+              const IconComp = reg.icon;
+              return (
+                <div
+                  key={reg.id}
+                  onClick={() => onSearch(reg.query)}
+                  className={`group cursor-pointer rounded-2xl p-4 sm:p-5 ${reg.bgColor} border ${reg.borderColor} hover:shadow-md hover:border-[#FF671F]/50 transition-all flex flex-col items-center justify-center text-center gap-3`}
+                >
+                  <div className="w-12 h-12 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <IconComp className={`w-11 h-11 ${reg.iconColor}`} />
+                  </div>
+                  <span className="font-serif font-bold text-stone-900 text-sm tracking-tight">
+                    {reg.name}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Right: Stacked 2 Cards ("Explore on Map" & "Hidden Gems") */}
+          <div className="lg:col-span-5 flex flex-col justify-between gap-4">
+            {/* Card 1: Explore on Map */}
+            <div
+              onClick={() => onNavigateTab('map')}
+              className="rounded-2xl bg-white border border-[#EFE8DF] p-5 shadow-2xs hover:shadow-md transition flex items-center justify-between gap-4 cursor-pointer group flex-1"
+            >
+              <div className="w-24 h-24 shrink-0 flex items-center justify-center group-hover:scale-105 transition-transform">
+                <IndiaIllustratedMapGraphic className="w-24 h-24" />
+              </div>
+              <div className="space-y-1.5 flex-1">
+                <h3 className="font-serif text-base font-bold text-stone-900 leading-snug">
+                  Explore on Map
+                </h3>
+                <p className="text-xs text-stone-500 leading-relaxed">
+                  Find destinations, heritage sites, railway stations and more.
+                </p>
+                <button
+                  type="button"
+                  className="bg-[#046A38] hover:bg-[#03542C] text-white px-4 py-2 rounded-full text-xs font-semibold inline-flex items-center gap-1.5 shadow-2xs transition active:scale-95 mt-1 cursor-pointer"
+                >
+                  <span>Open Interactive Map</span>
+                  <ArrowRight className="w-3 h-3" />
+                </button>
+              </div>
+            </div>
+
+            {/* Card 2: Hidden Gems */}
+            <div
+              onClick={() => onNavigateTab('heritage')}
+              className="rounded-2xl overflow-hidden relative p-5 shadow-2xs hover:shadow-md transition flex flex-col justify-end min-h-[145px] text-white cursor-pointer group flex-1"
+            >
+              <img
+                src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&auto=format&fit=crop&q=80"
+                alt="Majestic Mountain Ridge"
+                className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-transparent" />
+              <div className="relative z-10 space-y-1">
+                <h3 className="font-serif text-lg font-bold text-white leading-tight">
+                  Hidden Gems
+                </h3>
+                <p className="text-xs text-stone-200 leading-relaxed">
+                  Offbeat destinations beyond the ordinary.
+                </p>
+                <button
+                  type="button"
+                  className="bg-[#FF671F] hover:bg-[#E65100] text-white px-4 py-1.5 rounded-full text-xs font-semibold inline-flex items-center gap-1.5 shadow-2xs transition active:scale-95 self-start mt-2 cursor-pointer"
+                >
+                  <span>Explore Hidden India</span>
+                  <ArrowRight className="w-3 h-3" />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 5. TRICOLOUR HERITAGE BANNER / FOOTER EMBLEM (MATCHING TEMPLATE)           */}
+      {/* ========================================================================= */}
+      <section className="rounded-3xl bg-white border border-[#EFE8DF] overflow-hidden shadow-2xs p-6 sm:p-8 relative">
+        <FlowingTricolourRibbon variant="footer" className="opacity-90 z-1" />
+
+        <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+          {/* Heritage Skyline Silhouette */}
+          <div className="w-full md:w-1/3 opacity-80">
+            <HeritageSkylineSilhouette className="w-full h-12 text-stone-400" />
+          </div>
+
+          {/* Center Slogan */}
+          <div className="text-center space-y-1 flex-1">
+            <div className="flex items-center justify-center gap-2 text-xs font-bold text-stone-500 uppercase tracking-widest">
+              <span className="w-4 h-0.5 bg-[#FF671F] rounded-full" />
+              <span>Explore • Respect • Preserve</span>
+              <span className="w-4 h-0.5 bg-[#046A38] rounded-full" />
+            </div>
+            <p className="font-serif text-sm sm:text-base font-bold text-stone-800">
+              Incredible India. For Generations.
+            </p>
+          </div>
+
+          {/* Right Bengal Tiger Emblem */}
+          <div className="shrink-0 flex items-center justify-end">
+            <RoyalBengalTigerEmblem className="w-48 h-auto" />
+          </div>
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 4. BEYOND THE FAMOUS / LESSER-KNOWN INDIA                                  */}
+      {/* ========================================================================= */}
+      <section className="space-y-5 rounded-3xl bg-[#FAF8F5] border border-[#EAE2D5] p-6 sm:p-8">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+          <div>
+            <div className="inline-flex items-center gap-1 text-xs font-bold text-[#FF671F] uppercase tracking-wider mb-1">
+              <Compass className="w-3.5 h-3.5 text-[#FF671F]" />
+              <span>Off the Beaten Path</span>
+            </div>
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">
+              Beyond the Famous
+            </h2>
+            <p className="text-xs sm:text-sm text-stone-600 mt-1 font-normal">
+              Lesser-known architectural wonders, stepwells, and ancient rock-cut sanctuaries
+            </p>
+          </div>
+
+          <button
+            onClick={() => onNavigateTab('heritage')}
+            className="text-xs font-bold text-[#FF671F] hover:text-[#E65100] flex items-center gap-1 self-start sm:self-auto"
+          >
+            <span>Explore All Heritage Gems</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </button>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {lesserKnownMonuments.map((item) => (
+            <div
+              key={item.id}
+              onClick={() => onSelectPlace && onSelectPlace(item.id)}
+              className="group cursor-pointer rounded-2xl bg-white border border-[#E8DFC8] overflow-hidden shadow-2xs hover:shadow-md hover:border-[#FF671F]/50 transition-all duration-300 flex flex-col justify-between"
+            >
+              <div className="h-40 w-full overflow-hidden relative">
+                <img
+                  src={item.imageUrl}
+                  alt={item.name}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <span className="absolute top-3 left-3 px-2 py-0.5 rounded-md bg-stone-900/80 backdrop-blur-xs text-[10px] font-bold text-amber-200">
+                  {item.tag}
+                </span>
+              </div>
+
+              <div className="p-4 space-y-2 flex-1 flex flex-col justify-between">
+                <div>
+                  <div className="text-[10px] font-bold text-[#FF671F] uppercase tracking-wide">
+                    {item.era}
+                  </div>
+                  <h3 className="font-serif text-base font-bold text-stone-900 group-hover:text-[#FF671F] transition mt-0.5 leading-tight">
+                    {item.name}
+                  </h3>
+                  <div className="flex items-center gap-1 text-xs text-stone-500 mt-1">
+                    <MapPin className="w-3.5 h-3.5 text-[#FF671F] shrink-0" />
+                    <span>{item.location}</span>
+                  </div>
+                  <p className="text-xs text-stone-600 mt-2 line-clamp-3 leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+
+                <div className="pt-3 border-t border-stone-100 flex items-center justify-between text-xs font-bold text-[#FF671F]">
+                  <span>Discover History</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 5. EXPLORE NEAR YOU (REAL GEOLOCATION WITH PERMISSION)                     */}
+      {/* ========================================================================= */}
+      <section className="rounded-3xl bg-white border border-[#EFE8DF] p-6 sm:p-8 shadow-xs space-y-6">
+        <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+          <div>
+            <div className="inline-flex items-center gap-1 text-xs font-bold text-[#046A38] uppercase tracking-wider mb-1">
+              <Navigation className="w-3.5 h-3.5 text-[#046A38]" />
+              <span>Real-Time Proximity</span>
+            </div>
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">
+              Explore Near You
+            </h2>
+            <p className="text-xs sm:text-sm text-stone-500 mt-1 font-normal">
+              Find verified monuments, fortresses, and heritage temples nearest to your current location
+            </p>
+          </div>
+
+          {/* Action to trigger or re-trigger location */}
+          <div className="flex items-center gap-2">
+            {locationStatus === 'ready' && (
+              <select
+                value={nearbyRadius}
+                onChange={(e) => {
+                  const r = Number(e.target.value);
+                  setNearbyRadius(r);
+                  if (userCoords) {
+                    fetchNearbyPlaces(userCoords.lat, userCoords.lng, r, detectedCityName);
+                  }
+                }}
+                className="px-3 py-1.5 rounded-full border border-stone-200 text-xs font-semibold text-stone-700 bg-stone-50"
+              >
+                <option value={25}>Within 25 km</option>
+                <option value={50}>Within 50 km</option>
+                <option value={150}>Within 150 km</option>
+                <option value={300}>Within 300 km</option>
+              </select>
+            )}
+
+            <button
+              onClick={handleDetectLocation}
+              disabled={locationStatus === 'detecting'}
+              className="px-4 py-2 rounded-full bg-[#046A38] hover:bg-[#03542C] text-white text-xs font-semibold flex items-center gap-1.5 shadow-2xs transition active:scale-95 disabled:opacity-60 cursor-pointer"
+            >
+              {locationStatus === 'detecting' ? (
+                <>
+                  <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                  <span>Locating...</span>
+                </>
+              ) : (
+                <>
+                  <Navigation className="w-3.5 h-3.5" />
+                  <span>{locationStatus === 'ready' ? 'Update My Location' : 'Use My Current Location'}</span>
+                </>
+              )}
+            </button>
+          </div>
+        </div>
+
+        {/* State 1: Idle Prompt */}
+        {locationStatus === 'idle' && (
+          <div className="rounded-2xl bg-[#F8FBF9] border border-[#DCEDE2] p-6 text-center space-y-3">
+            <div className="w-12 h-12 rounded-2xl bg-[#EBF5EE] text-[#046A38] flex items-center justify-center mx-auto shadow-2xs">
+              <Compass className="w-6 h-6" />
+            </div>
+            <div className="max-w-md mx-auto">
+              <h3 className="font-serif text-lg font-bold text-stone-900">
+                Discover Heritage Around Your City
+              </h3>
+              <p className="text-xs text-stone-600 mt-1 leading-relaxed">
+                Allow browser location permission to compute authentic geodesic distances to monuments, or choose from major historic centers below:
+              </p>
+            </div>
+
+            <div className="pt-2 flex flex-wrap items-center justify-center gap-2">
+              <span className="text-xs font-bold text-stone-500">Popular hubs:</span>
+              {[
+                { name: 'Delhi', lat: 28.6139, lng: 77.209 },
+                { name: 'Mumbai', lat: 18.922, lng: 72.8347 },
+                { name: 'Jaipur', lat: 26.9124, lng: 75.7873 },
+                { name: 'Agra', lat: 27.1767, lng: 78.0081 },
+                { name: 'Varanasi', lat: 25.3176, lng: 82.9739 },
+                { name: 'Bengaluru', lat: 12.9716, lng: 77.5946 },
+                { name: 'Kolkata', lat: 22.5726, lng: 88.3639 },
+              ].map((c) => (
+                <button
+                  key={c.name}
+                  onClick={() => handleSelectFallbackCity(c)}
+                  className="px-3 py-1 rounded-full bg-white border border-stone-200 hover:border-emerald-500 text-xs font-semibold text-stone-700 shadow-2xs transition"
+                >
+                  {c.name}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* State 2: Permission Denied or Error */}
+        {(locationStatus === 'denied' || locationStatus === 'error') && (
+          <div className="rounded-2xl bg-orange-50/60/70 border border-orange-200 p-5 space-y-3">
+            <div className="flex items-center gap-2.5 text-amber-900 text-xs font-bold">
+              <ShieldCheck className="w-4 h-4 text-[#FF671F]" />
+              <span>
+                {locationStatus === 'denied'
+                  ? 'Location access was not granted by your browser.'
+                  : 'Unable to pinpoint exact device coordinates.'}
+              </span>
+            </div>
+            <p className="text-xs text-stone-600">
+              No problem! You can select any major heritage hub below to immediately view monuments around that city:
+            </p>
+            <div className="flex flex-wrap items-center gap-2 pt-1">
+              {[
+                { name: 'Delhi NCR', lat: 28.6139, lng: 77.209 },
+                { name: 'Mumbai Coast', lat: 18.922, lng: 72.8347 },
+                { name: 'Jaipur / Amer', lat: 26.9124, lng: 75.7873 },
+                { name: 'Agra Heritage', lat: 27.1767, lng: 78.0081 },
+                { name: 'Varanasi Ghats', lat: 25.3176, lng: 82.9739 },
+                { name: 'Karnataka (Hampi)', lat: 15.335, lng: 76.46 },
+              ].map((c) => (
+                <button
+                  key={c.name}
+                  onClick={() => handleSelectFallbackCity(c)}
+                  className="px-3 py-1.5 rounded-full bg-white border border-orange-300 hover:bg-amber-100/60 text-xs font-bold text-stone-800 transition shadow-2xs"
+                >
+                  {c.name}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* State 3: Ready with nearby cards */}
+        {locationStatus === 'ready' && (
+          <div className="space-y-4">
+            <div className="flex items-center justify-between text-xs text-stone-600 font-medium px-1">
+              <span>Showing monuments near <strong className="text-stone-900">{detectedCityName}</strong>:</span>
+              <span className="text-emerald-700 font-bold">{nearbyPlaces.length} locations found</span>
+            </div>
+
+            {nearbyPlaces.length === 0 ? (
+              <div className="p-8 text-center text-xs text-stone-500 bg-stone-50 rounded-2xl">
+                No verified monuments indexed within {nearbyRadius} km. Try expanding the search radius above.
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                {nearbyPlaces.map((p) => (
+                  <div
+                    key={p.id}
+                    onClick={() => onSelectPlace && onSelectPlace(p.id)}
+                    className="group cursor-pointer rounded-2xl bg-white border border-stone-200/90 overflow-hidden shadow-2xs hover:shadow-md hover:border-emerald-500 transition-all duration-200 flex flex-col justify-between"
+                  >
+                    <div className="h-28 w-full overflow-hidden bg-stone-100 relative">
+                      <img
+                        src={p.thumbnail_url || p.image_url || 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=400'}
+                        alt={p.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-400"
+                        loading="lazy"
+                      />
+                      {p.distance_km !== undefined && (
+                        <span className="absolute bottom-2 left-2 px-2 py-0.5 rounded-md bg-[#046A38] text-white text-[10px] font-bold shadow-xs">
+                          {p.distance_km} km away
+                        </span>
+                      )}
+                    </div>
+
+                    <div className="p-3 space-y-1">
+                      <h4 className="font-serif text-xs font-bold text-stone-900 group-hover:text-emerald-700 transition truncate">
+                        {p.name}
+                      </h4>
+                      <div className="flex items-center gap-1 text-[11px] text-stone-500 truncate">
+                        <MapPin className="w-3 h-3 text-emerald-600 shrink-0" />
+                        <span className="truncate">{p.city}, {p.state}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 6. INDIA MAP PREVIEW (ACCURATE REAL WORLD GIS MAP & INTERACTIVE MONUMENT PINS) */}
+      {/* ========================================================================= */}
+      <IndiaHeritageMapPreview
+        onSelectPlace={onSelectPlace}
+        onNavigateTab={onNavigateTab}
+      />
+
+      {/* ========================================================================= */}
+      {/* 7. HERITAGE SPOTLIGHT: AMBER PALACE & FORT (AMER), JAIPUR                  */}
+      {/* ========================================================================= */}
+      <section className="rounded-3xl sm:rounded-[32px] bg-white border border-[#EFE8DF] overflow-hidden shadow-sm">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
+          {/* Left Column: Authentic Photography & 3D Toggle */}
+          <div className="lg:col-span-5 relative min-h-[340px] sm:min-h-[400px] bg-stone-100 overflow-hidden">
+            {showSpotlight3D ? (
+              <div className="w-full h-full min-h-[380px] relative">
+                <InteractiveHeritageMonument3D
+                  monumentType="amber-palace"
+                  monumentName="Amber Palace & Fort (Amer)"
+                  cityName="Jaipur"
+                  heightClass="h-full min-h-[380px]"
+                />
+                <button
+                  onClick={() => setShowSpotlight3D(false)}
+                  className="absolute top-3 right-3 px-3 py-1 rounded-full bg-white/90 backdrop-blur-xs text-xs font-bold text-stone-800 shadow-md border border-stone-200 z-10 hover:bg-white"
+                >
+                  Return to Photo
+                </button>
+              </div>
+            ) : (
+              <>
+                <img
+                  src="https://images.unsplash.com/photo-1603288967527-24861e6878b3?w=1200&auto=format&fit=crop&q=85"
+                  alt="Amber Palace Jaipur Ramparts"
+                  className="w-full h-full object-cover select-none"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-transparent" />
+                <div className="absolute bottom-4 left-4 right-4 text-white">
+                  <span className="px-2.5 py-0.5 rounded-full bg-orange-50/600/90 text-stone-900 font-bold text-[10px] uppercase tracking-wider">
+                    Architectural Spotlight
+                  </span>
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold mt-1.5 text-white drop-shadow-md">
+                    Amber Palace & Fort (Amer)
+                  </h3>
+                  <p className="text-xs text-white/90 drop-shadow-sm flex items-center gap-1 mt-0.5">
+                    <MapPin className="w-3.5 h-3.5 text-amber-300" />
+                    <span>Cheel ka Teela, Jaipur, Rajasthan</span>
+                  </p>
+                </div>
+              </>
+            )}
+          </div>
+
+          {/* Right Column: Verified Heritage Information & Specifications */}
+          <div className="lg:col-span-7 p-6 sm:p-8 lg:p-10 flex flex-col justify-between space-y-6">
+            <div className="space-y-4">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="px-3 py-1 rounded-full bg-orange-50 text-[#FF671F] text-xs font-bold border border-orange-200">
+                  UNESCO World Heritage • Inscribed 2013
+                </span>
+                <span className="px-3 py-1 rounded-full bg-stone-100 text-stone-700 text-xs font-semibold">
+                  1592 CE • Raja Man Singh I
+                </span>
+              </div>
+
+              <h3 className="font-serif text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight leading-tight">
+                Citadel of the Kachwaha Rajputs
+              </h3>
+
+              <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
+                Perched high on the rugged Aravalli range overlooking Maota Lake, Amber Palace harmonizes opulent Rajput royal living with impenetrable military fortifications. Renowned for its iconic <strong>Ganesh Pol gateway</strong>, the Hall of Public Audience (Diwan-i-Aam), and the shimmering <strong>Sheesh Mahal</strong> inlaid with concave Belgian mirrors that illuminate entire chambers with a single flame.
+              </p>
+
+              {/* 4 Feature Highlights */}
+              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+                <div className="p-3 rounded-2xl bg-[#FAF8F5] border border-[#EAE2D5] space-y-1">
+                  <div className="flex items-center gap-1 text-[#FF671F]">
+                    <Clock className="w-3.5 h-3.5" />
+                    <span className="text-[11px] font-bold">Timings</span>
+                  </div>
+                  <p className="text-xs font-semibold text-stone-800">08:00 AM - 05:30 PM</p>
+                  <p className="text-[10px] text-stone-500">Night Tour: 06:30 PM</p>
+                </div>
+
+                <div className="p-3 rounded-2xl bg-[#FAF8F5] border border-[#EAE2D5] space-y-1">
+                  <div className="flex items-center gap-1 text-[#FF671F]">
+                    <Ticket className="w-3.5 h-3.5" />
+                    <span className="text-[11px] font-bold">Entry Tariff</span>
+                  </div>
+                  <p className="text-xs font-semibold text-stone-800">₹100 (Domestic)</p>
+                  <p className="text-[10px] text-stone-500">₹550 (International)</p>
+                </div>
+
+                <div className="p-3 rounded-2xl bg-[#FAF8F5] border border-[#EAE2D5] space-y-1">
+                  <div className="flex items-center gap-1 text-[#FF671F]">
+                    <Sparkles className="w-3.5 h-3.5" />
+                    <span className="text-[11px] font-bold">Wonder</span>
+                  </div>
+                  <p className="text-xs font-semibold text-stone-800">Sheesh Mahal</p>
+                  <p className="text-[10px] text-stone-500">Mirror reflection</p>
+                </div>
+
+                <div className="p-3 rounded-2xl bg-[#FAF8F5] border border-[#EAE2D5] space-y-1">
+                  <div className="flex items-center gap-1 text-[#FF671F]">
+                    <Landmark className="w-3.5 h-3.5" />
+                    <span className="text-[11px] font-bold">Dynasty</span>
+                  </div>
+                  <p className="text-xs font-semibold text-stone-800">Kachwaha</p>
+                  <p className="text-[10px] text-stone-500">Amber Capital</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="pt-2 flex flex-wrap items-center gap-3">
+              <button
+                onClick={() => onSelectPlace && onSelectPlace('amber-palace')}
+                className="px-5 py-2.5 rounded-full bg-[#FF671F] hover:bg-[#E65100] text-white text-xs font-bold shadow-xs transition active:scale-95 cursor-pointer flex items-center gap-1.5"
+              >
+                <span>View Full Monument Dossier</span>
+                <ArrowRight className="w-3.5 h-3.5" />
+              </button>
+
+              <button
+                onClick={() => setShowSpotlight3D((prev) => !prev)}
+                className="px-4 py-2.5 rounded-full bg-stone-100 hover:bg-stone-200 text-stone-800 text-xs font-bold border border-stone-200 transition active:scale-95 cursor-pointer flex items-center gap-1.5"
+              >
+                <Box className="w-3.5 h-3.5 text-[#FF671F]" />
+                <span>{showSpotlight3D ? 'Show Photograph' : 'Interactive 3D Model'}</span>
+              </button>
+
+              <button
+                onClick={() => onNavigateTab('ai')}
+                className="px-4 py-2.5 rounded-full bg-orange-50/60 hover:bg-orange-50 text-[#FF671F] text-xs font-bold border border-orange-200 transition active:scale-95 cursor-pointer flex items-center gap-1.5"
+              >
+                <MessageSquare className="w-3.5 h-3.5" />
+                <span>Ask AI About Sheesh Mahal</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};

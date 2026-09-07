@@ -1,0 +1,117 @@
+[
+  {
+    "id": "golghar-patna",
+    "name": "Golghar in Patna",
+    "state": "Bihar",
+    "city": "Patna",
+    "country": "India",
+    "category": "heritage",
+    "summary": "Historic 1786 CE stupa-shaped beehive granary built by Captain John Garstin with twin spiral staircases and Ganga views.",
+    "description": "Golghar ('Round House') is an iconic 18th-century beehive-shaped granary monument standing in the historic heart of Patna, near Gandhi Maidan. Commissioned by Governor-General Warren Hastings following the devastating Bengal famine of 1770 and engineered by Captain John Garstin of the Bengal Engineers, the structure has a pillarless dome reaching a height of 29 meters (96 feet) and a base circumference of 125 meters.",
+    "history": "Completed on July 20, 1786. Built with a storage capacity of 137,000 tonnes of grain, it was designed with two spiraling exterior staircases consisting of 145 steps that allowed laborers to carry grain sacks up one side, pour them through a hole at the summit, and descend down the other side without collision.",
+    "culture": "A celebrated symbol of Patna and Mauryan-influenced colonial civil engineering. Climbing the 145 spiral stairs offers breathtaking 360-degree panoramic views of the entire city of Patna, the sweeping expanse of the holy River Ganga, and the Gandhi Setu bridge.",
+    "coordinates": {
+      "lat": 25.6174,
+      "lng": 85.1437
+    },
+    "rating": 4.7,
+    "thumbnail_url": "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&auto=format&fit=crop&q=80",
+    "best_time_to_visit": "October to March (Pleasant weather for staircase climb and sunset panoramas)",
+    "visiting_hours": "09:30 AM - 06:00 PM (Closed on Mondays)",
+    "entry_fee": {
+      "domestic": 15,
+      "international": 100,
+      "currency": "INR"
+    },
+    "visiting_info": {
+      "best_time_to_visit": "Late afternoon (04:00 PM - 05:30 PM)",
+      "visiting_hours": "09:30 AM - 06:00 PM (Closed Mondays)",
+      "recommended_duration": "1 - 1.5 hours",
+      "tips": [
+        "Climb the 145 spiral steps to the top for the best sunset view over the River Ganga.",
+        "Attend the evening laser light & sound show projecting Bihar's ancient Pataliputra history.",
+        "Combine your visit with the nearby Bihar Museum and Gandhi Sangrahalaya."
+      ]
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "model_3d": {
+      "has_model": true,
+      "available": true,
+      "type": "beehive_dome_architecture"
+    },
+    "tags": [
+      "golghar",
+      "patna",
+      "bihar",
+      "heritage",
+      "monument",
+      "famous",
+      "granary",
+      "ganga",
+      "tourist_places"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": true
+    }
+  },
+  {
+    "id": "bihar-museum-patna",
+    "name": "Bihar Museum, Patna",
+    "state": "Bihar",
+    "city": "Patna",
+    "country": "India",
+    "category": "heritage",
+    "summary": "World-class architectural museum showcasing 3,000 years of Pataliputra, Mauryan, and Buddhist antiquities.",
+    "description": "Designed by Pritzker Prize-winning architecture firm Maki and Associates (Japan), the Bihar Museum on Bailey Road in Patna is one of Asia's finest modern cultural institutions. Spanning 13.9 acres, its corten-steel and terracotta galleries house ancient treasures including the celebrated 3rd-century BCE Didarganj Yakshi, Mauryan polished stone sculptures, and Buddhist bronzes.",
+    "history": "Inaugurated in phases between 2015 and 2017 to celebrate Bihar's monumental contribution to ancient Indian civilization, philosophy, mathematics, and governance.",
+    "culture": "An immersive journey through the historical timelines of Magadha, Ashoka the Great, Chandragupta Maurya, Lord Buddha, and Lord Mahavira.",
+    "coordinates": {
+      "lat": 25.6083,
+      "lng": 85.1189
+    },
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&auto=format&fit=crop&q=80",
+    "best_time_to_visit": "Year-round (Air-conditioned galleries)",
+    "visiting_hours": "10:00 AM - 05:00 PM (Closed on Mondays)",
+    "entry_fee": {
+      "domestic": 100,
+      "international": 500,
+      "currency": "INR"
+    },
+    "visiting_info": {
+      "best_time_to_visit": "10:30 AM - 02:00 PM",
+      "visiting_hours": "10:00 AM - 05:00 PM (Closed Mondays)",
+      "recommended_duration": "2 - 3 hours",
+      "tips": [
+        "Don't miss the Masterpiece Gallery featuring the Didarganj Yakshi carved from polished Chunar sandstone.",
+        "Interactive children's discovery wing is ideal for families."
+      ]
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "model_3d": {
+      "has_model": true,
+      "available": true
+    },
+    "tags": [
+      "museum",
+      "patna",
+      "bihar",
+      "heritage",
+      "famous",
+      "tourist_places"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": true
+    }
+  }
+]

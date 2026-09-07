@@ -1,0 +1,347 @@
+[
+  {
+    "id": "ajanta-caves",
+    "name": "Ajanta Caves",
+    "state": "Maharashtra",
+    "city": "Aurangabad",
+    "category": "heritage",
+    "summary": "Rock-cut Buddhist cave monuments featuring world-famous ancient fresco paintings and sculptures.",
+    "description": "Dating from the 2nd century BCE to about 480 CE, the 30 rock-cut caves present masterpieces of Buddhist religious art.",
+    "coordinates": {
+      "lat": 20.5519,
+      "lng": 75.7033
+    },
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?auto=format&fit=crop&w=1200&q=80",
+    "best_time_to_visit": "November to March",
+    "visiting_hours": "09:00 AM - 05:00 PM (Closed Mondays)",
+    "entry_fee": {
+      "domestic": 40,
+      "international": 600,
+      "currency": "INR"
+    },
+    "tags": ["unesco", "buddhist", "caves", "fresco", "ancient"]
+  },
+  {
+    "id": "ellora-caves",
+    "name": "Ellora Caves & Kailasa Temple",
+    "state": "Maharashtra",
+    "city": "Aurangabad",
+    "category": "heritage",
+    "summary": "Colossal multi-religious rock-hewn monolithic temple complex, featuring the famous Cave 16 Kailasa temple.",
+    "description": "Carved out of the Charanandri hills between the 6th and 10th century CE, featuring Hindu, Buddhist, and Jain sanctuaries.",
+    "coordinates": {
+      "lat": 20.0268,
+      "lng": 75.1792
+    },
+    "rating": 4.9,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1200&q=80",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "06:00 AM - 06:00 PM (Closed Tuesdays)",
+    "entry_fee": {
+      "domestic": 40,
+      "international": 600,
+      "currency": "INR"
+    },
+    "tags": ["unesco", "monolith", "kailasa", "rashtrakuta", "temple"]
+  },
+  {
+    "id": "gateway-of-india",
+    "name": "Gateway of India",
+    "state": "Maharashtra",
+    "city": "Mumbai",
+    "category": "heritage",
+    "summary": "Iconic arch-monument overlooking the Arabian Sea, built in Indo-Saracenic style.",
+    "description": "Erected to commemorate the landing of King George V and Queen Mary in 1911, completed in 1924.",
+    "coordinates": {
+      "lat": 18.9220,
+      "lng": 72.8347
+    },
+    "rating": 4.7,
+    "thumbnail_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?auto=format&fit=crop&w=1200&q=80",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Open 24 hours",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR"
+    },
+    "tags": ["landmark", "indo-saracenic", "mumbai-harbour"]
+  },
+  {
+    "id": "lonavala-tigers-point",
+    "name": "Tiger's Point (Tiger's Leap)",
+    "state": "Maharashtra",
+    "city": "Lonavala",
+    "category": "nature",
+    "summary": "Dramatic 650-meter cliff-top viewpoint resembling a leaping tiger into the valley, famous for echo point and rolling Sahyadri clouds.",
+    "description": "Perched high above the valley in Kurvande near Lonavala, Tiger's Leap offers stunning sheer drop views of the Western Ghats, waterfalls, and mist-covered mountain valleys.",
+    "coordinates": {
+      "lat": 18.7180,
+      "lng": 73.3768
+    },
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+    "best_time_to_visit": "June to February (Monsoon peak)",
+    "visiting_hours": "06:00 AM - 06:30 PM",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR"
+    },
+    "tags": ["lonavala", "khandala", "viewpoint", "sahyadri", "nature", "tourist_places", "famous", "sunset"]
+  },
+  {
+    "id": "lonavala-bhushi-dam",
+    "name": "Bhushi Dam & Cascades",
+    "state": "Maharashtra",
+    "city": "Lonavala",
+    "category": "nature",
+    "summary": "Historic 1860s masonry dam on the Indrayani River, world-famous for its stepped waterfalls and gushing monsoon cascades.",
+    "description": "Constructed in the late 1860s for the Great Indian Peninsula Railway to supply water to steam locomotives, Bhushi Dam is Lonavala's most beloved monsoon tourist hotspot.",
+    "coordinates": {
+      "lat": 18.7302,
+      "lng": 73.4079
+    },
+    "rating": 4.6,
+    "thumbnail_url": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&q=80",
+    "best_time_to_visit": "July to October (Monsoon Season)",
+    "visiting_hours": "09:00 AM - 05:00 PM",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR"
+    },
+    "tags": ["lonavala", "dam", "waterfall", "monsoon", "tourist_places", "nature", "famous"]
+  },
+  {
+    "id": "lonavala-karla-caves",
+    "name": "Karla Caves (Grand Chaitya Hall)",
+    "state": "Maharashtra",
+    "city": "Lonavala",
+    "category": "heritage",
+    "summary": "Ancient 2nd-century BCE rock-cut Buddhist shrine with India's largest Chaitya hall, original 2,200-year-old teak wood ribs and lion pillars.",
+    "description": "An archaeological marvel carved into the rocky hill at Karli, Karla Caves house the largest early Buddhist rock-cut prayer hall in India with 37 majestic octagonal pillars and the sacred Ekvira Temple.",
+    "coordinates": {
+      "lat": 18.7824,
+      "lng": 73.4706
+    },
+    "rating": 4.9,
+    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?auto=format&fit=crop&w=1200&q=80",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "09:00 AM - 06:00 PM",
+    "entry_fee": {
+      "domestic": 25,
+      "international": 300,
+      "currency": "INR"
+    },
+    "tags": ["lonavala", "karla", "buddhist", "caves", "heritage", "monument", "asi", "ancient", "famous"]
+  },
+  {
+    "id": "lonavala-bhaja-caves",
+    "name": "Bhaja Caves & Waterfall",
+    "state": "Maharashtra",
+    "city": "Lonavala",
+    "category": "heritage",
+    "summary": "Group of 22 rock-cut Buddhist caves from 2nd century BCE featuring wooden architecture carvings, a dancing woman relief, and 14 stupas.",
+    "description": "Perched 400 feet above the village of Bhaja near Lonavala, this monastic complex features extraordinary Buddhist reliefs, ancient Hinayana stupas, and a seasonal monsoon waterfall cascade.",
+    "coordinates": {
+      "lat": 18.7708,
+      "lng": 73.4819
+    },
+    "rating": 4.7,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1200&q=80",
+    "best_time_to_visit": "July to March",
+    "visiting_hours": "09:00 AM - 05:30 PM",
+    "entry_fee": {
+      "domestic": 25,
+      "international": 300,
+      "currency": "INR"
+    },
+    "tags": ["lonavala", "bhaja", "caves", "heritage", "monument", "buddhist", "ancient", "famous"]
+  },
+  {
+    "id": "lonavala-lohagad-fort",
+    "name": "Lohagad Fort (The Iron Fortress)",
+    "state": "Maharashtra",
+    "city": "Lonavala",
+    "category": "heritage",
+    "summary": "Historic Maratha hilltop fortress at 1,033m elevation, fortified by Chhatrapati Shivaji Maharaj, featuring the famous Vinchukata spur.",
+    "description": "Lohagad (Iron Fort) divides the Indrayani and Pavana basins. It has four formidable gates—Ganesh Darwaja, Narayan Darwaja, Hanuman Darwaja, and Maha Darwaja—and the iconic 1,500m scorpion-tail fortified ridge.",
+    "coordinates": {
+      "lat": 18.6997,
+      "lng": 73.4770
+    },
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1609137144813-7d9921338f24?auto=format&fit=crop&w=1200&q=80",
+    "best_time_to_visit": "July to February",
+    "visiting_hours": "06:00 AM - 06:00 PM",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR"
+    },
+    "tags": ["lonavala", "lohagad", "fort", "heritage", "shivaji-maharaj", "maratha", "monument", "famous"]
+  },
+  {
+    "id": "khandala-rajmachi-fort",
+    "name": "Rajmachi Fort & Sahyadri Plateau",
+    "state": "Maharashtra",
+    "city": "Khandala",
+    "category": "heritage",
+    "summary": "Historic twin forts (Shrivardhan and Manaranjan) guarding the ancient Borghat pass, famous for lush trekking, views, and fireflies.",
+    "description": "Standing strategically in the rugged Sahyadri mountains between Khandala and Karjat, Rajmachi Fort comprises two citadel fortresses offering breathtaking vistas of the Ulhas river valley and Duke's Nose.",
+    "coordinates": {
+      "lat": 18.8278,
+      "lng": 73.3986
+    },
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1571401835393-8c5f35328320?auto=format&fit=crop&w=1200&q=80",
+    "best_time_to_visit": "June to February",
+    "visiting_hours": "Open 24 hours (Daylight recommended for trekking)",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR"
+    },
+    "tags": ["khandala", "lonavala", "rajmachi", "fort", "trekking", "heritage", "famous"]
+  },
+  {
+    "id": "khandala-dukes-nose",
+    "name": "Duke's Nose (Nagphani Peak)",
+    "state": "Maharashtra",
+    "city": "Khandala",
+    "category": "nature",
+    "summary": "Dramatic cliff peak shaped like a cobra's hood offering thrilling rock climbing, rappelling, and 360-degree Sahyadri valley views.",
+    "description": "Also known as Nagphani due to its resemblance to a cobra's raised hood, the peak was nicknamed Duke's Nose by British surveyors. It is renowned for its sheer vertical drop and sweeping views of the Khandala ghats.",
+    "coordinates": {
+      "lat": 18.7460,
+      "lng": 73.3855
+    },
+    "rating": 4.7,
+    "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80",
+    "best_time_to_visit": "October to May (Adventures) / July-Sept (Scenery)",
+    "visiting_hours": "07:00 AM - 06:00 PM",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR"
+    },
+    "tags": ["khandala", "cliff", "trekking", "viewpoint", "nature", "famous", "adventure"]
+  },
+  {
+    "id": "khandala-sunset-point",
+    "name": "Khandala Sunset Point (Amrutanjan Ghat)",
+    "state": "Maharashtra",
+    "city": "Khandala",
+    "category": "nature",
+    "summary": "Celebrated scenic vantage point over the deep Bhor Ghat valley and Duke's Nose, famous for spectacular sunsets and cloud phenomena.",
+    "description": "Located near the historic Amrutanjan Bridge on the old Mumbai-Pune highway, this iconic viewpoint provides expansive vistas of lush valleys, train tunnels cutting through mountains, and golden sunsets.",
+    "coordinates": {
+      "lat": 18.7523,
+      "lng": 73.3732
+    },
+    "rating": 4.6,
+    "thumbnail_url": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80",
+    "best_time_to_visit": "Round the year (Evenings)",
+    "visiting_hours": "06:00 AM - 07:00 PM",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR"
+    },
+    "tags": ["khandala", "sunset", "viewpoint", "scenic", "tourist_places", "famous"]
+  },
+  {
+    "id": "khandala-kune-waterfalls",
+    "name": "Kune Waterfalls (Three-Tier Cascade)",
+    "state": "Maharashtra",
+    "city": "Khandala",
+    "category": "nature",
+    "summary": "India's 14th highest waterfall dropping 200 meters in three majestic tiers amid dense Sahyadri greenery.",
+    "description": "Nestled in the lush greenery between Khandala and Lonavala, Kune Falls plunges 660 feet into a rocky basin against the backdrop of the Sahyadri mountains, creating an unforgettable monsoon spectacle.",
+    "coordinates": {
+      "lat": 18.7583,
+      "lng": 73.3811
+    },
+    "rating": 4.7,
+    "thumbnail_url": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&q=80",
+    "best_time_to_visit": "July to October",
+    "visiting_hours": "06:00 AM - 06:00 PM",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR"
+    },
+    "tags": ["khandala", "lonavala", "waterfall", "nature", "scenic", "famous", "tourist_places"]
+  },
+  {
+    "id": "lonavala-lions-point",
+    "name": "Lion's Point Viewpoint",
+    "state": "Maharashtra",
+    "city": "Lonavala",
+    "category": "nature",
+    "summary": "High-altitude vantage point between Bhushi Dam and Aamby Valley, known for soaring wind currents and panoramic mountain gorges.",
+    "description": "Situated midway between Bhushi Dam and Aamby Valley, Lion's Point offers sharp cliff drops, winds that lift water droplets upwards, and incredible sunrise and sunset vistas across the Sahyadri range.",
+    "coordinates": {
+      "lat": 18.7214,
+      "lng": 73.3820
+    },
+    "rating": 4.7,
+    "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+    "best_time_to_visit": "Round the year (Monsoon special)",
+    "visiting_hours": "06:00 AM - 07:00 PM",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR"
+    },
+    "tags": ["lonavala", "viewpoint", "nature", "scenic", "famous", "tourist_places"]
+  },
+  {
+    "id": "lonavala-pawna-lake",
+    "name": "Pawna Lake & Dam Reserve",
+    "state": "Maharashtra",
+    "city": "Lonavala",
+    "category": "nature",
+    "summary": "Expansive freshwater reservoir framed by Lohagad, Tikona and Tung forts; premier destination for lakeside camping and kayaking.",
+    "description": "Surrounded by historic Maratha fortresses, Pawna Lake offers calm waters, picturesque lakeside campsites, bonfire evenings, and water sports just 20 km from central Lonavala.",
+    "coordinates": {
+      "lat": 18.6811,
+      "lng": 73.4900
+    },
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
+    "best_time_to_visit": "October to May (Camping) / July-Sept (Lush greens)",
+    "visiting_hours": "Open 24 hours",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR"
+    },
+    "tags": ["lonavala", "lake", "camping", "dam", "nature", "watersports", "famous"]
+  },
+  {
+    "id": "lonavala-celebrity-wax-museum",
+    "name": "Sunil's Celebrity Wax Museum",
+    "state": "Maharashtra",
+    "city": "Lonavala",
+    "category": "museum",
+    "summary": "Pioneering Indian wax museum housing lifelike statues of historic leaders, scientists, freedom fighters, and cricket icons.",
+    "description": "Founded by wax sculptor Sunil Kandalloor, this popular indoor museum features detailed life-size figures of Chhatrapati Shivaji Maharaj, Dr. APJ Abdul Kalam, Mahatma Gandhi, and global figures.",
+    "coordinates": {
+      "lat": 18.7610,
+      "lng": 73.4245
+    },
+    "rating": 4.5,
+    "thumbnail_url": "https://images.unsplash.com/photo-1566127444979-b3d2b654e3d7?auto=format&fit=crop&w=1200&q=80",
+    "best_time_to_visit": "Round the year",
+    "visiting_hours": "09:00 AM - 09:30 PM",
+    "entry_fee": {
+      "domestic": 200,
+      "international": 200,
+      "currency": "INR"
+    },
+    "tags": ["lonavala", "museum", "art", "family", "tourist_places", "famous"]
+  }
+]

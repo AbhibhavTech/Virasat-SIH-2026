@@ -1,0 +1,59 @@
+[
+  {
+    "id": "victoria-memorial",
+    "name": "Victoria Memorial Hall",
+    "state": "West Bengal",
+    "city": "Kolkata",
+    "country": "India",
+    "category": "heritage",
+    "summary": "Opulent white Makrana marble monument set in 64 acres of manicured gardens on the Maidan.",
+    "description": "Constructed between 1906 and 1921, the Victoria Memorial Hall is an iconic architectural masterpiece built of dazzling white Makrana marble from Rajasthan. Designed by Sir William Emerson, President of the Royal Institute of British Architects, the building synthesizes British, Mughal, and Venetian Renaissance architectural elements.",
+    "history": "Conceived by Lord Curzon, Viceroy of India, following the death of Queen Victoria in 1901. Atop its 184-foot high central dome sits a 16-foot bronze Angel of Victory that rotates with the breeze like a weathercock.",
+    "culture": "A cultural crown jewel of Kolkata, housing 25 galleries with over 28,000 artifacts including historic oil paintings by Thomas and William Daniell, royal manuscripts, and weapons.",
+    "coordinates": {
+      "lat": 22.5448,
+      "lng": 88.3426
+    },
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1558431382-27e303142255?w=800&auto=format&fit=crop&q=80",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "10:00 AM - 06:00 PM (Gardens open 05:30 AM - 06:15 PM)",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR"
+    },
+    "visiting_info": {
+      "best_time_to_visit": "Late afternoon before sunset",
+      "visiting_hours": "10:00 AM - 06:00 PM (Closed Mondays)",
+      "recommended_duration": "2 - 3 hours",
+      "tips": [
+        "Take an evening horse-drawn carriage ride along the Queen's Way outside the memorial gates.",
+        "Attend the evening light and sound show 'Pride & Glory - The Story of Calcutta'."
+      ]
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1558431382-27e303142255?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "model_3d": {
+      "has_model": true,
+      "available": true,
+      "type": "marble_monument"
+    },
+    "tags": [
+      "victoria memorial",
+      "kolkata",
+      "west bengal",
+      "heritage",
+      "monument",
+      "famous",
+      "tourist_places"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": true
+    }
+  }
+]

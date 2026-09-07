@@ -1,0 +1,107 @@
+[
+  {
+    "id": "hawa-mahal",
+    "name": "Hawa Mahal",
+    "state": "Rajasthan",
+    "city": "Jaipur",
+    "country": "India",
+    "category": "heritage",
+    "summary": "Palace of Winds constructed in 1799 with red and pink sandstone facade.",
+    "description": "Hawa Mahal is an iconic palace in Jaipur, India. Built from red and pink sandstone, it sits on the edge of the City Palace and extends to the Zenana women's quarters.",
+    "history": "Built in 1799 by Maharaja Sawai Pratap Singh, designed by Lal Chand Ustad in the form of the crown of Krishna.",
+    "culture": "Its unique five-floor exterior has 953 small windows called Jharokhas decorated with intricate latticework.",
+    "coordinates": {
+      "lat": 26.9239,
+      "lng": 75.8267
+    },
+    "rating": 4.6,
+    "thumbnail_url": "https://images.unsplash.com/photo-1609946850720-6d4323229b46",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "09:00 AM - 05:00 PM",
+    "entry_fee": {
+      "domestic": 50.0,
+      "international": 200.0,
+      "currency": "INR"
+    },
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "09:00 AM - 05:00 PM",
+      "recommended_duration": "1 - 2 hours",
+      "tips": [
+        "Visit in the morning when the sun illuminates the front facade."
+      ]
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1609946850720-6d4323229b46"
+    ],
+    "model_3d": {
+      "has_model": true,
+      "model_url": "/models/hawa-mahal.glb",
+      "available": true,
+      "type": "detailed",
+      "asset": "/models/hawa-mahal.glb"
+    },
+    "tags": ["palace", "architecture", "pink-city", "heritage", "rajasthan"],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": true
+    }
+  },
+  {
+    "id": "amber-palace",
+    "name": "Amber Palace & Fort (Amer)",
+    "state": "Rajasthan",
+    "city": "Jaipur",
+    "country": "India",
+    "category": "Forts & Palaces",
+    "summary": "UNESCO World Heritage Hill Fort perched on Cheel ka Teela over Maota Lake, renowned for grand fortified ramparts, Ganesh Pol gateway, and the glittering Sheesh Mahal (Mirror Palace).",
+    "description": "Amber Palace (Amer Fort) is a magnificent fortified palace complex located high on a rugged ridge in Amer, 11 kilometres from Jaipur. Built with pale yellow and pink sandstone with white marble accents, it combines opulent Rajput royal residence with formidable military fortifications. The complex spans four sprawling courtyards, including the iconic Ganesh Pol gateway, Diwan-i-Aam (Hall of Public Audience), Jai Mandir with its world-famous Sheesh Mahal (Palace of Mirrors), and Sukh Niwas with artificial cool breezes designed with running water channels.",
+    "history": "Constructed in 1592 CE by Raja Man Singh I, trusted general of Mughal Emperor Akbar, and expanded extensively by Mirza Raja Jai Singh and Sawai Jai Singh II before Jaipur was founded in 1727. Enscribed as a UNESCO World Heritage Site in 2013 under the 'Hill Forts of Rajasthan'.",
+    "culture": "Amer was the historic medieval capital of the Kachwaha Rajputs. Inside, the temple of Shila Devi, dedicated to Goddess Kali, was installed by Raja Man Singh after his victory in Jessore (Bengal). The ramparts connect directly via subterranean tunnels to the imposing Jaigarh Fort above.",
+    "coordinates": {
+      "lat": 26.9855,
+      "lng": 75.8513
+    },
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1603288967527-24861e6878b3?w=800&auto=format&fit=crop&q=80",
+    "best_time_to_visit": "October to March (Pleasant weather & clear golden sunlight)",
+    "visiting_hours": "08:00 AM - 05:30 PM | Night Tourism & Light Show: 06:30 PM - 09:15 PM",
+    "entry_fee": {
+      "domestic": 100.0,
+      "international": 550.0,
+      "currency": "INR"
+    },
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "08:00 AM - 05:30 PM (Day) | 06:30 PM - 09:15 PM (Night)",
+      "recommended_duration": "3 - 4 hours",
+      "tips": [
+        "Climb the fortress via the scenic pedestrian stone ramp or authorized 4x4 tourist jeeps.",
+        "Do not miss the evening Light and Sound Show at Kesar Kyari garden on Maota Lake.",
+        "Visit Sheesh Mahal with an authorized ASI heritage guide to learn about its reflective candle optics.",
+        "Comfortable walking shoes are recommended as the complex has extensive cobblestone ramps."
+      ]
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1603288967527-24861e6878b3?w=1200&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1609137144822-79f972b901fc?w=1200&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "model_3d": {
+      "has_model": true,
+      "model_url": "/models/amber-palace.glb",
+      "available": true,
+      "type": "amber-palace",
+      "asset": "/models/amber-palace.glb"
+    },
+    "tags": ["unesco", "fort", "palace", "hill-fort", "jaipur", "amer", "rajasthan", "sheesh-mahal"],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": true
+    }
+  }
+]

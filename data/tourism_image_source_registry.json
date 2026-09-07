@@ -1,0 +1,70 @@
+{
+  "version": "1.0",
+  "purpose": "Companion image-source registry for the YatraVerse master tourism database.",
+  "coverage": {
+    "states": 28,
+    "union_territories": 8,
+    "states_list": [
+      "Andhra Pradesh",
+      "Arunachal Pradesh",
+      "Assam",
+      "Bihar",
+      "Chhattisgarh",
+      "Goa",
+      "Gujarat",
+      "Haryana",
+      "Himachal Pradesh",
+      "Jharkhand",
+      "Karnataka",
+      "Kerala",
+      "Madhya Pradesh",
+      "Maharashtra",
+      "Manipur",
+      "Meghalaya",
+      "Mizoram",
+      "Nagaland",
+      "Odisha",
+      "Punjab",
+      "Rajasthan",
+      "Sikkim",
+      "Tamil Nadu",
+      "Telangana",
+      "Tripura",
+      "Uttar Pradesh",
+      "Uttarakhand",
+      "West Bengal"
+    ],
+    "uts_list": [
+      "Andaman and Nicobar Islands",
+      "Chandigarh",
+      "Dadra and Nagar Haveli and Daman and Diu",
+      "Delhi",
+      "Jammu and Kashmir",
+      "Ladakh",
+      "Lakshadweep",
+      "Puducherry"
+    ]
+  },
+  "preferred_sources": [
+    {
+      "name": "Incredible India",
+      "url": "https://www.incredibleindia.gov.in/en/destinations",
+      "use": "Discover destination/city source pages and official tourism imagery."
+    },
+    {
+      "name": "Wikimedia Commons",
+      "url": "https://commons.wikimedia.org/",
+      "use": "Preferred source for locally stored/reused images when the individual file license permits it."
+    },
+    {
+      "name": "Unsplash Tourism Curations",
+      "url": "https://unsplash.com",
+      "use": "High-resolution verified imagery under open commercial & non-commercial reuse terms."
+    },
+    {
+      "name": "Archaeological Survey of India (ASI)",
+      "url": "https://asi.nic.in",
+      "use": "Official gazette monument records, historical monument profiles, and entrance portals."
+    }
+  ]
+}

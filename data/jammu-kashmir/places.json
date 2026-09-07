@@ -1,0 +1,395 @@
+[
+  {
+    "id": "sonamarg-himalayas",
+    "name": "Himalayas Mountain in Sonamarg",
+    "state": "Jammu and Kashmir",
+    "city": "Sonamarg",
+    "country": "India",
+    "category": "nature",
+    "summary": "Majestic Himalayan mountain massif, Thajiwas Glacier, and alpine flower valleys along the Sindh River.",
+    "description": "Sonamarg, known poetically as the 'Meadow of Gold', sits at an elevation of 2,800 meters in the Ganderbal district of Jammu and Kashmir. Dominated by dramatic glaciated Himalayan peaks, alpine conifers, and the roaring Sindh River, it serves as the historic gateway to Ladakh across the Zoji La pass and a premier mountaineering and trekking sanctuary.",
+    "history": "Historically a vital trade passway on the ancient Silk Route between Kashmir, Ladakh, and Central Asia. The snowfields and Thajiwas Glacier have attracted Himalayan explorers, botanists, and nature pilgrims for centuries.",
+    "culture": "Celebrated in Kashmiri folklore and pastoral Gujjar-Bakarwal traditions. Local guides lead pony expeditions across alpine meadows carpeted with yellow buttercups, primulas, and gentians during summer.",
+    "coordinates": {
+      "lat": 34.3106,
+      "lng": 75.2952
+    },
+    "rating": 4.9,
+    "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+    "best_time_to_visit": "May to October for lush alpine meadows; December to March for snow skiing",
+    "visiting_hours": "Open 24 Hours (Daylight hours recommended for mountain treks)",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR"
+    },
+    "visiting_info": {
+      "best_time_to_visit": "May to October (Alpine flower bloom and clear glacier vistas)",
+      "visiting_hours": "Sunrise to Sunset (06:00 AM - 07:00 PM)",
+      "recommended_duration": "4 - 6 hours",
+      "tips": [
+        "Take the 3 km pony trek or hike from Sonamarg market to Thajiwas Glacier foot.",
+        "Wear warm layers as mountain temperatures drop rapidly in the late afternoon.",
+        "Savor authentic Kashmiri Kahwa and trout fish near the Sindh Riverbanks."
+      ]
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&auto=format&fit=crop&q=85",
+      "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "model_3d": {
+      "has_model": true,
+      "available": true,
+      "type": "detailed_terrain_elevation"
+    },
+    "tags": [
+      "himalayas",
+      "mountain",
+      "sonamarg",
+      "glacier",
+      "jammu and kashmir",
+      "nature",
+      "tourist_places",
+      "famous"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": true
+    }
+  },
+  {
+    "id": "dal-lake-srinagar",
+    "name": "Dal Lake & Shikara Rides",
+    "state": "Jammu and Kashmir",
+    "city": "Srinagar",
+    "country": "India",
+    "category": "tourist_places",
+    "summary": "Iconic urban lake with handcrafted carved wooden houseboats, floating vegetable markets, and Shikara rides.",
+    "description": "Covering 18 square kilometers, Dal Lake is celebrated as the 'Jewel in the Crown of Kashmir'. Encircled by the Zabarwan mountain range and Mughal gardens, its tranquil waters are home to historic cedar houseboats, floating gardens (Radh), and traditional gondola-style Shikaras.",
+    "history": "Ancient texts name it Mahasarit. During the Mughal era in the 16th and 17th centuries, Emperor Jahangir and Nur Jahan laid out sprawling terraced pleasure gardens along its banks, while the British built ornate cedar houseboats during the colonial period.",
+    "culture": "A unique living water-based ecosystem where generations of Mirbahri boatmen cultivate floating vegetable beds and artisan merchants trade Kashmiri saffron, walnut wood carvings, and Pashmina shawls directly from boats.",
+    "coordinates": {
+      "lat": 34.0837,
+      "lng": 74.8395
+    },
+    "rating": 4.9,
+    "thumbnail_url": "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800&auto=format&fit=crop&q=80",
+    "best_time_to_visit": "April to October; winter for snow-draped houseboats",
+    "visiting_hours": "06:00 AM - 09:00 PM (Shikaras operate all day)",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR"
+    },
+    "visiting_info": {
+      "best_time_to_visit": "Early morning 06:00 AM for the floating vegetable market; sunset for Shikara rides",
+      "visiting_hours": "06:00 AM - 09:00 PM",
+      "recommended_duration": "2 - 3 hours",
+      "tips": [
+        "Board authorized government-tariff Shikaras at Ghat No. 1 or Nehru Park Ghat.",
+        "Witness the floating lotus blooms at Char Chinar island in the middle of the lake.",
+        "Stay overnight on an antique carved pine-and-cedar heritage houseboat."
+      ]
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=1200&auto=format&fit=crop&q=85",
+      "https://images.unsplash.com/photo-1566837945700-30057527ade0?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "model_3d": {
+      "has_model": true,
+      "available": true
+    },
+    "tags": [
+      "dal lake",
+      "srinagar",
+      "shikara",
+      "jammu and kashmir",
+      "tourist_places",
+      "famous",
+      "heritage"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": true
+    }
+  },
+  {
+    "id": "gulmarg-gondola",
+    "name": "Gulmarg Gondola & Apharwat Peak",
+    "state": "Jammu and Kashmir",
+    "city": "Gulmarg",
+    "country": "India",
+    "category": "tourist_places",
+    "summary": "Asia's highest cable car system reaching 3,980 meters on Mount Apharwat with premier ski slopes.",
+    "description": "Gulmarg ('Meadow of Flowers') is India's premier high-altitude ski resort. The Gulmarg Gondola carries passengers in two phases from the bowl of Gulmarg pine forests up to Kongdoori and onward to Mount Apharwat peak, offering breath-taking vistas of Nanga Parbat and the Pir Panjal range.",
+    "history": "Originally named Gaurimarg by shepherd communities, it was renamed Gulmarg by Sultan Yusuf Shah in the 16th century, captivated by its wild flowers. The modern French-built ropeway was completed between 1998 and 2005.",
+    "culture": "A world-renowned ski and snowboard capital in winter, and a high-alpine flower wonderland and golf hub during summer.",
+    "coordinates": {
+      "lat": 34.0484,
+      "lng": 74.3805
+    },
+    "rating": 4.9,
+    "thumbnail_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80",
+    "best_time_to_visit": "December to March for powder snow skiing; May to September for lush green meadows",
+    "visiting_hours": "09:00 AM - 05:00 PM",
+    "entry_fee": {
+      "domestic": 810,
+      "international": 810,
+      "currency": "INR"
+    },
+    "visiting_info": {
+      "best_time_to_visit": "Year-round (Phase 2 operates subject to wind conditions)",
+      "visiting_hours": "09:00 AM - 05:00 PM (Pre-booking online recommended)",
+      "recommended_duration": "3 - 5 hours",
+      "tips": [
+        "Book Gondola Phase 1 (Kongdoori) & Phase 2 (Apharwat) tickets well in advance online.",
+        "Carry sunglasses and SPF 50 sunscreen due to intense snow glare at 3,980m.",
+        "Rent snow coats and gumboots from verified JK Tourism booths in Gulmarg base."
+      ]
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "model_3d": {
+      "has_model": true,
+      "available": true
+    },
+    "tags": [
+      "gulmarg",
+      "gondola",
+      "snow",
+      "adventure",
+      "jammu and kashmir",
+      "tourist_places",
+      "famous"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": true
+    }
+  },
+  {
+    "id": "shalimar-bagh-srinagar",
+    "name": "Shalimar Bagh Mughal Garden",
+    "state": "Jammu and Kashmir",
+    "city": "Srinagar",
+    "country": "India",
+    "category": "heritage",
+    "summary": "1619 CE terraced Mughal imperial garden laid out by Emperor Jahangir with flowing fountains and chinar groves.",
+    "description": "The crown of terraced Mughal gardens in Kashmir, Shalimar Bagh ('Abode of Love') features four descending terraces watered by a central canal (Shah Nahar) lined with polished black stone pavilions and giant, centuries-old Chinar trees.",
+    "history": "Commissioned by Mughal Emperor Jahangir for his beloved consort Nur Jahan in 1619 CE, later expanded under Emperor Shah Jahan with the renowned Black Marble Diwan-e-Khas pavilion.",
+    "culture": "Embodies the classical Persian Charbagh concept of Paradise on Earth, renowned for its autumn chinar foliage turning incandescent crimson.",
+    "coordinates": {
+      "lat": 34.1488,
+      "lng": 74.8724
+    },
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800&auto=format&fit=crop&q=80",
+    "best_time_to_visit": "May to October for flowering terraces; October to November for golden chinar leaves",
+    "visiting_hours": "09:00 AM - 07:00 PM",
+    "entry_fee": {
+      "domestic": 24,
+      "international": 200,
+      "currency": "INR"
+    },
+    "visiting_info": {
+      "best_time_to_visit": "Afternoon to sunset",
+      "visiting_hours": "09:00 AM - 07:00 PM",
+      "recommended_duration": "1.5 - 2 hours",
+      "tips": [
+        "Walk to the fourth terrace to admire the black marble pillars carved with Persian inscriptions.",
+        "Visit Nishat Bagh just 3 km away along the Dal Lake Boulevard."
+      ]
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "model_3d": {
+      "has_model": true,
+      "available": true
+    },
+    "tags": [
+      "mughal",
+      "garden",
+      "heritage",
+      "srinagar",
+      "jammu and kashmir",
+      "monument"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": true
+    }
+  },
+  {
+    "id": "betaab-valley-pahalgam",
+    "name": "Betaab Valley & Baisaran Valley",
+    "state": "Jammu and Kashmir",
+    "city": "Pahalgam",
+    "country": "India",
+    "category": "nature",
+    "summary": "Verdant Himalayan valley along the Lidder River surrounded by snow-capped peaks and deodar forests.",
+    "description": "Betaab Valley, named after the iconic Bollywood movie filmed here, is situated 15 km from Pahalgam on the way to the Amarnath Cave shrine. Framed by towering Pir Panjal peaks, weeping willows, and the crystal-clear turquoise waters of the Lidder River, it is known alongside Baisaran as Kashmir's 'Mini Switzerland'.",
+    "history": "Historically part of the sacred pilgrimage corridor to Amarnath and a pastoral pastureland for Himalayan shepherds.",
+    "culture": "Celebrated for tranquil nature walks, alpine picnics, horse riding through pine canopies, and angling in fresh mountain streams.",
+    "coordinates": {
+      "lat": 34.0287,
+      "lng": 75.3456
+    },
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800&auto=format&fit=crop&q=80",
+    "best_time_to_visit": "April to October",
+    "visiting_hours": "08:00 AM - 06:30 PM",
+    "entry_fee": {
+      "domestic": 100,
+      "international": 100,
+      "currency": "INR"
+    },
+    "visiting_info": {
+      "best_time_to_visit": "Morning to early afternoon",
+      "visiting_hours": "08:00 AM - 06:30 PM",
+      "recommended_duration": "2 - 3 hours",
+      "tips": [
+        "Combine your visit with nearby Aru Valley and Chandanwari.",
+        "Take a pony ride up to Baisaran meadow for 360-degree panorama of Pahalgam town."
+      ]
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "model_3d": {
+      "has_model": true,
+      "available": true
+    },
+    "tags": [
+      "pahalgam",
+      "betaab valley",
+      "nature",
+      "jammu and kashmir",
+      "tourist_places",
+      "famous"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": true
+    }
+  },
+  {
+    "id": "shankaracharya-temple",
+    "name": "Shankaracharya Temple",
+    "state": "Jammu and Kashmir",
+    "city": "Srinagar",
+    "country": "India",
+    "category": "heritage",
+    "summary": "Ancient 9th-century Shiva temple perched 1,000 feet atop Gopadari Hill overlooking Srinagar and Dal Lake.",
+    "description": "Perched dramatically on the Shankaracharya Hill (Takht-e-Suleiman), this solid stone temple dedicated to Lord Shiva dates back in its current form to the 9th century CE. It is associated with the great philosopher Adi Shankaracharya who visited the shrine during his travels.",
+    "history": "Believed to be founded by King Gopaditya in the 4th century BCE and renovated in the 9th century by King Lalitaditya. Adi Shankaracharya stayed here and composed the famous hymn Saundarya Lahari.",
+    "culture": "A revered pilgrimage destination offering magnificent bird's-eye views of the sprawling city of Srinagar, the winding Jhelum river, and Dal Lake.",
+    "coordinates": {
+      "lat": 34.0725,
+      "lng": 74.8427
+    },
+    "rating": 4.7,
+    "thumbnail_url": "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800&auto=format&fit=crop&q=80",
+    "best_time_to_visit": "Year round, sunrise to sunset",
+    "visiting_hours": "07:00 AM - 08:00 PM (Vehicles allowed till 05:00 PM)",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR"
+    },
+    "visiting_info": {
+      "best_time_to_visit": "Early morning or late afternoon for valley vistas",
+      "visiting_hours": "07:00 AM - 08:00 PM",
+      "recommended_duration": "1 - 1.5 hours",
+      "tips": [
+        "Visitors must climb approximately 240 stone steps from the parking area.",
+        "Electronics and cameras must be deposited at the security counter before climbing."
+      ]
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "model_3d": {
+      "has_model": true,
+      "available": true
+    },
+    "tags": [
+      "temple",
+      "heritage",
+      "srinagar",
+      "jammu and kashmir",
+      "monument"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": true
+    }
+  },
+  {
+    "id": "bahu-fort-jammu",
+    "name": "Bahu Fort & Bagh-e-Bahu",
+    "state": "Jammu and Kashmir",
+    "city": "Jammu",
+    "country": "India",
+    "category": "heritage",
+    "summary": "Historic 3,000-year-old fortress overlooking the Tawi River housing the sacred Bawe Wali Mata shrine.",
+    "description": "The oldest surviving monument in Jammu city, Bahu Fort stands on a high rocky cliff on the left bank of the Tawi River. Inside the fort is the revered temple of Goddess Kali (Bawe Wali Mata), and below it lies Bagh-e-Bahu, an expansive terraced garden modeled on Mughal waterways with India's largest underground aquarium.",
+    "history": "Originally constructed by Raja Bahu Lochan around 3,000 years ago, and rebuilt in sandstone and lime by the Dogra rulers during the 19th and 20th centuries.",
+    "culture": "The spiritual anchor of Jammu city, hosting grand Navratri fairs where thousands congregate for divine blessings and panoramic views of the Jammu skyline.",
+    "coordinates": {
+      "lat": 32.7297,
+      "lng": 74.8814
+    },
+    "rating": 4.7,
+    "thumbnail_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "06:00 AM - 08:00 PM",
+    "entry_fee": {
+      "domestic": 10,
+      "international": 50,
+      "currency": "INR"
+    },
+    "visiting_info": {
+      "best_time_to_visit": "Morning and evening hours",
+      "visiting_hours": "06:00 AM - 08:00 PM",
+      "recommended_duration": "2 hours",
+      "tips": [
+        "Explore both the historic fort ramparts and the terraced Bagh-e-Bahu gardens below.",
+        "Take the newly inaugurated Jammu Ropeway (cable car) connecting Bahu Fort to Mahamaya Temple and Peer Kho."
+      ]
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "model_3d": {
+      "has_model": true,
+      "available": true
+    },
+    "tags": [
+      "fort",
+      "heritage",
+      "jammu",
+      "jammu and kashmir",
+      "monument"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": true
+    }
+  }
+]
