@@ -261,8 +261,15 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
         travel_context: travelContext,
       });
 
-      // Update contextual memory if destination or transit was detected
-      if (res.transit_comparison?.destination) {
+      // Reset destination memory if user asks to change destination or explore somewhere else
+      if (/(change destination|kisi aur jagah|somewhere else|kahi aur|dusri jagah|new destination)/i.test(trimmed)) {
+        setTravelContext((prev) => ({
+          ...prev,
+          destination: undefined,
+          days: undefined,
+        }));
+      } else if (res.transit_comparison?.destination) {
+        // Update contextual memory if destination or transit was detected
         setTravelContext((prev) => ({
           ...prev,
           destination: res.transit_comparison?.destination,
@@ -637,9 +644,9 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
           </div>
 
           <div className="flex items-center gap-2 text-[10px] text-stone-500">
-            <span className="flex items-center gap-1 font-medium text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">
-              <ShieldCheck className="w-3 h-3 text-emerald-600" />
-              Verified ASI Grounding
+            <span className="flex items-center gap-1 font-medium text-stone-700 bg-stone-100 px-2.5 py-0.5 rounded-full border border-stone-200">
+              <Compass className="w-3 h-3 text-[#FF671F]" />
+              Verified Knowledge & Transit Hubs
             </span>
           </div>
         </div>
@@ -700,7 +707,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
                                 </span>
                                 {place.distance_km !== undefined && (
                                   <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full shrink-0">
-                                    {place.distance_km} km away
+                                    ~{place.distance_km} km (calculated)
                                   </span>
                                 )}
                               </div>
