@@ -161,8 +161,8 @@ export function getContextualSpeech(
     };
   }
 
-  // 2. Multimodal Transit & Railway Routes Tab
-  if (activeTab === 'routes' || contextMode === 'transit') {
+  // 2. Multimodal Transit & Railway Routes Context
+  if (contextMode === 'transit') {
     if (city === 'Mumbai') {
       return {
         greeting: defaultGreeting,

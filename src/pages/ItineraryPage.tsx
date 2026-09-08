@@ -76,9 +76,6 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
     'beaches_nature',
   ]);
 
-  // Active sub-navigation in the journey header
-  const [activeSubTab, setActiveSubTab] = useState<'planner' | 'routes'>('planner');
-
   // Plan generation state
   const [loading, setLoading] = useState(false);
   const [itinerary, setItinerary] = useState<ItineraryResponse | null>(null);
@@ -232,39 +229,14 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
   };
 
   return (
-    <div className="space-y-8 max-w-7xl mx-auto px-4 sm:px-6 py-6 animate-fadeIn text-stone-800">
-      {/* 1. TOP SUB-NAV BAR: PLAN YOUR JOURNEY */}
+    <div className="space-y-8 w-full py-2 sm:py-4 animate-fadeIn text-stone-800 pb-12">
+      {/* 1. TOP BAR: PLAN YOUR JOURNEY */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-stone-200/80">
         <div className="flex items-center gap-2 flex-wrap text-xs">
-          <span className="font-bold tracking-wider uppercase text-stone-500 mr-1">
-            PLAN YOUR JOURNEY:
-          </span>
-          <button
-            onClick={() => setActiveSubTab('planner')}
-            className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full font-semibold transition cursor-pointer ${
-              activeSubTab === 'planner'
-                ? 'bg-amber-100 text-[#FF671F] border border-orange-200 shadow-xs'
-                : 'bg-white text-stone-600 hover:bg-stone-100 border border-stone-200'
-            }`}
-          >
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-50 text-[#FF671F] border border-orange-200 text-xs font-bold">
             <Calendar className="w-3.5 h-3.5 text-[#FF671F]" />
-            <span>Day Planner & Circuits</span>
-          </button>
-
-          <button
-            onClick={() => {
-              setActiveSubTab('routes');
-              onNavigateTab('map');
-            }}
-            className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full font-medium transition cursor-pointer ${
-              activeSubTab === 'routes'
-                ? 'bg-amber-100 text-[#FF671F] border border-orange-200'
-                : 'bg-white text-stone-600 hover:bg-stone-100 border border-stone-200'
-            }`}
-          >
-            <Compass className="w-3.5 h-3.5 text-stone-600" />
-            <span>Multimodal Routes & Fares</span>
-          </button>
+            <span>Smart Day Planner & Circuits</span>
+          </div>
         </div>
 
         {/* Selected Destination Pill / Quick Switch */}

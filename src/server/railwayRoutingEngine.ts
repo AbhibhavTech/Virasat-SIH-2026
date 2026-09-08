@@ -224,7 +224,55 @@ export const BENGALURU_HYDERABAD_LINE: TrackStation[] = [
   { id: 'sc', name: 'Secunderabad Junction', code: 'SC', lat: 17.4339, lng: 78.5017, isJunction: true },
 ];
 
+export const KASHMIR_PUNJAB_DELHI_LINE: TrackStation[] = [
+  { id: 'sina', name: 'Srinagar Railway Station', code: 'SINA', lat: 34.0384, lng: 74.8384 },
+  { id: 'atpa', name: 'Awantipora', code: 'ATPA', lat: 33.9189, lng: 75.0119 },
+  { id: 'ant', name: 'Anantnag', code: 'ANT', lat: 33.7297, lng: 75.1481 },
+  { id: 'qg', name: 'Qazigund', code: 'QG', lat: 33.5939, lng: 75.1633 },
+  { id: 'bahl', name: 'Banihal', code: 'BAHL', lat: 33.4981, lng: 75.2017 },
+  { id: 'sgdn', name: 'Sangaldan', code: 'SGDN', lat: 33.3514, lng: 75.1667 },
+  { id: 'svdk', name: 'Shri Mata Vaishno Devi Katra', code: 'SVDK', lat: 32.9856, lng: 74.9547, isJunction: true },
+  { id: 'uhp', name: 'Udhampur', code: 'UHP', lat: 32.9261, lng: 75.0069 },
+  { id: 'jat', name: 'Jammu Tawi', code: 'JAT', lat: 32.7058, lng: 74.8789, isJunction: true },
+  { id: 'kthu', name: 'Kathua', code: 'KTHU', lat: 32.3683, lng: 75.5217 },
+  { id: 'ptkc', name: 'Pathankot Cantt', code: 'PTKC', lat: 32.2619, lng: 75.6417, isJunction: true },
+  { id: 'mex', name: 'Mukerian', code: 'MEX', lat: 31.9547, lng: 75.6214 },
+  { id: 'dza', name: 'Dasuya', code: 'DZA', lat: 31.8153, lng: 75.6600 },
+  { id: 'jrc', name: 'Jalandhar Cantt', code: 'JRC', lat: 31.2981, lng: 75.6147, isJunction: true },
+  { id: 'pgw', name: 'Phagwara Junction', code: 'PGW', lat: 31.2217, lng: 75.7717 },
+  { id: 'ldh', name: 'Ludhiana Junction', code: 'LDH', lat: 30.9083, lng: 75.8589, isJunction: true },
+  { id: 'sir', name: 'Sirhind Junction', code: 'SIR', lat: 30.6333, lng: 76.3833 },
+  { id: 'rpj', name: 'Rajpura Junction', code: 'RPJ', lat: 30.4833, lng: 76.5833 },
+  { id: 'umb', name: 'Ambala Cantt Junction', code: 'UMB', lat: 30.3444, lng: 76.8181, isJunction: true },
+  { id: 'kkde', name: 'Kurukshetra Junction', code: 'KKDE', lat: 29.9694, lng: 76.8783 },
+  { id: 'kun', name: 'Karnal', code: 'KUN', lat: 29.6917, lng: 76.9850 },
+  { id: 'pnp', name: 'Panipat Junction', code: 'PNP', lat: 29.3908, lng: 76.9633, isJunction: true },
+  { id: 'snp', name: 'Sonipat Junction', code: 'SNP', lat: 28.9931, lng: 77.0178 },
+  { id: 'ndls', name: 'New Delhi Railway Station', code: 'NDLS', lat: 28.6430, lng: 77.2195, isJunction: true },
+];
+
+export const MUMBAI_PUNE_HYDERABAD_LINE: TrackStation[] = [
+  { id: 'csmt', name: 'Mumbai CSMT', code: 'CSMT', lat: 18.9400, lng: 72.8353, isJunction: true },
+  { id: 'dr', name: 'Dadar', code: 'DR', lat: 19.0178, lng: 72.8478, isJunction: true },
+  { id: 'tna', name: 'Thane', code: 'TNA', lat: 19.1860, lng: 72.9759, isJunction: true },
+  { id: 'kyn', name: 'Kalyan Junction', code: 'KYN', lat: 19.2354, lng: 73.1306, isJunction: true },
+  { id: 'kjt', name: 'Karjat Junction', code: 'KJT', lat: 18.9100, lng: 73.3300, isJunction: true },
+  { id: 'lnl', name: 'Lonavala', code: 'LNL', lat: 18.7557, lng: 73.4091 },
+  { id: 'cch', name: 'Chinchwad (PCMC)', code: 'CCH', lat: 18.6298, lng: 73.7997 },
+  { id: 'pune', name: 'Pune Junction', code: 'PUNE', lat: 18.5289, lng: 73.8744, isJunction: true },
+  { id: 'dd', name: 'Daund Junction', code: 'DD', lat: 18.4650, lng: 74.5800, isJunction: true },
+  { id: 'kwv', name: 'Kurduvadi', code: 'KWV', lat: 18.0833, lng: 75.4333, isJunction: true },
+  { id: 'sur', name: 'Solapur', code: 'SUR', lat: 17.6599, lng: 75.9064, isJunction: true },
+  { id: 'klbg', name: 'Kalaburagi (Gulbarga)', code: 'KLBG', lat: 17.3297, lng: 76.8343 },
+  { id: 'wadi', name: 'Wadi Junction', code: 'WADI', lat: 17.0500, lng: 76.9833, isJunction: true },
+  { id: 'vkb', name: 'Vikarabad Junction', code: 'VKB', lat: 17.3333, lng: 77.9000, isJunction: true },
+  { id: 'bmt', name: 'Begumpet', code: 'BMT', lat: 17.4419, lng: 78.4682 },
+  { id: 'sc', name: 'Secunderabad Junction', code: 'SC', lat: 17.4339, lng: 78.5017, isJunction: true },
+  { id: 'hyb', name: 'Hyderabad Deccan', code: 'HYB', lat: 17.3924, lng: 78.4682, isJunction: true },
+];
+
 export const ALL_MAIN_CORRIDORS = [
+  { id: 'kashmir_delhi', name: 'Northern Kashmir - Jammu - Punjab - Delhi Corridor', stations: KASHMIR_PUNJAB_DELHI_LINE },
   { id: 'western_trunk', name: 'Western Railway Trunk (Golden Quadrilateral)', stations: WESTERN_RAILWAY_TRUNK },
   { id: 'central_trunk', name: 'Central Railway Trunk (Grand Trunk)', stations: CENTRAL_RAILWAY_TRUNK },
   { id: 'delhi_jaipur_adi', name: 'Delhi - Jaipur - Ahmedabad Corridor', stations: DELHI_JAIPUR_AHMEDABAD_LINE },
@@ -232,11 +280,17 @@ export const ALL_MAIN_CORRIDORS = [
   { id: 'delhi_amritsar', name: 'Delhi - Ambala - Ludhiana - Amritsar Line', stations: DELHI_AMRITSAR_LINE },
   { id: 'grand_chord', name: 'Howrah - Gaya - Pt DDU - Delhi Grand Chord', stations: HOWRAH_DELHI_GRAND_CHORD },
   { id: 'konkan_railway', name: 'Konkan Railway Coastal Corridor', stations: KONKAN_RAILWAY_CORRIDOR },
+  { id: 'mumbai_pune_hyderabad', name: 'Mumbai - Pune - Solapur - Hyderabad Line', stations: MUMBAI_PUNE_HYDERABAD_LINE },
   { id: 'bengaluru_chennai', name: 'Bengaluru - Katpadi - Chennai Corridor', stations: BENGALURU_CHENNAI_LINE },
   { id: 'bengaluru_hyderabad', name: 'Bengaluru - Anantapur - Hyderabad Line', stations: BENGALURU_HYDERABAD_LINE },
 ];
 
 export const MAJOR_RAILWAY_STATIONS: Record<string, { name: string; lat: number; lng: number; code: string }> = {
+  SINA: { name: 'Srinagar Railway Station', code: 'SINA', lat: 34.0384, lng: 74.8384 },
+  JAT: { name: 'Jammu Tawi', code: 'JAT', lat: 32.7058, lng: 74.8789 },
+  SVDK: { name: 'Shri Mata Vaishno Devi Katra', code: 'SVDK', lat: 32.9856, lng: 74.9547 },
+  BAHL: { name: 'Banihal Railway Station', code: 'BAHL', lat: 33.4981, lng: 75.2017 },
+  PTKC: { name: 'Pathankot Cantt', code: 'PTKC', lat: 32.2619, lng: 75.6417 },
   NDLS: { name: 'New Delhi Railway Station', code: 'NDLS', lat: 28.6430, lng: 77.2195 },
   DLI: { name: 'Old Delhi Railway Station', code: 'DLI', lat: 28.6619, lng: 77.2280 },
   NZM: { name: 'Hazrat Nizamuddin', code: 'NZM', lat: 28.5888, lng: 77.2534 },
@@ -263,10 +317,21 @@ export const MAJOR_RAILWAY_STATIONS: Record<string, { name: string; lat: number;
   PNBE: { name: 'Patna Junction', code: 'PNBE', lat: 25.6022, lng: 85.1376 },
   BKN: { name: 'Bikaner Junction', code: 'BKN', lat: 28.0181, lng: 73.3169 },
   UDZ: { name: 'Udaipur City', code: 'UDZ', lat: 24.5797, lng: 73.6975 },
-  JAT: { name: 'Jammu Tawi', code: 'JAT', lat: 32.7058, lng: 74.8789 },
   TVC: { name: 'Thiruvananthapuram Central', code: 'TVC', lat: 8.4875, lng: 76.9532 },
   MAQ: { name: 'Mangaluru Central', code: 'MAQ', lat: 12.8631, lng: 74.8398 },
   MYS: { name: 'Mysuru Junction', code: 'MYS', lat: 12.3162, lng: 76.6433 },
+  BRC: { name: 'Vadodara Junction', code: 'BRC', lat: 22.3107, lng: 73.1812 },
+  ST: { name: 'Surat', code: 'ST', lat: 21.2049, lng: 72.8407 },
+  GWL: { name: 'Gwalior Junction', code: 'GWL', lat: 26.2183, lng: 78.1828 },
+  CNB: { name: 'Kanpur Central', code: 'CNB', lat: 26.4542, lng: 80.3503 },
+  PRYJ: { name: 'Prayagraj Junction', code: 'PRYJ', lat: 25.4489, lng: 81.8336 },
+  BBS: { name: 'Bhubaneswar Railway Station', code: 'BBS', lat: 20.2666, lng: 85.8436 },
+  PURI: { name: 'Puri Railway Station', code: 'PURI', lat: 19.8135, lng: 85.8315 },
+  INDB: { name: 'Indore Junction', code: 'INDB', lat: 22.7177, lng: 75.8682 },
+  SML: { name: 'Shimla Railway Station', code: 'SML', lat: 31.1039, lng: 77.1644 },
+  ERS: { name: 'Ernakulam Junction', code: 'ERS', lat: 9.9678, lng: 76.2891 },
+  MDU: { name: 'Madurai Junction', code: 'MDU', lat: 9.9176, lng: 78.1097 },
+  MAO: { name: 'Madgaon Junction (Goa)', code: 'MAO', lat: 15.2736, lng: 73.9678 },
 };
 
 // Helper: Haversine distance in km
@@ -414,8 +479,10 @@ export function findDirectRailCorridor(
 
 /**
  * Composite Multiline Railway Network Path:
- * If origin and destination span across interconnected corridors (e.g. Mumbai -> Varanasi via Central Line + Purvanchal Line,
- * or Bengaluru -> Delhi via Secunderabad/Itarsi/Jhansi), find the intersecting junction and route through genuine tracks.
+ * Uses Dijkstra shortest path across all interconnected Indian Railway trunk corridors.
+ * If origin and destination span across interconnected corridors (e.g. Srinagar -> CSMT,
+ * Mumbai -> Varanasi, Bengaluru -> Delhi, Howrah -> Chennai), finds the exact continuous
+ * railway track path through connecting junctions.
  */
 export function findConnectedRailRoute(
   lat1: number,
@@ -423,63 +490,197 @@ export function findConnectedRailRoute(
   lat2: number,
   lon2: number
 ): RailwayRouteResult {
-  // First attempt direct corridor match
+  // 1. First attempt direct single-corridor match
   const direct = findDirectRailCorridor(lat1, lon1, lat2, lon2);
   if (direct) return direct;
 
-  // Western Railway to Delhi fallback / Grand Corridor Default:
-  // If no direct corridor matched, connect to the closest major trunk line
-  // (e.g. Western Railway Rajdhani Corridor)
-  const westernOrigin = findClosestStationOnCorridor(lat1, lon1, WESTERN_RAILWAY_TRUNK);
-  const westernDest = findClosestStationOnCorridor(lat2, lon2, WESTERN_RAILWAY_TRUNK);
-  
-  const centralOrigin = findClosestStationOnCorridor(lat1, lon1, CENTRAL_RAILWAY_TRUNK);
-  const centralDest = findClosestStationOnCorridor(lat2, lon2, CENTRAL_RAILWAY_TRUNK);
+  // 2. Build or query national railway graph across all corridors
+  type Node = {
+    code: string;
+    name: string;
+    lat: number;
+    lng: number;
+    isJunction: boolean;
+  };
 
-  const westernSum = westernOrigin.distKm + westernDest.distKm;
-  const centralSum = centralOrigin.distKm + centralDest.distKm;
+  const nodes = new Map<string, Node>();
+  const adjacency = new Map<string, Array<{ target: string; dist: number }>>();
 
-  const chosenCorridor = westernSum <= centralSum ? WESTERN_RAILWAY_TRUNK : CENTRAL_RAILWAY_TRUNK;
-  const corridorName = westernSum <= centralSum ? 'Western Railway Trunk Corridor' : 'Central Railway Grand Trunk Corridor';
+  function addEdge(from: string, to: string, dist: number) {
+    if (!adjacency.has(from)) adjacency.set(from, []);
+    if (!adjacency.has(to)) adjacency.set(to, []);
+    adjacency.get(from)!.push({ target: to, dist });
+    adjacency.get(to)!.push({ target: from, dist });
+  }
 
-  const origStation = findClosestStationOnCorridor(lat1, lon1, chosenCorridor);
-  const destStation = findClosestStationOnCorridor(lat2, lon2, chosenCorridor);
+  // Populate stations and sequential corridor tracks
+  for (const c of ALL_MAIN_CORRIDORS) {
+    for (let i = 0; i < c.stations.length; i++) {
+      const stn = c.stations[i];
+      const key = stn.code.toUpperCase();
+      if (!nodes.has(key)) {
+        nodes.set(key, {
+          code: key,
+          name: stn.name,
+          lat: stn.lat,
+          lng: stn.lng,
+          isJunction: Boolean(stn.isJunction),
+        });
+      }
 
-  const isForward = origStation.index < destStation.index;
-  const startIdx = Math.min(origStation.index, destStation.index);
-  const endIdx = Math.max(origStation.index, destStation.index);
+      if (i > 0) {
+        const prev = c.stations[i - 1];
+        const prevKey = prev.code.toUpperCase();
+        const d = haversineKm(prev.lat, prev.lng, stn.lat, stn.lng);
+        addEdge(prevKey, key, d);
+      }
+    }
+  }
 
-  const sub = chosenCorridor.slice(startIdx, endIdx + 1);
-  if (!isForward) sub.reverse();
+  // Interconnect city railway hubs within 20km (e.g. NDLS-NZM-DLI in Delhi, CSMT-MMCT-DR in Mumbai, SC-HYB in Hyderabad)
+  const nodeArr = Array.from(nodes.values());
+  for (let i = 0; i < nodeArr.length; i++) {
+    for (let j = i + 1; j < nodeArr.length; j++) {
+      const a = nodeArr[i];
+      const b = nodeArr[j];
+      const d = haversineKm(a.lat, a.lng, b.lat, b.lng);
+      if (d < 18) {
+        addEdge(a.code, b.code, d);
+      }
+    }
+  }
+
+  // Find nearest network node to origin and destination
+  let bestStart: Node = nodeArr[0];
+  let minStartDist = Infinity;
+  let bestEnd: Node = nodeArr[1];
+  let minEndDist = Infinity;
+
+  for (const n of nodeArr) {
+    const dStart = haversineKm(lat1, lon1, n.lat, n.lng);
+    if (dStart < minStartDist) {
+      minStartDist = dStart;
+      bestStart = n;
+    }
+    const dEnd = haversineKm(lat2, lon2, n.lat, n.lng);
+    if (dEnd < minEndDist) {
+      minEndDist = dEnd;
+      bestEnd = n;
+    }
+  }
+
+  // Dijkstra Shortest Path Search
+  const distances = new Map<string, number>();
+  const previous = new Map<string, string | null>();
+  const unvisited = new Set<string>();
+
+  for (const n of nodeArr) {
+    distances.set(n.code, Infinity);
+    previous.set(n.code, null);
+    unvisited.add(n.code);
+  }
+  distances.set(bestStart.code, 0);
+
+  while (unvisited.size > 0) {
+    // Find node with minimum distance in unvisited
+    let current: string | null = null;
+    let shortest = Infinity;
+    for (const code of unvisited) {
+      const d = distances.get(code) ?? Infinity;
+      if (d < shortest) {
+        shortest = d;
+        current = code;
+      }
+    }
+
+    if (!current || shortest === Infinity || current === bestEnd.code) {
+      break;
+    }
+
+    unvisited.delete(current);
+
+    const neighbors = adjacency.get(current) || [];
+    for (const edge of neighbors) {
+      if (!unvisited.has(edge.target)) continue;
+      const alt = shortest + edge.dist;
+      if (alt < (distances.get(edge.target) ?? Infinity)) {
+        distances.set(edge.target, alt);
+        previous.set(edge.target, current);
+      }
+    }
+  }
+
+  // Reconstruct path
+  const pathCodes: string[] = [];
+  let curr: string | null = bestEnd.code;
+  while (curr) {
+    pathCodes.unshift(curr);
+    curr = previous.get(curr) || null;
+  }
+
+  // If path finding produced only 1 station or disconnected, fallback to sequential
+  const resolvedStations: Node[] = pathCodes.length > 1
+    ? pathCodes.map(code => nodes.get(code)!).filter(Boolean)
+    : [bestStart, bestEnd];
 
   const polyline: [number, number][] = [];
   polyline.push([lat1, lon1]);
-  let totalDist = haversineKm(lat1, lon1, sub[0].lat, sub[0].lng);
+  let totalTrackKm = haversineKm(lat1, lon1, resolvedStations[0].lat, resolvedStations[0].lng);
 
-  for (let i = 0; i < sub.length; i++) {
-    polyline.push([sub[i].lat, sub[i].lng]);
+  for (let i = 0; i < resolvedStations.length; i++) {
+    polyline.push([resolvedStations[i].lat, resolvedStations[i].lng]);
     if (i > 0) {
-      totalDist += haversineKm(sub[i - 1].lat, sub[i - 1].lng, sub[i].lat, sub[i].lng);
+      totalTrackKm += haversineKm(
+        resolvedStations[i - 1].lat,
+        resolvedStations[i - 1].lng,
+        resolvedStations[i].lat,
+        resolvedStations[i].lng
+      );
     }
   }
 
   polyline.push([lat2, lon2]);
-  totalDist += haversineKm(sub[sub.length - 1].lat, sub[sub.length - 1].lng, lat2, lon2);
+  totalTrackKm += haversineKm(
+    resolvedStations[resolvedStations.length - 1].lat,
+    resolvedStations[resolvedStations.length - 1].lng,
+    lat2,
+    lon2
+  );
 
-  const realisticTrackDist = Math.round(totalDist * 1.05);
-  const durationMinutes = Math.round((realisticTrackDist / 78) * 60 + 20);
+  const realisticDistKm = Math.round(totalTrackKm * 1.05);
 
-  const keyStops = sub
-    .filter((s, idx) => idx === 0 || idx === sub.length - 1 || s.isJunction || idx % 4 === 0)
-    .map((s) => s.name);
+  // Commercial speed calculation matching IRCTC & Google Transit:
+  // For long distance (> 800 km) Rajdhani / Vande Bharat Express routes: ~76 km/h + 40 mins
+  // For medium distance (200-800 km): ~68 km/h + 25 mins
+  // For regional (50-200 km): ~55 km/h + 15 mins
+  let durationMinutes = 0;
+  let expressTier: 'rajdhani_vande_bharat' | 'superfast' | 'passenger_suburban' = 'superfast';
+
+  if (realisticDistKm > 800) {
+    expressTier = 'rajdhani_vande_bharat';
+    durationMinutes = Math.round((realisticDistKm / 76) * 60 + 40);
+  } else if (realisticDistKm > 200) {
+    expressTier = 'superfast';
+    durationMinutes = Math.round((realisticDistKm / 68) * 60 + 25);
+  } else {
+    expressTier = 'passenger_suburban';
+    durationMinutes = Math.round((realisticDistKm / 48) * 60 + 15);
+  }
+
+  // Key stops along path
+  const keyStops = resolvedStations
+    .filter((s, idx) => idx === 0 || idx === resolvedStations.length - 1 || s.isJunction || idx % 4 === 0)
+    .map(s => s.name);
+
+  const corridorName = `${bestStart.name} - ${bestEnd.name} Intercity Rail Corridor`;
 
   return {
     polyline,
-    distanceKm: realisticTrackDist,
+    distanceKm: realisticDistKm,
     durationMinutes,
     durationFormatted: formatTransitDuration(durationMinutes),
     stops: keyStops,
-    expressTier: realisticTrackDist > 500 ? 'rajdhani_vande_bharat' : 'superfast',
+    expressTier,
     corridorName,
   };
 }
@@ -487,6 +688,31 @@ export function findConnectedRailRoute(
 // ----------------------------------------------------------------------
 // 2. High-Precision Road & Highway Routing (OSRM with National Highway Fallback)
 // ----------------------------------------------------------------------
+
+// Verified NH44 Northern Highway Corridor (Srinagar - Anantnag - Banihal - Jammu - Pathankot - Jalandhar - Delhi)
+export const NH44_NORTH_HIGHWAY_WAYPOINTS: [number, number][] = [
+  [34.0837, 74.7973], // Srinagar City
+  [33.9189, 75.0119], // Awantipora
+  [33.7297, 75.1481], // Anantnag
+  [33.5350, 75.1950], // Qazigund
+  [33.5122, 75.2104], // Banihal / Jawahar Tunnel Bypass
+  [33.2435, 75.2412], // Ramban Chenab Valley
+  [33.0210, 75.1400], // Chenani-Nashri Tunnel
+  [32.9261, 75.0069], // Udhampur
+  [32.7266, 74.8570], // Jammu Tawi Bypass
+  [32.3712, 75.5241], // Kathua
+  [32.2684, 75.6529], // Pathankot
+  [31.9547, 75.6214], // Mukerian
+  [31.3260, 75.5762], // Jalandhar
+  [31.2217, 75.7717], // Phagwara
+  [30.9010, 75.8573], // Ludhiana
+  [30.3782, 76.7767], // Ambala Cantt
+  [29.9694, 76.8783], // Kurukshetra
+  [29.6917, 76.9850], // Karnal
+  [29.3909, 76.9635], // Panipat
+  [28.9931, 77.0178], // Sonipat
+  [28.6430, 77.2195], // New Delhi Ring Road
+];
 
 // Verified National Highway 48 Corridor (Delhi - Jaipur - Udaipur - Ahmedabad - Vadodara - Surat - Mumbai)
 // Google Maps route: 1,430 km, 23 hr 32 min
@@ -591,6 +817,28 @@ export async function getRealRoadRoute(
 
   // FALLBACK: Verified National Highway Waypoints or Interpolated Road Corridor
   const directDist = haversineKm(lat1, lon1, lat2, lon2);
+
+  // If between Kashmir/Punjab and Mumbai/Western India regions, stitch NH44 and NH48!
+  const isKashmirToMumbai =
+    ((lat1 > 32.0 && lat2 < 20.5 && lon2 < 74.5) ||
+     (lat2 > 32.0 && lat1 < 20.5 && lon1 < 74.5));
+
+  if (isKashmirToMumbai) {
+    const isNorthToSouth = lat1 > lat2;
+    const combined = isNorthToSouth
+      ? [...NH44_NORTH_HIGHWAY_WAYPOINTS, ...NH48_HIGHWAY_WAYPOINTS.slice(1)]
+      : [...[...NH48_HIGHWAY_WAYPOINTS].reverse(), ...[...NH44_NORTH_HIGHWAY_WAYPOINTS].reverse().slice(1)];
+    const distanceKm = 2240;
+    const durationMinutes = Math.round((distanceKm / 59) * 60);
+
+    return {
+      polyline: combined,
+      distanceKm,
+      durationMinutes,
+      durationFormatted: formatTransitDuration(durationMinutes),
+      source: 'national_highway_network',
+    };
+  }
 
   // If between Mumbai and Delhi regions, follow NH48 Highway Waypoints!
   const isNearMumbaiDelhi =

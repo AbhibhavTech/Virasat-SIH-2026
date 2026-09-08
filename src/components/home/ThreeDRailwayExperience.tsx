@@ -143,10 +143,10 @@ export const ThreeDRailwayExperience: React.FC<ThreeDRailwayExperienceProps> = (
         </div>
 
         <button
-          onClick={() => onNavigateTab('routes')}
+          onClick={() => onNavigateTab('itinerary')}
           className="px-5 py-2.5 rounded-2xl bg-amber-800 hover:bg-amber-900 text-white text-xs font-bold transition shadow-warm flex items-center gap-2 self-start md:self-auto active:scale-98"
         >
-          <span>Open Transit & Route Studio</span>
+          <span>Plan Travel Itinerary</span>
           <ArrowRight className="w-3.5 h-3.5" />
         </button>
       </div>
@@ -270,10 +270,10 @@ export const ThreeDRailwayExperience: React.FC<ThreeDRailwayExperienceProps> = (
             </p>
             <div className="pt-2">
               <button
-                onClick={() => onNavigateTab('routes')}
+                onClick={() => onNavigateTab('itinerary')}
                 className="text-xs font-bold text-amber-900 hover:text-amber-950 flex items-center gap-1.5 transition"
               >
-                <span>Calculate transit route from {activeStation.code}</span>
+                <span>Plan travel circuit from {activeStation.code}</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </button>
             </div>

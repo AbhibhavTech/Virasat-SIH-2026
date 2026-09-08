@@ -7,7 +7,6 @@ import {
   Star,
   Sparkles,
   Filter,
-  Navigation,
   ArrowRight,
   Box,
   Landmark,
@@ -230,13 +229,8 @@ export const CityHubPage: React.FC<CityHubPageProps> = ({
     return places.filter((p) => matchesCategory(p, activeCategory));
   }, [places, activeCategory]);
 
-  // Curated flagship destinations for the top horizontal bar
-  const flagshipDestinations = useMemo(() => {
-    return places.slice(0, 6);
-  }, [places]);
-
   return (
-    <div className="space-y-6 max-w-7xl mx-auto animate-fadeIn pb-8">
+    <div className="space-y-6 w-full animate-fadeIn pb-8">
       {/* 3D City Immersion Header with Layered Background & Guide */}
       <CityImmersionHeader
         cityName={selectedCity}
@@ -244,68 +238,8 @@ export const CityHubPage: React.FC<CityHubPageProps> = ({
         cities={cities}
         onSelectCity={onSelectCity}
         onExploreHeritage={() => onNavigateTab('heritage')}
-        onExploreTransit={() => onNavigateTab('routes')}
+        onExploreTransit={() => onNavigateTab('map')}
       />
-
-      {/* TOP DESTINATIONS BAR: Highlights of Most Famous Places in Selected City */}
-      {flagshipDestinations.length > 0 && (
-        <div className="bg-white rounded-2xl border border-[#EFE8DF] p-4 shadow-xs space-y-3">
-          <div className="flex items-center justify-between gap-2 flex-wrap">
-            <div className="flex items-center gap-2">
-              <span className="flex items-center justify-center w-6 h-6 rounded-full bg-amber-100 text-[#FF671F] text-xs font-bold">
-                ★
-              </span>
-              <h3 className="text-sm font-bold text-stone-900">
-                Most Famous Places & Major Highlights in {selectedCity}
-              </h3>
-            </div>
-            <span className="text-[11px] font-medium text-stone-500">
-              Verified coordinates & tourist attractions
-            </span>
-          </div>
-
-          <div className="flex items-center gap-3 overflow-x-auto pb-1 scrollbar-thin">
-            {flagshipDestinations.map((p) => {
-              const has3d = p.features?.['3d'] || (p as any).model_3d?.available;
-              return (
-                <div
-                  key={p.id}
-                  onClick={() => onSelectPlace(p.id)}
-                  className="shrink-0 w-64 p-2.5 rounded-xl border border-stone-200 bg-[#FAF8F5] hover:bg-orange-50/60 hover:border-orange-300 transition-all cursor-pointer group shadow-2xs"
-                >
-                  <div className="flex items-center gap-3">
-                    <img
-                      src={
-                        p.thumbnail_url ||
-                        'https://images.unsplash.com/photo-1548013146-72479768bada?w=300&auto=format&fit=crop&q=80'
-                      }
-                      alt={p.name}
-                      className="w-14 h-14 rounded-lg object-cover group-hover:scale-105 transition-transform"
-                    />
-                    <div className="min-w-0 flex-1">
-                      <div className="flex items-center gap-1.5 mb-0.5">
-                        <span className="text-[10px] font-bold text-[#FF671F] uppercase tracking-wider truncate">
-                          {has3d ? '3D Model' : p.category || 'Famous Place'}
-                        </span>
-                        <div className="flex items-center text-[#FF671F] text-[10px] font-bold ml-auto shrink-0">
-                          <Star className="w-2.5 h-2.5 fill-current mr-0.5" />
-                          <span>{p.rating || 4.8}</span>
-                        </div>
-                      </div>
-                      <h4 className="text-xs font-bold text-stone-900 truncate group-hover:text-[#FF671F] transition">
-                        {p.name}
-                      </h4>
-                      <p className="text-[11px] text-stone-500 truncate mt-0.5">
-                        {p.summary || `${p.city}, ${p.state}`}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      )}
 
       {/* Filter Tabs & Quick Action Navigation Bar */}
       <div className="flex items-center justify-between gap-4 flex-wrap p-4 bg-white rounded-2xl border border-[#EFE8DF] shadow-xs">
@@ -354,11 +288,11 @@ export const CityHubPage: React.FC<CityHubPageProps> = ({
             <span>28 States DB</span>
           </button>
           <button
-            onClick={() => onNavigateTab('routes')}
+            onClick={() => onNavigateTab('map')}
             className="px-3.5 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 border border-stone-200 text-xs font-bold text-stone-800 flex items-center gap-1.5 transition"
           >
-            <Navigation className="w-3.5 h-3.5 text-stone-700" />
-            <span>Transit Engine</span>
+            <Compass className="w-3.5 h-3.5 text-stone-700" />
+            <span>Interactive Map</span>
           </button>
         </div>
       </div>

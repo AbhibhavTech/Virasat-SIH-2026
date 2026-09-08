@@ -1396,7 +1396,7 @@ app.patch('/api/reports/:id/status', (req, res) => {
 });
 
 // -------------------------------------------------------------
-// Search Endpoint
+// Search Endpoint & Unified Autocomplete Suggestions
 // -------------------------------------------------------------
 app.get('/api/search', (req, res) => {
   const query = ((req.query.q as string) || '').toLowerCase().trim();
@@ -1421,6 +1421,180 @@ app.get('/api/search', (req, res) => {
     .slice(0, limit);
 
   res.json(matches);
+});
+
+export interface LocationSuggestion {
+  id: string;
+  name: string;
+  code?: string;
+  type: 'station' | 'heritage' | 'place' | 'city';
+  categoryType: 'station' | 'heritage' | 'place' | 'city';
+  city?: string;
+  state?: string;
+  lat: number;
+  lng: number;
+  subtitle: string;
+  badge: string;
+  score: number;
+}
+
+app.get('/api/locations/suggest', (req, res) => {
+  const query = ((req.query.q as string) || '').toLowerCase().trim();
+  const limit = parseInt(req.query.limit as string, 10) || 12;
+
+  if (!query) {
+    return res.json([]);
+  }
+
+  const cleanQ = query.replace(/[^a-z0-9]/g, '');
+  const tokens = query.split(/[\s,.-]+/).filter(t => t.length > 1);
+  const isRailQuery = /station|railway|stn|junction|terminus|cantt|rail|terminal/i.test(query);
+
+  const suggestions: LocationSuggestion[] = [];
+  const seenIds = new Set<string>();
+  const seenNameKeys = new Set<string>();
+
+  // 1. Search Railway Stations
+  for (const s of railwayStationsData) {
+    const sName = s.name.toLowerCase();
+    const sCode = (s.code || '').toLowerCase();
+    const sCity = s.city.toLowerCase();
+    const sCleanName = sName.replace(/[^a-z0-9]/g, '');
+
+    let score = 0;
+    if (sCode === query || cleanQ === sCode) score += 100;
+    else if (sCleanName === cleanQ) score += 90;
+    else if (sCode.startsWith(query)) score += 80;
+    else if (sName.startsWith(query)) score += 70;
+    else if (sName.includes(query)) score += 50;
+    else if (query.includes(sCity) && isRailQuery) score += 65;
+    else if (tokens.length > 0 && tokens.every(tok => sName.includes(tok) || sCity.includes(tok) || sCode.includes(tok))) score += 45;
+
+    const uniqueId = s.id;
+    if (score > 0 && !seenIds.has(uniqueId)) {
+      seenIds.add(uniqueId);
+      seenNameKeys.add(`station:${sCleanName}`);
+      suggestions.push({
+        id: uniqueId,
+        name: s.name,
+        code: s.code,
+        type: 'station',
+        categoryType: 'station',
+        city: s.city,
+        state: s.state,
+        lat: s.lat,
+        lng: s.lng,
+        subtitle: `${s.code ? `[${s.code}] ` : ''}${s.city}, ${s.state} · Indian Railways`,
+        badge: s.is_junction ? 'Major Rail Junction' : 'Railway Station',
+        score: score + (isRailQuery ? 20 : 0),
+      });
+    }
+  }
+
+  // 2. Search Heritage Monuments
+  for (const h of heritageData) {
+    const hName = h.name.toLowerCase();
+    const hCity = (h.city || '').toLowerCase();
+    const hState = (h.state || '').toLowerCase();
+    const hClean = hName.replace(/[^a-z0-9]/g, '');
+
+    let score = 0;
+    if (h.id.toLowerCase() === query || hClean === cleanQ) score += 95;
+    else if (hName.startsWith(query)) score += 75;
+    else if (hName.includes(query)) score += 55;
+    else if (tokens.length > 0 && tokens.every(tok => hName.includes(tok) || hCity.includes(tok) || hState.includes(tok))) score += 40;
+
+    // Disambiguate if an existing station shares the exact same ID (e.g. csmt)
+    const uniqueId = seenIds.has(h.id) ? `heritage-${h.id}` : h.id;
+    if (score > 0 && !seenIds.has(uniqueId)) {
+      seenIds.add(uniqueId);
+      seenNameKeys.add(`heritage:${hClean}`);
+      seenNameKeys.add(`place:${hClean}`);
+      seenIds.add(`monument-${h.id}`);
+      suggestions.push({
+        id: uniqueId,
+        name: h.name,
+        type: 'heritage',
+        categoryType: 'heritage',
+        city: h.city,
+        state: h.state,
+        lat: h.coordinates?.lat || 28.6129,
+        lng: h.coordinates?.lng || 77.2295,
+        subtitle: `${h.city ? `${h.city}, ` : ''}${h.state} · ${h.category || 'National Monument'}`,
+        badge: h.unesco ? 'UNESCO Heritage' : 'ASI Monument',
+        score,
+      });
+    }
+  }
+
+  // 3. Search Places & Attractions (skip duplicate monuments already returned)
+  for (const p of placesData.values()) {
+    const pName = p.name.toLowerCase();
+    const pCity = (p.city || '').toLowerCase();
+    const pClean = pName.replace(/[^a-z0-9]/g, '');
+
+    // If identical place or heritage monument is already in suggestions, skip duplicate
+    if (seenIds.has(p.id) || seenIds.has(`monument-${p.id}`) || seenNameKeys.has(`heritage:${pClean}`) || seenNameKeys.has(`place:${pClean}`)) {
+      continue;
+    }
+
+    let score = 0;
+    if (p.id.toLowerCase() === query || pClean === cleanQ) score += 90;
+    else if (pName.startsWith(query)) score += 70;
+    else if (pName.includes(query)) score += 48;
+    else if (tokens.length > 0 && tokens.every(tok => pName.includes(tok) || pCity.includes(tok))) score += 35;
+
+    const uniqueId = seenIds.has(p.id) ? `place-${p.id}` : p.id;
+    if (score > 0 && !seenIds.has(uniqueId)) {
+      seenIds.add(uniqueId);
+      seenNameKeys.add(`place:${pClean}`);
+      suggestions.push({
+        id: uniqueId,
+        name: p.name,
+        type: 'place',
+        categoryType: 'place',
+        city: p.city,
+        state: p.state,
+        lat: p.coordinates?.lat || 28.6129,
+        lng: p.coordinates?.lng || 77.2295,
+        subtitle: `${p.city}, ${p.state} · ${p.category || 'Sight'}`,
+        badge: p.rating ? `★ ${p.rating}` : 'Tourist Landmark',
+        score,
+      });
+    }
+  }
+
+  // 4. Search Cities
+  for (const c of citiesData) {
+    const cName = c.name.toLowerCase();
+    const cClean = cName.replace(/[^a-z0-9]/g, '');
+
+    let score = 0;
+    if (c.id.toLowerCase() === query || cClean === cleanQ) score += 85;
+    else if (cName.startsWith(query)) score += 65;
+    else if (cName.includes(query)) score += 40;
+
+    const uniqueId = seenIds.has(c.id) ? `city-${c.id}` : c.id;
+    if (score > 0 && !seenIds.has(uniqueId)) {
+      seenIds.add(uniqueId);
+      suggestions.push({
+        id: uniqueId,
+        name: c.name,
+        type: 'city',
+        categoryType: 'city',
+        city: c.name,
+        state: c.state,
+        lat: c.lat,
+        lng: c.lng,
+        subtitle: `${c.state} · ${c.places_count ? `${c.places_count} sights` : 'City Destination'}`,
+        badge: 'City / Region',
+        score: score - (isRailQuery ? 15 : 0),
+      });
+    }
+  }
+
+  suggestions.sort((a, b) => b.score - a.score);
+  res.json(suggestions.slice(0, limit));
 });
 
 // -------------------------------------------------------------
@@ -1531,24 +1705,95 @@ function resolveLocation(queryOrId?: string, lat?: number, lng?: number, cityCon
   const STATION_ALIASES: Record<string, { name: string; id: string; lat: number; lng: number }> = {
     csmt: { name: 'Chhatrapati Shivaji Maharaj Terminus (CSMT)', id: 'csmt', lat: 18.9400, lng: 72.8353 },
     cst: { name: 'Chhatrapati Shivaji Maharaj Terminus (CSMT)', id: 'csmt', lat: 18.9400, lng: 72.8353 },
+    mumbaicsmt: { name: 'Chhatrapati Shivaji Maharaj Terminus (CSMT)', id: 'csmt', lat: 18.9400, lng: 72.8353 },
+    sina: { name: 'Srinagar Railway Station (SINA)', id: 'srinagar-stn', lat: 34.0384, lng: 74.8384 },
+    srinagarstn: { name: 'Srinagar Railway Station (SINA)', id: 'srinagar-stn', lat: 34.0384, lng: 74.8384 },
+    srinagarstation: { name: 'Srinagar Railway Station (SINA)', id: 'srinagar-stn', lat: 34.0384, lng: 74.8384 },
+    srinagarrailwaystation: { name: 'Srinagar Railway Station (SINA)', id: 'srinagar-stn', lat: 34.0384, lng: 74.8384 },
+    svdk: { name: 'Shri Mata Vaishno Devi Katra (SVDK)', id: 'katra-svdk', lat: 32.9856, lng: 74.9547 },
+    katrastation: { name: 'Shri Mata Vaishno Devi Katra (SVDK)', id: 'katra-svdk', lat: 32.9856, lng: 74.9547 },
+    jat: { name: 'Jammu Tawi (JAT)', id: 'jammu-tawi', lat: 32.7058, lng: 74.8789 },
+    jammustation: { name: 'Jammu Tawi (JAT)', id: 'jammu-tawi', lat: 32.7058, lng: 74.8789 },
+    bahl: { name: 'Banihal Railway Station (BAHL)', id: 'banihal-stn', lat: 33.4981, lng: 75.2017 },
     ndls: { name: 'New Delhi Railway Station (NDLS)', id: 'ndls', lat: 28.6430, lng: 77.2195 },
+    delhistation: { name: 'New Delhi Railway Station (NDLS)', id: 'ndls', lat: 28.6430, lng: 77.2195 },
     dli: { name: 'Old Delhi Railway Station (DLI)', id: 'dli', lat: 28.6619, lng: 77.2280 },
     nzm: { name: 'Hazrat Nizamuddin (NZM)', id: 'nzm', lat: 28.5888, lng: 77.2534 },
     mmct: { name: 'Mumbai Central (MMCT)', id: 'mumbai-central', lat: 18.9696, lng: 72.8193 },
+    mumbaicentral: { name: 'Mumbai Central (MMCT)', id: 'mumbai-central', lat: 18.9696, lng: 72.8193 },
     jp: { name: 'Jaipur Junction (JP)', id: 'jp', lat: 26.9196, lng: 75.7878 },
+    jaipurstation: { name: 'Jaipur Junction (JP)', id: 'jp', lat: 26.9196, lng: 75.7878 },
     agc: { name: 'Agra Cantt (AGC)', id: 'agc', lat: 27.1578, lng: 77.9904 },
+    agrastation: { name: 'Agra Cantt (AGC)', id: 'agc', lat: 27.1578, lng: 77.9904 },
     bsb: { name: 'Varanasi Junction (BSB)', id: 'bsb', lat: 25.3283, lng: 82.9858 },
+    varanasistation: { name: 'Varanasi Junction (BSB)', id: 'bsb', lat: 25.3283, lng: 82.9858 },
     sbc: { name: 'KSR Bengaluru (SBC)', id: 'sbc', lat: 12.9781, lng: 77.5694 },
+    bengalurustation: { name: 'KSR Bengaluru (SBC)', id: 'sbc', lat: 12.9781, lng: 77.5694 },
+    bangalorestation: { name: 'KSR Bengaluru (SBC)', id: 'sbc', lat: 12.9781, lng: 77.5694 },
     mas: { name: 'Chennai Central (MAS)', id: 'mas', lat: 13.0827, lng: 80.2756 },
+    chennaistation: { name: 'Chennai Central (MAS)', id: 'mas', lat: 13.0827, lng: 80.2756 },
     hwh: { name: 'Howrah Junction (HWH)', id: 'hwh', lat: 22.5833, lng: 88.3425 },
+    kolkatastation: { name: 'Howrah Junction (HWH)', id: 'hwh', lat: 22.5833, lng: 88.3425 },
+    howrahstation: { name: 'Howrah Junction (HWH)', id: 'hwh', lat: 22.5833, lng: 88.3425 },
     adi: { name: 'Ahmedabad Junction (ADI)', id: 'adi', lat: 23.0225, lng: 72.5714 },
+    ahmedabadstation: { name: 'Ahmedabad Junction (ADI)', id: 'adi', lat: 23.0225, lng: 72.5714 },
     pune: { name: 'Pune Junction (PUNE)', id: 'pune', lat: 18.5289, lng: 73.8744 },
+    punestation: { name: 'Pune Junction (PUNE)', id: 'pune', lat: 18.5289, lng: 73.8744 },
+    lko: { name: 'Lucknow Charbagh (LKO)', id: 'lucknow-charbagh', lat: 26.8317, lng: 80.9248 },
+    lucknowstation: { name: 'Lucknow Charbagh (LKO)', id: 'lucknow-charbagh', lat: 26.8317, lng: 80.9248 },
+    bpl: { name: 'Bhopal Junction (BPL)', id: 'bhopal-jn', lat: 23.2599, lng: 77.4126 },
+    bhopalstation: { name: 'Bhopal Junction (BPL)', id: 'bhopal-jn', lat: 23.2599, lng: 77.4126 },
+    st: { name: 'Surat Railway Station (ST)', id: 'surat-stn', lat: 21.2049, lng: 72.8407 },
+    suratstation: { name: 'Surat Railway Station (ST)', id: 'surat-stn', lat: 21.2049, lng: 72.8407 },
+    brc: { name: 'Vadodara Junction (BRC)', id: 'vadodara-jn', lat: 22.3107, lng: 73.1812 },
+    vadodarastation: { name: 'Vadodara Junction (BRC)', id: 'vadodara-jn', lat: 22.3107, lng: 73.1812 },
+    barodastation: { name: 'Vadodara Junction (BRC)', id: 'vadodara-jn', lat: 22.3107, lng: 73.1812 },
+    pnbe: { name: 'Patna Junction (PNBE)', id: 'patna-jn', lat: 25.6022, lng: 85.1376 },
+    patnastation: { name: 'Patna Junction (PNBE)', id: 'patna-jn', lat: 25.6022, lng: 85.1376 },
+    ghy: { name: 'Guwahati Railway Station (GHY)', id: 'guwahati-jn', lat: 26.1824, lng: 91.7516 },
+    guwahatistation: { name: 'Guwahati Railway Station (GHY)', id: 'guwahati-jn', lat: 26.1824, lng: 91.7516 },
+    bbs: { name: 'Bhubaneswar Railway Station (BBS)', id: 'bhubaneswar-jn', lat: 20.2666, lng: 85.8436 },
+    bhubaneswarstation: { name: 'Bhubaneswar Railway Station (BBS)', id: 'bhubaneswar-jn', lat: 20.2666, lng: 85.8436 },
+    puri: { name: 'Puri Railway Station (PURI)', id: 'puri-stn', lat: 19.8135, lng: 85.8315 },
+    puristation: { name: 'Puri Railway Station (PURI)', id: 'puri-stn', lat: 19.8135, lng: 85.8315 },
+    mao: { name: 'Madgaon Junction (MAO)', id: 'madgaon-jn', lat: 15.2736, lng: 73.9678 },
+    goastation: { name: 'Madgaon Junction Goa (MAO)', id: 'madgaon-jn', lat: 15.2736, lng: 73.9678 },
+    madgaonstation: { name: 'Madgaon Junction Goa (MAO)', id: 'madgaon-jn', lat: 15.2736, lng: 73.9678 },
+    cdg: { name: 'Chandigarh Junction (CDG)', id: 'chandigarh-jn', lat: 30.7056, lng: 76.8013 },
+    chandigarhstation: { name: 'Chandigarh Junction (CDG)', id: 'chandigarh-jn', lat: 30.7056, lng: 76.8013 },
+    asr: { name: 'Amritsar Junction (ASR)', id: 'asr', lat: 31.6340, lng: 74.8723 },
+    amritsarstation: { name: 'Amritsar Junction (ASR)', id: 'asr', lat: 31.6340, lng: 74.8723 },
+    sml: { name: 'Shimla Railway Station (SML)', id: 'shimla-stn', lat: 31.1039, lng: 77.1644 },
+    shimlastation: { name: 'Shimla Railway Station (SML)', id: 'shimla-stn', lat: 31.1039, lng: 77.1644 },
+    ers: { name: 'Ernakulam Junction (ERS)', id: 'ers', lat: 9.9678, lng: 76.2891 },
+    kochistation: { name: 'Ernakulam Junction (ERS)', id: 'ers', lat: 9.9678, lng: 76.2891 },
+    ernakulamstation: { name: 'Ernakulam Junction (ERS)', id: 'ers', lat: 9.9678, lng: 76.2891 },
+    tvc: { name: 'Thiruvananthapuram Central (TVC)', id: 'trivandrum-central', lat: 8.4875, lng: 76.9532 },
+    trivandrumstation: { name: 'Thiruvananthapuram Central (TVC)', id: 'trivandrum-central', lat: 8.4875, lng: 76.9532 },
   };
 
   const cleanQ = q.replace(/[^a-z0-9]/g, '');
   if (STATION_ALIASES[cleanQ]) {
     const a = STATION_ALIASES[cleanQ];
     return { name: a.name, place_id: a.id, latitude: a.lat, longitude: a.lng };
+  }
+
+  // Generic City Station matcher (e.g. "srinagar station", "jaipur station", "agra railway station")
+  const isRailSearch = /station|railway|stn|junction|terminus|cantt|rail|terminal/i.test(q);
+  if (isRailSearch) {
+    for (const c of citiesData) {
+      const cNameLower = c.name.toLowerCase();
+      const cIdLower = c.id.toLowerCase();
+      if (q.includes(cNameLower) || q.includes(cIdLower) || cleanQ.includes(cNameLower.replace(/[^a-z0-9]/g, ''))) {
+        const stn = railwayStationsData.find(
+          s => s.city.toLowerCase() === cNameLower || s.city.toLowerCase() === cIdLower || s.name.toLowerCase().includes(cNameLower)
+        );
+        if (stn) {
+          return { name: stn.name, place_id: stn.id, latitude: stn.lat, longitude: stn.lng };
+        }
+        return { name: `${c.name} Railway Station`, place_id: `${c.id}-stn`, latitude: c.lat, longitude: c.lng };
+      }
+    }
   }
 
   // Match against authentic major railway stations
@@ -1571,7 +1816,6 @@ function resolveLocation(queryOrId?: string, lat?: number, lng?: number, cityCon
 
   // Tokenize query
   const queryTokens = q.split(/[\s,.-]+/).filter(t => t.length > 1 && !['station', 'railway', 'stn', 'jn', 'junction', 'terminus', 'the', 'in', 'at', 'of'].includes(t));
-  const isRailSearch = /station|railway|stn|junction|terminus|cantt|rail|terminal/i.test(q);
 
   // If query explicitly mentions railway/station or contains known rail keywords
   if (isRailSearch || queryTokens.length > 0) {
@@ -1715,10 +1959,17 @@ const ROUTING_GRAPH_NODES: Record<string, GraphNode> = {
   bhubaneswar: { id: 'bhubaneswar', name: 'Bhubaneswar', lat: 20.2961, lng: 85.8245 },
   aurangabad: { id: 'aurangabad', name: 'Chhatrapati Sambhajinagar', lat: 19.8762, lng: 75.3433 },
   hampi: { id: 'hampi', name: 'Hampi (Hosapete)', lat: 15.3350, lng: 76.4600 },
-  madurai: { id: 'madurai', name: 'Madurai', lat: 9.9252, lng: 78.1198 }
+  madurai: { id: 'madurai', name: 'Madurai', lat: 9.9252, lng: 78.1198 },
+  srinagar: { id: 'srinagar', name: 'Srinagar (Kashmir)', lat: 34.0384, lng: 74.8384 },
+  jammu: { id: 'jammu', name: 'Jammu Tawi', lat: 32.7058, lng: 74.8789 },
+  chandigarh: { id: 'chandigarh', name: 'Chandigarh', lat: 30.7333, lng: 76.7794 }
 };
 
 const ROUTING_GRAPH_EDGES: GraphEdge[] = [
+  { from: 'srinagar', to: 'jammu', distance_km: 260, rail_time_hours: 4.5, road_time_hours: 6.0, corridor_name: 'USBRL / NH44 Kashmir Trunk Highway', rail_fare_3ac: 450, rail_fare_sl: 150 },
+  { from: 'jammu', to: 'amritsar', distance_km: 215, rail_time_hours: 3.5, road_time_hours: 4.5, corridor_name: 'Northern Punjab Frontier Corridor', rail_fare_3ac: 490, rail_fare_sl: 160 },
+  { from: 'jammu', to: 'delhi', distance_km: 580, rail_time_hours: 8.2, road_time_hours: 9.5, corridor_name: 'Vande Bharat / NH44 Northern Trunk', rail_fare_3ac: 1250, rail_fare_sl: 380 },
+  { from: 'chandigarh', to: 'delhi', distance_km: 245, rail_time_hours: 3.0, road_time_hours: 4.0, corridor_name: 'Shatabdi Express / NH44 Corridor', rail_fare_3ac: 590, rail_fare_sl: 190 },
   { from: 'delhi', to: 'agra', distance_km: 210, rail_time_hours: 1.8, road_time_hours: 3.2, corridor_name: 'Gatimaan / Yamuna Expressway Corridor', rail_fare_3ac: 580, rail_fare_sl: 180 },
   { from: 'delhi', to: 'jaipur', distance_km: 280, rail_time_hours: 3.5, road_time_hours: 4.5, corridor_name: 'Delhi-Jaipur Express Corridor (NH48)', rail_fare_3ac: 640, rail_fare_sl: 210 },
   { from: 'delhi', to: 'amritsar', distance_km: 450, rail_time_hours: 5.0, road_time_hours: 7.0, corridor_name: 'Grand Trunk / Northern Railway Corridor', rail_fare_3ac: 980, rail_fare_sl: 310 },

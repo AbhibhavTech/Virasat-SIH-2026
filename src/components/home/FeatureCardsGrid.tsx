@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navigation, Box, Calendar, Landmark, Bot, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Box, Calendar, Landmark, Bot, ArrowRight, ShieldCheck } from 'lucide-react';
 import { NavTab } from '../layout/Sidebar';
 
 interface FeatureCardsGridProps {
@@ -27,12 +27,12 @@ export const FeatureCardsGrid: React.FC<FeatureCardsGridProps> = ({ onNavigateTa
       badgeClass: 'bg-sky-50 text-sky-800 border-sky-200',
     },
     {
-      tab: 'routes' as NavTab,
-      title: 'Multimodal Transit Engine',
-      desc: 'Compare driving, suburban railways, autos, and walking with real-time fare estimates.',
-      icon: Navigation,
+      tab: 'ai' as NavTab,
+      title: 'Virasat AI Cultural Guide',
+      desc: 'Conversational heritage assistant answering monument histories, architectural eras, and local customs.',
+      icon: Bot,
       color: 'text-emerald-600',
-      badge: 'Haversine & Road',
+      badge: 'Gemini Verified',
       badgeClass: 'bg-emerald-50 text-emerald-800 border-emerald-200',
     },
     {

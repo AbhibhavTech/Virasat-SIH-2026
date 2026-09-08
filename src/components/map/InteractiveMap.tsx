@@ -1,7 +1,24 @@
 import React, { useEffect, useRef, useState, useMemo } from 'react';
 import L from 'leaflet';
-import { PlaceSummary, RouteResponse, TransportMode } from '../../types';
+import { PlaceSummary, RouteResponse, TransportMode, LocationSuggestion } from '../../types';
 import { api } from '../../services/api';
+
+// Helper to detect dual-point route searches like "srinagar station to csmt" or "srinagar - csmt"
+function parseDualPointsQuery(query: string): { originQuery: string; destQuery: string } | null {
+  const q = (query || '').trim();
+  const dualPatterns = [
+    /^(.*?)\s+and\s+(?:second\s+)?destination\s*[:-]?\s*(.*)$/i,
+    /^(.*?)\s+(?:to|->|-->)\s+(.*)$/i,
+    /^(.*?)\s*[-–—]\s*(.*)$/i,
+  ];
+  for (const pattern of dualPatterns) {
+    const m = q.match(pattern);
+    if (m && m[1]?.trim().length >= 2 && m[2]?.trim().length >= 2) {
+      return { originQuery: m[1].trim(), destQuery: m[2].trim() };
+    }
+  }
+  return null;
+}
 import {
   MapPin,
   Search,
@@ -58,6 +75,18 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
   const sightsLayerRef = useRef<L.LayerGroup | null>(null);
   const routePolylineRef = useRef<L.LayerGroup | L.Polyline | null>(null);
   const routeMarkersRef = useRef<L.LayerGroup | null>(null);
+  const searchHighlightRef = useRef<L.LayerGroup | null>(null);
+
+  // Autocomplete Search States (All India Cities, Stations, Heritage, Tourist Sights)
+  const [searchSuggestions, setSearchSuggestions] = useState<LocationSuggestion[]>([]);
+  const [isSearching, setIsSearching] = useState(false);
+  const [isSearchDropdownOpen, setIsSearchDropdownOpen] = useState(false);
+
+  // Route Studio Autocomplete States
+  const [originSuggestions, setOriginSuggestions] = useState<LocationSuggestion[]>([]);
+  const [destSuggestions, setDestSuggestions] = useState<LocationSuggestion[]>([]);
+  const [isOriginSuggestOpen, setIsOriginSuggestOpen] = useState(false);
+  const [isDestSuggestOpen, setIsDestSuggestOpen] = useState(false);
 
   // Duration display formatter (e.g., "15 hr 40 min", "45 min")
   const formatDurationDisplay = (mins?: number, formatted?: string) => {
@@ -228,11 +257,17 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
       stationLayerRef.current = L.layerGroup().addTo(map);
       sightsLayerRef.current = L.layerGroup().addTo(map);
       routeMarkersRef.current = L.layerGroup().addTo(map);
+      searchHighlightRef.current = L.layerGroup().addTo(map);
     } catch (initErr) {
       console.error('[Map] Failed to initialize Leaflet map instance:', initErr);
     }
 
     return () => {
+      if (searchHighlightRef.current) {
+        try {
+          searchHighlightRef.current.clearLayers();
+        } catch {}
+      }
       if (mapInstanceRef.current) {
         try {
           mapInstanceRef.current.remove();
@@ -562,32 +597,75 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
     onView3DPlace,
   ]);
 
-  // 5. In-Map Real Routing Execution
-  const handleCalculateRoute = async () => {
-    if (!routeOrigin || !routeDestination) {
+  // 5. In-Map Real Routing Execution & Autocomplete Handlers
+  const handleCalculateRoute = async (
+    customOrigin?: { id: string; name: string; lat?: number; lng?: number },
+    customDest?: { id: string; name: string; lat?: number; lng?: number },
+    customMode?: TransportMode
+  ) => {
+    const originId = customOrigin ? customOrigin.id : routeOrigin;
+    const destId = customDest ? customDest.id : routeDestination;
+    const originName = customOrigin ? customOrigin.name : routeOriginName;
+    const destName = customDest ? customDest.name : routeDestName;
+    const origLat = customOrigin?.lat !== undefined ? customOrigin.lat : routeOriginCoords?.lat;
+    const origLng = customOrigin?.lng !== undefined ? customOrigin.lng : routeOriginCoords?.lng;
+    const destLat = customDest?.lat !== undefined ? customDest.lat : routeDestCoords?.lat;
+    const destLng = customDest?.lng !== undefined ? customDest.lng : routeDestCoords?.lng;
+    const mode = customMode || selectedMode;
+
+    if (customOrigin) {
+      setRouteOrigin(customOrigin.id);
+      setRouteOriginName(customOrigin.name);
+      if (customOrigin.lat !== undefined && customOrigin.lng !== undefined) {
+        setRouteOriginCoords({ lat: customOrigin.lat, lng: customOrigin.lng });
+      }
+    }
+    if (customDest) {
+      setRouteDestination(customDest.id);
+      setRouteDestName(customDest.name);
+      if (customDest.lat !== undefined && customDest.lng !== undefined) {
+        setRouteDestCoords({ lat: customDest.lat, lng: customDest.lng });
+      }
+    }
+    if (customMode) {
+      setSelectedMode(customMode);
+    }
+
+    if (!originId || !destId) {
       setRouteError('Please choose both an origin and a destination.');
       return;
     }
-    if (routeOrigin === routeDestination) {
+    if (originId.toLowerCase() === destId.toLowerCase()) {
       setRouteError('Origin and destination cannot be identical.');
       return;
     }
 
+    setIsRoutingOpen(true);
+    setIsRoutePanelMinimized(false);
     setIsCalculatingRoute(true);
     setRouteError(null);
 
     try {
       const res = await api.getRoutes({
-        origin: routeOrigin,
-        destination: routeDestination,
-        mode: selectedMode,
+        origin: originId,
+        destination: destId,
+        mode: mode,
         city: selectedCity,
-        orig_lat: routeOriginCoords?.lat,
-        orig_lng: routeOriginCoords?.lng,
-        dest_lat: routeDestCoords?.lat,
-        dest_lng: routeDestCoords?.lng,
+        orig_lat: origLat,
+        orig_lng: origLng,
+        dest_lat: destLat,
+        dest_lng: destLng,
       });
       setActiveRoute(res);
+
+      if (res.origin?.name) setRouteOriginName(res.origin.name);
+      if (res.destination?.name) setRouteDestName(res.destination.name);
+      if (res.origin?.latitude && res.origin?.longitude) {
+        setRouteOriginCoords({ lat: res.origin.latitude, lng: res.origin.longitude });
+      }
+      if (res.destination?.latitude && res.destination?.longitude) {
+        setRouteDestCoords({ lat: res.destination.latitude, lng: res.destination.longitude });
+      }
 
       const map = mapInstanceRef.current;
       if (!map) return;
@@ -602,7 +680,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
       }
 
       // Pick option matching mode or first option
-      const opt: any = res.options?.find((o: any) => o.mode === selectedMode) || res.options?.[0];
+      const opt: any = res.options?.find((o: any) => o.mode === mode) || res.options?.[0];
 
       let polyCoords: [number, number][] = [];
       if (opt && opt.polyline && Array.isArray(opt.polyline) && opt.polyline.length > 0) {
@@ -620,7 +698,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
       if (polyCoords.length > 0) {
         const routeGroup = L.layerGroup();
 
-        if (selectedMode === 'TRANSIT') {
+        if (mode === 'TRANSIT') {
           // Authentic Dual-layer Railroad Track Geometry (just like Google Maps rail layer)
           // Layer 1: Dark steel ballast base
           L.polyline(polyCoords, {
@@ -638,7 +716,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
             dashArray: '8, 8',
             lineJoin: 'round',
           }).addTo(routeGroup);
-        } else if (selectedMode === 'DRIVE') {
+        } else if (mode === 'DRIVE') {
           // Highway Vector: Navy blue border with vibrant royal blue core
           L.polyline(polyCoords, {
             color: '#1e3a8a',
@@ -653,7 +731,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
             opacity: 1,
             lineJoin: 'round',
           }).addTo(routeGroup);
-        } else if (selectedMode === 'WALK') {
+        } else if (mode === 'WALK') {
           L.polyline(polyCoords, {
             color: '#059669',
             weight: 5,
@@ -661,7 +739,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
             lineJoin: 'round',
             dashArray: '6, 8',
           }).addTo(routeGroup);
-        } else if (selectedMode === 'BICYCLE') {
+        } else if (mode === 'BICYCLE') {
           L.polyline(polyCoords, {
             color: '#0284c7',
             weight: 5,
@@ -698,12 +776,15 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
         const startPt = polyCoords[0];
         const endPt = polyCoords[polyCoords.length - 1];
 
+        const oTitle = res.origin?.name || originName;
+        const dTitle = res.destination?.name || destName;
+
         if (routeMarkersRef.current && startPt && endPt) {
           L.marker(startPt, { icon: startIcon })
-            .bindTooltip(`Origin: ${routeOriginName}`, { direction: 'top' })
+            .bindTooltip(`Origin: ${oTitle}`, { direction: 'top' })
             .addTo(routeMarkersRef.current);
           L.marker(endPt, { icon: endIcon })
-            .bindTooltip(`Destination: ${routeDestName}`, { direction: 'top' })
+            .bindTooltip(`Destination: ${dTitle}`, { direction: 'top' })
             .addTo(routeMarkersRef.current);
         }
 
@@ -719,6 +800,267 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
       setRouteError('Unable to generate route coordinates. Please choose other points.');
     } finally {
       setIsCalculatingRoute(false);
+    }
+  };
+
+  // Debounced search for top search bar
+  useEffect(() => {
+    const trimmed = searchQuery.trim();
+    if (!trimmed || trimmed.length < 2) {
+      setSearchSuggestions([]);
+      setIsSearchDropdownOpen(false);
+      return;
+    }
+
+    const timer = setTimeout(async () => {
+      setIsSearching(true);
+      try {
+        const results = await api.suggestLocations(trimmed, 10);
+        setSearchSuggestions(results);
+        setIsSearchDropdownOpen(true);
+      } catch (err) {
+        console.error('Error fetching search suggestions:', err);
+      } finally {
+        setIsSearching(false);
+      }
+    }, 180);
+
+    return () => clearTimeout(timer);
+  }, [searchQuery]);
+
+  // Dual-query detection (e.g. "srinagar station to csmt" or "srinagar station and second destination - csmt")
+  const dualQuery = useMemo(() => parseDualPointsQuery(searchQuery), [searchQuery]);
+
+  const handleExecuteDualRoute = async (originQ: string, destQ: string) => {
+    setIsSearchDropdownOpen(false);
+    setIsRoutingOpen(true);
+    setIsRoutePanelMinimized(false);
+    setIsCalculatingRoute(true);
+    setRouteError(null);
+
+    try {
+      const [origList, destList] = await Promise.all([
+        api.suggestLocations(originQ, 1),
+        api.suggestLocations(destQ, 1),
+      ]);
+
+      const oItem = origList[0];
+      const dItem = destList[0];
+
+      const origId = oItem ? oItem.id : originQ;
+      const origName = oItem ? oItem.name : originQ;
+      const origLat = oItem?.lat;
+      const origLng = oItem?.lng;
+
+      const dId = dItem ? dItem.id : destQ;
+      const dName = dItem ? dItem.name : destQ;
+      const dLat = dItem?.lat;
+      const dLng = dItem?.lng;
+
+      setRouteOrigin(origId);
+      setRouteOriginName(origName);
+      if (origLat !== undefined && origLng !== undefined) {
+        setRouteOriginCoords({ lat: origLat, lng: origLng });
+      }
+
+      setRouteDestination(dId);
+      setRouteDestName(dName);
+      if (dLat !== undefined && dLng !== undefined) {
+        setRouteDestCoords({ lat: dLat, lng: dLng });
+      }
+
+      await handleCalculateRoute(
+        { id: origId, name: origName, lat: origLat, lng: origLng },
+        { id: dId, name: dName, lat: dLat, lng: dLng }
+      );
+    } catch (e) {
+      console.error('Dual route execution error:', e);
+    } finally {
+      setIsCalculatingRoute(false);
+    }
+  };
+
+  // Focus & highlight location selected from search bar
+  const highlightAndFocusLocation = (loc: {
+    id: string;
+    name: string;
+    categoryType: string;
+    city?: string;
+    state?: string;
+    lat: number;
+    lng: number;
+    subtitle?: string;
+  }) => {
+    const map = mapInstanceRef.current;
+    if (!map) return;
+
+    const coords = parseLatLng(loc.lat, loc.lng);
+    if (!coords) return;
+
+    map.flyTo(coords, Math.max(map.getZoom(), 12), { duration: 1.2 });
+
+    if (searchHighlightRef.current) {
+      searchHighlightRef.current.clearLayers();
+
+      const iconBg =
+        loc.categoryType === 'station'
+          ? '#0284c7'
+          : loc.categoryType === 'heritage'
+          ? '#ea580c'
+          : loc.categoryType === 'city'
+          ? '#6366f1'
+          : '#10b981';
+      const iconEmoji =
+        loc.categoryType === 'station'
+          ? '🚆'
+          : loc.categoryType === 'heritage'
+          ? '🏛️'
+          : loc.categoryType === 'city'
+          ? '🏙️'
+          : '📍';
+
+      const iconHtml = `
+        <div style="position: relative; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;">
+          <div style="position: absolute; width: 44px; height: 44px; border-radius: 50%; background: ${iconBg}; opacity: 0.35; animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;"></div>
+          <div style="background-color: ${iconBg}; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid #ffffff; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35); font-size: 18px; z-index: 2;">
+            ${iconEmoji}
+          </div>
+        </div>
+      `;
+
+      const markerIcon = L.divIcon({
+        className: 'search-focus-pin',
+        html: iconHtml,
+        iconSize: [44, 44],
+        iconAnchor: [22, 22],
+        popupAnchor: [0, -22],
+      });
+
+      const marker = L.marker(coords, { icon: markerIcon });
+
+      const popupContent = `
+        <div style="padding: 10px; min-width: 220px; font-family: system-ui, -apple-system, sans-serif;">
+          <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
+            <span style="font-size: 14px;">${iconEmoji}</span>
+            <span style="font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: ${iconBg};">
+              ${loc.categoryType}
+            </span>
+          </div>
+          <h4 style="font-size: 13px; font-weight: 800; color: #0f172a; margin: 0 0 4px 0; line-height: 1.3;">${loc.name}</h4>
+          <p style="font-size: 11px; color: #64748b; margin: 0 0 10px 0;">${loc.subtitle || `${loc.city || ''} ${loc.state || ''}`}</p>
+          <div style="display: flex; gap: 6px;">
+            <button id="btn-search-orig-${loc.id}" style="flex: 1; background: #0284c7; color: #fff; border: none; border-radius: 8px; padding: 7px 0; font-size: 11px; font-weight: 700; cursor: pointer;">
+              🚩 Set Origin (A)
+            </button>
+            <button id="btn-search-dest-${loc.id}" style="flex: 1; background: #ea580c; color: #fff; border: none; border-radius: 8px; padding: 7px 0; font-size: 11px; font-weight: 700; cursor: pointer;">
+              🎯 Set Dest (B)
+            </button>
+          </div>
+        </div>
+      `;
+
+      marker.bindPopup(popupContent).openPopup();
+
+      marker.on('popupopen', () => {
+        const btnOrig = document.getElementById(`btn-search-orig-${loc.id}`);
+        if (btnOrig) {
+          btnOrig.onclick = () => {
+            setRouteOrigin(loc.id);
+            setRouteOriginName(loc.name);
+            setRouteOriginCoords({ lat: coords[0], lng: coords[1] });
+            setIsRoutingOpen(true);
+            setIsRoutePanelMinimized(false);
+            if (routeDestination && routeDestination !== loc.id) {
+              handleCalculateRoute(
+                { id: loc.id, name: loc.name, lat: coords[0], lng: coords[1] },
+                undefined
+              );
+            }
+          };
+        }
+
+        const btnDst = document.getElementById(`btn-search-dest-${loc.id}`);
+        if (btnDst) {
+          btnDst.onclick = () => {
+            setRouteDestination(loc.id);
+            setRouteDestName(loc.name);
+            setRouteDestCoords({ lat: coords[0], lng: coords[1] });
+            setIsRoutingOpen(true);
+            setIsRoutePanelMinimized(false);
+            if (routeOrigin && routeOrigin !== loc.id) {
+              handleCalculateRoute(
+                undefined,
+                { id: loc.id, name: loc.name, lat: coords[0], lng: coords[1] }
+              );
+            }
+          };
+        }
+      });
+
+      searchHighlightRef.current.addLayer(marker);
+    }
+  };
+
+  // Route Studio Autocomplete Handlers
+  const handleOriginSearch = async (val: string) => {
+    setRouteOrigin(val);
+    setRouteOriginName(val);
+    if (!val.trim() || val.trim().length < 2) {
+      setOriginSuggestions([]);
+      setIsOriginSuggestOpen(false);
+      return;
+    }
+    try {
+      const results = await api.suggestLocations(val, 8);
+      setOriginSuggestions(results);
+      setIsOriginSuggestOpen(true);
+    } catch {
+      setOriginSuggestions([]);
+    }
+  };
+
+  const handleSelectOriginSuggestion = (item: LocationSuggestion) => {
+    setRouteOrigin(item.id);
+    setRouteOriginName(item.name);
+    setRouteOriginCoords({ lat: item.lat, lng: item.lng });
+    setIsOriginSuggestOpen(false);
+
+    if (routeDestination && routeDestination !== item.id) {
+      handleCalculateRoute(
+        { id: item.id, name: item.name, lat: item.lat, lng: item.lng },
+        undefined
+      );
+    }
+  };
+
+  const handleDestSearch = async (val: string) => {
+    setRouteDestination(val);
+    setRouteDestName(val);
+    if (!val.trim() || val.trim().length < 2) {
+      setDestSuggestions([]);
+      setIsDestSuggestOpen(false);
+      return;
+    }
+    try {
+      const results = await api.suggestLocations(val, 8);
+      setDestSuggestions(results);
+      setIsDestSuggestOpen(true);
+    } catch {
+      setDestSuggestions([]);
+    }
+  };
+
+  const handleSelectDestSuggestion = (item: LocationSuggestion) => {
+    setRouteDestination(item.id);
+    setRouteDestName(item.name);
+    setRouteDestCoords({ lat: item.lat, lng: item.lng });
+    setIsDestSuggestOpen(false);
+
+    if (routeOrigin && routeOrigin !== item.id) {
+      handleCalculateRoute(
+        undefined,
+        { id: item.id, name: item.name, lat: item.lat, lng: item.lng }
+      );
     }
   };
 
@@ -817,20 +1159,33 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
         {/* Leaflet Canvas */}
         <div ref={mapContainerRef} className="w-full h-full z-0" />
 
-        {/* Live Search Bar Overlay (Responsive Top Left) */}
-        <div className="absolute top-3 left-3 right-3 sm:right-auto sm:left-4 sm:top-4 z-[400] sm:w-72 md:w-80">
+        {/* Live Smart Search Bar Overlay (Responsive Top Left) */}
+        <div className="absolute top-3 left-3 right-3 sm:right-auto sm:left-4 sm:top-4 z-[400] sm:w-80 md:w-96">
           <div className="relative shadow-md rounded-2xl bg-white/95 backdrop-blur-md border border-slate-200">
             <Search className="absolute left-3.5 top-3 w-4 h-4 text-slate-400" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search monuments, stations, cities..."
+              onFocus={() => {
+                if (searchSuggestions.length > 0 || searchQuery.trim().length >= 2) {
+                  setIsSearchDropdownOpen(true);
+                }
+              }}
+              placeholder="Search station, city, monument (e.g. srinagar to csmt)..."
               className="w-full pl-10 pr-9 py-2.5 rounded-2xl bg-transparent text-xs text-slate-800 font-medium placeholder-slate-400 focus:outline-none"
             />
+            {isSearching && (
+              <div className="absolute right-9 top-3 w-3.5 h-3.5 border-2 border-emerald-600 border-t-transparent rounded-full animate-spin" />
+            )}
             {searchQuery && (
               <button
-                onClick={() => setSearchQuery('')}
+                onClick={() => {
+                  setSearchQuery('');
+                  setSearchSuggestions([]);
+                  setIsSearchDropdownOpen(false);
+                  if (searchHighlightRef.current) searchHighlightRef.current.clearLayers();
+                }}
                 className="absolute right-3 top-2.5 text-slate-400 hover:text-slate-600 p-0.5"
                 aria-label="Clear search query"
               >
@@ -838,6 +1193,134 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
               </button>
             )}
           </div>
+
+          {/* Autocomplete Results Dropdown */}
+          {isSearchDropdownOpen && (dualQuery || searchSuggestions.length > 0) && (
+            <div className="absolute top-full left-0 right-0 mt-1.5 bg-white/98 backdrop-blur-md rounded-2xl shadow-xl border border-slate-200 overflow-hidden max-h-[380px] overflow-y-auto z-[500] divide-y divide-slate-100">
+              {/* Dual points quick route banner */}
+              {dualQuery && (
+                <div
+                  onClick={() => handleExecuteDualRoute(dualQuery.originQuery, dualQuery.destQuery)}
+                  className="p-3 bg-gradient-to-r from-emerald-600 to-teal-700 text-white cursor-pointer hover:from-emerald-700 hover:to-teal-800 transition flex items-center justify-between shadow-xs"
+                >
+                  <div className="flex items-center gap-2.5 min-w-0">
+                    <div className="w-7 h-7 rounded-xl bg-white/20 flex items-center justify-center shrink-0">
+                      <Navigation className="w-3.5 h-3.5 text-white" />
+                    </div>
+                    <div className="min-w-0">
+                      <div className="text-[10px] uppercase font-bold tracking-wider text-emerald-200">
+                        Calculate Route Path
+                      </div>
+                      <div className="text-xs font-bold truncate">
+                        {dualQuery.originQuery} <span className="text-emerald-200">➔</span> {dualQuery.destQuery}
+                      </div>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-1 text-[11px] font-bold bg-white/20 px-2.5 py-1 rounded-lg shrink-0">
+                    <span>Plot</span>
+                    <ArrowRight className="w-3 h-3" />
+                  </div>
+                </div>
+              )}
+
+              {/* Suggestions List across all stations, monuments, tourist spots, and cities */}
+              {searchSuggestions.map((item, idx) => (
+                <div
+                  key={`search-sugg-${item.categoryType || item.type || 'loc'}-${item.id}-${idx}`}
+                  className="p-2.5 hover:bg-slate-50 transition flex items-center justify-between gap-2 group cursor-pointer"
+                  onClick={() => {
+                    highlightAndFocusLocation({
+                      id: item.id,
+                      name: item.name,
+                      categoryType: item.categoryType || item.type || 'place',
+                      lat: item.lat,
+                      lng: item.lng,
+                      subtitle: item.subtitle,
+                      city: item.city,
+                      state: item.state,
+                    });
+                    setIsSearchDropdownOpen(false);
+                  }}
+                >
+                  <div className="flex items-center gap-2.5 min-w-0 flex-1">
+                    <div
+                      className={`w-7 h-7 rounded-xl flex items-center justify-center shrink-0 text-xs font-bold ${
+                        item.type === 'station'
+                          ? 'bg-sky-100 text-sky-700'
+                          : item.type === 'heritage'
+                          ? 'bg-orange-100 text-orange-700'
+                          : item.type === 'city'
+                          ? 'bg-indigo-100 text-indigo-700'
+                          : 'bg-emerald-100 text-emerald-700'
+                      }`}
+                    >
+                      {item.type === 'station' ? (
+                        <Train className="w-3.5 h-3.5" />
+                      ) : item.type === 'heritage' ? (
+                        <Landmark className="w-3.5 h-3.5" />
+                      ) : (
+                        <MapPin className="w-3.5 h-3.5" />
+                      )}
+                    </div>
+                    <div className="min-w-0 flex-1">
+                      <div className="text-xs font-bold text-slate-800 truncate group-hover:text-emerald-700 transition">
+                        {item.name}
+                      </div>
+                      <div className="text-[10px] text-slate-400 truncate">
+                        {item.subtitle}
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 1-Tap Origin / Destination Quick Action Buttons */}
+                  <div className="flex items-center gap-1 shrink-0" onClick={(e) => e.stopPropagation()}>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setRouteOrigin(item.id);
+                        setRouteOriginName(item.name);
+                        setRouteOriginCoords({ lat: item.lat, lng: item.lng });
+                        setIsRoutingOpen(true);
+                        setIsRoutePanelMinimized(false);
+                        setIsSearchDropdownOpen(false);
+                        if (routeDestination && routeDestination !== item.id) {
+                          handleCalculateRoute(
+                            { id: item.id, name: item.name, lat: item.lat, lng: item.lng },
+                            undefined
+                          );
+                        }
+                      }}
+                      className="px-2 py-1 rounded-lg text-[10px] font-bold bg-sky-50 hover:bg-sky-100 text-sky-700 border border-sky-200 transition"
+                      title="Set as Route Origin (Point A)"
+                    >
+                      Start
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setRouteDestination(item.id);
+                        setRouteDestName(item.name);
+                        setRouteDestCoords({ lat: item.lat, lng: item.lng });
+                        setIsRoutingOpen(true);
+                        setIsRoutePanelMinimized(false);
+                        setIsSearchDropdownOpen(false);
+                        if (routeOrigin && routeOrigin !== item.id) {
+                          handleCalculateRoute(
+                            undefined,
+                            { id: item.id, name: item.name, lat: item.lat, lng: item.lng }
+                          );
+                        }
+                      }}
+                      className="px-2 py-1 rounded-lg text-[10px] font-bold bg-orange-50 hover:bg-orange-100 text-orange-700 border border-orange-200 transition"
+                      title="Set as Route Destination (Point B)"
+                    >
+                      Dest
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Interactive In-Map Route Panel: Mobile Bottom Sheet / Desktop Floating Side Panel */}
@@ -910,7 +1393,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
             {/* Scrollable Content Body (Hidden when minimized) */}
             {!isRoutePanelMinimized && (
               <div className="overflow-y-auto p-4 sm:p-5 space-y-3.5 sm:space-y-4 flex-1">
-                {/* Origin & Destination Inputs with Swap */}
+                {/* Origin & Destination Inputs with Swap & Autocomplete Dropdowns */}
                 <div className="space-y-2.5">
                   <div className="relative">
                     <div className="flex items-center justify-between mb-1">
@@ -923,6 +1406,9 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
                           onClick={() => {
                             setRouteOrigin('');
                             setRouteOriginName('');
+                            setRouteOriginCoords(null);
+                            setOriginSuggestions([]);
+                            setIsOriginSuggestOpen(false);
                           }}
                           className="text-[10px] text-slate-400 hover:text-rose-600 font-semibold"
                         >
@@ -933,13 +1419,48 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
                     <input
                       type="text"
                       value={routeOriginName || routeOrigin}
-                      onChange={(e) => {
-                        setRouteOrigin(e.target.value);
-                        setRouteOriginName(e.target.value);
+                      onChange={(e) => handleOriginSearch(e.target.value)}
+                      onFocus={() => {
+                        if (originSuggestions.length > 0) setIsOriginSuggestOpen(true);
                       }}
-                      placeholder="Search origin or click pin on map..."
+                      placeholder="Type station (e.g. Srinagar, CSMT), city, heritage..."
                       className="w-full min-h-[44px] px-3.5 py-2.5 text-xs sm:text-sm rounded-xl bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-emerald-500 focus:bg-white transition"
                     />
+
+                    {/* Origin Suggestions Dropdown */}
+                    {isOriginSuggestOpen && originSuggestions.length > 0 && (
+                      <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-xl shadow-xl border border-slate-200 overflow-hidden max-h-48 overflow-y-auto z-[550] divide-y divide-slate-100">
+                        {originSuggestions.map((item, idx) => (
+                          <div
+                            key={`orig-sugg-${item.categoryType || item.type || 'loc'}-${item.id}-${idx}`}
+                            onClick={() => handleSelectOriginSuggestion(item)}
+                            className="p-2 hover:bg-slate-50 transition flex items-center gap-2 cursor-pointer"
+                          >
+                            <div
+                              className={`w-6 h-6 rounded-lg flex items-center justify-center shrink-0 text-xs font-bold ${
+                                item.type === 'station'
+                                  ? 'bg-sky-100 text-sky-700'
+                                  : item.type === 'heritage'
+                                  ? 'bg-orange-100 text-orange-700'
+                                  : 'bg-emerald-100 text-emerald-700'
+                              }`}
+                            >
+                              {item.type === 'station' ? (
+                                <Train className="w-3 h-3" />
+                              ) : item.type === 'heritage' ? (
+                                <Landmark className="w-3 h-3" />
+                              ) : (
+                                <MapPin className="w-3 h-3" />
+                              )}
+                            </div>
+                            <div className="min-w-0 flex-1">
+                              <div className="text-xs font-bold text-slate-800 truncate">{item.name}</div>
+                              <div className="text-[10px] text-slate-400 truncate">{item.subtitle}</div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
 
                   {/* Swap Origin & Destination Button */}
@@ -966,6 +1487,9 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
                           onClick={() => {
                             setRouteDestination('');
                             setRouteDestName('');
+                            setRouteDestCoords(null);
+                            setDestSuggestions([]);
+                            setIsDestSuggestOpen(false);
                           }}
                           className="text-[10px] text-slate-400 hover:text-rose-600 font-semibold"
                         >
@@ -976,13 +1500,48 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
                     <input
                       type="text"
                       value={routeDestName || routeDestination}
-                      onChange={(e) => {
-                        setRouteDestination(e.target.value);
-                        setRouteDestName(e.target.value);
+                      onChange={(e) => handleDestSearch(e.target.value)}
+                      onFocus={() => {
+                        if (destSuggestions.length > 0) setIsDestSuggestOpen(true);
                       }}
-                      placeholder="Search destination or click pin on map..."
+                      placeholder="Type destination station, city, tourist place..."
                       className="w-full min-h-[44px] px-3.5 py-2.5 text-xs sm:text-sm rounded-xl bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-emerald-500 focus:bg-white transition"
                     />
+
+                    {/* Destination Suggestions Dropdown */}
+                    {isDestSuggestOpen && destSuggestions.length > 0 && (
+                      <div className="absolute top-full left-0 right-0 mt-1 bg-white rounded-xl shadow-xl border border-slate-200 overflow-hidden max-h-48 overflow-y-auto z-[550] divide-y divide-slate-100">
+                        {destSuggestions.map((item, idx) => (
+                          <div
+                            key={`dest-sugg-${item.categoryType || item.type || 'loc'}-${item.id}-${idx}`}
+                            onClick={() => handleSelectDestSuggestion(item)}
+                            className="p-2 hover:bg-slate-50 transition flex items-center gap-2 cursor-pointer"
+                          >
+                            <div
+                              className={`w-6 h-6 rounded-lg flex items-center justify-center shrink-0 text-xs font-bold ${
+                                item.type === 'station'
+                                  ? 'bg-sky-100 text-sky-700'
+                                  : item.type === 'heritage'
+                                  ? 'bg-orange-100 text-orange-700'
+                                  : 'bg-emerald-100 text-emerald-700'
+                              }`}
+                            >
+                              {item.type === 'station' ? (
+                                <Train className="w-3 h-3" />
+                              ) : item.type === 'heritage' ? (
+                                <Landmark className="w-3 h-3" />
+                              ) : (
+                                <MapPin className="w-3 h-3" />
+                              )}
+                            </div>
+                            <div className="min-w-0 flex-1">
+                              <div className="text-xs font-bold text-slate-800 truncate">{item.name}</div>
+                              <div className="text-[10px] text-slate-400 truncate">{item.subtitle}</div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 </div>
 
@@ -1023,7 +1582,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
                 <div className="flex items-center gap-2 pt-1">
                   <button
                     type="button"
-                    onClick={handleCalculateRoute}
+                    onClick={() => handleCalculateRoute()}
                     disabled={isCalculatingRoute}
                     className="flex-1 min-h-[44px] py-2.5 sm:py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white text-xs sm:text-sm font-bold transition shadow-sm flex items-center justify-center gap-2 disabled:opacity-50 touch-manipulation"
                   >

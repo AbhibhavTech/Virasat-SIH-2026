@@ -14,7 +14,7 @@ export const AIAssistantPage: React.FC<AIAssistantPageProps> = ({
   initialPrompt,
 }) => {
   return (
-    <div className="max-w-4xl mx-auto px-4 py-6 sm:py-10 animate-fadeIn space-y-6">
+    <div className="w-full max-w-5xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-2 sm:px-4 py-4 sm:py-8 animate-fadeIn space-y-6 pb-12">
       {/* Editorial Header */}
       <div className="text-center space-y-2 max-w-xl mx-auto">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 text-[#FF671F] border border-orange-200 text-xs font-semibold">

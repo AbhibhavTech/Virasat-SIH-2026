@@ -59,7 +59,7 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({ onNavigateTab }) => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto px-4 py-6 space-y-6">
+    <div className="w-full max-w-5xl xl:max-w-6xl mx-auto px-2 sm:px-4 py-6 space-y-6 pb-12">
       {/* Profile Header */}
       <div className="rounded-3xl bg-white border border-[#EFE8DF] p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6 shadow-sm">
         <div className="w-20 h-20 rounded-3xl bg-gradient-to-br from-[#FF671F] to-[#046A38] text-white font-black text-2xl flex items-center justify-center shadow-md">

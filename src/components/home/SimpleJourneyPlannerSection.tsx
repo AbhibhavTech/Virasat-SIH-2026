@@ -113,10 +113,10 @@ export const SimpleJourneyPlannerSection: React.FC<SimpleJourneyPlannerSectionPr
         </div>
 
         <button
-          onClick={() => onNavigateTab('routes')}
+          onClick={() => onNavigateTab('itinerary')}
           className="text-xs font-bold text-amber-900 hover:text-amber-950 flex items-center gap-1.5 self-start sm:self-auto bg-amber-50 hover:bg-amber-100 px-4 py-2 rounded-xl border border-amber-200 transition"
         >
-          <span>Open Full Route Map</span>
+          <span>Open Day Planner</span>
           <ArrowRight className="w-4 h-4 text-amber-700" />
         </button>
       </div>
@@ -278,10 +278,10 @@ export const SimpleJourneyPlannerSection: React.FC<SimpleJourneyPlannerSectionPr
                 <span>Verified Route Suggestion</span>
               </div>
               <button
-                onClick={() => onNavigateTab('routes')}
+                onClick={() => onNavigateTab('itinerary')}
                 className="text-xs font-semibold text-amber-800 hover:underline flex items-center gap-1"
               >
-                <span>Open Step-by-Step Navigation</span>
+                <span>Open Full Day Itinerary</span>
                 <ArrowRight className="w-3 h-3" />
               </button>
             </div>

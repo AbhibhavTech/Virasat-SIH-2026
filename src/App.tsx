@@ -9,7 +9,6 @@ import { AuthModal } from './components/auth/AuthModal';
 import { OnboardingSurveyModal } from './components/auth/OnboardingSurveyModal';
 import { HomePage } from './pages/HomePage';
 import { CityHubPage } from './pages/CityHubPage';
-import { RoutesPage } from './pages/RoutesPage';
 import { ItineraryPage } from './pages/ItineraryPage';
 import { Heritage3DPage } from './pages/Heritage3DPage';
 import { MapPage } from './pages/MapPage';
@@ -110,7 +109,7 @@ const AppContent: React.FC = () => {
       />
 
       {/* Main Content Area */}
-      <main className="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 min-w-0">
+      <main className="flex-1 w-full max-w-[96%] lg:max-w-[94%] xl:max-w-[92%] 2xl:max-w-[1760px] mx-auto px-3 sm:px-6 lg:px-8 xl:px-10 pt-6 min-w-0">
         {selectedPlaceId ? (
           <DestinationDetailPage
             placeId={selectedPlaceId}
@@ -166,14 +165,6 @@ const AppContent: React.FC = () => {
 
             {activeTab === 'heritage' && (
               <HeritageSitesPage
-                onSelectPlace={handleSelectPlace}
-                onNavigateTab={handleNavigateTab}
-              />
-            )}
-
-            {activeTab === 'routes' && (
-              <RoutesPage
-                places={places}
                 onSelectPlace={handleSelectPlace}
                 onNavigateTab={handleNavigateTab}
               />

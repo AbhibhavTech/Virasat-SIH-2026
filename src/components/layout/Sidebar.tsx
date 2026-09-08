@@ -3,7 +3,6 @@ import {
   Compass,
   MapPin,
   Map as MapIcon,
-  Navigation,
   Calendar,
   Box,
   Bot,
@@ -28,7 +27,6 @@ export type NavTab =
   | 'heritage'
   | 'dashboard'
   | 'map'
-  | 'routes'
   | 'itinerary'
   | '3d'
   | 'ai'
@@ -63,7 +61,6 @@ export const Sidebar: React.FC<SidebarProps> = ({
     { id: 'heritage', label: 'Major Monuments & Heritage', icon: Landmark, badge: 'UNESCO & ASI', badgeColor: 'bg-emerald-100 text-emerald-900 border-emerald-200' },
     { id: 'dashboard', label: 'States & Hubs', icon: Layers, badge: '36 States/UTs', badgeColor: 'bg-emerald-100 text-emerald-900 border-emerald-200' },
     { id: 'map', label: 'Interactive Map', icon: MapIcon },
-    { id: 'routes', label: 'Transit & Route Studio', icon: Navigation },
     { id: 'itinerary', label: 'Plan Trip (AI Planner)', icon: Calendar, badge: 'Cozy', badgeColor: 'bg-orange-100 text-orange-900 border-orange-200' },
     { id: '3d', label: '3D Heritage Models', icon: Box, badge: 'WebGL', badgeColor: 'bg-blue-100 text-blue-900 border-blue-200' },
     { id: 'ai', label: 'AI Travel Guide', icon: Bot, badge: 'Gemini', badgeColor: 'bg-indigo-100 text-indigo-900 border-indigo-200' },

@@ -7,6 +7,7 @@ import {
   Compass, 
   Landmark, 
   Train, 
+  Calendar,
   Waves, 
   Sun, 
   Sunset, 
@@ -424,11 +425,11 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
                 </button>
 
                 <button
-                  onClick={() => onNavigateTab('routes')}
+                  onClick={() => onNavigateTab('itinerary')}
                   className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 border border-stone-200 transition active:scale-98"
                 >
-                  <Train className="w-3.5 h-3.5 text-stone-700" />
-                  <span>Transit & Routes</span>
+                  <Compass className="w-3.5 h-3.5 text-stone-700" />
+                  <span>Plan Itinerary</span>
                 </button>
 
                 <button
@@ -614,24 +615,24 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
           <p className="text-[11px] text-stone-500 mt-0.5">Elephanta, Taj, Ellora & Hampi</p>
         </div>
 
-        {/* Card 3: Multimodal Transit & Railway */}
+        {/* Card 3: Plan Trip & Curated Circuits */}
         <div 
-          onClick={() => onNavigateTab('routes')}
+          onClick={() => onNavigateTab('itinerary')}
           className="group cursor-pointer rounded-2xl bg-white border border-[#E8DFC8] p-4 shadow-2xs hover:shadow-md hover:border-amber-400 transition-all active:scale-98"
         >
           <div className="flex items-center justify-between mb-2">
             <div className="w-8 h-8 rounded-xl bg-amber-100 flex items-center justify-center text-amber-800 group-hover:bg-amber-800 group-hover:text-white transition-colors">
-              <Train className="w-4 h-4" />
+              <Calendar className="w-4 h-4" />
             </div>
             <span className="text-[10px] font-bold text-amber-800 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200/60">
-              Transit
+              Plan Trip
             </span>
           </div>
           <div className="font-serif text-lg font-bold text-stone-900 leading-tight">
-            108 Routes
+            Day Circuits
           </div>
-          <p className="text-xs font-bold text-stone-700 mt-0.5">Vande Bharat & Local</p>
-          <p className="text-[11px] text-stone-500 mt-0.5">Western Ghats, VistaDome & Ferries</p>
+          <p className="text-xs font-bold text-stone-700 mt-0.5">AI Smart Itineraries</p>
+          <p className="text-[11px] text-stone-500 mt-0.5">Custom Heritage Day Tours & Timing</p>
         </div>
 
         {/* Card 4: 36 States & Geographic Diversity */}

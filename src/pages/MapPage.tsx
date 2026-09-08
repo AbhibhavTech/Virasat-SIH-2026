@@ -17,7 +17,7 @@ export const MapPage: React.FC<MapPageProps> = ({
   onView3DPlace,
 }) => {
   return (
-    <div className="space-y-4 max-w-7xl mx-auto">
+    <div className="space-y-4 w-full pb-8">
       {/* Header Banner */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 rounded-3xl bg-white border border-slate-200 shadow-sm">
         <div className="space-y-1">

@@ -43,7 +43,7 @@ export const Heritage3DPage: React.FC = () => {
   const current = monuments.find((m) => m.name === selectedMonument) || monuments[0];
 
   return (
-    <div className="space-y-6 max-w-6xl mx-auto px-4 py-6 animate-fadeIn">
+    <div className="space-y-6 w-full animate-fadeIn pb-8">
       <div className="space-y-2">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 text-[#FF671F] border border-orange-200 text-xs font-semibold">
           <Box className="w-3.5 h-3.5 text-[#FF671F]" />

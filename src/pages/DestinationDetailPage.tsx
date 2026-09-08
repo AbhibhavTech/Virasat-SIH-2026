@@ -220,7 +220,7 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
       </div>
 
       {/* Main Editorial Content Column */}
-      <div className="max-w-4xl mx-auto space-y-12 sm:space-y-14 px-2">
+      <div className="w-full max-w-5xl xl:max-w-6xl mx-auto space-y-12 sm:space-y-14 px-2 sm:px-4 pb-16">
         {/* 4. Short Introduction */}
         <section className="space-y-4">
           <div className="text-xs font-bold uppercase tracking-wider text-[#FF671F] flex items-center gap-1.5">

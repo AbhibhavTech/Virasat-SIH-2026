@@ -202,6 +202,69 @@ const CuteAiRobot: React.FC<{ className?: string }> = ({ className = 'w-24 h-24'
   </svg>
 );
 
+// -------------------------------------------------------------
+// Verified Heritage Slides for 7-Second Automatic Slideshow
+// -------------------------------------------------------------
+interface HeroHeritageSlide {
+  id: string;
+  name: string;
+  location: string;
+  state: string;
+  category: string;
+  tag: string;
+  builtEra: string;
+  bestTime: string;
+  rating: string;
+  reviewsCount: string;
+  imageUrl: string;
+  fallbackUrl: string;
+}
+
+const HERO_HERITAGE_SLIDES: HeroHeritageSlide[] = [
+  {
+    id: 'india-gate',
+    name: 'India Gate',
+    location: 'New Delhi',
+    state: 'Delhi (NCT)',
+    category: 'National War Memorial',
+    tag: 'Kartavya Path Imperial Arch',
+    builtEra: '1921–1931 CE • Edwin Lutyens',
+    bestTime: 'Evening 6:00 – 9:00 PM',
+    rating: '4.8',
+    reviewsCount: '38.4k',
+    imageUrl: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=1600&auto=format&fit=crop&q=85',
+    fallbackUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/India_Gate_in_New_Delhi_03-2016.jpg/1280px-India_Gate_in_New_Delhi_03-2016.jpg',
+  },
+  {
+    id: 'red-fort',
+    name: 'Red Fort (Lal Qila)',
+    location: 'Old Delhi',
+    state: 'Delhi (NCT)',
+    category: 'UNESCO World Heritage',
+    tag: 'Mughal Imperial Citadel',
+    builtEra: '1638–1648 CE • Shah Jahan',
+    bestTime: 'Morning 9:30 AM – 1:00 PM',
+    rating: '4.7',
+    reviewsCount: '45.2k',
+    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Red_Fort_in_Delhi_03-2016_img1.jpg/1280px-Red_Fort_in_Delhi_03-2016_img1.jpg',
+    fallbackUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Delhi_fort.jpg/1280px-Delhi_fort.jpg',
+  },
+  {
+    id: 'taj-mahal',
+    name: 'Taj Mahal',
+    location: 'Agra',
+    state: 'Uttar Pradesh',
+    category: 'UNESCO World Heritage',
+    tag: 'Mughal Marble Wonder',
+    builtEra: '1632–1653 CE • Shah Jahan',
+    bestTime: 'Sunrise 06:00 AM – 08:30 AM',
+    rating: '4.9',
+    reviewsCount: '68.9k',
+    imageUrl: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1600&auto=format&fit=crop&q=85',
+    fallbackUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Taj_Mahal_%28Edited%29.jpeg/1280px-Taj_Mahal_%28Edited%29.jpeg',
+  },
+];
+
 export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
   onSearch,
   onNavigateTab,
@@ -209,6 +272,10 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
   onSelectCity,
   onOpenAIChat,
 }) => {
+  // Automatic Background Hero Slideshow State
+  const [activeSlideIdx, setActiveSlideIdx] = useState(0);
+  const [reducedMotion, setReducedMotion] = useState(false);
+
   // Search state
   const [searchQuery, setSearchQuery] = useState('');
   const [searchSuggestions, setSearchSuggestions] = useState<PlaceSummary[]>([]);
@@ -316,14 +383,35 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
     fetchNearbyPlaces(city.lat, city.lng, nearbyRadius, city.name);
   };
 
+  // Check prefers-reduced-motion for slideshow accessibility
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setReducedMotion(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
+    mq.addEventListener('change', handler);
+    return () => mq.removeEventListener('change', handler);
+  }, []);
+
+  // Simple automatic heritage slideshow working in the background (5-second intervals)
+  useEffect(() => {
+    if (reducedMotion) return;
+
+    const timer = setInterval(() => {
+      setActiveSlideIdx((curr) => (curr + 1) % HERO_HERITAGE_SLIDES.length);
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, [reducedMotion]);
+
   // Quick Chips matching template
   const quickChips = [
+    { name: 'Taj Mahal', placeId: 'taj-mahal' },
     { name: 'Red Fort', placeId: 'red-fort' },
+    { name: 'Gateway of India', placeId: 'gateway-of-india' },
     { name: 'Hampi', placeId: 'hampi-monuments' },
-    { name: 'Varanasi', city: 'Varanasi' },
     { name: 'Jaipur', city: 'Jaipur' },
+    { name: 'Varanasi', city: 'Varanasi' },
     { name: 'Konark', placeId: 'sun-temple-konark' },
-    { name: 'Rani ki Vav', placeId: 'rani-ki-vav' },
   ];
 
   // Popular Destinations (Exact 6 cards from template)
@@ -557,213 +645,239 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
   return (
     <div className="w-full space-y-10 sm:space-y-14 animate-fadeIn pb-16 font-sans text-stone-800">
       {/* ========================================================================= */}
-      {/* 1. HERO SECTION: UNIVERSAL SEARCH & HERITAGE BANNER                       */}
+      {/* 1. HERO SECTION: UNIVERSAL SEARCH & 7-SECOND HERITAGE SLIDESHOW           */}
       {/* ========================================================================= */}
-      <section className="relative w-full rounded-3xl sm:rounded-[36px] overflow-hidden border border-[#EFE8DF] shadow-sm min-h-[500px] sm:min-h-[530px] lg:min-h-[550px] flex flex-col justify-between p-6 sm:p-8 lg:p-10 bg-gradient-to-r from-[#FAF8F5] via-[#F4F8FB] to-[#E9F3F9]">
-        {/* Top-Left Hanging Botanical Foliage Accent */}
-        <HeroBranchFoliage className="absolute -top-3 -left-4 w-60 sm:w-80 md:w-96 h-auto z-10 opacity-95 pointer-events-none" />
+      <section
+        className="relative w-full rounded-3xl sm:rounded-[36px] overflow-hidden border border-[#EFE8DF] shadow-md min-h-[520px] sm:min-h-[550px] lg:min-h-[580px] flex flex-col justify-between p-6 sm:p-8 lg:p-10 select-none bg-stone-900/5"
+        aria-label="Incredible India Living Heritage Slideshow"
+      >
+        {/* ========================================================================= */}
+        {/* 7-SECOND AUTOMATIC HERITAGE SLIDESHOW BACKGROUND                          */}
+        {/* ========================================================================= */}
+        <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
+          {HERO_HERITAGE_SLIDES.map((slide, idx) => {
+            const isActive = idx === activeSlideIdx;
+            return (
+              <div
+                key={slide.id}
+                className={`absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out ${
+                  isActive
+                    ? 'opacity-100 scale-100 z-[1]'
+                    : 'opacity-0 scale-105 pointer-events-none z-0'
+                }`}
+              >
+                <img
+                  src={slide.imageUrl}
+                  alt={`${slide.name} - ${slide.location}, ${slide.state}`}
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    if (slide.fallbackUrl && (e.target as HTMLImageElement).src !== slide.fallbackUrl) {
+                      (e.target as HTMLImageElement).src = slide.fallbackUrl;
+                    }
+                  }}
+                  className="w-full h-full object-cover object-[center_35%] select-none filter contrast-[1.05] brightness-[1.02] saturate-[1.05]"
+                />
+              </div>
+            );
+          })}
 
-        {/* Ashoka Chakra Translucent Watermark in Far Sky */}
-        <div className="absolute top-2 left-1/4 -translate-x-1/2 z-0 pointer-events-none opacity-[0.07] hidden md:block">
-          <AshokaChakra size={260} color="#0B407A" />
+          {/* SUBTLE TRANSPARENT OVERLAY (REDUCED WHITE AREA):
+              Allows real heritage photograph to remain clearly visible across almost the entire hero,
+              while ensuring crisp text readability for headings, search bar and destination chips.
+          */}
+          {/* Desktop/Tablet Horizontal Gradient Overlay */}
+          <div
+            className="absolute inset-0 hidden sm:block pointer-events-none z-[2]"
+            style={{
+              background:
+                'linear-gradient(to right, rgba(255, 255, 255, 0.78) 0%, rgba(255, 255, 255, 0.58) 32%, rgba(255, 255, 255, 0.22) 60%, rgba(255, 255, 255, 0.05) 78%, rgba(255, 255, 255, 0) 100%)',
+            }}
+          />
+
+          {/* Mobile Vertical Gradient Overlay */}
+          <div
+            className="absolute inset-0 sm:hidden pointer-events-none z-[2]"
+            style={{
+              background:
+                'linear-gradient(to bottom, rgba(255, 255, 255, 0.84) 0%, rgba(255, 255, 255, 0.60) 45%, rgba(255, 255, 255, 0.20) 80%, rgba(255, 255, 255, 0.05) 100%)',
+            }}
+          />
+
+          {/* Very subtle bottom-right vignette for place badge and navigation controls */}
+          <div
+            className="absolute bottom-0 right-0 w-full sm:w-2/3 h-48 pointer-events-none z-[2]"
+            style={{
+              background:
+                'radial-gradient(ellipse at bottom right, rgba(0, 0, 0, 0.28) 0%, rgba(0, 0, 0, 0.10) 45%, rgba(0, 0, 0, 0) 75%)',
+            }}
+          />
         </div>
 
-        {/* Full Hero Red Fort Background with Progressive Visibility:
-            - Left (behind Discover text): very low visibility (~6-10% bleed) for crisp legibility
-            - Center: medium visibility (~50%)
-            - Right: full 100% visibility of the grand Lal Qila battlements & Lahori Gate
-        */}
-        <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
-          <img
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Red_Fort_in_Delhi_03-2016_img1.jpg/1280px-Red_Fort_in_Delhi_03-2016_img1.jpg"
-            alt="Red Fort Lal Qila Delhi"
-            referrerPolicy="no-referrer"
-            onError={(e) => {
-              (e.target as HTMLImageElement).src =
-                'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Delhi_fort.jpg/1280px-Delhi_fort.jpg';
-            }}
-            className="w-full h-full object-cover object-[72%_32%] select-none filter contrast-[1.04] brightness-[1.02] saturate-[1.04]"
-          />
-
-          {/* Desktop/Tablet Progressive Visibility Gradient:
-              0% - 30%: ~94-90% opacity wash -> very low visibility behind "Discover" text & search
-              35% - 60%: ~50% opacity wash -> medium visibility in center
-              78% - 100%: 0% opacity wash -> full 100% visibility of Red Fort on right
-          */}
-          <div
-            className="absolute inset-0 hidden sm:block pointer-events-none"
-            style={{
-              background:
-                'linear-gradient(to right, rgba(250, 248, 245, 0.94) 0%, rgba(250, 248, 245, 0.90) 28%, rgba(250, 248, 245, 0.50) 52%, rgba(250, 248, 245, 0.15) 72%, rgba(250, 248, 245, 0) 84%)',
-            }}
-          />
-
-          {/* Mobile Progressive Vertical Overlay: ensures top title readability with lower fort visible */}
-          <div
-            className="absolute inset-0 sm:hidden pointer-events-none"
-            style={{
-              background:
-                'linear-gradient(to bottom, rgba(250, 248, 245, 0.95) 0%, rgba(250, 248, 245, 0.86) 45%, rgba(250, 248, 245, 0.30) 75%, rgba(250, 248, 245, 0) 100%)',
-            }}
-          />
-
-          {/* Silhouetted Birds in Morning Sky above Fort Ramparts */}
-          <svg className="absolute top-10 right-28 sm:right-44 w-28 h-14 pointer-events-none select-none opacity-40" viewBox="0 0 100 50" fill="#2C3E50">
-            <path d="M8 16 Q14 10 19 15 Q24 10 30 16 Q24 13 19 15 Q14 13 8 16 Z" />
-            <path d="M38 10 Q42 5 46 9 Q50 5 54 10 Q50 7 46 9 Q42 7 38 10 Z" />
-            <path d="M62 20 Q66 14 70 19 Q74 14 78 20 Q74 17 70 19 Q66 17 62 20 Z" />
-          </svg>
+        {/* Ashoka Chakra Translucent Watermark in Far Sky */}
+        <div className="absolute top-3 left-1/3 -translate-x-1/2 z-0 pointer-events-none opacity-[0.07] hidden md:block">
+          <AshokaChakra size={240} color="#0B407A" />
         </div>
 
         {/* Top Right "From Our Heritage To A Brighter Tomorrow" Banner */}
-        <div className="absolute top-5 right-5 sm:top-8 sm:right-8 bg-white/95 backdrop-blur-md px-4 py-2.5 rounded-2xl border border-white/90 shadow-sm flex items-center gap-3 text-stone-800 z-10 select-none">
-          <div className="w-9 h-9 rounded-xl bg-orange-50 border border-orange-200/80 flex items-center justify-center text-[#FF671F] shrink-0">
-            <Landmark className="w-4.5 h-4.5 text-[#FF671F]" />
+        <div className="absolute top-5 right-5 sm:top-8 sm:right-8 bg-white/90 backdrop-blur-md px-4 py-2 rounded-2xl border border-white/90 shadow-sm flex items-center gap-3 text-stone-800 z-10 select-none">
+          <div className="w-8 h-8 rounded-xl bg-orange-50 border border-orange-200/80 flex items-center justify-center text-[#FF671F] shrink-0">
+            <Landmark className="w-4 h-4 text-[#FF671F]" />
           </div>
           <div className="leading-tight text-left">
             <div className="text-[10px] font-bold text-[#0B192C] uppercase tracking-wider">From Our Heritage To</div>
             <div className="text-xs font-serif font-bold mt-0.5">
               <span className="text-[#046A38]">A Brighter</span> <span className="text-[#FF671F]">Tomorrow</span>
             </div>
-            <div className="w-16 h-0.5 rounded-full bg-gradient-to-r from-[#FF671F] via-[#EFE8DF] to-[#046A38] mt-1" />
+            <div className="w-14 h-0.5 rounded-full bg-gradient-to-r from-[#FF671F] via-[#EFE8DF] to-[#046A38] mt-0.5" />
           </div>
         </div>
 
-        {/* Main Content Area (Left side) */}
-        <div className="relative z-10 max-w-xl sm:max-w-2xl pt-2 sm:pt-4">
-          <IncredibleIndiaBadge className="mb-3" />
+        {/* Main Content Area */}
+        <div className="relative z-10 w-full max-w-2xl sm:max-w-3xl lg:max-w-4xl pt-2 sm:pt-4">
+          {/* Heading, Search, Chips & Verified Tourism Trust Strip */}
+          <div>
+            <IncredibleIndiaBadge className="mb-3" />
 
-          <h1 className="font-serif text-3xl sm:text-4xl lg:text-[44px] xl:text-[48px] font-bold tracking-tight text-[#0B192C] leading-[1.12]">
-            <span>Discover India&apos;s</span>
-            <span className="block mt-1">
-              <span className="text-[#FF671F]">Living</span>{' '}
-              <span className="text-[#046A38]">Heritage</span>
-            </span>
-          </h1>
+            <h1 className="font-serif text-3xl sm:text-4xl lg:text-[42px] xl:text-[46px] font-bold tracking-tight text-[#0B192C] leading-[1.12]">
+              <span>Discover India&apos;s</span>
+              <span className="block mt-1">
+                <span className="text-[#FF671F]">Living</span>{' '}
+                <span className="text-[#046A38]">Heritage</span>
+              </span>
+            </h1>
 
-          <p className="text-xs sm:text-sm md:text-base text-stone-600 max-w-lg mt-3 sm:mt-3.5 leading-relaxed font-normal">
-            Explore monuments, cultures, natural wonders and hidden gems across every region of India.
-          </p>
+            <p className="text-xs sm:text-sm md:text-base text-stone-700 max-w-lg mt-3 sm:mt-3.5 leading-relaxed font-medium">
+              Explore monuments, cultures, natural wonders and hidden gems across every region of India.
+            </p>
 
-          {/* Universal Search Input Bar with Live Suggestions Dropdown */}
-          <div ref={searchContainerRef} className="relative mt-6 max-w-xl">
-            <form onSubmit={handleSearchSubmit}>
-              <div className="bg-white rounded-full p-1.5 pl-4 sm:pl-5 shadow-sm border border-stone-200/90 flex items-center gap-3 transition-all focus-within:ring-2 focus-within:ring-[#FF671F]/30 focus-within:border-[#FF671F]">
-                <Search className="w-4 h-4 sm:w-5 sm:h-5 text-stone-400 shrink-0" />
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  onFocus={() => {
-                    if (searchSuggestions.length > 0) setShowSuggestions(true);
-                  }}
-                  placeholder="Search destinations, monuments, cities, or experiences..."
-                  className="w-full bg-transparent text-xs sm:text-sm text-stone-800 placeholder-stone-400 focus:outline-none"
-                />
-                {isSearching && <Loader2 className="w-4 h-4 text-amber-600 animate-spin mr-1 shrink-0" />}
-                <button
-                  type="submit"
-                  className="bg-[#FF671F] hover:bg-[#E65100] text-white px-5 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold flex items-center gap-1.5 transition active:scale-95 shrink-0 shadow-xs cursor-pointer"
-                >
-                  <span>Search</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </button>
-              </div>
-            </form>
-
-            {/* Live Suggestions Dropdown */}
-            {showSuggestions && searchSuggestions.length > 0 && (
-              <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-xl border border-stone-200 overflow-hidden z-30 animate-fadeIn">
-                <div className="p-2 border-b border-stone-100 text-[11px] font-bold text-stone-400 px-3 uppercase tracking-wider">
-                  Verified Heritage Results
+            {/* Universal Search Input Bar with Live Suggestions Dropdown */}
+            <div ref={searchContainerRef} className="relative mt-5 sm:mt-6 max-w-xl xl:max-w-2xl">
+              <form onSubmit={handleSearchSubmit}>
+                <div className="bg-white/95 backdrop-blur-md rounded-full p-1.5 pl-4 sm:pl-5 shadow-md border border-stone-200/90 flex items-center gap-3 transition-all focus-within:ring-2 focus-within:ring-[#FF671F]/30 focus-within:border-[#FF671F]">
+                  <Search className="w-4 h-4 sm:w-5 sm:h-5 text-stone-400 shrink-0" />
+                  <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    onFocus={() => {
+                      if (searchSuggestions.length > 0) setShowSuggestions(true);
+                    }}
+                    placeholder="Search destinations, monuments, cities, or experiences..."
+                    className="w-full bg-transparent text-xs sm:text-sm text-stone-800 placeholder-stone-400 focus:outline-none"
+                  />
+                  {isSearching && <Loader2 className="w-4 h-4 text-amber-600 animate-spin mr-1 shrink-0" />}
+                  <button
+                    type="submit"
+                    className="bg-[#FF671F] hover:bg-[#E65100] text-white px-5 sm:px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold flex items-center gap-1.5 transition active:scale-95 shrink-0 shadow-xs cursor-pointer"
+                  >
+                    <span>Search</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </button>
                 </div>
-                <div className="divide-y divide-stone-100 max-h-64 overflow-y-auto">
-                  {searchSuggestions.map((item) => (
-                    <div
-                      key={item.id}
-                      onClick={() => {
-                        setShowSuggestions(false);
-                        if (onSelectPlace) {
-                          onSelectPlace(item.id);
-                        } else {
-                          onSearch(item.name);
-                        }
-                      }}
-                      className="p-3 hover:bg-orange-50/60 cursor-pointer transition flex items-center justify-between gap-3"
-                    >
-                      <div className="flex items-center gap-3">
-                        <img
-                          src={item.thumbnail_url || item.image_url || 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=200'}
-                          alt={item.name}
-                          className="w-10 h-10 rounded-xl object-cover shrink-0"
-                        />
-                        <div className="text-left">
-                          <h4 className="font-serif text-xs font-bold text-stone-900">{item.name}</h4>
-                          <p className="text-[11px] text-stone-500">{item.city}, {item.state}</p>
+              </form>
+
+              {/* Live Suggestions Dropdown */}
+              {showSuggestions && searchSuggestions.length > 0 && (
+                <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-xl border border-stone-200 overflow-hidden z-30 animate-fadeIn">
+                  <div className="p-2 border-b border-stone-100 text-[11px] font-bold text-stone-400 px-3 uppercase tracking-wider">
+                    Verified Heritage Results
+                  </div>
+                  <div className="divide-y divide-stone-100 max-h-64 overflow-y-auto">
+                    {searchSuggestions.map((item) => (
+                      <div
+                        key={item.id}
+                        onClick={() => {
+                          setShowSuggestions(false);
+                          if (onSelectPlace) {
+                            onSelectPlace(item.id);
+                          } else {
+                            onSearch(item.name);
+                          }
+                        }}
+                        className="p-3 hover:bg-orange-50/60 cursor-pointer transition flex items-center justify-between gap-3"
+                      >
+                        <div className="flex items-center gap-3">
+                          <img
+                            src={item.thumbnail_url || item.image_url || 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=200'}
+                            alt={item.name}
+                            className="w-10 h-10 rounded-xl object-cover shrink-0"
+                          />
+                          <div className="text-left">
+                            <h4 className="font-serif text-xs font-bold text-stone-900">{item.name}</h4>
+                            <p className="text-[11px] text-stone-500">{item.city}, {item.state}</p>
+                          </div>
                         </div>
+                        <span className="text-[10px] font-semibold text-orange-950 bg-orange-100/70 px-2 py-0.5 rounded-md shrink-0">
+                          {item.category}
+                        </span>
                       </div>
-                      <span className="text-[10px] font-semibold text-orange-950 bg-orange-100/70 px-2 py-0.5 rounded-md shrink-0">
-                        {item.category}
-                      </span>
-                    </div>
-                  ))}
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Destination Quick Chips */}
+            <div className="flex flex-wrap items-center gap-2 sm:gap-2.5 mt-4 sm:mt-5">
+              {quickChips.map((chip) => (
+                <button
+                  key={chip.name}
+                  type="button"
+                  onClick={() => {
+                    if (chip.placeId && onSelectPlace) {
+                      onSelectPlace(chip.placeId);
+                    } else if (chip.city && onSelectCity) {
+                      onSelectCity(chip.city);
+                      onNavigateTab('dashboard');
+                    } else {
+                      onSearch(chip.name);
+                    }
+                  }}
+                  className="px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-sm border border-stone-200/90 hover:border-[#FF671F] hover:bg-white text-xs font-semibold text-stone-800 shadow-2xs hover:shadow-xs transition flex items-center gap-1.5 cursor-pointer active:scale-95"
+                >
+                  <MapPin className="w-3.5 h-3.5 text-[#FF671F] shrink-0" />
+                  <span>{chip.name}</span>
+                </button>
+              ))}
+            </div>
+
+            {/* Verified Heritage Highlights & Tourism Trust Strip */}
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 mt-5 sm:mt-6 pt-4 sm:pt-5 border-t border-stone-300/40">
+              <div className="flex items-center gap-2">
+                <div className="w-7 h-7 rounded-lg bg-orange-50 border border-orange-200/80 flex items-center justify-center text-[#FF671F] shrink-0">
+                  <Landmark className="w-3.5 h-3.5" />
+                </div>
+                <div>
+                  <div className="text-xs font-bold text-stone-900 leading-none">42 UNESCO</div>
+                  <div className="text-[10px] text-stone-500 mt-0.5">Heritage Sites</div>
                 </div>
               </div>
-            )}
-          </div>
 
-          {/* Destination Quick Chips */}
-          <div className="flex flex-wrap items-center gap-2 sm:gap-2.5 mt-4 sm:mt-5">
-            {quickChips.map((chip) => (
-              <button
-                key={chip.name}
-                type="button"
-                onClick={() => {
-                  if (chip.placeId && onSelectPlace) {
-                    onSelectPlace(chip.placeId);
-                  } else if (chip.city && onSelectCity) {
-                    onSelectCity(chip.city);
-                    onNavigateTab('dashboard');
-                  } else {
-                    onSearch(chip.name);
-                  }
-                }}
-                className="px-3.5 py-1.5 rounded-full bg-white border border-stone-200/90 hover:border-[#FF671F] hover:bg-white text-xs font-semibold text-stone-800 shadow-2xs hover:shadow-xs transition flex items-center gap-1.5 cursor-pointer active:scale-95"
-              >
-                <MapPin className="w-3.5 h-3.5 text-[#FF671F] shrink-0" />
-                <span>{chip.name}</span>
-              </button>
-            ))}
-          </div>
-        </div>
+              <div className="hidden sm:block h-5 w-px bg-stone-300/60" />
 
-        {/* Bottom Right Red Fort Details Badge */}
-        <div className="relative z-10 self-end sm:self-auto sm:absolute sm:bottom-8 sm:right-8 text-right flex flex-col items-end mt-8 sm:mt-0">
-          <button
-            type="button"
-            onClick={() => {
-              if (onSelectPlace) {
-                onSelectPlace('red-fort');
-              } else if (onSelectCity) {
-                onSelectCity('Delhi');
-                onNavigateTab('dashboard');
-              } else {
-                onSearch('Red Fort');
-              }
-            }}
-            className="px-4 py-2.5 rounded-2xl bg-white/95 hover:bg-white text-[#0B192C] text-left shadow-lg border border-stone-200/90 flex items-center gap-3 transition active:scale-95 cursor-pointer group"
-          >
-            <div className="w-8 h-8 rounded-full bg-orange-50 border border-orange-200 flex items-center justify-center text-[#FF671F] shrink-0">
-              <MapPin className="w-4 h-4 text-[#FF671F]" />
+              <div className="flex items-center gap-2">
+                <div className="w-7 h-7 rounded-lg bg-emerald-50 border border-emerald-200/80 flex items-center justify-center text-[#046A38] shrink-0">
+                  <ShieldCheck className="w-3.5 h-3.5" />
+                </div>
+                <div>
+                  <div className="text-xs font-bold text-stone-900 leading-none">3,600+ ASI</div>
+                  <div className="text-[10px] text-stone-500 mt-0.5">Protected Shrines</div>
+                </div>
+              </div>
+
+              <div className="hidden sm:block h-5 w-px bg-stone-300/60" />
+
+              <div className="flex items-center gap-2">
+                <div className="w-7 h-7 rounded-lg bg-sky-50 border border-sky-200/80 flex items-center justify-center text-[#0284C7] shrink-0">
+                  <Compass className="w-3.5 h-3.5" />
+                </div>
+                <div>
+                  <div className="text-xs font-bold text-stone-900 leading-none">28 States & UTs</div>
+                  <div className="text-[10px] text-stone-500 mt-0.5">Curated Trails</div>
+                </div>
+              </div>
             </div>
-            <div className="leading-tight">
-              <div className="text-xs font-bold text-stone-900">Red Fort (Lal Qila)</div>
-              <div className="text-[11px] text-stone-500 font-medium">Old Delhi</div>
-            </div>
-            <div className="w-7 h-7 rounded-full bg-[#FF671F] text-white flex items-center justify-center ml-2 group-hover:translate-x-0.5 transition-transform shadow-2xs">
-              <ArrowRight className="w-3.5 h-3.5" />
-            </div>
-          </button>
+          </div>
         </div>
       </section>
 

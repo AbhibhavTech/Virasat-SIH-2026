@@ -616,5 +616,20 @@ export interface CommuterNetwork {
   }>;
 }
 
+export interface LocationSuggestion {
+  id: string;
+  name: string;
+  code?: string;
+  type?: 'station' | 'heritage' | 'place' | 'city';
+  categoryType: 'station' | 'heritage' | 'place' | 'city';
+  city?: string;
+  state?: string;
+  lat: number;
+  lng: number;
+  subtitle: string;
+  badge: string;
+  score?: number;
+}
+
 export * from './database';
 

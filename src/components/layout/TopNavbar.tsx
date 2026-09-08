@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import {
   Compass,
   Landmark,
-  Navigation,
   Bot,
   MapPin,
   User,
@@ -114,7 +113,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
     {
       id: 'itinerary',
       label: 'Plan Trip',
-      isActive: activeTab === 'itinerary' || activeTab === 'routes',
+      isActive: activeTab === 'itinerary',
     },
     {
       id: 'ai',
@@ -132,13 +131,12 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
   }> = [
     { id: 'map', label: 'Interactive Map', description: 'GIS markers across all Indian regions', icon: Layers },
     { id: '3d', label: '3D Heritage Museum', description: 'Real-time WebGL architectural models', icon: Box },
-    { id: 'routes', label: 'Transit & Route Studio', description: 'Multi-modal transit comparisons', icon: Navigation },
   ];
 
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[#EFE8DF] transition-all duration-200">
       <TricolourTopBar />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-[96%] lg:max-w-[94%] xl:max-w-[92%] 2xl:max-w-[1760px] mx-auto px-3 sm:px-6 lg:px-8 xl:px-10">
         <div className="flex items-center justify-between h-16 sm:h-18 gap-4">
           {/* Brand Logo */}
           <VirasatBrand onClick={() => handleNav('home')} />
@@ -165,7 +163,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
               <button
                 onClick={() => setMoreDropdownOpen(!moreDropdownOpen)}
                 className={`px-3.5 py-1.5 rounded-full text-xs lg:text-sm font-semibold transition-all duration-150 flex items-center gap-1 ${
-                  moreDropdownOpen || ['map', 'routes'].includes(activeTab)
+                  moreDropdownOpen || ['map', '3d'].includes(activeTab)
                     ? 'text-[#0B192C] bg-stone-100 border border-stone-200 shadow-2xs'
                     : 'text-stone-700 hover:text-[#0B192C] hover:bg-stone-100/60'
                 }`}

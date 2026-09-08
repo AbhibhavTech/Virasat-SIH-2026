@@ -53,7 +53,7 @@ export const FavoritesPage: React.FC<FavoritesPageProps> = ({
   }, [favorites, places]);
 
   return (
-    <div className="space-y-6 max-w-7xl mx-auto">
+    <div className="space-y-6 w-full pb-8">
       {/* Header Banner */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-6 rounded-3xl bg-white border border-[#EFE8DF] shadow-sm">
         <div className="space-y-1">
@@ -110,7 +110,7 @@ export const FavoritesPage: React.FC<FavoritesPageProps> = ({
           )}
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
           {favoritePlaces.map((p) => (
             <div
               key={p.id}

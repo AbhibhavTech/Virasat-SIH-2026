@@ -10,7 +10,7 @@ import {
   Clock,
   Ticket,
   Box,
-  Navigation,
+  Compass,
   Heart,
   ChevronRight,
   ExternalLink,
@@ -368,7 +368,7 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
           </button>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filteredSites.map((site) => {
             const has3d = site.features?.['3d'] || site.model_3d?.available;
             const fav = isFavorite(site.id);
@@ -522,13 +522,13 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
 
                     <button
                       onClick={() => {
-                        onNavigateTab('routes');
+                        onNavigateTab('itinerary');
                       }}
                       className="py-2 px-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-700 text-xs font-semibold flex items-center gap-1 transition-colors cursor-pointer"
-                      title="Calculate multimodal route to this site"
+                      title="Plan visit to this site"
                     >
-                      <Navigation className="w-3.5 h-3.5" />
-                      <span>Route</span>
+                      <Compass className="w-3.5 h-3.5" />
+                      <span>Plan</span>
                     </button>
                   </div>
                 </div>

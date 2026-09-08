@@ -288,11 +288,11 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] text-[#0B192C] pb-16">
+    <div className="w-full text-[#0B192C] pb-16">
       {/* Top Heritage Accent Bar */}
-      <div className="h-1.5 w-full bg-gradient-to-r from-[#FF671F] via-white to-[#046A38]" />
+      <div className="h-1.5 w-full bg-gradient-to-r from-[#FF671F] via-white to-[#046A38] rounded-full mb-6" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 sm:pt-8 space-y-6 sm:space-y-8">
+      <div className="w-full space-y-6 sm:space-y-8">
         {/* =========================================================================
             HEADER & BREADCRUMB EXPLORATION BAR
         ========================================================================= */}
@@ -626,7 +626,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                     No states found matching your filters.
                   </div>
                 ) : (
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                     {filteredStates.map((state) => {
                       // Get small towns list in this state to highlight local discovery
                       const townsList = state.cities.map((c) => c.name);
@@ -747,7 +747,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                 {stateValidCities.map((city) => {
                   const places = [
                     ...(city.heritage || []),
@@ -943,7 +943,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                   No places found in this category for {currentCity.name}.
                 </div>
               ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                   {filteredCityPlaces.map((attr) => {
                     const isVisited = Boolean(visitedPlaces[attr.id]);
                     const isHeritage = attr.category === 'heritage';

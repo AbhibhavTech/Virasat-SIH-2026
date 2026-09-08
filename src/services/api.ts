@@ -35,6 +35,7 @@ import {
   DatabaseSyncPayload,
   DatabaseSyncResult,
   EntityImageMetadata,
+  LocationSuggestion,
 } from '../types';
 import { safeLocalStorage } from '../utils/storage';
 
@@ -130,6 +131,15 @@ export const api = {
     try {
       const q = new URLSearchParams({ q: query });
       return await request<PlaceSummary[]>(`/search?${q.toString()}`);
+    } catch {
+      return [];
+    }
+  },
+
+  async suggestLocations(query: string, limit: number = 12): Promise<LocationSuggestion[]> {
+    try {
+      const q = new URLSearchParams({ q: query, limit: String(limit) });
+      return await request<LocationSuggestion[]>(`/locations/suggest?${q.toString()}`);
     } catch {
       return [];
     }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, Compass, Sparkles, Navigation, Calendar, Box, ArrowRight, MapPin, Landmark } from 'lucide-react';
+import { Search, Compass, Sparkles, Calendar, Box, ArrowRight, MapPin, Landmark } from 'lucide-react';
 import { NavTab } from '../layout/Sidebar';
 
 interface LandingHeroProps {
@@ -111,19 +111,11 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
           </button>
 
           <button
-            onClick={() => onNavigateTab('routes')}
+            onClick={() => onNavigateTab('map')}
             className="px-3.5 py-2 rounded-lg bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-xs font-semibold text-emerald-900 flex items-center gap-1.5 transition"
           >
-            <Navigation className="w-3.5 h-3.5 text-emerald-600" />
-            <span>Multimodal Transit</span>
-          </button>
-
-          <button
-            onClick={() => onNavigateTab('itinerary')}
-            className="px-3.5 py-2 rounded-lg bg-slate-100 hover:bg-slate-200 border border-slate-200 text-xs font-semibold text-slate-700 flex items-center gap-1.5 transition"
-          >
-            <Calendar className="w-3.5 h-3.5 text-slate-600" />
-            <span>Day Planner</span>
+            <Compass className="w-3.5 h-3.5 text-emerald-600" />
+            <span>Interactive Map</span>
           </button>
 
           <button

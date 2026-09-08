@@ -21,7 +21,7 @@ export const SimpleFooter: React.FC<SimpleFooterProps> = ({
         <FlowingTricolourRibbon variant="footer" />
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8 space-y-12 relative z-10">
+      <div className="w-full max-w-[96%] lg:max-w-[94%] xl:max-w-[92%] 2xl:max-w-[1760px] mx-auto px-3 sm:px-6 lg:px-8 xl:px-10 pt-16 pb-8 space-y-12 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10">
           {/* Brand & Mission */}
           <div className="lg:col-span-2 space-y-4">
@@ -101,14 +101,6 @@ export const SimpleFooter: React.FC<SimpleFooterProps> = ({
               </li>
               <li>
                 <button
-                  onClick={() => onNavigateTab('routes')}
-                  className="text-stone-600 hover:text-amber-800 transition"
-                >
-                  Multimodal Route Studio
-                </button>
-              </li>
-              <li>
-                <button
                   onClick={() => onNavigateTab('india')}
                   className="text-stone-600 hover:text-amber-800 transition"
                 >
@@ -146,14 +138,6 @@ export const SimpleFooter: React.FC<SimpleFooterProps> = ({
                   className="text-stone-600 hover:text-amber-800 transition"
                 >
                   AI City Trip Planner
-                </button>
-              </li>
-              <li>
-                <button
-                  onClick={() => onNavigateTab('routes')}
-                  className="text-stone-600 hover:text-amber-800 transition"
-                >
-                  Multimodal Transit Studio
                 </button>
               </li>
               <li>

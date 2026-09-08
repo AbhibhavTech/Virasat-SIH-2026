@@ -60,7 +60,7 @@ export const PlanYourJourneyWidget: React.FC<PlanYourJourneyWidgetProps> = ({
 
   return (
     <section className="pt-6">
-      <div className="rounded-3xl bg-white border border-[#EFE8DF] shadow-warm p-6 sm:p-10 max-w-5xl mx-auto">
+      <div className="w-full rounded-3xl sm:rounded-[32px] bg-white border border-[#EFE8DF] shadow-warm p-6 sm:p-10 lg:p-12">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-6 space-y-2">
           <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-amber-800 tracking-wider uppercase">
@@ -91,11 +91,11 @@ export const PlanYourJourneyWidget: React.FC<PlanYourJourneyWidgetProps> = ({
           </div>
           <button
             type="button"
-            onClick={() => onNavigateTab('routes')}
+            onClick={() => onNavigateTab('itinerary')}
             className="text-xs font-semibold px-3 py-1.5 rounded-xl bg-emerald-800 hover:bg-emerald-900 text-white transition shrink-0 hidden sm:inline-flex items-center gap-1"
           >
-            <Train className="w-3.5 h-3.5" />
-            <span>Transit Routes</span>
+            <Calendar className="w-3.5 h-3.5" />
+            <span>Trip Planner</span>
           </button>
         </div>
 
