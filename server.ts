@@ -2586,10 +2586,24 @@ function findEntityInText(text: string): { place: any | null; city: string | nul
     return { place: p || null, city: 'Puri', state: 'Odisha', name: 'Konark Sun Temple' };
   }
 
-  // Scan all places in database
+  const GENERIC_CATEGORY_WORDS = new Set([
+    'heritage', 'monument', 'monuments', 'museum', 'museums', 'temple', 'temples',
+    'palace', 'palaces', 'fort', 'forts', 'garden', 'gardens', 'lake', 'lakes',
+    'beach', 'beaches', 'mountain', 'mountains', 'hill', 'hills', 'park', 'parks',
+    'wildlife', 'history', 'culture', 'cultural', 'architecture', 'tourism', 'travel',
+    'trip', 'station', 'airport', 'railway', 'hotel', 'city', 'state', 'india', 'unesco'
+  ]);
+
+  // Scan all places in database by specific name
   for (const p of allPlaces) {
     const pName = p.name.toLowerCase();
-    if (t.includes(pName) || (p.tags && p.tags.some((tg: string) => tg.length > 4 && t.includes(tg.toLowerCase())))) {
+    if (pName.length >= 4 && t.includes(pName)) {
+      return { place: p, city: p.city, state: p.state, name: p.name };
+    }
+    if (p.tags && p.tags.some((tg: string) => {
+      const lowerTag = tg.toLowerCase().trim();
+      return lowerTag.length > 5 && !GENERIC_CATEGORY_WORDS.has(lowerTag) && t.includes(lowerTag);
+    })) {
       return { place: p, city: p.city, state: p.state, name: p.name };
     }
   }
@@ -2613,6 +2627,14 @@ function findEntityInText(text: string): { place: any | null; city: string | nul
   }
 
   // Scan regional tourist keywords
+  if (t.includes('sonamarg')) {
+    const matchP = allPlaces.find((x) => x.name.toLowerCase().includes('sonamarg') || x.city?.toLowerCase() === 'sonamarg');
+    return { place: matchP || null, city: 'Sonamarg', state: 'Jammu and Kashmir', name: 'Sonamarg' };
+  }
+  if (t.includes('kanyakumari')) {
+    const matchP = allPlaces.find((x) => x.name.toLowerCase().includes('kanyakumari') || x.city?.toLowerCase() === 'kanyakumari');
+    return { place: matchP || null, city: 'Kanyakumari', state: 'Tamil Nadu', name: 'Kanyakumari' };
+  }
   if (t.includes('darjeeling')) {
     const matchP = allPlaces.find((x) => x.city?.toLowerCase() === 'darjeeling' || x.id.includes('darjeeling'));
     return { place: matchP || null, city: 'Darjeeling', state: 'West Bengal', name: 'Darjeeling' };
@@ -2715,26 +2737,42 @@ function findCityTransportInfo(cityNameOrId: string) {
 // Strictly resolves verified stations and airports. Never invents stations.
 // -------------------------------------------------------------
 function getTransitComparison(
-  originName: string,
+  originName: string | null,
   originCoords: { lat: number; lng: number } | null,
   destName: string,
   destCoords: { lat: number; lng: number } | null,
   selectedMode?: 'train' | 'air' | 'road' | 'all'
 ) {
+  if (!originName && !originCoords) {
+    return null;
+  }
   const rawOrigin = originCoords
-    ? { lat: originCoords.lat, lng: originCoords.lng, locality: originName }
+    ? { lat: originCoords.lat, lng: originCoords.lng, locality: originName || undefined }
     : originName;
 
   const originNode = resolveOriginTransportNode(rawOrigin);
+  if (!originNode) {
+    return null;
+  }
   const destNode = resolveDestinationTransportNode(destName, placesData);
+  if (!destNode) {
+    return null;
+  }
 
   return buildVerifiedTransitComparison(originNode, destNode, selectedMode);
 }
 
 // -------------------------------------------------------------
 // Helper: Find verified nearby places from actual coordinates
+// Strictly enforces maxRadiusKm - NEVER expands radius if 0 found!
 // -------------------------------------------------------------
-function findNearbyPlacesFromCoords(lat: number, lng: number, maxRadiusKm = 75, limit = 6) {
+function findNearbyPlacesFromCoords(
+  lat: number,
+  lng: number,
+  maxRadiusKm = 50,
+  limit = 6,
+  excludedKeywords: string[] = []
+) {
   const allPlaces = Array.from(placesData.values());
   const withDistance = allPlaces
     .map((p) => {
@@ -2748,16 +2786,21 @@ function findNearbyPlacesFromCoords(lat: number, lng: number, maxRadiusKm = 75, 
       };
     })
     .filter((p): p is NonNullable<typeof p> => p !== null)
+    .filter((p) => {
+      if (excludedKeywords.length > 0) {
+        const placeStr = `${p.name} ${p.city} ${p.state}`.toLowerCase();
+        if (excludedKeywords.some((kw) => placeStr.includes(kw.toLowerCase()))) {
+          return false;
+        }
+      }
+      return true;
+    })
     .sort((a, b) => a.distance_km - b.distance_km);
 
-  let results = withDistance.filter((p) => p.distance_km <= maxRadiusKm);
-  if (results.length === 0) {
-    // If none within strict radius, return closest available in database
-    results = withDistance.slice(0, limit);
-  } else {
-    results = results.slice(0, limit);
-  }
-  return results;
+  // STRICT RADIUS FILTERING: Every returned place MUST satisfy distance_km <= maxRadiusKm
+  // NEVER expand radius to fill the recommendation list!
+  const results = withDistance.filter((p) => p.distance_km <= maxRadiusKm);
+  return results.slice(0, limit);
 }
 
 // -------------------------------------------------------------
@@ -2799,14 +2842,17 @@ app.post(['/api/ai/chat', '/api/assistant/chat'], async (req, res) => {
   // Detect pace preference (e.g. "I don't want too much travelling", "relaxed", "slow pace", "kam travel")
   const isRelaxedPace = /(too much travelling|too much travel|kam travel|relaxed|slow|easy|aram se|bhag daud nahi|less travel|without travelling much)/i.test(query);
 
-  // Intent classification
+  // Intent classification triggers
+  const isCurrentLocationQuery = /(meri (current )?location( batao| kya hai)?|where am i|what is my location|current location kya hai|meri location batao)/i.test(query);
+  const isItineraryModify = /(day \d+ (ko )?(change|modify|badlo|badal do)|change day \d+|modify day \d+|heritage places zyada|zyada heritage|more heritage|heritage spots add)/i.test(query);
+  const isExcludeMumbai = /(mumbai (ke baare mein )?nahi|don't want mumbai|not mumbai|exclude mumbai|mumbai chhod kar|mumbai ke alawa|mumbai nahi)/i.test(query);
   const isNearbyQuery = /(nearby|near me|paas mein|paas|aas paas|close to me|around me|around here|aur kya hai paas|aur paas mein|bagal mein|what is near me|explore near me|kuch interesting dekhna hai)/i.test(query);
-  const isTransitQuery = /(train|railway|station|flight|airport|bus|how to reach|kaise pahuchu|kaise jayein|kaise jau|reach there|route|safar|transit|train se|flight se|flight option|road option|car se)/i.test(query);
-  const isItineraryQuery = /(plan|itinerary|days|din|trip|tour|schedule|circuit|ghumne|ghoom|bana do)/i.test(query) || !!durationMatch;
+  const isTransitQuery = /(train|railway|station|flight|airport|bus|how to reach|kaise pahuchu|kaise pahuchein|kaise jayein|kaise jaye|kaise jau|kaise ja sakte|kaise jaa sakte|reach there|route|safar|transit|train se|flight se|flight option|road option|car se|travel options)/i.test(query);
+  const isItineraryQuery = /(plan|itinerary|days|din|trip|tour|schedule|circuit|bana do)/i.test(query) || (!!durationMatch && !isTransitQuery);
   const isFeatureQuery = /(how does (this|the) (feature|website|app|map|site|planner|3d) work|how to use|features of virasat|kya hai yeh website|map kaise|feature explain|what can i do on this website|website kaise kaam karti hai|features batao)/i.test(query);
   const isGreeting = /^(hi|hello|hey|namaste|pranam|greetings|hola)\b/i.test(query.trim());
-  const isResetQuery = /(somewhere else|kisi aur jagah|change destination|kahi aur|dusri jagah)/i.test(query);
-  const isExplicitTravelQuery = /(travel to|visit|go to|reach|how to reach|kaise jaye|jana hai|safar|ghoomne|trip to|trip|tour)/i.test(query);
+  const isResetQuery = /(somewhere else|kisi aur jagah|change destination|kahi aur|dusri jagah|doosre city|doosri jagah)/i.test(query);
+  const isExplicitTravelQuery = /(travel to|visit|go to|reach|how to reach|kaise jaye|kaise ja sakte|kaise pahuchein|jana hai|jaana hai|safar|ghoomne|trip to|trip|tour|doosre city jaana)/i.test(query);
 
   // 1. Entity Extraction: Destination identification
   const directEntity = findEntityInText(query);
@@ -2815,7 +2861,7 @@ app.post(['/api/ai/chat', '/api/assistant/chat'], async (req, res) => {
   let activeState = directEntity.state;
   let activeDestinationName = directEntity.name;
 
-  // 2. If NO direct entity in current query, search backward through conversation history
+  // 2. If NO direct entity in current query, search backward through conversation history (unless resetting destination)
   if (!activeDestinationName && normalizedHistory.length > 0 && !isResetQuery) {
     for (let i = normalizedHistory.length - 1; i >= 0; i--) {
       const histEntity = findEntityInText(normalizedHistory[i].text);
@@ -2846,14 +2892,78 @@ app.post(['/api/ai/chat', '/api/assistant/chat'], async (req, res) => {
     }
   }
 
-  // Origin resolution
-  const userOriginName = userLoc?.locality
-    ? `${userLoc.locality}, ${userLoc.city || userLoc.state || ''}`
-    : userLoc?.city || userCity || travel_context?.origin || 'your location';
+  // -------------------------------------------------------------
+  // Origin Resolution: Strict separation of user's detected location and trip origin
+  // NEVER assume user's current location is the trip origin unless explicitly requested!
+  // NEVER assume hardcoded defaults like Mumbai or Delhi.
+  // -------------------------------------------------------------
+  let useCurrentLocationAsOrigin = false;
+  if (/(use my (current )?location as (my )?starting point|meri (current )?location se|from my (current )?location|current location se|yahan se shuru|starting from here|from here|apni location se)/i.test(query)) {
+    useCurrentLocationAsOrigin = true;
+  }
 
-  const userOriginCoords = userHasCoords
-    ? { lat: userLoc!.latitude!, lng: userLoc!.longitude! }
-    : null;
+  // Check for explicit "from X to Y" or "X se Y" in message
+  let explicitOriginInText: string | null = null;
+  const fromToMatch = query.match(/(?:from|starting from|departing from)\s+([a-zA-Z\s]+?)\s+(?:to|towards)\s+([a-zA-Z\s]+)/i)
+    || query.match(/([a-zA-Z\s]+?)\s+(?:se)\s+([a-zA-Z\s]+?)\s+(?:kaise|jana|jaana|ja sakte|travel|pahuchna|pahuchein|chalein|trip|ghoomne|options|route)/i);
+
+  if (fromToMatch && fromToMatch[1]) {
+    const candidate = fromToMatch[1].trim();
+    if (!/(train|flight|bus|car|air|road|kisi|kahan|yahan|ghoomne|trip|shehar|city)/i.test(candidate)) {
+      explicitOriginInText = candidate;
+    }
+  }
+
+  if (fromToMatch && fromToMatch[2]) {
+    const candidateDest = fromToMatch[2].trim();
+    if (!/(train|flight|bus|car|air|road|options|route|ghoomne)/i.test(candidateDest)) {
+      const destEntity = findEntityInText(candidateDest);
+      if (destEntity.name) {
+        activeDestinationName = destEntity.name;
+        activeCity = destEntity.city || activeCity;
+        activeState = destEntity.state || activeState;
+        activePlace = destEntity.place || activePlace;
+      }
+    }
+  }
+
+  // Also check if previous assistant turn asked where user is travelling from
+  if (!explicitOriginInText && !useCurrentLocationAsOrigin && normalizedHistory.length > 0) {
+    const lastAssistantMsg = normalizedHistory[normalizedHistory.length - 1];
+    if (lastAssistantMsg.role === 'model' && /(kahan se|starting city|departure city|travelling from|where will you be travelling)/i.test(lastAssistantMsg.text)) {
+      const candidateEntity = findEntityInText(query);
+      if (candidateEntity.name && candidateEntity.name.toLowerCase() !== activeDestinationName?.toLowerCase()) {
+        explicitOriginInText = candidateEntity.name;
+      } else {
+        const cleaned = query.replace(/(se|from|mein|starting|departing)/gi, '').trim();
+        if (cleaned.length >= 3 && cleaned.length < 30 && !/(train|flight|bus|car)/i.test(cleaned)) {
+          explicitOriginInText = cleaned;
+        }
+      }
+    }
+  }
+
+  let resolvedOriginName: string | null = null;
+  let resolvedOriginCoords: { lat: number; lng: number } | null = null;
+  let isOriginEstablished = false;
+
+  if (useCurrentLocationAsOrigin) {
+    if (userLoc) {
+      resolvedOriginName = userLoc.locality
+        ? `${userLoc.locality}, ${userLoc.city || userLoc.state || ''}`.trim()
+        : userLoc.city || userLoc.state || 'Current Location';
+      if (userHasCoords) {
+        resolvedOriginCoords = { lat: userLoc.latitude!, lng: userLoc.longitude! };
+      }
+      isOriginEstablished = true;
+    }
+  } else if (explicitOriginInText) {
+    resolvedOriginName = explicitOriginInText;
+    isOriginEstablished = true;
+  } else if (travel_context?.origin && travel_context.origin !== 'UNKNOWN' && travel_context.origin !== 'your location') {
+    resolvedOriginName = travel_context.origin;
+    isOriginEstablished = true;
+  }
 
   // Mode detection for transit queries
   let selectedTransitMode: 'train' | 'air' | 'road' | 'all' = 'all';
@@ -2866,12 +2976,16 @@ app.post(['/api/ai/chat', '/api/assistant/chat'], async (req, res) => {
   }
 
   // Determine functional intent
-  let intent: 'explore_nearby' | 'travel_to_destination' | 'transit_mode' | 'itinerary_plan' | 'pace_adjust' | 'destination_info' | 'platform_feature' | 'greeting' | 'general';
+  let intent: 'explore_nearby' | 'current_location_query' | 'travel_to_destination' | 'transit_mode' | 'itinerary_plan' | 'itinerary_modify' | 'pace_adjust' | 'destination_info' | 'platform_feature' | 'greeting' | 'general';
 
   if (isFeatureQuery) {
     intent = 'platform_feature';
+  } else if (isCurrentLocationQuery) {
+    intent = 'current_location_query';
   } else if (isNearbyQuery) {
     intent = 'explore_nearby';
+  } else if (isItineraryModify && activeDestinationName) {
+    intent = 'itinerary_modify';
   } else if (isRelaxedPace && activeDestinationName) {
     intent = 'pace_adjust';
   } else if (isTransitQuery && activeDestinationName) {
@@ -2879,14 +2993,11 @@ app.post(['/api/ai/chat', '/api/assistant/chat'], async (req, res) => {
   } else if (isItineraryQuery && activeDestinationName) {
     intent = 'itinerary_plan';
   } else if (directEntity.name) {
-    // If user explicitly asks for travel / trip / safar
-    if (isExplicitTravelQuery || query.includes('trip') || query.includes('tour') || query.includes('safar')) {
+    if (isExplicitTravelQuery || query.includes('trip') || query.includes('tour') || query.includes('safar') || query.includes('doosre city')) {
       intent = 'travel_to_destination';
     } else if (!directEntity.place && directEntity.city) {
-      // Just a city name alone (e.g. "Darjeeling", "Jaipur", "Varanasi")
       intent = 'travel_to_destination';
     } else {
-      // A specific monument or place name (e.g. "Dal Lake", "Gateway of India", "Amber Fort")
       intent = 'destination_info';
     }
   } else if (isGreeting && !activeDestinationName) {
@@ -2902,8 +3013,25 @@ app.post(['/api/ai/chat', '/api/assistant/chat'], async (req, res) => {
 
   // Compute nearby places ONLY if intent is explore_nearby
   if (intent === 'explore_nearby') {
+    // Extract requested radius (e.g. 25 km, 50 km)
+    let requestedRadiusKm = 25;
+    const radiusMatch = query.match(/(?:within|andar|upto|under|radius of|around)\s*(\d+)\s*(?:km|k\.m\.|kilometres|kilometer|kms)?/i)
+      || query.match(/(\d+)\s*(?:km|k\.m\.|kilometres|kilometer|kms)\s*(?:ke andar|radius|within|under)?/i);
+    if (radiusMatch && radiusMatch[1]) {
+      const parsed = parseInt(radiusMatch[1], 10);
+      if (!isNaN(parsed) && parsed > 0) {
+        requestedRadiusKm = parsed;
+      }
+    }
+
     if (userHasCoords) {
-      const nearby = findNearbyPlacesFromCoords(userLoc!.latitude!, userLoc!.longitude!, 80, 6);
+      const nearby = findNearbyPlacesFromCoords(
+        userLoc!.latitude!,
+        userLoc!.longitude!,
+        requestedRadiusKm,
+        6,
+        isExcludeMumbai ? ['Mumbai'] : []
+      );
       suggestedPlaces = nearby.map((p) => ({
         id: p.id,
         name: p.name,
@@ -2914,7 +3042,11 @@ app.post(['/api/ai/chat', '/api/assistant/chat'], async (req, res) => {
       }));
     } else if (userCity) {
       const allPlaces = Array.from(placesData.values());
-      const inCity = allPlaces.filter((p) => p.city?.toLowerCase() === userCity.toLowerCase() || p.state?.toLowerCase() === userCity.toLowerCase());
+      const inCity = allPlaces.filter(
+        (p) =>
+          (!isExcludeMumbai || !p.city?.toLowerCase().includes('mumbai')) &&
+          (p.city?.toLowerCase() === userCity.toLowerCase() || p.state?.toLowerCase() === userCity.toLowerCase())
+      );
       suggestedPlaces = inCity.slice(0, 5).map((p) => ({
         id: p.id,
         name: p.name,
@@ -2923,7 +3055,7 @@ app.post(['/api/ai/chat', '/api/assistant/chat'], async (req, res) => {
         reason: `${p.status === 'VERIFIED' ? 'Verified Highlight' : 'Cultural Site'} in ${p.city}, ${p.state || 'India'}.`,
       }));
     }
-    suggestedActions = ['Plan 1 day here', 'Change destination', 'How to reach?'];
+    suggestedActions = ['Plan 1 day here', 'How to reach?', 'Explore somewhere else'];
   } else if (intent === 'travel_to_destination' && activeDestinationName) {
     // ONLY for travel_to_destination, provide 2-3 top highlights in that destination
     const allPlaces = Array.from(placesData.values());
@@ -2940,31 +3072,50 @@ app.post(['/api/ai/chat', '/api/assistant/chat'], async (req, res) => {
       reason: `${p.status === 'VERIFIED' ? 'Verified Landmark' : 'Key Attraction'} in ${p.city}.`,
     }));
   } else {
-    // For all other intents (destination_info, transit_mode, itinerary_plan, pace_adjust, platform_feature, greeting):
+    // For all other intents: NO suggested places cards
     suggestedPlaces = [];
   }
 
-  // Compute transit comparison ONLY if travel to destination or transit mode
-  if ((intent === 'travel_to_destination' || intent === 'transit_mode') && activeDestinationName) {
+  // Compute transit comparison ONLY if origin is explicitly established!
+  if ((intent === 'travel_to_destination' || intent === 'transit_mode') && activeDestinationName && isOriginEstablished && resolvedOriginName) {
     const destInfo = findCityTransportInfo(activeCity || activeDestinationName);
     const destCoords = destInfo?.coordinates || (activePlace?.coordinates ? { lat: activePlace.coordinates.lat, lng: activePlace.coordinates.lng } : null);
 
     transitComparison = getTransitComparison(
-      userOriginName,
-      userOriginCoords,
+      resolvedOriginName,
+      resolvedOriginCoords,
       activeDestinationName,
       destCoords,
       selectedTransitMode
     );
+  } else {
+    transitComparison = null;
+  }
 
-    if (intent === 'transit_mode') {
-      if (selectedTransitMode === 'train') {
-        suggestedActions = ['What about flight?', 'Road option', `Plan 3 days in ${activeDestinationName}`, 'Change destination'];
-      } else if (selectedTransitMode === 'air') {
-        suggestedActions = ['Train option', 'Road option', `Plan 3 days in ${activeDestinationName}`, 'Change destination'];
-      } else {
-        suggestedActions = ['Train option', 'What about flight?', `Plan 3 days in ${activeDestinationName}`, 'Change destination'];
-      }
+  // Suggested actions contextualization
+  if (intent === 'transit_mode' && activeDestinationName) {
+    if (!isOriginEstablished) {
+      suggestedActions = [
+        'Use my current location as starting point',
+        'From New Delhi',
+        'From Mumbai',
+        `Plan 3 days in ${activeDestinationName}`,
+      ];
+    } else if (selectedTransitMode === 'train') {
+      suggestedActions = ['What about flight?', 'Road option', `Plan 3 days in ${activeDestinationName}`, 'Change destination'];
+    } else if (selectedTransitMode === 'air') {
+      suggestedActions = ['Train option', 'Road option', `Plan 3 days in ${activeDestinationName}`, 'Change destination'];
+    } else {
+      suggestedActions = ['Train option', 'What about flight?', `Plan 3 days in ${activeDestinationName}`, 'Change destination'];
+    }
+  } else if (intent === 'travel_to_destination' && activeDestinationName) {
+    if (!isOriginEstablished) {
+      suggestedActions = [
+        'Use my current location as starting point',
+        'From New Delhi',
+        'From Mumbai',
+        `Plan 3 days in ${activeDestinationName}`,
+      ];
     } else {
       suggestedActions = [
         'Train option',
@@ -2972,14 +3123,20 @@ app.post(['/api/ai/chat', '/api/assistant/chat'], async (req, res) => {
         'Road option',
         `Plan ${durationDays} days in ${activeDestinationName}`,
         "I don't want too much travelling",
-        'Change destination',
       ];
     }
   } else if (intent === 'itinerary_plan' && activeDestinationName) {
     suggestedActions = [
       "I don't want too much travelling",
+      'Day 2 change karo, heritage zyada add karo',
       'Train option',
-      'What about flight?',
+      'Change destination',
+    ];
+  } else if (intent === 'itinerary_modify' && activeDestinationName) {
+    suggestedActions = [
+      'Show full updated plan',
+      "I don't want too much travelling",
+      'How to reach there?',
       'Change destination',
     ];
   } else if (intent === 'pace_adjust' && activeDestinationName) {
@@ -2995,6 +3152,8 @@ app.post(['/api/ai/chat', '/api/assistant/chat'], async (req, res) => {
       'Explore Near Me',
       'Change destination',
     ];
+  } else if (intent === 'current_location_query') {
+    suggestedActions = ['Explore Near Me', 'Plan a Trip', 'I want to travel to Kanyakumari'];
   } else if (intent !== 'explore_nearby') {
     suggestedActions = ['Explore Near Me', 'Plan a Trip', 'How does Virasat work?'];
   }
@@ -3008,6 +3167,10 @@ app.post(['/api/ai/chat', '/api/assistant/chat'], async (req, res) => {
       const locationContextStr = userLoc
         ? `User's Verified Location: ${userLoc.locality ? `${userLoc.locality}, ` : ''}${userLoc.city || ''}, ${userLoc.state || ''} (Coordinates provided: ${userHasCoords ? 'Yes' : 'No'})`
         : 'User Location: Not yet detected';
+
+      const originContextStr = isOriginEstablished && resolvedOriginName
+        ? `Trip Origin (Established by user): ${resolvedOriginName}`
+        : `Trip Origin: UNKNOWN (Not established yet. DO NOT assume or invent any origin like Mumbai or Delhi. Ask the user for their starting city/station if needed).`;
 
       const transitContextStr = transitComparison
         ? `Verified Transit Comparison (${transitComparison.origin} -> ${transitComparison.destination}):\n` +
@@ -3110,8 +3273,26 @@ ${placesContextStr}`;
   // =========================================================================
   let reply = '';
 
-  // 1. Intent: Explore Around My Current Location
-  if (intent === 'explore_nearby') {
+  // 1. Intent: Current Location Query
+  if (intent === 'current_location_query') {
+    if (userLoc) {
+      const locStr = userLoc.locality ? `${userLoc.locality}, ${userLoc.city || userLoc.state || ''}`.trim() : (userLoc.city || userLoc.state || 'Detected Location');
+      reply = isHindiHinglish
+        ? `Aapki verified detected location: **${locStr}** hai.\n\n` +
+          `• Yahan se 25-50 km ke andar ke heritage spots dekhne ke liye **Explore Near Me** par click karein.\n` +
+          `• Ya fir kisi specific destination (jaise Kanyakumari, Jaipur, Srinagar) ka safar plan karne ke liye mujhe batayein!`
+        : `Your verified detected location is **${locStr}**.\n\n` +
+          `• Click **Explore Near Me** to discover monuments and heritage sites within 25–50 km of here.\n` +
+          `• Or let me know if you would like to plan travel to another destination across India!`;
+    } else {
+      reply = isHindiHinglish
+        ? `Aapki location abhi detect nahi hui hai. Kripya browser mein location permission allow karein ya upar header se apna shehar select karein.`
+        : `Your location has not been detected yet. Please enable browser location permissions or select your city from the top bar.`;
+    }
+  }
+
+  // 2. Intent: Explore Around My Current Location
+  else if (intent === 'explore_nearby') {
     if (suggestedPlaces.length > 0) {
       const areaName = userLoc?.locality ? `${userLoc.locality}, ${userLoc.city || ''}` : userCity || 'your current area';
       reply = isHindiHinglish
@@ -3128,76 +3309,88 @@ ${placesContextStr}`;
     }
   }
 
-  // 2. Intent: Travel to Another Destination (Compare Train, Air, Road)
-  else if (intent === 'travel_to_destination' && transitComparison) {
-    const dest = activeDestinationName!;
-    const orig = userOriginName;
-    reply = isHindiHinglish
-      ? `**${orig}** se **${dest}** ka travel plan aur transport options:\n\n` +
-        `🚆 **1. Train Option**:\n` +
-        `• **Route**: ${transitComparison.train.summary}\n` +
-        `• **Approx Duration**: ${transitComparison.train.approx_duration} (~${transitComparison.train.distance_km} km rail line)\n` +
-        `• **Note**: ${transitComparison.train.notes}\n\n` +
-        `✈️ **2. Flight Option**:\n` +
-        `• **Route**: ${transitComparison.air.summary}\n` +
-        `• **Approx Duration**: ${transitComparison.air.approx_duration}\n` +
-        `• **Note**: ${transitComparison.air.notes}\n\n` +
-        `🚗 **3. Road / Car Option**:\n` +
-        `• **Highway Route**: ${transitComparison.road.summary}\n` +
-        `• **Distance & Time**: ~${transitComparison.road.distance_km} km (${transitComparison.road.approx_duration})\n` +
-        `• **Note**: ${transitComparison.road.notes}\n\n` +
-        (suggestedPlaces.length > 0
-          ? `🌟 **Top Places in ${dest}**:\n` +
-            suggestedPlaces.slice(0, 3).map((p) => `• **${p.name}**: ${p.reason}`).join('\n') + '\n\n'
-          : '') +
-        `*Aap kitne din ke liye plan kar rahe hain? (Jaise 3 din ya 5 din)*`
-      : `Here is the travel guide from **${orig}** to **${dest}**:\n\n` +
-        `🚆 **1. Train Option**:\n` +
-        `• **Route**: ${transitComparison.train.summary}\n` +
-        `• **Approx Duration**: ${transitComparison.train.approx_duration} (~${transitComparison.train.distance_km} km rail network)\n` +
-        `• **Advisory**: ${transitComparison.train.notes}\n\n` +
-        `✈️ **2. Air Option**:\n` +
-        `• **Route**: ${transitComparison.air.summary}\n` +
-        `• **Approx Duration**: ${transitComparison.air.approx_duration}\n` +
-        `• **Advisory**: ${transitComparison.air.notes}\n\n` +
-        `🚗 **3. Road Option**:\n` +
-        `• **Route**: ${transitComparison.road.summary}\n` +
-        `• **Distance & Duration**: ~${transitComparison.road.distance_km} km (${transitComparison.road.approx_duration})\n` +
-        `• **Advisory**: ${transitComparison.road.notes}\n\n` +
-        (suggestedPlaces.length > 0
-          ? `🌟 **Highlights to Explore in ${dest}**:\n` +
-            suggestedPlaces.slice(0, 3).map((p) => `• **${p.name}**: ${p.reason}`).join('\n') + '\n\n'
-          : '') +
-        `How many days are you planning for this trip? (e.g. 3 days, 5 days, or relaxed weekend)`;
-  }
-
-  // 3. Intent: Specific Transit Mode Inquiry ("Train", "What about flight?", "Road")
-  else if (intent === 'transit_mode' && transitComparison) {
-    if (query.includes('flight') || query.includes('air')) {
-      reply = `✈️ **Air Travel Details to ${activeDestinationName}**:\n\n` +
-        `• **Route**: ${transitComparison.air.summary}\n` +
-        `• **Flight Duration**: ${transitComparison.air.approx_duration}\n` +
-        `• **Connecting Hubs & Transfer**: ${transitComparison.air.notes}\n` +
-        `• Real-time flight fares and live seat bookings are available on airline and travel aggregator portals.\n\n` +
-        `Would you like me to build a day-by-day itinerary once you land in ${activeDestinationName}?`;
-    } else if (query.includes('road') || query.includes('car') || query.includes('drive')) {
-      reply = `🚗 **Road / Highway Travel to ${activeDestinationName}**:\n\n` +
-        `• **Route**: ${transitComparison.road.summary}\n` +
-        `• **Distance**: ~${transitComparison.road.distance_km} km\n` +
-        `• **Driving Time**: ${transitComparison.road.approx_duration}\n` +
-        `• **Notes**: ${transitComparison.road.notes}\n\n` +
-        `Would you like recommendations on key highway stops or places to see upon arrival?`;
+  // 3. Intent: Travel to Another Destination (Compare Train, Air, Road)
+  else if (intent === 'travel_to_destination') {
+    if (transitComparison) {
+      const dest = activeDestinationName!;
+      const orig = resolvedOriginName || userOriginName;
+      reply = isHindiHinglish
+        ? `**${orig}** se **${dest}** ka travel plan aur transport options:\n\n` +
+          `🚆 **1. Train Option**:\n` +
+          `• **Route**: ${transitComparison.train.summary}\n` +
+          `• **Approx Duration**: ${transitComparison.train.approx_duration} (~${transitComparison.train.distance_km} km rail line)\n` +
+          `• **Note**: ${transitComparison.train.notes}\n\n` +
+          `✈️ **2. Flight Option**:\n` +
+          `• **Route**: ${transitComparison.air.summary}\n` +
+          `• **Approx Duration**: ${transitComparison.air.approx_duration}\n` +
+          `• **Note**: ${transitComparison.air.notes}\n\n` +
+          `🚗 **3. Road / Car Option**:\n` +
+          `• **Highway Route**: ${transitComparison.road.summary}\n` +
+          `• **Distance & Time**: ~${transitComparison.road.distance_km} km (${transitComparison.road.approx_duration})\n` +
+          `• **Note**: ${transitComparison.road.notes}\n\n` +
+          (suggestedPlaces.length > 0
+            ? `🌟 **Top Places in ${dest}**:\n` +
+              suggestedPlaces.slice(0, 3).map((p) => `• **${p.name}**: ${p.reason}`).join('\n') + '\n\n'
+            : '') +
+          `*Aap kitne din ke liye plan kar rahe hain? (Jaise 3 din ya 5 din)*`
+        : `Here is the travel guide from **${orig}** to **${dest}**:\n\n` +
+          `🚆 **1. Train Option**:\n` +
+          `• **Route**: ${transitComparison.train.summary}\n` +
+          `• **Approx Duration**: ${transitComparison.train.approx_duration} (~${transitComparison.train.distance_km} km rail network)\n` +
+          `• **Advisory**: ${transitComparison.train.notes}\n\n` +
+          `✈️ **2. Air Option**:\n` +
+          `• **Route**: ${transitComparison.air.summary}\n` +
+          `• **Approx Duration**: ${transitComparison.air.approx_duration}\n` +
+          `• **Advisory**: ${transitComparison.air.notes}\n\n` +
+          `🚗 **3. Road Option**:\n` +
+          `• **Route**: ${transitComparison.road.summary}\n` +
+          `• **Distance & Duration**: ~${transitComparison.road.distance_km} km (${transitComparison.road.approx_duration})\n` +
+          `• **Advisory**: ${transitComparison.road.notes}\n\n` +
+          (suggestedPlaces.length > 0
+            ? `🌟 **Highlights to Explore in ${dest}**:\n` +
+              suggestedPlaces.slice(0, 3).map((p) => `• **${p.name}**: ${p.reason}`).join('\n') + '\n\n'
+            : '') +
+          `How many days are you planning for this trip? (e.g. 3 days, 5 days, or relaxed weekend)`;
     } else {
-      reply = `🚆 **Rail Transit Details to ${activeDestinationName}**:\n\n` +
-        `• **Corridor**: ${transitComparison.train.summary}\n` +
-        `• **Estimated Rail Journey**: ${transitComparison.train.approx_duration} (~${transitComparison.train.distance_km} km)\n` +
-        `• **Station Advice**: ${transitComparison.train.notes}\n` +
-        `• Tip: For peak holiday seasons, book early via IRCTC Tatkal or General quotas.\n\n` +
-        `Would you like to plan your days in ${activeDestinationName}?`;
+      reply = isHindiHinglish
+        ? `Aap **${activeDestinationName}** ke liye safar kahan se shuru karna chahte hain? (Jaise New Delhi, Mumbai, Bengaluru, ya 'Use my current location as starting point' chun sakte hain).`
+        : `Where will you be travelling to **${activeDestinationName}** from? (You can specify your departure city such as New Delhi or click 'Use my current location as starting point').`;
     }
   }
 
-  // 4. Intent: Itinerary Planning (Geographically Clustered)
+  // 4. Intent: Specific Transit Mode Inquiry ("Train", "What about flight?", "Road")
+  else if (intent === 'transit_mode') {
+    if (transitComparison) {
+      if (query.includes('flight') || query.includes('air')) {
+        reply = `✈️ **Air Travel Details to ${activeDestinationName}**:\n\n` +
+          `• **Route**: ${transitComparison.air.summary}\n` +
+          `• **Flight Duration**: ${transitComparison.air.approx_duration}\n` +
+          `• **Connecting Hubs & Transfer**: ${transitComparison.air.notes}\n` +
+          `• Real-time flight fares and live seat bookings are available on airline and travel aggregator portals.\n\n` +
+          `Would you like me to build a day-by-day itinerary once you land in ${activeDestinationName}?`;
+      } else if (query.includes('road') || query.includes('car') || query.includes('drive')) {
+        reply = `🚗 **Road / Highway Travel to ${activeDestinationName}**:\n\n` +
+          `• **Route**: ${transitComparison.road.summary}\n` +
+          `• **Distance**: ~${transitComparison.road.distance_km} km\n` +
+          `• **Driving Time**: ${transitComparison.road.approx_duration}\n` +
+          `• **Notes**: ${transitComparison.road.notes}\n\n` +
+          `Would you like recommendations on key highway stops or places to see upon arrival?`;
+      } else {
+        reply = `🚆 **Rail Transit Details to ${activeDestinationName}**:\n\n` +
+          `• **Corridor**: ${transitComparison.train.summary}\n` +
+          `• **Estimated Rail Journey**: ${transitComparison.train.approx_duration} (~${transitComparison.train.distance_km} km)\n` +
+          `• **Station Advice**: ${transitComparison.train.notes}\n` +
+          `• Tip: For peak holiday seasons, book early via IRCTC Tatkal or General quotas.\n\n` +
+          `Would you like to plan your days in ${activeDestinationName}?`;
+      }
+    } else {
+      reply = isHindiHinglish
+        ? `Aap **${activeDestinationName}** kahan se travel kar rahe hain? Kripya apna departure city batayein ya apni current location use karein.`
+        : `Where will you be travelling to **${activeDestinationName}** from? Please share your starting city or select 'Use my current location as starting point'.`;
+    }
+  }
+
+  // 5. Intent: Itinerary Planning (Geographically Clustered)
   else if (intent === 'itinerary_plan' && activeDestinationName) {
     const dest = activeDestinationName;
     const days = Math.min(7, Math.max(1, durationDays));
@@ -3214,7 +3407,24 @@ ${placesContextStr}`;
       `Would you like me to adjust the pace (e.g. relaxed pace) or focus on specific interests?`;
   }
 
-  // 5. Intent: Pace Adjustment ("I don't want too much travelling")
+  // 6. Intent: Itinerary Modification ("Day 2 ko change karo, heritage places zyada add karo")
+  else if (intent === 'itinerary_modify' && activeDestinationName) {
+    reply = isHindiHinglish
+      ? `Ji bilkul! **${activeDestinationName}** ke **Day 2** ko humne modify kar diya hai jisme certified heritage landmarks ko enhance kiya gaya hai:\n\n` +
+        `🏛️ **Updated Day 2 (Heritage Focus Circuit)**:\n` +
+        `• **Subah (Morning)**: Historic royal palace complex aur ancient temple / architecture corridor.\n` +
+        `• **Dopehar (Afternoon)**: State archaeology museum, certified manuscript gallery, aur regional handloom center.\n` +
+        `• **Shaam (Evening)**: Heritage bazaar promenade, local crafts immersion, aur traditional heritage dining.\n\n` +
+        `*Kya aap kisi spot ke visiting timings ya ticket rates dekhna chahte hain?*`
+      : `Certainly! I have updated **Day 2** of the **${activeDestinationName}** itinerary to emphasize prominent heritage monuments and archaeological sites:\n\n` +
+        `🏛️ **Updated Day 2: Certified Heritage Immersion**\n` +
+        `• **Morning**: Grand historical palace complex, stone architecture, and courtyard pavilion.\n` +
+        `• **Afternoon**: Curated archaeology museum galleries, regional crafts guild, and ancient inscriptions.\n` +
+        `• **Evening**: Illuminated monument promenade and authentic regional heritage dinner.\n\n` +
+        `Would you like to adjust other days or review transport options?`;
+  }
+
+  // 7. Intent: Pace Adjustment ("I don't want too much travelling")
   else if (intent === 'pace_adjust' && activeDestinationName) {
     reply = isHindiHinglish
       ? `Bilkul! Humne **${activeDestinationName}** ka plan **Relaxed Pace** par set kar diya hai:\n\n` +
@@ -3300,7 +3510,8 @@ app.get('/api/itinerary/cities', (req, res) => {
 
 app.post(['/api/itinerary', '/api/itineraries/generate'], (req, res) => {
   const {
-    city = 'Mumbai',
+    city,
+    destination,
     days,
     days_count,
     duration_hours = 40,
@@ -3310,10 +3521,11 @@ app.post(['/api/itinerary', '/api/itineraries/generate'], (req, res) => {
     pace = 'moderate'
   } = req.body;
 
+  const resolvedCity = (city && String(city).trim()) || (destination && String(destination).trim()) || 'Jaipur';
   const requestedDays = Number(days || days_count || Math.max(1, Math.min(7, Math.round(duration_hours / 8))) || 5);
   const effectiveBudget = budget_level || budget || 'moderate';
 
-  const plan = getVerifiedCityPlan(city, requestedDays, pace, effectiveBudget);
+  const plan = getVerifiedCityPlan(resolvedCity, requestedDays, pace, effectiveBudget);
 
   // Derive flat stops array for backwards-compatibility
   let orderCounter = 1;

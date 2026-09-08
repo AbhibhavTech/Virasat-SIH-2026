@@ -182,6 +182,8 @@ export function initializeTransportRegistry(rootDir: string = process.cwd()) {
     { name: 'Mettupalayam Railway Station', code: 'MTP', city: 'Mettupalayam', state: 'Tamil Nadu', lat: 11.2989, lng: 76.9489, is_junction: true, status: 'VERIFIED' },
     { name: 'Hosapete Junction', code: 'HPT', city: 'Hospet / Vijayanagara', state: 'Karnataka', lat: 15.2750, lng: 76.3860, is_junction: true, status: 'VERIFIED' },
     { name: 'Panvel Junction', code: 'PNVL', city: 'Navi Mumbai', state: 'Maharashtra', lat: 18.9902, lng: 73.1188, is_junction: true, status: 'VERIFIED' },
+    { name: 'Kanyakumari Railway Station', code: 'CAPE', city: 'Kanyakumari', state: 'Tamil Nadu', lat: 8.0883, lng: 77.5385, is_junction: false, status: 'VERIFIED' },
+    { name: 'Nagercoil Junction', code: 'NCJ', city: 'Nagercoil', state: 'Tamil Nadu', lat: 8.1812, lng: 77.4414, is_junction: true, status: 'VERIFIED' },
   ];
 
   for (const hub of ESSENTIAL_RAILWAY_HUBS) {
@@ -206,6 +208,8 @@ export function initializeTransportRegistry(rootDir: string = process.cwd()) {
     { name: 'Kushok Bakula Rimpochee Airport', code: 'IXL', city: 'Leh', state: 'Ladakh', lat: 34.1359, lng: 77.5465, status: 'VERIFIED' },
     { name: 'Coimbatore International Airport', code: 'CJB', city: 'Coimbatore', state: 'Tamil Nadu', lat: 11.0298, lng: 77.0434, status: 'VERIFIED' },
     { name: 'Jindal Vijayanagar Airport', code: 'VDY', city: 'Vidyanagar / Hampi', state: 'Karnataka', lat: 15.1683, lng: 76.6344, status: 'VERIFIED' },
+    { name: 'Trivandrum International Airport', code: 'TRV', city: 'Thiruvananthapuram / Trivandrum', state: 'Kerala', lat: 8.4821, lng: 76.9200, status: 'VERIFIED' },
+    { name: 'Tuticorin Airport', code: 'TCR', city: 'Thoothukudi / Tuticorin', state: 'Tamil Nadu', lat: 8.7242, lng: 78.0258, status: 'VERIFIED' },
   ];
 
   for (const apt of ESSENTIAL_AIRPORTS) {
@@ -217,20 +221,30 @@ export function initializeTransportRegistry(rootDir: string = process.cwd()) {
 
 // -------------------------------------------------------------
 // Resolve User Origin to Real Verified Transport Nodes
+// (Returns null if origin is unknown or unprovided - NO FAKE FALLBACKS)
 // -------------------------------------------------------------
 export function resolveOriginTransportNode(
   rawOrigin: { lat?: number; lng?: number; locality?: string; city?: string; state?: string } | string | null | undefined
-): ResolvedTransportOrigin {
+): ResolvedTransportOrigin | null {
   initializeTransportRegistry();
 
-  let label = 'Your Location';
-  let city = 'Delhi';
-  let state = 'Delhi';
-  let lat = 28.6139;
-  let lng = 77.2090;
+  if (!rawOrigin) {
+    return null;
+  }
 
-  if (typeof rawOrigin === 'string' && rawOrigin.trim().length > 0) {
-    label = rawOrigin.trim();
+  let label = '';
+  let city = '';
+  let state = '';
+  let lat = 0;
+  let lng = 0;
+  let hasCoords = false;
+
+  if (typeof rawOrigin === 'string') {
+    const trimmed = rawOrigin.trim();
+    if (!trimmed || trimmed.toLowerCase() === 'unknown' || trimmed.toLowerCase() === 'your location') {
+      return null;
+    }
+    label = trimmed;
     const cleanLower = label.toLowerCase();
     // Try matching city
     const allCities = (INDIA_TOURISM_DATABASE.states as unknown as any[]).flatMap((s: any) => s.cities || []);
@@ -239,18 +253,50 @@ export function resolveOriginTransportNode(
     );
     if (matchedCity) {
       city = matchedCity.name;
-      state = matchedCity.state;
-      lat = matchedCity.coordinates?.lat || lat;
-      lng = matchedCity.coordinates?.lng || lng;
+      state = matchedCity.state || '';
+      if (matchedCity.coordinates?.lat && matchedCity.coordinates?.lng) {
+        lat = matchedCity.coordinates.lat;
+        lng = matchedCity.coordinates.lng;
+        hasCoords = true;
+      }
+    } else {
+      // Try matching verified station
+      const stn = MASTER_VERIFIED_STATIONS.find(
+        (s) => s.city.toLowerCase() === cleanLower || s.name.toLowerCase().includes(cleanLower) || cleanLower.includes(s.city.toLowerCase())
+      );
+      if (stn) {
+        city = stn.city;
+        state = stn.state;
+        lat = stn.lat;
+        lng = stn.lng;
+        hasCoords = true;
+      }
     }
   } else if (rawOrigin && typeof rawOrigin === 'object') {
-    lat = rawOrigin.lat || 28.6139;
-    lng = rawOrigin.lng || 77.2090;
-    city = rawOrigin.city || 'Delhi';
-    state = rawOrigin.state || 'Delhi';
+    if (rawOrigin.lat && rawOrigin.lng && !isNaN(rawOrigin.lat) && !isNaN(rawOrigin.lng)) {
+      lat = rawOrigin.lat;
+      lng = rawOrigin.lng;
+      hasCoords = true;
+    }
+    city = rawOrigin.city || '';
+    state = rawOrigin.state || '';
     label = rawOrigin.locality
       ? `${rawOrigin.locality}, ${rawOrigin.city || rawOrigin.state || ''}`.trim()
-      : rawOrigin.city || 'Your Location';
+      : rawOrigin.city || rawOrigin.state || 'Selected Origin';
+  }
+
+  if (!hasCoords && city) {
+    const allCities = (INDIA_TOURISM_DATABASE.states as unknown as any[]).flatMap((s: any) => s.cities || []);
+    const matchedCity = allCities.find((c: any) => c && c.name.toLowerCase() === city.toLowerCase());
+    if (matchedCity?.coordinates?.lat && matchedCity?.coordinates?.lng) {
+      lat = matchedCity.coordinates.lat;
+      lng = matchedCity.coordinates.lng;
+      hasCoords = true;
+    }
+  }
+
+  if (!hasCoords || !MASTER_VERIFIED_STATIONS.length) {
+    return null;
   }
 
   // Find closest verified railway station using actual Haversine distance
@@ -276,9 +322,9 @@ export function resolveOriginTransportNode(
   }
 
   return {
-    origin_label: label,
-    city,
-    state,
+    origin_label: label || city || 'Verified Origin',
+    city: city || nearestStation.city,
+    state: state || nearestStation.state,
     coordinates: { lat, lng },
     nearest_railway_station: {
       name: nearestStation ? nearestStation.name : 'Verified Railway Station',
@@ -526,6 +572,66 @@ export function resolveDestinationTransportNode(
     };
   }
 
+  // SONAMARG
+  if (q.includes('sonamarg')) {
+    return {
+      is_poi: false,
+      destination_name: 'Sonamarg',
+      city: 'Sonamarg / Ganderbal',
+      state: 'Jammu and Kashmir',
+      coordinates: { lat: 34.3000, lng: 75.2900 },
+      railway_hub: {
+        station_name: 'Srinagar Railway Station (SINA) & Jammu Tawi (JAT) Railhead',
+        station_code: 'SINA',
+        is_direct: false,
+        distance_to_dest_km: 85,
+        onward_connection_note:
+          'Sonamarg is a high-altitude Himalayan valley meadow with no direct railway station. The broad-gauge mainline connects across India to Jammu Tawi (JAT) and Katra (SVDK). The local Kashmir Valley line connects to Srinagar (SINA). From Srinagar, take a private cab or shared taxi along the scenic NH-1 (Srinagar-Leh Highway) via Ganderbal and Kangan (~85 km, approx. 2.5 to 3 hours).',
+        status: 'VERIFIED',
+      },
+      airport_hub: {
+        airport_name: 'Sheikh ul-Alam International Airport, Srinagar (SXR)',
+        airport_code: 'SXR',
+        is_direct: false,
+        distance_to_dest_km: 80,
+        onward_connection_note:
+          'Sonamarg has no airport. Fly into Sheikh ul-Alam International Airport in Srinagar (SXR), which has regular flights from major Indian cities. From the airport, drive ~80 km along the Sindh River to Sonamarg in approx. 2.5 hours.',
+        status: 'VERIFIED',
+      },
+      geographic_notes: 'High-altitude mountain valley along the Sindh River surrounded by glaciers and Himalayan passes.',
+    };
+  }
+
+  // KANYAKUMARI
+  if (q.includes('kanyakumari')) {
+    return {
+      is_poi: false,
+      destination_name: 'Kanyakumari',
+      city: 'Kanyakumari',
+      state: 'Tamil Nadu',
+      coordinates: { lat: 8.0883, lng: 77.5385 },
+      railway_hub: {
+        station_name: 'Kanyakumari Railway Station (CAPE)',
+        station_code: 'CAPE',
+        is_direct: true,
+        distance_to_dest_km: 1,
+        onward_connection_note:
+          'Kanyakumari is directly served by Kanyakumari Railway Station (CAPE), the southernmost terminus on Indian Railways with direct express trains across the country. Nagercoil Junction (NCJ) is also a major rail junction just 16 km away.',
+        status: 'VERIFIED',
+      },
+      airport_hub: {
+        airport_name: 'Trivandrum International Airport (TRV)',
+        airport_code: 'TRV',
+        is_direct: false,
+        distance_to_dest_km: 90,
+        onward_connection_note:
+          'Kanyakumari has no commercial airport. The nearest major commercial airport is Trivandrum International Airport (TRV) in Kerala (~90 km via NH-66, approx. 2.5 hours by taxi). Tuticorin Airport (TCR) is approx. 95 km away.',
+        status: 'VERIFIED',
+      },
+      geographic_notes: 'Coastal tip of mainland India at the confluence of the Arabian Sea, Gulf of Mannar, and Indian Ocean.',
+    };
+  }
+
   // GOA
   if (q.includes('goa')) {
     return {
@@ -732,7 +838,15 @@ export function buildVerifiedTransitComparison(
   let trainDuration = `${trainHours} - ${Math.round(trainHours * 1.25)} hours`;
   let trainNotes = '';
 
-  if (destNode.railway_hub.status === 'VERIFIED') {
+  const isSameStation =
+    (originNode.nearest_railway_station.code && destNode.railway_hub.station_code && originNode.nearest_railway_station.code === destNode.railway_hub.station_code) ||
+    (originNode.city.toLowerCase() === destNode.city.toLowerCase() && aerialDistanceKm < 25);
+
+  if (isSameStation) {
+    trainSummary = `Local suburban / metro transit within ${destNode.city || destNode.destination_name}`;
+    trainDuration = '15 - 45 mins';
+    trainNotes = `You are already located within or near ${destNode.city || destNode.destination_name}. Use city local transport (metro, suburban rail, or auto/cab) instead of intercity rail.`;
+  } else if (destNode.railway_hub.status === 'VERIFIED') {
     trainSummary = `Train from ${originNode.nearest_railway_station.name} (${originNode.nearest_railway_station.code}) to ${destNode.railway_hub.station_name}`;
     trainNotes = destNode.railway_hub.onward_connection_note || 'Scheduled Indian Railways express connectivity. Verify official schedules and book on IRCTC.';
   } else {
@@ -746,7 +860,16 @@ export function buildVerifiedTransitComparison(
   let airDuration = '';
   let airNotes = '';
 
-  if (destNode.airport_hub.status === 'VERIFIED') {
+  const isSameMetro =
+    originNode.city.toLowerCase() === destNode.city.toLowerCase() ||
+    aerialDistanceKm < 35 ||
+    (originNode.nearest_airport.code && destNode.airport_hub.airport_code && originNode.nearest_airport.code === destNode.airport_hub.airport_code);
+
+  if (isSameMetro) {
+    airSummary = `Intra-city / short distance: No commercial flights operated within ${destNode.city || destNode.destination_name}`;
+    airDuration = 'N/A (Local transit recommended)';
+    airNotes = `You are already within or near ${destNode.city || destNode.destination_name}. Intercity flights do not operate within the same metropolitan area; use local road or rail transit.`;
+  } else if (destNode.airport_hub.status === 'VERIFIED') {
     airSummary = `Flight from ${originNode.nearest_airport.name} (${originNode.nearest_airport.code}) to ${destNode.airport_hub.airport_name}`;
     airDuration = aerialDistanceKm < 450 ? '~1 hr 15 min flight' : aerialDistanceKm < 1000 ? '~2 hrs direct' : '~2.5 to 3.5 hrs direct/connecting';
     airNotes = destNode.airport_hub.onward_connection_note || 'Check official airline portals for current flight schedules.';

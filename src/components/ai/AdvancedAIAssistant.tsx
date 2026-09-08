@@ -261,13 +261,9 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
         travel_context: travelContext,
       });
 
-      // Reset destination memory if user asks to change destination or explore somewhere else
-      if (/(change destination|kisi aur jagah|somewhere else|kahi aur|dusri jagah|new destination)/i.test(trimmed)) {
-        setTravelContext((prev) => ({
-          ...prev,
-          destination: undefined,
-          days: undefined,
-        }));
+      // Reset destination memory if user asks to change destination or explore somewhere else without naming a new one
+      if (/(change destination|kisi aur jagah|somewhere else|kahi aur|dusri jagah|new destination)/i.test(trimmed) && !res.transit_comparison?.destination) {
+        setTravelContext({});
       } else if (res.transit_comparison?.destination) {
         // Update contextual memory if destination or transit was detected
         setTravelContext((prev) => ({
@@ -624,8 +620,8 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
         </div>
       </div>
 
-      {/* Active Dialogue Box - FULL EXTENT (Both sides & increased downward height) */}
-      <div className="w-full flex flex-col h-[calc(100vh-130px)] min-h-[850px] sm:min-h-[920px] lg:min-h-[1000px] max-h-none rounded-3xl bg-white border border-[#EFE8DF] shadow-warm overflow-hidden">
+      {/* Active Dialogue Box */}
+      <div className="w-full flex flex-col h-[580px] sm:h-[640px] lg:h-[680px] rounded-3xl bg-white border border-[#EFE8DF] shadow-warm overflow-hidden">
         {/* Chat Stream Header */}
         <div className="p-3.5 px-5 sm:px-6 bg-[#FAF8F5] border-b border-[#EFE8DF] flex items-center justify-between flex-wrap gap-2">
           <div className="flex items-center gap-2.5">
@@ -686,7 +682,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
                   {renderMessageContent(m.content)}
 
                   {/* Multimodal Transit Comparison Cards */}
-                  {!isUser && m.transit_comparison && renderTransitComparison(m.transit_comparison)}
+                  {!isUser && m.transit_comparison && (m.transit_comparison.train || m.transit_comparison.air || m.transit_comparison.road) && renderTransitComparison(m.transit_comparison)}
 
                   {/* Suggested Places Cards with Real Distance in Km */}
                   {!isUser && m.suggested_places && m.suggested_places.length > 0 && (
