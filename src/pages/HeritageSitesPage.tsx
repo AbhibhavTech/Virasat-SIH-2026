@@ -397,8 +397,10 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
 
                   {/* Badges on Image */}
                   <div className="absolute top-3 left-3 flex flex-wrap gap-1.5">
-                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-[#FF671F] text-white shadow-xs">
-                      {site.heritage_status || 'UNESCO Heritage'}
+                    <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold text-white shadow-xs ${
+                      site.unesco_site ? 'bg-[#FF671F]' : 'bg-[#046A38]'
+                    }`}>
+                      {site.heritage_status || (site.unesco_site ? 'UNESCO World Heritage' : 'National Monument')}
                     </span>
                     {has3d && (
                       <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-[#000080] text-white shadow-xs flex items-center gap-1">

@@ -880,6 +880,40 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
             </div>
           </div>
         </div>
+
+        {/* Bottom Right Floating AI Assistant Quick Trigger */}
+        <button
+          type="button"
+          onClick={() => onNavigateTab('ai')}
+          className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 lg:bottom-8 lg:right-8 bg-white/95 hover:bg-white backdrop-blur-md px-3.5 py-2.5 rounded-2xl border border-white/90 hover:border-orange-300 shadow-md hover:shadow-lg transition-all duration-200 flex items-center gap-3 text-stone-800 z-20 cursor-pointer group active:scale-95 text-left"
+          title="Open Virasat AI Assistant"
+        >
+          {/* AI Logo Icon */}
+          <div className="relative">
+            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#FF671F] to-[#046A38] p-0.5 shadow-xs flex items-center justify-center text-white shrink-0 group-hover:scale-105 transition-transform">
+              <div className="w-full h-full bg-white rounded-[10px] flex items-center justify-center">
+                <Bot className="w-4 h-4 text-[#FF671F]" />
+              </div>
+            </div>
+            <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-emerald-500 ring-2 ring-white animate-pulse" />
+          </div>
+
+          {/* AI Assistant Label & Action */}
+          <div className="leading-tight pr-1">
+            <div className="flex items-center gap-1.5">
+              <span className="text-[11px] font-bold text-[#0B192C] tracking-tight group-hover:text-[#FF671F] transition-colors flex items-center gap-1">
+                Virasat AI <Sparkles className="w-3 h-3 text-[#FF671F]" />
+              </span>
+              <span className="text-[9px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.2 rounded-full border border-emerald-200">
+                Online
+              </span>
+            </div>
+            <div className="text-[11px] text-stone-500 font-medium mt-0.5 flex items-center gap-1">
+              <span>Ask Heritage AI</span>
+              <ArrowRight className="w-3 h-3 text-stone-400 group-hover:text-[#FF671F] group-hover:translate-x-0.5 transition-all" />
+            </div>
+          </div>
+        </button>
       </section>
 
       {/* ========================================================================= */}

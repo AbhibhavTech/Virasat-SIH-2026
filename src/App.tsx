@@ -35,22 +35,31 @@ const AppContent: React.FC = () => {
   const [places, setPlaces] = useState<PlaceSummary[]>([]);
   const [initialAIPrompt, setInitialAIPrompt] = useState<string | undefined>(undefined);
   const [isDatabaseModalOpen, setIsDatabaseModalOpen] = useState<boolean>(false);
+  const [isAppInitializing, setIsAppInitializing] = useState<boolean>(true);
 
   useEffect(() => {
+    let isMounted = true;
     const loadAllPlaces = async () => {
       try {
         const res = await api.getPlaces({ limit: 100 });
-        if (res && Array.isArray(res.data)) {
+        if (isMounted && res && Array.isArray(res.data)) {
           setPlaces(res.data);
-        } else {
+        } else if (isMounted) {
           setPlaces([]);
         }
       } catch (err) {
         console.error('Failed to load places:', err);
-        setPlaces([]);
+        if (isMounted) setPlaces([]);
+      } finally {
+        if (isMounted) {
+          setIsAppInitializing(false);
+        }
       }
     };
     loadAllPlaces();
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   const handleSelectPlace = (id: string) => {
@@ -87,7 +96,7 @@ const AppContent: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen bg-[#FAF8F5] text-stone-900 selection:bg-amber-800 selection:text-white font-sans">
       {/* Branded Startup Splash Experience */}
-      <BrandSplashScreen />
+      <BrandSplashScreen isLoading={isAppInitializing} />
 
       {/* Top Navbar */}
       <TopNavbar

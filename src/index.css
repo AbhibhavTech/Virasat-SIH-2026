@@ -121,6 +121,25 @@
   animation: splashProgressBar 1.8s ease-in-out infinite;
 }
 
+@keyframes splashTricolourBar {
+  0% {
+    transform: translateX(-100%);
+    width: 35%;
+  }
+  50% {
+    transform: translateX(85%);
+    width: 65%;
+  }
+  100% {
+    transform: translateX(260%);
+    width: 35%;
+  }
+}
+
+.splash-tricolour-bar {
+  animation: splashTricolourBar 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .shine-beam {
     animation: none;
@@ -128,7 +147,8 @@
     transform: translate(20%, 0) rotate(25deg);
   }
 
-  .splash-progress-bar {
+  .splash-progress-bar,
+  .splash-tricolour-bar {
     animation: none;
     width: 100%;
   }
