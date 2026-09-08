@@ -44,6 +44,7 @@ import {
   RoyalBengalTigerEmblem,
 } from '../common/TricolourBranding';
 import { IndiaHeritageMapPreview } from './IndiaHeritageMapPreview';
+import { CompactAIAssistantCard } from './CompactAIAssistantCard';
 
 interface VirasatDashboardProps {
   onSearch: (query: string) => void;
@@ -991,53 +992,11 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
         </div>
 
         {/* Card 4: Virasat Assistant */}
-        <div
-          onClick={() => {
-            const aiElem = document.getElementById('ai-assistant-section');
-            if (aiElem) {
-              aiElem.scrollIntoView({ behavior: 'smooth' });
-            } else if (onOpenAIChat) {
-              onOpenAIChat('How can I help you explore India today?');
-            } else {
-              onNavigateTab('ai');
-            }
-          }}
-          className="group cursor-pointer rounded-3xl bg-white border border-[#EFE8DF] hover:border-[#4F46E5]/50 p-5 shadow-2xs hover:shadow-md transition-all duration-200 flex flex-col justify-between h-[320px] overflow-hidden relative"
-        >
-          <div>
-            <div className="flex items-center justify-between">
-              <div className="w-11 h-11 rounded-full bg-[#4F46E5] text-white flex items-center justify-center shadow-xs">
-                <Bot className="w-5 h-5 text-white" />
-              </div>
-              <div className="w-8 h-8 rounded-full bg-stone-50 border border-stone-200 text-stone-600 group-hover:bg-[#4F46E5] group-hover:text-white group-hover:border-[#4F46E5] flex items-center justify-center group-hover:translate-x-0.5 transition-all shadow-2xs">
-                <ArrowRight className="w-4 h-4" />
-              </div>
-            </div>
-            <h3 className="font-serif text-lg font-bold text-stone-900 mt-3.5 tracking-tight">
-              Virasat Assistant
-            </h3>
-            <p className="text-xs text-stone-500 mt-1 leading-relaxed">
-              Get travel advice, plan itineraries and explore with AI.
-            </p>
-            <div className="mt-2.5">
-              <span className="text-xs font-bold text-[#4F46E5] flex items-center gap-1 group-hover:gap-1.5 transition-all">
-                Chat Now <ArrowRight className="w-3 h-3" />
-              </span>
-            </div>
-          </div>
-          <div className="flex items-center justify-between mt-1 pt-1 relative">
-            <div className="bg-[#FAF8F5] rounded-2xl p-2.5 px-3 shadow-2xs border border-stone-200 text-[11px] leading-snug font-medium text-stone-800 relative max-w-[130px]">
-              <p className="font-bold text-[#0B192C] text-[11px]">Namaste!</p>
-              <p className="text-stone-600 mt-0.5 text-[10px] leading-tight">
-                Ask me about any heritage monument or circuit.
-              </p>
-              <div className="absolute -right-1.5 top-1/2 -translate-y-1/2 w-2.5 h-2.5 bg-[#FAF8F5] border-t border-r border-stone-200 transform rotate-45" />
-            </div>
-            <div className="group-hover:scale-105 transition-transform duration-300 -mr-1">
-              <CuteAiRobot className="w-22 h-22 sm:w-24 sm:h-24 shrink-0" />
-            </div>
-          </div>
-        </div>
+        <CompactAIAssistantCard
+          onOpenAIChat={onOpenAIChat}
+          onNavigateTab={onNavigateTab}
+          className="h-[320px]"
+        />
       </section>
 
       {/* ========================================================================= */}

@@ -117,7 +117,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
     },
     {
       id: 'ai',
-      label: 'AI Guide',
+      label: 'AI Assistant',
       isActive: activeTab === 'ai',
     },
   ];

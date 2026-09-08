@@ -195,6 +195,7 @@ const AppContent: React.FC = () => {
             {activeTab === 'ai' && (
               <AIAssistantPage
                 onSelectPlace={handleSelectPlace}
+                onNavigateTab={handleNavigateTab}
                 selectedCity={selectedCity}
                 initialPrompt={initialAIPrompt}
               />
