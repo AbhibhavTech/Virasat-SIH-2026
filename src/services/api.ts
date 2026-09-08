@@ -36,6 +36,8 @@ import {
   DatabaseSyncResult,
   EntityImageMetadata,
   LocationSuggestion,
+  ReverseGeocodeResponse,
+  UserLocationContext,
 } from '../types';
 import { safeLocalStorage } from '../utils/storage';
 
@@ -350,6 +352,13 @@ export const api = {
 
   async chatAI(req: any): Promise<AIChatResponse> {
     return this.sendAIChat(req);
+  },
+
+  async reverseGeocode(latitude: number, longitude: number): Promise<ReverseGeocodeResponse> {
+    return await request<ReverseGeocodeResponse>('/geo/reverse-geocode', {
+      method: 'POST',
+      body: JSON.stringify({ latitude, longitude }),
+    });
   },
 
   // -------------------------------------------------------------

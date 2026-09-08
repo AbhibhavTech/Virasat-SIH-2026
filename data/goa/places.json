@@ -1,0 +1,196 @@
+[
+  {
+    "id": "calangute-baga-beach",
+    "name": "Calangute & Baga Beach",
+    "state": "Goa",
+    "city": "North Goa",
+    "country": "India",
+    "category": "nature",
+    "summary": "The 'Queen of Beaches' renowned for golden sands, parasailing, beach shacks, and vibrant coastal nightlife.",
+    "description": "Stretching along the Arabian Sea in North Goa, Calangute and Baga form Goa's most celebrated coastal strip. Famous for thrilling watersports (parasailing, jet-skiing, banana rides), sun loungers, seafood shacks serving Goan fish curry, and legendary beach clubs like Tito's and Mambos along Baga Creek.",
+    "history": "Discovered by hippies in the late 1960s, transformed into India's premier beach tourism destination while retaining traditional Goan fishing villages nearby.",
+    "culture": "Lively susegad coastal lifestyle with live acoustic music, flea markets, Goan Catholic heritage, and sunset beach gatherings.",
+    "coordinates": {
+      "lat": 15.5439,
+      "lng": 73.7553
+    },
+    "rating": 4.7,
+    "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
+    "best_time_to_visit": "November to February (Pleasant coastal breezes and clear blue waters)",
+    "visiting_hours": "Open 24 Hours (Watersports: 09:00 AM - 05:30 PM; Shacks open till late night)",
+    "entry_fee": {
+      "domestic": 0.0,
+      "international": 0.0,
+      "currency": "INR"
+    },
+    "visiting_info": {
+      "best_time_to_visit": "November to February",
+      "visiting_hours": "Open 24 Hours",
+      "recommended_duration": "Half day to Full day",
+      "tips": [
+        "Head to Baga Creek for water sports early in the morning for calm sea conditions.",
+        "Catch the sunset from a beach shack with fresh Goan poi bread and prawn balchão.",
+        "Calangute market nearby offers Tibetan jewelry, beachwear, and handicraft souvenirs."
+      ]
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "model_3d": {
+      "has_model": false,
+      "available": false
+    },
+    "tags": ["goa", "beach", "calangute", "baga", "watersports", "nightlife", "nature"],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "palolem-beach",
+    "name": "Palolem Beach & Crescent Bay",
+    "state": "Goa",
+    "city": "Canacona (South Goa)",
+    "country": "India",
+    "category": "nature",
+    "summary": "Scenic white-sand crescent bay lined with leaning coconut palms, calm turquoise waters, and dolphin cruises.",
+    "description": "Tucked away in Canacona in pristine South Goa, Palolem is celebrated for its natural semi-circular crescent bay framed by wooded headlands. Its gentle, shallow waters make it one of the safest beaches for swimming and sea-kayaking to Butterfly Beach and Monkey Island.",
+    "history": "Historically a serene Konkan fishing settlement; gained international fame for silent noise head-phone parties and wellness retreats.",
+    "culture": "Laid-back bohemian atmosphere with Ayurvedic yoga shacks, sunset kayak rentals, and eco-friendly bamboo beach huts.",
+    "coordinates": {
+      "lat": 15.0100,
+      "lng": 74.0232
+    },
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80",
+    "best_time_to_visit": "November to March",
+    "visiting_hours": "Open 24 Hours",
+    "entry_fee": {
+      "domestic": 0.0,
+      "international": 0.0,
+      "currency": "INR"
+    },
+    "visiting_info": {
+      "best_time_to_visit": "November to March",
+      "visiting_hours": "Open 24 Hours",
+      "recommended_duration": "1 - 2 days",
+      "tips": [
+        "Take a morning boat ride into the bay for wild dolphin sightings.",
+        "Rent a sea kayak to explore the secluded Butterfly Beach just north of Palolem.",
+        "Enjoy fresh seafood cooked in Goan Kokum and coconut milk curry at waterfront shacks."
+      ]
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "model_3d": {
+      "has_model": false,
+      "available": false
+    },
+    "tags": ["goa", "palolem", "south goa", "beach", "dolphin safari", "nature", "relaxation"],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "fort-aguada-goa",
+    "name": "Fort Aguada & Lighthouse",
+    "state": "Goa",
+    "city": "Sinquerim / Candolim (Goa)",
+    "country": "India",
+    "category": "heritage",
+    "summary": "17th-century Portuguese fortress and 4-storey lighthouse standing proudly on Sinquerim Beach overlooking the Arabian Sea.",
+    "description": "Constructed in 1612 to protect Portuguese maritime trade routes against Dutch fleets and the Marathas, Fort Aguada features formidable laterite stone ramparts and an enormous freshwater cistern ('Aguada' means watering place in Portuguese) that supplied fresh water to merchant ships.",
+    "history": "Built in 1612 during Portuguese rule under King Philip II. It mounted 79 cannons and possessed one of Asia's earliest 19th-century light towers.",
+    "culture": "A premier coastal heritage fortress offering sweeping views of the Arabian Sea, Sinquerim beach, and the confluence of the Mandovi River.",
+    "coordinates": {
+      "lat": 15.4925,
+      "lng": 73.7736
+    },
+    "rating": 4.6,
+    "thumbnail_url": "https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?w=800&auto=format&fit=crop&q=80",
+    "best_time_to_visit": "October to March (Late afternoon for sea breeze)",
+    "visiting_hours": "09:00 AM - 06:00 PM",
+    "entry_fee": {
+      "domestic": 25.0,
+      "international": 300.0,
+      "currency": "INR"
+    },
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "09:00 AM - 06:00 PM",
+      "recommended_duration": "1.5 - 2 hours",
+      "tips": [
+        "Visit around 04:30 PM to explore the jail museum and catch the sunset from the lighthouse bastion.",
+        "Wear sunscreen and carry water as the open ramparts get sunny during midday."
+      ]
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "model_3d": {
+      "has_model": false,
+      "available": false
+    },
+    "tags": ["goa", "fort", "fort aguada", "candolim", "heritage", "portuguese"],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "basilica-bom-jesus-goa",
+    "name": "Basilica of Bom Jesus",
+    "state": "Goa",
+    "city": "Old Goa",
+    "country": "India",
+    "category": "heritage",
+    "summary": "UNESCO World Heritage Baroque basilica consecrated in 1605 holding the sacred relic of St. Francis Xavier.",
+    "description": "The Basilica of Bom Jesus in Old Goa is one of the most revered Christian pilgrimage shrines in Asia and a masterpiece of Portuguese Baroque architecture. Constructed of exposed red laterite stone with an ornate carved basaltic facade, it houses the silver casket and mortal remains of Saint Francis Xavier.",
+    "history": "Consecrated in May 1605 by Archbishop Dom Fr. Aleixo de Menezes. Inscribed as a UNESCO World Heritage Site in 1986.",
+    "culture": "Hosts the triennial feast of St. Francis Xavier drawing thousands of international pilgrims; features gilded baroque altars and Flemish woodcarvings.",
+    "coordinates": {
+      "lat": 15.5009,
+      "lng": 73.9116
+    },
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?w=800&auto=format&fit=crop&q=80",
+    "best_time_to_visit": "November to February",
+    "visiting_hours": "09:00 AM - 06:30 PM (Sundays: 10:30 AM - 06:30 PM)",
+    "entry_fee": {
+      "domestic": 0.0,
+      "international": 0.0,
+      "currency": "INR"
+    },
+    "visiting_info": {
+      "best_time_to_visit": "November to February",
+      "visiting_hours": "09:00 AM - 06:30 PM",
+      "recommended_duration": "1 - 1.5 hours",
+      "tips": [
+        "Dress respectfully with shoulders and knees covered inside the basilica.",
+        "Cross the street to also visit the grand Se Cathedral and Church of St. Francis of Assisi."
+      ]
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "model_3d": {
+      "has_model": false,
+      "available": false
+    },
+    "tags": ["goa", "old goa", "unesco", "church", "basilica", "heritage"],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  }
+]

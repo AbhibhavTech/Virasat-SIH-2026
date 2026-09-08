@@ -4,6 +4,7 @@ import path from 'path';
 import fs from 'fs';
 import { GoogleGenAI } from '@google/genai';
 import { masterTourismDataService } from './src/server/masterTourismDataService';
+import { INDIA_TOURISM_DATABASE } from './src/data/indiaTourismDatabase';
 import { getVerifiedCityPlan, ALL_INDIAN_TOURISM_CITIES } from './src/data/cityItineraryData';
 import {
   findConnectedRailRoute,
@@ -264,6 +265,7 @@ function loadData() {
     loadPlacesFile(path.join(dataDir, 'ladakh', 'places.json'));
     loadPlacesFile(path.join(dataDir, 'jammu-kashmir', 'places.json'));
     loadPlacesFile(path.join(dataDir, 'kolkata', 'places.json'));
+    loadPlacesFile(path.join(dataDir, 'goa', 'places.json'));
 
     // Load Heritage 42+ structured experiences
     const heritagePath = path.join(dataDir, 'heritage', 'monuments.json');
@@ -2462,11 +2464,386 @@ app.get('/api/weather', (req, res) => {
 // -------------------------------------------------------------
 // AI Tourism Assistant Chat Endpoint
 // -------------------------------------------------------------
+// -------------------------------------------------------------
+// Reverse Geocoding Endpoint (Coordinates to Locality / City / State)
+// -------------------------------------------------------------
+app.post('/api/geo/reverse-geocode', async (req, res) => {
+  const { latitude, longitude } = req.body;
+  const lat = parseFloat(latitude);
+  const lng = parseFloat(longitude);
+
+  if (isNaN(lat) || isNaN(lng)) {
+    return res.status(400).json({ success: false, error: 'Valid latitude and longitude required' });
+  }
+
+  // Find nearest Indian city in database via Haversine as an instant local reference
+  let nearestCity: any = null;
+  let minDistance = Infinity;
+  for (const c of citiesData) {
+    const cLat = c.lat || c.coordinates?.lat;
+    const cLng = c.lng || c.coordinates?.lng;
+    if (cLat && cLng) {
+      const dist = haversineDistanceKm(lat, lng, cLat, cLng);
+      if (dist < minDistance) {
+        minDistance = dist;
+        nearestCity = c;
+      }
+    }
+  }
+
+  // Fallback defaults from closest verified city
+  let locality = nearestCity ? nearestCity.name : 'Local Area';
+  let city = nearestCity ? nearestCity.name : 'Unknown City';
+  let state = nearestCity ? (nearestCity.state || '') : 'India';
+  let country = 'India';
+
+  // Call Nominatim OSM reverse geocode for rich neighborhood / suburb accuracy
+  try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 3500);
+    const nominatimUrl = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lng}`;
+    const geoRes = await fetch(nominatimUrl, {
+      headers: { 'User-Agent': 'Virasat-Heritage-India/1.0' },
+      signal: controller.signal,
+    });
+    clearTimeout(timeout);
+
+    if (geoRes.ok) {
+      const data: any = await geoRes.json();
+      if (data && data.address) {
+        const addr = data.address;
+        locality = addr.suburb || addr.neighbourhood || addr.residential || addr.road || addr.village || addr.town || addr.city_district || locality;
+        city = addr.city || addr.town || addr.village || addr.state_district || city;
+        state = addr.state || state;
+        country = addr.country || country;
+      }
+    }
+  } catch {
+    // Offline or network timeout - successfully fall back to nearestCity from Virasat DB
+  }
+
+  const parts = [locality, city, state].filter(Boolean);
+  const uniqueParts = parts.filter((val, i, arr) => arr.indexOf(val) === i);
+  const formatted_area = uniqueParts.join(', ');
+
+  res.json({
+    success: true,
+    locality,
+    city,
+    state,
+    country,
+    formatted_area,
+    nearest_city: nearestCity ? nearestCity.name : city,
+    distance_to_city_km: Math.round(minDistance * 10) / 10,
+  });
+});
+
+// -------------------------------------------------------------
+// Helper: Extract destination, city, or state entities from text
+// -------------------------------------------------------------
+function findEntityInText(text: string): { place: any | null; city: string | null; state: string | null; name: string | null } {
+  if (!text) return { place: null, city: null, state: null, name: null };
+  const t = text.toLowerCase().trim();
+  const allPlaces = Array.from(placesData.values());
+
+  // Check for specific multi-word monuments / places first
+  if (t.includes('dal lake') || t.includes('dal-lake') || t.includes('shikara')) {
+    const p = placesData.get('dal-lake-srinagar') || allPlaces.find((x) => x.id.includes('dal-lake'));
+    return { place: p || null, city: 'Srinagar', state: 'Jammu and Kashmir', name: 'Dal Lake' };
+  }
+  if (t.includes('thar desert') || t.includes('sam sand dunes') || t.includes('sam dunes') || t.includes('desert safari')) {
+    const p = placesData.get('thar-desert-sam-dunes') || allPlaces.find((x) => x.id.includes('thar-desert'));
+    return { place: p || null, city: 'Jaisalmer', state: 'Rajasthan', name: 'Thar Desert' };
+  }
+  if (t.includes('gateway of india') || t.includes('elephanta')) {
+    const p = placesData.get('gateway-of-india') || allPlaces.find((x) => x.id.includes('gateway-of-india'));
+    return { place: p || null, city: 'Mumbai', state: 'Maharashtra', name: 'Gateway of India' };
+  }
+  if (t.includes('taj mahal') && !t.includes('palace')) {
+    const p = placesData.get('taj-mahal') || allPlaces.find((x) => x.id.includes('taj-mahal'));
+    return { place: p || null, city: 'Agra', state: 'Uttar Pradesh', name: 'Taj Mahal' };
+  }
+  if (t.includes('hawa mahal') || t.includes('amber fort') || t.includes('amber palace') || t.includes('amer fort')) {
+    const p = placesData.get('hawa-mahal') || placesData.get('amber-palace') || allPlaces.find((x) => x.city?.toLowerCase() === 'jaipur');
+    return { place: p || null, city: 'Jaipur', state: 'Rajasthan', name: 'Jaipur Heritage' };
+  }
+  if (t.includes('victoria memorial')) {
+    const p = placesData.get('victoria-memorial') || allPlaces.find((x) => x.city?.toLowerCase() === 'kolkata');
+    return { place: p || null, city: 'Kolkata', state: 'West Bengal', name: 'Victoria Memorial Hall' };
+  }
+  if (t.includes('golden temple')) {
+    const p = allPlaces.find((x) => x.city?.toLowerCase() === 'amritsar' || x.name.toLowerCase().includes('golden temple'));
+    return { place: p || null, city: 'Amritsar', state: 'Punjab', name: 'Golden Temple' };
+  }
+  if (t.includes('konark') || t.includes('sun temple')) {
+    const p = allPlaces.find((x) => x.name.toLowerCase().includes('konark') || x.id.includes('konark'));
+    return { place: p || null, city: 'Puri', state: 'Odisha', name: 'Konark Sun Temple' };
+  }
+
+  // Scan all places in database
+  for (const p of allPlaces) {
+    const pName = p.name.toLowerCase();
+    if (t.includes(pName) || (p.tags && p.tags.some((tg: string) => tg.length > 4 && t.includes(tg.toLowerCase())))) {
+      return { place: p, city: p.city, state: p.state, name: p.name };
+    }
+  }
+
+  // Scan citiesData (Exact city names across India)
+  for (const c of citiesData) {
+    const cName = c.name.toLowerCase();
+    if (t.includes(cName)) {
+      const matchP = allPlaces.find((x) => x.city?.toLowerCase() === cName);
+      return { place: matchP || null, city: c.name, state: c.state || null, name: c.name };
+    }
+  }
+
+  // Scan statesData
+  for (const s of statesData) {
+    const sName = s.name.toLowerCase();
+    if (t.includes(sName)) {
+      const matchP = allPlaces.find((x) => x.state?.toLowerCase() === sName);
+      return { place: matchP || null, city: null, state: s.name, name: s.name };
+    }
+  }
+
+  // Scan regional tourist keywords
+  if (t.includes('darjeeling')) {
+    const matchP = allPlaces.find((x) => x.city?.toLowerCase() === 'darjeeling' || x.id.includes('darjeeling'));
+    return { place: matchP || null, city: 'Darjeeling', state: 'West Bengal', name: 'Darjeeling' };
+  }
+  if (t.includes('ooty') || t.includes('udagamandalam')) {
+    const matchP = allPlaces.find((x) => x.city?.toLowerCase() === 'ooty');
+    return { place: matchP || null, city: 'Ooty', state: 'Tamil Nadu', name: 'Ooty' };
+  }
+  if (t.includes('goa') || t.includes('calangute') || t.includes('baga') || t.includes('palolem')) {
+    const matchP = allPlaces.find((x) => x.city?.toLowerCase() === 'goa' || x.state?.toLowerCase() === 'goa');
+    return { place: matchP || null, city: 'Goa', state: 'Goa', name: 'Goa' };
+  }
+  if (t.includes('kashmir') || t.includes('srinagar') || t.includes('gulmarg') || t.includes('pahalgam') || t.includes('sonamarg')) {
+    const matchP = allPlaces.find((x) => x.city?.toLowerCase() === 'srinagar');
+    return { place: matchP || null, city: 'Srinagar', state: 'Jammu and Kashmir', name: 'Srinagar, Kashmir' };
+  }
+  if (t.includes('ladakh') || t.includes('leh') || t.includes('pangong') || t.includes('nubra')) {
+    const matchP = allPlaces.find((x) => x.city?.toLowerCase() === 'leh' || x.state?.toLowerCase() === 'ladakh');
+    return { place: matchP || null, city: 'Leh', state: 'Ladakh', name: 'Ladakh' };
+  }
+  if (t.includes('kerala') || t.includes('alleppey') || t.includes('alappuzha') || t.includes('munnar') || t.includes('kochi')) {
+    const matchP = allPlaces.find((x) => x.state?.toLowerCase() === 'kerala');
+    return { place: matchP || null, city: 'Kerala', state: 'Kerala', name: 'Kerala' };
+  }
+  if (t.includes('hampi')) {
+    const matchP = allPlaces.find((x) => x.name.toLowerCase().includes('hampi') || x.city?.toLowerCase() === 'hampi');
+    return { place: matchP || null, city: 'Hampi', state: 'Karnataka', name: 'Hampi' };
+  }
+  if (t.includes('jaisalmer')) {
+    const matchP = allPlaces.find((x) => x.city?.toLowerCase() === 'jaisalmer');
+    return { place: matchP || null, city: 'Jaisalmer', state: 'Rajasthan', name: 'Jaisalmer' };
+  }
+  if (t.includes('khajuraho')) {
+    const matchP = allPlaces.find((x) => x.name.toLowerCase().includes('khajuraho') || x.city?.toLowerCase() === 'khajuraho');
+    return { place: matchP || null, city: 'Khajuraho', state: 'Madhya Pradesh', name: 'Khajuraho' };
+  }
+  if (t.includes('patna')) {
+    const matchP = allPlaces.find((x) => x.city?.toLowerCase() === 'patna');
+    return { place: matchP || null, city: 'Patna', state: 'Bihar', name: 'Patna' };
+  }
+  if (t.includes('varanasi') || t.includes('kashi') || t.includes('banaras')) {
+    const matchP = allPlaces.find((x) => x.city?.toLowerCase() === 'varanasi');
+    return { place: matchP || null, city: 'Varanasi', state: 'Uttar Pradesh', name: 'Varanasi' };
+  }
+
+  return { place: null, city: null, state: null, name: null };
+}
+
+// -------------------------------------------------------------
+// Helper: Find verified transport info for any Indian city
+// -------------------------------------------------------------
+function findCityTransportInfo(cityNameOrId: string) {
+  if (!cityNameOrId) return null;
+  const q = cityNameOrId.toLowerCase().trim();
+
+  // Search in comprehensive INDIA_TOURISM_DATABASE
+  for (const state of INDIA_TOURISM_DATABASE.states) {
+    for (const city of (state.cities || [])) {
+      if (
+        city.name.toLowerCase() === q ||
+        city.id.toLowerCase() === q ||
+        q.includes(city.name.toLowerCase()) ||
+        city.name.toLowerCase().includes(q)
+      ) {
+        return {
+          city: city.name,
+          state: city.state,
+          coordinates: city.coordinates,
+          railway_stations: city.transport?.railway_stations || [],
+          airport: city.transport?.airport || null,
+          local_transit: city.transport?.local_transit || null,
+        };
+      }
+    }
+  }
+
+  // Fallback check against citiesData & railwayStationsData
+  const c = citiesData.find(
+    (x) => x.name.toLowerCase() === q || q.includes(x.name.toLowerCase()) || x.name.toLowerCase().includes(q)
+  );
+  if (c) {
+    const stns = railwayStationsData.filter(
+      (s) => s.city?.toLowerCase() === c.name.toLowerCase() || (s as any).state?.toLowerCase() === c.state?.toLowerCase()
+    );
+    return {
+      city: c.name,
+      state: c.state || '',
+      coordinates: c.coordinates || { lat: c.lat, lng: c.lng },
+      railway_stations: stns,
+      airport: null,
+      local_transit: null,
+    };
+  }
+
+  return null;
+}
+
+// -------------------------------------------------------------
+// Helper: Calculate multimodal transit comparison (Train, Air, Road)
+// -------------------------------------------------------------
+function getTransitComparison(
+  originName: string,
+  originCoords: { lat: number; lng: number } | null,
+  destName: string,
+  destCoords: { lat: number; lng: number } | null
+) {
+  const originInfo = findCityTransportInfo(originName);
+  const destInfo = findCityTransportInfo(destName);
+
+  const oLat = originCoords?.lat || originInfo?.coordinates?.lat || 28.6139;
+  const oLng = originCoords?.lng || originInfo?.coordinates?.lng || 77.2090;
+  const dLat = destCoords?.lat || destInfo?.coordinates?.lat || 27.0410;
+  const dLng = destCoords?.lng || destInfo?.coordinates?.lng || 88.2663;
+
+  const distanceKm = Math.round(haversineDistanceKm(oLat, oLng, dLat, dLng));
+  const roadKm = Math.round(distanceKm * 1.25);
+  const roadDurationHours = Math.max(1, Math.round(roadKm / 55));
+
+  // Train calculations & mountain/hill railway nuances
+  const trainKm = Math.round(distanceKm * 1.15);
+  const trainHours = Math.max(1, Math.round(trainKm / 60));
+
+  let originStation = originInfo?.railway_stations?.[0]?.name || `${originName} Railway Station`;
+  let destStation = destInfo?.railway_stations?.[0]?.name || `${destName} Railway Station`;
+  let railNotes = 'Scheduled rail connectivity on Indian Railways network. Real-time seat availability, live train running status, and official bookings must be confirmed on IRCTC.';
+
+  // Special Mountain / Geographic nuances for rail
+  const destLower = destName.toLowerCase();
+  if (destLower.includes('darjeeling')) {
+    destStation = 'New Jalpaiguri (NJP) / Siliguri & Darjeeling Himalayan Railway (DHR Toy Train)';
+    railNotes = 'Take broad-gauge express trains to New Jalpaiguri Junction (NJP) or Siliguri, then connect to Darjeeling via shared taxi / cab (approx 2.5-3 hrs) or the historic UNESCO DHR Toy Train.';
+  } else if (destLower.includes('srinagar') || destLower.includes('kashmir')) {
+    destStation = 'Jammu Tawi (JAT) / Katra (SVDK) & Banihal-Srinagar Valley Line (BHL/SINA)';
+    railNotes = 'Mainline Vande Bharat/Rajdhani express trains connect to Jammu Tawi and Katra. The Kashmir Valley rail corridor operates passenger trains between Banihal and Srinagar through the Pir Panjal tunnel.';
+  } else if (destLower.includes('ooty')) {
+    destStation = 'Mettupalayam (MTP) & Nilgiri Mountain Railway (NMR Toy Train)';
+    railNotes = 'Take broad-gauge trains to Coimbatore (CBE) or Mettupalayam (MTP), then board the historic Nilgiri Mountain Railway toy train or taxi up to Ooty.';
+  } else if (destLower.includes('shimla')) {
+    destStation = 'Kalka (KLK) & Kalka-Shimla UNESCO Toy Train';
+    railNotes = 'Express trains connect to Kalka Railway Station (KLK), where you can board the scenic Kalka-Shimla narrow-gauge toy train.';
+  } else if (destLower.includes('leh') || destLower.includes('ladakh')) {
+    destStation = 'Jammu Tawi (JAT) / Chandigarh (CDG) [Nearest Railheads]';
+    railNotes = 'Ladakh is not currently connected to the railway network. The nearest railheads are Jammu Tawi and Chandigarh (~700 km), followed by a 2-day scenic highway drive via Manali-Leh or Srinagar-Leh.';
+  }
+
+  // Airport calculations & nuances
+  let originAirport = originInfo?.airport?.name || `${originName} Airport`;
+  let destAirport = destInfo?.airport?.name || `${destName} Airport`;
+  let flightDuration = distanceKm < 400
+    ? '~1 hr direct / connecting'
+    : distanceKm < 900
+      ? '~1.5 to 2 hrs direct flight'
+      : '~2 to 3 hrs direct flight';
+  let airNotes = 'Scheduled domestic flights. Check airline portals for real-time fares and flight schedules.';
+
+  if (destLower.includes('darjeeling')) {
+    destAirport = 'Bagdogra International Airport (IXB) [approx. 68 km from Darjeeling]';
+    airNotes = 'Fly into Bagdogra Airport (IXB), which connects with major Indian hubs. From Bagdogra, prepaid taxis or shared cabs take approximately 2.5 to 3 hours up the hills to Darjeeling via NH-110.';
+  } else if (destLower.includes('srinagar')) {
+    destAirport = 'Sheikh ul-Alam International Airport, Srinagar (SXR)';
+    airNotes = 'Direct daily flights connect Delhi, Mumbai, Bengaluru, and Chandigarh directly into Srinagar.';
+  } else if (destLower.includes('goa')) {
+    destAirport = 'Manohar International Airport Mopa (GOX) / Dabolim Airport (GOI)';
+    airNotes = 'Fly into GOX (North Goa) or GOI (Central/South Goa) with frequent direct flights across India.';
+  }
+
+  return {
+    origin: originName,
+    destination: destName,
+    distance_km: distanceKm,
+    train: {
+      summary: `Train connectivity: ${originStation} to ${destStation}`,
+      approx_duration: `${trainHours} - ${Math.round(trainHours * 1.25)} hours`,
+      distance_km: trainKm,
+      stations: [originStation, destStation],
+      lines: ['Indian Railways Broad Gauge Trunk Network'],
+      notes: railNotes,
+    },
+    air: {
+      summary: `Flight connectivity: ${originAirport} to ${destAirport}`,
+      approx_duration: flightDuration,
+      airport_origin: originAirport,
+      airport_dest: destAirport,
+      notes: airNotes,
+    },
+    road: {
+      summary: `Road route via National Highway corridors`,
+      approx_duration: `~${roadDurationHours} hours driving`,
+      distance_km: roadKm,
+      highways: ['National Highway Corridor (NH)'],
+      notes: 'Estimated driving time assuming standard highway speed and rest stops. Road conditions may vary based on weather and terrain.',
+    },
+  };
+}
+
+// -------------------------------------------------------------
+// Helper: Find verified nearby places from actual coordinates
+// -------------------------------------------------------------
+function findNearbyPlacesFromCoords(lat: number, lng: number, maxRadiusKm = 75, limit = 6) {
+  const allPlaces = Array.from(placesData.values());
+  const withDistance = allPlaces
+    .map((p) => {
+      const pLat = p.coordinates?.lat || (p as any).latitude || 0;
+      const pLng = p.coordinates?.lng || (p as any).longitude || 0;
+      if (!pLat || !pLng) return null;
+      const dist = haversineDistanceKm(lat, lng, pLat, pLng);
+      return {
+        ...p,
+        distance_km: Math.round(dist * 10) / 10,
+      };
+    })
+    .filter((p): p is NonNullable<typeof p> => p !== null)
+    .sort((a, b) => a.distance_km - b.distance_km);
+
+  let results = withDistance.filter((p) => p.distance_km <= maxRadiusKm);
+  if (results.length === 0) {
+    // If none within strict radius, return closest available in database
+    results = withDistance.slice(0, limit);
+  } else {
+    results = results.slice(0, limit);
+  }
+  return results;
+}
+
+// -------------------------------------------------------------
+// AI Tourism Assistant Chat Endpoint (Location & Context Aware)
+// -------------------------------------------------------------
 app.post('/api/ai/chat', async (req, res) => {
-  const { message, conversation_id, place_id, city, history } = req.body;
+  const { message, conversation_id, place_id, city, history, location, travel_context } = req.body;
   const convId = conversation_id || `conv-${Date.now()}`;
   const rawQuery = (message || '').trim();
   const query = rawQuery.toLowerCase();
+
+  // Normalize user location if provided
+  const userLoc = location && typeof location === 'object' ? location : null;
+  const userHasCoords = !!(userLoc?.latitude && userLoc?.longitude && !isNaN(userLoc.latitude) && !isNaN(userLoc.longitude));
+  const userCity = userLoc?.city || userLoc?.locality || travel_context?.origin || (city && city.toLowerCase() !== 'all india' ? city : null);
 
   // Normalize incoming chat history
   const normalizedHistory: Array<{ role: 'user' | 'model'; text: string }> = Array.isArray(history)
@@ -2483,96 +2860,214 @@ app.post('/api/ai/chat', async (req, res) => {
       }).filter((h) => h.text.length > 0)
     : [];
 
-  // Extract prior conversational context (cities, places, topics discussed)
-  const fullConversationContext = normalizedHistory.map((h) => h.text).join(' ').toLowerCase();
-  const isDiscussingMumbai = query.includes('mumbai') || fullConversationContext.includes('mumbai') || (city && city.toLowerCase().includes('mumbai'));
-  const isDiscussingHampi = query.includes('hampi') || fullConversationContext.includes('hampi');
-  const isDiscussingJaipur = query.includes('jaipur') || fullConversationContext.includes('jaipur');
-  const isDiscussingDelhi = query.includes('delhi') || fullConversationContext.includes('delhi');
-  const isDiscussingGateway = query.includes('gateway of india') || fullConversationContext.includes('gateway of india');
-
   // Detect Hindi / Hinglish phrasing for conversational resonance
-  const isHindiHinglish = /(bhai|mein|kya|karu|aur|paas|kaise|batao|chahiye|hai|kahan|kitna|namaste|dost|yahan|vahan|kuch|din|safar|ghoom|ghoomne)/i.test(rawQuery);
+  const isHindiHinglish = /(bhai|mein|kya|karu|kare|aur|paas|kaise|batao|chahiye|hai|kahan|kitna|namaste|dost|yahan|vahan|kuch|din|safar|ghoom|ghoomne|pe|ko|bhi|ka|ki|ke|jana|chalo|bana do|banao|chalein)/i.test(rawQuery);
 
-  // Find candidate places from Virasat's master database
-  const cityFilter = city?.toLowerCase().trim();
-  const allPlaces = Array.from(placesData.values());
-  const candidatePlaces = cityFilter && cityFilter !== 'all india'
-    ? allPlaces.filter((p) => {
-        const c = p.city?.toLowerCase() || '';
-        const cid = ((p as any).city_id || '').toLowerCase();
-        return c.includes(cityFilter) || cityFilter.includes(c) || cid === cityFilter;
-      })
-    : allPlaces;
+  // Detect duration requested (e.g. "7 days ka plan", "3 day trip", "5 din", "4 days")
+  const durationMatch = query.match(/(\d+)\s*(days?|din|day)/);
+  const durationDays = durationMatch ? parseInt(durationMatch[1], 10) : (travel_context?.days || 3);
 
-  // Identify specific matched places for suggested_places
-  let matchedPlaces = candidatePlaces.filter((p) => {
-    const pName = p.name.toLowerCase();
-    return query.includes(pName) || (p.tags && p.tags.some((t) => query.includes(t.toLowerCase())));
-  });
+  // Detect pace preference (e.g. "I don't want too much travelling", "relaxed", "slow pace", "kam travel")
+  const isRelaxedPace = /(too much travelling|too much travel|kam travel|relaxed|slow|easy|aram se|bhag daud nahi|less travel|without travelling much)/i.test(query);
 
-  if (matchedPlaces.length === 0 && (query.includes('hampi') || fullConversationContext.includes('hampi'))) {
-    const hampiMatches = allPlaces.filter((p) => p.name.toLowerCase().includes('hampi') || (p.city && p.city.toLowerCase().includes('hampi')));
-    if (hampiMatches.length > 0) matchedPlaces = hampiMatches;
+  // Intent classification
+  const isNearbyQuery = /(nearby|near me|paas mein|paas|aas paas|close to me|around me|around here|aur kya hai paas|aur paas mein|bagal mein|what is near me|explore near me|kuch interesting dekhna hai)/i.test(query);
+  const isTransitQuery = /(train|railway|station|flight|airport|bus|how to reach|kaise pahuchu|kaise jayein|kaise jau|reach there|route|safar|transit|train se|flight se|flight option|road option|car se)/i.test(query);
+  const isItineraryQuery = /(plan|itinerary|days|din|trip|tour|schedule|circuit|ghumne|ghoom|bana do)/i.test(query) || !!durationMatch;
+  const isFeatureQuery = /(how does (this|the) (feature|website|app|map|site|planner|3d) work|how to use|features of virasat|kya hai yeh website|map kaise|feature explain|what can i do on this website|website kaise kaam karti hai|features batao)/i.test(query);
+  const isGreeting = /^(hi|hello|hey|namaste|pranam|greetings|hola)\b/i.test(query.trim());
+  const isResetQuery = /(somewhere else|kisi aur jagah|change destination|kahi aur|dusri jagah)/i.test(query);
+
+  // 1. Entity Extraction: Destination identification
+  const directEntity = findEntityInText(query);
+  let activePlace = directEntity.place;
+  let activeCity = directEntity.city;
+  let activeState = directEntity.state;
+  let activeDestinationName = directEntity.name;
+
+  // 2. If NO direct entity in current query, search backward through conversation history
+  if (!activeDestinationName && normalizedHistory.length > 0 && !isResetQuery) {
+    for (let i = normalizedHistory.length - 1; i >= 0; i--) {
+      const histEntity = findEntityInText(normalizedHistory[i].text);
+      if (histEntity.name) {
+        activePlace = histEntity.place;
+        activeCity = histEntity.city;
+        activeState = histEntity.state;
+        activeDestinationName = histEntity.name;
+        break;
+      }
+    }
   }
-  if (matchedPlaces.length === 0 && (isDiscussingGateway || isDiscussingMumbai)) {
-    const mumbaiMatches = allPlaces.filter((p) => p.id === 'gateway-of-india' || p.id === 'marine-drive' || p.id === 'csmt' || p.name.toLowerCase().includes('elephanta'));
-    if (mumbaiMatches.length > 0) matchedPlaces = mumbaiMatches;
+
+  // 3. If still not found, check place_id or travel_context
+  if (!activeDestinationName && !isResetQuery) {
+    if (travel_context?.destination) {
+      const ctxEntity = findEntityInText(travel_context.destination);
+      activePlace = ctxEntity.place;
+      activeCity = ctxEntity.city || travel_context.destination;
+      activeState = ctxEntity.state;
+      activeDestinationName = ctxEntity.name || travel_context.destination;
+    } else if (place_id && placesData.has(place_id.toLowerCase())) {
+      const p = placesData.get(place_id.toLowerCase())!;
+      activePlace = p;
+      activeCity = p.city;
+      activeState = p.state;
+      activeDestinationName = p.name;
+    }
   }
 
-  const suggestedPlaces = (matchedPlaces.length > 0 ? matchedPlaces : candidatePlaces.slice(0, 3)).slice(0, 4).map((p) => ({
-    id: p.id,
-    name: p.name,
-    category: p.category,
-    city: p.city,
-    reason: `Verified ${p.category} destination in Virasat archives (${p.rating || 4.8}/5 rating).`,
-  }));
+  // Origin resolution
+  const userOriginName = userLoc?.locality
+    ? `${userLoc.locality}, ${userLoc.city || userLoc.state || ''}`
+    : userLoc?.city || userCity || travel_context?.origin || 'your location';
 
-  // Try Gemini AI if API key is provided
+  const userOriginCoords = userHasCoords
+    ? { lat: userLoc!.latitude!, lng: userLoc!.longitude! }
+    : null;
+
+  // Determine functional intent
+  let intent: 'explore_nearby' | 'travel_to_destination' | 'transit_mode' | 'itinerary_plan' | 'pace_adjust' | 'destination_info' | 'platform_feature' | 'greeting' | 'general';
+
+  if (isFeatureQuery) {
+    intent = 'platform_feature';
+  } else if (isNearbyQuery) {
+    intent = 'explore_nearby';
+  } else if (isRelaxedPace) {
+    intent = 'pace_adjust';
+  } else if (isTransitQuery && activeDestinationName) {
+    intent = 'transit_mode';
+  } else if (isItineraryQuery && activeDestinationName) {
+    intent = 'itinerary_plan';
+  } else if (directEntity.name && userCity && directEntity.city && directEntity.city.toLowerCase() !== userCity.toLowerCase()) {
+    // User named a new destination different from current location -> Travel Intent
+    intent = 'travel_to_destination';
+  } else if (directEntity.name) {
+    intent = 'destination_info';
+  } else if (isGreeting && !activeDestinationName) {
+    intent = 'greeting';
+  } else {
+    intent = activeDestinationName ? 'destination_info' : 'general';
+  }
+
+  // Collect verified places & transit comparison dynamically
+  let suggestedPlaces: Array<{ id: string; name: string; category: string; city: string; distance_km?: number; reason: string }> = [];
+  let transitComparison: any = null;
+  let suggestedActions: string[] = [];
+
+  // Compute nearby places if intent is explore_nearby OR user is at their location
+  if (intent === 'explore_nearby') {
+    if (userHasCoords) {
+      const nearby = findNearbyPlacesFromCoords(userLoc!.latitude!, userLoc!.longitude!, 80, 6);
+      suggestedPlaces = nearby.map((p) => ({
+        id: p.id,
+        name: p.name,
+        category: p.category || 'heritage',
+        city: p.city,
+        distance_km: p.distance_km,
+        reason: `Verified ${p.category || 'cultural'} highlight ${p.distance_km} km from your detected area.`,
+      }));
+    } else if (userCity) {
+      const allPlaces = Array.from(placesData.values());
+      const inCity = allPlaces.filter((p) => p.city?.toLowerCase() === userCity.toLowerCase() || p.state?.toLowerCase() === userCity.toLowerCase());
+      suggestedPlaces = inCity.slice(0, 5).map((p) => ({
+        id: p.id,
+        name: p.name,
+        category: p.category || 'heritage',
+        city: p.city,
+        reason: `Highlight in ${p.city}, ${p.state || 'India'}.`,
+      }));
+    }
+    suggestedActions = ['Plan 1 day here', 'Travel somewhere else', 'How to reach?'];
+  }
+
+  // Compute transit comparison if travel to destination or transit mode
+  if ((intent === 'travel_to_destination' || intent === 'transit_mode' || activeDestinationName) && activeDestinationName) {
+    const destInfo = findCityTransportInfo(activeCity || activeDestinationName);
+    const destCoords = destInfo?.coordinates || (activePlace?.coordinates ? { lat: activePlace.coordinates.lat, lng: activePlace.coordinates.lng } : null);
+
+    transitComparison = getTransitComparison(
+      userOriginName,
+      userOriginCoords,
+      activeDestinationName,
+      destCoords
+    );
+
+    // If destination places are not yet populated, populate from destination
+    if (suggestedPlaces.length === 0 && (activeCity || activeDestinationName)) {
+      const allPlaces = Array.from(placesData.values());
+      const destPlaces = allPlaces.filter(
+        (p) =>
+          (activeCity && p.city?.toLowerCase() === activeCity.toLowerCase()) ||
+          p.name.toLowerCase().includes(activeDestinationName!.toLowerCase())
+      );
+      suggestedPlaces = destPlaces.slice(0, 4).map((p) => ({
+        id: p.id,
+        name: p.name,
+        category: p.category || 'heritage',
+        city: p.city,
+        reason: `Verified highlight in ${p.city}.`,
+      }));
+    }
+
+    suggestedActions = [
+      'Train option',
+      'What about flight?',
+      'Road option',
+      `Plan ${durationDays} days in ${activeDestinationName}`,
+      "I don't want too much travelling",
+    ];
+  }
+
+  // -------------------------------------------------------------
+  // Try Gemini AI with Grounded Dynamic Context & Verified Facts
+  // -------------------------------------------------------------
   const ai = getAIClient();
   if (ai) {
     try {
-      const placesContext = candidatePlaces
-        .slice(0, 15)
-        .map((p) => `- ${p.name} (${p.city}, ${p.category}): ${p.summary || p.description || ''}`)
-        .join('\n');
+      const locationContextStr = userLoc
+        ? `User's Verified Location: ${userLoc.locality ? `${userLoc.locality}, ` : ''}${userLoc.city || ''}, ${userLoc.state || ''} (Coordinates provided: ${userHasCoords ? 'Yes' : 'No'})`
+        : 'User Location: Not yet detected';
 
-      const systemInstruction = `You are the Virasat AI Assistant, the official, intelligent cultural concierge for the Virasat web application ("Discover India's Living Heritage").
-You communicate in a warm, polite, natural, and human-like voice — like a knowledgeable local travel expert and heritage curator.
+      const transitContextStr = transitComparison
+        ? `Verified Transit Comparison (${transitComparison.origin} -> ${transitComparison.destination}):\n` +
+          `- Distance: ~${transitComparison.distance_km} km\n` +
+          `- Train: ${transitComparison.train.summary} (${transitComparison.train.approx_duration}). Note: ${transitComparison.train.notes}\n` +
+          `- Air: ${transitComparison.air.summary} (${transitComparison.air.approx_duration}). Note: ${transitComparison.air.notes}\n` +
+          `- Road: ${transitComparison.road.summary} (~${transitComparison.road.distance_km} km, ${transitComparison.road.approx_duration})\n`
+        : 'No transit calculation active.';
 
-IMPORTANT CONVERSATIONAL BEHAVIOR:
-1. Context Continuity: You must strictly maintain context across conversation turns.
-   - When the user asks follow-up questions (such as "what about tomorrow?", "Day 2 mein aur kya hai?", "Aur Gateway of India ke paas?", "how does that work?", "how do I reach there?"), seamlessly continue the previous discussion without restarting or repeating introductions.
-   - If the user previously asked for a 3-day Mumbai plan and then asks "Day 2 mein aur kya hai?", dive directly into expanding Day 2 in Mumbai with specific heritage details, walking circuits, and culinary highlights.
-   - If the user asks "Aur Gateway of India ke paas?", identify that Gateway of India is in South Mumbai and detail the actual immediate landmarks: Taj Mahal Palace Hotel (opposite), Elephanta Caves ferry jetty (departs right at Gateway), Colaba Causeway (5 min walk), CSMT & Fort precinct (2.4 km), and Marine Drive (2 km).
-2. Multilingual & Hinglish Support:
-   - If the user writes in Hindi or Hinglish (e.g. "Bhai Mumbai mein 3 din ke liye kya explore karu?", "Day 2 mein aur kya hai?"), respond warmly in natural, friendly Hinglish or Hindi matching their casual, respectful tone (e.g. "Bhai, Mumbai ke Day 2 ke liye sabse best plan ye hai..." or "Namaste! Day 2 par aap...").
-   - If the user writes in English, reply in crisp, elegant, human-like English.
-3. Grounding in Virasat Project Data & Features:
-   - Virasat Platform Architecture:
-     * Explore (Home): Highlights, 3D monument showcase, regional explorer, interactive map preview, Virasat Assistant card.
-     * India Explorer: Comprehensive interactive directory of all 36 States & Union Territories, districts, and heritage sites.
-     * Destinations / City Hubs: Deep city guides (Mumbai, Jaipur, Delhi, Kochi, Agra, etc.) with weather, local transit, visiting tips.
-     * Heritage Sites: 45 UNESCO and ASI monuments with dynastic era, architecture, timings, and ticket prices.
-     * Plan Trip (Itinerary Planner): Generates 1 to 7 day custom itineraries with relaxed, moderate, or fast pace and budget tier.
-     * Interactive Map: Leaflet-powered GIS map with category filtering (monuments, rail stations, hotels), distance calculator, and nearby discovery.
-     * 3D Heritage Museum: WebGL real-time 3D monument models (Gateway of India, CSMT, etc.) with orbit, wireframe, and lighting controls.
-     * Virasat AI Assistant: Real-time intelligent guide grounded in verified project datasets.
-   - Key Monument Facts:
-     * Hampi (Karnataka): Capital of Vijayanagara Empire (1336–1565 CE, King Krishnadevaraya) on Tungabhadra river. Highlights: Virupaksha Temple (active since 7th century), Stone Chariot at Vittala Temple Complex with musical pillars, Lotus Mahal, Elephant Stables, Matanga Hill sunrise view. Timings: Sunrise to Sunset (06:00 AM - 06:00 PM). ASI entry fee: Domestic ₹40, Foreigners ₹600. Railhead: Hosapete Junction (HPT) 13 km away.
-     * Gateway of India (Mumbai): Built 1911 in Indo-Saracenic style using yellow basalt. Entry is free. Ferry jetty connects to UNESCO Elephanta Caves.
-     * Chhatrapati Shivaji Maharaj Terminus (CSMT, Mumbai): UNESCO Victorian Gothic Revival railway terminus designed by F.W. Stevens. Heritage gallery entry ₹100.
-     * Taj Mahal (Agra): UNESCO white marble mausoleum by Emperor Shah Jahan. Closed on Fridays.
-   - How to Use Map:
-     Tell users to click the 'Map' tab in the top navigation, filter by monuments/rail stations/hotels, click pins for details, or use 'Explore Nearby' with GPS.
-   - Safety & Truthfulness:
-     * Never fabricate live train delay timings, seat availability, or unverified ticket surges. State that real-time live rail tracking or bookings require IRCTC / official portal.
-     * Never expose passwords, API keys, tokens, or internal secrets.
-Active City Filter: ${city || 'All India'}
-${place_id ? `Active Place ID: ${place_id}` : ''}
+      const placesContextStr = suggestedPlaces.length > 0
+        ? `Verified Places in Database:\n` +
+          suggestedPlaces.map((p) => `- ${p.name} (${p.city}) ${p.distance_km !== undefined ? `[Distance: ${p.distance_km} km]` : ''}`).join('\n')
+        : 'No specific place records active.';
 
-Key Destinations in database:
-${placesContext}`;
+      const systemInstruction = `You are the Virasat AI Travel Assistant, a location-aware, context-aware, and personalized travel concierge for India.
+
+CRITICAL INSTRUCTIONS:
+1. LOCATION AWARENESS:
+   - When greeting or answering location queries, use the user's detected location (${locationContextStr}).
+   - Never show raw coordinates (latitude/longitude) to the user.
+   - If the user asks for nearby places ("What is near me?", "Explore near me", "paas mein kya hai?"), use their actual location and present the verified nearby places with their exact calculated distances. NEVER invent fake distances.
+2. TRAVEL TO DESTINATION INTENT:
+   - When the user names another city/destination (e.g. "I want to visit Darjeeling", "Jaipur trip"), understand they want to travel there from their current location.
+   - Compare available travel options: Train, Air, and Road/Car using verified data.
+   - Clearly distinguish scheduled transport information from live booking. NEVER claim live train seat availability or live flight prices. Mention official booking portals (e.g. IRCTC).
+   - Detail top attractions at that destination and ask useful preferences (number of days, pace).
+3. CONVERSATIONAL MEMORY & FOLLOW-UP:
+   - Understand follow-up queries: If user says "Train", expand on the train route. If they ask "What about flight?", compare the flight route. If they say "I have 4 days", provide a day-by-day itinerary.
+   - If user says "I don't want too much travelling", reorganize the itinerary geographically to minimize travel time and eliminate backtracking.
+4. ZERO HARDCODED DESTINATIONS:
+   - Never hardcode Mumbai, Hampi, Patna, Srinagar, or any other city into the response or suggestions unless explicitly requested by the user or relevant to their current location.
+5. NATURAL TONE:
+   - Respond warmly and naturally like ChatGPT. Support Hindi / Hinglish gracefully.
+   - Do NOT repeat "Namaste! Welcome to Virasat" in every message.
+   - Do NOT dump database statistics in every response.
+
+${locationContextStr}
+Active Destination: ${activeDestinationName || 'None'}
+Current Intent: ${intent}
+${transitContextStr}
+${placesContextStr}`;
 
       const contents = [
         ...normalizedHistory.map((h) => ({
@@ -2603,8 +3098,7 @@ ${placesContext}`;
             usedModel = modelName;
             break;
           }
-        } catch (modelErr: any) {
-          // Gracefully continue to next candidate model without emitting noisy error payloads
+        } catch {
           continue;
         }
       }
@@ -2614,231 +3108,181 @@ ${placesContext}`;
           conversation_id: convId,
           reply: response.text,
           suggested_places: suggestedPlaces,
+          transit_comparison: transitComparison,
+          detected_location: userLoc || undefined,
+          suggested_actions: suggestedActions,
           sources: ['Virasat Master Heritage Database', 'ASI & UNESCO Gazette Records', `Gemini AI (${usedModel})`],
         });
       }
-    } catch (err: any) {
-      console.info('[Server] Gemini call bypassed; engaging Virasat grounded local intelligence engine.');
+    } catch {
+      console.info('[Server] Gemini call bypassed; engaging Virasat grounded dynamic local engine.');
     }
   }
 
   // =========================================================================
-  // Intelligent Local Conversational Engine (Fallback & Deterministic Grounding)
-  // Fully understands follow-up turns, context memory, and Hinglish!
+  // Grounded Dynamic Local Conversational Engine (Zero Hardcoded Defaults)
   // =========================================================================
   let reply = '';
 
-  // 1. Follow-up: "Day 2 mein aur kya hai?" / "what about tomorrow?" / Day 2 details
-  if (
-    query.includes('day 2') ||
-    query.includes('second day') ||
-    query.includes('dusre din') ||
-    ((query.includes('aur kya') || query.includes('next day') || query.includes('tomorrow') || query.includes('kal')) &&
-      (fullConversationContext.includes('day 1') || fullConversationContext.includes('itinerary') || fullConversationContext.includes('mumbai')))
-  ) {
-    if (isDiscussingMumbai) {
+  // 1. Intent: Explore Around My Current Location
+  if (intent === 'explore_nearby') {
+    if (suggestedPlaces.length > 0) {
+      const areaName = userLoc?.locality ? `${userLoc.locality}, ${userLoc.city || ''}` : userCity || 'your current area';
       reply = isHindiHinglish
-        ? `Bhai, Mumbai ke **Day 2** ke liye ye circuit best rahega — South Mumbai ka Art, Culture aur Heritage vibe:\n\n` +
-          `🏛️ **Morning: CSMVS Museum (Prince of Wales Museum)**\n` +
-          `• 1922 ka Indo-Saracenic marvel jisme 70,000+ ancient artifacts, miniature paintings aur Mughal weapon gallery hain.\n` +
-          `• Timings: 10:15 AM - 6:00 PM (Tickets: ₹150 domestic).\n\n` +
-          `🎨 **Midday: Kala Ghoda Art District & Jehangir Art Gallery**\n` +
-          `• Mumbai ka sabse vibrant cultural hub. Yahan street art galleries, David Sassoon Library, aur heritage cafes (jaise Khyber ya Bake House Cafe) hain.\n\n` +
-          `⛲ **Afternoon: Flora Fountain & Horniman Circle**\n` +
-          `• Heritage colonial walking trail: 1864 ka Flora Fountain aur grand Asiatic Society Library ke iconic white steps.\n\n` +
-          `🛍️ **Evening: Crawford Market (Mahatma Jyotiba Phule Mandai)**\n` +
-          `• 1869 ka Victorian Gothic market with Norman-style carvings by Lockwood Kipling (Rudyard Kipling ke pita).\n\n` +
-          `*Aur batao dost, Gateway of India ke paas ke spots dekhne hain ya local transport tips chahiye?*`
-        : `Here is the curated deep dive for **Day 2 in Mumbai** (Art, Culture & Fort Heritage Precinct):\n\n` +
-          `🏛️ **Morning (10:00 AM - 1:00 PM): CSMVS Museum (Prince of Wales Museum)**\n` +
-          `• A Grade I heritage Indo-Saracenic palace museum housing over 70,000 Indian artifacts, Indus Valley relics, and Mughal miniatures.\n\n` +
-          `🎨 **Afternoon (1:30 PM - 4:30 PM): Kala Ghoda Art Precinct & Jehangir Art Gallery**\n` +
-          `• Walk through Mumbai's premier arts district. Visit Jehangir Art Gallery, the historic David Sassoon Library (1870), and iconic Victorian facades along K. Dubash Marg.\n\n` +
-          `🛍️ **Evening (5:00 PM - 7:30 PM): Flora Fountain & Crawford Market**\n` +
-          `• Stroll past Flora Fountain (1864) and Horniman Circle, concluding at Crawford Market featuring bas-relief stone carvings by Lockwood Kipling.\n\n` +
-          `Would you like transit directions or nearby dining recommendations around Kala Ghoda?`;
+        ? `Aapke aas-paas (**${areaName}**) ke ye verified heritage aur tourism places hain:\n\n` +
+          suggestedPlaces.map((p, idx) => `${idx + 1}. 🏛️ **${p.name}** (${p.city}) — *${p.distance_km !== undefined ? `Lagbhag ${p.distance_km} km door` : 'Proximity area'}*\n   ${p.reason}`).join('\n\n') +
+          `\n\n*Kya aap inme se kisi jagah ka 1-day itinerary chahte hain ya kisi aur destination ka safar plan karna hai?*`
+        : `Based on your location near **${areaName}**, here are the closest heritage, tourism, and cultural places:\n\n` +
+          suggestedPlaces.map((p, idx) => `${idx + 1}. 🏛️ **${p.name}** (${p.city}) — *${p.distance_km !== undefined ? `${p.distance_km} km away` : 'Nearby'}*\n   ${p.reason}`).join('\n\n') +
+          `\n\nWould you like a day plan for any of these spots, or would you like to travel to another destination?`;
     } else {
-      reply = `For **Day 2**, we explore the heart of cultural arts and regional artisan quarters:\n\n` +
-        `1. **Morning**: Visit the state central museum and historic craft complexes.\n` +
-        `2. **Midday**: Traditional culinary walk and heritage bazaar exploration.\n` +
-        `3. **Evening**: Sunset point or waterside promenade with local folk performances.\n\n` +
-        `Would you like specific ticket prices and transit options for these spots?`;
+      reply = isHindiHinglish
+        ? `Aapke current location se nearby places calculate karne ke liye location permission enable karein, ya upar apna shehar select karein.`
+        : `To discover attractions near you, please grant location permission or select your city manually from the location bar above.`;
     }
   }
 
-  // 2. Follow-up: "Aur Gateway of India ke paas?" / Nearby Gateway of India
-  else if (
-    (query.includes('gateway of india') && (query.includes('paas') || query.includes('nearby') || query.includes('around') || query.includes('aur'))) ||
-    ((query.includes('paas') || query.includes('nearby') || query.includes('aur aas paas')) && isDiscussingGateway)
-  ) {
+  // 2. Intent: Travel to Another Destination (Compare Train, Air, Road)
+  else if (intent === 'travel_to_destination' && transitComparison) {
+    const dest = activeDestinationName!;
+    const orig = userOriginName;
     reply = isHindiHinglish
-      ? `Bhai, **Gateway of India** ke bilkul paas ye iconic places hain jo aap bina zyada travel kiye dekh sakte ho:\n\n` +
-        `1. 🏨 **The Taj Mahal Palace Hotel (1 minute walk - Plaza ke samne)**:\n` +
-        `   • 1903 ka legendary heritage hotel. Iska grand Moorish dome aur sea-facing lobby dekhne layak hai.\n\n` +
-        `2. ⛵ **Elephanta Caves Ferry Jetty (Gateway ke steps par)**:\n` +
-        `   • Gateway ke jetty se direct regular ferries chalti hain (1 ghante ki Arabian Sea cruise) 5th-8th century UNESCO rock-cut Shiva Caves tak.\n\n` +
-        `3. 🛍️ **Colaba Causeway (5-7 minute walk)**:\n` +
-        `   • Famous street shopping, antique stalls, brassware, aur legendary cafes: *Leopold Cafe* (1871) aur *Cafe Mondegar*.\n\n` +
-        `4. 🌊 **Marine Drive & Queen's Necklace (Approx 2 km / 8 mins taxi)**:\n` +
-        `   • Gateway se short taxi ride leke sunset ke time Marine Drive promenade par tetrapods par baithna best experience hai.\n\n` +
-        `5. 🏛️ **CSMT & Fort Heritage Precinct (2.4 km)**:\n` +
-        `   • UNESCO Victorian Gothic railway station aur Bombay High Court ki grand architecture.\n\n` +
-        `*Aapko Elephanta ferry timings ya Colaba walking route ki details chahiye?*`
-      : `Here are the top attractions located immediately adjacent to the **Gateway of India** in South Mumbai:\n\n` +
-        `1. 🏨 **The Taj Mahal Palace Hotel (Directly opposite, 50m)**:\n` +
-        `   • Commissioned in 1903 by Jamsetji Tata, an architectural masterpiece fusing Moorish, Oriental, and Florentine styles.\n\n` +
-        `2. ⛵ **Elephanta Caves Ferry Terminal (Directly at the waterfront jetty)**:\n` +
-        `   • Launches scenic 1-hour Arabian Sea harbor cruises to the UNESCO World Heritage rock-cut caves of Gharapuri.\n\n` +
-        `3. 🛍️ **Colaba Causeway (5-minute walk, 400m)**:\n` +
-        `   • Historic commercial boulevard renowned for street markets, handloom crafts, and legendary heritage cafes like Leopold Cafe.\n\n` +
-        `4. 🌊 **Marine Drive & Nariman Point (2.1 km)**:\n` +
-        `   • 3.6-km coastal boulevard featuring one of the world's finest collections of Art Deco buildings.\n\n` +
-        `5. 🏛️ **CSMT (Chhatrapati Shivaji Maharaj Terminus - 2.4 km)**:\n` +
-        `   • India's most celebrated UNESCO railway monument.\n\n` +
-        `You can also view 3D models and interactive routes for these in Virasat's **3D Museum** and **Map** tabs!`;
+      ? `**${orig}** se **${dest}** ka travel plan aur transport options:\n\n` +
+        `🚆 **1. Train Option**:\n` +
+        `• **Route**: ${transitComparison.train.summary}\n` +
+        `• **Approx Duration**: ${transitComparison.train.approx_duration} (~${transitComparison.train.distance_km} km rail line)\n` +
+        `• **Note**: ${transitComparison.train.notes}\n\n` +
+        `✈️ **2. Flight Option**:\n` +
+        `• **Route**: ${transitComparison.air.summary}\n` +
+        `• **Approx Duration**: ${transitComparison.air.approx_duration}\n` +
+        `• **Note**: ${transitComparison.air.notes}\n\n` +
+        `🚗 **3. Road / Car Option**:\n` +
+        `• **Highway Route**: ${transitComparison.road.summary}\n` +
+        `• **Distance & Time**: ~${transitComparison.road.distance_km} km (${transitComparison.road.approx_duration})\n` +
+        `• **Note**: ${transitComparison.road.notes}\n\n` +
+        (suggestedPlaces.length > 0
+          ? `🌟 **Top Places in ${dest}**:\n` +
+            suggestedPlaces.slice(0, 3).map((p) => `• **${p.name}**: ${p.reason}`).join('\n') + '\n\n'
+          : '') +
+        `*Aap kitne din ke liye plan kar rahe hain? (Jaise 3 din ya 5 din)*`
+      : `Here is the travel guide from **${orig}** to **${dest}**:\n\n` +
+        `🚆 **1. Train Option**:\n` +
+        `• **Route**: ${transitComparison.train.summary}\n` +
+        `• **Approx Duration**: ${transitComparison.train.approx_duration} (~${transitComparison.train.distance_km} km rail network)\n` +
+        `• **Advisory**: ${transitComparison.train.notes}\n\n` +
+        `✈️ **2. Air Option**:\n` +
+        `• **Route**: ${transitComparison.air.summary}\n` +
+        `• **Approx Duration**: ${transitComparison.air.approx_duration}\n` +
+        `• **Advisory**: ${transitComparison.air.notes}\n\n` +
+        `🚗 **3. Road Option**:\n` +
+        `• **Route**: ${transitComparison.road.summary}\n` +
+        `• **Distance & Duration**: ~${transitComparison.road.distance_km} km (${transitComparison.road.approx_duration})\n` +
+        `• **Advisory**: ${transitComparison.road.notes}\n\n` +
+        (suggestedPlaces.length > 0
+          ? `🌟 **Highlights to Explore in ${dest}**:\n` +
+            suggestedPlaces.slice(0, 3).map((p) => `• **${p.name}**: ${p.reason}`).join('\n') + '\n\n'
+          : '') +
+        `How many days are you planning for this trip? (e.g. 3 days, 5 days, or relaxed weekend)`;
   }
 
-  // 3. Question: "Tell me about Hampi"
-  else if (query.includes('hampi')) {
+  // 3. Intent: Specific Transit Mode Inquiry ("Train", "What about flight?", "Road")
+  else if (intent === 'transit_mode' && transitComparison) {
+    if (query.includes('flight') || query.includes('air')) {
+      reply = `✈️ **Air Travel Details to ${activeDestinationName}**:\n\n` +
+        `• **Route**: ${transitComparison.air.summary}\n` +
+        `• **Flight Duration**: ${transitComparison.air.approx_duration}\n` +
+        `• **Connecting Hubs & Transfer**: ${transitComparison.air.notes}\n` +
+        `• Real-time flight fares and live seat bookings are available on airline and travel aggregator portals.\n\n` +
+        `Would you like me to build a day-by-day itinerary once you land in ${activeDestinationName}?`;
+    } else if (query.includes('road') || query.includes('car') || query.includes('drive')) {
+      reply = `🚗 **Road / Highway Travel to ${activeDestinationName}**:\n\n` +
+        `• **Route**: ${transitComparison.road.summary}\n` +
+        `• **Distance**: ~${transitComparison.road.distance_km} km\n` +
+        `• **Driving Time**: ${transitComparison.road.approx_duration}\n` +
+        `• **Notes**: ${transitComparison.road.notes}\n\n` +
+        `Would you like recommendations on key highway stops or places to see upon arrival?`;
+    } else {
+      reply = `🚆 **Rail Transit Details to ${activeDestinationName}**:\n\n` +
+        `• **Corridor**: ${transitComparison.train.summary}\n` +
+        `• **Estimated Rail Journey**: ${transitComparison.train.approx_duration} (~${transitComparison.train.distance_km} km)\n` +
+        `• **Station Advice**: ${transitComparison.train.notes}\n` +
+        `• Tip: For peak holiday seasons, book early via IRCTC Tatkal or General quotas.\n\n` +
+        `Would you like to plan your days in ${activeDestinationName}?`;
+    }
+  }
+
+  // 4. Intent: Itinerary Planning (Geographically Clustered)
+  else if (intent === 'itinerary_plan' && activeDestinationName) {
+    const dest = activeDestinationName;
+    const days = Math.min(7, Math.max(1, durationDays));
+
+    reply = `Here is a curated **${days}-Day Geographically Optimized Itinerary** for **${dest}**:\n\n` +
+      `📍 **Day 1: Central Heritage Core (Walking & Local Transit)**\n` +
+      `• Morning: Landmark historical monuments and architecture.\n` +
+      `• Afternoon: Local museum galleries, cultural centers, and traditional cuisine.\n` +
+      `• Evening: Sunset promenade, heritage plaza, and local crafts market.\n\n` +
+      (days >= 2 ? `🌿 **Day 2: Scenic Nature & Spiritual Cluster**\n• Morning: Natural vistas, gardens, or riverside/lakefront shrines.\n• Afternoon: Artisan workshops and regional textile demonstrations.\n• Evening: Traditional folk performances or evening Aarti.\n\n` : '') +
+      (days >= 3 ? `🏰 **Day 3: Fortresses & Panoramic Viewpoints**\n• Morning: Historic hilltop fortress or palace complex.\n• Afternoon: Scenic photography viewpoints and heritage cafe.\n• Evening: Leisure dinner with authentic local specialties.\n\n` : '') +
+      (days >= 4 ? `🚗 **Day 4: Nearby Excursion & Scenic Valley/Coast**\n• Full Day: Excursion to scenic surrounding valleys, hill viewpoints, or coastal bays within 40-50 km.\n\n` : '') +
+      `*Notice: Places on each day are clustered geographically to minimize transit time and avoid backtracking.*\n\n` +
+      `Would you like me to adjust the pace (e.g. relaxed pace) or focus on specific interests?`;
+  }
+
+  // 5. Intent: Pace Adjustment ("I don't want too much travelling")
+  else if (intent === 'pace_adjust' && activeDestinationName) {
     reply = isHindiHinglish
-      ? `Namaste! **Hampi (Karnataka)** ke bare mein complete verified Virasat heritage guide:\n\n` +
-        `🏛️ **Historical Legacy & UNESCO Status**:\n` +
-        `• Hampi 14th century mein opulent **Vijayanagara Empire (1336–1565 CE)** ki capital thi, khaaskar Raja Krishnadevaraya ke golden period mein. Ye us daur ka duniya ka doosra sabse bada aur ameer sheher tha.\n` +
-        `• Tungabhadra river ke kinare surreal granite boulder landscape ke beech ye magnificent open-air museum hai.\n\n` +
-        `🌟 **Key Highlights to Visit**:\n` +
-        `1. **Vittala Temple & Stone Chariot**: Iconic monolith granite chariot jo ₹50 note par bhi hai, aur famed musical pillars.\n` +
-        `2. **Virupaksha Temple**: 7th century se continuously active sacred Shiva temple with towering 50m gopuram.\n` +
-        `3. **Royal Enclosure & Lotus Mahal**: Indo-Islamic zenana pavilion aur grand 11-domed Elephant Stables.\n` +
-        `4. **Matanga Hill**: Best panoramic sunrise aur sunset viewpoint pure Hampi ruins ka.\n\n` +
-        `🎫 **Visiting Details & ASI Tariffs**:\n` +
-        `• **Timings**: Sunrise to Sunset (06:00 AM - 06:00 PM).\n` +
-        `• **Entry Fee**: ₹40 (Domestic / SAARC), ₹600 (Foreigners) — Vittala complex aur Zanana enclosure ke liye valid.\n` +
-        `• **Nearest Railhead**: Hosapete Junction (HPT) - 13 km door.\n` +
-        `• **Best Season**: October se February (pleasant climate).\n\n` +
-        `*Aap Hampi ko Virasat ke **Heritage Sites** tab aur **Interactive Map** par bhi explore kar sakte hain!*`
-      : `Namaste! Here is the verified archival guide to **Hampi (Group of Monuments at Vijayanagara)**:\n\n` +
-        `🏛️ **Historical Significance & Dynasty**:\n` +
-        `• Recognized as a **UNESCO World Heritage Site**, Hampi was the thriving capital of the **Vijayanagara Empire (1336–1565 CE)**, reaching its zenith under Emperor Krishnadevaraya. In the 16th century, it was one of the wealthiest metropolitan centers in the world.\n` +
-        `• Set amidst a dramatic landscape of granite boulders along the sacred Tungabhadra River in Karnataka.\n\n` +
-        `🌟 **Prime Monuments to Explore**:\n` +
-        `1. **Vittala Temple Complex & The Stone Chariot**: Dedicated to Lord Vishnu, featuring the iconic monolithic stone chariot (depicted on India's ₹50 banknote) and 56 musical pillars (*sa-re-ga-ma* resonant pillars).\n` +
-        `2. **Virupaksha Temple**: Active Shiva pilgrimage shrine uninterrupted since the 7th century CE with an imposing 50-meter eastern gopuram.\n` +
-        `3. **Lotus Mahal & Elephant Stables**: Exquisite Indo-Islamic secular architecture with lotus-petal arches and grand domed stalls.\n` +
-        `4. **Matanga Hill**: The highest vantage point offering 360-degree sunrise vistas across the Tungabhadra river plains.\n\n` +
-        `📋 **Visitor Information (ASI Gazette Records)**:\n` +
-        `• **Timings**: Sunrise to Sunset (06:00 AM to 06:00 PM daily).\n` +
-        `• **Entry Fee**: ₹40 (Indian Citizens & SAARC), ₹600 (International Visitors). Children under 15 enter free.\n` +
-        `• **Transit / How to Reach**: Hosapete Junction Railway Station (HPT) is 13 km away with direct express trains from Bengaluru, Hyderabad, and Goa. Local transport includes eco-friendly electric buggies and bicycle rentals.\n` +
-        `• **Ideal Duration**: 2 to 3 Days.\n\n` +
-        `Would you like me to plot a 2-day Hampi itinerary or suggest heritage stays nearby?`;
+      ? `Bilkul! Humne **${activeDestinationName}** ka plan **Relaxed Pace** par set kar diya hai:\n\n` +
+        `• **Geographic Clustering**: Ek din mein sirf ek hi area/cluster rakha gaya hai taaki shehar mein baar-baar travel na karna pade.\n` +
+        `• **Zero Backtracking**: Saare spots walking ya short 10-15 minute auto ride ke distance par hain.\n` +
+        `• **Restful Intervals**: Har monument ke baad leisurely chai, local cafe, aur relaxed walking time.\n\n` +
+        `*Kya aap kisi specific spot ke timings ya hotels ke baare mein jaanna chahte hain?*`
+      : `Understood! I have reorganized the **${activeDestinationName}** itinerary for a **Relaxed Pace**:\n\n` +
+        `• **Tightly Clustered Locations**: Attractions are grouped within a single 2–3 km zone per day to eliminate unnecessary commuting.\n` +
+        `• **Zero Backtracking**: Visits are sequenced sequentially along one direction.\n` +
+        `• **Generous Downtime**: Ample time scheduled for relaxing at cafes, tea gardens, or scenic vantage points without rushing.\n\n` +
+        `Would you like recommendations for comfortable boutique stays or local dining?`;
   }
 
-  // 4. Question: "What can I explore in Mumbai?" / "Bhai Mumbai mein 3 din ke liye kya explore karu?"
-  else if (
-    isDiscussingMumbai &&
-    (query.includes('3 din') || query.includes('3 day') || query.includes('explore') || query.includes('kya explore') || query.includes('plan') || query.includes('trip') || query.includes('kya karu'))
-  ) {
-    reply = isHindiHinglish
-      ? `Bhai, Mumbai explore karne ke liye 3 din ka ekdum balanced aur practical heritage itinerary ye raha:\n\n` +
-        `📍 **Day 1: South Mumbai Heritage & Coastal Sunset**\n` +
-        `• **Morning**: Gateway of India (1911 basalt arch) se shuru karo, samne iconic Taj Mahal Palace Hotel dekho, aur wahi jetty se Elephanta Caves ki boat lo.\n` +
-        `• **Afternoon**: CSMT (Chhatrapati Shivaji Maharaj Terminus) — UNESCO Victorian Gothic architecture ka benchmark.\n` +
-        `• **Evening**: Marine Drive (Queen's Necklace) par cool breeze aur Girgaon Chowpatty par sunset ke saath Mumbai chaat.\n\n` +
-        `🎨 **Day 2: Art, Culture & Fort Precinct**\n` +
-        `• **Morning**: CSMVS Museum (Prince of Wales) mein ancient Indian artifacts aur art gallery.\n` +
-        `• **Midday**: Kala Ghoda Art District, Jehangir Art Gallery aur colonial David Sassoon Library.\n` +
-        `• **Evening**: Flora Fountain, Horniman Circle aur heritage Crawford Market.\n\n` +
-        `🌊 **Day 3: Coastal, Spiritual & Suburban Mumbai**\n` +
-        `• **Morning**: Bandra Fort (Castella de Aguada), Bandstand, aur historic Mount Mary Basilica.\n` +
-        `• **Afternoon**: Sacred Siddhivinayak Temple aur Arabian Sea ke beech bana historic Haji Ali Dargah.\n` +
-        `• **Evening**: Iconic Mumbai Local Train ka experience (Churchgate se Bandra Western Line corridor).\n\n` +
-        `*Bhai, Day 2 ya Day 3 ke baare mein kuch aur detail chahiye, ya Gateway of India ke paas ka route samjhao?*`
-      : `Here is a curated, geographically optimized **3-Day Mumbai Heritage Itinerary**:\n\n` +
-        `📍 **Day 1: South Mumbai Colonial Core & Waterfront**\n` +
-        `• **09:00 AM**: Gateway of India & Taj Mahal Palace Hotel waterfront promenade.\n` +
-        `• **10:30 AM**: Harbor ferry cruise to UNESCO Elephanta Caves (3 hours round trip).\n` +
-        `• **03:00 PM**: CSMT (Chhatrapati Shivaji Maharaj Terminus) Victorian Gothic architectural walk.\n` +
-        `• **05:30 PM**: Marine Drive sunset stroll from Nariman Point to Girgaon Chowpatty.\n\n` +
-        `🎨 **Day 2: Kala Ghoda Arts & Fort Heritage Precinct**\n` +
-        `• **10:00 AM**: CSMVS Museum (Prince of Wales Museum) art and antiquities galleries.\n` +
-        `• **01:00 PM**: Lunch in the Kala Ghoda Arts District (heritage Irani cafes or regional bistros).\n` +
-        `• **02:30 PM**: Jehangir Art Gallery & David Sassoon Library.\n` +
-        `• **04:30 PM**: Flora Fountain, Horniman Circle, and Crawford Market.\n\n` +
-        `🌊 **Day 3: Coastal Heritage, Spiritual Shrines & Suburban Life**\n` +
-        `• **09:30 AM**: Bandra Fort (Castella de Aguada) overlooking the Bandra-Worli Sea Link.\n` +
-        `• **11:30 AM**: Mount Mary Basilica & Bandra heritage village walking trail.\n` +
-        `• **02:30 PM**: Haji Ali Dargah (approached via the tidal causeway) and Mahalaxmi Temple.\n` +
-        `• **05:00 PM**: Experience the lifeline Mumbai Suburban railway between Churchgate and Bandra.\n\n` +
-        `You can customize this plan anytime in our **Plan Trip (Itinerary Planner)** tab! What would you like to explore next?`;
+  // 6. Platform Feature Inquiries
+  else if (intent === 'platform_feature') {
+    if (query.includes('map')) {
+      reply = `Here is how the **Virasat Interactive Map** works:\n\n` +
+        `1. **Access**: Click **'Map'** in the top navigation.\n` +
+        `2. **Near Me & Geocoding**: Detect your location to measure real distances to nearby heritage monuments.\n` +
+        `3. **Filters**: Filter by ASI & UNESCO monuments, railway stations, and heritage stays.\n` +
+        `4. **Detail Drawers**: Click any pin for historical significance, official entry fees, and visiting hours.`;
+    } else {
+      reply = `Welcome to **Virasat (Discover India's Living Heritage)**!\n\n` +
+        `• 🏛️ **Explore**: Certified heritage circuits, 3D monument museum, and this AI concierge.\n` +
+        `• 🧭 **India Explorer**: Interactive directory of all 36 States and Union Territories.\n` +
+        `• 🗺️ **Interactive Map**: GIS map with proximity measurement and category filters.\n` +
+        `• 🚆 **Travel & Multimodal Routing**: Compare train, flight, and road routes across India.\n\n` +
+        `What would you like to discover today?`;
+    }
   }
 
-  // 5. Question: "How does this website work?" / Website architecture
-  else if (query.includes('how does this website work') || query.includes('website work') || query.includes('about virasat') || query.includes('kya hai yeh website') || query.includes('how to use this site')) {
-    reply = `Welcome to **Virasat (Discover India's Living Heritage)**! Here is how our comprehensive platform works:\n\n` +
-      `🏛️ **1. Explore (Homepage)**: Your starting hub with curated heritage circuits, 3D monument showcases, regional state guides, and this conversational Virasat Assistant.\n\n` +
-      `🧭 **2. India Explorer**: Interactive visual drill-down into all **36 States and Union Territories**, detailing certified heritage sites, capital hubs, and cultural traditions.\n\n` +
-      `🏙️ **3. Destinations (City Hub)**: In-depth guides for key Indian hubs (Mumbai, Jaipur, Delhi, Kochi, Agra, etc.) complete with live weather, local transit lines, and visiting tips.\n\n` +
-      `📜 **4. Heritage Sites**: Encyclopedic archive of 45 UNESCO World Heritage and ASI protected monuments with dynastic era, architecture, official tariffs, and hours.\n\n` +
-      `📋 **5. Plan Trip (Itinerary Planner)**: Algorithmic journey generator that creates custom 1-7 day daily schedules based on your pace (relaxed, moderate, fast) and budget.\n\n` +
-      `🗺️ **6. Interactive Map**: High-performance Leaflet GIS map with category filtering (monuments, stations, hotels), distance measurement, and GPS nearby discovery.\n\n` +
-      `💎 **7. 3D Heritage Museum**: Real-time WebGL 3D models (e.g. Gateway of India, CSMT, Taj Mahal) with orbital camera, lighting, and wireframe controls.\n\n` +
-      `🤖 **8. Virasat AI Assistant**: Grounded conversational concierge that helps you navigate, plan trips, and discover verified cultural intelligence.\n\n` +
-      `Try clicking any tab in the top navigation bar to explore! Where would you like to start?`;
-  }
-
-  // 6. Question: "How do I use the map?"
-  else if (query.includes('how do i use the map') || query.includes('use the map') || query.includes('map work') || query.includes('map kaise use karu')) {
-    reply = `Here is how to use the **Virasat Interactive Map**:\n\n` +
-      `1. **Accessing the Map**: Click on **'Map'** in the top navigation bar (or open it via the 'More' menu).\n` +
-      `2. **Filter by Categories**: Use the filter chips at the top to toggle between:\n` +
-      `   • 🏛️ **Heritage Monuments** (ASI & UNESCO locations)\n` +
-      `   • 🚆 **Railway Stations** (Mainline junctions & suburban stations)\n` +
-      `   • 🏨 **Accommodations & Hotels**\n` +
-      `3. **City & Region Focus**: Use the City dropdown to instantly zoom to Mumbai, Delhi, Jaipur, Kochi, Hampi, and more.\n` +
-      `4. **Click Pins for Full Drawers**: Tapping any marker on the map opens a rich details drawer with high-resolution photos, architectural history, official tariffs, and directions.\n` +
-      `5. **Distance & Routing Engine**: Select any origin and destination to compute geodesic distances, recommended transit modes (rail/road), and transit estimates.\n` +
-      `6. **Places Near Me**: Click the **'Explore Nearby'** button with location permissions enabled to find heritage sites closest to your current physical position.\n\n` +
-      `Would you like me to guide you to a specific monument on the map?`;
-  }
-
-  // 7. Question: "What is available near me?"
-  else if (query.includes('near me') || query.includes('nearby') || query.includes('paas mein') || query.includes('aas paas')) {
-    reply = `Virasat provides dedicated **Geospatial Proximity Discovery**:\n\n` +
-      `• **On the Interactive Map**: Click the **'Near Me'** or **'Explore Nearby'** button. If you grant browser location permissions, Virasat uses high-precision geodesic calculation to rank all verified monuments, suburban rail stations, and artisan clusters by distance (km).\n` +
-      `• **By City Hub**: If you are currently in or planning to visit a specific city (e.g. Mumbai, Jaipur, Delhi, Agra), select that city from the top navigation bar to instantly focus nearby attractions.\n` +
-      `• **Currently selected region**: **${city || 'All India'}**.\n\n` +
-      (suggestedPlaces.length > 0
-        ? `Top highlights in this region include:\n${suggestedPlaces.map((p) => `• **${p.name}** (${p.city}) — ${p.reason}`).join('\n')}\n\n`
-        : '') +
-      `Tell me which city or monument you are currently near, and I will list the closest heritage gems!`;
-  }
-
-  // 8. General Heritage / Trip Planning
-  else if (query.includes('plan') || query.includes('trip') || query.includes('itinerary')) {
-    reply = `I would love to help you plan a heritage journey across India!\n\n` +
-      `To tailor the ideal circuit for you, please let me know:\n` +
-      `1. **Destination or Region**: (e.g. Mumbai, Golden Triangle — Delhi-Agra-Jaipur, Karnataka/Hampi, Kerala backwaters)\n` +
-      `2. **Duration**: (e.g. 1 day, 3 days, or 1 week)\n` +
-      `3. **Interests**: (e.g. Ancient Temple Architecture, Colonial Forts, Culinary Walks, Artisan Textiles)\n` +
-      `4. **Pace**: Relaxed (1-2 places/day) or Fast-paced (3-4 places/day)\n\n` +
-      `You can also head straight to our **'Plan Trip'** tab in the top navigation for an instant interactive itinerary builder with cost estimates!`;
+  // 7. Destination Information or General
+  else if (activePlace) {
+    reply = `Namaste! Here is the verified archival profile for **${activePlace.name}** in ${activePlace.city}, ${activePlace.state || 'India'}:\n\n` +
+      `🏛️ **Significance**: ${activePlace.summary || activePlace.description?.slice(0, 250) || 'Prominent cultural landmark in Virasat archives.'}\n\n` +
+      (activePlace.history ? `📜 **History**: ${activePlace.history.slice(0, 300)}\n\n` : '') +
+      (activePlace.visiting_hours ? `🕒 **Visiting Hours**: ${activePlace.visiting_hours}\n` : '') +
+      (activePlace.entry_fee ? `🎫 **Entry Fee**: Domestic ₹${activePlace.entry_fee.domestic || 0}, International ₹${activePlace.entry_fee.international || 0}\n` : '') +
+      `\nWould you like travel options to reach here, or nearby places to explore?`;
   } else {
-    reply = `Namaste! Welcome to Virasat AI Assistant.\n\n` +
-      `I am grounded in Virasat's master database covering **36 States & Union Territories**, **45 UNESCO & ASI heritage monuments**, **98 verified destinations**, multimodal railway routes, and interactive 3D models.\n\n` +
-      `Here are some things you can ask me:\n` +
-      `• *"What can I explore in Mumbai?"* or *"Bhai Mumbai mein 3 din ke liye kya explore karu?"*\n` +
-      `• *"Tell me about Hampi"* (history, timings, tickets, how to reach)\n` +
-      `• *"Aur Gateway of India ke paas kya hai?"*\n` +
-      `• *"How does this website work?"*\n` +
-      `• *"How do I use the map?"*\n` +
-      `• *"What is available near me?"*\n\n` +
-      `How may I guide your journey through India today?`;
+    reply = `Namaste! 👋 I am your Virasat Travel & Heritage Concierge.\n\n` +
+      (userLoc
+        ? `It looks like you're currently near **${userLoc.locality ? `${userLoc.locality}, ` : ''}${userLoc.city || userLoc.state || ''}**.\n\nWhere would you like to go today?`
+        : `Where would you like to go today? You can choose **Explore Near Me** or name any destination across India.`);
   }
 
   res.json({
     conversation_id: convId,
     reply,
     suggested_places: suggestedPlaces,
+    transit_comparison: transitComparison,
+    detected_location: userLoc || undefined,
+    suggested_actions: suggestedActions.length > 0 ? suggestedActions : ['Explore Near Me', 'Plan a Trip', 'How does Virasat work?'],
     sources: ['Virasat Master Heritage Database', 'ASI & UNESCO Gazette Records', 'Geospatial Transit Index'],
   });
 });

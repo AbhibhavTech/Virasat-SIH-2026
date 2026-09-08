@@ -103,5 +103,103 @@
       "ai": true,
       "3d": true
     }
+  },
+  {
+    "id": "thar-desert-sam-dunes",
+    "name": "Thar Desert & Sam Sand Dunes",
+    "state": "Rajasthan",
+    "city": "Jaisalmer",
+    "country": "India",
+    "category": "nature",
+    "summary": "The Great Indian Desert featuring golden rolling ripples, camel safaris, starlit camping, and desert wildlife.",
+    "description": "The Thar Desert, also known as the Great Indian Desert, spans western Rajasthan with rolling golden sand dunes at Sam and Khuri near Jaisalmer. Visitors experience sweeping dune crests, cultural desert camping, Rajasthani folk dance (Kalbelia and Ghoomar), camel rides, and Desert National Park with the Great Indian Bustard.",
+    "history": "Ancient geopolitical trade crossway along historic silk routes and camel caravan tracks connecting Rajput kingdoms with Sindh and Persia.",
+    "culture": "Vibrant Manganiyar and Langa folk musicians playing Kamayacha and Morchang under starlit desert skies around royal campfires.",
+    "coordinates": {
+      "lat": 26.8309,
+      "lng": 70.5042
+    },
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1547234935-80c7145ec969?w=800&auto=format&fit=crop&q=80",
+    "best_time_to_visit": "October to March (Pleasant winter with cool desert evenings)",
+    "visiting_hours": "Open 24 Hours (Camel & Jeep safaris best at sunrise 06:00 AM & sunset 05:00 PM)",
+    "entry_fee": {
+      "domestic": 0.0,
+      "international": 0.0,
+      "currency": "INR"
+    },
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Open 24 Hours (Safaris 05:30 AM - 07:30 PM)",
+      "recommended_duration": "1 - 2 days (Overnight luxury desert tent stay recommended)",
+      "tips": [
+        "Reach Sam Sand Dunes 40 km from Jaisalmer before 04:30 PM for the sunset camel safari.",
+        "Dress in layers as desert temperature drops sharply after dusk.",
+        "Explore Desert National Park nearby for chinkara deer and migratory birds."
+      ]
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1547234935-80c7145ec969?w=1200&auto=format&fit=crop&q=80",
+      "https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "model_3d": {
+      "has_model": false,
+      "available": false
+    },
+    "tags": ["thar desert", "desert", "jaisalmer", "sand dunes", "camel safari", "rajasthan", "nature"],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "jaisalmer-fort",
+    "name": "Jaisalmer Fort (Sonar Qila)",
+    "state": "Rajasthan",
+    "city": "Jaisalmer",
+    "country": "India",
+    "category": "Forts & Palaces",
+    "summary": "UNESCO World Heritage living golden sandstone fort housing royal palaces, ancient Jain temples, and bustling bazaars.",
+    "description": "Rising majestically from the sandy plains of the Thar Desert on Trikuta Hill, Jaisalmer Fort is one of the very few living forts in the world. Constructed of yellow sandstone that glows like pure gold at dusk, giving it the name 'Sonar Qila'. Inside its 99 bastions reside thousands of locals, ornate carved havelis, and seven historic 12th-to-15th century Jain temples.",
+    "history": "Founded in 1156 CE by Rajput ruler Rawal Jaisal. Withstood multiple historic sieges by the Delhi Sultanate and was a prime customs junction on cross-continental camel trade routes.",
+    "culture": "Celebrated for intricately carved yellow stone jharokhas, mirrored embroidery textiles, and silver jewellery workshops.",
+    "coordinates": {
+      "lat": 26.9124,
+      "lng": 70.9127
+    },
+    "rating": 4.9,
+    "thumbnail_url": "https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&auto=format&fit=crop&q=80",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "09:00 AM - 06:00 PM (Fort precincts open 24 Hours)",
+    "entry_fee": {
+      "domestic": 50.0,
+      "international": 250.0,
+      "currency": "INR"
+    },
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "09:00 AM - 06:00 PM for Palace Museum",
+      "recommended_duration": "3 - 4 hours",
+      "tips": [
+        "Walk through Canon Point at the fort ramparts for panoramic views over Jaisalmer Golden City.",
+        "Visit the ancient Jain Temples inside early in the morning for quiet contemplation and intricate marble carvings."
+      ]
+    },
+    "images": [
+      "https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "model_3d": {
+      "has_model": false,
+      "available": false
+    },
+    "tags": ["jaisalmer", "fort", "sonar qila", "unesco", "rajasthan", "heritage"],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
   }
 ]

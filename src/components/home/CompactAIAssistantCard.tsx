@@ -17,15 +17,15 @@ export const CompactAIAssistantCard: React.FC<CompactAIAssistantCardProps> = ({
   const handleOpen = (promptText?: string) => {
     const finalPrompt = (promptText || query).trim();
     if (onOpenAIChat) {
-      onOpenAIChat(finalPrompt || 'Namaste! How can I help you explore India?');
+      onOpenAIChat(finalPrompt || 'Namaste! What would you like to explore?');
     } else if (onNavigateTab) {
       onNavigateTab('ai');
     }
   };
 
   const suggestions = [
-    { label: 'Tell me about Hampi', icon: Sparkles },
-    { label: 'Plan my trip', icon: Compass },
+    { label: 'Plan a trip', icon: Compass },
+    { label: 'Explore heritage', icon: Sparkles },
     { label: 'Places near me', icon: MapPin },
   ];
 

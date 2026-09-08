@@ -318,20 +318,80 @@ export interface AIChatMessage {
   timestamp?: string;
 }
 
+export interface UserLocationContext {
+  latitude?: number;
+  longitude?: number;
+  locality?: string;
+  city?: string;
+  state?: string;
+  country?: string;
+  formatted_area?: string;
+}
+
+export interface TransitOption {
+  summary: string;
+  approx_duration?: string;
+  distance_km?: number;
+  stations?: string[];
+  lines?: string[];
+  airport_origin?: string;
+  airport_dest?: string;
+  highways?: string[];
+  notes?: string;
+}
+
+export interface TransitComparison {
+  origin: string;
+  destination: string;
+  distance_km?: number;
+  train?: TransitOption;
+  air?: TransitOption;
+  road?: TransitOption;
+}
+
 export interface AIChatRequest {
   message: string;
   city?: string;
   place_id?: string;
   place_name?: string;
   history?: AIChatMessage[];
+  location?: UserLocationContext;
+  travel_context?: {
+    origin?: string;
+    destination?: string;
+    days?: number;
+    preferred_mode?: 'train' | 'flight' | 'road' | 'all';
+    pace?: string;
+  };
 }
 
 export interface AIChatResponse {
   reply: string;
-  suggested_places?: Array<{ id: string; name: string; city: string; reason?: string }>;
+  suggested_places?: Array<{
+    id: string;
+    name: string;
+    city: string;
+    category?: string;
+    reason?: string;
+    distance_km?: number;
+    state?: string;
+  }>;
+  transit_comparison?: TransitComparison;
+  detected_location?: UserLocationContext;
   suggested_actions?: string[];
   sources?: string[];
   grounding_chunks?: any[];
+}
+
+export interface ReverseGeocodeResponse {
+  success: boolean;
+  locality: string;
+  city: string;
+  state: string;
+  country: string;
+  formatted_area: string;
+  nearest_city: string;
+  distance_to_city_km: number;
 }
 
 export interface NearbyPlacesResponse {
