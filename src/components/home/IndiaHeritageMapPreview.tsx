@@ -244,12 +244,12 @@ export const IndiaHeritageMapPreview: React.FC<IndiaHeritageMapPreviewProps> = (
   const [isMapReady, setIsMapReady] = useState(false);
 
   const tileUrls = {
-    voyager: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
+    voyager: 'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
     satellite: 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',
   };
 
   const tileAttributions = {
-    voyager: '&copy; OpenStreetMap &copy; CARTO',
+    voyager: '&copy; OpenStreetMap contributors',
     satellite: '&copy; Esri World Imagery, USGS',
   };
 

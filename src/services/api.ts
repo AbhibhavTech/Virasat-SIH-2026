@@ -248,17 +248,34 @@ export const api = {
   // -------------------------------------------------------------
   // Routes & Maps
   // -------------------------------------------------------------
-  async getRoutes(originOrObj: any, destination?: string, mode?: string, city?: string): Promise<RouteResponse> {
+  async getRoutes(
+    originOrObj: any,
+    destination?: string,
+    mode?: string,
+    city?: string,
+    origLat?: number,
+    origLng?: number,
+    destLat?: number,
+    destLng?: number
+  ): Promise<RouteResponse> {
     let orig: string;
     let dest: string;
     let m = mode;
     let c = city;
+    let oLat = origLat;
+    let oLng = origLng;
+    let dLat = destLat;
+    let dLng = destLng;
 
     if (typeof originOrObj === 'object' && originOrObj !== null) {
       orig = originOrObj.origin;
       dest = originOrObj.destination;
-      m = originOrObj.mode;
+      m = originOrObj.mode || mode;
       c = originOrObj.city || originOrObj.cityContext || city;
+      if (originOrObj.orig_lat !== undefined) oLat = originOrObj.orig_lat;
+      if (originOrObj.orig_lng !== undefined) oLng = originOrObj.orig_lng;
+      if (originOrObj.dest_lat !== undefined) dLat = originOrObj.dest_lat;
+      if (originOrObj.dest_lng !== undefined) dLng = originOrObj.dest_lng;
     } else {
       orig = originOrObj;
       dest = destination || 'gateway-of-india';
@@ -267,6 +284,10 @@ export const api = {
     const q = new URLSearchParams({ origin: orig, destination: dest });
     if (m) q.set('mode', m);
     if (c) q.set('city', c);
+    if (oLat !== undefined && !isNaN(oLat)) q.set('orig_lat', String(oLat));
+    if (oLng !== undefined && !isNaN(oLng)) q.set('orig_lng', String(oLng));
+    if (dLat !== undefined && !isNaN(dLat)) q.set('dest_lat', String(dLat));
+    if (dLng !== undefined && !isNaN(dLng)) q.set('dest_lng', String(dLng));
 
     return await request<RouteResponse>(`/routes?${q.toString()}`);
   },

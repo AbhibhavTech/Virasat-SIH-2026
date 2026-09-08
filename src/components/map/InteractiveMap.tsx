@@ -56,8 +56,23 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
   const heritageLayerRef = useRef<L.LayerGroup | null>(null);
   const stationLayerRef = useRef<L.LayerGroup | null>(null);
   const sightsLayerRef = useRef<L.LayerGroup | null>(null);
-  const routePolylineRef = useRef<L.Polyline | null>(null);
+  const routePolylineRef = useRef<L.LayerGroup | L.Polyline | null>(null);
   const routeMarkersRef = useRef<L.LayerGroup | null>(null);
+
+  // Duration display formatter (e.g., "15 hr 40 min", "45 min")
+  const formatDurationDisplay = (mins?: number, formatted?: string) => {
+    if (formatted) return formatted;
+    if (!mins || isNaN(mins)) return '--';
+    if (mins < 60) return `${Math.round(mins)} min`;
+    const h = Math.floor(mins / 60);
+    const m = Math.round(mins % 60);
+    if (h >= 24) {
+      const d = Math.floor(h / 24);
+      const rh = h % 24;
+      return `${d}d ${rh}h${m > 0 ? ` ${m}m` : ''}`;
+    }
+    return `${h} hr${m > 0 ? ` ${m} min` : ''}`;
+  };
 
   // Datasets
   const [heritageSites, setHeritageSites] = useState<any[]>([]);
@@ -202,10 +217,9 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
       // Add Zoom Control to bottom-right
       L.control.zoom({ position: 'bottomright' }).addTo(map);
 
-      // Light Carto Voyager OpenStreetMap Tiles
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        subdomains: 'abcd',
+      // OpenStreetMap Standard Tiles
+      L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         maxZoom: 19,
       }).addTo(map);
 
@@ -563,7 +577,16 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
     setRouteError(null);
 
     try {
-      const res = await api.getRoutes(routeOrigin, routeDestination, selectedMode);
+      const res = await api.getRoutes({
+        origin: routeOrigin,
+        destination: routeDestination,
+        mode: selectedMode,
+        city: selectedCity,
+        orig_lat: routeOriginCoords?.lat,
+        orig_lng: routeOriginCoords?.lng,
+        dest_lat: routeDestCoords?.lat,
+        dest_lng: routeDestCoords?.lng,
+      });
       setActiveRoute(res);
 
       const map = mapInstanceRef.current;
@@ -595,44 +618,99 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
       }
 
       if (polyCoords.length > 0) {
-        // Draw crisp routed polyline on Leaflet
-        const color = selectedMode === 'WALK' ? '#059669' : selectedMode === 'BICYCLE' ? '#0284c7' : '#ea580c';
-        const polyline = L.polyline(polyCoords, {
-          color,
-          weight: 5,
-          opacity: 0.85,
-          lineJoin: 'round',
-          dashArray: selectedMode === 'WALK' ? '8, 8' : undefined,
-        }).addTo(map);
+        const routeGroup = L.layerGroup();
 
-        routePolylineRef.current = polyline;
+        if (selectedMode === 'TRANSIT') {
+          // Authentic Dual-layer Railroad Track Geometry (just like Google Maps rail layer)
+          // Layer 1: Dark steel ballast base
+          L.polyline(polyCoords, {
+            color: '#0f172a',
+            weight: 7,
+            opacity: 0.95,
+            lineJoin: 'round',
+          }).addTo(routeGroup);
+
+          // Layer 2: High-contrast rail ties (amber & white dashes)
+          L.polyline(polyCoords, {
+            color: '#fbbf24',
+            weight: 3.5,
+            opacity: 1,
+            dashArray: '8, 8',
+            lineJoin: 'round',
+          }).addTo(routeGroup);
+        } else if (selectedMode === 'DRIVE') {
+          // Highway Vector: Navy blue border with vibrant royal blue core
+          L.polyline(polyCoords, {
+            color: '#1e3a8a',
+            weight: 7,
+            opacity: 0.9,
+            lineJoin: 'round',
+          }).addTo(routeGroup);
+
+          L.polyline(polyCoords, {
+            color: '#2563eb',
+            weight: 4.5,
+            opacity: 1,
+            lineJoin: 'round',
+          }).addTo(routeGroup);
+        } else if (selectedMode === 'WALK') {
+          L.polyline(polyCoords, {
+            color: '#059669',
+            weight: 5,
+            opacity: 0.9,
+            lineJoin: 'round',
+            dashArray: '6, 8',
+          }).addTo(routeGroup);
+        } else if (selectedMode === 'BICYCLE') {
+          L.polyline(polyCoords, {
+            color: '#0284c7',
+            weight: 5,
+            opacity: 0.9,
+            lineJoin: 'round',
+          }).addTo(routeGroup);
+        } else {
+          L.polyline(polyCoords, {
+            color: '#ea580c',
+            weight: 6,
+            opacity: 0.9,
+            lineJoin: 'round',
+          }).addTo(routeGroup);
+        }
+
+        routeGroup.addTo(map);
+        routePolylineRef.current = routeGroup;
 
         // Add distinct Start (A) & Destination (B) route markers
         const startIcon = L.divIcon({
           className: 'route-start-pin',
-          html: `<div style="background:#10b981; color:white; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:12px; border:2px solid white; box-shadow:0 3px 8px rgba(0,0,0,0.3);">A</div>`,
-          iconSize: [28, 28],
-          iconAnchor: [14, 14],
+          html: `<div style="background:#10b981; color:white; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:13px; border:2.5px solid white; box-shadow:0 3px 10px rgba(0,0,0,0.35);">A</div>`,
+          iconSize: [30, 30],
+          iconAnchor: [15, 15],
         });
 
         const endIcon = L.divIcon({
           className: 'route-end-pin',
-          html: `<div style="background:#ea580c; color:white; width:28px; height:28px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:12px; border:2px solid white; box-shadow:0 3px 8px rgba(0,0,0,0.3);">B</div>`,
-          iconSize: [28, 28],
-          iconAnchor: [14, 14],
+          html: `<div style="background:#ea580c; color:white; width:30px; height:30px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:13px; border:2.5px solid white; box-shadow:0 3px 10px rgba(0,0,0,0.35);">B</div>`,
+          iconSize: [30, 30],
+          iconAnchor: [15, 15],
         });
 
         const startPt = polyCoords[0];
         const endPt = polyCoords[polyCoords.length - 1];
 
         if (routeMarkersRef.current && startPt && endPt) {
-          L.marker(startPt, { icon: startIcon }).addTo(routeMarkersRef.current);
-          L.marker(endPt, { icon: endIcon }).addTo(routeMarkersRef.current);
+          L.marker(startPt, { icon: startIcon })
+            .bindTooltip(`Origin: ${routeOriginName}`, { direction: 'top' })
+            .addTo(routeMarkersRef.current);
+          L.marker(endPt, { icon: endIcon })
+            .bindTooltip(`Destination: ${routeDestName}`, { direction: 'top' })
+            .addTo(routeMarkersRef.current);
         }
 
         // Fit map smoothly to route bounds
         try {
-          map.fitBounds(polyline.getBounds(), { padding: [60, 60], maxZoom: 15 });
+          const boundsPoly = L.polyline(polyCoords);
+          map.fitBounds(boundsPoly.getBounds(), { padding: [60, 60], maxZoom: 15 });
         } catch (boundsErr) {
           console.warn('[Map] fitBounds warning:', boundsErr);
         }
@@ -795,7 +873,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
                   </h4>
                   <p className="text-[10px] sm:text-xs text-slate-500 truncate">
                     {isRoutePanelMinimized && activeOption
-                      ? `${activeOption.duration_minutes || activeOption.duration_mins} min • ${activeOption.distance_km} km • ₹${activeOption.estimated_fare ?? 0}`
+                      ? `${formatDurationDisplay(activeOption.duration_minutes || activeOption.duration_mins, activeOption.duration_formatted)} • ${activeOption.distance_km} km • ₹${activeOption.estimated_fare ?? 0}`
                       : 'Calculate distance, fare & real paths'}
                   </p>
                 </div>
@@ -975,11 +1053,28 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
                 {/* Active Route Summary Result Cards */}
                 {activeOption && (
                   <div className="p-3.5 sm:p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                    {/* Header with Title & Provider */}
+                    <div className="flex items-start justify-between gap-2">
+                      <div className="min-w-0">
+                        <div className="text-xs font-black text-slate-900 truncate">
+                          {activeOption.title || `${selectedMode} Route`}
+                        </div>
+                        <div className="text-[11px] text-slate-500 font-medium">
+                          {activeOption.provider || 'Indian Transit Engine'}
+                        </div>
+                      </div>
+                      {activeOption.speed_tier && (
+                        <span className="shrink-0 px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wide uppercase bg-emerald-100 text-emerald-800">
+                          {activeOption.speed_tier}
+                        </span>
+                      )}
+                    </div>
+
                     <div className="grid grid-cols-3 gap-1.5 sm:gap-2 text-center">
                       <div className="p-2 sm:p-2.5 rounded-xl bg-white border border-slate-200">
                         <div className="text-[9px] sm:text-[10px] uppercase font-bold text-slate-400 tracking-wider">Duration</div>
                         <div className="text-xs sm:text-sm md:text-base font-black text-slate-900 font-mono mt-0.5">
-                          {activeOption.duration_minutes || activeOption.duration_mins} min
+                          {formatDurationDisplay(activeOption.duration_minutes || activeOption.duration_mins, activeOption.duration_formatted)}
                         </div>
                       </div>
                       <div className="p-2 sm:p-2.5 rounded-xl bg-white border border-slate-200">
@@ -1000,6 +1095,40 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
                       </div>
                     </div>
 
+                    {/* Authentic Railway Alignment Badge */}
+                    {activeOption.railway_corridor && (
+                      <div className="p-2.5 rounded-xl bg-amber-50 border border-amber-200 text-xs text-amber-900 space-y-1">
+                        <div className="flex items-center gap-1.5 font-bold text-amber-900">
+                          <Train className="w-3.5 h-3.5 text-amber-700 shrink-0" />
+                          <span>Track Corridor: {activeOption.railway_corridor}</span>
+                        </div>
+                        {activeOption.railway_stops && activeOption.railway_stops.length > 0 && (
+                          <div className="text-[11px] text-amber-800 leading-snug">
+                            Key Junctions: {activeOption.railway_stops.join(' → ')}
+                          </div>
+                        )}
+                      </div>
+                    )}
+
+                    {/* Fare / Tariff note */}
+                    {activeOption.fare_note && (
+                      <div className="text-[11px] text-slate-600 bg-white p-2.5 rounded-xl border border-slate-200/80 leading-relaxed">
+                        {activeOption.fare_note}
+                      </div>
+                    )}
+
+                    {/* Verify & Compare with Google Maps button */}
+                    <a
+                      href={`https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(routeOriginName || routeOrigin)}&destination=${encodeURIComponent(routeDestName || routeDestination)}&travelmode=${selectedMode === 'TRANSIT' ? 'transit' : selectedMode === 'WALK' ? 'walking' : selectedMode === 'BICYCLE' ? 'bicycling' : 'driving'}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 font-bold text-xs transition shadow-2xs touch-manipulation"
+                      title="Open same origin & destination on Google Maps to verify railway alignment"
+                    >
+                      <span>Verify & Compare on Google Maps</span>
+                      <ExternalLink className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                    </a>
+
                     {/* Quick minimize helper on mobile to inspect polyline */}
                     <div className="flex items-center justify-between pt-1 md:hidden">
                       <button
@@ -1016,7 +1145,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
                     {activeOption.steps_summary && activeOption.steps_summary.length > 0 && (
                       <div className="space-y-1.5 pt-1">
                         <div className="text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-400">
-                          Turn-by-turn Guidance
+                          Route Stages & Guidance
                         </div>
                         <div className="space-y-1.5 max-h-40 overflow-y-auto pr-1">
                           {activeOption.steps_summary.map((step: string, idx: number) => (

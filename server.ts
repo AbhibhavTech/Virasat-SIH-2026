@@ -5,6 +5,13 @@ import fs from 'fs';
 import { GoogleGenAI } from '@google/genai';
 import { masterTourismDataService } from './src/server/masterTourismDataService';
 import { getVerifiedCityPlan, ALL_INDIAN_TOURISM_CITIES } from './src/data/cityItineraryData';
+import {
+  findConnectedRailRoute,
+  getRealRoadRoute,
+  formatTransitDuration,
+  haversineKm,
+  MAJOR_RAILWAY_STATIONS,
+} from './src/server/railwayRoutingEngine';
 
 const app = express();
 const PORT = 3000;
@@ -1516,16 +1523,83 @@ function resolveLocation(queryOrId?: string, lat?: number, lng?: number, cityCon
     return { name: queryOrId || 'Custom Location', place_id: null, latitude: lat, longitude: lng };
   }
 
-  const q = (queryOrId || '').toLowerCase().trim();
+  const raw = (queryOrId || '').trim();
+  const q = raw.toLowerCase();
   const cContext = (cityContext || '').toLowerCase().trim();
 
-  // If query is provided, search through placesData
+  // Known station aliases
+  const STATION_ALIASES: Record<string, { name: string; id: string; lat: number; lng: number }> = {
+    csmt: { name: 'Chhatrapati Shivaji Maharaj Terminus (CSMT)', id: 'csmt', lat: 18.9400, lng: 72.8353 },
+    cst: { name: 'Chhatrapati Shivaji Maharaj Terminus (CSMT)', id: 'csmt', lat: 18.9400, lng: 72.8353 },
+    ndls: { name: 'New Delhi Railway Station (NDLS)', id: 'ndls', lat: 28.6430, lng: 77.2195 },
+    dli: { name: 'Old Delhi Railway Station (DLI)', id: 'dli', lat: 28.6619, lng: 77.2280 },
+    nzm: { name: 'Hazrat Nizamuddin (NZM)', id: 'nzm', lat: 28.5888, lng: 77.2534 },
+    mmct: { name: 'Mumbai Central (MMCT)', id: 'mumbai-central', lat: 18.9696, lng: 72.8193 },
+    jp: { name: 'Jaipur Junction (JP)', id: 'jp', lat: 26.9196, lng: 75.7878 },
+    agc: { name: 'Agra Cantt (AGC)', id: 'agc', lat: 27.1578, lng: 77.9904 },
+    bsb: { name: 'Varanasi Junction (BSB)', id: 'bsb', lat: 25.3283, lng: 82.9858 },
+    sbc: { name: 'KSR Bengaluru (SBC)', id: 'sbc', lat: 12.9781, lng: 77.5694 },
+    mas: { name: 'Chennai Central (MAS)', id: 'mas', lat: 13.0827, lng: 80.2756 },
+    hwh: { name: 'Howrah Junction (HWH)', id: 'hwh', lat: 22.5833, lng: 88.3425 },
+    adi: { name: 'Ahmedabad Junction (ADI)', id: 'adi', lat: 23.0225, lng: 72.5714 },
+    pune: { name: 'Pune Junction (PUNE)', id: 'pune', lat: 18.5289, lng: 73.8744 },
+  };
+
+  const cleanQ = q.replace(/[^a-z0-9]/g, '');
+  if (STATION_ALIASES[cleanQ]) {
+    const a = STATION_ALIASES[cleanQ];
+    return { name: a.name, place_id: a.id, latitude: a.lat, longitude: a.lng };
+  }
+
+  // Match against authentic major railway stations
+  for (const [code, stn] of Object.entries(MAJOR_RAILWAY_STATIONS)) {
+    const cLower = code.toLowerCase();
+    const nameLower = stn.name.toLowerCase();
+    const cleanName = nameLower.replace(/[^a-z0-9]/g, '');
+    if (
+      cleanQ === cLower ||
+      q === cLower ||
+      cleanQ === cleanName ||
+      cleanName.includes(cleanQ) ||
+      cleanQ.includes(cleanName) ||
+      nameLower.includes(q) ||
+      q.includes(nameLower)
+    ) {
+      return { name: stn.name, place_id: cLower, latitude: stn.lat, longitude: stn.lng };
+    }
+  }
+
+  // Tokenize query
+  const queryTokens = q.split(/[\s,.-]+/).filter(t => t.length > 1 && !['station', 'railway', 'stn', 'jn', 'junction', 'terminus', 'the', 'in', 'at', 'of'].includes(t));
+  const isRailSearch = /station|railway|stn|junction|terminus|cantt|rail|terminal/i.test(q);
+
+  // If query explicitly mentions railway/station or contains known rail keywords
+  if (isRailSearch || queryTokens.length > 0) {
+    const stationMatch = railwayStationsData.find(s => {
+      const sName = s.name.toLowerCase();
+      const sCode = s.code.toLowerCase();
+      if (sCode === q || s.id.toLowerCase() === q) return true;
+      if (sName === q || sName.includes(q) || q.includes(sName)) return true;
+      if (queryTokens.length > 0 && queryTokens.every(tok => sName.includes(tok) || sCode.includes(tok))) return true;
+      return false;
+    });
+
+    if (stationMatch && (isRailSearch || !placesData.get(q))) {
+      return { name: stationMatch.name, place_id: stationMatch.id, latitude: stationMatch.lat, longitude: stationMatch.lng };
+    }
+  }
+
+  // 1. Direct place ID or slug match
   if (q) {
-    // 1. Direct place ID or slug match
     let place = placesData.get(q);
     if (!place) {
       for (const p of placesData.values()) {
-        if (p.id.toLowerCase() === q || p.name.toLowerCase() === q || p.name.toLowerCase().includes(q)) {
+        const pName = p.name.toLowerCase();
+        if (p.id.toLowerCase() === q || pName === q || pName.includes(q)) {
+          place = p;
+          break;
+        }
+        if (queryTokens.length > 0 && queryTokens.every(tok => pName.includes(tok))) {
           place = p;
           break;
         }
@@ -1541,7 +1615,10 @@ function resolveLocation(queryOrId?: string, lat?: number, lng?: number, cityCon
     }
 
     // 2. Heritage match
-    const h = heritageData.find((item) => item.id.toLowerCase() === q || item.name.toLowerCase().includes(q));
+    const h = heritageData.find(item => {
+      const hName = item.name.toLowerCase();
+      return item.id.toLowerCase() === q || hName.includes(q) || (queryTokens.length > 0 && queryTokens.every(tok => hName.includes(tok)));
+    });
     if (h) {
       return {
         name: h.name,
@@ -1551,26 +1628,27 @@ function resolveLocation(queryOrId?: string, lat?: number, lng?: number, cityCon
       };
     }
 
-    // 3. Railway station match
-    const station = railwayStationsData.find(
-      (s) => s.id.toLowerCase() === q || s.code.toLowerCase() === q || s.name.toLowerCase().includes(q)
-    );
+    // 3. Railway station match (general)
+    const station = railwayStationsData.find(s => {
+      const sName = s.name.toLowerCase();
+      const sCode = s.code.toLowerCase();
+      return s.id.toLowerCase() === q || sCode === q || sName.includes(q) || (queryTokens.length > 0 && queryTokens.some(tok => sName.includes(tok)));
+    });
     if (station) {
       return { name: station.name, place_id: station.id, latitude: station.lat, longitude: station.lng };
     }
 
     // 4. City match
-    const city = citiesData.find(
-      (c) => c.id.toLowerCase() === q || c.name.toLowerCase() === q || c.name.toLowerCase().includes(q)
-    );
+    const city = citiesData.find(c => {
+      const cName = c.name.toLowerCase();
+      return c.id.toLowerCase() === q || cName === q || cName.includes(q) || (queryTokens.length > 0 && queryTokens.some(tok => cName.includes(tok)));
+    });
     if (city) {
       return { name: city.name, place_id: city.id, latitude: city.lat, longitude: city.lng };
     }
 
     // 5. State match
-    const state = statesData.find(
-      (s) => s.id.toLowerCase() === q || s.name.toLowerCase() === q || s.name.toLowerCase().includes(q)
-    );
+    const state = statesData.find((s) => s.id.toLowerCase() === q || s.name.toLowerCase() === q || s.name.toLowerCase().includes(q));
     if (state && state.coordinates) {
       return { name: state.name, place_id: state.id, latitude: state.coordinates.lat, longitude: state.coordinates.lng };
     }
@@ -1594,8 +1672,8 @@ function resolveLocation(queryOrId?: string, lat?: number, lng?: number, cityCon
     }
   }
 
-  // Final fallback to Delhi India Gate (National Capital / Center)
-  return { name: queryOrId || 'India Gate', place_id: 'india-gate', latitude: 28.6129, longitude: 77.2295 };
+  // Final fallback to Delhi India Gate
+  return { name: raw || 'India Gate, Delhi', place_id: 'india-gate', latitude: 28.6129, longitude: 77.2295 };
 }
 
 // -------------------------------------------------------------
@@ -1755,293 +1833,324 @@ function calculateDijkstraPath(startNodeId: string, endNodeId: string) {
   return { path, total_distance, total_rail_time, total_road_time, edges };
 }
 
-app.get('/api/routes', (req, res) => {
-  const originStr = req.query.origin as string;
-  const destStr = req.query.destination as string;
-  const origLat = parseFloat(req.query.orig_lat as string);
-  const origLng = parseFloat(req.query.orig_lng as string);
-  const destLat = parseFloat(req.query.dest_lat as string);
-  const destLng = parseFloat(req.query.dest_lng as string);
-  const cityContext = (req.query.city as string) || '';
-  const requestedMode = (req.query.mode as string)?.toUpperCase();
+app.get('/api/routes', async (req, res) => {
+  try {
+    const originStr = req.query.origin as string;
+    const destStr = req.query.destination as string;
+    const origLat = parseFloat(req.query.orig_lat as string);
+    const origLng = parseFloat(req.query.orig_lng as string);
+    const destLat = parseFloat(req.query.dest_lat as string);
+    const destLng = parseFloat(req.query.dest_lng as string);
+    const cityContext = (req.query.city as string) || '';
+    const requestedMode = (req.query.mode as string)?.toUpperCase();
 
-  const originLoc = resolveLocation(originStr, origLat, origLng, cityContext);
-  const destLoc = resolveLocation(destStr, destLat, destLng, cityContext);
+    const originLoc = resolveLocation(originStr, origLat, origLng, cityContext);
+    const destLoc = resolveLocation(destStr, destLat, destLng, cityContext);
 
-  const distKm =
-    haversineDistanceKm(originLoc.latitude, originLoc.longitude, destLoc.latitude, destLoc.longitude) || 4.2;
+    const distKm =
+      Math.round(haversineKm(originLoc.latitude, originLoc.longitude, destLoc.latitude, destLoc.longitude) * 10) / 10 || 4.2;
 
-  const options = [];
-  const isInterCity = distKm >= 75;
+    const isInterCity = distKm >= 75;
 
-  if (isInterCity) {
-    // -------------------------------------------------------------
-    // INTER-CITY ROUTING (Pan-India Graph with Dijkstra Engine)
-    // -------------------------------------------------------------
-    const startGraphNode = findNearestGraphNode(originLoc.latitude, originLoc.longitude);
-    const endGraphNode = findNearestGraphNode(destLoc.latitude, destLoc.longitude);
-    const graphResult = calculateDijkstraPath(startGraphNode.id, endGraphNode.id);
+    // 1. Calculate Real Railway Route using authentic track corridors
+    const railResult = findConnectedRailRoute(
+      originLoc.latitude,
+      originLoc.longitude,
+      destLoc.latitude,
+      destLoc.longitude
+    );
 
-    const effectiveRailDist = graphResult.total_distance > 0 ? graphResult.total_distance : distKm;
-    const effectiveRailHours = graphResult.total_rail_time > 0 ? graphResult.total_rail_time : Math.round((distKm / 75) * 10) / 10;
-    const effectiveRoadHours = graphResult.total_road_time > 0 ? graphResult.total_road_time : Math.round((distKm / 55) * 10) / 10;
+    // 2. Calculate Real Road Route (OSRM with Highway / NH48 fallback)
+    const roadDriveResult = await getRealRoadRoute(
+      originLoc.latitude,
+      originLoc.longitude,
+      destLoc.latitude,
+      destLoc.longitude,
+      'DRIVE'
+    );
 
-    const polyline = generateRoutePath(originLoc.latitude, originLoc.longitude, destLoc.latitude, destLoc.longitude, 'TRANSIT');
+    const options = [];
 
-    // 1. Indian Railways Express / Vande Bharat (Rail)
-    const trainFare3AC = Math.round(effectiveRailDist * 1.35 + 80);
-    const trainFareSL = Math.round(effectiveRailDist * 0.45 + 50);
-    const trainFareVB = Math.round(effectiveRailDist * 2.10 + 120);
+    if (isInterCity) {
+      // -------------------------------------------------------------
+      // INTER-CITY ROUTING: Authentic Indian Railways + Real Highway
+      // -------------------------------------------------------------
+      const railDist = railResult.distanceKm;
+      const railMins = railResult.durationMinutes;
+      const railFormatted = railResult.durationFormatted;
 
-    const haltsText = graphResult.path.length > 2
-      ? `Via ${graphResult.path.slice(1, -1).map(id => ROUTING_GRAPH_NODES[id]?.name).join(' → ')}`
-      : 'Direct Express Corridor';
+      const haltsText = railResult.stops.length > 2
+        ? `Via ${railResult.stops.slice(1, -1).join(' → ')}`
+        : (railResult.corridorName || 'Direct Mainline Corridor');
 
-    options.push({
-      mode: 'TRANSIT',
-      title: 'Indian Railways Express / Vande Bharat',
-      duration_minutes: Math.round(effectiveRailHours * 60),
-      distance_km: effectiveRailDist,
-      estimated_fare: trainFare3AC,
-      fare_status: 'estimated',
-      provider: 'Indian Railways (IRCTC)',
-      speed_tier: 'fastest',
-      fare_note: `Estimated tariff: 3AC: ₹${trainFare3AC} | Sleeper: ₹${trainFareSL} | Vande Bharat CC: ₹${trainFareVB}`,
-      steps_summary: [
-        `Transfer from ${originLoc.name} to nearest railhead (${startGraphNode.name} Railway Station)`,
-        `Board Express / Vande Bharat corridor towards ${endGraphNode.name} (${haltsText})`,
-        `Distance along rail network: ${effectiveRailDist} km (Estimated ${effectiveRailHours} hrs)`,
-        `Arrive at ${endGraphNode.name} Junction and take local transit (Auto/Taxi) to ${destLoc.name}`
-      ],
-      polyline,
-      routing_engine: 'YatraVerse Graph Solver (Dijkstra Shortest Path)'
-    });
+      // 1. Indian Railways Express / Vande Bharat (Rail)
+      const trainFare3AC = Math.round(railDist * 1.32 + 90);
+      const trainFareSL = Math.round(railDist * 0.44 + 50);
+      const trainFareVB = Math.round(railDist * 2.05 + 140);
 
-    // 2. Multimodal Transit (Cab + Express Train + Local Auto)
-    options.push({
-      mode: 'MULTIMODAL',
-      title: 'Multimodal Hub Transit (Cab + Train + Auto)',
-      duration_minutes: Math.round(effectiveRailHours * 60 + 45),
-      distance_km: effectiveRailDist + 12,
-      estimated_fare: trainFare3AC + 150,
-      fare_status: 'estimated',
-      provider: 'Multimodal Transit Network',
-      speed_tier: 'balanced',
-      fare_note: 'Includes estimated first-mile cab + Indian Railways 3-Tier AC + last-mile auto transfer',
-      steps_summary: [
-        `First Mile: Board local metered taxi from ${originLoc.name} to ${startGraphNode.name} Junction`,
-        `Line Haul: Fast train corridor along ${haltsText}`,
-        `Last Mile: Auto-rickshaw from ${endGraphNode.name} Station to entrance of ${destLoc.name}`
-      ],
-      polyline,
-      routing_engine: 'YatraVerse Multimodal Graph Layer'
-    });
-
-    // 3. National Highway Express Cab / Self-Drive (Road)
-    const cabFare = Math.round(distKm * 16 + (distKm / 100) * 180 + 200);
-    options.push({
-      mode: 'DRIVE',
-      title: 'National Highway Express Cab / Self-Drive',
-      duration_minutes: Math.round(effectiveRoadHours * 60),
-      distance_km: distKm,
-      estimated_fare: cabFare,
-      fare_status: 'estimated',
-      provider: 'National Highway Intercity Cab',
-      speed_tier: 'flexible',
-      fare_note: `Estimated outstation sedan rate (₹16/km + estimated Fastag highway toll of ₹${Math.round((distKm / 100) * 180)})`,
-      steps_summary: [
-        `Depart ${originLoc.name} and join national highway arterial link`,
-        `Cruise along national highway corridor towards ${destLoc.name} (${distKm} km)`,
-        `Pass through official toll plazas and rest stops`,
-        `Arrive at main parking / entrance gate of ${destLoc.name}`
-      ],
-      polyline: generateRoutePath(originLoc.latitude, originLoc.longitude, destLoc.latitude, destLoc.longitude, 'DRIVE'),
-      routing_engine: 'YatraVerse Highway Vector Engine'
-    });
-
-    // 4. Intercity AC Bus
-    const busFare = Math.round(distKm * 1.8 + 60);
-    options.push({
-      mode: 'BUS',
-      title: 'Intercity AC Sleeper / State Transport',
-      duration_minutes: Math.round(effectiveRoadHours * 60 + 60),
-      distance_km: distKm,
-      estimated_fare: busFare,
-      fare_status: 'estimated',
-      provider: 'State Road Transport / Private Volvo',
-      speed_tier: 'cheapest',
-      fare_note: `Estimated AC bus tariff (₹${busFare} per passenger seat)`,
-      steps_summary: [
-        `Board intercity coach at central bus terminal near ${startGraphNode.name}`,
-        `Travel via express road corridor with scheduled meal halt`,
-        `Alight at destination bus terminal and take feeder auto to ${destLoc.name}`
-      ],
-      polyline,
-      routing_engine: 'YatraVerse Bus Route Engine'
-    });
-
-  } else {
-    // -------------------------------------------------------------
-    // LOCAL / REGIONAL ROUTING (< 75 km)
-    // -------------------------------------------------------------
-    // 1. Drive / Taxi
-    if (!requestedMode || requestedMode === 'DRIVE') {
-      const driveDuration = Math.round(distKm * 3.2 + 5);
-      const estFare = Math.round(distKm * 21 + 50);
-      const polyline = generateRoutePath(originLoc.latitude, originLoc.longitude, destLoc.latitude, destLoc.longitude, 'DRIVE');
-      options.push({
-        mode: 'DRIVE',
-        title: 'Taxi / Rideshare (AC Cab)',
-        duration_minutes: driveDuration,
-        distance_km: distKm,
-        estimated_fare: estFare,
-        fare_status: 'estimated',
-        provider: 'City Taxi / Rideshare',
-        steps_summary: [
-          `Depart from ${originLoc.name} along arterial city link`,
-          `Proceed ${Math.round(distKm * 0.7 * 10) / 10} km along primary transit avenue`,
-          `Take designated approach towards ${destLoc.name}`,
-          `Arrive at visitor drop-off point`
-        ],
-        polyline,
-        speed_tier: 'fastest',
-        fare_note: 'Estimated fare based on standard daytime city rates (₹50 base + ₹21/km)',
-      });
-    }
-
-    // 2. Auto-Rickshaw
-    if (!requestedMode || requestedMode === 'AUTO') {
-      const autoDuration = Math.round(distKm * 3.5 + 4);
-      const estAutoFare = Math.round(Math.max(28, 28 + (distKm - 1.5) * 15.33));
-      options.push({
-        mode: 'AUTO',
-        title: 'Auto-Rickshaw (Metered)',
-        duration_minutes: autoDuration,
-        distance_km: distKm,
-        estimated_fare: estAutoFare,
-        fare_status: 'estimated',
-        provider: 'City Metered Auto-Rickshaw',
-        steps_summary: [
-          `Board auto at designated stand near ${originLoc.name}`,
-          `Navigate city streets and bypass heavy traffic`,
-          `Drop-off at nearest rickshaw stand beside ${destLoc.name}`
-        ],
-        polyline: generateRoutePath(originLoc.latitude, originLoc.longitude, destLoc.latitude, destLoc.longitude, 'DRIVE'),
-        speed_tier: 'balanced',
-        fare_note: 'Estimated government RTO metered rate (₹28 for first 1.5 km, ₹15.33/km thereafter)',
-      });
-    }
-
-    // 3. Transit (Suburban Rail / Metro / City Bus)
-    if (!requestedMode || requestedMode === 'TRANSIT') {
-      const transitDuration = Math.round(distKm * 2.5 + 10);
-      const transitFare = distKm > 20 ? 15 : distKm > 10 ? 10 : 5;
-      const polyline = generateRoutePath(originLoc.latitude, originLoc.longitude, destLoc.latitude, destLoc.longitude, 'TRANSIT');
       options.push({
         mode: 'TRANSIT',
-        title: 'Suburban Railway / Metro',
-        duration_minutes: transitDuration,
-        distance_km: distKm,
-        estimated_fare: transitFare,
+        title: railResult.expressTier === 'rajdhani_vande_bharat'
+          ? 'Indian Railways Vande Bharat / Rajdhani Express'
+          : 'Indian Railways Superfast Express',
+        duration_minutes: railMins,
+        duration_formatted: railFormatted,
+        distance_km: railDist,
+        estimated_fare: trainFare3AC,
         fare_status: 'estimated',
-        provider: 'Suburban Rail / City Metro',
-        transit_details: [
-          {
-            transit_type: 'Local Train / Metro',
-            line: 'City Transit Line',
-            departure_stop: originLoc.name,
-            arrival_stop: destLoc.name,
-            num_stops: Math.max(1, Math.round(distKm / 1.5)),
-          },
-        ],
+        provider: 'Indian Railways (IRCTC)',
+        speed_tier: 'fastest',
+        fare_note: `Tariff estimates: 3-Tier AC: ₹${trainFare3AC} | Sleeper: ₹${trainFareSL} | Executive / Vande Bharat: ₹${trainFareVB}`,
+        railway_corridor: railResult.corridorName,
+        railway_stops: railResult.stops,
         steps_summary: [
-          `Board connecting transit at closest station near ${originLoc.name}`,
-          `Travel ${distKm} km via suburban rail / metro line (${Math.max(1, Math.round(distKm / 1.5))} stops)`,
-          `Alight at station exit and follow 3-minute walkway to ${destLoc.name}`,
+          `Board train at origin railhead (${originLoc.name})`,
+          `Proceed along ${railResult.corridorName} (${haltsText})`,
+          `Official track rail distance: ${railDist} km (${railFormatted})`,
+          `Alight at destination railhead (${destLoc.name})`
         ],
-        polyline,
-        speed_tier: 'cheapest',
-        fare_note: 'Standard 2nd class suburban railway / metro fare table estimate',
+        polyline: railResult.polyline,
+        routing_engine: 'YatraVerse Track-Aligned Railway Engine (IR Trunk Geometry)'
       });
-    }
 
-    // 4. City Bus
-    if (!requestedMode || requestedMode === 'BUS') {
-      const busDuration = Math.round(distKm * 4.0 + 12);
-      const busFare = Math.round(Math.min(30, Math.max(6, 6 + (distKm - 5) * 1.8)));
+      // 2. Multimodal Hub Transit (Cab + Train + Feeder)
+      const multimodalMins = railMins + 45;
+      options.push({
+        mode: 'MULTIMODAL',
+        title: 'Multimodal Hub Transit (Cab + Train + Feeder)',
+        duration_minutes: multimodalMins,
+        duration_formatted: formatTransitDuration(multimodalMins),
+        distance_km: railDist + 14,
+        estimated_fare: trainFare3AC + 180,
+        fare_status: 'estimated',
+        provider: 'Multimodal Intercity Transit',
+        speed_tier: 'balanced',
+        fare_note: 'Includes first-mile cab + Indian Railways 3-Tier AC + last-mile auto transfer',
+        steps_summary: [
+          `First Mile: Board local taxi from ${originLoc.name} to nearest rail junction`,
+          `Line Haul: Fast express train corridor (${haltsText})`,
+          `Last Mile: Feeder transit from destination station to ${destLoc.name}`
+        ],
+        polyline: railResult.polyline,
+        routing_engine: 'YatraVerse Multimodal Corridor Engine'
+      });
+
+      // 3. National Highway Express Drive / Cab
+      const roadDist = roadDriveResult.distanceKm;
+      const roadMins = roadDriveResult.durationMinutes;
+      const roadFormatted = roadDriveResult.durationFormatted;
+      const cabFare = Math.round(roadDist * 16 + (roadDist / 100) * 190 + 250);
+
+      options.push({
+        mode: 'DRIVE',
+        title: 'National Highway Express Cab / Self-Drive',
+        duration_minutes: roadMins,
+        duration_formatted: roadFormatted,
+        distance_km: roadDist,
+        estimated_fare: cabFare,
+        fare_status: 'estimated',
+        provider: 'National Highway Outstation Cab',
+        speed_tier: 'flexible',
+        fare_note: `Outstation sedan rate (~₹16/km + estimated Fastag toll of ₹${Math.round((roadDist / 100) * 190)})`,
+        steps_summary: [
+          `Depart ${originLoc.name} onto national highway arterial bypass`,
+          `Travel ${roadDist} km along expressway corridor (${roadFormatted})`,
+          `Pass official Fastag toll plazas and highway service areas`,
+          `Arrive at entry approach of ${destLoc.name}`
+        ],
+        polyline: roadDriveResult.polyline,
+        routing_engine: 'YatraVerse Highway Vector Engine (OSRM / NH Corridors)'
+      });
+
+      // 4. Intercity AC Bus
+      const busMins = Math.round(roadMins * 1.15 + 40);
+      const busFare = Math.round(roadDist * 1.75 + 70);
       options.push({
         mode: 'BUS',
-        title: 'City Bus Transit',
-        duration_minutes: busDuration,
-        distance_km: distKm,
+        title: 'Intercity AC Sleeper / State Transport',
+        duration_minutes: busMins,
+        duration_formatted: formatTransitDuration(busMins),
+        distance_km: roadDist,
         estimated_fare: busFare,
         fare_status: 'estimated',
-        provider: 'Municipal City Bus Service',
-        steps_summary: [
-          `Board city bus at stop near ${originLoc.name}`,
-          `Proceed along regular route with municipal stops`,
-          `Alight at bus shelter opposite ${destLoc.name}`
-        ],
-        polyline: generateRoutePath(originLoc.latitude, originLoc.longitude, destLoc.latitude, destLoc.longitude, 'TRANSIT'),
+        provider: 'State Road Transport / Intercity Volvo',
         speed_tier: 'cheapest',
-        fare_note: 'Estimated ordinary non-AC municipal bus tariff',
+        fare_note: `Estimated AC sleeper ticket (₹${busFare} per passenger)`,
+        steps_summary: [
+          `Board intercity coach at central transit terminal near ${originLoc.name}`,
+          `Travel via express highway with scheduled rest halt (${formatTransitDuration(busMins)})`,
+          `Alight at destination bus terminal and take feeder transit to ${destLoc.name}`
+        ],
+        polyline: roadDriveResult.polyline,
+        routing_engine: 'YatraVerse Bus Route Engine'
       });
+
+    } else {
+      // -------------------------------------------------------------
+      // LOCAL / REGIONAL ROUTING (< 75 km)
+      // -------------------------------------------------------------
+      const roadDist = roadDriveResult.distanceKm;
+      const roadMins = roadDriveResult.durationMinutes;
+      const roadFormatted = roadDriveResult.durationFormatted;
+
+      // 1. Drive / Taxi
+      if (!requestedMode || requestedMode === 'DRIVE') {
+        const estFare = Math.round(roadDist * 21 + 50);
+        options.push({
+          mode: 'DRIVE',
+          title: 'Taxi / Rideshare (AC Cab)',
+          duration_minutes: roadMins,
+          duration_formatted: roadFormatted,
+          distance_km: roadDist,
+          estimated_fare: estFare,
+          fare_status: 'estimated',
+          provider: 'City Taxi / Rideshare',
+          steps_summary: [
+            `Depart from ${originLoc.name} along city arterial link`,
+            `Proceed along road network (${roadDist} km, ${roadFormatted})`,
+            `Approach visitor drop-off gate at ${destLoc.name}`
+          ],
+          polyline: roadDriveResult.polyline,
+          speed_tier: 'fastest',
+          fare_note: 'Estimated fare based on standard daytime city rates (₹50 base + ₹21/km)',
+        });
+      }
+
+      // 2. Auto-Rickshaw
+      if (!requestedMode || requestedMode === 'AUTO') {
+        const autoMins = Math.round(roadMins * 1.12 + 3);
+        const estAutoFare = Math.round(Math.max(28, 28 + (roadDist - 1.5) * 15.33));
+        options.push({
+          mode: 'AUTO',
+          title: 'Auto-Rickshaw (Metered)',
+          duration_minutes: autoMins,
+          duration_formatted: formatTransitDuration(autoMins),
+          distance_km: roadDist,
+          estimated_fare: estAutoFare,
+          fare_status: 'estimated',
+          provider: 'City Metered Auto-Rickshaw',
+          steps_summary: [
+            `Board auto at designated stand near ${originLoc.name}`,
+            `Navigate street network (${roadDist} km, ${formatTransitDuration(autoMins)})`,
+            `Drop-off at nearest rickshaw stand beside ${destLoc.name}`
+          ],
+          polyline: roadDriveResult.polyline,
+          speed_tier: 'balanced',
+          fare_note: 'Estimated government RTO metered rate (₹28 for first 1.5 km, ₹15.33/km thereafter)',
+        });
+      }
+
+      // 3. Transit (Suburban Rail / Metro)
+      if (!requestedMode || requestedMode === 'TRANSIT') {
+        const transitDist = railResult.distanceKm > 0 ? railResult.distanceKm : roadDist;
+        const transitMins = railResult.durationMinutes > 0 ? railResult.durationMinutes : Math.round(distKm * 2.2 + 8);
+        const transitFare = distKm > 20 ? 15 : distKm > 10 ? 10 : 5;
+        const polyline = railResult.polyline.length > 2 ? railResult.polyline : roadDriveResult.polyline;
+
+        options.push({
+          mode: 'TRANSIT',
+          title: 'Suburban Railway / Metro',
+          duration_minutes: transitMins,
+          duration_formatted: formatTransitDuration(transitMins),
+          distance_km: transitDist,
+          estimated_fare: transitFare,
+          fare_status: 'estimated',
+          provider: 'Suburban Rail / City Metro',
+          steps_summary: [
+            `Board transit at closest station near ${originLoc.name}`,
+            `Travel along transit corridor (${transitDist} km, ${formatTransitDuration(transitMins)})`,
+            `Alight at station exit and follow pedestrian walkway to ${destLoc.name}`
+          ],
+          polyline,
+          railway_corridor: railResult.corridorName,
+          railway_stops: railResult.stops,
+          speed_tier: 'cheapest',
+          fare_note: 'Standard 2nd class suburban railway / metro fare table estimate',
+        });
+      }
+
+      // 4. City Bus
+      if (!requestedMode || requestedMode === 'BUS') {
+        const busMins = Math.round(roadMins * 1.35 + 8);
+        const busFare = Math.round(Math.min(30, Math.max(6, 6 + (roadDist - 5) * 1.8)));
+        options.push({
+          mode: 'BUS',
+          title: 'City Bus Transit',
+          duration_minutes: busMins,
+          duration_formatted: formatTransitDuration(busMins),
+          distance_km: roadDist,
+          estimated_fare: busFare,
+          fare_status: 'estimated',
+          provider: 'Municipal City Bus Service',
+          steps_summary: [
+            `Board city bus at transit stop near ${originLoc.name}`,
+            `Proceed along designated bus route (${roadDist} km, ${formatTransitDuration(busMins)})`,
+            `Alight at shelter opposite ${destLoc.name}`
+          ],
+          polyline: roadDriveResult.polyline,
+          speed_tier: 'cheapest',
+          fare_note: 'Estimated ordinary non-AC municipal bus tariff',
+        });
+      }
+
+      // 5. Bicycle (if <= 35 km)
+      if ((!requestedMode || requestedMode === 'BICYCLE') && distKm <= 35) {
+        const bikeResult = await getRealRoadRoute(originLoc.latitude, originLoc.longitude, destLoc.latitude, destLoc.longitude, 'BICYCLE');
+        options.push({
+          mode: 'BICYCLE',
+          title: 'Cycling Route',
+          duration_minutes: bikeResult.durationMinutes,
+          duration_formatted: bikeResult.durationFormatted,
+          distance_km: bikeResult.distanceKm,
+          estimated_fare: 0,
+          fare_status: 'estimated',
+          provider: 'Active Cycling Route',
+          steps_summary: [
+            `Cycle along shared low-traffic street from ${originLoc.name}`,
+            `Follow cycle-friendly avenues (${bikeResult.distanceKm} km, ${bikeResult.durationFormatted})`,
+            `Reach bicycle parking near ${destLoc.name}`
+          ],
+          polyline: bikeResult.polyline,
+          speed_tier: 'balanced',
+          fare_note: 'Eco-friendly zero fare route with public rental docks available',
+        });
+      }
+
+      // 6. Walk (if <= 15 km)
+      if ((!requestedMode || requestedMode === 'WALK') && distKm <= 15) {
+        const walkResult = await getRealRoadRoute(originLoc.latitude, originLoc.longitude, destLoc.latitude, destLoc.longitude, 'WALK');
+        options.push({
+          mode: 'WALK',
+          title: 'Pedestrian Walk',
+          duration_minutes: walkResult.durationMinutes,
+          duration_formatted: walkResult.durationFormatted,
+          distance_km: walkResult.distanceKm,
+          estimated_fare: 0,
+          fare_status: 'estimated',
+          provider: 'Pedestrian Corridor',
+          steps_summary: [
+            `Start walk from ${originLoc.name} pedestrian zone`,
+            `Follow sidewalks, footpaths, and crossings (${walkResult.distanceKm} km, ${walkResult.durationFormatted})`,
+            `Arrive at entrance of ${destLoc.name}`
+          ],
+          polyline: walkResult.polyline,
+          speed_tier: 'balanced',
+          fare_note: 'Zero fare - scenic and healthy pedestrian walkway',
+        });
+      }
     }
 
-    // 5. Bicycle
-    if (!requestedMode || requestedMode === 'BICYCLE') {
-      const bikeDuration = Math.round(distKm * 4.5);
-      const polyline = generateRoutePath(originLoc.latitude, originLoc.longitude, destLoc.latitude, destLoc.longitude, 'BICYCLE');
-      options.push({
-        mode: 'BICYCLE',
-        title: 'Cycling Corridor',
-        duration_minutes: bikeDuration,
-        distance_km: distKm,
-        estimated_fare: 0,
-        fare_status: 'estimated',
-        provider: 'Active Cycling Route',
-        steps_summary: [
-          `Cycle along shared low-traffic street from ${originLoc.name}`,
-          'Follow cycle-friendly avenues and waterfront corridors',
-          `Reach secure bicycle parking near ${destLoc.name}`
-        ],
-        polyline,
-        speed_tier: 'balanced',
-        fare_note: 'Eco-friendly zero fare route with public rental docks available',
-      });
-    }
-
-    // 6. Walk (if <= 12 km)
-    if ((!requestedMode || requestedMode === 'WALK') && distKm <= 12) {
-      const walkDuration = Math.round(distKm * 12.5);
-      const polyline = generateRoutePath(originLoc.latitude, originLoc.longitude, destLoc.latitude, destLoc.longitude, 'WALK');
-      options.push({
-        mode: 'WALK',
-        title: 'Pedestrian Heritage Walk',
-        duration_minutes: walkDuration,
-        distance_km: distKm,
-        estimated_fare: 0,
-        fare_status: 'estimated',
-        provider: 'Pedestrian Heritage Corridor',
-        steps_summary: [
-          `Start walk from ${originLoc.name} pedestrian zone`,
-          'Follow sidewalks, heritage promenades, and pedestrian crosswalks',
-          `Arrive at entry courtyard of ${destLoc.name}`
-        ],
-        polyline,
-        speed_tier: 'balanced',
-        fare_note: 'Zero fare - scenic and healthy pedestrian walkway',
-      });
-    }
+    res.json({
+      origin: originLoc,
+      destination: destLoc,
+      distance_km: distKm,
+      is_inter_city: isInterCity,
+      options,
+    });
+  } catch (err: any) {
+    console.error('[API /routes error]:', err);
+    res.status(500).json({ error: 'Failed to compute routes', details: err?.message });
   }
-
-  res.json({
-    origin: originLoc,
-    destination: destLoc,
-    distance_km: distKm,
-    is_inter_city: isInterCity,
-    options,
-  });
 });
 
 app.get('/api/maps/directions', (req, res) => {
