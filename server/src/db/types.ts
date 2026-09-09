@@ -95,15 +95,80 @@ export interface ItineraryRecord {
   user_id: string;
   title: string;
   destination: string;
+  city?: string;
+  state?: string;
+  days_count?: number;
+  pace?: 'relaxed' | 'moderate' | 'fast';
+  budget_level?: 'budget' | 'moderate' | 'luxury';
+  summary?: string;
+  total_cost?: number;
   start_date?: string;
   end_date?: string;
-  city_ids: string[];
+  city_ids?: string[];
   is_public: boolean;
   places_count?: number;
   total_distance_km?: number;
   estimated_budget?: number;
   created_at: string;
   updated_at: string;
+}
+
+export interface ItineraryDayRecord {
+  id: string;
+  itinerary_id: string;
+  day_number: number;
+  area_title: string;
+  theme?: string;
+  notes?: string;
+  created_at: string;
+}
+
+export interface ItineraryStopRecord {
+  id: string;
+  day_id: string;
+  itinerary_id: string;
+  place_id?: string;
+  place_name: string;
+  stop_order: number;
+  arrival_time?: string;
+  duration_minutes: number;
+  travel_mode?: string;
+  travel_duration_minutes?: number;
+  travel_distance_km?: number;
+  estimated_cost?: number;
+  notes?: string;
+  created_at: string;
+}
+
+export interface AISessionRecord {
+  id: string;
+  user_id?: string;
+  title: string;
+  context_json?: string;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface AIMessageRecord {
+  id: string;
+  session_id: string;
+  role: 'user' | 'assistant' | 'system' | 'tool';
+  content: string;
+  tool_calls_json?: string;
+  metadata_json?: string;
+  created_at: string;
+}
+
+export interface AIGroundingRecord {
+  id: string;
+  message_id: string;
+  place_id?: string;
+  fact_id?: string;
+  field_name: string;
+  confidence: string;
+  source_name: string;
+  source_url: string;
+  created_at: string;
 }
 
 export interface FavoriteRecord {

@@ -383,7 +383,18 @@ export interface AIChatRequest {
   };
 }
 
+export interface GroundingCitation {
+  place_id: string;
+  place_name: string;
+  field_name: string;
+  fact_value: string;
+  confidence: string;
+  source_name: string;
+  source_url: string;
+}
+
 export interface AIChatResponse {
+  conversation_id?: string;
   reply: string;
   suggested_places?: Array<{
     id: string;
@@ -393,12 +404,15 @@ export interface AIChatResponse {
     reason?: string;
     distance_km?: number;
     state?: string;
+    data_confidence?: string;
+    source_url?: string;
   }>;
   transit_comparison?: TransitComparison;
   detected_location?: UserLocationContext;
   suggested_actions?: string[];
   sources?: string[];
   grounding_chunks?: any[];
+  grounding_citations?: GroundingCitation[];
 }
 
 export interface ReverseGeocodeResponse {

@@ -155,6 +155,37 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
     if (!itinerary) return;
     try {
       const stopsList = itinerary.stops || itinerary.timeline || [];
+      // Save full relational itinerary to /v1/itineraries
+      await api.saveItinerary({
+        title: itinerary.title || `${selectedCityObj.name} ${daysCount}-Day Tour`,
+        destination: selectedCityObj.name,
+        city: itinerary.city || selectedCityObj.name,
+        state: selectedCityObj.state,
+        days_count: daysCount,
+        pace,
+        budget_level: budget,
+        summary: itinerary.summary,
+        total_cost: itinerary.estimated_total_cost || 3500,
+        is_public: true,
+        days: itinerary.days?.map((d: any, dIdx: number) => ({
+          day_number: d.day_number || dIdx + 1,
+          area_title: d.area_title || `Day ${dIdx + 1}`,
+          theme: d.theme,
+          notes: d.description,
+          stops: (d.places || []).map((p: any, pIdx: number) => ({
+            place_id: p.id || p.place_id,
+            place_name: p.name,
+            stop_order: pIdx + 1,
+            duration_minutes: p.recommended_duration_minutes || 75,
+            travel_mode: p.travel_mode_from_previous || 'Auto-Rickshaw / Local Transit',
+            travel_duration_minutes: p.travel_time_from_previous_minutes || 20,
+            travel_distance_km: p.distance_from_previous_km || 2.5,
+            estimated_cost: p.estimated_cost || 60,
+          })),
+        })),
+      });
+
+      // Also persist to trips repository for user profile synchronization
       await api.saveTrip({
         title: itinerary.title || `${selectedCityObj.name} ${daysCount}-Day Tour`,
         city: itinerary.city || selectedCityObj.name,

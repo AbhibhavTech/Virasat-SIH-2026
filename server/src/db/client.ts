@@ -13,6 +13,11 @@ import {
   PlaceSourceRecord,
   PlaceFactRecord,
   ImageLicenseRecord,
+  ItineraryDayRecord,
+  ItineraryStopRecord,
+  AISessionRecord,
+  AIMessageRecord,
+  AIGroundingRecord,
 } from './types';
 import { runDatabaseSeed } from './seed';
 
@@ -29,6 +34,11 @@ interface DatabaseData {
   place_sources: Record<string, PlaceSourceRecord>;
   place_facts: Record<string, PlaceFactRecord>;
   image_licenses: Record<string, ImageLicenseRecord>;
+  itinerary_days: Record<string, ItineraryDayRecord>;
+  itinerary_stops: Record<string, ItineraryStopRecord>;
+  ai_sessions: Record<string, AISessionRecord>;
+  ai_messages: Record<string, AIMessageRecord>;
+  ai_groundings: Record<string, AIGroundingRecord>;
 }
 
 class DatabaseManager {
@@ -53,6 +63,11 @@ class DatabaseManager {
       place_sources: {},
       place_facts: {},
       image_licenses: {},
+      itinerary_days: {},
+      itinerary_stops: {},
+      ai_sessions: {},
+      ai_messages: {},
+      ai_groundings: {},
     };
   }
 
@@ -80,6 +95,11 @@ class DatabaseManager {
           place_sources: parsed.place_sources || {},
           place_facts: parsed.place_facts || {},
           image_licenses: parsed.image_licenses || {},
+          itinerary_days: parsed.itinerary_days || {},
+          itinerary_stops: parsed.itinerary_stops || {},
+          ai_sessions: parsed.ai_sessions || {},
+          ai_messages: parsed.ai_messages || {},
+          ai_groundings: parsed.ai_groundings || {},
         };
       } catch (err) {
         console.error('[DB] Failed to load local database, initializing fresh store:', err);
@@ -358,38 +378,260 @@ class DatabaseManager {
   };
 
   // -------------------------------------------------------------
-  // TRIPS / ITINERARIES REPOSITORY (Scoped to user_id)
+  // ITINERARIES & DAYS / STOPS REPOSITORY (Section XV.2 & XXI)
   // -------------------------------------------------------------
-  public trips = {
+  public itineraries = {
+    findAll: async (params?: { userId?: string; city?: string; isPublic?: boolean }): Promise<ItineraryRecord[]> => {
+      let list = Object.values(this.data.itineraries);
+      if (params?.userId) list = list.filter((i) => i.user_id === params.userId);
+      if (params?.city) list = list.filter((i) => i.city?.toLowerCase() === params.city?.toLowerCase() || i.destination?.toLowerCase() === params.city?.toLowerCase());
+      if (params?.isPublic !== undefined) list = list.filter((i) => i.is_public === params.isPublic);
+      return list;
+    },
     listByUser: async (userId: string): Promise<ItineraryRecord[]> => {
       return Object.values(this.data.itineraries).filter((t) => t.user_id === userId);
     },
     findById: async (id: string): Promise<ItineraryRecord | null> => {
       return this.data.itineraries[id] || null;
     },
-    create: async (record: ItineraryRecord): Promise<ItineraryRecord> => {
+    findFullById: async (id: string): Promise<(ItineraryRecord & { days: (ItineraryDayRecord & { stops: ItineraryStopRecord[] })[] }) | null> => {
+      const it = this.data.itineraries[id];
+      if (!it) return null;
+
+      const days = Object.values(this.data.itinerary_days)
+        .filter((d) => d.itinerary_id === id)
+        .sort((a, b) => a.day_number - b.day_number);
+
+      const fullDays = days.map((d) => {
+        const stops = Object.values(this.data.itinerary_stops)
+          .filter((s) => s.day_id === d.id)
+          .sort((a, b) => a.stop_order - b.stop_order);
+        return { ...d, stops };
+      });
+
+      return { ...it, days: fullDays };
+    },
+    create: async (
+      record: ItineraryRecord,
+      days?: Array<Omit<ItineraryDayRecord, 'id' | 'itinerary_id' | 'created_at'> & { stops?: Array<Omit<ItineraryStopRecord, 'id' | 'day_id' | 'itinerary_id' | 'created_at'>> }>
+    ): Promise<ItineraryRecord> => {
       this.data.itineraries[record.id] = { ...record };
+
+      if (days && Array.isArray(days)) {
+        days.forEach((d, dIdx) => {
+          const dayId = `day-${record.id}-${d.day_number || dIdx + 1}`;
+          const dayRecord: ItineraryDayRecord = {
+            id: dayId,
+            itinerary_id: record.id,
+            day_number: d.day_number || dIdx + 1,
+            area_title: d.area_title || `Day ${dIdx + 1}`,
+            theme: d.theme,
+            notes: d.notes,
+            created_at: new Date().toISOString(),
+          };
+          this.data.itinerary_days[dayId] = dayRecord;
+
+          if (d.stops && Array.isArray(d.stops)) {
+            d.stops.forEach((s, sIdx) => {
+              const stopId = `stop-${dayId}-${s.stop_order || sIdx + 1}`;
+              const stopRecord: ItineraryStopRecord = {
+                id: stopId,
+                day_id: dayId,
+                itinerary_id: record.id,
+                place_id: s.place_id,
+                place_name: s.place_name,
+                stop_order: s.stop_order || sIdx + 1,
+                arrival_time: s.arrival_time,
+                duration_minutes: s.duration_minutes || 60,
+                travel_mode: s.travel_mode || 'Auto-Rickshaw / Local Transit',
+                travel_duration_minutes: s.travel_duration_minutes || 15,
+                travel_distance_km: s.travel_distance_km || 2.0,
+                estimated_cost: s.estimated_cost || 50,
+                notes: s.notes,
+                created_at: new Date().toISOString(),
+              };
+              this.data.itinerary_stops[stopId] = stopRecord;
+            });
+          }
+        });
+      }
+
       this.persist();
       return record;
     },
-    update: async (id: string, userId: string, updates: Partial<ItineraryRecord>): Promise<ItineraryRecord | null> => {
+    update: async (
+      id: string,
+      userId: string,
+      updates: Partial<ItineraryRecord>,
+      newDays?: Array<Omit<ItineraryDayRecord, 'id' | 'itinerary_id' | 'created_at'> & { stops?: Array<Omit<ItineraryStopRecord, 'id' | 'day_id' | 'itinerary_id' | 'created_at'>> }>
+    ): Promise<ItineraryRecord | null> => {
       const existing = this.data.itineraries[id];
       if (!existing || existing.user_id !== userId) return null; // IDOR Protection
+
       const updated: ItineraryRecord = {
         ...existing,
         ...updates,
         updated_at: new Date().toISOString(),
       };
       this.data.itineraries[id] = updated;
+
+      if (newDays) {
+        // Cascade delete old days and stops
+        Object.keys(this.data.itinerary_stops).forEach((sId) => {
+          if (this.data.itinerary_stops[sId].itinerary_id === id) {
+            delete this.data.itinerary_stops[sId];
+          }
+        });
+        Object.keys(this.data.itinerary_days).forEach((dId) => {
+          if (this.data.itinerary_days[dId].itinerary_id === id) {
+            delete this.data.itinerary_days[dId];
+          }
+        });
+
+        // Insert new days and stops
+        newDays.forEach((d, dIdx) => {
+          const dayId = `day-${id}-${d.day_number || dIdx + 1}`;
+          this.data.itinerary_days[dayId] = {
+            id: dayId,
+            itinerary_id: id,
+            day_number: d.day_number || dIdx + 1,
+            area_title: d.area_title || `Day ${dIdx + 1}`,
+            theme: d.theme,
+            notes: d.notes,
+            created_at: new Date().toISOString(),
+          };
+          if (d.stops) {
+            d.stops.forEach((s, sIdx) => {
+              const stopId = `stop-${dayId}-${s.stop_order || sIdx + 1}`;
+              this.data.itinerary_stops[stopId] = {
+                id: stopId,
+                day_id: dayId,
+                itinerary_id: id,
+                place_id: s.place_id,
+                place_name: s.place_name,
+                stop_order: s.stop_order || sIdx + 1,
+                arrival_time: s.arrival_time,
+                duration_minutes: s.duration_minutes || 60,
+                travel_mode: s.travel_mode || 'Auto-Rickshaw / Local Transit',
+                travel_duration_minutes: s.travel_duration_minutes || 15,
+                travel_distance_km: s.travel_distance_km || 2.0,
+                estimated_cost: s.estimated_cost || 50,
+                notes: s.notes,
+                created_at: new Date().toISOString(),
+              };
+            });
+          }
+        });
+      }
+
       this.persist();
       return updated;
     },
     delete: async (id: string, userId: string): Promise<boolean> => {
       const existing = this.data.itineraries[id];
       if (!existing || existing.user_id !== userId) return false; // IDOR Protection
+
       delete this.data.itineraries[id];
+      // Cascade delete child days and stops
+      Object.keys(this.data.itinerary_stops).forEach((sId) => {
+        if (this.data.itinerary_stops[sId].itinerary_id === id) {
+          delete this.data.itinerary_stops[sId];
+        }
+      });
+      Object.keys(this.data.itinerary_days).forEach((dId) => {
+        if (this.data.itinerary_days[dId].itinerary_id === id) {
+          delete this.data.itinerary_days[dId];
+        }
+      });
+
       this.persist();
       return true;
+    },
+  };
+
+  // Backwards-compatible alias for existing trips router
+  public trips = this.itineraries;
+
+  // -------------------------------------------------------------
+  // ITINERARY DAYS & STOPS REPOSITORIES
+  // -------------------------------------------------------------
+  public itineraryDays = {
+    findByItinerary: async (itineraryId: string): Promise<ItineraryDayRecord[]> => {
+      return Object.values(this.data.itinerary_days)
+        .filter((d) => d.itinerary_id === itineraryId)
+        .sort((a, b) => a.day_number - b.day_number);
+    },
+    create: async (record: ItineraryDayRecord): Promise<ItineraryDayRecord> => {
+      this.data.itinerary_days[record.id] = { ...record };
+      this.persist();
+      return record;
+    },
+  };
+
+  public itineraryStops = {
+    findByDay: async (dayId: string): Promise<ItineraryStopRecord[]> => {
+      return Object.values(this.data.itinerary_stops)
+        .filter((s) => s.day_id === dayId)
+        .sort((a, b) => a.stop_order - b.stop_order);
+    },
+    findByItinerary: async (itineraryId: string): Promise<ItineraryStopRecord[]> => {
+      return Object.values(this.data.itinerary_stops)
+        .filter((s) => s.itinerary_id === itineraryId)
+        .sort((a, b) => a.stop_order - b.stop_order);
+    },
+    create: async (record: ItineraryStopRecord): Promise<ItineraryStopRecord> => {
+      this.data.itinerary_stops[record.id] = { ...record };
+      this.persist();
+      return record;
+    },
+  };
+
+  // -------------------------------------------------------------
+  // AI SESSIONS, MESSAGES & GROUNDING REPOSITORY (Section XVI & XX)
+  // -------------------------------------------------------------
+  public aiSessions = {
+    findById: async (id: string): Promise<AISessionRecord | null> => {
+      return this.data.ai_sessions[id] || null;
+    },
+    findByUser: async (userId: string): Promise<AISessionRecord[]> => {
+      return Object.values(this.data.ai_sessions).filter((s) => s.user_id === userId);
+    },
+    create: async (record: AISessionRecord): Promise<AISessionRecord> => {
+      this.data.ai_sessions[record.id] = { ...record };
+      this.persist();
+      return record;
+    },
+  };
+
+  public aiMessages = {
+    findBySession: async (sessionId: string): Promise<AIMessageRecord[]> => {
+      return Object.values(this.data.ai_messages)
+        .filter((m) => m.session_id === sessionId)
+        .sort((a, b) => new Date(a.created_at).getTime() - new Date(b.created_at).getTime());
+    },
+    create: async (record: AIMessageRecord): Promise<AIMessageRecord> => {
+      this.data.ai_messages[record.id] = { ...record };
+      this.persist();
+      return record;
+    },
+  };
+
+  public aiGroundings = {
+    findByMessage: async (messageId: string): Promise<AIGroundingRecord[]> => {
+      return Object.values(this.data.ai_groundings).filter((g) => g.message_id === messageId);
+    },
+    findBySession: async (sessionId: string): Promise<AIGroundingRecord[]> => {
+      const msgIds = new Set(
+        Object.values(this.data.ai_messages)
+          .filter((m) => m.session_id === sessionId)
+          .map((m) => m.id)
+      );
+      return Object.values(this.data.ai_groundings).filter((g) => msgIds.has(g.message_id));
+    },
+    create: async (record: AIGroundingRecord): Promise<AIGroundingRecord> => {
+      this.data.ai_groundings[record.id] = { ...record };
+      this.persist();
+      return record;
     },
   };
 

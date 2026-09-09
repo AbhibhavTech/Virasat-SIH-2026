@@ -22,9 +22,10 @@ import {
   Navigation,
   Crosshair,
   MapPinOff,
+  ExternalLink,
 } from 'lucide-react';
 import { api } from '../../services/api';
-import { AIChatMessage, UserLocationContext, TransitComparison } from '../../types';
+import { AIChatMessage, UserLocationContext, TransitComparison, GroundingCitation } from '../../types';
 
 interface ExtendedChatMessage extends AIChatMessage {
   suggested_places?: Array<{
@@ -39,6 +40,7 @@ interface ExtendedChatMessage extends AIChatMessage {
   transit_comparison?: TransitComparison;
   suggested_actions?: string[];
   sources?: string[];
+  grounding_citations?: GroundingCitation[];
   error?: boolean;
 }
 
@@ -280,6 +282,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
         transit_comparison: res.transit_comparison,
         suggested_actions: res.suggested_actions,
         sources: res.sources || ['Virasat Master Heritage Database', 'ASI & UNESCO Gazette Records'],
+        grounding_citations: res.grounding_citations,
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       };
 
@@ -756,6 +759,31 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
                           <ArrowRight className="w-2.5 h-2.5" />
                         </button>
                       ))}
+                    </div>
+                  )}
+
+                  {/* Verified Grounding Citations */}
+                  {!isUser && m.grounding_citations && m.grounding_citations.length > 0 && (
+                    <div className="mt-3.5 pt-2.5 border-t border-stone-100 space-y-1.5">
+                      <div className="flex items-center gap-1.5 text-[11px] font-bold text-stone-700">
+                        <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+                        <span>Verified Provenance Citations:</span>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {m.grounding_citations.map((c, cIdx) => (
+                          <a
+                            key={cIdx}
+                            href={c.source_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-[10px] font-medium bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 transition"
+                          >
+                            <span>{c.place_name} ({c.field_name}):</span>
+                            <span className="underline truncate max-w-[150px]">{c.source_name}</span>
+                            <ExternalLink className="w-2.5 h-2.5 shrink-0" />
+                          </a>
+                        ))}
+                      </div>
                     </div>
                   )}
 

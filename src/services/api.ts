@@ -337,10 +337,17 @@ export const api = {
   // AI Assistant
   // -------------------------------------------------------------
   async sendAIChat(req: AIChatRequest): Promise<AIChatResponse> {
-    return await request<AIChatResponse>('/ai/chat', {
-      method: 'POST',
-      body: JSON.stringify(req),
-    });
+    try {
+      return await request<AIChatResponse>('/v1/ai/chat', {
+        method: 'POST',
+        body: JSON.stringify(req),
+      });
+    } catch {
+      return await request<AIChatResponse>('/ai/chat', {
+        method: 'POST',
+        body: JSON.stringify(req),
+      });
+    }
   },
 
   async chatAI(req: any): Promise<AIChatResponse> {
@@ -355,10 +362,10 @@ export const api = {
   },
 
   // -------------------------------------------------------------
-  // Itinerary Planner
+  // Itinerary Planner & Persistence
   // -------------------------------------------------------------
   async generateItinerary(req: ItineraryRequest): Promise<ItineraryResponse> {
-    return await request<ItineraryResponse>('/itinerary', {
+    return await request<ItineraryResponse>('/v1/itineraries/generate', {
       method: 'POST',
       body: JSON.stringify(req),
     });
@@ -366,6 +373,43 @@ export const api = {
 
   async getItineraryCities(): Promise<{ total: number; cities: any[] }> {
     return await request<{ total: number; cities: any[] }>('/itinerary/cities');
+  },
+
+  async getSavedItineraries(params?: { city?: string; public?: boolean }): Promise<any[]> {
+    const q = new URLSearchParams();
+    if (params?.city) q.set('city', params.city);
+    if (params?.public !== undefined) q.set('public', String(params.public));
+    try {
+      const data = await request<any>(`/v1/itineraries?${q.toString()}`);
+      return data.data || [];
+    } catch {
+      return [];
+    }
+  },
+
+  async getItineraryById(id: string): Promise<any> {
+    const data = await request<any>(`/v1/itineraries/${id}`);
+    return data.data || data;
+  },
+
+  async saveItinerary(itinerary: any): Promise<any> {
+    const data = await request<any>('/v1/itineraries', {
+      method: 'POST',
+      body: JSON.stringify(itinerary),
+    });
+    return data.data || data;
+  },
+
+  async updateItinerary(id: string, updates: any): Promise<any> {
+    const data = await request<any>(`/v1/itineraries/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify(updates),
+    });
+    return data.data || data;
+  },
+
+  async deleteItinerary(id: string): Promise<void> {
+    await request<void>(`/v1/itineraries/${id}`, { method: 'DELETE' });
   },
 
   // -------------------------------------------------------------

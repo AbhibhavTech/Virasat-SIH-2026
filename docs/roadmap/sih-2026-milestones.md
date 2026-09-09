@@ -22,7 +22,7 @@ This document tracks the engineering and product progress of **Virasat**, aligne
 - [x] Gemini LLM integration with custom heritage and grounding prompts
 - [x] Contextual conversational memory and suggestions
 - [x] Onboarding survey modal for user travel style, pace, and interests
-- [ ] Structured JSON tool-calling and verified itinerary generation *(Phase 3)*
+- [x] Structured JSON tool-calling and verified itinerary generation *(Completed — Phase 3)*
 
 ### Milestone 4: 3D Heritage & Virtual Exploration
 - [x] Interactive Three.js 3D monument viewer (Gateway of India, CSMT, Hawa Mahal)
@@ -44,7 +44,7 @@ This document tracks the engineering and product progress of **Virasat**, aligne
 | **Phase 0.5** | **Baseline Snapshot** | Capture pre-migration build/lint/test baseline in `docs/current-state-baseline.md` | **COMPLETED** |
 | **Phase 1** | **Backend Foundations** | Real PostgreSQL database, real auth, URL routing (`react-router-dom`), TanStack Query | **COMPLETED** |
 | **Phase 2** | **Data Audit & Provenance** | Field-level provenance, verify curated 6–8 flagship states, replace generic stock photos | **COMPLETED** |
-| **Phase 3** | **Core Features** | Persistent itineraries, multimodal routing on DB, grounded AI with structured output | PENDING |
+| **Phase 3** | **Core Features** | Persistent itineraries, multimodal routing on DB, grounded AI with structured output | **COMPLETED** |
 | **Phase 3B**| **Stewardship & Roles** | Citizen heritage reporting, role-based access control, audit logging, destination health | PENDING |
 | **Phase 4** | **Google Login** | Google OAuth integration, account merging, persistent profile state | PENDING |
 | **Phase 5** | **AI Hardening** | Verify live Gemini models against current docs, grounding audit logging, hallucination checks | PENDING |

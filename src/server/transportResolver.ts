@@ -660,6 +660,35 @@ export function resolveDestinationTransportNode(
     };
   }
 
+  // DELHI / NEW DELHI
+  if (q.includes('delhi') || q === 'ndls' || q === 'dli') {
+    return {
+      is_poi: false,
+      destination_name: 'New Delhi',
+      city: 'New Delhi',
+      state: 'Delhi (NCT)',
+      coordinates: { lat: 28.6139, lng: 77.2090 },
+      railway_hub: {
+        station_name: 'New Delhi Railway Station (NDLS)',
+        station_code: 'NDLS',
+        is_direct: true,
+        distance_to_dest_km: 0,
+        onward_connection_note:
+          'Major national rail hub with Rajdhani, Shatabdi, and Vande Bharat express trains connecting across India.',
+        status: 'VERIFIED',
+      },
+      airport_hub: {
+        airport_name: 'Indira Gandhi International Airport (DEL)',
+        airport_code: 'DEL',
+        is_direct: true,
+        distance_to_dest_km: 0,
+        onward_connection_note: 'Primary international and domestic aviation gateway of India.',
+        status: 'VERIFIED',
+      },
+      geographic_notes: 'National Capital Territory of India.',
+    };
+  }
+
   // 3. Resolve by Matched POI
   if (matchedPlace) {
     const poiCity = matchedPlace.city || 'India';

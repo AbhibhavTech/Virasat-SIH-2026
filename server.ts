@@ -28,6 +28,9 @@ import { statesRouter } from './server/src/modules/states/states.router';
 import { favoritesRouter } from './server/src/modules/favorites/favorites.router';
 import { tripsRouter } from './server/src/modules/trips/trips.router';
 import { reportsRouter } from './server/src/modules/reports/reports.router';
+import { routingRouter } from './server/src/modules/routing/routing.router';
+import { itineraryRouter } from './server/src/modules/itinerary/itinerary.router';
+import { aiRouter } from './server/src/modules/ai/ai.router';
 
 const app = express();
 const PORT = Number(process.env.PORT) || 3000;
@@ -60,6 +63,9 @@ app.use('/api/v1', statesRouter);
 app.use('/api/v1/favorites', favoritesRouter);
 app.use('/api/v1/trips', tripsRouter);
 app.use('/api/v1/reports', reportsRouter);
+app.use('/api/v1/routing', routingRouter);
+app.use('/api/v1/itineraries', itineraryRouter);
+app.use('/api/v1/ai', aiRouter);
 
 // -------------------------------------------------------------
 // Data Repositories & In-Memory Store
@@ -3692,6 +3698,7 @@ app.get('/api/india-hierarchy/city/:cityId', (req, res) => {
 app.use('/api/auth', authRouter);
 app.use('/api/favorites', favoritesRouter);
 app.use('/api/trips', tripsRouter);
+app.use(['/api/itinerary', '/api/itineraries'], itineraryRouter);
 app.get('/api/profile', requireAuth, async (req, res) => {
   const user = await db.users.findById(req.user!.id);
   if (!user) return res.status(404).json({ error: 'User not found' });
