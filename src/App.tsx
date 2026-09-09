@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter, useNavigate, useLocation } from 'react-router-dom';
+import { QueryClientProvider } from '@tanstack/react-query';
+import { queryClient } from './app/queryClient';
+import { AppRoutes, getActiveTabFromPath, getPathForTab } from './app/routes';
 import { AuthProvider } from './contexts/AuthContext';
 import { FavoritesProvider } from './contexts/FavoritesContext';
 import { NavTab } from './components/layout/Sidebar';
@@ -7,19 +11,6 @@ import { ContextualSubNav } from './components/layout/ContextualSubNav';
 import { SimpleFooter } from './components/layout/SimpleFooter';
 import { AuthModal } from './components/auth/AuthModal';
 import { OnboardingSurveyModal } from './components/auth/OnboardingSurveyModal';
-import { HomePage } from './pages/HomePage';
-import { CityHubPage } from './pages/CityHubPage';
-import { ItineraryPage } from './pages/ItineraryPage';
-import { Heritage3DPage } from './pages/Heritage3DPage';
-import { MapPage } from './pages/MapPage';
-import { AIAssistantPage } from './pages/AIAssistantPage';
-import { MyTripsPage } from './pages/MyTripsPage';
-import { FavoritesPage } from './pages/FavoritesPage';
-import { ProfilePage } from './pages/ProfilePage';
-import { DestinationDetailPage } from './pages/DestinationDetailPage';
-import { SearchPage } from './pages/SearchPage';
-import { HeritageSitesPage } from './pages/HeritageSitesPage';
-import { IndiaHierarchyPage } from './pages/IndiaHierarchyPage';
 import { BrandSplashScreen } from './components/common/BrandSplashScreen';
 import { DatabaseStatusModal } from './components/database/DatabaseStatusModal';
 import { PlaceSummary } from './types';
@@ -28,14 +19,15 @@ import { useAuth } from './contexts/AuthContext';
 
 const AppContent: React.FC = () => {
   const { setIsAuthModalOpen } = useAuth();
-  const [activeTab, setActiveTab] = useState<NavTab>('home');
-  const [selectedPlaceId, setSelectedPlaceId] = useState<string | null>(null);
-  const [searchQuery, setSearchQuery] = useState<string | null>(null);
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const [selectedCity, setSelectedCity] = useState<string>('All India');
   const [places, setPlaces] = useState<PlaceSummary[]>([]);
-  const [initialAIPrompt, setInitialAIPrompt] = useState<string | undefined>(undefined);
   const [isDatabaseModalOpen, setIsDatabaseModalOpen] = useState<boolean>(false);
   const [isAppInitializing, setIsAppInitializing] = useState<boolean>(true);
+
+  const activeTab: NavTab = getActiveTabFromPath(location.pathname);
 
   useEffect(() => {
     let isMounted = true;
@@ -63,34 +55,26 @@ const AppContent: React.FC = () => {
   }, []);
 
   const handleSelectPlace = (id: string) => {
-    setSelectedPlaceId(id);
+    navigate(`/place/${encodeURIComponent(id)}`);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleSearch = (query: string) => {
-    setSearchQuery(query);
-    setSelectedPlaceId(null);
+    navigate(`/search${query ? `?q=${encodeURIComponent(query)}` : ''}`);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleNavigateTab = (tab: NavTab) => {
-    setActiveTab(tab);
-    setSelectedPlaceId(null);
-    setSearchQuery(null);
+    const targetPath = getPathForTab(tab, selectedCity);
+    navigate(targetPath);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleSelectState = (stateId: string) => {
-    if (stateId === 'mumbai') setSelectedCity('Mumbai');
-    else if (stateId === 'rajasthan') setSelectedCity('Jaipur');
-    else if (stateId === 'kerala') setSelectedCity('Kochi');
-    else if (stateId === 'goa') setSelectedCity('Goa');
-    else if (stateId === 'delhi') setSelectedCity('Delhi');
-    else if (stateId === 'agra') setSelectedCity('Agra');
-    setActiveTab('dashboard');
-    setSelectedPlaceId(null);
-    setSearchQuery(null);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  const handleSelectCity = (city: string) => {
+    setSelectedCity(city);
+    if (location.pathname.startsWith('/city')) {
+      navigate(`/city/${city.toLowerCase().replace(/\s+/g, '-')}`);
+    }
   };
 
   return (
@@ -103,9 +87,7 @@ const AppContent: React.FC = () => {
         activeTab={activeTab}
         setActiveTab={handleNavigateTab}
         selectedCity={selectedCity}
-        onSelectCity={(city) => {
-          setSelectedCity(city);
-        }}
+        onSelectCity={handleSelectCity}
         onOpenSearch={() => handleSearch('')}
         onOpenAuthModal={() => setIsAuthModalOpen(true)}
         onOpenDatabaseStatus={() => setIsDatabaseModalOpen(true)}
@@ -123,122 +105,20 @@ const AppContent: React.FC = () => {
           ? 'max-w-full px-2 sm:px-4 lg:px-6 pt-3 pb-4'
           : 'max-w-[96%] lg:max-w-[94%] xl:max-w-[92%] 2xl:max-w-[1760px] px-3 sm:px-6 lg:px-8 xl:px-10 pt-6'
       }`}>
-        {selectedPlaceId ? (
-          <DestinationDetailPage
-            placeId={selectedPlaceId}
-            onBack={() => setSelectedPlaceId(null)}
-            onSelectPlace={handleSelectPlace}
-            onOpenAIChat={(pId, pName) => {
-              setActiveTab('ai');
-              setSelectedPlaceId(null);
-            }}
-          />
-        ) : searchQuery !== null ? (
-          <SearchPage
-            initialQuery={searchQuery}
-            onSelectPlace={handleSelectPlace}
-            onBack={() => setSearchQuery(null)}
-          />
-        ) : (
-          <>
-            {activeTab === 'home' && (
-              <HomePage
-                onSearch={handleSearch}
-                onNavigateTab={handleNavigateTab}
-                onSelectPlace={handleSelectPlace}
-                onSelectState={handleSelectState}
-                selectedCity={selectedCity}
-                onSelectCity={setSelectedCity}
-                places={places}
-                onOpenAIChat={(prompt) => {
-                  setInitialAIPrompt(prompt);
-                  setActiveTab('ai');
-                  setSelectedPlaceId(null);
-                  setSearchQuery(null);
-                }}
-              />
-            )}
-
-            {activeTab === 'india' && (
-              <IndiaHierarchyPage
-                onSelectPlace={handleSelectPlace}
-                onNavigateTab={handleNavigateTab}
-                onSelectCity={setSelectedCity}
-              />
-            )}
-
-            {activeTab === 'dashboard' && (
-              <CityHubPage
-                onSelectPlace={handleSelectPlace}
-                onNavigateTab={handleNavigateTab}
-                selectedCity={selectedCity}
-                onSelectCity={setSelectedCity}
-              />
-            )}
-
-            {activeTab === 'heritage' && (
-              <HeritageSitesPage
-                onSelectPlace={handleSelectPlace}
-                onNavigateTab={handleNavigateTab}
-              />
-            )}
-
-            {activeTab === 'itinerary' && (
-              <ItineraryPage
-                onSelectPlace={handleSelectPlace}
-                onNavigateTab={handleNavigateTab}
-                selectedCity={selectedCity}
-              />
-            )}
-
-            {activeTab === 'map' && (
-              <MapPage
-                onSelectPlace={handleSelectPlace}
-                selectedCity={selectedCity}
-                onSelectCity={setSelectedCity}
-                onView3DPlace={(placeId) => {
-                  setActiveTab('3d');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
-              />
-            )}
-
-            {activeTab === '3d' && <Heritage3DPage />}
-
-            {activeTab === 'ai' && (
-              <AIAssistantPage
-                onSelectPlace={handleSelectPlace}
-                onNavigateTab={handleNavigateTab}
-                selectedCity={selectedCity}
-                initialPrompt={initialAIPrompt}
-              />
-            )}
-
-            {activeTab === 'trips' && (
-              <MyTripsPage
-                onNavigateTab={handleNavigateTab}
-                onSelectPlace={handleSelectPlace}
-              />
-            )}
-
-            {activeTab === 'favorites' && (
-              <FavoritesPage
-                onSelectPlace={handleSelectPlace}
-                places={places}
-              />
-            )}
-
-            {activeTab === 'profile' && (
-              <ProfilePage onNavigateTab={handleNavigateTab} />
-            )}
-          </>
-        )}
+        <AppRoutes
+          places={places}
+          selectedCity={selectedCity}
+          onSelectCity={handleSelectCity}
+          onSelectPlace={handleSelectPlace}
+          onNavigateTab={handleNavigateTab}
+          onSearch={handleSearch}
+        />
       </main>
 
       {/* Simple Clean Footer */}
       <SimpleFooter
         onNavigateTab={handleNavigateTab}
-        onSelectCity={setSelectedCity}
+        onSelectCity={handleSelectCity}
         onOpenDatabaseStatus={() => setIsDatabaseModalOpen(true)}
       />
 
@@ -255,10 +135,14 @@ const AppContent: React.FC = () => {
 
 export default function App() {
   return (
-    <AuthProvider>
-      <FavoritesProvider>
-        <AppContent />
-      </FavoritesProvider>
-    </AuthProvider>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <AuthProvider>
+          <FavoritesProvider>
+            <AppContent />
+          </FavoritesProvider>
+        </AuthProvider>
+      </BrowserRouter>
+    </QueryClientProvider>
   );
 }

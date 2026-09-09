@@ -40,9 +40,9 @@ This document tracks the engineering and product progress of **Virasat**, aligne
 
 | Phase | Phase Name | Focus Area | Status |
 |---|---|---|---|
-| **Phase 0** | **Truth & Hygiene** | Documentation honesty, naming consistency, unmarking false claims | **IN PROGRESS** |
-| **Phase 0.5** | **Baseline Snapshot** | Capture pre-migration build/lint/test baseline in `docs/current-state-baseline.md` | PENDING |
-| **Phase 1** | **Backend Foundations** | Real PostgreSQL database, real auth, URL routing (`react-router-dom`), TanStack Query | PENDING |
+| **Phase 0** | **Truth & Hygiene** | Documentation honesty, naming consistency, unmarking false claims | **COMPLETED** |
+| **Phase 0.5** | **Baseline Snapshot** | Capture pre-migration build/lint/test baseline in `docs/current-state-baseline.md` | **COMPLETED** |
+| **Phase 1** | **Backend Foundations** | Real PostgreSQL database, real auth, URL routing (`react-router-dom`), TanStack Query | **COMPLETED** |
 | **Phase 2** | **Data Audit & Provenance** | Field-level provenance, verify curated 6–8 flagship states, replace generic stock photos | PENDING |
 | **Phase 3** | **Core Features** | Persistent itineraries, multimodal routing on DB, grounded AI with structured output | PENDING |
 | **Phase 3B**| **Stewardship & Roles** | Citizen heritage reporting, role-based access control, audit logging, destination health | PENDING |

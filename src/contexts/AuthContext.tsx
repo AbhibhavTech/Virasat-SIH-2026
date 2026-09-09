@@ -35,6 +35,8 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         }
       } catch (err) {
         console.error('Session restore failed:', err);
+        safeLocalStorage.removeItem('virasat_token');
+        setUser(null);
       } finally {
         setLoading(false);
       }

@@ -17,14 +17,49 @@ import {
   resolveOriginTransportNode,
   resolveDestinationTransportNode,
   buildVerifiedTransitComparison,
-  haversineDistanceKm,
 } from './src/server/transportResolver';
 
-const app = express();
-const PORT = 3000;
+import { db } from './server/src/db/client';
+import { requestIdMiddleware } from './server/src/middleware/validate';
+import { requireAuth, requireRole } from './server/src/middleware/auth';
+import { authRouter } from './server/src/modules/auth/auth.router';
+import { placesRouter } from './server/src/modules/places/places.router';
+import { statesRouter } from './server/src/modules/states/states.router';
+import { favoritesRouter } from './server/src/modules/favorites/favorites.router';
+import { tripsRouter } from './server/src/modules/trips/trips.router';
+import { reportsRouter } from './server/src/modules/reports/reports.router';
 
-app.use(cors());
+const app = express();
+const PORT = Number(process.env.PORT) || 3000;
+
+const allowedOrigins = process.env.ALLOWED_ORIGINS
+  ? process.env.ALLOWED_ORIGINS.split(',')
+  : ['http://localhost:3000', 'http://127.0.0.1:3000', 'http://localhost:5173'];
+
+app.use(
+  cors({
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin) || process.env.NODE_ENV !== 'production') {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+    credentials: true,
+  })
+);
 app.use(express.json());
+app.use(requestIdMiddleware);
+
+// -------------------------------------------------------------
+// Modular API v1 Routers
+// -------------------------------------------------------------
+app.use('/api/v1/auth', authRouter);
+app.use('/api/v1/places', placesRouter);
+app.use('/api/v1', statesRouter);
+app.use('/api/v1/favorites', favoritesRouter);
+app.use('/api/v1/trips', tripsRouter);
+app.use('/api/v1/reports', reportsRouter);
 
 // -------------------------------------------------------------
 // Data Repositories & In-Memory Store
@@ -48,13 +83,16 @@ interface CityItem {
   lng: number;
   description: string;
   places_count: number;
+  coordinates?: { lat: number; lng: number };
 }
 
 interface PlaceItem {
   id: string;
   name: string;
   state: string;
+  state_id?: string;
   city: string;
+  city_id?: string;
   country: string;
   category: string;
   summary: string;
@@ -76,6 +114,7 @@ interface PlaceItem {
   features: { map: boolean; navigation: boolean; ai: boolean; '3d': boolean };
   heritage_status?: string;
   area_neighborhood?: string;
+  status?: string;
 }
 
 interface RailwayStation {
@@ -598,8 +637,8 @@ app.get('/api/database/images/:entityId', (req, res) => {
   });
 });
 
-// Master Database Sync / Ingestion Endpoint
-app.post('/api/database/sync', (req, res) => {
+// Master Database Sync / Ingestion Endpoint (Admin Role Required - Fixes Risk #13)
+app.post('/api/database/sync', requireAuth, requireRole('admin'), (req, res) => {
   try {
     const result = masterTourismDataService.syncMasterDatabase(req.body);
     if (!req.body.dry_run) {
@@ -1384,7 +1423,8 @@ app.post('/api/reports', (req, res) => {
   res.status(201).json(newReport);
 });
 
-app.patch('/api/reports/:id/status', (req, res) => {
+// Citizen report status mutation (Role-Gated - Fixes Risk #14)
+app.patch('/api/reports/:id/status', requireAuth, requireRole('moderator', 'heritage_officer', 'admin'), (req, res) => {
   const { id } = req.params;
   const { status, note, actor } = req.body;
 
@@ -1404,7 +1444,7 @@ app.patch('/api/reports/:id/status', (req, res) => {
     status,
     timestamp: new Date().toISOString(),
     note: note || `Status updated to ${status}`,
-    actor: actor || 'Authorized Official',
+    actor: actor || req.user?.name || 'Authorized Official',
   });
 
   res.json(report);
@@ -2078,7 +2118,7 @@ function calculateDijkstraPath(startNodeId: string, endNodeId: string) {
 
   while (curr) {
     path.unshift(curr);
-    const prev = previous[curr];
+    const prev: { node: string; edge: GraphEdge } | null = previous[curr];
     if (prev) {
       edges.unshift(prev.edge);
       curr = prev.node;
@@ -3313,7 +3353,7 @@ ${placesContextStr}`;
   else if (intent === 'travel_to_destination') {
     if (transitComparison) {
       const dest = activeDestinationName!;
-      const orig = resolvedOriginName || userOriginName;
+      const orig = resolvedOriginName || userLoc?.city || 'Your Location';
       reply = isHindiHinglish
         ? `**${orig}** se **${dest}** ka travel plan aur transport options:\n\n` +
           `🚆 **1. Train Option**:\n` +
@@ -3647,169 +3687,23 @@ app.get('/api/india-hierarchy/city/:cityId', (req, res) => {
 });
 
 // -------------------------------------------------------------
-// Auth & Profile In-Memory Endpoints
+// Persistent Auth, Favorites, and Trips Routers (Replaces In-Memory Stores)
 // -------------------------------------------------------------
-app.post('/api/auth/register', (req, res) => {
-  const { name, email, home_city } = req.body;
-  const token = `virasat-token-${Date.now()}`;
-  const profile = {
-    id: `user-${Date.now()}`,
-    name: name || 'Explorer',
-    email: email || 'user@example.com',
-    home_city: home_city || 'Mumbai',
-    created_at: new Date().toISOString(),
-  };
-  usersStore.set(token, profile);
-  res.json({ token, profile });
-});
-
-app.post('/api/auth/login', (req, res) => {
-  const { email } = req.body;
-  const token = `virasat-token-${Date.now()}`;
-  const profile = {
-    id: `user-${Date.now()}`,
-    name: email ? email.split('@')[0] : 'Explorer',
-    email: email || 'user@example.com',
-    home_city: 'Mumbai',
-    created_at: new Date().toISOString(),
-  };
-  usersStore.set(token, profile);
-  res.json({ token, profile });
-});
-
-app.get('/api/profile', (req, res) => {
-  const authHeader = req.headers.authorization || '';
-  const token = authHeader.replace('Bearer ', '');
-  const profile = usersStore.get(token) || {
-    id: 'guest-1',
-    name: 'Bharat Explorer',
-    email: 'traveler@virasat.in',
-    home_city: 'Mumbai',
-    created_at: new Date().toISOString(),
-  };
-  res.json(profile);
-});
-
-app.put('/api/profile', (req, res) => {
-  const authHeader = req.headers.authorization || '';
-  const token = authHeader.replace('Bearer ', '');
-  const existing = usersStore.get(token) || { id: 'user-1' };
-  const updated = { ...existing, ...req.body };
-  usersStore.set(token, updated);
-  res.json(updated);
-});
-
-app.post('/api/profile/survey', (req, res) => {
-  const authHeader = req.headers.authorization || '';
-  const token = authHeader.replace('Bearer ', '');
-  const profile = usersStore.get(token) || { id: 'user-1', name: 'Explorer' };
-  profile.survey = req.body;
-  usersStore.set(token, profile);
-  res.json(profile);
-});
-
-// -------------------------------------------------------------
-// Favorites Endpoints
-// -------------------------------------------------------------
-app.get('/api/favorites', (req, res) => {
-  const authHeader = req.headers.authorization || 'default';
-  const favIds = favoritesStore.get(authHeader) || ['gateway-of-india', 'marine-drive'];
-  const favItems = favIds
-    .map((id) => placesData.get(id.toLowerCase()))
-    .filter(Boolean)
-    .map((p) => ({
-      id: p!.id,
-      place_id: p!.id,
-      name: p!.name,
-      city: p!.city,
-      state: p!.state,
-      category: p!.category,
-      thumbnail_url: p!.thumbnail_url,
-      rating: p!.rating || 4.6,
-      added_at: new Date().toISOString(),
-    }));
-  res.json(favItems);
-});
-
-app.post('/api/favorites', (req, res) => {
-  const authHeader = req.headers.authorization || 'default';
-  const { place_id } = req.body;
-  const list = favoritesStore.get(authHeader) || [];
-  if (place_id && !list.includes(place_id)) {
-    list.push(place_id);
-    favoritesStore.set(authHeader, list);
-  }
-  const p = placesData.get(place_id?.toLowerCase());
-  res.json({
-    id: place_id,
-    place_id,
-    name: p?.name || place_id,
-    city: p?.city || 'Mumbai',
-    thumbnail_url: p?.thumbnail_url,
-    added_at: new Date().toISOString(),
-  });
-});
-
-app.delete('/api/favorites/:id', (req, res) => {
-  const authHeader = req.headers.authorization || 'default';
-  const id = req.params.id;
-  const list = favoritesStore.get(authHeader) || [];
-  favoritesStore.set(
-    authHeader,
-    list.filter((x) => x !== id)
-  );
-  res.status(200).json({ status: 'removed' });
-});
-
-// -------------------------------------------------------------
-// Trips Endpoints
-// -------------------------------------------------------------
-app.get('/api/trips', (req, res) => {
-  const authHeader = req.headers.authorization || 'default';
-  const trips = tripsStore.get(authHeader) || [
-    {
-      id: 'trip-demo-1',
-      title: 'South Mumbai Heritage Walk',
-      destination: 'Mumbai',
-      start_date: '2026-10-15',
-      end_date: '2026-10-17',
-      places_count: 5,
-      total_distance_km: 12.4,
-      estimated_budget: 1200,
-      created_at: new Date().toISOString(),
-    },
-  ];
-  res.json(trips);
-});
-
-app.post('/api/trips', (req, res) => {
-  const authHeader = req.headers.authorization || 'default';
-  const newTrip = {
-    id: `trip-${Date.now()}`,
-    ...req.body,
-    created_at: new Date().toISOString(),
-  };
-  const trips = tripsStore.get(authHeader) || [];
-  trips.push(newTrip);
-  tripsStore.set(authHeader, trips);
-  res.json(newTrip);
-});
-
-app.delete('/api/trips/:id', (req, res) => {
-  const authHeader = req.headers.authorization || 'default';
-  const id = req.params.id;
-  const trips = tripsStore.get(authHeader) || [];
-  tripsStore.set(
-    authHeader,
-    trips.filter((t) => t.id !== id)
-  );
-  res.status(200).json({ status: 'deleted' });
+app.use('/api/auth', authRouter);
+app.use('/api/favorites', favoritesRouter);
+app.use('/api/trips', tripsRouter);
+app.get('/api/profile', requireAuth, async (req, res) => {
+  const user = await db.users.findById(req.user!.id);
+  if (!user) return res.status(404).json({ error: 'User not found' });
+  const { password_hash, ...safeUser } = user;
+  res.json(safeUser);
 });
 
 // -------------------------------------------------------------
 // Server Start with Vite Middleware
 // -------------------------------------------------------------
 async function startServer() {
+  await db.init();
   if (process.env.NODE_ENV !== 'production') {
     const { createServer: createViteServer } = await import('vite');
     const vite = await createViteServer({

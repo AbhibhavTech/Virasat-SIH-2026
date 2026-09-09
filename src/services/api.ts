@@ -44,7 +44,7 @@ import { safeLocalStorage } from '../utils/storage';
 const API_BASE_URL = '/api';
 
 async function request<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
-  const token = safeLocalStorage.getItem('virasat_token') || 'virasat-demo-token-1';
+  const token = safeLocalStorage.getItem('virasat_token');
   const headers: Record<string, string> = {
     'Content-Type': 'application/json',
     ...(options.headers as Record<string, string> || {}),
@@ -73,27 +73,19 @@ export const api = {
   // -------------------------------------------------------------
   async getStates(): Promise<StateItem[]> {
     try {
-      return await request<StateItem[]>('/states');
+      const data = await request<any>('/v1/states');
+      return Array.isArray(data) ? data : (data.states || data.data || []);
     } catch {
-      return [
-        { id: 'maharashtra', name: 'Maharashtra', capital: 'Mumbai', region: 'Western India', total_places: 14 },
-        { id: 'rajasthan', name: 'Rajasthan', capital: 'Jaipur', region: 'Northern India', total_places: 8 },
-        { id: 'delhi', name: 'Delhi (NCT)', capital: 'New Delhi', region: 'Northern India', total_places: 6 },
-        { id: 'kerala', name: 'Kerala', capital: 'Thiruvananthapuram', region: 'Southern India', total_places: 6 },
-      ];
+      return [];
     }
   },
 
   async getCities(): Promise<CityItem[]> {
     try {
-      return await request<CityItem[]>('/cities');
+      const data = await request<any>('/v1/cities');
+      return Array.isArray(data) ? data : (data.cities || data.data || []);
     } catch {
-      return [
-        { id: 'mumbai', name: 'Mumbai', state: 'Maharashtra', state_id: 'maharashtra', lat: 18.9431, lng: 72.8230, description: 'The City of Dreams', places_count: 14 },
-        { id: 'jaipur', name: 'Jaipur', state: 'Rajasthan', state_id: 'rajasthan', lat: 26.9124, lng: 75.7873, description: 'The Pink City', places_count: 8 },
-        { id: 'delhi', name: 'New Delhi', state: 'Delhi (NCT)', state_id: 'delhi', lat: 28.6139, lng: 77.2090, description: 'The Historic Capital', places_count: 6 },
-        { id: 'kochi', name: 'Kochi', state: 'Kerala', state_id: 'kerala', lat: 9.9312, lng: 76.2673, description: 'Queen of the Arabian Sea', places_count: 6 },
-      ];
+      return [];
     }
   },
 
@@ -115,14 +107,15 @@ export const api = {
     if (params?.offset) q.set('offset', String(params.offset));
 
     try {
-      return await request<PlaceListResponse>(`/places?${q.toString()}`);
+      return await request<PlaceListResponse>(`/v1/places?${q.toString()}`);
     } catch {
       return { total: 0, limit: 20, offset: 0, data: [] };
     }
   },
 
   async getPlaceById(id: string): Promise<PlaceDetail> {
-    return await request<PlaceDetail>(`/places/${id}`);
+    const data = await request<any>(`/v1/places/${id}`);
+    return data.place || data.data || data;
   },
 
   async getPlace(id: string): Promise<PlaceDetail> {
@@ -176,7 +169,7 @@ export const api = {
     });
 
     try {
-      const data = await request<any>(`/places/nearby?${q.toString()}`);
+      const data = await request<any>(`/v1/places/nearby?${q.toString()}`);
       if (Array.isArray(data)) {
         return { origin: { latitude: lat, longitude: long }, radius_km: rad, total: data.length, results: data };
       }
@@ -398,43 +391,46 @@ export const api = {
   // Auth & Profile
   // -------------------------------------------------------------
   async register(name: string, email: string, password: string, home_city?: string): Promise<{ token: string; profile: UserProfile }> {
-    const data = await request<{ token: string; profile: UserProfile }>('/auth/register', {
+    const data = await request<{ token: string; profile?: UserProfile; user?: UserProfile }>('/v1/auth/register', {
       method: 'POST',
       body: JSON.stringify({ name, email, password, home_city }),
     });
     if (data.token) {
       safeLocalStorage.setItem('virasat_token', data.token);
     }
-    return data;
+    return { token: data.token, profile: (data.profile || data.user)! };
   },
 
   async login(email: string, password: string): Promise<{ token: string; profile: UserProfile }> {
-    const data = await request<{ token: string; profile: UserProfile }>('/auth/login', {
+    const data = await request<{ token: string; profile?: UserProfile; user?: UserProfile }>('/v1/auth/login', {
       method: 'POST',
       body: JSON.stringify({ email, password }),
     });
     if (data.token) {
       safeLocalStorage.setItem('virasat_token', data.token);
     }
-    return data;
+    return { token: data.token, profile: (data.profile || data.user)! };
   },
 
   async getProfile(): Promise<UserProfile> {
-    return await request<UserProfile>('/profile');
+    const data = await request<any>('/v1/auth/me');
+    return (data.profile || data.user || data) as UserProfile;
   },
 
   async updateProfile(profile: UserProfile): Promise<UserProfile> {
-    return await request<UserProfile>('/profile', {
+    const data = await request<any>('/v1/auth/profile', {
       method: 'PUT',
       body: JSON.stringify(profile),
     });
+    return (data.profile || data.user || data) as UserProfile;
   },
 
   async saveSurvey(survey: OnboardingSurvey): Promise<UserProfile> {
-    return await request<UserProfile>('/profile/survey', {
+    const data = await request<any>('/v1/auth/survey', {
       method: 'POST',
       body: JSON.stringify(survey),
     });
+    return (data.profile || data.user || data) as UserProfile;
   },
 
   // -------------------------------------------------------------
@@ -442,21 +438,23 @@ export const api = {
   // -------------------------------------------------------------
   async getFavorites(): Promise<FavoriteItem[]> {
     try {
-      return await request<FavoriteItem[]>('/favorites');
+      const data = await request<any>('/v1/favorites');
+      return Array.isArray(data) ? data : (data.favorites || data.data || []);
     } catch {
       return [];
     }
   },
 
   async addFavorite(placeId: string): Promise<FavoriteItem> {
-    return await request<FavoriteItem>('/favorites', {
+    const data = await request<any>('/v1/favorites', {
       method: 'POST',
       body: JSON.stringify({ place_id: placeId }),
     });
+    return data.favorite || data;
   },
 
   async removeFavorite(placeId: string): Promise<void> {
-    await request<void>(`/favorites/${placeId}`, { method: 'DELETE' });
+    await request<void>(`/v1/favorites/${placeId}`, { method: 'DELETE' });
   },
 
   // -------------------------------------------------------------
@@ -464,17 +462,19 @@ export const api = {
   // -------------------------------------------------------------
   async getTrips(): Promise<TripItem[]> {
     try {
-      return await request<TripItem[]>('/trips');
+      const data = await request<any>('/v1/trips');
+      return Array.isArray(data) ? data : (data.trips || data.data || []);
     } catch {
       return [];
     }
   },
 
   async createTrip(trip: Omit<TripItem, 'id' | 'created_at'>): Promise<TripItem> {
-    return await request<TripItem>('/trips', {
+    const data = await request<any>('/v1/trips', {
       method: 'POST',
       body: JSON.stringify(trip),
     });
+    return data.trip || data;
   },
 
   async saveTrip(trip: Omit<TripItem, 'id' | 'created_at'>): Promise<TripItem> {
@@ -482,7 +482,7 @@ export const api = {
   },
 
   async deleteTrip(tripId: string): Promise<void> {
-    await request<void>(`/trips/${tripId}`, { method: 'DELETE' });
+    await request<void>(`/v1/trips/${tripId}`, { method: 'DELETE' });
   },
 
   // -------------------------------------------------------------
