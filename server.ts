@@ -31,6 +31,8 @@ import { reportsRouter } from './server/src/modules/reports/reports.router';
 import { routingRouter } from './server/src/modules/routing/routing.router';
 import { itineraryRouter } from './server/src/modules/itinerary/itinerary.router';
 import { aiRouter } from './server/src/modules/ai/ai.router';
+import { healthRouter } from './server/src/modules/health/health.router';
+import { requestLogger, securityHeaders, errorHandler } from './server/src/middleware/observability';
 
 const app = express();
 const PORT = Number(process.env.PORT) || 3000;
@@ -38,6 +40,9 @@ const PORT = Number(process.env.PORT) || 3000;
 const allowedOrigins = process.env.ALLOWED_ORIGINS
   ? process.env.ALLOWED_ORIGINS.split(',')
   : ['http://localhost:3000', 'http://127.0.0.1:3000', 'http://localhost:5173'];
+
+app.use(securityHeaders);
+app.use(requestLogger);
 
 app.use(
   cors({
@@ -53,6 +58,12 @@ app.use(
 );
 app.use(express.json());
 app.use(requestIdMiddleware);
+
+// -------------------------------------------------------------
+// Health Probes & Observability Endpoints
+// -------------------------------------------------------------
+app.use('/api', healthRouter);
+app.use('/api/v1', healthRouter);
 
 // -------------------------------------------------------------
 // Modular API v1 Routers
@@ -3623,6 +3634,11 @@ app.get('/api/profile', requireAuth, async (req, res) => {
   const { password_hash, ...safeUser } = user;
   res.json(safeUser);
 });
+
+// -------------------------------------------------------------
+// Centralized Error Handling Middleware
+// -------------------------------------------------------------
+app.use(errorHandler);
 
 // -------------------------------------------------------------
 // Server Start with Vite Middleware

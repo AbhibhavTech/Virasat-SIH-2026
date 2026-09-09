@@ -762,7 +762,9 @@ class DatabaseManager {
       this.persist();
     },
     findAll: async (limit = 100): Promise<AuditLogRecord[]> => {
-      return Object.values(this.data.audit_logs).slice(0, limit);
+      return Object.values(this.data.audit_logs)
+        .sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())
+        .slice(0, limit);
     },
   };
 }

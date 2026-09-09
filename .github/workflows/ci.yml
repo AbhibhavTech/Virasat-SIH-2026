@@ -1,0 +1,48 @@
+name: Virasat CI Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate-and-test:
+    name: Lint, Test & Build
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x, 22.x]
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: TypeScript Type Checking (Lint)
+        run: npm run lint
+
+      - name: Data Quality & Station Hygiene Audit
+        run: |
+          npm run check:data
+          npm run check:stations
+
+      - name: Run Complete Automated Test Suite (Phases 0 - 8)
+        run: npm test
+
+      - name: Production Bundle Compilation
+        run: npm run build
+
+      - name: Secret Hygiene Audit (Frontend Bundle Leak Prevention)
+        run: |
+          ! grep -rn "AIzaSy" dist/assets/
+          ! grep -rn "postgres://" dist/assets/
