@@ -285,6 +285,9 @@ export interface UserProfile {
   id: string;
   name: string;
   email: string;
+  avatar_url?: string;
+  google_id?: string;
+  auth_provider?: string;
   role?: UserRole;
   home_city?: string;
   travel_style?: string;
@@ -292,6 +295,7 @@ export interface UserProfile {
   preferred_transport?: string;
   budget_preference?: string;
   survey?: OnboardingSurvey;
+  preferences?: Record<string, any>;
   created_at?: string;
 }
 
@@ -507,7 +511,17 @@ export type VerificationStatus =
   | 'COMMUNITY_LISTED'
   | 'UNVERIFIED';
 
-export type UserRole = 'TRAVELLER' | 'PROVIDER' | 'GOVERNMENT' | 'ADMIN';
+export type UserRole =
+  | 'traveller'
+  | 'contributor'
+  | 'verified_provider'
+  | 'moderator'
+  | 'heritage_officer'
+  | 'admin'
+  | 'TRAVELLER'
+  | 'PROVIDER'
+  | 'GOVERNMENT'
+  | 'ADMIN';
 
 export interface CulturalItem {
   id: string;

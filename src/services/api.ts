@@ -456,6 +456,26 @@ export const api = {
     return { token: data.token, profile: (data.profile || data.user)! };
   },
 
+  async loginWithGoogle(payload: {
+    credential?: string;
+    id_token?: string;
+    client_id?: string;
+    user_info?: any;
+    email?: string;
+    name?: string;
+    picture?: string;
+    sub?: string;
+  }): Promise<{ token: string; profile: UserProfile }> {
+    const data = await request<{ token: string; profile?: UserProfile; user?: UserProfile }>('/v1/auth/google', {
+      method: 'POST',
+      body: JSON.stringify(payload),
+    });
+    if (data.token) {
+      safeLocalStorage.setItem('virasat_token', data.token);
+    }
+    return { token: data.token, profile: (data.profile || data.user)! };
+  },
+
   async getProfile(): Promise<UserProfile> {
     const data = await request<any>('/v1/auth/me');
     return (data.profile || data.user || data) as UserProfile;

@@ -157,6 +157,10 @@ class DatabaseManager {
       );
       return match || null;
     },
+    findByGoogleId: async (googleId: string): Promise<UserRecord | null> => {
+      const match = Object.values(this.data.users).find((u) => u.google_id === googleId);
+      return match || null;
+    },
     create: async (record: UserRecord): Promise<UserRecord> => {
       this.data.users[record.id] = { ...record };
       this.persist();

@@ -7,6 +7,16 @@ interface AuthContextType {
   user: UserProfile | null;
   loading: boolean;
   login: (email: string, password: string) => Promise<void>;
+  loginWithGoogle: (payload: {
+    credential?: string;
+    id_token?: string;
+    client_id?: string;
+    user_info?: any;
+    email?: string;
+    name?: string;
+    picture?: string;
+    sub?: string;
+  }) => Promise<void>;
   register: (name: string, email: string, password: string, home_city?: string) => Promise<void>;
   logout: () => void;
   updateProfile: (profile: UserProfile) => Promise<void>;
@@ -50,6 +60,24 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setIsAuthModalOpen(false);
   };
 
+  const loginWithGoogle = async (payload: {
+    credential?: string;
+    id_token?: string;
+    client_id?: string;
+    user_info?: any;
+    email?: string;
+    name?: string;
+    picture?: string;
+    sub?: string;
+  }) => {
+    const res = await api.loginWithGoogle(payload);
+    setUser(res.profile);
+    setIsAuthModalOpen(false);
+    if (!res.profile.survey || Object.keys(res.profile.survey).length === 0) {
+      setIsOnboardingModalOpen(true);
+    }
+  };
+
   const register = async (name: string, email: string, password: string, home_city?: string) => {
     const res = await api.register(name, email, password, home_city);
     setUser(res.profile);
@@ -79,6 +107,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         user,
         loading,
         login,
+        loginWithGoogle,
         register,
         logout,
         updateProfile,

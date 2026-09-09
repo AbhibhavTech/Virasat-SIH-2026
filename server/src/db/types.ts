@@ -28,9 +28,19 @@ export interface UserRecord {
   password_hash: string;
   name: string;
   avatar_url?: string;
+  google_id?: string;
   home_city: string;
   auth_provider: string;
   role: UserRole;
+  preferences?: Record<string, any>;
+  survey?: {
+    travel_style?: string;
+    pace?: string;
+    interests?: string[];
+    budget?: string;
+    companion?: string;
+    [key: string]: any;
+  };
   created_at: string;
   updated_at: string;
 }
