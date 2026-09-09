@@ -79,6 +79,14 @@ const AppContent: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-[#FAF8F5] text-stone-900 selection:bg-amber-800 selection:text-white font-sans">
+      {/* WCAG AA Accessible Skip Link */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 z-50 px-4 py-2 bg-amber-800 text-white rounded-xl shadow-xl font-bold text-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
+      >
+        Skip to main content
+      </a>
+
       {/* Branded Startup Splash Experience */}
       <BrandSplashScreen isLoading={isAppInitializing} />
 
@@ -100,7 +108,10 @@ const AppContent: React.FC = () => {
       />
 
       {/* Main Content Area */}
-      <main className={`flex-1 w-full mx-auto min-w-0 ${
+      <main
+        id="main-content"
+        tabIndex={-1}
+        className={`flex-1 w-full mx-auto min-w-0 focus:outline-none ${
         activeTab === 'ai'
           ? 'max-w-full px-2 sm:px-4 lg:px-6 pt-3 pb-4'
           : 'max-w-[96%] lg:max-w-[94%] xl:max-w-[92%] 2xl:max-w-[1760px] px-3 sm:px-6 lg:px-8 xl:px-10 pt-6'

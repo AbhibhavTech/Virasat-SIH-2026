@@ -1,14 +1,15 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState, useCallback } from 'react';
 import * as THREE from 'three';
-import { RotateCw, Eye, Sparkles, Compass, Maximize2, ShieldCheck } from 'lucide-react';
+import { RotateCw, Eye, Sparkles, Compass, ShieldCheck, Info, HelpCircle } from 'lucide-react';
+import {
+  Monument3DType,
+  MaterialCreator,
+  FALLBACK_IMAGES,
+  checkWebGLSupport,
+  populateMonumentGeometry,
+} from './monumentGeometries';
 
-export type Monument3DType =
-  | 'gateway-of-india'
-  | 'taj-mahal'
-  | 'qutub-minar'
-  | 'konark-sun-temple'
-  | 'hampi-stone-temple'
-  | 'amber-palace';
+export type { Monument3DType };
 
 interface InteractiveHeritageMonument3DProps {
   monumentType: Monument3DType;
@@ -17,19 +18,6 @@ interface InteractiveHeritageMonument3DProps {
   heightClass?: string;
   onExploreDetails?: () => void;
   autoRotateDefault?: boolean;
-}
-
-function checkWebGLSupport(): boolean {
-  try {
-    if (typeof window === 'undefined') return false;
-    const canvas = document.createElement('canvas');
-    return Boolean(
-      window.WebGLRenderingContext &&
-      (canvas.getContext('webgl') || canvas.getContext('experimental-webgl'))
-    );
-  } catch {
-    return false;
-  }
 }
 
 export const InteractiveHeritageMonument3D: React.FC<InteractiveHeritageMonument3DProps> = ({
@@ -44,8 +32,12 @@ export const InteractiveHeritageMonument3D: React.FC<InteractiveHeritageMonument
   const [isRotating, setIsRotating] = useState(autoRotateDefault);
   const [wireframe, setWireframe] = useState(false);
   const [webGLFailed, setWebGLFailed] = useState(!checkWebGLSupport());
+  const [showHonestyNotice, setShowHonestyNotice] = useState(false);
   const materialsRef = useRef<THREE.MeshStandardMaterial[]>([]);
   const groupRef = useRef<THREE.Group | null>(null);
+
+  const toggleRotation = useCallback(() => setIsRotating((prev) => !prev), []);
+  const toggleWireframe = useCallback(() => setWireframe((prev) => !prev), []);
 
   useEffect(() => {
     const currentMount = mountRef.current;
@@ -54,15 +46,12 @@ export const InteractiveHeritageMonument3D: React.FC<InteractiveHeritageMonument
     const width = currentMount.clientWidth || 500;
     const height = currentMount.clientHeight || 350;
 
-    // 1. Scene
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xfaf8f5); // Warm cream canvas
+    scene.background = new THREE.Color(0xfaf8f5);
 
-    // 2. Camera
     const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 1000);
     camera.position.set(0, 3.5, 12);
 
-    // 3. Renderer with error safety
     let renderer: THREE.WebGLRenderer;
     try {
       renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
@@ -71,13 +60,19 @@ export const InteractiveHeritageMonument3D: React.FC<InteractiveHeritageMonument
       renderer.shadowMap.enabled = true;
       renderer.shadowMap.type = THREE.PCFSoftShadowMap;
       currentMount.appendChild(renderer.domElement);
-    } catch (renderErr) {
-      console.warn('[3D Monument] WebGL initialization failed, switching to photo view:', renderErr);
+    } catch {
       setWebGLFailed(true);
       return;
     }
 
-    // 4. Lighting: Warm Indian Sun + Soft Atmospheric Sky Fill
+    // Context loss safety
+    const handleContextLost = (e: Event) => {
+      e.preventDefault();
+      setWebGLFailed(true);
+    };
+    renderer.domElement.addEventListener('webglcontextlost', handleContextLost, false);
+
+    // Warm Indian lighting
     const ambientLight = new THREE.AmbientLight(0xfff7ed, 1.1);
     scene.add(ambientLight);
 
@@ -90,354 +85,63 @@ export const InteractiveHeritageMonument3D: React.FC<InteractiveHeritageMonument
     skyFill.position.set(-8, 6, -8);
     scene.add(skyFill);
 
-    // 5. Architectural Sandstone Plinth Floor
     const gridHelper = new THREE.GridHelper(20, 20, 0xd6d3d1, 0xe7e5e4);
     gridHelper.position.y = -2.01;
     scene.add(gridHelper);
 
-    // 6. Monument Model Group
+    // Monument Model Group
     const modelGroup = new THREE.Group();
     groupRef.current = modelGroup;
     materialsRef.current = [];
 
-    const createMat = (color: number, roughness = 0.35, metalness = 0.1) => {
-      const mat = new THREE.MeshStandardMaterial({
-        color,
-        roughness,
-        metalness,
-        wireframe,
-      });
+    const createMat: MaterialCreator = (color: number, roughness = 0.35, metalness = 0.1) => {
+      const mat = new THREE.MeshStandardMaterial({ color, roughness, metalness, wireframe });
       materialsRef.current.push(mat);
       return mat;
     };
 
-    // -------------------------------------------------------------
-    // Procedural Architectural Volumetric Sculptures
-    // -------------------------------------------------------------
-    if (monumentType === 'taj-mahal') {
-      // Makrana Pure White Marble Material
-      const marbleMat = createMat(0xf8fafc, 0.25, 0.05);
-      const goldFinialMat = createMat(0xf59e0b, 0.2, 0.5);
-      const plinthMat = createMat(0xe2e8f0, 0.4, 0.05);
-
-      // Elevated Plinth
-      const plinth = new THREE.Mesh(new THREE.BoxGeometry(9, 0.8, 9), plinthMat);
-      plinth.position.y = -1.6;
-      modelGroup.add(plinth);
-
-      // Main Cubic Chamber
-      const mainChamber = new THREE.Mesh(new THREE.BoxGeometry(4.6, 3.8, 4.6), marbleMat);
-      mainChamber.position.y = 0.7;
-      modelGroup.add(mainChamber);
-
-      // Chamfered / arched niche accents
-      const archFrame = new THREE.Mesh(new THREE.BoxGeometry(2.4, 3.0, 4.8), marbleMat);
-      archFrame.position.y = 0.5;
-      modelGroup.add(archFrame);
-
-      // Monumental Onion Dome
-      const domeMesh = new THREE.Mesh(
-        new THREE.SphereGeometry(2.2, 32, 24, 0, Math.PI * 2, 0, Math.PI * 0.75),
-        marbleMat
-      );
-      domeMesh.position.y = 3.6;
-      domeMesh.scale.set(1, 1.25, 1);
-      modelGroup.add(domeMesh);
-
-      // Brass Finial Kalash
-      const finial = new THREE.Mesh(new THREE.CylinderGeometry(0.08, 0.25, 1.4, 16), goldFinialMat);
-      finial.position.y = 5.8;
-      modelGroup.add(finial);
-
-      // 4 Octagonal Corner Minarets with Three Tiered Balconies
-      const minaretPositions = [
-        [-3.8, -3.8],
-        [3.8, -3.8],
-        [-3.8, 3.8],
-        [3.8, 3.8],
-      ];
-
-      minaretPositions.forEach(([mx, mz]) => {
-        const shaft = new THREE.Mesh(new THREE.CylinderGeometry(0.35, 0.45, 6.2, 16), marbleMat);
-        shaft.position.set(mx, 1.5, mz);
-        modelGroup.add(shaft);
-
-        const chhatri = new THREE.Mesh(new THREE.SphereGeometry(0.48, 16, 12), marbleMat);
-        chhatri.position.set(mx, 4.7, mz);
-        modelGroup.add(chhatri);
-      });
-    } else if (monumentType === 'qutub-minar') {
-      // Red Sandstone with Marble Inlay Bands
-      const redStone = createMat(0x9a3412, 0.5, 0.1);
-      const darkStone = createMat(0x7c2d12, 0.55, 0.1);
-      const marbleTrim = createMat(0xf8fafc, 0.3, 0.05);
-
-      // Base Plinth
-      const base = new THREE.Mesh(new THREE.CylinderGeometry(3.6, 4.0, 0.8, 32), darkStone);
-      base.position.y = -1.6;
-      modelGroup.add(base);
-
-      // 5 Tapering Fluted Stories with Projecting Balconies
-      const stories = [
-        { bottomR: 2.8, topR: 2.2, height: 2.4, y: -0.2, mat: redStone },
-        { bottomR: 2.1, topR: 1.7, height: 2.0, y: 1.8, mat: redStone },
-        { bottomR: 1.6, topR: 1.3, height: 1.8, y: 3.5, mat: redStone },
-        { bottomR: 1.25, topR: 1.0, height: 1.5, y: 5.0, mat: marbleTrim },
-        { bottomR: 0.95, topR: 0.75, height: 1.2, y: 6.2, mat: marbleTrim },
-      ];
-
-      stories.forEach((st) => {
-        const mesh = new THREE.Mesh(
-          new THREE.CylinderGeometry(st.topR, st.bottomR, st.height, 24),
-          st.mat
-        );
-        mesh.position.y = st.y;
-        modelGroup.add(mesh);
-
-        // Projecting Muqarnas Balcony Bracket
-        const balcony = new THREE.Mesh(
-          new THREE.CylinderGeometry(st.topR + 0.35, st.topR + 0.1, 0.25, 24),
-          darkStone
-        );
-        balcony.position.y = st.y + st.height / 2;
-        modelGroup.add(balcony);
-      });
-    } else if (monumentType === 'konark-sun-temple') {
-      // Khondalite Sandstone with 24-Spoked Sun Wheels
-      const stoneMat = createMat(0xb45309, 0.6, 0.1);
-      const accentMat = createMat(0x92400e, 0.6, 0.1);
-
-      // Platform Chariot Base
-      const chariot = new THREE.Mesh(new THREE.BoxGeometry(8, 1.4, 5.5), stoneMat);
-      chariot.position.y = -1.3;
-      modelGroup.add(chariot);
-
-      // Pyramidal Jagamohana (Porch)
-      const jagamohana = new THREE.Mesh(new THREE.ConeGeometry(3.5, 5.0, 4), stoneMat);
-      jagamohana.position.set(0, 1.8, 0);
-      jagamohana.rotation.y = Math.PI / 4;
-      modelGroup.add(jagamohana);
-
-      // 4 Iconic Carved Sun Wheels on Chariot Sides
-      const wheelGeo = new THREE.TorusGeometry(1.1, 0.22, 16, 32);
-      const wheelPositions = [
-        [-2.4, -1.2, 2.8],
-        [2.4, -1.2, 2.8],
-        [-2.4, -1.2, -2.8],
-        [2.4, -1.2, -2.8],
-      ];
-
-      wheelPositions.forEach(([wx, wy, wz]) => {
-        const wheel = new THREE.Mesh(wheelGeo, accentMat);
-        wheel.position.set(wx, wy, wz);
-        modelGroup.add(wheel);
-
-        // Axle Hub
-        const hub = new THREE.Mesh(new THREE.CylinderGeometry(0.3, 0.3, 0.5, 16), accentMat);
-        hub.rotation.x = Math.PI / 2;
-        hub.position.set(wx, wy, wz);
-        modelGroup.add(hub);
-      });
-    } else if (monumentType === 'hampi-stone-temple') {
-      // Granite Monolithic Stone Chariot & Dravidian Shikhara
-      const graniteMat = createMat(0x78716c, 0.65, 0.1);
-      const goldTrim = createMat(0xd97706, 0.4, 0.2);
-
-      // Monolithic Chariot Base
-      const chariot = new THREE.Mesh(new THREE.BoxGeometry(5.2, 1.5, 4.2), graniteMat);
-      chariot.position.y = -1.2;
-      modelGroup.add(chariot);
-
-      // 4 Granite Carved Chariot Wheels
-      const wheelPositions = [
-        [-1.8, -1.2, 2.2],
-        [1.8, -1.2, 2.2],
-        [-1.8, -1.2, -2.2],
-        [1.8, -1.2, -2.2],
-      ];
-      wheelPositions.forEach(([wx, wy, wz]) => {
-        const wheel = new THREE.Mesh(new THREE.TorusGeometry(0.9, 0.18, 16, 24), goldTrim);
-        wheel.position.set(wx, wy, wz);
-        modelGroup.add(wheel);
-      });
-
-      // Shikhara Vimana Shrine on Top
-      const vimana = new THREE.Mesh(new THREE.ConeGeometry(2.4, 4.2, 4), graniteMat);
-      vimana.position.set(0, 1.8, 0);
-      vimana.rotation.y = Math.PI / 4;
-      modelGroup.add(vimana);
-    } else if (monumentType === 'amber-palace') {
-      // Amber Palace / Amer Fort (Rajput Sandstone Citadel & Bastions)
-      const yellowSandstone = createMat(0xd49a5b, 0.7, 0.1);
-      const pinkSandstone = createMat(0xbe6947, 0.65, 0.1);
-      const marbleTrim = createMat(0xfaf5eb, 0.4, 0.15);
-      const darkRampart = createMat(0x8a4b2c, 0.8, 0.05);
-
-      // Rugged Cheel ka Teela Hill Base
-      const hillBase = new THREE.Mesh(new THREE.BoxGeometry(9.4, 0.9, 6.5), darkRampart);
-      hillBase.position.y = -2.1;
-      modelGroup.add(hillBase);
-
-      // Stepped Lower Fortified Terrace
-      const lowerTerrace = new THREE.Mesh(new THREE.BoxGeometry(8.6, 1.4, 5.8), pinkSandstone);
-      lowerTerrace.position.y = -1.0;
-      modelGroup.add(lowerTerrace);
-
-      // Main Central Citadel Palace Block (Jaleb Chowk & Diwan-i-Aam)
-      const mainCitadel = new THREE.Mesh(new THREE.BoxGeometry(6.2, 3.2, 4.4), yellowSandstone);
-      mainCitadel.position.set(0, 1.2, 0);
-      modelGroup.add(mainCitadel);
-
-      // Grand Ganesh Pol Gatehouse (Prominent Central Portal)
-      const gatehouse = new THREE.Mesh(new THREE.BoxGeometry(2.4, 3.6, 4.8), pinkSandstone);
-      gatehouse.position.set(0, 1.4, 0.2);
-      modelGroup.add(gatehouse);
-
-      // Gate Arch Recess
-      const archRecess = new THREE.Mesh(new THREE.CylinderGeometry(0.7, 0.7, 1.8, 16), marbleTrim);
-      archRecess.position.set(0, 0.5, 2.6);
-      archRecess.rotation.x = Math.PI / 2;
-      modelGroup.add(archRecess);
-
-      // Left Fortress Corner Bastion
-      const leftBastion = new THREE.Mesh(new THREE.CylinderGeometry(1.0, 1.15, 4.6, 24), yellowSandstone);
-      leftBastion.position.set(-3.6, 1.2, 1.6);
-      modelGroup.add(leftBastion);
-
-      // Right Fortress Corner Bastion
-      const rightBastion = new THREE.Mesh(new THREE.CylinderGeometry(1.0, 1.15, 4.6, 24), yellowSandstone);
-      rightBastion.position.set(3.6, 1.2, 1.6);
-      modelGroup.add(rightBastion);
-
-      // Corner Chhatris (Traditional Rajput Domed Pavilions)
-      [-3.6, 3.6].forEach((xPos) => {
-        // Chhatri Base Ring
-        const chhatriBase = new THREE.Mesh(new THREE.CylinderGeometry(0.8, 0.8, 0.3, 16), marbleTrim);
-        chhatriBase.position.set(xPos, 3.65, 1.6);
-        modelGroup.add(chhatriBase);
-
-        // Chhatri Dome
-        const chhatriDome = new THREE.Mesh(
-          new THREE.SphereGeometry(0.75, 20, 12, 0, Math.PI * 2, 0, Math.PI * 0.5),
-          pinkSandstone
-        );
-        chhatriDome.position.set(xPos, 3.8, 1.6);
-        modelGroup.add(chhatriDome);
-
-        // Finial Spike
-        const finial = new THREE.Mesh(new THREE.ConeGeometry(0.12, 0.6, 8), marbleTrim);
-        finial.position.set(xPos, 4.7, 1.6);
-        modelGroup.add(finial);
-      });
-
-      // Upper Palace Pavilion / Sheesh Mahal Terrace
-      const upperPavilion = new THREE.Mesh(new THREE.BoxGeometry(3.6, 1.2, 2.6), marbleTrim);
-      upperPavilion.position.set(0, 3.4, -0.4);
-      modelGroup.add(upperPavilion);
-
-      // Central Royal Chhatri
-      const royalDome = new THREE.Mesh(
-        new THREE.SphereGeometry(1.1, 24, 14, 0, Math.PI * 2, 0, Math.PI * 0.5),
-        yellowSandstone
-      );
-      royalDome.position.set(0, 4.0, -0.4);
-      modelGroup.add(royalDome);
-
-      // Battlements / Crenellations across upper parapet
-      for (let i = -2.8; i <= 2.8; i += 0.7) {
-        const merlon = new THREE.Mesh(new THREE.BoxGeometry(0.35, 0.4, 0.3), pinkSandstone);
-        merlon.position.set(i, 2.9, 2.25);
-        modelGroup.add(merlon);
-      }
-
-      // Zigzagging Hillside Rampart extending outward (like the real fort walls)
-      const rampart1 = new THREE.Mesh(new THREE.BoxGeometry(3.5, 0.8, 0.5), darkRampart);
-      rampart1.position.set(-4.5, -1.2, -1.8);
-      rampart1.rotation.y = 0.4;
-      modelGroup.add(rampart1);
-
-      const rampart2 = new THREE.Mesh(new THREE.BoxGeometry(3.5, 0.8, 0.5), darkRampart);
-      rampart2.position.set(4.5, -1.2, -1.8);
-      rampart2.rotation.y = -0.4;
-      modelGroup.add(rampart2);
-    } else {
-      // Default: Gateway of India (Yellow Basalt Arch & Central Dome)
-      const stoneColor = 0xd97706;
-      const trimColor = 0xb45309;
-      const mainMat = createMat(stoneColor);
-      const darkMat = createMat(trimColor);
-
-      // Plinth
-      const baseMesh = new THREE.Mesh(new THREE.BoxGeometry(9, 0.8, 5.5), darkMat);
-      baseMesh.position.y = -1.6;
-      modelGroup.add(baseMesh);
-
-      // Left & Right Fluted Pylons
-      const leftPillar = new THREE.Mesh(new THREE.BoxGeometry(1.8, 5.5, 2.8), mainMat);
-      leftPillar.position.set(-2.6, 1.4, 0);
-      modelGroup.add(leftPillar);
-
-      const rightPillar = new THREE.Mesh(new THREE.BoxGeometry(1.8, 5.5, 2.8), mainMat);
-      rightPillar.position.set(2.6, 1.4, 0);
-      modelGroup.add(rightPillar);
-
-      // Grand Architrave Beam
-      const archTop = new THREE.Mesh(new THREE.BoxGeometry(7.6, 1.5, 3.2), darkMat);
-      archTop.position.set(0, 4.4, 0);
-      modelGroup.add(archTop);
-
-      // Central Dome
-      const domeMesh = new THREE.Mesh(
-        new THREE.SphereGeometry(1.6, 32, 16, 0, Math.PI * 2, 0, Math.PI * 0.5),
-        createMat(0xf59e0b)
-      );
-      domeMesh.position.set(0, 5.15, 0);
-      modelGroup.add(domeMesh);
-
-      // Minarets
-      const minaretLeft = new THREE.Mesh(new THREE.CylinderGeometry(0.45, 0.55, 1.4, 16), darkMat);
-      minaretLeft.position.set(-2.8, 5.3, 0);
-      modelGroup.add(minaretLeft);
-
-      const minaretRight = new THREE.Mesh(new THREE.CylinderGeometry(0.45, 0.55, 1.4, 16), darkMat);
-      minaretRight.position.set(2.8, 5.3, 0);
-      modelGroup.add(minaretRight);
-    }
-
+    populateMonumentGeometry(monumentType, modelGroup, createMat);
     scene.add(modelGroup);
 
-    // 7. Interactive Mouse / Touch Drag Rotation
+    // Interaction controls
     let isDragging = false;
-    let previousPos = { x: 0, y: 0 };
+    let prevMouseX = 0;
+    let prevMouseY = 0;
+    let reqId: number;
 
-    const onMouseDown = (e: MouseEvent) => {
+    const onPointerDown = (e: MouseEvent | TouchEvent) => {
       isDragging = true;
-      previousPos = { x: e.clientX, y: e.clientY };
+      prevMouseX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+      prevMouseY = 'touches' in e ? e.touches[0].clientY : e.clientY;
     };
 
-    const onMouseMove = (e: MouseEvent) => {
-      if (!isDragging) return;
-      const deltaX = e.clientX - previousPos.x;
-      const deltaY = e.clientY - previousPos.y;
-      modelGroup.rotation.y += deltaX * 0.009;
-      modelGroup.rotation.x = Math.max(-0.4, Math.min(0.4, modelGroup.rotation.x + deltaY * 0.005));
-      previousPos = { x: e.clientX, y: e.clientY };
+    const onPointerMove = (e: MouseEvent | TouchEvent) => {
+      if (!isDragging || !modelGroup) return;
+      const clientX = 'touches' in e ? e.touches[0].clientX : e.clientX;
+      const clientY = 'touches' in e ? e.touches[0].clientY : e.clientY;
+      const deltaX = clientX - prevMouseX;
+      const deltaY = clientY - prevMouseY;
+      modelGroup.rotation.y += deltaX * 0.008;
+      modelGroup.rotation.x = Math.max(-0.4, Math.min(0.6, modelGroup.rotation.x + deltaY * 0.005));
+      prevMouseX = clientX;
+      prevMouseY = clientY;
     };
 
-    const onMouseUp = () => {
+    const onPointerUp = () => {
       isDragging = false;
     };
 
-    currentMount.addEventListener('mousedown', onMouseDown);
-    window.addEventListener('mousemove', onMouseMove);
-    window.addEventListener('mouseup', onMouseUp);
+    currentMount.addEventListener('mousedown', onPointerDown);
+    currentMount.addEventListener('touchstart', onPointerDown, { passive: true });
+    window.addEventListener('mousemove', onPointerMove);
+    window.addEventListener('touchmove', onPointerMove, { passive: true });
+    window.addEventListener('mouseup', onPointerUp);
+    window.addEventListener('touchend', onPointerUp);
 
-    // 8. Animation Loop
-    let reqId: number;
     const animate = () => {
       reqId = requestAnimationFrame(animate);
-      if (isRotating && !isDragging) {
-        modelGroup.rotation.y += 0.007;
+      if (isRotating && !isDragging && modelGroup) {
+        modelGroup.rotation.y += 0.004;
       }
       renderer.render(scene, camera);
     };
@@ -445,32 +149,25 @@ export const InteractiveHeritageMonument3D: React.FC<InteractiveHeritageMonument
 
     const handleResize = () => {
       if (!currentMount) return;
-      const w = currentMount.clientWidth;
-      const h = currentMount.clientHeight;
-      camera.aspect = w / h;
+      camera.aspect = currentMount.clientWidth / currentMount.clientHeight;
       camera.updateProjectionMatrix();
-      renderer.setSize(w, h);
+      renderer.setSize(currentMount.clientWidth, currentMount.clientHeight);
     };
-
     window.addEventListener('resize', handleResize);
 
     return () => {
       window.removeEventListener('resize', handleResize);
-      if (currentMount) {
-        currentMount.removeEventListener('mousedown', onMouseDown);
-      }
-      window.removeEventListener('mousemove', onMouseMove);
-      window.removeEventListener('mouseup', onMouseUp);
+      currentMount.removeEventListener('mousedown', onPointerDown);
+      currentMount.removeEventListener('touchstart', onPointerDown);
+      window.removeEventListener('mousemove', onPointerMove);
+      window.removeEventListener('touchmove', onPointerMove);
+      window.removeEventListener('mouseup', onPointerUp);
+      window.removeEventListener('touchend', onPointerUp);
+      renderer.domElement.removeEventListener('webglcontextlost', handleContextLost);
       if (reqId) cancelAnimationFrame(reqId);
-      if (renderer) {
-        if (currentMount && renderer.domElement && currentMount.contains(renderer.domElement)) {
-          currentMount.removeChild(renderer.domElement);
-        }
-        try {
-          renderer.dispose();
-        } catch {
-          // Ignore dispose error
-        }
+      if (renderer && currentMount && renderer.domElement && currentMount.contains(renderer.domElement)) {
+        currentMount.removeChild(renderer.domElement);
+        renderer.dispose();
       }
     };
   }, [monumentType, isRotating, webGLFailed]);
@@ -481,72 +178,105 @@ export const InteractiveHeritageMonument3D: React.FC<InteractiveHeritageMonument
     });
   }, [wireframe]);
 
-  const fallbackImages: Record<string, string> = {
-    'taj-mahal': 'https://images.unsplash.com/photo-1564507592333-c60657eea523?auto=format&fit=crop&w=1200&q=80',
-    'gateway-of-india': 'https://images.unsplash.com/photo-1570168007204-dfb528c6958f?auto=format&fit=crop&w=1200&q=80',
-    'qutub-minar': 'https://images.unsplash.com/photo-1545129139-1beb780cf337?auto=format&fit=crop&w=1200&q=80',
-    'konark-sun-temple': 'https://images.unsplash.com/photo-1600100397608-f010f443b793?auto=format&fit=crop&w=1200&q=80',
-    'hampi-stone-temple': 'https://images.unsplash.com/photo-1600100397608-f010f443b793?auto=format&fit=crop&w=1200&q=80',
-    'amber-palace': 'https://images.unsplash.com/photo-1599661046289-e31897846e41?auto=format&fit=crop&w=1200&q=80',
-  };
-
   return (
-    <div className="relative rounded-3xl overflow-hidden bg-[#FAF8F5] border border-[#EFE8DF] shadow-warm">
-      {/* Top Header Controls */}
-      <div className="absolute top-4 left-4 z-10 flex items-center gap-2">
-        <span className="px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-[#EFE8DF] text-xs font-bold text-stone-900 shadow-2xs flex items-center gap-1.5">
-          <Sparkles className="w-3.5 h-3.5 text-amber-700" />
+    <div
+      className="relative rounded-3xl overflow-hidden bg-[#FAF8F5] border border-[#EFE8DF] shadow-md focus-within:ring-2 focus-within:ring-amber-600"
+      role="region"
+      aria-label={`3D Architectural Visualization of ${monumentName}`}
+      tabIndex={0}
+      onKeyDown={(e) => {
+        if (e.key === ' ' || e.key === 'k') {
+          e.preventDefault();
+          toggleRotation();
+        } else if (e.key === 'w' || e.key === 'W') {
+          e.preventDefault();
+          toggleWireframe();
+        } else if (e.key === 'ArrowLeft' && groupRef.current) {
+          groupRef.current.rotation.y -= 0.1;
+        } else if (e.key === 'ArrowRight' && groupRef.current) {
+          groupRef.current.rotation.y += 0.1;
+        }
+      }}
+    >
+      {/* Header & Honesty Disclosure */}
+      <div className="absolute top-4 left-4 z-10 flex flex-wrap items-center gap-2">
+        <span className="px-3 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-[#EFE8DF] text-xs font-bold text-slate-900 shadow-sm flex items-center gap-1.5 min-h-[36px]">
+          <Sparkles className="w-3.5 h-3.5 text-amber-700" aria-hidden="true" />
           <span>{monumentName}</span>
-          {cityName && <span className="text-stone-500 font-normal">({cityName})</span>}
+          {cityName && <span className="text-slate-600 font-normal">({cityName})</span>}
         </span>
+
+        <button
+          onClick={() => setShowHonestyNotice((prev) => !prev)}
+          className="px-2.5 py-1.5 rounded-full bg-amber-50/90 hover:bg-amber-100 border border-amber-300 text-[11px] font-semibold text-amber-900 flex items-center gap-1 transition shadow-sm min-h-[36px]"
+          title="About this 3D representation"
+          aria-expanded={showHonestyNotice}
+          aria-label="3D Model Provenance Notice"
+        >
+          <Info className="w-3.5 h-3.5 text-amber-700" aria-hidden="true" />
+          <span className="hidden sm:inline">Procedural Geometry</span>
+        </button>
       </div>
+
+      {showHonestyNotice && (
+        <div className="absolute top-16 left-4 right-4 z-20 p-3.5 rounded-2xl bg-white/95 backdrop-blur-md border border-amber-300 text-xs text-slate-800 shadow-lg animate-fadeIn space-y-1">
+          <div className="font-bold text-amber-950 flex items-center gap-1.5">
+            <HelpCircle className="w-4 h-4 text-amber-700" />
+            <span>Architectural Honesty Disclosure (Blueprint Section XI)</span>
+          </div>
+          <p className="text-slate-700 leading-relaxed text-[11px]">
+            This interactive 3D model is a <strong>procedural architectural volume</strong> constructed with Three.js WebGL based on public architectural records. It represents structural proportions (plinth, domes, minarets, spires) for educational exploration. It is <strong>not</strong> an official ASI LiDAR photogrammetry scan.
+          </p>
+        </div>
+      )}
 
       {!webGLFailed && (
         <div className="absolute top-4 right-4 z-10 flex items-center gap-2">
           <button
-            onClick={() => setIsRotating((prev) => !prev)}
-            className={`px-3 py-1.5 rounded-xl border text-xs font-bold transition-all flex items-center gap-1.5 shadow-2xs ${
+            onClick={toggleRotation}
+            className={`px-3 py-1.5 rounded-xl border text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm min-h-[44px] min-w-[44px] ${
               isRotating
-                ? 'bg-amber-800 text-white border-amber-800'
-                : 'bg-white text-stone-700 border-[#EFE8DF] hover:bg-stone-50'
+                ? 'bg-amber-800 text-white border-amber-800 focus:ring-2 focus:ring-amber-500'
+                : 'bg-white text-slate-800 border-[#EFE8DF] hover:bg-slate-50 focus:ring-2 focus:ring-amber-700'
             }`}
-            title="Toggle Auto Rotation"
+            aria-label={isRotating ? 'Pause 3D rotation' : 'Resume 3D rotation'}
           >
-            <RotateCw className={`w-3.5 h-3.5 ${isRotating ? 'animate-spin' : ''}`} />
-            <span>{isRotating ? 'Rotating' : 'Paused'}</span>
+            <RotateCw className={`w-4 h-4 ${isRotating ? 'animate-spin' : ''}`} aria-hidden="true" />
+            <span className="hidden sm:inline">{isRotating ? 'Rotating' : 'Paused'}</span>
           </button>
 
           <button
-            onClick={() => setWireframe((prev) => !prev)}
-            className={`px-3 py-1.5 rounded-xl border text-xs font-bold transition-all flex items-center gap-1.5 shadow-2xs ${
+            onClick={toggleWireframe}
+            className={`px-3 py-1.5 rounded-xl border text-xs font-bold transition-all flex items-center gap-1.5 shadow-sm min-h-[44px] min-w-[44px] ${
               wireframe
-                ? 'bg-amber-100 text-amber-950 border-amber-300'
-                : 'bg-white text-stone-700 border-[#EFE8DF] hover:bg-stone-50'
+                ? 'bg-amber-100 text-amber-950 border-amber-400 focus:ring-2 focus:ring-amber-600'
+                : 'bg-white text-slate-800 border-[#EFE8DF] hover:bg-slate-50 focus:ring-2 focus:ring-amber-700'
             }`}
+            aria-label={wireframe ? 'Switch to solid shaded mode' : 'Switch to wireframe polygon mode'}
           >
-            <Eye className="w-3.5 h-3.5" />
-            <span>{wireframe ? 'Solid' : 'Wireframe'}</span>
+            <Eye className="w-4 h-4" aria-hidden="true" />
+            <span className="hidden sm:inline">{wireframe ? 'Solid' : 'Wireframe'}</span>
           </button>
         </div>
       )}
 
       {/* 3D WebGL Canvas or High-res Photograph Fallback */}
       {webGLFailed ? (
-        <div className={`w-full ${heightClass} relative overflow-hidden bg-stone-900`}>
+        <div className={`w-full ${heightClass} relative overflow-hidden bg-slate-900`}>
           <img
-            src={fallbackImages[monumentType] || fallbackImages['taj-mahal']}
-            alt={monumentName}
+            src={FALLBACK_IMAGES[monumentType] || FALLBACK_IMAGES['taj-mahal']}
+            alt={`Architectural photograph of ${monumentName}`}
             className="w-full h-full object-cover opacity-90"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-900/20 to-transparent flex items-end p-6">
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-900/20 to-transparent flex items-end p-6">
             <div className="text-white space-y-1">
               <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-white/20 backdrop-blur-md text-[11px] font-medium border border-white/30">
-                <Compass className="w-3 h-3 text-amber-400" />
+                <Compass className="w-3 h-3 text-amber-400" aria-hidden="true" />
                 Archival Architectural Perspective
               </span>
-              <p className="text-xs text-stone-200">
-                Displaying high-definition heritage photograph view.
+              <p className="text-xs text-slate-200">
+                WebGL unavailable on this device. Displaying high-definition heritage photograph view.
               </p>
             </div>
           </div>
@@ -554,20 +284,21 @@ export const InteractiveHeritageMonument3D: React.FC<InteractiveHeritageMonument
       ) : (
         <div
           ref={mountRef}
-          className={`w-full ${heightClass} cursor-grab active:cursor-grabbing select-none`}
+          className={`w-full ${heightClass} cursor-grab active:cursor-grabbing select-none focus:outline-none`}
+          aria-hidden="true"
         />
       )}
 
-      {/* Bottom Info & Action Bar */}
-      <div className="p-4 bg-white border-t border-[#EFE8DF] flex items-center justify-between text-xs text-stone-600">
-        <span className="flex items-center gap-1.5 text-stone-600">
-          <Compass className="w-3.5 h-3.5 text-amber-700" />
+      {/* Bottom Info & Accessible Hint */}
+      <div className="p-3.5 bg-white border-t border-[#EFE8DF] flex flex-wrap items-center justify-between gap-2 text-xs text-slate-700">
+        <span className="flex items-center gap-1.5 text-slate-700">
+          <Compass className="w-4 h-4 text-amber-700 flex-shrink-0" aria-hidden="true" />
           {webGLFailed ? (
             <span>Architectural reference photograph from national heritage archive</span>
           ) : (
             <>
-              <span className="hidden sm:inline">Click & drag to rotate 360° architectural perspective freely</span>
-              <span className="sm:hidden">Drag to rotate 3D view</span>
+              <span className="hidden md:inline">Click & drag to rotate 360° freely. Keys: Space (pause), W (wireframe), Arrows (turn).</span>
+              <span className="md:hidden">Drag or touch to rotate 3D view freely.</span>
             </>
           )}
         </span>
@@ -575,10 +306,11 @@ export const InteractiveHeritageMonument3D: React.FC<InteractiveHeritageMonument
         {onExploreDetails && (
           <button
             onClick={onExploreDetails}
-            className="px-3 py-1 rounded-lg bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 font-bold transition flex items-center gap-1 text-[11px]"
+            className="px-3.5 py-1.5 rounded-lg bg-amber-50 hover:bg-amber-100 text-amber-950 border border-amber-300 font-bold transition flex items-center gap-1.5 text-xs min-h-[44px]"
+            aria-label={`Explore official architectural details for ${monumentName}`}
           >
             <span>Explore Details</span>
-            <ShieldCheck className="w-3 h-3 text-amber-700" />
+            <ShieldCheck className="w-3.5 h-3.5 text-amber-700" aria-hidden="true" />
           </button>
         )}
       </div>

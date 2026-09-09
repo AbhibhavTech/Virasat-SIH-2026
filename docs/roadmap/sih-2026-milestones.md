@@ -48,7 +48,7 @@ This document tracks the engineering and product progress of **Virasat**, aligne
 | **Phase 3B**| **Stewardship & Roles** | Citizen heritage reporting, role-based access control, audit logging, destination health | **COMPLETED** |
 | **Phase 4** | **Google Login** | Google OAuth integration, account merging, persistent profile state | **COMPLETED** |
 | **Phase 5** | **AI Hardening** | Verify live Gemini models against current docs, grounding audit logging, hallucination checks | **COMPLETED** |
-| **Phase 6** | **Design System & A11y** | Shared UI primitives, WCAG AA compliance, responsive mobile audit, 3D accuracy | PENDING |
+| **Phase 6** | **Design System & A11y** | Shared UI primitives, WCAG AA compliance, responsive mobile audit, 3D accuracy | **COMPLETED** |
 | **Phase 7** | **Automated & Security Tests**| Unit tests, integration tests, E2E journey tests (Playwright), security/injection tests | PENDING |
 | **Phase 8** | **Observability & Deployment** | Containerization, CI/CD pipeline, Sentry error logging, CORS/rate limit hardening | PENDING |
 | **Phase 9** | **SEO & Analytics** | Meta tags, OpenGraph, sitemap.xml, performance budgets, analytics event dashboard | PENDING |

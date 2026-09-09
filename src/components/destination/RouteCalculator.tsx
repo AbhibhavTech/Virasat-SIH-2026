@@ -3,6 +3,9 @@ import { RouteResponse, TransportMode } from '../../types';
 import { api } from '../../services/api';
 import { FareBadge } from '../common/FareBadge';
 import { LoadingSpinner } from '../common/LoadingSpinner';
+import { Card } from '../ui/Card';
+import { Button } from '../ui/Button';
+import { Badge } from '../ui/Badge';
 import { 
   Car, 
   Train, 
@@ -124,12 +127,12 @@ export const RouteCalculator: React.FC<RouteCalculatorProps> = ({
   const originLabel = isCustom ? customOrigin : presetOrigins.find((p) => p.id === origin)?.label || origin;
 
   return (
-    <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#EFE8DF] shadow-warm space-y-6">
+    <Card className="p-5 sm:p-8 space-y-6">
       {/* Journey Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-5 border-b border-[#EFE8DF]">
         <div className="flex items-center gap-3">
-          <div className="p-3 rounded-2xl bg-amber-100 text-amber-800 border border-amber-200">
-            <Compass className="w-5 h-5" />
+          <div className="p-3 rounded-2xl bg-amber-100 text-amber-800 border border-amber-200 shrink-0">
+            <Compass className="w-5 h-5" aria-hidden="true" />
           </div>
           <div>
             <h3 className="font-serif text-xl font-bold text-stone-900">
@@ -141,9 +144,9 @@ export const RouteCalculator: React.FC<RouteCalculatorProps> = ({
           </div>
         </div>
 
-        <span className="self-start sm:self-auto text-[11px] font-bold px-3 py-1 rounded-full bg-amber-50 text-amber-900 border border-amber-200 flex items-center gap-1.5">
-          <ShieldCheck className="w-3.5 h-3.5 text-amber-700" /> Transparent Regional Tariffs
-        </span>
+        <Badge variant="official" icon={<ShieldCheck className="w-3.5 h-3.5 text-amber-700" />}>
+          Transparent Regional Tariffs
+        </Badge>
       </div>
 
       {/* Clean FROM -> TO Journey Bar */}
@@ -156,7 +159,7 @@ export const RouteCalculator: React.FC<RouteCalculatorProps> = ({
             </span>
             <button
               onClick={() => setIsCustom(!isCustom)}
-              className="text-[11px] font-semibold text-amber-800 hover:underline"
+              className="text-[11px] font-semibold text-amber-800 hover:underline focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none rounded-md px-1"
             >
               {isCustom ? 'Use Presets' : 'Custom Place'}
             </button>
@@ -169,20 +172,23 @@ export const RouteCalculator: React.FC<RouteCalculatorProps> = ({
                 placeholder="Station, hotel or area..."
                 value={customOrigin}
                 onChange={(e) => setCustomOrigin(e.target.value)}
-                className="flex-1 px-3 py-2 bg-white border border-[#EFE8DF] rounded-xl text-xs text-stone-900 focus:outline-none focus:border-amber-600"
+                aria-label="Custom departure origin"
+                className="flex-1 px-3 py-2 bg-white border border-[#EFE8DF] rounded-xl text-xs text-stone-900 focus:outline-none focus:border-amber-600 focus-visible:ring-2 focus-visible:ring-amber-500"
               />
-              <button
+              <Button
+                variant="primary"
+                size="sm"
                 onClick={() => customOrigin.trim() && fetchRoute(customOrigin.trim())}
-                className="px-3.5 py-2 bg-amber-800 text-white rounded-xl text-xs font-bold"
               >
                 Go
-              </button>
+              </Button>
             </div>
           ) : (
             <select
               value={origin}
               onChange={(e) => setOrigin(e.target.value)}
-              className="w-full px-3 py-2 bg-white border border-[#EFE8DF] rounded-xl text-xs font-semibold text-stone-900 focus:outline-none focus:border-amber-600 cursor-pointer"
+              aria-label="Select departure station or landmark"
+              className="w-full px-3 py-2 bg-white border border-[#EFE8DF] rounded-xl text-xs font-semibold text-stone-900 focus:outline-none focus:border-amber-600 focus-visible:ring-2 focus-visible:ring-amber-500 cursor-pointer"
             >
               {presetOrigins.map((p) => (
                 <option key={p.id} value={p.id}>
@@ -200,9 +206,9 @@ export const RouteCalculator: React.FC<RouteCalculatorProps> = ({
           </span>
           <div className="px-3 py-2 bg-white border border-[#EFE8DF] rounded-xl text-xs font-bold text-stone-900 flex items-center justify-between">
             <span className="truncate">{destinationName}</span>
-            <span className="text-[10px] text-amber-800 bg-amber-100 px-2 py-0.5 rounded-md font-semibold shrink-0 ml-2">
+            <Badge variant="primary" size="sm" className="shrink-0 ml-2">
               {destinationCity || 'India'}
-            </span>
+            </Badge>
           </div>
         </div>
       </div>
@@ -225,14 +231,16 @@ export const RouteCalculator: React.FC<RouteCalculatorProps> = ({
               <button
                 key={item.mode}
                 onClick={() => setSelectedMode(item.mode)}
-                className={`p-3 rounded-2xl text-xs font-bold flex flex-col items-center justify-center gap-1 transition ${
+                aria-pressed={isSelected}
+                aria-label={`Select ${item.label} (${item.note})`}
+                className={`p-3 rounded-2xl text-xs font-bold flex flex-col items-center justify-center gap-1 transition focus-visible:ring-2 focus-visible:ring-amber-600 focus-visible:outline-none cursor-pointer ${
                   isSelected
                     ? 'bg-amber-800 text-white shadow-xs'
                     : 'bg-[#FAF8F5] text-stone-700 hover:bg-stone-100 border border-[#EFE8DF]'
                 }`}
               >
                 <div className="flex items-center gap-1.5">
-                  <Icon className="w-4 h-4" />
+                  <Icon className="w-4 h-4" aria-hidden="true" />
                   <span>{item.label}</span>
                 </div>
                 <span className={`text-[10px] font-normal ${isSelected ? 'text-amber-100' : 'text-stone-500'}`}>

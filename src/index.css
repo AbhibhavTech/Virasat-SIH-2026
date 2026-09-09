@@ -488,9 +488,25 @@
 
 @media (prefers-reduced-motion: reduce) {
   .animate-transit-pulse,
-  .animate-float-slow {
+  .animate-float-slow,
+  .animate-chakra-slow,
+  .shine-beam,
+  .animate-spin {
     animation: none !important;
+    transition: none !important;
   }
 }
 
+/* WCAG AA Universal Accessibility & Touch Utilities */
+.focus-ring {
+  outline: none;
+}
+.focus-ring:focus-visible {
+  outline: 2px solid #b45309;
+  outline-offset: 2px;
+}
 
+.touch-target-min {
+  min-height: 44px;
+  min-width: 44px;
+}
