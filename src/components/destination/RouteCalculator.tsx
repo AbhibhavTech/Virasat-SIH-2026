@@ -342,6 +342,6 @@ export const RouteCalculator: React.FC<RouteCalculatorProps> = ({
           )}
         </div>
       ) : null}
-    </div>
+    </Card>
   );
 };

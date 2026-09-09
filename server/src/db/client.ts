@@ -190,9 +190,11 @@ class DatabaseManager {
     findAll: async (filters?: {
       stateId?: string;
       cityId?: string;
+      city?: string;
       category?: string;
       confidence?: string;
       data_confidence?: string;
+      search?: string;
       limit?: number;
       offset?: number;
     }): Promise<{ places: PlaceRecord[]; total: number }> => {
@@ -200,11 +202,21 @@ class DatabaseManager {
       if (filters?.stateId) {
         list = list.filter((p) => p.state_id?.toLowerCase() === filters.stateId?.toLowerCase());
       }
-      if (filters?.cityId) {
-        list = list.filter((p) => p.city_id?.toLowerCase() === filters.cityId?.toLowerCase());
+      if (filters?.cityId || filters?.city) {
+        const targetCity = (filters.cityId || filters.city || '').toLowerCase();
+        list = list.filter((p) => p.city_id?.toLowerCase() === targetCity);
       }
       if (filters?.category) {
         list = list.filter((p) => p.category.toLowerCase() === filters.category?.toLowerCase());
+      }
+      if (filters?.search) {
+        const q = filters.search.toLowerCase().trim();
+        list = list.filter(
+          (p) =>
+            (p.name?.toLowerCase() || '').includes(q) ||
+            (p.summary?.toLowerCase() || '').includes(q) ||
+            (p.description?.toLowerCase() || '').includes(q)
+        );
       }
       const targetConfidence = filters?.confidence || filters?.data_confidence;
       if (targetConfidence) {
@@ -399,6 +411,9 @@ class DatabaseManager {
       return list;
     },
     listByUser: async (userId: string): Promise<ItineraryRecord[]> => {
+      return Object.values(this.data.itineraries).filter((t) => t.user_id === userId);
+    },
+    findByUser: async (userId: string): Promise<ItineraryRecord[]> => {
       return Object.values(this.data.itineraries).filter((t) => t.user_id === userId);
     },
     findById: async (id: string): Promise<ItineraryRecord | null> => {

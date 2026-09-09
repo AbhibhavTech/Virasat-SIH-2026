@@ -178,6 +178,58 @@ export function buildGatewayOfIndiaGeometry(g: THREE.Group, createMat: MaterialC
   });
 }
 
+export function buildHawaMahalGeometry(g: THREE.Group, createMat: MaterialCreator): void {
+  const pinkSandstone = createMat(0xe11d48, 0.45, 0.05);
+  const deepRose = createMat(0xbe123c, 0.5, 0.05);
+  const limeJali = createMat(0xfdf4ff, 0.3, 0.02);
+  const goldFinial = createMat(0xf59e0b, 0.2, 0.5);
+
+  // Raised stone plinth
+  addBox(g, [9.2, 0.8, 3.4], deepRose, [0, -1.6, 0]);
+
+  // 5 Stepped Pyramidal Tiers (Honeycomb Silhouette)
+  const tiers = [
+    { width: 8.2, height: 1.4, depth: 2.6, y: -0.5, jharokhaCount: 7 },
+    { width: 7.0, height: 1.3, depth: 2.2, y: 0.85, jharokhaCount: 6 },
+    { width: 5.6, height: 1.2, depth: 1.8, y: 2.1, jharokhaCount: 5 },
+    { width: 4.2, height: 1.1, depth: 1.5, y: 3.25, jharokhaCount: 4 },
+    { width: 2.8, height: 1.0, depth: 1.2, y: 4.3, jharokhaCount: 3 },
+  ];
+
+  tiers.forEach((t) => {
+    addBox(g, [t.width, t.height, t.depth], pinkSandstone, [0, t.y, 0]);
+    addBox(g, [t.width + 0.3, 0.15, t.depth + 0.2], limeJali, [0, t.y + t.height / 2, 0]);
+
+    const spacing = t.width / (t.jharokhaCount + 1);
+    for (let i = 1; i <= t.jharokhaCount; i++) {
+      const jx = -t.width / 2 + spacing * i;
+      const jz = t.depth / 2 + 0.18;
+
+      const jharokha = new THREE.Mesh(new THREE.CylinderGeometry(0.24, 0.28, t.height * 0.75, 12), deepRose);
+      jharokha.position.set(jx, t.y, jz);
+      g.add(jharokha);
+
+      const jaliTrim = new THREE.Mesh(new THREE.SphereGeometry(0.26, 12, 8, 0, Math.PI * 2, 0, Math.PI * 0.5), limeJali);
+      jaliTrim.position.set(jx, t.y + t.height * 0.38, jz);
+      g.add(jaliTrim);
+    }
+  });
+
+  const crest = new THREE.Mesh(new THREE.SphereGeometry(0.65, 16, 12, 0, Math.PI * 2, 0, Math.PI * 0.7), pinkSandstone);
+  crest.position.set(0, 5.2, 0);
+  g.add(crest);
+
+  const finial = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.18, 0.9, 12), goldFinial);
+  finial.position.set(0, 6.0, 0);
+  g.add(finial);
+
+  [-1.2, 1.2].forEach((sx) => {
+    const sideChhatri = new THREE.Mesh(new THREE.SphereGeometry(0.35, 12, 8, 0, Math.PI * 2, 0, Math.PI * 0.6), deepRose);
+    sideChhatri.position.set(sx, 5.0, 0);
+    g.add(sideChhatri);
+  });
+}
+
 export function populateMonumentGeometry(
   type: Monument3DType,
   group: THREE.Group,
@@ -199,9 +251,29 @@ export function populateMonumentGeometry(
     case 'amber-palace':
       buildAmberPalaceGeometry(group, createMat);
       break;
+    case 'hawa-mahal':
+      buildHawaMahalGeometry(group, createMat);
+      break;
     case 'gateway-of-india':
     default:
       buildGatewayOfIndiaGeometry(group, createMat);
       break;
   }
 }
+
+export const MONUMENT_REGISTRY: Record<
+  Monument3DType,
+  {
+    name: string;
+    city: string;
+    builder: (group: THREE.Group, createMat: MaterialCreator) => void;
+  }
+> = {
+  'gateway-of-india': { name: 'Gateway of India', city: 'Mumbai', builder: buildGatewayOfIndiaGeometry },
+  'taj-mahal': { name: 'Taj Mahal', city: 'Agra', builder: buildTajMahalGeometry },
+  'qutub-minar': { name: 'Qutub Minar', city: 'Delhi', builder: buildQutubMinarGeometry },
+  'konark-sun-temple': { name: 'Konark Sun Temple', city: 'Puri', builder: buildKonarkSunTempleGeometry },
+  'hampi-stone-temple': { name: 'Hampi Stone Chariot', city: 'Hampi', builder: buildHampiChariotGeometry },
+  'amber-palace': { name: 'Amber Palace & Fort', city: 'Jaipur', builder: buildAmberPalaceGeometry },
+  'hawa-mahal': { name: 'Hawa Mahal (Palace of Winds)', city: 'Jaipur', builder: buildHawaMahalGeometry },
+};

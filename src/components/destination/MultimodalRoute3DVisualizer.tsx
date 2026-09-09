@@ -72,12 +72,12 @@ export const MultimodalRoute3DVisualizer: React.FC<MultimodalRoute3DVisualizerPr
   const stages = getMultimodalStages();
 
   return (
-    <div className="p-5 sm:p-6 rounded-2xl bg-white border border-[#EFE8DF] shadow-3d-card space-y-4">
+    <div className="p-4 sm:p-6 rounded-2xl bg-white border border-[#EFE8DF] shadow-3d-card space-y-4">
       {/* Visual Header */}
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center shadow-2xs">
-            <Layers className="w-4 h-4" />
+          <div className="w-8 h-8 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center shadow-2xs shrink-0">
+            <Layers className="w-4 h-4" aria-hidden="true" />
           </div>
           <div>
             <h4 className="font-serif text-sm sm:text-base font-bold text-stone-900">
@@ -89,13 +89,13 @@ export const MultimodalRoute3DVisualizer: React.FC<MultimodalRoute3DVisualizerPr
           </div>
         </div>
 
-        <span className="text-[11px] font-mono font-bold text-amber-800 bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-200">
+        <span className="self-start sm:self-auto text-[11px] font-mono font-bold text-amber-800 bg-amber-50 px-2.5 py-1 rounded-lg border border-amber-200 shrink-0">
           {routeOption.distance_km} km • {routeOption.duration_minutes} mins
         </span>
       </div>
 
       {/* 2.5D Isometric Stepper Progression */}
-      <div className="relative py-2 pl-2 sm:pl-4 space-y-3 border-l-2 border-dashed border-amber-300/80 ml-4">
+      <div className="relative py-2 pl-2 sm:pl-4 space-y-3 border-l-2 border-dashed border-amber-300/80 ml-3 sm:ml-4">
         {stages.map((stage, idx) => {
           const Icon = stage.icon;
           const isFirst = idx === 0;
@@ -103,7 +103,7 @@ export const MultimodalRoute3DVisualizer: React.FC<MultimodalRoute3DVisualizerPr
           const isHighlighted = stage.highlight;
 
           return (
-            <div key={idx} className="relative flex items-center gap-3 sm:gap-4 group">
+            <div key={idx} className="relative flex items-center gap-3 sm:gap-4 group min-w-0">
               {/* Node Indicator Dot */}
               <div
                 className={`absolute -left-[17px] sm:-left-[25px] w-7 h-7 sm:w-8 sm:h-8 rounded-full border-2 flex items-center justify-center transition-all ${
@@ -116,12 +116,12 @@ export const MultimodalRoute3DVisualizer: React.FC<MultimodalRoute3DVisualizerPr
                     : 'bg-white border-amber-400 text-stone-700 shadow-2xs'
                 }`}
               >
-                <Icon className="w-3.5 h-3.5" />
+                <Icon className="w-3.5 h-3.5" aria-hidden="true" />
               </div>
 
               {/* Step Card with 2.5D Elevation on Hover */}
               <div
-                className={`flex-1 p-3 sm:p-3.5 rounded-xl border transition-all ${
+                className={`flex-1 min-w-0 p-3 sm:p-3.5 rounded-xl border transition-all ${
                   isHighlighted
                     ? 'bg-amber-50/70 border-amber-200 shadow-xs'
                     : isLast || isFirst
@@ -129,15 +129,15 @@ export const MultimodalRoute3DVisualizer: React.FC<MultimodalRoute3DVisualizerPr
                     : 'bg-white border-stone-100 hover:border-amber-200'
                 }`}
               >
-                <div className="flex items-center justify-between">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-amber-900">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-amber-900 truncate">
                     {stage.mode}
                   </span>
-                  <span className="text-[11px] font-mono text-stone-500 font-semibold">
+                  <span className="text-[11px] font-mono text-stone-500 font-semibold shrink-0">
                     {stage.time}
                   </span>
                 </div>
-                <p className="text-xs sm:text-sm font-semibold text-stone-900 mt-0.5">
+                <p className="text-xs sm:text-sm font-semibold text-stone-900 mt-0.5 truncate">
                   {stage.label}
                 </p>
               </div>

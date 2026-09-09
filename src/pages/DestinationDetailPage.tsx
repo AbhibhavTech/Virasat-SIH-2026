@@ -62,6 +62,7 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
   const resolve3DMonumentType = (pId: string): Monument3DType | null => {
     const idLower = pId.toLowerCase();
     if (idLower.includes('amber') || idLower.includes('amer')) return 'amber-palace';
+    if (idLower.includes('hawa')) return 'hawa-mahal';
     if (idLower.includes('taj')) return 'taj-mahal';
     if (idLower.includes('qutub')) return 'qutub-minar';
     if (idLower.includes('konark')) return 'konark-sun-temple';
@@ -184,22 +185,24 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
           <div className="flex items-center gap-2">
             <button
               onClick={() => setIsReportModalOpen(true)}
-              className="flex items-center gap-1.5 px-3 py-2 rounded-full bg-white/90 hover:bg-white text-stone-700 hover:text-[#FF671F] text-xs font-semibold shadow-xs transition backdrop-blur-sm"
+              className="flex items-center gap-1.5 px-3 py-2 rounded-full bg-white/90 hover:bg-white text-stone-700 hover:text-[#FF671F] text-xs font-semibold shadow-xs transition backdrop-blur-sm focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none"
               title="Report Heritage Issue / Maintenance"
+              aria-label="Report Heritage Issue or Maintenance need"
             >
-              <AlertTriangle className="w-3.5 h-3.5 text-[#FF671F]" />
+              <AlertTriangle className="w-3.5 h-3.5 text-[#FF671F]" aria-hidden="true" />
               <span className="hidden sm:inline">Report Issue</span>
             </button>
             <button
               onClick={() => toggleFavorite(place.id)}
-              className={`p-2.5 rounded-full shadow-xs transition backdrop-blur-sm ${
+              className={`p-2.5 rounded-full shadow-xs transition backdrop-blur-sm focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none ${
                 favActive
                   ? 'bg-rose-50 text-rose-600 border border-rose-200'
                   : 'bg-white/90 hover:bg-white text-stone-700'
               }`}
               title="Save to Favorites"
+              aria-label={favActive ? 'Remove from saved favorites' : 'Save to favorites'}
             >
-              <Heart className={`w-4 h-4 ${favActive ? 'fill-rose-500' : ''}`} />
+              <Heart className={`w-4 h-4 ${favActive ? 'fill-rose-500' : ''}`} aria-hidden="true" />
             </button>
             <button
               onClick={() => {
@@ -207,10 +210,11 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
                   navigator.clipboard.writeText(window.location.href).catch(() => {});
                 }
               }}
-              className="p-2.5 rounded-full bg-white/90 hover:bg-white text-stone-700 shadow-xs transition backdrop-blur-sm"
+              className="p-2.5 rounded-full bg-white/90 hover:bg-white text-stone-700 shadow-xs transition backdrop-blur-sm focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none"
               title="Share Place"
+              aria-label="Copy place link to clipboard"
             >
-              <Share2 className="w-4 h-4" />
+              <Share2 className="w-4 h-4" aria-hidden="true" />
             </button>
           </div>
         </div>
