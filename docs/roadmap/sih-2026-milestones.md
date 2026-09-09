@@ -7,8 +7,8 @@ This document tracks the engineering and product progress of **Virasat**, aligne
 ## 1. Initial Hackathon Prototype Status Audit (Current State)
 
 ### Milestone 1: Foundations & Architecture
-- [ ] Real persistent database (PostgreSQL / Supabase) *(In progress — Phase 1)*
-- [ ] Real user authentication and secure session handling *(In progress — Phase 1)*
+- [x] Real persistent database (PostgreSQL / Supabase) *(Completed — Phase 1)*
+- [x] Real user authentication and secure session handling *(Completed — Phase 1)*
 - [x] Initial Express in-memory API prototype with JSON datasets
 - [x] Baseline API contracts and schema documentation (`docs/api-contract.md`)
 - [x] Verified heritage datasets across 8 flagship regions (Maharashtra, Delhi, Rajasthan, UP, Goa, Kerala, Karnataka, Tamil Nadu) with field-level provenance *(Audited — Phase 2)*
@@ -30,9 +30,9 @@ This document tracks the engineering and product progress of **Virasat**, aligne
 - [x] Audio-visual narration modal with cultural backgrounds
 
 ### Milestone 5: Testing, Hardening & Final Evaluation
-- [ ] Unit tests for backend routers and services *(Phase 7)*
-- [ ] Automated test suites for multimodal routing and fare logic *(Phase 7)*
-- [ ] Production CI/CD and containerized deployment *(Phase 8)*
+- [x] Unit tests for backend routers and services *(Completed — Phase 7)*
+- [x] Automated test suites for multimodal routing and fare logic *(Completed — Phase 7)*
+- [x] Production CI/CD and containerized deployment *(Completed — Phase 8)*
 
 ---
 
