@@ -417,6 +417,10 @@ export interface AIChatResponse {
   sources?: string[];
   grounding_chunks?: any[];
   grounding_citations?: GroundingCitation[];
+  grounding_score?: number;
+  grounding_audit?: any;
+  latency_ms?: number;
+  model_used?: string;
 }
 
 export interface ReverseGeocodeResponse {

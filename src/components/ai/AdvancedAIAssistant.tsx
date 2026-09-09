@@ -41,6 +41,9 @@ interface ExtendedChatMessage extends AIChatMessage {
   suggested_actions?: string[];
   sources?: string[];
   grounding_citations?: GroundingCitation[];
+  grounding_score?: number;
+  latency_ms?: number;
+  model_used?: string;
   error?: boolean;
 }
 
@@ -283,14 +286,20 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
         suggested_actions: res.suggested_actions,
         sources: res.sources || ['Virasat Master Heritage Database', 'ASI & UNESCO Gazette Records'],
         grounding_citations: res.grounding_citations,
+        grounding_score: res.grounding_score ?? (res as any).grounding_audit?.grounding_score,
+        latency_ms: res.latency_ms,
+        model_used: res.model_used,
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       };
 
       setMessages((prev) => [...prev, assistantMsg]);
     } catch (err: any) {
+      const isRateLimit = err?.message?.includes('429') || err?.message?.includes('RATE_LIMIT');
       const errorMsg: ExtendedChatMessage = {
         role: 'assistant',
-        content: 'I had trouble connecting to the cultural archives. Please check your connection or tap Retry to resend.',
+        content: isRateLimit
+          ? '⏱️ Rate limit reached (30 queries/min). Please wait a few moments before submitting your next cultural inquiry.'
+          : 'I had trouble connecting to the cultural archives. Please check your connection or tap Retry to resend.',
         error: true,
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       };
@@ -793,7 +802,19 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
                       isUser ? 'border-t border-white/20 text-white/80' : 'border-t border-stone-100 text-stone-400'
                     }`}
                   >
-                    <span>{m.timestamp || 'Just now'}</span>
+                    <span className="flex items-center gap-1.5 flex-wrap">
+                      <span>{m.timestamp || 'Just now'}</span>
+                      {!isUser && m.grounding_score !== undefined && (
+                        <span className="inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-semibold border border-emerald-200">
+                          🎯 {Math.round(m.grounding_score * 100)}% Grounded
+                        </span>
+                      )}
+                      {!isUser && m.latency_ms !== undefined && (
+                        <span className="text-stone-400">
+                          • {m.latency_ms}ms {m.model_used ? `(${m.model_used})` : ''}
+                        </span>
+                      )}
+                    </span>
 
                     <div className="flex items-center gap-2">
                       {!isUser && (

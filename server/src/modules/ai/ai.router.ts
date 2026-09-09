@@ -1,12 +1,12 @@
 import { Router, Request, Response } from 'express';
 import { GoogleGenAI } from '@google/genai';
 import { db } from '../../db/client';
+import { rateLimiter } from '../../middleware/rateLimiter';
 import {
   resolveOriginTransportNode,
   resolveDestinationTransportNode,
   buildVerifiedTransitComparison,
 } from '../../../../src/server/transportResolver';
-import { getVerifiedCityPlan } from '../../../../src/data/cityItineraryData';
 import { haversineKm } from '../../../../src/server/railwayRoutingEngine';
 
 export const aiRouter = Router();
@@ -31,6 +31,17 @@ export interface GroundingCitation {
   confidence: string;
   source_name: string;
   source_url: string;
+}
+
+export interface GroundingAudit {
+  grounding_score: number;
+  verified_entities_count: number;
+  unverified_entities_count: number;
+  flagged_unverified_claims: string[];
+  verified_places: string[];
+  citations_count: number;
+  latency_ms: number;
+  model_used: string;
 }
 
 /**
@@ -68,10 +79,91 @@ async function fetchGroundingCitations(places: any[]): Promise<GroundingCitation
 }
 
 /**
- * POST /api/v1/ai/chat
- * Grounded AI Concierge with structured output and provenance citations
+ * Post-generation Hallucination Guardrail Filter
+ * Validates entities mentioned in replyText against known database monuments.
  */
-aiRouter.post('/chat', async (req: Request, res: Response): Promise<void> => {
+export function auditHallucinations(
+  replyText: string,
+  verifiedPlaces: any[],
+  allPlaces: any[],
+  citationsCount: number,
+  latencyMs: number,
+  modelUsed: string
+): GroundingAudit {
+  const textLower = replyText.toLowerCase();
+  const confirmedPlaces: string[] = [];
+
+  for (const p of allPlaces) {
+    if (textLower.includes(p.name.toLowerCase()) || (p.id && textLower.includes(p.id.toLowerCase()))) {
+      confirmedPlaces.push(p.name);
+    }
+  }
+
+  // Scan for potential hallucinated monuments (named entities ending in heritage terms not in DB)
+  const heritagePattern = /([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*\s+(?:Fort|Palace|Temple|Mahal|Mosque|Caves|Minar|Ghat|Tomb|Bagh|Stupa))\b/g;
+  const matches = replyText.match(heritagePattern) || [];
+  const flaggedUnverified: string[] = [];
+
+  const ignoredBodies = [
+    'Archaeological Survey of India',
+    'State Tourism',
+    'Indian Railways',
+    'Tourism Board',
+    'National Portal',
+    'Ministry of Tourism',
+    'Ministry of Culture',
+    'World Heritage',
+    'Government of India',
+  ];
+
+  for (const m of matches) {
+    const cleanMatch = m.trim();
+    if (ignoredBodies.some((b) => cleanMatch.toLowerCase().includes(b.toLowerCase()) || b.toLowerCase().includes(cleanMatch.toLowerCase()))) {
+      continue;
+    }
+    const cleanLower = cleanMatch.toLowerCase();
+    const isKnown = allPlaces.some((p) => {
+      const pNameLower = p.name.toLowerCase();
+      const pIdLower = (p.id || '').toLowerCase();
+      return (
+        pNameLower.includes(cleanLower) ||
+        cleanLower.includes(pNameLower) ||
+        pIdLower === cleanLower.replace(/[^a-z0-9]+/g, '-') ||
+        cleanLower.split(/\s+/).filter((w) => w.length >= 4).every((w) => pNameLower.includes(w) || pIdLower.includes(w))
+      );
+    });
+    if (!isKnown && !flaggedUnverified.includes(cleanMatch)) {
+      flaggedUnverified.push(cleanMatch);
+    }
+  }
+
+  const verifiedCount = Math.max(verifiedPlaces.length, confirmedPlaces.length);
+  const unverifiedCount = flaggedUnverified.length;
+  const total = verifiedCount + unverifiedCount;
+
+  // Grounding score between 0.0 and 1.0
+  const groundingScore = total > 0
+    ? Math.round((verifiedCount / total) * 100) / 100
+    : 0.95;
+
+  return {
+    grounding_score: Math.min(1.0, Math.max(0.2, groundingScore)),
+    verified_entities_count: verifiedCount,
+    unverified_entities_count: unverifiedCount,
+    flagged_unverified_claims: flaggedUnverified,
+    verified_places: confirmedPlaces,
+    citations_count: citationsCount,
+    latency_ms: latencyMs,
+    model_used: modelUsed,
+  };
+}
+
+/**
+ * POST /api/v1/ai/chat
+ * Grounded AI Concierge with Rate Limiting, Hallucination Guardrails, and Audit Logging
+ */
+aiRouter.post('/chat', rateLimiter({ windowMs: 60000, max: 30 }), async (req: Request, res: Response): Promise<void> => {
+  const startTime = Date.now();
   const { message, conversation_id, place_id, city, history, location, travel_context } = req.body;
   const rawQuery = (message || '').trim();
   const query = rawQuery.toLowerCase();
@@ -140,18 +232,8 @@ aiRouter.post('/chat', async (req: Request, res: Response): Promise<void> => {
       city: originName,
       state: 'India',
       coordinates: { lat: userLat || 28.6139, lng: userLng || 77.209 },
-      nearest_railway_station: {
-        name: `${originName} Hub`,
-        code: 'HUB',
-        distance_km: 2.0,
-        is_verified: true,
-      },
-      nearest_airport: {
-        name: `${originName} Airport`,
-        code: 'AIR',
-        distance_km: 15.0,
-        is_verified: true,
-      },
+      nearest_railway_station: { name: `${originName} Hub`, code: 'HUB', distance_km: 2.0, is_verified: true },
+      nearest_airport: { name: `${originName} Airport`, code: 'AIR', distance_km: 15.0, is_verified: true },
     };
 
     const destNode = resolveDestinationTransportNode(destName);
@@ -161,26 +243,24 @@ aiRouter.post('/chat', async (req: Request, res: Response): Promise<void> => {
   // 3. Fetch granular grounding citations from database
   const groundingCitations = await fetchGroundingCitations(matchedPlaces);
 
-  // 4. Try Gemini LLM Grounded Generation
+  // 4. Try Gemini LLM Grounded Generation (with multi-tier fallback: 2.5-flash -> 2.0-flash)
   let replyText = '';
   let usedModel = 'Virasat Grounded Engine';
   const ai = getAIClient();
 
   if (ai) {
-    try {
-      const placesContextStr = matchedPlaces
-        .map((p: any) => `- ${p.name} (${p.city_id || 'India'}): ${p.summary} [Confidence: ${p.data_confidence}, Source: ${p.source_url}]`)
-        .join('\n');
+    const placesContextStr = matchedPlaces
+      .map((p: any) => `- ${p.name} (${p.city_id || 'India'}): ${p.summary} [Confidence: ${p.data_confidence}, Source: ${p.source_url}]`)
+      .join('\n');
 
-      const trainSummary = transitComparison?.train ? `Train: ${transitComparison.train.summary} (${transitComparison.train.approx_duration})` : '';
-      const airSummary = transitComparison?.air ? `Air: ${transitComparison.air.summary} (${transitComparison.air.approx_duration})` : '';
-      const roadSummary = transitComparison?.road ? `Road: ${transitComparison.road.summary} (${transitComparison.road.approx_duration})` : '';
+    const trainSummary = transitComparison?.train ? `Train: ${transitComparison.train.summary} (${transitComparison.train.approx_duration})` : '';
+    const airSummary = transitComparison?.air ? `Air: ${transitComparison.air.summary} (${transitComparison.air.approx_duration})` : '';
+    const roadSummary = transitComparison?.road ? `Road: ${transitComparison.road.summary} (${transitComparison.road.approx_duration})` : '';
+    const transitContextStr = transitComparison
+      ? `Transit: ${transitComparison.origin} -> ${transitComparison.destination} (~${transitComparison.distance_km} km).\n${trainSummary}\n${airSummary}\n${roadSummary}`.trim()
+      : 'No transit queried.';
 
-      const transitContextStr = transitComparison
-        ? `Transit: ${transitComparison.origin} -> ${transitComparison.destination} (~${transitComparison.distance_km} km).\n${trainSummary}\n${airSummary}\n${roadSummary}`.trim()
-        : 'No transit queried.';
-
-      const systemInstruction = `You are the Virasat AI Tourism Concierge for India.
+    const systemInstruction = `You are the Virasat AI Tourism Concierge for India.
 RULES:
 1. ONLY recommend places provided in the verified places context.
 2. NEVER invent fake railway stations, airports, or monuments.
@@ -192,35 +272,39 @@ ${placesContextStr}
 
 ${transitContextStr}`;
 
-      const contents = [
-        ...(Array.isArray(history)
-          ? history.slice(-4).map((h: any) => ({
-              role: h.role === 'user' ? 'user' : 'model',
-              parts: [{ text: h.content || h.text || '' }],
-            }))
-          : []),
-        { role: 'user', parts: [{ text: rawQuery }] },
-      ];
+    const contents = [
+      ...(Array.isArray(history)
+        ? history.slice(-4).map((h: any) => ({
+            role: h.role === 'user' ? 'user' : 'model',
+            parts: [{ text: h.content || h.text || '' }],
+          }))
+        : []),
+      { role: 'user', parts: [{ text: rawQuery }] },
+    ];
 
-      const callRes = await Promise.race([
-        ai.models.generateContent({
-          model: 'gemini-2.5-flash',
-          contents,
-          config: { systemInstruction },
-        }),
-        new Promise<any>((_, reject) => setTimeout(() => reject(new Error('Timeout')), 6500)),
-      ]);
-
-      if (callRes?.text) {
-        replyText = callRes.text;
-        usedModel = 'Gemini 2.5 Flash';
+    const modelsToTry = ['gemini-2.5-flash', 'gemini-2.0-flash'];
+    for (const modelName of modelsToTry) {
+      try {
+        const callRes = await Promise.race([
+          ai.models.generateContent({
+            model: modelName,
+            contents,
+            config: { systemInstruction },
+          }),
+          new Promise<any>((_, reject) => setTimeout(() => reject(new Error('Timeout')), 5000)),
+        ]);
+        if (callRes?.text) {
+          replyText = callRes.text;
+          usedModel = modelName === 'gemini-2.5-flash' ? 'Gemini 2.5 Flash' : 'Gemini 2.0 Flash';
+          break;
+        }
+      } catch {
+        // Try next fallback model
       }
-    } catch {
-      // Fall through to deterministic response
     }
   }
 
-  // 5. Deterministic fallback if Gemini is offline or not configured
+  // 5. Deterministic fallback if Gemini is offline, timed out, or unconfigured
   if (!replyText) {
     if (transitComparison) {
       const trainMsg = transitComparison.train ? `🚆 **Train Option**: ${transitComparison.train.summary} (${transitComparison.train.approx_duration}). ${transitComparison.train.notes || ''}\n\n` : '';
@@ -244,7 +328,19 @@ ${transitContextStr}`;
     }
   }
 
-  // 6. Record user and assistant messages in DB
+  const latencyMs = Date.now() - startTime;
+
+  // 6. Run Hallucination Guardrail
+  const groundingAudit = auditHallucinations(
+    replyText,
+    matchedPlaces,
+    allDbPlaces,
+    groundingCitations.length,
+    latencyMs,
+    usedModel
+  );
+
+  // 7. Record user and assistant messages in DB
   const userMsgId = `msg-${Date.now()}-u`;
   const asstMsgId = `msg-${Date.now()}-a`;
 
@@ -261,7 +357,7 @@ ${transitContextStr}`;
     session_id: sessionId,
     role: 'assistant',
     content: replyText,
-    metadata_json: JSON.stringify({ model: usedModel }),
+    metadata_json: JSON.stringify({ model: usedModel, grounding_score: groundingAudit.grounding_score, latency_ms: latencyMs }),
     created_at: new Date().toISOString(),
   });
 
@@ -279,6 +375,23 @@ ${transitContextStr}`;
     });
   }
 
+  // 8. Log AI Query to Immutable Audit Trail
+  await db.audit.log({
+    id: `audit-ai-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
+    actor_id: userId || 'anonymous_traveller',
+    action: 'AI_QUERY_GROUNDED',
+    entity_type: 'ai_session',
+    entity_id: sessionId,
+    to_value: {
+      query: rawQuery,
+      model: usedModel,
+      grounding_score: groundingAudit.grounding_score,
+      citations_count: groundingCitations.length,
+      latency_ms: latencyMs,
+    },
+    created_at: new Date().toISOString(),
+  });
+
   const suggestedActions = transitComparison
     ? ['Plan 3-day trip', 'Explore nearby monuments', 'Change origin']
     : ['How to reach by train?', 'Plan 3-day itinerary', 'Explore near me'];
@@ -287,6 +400,10 @@ ${transitContextStr}`;
     success: true,
     conversation_id: sessionId,
     reply: replyText,
+    grounding_score: groundingAudit.grounding_score,
+    grounding_audit: groundingAudit,
+    latency_ms: latencyMs,
+    model_used: usedModel,
     suggested_places: matchedPlaces.map((p: any) => ({
       id: p.id,
       name: p.name,
@@ -309,7 +426,6 @@ ${transitContextStr}`;
 
 /**
  * GET /api/v1/ai/sessions
- * List chat sessions for authenticated user
  */
 aiRouter.get('/sessions', async (req: Request, res: Response): Promise<void> => {
   const userId = req.user?.id;
@@ -327,7 +443,6 @@ aiRouter.get('/sessions', async (req: Request, res: Response): Promise<void> => 
 
 /**
  * GET /api/v1/ai/sessions/:id
- * Retrieve message history and grounding records for a session
  */
 aiRouter.get('/sessions/:id', async (req: Request, res: Response): Promise<void> => {
   const { id } = req.params;
