@@ -135,3 +135,37 @@ export interface AuditLogRecord {
   to_value?: any;
   created_at: string;
 }
+
+export type SourceType = 'tier1_official' | 'tier2_trusted' | 'tier3_secondary' | 'tier4_community';
+
+export interface PlaceSourceRecord {
+  id: string;
+  source_name: string;
+  source_type: SourceType;
+  url: string;
+  created_at: string;
+}
+
+export interface PlaceFactRecord {
+  id: string;
+  place_id: string;
+  fact_key: string;
+  fact_value: string;
+  data_confidence: string; // 'OFFICIAL' | 'TRUSTED_THIRD_PARTY' | etc.
+  source_url: string;
+  source_type: SourceType;
+  verified_at: string;
+  expires_at?: string;
+  created_at: string;
+}
+
+export interface ImageLicenseRecord {
+  id: string;
+  image_url: string;
+  license_type: string;
+  attribution_required: boolean;
+  attribution_text?: string;
+  source_portal?: string;
+  created_at: string;
+}
+

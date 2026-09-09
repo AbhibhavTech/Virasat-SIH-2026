@@ -11,7 +11,7 @@ This document tracks the engineering and product progress of **Virasat**, aligne
 - [ ] Real user authentication and secure session handling *(In progress — Phase 1)*
 - [x] Initial Express in-memory API prototype with JSON datasets
 - [x] Baseline API contracts and schema documentation (`docs/api-contract.md`)
-- [ ] Verified heritage datasets across all regions *(Pending audit — Phase 2)*
+- [x] Verified heritage datasets across 8 flagship regions (Maharashtra, Delhi, Rajasthan, UP, Goa, Kerala, Karnataka, Tamil Nadu) with field-level provenance *(Audited — Phase 2)*
 
 ### Milestone 2: Geospatial & Multimodal Routing
 - [x] Interactive Leaflet geospatial map with state boundaries and destination markers
@@ -43,7 +43,7 @@ This document tracks the engineering and product progress of **Virasat**, aligne
 | **Phase 0** | **Truth & Hygiene** | Documentation honesty, naming consistency, unmarking false claims | **COMPLETED** |
 | **Phase 0.5** | **Baseline Snapshot** | Capture pre-migration build/lint/test baseline in `docs/current-state-baseline.md` | **COMPLETED** |
 | **Phase 1** | **Backend Foundations** | Real PostgreSQL database, real auth, URL routing (`react-router-dom`), TanStack Query | **COMPLETED** |
-| **Phase 2** | **Data Audit & Provenance** | Field-level provenance, verify curated 6–8 flagship states, replace generic stock photos | PENDING |
+| **Phase 2** | **Data Audit & Provenance** | Field-level provenance, verify curated 6–8 flagship states, replace generic stock photos | **COMPLETED** |
 | **Phase 3** | **Core Features** | Persistent itineraries, multimodal routing on DB, grounded AI with structured output | PENDING |
 | **Phase 3B**| **Stewardship & Roles** | Citizen heritage reporting, role-based access control, audit logging, destination health | PENDING |
 | **Phase 4** | **Google Login** | Google OAuth integration, account merging, persistent profile state | PENDING |

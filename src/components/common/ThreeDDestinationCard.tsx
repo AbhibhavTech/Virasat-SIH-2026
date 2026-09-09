@@ -1,11 +1,13 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { ArrowRight, MapPin, Sparkles, Compass } from 'lucide-react';
+import { ProvenanceBadge } from './ProvenanceBadge';
 
 interface ThreeDDestinationCardProps {
   id: string;
   title: string;
   subtitle: string;
   badge?: string;
+  confidence?: string;
   imageUrl: string;
   tagline?: string;
   onClick: () => void;
@@ -19,6 +21,7 @@ export const ThreeDDestinationCard: React.FC<ThreeDDestinationCardProps> = ({
   title,
   subtitle,
   badge,
+  confidence,
   imageUrl,
   tagline,
   onClick,
@@ -115,21 +118,24 @@ export const ThreeDDestinationCard: React.FC<ThreeDDestinationCardProps> = ({
 
         {/* Layer 3: Floating Cultural Motif & Depth Accents */}
         <div
-          className="absolute top-4 right-4 z-10 transition-transform duration-500 ease-out"
+          className="absolute top-4 right-4 z-10 flex items-center gap-1.5 transition-transform duration-500 ease-out"
           style={{
             transform: !reducedMotion ? 'translateZ(35px)' : undefined,
           }}
         >
+          {confidence && (
+            <ProvenanceBadge type={confidence} size="sm" />
+          )}
           {badge ? (
             <span className="px-3 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-amber-300/80 text-[11px] font-bold text-amber-900 shadow-warm flex items-center gap-1.5">
               <Sparkles className="w-3 h-3 text-amber-700" />
               <span>{badge}</span>
             </span>
-          ) : (
+          ) : !confidence ? (
             <div className="w-8 h-8 rounded-full bg-white/90 backdrop-blur-sm border border-[#EFE8DF] flex items-center justify-center text-amber-800 shadow-2xs">
               <Compass className="w-4 h-4 text-amber-700" />
             </div>
-          )}
+          ) : null}
         </div>
 
         {/* Layer 4: Floating Foreground Content with translateZ for real optical depth */}

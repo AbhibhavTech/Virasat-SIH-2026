@@ -10,7 +10,11 @@ import {
   FavoriteRecord,
   CitizenReportRecord,
   AuditLogRecord,
+  PlaceSourceRecord,
+  PlaceFactRecord,
+  ImageLicenseRecord,
 } from './types';
+import { runDatabaseSeed } from './seed';
 
 interface DatabaseData {
   users: Record<string, UserRecord>;
@@ -22,6 +26,9 @@ interface DatabaseData {
   favorites: Record<string, FavoriteRecord>;
   reports: Record<string, CitizenReportRecord>;
   audit_logs: Record<string, AuditLogRecord>;
+  place_sources: Record<string, PlaceSourceRecord>;
+  place_facts: Record<string, PlaceFactRecord>;
+  image_licenses: Record<string, ImageLicenseRecord>;
 }
 
 class DatabaseManager {
@@ -43,6 +50,9 @@ class DatabaseManager {
       favorites: {},
       reports: {},
       audit_logs: {},
+      place_sources: {},
+      place_facts: {},
+      image_licenses: {},
     };
   }
 
@@ -67,6 +77,9 @@ class DatabaseManager {
           favorites: parsed.favorites || {},
           reports: parsed.reports || {},
           audit_logs: parsed.audit_logs || {},
+          place_sources: parsed.place_sources || {},
+          place_facts: parsed.place_facts || {},
+          image_licenses: parsed.image_licenses || {},
         };
       } catch (err) {
         console.error('[DB] Failed to load local database, initializing fresh store:', err);
@@ -75,8 +88,8 @@ class DatabaseManager {
 
     this.isInitialized = true;
 
-    // If fresh / empty, auto-seed from static JSON files
-    if (Object.keys(this.data.places).length === 0) {
+    // If fresh / empty or missing place_facts from Phase 2, auto-seed
+    if (Object.keys(this.data.places).length === 0 || Object.keys(this.data.place_facts).length === 0) {
       await this.seedFromStaticFiles();
     }
   }
@@ -94,167 +107,19 @@ class DatabaseManager {
     }
   }
 
-  // -------------------------------------------------------------
-  // SEEDING LOGIC (Phase 1 Task 2: data_confidence='unverified')
-  // -------------------------------------------------------------
   public async seedFromStaticFiles(): Promise<void> {
-    console.log('[DB] Seeding persistent database from JSON files with data_confidence=unverified...');
-    const rootDataDir = path.join(process.cwd(), 'data');
-
-    // 1. States
-    const statesPath = path.join(rootDataDir, 'states.json');
-    if (fs.existsSync(statesPath)) {
-      try {
-        const statesList = JSON.parse(fs.readFileSync(statesPath, 'utf-8'));
-        if (Array.isArray(statesList)) {
-          for (const s of statesList) {
-            this.data.states[s.id] = {
-              id: s.id,
-              name: s.name,
-              capital: s.capital || '',
-              region: s.region || '',
-              description: s.description || '',
-              hero_image_id: s.hero_image_id,
-              created_at: new Date().toISOString(),
-            };
-          }
-        }
-      } catch (e) {
-        console.error('[DB] Error reading states.json:', e);
-      }
+    const seeded = await runDatabaseSeed();
+    this.data.states = seeded.states;
+    this.data.cities = seeded.cities;
+    this.data.places = seeded.places;
+    this.data.transit_nodes = seeded.transit_nodes;
+    this.data.place_sources = seeded.place_sources;
+    this.data.place_facts = seeded.place_facts;
+    this.data.image_licenses = seeded.image_licenses;
+    if (Object.keys(this.data.users).length === 0) {
+      this.data.users = seeded.users;
     }
-
-    // 2. Cities
-    const citiesPath = path.join(rootDataDir, 'cities.json');
-    if (fs.existsSync(citiesPath)) {
-      try {
-        const citiesList = JSON.parse(fs.readFileSync(citiesPath, 'utf-8'));
-        if (Array.isArray(citiesList)) {
-          for (const c of citiesList) {
-            this.data.cities[c.id] = {
-              id: c.id,
-              state_id: c.state_id || '',
-              name: c.name,
-              lat: Number(c.lat) || 0,
-              lng: Number(c.lng) || 0,
-              description: c.description || '',
-              created_at: new Date().toISOString(),
-            };
-          }
-        }
-      } catch (e) {
-        console.error('[DB] Error reading cities.json:', e);
-      }
-    }
-
-    // 3. Places from Master Tourism Database
-    const dbPath = path.join(rootDataDir, 'india_tourism_database.json');
-    if (fs.existsSync(dbPath)) {
-      try {
-        const dbContent = JSON.parse(fs.readFileSync(dbPath, 'utf-8'));
-        if (Array.isArray(dbContent.states)) {
-          for (const state of dbContent.states) {
-            if (Array.isArray(state.cities)) {
-              for (const city of state.cities) {
-                const categoryKeys = ['heritage', 'monuments', 'museums', 'tourist_places', 'religious_cultural', 'nature_parks_zoo', 'attractions', 'places'];
-                for (const catKey of categoryKeys) {
-                  const list = (city as any)[catKey];
-                  if (Array.isArray(list)) {
-                    for (const attr of list) {
-                      const placeId = attr.id || `${city.id}-${attr.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
-                      const visitingHours = typeof attr.timings === 'string'
-                        ? attr.timings
-                        : (attr.timings?.opening_time && attr.timings?.closing_time
-                            ? `${attr.timings.opening_time} - ${attr.timings.closing_time}`
-                            : (attr.visiting_hours || '09:00 - 17:00'));
-
-                      const domesticFee = Number(attr.fees?.domestic ?? attr.entry_fee?.domestic ?? 0);
-                      const intlFee = Number(attr.fees?.international ?? attr.entry_fee?.foreigner ?? 0);
-
-                      this.data.places[placeId] = {
-                        id: placeId,
-                        city_id: city.id,
-                        state_id: state.id,
-                        name: attr.name,
-                        category: attr.category || catKey || 'heritage',
-                        summary: attr.summary || attr.historical_significance || attr.description || '',
-                        description: attr.description || attr.summary || '',
-                        history: attr.history || attr.historical_significance || '',
-                        lat: Number(attr.lat || attr.coordinates?.lat || city.coordinates?.lat || 0),
-                        lng: Number(attr.lng || attr.coordinates?.lng || city.coordinates?.lng || 0),
-                        entry_fee_domestic: isNaN(domesticFee) ? 0 : domesticFee,
-                        entry_fee_intl: isNaN(intlFee) ? 0 : intlFee,
-                        visiting_hours: visitingHours,
-                        heritage_status: attr.heritage_status || 'State Protected',
-                        data_confidence: 'unverified', // Per Phase 1 rule: all initial legacy data is UNVERIFIED
-                        source_url: attr.source_page || attr.source_url || 'https://asi.nic.in',
-                        last_verified_at: undefined,
-                        rating: Number(attr.rating) || 4.5,
-                        thumbnail_url: attr.image_url || attr.thumbnail_url || 'https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80',
-                        created_at: new Date().toISOString(),
-                      };
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      } catch (e) {
-        console.error('[DB] Error reading india_tourism_database.json:', e);
-      }
-    }
-
-    // 4. Railway Stations (Deduplicated)
-    const stationsPath = path.join(rootDataDir, 'railway_stations.json');
-    if (fs.existsSync(stationsPath)) {
-      try {
-        const stationsList = JSON.parse(fs.readFileSync(stationsPath, 'utf-8'));
-        if (Array.isArray(stationsList)) {
-          const seenCodes = new Set<string>();
-          for (const stn of stationsList) {
-            const code = (stn.code || stn.id).toUpperCase();
-            if (seenCodes.has(code)) {
-              continue; // Deduplicate to satisfy UNIQUE constraint
-            }
-            seenCodes.add(code);
-            const stnId = stn.id || code.toLowerCase();
-            this.data.transit_nodes[stnId] = {
-              id: stnId,
-              type: 'railway',
-              name: stn.name,
-              code,
-              lat: Number(stn.lat) || 0,
-              lng: Number(stn.lng) || 0,
-              city_id: stn.city_id,
-              is_junction: Boolean(stn.is_junction || stn.isJunction),
-              created_at: new Date().toISOString(),
-            };
-          }
-        }
-      } catch (e) {
-        console.error('[DB] Error reading railway_stations.json:', e);
-      }
-    }
-
-    // 5. Seed default admin user for initial operations
-    const bcrypt = await import('bcryptjs');
-    const adminSalt = await bcrypt.genSalt(10);
-    const adminHash = await bcrypt.hash('AdminVirasat2026!', adminSalt);
-    this.data.users['user-admin-1'] = {
-      id: 'user-admin-1',
-      email: 'admin@virasat.in',
-      password_hash: adminHash,
-      name: 'Virasat Admin',
-      home_city: 'New Delhi',
-      auth_provider: 'local',
-      role: 'admin',
-      created_at: new Date().toISOString(),
-      updated_at: new Date().toISOString(),
-    };
-
     this.persist();
-    console.log(`[DB] Seeding complete: ${Object.keys(this.data.states).length} states, ${Object.keys(this.data.cities).length} cities, ${Object.keys(this.data.places).length} places, ${Object.keys(this.data.transit_nodes).length} transit nodes.`);
   }
 
   // -------------------------------------------------------------
@@ -290,7 +155,7 @@ class DatabaseManager {
     },
     list: async (): Promise<UserRecord[]> => {
       return Object.values(this.data.users);
-    }
+    },
   };
 
   // -------------------------------------------------------------
@@ -301,6 +166,8 @@ class DatabaseManager {
       stateId?: string;
       cityId?: string;
       category?: string;
+      confidence?: string;
+      data_confidence?: string;
       limit?: number;
       offset?: number;
     }): Promise<{ places: PlaceRecord[]; total: number }> => {
@@ -313,6 +180,10 @@ class DatabaseManager {
       }
       if (filters?.category) {
         list = list.filter((p) => p.category.toLowerCase() === filters.category?.toLowerCase());
+      }
+      const targetConfidence = filters?.confidence || filters?.data_confidence;
+      if (targetConfidence) {
+        list = list.filter((p) => p.data_confidence.toLowerCase() === targetConfidence.toLowerCase());
       }
       const total = list.length;
       const offset = filters?.offset || 0;
@@ -397,6 +268,51 @@ class DatabaseManager {
     },
     findById: async (id: string): Promise<TransitNodeRecord | null> => {
       return this.data.transit_nodes[id] || null;
+    },
+  };
+
+  // -------------------------------------------------------------
+  // PLACE SOURCES REPOSITORY (Section XI.2)
+  // -------------------------------------------------------------
+  public placeSources = {
+    findAll: async (): Promise<PlaceSourceRecord[]> => {
+      return Object.values(this.data.place_sources);
+    },
+    findById: async (id: string): Promise<PlaceSourceRecord | null> => {
+      return this.data.place_sources[id] || null;
+    },
+    create: async (record: PlaceSourceRecord): Promise<PlaceSourceRecord> => {
+      this.data.place_sources[record.id] = { ...record };
+      this.persist();
+      return record;
+    },
+  };
+
+  // -------------------------------------------------------------
+  // PLACE FACTS REPOSITORY (Field-level provenance, Section XI.1 & XV.2)
+  // -------------------------------------------------------------
+  public placeFacts = {
+    findByPlaceId: async (placeId: string): Promise<PlaceFactRecord[]> => {
+      return Object.values(this.data.place_facts).filter((f) => f.place_id === placeId);
+    },
+    create: async (record: PlaceFactRecord): Promise<PlaceFactRecord> => {
+      this.data.place_facts[record.id] = { ...record };
+      this.persist();
+      return record;
+    },
+  };
+
+  // -------------------------------------------------------------
+  // IMAGE LICENSES REPOSITORY (Section XI.4 & XV.2)
+  // -------------------------------------------------------------
+  public imageLicenses = {
+    findByUrl: async (imageUrl: string): Promise<ImageLicenseRecord | null> => {
+      return Object.values(this.data.image_licenses).find((l) => l.image_url === imageUrl) || null;
+    },
+    create: async (record: ImageLicenseRecord): Promise<ImageLicenseRecord> => {
+      this.data.image_licenses[record.id] = { ...record };
+      this.persist();
+      return record;
     },
   };
 

@@ -18,7 +18,7 @@ async function runTests() {
 
   // Verify seed counts
   const states = await db.states.findAll();
-  const places = await db.places.findAll();
+  const places = await db.places.findAll({ limit: 300 });
   const transit = await db.transit.findAll();
 
   if (states.length === 0 || places.total === 0 || transit.length === 0) {
@@ -26,12 +26,14 @@ async function runTests() {
   }
   console.log(`✓ Seed check passed: ${states.length} states, ${places.total} places, ${transit.length} transit nodes`);
 
-  // Verify data_confidence on seeded places is 'unverified'
+  // Verify data_confidence contains both official flagship places and unverified places
   const samplePlace = places.places[0];
-  if (samplePlace.data_confidence !== 'unverified') {
-    throw new Error(`Expected data_confidence to be 'unverified', got: ${samplePlace.data_confidence}`);
+  const hasOfficial = places.places.some((p) => p.data_confidence === 'official');
+  const hasUnverified = places.places.some((p) => p.data_confidence === 'unverified');
+  if (!hasOfficial || !hasUnverified) {
+    throw new Error(`Expected both official and unverified places, got official=${hasOfficial}, unverified=${hasUnverified}`);
   }
-  console.log('✓ Provenance check passed: Seeded places have data_confidence="unverified"');
+  console.log('✓ Provenance check passed: Database contains official verified monuments and unverified legacy places');
 
   // 2. Test User Creation & Password Hashing
   const bcrypt = await import('bcryptjs');

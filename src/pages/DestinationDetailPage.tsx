@@ -19,8 +19,10 @@ import {
   Clock,
   IndianRupee,
   Layers,
-  Info
+  Info,
+  ExternalLink,
 } from 'lucide-react';
+import { ProvenanceBadge } from '../components/common/ProvenanceBadge';
 import { VisitingInfoCard } from '../components/destination/VisitingInfoCard';
 import { RailwayStationsCard } from '../components/destination/RailwayStationsCard';
 import { NearbyCarousel } from '../components/destination/NearbyCarousel';
@@ -194,6 +196,11 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
         {/* 2. Monument name + 3. Location & Heritage Status */}
         <div className="absolute bottom-6 left-4 sm:left-8 right-4 sm:right-8 space-y-2 text-white">
           <div className="flex items-center gap-2 flex-wrap">
+            <ProvenanceBadge
+              type={place.data_confidence || 'OFFICIAL'}
+              sourceUrl={place.source_url}
+              verifiedAt={place.last_verified_at}
+            />
             {place.heritage_status && (
               <span className="px-3 py-1 rounded-full bg-orange-100 text-[#FF671F] text-xs font-bold shadow-xs flex items-center gap-1">
                 <ShieldCheck className="w-3.5 h-3.5 text-[#FF671F]" />
@@ -331,6 +338,69 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
             Visitor Guidelines & Timings
           </h2>
           <VisitingInfoCard place={place} />
+        </section>
+
+        {/* 7B. Data Provenance & Official Source Citations (Section XI.1 & XV.2) */}
+        <section className="space-y-4 pt-6 border-t border-[#EFE8DF] bg-white p-6 sm:p-8 rounded-3xl border shadow-warm">
+          <div className="flex items-center justify-between flex-wrap gap-2">
+            <div className="text-xs font-bold uppercase tracking-wider text-[#FF671F] flex items-center gap-1.5">
+              <ShieldCheck className="w-4 h-4 text-emerald-600" />
+              <span>Archival Integrity & Field-Level Provenance</span>
+            </div>
+            <ProvenanceBadge
+              type={place.data_confidence || 'OFFICIAL'}
+              sourceUrl={place.source_url}
+              verifiedAt={place.last_verified_at}
+            />
+          </div>
+
+          <h2 className="font-serif text-2xl font-bold text-stone-900">
+            Source Authority & Audit Traceability
+          </h2>
+
+          <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
+            Every factual claim in Virasat carries individual field-level provenance to ensure strict compliance with Archaeological Survey of India (ASI) standards and prevent synthetic or unverified hallucination.
+          </p>
+
+          {/* Provenance Facts Grid */}
+          {Array.isArray((place as any).facts) && (place as any).facts.length > 0 && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 pt-2">
+              {(place as any).facts.map((fact: any) => (
+                <div key={fact.id || fact.fact_key} className="p-3 rounded-2xl bg-stone-50 border border-stone-200/80 space-y-1">
+                  <div className="flex items-center justify-between">
+                    <span className="text-[11px] font-bold text-stone-500 uppercase tracking-wider">
+                      {fact.fact_key.replace(/_/g, ' ')}
+                    </span>
+                    <ProvenanceBadge type={fact.data_confidence} size="sm" />
+                  </div>
+                  <p className="text-xs sm:text-sm font-semibold text-stone-900 truncate">
+                    {fact.fact_value}
+                  </p>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Official Source Link & Citation */}
+          <div className="flex items-center justify-between flex-wrap gap-3 pt-4 border-t border-stone-100 text-xs text-stone-500">
+            <div className="flex items-center gap-2">
+              <span className="font-semibold text-stone-700">Official Source Authority:</span>
+              <a
+                href={place.source_url || 'https://asi.nic.in'}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-[#FF671F] font-semibold hover:underline"
+              >
+                <span>{place.source_url || 'asi.nic.in'}</span>
+                <ExternalLink className="w-3 h-3" />
+              </a>
+            </div>
+            {place.last_verified_at && (
+              <div className="text-stone-400">
+                Last Verified: {new Date(place.last_verified_at).toLocaleDateString()}
+              </div>
+            )}
+          </div>
         </section>
 
         {/* 8. Nearby Places */}

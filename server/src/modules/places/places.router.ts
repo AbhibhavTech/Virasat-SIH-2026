@@ -8,7 +8,7 @@ export const placesRouter = Router();
  * GET /api/v1/places
  */
 placesRouter.get('/', async (req: Request, res: Response): Promise<void> => {
-  const { stateId, state, cityId, city, category, limit, offset } = req.query;
+  const { stateId, state, cityId, city, category, confidence, data_confidence, limit, offset } = req.query;
 
   const parsedLimit = Math.min(Math.max(Number(limit) || 20, 1), 100);
   const parsedOffset = Math.max(Number(offset) || 0, 0);
@@ -17,6 +17,7 @@ placesRouter.get('/', async (req: Request, res: Response): Promise<void> => {
     stateId: (stateId || state) as string | undefined,
     cityId: (cityId || city) as string | undefined,
     category: category as string | undefined,
+    confidence: (confidence || data_confidence) as string | undefined,
     limit: parsedLimit,
     offset: parsedOffset,
   });
@@ -70,9 +71,20 @@ placesRouter.get('/:id', async (req: Request, res: Response): Promise<void> => {
     return;
   }
 
+  const facts = await db.placeFacts.findByPlaceId(place.id);
+  const sources = await db.placeSources.findAll();
+  const imageLicense = place.thumbnail_url ? await db.imageLicenses.findByUrl(place.thumbnail_url) : null;
+
+  const enriched = {
+    ...place,
+    facts,
+    sources,
+    image_license: imageLicense,
+  };
+
   res.json({
     success: true,
-    data: place,
-    place,
+    data: enriched,
+    place: enriched,
   });
 });

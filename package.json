@@ -8,7 +8,8 @@
     "build": "vite build && esbuild server.ts --bundle --platform=node --format=cjs --packages=external --sourcemap --outfile=dist/server.cjs",
     "start": "node dist/server.cjs",
     "lint": "tsc --noEmit",
-    "test": "node scripts/check_duplicate_stations.mjs && tsx scripts/test_phase1_backend.mjs",
+    "test": "node scripts/check_duplicate_stations.mjs && node scripts/check_data_quality.mjs && tsx scripts/test_phase1_backend.mjs",
+    "check:data": "node scripts/check_data_quality.mjs",
     "check:stations": "node scripts/check_duplicate_stations.mjs"
   },
   "dependencies": {

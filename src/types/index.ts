@@ -99,6 +99,9 @@ export interface PlaceSummary {
     '3d': boolean;
   };
   heritage_status?: string;
+  data_confidence?: string;
+  source_url?: string;
+  last_verified_at?: string;
   entry_fee?: { domestic: number; international: number; currency: string };
   visiting_hours?: string;
   area_neighborhood?: string;
@@ -126,6 +129,18 @@ export interface Model3DInfo {
   poly_count?: string;
 }
 
+export interface PlaceFactDetail {
+  id: string;
+  place_id: string;
+  fact_key: string;
+  fact_value: string;
+  data_confidence: string;
+  source_url: string;
+  source_type: string;
+  verified_at: string;
+  expires_at?: string;
+}
+
 export interface PlaceDetail extends PlaceSummary {
   country?: string;
   description?: string;
@@ -136,6 +151,9 @@ export interface PlaceDetail extends PlaceSummary {
   best_time_to_visit?: string;
   visiting_info?: VisitingInfo;
   model_3d?: Model3DInfo;
+  facts?: PlaceFactDetail[];
+  sources?: any[];
+  image_license?: any;
 }
 
 export interface PlaceListResponse {

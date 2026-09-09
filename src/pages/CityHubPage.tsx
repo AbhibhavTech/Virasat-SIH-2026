@@ -335,6 +335,7 @@ export const CityHubPage: React.FC<CityHubPageProps> = ({
                   title={p.name}
                   subtitle={`${p.city}, ${p.state}`}
                   badge={has3d ? '3D Available' : p.category || 'Famous Place'}
+                  confidence={p.data_confidence}
                   imageUrl={
                     p.thumbnail_url ||
                     'https://images.unsplash.com/photo-1548013146-72479768bada?w=600&auto=format&fit=crop&q=80'
@@ -357,6 +358,7 @@ export const CityHubPage: React.FC<CityHubPageProps> = ({
                 title={p.name}
                 subtitle={`${p.city}, ${p.state}`}
                 badge={has3d ? '3D Available' : p.category || 'Famous Place'}
+                confidence={p.data_confidence}
                 imageUrl={
                   p.thumbnail_url ||
                   'https://images.unsplash.com/photo-1548013146-72479768bada?w=600&auto=format&fit=crop&q=80'
