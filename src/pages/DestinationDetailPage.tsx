@@ -33,6 +33,8 @@ import { GatewayOfIndia3D } from '../components/threed/GatewayOfIndia3D';
 import { InteractiveHeritageMonument3D, Monument3DType } from '../components/threed/InteractiveHeritageMonument3D';
 import { VirasatHeritageGuide } from '../components/cultural-guides/VirasatHeritageGuide';
 import { SafarRouteGuide } from '../components/cultural-guides/SafarRouteGuide';
+import { updatePageSEO, generateTouristAttractionSchema } from '../utils/seo';
+import { analytics } from '../services/analytics';
 
 interface DestinationDetailPageProps {
   placeId: string;
@@ -80,6 +82,16 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
         const data = await api.getPlaceById(placeId);
         if (isMounted) {
           setPlace(data);
+          if (data) {
+            updatePageSEO({
+              title: data.name,
+              description: data.summary || data.description,
+              ogType: 'place',
+              ogImage: data.thumbnail_url || data.images?.[0],
+              jsonLd: generateTouristAttractionSchema(data),
+            });
+            analytics.trackPlaceView(data.id, data.name, data.city);
+          }
         }
         try {
           const health = await api.getDestinationHealthForPlace(placeId);

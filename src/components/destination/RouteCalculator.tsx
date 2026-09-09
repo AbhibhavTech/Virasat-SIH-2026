@@ -23,6 +23,7 @@ import {
   Info
 } from 'lucide-react';
 import { MultimodalRoute3DVisualizer } from './MultimodalRoute3DVisualizer';
+import { analytics } from '../../services/analytics';
 
 interface RouteCalculatorProps {
   destinationId: string;
@@ -109,6 +110,7 @@ export const RouteCalculator: React.FC<RouteCalculatorProps> = ({
     try {
       const data = await api.getRoutes(originQuery, destinationId, selectedMode);
       setRoutes(data);
+      analytics.trackRouteCalculation(originQuery, destinationId, selectedMode);
     } catch (err: any) {
       setError('Unable to calculate multimodal route. Showing verified geodesic metrics.');
     } finally {

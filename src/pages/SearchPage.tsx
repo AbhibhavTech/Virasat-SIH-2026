@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Search, MapPin, Filter, Star, ArrowLeft } from 'lucide-react';
 import { api } from '../services/api';
+import { analytics } from '../services/analytics';
 import { PlaceSummary } from '../types';
 
 interface SearchPageProps {
@@ -24,6 +25,9 @@ export const SearchPage: React.FC<SearchPageProps> = ({
     try {
       const data = await api.searchPlaces(searchTerm);
       setResults(data);
+      if (searchTerm.trim()) {
+        analytics.trackSearch(searchTerm.trim(), data.length);
+      }
     } catch (err) {
       console.error('Search failed:', err);
     } finally {

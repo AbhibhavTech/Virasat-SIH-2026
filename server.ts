@@ -32,6 +32,8 @@ import { routingRouter } from './server/src/modules/routing/routing.router';
 import { itineraryRouter } from './server/src/modules/itinerary/itinerary.router';
 import { aiRouter } from './server/src/modules/ai/ai.router';
 import { healthRouter } from './server/src/modules/health/health.router';
+import { seoRouter } from './server/src/modules/seo/seo.router';
+import { analyticsRouter } from './server/src/modules/analytics/analytics.router';
 import { requestLogger, securityHeaders, errorHandler } from './server/src/middleware/observability';
 
 const app = express();
@@ -60,6 +62,11 @@ app.use(express.json());
 app.use(requestIdMiddleware);
 
 // -------------------------------------------------------------
+// SEO Endpoints (Robots.txt & Sitemap.xml)
+// -------------------------------------------------------------
+app.use('/', seoRouter);
+
+// -------------------------------------------------------------
 // Health Probes & Observability Endpoints
 // -------------------------------------------------------------
 app.use('/api', healthRouter);
@@ -77,6 +84,8 @@ app.use('/api/v1/reports', reportsRouter);
 app.use('/api/v1/routing', routingRouter);
 app.use('/api/v1/itineraries', itineraryRouter);
 app.use('/api/v1/ai', aiRouter);
+app.use('/api/v1/analytics', analyticsRouter);
+app.use('/api/analytics', analyticsRouter);
 
 // -------------------------------------------------------------
 // Data Repositories & In-Memory Store

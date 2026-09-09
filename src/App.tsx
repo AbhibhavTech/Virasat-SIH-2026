@@ -13,9 +13,12 @@ import { AuthModal } from './components/auth/AuthModal';
 import { OnboardingSurveyModal } from './components/auth/OnboardingSurveyModal';
 import { BrandSplashScreen } from './components/common/BrandSplashScreen';
 import { DatabaseStatusModal } from './components/database/DatabaseStatusModal';
+import { AnalyticsDashboardModal } from './components/analytics/AnalyticsDashboardModal';
 import { PlaceSummary } from './types';
 import { api } from './services/api';
 import { useAuth } from './contexts/AuthContext';
+import { updatePageSEO, generateWebSiteSchema } from './utils/seo';
+import { analytics } from './services/analytics';
 
 const AppContent: React.FC = () => {
   const { setIsAuthModalOpen } = useAuth();
@@ -25,9 +28,49 @@ const AppContent: React.FC = () => {
   const [selectedCity, setSelectedCity] = useState<string>('All India');
   const [places, setPlaces] = useState<PlaceSummary[]>([]);
   const [isDatabaseModalOpen, setIsDatabaseModalOpen] = useState<boolean>(false);
+  const [isAnalyticsModalOpen, setIsAnalyticsModalOpen] = useState<boolean>(false);
   const [isAppInitializing, setIsAppInitializing] = useState<boolean>(true);
 
   const activeTab: NavTab = getActiveTabFromPath(location.pathname);
+
+  useEffect(() => {
+    analytics.trackPageView(location.pathname);
+
+    const isPrivate = ['/profile', '/trips', '/favorites'].some((p) => location.pathname.startsWith(p));
+    let title = "Discover India's Living Heritage";
+    const desc = "Explore verified monuments, cultural heritage, and living traditions across India with multimodal routing and 3D exploration.";
+
+    if (location.pathname === '/') {
+      title = "Discover India's Living Heritage";
+    } else if (location.pathname.startsWith('/explore')) {
+      title = "Explore Indian States & Living Heritage";
+    } else if (location.pathname.startsWith('/heritage')) {
+      title = "Verified Heritage Sites & UNESCO Monuments";
+    } else if (location.pathname.startsWith('/itinerary')) {
+      title = "AI Multimodal Itinerary & Trip Planner";
+    } else if (location.pathname.startsWith('/map')) {
+      title = "Interactive Heritage Map & Transport Geometry";
+    } else if (location.pathname.startsWith('/3d')) {
+      title = "Interactive 3D Heritage Monument Explorer";
+    } else if (location.pathname.startsWith('/ai')) {
+      title = "Virasat AI Heritage Concierge & Travel Guide";
+    } else if (location.pathname.startsWith('/trips')) {
+      title = "My Saved Heritage Itineraries";
+    } else if (location.pathname.startsWith('/favorites')) {
+      title = "My Bookmarked Heritage Destinations";
+    } else if (location.pathname.startsWith('/profile')) {
+      title = "Traveler Profile & Heritage Pass";
+    }
+
+    if (!location.pathname.startsWith('/place/')) {
+      updatePageSEO({
+        title,
+        description: desc,
+        noIndex: isPrivate,
+        jsonLd: location.pathname === '/' ? generateWebSiteSchema() : undefined,
+      });
+    }
+  }, [location.pathname]);
 
   useEffect(() => {
     let isMounted = true;
@@ -99,6 +142,7 @@ const AppContent: React.FC = () => {
         onOpenSearch={() => handleSearch('')}
         onOpenAuthModal={() => setIsAuthModalOpen(true)}
         onOpenDatabaseStatus={() => setIsDatabaseModalOpen(true)}
+        onOpenAnalytics={() => setIsAnalyticsModalOpen(true)}
       />
 
       {/* Contextual Sub-Nav Bar */}
@@ -139,6 +183,10 @@ const AppContent: React.FC = () => {
       <DatabaseStatusModal
         isOpen={isDatabaseModalOpen}
         onClose={() => setIsDatabaseModalOpen(false)}
+      />
+      <AnalyticsDashboardModal
+        isOpen={isAnalyticsModalOpen}
+        onClose={() => setIsAnalyticsModalOpen(false)}
       />
     </div>
   );

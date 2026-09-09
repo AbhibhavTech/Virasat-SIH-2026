@@ -19,6 +19,7 @@ import {
   ExternalLink,
   Database,
   Home,
+  BarChart3,
 } from 'lucide-react';
 import { NavTab } from './Sidebar';
 import { useAuth } from '../../contexts/AuthContext';
@@ -33,6 +34,7 @@ interface TopNavbarProps {
   onOpenAuthModal?: () => void;
   onOpenSearch?: () => void;
   onOpenDatabaseStatus?: () => void;
+  onOpenAnalytics?: () => void;
 }
 
 export const TopNavbar: React.FC<TopNavbarProps> = ({
@@ -43,6 +45,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
   onOpenAuthModal,
   onOpenSearch,
   onOpenDatabaseStatus,
+  onOpenAnalytics,
 }) => {
   const { user, logout } = useAuth();
   const isAuthenticated = Boolean(user);
@@ -226,6 +229,29 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
                         </div>
                         <div className="text-[11px] text-stone-500 line-clamp-1">
                           11 Master categories & storage status
+                        </div>
+                      </div>
+                    </button>
+
+                    <button
+                      onClick={() => {
+                        setMoreDropdownOpen(false);
+                        onOpenAnalytics?.();
+                      }}
+                      className="w-full flex items-start gap-3 p-2.5 rounded-xl text-left hover:bg-purple-50/70 text-stone-700 transition group"
+                    >
+                      <div className="p-2 rounded-lg bg-purple-50 text-purple-800 border border-purple-200 shrink-0 mt-0.5 group-hover:bg-purple-100 transition">
+                        <BarChart3 className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold text-stone-900 flex items-center gap-1.5">
+                          Evaluation Telemetry
+                          <span className="text-[9px] font-semibold px-1.5 py-0.2 rounded bg-purple-50 text-purple-800 border border-purple-200">
+                            SIH 2026
+                          </span>
+                        </div>
+                        <div className="text-[11px] text-stone-500 line-clamp-1">
+                          Live metrics, routes & AI grounding rate
                         </div>
                       </div>
                     </button>

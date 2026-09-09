@@ -767,6 +767,35 @@ class DatabaseManager {
         .slice(0, limit);
     },
   };
+
+  public audit_logs = {
+    create: async (record: {
+      user_id?: string;
+      actor_id?: string;
+      action: string;
+      entity_type: string;
+      entity_id: string;
+      details?: any;
+      from_value?: any;
+      to_value?: any;
+    }): Promise<AuditLogRecord> => {
+      const fullRecord: AuditLogRecord = {
+        id: `audit-${Date.now()}-${Math.random().toString(36).slice(2, 7)}`,
+        actor_id: record.actor_id || record.user_id,
+        action: record.action,
+        entity_type: record.entity_type,
+        entity_id: record.entity_id,
+        from_value: record.from_value,
+        to_value: record.to_value || record.details,
+        created_at: new Date().toISOString(),
+      };
+      await this.audit.log(fullRecord);
+      return fullRecord;
+    },
+    findAll: async (limit = 100): Promise<AuditLogRecord[]> => {
+      return this.audit.findAll(limit);
+    },
+  };
 }
 
 export const db = new DatabaseManager();

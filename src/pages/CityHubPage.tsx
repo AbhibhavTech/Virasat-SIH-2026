@@ -19,6 +19,7 @@ import {
 import { NavTab } from '../components/layout/Sidebar';
 import { CityImmersionHeader } from '../components/destination/CityImmersionHeader';
 import { ThreeDDestinationCard } from '../components/common/ThreeDDestinationCard';
+import { updatePageSEO, generateCitySchema } from '../utils/seo';
 
 interface CityHubPageProps {
   onSelectPlace: (id: string) => void;
@@ -155,6 +156,12 @@ export const CityHubPage: React.FC<CityHubPageProps> = ({
   ];
 
   useEffect(() => {
+    updatePageSEO({
+      title: `${selectedCity} Heritage & Attractions`,
+      description: `Explore top monuments, cultural landmarks, and heritage attractions in ${selectedCity}.`,
+      jsonLd: generateCitySchema({ name: selectedCity }),
+    });
+
     const loadCityData = async () => {
       setLoading(true);
       try {

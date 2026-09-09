@@ -1,0 +1,14 @@
+# Virasat Heritage Platform Robots Policy
+User-agent: *
+Allow: /
+Allow: /search
+Allow: /place/
+Allow: /city/
+Allow: /heritage-3d
+Disallow: /api/
+Disallow: /admin/
+Disallow: /profile
+Disallow: /trips
+Disallow: /favorites
+
+Sitemap: https://virasat.ind.in/sitemap.xml
