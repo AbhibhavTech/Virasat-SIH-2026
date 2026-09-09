@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "purpose": "Companion image-source registry for the YatraVerse master tourism database.",
+  "purpose": "Companion image-source registry for the Virasat master tourism database.",
   "coverage": {
     "states": 28,
     "union_territories": 8,

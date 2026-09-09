@@ -62,11 +62,11 @@ export const AuthModal: React.FC = () => {
         <div className="space-y-1.5">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#F7F3EA] border border-[#D8D2C8] text-[#252525] text-xs font-semibold">
             <Sparkles className="w-3.5 h-3.5 text-orange-600" />
-            <span>BharatYatra • Heritage & Transit Portal</span>
+            <span>Virasat • Heritage & Transit Portal</span>
           </div>
 
           <h2 className="text-xl sm:text-2xl font-bold text-[#252525] tracking-tight">
-            {isRegister ? 'Create BharatYatra Account' : 'Welcome Back'}
+            {isRegister ? 'Create Virasat Account' : 'Welcome Back'}
           </h2>
 
           <p className="text-xs sm:text-sm text-[#6B6B6B] leading-relaxed">

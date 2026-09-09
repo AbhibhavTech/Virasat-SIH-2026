@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "YatraVerse Tourism Image Record",
+  "title": "Virasat Tourism Image Record",
   "type": "object",
   "required": [
     "entity_id",

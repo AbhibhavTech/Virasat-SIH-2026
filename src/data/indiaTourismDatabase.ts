@@ -1,5 +1,5 @@
 export const INDIA_TOURISM_DATABASE = {
-  "title": "CODENOVA — COMPLETE INDIA TOURISM DATABASE",
+  "title": "VIRASAT — COMPLETE INDIA TOURISM DATABASE",
   "version": "2.5.0",
   "states_count": 28,
   "cities_count": 174,

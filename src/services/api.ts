@@ -44,7 +44,7 @@ import { safeLocalStorage } from '../utils/storage';
 const API_BASE_URL = '/api';
 
 async function request<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
-  const token = safeLocalStorage.getItem('bharat_token') || 'bharat-demo-token-1';
+  const token = safeLocalStorage.getItem('virasat_token') || 'virasat-demo-token-1';
   const headers: Record<string, string> = {
     'Content-Type': 'application/json',
     ...(options.headers as Record<string, string> || {}),
@@ -403,7 +403,7 @@ export const api = {
       body: JSON.stringify({ name, email, password, home_city }),
     });
     if (data.token) {
-      safeLocalStorage.setItem('bharat_token', data.token);
+      safeLocalStorage.setItem('virasat_token', data.token);
     }
     return data;
   },
@@ -414,7 +414,7 @@ export const api = {
       body: JSON.stringify({ email, password }),
     });
     if (data.token) {
-      safeLocalStorage.setItem('bharat_token', data.token);
+      safeLocalStorage.setItem('virasat_token', data.token);
     }
     return data;
   },

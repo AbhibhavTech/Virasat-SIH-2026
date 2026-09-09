@@ -1,6 +1,6 @@
-# CodeNova-SIH-2026 Development & Collaboration Guide
+# Virasat (SIH 2026) Development & Collaboration Guide
 
-Welcome to the **CodeNova-SIH-2026** development guide. This document outlines the Git branching model, domain assignments, and contribution guidelines for team members.
+Welcome to the **Virasat (SIH 2026)** development guide. This document outlines the Git branching model, domain assignments, and contribution guidelines for team members.
 
 ---
 
@@ -86,4 +86,4 @@ sequenceDiagram
 ## 4. Development Rules
 - **Respect Domain Boundaries**: Do not edit files outside your assigned domain without prior coordination with the domain owner.
 - **No Direct Commits to `main` or `develop`**: Always use feature branches.
-- **Keep Contracts Intact**: Ensure any backend or frontend changes adhere strictly to [`docs/api-contract.md`](file:///c:/Users/sinha/OneDrive/Desktop/CodeNova-SIH-2026/docs/api-contract.md).
+- **Keep Contracts Intact**: Ensure any backend or frontend changes adhere strictly to [`docs/api-contract.md`](api-contract.md).

@@ -491,7 +491,7 @@ if (fs.existsSync(stationsPath)) {
   }
 }
 
-// 6. Ingest Curated Attractions from culture.json & CodeNova text file
+// 6. Ingest Curated Attractions from culture.json & Virasat text file
 const culturePath = path.join(dataDir, 'culture.json');
 if (fs.existsSync(culturePath)) {
   const culture = JSON.parse(fs.readFileSync(culturePath, 'utf-8'));

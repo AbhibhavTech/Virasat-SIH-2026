@@ -1,15 +1,17 @@
-# CodeNova-SIH-2026 API Contract
+# Virasat (SIH 2026) — Target API Contract
 
-> **Note**: This document specifies the planned REST API contract between the React Frontend and the FastAPI Backend. These endpoints represent the specification baseline and are not yet implemented.
+> [!IMPORTANT]
+> **TARGET ARCHITECTURE — NOT YET IMPLEMENTED**  
+> This document specifies the planned target REST API contract per the **Virasat Master Product & Engineering Blueprint (V2)**. In the current prototype (Phase 0), endpoints run on an Express server (`server.ts`) with in-memory data structures. Full migration to modular services under `/api/v1/` backed by a PostgreSQL database begins in Phase 1.
 
 ---
 
 ## Base URL
 ```
-http://localhost:8000
+http://localhost:3000
 ```
 
-All API routes are prefixed with `/api`.
+All API routes will be versioned under `/api/v1` (with current prototype routes temporarily mounted at `/api`).
 
 ---
 

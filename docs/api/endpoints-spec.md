@@ -1,6 +1,9 @@
-# API Endpoints Specification
+# API Endpoints Specification (Target Specification)
 
-For complete request and response schemas, see [docs/api-contract.md](../api-contract.md).
+> [!IMPORTANT]
+> **TARGET SPECIFICATION — NOT YET FULLY IMPLEMENTED**  
+> For complete target request and response schemas, see [docs/api-contract.md](../api-contract.md).  
+> Current prototype endpoints run on `server.ts` with in-memory store. Full migration to versioned `/api/v1/*` routes backed by PostgreSQL begins in Phase 1.
 
 ## Summary Table
 

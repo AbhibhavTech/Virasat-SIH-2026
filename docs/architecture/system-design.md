@@ -1,30 +1,36 @@
-# System Design & Architecture
+# System Design & Architecture (Target Specification)
+
+> [!IMPORTANT]
+> **TARGET ARCHITECTURE — NOT YET IMPLEMENTED**  
+> This document specifies the planned target architecture for **Virasat** per Section XII of the **Master Product & Engineering Blueprint (V2)**.
+
+---
 
 ## Overview
-BharatYatra adopts a decoupled, multi-tier full-stack architecture tailored for high performance, geospatial querying, real-time multimodal transit assistance, and 3D web graphics rendering.
+Virasat adopts a modular full-stack architecture tailored for high performance, geospatial querying, verified multimodal transit assistance, and interactive 3D web graphics.
 
-```
+```text
 ┌────────────────────────────────────────────────────────┐
 │                   React SPA Frontend                   │
-│   (Tailwind CSS, Leaflet Maps, Three.js 3D Viewers)    │
+│   (Vite, Tailwind, React Router, TanStack Query)       │
 └───────────────────────────┬────────────────────────────┘
-                            │ REST / JSON (HTTP/2)
+                            │ REST / JSON (HTTP/1.1 & 2)
                             ▼
 ┌────────────────────────────────────────────────────────┐
-│                  FastAPI Backend Gateway               │
-│  (Pydantic validation, CORS, Routing & Circuit Logic)  │
+│               Modular Express API Gateway              │
+│       (/api/v1/*, Zod validation, Auth Middleware)     │
 └───────┬───────────────────┬────────────────────┬───────┘
         │                   │                    │
         ▼                   ▼                    ▼
 ┌──────────────┐    ┌──────────────┐    ┌──────────────┐
-│  AI Tourism  │    │  Geospatial  │    │   Multimodal │
-│  Assistant   │    │  & Heritage  │    │   Transit    │
-│ (Gemini 2.5) │    │  Datasets    │    │   Routing    │
+│  AI Concierge│    │  PostgreSQL  │    │   Multimodal │
+│ Orchestrator │    │  (Supabase)  │    │   Transit    │
+│ (Gemini API) │    │  Persistence │    │   Routing    │
 └──────────────┘    └──────────────┘    └──────────────┘
 ```
 
 ## Key Architectural Principles
-1. **Separation of Concerns**: Clear boundary between `frontend/`, `backend/`, `ai/`, and `data/` modules.
-2. **Deterministic Routing**: Fast local distance and fare algorithms for high-speed offline calculations.
-3. **Resilient AI Failover**: Real-time Gemini LLM calls backed by domain-curated fallback responses.
-4. **Lightweight 3D Rendering**: Custom Three.js parametric and GLTF heritage models optimized for 60fps across mobile and desktop.
+1. **Separation of Concerns**: Clean separation between frontend components, modular backend services (`/server/src/modules/*`), and the PostgreSQL data layer.
+2. **Deterministic Routing**: Track-aligned railway algorithms, suburban local networks, and regulated meter fare estimators backed by verified transit nodes.
+3. **Strict AI Grounding**: Gemini acts as a reasoning and synthesis layer, never as the authoritative system of record. Every factual claim is sourced via verified tool calls.
+4. **Lightweight 3D Rendering**: Parametric and GLTF heritage models rendered via Three.js with lazy-loading and mobile performance optimization.

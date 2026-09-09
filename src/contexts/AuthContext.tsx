@@ -28,7 +28,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   useEffect(() => {
     const initAuth = async () => {
       try {
-        const token = safeLocalStorage.getItem('bharat_token');
+        const token = safeLocalStorage.getItem('virasat_token');
         if (token) {
           const profile = await api.getProfile();
           setUser(profile);
@@ -56,7 +56,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const logout = () => {
-    safeLocalStorage.removeItem('bharat_token');
+    safeLocalStorage.removeItem('virasat_token');
     setUser(null);
   };
 

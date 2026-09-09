@@ -71,7 +71,7 @@
   color: #0f172a;
 }
 
-/* YatraVerse Brand Splash Screen Animations */
+/* Virasat Brand Splash Screen Animations */
 @keyframes logoShineSweep {
   0% {
     transform: translate(-160%, -50%) rotate(25deg);
@@ -179,7 +179,7 @@
 }
 
 /* ===================================================
-   YatraVerse Cultural Guide Animated Character System
+   Virasat Cultural Guide Animated Character System
    =================================================== */
 
 @keyframes guidePopInRight {

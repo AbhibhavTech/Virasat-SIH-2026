@@ -514,7 +514,7 @@ function getAIClient(): GoogleGenAI | null {
 // System Endpoints
 // -------------------------------------------------------------
 app.get(['/api/health', '/health'], (req, res) => {
-  res.json({ status: 'ok', app: 'YatraVerse', timestamp: new Date().toISOString() });
+  res.json({ status: 'ok', app: 'Virasat', timestamp: new Date().toISOString() });
 });
 
 // -------------------------------------------------------------
@@ -2176,7 +2176,7 @@ app.get('/api/routes', async (req, res) => {
           `Alight at destination railhead (${destLoc.name})`
         ],
         polyline: railResult.polyline,
-        routing_engine: 'YatraVerse Track-Aligned Railway Engine (IR Trunk Geometry)'
+        routing_engine: 'Virasat Track-Aligned Railway Engine (IR Trunk Geometry)'
       });
 
       // 2. Multimodal Hub Transit (Cab + Train + Feeder)
@@ -2198,7 +2198,7 @@ app.get('/api/routes', async (req, res) => {
           `Last Mile: Feeder transit from destination station to ${destLoc.name}`
         ],
         polyline: railResult.polyline,
-        routing_engine: 'YatraVerse Multimodal Corridor Engine'
+        routing_engine: 'Virasat Multimodal Corridor Engine'
       });
 
       // 3. National Highway Express Drive / Cab
@@ -2225,7 +2225,7 @@ app.get('/api/routes', async (req, res) => {
           `Arrive at entry approach of ${destLoc.name}`
         ],
         polyline: roadDriveResult.polyline,
-        routing_engine: 'YatraVerse Highway Vector Engine (OSRM / NH Corridors)'
+        routing_engine: 'Virasat Highway Vector Engine (OSRM / NH Corridors)'
       });
 
       // 4. Intercity AC Bus
@@ -2248,7 +2248,7 @@ app.get('/api/routes', async (req, res) => {
           `Alight at destination bus terminal and take feeder transit to ${destLoc.name}`
         ],
         polyline: roadDriveResult.polyline,
-        routing_engine: 'YatraVerse Bus Route Engine'
+        routing_engine: 'Virasat Bus Route Engine'
       });
 
     } else {
@@ -3651,7 +3651,7 @@ app.get('/api/india-hierarchy/city/:cityId', (req, res) => {
 // -------------------------------------------------------------
 app.post('/api/auth/register', (req, res) => {
   const { name, email, home_city } = req.body;
-  const token = `bharat-token-${Date.now()}`;
+  const token = `virasat-token-${Date.now()}`;
   const profile = {
     id: `user-${Date.now()}`,
     name: name || 'Explorer',
@@ -3665,7 +3665,7 @@ app.post('/api/auth/register', (req, res) => {
 
 app.post('/api/auth/login', (req, res) => {
   const { email } = req.body;
-  const token = `bharat-token-${Date.now()}`;
+  const token = `virasat-token-${Date.now()}`;
   const profile = {
     id: `user-${Date.now()}`,
     name: email ? email.split('@')[0] : 'Explorer',
@@ -3683,7 +3683,7 @@ app.get('/api/profile', (req, res) => {
   const profile = usersStore.get(token) || {
     id: 'guest-1',
     name: 'Bharat Explorer',
-    email: 'traveler@bharatyatra.in',
+    email: 'traveler@virasat.in',
     home_city: 'Mumbai',
     created_at: new Date().toISOString(),
   };
@@ -3826,7 +3826,7 @@ async function startServer() {
   }
 
   app.listen(PORT, '0.0.0.0', () => {
-    console.log(`[Server] YatraVerse server running at http://0.0.0.0:${PORT}`);
+    console.log(`[Server] Virasat server running at http://0.0.0.0:${PORT}`);
   });
 }
 

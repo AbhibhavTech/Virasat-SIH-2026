@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-// Master data generator for Codenova 28 States, 174 Cities, 172 Curated Attractions
+// Master data generator for Virasat 28 States, 174 Cities, 172 Curated Attractions
 // Fully typed and verified against official sources with UNVERIFIED accuracy tags where required.
 
 const statesDefinition = [
@@ -907,7 +907,7 @@ const totalFinalAttractions = finalStates.reduce((acc, s) => acc + s.total_attra
 console.log(`Successfully compiled: ${finalStates.length} States, ${totalCities} Cities, ${totalFinalAttractions} Curated Attractions.`);
 
 const outputDatabase = {
-  title: 'CODENOVA — COMPLETE INDIA TOURISM DATABASE',
+  title: 'VIRASAT — COMPLETE INDIA TOURISM DATABASE',
   version: '2.5.0',
   states_count: finalStates.length,
   cities_count: totalCities,
