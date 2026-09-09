@@ -45,7 +45,7 @@ This document tracks the engineering and product progress of **Virasat**, aligne
 | **Phase 1** | **Backend Foundations** | Real PostgreSQL database, real auth, URL routing (`react-router-dom`), TanStack Query | **COMPLETED** |
 | **Phase 2** | **Data Audit & Provenance** | Field-level provenance, verify curated 6–8 flagship states, replace generic stock photos | **COMPLETED** |
 | **Phase 3** | **Core Features** | Persistent itineraries, multimodal routing on DB, grounded AI with structured output | **COMPLETED** |
-| **Phase 3B**| **Stewardship & Roles** | Citizen heritage reporting, role-based access control, audit logging, destination health | PENDING |
+| **Phase 3B**| **Stewardship & Roles** | Citizen heritage reporting, role-based access control, audit logging, destination health | **COMPLETED** |
 | **Phase 4** | **Google Login** | Google OAuth integration, account merging, persistent profile state | PENDING |
 | **Phase 5** | **AI Hardening** | Verify live Gemini models against current docs, grounding audit logging, hallucination checks | PENDING |
 | **Phase 6** | **Design System & A11y** | Shared UI primitives, WCAG AA compliance, responsive mobile audit, 3D accuracy | PENDING |

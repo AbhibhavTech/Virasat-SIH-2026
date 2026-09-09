@@ -756,40 +756,67 @@ export const api = {
     }
   },
 
+  async getDestinationHealthForPlace(placeId: string): Promise<{
+    place_id: string;
+    place_name: string;
+    city: string;
+    health_score: number;
+    open_issues_count: number;
+    resolved_issues_count: number;
+    status_label: string;
+    recent_reports?: any[];
+  } | null> {
+    try {
+      const res = await request<any>(`/reports/destination-health/${encodeURIComponent(placeId)}`);
+      return res.data || res;
+    } catch {
+      return null;
+    }
+  },
+
   // -------------------------------------------------------------
   // Heritage Condition Citizen Reporting Workflow
   // -------------------------------------------------------------
   async getReports(params?: {
     site_id?: string;
+    place_id?: string;
     city?: string;
     status?: string;
   }): Promise<HeritageConditionReport[]> {
     const q = new URLSearchParams();
-    if (params?.site_id) q.set('site_id', params.site_id);
+    const pid = params?.place_id || params?.site_id;
+    if (pid) q.set('place_id', pid);
     if (params?.city) q.set('city', params.city);
     if (params?.status) q.set('status', params.status);
     try {
-      return await request<HeritageConditionReport[]>(`/reports?${q.toString()}`);
+      const res = await request<any>(`/reports?${q.toString()}`);
+      if (Array.isArray(res)) return res;
+      return res.data || res.reports || [];
     } catch {
       return [];
     }
   },
 
   async createReport(data: {
-    site_id: string;
-    site_name: string;
-    city: string;
+    site_id?: string;
+    place_id?: string;
+    site_name?: string;
+    place_name?: string;
+    city?: string;
     reported_by?: string;
     user_role?: string;
-    issue_category: string;
-    severity: string;
+    issue_category?: string;
+    issue_type?: string;
+    severity?: string;
     description: string;
     image_url?: string;
+    media_url?: string;
   }): Promise<HeritageConditionReport> {
-    return await request<HeritageConditionReport>('/reports', {
+    const res = await request<any>('/reports', {
       method: 'POST',
       body: JSON.stringify(data),
     });
+    return res.data || res.report || res;
   },
 
   async updateReportStatus(
@@ -798,10 +825,11 @@ export const api = {
     note?: string,
     actor?: string
   ): Promise<HeritageConditionReport> {
-    return await request<HeritageConditionReport>(`/reports/${id}/status`, {
+    const res = await request<any>(`/reports/${id}/status`, {
       method: 'PATCH',
       body: JSON.stringify({ status, note, actor }),
     });
+    return res.data || res.report || res;
   },
 
   // -------------------------------------------------------------

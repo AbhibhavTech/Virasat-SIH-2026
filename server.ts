@@ -1370,91 +1370,9 @@ app.get('/api/destination-health', (req, res) => {
 });
 
 // -------------------------------------------------------------
-// Heritage Condition Reporting Workflow Endpoints
+// Heritage Condition Reporting Workflow Endpoints (Persistent DB & RBAC)
 // -------------------------------------------------------------
-app.get('/api/reports', (req, res) => {
-  const { site_id, city, status } = req.query;
-  let results = [...reportsData];
-
-  if (site_id) {
-    const sid = (site_id as string).toLowerCase().trim();
-    results = results.filter((r) => r.site_id?.toLowerCase() === sid);
-  }
-
-  if (city) {
-    const c = (city as string).toLowerCase().trim();
-    results = results.filter((r) => r.city?.toLowerCase().includes(c));
-  }
-
-  if (status) {
-    const s = (status as string).toUpperCase().trim();
-    results = results.filter((r) => r.status?.toUpperCase() === s);
-  }
-
-  res.json(results);
-});
-
-app.post('/api/reports', (req, res) => {
-  const { site_id, site_name, city, reported_by, user_role, issue_category, severity, description, image_url } = req.body;
-
-  if (!site_id || !description) {
-    return res.status(400).json({ error: 'site_id and description are required fields' });
-  }
-
-  const newReport = {
-    id: `rep-${Date.now()}`,
-    site_id,
-    site_name: site_name || site_id,
-    city: city || 'General',
-    reported_by: reported_by || 'Verified Citizen Reporter',
-    user_role: user_role || 'TRAVELLER',
-    issue_category: issue_category || 'FACILITY_BREAKDOWN',
-    severity: severity || 'MEDIUM',
-    description,
-    status: 'SUBMITTED',
-    image_url: image_url || null,
-    timeline: [
-      {
-        status: 'SUBMITTED',
-        timestamp: new Date().toISOString(),
-        note: 'Report officially submitted through citizen verification portal.',
-        actor: reported_by || 'Citizen Reporter',
-      },
-    ],
-    created_at: new Date().toISOString(),
-    updated_at: new Date().toISOString(),
-  };
-
-  reportsData.unshift(newReport);
-  res.status(201).json(newReport);
-});
-
-// Citizen report status mutation (Role-Gated - Fixes Risk #14)
-app.patch('/api/reports/:id/status', requireAuth, requireRole('moderator', 'heritage_officer', 'admin'), (req, res) => {
-  const { id } = req.params;
-  const { status, note, actor } = req.body;
-
-  const report = reportsData.find((r) => r.id === id);
-  if (!report) {
-    return res.status(404).json({ error: 'Condition report not found' });
-  }
-
-  const validStatuses = ['SUBMITTED', 'UNDER_REVIEW', 'VERIFIED', 'ASSIGNED', 'IN_PROGRESS', 'RESOLVED', 'REJECTED'];
-  if (!validStatuses.includes(status)) {
-    return res.status(400).json({ error: `Invalid status. Must be one of: ${validStatuses.join(', ')}` });
-  }
-
-  report.status = status;
-  report.updated_at = new Date().toISOString();
-  report.timeline.push({
-    status,
-    timestamp: new Date().toISOString(),
-    note: note || `Status updated to ${status}`,
-    actor: actor || req.user?.name || 'Authorized Official',
-  });
-
-  res.json(report);
-});
+app.use('/api/reports', reportsRouter);
 
 // -------------------------------------------------------------
 // Search Endpoint & Unified Autocomplete Suggestions

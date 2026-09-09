@@ -178,15 +178,37 @@ export interface FavoriteRecord {
   created_at: string;
 }
 
+export type ReportSeverity = 'low' | 'medium' | 'high' | 'critical';
+export type ReportStatus = 'PENDING' | 'UNDER_REVIEW' | 'IN_PROGRESS' | 'RESOLVED' | 'REJECTED';
+
 export interface CitizenReportRecord {
   id: string;
   place_id?: string;
+  place_name?: string;
+  city?: string;
   reported_by: string;
+  user_id?: string;
   issue_type: string;
+  title?: string;
   description: string;
-  status: 'PENDING' | 'UNDER_REVIEW' | 'IN_PROGRESS' | 'RESOLVED' | 'REJECTED';
+  severity?: ReportSeverity;
+  status: ReportStatus;
   media_url?: string;
+  resolution_notes?: string;
+  resolved_by?: string;
   created_at: string;
+  updated_at: string;
+}
+
+export interface DestinationHealthRecord {
+  place_id: string;
+  place_name: string;
+  city: string;
+  health_score: number;
+  open_issues_count: number;
+  resolved_issues_count: number;
+  status_label: string;
+  last_inspected_at: string;
   updated_at: string;
 }
 

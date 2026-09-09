@@ -21,8 +21,10 @@ import {
   Layers,
   Info,
   ExternalLink,
+  AlertTriangle,
 } from 'lucide-react';
 import { ProvenanceBadge } from '../components/common/ProvenanceBadge';
+import { CitizenReportModal } from '../components/common/CitizenReportModal';
 import { VisitingInfoCard } from '../components/destination/VisitingInfoCard';
 import { RailwayStationsCard } from '../components/destination/RailwayStationsCard';
 import { NearbyCarousel } from '../components/destination/NearbyCarousel';
@@ -53,6 +55,9 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [show3DModel, setShow3DModel] = useState(false);
+  const [isReportModalOpen, setIsReportModalOpen] = useState(false);
+  const [healthScore, setHealthScore] = useState<number | null>(null);
+  const [healthStatus, setHealthStatus] = useState<string>('Excellent / Well Maintained');
 
   const resolve3DMonumentType = (pId: string): Monument3DType | null => {
     const idLower = pId.toLowerCase();
@@ -74,6 +79,15 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
         const data = await api.getPlaceById(placeId);
         if (isMounted) {
           setPlace(data);
+        }
+        try {
+          const health = await api.getDestinationHealthForPlace(placeId);
+          if (isMounted && health) {
+            setHealthScore(health.health_score);
+            setHealthStatus(health.status_label);
+          }
+        } catch {
+          // fallback to default health score
         }
       } catch (err) {
         if (isMounted) {
@@ -169,6 +183,14 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
 
           <div className="flex items-center gap-2">
             <button
+              onClick={() => setIsReportModalOpen(true)}
+              className="flex items-center gap-1.5 px-3 py-2 rounded-full bg-white/90 hover:bg-white text-stone-700 hover:text-[#FF671F] text-xs font-semibold shadow-xs transition backdrop-blur-sm"
+              title="Report Heritage Issue / Maintenance"
+            >
+              <AlertTriangle className="w-3.5 h-3.5 text-[#FF671F]" />
+              <span className="hidden sm:inline">Report Issue</span>
+            </button>
+            <button
               onClick={() => toggleFavorite(place.id)}
               className={`p-2.5 rounded-full shadow-xs transition backdrop-blur-sm ${
                 favActive
@@ -207,6 +229,19 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
                 <span>{place.heritage_status}</span>
               </span>
             )}
+            <span
+              className={`px-3 py-1 rounded-full backdrop-blur-md border text-xs font-bold flex items-center gap-1 ${
+                (healthScore ?? 96) >= 80
+                  ? 'bg-emerald-500/20 border-emerald-400/40 text-emerald-100'
+                  : (healthScore ?? 96) >= 60
+                  ? 'bg-amber-500/20 border-amber-400/40 text-amber-100'
+                  : 'bg-rose-500/20 border-rose-400/40 text-rose-100'
+              }`}
+              title={healthStatus}
+            >
+              <ShieldCheck className="w-3 h-3 text-emerald-400" />
+              <span>Preservation: {healthScore ?? 96}%</span>
+            </span>
             <span className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white text-xs font-medium">
               {place.category}
             </span>
@@ -501,6 +536,26 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
           </div>
         </section>
       </div>
+
+      {/* Citizen Heritage Condition Report Modal */}
+      <CitizenReportModal
+        isOpen={isReportModalOpen}
+        onClose={() => setIsReportModalOpen(false)}
+        placeId={place.id}
+        placeName={place.name}
+        city={place.city}
+        onSuccess={async () => {
+          try {
+            const health = await api.getDestinationHealthForPlace(place.id);
+            if (health) {
+              setHealthScore(health.health_score);
+              setHealthStatus(health.status_label);
+            }
+          } catch {
+            // ignore
+          }
+        }}
+      />
     </div>
   );
 };

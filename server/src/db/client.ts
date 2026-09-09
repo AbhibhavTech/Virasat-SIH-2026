@@ -9,6 +9,7 @@ import {
   ItineraryRecord,
   FavoriteRecord,
   CitizenReportRecord,
+  DestinationHealthRecord,
   AuditLogRecord,
   PlaceSourceRecord,
   PlaceFactRecord,
@@ -246,6 +247,11 @@ class DatabaseManager {
             p.state_id?.toLowerCase().includes(q)
         )
         .slice(0, limit);
+    },
+    create: async (record: PlaceRecord): Promise<PlaceRecord> => {
+      this.data.places[record.id] = { ...record };
+      this.persist();
+      return record;
     },
   };
 
@@ -636,11 +642,23 @@ class DatabaseManager {
   };
 
   // -------------------------------------------------------------
-  // CITIZEN REPORTS REPOSITORY
+  // CITIZEN REPORTS & STEWARDSHIP REPOSITORY (Section XI.3 & XV.2)
   // -------------------------------------------------------------
   public reports = {
-    findAll: async (): Promise<CitizenReportRecord[]> => {
-      return Object.values(this.data.reports);
+    findAll: async (params?: {
+      placeId?: string;
+      city?: string;
+      status?: string;
+      severity?: string;
+      userId?: string;
+    }): Promise<CitizenReportRecord[]> => {
+      let list = Object.values(this.data.reports);
+      if (params?.placeId) list = list.filter((r) => r.place_id === params.placeId);
+      if (params?.city) list = list.filter((r) => r.city?.toLowerCase().includes(params.city!.toLowerCase()));
+      if (params?.status) list = list.filter((r) => r.status.toUpperCase() === params.status?.toUpperCase());
+      if (params?.severity) list = list.filter((r) => r.severity?.toLowerCase() === params.severity?.toLowerCase());
+      if (params?.userId) list = list.filter((r) => r.user_id === params.userId);
+      return list.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
     },
     findById: async (id: string): Promise<CitizenReportRecord | null> => {
       return this.data.reports[id] || null;
@@ -653,29 +671,66 @@ class DatabaseManager {
     updateStatus: async (
       id: string,
       status: CitizenReportRecord['status'],
-      actorId: string
+      actorId: string,
+      resolutionNotes?: string
     ): Promise<CitizenReportRecord | null> => {
       const existing = this.data.reports[id];
       if (!existing) return null;
       const prevStatus = existing.status;
       existing.status = status;
+      if (resolutionNotes) existing.resolution_notes = resolutionNotes;
+      if (status === 'RESOLVED' || status === 'REJECTED') existing.resolved_by = actorId;
       existing.updated_at = new Date().toISOString();
       this.data.reports[id] = existing;
 
       // Log to audit log
       await this.audit.log({
-        id: `audit-${Date.now()}`,
+        id: `audit-${Date.now()}-${Math.random().toString(36).substring(2, 6)}`,
         actor_id: actorId,
         action: 'UPDATE_REPORT_STATUS',
         entity_type: 'heritage_report',
         entity_id: id,
         from_value: { status: prevStatus },
-        to_value: { status },
+        to_value: { status, resolution_notes: resolutionNotes },
         created_at: new Date().toISOString(),
       });
 
       this.persist();
       return existing;
+    },
+    calculateDestinationHealth: async (placeId: string): Promise<DestinationHealthRecord> => {
+      const place = Object.values(this.data.places).find((p) => p.id === placeId);
+      const reports = Object.values(this.data.reports).filter((r) => r.place_id === placeId);
+
+      const openReports = reports.filter((r) => r.status !== 'RESOLVED' && r.status !== 'REJECTED');
+      const resolvedReports = reports.filter((r) => r.status === 'RESOLVED');
+
+      let penalty = 0;
+      for (const r of openReports) {
+        if (r.severity === 'critical') penalty += 15;
+        else if (r.severity === 'high') penalty += 10;
+        else if (r.severity === 'medium') penalty += 5;
+        else penalty += 2;
+      }
+
+      const healthScore = Math.max(20, Math.min(100, 100 - penalty));
+
+      let statusLabel = 'Excellent / Well Maintained';
+      if (healthScore < 50) statusLabel = 'Attention Required';
+      else if (healthScore < 75) statusLabel = 'Moderate / Action Underway';
+      else if (healthScore < 90) statusLabel = 'Good / Minor Maintenance';
+
+      return {
+        place_id: placeId,
+        place_name: place?.name || placeId,
+        city: place?.city_id || 'India',
+        health_score: healthScore,
+        open_issues_count: openReports.length,
+        resolved_issues_count: resolvedReports.length,
+        status_label: statusLabel,
+        last_inspected_at: new Date().toISOString(),
+        updated_at: new Date().toISOString(),
+      };
     },
   };
 
