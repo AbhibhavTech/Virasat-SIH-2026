@@ -11,4 +11,4 @@ Disallow: /profile
 Disallow: /trips
 Disallow: /favorites
 
-Sitemap: https://virasat.ind.in/sitemap.xml
+Sitemap: https://virasat.in/sitemap.xml
