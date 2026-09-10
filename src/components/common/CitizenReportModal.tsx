@@ -17,6 +17,10 @@ interface CitizenReportModalProps {
   placeId?: string;
   placeName?: string;
   city?: string;
+  cityId?: string;
+  state?: string;
+  defaultIssueType?: string;
+  defaultTitle?: string;
   onSuccess?: () => void;
 }
 
@@ -42,18 +46,28 @@ export const CitizenReportModal: React.FC<CitizenReportModalProps> = ({
   isOpen,
   onClose,
   placeId,
-  placeName = 'Heritage Site',
+  placeName,
   city = 'India',
+  cityId,
+  state,
+  defaultIssueType = 'other',
+  defaultTitle,
   onSuccess,
 }) => {
-  const [issueType, setIssueType] = useState('cleanliness');
+  const [issueType, setIssueType] = useState(defaultIssueType);
   const [severity, setSeverity] = useState('medium');
-  const [title, setTitle] = useState('');
+  const [title, setTitle] = useState(defaultTitle || '');
   const [description, setDescription] = useState('');
   const [mediaUrl, setMediaUrl] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
+
+  // Sync defaults if props change
+  useEffect(() => {
+    if (defaultIssueType) setIssueType(defaultIssueType);
+    if (defaultTitle) setTitle(defaultTitle);
+  }, [defaultIssueType, defaultTitle, isOpen]);
 
   // Close on Escape
   useEffect(() => {
@@ -80,11 +94,13 @@ export const CitizenReportModal: React.FC<CitizenReportModalProps> = ({
 
     try {
       await api.createReport({
-        site_id: placeId || 'general',
+        site_id: placeId,
         site_name: placeName,
         city,
         issue_category: issueType,
+        issue_type: issueType,
         severity,
+        title: title.trim() || defaultTitle || (placeName ? `${issueType.replace(/_/g, ' ').toUpperCase()} at ${placeName}` : `Missing verified places for ${city}`),
         description: description.trim(),
         image_url: mediaUrl.trim() || undefined,
       });
@@ -123,7 +139,7 @@ export const CitizenReportModal: React.FC<CitizenReportModalProps> = ({
               </h3>
               <p className="text-xs text-stone-500 flex items-center gap-1">
                 <Building className="w-3 h-3 text-stone-400" />
-                <span>{placeName} ({city})</span>
+                <span>{placeName ? `${placeName} (${city})` : `${city}${state ? `, ${state}` : ''}`}</span>
               </p>
             </div>
           </div>
