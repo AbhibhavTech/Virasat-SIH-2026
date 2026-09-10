@@ -250,13 +250,7 @@ export const MumbaiDashboard: React.FC<MumbaiDashboardProps> = ({
                 {/* 4 Dynamic Stats Chips */}
                 <div className="flex items-center gap-3 flex-wrap">
                   <div className="px-3 py-1.5 rounded-xl bg-slate-950/80 backdrop-blur-md border border-parchment-300 text-xs text-charcoal">
-                    {displayPlaces.length > 0 ? (
-                      <>
-                        <span className="font-bold text-charcoal mr-1">{displayPlaces.length}</span> Verified Places
-                      </>
-                    ) : (
-                      <span>Content under verification</span>
-                    )}
+                    <span className="font-bold text-charcoal mr-1">{displayPlaces.length}</span> Curated Places
                   </div>
                   <div className="px-3 py-1.5 rounded-xl bg-slate-950/80 backdrop-blur-md border border-parchment-300 text-xs text-charcoal">
                     <span className="font-bold text-amber-400 mr-1">{heritageCount}</span> Heritage Sites

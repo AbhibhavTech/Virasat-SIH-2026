@@ -44,7 +44,6 @@ import {
   RoyalBengalTigerEmblem,
 } from '../common/TricolourBranding';
 import { IndiaHeritageMapPreview } from './IndiaHeritageMapPreview';
-import { CompactAIAssistantCard } from './CompactAIAssistantCard';
 
 interface VirasatDashboardProps {
   onSearch: (query: string) => void;
@@ -917,124 +916,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
       </section>
 
       {/* ========================================================================= */}
-      {/* 2. THE 4 FEATURE CARDS (EXPLORE, HERITAGE, MAP, AI ASSISTANT)             */}
-      {/* ========================================================================= */}
-      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-        {/* Card 1: Explore Destinations */}
-        <div
-          onClick={() => onNavigateTab('dashboard')}
-          className="group cursor-pointer rounded-3xl bg-white border border-[#EFE8DF] hover:border-[#FF671F]/50 p-5 shadow-2xs hover:shadow-md transition-all duration-200 flex flex-col justify-between h-[320px] overflow-hidden"
-        >
-          <div>
-            <div className="flex items-center justify-between">
-              <div className="w-11 h-11 rounded-full bg-[#FF671F] text-white flex items-center justify-center shadow-xs">
-                <MapPin className="w-5 h-5 fill-white/20" />
-              </div>
-              <div className="w-8 h-8 rounded-full bg-stone-50 border border-stone-200 text-stone-600 group-hover:bg-[#FF671F] group-hover:text-white group-hover:border-[#FF671F] flex items-center justify-center group-hover:translate-x-0.5 transition-all shadow-2xs">
-                <ArrowRight className="w-4 h-4" />
-              </div>
-            </div>
-            <h3 className="font-serif text-lg font-bold text-stone-900 mt-3.5 tracking-tight">
-              Explore Destinations
-            </h3>
-            <p className="text-xs text-stone-500 mt-1 leading-relaxed">
-              Discover amazing places, cities and unique experiences.
-            </p>
-            <div className="mt-2.5">
-              <span className="text-xs font-bold text-[#FF671F] flex items-center gap-1 group-hover:gap-1.5 transition-all">
-                Start Exploring <ArrowRight className="w-3 h-3" />
-              </span>
-            </div>
-          </div>
-          <div className="h-28 w-full rounded-2xl overflow-hidden mt-3 shadow-inner bg-stone-100 relative">
-            <img
-              src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80"
-              alt="Coastal Shoreline Experience"
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            />
-          </div>
-        </div>
-
-        {/* Card 2: Heritage Sites */}
-        <div
-          onClick={() => onNavigateTab('heritage')}
-          className="group cursor-pointer rounded-3xl bg-white border border-[#EFE8DF] hover:border-[#046A38]/50 p-5 shadow-2xs hover:shadow-md transition-all duration-200 flex flex-col justify-between h-[320px] overflow-hidden"
-        >
-          <div>
-            <div className="flex items-center justify-between">
-              <div className="w-11 h-11 rounded-full bg-[#046A38] text-white flex items-center justify-center shadow-xs">
-                <Landmark className="w-5 h-5 text-white" />
-              </div>
-              <div className="w-8 h-8 rounded-full bg-stone-50 border border-stone-200 text-stone-600 group-hover:bg-[#046A38] group-hover:text-white group-hover:border-[#046A38] flex items-center justify-center group-hover:translate-x-0.5 transition-all shadow-2xs">
-                <ArrowRight className="w-4 h-4" />
-              </div>
-            </div>
-            <h3 className="font-serif text-lg font-bold text-stone-900 mt-3.5 tracking-tight">
-              Heritage Sites
-            </h3>
-            <p className="text-xs text-stone-500 mt-1 leading-relaxed">
-              UNESCO sites, monuments, dynasties and sacred spaces.
-            </p>
-            <div className="mt-2.5">
-              <span className="text-xs font-bold text-[#046A38] flex items-center gap-1 group-hover:gap-1.5 transition-all">
-                Discover Heritage <ArrowRight className="w-3 h-3" />
-              </span>
-            </div>
-          </div>
-          <div className="h-28 w-full rounded-2xl overflow-hidden mt-3 shadow-inner bg-stone-100 relative">
-            <img
-              src="https://images.unsplash.com/photo-1600100397608-f010f443b780?w=800&auto=format&fit=crop&q=80"
-              alt="Hampi Stone Temple"
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            />
-          </div>
-        </div>
-
-        {/* Card 3: Interactive Map */}
-        <div
-          onClick={() => onNavigateTab('map')}
-          className="group cursor-pointer rounded-3xl bg-white border border-[#EFE8DF] hover:border-[#0284C7]/50 p-5 shadow-2xs hover:shadow-md transition-all duration-200 flex flex-col justify-between h-[320px] overflow-hidden"
-        >
-          <div>
-            <div className="flex items-center justify-between">
-              <div className="w-11 h-11 rounded-full bg-[#0284C7] text-white flex items-center justify-center shadow-xs">
-                <Compass className="w-5 h-5" />
-              </div>
-              <div className="w-8 h-8 rounded-full bg-stone-50 border border-stone-200 text-stone-600 group-hover:bg-[#0284C7] group-hover:text-white group-hover:border-[#0284C7] flex items-center justify-center group-hover:translate-x-0.5 transition-all shadow-2xs">
-                <ArrowRight className="w-4 h-4" />
-              </div>
-            </div>
-            <h3 className="font-serif text-lg font-bold text-stone-900 mt-3.5 tracking-tight">
-              Interactive Map
-            </h3>
-            <p className="text-xs text-stone-500 mt-1 leading-relaxed">
-              Explore locations, plan routes and find nearby attractions.
-            </p>
-            <div className="mt-2.5">
-              <span className="text-xs font-bold text-[#0284C7] flex items-center gap-1 group-hover:gap-1.5 transition-all">
-                Open Map <ArrowRight className="w-3 h-3" />
-              </span>
-            </div>
-          </div>
-          <div className="h-28 w-full rounded-2xl overflow-hidden mt-3 shadow-inner bg-stone-100 relative">
-            <img
-              src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80"
-              alt="Mountain River Valley"
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-            />
-          </div>
-        </div>
-
-        {/* Card 4: Virasat Assistant */}
-        <CompactAIAssistantCard
-          onOpenAIChat={onOpenAIChat}
-          onNavigateTab={onNavigateTab}
-          className="h-[320px]"
-        />
-      </section>
-
-      {/* ========================================================================= */}
-      {/* 3. POPULAR DESTINATIONS                                                   */}
+      {/* 2. POPULAR DESTINATIONS                                                   */}
       {/* ========================================================================= */}
       <section className="space-y-5">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">

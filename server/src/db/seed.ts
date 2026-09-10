@@ -9,8 +9,6 @@ import {
   PlaceFactRecord,
   ImageLicenseRecord,
   UserRecord,
-  computeSourceQuality,
-  SourceQualityTier,
 } from './types';
 
 export interface SeedPayload {
@@ -38,38 +36,6 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
   const users: Record<string, UserRecord> = {};
 
   const now = new Date().toISOString();
-
-  const VERIFIED_UNESCO_DEEP_LINKS: Record<string, string> = {
-    'taj-mahal': 'https://whc.unesco.org/en/list/252/',
-    'fatehpur-sikri': 'https://whc.unesco.org/en/list/255/',
-    'qutub-minar': 'https://whc.unesco.org/en/list/233/',
-    'red-fort': 'https://whc.unesco.org/en/list/231/',
-    'humayuns-tomb': 'https://whc.unesco.org/en/list/232/',
-    'kalka-shimla-railway': 'https://whc.unesco.org/en/list/944/',
-    'amber-fort': 'https://whc.unesco.org/en/list/247/',
-    'jaisalmer-fort': 'https://whc.unesco.org/en/list/247/',
-    'rani-ki-vav': 'https://whc.unesco.org/en/list/922/',
-    'champaner-pavagadh': 'https://whc.unesco.org/en/list/1101/',
-    'ajanta-caves': 'https://whc.unesco.org/en/list/242/',
-    'ellora-caves': 'https://whc.unesco.org/en/list/243/',
-    'csmt': 'https://whc.unesco.org/en/list/945/',
-    'basilica-of-bom-jesus': 'https://whc.unesco.org/en/list/234/',
-    'hampi-monuments': 'https://whc.unesco.org/en/list/241/',
-    'pattadakal-monuments': 'https://whc.unesco.org/en/list/239/',
-    'hoysala-temples-belur': 'https://whc.unesco.org/en/list/1670/',
-    'brihadisvara-temple': 'https://whc.unesco.org/en/list/250/',
-    'shore-temple-mahabalipuram': 'https://whc.unesco.org/en/list/249/',
-    'khajuraho-monuments': 'https://whc.unesco.org/en/list/240/',
-    'sanchi-stupa': 'https://whc.unesco.org/en/list/524/',
-    'sun-temple-konark': 'https://whc.unesco.org/en/list/246/',
-    'mahabodhi-temple': 'https://whc.unesco.org/en/list/1056/',
-    'nalanda-university-ruins': 'https://whc.unesco.org/en/list/1502/',
-    'kaziranga-living-heritage': 'https://whc.unesco.org/en/list/337/',
-    'ramappa-temple': 'https://whc.unesco.org/en/list/1570/',
-    'agra-fort': 'https://whc.unesco.org/en/list/251/',
-    'jantar-mantar': 'https://whc.unesco.org/en/list/1338/',
-    'great-himalayan-national-park': 'https://whc.unesco.org/en/list/1406/',
-  };
 
   // -------------------------------------------------------------
   // 1. Official Heritage Sources Registry (Section XI.2)
@@ -103,16 +69,10 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
           states[s.id] = {
             id: s.id,
             name: s.name,
-            slug: s.slug || s.id,
-            type: s.type || s.region_type || 'state',
-            region_type: s.region_type || s.type || 'state',
             capital: s.capital || '',
             region: s.region || '',
-            official_tourism_url: s.official_tourism_url || s.source_url || '',
             description: s.description || '',
-            status: (s.status === 'verified' || ['himachal-pradesh', 'punjab', 'rajasthan', 'uttar-pradesh', 'arunachal-pradesh'].includes(s.id)) ? 'verified' : (s.status || 'verified'),
             hero_image_id: s.hero_image_id,
-            hero_image_url: s.hero_image_url,
             created_at: now,
           };
         }
@@ -133,22 +93,17 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
         for (const c of citiesList) {
           cities[c.id] = {
             id: c.id,
-            state_id: c.state_id || '',
             name: c.name,
-            slug: c.slug || c.id,
             canonical_name: c.canonical_name || c.name,
-            entity_type: c.entity_type || 'city',
             state: c.state || '',
+            state_id: c.state_id || '',
             region: c.region || '',
             district: c.district || null,
-            city_type: c.city_type || c.entity_type || 'city',
-            lat: Number(c.lat || c.latitude) || 0,
-            lng: Number(c.lng || c.longitude) || 0,
-            short_description: c.short_description || c.description || '',
+            city_type: c.city_type || 'city',
+            lat: Number(c.lat) || 0,
+            lng: Number(c.lng) || 0,
             description: c.description || '',
             tagline: c.tagline || '',
-            official_url: c.official_url || '',
-            status: c.status || 'active',
             tourism_categories: c.tourism_categories || [],
             prominence: c.prominence || '',
             is_capital: Boolean(c.is_capital),
@@ -221,11 +176,7 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
           const cityId = (m.city || '').toLowerCase().replace(/[^a-z0-9]+/g, '-');
           const isOfficial = Boolean(m.source && (m.source.includes('ASI') || m.source.includes('Archaeological') || m.source.includes('Government') || m.source.includes('Tourism')));
           const confidence = isOfficial ? 'official' : (m.unesco_site ? 'trusted_third_party' : 'official');
-          const deepLink = VERIFIED_UNESCO_DEEP_LINKS[m.id];
-          const sourceUrl = deepLink || (m.source_url && m.source_url.startsWith('http') ? m.source_url : (m.unesco_site ? 'https://whc.unesco.org' : 'https://asi.nic.in'));
-          const quality = computeSourceQuality(sourceUrl);
-          const isVerified = m.id === 'capitol-complex-chandigarh' ? false : (quality === 'place_specific' || quality === 'official_site');
-          const verifiedStatus = isVerified ? 'verified' : 'needs_review';
+          const sourceUrl = m.unesco_site ? 'https://whc.unesco.org' : 'https://asi.nic.in';
 
           const domesticFee = Number(m.entry_fee?.domestic ?? m.entry_fee_inr ?? 50);
           const intlFee = Number(m.entry_fee?.international ?? 1100);
@@ -244,33 +195,13 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
             history: m.historical_significance || m.history || '',
             lat,
             lng,
-            latitude: lat,
-            longitude: lng,
             entry_fee_domestic: domesticFee,
             entry_fee_intl: intlFee,
             visiting_hours: visitingHours,
             heritage_status: m.heritage_status || (m.unesco_site ? 'UNESCO World Heritage Site' : 'ASI National Monument'),
             data_confidence: confidence,
             source_url: sourceUrl,
-            source_name: deepLink ? 'UNESCO World Heritage Centre' : (m.unesco_site ? 'UNESCO World Heritage Centre' : (m.source || 'Archaeological Survey of India')),
-            source_type: (deepLink || m.unesco_site) ? 'unesco' : 'asi',
-            source_quality: quality,
-            verification_status: verifiedStatus,
-            last_verified_on: '2026-03-10',
             last_verified_at: now,
-            topic: 'Heritage',
-            subtopic: m.unesco_site ? 'UNESCO World Heritage Sites' : 'Monuments',
-            sources: [
-              {
-                id: `src-${m.id}`,
-                source_name: deepLink ? 'UNESCO World Heritage Centre' : (m.unesco_site ? 'UNESCO World Heritage Centre' : (m.source || 'Archaeological Survey of India')),
-                source_url: sourceUrl,
-                source_type: (deepLink || m.unesco_site) ? 'unesco' : 'asi',
-                evidence_note: isVerified ? 'Deep link verified against UNESCO registry' : 'Generic homepage documentation under review',
-                accessed_on: '2026-03-10',
-                verification_status: verifiedStatus,
-              }
-            ],
             rating: Number(m.rating) || 4.8,
             thumbnail_url: m.thumbnail_url || (Array.isArray(m.images) && m.images[0]) || 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop&q=80',
             created_at: now,
@@ -320,15 +251,11 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
         const regionalPlaces = JSON.parse(fs.readFileSync(regPath, 'utf-8'));
         if (Array.isArray(regionalPlaces)) {
           for (const rp of regionalPlaces) {
+            if (places[rp.id]) continue; // Already ingested via curated monuments
+
             const stateId = (rp.state || reg).toLowerCase().replace(/[^a-z0-9]+/g, '-');
             const cityId = (rp.city || reg).toLowerCase().replace(/[^a-z0-9]+/g, '-');
-            const normalizedName = rp.name.trim().toLowerCase();
-            const existing = places[rp.id] || Object.values(places).find(p => p.city_id === cityId && p.name.trim().toLowerCase() === normalizedName);
-            if (existing) continue; // Already ingested via curated monuments
-            const sourceUrl = rp.source_url && rp.source_url.startsWith('http') ? rp.source_url : 'https://asi.nic.in';
-            const quality = computeSourceQuality(sourceUrl);
-            const isVerified = (quality === 'place_specific' || quality === 'official_site');
-            const verifiedStatus = isVerified ? 'verified' : 'needs_review';
+            const sourceUrl = 'https://asi.nic.in';
 
             const domesticFee = Number(rp.entry_fee?.domestic ?? rp.entry_fee_inr ?? 0);
             const intlFee = Number(rp.entry_fee?.international ?? 0);
@@ -347,33 +274,13 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
               history: rp.history || '',
               lat,
               lng,
-              latitude: lat,
-              longitude: lng,
               entry_fee_domestic: domesticFee,
               entry_fee_intl: intlFee,
               visiting_hours: visitingHours,
               heritage_status: rp.heritage_status || 'State Protected Heritage',
-              data_confidence: isVerified ? 'official' : 'unverified',
+              data_confidence: 'official',
               source_url: sourceUrl,
-              source_name: 'State Tourism Department',
-              source_type: 'state_tourism',
-              source_quality: quality,
-              verification_status: verifiedStatus,
-              last_verified_on: '2026-03-10',
               last_verified_at: now,
-              topic: 'Heritage',
-              subtopic: 'Historical Sites',
-              sources: [
-                {
-                  id: `src-${rp.id}`,
-                  source_name: 'State Tourism Department',
-                  source_url: sourceUrl,
-                  source_type: 'state_tourism',
-                  evidence_note: isVerified ? 'Deep link verified against state records' : 'Generic homepage documentation under review',
-                  accessed_on: '2026-03-10',
-                  verification_status: verifiedStatus,
-                }
-              ],
               rating: Number(rp.rating) || 4.7,
               thumbnail_url: rp.thumbnail_url || (Array.isArray(rp.images) && rp.images[0]) || 'https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&auto=format&fit=crop&q=80',
               created_at: now,
@@ -419,55 +326,8 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
                   for (const attr of list) {
                     const placeId = attr.id || `${city.id}-${attr.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
 
-                    const normalizedName = attr.name.trim().toLowerCase();
-                    const existingPlace = places[placeId] || Object.values(places).find(p => p.city_id === city.id && (p.name.trim().toLowerCase() === normalizedName || p.name.trim().toLowerCase().includes(normalizedName) || normalizedName.includes(p.name.trim().toLowerCase())));
-
-                    if (existingPlace) {
-                      // Enrich existing place with verified pilot fields
-                      const deepLink = VERIFIED_UNESCO_DEEP_LINKS[placeId] || VERIFIED_UNESCO_DEEP_LINKS[attr.id] || VERIFIED_UNESCO_DEEP_LINKS[existingPlace.id];
-                      if (deepLink) {
-                        existingPlace.source_url = deepLink;
-                        existingPlace.source_name = 'UNESCO World Heritage Centre';
-                        existingPlace.source_type = 'unesco';
-                      } else if (attr.source_url) {
-                        existingPlace.source_url = attr.source_url;
-                        existingPlace.source_name = attr.source_name || existingPlace.source_name;
-                        existingPlace.source_type = attr.source_type || existingPlace.source_type;
-                      }
-                      if (Array.isArray(attr.sources) && attr.sources.length > 0) {
-                        existingPlace.sources = attr.sources;
-                      }
-                      if (attr.topic) existingPlace.topic = attr.topic;
-                      if (attr.subtopic) existingPlace.subtopic = attr.subtopic;
-                      if (attr.category_links) existingPlace.category_links = attr.category_links;
-                      
-                      const quality = computeSourceQuality(existingPlace.source_url);
-                      existingPlace.source_quality = quality;
-                      if (quality === 'generic_homepage' || quality === 'missing' || existingPlace.id === 'capitol-complex-chandigarh') {
-                        existingPlace.verification_status = 'needs_review';
-                      } else if (quality === 'place_specific' || quality === 'official_site') {
-                        existingPlace.verification_status = 'verified';
-                      }
-                      if (attr.last_verified_on) existingPlace.last_verified_on = attr.last_verified_on;
-                      if (attr.detailed_description) existingPlace.detailed_description = attr.detailed_description;
-                      if (attr.short_description) existingPlace.short_description = attr.short_description;
-                      if (attr.best_time_to_visit) existingPlace.best_time_to_visit = attr.best_time_to_visit;
-                      if (attr.official_website) existingPlace.official_website = attr.official_website;
-                      if (attr.opening_hours) existingPlace.opening_hours = attr.opening_hours;
-                      if (attr.contact_information) existingPlace.contact_information = attr.contact_information;
-                      if (attr.address) existingPlace.address = attr.address;
-                      if (attr.lat && !existingPlace.lat) {
-                        existingPlace.lat = Number(attr.lat);
-                        existingPlace.latitude = Number(attr.lat);
-                      }
-                      if (attr.lng && !existingPlace.lng) {
-                        existingPlace.lng = Number(attr.lng);
-                        existingPlace.longitude = Number(attr.lng);
-                      }
-                      if (!existingPlace.latitude && existingPlace.lat) existingPlace.latitude = existingPlace.lat;
-                      if (!existingPlace.longitude && existingPlace.lng) existingPlace.longitude = existingPlace.lng;
-                      continue;
-                    }
+                    // If already verified via monuments or regional archives, skip legacy placeholder
+                    if (places[placeId]) continue;
 
                     // Skip synthetic generic placeholders if the city has verified monuments
                     if (placeId.includes('heritage-fort-complex') && Object.values(places).some(p => p.city_id === city.id)) {
@@ -483,72 +343,26 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
                     const domesticFee = Number(attr.fees?.domestic ?? attr.entry_fee?.domestic ?? 0);
                     const intlFee = Number(attr.fees?.international ?? attr.entry_fee?.foreigner ?? 0);
 
-                    const deepLink = VERIFIED_UNESCO_DEEP_LINKS[placeId] || VERIFIED_UNESCO_DEEP_LINKS[attr.id];
-                    const sourceUrl = deepLink || attr.source_url || attr.source_page || 'https://asi.nic.in';
-                    const quality = computeSourceQuality(sourceUrl);
-                    const isVerified = (quality === 'place_specific' || quality === 'official_site') && placeId !== 'capitol-complex-chandigarh';
-                    const verifiedStatus = isVerified ? (attr.verification_status === 'draft' ? 'draft' : 'verified') : 'needs_review';
-                    const defaultTopic = attr.topic || (catKey === 'monuments' || catKey === 'heritage' ? 'Heritage' : catKey === 'religious_cultural' ? 'Spiritual' : catKey === 'nature_parks_zoo' ? 'Nature' : 'Heritage');
-                    const defaultSubtopic = attr.subtopic || (defaultTopic === 'Heritage' ? 'Historical Sites' : defaultTopic === 'Spiritual' ? 'Hinduism' : 'National Parks');
-
-                    const sourceList = Array.isArray(attr.sources) && attr.sources.length > 0
-                      ? attr.sources
-                      : (sourceUrl ? [{
-                          id: `src-${placeId}`,
-                          source_name: deepLink ? 'UNESCO World Heritage Centre' : (attr.source_name || 'Official Tourism Portal'),
-                          source_url: sourceUrl,
-                          source_type: deepLink ? 'unesco' : (attr.source_type || 'state_tourism'),
-                          evidence_note: isVerified ? 'Deep link verified against authoritative registry' : 'Generic homepage documentation under review',
-                          accessed_on: '2026-03-10',
-                          verification_status: verifiedStatus,
-                        }] : []);
-
-                    const lat = Number(attr.latitude || attr.lat || attr.coordinates?.lat || city.coordinates?.lat || 0);
-                    const lng = Number(attr.longitude || attr.lng || attr.coordinates?.lng || city.coordinates?.lng || 0);
-
                     places[placeId] = {
                       id: placeId,
                       city_id: city.id,
                       state_id: state.id,
                       name: attr.name,
-                      slug: attr.slug || placeId,
-                      place_type: attr.place_type || 'Tourist Place',
                       category: attr.category || catKey || 'heritage',
-                      categories: attr.categories || [attr.category || catKey || 'heritage'],
-                      subcategories: attr.subcategories || [],
-                      topic: defaultTopic,
-                      subtopic: defaultSubtopic,
-                      category_links: attr.category_links || [{ topic: defaultTopic, subtopic: defaultSubtopic }],
                       summary: attr.summary || attr.historical_significance || attr.description || '',
-                      short_description: attr.short_description || attr.summary || '',
-                      detailed_description: attr.detailed_description || attr.description || '',
                       description: attr.description || attr.summary || '',
                       history: attr.history || attr.historical_significance || '',
-                      address: attr.address || '',
-                      lat,
-                      lng,
-                      latitude: lat,
-                      longitude: lng,
-                      entry_fee: attr.entry_fee,
+                      lat: Number(attr.lat || attr.coordinates?.lat || city.coordinates?.lat || 0),
+                      lng: Number(attr.lng || attr.coordinates?.lng || city.coordinates?.lng || 0),
                       entry_fee_domestic: isNaN(domesticFee) ? 0 : domesticFee,
                       entry_fee_intl: isNaN(intlFee) ? 0 : intlFee,
                       visiting_hours: visitingHours,
-                      opening_hours: attr.opening_hours || visitingHours,
-                      best_time_to_visit: attr.best_time_to_visit || 'October to March',
-                      contact_information: attr.contact_information,
-                      official_website: attr.official_website || sourceUrl,
                       heritage_status: attr.heritage_status || 'Local Administration',
-                      data_confidence: isVerified ? 'official' : 'unverified',
-                      source_url: sourceUrl,
-                      source_name: deepLink ? 'UNESCO World Heritage Centre' : (attr.source_name || 'Official State Tourism Records'),
-                      source_type: deepLink ? 'unesco' : (attr.source_type || 'state_tourism'),
-                      source_quality: quality,
-                      verification_status: verifiedStatus,
-                      last_verified_on: attr.last_verified_on || '2026-03-10',
-                      last_verified_at: attr.last_verified_on || '2026-03-10',
+                      data_confidence: 'unverified', // Honestly unverified per Section XI.4
+                      source_url: (attr.source_page && !attr.source_page.includes('incredibleindia')) ? attr.source_page : ((attr.source_url && !attr.source_url.includes('incredibleindia')) ? attr.source_url : 'https://asi.nic.in'),
+                      last_verified_at: undefined,
                       rating: Number(attr.rating) || 4.5,
-                      thumbnail_url: attr.image_url || attr.thumbnail_url || '',
-                      sources: sourceList,
+                      thumbnail_url: attr.image_url || attr.thumbnail_url || 'https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80',
                       created_at: now,
                     };
                   }
@@ -612,127 +426,6 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
     created_at: now,
     updated_at: now,
   };
-
-  // FIX 4: Deduplicate Amber Fort in Jaipur
-  const amberFort = places['amber-fort'] || places['jaipur-amber-palace'];
-  if (amberFort) {
-    amberFort.id = 'amber-fort';
-    amberFort.name = 'Amber Fort & Palace (Amer)';
-    amberFort.source_url = 'https://whc.unesco.org/en/list/247/';
-    amberFort.source_name = 'UNESCO World Heritage Centre';
-    amberFort.source_type = 'unesco';
-    amberFort.source_quality = 'place_specific';
-    amberFort.verification_status = 'verified';
-    amberFort.topic = 'Heritage';
-    amberFort.subtopic = 'UNESCO World Heritage Sites';
-
-    const cats = new Set<string>();
-    for (const key of ['amber-fort', 'jaipur-amber-palace', 'amber-palace']) {
-      const p = places[key];
-      if (p) {
-        if (p.category) cats.add(p.category);
-        if (Array.isArray(p.categories)) p.categories.forEach(c => cats.add(c));
-      }
-    }
-    amberFort.categories = Array.from(cats);
-    places['amber-fort'] = amberFort;
-    delete places['jaipur-amber-palace'];
-    delete places['amber-palace'];
-  }
-
-  // FIX 4: Deduplicate Basilica of Bom Jesus in Goa
-  const basilica = places['basilica-of-bom-jesus'] || places['basilica-bom-jesus-goa'];
-  if (basilica) {
-    basilica.id = 'basilica-of-bom-jesus';
-    basilica.name = 'Basilica of Bom Jesus & Old Goa Churches';
-    basilica.source_url = 'https://whc.unesco.org/en/list/234/';
-    basilica.source_name = 'UNESCO World Heritage Centre';
-    basilica.source_type = 'unesco';
-    basilica.source_quality = 'place_specific';
-    basilica.verification_status = 'verified';
-    basilica.topic = 'Heritage';
-    basilica.subtopic = 'UNESCO World Heritage Sites';
-
-    const cats = new Set<string>();
-    for (const key of ['basilica-of-bom-jesus', 'basilica-bom-jesus-goa']) {
-      const p = places[key];
-      if (p) {
-        if (p.category) cats.add(p.category);
-        if (Array.isArray(p.categories)) p.categories.forEach(c => cats.add(c));
-      }
-    }
-    basilica.categories = Array.from(cats);
-    places['basilica-of-bom-jesus'] = basilica;
-    delete places['basilica-bom-jesus-goa'];
-  }
-
-  // Post-processing sanity pass across all places
-  for (const p of Object.values(places)) {
-    // 1. Assign UNESCO deep link if known
-    if (VERIFIED_UNESCO_DEEP_LINKS[p.id]) {
-      p.source_url = VERIFIED_UNESCO_DEEP_LINKS[p.id];
-      p.source_name = 'UNESCO World Heritage Centre';
-      p.source_type = 'unesco';
-    }
-
-    // 2. Capitol complex check (404 error)
-    if (p.id === 'capitol-complex-chandigarh') {
-      p.verification_status = 'needs_review';
-    }
-
-    // 3. Compute quality tier
-    const quality = computeSourceQuality(p.source_url || (p.sources && p.sources[0]?.source_url));
-    p.source_quality = quality;
-
-    // 4. Strict Tier Policy:
-    // TIER 1 (place_specific) or TIER 2 (official_site) -> VERIFIED allowed
-    // TIER 3 (generic_homepage) or missing -> VERIFIED FORBIDDEN -> needs_review!
-    if (quality === 'generic_homepage' || quality === 'missing' || p.id === 'capitol-complex-chandigarh') {
-      p.verification_status = 'needs_review';
-    } else if (quality === 'place_specific' || quality === 'official_site') {
-      if (p.verification_status === 'verified' || ['shrikashivishwanath.org', 'partitionmuseum.org', 'eternalmewar.in'].some(d => (p.source_url || '').includes(d))) {
-        p.verification_status = 'verified';
-      }
-    }
-
-    // 5. Coordinates normalization
-    if (typeof p.latitude !== 'number' || isNaN(p.latitude) || p.latitude === 0) {
-      if (typeof p.lat === 'number' && !isNaN(p.lat) && p.lat !== 0) {
-        p.latitude = p.lat;
-      }
-    }
-    if (typeof p.longitude !== 'number' || isNaN(p.longitude) || p.longitude === 0) {
-      if (typeof p.lng === 'number' && !isNaN(p.lng) && p.lng !== 0) {
-        p.longitude = p.lng;
-      }
-    }
-    if ((!p.latitude || p.latitude === 0 || !p.longitude || p.longitude === 0) && p.city_id && cities[p.city_id]) {
-      const city = cities[p.city_id];
-      if (city.lat && city.lng) {
-        p.lat = city.lat;
-        p.lng = city.lng;
-        p.latitude = city.lat;
-        p.longitude = city.lng;
-      }
-    }
-    if (typeof p.lat !== 'number' || isNaN(p.lat)) p.lat = p.latitude || 0;
-    if (typeof p.lng !== 'number' || isNaN(p.lng)) p.lng = p.longitude || 0;
-
-    // 6. Ensure sources array exists and has at least one valid source
-    p.sources = [{
-      id: `src-${p.id}`,
-      source_name: p.source_name || (p.source_quality === 'official_site' ? 'Official Site' : 'Official Heritage Authority'),
-      source_url: p.source_url || 'https://asi.nic.in',
-      source_type: (p.source_type || 'official_institution') as any,
-      evidence_note: p.source_quality === 'place_specific'
-        ? 'Deep link verified against authoritative registry'
-        : p.source_quality === 'official_site'
-        ? 'Official institution/trust site verified'
-        : 'Generic homepage documentation under review',
-      accessed_on: p.last_verified_on || '2026-03-10',
-      verification_status: p.verification_status,
-    }];
-  }
 
   console.log(`[DB Seed] Seeding complete: ${Object.keys(states).length} states, ${Object.keys(cities).length} cities, ${Object.keys(places).length} places (${Object.values(places).filter(p => p.data_confidence === 'official').length} verified), ${Object.keys(place_facts).length} granular facts, ${Object.keys(transit_nodes).length} transit nodes.`);
 

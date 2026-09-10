@@ -78,7 +78,7 @@ export const ThreeDHeritageShowcase: React.FC<ThreeDHeritageShowcaseProps> = ({
       description:
         'Colossal 13th-century chariot of Surya the Sun God carved with 24 intricate astronomical stone wheels and pulled by seven stone steeds.',
       imageUrl:
-        'https://images.unsplash.com/photo-1600100397608-f010f443a9e1?w=800&auto=format&fit=crop&q=80',
+        'https://upload.wikimedia.org/wikipedia/commons/4/47/Konarka_Temple.jpg',
       badge: 'UNESCO World Heritage',
     },
     {
@@ -93,7 +93,7 @@ export const ThreeDHeritageShowcase: React.FC<ThreeDHeritageShowcaseProps> = ({
       description:
         'Capital of the Vijayanagara Empire along the Tungabhadra river, famed for monolithic granite shrines, musical pillars, and stone chariot.',
       imageUrl:
-        'https://images.unsplash.com/photo-1600100397858-6927976e3d2c?w=800&auto=format&fit=crop&q=80',
+        'https://upload.wikimedia.org/wikipedia/commons/b/b9/Complex_of_Virupaksha_Temple%2C_Hampi_%2804%29.jpg',
       badge: 'UNESCO World Heritage',
     },
     {

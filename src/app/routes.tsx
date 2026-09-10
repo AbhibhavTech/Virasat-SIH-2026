@@ -15,7 +15,6 @@ import { DestinationDetailPage } from '../pages/DestinationDetailPage';
 import { SearchPage } from '../pages/SearchPage';
 import { HeritageSitesPage } from '../pages/HeritageSitesPage';
 import { IndiaHierarchyPage } from '../pages/IndiaHierarchyPage';
-import { AdminDashboardPage } from '../pages/AdminDashboardPage';
 
 export function formatCityName(cityId: string): string {
   if (!cityId) return 'Mumbai';
@@ -345,8 +344,6 @@ export const AppRoutes: React.FC<AppRoutesProps> = ({
         path="/search"
         element={<SearchRoute onSelectPlace={onSelectPlace} />}
       />
-
-      <Route path="/admin" element={<AdminDashboardPage />} />
 
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>

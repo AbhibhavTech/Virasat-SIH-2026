@@ -10,7 +10,8 @@ import {
   Sparkles,
   Map as MapIcon,
   Globe2,
-  Navigation
+  Navigation,
+  CameraOff
 } from 'lucide-react';
 
 export interface MapPinData {
@@ -89,7 +90,7 @@ export const INDIA_PINS: MapPinData[] = [
     iconicPlace: 'Kedarnath Sanctum & Ganga Aarti',
     lat: 30.0869,
     lng: 78.2676,
-    thumbnail: 'https://images.unsplash.com/photo-1588096344356-9b552d431057?w=500&auto=format&fit=crop&q=80',
+    thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/5/56/Kedarnath_Temple_in_Rainy_season.jpg',
   },
   {
     id: 'delhi',
@@ -113,7 +114,7 @@ export const INDIA_PINS: MapPinData[] = [
     iconicPlace: 'Amber Fort, Hawa Mahal & Mehrangarh',
     lat: 26.9124,
     lng: 75.7873,
-    thumbnail: 'https://images.unsplash.com/photo-1609137144822-0a1215b4976c?w=500&auto=format&fit=crop&q=80',
+    thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/7/73/Amber_Fort%2C_Jaipur.jpg',
   },
   {
     id: 'uttar-pradesh',
@@ -139,7 +140,7 @@ export const INDIA_PINS: MapPinData[] = [
     iconicPlace: "Rani ki Vav (Queen's Stepwell)",
     lat: 23.8589,
     lng: 72.1016,
-    thumbnail: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=500&auto=format&fit=crop&q=80',
+    thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/b/b8/Rani_ki_vav_07.jpg',
   },
   {
     id: 'maharashtra',
@@ -177,7 +178,7 @@ export const INDIA_PINS: MapPinData[] = [
     iconicPlace: 'Khajuraho Temples & Great Sanchi Stupa',
     lat: 24.8515,
     lng: 79.9215,
-    thumbnail: 'https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=500&auto=format&fit=crop&q=80',
+    thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/5/58/Kandariya_Mahadeva_Temple.jpg',
   },
   // East
   {
@@ -217,7 +218,7 @@ export const INDIA_PINS: MapPinData[] = [
     iconicPlace: 'Black Pagoda Sun Temple & Puri Jagannath',
     lat: 19.8876,
     lng: 86.0945,
-    thumbnail: 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=500&auto=format&fit=crop&q=80',
+    thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/4/47/Konarka_Temple.jpg',
   },
   // South
   {
@@ -231,7 +232,7 @@ export const INDIA_PINS: MapPinData[] = [
     iconicPlace: 'Vijayanagara Stone Chariot & Virupaksha',
     lat: 15.335,
     lng: 76.46,
-    thumbnail: 'https://images.unsplash.com/photo-1600100397608-f010f443b780?w=500&auto=format&fit=crop&q=80',
+    thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/4/4b/Hampi_virupaksha_temple.jpg',
   },
   {
     id: 'andhra-pradesh',
@@ -244,7 +245,7 @@ export const INDIA_PINS: MapPinData[] = [
     iconicPlace: 'Veerabhadra Temple Hanging Pillar & Tirumala',
     lat: 13.8052,
     lng: 77.6074,
-    thumbnail: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=500&auto=format&fit=crop&q=80',
+    thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/0/0a/Front_side_of_Veerabhadra_Temple%2C_Lepakshi.jpg',
   },
   {
     id: 'telangana',
@@ -256,7 +257,7 @@ export const INDIA_PINS: MapPinData[] = [
     iconicPlace: 'Charminar & Ramappa UNESCO Temple',
     lat: 17.3616,
     lng: 78.4747,
-    thumbnail: 'https://images.unsplash.com/photo-1572917711467-f376cfbcfe98?w=500&auto=format&fit=crop&q=80',
+    thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/7/71/Charminar_Hyderabad_1.jpg',
   },
   {
     id: 'tamil-nadu',
@@ -294,7 +295,7 @@ export const INDIA_PINS: MapPinData[] = [
     iconicPlace: 'Majuli River Island & Kaziranga Rhinos',
     lat: 26.9535,
     lng: 94.2188,
-    thumbnail: 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=500&auto=format&fit=crop&q=80',
+    thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/f/fe/Beauty_of_Kaziranga_National_Park.jpg',
   },
   {
     id: 'meghalaya',
@@ -307,7 +308,7 @@ export const INDIA_PINS: MapPinData[] = [
     iconicPlace: 'Double Decker Living Root Bridges & Nohkalikai',
     lat: 25.2986,
     lng: 91.7314,
-    thumbnail: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=500&auto=format&fit=crop&q=80',
+    thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/5/51/Living_root_bridges%2C_Nongriat_village%2C_Meghalaya2.jpg',
   },
   {
     id: 'sikkim',
@@ -319,7 +320,7 @@ export const INDIA_PINS: MapPinData[] = [
     iconicPlace: 'Rumtek Monastery & Kanchenjunga Biosphere',
     lat: 27.3389,
     lng: 88.6065,
-    thumbnail: 'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=500&auto=format&fit=crop&q=80',
+    thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/9/99/Rumtek_Monastery_alias_Dharma_Chakra_Centre_near_Gangtok%2C_East_Sikkim_09.jpg',
   },
   {
     id: 'tripura',
@@ -332,7 +333,7 @@ export const INDIA_PINS: MapPinData[] = [
     iconicPlace: 'Colossal Shiva Rock-Relief Sculptures',
     lat: 24.3167,
     lng: 92.0167,
-    thumbnail: 'https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=500&auto=format&fit=crop&q=80',
+    thumbnail: 'https://upload.wikimedia.org/wikipedia/commons/3/30/Unakoti.jpg',
   },
   {
     id: 'andaman',
@@ -366,6 +367,7 @@ export const ExploreIndiaMap: React.FC<ExploreIndiaMapProps> = ({
   const [selectedRegion, setSelectedRegion] = useState<string>('All');
   const [mapTileStyle, setMapTileStyle] = useState<'voyager' | 'satellite'>('voyager');
   const [isMapReady, setIsMapReady] = useState(false);
+  const [pinImageErrors, setPinImageErrors] = useState<Record<string, boolean>>({});
 
   const tileUrls = {
     voyager: 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
@@ -695,16 +697,24 @@ export const ExploreIndiaMap: React.FC<ExploreIndiaMapProps> = ({
           <div className="bg-white rounded-2xl border border-[#EFE8DF] overflow-hidden shadow-xs h-full flex flex-col justify-between">
             <div>
               <div className="relative h-48 w-full overflow-hidden bg-stone-100 group">
-                <img
-                  src={activePin.thumbnail}
-                  alt={activePin.name}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).src =
-                      'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&auto=format&fit=crop&q=80';
-                  }}
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                {pinImageErrors[activePin.id] || !activePin.thumbnail ? (
+                  <div className="w-full h-full flex flex-col items-center justify-center bg-stone-100 text-stone-600 p-4 text-center">
+                    <CameraOff className="w-8 h-8 text-stone-400 mb-1" />
+                    <span className="text-xs font-semibold text-stone-700">Photograph unavailable</span>
+                    <span className="text-[10px] text-stone-500">Field verification pending</span>
+                  </div>
+                ) : (
+                  <img
+                    src={activePin.thumbnail}
+                    alt={activePin.name}
+                    referrerPolicy="no-referrer"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    onError={() =>
+                      setPinImageErrors((prev) => ({ ...prev, [activePin.id]: true }))
+                    }
+                  />
+                )}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
                 <div className="absolute top-3 left-3">
                   <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-[#FF671F] text-white shadow-xs">
                     {activePin.region}

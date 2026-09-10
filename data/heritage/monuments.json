@@ -54,7 +54,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "UNESCO World Heritage Centre",
+    "source": "Archaeological Survey of India (ASI)",
     "last_updated": "2026-03-01",
     "category": "Architectural & Colonial",
     "tags": [
@@ -72,8 +72,8 @@
       "ai": true,
       "3d": true
     },
-    "source_url": "https://whc.unesco.org/en/list/252/",
-    "source_type": "unesco"
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.114Z"
   },
   {
     "id": "fatehpur-sikri",
@@ -129,7 +129,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "UNESCO World Heritage Centre",
+    "source": "Archaeological Survey of India (ASI)",
     "last_updated": "2026-03-01",
     "category": "Forts & Palaces",
     "tags": [
@@ -146,8 +146,8 @@
       "ai": true,
       "3d": true
     },
-    "source_url": "https://whc.unesco.org/en/list/255/",
-    "source_type": "unesco"
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "qutub-minar",
@@ -203,7 +203,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "UNESCO World Heritage Centre",
+    "source": "Archaeological Survey of India (ASI)",
     "last_updated": "2026-03-01",
     "category": "Architectural & Colonial",
     "tags": [
@@ -220,8 +220,8 @@
       "ai": true,
       "3d": true
     },
-    "source_url": "https://whc.unesco.org/en/list/233/",
-    "source_type": "unesco"
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "red-fort",
@@ -277,7 +277,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "UNESCO World Heritage Centre",
+    "source": "Archaeological Survey of India (ASI)",
     "last_updated": "2026-03-01",
     "category": "Forts & Palaces",
     "tags": [
@@ -294,8 +294,8 @@
       "ai": true,
       "3d": true
     },
-    "source_url": "https://whc.unesco.org/en/list/231/",
-    "source_type": "unesco"
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "humayuns-tomb",
@@ -340,8 +340,10 @@
     "nearest_transport": {
       "railway_station": "Hazrat Nizamuddin (NZM)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1597044141245-3e28e18f26b5?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Tomb_of_Humayun%2C_Delhi.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d2/Tomb_of_Humayun%2C_Delhi.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/commons/4/41/Tomb_of_Humayun%2C_Delhi.jpg",
       "https://images.unsplash.com/photo-1597044141245-3e28e18f26b5?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -351,7 +353,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "UNESCO World Heritage Centre",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Architectural & Colonial",
     "tags": [
@@ -368,8 +370,11 @@
       "ai": true,
       "3d": true
     },
-    "source_url": "https://whc.unesco.org/en/list/232/",
-    "source_type": "unesco"
+    "creator": "Muhammad Mahdi Karim",
+    "license": "GFDL 1.2",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Tomb_of_Humayun,_Delhi.jpg",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "india-gate",
@@ -441,7 +446,9 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "golden-temple-amritsar",
@@ -486,8 +493,10 @@
     "nearest_transport": {
       "railway_station": "Amritsar Junction (ASR)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1588096344356-9b634839cf9e?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/9/94/The_Golden_Temple_of_Amrithsar_7.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/9/94/The_Golden_Temple_of_Amrithsar_7.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/commons/9/94/The_Golden_Temple_of_Amrithsar_7.jpg",
       "https://images.unsplash.com/photo-1588096344356-9b634839cf9e?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -497,7 +506,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Shiromani Gurdwara Parbandhak Committee (SGPC)",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Temples & Sacred",
     "tags": [
@@ -514,7 +523,12 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "creator": "Shagil Kannur",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:The_Golden_Temple_of_Amrithsar_7.jpg",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "kalka-shimla-railway",
@@ -560,8 +574,10 @@
     "nearest_transport": {
       "railway_station": "Shimla (SML) / Kalka (KLK)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Kalka-Shimla_Railway_Barog.JPG?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/5/56/Kalka-Shimla_Railway_Barog.JPG?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/commons/8/87/Kalka-Shimla_Railway_Barog.JPG",
       "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -571,7 +587,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "UNESCO World Heritage Centre",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Architectural & Colonial",
     "tags": [
@@ -588,8 +604,11 @@
       "ai": true,
       "3d": true
     },
-    "source_url": "https://whc.unesco.org/en/list/944/",
-    "source_type": "unesco"
+    "creator": "Vishmak",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Kalka-Shimla_Railway_Barog.JPG",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "kedarnath-temple",
@@ -635,8 +654,10 @@
     "nearest_transport": {
       "railway_station": "Rishikesh (RKSH) / Gaurikund Base"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Kedarnath_Temple_in_Rainy_season.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/5/56/Kedarnath_Temple_in_Rainy_season.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/commons/8/84/Kedarnath_Temple_in_Rainy_season.jpg",
       "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -646,7 +667,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Badrinath-Kedarnath Temple Committee (BKTC)",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Temples & Sacred",
     "tags": [
@@ -662,7 +683,12 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "creator": "Shivam Kumar 766",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Kedarnath_Temple_in_Rainy_season.jpg",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "shalimar-bagh-srinagar",
@@ -708,8 +734,10 @@
     "nearest_transport": {
       "railway_station": "Srinagar (SINA)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Shalimar_Bagh_1.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d6/Shalimar_Bagh_1.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/commons/d/da/Shalimar_Bagh_1.jpg",
       "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -719,7 +747,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Jammu & Kashmir Tourism & ASI",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Natural & Ghats",
     "tags": [
@@ -735,7 +763,12 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "creator": "ANSAR AHMAD",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Shalimar_Bagh_1.jpg",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "leh-palace",
@@ -781,8 +814,10 @@
     "nearest_transport": {
       "railway_station": "Leh Airport (IXL) / Jammu Tawi (JAT)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/3/36/Leh_Palace_2011.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/3/36/Leh_Palace_2011.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/commons/c/c2/Leh_Palace_2011.jpg",
       "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -792,7 +827,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Archaeological Survey of India (ASI)",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Forts & Palaces",
     "tags": [
@@ -808,7 +843,12 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "creator": "KennyOMG",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Leh_Palace_2011.jpg",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "capitol-complex-chandigarh",
@@ -853,8 +893,10 @@
     "nearest_transport": {
       "railway_station": "Chandigarh Junction (CDG)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/0/05/Chandigarh_Capitol_Complex_-_Le_Corbusier_-_Open_hand_monument.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/0/05/Chandigarh_Capitol_Complex_-_Le_Corbusier_-_Open_hand_monument.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/commons/0/05/Chandigarh_Capitol_Complex_-_Le_Corbusier_-_Open_hand_monument.jpg",
       "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -864,7 +906,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Chandigarh Tourism / UNESCO World Heritage Centre",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Architectural & Colonial",
     "tags": [
@@ -881,8 +923,11 @@
       "ai": true,
       "3d": true
     },
-    "source_url": "https://whc.unesco.org",
-    "verification_status": "needs_review"
+    "creator": "Nicholas.iyadurai",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chandigarh_Capitol_Complex_-_Le_Corbusier_-_Open_hand_monument.jpg",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "amber-fort",
@@ -928,9 +973,10 @@
     "nearest_transport": {
       "railway_station": "Jaipur Junction (JP)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1603288967527-24861e6878b3?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/7/73/Amber_Fort%2C_Jaipur.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
-      "https://images.unsplash.com/photo-1603288967527-24861e6878b3?w=800&auto=format&fit=crop&q=80"
+      "https://upload.wikimedia.org/wikipedia/commons/7/73/Amber_Fort%2C_Jaipur.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/commons/2/22/Amber_Fort%2C_Jaipur.jpg"
     ],
     "model_3d": {
       "available": true,
@@ -939,7 +985,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "UNESCO World Heritage Centre",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Forts & Palaces",
     "tags": [
@@ -957,8 +1003,11 @@
       "ai": true,
       "3d": true
     },
-    "source_url": "https://whc.unesco.org/en/list/247/",
-    "source_type": "unesco"
+    "creator": "Prasoonmaheshwari",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Amber_Fort,_Jaipur.jpg",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "hawa-mahal",
@@ -1003,8 +1052,10 @@
     "nearest_transport": {
       "railway_station": "Jaipur Junction (JP) / Badi Chaupar Metro"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1609946850720-6d4323229b46?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/4/41/East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/4/41/East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/commons/4/41/East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg",
       "https://images.unsplash.com/photo-1609946850720-6d4323229b46?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -1014,7 +1065,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Department of Archaeology and Museums, Rajasthan",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Forts & Palaces",
     "tags": [
@@ -1031,7 +1082,12 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "creator": "Chainwit.",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:East_facade_Hawa_Mahal_Jaipur_from_ground_level_(July_2022)_-_img_01.jpg",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "jaisalmer-fort",
@@ -1088,7 +1144,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "UNESCO World Heritage Centre",
+    "source": "Archaeological Survey of India (ASI)",
     "last_updated": "2026-03-01",
     "category": "Forts & Palaces",
     "tags": [
@@ -1106,8 +1162,8 @@
       "ai": true,
       "3d": true
     },
-    "source_url": "https://whc.unesco.org/en/list/247/",
-    "source_type": "unesco"
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "rani-ki-vav",
@@ -1152,9 +1208,10 @@
     "nearest_transport": {
       "railway_station": "Patan (PTN) / Mehsana (MSH)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/b/b8/Rani_ki_vav_07.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
-      "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80"
+      "https://upload.wikimedia.org/wikipedia/commons/b/b8/Rani_ki_vav_07.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/commons/f/ff/Rani_ki_vav_07.jpg"
     ],
     "model_3d": {
       "available": true,
@@ -1163,7 +1220,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "UNESCO World Heritage Centre",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Caves & Rock-Cut",
     "tags": [
@@ -1181,8 +1238,11 @@
       "ai": true,
       "3d": true
     },
-    "source_url": "https://whc.unesco.org/en/list/922/",
-    "source_type": "unesco"
+    "creator": "Bernard Gagnon",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Rani_ki_vav_07.jpg",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "champaner-pavagadh",
@@ -1227,9 +1287,10 @@
     "nearest_transport": {
       "railway_station": "Vadodara Junction (BRC)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/2/26/Jama_Mosque%2CPMS.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
-      "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80"
+      "https://upload.wikimedia.org/wikipedia/commons/2/26/Jama_Mosque%2CPMS.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/commons/2/26/Jama_Mosque%2CPMS.jpg"
     ],
     "model_3d": {
       "available": true,
@@ -1238,7 +1299,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "UNESCO World Heritage Centre",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Caves & Rock-Cut",
     "tags": [
@@ -1255,8 +1316,11 @@
       "ai": true,
       "3d": true
     },
-    "source_url": "https://whc.unesco.org/en/list/1101/",
-    "source_type": "unesco"
+    "creator": "Iamarfat",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Jama_Mosque,PMS.jpg",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "ajanta-caves",
@@ -1301,9 +1365,10 @@
     "nearest_transport": {
       "railway_station": "Jalgaon (JL) / Aurangabad (AWB)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Ajanta_%2863%29.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
-      "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?w=800&auto=format&fit=crop&q=80"
+      "https://upload.wikimedia.org/wikipedia/commons/c/c3/Ajanta_%2863%29.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/commons/d/da/Ajanta_%2863%29.jpg"
     ],
     "model_3d": {
       "available": true,
@@ -1312,7 +1377,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "UNESCO World Heritage Centre",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Caves & Rock-Cut",
     "tags": [
@@ -1329,8 +1394,11 @@
       "ai": true,
       "3d": true
     },
-    "source_url": "https://whc.unesco.org/en/list/242/",
-    "source_type": "unesco"
+    "creator": "No machine-readable author provided. Soman assumed (based on copyright claims).",
+    "license": "CC BY 2.5",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ajanta_(63).jpg",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "ellora-caves",
@@ -1375,9 +1443,10 @@
     "nearest_transport": {
       "railway_station": "Aurangabad (AWB)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/en/f/fc/Kailash_temple_%28Ellora_cave_no_15%29_at_Verul.png?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
-      "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80"
+      "https://upload.wikimedia.org/wikipedia/en/f/fc/Kailash_temple_%28Ellora_cave_no_15%29_at_Verul.png?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/en/f/fc/Kailash_temple_%28Ellora_cave_no_15%29_at_Verul.png"
     ],
     "model_3d": {
       "available": true,
@@ -1386,7 +1455,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "UNESCO World Heritage Centre",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Caves & Rock-Cut",
     "tags": [
@@ -1403,8 +1472,11 @@
       "ai": true,
       "3d": true
     },
-    "source_url": "https://whc.unesco.org/en/list/243/",
-    "source_type": "unesco"
+    "creator": "Wikimedia Contributor",
+    "license": "CC-BY-SA-4.0",
+    "source_url": "https://en.wikipedia.org/wiki/File:Kailash_temple_(Ellora_cave_no_15)_at_Verul.png",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "gateway-of-india",
@@ -1477,7 +1549,9 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "csmt",
@@ -1523,8 +1597,10 @@
     "nearest_transport": {
       "railway_station": "CSMT Station"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/4/4d/Chhatrapati_shivaji_terminus%2C_esterno_01.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/4/4d/Chhatrapati_shivaji_terminus%2C_esterno_01.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/commons/6/69/Chhatrapati_shivaji_terminus%2C_esterno_01.jpg",
       "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -1534,7 +1610,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "UNESCO World Heritage Centre",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Architectural & Colonial",
     "tags": [
@@ -1551,8 +1627,11 @@
       "ai": true,
       "3d": true
     },
-    "source_url": "https://whc.unesco.org/en/list/945/",
-    "source_type": "unesco"
+    "creator": "Sailko",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Chhatrapati_shivaji_terminus,_esterno_01.jpg",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "basilica-of-bom-jesus",
@@ -1597,8 +1676,10 @@
     "nearest_transport": {
       "railway_station": "Karmali (KRMI) / Madgaon (MAO)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/commons/2/2e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg",
       "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -1608,7 +1689,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "UNESCO World Heritage Centre",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Temples & Sacred",
     "tags": [
@@ -1626,8 +1707,11 @@
       "ai": true,
       "3d": true
     },
-    "source_url": "https://whc.unesco.org/en/list/234/",
-    "source_type": "unesco"
+    "creator": "iMahesh",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Front_Elevation_of_Basilica_of_Bom_Jesus.jpg",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "hampi-monuments",
@@ -1673,9 +1757,10 @@
     "nearest_transport": {
       "railway_station": "Hosapete Junction (HPT)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Hampi_virupaksha_temple.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
-      "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80"
+      "https://upload.wikimedia.org/wikipedia/commons/4/4b/Hampi_virupaksha_temple.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/commons/4/4b/Hampi_virupaksha_temple.jpg"
     ],
     "model_3d": {
       "available": true,
@@ -1684,7 +1769,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "UNESCO World Heritage Centre",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Temples & Sacred",
     "tags": [
@@ -1702,8 +1787,11 @@
       "ai": true,
       "3d": true
     },
-    "source_url": "https://whc.unesco.org/en/list/241/",
-    "source_type": "unesco"
+    "creator": "Apadegal",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Hampi_virupaksha_temple.jpg",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "pattadakal-monuments",
@@ -1748,9 +1836,10 @@
     "nearest_transport": {
       "railway_station": "Badami (BDM)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/0/03/Pattadakal_000.JPG?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
-      "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80"
+      "https://upload.wikimedia.org/wikipedia/commons/0/03/Pattadakal_000.JPG?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/commons/8/80/Pattadakal_000.JPG"
     ],
     "model_3d": {
       "available": true,
@@ -1759,7 +1848,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "UNESCO World Heritage Centre",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Temples & Sacred",
     "tags": [
@@ -1777,8 +1866,11 @@
       "ai": true,
       "3d": true
     },
-    "source_url": "https://whc.unesco.org/en/list/239/",
-    "source_type": "unesco"
+    "creator": "Nithin bolar k",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pattadakal_000.JPG",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "hoysala-temples-belur",
@@ -1823,9 +1915,10 @@
     "nearest_transport": {
       "railway_station": "Hassan Junction (HAS)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/The_Courtyard_of_Chennakesava_Temple_-_Belur.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
-      "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80"
+      "https://upload.wikimedia.org/wikipedia/commons/0/0a/The_Courtyard_of_Chennakesava_Temple_-_Belur.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/commons/0/0a/The_Courtyard_of_Chennakesava_Temple_-_Belur.jpg"
     ],
     "model_3d": {
       "available": true,
@@ -1834,7 +1927,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "UNESCO World Heritage Centre",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Temples & Sacred",
     "tags": [
@@ -1852,8 +1945,11 @@
       "ai": true,
       "3d": true
     },
-    "source_url": "https://whc.unesco.org/en/list/1670/",
-    "source_type": "unesco"
+    "creator": "Bikashrd",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:The_Courtyard_of_Chennakesava_Temple_-_Belur.jpg",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "brihadisvara-temple",
@@ -1898,8 +1994,10 @@
     "nearest_transport": {
       "railway_station": "Thanjavur Junction (TJ)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Brihadisvara_Temple_during_Maha_Shivaratri-WUS03611_%28edit%29.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/dd/Brihadisvara_Temple_during_Maha_Shivaratri-WUS03611_%28edit%29.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/commons/b/ba/Brihadisvara_Temple_during_Maha_Shivaratri-WUS03611_%28edit%29.jpg",
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -1909,7 +2007,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "UNESCO World Heritage Centre",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Temples & Sacred",
     "tags": [
@@ -1927,8 +2025,11 @@
       "ai": true,
       "3d": true
     },
-    "source_url": "https://whc.unesco.org/en/list/250/",
-    "source_type": "unesco"
+    "creator": "Original:  Rainer Halama\nDerivative work:  UnpetitproleX",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Brihadisvara_Temple_during_Maha_Shivaratri-WUS03611_(edit).jpg",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "shore-temple-mahabalipuram",
@@ -1974,8 +2075,10 @@
     "nearest_transport": {
       "railway_station": "Chengalpattu (CGL) / Chennai Central"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/7/74/Shore_Temple_-Mamallapuram_-Tamil_Nadu_-N-TN-C55.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/7/74/Shore_Temple_-Mamallapuram_-Tamil_Nadu_-N-TN-C55.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/commons/0/09/Shore_Temple_-Mamallapuram_-Tamil_Nadu_-N-TN-C55.jpg",
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -1985,7 +2088,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "UNESCO World Heritage Centre",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Temples & Sacred",
     "tags": [
@@ -2003,8 +2106,11 @@
       "ai": true,
       "3d": true
     },
-    "source_url": "https://whc.unesco.org/en/list/249/",
-    "source_type": "unesco"
+    "creator": "Swarna1311",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Shore_Temple_-Mamallapuram_-Tamil_Nadu_-N-TN-C55.jpg",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "meenakshi-amman-temple",
@@ -2049,8 +2155,10 @@
     "nearest_transport": {
       "railway_station": "Madurai Junction (MDU)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/e/e9/An_aerial_view_of_Madurai_city_from_atop_of_Meenakshi_Amman_temple.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/e/e9/An_aerial_view_of_Madurai_city_from_atop_of_Meenakshi_Amman_temple.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/commons/e/ec/An_aerial_view_of_Madurai_city_from_atop_of_Meenakshi_Amman_temple.jpg",
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -2060,7 +2168,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Hindu Religious and Charitable Endowments (HR&CE)",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Temples & Sacred",
     "tags": [
@@ -2077,7 +2185,12 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "creator": "எஸ்ஸார்",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:An_aerial_view_of_Madurai_city_from_atop_of_Meenakshi_Amman_temple.jpg",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "fort-kochi-heritage",
@@ -2123,8 +2236,10 @@
     "nearest_transport": {
       "railway_station": "Ernakulam Junction (ERS)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/1/12/Mattancherry_Palace_DSC_0899.JPG?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/1/12/Mattancherry_Palace_DSC_0899.JPG?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/commons/1/12/Mattancherry_Palace_DSC_0899.JPG",
       "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -2134,7 +2249,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Archaeological Survey of India (ASI) & Kerala Tourism",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Forts & Palaces",
     "tags": [
@@ -2151,7 +2266,12 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "creator": "Ranjith Siji",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mattancherry_Palace_DSC_0899.JPG",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "lepakshi-veerabhadra-temple",
@@ -2196,9 +2316,10 @@
     "nearest_transport": {
       "railway_station": "Hindupur (HUP)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Front_side_of_Veerabhadra_Temple%2C_Lepakshi.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
-      "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80"
+      "https://upload.wikimedia.org/wikipedia/commons/0/0a/Front_side_of_Veerabhadra_Temple%2C_Lepakshi.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/commons/6/60/Front_side_of_Veerabhadra_Temple%2C_Lepakshi.jpg"
     ],
     "model_3d": {
       "available": true,
@@ -2207,7 +2328,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Archaeological Survey of India (ASI)",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Temples & Sacred",
     "tags": [
@@ -2223,7 +2344,12 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "creator": "Bikashrd",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Front_side_of_Veerabhadra_Temple,_Lepakshi.jpg",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "ramappa-temple",
@@ -2269,8 +2395,10 @@
     "nearest_transport": {
       "railway_station": "Kazipet (KZJ) / Warangal (WL)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1616198814651-e71f960c3180?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/2/29/Ramappa_Temple_%28Human_Scale%29.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/2/29/Ramappa_Temple_%28Human_Scale%29.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/commons/9/92/Ramappa_Temple_%28Human_Scale%29.jpg",
       "https://images.unsplash.com/photo-1616198814651-e71f960c3180?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -2280,7 +2408,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "UNESCO World Heritage Centre",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Temples & Sacred",
     "tags": [
@@ -2297,8 +2425,11 @@
       "ai": true,
       "3d": true
     },
-    "source_url": "https://whc.unesco.org/en/list/1570/",
-    "source_type": "unesco"
+    "creator": "Nirav Lad",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Ramappa_Temple_(Human_Scale).jpg",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "charminar",
@@ -2344,8 +2475,10 @@
     "nearest_transport": {
       "railway_station": "Hyderabad Deccan (HYB)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1588097281266-31018512954b?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/7/71/Charminar_Hyderabad_1.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/7/71/Charminar_Hyderabad_1.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/commons/7/71/Charminar_Hyderabad_1.jpg",
       "https://images.unsplash.com/photo-1588097281266-31018512954b?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -2355,7 +2488,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Archaeological Survey of India (ASI)",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Temples & Sacred",
     "tags": [
@@ -2371,7 +2504,12 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "creator": "DidierTais",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Charminar_Hyderabad_1.jpg",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "golconda-fort",
@@ -2416,8 +2554,10 @@
     "nearest_transport": {
       "railway_station": "Hyderabad Deccan (HYB)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1616198814651-e71f960c3180?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Golconda_Fort_005.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/5/56/Golconda_Fort_005.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/commons/5/56/Golconda_Fort_005.jpg",
       "https://images.unsplash.com/photo-1616198814651-e71f960c3180?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -2427,7 +2567,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Archaeological Survey of India (ASI)",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Forts & Palaces",
     "tags": [
@@ -2444,7 +2584,12 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "creator": "Bernard Gagnon",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Golconda_Fort_005.jpg",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "french-quarter-puducherry",
@@ -2490,8 +2635,9 @@
     "nearest_transport": {
       "railway_station": "Puducherry (PDY)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Pondicherry-Rock_beach_aerial_view.jpg",
     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/6/6c/Pondicherry-Rock_beach_aerial_view.jpg",
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -2501,7 +2647,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Puducherry Tourism / INTACH",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Architectural & Colonial",
     "tags": [
@@ -2517,7 +2663,12 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "creator": "Kalyan Chakravarthy",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Pondicherry-Rock_beach_aerial_view.jpg",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "khajuraho-monuments",
@@ -2563,9 +2714,10 @@
     "nearest_transport": {
       "railway_station": "Khajuraho (KURJ)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/5/58/Kandariya_Mahadeva_Temple.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
-      "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80"
+      "https://upload.wikimedia.org/wikipedia/commons/5/58/Kandariya_Mahadeva_Temple.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/commons/6/67/Kandariya_Mahadeva_Temple.jpg"
     ],
     "model_3d": {
       "available": true,
@@ -2574,7 +2726,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "UNESCO World Heritage Centre",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Temples & Sacred",
     "tags": [
@@ -2592,8 +2744,11 @@
       "ai": true,
       "3d": true
     },
-    "source_url": "https://whc.unesco.org/en/list/240/",
-    "source_type": "unesco"
+    "creator": "Bibhashlahiri",
+    "license": "CC BY-SA 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Kandariya_Mahadeva_Temple.jpg",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "sanchi-stupa",
@@ -2638,8 +2793,10 @@
     "nearest_transport": {
       "railway_station": "Sanchi (SCI) / Bhopal (BPL)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/1/12/East_Gateway_-_Stupa_1_-_Sanchi_Hill_2013-02-21_4398.JPG?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/1/12/East_Gateway_-_Stupa_1_-_Sanchi_Hill_2013-02-21_4398.JPG?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/commons/3/3c/East_Gateway_-_Stupa_1_-_Sanchi_Hill_2013-02-21_4398.JPG",
       "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -2649,7 +2806,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "UNESCO World Heritage Centre",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Temples & Sacred",
     "tags": [
@@ -2667,8 +2824,11 @@
       "ai": true,
       "3d": true
     },
-    "source_url": "https://whc.unesco.org/en/list/524/",
-    "source_type": "unesco"
+    "creator": "Biswarup Ganguly",
+    "license": "CC BY 3.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:East_Gateway_-_Stupa_1_-_Sanchi_Hill_2013-02-21_4398.JPG",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "sirpur-monuments",
@@ -2713,9 +2873,10 @@
     "nearest_transport": {
       "railway_station": "Mahasamund (MSMD) / Raipur (R)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/7/74/7th_century_Lakshmana_Hindu_temple%2C_Sirpur_Chhattisgarh_India_1.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
-      "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80"
+      "https://upload.wikimedia.org/wikipedia/commons/7/74/7th_century_Lakshmana_Hindu_temple%2C_Sirpur_Chhattisgarh_India_1.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/commons/7/74/7th_century_Lakshmana_Hindu_temple%2C_Sirpur_Chhattisgarh_India_1.jpg"
     ],
     "model_3d": {
       "available": true,
@@ -2724,7 +2885,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Archaeological Survey of India (ASI)",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Temples & Sacred",
     "tags": [
@@ -2740,7 +2901,12 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "creator": "Ms Sarah Welch",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:7th_century_Lakshmana_Hindu_temple,_Sirpur_Chhattisgarh_India_1.jpg",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "sun-temple-konark",
@@ -2785,9 +2951,10 @@
     "nearest_transport": {
       "railway_station": "Puri (PURI) / Bhubaneswar (BBS)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/4/47/Konarka_Temple.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
-      "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80"
+      "https://upload.wikimedia.org/wikipedia/commons/4/47/Konarka_Temple.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/commons/4/47/Konark_Sun_Temple_from_North-East.jpg"
     ],
     "model_3d": {
       "available": true,
@@ -2796,7 +2963,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "UNESCO World Heritage Centre",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Temples & Sacred",
     "tags": [
@@ -2814,8 +2981,11 @@
       "ai": true,
       "3d": true
     },
-    "source_url": "https://whc.unesco.org/en/list/246/",
-    "source_type": "unesco"
+    "creator": "Subham9423",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Konarka_Temple.jpg",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "mahabodhi-temple",
@@ -2861,8 +3031,10 @@
     "nearest_transport": {
       "railway_station": "Gaya Junction (GAYA)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Mahabodhitemple.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/4/4e/Mahabodhitemple.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/commons/c/c5/Mahabodhitemple.jpg",
       "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -2872,7 +3044,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "UNESCO World Heritage Centre",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Temples & Sacred",
     "tags": [
@@ -2890,8 +3062,11 @@
       "ai": true,
       "3d": true
     },
-    "source_url": "https://whc.unesco.org/en/list/1056/",
-    "source_type": "unesco"
+    "creator": "Bpilgrim",
+    "license": "CC BY-SA 2.5",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Mahabodhitemple.jpg",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "nalanda-university-ruins",
@@ -2936,8 +3111,10 @@
     "nearest_transport": {
       "railway_station": "Rajgir (RGD) / Bakhtiyarpur (BKP)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/d/dd/Temple_No.-_3%2C_Nalanda_Archaeological_Site.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/dd/Temple_No.-_3%2C_Nalanda_Archaeological_Site.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/commons/3/30/Temple_No.-_3%2C_Nalanda_Archaeological_Site.jpg",
       "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -2947,7 +3124,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "UNESCO World Heritage Centre",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Temples & Sacred",
     "tags": [
@@ -2965,8 +3142,11 @@
       "ai": true,
       "3d": true
     },
-    "source_url": "https://whc.unesco.org/en/list/1502/",
-    "source_type": "unesco"
+    "creator": "Odantapuribs",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Temple_No.-_3,_Nalanda_Archaeological_Site.jpg",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "victoria-memorial-kolkata",
@@ -3040,7 +3220,9 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "baidyanath-dham-deoghar",
@@ -3085,9 +3267,10 @@
     "nearest_transport": {
       "railway_station": "Jasidih Junction (JSME)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Baidyanath_temple_and_temple_complex%2C_Deoghar_04.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
-      "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80"
+      "https://upload.wikimedia.org/wikipedia/commons/3/3f/Baidyanath_temple_and_temple_complex%2C_Deoghar_04.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/commons/9/90/Baidyanath_temple_and_temple_complex%2C_Deoghar_04.jpg"
     ],
     "model_3d": {
       "available": true,
@@ -3096,7 +3279,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Baidyanath Dham Temple Trust / Jharkhand Tourism",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Temples & Sacred",
     "tags": [
@@ -3112,7 +3295,12 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "creator": "Pinakpani",
+    "license": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Baidyanath_temple_and_temple_complex,_Deoghar_04.jpg",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "kaziranga-living-heritage",
@@ -3157,8 +3345,10 @@
     "nearest_transport": {
       "railway_station": "Furkating (FKG) / Guwahati (GHY)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Beauty_of_Kaziranga_National_Park.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/f/fe/Beauty_of_Kaziranga_National_Park.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/commons/9/95/Beauty_of_Kaziranga_National_Park.jpg",
       "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -3168,7 +3358,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "UNESCO World Heritage Centre",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Natural & Ghats",
     "tags": [
@@ -3186,8 +3376,11 @@
       "ai": true,
       "3d": true
     },
-    "source_url": "https://whc.unesco.org/en/list/337/",
-    "source_type": "unesco"
+    "creator": "Diganta Talukdar",
+    "license": "CC BY-SA 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Beauty_of_Kaziranga_National_Park.jpg",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "living-root-bridges",
@@ -3233,8 +3426,10 @@
     "nearest_transport": {
       "railway_station": "Guwahati (GHY) / Tyrna Base"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/5/51/Living_root_bridges%2C_Nongriat_village%2C_Meghalaya2.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/5/51/Living_root_bridges%2C_Nongriat_village%2C_Meghalaya2.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/commons/c/c8/Living_root_bridges%2C_Nongriat_village%2C_Meghalaya2.jpg",
       "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -3244,7 +3439,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Meghalaya Tourism / INTACH",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Natural & Ghats",
     "tags": [
@@ -3261,7 +3456,12 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "creator": "Arshiya Urveeja Bose",
+    "license": "CC BY 2.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Living_root_bridges,_Nongriat_village,_Meghalaya2.jpg",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   },
   {
     "id": "rumtek-monastery",
@@ -3307,8 +3507,10 @@
     "nearest_transport": {
       "railway_station": "New Jalpaiguri (NJP)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1617854818583-09e7f077a156?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/9/99/Rumtek_Monastery_alias_Dharma_Chakra_Centre_near_Gangtok%2C_East_Sikkim_09.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/9/99/Rumtek_Monastery_alias_Dharma_Chakra_Centre_near_Gangtok%2C_East_Sikkim_09.jpg?utm_source=en.wikipedia.org&utm_campaign=imageinfo&utm_content=original",
+      "https://upload.wikimedia.org/wikipedia/commons/a/ae/Rumtek_Monastery_alias_Dharma_Chakra_Centre_near_Gangtok%2C_East_Sikkim_09.jpg",
       "https://images.unsplash.com/photo-1617854818583-09e7f077a156?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -3318,7 +3520,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Sikkim Tourism & Ecclesiastical Affairs Department",
+    "source": "Wikimedia Commons",
     "last_updated": "2026-03-01",
     "category": "Temples & Sacred",
     "tags": [
@@ -3335,6 +3537,11 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "creator": "Anjan Kumar Kundu",
+    "license": "CC BY 4.0",
+    "source_url": "https://commons.wikimedia.org/wiki/File:Rumtek_Monastery_alias_Dharma_Chakra_Centre_near_Gangtok,_East_Sikkim_09.jpg",
+    "verification_status": "verified",
+    "verified_at": "2026-09-10T14:59:08.115Z"
   }
 ]

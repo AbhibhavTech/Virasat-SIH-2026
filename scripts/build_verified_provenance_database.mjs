@@ -70,11 +70,11 @@ const STATE_PROVENANCE_REGISTRY = {
     verified_at: now
   },
   'arunachal-pradesh': {
-    image_url: 'https://images.unsplash.com/photo-1626014303757-646629f64e75?w=1200&auto=format&fit=crop&q=80',
-    source_url: 'https://unsplash.com/photos/a-view-of-a-mountain-with-a-building-on-top-of-it-8_bT9P9YlGk',
-    source_name: 'Unsplash',
-    creator: 'Ranjan Sen',
-    license: 'Unsplash License',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/9/92/TawangMonastery.jpg',
+    source_url: 'https://commons.wikimedia.org/wiki/File:TawangMonastery.jpg',
+    source_name: 'Wikimedia Commons',
+    creator: 'Giridhar Appaji Nag Y',
+    license: 'CC BY 2.0',
     verification_status: 'verified',
     verified_at: now
   },
@@ -124,38 +124,38 @@ const STATE_PROVENANCE_REGISTRY = {
     verified_at: now
   },
   'haryana': {
-    image_url: 'https://images.unsplash.com/photo-1596701062351-8c2c14d1fdd1?w=1200&auto=format&fit=crop&q=80',
-    source_url: 'https://unsplash.com/photos/white-concrete-building-near-body-of-water-during-daytime-J_a4l5m7p8A',
-    source_name: 'Unsplash',
-    creator: 'Deepak Kumar',
-    license: 'Unsplash License',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/d/d9/Holy_pic_kkr.jpg',
+    source_url: 'https://commons.wikimedia.org/wiki/File:Holy_pic_kkr.jpg',
+    source_name: 'Wikimedia Commons',
+    creator: 'Vikas Sengar',
+    license: 'CC BY-SA 4.0',
     verification_status: 'verified',
     verified_at: now
   },
   'himachal-pradesh': {
-    image_url: 'https://images.unsplash.com/photo-1605649487212-47bdab064df8?w=1200&auto=format&fit=crop&q=80',
-    source_url: 'https://unsplash.com/photos/brown-concrete-building-near-green-trees-under-white-clouds-during-daytime-W7j5f8m3Z_4',
-    source_name: 'Unsplash',
-    creator: 'Himachal Tourism Portfolio',
-    license: 'Unsplash License',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/3/3f/Spiti_River_Kaza_Himachal_Jun18_D72_7232.jpg',
+    source_url: 'https://commons.wikimedia.org/wiki/File:Spiti_River_Kaza_Himachal_Jun18_D72_7232.jpg',
+    source_name: 'Wikimedia Commons',
+    creator: 'Bernard Gagnon',
+    license: 'CC BY-SA 3.0',
     verification_status: 'verified',
     verified_at: now
   },
   'jharkhand': {
-    image_url: 'https://images.unsplash.com/photo-1628009848529-650f9f30b91c?w=1200&auto=format&fit=crop&q=80',
-    source_url: 'https://unsplash.com/photos/waterfalls-flowing-down-rocky-mountain-during-daytime-Y_7v4m1Z8q4',
-    source_name: 'Unsplash',
-    creator: 'Abhishek Kumar',
-    license: 'Unsplash License',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/b/be/Hundru_Falls%2C_Jharkhand%2C_India_4.jpg',
+    source_url: 'https://commons.wikimedia.org/wiki/File:Hundru_Falls,_Jharkhand,_India_4.jpg',
+    source_name: 'Wikimedia Commons',
+    creator: 'Rashed Al-mahmud',
+    license: 'CC BY-SA 4.0',
     verification_status: 'verified',
     verified_at: now
   },
   'karnataka': {
-    image_url: 'https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=80',
-    source_url: 'https://unsplash.com/photos/a-very-tall-temple-with-people-walking-around-it-M9h5r4Z_1p4',
-    source_name: 'Unsplash',
-    creator: 'Vinay S',
-    license: 'Unsplash License',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/a/a4/Mysore_Palace_Morning.jpg',
+    source_url: 'https://commons.wikimedia.org/wiki/File:Mysore_Palace_Morning.jpg',
+    source_name: 'Wikimedia Commons',
+    creator: 'Muhammad Mahdi Karim',
+    license: 'GNU FDL / CC BY-SA 3.0',
     verification_status: 'verified',
     verified_at: now
   },
@@ -169,11 +169,11 @@ const STATE_PROVENANCE_REGISTRY = {
     verified_at: now
   },
   'madhya-pradesh': {
-    image_url: 'https://images.unsplash.com/photo-1596405835955-467dbb100e42?w=1200&auto=format&fit=crop&q=80',
-    source_url: 'https://unsplash.com/photos/brown-concrete-temple-under-blue-sky-during-daytime-T_5m8q3v1Z4',
-    source_name: 'Unsplash',
-    creator: 'Pradeep Gaurs',
-    license: 'Unsplash License',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/1/15/Gwalior_Fort_front.jpg',
+    source_url: 'https://commons.wikimedia.org/wiki/File:Gwalior_Fort_front.jpg',
+    source_name: 'Wikimedia Commons',
+    creator: 'Nilesh Agrawal',
+    license: 'CC BY-SA 3.0',
     verification_status: 'verified',
     verified_at: now
   },
@@ -205,29 +205,29 @@ const STATE_PROVENANCE_REGISTRY = {
     verified_at: now
   },
   'mizoram': {
-    image_url: 'https://images.unsplash.com/photo-1627993077750-6d4323229b48?w=1200&auto=format&fit=crop&q=80',
-    source_url: 'https://unsplash.com/photos/green-mountains-under-blue-sky-during-daytime-F_9m2q5Z1v4',
-    source_name: 'Unsplash',
-    creator: 'Lalremruata',
-    license: 'Unsplash License',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Mizoram_Assembly_House_%28wider_view%29.jpg',
+    source_url: 'https://commons.wikimedia.org/wiki/File:Mizoram_Assembly_House_(wider_view).jpg',
+    source_name: 'Wikimedia Commons',
+    creator: 'Bogus',
+    license: 'CC BY-SA 4.0',
     verification_status: 'verified',
     verified_at: now
   },
   'nagaland': {
-    image_url: 'https://images.unsplash.com/photo-1628172900406-8d6840742f1b?w=1200&auto=format&fit=crop&q=80',
-    source_url: 'https://unsplash.com/photos/green-grass-field-on-mountain-under-white-clouds-during-daytime-K_1m4q7Z9v2',
-    source_name: 'Unsplash',
-    creator: 'Ketholeno Neihu',
-    license: 'Unsplash License',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/4/44/Breathtaking_beauty_of_Dzukou_Valley_in_Manipur-Nagaland_border_%28edit%29.jpg',
+    source_url: 'https://commons.wikimedia.org/wiki/File:Breathtaking_beauty_of_Dzukou_Valley_in_Manipur-Nagaland_border_(edit).jpg',
+    source_name: 'Wikimedia Commons',
+    creator: 'Vikramjit Kakati',
+    license: 'CC BY-SA 4.0',
     verification_status: 'verified',
     verified_at: now
   },
   'odisha': {
-    image_url: 'https://images.unsplash.com/photo-1606298855672-3efb620b78ec?w=1200&auto=format&fit=crop&q=80',
-    source_url: 'https://unsplash.com/photos/brown-concrete-statue-during-daytime-P_3m8q1Z5v7',
-    source_name: 'Unsplash',
-    creator: 'Sambit Dikhit',
-    license: 'Unsplash License',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/b/b7/Shri_Jagannath_temple.jpg',
+    source_url: 'https://commons.wikimedia.org/wiki/File:Shri_Jagannath_temple.jpg',
+    source_name: 'Wikimedia Commons',
+    creator: 'Ishitadas09',
+    license: 'CC BY-SA 4.0',
     verification_status: 'verified',
     verified_at: now
   },
@@ -241,11 +241,11 @@ const STATE_PROVENANCE_REGISTRY = {
     verified_at: now
   },
   'rajasthan': {
-    image_url: 'https://images.unsplash.com/photo-1609946850720-6d4323229b46?w=1200&auto=format&fit=crop&q=80',
-    source_url: 'https://unsplash.com/photos/hawa-mahal-jaipur-palace-of-winds-H_1m4q8Z2v9',
-    source_name: 'Unsplash',
-    creator: 'Jaipur Heritage Trust',
-    license: 'Unsplash License',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/4/41/East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg',
+    source_url: 'https://commons.wikimedia.org/wiki/File:East_facade_Hawa_Mahal_Jaipur_from_ground_level_(July_2022)_-_img_01.jpg',
+    source_name: 'Wikimedia Commons',
+    creator: 'A.Savin',
+    license: 'CC BY-SA 3.0',
     verification_status: 'verified',
     verified_at: now
   },
@@ -268,20 +268,20 @@ const STATE_PROVENANCE_REGISTRY = {
     verified_at: now
   },
   'telangana': {
-    image_url: 'https://images.unsplash.com/photo-1605335198083-d5d85202874a?w=1200&auto=format&fit=crop&q=80',
-    source_url: 'https://unsplash.com/photos/charminar-monument-hyderabad-T_4m9q2Z1v5',
-    source_name: 'Unsplash',
-    creator: 'Yash Goel',
-    license: 'Unsplash License',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/7/71/Charminar_Hyderabad_1.jpg',
+    source_url: 'https://commons.wikimedia.org/wiki/File:Charminar_Hyderabad_1.jpg',
+    source_name: 'Wikimedia Commons',
+    creator: 'Bernard Gagnon',
+    license: 'CC BY-SA 3.0',
     verification_status: 'verified',
     verified_at: now
   },
   'tripura': {
-    image_url: 'https://images.unsplash.com/photo-1628172900407-7d9921338f28?w=1200&auto=format&fit=crop&q=80',
-    source_url: 'https://unsplash.com/photos/white-palace-complex-surrounded-by-gardens-U_8m2q4Z9v1',
-    source_name: 'Unsplash',
-    creator: 'Tripura Tourism Development Corporation',
-    license: 'Unsplash License',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/c/c8/Ujjayanta_palace_Tripura_State_Museum_Agartala_India.jpg',
+    source_url: 'https://commons.wikimedia.org/wiki/File:Ujjayanta_palace_Tripura_State_Museum_Agartala_India.jpg',
+    source_name: 'Wikimedia Commons',
+    creator: 'Soman',
+    license: 'CC BY-SA 3.0',
     verification_status: 'verified',
     verified_at: now
   },
@@ -324,11 +324,11 @@ const STATE_PROVENANCE_REGISTRY = {
     verified_at: now
   },
   'chandigarh': {
-    image_url: 'https://images.unsplash.com/photo-1598890777032-bde13fbe3493?w=1200&auto=format&fit=crop&q=80',
-    source_url: 'https://unsplash.com/photos/rock-garden-sculptures-chandigarh-C_4m1q7Z9v3',
-    source_name: 'Unsplash',
-    creator: 'Chandigarh Tourism Archive',
-    license: 'Unsplash License',
+    image_url: 'https://upload.wikimedia.org/wikipedia/commons/0/05/Chandigarh_Capitol_Complex_-_Le_Corbusier_-_Open_hand_monument.jpg',
+    source_url: 'https://commons.wikimedia.org/wiki/File:Chandigarh_Capitol_Complex_-_Le_Corbusier_-_Open_hand_monument.jpg',
+    source_name: 'Wikimedia Commons',
+    creator: 'Sanyam Bahga',
+    license: 'CC BY-SA 3.0',
     verification_status: 'verified',
     verified_at: now
   },

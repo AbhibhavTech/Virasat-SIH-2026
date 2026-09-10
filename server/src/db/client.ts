@@ -5,8 +5,6 @@ import {
   StateRecord,
   CityRecord,
   PlaceRecord,
-  SourceQualityTier,
-  computeSourceQuality,
   TransitNodeRecord,
   ItineraryRecord,
   FavoriteRecord,
@@ -186,22 +184,6 @@ class DatabaseManager {
   };
 
   // -------------------------------------------------------------
-  // VALIDATION HELPERS
-  // -------------------------------------------------------------
-  public validateCoordinates(lat?: number, lng?: number): void {
-    if (lat !== undefined) {
-      if (isNaN(lat) || lat < 6.0 || lat > 38.5) {
-        throw new Error(`Invalid latitude: ${lat}. Must be between 6.0 and 38.5 within India.`);
-      }
-    }
-    if (lng !== undefined) {
-      if (isNaN(lng) || lng < 68.0 || lng > 98.5) {
-        throw new Error(`Invalid longitude: ${lng}. Must be between 68.0 and 98.5 within India.`);
-      }
-    }
-  }
-
-  // -------------------------------------------------------------
   // PLACES REPOSITORY
   // -------------------------------------------------------------
   public places = {
@@ -213,39 +195,11 @@ class DatabaseManager {
       importance_level?: string;
       confidence?: string;
       data_confidence?: string;
-      verification_status?: string;
-      status?: string;
-      source_quality?: SourceQualityTier | string;
-      topic?: string;
-      subtopic?: string;
-      missing_image?: boolean;
-      missing_source?: boolean;
-      includeAllStatuses?: boolean;
       search?: string;
       limit?: number;
       offset?: number;
     }): Promise<{ places: PlaceRecord[]; total: number }> => {
       let list = Object.values(this.data.places);
-
-      // Public exploration rule: only show 'verified' with Tier 1 (place_specific) or Tier 2 (official_site)
-      const statusFilter = filters?.verification_status || filters?.status;
-      if (statusFilter && statusFilter !== 'all') {
-        list = list.filter((p) => (p.verification_status || 'draft').toLowerCase() === statusFilter.toLowerCase());
-      } else if (!filters?.includeAllStatuses) {
-        list = list.filter((p) => {
-          const s = (p.verification_status || 'draft').toLowerCase();
-          const q = p.source_quality || computeSourceQuality(p.source_url || (p.sources && p.sources[0]?.source_url));
-          return s === 'verified' && (q === 'place_specific' || q === 'official_site');
-        });
-      }
-
-      if (filters?.source_quality && filters.source_quality !== 'all') {
-        list = list.filter((p) => {
-          const q = p.source_quality || computeSourceQuality(p.source_url || (p.sources && p.sources[0]?.source_url));
-          return q === filters.source_quality;
-        });
-      }
-
       if (filters?.stateId) {
         list = list.filter((p) => p.state_id?.toLowerCase() === filters.stateId?.toLowerCase());
       }
@@ -261,36 +215,8 @@ class DatabaseManager {
             (Array.isArray(p.categories) && p.categories.some((c) => c.toLowerCase() === targetCat))
         );
       }
-      if (filters?.topic) {
-        const targetTopic = filters.topic.toLowerCase();
-        list = list.filter(
-          (p) =>
-            p.topic?.toLowerCase() === targetTopic ||
-            (Array.isArray(p.category_links) && p.category_links.some((cl) => cl.topic.toLowerCase() === targetTopic)) ||
-            (Array.isArray(p.categories) && p.categories.some((c) => c.toLowerCase() === targetTopic))
-        );
-      }
-      if (filters?.subtopic) {
-        const targetSubtopic = filters.subtopic.toLowerCase();
-        list = list.filter(
-          (p) =>
-            p.subtopic?.toLowerCase() === targetSubtopic ||
-            (Array.isArray(p.category_links) && p.category_links.some((cl) => cl.subtopic.toLowerCase() === targetSubtopic)) ||
-            (Array.isArray(p.subcategories) && p.subcategories.some((sc) => sc.toLowerCase() === targetSubtopic))
-        );
-      }
       if (filters?.importance_level) {
         list = list.filter((p) => p.importance_level === filters.importance_level);
-      }
-      if (filters?.missing_image) {
-        list = list.filter((p) => !p.thumbnail_url || p.thumbnail_url.trim() === '');
-      }
-      if (filters?.missing_source) {
-        list = list.filter((p) => {
-          const hasField = p.source_url && p.source_url.trim() !== '';
-          const hasInline = Array.isArray(p.sources) && p.sources.length > 0;
-          return !hasField && !hasInline;
-        });
       }
       if (filters?.search) {
         const q = filters.search.toLowerCase().trim();
@@ -298,16 +224,13 @@ class DatabaseManager {
           (p) =>
             (p.name?.toLowerCase() || '').includes(q) ||
             (p.summary?.toLowerCase() || '').includes(q) ||
-            (p.description?.toLowerCase() || '').includes(q) ||
-            (p.city_id?.toLowerCase() || '').includes(q) ||
-            (p.state_id?.toLowerCase() || '').includes(q)
+            (p.description?.toLowerCase() || '').includes(q)
         );
       }
       const targetConfidence = filters?.confidence || filters?.data_confidence;
       if (targetConfidence) {
-        list = list.filter((p) => (p.data_confidence || '').toLowerCase() === targetConfidence.toLowerCase());
+        list = list.filter((p) => p.data_confidence.toLowerCase() === targetConfidence.toLowerCase());
       }
-
       const total = list.length;
       const offset = filters?.offset || 0;
       const limit = filters?.limit || 50;
@@ -316,148 +239,44 @@ class DatabaseManager {
         total,
       };
     },
-
     findById: async (id: string): Promise<PlaceRecord | null> => {
       return this.data.places[id] || this.data.places[id.toLowerCase()] || null;
     },
-
     findNearby: async (lat: number, lng: number, radiusKm = 50, limit = 20): Promise<PlaceRecord[]> => {
       const R = 6371;
-      const withDistance = Object.values(this.data.places)
-        .filter((p) => {
-          const s = (p.verification_status || 'verified').toLowerCase();
-          return s === 'verified' || s === 'official';
-        })
-        .map((p) => {
-          const dLat = (p.lat - lat) * (Math.PI / 180);
-          const dLon = (p.lng - lng) * (Math.PI / 180);
-          const a =
-            Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-            Math.cos(lat * (Math.PI / 180)) * Math.cos(p.lat * (Math.PI / 180)) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
-          const dist = R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-          return { place: p, distance: dist };
-        });
+      const withDistance = Object.values(this.data.places).map((p) => {
+        const dLat = (p.lat - lat) * (Math.PI / 180);
+        const dLon = (p.lng - lng) * (Math.PI / 180);
+        const a =
+          Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+          Math.cos(lat * (Math.PI / 180)) * Math.cos(p.lat * (Math.PI / 180)) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+        const dist = R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        return { place: p, distance: dist };
+      });
       return withDistance
         .filter((item) => item.distance <= radiusKm)
         .sort((a, b) => a.distance - b.distance)
         .slice(0, limit)
         .map((item) => item.place);
     },
-
     search: async (query: string, limit = 20): Promise<PlaceRecord[]> => {
       const q = query.toLowerCase().trim();
       return Object.values(this.data.places)
-        .filter((p) => {
-          const s = (p.verification_status || 'verified').toLowerCase();
-          return (s === 'verified' || s === 'official') && (
+        .filter(
+          (p) =>
             p.name.toLowerCase().includes(q) ||
-            p.summary?.toLowerCase().includes(q) ||
-            p.description?.toLowerCase().includes(q) ||
-            p.category?.toLowerCase().includes(q) ||
+            p.summary.toLowerCase().includes(q) ||
+            p.description.toLowerCase().includes(q) ||
+            p.category.toLowerCase().includes(q) ||
             p.city_id?.toLowerCase().includes(q) ||
             p.state_id?.toLowerCase().includes(q)
-          );
-        })
+        )
         .slice(0, limit);
     },
-
     create: async (record: PlaceRecord): Promise<PlaceRecord> => {
-      // 1. Validate coordinates
-      const lat = record.lat ?? record.latitude;
-      const lng = record.lng ?? record.longitude;
-      if (lat !== undefined && lng !== undefined) {
-        this.validateCoordinates(lat, lng);
-      }
-
-      // 2. Prevent duplicate places inside the same city
-      if (record.city_id && record.name) {
-        const dup = Object.values(this.data.places).find(
-          (p) =>
-            p.city_id?.toLowerCase() === record.city_id?.toLowerCase() &&
-            p.name.trim().toLowerCase() === record.name.trim().toLowerCase() &&
-            p.id !== record.id
-        );
-        if (dup) {
-          throw new Error(`Duplicate place: "${record.name}" already exists in city "${record.city_id}".`);
-        }
-      }
-
-      // 3. Enforce source requirement and quality tier before verification
-      const sourceUrl = record.source_url || (Array.isArray(record.sources) && record.sources[0]?.source_url);
-      const quality = computeSourceQuality(sourceUrl);
-      record.source_quality = quality;
-
-      if (record.verification_status === 'verified') {
-        if (quality === 'generic_homepage' || quality === 'missing') {
-          throw new Error('VERIFIED FORBIDDEN: Generic homepage URL (like asi.nic.in or whc.unesco.org) cannot be marked as verified. Must be Tier 1 (place_specific deep link) or Tier 2 (official place site).');
-        }
-        if (!record.last_verified_on) {
-          record.last_verified_on = new Date().toISOString().split('T')[0];
-        }
-      }
-
-      const cleanRecord: PlaceRecord = {
-        ...record,
-        lat: lat ?? 20.5937,
-        lng: lng ?? 78.9629,
-        created_at: record.created_at || new Date().toISOString(),
-      };
-
-      this.data.places[cleanRecord.id] = cleanRecord;
+      this.data.places[record.id] = { ...record };
       this.persist();
-      return cleanRecord;
-    },
-
-    update: async (id: string, updates: Partial<PlaceRecord>): Promise<PlaceRecord | null> => {
-      const existing = this.data.places[id];
-      if (!existing) return null;
-
-      const merged = { ...existing, ...updates };
-
-      // Validate coordinates if changed
-      const lat = updates.lat ?? updates.latitude;
-      const lng = updates.lng ?? updates.longitude;
-      if (lat !== undefined || lng !== undefined) {
-        this.validateCoordinates(merged.lat, merged.lng);
-      }
-
-      // Check duplicate place inside same city
-      if (updates.name || updates.city_id) {
-        const dup = Object.values(this.data.places).find(
-          (p) =>
-            p.id !== id &&
-            p.city_id?.toLowerCase() === merged.city_id?.toLowerCase() &&
-            p.name.trim().toLowerCase() === merged.name.trim().toLowerCase()
-        );
-        if (dup) {
-          throw new Error(`Duplicate place: "${merged.name}" already exists in city "${merged.city_id}".`);
-        }
-      }
-
-      // Source check if marking as verified
-      const updatedSourceUrl = merged.source_url || (Array.isArray(merged.sources) && merged.sources[0]?.source_url);
-      const quality = computeSourceQuality(updatedSourceUrl);
-      merged.source_quality = quality;
-
-      if (updates.verification_status === 'verified' || (merged.verification_status === 'verified' && updates.source_url !== undefined)) {
-        if (quality === 'generic_homepage' || quality === 'missing') {
-          throw new Error('VERIFIED FORBIDDEN: Generic homepage URL (like asi.nic.in or whc.unesco.org) cannot be marked as verified. Must be Tier 1 (place_specific deep link) or Tier 2 (official place site).');
-        }
-        if (!merged.last_verified_on) {
-          merged.last_verified_on = new Date().toISOString().split('T')[0];
-        }
-      }
-
-      this.data.places[id] = merged;
-      this.persist();
-      return merged;
-    },
-
-    delete: async (id: string): Promise<boolean> => {
-      if (!this.data.places[id]) return false;
-      delete this.data.places[id];
-      this.persist();
-      return true;
+      return record;
     },
   };
 
@@ -471,28 +290,6 @@ class DatabaseManager {
     findById: async (id: string): Promise<StateRecord | null> => {
       return this.data.states[id] || null;
     },
-    create: async (record: StateRecord): Promise<StateRecord> => {
-      if (this.data.states[record.id]) {
-        throw new Error(`State with id "${record.id}" already exists.`);
-      }
-      this.data.states[record.id] = { ...record };
-      this.persist();
-      return record;
-    },
-    update: async (id: string, updates: Partial<StateRecord>): Promise<StateRecord | null> => {
-      const existing = this.data.states[id];
-      if (!existing) return null;
-      const updated = { ...existing, ...updates };
-      this.data.states[id] = updated;
-      this.persist();
-      return updated;
-    },
-    delete: async (id: string): Promise<boolean> => {
-      if (!this.data.states[id]) return false;
-      delete this.data.states[id];
-      this.persist();
-      return true;
-    },
   };
 
   public cities = {
@@ -503,128 +300,8 @@ class DatabaseManager {
       return this.data.cities[id] || null;
     },
     findByStateId: async (stateId: string): Promise<CityRecord[]> => {
-      return Object.values(this.data.cities).filter((c) => c.state_id?.toLowerCase() === stateId.toLowerCase());
+      return Object.values(this.data.cities).filter((c) => c.state_id === stateId);
     },
-    create: async (record: CityRecord): Promise<CityRecord> => {
-      // 1. Validate coordinates
-      const lat = record.lat ?? record.latitude;
-      const lng = record.lng ?? record.longitude;
-      if (lat !== undefined && lng !== undefined) {
-        this.validateCoordinates(lat, lng);
-      }
-
-      // 2. Prevent duplicate city names inside the same state
-      const dup = Object.values(this.data.cities).find(
-        (c) =>
-          c.state_id?.toLowerCase() === record.state_id?.toLowerCase() &&
-          c.name.trim().toLowerCase() === record.name.trim().toLowerCase() &&
-          c.id !== record.id
-      );
-      if (dup) {
-        throw new Error(`Duplicate city: "${record.name}" already exists in state "${record.state_id}".`);
-      }
-
-      this.data.cities[record.id] = {
-        ...record,
-        lat: lat ?? 20.5937,
-        lng: lng ?? 78.9629,
-        entity_type: record.entity_type || 'city',
-        created_at: record.created_at || new Date().toISOString(),
-      };
-      this.persist();
-      return this.data.cities[record.id];
-    },
-    update: async (id: string, updates: Partial<CityRecord>): Promise<CityRecord | null> => {
-      const existing = this.data.cities[id];
-      if (!existing) return null;
-
-      const merged = { ...existing, ...updates };
-      if (updates.name || updates.state_id) {
-        const dup = Object.values(this.data.cities).find(
-          (c) =>
-            c.id !== id &&
-            c.state_id?.toLowerCase() === merged.state_id?.toLowerCase() &&
-            c.name.trim().toLowerCase() === merged.name.trim().toLowerCase()
-        );
-        if (dup) {
-          throw new Error(`Duplicate city: "${merged.name}" already exists in state "${merged.state_id}".`);
-        }
-      }
-
-      this.data.cities[id] = merged;
-      this.persist();
-      return merged;
-    },
-    delete: async (id: string): Promise<boolean> => {
-      if (!this.data.cities[id]) return false;
-      delete this.data.cities[id];
-      this.persist();
-      return true;
-    },
-  };
-
-  // -------------------------------------------------------------
-  // ADMIN METRICS
-  // -------------------------------------------------------------
-  public getAdminMetrics = async () => {
-    const allPlaces = Object.values(this.data.places);
-    const allCities = Object.values(this.data.cities);
-    const allStates = Object.values(this.data.states);
-
-    let verifiedCount = 0;
-    let pendingCount = 0;
-    let needsReviewCount = 0;
-    let draftCount = 0;
-    let rejectedCount = 0;
-    let missingSourceCount = 0;
-    let missingCoordsCount = 0;
-    let missingImageCount = 0;
-    let tier1Count = 0;
-    let tier2Count = 0;
-    let tier3GenericCount = 0;
-
-    for (const p of allPlaces) {
-      const status = (p.verification_status || 'draft').toLowerCase();
-      if (status === 'verified' || status === 'official') verifiedCount++;
-      else if (status === 'pending') pendingCount++;
-      else if (status === 'needs_review') needsReviewCount++;
-      else if (status === 'draft') draftCount++;
-      else if (status === 'rejected') rejectedCount++;
-
-      const quality = p.source_quality || computeSourceQuality(p.source_url || (p.sources && p.sources[0]?.source_url));
-      if (quality === 'place_specific') tier1Count++;
-      else if (quality === 'official_site') tier2Count++;
-      else if (quality === 'generic_homepage') tier3GenericCount++;
-
-      const hasSource =
-        (p.source_url && p.source_url.trim() !== '') ||
-        (Array.isArray(p.sources) && p.sources.length > 0) ||
-        Object.values(this.data.place_sources).some((s) => s.place_id === p.id);
-      if (!hasSource) missingSourceCount++;
-
-      const hasValidCoords = p.lat && p.lng && !isNaN(p.lat) && !isNaN(p.lng) && p.lat >= 6 && p.lat <= 38.5;
-      if (!hasValidCoords) missingCoordsCount++;
-
-      const hasImage = p.thumbnail_url && p.thumbnail_url.trim() !== '';
-      if (!hasImage) missingImageCount++;
-    }
-
-    return {
-      total_states: allStates.length,
-      total_cities: allCities.length,
-      total_places: allPlaces.length,
-      verified_places: verifiedCount,
-      pending_places: pendingCount,
-      needs_review_places: needsReviewCount,
-      draft_places: draftCount,
-      rejected_places: rejectedCount,
-      places_without_sources: missingSourceCount,
-      places_without_coordinates: missingCoordsCount,
-      places_without_images: missingImageCount,
-      tier1_places: tier1Count,
-      tier2_places: tier2Count,
-      tier3_generic_places: tier3GenericCount,
-    };
   };
 
   // -------------------------------------------------------------

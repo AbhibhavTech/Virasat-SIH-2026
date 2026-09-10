@@ -16,6 +16,8 @@ interface ThreeDDestinationCardProps {
   culturalMotif?: 'lotus' | 'mandala' | 'arch' | 'fort';
 }
 
+const DEFAULT_CARD_FALLBACK = 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Taj_Mahal_%28Edited%29.jpeg/1280px-Taj_Mahal_%28Edited%29.jpeg';
+
 export const ThreeDDestinationCard: React.FC<ThreeDDestinationCardProps> = ({
   id,
   title,
@@ -33,6 +35,11 @@ export const ThreeDDestinationCard: React.FC<ThreeDDestinationCardProps> = ({
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
+  const [imgSrc, setImgSrc] = useState(imageUrl);
+
+  useEffect(() => {
+    setImgSrc(imageUrl);
+  }, [imageUrl]);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -100,9 +107,15 @@ export const ThreeDDestinationCard: React.FC<ThreeDDestinationCardProps> = ({
         {/* Layer 1: Parallax Background Image */}
         <div className="absolute inset-0 overflow-hidden bg-stone-100">
           <img
-            src={imageUrl}
+            src={imgSrc || imageUrl}
             alt={title}
             loading="lazy"
+            referrerPolicy="no-referrer"
+            onError={() => {
+              if (imgSrc !== DEFAULT_CARD_FALLBACK) {
+                setImgSrc(DEFAULT_CARD_FALLBACK);
+              }
+            }}
             className="w-full h-full object-cover transition-transform duration-700 ease-out filter saturate-95 group-hover:saturate-105 group-hover:scale-108"
             style={{
               transform: !reducedMotion

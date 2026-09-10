@@ -34,7 +34,6 @@ import { aiRouter } from './server/src/modules/ai/ai.router';
 import { healthRouter } from './server/src/modules/health/health.router';
 import { seoRouter } from './server/src/modules/seo/seo.router';
 import { analyticsRouter } from './server/src/modules/analytics/analytics.router';
-import { adminRouter } from './server/src/modules/admin/admin.router';
 import { requestLogger, securityHeaders, errorHandler } from './server/src/middleware/observability';
 
 const app = express();
@@ -87,7 +86,6 @@ app.use('/api/v1/itineraries', itineraryRouter);
 app.use('/api/v1/ai', aiRouter);
 app.use('/api/v1/analytics', analyticsRouter);
 app.use('/api/analytics', analyticsRouter);
-app.use('/api/v1/admin', adminRouter);
 
 // -------------------------------------------------------------
 // Data Repositories & In-Memory Store
