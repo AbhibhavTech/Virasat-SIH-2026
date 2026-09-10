@@ -383,7 +383,7 @@ class DatabaseManager {
       }
 
       // 3. Enforce source requirement and quality tier before verification
-      const sourceUrl = record.source_url || (Array.isArray(record.sources) && record.sources[0]?.source_url);
+      const sourceUrl = record.source_url || (Array.isArray(record.sources) ? record.sources[0]?.source_url : undefined);
       const quality = computeSourceQuality(sourceUrl);
       record.source_quality = quality;
 
@@ -435,7 +435,7 @@ class DatabaseManager {
       }
 
       // Source check if marking as verified
-      const updatedSourceUrl = merged.source_url || (Array.isArray(merged.sources) && merged.sources[0]?.source_url);
+      const updatedSourceUrl = merged.source_url || (Array.isArray(merged.sources) ? merged.sources[0]?.source_url : undefined);
       const quality = computeSourceQuality(updatedSourceUrl);
       merged.source_quality = quality;
 

@@ -4,7 +4,7 @@ export const INDIA_TOURISM_DATABASE = {
   "version": "3.0.0",
   "states_count": 36,
   "cities_count": 257,
-  "attractions_count": 423,
+  "attractions_count": 388,
   "accuracy_disclaimer": "Fees, timings, hotel prices, train schedules, route durations and availability can change. UNVERIFIED means it must be checked from an official/current source before being shown to a user.",
   "states": [
     {
@@ -95,17 +95,18 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 30.7583,
                 "lng": 76.8055
               },
-              "image_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://whc.unesco.org",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "verification_status": "needs_review",
-              "source_quality": "generic_homepage"
+              "verification_status": "unverified",
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -181,7 +182,7 @@ export const INDIA_TOURISM_DATABASE = {
       "region": "Northern India",
       "hero_image_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 1,
-      "total_attractions": 4,
+      "total_attractions": 5,
       "heritage_overview": "India's historic national capital featuring iconic Mughal citadels, colonial boulevards, and three UNESCO World Heritage complexes.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Delhi.",
@@ -216,7 +217,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "ut_capital",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 4,
+          "places_count": 5,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -261,7 +262,7 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 28.5245,
                 "lng": 77.1855
               },
-              "image_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://whc.unesco.org",
@@ -317,7 +318,7 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 28.6562,
                 "lng": 77.241
               },
-              "image_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://whc.unesco.org",
@@ -429,16 +430,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 28.6129,
                 "lng": 77.2295
               },
-              "image_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop&q=80",
               "attribution": "Archaeological Survey of India",
               "source_page": "https://asi.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -495,11 +497,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Ministry of Environment, Forest and Climate Change, Govt of India",
               "source_page": "https://nzpnewdelhi.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Recreation"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -570,7 +573,7 @@ export const INDIA_TOURISM_DATABASE = {
       "region": "Northern India",
       "hero_image_url": "https://images.unsplash.com/photo-1596701062351-8c2c14d1fdd1?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 6,
-      "total_attractions": 6,
+      "total_attractions": 7,
       "heritage_overview": "Vedic heartland of the epic Mahabharata, ancient Harappan archaeological mounds at Rakhigarhi, and Pinjore Mughal gardens.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Haryana.",
@@ -652,15 +655,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 28.4074,
                 "lng": 77.3118
               },
-              "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://haryanatourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Arts & Culture",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "tourist_places": [],
@@ -785,15 +789,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 28.4685,
                 "lng": 77.0281
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://haryanatourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -915,16 +920,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 29.1585,
                 "lng": 75.7146
               },
-              "image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://haryanatourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Recreation",
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "religious_cultural": [],
@@ -1044,16 +1050,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 29.9691,
                 "lng": 76.8805
               },
-              "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://haryanatourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -1102,15 +1109,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 30.687,
                 "lng": 76.863
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://haryanatourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -1228,15 +1236,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 29.3945,
                 "lng": 76.9693
               },
-              "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://haryanatourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "museums": [],
@@ -1313,7 +1322,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -1370,12 +1379,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Haryana Forest Department",
               "source_page": "https://haryanaforest.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -1445,7 +1455,7 @@ export const INDIA_TOURISM_DATABASE = {
       "capital": "Shimla",
       "region": "Northern India",
       "hero_image_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=1200&q=80",
-      "total_cities": 6,
+      "total_cities": 13,
       "total_attractions": 12,
       "heritage_overview": "Home to the Great Himalayan National Park (UNESCO), Kalka-Shimla Railway (UNESCO), ancient wooden temples of Chamba, and century-old Tibetan gompas across Spiti and Kangra.",
       "active_stories": [
@@ -1783,7 +1793,7 @@ export const INDIA_TOURISM_DATABASE = {
               "data_confidence": "official",
               "verification_status": "verified",
               "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=400&q=80",
               "attribution": "Himachal Pradesh Tourism Development Corporation",
               "source_url": "https://himachaltourism.gov.in/destination/shimla/",
@@ -1947,7 +1957,7 @@ export const INDIA_TOURISM_DATABASE = {
               "data_confidence": "official",
               "verification_status": "verified",
               "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=400&q=80",
               "attribution": "Shimla Heritage Cell",
               "source_url": "https://himachaltourism.gov.in/destination/shimla/",
@@ -2341,7 +2351,7 @@ export const INDIA_TOURISM_DATABASE = {
               "data_confidence": "official",
               "verification_status": "verified",
               "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
               "attribution": "Himachal Pradesh Tourism Department",
               "source_url": "https://himachaltourism.gov.in/destination/manali/",
@@ -2745,7 +2755,7 @@ export const INDIA_TOURISM_DATABASE = {
               "data_confidence": "official",
               "verification_status": "verified",
               "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
               "attribution": "Archaeological Survey of India / UNESCO",
               "source_url": "https://whc.unesco.org/en/tentativelists/6055/",
@@ -2929,7 +2939,7 @@ export const INDIA_TOURISM_DATABASE = {
               "data_confidence": "official",
               "verification_status": "verified",
               "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&q=80",
               "attribution": "Himachal Pradesh Forest Department / Ramsar",
               "source_url": "https://rsis.ramsar.org/ris/1569",
@@ -3474,7 +3484,7 @@ export const INDIA_TOURISM_DATABASE = {
               "data_confidence": "official",
               "verification_status": "verified",
               "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
               "attribution": "Archaeological Survey of India",
               "source_url": "https://hpkangra.nic.in/tourist-place/kangra-fort/",
@@ -3563,7 +3573,7 @@ export const INDIA_TOURISM_DATABASE = {
               "data_confidence": "official",
               "verification_status": "verified",
               "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
               "attribution": "Archaeological Survey of India / UNESCO",
               "source_url": "https://whc.unesco.org/en/tentativelists/5984/",
@@ -3803,7 +3813,7 @@ export const INDIA_TOURISM_DATABASE = {
               "data_confidence": "official",
               "verification_status": "verified",
               "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&q=80",
               "attribution": "UNESCO / Himachal Pradesh Forest Department",
               "source_url": "https://whc.unesco.org/en/list/1406/",
@@ -3852,6 +3862,412 @@ export const INDIA_TOURISM_DATABASE = {
             "weather_summary": "Pleasant and sunny",
             "status": "VERIFIED"
           }
+        },
+        {
+          "id": "bilaspur-hp",
+          "name": "Bilaspur",
+          "slug": "bilaspur-hp",
+          "state_id": "himachal-pradesh",
+          "entity_type": "city",
+          "district": "Bilaspur",
+          "latitude": null,
+          "longitude": null,
+          "lat": 31.3325,
+          "lng": 76.757,
+          "tagline": "Cultural destination in Himachal Pradesh",
+          "short_description": null,
+          "description": "Picturesque valley city on the emerald Gobind Sagar reservoir formed by Bhakra Dam, water sports hub, and Vyas Cave.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 31.3325,
+            "lng": 76.757
+          }
+        },
+        {
+          "id": "chamba",
+          "name": "Chamba",
+          "slug": "chamba",
+          "state_id": "himachal-pradesh",
+          "entity_type": "city",
+          "district": "Chamba",
+          "latitude": null,
+          "longitude": null,
+          "lat": 32.5534,
+          "lng": 76.1258,
+          "tagline": "Cultural destination in Himachal Pradesh",
+          "short_description": null,
+          "description": "Ancient Ravi river kingdom famed for 10th-century stone Lakshmi Narayan temples, Chaugan green, Chamba Rumal embroidery, and Rang Mahal.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 32.5534,
+            "lng": 76.1258
+          }
+        },
+        {
+          "id": "dalhousie",
+          "name": "Dalhousie",
+          "slug": "dalhousie",
+          "state_id": "himachal-pradesh",
+          "entity_type": "city",
+          "district": "Chamba",
+          "latitude": null,
+          "longitude": null,
+          "lat": 32.5387,
+          "lng": 75.971,
+          "tagline": "Cultural destination in Himachal Pradesh",
+          "short_description": null,
+          "description": "Colonial hill retreat built across five pine-clad hills, featuring Victorian stone churches, Subhash Baoli, and Swiss meadow Khajjiar.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 32.5387,
+            "lng": 75.971
+          }
+        },
+        {
+          "id": "kasauli",
+          "name": "Kasauli",
+          "slug": "kasauli",
+          "state_id": "himachal-pradesh",
+          "entity_type": "city",
+          "district": "Solan",
+          "latitude": null,
+          "longitude": null,
+          "lat": 30.9013,
+          "lng": 76.9649,
+          "tagline": "Cultural destination in Himachal Pradesh",
+          "short_description": null,
+          "description": "Peaceful British-era cantonment hill station framed by oak and cedar woods, Christ Church, Gilbert Nature Trail, and Monkey Point.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 30.9013,
+            "lng": 76.9649
+          }
+        },
+        {
+          "id": "keylong",
+          "name": "Keylong",
+          "slug": "keylong",
+          "state_id": "himachal-pradesh",
+          "entity_type": "city",
+          "district": "Lahaul and Spiti",
+          "latitude": null,
+          "longitude": null,
+          "lat": 32.571,
+          "lng": 77.032,
+          "tagline": "Cultural destination in Himachal Pradesh",
+          "short_description": null,
+          "description": "Administrative center of Lahaul valley situated above the Bhaga river, home to Shashur and Kardang Buddhist monasteries.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 32.571,
+            "lng": 77.032
+          }
+        },
+        {
+          "id": "paonta-sahib",
+          "name": "Paonta Sahib",
+          "slug": "paonta-sahib",
+          "state_id": "himachal-pradesh",
+          "entity_type": "city",
+          "district": "Sirmaur",
+          "latitude": null,
+          "longitude": null,
+          "lat": 30.4397,
+          "lng": 77.6247,
+          "tagline": "Cultural destination in Himachal Pradesh",
+          "short_description": null,
+          "description": "Sacred Yamuna riverbank town where Guru Gobind Singh penned the Dasam Granth, housing Gurdwara Paonta Sahib and historic museum.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 30.4397,
+            "lng": 77.6247
+          }
+        },
+        {
+          "id": "reckong-peo",
+          "name": "Reckong Peo",
+          "slug": "reckong-peo",
+          "state_id": "himachal-pradesh",
+          "entity_type": "city",
+          "district": "Kinnaur",
+          "latitude": null,
+          "longitude": null,
+          "lat": 31.5404,
+          "lng": 78.2778,
+          "tagline": "Cultural destination in Himachal Pradesh",
+          "short_description": null,
+          "description": "Headquarters of Kinnaur offering spellbinding views of the sacred Kinnaur Kailash peak, apple orchards, and Kalpa heritage village.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 31.5404,
+            "lng": 78.2778
+          }
         }
       ],
       "region_type": "state",
@@ -3883,7 +4299,7 @@ export const INDIA_TOURISM_DATABASE = {
       "region": "Northern India",
       "hero_image_url": "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 6,
-      "total_attractions": 8,
+      "total_attractions": 13,
       "heritage_overview": "Paradise on Earth, celebrated for Dal Lake shikaras, Mughal gardens, Vaishno Devi shrine, and alpine meadows of Gulmarg.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Jammu and Kashmir.",
@@ -3918,7 +4334,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -3970,13 +4386,14 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Archaeological Survey of India",
               "source_page": "https://asi.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Spiritual",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -4102,16 +4519,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 34.0484,
                 "lng": 74.3805
               },
-              "image_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.jksccc.com",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Recreation",
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "religious_cultural": [],
@@ -4186,7 +4604,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "winter_capital",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 1,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -4231,16 +4649,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 32.7297,
                 "lng": 74.8814
               },
-              "image_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://jktourism.jk.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -4295,11 +4714,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Department of Wildlife Protection, Jammu and Kashmir",
               "source_page": "https://jkwildlife.com",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -4420,16 +4840,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 34.0287,
                 "lng": 75.3456
               },
-              "image_url": "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://jktourism.jk.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Recreation",
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "religious_cultural": [],
@@ -4504,7 +4925,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -4560,11 +4981,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Jammu and Kashmir Tourism Development Corporation",
               "source_page": "https://jktourism.jk.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Recreation"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -4637,7 +5059,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "summer_capital",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 5,
+          "places_count": 7,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -4682,16 +5104,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 34.2989,
                 "lng": 75.2891
               },
-              "image_url": "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://jktourism.jk.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [
@@ -4735,15 +5158,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 34.3106,
                 "lng": 75.2952
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://jktourism.jk.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "shalimar-bagh-srinagar",
@@ -4785,15 +5209,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 34.1488,
                 "lng": 74.8724
               },
-              "image_url": "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://jktourism.jk.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "shankaracharya-temple",
@@ -4835,15 +5260,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 34.0725,
                 "lng": 74.8427
               },
-              "image_url": "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://jktourism.jk.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "museums": [],
@@ -4889,16 +5315,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 34.0837,
                 "lng": 74.8395
               },
-              "image_url": "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://jktourism.jk.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Recreation",
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "religious_cultural": [],
@@ -4950,11 +5377,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Department of Wildlife Protection, Jammu and Kashmir",
               "source_page": "https://jkwildlife.com",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "salim-ali-national-park",
@@ -5005,11 +5433,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Department of Wildlife Protection, Jammu and Kashmir",
               "source_page": "https://jkwildlife.com",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -5080,7 +5509,7 @@ export const INDIA_TOURISM_DATABASE = {
       "region": "Northern India",
       "hero_image_url": "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 2,
-      "total_attractions": 6,
+      "total_attractions": 8,
       "heritage_overview": "High-altitude desert trans-Himalaya featuring Buddhist gompas, Pangong Tso azure waters, and high mountain passes.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Ladakh.",
@@ -5115,7 +5544,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -5166,12 +5595,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Indian Army / District Administration Kargil",
               "source_page": "https://ladakh.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Spiritual"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -5249,7 +5679,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "ut_capital",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 6,
+          "places_count": 7,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -5294,15 +5724,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 34.1663,
                 "lng": 77.5857
               },
-              "image_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://ladakh.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "shanti-stupa-leh",
@@ -5344,15 +5775,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 34.1724,
                 "lng": 77.5752
               },
-              "image_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://ladakh.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "diskit-monastery",
@@ -5394,15 +5826,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 34.5422,
                 "lng": 77.5614
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://ladakh.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "museums": [],
@@ -5448,16 +5881,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 33.7595,
                 "lng": 78.6674
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://ladakh.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Recreation",
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "magnetic-hill-ladakh",
@@ -5500,16 +5934,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 34.1833,
                 "lng": 77.3486
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://ladakh.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Recreation",
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "nubra-valley-hunder",
@@ -5552,16 +5987,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 34.5802,
                 "lng": 77.4721
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://ladakh.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Recreation",
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "religious_cultural": [],
@@ -5613,11 +6049,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Department of Wildlife Protection, UT Ladakh",
               "source_page": "https://ladakh.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -5687,7 +6124,7 @@ export const INDIA_TOURISM_DATABASE = {
       "capital": "Chandigarh",
       "region": "Northern India",
       "hero_image_url": "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=1200&q=80",
-      "total_cities": 3,
+      "total_cities": 13,
       "total_attractions": 5,
       "heritage_overview": "Spiritual epicenter of Sikhism centered around the Golden Temple, historic Mughal-era serais, and colonial princely states like Patiala and Kapurthala.",
       "active_stories": [
@@ -6044,7 +6481,7 @@ export const INDIA_TOURISM_DATABASE = {
               "data_confidence": "official",
               "verification_status": "verified",
               "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
               "attribution": "Archaeological Survey of India / Ministry of Culture",
               "source_url": "https://amritsar.nic.in/tourist-place/jallianwala-bagh/",
@@ -6134,7 +6571,7 @@ export const INDIA_TOURISM_DATABASE = {
               "data_confidence": "official",
               "verification_status": "verified",
               "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
               "attribution": "The Arts and Cultural Heritage Trust",
               "source_url": "https://www.partitionmuseum.org",
@@ -6459,7 +6896,7 @@ export const INDIA_TOURISM_DATABASE = {
               "data_confidence": "official",
               "verification_status": "verified",
               "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
               "attribution": "Punjab Heritage and Tourism Promotion Board",
               "source_url": "https://patiala.nic.in/tourist-place/qila-mubarak/",
@@ -6534,10 +6971,10 @@ export const INDIA_TOURISM_DATABASE = {
           "hero_image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&q=80",
           "coordinates": {
             "lat": 31.2356,
-            "lng": 76.4989
+            "lng": 76.4994
           },
           "lat": 31.2356,
-          "lng": 76.4989,
+          "lng": 76.4994,
           "places": [
             {
               "id": "anandpur-virasat-e-khalsa",
@@ -6700,7 +7137,7 @@ export const INDIA_TOURISM_DATABASE = {
               "data_confidence": "official",
               "verification_status": "verified",
               "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
               "attribution": "Anandpur Sahib Foundation / Punjab Tourism",
               "source_url": "https://rupnagar.nic.in/tourist-place/virasat-e-khalsa/",
@@ -6751,6 +7188,588 @@ export const INDIA_TOURISM_DATABASE = {
             "best_season": "October to March",
             "weather_summary": "Pleasant and sunny",
             "status": "VERIFIED"
+          },
+          "administrative_status": "EXTRA_CANONICAL",
+          "review_flag": "PENDING_CLASSIFICATION"
+        },
+        {
+          "id": "fatehgarh-sahib",
+          "name": "Fatehgarh Sahib",
+          "slug": "fatehgarh-sahib",
+          "state_id": "punjab",
+          "entity_type": "city",
+          "district": "Fatehgarh Sahib",
+          "latitude": null,
+          "longitude": null,
+          "lat": 30.6483,
+          "lng": 76.3986,
+          "tagline": "Cultural destination in Punjab",
+          "short_description": null,
+          "description": "Hallowed Sikh pilgrimage town marking the martyrdom site of Sahibzada Zorawar Singh and Fateh Singh, holding Gurdwara Fatehgarh Sahib.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 30.6483,
+            "lng": 76.3986
+          }
+        },
+        {
+          "id": "fazilka",
+          "name": "Fazilka",
+          "slug": "fazilka",
+          "state_id": "punjab",
+          "entity_type": "city",
+          "district": "Fazilka",
+          "latitude": null,
+          "longitude": null,
+          "lat": 30.4038,
+          "lng": 74.0255,
+          "tagline": "Cultural destination in Punjab",
+          "short_description": null,
+          "description": "Border heritage town known as Bangla on the Sutlej, historic Asafwala War Memorial, Sadiqi border retreat ceremony, and Toshi footwear.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 30.4038,
+            "lng": 74.0255
+          }
+        },
+        {
+          "id": "firozepur",
+          "name": "Firozepur",
+          "slug": "firozepur",
+          "state_id": "punjab",
+          "entity_type": "city",
+          "district": "Firozepur",
+          "latitude": null,
+          "longitude": null,
+          "lat": 30.9237,
+          "lng": 74.6118,
+          "tagline": "Cultural destination in Punjab",
+          "short_description": null,
+          "description": "Historic border fortress city along the Sutlej holding the National Martyrs Memorial at Hussainiwala (Bhagat Singh, Rajguru, Sukhdev) and Saragarhi memorial.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 30.9237,
+            "lng": 74.6118
+          }
+        },
+        {
+          "id": "gurdaspur",
+          "name": "Gurdaspur",
+          "slug": "gurdaspur",
+          "state_id": "punjab",
+          "entity_type": "city",
+          "district": "Gurdaspur",
+          "latitude": null,
+          "longitude": null,
+          "lat": 32.0419,
+          "lng": 75.4053,
+          "tagline": "Cultural destination in Punjab",
+          "short_description": null,
+          "description": "Majha heritage district holding Dera Baba Nanak (gateway to Kartarpur Corridor), historic Takht-e-Akbari coronation platform of Akbar at Kalanaur.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 32.0419,
+            "lng": 75.4053
+          }
+        },
+        {
+          "id": "jalandhar",
+          "name": "Jalandhar",
+          "slug": "jalandhar",
+          "state_id": "punjab",
+          "entity_type": "city",
+          "district": "Jalandhar",
+          "latitude": null,
+          "longitude": null,
+          "lat": 31.326,
+          "lng": 75.5762,
+          "tagline": "Cultural destination in Punjab",
+          "short_description": null,
+          "description": "Ancient Doaba city mentioned in Mahabharata, sports goods manufacturing capital of India, Devi Talab Mandir, and Wonderland theme park.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 31.326,
+            "lng": 75.5762
+          }
+        },
+        {
+          "id": "kapurthala",
+          "name": "Kapurthala",
+          "slug": "kapurthala",
+          "state_id": "punjab",
+          "entity_type": "city",
+          "district": "Kapurthala",
+          "latitude": null,
+          "longitude": null,
+          "lat": 31.38,
+          "lng": 75.38,
+          "tagline": "Cultural destination in Punjab",
+          "short_description": null,
+          "description": "Paris of Punjab celebrated for Indo-French architecture in Jagatjit Palace (modeled on Versailles), Moorish Mosque, Elysee Palace, and Shalimar Gardens.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 31.38,
+            "lng": 75.38
+          }
+        },
+        {
+          "id": "ludhiana",
+          "name": "Ludhiana",
+          "slug": "ludhiana",
+          "state_id": "punjab",
+          "entity_type": "city",
+          "district": "Ludhiana",
+          "latitude": null,
+          "longitude": null,
+          "lat": 30.901,
+          "lng": 75.8573,
+          "tagline": "Cultural destination in Punjab",
+          "short_description": null,
+          "description": "Manchester of India on the Sutlej river featuring Maharaja Ranjit Singh War Museum, historic Lodhi Fort, and Punjab Agricultural University.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 30.901,
+            "lng": 75.8573
+          }
+        },
+        {
+          "id": "pathankot",
+          "name": "Pathankot",
+          "slug": "pathankot",
+          "state_id": "punjab",
+          "entity_type": "city",
+          "district": "Pathankot",
+          "latitude": null,
+          "longitude": null,
+          "lat": 32.2684,
+          "lng": 75.6499,
+          "tagline": "Cultural destination in Punjab",
+          "short_description": null,
+          "description": "Strategic gateway city where Punjab, J&K and Himachal meet, home to 9th-century Shahpurkandi Fort on the Ravi, Nurpur Fort, and Mukteshwar temple caves.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 32.2684,
+            "lng": 75.6499
+          }
+        },
+        {
+          "id": "rupnagar",
+          "name": "Rupnagar",
+          "slug": "rupnagar",
+          "state_id": "punjab",
+          "entity_type": "city",
+          "district": "Rupnagar",
+          "latitude": null,
+          "longitude": null,
+          "lat": 30.9664,
+          "lng": 76.5331,
+          "tagline": "Cultural destination in Punjab",
+          "short_description": null,
+          "description": "Historic Ropar holding prominent Harappan Indus Valley Civilization archaeological excavated mound and museum, wetland sanctuary, and canals.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 30.9664,
+            "lng": 76.5331
+          }
+        },
+        {
+          "id": "sas-nagar",
+          "name": "SAS Nagar",
+          "slug": "sas-nagar",
+          "state_id": "punjab",
+          "entity_type": "city",
+          "district": "SAS Nagar",
+          "latitude": null,
+          "longitude": null,
+          "lat": 30.7046,
+          "lng": 76.7179,
+          "tagline": "Cultural destination in Punjab",
+          "short_description": null,
+          "description": "Mohali — modern commercial and sports metropolis holding Fateh Burj (tallest minar in India celebrating victory of Baba Banda Singh Bahadur) and PCA Stadium.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 30.7046,
+            "lng": 76.7179
           }
         }
       ],
@@ -6782,8 +7801,8 @@ export const INDIA_TOURISM_DATABASE = {
       "capital": "Jaipur",
       "region": "Western India",
       "hero_image_url": "https://images.unsplash.com/photo-1477587458883-47145ed94245?w=1200&q=80",
-      "total_cities": 2,
-      "total_attractions": 4,
+      "total_cities": 15,
+      "total_attractions": 9,
       "heritage_overview": "Home to the Hill Forts of Rajasthan (UNESCO World Heritage Sites), Jantar Mantar (UNESCO), Keoladeo National Park (UNESCO), and the walled city of Jaipur (UNESCO).",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Rajasthan.",
@@ -7082,275 +8101,294 @@ export const INDIA_TOURISM_DATABASE = {
           ],
           "heritage": [
             {
-              "id": "jaipur-amber-palace",
-              "name": "Amber Palace (Amer Fort)",
-              "slug": "amber-palace-amer-fort",
-              "place_type": "UNESCO World Heritage Hill Fort",
-              "topic": "Heritage",
-              "subtopic": "UNESCO World Heritage Sites",
+              "id": "amber-fort",
+              "name": "Amber Fort",
+              "canonical_name": "Amber Fort",
               "category": "heritage",
-              "category_label": "UNESCO Hill Fort",
-              "category_links": [
-                {
-                  "topic": "Heritage",
-                  "subtopic": "UNESCO World Heritage Sites"
-                },
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Palaces and Forts"
-                },
-                {
-                  "topic": "Weddings",
-                  "subtopic": "Palace Weddings"
-                }
+              "categories": [
+                "heritage"
               ],
+              "subcategories": [],
               "importance_level": "iconic",
-              "summary": "16th-century red sandstone and marble fort palace built by Raja Man Singh I, inscribed on UNESCO World Heritage list.",
-              "short_description": "Majestic UNESCO World Heritage hill fort overlooking Maota Lake, famous for the Sheesh Mahal mirror palace.",
-              "detailed_description": "Situated on Cheel ka Teela above Maota Lake, Amber Fort is constructed from pale yellow and pink sandstone with white marble. Its Sheesh Mahal (Hall of Mirrors) reflects light across concave glass mosaics. Inscribed as part of the Hill Forts of Rajasthan UNESCO site in 2013.",
-              "address": "Devisinghpura, Amer, Jaipur, Rajasthan 302001",
+              "summary": null,
+              "description": null,
+              "history": null,
+              "address": null,
               "lat": 26.9855,
               "lng": 75.8513,
-              "coordinates": {
-                "lat": 26.9855,
-                "lng": 75.8513
-              },
-              "visiting_hours": "08:00 AM - 05:30 PM, Evening Light & Sound: 06:30 PM - 09:00 PM",
-              "opening_hours": "08:00 - 17:30",
-              "entry_fee": "INR 100 (Indian), INR 500 (Foreign)",
-              "entry_fee_domestic": 100,
-              "entry_fee_intl": 500,
-              "fees": {
-                "domestic": 100,
-                "international": 500,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "08:00",
-                "closing_time": "17:30",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 180,
-                "label": "3 Hours",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "October to March",
-              "contact_information": "Superintendent, Amber Palace: 0141-2530264",
-              "official_website": "https://whc.unesco.org/en/list/247/",
-              "heritage_status": "UNESCO World Heritage Site (Hill Forts of Rajasthan, 2013)",
+              "latitude": 26.9855,
+              "longitude": 75.8513,
+              "entry_fee_domestic": null,
+              "entry_fee_intl": null,
+              "visiting_hours": null,
+              "heritage_status": null,
               "data_confidence": "official",
+              "source_url": "https://www.rajasthantourism.com/destinations/jaipur/amber-fort",
+              "source_name": "Rajasthan Tourism",
+              "source_type": "tier1_official",
               "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1477587458883-47145ed94245?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1477587458883-47145ed94245?w=400&q=80",
-              "attribution": "UNESCO / Rajasthan Tourism",
-              "source_url": "https://whc.unesco.org/en/list/247/",
-              "source_name": "UNESCO World Heritage Centre",
-              "source_type": "unesco",
-              "sources": [
-                {
-                  "source_name": "UNESCO World Heritage Centre",
-                  "source_url": "https://whc.unesco.org/en/list/247/",
-                  "source_type": "unesco",
-                  "evidence_note": "Official UNESCO World Heritage List serial inscription 247 for Hill Forts of Rajasthan.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Department of Archaeology and Museums, Rajasthan",
-                  "source_url": "https://museums.rajasthan.gov.in",
-                  "source_type": "state_tourism",
-                  "evidence_note": "Official state heritage custodian records.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
-              ],
-              "source_quality": "place_specific"
+              "status": "VERIFIED",
+              "source_quality": "official_site",
+              "last_verified_at": "2026-09-10T21:27:42.329Z",
+              "rating": null,
+              "thumbnail_url": "",
+              "image_url": "",
+              "created_at": "2026-09-10T21:27:42.332Z"
             },
             {
-              "id": "jaipur-hawa-mahal",
-              "name": "Hawa Mahal (Palace of Winds)",
-              "slug": "hawa-mahal-jaipur",
-              "place_type": "Royal Rajput Monument & Screen Palace",
-              "topic": "Heritage",
-              "subtopic": "Historical Buildings",
+              "id": "hawa-mahal",
+              "name": "Hawa Mahal",
+              "canonical_name": "Hawa Mahal",
               "category": "heritage",
-              "category_label": "Iconic Rajput Screen Palace",
-              "category_links": [
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Historical Buildings"
-                },
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Monuments"
-                },
-                {
-                  "topic": "Arts",
-                  "subtopic": "Painting"
-                }
+              "categories": [
+                "heritage"
               ],
+              "subcategories": [],
               "importance_level": "iconic",
-              "summary": "Five-story pink sandstone palace built in 1799 by Maharaja Sawai Pratap Singh with 953 jharokhas.",
-              "short_description": "Honeycomb-like five-story facade featuring 953 intricately carved casements built to allow royal women to view street festivals.",
-              "detailed_description": "Designed by Lal Chand Ustad in the form of the crown of Krishna, Hawa Mahal is constructed of red and pink sandstone. Its 953 jharokhas (casements) create a Venturi breeze effect that keeps the chambers cool even during peak summer.",
-              "address": "Hawa Mahal Road, Badi Choupad, J.D.A. Market, Jaipur, Rajasthan 302002",
+              "summary": null,
+              "description": null,
+              "history": null,
+              "address": null,
               "lat": 26.9239,
               "lng": 75.8267,
-              "coordinates": {
-                "lat": 26.9239,
-                "lng": 75.8267
-              },
-              "visiting_hours": "09:00 AM - 05:00 PM",
-              "opening_hours": "09:00 - 17:00",
-              "entry_fee": "INR 50 (Indian), INR 200 (Foreign)",
-              "entry_fee_domestic": 50,
-              "entry_fee_intl": 200,
-              "fees": {
-                "domestic": 50,
-                "international": 200,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "09:00",
-                "closing_time": "17:00",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 75,
-                "label": "1.25 Hours",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "October to March",
-              "contact_information": "Superintendent, Hawa Mahal: 0141-2618862",
-              "official_website": "https://museums.rajasthan.gov.in",
-              "heritage_status": "State Protected Monument & Landmark of Jaipur UNESCO Walled City",
+              "latitude": 26.9239,
+              "longitude": 75.8267,
+              "entry_fee_domestic": null,
+              "entry_fee_intl": null,
+              "visiting_hours": null,
+              "heritage_status": null,
               "data_confidence": "official",
+              "source_url": "https://www.rajasthantourism.com/destinations/jaipur/hawa-mahal",
+              "source_name": "Rajasthan Tourism",
+              "source_type": "tier1_official",
               "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=400&q=80",
-              "attribution": "Department of Archaeology and Museums, Rajasthan",
-              "source_url": "https://www.tourism.rajasthan.gov.in/jaipur.html",
-              "source_name": "Rajasthan Tourism Department",
-              "source_type": "state_tourism",
-              "sources": [
-                {
-                  "source_name": "Rajasthan Tourism Department",
-                  "source_url": "https://www.tourism.rajasthan.gov.in/jaipur.html",
-                  "source_type": "state_tourism",
-                  "evidence_note": "Official state tourism profile for Hawa Mahal.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Department of Archaeology and Museums, Rajasthan",
-                  "source_url": "https://museums.rajasthan.gov.in",
-                  "source_type": "state_tourism",
-                  "evidence_note": "Custodian museum and monument registry.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
-              ],
-              "source_quality": "place_specific"
+              "status": "VERIFIED",
+              "source_quality": "official_site",
+              "last_verified_at": "2026-09-10T21:27:42.332Z",
+              "rating": null,
+              "thumbnail_url": "",
+              "image_url": "",
+              "created_at": "2026-09-10T21:27:42.332Z"
             },
             {
-              "id": "jaipur-jantar-mantar",
-              "name": "Jantar Mantar Observatory",
-              "slug": "jantar-mantar-jaipur",
-              "place_type": "UNESCO World Heritage Astronomical Observatory",
-              "topic": "Heritage",
-              "subtopic": "UNESCO World Heritage Sites",
+              "id": "city-palace-jaipur",
+              "name": "City Palace",
+              "canonical_name": "City Palace",
               "category": "heritage",
-              "category_label": "UNESCO Astronomical Site",
-              "category_links": [
-                {
-                  "topic": "Heritage",
-                  "subtopic": "UNESCO World Heritage Sites"
-                },
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Archaeological Sites"
-                }
+              "categories": [
+                "heritage"
               ],
-              "importance_level": "iconic",
-              "summary": "18th-century stone astronomical observatory built by Sawai Jai Singh II, housing the world largest stone sundial.",
-              "short_description": "UNESCO World Heritage site housing 19 architectural astronomical instruments including the giant Samrat Yantra sundial.",
-              "detailed_description": "Completed in 1734 by Rajput king Sawai Jai Singh II, Jantar Mantar features 19 architectural astronomical instruments made of local stone and marble. The Vrihat Samrat Yantra is the world largest stone sundial, measuring time to an accuracy of two seconds.",
-              "address": "Gangori Bazaar, J.D.A. Market, Pink City, Jaipur, Rajasthan 302002",
-              "lat": 26.9248,
-              "lng": 75.8246,
-              "coordinates": {
-                "lat": 26.9248,
-                "lng": 75.8246
-              },
-              "visiting_hours": "09:00 AM - 05:00 PM",
-              "opening_hours": "09:00 - 17:00",
-              "entry_fee": "INR 50 (Indian), INR 200 (Foreign)",
-              "entry_fee_domestic": 50,
-              "entry_fee_intl": 200,
-              "fees": {
-                "domestic": 50,
-                "international": 200,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "09:00",
-                "closing_time": "17:00",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 Hours",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "October to March (mid-day recommended for shadow instruments)",
-              "contact_information": "Archaeological Survey of India Jaipur Circle: 0141-2704257",
-              "official_website": "https://whc.unesco.org/en/list/1338/",
-              "heritage_status": "UNESCO World Heritage Site (2010)",
+              "subcategories": [],
+              "importance_level": "major",
+              "summary": null,
+              "description": null,
+              "history": null,
+              "address": null,
+              "lat": 26.9255,
+              "lng": 75.8236,
+              "latitude": 26.9255,
+              "longitude": 75.8236,
+              "entry_fee_domestic": null,
+              "entry_fee_intl": null,
+              "visiting_hours": null,
+              "heritage_status": null,
               "data_confidence": "official",
+              "source_url": "https://www.rajasthantourism.com/destinations/jaipur/city-palace",
+              "source_name": "Rajasthan Tourism",
+              "source_type": "tier1_official",
               "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
-              "attribution": "UNESCO / ASI",
-              "source_url": "https://whc.unesco.org/en/list/1338/",
-              "source_name": "UNESCO World Heritage Centre",
-              "source_type": "unesco",
-              "sources": [
-                {
-                  "source_name": "UNESCO World Heritage Centre",
-                  "source_url": "https://whc.unesco.org/en/list/1338/",
-                  "source_type": "unesco",
-                  "evidence_note": "Official UNESCO World Heritage list entry 1338 for Jantar Mantar Jaipur.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Archaeological Survey of India (ASI)",
-                  "source_url": "https://asi.nic.in",
-                  "source_type": "asi",
-                  "evidence_note": "Centrally Protected Monument records.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
+              "status": "VERIFIED",
+              "source_quality": "official_site",
+              "last_verified_at": "2026-09-10T21:27:42.332Z",
+              "rating": null,
+              "thumbnail_url": "",
+              "image_url": "",
+              "created_at": "2026-09-10T21:27:42.332Z"
+            },
+            {
+              "id": "jantar-mantar-jaipur",
+              "name": "Jantar Mantar",
+              "canonical_name": "Jantar Mantar",
+              "category": "heritage",
+              "categories": [
+                "heritage"
               ],
-              "source_quality": "place_specific"
+              "subcategories": [],
+              "importance_level": "iconic",
+              "summary": null,
+              "description": null,
+              "history": null,
+              "address": null,
+              "lat": 26.9248,
+              "lng": 75.8248,
+              "latitude": 26.9248,
+              "longitude": 75.8248,
+              "entry_fee_domestic": null,
+              "entry_fee_intl": null,
+              "visiting_hours": null,
+              "heritage_status": "UNESCO World Heritage",
+              "data_confidence": "official",
+              "source_url": "https://whc.unesco.org/en/list/1338",
+              "source_name": "UNESCO World Heritage Centre",
+              "source_type": "tier1_official",
+              "verification_status": "verified",
+              "status": "VERIFIED",
+              "source_quality": "official_site",
+              "last_verified_at": "2026-09-10T21:27:42.332Z",
+              "rating": null,
+              "thumbnail_url": "",
+              "image_url": "",
+              "created_at": "2026-09-10T21:27:42.332Z"
+            },
+            {
+              "id": "nahargarh-fort",
+              "name": "Nahargarh Fort",
+              "canonical_name": "Nahargarh Fort",
+              "category": "heritage",
+              "categories": [
+                "heritage"
+              ],
+              "subcategories": [],
+              "importance_level": "major",
+              "summary": null,
+              "description": null,
+              "history": null,
+              "address": null,
+              "lat": 26.9381,
+              "lng": 75.805,
+              "latitude": 26.9381,
+              "longitude": 75.805,
+              "entry_fee_domestic": null,
+              "entry_fee_intl": null,
+              "visiting_hours": null,
+              "heritage_status": null,
+              "data_confidence": "official",
+              "source_url": "https://www.rajasthantourism.com/destinations/jaipur/nahargarh-fort",
+              "source_name": "Rajasthan Tourism",
+              "source_type": "tier1_official",
+              "verification_status": "verified",
+              "status": "VERIFIED",
+              "source_quality": "official_site",
+              "last_verified_at": "2026-09-10T21:27:42.332Z",
+              "rating": null,
+              "thumbnail_url": "",
+              "image_url": "",
+              "created_at": "2026-09-10T21:27:42.332Z"
+            },
+            {
+              "id": "jal-mahal",
+              "name": "Jal Mahal",
+              "canonical_name": "Jal Mahal",
+              "category": "heritage",
+              "categories": [
+                "heritage"
+              ],
+              "subcategories": [],
+              "importance_level": "major",
+              "summary": null,
+              "description": null,
+              "history": null,
+              "address": null,
+              "lat": 26.9509,
+              "lng": 75.8457,
+              "latitude": 26.9509,
+              "longitude": 75.8457,
+              "entry_fee_domestic": null,
+              "entry_fee_intl": null,
+              "visiting_hours": null,
+              "heritage_status": null,
+              "data_confidence": "official",
+              "source_url": "https://www.rajasthantourism.com/destinations/jaipur/jal-mahal",
+              "source_name": "Rajasthan Tourism",
+              "source_type": "tier1_official",
+              "verification_status": "verified",
+              "status": "VERIFIED",
+              "source_quality": "official_site",
+              "last_verified_at": "2026-09-10T21:27:42.332Z",
+              "rating": null,
+              "thumbnail_url": "",
+              "image_url": "",
+              "created_at": "2026-09-10T21:27:42.332Z"
             }
           ],
           "monuments": [],
-          "museums": [],
+          "museums": [
+            {
+              "id": "albert-hall-museum",
+              "name": "Albert Hall Museum",
+              "canonical_name": "Albert Hall Museum",
+              "category": "museums",
+              "categories": [
+                "museums"
+              ],
+              "subcategories": [],
+              "importance_level": "major",
+              "summary": null,
+              "description": null,
+              "history": null,
+              "address": null,
+              "lat": 26.9124,
+              "lng": 75.819,
+              "latitude": 26.9124,
+              "longitude": 75.819,
+              "entry_fee_domestic": null,
+              "entry_fee_intl": null,
+              "visiting_hours": null,
+              "heritage_status": null,
+              "data_confidence": "official",
+              "source_url": "https://www.rajasthantourism.com/destinations/jaipur/albert-hall-museum",
+              "source_name": "Rajasthan Tourism",
+              "source_type": "tier1_official",
+              "verification_status": "verified",
+              "status": "VERIFIED",
+              "source_quality": "official_site",
+              "last_verified_at": "2026-09-10T21:27:42.332Z",
+              "rating": null,
+              "thumbnail_url": "",
+              "image_url": "",
+              "created_at": "2026-09-10T21:27:42.332Z"
+            }
+          ],
           "tourist_places": [],
-          "religious_cultural": [],
+          "religious_cultural": [
+            {
+              "id": "birla-mandir-jaipur",
+              "name": "Birla Mandir",
+              "canonical_name": "Birla Mandir",
+              "category": "religious_cultural",
+              "categories": [
+                "religious_cultural"
+              ],
+              "subcategories": [],
+              "importance_level": "notable",
+              "summary": null,
+              "description": null,
+              "history": null,
+              "address": null,
+              "lat": 26.9059,
+              "lng": 75.8035,
+              "latitude": 26.9059,
+              "longitude": 75.8035,
+              "entry_fee_domestic": null,
+              "entry_fee_intl": null,
+              "visiting_hours": null,
+              "heritage_status": null,
+              "data_confidence": "official",
+              "source_url": "https://www.rajasthantourism.com/destinations/jaipur/birla-mandir",
+              "source_name": "Rajasthan Tourism",
+              "source_type": "tier1_official",
+              "verification_status": "verified",
+              "status": "VERIFIED",
+              "source_quality": "official_site",
+              "last_verified_at": "2026-09-10T21:27:42.332Z",
+              "rating": null,
+              "thumbnail_url": "",
+              "image_url": "",
+              "created_at": "2026-09-10T21:27:42.332Z"
+            }
+          ],
           "nature_parks_zoo": [],
-          "places_count": 3,
+          "places_count": 8,
           "transport": {
             "railway_stations": [],
             "local_transit": {
@@ -7608,6 +8646,760 @@ export const INDIA_TOURISM_DATABASE = {
             "weather_summary": "Pleasant and sunny",
             "status": "VERIFIED"
           }
+        },
+        {
+          "id": "ajmer",
+          "name": "Ajmer",
+          "slug": "ajmer",
+          "state_id": "rajasthan",
+          "entity_type": "city",
+          "district": "Ajmer",
+          "latitude": null,
+          "longitude": null,
+          "lat": 26.4499,
+          "lng": 74.6399,
+          "tagline": "Cultural destination in Rajasthan",
+          "short_description": null,
+          "description": "Spiritual oasis in the Aravalli hills holding the world-renowned Sufi shrine Dargah Sharif of Khwaja Moinuddin Chishti, Adhai Din Ka Jhonpra, and Taragarh Fort.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 26.4499,
+            "lng": 74.6399
+          }
+        },
+        {
+          "id": "alwar",
+          "name": "Alwar",
+          "slug": "alwar",
+          "state_id": "rajasthan",
+          "entity_type": "city",
+          "district": "Alwar",
+          "latitude": null,
+          "longitude": null,
+          "lat": 27.553,
+          "lng": 76.6346,
+          "tagline": "Cultural destination in Rajasthan",
+          "short_description": null,
+          "description": "Gateway city of Rajasthan crowned by Bala Quila fort, marble Moosi Maharani ki Chhatri, City Palace, and gateway to Sariska Tiger Reserve and Bhangarh.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 27.553,
+            "lng": 76.6346
+          }
+        },
+        {
+          "id": "banswara",
+          "name": "Banswara",
+          "slug": "banswara",
+          "state_id": "rajasthan",
+          "entity_type": "city",
+          "district": "Banswara",
+          "latitude": null,
+          "longitude": null,
+          "lat": 23.5461,
+          "lng": 74.4422,
+          "tagline": "Cultural destination in Rajasthan",
+          "short_description": null,
+          "description": "City of Hundred Islands set amidst the Mahi river archipelago, green southern Aravalli hills, Anand Sagar Lake, and Arthuna medieval temple ruins.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 23.5461,
+            "lng": 74.4422
+          }
+        },
+        {
+          "id": "bharatpur",
+          "name": "Bharatpur",
+          "slug": "bharatpur",
+          "state_id": "rajasthan",
+          "entity_type": "city",
+          "district": "Bharatpur",
+          "latitude": null,
+          "longitude": null,
+          "lat": 27.2152,
+          "lng": 77.503,
+          "tagline": "Cultural destination in Rajasthan",
+          "short_description": null,
+          "description": "Eastern gateway of Rajasthan famed for Keoladeo National Park (UNESCO bird paradise), Lohagarh Fort (iron fort that withstood British sieges), and Deeg Water Palaces.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 27.2152,
+            "lng": 77.503
+          }
+        },
+        {
+          "id": "bikaner",
+          "name": "Bikaner",
+          "slug": "bikaner",
+          "state_id": "rajasthan",
+          "entity_type": "city",
+          "district": "Bikaner",
+          "latitude": null,
+          "longitude": null,
+          "lat": 28.0229,
+          "lng": 73.3119,
+          "tagline": "Cultural destination in Rajasthan",
+          "short_description": null,
+          "description": "Desert citadel featuring the invincible red sandstone Junagarh Fort, Lalgarh Palace, Karni Mata rat temple at Deshnoke, and camel breeding center.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 28.0229,
+            "lng": 73.3119
+          }
+        },
+        {
+          "id": "bundi",
+          "name": "Bundi",
+          "slug": "bundi",
+          "state_id": "rajasthan",
+          "entity_type": "city",
+          "district": "Bundi",
+          "latitude": null,
+          "longitude": null,
+          "lat": 25.4415,
+          "lng": 75.6441,
+          "tagline": "Cultural destination in Rajasthan",
+          "short_description": null,
+          "description": "Untouched Rajput town celebrated for the dramatic cliff-hugging Taragarh Fort, frescoed Bundi murals in Chitrashala, and 50+ ornate stepwells like Raniji ki Baori.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 25.4415,
+            "lng": 75.6441
+          }
+        },
+        {
+          "id": "chittorgarh",
+          "name": "Chittorgarh",
+          "slug": "chittorgarh",
+          "state_id": "rajasthan",
+          "entity_type": "city",
+          "district": "Chittorgarh",
+          "latitude": null,
+          "longitude": null,
+          "lat": 24.8887,
+          "lng": 74.6269,
+          "tagline": "Cultural destination in Rajasthan",
+          "short_description": null,
+          "description": "Symbol of Rajput chivalry, largest fort in India (UNESCO), holding Vijay Stambha (Tower of Victory), Kirti Stambha, and Queen Padmini's Palace.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 24.8887,
+            "lng": 74.6269
+          }
+        },
+        {
+          "id": "dausa",
+          "name": "Dausa",
+          "slug": "dausa",
+          "state_id": "rajasthan",
+          "entity_type": "city",
+          "district": "Dausa",
+          "latitude": null,
+          "longitude": null,
+          "lat": 26.8928,
+          "lng": 76.3375,
+          "tagline": "Cultural destination in Rajasthan",
+          "short_description": null,
+          "description": "Historic district home to the architectural wonder Chand Baori stepwell at Abhaneri (3,500 geometric steps), Harshat Mata temple, and Mehandipur Balaji.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 26.8928,
+            "lng": 76.3375
+          }
+        },
+        {
+          "id": "dholpur",
+          "name": "Dholpur",
+          "slug": "dholpur",
+          "state_id": "rajasthan",
+          "entity_type": "city",
+          "district": "Dholpur",
+          "latitude": null,
+          "longitude": null,
+          "lat": 26.7025,
+          "lng": 77.8933,
+          "tagline": "Cultural destination in Rajasthan",
+          "short_description": null,
+          "description": "Red sandstone city on the Chambal river holding the historic Machkund sacred water tank, Shergarh Fort, royal chhatris, and National Chambal Sanctuary.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 26.7025,
+            "lng": 77.8933
+          }
+        },
+        {
+          "id": "jaisalmer",
+          "name": "Jaisalmer",
+          "slug": "jaisalmer",
+          "state_id": "rajasthan",
+          "entity_type": "city",
+          "district": "Jaisalmer",
+          "latitude": null,
+          "longitude": null,
+          "lat": 26.9157,
+          "lng": 70.9083,
+          "tagline": "Cultural destination in Rajasthan",
+          "short_description": null,
+          "description": "The Golden City rising out of the Thar Desert, holding the living Sonar Qila (UNESCO Golden Fort), Patwon ki Haveli, Gadisar Lake, and Sam sand dunes.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 26.9157,
+            "lng": 70.9083
+          }
+        },
+        {
+          "id": "jodhpur",
+          "name": "Jodhpur",
+          "slug": "jodhpur",
+          "state_id": "rajasthan",
+          "entity_type": "city",
+          "district": "Jodhpur",
+          "latitude": null,
+          "longitude": null,
+          "lat": 26.2389,
+          "lng": 73.0243,
+          "tagline": "Cultural destination in Rajasthan",
+          "short_description": null,
+          "description": "The Blue City crowned by the colossal Mehrangarh Fort rising 400 feet above the city, Umaid Bhawan Art Deco palace, and marble Jaswant Thada memorial.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 26.2389,
+            "lng": 73.0243
+          }
+        },
+        {
+          "id": "kota",
+          "name": "Kota",
+          "slug": "kota",
+          "state_id": "rajasthan",
+          "entity_type": "city",
+          "district": "Kota",
+          "latitude": null,
+          "longitude": null,
+          "lat": 25.2138,
+          "lng": 75.8648,
+          "tagline": "Cultural destination in Rajasthan",
+          "short_description": null,
+          "description": "Industrial and educational hub on the Chambal river, holding the Garh City Palace with Rajput miniature frescoes, Kishore Sagar Jagmandir, and Seven Wonders Park.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 25.2138,
+            "lng": 75.8648
+          }
+        },
+        {
+          "id": "mount-abu",
+          "name": "Mount Abu",
+          "slug": "mount-abu",
+          "state_id": "rajasthan",
+          "entity_type": "city",
+          "district": "Sirohi",
+          "latitude": null,
+          "longitude": null,
+          "lat": 24.5926,
+          "lng": 72.7156,
+          "tagline": "Cultural destination in Rajasthan",
+          "short_description": null,
+          "description": "Only hill station in Rajasthan at 4,000 ft in the Aravallis, home to the exquisite 11th-13th century Dilwara Jain marble temples, Nakki Lake, and Guru Shikhar peak.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 24.5926,
+            "lng": 72.7156
+          }
         }
       ],
       "region_type": "state",
@@ -7638,8 +9430,8 @@ export const INDIA_TOURISM_DATABASE = {
       "capital": "Lucknow",
       "region": "Northern India",
       "hero_image_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&q=80",
-      "total_cities": 2,
-      "total_attractions": 4,
+      "total_cities": 10,
+      "total_attractions": 10,
       "heritage_overview": "Home to the Taj Mahal (UNESCO), Agra Fort (UNESCO), Fatehpur Sikri (UNESCO), Varanasi Ghats, and the Sarnath Buddhist pilgrimage circuit.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Uttar Pradesh.",
@@ -7851,188 +9643,293 @@ export const INDIA_TOURISM_DATABASE = {
           ],
           "heritage": [
             {
-              "id": "agra-taj-mahal",
+              "id": "taj-mahal",
               "name": "Taj Mahal",
-              "slug": "taj-mahal-agra",
-              "place_type": "UNESCO World Heritage Mausoleum",
-              "topic": "Heritage",
-              "subtopic": "UNESCO World Heritage Sites",
+              "canonical_name": "Taj Mahal",
               "category": "heritage",
-              "category_label": "UNESCO World Heritage Wonder",
-              "category_links": [
-                {
-                  "topic": "Heritage",
-                  "subtopic": "UNESCO World Heritage Sites"
-                },
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Monuments"
-                },
-                {
-                  "topic": "Arts",
-                  "subtopic": "Painting"
-                }
+              "categories": [
+                "heritage"
               ],
+              "subcategories": [],
               "importance_level": "iconic",
-              "summary": "17th-century white marble mausoleum built by Shah Jahan in memory of Mumtaz Mahal on the Yamuna bank.",
-              "short_description": "Universally admired UNESCO World Heritage masterpiece of Mughal architecture in pure white marble.",
-              "detailed_description": "Commissioned in 1631 by Mughal Emperor Shah Jahan to house the tomb of his favorite wife Mumtaz Mahal, the Taj Mahal is an ivory-white marble mausoleum on the south bank of the Yamuna River. Inscribed on the UNESCO World Heritage List in 1983 as the jewel of Muslim art in India.",
-              "address": "Dharmapuri, Forest Colony, Tajganj, Agra, Uttar Pradesh 282001",
+              "summary": null,
+              "description": null,
+              "history": null,
+              "address": null,
               "lat": 27.1751,
               "lng": 78.0421,
-              "coordinates": {
-                "lat": 27.1751,
-                "lng": 78.0421
-              },
-              "visiting_hours": "Sunrise to Sunset (30 mins before sunrise to 30 mins before sunset, Closed Fridays)",
-              "opening_hours": "06:00 - 18:30",
-              "entry_fee": "INR 50 (Indian), INR 1100 (Foreign), Additional INR 200 for Main Mausoleum",
-              "entry_fee_domestic": 50,
-              "entry_fee_intl": 1100,
-              "fees": {
-                "domestic": 50,
-                "international": 1100,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "06:00",
-                "closing_time": "18:30",
-                "closed_days": [
-                  "Friday"
-                ],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 180,
-                "label": "3 Hours",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "October to March",
-              "contact_information": "Archaeological Survey of India Agra Circle: 0562-2227261",
-              "official_website": "https://www.asiagracircle.in",
-              "heritage_status": "UNESCO World Heritage Site (1983) & ASI Monument of National Importance",
+              "latitude": 27.1751,
+              "longitude": 78.0421,
+              "entry_fee_domestic": null,
+              "entry_fee_intl": null,
+              "visiting_hours": null,
+              "heritage_status": "UNESCO World Heritage",
               "data_confidence": "official",
-              "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=400&q=80",
-              "attribution": "Archaeological Survey of India / UNESCO",
-              "source_url": "https://whc.unesco.org/en/list/252/",
+              "source_url": "https://whc.unesco.org/en/list/252",
               "source_name": "UNESCO World Heritage Centre",
-              "source_type": "unesco",
-              "sources": [
-                {
-                  "source_name": "UNESCO World Heritage Centre",
-                  "source_url": "https://whc.unesco.org/en/list/252/",
-                  "source_type": "unesco",
-                  "evidence_note": "Official UNESCO World Heritage list entry 252 for Taj Mahal.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Archaeological Survey of India (ASI)",
-                  "source_url": "https://www.asiagracircle.in",
-                  "source_type": "asi",
-                  "evidence_note": "Official Agra Circle custodian portal.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
-              ],
-              "source_quality": "place_specific"
+              "source_type": "tier1_official",
+              "verification_status": "verified",
+              "status": "VERIFIED",
+              "source_quality": "official_site",
+              "last_verified_at": "2026-09-10T21:27:42.332Z",
+              "rating": null,
+              "thumbnail_url": "",
+              "image_url": "",
+              "created_at": "2026-09-10T21:27:42.332Z"
             },
             {
               "id": "agra-fort",
               "name": "Agra Fort",
-              "slug": "agra-fort",
-              "place_type": "UNESCO World Heritage Mughal Citadel",
-              "topic": "Heritage",
-              "subtopic": "UNESCO World Heritage Sites",
+              "canonical_name": "Agra Fort",
               "category": "heritage",
-              "category_label": "UNESCO Imperial Citadel",
-              "category_links": [
-                {
-                  "topic": "Heritage",
-                  "subtopic": "UNESCO World Heritage Sites"
-                },
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Palaces and Forts"
-                }
+              "categories": [
+                "heritage"
               ],
+              "subcategories": [],
               "importance_level": "iconic",
-              "summary": "Massive 16th-century red sandstone imperial citadel of the Mughal Emperors on the Yamuna.",
-              "short_description": "UNESCO World Heritage fortified palace citadel encompassing the Jahangiri Mahal, Khas Mahal, and Musamman Burj.",
-              "detailed_description": "Built primarily under Akbar beginning in 1565, Agra Fort served as the main residence of the Mughal emperors until 1638. Enclosed by double 70-foot-high red sandstone battlements stretching 2.5 kilometers, it preserves the Jahangiri Mahal, Diwan-i-Khas, and the Musamman Burj where Shah Jahan was imprisoned.",
-              "address": "Agra Fort, Rakabganj, Agra, Uttar Pradesh 282003",
+              "summary": null,
+              "description": null,
+              "history": null,
+              "address": null,
               "lat": 27.1795,
               "lng": 78.0211,
-              "coordinates": {
-                "lat": 27.1795,
-                "lng": 78.0211
-              },
-              "visiting_hours": "Sunrise to Sunset (06:00 AM - 06:00 PM)",
-              "opening_hours": "06:00 - 18:00",
-              "entry_fee": "INR 50 (Indian), INR 650 (Foreign)",
-              "entry_fee_domestic": 50,
-              "entry_fee_intl": 650,
-              "fees": {
-                "domestic": 50,
-                "international": 650,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "06:00",
-                "closing_time": "18:00",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 120,
-                "label": "2 Hours",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "October to March",
-              "contact_information": "Archaeological Survey of India Agra Circle: 0562-2227261",
-              "official_website": "https://whc.unesco.org/en/list/251/",
-              "heritage_status": "UNESCO World Heritage Site (1983) & ASI Monument of National Importance",
+              "latitude": 27.1795,
+              "longitude": 78.0211,
+              "entry_fee_domestic": null,
+              "entry_fee_intl": null,
+              "visiting_hours": null,
+              "heritage_status": "UNESCO World Heritage",
               "data_confidence": "official",
-              "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
-              "attribution": "Archaeological Survey of India / UNESCO",
-              "source_url": "https://whc.unesco.org/en/list/251/",
+              "source_url": "https://whc.unesco.org/en/list/251",
               "source_name": "UNESCO World Heritage Centre",
-              "source_type": "unesco",
-              "sources": [
-                {
-                  "source_name": "UNESCO World Heritage Centre",
-                  "source_url": "https://whc.unesco.org/en/list/251/",
-                  "source_type": "unesco",
-                  "evidence_note": "Official UNESCO World Heritage list entry 251 for Agra Fort.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Archaeological Survey of India (ASI)",
-                  "source_url": "https://www.asiagracircle.in",
-                  "source_type": "asi",
-                  "evidence_note": "Centrally Protected Monument records.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
+              "source_type": "tier1_official",
+              "verification_status": "verified",
+              "status": "VERIFIED",
+              "source_quality": "official_site",
+              "last_verified_at": "2026-09-10T21:27:42.332Z",
+              "rating": null,
+              "thumbnail_url": "",
+              "image_url": "",
+              "created_at": "2026-09-10T21:27:42.332Z"
+            },
+            {
+              "id": "fatehpur-sikri",
+              "name": "Fatehpur Sikri",
+              "canonical_name": "Fatehpur Sikri",
+              "category": "heritage",
+              "categories": [
+                "heritage"
               ],
-              "source_quality": "place_specific"
+              "subcategories": [],
+              "importance_level": "iconic",
+              "summary": null,
+              "description": null,
+              "history": null,
+              "address": null,
+              "lat": 27.0945,
+              "lng": 77.6685,
+              "latitude": 27.0945,
+              "longitude": 77.6685,
+              "entry_fee_domestic": null,
+              "entry_fee_intl": null,
+              "visiting_hours": null,
+              "heritage_status": "UNESCO World Heritage",
+              "data_confidence": "official",
+              "source_url": "https://whc.unesco.org/en/list/255",
+              "source_name": "UNESCO World Heritage Centre",
+              "source_type": "tier1_official",
+              "verification_status": "verified",
+              "status": "VERIFIED",
+              "source_quality": "official_site",
+              "last_verified_at": "2026-09-10T21:27:42.332Z",
+              "rating": null,
+              "thumbnail_url": "",
+              "image_url": "",
+              "created_at": "2026-09-10T21:27:42.332Z"
+            },
+            {
+              "id": "mehtab-bagh",
+              "name": "Mehtab Bagh",
+              "canonical_name": "Mehtab Bagh",
+              "category": "heritage",
+              "categories": [
+                "heritage"
+              ],
+              "subcategories": [],
+              "importance_level": "major",
+              "summary": null,
+              "description": null,
+              "history": null,
+              "address": null,
+              "lat": 27.1809,
+              "lng": 78.0485,
+              "latitude": 27.1809,
+              "longitude": 78.0485,
+              "entry_fee_domestic": null,
+              "entry_fee_intl": null,
+              "visiting_hours": null,
+              "heritage_status": null,
+              "data_confidence": "official",
+              "source_url": "https://www.uptourism.gov.in/en/destinations/agra/mehtab-bagh",
+              "source_name": "UP Tourism",
+              "source_type": "tier1_official",
+              "verification_status": "verified",
+              "status": "VERIFIED",
+              "source_quality": "official_site",
+              "last_verified_at": "2026-09-10T21:27:42.332Z",
+              "rating": null,
+              "thumbnail_url": "",
+              "image_url": "",
+              "created_at": "2026-09-10T21:27:42.332Z"
+            },
+            {
+              "id": "tomb-of-itmad-ud-daulah",
+              "name": "Tomb of Itmad-ud-Daulah",
+              "canonical_name": "Tomb of Itmad-ud-Daulah",
+              "category": "heritage",
+              "categories": [
+                "heritage"
+              ],
+              "subcategories": [],
+              "importance_level": "major",
+              "summary": null,
+              "description": null,
+              "history": null,
+              "address": null,
+              "lat": 27.1911,
+              "lng": 78.0344,
+              "latitude": 27.1911,
+              "longitude": 78.0344,
+              "entry_fee_domestic": null,
+              "entry_fee_intl": null,
+              "visiting_hours": null,
+              "heritage_status": null,
+              "data_confidence": "official",
+              "source_url": "https://www.uptourism.gov.in/en/destinations/agra/itmad-ud-daulah",
+              "source_name": "UP Tourism",
+              "source_type": "tier1_official",
+              "verification_status": "verified",
+              "status": "VERIFIED",
+              "source_quality": "official_site",
+              "last_verified_at": "2026-09-10T21:27:42.332Z",
+              "rating": null,
+              "thumbnail_url": "",
+              "image_url": "",
+              "created_at": "2026-09-10T21:27:42.332Z"
+            },
+            {
+              "id": "akbars-tomb-sikandra",
+              "name": "Akbar's Tomb, Sikandra",
+              "canonical_name": "Akbar's Tomb, Sikandra",
+              "category": "heritage",
+              "categories": [
+                "heritage"
+              ],
+              "subcategories": [],
+              "importance_level": "major",
+              "summary": null,
+              "description": null,
+              "history": null,
+              "address": null,
+              "lat": 27.2188,
+              "lng": 77.9555,
+              "latitude": 27.2188,
+              "longitude": 77.9555,
+              "entry_fee_domestic": null,
+              "entry_fee_intl": null,
+              "visiting_hours": null,
+              "heritage_status": null,
+              "data_confidence": "official",
+              "source_url": "https://www.uptourism.gov.in/en/destinations/agra/akbars-tomb",
+              "source_name": "UP Tourism",
+              "source_type": "tier1_official",
+              "verification_status": "verified",
+              "status": "VERIFIED",
+              "source_quality": "official_site",
+              "last_verified_at": "2026-09-10T21:27:42.332Z",
+              "rating": null,
+              "thumbnail_url": "",
+              "image_url": "",
+              "created_at": "2026-09-10T21:27:42.332Z"
             }
           ],
           "monuments": [],
           "museums": [],
-          "tourist_places": [],
+          "tourist_places": [
+            {
+              "id": "kinari-bazaar",
+              "name": "Kinari Bazaar",
+              "canonical_name": "Kinari Bazaar",
+              "category": "tourist_places",
+              "categories": [
+                "tourist_places"
+              ],
+              "subcategories": [],
+              "importance_level": "local",
+              "summary": null,
+              "description": null,
+              "history": null,
+              "address": null,
+              "lat": 27.176,
+              "lng": 78.01,
+              "latitude": 27.176,
+              "longitude": 78.01,
+              "entry_fee_domestic": null,
+              "entry_fee_intl": null,
+              "visiting_hours": null,
+              "heritage_status": null,
+              "data_confidence": "official",
+              "source_url": "https://www.uptourism.gov.in/en/destinations/agra",
+              "source_name": "UP Tourism",
+              "source_type": "tier1_official",
+              "verification_status": "verified",
+              "status": "VERIFIED",
+              "source_quality": "official_site",
+              "last_verified_at": "2026-09-10T21:27:42.332Z",
+              "rating": null,
+              "thumbnail_url": "",
+              "image_url": "",
+              "created_at": "2026-09-10T21:27:42.332Z"
+            },
+            {
+              "id": "churi-bazaar-agra",
+              "name": "Churi Bazaar",
+              "canonical_name": "Churi Bazaar",
+              "category": "tourist_places",
+              "categories": [
+                "tourist_places"
+              ],
+              "subcategories": [],
+              "importance_level": "local",
+              "summary": null,
+              "description": null,
+              "history": null,
+              "address": null,
+              "lat": 27.1745,
+              "lng": 78.0085,
+              "latitude": 27.1745,
+              "longitude": 78.0085,
+              "entry_fee_domestic": null,
+              "entry_fee_intl": null,
+              "visiting_hours": null,
+              "heritage_status": null,
+              "data_confidence": "official",
+              "source_url": "https://www.uptourism.gov.in/en/destinations/agra",
+              "source_name": "UP Tourism",
+              "source_type": "tier1_official",
+              "verification_status": "verified",
+              "status": "VERIFIED",
+              "source_quality": "official_site",
+              "last_verified_at": "2026-09-10T21:27:42.332Z",
+              "rating": null,
+              "thumbnail_url": "",
+              "image_url": "",
+              "created_at": "2026-09-10T21:27:42.332Z"
+            }
+          ],
           "religious_cultural": [],
           "nature_parks_zoo": [],
-          "places_count": 2,
+          "places_count": 8,
           "transport": {
             "railway_stations": [],
             "local_transit": {
@@ -8409,7 +10306,7 @@ export const INDIA_TOURISM_DATABASE = {
               "data_confidence": "official",
               "verification_status": "verified",
               "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
               "attribution": "District Administration Varanasi / UP Tourism",
               "source_url": "https://varanasi.nic.in/tourist-place/dashashwamedh-ghat/",
@@ -8459,6 +10356,470 @@ export const INDIA_TOURISM_DATABASE = {
             "weather_summary": "Pleasant and sunny",
             "status": "VERIFIED"
           }
+        },
+        {
+          "id": "ayodhya",
+          "name": "Ayodhya",
+          "slug": "ayodhya",
+          "state_id": "uttar-pradesh",
+          "entity_type": "city",
+          "district": "Ayodhya",
+          "latitude": null,
+          "longitude": null,
+          "lat": 26.7922,
+          "lng": 82.1998,
+          "tagline": "Cultural destination in Uttar Pradesh",
+          "short_description": null,
+          "description": "Sacred birthplace of Lord Rama on the holy Saryu river, holding the grand Ram Mandir, Hanuman Garhi fortress temple, and ancient Ram Ki Paidi ghats.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 26.7922,
+            "lng": 82.1998
+          }
+        },
+        {
+          "id": "bareilly",
+          "name": "Bareilly",
+          "slug": "bareilly",
+          "state_id": "uttar-pradesh",
+          "entity_type": "city",
+          "district": "Bareilly",
+          "latitude": null,
+          "longitude": null,
+          "lat": 28.367,
+          "lng": 79.4304,
+          "tagline": "Cultural destination in Uttar Pradesh",
+          "short_description": null,
+          "description": "Historic Rohilkhand trade city celebrated for Zari-Zardozi embroidery, cane furniture, seven ancient Shiva Nath temples (Alakhnath, Trivatinath), and Jhumka.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 28.367,
+            "lng": 79.4304
+          }
+        },
+        {
+          "id": "chitrakoot-up",
+          "name": "Chitrakoot",
+          "slug": "chitrakoot-up",
+          "state_id": "uttar-pradesh",
+          "entity_type": "city",
+          "district": "Chitrakoot",
+          "latitude": null,
+          "longitude": null,
+          "lat": 25.2064,
+          "lng": 80.8931,
+          "tagline": "Cultural destination in Uttar Pradesh",
+          "short_description": null,
+          "description": "Sacred pilgrim town straddling the Mandakini river, holding Bharat Milap shrine, Hanuman Dhara spring temple on a cliff, and Sphatik Shila rock footprints.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 25.2064,
+            "lng": 80.8931
+          }
+        },
+        {
+          "id": "jhansi",
+          "name": "Jhansi",
+          "slug": "jhansi",
+          "state_id": "uttar-pradesh",
+          "entity_type": "city",
+          "district": "Jhansi",
+          "latitude": null,
+          "longitude": null,
+          "lat": 25.4484,
+          "lng": 78.5685,
+          "tagline": "Cultural destination in Uttar Pradesh",
+          "short_description": null,
+          "description": "Gateway to Bundelkhand and seat of legendary 1857 warrior queen Rani Lakshmibai, holding the formidable granite Jhansi Fort and Government Museum.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 25.4484,
+            "lng": 78.5685
+          }
+        },
+        {
+          "id": "kanpur",
+          "name": "Kanpur",
+          "slug": "kanpur",
+          "state_id": "uttar-pradesh",
+          "entity_type": "city",
+          "district": "Kanpur Nagar",
+          "latitude": null,
+          "longitude": null,
+          "lat": 26.4499,
+          "lng": 80.3319,
+          "tagline": "Cultural destination in Uttar Pradesh",
+          "short_description": null,
+          "description": "Major industrial and historical city on the Ganges holding 5th-century Gupta brick temple at Bhitargaon, Bithoor sacred ghats of Maharishi Valmiki, and Allen Forest Zoo.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 26.4499,
+            "lng": 80.3319
+          }
+        },
+        {
+          "id": "lucknow",
+          "name": "Lucknow",
+          "slug": "lucknow",
+          "state_id": "uttar-pradesh",
+          "entity_type": "city",
+          "district": "Lucknow",
+          "latitude": null,
+          "longitude": null,
+          "lat": 26.8467,
+          "lng": 80.9462,
+          "tagline": "Cultural destination in Uttar Pradesh",
+          "short_description": null,
+          "description": "City of Nawabs famed for refined Tehzeeb culture, colossal gravity-defying arch of Bara Imambara (Bhulbhulaiya maze), Rumi Darwaza, and Chikankari embroidery.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 26.8467,
+            "lng": 80.9462
+          }
+        },
+        {
+          "id": "mathura",
+          "name": "Mathura",
+          "slug": "mathura",
+          "state_id": "uttar-pradesh",
+          "entity_type": "city",
+          "district": "Mathura",
+          "latitude": null,
+          "longitude": null,
+          "lat": 27.4924,
+          "lng": 77.6737,
+          "tagline": "Cultural destination in Uttar Pradesh",
+          "short_description": null,
+          "description": "Sacred birthplace of Lord Krishna on the Yamuna river, holding Shri Krishna Janmasthan temple, Vishram Ghat aarti, and neighboring sacred Vrindavan.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 27.4924,
+            "lng": 77.6737
+          }
+        },
+        {
+          "id": "prayagraj",
+          "name": "Prayagraj",
+          "slug": "prayagraj",
+          "state_id": "uttar-pradesh",
+          "entity_type": "city",
+          "district": "Prayagraj",
+          "latitude": null,
+          "longitude": null,
+          "lat": 25.4358,
+          "lng": 81.8463,
+          "tagline": "Cultural destination in Uttar Pradesh",
+          "short_description": null,
+          "description": "Triveni Sangam sacred confluence of Ganga, Yamuna, and mythical Saraswati, site of the Maha Kumbh Mela, Mughal Allahabad Fort, and Anand Bhavan.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 25.4358,
+            "lng": 81.8463
+          }
         }
       ],
       "region_type": "state",
@@ -8490,7 +10851,7 @@ export const INDIA_TOURISM_DATABASE = {
       "region": "Northern India",
       "hero_image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 17,
-      "total_attractions": 7,
+      "total_attractions": 19,
       "heritage_overview": "Land of Gods (Devbhoomi), sacred Char Dham Himalayan pilgrimage, Yoga capital Rishikesh, and Nanda Devi UNESCO reserve.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Uttarakhand.",
@@ -8525,7 +10886,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -8581,12 +10942,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Archaeological Survey of India",
               "source_page": "https://asi.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage",
                 "Nature"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -8707,15 +11069,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 30.7473,
                 "lng": 79.4959
               },
-              "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://uttarakhandtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Arts & Culture",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "tourist_places": [],
@@ -8791,7 +11154,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -8847,12 +11210,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Archaeological Survey of India",
               "source_page": "https://asi.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Nature",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -8926,7 +11290,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -8983,12 +11347,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Uttarakhand Tourism Development Board",
               "source_page": "https://uttarakhandtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Recreation",
                 "Spiritual"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -9061,7 +11426,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -9119,13 +11484,14 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Uttarakhand Forest Department / UNESCO WHC",
               "source_page": "https://whc.unesco.org/en/list/335",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature",
                 "Heritage",
                 "Spiritual"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "valley-of-flowers-chamoli",
@@ -9175,12 +11541,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Uttarakhand Forest Department / UNESCO",
               "source_page": "https://whc.unesco.org/en/list/335",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Spiritual",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -9301,16 +11668,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 29.388,
                 "lng": 79.1342
               },
-              "image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://uttarakhandtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Recreation",
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "religious_cultural": [],
@@ -9385,7 +11753,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -9441,12 +11809,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Gangotri Mandir Samiti / Uttarakhand Tourism",
               "source_page": "https://uttarakhandtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Nature",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -9520,7 +11889,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 1,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -9569,15 +11938,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 29.9403,
                 "lng": 78.1652
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://uttarakhandtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [
@@ -9630,11 +12000,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Uttarakhand Forest Department",
               "source_page": "https://rajajitigerreserve.co.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -9707,7 +12078,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -9759,13 +12130,14 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Anasakti Ashram Trust / Uttarakhand Tourism",
               "source_page": "https://uttarakhandtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Nature",
                 "Wellness"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -9892,12 +12264,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=800&auto=format&fit=crop&q=80",
               "attribution": "Archaeological Survey of India",
               "source_page": "https://asi.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -9975,7 +12348,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -10026,12 +12399,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Garhwal Rifles Regimental Centre / Uttarakhand Tourism",
               "source_page": "https://uttarakhandtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Nature"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -10159,15 +12533,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 30.4623,
                 "lng": 78.0599
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://uttarakhandtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -10285,15 +12660,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 29.3975,
                 "lng": 79.4542
               },
-              "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://uttarakhandtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "museums": [],
@@ -10370,7 +12746,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -10426,11 +12802,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "THDC India / Uttarakhand Tourism",
               "source_page": "https://uttarakhandtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Recreation"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -10503,7 +12880,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -10554,12 +12931,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Uttarakhand Tourism Development Board",
               "source_page": "https://uttarakhandtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Nature"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -10682,16 +13060,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 30.0961,
                 "lng": 78.2646
               },
-              "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://uttarakhandtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -10769,7 +13148,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -10825,12 +13204,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Uttarakhand Tourism Development Board",
               "source_page": "https://uttarakhandtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage",
                 "Arts & Culture"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -10901,7 +13281,7 @@ export const INDIA_TOURISM_DATABASE = {
       "capital": "Itanagar",
       "region": "Northeastern India",
       "hero_image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&q=80",
-      "total_cities": 2,
+      "total_cities": 12,
       "total_attractions": 4,
       "heritage_overview": "Home to Tawang Monastery (India largest monastery), ancient Apatani cultural landscape in Ziro (UNESCO Tentative), and biodiversity hotspots in Namdapha and Pakke.",
       "active_stories": [
@@ -11183,7 +13563,7 @@ export const INDIA_TOURISM_DATABASE = {
               "data_confidence": "official",
               "verification_status": "verified",
               "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
               "attribution": "District Administration Tawang / Arunachal Tourism",
               "source_url": "https://tawang.nic.in/tourist-place/tawang-monastery/",
@@ -11273,7 +13653,7 @@ export const INDIA_TOURISM_DATABASE = {
               "data_confidence": "official",
               "verification_status": "verified",
               "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
               "attribution": "Border Roads Organisation / Arunachal Tourism",
               "source_url": "https://tawang.nic.in/tourist-place/sela-pass/",
@@ -11324,209 +13704,613 @@ export const INDIA_TOURISM_DATABASE = {
           }
         },
         {
-          "id": "ziro-valley",
-          "name": "Ziro Valley",
-          "slug": "ziro-valley",
-          "district": "Lower Subansiri",
-          "state": "Arunachal Pradesh",
+          "id": "bomdila",
+          "name": "Bomdila",
+          "slug": "bomdila",
           "state_id": "arunachal-pradesh",
-          "region": "Northeastern India",
-          "entity_type": "valley",
-          "city_type": "UNESCO Tentative Cultural Landscape & Pine Valley",
-          "tagline": "UNESCO Tentative Cultural Landscape of the Apatani People",
-          "short_description": "Picturesque valley renowned for sustainable Apatani wet-rice agriculture, pine hills, and the Ziro Festival of Music.",
-          "description": "Ziro Valley is an idyllic plateau situated at 1,572 meters in Lower Subansiri district. Inscribed on the UNESCO World Heritage Tentative List for the Apatani Cultural Landscape, it is famous for fish-cum-paddy cultivation, bamboo architecture, and unique tribal heritage.",
-          "official_url": "https://lowersubansiri.nic.in",
-          "status": "active",
-          "verification_status": "verified",
-          "hero_image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&q=80",
-          "coordinates": {
-            "lat": 27.5947,
-            "lng": 93.8385
+          "entity_type": "city",
+          "district": "West Kameng",
+          "latitude": null,
+          "longitude": null,
+          "lat": 27.2645,
+          "lng": 92.4235,
+          "tagline": "Cultural destination in Arunachal Pradesh",
+          "short_description": null,
+          "description": "Picturesque hill town with panoramic vistas of snow-capped Gorichen and Kangto peaks, Buddhist gompas, and apple orchards.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
           },
-          "lat": 27.5947,
-          "lng": 93.8385,
-          "places": [
-            {
-              "id": "ziro-apatani-landscape",
-              "name": "Apatani Cultural Landscape & Villages",
-              "slug": "apatani-cultural-landscape-ziro",
-              "place_type": "UNESCO Tentative Cultural Landscape & Agro-Forestry System",
-              "topic": "Rural",
-              "subtopic": "Tribal Tourism",
-              "category": "heritage",
-              "category_label": "UNESCO Tentative Tribal Heritage",
-              "category_links": [
-                {
-                  "topic": "Rural",
-                  "subtopic": "Tribal Tourism"
-                },
-                {
-                  "topic": "Heritage",
-                  "subtopic": "UNESCO World Heritage Sites"
-                },
-                {
-                  "topic": "Nature",
-                  "subtopic": "Sustainable Tourism"
-                }
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
               ],
-              "importance_level": "iconic",
-              "summary": "UNESCO Tentative cultural landscape renowned for harmonious Apatani agro-forestry and sustainable rice-fish farming.",
-              "short_description": "Centuries-old sustainable farming valley and distinctive traditional settlements of the Apatani community.",
-              "detailed_description": "The Apatani Cultural Landscape in Ziro Valley is on the UNESCO World Heritage Tentative List. Known for unique wet-rice cultivation integrated with fish farming without animal draft power, and social forestry maintaining blue pine and bamboo groves.",
-              "address": "Old Ziro, Lower Subansiri District, Arunachal Pradesh 791120",
-              "lat": 27.5583,
-              "lng": 93.8333,
-              "coordinates": {
-                "lat": 27.5583,
-                "lng": 93.8333
-              },
-              "visiting_hours": "Daylight hours (Sunrise to Sunset)",
-              "opening_hours": "06:00 - 18:00",
-              "entry_fee": "Free entry (Inner Line Permit required)",
-              "entry_fee_domestic": 0,
-              "entry_fee_intl": 0,
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "06:00",
-                "closing_time": "18:00",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 180,
-                "label": "3 Hours",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "March to October (Ziro Festival of Music in September)",
-              "contact_information": "District Administration Lower Subansiri: 03788-224255",
-              "official_website": "https://whc.unesco.org/en/tentativelists/5893/",
-              "heritage_status": "UNESCO World Heritage Tentative List (2014)",
-              "data_confidence": "official",
-              "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
-              "attribution": "UNESCO / Lower Subansiri District Administration",
-              "source_url": "https://whc.unesco.org/en/tentativelists/5893/",
-              "source_name": "UNESCO World Heritage Centre",
-              "source_type": "unesco",
-              "sources": [
-                {
-                  "source_name": "UNESCO World Heritage Centre",
-                  "source_url": "https://whc.unesco.org/en/tentativelists/5893/",
-                  "source_type": "unesco",
-                  "evidence_note": "Official UNESCO World Heritage Tentative List dossier for Apatani Cultural Landscape.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "District Administration Lower Subansiri",
-                  "source_url": "https://lowersubansiri.nic.in",
-                  "source_type": "district_administration",
-                  "evidence_note": "Official district administrative cultural records.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
-              ],
-              "source_quality": "place_specific",
-              "audit_note": "Verified live HTTP 200 on 2026-09-10. Title: \"Apatani Cultural Landscape - UNESCO World Heritage Centre\""
-            },
-            {
-              "id": "ziro-talley-valley",
-              "name": "Talley Valley Wildlife Sanctuary",
-              "slug": "talley-valley-wildlife-sanctuary",
-              "place_type": "Wildlife Sanctuary & Sub-Tropical Reserve",
-              "topic": "Wildlife",
-              "subtopic": "Wildlife Sanctuaries",
-              "category": "nature_parks_zoo",
-              "category_label": "Sub-Tropical Wildlife Sanctuary",
-              "category_links": [
-                {
-                  "topic": "Wildlife",
-                  "subtopic": "Wildlife Sanctuaries"
-                },
-                {
-                  "topic": "Nature",
-                  "subtopic": "Forests and Gardens"
-                },
-                {
-                  "topic": "Adventure",
-                  "subtopic": "Hiking and Trekking"
-                }
-              ],
-              "importance_level": "major",
-              "summary": "Protected wildlife sanctuary covering 337 sq km of sub-tropical and temperate forests, home to the clouded leopard.",
-              "short_description": "Dense virgin forest sanctuary protecting endangered flora, pleioblastus bamboo, and the rare clouded leopard.",
-              "detailed_description": "Spanning 337 square kilometers at elevations between 1,200 and 3,000 meters, Talley Valley is a bio-diversity hotspot. The sanctuary is drained by the Pange, Sipu, Kley, and Subansiri rivers, harboring dense bamboo groves, rhododendrons, clouded leopards, and over 130 butterfly species.",
-              "address": "Talley Valley, Lower Subansiri District, Arunachal Pradesh 791120",
-              "lat": 27.5333,
-              "lng": 93.9167,
-              "coordinates": {
-                "lat": 27.5333,
-                "lng": 93.9167
-              },
-              "visiting_hours": "08:00 AM - 04:00 PM (Entry permit required from Forest Dept)",
-              "opening_hours": "08:00 - 16:00",
-              "entry_fee": "INR 50 (Indian), INR 200 (Foreign)",
-              "entry_fee_domestic": 50,
-              "entry_fee_intl": 200,
-              "fees": {
-                "domestic": 50,
-                "international": 200,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "08:00",
-                "closing_time": "16:00",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 240,
-                "label": "Full Day Trek",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "October to April",
-              "contact_information": "Department of Environment and Forests, Arunachal Pradesh: 0360-2212372",
-              "official_website": "https://arunachalforests.gov.in",
-              "heritage_status": "State Protected Wildlife Sanctuary",
-              "data_confidence": "official",
-              "verification_status": "needs_review",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
-              "attribution": "Department of Environment and Forests, Arunachal Pradesh",
-              "source_url": "https://arunachalforests.gov.in",
-              "source_name": "Department of Environment and Forests, Arunachal Pradesh",
-              "source_type": "forest_department",
-              "sources": [
-                {
-                  "source_name": "Department of Environment and Forests, Arunachal Pradesh",
-                  "source_url": "https://arunachalforests.gov.in",
-                  "source_type": "forest_department",
-                  "evidence_note": "Official wildlife sanctuary notification and conservation records.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "District Administration Lower Subansiri",
-                  "source_url": "https://lowersubansiri.nic.in",
-                  "source_type": "district_administration",
-                  "evidence_note": "Official district tourism guide.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
-              ],
-              "source_quality": "generic_homepage"
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
             }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 27.2645,
+            "lng": 92.4235
+          }
+        },
+        {
+          "id": "changlang",
+          "name": "Changlang",
+          "slug": "changlang",
+          "state_id": "arunachal-pradesh",
+          "entity_type": "city",
+          "district": "Changlang",
+          "latitude": null,
+          "longitude": null,
+          "lat": 27.1472,
+          "lng": 95.7411,
+          "tagline": "Cultural destination in Arunachal Pradesh",
+          "short_description": null,
+          "description": "Eastern frontier district gateway to Namdapha National Park, historic World War II Stillwell Road, and Tangsa tribal culture.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 27.1472,
+            "lng": 95.7411
+          }
+        },
+        {
+          "id": "dirang",
+          "name": "Dirang",
+          "slug": "dirang",
+          "state_id": "arunachal-pradesh",
+          "entity_type": "city",
+          "district": "West Kameng",
+          "latitude": null,
+          "longitude": null,
+          "lat": 27.3564,
+          "lng": 92.2356,
+          "tagline": "Cultural destination in Arunachal Pradesh",
+          "short_description": null,
+          "description": "Serene mountain valley featuring 500-year-old stone fortified Dirang Dzong, natural hot water springs, and kiwi orchards.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 27.3564,
+            "lng": 92.2356
+          }
+        },
+        {
+          "id": "itanagar",
+          "name": "Itanagar",
+          "slug": "itanagar",
+          "state_id": "arunachal-pradesh",
+          "entity_type": "city",
+          "district": "Papum Pare",
+          "latitude": null,
+          "longitude": null,
+          "lat": 27.0844,
+          "lng": 93.6053,
+          "tagline": "Cultural destination in Arunachal Pradesh",
+          "short_description": null,
+          "description": "State capital guarded by the 14th-century irregular brick Ita Fort, serene Ganga Lake (Gyakar Sinyi), and Jawaharlal Nehru State Museum.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 27.0844,
+            "lng": 93.6053
+          }
+        },
+        {
+          "id": "mechuka",
+          "name": "Mechuka",
+          "slug": "mechuka",
+          "state_id": "arunachal-pradesh",
+          "entity_type": "city",
+          "district": "Shi Yomi",
+          "latitude": null,
+          "longitude": null,
+          "lat": 28.6019,
+          "lng": 94.1311,
+          "tagline": "Cultural destination in Arunachal Pradesh",
+          "short_description": null,
+          "description": "Pristine high-altitude valley bordered by snow peaks, 400-year-old Samten Yongcha gompa, Yargyapchu river, and Memba tribal villages.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 28.6019,
+            "lng": 94.1311
+          }
+        },
+        {
+          "id": "namsai",
+          "name": "Namsai",
+          "slug": "namsai",
+          "state_id": "arunachal-pradesh",
+          "entity_type": "city",
+          "district": "Namsai",
+          "latitude": null,
+          "longitude": null,
+          "lat": 27.6667,
+          "lng": 95.8667,
+          "tagline": "Cultural destination in Arunachal Pradesh",
+          "short_description": null,
+          "description": "Spiritual haven famed for the glittering Burmese-style Golden Pagoda (Kongmu Kham) at Tengapani and Tai Khamti Buddhist festivals.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 27.6667,
+            "lng": 95.8667
+          }
+        },
+        {
+          "id": "pakke-kesang-hill-station",
+          "name": "Pakke Kesang Hill Station",
+          "slug": "pakke-kesang-hill-station",
+          "state_id": "arunachal-pradesh",
+          "entity_type": "city",
+          "district": "Pakke-Kessang",
+          "latitude": null,
+          "longitude": null,
+          "lat": 27.15,
+          "lng": 93.1833,
+          "tagline": "Cultural destination in Arunachal Pradesh",
+          "short_description": null,
+          "description": "Untouched emerald hill station known for cool mountain climate, panoramic Himalayan viewpoints, and proximity to Pakke Tiger Reserve.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 27.15,
+            "lng": 93.1833
+          }
+        },
+        {
+          "id": "pasighat",
+          "name": "Pasighat",
+          "slug": "pasighat",
+          "state_id": "arunachal-pradesh",
+          "entity_type": "city",
+          "district": "East Siang",
+          "latitude": null,
+          "longitude": null,
+          "lat": 28.0664,
+          "lng": 95.3263,
+          "tagline": "Cultural destination in Arunachal Pradesh",
+          "short_description": null,
+          "description": "Historic British-era settlement nestled where the roaring Siang river meets the plains, gateway to whitewater rafting expeditions.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 28.0664,
+            "lng": 95.3263
+          }
+        },
+        {
+          "id": "roing",
+          "name": "Roing",
+          "slug": "roing",
+          "state_id": "arunachal-pradesh",
+          "entity_type": "city",
+          "district": "Lower Dibang Valley",
+          "latitude": null,
+          "longitude": null,
+          "lat": 28.1408,
+          "lng": 95.8344,
+          "tagline": "Cultural destination in Arunachal Pradesh",
+          "short_description": null,
+          "description": "Fascinating valley holding ancient 8th-century burnt-brick fortress of Bhismaknagar, pristine Mehao high-altitude lake, and Idu Mishmi culture.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 28.1408,
+            "lng": 95.8344
+          }
+        },
+        {
+          "id": "yingkiong",
+          "name": "Yingkiong",
+          "slug": "yingkiong",
+          "state_id": "arunachal-pradesh",
+          "entity_type": "city",
+          "district": "Upper Siang",
+          "latitude": null,
+          "longitude": null,
+          "lat": 28.6253,
+          "lng": 94.9961,
+          "tagline": "Cultural destination in Arunachal Pradesh",
+          "short_description": null,
+          "description": "Picturesque hill town set amidst dramatic gorges of the Siang River, traditional bamboo-cane suspension bridges, and Adi tribal villages.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 28.6253,
+            "lng": 94.9961
+          }
+        },
+        {
+          "id": "ziro",
+          "name": "Ziro",
+          "slug": "ziro",
+          "state_id": "arunachal-pradesh",
+          "entity_type": "city",
+          "district": "Lower Subansiri",
+          "latitude": null,
+          "longitude": null,
+          "lat": 27.6324,
+          "lng": 93.834,
+          "tagline": "Cultural destination in Arunachal Pradesh",
+          "short_description": null,
+          "description": "UNESCO-tentative valley renowned for unique sustainable paddy-cum-fish agro-systems, sacred Tarin groves, and annual outdoor Ziro Music Festival.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 2,
+          "hero_image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&q=80",
+          "hero_image": null,
+          "aliases": [
+            "Ziro Valley",
+            "ziro-valley"
           ],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
           "heritage": [
             {
               "id": "ziro-apatani-landscape",
@@ -11591,7 +14375,7 @@ export const INDIA_TOURISM_DATABASE = {
               "data_confidence": "official",
               "verification_status": "verified",
               "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
               "attribution": "UNESCO / Lower Subansiri District Administration",
               "source_url": "https://whc.unesco.org/en/tentativelists/5893/",
@@ -11615,7 +14399,8 @@ export const INDIA_TOURISM_DATABASE = {
                   "verification_status": "verified"
                 }
               ],
-              "source_quality": "place_specific"
+              "source_quality": "place_specific",
+              "city_id": "ziro"
             }
           ],
           "monuments": [],
@@ -11686,7 +14471,7 @@ export const INDIA_TOURISM_DATABASE = {
               "data_confidence": "official",
               "verification_status": "verified",
               "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
               "attribution": "Department of Environment and Forests, Arunachal Pradesh",
               "source_url": "https://arunachalforests.gov.in",
@@ -11709,31 +14494,36 @@ export const INDIA_TOURISM_DATABASE = {
                   "accessed_on": "2026-03-10",
                   "verification_status": "verified"
                 }
-              ]
+              ],
+              "city_id": "ziro"
             }
           ],
-          "places_count": 2,
+          "canonical_name": "Ziro",
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
           "transport": {
             "railway_stations": [],
             "local_transit": {
               "modes": [
+                "Auto-rickshaw",
                 "Taxi",
-                "Auto",
-                "Local Bus"
+                "Bus"
               ],
-              "fare_indication": "Moderate",
-              "status": "VERIFIED"
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
             }
           },
           "hotels": [],
-          "fees_overview": {
-            "typical_budget_per_day": "INR 2,500 - 5,000",
-            "status": "VERIFIED"
-          },
-          "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant and sunny",
-            "status": "VERIFIED"
+          "coordinates": {
+            "lat": 27.6324,
+            "lng": 93.834
           }
         }
       ],
@@ -11766,7 +14556,7 @@ export const INDIA_TOURISM_DATABASE = {
       "region": "Northeastern India",
       "hero_image_url": "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 9,
-      "total_attractions": 7,
+      "total_attractions": 10,
       "heritage_overview": "Brahmaputra valley home to Kaziranga one-horned rhinos, Majuli river island, Kamakhya temple, and lush tea gardens.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Assam.",
@@ -11846,7 +14636,7 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 26.5775,
                 "lng": 93.1711
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://whc.unesco.org",
@@ -11907,15 +14697,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 26.5858,
                 "lng": 93.179
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://assamtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -11989,7 +14780,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -12046,12 +14837,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Assam Forest Department",
               "source_page": "https://forest.assam.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife",
                 "Recreation"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -12169,16 +14961,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 26.1371,
                 "lng": 91.7288
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://assamtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -12303,15 +15096,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 26.7592,
                 "lng": 94.2033
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://assamtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Arts & Culture",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "tourist_places": [],
@@ -12432,15 +15226,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 26.9553,
                 "lng": 94.2028
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://assamtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "museums": [],
@@ -12567,15 +15362,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 26.9892,
                 "lng": 94.6395
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://assamtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -12696,16 +15492,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 26.6245,
                 "lng": 92.7875
               },
-              "image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://assamtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Recreation",
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "religious_cultural": [],
@@ -12780,7 +15577,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -12836,11 +15633,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Assam Forest Department",
               "source_page": "https://forest.assam.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -12913,7 +15711,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -12969,11 +15767,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Assam Tourism Development Corporation",
               "source_page": "https://tourism.assam.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Recreation"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -13124,16 +15923,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 24.8233,
                 "lng": 93.9431
               },
-              "image_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://manipurtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [
@@ -13177,15 +15977,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 25.1152,
                 "lng": 94.3687
               },
-              "image_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://manipurtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "museums": [
@@ -13230,15 +16031,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 24.9899,
                 "lng": 93.488
               },
-              "image_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://manipurtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Arts & Culture",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "tourist_places": [
@@ -13283,16 +16085,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 24.4818,
                 "lng": 93.9702
               },
-              "image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://manipurtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Recreation",
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "religious_cultural": [
@@ -13337,15 +16140,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 24.5045,
                 "lng": 93.773
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://manipurtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [
@@ -13390,15 +16194,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 24.3368,
                 "lng": 93.6794
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://manipurtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -13469,7 +16274,7 @@ export const INDIA_TOURISM_DATABASE = {
       "region": "Northeastern India",
       "hero_image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 2,
-      "total_attractions": 7,
+      "total_attractions": 8,
       "heritage_overview": "Abode of Clouds, renowned for living root bridges, Cherrapunjee waterfalls, clean village Mawlynnong, and Khasi culture.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Meghalaya.",
@@ -13504,7 +16309,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -13563,12 +16368,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Meghalaya Tourism Development Corporation",
               "source_page": "https://www.meghalayatourism.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Rural / Local",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -13686,16 +16492,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 25.58,
                 "lng": 91.8944
               },
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.meghalayatourism.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "living-root-bridges",
@@ -13738,16 +16545,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 25.2505,
                 "lng": 91.6702
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
               "attribution": "Archaeological Survey of India",
               "source_page": "https://asi.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [
@@ -13791,15 +16599,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 25.2053,
                 "lng": 92.0225
               },
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.meghalayatourism.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "museums": [
@@ -13844,15 +16653,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 25.5125,
                 "lng": 90.2154
               },
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.meghalayatourism.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Arts & Culture",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "tourist_places": [
@@ -13897,16 +16707,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 25.4499,
                 "lng": 92.2108
               },
-              "image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.meghalayatourism.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Recreation",
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "religious_cultural": [
@@ -13951,15 +16762,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 25.2673,
                 "lng": 91.7331
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.meghalayatourism.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [
@@ -14004,15 +16816,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 25.2042,
                 "lng": 91.8817
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.meghalayatourism.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -14083,7 +16896,7 @@ export const INDIA_TOURISM_DATABASE = {
       "region": "Northeastern India",
       "hero_image_url": "https://images.unsplash.com/photo-1627993077750-6d4323229b48?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 4,
-      "total_attractions": 6,
+      "total_attractions": 7,
       "heritage_overview": "Land of Rolling Hills and bamboo forests, known for its ridge-top capital Aizawl, Cheraw bamboo dance, and pristine lakes.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Mizoram.",
@@ -14163,16 +16976,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 23.7256,
                 "lng": 92.7116
               },
-              "image_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.mizoram.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -14218,15 +17032,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 23.6968,
                 "lng": 92.6067
               },
-              "image_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.mizoram.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Arts & Culture",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "tourist_places": [
@@ -14271,16 +17086,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 24.2293,
                 "lng": 92.6888
               },
-              "image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.mizoram.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Recreation",
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "religious_cultural": [],
@@ -14355,7 +17171,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 1,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -14404,15 +17220,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 23.4759,
                 "lng": 93.3239
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.mizoram.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [
@@ -14463,11 +17280,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Environment, Forests & Climate Change Department, Mizoram",
               "source_page": "https://forest.mizoram.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -14590,15 +17408,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 22.8796,
                 "lng": 92.7357
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.mizoram.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -14716,15 +17535,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 23.3445,
                 "lng": 92.8565
               },
-              "image_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.mizoram.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "museums": [],
@@ -14883,15 +17703,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 25.9105,
                 "lng": 93.7234
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.nagaland.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -15010,16 +17831,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 25.6727,
                 "lng": 94.1002
               },
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.nagaland.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -15065,15 +17887,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 25.5636,
                 "lng": 94.0676
               },
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.nagaland.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Arts & Culture",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "tourist_places": [
@@ -15118,16 +17941,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 26.0965,
                 "lng": 94.2629
               },
-              "image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.nagaland.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Recreation",
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "religious_cultural": [],
@@ -15173,15 +17997,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 26.7457,
                 "lng": 95.0651
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.nagaland.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -15299,15 +18124,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 26.3193,
                 "lng": 94.5203
               },
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.nagaland.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "museums": [],
@@ -15382,7 +18208,7 @@ export const INDIA_TOURISM_DATABASE = {
       "region": "Northeastern India",
       "hero_image_url": "https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 3,
-      "total_attractions": 7,
+      "total_attractions": 8,
       "heritage_overview": "Himalayan wonderland crowned by Mt. Khangchendzonga (UNESCO Mixed World Heritage), Buddhist monasteries, and alpine lakes.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Sikkim.",
@@ -15462,16 +18288,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 27.3371,
                 "lng": 88.612
               },
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.sikkimtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "rumtek-monastery",
@@ -15518,12 +18345,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "https://images.unsplash.com/photo-1617854818583-09e7f077a156?w=800&auto=format&fit=crop&q=80",
               "attribution": "Archaeological Survey of India",
               "source_page": "https://asi.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [
@@ -15567,15 +18395,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 27.1689,
                 "lng": 88.3498
               },
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.sikkimtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "museums": [
@@ -15620,15 +18449,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 27.3014,
                 "lng": 88.3651
               },
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.sikkimtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Arts & Culture",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "tourist_places": [
@@ -15673,16 +18503,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 27.3695,
                 "lng": 88.2279
               },
-              "image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.sikkimtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Recreation",
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "religious_cultural": [],
@@ -15728,15 +18559,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 27.6844,
                 "lng": 88.7408
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.sikkimtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -15809,7 +18641,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -15870,13 +18702,14 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Forest and Environment Department, Government of Sikkim / UNESCO",
               "source_page": "https://whc.unesco.org/en/list/1513",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature",
                 "Heritage",
                 "Spiritual"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -15998,15 +18831,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 27.3295,
                 "lng": 88.2436
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.sikkimtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -16158,16 +18992,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 23.8411,
                 "lng": 91.2888
               },
-              "image_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tripuratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [
@@ -16211,15 +19046,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 23.4961,
                 "lng": 91.3275
               },
-              "image_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tripuratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "museums": [
@@ -16264,15 +19100,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 24.3771,
                 "lng": 92.1747
               },
-              "image_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tripuratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Arts & Culture",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "tourist_places": [
@@ -16317,16 +19154,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 23.9099,
                 "lng": 91.8467
               },
-              "image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tripuratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Recreation",
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "religious_cultural": [],
@@ -16372,15 +19210,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 23.5279,
                 "lng": 91.4838
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tripuratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -16502,15 +19341,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 24.3125,
                 "lng": 92.0151
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tripuratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -16582,7 +19422,7 @@ export const INDIA_TOURISM_DATABASE = {
       "region": "Eastern India",
       "hero_image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 3,
-      "total_attractions": 0,
+      "total_attractions": 5,
       "heritage_overview": "Archipelago in the Bay of Bengal with historic Cellular Jail, pristine coral reefs, and limestone caves of Baratang.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Andaman and Nicobar Islands.",
@@ -16617,7 +19457,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -16673,11 +19513,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Department of Environment and Forests, Andaman & Nicobar",
               "source_page": "https://forest.and.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -16750,7 +19591,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -16807,12 +19648,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Department of Environment and Forests, Andaman & Nicobar",
               "source_page": "https://forest.and.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife",
                 "Recreation"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -16885,7 +19727,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "ut_capital",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 3,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -16939,12 +19781,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Andaman & Nicobar Administration / Ministry of Culture",
               "source_page": "https://www.andamantourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -17000,12 +19843,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Department of Environment and Forests, Andaman & Nicobar",
               "source_page": "https://forest.and.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature",
                 "Recreation"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "mount-manipur-national-park",
@@ -17057,12 +19901,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Department of Environment and Forests, Andaman & Nicobar",
               "source_page": "https://forest.and.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -17133,7 +19978,7 @@ export const INDIA_TOURISM_DATABASE = {
       "region": "Eastern India",
       "hero_image_url": "https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 4,
-      "total_attractions": 10,
+      "total_attractions": 11,
       "heritage_overview": "Cradle of ancient empires (Maurya and Gupta), enlightenment grounds of Gautama Buddha, and birthplace of Guru Gobind Singh.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Bihar.",
@@ -17168,7 +20013,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -17219,12 +20064,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Department of Tourism, Government of Bihar",
               "source_page": "https://tourism.bihar.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -17347,16 +20193,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 24.6913,
                 "lng": 84.9845
               },
-              "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.bihar.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "mahabodhi-temple",
@@ -17399,7 +20246,7 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 24.696,
                 "lng": 84.9914
               },
-              "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://whc.unesco.org",
@@ -17535,7 +20382,7 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 25.1357,
                 "lng": 85.4439
               },
-              "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://whc.unesco.org",
@@ -17592,15 +20439,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 25.0389,
                 "lng": 85.421
               },
-              "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.bihar.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "museums": [],
@@ -17647,15 +20495,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 25.1341,
                 "lng": 85.4343
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.bihar.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -17778,12 +20627,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.bihar.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [
@@ -17827,15 +20677,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 25.6174,
                 "lng": 85.1437
               },
-              "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://bihartourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "museums": [
@@ -17880,15 +20731,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 25.9781,
                 "lng": 85.1194
               },
-              "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.bihar.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Arts & Culture",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "tourist_places": [
@@ -17933,16 +20785,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 24.9615,
                 "lng": 84.0387
               },
-              "image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.bihar.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Recreation",
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "religious_cultural": [],
@@ -17988,15 +20841,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 25.5924,
                 "lng": 85.1298
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.bihar.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -18067,7 +20921,7 @@ export const INDIA_TOURISM_DATABASE = {
       "region": "Eastern India",
       "hero_image_url": "https://images.unsplash.com/photo-1628009848529-650f9f30b91c?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 3,
-      "total_attractions": 7,
+      "total_attractions": 8,
       "heritage_overview": "Land of Forests and waterfalls, sacred Baidyanath Jyotirlinga at Deoghar, Parasnath Jain pilgrimage, and tribal cultural heritage.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Jharkhand.",
@@ -18147,16 +21001,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 24.4925,
                 "lng": 86.7001
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Archaeological Survey of India",
               "source_page": "https://asi.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -18204,15 +21059,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 24.4863,
                 "lng": 86.6889
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.jharkhand.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -18331,15 +21187,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 22.7955,
                 "lng": 86.205
               },
-              "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.jharkhand.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "museums": [],
@@ -18416,7 +21273,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "state_capital",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 4,
+          "places_count": 5,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -18461,16 +21318,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 23.3441,
                 "lng": 85.3004
               },
-              "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.jharkhand.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -18516,15 +21374,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 23.9913,
                 "lng": 85.362
               },
-              "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.jharkhand.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Arts & Culture",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "tourist_places": [
@@ -18569,16 +21428,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 24.1883,
                 "lng": 86.3163
               },
-              "image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.jharkhand.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Recreation",
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "religious_cultural": [],
@@ -18624,15 +21484,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 23.7985,
                 "lng": 86.4244
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.jharkhand.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "betla-national-park",
@@ -18684,12 +21545,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Jharkhand Forest, Environment & Climate Change Department",
               "source_page": "https://forest.jharkhand.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -18760,7 +21622,7 @@ export const INDIA_TOURISM_DATABASE = {
       "region": "Eastern India",
       "hero_image_url": "https://images.unsplash.com/photo-1606298855672-3efb620b78ec?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 5,
-      "total_attractions": 7,
+      "total_attractions": 12,
       "heritage_overview": "Soul of Incredible India featuring Konark Sun Temple (UNESCO), Puri Jagannath shrine, Chilika lagoon, and Kalinga architecture.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Odisha.",
@@ -18795,7 +21657,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "state_capital",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 4,
+          "places_count": 5,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -18840,16 +21702,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 20.3031,
                 "lng": 85.8301
               },
-              "image_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://odishatourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [
@@ -18893,15 +21756,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 19.8962,
                 "lng": 86.1009
               },
-              "image_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://odishatourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "museums": [],
@@ -18947,16 +21811,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 19.8826,
                 "lng": 85.815
               },
-              "image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://odishatourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Recreation",
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "religious_cultural": [],
@@ -19002,15 +21867,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 19.6935,
                 "lng": 85.1887
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://odishatourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "chandaka-elephant-sanctuary",
@@ -19061,11 +21927,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Odisha Wildlife Organisation",
               "source_page": "https://wildlife.odisha.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -19138,7 +22005,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 1,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -19185,15 +22052,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 20.4588,
                 "lng": 85.8911
               },
-              "image_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://odishatourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Arts & Culture",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "tourist_places": [],
@@ -19246,11 +22114,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Odisha Wildlife Organisation, Forest & Environment Department",
               "source_page": "https://wildlife.odisha.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -19323,7 +22192,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -19379,12 +22248,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Odisha Tourism / Odisha Biodiversity Board",
               "source_page": "https://odishatourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Nature",
                 "Rural / Local"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -19458,7 +22328,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -19515,12 +22385,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Odisha Forest Department / UNESCO",
               "source_page": "https://similipal.org",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -19593,7 +22464,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 2,
+          "places_count": 3,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -19638,7 +22509,7 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 19.8876,
                 "lng": 86.0945
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://whc.unesco.org",
@@ -19699,15 +22570,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 19.8206,
                 "lng": 85.8335
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://odishatourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [
@@ -19758,11 +22630,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Chilika Development Authority / Odisha Forest Department",
               "source_page": "https://chilika.com",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -19833,7 +22706,7 @@ export const INDIA_TOURISM_DATABASE = {
       "region": "Eastern India",
       "hero_image_url": "https://images.unsplash.com/photo-1558431382-27e303142255?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 6,
-      "total_attractions": 7,
+      "total_attractions": 13,
       "heritage_overview": "Cultural capital of India featuring Victoria Memorial, UNESCO Sundarbans, Darjeeling Himalayan Railway, and terracotta Bishnupur.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of West Bengal.",
@@ -19868,7 +22741,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 1,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -19917,15 +22790,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 27.0318,
                 "lng": 88.2663
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://wbtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [
@@ -19977,12 +22851,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Directorate of Forests, Government of West Bengal",
               "source_page": "https://westbengalforest.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature",
                 "Recreation"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -20055,7 +22930,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -20111,11 +22986,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "West Bengal Tourism / Damodar Valley Corporation",
               "source_page": "https://wbtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Recreation"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -20188,7 +23064,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -20244,12 +23120,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Ramakrishna Math & Ramakrishna Mission / West Bengal Tourism",
               "source_page": "https://belurmath.org",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage",
                 "Arts & Culture"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -20323,7 +23200,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -20379,11 +23256,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Directorate of Forests, Government of West Bengal",
               "source_page": "https://westbengalforest.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "deolo-hill-kalimpong",
@@ -20433,12 +23311,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "West Bengal Tourism Development Corporation",
               "source_page": "https://wbtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Spiritual",
                 "Recreation"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -20511,7 +23390,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "state_capital",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 6,
+          "places_count": 5,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -20556,16 +23435,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 22.5645,
                 "lng": 88.3676
               },
-              "image_url": "https://images.unsplash.com/photo-1558431382-27e303142255?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1558431382-27e303142255?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://wbtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "victoria-memorial-kolkata",
@@ -20612,12 +23492,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "https://images.unsplash.com/photo-1558431382-27e303142255?w=800&auto=format&fit=crop&q=80",
               "attribution": "Archaeological Survey of India",
               "source_page": "https://asi.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [
@@ -20661,15 +23542,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 23.6782,
                 "lng": 87.6776
               },
-              "image_url": "https://images.unsplash.com/photo-1558431382-27e303142255?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1558431382-27e303142255?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://wbtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "museums": [
@@ -20714,15 +23596,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 22.1891,
                 "lng": 88.829
               },
-              "image_url": "https://images.unsplash.com/photo-1558431382-27e303142255?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1558431382-27e303142255?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://wbtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Arts & Culture",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "tourist_places": [],
@@ -20769,15 +23652,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 23.066,
                 "lng": 87.316
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://wbtourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -20850,7 +23734,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -20906,11 +23790,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Directorate of Forests, Government of West Bengal",
               "source_page": "https://westbengalforest.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "mahananda-wildlife-sanctuary-siliguri",
@@ -20959,11 +23844,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Directorate of Forests, Government of West Bengal",
               "source_page": "https://westbengalforest.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -21034,7 +23920,7 @@ export const INDIA_TOURISM_DATABASE = {
       "region": "Central India",
       "hero_image_url": "https://images.unsplash.com/photo-1627894483216-2138af692e32?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 5,
-      "total_attractions": 7,
+      "total_attractions": 8,
       "heritage_overview": "Green heartland of India boasting Chitrakote Horseshoe Falls, ancient Sirpur Buddhist brick monuments, and Bastar tribal arts.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Chhattisgarh.",
@@ -21117,16 +24003,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 22.8211,
                 "lng": 83.2926
               },
-              "image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://chhattisgarhtourism.cg.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Recreation",
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "religious_cultural": [],
@@ -21172,15 +24059,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 22.0838,
                 "lng": 82.1401
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://chhattisgarhtourism.cg.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -21253,7 +24141,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -21309,12 +24197,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Chhattisgarh Tourism Board",
               "source_page": "https://chhattisgarhtourism.cg.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage",
                 "Arts & Culture"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -21433,16 +24322,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 19.0699,
                 "lng": 82.0319
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://chhattisgarhtourism.cg.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -21520,7 +24410,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "state_capital",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 4,
+          "places_count": 3,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -21565,16 +24455,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 21.3417,
                 "lng": 82.1794
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Archaeological Survey of India",
               "source_page": "https://asi.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -21620,15 +24511,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 21.1951,
                 "lng": 81.3546
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://chhattisgarhtourism.cg.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Arts & Culture",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "tourist_places": [],
@@ -21674,15 +24566,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 21.2505,
                 "lng": 81.6274
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://chhattisgarhtourism.cg.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -21756,7 +24649,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -21811,11 +24704,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Chhattisgarh Tourism Board",
               "source_page": "https://chhattisgarhtourism.cg.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Nature"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -21887,7 +24781,7 @@ export const INDIA_TOURISM_DATABASE = {
       "region": "Central India",
       "hero_image_url": "https://images.unsplash.com/photo-1596405835955-467dbb100e42?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 15,
-      "total_attractions": 8,
+      "total_attractions": 20,
       "heritage_overview": "The Heart of India with three UNESCO sites: Khajuraho temples, Sanchi Buddhist stupas, and Bhimbetka rock shelters.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Madhya Pradesh.",
@@ -21922,7 +24816,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -21978,12 +24872,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Madhya Pradesh Tourism Board / ASI",
               "source_page": "https://www.mptourism.com",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Nature",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -22102,7 +24997,7 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 24.8318,
                 "lng": 79.9199
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://whc.unesco.org",
@@ -22158,7 +25053,7 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 23.4793,
                 "lng": 77.7397
               },
-              "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://whc.unesco.org",
@@ -22219,15 +25114,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 23.2658,
                 "lng": 77.4189
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.mptourism.com",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -22301,7 +25197,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -22352,12 +25248,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Madhya Pradesh Tourism Board",
               "source_page": "https://www.mptourism.com",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -22435,7 +25332,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -22491,12 +25388,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Madhya Pradesh Tourism Board",
               "source_page": "https://www.mptourism.com",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage",
                 "Nature"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -22570,7 +25468,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -22621,12 +25519,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Archaeological Survey of India",
               "source_page": "https://asi.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -22749,15 +25648,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 26.2221,
                 "lng": 78.1827
               },
-              "image_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.mptourism.com",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "museums": [],
@@ -22881,15 +25781,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 22.7269,
                 "lng": 75.8534
               },
-              "image_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.mptourism.com",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Arts & Culture",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "tourist_places": [],
@@ -22965,7 +25866,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -23023,11 +25924,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Madhya Pradesh Forest Department",
               "source_page": "https://kanhatigerreserve.org",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "bhedaghat-marble-rocks-jabalpur",
@@ -23077,12 +25979,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Madhya Pradesh Tourism Board / ASI",
               "source_page": "https://www.mptourism.com",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Heritage",
                 "Recreation"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -23155,7 +26058,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 1,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -23200,16 +26103,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 24.829,
                 "lng": 79.9184
               },
-              "image_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.mptourism.com",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -23264,11 +26168,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Madhya Pradesh Forest Department",
               "source_page": "https://pannatigerreserve.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -23341,7 +26246,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -23397,12 +26302,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Madhya Pradesh Tourism Board",
               "source_page": "https://www.mptourism.com",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage",
                 "Arts & Culture"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -23476,7 +26382,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -23530,13 +26436,14 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Archaeological Survey of India",
               "source_page": "https://asi.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Spiritual",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -23591,11 +26498,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Madhya Pradesh Forest Department",
               "source_page": "https://forest.mponline.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -23716,16 +26624,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 25.3558,
                 "lng": 78.6383
               },
-              "image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.mptourism.com",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Recreation",
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "religious_cultural": [],
@@ -23800,7 +26709,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -23857,12 +26766,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Madhya Pradesh Tourism Board / Forest Department",
               "source_page": "https://www.mptourism.com",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Recreation",
                 "Wellness"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -23935,7 +26845,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -23987,13 +26897,14 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Archaeological Survey of India / UNESCO",
               "source_page": "https://whc.unesco.org/en/list/524",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Spiritual",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -24121,15 +27032,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 23.1728,
                 "lng": 75.7868
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.mptourism.com",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -24200,7 +27112,7 @@ export const INDIA_TOURISM_DATABASE = {
       "region": "Western India",
       "hero_image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 3,
-      "total_attractions": 0,
+      "total_attractions": 3,
       "heritage_overview": "Coastal Portuguese heritage territory featuring sea-facing fortress walls, baroque churches, and pristine beaches of Diu.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Dadra and Nagar Haveli and Daman and Diu.",
@@ -24235,7 +27147,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "ut_capital",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -24287,13 +27199,14 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Archaeological Survey of India",
               "source_page": "https://asi.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Spiritual",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -24371,7 +27284,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -24424,12 +27337,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Archaeological Survey of India",
               "source_page": "https://asi.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Nature"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -24507,7 +27421,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -24561,12 +27475,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Administration of Dadra and Nagar Haveli and Daman and Diu",
               "source_page": "https://ddd.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Arts & Culture",
                 "Heritage",
                 "Nature"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "tourist_places": [],
@@ -24640,7 +27555,7 @@ export const INDIA_TOURISM_DATABASE = {
       "region": "Western India",
       "hero_image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 1,
-      "total_attractions": 11,
+      "total_attractions": 12,
       "heritage_overview": "Coastal jewel celebrated for UNESCO Churches of Old Goa, golden sandy beaches, Portuguese architecture, and spice plantations.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Goa.",
@@ -24675,7 +27590,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "state_capital",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 11,
+          "places_count": 12,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -24720,16 +27635,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 15.4855,
                 "lng": 73.8328
               },
-              "image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://goatourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "basilica-of-bom-jesus",
@@ -24772,7 +27688,7 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 15.5009,
                 "lng": 73.9116
               },
-              "image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://whc.unesco.org",
@@ -24832,12 +27748,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://goatourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "basilica-bom-jesus-goa",
@@ -24884,12 +27801,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://goatourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [
@@ -24933,15 +27851,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 15.2855,
                 "lng": 73.9948
               },
-              "image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://goatourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "museums": [
@@ -24986,15 +27905,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 15.5437,
                 "lng": 73.7623
               },
-              "image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://goatourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Arts & Culture",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "tourist_places": [
@@ -25039,16 +27959,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 15.0004,
                 "lng": 74.0494
               },
-              "image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://goatourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Recreation",
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "religious_cultural": [
@@ -25093,15 +28014,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 15.5096,
                 "lng": 73.9126
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://goatourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [
@@ -25146,15 +28068,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 15.4049,
                 "lng": 73.8161
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://goatourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "calangute-baga-beach",
@@ -25197,15 +28120,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 15.5439,
                 "lng": 73.7553
               },
-              "image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://goatourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "palolem-beach",
@@ -25252,11 +28176,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://goatourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "mollem-national-park",
@@ -25308,12 +28233,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Goa Forest Department",
               "source_page": "https://forest.goa.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -25384,7 +28310,7 @@ export const INDIA_TOURISM_DATABASE = {
       "region": "Western India",
       "hero_image_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 18,
-      "total_attractions": 8,
+      "total_attractions": 20,
       "heritage_overview": "Land of Legends featuring Ahmedabad World Heritage City, Rani ki Vav stepwell, Champaner, Somnath, and Asiatic Lions of Gir.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Gujarat.",
@@ -25464,16 +28390,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 23.0192,
                 "lng": 72.5695
               },
-              "image_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.gujarattourism.com",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -25551,7 +28478,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -25610,12 +28537,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Gujarat Tourism / Geological Survey of India",
               "source_page": "https://www.gujarattourism.com",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Heritage",
                 "Arts & Culture"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -25688,7 +28616,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -25746,11 +28674,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Gujarat Forest Department",
               "source_page": "https://forests.gujarat.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -25873,15 +28802,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 23.2379,
                 "lng": 69.6598
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.gujarattourism.com",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -25954,7 +28884,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -26002,7 +28932,7 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 22.4833,
                 "lng": 73.5333
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Archaeological Survey of India / UNESCO",
               "source_page": "https://whc.unesco.org/en/list/1101",
@@ -26142,16 +29072,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 22.2501,
                 "lng": 68.9588
               },
-              "image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.gujarattourism.com",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Recreation",
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "religious_cultural": [],
@@ -26283,12 +29214,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Gujarat Tourism / BAPS Swaminarayan Sanstha",
               "source_page": "https://www.gujarattourism.com/central-zone/gandhinagar/akshardham-temple.html",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage",
                 "Arts & Culture"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -26362,7 +29294,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -26418,12 +29350,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Shree Somnath Trust / Gujarat Tourism",
               "source_page": "https://somnath.org",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage",
                 "Arts & Culture"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [
@@ -26476,11 +29409,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Gujarat Forest Department",
               "source_page": "https://girlion.gujarat.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -26553,7 +29487,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -26609,11 +29543,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Gujarat Forest Department",
               "source_page": "https://forests.gujarat.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -26733,15 +29668,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 21.5192,
                 "lng": 70.4558
               },
-              "image_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.gujarattourism.com",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Arts & Culture",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "tourist_places": [],
@@ -26817,7 +29753,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -26874,12 +29810,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Gujarat Tourism Development Corporation",
               "source_page": "https://www.gujarattourism.com",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Heritage",
                 "Arts & Culture"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -26997,7 +29934,7 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 23.8589,
                 "lng": 72.1018
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://whc.unesco.org",
@@ -27054,15 +29991,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 23.8604,
                 "lng": 72.1241
               },
-              "image_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.gujarattourism.com",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "museums": [],
@@ -27139,7 +30077,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -27190,12 +30128,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Department of Tourism, Gujarat / Kirti Mandir Trust",
               "source_page": "https://www.gujarattourism.com",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -27273,7 +30212,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -27326,11 +30265,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Directorate of Museums, Government of Gujarat",
               "source_page": "https://www.gujarattourism.com",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Arts & Culture",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "tourist_places": [],
@@ -27406,7 +30346,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -27459,12 +30399,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Surat Municipal Corporation / ASI",
               "source_page": "https://www.suratmunicipal.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Nature"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -27542,7 +30483,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -27593,12 +30534,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Archaeological Survey of India",
               "source_page": "https://asi.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -27725,15 +30667,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 22.3047,
                 "lng": 73.1839
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.gujarattourism.com",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -27807,7 +30750,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -27864,12 +30807,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Gujarat Tourism Development Corporation",
               "source_page": "https://www.gujarattourism.com",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Recreation",
                 "Spiritual"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -27940,7 +30884,7 @@ export const INDIA_TOURISM_DATABASE = {
       "region": "Western India",
       "hero_image_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 11,
-      "total_attractions": 34,
+      "total_attractions": 41,
       "heritage_overview": "Gateway to India with 5 UNESCO World Heritage sites: Ajanta, Ellora, Elephanta Caves, Chhatrapati Shivaji Maharaj Terminus, and Victorian Ensembles.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Maharashtra.",
@@ -27975,7 +30919,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -28032,12 +30976,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Maharashtra Tourism Development Corporation",
               "source_page": "https://www.maharashtratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -28211,7 +31156,7 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 20.0268,
                 "lng": 75.178
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://whc.unesco.org",
@@ -28268,15 +31213,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 19.8701,
                 "lng": 75.348
               },
-              "image_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "museums": [],
@@ -28353,7 +31299,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -28408,13 +31354,14 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Vipassana Research Institute / MTDC",
               "source_page": "https://www.vridhamma.org",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wellness",
                 "Spiritual",
                 "Nature"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "religious_cultural": [],
@@ -28489,7 +31436,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -28545,12 +31492,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Maharashtra Tourism Development Corporation",
               "source_page": "https://www.maharashtratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage",
                 "Nature"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -28672,16 +31620,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 16.6977,
                 "lng": 74.2346
               },
-              "image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Recreation",
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "religious_cultural": [],
@@ -28756,7 +31705,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -28813,12 +31762,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Maharashtra Tourism Development Corporation",
               "source_page": "https://www.maharashtratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Heritage",
                 "Recreation"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -28891,7 +31841,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "state_capital",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 14,
+          "places_count": 15,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -28936,16 +31886,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 18.9524,
                 "lng": 72.8133
               },
-              "image_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "gateway-of-india",
@@ -28992,12 +31943,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "https://images.unsplash.com/photo-1588714477688-cf28a50e94f7?w=800&auto=format&fit=crop&q=80",
               "attribution": "Archaeological Survey of India",
               "source_page": "https://asi.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "csmt",
@@ -29096,16 +32048,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 18.9431,
                 "lng": 72.823
               },
-              "image_url": "https://images.unsplash.com/photo-1567157577867-05ccb1388e66",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1567157577867-05ccb1388e66",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "elephanta-caves",
@@ -29152,12 +32105,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e42e5e8e",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "kanheri-caves",
@@ -29204,12 +32158,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "https://images.unsplash.com/photo-1627894483216-2138af692e32",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "worli-sea-face",
@@ -29252,16 +32207,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 19.0118,
                 "lng": 72.8136
               },
-              "image_url": "https://images.unsplash.com/photo-1595658658481-d53d3f999875",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1595658658481-d53d3f999875",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "juhu-beach",
@@ -29308,12 +32264,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "csmvs-museum",
@@ -29356,16 +32313,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 18.9268,
                 "lng": 72.8327
               },
-              "image_url": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "siddhivinayak-temple",
@@ -29408,16 +32366,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 19.0169,
                 "lng": 72.8304
               },
-              "image_url": "https://images.unsplash.com/photo-1567157577867-05ccb1388e66",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1567157577867-05ccb1388e66",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "haji-ali-dargah",
@@ -29460,16 +32419,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 18.9827,
                 "lng": 72.8089
               },
-              "image_url": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "bandra-fort",
@@ -29512,16 +32472,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 19.0416,
                 "lng": 72.8188
               },
-              "image_url": "https://images.unsplash.com/photo-1595658658481-d53d3f999875",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1595658658481-d53d3f999875",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "colaba-causeway",
@@ -29568,12 +32529,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -29626,11 +32588,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "karnala-bird-sanctuary",
@@ -29680,12 +32643,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Maharashtra Forest Department",
               "source_page": "https://mahaforest.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -29805,15 +32769,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 21.1506,
                 "lng": 79.0794
               },
-              "image_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Arts & Culture",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "tourist_places": [],
@@ -29939,15 +32904,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 20.0007,
                 "lng": 73.7836
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -30065,16 +33031,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 18.7656,
                 "lng": 73.4029
               },
-              "image_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "lonavala-karla-caves",
@@ -30121,12 +33088,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?auto=format&fit=crop&w=1200&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "lonavala-bhaja-caves",
@@ -30173,12 +33141,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1200&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "lonavala-lohagad-fort",
@@ -30225,12 +33194,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "https://images.unsplash.com/photo-1609137144813-7d9921338f24?auto=format&fit=crop&w=1200&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "khandala-rajmachi-fort",
@@ -30277,12 +33247,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "https://images.unsplash.com/photo-1571401835393-8c5f35328320?auto=format&fit=crop&w=1200&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -30332,11 +33303,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "https://images.unsplash.com/photo-1566127444979-b3d2b654e3d7?auto=format&fit=crop&w=1200&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Arts & Culture",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "tourist_places": [],
@@ -30382,15 +33354,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 18.5132,
                 "lng": 73.8561
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [
@@ -30435,15 +33408,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 18.718,
                 "lng": 73.3768
               },
-              "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "lonavala-bhushi-dam",
@@ -30486,15 +33460,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 18.7302,
                 "lng": 73.4079
               },
-              "image_url": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "khandala-dukes-nose",
@@ -30541,11 +33516,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "khandala-sunset-point",
@@ -30592,11 +33568,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "khandala-kune-waterfalls",
@@ -30639,15 +33616,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 18.7583,
                 "lng": 73.3811
               },
-              "image_url": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "lonavala-lions-point",
@@ -30690,15 +33668,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 18.7214,
                 "lng": 73.382
               },
-              "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "lonavala-pawna-lake",
@@ -30745,11 +33724,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -30822,7 +33802,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -30879,12 +33859,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Maharashtra Forest Department",
               "source_page": "https://mahaforest.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "kaas-plateau-satara",
@@ -30933,11 +33914,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Maharashtra Forest Department / UNESCO",
               "source_page": "https://whc.unesco.org/en/list/1363",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -31008,7 +33990,7 @@ export const INDIA_TOURISM_DATABASE = {
       "region": "Southern India",
       "hero_image_url": "https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 13,
-      "total_attractions": 7,
+      "total_attractions": 19,
       "heritage_overview": "Sacred coastal state home to the Tirumala Venkateswara shrine, Buddhist stupas of Amaravati, and Lepakshi hanging pillar marvel.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Andhra Pradesh.",
@@ -31088,15 +34070,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 16.5107,
                 "lng": 80.6571
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.ap.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "museums": [],
@@ -31144,15 +34127,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 16.5673,
                 "lng": 80.3548
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.ap.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -31225,7 +34209,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 2,
+          "places_count": 3,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -31270,16 +34254,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 13.8041,
                 "lng": 77.6067
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Archaeological Survey of India",
               "source_page": "https://asi.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -31325,15 +34310,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 13.8115,
                 "lng": 77.6073
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.ap.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Arts & Culture",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "tourist_places": [],
@@ -31388,11 +34374,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Andhra Pradesh Tourism Development Corporation",
               "source_page": "https://aptdc.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Rural / Local"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -31465,7 +34452,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -31516,12 +34503,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Archaeological Survey of India",
               "source_page": "https://asi.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -31579,12 +34567,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Andhra Pradesh Tourism Development Corporation",
               "source_page": "https://aptdc.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Recreation",
                 "Wellness"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -31657,7 +34646,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -31708,12 +34697,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Andhra Pradesh Tourism & State Archaeology",
               "source_page": "https://aptdc.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Nature"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -31791,7 +34781,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -31848,12 +34838,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Andhra Pradesh Forest Department",
               "source_page": "https://forests.ap.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature",
                 "Recreation"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -31974,16 +34965,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 15.8345,
                 "lng": 78.0346
               },
-              "image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.ap.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Recreation",
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "religious_cultural": [],
@@ -32058,7 +35050,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -32115,12 +35107,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Andhra Pradesh Tourism Development Corporation",
               "source_page": "https://aptdc.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Heritage",
                 "Recreation"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -32193,7 +35186,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -32248,11 +35241,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Andhra Pradesh Endowments Department",
               "source_page": "https://tms.ap.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -32326,7 +35320,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -32382,12 +35376,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Andhra Pradesh Tourism Development Corporation",
               "source_page": "https://aptdc.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Nature",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -32461,7 +35456,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -32516,11 +35511,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Andhra Pradesh Endowments Department",
               "source_page": "https://tms.ap.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -32594,7 +35590,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 1,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -32639,16 +35635,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 13.6325,
                 "lng": 79.4185
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.ap.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -32704,12 +35701,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Andhra Pradesh Forest Department",
               "source_page": "https://forests.ap.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature",
                 "Spiritual"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -32782,7 +35780,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 1,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -32831,15 +35829,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 17.6824,
                 "lng": 83.2177
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.ap.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [
@@ -32892,11 +35891,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Andhra Pradesh Forest Department",
               "source_page": "https://forests.ap.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -32969,7 +35969,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -33020,12 +36020,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Andhra Pradesh Tourism & State Archaeology",
               "source_page": "https://aptdc.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -33101,7 +36102,7 @@ export const INDIA_TOURISM_DATABASE = {
       "region": "Southern India",
       "hero_image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 15,
-      "total_attractions": 10,
+      "total_attractions": 20,
       "heritage_overview": "One State Many Worlds featuring UNESCO Vijayanagara ruins at Hampi, Hoysala Sacred Ensembles, and Badami Chalukya cave temples.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Karnataka.",
@@ -33183,15 +36184,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 15.9271,
                 "lng": 75.6821
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://karnatakatourism.org",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Arts & Culture",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "tourist_places": [],
@@ -33267,7 +36269,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -33319,13 +36321,14 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Archaeological Survey of India / UNESCO",
               "source_page": "https://whc.unesco.org/en/list/239",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Spiritual",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -33403,7 +36406,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -33454,12 +36457,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Archaeological Survey of India",
               "source_page": "https://asi.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Spiritual"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -33537,7 +36541,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "state_capital",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 6,
+          "places_count": 5,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -33582,16 +36586,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 12.9673,
                 "lng": 77.591
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://karnatakatourism.org",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "belur-halebidu-belur-halebidu-heritage-fort-complex",
@@ -33634,16 +36639,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 13.1626,
                 "lng": 75.8613
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://karnatakatourism.org",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "pattadakal-monuments",
@@ -33686,7 +36692,7 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 15.9489,
                 "lng": 75.816
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://whc.unesco.org",
@@ -33742,7 +36748,7 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 13.1623,
                 "lng": 75.8596
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://whc.unesco.org",
@@ -33804,15 +36810,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 12.4251,
                 "lng": 75.7397
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://karnatakatourism.org",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -33885,7 +36892,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -33936,12 +36943,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Archaeological Survey of India",
               "source_page": "https://asi.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -34019,7 +37027,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -34080,12 +37088,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Karnataka Forest Department",
               "source_page": "https://aranya.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature",
                 "Recreation"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -34206,16 +37215,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 14.5489,
                 "lng": 74.3137
               },
-              "image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://karnatakatourism.org",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Recreation",
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "religious_cultural": [],
@@ -34335,7 +37345,7 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 15.335,
                 "lng": 76.46
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://whc.unesco.org",
@@ -34426,7 +37436,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -34478,13 +37488,14 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Archaeological Survey of India",
               "source_page": "https://asi.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Spiritual",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -34562,7 +37573,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -34613,12 +37624,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Archaeological Survey of India",
               "source_page": "https://asi.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -34670,9 +37682,9 @@ export const INDIA_TOURISM_DATABASE = {
           "license": "Unsplash License"
         },
         {
-          "id": "mangalore",
-          "name": "Mangalore",
-          "canonical_name": "Mangalore",
+          "id": "mangaluru",
+          "name": "Mangaluru",
+          "canonical_name": "Mangaluru",
           "state": "Karnataka",
           "state_id": "karnataka",
           "region": "Southern India",
@@ -34696,7 +37708,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -34710,7 +37722,7 @@ export const INDIA_TOURISM_DATABASE = {
               "name": "Kudremukh National Park",
               "canonical_name": "Kudremukh National Park",
               "aliases": [],
-              "city_id": "mangalore",
+              "city_id": "mangaluru",
               "state_id": "karnataka",
               "district": "Chikkamagaluru",
               "category": "wildlife",
@@ -34752,18 +37764,19 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Karnataka Forest Department",
               "source_page": "https://aranya.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "panambur-beach-mangalore",
               "name": "Panambur Beach & Kadri Manjunatha Temple",
               "canonical_name": "Panambur Beach",
               "aliases": [],
-              "city_id": "mangalore",
+              "city_id": "mangaluru",
               "state_id": "karnataka",
               "district": "Dakshina Kannada",
               "category": "nature",
@@ -34806,12 +37819,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Karnataka Tourism Development Corporation",
               "source_page": "https://karnatakatourism.org",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Spiritual",
                 "Recreation"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -34855,7 +37869,12 @@ export const INDIA_TOURISM_DATABASE = {
           "source_url": "https://unsplash.com/photos/panambur-beach-and-kudroli-gokarnath-temple-mangalore-M2m4q7Z1v3",
           "source_name": "Unsplash",
           "creator": "Coastal Karnataka Explorer",
-          "license": "Unsplash License"
+          "license": "Unsplash License",
+          "slug": "mangaluru",
+          "aliases": [
+            "Mangalore",
+            "mangalore"
+          ]
         },
         {
           "id": "mysuru",
@@ -34933,15 +37952,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 12.2942,
                 "lng": 76.6451
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://karnatakatourism.org",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -35015,7 +38035,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -35067,13 +38087,14 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Archaeological Survey of India / UNESCO",
               "source_page": "https://whc.unesco.org/en/list/1670",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Spiritual",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -35151,7 +38172,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -35207,12 +38228,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Karnataka Tourism / Sri Krishna Matha Administration",
               "source_page": "https://karnatakatourism.org",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage",
                 "Nature"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -35286,7 +38308,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -35337,12 +38359,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Archaeological Survey of India",
               "source_page": "https://asi.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -35418,7 +38441,7 @@ export const INDIA_TOURISM_DATABASE = {
       "region": "Southern India",
       "hero_image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 19,
-      "total_attractions": 9,
+      "total_attractions": 22,
       "heritage_overview": "God's Own Country featuring palm-fringed backwaters of Alappuzha, Munnar tea hills, historic Fort Kochi, and Kathakali traditions.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Kerala.",
@@ -35498,15 +38521,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 9.4988,
                 "lng": 76.3479
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.keralatourism.org",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "museums": [],
@@ -35558,11 +38582,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.keralatourism.org",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -35635,7 +38660,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -35686,12 +38711,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Archaeological Survey of India",
               "source_page": "https://asi.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Nature"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -35769,7 +38795,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -35820,12 +38846,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Archaeological Survey of India",
               "source_page": "https://asi.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Nature"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -35877,9 +38904,9 @@ export const INDIA_TOURISM_DATABASE = {
           "license": "Unsplash License"
         },
         {
-          "id": "kasargod",
-          "name": "Kasargod",
-          "canonical_name": "Kasargod",
+          "id": "kasaragod",
+          "name": "Kasaragod",
+          "canonical_name": "Kasaragod",
           "state": "Kerala",
           "state_id": "kerala",
           "region": "Southern India",
@@ -35903,7 +38930,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -35916,7 +38943,7 @@ export const INDIA_TOURISM_DATABASE = {
               "name": "Ananthapura Lake Temple & Chandragiri Fort",
               "canonical_name": "Ananthapura Lake Temple",
               "aliases": [],
-              "city_id": "kasargod",
+              "city_id": "kasaragod",
               "state_id": "kerala",
               "district": "Kasaragod",
               "category": "spiritual",
@@ -35959,12 +38986,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Department of Tourism, Government of Kerala",
               "source_page": "https://www.keralatourism.org",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage",
                 "Nature"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -36009,7 +39037,12 @@ export const INDIA_TOURISM_DATABASE = {
           "source_url": "https://unsplash.com/photos/ananthapura-lake-temple-kasargod-K4m8q3Z9v2",
           "source_name": "Unsplash",
           "creator": "North Malabar Explorer",
-          "license": "Unsplash License"
+          "license": "Unsplash License",
+          "slug": "kasaragod",
+          "aliases": [
+            "Kasargod",
+            "kasargod"
+          ]
         },
         {
           "id": "kochi",
@@ -36083,16 +39116,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 9.9251,
                 "lng": 76.2647
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.keralatourism.org",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "fort-kochi-heritage",
@@ -36135,16 +39169,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 9.9675,
                 "lng": 76.2425
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
               "attribution": "Archaeological Survey of India",
               "source_page": "https://asi.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -36222,7 +39257,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -36279,12 +39314,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Department of Tourism, Government of Kerala",
               "source_page": "https://www.keralatourism.org",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Rural / Local",
                 "Recreation"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -36357,7 +39393,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -36413,12 +39449,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Travancore Devaswom Board / Kerala Tourism",
               "source_page": "https://travancoredevaswomboard.org",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage",
                 "Arts & Culture"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -36492,7 +39529,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -36549,12 +39586,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Department of Tourism, Government of Kerala",
               "source_page": "https://www.keralatourism.org",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Recreation",
                 "Wellness"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -36675,16 +39713,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 11.2509,
                 "lng": 75.7714
               },
-              "image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.keralatourism.org",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Recreation",
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "religious_cultural": [],
@@ -36759,7 +39798,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -36818,12 +39857,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Department of Tourism, Government of Kerala",
               "source_page": "https://www.keralatourism.org",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature",
                 "Recreation"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -36896,7 +39936,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -36953,12 +39993,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Kerala Forest Research Institute / Kerala Tourism",
               "source_page": "https://www.kfri.res.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Heritage",
                 "Arts & Culture"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -37031,7 +40072,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 1,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -37081,15 +40122,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 10.0962,
                 "lng": 77.057
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.keralatourism.org",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "eravikulam-national-park",
@@ -37138,11 +40180,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Kerala Department of Forests and Wildlife",
               "source_page": "https://forest.kerala.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -37215,7 +40258,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -37271,11 +40314,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Kerala Department of Forests and Wildlife",
               "source_page": "https://silentvalley.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -37348,7 +40392,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -37404,12 +40448,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Travancore Devaswom Board / Kerala Tourism",
               "source_page": "https://travancoredevaswomboard.org",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage",
                 "Arts & Culture"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -37457,9 +40502,9 @@ export const INDIA_TOURISM_DATABASE = {
           "license": "Unsplash License"
         },
         {
-          "id": "sabrimala",
-          "name": "Sabrimala",
-          "canonical_name": "Sabrimala",
+          "id": "sabarimala",
+          "name": "Sabarimala",
+          "canonical_name": "Sabarimala",
           "state": "Kerala",
           "state_id": "kerala",
           "region": "Southern India",
@@ -37483,7 +40528,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -37496,7 +40541,7 @@ export const INDIA_TOURISM_DATABASE = {
               "name": "Sabarimala Sree Dharma Sastha Temple",
               "canonical_name": "Sabarimala Temple",
               "aliases": [],
-              "city_id": "sabrimala",
+              "city_id": "sabarimala",
               "state_id": "kerala",
               "district": "Pathanamthitta",
               "category": "spiritual",
@@ -37539,12 +40584,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Travancore Devaswom Board, Government of Kerala",
               "source_page": "https://sabarimalaonline.org",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage",
                 "Nature"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -37589,7 +40635,12 @@ export const INDIA_TOURISM_DATABASE = {
           "source_url": "https://unsplash.com/photos/sabarimala-ayyappa-temple-sanctum-sabrimala-S6m4q9Z5v1",
           "source_name": "Unsplash",
           "creator": "Travancore Devaswom Board",
-          "license": "Unsplash License"
+          "license": "Unsplash License",
+          "slug": "sabarimala",
+          "aliases": [
+            "Sabrimala",
+            "sabrimala"
+          ]
         },
         {
           "id": "thiruvananthapuram",
@@ -37667,15 +40718,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 8.5231,
                 "lng": 76.937
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.keralatourism.org",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -37749,7 +40801,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -37805,12 +40857,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Archaeological Survey of India / Cochin Devaswom Board",
               "source_page": "https://asi.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage",
                 "Arts & Culture"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -37929,16 +40982,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 8.7358,
                 "lng": 76.7213
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.keralatourism.org",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -38063,15 +41117,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 11.606,
                 "lng": 76.0764
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.keralatourism.org",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Arts & Culture",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "tourist_places": [],
@@ -38145,7 +41200,7 @@ export const INDIA_TOURISM_DATABASE = {
       "region": "Southern India",
       "hero_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Bangaram_Island%2C_Lakshadweep_20160325-_DSC1780.jpg/1280px-Bangaram_Island%2C_Lakshadweep_20160325-_DSC1780.jpg",
       "total_cities": 1,
-      "total_attractions": 0,
+      "total_attractions": 1,
       "heritage_overview": "Emerald coral atolls in the Arabian Sea with crystal lagoons, marine biodiversity, and traditional coir crafts.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Lakshadweep.",
@@ -38180,7 +41235,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "ut_capital",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -38238,13 +41293,14 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Lakshadweep Tourism Department / SPORTS",
               "source_page": "https://lakshadweep.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Spiritual",
                 "Arts & Culture",
                 "Recreation"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -38395,16 +41451,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 11.9338,
                 "lng": 79.8357
               },
-              "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
               "attribution": "Archaeological Survey of India",
               "source_page": "https://asi.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -38480,7 +41537,7 @@ export const INDIA_TOURISM_DATABASE = {
       "region": "Southern India",
       "hero_image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 10,
-      "total_attractions": 10,
+      "total_attractions": 16,
       "heritage_overview": "Land of Living Chola Temples (UNESCO), soaring Dravidian gopurams of Madurai, Shore Temple of Mamallapuram, and Nilgiri Mountain Railway.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Tamil Nadu.",
@@ -38560,16 +41617,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 13.0746,
                 "lng": 80.2797
               },
-              "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.tamilnadutourism.tn.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "shore-temple-mahabalipuram",
@@ -38612,7 +41670,7 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 12.6164,
                 "lng": 80.1983
               },
-              "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://whc.unesco.org",
@@ -38671,15 +41729,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 9.2889,
                 "lng": 79.3223
               },
-              "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.tamilnadutourism.tn.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Arts & Culture",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "tourist_places": [
@@ -38724,16 +41783,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 8.0793,
                 "lng": 77.5451
               },
-              "image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.tamilnadutourism.tn.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Recreation",
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "religious_cultural": [],
@@ -38779,15 +41839,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 12.6233,
                 "lng": 80.1927
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.tamilnadutourism.tn.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -38860,7 +41921,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -38916,12 +41977,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Isha Foundation / Tamil Nadu Tourism",
               "source_page": "https://isha.sadhguru.org",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Wellness",
                 "Arts & Culture"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -38995,7 +42057,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -39047,13 +42109,14 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Archaeological Survey of India",
               "source_page": "https://asi.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Spiritual",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -39131,7 +42194,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -39183,13 +42246,14 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Vivekananda Kendra / Tamil Nadu Tourism",
               "source_page": "https://www.tamilnadutourism.tn.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Spiritual",
                 "Nature"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -39312,16 +42376,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 9.9195,
                 "lng": 78.1193
               },
-              "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
               "attribution": "Archaeological Survey of India",
               "source_page": "https://asi.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -39369,15 +42434,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 9.9193,
                 "lng": 78.1187
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.tamilnadutourism.tn.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -39451,7 +42517,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -39505,13 +42571,14 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Archaeological Survey of India / UNESCO",
               "source_page": "https://whc.unesco.org/en/list/249",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture",
                 "Nature"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -39634,16 +42701,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 11.4098,
                 "lng": 76.6865
               },
-              "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.tamilnadutourism.tn.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -39721,7 +42789,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -39777,12 +42845,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Hindu Religious and Charitable Endowments, Tamil Nadu",
               "source_page": "https://hrce.tn.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage",
                 "Nature"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -39901,7 +42970,7 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 10.7828,
                 "lng": 79.1318
               },
-              "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://whc.unesco.org",
@@ -39958,15 +43027,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 10.7817,
                 "lng": 79.1292
               },
-              "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.tamilnadutourism.tn.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "museums": [],
@@ -40043,7 +43113,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -40099,12 +43169,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "HR&CE Department, Tamil Nadu",
               "source_page": "https://srirangam.org",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage",
                 "Arts & Culture"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],
@@ -40176,7 +43247,7 @@ export const INDIA_TOURISM_DATABASE = {
       "region": "Southern India",
       "hero_image_url": "https://images.unsplash.com/photo-1605335198083-d5d85202874a?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 5,
-      "total_attractions": 9,
+      "total_attractions": 12,
       "heritage_overview": "City of Pearls and Nizams, home to Charminar, Golconda Fort, and UNESCO World Heritage Kakatiya Rudreshwara (Ramappa) Temple.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Telangana.",
@@ -40211,7 +43282,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -40263,13 +43334,14 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Telangana State Tourism Development Corporation",
               "source_page": "https://tourism.telangana.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Nature",
                 "Recreation"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -40392,16 +43464,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 17.3826,
                 "lng": 78.4952
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.telangana.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "charminar",
@@ -40448,12 +43521,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "https://images.unsplash.com/photo-1588097281266-31018512954b?w=800&auto=format&fit=crop&q=80",
               "attribution": "Archaeological Survey of India",
               "source_page": "https://asi.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "golconda-fort",
@@ -40496,16 +43570,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 17.3833,
                 "lng": 78.4011
               },
-              "image_url": "https://images.unsplash.com/photo-1616198814651-e71f960c3180?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1616198814651-e71f960c3180?w=800&auto=format&fit=crop&q=80",
               "attribution": "Archaeological Survey of India",
               "source_page": "https://asi.nic.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -40552,16 +43627,17 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 18.6631,
                 "lng": 78.0874
               },
-              "image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.telangana.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Recreation",
                 "Heritage"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "religious_cultural": [],
@@ -40607,15 +43683,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 16.5836,
                 "lng": 79.3193
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.telangana.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Nature",
                 "Wildlife"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "kbr-national-park",
@@ -40668,12 +43745,13 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Telangana Forest Department",
               "source_page": "https://forests.telangana.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             },
             {
               "id": "mrugavani-national-park",
@@ -40722,11 +43800,12 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Telangana Forest Department",
               "source_page": "https://forests.telangana.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Wildlife",
                 "Nature"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "transport": {
@@ -40846,15 +43925,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 18.4377,
                 "lng": 79.1354
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.telangana.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Arts & Culture",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "tourist_places": [],
@@ -40930,7 +44010,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -40982,13 +44062,14 @@ export const INDIA_TOURISM_DATABASE = {
               "thumbnail_url": "",
               "attribution": "Telangana State Tourism Development Corporation",
               "source_page": "https://tourism.telangana.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Heritage",
                 "Spiritual",
                 "Arts & Culture"
               ],
-              "source_quality": "generic_homepage"
+              "source_quality": "generic_homepage",
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "monuments": [],
@@ -41066,7 +44147,7 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 1,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -41111,7 +44192,7 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 18.2605,
                 "lng": 79.9431
               },
-              "image_url": "https://images.unsplash.com/photo-1616198814651-e71f960c3180?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1616198814651-e71f960c3180?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://whc.unesco.org",
@@ -41172,15 +44253,16 @@ export const INDIA_TOURISM_DATABASE = {
                 "lat": 17.976,
                 "lng": 79.5917
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://tourism.telangana.gov.in",
-              "status": "VERIFIED",
+              "status": "UNVERIFIED",
               "tags": [
                 "Spiritual",
                 "Heritage"
-              ]
+              ],
+              "verification_note": "Metadata pending official archival verification. Source URL omitted."
             }
           ],
           "nature_parks_zoo": [],

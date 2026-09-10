@@ -823,6 +823,7 @@ export const api = {
     site_name?: string;
     place_name?: string;
     city?: string;
+    title?: string;
     reported_by?: string;
     user_role?: string;
     issue_category?: string;

@@ -2691,9 +2691,9 @@ function findCityTransportInfo(cityNameOrId: string) {
           city: city.name,
           state: city.state,
           coordinates: city.coordinates,
-          railway_stations: city.transport?.railway_stations || [],
-          airport: city.transport?.airport || null,
-          local_transit: city.transport?.local_transit || null,
+          railway_stations: (city.transport as any)?.railway_stations || [],
+          airport: (city.transport as any)?.airport || null,
+          local_transit: (city.transport as any)?.local_transit || null,
         };
       }
     }
@@ -3570,12 +3570,20 @@ app.post(['/api/itinerary', '/api/itineraries/generate'], (req, res) => {
 // India Tourism Database Hierarchy Endpoints
 // -------------------------------------------------------------
 let indiaHierarchyData: any = null;
+let indiaHierarchyDataMtime: number = 0;
+
 function getIndiaHierarchyData() {
-  if (!indiaHierarchyData) {
-    const p = path.join(process.cwd(), 'data', 'india_tourism_database.json');
-    if (fs.existsSync(p)) {
+  const p = path.join(process.cwd(), 'data', 'india_tourism_database.json');
+  if (!fs.existsSync(p)) return null;
+
+  try {
+    const stats = fs.statSync(p);
+    if (!indiaHierarchyData || stats.mtimeMs > indiaHierarchyDataMtime) {
       indiaHierarchyData = JSON.parse(fs.readFileSync(p, 'utf-8'));
+      indiaHierarchyDataMtime = stats.mtimeMs;
     }
+  } catch (err) {
+    console.error('[Hierarchy API] Error loading india_tourism_database.json:', err);
   }
   return indiaHierarchyData;
 }

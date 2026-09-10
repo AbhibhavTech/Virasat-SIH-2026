@@ -15,7 +15,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1628155930550-1ef5420a4611?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in chandigarh"
   },
   {
     "id": "delhi",
@@ -33,7 +34,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1512343879792-214836286570?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 4
+    "places_count": 4,
+    "tagline": "Cultural destination in delhi"
   },
   {
     "id": "faridabad",
@@ -51,7 +53,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1606298855674-501d842d900e?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in haryana"
   },
   {
     "id": "gurugram",
@@ -69,7 +72,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1609946850722-8f6545441d68?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in haryana"
   },
   {
     "id": "hisar",
@@ -87,7 +91,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1598890777034-dcf35dc05615?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in haryana"
   },
   {
     "id": "kurukshetra",
@@ -105,7 +110,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1627894483218-4350ch814054?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 2
+    "places_count": 2,
+    "tagline": "Cultural destination in haryana"
   },
   {
     "id": "panipat",
@@ -123,7 +129,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1507525428037-ea56fb194f61?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in haryana"
   },
   {
     "id": "yamunanagar",
@@ -141,7 +148,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1590050752119-450ed2cd34d3?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in haryana"
   },
   {
     "id": "shimla",
@@ -159,7 +167,8 @@
     "official_url": "https://hpshimla.nic.in",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200&q=80",
-    "places_count": 3
+    "places_count": 3,
+    "tagline": "Cultural destination in himachal-pradesh"
   },
   {
     "id": "manali",
@@ -177,7 +186,8 @@
     "official_url": "https://hpkullu.nic.in",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1596761611086-455b76615b13?w=1200&q=80",
-    "places_count": 2
+    "places_count": 2,
+    "tagline": "Cultural destination in himachal-pradesh"
   },
   {
     "id": "spiti-valley",
@@ -195,7 +205,8 @@
     "official_url": "https://hplahaulspiti.nic.in",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1605649487212-47bdab064df8?w=1200&q=80",
-    "places_count": 3
+    "places_count": 3,
+    "tagline": "Cultural destination in himachal-pradesh"
   },
   {
     "id": "dharamshala",
@@ -213,7 +224,8 @@
     "official_url": "https://hpkangra.nic.in",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1588083949404-c4f1ed1323b3?w=1200&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in himachal-pradesh"
   },
   {
     "id": "kangra",
@@ -231,7 +243,8 @@
     "official_url": "https://hpkangra.nic.in",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&q=80",
-    "places_count": 2
+    "places_count": 2,
+    "tagline": "Cultural destination in himachal-pradesh"
   },
   {
     "id": "kullu",
@@ -249,7 +262,8 @@
     "official_url": "https://hpkullu.nic.in",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in himachal-pradesh"
   },
   {
     "id": "anantnag",
@@ -267,7 +281,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1605649487220-c53523842560?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in jammu-and-kashmir"
   },
   {
     "id": "gulmarg",
@@ -285,7 +300,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1587474260592-91435230665f?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in jammu-and-kashmir"
   },
   {
     "id": "jammu",
@@ -303,7 +319,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1627993077758-452101007326?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in jammu-and-kashmir"
   },
   {
     "id": "pahalgam",
@@ -321,7 +338,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1596405835963-c4563554903c?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in jammu-and-kashmir"
   },
   {
     "id": "patnitop",
@@ -339,7 +357,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1628172900415-557709116606?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in jammu-and-kashmir"
   },
   {
     "id": "srinagar",
@@ -357,7 +376,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1589308078067-369293033254?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 5
+    "places_count": 5,
+    "tagline": "Cultural destination in jammu-and-kashmir"
   },
   {
     "id": "kargil",
@@ -375,7 +395,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1616423640786-06593d500735?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in ladakh"
   },
   {
     "id": "leh",
@@ -393,7 +414,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1574672280608-2184613d4676?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 6
+    "places_count": 6,
+    "tagline": "Cultural destination in ladakh"
   },
   {
     "id": "amritsar",
@@ -411,7 +433,8 @@
     "official_url": "https://amritsar.nic.in",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=1200&q=80",
-    "places_count": 3
+    "places_count": 3,
+    "tagline": "Cultural destination in punjab"
   },
   {
     "id": "patiala",
@@ -429,7 +452,8 @@
     "official_url": "https://patiala.nic.in",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in punjab"
   },
   {
     "id": "anandpur-sahib",
@@ -439,15 +463,18 @@
     "entity_type": "town",
     "district": "Rupnagar",
     "latitude": 31.2356,
-    "longitude": 76.4989,
+    "longitude": 76.4994,
     "lat": 31.2356,
-    "lng": 76.4989,
+    "lng": 76.4994,
     "short_description": "Sacred town founded in 1665 by Guru Tegh Bahadur, site of the creation of the Khalsa Panth in 1699.",
     "description": "Nestled between the Shivalik foothills and Sutlej River, Anandpur Sahib (City of Bliss) is one of the five Takhts of Sikhism. It is renowned for Takht Sri Keshgarh Sahib and the world-renowned Virasat-e-Khalsa museum designed by Moshe Safdie.",
     "official_url": "https://rupnagar.nic.in",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "administrative_status": "EXTRA_CANONICAL",
+    "review_flag": "PENDING_CLASSIFICATION",
+    "tagline": "Cultural destination in punjab"
   },
   {
     "id": "jaipur",
@@ -465,7 +492,8 @@
     "official_url": "https://jaipur.rajasthan.gov.in",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1477587458883-47145ed94245?w=1200&q=80",
-    "places_count": 8
+    "places_count": 8,
+    "tagline": "Cultural destination in rajasthan"
   },
   {
     "id": "udaipur",
@@ -483,7 +511,8 @@
     "official_url": "https://udaipur.rajasthan.gov.in",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in rajasthan"
   },
   {
     "id": "agra",
@@ -501,7 +530,8 @@
     "official_url": "https://agra.nic.in",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&q=80",
-    "places_count": 8
+    "places_count": 8,
+    "tagline": "Cultural destination in uttar-pradesh"
   },
   {
     "id": "varanasi",
@@ -519,7 +549,8 @@
     "official_url": "https://varanasi.nic.in",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=1200&q=80",
-    "places_count": 2
+    "places_count": 2,
+    "tagline": "Cultural destination in uttar-pradesh"
   },
   {
     "id": "almora",
@@ -537,7 +568,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1627993077757-341090996215?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in uttarakhand"
   },
   {
     "id": "badrinath",
@@ -555,7 +587,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1596405835962-b34524438f2b?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in uttarakhand"
   },
   {
     "id": "berinag",
@@ -573,7 +606,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1628172900414-446698005595?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in uttarakhand"
   },
   {
     "id": "bhimtal",
@@ -591,7 +625,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1589308078066-258182f22143?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in uttarakhand"
   },
   {
     "id": "chamoli",
@@ -609,7 +644,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1616423640785-95482c499624?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in uttarakhand"
   },
   {
     "id": "dehradun",
@@ -627,7 +663,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1574672280607-1073502c3565?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in uttarakhand"
   },
   {
     "id": "gangotri",
@@ -645,7 +682,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1581793745869-0064fe40e049?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in uttarakhand"
   },
   {
     "id": "haridwar",
@@ -663,7 +701,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1628009848536-327566072083?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in uttarakhand"
   },
   {
     "id": "kausani",
@@ -681,7 +720,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1602216056103-021733732611?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in uttarakhand"
   },
   {
     "id": "kedarnath",
@@ -699,7 +739,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1595815771621-244644282244?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in uttarakhand"
   },
   {
     "id": "lansdowne",
@@ -717,7 +758,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1514222134-2c4411532540?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in uttarakhand"
   },
   {
     "id": "mussoorie",
@@ -735,7 +777,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1605335198090-424f83773511?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in uttarakhand"
   },
   {
     "id": "nainital",
@@ -753,7 +796,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1606298855679-03657789e49f?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in uttarakhand"
   },
   {
     "id": "new-tehri",
@@ -771,7 +815,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1609946850727-d41090996213?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in uttarakhand"
   },
   {
     "id": "pithoragarh",
@@ -789,7 +834,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1598890777039-214802140160?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in uttarakhand"
   },
   {
     "id": "rishikesh",
@@ -807,7 +853,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1627894483223-9805hm369509?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in uttarakhand"
   },
   {
     "id": "uttarkashi",
@@ -825,7 +872,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1507525428042-341090996216?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in uttarakhand"
   },
   {
     "id": "tawang",
@@ -843,25 +891,8 @@
     "official_url": "https://tawang.nic.in",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&q=80",
-    "places_count": 2
-  },
-  {
-    "id": "ziro-valley",
-    "state_id": "arunachal-pradesh",
-    "name": "Ziro Valley",
-    "slug": "ziro-valley",
-    "entity_type": "valley",
-    "district": "Lower Subansiri",
-    "latitude": 27.5947,
-    "longitude": 93.8385,
-    "lat": 27.5947,
-    "lng": 93.8385,
-    "short_description": "Picturesque valley renowned for sustainable Apatani wet-rice agriculture, pine hills, and the Ziro Festival of Music.",
-    "description": "Ziro Valley is an idyllic plateau situated at 1,572 meters in Lower Subansiri district. Inscribed on the UNESCO World Heritage Tentative List for the Apatani Cultural Landscape, it is famous for fish-cum-paddy cultivation, bamboo architecture, and unique tribal heritage.",
-    "official_url": "https://lowersubansiri.nic.in",
-    "status": "active",
-    "hero_image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&q=80",
-    "places_count": 2
+    "places_count": 2,
+    "tagline": "Cultural destination in arunachal-pradesh"
   },
   {
     "id": "chirang",
@@ -879,7 +910,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1602216056097-4c51dd1da055?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 2
+    "places_count": 2,
+    "tagline": "Cultural destination in assam"
   },
   {
     "id": "dibrugarh",
@@ -897,7 +929,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1595815771615-bee0e763b76e?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in assam"
   },
   {
     "id": "guwahati",
@@ -915,7 +948,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1514222134-c68dcc9df184?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in assam"
   },
   {
     "id": "jorhat",
@@ -933,7 +967,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1605335198084-e6e96313985b?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in assam"
   },
   {
     "id": "majuli",
@@ -951,7 +986,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1606298855673-4f0c731c89fd?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in assam"
   },
   {
     "id": "sivasagar",
@@ -969,7 +1005,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1609946850721-7e5434330c57?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in assam"
   },
   {
     "id": "tezpur",
@@ -987,7 +1024,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1598890777033-cbe24cbf4504?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in assam"
   },
   {
     "id": "tinsukia",
@@ -1005,7 +1043,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1627894483217-3249bg703f43?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in assam"
   },
   {
     "id": "umrangso",
@@ -1023,7 +1062,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1507525428036-d945ea083f50?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in assam"
   },
   {
     "id": "imphal",
@@ -1041,7 +1081,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1609766857046-329573fd513f?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 6
+    "places_count": 6,
+    "tagline": "Cultural destination in manipur"
   },
   {
     "id": "cherrapunjee",
@@ -1059,7 +1100,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1626014303762-19217e4e0320?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in meghalaya"
   },
   {
     "id": "shillong",
@@ -1077,7 +1119,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1512343879789-fe1503953247?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 7
+    "places_count": 7,
+    "tagline": "Cultural destination in meghalaya"
   },
   {
     "id": "aizawl",
@@ -1095,7 +1138,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1605649487217-9202f051923d?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 3
+    "places_count": 3,
+    "tagline": "Cultural destination in mizoram"
   },
   {
     "id": "champhai",
@@ -1113,7 +1157,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1587474260589-68102907332c?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in mizoram"
   },
   {
     "id": "lunglei",
@@ -1131,7 +1176,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1627993077755-129878774093?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in mizoram"
   },
   {
     "id": "serchhip",
@@ -1149,7 +1195,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1596405835960-912302216d09?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in mizoram"
   },
   {
     "id": "dimapur",
@@ -1167,7 +1214,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1628172900412-224476883373?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in nagaland"
   },
   {
     "id": "kohima",
@@ -1185,7 +1233,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1589308078064-036960d00921?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 4
+    "places_count": 4,
+    "tagline": "Cultural destination in nagaland"
   },
   {
     "id": "mokokchung",
@@ -1203,7 +1252,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1616423640783-73260a277402?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in nagaland"
   },
   {
     "id": "gangtok",
@@ -1221,7 +1271,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1616423640784-84371b388513?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 6
+    "places_count": 6,
+    "tagline": "Cultural destination in sikkim"
   },
   {
     "id": "mangan",
@@ -1239,7 +1290,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1574672280606-0f624f1b2454?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in sikkim"
   },
   {
     "id": "pelling",
@@ -1257,7 +1309,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1581793745868-ff53ed3fd938?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in sikkim"
   },
   {
     "id": "agartala",
@@ -1275,7 +1328,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1506744038143-139405012010?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 5
+    "places_count": 5,
+    "tagline": "Cultural destination in tripura"
   },
   {
     "id": "unakoti",
@@ -1293,7 +1347,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1558431389-945070819922?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in tripura"
   },
   {
     "id": "mayabunder",
@@ -1311,7 +1366,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1558431390-056181920033?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in andaman-and-nicobar-islands"
   },
   {
     "id": "rangat",
@@ -1329,7 +1385,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1596701062359-0b1a92591659?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in andaman-and-nicobar-islands"
   },
   {
     "id": "sri-vijaya-puram",
@@ -1347,7 +1404,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1582510003552-2588355fc008?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in andaman-and-nicobar-islands"
   },
   {
     "id": "arrah",
@@ -1365,7 +1423,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1590050752118-349dc1bc23c2?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in bihar"
   },
   {
     "id": "gaya",
@@ -1383,7 +1442,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1600100397611-9c2d5e23f60b?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 2
+    "places_count": 2,
+    "tagline": "Cultural destination in bihar"
   },
   {
     "id": "nalanda",
@@ -1401,7 +1461,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1544735716-403fe359001c?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 3
+    "places_count": 3,
+    "tagline": "Cultural destination in bihar"
   },
   {
     "id": "patna",
@@ -1419,7 +1480,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1609137144815-9f213345a046?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 5
+    "places_count": 5,
+    "tagline": "Cultural destination in bihar"
   },
   {
     "id": "deoghar",
@@ -1437,7 +1499,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1605649487215-70e0de39701b?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 2
+    "places_count": 2,
+    "tagline": "Cultural destination in jharkhand"
   },
   {
     "id": "jamshedpur",
@@ -1455,7 +1518,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1587474260587-46980785110a?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in jharkhand"
   },
   {
     "id": "ranchi",
@@ -1473,7 +1537,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1627993077753-907656552e71?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 4
+    "places_count": 4,
+    "tagline": "Cultural destination in jharkhand"
   },
   {
     "id": "bhubaneswar",
@@ -1491,7 +1556,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1574672280605-9f513e0a1343?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 4
+    "places_count": 4,
+    "tagline": "Cultural destination in odisha"
   },
   {
     "id": "cuttack",
@@ -1509,7 +1575,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1581793745867-ee42dc2fc827?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in odisha"
   },
   {
     "id": "koraput",
@@ -1527,7 +1594,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1628009848534-105344850e61?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in odisha"
   },
   {
     "id": "mayurbhanj",
@@ -1545,7 +1613,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1602216056101-809511510499?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in odisha"
   },
   {
     "id": "puri",
@@ -1563,7 +1632,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1595815771619-022422060022?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 2
+    "places_count": 2,
+    "tagline": "Cultural destination in odisha"
   },
   {
     "id": "darjeeling",
@@ -1581,7 +1651,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1590050752124-905327128928?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in west-bengal"
   },
   {
     "id": "durgapur",
@@ -1599,7 +1670,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1600100397617-528312770651?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in west-bengal"
   },
   {
     "id": "howrah",
@@ -1617,7 +1689,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1544735716-069lk914667c?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in west-bengal"
   },
   {
     "id": "kalimpong",
@@ -1635,7 +1708,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1609137144821-f58790125602?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in west-bengal"
   },
   {
     "id": "kolkata",
@@ -1653,7 +1727,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1518709268812-bf6719106590?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 6
+    "places_count": 6,
+    "tagline": "Cultural destination in west-bengal"
   },
   {
     "id": "siliguri",
@@ -1671,7 +1746,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1506744038144-240516123121?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in west-bengal"
   },
   {
     "id": "bilaspur",
@@ -1689,7 +1765,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1518709268806-5f0153ba0f34?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 2
+    "places_count": 2,
+    "tagline": "Cultural destination in chhattisgarh"
   },
   {
     "id": "dantewada",
@@ -1707,7 +1784,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1506744038138-68495056d5cb?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in chhattisgarh"
   },
   {
     "id": "jagdalpur",
@@ -1725,7 +1803,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1558431384-490525364477?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in chhattisgarh"
   },
   {
     "id": "raipur",
@@ -1743,7 +1822,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1596701062353-ae4e36f3b0f3?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 4
+    "places_count": 4,
+    "tagline": "Cultural destination in chhattisgarh"
   },
   {
     "id": "rajnandgaon",
@@ -1761,7 +1841,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1582510003546-6f22d9f96442?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in chhattisgarh"
   },
   {
     "id": "anuppur",
@@ -1779,7 +1860,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1628172900411-113365772262?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in madhya-pradesh"
   },
   {
     "id": "bhopal",
@@ -1797,7 +1879,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1589308078063-f25859cde810?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 3
+    "places_count": 3,
+    "tagline": "Cultural destination in madhya-pradesh"
   },
   {
     "id": "chanderi",
@@ -1815,7 +1898,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1616423640782-6215f91663f1?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in madhya-pradesh"
   },
   {
     "id": "chitrakoot-mp",
@@ -1833,7 +1917,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1574672280604-8e402d9f0232?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in madhya-pradesh"
   },
   {
     "id": "datia",
@@ -1851,7 +1936,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1581793745866-dd31cb1eb716?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in madhya-pradesh"
   },
   {
     "id": "gwalior",
@@ -1869,7 +1955,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1628009848533-09423374fd50?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in madhya-pradesh"
   },
   {
     "id": "indore",
@@ -1887,7 +1974,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1602216056100-7f840040f388?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in madhya-pradesh"
   },
   {
     "id": "jabalpur",
@@ -1905,7 +1993,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1595815771618-f1131095c111?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in madhya-pradesh"
   },
   {
     "id": "khajuraho",
@@ -1923,7 +2012,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1514222134-f911ff20c217?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in madhya-pradesh"
   },
   {
     "id": "mandsaur",
@@ -1941,7 +2031,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1605335198087-191c5f44028e?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in madhya-pradesh"
   },
   {
     "id": "morena",
@@ -1959,7 +2050,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1606298855676-70324456b16c?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in madhya-pradesh"
   },
   {
     "id": "orchha",
@@ -1977,7 +2069,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1609946850724-a18767663f80?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in madhya-pradesh"
   },
   {
     "id": "pachmarhi",
@@ -1995,7 +2088,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1598890777036-fe157fe17837?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in madhya-pradesh"
   },
   {
     "id": "sanchi",
@@ -2013,7 +2107,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1627894483220-6572ej036276?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in madhya-pradesh"
   },
   {
     "id": "ujjain",
@@ -2031,7 +2126,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1507525428039-018767663f83?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in madhya-pradesh"
   },
   {
     "id": "daman",
@@ -2049,7 +2145,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1570168007212-57d306041d60?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in dadra-and-nagar-haveli-and-daman-and-diu"
   },
   {
     "id": "diu",
@@ -2067,7 +2164,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1609766857049-652806208462?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in dadra-and-nagar-haveli-and-daman-and-diu"
   },
   {
     "id": "silvassa",
@@ -2085,7 +2183,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1626014303765-4c5401713653?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in dadra-and-nagar-haveli-and-daman-and-diu"
   },
   {
     "id": "goa",
@@ -2103,7 +2202,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1628155930544-5e9c86a4e055?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 11
+    "places_count": 11,
+    "tagline": "Cultural destination in goa"
   },
   {
     "id": "ahmedabad",
@@ -2121,7 +2221,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1570168007206-f1d740a8b70a?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in gujarat"
   },
   {
     "id": "balasinor",
@@ -2139,7 +2240,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1609766857043-0f6240ca280c?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in gujarat"
   },
   {
     "id": "bhavnagar",
@@ -2157,7 +2259,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1626014303759-86884b1b7097?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in gujarat"
   },
   {
     "id": "bhuj",
@@ -2175,7 +2278,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1512343879786-cb82d0620914?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in gujarat"
   },
   {
     "id": "champaner",
@@ -2193,7 +2297,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1605649487214-69dfcd286f0a?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in gujarat"
   },
   {
     "id": "dwarka",
@@ -2211,7 +2316,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1587474260586-3587967400f9?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in gujarat"
   },
   {
     "id": "gandhinagar",
@@ -2229,7 +2335,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1627993077752-8f6545441d60?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in gujarat"
   },
   {
     "id": "gir-somnath",
@@ -2247,7 +2354,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1596405835957-689fdd322604?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in gujarat"
   },
   {
     "id": "jamnagar",
@@ -2265,7 +2373,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1628172900409-9f1143550040?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in gujarat"
   },
   {
     "id": "junagadh",
@@ -2283,7 +2392,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1589308078061-d03637abc6e5?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in gujarat"
   },
   {
     "id": "kutch",
@@ -2301,7 +2411,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1616423640780-40f3d75441df?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in gujarat"
   },
   {
     "id": "patan",
@@ -2319,7 +2430,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1574672280602-6c2e0b7d8010?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 2
+    "places_count": 2,
+    "tagline": "Cultural destination in gujarat"
   },
   {
     "id": "porbandar",
@@ -2337,7 +2449,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1581793745864-bb1fa94c95f4?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in gujarat"
   },
   {
     "id": "rajkot",
@@ -2355,7 +2468,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1628009848531-87201152db3e?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in gujarat"
   },
   {
     "id": "surat",
@@ -2373,7 +2487,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1602216056098-5d62ee2eb166?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in gujarat"
   },
   {
     "id": "vadnagar",
@@ -2391,7 +2506,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1595815771616-cff1f874c87f?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in gujarat"
   },
   {
     "id": "vadodara",
@@ -2409,7 +2525,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1514222134-d79edd0ea295?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in gujarat"
   },
   {
     "id": "valsad",
@@ -2427,7 +2544,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1605335198085-f7fa7424096c?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in gujarat"
   },
   {
     "id": "amravati",
@@ -2445,7 +2563,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1590050752121-6720f4ef56f5?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in maharashtra"
   },
   {
     "id": "chhatrapati-sambhaji-nagar",
@@ -2463,7 +2582,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1600100397614-2f508944732e?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 3
+    "places_count": 3,
+    "tagline": "Cultural destination in maharashtra"
   },
   {
     "id": "igatpuri",
@@ -2481,7 +2601,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1544735716-736ih681334f?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in maharashtra"
   },
   {
     "id": "jalgaon",
@@ -2499,7 +2620,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1609137144818-c25467892379?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in maharashtra"
   },
   {
     "id": "kolhapur",
@@ -2517,7 +2639,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1518709268809-8c3486ed3267?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in maharashtra"
   },
   {
     "id": "mahabaleshwar",
@@ -2535,7 +2658,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1506744038141-9172838908fe?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in maharashtra"
   },
   {
     "id": "mumbai",
@@ -2553,7 +2677,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1558431387-723858697700?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 14
+    "places_count": 14,
+    "tagline": "Cultural destination in maharashtra"
   },
   {
     "id": "nagpur",
@@ -2571,7 +2696,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1596701062356-dh7g6926e326?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in maharashtra"
   },
   {
     "id": "nashik",
@@ -2589,7 +2715,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1582510003549-9255022c9775?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in maharashtra"
   },
   {
     "id": "pune",
@@ -2607,7 +2734,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1628155930547-8bc219d71388?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 14
+    "places_count": 14,
+    "tagline": "Cultural destination in maharashtra"
   },
   {
     "id": "satara",
@@ -2625,7 +2753,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1570168007209-24a073d1ea3d?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in maharashtra"
   },
   {
     "id": "amaravati",
@@ -2643,7 +2772,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b2?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 2
+    "places_count": 2,
+    "tagline": "Cultural destination in andhra-pradesh"
   },
   {
     "id": "anantapur",
@@ -2661,7 +2791,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1600100397610-8b1c4e12d59a?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 2
+    "places_count": 2,
+    "tagline": "Cultural destination in andhra-pradesh"
   },
   {
     "id": "chittoor",
@@ -2679,7 +2810,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffb?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in andhra-pradesh"
   },
   {
     "id": "guntur",
@@ -2697,7 +2829,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1609137144814-8e1022349f35?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in andhra-pradesh"
   },
   {
     "id": "kakinada",
@@ -2715,7 +2848,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1507525428035-c834df972e4f?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in andhra-pradesh"
   },
   {
     "id": "kurnool",
@@ -2733,7 +2867,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in andhra-pradesh"
   },
   {
     "id": "machilipatnam",
@@ -2751,7 +2886,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1506744038137-57384945c4ba?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in andhra-pradesh"
   },
   {
     "id": "nellore",
@@ -2769,7 +2905,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1558431383-38f414253366?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in andhra-pradesh"
   },
   {
     "id": "rajahmundry",
@@ -2787,7 +2924,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1596701062352-9d3d25e2aee2?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in andhra-pradesh"
   },
   {
     "id": "srikakulam",
@@ -2805,7 +2943,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1582510003545-5e11c8e85331?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in andhra-pradesh"
   },
   {
     "id": "tirupati",
@@ -2823,7 +2962,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1628155930543-4d8b75f3d944?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in andhra-pradesh"
   },
   {
     "id": "visakhapatnam",
@@ -2841,7 +2981,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1570168007205-e0c639f7a69f?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in andhra-pradesh"
   },
   {
     "id": "vizianagaram",
@@ -2859,7 +3000,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1609766857042-fe513fb9179b?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in andhra-pradesh"
   },
   {
     "id": "badami",
@@ -2877,7 +3019,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1596405835958-7901e0094b87?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in karnataka"
   },
   {
     "id": "bagalkote",
@@ -2895,7 +3038,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1628172900410-002254661151?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in karnataka"
   },
   {
     "id": "belagavi",
@@ -2913,7 +3057,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1589308078062-e14748bcd70f?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in karnataka"
   },
   {
     "id": "bengaluru",
@@ -2931,7 +3076,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1616423640781-5104e80552e0?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 6
+    "places_count": 6,
+    "tagline": "Cultural destination in karnataka"
   },
   {
     "id": "bidar",
@@ -2949,7 +3095,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1574672280603-7d3f1c8e9121?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in karnataka"
   },
   {
     "id": "dharwad",
@@ -2967,7 +3114,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1581793745865-cc20ba0da605?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in karnataka"
   },
   {
     "id": "gokarna",
@@ -2985,7 +3133,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1628009848532-98312263ec4f?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in karnataka"
   },
   {
     "id": "hampi",
@@ -3003,7 +3152,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1602216056099-6e73ff3fc277?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in karnataka"
   },
   {
     "id": "kalaburagi",
@@ -3021,7 +3171,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1595815771617-e0020984b000?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in karnataka"
   },
   {
     "id": "lakkundi",
@@ -3039,13 +3190,14 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1514222134-e80fee1fb106?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in karnataka"
   },
   {
-    "id": "mangalore",
+    "id": "mangaluru",
     "state_id": "karnataka",
-    "name": "Mangalore",
-    "slug": "mangalore",
+    "name": "Mangaluru",
+    "slug": "mangaluru",
     "entity_type": "city",
     "district": "Dakshina Kannada",
     "latitude": 12.9141,
@@ -3057,7 +3209,13 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1605335198086-080b4e33917d?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "canonical_name": "Mangaluru",
+    "aliases": [
+      "Mangalore",
+      "mangalore"
+    ],
+    "tagline": "Cultural destination in karnataka"
   },
   {
     "id": "mysuru",
@@ -3075,7 +3233,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1606298855675-69213345a05b?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in karnataka"
   },
   {
     "id": "somnathpura",
@@ -3093,7 +3252,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1609946850723-907656552e79?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in karnataka"
   },
   {
     "id": "udupi",
@@ -3111,7 +3271,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1598890777035-ed046ed06726?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in karnataka"
   },
   {
     "id": "vijayapura",
@@ -3129,7 +3290,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1627894483219-5461di925165?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in karnataka"
   },
   {
     "id": "alappuzha",
@@ -3147,7 +3309,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1507525428038-fb1604a39072?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 2
+    "places_count": 2,
+    "tagline": "Cultural destination in kerala"
   },
   {
     "id": "bekal",
@@ -3165,7 +3328,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1590050752120-561fe3de45e4?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in kerala"
   },
   {
     "id": "kannur",
@@ -3183,13 +3347,14 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1600100397613-1e4f7833621d?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in kerala"
   },
   {
-    "id": "kasargod",
+    "id": "kasaragod",
     "state_id": "kerala",
-    "name": "Kasargod",
-    "slug": "kasargod",
+    "name": "Kasaragod",
+    "slug": "kasaragod",
     "entity_type": "city",
     "district": "Kasaragod",
     "latitude": 12.5102,
@@ -3201,7 +3366,13 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1544735716-625hg570223e?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "canonical_name": "Kasaragod",
+    "aliases": [
+      "Kasargod",
+      "kasargod"
+    ],
+    "tagline": "Cultural destination in kerala"
   },
   {
     "id": "kochi",
@@ -3219,7 +3390,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1609137144817-b14356781268?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 2
+    "places_count": 2,
+    "tagline": "Cultural destination in kerala"
   },
   {
     "id": "kollam",
@@ -3237,7 +3409,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1518709268808-7b2375dc2156?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in kerala"
   },
   {
     "id": "kottayam",
@@ -3255,7 +3428,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1506744038140-80617278f7ed?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in kerala"
   },
   {
     "id": "kovalam",
@@ -3273,7 +3447,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1558431386-612747586699?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in kerala"
   },
   {
     "id": "kozhikode",
@@ -3291,7 +3466,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1596701062355-cg6f5815d215?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in kerala"
   },
   {
     "id": "kumarakom",
@@ -3309,7 +3485,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1582510003548-8144f11b8664?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in kerala"
   },
   {
     "id": "malappuram",
@@ -3327,7 +3504,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1628155930546-7ab108c60277?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in kerala"
   },
   {
     "id": "munnar",
@@ -3345,7 +3523,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1570168007208-13f962c0d92c?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in kerala"
   },
   {
     "id": "palakkad",
@@ -3363,7 +3542,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1609766857045-218462ec402e?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in kerala"
   },
   {
     "id": "pathanamthitta",
@@ -3381,13 +3561,14 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1626014303761-08106d3d9219?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in kerala"
   },
   {
-    "id": "sabrimala",
+    "id": "sabarimala",
     "state_id": "kerala",
-    "name": "Sabrimala",
-    "slug": "sabrimala",
+    "name": "Sabarimala",
+    "slug": "sabarimala",
     "entity_type": "city",
     "district": "Pathanamthitta",
     "latitude": 9.4402,
@@ -3399,7 +3580,13 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1512343879788-ed04f2842136?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "canonical_name": "Sabarimala",
+    "aliases": [
+      "Sabrimala",
+      "sabrimala"
+    ],
+    "tagline": "Cultural destination in kerala"
   },
   {
     "id": "thiruvananthapuram",
@@ -3417,7 +3604,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1605649487216-81f1ef40812c?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in kerala"
   },
   {
     "id": "thrissur",
@@ -3435,7 +3623,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1587474260588-57091896221b?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in kerala"
   },
   {
     "id": "varkala",
@@ -3453,7 +3642,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1627993077754-018767663f82?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in kerala"
   },
   {
     "id": "wayanad",
@@ -3471,7 +3661,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1596405835959-8012f1105c98?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in kerala"
   },
   {
     "id": "kavaratti",
@@ -3489,7 +3680,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Kavaratti_Island%2C_Lakshadweep.jpg/1280px-Kavaratti_Island%2C_Lakshadweep.jpg",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in lakshadweep"
   },
   {
     "id": "puducherry",
@@ -3507,7 +3699,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1581793745870-11750f51f150?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in puducherry"
   },
   {
     "id": "chennai",
@@ -3525,7 +3718,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1628009848535-216455961f72?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 5
+    "places_count": 5,
+    "tagline": "Cultural destination in tamil-nadu"
   },
   {
     "id": "coimbatore",
@@ -3543,7 +3737,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1602216056102-910622621500?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in tamil-nadu"
   },
   {
     "id": "kanchipuram",
@@ -3561,7 +3756,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1595815771620-133533171133?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in tamil-nadu"
   },
   {
     "id": "kanniyakumari",
@@ -3579,7 +3775,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1514222134-1b3300421439?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in tamil-nadu"
   },
   {
     "id": "madurai",
@@ -3597,7 +3794,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1605335198089-313e72662400?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 2
+    "places_count": 2,
+    "tagline": "Cultural destination in tamil-nadu"
   },
   {
     "id": "mamallapuram",
@@ -3615,7 +3813,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1606298855678-92546678d38e?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in tamil-nadu"
   },
   {
     "id": "ooty",
@@ -3633,7 +3832,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1609946850726-c30989885102?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in tamil-nadu"
   },
   {
     "id": "rameswaram",
@@ -3651,7 +3851,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1598890777038-103791039059?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in tamil-nadu"
   },
   {
     "id": "thanjavur",
@@ -3669,7 +3870,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1627894483222-8794gl258498?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 2
+    "places_count": 2,
+    "tagline": "Cultural destination in tamil-nadu"
   },
   {
     "id": "tiruchirappalli",
@@ -3687,7 +3889,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1507525428041-230989885105?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in tamil-nadu"
   },
   {
     "id": "bhongir",
@@ -3705,7 +3908,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1590050752123-894216017817?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in telangana"
   },
   {
     "id": "hyderabad",
@@ -3723,7 +3927,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1600100397616-417201669540?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 7
+    "places_count": 7,
+    "tagline": "Cultural destination in telangana"
   },
   {
     "id": "karimnagar",
@@ -3741,7 +3946,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1544735716-958kj803556b?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in telangana"
   },
   {
     "id": "khammam",
@@ -3759,7 +3965,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1609137144820-e47689014591?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 0,
+    "tagline": "Cultural destination in telangana"
   },
   {
     "id": "warangal",
@@ -3777,7 +3984,8 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1518709268811-ae56080f5489?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 1,
+    "tagline": "Cultural destination in telangana"
   },
   {
     "id": "bomdila",
@@ -3785,14 +3993,14 @@
     "name": "Bomdila",
     "slug": "bomdila",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "West Kameng",
+    "latitude": 27.2645,
+    "longitude": 92.4235,
+    "lat": 27.2645,
+    "lng": 92.4235,
+    "tagline": "Cultural destination in arunachal-pradesh",
     "short_description": null,
-    "description": null,
+    "description": "Picturesque hill town with panoramic vistas of snow-capped Gorichen and Kangto peaks, Buddhist gompas, and apple orchards.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -3813,14 +4021,14 @@
     "name": "Changlang",
     "slug": "changlang",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Changlang",
+    "latitude": 27.1472,
+    "longitude": 95.7411,
+    "lat": 27.1472,
+    "lng": 95.7411,
+    "tagline": "Cultural destination in arunachal-pradesh",
     "short_description": null,
-    "description": null,
+    "description": "Eastern frontier district gateway to Namdapha National Park, historic World War II Stillwell Road, and Tangsa tribal culture.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -3841,14 +4049,14 @@
     "name": "Dirang",
     "slug": "dirang",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "West Kameng",
+    "latitude": 27.3564,
+    "longitude": 92.2356,
+    "lat": 27.3564,
+    "lng": 92.2356,
+    "tagline": "Cultural destination in arunachal-pradesh",
     "short_description": null,
-    "description": null,
+    "description": "Serene mountain valley featuring 500-year-old stone fortified Dirang Dzong, natural hot water springs, and kiwi orchards.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -3869,14 +4077,14 @@
     "name": "Itanagar",
     "slug": "itanagar",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Papum Pare",
+    "latitude": 27.0844,
+    "longitude": 93.6053,
+    "lat": 27.0844,
+    "lng": 93.6053,
+    "tagline": "Cultural destination in arunachal-pradesh",
     "short_description": null,
-    "description": null,
+    "description": "State capital guarded by the 14th-century irregular brick Ita Fort, serene Ganga Lake (Gyakar Sinyi), and Jawaharlal Nehru State Museum.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -3897,14 +4105,14 @@
     "name": "Mechuka",
     "slug": "mechuka",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Shi Yomi",
+    "latitude": 28.6019,
+    "longitude": 94.1311,
+    "lat": 28.6019,
+    "lng": 94.1311,
+    "tagline": "Cultural destination in arunachal-pradesh",
     "short_description": null,
-    "description": null,
+    "description": "Pristine high-altitude valley bordered by snow peaks, 400-year-old Samten Yongcha gompa, Yargyapchu river, and Memba tribal villages.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -3925,14 +4133,14 @@
     "name": "Namsai",
     "slug": "namsai",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Namsai",
+    "latitude": 27.6667,
+    "longitude": 95.8667,
+    "lat": 27.6667,
+    "lng": 95.8667,
+    "tagline": "Cultural destination in arunachal-pradesh",
     "short_description": null,
-    "description": null,
+    "description": "Spiritual haven famed for the glittering Burmese-style Golden Pagoda (Kongmu Kham) at Tengapani and Tai Khamti Buddhist festivals.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -3953,14 +4161,14 @@
     "name": "Pakke Kesang Hill Station",
     "slug": "pakke-kesang-hill-station",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Pakke-Kessang",
+    "latitude": 27.15,
+    "longitude": 93.1833,
+    "lat": 27.15,
+    "lng": 93.1833,
+    "tagline": "Cultural destination in arunachal-pradesh",
     "short_description": null,
-    "description": null,
+    "description": "Untouched emerald hill station known for cool mountain climate, panoramic Himalayan viewpoints, and proximity to Pakke Tiger Reserve.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -3981,14 +4189,14 @@
     "name": "Pasighat",
     "slug": "pasighat",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "East Siang",
+    "latitude": 28.0664,
+    "longitude": 95.3263,
+    "lat": 28.0664,
+    "lng": 95.3263,
+    "tagline": "Cultural destination in arunachal-pradesh",
     "short_description": null,
-    "description": null,
+    "description": "Historic British-era settlement nestled where the roaring Siang river meets the plains, gateway to whitewater rafting expeditions.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -4009,14 +4217,14 @@
     "name": "Roing",
     "slug": "roing",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Lower Dibang Valley",
+    "latitude": 28.1408,
+    "longitude": 95.8344,
+    "lat": 28.1408,
+    "lng": 95.8344,
+    "tagline": "Cultural destination in arunachal-pradesh",
     "short_description": null,
-    "description": null,
+    "description": "Fascinating valley holding ancient 8th-century burnt-brick fortress of Bhismaknagar, pristine Mehao high-altitude lake, and Idu Mishmi culture.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -4037,14 +4245,14 @@
     "name": "Yingkiong",
     "slug": "yingkiong",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Upper Siang",
+    "latitude": 28.6253,
+    "longitude": 94.9961,
+    "lat": 28.6253,
+    "lng": 94.9961,
+    "tagline": "Cultural destination in arunachal-pradesh",
     "short_description": null,
-    "description": null,
+    "description": "Picturesque hill town set amidst dramatic gorges of the Siang River, traditional bamboo-cane suspension bridges, and Adi tribal villages.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -4065,27 +4273,31 @@
     "name": "Ziro",
     "slug": "ziro",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Lower Subansiri",
+    "latitude": 27.6324,
+    "longitude": 93.834,
+    "lat": 27.6324,
+    "lng": 93.834,
+    "tagline": "Cultural destination in arunachal-pradesh",
     "short_description": null,
-    "description": null,
+    "description": "UNESCO-tentative valley renowned for unique sustainable paddy-cum-fish agro-systems, sacred Tarin groves, and annual outdoor Ziro Music Festival.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
     "is_capital": false,
-    "places_count": 0,
-    "hero_image_url": null,
+    "places_count": 2,
+    "hero_image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&q=80",
     "hero_image": null,
-    "aliases": [],
+    "aliases": [
+      "Ziro Valley",
+      "ziro-valley"
+    ],
     "search_keywords": [],
     "created_at": "2026-09-10T20:58:32.104Z",
     "updated_at": "2026-09-10T20:58:32.104Z",
     "verification_status": "VERIFICATION_REQUIRED",
-    "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification."
+    "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+    "canonical_name": "Ziro"
   },
   {
     "id": "bilaspur-hp",
@@ -4093,14 +4305,14 @@
     "name": "Bilaspur",
     "slug": "bilaspur-hp",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Bilaspur",
+    "latitude": 31.3325,
+    "longitude": 76.757,
+    "lat": 31.3325,
+    "lng": 76.757,
+    "tagline": "Cultural destination in himachal-pradesh",
     "short_description": null,
-    "description": null,
+    "description": "Picturesque valley city on the emerald Gobind Sagar reservoir formed by Bhakra Dam, water sports hub, and Vyas Cave.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -4121,14 +4333,14 @@
     "name": "Chamba",
     "slug": "chamba",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Chamba",
+    "latitude": 32.5534,
+    "longitude": 76.1258,
+    "lat": 32.5534,
+    "lng": 76.1258,
+    "tagline": "Cultural destination in himachal-pradesh",
     "short_description": null,
-    "description": null,
+    "description": "Ancient Ravi river kingdom famed for 10th-century stone Lakshmi Narayan temples, Chaugan green, Chamba Rumal embroidery, and Rang Mahal.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -4149,14 +4361,14 @@
     "name": "Dalhousie",
     "slug": "dalhousie",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Chamba",
+    "latitude": 32.5387,
+    "longitude": 75.971,
+    "lat": 32.5387,
+    "lng": 75.971,
+    "tagline": "Cultural destination in himachal-pradesh",
     "short_description": null,
-    "description": null,
+    "description": "Colonial hill retreat built across five pine-clad hills, featuring Victorian stone churches, Subhash Baoli, and Swiss meadow Khajjiar.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -4177,14 +4389,14 @@
     "name": "Kasauli",
     "slug": "kasauli",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Solan",
+    "latitude": 30.9013,
+    "longitude": 76.9649,
+    "lat": 30.9013,
+    "lng": 76.9649,
+    "tagline": "Cultural destination in himachal-pradesh",
     "short_description": null,
-    "description": null,
+    "description": "Peaceful British-era cantonment hill station framed by oak and cedar woods, Christ Church, Gilbert Nature Trail, and Monkey Point.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -4205,14 +4417,14 @@
     "name": "Keylong",
     "slug": "keylong",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Lahaul and Spiti",
+    "latitude": 32.571,
+    "longitude": 77.032,
+    "lat": 32.571,
+    "lng": 77.032,
+    "tagline": "Cultural destination in himachal-pradesh",
     "short_description": null,
-    "description": null,
+    "description": "Administrative center of Lahaul valley situated above the Bhaga river, home to Shashur and Kardang Buddhist monasteries.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -4233,14 +4445,14 @@
     "name": "Paonta Sahib",
     "slug": "paonta-sahib",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Sirmaur",
+    "latitude": 30.4397,
+    "longitude": 77.6247,
+    "lat": 30.4397,
+    "lng": 77.6247,
+    "tagline": "Cultural destination in himachal-pradesh",
     "short_description": null,
-    "description": null,
+    "description": "Sacred Yamuna riverbank town where Guru Gobind Singh penned the Dasam Granth, housing Gurdwara Paonta Sahib and historic museum.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -4261,14 +4473,14 @@
     "name": "Reckong Peo",
     "slug": "reckong-peo",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Kinnaur",
+    "latitude": 31.5404,
+    "longitude": 78.2778,
+    "lat": 31.5404,
+    "lng": 78.2778,
+    "tagline": "Cultural destination in himachal-pradesh",
     "short_description": null,
-    "description": null,
+    "description": "Headquarters of Kinnaur offering spellbinding views of the sacred Kinnaur Kailash peak, apple orchards, and Kalpa heritage village.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -4289,14 +4501,14 @@
     "name": "Fatehgarh Sahib",
     "slug": "fatehgarh-sahib",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Fatehgarh Sahib",
+    "latitude": 30.6483,
+    "longitude": 76.3986,
+    "lat": 30.6483,
+    "lng": 76.3986,
+    "tagline": "Cultural destination in punjab",
     "short_description": null,
-    "description": null,
+    "description": "Hallowed Sikh pilgrimage town marking the martyrdom site of Sahibzada Zorawar Singh and Fateh Singh, holding Gurdwara Fatehgarh Sahib.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -4317,14 +4529,14 @@
     "name": "Fazilka",
     "slug": "fazilka",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Fazilka",
+    "latitude": 30.4038,
+    "longitude": 74.0255,
+    "lat": 30.4038,
+    "lng": 74.0255,
+    "tagline": "Cultural destination in punjab",
     "short_description": null,
-    "description": null,
+    "description": "Border heritage town known as Bangla on the Sutlej, historic Asafwala War Memorial, Sadiqi border retreat ceremony, and Toshi footwear.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -4345,14 +4557,14 @@
     "name": "Firozepur",
     "slug": "firozepur",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Firozepur",
+    "latitude": 30.9237,
+    "longitude": 74.6118,
+    "lat": 30.9237,
+    "lng": 74.6118,
+    "tagline": "Cultural destination in punjab",
     "short_description": null,
-    "description": null,
+    "description": "Historic border fortress city along the Sutlej holding the National Martyrs Memorial at Hussainiwala (Bhagat Singh, Rajguru, Sukhdev) and Saragarhi memorial.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -4373,14 +4585,14 @@
     "name": "Gurdaspur",
     "slug": "gurdaspur",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Gurdaspur",
+    "latitude": 32.0419,
+    "longitude": 75.4053,
+    "lat": 32.0419,
+    "lng": 75.4053,
+    "tagline": "Cultural destination in punjab",
     "short_description": null,
-    "description": null,
+    "description": "Majha heritage district holding Dera Baba Nanak (gateway to Kartarpur Corridor), historic Takht-e-Akbari coronation platform of Akbar at Kalanaur.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -4401,14 +4613,14 @@
     "name": "Jalandhar",
     "slug": "jalandhar",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Jalandhar",
+    "latitude": 31.326,
+    "longitude": 75.5762,
+    "lat": 31.326,
+    "lng": 75.5762,
+    "tagline": "Cultural destination in punjab",
     "short_description": null,
-    "description": null,
+    "description": "Ancient Doaba city mentioned in Mahabharata, sports goods manufacturing capital of India, Devi Talab Mandir, and Wonderland theme park.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -4429,14 +4641,14 @@
     "name": "Kapurthala",
     "slug": "kapurthala",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Kapurthala",
+    "latitude": 31.38,
+    "longitude": 75.38,
+    "lat": 31.38,
+    "lng": 75.38,
+    "tagline": "Cultural destination in punjab",
     "short_description": null,
-    "description": null,
+    "description": "Paris of Punjab celebrated for Indo-French architecture in Jagatjit Palace (modeled on Versailles), Moorish Mosque, Elysee Palace, and Shalimar Gardens.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -4457,14 +4669,14 @@
     "name": "Ludhiana",
     "slug": "ludhiana",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Ludhiana",
+    "latitude": 30.901,
+    "longitude": 75.8573,
+    "lat": 30.901,
+    "lng": 75.8573,
+    "tagline": "Cultural destination in punjab",
     "short_description": null,
-    "description": null,
+    "description": "Manchester of India on the Sutlej river featuring Maharaja Ranjit Singh War Museum, historic Lodhi Fort, and Punjab Agricultural University.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -4485,14 +4697,14 @@
     "name": "Pathankot",
     "slug": "pathankot",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Pathankot",
+    "latitude": 32.2684,
+    "longitude": 75.6499,
+    "lat": 32.2684,
+    "lng": 75.6499,
+    "tagline": "Cultural destination in punjab",
     "short_description": null,
-    "description": null,
+    "description": "Strategic gateway city where Punjab, J&K and Himachal meet, home to 9th-century Shahpurkandi Fort on the Ravi, Nurpur Fort, and Mukteshwar temple caves.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -4513,14 +4725,14 @@
     "name": "Rupnagar",
     "slug": "rupnagar",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Rupnagar",
+    "latitude": 30.9664,
+    "longitude": 76.5331,
+    "lat": 30.9664,
+    "lng": 76.5331,
+    "tagline": "Cultural destination in punjab",
     "short_description": null,
-    "description": null,
+    "description": "Historic Ropar holding prominent Harappan Indus Valley Civilization archaeological excavated mound and museum, wetland sanctuary, and canals.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -4541,14 +4753,14 @@
     "name": "SAS Nagar",
     "slug": "sas-nagar",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "SAS Nagar",
+    "latitude": 30.7046,
+    "longitude": 76.7179,
+    "lat": 30.7046,
+    "lng": 76.7179,
+    "tagline": "Cultural destination in punjab",
     "short_description": null,
-    "description": null,
+    "description": "Mohali — modern commercial and sports metropolis holding Fateh Burj (tallest minar in India celebrating victory of Baba Banda Singh Bahadur) and PCA Stadium.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -4569,14 +4781,14 @@
     "name": "Ajmer",
     "slug": "ajmer",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Ajmer",
+    "latitude": 26.4499,
+    "longitude": 74.6399,
+    "lat": 26.4499,
+    "lng": 74.6399,
+    "tagline": "Cultural destination in rajasthan",
     "short_description": null,
-    "description": null,
+    "description": "Spiritual oasis in the Aravalli hills holding the world-renowned Sufi shrine Dargah Sharif of Khwaja Moinuddin Chishti, Adhai Din Ka Jhonpra, and Taragarh Fort.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -4597,14 +4809,14 @@
     "name": "Alwar",
     "slug": "alwar",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Alwar",
+    "latitude": 27.553,
+    "longitude": 76.6346,
+    "lat": 27.553,
+    "lng": 76.6346,
+    "tagline": "Cultural destination in rajasthan",
     "short_description": null,
-    "description": null,
+    "description": "Gateway city of Rajasthan crowned by Bala Quila fort, marble Moosi Maharani ki Chhatri, City Palace, and gateway to Sariska Tiger Reserve and Bhangarh.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -4625,14 +4837,14 @@
     "name": "Banswara",
     "slug": "banswara",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Banswara",
+    "latitude": 23.5461,
+    "longitude": 74.4422,
+    "lat": 23.5461,
+    "lng": 74.4422,
+    "tagline": "Cultural destination in rajasthan",
     "short_description": null,
-    "description": null,
+    "description": "City of Hundred Islands set amidst the Mahi river archipelago, green southern Aravalli hills, Anand Sagar Lake, and Arthuna medieval temple ruins.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -4653,14 +4865,14 @@
     "name": "Bharatpur",
     "slug": "bharatpur",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Bharatpur",
+    "latitude": 27.2152,
+    "longitude": 77.503,
+    "lat": 27.2152,
+    "lng": 77.503,
+    "tagline": "Cultural destination in rajasthan",
     "short_description": null,
-    "description": null,
+    "description": "Eastern gateway of Rajasthan famed for Keoladeo National Park (UNESCO bird paradise), Lohagarh Fort (iron fort that withstood British sieges), and Deeg Water Palaces.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -4681,14 +4893,14 @@
     "name": "Bikaner",
     "slug": "bikaner",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Bikaner",
+    "latitude": 28.0229,
+    "longitude": 73.3119,
+    "lat": 28.0229,
+    "lng": 73.3119,
+    "tagline": "Cultural destination in rajasthan",
     "short_description": null,
-    "description": null,
+    "description": "Desert citadel featuring the invincible red sandstone Junagarh Fort, Lalgarh Palace, Karni Mata rat temple at Deshnoke, and camel breeding center.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -4709,14 +4921,14 @@
     "name": "Bundi",
     "slug": "bundi",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Bundi",
+    "latitude": 25.4415,
+    "longitude": 75.6441,
+    "lat": 25.4415,
+    "lng": 75.6441,
+    "tagline": "Cultural destination in rajasthan",
     "short_description": null,
-    "description": null,
+    "description": "Untouched Rajput town celebrated for the dramatic cliff-hugging Taragarh Fort, frescoed Bundi murals in Chitrashala, and 50+ ornate stepwells like Raniji ki Baori.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -4737,14 +4949,14 @@
     "name": "Chittorgarh",
     "slug": "chittorgarh",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Chittorgarh",
+    "latitude": 24.8887,
+    "longitude": 74.6269,
+    "lat": 24.8887,
+    "lng": 74.6269,
+    "tagline": "Cultural destination in rajasthan",
     "short_description": null,
-    "description": null,
+    "description": "Symbol of Rajput chivalry, largest fort in India (UNESCO), holding Vijay Stambha (Tower of Victory), Kirti Stambha, and Queen Padmini's Palace.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -4765,14 +4977,14 @@
     "name": "Dausa",
     "slug": "dausa",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Dausa",
+    "latitude": 26.8928,
+    "longitude": 76.3375,
+    "lat": 26.8928,
+    "lng": 76.3375,
+    "tagline": "Cultural destination in rajasthan",
     "short_description": null,
-    "description": null,
+    "description": "Historic district home to the architectural wonder Chand Baori stepwell at Abhaneri (3,500 geometric steps), Harshat Mata temple, and Mehandipur Balaji.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -4793,14 +5005,14 @@
     "name": "Dholpur",
     "slug": "dholpur",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Dholpur",
+    "latitude": 26.7025,
+    "longitude": 77.8933,
+    "lat": 26.7025,
+    "lng": 77.8933,
+    "tagline": "Cultural destination in rajasthan",
     "short_description": null,
-    "description": null,
+    "description": "Red sandstone city on the Chambal river holding the historic Machkund sacred water tank, Shergarh Fort, royal chhatris, and National Chambal Sanctuary.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -4821,14 +5033,14 @@
     "name": "Jaisalmer",
     "slug": "jaisalmer",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Jaisalmer",
+    "latitude": 26.9157,
+    "longitude": 70.9083,
+    "lat": 26.9157,
+    "lng": 70.9083,
+    "tagline": "Cultural destination in rajasthan",
     "short_description": null,
-    "description": null,
+    "description": "The Golden City rising out of the Thar Desert, holding the living Sonar Qila (UNESCO Golden Fort), Patwon ki Haveli, Gadisar Lake, and Sam sand dunes.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -4849,14 +5061,14 @@
     "name": "Jodhpur",
     "slug": "jodhpur",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Jodhpur",
+    "latitude": 26.2389,
+    "longitude": 73.0243,
+    "lat": 26.2389,
+    "lng": 73.0243,
+    "tagline": "Cultural destination in rajasthan",
     "short_description": null,
-    "description": null,
+    "description": "The Blue City crowned by the colossal Mehrangarh Fort rising 400 feet above the city, Umaid Bhawan Art Deco palace, and marble Jaswant Thada memorial.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -4877,14 +5089,14 @@
     "name": "Kota",
     "slug": "kota",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Kota",
+    "latitude": 25.2138,
+    "longitude": 75.8648,
+    "lat": 25.2138,
+    "lng": 75.8648,
+    "tagline": "Cultural destination in rajasthan",
     "short_description": null,
-    "description": null,
+    "description": "Industrial and educational hub on the Chambal river, holding the Garh City Palace with Rajput miniature frescoes, Kishore Sagar Jagmandir, and Seven Wonders Park.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -4905,14 +5117,14 @@
     "name": "Mount Abu",
     "slug": "mount-abu",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Sirohi",
+    "latitude": 24.5926,
+    "longitude": 72.7156,
+    "lat": 24.5926,
+    "lng": 72.7156,
+    "tagline": "Cultural destination in rajasthan",
     "short_description": null,
-    "description": null,
+    "description": "Only hill station in Rajasthan at 4,000 ft in the Aravallis, home to the exquisite 11th-13th century Dilwara Jain marble temples, Nakki Lake, and Guru Shikhar peak.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -4933,14 +5145,14 @@
     "name": "Ayodhya",
     "slug": "ayodhya",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Ayodhya",
+    "latitude": 26.7922,
+    "longitude": 82.1998,
+    "lat": 26.7922,
+    "lng": 82.1998,
+    "tagline": "Cultural destination in uttar-pradesh",
     "short_description": null,
-    "description": null,
+    "description": "Sacred birthplace of Lord Rama on the holy Saryu river, holding the grand Ram Mandir, Hanuman Garhi fortress temple, and ancient Ram Ki Paidi ghats.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -4961,14 +5173,14 @@
     "name": "Bareilly",
     "slug": "bareilly",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Bareilly",
+    "latitude": 28.367,
+    "longitude": 79.4304,
+    "lat": 28.367,
+    "lng": 79.4304,
+    "tagline": "Cultural destination in uttar-pradesh",
     "short_description": null,
-    "description": null,
+    "description": "Historic Rohilkhand trade city celebrated for Zari-Zardozi embroidery, cane furniture, seven ancient Shiva Nath temples (Alakhnath, Trivatinath), and Jhumka.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -4989,14 +5201,14 @@
     "name": "Chitrakoot",
     "slug": "chitrakoot-up",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Chitrakoot",
+    "latitude": 25.2064,
+    "longitude": 80.8931,
+    "lat": 25.2064,
+    "lng": 80.8931,
+    "tagline": "Cultural destination in uttar-pradesh",
     "short_description": null,
-    "description": null,
+    "description": "Sacred pilgrim town straddling the Mandakini river, holding Bharat Milap shrine, Hanuman Dhara spring temple on a cliff, and Sphatik Shila rock footprints.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -5017,14 +5229,14 @@
     "name": "Jhansi",
     "slug": "jhansi",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Jhansi",
+    "latitude": 25.4484,
+    "longitude": 78.5685,
+    "lat": 25.4484,
+    "lng": 78.5685,
+    "tagline": "Cultural destination in uttar-pradesh",
     "short_description": null,
-    "description": null,
+    "description": "Gateway to Bundelkhand and seat of legendary 1857 warrior queen Rani Lakshmibai, holding the formidable granite Jhansi Fort and Government Museum.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -5045,14 +5257,14 @@
     "name": "Kanpur",
     "slug": "kanpur",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Kanpur Nagar",
+    "latitude": 26.4499,
+    "longitude": 80.3319,
+    "lat": 26.4499,
+    "lng": 80.3319,
+    "tagline": "Cultural destination in uttar-pradesh",
     "short_description": null,
-    "description": null,
+    "description": "Major industrial and historical city on the Ganges holding 5th-century Gupta brick temple at Bhitargaon, Bithoor sacred ghats of Maharishi Valmiki, and Allen Forest Zoo.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -5073,14 +5285,14 @@
     "name": "Lucknow",
     "slug": "lucknow",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Lucknow",
+    "latitude": 26.8467,
+    "longitude": 80.9462,
+    "lat": 26.8467,
+    "lng": 80.9462,
+    "tagline": "Cultural destination in uttar-pradesh",
     "short_description": null,
-    "description": null,
+    "description": "City of Nawabs famed for refined Tehzeeb culture, colossal gravity-defying arch of Bara Imambara (Bhulbhulaiya maze), Rumi Darwaza, and Chikankari embroidery.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -5101,14 +5313,14 @@
     "name": "Mathura",
     "slug": "mathura",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Mathura",
+    "latitude": 27.4924,
+    "longitude": 77.6737,
+    "lat": 27.4924,
+    "lng": 77.6737,
+    "tagline": "Cultural destination in uttar-pradesh",
     "short_description": null,
-    "description": null,
+    "description": "Sacred birthplace of Lord Krishna on the Yamuna river, holding Shri Krishna Janmasthan temple, Vishram Ghat aarti, and neighboring sacred Vrindavan.",
     "official_url": null,
     "status": "draft",
     "prominence": null,
@@ -5129,14 +5341,14 @@
     "name": "Prayagraj",
     "slug": "prayagraj",
     "entity_type": "city",
-    "district": null,
-    "latitude": null,
-    "longitude": null,
-    "lat": null,
-    "lng": null,
-    "tagline": null,
+    "district": "Prayagraj",
+    "latitude": 25.4358,
+    "longitude": 81.8463,
+    "lat": 25.4358,
+    "lng": 81.8463,
+    "tagline": "Cultural destination in uttar-pradesh",
     "short_description": null,
-    "description": null,
+    "description": "Triveni Sangam sacred confluence of Ganga, Yamuna, and mythical Saraswati, site of the Maha Kumbh Mela, Mughal Allahabad Fort, and Anand Bhavan.",
     "official_url": null,
     "status": "draft",
     "prominence": null,

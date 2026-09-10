@@ -121,8 +121,8 @@ export function initializeTransportRegistry(rootDir: string = process.cwd()) {
   }
 
   // 2. Ingest verified stations & airports from INDIA_TOURISM_DATABASE
-  for (const state of INDIA_TOURISM_DATABASE.states || []) {
-    for (const city of state.cities || []) {
+  for (const state of (INDIA_TOURISM_DATABASE.states as any[]) || []) {
+    for (const city of (state.cities as any[]) || []) {
       const cityLat = city.coordinates?.lat || 0;
       const cityLng = city.coordinates?.lng || 0;
 
@@ -771,12 +771,13 @@ export function resolveDestinationTransportNode(
         const cLat = city.coordinates?.lat || 20.0;
         const cLng = city.coordinates?.lng || 78.0;
 
-        const cityStn =
-          city.transport?.railway_stations?.[0] ||
+        const transport: any = city.transport;
+        const cityStn: any =
+          transport?.railway_stations?.[0] ||
           MASTER_VERIFIED_STATIONS.find((s) => s.city.toLowerCase() === city.name.toLowerCase());
 
-        const cityApt =
-          city.transport?.airport ||
+        const cityApt: any =
+          transport?.airport ||
           MASTER_VERIFIED_AIRPORTS.find((a) => a.city.toLowerCase() === city.name.toLowerCase());
 
         return {

@@ -62,8 +62,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [loadError, setLoadError] = useState<string | null>(null);
 
-  useEffect(() => {
-    let isMounted = true;
+  const loadHierarchy = () => {
     setIsLoading(true);
     setLoadError(null);
 
@@ -73,22 +72,18 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
         return res.json();
       })
       .then((data: IndiaHierarchyDatabase) => {
-        if (isMounted) {
-          setDb(data);
-          setIsLoading(false);
-        }
+        setDb(data);
+        setIsLoading(false);
       })
       .catch((err: Error) => {
-        if (isMounted) {
-          setLoadError(err.message);
-          setIsLoading(false);
-          console.error('Failed to load India hierarchy:', err);
-        }
+        setLoadError(err.message);
+        setIsLoading(false);
+        console.error('Failed to load India hierarchy:', err);
       });
+  };
 
-    return () => {
-      isMounted = false;
-    };
+  useEffect(() => {
+    loadHierarchy();
   }, []);
 
   // Navigation Hierarchy Level
@@ -287,20 +282,21 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
       let matchesSearch = true;
       if (searchQuery.trim() !== '') {
         const q = searchQuery.toLowerCase().trim();
-        const inStateName = state.name.toLowerCase().includes(q);
-        const inCapital = state.capital.toLowerCase().includes(q);
-        const inCities = state.cities.some(
+        const inStateName = state.name?.toLowerCase().includes(q);
+        const inCapital = state.capital?.toLowerCase().includes(q);
+        const inCities = state.cities?.some(
           (c) =>
-            c.name.toLowerCase().includes(q) ||
-            c.district.toLowerCase().includes(q) ||
-            c.tagline.toLowerCase().includes(q)
+            c.name?.toLowerCase().includes(q) ||
+            c.district?.toLowerCase().includes(q) ||
+            c.tagline?.toLowerCase().includes(q) ||
+            c.aliases?.some((a: string) => a.toLowerCase().includes(q))
         );
-        matchesSearch = inStateName || inCapital || inCities;
+        matchesSearch = Boolean(inStateName || inCapital || inCities);
       }
 
       return matchesRegion && matchesSearch;
     });
-  }, [selectedRegion, searchQuery, CANONICAL_UTS]);
+  }, [selectedRegion, searchQuery, CANONICAL_UTS, db]);
 
   // Partitioned into 28 States and 8 Union Territories
   const statesList = useMemo(() => {
@@ -336,22 +332,23 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
     }> = [];
 
     for (const state of db.states) {
-      if (state.name.toLowerCase().includes(q) || state.capital.toLowerCase().includes(q)) {
+      if (state.name?.toLowerCase().includes(q) || state.capital?.toLowerCase().includes(q)) {
         matchedStates.push({ id: state.id, name: state.name, region: state.region, region_type: state.region_type });
       }
 
-      for (const city of state.cities) {
+      for (const city of state.cities || []) {
         if (
-          city.name.toLowerCase().includes(q) ||
-          city.district.toLowerCase().includes(q) ||
-          city.tagline.toLowerCase().includes(q)
+          city.name?.toLowerCase().includes(q) ||
+          city.district?.toLowerCase().includes(q) ||
+          city.tagline?.toLowerCase().includes(q) ||
+          city.aliases?.some((a: string) => a.toLowerCase().includes(q))
         ) {
           matchedTowns.push({
             stateId: state.id,
             stateName: state.name,
             townId: city.id,
             townName: city.name,
-            district: city.district,
+            district: city.district || city.name,
           });
         }
 
@@ -366,8 +363,8 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
 
         for (const p of places) {
           if (
-            p.name.toLowerCase().includes(q) ||
-            p.summary.toLowerCase().includes(q) ||
+            p.name?.toLowerCase().includes(q) ||
+            (p.summary && p.summary.toLowerCase().includes(q)) ||
             (p.category_label && p.category_label.toLowerCase().includes(q))
           ) {
             matchedPlaces.push({
@@ -384,9 +381,9 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
     return {
       states: matchedStates.slice(0, 4),
       towns: matchedTowns.slice(0, 6),
-      places: matchedPlaces.slice(0, 6),
+      places: matchedPlaces.slice(0, 8),
     };
-  }, [searchQuery]);
+  }, [searchQuery, db]);
 
   // Navigation handlers
   const handleSelectState = (stateId: string) => {
@@ -638,7 +635,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                   <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#FF671F]">
                     <span>{currentCity.district} District</span>
                     <span>•</span>
-                    <span>{currentState.name}</span>
+                    <span>{currentState?.name || currentCity.state}</span>
                   </div>
                   <h1 className="font-serif text-2xl sm:text-4xl font-bold text-[#0B192C] tracking-tight mt-0.5">
                     {currentCity.name}
@@ -828,7 +825,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                   >
                     <span>28 States of Bharat</span>
                     <span className="px-1.5 py-0.2 rounded-full text-[10px] bg-orange-100 text-[#FF671F]">
-                      {statesList.length}
+                      {isLoading ? '...' : statesList.length}
                     </span>
                   </button>
 
@@ -842,7 +839,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                   >
                     <span>8 Union Territories</span>
                     <span className="px-1.5 py-0.2 rounded-full text-[10px] bg-stone-200 text-stone-700">
-                      {utsList.length}
+                      {isLoading ? '...' : utsList.length}
                     </span>
                   </button>
 
@@ -856,7 +853,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                   >
                     <span>All 36 Entities</span>
                     <span className="px-1.5 py-0.2 rounded-full text-[10px] bg-stone-200 text-stone-700">
-                      {filteredStates.length}
+                      {isLoading ? '...' : filteredStates.length}
                     </span>
                   </button>
                 </div>
@@ -892,7 +889,29 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
         {/* =========================================================================
             LEVEL 1: ALL INDIA VIEW (28 STATES & 8 UTs SEPARATED SECTIONS)
         ========================================================================= */}
-        {activeLevel === 'india' && (
+        {isLoading ? (
+          <div className="py-24 flex flex-col items-center justify-center space-y-4 text-center">
+            <div className="w-14 h-14 rounded-2xl bg-orange-100 text-[#FF671F] flex items-center justify-center shadow-xs">
+              <Compass className="w-7 h-7 animate-spin" />
+            </div>
+            <div className="space-y-1">
+              <h3 className="text-sm font-bold text-[#0B192C]">Loading Discover Bharat Hierarchy...</h3>
+              <p className="text-xs text-[#7A6E65]">Connecting 36 States &amp; UTs, 257 canonical destinations and verified monuments</p>
+            </div>
+          </div>
+        ) : loadError ? (
+          <div className="my-12 p-8 rounded-3xl bg-red-50/80 border border-red-200 text-center space-y-3 max-w-md mx-auto shadow-xs">
+            <div className="w-10 h-10 rounded-full bg-red-100 text-red-600 flex items-center justify-center mx-auto font-bold">!</div>
+            <h3 className="text-sm font-bold text-red-900">Failed to load Discover Bharat</h3>
+            <p className="text-xs text-red-700">{loadError}</p>
+            <button
+              onClick={loadHierarchy}
+              className="px-5 py-2 rounded-xl bg-[#FF671F] hover:bg-[#E65100] text-white text-xs font-bold transition shadow-xs cursor-pointer"
+            >
+              Retry Connection
+            </button>
+          </div>
+        ) : activeLevel === 'india' && (
           <>
             {viewMode === 'map' ? (
               <ExploreIndiaMap

@@ -186,6 +186,9 @@ export interface CityHierarchyEntity {
   capital_status?: string;
   verification_status?: string;
   source_provenance?: string;
+  aliases?: string[] | readonly string[];
+  administrative_status?: string;
+  review_flag?: string;
   created_at?: string;
   updated_at?: string;
   heritage: AttractionEntity[];

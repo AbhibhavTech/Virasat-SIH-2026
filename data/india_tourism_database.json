@@ -3,7 +3,7 @@
   "version": "3.0.0",
   "states_count": 36,
   "cities_count": 257,
-  "attractions_count": 423,
+  "attractions_count": 388,
   "accuracy_disclaimer": "Fees, timings, hotel prices, train schedules, route durations and availability can change. UNVERIFIED means it must be checked from an official/current source before being shown to a user.",
   "states": [
     {
@@ -181,7 +181,7 @@
       "region": "Northern India",
       "hero_image_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 1,
-      "total_attractions": 4,
+      "total_attractions": 5,
       "heritage_overview": "India's historic national capital featuring iconic Mughal citadels, colonial boulevards, and three UNESCO World Heritage complexes.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Delhi.",
@@ -216,7 +216,7 @@
           "capital_status": "ut_capital",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 4,
+          "places_count": 5,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -572,7 +572,7 @@
       "region": "Northern India",
       "hero_image_url": "https://images.unsplash.com/photo-1596701062351-8c2c14d1fdd1?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 6,
-      "total_attractions": 6,
+      "total_attractions": 7,
       "heritage_overview": "Vedic heartland of the epic Mahabharata, ancient Harappan archaeological mounds at Rakhigarhi, and Pinjore Mughal gardens.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Haryana.",
@@ -1321,7 +1321,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -3868,14 +3868,14 @@
           "slug": "bilaspur-hp",
           "state_id": "himachal-pradesh",
           "entity_type": "city",
-          "district": null,
+          "district": "Bilaspur",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 31.3325,
+          "lng": 76.757,
+          "tagline": "Cultural destination in Himachal Pradesh",
           "short_description": null,
-          "description": null,
+          "description": "Picturesque valley city on the emerald Gobind Sagar reservoir formed by Bhakra Dam, water sports hub, and Vyas Cave.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -3892,7 +3892,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 31.3325,
+            "lng": 76.757
+          }
         },
         {
           "id": "chamba",
@@ -3900,14 +3926,14 @@
           "slug": "chamba",
           "state_id": "himachal-pradesh",
           "entity_type": "city",
-          "district": null,
+          "district": "Chamba",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 32.5534,
+          "lng": 76.1258,
+          "tagline": "Cultural destination in Himachal Pradesh",
           "short_description": null,
-          "description": null,
+          "description": "Ancient Ravi river kingdom famed for 10th-century stone Lakshmi Narayan temples, Chaugan green, Chamba Rumal embroidery, and Rang Mahal.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -3924,7 +3950,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 32.5534,
+            "lng": 76.1258
+          }
         },
         {
           "id": "dalhousie",
@@ -3932,14 +3984,14 @@
           "slug": "dalhousie",
           "state_id": "himachal-pradesh",
           "entity_type": "city",
-          "district": null,
+          "district": "Chamba",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 32.5387,
+          "lng": 75.971,
+          "tagline": "Cultural destination in Himachal Pradesh",
           "short_description": null,
-          "description": null,
+          "description": "Colonial hill retreat built across five pine-clad hills, featuring Victorian stone churches, Subhash Baoli, and Swiss meadow Khajjiar.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -3956,7 +4008,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 32.5387,
+            "lng": 75.971
+          }
         },
         {
           "id": "kasauli",
@@ -3964,14 +4042,14 @@
           "slug": "kasauli",
           "state_id": "himachal-pradesh",
           "entity_type": "city",
-          "district": null,
+          "district": "Solan",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 30.9013,
+          "lng": 76.9649,
+          "tagline": "Cultural destination in Himachal Pradesh",
           "short_description": null,
-          "description": null,
+          "description": "Peaceful British-era cantonment hill station framed by oak and cedar woods, Christ Church, Gilbert Nature Trail, and Monkey Point.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -3988,7 +4066,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 30.9013,
+            "lng": 76.9649
+          }
         },
         {
           "id": "keylong",
@@ -3996,14 +4100,14 @@
           "slug": "keylong",
           "state_id": "himachal-pradesh",
           "entity_type": "city",
-          "district": null,
+          "district": "Lahaul and Spiti",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 32.571,
+          "lng": 77.032,
+          "tagline": "Cultural destination in Himachal Pradesh",
           "short_description": null,
-          "description": null,
+          "description": "Administrative center of Lahaul valley situated above the Bhaga river, home to Shashur and Kardang Buddhist monasteries.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -4020,7 +4124,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 32.571,
+            "lng": 77.032
+          }
         },
         {
           "id": "paonta-sahib",
@@ -4028,14 +4158,14 @@
           "slug": "paonta-sahib",
           "state_id": "himachal-pradesh",
           "entity_type": "city",
-          "district": null,
+          "district": "Sirmaur",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 30.4397,
+          "lng": 77.6247,
+          "tagline": "Cultural destination in Himachal Pradesh",
           "short_description": null,
-          "description": null,
+          "description": "Sacred Yamuna riverbank town where Guru Gobind Singh penned the Dasam Granth, housing Gurdwara Paonta Sahib and historic museum.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -4052,7 +4182,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 30.4397,
+            "lng": 77.6247
+          }
         },
         {
           "id": "reckong-peo",
@@ -4060,14 +4216,14 @@
           "slug": "reckong-peo",
           "state_id": "himachal-pradesh",
           "entity_type": "city",
-          "district": null,
+          "district": "Kinnaur",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 31.5404,
+          "lng": 78.2778,
+          "tagline": "Cultural destination in Himachal Pradesh",
           "short_description": null,
-          "description": null,
+          "description": "Headquarters of Kinnaur offering spellbinding views of the sacred Kinnaur Kailash peak, apple orchards, and Kalpa heritage village.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -4084,7 +4240,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 31.5404,
+            "lng": 78.2778
+          }
         }
       ],
       "region_type": "state",
@@ -4116,7 +4298,7 @@
       "region": "Northern India",
       "hero_image_url": "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 6,
-      "total_attractions": 8,
+      "total_attractions": 13,
       "heritage_overview": "Paradise on Earth, celebrated for Dal Lake shikaras, Mughal gardens, Vaishno Devi shrine, and alpine meadows of Gulmarg.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Jammu and Kashmir.",
@@ -4151,7 +4333,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -4421,7 +4603,7 @@
           "capital_status": "winter_capital",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 1,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -4742,7 +4924,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -4876,7 +5058,7 @@
           "capital_status": "summer_capital",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 5,
+          "places_count": 7,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -5326,7 +5508,7 @@
       "region": "Northern India",
       "hero_image_url": "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 2,
-      "total_attractions": 6,
+      "total_attractions": 8,
       "heritage_overview": "High-altitude desert trans-Himalaya featuring Buddhist gompas, Pangong Tso azure waters, and high mountain passes.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Ladakh.",
@@ -5361,7 +5543,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -5496,7 +5678,7 @@
           "capital_status": "ut_capital",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 6,
+          "places_count": 7,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -6788,10 +6970,10 @@
           "hero_image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&q=80",
           "coordinates": {
             "lat": 31.2356,
-            "lng": 76.4989
+            "lng": 76.4994
           },
           "lat": 31.2356,
-          "lng": 76.4989,
+          "lng": 76.4994,
           "places": [
             {
               "id": "anandpur-virasat-e-khalsa",
@@ -7005,7 +7187,9 @@
             "best_season": "October to March",
             "weather_summary": "Pleasant and sunny",
             "status": "VERIFIED"
-          }
+          },
+          "administrative_status": "EXTRA_CANONICAL",
+          "review_flag": "PENDING_CLASSIFICATION"
         },
         {
           "id": "fatehgarh-sahib",
@@ -7013,14 +7197,14 @@
           "slug": "fatehgarh-sahib",
           "state_id": "punjab",
           "entity_type": "city",
-          "district": null,
+          "district": "Fatehgarh Sahib",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 30.6483,
+          "lng": 76.3986,
+          "tagline": "Cultural destination in Punjab",
           "short_description": null,
-          "description": null,
+          "description": "Hallowed Sikh pilgrimage town marking the martyrdom site of Sahibzada Zorawar Singh and Fateh Singh, holding Gurdwara Fatehgarh Sahib.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -7037,7 +7221,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 30.6483,
+            "lng": 76.3986
+          }
         },
         {
           "id": "fazilka",
@@ -7045,14 +7255,14 @@
           "slug": "fazilka",
           "state_id": "punjab",
           "entity_type": "city",
-          "district": null,
+          "district": "Fazilka",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 30.4038,
+          "lng": 74.0255,
+          "tagline": "Cultural destination in Punjab",
           "short_description": null,
-          "description": null,
+          "description": "Border heritage town known as Bangla on the Sutlej, historic Asafwala War Memorial, Sadiqi border retreat ceremony, and Toshi footwear.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -7069,7 +7279,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 30.4038,
+            "lng": 74.0255
+          }
         },
         {
           "id": "firozepur",
@@ -7077,14 +7313,14 @@
           "slug": "firozepur",
           "state_id": "punjab",
           "entity_type": "city",
-          "district": null,
+          "district": "Firozepur",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 30.9237,
+          "lng": 74.6118,
+          "tagline": "Cultural destination in Punjab",
           "short_description": null,
-          "description": null,
+          "description": "Historic border fortress city along the Sutlej holding the National Martyrs Memorial at Hussainiwala (Bhagat Singh, Rajguru, Sukhdev) and Saragarhi memorial.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -7101,7 +7337,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 30.9237,
+            "lng": 74.6118
+          }
         },
         {
           "id": "gurdaspur",
@@ -7109,14 +7371,14 @@
           "slug": "gurdaspur",
           "state_id": "punjab",
           "entity_type": "city",
-          "district": null,
+          "district": "Gurdaspur",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 32.0419,
+          "lng": 75.4053,
+          "tagline": "Cultural destination in Punjab",
           "short_description": null,
-          "description": null,
+          "description": "Majha heritage district holding Dera Baba Nanak (gateway to Kartarpur Corridor), historic Takht-e-Akbari coronation platform of Akbar at Kalanaur.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -7133,7 +7395,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 32.0419,
+            "lng": 75.4053
+          }
         },
         {
           "id": "jalandhar",
@@ -7141,14 +7429,14 @@
           "slug": "jalandhar",
           "state_id": "punjab",
           "entity_type": "city",
-          "district": null,
+          "district": "Jalandhar",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 31.326,
+          "lng": 75.5762,
+          "tagline": "Cultural destination in Punjab",
           "short_description": null,
-          "description": null,
+          "description": "Ancient Doaba city mentioned in Mahabharata, sports goods manufacturing capital of India, Devi Talab Mandir, and Wonderland theme park.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -7165,7 +7453,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 31.326,
+            "lng": 75.5762
+          }
         },
         {
           "id": "kapurthala",
@@ -7173,14 +7487,14 @@
           "slug": "kapurthala",
           "state_id": "punjab",
           "entity_type": "city",
-          "district": null,
+          "district": "Kapurthala",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 31.38,
+          "lng": 75.38,
+          "tagline": "Cultural destination in Punjab",
           "short_description": null,
-          "description": null,
+          "description": "Paris of Punjab celebrated for Indo-French architecture in Jagatjit Palace (modeled on Versailles), Moorish Mosque, Elysee Palace, and Shalimar Gardens.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -7197,7 +7511,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 31.38,
+            "lng": 75.38
+          }
         },
         {
           "id": "ludhiana",
@@ -7205,14 +7545,14 @@
           "slug": "ludhiana",
           "state_id": "punjab",
           "entity_type": "city",
-          "district": null,
+          "district": "Ludhiana",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 30.901,
+          "lng": 75.8573,
+          "tagline": "Cultural destination in Punjab",
           "short_description": null,
-          "description": null,
+          "description": "Manchester of India on the Sutlej river featuring Maharaja Ranjit Singh War Museum, historic Lodhi Fort, and Punjab Agricultural University.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -7229,7 +7569,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 30.901,
+            "lng": 75.8573
+          }
         },
         {
           "id": "pathankot",
@@ -7237,14 +7603,14 @@
           "slug": "pathankot",
           "state_id": "punjab",
           "entity_type": "city",
-          "district": null,
+          "district": "Pathankot",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 32.2684,
+          "lng": 75.6499,
+          "tagline": "Cultural destination in Punjab",
           "short_description": null,
-          "description": null,
+          "description": "Strategic gateway city where Punjab, J&K and Himachal meet, home to 9th-century Shahpurkandi Fort on the Ravi, Nurpur Fort, and Mukteshwar temple caves.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -7261,7 +7627,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 32.2684,
+            "lng": 75.6499
+          }
         },
         {
           "id": "rupnagar",
@@ -7269,14 +7661,14 @@
           "slug": "rupnagar",
           "state_id": "punjab",
           "entity_type": "city",
-          "district": null,
+          "district": "Rupnagar",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 30.9664,
+          "lng": 76.5331,
+          "tagline": "Cultural destination in Punjab",
           "short_description": null,
-          "description": null,
+          "description": "Historic Ropar holding prominent Harappan Indus Valley Civilization archaeological excavated mound and museum, wetland sanctuary, and canals.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -7293,7 +7685,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 30.9664,
+            "lng": 76.5331
+          }
         },
         {
           "id": "sas-nagar",
@@ -7301,14 +7719,14 @@
           "slug": "sas-nagar",
           "state_id": "punjab",
           "entity_type": "city",
-          "district": null,
+          "district": "SAS Nagar",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 30.7046,
+          "lng": 76.7179,
+          "tagline": "Cultural destination in Punjab",
           "short_description": null,
-          "description": null,
+          "description": "Mohali — modern commercial and sports metropolis holding Fateh Burj (tallest minar in India celebrating victory of Baba Banda Singh Bahadur) and PCA Stadium.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -7325,7 +7743,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 30.7046,
+            "lng": 76.7179
+          }
         }
       ],
       "region_type": "state",
@@ -7357,7 +7801,7 @@
       "region": "Western India",
       "hero_image_url": "https://images.unsplash.com/photo-1477587458883-47145ed94245?w=1200&q=80",
       "total_cities": 15,
-      "total_attractions": 4,
+      "total_attractions": 9,
       "heritage_overview": "Home to the Hill Forts of Rajasthan (UNESCO World Heritage Sites), Jantar Mantar (UNESCO), Keoladeo National Park (UNESCO), and the walled city of Jaipur (UNESCO).",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Rajasthan.",
@@ -7943,7 +8387,7 @@
             }
           ],
           "nature_parks_zoo": [],
-          "places_count": 3,
+          "places_count": 8,
           "transport": {
             "railway_stations": [],
             "local_transit": {
@@ -8208,14 +8652,14 @@
           "slug": "ajmer",
           "state_id": "rajasthan",
           "entity_type": "city",
-          "district": null,
+          "district": "Ajmer",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 26.4499,
+          "lng": 74.6399,
+          "tagline": "Cultural destination in Rajasthan",
           "short_description": null,
-          "description": null,
+          "description": "Spiritual oasis in the Aravalli hills holding the world-renowned Sufi shrine Dargah Sharif of Khwaja Moinuddin Chishti, Adhai Din Ka Jhonpra, and Taragarh Fort.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -8232,7 +8676,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 26.4499,
+            "lng": 74.6399
+          }
         },
         {
           "id": "alwar",
@@ -8240,14 +8710,14 @@
           "slug": "alwar",
           "state_id": "rajasthan",
           "entity_type": "city",
-          "district": null,
+          "district": "Alwar",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 27.553,
+          "lng": 76.6346,
+          "tagline": "Cultural destination in Rajasthan",
           "short_description": null,
-          "description": null,
+          "description": "Gateway city of Rajasthan crowned by Bala Quila fort, marble Moosi Maharani ki Chhatri, City Palace, and gateway to Sariska Tiger Reserve and Bhangarh.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -8264,7 +8734,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 27.553,
+            "lng": 76.6346
+          }
         },
         {
           "id": "banswara",
@@ -8272,14 +8768,14 @@
           "slug": "banswara",
           "state_id": "rajasthan",
           "entity_type": "city",
-          "district": null,
+          "district": "Banswara",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 23.5461,
+          "lng": 74.4422,
+          "tagline": "Cultural destination in Rajasthan",
           "short_description": null,
-          "description": null,
+          "description": "City of Hundred Islands set amidst the Mahi river archipelago, green southern Aravalli hills, Anand Sagar Lake, and Arthuna medieval temple ruins.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -8296,7 +8792,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 23.5461,
+            "lng": 74.4422
+          }
         },
         {
           "id": "bharatpur",
@@ -8304,14 +8826,14 @@
           "slug": "bharatpur",
           "state_id": "rajasthan",
           "entity_type": "city",
-          "district": null,
+          "district": "Bharatpur",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 27.2152,
+          "lng": 77.503,
+          "tagline": "Cultural destination in Rajasthan",
           "short_description": null,
-          "description": null,
+          "description": "Eastern gateway of Rajasthan famed for Keoladeo National Park (UNESCO bird paradise), Lohagarh Fort (iron fort that withstood British sieges), and Deeg Water Palaces.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -8328,7 +8850,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 27.2152,
+            "lng": 77.503
+          }
         },
         {
           "id": "bikaner",
@@ -8336,14 +8884,14 @@
           "slug": "bikaner",
           "state_id": "rajasthan",
           "entity_type": "city",
-          "district": null,
+          "district": "Bikaner",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 28.0229,
+          "lng": 73.3119,
+          "tagline": "Cultural destination in Rajasthan",
           "short_description": null,
-          "description": null,
+          "description": "Desert citadel featuring the invincible red sandstone Junagarh Fort, Lalgarh Palace, Karni Mata rat temple at Deshnoke, and camel breeding center.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -8360,7 +8908,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 28.0229,
+            "lng": 73.3119
+          }
         },
         {
           "id": "bundi",
@@ -8368,14 +8942,14 @@
           "slug": "bundi",
           "state_id": "rajasthan",
           "entity_type": "city",
-          "district": null,
+          "district": "Bundi",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 25.4415,
+          "lng": 75.6441,
+          "tagline": "Cultural destination in Rajasthan",
           "short_description": null,
-          "description": null,
+          "description": "Untouched Rajput town celebrated for the dramatic cliff-hugging Taragarh Fort, frescoed Bundi murals in Chitrashala, and 50+ ornate stepwells like Raniji ki Baori.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -8392,7 +8966,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 25.4415,
+            "lng": 75.6441
+          }
         },
         {
           "id": "chittorgarh",
@@ -8400,14 +9000,14 @@
           "slug": "chittorgarh",
           "state_id": "rajasthan",
           "entity_type": "city",
-          "district": null,
+          "district": "Chittorgarh",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 24.8887,
+          "lng": 74.6269,
+          "tagline": "Cultural destination in Rajasthan",
           "short_description": null,
-          "description": null,
+          "description": "Symbol of Rajput chivalry, largest fort in India (UNESCO), holding Vijay Stambha (Tower of Victory), Kirti Stambha, and Queen Padmini's Palace.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -8424,7 +9024,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 24.8887,
+            "lng": 74.6269
+          }
         },
         {
           "id": "dausa",
@@ -8432,14 +9058,14 @@
           "slug": "dausa",
           "state_id": "rajasthan",
           "entity_type": "city",
-          "district": null,
+          "district": "Dausa",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 26.8928,
+          "lng": 76.3375,
+          "tagline": "Cultural destination in Rajasthan",
           "short_description": null,
-          "description": null,
+          "description": "Historic district home to the architectural wonder Chand Baori stepwell at Abhaneri (3,500 geometric steps), Harshat Mata temple, and Mehandipur Balaji.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -8456,7 +9082,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 26.8928,
+            "lng": 76.3375
+          }
         },
         {
           "id": "dholpur",
@@ -8464,14 +9116,14 @@
           "slug": "dholpur",
           "state_id": "rajasthan",
           "entity_type": "city",
-          "district": null,
+          "district": "Dholpur",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 26.7025,
+          "lng": 77.8933,
+          "tagline": "Cultural destination in Rajasthan",
           "short_description": null,
-          "description": null,
+          "description": "Red sandstone city on the Chambal river holding the historic Machkund sacred water tank, Shergarh Fort, royal chhatris, and National Chambal Sanctuary.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -8488,7 +9140,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 26.7025,
+            "lng": 77.8933
+          }
         },
         {
           "id": "jaisalmer",
@@ -8496,14 +9174,14 @@
           "slug": "jaisalmer",
           "state_id": "rajasthan",
           "entity_type": "city",
-          "district": null,
+          "district": "Jaisalmer",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 26.9157,
+          "lng": 70.9083,
+          "tagline": "Cultural destination in Rajasthan",
           "short_description": null,
-          "description": null,
+          "description": "The Golden City rising out of the Thar Desert, holding the living Sonar Qila (UNESCO Golden Fort), Patwon ki Haveli, Gadisar Lake, and Sam sand dunes.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -8520,7 +9198,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 26.9157,
+            "lng": 70.9083
+          }
         },
         {
           "id": "jodhpur",
@@ -8528,14 +9232,14 @@
           "slug": "jodhpur",
           "state_id": "rajasthan",
           "entity_type": "city",
-          "district": null,
+          "district": "Jodhpur",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 26.2389,
+          "lng": 73.0243,
+          "tagline": "Cultural destination in Rajasthan",
           "short_description": null,
-          "description": null,
+          "description": "The Blue City crowned by the colossal Mehrangarh Fort rising 400 feet above the city, Umaid Bhawan Art Deco palace, and marble Jaswant Thada memorial.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -8552,7 +9256,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 26.2389,
+            "lng": 73.0243
+          }
         },
         {
           "id": "kota",
@@ -8560,14 +9290,14 @@
           "slug": "kota",
           "state_id": "rajasthan",
           "entity_type": "city",
-          "district": null,
+          "district": "Kota",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 25.2138,
+          "lng": 75.8648,
+          "tagline": "Cultural destination in Rajasthan",
           "short_description": null,
-          "description": null,
+          "description": "Industrial and educational hub on the Chambal river, holding the Garh City Palace with Rajput miniature frescoes, Kishore Sagar Jagmandir, and Seven Wonders Park.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -8584,7 +9314,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 25.2138,
+            "lng": 75.8648
+          }
         },
         {
           "id": "mount-abu",
@@ -8592,14 +9348,14 @@
           "slug": "mount-abu",
           "state_id": "rajasthan",
           "entity_type": "city",
-          "district": null,
+          "district": "Sirohi",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 24.5926,
+          "lng": 72.7156,
+          "tagline": "Cultural destination in Rajasthan",
           "short_description": null,
-          "description": null,
+          "description": "Only hill station in Rajasthan at 4,000 ft in the Aravallis, home to the exquisite 11th-13th century Dilwara Jain marble temples, Nakki Lake, and Guru Shikhar peak.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -8616,7 +9372,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 24.5926,
+            "lng": 72.7156
+          }
         }
       ],
       "region_type": "state",
@@ -8648,7 +9430,7 @@
       "region": "Northern India",
       "hero_image_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&q=80",
       "total_cities": 10,
-      "total_attractions": 4,
+      "total_attractions": 10,
       "heritage_overview": "Home to the Taj Mahal (UNESCO), Agra Fort (UNESCO), Fatehpur Sikri (UNESCO), Varanasi Ghats, and the Sarnath Buddhist pilgrimage circuit.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Uttar Pradesh.",
@@ -9146,7 +9928,7 @@
           ],
           "religious_cultural": [],
           "nature_parks_zoo": [],
-          "places_count": 2,
+          "places_count": 8,
           "transport": {
             "railway_stations": [],
             "local_transit": {
@@ -9580,14 +10362,14 @@
           "slug": "ayodhya",
           "state_id": "uttar-pradesh",
           "entity_type": "city",
-          "district": null,
+          "district": "Ayodhya",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 26.7922,
+          "lng": 82.1998,
+          "tagline": "Cultural destination in Uttar Pradesh",
           "short_description": null,
-          "description": null,
+          "description": "Sacred birthplace of Lord Rama on the holy Saryu river, holding the grand Ram Mandir, Hanuman Garhi fortress temple, and ancient Ram Ki Paidi ghats.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -9604,7 +10386,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 26.7922,
+            "lng": 82.1998
+          }
         },
         {
           "id": "bareilly",
@@ -9612,14 +10420,14 @@
           "slug": "bareilly",
           "state_id": "uttar-pradesh",
           "entity_type": "city",
-          "district": null,
+          "district": "Bareilly",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 28.367,
+          "lng": 79.4304,
+          "tagline": "Cultural destination in Uttar Pradesh",
           "short_description": null,
-          "description": null,
+          "description": "Historic Rohilkhand trade city celebrated for Zari-Zardozi embroidery, cane furniture, seven ancient Shiva Nath temples (Alakhnath, Trivatinath), and Jhumka.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -9636,7 +10444,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 28.367,
+            "lng": 79.4304
+          }
         },
         {
           "id": "chitrakoot-up",
@@ -9644,14 +10478,14 @@
           "slug": "chitrakoot-up",
           "state_id": "uttar-pradesh",
           "entity_type": "city",
-          "district": null,
+          "district": "Chitrakoot",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 25.2064,
+          "lng": 80.8931,
+          "tagline": "Cultural destination in Uttar Pradesh",
           "short_description": null,
-          "description": null,
+          "description": "Sacred pilgrim town straddling the Mandakini river, holding Bharat Milap shrine, Hanuman Dhara spring temple on a cliff, and Sphatik Shila rock footprints.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -9668,7 +10502,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 25.2064,
+            "lng": 80.8931
+          }
         },
         {
           "id": "jhansi",
@@ -9676,14 +10536,14 @@
           "slug": "jhansi",
           "state_id": "uttar-pradesh",
           "entity_type": "city",
-          "district": null,
+          "district": "Jhansi",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 25.4484,
+          "lng": 78.5685,
+          "tagline": "Cultural destination in Uttar Pradesh",
           "short_description": null,
-          "description": null,
+          "description": "Gateway to Bundelkhand and seat of legendary 1857 warrior queen Rani Lakshmibai, holding the formidable granite Jhansi Fort and Government Museum.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -9700,7 +10560,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 25.4484,
+            "lng": 78.5685
+          }
         },
         {
           "id": "kanpur",
@@ -9708,14 +10594,14 @@
           "slug": "kanpur",
           "state_id": "uttar-pradesh",
           "entity_type": "city",
-          "district": null,
+          "district": "Kanpur Nagar",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 26.4499,
+          "lng": 80.3319,
+          "tagline": "Cultural destination in Uttar Pradesh",
           "short_description": null,
-          "description": null,
+          "description": "Major industrial and historical city on the Ganges holding 5th-century Gupta brick temple at Bhitargaon, Bithoor sacred ghats of Maharishi Valmiki, and Allen Forest Zoo.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -9732,7 +10618,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 26.4499,
+            "lng": 80.3319
+          }
         },
         {
           "id": "lucknow",
@@ -9740,14 +10652,14 @@
           "slug": "lucknow",
           "state_id": "uttar-pradesh",
           "entity_type": "city",
-          "district": null,
+          "district": "Lucknow",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 26.8467,
+          "lng": 80.9462,
+          "tagline": "Cultural destination in Uttar Pradesh",
           "short_description": null,
-          "description": null,
+          "description": "City of Nawabs famed for refined Tehzeeb culture, colossal gravity-defying arch of Bara Imambara (Bhulbhulaiya maze), Rumi Darwaza, and Chikankari embroidery.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -9764,7 +10676,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 26.8467,
+            "lng": 80.9462
+          }
         },
         {
           "id": "mathura",
@@ -9772,14 +10710,14 @@
           "slug": "mathura",
           "state_id": "uttar-pradesh",
           "entity_type": "city",
-          "district": null,
+          "district": "Mathura",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 27.4924,
+          "lng": 77.6737,
+          "tagline": "Cultural destination in Uttar Pradesh",
           "short_description": null,
-          "description": null,
+          "description": "Sacred birthplace of Lord Krishna on the Yamuna river, holding Shri Krishna Janmasthan temple, Vishram Ghat aarti, and neighboring sacred Vrindavan.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -9796,7 +10734,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 27.4924,
+            "lng": 77.6737
+          }
         },
         {
           "id": "prayagraj",
@@ -9804,14 +10768,14 @@
           "slug": "prayagraj",
           "state_id": "uttar-pradesh",
           "entity_type": "city",
-          "district": null,
+          "district": "Prayagraj",
           "latitude": null,
           "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
+          "lat": 25.4358,
+          "lng": 81.8463,
+          "tagline": "Cultural destination in Uttar Pradesh",
           "short_description": null,
-          "description": null,
+          "description": "Triveni Sangam sacred confluence of Ganga, Yamuna, and mythical Saraswati, site of the Maha Kumbh Mela, Mughal Allahabad Fort, and Anand Bhavan.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -9828,7 +10792,33 @@
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": []
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 25.4358,
+            "lng": 81.8463
+          }
         }
       ],
       "region_type": "state",
@@ -9860,7 +10850,7 @@
       "region": "Northern India",
       "hero_image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 17,
-      "total_attractions": 7,
+      "total_attractions": 19,
       "heritage_overview": "Land of Gods (Devbhoomi), sacred Char Dham Himalayan pilgrimage, Yoga capital Rishikesh, and Nanda Devi UNESCO reserve.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Uttarakhand.",
@@ -9895,7 +10885,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -10163,7 +11153,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -10299,7 +11289,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -10435,7 +11425,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -10762,7 +11752,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -10898,7 +11888,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 1,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -11087,7 +12077,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -11357,7 +12347,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -11755,7 +12745,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -11889,7 +12879,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -12157,7 +13147,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -12290,7 +13280,7 @@
       "capital": "Itanagar",
       "region": "Northeastern India",
       "hero_image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&q=80",
-      "total_cities": 13,
+      "total_cities": 12,
       "total_attractions": 4,
       "heritage_overview": "Home to Tawang Monastery (India largest monastery), ancient Apatani cultural landscape in Ziro (UNESCO Tentative), and biodiversity hotspots in Namdapha and Pakke.",
       "active_stories": [
@@ -12713,209 +13703,613 @@
           }
         },
         {
-          "id": "ziro-valley",
-          "name": "Ziro Valley",
-          "slug": "ziro-valley",
-          "district": "Lower Subansiri",
-          "state": "Arunachal Pradesh",
+          "id": "bomdila",
+          "name": "Bomdila",
+          "slug": "bomdila",
           "state_id": "arunachal-pradesh",
-          "region": "Northeastern India",
-          "entity_type": "valley",
-          "city_type": "UNESCO Tentative Cultural Landscape & Pine Valley",
-          "tagline": "UNESCO Tentative Cultural Landscape of the Apatani People",
-          "short_description": "Picturesque valley renowned for sustainable Apatani wet-rice agriculture, pine hills, and the Ziro Festival of Music.",
-          "description": "Ziro Valley is an idyllic plateau situated at 1,572 meters in Lower Subansiri district. Inscribed on the UNESCO World Heritage Tentative List for the Apatani Cultural Landscape, it is famous for fish-cum-paddy cultivation, bamboo architecture, and unique tribal heritage.",
-          "official_url": "https://lowersubansiri.nic.in",
-          "status": "active",
-          "verification_status": "verified",
-          "hero_image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&q=80",
-          "coordinates": {
-            "lat": 27.5947,
-            "lng": 93.8385
+          "entity_type": "city",
+          "district": "West Kameng",
+          "latitude": null,
+          "longitude": null,
+          "lat": 27.2645,
+          "lng": 92.4235,
+          "tagline": "Cultural destination in Arunachal Pradesh",
+          "short_description": null,
+          "description": "Picturesque hill town with panoramic vistas of snow-capped Gorichen and Kangto peaks, Buddhist gompas, and apple orchards.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
           },
-          "lat": 27.5947,
-          "lng": 93.8385,
-          "places": [
-            {
-              "id": "ziro-apatani-landscape",
-              "name": "Apatani Cultural Landscape & Villages",
-              "slug": "apatani-cultural-landscape-ziro",
-              "place_type": "UNESCO Tentative Cultural Landscape & Agro-Forestry System",
-              "topic": "Rural",
-              "subtopic": "Tribal Tourism",
-              "category": "heritage",
-              "category_label": "UNESCO Tentative Tribal Heritage",
-              "category_links": [
-                {
-                  "topic": "Rural",
-                  "subtopic": "Tribal Tourism"
-                },
-                {
-                  "topic": "Heritage",
-                  "subtopic": "UNESCO World Heritage Sites"
-                },
-                {
-                  "topic": "Nature",
-                  "subtopic": "Sustainable Tourism"
-                }
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
               ],
-              "importance_level": "iconic",
-              "summary": "UNESCO Tentative cultural landscape renowned for harmonious Apatani agro-forestry and sustainable rice-fish farming.",
-              "short_description": "Centuries-old sustainable farming valley and distinctive traditional settlements of the Apatani community.",
-              "detailed_description": "The Apatani Cultural Landscape in Ziro Valley is on the UNESCO World Heritage Tentative List. Known for unique wet-rice cultivation integrated with fish farming without animal draft power, and social forestry maintaining blue pine and bamboo groves.",
-              "address": "Old Ziro, Lower Subansiri District, Arunachal Pradesh 791120",
-              "lat": 27.5583,
-              "lng": 93.8333,
-              "coordinates": {
-                "lat": 27.5583,
-                "lng": 93.8333
-              },
-              "visiting_hours": "Daylight hours (Sunrise to Sunset)",
-              "opening_hours": "06:00 - 18:00",
-              "entry_fee": "Free entry (Inner Line Permit required)",
-              "entry_fee_domestic": 0,
-              "entry_fee_intl": 0,
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "06:00",
-                "closing_time": "18:00",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 180,
-                "label": "3 Hours",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "March to October (Ziro Festival of Music in September)",
-              "contact_information": "District Administration Lower Subansiri: 03788-224255",
-              "official_website": "https://whc.unesco.org/en/tentativelists/5893/",
-              "heritage_status": "UNESCO World Heritage Tentative List (2014)",
-              "data_confidence": "official",
-              "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
-              "attribution": "UNESCO / Lower Subansiri District Administration",
-              "source_url": "https://whc.unesco.org/en/tentativelists/5893/",
-              "source_name": "UNESCO World Heritage Centre",
-              "source_type": "unesco",
-              "sources": [
-                {
-                  "source_name": "UNESCO World Heritage Centre",
-                  "source_url": "https://whc.unesco.org/en/tentativelists/5893/",
-                  "source_type": "unesco",
-                  "evidence_note": "Official UNESCO World Heritage Tentative List dossier for Apatani Cultural Landscape.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "District Administration Lower Subansiri",
-                  "source_url": "https://lowersubansiri.nic.in",
-                  "source_type": "district_administration",
-                  "evidence_note": "Official district administrative cultural records.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
-              ],
-              "source_quality": "place_specific",
-              "audit_note": "Verified live HTTP 200 on 2026-09-10. Title: \"Apatani Cultural Landscape - UNESCO World Heritage Centre\""
-            },
-            {
-              "id": "ziro-talley-valley",
-              "name": "Talley Valley Wildlife Sanctuary",
-              "slug": "talley-valley-wildlife-sanctuary",
-              "place_type": "Wildlife Sanctuary & Sub-Tropical Reserve",
-              "topic": "Wildlife",
-              "subtopic": "Wildlife Sanctuaries",
-              "category": "nature_parks_zoo",
-              "category_label": "Sub-Tropical Wildlife Sanctuary",
-              "category_links": [
-                {
-                  "topic": "Wildlife",
-                  "subtopic": "Wildlife Sanctuaries"
-                },
-                {
-                  "topic": "Nature",
-                  "subtopic": "Forests and Gardens"
-                },
-                {
-                  "topic": "Adventure",
-                  "subtopic": "Hiking and Trekking"
-                }
-              ],
-              "importance_level": "major",
-              "summary": "Protected wildlife sanctuary covering 337 sq km of sub-tropical and temperate forests, home to the clouded leopard.",
-              "short_description": "Dense virgin forest sanctuary protecting endangered flora, pleioblastus bamboo, and the rare clouded leopard.",
-              "detailed_description": "Spanning 337 square kilometers at elevations between 1,200 and 3,000 meters, Talley Valley is a bio-diversity hotspot. The sanctuary is drained by the Pange, Sipu, Kley, and Subansiri rivers, harboring dense bamboo groves, rhododendrons, clouded leopards, and over 130 butterfly species.",
-              "address": "Talley Valley, Lower Subansiri District, Arunachal Pradesh 791120",
-              "lat": 27.5333,
-              "lng": 93.9167,
-              "coordinates": {
-                "lat": 27.5333,
-                "lng": 93.9167
-              },
-              "visiting_hours": "08:00 AM - 04:00 PM (Entry permit required from Forest Dept)",
-              "opening_hours": "08:00 - 16:00",
-              "entry_fee": "INR 50 (Indian), INR 200 (Foreign)",
-              "entry_fee_domestic": 50,
-              "entry_fee_intl": 200,
-              "fees": {
-                "domestic": 50,
-                "international": 200,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "08:00",
-                "closing_time": "16:00",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 240,
-                "label": "Full Day Trek",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "October to April",
-              "contact_information": "Department of Environment and Forests, Arunachal Pradesh: 0360-2212372",
-              "official_website": "https://arunachalforests.gov.in",
-              "heritage_status": "State Protected Wildlife Sanctuary",
-              "data_confidence": "official",
-              "verification_status": "needs_review",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
-              "attribution": "Department of Environment and Forests, Arunachal Pradesh",
-              "source_url": "https://arunachalforests.gov.in",
-              "source_name": "Department of Environment and Forests, Arunachal Pradesh",
-              "source_type": "forest_department",
-              "sources": [
-                {
-                  "source_name": "Department of Environment and Forests, Arunachal Pradesh",
-                  "source_url": "https://arunachalforests.gov.in",
-                  "source_type": "forest_department",
-                  "evidence_note": "Official wildlife sanctuary notification and conservation records.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "District Administration Lower Subansiri",
-                  "source_url": "https://lowersubansiri.nic.in",
-                  "source_type": "district_administration",
-                  "evidence_note": "Official district tourism guide.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
-              ],
-              "source_quality": "generic_homepage"
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
             }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 27.2645,
+            "lng": 92.4235
+          }
+        },
+        {
+          "id": "changlang",
+          "name": "Changlang",
+          "slug": "changlang",
+          "state_id": "arunachal-pradesh",
+          "entity_type": "city",
+          "district": "Changlang",
+          "latitude": null,
+          "longitude": null,
+          "lat": 27.1472,
+          "lng": 95.7411,
+          "tagline": "Cultural destination in Arunachal Pradesh",
+          "short_description": null,
+          "description": "Eastern frontier district gateway to Namdapha National Park, historic World War II Stillwell Road, and Tangsa tribal culture.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 27.1472,
+            "lng": 95.7411
+          }
+        },
+        {
+          "id": "dirang",
+          "name": "Dirang",
+          "slug": "dirang",
+          "state_id": "arunachal-pradesh",
+          "entity_type": "city",
+          "district": "West Kameng",
+          "latitude": null,
+          "longitude": null,
+          "lat": 27.3564,
+          "lng": 92.2356,
+          "tagline": "Cultural destination in Arunachal Pradesh",
+          "short_description": null,
+          "description": "Serene mountain valley featuring 500-year-old stone fortified Dirang Dzong, natural hot water springs, and kiwi orchards.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 27.3564,
+            "lng": 92.2356
+          }
+        },
+        {
+          "id": "itanagar",
+          "name": "Itanagar",
+          "slug": "itanagar",
+          "state_id": "arunachal-pradesh",
+          "entity_type": "city",
+          "district": "Papum Pare",
+          "latitude": null,
+          "longitude": null,
+          "lat": 27.0844,
+          "lng": 93.6053,
+          "tagline": "Cultural destination in Arunachal Pradesh",
+          "short_description": null,
+          "description": "State capital guarded by the 14th-century irregular brick Ita Fort, serene Ganga Lake (Gyakar Sinyi), and Jawaharlal Nehru State Museum.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 27.0844,
+            "lng": 93.6053
+          }
+        },
+        {
+          "id": "mechuka",
+          "name": "Mechuka",
+          "slug": "mechuka",
+          "state_id": "arunachal-pradesh",
+          "entity_type": "city",
+          "district": "Shi Yomi",
+          "latitude": null,
+          "longitude": null,
+          "lat": 28.6019,
+          "lng": 94.1311,
+          "tagline": "Cultural destination in Arunachal Pradesh",
+          "short_description": null,
+          "description": "Pristine high-altitude valley bordered by snow peaks, 400-year-old Samten Yongcha gompa, Yargyapchu river, and Memba tribal villages.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 28.6019,
+            "lng": 94.1311
+          }
+        },
+        {
+          "id": "namsai",
+          "name": "Namsai",
+          "slug": "namsai",
+          "state_id": "arunachal-pradesh",
+          "entity_type": "city",
+          "district": "Namsai",
+          "latitude": null,
+          "longitude": null,
+          "lat": 27.6667,
+          "lng": 95.8667,
+          "tagline": "Cultural destination in Arunachal Pradesh",
+          "short_description": null,
+          "description": "Spiritual haven famed for the glittering Burmese-style Golden Pagoda (Kongmu Kham) at Tengapani and Tai Khamti Buddhist festivals.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 27.6667,
+            "lng": 95.8667
+          }
+        },
+        {
+          "id": "pakke-kesang-hill-station",
+          "name": "Pakke Kesang Hill Station",
+          "slug": "pakke-kesang-hill-station",
+          "state_id": "arunachal-pradesh",
+          "entity_type": "city",
+          "district": "Pakke-Kessang",
+          "latitude": null,
+          "longitude": null,
+          "lat": 27.15,
+          "lng": 93.1833,
+          "tagline": "Cultural destination in Arunachal Pradesh",
+          "short_description": null,
+          "description": "Untouched emerald hill station known for cool mountain climate, panoramic Himalayan viewpoints, and proximity to Pakke Tiger Reserve.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 27.15,
+            "lng": 93.1833
+          }
+        },
+        {
+          "id": "pasighat",
+          "name": "Pasighat",
+          "slug": "pasighat",
+          "state_id": "arunachal-pradesh",
+          "entity_type": "city",
+          "district": "East Siang",
+          "latitude": null,
+          "longitude": null,
+          "lat": 28.0664,
+          "lng": 95.3263,
+          "tagline": "Cultural destination in Arunachal Pradesh",
+          "short_description": null,
+          "description": "Historic British-era settlement nestled where the roaring Siang river meets the plains, gateway to whitewater rafting expeditions.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 28.0664,
+            "lng": 95.3263
+          }
+        },
+        {
+          "id": "roing",
+          "name": "Roing",
+          "slug": "roing",
+          "state_id": "arunachal-pradesh",
+          "entity_type": "city",
+          "district": "Lower Dibang Valley",
+          "latitude": null,
+          "longitude": null,
+          "lat": 28.1408,
+          "lng": 95.8344,
+          "tagline": "Cultural destination in Arunachal Pradesh",
+          "short_description": null,
+          "description": "Fascinating valley holding ancient 8th-century burnt-brick fortress of Bhismaknagar, pristine Mehao high-altitude lake, and Idu Mishmi culture.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 28.1408,
+            "lng": 95.8344
+          }
+        },
+        {
+          "id": "yingkiong",
+          "name": "Yingkiong",
+          "slug": "yingkiong",
+          "state_id": "arunachal-pradesh",
+          "entity_type": "city",
+          "district": "Upper Siang",
+          "latitude": null,
+          "longitude": null,
+          "lat": 28.6253,
+          "lng": 94.9961,
+          "tagline": "Cultural destination in Arunachal Pradesh",
+          "short_description": null,
+          "description": "Picturesque hill town set amidst dramatic gorges of the Siang River, traditional bamboo-cane suspension bridges, and Adi tribal villages.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 0,
+          "hero_image_url": null,
+          "hero_image": null,
+          "aliases": [],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaw",
+                "Taxi",
+                "Bus"
+              ],
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
+            }
+          },
+          "hotels": [],
+          "coordinates": {
+            "lat": 28.6253,
+            "lng": 94.9961
+          }
+        },
+        {
+          "id": "ziro",
+          "name": "Ziro",
+          "slug": "ziro",
+          "state_id": "arunachal-pradesh",
+          "entity_type": "city",
+          "district": "Lower Subansiri",
+          "latitude": null,
+          "longitude": null,
+          "lat": 27.6324,
+          "lng": 93.834,
+          "tagline": "Cultural destination in Arunachal Pradesh",
+          "short_description": null,
+          "description": "UNESCO-tentative valley renowned for unique sustainable paddy-cum-fish agro-systems, sacred Tarin groves, and annual outdoor Ziro Music Festival.",
+          "official_url": null,
+          "status": "DRAFT",
+          "prominence": null,
+          "is_capital": false,
+          "places_count": 2,
+          "hero_image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&q=80",
+          "hero_image": null,
+          "aliases": [
+            "Ziro Valley",
+            "ziro-valley"
           ],
+          "search_keywords": [],
+          "verification_status": "VERIFICATION_REQUIRED",
+          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
           "heritage": [
             {
               "id": "ziro-apatani-landscape",
@@ -13004,7 +14398,8 @@
                   "verification_status": "verified"
                 }
               ],
-              "source_quality": "place_specific"
+              "source_quality": "place_specific",
+              "city_id": "ziro"
             }
           ],
           "monuments": [],
@@ -13098,384 +14493,37 @@
                   "accessed_on": "2026-03-10",
                   "verification_status": "verified"
                 }
-              ]
+              ],
+              "city_id": "ziro"
             }
           ],
-          "places_count": 2,
+          "canonical_name": "Ziro",
+          "live_travel_info": {
+            "best_season": "October to March",
+            "weather_summary": "Pleasant seasonal climate",
+            "status": "UNVERIFIED"
+          },
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED"
+          },
           "transport": {
             "railway_stations": [],
             "local_transit": {
               "modes": [
+                "Auto-rickshaw",
                 "Taxi",
-                "Auto",
-                "Local Bus"
+                "Bus"
               ],
-              "fare_indication": "Moderate",
-              "status": "VERIFIED"
+              "fare_indication": "Standard regional fares",
+              "status": "UNVERIFIED"
             }
           },
           "hotels": [],
-          "fees_overview": {
-            "typical_budget_per_day": "INR 2,500 - 5,000",
-            "status": "VERIFIED"
-          },
-          "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant and sunny",
-            "status": "VERIFIED"
+          "coordinates": {
+            "lat": 27.6324,
+            "lng": 93.834
           }
-        },
-        {
-          "id": "bomdila",
-          "name": "Bomdila",
-          "slug": "bomdila",
-          "state_id": "arunachal-pradesh",
-          "entity_type": "city",
-          "district": null,
-          "latitude": null,
-          "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
-          "short_description": null,
-          "description": null,
-          "official_url": null,
-          "status": "DRAFT",
-          "prominence": null,
-          "is_capital": false,
-          "places_count": 0,
-          "hero_image_url": null,
-          "hero_image": null,
-          "aliases": [],
-          "search_keywords": [],
-          "verification_status": "VERIFICATION_REQUIRED",
-          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
-          "heritage": [],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": []
-        },
-        {
-          "id": "changlang",
-          "name": "Changlang",
-          "slug": "changlang",
-          "state_id": "arunachal-pradesh",
-          "entity_type": "city",
-          "district": null,
-          "latitude": null,
-          "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
-          "short_description": null,
-          "description": null,
-          "official_url": null,
-          "status": "DRAFT",
-          "prominence": null,
-          "is_capital": false,
-          "places_count": 0,
-          "hero_image_url": null,
-          "hero_image": null,
-          "aliases": [],
-          "search_keywords": [],
-          "verification_status": "VERIFICATION_REQUIRED",
-          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
-          "heritage": [],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": []
-        },
-        {
-          "id": "dirang",
-          "name": "Dirang",
-          "slug": "dirang",
-          "state_id": "arunachal-pradesh",
-          "entity_type": "city",
-          "district": null,
-          "latitude": null,
-          "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
-          "short_description": null,
-          "description": null,
-          "official_url": null,
-          "status": "DRAFT",
-          "prominence": null,
-          "is_capital": false,
-          "places_count": 0,
-          "hero_image_url": null,
-          "hero_image": null,
-          "aliases": [],
-          "search_keywords": [],
-          "verification_status": "VERIFICATION_REQUIRED",
-          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
-          "heritage": [],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": []
-        },
-        {
-          "id": "itanagar",
-          "name": "Itanagar",
-          "slug": "itanagar",
-          "state_id": "arunachal-pradesh",
-          "entity_type": "city",
-          "district": null,
-          "latitude": null,
-          "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
-          "short_description": null,
-          "description": null,
-          "official_url": null,
-          "status": "DRAFT",
-          "prominence": null,
-          "is_capital": false,
-          "places_count": 0,
-          "hero_image_url": null,
-          "hero_image": null,
-          "aliases": [],
-          "search_keywords": [],
-          "verification_status": "VERIFICATION_REQUIRED",
-          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
-          "heritage": [],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": []
-        },
-        {
-          "id": "mechuka",
-          "name": "Mechuka",
-          "slug": "mechuka",
-          "state_id": "arunachal-pradesh",
-          "entity_type": "city",
-          "district": null,
-          "latitude": null,
-          "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
-          "short_description": null,
-          "description": null,
-          "official_url": null,
-          "status": "DRAFT",
-          "prominence": null,
-          "is_capital": false,
-          "places_count": 0,
-          "hero_image_url": null,
-          "hero_image": null,
-          "aliases": [],
-          "search_keywords": [],
-          "verification_status": "VERIFICATION_REQUIRED",
-          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
-          "heritage": [],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": []
-        },
-        {
-          "id": "namsai",
-          "name": "Namsai",
-          "slug": "namsai",
-          "state_id": "arunachal-pradesh",
-          "entity_type": "city",
-          "district": null,
-          "latitude": null,
-          "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
-          "short_description": null,
-          "description": null,
-          "official_url": null,
-          "status": "DRAFT",
-          "prominence": null,
-          "is_capital": false,
-          "places_count": 0,
-          "hero_image_url": null,
-          "hero_image": null,
-          "aliases": [],
-          "search_keywords": [],
-          "verification_status": "VERIFICATION_REQUIRED",
-          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
-          "heritage": [],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": []
-        },
-        {
-          "id": "pakke-kesang-hill-station",
-          "name": "Pakke Kesang Hill Station",
-          "slug": "pakke-kesang-hill-station",
-          "state_id": "arunachal-pradesh",
-          "entity_type": "city",
-          "district": null,
-          "latitude": null,
-          "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
-          "short_description": null,
-          "description": null,
-          "official_url": null,
-          "status": "DRAFT",
-          "prominence": null,
-          "is_capital": false,
-          "places_count": 0,
-          "hero_image_url": null,
-          "hero_image": null,
-          "aliases": [],
-          "search_keywords": [],
-          "verification_status": "VERIFICATION_REQUIRED",
-          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
-          "heritage": [],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": []
-        },
-        {
-          "id": "pasighat",
-          "name": "Pasighat",
-          "slug": "pasighat",
-          "state_id": "arunachal-pradesh",
-          "entity_type": "city",
-          "district": null,
-          "latitude": null,
-          "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
-          "short_description": null,
-          "description": null,
-          "official_url": null,
-          "status": "DRAFT",
-          "prominence": null,
-          "is_capital": false,
-          "places_count": 0,
-          "hero_image_url": null,
-          "hero_image": null,
-          "aliases": [],
-          "search_keywords": [],
-          "verification_status": "VERIFICATION_REQUIRED",
-          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
-          "heritage": [],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": []
-        },
-        {
-          "id": "roing",
-          "name": "Roing",
-          "slug": "roing",
-          "state_id": "arunachal-pradesh",
-          "entity_type": "city",
-          "district": null,
-          "latitude": null,
-          "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
-          "short_description": null,
-          "description": null,
-          "official_url": null,
-          "status": "DRAFT",
-          "prominence": null,
-          "is_capital": false,
-          "places_count": 0,
-          "hero_image_url": null,
-          "hero_image": null,
-          "aliases": [],
-          "search_keywords": [],
-          "verification_status": "VERIFICATION_REQUIRED",
-          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
-          "heritage": [],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": []
-        },
-        {
-          "id": "yingkiong",
-          "name": "Yingkiong",
-          "slug": "yingkiong",
-          "state_id": "arunachal-pradesh",
-          "entity_type": "city",
-          "district": null,
-          "latitude": null,
-          "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
-          "short_description": null,
-          "description": null,
-          "official_url": null,
-          "status": "DRAFT",
-          "prominence": null,
-          "is_capital": false,
-          "places_count": 0,
-          "hero_image_url": null,
-          "hero_image": null,
-          "aliases": [],
-          "search_keywords": [],
-          "verification_status": "VERIFICATION_REQUIRED",
-          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
-          "heritage": [],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": []
-        },
-        {
-          "id": "ziro",
-          "name": "Ziro",
-          "slug": "ziro",
-          "state_id": "arunachal-pradesh",
-          "entity_type": "city",
-          "district": null,
-          "latitude": null,
-          "longitude": null,
-          "lat": null,
-          "lng": null,
-          "tagline": null,
-          "short_description": null,
-          "description": null,
-          "official_url": null,
-          "status": "DRAFT",
-          "prominence": null,
-          "is_capital": false,
-          "places_count": 0,
-          "hero_image_url": null,
-          "hero_image": null,
-          "aliases": [],
-          "search_keywords": [],
-          "verification_status": "VERIFICATION_REQUIRED",
-          "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
-          "heritage": [],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": []
         }
       ],
       "region_type": "state",
@@ -13507,7 +14555,7 @@
       "region": "Northeastern India",
       "hero_image_url": "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 9,
-      "total_attractions": 7,
+      "total_attractions": 10,
       "heritage_overview": "Brahmaputra valley home to Kaziranga one-horned rhinos, Majuli river island, Kamakhya temple, and lush tea gardens.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Assam.",
@@ -13731,7 +14779,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -14528,7 +15576,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -14662,7 +15710,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -15225,7 +16273,7 @@
       "region": "Northeastern India",
       "hero_image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 2,
-      "total_attractions": 7,
+      "total_attractions": 8,
       "heritage_overview": "Abode of Clouds, renowned for living root bridges, Cherrapunjee waterfalls, clean village Mawlynnong, and Khasi culture.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Meghalaya.",
@@ -15260,7 +16308,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -15847,7 +16895,7 @@
       "region": "Northeastern India",
       "hero_image_url": "https://images.unsplash.com/photo-1627993077750-6d4323229b48?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 4,
-      "total_attractions": 6,
+      "total_attractions": 7,
       "heritage_overview": "Land of Rolling Hills and bamboo forests, known for its ridge-top capital Aizawl, Cheraw bamboo dance, and pristine lakes.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Mizoram.",
@@ -16122,7 +17170,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 1,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -17159,7 +18207,7 @@
       "region": "Northeastern India",
       "hero_image_url": "https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 3,
-      "total_attractions": 7,
+      "total_attractions": 8,
       "heritage_overview": "Himalayan wonderland crowned by Mt. Khangchendzonga (UNESCO Mixed World Heritage), Buddhist monasteries, and alpine lakes.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Sikkim.",
@@ -17592,7 +18640,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -18373,7 +19421,7 @@
       "region": "Eastern India",
       "hero_image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 3,
-      "total_attractions": 0,
+      "total_attractions": 5,
       "heritage_overview": "Archipelago in the Bay of Bengal with historic Cellular Jail, pristine coral reefs, and limestone caves of Baratang.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Andaman and Nicobar Islands.",
@@ -18408,7 +19456,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -18542,7 +19590,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -18678,7 +19726,7 @@
           "capital_status": "ut_capital",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 3,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -18929,7 +19977,7 @@
       "region": "Eastern India",
       "hero_image_url": "https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 4,
-      "total_attractions": 10,
+      "total_attractions": 11,
       "heritage_overview": "Cradle of ancient empires (Maurya and Gupta), enlightenment grounds of Gautama Buddha, and birthplace of Guru Gobind Singh.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Bihar.",
@@ -18964,7 +20012,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -19872,7 +20920,7 @@
       "region": "Eastern India",
       "hero_image_url": "https://images.unsplash.com/photo-1628009848529-650f9f30b91c?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 3,
-      "total_attractions": 7,
+      "total_attractions": 8,
       "heritage_overview": "Land of Forests and waterfalls, sacred Baidyanath Jyotirlinga at Deoghar, Parasnath Jain pilgrimage, and tribal cultural heritage.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Jharkhand.",
@@ -20224,7 +21272,7 @@
           "capital_status": "state_capital",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 4,
+          "places_count": 5,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -20573,7 +21621,7 @@
       "region": "Eastern India",
       "hero_image_url": "https://images.unsplash.com/photo-1606298855672-3efb620b78ec?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 5,
-      "total_attractions": 7,
+      "total_attractions": 12,
       "heritage_overview": "Soul of Incredible India featuring Konark Sun Temple (UNESCO), Puri Jagannath shrine, Chilika lagoon, and Kalinga architecture.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Odisha.",
@@ -20608,7 +21656,7 @@
           "capital_status": "state_capital",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 4,
+          "places_count": 5,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -20956,7 +22004,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 1,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -21143,7 +22191,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -21279,7 +22327,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -21415,7 +22463,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 2,
+          "places_count": 3,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -21657,7 +22705,7 @@
       "region": "Eastern India",
       "hero_image_url": "https://images.unsplash.com/photo-1558431382-27e303142255?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 6,
-      "total_attractions": 7,
+      "total_attractions": 13,
       "heritage_overview": "Cultural capital of India featuring Victoria Memorial, UNESCO Sundarbans, Darjeeling Himalayan Railway, and terracotta Bishnupur.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of West Bengal.",
@@ -21692,7 +22740,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 1,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -21881,7 +22929,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -22015,7 +23063,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -22151,7 +23199,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -22341,7 +23389,7 @@
           "capital_status": "state_capital",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 6,
+          "places_count": 5,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -22685,7 +23733,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -22871,7 +23919,7 @@
       "region": "Central India",
       "hero_image_url": "https://images.unsplash.com/photo-1627894483216-2138af692e32?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 5,
-      "total_attractions": 7,
+      "total_attractions": 8,
       "heritage_overview": "Green heartland of India boasting Chitrakote Horseshoe Falls, ancient Sirpur Buddhist brick monuments, and Bastar tribal arts.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Chhattisgarh.",
@@ -23092,7 +24140,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -23361,7 +24409,7 @@
           "capital_status": "state_capital",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 4,
+          "places_count": 3,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -23600,7 +24648,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -23732,7 +24780,7 @@
       "region": "Central India",
       "hero_image_url": "https://images.unsplash.com/photo-1596405835955-467dbb100e42?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 15,
-      "total_attractions": 8,
+      "total_attractions": 20,
       "heritage_overview": "The Heart of India with three UNESCO sites: Khajuraho temples, Sanchi Buddhist stupas, and Bhimbetka rock shelters.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Madhya Pradesh.",
@@ -23767,7 +24815,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -24148,7 +25196,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -24283,7 +25331,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -24419,7 +25467,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -24817,7 +25865,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -25009,7 +26057,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 1,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -25197,7 +26245,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -25333,7 +26381,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -25660,7 +26708,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -25796,7 +26844,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -26063,7 +27111,7 @@
       "region": "Western India",
       "hero_image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 3,
-      "total_attractions": 0,
+      "total_attractions": 3,
       "heritage_overview": "Coastal Portuguese heritage territory featuring sea-facing fortress walls, baroque churches, and pristine beaches of Diu.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Dadra and Nagar Haveli and Daman and Diu.",
@@ -26098,7 +27146,7 @@
           "capital_status": "ut_capital",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -26235,7 +27283,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -26372,7 +27420,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -26506,7 +27554,7 @@
       "region": "Western India",
       "hero_image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 1,
-      "total_attractions": 11,
+      "total_attractions": 12,
       "heritage_overview": "Coastal jewel celebrated for UNESCO Churches of Old Goa, golden sandy beaches, Portuguese architecture, and spice plantations.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Goa.",
@@ -26541,7 +27589,7 @@
           "capital_status": "state_capital",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 11,
+          "places_count": 12,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -27261,7 +28309,7 @@
       "region": "Western India",
       "hero_image_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 18,
-      "total_attractions": 8,
+      "total_attractions": 20,
       "heritage_overview": "Land of Legends featuring Ahmedabad World Heritage City, Rani ki Vav stepwell, Champaner, Somnath, and Asiatic Lions of Gir.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Gujarat.",
@@ -27429,7 +28477,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -27567,7 +28615,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -27835,7 +28883,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -28245,7 +29293,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -28438,7 +29486,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -28704,7 +29752,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -29028,7 +30076,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -29163,7 +30211,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -29297,7 +30345,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -29434,7 +30482,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -29701,7 +30749,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -29835,7 +30883,7 @@
       "region": "Western India",
       "hero_image_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 11,
-      "total_attractions": 34,
+      "total_attractions": 41,
       "heritage_overview": "Gateway to India with 5 UNESCO World Heritage sites: Ajanta, Ellora, Elephanta Caves, Chhatrapati Shivaji Maharaj Terminus, and Victorian Ensembles.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Maharashtra.",
@@ -29870,7 +30918,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -30250,7 +31298,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -30387,7 +31435,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -30656,7 +31704,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -30792,7 +31840,7 @@
           "capital_status": "state_capital",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 14,
+          "places_count": 15,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -32753,7 +33801,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -32941,7 +33989,7 @@
       "region": "Southern India",
       "hero_image_url": "https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 13,
-      "total_attractions": 7,
+      "total_attractions": 19,
       "heritage_overview": "Sacred coastal state home to the Tirumala Venkateswara shrine, Buddhist stupas of Amaravati, and Lepakshi hanging pillar marvel.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Andhra Pradesh.",
@@ -33160,7 +34208,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 2,
+          "places_count": 3,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -33403,7 +34451,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -33597,7 +34645,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -33732,7 +34780,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -34001,7 +35049,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -34137,7 +35185,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -34271,7 +35319,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -34407,7 +35455,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -34541,7 +35589,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 1,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -34731,7 +35779,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 1,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -34920,7 +35968,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -35053,7 +36101,7 @@
       "region": "Southern India",
       "hero_image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 15,
-      "total_attractions": 10,
+      "total_attractions": 20,
       "heritage_overview": "One State Many Worlds featuring UNESCO Vijayanagara ruins at Hampi, Hoysala Sacred Ensembles, and Badami Chalukya cave temples.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Karnataka.",
@@ -35220,7 +36268,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -35357,7 +36405,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -35492,7 +36540,7 @@
           "capital_status": "state_capital",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 6,
+          "places_count": 5,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -35843,7 +36891,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -35978,7 +37026,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -36387,7 +37435,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -36524,7 +37572,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -36633,9 +37681,9 @@
           "license": "Unsplash License"
         },
         {
-          "id": "mangalore",
-          "name": "Mangalore",
-          "canonical_name": "Mangalore",
+          "id": "mangaluru",
+          "name": "Mangaluru",
+          "canonical_name": "Mangaluru",
           "state": "Karnataka",
           "state_id": "karnataka",
           "region": "Southern India",
@@ -36659,7 +37707,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -36673,7 +37721,7 @@
               "name": "Kudremukh National Park",
               "canonical_name": "Kudremukh National Park",
               "aliases": [],
-              "city_id": "mangalore",
+              "city_id": "mangaluru",
               "state_id": "karnataka",
               "district": "Chikkamagaluru",
               "category": "wildlife",
@@ -36727,7 +37775,7 @@
               "name": "Panambur Beach & Kadri Manjunatha Temple",
               "canonical_name": "Panambur Beach",
               "aliases": [],
-              "city_id": "mangalore",
+              "city_id": "mangaluru",
               "state_id": "karnataka",
               "district": "Dakshina Kannada",
               "category": "nature",
@@ -36820,7 +37868,12 @@
           "source_url": "https://unsplash.com/photos/panambur-beach-and-kudroli-gokarnath-temple-mangalore-M2m4q7Z1v3",
           "source_name": "Unsplash",
           "creator": "Coastal Karnataka Explorer",
-          "license": "Unsplash License"
+          "license": "Unsplash License",
+          "slug": "mangaluru",
+          "aliases": [
+            "Mangalore",
+            "mangalore"
+          ]
         },
         {
           "id": "mysuru",
@@ -36981,7 +38034,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -37118,7 +38171,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -37254,7 +38307,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -37387,7 +38440,7 @@
       "region": "Southern India",
       "hero_image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 19,
-      "total_attractions": 9,
+      "total_attractions": 22,
       "heritage_overview": "God's Own Country featuring palm-fringed backwaters of Alappuzha, Munnar tea hills, historic Fort Kochi, and Kathakali traditions.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Kerala.",
@@ -37606,7 +38659,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -37741,7 +38794,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -37850,9 +38903,9 @@
           "license": "Unsplash License"
         },
         {
-          "id": "kasargod",
-          "name": "Kasargod",
-          "canonical_name": "Kasargod",
+          "id": "kasaragod",
+          "name": "Kasaragod",
+          "canonical_name": "Kasaragod",
           "state": "Kerala",
           "state_id": "kerala",
           "region": "Southern India",
@@ -37876,7 +38929,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -37889,7 +38942,7 @@
               "name": "Ananthapura Lake Temple & Chandragiri Fort",
               "canonical_name": "Ananthapura Lake Temple",
               "aliases": [],
-              "city_id": "kasargod",
+              "city_id": "kasaragod",
               "state_id": "kerala",
               "district": "Kasaragod",
               "category": "spiritual",
@@ -37983,7 +39036,12 @@
           "source_url": "https://unsplash.com/photos/ananthapura-lake-temple-kasargod-K4m8q3Z9v2",
           "source_name": "Unsplash",
           "creator": "North Malabar Explorer",
-          "license": "Unsplash License"
+          "license": "Unsplash License",
+          "slug": "kasaragod",
+          "aliases": [
+            "Kasargod",
+            "kasargod"
+          ]
         },
         {
           "id": "kochi",
@@ -38198,7 +39256,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -38334,7 +39392,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -38470,7 +39528,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -38739,7 +39797,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -38877,7 +39935,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -39013,7 +40071,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 1,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -39199,7 +40257,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -39333,7 +40391,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -39443,9 +40501,9 @@
           "license": "Unsplash License"
         },
         {
-          "id": "sabrimala",
-          "name": "Sabrimala",
-          "canonical_name": "Sabrimala",
+          "id": "sabarimala",
+          "name": "Sabarimala",
+          "canonical_name": "Sabarimala",
           "state": "Kerala",
           "state_id": "kerala",
           "region": "Southern India",
@@ -39469,7 +40527,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -39482,7 +40540,7 @@
               "name": "Sabarimala Sree Dharma Sastha Temple",
               "canonical_name": "Sabarimala Temple",
               "aliases": [],
-              "city_id": "sabrimala",
+              "city_id": "sabarimala",
               "state_id": "kerala",
               "district": "Pathanamthitta",
               "category": "spiritual",
@@ -39576,7 +40634,12 @@
           "source_url": "https://unsplash.com/photos/sabarimala-ayyappa-temple-sanctum-sabrimala-S6m4q9Z5v1",
           "source_name": "Unsplash",
           "creator": "Travancore Devaswom Board",
-          "license": "Unsplash License"
+          "license": "Unsplash License",
+          "slug": "sabarimala",
+          "aliases": [
+            "Sabrimala",
+            "sabrimala"
+          ]
         },
         {
           "id": "thiruvananthapuram",
@@ -39737,7 +40800,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -40136,7 +41199,7 @@
       "region": "Southern India",
       "hero_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Bangaram_Island%2C_Lakshadweep_20160325-_DSC1780.jpg/1280px-Bangaram_Island%2C_Lakshadweep_20160325-_DSC1780.jpg",
       "total_cities": 1,
-      "total_attractions": 0,
+      "total_attractions": 1,
       "heritage_overview": "Emerald coral atolls in the Arabian Sea with crystal lagoons, marine biodiversity, and traditional coir crafts.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Lakshadweep.",
@@ -40171,7 +41234,7 @@
           "capital_status": "ut_capital",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -40473,7 +41536,7 @@
       "region": "Southern India",
       "hero_image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 10,
-      "total_attractions": 10,
+      "total_attractions": 16,
       "heritage_overview": "Land of Living Chola Temples (UNESCO), soaring Dravidian gopurams of Madurai, Shore Temple of Mamallapuram, and Nilgiri Mountain Railway.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Tamil Nadu.",
@@ -40857,7 +41920,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -40993,7 +42056,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -41130,7 +42193,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -41453,7 +42516,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -41725,7 +42788,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -42049,7 +43112,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -42183,7 +43246,7 @@
       "region": "Southern India",
       "hero_image_url": "https://images.unsplash.com/photo-1605335198083-d5d85202874a?w=1200&auto=format&fit=crop&q=80",
       "total_cities": 5,
-      "total_attractions": 9,
+      "total_attractions": 12,
       "heritage_overview": "City of Pearls and Nizams, home to Charminar, Golconda Fort, and UNESCO World Heritage Kakatiya Rudreshwara (Ramappa) Temple.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Telangana.",
@@ -42218,7 +43281,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -42946,7 +44009,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
@@ -43083,7 +44146,7 @@
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 1,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
