@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import { CITIES_DATA } from './scripts/compile_canonical_cities.mjs';
+import { CITIES_DATA } from './compile_canonical_cities.mjs';
 
 const ROOT = process.cwd();
 const DB_PATH = path.join(ROOT, 'data', 'india_tourism_database.json');
@@ -97,10 +97,10 @@ for (const c of updatedCities) {
 
   // Flag anandpur-sahib in cities.json
   if (c.id === 'anandpur-sahib') {
-    c.lat = 31.2356;
-    c.lng = 76.4994;
-    c.latitude = 31.2356;
-    c.longitude = 76.4994;
+    c.lat = 31.2366;
+    c.lng = 76.4984;
+    c.latitude = 31.2366;
+    c.longitude = 76.4984;
     c.district = 'Rupnagar';
     c.administrative_status = 'EXTRA_CANONICAL';
     c.review_flag = 'PENDING_CLASSIFICATION';
@@ -195,9 +195,9 @@ for (const state of db.states) {
 
     // Anandpur Sahib flag
     if (city.id === 'anandpur-sahib') {
-      city.coordinates = { lat: 31.2356, lng: 76.4994 };
-      city.lat = 31.2356;
-      city.lng = 76.4994;
+      city.coordinates = { lat: 31.2366, lng: 76.4984 };
+      city.lat = 31.2366;
+      city.lng = 76.4984;
       city.district = 'Rupnagar';
       city.administrative_status = 'EXTRA_CANONICAL';
       city.review_flag = 'PENDING_CLASSIFICATION';
@@ -208,27 +208,34 @@ for (const state of db.states) {
     if (!city.tagline) city.tagline = `Cultural destination in ${city.state || state.name}`;
     if (!city.description) city.description = `Explore heritage, landmarks, and cultural traditions in ${city.name}.`;
 
-    if (!city.live_travel_info) {
+    const shell49List = [
+      'bomdila', 'changlang', 'dirang', 'itanagar', 'mechuka', 'namsai', 'pakke-kesang-hill-station',
+      'pasighat', 'roing', 'yingkiong', 'ziro', 'bilaspur-hp', 'chamba', 'dalhousie', 'kasauli',
+      'keylong', 'paonta-sahib', 'reckong-peo', 'fatehgarh-sahib', 'fazilka', 'firozepur', 'gurdaspur',
+      'jalandhar', 'kapurthala', 'ludhiana', 'pathankot', 'rupnagar', 'sas-nagar', 'ajmer', 'alwar',
+      'banswara', 'bharatpur', 'bikaner', 'bundi', 'chittorgarh', 'dausa', 'dholpur', 'jaisalmer',
+      'jodhpur', 'kota', 'mount-abu', 'ayodhya', 'bareilly', 'chitrakoot-up', 'jhansi', 'kanpur',
+      'lucknow', 'mathura', 'prayagraj'
+    ];
+    const isShellCity = shell49List.includes(city.id) || city.verification_status === 'VERIFICATION_REQUIRED';
+
+    if (!city.live_travel_info || isShellCity) {
       city.live_travel_info = {
-        best_season: 'October to March',
-        weather_summary: 'Pleasant seasonal climate',
+        best_season: null,
+        weather_summary: null,
         status: 'UNVERIFIED'
       };
     }
-    if (!city.fees_overview) {
+    if (!city.fees_overview || isShellCity) {
       city.fees_overview = {
-        typical_budget_per_day: '₹1,500 - ₹3,500',
+        typical_budget_per_day: null,
         status: 'UNVERIFIED'
       };
     }
-    if (!city.transport) {
+    if (!city.transport || isShellCity) {
       city.transport = {
-        railway_stations: [],
-        local_transit: {
-          modes: ['Auto-rickshaw', 'Taxi', 'Bus'],
-          fare_indication: 'Standard regional fares',
-          status: 'UNVERIFIED'
-        }
+        railway_stations: city.transport?.railway_stations || [],
+        local_transit: null
       };
     }
     if (!city.hotels) city.hotels = [];

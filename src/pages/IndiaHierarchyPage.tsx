@@ -1242,7 +1242,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                               Season
                             </div>
                             <div className="font-bold text-stone-900 mt-0.5 truncate">
-                              {city.live_travel_info.best_season || 'Oct - Mar'}
+                              {city.live_travel_info?.best_season || 'Content under verification'}
                             </div>
                           </div>
                         </div>
@@ -1363,10 +1363,10 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                           <Calendar className="w-3.5 h-3.5" /> Best Season &amp; Advisory
                         </span>
                         <div className="text-xs font-bold text-stone-900">
-                          {currentCity.live_travel_info.best_season || 'Oct - Mar'}
+                          {currentCity.live_travel_info?.best_season || 'Content under verification'}
                         </div>
                         <div className="text-[11px] text-stone-500 italic truncate">
-                          {currentCity.live_travel_info.advisory || 'Recommended exploration window'}
+                          {currentCity.live_travel_info?.advisory || 'Seasonal advisory under verification'}
                         </div>
                       </div>
                     </div>

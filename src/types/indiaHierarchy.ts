@@ -125,7 +125,7 @@ export interface LocalTransitInfo {
 export interface TransportInfo {
   railway_stations: RailwayStationEntity[];
   airport?: AirportEntity;
-  local_transit: LocalTransitInfo;
+  local_transit?: LocalTransitInfo | null;
 }
 
 export interface HotelEntity {
@@ -200,13 +200,13 @@ export interface CityHierarchyEntity {
   transport: TransportInfo;
   hotels: HotelEntity[];
   fees_overview: {
-    typical_budget_per_day: string;
+    typical_budget_per_day?: string | null;
     status: AccuracyStatus;
     note?: string;
   };
   live_travel_info: {
-    best_season: string;
-    weather_summary: string;
+    best_season?: string | null;
+    weather_summary?: string | null;
     status: AccuracyStatus;
     advisory?: string;
   };

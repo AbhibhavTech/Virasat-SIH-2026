@@ -250,7 +250,7 @@ export const PlaceDetailDrawer: React.FC<PlaceDetailDrawerProps> = ({
                 <span>Best Time</span>
               </div>
               <div className="text-xs font-bold text-stone-900 truncate">
-                {place.best_time_to_visit || place.visit_duration?.label || 'Oct - Mar'}
+                {place.best_time_to_visit || place.visit_duration?.label || 'Content under verification'}
               </div>
               <div className="text-[11px] text-stone-500">Ideal season</div>
             </div>

@@ -93,7 +93,80 @@ if (fs.existsSync(redirectsPath)) {
   const redirects = JSON.parse(fs.readFileSync(redirectsPath, 'utf-8'));
   console.log(`[city_id_redirects.json] Mappings:`, redirects);
 } else {
-  console.warn(`[city_id_redirects.json] Not found!`);
+  console.error(`[city_id_redirects.json] Not found!`);
+  process.exit(1);
 }
 
-console.log('--- VALIDATION COMPLETE ---');
+// 4. Detailed Focused Audit on Shell Cities & Anandpur Sahib
+console.log('\n--- FOCUSED INTEGRITY AUDIT ---');
+const shell49List = [
+  'bomdila', 'changlang', 'dirang', 'itanagar', 'mechuka', 'namsai', 'pakke-kesang-hill-station',
+  'pasighat', 'roing', 'yingkiong', 'ziro', 'bilaspur-hp', 'chamba', 'dalhousie', 'kasauli',
+  'keylong', 'paonta-sahib', 'reckong-peo', 'fatehgarh-sahib', 'fazilka', 'firozepur', 'gurdaspur',
+  'jalandhar', 'kapurthala', 'ludhiana', 'pathankot', 'rupnagar', 'sas-nagar', 'ajmer', 'alwar',
+  'banswara', 'bharatpur', 'bikaner', 'bundi', 'chittorgarh', 'dausa', 'dholpur', 'jaisalmer',
+  'jodhpur', 'kota', 'mount-abu', 'ayodhya', 'bareilly', 'chitrakoot-up', 'jhansi', 'kanpur',
+  'lucknow', 'mathura', 'prayagraj'
+];
+
+let shellTransitCount = 0;
+let shellBudgetCount = 0;
+let shellSeasonCount = 0;
+let shellWeatherCount = 0;
+
+for (const state of db.states) {
+  for (const city of state.cities || []) {
+    if (shell49List.includes(city.id) || city.verification_status === 'VERIFICATION_REQUIRED') {
+      if (city.transport?.local_transit !== null && city.transport?.local_transit !== undefined) {
+        shellTransitCount++;
+      }
+      if (city.fees_overview?.typical_budget_per_day !== null && city.fees_overview?.typical_budget_per_day !== undefined) {
+        shellBudgetCount++;
+      }
+      if (city.live_travel_info?.best_season !== null && city.live_travel_info?.best_season !== undefined) {
+        shellSeasonCount++;
+      }
+      if (city.live_travel_info?.weather_summary !== null && city.live_travel_info?.weather_summary !== undefined) {
+        shellWeatherCount++;
+      }
+    }
+  }
+}
+
+console.log(`[Audit] Shell cities with non-null generic transport: ${shellTransitCount} (Must be 0)`);
+console.log(`[Audit] Shell cities with non-null generic budget: ${shellBudgetCount} (Must be 0)`);
+console.log(`[Audit] Shell cities with non-null generic best_season: ${shellSeasonCount} (Must be 0)`);
+console.log(`[Audit] Shell cities with non-null generic weather_summary: ${shellWeatherCount} (Must be 0)`);
+
+const apLatOk = anandpurSahib?.coordinates?.lat === 31.2366 && anandpurSahib?.lat === 31.2366;
+const apLngOk = anandpurSahib?.coordinates?.lng === 76.4984 && anandpurSahib?.lng === 76.4984;
+console.log(`[Audit] anandpur-sahib coordinates restored: ${apLatOk && apLngOk} (lat=${anandpurSahib?.lat}, lng=${anandpurSahib?.lng})`);
+
+const citiesJsonAP = cities.find(c => c.id === 'anandpur-sahib');
+const citiesJsonApOk = citiesJsonAP?.lat === 31.2366 && citiesJsonAP?.lng === 76.4984;
+console.log(`[Audit] cities.json anandpur-sahib coordinates: ${citiesJsonApOk} (lat=${citiesJsonAP?.lat}, lng=${citiesJsonAP?.lng})`);
+
+let hasError = false;
+if (totalAttractions !== 388) {
+  console.error(`ERROR: Expected 388 attractions, found ${totalAttractions}`);
+  hasError = true;
+}
+if (totalCitiesInDb !== 258) {
+  console.error(`ERROR: Expected 258 total embedded cities (257 canonical + 1 extra), found ${totalCitiesInDb}`);
+  hasError = true;
+}
+if (shellTransitCount > 0 || shellBudgetCount > 0 || shellSeasonCount > 0 || shellWeatherCount > 0) {
+  console.error(`ERROR: Generic fallback values remain on shell cities!`);
+  hasError = true;
+}
+if (!apLatOk || !apLngOk || !citiesJsonApOk) {
+  console.error(`ERROR: anandpur-sahib coordinates incorrect!`);
+  hasError = true;
+}
+
+if (hasError) {
+  console.error('--- AUDIT FAILED ---');
+  process.exit(1);
+} else {
+  console.log('--- ALL VALIDATION & INTEGRITY CHECKS PASSED ---');
+}

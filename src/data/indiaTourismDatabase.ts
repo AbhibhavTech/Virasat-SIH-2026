@@ -3895,25 +3895,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -3953,25 +3945,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -4011,25 +3995,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -4069,25 +4045,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -4127,25 +4095,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -4185,25 +4145,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -4243,25 +4195,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -6970,11 +6914,11 @@ export const INDIA_TOURISM_DATABASE = {
           "verification_status": "verified",
           "hero_image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&q=80",
           "coordinates": {
-            "lat": 31.2356,
-            "lng": 76.4994
+            "lat": 31.2366,
+            "lng": 76.4984
           },
-          "lat": 31.2356,
-          "lng": 76.4994,
+          "lat": 31.2366,
+          "lng": 76.4984,
           "places": [
             {
               "id": "anandpur-virasat-e-khalsa",
@@ -7224,25 +7168,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -7282,25 +7218,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -7340,25 +7268,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -7398,25 +7318,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -7456,25 +7368,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -7514,25 +7418,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -7572,25 +7468,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -7630,25 +7518,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -7688,25 +7568,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -7746,25 +7618,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -8679,25 +8543,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -8737,25 +8593,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -8795,25 +8643,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -8853,25 +8693,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -8911,25 +8743,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -8969,25 +8793,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -9027,25 +8843,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -9085,25 +8893,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -9143,25 +8943,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -9201,25 +8993,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -9259,25 +9043,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -9317,25 +9093,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -9375,25 +9143,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -10389,25 +10149,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -10447,25 +10199,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -10505,25 +10249,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -10563,25 +10299,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -10621,25 +10349,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -10679,25 +10399,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -10737,25 +10449,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -10795,25 +10499,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -13735,25 +13431,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -13793,25 +13481,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -13851,25 +13531,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -13909,25 +13581,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -13967,25 +13631,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -14025,25 +13681,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -14083,25 +13731,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -14141,25 +13781,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -14199,25 +13831,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -14257,25 +13881,17 @@ export const INDIA_TOURISM_DATABASE = {
           "religious_cultural": [],
           "nature_parks_zoo": [],
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
@@ -14500,25 +14116,17 @@ export const INDIA_TOURISM_DATABASE = {
           ],
           "canonical_name": "Ziro",
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant seasonal climate",
+            "best_season": null,
+            "weather_summary": null,
             "status": "UNVERIFIED"
           },
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": null,
             "status": "UNVERIFIED"
           },
           "transport": {
             "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaw",
-                "Taxi",
-                "Bus"
-              ],
-              "fare_indication": "Standard regional fares",
-              "status": "UNVERIFIED"
-            }
+            "local_transit": null
           },
           "hotels": [],
           "coordinates": {
