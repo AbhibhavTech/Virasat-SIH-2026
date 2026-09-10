@@ -56,13 +56,82 @@ export interface ImageProvenance {
   research_note?: string;
 }
 
+export type VerificationStatus =
+  | 'draft'
+  | 'pending'
+  | 'verified'
+  | 'needs_review'
+  | 'rejected';
+
+export type EntityType =
+  | 'city'
+  | 'town'
+  | 'district'
+  | 'valley'
+  | 'island'
+  | 'region'
+  | 'village';
+
+export type SourceType =
+  | 'state_tourism'
+  | 'district_administration'
+  | 'asi'
+  | 'unesco'
+  | 'forest_department'
+  | 'ministry_of_tourism'
+  | 'official_institution'
+  | 'google_maps'
+  | 'openstreetmap'
+  | 'other'
+  | 'tier1_official'
+  | 'tier2_trusted'
+  | 'tier3_secondary'
+  | 'tier4_community';
+
+export type SourceQualityTier = 'place_specific' | 'official_site' | 'generic_homepage' | 'missing';
+
+export const OFFICIAL_SITE_ALLOWLIST = [
+  'shrikashivishwanath.org',
+  'partitionmuseum.org',
+  'eternalmewar.in',
+  'somnath.org',
+];
+
+export function computeSourceQuality(url?: string): SourceQualityTier {
+  if (!url || typeof url !== 'string' || !url.trim()) return 'missing';
+  try {
+    const parsed = new URL(url.trim());
+    const host = parsed.hostname.toLowerCase().replace(/^www\./, '');
+    if (OFFICIAL_SITE_ALLOWLIST.some(allowed => host === allowed || host.endsWith('.' + allowed))) {
+      return 'official_site';
+    }
+    const path = parsed.pathname;
+    if (path && path !== '/' && path.length > 1) {
+      return 'place_specific';
+    }
+    return 'generic_homepage';
+  } catch {
+    return 'missing';
+  }
+}
+
+export interface CategoryLink {
+  topic: string;
+  subtopic: string;
+}
+
+
 export interface StateRecord {
   id: string;
   name: string;
+  slug?: string;
+  type?: 'state' | 'union_territory';
+  region_type?: 'state' | 'union_territory';
   capital: string;
   region: string;
-  region_type?: 'state' | 'union_territory';
+  official_tourism_url?: string;
   description: string;
+  status?: string;
   hero_image_id?: string;
   hero_image_url?: string;
   hero_image?: ImageProvenance;
@@ -75,22 +144,29 @@ export interface StateRecord {
 
 export interface CityRecord {
   id: string;
-  name: string;
-  canonical_name?: string;
-  state?: string;
   state_id: string;
-  region?: string;
+  name: string;
+  slug?: string;
+  entity_type?: EntityType;
   district?: string | null;
-  city_type?: string;
+  latitude?: number;
+  longitude?: number;
   lat: number;
   lng: number;
+  short_description?: string;
   description: string;
   tagline?: string;
+  official_url?: string;
+  status?: string;
+  canonical_name?: string;
+  state?: string;
+  region?: string;
+  city_type?: string;
   tourism_categories?: string[];
   prominence?: string;
   is_capital?: boolean;
   capital_status?: string;
-  verification_status?: 'verified' | 'unverified';
+  verification_status?: VerificationStatus | string;
   source_provenance?: string;
   hero_image_url?: string;
   hero_image?: ImageProvenance;
@@ -105,36 +181,69 @@ export interface CityRecord {
 
 export type ImportanceLevel = 'iconic' | 'major' | 'notable' | 'local' | 'hidden_gem';
 
+export interface MediaRecord {
+  id: string;
+  place_id: string;
+  image_url: string;
+  image_source_url?: string;
+  photographer?: string;
+  license?: string;
+  alt_text?: string;
+  is_primary?: boolean;
+  approval_status?: 'approved' | 'pending' | 'rejected';
+  created_at?: string;
+}
+
 export interface PlaceRecord {
   id: string;
   city_id?: string;
   state_id?: string;
   district?: string;
   name: string;
+  slug?: string;
   canonical_name?: string;
   aliases?: string[];
+  place_type?: string;
   category: string;
   categories?: string[];
   subcategories?: string[];
+  topic?: string;
+  subtopic?: string;
+  category_links?: CategoryLink[];
   importance_level?: ImportanceLevel;
   locality_type?: string;
+  short_description?: string;
   summary: string;
+  detailed_description?: string;
   description: string;
   history: string;
+  address?: string;
   lat: number;
   lng: number;
+  latitude?: number;
+  longitude?: number;
+  opening_hours?: string;
+  visiting_hours: string;
+  entry_fee?: string | number;
   entry_fee_domestic: number;
   entry_fee_intl: number;
-  visiting_hours: string;
+  best_time_to_visit?: string;
+  contact_information?: string;
+  official_website?: string;
   heritage_status: string;
   data_confidence: DataConfidence;
   source_url?: string;
   source_name?: string;
+  source_type?: SourceType;
   provenance_type?: string;
-  verification_status?: 'official' | 'verified' | 'unverified';
+  verification_status: VerificationStatus;
+  source_quality?: SourceQualityTier;
+  last_verified_on?: string;
   last_verified_at?: string;
   rating: number;
   thumbnail_url?: string;
+  media?: MediaRecord[];
+  sources?: PlaceSourceRecord[];
   created_at: string;
 }
 
@@ -284,13 +393,16 @@ export interface AuditLogRecord {
   created_at: string;
 }
 
-export type SourceType = 'tier1_official' | 'tier2_trusted' | 'tier3_secondary' | 'tier4_community';
-
 export interface PlaceSourceRecord {
   id: string;
+  place_id?: string;
   source_name: string;
+  source_url: string;
+  url?: string; // backwards compatibility
   source_type: SourceType;
-  url: string;
+  evidence_note?: string;
+  accessed_on?: string;
+  verification_status?: VerificationStatus | string;
   created_at: string;
 }
 

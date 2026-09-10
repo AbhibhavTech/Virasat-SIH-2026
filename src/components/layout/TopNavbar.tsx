@@ -21,6 +21,7 @@ import {
   Home,
   BarChart3,
 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import { NavTab } from './Sidebar';
 import { useAuth } from '../../contexts/AuthContext';
 import { useFavorites } from '../../contexts/FavoritesContext';
@@ -47,6 +48,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
   onOpenDatabaseStatus,
   onOpenAnalytics,
 }) => {
+  const navigate = useNavigate();
   const { user, logout } = useAuth();
   const isAuthenticated = Boolean(user);
   const { favorites } = useFavorites();
@@ -247,6 +249,29 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
                         </div>
                         <div className="text-[11px] text-stone-500 line-clamp-1">
                           Live metrics, routes & AI grounding rate
+                        </div>
+                      </div>
+                    </button>
+
+                    <button
+                      onClick={() => {
+                        setMoreDropdownOpen(false);
+                        navigate('/admin');
+                      }}
+                      className="w-full flex items-start gap-3 p-2.5 rounded-xl text-left hover:bg-emerald-50/70 text-stone-700 transition group"
+                    >
+                      <div className="p-2 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200 shrink-0 mt-0.5 group-hover:bg-emerald-100 transition">
+                        <ShieldCheck className="w-4 h-4" />
+                      </div>
+                      <div>
+                        <div className="text-xs font-bold text-stone-900 flex items-center gap-1.5">
+                          Admin & Verification
+                          <span className="text-[9px] font-semibold px-1.5 py-0.2 rounded bg-emerald-100 text-emerald-800 border border-emerald-300">
+                            Portal
+                          </span>
+                        </div>
+                        <div className="text-[11px] text-stone-500 line-clamp-1">
+                          Audit, review places & official sources
                         </div>
                       </div>
                     </button>
@@ -469,6 +494,17 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
             >
               <Database className="w-4 h-4 text-amber-800" aria-hidden="true" />
               <span>Master Database Architecture (Live)</span>
+            </button>
+
+            <button
+              onClick={() => {
+                setMobileMenuOpen(false);
+                navigate('/admin');
+              }}
+              className="w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-xs text-emerald-950 bg-emerald-50/80 border border-emerald-300 font-semibold mt-1 min-h-[44px]"
+            >
+              <ShieldCheck className="w-4 h-4 text-emerald-800" aria-hidden="true" />
+              <span>Admin Verification Portal</span>
             </button>
           </div>
         </div>

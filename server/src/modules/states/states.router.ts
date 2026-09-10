@@ -74,7 +74,7 @@ statesRouter.get('/cities/:id', async (req: Request, res: Response): Promise<voi
 statesRouter.get('/india-hierarchy', async (req: Request, res: Response): Promise<void> => {
   const states = await db.states.findAll();
   const cities = await db.cities.findAll();
-  const allPlaces = await db.places.findAll({ limit: 1000 });
+  const allPlaces = await db.places.findAll({ limit: 5000 });
 
   const hierarchy = states.map((s) => {
     const stateCities = cities.filter((c) => c.state_id === s.id);

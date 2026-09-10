@@ -54,7 +54,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Archaeological Survey of India (ASI)",
+    "source": "UNESCO World Heritage Centre",
     "last_updated": "2026-03-01",
     "category": "Architectural & Colonial",
     "tags": [
@@ -71,7 +71,9 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "source_url": "https://whc.unesco.org/en/list/252/",
+    "source_type": "unesco"
   },
   {
     "id": "fatehpur-sikri",
@@ -127,7 +129,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Archaeological Survey of India (ASI)",
+    "source": "UNESCO World Heritage Centre",
     "last_updated": "2026-03-01",
     "category": "Forts & Palaces",
     "tags": [
@@ -143,7 +145,9 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "source_url": "https://whc.unesco.org/en/list/255/",
+    "source_type": "unesco"
   },
   {
     "id": "qutub-minar",
@@ -199,7 +203,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Archaeological Survey of India (ASI)",
+    "source": "UNESCO World Heritage Centre",
     "last_updated": "2026-03-01",
     "category": "Architectural & Colonial",
     "tags": [
@@ -215,7 +219,9 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "source_url": "https://whc.unesco.org/en/list/233/",
+    "source_type": "unesco"
   },
   {
     "id": "red-fort",
@@ -271,7 +277,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Archaeological Survey of India (ASI)",
+    "source": "UNESCO World Heritage Centre",
     "last_updated": "2026-03-01",
     "category": "Forts & Palaces",
     "tags": [
@@ -287,7 +293,9 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "source_url": "https://whc.unesco.org/en/list/231/",
+    "source_type": "unesco"
   },
   {
     "id": "humayuns-tomb",
@@ -343,7 +351,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Archaeological Survey of India (ASI)",
+    "source": "UNESCO World Heritage Centre",
     "last_updated": "2026-03-01",
     "category": "Architectural & Colonial",
     "tags": [
@@ -359,7 +367,9 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "source_url": "https://whc.unesco.org/en/list/232/",
+    "source_type": "unesco"
   },
   {
     "id": "india-gate",
@@ -561,7 +571,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Indian Railways / UNESCO World Heritage Centre",
+    "source": "UNESCO World Heritage Centre",
     "last_updated": "2026-03-01",
     "category": "Architectural & Colonial",
     "tags": [
@@ -577,7 +587,9 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "source_url": "https://whc.unesco.org/en/list/944/",
+    "source_type": "unesco"
   },
   {
     "id": "kedarnath-temple",
@@ -868,7 +880,9 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "source_url": "https://whc.unesco.org",
+    "verification_status": "needs_review"
   },
   {
     "id": "amber-fort",
@@ -925,7 +939,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Archaeological Survey of India (ASI) / UNESCO",
+    "source": "UNESCO World Heritage Centre",
     "last_updated": "2026-03-01",
     "category": "Forts & Palaces",
     "tags": [
@@ -942,7 +956,9 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "source_url": "https://whc.unesco.org/en/list/247/",
+    "source_type": "unesco"
   },
   {
     "id": "hawa-mahal",
@@ -1072,7 +1088,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Archaeological Survey of India (ASI)",
+    "source": "UNESCO World Heritage Centre",
     "last_updated": "2026-03-01",
     "category": "Forts & Palaces",
     "tags": [
@@ -1089,7 +1105,9 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "source_url": "https://whc.unesco.org/en/list/247/",
+    "source_type": "unesco"
   },
   {
     "id": "rani-ki-vav",
@@ -1145,7 +1163,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Archaeological Survey of India (ASI)",
+    "source": "UNESCO World Heritage Centre",
     "last_updated": "2026-03-01",
     "category": "Caves & Rock-Cut",
     "tags": [
@@ -1162,7 +1180,9 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "source_url": "https://whc.unesco.org/en/list/922/",
+    "source_type": "unesco"
   },
   {
     "id": "champaner-pavagadh",
@@ -1218,7 +1238,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Archaeological Survey of India (ASI)",
+    "source": "UNESCO World Heritage Centre",
     "last_updated": "2026-03-01",
     "category": "Caves & Rock-Cut",
     "tags": [
@@ -1234,7 +1254,9 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "source_url": "https://whc.unesco.org/en/list/1101/",
+    "source_type": "unesco"
   },
   {
     "id": "ajanta-caves",
@@ -1290,7 +1312,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Archaeological Survey of India (ASI)",
+    "source": "UNESCO World Heritage Centre",
     "last_updated": "2026-03-01",
     "category": "Caves & Rock-Cut",
     "tags": [
@@ -1306,7 +1328,9 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "source_url": "https://whc.unesco.org/en/list/242/",
+    "source_type": "unesco"
   },
   {
     "id": "ellora-caves",
@@ -1362,7 +1386,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Archaeological Survey of India (ASI)",
+    "source": "UNESCO World Heritage Centre",
     "last_updated": "2026-03-01",
     "category": "Caves & Rock-Cut",
     "tags": [
@@ -1378,7 +1402,9 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "source_url": "https://whc.unesco.org/en/list/243/",
+    "source_type": "unesco"
   },
   {
     "id": "gateway-of-india",
@@ -1508,7 +1534,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Central Railway / UNESCO World Heritage Centre",
+    "source": "UNESCO World Heritage Centre",
     "last_updated": "2026-03-01",
     "category": "Architectural & Colonial",
     "tags": [
@@ -1524,7 +1550,9 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "source_url": "https://whc.unesco.org/en/list/945/",
+    "source_type": "unesco"
   },
   {
     "id": "basilica-of-bom-jesus",
@@ -1580,7 +1608,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Archaeological Survey of India (ASI) / Archdiocese of Goa",
+    "source": "UNESCO World Heritage Centre",
     "last_updated": "2026-03-01",
     "category": "Temples & Sacred",
     "tags": [
@@ -1597,7 +1625,9 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "source_url": "https://whc.unesco.org/en/list/234/",
+    "source_type": "unesco"
   },
   {
     "id": "hampi-monuments",
@@ -1654,7 +1684,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Archaeological Survey of India (ASI)",
+    "source": "UNESCO World Heritage Centre",
     "last_updated": "2026-03-01",
     "category": "Temples & Sacred",
     "tags": [
@@ -1671,7 +1701,9 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "source_url": "https://whc.unesco.org/en/list/241/",
+    "source_type": "unesco"
   },
   {
     "id": "pattadakal-monuments",
@@ -1727,7 +1759,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Archaeological Survey of India (ASI)",
+    "source": "UNESCO World Heritage Centre",
     "last_updated": "2026-03-01",
     "category": "Temples & Sacred",
     "tags": [
@@ -1744,7 +1776,9 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "source_url": "https://whc.unesco.org/en/list/239/",
+    "source_type": "unesco"
   },
   {
     "id": "hoysala-temples-belur",
@@ -1800,7 +1834,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Archaeological Survey of India (ASI) / UNESCO",
+    "source": "UNESCO World Heritage Centre",
     "last_updated": "2026-03-01",
     "category": "Temples & Sacred",
     "tags": [
@@ -1817,7 +1851,9 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "source_url": "https://whc.unesco.org/en/list/1670/",
+    "source_type": "unesco"
   },
   {
     "id": "brihadisvara-temple",
@@ -1873,7 +1909,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Archaeological Survey of India (ASI) / HR&CE",
+    "source": "UNESCO World Heritage Centre",
     "last_updated": "2026-03-01",
     "category": "Temples & Sacred",
     "tags": [
@@ -1890,7 +1926,9 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "source_url": "https://whc.unesco.org/en/list/250/",
+    "source_type": "unesco"
   },
   {
     "id": "shore-temple-mahabalipuram",
@@ -1947,7 +1985,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Archaeological Survey of India (ASI)",
+    "source": "UNESCO World Heritage Centre",
     "last_updated": "2026-03-01",
     "category": "Temples & Sacred",
     "tags": [
@@ -1964,7 +2002,9 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "source_url": "https://whc.unesco.org/en/list/249/",
+    "source_type": "unesco"
   },
   {
     "id": "meenakshi-amman-temple",
@@ -2240,7 +2280,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Archaeological Survey of India (ASI) / UNESCO",
+    "source": "UNESCO World Heritage Centre",
     "last_updated": "2026-03-01",
     "category": "Temples & Sacred",
     "tags": [
@@ -2256,7 +2296,9 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "source_url": "https://whc.unesco.org/en/list/1570/",
+    "source_type": "unesco"
   },
   {
     "id": "charminar",
@@ -2532,7 +2574,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Archaeological Survey of India (ASI)",
+    "source": "UNESCO World Heritage Centre",
     "last_updated": "2026-03-01",
     "category": "Temples & Sacred",
     "tags": [
@@ -2549,7 +2591,9 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "source_url": "https://whc.unesco.org/en/list/240/",
+    "source_type": "unesco"
   },
   {
     "id": "sanchi-stupa",
@@ -2605,7 +2649,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Archaeological Survey of India (ASI)",
+    "source": "UNESCO World Heritage Centre",
     "last_updated": "2026-03-01",
     "category": "Temples & Sacred",
     "tags": [
@@ -2622,7 +2666,9 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "source_url": "https://whc.unesco.org/en/list/524/",
+    "source_type": "unesco"
   },
   {
     "id": "sirpur-monuments",
@@ -2750,7 +2796,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Archaeological Survey of India (ASI)",
+    "source": "UNESCO World Heritage Centre",
     "last_updated": "2026-03-01",
     "category": "Temples & Sacred",
     "tags": [
@@ -2767,7 +2813,9 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "source_url": "https://whc.unesco.org/en/list/246/",
+    "source_type": "unesco"
   },
   {
     "id": "mahabodhi-temple",
@@ -2824,7 +2872,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Bodhgaya Temple Management Committee (BTMC) / UNESCO",
+    "source": "UNESCO World Heritage Centre",
     "last_updated": "2026-03-01",
     "category": "Temples & Sacred",
     "tags": [
@@ -2841,7 +2889,9 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "source_url": "https://whc.unesco.org/en/list/1056/",
+    "source_type": "unesco"
   },
   {
     "id": "nalanda-university-ruins",
@@ -2897,7 +2947,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Archaeological Survey of India (ASI)",
+    "source": "UNESCO World Heritage Centre",
     "last_updated": "2026-03-01",
     "category": "Temples & Sacred",
     "tags": [
@@ -2914,7 +2964,9 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "source_url": "https://whc.unesco.org/en/list/1502/",
+    "source_type": "unesco"
   },
   {
     "id": "victoria-memorial-kolkata",
@@ -3116,7 +3168,7 @@
     },
     "has_360": true,
     "has_video": true,
-    "source": "Assam Forest Department / UNESCO World Heritage Centre",
+    "source": "UNESCO World Heritage Centre",
     "last_updated": "2026-03-01",
     "category": "Natural & Ghats",
     "tags": [
@@ -3133,7 +3185,9 @@
       "navigation": true,
       "ai": true,
       "3d": true
-    }
+    },
+    "source_url": "https://whc.unesco.org/en/list/337/",
+    "source_type": "unesco"
   },
   {
     "id": "living-root-bridges",

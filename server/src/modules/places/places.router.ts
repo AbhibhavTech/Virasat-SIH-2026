@@ -8,7 +8,22 @@ export const placesRouter = Router();
  * GET /api/v1/places
  */
 placesRouter.get('/', async (req: Request, res: Response): Promise<void> => {
-  const { stateId, state, cityId, city, category, importance_level, confidence, data_confidence, limit, offset } = req.query;
+  const {
+    stateId,
+    state,
+    cityId,
+    city,
+    category,
+    importance_level,
+    confidence,
+    data_confidence,
+    status,
+    verification_status,
+    topic,
+    subtopic,
+    limit,
+    offset,
+  } = req.query;
 
   const parsedLimit = Math.min(Math.max(Number(limit) || 20, 1), 100);
   const parsedOffset = Math.max(Number(offset) || 0, 0);
@@ -19,6 +34,9 @@ placesRouter.get('/', async (req: Request, res: Response): Promise<void> => {
     category: category as string | undefined,
     importance_level: importance_level as string | undefined,
     confidence: (confidence || data_confidence) as string | undefined,
+    verification_status: (status || verification_status) as string | undefined,
+    topic: topic as string | undefined,
+    subtopic: subtopic as string | undefined,
     limit: parsedLimit,
     offset: parsedOffset,
   });
