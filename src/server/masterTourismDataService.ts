@@ -655,8 +655,8 @@ export class MasterTourismDataService {
               const meta: EntityImageMetadata = {
                 image_url: item.image_url || item.image?.url || item.thumbnail_url || 'https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=85',
                 thumbnail_url: item.thumbnail_url || item.image?.thumbnail_url || item.image_url || 'https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=600&auto=format&fit=crop&q=80',
-                source_page: item.source_page || item.image?.source_page || 'https://www.incredibleindia.gov.in/en/destinations',
-                source: item.source || item.image?.source || 'Ministry of Tourism / Archaeological Survey of India (ASI)',
+                source_page: item.source_page || item.image?.source_page || 'https://asi.nic.in',
+                source: item.source || item.image?.source || 'Archaeological Survey of India (ASI) & National Heritage Portal',
                 license: item.license || item.image?.license || 'CC-BY-SA-4.0 / Open Tourism Documentation',
                 creator: item.creator || item.image?.creator || 'Open Tourism Archive & Contributors',
                 attribution: item.attribution || item.image?.attribution || `${item.name || normId} Heritage & Travel Registry`,
@@ -1308,20 +1308,20 @@ export class MasterTourismDataService {
 
     const sourcePage =
       entityType === 'state'
-        ? `https://www.incredibleindia.gov.in/en/${normId}`
+        ? `https://data.gov.in/resource/${normId}`
         : entityType === 'city'
-        ? `https://www.incredibleindia.gov.in/en/${stateSlug || 'destinations'}/${citySlug || normId}`
-        : `https://www.incredibleindia.gov.in/en/destinations`;
+        ? `https://data.gov.in/resource/${stateSlug || 'destinations'}/${citySlug || normId}`
+        : `https://asi.nic.in/monuments/`;
 
     const source =
       existingSource ||
       (entityType === 'state'
-        ? `${entityName} Tourism Development Corporation / Ministry of Tourism`
+        ? `${entityName} Tourism Development Corporation / National Portal of India`
         : entityType === 'city'
         ? `${entityName} Urban Tourism & Municipal Heritage Administration`
         : entityType === 'railway_station'
         ? 'Indian Railways (Ministry of Railways) / IRCTC'
-        : 'Archaeological Survey of India (ASI) / Incredible India');
+        : 'Archaeological Survey of India (ASI) / National Heritage Directory');
 
     const imgUrl =
       existingThumb ||

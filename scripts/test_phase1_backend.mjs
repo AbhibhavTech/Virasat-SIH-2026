@@ -73,12 +73,16 @@ async function runTests() {
   console.log('✓ Password hashing and verification check passed');
 
   // 3. Test Favorites Isolation (IDOR Check)
+  const prevFavs = await db.favorites.listByUser(userA.id);
+  for (const f of prevFavs) {
+    await db.favorites.remove(userA.id, f.place_id);
+  }
   await db.favorites.add(userA.id, samplePlace.id);
   const aliceFavs = await db.favorites.listByUser(userA.id);
   const bobFavs = await db.favorites.listByUser(userB.id);
 
   if (aliceFavs.length !== 1 || aliceFavs[0].place_id !== samplePlace.id) {
-    throw new Error('Alice favorite was not correctly saved');
+    throw new Error(`Alice favorite was not correctly saved, count=${aliceFavs.length}`);
   }
   if (bobFavs.length !== 0) {
     throw new Error('IDOR LEAK: Bob sees Alice favorites!');

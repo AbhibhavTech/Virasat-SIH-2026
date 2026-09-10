@@ -192,6 +192,7 @@ class DatabaseManager {
       cityId?: string;
       city?: string;
       category?: string;
+      importance_level?: string;
       confidence?: string;
       data_confidence?: string;
       search?: string;
@@ -207,7 +208,15 @@ class DatabaseManager {
         list = list.filter((p) => p.city_id?.toLowerCase() === targetCity);
       }
       if (filters?.category) {
-        list = list.filter((p) => p.category.toLowerCase() === filters.category?.toLowerCase());
+        const targetCat = filters.category.toLowerCase();
+        list = list.filter(
+          (p) =>
+            p.category?.toLowerCase() === targetCat ||
+            (Array.isArray(p.categories) && p.categories.some((c) => c.toLowerCase() === targetCat))
+        );
+      }
+      if (filters?.importance_level) {
+        list = list.filter((p) => p.importance_level === filters.importance_level);
       }
       if (filters?.search) {
         const q = filters.search.toLowerCase().trim();

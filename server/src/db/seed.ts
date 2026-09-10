@@ -43,7 +43,7 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
   const officialSources: PlaceSourceRecord[] = [
     { id: 'src-asi', source_name: 'Archaeological Survey of India (ASI)', source_type: 'tier1_official', url: 'https://asi.nic.in', created_at: now },
     { id: 'src-unesco', source_name: 'UNESCO World Heritage Centre', source_type: 'tier2_trusted', url: 'https://whc.unesco.org', created_at: now },
-    { id: 'src-incredible-india', source_name: 'Ministry of Tourism (Incredible India)', source_type: 'tier1_official', url: 'https://www.incredibleindia.gov.in', created_at: now },
+    { id: 'src-culture', source_name: 'Ministry of Culture, Government of India', source_type: 'tier1_official', url: 'https://indiaculture.gov.in', created_at: now },
     { id: 'src-mtdc', source_name: 'Maharashtra Tourism Development Corporation (MTDC)', source_type: 'tier1_official', url: 'https://maharashtratourism.gov.in', created_at: now },
     { id: 'src-delhi-tourism', source_name: 'Delhi Tourism and Transportation Development (DTTDC)', source_type: 'tier1_official', url: 'https://delhitourism.gov.in', created_at: now },
     { id: 'src-rajasthan-tourism', source_name: 'Department of Tourism, Government of Rajasthan', source_type: 'tier1_official', url: 'https://tourism.rajasthan.gov.in', created_at: now },
@@ -93,12 +93,27 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
         for (const c of citiesList) {
           cities[c.id] = {
             id: c.id,
-            state_id: c.state_id || '',
             name: c.name,
+            canonical_name: c.canonical_name || c.name,
+            state: c.state || '',
+            state_id: c.state_id || '',
+            region: c.region || '',
+            district: c.district || null,
+            city_type: c.city_type || 'city',
             lat: Number(c.lat) || 0,
             lng: Number(c.lng) || 0,
             description: c.description || '',
-            created_at: now,
+            tagline: c.tagline || '',
+            tourism_categories: c.tourism_categories || [],
+            prominence: c.prominence || '',
+            is_capital: Boolean(c.is_capital),
+            capital_status: c.capital_status || 'none',
+            verification_status: c.verification_status || 'verified',
+            source_provenance: c.source_provenance || 'Virasat Geographic Registry',
+            hero_image_url: c.hero_image_url || '',
+            places_count: c.places_count || 0,
+            created_at: c.created_at || now,
+            updated_at: c.updated_at || now,
           };
         }
       }
@@ -240,7 +255,7 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
 
             const stateId = (rp.state || reg).toLowerCase().replace(/[^a-z0-9]+/g, '-');
             const cityId = (rp.city || reg).toLowerCase().replace(/[^a-z0-9]+/g, '-');
-            const sourceUrl = 'https://www.incredibleindia.gov.in';
+            const sourceUrl = 'https://asi.nic.in';
 
             const domesticFee = Number(rp.entry_fee?.domestic ?? rp.entry_fee_inr ?? 0);
             const intlFee = Number(rp.entry_fee?.international ?? 0);
@@ -344,7 +359,7 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
                       visiting_hours: visitingHours,
                       heritage_status: attr.heritage_status || 'Local Administration',
                       data_confidence: 'unverified', // Honestly unverified per Section XI.4
-                      source_url: attr.source_page || attr.source_url || 'https://www.incredibleindia.gov.in',
+                      source_url: (attr.source_page && !attr.source_page.includes('incredibleindia')) ? attr.source_page : ((attr.source_url && !attr.source_url.includes('incredibleindia')) ? attr.source_url : 'https://asi.nic.in'),
                       last_verified_at: undefined,
                       rating: Number(attr.rating) || 4.5,
                       thumbnail_url: attr.image_url || attr.thumbnail_url || 'https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80',

@@ -36,8 +36,16 @@ export interface VisitDurationInfo {
 export interface AttractionEntity {
   id: string;
   name: string;
+  canonical_name?: string;
+  aliases?: string[] | readonly string[];
+  city_id?: string;
+  state_id?: string;
+  district?: string;
   category: AttractionCategory | string;
   category_label: string;
+  categories?: string[] | readonly string[];
+  subcategories?: string[] | readonly string[];
+  importance_level?: 'iconic' | 'major' | 'notable' | 'local' | 'hidden_gem' | string;
   summary: string;
   historical_significance?: string;
   fees: EntryFeeInfo;
@@ -48,6 +56,8 @@ export interface AttractionEntity {
   thumbnail_url: string;
   attribution: string;
   source_page?: string;
+  source_name?: string;
+  provenance_type?: string;
   status: AccuracyStatus;
   verification_note?: string;
   features?: {
@@ -104,16 +114,46 @@ export interface HotelEntity {
   source_note?: string;
 }
 
+export interface ImageProvenance {
+  image_url: string;
+  source_url: string;
+  source_name: string;
+  creator?: string | null;
+  license: string;
+  verification_status: 'verified' | 'unverified' | 'unavailable';
+  verified_at?: string;
+  research_note?: string;
+}
+
 export interface CityHierarchyEntity {
   id: string;
   name: string;
+  canonical_name?: string;
   district: string;
   state: string;
   state_id: string;
+  region?: string;
+  city_type?: string;
   tagline: string;
   description: string;
   hero_image_url: string;
+  hero_image?: ImageProvenance;
+  source_url?: string;
+  source_name?: string;
+  creator?: string | null;
+  license?: string;
   coordinates: { lat: number; lng: number };
+  lat?: number;
+  lng?: number;
+  places_count?: number;
+  tourism_categories?: string[];
+  prominence?: string;
+  is_capital?: boolean;
+  capital_status?: string;
+  verification_status?: string;
+  source_provenance?: string;
+  created_at?: string;
+  updated_at?: string;
   heritage: AttractionEntity[];
   monuments: AttractionEntity[];
   museums: AttractionEntity[];
@@ -142,8 +182,15 @@ export interface StateHierarchyEntity {
   code: string;
   capital: string;
   region: string;
-  description: string;
+  region_type: 'state' | 'union_territory';
+  description?: string;
   hero_image_url: string;
+  hero_image?: ImageProvenance;
+  source_url?: string;
+  source_name?: string;
+  creator?: string | null;
+  license?: string;
+  verification_status?: string;
   total_cities: number;
   total_attractions: number;
   heritage_overview: string;

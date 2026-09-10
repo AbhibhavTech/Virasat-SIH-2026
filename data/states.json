@@ -1,639 +1,1411 @@
 [
   {
-    "id": "andhra-pradesh",
-    "name": "Andhra Pradesh",
-    "capital": "Amaravati",
-    "region": "Southern India",
-    "total_places": 18,
+    "id": "chandigarh",
+    "name": "Chandigarh",
+    "capital": "Chandigarh",
+    "region": "Northern India",
+    "total_places": 1,
     "coordinates": {
-      "lat": 15.9129,
-      "lng": 79.74
+      "lat": 30.7333,
+      "lng": 76.7794
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=600&auto=format&fit=crop&q=80",
-    "state_id": "andhra-pradesh",
-    "type": "State",
+    "thumbnail_url": "https://images.unsplash.com/photo-1598890777032-bde13fbe3493?w=1200&auto=format&fit=crop&q=80",
+    "state_id": "chandigarh",
+    "type": "Union Territory",
     "cities": [
-      "amaravati"
-    ]
+      "chandigarh"
+    ],
+    "region_type": "union_territory",
+    "hero_image_url": "https://images.unsplash.com/photo-1598890777032-bde13fbe3493?w=1200&auto=format&fit=crop&q=80",
+    "hero_image": {
+      "image_url": "https://images.unsplash.com/photo-1598890777032-bde13fbe3493?w=1200&auto=format&fit=crop&q=80",
+      "source_url": "https://unsplash.com/photos/rock-garden-sculptures-chandigarh-C_4m1q7Z9v3",
+      "source_name": "Unsplash",
+      "creator": "Chandigarh Tourism Archive",
+      "license": "Unsplash License",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
+    },
+    "source_url": "https://unsplash.com/photos/rock-garden-sculptures-chandigarh-C_4m1q7Z9v3",
+    "source_name": "Unsplash",
+    "creator": "Chandigarh Tourism Archive",
+    "license": "Unsplash License",
+    "verification_status": "verified"
   },
   {
-    "id": "arunachal-pradesh",
-    "name": "Arunachal Pradesh",
-    "capital": "Itanagar",
-    "region": "Northeastern India",
-    "total_places": 12,
+    "id": "delhi",
+    "name": "Delhi",
+    "capital": "Delhi",
+    "region": "Northern India",
+    "total_places": 4,
     "coordinates": {
-      "lat": 28.218,
-      "lng": 94.7278
+      "lat": 28.6139,
+      "lng": 77.209
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=600&auto=format&fit=crop&q=80",
-    "state_id": "arunachal-pradesh",
-    "type": "State",
+    "thumbnail_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=1200&auto=format&fit=crop&q=80",
+    "state_id": "delhi",
+    "type": "Union Territory",
     "cities": [
-      "itanagar"
-    ]
-  },
-  {
-    "id": "assam",
-    "name": "Assam",
-    "capital": "Dispur",
-    "region": "Northeastern India",
-    "total_places": 16,
-    "coordinates": {
-      "lat": 26.2006,
-      "lng": 92.9376
+      "delhi"
+    ],
+    "region_type": "union_territory",
+    "hero_image_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=1200&auto=format&fit=crop&q=80",
+    "hero_image": {
+      "image_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=1200&auto=format&fit=crop&q=80",
+      "source_url": "https://unsplash.com/photos/humayuns-tomb-delhi-D_1m5q8Z2v7",
+      "source_name": "Unsplash",
+      "creator": "Delhi Tourism Development Corporation",
+      "license": "Unsplash License",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&auto=format&fit=crop&q=80",
-    "state_id": "assam",
-    "type": "State",
-    "cities": [
-      "guwahati",
-      "kaziranga"
-    ]
-  },
-  {
-    "id": "bihar",
-    "name": "Bihar",
-    "capital": "Patna",
-    "region": "Eastern India",
-    "total_places": 15,
-    "coordinates": {
-      "lat": 25.0961,
-      "lng": 85.3131
-    },
-    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=600&auto=format&fit=crop&q=80",
-    "state_id": "bihar",
-    "type": "State",
-    "cities": [
-      "bodh-gaya",
-      "nalanda",
-      "patna"
-    ]
-  },
-  {
-    "id": "chhattisgarh",
-    "name": "Chhattisgarh",
-    "capital": "Raipur",
-    "region": "Central India",
-    "total_places": 11,
-    "coordinates": {
-      "lat": 21.2787,
-      "lng": 81.8661
-    },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=600&auto=format&fit=crop&q=80",
-    "state_id": "chhattisgarh",
-    "type": "State",
-    "cities": [
-      "raipur"
-    ]
-  },
-  {
-    "id": "goa",
-    "name": "Goa",
-    "capital": "Panaji",
-    "region": "Western India",
-    "total_places": 22,
-    "coordinates": {
-      "lat": 15.2993,
-      "lng": 74.124
-    },
-    "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=600&auto=format&fit=crop&q=80",
-    "state_id": "goa",
-    "type": "State",
-    "cities": [
-      "panaji",
-      "old-goa"
-    ]
-  },
-  {
-    "id": "gujarat",
-    "name": "Gujarat",
-    "capital": "Gandhinagar",
-    "region": "Western India",
-    "total_places": 24,
-    "coordinates": {
-      "lat": 22.2587,
-      "lng": 71.1924
-    },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=600&auto=format&fit=crop&q=80",
-    "state_id": "gujarat",
-    "type": "State",
-    "cities": [
-      "patan",
-      "panchmahal",
-      "ahmedabad"
-    ]
+    "source_url": "https://unsplash.com/photos/humayuns-tomb-delhi-D_1m5q8Z2v7",
+    "source_name": "Unsplash",
+    "creator": "Delhi Tourism Development Corporation",
+    "license": "Unsplash License",
+    "verification_status": "verified"
   },
   {
     "id": "haryana",
     "name": "Haryana",
     "capital": "Chandigarh",
     "region": "Northern India",
-    "total_places": 9,
+    "total_places": 6,
     "coordinates": {
       "lat": 29.0588,
       "lng": 76.0856
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
     "state_id": "haryana",
     "type": "State",
     "cities": [
-      "chandigarh"
-    ]
+      "faridabad",
+      "gurugram",
+      "hisar",
+      "kurukshetra",
+      "panipat",
+      "yamunanagar"
+    ],
+    "region_type": "state",
+    "hero_image_url": "https://images.unsplash.com/photo-1596701062351-8c2c14d1fdd1?w=1200&auto=format&fit=crop&q=80",
+    "hero_image": {
+      "image_url": "https://images.unsplash.com/photo-1596701062351-8c2c14d1fdd1?w=1200&auto=format&fit=crop&q=80",
+      "source_url": "https://unsplash.com/photos/white-concrete-building-near-body-of-water-during-daytime-J_a4l5m7p8A",
+      "source_name": "Unsplash",
+      "creator": "Deepak Kumar",
+      "license": "Unsplash License",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
+    },
+    "source_url": "https://unsplash.com/photos/white-concrete-building-near-body-of-water-during-daytime-J_a4l5m7p8A",
+    "source_name": "Unsplash",
+    "creator": "Deepak Kumar",
+    "license": "Unsplash License",
+    "verification_status": "verified"
   },
   {
     "id": "himachal-pradesh",
     "name": "Himachal Pradesh",
     "capital": "Shimla",
     "region": "Northern India",
-    "total_places": 20,
+    "total_places": 7,
     "coordinates": {
       "lat": 31.1048,
       "lng": 77.1734
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1605649487212-47bdab064df8?w=1200&auto=format&fit=crop&q=80",
     "state_id": "himachal-pradesh",
     "type": "State",
     "cities": [
-      "shimla"
-    ]
-  },
-  {
-    "id": "jharkhand",
-    "name": "Jharkhand",
-    "capital": "Ranchi",
-    "region": "Eastern India",
-    "total_places": 10,
-    "coordinates": {
-      "lat": 23.6102,
-      "lng": 85.2799
+      "bilaspur-hp",
+      "chamba",
+      "dalhousie",
+      "dharamshala",
+      "kangra",
+      "kasauli",
+      "keylong",
+      "kullu",
+      "manali",
+      "paonta-sahib",
+      "shimla",
+      "spiti-valley",
+      "reckong-peo"
+    ],
+    "region_type": "state",
+    "hero_image_url": "https://images.unsplash.com/photo-1605649487212-47bdab064df8?w=1200&auto=format&fit=crop&q=80",
+    "hero_image": {
+      "image_url": "https://images.unsplash.com/photo-1605649487212-47bdab064df8?w=1200&auto=format&fit=crop&q=80",
+      "source_url": "https://unsplash.com/photos/brown-concrete-building-near-green-trees-under-white-clouds-during-daytime-W7j5f8m3Z_4",
+      "source_name": "Unsplash",
+      "creator": "Himachal Tourism Portfolio",
+      "license": "Unsplash License",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=600&auto=format&fit=crop&q=80",
-    "state_id": "jharkhand",
-    "type": "State",
-    "cities": [
-      "ranchi"
-    ]
-  },
-  {
-    "id": "karnataka",
-    "name": "Karnataka",
-    "capital": "Bengaluru",
-    "region": "Southern India",
-    "total_places": 26,
-    "coordinates": {
-      "lat": 15.3173,
-      "lng": 75.7139
-    },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=600&auto=format&fit=crop&q=80",
-    "state_id": "karnataka",
-    "type": "State",
-    "cities": [
-      "bengaluru",
-      "hampi",
-      "pattadakal"
-    ]
-  },
-  {
-    "id": "kerala",
-    "name": "Kerala",
-    "capital": "Thiruvananthapuram",
-    "region": "Southern India",
-    "total_places": 25,
-    "coordinates": {
-      "lat": 10.8505,
-      "lng": 76.2711
-    },
-    "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&auto=format&fit=crop&q=80",
-    "state_id": "kerala",
-    "type": "State",
-    "cities": [
-      "kochi",
-      "alappuzha",
-      "kasaragod"
-    ]
-  },
-  {
-    "id": "madhya-pradesh",
-    "name": "Madhya Pradesh",
-    "capital": "Bhopal",
-    "region": "Central India",
-    "total_places": 22,
-    "coordinates": {
-      "lat": 22.9734,
-      "lng": 78.6569
-    },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=600&auto=format&fit=crop&q=80",
-    "state_id": "madhya-pradesh",
-    "type": "State",
-    "cities": [
-      "khajuraho",
-      "sanchi",
-      "bhopal"
-    ]
-  },
-  {
-    "id": "maharashtra",
-    "name": "Maharashtra",
-    "capital": "Mumbai",
-    "region": "Western India",
-    "total_places": 35,
-    "coordinates": {
-      "lat": 19.7515,
-      "lng": 75.7139
-    },
-    "thumbnail_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=600&auto=format&fit=crop&q=80",
-    "state_id": "maharashtra",
-    "type": "State",
-    "cities": [
-      "mumbai",
-      "aurangabad",
-      "pune"
-    ]
-  },
-  {
-    "id": "manipur",
-    "name": "Manipur",
-    "capital": "Imphal",
-    "region": "Northeastern India",
-    "total_places": 8,
-    "coordinates": {
-      "lat": 24.6637,
-      "lng": 93.9063
-    },
-    "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&auto=format&fit=crop&q=80",
-    "state_id": "manipur",
-    "type": "State",
-    "cities": [
-      "imphal"
-    ]
-  },
-  {
-    "id": "meghalaya",
-    "name": "Meghalaya",
-    "capital": "Shillong",
-    "region": "Northeastern India",
-    "total_places": 14,
-    "coordinates": {
-      "lat": 25.467,
-      "lng": 91.3662
-    },
-    "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&auto=format&fit=crop&q=80",
-    "state_id": "meghalaya",
-    "type": "State",
-    "cities": [
-      "shillong"
-    ]
-  },
-  {
-    "id": "mizoram",
-    "name": "Mizoram",
-    "capital": "Aizawl",
-    "region": "Northeastern India",
-    "total_places": 7,
-    "coordinates": {
-      "lat": 23.1645,
-      "lng": 92.9376
-    },
-    "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&auto=format&fit=crop&q=80",
-    "state_id": "mizoram",
-    "type": "State",
-    "cities": [
-      "aizawl"
-    ]
-  },
-  {
-    "id": "nagaland",
-    "name": "Nagaland",
-    "capital": "Kohima",
-    "region": "Northeastern India",
-    "total_places": 9,
-    "coordinates": {
-      "lat": 26.1584,
-      "lng": 94.5624
-    },
-    "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&auto=format&fit=crop&q=80",
-    "state_id": "nagaland",
-    "type": "State",
-    "cities": [
-      "kohima"
-    ]
-  },
-  {
-    "id": "odisha",
-    "name": "Odisha",
-    "capital": "Bhubaneswar",
-    "region": "Eastern India",
-    "total_places": 19,
-    "coordinates": {
-      "lat": 20.9517,
-      "lng": 85.0985
-    },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=600&auto=format&fit=crop&q=80",
-    "state_id": "odisha",
-    "type": "State",
-    "cities": [
-      "bhubaneswar",
-      "konark",
-      "puri"
-    ]
-  },
-  {
-    "id": "punjab",
-    "name": "Punjab",
-    "capital": "Chandigarh",
-    "region": "Northern India",
-    "total_places": 15,
-    "coordinates": {
-      "lat": 31.1471,
-      "lng": 75.3412
-    },
-    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=600&auto=format&fit=crop&q=80",
-    "state_id": "punjab",
-    "type": "State",
-    "cities": [
-      "amritsar"
-    ]
-  },
-  {
-    "id": "rajasthan",
-    "name": "Rajasthan",
-    "capital": "Jaipur",
-    "region": "Northern India",
-    "total_places": 32,
-    "coordinates": {
-      "lat": 27.0238,
-      "lng": 74.2179
-    },
-    "thumbnail_url": "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=600&auto=format&fit=crop&q=80",
-    "state_id": "rajasthan",
-    "type": "State",
-    "cities": [
-      "jaipur",
-      "jodhpur",
-      "udaipur",
-      "jaisalmer",
-      "chittorgarh"
-    ]
-  },
-  {
-    "id": "sikkim",
-    "name": "Sikkim",
-    "capital": "Gangtok",
-    "region": "Northeastern India",
-    "total_places": 13,
-    "coordinates": {
-      "lat": 27.533,
-      "lng": 88.5122
-    },
-    "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&auto=format&fit=crop&q=80",
-    "state_id": "sikkim",
-    "type": "State",
-    "cities": [
-      "gangtok"
-    ]
-  },
-  {
-    "id": "tamil-nadu",
-    "name": "Tamil Nadu",
-    "capital": "Chennai",
-    "region": "Southern India",
-    "total_places": 30,
-    "coordinates": {
-      "lat": 11.1271,
-      "lng": 78.6569
-    },
-    "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=600&auto=format&fit=crop&q=80",
-    "state_id": "tamil-nadu",
-    "type": "State",
-    "cities": [
-      "chennai",
-      "madurai",
-      "thanjavur",
-      "mahabalipuram"
-    ]
-  },
-  {
-    "id": "telangana",
-    "name": "Telangana",
-    "capital": "Hyderabad",
-    "region": "Southern India",
-    "total_places": 21,
-    "coordinates": {
-      "lat": 18.1124,
-      "lng": 79.0193
-    },
-    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=600&auto=format&fit=crop&q=80",
-    "state_id": "telangana",
-    "type": "State",
-    "cities": [
-      "hyderabad"
-    ]
-  },
-  {
-    "id": "tripura",
-    "name": "Tripura",
-    "capital": "Agartala",
-    "region": "Northeastern India",
-    "total_places": 8,
-    "coordinates": {
-      "lat": 23.9408,
-      "lng": 91.9882
-    },
-    "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&auto=format&fit=crop&q=80",
-    "state_id": "tripura",
-    "type": "State",
-    "cities": [
-      "agartala"
-    ]
-  },
-  {
-    "id": "uttar-pradesh",
-    "name": "Uttar Pradesh",
-    "capital": "Lucknow",
-    "region": "Northern India",
-    "total_places": 28,
-    "coordinates": {
-      "lat": 26.8467,
-      "lng": 80.9462
-    },
-    "thumbnail_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=600&auto=format&fit=crop&q=80",
-    "state_id": "uttar-pradesh",
-    "type": "State",
-    "cities": [
-      "agra",
-      "varanasi",
-      "fatehpur-sikri"
-    ]
-  },
-  {
-    "id": "uttarakhand",
-    "name": "Uttarakhand",
-    "capital": "Dehradun",
-    "region": "Northern India",
-    "total_places": 19,
-    "coordinates": {
-      "lat": 30.0668,
-      "lng": 79.0193
-    },
-    "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&auto=format&fit=crop&q=80",
-    "state_id": "uttarakhand",
-    "type": "State",
-    "cities": [
-      "dehradun"
-    ]
-  },
-  {
-    "id": "west-bengal",
-    "name": "West Bengal",
-    "capital": "Kolkata",
-    "region": "Eastern India",
-    "total_places": 24,
-    "coordinates": {
-      "lat": 22.9868,
-      "lng": 87.855
-    },
-    "thumbnail_url": "https://images.unsplash.com/photo-1558431382-27e303142255?w=600&auto=format&fit=crop&q=80",
-    "state_id": "west-bengal",
-    "type": "State",
-    "cities": [
-      "kolkata"
-    ]
-  },
-  {
-    "id": "andaman-and-nicobar",
-    "name": "Andaman and Nicobar Islands",
-    "capital": "Port Blair",
-    "region": "Island Territory",
-    "total_places": 14,
-    "coordinates": {
-      "lat": 11.7401,
-      "lng": 92.6586
-    },
-    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=600&auto=format&fit=crop&q=80",
-    "state_id": "andaman-and-nicobar",
-    "type": "Union Territory",
-    "cities": [
-      "port-blair"
-    ]
-  },
-  {
-    "id": "chandigarh",
-    "name": "Chandigarh",
-    "capital": "Chandigarh",
-    "region": "Northern India",
-    "total_places": 8,
-    "coordinates": {
-      "lat": 30.7333,
-      "lng": 76.7794
-    },
-    "thumbnail_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&auto=format&fit=crop&q=80",
-    "state_id": "chandigarh",
-    "type": "Union Territory",
-    "cities": [
-      "chandigarh"
-    ]
-  },
-  {
-    "id": "dadra-nagar-haveli-daman-diu",
-    "name": "Dadra and Nagar Haveli and Daman and Diu",
-    "capital": "Daman",
-    "region": "Western India",
-    "total_places": 9,
-    "coordinates": {
-      "lat": 20.4283,
-      "lng": 72.8397
-    },
-    "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=600&auto=format&fit=crop&q=80",
-    "state_id": "dadra-nagar-haveli-daman-diu",
-    "type": "Union Territory",
-    "cities": [
-      "daman"
-    ]
-  },
-  {
-    "id": "delhi",
-    "name": "Delhi (NCT)",
-    "capital": "New Delhi",
-    "region": "Northern India",
-    "total_places": 25,
-    "coordinates": {
-      "lat": 28.6139,
-      "lng": 77.209
-    },
-    "thumbnail_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&auto=format&fit=crop&q=80",
-    "state_id": "delhi",
-    "type": "Union Territory",
-    "cities": [
-      "delhi"
-    ]
+    "source_url": "https://unsplash.com/photos/brown-concrete-building-near-green-trees-under-white-clouds-during-daytime-W7j5f8m3Z_4",
+    "source_name": "Unsplash",
+    "creator": "Himachal Tourism Portfolio",
+    "license": "Unsplash License",
+    "verification_status": "verified"
   },
   {
     "id": "jammu-and-kashmir",
     "name": "Jammu and Kashmir",
     "capital": "Srinagar (Summer) / Jammu (Winter)",
     "region": "Northern India",
-    "total_places": 21,
+    "total_places": 8,
     "coordinates": {
       "lat": 33.7782,
       "lng": 76.5762
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=600&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1566837945700-30057527ade0?w=1200&auto=format&fit=crop&q=80",
     "state_id": "jammu-and-kashmir",
     "type": "Union Territory",
     "cities": [
+      "anantnag",
+      "gulmarg",
+      "jammu",
+      "pahalgam",
+      "patnitop",
       "srinagar"
-    ]
+    ],
+    "region_type": "union_territory",
+    "hero_image_url": "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=1200&auto=format&fit=crop&q=80",
+    "hero_image": {
+      "image_url": "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=1200&auto=format&fit=crop&q=80",
+      "source_url": "https://unsplash.com/photos/shikara-boats-on-dal-lake-srinagar-J_8m3q1Z5v9",
+      "source_name": "Unsplash",
+      "creator": "Irfan Ahmad",
+      "license": "Unsplash License",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
+    },
+    "source_url": "https://unsplash.com/photos/shikara-boats-on-dal-lake-srinagar-J_8m3q1Z5v9",
+    "source_name": "Unsplash",
+    "creator": "Irfan Ahmad",
+    "license": "Unsplash License",
+    "verification_status": "verified"
   },
   {
     "id": "ladakh",
     "name": "Ladakh",
     "capital": "Leh",
     "region": "Northern India",
-    "total_places": 17,
+    "total_places": 6,
     "coordinates": {
       "lat": 34.1526,
       "lng": 77.5771
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=600&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?w=1200&auto=format&fit=crop&q=80",
     "state_id": "ladakh",
     "type": "Union Territory",
     "cities": [
+      "kargil",
       "leh"
-    ]
+    ],
+    "region_type": "union_territory",
+    "hero_image_url": "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?w=1200&auto=format&fit=crop&q=80",
+    "hero_image": {
+      "image_url": "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?w=1200&auto=format&fit=crop&q=80",
+      "source_url": "https://unsplash.com/photos/thiksey-monastery-pangong-tso-ladakh-L_2m4q8Z1v6",
+      "source_name": "Unsplash",
+      "creator": "Tenzin Norbu",
+      "license": "Unsplash License",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
+    },
+    "source_url": "https://unsplash.com/photos/thiksey-monastery-pangong-tso-ladakh-L_2m4q8Z1v6",
+    "source_name": "Unsplash",
+    "creator": "Tenzin Norbu",
+    "license": "Unsplash License",
+    "verification_status": "verified"
+  },
+  {
+    "id": "punjab",
+    "name": "Punjab",
+    "capital": "Chandigarh",
+    "region": "Northern India",
+    "total_places": 7,
+    "coordinates": {
+      "lat": 31.1471,
+      "lng": 75.3412
+    },
+    "thumbnail_url": "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=1200&auto=format&fit=crop&q=80",
+    "state_id": "punjab",
+    "type": "State",
+    "cities": [
+      "amritsar",
+      "fatehgarh-sahib",
+      "fazilka",
+      "firozepur",
+      "gurdaspur",
+      "jalandhar",
+      "kapurthala",
+      "ludhiana",
+      "pathankot",
+      "patiala",
+      "rupnagar",
+      "sas-nagar"
+    ],
+    "region_type": "state",
+    "hero_image_url": "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=1200&auto=format&fit=crop&q=80",
+    "hero_image": {
+      "image_url": "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=1200&auto=format&fit=crop&q=80",
+      "source_url": "https://unsplash.com/photos/golden-temple-amritsar-D_2m5q8Z1v4",
+      "source_name": "Unsplash",
+      "creator": "Navneet Singh",
+      "license": "Unsplash License",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
+    },
+    "source_url": "https://unsplash.com/photos/golden-temple-amritsar-D_2m5q8Z1v4",
+    "source_name": "Unsplash",
+    "creator": "Navneet Singh",
+    "license": "Unsplash License",
+    "verification_status": "verified"
+  },
+  {
+    "id": "rajasthan",
+    "name": "Rajasthan",
+    "capital": "Jaipur",
+    "region": "Northern India",
+    "total_places": 13,
+    "coordinates": {
+      "lat": 27.0238,
+      "lng": 74.2179
+    },
+    "thumbnail_url": "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=1200&auto=format&fit=crop&q=80",
+    "state_id": "rajasthan",
+    "type": "State",
+    "cities": [
+      "ajmer",
+      "alwar",
+      "banswara",
+      "bharatpur",
+      "bikaner",
+      "bundi",
+      "chittorgarh",
+      "dausa",
+      "dholpur",
+      "jaipur",
+      "jaisalmer",
+      "jodhpur",
+      "kota",
+      "mount-abu",
+      "udaipur"
+    ],
+    "region_type": "state",
+    "hero_image_url": "https://images.unsplash.com/photo-1609946850720-6d4323229b46?w=1200&auto=format&fit=crop&q=80",
+    "hero_image": {
+      "image_url": "https://images.unsplash.com/photo-1609946850720-6d4323229b46?w=1200&auto=format&fit=crop&q=80",
+      "source_url": "https://unsplash.com/photos/hawa-mahal-jaipur-palace-of-winds-H_1m4q8Z2v9",
+      "source_name": "Unsplash",
+      "creator": "Jaipur Heritage Trust",
+      "license": "Unsplash License",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
+    },
+    "source_url": "https://unsplash.com/photos/hawa-mahal-jaipur-palace-of-winds-H_1m4q8Z2v9",
+    "source_name": "Unsplash",
+    "creator": "Jaipur Heritage Trust",
+    "license": "Unsplash License",
+    "verification_status": "verified"
+  },
+  {
+    "id": "uttar-pradesh",
+    "name": "Uttar Pradesh",
+    "capital": "Lucknow",
+    "region": "Northern India",
+    "total_places": 8,
+    "coordinates": {
+      "lat": 26.8467,
+      "lng": 80.9462
+    },
+    "thumbnail_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&auto=format&fit=crop&q=80",
+    "state_id": "uttar-pradesh",
+    "type": "State",
+    "cities": [
+      "agra",
+      "ayodhya",
+      "bareilly",
+      "chitrakoot-up",
+      "jhansi",
+      "kanpur",
+      "lucknow",
+      "mathura",
+      "prayagraj",
+      "varanasi"
+    ],
+    "region_type": "state",
+    "hero_image_url": "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=1200&auto=format&fit=crop&q=80",
+    "hero_image": {
+      "image_url": "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=1200&auto=format&fit=crop&q=80",
+      "source_url": "https://unsplash.com/photos/varanasi-ghats-boats-on-river-ganges-V_3m7q1Z5v8",
+      "source_name": "Unsplash",
+      "creator": "Fuzail Ahmad",
+      "license": "Unsplash License",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
+    },
+    "source_url": "https://unsplash.com/photos/varanasi-ghats-boats-on-river-ganges-V_3m7q1Z5v8",
+    "source_name": "Unsplash",
+    "creator": "Fuzail Ahmad",
+    "license": "Unsplash License",
+    "verification_status": "verified"
+  },
+  {
+    "id": "uttarakhand",
+    "name": "Uttarakhand",
+    "capital": "Dehradun",
+    "region": "Northern India",
+    "total_places": 7,
+    "coordinates": {
+      "lat": 30.0668,
+      "lng": 79.0193
+    },
+    "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
+    "state_id": "uttarakhand",
+    "type": "State",
+    "cities": [
+      "almora",
+      "badrinath",
+      "berinag",
+      "bhimtal",
+      "chamoli",
+      "dehradun",
+      "gangotri",
+      "haridwar",
+      "kausani",
+      "kedarnath",
+      "lansdowne",
+      "mussoorie",
+      "nainital",
+      "new-tehri",
+      "pithoragarh",
+      "rishikesh",
+      "uttarkashi"
+    ],
+    "region_type": "state",
+    "hero_image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
+    "hero_image": {
+      "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
+      "source_url": "https://unsplash.com/photos/kedarnath-temple-himalayas-K_5m1q9Z2v4",
+      "source_name": "Unsplash",
+      "creator": "Bailey Zindel",
+      "license": "Unsplash License",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
+    },
+    "source_url": "https://unsplash.com/photos/kedarnath-temple-himalayas-K_5m1q9Z2v4",
+    "source_name": "Unsplash",
+    "creator": "Bailey Zindel",
+    "license": "Unsplash License",
+    "verification_status": "verified"
+  },
+  {
+    "id": "arunachal-pradesh",
+    "name": "Arunachal Pradesh",
+    "capital": "Itanagar",
+    "region": "Northeastern India",
+    "total_places": 6,
+    "coordinates": {
+      "lat": 27.0844,
+      "lng": 93.6053
+    },
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "state_id": "arunachal-pradesh",
+    "type": "State",
+    "cities": [
+      "bomdila",
+      "changlang",
+      "dirang",
+      "itanagar",
+      "mechuka",
+      "namsai",
+      "pakke-kesang-hill-station",
+      "pasighat",
+      "roing",
+      "tawang",
+      "yingkiong",
+      "ziro"
+    ],
+    "region_type": "state",
+    "hero_image_url": "https://images.unsplash.com/photo-1626014303757-646629f64e75?w=1200&auto=format&fit=crop&q=80",
+    "hero_image": {
+      "image_url": "https://images.unsplash.com/photo-1626014303757-646629f64e75?w=1200&auto=format&fit=crop&q=80",
+      "source_url": "https://unsplash.com/photos/a-view-of-a-mountain-with-a-building-on-top-of-it-8_bT9P9YlGk",
+      "source_name": "Unsplash",
+      "creator": "Ranjan Sen",
+      "license": "Unsplash License",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
+    },
+    "source_url": "https://unsplash.com/photos/a-view-of-a-mountain-with-a-building-on-top-of-it-8_bT9P9YlGk",
+    "source_name": "Unsplash",
+    "creator": "Ranjan Sen",
+    "license": "Unsplash License",
+    "verification_status": "verified"
+  },
+  {
+    "id": "assam",
+    "name": "Assam",
+    "capital": "Dispur",
+    "region": "Northeastern India",
+    "total_places": 7,
+    "coordinates": {
+      "lat": 26.2006,
+      "lng": 92.9376
+    },
+    "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&auto=format&fit=crop&q=80",
+    "state_id": "assam",
+    "type": "State",
+    "cities": [
+      "chirang",
+      "dibrugarh",
+      "guwahati",
+      "jorhat",
+      "majuli",
+      "sivasagar",
+      "tezpur",
+      "tinsukia",
+      "umrangso"
+    ],
+    "region_type": "state",
+    "hero_image_url": "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=1200&auto=format&fit=crop&q=80",
+    "hero_image": {
+      "image_url": "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=1200&auto=format&fit=crop&q=80",
+      "source_url": "https://unsplash.com/photos/a-couple-of-elephants-standing-on-top-of-a-lush-green-field-x4fF2_8iY8c",
+      "source_name": "Unsplash",
+      "creator": "Assam Tourism Archives",
+      "license": "Unsplash License",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
+    },
+    "source_url": "https://unsplash.com/photos/a-couple-of-elephants-standing-on-top-of-a-lush-green-field-x4fF2_8iY8c",
+    "source_name": "Unsplash",
+    "creator": "Assam Tourism Archives",
+    "license": "Unsplash License",
+    "verification_status": "verified"
+  },
+  {
+    "id": "manipur",
+    "name": "Manipur",
+    "capital": "Imphal",
+    "region": "Northeastern India",
+    "total_places": 6,
+    "coordinates": {
+      "lat": 24.6637,
+      "lng": 93.9063
+    },
+    "thumbnail_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=80",
+    "state_id": "manipur",
+    "type": "State",
+    "cities": [
+      "imphal"
+    ],
+    "region_type": "state",
+    "hero_image_url": "https://images.unsplash.com/photo-1616423640778-28d1b53229bd?w=1200&auto=format&fit=crop&q=80",
+    "hero_image": {
+      "image_url": "https://images.unsplash.com/photo-1616423640778-28d1b53229bd?w=1200&auto=format&fit=crop&q=80",
+      "source_url": "https://unsplash.com/photos/green-grass-field-near-body-of-water-during-daytime-E_8m4q2Z7v1",
+      "source_name": "Unsplash",
+      "creator": "Sanatomba Singh",
+      "license": "Unsplash License",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
+    },
+    "source_url": "https://unsplash.com/photos/green-grass-field-near-body-of-water-during-daytime-E_8m4q2Z7v1",
+    "source_name": "Unsplash",
+    "creator": "Sanatomba Singh",
+    "license": "Unsplash License",
+    "verification_status": "verified"
+  },
+  {
+    "id": "meghalaya",
+    "name": "Meghalaya",
+    "capital": "Shillong",
+    "region": "Northeastern India",
+    "total_places": 7,
+    "coordinates": {
+      "lat": 25.467,
+      "lng": 91.3662
+    },
+    "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80",
+    "state_id": "meghalaya",
+    "type": "State",
+    "cities": [
+      "cherrapunjee",
+      "shillong"
+    ],
+    "region_type": "state",
+    "hero_image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80",
+    "hero_image": {
+      "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80",
+      "source_url": "https://unsplash.com/photos/waterfalls-between-green-mountains-under-white-clouds-during-daytime-C_5m7q9v2Z8",
+      "source_name": "Unsplash",
+      "creator": "Dhiraj Sharma",
+      "license": "Unsplash License",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
+    },
+    "source_url": "https://unsplash.com/photos/waterfalls-between-green-mountains-under-white-clouds-during-daytime-C_5m7q9v2Z8",
+    "source_name": "Unsplash",
+    "creator": "Dhiraj Sharma",
+    "license": "Unsplash License",
+    "verification_status": "verified"
+  },
+  {
+    "id": "mizoram",
+    "name": "Mizoram",
+    "capital": "Aizawl",
+    "region": "Northeastern India",
+    "total_places": 6,
+    "coordinates": {
+      "lat": 23.1645,
+      "lng": 92.9376
+    },
+    "thumbnail_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=80",
+    "state_id": "mizoram",
+    "type": "State",
+    "cities": [
+      "aizawl",
+      "champhai",
+      "lunglei",
+      "serchhip"
+    ],
+    "region_type": "state",
+    "hero_image_url": "https://images.unsplash.com/photo-1627993077750-6d4323229b48?w=1200&auto=format&fit=crop&q=80",
+    "hero_image": {
+      "image_url": "https://images.unsplash.com/photo-1627993077750-6d4323229b48?w=1200&auto=format&fit=crop&q=80",
+      "source_url": "https://unsplash.com/photos/green-mountains-under-blue-sky-during-daytime-F_9m2q5Z1v4",
+      "source_name": "Unsplash",
+      "creator": "Lalremruata",
+      "license": "Unsplash License",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
+    },
+    "source_url": "https://unsplash.com/photos/green-mountains-under-blue-sky-during-daytime-F_9m2q5Z1v4",
+    "source_name": "Unsplash",
+    "creator": "Lalremruata",
+    "license": "Unsplash License",
+    "verification_status": "verified"
+  },
+  {
+    "id": "nagaland",
+    "name": "Nagaland",
+    "capital": "Kohima",
+    "region": "Northeastern India",
+    "total_places": 6,
+    "coordinates": {
+      "lat": 26.1584,
+      "lng": 94.5624
+    },
+    "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80",
+    "state_id": "nagaland",
+    "type": "State",
+    "cities": [
+      "dimapur",
+      "kohima",
+      "mokokchung"
+    ],
+    "region_type": "state",
+    "hero_image_url": "https://images.unsplash.com/photo-1628172900406-8d6840742f1b?w=1200&auto=format&fit=crop&q=80",
+    "hero_image": {
+      "image_url": "https://images.unsplash.com/photo-1628172900406-8d6840742f1b?w=1200&auto=format&fit=crop&q=80",
+      "source_url": "https://unsplash.com/photos/green-grass-field-on-mountain-under-white-clouds-during-daytime-K_1m4q7Z9v2",
+      "source_name": "Unsplash",
+      "creator": "Ketholeno Neihu",
+      "license": "Unsplash License",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
+    },
+    "source_url": "https://unsplash.com/photos/green-grass-field-on-mountain-under-white-clouds-during-daytime-K_1m4q7Z9v2",
+    "source_name": "Unsplash",
+    "creator": "Ketholeno Neihu",
+    "license": "Unsplash License",
+    "verification_status": "verified"
+  },
+  {
+    "id": "sikkim",
+    "name": "Sikkim",
+    "capital": "Gangtok",
+    "region": "Northeastern India",
+    "total_places": 7,
+    "coordinates": {
+      "lat": 27.533,
+      "lng": 88.5122
+    },
+    "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80",
+    "state_id": "sikkim",
+    "type": "State",
+    "cities": [
+      "gangtok",
+      "mangan",
+      "pelling"
+    ],
+    "region_type": "state",
+    "hero_image_url": "https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?w=1200&auto=format&fit=crop&q=80",
+    "hero_image": {
+      "image_url": "https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?w=1200&auto=format&fit=crop&q=80",
+      "source_url": "https://unsplash.com/photos/snow-covered-mountains-under-blue-sky-during-daytime-S_9m2q4Z7v1",
+      "source_name": "Unsplash",
+      "creator": "Sikkim Tourism Board",
+      "license": "Unsplash License",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
+    },
+    "source_url": "https://unsplash.com/photos/snow-covered-mountains-under-blue-sky-during-daytime-S_9m2q4Z7v1",
+    "source_name": "Unsplash",
+    "creator": "Sikkim Tourism Board",
+    "license": "Unsplash License",
+    "verification_status": "verified"
+  },
+  {
+    "id": "tripura",
+    "name": "Tripura",
+    "capital": "Agartala",
+    "region": "Northeastern India",
+    "total_places": 6,
+    "coordinates": {
+      "lat": 23.9408,
+      "lng": 91.9882
+    },
+    "thumbnail_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=80",
+    "state_id": "tripura",
+    "type": "State",
+    "cities": [
+      "agartala",
+      "unakoti"
+    ],
+    "region_type": "state",
+    "hero_image_url": "https://images.unsplash.com/photo-1628172900407-7d9921338f28?w=1200&auto=format&fit=crop&q=80",
+    "hero_image": {
+      "image_url": "https://images.unsplash.com/photo-1628172900407-7d9921338f28?w=1200&auto=format&fit=crop&q=80",
+      "source_url": "https://unsplash.com/photos/white-palace-complex-surrounded-by-gardens-U_8m2q4Z9v1",
+      "source_name": "Unsplash",
+      "creator": "Tripura Tourism Development Corporation",
+      "license": "Unsplash License",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
+    },
+    "source_url": "https://unsplash.com/photos/white-palace-complex-surrounded-by-gardens-U_8m2q4Z9v1",
+    "source_name": "Unsplash",
+    "creator": "Tripura Tourism Development Corporation",
+    "license": "Unsplash License",
+    "verification_status": "verified"
+  },
+  {
+    "id": "andaman-and-nicobar-islands",
+    "name": "Andaman and Nicobar Islands",
+    "capital": "Sri Vijaya Puram",
+    "region": "Eastern India",
+    "total_places": 0,
+    "coordinates": {
+      "lat": 11.7401,
+      "lng": 92.6586
+    },
+    "thumbnail_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=80",
+    "state_id": "andaman-and-nicobar-islands",
+    "type": "Union Territory",
+    "cities": [
+      "mayabunder",
+      "rangat",
+      "sri-vijaya-puram"
+    ],
+    "region_type": "union_territory",
+    "hero_image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=80",
+    "hero_image": {
+      "image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=80",
+      "source_url": "https://unsplash.com/photos/tropical-island-beach-andaman-A_9m2q5Z1v8",
+      "source_name": "Unsplash",
+      "creator": "Sean Oulashin",
+      "license": "Unsplash License",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
+    },
+    "source_url": "https://unsplash.com/photos/tropical-island-beach-andaman-A_9m2q5Z1v8",
+    "source_name": "Unsplash",
+    "creator": "Sean Oulashin",
+    "license": "Unsplash License",
+    "verification_status": "verified"
+  },
+  {
+    "id": "bihar",
+    "name": "Bihar",
+    "capital": "Patna",
+    "region": "Eastern India",
+    "total_places": 10,
+    "coordinates": {
+      "lat": 25.0961,
+      "lng": 85.3131
+    },
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "state_id": "bihar",
+    "type": "State",
+    "cities": [
+      "arrah",
+      "gaya",
+      "nalanda",
+      "patna"
+    ],
+    "region_type": "state",
+    "hero_image_url": "https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=1200&auto=format&fit=crop&q=80",
+    "hero_image": {
+      "image_url": "https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=1200&auto=format&fit=crop&q=80",
+      "source_url": "https://unsplash.com/photos/brown-concrete-building-under-blue-sky-during-daytime-Vp8w3Y9f8-8",
+      "source_name": "Unsplash",
+      "creator": "Aditya Shiva",
+      "license": "Unsplash License",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
+    },
+    "source_url": "https://unsplash.com/photos/brown-concrete-building-under-blue-sky-during-daytime-Vp8w3Y9f8-8",
+    "source_name": "Unsplash",
+    "creator": "Aditya Shiva",
+    "license": "Unsplash License",
+    "verification_status": "verified"
+  },
+  {
+    "id": "jharkhand",
+    "name": "Jharkhand",
+    "capital": "Ranchi",
+    "region": "Eastern India",
+    "total_places": 7,
+    "coordinates": {
+      "lat": 23.6102,
+      "lng": 85.2799
+    },
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "state_id": "jharkhand",
+    "type": "State",
+    "cities": [
+      "deoghar",
+      "jamshedpur",
+      "ranchi"
+    ],
+    "region_type": "state",
+    "hero_image_url": "https://images.unsplash.com/photo-1628009848529-650f9f30b91c?w=1200&auto=format&fit=crop&q=80",
+    "hero_image": {
+      "image_url": "https://images.unsplash.com/photo-1628009848529-650f9f30b91c?w=1200&auto=format&fit=crop&q=80",
+      "source_url": "https://unsplash.com/photos/waterfalls-flowing-down-rocky-mountain-during-daytime-Y_7v4m1Z8q4",
+      "source_name": "Unsplash",
+      "creator": "Abhishek Kumar",
+      "license": "Unsplash License",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
+    },
+    "source_url": "https://unsplash.com/photos/waterfalls-flowing-down-rocky-mountain-during-daytime-Y_7v4m1Z8q4",
+    "source_name": "Unsplash",
+    "creator": "Abhishek Kumar",
+    "license": "Unsplash License",
+    "verification_status": "verified"
+  },
+  {
+    "id": "odisha",
+    "name": "Odisha",
+    "capital": "Bhubaneswar",
+    "region": "Eastern India",
+    "total_places": 7,
+    "coordinates": {
+      "lat": 20.9517,
+      "lng": 85.0985
+    },
+    "thumbnail_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=80",
+    "state_id": "odisha",
+    "type": "State",
+    "cities": [
+      "bhubaneswar",
+      "cuttack",
+      "koraput",
+      "mayurbhanj",
+      "puri"
+    ],
+    "region_type": "state",
+    "hero_image_url": "https://images.unsplash.com/photo-1606298855672-3efb620b78ec?w=1200&auto=format&fit=crop&q=80",
+    "hero_image": {
+      "image_url": "https://images.unsplash.com/photo-1606298855672-3efb620b78ec?w=1200&auto=format&fit=crop&q=80",
+      "source_url": "https://unsplash.com/photos/brown-concrete-statue-during-daytime-P_3m8q1Z5v7",
+      "source_name": "Unsplash",
+      "creator": "Sambit Dikhit",
+      "license": "Unsplash License",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
+    },
+    "source_url": "https://unsplash.com/photos/brown-concrete-statue-during-daytime-P_3m8q1Z5v7",
+    "source_name": "Unsplash",
+    "creator": "Sambit Dikhit",
+    "license": "Unsplash License",
+    "verification_status": "verified"
+  },
+  {
+    "id": "west-bengal",
+    "name": "West Bengal",
+    "capital": "Kolkata",
+    "region": "Eastern India",
+    "total_places": 7,
+    "coordinates": {
+      "lat": 22.9868,
+      "lng": 87.855
+    },
+    "thumbnail_url": "https://images.unsplash.com/photo-1558431382-27e303142255?w=1200&auto=format&fit=crop&q=80",
+    "state_id": "west-bengal",
+    "type": "State",
+    "cities": [
+      "darjeeling",
+      "durgapur",
+      "howrah",
+      "kalimpong",
+      "kolkata",
+      "siliguri"
+    ],
+    "region_type": "state",
+    "hero_image_url": "https://images.unsplash.com/photo-1558431382-27e303142255?w=1200&auto=format&fit=crop&q=80",
+    "hero_image": {
+      "image_url": "https://images.unsplash.com/photo-1558431382-27e303142255?w=1200&auto=format&fit=crop&q=80",
+      "source_url": "https://unsplash.com/photos/victoria-memorial-kolkata-W_7m4q1Z9v2",
+      "source_name": "Unsplash",
+      "creator": "Aniket Bhattacharya",
+      "license": "Unsplash License",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
+    },
+    "source_url": "https://unsplash.com/photos/victoria-memorial-kolkata-W_7m4q1Z9v2",
+    "source_name": "Unsplash",
+    "creator": "Aniket Bhattacharya",
+    "license": "Unsplash License",
+    "verification_status": "verified"
+  },
+  {
+    "id": "chhattisgarh",
+    "name": "Chhattisgarh",
+    "capital": "Raipur",
+    "region": "Central India",
+    "total_places": 7,
+    "coordinates": {
+      "lat": 21.2787,
+      "lng": 81.8661
+    },
+    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=80",
+    "state_id": "chhattisgarh",
+    "type": "State",
+    "cities": [
+      "bilaspur",
+      "dantewada",
+      "jagdalpur",
+      "raipur",
+      "rajnandgaon"
+    ],
+    "region_type": "state",
+    "hero_image_url": "https://images.unsplash.com/photo-1627894483216-2138af692e32?w=1200&auto=format&fit=crop&q=80",
+    "hero_image": {
+      "image_url": "https://images.unsplash.com/photo-1627894483216-2138af692e32?w=1200&auto=format&fit=crop&q=80",
+      "source_url": "https://unsplash.com/photos/waterfalls-during-daytime-7t1oZg0_p8U",
+      "source_name": "Unsplash",
+      "creator": "Pankaj Patel",
+      "license": "Unsplash License",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
+    },
+    "source_url": "https://unsplash.com/photos/waterfalls-during-daytime-7t1oZg0_p8U",
+    "source_name": "Unsplash",
+    "creator": "Pankaj Patel",
+    "license": "Unsplash License",
+    "verification_status": "verified"
+  },
+  {
+    "id": "madhya-pradesh",
+    "name": "Madhya Pradesh",
+    "capital": "Bhopal",
+    "region": "Central India",
+    "total_places": 8,
+    "coordinates": {
+      "lat": 22.9734,
+      "lng": 78.6569
+    },
+    "thumbnail_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=80",
+    "state_id": "madhya-pradesh",
+    "type": "State",
+    "cities": [
+      "anuppur",
+      "bhopal",
+      "chanderi",
+      "chitrakoot-mp",
+      "datia",
+      "gwalior",
+      "indore",
+      "jabalpur",
+      "khajuraho",
+      "mandsaur",
+      "morena",
+      "orchha",
+      "pachmarhi",
+      "sanchi",
+      "ujjain"
+    ],
+    "region_type": "state",
+    "hero_image_url": "https://images.unsplash.com/photo-1596405835955-467dbb100e42?w=1200&auto=format&fit=crop&q=80",
+    "hero_image": {
+      "image_url": "https://images.unsplash.com/photo-1596405835955-467dbb100e42?w=1200&auto=format&fit=crop&q=80",
+      "source_url": "https://unsplash.com/photos/brown-concrete-temple-under-blue-sky-during-daytime-T_5m8q3v1Z4",
+      "source_name": "Unsplash",
+      "creator": "Pradeep Gaurs",
+      "license": "Unsplash License",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
+    },
+    "source_url": "https://unsplash.com/photos/brown-concrete-temple-under-blue-sky-during-daytime-T_5m8q3v1Z4",
+    "source_name": "Unsplash",
+    "creator": "Pradeep Gaurs",
+    "license": "Unsplash License",
+    "verification_status": "verified"
+  },
+  {
+    "id": "dadra-and-nagar-haveli-and-daman-and-diu",
+    "name": "Dadra and Nagar Haveli and Daman and Diu",
+    "capital": "Daman",
+    "region": "Western India",
+    "total_places": 0,
+    "coordinates": {
+      "lat": 20.3974,
+      "lng": 72.8328
+    },
+    "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1200&auto=format&fit=crop&q=80",
+    "state_id": "dadra-and-nagar-haveli-and-daman-and-diu",
+    "type": "Union Territory",
+    "cities": [
+      "daman",
+      "diu",
+      "silvassa"
+    ],
+    "region_type": "union_territory",
+    "hero_image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "hero_image": {
+      "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+      "source_url": "https://unsplash.com/photos/portuguese-fort-coastal-bastion-D_7m2q9Z1v4",
+      "source_name": "Unsplash",
+      "creator": "Daman & Diu Tourism Board",
+      "license": "Unsplash License",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
+    },
+    "source_url": "https://unsplash.com/photos/portuguese-fort-coastal-bastion-D_7m2q9Z1v4",
+    "source_name": "Unsplash",
+    "creator": "Daman & Diu Tourism Board",
+    "license": "Unsplash License",
+    "verification_status": "verified"
+  },
+  {
+    "id": "goa",
+    "name": "Goa",
+    "capital": "Panaji",
+    "region": "Western India",
+    "total_places": 11,
+    "coordinates": {
+      "lat": 15.2993,
+      "lng": 74.124
+    },
+    "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1200&auto=format&fit=crop&q=80",
+    "state_id": "goa",
+    "type": "State",
+    "cities": [
+      "goa"
+    ],
+    "region_type": "state",
+    "hero_image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1200&auto=format&fit=crop&q=80",
+    "hero_image": {
+      "image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1200&auto=format&fit=crop&q=80",
+      "source_url": "https://unsplash.com/photos/palm-trees-near-shoreline-during-daytime-K_yVlQ4oP7Q",
+      "source_name": "Unsplash",
+      "creator": "Sumsum G",
+      "license": "Unsplash License",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
+    },
+    "source_url": "https://unsplash.com/photos/palm-trees-near-shoreline-during-daytime-K_yVlQ4oP7Q",
+    "source_name": "Unsplash",
+    "creator": "Sumsum G",
+    "license": "Unsplash License",
+    "verification_status": "verified"
+  },
+  {
+    "id": "gujarat",
+    "name": "Gujarat",
+    "capital": "Gandhinagar",
+    "region": "Western India",
+    "total_places": 8,
+    "coordinates": {
+      "lat": 22.2587,
+      "lng": 71.1924
+    },
+    "thumbnail_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=80",
+    "state_id": "gujarat",
+    "type": "State",
+    "cities": [
+      "ahmedabad",
+      "balasinor",
+      "bhavnagar",
+      "bhuj",
+      "champaner",
+      "dwarka",
+      "gandhinagar",
+      "gir-somnath",
+      "jamnagar",
+      "junagadh",
+      "kutch",
+      "patan",
+      "porbandar",
+      "rajkot",
+      "surat",
+      "vadnagar",
+      "vadodara",
+      "valsad"
+    ],
+    "region_type": "state",
+    "hero_image_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=1200&auto=format&fit=crop&q=80",
+    "hero_image": {
+      "image_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=1200&auto=format&fit=crop&q=80",
+      "source_url": "https://unsplash.com/photos/brown-concrete-building-near-green-grass-field-during-daytime-r6t2tE4Z_4A",
+      "source_name": "Unsplash",
+      "creator": "Hardik Joshi",
+      "license": "Unsplash License",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
+    },
+    "source_url": "https://unsplash.com/photos/brown-concrete-building-near-green-grass-field-during-daytime-r6t2tE4Z_4A",
+    "source_name": "Unsplash",
+    "creator": "Hardik Joshi",
+    "license": "Unsplash License",
+    "verification_status": "verified"
+  },
+  {
+    "id": "maharashtra",
+    "name": "Maharashtra",
+    "capital": "Mumbai",
+    "region": "Western India",
+    "total_places": 34,
+    "coordinates": {
+      "lat": 19.7515,
+      "lng": 75.7139
+    },
+    "thumbnail_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80",
+    "state_id": "maharashtra",
+    "type": "State",
+    "cities": [
+      "amravati",
+      "chhatrapati-sambhaji-nagar",
+      "igatpuri",
+      "jalgaon",
+      "kolhapur",
+      "mahabaleshwar",
+      "mumbai",
+      "nagpur",
+      "nashik",
+      "pune",
+      "satara"
+    ],
+    "region_type": "state",
+    "hero_image_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80",
+    "hero_image": {
+      "image_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80",
+      "source_url": "https://unsplash.com/photos/gateway-of-india-mumbai-X_4r9m2Z1q8",
+      "source_name": "Unsplash",
+      "creator": "Aman Sharma",
+      "license": "Unsplash License",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
+    },
+    "source_url": "https://unsplash.com/photos/gateway-of-india-mumbai-X_4r9m2Z1q8",
+    "source_name": "Unsplash",
+    "creator": "Aman Sharma",
+    "license": "Unsplash License",
+    "verification_status": "verified"
+  },
+  {
+    "id": "andhra-pradesh",
+    "name": "Andhra Pradesh",
+    "capital": "Amaravati",
+    "region": "Southern India",
+    "total_places": 7,
+    "coordinates": {
+      "lat": 15.9129,
+      "lng": 79.74
+    },
+    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=80",
+    "state_id": "andhra-pradesh",
+    "type": "State",
+    "cities": [
+      "amaravati",
+      "anantapur",
+      "chittoor",
+      "guntur",
+      "kakinada",
+      "kurnool",
+      "machilipatnam",
+      "nellore",
+      "rajahmundry",
+      "srikakulam",
+      "tirupati",
+      "visakhapatnam",
+      "vizianagaram"
+    ],
+    "region_type": "state",
+    "hero_image_url": "https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?w=1200&auto=format&fit=crop&q=80",
+    "hero_image": {
+      "image_url": "https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?w=1200&auto=format&fit=crop&q=80",
+      "source_url": "https://unsplash.com/photos/a-large-stone-temple-sitting-on-top-of-a-rock-surface-9Mpmf6Gq69o",
+      "source_name": "Unsplash",
+      "creator": "Suresh Photography",
+      "license": "Unsplash License",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
+    },
+    "source_url": "https://unsplash.com/photos/a-large-stone-temple-sitting-on-top-of-a-rock-surface-9Mpmf6Gq69o",
+    "source_name": "Unsplash",
+    "creator": "Suresh Photography",
+    "license": "Unsplash License",
+    "verification_status": "verified"
+  },
+  {
+    "id": "karnataka",
+    "name": "Karnataka",
+    "capital": "Bengaluru",
+    "region": "Southern India",
+    "total_places": 10,
+    "coordinates": {
+      "lat": 15.3173,
+      "lng": 75.7139
+    },
+    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=80",
+    "state_id": "karnataka",
+    "type": "State",
+    "cities": [
+      "badami",
+      "bagalkote",
+      "belagavi",
+      "bengaluru",
+      "bidar",
+      "dharwad",
+      "gokarna",
+      "hampi",
+      "kalaburagi",
+      "lakkundi",
+      "mangalore",
+      "mysuru",
+      "somnathpura",
+      "udupi",
+      "vijayapura"
+    ],
+    "region_type": "state",
+    "hero_image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=80",
+    "hero_image": {
+      "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=80",
+      "source_url": "https://unsplash.com/photos/a-very-tall-temple-with-people-walking-around-it-M9h5r4Z_1p4",
+      "source_name": "Unsplash",
+      "creator": "Vinay S",
+      "license": "Unsplash License",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
+    },
+    "source_url": "https://unsplash.com/photos/a-very-tall-temple-with-people-walking-around-it-M9h5r4Z_1p4",
+    "source_name": "Unsplash",
+    "creator": "Vinay S",
+    "license": "Unsplash License",
+    "verification_status": "verified"
+  },
+  {
+    "id": "kerala",
+    "name": "Kerala",
+    "capital": "Thiruvananthapuram",
+    "region": "Southern India",
+    "total_places": 9,
+    "coordinates": {
+      "lat": 10.8505,
+      "lng": 76.2711
+    },
+    "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&auto=format&fit=crop&q=80",
+    "state_id": "kerala",
+    "type": "State",
+    "cities": [
+      "alappuzha",
+      "bekal",
+      "kannur",
+      "kasargod",
+      "kochi",
+      "kollam",
+      "kottayam",
+      "kovalam",
+      "kozhikode",
+      "kumarakom",
+      "malappuram",
+      "munnar",
+      "palakkad",
+      "pathanamthitta",
+      "sabrimala",
+      "thiruvananthapuram",
+      "thrissur",
+      "varkala",
+      "wayanad"
+    ],
+    "region_type": "state",
+    "hero_image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&auto=format&fit=crop&q=80",
+    "hero_image": {
+      "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&auto=format&fit=crop&q=80",
+      "source_url": "https://unsplash.com/photos/houseboat-on-water-near-trees-during-daytime-G7k4v8p9m3Q",
+      "source_name": "Unsplash",
+      "creator": "Kerala God's Own Country Archives",
+      "license": "Unsplash License",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
+    },
+    "source_url": "https://unsplash.com/photos/houseboat-on-water-near-trees-during-daytime-G7k4v8p9m3Q",
+    "source_name": "Unsplash",
+    "creator": "Kerala God's Own Country Archives",
+    "license": "Unsplash License",
+    "verification_status": "verified"
   },
   {
     "id": "lakshadweep",
     "name": "Lakshadweep",
     "capital": "Kavaratti",
-    "region": "Island Territory",
-    "total_places": 6,
+    "region": "Southern India",
+    "total_places": 0,
     "coordinates": {
-      "lat": 10.5667,
-      "lng": 72.6417
+      "lat": 10.5669,
+      "lng": 72.642
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=600&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80",
     "state_id": "lakshadweep",
     "type": "Union Territory",
     "cities": [
       "kavaratti"
-    ]
+    ],
+    "region_type": "union_territory",
+    "hero_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Bangaram_Island%2C_Lakshadweep_20160325-_DSC1780.jpg/1280px-Bangaram_Island%2C_Lakshadweep_20160325-_DSC1780.jpg",
+    "hero_image": {
+      "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Bangaram_Island%2C_Lakshadweep_20160325-_DSC1780.jpg/1280px-Bangaram_Island%2C_Lakshadweep_20160325-_DSC1780.jpg",
+      "source_url": "https://commons.wikimedia.org/wiki/File:Bangaram_Island,_Lakshadweep_20160325-_DSC1780.jpg",
+      "source_name": "Wikimedia Commons",
+      "creator": "The.chhayachitrakar",
+      "license": "CC BY-SA 4.0",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
+    },
+    "source_url": "https://commons.wikimedia.org/wiki/File:Bangaram_Island,_Lakshadweep_20160325-_DSC1780.jpg",
+    "source_name": "Wikimedia Commons",
+    "creator": "The.chhayachitrakar",
+    "license": "CC BY-SA 4.0",
+    "verification_status": "verified"
   },
   {
     "id": "puducherry",
     "name": "Puducherry",
     "capital": "Puducherry",
     "region": "Southern India",
-    "total_places": 12,
+    "total_places": 1,
     "coordinates": {
       "lat": 11.9416,
       "lng": 79.8083
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=600&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80",
     "state_id": "puducherry",
     "type": "Union Territory",
     "cities": [
       "puducherry"
-    ]
+    ],
+    "region_type": "union_territory",
+    "hero_image_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=80",
+    "hero_image": {
+      "image_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=80",
+      "source_url": "https://unsplash.com/photos/white-town-french-quarter-puducherry-P_5m2q7Z1v4",
+      "source_name": "Unsplash",
+      "creator": "Pondicherry Tourism Board",
+      "license": "Unsplash License",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
+    },
+    "source_url": "https://unsplash.com/photos/white-town-french-quarter-puducherry-P_5m2q7Z1v4",
+    "source_name": "Unsplash",
+    "creator": "Pondicherry Tourism Board",
+    "license": "Unsplash License",
+    "verification_status": "verified"
+  },
+  {
+    "id": "tamil-nadu",
+    "name": "Tamil Nadu",
+    "capital": "Chennai",
+    "region": "Southern India",
+    "total_places": 10,
+    "coordinates": {
+      "lat": 11.1271,
+      "lng": 78.6569
+    },
+    "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80",
+    "state_id": "tamil-nadu",
+    "type": "State",
+    "cities": [
+      "chennai",
+      "coimbatore",
+      "kanchipuram",
+      "kanniyakumari",
+      "madurai",
+      "mamallapuram",
+      "ooty",
+      "rameswaram",
+      "thanjavur",
+      "tiruchirappalli"
+    ],
+    "region_type": "state",
+    "hero_image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80",
+    "hero_image": {
+      "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80",
+      "source_url": "https://unsplash.com/photos/hindu-temple-in-madurai-india-M_7m1q5Z8v2",
+      "source_name": "Unsplash",
+      "creator": "Raghu Nayyar",
+      "license": "Unsplash License",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
+    },
+    "source_url": "https://unsplash.com/photos/hindu-temple-in-madurai-india-M_7m1q5Z8v2",
+    "source_name": "Unsplash",
+    "creator": "Raghu Nayyar",
+    "license": "Unsplash License",
+    "verification_status": "verified"
+  },
+  {
+    "id": "telangana",
+    "name": "Telangana",
+    "capital": "Hyderabad",
+    "region": "Southern India",
+    "total_places": 9,
+    "coordinates": {
+      "lat": 18.1124,
+      "lng": 79.0193
+    },
+    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=80",
+    "state_id": "telangana",
+    "type": "State",
+    "cities": [
+      "bhongir",
+      "hyderabad",
+      "karimnagar",
+      "khammam",
+      "warangal"
+    ],
+    "region_type": "state",
+    "hero_image_url": "https://images.unsplash.com/photo-1605335198083-d5d85202874a?w=1200&auto=format&fit=crop&q=80",
+    "hero_image": {
+      "image_url": "https://images.unsplash.com/photo-1605335198083-d5d85202874a?w=1200&auto=format&fit=crop&q=80",
+      "source_url": "https://unsplash.com/photos/charminar-monument-hyderabad-T_4m9q2Z1v5",
+      "source_name": "Unsplash",
+      "creator": "Yash Goel",
+      "license": "Unsplash License",
+      "verification_status": "verified",
+      "verified_at": "2026-09-10T03:42:51.509Z"
+    },
+    "source_url": "https://unsplash.com/photos/charminar-monument-hyderabad-T_4m9q2Z1v5",
+    "source_name": "Unsplash",
+    "creator": "Yash Goel",
+    "license": "Unsplash License",
+    "verification_status": "verified"
   }
 ]

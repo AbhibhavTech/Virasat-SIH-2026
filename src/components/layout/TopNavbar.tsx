@@ -100,13 +100,8 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
     },
     {
       id: 'india',
-      label: 'India Explorer',
+      label: 'Discover Bharat',
       isActive: activeTab === 'india',
-    },
-    {
-      id: 'dashboard',
-      label: 'Destinations',
-      isActive: activeTab === 'dashboard',
     },
     {
       id: 'heritage',

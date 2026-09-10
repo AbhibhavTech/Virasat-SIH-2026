@@ -52,10 +52,10 @@ export const SimpleFooter: React.FC<SimpleFooterProps> = ({
               </li>
               <li>
                 <button
-                  onClick={() => onNavigateTab('dashboard')}
+                  onClick={() => onNavigateTab('india')}
                   className="text-stone-600 hover:text-amber-800 transition"
                 >
-                  Destinations & City Hubs
+                  Discover Bharat (36 States & UTs)
                 </button>
               </li>
               <li>

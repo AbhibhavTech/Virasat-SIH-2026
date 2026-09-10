@@ -1,0 +1,1287 @@
+[
+  {
+    "id": "amaravati",
+    "name": "Amaravati",
+    "state_id": "andhra-pradesh"
+  },
+  {
+    "id": "anantapur",
+    "name": "Anantapur",
+    "state_id": "andhra-pradesh"
+  },
+  {
+    "id": "chittoor",
+    "name": "Chittoor",
+    "state_id": "andhra-pradesh"
+  },
+  {
+    "id": "guntur",
+    "name": "Guntur",
+    "state_id": "andhra-pradesh"
+  },
+  {
+    "id": "kakinada",
+    "name": "Kakinada",
+    "state_id": "andhra-pradesh"
+  },
+  {
+    "id": "kurnool",
+    "name": "Kurnool",
+    "state_id": "andhra-pradesh"
+  },
+  {
+    "id": "machilipatnam",
+    "name": "Machilipatnam",
+    "state_id": "andhra-pradesh"
+  },
+  {
+    "id": "nellore",
+    "name": "Nellore",
+    "state_id": "andhra-pradesh"
+  },
+  {
+    "id": "rajahmundry",
+    "name": "Rajahmundry",
+    "state_id": "andhra-pradesh"
+  },
+  {
+    "id": "srikakulam",
+    "name": "Srikakulam",
+    "state_id": "andhra-pradesh"
+  },
+  {
+    "id": "tirupati",
+    "name": "Tirupati",
+    "state_id": "andhra-pradesh"
+  },
+  {
+    "id": "visakhapatnam",
+    "name": "Visakhapatnam",
+    "state_id": "andhra-pradesh"
+  },
+  {
+    "id": "vizianagaram",
+    "name": "Vizianagaram",
+    "state_id": "andhra-pradesh"
+  },
+  {
+    "id": "bomdila",
+    "name": "Bomdila",
+    "state_id": "arunachal-pradesh"
+  },
+  {
+    "id": "changlang",
+    "name": "Changlang",
+    "state_id": "arunachal-pradesh"
+  },
+  {
+    "id": "dirang",
+    "name": "Dirang",
+    "state_id": "arunachal-pradesh"
+  },
+  {
+    "id": "itanagar",
+    "name": "Itanagar",
+    "state_id": "arunachal-pradesh"
+  },
+  {
+    "id": "mechuka",
+    "name": "Mechuka",
+    "state_id": "arunachal-pradesh"
+  },
+  {
+    "id": "namsai",
+    "name": "Namsai",
+    "state_id": "arunachal-pradesh"
+  },
+  {
+    "id": "pakke-kesang-hill-station",
+    "name": "Pakke Kesang Hill Station",
+    "state_id": "arunachal-pradesh"
+  },
+  {
+    "id": "pasighat",
+    "name": "Pasighat",
+    "state_id": "arunachal-pradesh"
+  },
+  {
+    "id": "roing",
+    "name": "Roing",
+    "state_id": "arunachal-pradesh"
+  },
+  {
+    "id": "tawang",
+    "name": "Tawang",
+    "state_id": "arunachal-pradesh"
+  },
+  {
+    "id": "yingkiong",
+    "name": "Yingkiong",
+    "state_id": "arunachal-pradesh"
+  },
+  {
+    "id": "ziro",
+    "name": "Ziro",
+    "state_id": "arunachal-pradesh"
+  },
+  {
+    "id": "chirang",
+    "name": "Chirang",
+    "state_id": "assam"
+  },
+  {
+    "id": "dibrugarh",
+    "name": "Dibrugarh",
+    "state_id": "assam"
+  },
+  {
+    "id": "guwahati",
+    "name": "Guwahati",
+    "state_id": "assam"
+  },
+  {
+    "id": "jorhat",
+    "name": "Jorhat",
+    "state_id": "assam"
+  },
+  {
+    "id": "majuli",
+    "name": "Majuli",
+    "state_id": "assam"
+  },
+  {
+    "id": "sivasagar",
+    "name": "Sivasagar",
+    "state_id": "assam"
+  },
+  {
+    "id": "tezpur",
+    "name": "Tezpur",
+    "state_id": "assam"
+  },
+  {
+    "id": "tinsukia",
+    "name": "Tinsukia",
+    "state_id": "assam"
+  },
+  {
+    "id": "umrangso",
+    "name": "Umrangso",
+    "state_id": "assam"
+  },
+  {
+    "id": "arrah",
+    "name": "Arrah",
+    "state_id": "bihar"
+  },
+  {
+    "id": "gaya",
+    "name": "Gaya",
+    "state_id": "bihar"
+  },
+  {
+    "id": "nalanda",
+    "name": "Nalanda",
+    "state_id": "bihar"
+  },
+  {
+    "id": "patna",
+    "name": "Patna",
+    "state_id": "bihar"
+  },
+  {
+    "id": "bilaspur",
+    "name": "Bilaspur",
+    "state_id": "chhattisgarh"
+  },
+  {
+    "id": "dantewada",
+    "name": "Dantewada",
+    "state_id": "chhattisgarh"
+  },
+  {
+    "id": "jagdalpur",
+    "name": "Jagdalpur",
+    "state_id": "chhattisgarh"
+  },
+  {
+    "id": "raipur",
+    "name": "Raipur",
+    "state_id": "chhattisgarh"
+  },
+  {
+    "id": "rajnandgaon",
+    "name": "Rajnandgaon",
+    "state_id": "chhattisgarh"
+  },
+  {
+    "id": "goa",
+    "name": "Goa",
+    "state_id": "goa"
+  },
+  {
+    "id": "ahmedabad",
+    "name": "Ahmedabad",
+    "state_id": "gujarat"
+  },
+  {
+    "id": "balasinor",
+    "name": "Balasinor",
+    "state_id": "gujarat"
+  },
+  {
+    "id": "bhavnagar",
+    "name": "Bhavnagar",
+    "state_id": "gujarat"
+  },
+  {
+    "id": "bhuj",
+    "name": "Bhuj",
+    "state_id": "gujarat"
+  },
+  {
+    "id": "champaner",
+    "name": "Champaner",
+    "state_id": "gujarat"
+  },
+  {
+    "id": "dwarka",
+    "name": "Dwarka",
+    "state_id": "gujarat"
+  },
+  {
+    "id": "gandhinagar",
+    "name": "Gandhinagar",
+    "state_id": "gujarat"
+  },
+  {
+    "id": "gir-somnath",
+    "name": "Gir Somnath",
+    "state_id": "gujarat"
+  },
+  {
+    "id": "jamnagar",
+    "name": "Jamnagar",
+    "state_id": "gujarat"
+  },
+  {
+    "id": "junagadh",
+    "name": "Junagadh",
+    "state_id": "gujarat"
+  },
+  {
+    "id": "kutch",
+    "name": "Kutch",
+    "state_id": "gujarat"
+  },
+  {
+    "id": "patan",
+    "name": "Patan",
+    "state_id": "gujarat"
+  },
+  {
+    "id": "porbandar",
+    "name": "Porbandar",
+    "state_id": "gujarat"
+  },
+  {
+    "id": "rajkot",
+    "name": "Rajkot",
+    "state_id": "gujarat"
+  },
+  {
+    "id": "surat",
+    "name": "Surat",
+    "state_id": "gujarat"
+  },
+  {
+    "id": "vadnagar",
+    "name": "Vadnagar",
+    "state_id": "gujarat"
+  },
+  {
+    "id": "vadodara",
+    "name": "Vadodara",
+    "state_id": "gujarat"
+  },
+  {
+    "id": "valsad",
+    "name": "Valsad",
+    "state_id": "gujarat"
+  },
+  {
+    "id": "faridabad",
+    "name": "Faridabad",
+    "state_id": "haryana"
+  },
+  {
+    "id": "gurugram",
+    "name": "Gurugram",
+    "state_id": "haryana"
+  },
+  {
+    "id": "hisar",
+    "name": "Hisar",
+    "state_id": "haryana"
+  },
+  {
+    "id": "kurukshetra",
+    "name": "Kurukshetra",
+    "state_id": "haryana"
+  },
+  {
+    "id": "panipat",
+    "name": "Panipat",
+    "state_id": "haryana"
+  },
+  {
+    "id": "yamunanagar",
+    "name": "Yamunanagar",
+    "state_id": "haryana"
+  },
+  {
+    "id": "bilaspur-hp",
+    "name": "Bilaspur",
+    "state_id": "himachal-pradesh"
+  },
+  {
+    "id": "chamba",
+    "name": "Chamba",
+    "state_id": "himachal-pradesh"
+  },
+  {
+    "id": "dalhousie",
+    "name": "Dalhousie",
+    "state_id": "himachal-pradesh"
+  },
+  {
+    "id": "dharamshala",
+    "name": "Dharamshala",
+    "state_id": "himachal-pradesh"
+  },
+  {
+    "id": "kangra",
+    "name": "Kangra",
+    "state_id": "himachal-pradesh"
+  },
+  {
+    "id": "kasauli",
+    "name": "Kasauli",
+    "state_id": "himachal-pradesh"
+  },
+  {
+    "id": "keylong",
+    "name": "Keylong",
+    "state_id": "himachal-pradesh"
+  },
+  {
+    "id": "kullu",
+    "name": "Kullu",
+    "state_id": "himachal-pradesh"
+  },
+  {
+    "id": "manali",
+    "name": "Manali",
+    "state_id": "himachal-pradesh"
+  },
+  {
+    "id": "paonta-sahib",
+    "name": "Paonta Sahib",
+    "state_id": "himachal-pradesh"
+  },
+  {
+    "id": "shimla",
+    "name": "Shimla",
+    "state_id": "himachal-pradesh"
+  },
+  {
+    "id": "spiti-valley",
+    "name": "Spiti Valley",
+    "state_id": "himachal-pradesh"
+  },
+  {
+    "id": "reckong-peo",
+    "name": "Reckong Peo",
+    "state_id": "himachal-pradesh"
+  },
+  {
+    "id": "deoghar",
+    "name": "Deoghar",
+    "state_id": "jharkhand"
+  },
+  {
+    "id": "jamshedpur",
+    "name": "Jamshedpur",
+    "state_id": "jharkhand"
+  },
+  {
+    "id": "ranchi",
+    "name": "Ranchi",
+    "state_id": "jharkhand"
+  },
+  {
+    "id": "badami",
+    "name": "Badami",
+    "state_id": "karnataka"
+  },
+  {
+    "id": "bagalkote",
+    "name": "Bagalkote",
+    "state_id": "karnataka"
+  },
+  {
+    "id": "belagavi",
+    "name": "Belagavi",
+    "state_id": "karnataka"
+  },
+  {
+    "id": "bengaluru",
+    "name": "Bengaluru",
+    "state_id": "karnataka"
+  },
+  {
+    "id": "bidar",
+    "name": "Bidar",
+    "state_id": "karnataka"
+  },
+  {
+    "id": "dharwad",
+    "name": "Dharwad",
+    "state_id": "karnataka"
+  },
+  {
+    "id": "gokarna",
+    "name": "Gokarna",
+    "state_id": "karnataka"
+  },
+  {
+    "id": "hampi",
+    "name": "Hampi",
+    "state_id": "karnataka"
+  },
+  {
+    "id": "kalaburagi",
+    "name": "Kalaburagi",
+    "state_id": "karnataka"
+  },
+  {
+    "id": "lakkundi",
+    "name": "Lakkundi",
+    "state_id": "karnataka"
+  },
+  {
+    "id": "mangalore",
+    "name": "Mangalore",
+    "state_id": "karnataka"
+  },
+  {
+    "id": "mysuru",
+    "name": "Mysuru",
+    "state_id": "karnataka"
+  },
+  {
+    "id": "somnathpura",
+    "name": "Somnathpura",
+    "state_id": "karnataka"
+  },
+  {
+    "id": "udupi",
+    "name": "Udupi",
+    "state_id": "karnataka"
+  },
+  {
+    "id": "vijayapura",
+    "name": "Vijayapura",
+    "state_id": "karnataka"
+  },
+  {
+    "id": "alappuzha",
+    "name": "Alappuzha",
+    "state_id": "kerala"
+  },
+  {
+    "id": "bekal",
+    "name": "Bekal",
+    "state_id": "kerala"
+  },
+  {
+    "id": "kannur",
+    "name": "Kannur",
+    "state_id": "kerala"
+  },
+  {
+    "id": "kasargod",
+    "name": "Kasargod",
+    "state_id": "kerala"
+  },
+  {
+    "id": "kochi",
+    "name": "Kochi",
+    "state_id": "kerala"
+  },
+  {
+    "id": "kollam",
+    "name": "Kollam",
+    "state_id": "kerala"
+  },
+  {
+    "id": "kottayam",
+    "name": "Kottayam",
+    "state_id": "kerala"
+  },
+  {
+    "id": "kovalam",
+    "name": "Kovalam",
+    "state_id": "kerala"
+  },
+  {
+    "id": "kozhikode",
+    "name": "Kozhikode",
+    "state_id": "kerala"
+  },
+  {
+    "id": "kumarakom",
+    "name": "Kumarakom",
+    "state_id": "kerala"
+  },
+  {
+    "id": "malappuram",
+    "name": "Malappuram",
+    "state_id": "kerala"
+  },
+  {
+    "id": "munnar",
+    "name": "Munnar",
+    "state_id": "kerala"
+  },
+  {
+    "id": "palakkad",
+    "name": "Palakkad",
+    "state_id": "kerala"
+  },
+  {
+    "id": "pathanamthitta",
+    "name": "Pathanamthitta",
+    "state_id": "kerala"
+  },
+  {
+    "id": "sabrimala",
+    "name": "Sabrimala",
+    "state_id": "kerala"
+  },
+  {
+    "id": "thiruvananthapuram",
+    "name": "Thiruvananthapuram",
+    "state_id": "kerala"
+  },
+  {
+    "id": "thrissur",
+    "name": "Thrissur",
+    "state_id": "kerala"
+  },
+  {
+    "id": "varkala",
+    "name": "Varkala",
+    "state_id": "kerala"
+  },
+  {
+    "id": "wayanad",
+    "name": "Wayanad",
+    "state_id": "kerala"
+  },
+  {
+    "id": "anuppur",
+    "name": "Anuppur",
+    "state_id": "madhya-pradesh"
+  },
+  {
+    "id": "bhopal",
+    "name": "Bhopal",
+    "state_id": "madhya-pradesh"
+  },
+  {
+    "id": "chanderi",
+    "name": "Chanderi",
+    "state_id": "madhya-pradesh"
+  },
+  {
+    "id": "chitrakoot-mp",
+    "name": "Chitrakoot",
+    "state_id": "madhya-pradesh"
+  },
+  {
+    "id": "datia",
+    "name": "Datia",
+    "state_id": "madhya-pradesh"
+  },
+  {
+    "id": "gwalior",
+    "name": "Gwalior",
+    "state_id": "madhya-pradesh"
+  },
+  {
+    "id": "indore",
+    "name": "Indore",
+    "state_id": "madhya-pradesh"
+  },
+  {
+    "id": "jabalpur",
+    "name": "Jabalpur",
+    "state_id": "madhya-pradesh"
+  },
+  {
+    "id": "khajuraho",
+    "name": "Khajuraho",
+    "state_id": "madhya-pradesh"
+  },
+  {
+    "id": "mandsaur",
+    "name": "Mandsaur",
+    "state_id": "madhya-pradesh"
+  },
+  {
+    "id": "morena",
+    "name": "Morena",
+    "state_id": "madhya-pradesh"
+  },
+  {
+    "id": "orchha",
+    "name": "Orchha",
+    "state_id": "madhya-pradesh"
+  },
+  {
+    "id": "pachmarhi",
+    "name": "Pachmarhi",
+    "state_id": "madhya-pradesh"
+  },
+  {
+    "id": "sanchi",
+    "name": "Sanchi",
+    "state_id": "madhya-pradesh"
+  },
+  {
+    "id": "ujjain",
+    "name": "Ujjain",
+    "state_id": "madhya-pradesh"
+  },
+  {
+    "id": "amravati",
+    "name": "Amravati",
+    "state_id": "maharashtra"
+  },
+  {
+    "id": "chhatrapati-sambhaji-nagar",
+    "name": "Chhatrapati Sambhaji Nagar",
+    "state_id": "maharashtra"
+  },
+  {
+    "id": "igatpuri",
+    "name": "Igatpuri",
+    "state_id": "maharashtra"
+  },
+  {
+    "id": "jalgaon",
+    "name": "Jalgaon",
+    "state_id": "maharashtra"
+  },
+  {
+    "id": "kolhapur",
+    "name": "Kolhapur",
+    "state_id": "maharashtra"
+  },
+  {
+    "id": "mahabaleshwar",
+    "name": "Mahabaleshwar",
+    "state_id": "maharashtra"
+  },
+  {
+    "id": "mumbai",
+    "name": "Mumbai",
+    "state_id": "maharashtra"
+  },
+  {
+    "id": "nagpur",
+    "name": "Nagpur",
+    "state_id": "maharashtra"
+  },
+  {
+    "id": "nashik",
+    "name": "Nashik",
+    "state_id": "maharashtra"
+  },
+  {
+    "id": "pune",
+    "name": "Pune",
+    "state_id": "maharashtra"
+  },
+  {
+    "id": "satara",
+    "name": "Satara",
+    "state_id": "maharashtra"
+  },
+  {
+    "id": "imphal",
+    "name": "Imphal",
+    "state_id": "manipur"
+  },
+  {
+    "id": "cherrapunjee",
+    "name": "Cherrapunjee",
+    "state_id": "meghalaya"
+  },
+  {
+    "id": "shillong",
+    "name": "Shillong",
+    "state_id": "meghalaya"
+  },
+  {
+    "id": "aizawl",
+    "name": "Aizawl",
+    "state_id": "mizoram"
+  },
+  {
+    "id": "champhai",
+    "name": "Champhai",
+    "state_id": "mizoram"
+  },
+  {
+    "id": "lunglei",
+    "name": "Lunglei",
+    "state_id": "mizoram"
+  },
+  {
+    "id": "serchhip",
+    "name": "Serchhip",
+    "state_id": "mizoram"
+  },
+  {
+    "id": "dimapur",
+    "name": "Dimapur",
+    "state_id": "nagaland"
+  },
+  {
+    "id": "kohima",
+    "name": "Kohima",
+    "state_id": "nagaland"
+  },
+  {
+    "id": "mokokchung",
+    "name": "Mokokchung",
+    "state_id": "nagaland"
+  },
+  {
+    "id": "bhubaneswar",
+    "name": "Bhubaneswar",
+    "state_id": "odisha"
+  },
+  {
+    "id": "cuttack",
+    "name": "Cuttack",
+    "state_id": "odisha"
+  },
+  {
+    "id": "koraput",
+    "name": "Koraput",
+    "state_id": "odisha"
+  },
+  {
+    "id": "mayurbhanj",
+    "name": "Mayurbhanj",
+    "state_id": "odisha"
+  },
+  {
+    "id": "puri",
+    "name": "Puri",
+    "state_id": "odisha"
+  },
+  {
+    "id": "amritsar",
+    "name": "Amritsar",
+    "state_id": "punjab"
+  },
+  {
+    "id": "fatehgarh-sahib",
+    "name": "Fatehgarh Sahib",
+    "state_id": "punjab"
+  },
+  {
+    "id": "fazilka",
+    "name": "Fazilka",
+    "state_id": "punjab"
+  },
+  {
+    "id": "firozepur",
+    "name": "Firozepur",
+    "state_id": "punjab"
+  },
+  {
+    "id": "gurdaspur",
+    "name": "Gurdaspur",
+    "state_id": "punjab"
+  },
+  {
+    "id": "jalandhar",
+    "name": "Jalandhar",
+    "state_id": "punjab"
+  },
+  {
+    "id": "kapurthala",
+    "name": "Kapurthala",
+    "state_id": "punjab"
+  },
+  {
+    "id": "ludhiana",
+    "name": "Ludhiana",
+    "state_id": "punjab"
+  },
+  {
+    "id": "pathankot",
+    "name": "Pathankot",
+    "state_id": "punjab"
+  },
+  {
+    "id": "patiala",
+    "name": "Patiala",
+    "state_id": "punjab"
+  },
+  {
+    "id": "rupnagar",
+    "name": "Rupnagar",
+    "state_id": "punjab"
+  },
+  {
+    "id": "sas-nagar",
+    "name": "SAS Nagar",
+    "state_id": "punjab"
+  },
+  {
+    "id": "ajmer",
+    "name": "Ajmer",
+    "state_id": "rajasthan"
+  },
+  {
+    "id": "alwar",
+    "name": "Alwar",
+    "state_id": "rajasthan"
+  },
+  {
+    "id": "banswara",
+    "name": "Banswara",
+    "state_id": "rajasthan"
+  },
+  {
+    "id": "bharatpur",
+    "name": "Bharatpur",
+    "state_id": "rajasthan"
+  },
+  {
+    "id": "bikaner",
+    "name": "Bikaner",
+    "state_id": "rajasthan"
+  },
+  {
+    "id": "bundi",
+    "name": "Bundi",
+    "state_id": "rajasthan"
+  },
+  {
+    "id": "chittorgarh",
+    "name": "Chittorgarh",
+    "state_id": "rajasthan"
+  },
+  {
+    "id": "dausa",
+    "name": "Dausa",
+    "state_id": "rajasthan"
+  },
+  {
+    "id": "dholpur",
+    "name": "Dholpur",
+    "state_id": "rajasthan"
+  },
+  {
+    "id": "jaipur",
+    "name": "Jaipur",
+    "state_id": "rajasthan"
+  },
+  {
+    "id": "jaisalmer",
+    "name": "Jaisalmer",
+    "state_id": "rajasthan"
+  },
+  {
+    "id": "jodhpur",
+    "name": "Jodhpur",
+    "state_id": "rajasthan"
+  },
+  {
+    "id": "kota",
+    "name": "Kota",
+    "state_id": "rajasthan"
+  },
+  {
+    "id": "mount-abu",
+    "name": "Mount Abu",
+    "state_id": "rajasthan"
+  },
+  {
+    "id": "udaipur",
+    "name": "Udaipur",
+    "state_id": "rajasthan"
+  },
+  {
+    "id": "gangtok",
+    "name": "Gangtok",
+    "state_id": "sikkim"
+  },
+  {
+    "id": "mangan",
+    "name": "Mangan",
+    "state_id": "sikkim"
+  },
+  {
+    "id": "pelling",
+    "name": "Pelling",
+    "state_id": "sikkim"
+  },
+  {
+    "id": "chennai",
+    "name": "Chennai",
+    "state_id": "tamil-nadu"
+  },
+  {
+    "id": "coimbatore",
+    "name": "Coimbatore",
+    "state_id": "tamil-nadu"
+  },
+  {
+    "id": "kanchipuram",
+    "name": "Kanchipuram",
+    "state_id": "tamil-nadu"
+  },
+  {
+    "id": "kanniyakumari",
+    "name": "Kanniyakumari",
+    "state_id": "tamil-nadu"
+  },
+  {
+    "id": "madurai",
+    "name": "Madurai",
+    "state_id": "tamil-nadu"
+  },
+  {
+    "id": "mamallapuram",
+    "name": "Mamallapuram",
+    "state_id": "tamil-nadu"
+  },
+  {
+    "id": "ooty",
+    "name": "Ooty",
+    "state_id": "tamil-nadu"
+  },
+  {
+    "id": "rameswaram",
+    "name": "Rameswaram",
+    "state_id": "tamil-nadu"
+  },
+  {
+    "id": "thanjavur",
+    "name": "Thanjavur",
+    "state_id": "tamil-nadu"
+  },
+  {
+    "id": "tiruchirappalli",
+    "name": "Tiruchirappalli",
+    "state_id": "tamil-nadu"
+  },
+  {
+    "id": "bhongir",
+    "name": "Bhongir",
+    "state_id": "telangana"
+  },
+  {
+    "id": "hyderabad",
+    "name": "Hyderabad",
+    "state_id": "telangana"
+  },
+  {
+    "id": "karimnagar",
+    "name": "Karimnagar",
+    "state_id": "telangana"
+  },
+  {
+    "id": "khammam",
+    "name": "Khammam",
+    "state_id": "telangana"
+  },
+  {
+    "id": "warangal",
+    "name": "Warangal",
+    "state_id": "telangana"
+  },
+  {
+    "id": "agartala",
+    "name": "Agartala",
+    "state_id": "tripura"
+  },
+  {
+    "id": "unakoti",
+    "name": "Unakoti",
+    "state_id": "tripura"
+  },
+  {
+    "id": "agra",
+    "name": "Agra",
+    "state_id": "uttar-pradesh"
+  },
+  {
+    "id": "ayodhya",
+    "name": "Ayodhya",
+    "state_id": "uttar-pradesh"
+  },
+  {
+    "id": "bareilly",
+    "name": "Bareilly",
+    "state_id": "uttar-pradesh"
+  },
+  {
+    "id": "chitrakoot-up",
+    "name": "Chitrakoot",
+    "state_id": "uttar-pradesh"
+  },
+  {
+    "id": "jhansi",
+    "name": "Jhansi",
+    "state_id": "uttar-pradesh"
+  },
+  {
+    "id": "kanpur",
+    "name": "Kanpur",
+    "state_id": "uttar-pradesh"
+  },
+  {
+    "id": "lucknow",
+    "name": "Lucknow",
+    "state_id": "uttar-pradesh"
+  },
+  {
+    "id": "mathura",
+    "name": "Mathura",
+    "state_id": "uttar-pradesh"
+  },
+  {
+    "id": "prayagraj",
+    "name": "Prayagraj",
+    "state_id": "uttar-pradesh"
+  },
+  {
+    "id": "varanasi",
+    "name": "Varanasi",
+    "state_id": "uttar-pradesh"
+  },
+  {
+    "id": "almora",
+    "name": "Almora",
+    "state_id": "uttarakhand"
+  },
+  {
+    "id": "badrinath",
+    "name": "Badrinath",
+    "state_id": "uttarakhand"
+  },
+  {
+    "id": "berinag",
+    "name": "Berinag",
+    "state_id": "uttarakhand"
+  },
+  {
+    "id": "bhimtal",
+    "name": "Bhimtal",
+    "state_id": "uttarakhand"
+  },
+  {
+    "id": "chamoli",
+    "name": "Chamoli",
+    "state_id": "uttarakhand"
+  },
+  {
+    "id": "dehradun",
+    "name": "Dehradun",
+    "state_id": "uttarakhand"
+  },
+  {
+    "id": "gangotri",
+    "name": "Gangotri",
+    "state_id": "uttarakhand"
+  },
+  {
+    "id": "haridwar",
+    "name": "Haridwar",
+    "state_id": "uttarakhand"
+  },
+  {
+    "id": "kausani",
+    "name": "Kausani",
+    "state_id": "uttarakhand"
+  },
+  {
+    "id": "kedarnath",
+    "name": "Kedarnath",
+    "state_id": "uttarakhand"
+  },
+  {
+    "id": "lansdowne",
+    "name": "Lansdowne",
+    "state_id": "uttarakhand"
+  },
+  {
+    "id": "mussoorie",
+    "name": "Mussoorie",
+    "state_id": "uttarakhand"
+  },
+  {
+    "id": "nainital",
+    "name": "Nainital",
+    "state_id": "uttarakhand"
+  },
+  {
+    "id": "new-tehri",
+    "name": "New Tehri",
+    "state_id": "uttarakhand"
+  },
+  {
+    "id": "pithoragarh",
+    "name": "Pithoragarh",
+    "state_id": "uttarakhand"
+  },
+  {
+    "id": "rishikesh",
+    "name": "Rishikesh",
+    "state_id": "uttarakhand"
+  },
+  {
+    "id": "uttarkashi",
+    "name": "Uttarkashi",
+    "state_id": "uttarakhand"
+  },
+  {
+    "id": "darjeeling",
+    "name": "Darjeeling",
+    "state_id": "west-bengal"
+  },
+  {
+    "id": "durgapur",
+    "name": "Durgapur",
+    "state_id": "west-bengal"
+  },
+  {
+    "id": "howrah",
+    "name": "Howrah",
+    "state_id": "west-bengal"
+  },
+  {
+    "id": "kalimpong",
+    "name": "Kalimpong",
+    "state_id": "west-bengal"
+  },
+  {
+    "id": "kolkata",
+    "name": "Kolkata",
+    "state_id": "west-bengal"
+  },
+  {
+    "id": "siliguri",
+    "name": "Siliguri",
+    "state_id": "west-bengal"
+  },
+  {
+    "id": "mayabunder",
+    "name": "Mayabunder",
+    "state_id": "andaman-and-nicobar-islands"
+  },
+  {
+    "id": "rangat",
+    "name": "Rangat",
+    "state_id": "andaman-and-nicobar-islands"
+  },
+  {
+    "id": "sri-vijaya-puram",
+    "name": "Sri Vijaya Puram",
+    "state_id": "andaman-and-nicobar-islands"
+  },
+  {
+    "id": "chandigarh",
+    "name": "Chandigarh",
+    "state_id": "chandigarh"
+  },
+  {
+    "id": "daman",
+    "name": "Daman",
+    "state_id": "dadra-and-nagar-haveli-and-daman-and-diu"
+  },
+  {
+    "id": "diu",
+    "name": "Diu",
+    "state_id": "dadra-and-nagar-haveli-and-daman-and-diu"
+  },
+  {
+    "id": "silvassa",
+    "name": "Silvassa",
+    "state_id": "dadra-and-nagar-haveli-and-daman-and-diu"
+  },
+  {
+    "id": "delhi",
+    "name": "Delhi",
+    "state_id": "delhi"
+  },
+  {
+    "id": "anantnag",
+    "name": "Anantnag",
+    "state_id": "jammu-and-kashmir"
+  },
+  {
+    "id": "gulmarg",
+    "name": "Gulmarg",
+    "state_id": "jammu-and-kashmir"
+  },
+  {
+    "id": "jammu",
+    "name": "Jammu",
+    "state_id": "jammu-and-kashmir"
+  },
+  {
+    "id": "pahalgam",
+    "name": "Pahalgam",
+    "state_id": "jammu-and-kashmir"
+  },
+  {
+    "id": "patnitop",
+    "name": "Patnitop",
+    "state_id": "jammu-and-kashmir"
+  },
+  {
+    "id": "srinagar",
+    "name": "Srinagar",
+    "state_id": "jammu-and-kashmir"
+  },
+  {
+    "id": "kargil",
+    "name": "Kargil",
+    "state_id": "ladakh"
+  },
+  {
+    "id": "leh",
+    "name": "Leh",
+    "state_id": "ladakh"
+  },
+  {
+    "id": "kavaratti",
+    "name": "Kavaratti",
+    "state_id": "lakshadweep"
+  },
+  {
+    "id": "puducherry",
+    "name": "Puducherry",
+    "state_id": "puducherry"
+  }
+]

@@ -45,32 +45,79 @@ export interface UserRecord {
   updated_at: string;
 }
 
+export interface ImageProvenance {
+  image_url: string;
+  source_url: string;
+  source_name: string;
+  creator?: string | null;
+  license: string;
+  verification_status: 'verified' | 'unverified' | 'unavailable';
+  verified_at?: string;
+  research_note?: string;
+}
+
 export interface StateRecord {
   id: string;
   name: string;
   capital: string;
   region: string;
+  region_type?: 'state' | 'union_territory';
   description: string;
   hero_image_id?: string;
+  hero_image_url?: string;
+  hero_image?: ImageProvenance;
+  source_url?: string;
+  source_name?: string;
+  creator?: string | null;
+  license?: string;
   created_at: string;
 }
 
 export interface CityRecord {
   id: string;
-  state_id: string;
   name: string;
+  canonical_name?: string;
+  state?: string;
+  state_id: string;
+  region?: string;
+  district?: string | null;
+  city_type?: string;
   lat: number;
   lng: number;
   description: string;
+  tagline?: string;
+  tourism_categories?: string[];
+  prominence?: string;
+  is_capital?: boolean;
+  capital_status?: string;
+  verification_status?: 'verified' | 'unverified';
+  source_provenance?: string;
+  hero_image_url?: string;
+  hero_image?: ImageProvenance;
+  source_url?: string;
+  source_name?: string;
+  creator?: string | null;
+  license?: string;
+  places_count?: number;
   created_at: string;
+  updated_at?: string;
 }
+
+export type ImportanceLevel = 'iconic' | 'major' | 'notable' | 'local' | 'hidden_gem';
 
 export interface PlaceRecord {
   id: string;
   city_id?: string;
   state_id?: string;
+  district?: string;
   name: string;
+  canonical_name?: string;
+  aliases?: string[];
   category: string;
+  categories?: string[];
+  subcategories?: string[];
+  importance_level?: ImportanceLevel;
+  locality_type?: string;
   summary: string;
   description: string;
   history: string;
@@ -82,11 +129,15 @@ export interface PlaceRecord {
   heritage_status: string;
   data_confidence: DataConfidence;
   source_url?: string;
+  source_name?: string;
+  provenance_type?: string;
+  verification_status?: 'official' | 'verified' | 'unverified';
   last_verified_at?: string;
   rating: number;
   thumbnail_url?: string;
   created_at: string;
 }
+
 
 export interface TransitNodeRecord {
   id: string;
