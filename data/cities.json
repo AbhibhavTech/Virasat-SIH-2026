@@ -465,7 +465,7 @@
     "official_url": "https://jaipur.rajasthan.gov.in",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1477587458883-47145ed94245?w=1200&q=80",
-    "places_count": 3
+    "places_count": 8
   },
   {
     "id": "udaipur",
@@ -501,7 +501,7 @@
     "official_url": "https://agra.nic.in",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&q=80",
-    "places_count": 2
+    "places_count": 8
   },
   {
     "id": "varanasi",
