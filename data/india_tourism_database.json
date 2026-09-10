@@ -94,7 +94,7 @@
                 "lat": 30.7583,
                 "lng": 76.8055
               },
-              "image_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://whc.unesco.org",
@@ -261,7 +261,7 @@
                 "lat": 28.5245,
                 "lng": 77.1855
               },
-              "image_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://whc.unesco.org",
@@ -654,7 +654,7 @@
                 "lat": 28.4074,
                 "lng": 77.3118
               },
-              "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://haryanatourism.gov.in",
@@ -788,7 +788,7 @@
                 "lat": 28.4685,
                 "lng": 77.0281
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://haryanatourism.gov.in",
@@ -919,7 +919,7 @@
                 "lat": 29.1585,
                 "lng": 75.7146
               },
-              "image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://haryanatourism.gov.in",
@@ -1108,7 +1108,7 @@
                 "lat": 30.687,
                 "lng": 76.863
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://haryanatourism.gov.in",
@@ -1792,7 +1792,7 @@
               "data_confidence": "official",
               "verification_status": "verified",
               "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=400&q=80",
               "attribution": "Himachal Pradesh Tourism Development Corporation",
               "source_url": "https://himachaltourism.gov.in/destination/shimla/",
@@ -2350,7 +2350,7 @@
               "data_confidence": "official",
               "verification_status": "verified",
               "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
               "attribution": "Himachal Pradesh Tourism Department",
               "source_url": "https://himachaltourism.gov.in/destination/manali/",
@@ -2938,7 +2938,7 @@
               "data_confidence": "official",
               "verification_status": "verified",
               "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&q=80",
               "attribution": "Himachal Pradesh Forest Department / Ramsar",
               "source_url": "https://rsis.ramsar.org/ris/1569",
@@ -4657,7 +4657,7 @@
                 "lat": 34.0287,
                 "lng": 75.3456
               },
-              "image_url": "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://jktourism.jk.gov.in",
@@ -9954,7 +9954,7 @@
                 "lat": 30.7473,
                 "lng": 79.4959
               },
-              "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://uttarakhandtourism.gov.in",
@@ -13788,7 +13788,7 @@
                 "lat": 26.1371,
                 "lng": 91.7288
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://assamtourism.gov.in",
@@ -14750,7 +14750,7 @@
                 "lat": 24.8233,
                 "lng": 93.9431
               },
-              "image_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://manipurtourism.gov.in",
@@ -15319,7 +15319,7 @@
                 "lat": 25.58,
                 "lng": 91.8944
               },
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.meghalayatourism.in",
@@ -19073,7 +19073,7 @@
                 "lat": 24.696,
                 "lng": 84.9914
               },
-              "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://whc.unesco.org",
@@ -20529,7 +20529,7 @@
                 "lat": 20.3031,
                 "lng": 85.8301
               },
-              "image_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://odishatourism.gov.in",
@@ -22262,7 +22262,7 @@
                 "lat": 22.5645,
                 "lng": 88.3676
               },
-              "image_url": "https://images.unsplash.com/photo-1558431382-27e303142255?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1558431382-27e303142255?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://wbtourism.gov.in",
@@ -23149,7 +23149,7 @@
                 "lat": 19.0699,
                 "lng": 82.0319
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://chhattisgarhtourism.cg.gov.in",
@@ -26462,7 +26462,7 @@
                 "lat": 15.4855,
                 "lng": 73.8328
               },
-              "image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://goatourism.gov.in",
@@ -30040,7 +30040,7 @@
                 "lat": 19.8701,
                 "lng": 75.348
               },
-              "image_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
@@ -30875,7 +30875,7 @@
                 "lat": 18.9431,
                 "lng": 72.823
               },
-              "image_url": "https://images.unsplash.com/photo-1567157577867-05ccb1388e66",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1567157577867-05ccb1388e66",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
@@ -31034,7 +31034,7 @@
                 "lat": 19.0118,
                 "lng": 72.8136
               },
-              "image_url": "https://images.unsplash.com/photo-1595658658481-d53d3f999875",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1595658658481-d53d3f999875",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
@@ -31140,7 +31140,7 @@
                 "lat": 18.9268,
                 "lng": 72.8327
               },
-              "image_url": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
@@ -32235,7 +32235,7 @@
                 "lat": 18.718,
                 "lng": 73.3768
               },
-              "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
@@ -32287,7 +32287,7 @@
                 "lat": 18.7302,
                 "lng": 73.4079
               },
-              "image_url": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://maharashtratourism.gov.in",
@@ -40263,7 +40263,7 @@
                 "lat": 11.9338,
                 "lng": 79.8357
               },
-              "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
               "attribution": "Archaeological Survey of India",
               "source_page": "https://asi.nic.in",
@@ -40429,7 +40429,7 @@
                 "lat": 13.0746,
                 "lng": 80.2797
               },
-              "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80",
               "attribution": "Virasat Master Tourism Registry",
               "source_page": "https://www.tamilnadutourism.tn.gov.in",
@@ -42382,7 +42382,7 @@
                 "lat": 17.3833,
                 "lng": 78.4011
               },
-              "image_url": "https://images.unsplash.com/photo-1616198814651-e71f960c3180?w=800&auto=format&fit=crop&q=80",
+              "image_url": "",
               "thumbnail_url": "https://images.unsplash.com/photo-1616198814651-e71f960c3180?w=800&auto=format&fit=crop&q=80",
               "attribution": "Archaeological Survey of India",
               "source_page": "https://asi.nic.in",
