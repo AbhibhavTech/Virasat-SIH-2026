@@ -20,6 +20,7 @@ import { NavTab } from '../components/layout/Sidebar';
 import { CityImmersionHeader } from '../components/destination/CityImmersionHeader';
 import { ThreeDDestinationCard } from '../components/common/ThreeDDestinationCard';
 import { updatePageSEO, generateCitySchema } from '../utils/seo';
+import { getMonumentRealImage } from '../data/monumentRealImages';
 
 interface CityHubPageProps {
   onSelectPlace: (id: string) => void;
@@ -334,19 +335,15 @@ export const CityHubPage: React.FC<CityHubPageProps> = ({
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {places.map((p) => {
-              const has3d = p.features?.['3d'] || (p as any).model_3d?.available;
               return (
                 <ThreeDDestinationCard
                   key={p.id}
                   id={p.id}
                   title={p.name}
                   subtitle={`${p.city}, ${p.state}`}
-                  badge={has3d ? '3D Available' : p.category || 'Famous Place'}
+                  badge={p.category || 'Famous Place'}
                   confidence={p.data_confidence}
-                  imageUrl={
-                    p.thumbnail_url ||
-                    'https://images.unsplash.com/photo-1548013146-72479768bada?w=600&auto=format&fit=crop&q=80'
-                  }
+                  imageUrl={getMonumentRealImage(p.id, p.thumbnail_url)}
                   tagline={p.summary}
                   onClick={() => onSelectPlace(p.id)}
                 />
@@ -357,19 +354,15 @@ export const CityHubPage: React.FC<CityHubPageProps> = ({
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filteredPlaces.map((p) => {
-            const has3d = p.features?.['3d'] || (p as any).model_3d?.available;
             return (
               <ThreeDDestinationCard
                 key={p.id}
                 id={p.id}
                 title={p.name}
                 subtitle={`${p.city}, ${p.state}`}
-                badge={has3d ? '3D Available' : p.category || 'Famous Place'}
+                badge={p.category || 'Famous Place'}
                 confidence={p.data_confidence}
-                imageUrl={
-                  p.thumbnail_url ||
-                  'https://images.unsplash.com/photo-1548013146-72479768bada?w=600&auto=format&fit=crop&q=80'
-                }
+                imageUrl={getMonumentRealImage(p.id, p.thumbnail_url)}
                 tagline={p.summary}
                 onClick={() => onSelectPlace(p.id)}
               />

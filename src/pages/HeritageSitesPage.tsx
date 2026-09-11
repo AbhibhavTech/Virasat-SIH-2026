@@ -9,7 +9,6 @@ import {
   MapPin,
   Clock,
   Ticket,
-  Box,
   Compass,
   Heart,
   ChevronRight,
@@ -25,6 +24,7 @@ import {
 } from 'lucide-react';
 import { GuideIllustration } from '../components/cultural-guides/GuideIllustrations';
 import { GuideSpeechBubble } from '../components/cultural-guides/GuideSpeechBubble';
+import { getMonumentRealImage } from '../data/monumentRealImages';
 
 interface HeritageSitesPageProps {
   onSelectPlace: (placeId: string) => void;
@@ -219,7 +219,7 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
             </div>
             <div className="flex items-center gap-1.5">
               <span className="w-2.5 h-2.5 rounded-full bg-[#000080]"></span>
-              <span>WebGL 3D Scans</span>
+              <span>Authentic Photography</span>
             </div>
             <div className="flex items-center gap-2 px-3 py-1 rounded-xl bg-orange-50 text-orange-900 border border-orange-200 font-bold">
               <CheckCircle2 className="w-3.5 h-3.5 text-[#FF671F]" />
@@ -370,7 +370,6 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filteredSites.map((site) => {
-            const has3d = site.features?.['3d'] || site.model_3d?.available;
             const fav = isFavorite(site.id);
 
             return (
@@ -381,16 +380,16 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
                 {/* Thumbnail Image Container */}
                 <div className="relative h-48 w-full bg-stone-100 overflow-hidden">
                   <img
-                    src={
-                      site.thumbnail_url ||
-                      'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=600&auto=format&fit=crop&q=80'
-                    }
+                    src={getMonumentRealImage(site.id, site.thumbnail_url)}
                     alt={site.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     loading="lazy"
                     onError={(e) => {
-                      (e.target as HTMLImageElement).src =
-                        'https://images.unsplash.com/photo-1548013146-72479768bada?w=600&auto=format&fit=crop&q=80';
+                      const target = e.target as HTMLImageElement;
+                      const fallback = getMonumentRealImage(site.id);
+                      if (target.src !== fallback) {
+                        target.src = fallback;
+                      }
                     }}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-80" />
@@ -402,12 +401,6 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
                     }`}>
                       {site.heritage_status || (site.unesco_site ? 'UNESCO World Heritage' : 'National Monument')}
                     </span>
-                    {has3d && (
-                      <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-[#000080] text-white shadow-xs flex items-center gap-1">
-                        <Box className="w-2.5 h-2.5" />
-                        <span>3D Scan</span>
-                      </span>
-                    )}
                   </div>
 
                   {/* Visited / Wishlist Toggle */}
@@ -508,19 +501,6 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
                       <span>Explore</span>
                       <ChevronRight className="w-3.5 h-3.5" />
                     </button>
-
-                    {has3d && (
-                      <button
-                        onClick={() => {
-                          onNavigateTab('3d');
-                        }}
-                        className="py-2 px-3 rounded-xl bg-blue-50 hover:bg-blue-100 text-[#000080] border border-blue-200 text-xs font-semibold flex items-center gap-1 transition-colors cursor-pointer"
-                        title="View Interactive 3D Model"
-                      >
-                        <Box className="w-3.5 h-3.5" />
-                        <span>3D</span>
-                      </button>
-                    )}
 
                     <button
                       onClick={() => {

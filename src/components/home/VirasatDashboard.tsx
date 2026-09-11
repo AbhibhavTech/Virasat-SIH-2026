@@ -42,6 +42,7 @@ import {
 } from '../common/TricolourBranding';
 import { IndiaHeritageMapPreview } from './IndiaHeritageMapPreview';
 import { ScrollReveal } from '../common/ScrollReveal';
+import { getMonumentRealImage } from '../../data/monumentRealImages';
 
 interface VirasatDashboardProps {
   onSearch: (query: string) => void;
@@ -831,7 +832,197 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
       </section>
 
       {/* ========================================================================= */}
-      {/* 2. POPULAR DESTINATIONS                                                   */}
+      {/* 2. EXPLORE NEAR YOU (REAL GEOLOCATION WITH PERMISSION)                     */}
+      {/* ========================================================================= */}
+      <section id="explore-near-you" className="rounded-3xl bg-white border border-[#EFE8DF] p-6 sm:p-8 shadow-xs space-y-6">
+        <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
+          <div>
+            <div className="inline-flex items-center gap-1 text-xs font-bold text-[#046A38] uppercase tracking-wider mb-1">
+              <Navigation className="w-3.5 h-3.5 text-[#046A38]" />
+              <span>Real-Time Proximity</span>
+            </div>
+            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">
+              Explore Near You
+            </h2>
+            <p className="text-xs sm:text-sm text-stone-500 mt-1 font-normal">
+              Find verified monuments, fortresses, and heritage temples nearest to your current location
+            </p>
+          </div>
+
+          {/* Action to trigger or re-trigger location */}
+          <div className="flex items-center gap-2">
+            {locationStatus === 'ready' && (
+              <select
+                value={nearbyRadius}
+                onChange={(e) => {
+                  const r = Number(e.target.value);
+                  setNearbyRadius(r);
+                  if (userCoords) {
+                    fetchNearbyPlaces(userCoords.lat, userCoords.lng, r, detectedCityName);
+                  }
+                }}
+                className="px-3 py-1.5 rounded-full border border-stone-200 text-xs font-semibold text-stone-700 bg-stone-50"
+              >
+                <option value={25}>Within 25 km</option>
+                <option value={50}>Within 50 km</option>
+                <option value={150}>Within 150 km</option>
+                <option value={300}>Within 300 km</option>
+              </select>
+            )}
+
+            <button
+              onClick={handleDetectLocation}
+              disabled={locationStatus === 'detecting'}
+              className="px-4 py-2 rounded-full bg-[#046A38] hover:bg-[#03542C] text-white text-xs font-semibold flex items-center gap-1.5 shadow-2xs transition active:scale-95 disabled:opacity-60 cursor-pointer"
+            >
+              {locationStatus === 'detecting' ? (
+                <>
+                  <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                  <span>Locating...</span>
+                </>
+              ) : (
+                <>
+                  <Navigation className="w-3.5 h-3.5" />
+                  <span>{locationStatus === 'ready' ? 'Update My Location' : 'Use My Current Location'}</span>
+                </>
+              )}
+            </button>
+          </div>
+        </div>
+
+        {/* State 1: Idle Prompt */}
+        {locationStatus === 'idle' && (
+          <div className="rounded-2xl bg-[#F8FBF9] border border-[#DCEDE2] p-6 text-center space-y-3">
+            <div className="w-12 h-12 rounded-2xl bg-[#EBF5EE] text-[#046A38] flex items-center justify-center mx-auto shadow-2xs">
+              <Compass className="w-6 h-6" />
+            </div>
+            <div className="max-w-md mx-auto">
+              <h3 className="font-serif text-lg font-bold text-stone-900">
+                Discover Heritage Around Your City
+              </h3>
+              <p className="text-xs text-stone-600 mt-1 leading-relaxed">
+                Allow browser location permission to compute authentic geodesic distances to monuments, or choose from major historic centers below:
+              </p>
+            </div>
+
+            <div className="pt-2 flex flex-wrap items-center justify-center gap-2">
+              <span className="text-xs font-bold text-stone-500">Popular hubs:</span>
+              {[
+                { name: 'Delhi', lat: 28.6139, lng: 77.209 },
+                { name: 'Mumbai', lat: 18.922, lng: 72.8347 },
+                { name: 'Jaipur', lat: 26.9124, lng: 75.7873 },
+                { name: 'Agra', lat: 27.1767, lng: 78.0081 },
+                { name: 'Varanasi', lat: 25.3176, lng: 82.9739 },
+                { name: 'Bengaluru', lat: 12.9716, lng: 77.5946 },
+                { name: 'Kolkata', lat: 22.5726, lng: 88.3639 },
+              ].map((c) => (
+                <button
+                  key={c.name}
+                  onClick={() => handleSelectFallbackCity(c)}
+                  className="px-3 py-1 rounded-full bg-white border border-stone-200 hover:border-emerald-500 text-xs font-semibold text-stone-700 shadow-2xs transition"
+                >
+                  {c.name}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* State 2: Permission Denied or Error */}
+        {(locationStatus === 'denied' || locationStatus === 'error') && (
+          <div className="rounded-2xl bg-orange-50/60/70 border border-orange-200 p-5 space-y-3">
+            <div className="flex items-center gap-2.5 text-amber-900 text-xs font-bold">
+              <ShieldCheck className="w-4 h-4 text-[#FF671F]" />
+              <span>
+                {locationStatus === 'denied'
+                  ? 'Location access was not granted by your browser.'
+                  : 'Unable to pinpoint exact device coordinates.'}
+              </span>
+            </div>
+            <p className="text-xs text-stone-600">
+              No problem! You can select any major heritage hub below to immediately view monuments around that city:
+            </p>
+            <div className="flex flex-wrap items-center gap-2 pt-1">
+              {[
+                { name: 'Delhi NCR', lat: 28.6139, lng: 77.209 },
+                { name: 'Mumbai Coast', lat: 18.922, lng: 72.8347 },
+                { name: 'Jaipur / Amer', lat: 26.9124, lng: 75.7873 },
+                { name: 'Agra Heritage', lat: 27.1767, lng: 78.0081 },
+                { name: 'Varanasi Ghats', lat: 25.3176, lng: 82.9739 },
+                { name: 'Karnataka (Hampi)', lat: 15.335, lng: 76.46 },
+              ].map((c) => (
+                <button
+                  key={c.name}
+                  onClick={() => handleSelectFallbackCity(c)}
+                  className="px-3 py-1.5 rounded-full bg-white border border-orange-300 hover:bg-amber-100/60 text-xs font-bold text-stone-800 transition shadow-2xs"
+                >
+                  {c.name}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* State 3: Ready with nearby cards */}
+        {locationStatus === 'ready' && (
+          <div className="space-y-4">
+            <div className="flex items-center justify-between text-xs text-stone-600 font-medium px-1">
+              <span>Showing monuments near <strong className="text-stone-900">{detectedCityName}</strong>:</span>
+              <span className="text-emerald-700 font-bold">{nearbyPlaces.length} locations found</span>
+            </div>
+
+            {nearbyPlaces.length === 0 ? (
+              <div className="p-8 text-center text-xs text-stone-500 bg-stone-50 rounded-2xl">
+                No verified monuments indexed within {nearbyRadius} km. Try expanding the search radius above.
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                {nearbyPlaces.map((p) => (
+                  <div
+                    key={p.id}
+                    onClick={() => onSelectPlace && onSelectPlace(p.id)}
+                    className="group cursor-pointer rounded-2xl bg-white border border-stone-200/90 overflow-hidden shadow-2xs hover:shadow-md hover:border-emerald-500 transition-all duration-200 flex flex-col justify-between"
+                  >
+                    <div className="h-28 w-full overflow-hidden bg-stone-100 relative">
+                      <img
+                        src={getMonumentRealImage(p.id, p.thumbnail_url || p.image_url)}
+                        alt={p.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-400"
+                        loading="lazy"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          const fallback = getMonumentRealImage(p.id);
+                          if (target.src !== fallback) {
+                            target.src = fallback;
+                          }
+                        }}
+                      />
+                      {p.distance_km !== undefined && (
+                        <span className="absolute bottom-2 left-2 px-2 py-0.5 rounded-md bg-[#046A38] text-white text-[10px] font-bold shadow-xs">
+                          {p.distance_km} km away
+                        </span>
+                      )}
+                    </div>
+
+                    <div className="p-3 space-y-1">
+                      <h4 className="font-serif text-xs font-bold text-stone-900 group-hover:text-emerald-700 transition truncate">
+                        {p.name}
+                      </h4>
+                      <div className="flex items-center gap-1 text-[11px] text-stone-500 truncate">
+                        <MapPin className="w-3 h-3 text-emerald-600 shrink-0" />
+                        <span className="truncate">{p.city}, {p.state}</span>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        )}
+      </section>
+
+      {/* ========================================================================= */}
+      {/* 3. POPULAR DESTINATIONS                                                   */}
       {/* ========================================================================= */}
       <section className="space-y-5">
         <ScrollReveal animation="fade-up">
@@ -911,10 +1102,17 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
               >
                 <div className="h-36 sm:h-40 w-full overflow-hidden bg-stone-100 relative">
                   <img
-                    src={place.imageUrl}
+                    src={getMonumentRealImage(place.id, place.imageUrl)}
                     alt={place.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      const fallback = getMonumentRealImage(place.id);
+                      if (target.src !== fallback) {
+                        target.src = fallback;
+                      }
+                    }}
                   />
                 </div>
 
@@ -1117,189 +1315,6 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
           </div>
         </section>
       </ScrollReveal>
-
-      {/* ========================================================================= */}
-      {/* 5. EXPLORE NEAR YOU (REAL GEOLOCATION WITH PERMISSION)                     */}
-      {/* ========================================================================= */}
-      <section className="rounded-3xl bg-white border border-[#EFE8DF] p-6 sm:p-8 shadow-xs space-y-6">
-        <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
-          <div>
-            <div className="inline-flex items-center gap-1 text-xs font-bold text-[#046A38] uppercase tracking-wider mb-1">
-              <Navigation className="w-3.5 h-3.5 text-[#046A38]" />
-              <span>Real-Time Proximity</span>
-            </div>
-            <h2 className="font-serif text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">
-              Explore Near You
-            </h2>
-            <p className="text-xs sm:text-sm text-stone-500 mt-1 font-normal">
-              Find verified monuments, fortresses, and heritage temples nearest to your current location
-            </p>
-          </div>
-
-          {/* Action to trigger or re-trigger location */}
-          <div className="flex items-center gap-2">
-            {locationStatus === 'ready' && (
-              <select
-                value={nearbyRadius}
-                onChange={(e) => {
-                  const r = Number(e.target.value);
-                  setNearbyRadius(r);
-                  if (userCoords) {
-                    fetchNearbyPlaces(userCoords.lat, userCoords.lng, r, detectedCityName);
-                  }
-                }}
-                className="px-3 py-1.5 rounded-full border border-stone-200 text-xs font-semibold text-stone-700 bg-stone-50"
-              >
-                <option value={25}>Within 25 km</option>
-                <option value={50}>Within 50 km</option>
-                <option value={150}>Within 150 km</option>
-                <option value={300}>Within 300 km</option>
-              </select>
-            )}
-
-            <button
-              onClick={handleDetectLocation}
-              disabled={locationStatus === 'detecting'}
-              className="px-4 py-2 rounded-full bg-[#046A38] hover:bg-[#03542C] text-white text-xs font-semibold flex items-center gap-1.5 shadow-2xs transition active:scale-95 disabled:opacity-60 cursor-pointer"
-            >
-              {locationStatus === 'detecting' ? (
-                <>
-                  <Loader2 className="w-3.5 h-3.5 animate-spin" />
-                  <span>Locating...</span>
-                </>
-              ) : (
-                <>
-                  <Navigation className="w-3.5 h-3.5" />
-                  <span>{locationStatus === 'ready' ? 'Update My Location' : 'Use My Current Location'}</span>
-                </>
-              )}
-            </button>
-          </div>
-        </div>
-
-        {/* State 1: Idle Prompt */}
-        {locationStatus === 'idle' && (
-          <div className="rounded-2xl bg-[#F8FBF9] border border-[#DCEDE2] p-6 text-center space-y-3">
-            <div className="w-12 h-12 rounded-2xl bg-[#EBF5EE] text-[#046A38] flex items-center justify-center mx-auto shadow-2xs">
-              <Compass className="w-6 h-6" />
-            </div>
-            <div className="max-w-md mx-auto">
-              <h3 className="font-serif text-lg font-bold text-stone-900">
-                Discover Heritage Around Your City
-              </h3>
-              <p className="text-xs text-stone-600 mt-1 leading-relaxed">
-                Allow browser location permission to compute authentic geodesic distances to monuments, or choose from major historic centers below:
-              </p>
-            </div>
-
-            <div className="pt-2 flex flex-wrap items-center justify-center gap-2">
-              <span className="text-xs font-bold text-stone-500">Popular hubs:</span>
-              {[
-                { name: 'Delhi', lat: 28.6139, lng: 77.209 },
-                { name: 'Mumbai', lat: 18.922, lng: 72.8347 },
-                { name: 'Jaipur', lat: 26.9124, lng: 75.7873 },
-                { name: 'Agra', lat: 27.1767, lng: 78.0081 },
-                { name: 'Varanasi', lat: 25.3176, lng: 82.9739 },
-                { name: 'Bengaluru', lat: 12.9716, lng: 77.5946 },
-                { name: 'Kolkata', lat: 22.5726, lng: 88.3639 },
-              ].map((c) => (
-                <button
-                  key={c.name}
-                  onClick={() => handleSelectFallbackCity(c)}
-                  className="px-3 py-1 rounded-full bg-white border border-stone-200 hover:border-emerald-500 text-xs font-semibold text-stone-700 shadow-2xs transition"
-                >
-                  {c.name}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* State 2: Permission Denied or Error */}
-        {(locationStatus === 'denied' || locationStatus === 'error') && (
-          <div className="rounded-2xl bg-orange-50/60/70 border border-orange-200 p-5 space-y-3">
-            <div className="flex items-center gap-2.5 text-amber-900 text-xs font-bold">
-              <ShieldCheck className="w-4 h-4 text-[#FF671F]" />
-              <span>
-                {locationStatus === 'denied'
-                  ? 'Location access was not granted by your browser.'
-                  : 'Unable to pinpoint exact device coordinates.'}
-              </span>
-            </div>
-            <p className="text-xs text-stone-600">
-              No problem! You can select any major heritage hub below to immediately view monuments around that city:
-            </p>
-            <div className="flex flex-wrap items-center gap-2 pt-1">
-              {[
-                { name: 'Delhi NCR', lat: 28.6139, lng: 77.209 },
-                { name: 'Mumbai Coast', lat: 18.922, lng: 72.8347 },
-                { name: 'Jaipur / Amer', lat: 26.9124, lng: 75.7873 },
-                { name: 'Agra Heritage', lat: 27.1767, lng: 78.0081 },
-                { name: 'Varanasi Ghats', lat: 25.3176, lng: 82.9739 },
-                { name: 'Karnataka (Hampi)', lat: 15.335, lng: 76.46 },
-              ].map((c) => (
-                <button
-                  key={c.name}
-                  onClick={() => handleSelectFallbackCity(c)}
-                  className="px-3 py-1.5 rounded-full bg-white border border-orange-300 hover:bg-amber-100/60 text-xs font-bold text-stone-800 transition shadow-2xs"
-                >
-                  {c.name}
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
-
-        {/* State 3: Ready with nearby cards */}
-        {locationStatus === 'ready' && (
-          <div className="space-y-4">
-            <div className="flex items-center justify-between text-xs text-stone-600 font-medium px-1">
-              <span>Showing monuments near <strong className="text-stone-900">{detectedCityName}</strong>:</span>
-              <span className="text-emerald-700 font-bold">{nearbyPlaces.length} locations found</span>
-            </div>
-
-            {nearbyPlaces.length === 0 ? (
-              <div className="p-8 text-center text-xs text-stone-500 bg-stone-50 rounded-2xl">
-                No verified monuments indexed within {nearbyRadius} km. Try expanding the search radius above.
-              </div>
-            ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-                {nearbyPlaces.map((p) => (
-                  <div
-                    key={p.id}
-                    onClick={() => onSelectPlace && onSelectPlace(p.id)}
-                    className="group cursor-pointer rounded-2xl bg-white border border-stone-200/90 overflow-hidden shadow-2xs hover:shadow-md hover:border-emerald-500 transition-all duration-200 flex flex-col justify-between"
-                  >
-                    <div className="h-28 w-full overflow-hidden bg-stone-100 relative">
-                      <img
-                        src={p.thumbnail_url || p.image_url || 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=400'}
-                        alt={p.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-400"
-                        loading="lazy"
-                      />
-                      {p.distance_km !== undefined && (
-                        <span className="absolute bottom-2 left-2 px-2 py-0.5 rounded-md bg-[#046A38] text-white text-[10px] font-bold shadow-xs">
-                          {p.distance_km} km away
-                        </span>
-                      )}
-                    </div>
-
-                    <div className="p-3 space-y-1">
-                      <h4 className="font-serif text-xs font-bold text-stone-900 group-hover:text-emerald-700 transition truncate">
-                        {p.name}
-                      </h4>
-                      <div className="flex items-center gap-1 text-[11px] text-stone-500 truncate">
-                        <MapPin className="w-3 h-3 text-emerald-600 shrink-0" />
-                        <span className="truncate">{p.city}, {p.state}</span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            )}
-          </div>
-        )}
-      </section>
 
       {/* ========================================================================= */}
       {/* 6. INDIA MAP PREVIEW (ACCURATE REAL WORLD GIS MAP & INTERACTIVE MONUMENT PINS) */}

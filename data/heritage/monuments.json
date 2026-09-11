@@ -42,8 +42,9 @@
     "nearest_transport": {
       "railway_station": "Agra Cantt (AGC)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&auto=format&fit=crop&q=80",
     "images": [
+      "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&auto=format&fit=crop&q=80",
       "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop&q=80",
       "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80"
     ],
@@ -118,8 +119,9 @@
     "nearest_transport": {
       "railway_station": "Fatehpur Sikri (FTS) / Agra Cantt (AGC)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Fatehput_Sikiri_Buland_Darwaza_gate_2010.jpg/1280px-Fatehput_Sikiri_Buland_Darwaza_gate_2010.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Fatehput_Sikiri_Buland_Darwaza_gate_2010.jpg/1280px-Fatehput_Sikiri_Buland_Darwaza_gate_2010.jpg",
       "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -192,8 +194,9 @@
     "nearest_transport": {
       "railway_station": "New Delhi (NDLS) / Qutab Minar Metro"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Qutb_Minar_2022.jpg/1280px-Qutb_Minar_2022.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Qutb_Minar_2022.jpg/1280px-Qutb_Minar_2022.jpg",
       "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -266,8 +269,9 @@
     "nearest_transport": {
       "railway_station": "Old Delhi (DLI) / Lal Qila Metro"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Delhi_fort.jpg/1280px-Delhi_fort.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Delhi_fort.jpg/1280px-Delhi_fort.jpg",
       "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -340,8 +344,9 @@
     "nearest_transport": {
       "railway_station": "Hazrat Nizamuddin (NZM)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1597044141245-3e28e18f26b5?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Tomb_of_Humayun%2C_Delhi.jpg/1280px-Tomb_of_Humayun%2C_Delhi.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Tomb_of_Humayun%2C_Delhi.jpg/1280px-Tomb_of_Humayun%2C_Delhi.jpg",
       "https://images.unsplash.com/photo-1597044141245-3e28e18f26b5?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -414,8 +419,9 @@
     "nearest_transport": {
       "railway_station": "New Delhi (NDLS) / Central Secretariat Metro"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=1200&auto=format&fit=crop&q=80",
     "images": [
+      "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=1200&auto=format&fit=crop&q=80",
       "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -486,8 +492,9 @@
     "nearest_transport": {
       "railway_station": "Amritsar Junction (ASR)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1588096344356-9b634839cf9e?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/The_Golden_Temple_of_Amrithsar_7.jpg/1280px-The_Golden_Temple_of_Amrithsar_7.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/The_Golden_Temple_of_Amrithsar_7.jpg/1280px-The_Golden_Temple_of_Amrithsar_7.jpg",
       "https://images.unsplash.com/photo-1588096344356-9b634839cf9e?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -560,8 +567,9 @@
     "nearest_transport": {
       "railway_station": "Shimla (SML) / Kalka (KLK)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/KSR_Steam_special_at_Taradevi_05-02-13_56.jpeg",
     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/d/d9/KSR_Steam_special_at_Taradevi_05-02-13_56.jpeg",
       "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -635,8 +643,9 @@
     "nearest_transport": {
       "railway_station": "Rishikesh (RKSH) / Gaurikund Base"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Kedarnath_Temple_in_Rainy_season.jpg/1280px-Kedarnath_Temple_in_Rainy_season.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Kedarnath_Temple_in_Rainy_season.jpg/1280px-Kedarnath_Temple_in_Rainy_season.jpg",
       "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -708,8 +717,9 @@
     "nearest_transport": {
       "railway_station": "Srinagar (SINA)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Shalimar_Bagh_1.jpg/1280px-Shalimar_Bagh_1.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Shalimar_Bagh_1.jpg/1280px-Shalimar_Bagh_1.jpg",
       "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -781,8 +791,9 @@
     "nearest_transport": {
       "railway_station": "Leh Airport (IXL) / Jammu Tawi (JAT)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Leh_Palace_2011.jpg/1280px-Leh_Palace_2011.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Leh_Palace_2011.jpg/1280px-Leh_Palace_2011.jpg",
       "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -853,8 +864,9 @@
     "nearest_transport": {
       "railway_station": "Chandigarh Junction (CDG)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Palace_of_Assembly_Chandigarh_2006.jpg/1280px-Palace_of_Assembly_Chandigarh_2006.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Palace_of_Assembly_Chandigarh_2006.jpg/1280px-Palace_of_Assembly_Chandigarh_2006.jpg",
       "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -928,8 +940,9 @@
     "nearest_transport": {
       "railway_station": "Jaipur Junction (JP)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1603288967527-24861e6878b3?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/20191219_Fort_Amber%2C_Amer%2C_Jaipur_0955_9481.jpg/1280px-20191219_Fort_Amber%2C_Amer%2C_Jaipur_0955_9481.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/20191219_Fort_Amber%2C_Amer%2C_Jaipur_0955_9481.jpg/1280px-20191219_Fort_Amber%2C_Amer%2C_Jaipur_0955_9481.jpg",
       "https://images.unsplash.com/photo-1603288967527-24861e6878b3?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -1003,8 +1016,9 @@
     "nearest_transport": {
       "railway_station": "Jaipur Junction (JP) / Badi Chaupar Metro"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1609946850720-6d4323229b46?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg/1280px-East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg/1280px-East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg",
       "https://images.unsplash.com/photo-1609946850720-6d4323229b46?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -1077,8 +1091,9 @@
     "nearest_transport": {
       "railway_station": "Jaisalmer (JSM)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Jaisalmer_forteresse.jpg/1280px-Jaisalmer_forteresse.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Jaisalmer_forteresse.jpg/1280px-Jaisalmer_forteresse.jpg",
       "https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -1152,8 +1167,9 @@
     "nearest_transport": {
       "railway_station": "Patan (PTN) / Mehsana (MSH)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Rani_ki_vav_02.jpg/1280px-Rani_ki_vav_02.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Rani_ki_vav_02.jpg/1280px-Rani_ki_vav_02.jpg",
       "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -1227,8 +1243,9 @@
     "nearest_transport": {
       "railway_station": "Vadodara Junction (BRC)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/8/86/Jain_Temple%2C_Pavagadh_%28cropped%29.jpg",
     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/8/86/Jain_Temple%2C_Pavagadh_%28cropped%29.jpg",
       "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -1301,8 +1318,9 @@
     "nearest_transport": {
       "railway_station": "Jalgaon (JL) / Aurangabad (AWB)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Ajanta_%2863%29.jpg",
     "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/c/c3/Ajanta_%2863%29.jpg",
       "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -1375,8 +1393,9 @@
     "nearest_transport": {
       "railway_station": "Aurangabad (AWB)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1608958435020-e8a7109ba809?w=1200&auto=format&fit=crop&q=80",
     "images": [
+      "https://images.unsplash.com/photo-1608958435020-e8a7109ba809?w=1200&auto=format&fit=crop&q=80",
       "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -1450,8 +1469,9 @@
     "nearest_transport": {
       "railway_station": "CSMT / Churchgate (CCG)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1588714477688-cf28a50e94f7?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80",
     "images": [
+      "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80",
       "https://images.unsplash.com/photo-1588714477688-cf28a50e94f7?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -1523,8 +1543,9 @@
     "nearest_transport": {
       "railway_station": "CSMT Station"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Chhatrapati_shivaji_terminus%2C_esterno_01.jpg/1280px-Chhatrapati_shivaji_terminus%2C_esterno_01.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Chhatrapati_shivaji_terminus%2C_esterno_01.jpg/1280px-Chhatrapati_shivaji_terminus%2C_esterno_01.jpg",
       "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -1597,8 +1618,9 @@
     "nearest_transport": {
       "railway_station": "Karmali (KRMI) / Madgaon (MAO)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/1280px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/1280px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg",
       "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -1673,8 +1695,9 @@
     "nearest_transport": {
       "railway_station": "Hosapete Junction (HPT)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Wide_angle_of_Galigopuram_of_Virupaksha_Temple%2C_Hampi_%2804%29_%28cropped%29.jpg/1280px-Wide_angle_of_Galigopuram_of_Virupaksha_Temple%2C_Hampi_%2804%29_%28cropped%29.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Wide_angle_of_Galigopuram_of_Virupaksha_Temple%2C_Hampi_%2804%29_%28cropped%29.jpg/1280px-Wide_angle_of_Galigopuram_of_Virupaksha_Temple%2C_Hampi_%2804%29_%28cropped%29.jpg",
       "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -1748,8 +1771,9 @@
     "nearest_transport": {
       "railway_station": "Badami (BDM)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Pattadakal_000.JPG/1280px-Pattadakal_000.JPG",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Pattadakal_000.JPG/1280px-Pattadakal_000.JPG",
       "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -1823,8 +1847,9 @@
     "nearest_transport": {
       "railway_station": "Hassan Junction (HAS)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Close_up_of_Hoysala_style_shrine_and_sikhara_with_decorative_molding_frieze_in_the_Chennakeshava_temple_at_Somanathapura.jpg/1280px-Close_up_of_Hoysala_style_shrine_and_sikhara_with_decorative_molding_frieze_in_the_Chennakeshava_temple_at_Somanathapura.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Close_up_of_Hoysala_style_shrine_and_sikhara_with_decorative_molding_frieze_in_the_Chennakeshava_temple_at_Somanathapura.jpg/1280px-Close_up_of_Hoysala_style_shrine_and_sikhara_with_decorative_molding_frieze_in_the_Chennakeshava_temple_at_Somanathapura.jpg",
       "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -1898,8 +1923,9 @@
     "nearest_transport": {
       "railway_station": "Thanjavur Junction (TJ)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Brihadisvara_Temple_during_Maha_Shivaratri-WUS03611_%28edit%29.jpg/1280px-Brihadisvara_Temple_during_Maha_Shivaratri-WUS03611_%28edit%29.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Brihadisvara_Temple_during_Maha_Shivaratri-WUS03611_%28edit%29.jpg/1280px-Brihadisvara_Temple_during_Maha_Shivaratri-WUS03611_%28edit%29.jpg",
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -1974,8 +2000,9 @@
     "nearest_transport": {
       "railway_station": "Chengalpattu (CGL) / Chennai Central"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Mamallapuram_view.jpg/1280px-Mamallapuram_view.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Mamallapuram_view.jpg/1280px-Mamallapuram_view.jpg",
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -2049,8 +2076,9 @@
     "nearest_transport": {
       "railway_station": "Madurai Junction (MDU)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80",
     "images": [
+      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80",
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -2123,8 +2151,9 @@
     "nearest_transport": {
       "railway_station": "Ernakulam Junction (ERS)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Kochi%2C_Fishing_nets_at_sunset%2C_Kerala%2C_India.jpg/1280px-Kochi%2C_Fishing_nets_at_sunset%2C_Kerala%2C_India.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Kochi%2C_Fishing_nets_at_sunset%2C_Kerala%2C_India.jpg/1280px-Kochi%2C_Fishing_nets_at_sunset%2C_Kerala%2C_India.jpg",
       "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -2196,8 +2225,9 @@
     "nearest_transport": {
       "railway_station": "Hindupur (HUP)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Front_side_of_Veerabhadra_Temple%2C_Lepakshi.jpg/1280px-Front_side_of_Veerabhadra_Temple%2C_Lepakshi.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Front_side_of_Veerabhadra_Temple%2C_Lepakshi.jpg/1280px-Front_side_of_Veerabhadra_Temple%2C_Lepakshi.jpg",
       "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -2269,8 +2299,9 @@
     "nearest_transport": {
       "railway_station": "Kazipet (KZJ) / Warangal (WL)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1616198814651-e71f960c3180?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Ramappa_Temple_%28Human_Scale%29.jpg/1280px-Ramappa_Temple_%28Human_Scale%29.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Ramappa_Temple_%28Human_Scale%29.jpg/1280px-Ramappa_Temple_%28Human_Scale%29.jpg",
       "https://images.unsplash.com/photo-1616198814651-e71f960c3180?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -2344,8 +2375,9 @@
     "nearest_transport": {
       "railway_station": "Hyderabad Deccan (HYB)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1588097281266-31018512954b?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Charminar_Hyderabad_1.jpg/1280px-Charminar_Hyderabad_1.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Charminar_Hyderabad_1.jpg/1280px-Charminar_Hyderabad_1.jpg",
       "https://images.unsplash.com/photo-1588097281266-31018512954b?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -2416,8 +2448,9 @@
     "nearest_transport": {
       "railway_station": "Hyderabad Deccan (HYB)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1616198814651-e71f960c3180?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Aerial_view_of_Golconda_fort.jpg/1280px-Aerial_view_of_Golconda_fort.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Aerial_view_of_Golconda_fort.jpg/1280px-Aerial_view_of_Golconda_fort.jpg",
       "https://images.unsplash.com/photo-1616198814651-e71f960c3180?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -2490,8 +2523,9 @@
     "nearest_transport": {
       "railway_station": "Puducherry (PDY)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Pondicherry-Rock_beach_aerial_view.jpg/1280px-Pondicherry-Rock_beach_aerial_view.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Pondicherry-Rock_beach_aerial_view.jpg/1280px-Pondicherry-Rock_beach_aerial_view.jpg",
       "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -2563,8 +2597,9 @@
     "nearest_transport": {
       "railway_station": "Khajuraho (KURJ)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/1_Khajuraho.jpg/1280px-1_Khajuraho.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/1_Khajuraho.jpg/1280px-1_Khajuraho.jpg",
       "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -2638,8 +2673,9 @@
     "nearest_transport": {
       "railway_station": "Sanchi (SCI) / Bhopal (BPL)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/003_Front_View_%2833709016166%29.jpg/1280px-003_Front_View_%2833709016166%29.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/003_Front_View_%2833709016166%29.jpg/1280px-003_Front_View_%2833709016166%29.jpg",
       "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -2713,8 +2749,9 @@
     "nearest_transport": {
       "railway_station": "Mahasamund (MSMD) / Raipur (R)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/7th_-_9th_century_Surang_tila_mandapa_before_shrines%2C_Sirpur_monuments_Chhattisgarh.jpg/1280px-7th_-_9th_century_Surang_tila_mandapa_before_shrines%2C_Sirpur_monuments_Chhattisgarh.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/7th_-_9th_century_Surang_tila_mandapa_before_shrines%2C_Sirpur_monuments_Chhattisgarh.jpg/1280px-7th_-_9th_century_Surang_tila_mandapa_before_shrines%2C_Sirpur_monuments_Chhattisgarh.jpg",
       "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -2785,8 +2822,9 @@
     "nearest_transport": {
       "railway_station": "Puri (PURI) / Bhubaneswar (BBS)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Konarka_Temple.jpg/1280px-Konarka_Temple.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Konarka_Temple.jpg/1280px-Konarka_Temple.jpg",
       "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -2861,8 +2899,9 @@
     "nearest_transport": {
       "railway_station": "Gaya Junction (GAYA)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Mahabodhitemple.jpg/1280px-Mahabodhitemple.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Mahabodhitemple.jpg/1280px-Mahabodhitemple.jpg",
       "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -2936,8 +2975,9 @@
     "nearest_transport": {
       "railway_station": "Rajgir (RGD) / Bakhtiyarpur (BKP)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Temple_No.-_3%2C_Nalanda_Archaeological_Site.jpg/1280px-Temple_No.-_3%2C_Nalanda_Archaeological_Site.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Temple_No.-_3%2C_Nalanda_Archaeological_Site.jpg/1280px-Temple_No.-_3%2C_Nalanda_Archaeological_Site.jpg",
       "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -3012,8 +3052,9 @@
     "nearest_transport": {
       "railway_station": "Howrah Junction (HWH) / Sealdah"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1558431382-27e303142255?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Victoria_Memorial_situated_in_Kolkata.jpg/1280px-Victoria_Memorial_situated_in_Kolkata.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Victoria_Memorial_situated_in_Kolkata.jpg/1280px-Victoria_Memorial_situated_in_Kolkata.jpg",
       "https://images.unsplash.com/photo-1558431382-27e303142255?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -3085,8 +3126,9 @@
     "nearest_transport": {
       "railway_station": "Jasidih Junction (JSME)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Baidyanath_temple_and_temple_complex%2C_Deoghar_04.jpg/1280px-Baidyanath_temple_and_temple_complex%2C_Deoghar_04.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Baidyanath_temple_and_temple_complex%2C_Deoghar_04.jpg/1280px-Baidyanath_temple_and_temple_complex%2C_Deoghar_04.jpg",
       "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -3157,8 +3199,9 @@
     "nearest_transport": {
       "railway_station": "Furkating (FKG) / Guwahati (GHY)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Beauty_of_Kaziranga_National_Park.jpg/1280px-Beauty_of_Kaziranga_National_Park.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Beauty_of_Kaziranga_National_Park.jpg/1280px-Beauty_of_Kaziranga_National_Park.jpg",
       "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -3233,8 +3276,9 @@
     "nearest_transport": {
       "railway_station": "Guwahati (GHY) / Tyrna Base"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Living_root_bridges%2C_Nongriat_village%2C_Meghalaya2.jpg/1280px-Living_root_bridges%2C_Nongriat_village%2C_Meghalaya2.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Living_root_bridges%2C_Nongriat_village%2C_Meghalaya2.jpg/1280px-Living_root_bridges%2C_Nongriat_village%2C_Meghalaya2.jpg",
       "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -3307,8 +3351,9 @@
     "nearest_transport": {
       "railway_station": "New Jalpaiguri (NJP)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1617854818583-09e7f077a156?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Rumtek_Monastery_alias_Dharma_Chakra_Centre_near_Gangtok%2C_East_Sikkim_09.jpg/1280px-Rumtek_Monastery_alias_Dharma_Chakra_Centre_near_Gangtok%2C_East_Sikkim_09.jpg",
     "images": [
+      "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Rumtek_Monastery_alias_Dharma_Chakra_Centre_near_Gangtok%2C_East_Sikkim_09.jpg/1280px-Rumtek_Monastery_alias_Dharma_Chakra_Centre_near_Gangtok%2C_East_Sikkim_09.jpg",
       "https://images.unsplash.com/photo-1617854818583-09e7f077a156?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {

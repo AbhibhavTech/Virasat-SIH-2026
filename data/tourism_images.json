@@ -1598,8 +1598,8 @@
     "name": "Taj Mahal",
     "state": "Uttar Pradesh",
     "city": "Agra",
-    "image_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&auto=format&fit=crop&q=80",
     "source_page": "https://asi.nic.in/taj-mahal-agra/",
     "source": "Archaeological Survey of India (ASI)",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -1617,7 +1617,9 @@
       "creator": "Ustad Ahmad Lahori",
       "attribution": "Taj Mahal ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "fatehpur-sikri",
@@ -1625,8 +1627,8 @@
     "name": "Fatehpur Sikri City of Victory",
     "state": "Uttar Pradesh",
     "city": "Agra District",
-    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Fatehput_Sikiri_Buland_Darwaza_gate_2010.jpg/1280px-Fatehput_Sikiri_Buland_Darwaza_gate_2010.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b5/Fatehput_Sikiri_Buland_Darwaza_gate_2010.jpg/1280px-Fatehput_Sikiri_Buland_Darwaza_gate_2010.jpg",
     "source_page": "https://asi.nic.in/fatehpur-sikri-agra/",
     "source": "Archaeological Survey of India (ASI)",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -1644,7 +1646,9 @@
       "creator": "Bahauddin",
       "attribution": "Fatehpur Sikri City of Victory ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "qutub-minar",
@@ -1652,8 +1656,8 @@
     "name": "Qutub Minar & Complex",
     "state": "Delhi (NCT)",
     "city": "New Delhi",
-    "image_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Qutb_Minar_2022.jpg/1280px-Qutb_Minar_2022.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3c/Qutb_Minar_2022.jpg/1280px-Qutb_Minar_2022.jpg",
     "source_page": "https://delhitourism.gov.in/delhitourism/tourist_place/qutab_minar.jsp",
     "source": "Archaeological Survey of India (ASI)",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -1671,7 +1675,9 @@
       "creator": "Qutb-ud-din Aibak & Shams-ud-din Iltutmish",
       "attribution": "Qutub Minar & Complex ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "red-fort",
@@ -1679,8 +1685,8 @@
     "name": "Red Fort (Lal Qila)",
     "state": "Delhi (NCT)",
     "city": "Old Delhi",
-    "image_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Delhi_fort.jpg/1280px-Delhi_fort.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2a/Delhi_fort.jpg/1280px-Delhi_fort.jpg",
     "source_page": "https://delhitourism.gov.in/delhitourism/tourist_place/red_fort.jsp",
     "source": "Archaeological Survey of India (ASI)",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -1698,7 +1704,9 @@
       "creator": "Ustad Ahmad Lahori",
       "attribution": "Red Fort (Lal Qila) ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "humayuns-tomb",
@@ -1706,8 +1714,8 @@
     "name": "Humayun's Tomb",
     "state": "Delhi (NCT)",
     "city": "New Delhi",
-    "image_url": "https://images.unsplash.com/photo-1597044141245-3e28e18f26b5?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1597044141245-3e28e18f26b5?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Tomb_of_Humayun%2C_Delhi.jpg/1280px-Tomb_of_Humayun%2C_Delhi.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d2/Tomb_of_Humayun%2C_Delhi.jpg/1280px-Tomb_of_Humayun%2C_Delhi.jpg",
     "source_page": "https://asi.nic.in/humayuns-tomb-delhi/",
     "source": "Archaeological Survey of India (ASI)",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -1725,7 +1733,9 @@
       "creator": "Mirak Mirza Ghiyas",
       "attribution": "Humayun's Tomb ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "india-gate",
@@ -1733,8 +1743,8 @@
     "name": "India Gate & National War Memorial",
     "state": "Delhi (NCT)",
     "city": "New Delhi",
-    "image_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=1200&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=1200&auto=format&fit=crop&q=80",
     "source_page": "https://www.incredibleindia.gov.in/en/destinations",
     "source": "National Monuments Authority (NMA)",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -1752,7 +1762,9 @@
       "creator": "Sir Edwin Lutyens",
       "attribution": "India Gate & National War Memorial ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "golden-temple-amritsar",
@@ -1760,8 +1772,8 @@
     "name": "Sri Harmandir Sahib (The Golden Temple)",
     "state": "Punjab",
     "city": "Amritsar",
-    "image_url": "https://images.unsplash.com/photo-1588096344356-9b634839cf9e?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1588096344356-9b634839cf9e?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/The_Golden_Temple_of_Amrithsar_7.jpg/1280px-The_Golden_Temple_of_Amrithsar_7.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/The_Golden_Temple_of_Amrithsar_7.jpg/1280px-The_Golden_Temple_of_Amrithsar_7.jpg",
     "source_page": "https://www.incredibleindia.gov.in/en/destinations",
     "source": "Shiromani Gurdwara Parbandhak Committee (SGPC)",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -1779,7 +1791,9 @@
       "creator": "Guru Arjan Dev Ji & Maharaja Ranjit Singh",
       "attribution": "Sri Harmandir Sahib (The Golden Temple) ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "kalka-shimla-railway",
@@ -1787,8 +1801,8 @@
     "name": "Kalka-Shimla Mountain Railway",
     "state": "Himachal Pradesh",
     "city": "Shimla",
-    "image_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/KSR_Steam_special_at_Taradevi_05-02-13_56.jpeg",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/KSR_Steam_special_at_Taradevi_05-02-13_56.jpeg",
     "source_page": "https://www.incredibleindia.gov.in/en/destinations",
     "source": "Indian Railways / UNESCO World Heritage Centre",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -1806,7 +1820,9 @@
       "creator": "H.S. Harington & Baba Bhalku",
       "attribution": "Kalka-Shimla Mountain Railway ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "kedarnath-temple",
@@ -1814,8 +1830,8 @@
     "name": "Kedarnath Temple",
     "state": "Uttarakhand",
     "city": "Rudraprayag District",
-    "image_url": "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Kedarnath_Temple_in_Rainy_season.jpg/1280px-Kedarnath_Temple_in_Rainy_season.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/56/Kedarnath_Temple_in_Rainy_season.jpg/1280px-Kedarnath_Temple_in_Rainy_season.jpg",
     "source_page": "https://www.incredibleindia.gov.in/en/destinations",
     "source": "Badrinath-Kedarnath Temple Committee (BKTC)",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -1833,7 +1849,9 @@
       "creator": "Adi Shankaracharya (Reconstruction)",
       "attribution": "Kedarnath Temple ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "shalimar-bagh-srinagar",
@@ -1841,8 +1859,8 @@
     "name": "Shalimar Bagh Mughal Garden",
     "state": "Jammu and Kashmir",
     "city": "Srinagar",
-    "image_url": "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Shalimar_Bagh_1.jpg/1280px-Shalimar_Bagh_1.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d6/Shalimar_Bagh_1.jpg/1280px-Shalimar_Bagh_1.jpg",
     "source_page": "https://www.incredibleindia.gov.in/en/destinations",
     "source": "Jammu & Kashmir Tourism & ASI",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -1860,7 +1878,9 @@
       "creator": "Commissioned by Emperor Jahangir for Empress Nur Jahan",
       "attribution": "Shalimar Bagh Mughal Garden ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "leh-palace",
@@ -1868,8 +1888,8 @@
     "name": "Leh Palace & Tsemo Fort",
     "state": "Ladakh",
     "city": "Leh",
-    "image_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Leh_Palace_2011.jpg/1280px-Leh_Palace_2011.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/36/Leh_Palace_2011.jpg/1280px-Leh_Palace_2011.jpg",
     "source_page": "https://www.incredibleindia.gov.in/en/destinations",
     "source": "Archaeological Survey of India (ASI)",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -1887,7 +1907,9 @@
       "creator": "King Sengge Namgyal",
       "attribution": "Leh Palace & Tsemo Fort ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "capitol-complex-chandigarh",
@@ -1895,8 +1917,8 @@
     "name": "The Capitol Complex (Le Corbusier)",
     "state": "Chandigarh",
     "city": "Chandigarh",
-    "image_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Palace_of_Assembly_Chandigarh_2006.jpg/1280px-Palace_of_Assembly_Chandigarh_2006.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1a/Palace_of_Assembly_Chandigarh_2006.jpg/1280px-Palace_of_Assembly_Chandigarh_2006.jpg",
     "source_page": "https://www.incredibleindia.gov.in/en/destinations",
     "source": "Chandigarh Tourism / UNESCO World Heritage Centre",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -1914,7 +1936,9 @@
       "creator": "Le Corbusier (Charles-Édouard Jeanneret)",
       "attribution": "The Capitol Complex (Le Corbusier) ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "amber-fort",
@@ -1922,8 +1946,8 @@
     "name": "Amber Fort & Palace (Amer)",
     "state": "Rajasthan",
     "city": "Jaipur",
-    "image_url": "https://images.unsplash.com/photo-1603288967527-24861e6878b3?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1603288967527-24861e6878b3?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/20191219_Fort_Amber%2C_Amer%2C_Jaipur_0955_9481.jpg/1280px-20191219_Fort_Amber%2C_Amer%2C_Jaipur_0955_9481.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/20191219_Fort_Amber%2C_Amer%2C_Jaipur_0955_9481.jpg/1280px-20191219_Fort_Amber%2C_Amer%2C_Jaipur_0955_9481.jpg",
     "source_page": "https://tourism.rajasthan.gov.in/amber-palace.html",
     "source": "Archaeological Survey of India (ASI) / UNESCO",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -1941,7 +1965,9 @@
       "creator": "Raja Man Singh I & Mirza Raja Jai Singh",
       "attribution": "Amber Fort & Palace (Amer) ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "hawa-mahal",
@@ -1949,8 +1975,8 @@
     "name": "Hawa Mahal (Palace of Winds)",
     "state": "Rajasthan",
     "city": "Jaipur",
-    "image_url": "https://images.unsplash.com/photo-1609946850720-6d4323229b46?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1609946850720-6d4323229b46?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg/1280px-East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/41/East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg/1280px-East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg",
     "source_page": "https://tourism.rajasthan.gov.in/hawa-mahal.html",
     "source": "Department of Archaeology and Museums, Rajasthan",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -1968,7 +1994,9 @@
       "creator": "Lal Chand Ustad",
       "attribution": "Hawa Mahal (Palace of Winds) ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "jaisalmer-fort",
@@ -1976,8 +2004,8 @@
     "name": "Jaisalmer Fort (Sonar Qila / Golden Fort)",
     "state": "Rajasthan",
     "city": "Jaisalmer",
-    "image_url": "https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Jaisalmer_forteresse.jpg/1280px-Jaisalmer_forteresse.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Jaisalmer_forteresse.jpg/1280px-Jaisalmer_forteresse.jpg",
     "source_page": "https://www.incredibleindia.gov.in/en/destinations",
     "source": "Archaeological Survey of India (ASI)",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -1995,7 +2023,9 @@
       "creator": "Rawal Jaisal",
       "attribution": "Jaisalmer Fort (Sonar Qila / Golden Fort) ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "rani-ki-vav",
@@ -2003,8 +2033,8 @@
     "name": "Rani ki Vav (The Queen's Stepwell)",
     "state": "Gujarat",
     "city": "Patan",
-    "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Rani_ki_vav_02.jpg/1280px-Rani_ki_vav_02.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/Rani_ki_vav_02.jpg/1280px-Rani_ki_vav_02.jpg",
     "source_page": "https://www.incredibleindia.gov.in/en/destinations",
     "source": "Archaeological Survey of India (ASI)",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -2022,7 +2052,9 @@
       "creator": "Commissioned by Queen Udayamati in memory of King Bhima I",
       "attribution": "Rani ki Vav (The Queen's Stepwell) ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "champaner-pavagadh",
@@ -2030,8 +2062,8 @@
     "name": "Champaner-Pavagadh Archaeological Park",
     "state": "Gujarat",
     "city": "Panchmahal",
-    "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/86/Jain_Temple%2C_Pavagadh_%28cropped%29.jpg",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/8/86/Jain_Temple%2C_Pavagadh_%28cropped%29.jpg",
     "source_page": "https://www.incredibleindia.gov.in/en/destinations",
     "source": "Archaeological Survey of India (ASI)",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -2049,7 +2081,9 @@
       "creator": "Sultan Mahmud Begada",
       "attribution": "Champaner-Pavagadh Archaeological Park ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "ajanta-caves",
@@ -2057,8 +2091,8 @@
     "name": "Ajanta Caves",
     "state": "Maharashtra",
     "city": "Chhatrapati Sambhajinagar",
-    "image_url": "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Ajanta_%2863%29.jpg",
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Ajanta_%2863%29.jpg",
     "source_page": "https://asi.nic.in/ajanta-caves/",
     "source": "Archaeological Survey of India (ASI)",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -2076,7 +2110,9 @@
       "creator": "Buddhist Monks & Guild Sculptors",
       "attribution": "Ajanta Caves ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "ellora-caves",
@@ -2084,8 +2120,8 @@
     "name": "Ellora Caves & Kailasa Temple",
     "state": "Maharashtra",
     "city": "Chhatrapati Sambhajinagar",
-    "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1608958435020-e8a7109ba809?w=1200&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1608958435020-e8a7109ba809?w=1200&auto=format&fit=crop&q=80",
     "source_page": "https://asi.nic.in/ellora-caves/",
     "source": "Archaeological Survey of India (ASI)",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -2103,7 +2139,9 @@
       "creator": "Rashtrakuta Guild Craftsmen",
       "attribution": "Ellora Caves & Kailasa Temple ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "gateway-of-india",
@@ -2111,8 +2149,8 @@
     "name": "Gateway of India",
     "state": "Maharashtra",
     "city": "Mumbai",
-    "image_url": "https://images.unsplash.com/photo-1588714477688-cf28a50e94f7?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1588714477688-cf28a50e94f7?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80",
     "source_page": "https://mumbaicity.gov.in/en/tourist-place/gateway-of-india/",
     "source": "Maharashtra Tourism Development Corporation (MTDC)",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -2130,7 +2168,9 @@
       "creator": "George Wittet",
       "attribution": "Gateway of India ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "csmt",
@@ -2138,8 +2178,8 @@
     "name": "Chhatrapati Shivaji Maharaj Terminus (CSMT)",
     "state": "Maharashtra",
     "city": "Mumbai",
-    "image_url": "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Chhatrapati_shivaji_terminus%2C_esterno_01.jpg/1280px-Chhatrapati_shivaji_terminus%2C_esterno_01.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Chhatrapati_shivaji_terminus%2C_esterno_01.jpg/1280px-Chhatrapati_shivaji_terminus%2C_esterno_01.jpg",
     "source_page": "https://cr.indianrailways.gov.in/",
     "source": "Central Railway / UNESCO World Heritage Centre",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -2157,7 +2197,9 @@
       "creator": "Frederick William Stevens",
       "attribution": "Chhatrapati Shivaji Maharaj Terminus (CSMT) ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "basilica-of-bom-jesus",
@@ -2165,8 +2207,8 @@
     "name": "Basilica of Bom Jesus & Old Goa Churches",
     "state": "Goa",
     "city": "Old Goa",
-    "image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/1280px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/1280px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg",
     "source_page": "https://www.incredibleindia.gov.in/en/destinations",
     "source": "Archaeological Survey of India (ASI) / Archdiocese of Goa",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -2184,7 +2226,9 @@
       "creator": "Domingos Fernandes & Jesuit Architects",
       "attribution": "Basilica of Bom Jesus & Old Goa Churches ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "hampi-monuments",
@@ -2192,8 +2236,8 @@
     "name": "Group of Monuments at Hampi (Vijayanagara)",
     "state": "Karnataka",
     "city": "Vijayanagara District",
-    "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Wide_angle_of_Galigopuram_of_Virupaksha_Temple%2C_Hampi_%2804%29_%28cropped%29.jpg/1280px-Wide_angle_of_Galigopuram_of_Virupaksha_Temple%2C_Hampi_%2804%29_%28cropped%29.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Wide_angle_of_Galigopuram_of_Virupaksha_Temple%2C_Hampi_%2804%29_%28cropped%29.jpg/1280px-Wide_angle_of_Galigopuram_of_Virupaksha_Temple%2C_Hampi_%2804%29_%28cropped%29.jpg",
     "source_page": "https://www.incredibleindia.gov.in/en/destinations",
     "source": "Archaeological Survey of India (ASI)",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -2211,7 +2255,9 @@
       "creator": "Vijayanagara Royal Builders",
       "attribution": "Group of Monuments at Hampi (Vijayanagara) ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "pattadakal-monuments",
@@ -2219,8 +2265,8 @@
     "name": "Group of Monuments at Pattadakal",
     "state": "Karnataka",
     "city": "Bagalkot District",
-    "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Pattadakal_000.JPG/1280px-Pattadakal_000.JPG",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Pattadakal_000.JPG/1280px-Pattadakal_000.JPG",
     "source_page": "https://www.incredibleindia.gov.in/en/destinations",
     "source": "Archaeological Survey of India (ASI)",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -2238,7 +2284,9 @@
       "creator": "Gundan Anivaritachari",
       "attribution": "Group of Monuments at Pattadakal ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "hoysala-temples-belur",
@@ -2246,8 +2294,8 @@
     "name": "Sacred Ensembles of the Hoysalas (Belur & Halebidu)",
     "state": "Karnataka",
     "city": "Hassan District",
-    "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Close_up_of_Hoysala_style_shrine_and_sikhara_with_decorative_molding_frieze_in_the_Chennakeshava_temple_at_Somanathapura.jpg/1280px-Close_up_of_Hoysala_style_shrine_and_sikhara_with_decorative_molding_frieze_in_the_Chennakeshava_temple_at_Somanathapura.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Close_up_of_Hoysala_style_shrine_and_sikhara_with_decorative_molding_frieze_in_the_Chennakeshava_temple_at_Somanathapura.jpg/1280px-Close_up_of_Hoysala_style_shrine_and_sikhara_with_decorative_molding_frieze_in_the_Chennakeshava_temple_at_Somanathapura.jpg",
     "source_page": "https://www.incredibleindia.gov.in/en/destinations",
     "source": "Archaeological Survey of India (ASI) / UNESCO",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -2265,7 +2313,9 @@
       "creator": "Ruvari Mallitamma, Dasoja & Jakanachari",
       "attribution": "Sacred Ensembles of the Hoysalas (Belur & Halebidu) ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "brihadisvara-temple",
@@ -2273,8 +2323,8 @@
     "name": "Brihadisvara Temple (Peruvudaiyar Kovil)",
     "state": "Tamil Nadu",
     "city": "Thanjavur",
-    "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Brihadisvara_Temple_during_Maha_Shivaratri-WUS03611_%28edit%29.jpg/1280px-Brihadisvara_Temple_during_Maha_Shivaratri-WUS03611_%28edit%29.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Brihadisvara_Temple_during_Maha_Shivaratri-WUS03611_%28edit%29.jpg/1280px-Brihadisvara_Temple_during_Maha_Shivaratri-WUS03611_%28edit%29.jpg",
     "source_page": "https://www.incredibleindia.gov.in/en/destinations",
     "source": "Archaeological Survey of India (ASI) / HR&CE",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -2292,7 +2342,9 @@
       "creator": "Kunjara Mallan Raja Raja Perunthachan",
       "attribution": "Brihadisvara Temple (Peruvudaiyar Kovil) ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "shore-temple-mahabalipuram",
@@ -2300,8 +2352,8 @@
     "name": "Shore Temple & Monuments at Mahabalipuram",
     "state": "Tamil Nadu",
     "city": "Chengalpattu District",
-    "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Mamallapuram_view.jpg/1280px-Mamallapuram_view.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Mamallapuram_view.jpg/1280px-Mamallapuram_view.jpg",
     "source_page": "https://www.incredibleindia.gov.in/en/destinations",
     "source": "Archaeological Survey of India (ASI)",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -2319,7 +2371,9 @@
       "creator": "Pallava Royal Sculptors",
       "attribution": "Shore Temple & Monuments at Mahabalipuram ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "meenakshi-amman-temple",
@@ -2327,8 +2381,8 @@
     "name": "Arulmigu Meenakshi Amman Temple",
     "state": "Tamil Nadu",
     "city": "Madurai",
-    "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80",
     "source_page": "https://www.incredibleindia.gov.in/en/destinations",
     "source": "Hindu Religious and Charitable Endowments (HR&CE)",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -2346,7 +2400,9 @@
       "creator": "Vishwanatha Nayak & Ariyanatha Mudaliar",
       "attribution": "Arulmigu Meenakshi Amman Temple ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "fort-kochi-heritage",
@@ -2354,8 +2410,8 @@
     "name": "Fort Kochi & Mattancherry Palace",
     "state": "Kerala",
     "city": "Kochi",
-    "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Kochi%2C_Fishing_nets_at_sunset%2C_Kerala%2C_India.jpg/1280px-Kochi%2C_Fishing_nets_at_sunset%2C_Kerala%2C_India.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6e/Kochi%2C_Fishing_nets_at_sunset%2C_Kerala%2C_India.jpg/1280px-Kochi%2C_Fishing_nets_at_sunset%2C_Kerala%2C_India.jpg",
     "source_page": "https://www.incredibleindia.gov.in/en/destinations",
     "source": "Archaeological Survey of India (ASI) & Kerala Tourism",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -2373,7 +2429,9 @@
       "creator": "Portuguese and Dutch Colonial Builders & Kochi Artisans",
       "attribution": "Fort Kochi & Mattancherry Palace ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "lepakshi-veerabhadra-temple",
@@ -2381,8 +2439,8 @@
     "name": "Lepakshi Veerabhadra Temple & Nandi",
     "state": "Andhra Pradesh",
     "city": "Sri Sathya Sai (Anantapur)",
-    "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Front_side_of_Veerabhadra_Temple%2C_Lepakshi.jpg/1280px-Front_side_of_Veerabhadra_Temple%2C_Lepakshi.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0a/Front_side_of_Veerabhadra_Temple%2C_Lepakshi.jpg/1280px-Front_side_of_Veerabhadra_Temple%2C_Lepakshi.jpg",
     "source_page": "https://www.incredibleindia.gov.in/en/destinations",
     "source": "Archaeological Survey of India (ASI)",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -2400,7 +2458,9 @@
       "creator": "Virupanna Nayaka & Viranna",
       "attribution": "Lepakshi Veerabhadra Temple & Nandi ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "ramappa-temple",
@@ -2408,8 +2468,8 @@
     "name": "Kakatiya Rudreshwara (Ramappa) Temple",
     "state": "Telangana",
     "city": "Palampet, Mulugu",
-    "image_url": "https://images.unsplash.com/photo-1616198814651-e71f960c3180?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1616198814651-e71f960c3180?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Ramappa_Temple_%28Human_Scale%29.jpg/1280px-Ramappa_Temple_%28Human_Scale%29.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/29/Ramappa_Temple_%28Human_Scale%29.jpg/1280px-Ramappa_Temple_%28Human_Scale%29.jpg",
     "source_page": "https://www.incredibleindia.gov.in/en/destinations",
     "source": "Archaeological Survey of India (ASI) / UNESCO",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -2427,7 +2487,9 @@
       "creator": "Sculptor Ramappa",
       "attribution": "Kakatiya Rudreshwara (Ramappa) Temple ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "charminar",
@@ -2435,8 +2497,8 @@
     "name": "Charminar Monument & Mosque",
     "state": "Telangana",
     "city": "Hyderabad",
-    "image_url": "https://images.unsplash.com/photo-1588097281266-31018512954b?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1588097281266-31018512954b?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Charminar_Hyderabad_1.jpg/1280px-Charminar_Hyderabad_1.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/71/Charminar_Hyderabad_1.jpg/1280px-Charminar_Hyderabad_1.jpg",
     "source_page": "https://asi.nic.in/charminar-hyderabad/",
     "source": "Archaeological Survey of India (ASI)",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -2454,7 +2516,9 @@
       "creator": "Mir Momin Astarabadi",
       "attribution": "Charminar Monument & Mosque ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "golconda-fort",
@@ -2462,8 +2526,8 @@
     "name": "Golconda Fort & Citadel",
     "state": "Telangana",
     "city": "Hyderabad",
-    "image_url": "https://images.unsplash.com/photo-1616198814651-e71f960c3180?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1616198814651-e71f960c3180?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Aerial_view_of_Golconda_fort.jpg/1280px-Aerial_view_of_Golconda_fort.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/df/Aerial_view_of_Golconda_fort.jpg/1280px-Aerial_view_of_Golconda_fort.jpg",
     "source_page": "https://asi.nic.in/golconda-fort-hyderabad/",
     "source": "Archaeological Survey of India (ASI)",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -2481,7 +2545,9 @@
       "creator": "Sultan Quli Qutb-ul-Mulk",
       "attribution": "Golconda Fort & Citadel ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "french-quarter-puducherry",
@@ -2489,8 +2555,8 @@
     "name": "French Quarter (White Town) Heritage Precinct",
     "state": "Puducherry",
     "city": "Puducherry",
-    "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Pondicherry-Rock_beach_aerial_view.jpg/1280px-Pondicherry-Rock_beach_aerial_view.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Pondicherry-Rock_beach_aerial_view.jpg/1280px-Pondicherry-Rock_beach_aerial_view.jpg",
     "source_page": "https://www.incredibleindia.gov.in/en/destinations",
     "source": "Puducherry Tourism / INTACH",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -2508,7 +2574,9 @@
       "creator": "French colonial urban planners",
       "attribution": "French Quarter (White Town) Heritage Precinct ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "khajuraho-monuments",
@@ -2516,8 +2584,8 @@
     "name": "Khajuraho Group of Monuments",
     "state": "Madhya Pradesh",
     "city": "Chhatarpur District",
-    "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/1_Khajuraho.jpg/1280px-1_Khajuraho.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/1_Khajuraho.jpg/1280px-1_Khajuraho.jpg",
     "source_page": "https://asi.nic.in/khajuraho-group-of-monuments/",
     "source": "Archaeological Survey of India (ASI)",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -2535,7 +2603,9 @@
       "creator": "Chandela Master Builders",
       "attribution": "Khajuraho Group of Monuments ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "sanchi-stupa",
@@ -2543,8 +2613,8 @@
     "name": "Great Stupa at Sanchi",
     "state": "Madhya Pradesh",
     "city": "Raisen District",
-    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/003_Front_View_%2833709016166%29.jpg/1280px-003_Front_View_%2833709016166%29.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/18/003_Front_View_%2833709016166%29.jpg/1280px-003_Front_View_%2833709016166%29.jpg",
     "source_page": "https://asi.nic.in/buddhist-monuments-at-sanchi/",
     "source": "Archaeological Survey of India (ASI)",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -2562,7 +2632,9 @@
       "creator": "Commissioned by Emperor Ashoka the Great",
       "attribution": "Great Stupa at Sanchi ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "sirpur-monuments",
@@ -2570,8 +2642,8 @@
     "name": "Laxman Brick Temple & Sirpur Monuments",
     "state": "Chhattisgarh",
     "city": "Mahasamund District",
-    "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/7th_-_9th_century_Surang_tila_mandapa_before_shrines%2C_Sirpur_monuments_Chhattisgarh.jpg/1280px-7th_-_9th_century_Surang_tila_mandapa_before_shrines%2C_Sirpur_monuments_Chhattisgarh.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/98/7th_-_9th_century_Surang_tila_mandapa_before_shrines%2C_Sirpur_monuments_Chhattisgarh.jpg/1280px-7th_-_9th_century_Surang_tila_mandapa_before_shrines%2C_Sirpur_monuments_Chhattisgarh.jpg",
     "source_page": "https://www.incredibleindia.gov.in/en/destinations",
     "source": "Archaeological Survey of India (ASI)",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -2589,7 +2661,9 @@
       "creator": "Queen Vasata (Mother of King Mahashivagupta Balarjuna)",
       "attribution": "Laxman Brick Temple & Sirpur Monuments ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "sun-temple-konark",
@@ -2597,8 +2671,8 @@
     "name": "Sun Temple Konark (Black Pagoda)",
     "state": "Odisha",
     "city": "Puri District",
-    "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Konarka_Temple.jpg/1280px-Konarka_Temple.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/47/Konarka_Temple.jpg/1280px-Konarka_Temple.jpg",
     "source_page": "https://asi.nic.in/sun-temple-konark/",
     "source": "Archaeological Survey of India (ASI)",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -2616,7 +2690,9 @@
       "creator": "Bisu Maharana & 1200 Artisans",
       "attribution": "Sun Temple Konark (Black Pagoda) ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "mahabodhi-temple",
@@ -2624,8 +2700,8 @@
     "name": "Mahabodhi Temple Complex",
     "state": "Bihar",
     "city": "Bodh Gaya",
-    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Mahabodhitemple.jpg/1280px-Mahabodhitemple.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Mahabodhitemple.jpg/1280px-Mahabodhitemple.jpg",
     "source_page": "https://bodhgayatourism.bihar.gov.in/",
     "source": "Bodhgaya Temple Management Committee (BTMC) / UNESCO",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -2643,7 +2719,9 @@
       "creator": "Emperor Ashoka & Gupta Dynasty Architects",
       "attribution": "Mahabodhi Temple Complex ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "nalanda-university-ruins",
@@ -2651,8 +2729,8 @@
     "name": "Archaeological Site of Nalanda Mahavihara",
     "state": "Bihar",
     "city": "Nalanda",
-    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Temple_No.-_3%2C_Nalanda_Archaeological_Site.jpg/1280px-Temple_No.-_3%2C_Nalanda_Archaeological_Site.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Temple_No.-_3%2C_Nalanda_Archaeological_Site.jpg/1280px-Temple_No.-_3%2C_Nalanda_Archaeological_Site.jpg",
     "source_page": "https://www.incredibleindia.gov.in/en/destinations",
     "source": "Archaeological Survey of India (ASI)",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -2670,7 +2748,9 @@
       "creator": "Gupta and Pala Royal Monastic Architects",
       "attribution": "Archaeological Site of Nalanda Mahavihara ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "victoria-memorial-kolkata",
@@ -2678,8 +2758,8 @@
     "name": "Victoria Memorial Hall",
     "state": "West Bengal",
     "city": "Kolkata",
-    "image_url": "https://images.unsplash.com/photo-1558431382-27e303142255?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1558431382-27e303142255?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Victoria_Memorial_situated_in_Kolkata.jpg/1280px-Victoria_Memorial_situated_in_Kolkata.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Victoria_Memorial_situated_in_Kolkata.jpg/1280px-Victoria_Memorial_situated_in_Kolkata.jpg",
     "source_page": "https://www.incredibleindia.gov.in/en/destinations",
     "source": "Victoria Memorial Hall Board of Trustees / Ministry of Culture",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -2697,7 +2777,9 @@
       "creator": "Sir William Emerson",
       "attribution": "Victoria Memorial Hall ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "baidyanath-dham-deoghar",
@@ -2705,8 +2787,8 @@
     "name": "Baidyanath Jyotirlinga Temple Complex",
     "state": "Jharkhand",
     "city": "Deoghar",
-    "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Baidyanath_temple_and_temple_complex%2C_Deoghar_04.jpg/1280px-Baidyanath_temple_and_temple_complex%2C_Deoghar_04.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/Baidyanath_temple_and_temple_complex%2C_Deoghar_04.jpg/1280px-Baidyanath_temple_and_temple_complex%2C_Deoghar_04.jpg",
     "source_page": "https://www.incredibleindia.gov.in/en/destinations",
     "source": "Baidyanath Dham Temple Trust / Jharkhand Tourism",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -2724,7 +2806,9 @@
       "creator": "Raja Puran Mal of Gidhaur",
       "attribution": "Baidyanath Jyotirlinga Temple Complex ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "kaziranga-living-heritage",
@@ -2732,8 +2816,8 @@
     "name": "Kaziranga Living Heritage & Wilderness",
     "state": "Assam",
     "city": "Golaghat & Nagaon",
-    "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Beauty_of_Kaziranga_National_Park.jpg/1280px-Beauty_of_Kaziranga_National_Park.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Beauty_of_Kaziranga_National_Park.jpg/1280px-Beauty_of_Kaziranga_National_Park.jpg",
     "source_page": "https://www.incredibleindia.gov.in/en/destinations",
     "source": "Assam Forest Department / UNESCO World Heritage Centre",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -2751,7 +2835,9 @@
       "creator": "Preserved by Assam Forest Department & Indigenous Communities",
       "attribution": "Kaziranga Living Heritage & Wilderness ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "living-root-bridges",
@@ -2759,8 +2845,8 @@
     "name": "Living Root Bridges of Cherrapunji (Nongriat)",
     "state": "Meghalaya",
     "city": "Cherrapunji (Sohra) / Nongriat",
-    "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Living_root_bridges%2C_Nongriat_village%2C_Meghalaya2.jpg/1280px-Living_root_bridges%2C_Nongriat_village%2C_Meghalaya2.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Living_root_bridges%2C_Nongriat_village%2C_Meghalaya2.jpg/1280px-Living_root_bridges%2C_Nongriat_village%2C_Meghalaya2.jpg",
     "source_page": "https://www.incredibleindia.gov.in/en/destinations",
     "source": "Meghalaya Tourism / INTACH",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -2778,7 +2864,9 @@
       "creator": "Khasi Elders & Forest Keepers",
       "attribution": "Living Root Bridges of Cherrapunji (Nongriat) ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "rumtek-monastery",
@@ -2786,8 +2874,8 @@
     "name": "Rumtek Monastery (Dharma Chakra Centre)",
     "state": "Sikkim",
     "city": "Gangtok",
-    "image_url": "https://images.unsplash.com/photo-1617854818583-09e7f077a156?w=800&auto=format&fit=crop&q=80",
-    "thumbnail_url": "https://images.unsplash.com/photo-1617854818583-09e7f077a156?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Rumtek_Monastery_alias_Dharma_Chakra_Centre_near_Gangtok%2C_East_Sikkim_09.jpg/1280px-Rumtek_Monastery_alias_Dharma_Chakra_Centre_near_Gangtok%2C_East_Sikkim_09.jpg",
+    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Rumtek_Monastery_alias_Dharma_Chakra_Centre_near_Gangtok%2C_East_Sikkim_09.jpg/1280px-Rumtek_Monastery_alias_Dharma_Chakra_Centre_near_Gangtok%2C_East_Sikkim_09.jpg",
     "source_page": "https://www.incredibleindia.gov.in/en/destinations",
     "source": "Sikkim Tourism & Ecclesiastical Affairs Department",
     "license": "Public Domain / CC-BY-SA-4.0",
@@ -2805,7 +2893,9 @@
       "creator": "16th Karmapa & Tibetan Master Craftsmen",
       "attribution": "Rumtek Monastery (Dharma Chakra Centre) ASI & National Monuments Registry",
       "last_checked": "2026-09-08T20:02:22.198Z"
-    }
+    },
+    "curated": true,
+    "verified": true
   },
   {
     "entity_id": "marine-drive",
