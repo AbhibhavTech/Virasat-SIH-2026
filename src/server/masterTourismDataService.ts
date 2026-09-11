@@ -270,6 +270,13 @@ export class MasterTourismDataService {
     goa: ['goa', 'panaji', 'old goa', 'velha goa', 'sinquerim', 'candolim'],
     bengaluru: ['bengaluru', 'bangalore'],
     hyderabad: ['hyderabad', 'secunderabad'],
+    hanamkonda: ['hanamkonda'],
+    warangal: ['warangal', 'kazipet'],
+    'yadadri bhuvanagiri': ['yadadri bhuvanagiri', 'yadadri-bhuvanagiri', 'bhongir', 'bhuvanagiri'],
+    yadadri: ['yadadri', 'yadagirigutta'],
+    nirmal: ['nirmal', 'nirmal district'],
+    'bhadradri kothagudem': ['bhadradri kothagudem', 'bhadradri-kothagudem', 'kothagudem', 'bhadrachalam'],
+    nalgonda: ['nalgonda', 'nalgonda district'],
     pune: ['pune'],
     udaipur: ['udaipur'],
     hampi: ['hampi', 'vijayanagara', 'hosapete'],
@@ -300,6 +307,13 @@ export class MasterTourismDataService {
     goa: 'Goa',
     bengaluru: 'Bengaluru',
     hyderabad: 'Hyderabad',
+    hanamkonda: 'Hanamkonda',
+    warangal: 'Warangal',
+    'yadadri bhuvanagiri': 'Yadadri Bhuvanagiri',
+    yadadri: 'Yadadri',
+    nirmal: 'Nirmal',
+    'bhadradri kothagudem': 'Bhadradri Kothagudem',
+    nalgonda: 'Nalgonda',
     pune: 'Pune',
     udaipur: 'Udaipur',
     hampi: 'Hampi',
@@ -391,6 +405,11 @@ export class MasterTourismDataService {
       loadPlacesFile(path.join(dataDir, 'punjab', 'places.json'));
       loadPlacesFile(path.join(dataDir, 'kolkata', 'places.json'));
       loadPlacesFile(path.join(dataDir, 'west-bengal', 'places.json'));
+      loadPlacesFile(path.join(dataDir, 'telangana', 'places.json'));
+      loadPlacesFile(path.join(dataDir, 'nagaland', 'places.json'));
+      loadPlacesFile(path.join(dataDir, 'meghalaya', 'places.json'));
+      loadPlacesFile(path.join(dataDir, 'manipur', 'places.json'));
+      loadPlacesFile(path.join(dataDir, 'mizoram', 'places.json'));
 
       // 7. Load Heritage & UNESCO sites
       const heritagePath = path.join(dataDir, 'heritage', 'monuments.json');
@@ -488,6 +507,35 @@ export class MasterTourismDataService {
         this.destinations.delete('golden-temple');
         this.destinations.delete('jallianwala-bagh');
         this.destinations.delete('partition-museum');
+      }
+
+      // Ensure Telangana destinations strictly use verified telangana_001 - telangana_015 IDs
+      if (this.destinations.has('telangana_001')) {
+        for (const legacyKey of [
+          'charminar', 'golconda-fort', 'ramappa-temple',
+          'hyderabad-charminar', 'hyderabad-golconda-fort', 'hyderabad-salar-jung-museum',
+          'hyderabad-hussain-sagar-lake', 'hyderabad-qutb-shahi-tombs', 'hyderabad-ramoji-film-city',
+          'hyderabad-chowmahalla-palace', 'warangal-fort', 'warangal-thousand-pillar-temple',
+          'bhongir-fort', 'thousand-pillar-temple', 'qutb-shahi-tombs', 'salar-jung-museum',
+          'chowmahalla-palace', 'hussain-sagar-lake',
+          'hyderabad-hyderabad-heritage-fort-complex',
+          'nagarjuna-sagar-nagarjuna-sagar-national-wildlife-botanical-park',
+          'kbr-national-park', 'mrugavani-national-park',
+          'warangal-warangal-sacred-temple-cultural-center'
+        ]) {
+          this.destinations.delete(legacyKey);
+        }
+      }
+
+      // Ensure Nagaland, Meghalaya, Manipur, Mizoram delete any legacy synthetic promenade placeholders & duplicates
+      for (const legacyKey of [
+        'wobkha-wokha-scenic-promenade-viewpoint',
+        'jowai-jowai-scenic-promenade-viewpoint',
+        'kakching-kakching-scenic-promenade-viewpoint',
+        'kolasib-kolasib-scenic-promenade-viewpoint',
+        'living-root-bridges'
+      ]) {
+        this.destinations.delete(legacyKey);
       }
 
       // 10. Perform Normalization & Derive Secondary Master Collections

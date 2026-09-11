@@ -202,6 +202,15 @@ const CITY_ALIASES: Record<string, string[]> = {
   goa: ['goa', 'panaji', 'old goa', 'velha goa', 'sinquerim', 'candolim'],
   bengaluru: ['bengaluru', 'bangalore'],
   hyderabad: ['hyderabad', 'secunderabad'],
+  hanamkonda: ['hanamkonda'],
+  warangal: ['warangal', 'kazipet'],
+  'yadadri-bhuvanagiri': ['yadadri-bhuvanagiri', 'yadadri bhuvanagiri', 'bhongir', 'bhuvanagiri'],
+  'yadadri bhuvanagiri': ['yadadri-bhuvanagiri', 'yadadri bhuvanagiri', 'bhongir', 'bhuvanagiri'],
+  yadadri: ['yadadri', 'yadagirigutta'],
+  nirmal: ['nirmal', 'nirmal district'],
+  'bhadradri-kothagudem': ['bhadradri-kothagudem', 'bhadradri kothagudem', 'kothagudem', 'bhadrachalam'],
+  'bhadradri kothagudem': ['bhadradri-kothagudem', 'bhadradri kothagudem', 'kothagudem', 'bhadrachalam'],
+  nalgonda: ['nalgonda', 'nalgonda district'],
   pune: ['pune'],
   udaipur: ['udaipur'],
   hampi: ['hampi', 'vijayanagara', 'hosapete'],
@@ -217,6 +226,34 @@ const CITY_ALIASES: Record<string, string[]> = {
   gangtok: ['gangtok'],
   lonavala: ['lonavala', 'lonavla', 'khandala', 'lonavala & khandala', 'lonavala and khandala'],
   khandala: ['khandala', 'lonavala', 'lonavla', 'lonavala & khandala', 'lonavala and khandala'],
+  // Nagaland
+  kohima: ['kohima', 'kisama', 'kohima district'],
+  mokokchung: ['mokokchung', 'mokokchung district'],
+  mon: ['mon', 'mon district', 'longwa'],
+  phek: ['phek', 'phek district'],
+  peren: ['peren', 'peren district', 'benreu'],
+  // Meghalaya
+  shillong: ['shillong', 'east khasi hills'],
+  umiam: ['umiam', 'ri-bhoi', 'ri-bhoi district'],
+  cherrapunji: ['cherrapunji', 'sohra', 'cherrapunjee'],
+  nongriat: ['nongriat', 'nongriat village'],
+  dawki: ['dawki', 'west jaintia hills'],
+  mawlynnong: ['mawlynnong'],
+  // Manipur
+  imphal: ['imphal', 'imphal west', 'imphal east'],
+  loktak: ['loktak', 'loktak lake', 'morang'],
+  ukhrul: ['ukhrul', 'ukhrul district'],
+  dzukou: ['dzukou', 'dzukou valley'],
+  khongjom: ['khongjom', 'thoubal', 'thoubal district'],
+  bishnupur: ['bishnupur', 'bishnupur district'],
+  // Mizoram
+  aizawl: ['aizawl', 'aizawl district'],
+  serchhip: ['serchhip', 'serchhip district'],
+  lawngtlai: ['lawngtlai', 'lawngtlai district'],
+  champhai: ['champhai', 'champhai district'],
+  saitual: ['saitual', 'saitual district'],
+  siaha: ['siaha', 'siaha district'],
+  hmuifang: ['hmuifang'],
 };
 
 const CANONICAL_CITY_NAMES: Record<string, string> = {
@@ -234,6 +271,15 @@ const CANONICAL_CITY_NAMES: Record<string, string> = {
   goa: 'Goa',
   bengaluru: 'Bengaluru',
   hyderabad: 'Hyderabad',
+  hanamkonda: 'Hanamkonda',
+  warangal: 'Warangal',
+  'yadadri-bhuvanagiri': 'Yadadri Bhuvanagiri',
+  'yadadri bhuvanagiri': 'Yadadri Bhuvanagiri',
+  yadadri: 'Yadadri',
+  nirmal: 'Nirmal',
+  'bhadradri-kothagudem': 'Bhadradri Kothagudem',
+  'bhadradri kothagudem': 'Bhadradri Kothagudem',
+  nalgonda: 'Nalgonda',
   pune: 'Pune',
   udaipur: 'Udaipur',
   hampi: 'Hampi',
@@ -249,6 +295,34 @@ const CANONICAL_CITY_NAMES: Record<string, string> = {
   gangtok: 'Gangtok',
   lonavala: 'Lonavala & Khandala',
   khandala: 'Khandala',
+  // Nagaland
+  kohima: 'Kohima',
+  mokokchung: 'Mokokchung',
+  mon: 'Mon',
+  phek: 'Phek',
+  peren: 'Peren',
+  // Meghalaya
+  shillong: 'Shillong',
+  umiam: 'Umiam',
+  cherrapunji: 'Cherrapunji',
+  nongriat: 'Nongriat',
+  dawki: 'Dawki',
+  mawlynnong: 'Mawlynnong',
+  // Manipur
+  imphal: 'Imphal',
+  loktak: 'Loktak',
+  ukhrul: 'Ukhrul',
+  dzukou: 'Dzukou Valley',
+  khongjom: 'Khongjom',
+  bishnupur: 'Bishnupur',
+  // Mizoram
+  aizawl: 'Aizawl',
+  serchhip: 'Serchhip',
+  lawngtlai: 'Lawngtlai',
+  champhai: 'Champhai',
+  saitual: 'Saitual',
+  siaha: 'Siaha',
+  hmuifang: 'Hmuifang',
 };
 
 function getCanonicalCityId(cityNameOrId: string): string {
@@ -356,6 +430,11 @@ function loadData() {
     loadPlacesFile(path.join(dataDir, 'west-bengal', 'places.json'));
     loadPlacesFile(path.join(dataDir, 'goa', 'places.json'));
     loadPlacesFile(path.join(dataDir, 'punjab', 'places.json'));
+    loadPlacesFile(path.join(dataDir, 'telangana', 'places.json'));
+    loadPlacesFile(path.join(dataDir, 'nagaland', 'places.json'));
+    loadPlacesFile(path.join(dataDir, 'meghalaya', 'places.json'));
+    loadPlacesFile(path.join(dataDir, 'manipur', 'places.json'));
+    loadPlacesFile(path.join(dataDir, 'mizoram', 'places.json'));
 
     // Load Heritage 42+ structured experiences
     const heritagePath = path.join(dataDir, 'heritage', 'monuments.json');
@@ -428,6 +507,35 @@ function loadData() {
       placesData.delete('golden-temple');
       placesData.delete('jallianwala-bagh');
       placesData.delete('partition-museum');
+    }
+
+    // Ensure Telangana places strictly use verified telangana_001 - telangana_015 IDs
+    if (placesData.has('telangana_001')) {
+      for (const legacyKey of [
+        'charminar', 'golconda-fort', 'ramappa-temple',
+        'hyderabad-charminar', 'hyderabad-golconda-fort', 'hyderabad-salar-jung-museum',
+        'hyderabad-hussain-sagar-lake', 'hyderabad-qutb-shahi-tombs', 'hyderabad-ramoji-film-city',
+        'hyderabad-chowmahalla-palace', 'warangal-fort', 'warangal-thousand-pillar-temple',
+        'bhongir-fort', 'thousand-pillar-temple', 'qutb-shahi-tombs', 'salar-jung-museum',
+        'chowmahalla-palace', 'hussain-sagar-lake',
+        'hyderabad-hyderabad-heritage-fort-complex',
+        'nagarjuna-sagar-nagarjuna-sagar-national-wildlife-botanical-park',
+        'kbr-national-park', 'mrugavani-national-park',
+        'warangal-warangal-sacred-temple-cultural-center'
+      ]) {
+        placesData.delete(legacyKey);
+      }
+    }
+
+    // Ensure Nagaland, Meghalaya, Manipur, Mizoram synthetic & duplicate keys are cleaned
+    for (const legacyKey of [
+      'wobkha-wokha-scenic-promenade-viewpoint',
+      'jowai-jowai-scenic-promenade-viewpoint',
+      'kakching-kakching-scenic-promenade-viewpoint',
+      'kolasib-kolasib-scenic-promenade-viewpoint',
+      'living-root-bridges'
+    ]) {
+      placesData.delete(legacyKey);
     }
 
     // Comprehensive City Normalization pass for all places in placesData

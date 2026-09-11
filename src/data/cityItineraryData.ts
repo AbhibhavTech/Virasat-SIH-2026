@@ -853,355 +853,19 @@ export const VERIFIED_CITY_ITINERARIES: Record<string, VerifiedCityItinerary> = 
 
 export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
   {
-    "id": "amaravati",
-    "name": "Amaravati",
-    "state": "Andhra Pradesh",
-    "state_id": "andhra-pradesh",
-    "displayName": "Amaravati (Andhra Pradesh)",
+    "id": "agartala",
+    "name": "Agartala",
+    "state": "Tripura",
+    "state_id": "tripura",
+    "displayName": "Agartala (Tripura)",
     "popular": false
   },
   {
-    "id": "anantapur",
-    "name": "Anantapur",
-    "state": "Andhra Pradesh",
-    "state_id": "andhra-pradesh",
-    "displayName": "Anantapur (Andhra Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "chittoor",
-    "name": "Chittoor",
-    "state": "Andhra Pradesh",
-    "state_id": "andhra-pradesh",
-    "displayName": "Chittoor (Andhra Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "guntur",
-    "name": "Guntur",
-    "state": "Andhra Pradesh",
-    "state_id": "andhra-pradesh",
-    "displayName": "Guntur (Andhra Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "kakinada",
-    "name": "Kakinada",
-    "state": "Andhra Pradesh",
-    "state_id": "andhra-pradesh",
-    "displayName": "Kakinada (Andhra Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "kurnool",
-    "name": "Kurnool",
-    "state": "Andhra Pradesh",
-    "state_id": "andhra-pradesh",
-    "displayName": "Kurnool (Andhra Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "machilipatnam",
-    "name": "Machilipatnam",
-    "state": "Andhra Pradesh",
-    "state_id": "andhra-pradesh",
-    "displayName": "Machilipatnam (Andhra Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "nellore",
-    "name": "Nellore",
-    "state": "Andhra Pradesh",
-    "state_id": "andhra-pradesh",
-    "displayName": "Nellore (Andhra Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "rajahmundry",
-    "name": "Rajahmundry",
-    "state": "Andhra Pradesh",
-    "state_id": "andhra-pradesh",
-    "displayName": "Rajahmundry (Andhra Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "srikakulam",
-    "name": "Srikakulam",
-    "state": "Andhra Pradesh",
-    "state_id": "andhra-pradesh",
-    "displayName": "Srikakulam (Andhra Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "tirupati",
-    "name": "Tirupati",
-    "state": "Andhra Pradesh",
-    "state_id": "andhra-pradesh",
-    "displayName": "Tirupati (Andhra Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "visakhapatnam",
-    "name": "Visakhapatnam",
-    "state": "Andhra Pradesh",
-    "state_id": "andhra-pradesh",
-    "displayName": "Visakhapatnam (Andhra Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "vizianagaram",
-    "name": "Vizianagaram",
-    "state": "Andhra Pradesh",
-    "state_id": "andhra-pradesh",
-    "displayName": "Vizianagaram (Andhra Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "bomdila",
-    "name": "Bomdila",
-    "state": "Arunachal Pradesh",
-    "state_id": "arunachal-pradesh",
-    "displayName": "Bomdila (Arunachal Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "changlang",
-    "name": "Changlang",
-    "state": "Arunachal Pradesh",
-    "state_id": "arunachal-pradesh",
-    "displayName": "Changlang (Arunachal Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "dirang",
-    "name": "Dirang",
-    "state": "Arunachal Pradesh",
-    "state_id": "arunachal-pradesh",
-    "displayName": "Dirang (Arunachal Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "itanagar",
-    "name": "Itanagar",
-    "state": "Arunachal Pradesh",
-    "state_id": "arunachal-pradesh",
-    "displayName": "Itanagar (Arunachal Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "mechuka",
-    "name": "Mechuka",
-    "state": "Arunachal Pradesh",
-    "state_id": "arunachal-pradesh",
-    "displayName": "Mechuka (Arunachal Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "namsai",
-    "name": "Namsai",
-    "state": "Arunachal Pradesh",
-    "state_id": "arunachal-pradesh",
-    "displayName": "Namsai (Arunachal Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "pakke-kesang-hill-station",
-    "name": "Pakke Kesang Hill Station",
-    "state": "Arunachal Pradesh",
-    "state_id": "arunachal-pradesh",
-    "displayName": "Pakke Kesang Hill Station (Arunachal Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "pasighat",
-    "name": "Pasighat",
-    "state": "Arunachal Pradesh",
-    "state_id": "arunachal-pradesh",
-    "displayName": "Pasighat (Arunachal Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "roing",
-    "name": "Roing",
-    "state": "Arunachal Pradesh",
-    "state_id": "arunachal-pradesh",
-    "displayName": "Roing (Arunachal Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "tawang",
-    "name": "Tawang",
-    "state": "Arunachal Pradesh",
-    "state_id": "arunachal-pradesh",
-    "displayName": "Tawang (Arunachal Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "yingkiong",
-    "name": "Yingkiong",
-    "state": "Arunachal Pradesh",
-    "state_id": "arunachal-pradesh",
-    "displayName": "Yingkiong (Arunachal Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "ziro",
-    "name": "Ziro",
-    "state": "Arunachal Pradesh",
-    "state_id": "arunachal-pradesh",
-    "displayName": "Ziro (Arunachal Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "chirang",
-    "name": "Chirang",
-    "state": "Assam",
-    "state_id": "assam",
-    "displayName": "Chirang (Assam)",
-    "popular": false
-  },
-  {
-    "id": "dibrugarh",
-    "name": "Dibrugarh",
-    "state": "Assam",
-    "state_id": "assam",
-    "displayName": "Dibrugarh (Assam)",
-    "popular": false
-  },
-  {
-    "id": "guwahati",
-    "name": "Guwahati",
-    "state": "Assam",
-    "state_id": "assam",
-    "displayName": "Guwahati (Assam)",
-    "popular": false
-  },
-  {
-    "id": "jorhat",
-    "name": "Jorhat",
-    "state": "Assam",
-    "state_id": "assam",
-    "displayName": "Jorhat (Assam)",
-    "popular": false
-  },
-  {
-    "id": "majuli",
-    "name": "Majuli",
-    "state": "Assam",
-    "state_id": "assam",
-    "displayName": "Majuli (Assam)",
-    "popular": false
-  },
-  {
-    "id": "sivasagar",
-    "name": "Sivasagar",
-    "state": "Assam",
-    "state_id": "assam",
-    "displayName": "Sivasagar (Assam)",
-    "popular": false
-  },
-  {
-    "id": "tezpur",
-    "name": "Tezpur",
-    "state": "Assam",
-    "state_id": "assam",
-    "displayName": "Tezpur (Assam)",
-    "popular": false
-  },
-  {
-    "id": "tinsukia",
-    "name": "Tinsukia",
-    "state": "Assam",
-    "state_id": "assam",
-    "displayName": "Tinsukia (Assam)",
-    "popular": false
-  },
-  {
-    "id": "umrangso",
-    "name": "Umrangso",
-    "state": "Assam",
-    "state_id": "assam",
-    "displayName": "Umrangso (Assam)",
-    "popular": false
-  },
-  {
-    "id": "arrah",
-    "name": "Arrah",
-    "state": "Bihar",
-    "state_id": "bihar",
-    "displayName": "Arrah (Bihar)",
-    "popular": false
-  },
-  {
-    "id": "gaya",
-    "name": "Gaya",
-    "state": "Bihar",
-    "state_id": "bihar",
-    "displayName": "Gaya (Bihar)",
-    "popular": true
-  },
-  {
-    "id": "nalanda",
-    "name": "Nalanda",
-    "state": "Bihar",
-    "state_id": "bihar",
-    "displayName": "Nalanda (Bihar)",
-    "popular": false
-  },
-  {
-    "id": "patna",
-    "name": "Patna",
-    "state": "Bihar",
-    "state_id": "bihar",
-    "displayName": "Patna (Bihar)",
-    "popular": false
-  },
-  {
-    "id": "bilaspur",
-    "name": "Bilaspur",
-    "state": "Chhattisgarh",
-    "state_id": "chhattisgarh",
-    "displayName": "Bilaspur (Chhattisgarh)",
-    "popular": false
-  },
-  {
-    "id": "dantewada",
-    "name": "Dantewada",
-    "state": "Chhattisgarh",
-    "state_id": "chhattisgarh",
-    "displayName": "Dantewada (Chhattisgarh)",
-    "popular": false
-  },
-  {
-    "id": "jagdalpur",
-    "name": "Jagdalpur",
-    "state": "Chhattisgarh",
-    "state_id": "chhattisgarh",
-    "displayName": "Jagdalpur (Chhattisgarh)",
-    "popular": false
-  },
-  {
-    "id": "raipur",
-    "name": "Raipur",
-    "state": "Chhattisgarh",
-    "state_id": "chhattisgarh",
-    "displayName": "Raipur (Chhattisgarh)",
-    "popular": false
-  },
-  {
-    "id": "rajnandgaon",
-    "name": "Rajnandgaon",
-    "state": "Chhattisgarh",
-    "state_id": "chhattisgarh",
-    "displayName": "Rajnandgaon (Chhattisgarh)",
-    "popular": false
-  },
-  {
-    "id": "goa",
-    "name": "Goa",
-    "state": "Goa",
-    "state_id": "goa",
-    "displayName": "Goa (Goa)",
+    "id": "agra",
+    "name": "Agra",
+    "state": "Uttar Pradesh",
+    "state_id": "uttar-pradesh",
+    "displayName": "Agra (Uttar Pradesh)",
     "popular": true
   },
   {
@@ -1213,315 +877,107 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
-    "id": "balasinor",
-    "name": "Balasinor",
-    "state": "Gujarat",
-    "state_id": "gujarat",
-    "displayName": "Balasinor (Gujarat)",
+    "id": "aizawl",
+    "name": "Aizawl",
+    "state": "Mizoram",
+    "state_id": "mizoram",
+    "displayName": "Aizawl (Mizoram)",
     "popular": false
   },
   {
-    "id": "bhavnagar",
-    "name": "Bhavnagar",
-    "state": "Gujarat",
-    "state_id": "gujarat",
-    "displayName": "Bhavnagar (Gujarat)",
+    "id": "ajmer",
+    "name": "Ajmer",
+    "state": "Rajasthan",
+    "state_id": "rajasthan",
+    "displayName": "Ajmer (Rajasthan)",
     "popular": false
   },
   {
-    "id": "bhuj",
-    "name": "Bhuj",
-    "state": "Gujarat",
-    "state_id": "gujarat",
-    "displayName": "Bhuj (Gujarat)",
+    "id": "alappuzha",
+    "name": "Alappuzha",
+    "state": "Kerala",
+    "state_id": "kerala",
+    "displayName": "Alappuzha (Kerala)",
     "popular": false
   },
   {
-    "id": "champaner",
-    "name": "Champaner",
-    "state": "Gujarat",
-    "state_id": "gujarat",
-    "displayName": "Champaner (Gujarat)",
+    "id": "almora",
+    "name": "Almora",
+    "state": "Uttarakhand",
+    "state_id": "uttarakhand",
+    "displayName": "Almora (Uttarakhand)",
     "popular": false
   },
   {
-    "id": "dwarka",
-    "name": "Dwarka",
-    "state": "Gujarat",
-    "state_id": "gujarat",
-    "displayName": "Dwarka (Gujarat)",
+    "id": "alwar",
+    "name": "Alwar",
+    "state": "Rajasthan",
+    "state_id": "rajasthan",
+    "displayName": "Alwar (Rajasthan)",
     "popular": false
   },
   {
-    "id": "gandhinagar",
-    "name": "Gandhinagar",
-    "state": "Gujarat",
-    "state_id": "gujarat",
-    "displayName": "Gandhinagar (Gujarat)",
+    "id": "amaravati",
+    "name": "Amaravati",
+    "state": "Andhra Pradesh",
+    "state_id": "andhra-pradesh",
+    "displayName": "Amaravati (Andhra Pradesh)",
     "popular": false
   },
   {
-    "id": "gir-somnath",
-    "name": "Gir Somnath",
-    "state": "Gujarat",
-    "state_id": "gujarat",
-    "displayName": "Gir Somnath (Gujarat)",
+    "id": "amravati",
+    "name": "Amravati",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "displayName": "Amravati (Maharashtra)",
     "popular": false
   },
   {
-    "id": "jamnagar",
-    "name": "Jamnagar",
-    "state": "Gujarat",
-    "state_id": "gujarat",
-    "displayName": "Jamnagar (Gujarat)",
-    "popular": false
-  },
-  {
-    "id": "junagadh",
-    "name": "Junagadh",
-    "state": "Gujarat",
-    "state_id": "gujarat",
-    "displayName": "Junagadh (Gujarat)",
-    "popular": false
-  },
-  {
-    "id": "kutch",
-    "name": "Kutch",
-    "state": "Gujarat",
-    "state_id": "gujarat",
-    "displayName": "Kutch (Gujarat)",
-    "popular": false
-  },
-  {
-    "id": "patan",
-    "name": "Patan",
-    "state": "Gujarat",
-    "state_id": "gujarat",
-    "displayName": "Patan (Gujarat)",
-    "popular": false
-  },
-  {
-    "id": "porbandar",
-    "name": "Porbandar",
-    "state": "Gujarat",
-    "state_id": "gujarat",
-    "displayName": "Porbandar (Gujarat)",
-    "popular": false
-  },
-  {
-    "id": "rajkot",
-    "name": "Rajkot",
-    "state": "Gujarat",
-    "state_id": "gujarat",
-    "displayName": "Rajkot (Gujarat)",
-    "popular": false
-  },
-  {
-    "id": "surat",
-    "name": "Surat",
-    "state": "Gujarat",
-    "state_id": "gujarat",
-    "displayName": "Surat (Gujarat)",
-    "popular": false
-  },
-  {
-    "id": "vadnagar",
-    "name": "Vadnagar",
-    "state": "Gujarat",
-    "state_id": "gujarat",
-    "displayName": "Vadnagar (Gujarat)",
-    "popular": false
-  },
-  {
-    "id": "vadodara",
-    "name": "Vadodara",
-    "state": "Gujarat",
-    "state_id": "gujarat",
-    "displayName": "Vadodara (Gujarat)",
-    "popular": false
-  },
-  {
-    "id": "valsad",
-    "name": "Valsad",
-    "state": "Gujarat",
-    "state_id": "gujarat",
-    "displayName": "Valsad (Gujarat)",
-    "popular": false
-  },
-  {
-    "id": "faridabad",
-    "name": "Faridabad",
-    "state": "Haryana",
-    "state_id": "haryana",
-    "displayName": "Faridabad (Haryana)",
-    "popular": false
-  },
-  {
-    "id": "gurugram",
-    "name": "Gurugram",
-    "state": "Haryana",
-    "state_id": "haryana",
-    "displayName": "Gurugram (Haryana)",
-    "popular": false
-  },
-  {
-    "id": "hisar",
-    "name": "Hisar",
-    "state": "Haryana",
-    "state_id": "haryana",
-    "displayName": "Hisar (Haryana)",
-    "popular": false
-  },
-  {
-    "id": "kurukshetra",
-    "name": "Kurukshetra",
-    "state": "Haryana",
-    "state_id": "haryana",
-    "displayName": "Kurukshetra (Haryana)",
-    "popular": false
-  },
-  {
-    "id": "panipat",
-    "name": "Panipat",
-    "state": "Haryana",
-    "state_id": "haryana",
-    "displayName": "Panipat (Haryana)",
-    "popular": false
-  },
-  {
-    "id": "yamunanagar",
-    "name": "Yamunanagar",
-    "state": "Haryana",
-    "state_id": "haryana",
-    "displayName": "Yamunanagar (Haryana)",
-    "popular": false
-  },
-  {
-    "id": "bilaspur-hp",
-    "name": "Bilaspur",
-    "state": "Himachal Pradesh",
-    "state_id": "himachal-pradesh",
-    "displayName": "Bilaspur (Himachal Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "chamba",
-    "name": "Chamba",
-    "state": "Himachal Pradesh",
-    "state_id": "himachal-pradesh",
-    "displayName": "Chamba (Himachal Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "dalhousie",
-    "name": "Dalhousie",
-    "state": "Himachal Pradesh",
-    "state_id": "himachal-pradesh",
-    "displayName": "Dalhousie (Himachal Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "dharamshala",
-    "name": "Dharamshala",
-    "state": "Himachal Pradesh",
-    "state_id": "himachal-pradesh",
-    "displayName": "Dharamshala (Himachal Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "kangra",
-    "name": "Kangra",
-    "state": "Himachal Pradesh",
-    "state_id": "himachal-pradesh",
-    "displayName": "Kangra (Himachal Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "kasauli",
-    "name": "Kasauli",
-    "state": "Himachal Pradesh",
-    "state_id": "himachal-pradesh",
-    "displayName": "Kasauli (Himachal Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "keylong",
-    "name": "Keylong",
-    "state": "Himachal Pradesh",
-    "state_id": "himachal-pradesh",
-    "displayName": "Keylong (Himachal Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "kullu",
-    "name": "Kullu",
-    "state": "Himachal Pradesh",
-    "state_id": "himachal-pradesh",
-    "displayName": "Kullu (Himachal Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "manali",
-    "name": "Manali",
-    "state": "Himachal Pradesh",
-    "state_id": "himachal-pradesh",
-    "displayName": "Manali (Himachal Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "paonta-sahib",
-    "name": "Paonta Sahib",
-    "state": "Himachal Pradesh",
-    "state_id": "himachal-pradesh",
-    "displayName": "Paonta Sahib (Himachal Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "shimla",
-    "name": "Shimla",
-    "state": "Himachal Pradesh",
-    "state_id": "himachal-pradesh",
-    "displayName": "Shimla (Himachal Pradesh)",
+    "id": "amritsar",
+    "name": "Amritsar",
+    "state": "Punjab",
+    "state_id": "punjab",
+    "displayName": "Amritsar (Punjab)",
     "popular": true
   },
   {
-    "id": "spiti-valley",
-    "name": "Spiti Valley",
-    "state": "Himachal Pradesh",
-    "state_id": "himachal-pradesh",
-    "displayName": "Spiti Valley (Himachal Pradesh)",
+    "id": "anantapur",
+    "name": "Anantapur",
+    "state": "Andhra Pradesh",
+    "state_id": "andhra-pradesh",
+    "displayName": "Anantapur (Andhra Pradesh)",
     "popular": false
   },
   {
-    "id": "reckong-peo",
-    "name": "Reckong Peo",
-    "state": "Himachal Pradesh",
-    "state_id": "himachal-pradesh",
-    "displayName": "Reckong Peo (Himachal Pradesh)",
+    "id": "anantnag",
+    "name": "Anantnag",
+    "state": "Jammu and Kashmir",
+    "state_id": "jammu-and-kashmir",
+    "displayName": "Anantnag (Jammu and Kashmir)",
     "popular": false
   },
   {
-    "id": "deoghar",
-    "name": "Deoghar",
-    "state": "Jharkhand",
-    "state_id": "jharkhand",
-    "displayName": "Deoghar (Jharkhand)",
+    "id": "anuppur",
+    "name": "Anuppur",
+    "state": "Madhya Pradesh",
+    "state_id": "madhya-pradesh",
+    "displayName": "Anuppur (Madhya Pradesh)",
     "popular": false
   },
   {
-    "id": "jamshedpur",
-    "name": "Jamshedpur",
-    "state": "Jharkhand",
-    "state_id": "jharkhand",
-    "displayName": "Jamshedpur (Jharkhand)",
+    "id": "arrah",
+    "name": "Arrah",
+    "state": "Bihar",
+    "state_id": "bihar",
+    "displayName": "Arrah (Bihar)",
     "popular": false
   },
   {
-    "id": "ranchi",
-    "name": "Ranchi",
-    "state": "Jharkhand",
-    "state_id": "jharkhand",
-    "displayName": "Ranchi (Jharkhand)",
+    "id": "ayodhya",
+    "name": "Ayodhya",
+    "state": "Uttar Pradesh",
+    "state_id": "uttar-pradesh",
+    "displayName": "Ayodhya (Uttar Pradesh)",
     "popular": false
   },
   {
@@ -1533,11 +989,51 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "badrinath",
+    "name": "Badrinath",
+    "state": "Uttarakhand",
+    "state_id": "uttarakhand",
+    "displayName": "Badrinath (Uttarakhand)",
+    "popular": false
+  },
+  {
     "id": "bagalkote",
     "name": "Bagalkote",
     "state": "Karnataka",
     "state_id": "karnataka",
     "displayName": "Bagalkote (Karnataka)",
+    "popular": false
+  },
+  {
+    "id": "balasinor",
+    "name": "Balasinor",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "displayName": "Balasinor (Gujarat)",
+    "popular": false
+  },
+  {
+    "id": "banswara",
+    "name": "Banswara",
+    "state": "Rajasthan",
+    "state_id": "rajasthan",
+    "displayName": "Banswara (Rajasthan)",
+    "popular": false
+  },
+  {
+    "id": "bareilly",
+    "name": "Bareilly",
+    "state": "Uttar Pradesh",
+    "state_id": "uttar-pradesh",
+    "displayName": "Bareilly (Uttar Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "bekal",
+    "name": "Bekal",
+    "state": "Kerala",
+    "state_id": "kerala",
+    "displayName": "Bekal (Kerala)",
     "popular": false
   },
   {
@@ -1557,11 +1053,363 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": true
   },
   {
+    "id": "berinag",
+    "name": "Berinag",
+    "state": "Uttarakhand",
+    "state_id": "uttarakhand",
+    "displayName": "Berinag (Uttarakhand)",
+    "popular": false
+  },
+  {
+    "id": "bhadradri-kothagudem",
+    "name": "Bhadradri Kothagudem",
+    "state": "Telangana",
+    "state_id": "telangana",
+    "displayName": "Bhadradri Kothagudem (Telangana)",
+    "popular": false
+  },
+  {
+    "id": "bharatpur",
+    "name": "Bharatpur",
+    "state": "Rajasthan",
+    "state_id": "rajasthan",
+    "displayName": "Bharatpur (Rajasthan)",
+    "popular": false
+  },
+  {
+    "id": "bhavnagar",
+    "name": "Bhavnagar",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "displayName": "Bhavnagar (Gujarat)",
+    "popular": false
+  },
+  {
+    "id": "bhimtal",
+    "name": "Bhimtal",
+    "state": "Uttarakhand",
+    "state_id": "uttarakhand",
+    "displayName": "Bhimtal (Uttarakhand)",
+    "popular": false
+  },
+  {
+    "id": "bhongir",
+    "name": "Bhongir",
+    "state": "Telangana",
+    "state_id": "telangana",
+    "displayName": "Bhongir (Telangana)",
+    "popular": false
+  },
+  {
+    "id": "bhopal",
+    "name": "Bhopal",
+    "state": "Madhya Pradesh",
+    "state_id": "madhya-pradesh",
+    "displayName": "Bhopal (Madhya Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "bhubaneswar",
+    "name": "Bhubaneswar",
+    "state": "Odisha",
+    "state_id": "odisha",
+    "displayName": "Bhubaneswar (Odisha)",
+    "popular": true
+  },
+  {
+    "id": "bhuj",
+    "name": "Bhuj",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "displayName": "Bhuj (Gujarat)",
+    "popular": false
+  },
+  {
     "id": "bidar",
     "name": "Bidar",
     "state": "Karnataka",
     "state_id": "karnataka",
     "displayName": "Bidar (Karnataka)",
+    "popular": false
+  },
+  {
+    "id": "bikaner",
+    "name": "Bikaner",
+    "state": "Rajasthan",
+    "state_id": "rajasthan",
+    "displayName": "Bikaner (Rajasthan)",
+    "popular": false
+  },
+  {
+    "id": "bilaspur",
+    "name": "Bilaspur",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "displayName": "Bilaspur (Chhattisgarh)",
+    "popular": false
+  },
+  {
+    "id": "bilaspur-hp",
+    "name": "Bilaspur",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "displayName": "Bilaspur (Himachal Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "bishnupur",
+    "name": "Bishnupur",
+    "state": "Manipur",
+    "state_id": "manipur",
+    "displayName": "Bishnupur (Manipur)",
+    "popular": false
+  },
+  {
+    "id": "bomdila",
+    "name": "Bomdila",
+    "state": "Arunachal Pradesh",
+    "state_id": "arunachal-pradesh",
+    "displayName": "Bomdila (Arunachal Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "bundi",
+    "name": "Bundi",
+    "state": "Rajasthan",
+    "state_id": "rajasthan",
+    "displayName": "Bundi (Rajasthan)",
+    "popular": false
+  },
+  {
+    "id": "chamba",
+    "name": "Chamba",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "displayName": "Chamba (Himachal Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "chamoli",
+    "name": "Chamoli",
+    "state": "Uttarakhand",
+    "state_id": "uttarakhand",
+    "displayName": "Chamoli (Uttarakhand)",
+    "popular": false
+  },
+  {
+    "id": "champaner",
+    "name": "Champaner",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "displayName": "Champaner (Gujarat)",
+    "popular": false
+  },
+  {
+    "id": "champhai",
+    "name": "Champhai",
+    "state": "Mizoram",
+    "state_id": "mizoram",
+    "displayName": "Champhai (Mizoram)",
+    "popular": false
+  },
+  {
+    "id": "chanderi",
+    "name": "Chanderi",
+    "state": "Madhya Pradesh",
+    "state_id": "madhya-pradesh",
+    "displayName": "Chanderi (Madhya Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "chandigarh",
+    "name": "Chandigarh",
+    "state": "Chandigarh",
+    "state_id": "chandigarh",
+    "displayName": "Chandigarh (Chandigarh)",
+    "popular": false
+  },
+  {
+    "id": "changlang",
+    "name": "Changlang",
+    "state": "Arunachal Pradesh",
+    "state_id": "arunachal-pradesh",
+    "displayName": "Changlang (Arunachal Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "chennai",
+    "name": "Chennai",
+    "state": "Tamil Nadu",
+    "state_id": "tamil-nadu",
+    "displayName": "Chennai (Tamil Nadu)",
+    "popular": true
+  },
+  {
+    "id": "cherrapunjee",
+    "name": "Cherrapunjee",
+    "state": "Meghalaya",
+    "state_id": "meghalaya",
+    "displayName": "Cherrapunjee (Meghalaya)",
+    "popular": false
+  },
+  {
+    "id": "cherrapunji",
+    "name": "Cherrapunji",
+    "state": "Meghalaya",
+    "state_id": "meghalaya",
+    "displayName": "Cherrapunji (Meghalaya)",
+    "popular": true
+  },
+  {
+    "id": "chhatrapati-sambhaji-nagar",
+    "name": "Chhatrapati Sambhaji Nagar",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "displayName": "Chhatrapati Sambhaji Nagar (Maharashtra)",
+    "popular": true
+  },
+  {
+    "id": "chirang",
+    "name": "Chirang",
+    "state": "Assam",
+    "state_id": "assam",
+    "displayName": "Chirang (Assam)",
+    "popular": false
+  },
+  {
+    "id": "chitrakoot-mp",
+    "name": "Chitrakoot",
+    "state": "Madhya Pradesh",
+    "state_id": "madhya-pradesh",
+    "displayName": "Chitrakoot (Madhya Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "chitrakoot-up",
+    "name": "Chitrakoot",
+    "state": "Uttar Pradesh",
+    "state_id": "uttar-pradesh",
+    "displayName": "Chitrakoot (Uttar Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "chittoor",
+    "name": "Chittoor",
+    "state": "Andhra Pradesh",
+    "state_id": "andhra-pradesh",
+    "displayName": "Chittoor (Andhra Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "chittorgarh",
+    "name": "Chittorgarh",
+    "state": "Rajasthan",
+    "state_id": "rajasthan",
+    "displayName": "Chittorgarh (Rajasthan)",
+    "popular": false
+  },
+  {
+    "id": "coimbatore",
+    "name": "Coimbatore",
+    "state": "Tamil Nadu",
+    "state_id": "tamil-nadu",
+    "displayName": "Coimbatore (Tamil Nadu)",
+    "popular": false
+  },
+  {
+    "id": "cuttack",
+    "name": "Cuttack",
+    "state": "Odisha",
+    "state_id": "odisha",
+    "displayName": "Cuttack (Odisha)",
+    "popular": false
+  },
+  {
+    "id": "dalhousie",
+    "name": "Dalhousie",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "displayName": "Dalhousie (Himachal Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "daman",
+    "name": "Daman",
+    "state": "Dadra and Nagar Haveli and Daman and Diu",
+    "state_id": "dadra-and-nagar-haveli-and-daman-and-diu",
+    "displayName": "Daman (Dadra and Nagar Haveli and Daman and Diu)",
+    "popular": false
+  },
+  {
+    "id": "dantewada",
+    "name": "Dantewada",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "displayName": "Dantewada (Chhattisgarh)",
+    "popular": false
+  },
+  {
+    "id": "darjeeling",
+    "name": "Darjeeling",
+    "state": "West Bengal",
+    "state_id": "west-bengal",
+    "displayName": "Darjeeling (West Bengal)",
+    "popular": false
+  },
+  {
+    "id": "datia",
+    "name": "Datia",
+    "state": "Madhya Pradesh",
+    "state_id": "madhya-pradesh",
+    "displayName": "Datia (Madhya Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "dausa",
+    "name": "Dausa",
+    "state": "Rajasthan",
+    "state_id": "rajasthan",
+    "displayName": "Dausa (Rajasthan)",
+    "popular": false
+  },
+  {
+    "id": "dawki",
+    "name": "Dawki",
+    "state": "Meghalaya",
+    "state_id": "meghalaya",
+    "displayName": "Dawki (Meghalaya)",
+    "popular": true
+  },
+  {
+    "id": "dehradun",
+    "name": "Dehradun",
+    "state": "Uttarakhand",
+    "state_id": "uttarakhand",
+    "displayName": "Dehradun (Uttarakhand)",
+    "popular": false
+  },
+  {
+    "id": "delhi",
+    "name": "Delhi",
+    "state": "Delhi",
+    "state_id": "delhi",
+    "displayName": "Delhi (Delhi)",
+    "popular": true
+  },
+  {
+    "id": "deoghar",
+    "name": "Deoghar",
+    "state": "Jharkhand",
+    "state_id": "jharkhand",
+    "displayName": "Deoghar (Jharkhand)",
+    "popular": false
+  },
+  {
+    "id": "dharamshala",
+    "name": "Dharamshala",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "displayName": "Dharamshala (Himachal Pradesh)",
     "popular": false
   },
   {
@@ -1573,11 +1421,203 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "dholpur",
+    "name": "Dholpur",
+    "state": "Rajasthan",
+    "state_id": "rajasthan",
+    "displayName": "Dholpur (Rajasthan)",
+    "popular": false
+  },
+  {
+    "id": "dibrugarh",
+    "name": "Dibrugarh",
+    "state": "Assam",
+    "state_id": "assam",
+    "displayName": "Dibrugarh (Assam)",
+    "popular": false
+  },
+  {
+    "id": "dimapur",
+    "name": "Dimapur",
+    "state": "Nagaland",
+    "state_id": "nagaland",
+    "displayName": "Dimapur (Nagaland)",
+    "popular": false
+  },
+  {
+    "id": "dirang",
+    "name": "Dirang",
+    "state": "Arunachal Pradesh",
+    "state_id": "arunachal-pradesh",
+    "displayName": "Dirang (Arunachal Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "diu",
+    "name": "Diu",
+    "state": "Dadra and Nagar Haveli and Daman and Diu",
+    "state_id": "dadra-and-nagar-haveli-and-daman-and-diu",
+    "displayName": "Diu (Dadra and Nagar Haveli and Daman and Diu)",
+    "popular": false
+  },
+  {
+    "id": "durgapur",
+    "name": "Durgapur",
+    "state": "West Bengal",
+    "state_id": "west-bengal",
+    "displayName": "Durgapur (West Bengal)",
+    "popular": false
+  },
+  {
+    "id": "dwarka",
+    "name": "Dwarka",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "displayName": "Dwarka (Gujarat)",
+    "popular": false
+  },
+  {
+    "id": "dzukou",
+    "name": "Dzukou Valley",
+    "state": "Manipur",
+    "state_id": "manipur",
+    "displayName": "Dzukou Valley (Manipur)",
+    "popular": false
+  },
+  {
+    "id": "faridabad",
+    "name": "Faridabad",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "displayName": "Faridabad (Haryana)",
+    "popular": false
+  },
+  {
+    "id": "fatehgarh-sahib",
+    "name": "Fatehgarh Sahib",
+    "state": "Punjab",
+    "state_id": "punjab",
+    "displayName": "Fatehgarh Sahib (Punjab)",
+    "popular": false
+  },
+  {
+    "id": "fazilka",
+    "name": "Fazilka",
+    "state": "Punjab",
+    "state_id": "punjab",
+    "displayName": "Fazilka (Punjab)",
+    "popular": false
+  },
+  {
+    "id": "firozepur",
+    "name": "Firozepur",
+    "state": "Punjab",
+    "state_id": "punjab",
+    "displayName": "Firozepur (Punjab)",
+    "popular": false
+  },
+  {
+    "id": "gandhinagar",
+    "name": "Gandhinagar",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "displayName": "Gandhinagar (Gujarat)",
+    "popular": false
+  },
+  {
+    "id": "gangotri",
+    "name": "Gangotri",
+    "state": "Uttarakhand",
+    "state_id": "uttarakhand",
+    "displayName": "Gangotri (Uttarakhand)",
+    "popular": false
+  },
+  {
+    "id": "gangtok",
+    "name": "Gangtok",
+    "state": "Sikkim",
+    "state_id": "sikkim",
+    "displayName": "Gangtok (Sikkim)",
+    "popular": false
+  },
+  {
+    "id": "gaya",
+    "name": "Gaya",
+    "state": "Bihar",
+    "state_id": "bihar",
+    "displayName": "Gaya (Bihar)",
+    "popular": true
+  },
+  {
+    "id": "gir-somnath",
+    "name": "Gir Somnath",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "displayName": "Gir Somnath (Gujarat)",
+    "popular": false
+  },
+  {
+    "id": "goa",
+    "name": "Goa",
+    "state": "Goa",
+    "state_id": "goa",
+    "displayName": "Goa (Goa)",
+    "popular": true
+  },
+  {
     "id": "gokarna",
     "name": "Gokarna",
     "state": "Karnataka",
     "state_id": "karnataka",
     "displayName": "Gokarna (Karnataka)",
+    "popular": false
+  },
+  {
+    "id": "gulmarg",
+    "name": "Gulmarg",
+    "state": "Jammu and Kashmir",
+    "state_id": "jammu-and-kashmir",
+    "displayName": "Gulmarg (Jammu and Kashmir)",
+    "popular": false
+  },
+  {
+    "id": "guntur",
+    "name": "Guntur",
+    "state": "Andhra Pradesh",
+    "state_id": "andhra-pradesh",
+    "displayName": "Guntur (Andhra Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "gurdaspur",
+    "name": "Gurdaspur",
+    "state": "Punjab",
+    "state_id": "punjab",
+    "displayName": "Gurdaspur (Punjab)",
+    "popular": false
+  },
+  {
+    "id": "gurugram",
+    "name": "Gurugram",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "displayName": "Gurugram (Haryana)",
+    "popular": false
+  },
+  {
+    "id": "guwahati",
+    "name": "Guwahati",
+    "state": "Assam",
+    "state_id": "assam",
+    "displayName": "Guwahati (Assam)",
+    "popular": false
+  },
+  {
+    "id": "gwalior",
+    "name": "Gwalior",
+    "state": "Madhya Pradesh",
+    "state_id": "madhya-pradesh",
+    "displayName": "Gwalior (Madhya Pradesh)",
     "popular": false
   },
   {
@@ -1589,6 +1629,198 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": true
   },
   {
+    "id": "hanamkonda",
+    "name": "Hanamkonda",
+    "state": "Telangana",
+    "state_id": "telangana",
+    "displayName": "Hanamkonda (Telangana)",
+    "popular": false
+  },
+  {
+    "id": "haridwar",
+    "name": "Haridwar",
+    "state": "Uttarakhand",
+    "state_id": "uttarakhand",
+    "displayName": "Haridwar (Uttarakhand)",
+    "popular": false
+  },
+  {
+    "id": "hisar",
+    "name": "Hisar",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "displayName": "Hisar (Haryana)",
+    "popular": false
+  },
+  {
+    "id": "hmuifang",
+    "name": "Hmuifang",
+    "state": "Mizoram",
+    "state_id": "mizoram",
+    "displayName": "Hmuifang (Mizoram)",
+    "popular": false
+  },
+  {
+    "id": "howrah",
+    "name": "Howrah",
+    "state": "West Bengal",
+    "state_id": "west-bengal",
+    "displayName": "Howrah (West Bengal)",
+    "popular": false
+  },
+  {
+    "id": "hyderabad",
+    "name": "Hyderabad",
+    "state": "Telangana",
+    "state_id": "telangana",
+    "displayName": "Hyderabad (Telangana)",
+    "popular": true
+  },
+  {
+    "id": "igatpuri",
+    "name": "Igatpuri",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "displayName": "Igatpuri (Maharashtra)",
+    "popular": false
+  },
+  {
+    "id": "imphal",
+    "name": "Imphal",
+    "state": "Manipur",
+    "state_id": "manipur",
+    "displayName": "Imphal (Manipur)",
+    "popular": false
+  },
+  {
+    "id": "indore",
+    "name": "Indore",
+    "state": "Madhya Pradesh",
+    "state_id": "madhya-pradesh",
+    "displayName": "Indore (Madhya Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "itanagar",
+    "name": "Itanagar",
+    "state": "Arunachal Pradesh",
+    "state_id": "arunachal-pradesh",
+    "displayName": "Itanagar (Arunachal Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "jabalpur",
+    "name": "Jabalpur",
+    "state": "Madhya Pradesh",
+    "state_id": "madhya-pradesh",
+    "displayName": "Jabalpur (Madhya Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "jagdalpur",
+    "name": "Jagdalpur",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "displayName": "Jagdalpur (Chhattisgarh)",
+    "popular": false
+  },
+  {
+    "id": "jaipur",
+    "name": "Jaipur",
+    "state": "Rajasthan",
+    "state_id": "rajasthan",
+    "displayName": "Jaipur (Rajasthan)",
+    "popular": true
+  },
+  {
+    "id": "jaisalmer",
+    "name": "Jaisalmer",
+    "state": "Rajasthan",
+    "state_id": "rajasthan",
+    "displayName": "Jaisalmer (Rajasthan)",
+    "popular": false
+  },
+  {
+    "id": "jalandhar",
+    "name": "Jalandhar",
+    "state": "Punjab",
+    "state_id": "punjab",
+    "displayName": "Jalandhar (Punjab)",
+    "popular": false
+  },
+  {
+    "id": "jalgaon",
+    "name": "Jalgaon",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "displayName": "Jalgaon (Maharashtra)",
+    "popular": false
+  },
+  {
+    "id": "jammu",
+    "name": "Jammu",
+    "state": "Jammu and Kashmir",
+    "state_id": "jammu-and-kashmir",
+    "displayName": "Jammu (Jammu and Kashmir)",
+    "popular": false
+  },
+  {
+    "id": "jamnagar",
+    "name": "Jamnagar",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "displayName": "Jamnagar (Gujarat)",
+    "popular": false
+  },
+  {
+    "id": "jamshedpur",
+    "name": "Jamshedpur",
+    "state": "Jharkhand",
+    "state_id": "jharkhand",
+    "displayName": "Jamshedpur (Jharkhand)",
+    "popular": false
+  },
+  {
+    "id": "jhansi",
+    "name": "Jhansi",
+    "state": "Uttar Pradesh",
+    "state_id": "uttar-pradesh",
+    "displayName": "Jhansi (Uttar Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "jodhpur",
+    "name": "Jodhpur",
+    "state": "Rajasthan",
+    "state_id": "rajasthan",
+    "displayName": "Jodhpur (Rajasthan)",
+    "popular": true
+  },
+  {
+    "id": "jorhat",
+    "name": "Jorhat",
+    "state": "Assam",
+    "state_id": "assam",
+    "displayName": "Jorhat (Assam)",
+    "popular": false
+  },
+  {
+    "id": "junagadh",
+    "name": "Junagadh",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "displayName": "Junagadh (Gujarat)",
+    "popular": false
+  },
+  {
+    "id": "kakinada",
+    "name": "Kakinada",
+    "state": "Andhra Pradesh",
+    "state_id": "andhra-pradesh",
+    "displayName": "Kakinada (Andhra Pradesh)",
+    "popular": false
+  },
+  {
     "id": "kalaburagi",
     "name": "Kalaburagi",
     "state": "Karnataka",
@@ -1597,67 +1829,35 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
-    "id": "lakkundi",
-    "name": "Lakkundi",
-    "state": "Karnataka",
-    "state_id": "karnataka",
-    "displayName": "Lakkundi (Karnataka)",
+    "id": "kalimpong",
+    "name": "Kalimpong",
+    "state": "West Bengal",
+    "state_id": "west-bengal",
+    "displayName": "Kalimpong (West Bengal)",
     "popular": false
   },
   {
-    "id": "mangalore",
-    "name": "Mangalore",
-    "state": "Karnataka",
-    "state_id": "karnataka",
-    "displayName": "Mangalore (Karnataka)",
+    "id": "kanchipuram",
+    "name": "Kanchipuram",
+    "state": "Tamil Nadu",
+    "state_id": "tamil-nadu",
+    "displayName": "Kanchipuram (Tamil Nadu)",
     "popular": false
   },
   {
-    "id": "mysuru",
-    "name": "Mysuru",
-    "state": "Karnataka",
-    "state_id": "karnataka",
-    "displayName": "Mysuru (Karnataka)",
+    "id": "kangra",
+    "name": "Kangra",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "displayName": "Kangra (Himachal Pradesh)",
     "popular": false
   },
   {
-    "id": "somnathpura",
-    "name": "Somnathpura",
-    "state": "Karnataka",
-    "state_id": "karnataka",
-    "displayName": "Somnathpura (Karnataka)",
-    "popular": false
-  },
-  {
-    "id": "udupi",
-    "name": "Udupi",
-    "state": "Karnataka",
-    "state_id": "karnataka",
-    "displayName": "Udupi (Karnataka)",
-    "popular": false
-  },
-  {
-    "id": "vijayapura",
-    "name": "Vijayapura",
-    "state": "Karnataka",
-    "state_id": "karnataka",
-    "displayName": "Vijayapura (Karnataka)",
-    "popular": false
-  },
-  {
-    "id": "alappuzha",
-    "name": "Alappuzha",
-    "state": "Kerala",
-    "state_id": "kerala",
-    "displayName": "Alappuzha (Kerala)",
-    "popular": false
-  },
-  {
-    "id": "bekal",
-    "name": "Bekal",
-    "state": "Kerala",
-    "state_id": "kerala",
-    "displayName": "Bekal (Kerala)",
+    "id": "kanniyakumari",
+    "name": "Kanniyakumari",
+    "state": "Tamil Nadu",
+    "state_id": "tamil-nadu",
+    "displayName": "Kanniyakumari (Tamil Nadu)",
     "popular": false
   },
   {
@@ -1669,11 +1869,107 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "kanpur",
+    "name": "Kanpur",
+    "state": "Uttar Pradesh",
+    "state_id": "uttar-pradesh",
+    "displayName": "Kanpur (Uttar Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "kapurthala",
+    "name": "Kapurthala",
+    "state": "Punjab",
+    "state_id": "punjab",
+    "displayName": "Kapurthala (Punjab)",
+    "popular": false
+  },
+  {
+    "id": "kargil",
+    "name": "Kargil",
+    "state": "Ladakh",
+    "state_id": "ladakh",
+    "displayName": "Kargil (Ladakh)",
+    "popular": false
+  },
+  {
+    "id": "karimnagar",
+    "name": "Karimnagar",
+    "state": "Telangana",
+    "state_id": "telangana",
+    "displayName": "Karimnagar (Telangana)",
+    "popular": false
+  },
+  {
     "id": "kasargod",
     "name": "Kasargod",
     "state": "Kerala",
     "state_id": "kerala",
     "displayName": "Kasargod (Kerala)",
+    "popular": false
+  },
+  {
+    "id": "kasauli",
+    "name": "Kasauli",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "displayName": "Kasauli (Himachal Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "kausani",
+    "name": "Kausani",
+    "state": "Uttarakhand",
+    "state_id": "uttarakhand",
+    "displayName": "Kausani (Uttarakhand)",
+    "popular": false
+  },
+  {
+    "id": "kavaratti",
+    "name": "Kavaratti",
+    "state": "Lakshadweep",
+    "state_id": "lakshadweep",
+    "displayName": "Kavaratti (Lakshadweep)",
+    "popular": false
+  },
+  {
+    "id": "kedarnath",
+    "name": "Kedarnath",
+    "state": "Uttarakhand",
+    "state_id": "uttarakhand",
+    "displayName": "Kedarnath (Uttarakhand)",
+    "popular": false
+  },
+  {
+    "id": "keylong",
+    "name": "Keylong",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "displayName": "Keylong (Himachal Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "khajuraho",
+    "name": "Khajuraho",
+    "state": "Madhya Pradesh",
+    "state_id": "madhya-pradesh",
+    "displayName": "Khajuraho (Madhya Pradesh)",
+    "popular": true
+  },
+  {
+    "id": "khammam",
+    "name": "Khammam",
+    "state": "Telangana",
+    "state_id": "telangana",
+    "displayName": "Khammam (Telangana)",
+    "popular": false
+  },
+  {
+    "id": "khongjom",
+    "name": "Khongjom",
+    "state": "Manipur",
+    "state_id": "manipur",
+    "displayName": "Khongjom (Manipur)",
     "popular": false
   },
   {
@@ -1685,11 +1981,51 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": true
   },
   {
+    "id": "kohima",
+    "name": "Kohima",
+    "state": "Nagaland",
+    "state_id": "nagaland",
+    "displayName": "Kohima (Nagaland)",
+    "popular": false
+  },
+  {
+    "id": "kolhapur",
+    "name": "Kolhapur",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "displayName": "Kolhapur (Maharashtra)",
+    "popular": false
+  },
+  {
+    "id": "kolkata",
+    "name": "Kolkata",
+    "state": "West Bengal",
+    "state_id": "west-bengal",
+    "displayName": "Kolkata (West Bengal)",
+    "popular": true
+  },
+  {
     "id": "kollam",
     "name": "Kollam",
     "state": "Kerala",
     "state_id": "kerala",
     "displayName": "Kollam (Kerala)",
+    "popular": false
+  },
+  {
+    "id": "koraput",
+    "name": "Koraput",
+    "state": "Odisha",
+    "state_id": "odisha",
+    "displayName": "Koraput (Odisha)",
+    "popular": false
+  },
+  {
+    "id": "kota",
+    "name": "Kota",
+    "state": "Rajasthan",
+    "state_id": "rajasthan",
+    "displayName": "Kota (Rajasthan)",
     "popular": false
   },
   {
@@ -1717,11 +2053,139 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "kullu",
+    "name": "Kullu",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "displayName": "Kullu (Himachal Pradesh)",
+    "popular": false
+  },
+  {
     "id": "kumarakom",
     "name": "Kumarakom",
     "state": "Kerala",
     "state_id": "kerala",
     "displayName": "Kumarakom (Kerala)",
+    "popular": false
+  },
+  {
+    "id": "kurnool",
+    "name": "Kurnool",
+    "state": "Andhra Pradesh",
+    "state_id": "andhra-pradesh",
+    "displayName": "Kurnool (Andhra Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "kurukshetra",
+    "name": "Kurukshetra",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "displayName": "Kurukshetra (Haryana)",
+    "popular": false
+  },
+  {
+    "id": "kutch",
+    "name": "Kutch",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "displayName": "Kutch (Gujarat)",
+    "popular": false
+  },
+  {
+    "id": "lakkundi",
+    "name": "Lakkundi",
+    "state": "Karnataka",
+    "state_id": "karnataka",
+    "displayName": "Lakkundi (Karnataka)",
+    "popular": false
+  },
+  {
+    "id": "lansdowne",
+    "name": "Lansdowne",
+    "state": "Uttarakhand",
+    "state_id": "uttarakhand",
+    "displayName": "Lansdowne (Uttarakhand)",
+    "popular": false
+  },
+  {
+    "id": "lawngtlai",
+    "name": "Lawngtlai",
+    "state": "Mizoram",
+    "state_id": "mizoram",
+    "displayName": "Lawngtlai (Mizoram)",
+    "popular": false
+  },
+  {
+    "id": "leh",
+    "name": "Leh",
+    "state": "Ladakh",
+    "state_id": "ladakh",
+    "displayName": "Leh (Ladakh)",
+    "popular": true
+  },
+  {
+    "id": "loktak",
+    "name": "Loktak",
+    "state": "Manipur",
+    "state_id": "manipur",
+    "displayName": "Loktak (Manipur)",
+    "popular": true
+  },
+  {
+    "id": "lucknow",
+    "name": "Lucknow",
+    "state": "Uttar Pradesh",
+    "state_id": "uttar-pradesh",
+    "displayName": "Lucknow (Uttar Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "ludhiana",
+    "name": "Ludhiana",
+    "state": "Punjab",
+    "state_id": "punjab",
+    "displayName": "Ludhiana (Punjab)",
+    "popular": false
+  },
+  {
+    "id": "lunglei",
+    "name": "Lunglei",
+    "state": "Mizoram",
+    "state_id": "mizoram",
+    "displayName": "Lunglei (Mizoram)",
+    "popular": false
+  },
+  {
+    "id": "machilipatnam",
+    "name": "Machilipatnam",
+    "state": "Andhra Pradesh",
+    "state_id": "andhra-pradesh",
+    "displayName": "Machilipatnam (Andhra Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "madurai",
+    "name": "Madurai",
+    "state": "Tamil Nadu",
+    "state_id": "tamil-nadu",
+    "displayName": "Madurai (Tamil Nadu)",
+    "popular": true
+  },
+  {
+    "id": "mahabaleshwar",
+    "name": "Mahabaleshwar",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "displayName": "Mahabaleshwar (Maharashtra)",
+    "popular": false
+  },
+  {
+    "id": "majuli",
+    "name": "Majuli",
+    "state": "Assam",
+    "state_id": "assam",
+    "displayName": "Majuli (Assam)",
     "popular": false
   },
   {
@@ -1733,140 +2197,20 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
-    "id": "munnar",
-    "name": "Munnar",
-    "state": "Kerala",
-    "state_id": "kerala",
-    "displayName": "Munnar (Kerala)",
+    "id": "mamallapuram",
+    "name": "Mamallapuram",
+    "state": "Tamil Nadu",
+    "state_id": "tamil-nadu",
+    "displayName": "Mamallapuram (Tamil Nadu)",
     "popular": false
   },
   {
-    "id": "palakkad",
-    "name": "Palakkad",
-    "state": "Kerala",
-    "state_id": "kerala",
-    "displayName": "Palakkad (Kerala)",
+    "id": "manali",
+    "name": "Manali",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "displayName": "Manali (Himachal Pradesh)",
     "popular": false
-  },
-  {
-    "id": "pathanamthitta",
-    "name": "Pathanamthitta",
-    "state": "Kerala",
-    "state_id": "kerala",
-    "displayName": "Pathanamthitta (Kerala)",
-    "popular": false
-  },
-  {
-    "id": "sabrimala",
-    "name": "Sabrimala",
-    "state": "Kerala",
-    "state_id": "kerala",
-    "displayName": "Sabrimala (Kerala)",
-    "popular": false
-  },
-  {
-    "id": "thiruvananthapuram",
-    "name": "Thiruvananthapuram",
-    "state": "Kerala",
-    "state_id": "kerala",
-    "displayName": "Thiruvananthapuram (Kerala)",
-    "popular": false
-  },
-  {
-    "id": "thrissur",
-    "name": "Thrissur",
-    "state": "Kerala",
-    "state_id": "kerala",
-    "displayName": "Thrissur (Kerala)",
-    "popular": false
-  },
-  {
-    "id": "varkala",
-    "name": "Varkala",
-    "state": "Kerala",
-    "state_id": "kerala",
-    "displayName": "Varkala (Kerala)",
-    "popular": false
-  },
-  {
-    "id": "wayanad",
-    "name": "Wayanad",
-    "state": "Kerala",
-    "state_id": "kerala",
-    "displayName": "Wayanad (Kerala)",
-    "popular": false
-  },
-  {
-    "id": "anuppur",
-    "name": "Anuppur",
-    "state": "Madhya Pradesh",
-    "state_id": "madhya-pradesh",
-    "displayName": "Anuppur (Madhya Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "bhopal",
-    "name": "Bhopal",
-    "state": "Madhya Pradesh",
-    "state_id": "madhya-pradesh",
-    "displayName": "Bhopal (Madhya Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "chanderi",
-    "name": "Chanderi",
-    "state": "Madhya Pradesh",
-    "state_id": "madhya-pradesh",
-    "displayName": "Chanderi (Madhya Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "chitrakoot-mp",
-    "name": "Chitrakoot",
-    "state": "Madhya Pradesh",
-    "state_id": "madhya-pradesh",
-    "displayName": "Chitrakoot (Madhya Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "datia",
-    "name": "Datia",
-    "state": "Madhya Pradesh",
-    "state_id": "madhya-pradesh",
-    "displayName": "Datia (Madhya Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "gwalior",
-    "name": "Gwalior",
-    "state": "Madhya Pradesh",
-    "state_id": "madhya-pradesh",
-    "displayName": "Gwalior (Madhya Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "indore",
-    "name": "Indore",
-    "state": "Madhya Pradesh",
-    "state_id": "madhya-pradesh",
-    "displayName": "Indore (Madhya Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "jabalpur",
-    "name": "Jabalpur",
-    "state": "Madhya Pradesh",
-    "state_id": "madhya-pradesh",
-    "displayName": "Jabalpur (Madhya Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "khajuraho",
-    "name": "Khajuraho",
-    "state": "Madhya Pradesh",
-    "state_id": "madhya-pradesh",
-    "displayName": "Khajuraho (Madhya Pradesh)",
-    "popular": true
   },
   {
     "id": "mandsaur",
@@ -1877,11 +2221,211 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "mangalore",
+    "name": "Mangalore",
+    "state": "Karnataka",
+    "state_id": "karnataka",
+    "displayName": "Mangalore (Karnataka)",
+    "popular": false
+  },
+  {
+    "id": "mangan",
+    "name": "Mangan",
+    "state": "Sikkim",
+    "state_id": "sikkim",
+    "displayName": "Mangan (Sikkim)",
+    "popular": false
+  },
+  {
+    "id": "mathura",
+    "name": "Mathura",
+    "state": "Uttar Pradesh",
+    "state_id": "uttar-pradesh",
+    "displayName": "Mathura (Uttar Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "mawlynnong",
+    "name": "Mawlynnong",
+    "state": "Meghalaya",
+    "state_id": "meghalaya",
+    "displayName": "Mawlynnong (Meghalaya)",
+    "popular": false
+  },
+  {
+    "id": "mayabunder",
+    "name": "Mayabunder",
+    "state": "Andaman and Nicobar Islands",
+    "state_id": "andaman-and-nicobar-islands",
+    "displayName": "Mayabunder (Andaman and Nicobar Islands)",
+    "popular": false
+  },
+  {
+    "id": "mayurbhanj",
+    "name": "Mayurbhanj",
+    "state": "Odisha",
+    "state_id": "odisha",
+    "displayName": "Mayurbhanj (Odisha)",
+    "popular": false
+  },
+  {
+    "id": "mechuka",
+    "name": "Mechuka",
+    "state": "Arunachal Pradesh",
+    "state_id": "arunachal-pradesh",
+    "displayName": "Mechuka (Arunachal Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "mokokchung",
+    "name": "Mokokchung",
+    "state": "Nagaland",
+    "state_id": "nagaland",
+    "displayName": "Mokokchung (Nagaland)",
+    "popular": false
+  },
+  {
+    "id": "mon",
+    "name": "Mon",
+    "state": "Nagaland",
+    "state_id": "nagaland",
+    "displayName": "Mon (Nagaland)",
+    "popular": false
+  },
+  {
     "id": "morena",
     "name": "Morena",
     "state": "Madhya Pradesh",
     "state_id": "madhya-pradesh",
     "displayName": "Morena (Madhya Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "mount-abu",
+    "name": "Mount Abu",
+    "state": "Rajasthan",
+    "state_id": "rajasthan",
+    "displayName": "Mount Abu (Rajasthan)",
+    "popular": false
+  },
+  {
+    "id": "mumbai",
+    "name": "Mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "displayName": "Mumbai (Maharashtra)",
+    "popular": true
+  },
+  {
+    "id": "munnar",
+    "name": "Munnar",
+    "state": "Kerala",
+    "state_id": "kerala",
+    "displayName": "Munnar (Kerala)",
+    "popular": false
+  },
+  {
+    "id": "mussoorie",
+    "name": "Mussoorie",
+    "state": "Uttarakhand",
+    "state_id": "uttarakhand",
+    "displayName": "Mussoorie (Uttarakhand)",
+    "popular": false
+  },
+  {
+    "id": "mysuru",
+    "name": "Mysuru",
+    "state": "Karnataka",
+    "state_id": "karnataka",
+    "displayName": "Mysuru (Karnataka)",
+    "popular": false
+  },
+  {
+    "id": "nagpur",
+    "name": "Nagpur",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "displayName": "Nagpur (Maharashtra)",
+    "popular": false
+  },
+  {
+    "id": "nainital",
+    "name": "Nainital",
+    "state": "Uttarakhand",
+    "state_id": "uttarakhand",
+    "displayName": "Nainital (Uttarakhand)",
+    "popular": false
+  },
+  {
+    "id": "nalanda",
+    "name": "Nalanda",
+    "state": "Bihar",
+    "state_id": "bihar",
+    "displayName": "Nalanda (Bihar)",
+    "popular": false
+  },
+  {
+    "id": "nalgonda",
+    "name": "Nalgonda",
+    "state": "Telangana",
+    "state_id": "telangana",
+    "displayName": "Nalgonda (Telangana)",
+    "popular": false
+  },
+  {
+    "id": "namsai",
+    "name": "Namsai",
+    "state": "Arunachal Pradesh",
+    "state_id": "arunachal-pradesh",
+    "displayName": "Namsai (Arunachal Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "nashik",
+    "name": "Nashik",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "displayName": "Nashik (Maharashtra)",
+    "popular": false
+  },
+  {
+    "id": "nellore",
+    "name": "Nellore",
+    "state": "Andhra Pradesh",
+    "state_id": "andhra-pradesh",
+    "displayName": "Nellore (Andhra Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "new-tehri",
+    "name": "New Tehri",
+    "state": "Uttarakhand",
+    "state_id": "uttarakhand",
+    "displayName": "New Tehri (Uttarakhand)",
+    "popular": false
+  },
+  {
+    "id": "nirmal",
+    "name": "Nirmal",
+    "state": "Telangana",
+    "state_id": "telangana",
+    "displayName": "Nirmal (Telangana)",
+    "popular": false
+  },
+  {
+    "id": "nongriat",
+    "name": "Nongriat",
+    "state": "Meghalaya",
+    "state_id": "meghalaya",
+    "displayName": "Nongriat (Meghalaya)",
+    "popular": false
+  },
+  {
+    "id": "ooty",
+    "name": "Ooty",
+    "state": "Tamil Nadu",
+    "state_id": "tamil-nadu",
+    "displayName": "Ooty (Tamil Nadu)",
     "popular": false
   },
   {
@@ -1901,291 +2445,67 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
-    "id": "sanchi",
-    "name": "Sanchi",
-    "state": "Madhya Pradesh",
-    "state_id": "madhya-pradesh",
-    "displayName": "Sanchi (Madhya Pradesh)",
+    "id": "pahalgam",
+    "name": "Pahalgam",
+    "state": "Jammu and Kashmir",
+    "state_id": "jammu-and-kashmir",
+    "displayName": "Pahalgam (Jammu and Kashmir)",
     "popular": false
   },
   {
-    "id": "ujjain",
-    "name": "Ujjain",
-    "state": "Madhya Pradesh",
-    "state_id": "madhya-pradesh",
-    "displayName": "Ujjain (Madhya Pradesh)",
+    "id": "pakke-kesang-hill-station",
+    "name": "Pakke Kesang Hill Station",
+    "state": "Arunachal Pradesh",
+    "state_id": "arunachal-pradesh",
+    "displayName": "Pakke Kesang Hill Station (Arunachal Pradesh)",
     "popular": false
   },
   {
-    "id": "amravati",
-    "name": "Amravati",
-    "state": "Maharashtra",
-    "state_id": "maharashtra",
-    "displayName": "Amravati (Maharashtra)",
+    "id": "palakkad",
+    "name": "Palakkad",
+    "state": "Kerala",
+    "state_id": "kerala",
+    "displayName": "Palakkad (Kerala)",
     "popular": false
   },
   {
-    "id": "chhatrapati-sambhaji-nagar",
-    "name": "Chhatrapati Sambhaji Nagar",
-    "state": "Maharashtra",
-    "state_id": "maharashtra",
-    "displayName": "Chhatrapati Sambhaji Nagar (Maharashtra)",
-    "popular": true
-  },
-  {
-    "id": "igatpuri",
-    "name": "Igatpuri",
-    "state": "Maharashtra",
-    "state_id": "maharashtra",
-    "displayName": "Igatpuri (Maharashtra)",
+    "id": "panipat",
+    "name": "Panipat",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "displayName": "Panipat (Haryana)",
     "popular": false
   },
   {
-    "id": "jalgaon",
-    "name": "Jalgaon",
-    "state": "Maharashtra",
-    "state_id": "maharashtra",
-    "displayName": "Jalgaon (Maharashtra)",
+    "id": "paonta-sahib",
+    "name": "Paonta Sahib",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "displayName": "Paonta Sahib (Himachal Pradesh)",
     "popular": false
   },
   {
-    "id": "kolhapur",
-    "name": "Kolhapur",
-    "state": "Maharashtra",
-    "state_id": "maharashtra",
-    "displayName": "Kolhapur (Maharashtra)",
+    "id": "pasighat",
+    "name": "Pasighat",
+    "state": "Arunachal Pradesh",
+    "state_id": "arunachal-pradesh",
+    "displayName": "Pasighat (Arunachal Pradesh)",
     "popular": false
   },
   {
-    "id": "mahabaleshwar",
-    "name": "Mahabaleshwar",
-    "state": "Maharashtra",
-    "state_id": "maharashtra",
-    "displayName": "Mahabaleshwar (Maharashtra)",
+    "id": "patan",
+    "name": "Patan",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "displayName": "Patan (Gujarat)",
     "popular": false
   },
   {
-    "id": "mumbai",
-    "name": "Mumbai",
-    "state": "Maharashtra",
-    "state_id": "maharashtra",
-    "displayName": "Mumbai (Maharashtra)",
-    "popular": true
-  },
-  {
-    "id": "nagpur",
-    "name": "Nagpur",
-    "state": "Maharashtra",
-    "state_id": "maharashtra",
-    "displayName": "Nagpur (Maharashtra)",
-    "popular": false
-  },
-  {
-    "id": "nashik",
-    "name": "Nashik",
-    "state": "Maharashtra",
-    "state_id": "maharashtra",
-    "displayName": "Nashik (Maharashtra)",
-    "popular": false
-  },
-  {
-    "id": "pune",
-    "name": "Pune",
-    "state": "Maharashtra",
-    "state_id": "maharashtra",
-    "displayName": "Pune (Maharashtra)",
-    "popular": true
-  },
-  {
-    "id": "satara",
-    "name": "Satara",
-    "state": "Maharashtra",
-    "state_id": "maharashtra",
-    "displayName": "Satara (Maharashtra)",
-    "popular": false
-  },
-  {
-    "id": "imphal",
-    "name": "Imphal",
-    "state": "Manipur",
-    "state_id": "manipur",
-    "displayName": "Imphal (Manipur)",
-    "popular": false
-  },
-  {
-    "id": "cherrapunjee",
-    "name": "Cherrapunjee",
-    "state": "Meghalaya",
-    "state_id": "meghalaya",
-    "displayName": "Cherrapunjee (Meghalaya)",
-    "popular": false
-  },
-  {
-    "id": "shillong",
-    "name": "Shillong",
-    "state": "Meghalaya",
-    "state_id": "meghalaya",
-    "displayName": "Shillong (Meghalaya)",
-    "popular": false
-  },
-  {
-    "id": "aizawl",
-    "name": "Aizawl",
-    "state": "Mizoram",
-    "state_id": "mizoram",
-    "displayName": "Aizawl (Mizoram)",
-    "popular": false
-  },
-  {
-    "id": "champhai",
-    "name": "Champhai",
-    "state": "Mizoram",
-    "state_id": "mizoram",
-    "displayName": "Champhai (Mizoram)",
-    "popular": false
-  },
-  {
-    "id": "lunglei",
-    "name": "Lunglei",
-    "state": "Mizoram",
-    "state_id": "mizoram",
-    "displayName": "Lunglei (Mizoram)",
-    "popular": false
-  },
-  {
-    "id": "serchhip",
-    "name": "Serchhip",
-    "state": "Mizoram",
-    "state_id": "mizoram",
-    "displayName": "Serchhip (Mizoram)",
-    "popular": false
-  },
-  {
-    "id": "dimapur",
-    "name": "Dimapur",
-    "state": "Nagaland",
-    "state_id": "nagaland",
-    "displayName": "Dimapur (Nagaland)",
-    "popular": false
-  },
-  {
-    "id": "kohima",
-    "name": "Kohima",
-    "state": "Nagaland",
-    "state_id": "nagaland",
-    "displayName": "Kohima (Nagaland)",
-    "popular": false
-  },
-  {
-    "id": "mokokchung",
-    "name": "Mokokchung",
-    "state": "Nagaland",
-    "state_id": "nagaland",
-    "displayName": "Mokokchung (Nagaland)",
-    "popular": false
-  },
-  {
-    "id": "bhubaneswar",
-    "name": "Bhubaneswar",
-    "state": "Odisha",
-    "state_id": "odisha",
-    "displayName": "Bhubaneswar (Odisha)",
-    "popular": true
-  },
-  {
-    "id": "cuttack",
-    "name": "Cuttack",
-    "state": "Odisha",
-    "state_id": "odisha",
-    "displayName": "Cuttack (Odisha)",
-    "popular": false
-  },
-  {
-    "id": "koraput",
-    "name": "Koraput",
-    "state": "Odisha",
-    "state_id": "odisha",
-    "displayName": "Koraput (Odisha)",
-    "popular": false
-  },
-  {
-    "id": "mayurbhanj",
-    "name": "Mayurbhanj",
-    "state": "Odisha",
-    "state_id": "odisha",
-    "displayName": "Mayurbhanj (Odisha)",
-    "popular": false
-  },
-  {
-    "id": "puri",
-    "name": "Puri",
-    "state": "Odisha",
-    "state_id": "odisha",
-    "displayName": "Puri (Odisha)",
-    "popular": false
-  },
-  {
-    "id": "amritsar",
-    "name": "Amritsar",
-    "state": "Punjab",
-    "state_id": "punjab",
-    "displayName": "Amritsar (Punjab)",
-    "popular": true
-  },
-  {
-    "id": "fatehgarh-sahib",
-    "name": "Fatehgarh Sahib",
-    "state": "Punjab",
-    "state_id": "punjab",
-    "displayName": "Fatehgarh Sahib (Punjab)",
-    "popular": false
-  },
-  {
-    "id": "fazilka",
-    "name": "Fazilka",
-    "state": "Punjab",
-    "state_id": "punjab",
-    "displayName": "Fazilka (Punjab)",
-    "popular": false
-  },
-  {
-    "id": "firozepur",
-    "name": "Firozepur",
-    "state": "Punjab",
-    "state_id": "punjab",
-    "displayName": "Firozepur (Punjab)",
-    "popular": false
-  },
-  {
-    "id": "gurdaspur",
-    "name": "Gurdaspur",
-    "state": "Punjab",
-    "state_id": "punjab",
-    "displayName": "Gurdaspur (Punjab)",
-    "popular": false
-  },
-  {
-    "id": "jalandhar",
-    "name": "Jalandhar",
-    "state": "Punjab",
-    "state_id": "punjab",
-    "displayName": "Jalandhar (Punjab)",
-    "popular": false
-  },
-  {
-    "id": "kapurthala",
-    "name": "Kapurthala",
-    "state": "Punjab",
-    "state_id": "punjab",
-    "displayName": "Kapurthala (Punjab)",
-    "popular": false
-  },
-  {
-    "id": "ludhiana",
-    "name": "Ludhiana",
-    "state": "Punjab",
-    "state_id": "punjab",
-    "displayName": "Ludhiana (Punjab)",
+    "id": "pathanamthitta",
+    "name": "Pathanamthitta",
+    "state": "Kerala",
+    "state_id": "kerala",
+    "displayName": "Pathanamthitta (Kerala)",
     "popular": false
   },
   {
@@ -2205,667 +2525,11 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
-    "id": "rupnagar",
-    "name": "Rupnagar",
-    "state": "Punjab",
-    "state_id": "punjab",
-    "displayName": "Rupnagar (Punjab)",
-    "popular": false
-  },
-  {
-    "id": "sas-nagar",
-    "name": "SAS Nagar",
-    "state": "Punjab",
-    "state_id": "punjab",
-    "displayName": "SAS Nagar (Punjab)",
-    "popular": false
-  },
-  {
-    "id": "ajmer",
-    "name": "Ajmer",
-    "state": "Rajasthan",
-    "state_id": "rajasthan",
-    "displayName": "Ajmer (Rajasthan)",
-    "popular": false
-  },
-  {
-    "id": "alwar",
-    "name": "Alwar",
-    "state": "Rajasthan",
-    "state_id": "rajasthan",
-    "displayName": "Alwar (Rajasthan)",
-    "popular": false
-  },
-  {
-    "id": "banswara",
-    "name": "Banswara",
-    "state": "Rajasthan",
-    "state_id": "rajasthan",
-    "displayName": "Banswara (Rajasthan)",
-    "popular": false
-  },
-  {
-    "id": "bharatpur",
-    "name": "Bharatpur",
-    "state": "Rajasthan",
-    "state_id": "rajasthan",
-    "displayName": "Bharatpur (Rajasthan)",
-    "popular": false
-  },
-  {
-    "id": "bikaner",
-    "name": "Bikaner",
-    "state": "Rajasthan",
-    "state_id": "rajasthan",
-    "displayName": "Bikaner (Rajasthan)",
-    "popular": false
-  },
-  {
-    "id": "bundi",
-    "name": "Bundi",
-    "state": "Rajasthan",
-    "state_id": "rajasthan",
-    "displayName": "Bundi (Rajasthan)",
-    "popular": false
-  },
-  {
-    "id": "chittorgarh",
-    "name": "Chittorgarh",
-    "state": "Rajasthan",
-    "state_id": "rajasthan",
-    "displayName": "Chittorgarh (Rajasthan)",
-    "popular": false
-  },
-  {
-    "id": "dausa",
-    "name": "Dausa",
-    "state": "Rajasthan",
-    "state_id": "rajasthan",
-    "displayName": "Dausa (Rajasthan)",
-    "popular": false
-  },
-  {
-    "id": "dholpur",
-    "name": "Dholpur",
-    "state": "Rajasthan",
-    "state_id": "rajasthan",
-    "displayName": "Dholpur (Rajasthan)",
-    "popular": false
-  },
-  {
-    "id": "jaipur",
-    "name": "Jaipur",
-    "state": "Rajasthan",
-    "state_id": "rajasthan",
-    "displayName": "Jaipur (Rajasthan)",
-    "popular": true
-  },
-  {
-    "id": "jaisalmer",
-    "name": "Jaisalmer",
-    "state": "Rajasthan",
-    "state_id": "rajasthan",
-    "displayName": "Jaisalmer (Rajasthan)",
-    "popular": false
-  },
-  {
-    "id": "jodhpur",
-    "name": "Jodhpur",
-    "state": "Rajasthan",
-    "state_id": "rajasthan",
-    "displayName": "Jodhpur (Rajasthan)",
-    "popular": true
-  },
-  {
-    "id": "kota",
-    "name": "Kota",
-    "state": "Rajasthan",
-    "state_id": "rajasthan",
-    "displayName": "Kota (Rajasthan)",
-    "popular": false
-  },
-  {
-    "id": "mount-abu",
-    "name": "Mount Abu",
-    "state": "Rajasthan",
-    "state_id": "rajasthan",
-    "displayName": "Mount Abu (Rajasthan)",
-    "popular": false
-  },
-  {
-    "id": "udaipur",
-    "name": "Udaipur",
-    "state": "Rajasthan",
-    "state_id": "rajasthan",
-    "displayName": "Udaipur (Rajasthan)",
-    "popular": true
-  },
-  {
-    "id": "gangtok",
-    "name": "Gangtok",
-    "state": "Sikkim",
-    "state_id": "sikkim",
-    "displayName": "Gangtok (Sikkim)",
-    "popular": false
-  },
-  {
-    "id": "mangan",
-    "name": "Mangan",
-    "state": "Sikkim",
-    "state_id": "sikkim",
-    "displayName": "Mangan (Sikkim)",
-    "popular": false
-  },
-  {
-    "id": "pelling",
-    "name": "Pelling",
-    "state": "Sikkim",
-    "state_id": "sikkim",
-    "displayName": "Pelling (Sikkim)",
-    "popular": false
-  },
-  {
-    "id": "chennai",
-    "name": "Chennai",
-    "state": "Tamil Nadu",
-    "state_id": "tamil-nadu",
-    "displayName": "Chennai (Tamil Nadu)",
-    "popular": true
-  },
-  {
-    "id": "coimbatore",
-    "name": "Coimbatore",
-    "state": "Tamil Nadu",
-    "state_id": "tamil-nadu",
-    "displayName": "Coimbatore (Tamil Nadu)",
-    "popular": false
-  },
-  {
-    "id": "kanchipuram",
-    "name": "Kanchipuram",
-    "state": "Tamil Nadu",
-    "state_id": "tamil-nadu",
-    "displayName": "Kanchipuram (Tamil Nadu)",
-    "popular": false
-  },
-  {
-    "id": "kanniyakumari",
-    "name": "Kanniyakumari",
-    "state": "Tamil Nadu",
-    "state_id": "tamil-nadu",
-    "displayName": "Kanniyakumari (Tamil Nadu)",
-    "popular": false
-  },
-  {
-    "id": "madurai",
-    "name": "Madurai",
-    "state": "Tamil Nadu",
-    "state_id": "tamil-nadu",
-    "displayName": "Madurai (Tamil Nadu)",
-    "popular": true
-  },
-  {
-    "id": "mamallapuram",
-    "name": "Mamallapuram",
-    "state": "Tamil Nadu",
-    "state_id": "tamil-nadu",
-    "displayName": "Mamallapuram (Tamil Nadu)",
-    "popular": false
-  },
-  {
-    "id": "ooty",
-    "name": "Ooty",
-    "state": "Tamil Nadu",
-    "state_id": "tamil-nadu",
-    "displayName": "Ooty (Tamil Nadu)",
-    "popular": false
-  },
-  {
-    "id": "rameswaram",
-    "name": "Rameswaram",
-    "state": "Tamil Nadu",
-    "state_id": "tamil-nadu",
-    "displayName": "Rameswaram (Tamil Nadu)",
-    "popular": false
-  },
-  {
-    "id": "thanjavur",
-    "name": "Thanjavur",
-    "state": "Tamil Nadu",
-    "state_id": "tamil-nadu",
-    "displayName": "Thanjavur (Tamil Nadu)",
-    "popular": false
-  },
-  {
-    "id": "tiruchirappalli",
-    "name": "Tiruchirappalli",
-    "state": "Tamil Nadu",
-    "state_id": "tamil-nadu",
-    "displayName": "Tiruchirappalli (Tamil Nadu)",
-    "popular": false
-  },
-  {
-    "id": "bhongir",
-    "name": "Bhongir",
-    "state": "Telangana",
-    "state_id": "telangana",
-    "displayName": "Bhongir (Telangana)",
-    "popular": false
-  },
-  {
-    "id": "hyderabad",
-    "name": "Hyderabad",
-    "state": "Telangana",
-    "state_id": "telangana",
-    "displayName": "Hyderabad (Telangana)",
-    "popular": true
-  },
-  {
-    "id": "karimnagar",
-    "name": "Karimnagar",
-    "state": "Telangana",
-    "state_id": "telangana",
-    "displayName": "Karimnagar (Telangana)",
-    "popular": false
-  },
-  {
-    "id": "khammam",
-    "name": "Khammam",
-    "state": "Telangana",
-    "state_id": "telangana",
-    "displayName": "Khammam (Telangana)",
-    "popular": false
-  },
-  {
-    "id": "warangal",
-    "name": "Warangal",
-    "state": "Telangana",
-    "state_id": "telangana",
-    "displayName": "Warangal (Telangana)",
-    "popular": false
-  },
-  {
-    "id": "agartala",
-    "name": "Agartala",
-    "state": "Tripura",
-    "state_id": "tripura",
-    "displayName": "Agartala (Tripura)",
-    "popular": false
-  },
-  {
-    "id": "unakoti",
-    "name": "Unakoti",
-    "state": "Tripura",
-    "state_id": "tripura",
-    "displayName": "Unakoti (Tripura)",
-    "popular": false
-  },
-  {
-    "id": "agra",
-    "name": "Agra",
-    "state": "Uttar Pradesh",
-    "state_id": "uttar-pradesh",
-    "displayName": "Agra (Uttar Pradesh)",
-    "popular": true
-  },
-  {
-    "id": "ayodhya",
-    "name": "Ayodhya",
-    "state": "Uttar Pradesh",
-    "state_id": "uttar-pradesh",
-    "displayName": "Ayodhya (Uttar Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "bareilly",
-    "name": "Bareilly",
-    "state": "Uttar Pradesh",
-    "state_id": "uttar-pradesh",
-    "displayName": "Bareilly (Uttar Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "chitrakoot-up",
-    "name": "Chitrakoot",
-    "state": "Uttar Pradesh",
-    "state_id": "uttar-pradesh",
-    "displayName": "Chitrakoot (Uttar Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "jhansi",
-    "name": "Jhansi",
-    "state": "Uttar Pradesh",
-    "state_id": "uttar-pradesh",
-    "displayName": "Jhansi (Uttar Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "kanpur",
-    "name": "Kanpur",
-    "state": "Uttar Pradesh",
-    "state_id": "uttar-pradesh",
-    "displayName": "Kanpur (Uttar Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "lucknow",
-    "name": "Lucknow",
-    "state": "Uttar Pradesh",
-    "state_id": "uttar-pradesh",
-    "displayName": "Lucknow (Uttar Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "mathura",
-    "name": "Mathura",
-    "state": "Uttar Pradesh",
-    "state_id": "uttar-pradesh",
-    "displayName": "Mathura (Uttar Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "prayagraj",
-    "name": "Prayagraj",
-    "state": "Uttar Pradesh",
-    "state_id": "uttar-pradesh",
-    "displayName": "Prayagraj (Uttar Pradesh)",
-    "popular": false
-  },
-  {
-    "id": "varanasi",
-    "name": "Varanasi",
-    "state": "Uttar Pradesh",
-    "state_id": "uttar-pradesh",
-    "displayName": "Varanasi (Uttar Pradesh)",
-    "popular": true
-  },
-  {
-    "id": "almora",
-    "name": "Almora",
-    "state": "Uttarakhand",
-    "state_id": "uttarakhand",
-    "displayName": "Almora (Uttarakhand)",
-    "popular": false
-  },
-  {
-    "id": "badrinath",
-    "name": "Badrinath",
-    "state": "Uttarakhand",
-    "state_id": "uttarakhand",
-    "displayName": "Badrinath (Uttarakhand)",
-    "popular": false
-  },
-  {
-    "id": "berinag",
-    "name": "Berinag",
-    "state": "Uttarakhand",
-    "state_id": "uttarakhand",
-    "displayName": "Berinag (Uttarakhand)",
-    "popular": false
-  },
-  {
-    "id": "bhimtal",
-    "name": "Bhimtal",
-    "state": "Uttarakhand",
-    "state_id": "uttarakhand",
-    "displayName": "Bhimtal (Uttarakhand)",
-    "popular": false
-  },
-  {
-    "id": "chamoli",
-    "name": "Chamoli",
-    "state": "Uttarakhand",
-    "state_id": "uttarakhand",
-    "displayName": "Chamoli (Uttarakhand)",
-    "popular": false
-  },
-  {
-    "id": "dehradun",
-    "name": "Dehradun",
-    "state": "Uttarakhand",
-    "state_id": "uttarakhand",
-    "displayName": "Dehradun (Uttarakhand)",
-    "popular": false
-  },
-  {
-    "id": "gangotri",
-    "name": "Gangotri",
-    "state": "Uttarakhand",
-    "state_id": "uttarakhand",
-    "displayName": "Gangotri (Uttarakhand)",
-    "popular": false
-  },
-  {
-    "id": "haridwar",
-    "name": "Haridwar",
-    "state": "Uttarakhand",
-    "state_id": "uttarakhand",
-    "displayName": "Haridwar (Uttarakhand)",
-    "popular": false
-  },
-  {
-    "id": "kausani",
-    "name": "Kausani",
-    "state": "Uttarakhand",
-    "state_id": "uttarakhand",
-    "displayName": "Kausani (Uttarakhand)",
-    "popular": false
-  },
-  {
-    "id": "kedarnath",
-    "name": "Kedarnath",
-    "state": "Uttarakhand",
-    "state_id": "uttarakhand",
-    "displayName": "Kedarnath (Uttarakhand)",
-    "popular": false
-  },
-  {
-    "id": "lansdowne",
-    "name": "Lansdowne",
-    "state": "Uttarakhand",
-    "state_id": "uttarakhand",
-    "displayName": "Lansdowne (Uttarakhand)",
-    "popular": false
-  },
-  {
-    "id": "mussoorie",
-    "name": "Mussoorie",
-    "state": "Uttarakhand",
-    "state_id": "uttarakhand",
-    "displayName": "Mussoorie (Uttarakhand)",
-    "popular": false
-  },
-  {
-    "id": "nainital",
-    "name": "Nainital",
-    "state": "Uttarakhand",
-    "state_id": "uttarakhand",
-    "displayName": "Nainital (Uttarakhand)",
-    "popular": false
-  },
-  {
-    "id": "new-tehri",
-    "name": "New Tehri",
-    "state": "Uttarakhand",
-    "state_id": "uttarakhand",
-    "displayName": "New Tehri (Uttarakhand)",
-    "popular": false
-  },
-  {
-    "id": "pithoragarh",
-    "name": "Pithoragarh",
-    "state": "Uttarakhand",
-    "state_id": "uttarakhand",
-    "displayName": "Pithoragarh (Uttarakhand)",
-    "popular": false
-  },
-  {
-    "id": "rishikesh",
-    "name": "Rishikesh",
-    "state": "Uttarakhand",
-    "state_id": "uttarakhand",
-    "displayName": "Rishikesh (Uttarakhand)",
-    "popular": false
-  },
-  {
-    "id": "uttarkashi",
-    "name": "Uttarkashi",
-    "state": "Uttarakhand",
-    "state_id": "uttarakhand",
-    "displayName": "Uttarkashi (Uttarakhand)",
-    "popular": false
-  },
-  {
-    "id": "darjeeling",
-    "name": "Darjeeling",
-    "state": "West Bengal",
-    "state_id": "west-bengal",
-    "displayName": "Darjeeling (West Bengal)",
-    "popular": false
-  },
-  {
-    "id": "durgapur",
-    "name": "Durgapur",
-    "state": "West Bengal",
-    "state_id": "west-bengal",
-    "displayName": "Durgapur (West Bengal)",
-    "popular": false
-  },
-  {
-    "id": "howrah",
-    "name": "Howrah",
-    "state": "West Bengal",
-    "state_id": "west-bengal",
-    "displayName": "Howrah (West Bengal)",
-    "popular": false
-  },
-  {
-    "id": "kalimpong",
-    "name": "Kalimpong",
-    "state": "West Bengal",
-    "state_id": "west-bengal",
-    "displayName": "Kalimpong (West Bengal)",
-    "popular": false
-  },
-  {
-    "id": "kolkata",
-    "name": "Kolkata",
-    "state": "West Bengal",
-    "state_id": "west-bengal",
-    "displayName": "Kolkata (West Bengal)",
-    "popular": true
-  },
-  {
-    "id": "santiniketan",
-    "name": "Santiniketan",
-    "state": "West Bengal",
-    "state_id": "west-bengal",
-    "displayName": "Santiniketan (West Bengal)",
-    "popular": true
-  },
-  {
-    "id": "siliguri",
-    "name": "Siliguri",
-    "state": "West Bengal",
-    "state_id": "west-bengal",
-    "displayName": "Siliguri (West Bengal)",
-    "popular": false
-  },
-  {
-    "id": "mayabunder",
-    "name": "Mayabunder",
-    "state": "Andaman and Nicobar Islands",
-    "state_id": "andaman-and-nicobar-islands",
-    "displayName": "Mayabunder (Andaman and Nicobar Islands)",
-    "popular": false
-  },
-  {
-    "id": "rangat",
-    "name": "Rangat",
-    "state": "Andaman and Nicobar Islands",
-    "state_id": "andaman-and-nicobar-islands",
-    "displayName": "Rangat (Andaman and Nicobar Islands)",
-    "popular": false
-  },
-  {
-    "id": "sri-vijaya-puram",
-    "name": "Sri Vijaya Puram",
-    "state": "Andaman and Nicobar Islands",
-    "state_id": "andaman-and-nicobar-islands",
-    "displayName": "Sri Vijaya Puram (Andaman and Nicobar Islands)",
-    "popular": true
-  },
-  {
-    "id": "chandigarh",
-    "name": "Chandigarh",
-    "state": "Chandigarh",
-    "state_id": "chandigarh",
-    "displayName": "Chandigarh (Chandigarh)",
-    "popular": false
-  },
-  {
-    "id": "daman",
-    "name": "Daman",
-    "state": "Dadra and Nagar Haveli and Daman and Diu",
-    "state_id": "dadra-and-nagar-haveli-and-daman-and-diu",
-    "displayName": "Daman (Dadra and Nagar Haveli and Daman and Diu)",
-    "popular": false
-  },
-  {
-    "id": "diu",
-    "name": "Diu",
-    "state": "Dadra and Nagar Haveli and Daman and Diu",
-    "state_id": "dadra-and-nagar-haveli-and-daman-and-diu",
-    "displayName": "Diu (Dadra and Nagar Haveli and Daman and Diu)",
-    "popular": false
-  },
-  {
-    "id": "silvassa",
-    "name": "Silvassa",
-    "state": "Dadra and Nagar Haveli and Daman and Diu",
-    "state_id": "dadra-and-nagar-haveli-and-daman-and-diu",
-    "displayName": "Silvassa (Dadra and Nagar Haveli and Daman and Diu)",
-    "popular": false
-  },
-  {
-    "id": "delhi",
-    "name": "Delhi",
-    "state": "Delhi",
-    "state_id": "delhi",
-    "displayName": "Delhi (Delhi)",
-    "popular": true
-  },
-  {
-    "id": "anantnag",
-    "name": "Anantnag",
-    "state": "Jammu and Kashmir",
-    "state_id": "jammu-and-kashmir",
-    "displayName": "Anantnag (Jammu and Kashmir)",
-    "popular": false
-  },
-  {
-    "id": "gulmarg",
-    "name": "Gulmarg",
-    "state": "Jammu and Kashmir",
-    "state_id": "jammu-and-kashmir",
-    "displayName": "Gulmarg (Jammu and Kashmir)",
-    "popular": false
-  },
-  {
-    "id": "jammu",
-    "name": "Jammu",
-    "state": "Jammu and Kashmir",
-    "state_id": "jammu-and-kashmir",
-    "displayName": "Jammu (Jammu and Kashmir)",
-    "popular": false
-  },
-  {
-    "id": "pahalgam",
-    "name": "Pahalgam",
-    "state": "Jammu and Kashmir",
-    "state_id": "jammu-and-kashmir",
-    "displayName": "Pahalgam (Jammu and Kashmir)",
+    "id": "patna",
+    "name": "Patna",
+    "state": "Bihar",
+    "state_id": "bihar",
+    "displayName": "Patna (Bihar)",
     "popular": false
   },
   {
@@ -2877,35 +2541,51 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
-    "id": "srinagar",
-    "name": "Srinagar",
-    "state": "Jammu and Kashmir",
-    "state_id": "jammu-and-kashmir",
-    "displayName": "Srinagar (Jammu and Kashmir)",
-    "popular": true
-  },
-  {
-    "id": "kargil",
-    "name": "Kargil",
-    "state": "Ladakh",
-    "state_id": "ladakh",
-    "displayName": "Kargil (Ladakh)",
+    "id": "pelling",
+    "name": "Pelling",
+    "state": "Sikkim",
+    "state_id": "sikkim",
+    "displayName": "Pelling (Sikkim)",
     "popular": false
   },
   {
-    "id": "leh",
-    "name": "Leh",
-    "state": "Ladakh",
-    "state_id": "ladakh",
-    "displayName": "Leh (Ladakh)",
-    "popular": true
+    "id": "peren",
+    "name": "Peren",
+    "state": "Nagaland",
+    "state_id": "nagaland",
+    "displayName": "Peren (Nagaland)",
+    "popular": false
   },
   {
-    "id": "kavaratti",
-    "name": "Kavaratti",
-    "state": "Lakshadweep",
-    "state_id": "lakshadweep",
-    "displayName": "Kavaratti (Lakshadweep)",
+    "id": "phek",
+    "name": "Phek",
+    "state": "Nagaland",
+    "state_id": "nagaland",
+    "displayName": "Phek (Nagaland)",
+    "popular": false
+  },
+  {
+    "id": "pithoragarh",
+    "name": "Pithoragarh",
+    "state": "Uttarakhand",
+    "state_id": "uttarakhand",
+    "displayName": "Pithoragarh (Uttarakhand)",
+    "popular": false
+  },
+  {
+    "id": "porbandar",
+    "name": "Porbandar",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "displayName": "Porbandar (Gujarat)",
+    "popular": false
+  },
+  {
+    "id": "prayagraj",
+    "name": "Prayagraj",
+    "state": "Uttar Pradesh",
+    "state_id": "uttar-pradesh",
+    "displayName": "Prayagraj (Uttar Pradesh)",
     "popular": false
   },
   {
@@ -2914,6 +2594,510 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "state": "Puducherry",
     "state_id": "puducherry",
     "displayName": "Puducherry (Puducherry)",
+    "popular": false
+  },
+  {
+    "id": "pune",
+    "name": "Pune",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "displayName": "Pune (Maharashtra)",
+    "popular": true
+  },
+  {
+    "id": "puri",
+    "name": "Puri",
+    "state": "Odisha",
+    "state_id": "odisha",
+    "displayName": "Puri (Odisha)",
+    "popular": false
+  },
+  {
+    "id": "raipur",
+    "name": "Raipur",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "displayName": "Raipur (Chhattisgarh)",
+    "popular": false
+  },
+  {
+    "id": "rajahmundry",
+    "name": "Rajahmundry",
+    "state": "Andhra Pradesh",
+    "state_id": "andhra-pradesh",
+    "displayName": "Rajahmundry (Andhra Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "rajkot",
+    "name": "Rajkot",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "displayName": "Rajkot (Gujarat)",
+    "popular": false
+  },
+  {
+    "id": "rajnandgaon",
+    "name": "Rajnandgaon",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "displayName": "Rajnandgaon (Chhattisgarh)",
+    "popular": false
+  },
+  {
+    "id": "rameswaram",
+    "name": "Rameswaram",
+    "state": "Tamil Nadu",
+    "state_id": "tamil-nadu",
+    "displayName": "Rameswaram (Tamil Nadu)",
+    "popular": false
+  },
+  {
+    "id": "ranchi",
+    "name": "Ranchi",
+    "state": "Jharkhand",
+    "state_id": "jharkhand",
+    "displayName": "Ranchi (Jharkhand)",
+    "popular": false
+  },
+  {
+    "id": "rangat",
+    "name": "Rangat",
+    "state": "Andaman and Nicobar Islands",
+    "state_id": "andaman-and-nicobar-islands",
+    "displayName": "Rangat (Andaman and Nicobar Islands)",
+    "popular": false
+  },
+  {
+    "id": "reckong-peo",
+    "name": "Reckong Peo",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "displayName": "Reckong Peo (Himachal Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "rishikesh",
+    "name": "Rishikesh",
+    "state": "Uttarakhand",
+    "state_id": "uttarakhand",
+    "displayName": "Rishikesh (Uttarakhand)",
+    "popular": false
+  },
+  {
+    "id": "roing",
+    "name": "Roing",
+    "state": "Arunachal Pradesh",
+    "state_id": "arunachal-pradesh",
+    "displayName": "Roing (Arunachal Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "rupnagar",
+    "name": "Rupnagar",
+    "state": "Punjab",
+    "state_id": "punjab",
+    "displayName": "Rupnagar (Punjab)",
+    "popular": false
+  },
+  {
+    "id": "sabrimala",
+    "name": "Sabrimala",
+    "state": "Kerala",
+    "state_id": "kerala",
+    "displayName": "Sabrimala (Kerala)",
+    "popular": false
+  },
+  {
+    "id": "saitual",
+    "name": "Saitual",
+    "state": "Mizoram",
+    "state_id": "mizoram",
+    "displayName": "Saitual (Mizoram)",
+    "popular": false
+  },
+  {
+    "id": "sanchi",
+    "name": "Sanchi",
+    "state": "Madhya Pradesh",
+    "state_id": "madhya-pradesh",
+    "displayName": "Sanchi (Madhya Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "santiniketan",
+    "name": "Santiniketan",
+    "state": "West Bengal",
+    "state_id": "west-bengal",
+    "displayName": "Santiniketan (West Bengal)",
+    "popular": true
+  },
+  {
+    "id": "sas-nagar",
+    "name": "SAS Nagar",
+    "state": "Punjab",
+    "state_id": "punjab",
+    "displayName": "SAS Nagar (Punjab)",
+    "popular": false
+  },
+  {
+    "id": "satara",
+    "name": "Satara",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "displayName": "Satara (Maharashtra)",
+    "popular": false
+  },
+  {
+    "id": "serchhip",
+    "name": "Serchhip",
+    "state": "Mizoram",
+    "state_id": "mizoram",
+    "displayName": "Serchhip (Mizoram)",
+    "popular": false
+  },
+  {
+    "id": "shillong",
+    "name": "Shillong",
+    "state": "Meghalaya",
+    "state_id": "meghalaya",
+    "displayName": "Shillong (Meghalaya)",
+    "popular": false
+  },
+  {
+    "id": "shimla",
+    "name": "Shimla",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "displayName": "Shimla (Himachal Pradesh)",
+    "popular": true
+  },
+  {
+    "id": "siaha",
+    "name": "Siaha",
+    "state": "Mizoram",
+    "state_id": "mizoram",
+    "displayName": "Siaha (Mizoram)",
+    "popular": false
+  },
+  {
+    "id": "siliguri",
+    "name": "Siliguri",
+    "state": "West Bengal",
+    "state_id": "west-bengal",
+    "displayName": "Siliguri (West Bengal)",
+    "popular": false
+  },
+  {
+    "id": "silvassa",
+    "name": "Silvassa",
+    "state": "Dadra and Nagar Haveli and Daman and Diu",
+    "state_id": "dadra-and-nagar-haveli-and-daman-and-diu",
+    "displayName": "Silvassa (Dadra and Nagar Haveli and Daman and Diu)",
+    "popular": false
+  },
+  {
+    "id": "sivasagar",
+    "name": "Sivasagar",
+    "state": "Assam",
+    "state_id": "assam",
+    "displayName": "Sivasagar (Assam)",
+    "popular": false
+  },
+  {
+    "id": "somnathpura",
+    "name": "Somnathpura",
+    "state": "Karnataka",
+    "state_id": "karnataka",
+    "displayName": "Somnathpura (Karnataka)",
+    "popular": false
+  },
+  {
+    "id": "spiti-valley",
+    "name": "Spiti Valley",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "displayName": "Spiti Valley (Himachal Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "sri-vijaya-puram",
+    "name": "Sri Vijaya Puram",
+    "state": "Andaman and Nicobar Islands",
+    "state_id": "andaman-and-nicobar-islands",
+    "displayName": "Sri Vijaya Puram (Andaman and Nicobar Islands)",
+    "popular": true
+  },
+  {
+    "id": "srikakulam",
+    "name": "Srikakulam",
+    "state": "Andhra Pradesh",
+    "state_id": "andhra-pradesh",
+    "displayName": "Srikakulam (Andhra Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "srinagar",
+    "name": "Srinagar",
+    "state": "Jammu and Kashmir",
+    "state_id": "jammu-and-kashmir",
+    "displayName": "Srinagar (Jammu and Kashmir)",
+    "popular": true
+  },
+  {
+    "id": "surat",
+    "name": "Surat",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "displayName": "Surat (Gujarat)",
+    "popular": false
+  },
+  {
+    "id": "tawang",
+    "name": "Tawang",
+    "state": "Arunachal Pradesh",
+    "state_id": "arunachal-pradesh",
+    "displayName": "Tawang (Arunachal Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "tezpur",
+    "name": "Tezpur",
+    "state": "Assam",
+    "state_id": "assam",
+    "displayName": "Tezpur (Assam)",
+    "popular": false
+  },
+  {
+    "id": "thanjavur",
+    "name": "Thanjavur",
+    "state": "Tamil Nadu",
+    "state_id": "tamil-nadu",
+    "displayName": "Thanjavur (Tamil Nadu)",
+    "popular": false
+  },
+  {
+    "id": "thiruvananthapuram",
+    "name": "Thiruvananthapuram",
+    "state": "Kerala",
+    "state_id": "kerala",
+    "displayName": "Thiruvananthapuram (Kerala)",
+    "popular": false
+  },
+  {
+    "id": "thrissur",
+    "name": "Thrissur",
+    "state": "Kerala",
+    "state_id": "kerala",
+    "displayName": "Thrissur (Kerala)",
+    "popular": false
+  },
+  {
+    "id": "tinsukia",
+    "name": "Tinsukia",
+    "state": "Assam",
+    "state_id": "assam",
+    "displayName": "Tinsukia (Assam)",
+    "popular": false
+  },
+  {
+    "id": "tiruchirappalli",
+    "name": "Tiruchirappalli",
+    "state": "Tamil Nadu",
+    "state_id": "tamil-nadu",
+    "displayName": "Tiruchirappalli (Tamil Nadu)",
+    "popular": false
+  },
+  {
+    "id": "tirupati",
+    "name": "Tirupati",
+    "state": "Andhra Pradesh",
+    "state_id": "andhra-pradesh",
+    "displayName": "Tirupati (Andhra Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "udaipur",
+    "name": "Udaipur",
+    "state": "Rajasthan",
+    "state_id": "rajasthan",
+    "displayName": "Udaipur (Rajasthan)",
+    "popular": true
+  },
+  {
+    "id": "udupi",
+    "name": "Udupi",
+    "state": "Karnataka",
+    "state_id": "karnataka",
+    "displayName": "Udupi (Karnataka)",
+    "popular": false
+  },
+  {
+    "id": "ujjain",
+    "name": "Ujjain",
+    "state": "Madhya Pradesh",
+    "state_id": "madhya-pradesh",
+    "displayName": "Ujjain (Madhya Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "ukhrul",
+    "name": "Ukhrul",
+    "state": "Manipur",
+    "state_id": "manipur",
+    "displayName": "Ukhrul (Manipur)",
+    "popular": false
+  },
+  {
+    "id": "umiam",
+    "name": "Umiam",
+    "state": "Meghalaya",
+    "state_id": "meghalaya",
+    "displayName": "Umiam (Meghalaya)",
+    "popular": false
+  },
+  {
+    "id": "umrangso",
+    "name": "Umrangso",
+    "state": "Assam",
+    "state_id": "assam",
+    "displayName": "Umrangso (Assam)",
+    "popular": false
+  },
+  {
+    "id": "unakoti",
+    "name": "Unakoti",
+    "state": "Tripura",
+    "state_id": "tripura",
+    "displayName": "Unakoti (Tripura)",
+    "popular": false
+  },
+  {
+    "id": "uttarkashi",
+    "name": "Uttarkashi",
+    "state": "Uttarakhand",
+    "state_id": "uttarakhand",
+    "displayName": "Uttarkashi (Uttarakhand)",
+    "popular": false
+  },
+  {
+    "id": "vadnagar",
+    "name": "Vadnagar",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "displayName": "Vadnagar (Gujarat)",
+    "popular": false
+  },
+  {
+    "id": "vadodara",
+    "name": "Vadodara",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "displayName": "Vadodara (Gujarat)",
+    "popular": false
+  },
+  {
+    "id": "valsad",
+    "name": "Valsad",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "displayName": "Valsad (Gujarat)",
+    "popular": false
+  },
+  {
+    "id": "varanasi",
+    "name": "Varanasi",
+    "state": "Uttar Pradesh",
+    "state_id": "uttar-pradesh",
+    "displayName": "Varanasi (Uttar Pradesh)",
+    "popular": true
+  },
+  {
+    "id": "varkala",
+    "name": "Varkala",
+    "state": "Kerala",
+    "state_id": "kerala",
+    "displayName": "Varkala (Kerala)",
+    "popular": false
+  },
+  {
+    "id": "vijayapura",
+    "name": "Vijayapura",
+    "state": "Karnataka",
+    "state_id": "karnataka",
+    "displayName": "Vijayapura (Karnataka)",
+    "popular": false
+  },
+  {
+    "id": "visakhapatnam",
+    "name": "Visakhapatnam",
+    "state": "Andhra Pradesh",
+    "state_id": "andhra-pradesh",
+    "displayName": "Visakhapatnam (Andhra Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "vizianagaram",
+    "name": "Vizianagaram",
+    "state": "Andhra Pradesh",
+    "state_id": "andhra-pradesh",
+    "displayName": "Vizianagaram (Andhra Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "warangal",
+    "name": "Warangal",
+    "state": "Telangana",
+    "state_id": "telangana",
+    "displayName": "Warangal (Telangana)",
+    "popular": false
+  },
+  {
+    "id": "wayanad",
+    "name": "Wayanad",
+    "state": "Kerala",
+    "state_id": "kerala",
+    "displayName": "Wayanad (Kerala)",
+    "popular": false
+  },
+  {
+    "id": "yadadri",
+    "name": "Yadadri",
+    "state": "Telangana",
+    "state_id": "telangana",
+    "displayName": "Yadadri (Telangana)",
+    "popular": false
+  },
+  {
+    "id": "yadadri-bhuvanagiri",
+    "name": "Yadadri Bhuvanagiri",
+    "state": "Telangana",
+    "state_id": "telangana",
+    "displayName": "Yadadri Bhuvanagiri (Telangana)",
+    "popular": false
+  },
+  {
+    "id": "yamunanagar",
+    "name": "Yamunanagar",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "displayName": "Yamunanagar (Haryana)",
+    "popular": false
+  },
+  {
+    "id": "yingkiong",
+    "name": "Yingkiong",
+    "state": "Arunachal Pradesh",
+    "state_id": "arunachal-pradesh",
+    "displayName": "Yingkiong (Arunachal Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "ziro",
+    "name": "Ziro",
+    "state": "Arunachal Pradesh",
+    "state_id": "arunachal-pradesh",
+    "displayName": "Ziro (Arunachal Pradesh)",
     "popular": false
   }
 ];

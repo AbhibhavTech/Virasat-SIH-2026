@@ -117,9 +117,12 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
             region: s.region || '',
             official_tourism_url: s.official_tourism_url || s.source_url || '',
             description: s.description || '',
-            status: (s.status === 'verified' || ['himachal-pradesh', 'punjab', 'rajasthan', 'uttar-pradesh', 'arunachal-pradesh'].includes(s.id)) ? 'verified' : (s.status || 'verified'),
+            status: (s.status === 'verified' || ['himachal-pradesh', 'punjab', 'rajasthan', 'uttar-pradesh', 'arunachal-pradesh', 'telangana', 'nagaland', 'meghalaya', 'manipur', 'mizoram'].includes(s.id)) ? 'verified' : (s.status || 'verified'),
             hero_image_id: s.hero_image_id,
             hero_image_url: s.hero_image_url,
+            total_cities: s.total_cities || 0,
+            total_attractions: s.total_attractions || s.total_places || 0,
+            total_places: s.total_places || s.total_attractions || 0,
             created_at: now,
           };
         }
@@ -319,7 +322,7 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
   // -------------------------------------------------------------
   // 5. Regional Flagship Datasets (Mumbai, Delhi, Rajasthan, Goa, Kerala, Maharashtra)
   // -------------------------------------------------------------
-  const regionalDirs = ['mumbai', 'delhi', 'rajasthan', 'maharashtra', 'goa', 'kerala', 'ladakh', 'jammu-kashmir', 'punjab', 'kolkata', 'west-bengal'];
+  const regionalDirs = ['mumbai', 'delhi', 'rajasthan', 'maharashtra', 'goa', 'kerala', 'ladakh', 'jammu-kashmir', 'punjab', 'kolkata', 'west-bengal', 'telangana', 'nagaland', 'meghalaya', 'manipur', 'mizoram'];
   for (const reg of regionalDirs) {
     const regPath = path.join(rootDataDir, reg, 'places.json');
     if (fs.existsSync(regPath)) {
@@ -330,7 +333,8 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
             const stateId = (rp.state_id || rp.state || reg).toLowerCase().replace(/[^a-z0-9]+/g, '-');
             const cityId = (rp.city_id || rp.city || reg).toLowerCase().replace(/[^a-z0-9]+/g, '-');
             const normalizedName = rp.name.trim().toLowerCase();
-            const existing = places[rp.id] || Object.values(places).find(p => p.city_id === cityId && p.name.trim().toLowerCase() === normalizedName);
+            const isProtectedRegional = rp.id.startsWith('telangana_') || rp.id.startsWith('nagaland_') || rp.id.startsWith('meghalaya_') || rp.id.startsWith('manipur_') || rp.id.startsWith('mizoram_');
+            const existing = places[rp.id] || (!isProtectedRegional && Object.values(places).find(p => p.city_id === cityId && p.name.trim().toLowerCase() === normalizedName));
             if (existing) continue; // Already ingested via curated monuments
             const sourceUrl = rp.source_url && rp.source_url.startsWith('http') ? rp.source_url : 'https://asi.nic.in';
             const quality = rp.source_quality || computeSourceQuality(sourceUrl);
@@ -418,6 +422,11 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
         console.error(`[DB Seed] Error reading ${reg}/places.json:`, e);
       }
     }
+  }
+
+  // Deduplicate regional entries that supersede generic monuments
+  if (places['meghalaya_008'] || places['meghalaya_001']) {
+    delete places['living-root-bridges'];
   }
 
   // -------------------------------------------------------------
@@ -697,6 +706,26 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
   for (const legacyKey of ['amritsar-jallianwala-bagh', 'amritsar-partition-museum', 'patiala-qila-mubarak', 'anandpur-virasat-e-khalsa']) {
     if (places[legacyKey]) {
       delete places[legacyKey];
+    }
+  }
+
+  // Deduplicate Telangana places and ensure they strictly follow telangana_001 - telangana_015
+  if (places['telangana_001']) {
+    for (const legacyKey of [
+      'charminar', 'golconda-fort', 'ramappa-temple',
+      'hyderabad-charminar', 'hyderabad-golconda-fort', 'hyderabad-salar-jung-museum',
+      'hyderabad-hussain-sagar-lake', 'hyderabad-qutb-shahi-tombs', 'hyderabad-ramoji-film-city',
+      'hyderabad-chowmahalla-palace', 'warangal-fort', 'warangal-thousand-pillar-temple',
+      'bhongir-fort', 'thousand-pillar-temple', 'qutb-shahi-tombs', 'salar-jung-museum',
+      'chowmahalla-palace', 'hussain-sagar-lake',
+      'hyderabad-hyderabad-heritage-fort-complex',
+      'nagarjuna-sagar-nagarjuna-sagar-national-wildlife-botanical-park',
+      'kbr-national-park', 'mrugavani-national-park',
+      'warangal-warangal-sacred-temple-cultural-center'
+    ]) {
+      if (places[legacyKey]) {
+        delete places[legacyKey];
+      }
     }
   }
 
