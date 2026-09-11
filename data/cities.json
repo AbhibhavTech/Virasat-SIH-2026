@@ -15,7 +15,7 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1628155930550-1ef5420a4611?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1,
+    "places_count": 5,
     "tagline": "Cultural destination in chandigarh"
   },
   {
@@ -34,7 +34,7 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1512343879792-214836286570?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 4,
+    "places_count": 30,
     "tagline": "Cultural destination in delhi"
   },
   {
@@ -319,7 +319,7 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1627993077758-452101007326?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1,
+    "places_count": 3,
     "tagline": "Cultural destination in jammu-and-kashmir"
   },
   {
@@ -338,7 +338,7 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1596405835963-c4563554903c?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1,
+    "places_count": 3,
     "tagline": "Cultural destination in jammu-and-kashmir"
   },
   {
@@ -376,7 +376,7 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1589308078067-369293033254?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 5,
+    "places_count": 8,
     "tagline": "Cultural destination in jammu-and-kashmir"
   },
   {
@@ -395,7 +395,7 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1616423640786-06593d500735?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0,
+    "places_count": 1,
     "tagline": "Cultural destination in ladakh"
   },
   {
@@ -414,7 +414,7 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1574672280608-2184613d4676?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 6,
+    "places_count": 9,
     "tagline": "Cultural destination in ladakh"
   },
   {
@@ -1404,7 +1404,7 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1582510003552-2588355fc008?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0,
+    "places_count": 5,
     "tagline": "Cultural destination in andaman-and-nicobar-islands"
   },
   {
@@ -2164,7 +2164,7 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1609766857049-652806208462?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0,
+    "places_count": 3,
     "tagline": "Cultural destination in dadra-and-nagar-haveli-and-daman-and-diu"
   },
   {
@@ -2183,7 +2183,7 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1626014303765-4c5401713653?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0,
+    "places_count": 2,
     "tagline": "Cultural destination in dadra-and-nagar-haveli-and-daman-and-diu"
   },
   {
@@ -3680,7 +3680,7 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Kavaratti_Island%2C_Lakshadweep.jpg/1280px-Kavaratti_Island%2C_Lakshadweep.jpg",
-    "places_count": 0,
+    "places_count": 5,
     "tagline": "Cultural destination in lakshadweep"
   },
   {
@@ -3699,7 +3699,7 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1581793745870-11750f51f150?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1,
+    "places_count": 5,
     "tagline": "Cultural destination in puducherry"
   },
   {

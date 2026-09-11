@@ -11,7 +11,7 @@
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1598890777032-bde13fbe3493?w=1200&auto=format&fit=crop&q=80",
     "total_cities": 1,
-    "total_attractions": 1
+    "total_attractions": 5
   },
   {
     "id": "delhi",
@@ -25,7 +25,7 @@
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=1200&auto=format&fit=crop&q=80",
     "total_cities": 1,
-    "total_attractions": 4
+    "total_attractions": 30
   },
   {
     "id": "haryana",
@@ -67,7 +67,7 @@
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=1200&auto=format&fit=crop&q=80",
     "total_cities": 6,
-    "total_attractions": 8
+    "total_attractions": 15
   },
   {
     "id": "ladakh",
@@ -81,7 +81,7 @@
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?w=1200&auto=format&fit=crop&q=80",
     "total_cities": 2,
-    "total_attractions": 6
+    "total_attractions": 10
   },
   {
     "id": "punjab",
@@ -263,7 +263,7 @@
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=80",
     "total_cities": 3,
-    "total_attractions": 0
+    "total_attractions": 5
   },
   {
     "id": "bihar",
@@ -361,7 +361,7 @@
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
     "total_cities": 3,
-    "total_attractions": 0
+    "total_attractions": 5
   },
   {
     "id": "goa",
@@ -459,7 +459,7 @@
     "status": "active",
     "hero_image_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Bangaram_Island%2C_Lakshadweep_20160325-_DSC1780.jpg/1280px-Bangaram_Island%2C_Lakshadweep_20160325-_DSC1780.jpg",
     "total_cities": 1,
-    "total_attractions": 0
+    "total_attractions": 5
   },
   {
     "id": "puducherry",
@@ -473,7 +473,7 @@
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=80",
     "total_cities": 1,
-    "total_attractions": 1
+    "total_attractions": 5
   },
   {
     "id": "tamil-nadu",
