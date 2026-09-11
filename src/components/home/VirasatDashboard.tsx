@@ -535,7 +535,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
       id: 'central',
       name: 'Central India',
       statesCount: '2 States',
-      landmarkHighlight: 'Khajuraho Temples • Sanchi Stupa',
+      landmarkHighlight: 'Gwalior Fort • Sanchi Stupa',
       image: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&auto=format&fit=crop&q=80',
       icon: CentralIndiaIcon,
       bgColor: 'bg-[#EEF8F5]',

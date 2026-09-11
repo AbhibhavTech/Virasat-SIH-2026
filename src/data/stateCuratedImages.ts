@@ -90,7 +90,7 @@ export const STATE_CURATED_IMAGES: Record<string, CuratedStateImage> = {
   'assam': {
     imageUrl: 'https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=1200&auto=format&fit=crop&q=80',
     creator: 'Unsplash / Kaziranga Rhino Habitat',
-    landmark: 'Kaziranga National Park & Majuli',
+    landmark: 'Kaziranga National Park & Kamakhya',
     bestSeason: 'Nov - Apr',
     tags: ['One-Horned Rhino', 'UNESCO Kaziranga', 'Tea Gardens'],
   },
@@ -184,10 +184,10 @@ export const STATE_CURATED_IMAGES: Record<string, CuratedStateImage> = {
   },
   'madhya-pradesh': {
     imageUrl: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=1200&auto=format&fit=crop&q=80',
-    creator: 'Unsplash / Khajuraho Temples',
-    landmark: 'Khajuraho UNESCO & Sanchi Stupa',
+    creator: 'Unsplash / Gwalior Fort & Sanchi',
+    landmark: 'Sanchi Stupa & Gwalior Fort',
     bestSeason: 'Oct - Mar',
-    tags: ['UNESCO Khajuraho', 'Gwalior Fort', 'Kanha Tiger Reserve', 'Sanchi Stupa'],
+    tags: ['Gwalior Fort', 'Kanha Tiger Reserve', 'Sanchi Stupa', 'Ujjain Mahakal'],
   },
 
   // Western Region
@@ -238,9 +238,9 @@ export const STATE_CURATED_IMAGES: Record<string, CuratedStateImage> = {
   'kerala': {
     imageUrl: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&auto=format&fit=crop&q=80',
     creator: 'Unsplash / Kerala Backwaters',
-    landmark: 'Alleppey Backwaters & Munnar Hills',
+    landmark: 'Alleppey Backwaters & Fort Kochi',
     bestSeason: 'Sep - Mar',
-    tags: ['Living Backwaters', 'Munnar Tea Hills', 'Kathakali Dance', 'Fort Kochi'],
+    tags: ['Living Backwaters', 'Alleppey Canals', 'Kathakali Dance', 'Fort Kochi'],
   },
   'lakshadweep': {
     imageUrl: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=80',

@@ -223,7 +223,7 @@ export const DESTINATION_HIGHLIGHTS: DestinationHighlight[] = [
     tagline: 'Meandering labyrinth of over 900 km of interconnected waterways, coconut fringed villages, and coir handicraft huts.',
     era: 'Historic spice and coir trade waterways',
     architecture: 'Traditional Kettuvallam (Anjili Wood) Houseboat Craft',
-    highlights: ['Overnight traditional houseboat cruise with Kerala sadhya', 'Shikara canoe rides through narrow village canals', 'Kumarakom bird sanctuary & paddy fields'],
+    highlights: ['Overnight traditional houseboat cruise with Kerala sadhya', 'Shikara canoe rides through narrow village canals', 'Vembanad lake bird watching & paddy fields'],
     bestTime: 'September to March (Nehru Trophy boat race in August)',
     entryFee: 'Free public waterways / Houseboat packages ₹7,000 – ₹15,000',
     timings: 'Day cruises 9:00 AM – 5:30 PM',

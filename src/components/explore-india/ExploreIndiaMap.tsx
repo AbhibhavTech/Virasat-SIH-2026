@@ -130,15 +130,14 @@ export const INDIA_PINS: MapPinData[] = [
   // West
   {
     id: 'gujarat',
-    name: 'Gujarat (Patan & Rani ki Vav)',
-    type: 'town',
+    name: 'Gujarat (Ahmedabad & Champaner)',
+    type: 'state',
     stateId: 'gujarat',
-    townId: 'patan',
     stateName: 'Gujarat',
     region: 'Western India',
-    iconicPlace: "Rani ki Vav (Queen's Stepwell)",
-    lat: 23.8589,
-    lng: 72.1016,
+    iconicPlace: 'UNESCO Walled City of Ahmedabad & Champaner',
+    lat: 23.0225,
+    lng: 72.5714,
     thumbnail: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=500&auto=format&fit=crop&q=80',
   },
   {
@@ -169,14 +168,14 @@ export const INDIA_PINS: MapPinData[] = [
   // Central
   {
     id: 'madhya-pradesh',
-    name: 'Madhya Pradesh (Khajuraho & Sanchi)',
+    name: 'Madhya Pradesh (Gwalior & Sanchi)',
     type: 'state',
     stateId: 'madhya-pradesh',
     stateName: 'Madhya Pradesh',
     region: 'Central India',
-    iconicPlace: 'Khajuraho Temples & Great Sanchi Stupa',
-    lat: 24.8515,
-    lng: 79.9215,
+    iconicPlace: 'Gwalior Fort & Great Sanchi Stupa',
+    lat: 23.4795,
+    lng: 77.7397,
     thumbnail: 'https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=500&auto=format&fit=crop&q=80',
   },
   // East
@@ -272,7 +271,7 @@ export const INDIA_PINS: MapPinData[] = [
   },
   {
     id: 'kerala',
-    name: 'Kerala (Kochi & Wayanad)',
+    name: 'Kerala (Kochi & Alleppey)',
     type: 'state',
     stateId: 'kerala',
     stateName: 'Kerala',
@@ -285,15 +284,15 @@ export const INDIA_PINS: MapPinData[] = [
   // Northeast
   {
     id: 'assam',
-    name: 'Assam (Majuli & Kaziranga)',
+    name: 'Assam (Guwahati & Kaziranga)',
     type: 'town',
     stateId: 'assam',
-    townId: 'majuli',
+    townId: 'guwahati',
     stateName: 'Assam',
     region: 'Northeastern India',
-    iconicPlace: 'Majuli River Island & Kaziranga Rhinos',
-    lat: 26.9535,
-    lng: 94.2188,
+    iconicPlace: 'Kamakhya Temple & Kaziranga Rhinos',
+    lat: 26.1445,
+    lng: 91.7362,
     thumbnail: 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=500&auto=format&fit=crop&q=80',
   },
   {
