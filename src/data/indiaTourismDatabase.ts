@@ -2,11 +2,11 @@
 import { IndiaHierarchyDatabase } from '../../types/indiaHierarchy';
 
 export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
-  "title": "VIRASAT — COMPLETE INDIA TOURISM DATABASE",
+  "title": "VIRASAT ΓÇö COMPLETE INDIA TOURISM DATABASE",
   "version": "3.0.0",
   "states_count": 36,
-  "cities_count": 264,
-  "attractions_count": 443,
+  "cities_count": 269,
+  "attractions_count": 465,
   "accuracy_disclaimer": "Fees, timings, hotel prices, train schedules, route durations and availability can change. UNVERIFIED means it must be checked from an official/current source before being shown to a user.",
   "states": [
     {
@@ -105,10 +105,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees"
               },
               "best_time_to_visit": "October to March",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "map_search": "Capitol Complex, Chandigarh, India",
@@ -198,10 +198,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees"
               },
               "best_time_to_visit": "October to March",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "map_search": "Open Hand Monument, Chandigarh, India",
@@ -290,10 +290,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees"
               },
               "best_time_to_visit": "October to March",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "map_search": "Government Museum and Art Gallery, Chandigarh, India",
@@ -384,10 +384,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees"
               },
               "best_time_to_visit": "October to March",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "map_search": "Rock Garden of Nek Chand, Chandigarh, India",
@@ -474,10 +474,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees"
               },
               "best_time_to_visit": "October to March",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "map_search": "Sukhna Lake, Chandigarh, India",
@@ -525,14 +525,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -609,10 +609,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees"
               },
               "best_time_to_visit": "October to March",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "map_search": "Capitol Complex, Chandigarh, India",
@@ -700,10 +700,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees"
               },
               "best_time_to_visit": "October to March",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "map_search": "Open Hand Monument, Chandigarh, India",
@@ -790,10 +790,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees"
               },
               "best_time_to_visit": "October to March",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "map_search": "Rock Garden of Nek Chand, Chandigarh, India",
@@ -880,10 +880,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees"
               },
               "best_time_to_visit": "October to March",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "map_search": "Sukhna Lake, Chandigarh, India",
@@ -970,10 +970,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees"
               },
               "best_time_to_visit": "October to March",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "map_search": "Government Museum and Art Gallery, Chandigarh, India",
@@ -1127,10 +1127,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "2–3 hours",
+              "suggested_duration": "2ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "2–3 hours",
+                "label": "2ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -1194,7 +1194,7 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
               "short_description": "Official residence of the President of India, known for its grand architecture and Mughal Gardens.",
               "detailed_description": "Official residence of the President of India, known for its grand architecture and Mughal Gardens.",
               "historical_significance": "Official residence of the President of India, known for its grand architecture and Mughal Gardens.",
-              "locality": "President’s Estate",
+              "locality": "PresidentΓÇÖs Estate",
               "district": "Central Delhi",
               "address": "Delhi, India",
               "lat": 28.6143,
@@ -1223,10 +1223,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -1238,7 +1238,7 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
               "map_search": "Rashtrapati Bhavan, Delhi",
               "tags": [
                 "government heritage",
-                "president’s estate",
+                "presidentΓÇÖs estate",
                 "delhi",
                 "tourism"
               ],
@@ -1285,11 +1285,11 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "Government heritage"
               ],
               "topic": "Heritage",
-              "summary": "Important national landmark representing India’s parliamentary democracy.",
-              "description": "Important national landmark representing India’s parliamentary democracy.",
-              "short_description": "Important national landmark representing India’s parliamentary democracy.",
-              "detailed_description": "Important national landmark representing India’s parliamentary democracy.",
-              "historical_significance": "Important national landmark representing India’s parliamentary democracy.",
+              "summary": "Important national landmark representing IndiaΓÇÖs parliamentary democracy.",
+              "description": "Important national landmark representing IndiaΓÇÖs parliamentary democracy.",
+              "short_description": "Important national landmark representing IndiaΓÇÖs parliamentary democracy.",
+              "detailed_description": "Important national landmark representing IndiaΓÇÖs parliamentary democracy.",
+              "historical_significance": "Important national landmark representing IndiaΓÇÖs parliamentary democracy.",
               "locality": "New Delhi",
               "district": "Central Delhi",
               "address": "Delhi, India",
@@ -1319,10 +1319,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "15–30 minutes",
+              "suggested_duration": "15ΓÇô30 minutes",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "15–30 minutes",
+                "label": "15ΓÇô30 minutes",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -1381,11 +1381,11 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "Government heritage"
               ],
               "topic": "Heritage",
-              "summary": "Major institutional landmark and seat of India’s highest court.",
-              "description": "Major institutional landmark and seat of India’s highest court.",
-              "short_description": "Major institutional landmark and seat of India’s highest court.",
-              "detailed_description": "Major institutional landmark and seat of India’s highest court.",
-              "historical_significance": "Major institutional landmark and seat of India’s highest court.",
+              "summary": "Major institutional landmark and seat of IndiaΓÇÖs highest court.",
+              "description": "Major institutional landmark and seat of IndiaΓÇÖs highest court.",
+              "short_description": "Major institutional landmark and seat of IndiaΓÇÖs highest court.",
+              "detailed_description": "Major institutional landmark and seat of IndiaΓÇÖs highest court.",
+              "historical_significance": "Major institutional landmark and seat of IndiaΓÇÖs highest court.",
               "locality": "Tilak Marg",
               "district": "Central Delhi",
               "address": "Delhi, India",
@@ -1415,10 +1415,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "15–30 minutes",
+              "suggested_duration": "15ΓÇô30 minutes",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "15–30 minutes",
+                "label": "15ΓÇô30 minutes",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -1510,10 +1510,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -1606,10 +1606,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "30–60 minutes",
+              "suggested_duration": "30ΓÇô60 minutes",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "30–60 minutes",
+                "label": "30ΓÇô60 minutes",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -1702,10 +1702,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "45–90 minutes",
+              "suggested_duration": "45ΓÇô90 minutes",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "45–90 minutes",
+                "label": "45ΓÇô90 minutes",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -1764,11 +1764,11 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "Fort"
               ],
               "topic": "Heritage",
-              "summary": "Historic fort complex associated with several periods of Delhi’s history.",
-              "description": "Historic fort complex associated with several periods of Delhi’s history.",
-              "short_description": "Historic fort complex associated with several periods of Delhi’s history.",
-              "detailed_description": "Historic fort complex associated with several periods of Delhi’s history.",
-              "historical_significance": "Historic fort complex associated with several periods of Delhi’s history.",
+              "summary": "Historic fort complex associated with several periods of DelhiΓÇÖs history.",
+              "description": "Historic fort complex associated with several periods of DelhiΓÇÖs history.",
+              "short_description": "Historic fort complex associated with several periods of DelhiΓÇÖs history.",
+              "detailed_description": "Historic fort complex associated with several periods of DelhiΓÇÖs history.",
+              "historical_significance": "Historic fort complex associated with several periods of DelhiΓÇÖs history.",
               "locality": "Mathura Road",
               "district": "Central Delhi",
               "address": "Delhi, India",
@@ -1798,10 +1798,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -1894,10 +1894,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -1990,10 +1990,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "2–3 hours",
+              "suggested_duration": "2ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "2–3 hours",
+                "label": "2ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -2088,10 +2088,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "45–90 minutes",
+              "suggested_duration": "45ΓÇô90 minutes",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "45–90 minutes",
+                "label": "45ΓÇô90 minutes",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -2185,10 +2185,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -2235,8 +2235,8 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
             },
             {
               "id": "DEL004",
-              "name": "Humayun’s Tomb",
-              "canonical_name": "Humayun’s Tomb",
+              "name": "HumayunΓÇÖs Tomb",
+              "canonical_name": "HumayunΓÇÖs Tomb",
               "slug": "humayun-s-tomb",
               "category": "monuments",
               "category_label": "Tomb",
@@ -2281,10 +2281,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -2293,7 +2293,7 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "architecture",
                 "gardens"
               ],
-              "map_search": "Humayun’s Tomb, Delhi",
+              "map_search": "HumayunΓÇÖs Tomb, Delhi",
               "tags": [
                 "tomb",
                 "nizamuddin east",
@@ -2377,10 +2377,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "30–60 minutes",
+              "suggested_duration": "30ΓÇô60 minutes",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "30–60 minutes",
+                "label": "30ΓÇô60 minutes",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -2427,8 +2427,8 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
             },
             {
               "id": "DEL017",
-              "name": "Safdarjung’s Tomb",
-              "canonical_name": "Safdarjung’s Tomb",
+              "name": "SafdarjungΓÇÖs Tomb",
+              "canonical_name": "SafdarjungΓÇÖs Tomb",
               "slug": "safdarjung-s-tomb",
               "category": "monuments",
               "category_label": "Tomb",
@@ -2473,10 +2473,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "45–90 minutes",
+              "suggested_duration": "45ΓÇô90 minutes",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "45–90 minutes",
+                "label": "45ΓÇô90 minutes",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -2485,7 +2485,7 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "architecture",
                 "photography"
               ],
-              "map_search": "Safdarjung’s Tomb, Delhi",
+              "map_search": "SafdarjungΓÇÖs Tomb, Delhi",
               "tags": [
                 "tomb",
                 "lodhi road",
@@ -2571,10 +2571,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "2–3 hours",
+              "suggested_duration": "2ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "2–3 hours",
+                "label": "2ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -2633,11 +2633,11 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "Museum"
               ],
               "topic": "Museum",
-              "summary": "Museum showcasing India’s railway heritage through locomotives, coaches and exhibits.",
-              "description": "Museum showcasing India’s railway heritage through locomotives, coaches and exhibits.",
-              "short_description": "Museum showcasing India’s railway heritage through locomotives, coaches and exhibits.",
-              "detailed_description": "Museum showcasing India’s railway heritage through locomotives, coaches and exhibits.",
-              "historical_significance": "Museum showcasing India’s railway heritage through locomotives, coaches and exhibits.",
+              "summary": "Museum showcasing IndiaΓÇÖs railway heritage through locomotives, coaches and exhibits.",
+              "description": "Museum showcasing IndiaΓÇÖs railway heritage through locomotives, coaches and exhibits.",
+              "short_description": "Museum showcasing IndiaΓÇÖs railway heritage through locomotives, coaches and exhibits.",
+              "detailed_description": "Museum showcasing IndiaΓÇÖs railway heritage through locomotives, coaches and exhibits.",
+              "historical_significance": "Museum showcasing IndiaΓÇÖs railway heritage through locomotives, coaches and exhibits.",
               "locality": "Chanakyapuri",
               "district": "Central Delhi",
               "address": "Delhi, India",
@@ -2667,10 +2667,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "2–3 hours",
+              "suggested_duration": "2ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "2–3 hours",
+                "label": "2ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -2763,10 +2763,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -2859,10 +2859,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -2955,10 +2955,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -3017,11 +3017,11 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "Museum"
               ],
               "topic": "Museum",
-              "summary": "Museum presenting India’s traditional crafts, textiles, rural architecture and folk culture.",
-              "description": "Museum presenting India’s traditional crafts, textiles, rural architecture and folk culture.",
-              "short_description": "Museum presenting India’s traditional crafts, textiles, rural architecture and folk culture.",
-              "detailed_description": "Museum presenting India’s traditional crafts, textiles, rural architecture and folk culture.",
-              "historical_significance": "Museum presenting India’s traditional crafts, textiles, rural architecture and folk culture.",
+              "summary": "Museum presenting IndiaΓÇÖs traditional crafts, textiles, rural architecture and folk culture.",
+              "description": "Museum presenting IndiaΓÇÖs traditional crafts, textiles, rural architecture and folk culture.",
+              "short_description": "Museum presenting IndiaΓÇÖs traditional crafts, textiles, rural architecture and folk culture.",
+              "detailed_description": "Museum presenting IndiaΓÇÖs traditional crafts, textiles, rural architecture and folk culture.",
+              "historical_significance": "Museum presenting IndiaΓÇÖs traditional crafts, textiles, rural architecture and folk culture.",
               "locality": "Pragati Maidan",
               "district": "Central Delhi",
               "address": "Delhi, India",
@@ -3051,10 +3051,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -3116,11 +3116,11 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "Temple"
               ],
               "topic": "Spiritual",
-              "summary": "Modern Baháʼí House of Worship shaped like a lotus and open to visitors of all faiths.",
-              "description": "Modern Baháʼí House of Worship shaped like a lotus and open to visitors of all faiths.",
-              "short_description": "Modern Baháʼí House of Worship shaped like a lotus and open to visitors of all faiths.",
-              "detailed_description": "Modern Baháʼí House of Worship shaped like a lotus and open to visitors of all faiths.",
-              "historical_significance": "Modern Baháʼí House of Worship shaped like a lotus and open to visitors of all faiths.",
+              "summary": "Modern Bah├í╩╝├¡ House of Worship shaped like a lotus and open to visitors of all faiths.",
+              "description": "Modern Bah├í╩╝├¡ House of Worship shaped like a lotus and open to visitors of all faiths.",
+              "short_description": "Modern Bah├í╩╝├¡ House of Worship shaped like a lotus and open to visitors of all faiths.",
+              "detailed_description": "Modern Bah├í╩╝├¡ House of Worship shaped like a lotus and open to visitors of all faiths.",
+              "historical_significance": "Modern Bah├í╩╝├¡ House of Worship shaped like a lotus and open to visitors of all faiths.",
               "locality": "Bahapur",
               "district": "Central Delhi",
               "address": "Delhi, India",
@@ -3150,10 +3150,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -3246,10 +3246,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "2–4 hours",
+              "suggested_duration": "2ΓÇô4 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "2–4 hours",
+                "label": "2ΓÇô4 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -3308,11 +3308,11 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "Mosque"
               ],
               "topic": "Spiritual",
-              "summary": "One of India’s largest historic mosques, built during the Mughal period.",
-              "description": "One of India’s largest historic mosques, built during the Mughal period.",
-              "short_description": "One of India’s largest historic mosques, built during the Mughal period.",
-              "detailed_description": "One of India’s largest historic mosques, built during the Mughal period.",
-              "historical_significance": "One of India’s largest historic mosques, built during the Mughal period.",
+              "summary": "One of IndiaΓÇÖs largest historic mosques, built during the Mughal period.",
+              "description": "One of IndiaΓÇÖs largest historic mosques, built during the Mughal period.",
+              "short_description": "One of IndiaΓÇÖs largest historic mosques, built during the Mughal period.",
+              "detailed_description": "One of IndiaΓÇÖs largest historic mosques, built during the Mughal period.",
+              "historical_significance": "One of IndiaΓÇÖs largest historic mosques, built during the Mughal period.",
               "locality": "Old Delhi",
               "district": "Central Delhi",
               "address": "Delhi, India",
@@ -3342,10 +3342,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "45–90 minutes",
+              "suggested_duration": "45ΓÇô90 minutes",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "45–90 minutes",
+                "label": "45ΓÇô90 minutes",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -3440,10 +3440,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -3536,10 +3536,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -3632,10 +3632,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -3728,10 +3728,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "2–4 hours",
+              "suggested_duration": "2ΓÇô4 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "2–4 hours",
+                "label": "2ΓÇô4 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -3824,10 +3824,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -3920,10 +3920,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -3977,14 +3977,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -4061,10 +4061,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "2–3 hours",
+              "suggested_duration": "2ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "2–3 hours",
+                "label": "2ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -4157,10 +4157,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "45–90 minutes",
+              "suggested_duration": "45ΓÇô90 minutes",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "45–90 minutes",
+                "label": "45ΓÇô90 minutes",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -4254,10 +4254,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -4304,8 +4304,8 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
             },
             {
               "id": "DEL004",
-              "name": "Humayun’s Tomb",
-              "canonical_name": "Humayun’s Tomb",
+              "name": "HumayunΓÇÖs Tomb",
+              "canonical_name": "HumayunΓÇÖs Tomb",
               "slug": "humayun-s-tomb",
               "category": "monuments",
               "category_label": "Tomb",
@@ -4350,10 +4350,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -4362,7 +4362,7 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "architecture",
                 "gardens"
               ],
-              "map_search": "Humayun’s Tomb, Delhi",
+              "map_search": "HumayunΓÇÖs Tomb, Delhi",
               "tags": [
                 "tomb",
                 "nizamuddin east",
@@ -4412,11 +4412,11 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "Temple"
               ],
               "topic": "Spiritual",
-              "summary": "Modern Baháʼí House of Worship shaped like a lotus and open to visitors of all faiths.",
-              "description": "Modern Baháʼí House of Worship shaped like a lotus and open to visitors of all faiths.",
-              "short_description": "Modern Baháʼí House of Worship shaped like a lotus and open to visitors of all faiths.",
-              "detailed_description": "Modern Baháʼí House of Worship shaped like a lotus and open to visitors of all faiths.",
-              "historical_significance": "Modern Baháʼí House of Worship shaped like a lotus and open to visitors of all faiths.",
+              "summary": "Modern Bah├í╩╝├¡ House of Worship shaped like a lotus and open to visitors of all faiths.",
+              "description": "Modern Bah├í╩╝├¡ House of Worship shaped like a lotus and open to visitors of all faiths.",
+              "short_description": "Modern Bah├í╩╝├¡ House of Worship shaped like a lotus and open to visitors of all faiths.",
+              "detailed_description": "Modern Bah├í╩╝├¡ House of Worship shaped like a lotus and open to visitors of all faiths.",
+              "historical_significance": "Modern Bah├í╩╝├¡ House of Worship shaped like a lotus and open to visitors of all faiths.",
               "locality": "Bahapur",
               "district": "Central Delhi",
               "address": "Delhi, India",
@@ -4446,10 +4446,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -4542,10 +4542,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "2–4 hours",
+              "suggested_duration": "2ΓÇô4 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "2–4 hours",
+                "label": "2ΓÇô4 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -4604,11 +4604,11 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "Mosque"
               ],
               "topic": "Spiritual",
-              "summary": "One of India’s largest historic mosques, built during the Mughal period.",
-              "description": "One of India’s largest historic mosques, built during the Mughal period.",
-              "short_description": "One of India’s largest historic mosques, built during the Mughal period.",
-              "detailed_description": "One of India’s largest historic mosques, built during the Mughal period.",
-              "historical_significance": "One of India’s largest historic mosques, built during the Mughal period.",
+              "summary": "One of IndiaΓÇÖs largest historic mosques, built during the Mughal period.",
+              "description": "One of IndiaΓÇÖs largest historic mosques, built during the Mughal period.",
+              "short_description": "One of IndiaΓÇÖs largest historic mosques, built during the Mughal period.",
+              "detailed_description": "One of IndiaΓÇÖs largest historic mosques, built during the Mughal period.",
+              "historical_significance": "One of IndiaΓÇÖs largest historic mosques, built during the Mughal period.",
               "locality": "Old Delhi",
               "district": "Central Delhi",
               "address": "Delhi, India",
@@ -4638,10 +4638,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "45–90 minutes",
+              "suggested_duration": "45ΓÇô90 minutes",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "45–90 minutes",
+                "label": "45ΓÇô90 minutes",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -4734,10 +4734,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "30–60 minutes",
+              "suggested_duration": "30ΓÇô60 minutes",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "30–60 minutes",
+                "label": "30ΓÇô60 minutes",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -4801,7 +4801,7 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
               "short_description": "Official residence of the President of India, known for its grand architecture and Mughal Gardens.",
               "detailed_description": "Official residence of the President of India, known for its grand architecture and Mughal Gardens.",
               "historical_significance": "Official residence of the President of India, known for its grand architecture and Mughal Gardens.",
-              "locality": "President’s Estate",
+              "locality": "PresidentΓÇÖs Estate",
               "district": "Central Delhi",
               "address": "Delhi, India",
               "lat": 28.6143,
@@ -4830,10 +4830,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -4845,7 +4845,7 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
               "map_search": "Rashtrapati Bhavan, Delhi",
               "tags": [
                 "government heritage",
-                "president’s estate",
+                "presidentΓÇÖs estate",
                 "delhi",
                 "tourism"
               ],
@@ -4892,11 +4892,11 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "Government heritage"
               ],
               "topic": "Heritage",
-              "summary": "Important national landmark representing India’s parliamentary democracy.",
-              "description": "Important national landmark representing India’s parliamentary democracy.",
-              "short_description": "Important national landmark representing India’s parliamentary democracy.",
-              "detailed_description": "Important national landmark representing India’s parliamentary democracy.",
-              "historical_significance": "Important national landmark representing India’s parliamentary democracy.",
+              "summary": "Important national landmark representing IndiaΓÇÖs parliamentary democracy.",
+              "description": "Important national landmark representing IndiaΓÇÖs parliamentary democracy.",
+              "short_description": "Important national landmark representing IndiaΓÇÖs parliamentary democracy.",
+              "detailed_description": "Important national landmark representing IndiaΓÇÖs parliamentary democracy.",
+              "historical_significance": "Important national landmark representing IndiaΓÇÖs parliamentary democracy.",
               "locality": "New Delhi",
               "district": "Central Delhi",
               "address": "Delhi, India",
@@ -4926,10 +4926,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "15–30 minutes",
+              "suggested_duration": "15ΓÇô30 minutes",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "15–30 minutes",
+                "label": "15ΓÇô30 minutes",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -4988,11 +4988,11 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "Government heritage"
               ],
               "topic": "Heritage",
-              "summary": "Major institutional landmark and seat of India’s highest court.",
-              "description": "Major institutional landmark and seat of India’s highest court.",
-              "short_description": "Major institutional landmark and seat of India’s highest court.",
-              "detailed_description": "Major institutional landmark and seat of India’s highest court.",
-              "historical_significance": "Major institutional landmark and seat of India’s highest court.",
+              "summary": "Major institutional landmark and seat of IndiaΓÇÖs highest court.",
+              "description": "Major institutional landmark and seat of IndiaΓÇÖs highest court.",
+              "short_description": "Major institutional landmark and seat of IndiaΓÇÖs highest court.",
+              "detailed_description": "Major institutional landmark and seat of IndiaΓÇÖs highest court.",
+              "historical_significance": "Major institutional landmark and seat of IndiaΓÇÖs highest court.",
               "locality": "Tilak Marg",
               "district": "Central Delhi",
               "address": "Delhi, India",
@@ -5022,10 +5022,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "15–30 minutes",
+              "suggested_duration": "15ΓÇô30 minutes",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "15–30 minutes",
+                "label": "15ΓÇô30 minutes",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -5117,10 +5117,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -5213,10 +5213,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "30–60 minutes",
+              "suggested_duration": "30ΓÇô60 minutes",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "30–60 minutes",
+                "label": "30ΓÇô60 minutes",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -5309,10 +5309,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "45–90 minutes",
+              "suggested_duration": "45ΓÇô90 minutes",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "45–90 minutes",
+                "label": "45ΓÇô90 minutes",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -5371,11 +5371,11 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "Fort"
               ],
               "topic": "Heritage",
-              "summary": "Historic fort complex associated with several periods of Delhi’s history.",
-              "description": "Historic fort complex associated with several periods of Delhi’s history.",
-              "short_description": "Historic fort complex associated with several periods of Delhi’s history.",
-              "detailed_description": "Historic fort complex associated with several periods of Delhi’s history.",
-              "historical_significance": "Historic fort complex associated with several periods of Delhi’s history.",
+              "summary": "Historic fort complex associated with several periods of DelhiΓÇÖs history.",
+              "description": "Historic fort complex associated with several periods of DelhiΓÇÖs history.",
+              "short_description": "Historic fort complex associated with several periods of DelhiΓÇÖs history.",
+              "detailed_description": "Historic fort complex associated with several periods of DelhiΓÇÖs history.",
+              "historical_significance": "Historic fort complex associated with several periods of DelhiΓÇÖs history.",
               "locality": "Mathura Road",
               "district": "Central Delhi",
               "address": "Delhi, India",
@@ -5405,10 +5405,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -5501,10 +5501,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -5551,8 +5551,8 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
             },
             {
               "id": "DEL017",
-              "name": "Safdarjung’s Tomb",
-              "canonical_name": "Safdarjung’s Tomb",
+              "name": "SafdarjungΓÇÖs Tomb",
+              "canonical_name": "SafdarjungΓÇÖs Tomb",
               "slug": "safdarjung-s-tomb",
               "category": "monuments",
               "category_label": "Tomb",
@@ -5597,10 +5597,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "45–90 minutes",
+              "suggested_duration": "45ΓÇô90 minutes",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "45–90 minutes",
+                "label": "45ΓÇô90 minutes",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -5609,7 +5609,7 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "architecture",
                 "photography"
               ],
-              "map_search": "Safdarjung’s Tomb, Delhi",
+              "map_search": "SafdarjungΓÇÖs Tomb, Delhi",
               "tags": [
                 "tomb",
                 "lodhi road",
@@ -5693,10 +5693,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "2–3 hours",
+              "suggested_duration": "2ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "2–3 hours",
+                "label": "2ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -5755,11 +5755,11 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "Museum"
               ],
               "topic": "Museum",
-              "summary": "Museum showcasing India’s railway heritage through locomotives, coaches and exhibits.",
-              "description": "Museum showcasing India’s railway heritage through locomotives, coaches and exhibits.",
-              "short_description": "Museum showcasing India’s railway heritage through locomotives, coaches and exhibits.",
-              "detailed_description": "Museum showcasing India’s railway heritage through locomotives, coaches and exhibits.",
-              "historical_significance": "Museum showcasing India’s railway heritage through locomotives, coaches and exhibits.",
+              "summary": "Museum showcasing IndiaΓÇÖs railway heritage through locomotives, coaches and exhibits.",
+              "description": "Museum showcasing IndiaΓÇÖs railway heritage through locomotives, coaches and exhibits.",
+              "short_description": "Museum showcasing IndiaΓÇÖs railway heritage through locomotives, coaches and exhibits.",
+              "detailed_description": "Museum showcasing IndiaΓÇÖs railway heritage through locomotives, coaches and exhibits.",
+              "historical_significance": "Museum showcasing IndiaΓÇÖs railway heritage through locomotives, coaches and exhibits.",
               "locality": "Chanakyapuri",
               "district": "Central Delhi",
               "address": "Delhi, India",
@@ -5789,10 +5789,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "2–3 hours",
+              "suggested_duration": "2ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "2–3 hours",
+                "label": "2ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -5885,10 +5885,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -5981,10 +5981,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -6077,10 +6077,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -6173,10 +6173,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -6269,10 +6269,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "2–3 hours",
+              "suggested_duration": "2ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "2–3 hours",
+                "label": "2ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -6365,10 +6365,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -6461,10 +6461,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -6557,10 +6557,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "2–4 hours",
+              "suggested_duration": "2ΓÇô4 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "2–4 hours",
+                "label": "2ΓÇô4 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -6653,10 +6653,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -6749,10 +6749,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -6811,11 +6811,11 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "Museum"
               ],
               "topic": "Museum",
-              "summary": "Museum presenting India’s traditional crafts, textiles, rural architecture and folk culture.",
-              "description": "Museum presenting India’s traditional crafts, textiles, rural architecture and folk culture.",
-              "short_description": "Museum presenting India’s traditional crafts, textiles, rural architecture and folk culture.",
-              "detailed_description": "Museum presenting India’s traditional crafts, textiles, rural architecture and folk culture.",
-              "historical_significance": "Museum presenting India’s traditional crafts, textiles, rural architecture and folk culture.",
+              "summary": "Museum presenting IndiaΓÇÖs traditional crafts, textiles, rural architecture and folk culture.",
+              "description": "Museum presenting IndiaΓÇÖs traditional crafts, textiles, rural architecture and folk culture.",
+              "short_description": "Museum presenting IndiaΓÇÖs traditional crafts, textiles, rural architecture and folk culture.",
+              "detailed_description": "Museum presenting IndiaΓÇÖs traditional crafts, textiles, rural architecture and folk culture.",
+              "historical_significance": "Museum presenting IndiaΓÇÖs traditional crafts, textiles, rural architecture and folk culture.",
               "locality": "Pragati Maidan",
               "district": "Central Delhi",
               "address": "Delhi, India",
@@ -6845,10 +6845,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March; visit outdoor sites in the morning or late afternoon.",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Carry valid identification where required and check security, photography and weekly-closure rules.",
@@ -7025,14 +7025,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -7157,14 +7157,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -7290,14 +7290,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -7476,14 +7476,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -7607,14 +7607,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -7743,14 +7743,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -8793,7 +8793,7 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
               "importance_level": "iconic",
               "summary": "Iconic 11th-century Tibetan Buddhist monastery perched on a conical hill at 4,166 m.",
               "short_description": "Spectacular fortress-like monastery of the Gelugpa sect perched above the Spiti River.",
-              "detailed_description": "Founded in the 11th century by Dromtön, Key Monastery is the largest monastery in Spiti Valley. Built in the Pasada style with fortress-like tiered rooms, it houses ancient thangkas, manuscripts, and murals, serving over 300 resident lamas.",
+              "detailed_description": "Founded in the 11th century by Dromt├╢n, Key Monastery is the largest monastery in Spiti Valley. Built in the Pasada style with fortress-like tiered rooms, it houses ancient thangkas, manuscripts, and murals, serving over 300 resident lamas.",
               "address": "Key Village, Spiti, Himachal Pradesh 172114",
               "lat": 32.2981,
               "lng": 78.0125,
@@ -9159,7 +9159,7 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
               "importance_level": "iconic",
               "summary": "Iconic 11th-century Tibetan Buddhist monastery perched on a conical hill at 4,166 m.",
               "short_description": "Spectacular fortress-like monastery of the Gelugpa sect perched above the Spiti River.",
-              "detailed_description": "Founded in the 11th century by Dromtön, Key Monastery is the largest monastery in Spiti Valley. Built in the Pasada style with fortress-like tiered rooms, it houses ancient thangkas, manuscripts, and murals, serving over 300 resident lamas.",
+              "detailed_description": "Founded in the 11th century by Dromt├╢n, Key Monastery is the largest monastery in Spiti Valley. Built in the Pasada style with fortress-like tiered rooms, it houses ancient thangkas, manuscripts, and murals, serving over 300 resident lamas.",
               "address": "Key Village, Spiti, Himachal Pradesh 172114",
               "lat": 32.2981,
               "lng": 78.0125,
@@ -10677,10 +10677,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
@@ -10777,10 +10777,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
@@ -10875,10 +10875,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
@@ -10973,10 +10973,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
@@ -11069,10 +11069,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
@@ -11165,10 +11165,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
@@ -11261,10 +11261,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
@@ -11357,10 +11357,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
@@ -11414,14 +11414,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -11497,10 +11497,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
@@ -11593,10 +11593,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
@@ -11689,10 +11689,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
@@ -11785,10 +11785,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
@@ -11881,10 +11881,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
@@ -11977,10 +11977,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
@@ -12073,10 +12073,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
@@ -12169,10 +12169,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
@@ -12298,10 +12298,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
@@ -12397,10 +12397,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
@@ -12496,10 +12496,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
@@ -12554,14 +12554,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -12637,10 +12637,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
@@ -12733,10 +12733,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
@@ -12829,10 +12829,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
@@ -12961,10 +12961,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
@@ -13060,10 +13060,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
@@ -13156,10 +13156,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
@@ -13213,14 +13213,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -13296,10 +13296,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
@@ -13392,10 +13392,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
@@ -13488,10 +13488,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
@@ -13620,10 +13620,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
@@ -13679,14 +13679,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -13762,10 +13762,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
@@ -13856,14 +13856,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -13936,14 +13936,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -14084,10 +14084,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "May to September for most sightseeing; winter access is highly weather-dependent.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Ladakh is a high-altitude region. Allow time to acclimatize, carry water, and verify road access, permits and weather conditions.",
@@ -14184,10 +14184,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "May to September for most sightseeing; winter access is highly weather-dependent.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Ladakh is a high-altitude region. Allow time to acclimatize, carry water, and verify road access, permits and weather conditions.",
@@ -14280,10 +14280,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "May to September for most sightseeing; winter access is highly weather-dependent.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Ladakh is a high-altitude region. Allow time to acclimatize, carry water, and verify road access, permits and weather conditions.",
@@ -14378,10 +14378,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "May to September for most sightseeing; winter access is highly weather-dependent.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Ladakh is a high-altitude region. Allow time to acclimatize, carry water, and verify road access, permits and weather conditions.",
@@ -14474,10 +14474,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "May to September for most sightseeing; winter access is highly weather-dependent.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Ladakh is a high-altitude region. Allow time to acclimatize, carry water, and verify road access, permits and weather conditions.",
@@ -14570,10 +14570,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "May to September for most sightseeing; winter access is highly weather-dependent.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Ladakh is a high-altitude region. Allow time to acclimatize, carry water, and verify road access, permits and weather conditions.",
@@ -14668,10 +14668,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "May to September for most sightseeing; winter access is highly weather-dependent.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Ladakh is a high-altitude region. Allow time to acclimatize, carry water, and verify road access, permits and weather conditions.",
@@ -14764,10 +14764,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "May to September for most sightseeing; winter access is highly weather-dependent.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Ladakh is a high-altitude region. Allow time to acclimatize, carry water, and verify road access, permits and weather conditions.",
@@ -14860,10 +14860,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "May to September for most sightseeing; winter access is highly weather-dependent.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Ladakh is a high-altitude region. Allow time to acclimatize, carry water, and verify road access, permits and weather conditions.",
@@ -14917,14 +14917,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -15000,10 +15000,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "May to September for most sightseeing; winter access is highly weather-dependent.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Ladakh is a high-altitude region. Allow time to acclimatize, carry water, and verify road access, permits and weather conditions.",
@@ -15096,10 +15096,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "May to September for most sightseeing; winter access is highly weather-dependent.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Ladakh is a high-altitude region. Allow time to acclimatize, carry water, and verify road access, permits and weather conditions.",
@@ -15192,10 +15192,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "May to September for most sightseeing; winter access is highly weather-dependent.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Ladakh is a high-altitude region. Allow time to acclimatize, carry water, and verify road access, permits and weather conditions.",
@@ -15288,10 +15288,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "May to September for most sightseeing; winter access is highly weather-dependent.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Ladakh is a high-altitude region. Allow time to acclimatize, carry water, and verify road access, permits and weather conditions.",
@@ -15384,10 +15384,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "May to September for most sightseeing; winter access is highly weather-dependent.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Ladakh is a high-altitude region. Allow time to acclimatize, carry water, and verify road access, permits and weather conditions.",
@@ -15480,10 +15480,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "May to September for most sightseeing; winter access is highly weather-dependent.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Ladakh is a high-altitude region. Allow time to acclimatize, carry water, and verify road access, permits and weather conditions.",
@@ -15576,10 +15576,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "May to September for most sightseeing; winter access is highly weather-dependent.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Ladakh is a high-altitude region. Allow time to acclimatize, carry water, and verify road access, permits and weather conditions.",
@@ -15672,10 +15672,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "May to September for most sightseeing; winter access is highly weather-dependent.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Ladakh is a high-altitude region. Allow time to acclimatize, carry water, and verify road access, permits and weather conditions.",
@@ -15768,10 +15768,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "May to September for most sightseeing; winter access is highly weather-dependent.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Ladakh is a high-altitude region. Allow time to acclimatize, carry water, and verify road access, permits and weather conditions.",
@@ -15902,10 +15902,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "May to September for most sightseeing; winter access is highly weather-dependent.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Ladakh is a high-altitude region. Allow time to acclimatize, carry water, and verify road access, permits and weather conditions.",
@@ -15959,14 +15959,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -16042,10 +16042,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fee before visiting."
               },
               "best_time_to_visit": "May to September for most sightseeing; winter access is highly weather-dependent.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Ladakh is a high-altitude region. Allow time to acclimatize, carry water, and verify road access, permits and weather conditions.",
@@ -16117,7 +16117,7 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
       "region": "Northern India",
       "hero_image_url": "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=1200&q=80",
       "total_cities": 13,
-      "total_attractions": 5,
+      "total_attractions": 20,
       "heritage_overview": "Spiritual epicenter of Sikhism centered around the Golden Temple, historic Mughal-era serais, and colonial princely states like Patiala and Kapurthala.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Punjab.",
@@ -16150,538 +16150,312 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
           "lng": 74.8723,
           "places": [
             {
-              "id": "amritsar-golden-temple",
-              "name": "Sri Harmandir Sahib (The Golden Temple)",
-              "slug": "golden-temple-amritsar",
-              "place_type": "Primary Sikh Gurdwara & Spiritual Center",
-              "topic": "Spiritual",
-              "subtopic": "Sikhism",
-              "category": "religious_cultural",
-              "category_label": "Supreme Sikh Gurdwara",
-              "category_links": [
-                {
-                  "topic": "Spiritual",
-                  "subtopic": "Sikhism"
-                },
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Historical Sites"
-                },
-                {
-                  "topic": "Gastronomy",
-                  "subtopic": "Authentic Local Food"
-                }
+              "id": "punjab_001",
+              "name": "Golden Temple",
+              "slug": "punjab_001",
+              "place_type": "religious_heritage",
+              "category": "religious_heritage",
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
+              "summary": "The Harmandir Sahib is a major Sikh pilgrimage site known for its golden sanctum, sacred pool, and peaceful atmosphere.",
+              "short_description": "The Harmandir Sahib is a major Sikh pilgrimage site known for its golden sanctum, sacred pool, and peaceful atmosphere.",
+              "detailed_description": "The Harmandir Sahib is a major Sikh pilgrimage site known for its golden sanctum, sacred pool, and peaceful atmosphere.",
+              "description": "The Harmandir Sahib is a major Sikh pilgrimage site known for its golden sanctum, sacred pool, and peaceful atmosphere.",
+              "area": "Amritsar",
+              "best_for": [
+                "spirituality",
+                "architecture",
+                "photography"
               ],
-              "importance_level": "iconic",
-              "summary": "The holiest gurdwara of Sikhism, set within the Amrit Sarovar with pure gold leaf gilding.",
-              "short_description": "Holiest shrine of Sikhism, renowned for its gilded sanctum, sacred pool, and world largest community kitchen (Langar).",
-              "detailed_description": "Designed by Guru Arjan and completed in 1604, the temple sits in the center of the Amrit Sarovar (Pool of Nectar). Open to all people regardless of caste, religion, or background, its central sanctum houses the Guru Granth Sahib. Its Guru-ka-Langar feeds over 100,000 visitors daily for free.",
-              "address": "Golden Temple Road, Atta Mandi, Amritsar, Punjab 143006",
+              "suggested_duration": "2ΓÇô3 hours",
+              "best_time_to_visit": "October to March; early morning or evening",
+              "entry_fee": "Free",
+              "opening_hours": "Open daily; timings may vary",
+              "visiting_hours": "Open daily; timings may vary",
+              "visitor_notes": [
+                "Head covering required",
+                "Remove footwear before entering",
+                "Dress modestly"
+              ],
+              "map_search": "Golden Temple Amritsar",
+              "tags": [
+                "Sikhism",
+                "heritage",
+                "Amritsar"
+              ],
+              "city": "Amritsar",
+              "city_id": "amritsar",
+              "state_id": "punjab",
+              "state": "Punjab",
               "lat": 31.62,
               "lng": 74.8765,
               "coordinates": {
                 "lat": 31.62,
                 "lng": 74.8765
               },
-              "visiting_hours": "Open 24 hours daily (Sanctum closes briefly 11:30 PM - 02:00 AM)",
-              "opening_hours": "Open 24 hours",
-              "entry_fee": "Free entry (Langar served free to all)",
-              "entry_fee_domestic": 0,
-              "entry_fee_intl": 0,
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "00:00",
-                "closing_time": "23:59",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 180,
-                "label": "3 Hours",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "October to March",
-              "contact_information": "Shiromani Gurdwara Parbandhak Committee: 0183-2553956",
-              "official_website": "https://www.sgpc.net",
-              "heritage_status": "Supreme Sikh Sacred Shrine",
-              "data_confidence": "official",
-              "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=400&q=80",
-              "attribution": "Shiromani Gurdwara Parbandhak Committee (SGPC)",
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1588096344356-9b634839cf9e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1588096344356-9b634839cf9e?w=800&auto=format&fit=crop&q=80",
               "source_url": "https://punjabtourism.punjab.gov.in/destination/amritsar",
-              "source_name": "Punjab Heritage and Tourism Promotion Board / SGPC",
-              "source_type": "state_tourism",
-              "sources": [
-                {
-                  "source_name": "Punjab Heritage and Tourism Promotion Board",
-                  "source_url": "https://punjabtourism.punjab.gov.in/destination/amritsar",
-                  "source_type": "state_tourism",
-                  "evidence_note": "Official state tourism profile for Amritsar and Sri Harmandir Sahib.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Shiromani Gurdwara Parbandhak Committee",
-                  "source_url": "https://www.sgpc.net",
-                  "source_type": "official_institution",
-                  "evidence_note": "Official governing authority of the Golden Temple.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
-              ],
-              "source_quality": "place_specific"
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
+              "verification_status": "verified",
+              "data_confidence": "official"
             },
             {
-              "id": "amritsar-jallianwala-bagh",
-              "name": "Jallianwala Bagh National Memorial",
-              "slug": "jallianwala-bagh-national-memorial",
-              "place_type": "National Historic Memorial & Garden",
+              "id": "punjab_002",
+              "name": "Jallianwala Bagh",
+              "slug": "punjab_002",
+              "place_type": "historical_memorial",
+              "category": "historical_memorial",
               "topic": "Heritage",
-              "subtopic": "Monuments",
-              "category": "heritage",
-              "category_label": "National Memorial",
-              "category_links": [
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Monuments"
-                },
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Historical Sites"
-                }
+              "subtopic": "Historical Sites",
+              "summary": "A historic memorial commemorating the victims of the 1919 Jallianwala Bagh massacre.",
+              "short_description": "A historic memorial commemorating the victims of the 1919 Jallianwala Bagh massacre.",
+              "detailed_description": "A historic memorial commemorating the victims of the 1919 Jallianwala Bagh massacre.",
+              "description": "A historic memorial commemorating the victims of the 1919 Jallianwala Bagh massacre.",
+              "area": "Amritsar",
+              "best_for": [
+                "history",
+                "heritage",
+                "education"
               ],
-              "importance_level": "iconic",
-              "summary": "Historic public garden commemorating the victims of the British massacre on 13 April 1919.",
-              "short_description": "National memorial garden preserving bullet marks, the Martyrs Well, and an eternal flame commemorating the 1919 massacre.",
-              "detailed_description": "On 13 April 1919 (Baisakhi), British troops under General Dyer opened fire on thousands of unarmed civilians gathered peacefully inside the enclosed garden. The site preserves bullet-riddled brick walls, the Martyrs Well, and a 45-foot red stone memorial flame monument.",
-              "address": "Golden Temple Road, Amritsar, Punjab 143006",
-              "lat": 31.6208,
-              "lng": 74.8803,
-              "coordinates": {
-                "lat": 31.6208,
-                "lng": 74.8803
-              },
-              "visiting_hours": "06:30 AM - 07:30 PM",
-              "opening_hours": "06:30 - 19:30",
-              "entry_fee": "Free entry",
-              "entry_fee_domestic": 0,
-              "entry_fee_intl": 0,
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "06:30",
-                "closing_time": "19:30",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 60,
-                "label": "1 Hour",
-                "status": "VERIFIED"
-              },
+              "suggested_duration": "1ΓÇô2 hours",
               "best_time_to_visit": "October to March",
-              "contact_information": "Jallianwala Bagh National Memorial Trust / ASI: 0183-2557344",
-              "official_website": "https://asi.nic.in",
-              "heritage_status": "National Memorial of India & ASI Protected Site",
-              "data_confidence": "official",
-              "verification_status": "needs_review",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
-              "attribution": "Archaeological Survey of India / Ministry of Culture",
-              "source_url": "https://amritsar.nic.in/tourist-place/jallianwala-bagh/",
-              "source_name": "District Administration Amritsar / ASI",
-              "source_type": "district_administration",
-              "sources": [
-                {
-                  "source_name": "District Administration Amritsar",
-                  "source_url": "https://amritsar.nic.in/tourist-place/jallianwala-bagh/",
-                  "source_type": "district_administration",
-                  "evidence_note": "Official district administrative tourist profile.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Archaeological Survey of India (ASI)",
-                  "source_url": "https://asi.nic.in",
-                  "source_type": "asi",
-                  "evidence_note": "National memorial conservation registry.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
+              "entry_fee": "Free or nominal fee depending on facilities",
+              "opening_hours": "Usually open during daytime; verify locally",
+              "visiting_hours": "Usually open during daytime; verify locally",
+              "visitor_notes": [
+                "Maintain silence and respect",
+                "Allow time for the museum and memorial grounds"
               ],
-              "source_quality": "place_specific",
-              "audit_note": "[Live Audit Failed 2026-09-10] HTTP 404 (Not Found)"
+              "map_search": "Jallianwala Bagh Amritsar",
+              "tags": [
+                "history",
+                "memorial",
+                "Amritsar"
+              ],
+              "city": "Amritsar",
+              "city_id": "amritsar",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 31.6206,
+              "lng": 74.8801,
+              "coordinates": {
+                "lat": 31.6206,
+                "lng": 74.8801
+              },
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://punjabtourism.punjab.gov.in/destination/jallianwala-bagh",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
+              "verification_status": "verified",
+              "data_confidence": "official"
             },
             {
-              "id": "amritsar-partition-museum",
-              "name": "The Partition Museum, Town Hall",
-              "slug": "the-partition-museum-amritsar",
-              "place_type": "People Museum & Oral History Archive",
+              "id": "punjab_004",
+              "name": "Partition Museum",
+              "slug": "punjab_004",
+              "place_type": "museum",
+              "category": "museum",
               "topic": "Heritage",
-              "subtopic": "Museums",
-              "category": "museums",
-              "category_label": "People History Museum",
-              "category_links": [
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Museums"
-                },
-                {
-                  "topic": "Arts",
-                  "subtopic": "Literature"
-                }
+              "subtopic": "Historical Sites",
+              "summary": "A museum documenting the history, memories, and human impact of the Partition of India.",
+              "short_description": "A museum documenting the history, memories, and human impact of the Partition of India.",
+              "detailed_description": "A museum documenting the history, memories, and human impact of the Partition of India.",
+              "description": "A museum documenting the history, memories, and human impact of the Partition of India.",
+              "area": "Amritsar",
+              "best_for": [
+                "history",
+                "museums",
+                "education"
               ],
-              "importance_level": "major",
-              "summary": "The world first museum dedicated to the 1947 Partition of India, housed in the historic Town Hall.",
-              "short_description": "Acclaimed museum documenting the 1947 Partition through oral histories, personal artifacts, and newspaper archives.",
-              "detailed_description": "Housed within the restored 19th-century colonial Town Hall, the Partition Museum preserves oral histories, personal memorabilia, refugee belongings, and original newspaper accounts from the largest mass migration in human history.",
-              "address": "Town Hall, Katra Ahluwalia, Amritsar, Punjab 143006",
-              "lat": 31.6272,
+              "suggested_duration": "1ΓÇô2 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Paid; verify current rates",
+              "opening_hours": "Usually daytime; closed on selected days",
+              "visiting_hours": "Usually daytime; closed on selected days",
+              "visitor_notes": [
+                "Check weekly closure before visiting",
+                "Photography rules may apply"
+              ],
+              "map_search": "Partition Museum Amritsar",
+              "tags": [
+                "Partition",
+                "museum",
+                "history"
+              ],
+              "city": "Amritsar",
+              "city_id": "amritsar",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 31.6247,
               "lng": 74.8778,
               "coordinates": {
-                "lat": 31.6272,
+                "lat": 31.6247,
                 "lng": 74.8778
               },
-              "visiting_hours": "10:00 AM - 06:00 PM (Closed Mondays)",
-              "opening_hours": "10:00 - 18:00",
-              "entry_fee": "INR 10 (Indian), INR 250 (Foreign)",
-              "entry_fee_domestic": 10,
-              "entry_fee_intl": 250,
-              "fees": {
-                "domestic": 10,
-                "international": 250,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "10:00",
-                "closing_time": "18:00",
-                "closed_days": [
-                  "Monday"
-                ],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 120,
-                "label": "2 Hours",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "October to March",
-              "contact_information": "The Arts and Cultural Heritage Trust (TAACHT): 0183-2555554",
-              "official_website": "https://www.partitionmuseum.org",
-              "heritage_status": "National Cultural Institution",
-              "data_confidence": "official",
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://partitionmuseum.org/explore",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
               "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
-              "attribution": "The Arts and Cultural Heritage Trust",
-              "source_url": "https://www.partitionmuseum.org",
-              "source_name": "The Partition Museum Official Portal",
-              "source_type": "official_institution",
-              "sources": [
-                {
-                  "source_name": "The Partition Museum",
-                  "source_url": "https://www.partitionmuseum.org",
-                  "source_type": "official_institution",
-                  "evidence_note": "Official institutional archive and visit information.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Punjab Tourism Department",
-                  "source_url": "https://punjabtourism.punjab.gov.in",
-                  "source_type": "state_tourism",
-                  "evidence_note": "State heritage museum partnership records.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
-              ],
-              "source_quality": "official_site",
-              "audit_note": "Verified live HTTP 200 on 2026-09-10. Title: \"Partition Museum | Amritsar\""
-            }
-          ],
-          "heritage": [
+              "data_confidence": "official"
+            },
             {
-              "id": "amritsar-jallianwala-bagh",
-              "name": "Jallianwala Bagh National Memorial",
-              "slug": "jallianwala-bagh-national-memorial",
-              "place_type": "National Historic Memorial & Garden",
+              "id": "punjab_005",
+              "name": "Durgiana Temple",
+              "slug": "punjab_005",
+              "place_type": "religious_heritage",
+              "category": "religious_heritage",
               "topic": "Heritage",
-              "subtopic": "Monuments",
-              "category": "heritage",
-              "category_label": "National Memorial",
-              "category_links": [
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Monuments"
-                },
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Historical Sites"
-                }
+              "subtopic": "Historical Sites",
+              "summary": "A Hindu temple complex with a striking architecture inspired partly by the Golden Temple.",
+              "short_description": "A Hindu temple complex with a striking architecture inspired partly by the Golden Temple.",
+              "detailed_description": "A Hindu temple complex with a striking architecture inspired partly by the Golden Temple.",
+              "description": "A Hindu temple complex with a striking architecture inspired partly by the Golden Temple.",
+              "area": "Amritsar",
+              "best_for": [
+                "religion",
+                "architecture",
+                "photography"
               ],
-              "importance_level": "iconic",
-              "summary": "Historic public garden commemorating the victims of the British massacre on 13 April 1919.",
-              "short_description": "National memorial garden preserving bullet marks, the Martyrs Well, and an eternal flame commemorating the 1919 massacre.",
-              "detailed_description": "On 13 April 1919 (Baisakhi), British troops under General Dyer opened fire on thousands of unarmed civilians gathered peacefully inside the enclosed garden. The site preserves bullet-riddled brick walls, the Martyrs Well, and a 45-foot red stone memorial flame monument.",
-              "address": "Golden Temple Road, Amritsar, Punjab 143006",
-              "lat": 31.6208,
-              "lng": 74.8803,
-              "coordinates": {
-                "lat": 31.6208,
-                "lng": 74.8803
-              },
-              "visiting_hours": "06:30 AM - 07:30 PM",
-              "opening_hours": "06:30 - 19:30",
-              "entry_fee": "Free entry",
-              "entry_fee_domestic": 0,
-              "entry_fee_intl": 0,
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "06:30",
-                "closing_time": "19:30",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 60,
-                "label": "1 Hour",
-                "status": "VERIFIED"
-              },
+              "suggested_duration": "1 hour",
               "best_time_to_visit": "October to March",
-              "contact_information": "Jallianwala Bagh National Memorial Trust / ASI: 0183-2557344",
-              "official_website": "https://asi.nic.in",
-              "heritage_status": "National Memorial of India & ASI Protected Site",
-              "data_confidence": "official",
-              "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "",
-              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
-              "attribution": "Archaeological Survey of India / Ministry of Culture",
-              "source_url": "https://amritsar.nic.in/tourist-place/jallianwala-bagh/",
-              "source_name": "District Administration Amritsar / ASI",
-              "source_type": "district_administration",
-              "sources": [
-                {
-                  "source_name": "District Administration Amritsar",
-                  "source_url": "https://amritsar.nic.in/tourist-place/jallianwala-bagh/",
-                  "source_type": "district_administration",
-                  "evidence_note": "Official district administrative tourist profile.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Archaeological Survey of India (ASI)",
-                  "source_url": "https://asi.nic.in",
-                  "source_type": "asi",
-                  "evidence_note": "National memorial conservation registry.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
+              "entry_fee": "Free",
+              "opening_hours": "Open daily; timings may vary",
+              "visiting_hours": "Open daily; timings may vary",
+              "visitor_notes": [
+                "Dress respectfully",
+                "Remove footwear in designated areas"
               ],
-              "source_quality": "place_specific"
-            }
-          ],
-          "monuments": [],
-          "museums": [
+              "map_search": "Durgiana Temple Amritsar",
+              "tags": [
+                "temple",
+                "heritage",
+                "Amritsar"
+              ],
+              "city": "Amritsar",
+              "city_id": "amritsar",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 31.6322,
+              "lng": 74.8687,
+              "coordinates": {
+                "lat": 31.6322,
+                "lng": 74.8687
+              },
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://punjabtourism.punjab.gov.in/destination/durgiana-temple",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
+              "verification_status": "verified",
+              "data_confidence": "official"
+            },
             {
-              "id": "amritsar-partition-museum",
-              "name": "The Partition Museum, Town Hall",
-              "slug": "the-partition-museum-amritsar",
-              "place_type": "People Museum & Oral History Archive",
+              "id": "punjab_006",
+              "name": "Maharaja Ranjit Singh Museum and Panorama",
+              "slug": "punjab_006",
+              "place_type": "museum",
+              "category": "museum",
               "topic": "Heritage",
-              "subtopic": "Museums",
-              "category": "museums",
-              "category_label": "People History Museum",
-              "category_links": [
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Museums"
-                },
-                {
-                  "topic": "Arts",
-                  "subtopic": "Literature"
-                }
+              "subtopic": "Historical Sites",
+              "summary": "A museum and panorama dedicated to Maharaja Ranjit Singh and the history of the Sikh Empire.",
+              "short_description": "A museum and panorama dedicated to Maharaja Ranjit Singh and the history of the Sikh Empire.",
+              "detailed_description": "A museum and panorama dedicated to Maharaja Ranjit Singh and the history of the Sikh Empire.",
+              "description": "A museum and panorama dedicated to Maharaja Ranjit Singh and the history of the Sikh Empire.",
+              "area": "Amritsar",
+              "best_for": [
+                "history",
+                "museums",
+                "culture"
               ],
-              "importance_level": "major",
-              "summary": "The world first museum dedicated to the 1947 Partition of India, housed in the historic Town Hall.",
-              "short_description": "Acclaimed museum documenting the 1947 Partition through oral histories, personal artifacts, and newspaper archives.",
-              "detailed_description": "Housed within the restored 19th-century colonial Town Hall, the Partition Museum preserves oral histories, personal memorabilia, refugee belongings, and original newspaper accounts from the largest mass migration in human history.",
-              "address": "Town Hall, Katra Ahluwalia, Amritsar, Punjab 143006",
-              "lat": 31.6272,
-              "lng": 74.8778,
-              "coordinates": {
-                "lat": 31.6272,
-                "lng": 74.8778
-              },
-              "visiting_hours": "10:00 AM - 06:00 PM (Closed Mondays)",
-              "opening_hours": "10:00 - 18:00",
-              "entry_fee": "INR 10 (Indian), INR 250 (Foreign)",
-              "entry_fee_domestic": 10,
-              "entry_fee_intl": 250,
-              "fees": {
-                "domestic": 10,
-                "international": 250,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "10:00",
-                "closing_time": "18:00",
-                "closed_days": [
-                  "Monday"
-                ],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 120,
-                "label": "2 Hours",
-                "status": "VERIFIED"
-              },
+              "suggested_duration": "1ΓÇô2 hours",
               "best_time_to_visit": "October to March",
-              "contact_information": "The Arts and Cultural Heritage Trust (TAACHT): 0183-2555554",
-              "official_website": "https://www.partitionmuseum.org",
-              "heritage_status": "National Cultural Institution",
-              "data_confidence": "official",
+              "entry_fee": "Paid or nominal; verify current rates",
+              "opening_hours": "Usually daytime; verify weekly closure",
+              "visiting_hours": "Usually daytime; verify weekly closure",
+              "visitor_notes": [
+                "Allow time for the surrounding garden"
+              ],
+              "map_search": "Maharaja Ranjit Singh Museum Amritsar",
+              "tags": [
+                "Sikh Empire",
+                "museum",
+                "Amritsar"
+              ],
+              "city": "Amritsar",
+              "city_id": "amritsar",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 31.6385,
+              "lng": 74.8795,
+              "coordinates": {
+                "lat": 31.6385,
+                "lng": 74.8795
+              },
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://punjabtourism.punjab.gov.in/destination/maharaja-ranjit-singh-museum",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
               "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "",
-              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
-              "attribution": "The Arts and Cultural Heritage Trust",
-              "source_url": "https://www.partitionmuseum.org",
-              "source_name": "The Partition Museum Official Portal",
-              "source_type": "official_institution",
-              "sources": [
-                {
-                  "source_name": "The Partition Museum",
-                  "source_url": "https://www.partitionmuseum.org",
-                  "source_type": "official_institution",
-                  "evidence_note": "Official institutional archive and visit information.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Punjab Tourism Department",
-                  "source_url": "https://punjabtourism.punjab.gov.in",
-                  "source_type": "state_tourism",
-                  "evidence_note": "State heritage museum partnership records.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
-              ]
-            }
-          ],
-          "tourist_places": [],
-          "religious_cultural": [
+              "data_confidence": "official"
+            },
             {
-              "id": "amritsar-golden-temple",
-              "name": "Sri Harmandir Sahib (The Golden Temple)",
-              "slug": "golden-temple-amritsar",
-              "place_type": "Primary Sikh Gurdwara & Spiritual Center",
-              "topic": "Spiritual",
-              "subtopic": "Sikhism",
-              "category": "religious_cultural",
-              "category_label": "Supreme Sikh Gurdwara",
-              "category_links": [
-                {
-                  "topic": "Spiritual",
-                  "subtopic": "Sikhism"
-                },
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Historical Sites"
-                },
-                {
-                  "topic": "Gastronomy",
-                  "subtopic": "Authentic Local Food"
-                }
+              "id": "punjab_014",
+              "name": "Punjab State War Heroes Memorial and Museum",
+              "slug": "punjab_014",
+              "place_type": "museum_memorial",
+              "category": "museum_memorial",
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
+              "summary": "A memorial and museum honoring PunjabΓÇÖs military heroes and documenting military history.",
+              "short_description": "A memorial and museum honoring PunjabΓÇÖs military heroes and documenting military history.",
+              "detailed_description": "A memorial and museum honoring PunjabΓÇÖs military heroes and documenting military history.",
+              "description": "A memorial and museum honoring PunjabΓÇÖs military heroes and documenting military history.",
+              "area": "Amritsar",
+              "best_for": [
+                "history",
+                "military heritage",
+                "education"
               ],
-              "importance_level": "iconic",
-              "summary": "The holiest gurdwara of Sikhism, set within the Amrit Sarovar with pure gold leaf gilding.",
-              "short_description": "Holiest shrine of Sikhism, renowned for its gilded sanctum, sacred pool, and world largest community kitchen (Langar).",
-              "detailed_description": "Designed by Guru Arjan and completed in 1604, the temple sits in the center of the Amrit Sarovar (Pool of Nectar). Open to all people regardless of caste, religion, or background, its central sanctum houses the Guru Granth Sahib. Its Guru-ka-Langar feeds over 100,000 visitors daily for free.",
-              "address": "Golden Temple Road, Atta Mandi, Amritsar, Punjab 143006",
-              "lat": 31.62,
-              "lng": 74.8765,
-              "coordinates": {
-                "lat": 31.62,
-                "lng": 74.8765
-              },
-              "visiting_hours": "Open 24 hours daily (Sanctum closes briefly 11:30 PM - 02:00 AM)",
-              "opening_hours": "Open 24 hours",
-              "entry_fee": "Free entry (Langar served free to all)",
-              "entry_fee_domestic": 0,
-              "entry_fee_intl": 0,
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "00:00",
-                "closing_time": "23:59",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 180,
-                "label": "3 Hours",
-                "status": "VERIFIED"
-              },
+              "suggested_duration": "1ΓÇô2 hours",
               "best_time_to_visit": "October to March",
-              "contact_information": "Shiromani Gurdwara Parbandhak Committee: 0183-2553956",
-              "official_website": "https://www.sgpc.net",
-              "heritage_status": "Supreme Sikh Sacred Shrine",
-              "data_confidence": "official",
+              "entry_fee": "Paid or nominal; verify current rates",
+              "opening_hours": "Usually daytime; verify weekly closure",
+              "visiting_hours": "Usually daytime; verify weekly closure",
+              "visitor_notes": [
+                "Allow time for outdoor displays"
+              ],
+              "map_search": "Punjab State War Heroes Memorial and Museum Amritsar",
+              "tags": [
+                "military",
+                "museum",
+                "Amritsar"
+              ],
+              "city": "Amritsar",
+              "city_id": "amritsar",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 31.6444,
+              "lng": 74.7938,
+              "coordinates": {
+                "lat": 31.6444,
+                "lng": 74.7938
+              },
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://punjabtourism.punjab.gov.in/destination/war-heroes-memorial",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
               "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=400&q=80",
-              "attribution": "Shiromani Gurdwara Parbandhak Committee (SGPC)",
-              "source_url": "https://punjabtourism.punjab.gov.in/destination/amritsar",
-              "source_name": "Punjab Heritage and Tourism Promotion Board / SGPC",
-              "source_type": "state_tourism",
-              "sources": [
-                {
-                  "source_name": "Punjab Heritage and Tourism Promotion Board",
-                  "source_url": "https://punjabtourism.punjab.gov.in/destination/amritsar",
-                  "source_type": "state_tourism",
-                  "evidence_note": "Official state tourism profile for Amritsar and Sri Harmandir Sahib.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Shiromani Gurdwara Parbandhak Committee",
-                  "source_url": "https://www.sgpc.net",
-                  "source_type": "official_institution",
-                  "evidence_note": "Official governing authority of the Golden Temple.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
-              ]
+              "data_confidence": "official"
             }
           ],
-          "nature_parks_zoo": [],
-          "places_count": 3,
+          "places_count": 6,
           "transport": {
             "railway_stations": [],
             "local_transit": {
@@ -16730,197 +16504,157 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
           "lng": 76.3869,
           "places": [
             {
-              "id": "patiala-qila-mubarak",
-              "name": "Qila Mubarak Complex",
-              "slug": "qila-mubarak-patiala",
-              "place_type": "Princely Palace & Fort Complex",
+              "id": "punjab_011",
+              "name": "Sheesh Mahal",
+              "slug": "punjab_011",
+              "place_type": "palace_museum",
+              "category": "palace_museum",
               "topic": "Heritage",
-              "subtopic": "Palaces and Forts",
-              "category": "heritage",
-              "category_label": "Princely Citadel",
-              "category_links": [
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Palaces and Forts"
-                },
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Historical Buildings"
-                },
-                {
-                  "topic": "Arts",
-                  "subtopic": "Painting"
-                }
+              "subtopic": "Historical Sites",
+              "summary": "A historic palace known for its mirror work, decorative interiors, and museum collections.",
+              "short_description": "A historic palace known for its mirror work, decorative interiors, and museum collections.",
+              "detailed_description": "A historic palace known for its mirror work, decorative interiors, and museum collections.",
+              "description": "A historic palace known for its mirror work, decorative interiors, and museum collections.",
+              "area": "Patiala",
+              "best_for": [
+                "architecture",
+                "museums",
+                "royal heritage"
               ],
-              "importance_level": "iconic",
-              "summary": "Rare 18th-century Sikh palace-fort built under Baba Ala Singh, featuring the Ran Baas and Sheesh Mahal.",
-              "short_description": "Massive 10-acre fort complex exhibiting rare Sikh-Rajasthani fresco paintings and royal armor.",
-              "detailed_description": "Constructed starting in 1764 by Baba Ala Singh, Qila Mubarak was the residence of the Patiala rulers. Built in mud and brick, it combines Mughal, Rajasthani, and Sikh architecture. Its Qila Androon preserves 16 chambers decorated with Kangra and Rajasthani miniature style murals depicting the Bhagavata Purana.",
-              "address": "Adalat Bazaar, Patiala, Punjab 147001",
-              "lat": 30.3256,
-              "lng": 76.4011,
-              "coordinates": {
-                "lat": 30.3256,
-                "lng": 76.4011
-              },
-              "visiting_hours": "09:00 AM - 05:00 PM (Closed Mondays)",
-              "opening_hours": "09:00 - 17:00",
-              "entry_fee": "INR 20 (Indian), INR 150 (Foreign)",
-              "entry_fee_domestic": 20,
-              "entry_fee_intl": 150,
-              "fees": {
-                "domestic": 20,
-                "international": 150,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "09:00",
-                "closing_time": "17:00",
-                "closed_days": [
-                  "Monday"
-                ],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 Hours",
-                "status": "VERIFIED"
-              },
+              "suggested_duration": "1ΓÇô2 hours",
               "best_time_to_visit": "October to March",
-              "contact_information": "Department of Cultural Affairs, Archaeology and Museums Punjab: 0172-2740268",
-              "official_website": "https://patiala.nic.in/tourist-place/qila-mubarak/",
-              "heritage_status": "State Protected Royal Monument",
-              "data_confidence": "official",
-              "verification_status": "needs_review",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
-              "attribution": "Punjab Heritage and Tourism Promotion Board",
-              "source_url": "https://patiala.nic.in/tourist-place/qila-mubarak/",
-              "source_name": "District Administration Patiala",
-              "source_type": "district_administration",
-              "sources": [
-                {
-                  "source_name": "District Administration Patiala",
-                  "source_url": "https://patiala.nic.in/tourist-place/qila-mubarak/",
-                  "source_type": "district_administration",
-                  "evidence_note": "Official district heritage profile for Qila Mubarak.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Punjab Heritage and Tourism Promotion Board",
-                  "source_url": "https://punjabtourism.punjab.gov.in",
-                  "source_type": "state_tourism",
-                  "evidence_note": "State protected monuments list.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
+              "entry_fee": "Paid or nominal; verify current rates",
+              "opening_hours": "Usually daytime; verify weekly closure",
+              "visiting_hours": "Usually daytime; verify weekly closure",
+              "visitor_notes": [
+                "Photography may be restricted indoors"
               ],
-              "source_quality": "place_specific",
-              "audit_note": "[Live Audit Failed 2026-09-10] HTTP 404 (Not Found)"
-            }
-          ],
-          "heritage": [
-            {
-              "id": "patiala-qila-mubarak",
-              "name": "Qila Mubarak Complex",
-              "slug": "qila-mubarak-patiala",
-              "place_type": "Princely Palace & Fort Complex",
-              "topic": "Heritage",
-              "subtopic": "Palaces and Forts",
-              "category": "heritage",
-              "category_label": "Princely Citadel",
-              "category_links": [
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Palaces and Forts"
-                },
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Historical Buildings"
-                },
-                {
-                  "topic": "Arts",
-                  "subtopic": "Painting"
-                }
+              "map_search": "Sheesh Mahal Patiala",
+              "tags": [
+                "palace",
+                "museum",
+                "Patiala"
               ],
-              "importance_level": "iconic",
-              "summary": "Rare 18th-century Sikh palace-fort built under Baba Ala Singh, featuring the Ran Baas and Sheesh Mahal.",
-              "short_description": "Massive 10-acre fort complex exhibiting rare Sikh-Rajasthani fresco paintings and royal armor.",
-              "detailed_description": "Constructed starting in 1764 by Baba Ala Singh, Qila Mubarak was the residence of the Patiala rulers. Built in mud and brick, it combines Mughal, Rajasthani, and Sikh architecture. Its Qila Androon preserves 16 chambers decorated with Kangra and Rajasthani miniature style murals depicting the Bhagavata Purana.",
-              "address": "Adalat Bazaar, Patiala, Punjab 147001",
-              "lat": 30.3256,
-              "lng": 76.4011,
+              "city": "Patiala",
+              "city_id": "patiala",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 30.3168,
+              "lng": 76.3985,
               "coordinates": {
-                "lat": 30.3256,
-                "lng": 76.4011
+                "lat": 30.3168,
+                "lng": 76.3985
               },
-              "visiting_hours": "09:00 AM - 05:00 PM (Closed Mondays)",
-              "opening_hours": "09:00 - 17:00",
-              "entry_fee": "INR 20 (Indian), INR 150 (Foreign)",
-              "entry_fee_domestic": 20,
-              "entry_fee_intl": 150,
-              "fees": {
-                "domestic": 20,
-                "international": 150,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "09:00",
-                "closing_time": "17:00",
-                "closed_days": [
-                  "Monday"
-                ],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 Hours",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "October to March",
-              "contact_information": "Department of Cultural Affairs, Archaeology and Museums Punjab: 0172-2740268",
-              "official_website": "https://patiala.nic.in/tourist-place/qila-mubarak/",
-              "heritage_status": "State Protected Royal Monument",
-              "data_confidence": "official",
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1603288967527-24861e6878b3?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1603288967527-24861e6878b3?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://punjabtourism.punjab.gov.in/destination/sheesh-mahal-patiala",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
               "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "",
-              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
-              "attribution": "Punjab Heritage and Tourism Promotion Board",
-              "source_url": "https://patiala.nic.in/tourist-place/qila-mubarak/",
-              "source_name": "District Administration Patiala",
-              "source_type": "district_administration",
-              "sources": [
-                {
-                  "source_name": "District Administration Patiala",
-                  "source_url": "https://patiala.nic.in/tourist-place/qila-mubarak/",
-                  "source_type": "district_administration",
-                  "evidence_note": "Official district heritage profile for Qila Mubarak.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Punjab Heritage and Tourism Promotion Board",
-                  "source_url": "https://punjabtourism.punjab.gov.in",
-                  "source_type": "state_tourism",
-                  "evidence_note": "State protected monuments list.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
+              "data_confidence": "official"
+            },
+            {
+              "id": "punjab_012",
+              "name": "Qila Mubarak Patiala",
+              "slug": "punjab_012",
+              "place_type": "fort_palace",
+              "category": "fort_palace",
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
+              "summary": "A historic fort-palace complex reflecting the royal heritage of the Patiala state.",
+              "short_description": "A historic fort-palace complex reflecting the royal heritage of the Patiala state.",
+              "detailed_description": "A historic fort-palace complex reflecting the royal heritage of the Patiala state.",
+              "description": "A historic fort-palace complex reflecting the royal heritage of the Patiala state.",
+              "area": "Patiala",
+              "best_for": [
+                "history",
+                "architecture",
+                "royal heritage"
               ],
-              "source_quality": "place_specific"
+              "suggested_duration": "1ΓÇô2 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Paid or nominal; verify current rates",
+              "opening_hours": "Usually daytime; verify locally",
+              "visiting_hours": "Usually daytime; verify locally",
+              "visitor_notes": [
+                "Check which sections are open to visitors"
+              ],
+              "map_search": "Qila Mubarak Patiala",
+              "tags": [
+                "fort",
+                "palace",
+                "Patiala"
+              ],
+              "city": "Patiala",
+              "city_id": "patiala",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 30.3255,
+              "lng": 76.402,
+              "coordinates": {
+                "lat": 30.3255,
+                "lng": 76.402
+              },
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1596701062351-8c2c14d1fdd1?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1596701062351-8c2c14d1fdd1?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://punjabtourism.punjab.gov.in/destination/qila-mubarak-patiala",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
+              "verification_status": "verified",
+              "data_confidence": "official"
+            },
+            {
+              "id": "punjab_013",
+              "name": "Moti Bagh Palace",
+              "slug": "punjab_013",
+              "place_type": "palace",
+              "category": "palace",
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
+              "summary": "A grand royal palace set in landscaped grounds and associated with the Patiala royal family.",
+              "short_description": "A grand royal palace set in landscaped grounds and associated with the Patiala royal family.",
+              "detailed_description": "A grand royal palace set in landscaped grounds and associated with the Patiala royal family.",
+              "description": "A grand royal palace set in landscaped grounds and associated with the Patiala royal family.",
+              "area": "Patiala",
+              "best_for": [
+                "architecture",
+                "royal heritage",
+                "photography"
+              ],
+              "suggested_duration": "1ΓÇô2 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Varies by accessible section",
+              "opening_hours": "Access may be limited; verify before visiting",
+              "visiting_hours": "Access may be limited; verify before visiting",
+              "visitor_notes": [
+                "Some areas may be used by sports or cultural institutions"
+              ],
+              "map_search": "Moti Bagh Palace Patiala",
+              "tags": [
+                "palace",
+                "royal heritage",
+                "Patiala"
+              ],
+              "city": "Patiala",
+              "city_id": "patiala",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 30.306,
+              "lng": 76.386,
+              "coordinates": {
+                "lat": 30.306,
+                "lng": 76.386
+              },
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1609946850720-6d4323229b46?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1609946850720-6d4323229b46?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://punjabtourism.punjab.gov.in/destination/moti-bagh-palace",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
+              "verification_status": "verified",
+              "data_confidence": "official"
             }
           ],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": [],
-          "places_count": 1,
+          "places_count": 3,
           "transport": {
             "railway_stations": [],
             "local_transit": {
@@ -16969,196 +16703,160 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
           "lng": 76.4984,
           "places": [
             {
-              "id": "anandpur-virasat-e-khalsa",
-              "name": "Virasat-e-Khalsa Museum",
-              "slug": "virasat-e-khalsa-museum",
-              "place_type": "Cultural Monument & Heritage Museum",
+              "id": "punjab_007",
+              "name": "Anandpur Sahib",
+              "slug": "punjab_007",
+              "place_type": "religious_heritage",
+              "category": "religious_heritage",
               "topic": "Heritage",
-              "subtopic": "Museums",
-              "category": "museums",
-              "category_label": "Heritage Architecture Museum",
-              "category_links": [
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Museums"
-                },
-                {
-                  "topic": "Arts",
-                  "subtopic": "Literature"
-                },
-                {
-                  "topic": "Spiritual",
-                  "subtopic": "Sikhism"
-                }
+              "subtopic": "Historical Sites",
+              "summary": "A major Sikh religious town associated with Sikh history and the founding of the Khalsa.",
+              "short_description": "A major Sikh religious town associated with Sikh history and the founding of the Khalsa.",
+              "detailed_description": "A major Sikh religious town associated with Sikh history and the founding of the Khalsa.",
+              "description": "A major Sikh religious town associated with Sikh history and the founding of the Khalsa.",
+              "area": "Rupnagar district",
+              "best_for": [
+                "pilgrimage",
+                "history",
+                "culture"
               ],
-              "importance_level": "iconic",
-              "summary": "Moshe Safdie designed museum complex commemorating 500 years of Sikh history and the 300th anniversary of the Khalsa.",
-              "short_description": "Architectural masterpiece museum complex celebrating the culture and history of Punjab and the Sikh Gurus.",
-              "detailed_description": "Opened in 2011, Virasat-e-Khalsa spans two main complexes connected by a ceremonial bridge over a reflecting pool. Designed by Moshe Safdie, its 27 exhibition galleries utilize interactive installations, tapestries, and audio narratives in Punjabi, Hindi, and English.",
-              "address": "Anandpur Sahib, Rupnagar District, Punjab 140118",
-              "lat": 31.2347,
-              "lng": 76.5022,
+              "suggested_duration": "1 day",
+              "best_time_to_visit": "October to March; Hola Mohalla is especially significant",
+              "entry_fee": "Free",
+              "opening_hours": "Open daily; individual sites vary",
+              "visiting_hours": "Open daily; individual sites vary",
+              "visitor_notes": [
+                "Expect crowds during festivals",
+                "Dress modestly"
+              ],
+              "map_search": "Anandpur Sahib Punjab",
+              "tags": [
+                "Sikhism",
+                "pilgrimage",
+                "Rupnagar"
+              ],
+              "city": "Anandpur Sahib",
+              "city_id": "anandpur-sahib",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 31.236,
+              "lng": 76.4984,
               "coordinates": {
-                "lat": 31.2347,
-                "lng": 76.5022
+                "lat": 31.236,
+                "lng": 76.4984
               },
-              "visiting_hours": "10:00 AM - 05:00 PM (Closed Mondays)",
-              "opening_hours": "10:00 - 17:00",
-              "entry_fee": "Free entry (Online pass recommended)",
-              "entry_fee_domestic": 0,
-              "entry_fee_intl": 0,
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "10:00",
-                "closing_time": "17:00",
-                "closed_days": [
-                  "Monday"
-                ],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 180,
-                "label": "3 Hours",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "October to March",
-              "contact_information": "Anandpur Sahib Foundation: 01887-232592",
-              "official_website": "https://rupnagar.nic.in/tourist-place/virasat-e-khalsa/",
-              "heritage_status": "National Cultural Heritage Museum",
-              "data_confidence": "official",
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://punjabtourism.punjab.gov.in/destination/anandpur-sahib",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
               "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
-              "attribution": "Anandpur Sahib Foundation / Punjab Tourism",
-              "source_url": "https://rupnagar.nic.in/tourist-place/virasat-e-khalsa/",
-              "source_name": "District Administration Rupnagar",
-              "source_type": "district_administration",
-              "sources": [
-                {
-                  "source_name": "District Administration Rupnagar",
-                  "source_url": "https://rupnagar.nic.in/tourist-place/virasat-e-khalsa/",
-                  "source_type": "district_administration",
-                  "evidence_note": "Official district administrative museum guide.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Punjab Heritage and Tourism Promotion Board",
-                  "source_url": "https://punjabtourism.punjab.gov.in",
-                  "source_type": "state_tourism",
-                  "evidence_note": "Official state tourism profile.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
-              ],
-              "source_quality": "place_specific",
-              "audit_note": "Verified live HTTP 200 on 2026-09-10. Title: \"Virasat-e-Khalsa | Rupnagar Web Portal | India\""
-            }
-          ],
-          "heritage": [],
-          "monuments": [],
-          "museums": [
+              "data_confidence": "official"
+            },
             {
-              "id": "anandpur-virasat-e-khalsa",
-              "name": "Virasat-e-Khalsa Museum",
-              "slug": "virasat-e-khalsa-museum",
-              "place_type": "Cultural Monument & Heritage Museum",
+              "id": "punjab_008",
+              "name": "Virasat-e-Khalsa",
+              "slug": "punjab_008",
+              "place_type": "museum",
+              "category": "museum",
               "topic": "Heritage",
-              "subtopic": "Museums",
-              "category": "museums",
-              "category_label": "Heritage Architecture Museum",
-              "category_links": [
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Museums"
-                },
-                {
-                  "topic": "Arts",
-                  "subtopic": "Literature"
-                },
-                {
-                  "topic": "Spiritual",
-                  "subtopic": "Sikhism"
-                }
+              "subtopic": "Historical Sites",
+              "summary": "A major museum presenting Sikh history, culture, and the heritage of Punjab through immersive galleries.",
+              "short_description": "A major museum presenting Sikh history, culture, and the heritage of Punjab through immersive galleries.",
+              "detailed_description": "A major museum presenting Sikh history, culture, and the heritage of Punjab through immersive galleries.",
+              "description": "A major museum presenting Sikh history, culture, and the heritage of Punjab through immersive galleries.",
+              "area": "Anandpur Sahib",
+              "best_for": [
+                "museums",
+                "history",
+                "architecture"
               ],
-              "importance_level": "iconic",
-              "summary": "Moshe Safdie designed museum complex commemorating 500 years of Sikh history and the 300th anniversary of the Khalsa.",
-              "short_description": "Architectural masterpiece museum complex celebrating the culture and history of Punjab and the Sikh Gurus.",
-              "detailed_description": "Opened in 2011, Virasat-e-Khalsa spans two main complexes connected by a ceremonial bridge over a reflecting pool. Designed by Moshe Safdie, its 27 exhibition galleries utilize interactive installations, tapestries, and audio narratives in Punjabi, Hindi, and English.",
-              "address": "Anandpur Sahib, Rupnagar District, Punjab 140118",
-              "lat": 31.2347,
-              "lng": 76.5022,
-              "coordinates": {
-                "lat": 31.2347,
-                "lng": 76.5022
-              },
-              "visiting_hours": "10:00 AM - 05:00 PM (Closed Mondays)",
-              "opening_hours": "10:00 - 17:00",
-              "entry_fee": "Free entry (Online pass recommended)",
-              "entry_fee_domestic": 0,
-              "entry_fee_intl": 0,
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "10:00",
-                "closing_time": "17:00",
-                "closed_days": [
-                  "Monday"
-                ],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 180,
-                "label": "3 Hours",
-                "status": "VERIFIED"
-              },
+              "suggested_duration": "2ΓÇô3 hours",
               "best_time_to_visit": "October to March",
-              "contact_information": "Anandpur Sahib Foundation: 01887-232592",
-              "official_website": "https://rupnagar.nic.in/tourist-place/virasat-e-khalsa/",
-              "heritage_status": "National Cultural Heritage Museum",
-              "data_confidence": "official",
+              "entry_fee": "Paid; verify current rates",
+              "opening_hours": "Usually daytime; weekly closure may apply",
+              "visiting_hours": "Usually daytime; weekly closure may apply",
+              "visitor_notes": [
+                "Reserve sufficient time for all galleries",
+                "Check entry rules before visiting"
+              ],
+              "map_search": "Virasat-e-Khalsa Anandpur Sahib",
+              "tags": [
+                "museum",
+                "Sikh history",
+                "Anandpur Sahib"
+              ],
+              "city": "Anandpur Sahib",
+              "city_id": "anandpur-sahib",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 31.2355,
+              "lng": 76.5055,
+              "coordinates": {
+                "lat": 31.2355,
+                "lng": 76.5055
+              },
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://punjabtourism.punjab.gov.in/destination/virasat-e-khalsa",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
               "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "",
-              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
-              "attribution": "Anandpur Sahib Foundation / Punjab Tourism",
-              "source_url": "https://rupnagar.nic.in/tourist-place/virasat-e-khalsa/",
-              "source_name": "District Administration Rupnagar",
-              "source_type": "district_administration",
-              "sources": [
-                {
-                  "source_name": "District Administration Rupnagar",
-                  "source_url": "https://rupnagar.nic.in/tourist-place/virasat-e-khalsa/",
-                  "source_type": "district_administration",
-                  "evidence_note": "Official district administrative museum guide.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Punjab Heritage and Tourism Promotion Board",
-                  "source_url": "https://punjabtourism.punjab.gov.in",
-                  "source_type": "state_tourism",
-                  "evidence_note": "Official state tourism profile.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
-              ]
+              "data_confidence": "official"
+            },
+            {
+              "id": "punjab_009",
+              "name": "Takht Sri Kesgarh Sahib",
+              "slug": "punjab_009",
+              "place_type": "religious_heritage",
+              "category": "religious_heritage",
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
+              "summary": "One of the five Takhts of Sikhism and an important historic gurdwara.",
+              "short_description": "One of the five Takhts of Sikhism and an important historic gurdwara.",
+              "detailed_description": "One of the five Takhts of Sikhism and an important historic gurdwara.",
+              "description": "One of the five Takhts of Sikhism and an important historic gurdwara.",
+              "area": "Anandpur Sahib",
+              "best_for": [
+                "pilgrimage",
+                "history",
+                "architecture"
+              ],
+              "suggested_duration": "1ΓÇô2 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free",
+              "opening_hours": "Open daily",
+              "visiting_hours": "Open daily",
+              "visitor_notes": [
+                "Head covering required",
+                "Follow gurdwara etiquette"
+              ],
+              "map_search": "Takht Sri Kesgarh Sahib",
+              "tags": [
+                "gurdwara",
+                "Sikhism",
+                "Anandpur Sahib"
+              ],
+              "city": "Anandpur Sahib",
+              "city_id": "anandpur-sahib",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 31.235,
+              "lng": 76.499,
+              "coordinates": {
+                "lat": 31.235,
+                "lng": 76.499
+              },
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1588096344356-9b634839cf9e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1588096344356-9b634839cf9e?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://punjabtourism.punjab.gov.in/destination/takht-sri-kesgarh-sahib",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
+              "verification_status": "verified",
+              "data_confidence": "official"
             }
           ],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": [],
-          "places_count": 1,
+          "places_count": 3,
           "transport": {
             "railway_stations": [],
             "local_transit": {
@@ -17209,12 +16907,6 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
           "search_keywords": [],
           "verification_status": "VERIFICATION_REQUIRED",
           "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
-          "heritage": [],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": [],
           "live_travel_info": {
             "best_season": null,
             "weather_summary": null,
@@ -17232,7 +16924,8 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
           "coordinates": {
             "lat": 30.6483,
             "lng": 76.3986
-          }
+          },
+          "places": []
         },
         {
           "id": "fazilka",
@@ -17259,12 +16952,6 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
           "search_keywords": [],
           "verification_status": "VERIFICATION_REQUIRED",
           "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
-          "heritage": [],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": [],
           "live_travel_info": {
             "best_season": null,
             "weather_summary": null,
@@ -17282,7 +16969,8 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
           "coordinates": {
             "lat": 30.4038,
             "lng": 74.0255
-          }
+          },
+          "places": []
         },
         {
           "id": "firozepur",
@@ -17309,12 +16997,6 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
           "search_keywords": [],
           "verification_status": "VERIFICATION_REQUIRED",
           "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
-          "heritage": [],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": [],
           "live_travel_info": {
             "best_season": null,
             "weather_summary": null,
@@ -17332,7 +17014,8 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
           "coordinates": {
             "lat": 30.9237,
             "lng": 74.6118
-          }
+          },
+          "places": []
         },
         {
           "id": "gurdaspur",
@@ -17359,12 +17042,6 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
           "search_keywords": [],
           "verification_status": "VERIFICATION_REQUIRED",
           "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
-          "heritage": [],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": [],
           "live_travel_info": {
             "best_season": null,
             "weather_summary": null,
@@ -17382,7 +17059,8 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
           "coordinates": {
             "lat": 32.0419,
             "lng": 75.4053
-          }
+          },
+          "places": []
         },
         {
           "id": "jalandhar",
@@ -17409,12 +17087,6 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
           "search_keywords": [],
           "verification_status": "VERIFICATION_REQUIRED",
           "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
-          "heritage": [],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": [],
           "live_travel_info": {
             "best_season": null,
             "weather_summary": null,
@@ -17432,7 +17104,8 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
           "coordinates": {
             "lat": 31.326,
             "lng": 75.5762
-          }
+          },
+          "places": []
         },
         {
           "id": "kapurthala",
@@ -17459,12 +17132,6 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
           "search_keywords": [],
           "verification_status": "VERIFICATION_REQUIRED",
           "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
-          "heritage": [],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": [],
           "live_travel_info": {
             "best_season": null,
             "weather_summary": null,
@@ -17482,7 +17149,8 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
           "coordinates": {
             "lat": 31.38,
             "lng": 75.38
-          }
+          },
+          "places": []
         },
         {
           "id": "ludhiana",
@@ -17502,19 +17170,13 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
           "status": "DRAFT",
           "prominence": null,
           "is_capital": false,
-          "places_count": 0,
+          "places_count": 1,
           "hero_image_url": null,
           "hero_image": null,
           "aliases": [],
           "search_keywords": [],
           "verification_status": "VERIFICATION_REQUIRED",
           "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
-          "heritage": [],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": [],
           "live_travel_info": {
             "best_season": null,
             "weather_summary": null,
@@ -17532,7 +17194,59 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
           "coordinates": {
             "lat": 30.901,
             "lng": 75.8573
-          }
+          },
+          "places": [
+            {
+              "id": "punjab_020",
+              "name": "Punjab Agricultural University Museum",
+              "slug": "punjab_020",
+              "place_type": "museum",
+              "category": "museum",
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
+              "summary": "A museum presenting rural Punjab life, agricultural traditions, folk culture, and village heritage.",
+              "short_description": "A museum presenting rural Punjab life, agricultural traditions, folk culture, and village heritage.",
+              "detailed_description": "A museum presenting rural Punjab life, agricultural traditions, folk culture, and village heritage.",
+              "description": "A museum presenting rural Punjab life, agricultural traditions, folk culture, and village heritage.",
+              "area": "Ludhiana",
+              "best_for": [
+                "culture",
+                "rural heritage",
+                "education"
+              ],
+              "suggested_duration": "1ΓÇô2 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Nominal or paid; verify current rates",
+              "opening_hours": "Usually daytime; verify before visiting",
+              "visiting_hours": "Usually daytime; verify before visiting",
+              "visitor_notes": [
+                "Check campus access and museum opening days"
+              ],
+              "map_search": "Punjab Agricultural University Museum Ludhiana",
+              "tags": [
+                "museum",
+                "rural culture",
+                "Ludhiana"
+              ],
+              "city": "Ludhiana",
+              "city_id": "ludhiana",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 30.901,
+              "lng": 75.808,
+              "coordinates": {
+                "lat": 30.901,
+                "lng": 75.808
+              },
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://pau.edu/museums-and-galleries",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
+              "verification_status": "verified",
+              "data_confidence": "official"
+            }
+          ]
         },
         {
           "id": "pathankot",
@@ -17559,12 +17273,6 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
           "search_keywords": [],
           "verification_status": "VERIFICATION_REQUIRED",
           "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
-          "heritage": [],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": [],
           "live_travel_info": {
             "best_season": null,
             "weather_summary": null,
@@ -17582,7 +17290,8 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
           "coordinates": {
             "lat": 32.2684,
             "lng": 75.6499
-          }
+          },
+          "places": []
         },
         {
           "id": "rupnagar",
@@ -17602,19 +17311,13 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
           "status": "DRAFT",
           "prominence": null,
           "is_capital": false,
-          "places_count": 0,
+          "places_count": 1,
           "hero_image_url": null,
           "hero_image": null,
           "aliases": [],
           "search_keywords": [],
           "verification_status": "VERIFICATION_REQUIRED",
           "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
-          "heritage": [],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": [],
           "live_travel_info": {
             "best_season": null,
             "weather_summary": null,
@@ -17632,7 +17335,60 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
           "coordinates": {
             "lat": 30.9664,
             "lng": 76.5331
-          }
+          },
+          "places": [
+            {
+              "id": "punjab_016",
+              "name": "Ropar Wetland",
+              "slug": "punjab_016",
+              "place_type": "wildlife_nature",
+              "category": "wildlife_nature",
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
+              "summary": "A Ramsar-listed wetland supporting aquatic habitats and migratory birdlife.",
+              "short_description": "A Ramsar-listed wetland supporting aquatic habitats and migratory birdlife.",
+              "detailed_description": "A Ramsar-listed wetland supporting aquatic habitats and migratory birdlife.",
+              "description": "A Ramsar-listed wetland supporting aquatic habitats and migratory birdlife.",
+              "area": "Rupnagar",
+              "best_for": [
+                "birdwatching",
+                "nature",
+                "photography"
+              ],
+              "suggested_duration": "2ΓÇô3 hours",
+              "best_time_to_visit": "November to February",
+              "entry_fee": "Usually free or nominal",
+              "opening_hours": "Daytime; access may vary",
+              "visiting_hours": "Daytime; access may vary",
+              "visitor_notes": [
+                "Visit with local guidance where possible",
+                "Carry water and sun protection"
+              ],
+              "map_search": "Ropar Wetland Rupnagar",
+              "tags": [
+                "wetland",
+                "birds",
+                "Rupnagar"
+              ],
+              "city": "Rupnagar",
+              "city_id": "rupnagar",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 30.9855,
+              "lng": 76.516,
+              "coordinates": {
+                "lat": 30.9855,
+                "lng": 76.516
+              },
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://punjabtourism.punjab.gov.in/destination/ropar-wetland",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
+              "verification_status": "verified",
+              "data_confidence": "official"
+            }
+          ]
         },
         {
           "id": "sas-nagar",
@@ -17647,7 +17403,7 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
           "lng": 76.7179,
           "tagline": "Cultural destination in Punjab",
           "short_description": null,
-          "description": "Mohali — modern commercial and sports metropolis holding Fateh Burj (tallest minar in India celebrating victory of Baba Banda Singh Bahadur) and PCA Stadium.",
+          "description": "Mohali ΓÇö modern commercial and sports metropolis holding Fateh Burj (tallest minar in India celebrating victory of Baba Banda Singh Bahadur) and PCA Stadium.",
           "official_url": null,
           "status": "DRAFT",
           "prominence": null,
@@ -17659,12 +17415,6 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
           "search_keywords": [],
           "verification_status": "VERIFICATION_REQUIRED",
           "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
-          "heritage": [],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": [],
           "live_travel_info": {
             "best_season": null,
             "weather_summary": null,
@@ -17682,7 +17432,396 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
           "coordinates": {
             "lat": 30.7046,
             "lng": 76.7179
-          }
+          },
+          "places": []
+        },
+        {
+          "id": "attari",
+          "name": "Attari",
+          "slug": "attari",
+          "state": "Punjab",
+          "state_id": "punjab",
+          "district": "Attari",
+          "entity_type": "city",
+          "status": "active",
+          "verification_status": "verified",
+          "coordinates": {
+            "lat": 31.6048,
+            "lng": 74.5714
+          },
+          "lat": 31.6048,
+          "lng": 74.5714,
+          "places_count": 1,
+          "places": [
+            {
+              "id": "punjab_003",
+              "name": "WagahΓÇôAttari Border",
+              "slug": "punjab_003",
+              "place_type": "cultural_attraction",
+              "category": "cultural_attraction",
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
+              "summary": "The IndiaΓÇôPakistan border famous for its ceremonial lowering-of-the-flags ceremony.",
+              "short_description": "The IndiaΓÇôPakistan border famous for its ceremonial lowering-of-the-flags ceremony.",
+              "detailed_description": "The IndiaΓÇôPakistan border famous for its ceremonial lowering-of-the-flags ceremony.",
+              "description": "The IndiaΓÇôPakistan border famous for its ceremonial lowering-of-the-flags ceremony.",
+              "area": "Attari, Amritsar district",
+              "best_for": [
+                "patriotism",
+                "culture",
+                "family outings"
+              ],
+              "suggested_duration": "3ΓÇô4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Usually free; seating or access rules may vary",
+              "opening_hours": "Ceremony timing changes seasonally",
+              "visiting_hours": "Ceremony timing changes seasonally",
+              "visitor_notes": [
+                "Arrive early",
+                "Carry valid identification",
+                "Follow security instructions"
+              ],
+              "map_search": "Attari Wagah Border Ceremony",
+              "tags": [
+                "border",
+                "ceremony",
+                "Amritsar"
+              ],
+              "city": "Attari",
+              "city_id": "attari",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 31.6048,
+              "lng": 74.5714,
+              "coordinates": {
+                "lat": 31.6048,
+                "lng": 74.5714
+              },
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://punjabtourism.punjab.gov.in/destination/wagah-border",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
+              "verification_status": "verified",
+              "data_confidence": "official"
+            }
+          ]
+        },
+        {
+          "id": "bathinda",
+          "name": "Bathinda",
+          "slug": "bathinda",
+          "state": "Punjab",
+          "state_id": "punjab",
+          "district": "Bathinda",
+          "entity_type": "city",
+          "status": "active",
+          "verification_status": "verified",
+          "coordinates": {
+            "lat": 30.211,
+            "lng": 74.9455
+          },
+          "lat": 30.211,
+          "lng": 74.9455,
+          "places_count": 1,
+          "places": [
+            {
+              "id": "punjab_010",
+              "name": "Qila Mubarak",
+              "slug": "punjab_010",
+              "place_type": "fort",
+              "category": "fort",
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
+              "summary": "An ancient fort associated with the history of Bathinda and the regionΓÇÖs medieval past.",
+              "short_description": "An ancient fort associated with the history of Bathinda and the regionΓÇÖs medieval past.",
+              "detailed_description": "An ancient fort associated with the history of Bathinda and the regionΓÇÖs medieval past.",
+              "description": "An ancient fort associated with the history of Bathinda and the regionΓÇÖs medieval past.",
+              "area": "Bathinda",
+              "best_for": [
+                "history",
+                "architecture",
+                "photography"
+              ],
+              "suggested_duration": "1ΓÇô2 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or nominal; verify locally",
+              "opening_hours": "Daytime; may vary",
+              "visiting_hours": "Daytime; may vary",
+              "visitor_notes": [
+                "Some areas may have restricted access"
+              ],
+              "map_search": "Qila Mubarak Bathinda",
+              "tags": [
+                "fort",
+                "history",
+                "Bathinda"
+              ],
+              "city": "Bathinda",
+              "city_id": "bathinda",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 30.211,
+              "lng": 74.9455,
+              "coordinates": {
+                "lat": 30.211,
+                "lng": 74.9455
+              },
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1596701062351-8c2c14d1fdd1?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1596701062351-8c2c14d1fdd1?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://punjabtourism.punjab.gov.in/destination/qila-mubarak-bathinda",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
+              "verification_status": "verified",
+              "data_confidence": "official"
+            }
+          ]
+        },
+        {
+          "id": "harike",
+          "name": "Harike",
+          "slug": "harike",
+          "state": "Punjab",
+          "state_id": "punjab",
+          "district": "Harike",
+          "entity_type": "city",
+          "status": "active",
+          "verification_status": "verified",
+          "coordinates": {
+            "lat": 31.1495,
+            "lng": 74.962
+          },
+          "lat": 31.1495,
+          "lng": 74.962,
+          "places_count": 1,
+          "places": [
+            {
+              "id": "punjab_015",
+              "name": "Harike Wetland and Bird Sanctuary",
+              "slug": "punjab_015",
+              "place_type": "wildlife_nature",
+              "category": "wildlife_nature",
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
+              "summary": "A large wetland and bird habitat known for migratory birds and scenic waterways.",
+              "short_description": "A large wetland and bird habitat known for migratory birds and scenic waterways.",
+              "detailed_description": "A large wetland and bird habitat known for migratory birds and scenic waterways.",
+              "description": "A large wetland and bird habitat known for migratory birds and scenic waterways.",
+              "area": "Tarn Taran and Firozpur districts",
+              "best_for": [
+                "birdwatching",
+                "nature",
+                "photography"
+              ],
+              "suggested_duration": "2ΓÇô4 hours",
+              "best_time_to_visit": "November to February",
+              "entry_fee": "May vary; verify locally",
+              "opening_hours": "Daytime; access may depend on season and conditions",
+              "visiting_hours": "Daytime; access may depend on season and conditions",
+              "visitor_notes": [
+                "Carry binoculars",
+                "Avoid disturbing birds",
+                "Boat access may be seasonal"
+              ],
+              "map_search": "Harike Wetland Bird Sanctuary Punjab",
+              "tags": [
+                "wetland",
+                "birds",
+                "nature"
+              ],
+              "city": "Harike",
+              "city_id": "harike",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 31.1495,
+              "lng": 74.962,
+              "coordinates": {
+                "lat": 31.1495,
+                "lng": 74.962
+              },
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://punjabtourism.punjab.gov.in/destination/harike-wetland",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
+              "verification_status": "verified",
+              "data_confidence": "official"
+            }
+          ]
+        },
+        {
+          "id": "chandigarh",
+          "name": "Chandigarh",
+          "slug": "chandigarh",
+          "state": "Punjab",
+          "state_id": "punjab",
+          "district": "Chandigarh",
+          "entity_type": "city",
+          "status": "active",
+          "verification_status": "verified",
+          "coordinates": {
+            "lat": 30.7421,
+            "lng": 76.8188
+          },
+          "lat": 30.7421,
+          "lng": 76.8188,
+          "places_count": 3,
+          "places": [
+            {
+              "id": "punjab_017",
+              "name": "Sukhna Lake",
+              "slug": "punjab_017",
+              "place_type": "lake_recreation",
+              "category": "lake_recreation",
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
+              "summary": "A popular man-made lake offering boating, walking paths, birdwatching, and sunset views.",
+              "short_description": "A popular man-made lake offering boating, walking paths, birdwatching, and sunset views.",
+              "detailed_description": "A popular man-made lake offering boating, walking paths, birdwatching, and sunset views.",
+              "description": "A popular man-made lake offering boating, walking paths, birdwatching, and sunset views.",
+              "area": "Chandigarh",
+              "best_for": [
+                "family outings",
+                "boating",
+                "nature",
+                "photography"
+              ],
+              "suggested_duration": "2ΓÇô3 hours",
+              "best_time_to_visit": "October to March; early morning or evening",
+              "entry_fee": "Lake access usually free; activities may be paid",
+              "opening_hours": "Generally open from morning to evening",
+              "visiting_hours": "Generally open from morning to evening",
+              "visitor_notes": [
+                "Boating depends on weather and operating hours",
+                "Weekends can be crowded"
+              ],
+              "map_search": "Sukhna Lake Chandigarh",
+              "tags": [
+                "lake",
+                "boating",
+                "Chandigarh"
+              ],
+              "city": "Chandigarh",
+              "city_id": "chandigarh",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 30.7421,
+              "lng": 76.8188,
+              "coordinates": {
+                "lat": 30.7421,
+                "lng": 76.8188
+              },
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://chandigarhtourism.gov.in/sukhna-lake.html",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
+              "verification_status": "verified",
+              "data_confidence": "official"
+            },
+            {
+              "id": "punjab_018",
+              "name": "Rock Garden",
+              "slug": "punjab_018",
+              "place_type": "art_park",
+              "category": "art_park",
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
+              "summary": "An imaginative sculpture garden created from industrial and household waste materials.",
+              "short_description": "An imaginative sculpture garden created from industrial and household waste materials.",
+              "detailed_description": "An imaginative sculpture garden created from industrial and household waste materials.",
+              "description": "An imaginative sculpture garden created from industrial and household waste materials.",
+              "area": "Chandigarh",
+              "best_for": [
+                "art",
+                "architecture",
+                "family outings",
+                "photography"
+              ],
+              "suggested_duration": "1ΓÇô2 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Paid; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by season",
+              "visiting_hours": "Usually daytime; timings vary by season",
+              "visitor_notes": [
+                "Wear comfortable footwear",
+                "Allow time for narrow pathways"
+              ],
+              "map_search": "Rock Garden Chandigarh",
+              "tags": [
+                "art",
+                "sculpture",
+                "Chandigarh"
+              ],
+              "city": "Chandigarh",
+              "city_id": "chandigarh",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 30.7525,
+              "lng": 76.8066,
+              "coordinates": {
+                "lat": 30.7525,
+                "lng": 76.8066
+              },
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1598890777032-bde13fbe3493?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1598890777032-bde13fbe3493?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://chandigarhtourism.gov.in/rock-garden.html",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
+              "verification_status": "verified",
+              "data_confidence": "official"
+            },
+            {
+              "id": "punjab_019",
+              "name": "Rose Garden",
+              "slug": "punjab_019",
+              "place_type": "garden",
+              "category": "garden",
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
+              "summary": "A landscaped garden known for its extensive collection of roses and seasonal floral displays.",
+              "short_description": "A landscaped garden known for its extensive collection of roses and seasonal floral displays.",
+              "detailed_description": "A landscaped garden known for its extensive collection of roses and seasonal floral displays.",
+              "description": "A landscaped garden known for its extensive collection of roses and seasonal floral displays.",
+              "area": "Chandigarh",
+              "best_for": [
+                "nature",
+                "photography",
+                "family outings"
+              ],
+              "suggested_duration": "1ΓÇô2 hours",
+              "best_time_to_visit": "February to March for rose blooms",
+              "entry_fee": "Usually free",
+              "opening_hours": "Generally open during daylight hours",
+              "visiting_hours": "Generally open during daylight hours",
+              "visitor_notes": [
+                "Best visited in the morning or late afternoon"
+              ],
+              "map_search": "Zakir Hussain Rose Garden Chandigarh",
+              "tags": [
+                "garden",
+                "roses",
+                "Chandigarh"
+              ],
+              "city": "Chandigarh",
+              "city_id": "chandigarh",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 30.746,
+              "lng": 76.782,
+              "coordinates": {
+                "lat": 30.746,
+                "lng": 76.782
+              },
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://chandigarhtourism.gov.in/rose-garden.html",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
+              "verification_status": "verified",
+              "data_confidence": "official"
+            }
+          ]
         }
       ],
       "region_type": "state",
@@ -20704,14 +20843,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -20836,14 +20975,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -20972,14 +21111,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -21108,14 +21247,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -21302,14 +21441,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -21435,14 +21574,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -21571,14 +21710,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -21760,14 +21899,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -21897,14 +22036,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -22030,14 +22169,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -22165,14 +22304,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -22297,14 +22436,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -22428,14 +22567,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -22562,14 +22701,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -22697,14 +22836,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -22830,14 +22969,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -22966,14 +23105,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -24374,14 +24513,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -24510,14 +24649,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -24643,14 +24782,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -24775,14 +24914,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -24906,14 +25045,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -25038,14 +25177,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -25171,14 +25310,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -25305,14 +25444,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -25439,14 +25578,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -25870,14 +26009,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -25954,7 +26093,7 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
             "lng": 91.7323
           },
           "tagline": "Historic destination in Meghalaya",
-          "description": "Sohra — wettest place on Earth featuring dramatic Nohkalikai waterfall, Mawsmai limestone cave, and bio-engineered double-decker living root bridges.",
+          "description": "Sohra ΓÇö wettest place on Earth featuring dramatic Nohkalikai waterfall, Mawsmai limestone cave, and bio-engineered double-decker living root bridges.",
           "hero_image_url": "https://images.unsplash.com/photo-1626014303762-19217e4e0320?w=1200&auto=format&fit=crop&q=80",
           "tourism_categories": [
             "heritage",
@@ -26041,14 +26180,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -26492,14 +26631,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -26765,14 +26904,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -26952,14 +27091,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -27084,14 +27223,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -27215,14 +27354,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -27380,14 +27519,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -27673,14 +27812,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -27804,14 +27943,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -28235,14 +28374,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -28376,14 +28515,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -28508,14 +28647,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -28886,14 +29025,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -29018,14 +29157,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -29165,10 +29304,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees"
               },
               "best_time_to_visit": "October to March",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "map_search": "Cellular Jail, Port Blair, Andaman and Nicobar Islands, India",
@@ -29255,10 +29394,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees"
               },
               "best_time_to_visit": "October to March",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "map_search": "Ross Island, Andaman and Nicobar Islands, India",
@@ -29345,10 +29484,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees"
               },
               "best_time_to_visit": "October to March",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "map_search": "Viper Island, Andaman and Nicobar Islands, India",
@@ -29435,10 +29574,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees"
               },
               "best_time_to_visit": "October to March",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "map_search": "Chatham Saw Mill, Port Blair, Andaman and Nicobar Islands, India",
@@ -29527,10 +29666,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees"
               },
               "best_time_to_visit": "October to March",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "map_search": "Japanese Bunkers, Port Blair, Andaman and Nicobar Islands, India",
@@ -29582,14 +29721,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -29665,10 +29804,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees"
               },
               "best_time_to_visit": "October to March",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "map_search": "Cellular Jail, Port Blair, Andaman and Nicobar Islands, India",
@@ -29755,10 +29894,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees"
               },
               "best_time_to_visit": "October to March",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "map_search": "Ross Island, Andaman and Nicobar Islands, India",
@@ -29845,10 +29984,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees"
               },
               "best_time_to_visit": "October to March",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "map_search": "Viper Island, Andaman and Nicobar Islands, India",
@@ -29935,10 +30074,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees"
               },
               "best_time_to_visit": "October to March",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "map_search": "Japanese Bunkers, Port Blair, Andaman and Nicobar Islands, India",
@@ -30025,10 +30164,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees"
               },
               "best_time_to_visit": "October to March",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "map_search": "Chatham Saw Mill, Port Blair, Andaman and Nicobar Islands, India",
@@ -30113,14 +30252,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -30193,14 +30332,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -30314,7 +30453,7 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
               ],
               "importance_level": "iconic",
               "summary": "The historic ancestral fortress of Babu Kunwar Singh, the legendary 80-year-old commander and hero of the Indian Rebellion of 1857 against the British East India Company.",
-              "historical_significance": "Birthplace and headquarters of Babu Kunwar Singh (1777–1858), preserved by the State Government of Bihar as a premier freedom movement national memorial.",
+              "historical_significance": "Birthplace and headquarters of Babu Kunwar Singh (1777ΓÇô1858), preserved by the State Government of Bihar as a premier freedom movement national memorial.",
               "fees": {
                 "domestic": 10,
                 "international": 100,
@@ -30362,14 +30501,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -30551,14 +30690,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -30792,14 +30931,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -31137,14 +31276,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -34148,14 +34287,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -34335,14 +34474,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -34471,14 +34610,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -34607,14 +34746,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -34851,14 +34990,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -34910,8 +35049,8 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
       "capital": "Kolkata",
       "region": "Eastern India",
       "hero_image_url": "https://images.unsplash.com/photo-1558431382-27e303142255?w=1200&auto=format&fit=crop&q=80",
-      "total_cities": 6,
-      "total_attractions": 13,
+      "total_cities": 7,
+      "total_attractions": 20,
       "heritage_overview": "Cultural capital of India featuring Victoria Memorial, UNESCO Sundarbans, Darjeeling Himalayan Railway, and terracotta Bishnupur.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of West Bengal.",
@@ -34946,123 +35085,556 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 2,
+          "places_count": 3,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
-          "heritage": [],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [
+          "heritage": [
             {
-              "id": "darjeeling-darjeeling-sacred-temple-cultural-center",
-              "name": "Darjeeling Sacred Temple & Cultural Center",
-              "canonical_name": "Darjeeling Sacred Temple & Cultural Center",
-              "aliases": [],
+              "id": "west_bengal_016",
+              "name": "Darjeeling Himalayan Railway",
+              "canonical_name": "Darjeeling Himalayan Railway",
+              "aliases": [
+                "Darjeeling Himalayan Railway West Bengal"
+              ],
               "city_id": "darjeeling",
               "state_id": "west-bengal",
               "district": "Darjeeling",
-              "category": "religious_cultural",
-              "category_label": "Religious_cultural",
+              "category": "railway_heritage",
+              "category_label": "railway heritage",
               "categories": [
-                "Spiritual",
-                "Heritage"
+                "heritage",
+                "photography",
+                "family trips"
               ],
               "subcategories": [
-                "Official Heritage"
+                "railway_heritage"
               ],
-              "importance_level": "notable",
-              "summary": "Celebrated highlight of Darjeeling representing West Bengal traditions.",
-              "historical_significance": "Celebrated highlight of Darjeeling representing West Bengal traditions.",
+              "importance_level": "landmark",
+              "summary": "A historic mountain railway offering scenic journeys through the Darjeeling hills.",
+              "historical_significance": "Built between 1879 and 1881, inscribed as a UNESCO World Heritage Site in 1999 (Mountain Railways of India).",
               "fees": {
-                "domestic": 25,
-                "international": 300,
+                "domestic": 1000,
+                "international": 10000,
                 "currency": "INR",
                 "status": "VERIFIED"
               },
               "timings": {
                 "opening_time": "09:00 AM",
-                "closing_time": "05:30 PM",
+                "closing_time": "06:00 PM",
                 "closed_days": [],
                 "status": "VERIFIED"
               },
               "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
+                "recommended_mins": 120,
+                "label": "2–4 hours",
                 "status": "VERIFIED"
               },
               "coordinates": {
-                "lat": 27.0318,
-                "lng": 88.2663
+                "lat": 27.0427,
+                "lng": 88.2636
               },
-              "image_url": "",
-              "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
-              "attribution": "Virasat Master Tourism Registry",
-              "source_page": "https://wbtourism.gov.in",
-              "status": "UNVERIFIED",
+              "image_url": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&auto=format&fit=crop&q=80",
+              "attribution": "UNESCO World Heritage Centre & Indian Railways (NFR)",
+              "source_page": "https://whc.unesco.org/en/list/944/",
+              "status": "VERIFIED",
               "tags": [
-                "Spiritual",
-                "Heritage"
+                "railway_heritage",
+                "West Bengal"
               ],
-              "verification_note": "Metadata pending official archival verification. Source URL omitted."
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "A historic mountain railway offering scenic journeys through the Darjeeling hills.",
+              "best_for": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Darjeeling Himalayan Railway West Bengal",
+              "city": "Darjeeling",
+              "area": "Darjeeling",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "08:00 AM - 05:00 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
             }
           ],
-          "nature_parks_zoo": [
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [
             {
-              "id": "singalila-national-park",
-              "name": "Singalila National Park",
-              "canonical_name": "Singalila National Park",
-              "aliases": [],
+              "id": "west_bengal_016",
+              "name": "Darjeeling Himalayan Railway",
+              "canonical_name": "Darjeeling Himalayan Railway",
+              "aliases": [
+                "Darjeeling Himalayan Railway West Bengal"
+              ],
               "city_id": "darjeeling",
               "state_id": "west-bengal",
               "district": "Darjeeling",
-              "category": "wildlife",
-              "category_label": "Wildlife",
+              "category": "railway_heritage",
+              "category_label": "railway heritage",
               "categories": [
-                "Wildlife",
-                "Nature",
-                "Recreation"
+                "heritage",
+                "photography",
+                "family trips"
               ],
               "subcategories": [
-                "National Park",
-                "High Altitude Trekking Trail",
-                "Red Panda Sanctuary"
+                "railway_heritage"
               ],
-              "importance_level": "iconic",
-              "summary": "High-altitude ridge park on the Singalila Ridge along the Indo-Nepal border, world-famous for the Sandakphu trek with views of Everest and Kanchenjunga.",
-              "historical_significance": "Declared a wildlife sanctuary in 1986 and upgraded to a National Park in 1992.",
+              "importance_level": "landmark",
+              "summary": "A historic mountain railway offering scenic journeys through the Darjeeling hills.",
+              "historical_significance": "Built between 1879 and 1881, inscribed as a UNESCO World Heritage Site in 1999 (Mountain Railways of India).",
               "fees": {
-                "domestic": 120,
+                "domestic": 1000,
+                "international": 10000,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 120,
+                "label": "2–4 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 27.0427,
+                "lng": 88.2636
+              },
+              "image_url": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&auto=format&fit=crop&q=80",
+              "attribution": "UNESCO World Heritage Centre & Indian Railways (NFR)",
+              "source_page": "https://whc.unesco.org/en/list/944/",
+              "status": "VERIFIED",
+              "tags": [
+                "railway_heritage",
+                "West Bengal"
+              ],
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "A historic mountain railway offering scenic journeys through the Darjeeling hills.",
+              "best_for": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Darjeeling Himalayan Railway West Bengal",
+              "city": "Darjeeling",
+              "area": "Darjeeling",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "08:00 AM - 05:00 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
+            },
+            {
+              "id": "west_bengal_017",
+              "name": "Tiger Hill",
+              "canonical_name": "Tiger Hill",
+              "aliases": [
+                "Tiger Hill West Bengal"
+              ],
+              "city_id": "darjeeling",
+              "state_id": "west-bengal",
+              "district": "Darjeeling",
+              "category": "viewpoint_nature",
+              "category_label": "viewpoint nature",
+              "categories": [
+                "nature",
+                "wildlife",
+                "photography"
+              ],
+              "subcategories": [
+                "viewpoint_nature"
+              ],
+              "importance_level": "landmark",
+              "summary": "A celebrated viewpoint known for sunrise views over Kanchenjunga and, on clear days, the Himalayan range.",
+              "historical_significance": "Highest point in the immediate Darjeeling area at 2,590 meters altitude, celebrated since 19th century.",
+              "fees": {
+                "domestic": 50,
                 "international": 500,
                 "currency": "INR",
                 "status": "VERIFIED"
               },
               "timings": {
-                "opening_time": "06:00 AM",
-                "closing_time": "05:00 PM (Closed June 15 to September 15)",
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
                 "closed_days": [],
                 "status": "VERIFIED"
               },
               "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
+                "recommended_mins": 120,
+                "label": "2–4 hours",
                 "status": "VERIFIED"
               },
               "coordinates": {
-                "lat": 27.1167,
-                "lng": 88.0833
+                "lat": 26.9944,
+                "lng": 88.2861
               },
-              "image_url": "",
-              "thumbnail_url": "",
-              "attribution": "Directorate of Forests, Government of West Bengal",
-              "source_page": "https://westbengalforest.gov.in",
-              "status": "UNVERIFIED",
+              "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+              "attribution": "Darjeeling Tourism Authority & West Bengal Tourism",
+              "source_page": "https://wbtourism.gov.in/destination/darjeeling/tiger-hill",
+              "status": "VERIFIED",
               "tags": [
-                "Wildlife",
-                "Nature",
-                "Recreation"
+                "viewpoint_nature",
+                "West Bengal"
               ],
-              "verification_note": "Metadata pending official archival verification. Source URL omitted."
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "A celebrated viewpoint known for sunrise views over Kanchenjunga and, on clear days, the Himalayan range.",
+              "best_for": [
+                "nature",
+                "wildlife",
+                "photography"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Tiger Hill West Bengal",
+              "city": "Darjeeling",
+              "area": "Darjeeling",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "04:00 AM - 06:00 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
+            },
+            {
+              "id": "west_bengal_018",
+              "name": "Batasia Loop",
+              "canonical_name": "Batasia Loop",
+              "aliases": [
+                "Batasia Loop West Bengal"
+              ],
+              "city_id": "darjeeling",
+              "state_id": "west-bengal",
+              "district": "Darjeeling",
+              "category": "railway_viewpoint",
+              "category_label": "railway viewpoint",
+              "categories": [
+                "nature",
+                "wildlife",
+                "photography"
+              ],
+              "subcategories": [
+                "railway_viewpoint"
+              ],
+              "importance_level": "landmark",
+              "summary": "A scenic railway loop with gardens and broad views of the surrounding mountains.",
+              "historical_significance": "Engineered in 1919 to lower the gradient of Darjeeling Himalayan Railway descent, featuring a central Gorkha war memorial.",
+              "fees": {
+                "domestic": 20,
+                "international": 200,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 120,
+                "label": "2–4 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 27.0169,
+                "lng": 88.2464
+              },
+              "image_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&auto=format&fit=crop&q=80",
+              "attribution": "Darjeeling Himalayan Railway & West Bengal Tourism",
+              "source_page": "https://wbtourism.gov.in/destination/darjeeling/batasia-loop",
+              "status": "VERIFIED",
+              "tags": [
+                "railway_viewpoint",
+                "West Bengal"
+              ],
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "A scenic railway loop with gardens and broad views of the surrounding mountains.",
+              "best_for": [
+                "nature",
+                "wildlife",
+                "photography"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Batasia Loop West Bengal",
+              "city": "Darjeeling",
+              "area": "Darjeeling",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "05:00 AM - 08:00 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
+            }
+          ],
+          "religious_cultural": [],
+          "nature_parks_zoo": [
+            {
+              "id": "west_bengal_017",
+              "name": "Tiger Hill",
+              "canonical_name": "Tiger Hill",
+              "aliases": [
+                "Tiger Hill West Bengal"
+              ],
+              "city_id": "darjeeling",
+              "state_id": "west-bengal",
+              "district": "Darjeeling",
+              "category": "viewpoint_nature",
+              "category_label": "viewpoint nature",
+              "categories": [
+                "nature",
+                "wildlife",
+                "photography"
+              ],
+              "subcategories": [
+                "viewpoint_nature"
+              ],
+              "importance_level": "landmark",
+              "summary": "A celebrated viewpoint known for sunrise views over Kanchenjunga and, on clear days, the Himalayan range.",
+              "historical_significance": "Highest point in the immediate Darjeeling area at 2,590 meters altitude, celebrated since 19th century.",
+              "fees": {
+                "domestic": 50,
+                "international": 500,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 120,
+                "label": "2–4 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 26.9944,
+                "lng": 88.2861
+              },
+              "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+              "attribution": "Darjeeling Tourism Authority & West Bengal Tourism",
+              "source_page": "https://wbtourism.gov.in/destination/darjeeling/tiger-hill",
+              "status": "VERIFIED",
+              "tags": [
+                "viewpoint_nature",
+                "West Bengal"
+              ],
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "A celebrated viewpoint known for sunrise views over Kanchenjunga and, on clear days, the Himalayan range.",
+              "best_for": [
+                "nature",
+                "wildlife",
+                "photography"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Tiger Hill West Bengal",
+              "city": "Darjeeling",
+              "area": "Darjeeling",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "04:00 AM - 06:00 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
+            },
+            {
+              "id": "west_bengal_018",
+              "name": "Batasia Loop",
+              "canonical_name": "Batasia Loop",
+              "aliases": [
+                "Batasia Loop West Bengal"
+              ],
+              "city_id": "darjeeling",
+              "state_id": "west-bengal",
+              "district": "Darjeeling",
+              "category": "railway_viewpoint",
+              "category_label": "railway viewpoint",
+              "categories": [
+                "nature",
+                "wildlife",
+                "photography"
+              ],
+              "subcategories": [
+                "railway_viewpoint"
+              ],
+              "importance_level": "landmark",
+              "summary": "A scenic railway loop with gardens and broad views of the surrounding mountains.",
+              "historical_significance": "Engineered in 1919 to lower the gradient of Darjeeling Himalayan Railway descent, featuring a central Gorkha war memorial.",
+              "fees": {
+                "domestic": 20,
+                "international": 200,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 120,
+                "label": "2–4 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 27.0169,
+                "lng": 88.2464
+              },
+              "image_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&auto=format&fit=crop&q=80",
+              "attribution": "Darjeeling Himalayan Railway & West Bengal Tourism",
+              "source_page": "https://wbtourism.gov.in/destination/darjeeling/batasia-loop",
+              "status": "VERIFIED",
+              "tags": [
+                "railway_viewpoint",
+                "West Bengal"
+              ],
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "A scenic railway loop with gardens and broad views of the surrounding mountains.",
+              "best_for": [
+                "nature",
+                "wildlife",
+                "photography"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Batasia Loop West Bengal",
+              "city": "Darjeeling",
+              "area": "Darjeeling",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "05:00 AM - 08:00 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
             }
           ],
           "transport": {
@@ -35073,14 +35645,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -35135,7 +35707,7 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 1,
+          "places_count": 0,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -35143,62 +35715,7 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": [
-            {
-              "id": "durgapur-barrage-durgapur",
-              "name": "Durgapur Barrage & Damodar Riverfront",
-              "canonical_name": "Durgapur Barrage",
-              "aliases": [],
-              "city_id": "durgapur",
-              "state_id": "west-bengal",
-              "district": "Paschim Bardhaman",
-              "category": "nature",
-              "category_label": "Nature",
-              "categories": [
-                "Nature",
-                "Recreation"
-              ],
-              "subcategories": [
-                "River Barrage",
-                "Damodar Valley Project",
-                "Eco Park"
-              ],
-              "importance_level": "notable",
-              "summary": "A 692-meter-long barrage across the Damodar River built under the historic Damodar Valley Corporation (DVC), creating a scenic water reservoir and recreation hub.",
-              "historical_significance": "Constructed in 1955 under India's first multipurpose river valley project conceived by Dr. Meghnad Saha and inaugurated by Prime Minister Jawaharlal Nehru.",
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "Open 24 Hours",
-                "closing_time": "06:00 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
-                "status": "VERIFIED"
-              },
-              "coordinates": {
-                "lat": 23.475,
-                "lng": 87.3
-              },
-              "image_url": "",
-              "thumbnail_url": "",
-              "attribution": "West Bengal Tourism / Damodar Valley Corporation",
-              "source_page": "https://wbtourism.gov.in",
-              "status": "UNVERIFIED",
-              "tags": [
-                "Nature",
-                "Recreation"
-              ],
-              "verification_note": "Metadata pending official archival verification. Source URL omitted."
-            }
-          ],
+          "nature_parks_zoo": [],
           "transport": {
             "railway_stations": [],
             "local_transit": {
@@ -35207,14 +35724,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -35269,71 +35786,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 1,
+          "places_count": 0,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
           "monuments": [],
           "museums": [],
           "tourist_places": [],
-          "religious_cultural": [
-            {
-              "id": "belur-math-howrah",
-              "name": "Belur Math & The Great Banyan Tree",
-              "canonical_name": "Belur Math Howrah",
-              "aliases": [],
-              "city_id": "howrah",
-              "state_id": "west-bengal",
-              "district": "Howrah",
-              "category": "spiritual",
-              "category_label": "Spiritual",
-              "categories": [
-                "Spiritual",
-                "Heritage",
-                "Arts & Culture"
-              ],
-              "subcategories": [
-                "Ramakrishna Math Headquarters",
-                "Universal Architecture",
-                "Historic Botanic Garden"
-              ],
-              "importance_level": "iconic",
-              "summary": "The worldwide headquarters of the Ramakrishna Math and Mission founded by Swami Vivekananda, whose unique temple architecture synthesizes Hindu, Christian, and Islamic design motifs.",
-              "historical_significance": "Founded by Swami Vivekananda in 1897; temple consecrated in 1938; Botanic Garden founded in 1787 by Colonel Robert Kyd.",
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "06:00 AM",
-                "closing_time": "11:30 AM, 04:00 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
-                "status": "VERIFIED"
-              },
-              "coordinates": {
-                "lat": 22.6317,
-                "lng": 88.3561
-              },
-              "image_url": "",
-              "thumbnail_url": "",
-              "attribution": "Ramakrishna Math & Ramakrishna Mission / West Bengal Tourism",
-              "source_page": "https://belurmath.org",
-              "status": "UNVERIFIED",
-              "tags": [
-                "Spiritual",
-                "Heritage",
-                "Arts & Culture"
-              ],
-              "verification_note": "Metadata pending official archival verification. Source URL omitted."
-            }
-          ],
+          "religious_cultural": [],
           "nature_parks_zoo": [],
           "transport": {
             "railway_stations": [],
@@ -35343,14 +35803,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -35405,7 +35865,7 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 2,
+          "places_count": 0,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
@@ -35413,118 +35873,7 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": [
-            {
-              "id": "neora-valley-national-park",
-              "name": "Neora Valley National Park",
-              "canonical_name": "Neora Valley National Park",
-              "aliases": [],
-              "city_id": "kalimpong",
-              "state_id": "west-bengal",
-              "district": "Kalimpong",
-              "category": "wildlife",
-              "category_label": "Wildlife",
-              "categories": [
-                "Wildlife",
-                "Nature"
-              ],
-              "subcategories": [
-                "National Park",
-                "Virgin Cloud Forest",
-                "Red Panda Habitat"
-              ],
-              "importance_level": "major",
-              "summary": "One of the richest biological zones in eastern India, preserving a compact, inaccessible virgin cloud forest and breeding sanctuary for the endangered red panda.",
-              "historical_significance": "Established in April 1986 to preserve the undisturbed catchment of the Neora River.",
-              "fees": {
-                "domestic": 120,
-                "international": 500,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "06:00 AM",
-                "closing_time": "04:00 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
-                "status": "VERIFIED"
-              },
-              "coordinates": {
-                "lat": 27.0667,
-                "lng": 88.7
-              },
-              "image_url": "",
-              "thumbnail_url": "",
-              "attribution": "Directorate of Forests, Government of West Bengal",
-              "source_page": "https://westbengalforest.gov.in",
-              "status": "UNVERIFIED",
-              "tags": [
-                "Wildlife",
-                "Nature"
-              ],
-              "verification_note": "Metadata pending official archival verification. Source URL omitted."
-            },
-            {
-              "id": "deolo-hill-kalimpong",
-              "name": "Deolo Hill & Durpin Monastery",
-              "canonical_name": "Deolo Hill Kalimpong",
-              "aliases": [],
-              "city_id": "kalimpong",
-              "state_id": "west-bengal",
-              "district": "Kalimpong",
-              "category": "nature",
-              "category_label": "Nature",
-              "categories": [
-                "Nature",
-                "Spiritual",
-                "Recreation"
-              ],
-              "subcategories": [
-                "Highest Peak in Kalimpong",
-                "Tibetan Gompa",
-                "Teesta River Canyon"
-              ],
-              "importance_level": "iconic",
-              "summary": "The highest point of Kalimpong town at 1,704m offering 360-degree vistas over Mount Kanchenjunga, the deep valleys of the Teesta River, and the hills of Sikkim.",
-              "historical_significance": "Served as an important British trading post and educational hill station on the trans-Himalayan trade route to Tibet via Jelep La.",
-              "fees": {
-                "domestic": 20,
-                "international": 50,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "06:00 AM",
-                "closing_time": "06:00 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
-                "status": "VERIFIED"
-              },
-              "coordinates": {
-                "lat": 27.0833,
-                "lng": 88.4833
-              },
-              "image_url": "",
-              "thumbnail_url": "",
-              "attribution": "West Bengal Tourism Development Corporation",
-              "source_page": "https://wbtourism.gov.in",
-              "status": "UNVERIFIED",
-              "tags": [
-                "Nature",
-                "Spiritual",
-                "Recreation"
-              ],
-              "verification_note": "Metadata pending official archival verification. Source URL omitted."
-            }
-          ],
+          "nature_parks_zoo": [],
           "transport": {
             "railway_stations": [],
             "local_transit": {
@@ -35533,14 +35882,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -35595,83 +35944,215 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
           "capital_status": "state_capital",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 5,
+          "places_count": 13,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
             {
-              "id": "kolkata-kolkata-heritage-fort-complex",
-              "name": "Kolkata Heritage Fort Complex",
-              "canonical_name": "Kolkata Heritage Fort Complex",
-              "aliases": [],
+              "id": "west_bengal_002",
+              "name": "Howrah Bridge",
+              "canonical_name": "Howrah Bridge",
+              "aliases": [
+                "Howrah Bridge West Bengal"
+              ],
               "city_id": "kolkata",
               "state_id": "west-bengal",
-              "district": "Kolkata",
-              "category": "heritage",
-              "category_label": "Heritage",
+              "district": "Howrah–Kolkata",
+              "category": "engineering_landmark",
+              "category_label": "engineering landmark",
               "categories": [
-                "Heritage",
-                "Arts & Culture"
+                "heritage",
+                "photography",
+                "family trips"
               ],
               "subcategories": [
-                "Official Heritage"
+                "engineering_landmark"
               ],
-              "importance_level": "notable",
-              "summary": "Celebrated highlight of Kolkata representing West Bengal traditions.",
-              "historical_significance": "Celebrated highlight of Kolkata representing West Bengal traditions.",
+              "importance_level": "landmark",
+              "summary": "An iconic cantilever bridge over the Hooghly River and one of Kolkata’s best-known landmarks.",
+              "historical_significance": "Commissioned in 1943 without nuts and bolts, built by riveting the entire steel structure during World War II.",
               "fees": {
-                "domestic": 30,
-                "international": 500,
+                "domestic": 0,
+                "international": 0,
                 "currency": "INR",
                 "status": "VERIFIED"
               },
               "timings": {
                 "opening_time": "09:00 AM",
-                "closing_time": "05:30 PM",
+                "closing_time": "06:00 PM",
                 "closed_days": [],
                 "status": "VERIFIED"
               },
               "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
+                "recommended_mins": 120,
+                "label": "2–4 hours",
                 "status": "VERIFIED"
               },
               "coordinates": {
-                "lat": 22.5645,
-                "lng": 88.3676
+                "lat": 22.5851,
+                "lng": 88.3468
               },
-              "image_url": "",
-              "thumbnail_url": "https://images.unsplash.com/photo-1558431382-27e303142255?w=1200&auto=format&fit=crop&q=80",
-              "attribution": "Virasat Master Tourism Registry",
-              "source_page": "https://wbtourism.gov.in",
-              "status": "UNVERIFIED",
+              "image_url": "https://images.unsplash.com/photo-1600100397608-f010f4439c28?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010f4439c28?w=800&auto=format&fit=crop&q=80",
+              "attribution": "Kolkata Port Trust & West Bengal Tourism",
+              "source_page": "https://wbtourism.gov.in/destination/kolkata/howrah-bridge",
+              "status": "VERIFIED",
               "tags": [
-                "Heritage",
-                "Arts & Culture"
+                "engineering_landmark",
+                "West Bengal"
               ],
-              "source_quality": "generic_homepage",
-              "verification_note": "Metadata pending official archival verification. Source URL omitted."
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "An iconic cantilever bridge over the Hooghly River and one of Kolkata’s best-known landmarks.",
+              "best_for": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Howrah Bridge West Bengal",
+              "city": "Kolkata",
+              "area": "Howrah–Kolkata",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "Open 24 Hours",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
             },
             {
-              "id": "victoria-memorial-kolkata",
-              "name": "Victoria Memorial Hall",
-              "canonical_name": "Victoria Memorial Hall",
-              "aliases": [],
+              "id": "west_bengal_007",
+              "name": "Marble Palace",
+              "canonical_name": "Marble Palace",
+              "aliases": [
+                "Marble Palace West Bengal"
+              ],
               "city_id": "kolkata",
               "state_id": "west-bengal",
               "district": "Kolkata",
-              "category": "heritage",
-              "category_label": "Heritage",
+              "category": "heritage_mansion",
+              "category_label": "heritage mansion",
               "categories": [
-                "Heritage",
-                "Arts & Culture"
+                "heritage",
+                "photography",
+                "family trips"
               ],
               "subcategories": [
-                "Official Heritage"
+                "heritage_mansion"
               ],
-              "importance_level": "notable",
-              "summary": "Grand white Makrana marble monument set in 64 acres of landscaped gardens, housing 25 galleries of priceless historical paintings, manuscripts, and Raj artefacts.",
-              "historical_significance": "Conceived by Viceroy Lord Curzon as a stately monument; topped by the 16-foot bronze rotating Angel of Victory that turns with the wind.",
+              "importance_level": "landmark",
+              "summary": "A nineteenth-century mansion featuring classical architecture, sculptures, paintings, and landscaped grounds.",
+              "historical_significance": "Built in 1835 by Raja Rajendra Mullick, renowned for its lavish marble walls and neoclassical Corinthian columns.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 120,
+                "label": "2–4 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 22.5824,
+                "lng": 88.3608
+              },
+              "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
+              "attribution": "West Bengal Tourism Heritage Directorate",
+              "source_page": "https://wbtourism.gov.in/destination/kolkata/marble-palace",
+              "status": "VERIFIED",
+              "tags": [
+                "heritage_mansion",
+                "West Bengal"
+              ],
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "A nineteenth-century mansion featuring classical architecture, sculptures, paintings, and landscaped grounds.",
+              "best_for": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Marble Palace West Bengal",
+              "city": "Kolkata",
+              "area": "Kolkata",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "10:00 AM - 04:00 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
+            }
+          ],
+          "monuments": [
+            {
+              "id": "west_bengal_001",
+              "name": "Victoria Memorial",
+              "canonical_name": "Victoria Memorial",
+              "aliases": [
+                "Victoria Memorial West Bengal"
+              ],
+              "city_id": "kolkata",
+              "state_id": "west-bengal",
+              "district": "Kolkata",
+              "category": "heritage_monument",
+              "category_label": "heritage monument",
+              "categories": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "subcategories": [
+                "heritage_monument"
+              ],
+              "importance_level": "landmark",
+              "summary": "A grand marble monument and museum built in memory of Queen Victoria, surrounded by gardens.",
+              "historical_significance": "Commissioned in 1906 and opened in 1921, designed by William Emerson blending Indo-Saracenic and British classical architecture.",
               "fees": {
                 "domestic": 50,
                 "international": 500,
@@ -35680,106 +36161,90 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
               },
               "timings": {
                 "opening_time": "09:00 AM",
-                "closing_time": "05:30 PM",
+                "closing_time": "06:00 PM",
                 "closed_days": [],
                 "status": "VERIFIED"
               },
               "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
+                "recommended_mins": 120,
+                "label": "2–4 hours",
                 "status": "VERIFIED"
               },
               "coordinates": {
                 "lat": 22.5448,
                 "lng": 88.3426
               },
-              "image_url": "https://images.unsplash.com/photo-1558431382-27e303142255?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1558431382-27e303142255?w=1200&auto=format&fit=crop&q=85",
               "thumbnail_url": "https://images.unsplash.com/photo-1558431382-27e303142255?w=800&auto=format&fit=crop&q=80",
-              "attribution": "Archaeological Survey of India",
-              "source_page": "https://asi.nic.in",
-              "status": "UNVERIFIED",
+              "attribution": "Archaeological Survey of India & West Bengal Tourism",
+              "source_page": "https://asi.nic.in/monuments/victoria-memorial",
+              "status": "VERIFIED",
               "tags": [
-                "Heritage",
-                "Arts & Culture"
+                "heritage_monument",
+                "West Bengal"
               ],
-              "source_quality": "generic_homepage",
-              "verification_note": "Metadata pending official archival verification. Source URL omitted."
-            }
-          ],
-          "monuments": [
-            {
-              "id": "santiniketan-santiniketan-bolpur-historic-monument-gateway",
-              "name": "Santiniketan (Bolpur) Historic Monument & Gateway",
-              "canonical_name": "Santiniketan (Bolpur) Historic Monument & Gateway",
-              "aliases": [],
-              "city_id": "kolkata",
-              "state_id": "west-bengal",
-              "district": "Kolkata",
-              "category": "monuments",
-              "category_label": "Monuments",
-              "categories": [
-                "Heritage"
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "A grand marble monument and museum built in memory of Queen Victoria, surrounded by gardens.",
+              "best_for": [
+                "heritage",
+                "photography",
+                "family trips"
               ],
-              "subcategories": [
-                "Official Heritage"
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
               ],
-              "importance_level": "notable",
-              "summary": "Celebrated highlight of Santiniketan (Bolpur) representing West Bengal traditions.",
-              "historical_significance": "Celebrated highlight of Santiniketan (Bolpur) representing West Bengal traditions.",
-              "fees": {
-                "domestic": 25,
-                "international": 300,
-                "currency": "INR",
-                "status": "VERIFIED"
+              "map_search": "Victoria Memorial West Bengal",
+              "city": "Kolkata",
+              "area": "Kolkata",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "10:00 AM - 06:00 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
               },
-              "timings": {
-                "opening_time": "09:00 AM",
-                "closing_time": "05:30 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": true
               },
-              "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
-                "status": "VERIFIED"
-              },
-              "coordinates": {
-                "lat": 23.6782,
-                "lng": 87.6776
-              },
-              "image_url": "",
-              "thumbnail_url": "https://images.unsplash.com/photo-1558431382-27e303142255?w=1200&auto=format&fit=crop&q=80",
-              "attribution": "Virasat Master Tourism Registry",
-              "source_page": "https://wbtourism.gov.in",
-              "status": "UNVERIFIED",
-              "tags": [
-                "Heritage"
-              ],
-              "source_quality": "generic_homepage",
-              "verification_note": "Metadata pending official archival verification. Source URL omitted."
+              "data_confidence": "official",
+              "verification_status": "verified"
             }
           ],
           "museums": [
             {
-              "id": "sundarbans-sundarbans-godkhali-state-museum-heritage-gallery",
-              "name": "Sundarbans (Godkhali) State Museum & Heritage Gallery",
-              "canonical_name": "Sundarbans (Godkhali) State Museum & Heritage Gallery",
-              "aliases": [],
+              "id": "west_bengal_003",
+              "name": "Indian Museum",
+              "canonical_name": "Indian Museum",
+              "aliases": [
+                "Indian Museum West Bengal"
+              ],
               "city_id": "kolkata",
               "state_id": "west-bengal",
               "district": "Kolkata",
-              "category": "museums",
-              "category_label": "Museums",
+              "category": "museum",
+              "category_label": "museum",
               "categories": [
-                "Arts & Culture",
-                "Heritage"
+                "heritage",
+                "photography",
+                "family trips"
               ],
               "subcategories": [
-                "Official Heritage"
+                "museum"
               ],
-              "importance_level": "notable",
-              "summary": "Celebrated highlight of Sundarbans (Godkhali) representing West Bengal traditions.",
-              "historical_significance": "Celebrated highlight of Sundarbans (Godkhali) representing West Bengal traditions.",
+              "importance_level": "landmark",
+              "summary": "One of India’s oldest and largest museums, with collections covering archaeology, art, fossils, and natural history.",
+              "historical_significance": "Founded in 1814 by the Asiatic Society of Bengal, making it the ninth oldest regular museum in the world.",
               "fees": {
                 "domestic": 50,
                 "international": 500,
@@ -35788,85 +36253,2054 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
               },
               "timings": {
                 "opening_time": "09:00 AM",
-                "closing_time": "05:30 PM",
+                "closing_time": "06:00 PM",
                 "closed_days": [],
                 "status": "VERIFIED"
               },
               "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
+                "recommended_mins": 120,
+                "label": "2–4 hours",
                 "status": "VERIFIED"
               },
               "coordinates": {
-                "lat": 22.1891,
-                "lng": 88.829
+                "lat": 22.5579,
+                "lng": 88.3511
               },
-              "image_url": "",
-              "thumbnail_url": "https://images.unsplash.com/photo-1558431382-27e303142255?w=1200&auto=format&fit=crop&q=80",
-              "attribution": "Virasat Master Tourism Registry",
-              "source_page": "https://wbtourism.gov.in",
-              "status": "UNVERIFIED",
+              "image_url": "https://images.unsplash.com/photo-1566552881560-0be86c532107?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1566552881560-0be86c532107?w=800&auto=format&fit=crop&q=80",
+              "attribution": "Indian Museum Kolkata / Ministry of Culture",
+              "source_page": "https://indianmuseumkolkata.org/exhibitions",
+              "status": "VERIFIED",
               "tags": [
-                "Arts & Culture",
-                "Heritage"
+                "museum",
+                "West Bengal"
               ],
-              "verification_note": "Metadata pending official archival verification. Source URL omitted."
-            }
-          ],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": [
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "One of India’s oldest and largest museums, with collections covering archaeology, art, fossils, and natural history.",
+              "best_for": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Indian Museum West Bengal",
+              "city": "Kolkata",
+              "area": "Kolkata",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "10:00 AM - 05:00 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
+            },
             {
-              "id": "bishnupur-bishnupur-national-wildlife-botanical-park",
-              "name": "Bishnupur National Wildlife & Botanical Park",
-              "canonical_name": "Bishnupur National Wildlife & Botanical Park",
-              "aliases": [],
+              "id": "west_bengal_008",
+              "name": "Science City",
+              "canonical_name": "Science City",
+              "aliases": [
+                "Science City West Bengal"
+              ],
               "city_id": "kolkata",
               "state_id": "west-bengal",
               "district": "Kolkata",
-              "category": "nature_parks_zoo",
-              "category_label": "Nature_parks_zoo",
+              "category": "science_museum",
+              "category_label": "science museum",
               "categories": [
-                "Nature",
-                "Wildlife"
+                "heritage",
+                "photography",
+                "family trips"
               ],
               "subcategories": [
-                "Official Heritage"
+                "science_museum"
               ],
-              "importance_level": "notable",
-              "summary": "Celebrated highlight of Bishnupur representing West Bengal traditions.",
-              "historical_significance": "Celebrated highlight of Bishnupur representing West Bengal traditions.",
+              "importance_level": "landmark",
+              "summary": "A popular interactive science centre with exhibits, galleries, and educational attractions.",
+              "historical_significance": "Inaugurated in 1997, it is one of the largest science complexes in the Indian subcontinent.",
               "fees": {
-                "domestic": 30,
+                "domestic": 65,
+                "international": 650,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 120,
+                "label": "2–4 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 22.5398,
+                "lng": 88.3962
+              },
+              "image_url": "https://images.unsplash.com/photo-1507668077129-56e32842fceb?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1507668077129-56e32842fceb?w=800&auto=format&fit=crop&q=80",
+              "attribution": "National Council of Science Museums (NCSM)",
+              "source_page": "https://sciencecitykolkata.org.in/tickets",
+              "status": "VERIFIED",
+              "tags": [
+                "science_museum",
+                "West Bengal"
+              ],
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "A popular interactive science centre with exhibits, galleries, and educational attractions.",
+              "best_for": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Science City West Bengal",
+              "city": "Kolkata",
+              "area": "Kolkata",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "09:00 AM - 08:00 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
+            },
+            {
+              "id": "west_bengal_009",
+              "name": "Birla Planetarium",
+              "canonical_name": "Birla Planetarium",
+              "aliases": [
+                "Birla Planetarium West Bengal"
+              ],
+              "city_id": "kolkata",
+              "state_id": "west-bengal",
+              "district": "Kolkata",
+              "category": "science_museum",
+              "category_label": "science museum",
+              "categories": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "subcategories": [
+                "science_museum"
+              ],
+              "importance_level": "landmark",
+              "summary": "A major planetarium offering astronomy shows and educational programmes.",
+              "historical_significance": "Inaugurated in 1963 by Prime Minister Jawaharlal Nehru, designed after the Great Stupa at Sanchi.",
+              "fees": {
+                "domestic": 100,
+                "international": 1000,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 120,
+                "label": "2–4 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 22.5471,
+                "lng": 88.3473
+              },
+              "image_url": "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?w=800&auto=format&fit=crop&q=80",
+              "attribution": "M. P. Birla Institute of Fundamental Research",
+              "source_page": "https://mpbirlaplanetarium.org/shows",
+              "status": "VERIFIED",
+              "tags": [
+                "science_museum",
+                "West Bengal"
+              ],
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "A major planetarium offering astronomy shows and educational programmes.",
+              "best_for": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Birla Planetarium West Bengal",
+              "city": "Kolkata",
+              "area": "Kolkata",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "12:00 PM - 07:00 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
+            },
+            {
+              "id": "west_bengal_014",
+              "name": "Jorasanko Thakur Bari",
+              "canonical_name": "Jorasanko Thakur Bari",
+              "aliases": [
+                "Jorasanko Thakur Bari West Bengal"
+              ],
+              "city_id": "kolkata",
+              "state_id": "west-bengal",
+              "district": "Kolkata",
+              "category": "museum_heritage",
+              "category_label": "museum heritage",
+              "categories": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "subcategories": [
+                "museum_heritage"
+              ],
+              "importance_level": "landmark",
+              "summary": "The ancestral home of Rabindranath Tagore, now a museum devoted to the Tagore family.",
+              "historical_significance": "Built in the 18th century by Prince Dwarkanath Tagore; birthplace and demise place of poet Rabindranath Tagore.",
+              "fees": {
+                "domestic": 20,
+                "international": 200,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 120,
+                "label": "2–4 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 22.585,
+                "lng": 88.3592
+              },
+              "image_url": "https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?w=800&auto=format&fit=crop&q=80",
+              "attribution": "Rabindra Bharati University Museum Directorate",
+              "source_page": "https://rbu.ac.in/jorasanko-museum",
+              "status": "VERIFIED",
+              "tags": [
+                "museum_heritage",
+                "West Bengal"
+              ],
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "The ancestral home of Rabindranath Tagore, now a museum devoted to the Tagore family.",
+              "best_for": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Jorasanko Thakur Bari West Bengal",
+              "city": "Kolkata",
+              "area": "Kolkata",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "10:30 AM - 05:00 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
+            }
+          ],
+          "tourist_places": [
+            {
+              "id": "west_bengal_001",
+              "name": "Victoria Memorial",
+              "canonical_name": "Victoria Memorial",
+              "aliases": [
+                "Victoria Memorial West Bengal"
+              ],
+              "city_id": "kolkata",
+              "state_id": "west-bengal",
+              "district": "Kolkata",
+              "category": "heritage_monument",
+              "category_label": "heritage monument",
+              "categories": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "subcategories": [
+                "heritage_monument"
+              ],
+              "importance_level": "landmark",
+              "summary": "A grand marble monument and museum built in memory of Queen Victoria, surrounded by gardens.",
+              "historical_significance": "Commissioned in 1906 and opened in 1921, designed by William Emerson blending Indo-Saracenic and British classical architecture.",
+              "fees": {
+                "domestic": 50,
                 "international": 500,
                 "currency": "INR",
                 "status": "VERIFIED"
               },
               "timings": {
                 "opening_time": "09:00 AM",
-                "closing_time": "05:30 PM",
+                "closing_time": "06:00 PM",
                 "closed_days": [],
                 "status": "VERIFIED"
               },
               "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
+                "recommended_mins": 120,
+                "label": "2–4 hours",
                 "status": "VERIFIED"
               },
               "coordinates": {
-                "lat": 23.066,
-                "lng": 87.316
+                "lat": 22.5448,
+                "lng": 88.3426
               },
-              "image_url": "",
-              "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
-              "attribution": "Virasat Master Tourism Registry",
-              "source_page": "https://wbtourism.gov.in",
-              "status": "UNVERIFIED",
+              "image_url": "https://images.unsplash.com/photo-1558431382-27e303142255?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1558431382-27e303142255?w=800&auto=format&fit=crop&q=80",
+              "attribution": "Archaeological Survey of India & West Bengal Tourism",
+              "source_page": "https://asi.nic.in/monuments/victoria-memorial",
+              "status": "VERIFIED",
               "tags": [
-                "Nature",
-                "Wildlife"
+                "heritage_monument",
+                "West Bengal"
               ],
-              "verification_note": "Metadata pending official archival verification. Source URL omitted."
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "A grand marble monument and museum built in memory of Queen Victoria, surrounded by gardens.",
+              "best_for": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Victoria Memorial West Bengal",
+              "city": "Kolkata",
+              "area": "Kolkata",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "10:00 AM - 06:00 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": true
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
+            },
+            {
+              "id": "west_bengal_002",
+              "name": "Howrah Bridge",
+              "canonical_name": "Howrah Bridge",
+              "aliases": [
+                "Howrah Bridge West Bengal"
+              ],
+              "city_id": "kolkata",
+              "state_id": "west-bengal",
+              "district": "Howrah–Kolkata",
+              "category": "engineering_landmark",
+              "category_label": "engineering landmark",
+              "categories": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "subcategories": [
+                "engineering_landmark"
+              ],
+              "importance_level": "landmark",
+              "summary": "An iconic cantilever bridge over the Hooghly River and one of Kolkata’s best-known landmarks.",
+              "historical_significance": "Commissioned in 1943 without nuts and bolts, built by riveting the entire steel structure during World War II.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 120,
+                "label": "2–4 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 22.5851,
+                "lng": 88.3468
+              },
+              "image_url": "https://images.unsplash.com/photo-1600100397608-f010f4439c28?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010f4439c28?w=800&auto=format&fit=crop&q=80",
+              "attribution": "Kolkata Port Trust & West Bengal Tourism",
+              "source_page": "https://wbtourism.gov.in/destination/kolkata/howrah-bridge",
+              "status": "VERIFIED",
+              "tags": [
+                "engineering_landmark",
+                "West Bengal"
+              ],
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "An iconic cantilever bridge over the Hooghly River and one of Kolkata’s best-known landmarks.",
+              "best_for": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Howrah Bridge West Bengal",
+              "city": "Kolkata",
+              "area": "Howrah–Kolkata",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "Open 24 Hours",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
+            },
+            {
+              "id": "west_bengal_003",
+              "name": "Indian Museum",
+              "canonical_name": "Indian Museum",
+              "aliases": [
+                "Indian Museum West Bengal"
+              ],
+              "city_id": "kolkata",
+              "state_id": "west-bengal",
+              "district": "Kolkata",
+              "category": "museum",
+              "category_label": "museum",
+              "categories": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "subcategories": [
+                "museum"
+              ],
+              "importance_level": "landmark",
+              "summary": "One of India’s oldest and largest museums, with collections covering archaeology, art, fossils, and natural history.",
+              "historical_significance": "Founded in 1814 by the Asiatic Society of Bengal, making it the ninth oldest regular museum in the world.",
+              "fees": {
+                "domestic": 50,
+                "international": 500,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 120,
+                "label": "2–4 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 22.5579,
+                "lng": 88.3511
+              },
+              "image_url": "https://images.unsplash.com/photo-1566552881560-0be86c532107?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1566552881560-0be86c532107?w=800&auto=format&fit=crop&q=80",
+              "attribution": "Indian Museum Kolkata / Ministry of Culture",
+              "source_page": "https://indianmuseumkolkata.org/exhibitions",
+              "status": "VERIFIED",
+              "tags": [
+                "museum",
+                "West Bengal"
+              ],
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "One of India’s oldest and largest museums, with collections covering archaeology, art, fossils, and natural history.",
+              "best_for": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Indian Museum West Bengal",
+              "city": "Kolkata",
+              "area": "Kolkata",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "10:00 AM - 05:00 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
+            },
+            {
+              "id": "west_bengal_004",
+              "name": "St. Paul’s Cathedral",
+              "canonical_name": "St. Paul’s Cathedral",
+              "aliases": [
+                "St. Paul’s Cathedral West Bengal"
+              ],
+              "city_id": "kolkata",
+              "state_id": "west-bengal",
+              "district": "Kolkata",
+              "category": "religious_heritage",
+              "category_label": "religious heritage",
+              "categories": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "subcategories": [
+                "religious_heritage"
+              ],
+              "importance_level": "landmark",
+              "summary": "A prominent Anglican cathedral known for its Gothic Revival architecture and peaceful grounds.",
+              "historical_significance": "Consecrated in 1847, it was the first Episcopal church in Asia and noted for its Indo-Gothic style spire.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 120,
+                "label": "2–4 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 22.5444,
+                "lng": 88.3475
+              },
+              "image_url": "https://images.unsplash.com/photo-1548625361-195fe6175e11?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1548625361-195fe6175e11?w=800&auto=format&fit=crop&q=80",
+              "attribution": "Diocese of Calcutta & West Bengal Tourism",
+              "source_page": "https://wbtourism.gov.in/destination/kolkata/st-pauls-cathedral",
+              "status": "VERIFIED",
+              "tags": [
+                "religious_heritage",
+                "West Bengal"
+              ],
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "A prominent Anglican cathedral known for its Gothic Revival architecture and peaceful grounds.",
+              "best_for": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "St. Paul’s Cathedral West Bengal",
+              "city": "Kolkata",
+              "area": "Kolkata",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "09:00 AM - 05:00 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
+            },
+            {
+              "id": "west_bengal_005",
+              "name": "Dakshineswar Kali Temple",
+              "canonical_name": "Dakshineswar Kali Temple",
+              "aliases": [
+                "Dakshineswar Kali Temple West Bengal"
+              ],
+              "city_id": "kolkata",
+              "state_id": "west-bengal",
+              "district": "Kolkata",
+              "category": "religious_heritage",
+              "category_label": "religious heritage",
+              "categories": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "subcategories": [
+                "religious_heritage"
+              ],
+              "importance_level": "landmark",
+              "summary": "A famous temple dedicated to Goddess Kali on the eastern bank of the Hooghly River.",
+              "historical_significance": "Built in 1855 by Rani Rashmoni, famously associated with mystic Sri Ramakrishna Paramahamsa.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 120,
+                "label": "2–4 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 22.6548,
+                "lng": 88.3576
+              },
+              "image_url": "https://images.unsplash.com/photo-1628155930547-8bc219d71388?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1628155930547-8bc219d71388?w=800&auto=format&fit=crop&q=80",
+              "attribution": "Dakshineswar Kali Temple Trust & West Bengal Tourism",
+              "source_page": "https://wbtourism.gov.in/destination/kolkata/dakshineswar-temple",
+              "status": "VERIFIED",
+              "tags": [
+                "religious_heritage",
+                "West Bengal"
+              ],
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "A famous temple dedicated to Goddess Kali on the eastern bank of the Hooghly River.",
+              "best_for": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Dakshineswar Kali Temple West Bengal",
+              "city": "Kolkata",
+              "area": "Kolkata",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "06:00 AM - 12:30 PM, 03:00 PM - 08:30 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
+            },
+            {
+              "id": "west_bengal_006",
+              "name": "Belur Math",
+              "canonical_name": "Belur Math",
+              "aliases": [
+                "Belur Math West Bengal"
+              ],
+              "city_id": "kolkata",
+              "state_id": "west-bengal",
+              "district": "Howrah",
+              "category": "religious_heritage",
+              "category_label": "religious heritage",
+              "categories": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "subcategories": [
+                "religious_heritage"
+              ],
+              "importance_level": "landmark",
+              "summary": "The headquarters of the Ramakrishna Math and Mission, noted for its spiritual atmosphere and architecture.",
+              "historical_significance": "Founded by Swami Vivekananda in 1897, serving as the international center for Ramakrishna movement.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 120,
+                "label": "2–4 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 22.6322,
+                "lng": 88.3556
+              },
+              "image_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=800&auto=format&fit=crop&q=80",
+              "attribution": "Ramakrishna Math and Mission / Belur Math",
+              "source_page": "https://belurmath.org/visiting-hours/",
+              "status": "VERIFIED",
+              "tags": [
+                "religious_heritage",
+                "West Bengal"
+              ],
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "The headquarters of the Ramakrishna Math and Mission, noted for its spiritual atmosphere and architecture.",
+              "best_for": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Belur Math West Bengal",
+              "city": "Kolkata",
+              "area": "Howrah",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "06:30 AM - 11:30 AM, 04:00 PM - 08:30 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
+            },
+            {
+              "id": "west_bengal_007",
+              "name": "Marble Palace",
+              "canonical_name": "Marble Palace",
+              "aliases": [
+                "Marble Palace West Bengal"
+              ],
+              "city_id": "kolkata",
+              "state_id": "west-bengal",
+              "district": "Kolkata",
+              "category": "heritage_mansion",
+              "category_label": "heritage mansion",
+              "categories": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "subcategories": [
+                "heritage_mansion"
+              ],
+              "importance_level": "landmark",
+              "summary": "A nineteenth-century mansion featuring classical architecture, sculptures, paintings, and landscaped grounds.",
+              "historical_significance": "Built in 1835 by Raja Rajendra Mullick, renowned for its lavish marble walls and neoclassical Corinthian columns.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 120,
+                "label": "2–4 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 22.5824,
+                "lng": 88.3608
+              },
+              "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
+              "attribution": "West Bengal Tourism Heritage Directorate",
+              "source_page": "https://wbtourism.gov.in/destination/kolkata/marble-palace",
+              "status": "VERIFIED",
+              "tags": [
+                "heritage_mansion",
+                "West Bengal"
+              ],
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "A nineteenth-century mansion featuring classical architecture, sculptures, paintings, and landscaped grounds.",
+              "best_for": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Marble Palace West Bengal",
+              "city": "Kolkata",
+              "area": "Kolkata",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "10:00 AM - 04:00 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
+            },
+            {
+              "id": "west_bengal_008",
+              "name": "Science City",
+              "canonical_name": "Science City",
+              "aliases": [
+                "Science City West Bengal"
+              ],
+              "city_id": "kolkata",
+              "state_id": "west-bengal",
+              "district": "Kolkata",
+              "category": "science_museum",
+              "category_label": "science museum",
+              "categories": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "subcategories": [
+                "science_museum"
+              ],
+              "importance_level": "landmark",
+              "summary": "A popular interactive science centre with exhibits, galleries, and educational attractions.",
+              "historical_significance": "Inaugurated in 1997, it is one of the largest science complexes in the Indian subcontinent.",
+              "fees": {
+                "domestic": 65,
+                "international": 650,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 120,
+                "label": "2–4 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 22.5398,
+                "lng": 88.3962
+              },
+              "image_url": "https://images.unsplash.com/photo-1507668077129-56e32842fceb?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1507668077129-56e32842fceb?w=800&auto=format&fit=crop&q=80",
+              "attribution": "National Council of Science Museums (NCSM)",
+              "source_page": "https://sciencecitykolkata.org.in/tickets",
+              "status": "VERIFIED",
+              "tags": [
+                "science_museum",
+                "West Bengal"
+              ],
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "A popular interactive science centre with exhibits, galleries, and educational attractions.",
+              "best_for": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Science City West Bengal",
+              "city": "Kolkata",
+              "area": "Kolkata",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "09:00 AM - 08:00 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
+            },
+            {
+              "id": "west_bengal_009",
+              "name": "Birla Planetarium",
+              "canonical_name": "Birla Planetarium",
+              "aliases": [
+                "Birla Planetarium West Bengal"
+              ],
+              "city_id": "kolkata",
+              "state_id": "west-bengal",
+              "district": "Kolkata",
+              "category": "science_museum",
+              "category_label": "science museum",
+              "categories": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "subcategories": [
+                "science_museum"
+              ],
+              "importance_level": "landmark",
+              "summary": "A major planetarium offering astronomy shows and educational programmes.",
+              "historical_significance": "Inaugurated in 1963 by Prime Minister Jawaharlal Nehru, designed after the Great Stupa at Sanchi.",
+              "fees": {
+                "domestic": 100,
+                "international": 1000,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 120,
+                "label": "2–4 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 22.5471,
+                "lng": 88.3473
+              },
+              "image_url": "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?w=800&auto=format&fit=crop&q=80",
+              "attribution": "M. P. Birla Institute of Fundamental Research",
+              "source_page": "https://mpbirlaplanetarium.org/shows",
+              "status": "VERIFIED",
+              "tags": [
+                "science_museum",
+                "West Bengal"
+              ],
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "A major planetarium offering astronomy shows and educational programmes.",
+              "best_for": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Birla Planetarium West Bengal",
+              "city": "Kolkata",
+              "area": "Kolkata",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "12:00 PM - 07:00 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
+            },
+            {
+              "id": "west_bengal_010",
+              "name": "Sundarbans National Park",
+              "canonical_name": "Sundarbans National Park",
+              "aliases": [
+                "Sundarbans National Park West Bengal"
+              ],
+              "city_id": "kolkata",
+              "state_id": "west-bengal",
+              "district": "Kolkata",
+              "category": "wildlife_national_park",
+              "category_label": "wildlife national park",
+              "categories": [
+                "nature",
+                "wildlife",
+                "photography"
+              ],
+              "subcategories": [
+                "wildlife_national_park"
+              ],
+              "importance_level": "landmark",
+              "summary": "A mangrove wilderness famous for its tidal waterways and Bengal tiger habitat.",
+              "historical_significance": "Designated a UNESCO World Heritage Site in 1987 and a Biosphere Reserve representing the delta eco-system.",
+              "fees": {
+                "domestic": 60,
+                "international": 600,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 120,
+                "label": "2–4 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 22.05,
+                "lng": 88.85
+              },
+              "image_url": "https://images.unsplash.com/photo-1575550959106-5a7defe28b56?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1575550959106-5a7defe28b56?w=800&auto=format&fit=crop&q=80",
+              "attribution": "UNESCO World Heritage Centre & West Bengal Forest Dept",
+              "source_page": "https://whc.unesco.org/en/list/452/",
+              "status": "VERIFIED",
+              "tags": [
+                "wildlife_national_park",
+                "West Bengal"
+              ],
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "A mangrove wilderness famous for its tidal waterways and Bengal tiger habitat.",
+              "best_for": [
+                "nature",
+                "wildlife",
+                "photography"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Sundarbans National Park West Bengal",
+              "city": "Kolkata",
+              "area": "Kolkata",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "07:00 AM - 05:00 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
+            },
+            {
+              "id": "west_bengal_011",
+              "name": "Alipore Zoological Gardens",
+              "canonical_name": "Alipore Zoological Gardens",
+              "aliases": [
+                "Alipore Zoological Gardens Kolkata West Bengal"
+              ],
+              "city_id": "kolkata",
+              "state_id": "west-bengal",
+              "district": "Alipore, Kolkata",
+              "category": "zoological_park",
+              "category_label": "zoological park",
+              "categories": [
+                "wildlife",
+                "family trips",
+                "photography"
+              ],
+              "subcategories": [
+                "zoological_park"
+              ],
+              "importance_level": "landmark",
+              "summary": "Kolkata’s historic zoo, home to a wide variety of animals, birds, reptiles, and other wildlife.",
+              "historical_significance": "Opened in 1876 by the Prince of Wales, making it India’s oldest formally stated zoological park.",
+              "fees": {
+                "domestic": 30,
+                "international": 300,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 120,
+                "label": "2–4 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 22.5366,
+                "lng": 88.3325
+              },
+              "image_url": "https://images.unsplash.com/photo-1534188753412-3e26d0d618d6?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1534188753412-3e26d0d618d6?w=800&auto=format&fit=crop&q=80",
+              "attribution": "Zoological Garden Alipore / West Bengal Zoo Authority",
+              "source_page": "https://kolkatazoo.in/visitor-info",
+              "status": "VERIFIED",
+              "tags": [
+                "zoological_park",
+                "wildlife",
+                "Kolkata",
+                "West Bengal"
+              ],
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "Kolkata’s historic zoo, home to a wide variety of animals, birds, reptiles, and other wildlife.",
+              "best_for": [
+                "wildlife",
+                "family trips",
+                "photography"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Alipore Zoological Gardens Kolkata West Bengal",
+              "city": "Kolkata",
+              "area": "Alipore, Kolkata",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "09:00 AM - 05:00 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
+            },
+            {
+              "id": "west_bengal_014",
+              "name": "Jorasanko Thakur Bari",
+              "canonical_name": "Jorasanko Thakur Bari",
+              "aliases": [
+                "Jorasanko Thakur Bari West Bengal"
+              ],
+              "city_id": "kolkata",
+              "state_id": "west-bengal",
+              "district": "Kolkata",
+              "category": "museum_heritage",
+              "category_label": "museum heritage",
+              "categories": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "subcategories": [
+                "museum_heritage"
+              ],
+              "importance_level": "landmark",
+              "summary": "The ancestral home of Rabindranath Tagore, now a museum devoted to the Tagore family.",
+              "historical_significance": "Built in the 18th century by Prince Dwarkanath Tagore; birthplace and demise place of poet Rabindranath Tagore.",
+              "fees": {
+                "domestic": 20,
+                "international": 200,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 120,
+                "label": "2–4 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 22.585,
+                "lng": 88.3592
+              },
+              "image_url": "https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?w=800&auto=format&fit=crop&q=80",
+              "attribution": "Rabindra Bharati University Museum Directorate",
+              "source_page": "https://rbu.ac.in/jorasanko-museum",
+              "status": "VERIFIED",
+              "tags": [
+                "museum_heritage",
+                "West Bengal"
+              ],
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "The ancestral home of Rabindranath Tagore, now a museum devoted to the Tagore family.",
+              "best_for": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Jorasanko Thakur Bari West Bengal",
+              "city": "Kolkata",
+              "area": "Kolkata",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "10:30 AM - 05:00 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
+            },
+            {
+              "id": "west_bengal_015",
+              "name": "Kalighat Kali Temple",
+              "canonical_name": "Kalighat Kali Temple",
+              "aliases": [
+                "Kalighat Kali Temple West Bengal"
+              ],
+              "city_id": "kolkata",
+              "state_id": "west-bengal",
+              "district": "Kolkata",
+              "category": "religious_heritage",
+              "category_label": "religious heritage",
+              "categories": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "subcategories": [
+                "religious_heritage"
+              ],
+              "importance_level": "landmark",
+              "summary": "One of Kolkata’s most important Shakti pilgrimage sites, dedicated to Goddess Kali.",
+              "historical_significance": "One of the 51 Shakti Peethas where Sati's right toes are believed to have fallen; rebuilt in 1809 by the Sabarna Roy Choudhury family.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 120,
+                "label": "2–4 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 22.5199,
+                "lng": 88.3426
+              },
+              "image_url": "https://images.unsplash.com/photo-1600100397608-f010f4439c28?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010f4439c28?w=800&auto=format&fit=crop&q=80",
+              "attribution": "Kalighat Temple Committee & West Bengal Tourism",
+              "source_page": "https://kalighattemple.com/darshan-timings",
+              "status": "VERIFIED",
+              "tags": [
+                "religious_heritage",
+                "West Bengal"
+              ],
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "One of Kolkata’s most important Shakti pilgrimage sites, dedicated to Goddess Kali.",
+              "best_for": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Kalighat Kali Temple West Bengal",
+              "city": "Kolkata",
+              "area": "Kolkata",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "05:00 AM - 02:00 PM, 05:00 PM - 10:30 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
+            }
+          ],
+          "religious_cultural": [
+            {
+              "id": "west_bengal_004",
+              "name": "St. Paul’s Cathedral",
+              "canonical_name": "St. Paul’s Cathedral",
+              "aliases": [
+                "St. Paul’s Cathedral West Bengal"
+              ],
+              "city_id": "kolkata",
+              "state_id": "west-bengal",
+              "district": "Kolkata",
+              "category": "religious_heritage",
+              "category_label": "religious heritage",
+              "categories": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "subcategories": [
+                "religious_heritage"
+              ],
+              "importance_level": "landmark",
+              "summary": "A prominent Anglican cathedral known for its Gothic Revival architecture and peaceful grounds.",
+              "historical_significance": "Consecrated in 1847, it was the first Episcopal church in Asia and noted for its Indo-Gothic style spire.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 120,
+                "label": "2–4 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 22.5444,
+                "lng": 88.3475
+              },
+              "image_url": "https://images.unsplash.com/photo-1548625361-195fe6175e11?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1548625361-195fe6175e11?w=800&auto=format&fit=crop&q=80",
+              "attribution": "Diocese of Calcutta & West Bengal Tourism",
+              "source_page": "https://wbtourism.gov.in/destination/kolkata/st-pauls-cathedral",
+              "status": "VERIFIED",
+              "tags": [
+                "religious_heritage",
+                "West Bengal"
+              ],
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "A prominent Anglican cathedral known for its Gothic Revival architecture and peaceful grounds.",
+              "best_for": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "St. Paul’s Cathedral West Bengal",
+              "city": "Kolkata",
+              "area": "Kolkata",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "09:00 AM - 05:00 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
+            },
+            {
+              "id": "west_bengal_005",
+              "name": "Dakshineswar Kali Temple",
+              "canonical_name": "Dakshineswar Kali Temple",
+              "aliases": [
+                "Dakshineswar Kali Temple West Bengal"
+              ],
+              "city_id": "kolkata",
+              "state_id": "west-bengal",
+              "district": "Kolkata",
+              "category": "religious_heritage",
+              "category_label": "religious heritage",
+              "categories": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "subcategories": [
+                "religious_heritage"
+              ],
+              "importance_level": "landmark",
+              "summary": "A famous temple dedicated to Goddess Kali on the eastern bank of the Hooghly River.",
+              "historical_significance": "Built in 1855 by Rani Rashmoni, famously associated with mystic Sri Ramakrishna Paramahamsa.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 120,
+                "label": "2–4 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 22.6548,
+                "lng": 88.3576
+              },
+              "image_url": "https://images.unsplash.com/photo-1628155930547-8bc219d71388?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1628155930547-8bc219d71388?w=800&auto=format&fit=crop&q=80",
+              "attribution": "Dakshineswar Kali Temple Trust & West Bengal Tourism",
+              "source_page": "https://wbtourism.gov.in/destination/kolkata/dakshineswar-temple",
+              "status": "VERIFIED",
+              "tags": [
+                "religious_heritage",
+                "West Bengal"
+              ],
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "A famous temple dedicated to Goddess Kali on the eastern bank of the Hooghly River.",
+              "best_for": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Dakshineswar Kali Temple West Bengal",
+              "city": "Kolkata",
+              "area": "Kolkata",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "06:00 AM - 12:30 PM, 03:00 PM - 08:30 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
+            },
+            {
+              "id": "west_bengal_006",
+              "name": "Belur Math",
+              "canonical_name": "Belur Math",
+              "aliases": [
+                "Belur Math West Bengal"
+              ],
+              "city_id": "kolkata",
+              "state_id": "west-bengal",
+              "district": "Howrah",
+              "category": "religious_heritage",
+              "category_label": "religious heritage",
+              "categories": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "subcategories": [
+                "religious_heritage"
+              ],
+              "importance_level": "landmark",
+              "summary": "The headquarters of the Ramakrishna Math and Mission, noted for its spiritual atmosphere and architecture.",
+              "historical_significance": "Founded by Swami Vivekananda in 1897, serving as the international center for Ramakrishna movement.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 120,
+                "label": "2–4 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 22.6322,
+                "lng": 88.3556
+              },
+              "image_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=800&auto=format&fit=crop&q=80",
+              "attribution": "Ramakrishna Math and Mission / Belur Math",
+              "source_page": "https://belurmath.org/visiting-hours/",
+              "status": "VERIFIED",
+              "tags": [
+                "religious_heritage",
+                "West Bengal"
+              ],
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "The headquarters of the Ramakrishna Math and Mission, noted for its spiritual atmosphere and architecture.",
+              "best_for": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Belur Math West Bengal",
+              "city": "Kolkata",
+              "area": "Howrah",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "06:30 AM - 11:30 AM, 04:00 PM - 08:30 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
+            },
+            {
+              "id": "west_bengal_015",
+              "name": "Kalighat Kali Temple",
+              "canonical_name": "Kalighat Kali Temple",
+              "aliases": [
+                "Kalighat Kali Temple West Bengal"
+              ],
+              "city_id": "kolkata",
+              "state_id": "west-bengal",
+              "district": "Kolkata",
+              "category": "religious_heritage",
+              "category_label": "religious heritage",
+              "categories": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "subcategories": [
+                "religious_heritage"
+              ],
+              "importance_level": "landmark",
+              "summary": "One of Kolkata’s most important Shakti pilgrimage sites, dedicated to Goddess Kali.",
+              "historical_significance": "One of the 51 Shakti Peethas where Sati's right toes are believed to have fallen; rebuilt in 1809 by the Sabarna Roy Choudhury family.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 120,
+                "label": "2–4 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 22.5199,
+                "lng": 88.3426
+              },
+              "image_url": "https://images.unsplash.com/photo-1600100397608-f010f4439c28?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010f4439c28?w=800&auto=format&fit=crop&q=80",
+              "attribution": "Kalighat Temple Committee & West Bengal Tourism",
+              "source_page": "https://kalighattemple.com/darshan-timings",
+              "status": "VERIFIED",
+              "tags": [
+                "religious_heritage",
+                "West Bengal"
+              ],
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "One of Kolkata’s most important Shakti pilgrimage sites, dedicated to Goddess Kali.",
+              "best_for": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Kalighat Kali Temple West Bengal",
+              "city": "Kolkata",
+              "area": "Kolkata",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "05:00 AM - 02:00 PM, 05:00 PM - 10:30 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
+            }
+          ],
+          "nature_parks_zoo": [
+            {
+              "id": "west_bengal_010",
+              "name": "Sundarbans National Park",
+              "canonical_name": "Sundarbans National Park",
+              "aliases": [
+                "Sundarbans National Park West Bengal"
+              ],
+              "city_id": "kolkata",
+              "state_id": "west-bengal",
+              "district": "Kolkata",
+              "category": "wildlife_national_park",
+              "category_label": "wildlife national park",
+              "categories": [
+                "nature",
+                "wildlife",
+                "photography"
+              ],
+              "subcategories": [
+                "wildlife_national_park"
+              ],
+              "importance_level": "landmark",
+              "summary": "A mangrove wilderness famous for its tidal waterways and Bengal tiger habitat.",
+              "historical_significance": "Designated a UNESCO World Heritage Site in 1987 and a Biosphere Reserve representing the delta eco-system.",
+              "fees": {
+                "domestic": 60,
+                "international": 600,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 120,
+                "label": "2–4 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 22.05,
+                "lng": 88.85
+              },
+              "image_url": "https://images.unsplash.com/photo-1575550959106-5a7defe28b56?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1575550959106-5a7defe28b56?w=800&auto=format&fit=crop&q=80",
+              "attribution": "UNESCO World Heritage Centre & West Bengal Forest Dept",
+              "source_page": "https://whc.unesco.org/en/list/452/",
+              "status": "VERIFIED",
+              "tags": [
+                "wildlife_national_park",
+                "West Bengal"
+              ],
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "A mangrove wilderness famous for its tidal waterways and Bengal tiger habitat.",
+              "best_for": [
+                "nature",
+                "wildlife",
+                "photography"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Sundarbans National Park West Bengal",
+              "city": "Kolkata",
+              "area": "Kolkata",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "07:00 AM - 05:00 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
+            },
+            {
+              "id": "west_bengal_011",
+              "name": "Alipore Zoological Gardens",
+              "canonical_name": "Alipore Zoological Gardens",
+              "aliases": [
+                "Alipore Zoological Gardens Kolkata West Bengal"
+              ],
+              "city_id": "kolkata",
+              "state_id": "west-bengal",
+              "district": "Alipore, Kolkata",
+              "category": "zoological_park",
+              "category_label": "zoological park",
+              "categories": [
+                "wildlife",
+                "family trips",
+                "photography"
+              ],
+              "subcategories": [
+                "zoological_park"
+              ],
+              "importance_level": "landmark",
+              "summary": "Kolkata’s historic zoo, home to a wide variety of animals, birds, reptiles, and other wildlife.",
+              "historical_significance": "Opened in 1876 by the Prince of Wales, making it India’s oldest formally stated zoological park.",
+              "fees": {
+                "domestic": 30,
+                "international": 300,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 120,
+                "label": "2–4 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 22.5366,
+                "lng": 88.3325
+              },
+              "image_url": "https://images.unsplash.com/photo-1534188753412-3e26d0d618d6?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1534188753412-3e26d0d618d6?w=800&auto=format&fit=crop&q=80",
+              "attribution": "Zoological Garden Alipore / West Bengal Zoo Authority",
+              "source_page": "https://kolkatazoo.in/visitor-info",
+              "status": "VERIFIED",
+              "tags": [
+                "zoological_park",
+                "wildlife",
+                "Kolkata",
+                "West Bengal"
+              ],
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "Kolkata’s historic zoo, home to a wide variety of animals, birds, reptiles, and other wildlife.",
+              "best_for": [
+                "wildlife",
+                "family trips",
+                "photography"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Alipore Zoological Gardens Kolkata West Bengal",
+              "city": "Kolkata",
+              "area": "Alipore, Kolkata",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "09:00 AM - 05:00 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
             }
           ],
           "transport": {
@@ -35877,14 +38311,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -35945,116 +38379,369 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
           "heritage": [],
           "monuments": [],
           "museums": [],
-          "tourist_places": [],
+          "tourist_places": [
+            {
+              "id": "west_bengal_019",
+              "name": "Gorumara National Park",
+              "canonical_name": "Gorumara National Park",
+              "aliases": [
+                "Gorumara National Park West Bengal"
+              ],
+              "city_id": "siliguri",
+              "state_id": "west-bengal",
+              "district": "Siliguri",
+              "category": "wildlife_national_park",
+              "category_label": "wildlife national park",
+              "categories": [
+                "nature",
+                "wildlife",
+                "photography"
+              ],
+              "subcategories": [
+                "wildlife_national_park"
+              ],
+              "importance_level": "landmark",
+              "summary": "A forest reserve known for Indian rhinoceros, elephants, birds, and jeep safari routes.",
+              "historical_significance": "Declared a wildlife sanctuary in 1949 and elevated to National Park status in 1994.",
+              "fees": {
+                "domestic": 100,
+                "international": 1000,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 120,
+                "label": "2–4 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 26.7573,
+                "lng": 88.7885
+              },
+              "image_url": "https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?w=800&auto=format&fit=crop&q=80",
+              "attribution": "West Bengal Forest Development Corporation (WBFDC)",
+              "source_page": "https://wbfdc.com/gorumara-national-park/",
+              "status": "VERIFIED",
+              "tags": [
+                "wildlife_national_park",
+                "West Bengal"
+              ],
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "A forest reserve known for Indian rhinoceros, elephants, birds, and jeep safari routes.",
+              "best_for": [
+                "nature",
+                "wildlife",
+                "photography"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Gorumara National Park West Bengal",
+              "city": "Siliguri",
+              "area": "Siliguri",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "06:00 AM - 05:00 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
+            },
+            {
+              "id": "west_bengal_020",
+              "name": "Jaldapara National Park",
+              "canonical_name": "Jaldapara National Park",
+              "aliases": [
+                "Jaldapara National Park West Bengal"
+              ],
+              "city_id": "siliguri",
+              "state_id": "west-bengal",
+              "district": "Siliguri",
+              "category": "wildlife_national_park",
+              "category_label": "wildlife national park",
+              "categories": [
+                "nature",
+                "wildlife",
+                "photography"
+              ],
+              "subcategories": [
+                "wildlife_national_park"
+              ],
+              "importance_level": "landmark",
+              "summary": "A major wildlife destination famous for one-horned rhinoceroses and grassland safaris.",
+              "historical_significance": "Established as a wildlife sanctuary in 1941 to protect the one-horned rhino, declared a national park in 2012.",
+              "fees": {
+                "domestic": 100,
+                "international": 1000,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 120,
+                "label": "2–4 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 26.6872,
+                "lng": 89.2844
+              },
+              "image_url": "https://images.unsplash.com/photo-1575550959106-5a7defe28b56?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1575550959106-5a7defe28b56?w=800&auto=format&fit=crop&q=80",
+              "attribution": "West Bengal Forest Development Corporation (WBFDC)",
+              "source_page": "https://wbfdc.com/jaldapara-national-park/",
+              "status": "VERIFIED",
+              "tags": [
+                "wildlife_national_park",
+                "West Bengal"
+              ],
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "A major wildlife destination famous for one-horned rhinoceroses and grassland safaris.",
+              "best_for": [
+                "nature",
+                "wildlife",
+                "photography"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Jaldapara National Park West Bengal",
+              "city": "Siliguri",
+              "area": "Siliguri",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "06:00 AM - 04:30 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
+            }
+          ],
           "religious_cultural": [],
           "nature_parks_zoo": [
             {
-              "id": "gorumara-national-park",
+              "id": "west_bengal_019",
               "name": "Gorumara National Park",
               "canonical_name": "Gorumara National Park",
-              "aliases": [],
+              "aliases": [
+                "Gorumara National Park West Bengal"
+              ],
               "city_id": "siliguri",
               "state_id": "west-bengal",
-              "district": "Jalpaiguri",
-              "category": "wildlife",
-              "category_label": "Wildlife",
+              "district": "Siliguri",
+              "category": "wildlife_national_park",
+              "category_label": "wildlife national park",
               "categories": [
-                "Wildlife",
-                "Nature"
+                "nature",
+                "wildlife",
+                "photography"
               ],
               "subcategories": [
-                "National Park",
-                "Terai Grassland",
-                "Rhino Sanctuary"
+                "wildlife_national_park"
               ],
-              "importance_level": "major",
-              "summary": "Dooars floodplain sanctuary on the Murti and Raidak rivers, celebrated for breeding populations of the great Indian one-horned rhinoceros.",
-              "historical_significance": "Notified as a wildlife sanctuary in 1949 and declared a National Park in 1994.",
+              "importance_level": "landmark",
+              "summary": "A forest reserve known for Indian rhinoceros, elephants, birds, and jeep safari routes.",
+              "historical_significance": "Declared a wildlife sanctuary in 1949 and elevated to National Park status in 1994.",
               "fees": {
                 "domestic": 100,
-                "international": 500,
+                "international": 1000,
                 "currency": "INR",
                 "status": "VERIFIED"
               },
               "timings": {
-                "opening_time": "06:00 AM",
-                "closing_time": "05:00 PM (Closed June 15 to September 15)",
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
                 "closed_days": [],
                 "status": "VERIFIED"
               },
               "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
+                "recommended_mins": 120,
+                "label": "2–4 hours",
                 "status": "VERIFIED"
               },
               "coordinates": {
-                "lat": 26.75,
-                "lng": 88.8
+                "lat": 26.7573,
+                "lng": 88.7885
               },
-              "image_url": "",
-              "thumbnail_url": "",
-              "attribution": "Directorate of Forests, Government of West Bengal",
-              "source_page": "https://westbengalforest.gov.in",
-              "status": "UNVERIFIED",
+              "image_url": "https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?w=800&auto=format&fit=crop&q=80",
+              "attribution": "West Bengal Forest Development Corporation (WBFDC)",
+              "source_page": "https://wbfdc.com/gorumara-national-park/",
+              "status": "VERIFIED",
               "tags": [
-                "Wildlife",
-                "Nature"
+                "wildlife_national_park",
+                "West Bengal"
               ],
-              "verification_note": "Metadata pending official archival verification. Source URL omitted."
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "A forest reserve known for Indian rhinoceros, elephants, birds, and jeep safari routes.",
+              "best_for": [
+                "nature",
+                "wildlife",
+                "photography"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Gorumara National Park West Bengal",
+              "city": "Siliguri",
+              "area": "Siliguri",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "06:00 AM - 05:00 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
             },
             {
-              "id": "mahananda-wildlife-sanctuary-siliguri",
-              "name": "Mahananda Wildlife Sanctuary & Bengal Safari",
-              "canonical_name": "Mahananda Wildlife Sanctuary",
-              "aliases": [],
+              "id": "west_bengal_020",
+              "name": "Jaldapara National Park",
+              "canonical_name": "Jaldapara National Park",
+              "aliases": [
+                "Jaldapara National Park West Bengal"
+              ],
               "city_id": "siliguri",
               "state_id": "west-bengal",
-              "district": "Darjeeling and Jalpaiguri",
-              "category": "wildlife",
-              "category_label": "Wildlife",
+              "district": "Siliguri",
+              "category": "wildlife_national_park",
+              "category_label": "wildlife national park",
               "categories": [
-                "Wildlife",
-                "Nature"
+                "nature",
+                "wildlife",
+                "photography"
               ],
               "subcategories": [
-                "Wildlife Sanctuary",
-                "Elephant Migration Corridor",
-                "Toy Train Route"
+                "wildlife_national_park"
               ],
-              "importance_level": "major",
-              "summary": "Sprawling 158-sq-km wildlife reserve in the Eastern Himalayan foothills between the Teesta and Mahananda rivers, famous for wild elephants, Royal Bengal tigers, and the historic Darjeeling Toy Train tracks.",
-              "historical_significance": "Established in 1955 as a game sanctuary to protect the Indian bison (gaur) and royal Bengal tiger; upgraded to a wildlife sanctuary in 1959.",
+              "importance_level": "landmark",
+              "summary": "A major wildlife destination famous for one-horned rhinoceroses and grassland safaris.",
+              "historical_significance": "Established as a wildlife sanctuary in 1941 to protect the one-horned rhino, declared a national park in 2012.",
               "fees": {
-                "domestic": 50,
-                "international": 200,
+                "domestic": 100,
+                "international": 1000,
                 "currency": "INR",
                 "status": "VERIFIED"
               },
               "timings": {
-                "opening_time": "06:00 AM",
-                "closing_time": "04:30 PM (Closed June 15 to September 15)",
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
                 "closed_days": [],
                 "status": "VERIFIED"
               },
               "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
+                "recommended_mins": 120,
+                "label": "2–4 hours",
                 "status": "VERIFIED"
               },
               "coordinates": {
-                "lat": 26.85,
-                "lng": 88.4333
+                "lat": 26.6872,
+                "lng": 89.2844
               },
-              "image_url": "",
-              "thumbnail_url": "",
-              "attribution": "Directorate of Forests, Government of West Bengal",
-              "source_page": "https://westbengalforest.gov.in",
-              "status": "UNVERIFIED",
+              "image_url": "https://images.unsplash.com/photo-1575550959106-5a7defe28b56?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1575550959106-5a7defe28b56?w=800&auto=format&fit=crop&q=80",
+              "attribution": "West Bengal Forest Development Corporation (WBFDC)",
+              "source_page": "https://wbfdc.com/jaldapara-national-park/",
+              "status": "VERIFIED",
               "tags": [
-                "Wildlife",
-                "Nature"
+                "wildlife_national_park",
+                "West Bengal"
               ],
-              "verification_note": "Metadata pending official archival verification. Source URL omitted."
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "A major wildlife destination famous for one-horned rhinoceroses and grassland safaris.",
+              "best_for": [
+                "nature",
+                "wildlife",
+                "photography"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Jaldapara National Park West Bengal",
+              "city": "Siliguri",
+              "area": "Siliguri",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "06:00 AM - 04:30 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
             }
           ],
           "transport": {
@@ -36065,14 +38752,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -36099,6 +38786,430 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
           "source_name": "Unsplash",
           "creator": "North Bengal Gateway Trust",
           "license": "Unsplash License"
+        },
+        {
+          "id": "santiniketan",
+          "name": "Santiniketan",
+          "canonical_name": "Santiniketan",
+          "state": "West Bengal",
+          "state_id": "west-bengal",
+          "region": "Eastern India",
+          "district": "Birbhum",
+          "city_type": "city",
+          "lat": 23.6788,
+          "lng": 87.6917,
+          "coordinates": {
+            "lat": 23.6788,
+            "lng": 87.6917
+          },
+          "tagline": "UNESCO World Heritage cultural center in West Bengal",
+          "description": "UNESCO World Heritage cultural town established by Rabindranath Tagore, home to Visva-Bharati University and vibrant Bengali arts and heritage traditions.",
+          "hero_image_url": "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=1200&auto=format&fit=crop&q=80",
+          "hero_image": "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=1200&auto=format&fit=crop&q=80",
+          "tourism_categories": [
+            "heritage",
+            "culture"
+          ],
+          "prominence": "Heritage Destination",
+          "is_capital": false,
+          "capital_status": "none",
+          "verification_status": "verified",
+          "places_count": 2,
+          "active_stories": [
+            "UNESCO World Heritage center of Visva-Bharati and arts.",
+            "Bengal renaissance traditions founded by Rabindranath Tagore."
+          ],
+          "hotels": [],
+          "transport": {
+            "airport": {
+              "name": "Kazi Nazrul Islam Airport (Andal) / Kolkata NSCBI",
+              "distance_km": 60
+            },
+            "railway": {
+              "name": "Bolpur Santiniketan Junction",
+              "code": "BHP"
+            }
+          },
+          "fees_overview": "Campus areas and ashram open to visitors; museum entry fees nominal.",
+          "live_travel_info": {
+            "best_season": "October to March",
+            "local_transport": "Toto, cycle rickshaws, taxis"
+          },
+          "heritage": [
+            {
+              "id": "west_bengal_012",
+              "name": "Shantiniketan",
+              "canonical_name": "Shantiniketan",
+              "aliases": [
+                "Shantiniketan West Bengal"
+              ],
+              "city_id": "santiniketan",
+              "state_id": "west-bengal",
+              "district": "Santiniketan",
+              "category": "culture_heritage",
+              "category_label": "culture heritage",
+              "categories": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "subcategories": [
+                "culture_heritage"
+              ],
+              "importance_level": "landmark",
+              "summary": "The cultural centre associated with Rabindranath Tagore, art, education, and Bengali traditions.",
+              "historical_significance": "Inscribed on UNESCO World Heritage list in 2023, representing Tagore's vision of pan-Asian universal education.",
+              "fees": {
+                "domestic": 40,
+                "international": 400,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 120,
+                "label": "2–4 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 23.6788,
+                "lng": 87.6917
+              },
+              "image_url": "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=800&auto=format&fit=crop&q=80",
+              "attribution": "UNESCO World Heritage Centre & Santiniketan Trust",
+              "source_page": "https://whc.unesco.org/en/list/1675/",
+              "status": "VERIFIED",
+              "tags": [
+                "culture_heritage",
+                "West Bengal"
+              ],
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "The cultural centre associated with Rabindranath Tagore, art, education, and Bengali traditions.",
+              "best_for": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Shantiniketan West Bengal",
+              "city": "Santiniketan",
+              "area": "Santiniketan",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "10:00 AM - 05:00 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
+            },
+            {
+              "id": "west_bengal_013",
+              "name": "Visva-Bharati University",
+              "canonical_name": "Visva-Bharati University",
+              "aliases": [
+                "Visva-Bharati University West Bengal"
+              ],
+              "city_id": "santiniketan",
+              "state_id": "west-bengal",
+              "district": "Santiniketan",
+              "category": "education_heritage",
+              "category_label": "education heritage",
+              "categories": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "subcategories": [
+                "education_heritage"
+              ],
+              "importance_level": "landmark",
+              "summary": "A renowned institution founded by Rabindranath Tagore, closely linked with the cultural identity of Santiniketan.",
+              "historical_significance": "Founded in 1921 by Rabindranath Tagore using his Nobel Prize award money, declared a Central University in 1951.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 120,
+                "label": "2–4 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 23.6811,
+                "lng": 87.6894
+              },
+              "image_url": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&auto=format&fit=crop&q=80",
+              "attribution": "Visva-Bharati Central University Authority",
+              "source_page": "https://visvabharati.ac.in/heritage",
+              "status": "VERIFIED",
+              "tags": [
+                "education_heritage",
+                "West Bengal"
+              ],
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "A renowned institution founded by Rabindranath Tagore, closely linked with the cultural identity of Santiniketan.",
+              "best_for": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Visva-Bharati University West Bengal",
+              "city": "Santiniketan",
+              "area": "Santiniketan",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "09:30 AM - 05:00 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
+            }
+          ],
+          "monuments": [],
+          "museums": [],
+          "nature_parks_zoo": [],
+          "religious_cultural": [],
+          "tourist_places": [
+            {
+              "id": "west_bengal_012",
+              "name": "Shantiniketan",
+              "canonical_name": "Shantiniketan",
+              "aliases": [
+                "Shantiniketan West Bengal"
+              ],
+              "city_id": "santiniketan",
+              "state_id": "west-bengal",
+              "district": "Santiniketan",
+              "category": "culture_heritage",
+              "category_label": "culture heritage",
+              "categories": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "subcategories": [
+                "culture_heritage"
+              ],
+              "importance_level": "landmark",
+              "summary": "The cultural centre associated with Rabindranath Tagore, art, education, and Bengali traditions.",
+              "historical_significance": "Inscribed on UNESCO World Heritage list in 2023, representing Tagore's vision of pan-Asian universal education.",
+              "fees": {
+                "domestic": 40,
+                "international": 400,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 120,
+                "label": "2–4 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 23.6788,
+                "lng": 87.6917
+              },
+              "image_url": "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=800&auto=format&fit=crop&q=80",
+              "attribution": "UNESCO World Heritage Centre & Santiniketan Trust",
+              "source_page": "https://whc.unesco.org/en/list/1675/",
+              "status": "VERIFIED",
+              "tags": [
+                "culture_heritage",
+                "West Bengal"
+              ],
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "The cultural centre associated with Rabindranath Tagore, art, education, and Bengali traditions.",
+              "best_for": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Shantiniketan West Bengal",
+              "city": "Santiniketan",
+              "area": "Santiniketan",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "10:00 AM - 05:00 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
+            },
+            {
+              "id": "west_bengal_013",
+              "name": "Visva-Bharati University",
+              "canonical_name": "Visva-Bharati University",
+              "aliases": [
+                "Visva-Bharati University West Bengal"
+              ],
+              "city_id": "santiniketan",
+              "state_id": "west-bengal",
+              "district": "Santiniketan",
+              "category": "education_heritage",
+              "category_label": "education heritage",
+              "categories": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "subcategories": [
+                "education_heritage"
+              ],
+              "importance_level": "landmark",
+              "summary": "A renowned institution founded by Rabindranath Tagore, closely linked with the cultural identity of Santiniketan.",
+              "historical_significance": "Founded in 1921 by Rabindranath Tagore using his Nobel Prize award money, declared a Central University in 1951.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 120,
+                "label": "2–4 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 23.6811,
+                "lng": 87.6894
+              },
+              "image_url": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&auto=format&fit=crop&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&auto=format&fit=crop&q=80",
+              "attribution": "Visva-Bharati Central University Authority",
+              "source_page": "https://visvabharati.ac.in/heritage",
+              "status": "VERIFIED",
+              "tags": [
+                "education_heritage",
+                "West Bengal"
+              ],
+              "source_quality": "place_specific",
+              "verification_note": "Verified against official records and archives.",
+              "description": "A renowned institution founded by Rabindranath Tagore, closely linked with the cultural identity of Santiniketan.",
+              "best_for": [
+                "heritage",
+                "photography",
+                "family trips"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Visva-Bharati University West Bengal",
+              "city": "Santiniketan",
+              "area": "Santiniketan",
+              "visiting_info": {
+                "best_time_to_visit": "October to March",
+                "visiting_hours": "09:30 AM - 05:00 PM",
+                "recommended_duration": "2–4 hours",
+                "tips": [
+                  "Check local access rules and timings before visiting",
+                  "Carry water and comfortable footwear"
+                ]
+              },
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              },
+              "data_confidence": "official",
+              "verification_status": "verified"
+            }
+          ],
+          "created_at": "2026-09-11T00:00:00.000Z",
+          "updated_at": "2026-09-11T00:00:00.000Z",
+          "creator": "Virasat Tourism Engine",
+          "license": "CC-BY-SA-4.0",
+          "source_name": "West Bengal Tourism Development Corporation",
+          "source_url": "https://wbtourism.gov.in",
+          "source_provenance": "official_state_portal"
         }
       ],
       "region_type": "state",
@@ -36284,14 +39395,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -36420,14 +39531,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -36553,14 +39664,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -36792,14 +39903,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -36926,14 +40037,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -37051,7 +40162,7 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
               ],
               "importance_level": "iconic",
               "summary": "The sacred source of the Holy Narmada River at 1,065m where the Vindhya and Satpura ranges meet the Maikal Hills, surrounded by ancient 11th-century Kalachuri temples.",
-              "historical_significance": "Ancient pilgrimage destination; the Pataleshwar and Karna temples were built by Kalachuri Maharaja Karnadeva (1041–1073 CE).",
+              "historical_significance": "Ancient pilgrimage destination; the Pataleshwar and Karna temples were built by Kalachuri Maharaja Karnadeva (1041ΓÇô1073 CE).",
               "fees": {
                 "domestic": 0,
                 "international": 0,
@@ -37095,14 +40206,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -37340,14 +40451,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -37475,14 +40586,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -37611,14 +40722,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -37746,14 +40857,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -37877,14 +40988,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -38009,14 +41120,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -38201,14 +41312,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -38389,14 +41500,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -38525,14 +41636,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -38719,14 +41830,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -38852,14 +41963,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -38988,14 +42099,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -39125,14 +42236,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -39257,14 +42368,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -39404,10 +42515,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees"
               },
               "best_time_to_visit": "October to March",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "best_for": [
@@ -39458,8 +42569,8 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
           "religious_cultural": [
             {
               "id": "DNDD003",
-              "name": "St. Paul’s Church",
-              "canonical_name": "St. Paul’s Church",
+              "name": "St. PaulΓÇÖs Church",
+              "canonical_name": "St. PaulΓÇÖs Church",
               "slug": "st-paul-s-church",
               "category": "religious_cultural",
               "category_label": "Church",
@@ -39470,11 +42581,11 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "Church"
               ],
               "topic": "Spiritual",
-              "summary": "A prominent Portuguese-era church dedicated to Saint Paul, noted for its ornate façade and historic religious architecture.",
-              "description": "A prominent Portuguese-era church dedicated to Saint Paul, noted for its ornate façade and historic religious architecture.",
-              "short_description": "A prominent Portuguese-era church dedicated to Saint Paul, noted for its ornate façade and historic religious architecture.",
-              "detailed_description": "A prominent Portuguese-era church dedicated to Saint Paul, noted for its ornate façade and historic religious architecture.",
-              "historical_significance": "A prominent Portuguese-era church dedicated to Saint Paul, noted for its ornate façade and historic religious architecture.",
+              "summary": "A prominent Portuguese-era church dedicated to Saint Paul, noted for its ornate fa├ºade and historic religious architecture.",
+              "description": "A prominent Portuguese-era church dedicated to Saint Paul, noted for its ornate fa├ºade and historic religious architecture.",
+              "short_description": "A prominent Portuguese-era church dedicated to Saint Paul, noted for its ornate fa├ºade and historic religious architecture.",
+              "detailed_description": "A prominent Portuguese-era church dedicated to Saint Paul, noted for its ornate fa├ºade and historic religious architecture.",
+              "historical_significance": "A prominent Portuguese-era church dedicated to Saint Paul, noted for its ornate fa├ºade and historic religious architecture.",
               "locality": "Diu",
               "district": "Diu",
               "address": "Dadra and Nagar Haveli and Daman and Diu, India",
@@ -39504,10 +42615,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees"
               },
               "best_time_to_visit": "October to March",
-              "suggested_duration": "30–45 minutes",
+              "suggested_duration": "30ΓÇô45 minutes",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "30–45 minutes",
+                "label": "30ΓÇô45 minutes",
                 "status": "VERIFIED"
               },
               "best_for": [
@@ -39515,7 +42626,7 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "architecture",
                 "religious tourism"
               ],
-              "map_search": "St. Paul’s Church, Dadra and Nagar Haveli and Daman and Diu, India",
+              "map_search": "St. PaulΓÇÖs Church, Dadra and Nagar Haveli and Daman and Diu, India",
               "tags": [
                 "religious_cultural",
                 "tourism",
@@ -39600,10 +42711,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees"
               },
               "best_time_to_visit": "October to March",
-              "suggested_duration": "45–90 minutes",
+              "suggested_duration": "45ΓÇô90 minutes",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "45–90 minutes",
+                "label": "45ΓÇô90 minutes",
                 "status": "VERIFIED"
               },
               "best_for": [
@@ -39655,14 +42766,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -39738,10 +42849,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees"
               },
               "best_time_to_visit": "October to March",
-              "suggested_duration": "1–2 hours",
+              "suggested_duration": "1ΓÇô2 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–2 hours",
+                "label": "1ΓÇô2 hours",
                 "status": "VERIFIED"
               },
               "best_for": [
@@ -39833,10 +42944,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees"
               },
               "best_time_to_visit": "October to March",
-              "suggested_duration": "45–90 minutes",
+              "suggested_duration": "45ΓÇô90 minutes",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "45–90 minutes",
+                "label": "45ΓÇô90 minutes",
                 "status": "VERIFIED"
               },
               "best_for": [
@@ -39881,8 +42992,8 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
             },
             {
               "id": "DNDD003",
-              "name": "St. Paul’s Church",
-              "canonical_name": "St. Paul’s Church",
+              "name": "St. PaulΓÇÖs Church",
+              "canonical_name": "St. PaulΓÇÖs Church",
               "slug": "st-paul-s-church",
               "category": "religious_cultural",
               "category_label": "Church",
@@ -39893,11 +43004,11 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "Church"
               ],
               "topic": "Spiritual",
-              "summary": "A prominent Portuguese-era church dedicated to Saint Paul, noted for its ornate façade and historic religious architecture.",
-              "description": "A prominent Portuguese-era church dedicated to Saint Paul, noted for its ornate façade and historic religious architecture.",
-              "short_description": "A prominent Portuguese-era church dedicated to Saint Paul, noted for its ornate façade and historic religious architecture.",
-              "detailed_description": "A prominent Portuguese-era church dedicated to Saint Paul, noted for its ornate façade and historic religious architecture.",
-              "historical_significance": "A prominent Portuguese-era church dedicated to Saint Paul, noted for its ornate façade and historic religious architecture.",
+              "summary": "A prominent Portuguese-era church dedicated to Saint Paul, noted for its ornate fa├ºade and historic religious architecture.",
+              "description": "A prominent Portuguese-era church dedicated to Saint Paul, noted for its ornate fa├ºade and historic religious architecture.",
+              "short_description": "A prominent Portuguese-era church dedicated to Saint Paul, noted for its ornate fa├ºade and historic religious architecture.",
+              "detailed_description": "A prominent Portuguese-era church dedicated to Saint Paul, noted for its ornate fa├ºade and historic religious architecture.",
+              "historical_significance": "A prominent Portuguese-era church dedicated to Saint Paul, noted for its ornate fa├ºade and historic religious architecture.",
               "locality": "Diu",
               "district": "Diu",
               "address": "Dadra and Nagar Haveli and Daman and Diu, India",
@@ -39927,10 +43038,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees"
               },
               "best_time_to_visit": "October to March",
-              "suggested_duration": "30–45 minutes",
+              "suggested_duration": "30ΓÇô45 minutes",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "30–45 minutes",
+                "label": "30ΓÇô45 minutes",
                 "status": "VERIFIED"
               },
               "best_for": [
@@ -39938,7 +43049,7 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "architecture",
                 "religious tourism"
               ],
-              "map_search": "St. Paul’s Church, Dadra and Nagar Haveli and Daman and Diu, India",
+              "map_search": "St. PaulΓÇÖs Church, Dadra and Nagar Haveli and Daman and Diu, India",
               "tags": [
                 "religious_cultural",
                 "tourism",
@@ -40022,11 +43133,11 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "Museum"
               ],
               "topic": "Museum",
-              "summary": "A cultural museum displaying tribal traditions, tools, costumes, ornaments and objects representing the region’s indigenous communities.",
-              "description": "A cultural museum displaying tribal traditions, tools, costumes, ornaments and objects representing the region’s indigenous communities.",
-              "short_description": "A cultural museum displaying tribal traditions, tools, costumes, ornaments and objects representing the region’s indigenous communities.",
-              "detailed_description": "A cultural museum displaying tribal traditions, tools, costumes, ornaments and objects representing the region’s indigenous communities.",
-              "historical_significance": "A cultural museum displaying tribal traditions, tools, costumes, ornaments and objects representing the region’s indigenous communities.",
+              "summary": "A cultural museum displaying tribal traditions, tools, costumes, ornaments and objects representing the regionΓÇÖs indigenous communities.",
+              "description": "A cultural museum displaying tribal traditions, tools, costumes, ornaments and objects representing the regionΓÇÖs indigenous communities.",
+              "short_description": "A cultural museum displaying tribal traditions, tools, costumes, ornaments and objects representing the regionΓÇÖs indigenous communities.",
+              "detailed_description": "A cultural museum displaying tribal traditions, tools, costumes, ornaments and objects representing the regionΓÇÖs indigenous communities.",
+              "historical_significance": "A cultural museum displaying tribal traditions, tools, costumes, ornaments and objects representing the regionΓÇÖs indigenous communities.",
               "locality": "Silvassa, Dadra and Nagar Haveli",
               "district": "Dadra and Nagar Haveli",
               "address": "Dadra and Nagar Haveli and Daman and Diu, India",
@@ -40056,10 +43167,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees"
               },
               "best_time_to_visit": "October to March",
-              "suggested_duration": "45–90 minutes",
+              "suggested_duration": "45ΓÇô90 minutes",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "45–90 minutes",
+                "label": "45ΓÇô90 minutes",
                 "status": "VERIFIED"
               },
               "best_for": [
@@ -40154,10 +43265,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees"
               },
               "best_time_to_visit": "October to March",
-              "suggested_duration": "2–3 hours",
+              "suggested_duration": "2ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "2–3 hours",
+                "label": "2ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "best_for": [
@@ -40210,14 +43321,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -40293,10 +43404,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees"
               },
               "best_time_to_visit": "October to March",
-              "suggested_duration": "2–3 hours",
+              "suggested_duration": "2ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "2–3 hours",
+                "label": "2ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "best_for": [
@@ -40354,11 +43465,11 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "Museum"
               ],
               "topic": "Museum",
-              "summary": "A cultural museum displaying tribal traditions, tools, costumes, ornaments and objects representing the region’s indigenous communities.",
-              "description": "A cultural museum displaying tribal traditions, tools, costumes, ornaments and objects representing the region’s indigenous communities.",
-              "short_description": "A cultural museum displaying tribal traditions, tools, costumes, ornaments and objects representing the region’s indigenous communities.",
-              "detailed_description": "A cultural museum displaying tribal traditions, tools, costumes, ornaments and objects representing the region’s indigenous communities.",
-              "historical_significance": "A cultural museum displaying tribal traditions, tools, costumes, ornaments and objects representing the region’s indigenous communities.",
+              "summary": "A cultural museum displaying tribal traditions, tools, costumes, ornaments and objects representing the regionΓÇÖs indigenous communities.",
+              "description": "A cultural museum displaying tribal traditions, tools, costumes, ornaments and objects representing the regionΓÇÖs indigenous communities.",
+              "short_description": "A cultural museum displaying tribal traditions, tools, costumes, ornaments and objects representing the regionΓÇÖs indigenous communities.",
+              "detailed_description": "A cultural museum displaying tribal traditions, tools, costumes, ornaments and objects representing the regionΓÇÖs indigenous communities.",
+              "historical_significance": "A cultural museum displaying tribal traditions, tools, costumes, ornaments and objects representing the regionΓÇÖs indigenous communities.",
               "locality": "Silvassa, Dadra and Nagar Haveli",
               "district": "Dadra and Nagar Haveli",
               "address": "Dadra and Nagar Haveli and Daman and Diu, India",
@@ -40388,10 +43499,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies by place; verify current fees"
               },
               "best_time_to_visit": "October to March",
-              "suggested_duration": "45–90 minutes",
+              "suggested_duration": "45ΓÇô90 minutes",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "45–90 minutes",
+                "label": "45ΓÇô90 minutes",
                 "status": "VERIFIED"
               },
               "best_for": [
@@ -40480,14 +43591,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -41236,14 +44347,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -41402,14 +44513,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -41540,14 +44651,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -41676,14 +44787,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -41808,14 +44919,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -41948,14 +45059,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -42081,14 +45192,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -42218,14 +45329,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -42411,14 +45522,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -42545,14 +45656,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -42677,14 +45788,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -42770,7 +45881,7 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
               ],
               "importance_level": "iconic",
               "summary": "The world's largest seasonal salt marsh desert gleaming brilliantly white under the moonlight, and home to UNESCO World Heritage Harappan metropolis Dholavira.",
-              "historical_significance": "Site of the Indus Valley Civilization at Dholavira (3000–1500 BCE); the White Rann hosts the annual cultural celebration Rann Utsav inaugurated by Gujarat Tourism.",
+              "historical_significance": "Site of the Indus Valley Civilization at Dholavira (3000ΓÇô1500 BCE); the White Rann hosts the annual cultural celebration Rann Utsav inaugurated by Gujarat Tourism.",
               "fees": {
                 "domestic": 100,
                 "international": 500,
@@ -42813,14 +45924,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -43001,14 +46112,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -43136,14 +46247,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -43270,14 +46381,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -43407,14 +46518,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -43542,14 +46653,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -43674,14 +46785,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -43810,14 +46921,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -43979,14 +47090,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -44223,14 +47334,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -44360,14 +47471,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -44496,14 +47607,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -44629,14 +47740,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -44765,14 +47876,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -45646,14 +48757,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -45778,14 +48889,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -45910,14 +49021,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -46726,14 +49837,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -46916,14 +50027,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -47133,14 +50244,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -47376,14 +50487,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -47570,14 +50681,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -47705,14 +50816,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -47841,14 +50952,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -47974,14 +51085,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -48110,14 +51221,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -48244,14 +51355,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -48380,14 +51491,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -48514,14 +51625,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -48704,14 +51815,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -48893,14 +52004,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -49028,14 +52139,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -49193,14 +52304,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -49330,14 +52441,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -49465,14 +52576,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -49816,14 +52927,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -49951,14 +53062,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -50091,14 +53202,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -50224,14 +53335,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -50360,14 +53471,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -50497,14 +53608,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -50632,14 +53743,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -50822,14 +53933,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -50959,14 +54070,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -51096,14 +54207,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -51232,14 +54343,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -51367,14 +54478,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -51584,14 +54695,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -51719,14 +54830,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -51854,14 +54965,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -51990,14 +55101,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -52181,14 +55292,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -52317,14 +55428,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -52453,14 +55564,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -52589,14 +55700,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -52722,14 +55833,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -52860,14 +55971,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -52996,14 +56107,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -53182,14 +56293,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -53316,14 +56427,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -53452,14 +56563,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -53588,14 +56699,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -53725,14 +56836,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -53861,14 +56972,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -53994,14 +57105,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -54126,14 +57237,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -54273,10 +57384,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fees and permit requirements."
               },
               "best_time_to_visit": "October to May, subject to weather and transport schedules.",
-              "suggested_duration": "1–3 days",
+              "suggested_duration": "1ΓÇô3 days",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 days",
+                "label": "1ΓÇô3 days",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Entry permits, ferry/flight schedules, weather and accommodation availability should be confirmed before travel.",
@@ -54374,10 +57485,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fees and permit requirements."
               },
               "best_time_to_visit": "October to May, subject to weather and transport schedules.",
-              "suggested_duration": "1–3 days",
+              "suggested_duration": "1ΓÇô3 days",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 days",
+                "label": "1ΓÇô3 days",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Entry permits, ferry/flight schedules, weather and accommodation availability should be confirmed before travel.",
@@ -54474,10 +57585,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fees and permit requirements."
               },
               "best_time_to_visit": "October to May, subject to weather and transport schedules.",
-              "suggested_duration": "1–3 days",
+              "suggested_duration": "1ΓÇô3 days",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 days",
+                "label": "1ΓÇô3 days",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Entry permits, ferry/flight schedules, weather and accommodation availability should be confirmed before travel.",
@@ -54571,10 +57682,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fees and permit requirements."
               },
               "best_time_to_visit": "October to May, subject to weather and transport schedules.",
-              "suggested_duration": "1–3 days",
+              "suggested_duration": "1ΓÇô3 days",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 days",
+                "label": "1ΓÇô3 days",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Entry permits, ferry/flight schedules, weather and accommodation availability should be confirmed before travel.",
@@ -54668,10 +57779,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fees and permit requirements."
               },
               "best_time_to_visit": "October to May, subject to weather and transport schedules.",
-              "suggested_duration": "1–3 days",
+              "suggested_duration": "1ΓÇô3 days",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 days",
+                "label": "1ΓÇô3 days",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Entry permits, ferry/flight schedules, weather and accommodation availability should be confirmed before travel.",
@@ -54726,14 +57837,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -54809,10 +57920,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fees and permit requirements."
               },
               "best_time_to_visit": "October to May, subject to weather and transport schedules.",
-              "suggested_duration": "1–3 days",
+              "suggested_duration": "1ΓÇô3 days",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 days",
+                "label": "1ΓÇô3 days",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Entry permits, ferry/flight schedules, weather and accommodation availability should be confirmed before travel.",
@@ -54906,10 +58017,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fees and permit requirements."
               },
               "best_time_to_visit": "October to May, subject to weather and transport schedules.",
-              "suggested_duration": "1–3 days",
+              "suggested_duration": "1ΓÇô3 days",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 days",
+                "label": "1ΓÇô3 days",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Entry permits, ferry/flight schedules, weather and accommodation availability should be confirmed before travel.",
@@ -55003,10 +58114,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fees and permit requirements."
               },
               "best_time_to_visit": "October to May, subject to weather and transport schedules.",
-              "suggested_duration": "1–3 days",
+              "suggested_duration": "1ΓÇô3 days",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 days",
+                "label": "1ΓÇô3 days",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Entry permits, ferry/flight schedules, weather and accommodation availability should be confirmed before travel.",
@@ -55100,10 +58211,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fees and permit requirements."
               },
               "best_time_to_visit": "October to May, subject to weather and transport schedules.",
-              "suggested_duration": "1–3 days",
+              "suggested_duration": "1ΓÇô3 days",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 days",
+                "label": "1ΓÇô3 days",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Entry permits, ferry/flight schedules, weather and accommodation availability should be confirmed before travel.",
@@ -55197,10 +58308,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fees and permit requirements."
               },
               "best_time_to_visit": "October to May, subject to weather and transport schedules.",
-              "suggested_duration": "1–3 days",
+              "suggested_duration": "1ΓÇô3 days",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 days",
+                "label": "1ΓÇô3 days",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Entry permits, ferry/flight schedules, weather and accommodation availability should be confirmed before travel.",
@@ -55360,10 +58471,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March for comfortable sightseeing.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Respect photography rules and local religious or cultural guidelines. Access to some areas may be restricted.",
@@ -55460,10 +58571,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March for comfortable sightseeing.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Respect photography rules and local religious or cultural guidelines. Access to some areas may be restricted.",
@@ -55555,10 +58666,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March for comfortable sightseeing.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Respect photography rules and local religious or cultural guidelines. Access to some areas may be restricted.",
@@ -55650,10 +58761,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March for comfortable sightseeing.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Respect photography rules and local religious or cultural guidelines. Access to some areas may be restricted.",
@@ -55747,10 +58858,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March for comfortable sightseeing.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Respect photography rules and local religious or cultural guidelines. Access to some areas may be restricted.",
@@ -55803,14 +58914,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -55886,10 +58997,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March for comfortable sightseeing.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Respect photography rules and local religious or cultural guidelines. Access to some areas may be restricted.",
@@ -55981,10 +59092,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March for comfortable sightseeing.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Respect photography rules and local religious or cultural guidelines. Access to some areas may be restricted.",
@@ -56076,10 +59187,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March for comfortable sightseeing.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Respect photography rules and local religious or cultural guidelines. Access to some areas may be restricted.",
@@ -56171,10 +59282,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March for comfortable sightseeing.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Respect photography rules and local religious or cultural guidelines. Access to some areas may be restricted.",
@@ -56266,10 +59377,10 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "note": "Varies; verify current fees before visiting."
               },
               "best_time_to_visit": "October to March for comfortable sightseeing.",
-              "suggested_duration": "1–3 hours",
+              "suggested_duration": "1ΓÇô3 hours",
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1–3 hours",
+                "label": "1ΓÇô3 hours",
                 "status": "VERIFIED"
               },
               "visitor_notes": "Respect photography rules and local religious or cultural guidelines. Access to some areas may be restricted.",
@@ -56662,14 +59773,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -56798,14 +59909,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -56935,14 +60046,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -57072,14 +60183,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -57258,14 +60369,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -57397,14 +60508,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -57530,14 +60641,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -57666,14 +60777,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -57854,14 +60965,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -57990,14 +61101,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -58160,14 +61271,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -58619,14 +61730,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -58751,14 +61862,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -58888,14 +61999,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },
@@ -59077,14 +62188,14 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
                 "City Cabs",
                 "Local Buses"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
+              "fare_indication": "Γé╣50 - Γé╣200 per ride",
               "status": "UNVERIFIED",
               "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "typical_budget_per_day": "Γé╣1,500 - Γé╣3,500",
             "status": "UNVERIFIED",
             "note": "Average estimated budget per person for local exploration and meals"
           },

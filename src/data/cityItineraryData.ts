@@ -790,6 +790,61 @@ export const VERIFIED_CITY_ITINERARIES: Record<string, VerifiedCityItinerary> = 
       },
     ],
   },
+
+  kolkata: {
+    city_id: 'kolkata',
+    city_name: 'Kolkata',
+    state_name: 'West Bengal',
+    state_id: 'west-bengal',
+    tagline: 'City of Joy & Cultural Capital of India',
+    description: 'A magnificent tapestry of grand marble monuments, Hooghly river landmarks, venerable Shakti pilgrimage shrines, museums and living Bengali traditions.',
+    default_hero_image: 'https://images.unsplash.com/photo-1558431382-27e303142255?w=1200&auto=format&fit=crop&q=80',
+    days: [
+      {
+        day_number: 1,
+        area_title: 'Colonial Splendours & Maidan Cultural Circuit',
+        area_name: 'Maidan & Park Street',
+        subtitle: 'Grand Victorian marble monument, Gothic cathedral, astronomy dome and India’s oldest museum.',
+        hero_image_url: 'https://images.unsplash.com/photo-1558431382-27e303142255?w=800&auto=format&fit=crop&q=80',
+        places: [
+          { id: 'west_bengal_001', name: 'Victoria Memorial', distance_info: '0 km', category: 'heritage_monument' },
+          { id: 'west_bengal_004', name: 'St. Paul’s Cathedral', distance_info: '~ 0.5 km', category: 'religious_heritage' },
+          { id: 'west_bengal_009', name: 'Birla Planetarium', distance_info: '~ 0.4 km', category: 'science_museum' },
+          { id: 'west_bengal_003', name: 'Indian Museum', distance_info: '~ 1.5 km', category: 'museum' },
+        ],
+        shopping: ['New Market (Sir Stuart Hogg Market)', 'Park Street Bookstores', 'Chowringhee Handicrafts'],
+      },
+      {
+        day_number: 2,
+        area_title: 'Sacred Hooghly Heritage & Renaissance Mansions',
+        area_name: 'Riverfront & North Kolkata',
+        subtitle: 'Iconic cantilever bridge, twin riverside spiritual centers and Tagore ancestral estate.',
+        hero_image_url: 'https://images.unsplash.com/photo-1569154941061-e231b4725ef1?w=800&auto=format&fit=crop&q=80',
+        places: [
+          { id: 'west_bengal_002', name: 'Howrah Bridge', distance_info: '0 km', category: 'engineering_landmark' },
+          { id: 'west_bengal_006', name: 'Belur Math', distance_info: '~ 6 km', category: 'religious_heritage' },
+          { id: 'west_bengal_005', name: 'Dakshineswar Kali Temple', distance_info: '~ 3 km', category: 'religious_heritage' },
+          { id: 'west_bengal_007', name: 'Marble Palace', distance_info: '~ 7 km', category: 'heritage_mansion' },
+          { id: 'west_bengal_014', name: 'Jorasanko Thakur Bari', distance_info: '~ 1 km', category: 'museum_heritage' },
+        ],
+        shopping: ['Kumartuli Clay Idol Alley', 'College Street Boi Para', 'Burrabazar Traditional Textiles'],
+      },
+      {
+        day_number: 3,
+        area_title: 'Sacred Shakti Pilgrimage, Zoology & Modern Science',
+        area_name: 'Kalighat, Alipore & East Kolkata',
+        subtitle: 'Ancient 51 Shakti Peeth shrine, historic zoological gardens, interactive science park and delta wilderness gateway.',
+        hero_image_url: 'https://images.unsplash.com/photo-1628155930550-1ef5420a4611?w=800&auto=format&fit=crop&q=80',
+        places: [
+          { id: 'west_bengal_015', name: 'Kalighat Kali Temple', distance_info: '0 km', category: 'religious_heritage' },
+          { id: 'west_bengal_011', name: 'Alipore Zoological Gardens', distance_info: '~ 2.5 km', category: 'zoological_park' },
+          { id: 'west_bengal_008', name: 'Science City', distance_info: '~ 8 km', category: 'science_museum' },
+          { id: 'west_bengal_010', name: 'Sundarbans National Park', distance_info: '~ Gateway Excursion', category: 'wildlife_national_park' },
+        ],
+        shopping: ['Dakshinapan State Handicraft Complex', 'Gariahat Market', 'Kalighat Temple Pilgrim Arcade'],
+      },
+    ],
+  },
 };
 
 // ============================================================================
@@ -2699,6 +2754,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "state": "West Bengal",
     "state_id": "west-bengal",
     "displayName": "Kolkata (West Bengal)",
+    "popular": true
+  },
+  {
+    "id": "santiniketan",
+    "name": "Santiniketan",
+    "state": "West Bengal",
+    "state_id": "west-bengal",
+    "displayName": "Santiniketan (West Bengal)",
     "popular": true
   },
   {

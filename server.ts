@@ -18,6 +18,8 @@ import {
   resolveOriginTransportNode,
   resolveDestinationTransportNode,
   buildVerifiedTransitComparison,
+  findStationByQuery,
+  STATION_ALIASES,
 } from './src/server/transportResolver';
 
 import { db } from './server/src/db/client';
@@ -87,6 +89,8 @@ app.use('/api/v1/reports', reportsRouter);
 app.use('/api/v1/routing', routingRouter);
 app.use('/api/v1/itineraries', itineraryRouter);
 app.use('/api/v1/ai', aiRouter);
+app.use('/api/ai', aiRouter);
+app.use('/api/assistant', aiRouter);
 app.use('/api/v1/analytics', analyticsRouter);
 app.use('/api/analytics', analyticsRouter);
 app.use('/api/v1/admin', adminRouter);
@@ -190,7 +194,10 @@ const CITY_ALIASES: Record<string, string[]> = {
   agra: ['agra', 'agra district'],
   jaipur: ['jaipur'],
   kochi: ['kochi', 'cochin', 'ernakulam'],
-  kolkata: ['kolkata', 'calcutta'],
+  kolkata: ['kolkata', 'calcutta', 'howrah', 'howrah–kolkata', 'howrah-kolkata', 'alipore'],
+  darjeeling: ['darjeeling'],
+  santiniketan: ['santiniketan', 'shantiniketan', 'bolpur'],
+  siliguri: ['siliguri'],
   amritsar: ['amritsar'],
   goa: ['goa', 'panaji', 'old goa', 'velha goa', 'sinquerim', 'candolim'],
   bengaluru: ['bengaluru', 'bangalore'],
@@ -220,6 +227,9 @@ const CANONICAL_CITY_NAMES: Record<string, string> = {
   jaipur: 'Jaipur',
   kochi: 'Kochi',
   kolkata: 'Kolkata',
+  darjeeling: 'Darjeeling',
+  santiniketan: 'Santiniketan',
+  siliguri: 'Siliguri',
   amritsar: 'Amritsar',
   goa: 'Goa',
   bengaluru: 'Bengaluru',
@@ -264,14 +274,17 @@ function isPlaceInCity(place: any, targetCity: string): boolean {
   if (!targetCanon) return false;
   const pCity = (place.city || '').toLowerCase().trim();
   const pCityId = ((place as any).city_id || '').toLowerCase().trim();
+  const pArea = ((place as any).area || '').toLowerCase().trim();
 
   if (pCityId && getCanonicalCityId(pCityId) === targetCanon) return true;
   if (pCity && getCanonicalCityId(pCity) === targetCanon) return true;
+  if (pArea && getCanonicalCityId(pArea) === targetCanon) return true;
 
   const aliases = CITY_ALIASES[targetCanon] || [targetCanon];
   return aliases.some((a) =>
     (pCity && (pCity === a || pCity.includes(a))) ||
-    (pCityId && (pCityId === a || pCityId.includes(a)))
+    (pCityId && (pCityId === a || pCityId.includes(a))) ||
+    (pArea && (pArea === a || pArea.includes(a)))
   );
 }
 
@@ -340,7 +353,9 @@ function loadData() {
     loadPlacesFile(path.join(dataDir, 'ladakh', 'places.json'));
     loadPlacesFile(path.join(dataDir, 'jammu-kashmir', 'places.json'));
     loadPlacesFile(path.join(dataDir, 'kolkata', 'places.json'));
+    loadPlacesFile(path.join(dataDir, 'west-bengal', 'places.json'));
     loadPlacesFile(path.join(dataDir, 'goa', 'places.json'));
+    loadPlacesFile(path.join(dataDir, 'punjab', 'places.json'));
 
     // Load Heritage 42+ structured experiences
     const heritagePath = path.join(dataDir, 'heritage', 'monuments.json');
@@ -405,6 +420,14 @@ function loadData() {
           }
         }
       }
+    }
+
+    // Ensure Punjab places strictly use verified punjab_001 - punjab_020 IDs
+    if (placesData.has('punjab_001')) {
+      placesData.delete('golden-temple-amritsar');
+      placesData.delete('golden-temple');
+      placesData.delete('jallianwala-bagh');
+      placesData.delete('partition-museum');
     }
 
     // Comprehensive City Normalization pass for all places in placesData
@@ -2537,8 +2560,33 @@ app.post('/api/geo/reverse-geocode', async (req, res) => {
 // -------------------------------------------------------------
 function findEntityInText(text: string): { place: any | null; city: string | null; state: string | null; name: string | null } {
   if (!text) return { place: null, city: null, state: null, name: null };
-  const t = text.toLowerCase().trim();
+  const clean = text.replace(/[?!,.:;]+$/g, '').trim();
+  const t = clean.toLowerCase();
   const allPlaces = Array.from(placesData.values());
+
+  // Check verified railway stations & station aliases across India (e.g. CSMT, Churchgate, NDLS, HWH, etc.)
+  const matchedStation = findStationByQuery(clean);
+  if (matchedStation) {
+    const matchP = allPlaces.find(
+      (x) => x.id?.toLowerCase() === matchedStation.code.toLowerCase() || x.city?.toLowerCase() === matchedStation.city.toLowerCase()
+    );
+    return { place: matchP || null, city: matchedStation.city, state: matchedStation.state, name: matchedStation.name };
+  }
+
+  // Sort station aliases by length descending so longer matches ("churchgate station") match first
+  const sortedAliases = Object.entries(STATION_ALIASES).sort((a, b) => b[0].length - a[0].length);
+  for (const [aliasKey, aliasData] of sortedAliases) {
+    if (aliasKey.length >= 2) {
+      const escaped = aliasKey.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      const regex = new RegExp(`(^|[^a-zA-Z0-9])${escaped}([^a-zA-Z0-9]|$)`, 'i');
+      if (regex.test(clean)) {
+        const matchP = allPlaces.find(
+          (x) => x.id?.toLowerCase() === aliasData.code.toLowerCase() || x.city?.toLowerCase() === aliasData.city.toLowerCase()
+        );
+        return { place: matchP || null, city: aliasData.city, state: aliasData.state, name: aliasData.name };
+      }
+    }
+  }
 
   // Check for specific multi-word monuments / places first
   if (t.includes('dal lake') || t.includes('dal-lake') || t.includes('shikara')) {
@@ -2830,12 +2878,33 @@ app.post(['/api/ai/chat', '/api/assistant/chat'], async (req, res) => {
   // Detect pace preference (e.g. "I don't want too much travelling", "relaxed", "slow pace", "kam travel")
   const isRelaxedPace = /(too much travelling|too much travel|kam travel|relaxed|slow|easy|aram se|bhag daud nahi|less travel|without travelling much)/i.test(query);
 
+  // Check for explicit "from X to Y" or "X se Y" or "between X and Y" in message
+  let explicitOriginInText: string | null = null;
+  let explicitDestInText: string | null = null;
+  const fromToMatch = query.match(/(?:from|starting from|departing from)\s+([a-zA-Z0-9\s]+?)\s+(?:to|towards)\s+([a-zA-Z0-9\s]+)/i)
+    || query.match(/([a-zA-Z0-9\s]+?)\s+(?:se)\s+([a-zA-Z0-9\s]+?)\s+(?:kaise|jana|jaana|ja sakte|travel|pahuchna|pahuchein|chalein|trip|ghoomne|options|route)/i)
+    || query.match(/between\s+([a-zA-Z0-9\s]+?)\s+and\s+([a-zA-Z0-9\s]+)/i);
+
+  if (fromToMatch && fromToMatch[1]) {
+    const candidate = fromToMatch[1].replace(/[?!,.:;]+$/g, '').trim();
+    if (!/(train|flight|bus|car|air|road|kisi|kahan|yahan|ghoomne|trip|shehar|city|way to travel|best way to travel)/i.test(candidate)) {
+      explicitOriginInText = candidate;
+    }
+  }
+
+  if (fromToMatch && fromToMatch[2]) {
+    const candidateDest = fromToMatch[2].replace(/[?!,.:;]+$/g, '').trim();
+    if (!/(train|flight|bus|car|air|road|options|route|ghoomne)/i.test(candidateDest)) {
+      explicitDestInText = candidateDest;
+    }
+  }
+
   // Intent classification triggers
   const isCurrentLocationQuery = /(meri (current )?location( batao| kya hai)?|where am i|what is my location|current location kya hai|meri location batao)/i.test(query);
   const isItineraryModify = /(day \d+ (ko )?(change|modify|badlo|badal do)|change day \d+|modify day \d+|heritage places zyada|zyada heritage|more heritage|heritage spots add)/i.test(query);
   const isExcludeMumbai = /(mumbai (ke baare mein )?nahi|don't want mumbai|not mumbai|exclude mumbai|mumbai chhod kar|mumbai ke alawa|mumbai nahi)/i.test(query);
   const isNearbyQuery = /(nearby|near me|paas mein|paas|aas paas|close to me|around me|around here|aur kya hai paas|aur paas mein|bagal mein|what is near me|explore near me|kuch interesting dekhna hai)/i.test(query);
-  const isTransitQuery = /(train|railway|station|flight|airport|bus|how to reach|kaise pahuchu|kaise pahuchein|kaise jayein|kaise jaye|kaise jau|kaise ja sakte|kaise jaa sakte|reach there|route|safar|transit|train se|flight se|flight option|road option|car se|travel options)/i.test(query);
+  const isTransitQuery = /(train|railway|station|flight|airport|bus|taxi|cab|walk|how to reach|kaise pahuchu|kaise pahuchein|kaise jayein|kaise jaye|kaise jau|kaise ja sakte|kaise jaa sakte|reach there|route|safar|transit|train se|flight se|flight option|road option|car se|travel options|travel from|way to travel|best way to travel|how to travel|travel between|reach from|how to go from|how can i go from|best route from)/i.test(query) || (!!explicitOriginInText && !!explicitDestInText);
   const isItineraryQuery = /(plan|itinerary|days|din|trip|tour|schedule|circuit|bana do)/i.test(query) || (!!durationMatch && !isTransitQuery);
   const isFeatureQuery = /(how does (this|the) (feature|website|app|map|site|planner|3d) work|how to use|features of virasat|kya hai yeh website|map kaise|feature explain|what can i do on this website|website kaise kaam karti hai|features batao)/i.test(query);
   const isGreeting = /^(hi|hello|hey|namaste|pranam|greetings|hola)\b/i.test(query.trim());
@@ -2843,11 +2912,24 @@ app.post(['/api/ai/chat', '/api/assistant/chat'], async (req, res) => {
   const isExplicitTravelQuery = /(travel to|visit|go to|reach|how to reach|kaise jaye|kaise ja sakte|kaise pahuchein|jana hai|jaana hai|safar|ghoomne|trip to|trip|tour|doosre city jaana)/i.test(query);
 
   // 1. Entity Extraction: Destination identification
-  const directEntity = findEntityInText(query);
-  let activePlace = directEntity.place;
-  let activeCity = directEntity.city;
-  let activeState = directEntity.state;
-  let activeDestinationName = directEntity.name;
+  let activePlace: any = null;
+  let activeCity: string | null = null;
+  let activeState: string | null = null;
+  let activeDestinationName: string | null = null;
+
+  if (explicitDestInText) {
+    const destEntity = findEntityInText(explicitDestInText);
+    activePlace = destEntity.place;
+    activeCity = destEntity.city;
+    activeState = destEntity.state;
+    activeDestinationName = destEntity.name || explicitDestInText;
+  } else {
+    const directEntity = findEntityInText(query);
+    activePlace = directEntity.place;
+    activeCity = directEntity.city;
+    activeState = directEntity.state;
+    activeDestinationName = directEntity.name;
+  }
 
   // 2. If NO direct entity in current query, search backward through conversation history (unless resetting destination)
   if (!activeDestinationName && normalizedHistory.length > 0 && !isResetQuery) {
@@ -2888,31 +2970,6 @@ app.post(['/api/ai/chat', '/api/assistant/chat'], async (req, res) => {
   let useCurrentLocationAsOrigin = false;
   if (/(use my (current )?location as (my )?starting point|meri (current )?location se|from my (current )?location|current location se|yahan se shuru|starting from here|from here|apni location se)/i.test(query)) {
     useCurrentLocationAsOrigin = true;
-  }
-
-  // Check for explicit "from X to Y" or "X se Y" in message
-  let explicitOriginInText: string | null = null;
-  const fromToMatch = query.match(/(?:from|starting from|departing from)\s+([a-zA-Z\s]+?)\s+(?:to|towards)\s+([a-zA-Z\s]+)/i)
-    || query.match(/([a-zA-Z\s]+?)\s+(?:se)\s+([a-zA-Z\s]+?)\s+(?:kaise|jana|jaana|ja sakte|travel|pahuchna|pahuchein|chalein|trip|ghoomne|options|route)/i);
-
-  if (fromToMatch && fromToMatch[1]) {
-    const candidate = fromToMatch[1].trim();
-    if (!/(train|flight|bus|car|air|road|kisi|kahan|yahan|ghoomne|trip|shehar|city)/i.test(candidate)) {
-      explicitOriginInText = candidate;
-    }
-  }
-
-  if (fromToMatch && fromToMatch[2]) {
-    const candidateDest = fromToMatch[2].trim();
-    if (!/(train|flight|bus|car|air|road|options|route|ghoomne)/i.test(candidateDest)) {
-      const destEntity = findEntityInText(candidateDest);
-      if (destEntity.name) {
-        activeDestinationName = destEntity.name;
-        activeCity = destEntity.city || activeCity;
-        activeState = destEntity.state || activeState;
-        activePlace = destEntity.place || activePlace;
-      }
-    }
   }
 
   // Also check if previous assistant turn asked where user is travelling from
@@ -2980,18 +3037,18 @@ app.post(['/api/ai/chat', '/api/assistant/chat'], async (req, res) => {
     intent = 'transit_mode';
   } else if (isItineraryQuery && activeDestinationName) {
     intent = 'itinerary_plan';
-  } else if (directEntity.name) {
+  } else if (activeDestinationName) {
     if (isExplicitTravelQuery || query.includes('trip') || query.includes('tour') || query.includes('safar') || query.includes('doosre city')) {
       intent = 'travel_to_destination';
-    } else if (!directEntity.place && directEntity.city) {
+    } else if (!activePlace && activeCity) {
       intent = 'travel_to_destination';
     } else {
       intent = 'destination_info';
     }
-  } else if (isGreeting && !activeDestinationName) {
+  } else if (isGreeting) {
     intent = 'greeting';
   } else {
-    intent = activeDestinationName ? 'destination_info' : 'general';
+    intent = 'general';
   }
 
   // Collect verified places & transit comparison dynamically
@@ -3161,11 +3218,18 @@ app.post(['/api/ai/chat', '/api/assistant/chat'], async (req, res) => {
         : `Trip Origin: UNKNOWN (Not established yet. DO NOT assume or invent any origin like Mumbai or Delhi. Ask the user for their starting city/station if needed).`;
 
       const transitContextStr = transitComparison
-        ? `Verified Transit Comparison (${transitComparison.origin} -> ${transitComparison.destination}):\n` +
-          `- Distance: ~${transitComparison.distance_km} km\n` +
-          `- Train: ${transitComparison.train.summary} (${transitComparison.train.approx_duration}). Note: ${transitComparison.train.notes}\n` +
-          `- Air: ${transitComparison.air.summary} (${transitComparison.air.approx_duration}). Note: ${transitComparison.air.notes}\n` +
-          `- Road: ${transitComparison.road.summary} (~${transitComparison.road.distance_km} km, ${transitComparison.road.approx_duration})\n`
+        ? transitComparison.is_same_city
+          ? `Verified Intra-City / Same-City Transit (${transitComparison.origin} -> ${transitComparison.destination}, City: ${transitComparison.city || 'Local Area'}):\n` +
+            `- Geographic relationship: Both locations are in the same city/metropolitan area (~${transitComparison.distance_km} km apart).\n` +
+            `- Suburban / Local Train: ${transitComparison.train?.summary} (${transitComparison.train?.approx_duration}). Note: ${transitComparison.train?.notes}\n` +
+            `- Road / Taxi / Cab: ${transitComparison.road?.summary} (${transitComparison.road?.approx_duration}). Note: ${transitComparison.road?.notes}\n` +
+            (transitComparison.walking ? `- Walking / Heritage Walk: ${transitComparison.walking?.summary} (${transitComparison.walking?.approx_duration}).\n` : '') +
+            `- Advisory: Intercity flights and long-distance highways do NOT apply to this same-city journey. Recommend suburban train, taxi/cab, bus, or walking.`
+          : `Verified Transit Comparison (${transitComparison.origin} -> ${transitComparison.destination}):\n` +
+            `- Distance: ~${transitComparison.distance_km} km\n` +
+            `- Train: ${transitComparison.train?.summary || 'N/A'} (${transitComparison.train?.approx_duration || ''}). Note: ${transitComparison.train?.notes || ''}\n` +
+            `- Air: ${transitComparison.air?.summary || 'N/A'} (${transitComparison.air?.approx_duration || ''}). Note: ${transitComparison.air?.notes || ''}\n` +
+            `- Road: ${transitComparison.road?.summary || 'N/A'} (~${transitComparison.road?.distance_km || ''} km, ${transitComparison.road?.approx_duration || ''})\n`
         : 'No transit calculation active.';
 
       const placesContextStr = suggestedPlaces.length > 0
@@ -3297,59 +3361,110 @@ ${placesContextStr}`;
     }
   }
 
-  // 3. Intent: Travel to Another Destination (Compare Train, Air, Road)
+  // 3. Intent: Travel to Another Destination (Compare Train, Air, Road, Local)
   else if (intent === 'travel_to_destination') {
-    if (transitComparison) {
+    if (transitComparison && transitComparison.distance_km > 0) {
       const dest = activeDestinationName!;
       const orig = resolvedOriginName || userLoc?.city || 'Your Location';
-      reply = isHindiHinglish
-        ? `**${orig}** se **${dest}** ka travel plan aur transport options:\n\n` +
-          `🚆 **1. Train Option**:\n` +
-          `• **Route**: ${transitComparison.train.summary}\n` +
-          `• **Approx Duration**: ${transitComparison.train.approx_duration} (~${transitComparison.train.distance_km} km rail line)\n` +
-          `• **Note**: ${transitComparison.train.notes}\n\n` +
-          `✈️ **2. Flight Option**:\n` +
-          `• **Route**: ${transitComparison.air.summary}\n` +
-          `• **Approx Duration**: ${transitComparison.air.approx_duration}\n` +
-          `• **Note**: ${transitComparison.air.notes}\n\n` +
-          `🚗 **3. Road / Car Option**:\n` +
-          `• **Highway Route**: ${transitComparison.road.summary}\n` +
-          `• **Distance & Time**: ~${transitComparison.road.distance_km} km (${transitComparison.road.approx_duration})\n` +
-          `• **Note**: ${transitComparison.road.notes}\n\n` +
-          (suggestedPlaces.length > 0
-            ? `🌟 **Top Places in ${dest}**:\n` +
-              suggestedPlaces.slice(0, 3).map((p) => `• **${p.name}**: ${p.reason}`).join('\n') + '\n\n'
-            : '') +
-          `*Aap kitne din ke liye plan kar rahe hain? (Jaise 3 din ya 5 din)*`
-        : `Here is the travel guide from **${orig}** to **${dest}**:\n\n` +
-          `🚆 **1. Train Option**:\n` +
-          `• **Route**: ${transitComparison.train.summary}\n` +
-          `• **Approx Duration**: ${transitComparison.train.approx_duration} (~${transitComparison.train.distance_km} km rail network)\n` +
-          `• **Advisory**: ${transitComparison.train.notes}\n\n` +
-          `✈️ **2. Air Option**:\n` +
-          `• **Route**: ${transitComparison.air.summary}\n` +
-          `• **Approx Duration**: ${transitComparison.air.approx_duration}\n` +
-          `• **Advisory**: ${transitComparison.air.notes}\n\n` +
-          `🚗 **3. Road Option**:\n` +
-          `• **Route**: ${transitComparison.road.summary}\n` +
-          `• **Distance & Duration**: ~${transitComparison.road.distance_km} km (${transitComparison.road.approx_duration})\n` +
-          `• **Advisory**: ${transitComparison.road.notes}\n\n` +
-          (suggestedPlaces.length > 0
-            ? `🌟 **Highlights to Explore in ${dest}**:\n` +
-              suggestedPlaces.slice(0, 3).map((p) => `• **${p.name}**: ${p.reason}`).join('\n') + '\n\n'
-            : '') +
-          `How many days are you planning for this trip? (e.g. 3 days, 5 days, or relaxed weekend)`;
+
+      if (transitComparison.is_same_city) {
+        const city = transitComparison.city || 'Mumbai';
+        reply = isHindiHinglish
+          ? `**${orig}** aur **${dest}** dono **${city}** shehar ke andar hi hain (~${transitComparison.distance_km} km doori). Yahan ke verified local transport options ye hain:\n\n` +
+            `🚆 **1. Suburban Local Train**:\n` +
+            `• **Route**: ${transitComparison.train.summary}\n` +
+            `• **Approx Time**: ${transitComparison.train.approx_duration}\n` +
+            `• **Details**: ${transitComparison.train.notes}\n\n` +
+            `🚕 **2. Metered Taxi / Cab**:\n` +
+            `• **Route**: ${transitComparison.road.summary}\n` +
+            `• **Approx Time**: ${transitComparison.road.approx_duration}\n` +
+            `• **Details**: ${transitComparison.road.notes}\n\n` +
+            (transitComparison.walking
+              ? `🚶 **3. Heritage Walk (Walking)**:\n` +
+                `• **Duration**: ${transitComparison.walking.approx_duration}\n` +
+                `• **Route**: ${transitComparison.walking.notes}\n\n`
+              : '') +
+            (suggestedPlaces.length > 0
+              ? `🌟 **Top Highlights in ${dest}**:\n` +
+                suggestedPlaces.slice(0, 3).map((p) => `• **${p.name}**: ${p.reason}`).join('\n') + '\n\n'
+              : '') +
+            `*Kya aap kisi spot ke visiting timings ya ticket rates dekhna chahte hain?*`
+          : `**${orig}** and **${dest}** are both located within **${city}** (~${transitComparison.distance_km} km apart). Here are the recommended local transport options:\n\n` +
+            `🚆 **1. Suburban Local Train**:\n` +
+            `• **Route**: ${transitComparison.train.summary}\n` +
+            `• **Duration**: ${transitComparison.train.approx_duration}\n` +
+            `• **Details**: ${transitComparison.train.notes}\n\n` +
+            `🚕 **2. Metered Taxi / Cab**:\n` +
+            `• **Route**: ${transitComparison.road.summary}\n` +
+            `• **Duration**: ${transitComparison.road.approx_duration}\n` +
+            `• **Details**: ${transitComparison.road.notes}\n\n` +
+            (transitComparison.walking
+              ? `🚶 **3. Scenic Heritage Walk (Walking)**:\n` +
+                `• **Duration**: ${transitComparison.walking.approx_duration}\n` +
+                `• **Details**: ${transitComparison.walking.notes}\n\n`
+              : '') +
+            (suggestedPlaces.length > 0
+              ? `🌟 **Highlights to Explore in ${dest}**:\n` +
+                suggestedPlaces.slice(0, 3).map((p) => `• **${p.name}**: ${p.reason}`).join('\n') + '\n\n'
+              : '') +
+            `How would you like to plan your time in this heritage area?`;
+      } else {
+        reply = isHindiHinglish
+          ? `**${orig}** se **${dest}** ka travel plan aur transport options:\n\n` +
+            `🚆 **1. Train Option**:\n` +
+            `• **Route**: ${transitComparison.train.summary}\n` +
+            `• **Approx Duration**: ${transitComparison.train.approx_duration} (~${transitComparison.train.distance_km} km rail line)\n` +
+            `• **Note**: ${transitComparison.train.notes}\n\n` +
+            `✈️ **2. Flight Option**:\n` +
+            `• **Route**: ${transitComparison.air.summary}\n` +
+            `• **Approx Duration**: ${transitComparison.air.approx_duration}\n` +
+            `• **Note**: ${transitComparison.air.notes}\n\n` +
+            `🚗 **3. Road / Car Option**:\n` +
+            `• **Highway Route**: ${transitComparison.road.summary}\n` +
+            `• **Distance & Time**: ~${transitComparison.road.distance_km} km (${transitComparison.road.approx_duration})\n` +
+            `• **Note**: ${transitComparison.road.notes}\n\n` +
+            (suggestedPlaces.length > 0
+              ? `🌟 **Top Places in ${dest}**:\n` +
+                suggestedPlaces.slice(0, 3).map((p) => `• **${p.name}**: ${p.reason}`).join('\n') + '\n\n'
+              : '') +
+            `*Aap kitne din ke liye plan kar rahe hain? (Jaise 3 din ya 5 din)*`
+          : `Here is the travel guide from **${orig}** to **${dest}**:\n\n` +
+            `🚆 **1. Train Option**:\n` +
+            `• **Route**: ${transitComparison.train.summary}\n` +
+            `• **Approx Duration**: ${transitComparison.train.approx_duration} (~${transitComparison.train.distance_km} km rail network)\n` +
+            `• **Advisory**: ${transitComparison.train.notes}\n\n` +
+            `✈️ **2. Air Option**:\n` +
+            `• **Route**: ${transitComparison.air.summary}\n` +
+            `• **Approx Duration**: ${transitComparison.air.approx_duration}\n` +
+            `• **Advisory**: ${transitComparison.air.notes}\n\n` +
+            `🚗 **3. Road Option**:\n` +
+            `• **Route**: ${transitComparison.road.summary}\n` +
+            `• **Distance & Duration**: ~${transitComparison.road.distance_km} km (${transitComparison.road.approx_duration})\n` +
+            `• **Advisory**: ${transitComparison.road.notes}\n\n` +
+            (suggestedPlaces.length > 0
+              ? `🌟 **Highlights to Explore in ${dest}**:\n` +
+                suggestedPlaces.slice(0, 3).map((p) => `• **${p.name}**: ${p.reason}`).join('\n') + '\n\n'
+              : '') +
+            `How many days are you planning for this trip? (e.g. 3 days, 5 days, or relaxed weekend)`;
+      }
     } else {
       reply = isHindiHinglish
-        ? `Aap **${activeDestinationName}** ke liye safar kahan se shuru karna chahte hain? (Jaise New Delhi, Mumbai, Bengaluru, ya 'Use my current location as starting point' chun sakte hain).`
-        : `Where will you be travelling to **${activeDestinationName}** from? (You can specify your departure city such as New Delhi or click 'Use my current location as starting point').`;
+        ? `Kripya batayein ki aap **${activeDestinationName || 'kahan'}** ke liye safar kahan se shuru karna chahte hain? (Jaise New Delhi, Mumbai, Bengaluru, ya 'Use my current location as starting point' chun sakte hain).`
+        : `Where will you be travelling to **${activeDestinationName || 'your destination'}** from? (You can specify your departure city/station such as CSMT, New Delhi or click 'Use my current location as starting point').`;
     }
   }
 
   // 4. Intent: Specific Transit Mode Inquiry ("Train", "What about flight?", "Road")
   else if (intent === 'transit_mode') {
-    if (transitComparison) {
-      if (query.includes('flight') || query.includes('air')) {
+    if (transitComparison && transitComparison.distance_km > 0) {
+      if (transitComparison.is_same_city) {
+        reply = `🚆 **Local Transit Options (${transitComparison.origin} ➔ ${transitComparison.destination})**:\n\n` +
+          `• **Suburban Rail**: ${transitComparison.train.summary} (${transitComparison.train.approx_duration})\n` +
+          `• **Taxi / Cab**: ${transitComparison.road.summary} (${transitComparison.road.approx_duration})\n` +
+          (transitComparison.walking ? `• **Walking**: ${transitComparison.walking.summary} (${transitComparison.walking.approx_duration})\n` : '') +
+          `• **Local Transit Notes**: ${transitComparison.train.notes}\n\n` +
+          `Would you like sightseeing tips around ${activeDestinationName}?`;
+      } else if (query.includes('flight') || query.includes('air')) {
         reply = `✈️ **Air Travel Details to ${activeDestinationName}**:\n\n` +
           `• **Route**: ${transitComparison.air.summary}\n` +
           `• **Flight Duration**: ${transitComparison.air.approx_duration}\n` +
@@ -3373,8 +3488,8 @@ ${placesContextStr}`;
       }
     } else {
       reply = isHindiHinglish
-        ? `Aap **${activeDestinationName}** kahan se travel kar rahe hain? Kripya apna departure city batayein ya apni current location use karein.`
-        : `Where will you be travelling to **${activeDestinationName}** from? Please share your starting city or select 'Use my current location as starting point'.`;
+        ? `Aap **${activeDestinationName || 'kahan'}** travel kar rahe hain? Kripya apna departure city ya station batayein (jaise CSMT, New Delhi, etc.).`
+        : `Where will you be travelling to **${activeDestinationName || 'your destination'}** from? Please share your starting city/station or select 'Use my current location as starting point'.`;
     }
   }
 
