@@ -15,7 +15,7 @@
         "official_url":  "https://incredibleindia.org",
         "status":  "active",
         "hero_image_url":  "https://images.unsplash.com/photo-1628155930550-1ef5420a4611?w=1200\u0026auto=format\u0026fit=crop\u0026q=80",
-        "places_count":  1,
+        "places_count":  5,
         "tagline":  "Cultural destination in chandigarh"
     },
     {
@@ -34,7 +34,7 @@
         "official_url":  "https://incredibleindia.org",
         "status":  "active",
         "hero_image_url":  "https://images.unsplash.com/photo-1512343879792-214836286570?w=1200\u0026auto=format\u0026fit=crop\u0026q=80",
-        "places_count":  4,
+        "places_count":  30,
         "tagline":  "Cultural destination in delhi"
     },
     {
@@ -319,7 +319,7 @@
         "official_url":  "https://incredibleindia.org",
         "status":  "active",
         "hero_image_url":  "https://images.unsplash.com/photo-1627993077758-452101007326?w=1200\u0026auto=format\u0026fit=crop\u0026q=80",
-        "places_count":  1,
+        "places_count":  3,
         "tagline":  "Cultural destination in jammu-and-kashmir"
     },
     {
@@ -338,7 +338,7 @@
         "official_url":  "https://incredibleindia.org",
         "status":  "active",
         "hero_image_url":  "https://images.unsplash.com/photo-1596405835963-c4563554903c?w=1200\u0026auto=format\u0026fit=crop\u0026q=80",
-        "places_count":  1,
+        "places_count":  3,
         "tagline":  "Cultural destination in jammu-and-kashmir"
     },
     {
@@ -376,7 +376,7 @@
         "official_url":  "https://incredibleindia.org",
         "status":  "active",
         "hero_image_url":  "https://images.unsplash.com/photo-1589308078067-369293033254?w=1200\u0026auto=format\u0026fit=crop\u0026q=80",
-        "places_count":  5,
+        "places_count":  8,
         "tagline":  "Cultural destination in jammu-and-kashmir"
     },
     {
@@ -395,7 +395,7 @@
         "official_url":  "https://incredibleindia.org",
         "status":  "active",
         "hero_image_url":  "https://images.unsplash.com/photo-1616423640786-06593d500735?w=1200\u0026auto=format\u0026fit=crop\u0026q=80",
-        "places_count":  0,
+        "places_count":  1,
         "tagline":  "Cultural destination in ladakh"
     },
     {
@@ -414,7 +414,7 @@
         "official_url":  "https://incredibleindia.org",
         "status":  "active",
         "hero_image_url":  "https://images.unsplash.com/photo-1574672280608-2184613d4676?w=1200\u0026auto=format\u0026fit=crop\u0026q=80",
-        "places_count":  6,
+        "places_count":  9,
         "tagline":  "Cultural destination in ladakh"
     },
     {
@@ -433,7 +433,7 @@
         "official_url":  "https://amritsar.nic.in",
         "status":  "active",
         "hero_image_url":  "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=1200\u0026q=80",
-        "places_count":  3,
+        "places_count":  6,
         "tagline":  "Cultural destination in punjab"
     },
     {
@@ -452,7 +452,7 @@
         "official_url":  "https://patiala.nic.in",
         "status":  "active",
         "hero_image_url":  "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200\u0026q=80",
-        "places_count":  1,
+        "places_count":  3,
         "tagline":  "Cultural destination in punjab"
     },
     {
@@ -471,7 +471,7 @@
         "official_url":  "https://rupnagar.nic.in",
         "status":  "active",
         "hero_image_url":  "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200\u0026q=80",
-        "places_count":  1,
+        "places_count":  3,
         "administrative_status":  "EXTRA_CANONICAL",
         "review_flag":  "PENDING_CLASSIFICATION",
         "tagline":  "Cultural destination in punjab"
@@ -1095,8 +1095,8 @@
         "longitude":  91.7323,
         "lat":  25.2986,
         "lng":  91.7323,
-        "short_description":  "Sohra â€” wettest place on Earth featuring dramatic Nohkalikai waterfall, Mawsmai limestone cave, and bio-engineered double-decker living root bridges.",
-        "description":  "Sohra â€” wettest place on Earth featuring dramatic Nohkalikai waterfall, Mawsmai limestone cave, and bio-engineered double-decker living root bridges.",
+        "short_description":  "Sohra ΓÇö wettest place on Earth featuring dramatic Nohkalikai waterfall, Mawsmai limestone cave, and bio-engineered double-decker living root bridges.",
+        "description":  "Sohra ΓÇö wettest place on Earth featuring dramatic Nohkalikai waterfall, Mawsmai limestone cave, and bio-engineered double-decker living root bridges.",
         "official_url":  "https://incredibleindia.org",
         "status":  "active",
         "hero_image_url":  "https://images.unsplash.com/photo-1626014303762-19217e4e0320?w=1200\u0026auto=format\u0026fit=crop\u0026q=80",
@@ -1404,7 +1404,7 @@
         "official_url":  "https://incredibleindia.org",
         "status":  "active",
         "hero_image_url":  "https://images.unsplash.com/photo-1582510003552-2588355fc008?w=1200\u0026auto=format\u0026fit=crop\u0026q=80",
-        "places_count":  0,
+        "places_count":  5,
         "tagline":  "Cultural destination in andaman-and-nicobar-islands"
     },
     {
@@ -2164,7 +2164,7 @@
         "official_url":  "https://incredibleindia.org",
         "status":  "active",
         "hero_image_url":  "https://images.unsplash.com/photo-1609766857049-652806208462?w=1200\u0026auto=format\u0026fit=crop\u0026q=80",
-        "places_count":  0,
+        "places_count":  3,
         "tagline":  "Cultural destination in dadra-and-nagar-haveli-and-daman-and-diu"
     },
     {
@@ -2183,7 +2183,7 @@
         "official_url":  "https://incredibleindia.org",
         "status":  "active",
         "hero_image_url":  "https://images.unsplash.com/photo-1626014303765-4c5401713653?w=1200\u0026auto=format\u0026fit=crop\u0026q=80",
-        "places_count":  0,
+        "places_count":  2,
         "tagline":  "Cultural destination in dadra-and-nagar-haveli-and-daman-and-diu"
     },
     {
@@ -3680,7 +3680,7 @@
         "official_url":  "https://incredibleindia.org",
         "status":  "active",
         "hero_image_url":  "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cf/Kavaratti_Island%2C_Lakshadweep.jpg/1280px-Kavaratti_Island%2C_Lakshadweep.jpg",
-        "places_count":  0,
+        "places_count":  5,
         "tagline":  "Cultural destination in lakshadweep"
     },
     {
@@ -3699,7 +3699,7 @@
         "official_url":  "https://incredibleindia.org",
         "status":  "active",
         "hero_image_url":  "https://images.unsplash.com/photo-1581793745870-11750f51f150?w=1200\u0026auto=format\u0026fit=crop\u0026q=80",
-        "places_count":  1,
+        "places_count":  5,
         "tagline":  "Cultural destination in puducherry"
     },
     {
@@ -4775,7 +4775,7 @@
         "status":  "draft",
         "prominence":  null,
         "is_capital":  false,
-        "places_count":  0,
+        "places_count":  1,
         "hero_image_url":  null,
         "hero_image":  null,
         "aliases":  [
@@ -4839,7 +4839,7 @@
         "status":  "draft",
         "prominence":  null,
         "is_capital":  false,
-        "places_count":  0,
+        "places_count":  1,
         "hero_image_url":  null,
         "hero_image":  null,
         "aliases":  [
@@ -4866,7 +4866,7 @@
         "lng":  76.7179,
         "tagline":  "Cultural destination in punjab",
         "short_description":  null,
-        "description":  "Mohali â€” modern commercial and sports metropolis holding Fateh Burj (tallest minar in India celebrating victory of Baba Banda Singh Bahadur) and PCA Stadium.",
+        "description":  "Mohali ΓÇö modern commercial and sports metropolis holding Fateh Burj (tallest minar in India celebrating victory of Baba Banda Singh Bahadur) and PCA Stadium.",
         "official_url":  null,
         "status":  "draft",
         "prominence":  null,
@@ -5556,6 +5556,66 @@
         "updated_at":  "2026-09-10T20:58:32.104Z",
         "verification_status":  "VERIFICATION_REQUIRED",
         "verification_note":  "City shell added from itinerary city registry. Metadata and places pending verification."
+    },
+    {
+        "id":  "bathinda",
+        "state_id":  "punjab",
+        "name":  "Bathinda",
+        "slug":  "bathinda",
+        "entity_type":  "city",
+        "district":  "Bathinda",
+        "latitude":  30.211,
+        "longitude":  74.9455,
+        "lat":  30.211,
+        "lng":  74.9455,
+        "short_description":  "Historic city in southern Punjab known for the ancient Qila Mubarak fort where Empress Razia Sultana was held, lakes, and thermal power plant.",
+        "description":  "Bathinda is one of the oldest cities in Punjab, famous for Qila Mubarak, an ancient brick monument dating back to the Kushana period, and associated with Razia Sultana and Guru Gobind Singh Ji.",
+        "official_url":  "https://bathinda.nic.in",
+        "status":  "active",
+        "hero_image_url":  "https://images.unsplash.com/photo-1596701062351-8c2c14d1fdd1?w=1200\u0026auto=format\u0026fit=crop\u0026q=80",
+        "places_count":  1,
+        "tagline":  "Historic Fort City of Punjab",
+        "state":  "Punjab"
+    },
+    {
+        "id":  "attari",
+        "state_id":  "punjab",
+        "name":  "Attari",
+        "slug":  "attari",
+        "entity_type":  "city",
+        "district":  "Amritsar",
+        "latitude":  31.6048,
+        "longitude":  74.5714,
+        "lat":  31.6048,
+        "lng":  74.5714,
+        "short_description":  "Historic border town in Amritsar district famous for the daily Wagah-Attari border retreat ceremony between India and Pakistan.",
+        "description":  "Attari is the native village of Sikh military commander Sham Singh Attariwala and the location of the international border crossing between India and Pakistan hosting the famous Wagah-Attari border ceremony.",
+        "official_url":  "https://amritsar.nic.in",
+        "status":  "active",
+        "hero_image_url":  "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200\u0026auto=format\u0026fit=crop\u0026q=80",
+        "places_count":  1,
+        "tagline":  "Gateway to the International Border Ceremony",
+        "state":  "Punjab"
+    },
+    {
+        "id":  "harike",
+        "state_id":  "punjab",
+        "name":  "Harike",
+        "slug":  "harike",
+        "entity_type":  "city",
+        "district":  "Tarn Taran",
+        "latitude":  31.1495,
+        "longitude":  74.962,
+        "lat":  31.1495,
+        "lng":  74.962,
+        "short_description":  "Prominent wetland and wildlife sanctuary located at the confluence of the Beas and Sutlej rivers in Punjab.",
+        "description":  "Harike, also known as Hari-ke-Pattan, is Northern India\u0027s largest freshwater wetland, a Ramsar site supporting hundreds of species of migratory birds, river dolphins, and rare freshwater biodiversity.",
+        "official_url":  "https://punjabtourism.punjab.gov.in",
+        "status":  "active",
+        "hero_image_url":  "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1200\u0026auto=format\u0026fit=crop\u0026q=80",
+        "places_count":  1,
+        "tagline":  "Northern India\u0027s Ramsar Wetland Sanctuary",
+        "state":  "Punjab"
     },
     {
         "id":  "santiniketan",

@@ -1,0 +1,1314 @@
+[
+  {
+    "id": "punjab_001",
+    "name": "Golden Temple",
+    "category": "religious_heritage",
+    "area": "Amritsar",
+    "description": "The Harmandir Sahib is a major Sikh pilgrimage site known for its golden sanctum, sacred pool, and peaceful atmosphere.",
+    "best_for": [
+      "spirituality",
+      "architecture",
+      "photography"
+    ],
+    "suggested_duration": "2–3 hours",
+    "best_time_to_visit": "October to March; early morning or evening",
+    "entry_fee": "Free",
+    "opening_hours": "Open daily; timings may vary",
+    "visitor_notes": [
+      "Head covering required",
+      "Remove footwear before entering",
+      "Dress modestly"
+    ],
+    "map_search": "Golden Temple Amritsar",
+    "tags": [
+      "Sikhism",
+      "heritage",
+      "Amritsar"
+    ],
+    "city": "Amritsar",
+    "city_id": "amritsar",
+    "state_id": "punjab",
+    "state": "Punjab",
+    "country": "India",
+    "summary": "The Harmandir Sahib is a major Sikh pilgrimage site known for its golden sanctum, sacred pool, and peaceful atmosphere.",
+    "visiting_hours": "Open daily; timings may vary",
+    "coordinates": {
+      "lat": 31.62,
+      "lng": 74.8765
+    },
+    "lat": 31.62,
+    "lng": 74.8765,
+    "latitude": 31.62,
+    "longitude": 74.8765,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1588096344356-9b634839cf9e?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1588096344356-9b634839cf9e?w=800&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://punjabtourism.punjab.gov.in/destination/amritsar",
+    "source_name": "Punjab Tourism & Heritage Promotion Board",
+    "source_type": "state_tourism",
+    "data_confidence": "official",
+    "verification_status": "verified",
+    "visiting_info": {
+      "best_time_to_visit": "October to March; early morning or evening",
+      "visiting_hours": "Open daily; timings may vary",
+      "recommended_duration": "2–3 hours",
+      "tips": [
+        "Head covering required",
+        "Remove footwear before entering",
+        "Dress modestly"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "punjab_002",
+    "name": "Jallianwala Bagh",
+    "category": "historical_memorial",
+    "area": "Amritsar",
+    "description": "A historic memorial commemorating the victims of the 1919 Jallianwala Bagh massacre.",
+    "best_for": [
+      "history",
+      "heritage",
+      "education"
+    ],
+    "suggested_duration": "1–2 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or nominal fee depending on facilities",
+    "opening_hours": "Usually open during daytime; verify locally",
+    "visitor_notes": [
+      "Maintain silence and respect",
+      "Allow time for the museum and memorial grounds"
+    ],
+    "map_search": "Jallianwala Bagh Amritsar",
+    "tags": [
+      "history",
+      "memorial",
+      "Amritsar"
+    ],
+    "city": "Amritsar",
+    "city_id": "amritsar",
+    "state_id": "punjab",
+    "state": "Punjab",
+    "country": "India",
+    "summary": "A historic memorial commemorating the victims of the 1919 Jallianwala Bagh massacre.",
+    "visiting_hours": "Usually open during daytime; verify locally",
+    "coordinates": {
+      "lat": 31.6206,
+      "lng": 74.8801
+    },
+    "lat": 31.6206,
+    "lng": 74.8801,
+    "latitude": 31.6206,
+    "longitude": 74.8801,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://punjabtourism.punjab.gov.in/destination/jallianwala-bagh",
+    "source_name": "Punjab Tourism & Heritage Promotion Board",
+    "source_type": "state_tourism",
+    "data_confidence": "official",
+    "verification_status": "verified",
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually open during daytime; verify locally",
+      "recommended_duration": "1–2 hours",
+      "tips": [
+        "Maintain silence and respect",
+        "Allow time for the museum and memorial grounds"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "punjab_003",
+    "name": "Wagah–Attari Border",
+    "category": "cultural_attraction",
+    "area": "Attari, Amritsar district",
+    "description": "The India–Pakistan border famous for its ceremonial lowering-of-the-flags ceremony.",
+    "best_for": [
+      "patriotism",
+      "culture",
+      "family outings"
+    ],
+    "suggested_duration": "3–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Usually free; seating or access rules may vary",
+    "opening_hours": "Ceremony timing changes seasonally",
+    "visitor_notes": [
+      "Arrive early",
+      "Carry valid identification",
+      "Follow security instructions"
+    ],
+    "map_search": "Attari Wagah Border Ceremony",
+    "tags": [
+      "border",
+      "ceremony",
+      "Amritsar"
+    ],
+    "city": "Attari",
+    "city_id": "attari",
+    "state_id": "punjab",
+    "state": "Punjab",
+    "country": "India",
+    "summary": "The India–Pakistan border famous for its ceremonial lowering-of-the-flags ceremony.",
+    "visiting_hours": "Ceremony timing changes seasonally",
+    "coordinates": {
+      "lat": 31.6048,
+      "lng": 74.5714
+    },
+    "lat": 31.6048,
+    "lng": 74.5714,
+    "latitude": 31.6048,
+    "longitude": 74.5714,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://punjabtourism.punjab.gov.in/destination/wagah-border",
+    "source_name": "Punjab Tourism & Heritage Promotion Board",
+    "source_type": "state_tourism",
+    "data_confidence": "official",
+    "verification_status": "verified",
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Ceremony timing changes seasonally",
+      "recommended_duration": "3–4 hours",
+      "tips": [
+        "Arrive early",
+        "Carry valid identification",
+        "Follow security instructions"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "punjab_004",
+    "name": "Partition Museum",
+    "category": "museum",
+    "area": "Amritsar",
+    "description": "A museum documenting the history, memories, and human impact of the Partition of India.",
+    "best_for": [
+      "history",
+      "museums",
+      "education"
+    ],
+    "suggested_duration": "1–2 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Paid; verify current rates",
+    "opening_hours": "Usually daytime; closed on selected days",
+    "visitor_notes": [
+      "Check weekly closure before visiting",
+      "Photography rules may apply"
+    ],
+    "map_search": "Partition Museum Amritsar",
+    "tags": [
+      "Partition",
+      "museum",
+      "history"
+    ],
+    "city": "Amritsar",
+    "city_id": "amritsar",
+    "state_id": "punjab",
+    "state": "Punjab",
+    "country": "India",
+    "summary": "A museum documenting the history, memories, and human impact of the Partition of India.",
+    "visiting_hours": "Usually daytime; closed on selected days",
+    "coordinates": {
+      "lat": 31.6247,
+      "lng": 74.8778
+    },
+    "lat": 31.6247,
+    "lng": 74.8778,
+    "latitude": 31.6247,
+    "longitude": 74.8778,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://partitionmuseum.org/explore",
+    "source_name": "Punjab Tourism & Heritage Promotion Board",
+    "source_type": "state_tourism",
+    "data_confidence": "official",
+    "verification_status": "verified",
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; closed on selected days",
+      "recommended_duration": "1–2 hours",
+      "tips": [
+        "Check weekly closure before visiting",
+        "Photography rules may apply"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "punjab_005",
+    "name": "Durgiana Temple",
+    "category": "religious_heritage",
+    "area": "Amritsar",
+    "description": "A Hindu temple complex with a striking architecture inspired partly by the Golden Temple.",
+    "best_for": [
+      "religion",
+      "architecture",
+      "photography"
+    ],
+    "suggested_duration": "1 hour",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free",
+    "opening_hours": "Open daily; timings may vary",
+    "visitor_notes": [
+      "Dress respectfully",
+      "Remove footwear in designated areas"
+    ],
+    "map_search": "Durgiana Temple Amritsar",
+    "tags": [
+      "temple",
+      "heritage",
+      "Amritsar"
+    ],
+    "city": "Amritsar",
+    "city_id": "amritsar",
+    "state_id": "punjab",
+    "state": "Punjab",
+    "country": "India",
+    "summary": "A Hindu temple complex with a striking architecture inspired partly by the Golden Temple.",
+    "visiting_hours": "Open daily; timings may vary",
+    "coordinates": {
+      "lat": 31.6322,
+      "lng": 74.8687
+    },
+    "lat": 31.6322,
+    "lng": 74.8687,
+    "latitude": 31.6322,
+    "longitude": 74.8687,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://punjabtourism.punjab.gov.in/destination/durgiana-temple",
+    "source_name": "Punjab Tourism & Heritage Promotion Board",
+    "source_type": "state_tourism",
+    "data_confidence": "official",
+    "verification_status": "verified",
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Open daily; timings may vary",
+      "recommended_duration": "1 hour",
+      "tips": [
+        "Dress respectfully",
+        "Remove footwear in designated areas"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "punjab_006",
+    "name": "Maharaja Ranjit Singh Museum and Panorama",
+    "category": "museum",
+    "area": "Amritsar",
+    "description": "A museum and panorama dedicated to Maharaja Ranjit Singh and the history of the Sikh Empire.",
+    "best_for": [
+      "history",
+      "museums",
+      "culture"
+    ],
+    "suggested_duration": "1–2 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Paid or nominal; verify current rates",
+    "opening_hours": "Usually daytime; verify weekly closure",
+    "visitor_notes": [
+      "Allow time for the surrounding garden"
+    ],
+    "map_search": "Maharaja Ranjit Singh Museum Amritsar",
+    "tags": [
+      "Sikh Empire",
+      "museum",
+      "Amritsar"
+    ],
+    "city": "Amritsar",
+    "city_id": "amritsar",
+    "state_id": "punjab",
+    "state": "Punjab",
+    "country": "India",
+    "summary": "A museum and panorama dedicated to Maharaja Ranjit Singh and the history of the Sikh Empire.",
+    "visiting_hours": "Usually daytime; verify weekly closure",
+    "coordinates": {
+      "lat": 31.6385,
+      "lng": 74.8795
+    },
+    "lat": 31.6385,
+    "lng": 74.8795,
+    "latitude": 31.6385,
+    "longitude": 74.8795,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://punjabtourism.punjab.gov.in/destination/maharaja-ranjit-singh-museum",
+    "source_name": "Punjab Tourism & Heritage Promotion Board",
+    "source_type": "state_tourism",
+    "data_confidence": "official",
+    "verification_status": "verified",
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; verify weekly closure",
+      "recommended_duration": "1–2 hours",
+      "tips": [
+        "Allow time for the surrounding garden"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "punjab_007",
+    "name": "Anandpur Sahib",
+    "category": "religious_heritage",
+    "area": "Rupnagar district",
+    "description": "A major Sikh religious town associated with Sikh history and the founding of the Khalsa.",
+    "best_for": [
+      "pilgrimage",
+      "history",
+      "culture"
+    ],
+    "suggested_duration": "1 day",
+    "best_time_to_visit": "October to March; Hola Mohalla is especially significant",
+    "entry_fee": "Free",
+    "opening_hours": "Open daily; individual sites vary",
+    "visitor_notes": [
+      "Expect crowds during festivals",
+      "Dress modestly"
+    ],
+    "map_search": "Anandpur Sahib Punjab",
+    "tags": [
+      "Sikhism",
+      "pilgrimage",
+      "Rupnagar"
+    ],
+    "city": "Anandpur Sahib",
+    "city_id": "anandpur-sahib",
+    "state_id": "punjab",
+    "state": "Punjab",
+    "country": "India",
+    "summary": "A major Sikh religious town associated with Sikh history and the founding of the Khalsa.",
+    "visiting_hours": "Open daily; individual sites vary",
+    "coordinates": {
+      "lat": 31.236,
+      "lng": 76.4984
+    },
+    "lat": 31.236,
+    "lng": 76.4984,
+    "latitude": 31.236,
+    "longitude": 76.4984,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://punjabtourism.punjab.gov.in/destination/anandpur-sahib",
+    "source_name": "Punjab Tourism & Heritage Promotion Board",
+    "source_type": "state_tourism",
+    "data_confidence": "official",
+    "verification_status": "verified",
+    "visiting_info": {
+      "best_time_to_visit": "October to March; Hola Mohalla is especially significant",
+      "visiting_hours": "Open daily; individual sites vary",
+      "recommended_duration": "1 day",
+      "tips": [
+        "Expect crowds during festivals",
+        "Dress modestly"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "punjab_008",
+    "name": "Virasat-e-Khalsa",
+    "category": "museum",
+    "area": "Anandpur Sahib",
+    "description": "A major museum presenting Sikh history, culture, and the heritage of Punjab through immersive galleries.",
+    "best_for": [
+      "museums",
+      "history",
+      "architecture"
+    ],
+    "suggested_duration": "2–3 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Paid; verify current rates",
+    "opening_hours": "Usually daytime; weekly closure may apply",
+    "visitor_notes": [
+      "Reserve sufficient time for all galleries",
+      "Check entry rules before visiting"
+    ],
+    "map_search": "Virasat-e-Khalsa Anandpur Sahib",
+    "tags": [
+      "museum",
+      "Sikh history",
+      "Anandpur Sahib"
+    ],
+    "city": "Anandpur Sahib",
+    "city_id": "anandpur-sahib",
+    "state_id": "punjab",
+    "state": "Punjab",
+    "country": "India",
+    "summary": "A major museum presenting Sikh history, culture, and the heritage of Punjab through immersive galleries.",
+    "visiting_hours": "Usually daytime; weekly closure may apply",
+    "coordinates": {
+      "lat": 31.2355,
+      "lng": 76.5055
+    },
+    "lat": 31.2355,
+    "lng": 76.5055,
+    "latitude": 31.2355,
+    "longitude": 76.5055,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=800&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://punjabtourism.punjab.gov.in/destination/virasat-e-khalsa",
+    "source_name": "Punjab Tourism & Heritage Promotion Board",
+    "source_type": "state_tourism",
+    "data_confidence": "official",
+    "verification_status": "verified",
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; weekly closure may apply",
+      "recommended_duration": "2–3 hours",
+      "tips": [
+        "Reserve sufficient time for all galleries",
+        "Check entry rules before visiting"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "punjab_009",
+    "name": "Takht Sri Kesgarh Sahib",
+    "category": "religious_heritage",
+    "area": "Anandpur Sahib",
+    "description": "One of the five Takhts of Sikhism and an important historic gurdwara.",
+    "best_for": [
+      "pilgrimage",
+      "history",
+      "architecture"
+    ],
+    "suggested_duration": "1–2 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free",
+    "opening_hours": "Open daily",
+    "visitor_notes": [
+      "Head covering required",
+      "Follow gurdwara etiquette"
+    ],
+    "map_search": "Takht Sri Kesgarh Sahib",
+    "tags": [
+      "gurdwara",
+      "Sikhism",
+      "Anandpur Sahib"
+    ],
+    "city": "Anandpur Sahib",
+    "city_id": "anandpur-sahib",
+    "state_id": "punjab",
+    "state": "Punjab",
+    "country": "India",
+    "summary": "One of the five Takhts of Sikhism and an important historic gurdwara.",
+    "visiting_hours": "Open daily",
+    "coordinates": {
+      "lat": 31.235,
+      "lng": 76.499
+    },
+    "lat": 31.235,
+    "lng": 76.499,
+    "latitude": 31.235,
+    "longitude": 76.499,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1588096344356-9b634839cf9e?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1588096344356-9b634839cf9e?w=800&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://punjabtourism.punjab.gov.in/destination/takht-sri-kesgarh-sahib",
+    "source_name": "Punjab Tourism & Heritage Promotion Board",
+    "source_type": "state_tourism",
+    "data_confidence": "official",
+    "verification_status": "verified",
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Open daily",
+      "recommended_duration": "1–2 hours",
+      "tips": [
+        "Head covering required",
+        "Follow gurdwara etiquette"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "punjab_010",
+    "name": "Qila Mubarak",
+    "category": "fort",
+    "area": "Bathinda",
+    "description": "An ancient fort associated with the history of Bathinda and the region’s medieval past.",
+    "best_for": [
+      "history",
+      "architecture",
+      "photography"
+    ],
+    "suggested_duration": "1–2 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or nominal; verify locally",
+    "opening_hours": "Daytime; may vary",
+    "visitor_notes": [
+      "Some areas may have restricted access"
+    ],
+    "map_search": "Qila Mubarak Bathinda",
+    "tags": [
+      "fort",
+      "history",
+      "Bathinda"
+    ],
+    "city": "Bathinda",
+    "city_id": "bathinda",
+    "state_id": "punjab",
+    "state": "Punjab",
+    "country": "India",
+    "summary": "An ancient fort associated with the history of Bathinda and the region’s medieval past.",
+    "visiting_hours": "Daytime; may vary",
+    "coordinates": {
+      "lat": 30.211,
+      "lng": 74.9455
+    },
+    "lat": 30.211,
+    "lng": 74.9455,
+    "latitude": 30.211,
+    "longitude": 74.9455,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1596701062351-8c2c14d1fdd1?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1596701062351-8c2c14d1fdd1?w=800&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://punjabtourism.punjab.gov.in/destination/qila-mubarak-bathinda",
+    "source_name": "Punjab Tourism & Heritage Promotion Board",
+    "source_type": "state_tourism",
+    "data_confidence": "official",
+    "verification_status": "verified",
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Daytime; may vary",
+      "recommended_duration": "1–2 hours",
+      "tips": [
+        "Some areas may have restricted access"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "punjab_011",
+    "name": "Sheesh Mahal",
+    "category": "palace_museum",
+    "area": "Patiala",
+    "description": "A historic palace known for its mirror work, decorative interiors, and museum collections.",
+    "best_for": [
+      "architecture",
+      "museums",
+      "royal heritage"
+    ],
+    "suggested_duration": "1–2 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Paid or nominal; verify current rates",
+    "opening_hours": "Usually daytime; verify weekly closure",
+    "visitor_notes": [
+      "Photography may be restricted indoors"
+    ],
+    "map_search": "Sheesh Mahal Patiala",
+    "tags": [
+      "palace",
+      "museum",
+      "Patiala"
+    ],
+    "city": "Patiala",
+    "city_id": "patiala",
+    "state_id": "punjab",
+    "state": "Punjab",
+    "country": "India",
+    "summary": "A historic palace known for its mirror work, decorative interiors, and museum collections.",
+    "visiting_hours": "Usually daytime; verify weekly closure",
+    "coordinates": {
+      "lat": 30.3168,
+      "lng": 76.3985
+    },
+    "lat": 30.3168,
+    "lng": 76.3985,
+    "latitude": 30.3168,
+    "longitude": 76.3985,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1603288967527-24861e6878b3?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1603288967527-24861e6878b3?w=800&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://punjabtourism.punjab.gov.in/destination/sheesh-mahal-patiala",
+    "source_name": "Punjab Tourism & Heritage Promotion Board",
+    "source_type": "state_tourism",
+    "data_confidence": "official",
+    "verification_status": "verified",
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; verify weekly closure",
+      "recommended_duration": "1–2 hours",
+      "tips": [
+        "Photography may be restricted indoors"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "punjab_012",
+    "name": "Qila Mubarak Patiala",
+    "category": "fort_palace",
+    "area": "Patiala",
+    "description": "A historic fort-palace complex reflecting the royal heritage of the Patiala state.",
+    "best_for": [
+      "history",
+      "architecture",
+      "royal heritage"
+    ],
+    "suggested_duration": "1–2 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Paid or nominal; verify current rates",
+    "opening_hours": "Usually daytime; verify locally",
+    "visitor_notes": [
+      "Check which sections are open to visitors"
+    ],
+    "map_search": "Qila Mubarak Patiala",
+    "tags": [
+      "fort",
+      "palace",
+      "Patiala"
+    ],
+    "city": "Patiala",
+    "city_id": "patiala",
+    "state_id": "punjab",
+    "state": "Punjab",
+    "country": "India",
+    "summary": "A historic fort-palace complex reflecting the royal heritage of the Patiala state.",
+    "visiting_hours": "Usually daytime; verify locally",
+    "coordinates": {
+      "lat": 30.3255,
+      "lng": 76.402
+    },
+    "lat": 30.3255,
+    "lng": 76.402,
+    "latitude": 30.3255,
+    "longitude": 76.402,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1596701062351-8c2c14d1fdd1?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1596701062351-8c2c14d1fdd1?w=800&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://punjabtourism.punjab.gov.in/destination/qila-mubarak-patiala",
+    "source_name": "Punjab Tourism & Heritage Promotion Board",
+    "source_type": "state_tourism",
+    "data_confidence": "official",
+    "verification_status": "verified",
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; verify locally",
+      "recommended_duration": "1–2 hours",
+      "tips": [
+        "Check which sections are open to visitors"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "punjab_013",
+    "name": "Moti Bagh Palace",
+    "category": "palace",
+    "area": "Patiala",
+    "description": "A grand royal palace set in landscaped grounds and associated with the Patiala royal family.",
+    "best_for": [
+      "architecture",
+      "royal heritage",
+      "photography"
+    ],
+    "suggested_duration": "1–2 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies by accessible section",
+    "opening_hours": "Access may be limited; verify before visiting",
+    "visitor_notes": [
+      "Some areas may be used by sports or cultural institutions"
+    ],
+    "map_search": "Moti Bagh Palace Patiala",
+    "tags": [
+      "palace",
+      "royal heritage",
+      "Patiala"
+    ],
+    "city": "Patiala",
+    "city_id": "patiala",
+    "state_id": "punjab",
+    "state": "Punjab",
+    "country": "India",
+    "summary": "A grand royal palace set in landscaped grounds and associated with the Patiala royal family.",
+    "visiting_hours": "Access may be limited; verify before visiting",
+    "coordinates": {
+      "lat": 30.306,
+      "lng": 76.386
+    },
+    "lat": 30.306,
+    "lng": 76.386,
+    "latitude": 30.306,
+    "longitude": 76.386,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1609946850720-6d4323229b46?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1609946850720-6d4323229b46?w=800&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://punjabtourism.punjab.gov.in/destination/moti-bagh-palace",
+    "source_name": "Punjab Tourism & Heritage Promotion Board",
+    "source_type": "state_tourism",
+    "data_confidence": "official",
+    "verification_status": "verified",
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Access may be limited; verify before visiting",
+      "recommended_duration": "1–2 hours",
+      "tips": [
+        "Some areas may be used by sports or cultural institutions"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "punjab_014",
+    "name": "Punjab State War Heroes Memorial and Museum",
+    "category": "museum_memorial",
+    "area": "Amritsar",
+    "description": "A memorial and museum honoring Punjab’s military heroes and documenting military history.",
+    "best_for": [
+      "history",
+      "military heritage",
+      "education"
+    ],
+    "suggested_duration": "1–2 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Paid or nominal; verify current rates",
+    "opening_hours": "Usually daytime; verify weekly closure",
+    "visitor_notes": [
+      "Allow time for outdoor displays"
+    ],
+    "map_search": "Punjab State War Heroes Memorial and Museum Amritsar",
+    "tags": [
+      "military",
+      "museum",
+      "Amritsar"
+    ],
+    "city": "Amritsar",
+    "city_id": "amritsar",
+    "state_id": "punjab",
+    "state": "Punjab",
+    "country": "India",
+    "summary": "A memorial and museum honoring Punjab’s military heroes and documenting military history.",
+    "visiting_hours": "Usually daytime; verify weekly closure",
+    "coordinates": {
+      "lat": 31.6444,
+      "lng": 74.7938
+    },
+    "lat": 31.6444,
+    "lng": 74.7938,
+    "latitude": 31.6444,
+    "longitude": 74.7938,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://punjabtourism.punjab.gov.in/destination/war-heroes-memorial",
+    "source_name": "Punjab Tourism & Heritage Promotion Board",
+    "source_type": "state_tourism",
+    "data_confidence": "official",
+    "verification_status": "verified",
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; verify weekly closure",
+      "recommended_duration": "1–2 hours",
+      "tips": [
+        "Allow time for outdoor displays"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "punjab_015",
+    "name": "Harike Wetland and Bird Sanctuary",
+    "category": "wildlife_nature",
+    "area": "Tarn Taran and Firozpur districts",
+    "description": "A large wetland and bird habitat known for migratory birds and scenic waterways.",
+    "best_for": [
+      "birdwatching",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "November to February",
+    "entry_fee": "May vary; verify locally",
+    "opening_hours": "Daytime; access may depend on season and conditions",
+    "visitor_notes": [
+      "Carry binoculars",
+      "Avoid disturbing birds",
+      "Boat access may be seasonal"
+    ],
+    "map_search": "Harike Wetland Bird Sanctuary Punjab",
+    "tags": [
+      "wetland",
+      "birds",
+      "nature"
+    ],
+    "city": "Harike",
+    "city_id": "harike",
+    "state_id": "punjab",
+    "state": "Punjab",
+    "country": "India",
+    "summary": "A large wetland and bird habitat known for migratory birds and scenic waterways.",
+    "visiting_hours": "Daytime; access may depend on season and conditions",
+    "coordinates": {
+      "lat": 31.1495,
+      "lng": 74.962
+    },
+    "lat": 31.1495,
+    "lng": 74.962,
+    "latitude": 31.1495,
+    "longitude": 74.962,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://punjabtourism.punjab.gov.in/destination/harike-wetland",
+    "source_name": "Punjab Tourism & Heritage Promotion Board",
+    "source_type": "state_tourism",
+    "data_confidence": "official",
+    "verification_status": "verified",
+    "visiting_info": {
+      "best_time_to_visit": "November to February",
+      "visiting_hours": "Daytime; access may depend on season and conditions",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Carry binoculars",
+        "Avoid disturbing birds",
+        "Boat access may be seasonal"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "punjab_016",
+    "name": "Ropar Wetland",
+    "category": "wildlife_nature",
+    "area": "Rupnagar",
+    "description": "A Ramsar-listed wetland supporting aquatic habitats and migratory birdlife.",
+    "best_for": [
+      "birdwatching",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–3 hours",
+    "best_time_to_visit": "November to February",
+    "entry_fee": "Usually free or nominal",
+    "opening_hours": "Daytime; access may vary",
+    "visitor_notes": [
+      "Visit with local guidance where possible",
+      "Carry water and sun protection"
+    ],
+    "map_search": "Ropar Wetland Rupnagar",
+    "tags": [
+      "wetland",
+      "birds",
+      "Rupnagar"
+    ],
+    "city": "Rupnagar",
+    "city_id": "rupnagar",
+    "state_id": "punjab",
+    "state": "Punjab",
+    "country": "India",
+    "summary": "A Ramsar-listed wetland supporting aquatic habitats and migratory birdlife.",
+    "visiting_hours": "Daytime; access may vary",
+    "coordinates": {
+      "lat": 30.9855,
+      "lng": 76.516
+    },
+    "lat": 30.9855,
+    "lng": 76.516,
+    "latitude": 30.9855,
+    "longitude": 76.516,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://punjabtourism.punjab.gov.in/destination/ropar-wetland",
+    "source_name": "Punjab Tourism & Heritage Promotion Board",
+    "source_type": "state_tourism",
+    "data_confidence": "official",
+    "verification_status": "verified",
+    "visiting_info": {
+      "best_time_to_visit": "November to February",
+      "visiting_hours": "Daytime; access may vary",
+      "recommended_duration": "2–3 hours",
+      "tips": [
+        "Visit with local guidance where possible",
+        "Carry water and sun protection"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "punjab_017",
+    "name": "Sukhna Lake",
+    "category": "lake_recreation",
+    "area": "Chandigarh",
+    "description": "A popular man-made lake offering boating, walking paths, birdwatching, and sunset views.",
+    "best_for": [
+      "family outings",
+      "boating",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–3 hours",
+    "best_time_to_visit": "October to March; early morning or evening",
+    "entry_fee": "Lake access usually free; activities may be paid",
+    "opening_hours": "Generally open from morning to evening",
+    "visitor_notes": [
+      "Boating depends on weather and operating hours",
+      "Weekends can be crowded"
+    ],
+    "map_search": "Sukhna Lake Chandigarh",
+    "tags": [
+      "lake",
+      "boating",
+      "Chandigarh"
+    ],
+    "city": "Chandigarh",
+    "city_id": "chandigarh",
+    "state_id": "punjab",
+    "state": "Punjab",
+    "country": "India",
+    "summary": "A popular man-made lake offering boating, walking paths, birdwatching, and sunset views.",
+    "visiting_hours": "Generally open from morning to evening",
+    "coordinates": {
+      "lat": 30.7421,
+      "lng": 76.8188
+    },
+    "lat": 30.7421,
+    "lng": 76.8188,
+    "latitude": 30.7421,
+    "longitude": 76.8188,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://chandigarhtourism.gov.in/sukhna-lake.html",
+    "source_name": "Punjab Tourism & Heritage Promotion Board",
+    "source_type": "state_tourism",
+    "data_confidence": "official",
+    "verification_status": "verified",
+    "visiting_info": {
+      "best_time_to_visit": "October to March; early morning or evening",
+      "visiting_hours": "Generally open from morning to evening",
+      "recommended_duration": "2–3 hours",
+      "tips": [
+        "Boating depends on weather and operating hours",
+        "Weekends can be crowded"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "punjab_018",
+    "name": "Rock Garden",
+    "category": "art_park",
+    "area": "Chandigarh",
+    "description": "An imaginative sculpture garden created from industrial and household waste materials.",
+    "best_for": [
+      "art",
+      "architecture",
+      "family outings",
+      "photography"
+    ],
+    "suggested_duration": "1–2 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Paid; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by season",
+    "visitor_notes": [
+      "Wear comfortable footwear",
+      "Allow time for narrow pathways"
+    ],
+    "map_search": "Rock Garden Chandigarh",
+    "tags": [
+      "art",
+      "sculpture",
+      "Chandigarh"
+    ],
+    "city": "Chandigarh",
+    "city_id": "chandigarh",
+    "state_id": "punjab",
+    "state": "Punjab",
+    "country": "India",
+    "summary": "An imaginative sculpture garden created from industrial and household waste materials.",
+    "visiting_hours": "Usually daytime; timings vary by season",
+    "coordinates": {
+      "lat": 30.7525,
+      "lng": 76.8066
+    },
+    "lat": 30.7525,
+    "lng": 76.8066,
+    "latitude": 30.7525,
+    "longitude": 76.8066,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1598890777032-bde13fbe3493?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1598890777032-bde13fbe3493?w=800&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://chandigarhtourism.gov.in/rock-garden.html",
+    "source_name": "Punjab Tourism & Heritage Promotion Board",
+    "source_type": "state_tourism",
+    "data_confidence": "official",
+    "verification_status": "verified",
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by season",
+      "recommended_duration": "1–2 hours",
+      "tips": [
+        "Wear comfortable footwear",
+        "Allow time for narrow pathways"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "punjab_019",
+    "name": "Rose Garden",
+    "category": "garden",
+    "area": "Chandigarh",
+    "description": "A landscaped garden known for its extensive collection of roses and seasonal floral displays.",
+    "best_for": [
+      "nature",
+      "photography",
+      "family outings"
+    ],
+    "suggested_duration": "1–2 hours",
+    "best_time_to_visit": "February to March for rose blooms",
+    "entry_fee": "Usually free",
+    "opening_hours": "Generally open during daylight hours",
+    "visitor_notes": [
+      "Best visited in the morning or late afternoon"
+    ],
+    "map_search": "Zakir Hussain Rose Garden Chandigarh",
+    "tags": [
+      "garden",
+      "roses",
+      "Chandigarh"
+    ],
+    "city": "Chandigarh",
+    "city_id": "chandigarh",
+    "state_id": "punjab",
+    "state": "Punjab",
+    "country": "India",
+    "summary": "A landscaped garden known for its extensive collection of roses and seasonal floral displays.",
+    "visiting_hours": "Generally open during daylight hours",
+    "coordinates": {
+      "lat": 30.746,
+      "lng": 76.782
+    },
+    "lat": 30.746,
+    "lng": 76.782,
+    "latitude": 30.746,
+    "longitude": 76.782,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=800&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://chandigarhtourism.gov.in/rose-garden.html",
+    "source_name": "Punjab Tourism & Heritage Promotion Board",
+    "source_type": "state_tourism",
+    "data_confidence": "official",
+    "verification_status": "verified",
+    "visiting_info": {
+      "best_time_to_visit": "February to March for rose blooms",
+      "visiting_hours": "Generally open during daylight hours",
+      "recommended_duration": "1–2 hours",
+      "tips": [
+        "Best visited in the morning or late afternoon"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "punjab_020",
+    "name": "Punjab Agricultural University Museum",
+    "category": "museum",
+    "area": "Ludhiana",
+    "description": "A museum presenting rural Punjab life, agricultural traditions, folk culture, and village heritage.",
+    "best_for": [
+      "culture",
+      "rural heritage",
+      "education"
+    ],
+    "suggested_duration": "1–2 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Nominal or paid; verify current rates",
+    "opening_hours": "Usually daytime; verify before visiting",
+    "visitor_notes": [
+      "Check campus access and museum opening days"
+    ],
+    "map_search": "Punjab Agricultural University Museum Ludhiana",
+    "tags": [
+      "museum",
+      "rural culture",
+      "Ludhiana"
+    ],
+    "city": "Ludhiana",
+    "city_id": "ludhiana",
+    "state_id": "punjab",
+    "state": "Punjab",
+    "country": "India",
+    "summary": "A museum presenting rural Punjab life, agricultural traditions, folk culture, and village heritage.",
+    "visiting_hours": "Usually daytime; verify before visiting",
+    "coordinates": {
+      "lat": 30.901,
+      "lng": 75.808
+    },
+    "lat": 30.901,
+    "lng": 75.808,
+    "latitude": 30.901,
+    "longitude": 75.808,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://pau.edu/museums-and-galleries",
+    "source_name": "Punjab Tourism & Heritage Promotion Board",
+    "source_type": "state_tourism",
+    "data_confidence": "official",
+    "verification_status": "verified",
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; verify before visiting",
+      "recommended_duration": "1–2 hours",
+      "tips": [
+        "Check campus access and museum opening days"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  }
+]

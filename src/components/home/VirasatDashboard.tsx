@@ -527,69 +527,14 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
     },
   ];
 
-  // Explore India by Region
-  const indiaRegions = [
-    {
-      id: 'north',
-      name: 'North India',
-      statesCount: '9 States & UTs',
-      highlight: 'Himalayan monasteries, Rajput hill fortresses, and the eternal Ganga ghats.',
-      image: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop&q=80',
-      places: ['Taj Mahal', 'Amber Palace', 'Golden Temple', 'Kashi Vishwanath'],
-      actionQuery: 'North India',
-    },
-    {
-      id: 'south',
-      name: 'South India',
-      statesCount: '5 States & 2 UTs',
-      highlight: 'Dravidian gopurams, Hoysala stone lace, serene backwaters, and spice coasts.',
-      image: 'https://images.unsplash.com/photo-1600100397608-f010f443b780?w=800&auto=format&fit=crop&q=80',
-      places: ['Hampi', 'Brihadisvara Temple', 'Meenakshi Amman', 'Fort Kochi'],
-      actionQuery: 'South India',
-    },
-    {
-      id: 'west',
-      name: 'West India',
-      statesCount: '3 States & 2 UTs',
-      highlight: 'Subterranean stepwells, Maratha hill citadels, and Ajanta-Ellora cave sanctuaries.',
-      image: 'https://images.unsplash.com/photo-1603288967527-24861e6878b3?w=800&auto=format&fit=crop&q=80',
-      places: ['Gateway of India', 'Rani ki Vav', 'Ajanta Caves', 'Jaisalmer Fort'],
-      actionQuery: 'Western India',
-    },
-    {
-      id: 'east',
-      name: 'East India',
-      statesCount: '4 States',
-      highlight: 'Kalinga stone chariots, ancient Nalanda university ruins, and colonial heritage.',
-      image: 'https://images.unsplash.com/photo-1609137144822-79f972b901fc?w=800&auto=format&fit=crop&q=80',
-      places: ['Konark Sun Temple', 'Nalanda Ruins', 'Victoria Memorial', 'Bodh Gaya'],
-      actionQuery: 'Eastern India',
-    },
-    {
-      id: 'central',
-      name: 'Central India',
-      statesCount: '2 States',
-      highlight: 'Paleolithic Bhimbetka cave art, Khajuraho temples, and the Great Sanchi Stupa.',
-      image: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&auto=format&fit=crop&q=80',
-      places: ['Khajuraho Group', 'Sanchi Stupa', 'Bhimbetka Shelters', 'Gwalior Fort'],
-      actionQuery: 'Central India',
-    },
-    {
-      id: 'northeast',
-      name: 'Northeast India',
-      statesCount: '8 States',
-      highlight: 'Ahom dynasty monoliths, living root bridges, and Unakoti rock-cut deities.',
-      image: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80',
-      places: ['Kamakhya Temple', 'Kaziranga', 'Unakoti Carvings', 'Living Root Bridges'],
-      actionQuery: 'Northeast India',
-    },
-  ];
-
-  // 6 Regional Hubs with bespoke architectural vector icons matching template
+  // 6 Regional Hubs with authentic heritage photography, bespoke architectural vector icons, and iconic highlights
   const regionalHubs = [
     {
       id: 'north',
       name: 'North India',
+      statesCount: '9 States & UTs',
+      landmarkHighlight: 'Taj Mahal • Amber Fort • Varanasi',
+      image: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop&q=80',
       icon: NorthIndiaIcon,
       bgColor: 'bg-[#FFF6ED]',
       borderColor: 'border-[#FCE1CE]',
@@ -599,6 +544,9 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
     {
       id: 'south',
       name: 'South India',
+      statesCount: '5 States & 2 UTs',
+      landmarkHighlight: 'Meenakshi • Hampi • Backwaters',
+      image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80',
       icon: SouthIndiaIcon,
       bgColor: 'bg-[#F0F8F3]',
       borderColor: 'border-[#CEEBD9]',
@@ -608,6 +556,9 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
     {
       id: 'east',
       name: 'East India',
+      statesCount: '4 States',
+      landmarkHighlight: 'Victoria Memorial • Konark • Nalanda',
+      image: 'https://images.unsplash.com/photo-1558431382-27e303142255?w=800&auto=format&fit=crop&q=80',
       icon: EastIndiaIcon,
       bgColor: 'bg-[#F0F7FD]',
       borderColor: 'border-[#CCE4F8]',
@@ -617,6 +568,9 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
     {
       id: 'west',
       name: 'West India',
+      statesCount: '3 States & 2 UTs',
+      landmarkHighlight: 'Gateway of India • Jaisalmer • Ajanta',
+      image: 'https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&auto=format&fit=crop&q=80',
       icon: WestIndiaIcon,
       bgColor: 'bg-[#FFF4EC]',
       borderColor: 'border-[#FBDBC6]',
@@ -626,6 +580,9 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
     {
       id: 'central',
       name: 'Central India',
+      statesCount: '2 States',
+      landmarkHighlight: 'Khajuraho Temples • Sanchi Stupa',
+      image: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&auto=format&fit=crop&q=80',
       icon: CentralIndiaIcon,
       bgColor: 'bg-[#EEF8F5]',
       borderColor: 'border-[#CAECE0]',
@@ -635,6 +592,9 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
     {
       id: 'northeast',
       name: 'Northeast India',
+      statesCount: '8 States',
+      landmarkHighlight: 'Living Root Bridges • Kaziranga',
+      image: 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80',
       icon: NortheastIndiaIcon,
       bgColor: 'bg-[#F0F4FC]',
       borderColor: 'border-[#CCD8F7]',
@@ -1161,7 +1121,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
 
         {/* 2-Column Layout matching template */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
-          {/* Left: 6 Region Cards in 3x2 Grid */}
+          {/* Left: 6 Region Cards in 3x2 Grid with Authentic Heritage Photography */}
           <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-3.5">
             {regionalHubs.map((reg) => {
               const IconComp = reg.icon;
@@ -1169,14 +1129,42 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
                 <div
                   key={reg.id}
                   onClick={() => onSearch(reg.query)}
-                  className={`group cursor-pointer rounded-2xl p-4 sm:p-5 ${reg.bgColor} border ${reg.borderColor} hover:shadow-md hover:border-[#FF671F]/50 transition-all flex flex-col items-center justify-center text-center gap-3`}
+                  className="group cursor-pointer rounded-2xl overflow-hidden relative border border-stone-200/80 hover:border-[#FF671F] shadow-2xs hover:shadow-warm transition-all duration-300 min-h-[165px] sm:min-h-[175px] flex flex-col justify-between p-3.5 text-left bg-stone-900"
                 >
-                  <div className="w-12 h-12 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <IconComp className={`w-11 h-11 ${reg.iconColor}`} />
+                  {/* Authentic High-Resolution Regional Photo */}
+                  <img
+                    src={reg.image}
+                    alt={`${reg.name} - ${reg.landmarkHighlight}`}
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-108 transition-transform duration-500 ease-out"
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
+                  />
+
+                  {/* Gradient Overlay for Optimal Text Readability & Contrast */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950/95 via-stone-950/50 to-stone-950/20 group-hover:from-stone-950/98 transition-colors" />
+
+                  {/* Top Bar: Regional Architectural Emblem & State Count */}
+                  <div className="relative z-10 flex items-center justify-between gap-1.5">
+                    <div className="w-8 h-8 rounded-lg bg-white/95 backdrop-blur-md flex items-center justify-center shadow-xs border border-white/40 group-hover:scale-105 transition-transform">
+                      <IconComp className={`w-5 h-5 ${reg.iconColor}`} />
+                    </div>
+                    <span className="text-[10px] font-semibold text-stone-100 bg-black/55 backdrop-blur-md px-2 py-0.5 rounded-full border border-white/15">
+                      {reg.statesCount}
+                    </span>
                   </div>
-                  <span className="font-serif font-bold text-stone-900 text-sm tracking-tight">
-                    {reg.name}
-                  </span>
+
+                  {/* Bottom: Region Name & Iconic Heritage Highlights */}
+                  <div className="relative z-10 space-y-0.5 pt-4">
+                    <div className="flex items-center justify-between gap-1">
+                      <h3 className="font-serif font-bold text-white text-sm sm:text-base tracking-tight drop-shadow-sm group-hover:text-amber-300 transition-colors">
+                        {reg.name}
+                      </h3>
+                      <ArrowRight className="w-3.5 h-3.5 text-white/70 group-hover:text-amber-300 group-hover:translate-x-1 transition-all shrink-0" />
+                    </div>
+                    <p className="text-[11px] text-stone-300 line-clamp-1 font-medium drop-shadow-xs">
+                      {reg.landmarkHighlight}
+                    </p>
+                  </div>
                 </div>
               );
             })}
