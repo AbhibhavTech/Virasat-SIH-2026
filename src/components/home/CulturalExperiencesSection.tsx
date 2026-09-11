@@ -85,7 +85,7 @@ export const CulturalExperiencesSection: React.FC<CulturalExperiencesSectionProp
         region: 'Varanasi',
         badge: 'UNESCO Intangible Heritage',
         description: 'Sacred twilight Aarti ceremonies with towering brass multi-tiered fire lamps along Dashashwamedh.',
-        imageUrl: 'https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=600&auto=format&fit=crop&q=80',
+        imageUrl: 'https://images.unsplash.com/photo-1568454537842-d933259bb258?w=600&auto=format&fit=crop&q=80',
       },
       {
         title: 'Rajasthani Puppet Theater (Kathputli)',
@@ -115,7 +115,7 @@ export const CulturalExperiencesSection: React.FC<CulturalExperiencesSectionProp
         region: 'Varanasi',
         badge: 'Festival of Lights',
         description: 'Over one million earthen oil diyas illuminated along 84 historic stone ghats facing the holy river.',
-        imageUrl: 'https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=600&auto=format&fit=crop&q=80',
+        imageUrl: 'https://images.unsplash.com/photo-1568454537842-d933259bb258?w=600&auto=format&fit=crop&q=80',
       },
     ],
   };

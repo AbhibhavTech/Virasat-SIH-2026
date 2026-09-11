@@ -131,7 +131,7 @@ export const MumbaiDashboard: React.FC<MumbaiDashboardProps> = ({
     if (c.includes('kochi') || c.includes('kerala')) return 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&auto=format&fit=crop&q=80';
     if (c.includes('goa')) return 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1200&auto=format&fit=crop&q=80';
     if (c.includes('agra')) return 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&auto=format&fit=crop&q=80';
-    if (c.includes('varanasi')) return 'https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=1200&auto=format&fit=crop&q=80';
+    if (c.includes('varanasi')) return 'https://images.unsplash.com/photo-1568454537842-d933259bb258?w=1200&auto=format&fit=crop&q=80';
     return displayPlaces[0]?.thumbnail_url || 'https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80';
   };
 

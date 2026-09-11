@@ -50,7 +50,7 @@ export const ExploreIndiaSection: React.FC<ExploreIndiaSectionProps> = ({
       state: 'Uttar Pradesh',
       description: 'Sacred riverfront ghats along the Ganges, Sarnath Buddhist stupas, and ancient silk looms.',
       tag: 'Living Traditions',
-      imageUrl: 'https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=600&auto=format&fit=crop&q=80',
+      imageUrl: 'https://images.unsplash.com/photo-1568454537842-d933259bb258?w=600&auto=format&fit=crop&q=80',
     },
     {
       id: 'kochi',

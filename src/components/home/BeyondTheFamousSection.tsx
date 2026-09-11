@@ -146,7 +146,7 @@ export const BeyondTheFamousSection: React.FC<BeyondTheFamousSectionProps> = ({
         discoveryNote: 'The sacred mythical confluence of five holy streams, renowned for the subterranean stone meditation cells where saint Ramananda once taught Kabir.',
         timingTip: 'Dawn boat stop; quietest stone stairs along the northern crescent of the river.',
         crowdLevel: 'Very Low',
-        imageUrl: 'https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=800&auto=format&fit=crop&q=80',
+        imageUrl: 'https://images.unsplash.com/photo-1568454537842-d933259bb258?w=800&auto=format&fit=crop&q=80',
       },
     ],
     kochi: [

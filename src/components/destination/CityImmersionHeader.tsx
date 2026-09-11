@@ -117,7 +117,7 @@ export const CityImmersionHeader: React.FC<CityImmersionHeaderProps> = ({
       return {
         tagline: 'The timeless sacred city of Ganga ghats and eternal light.',
         subtext: '84 stone steps meeting the sacred river, ringing temple bells, ancient Banarasi silk handlooms, and timeless evening aartis.',
-        backdropImage: 'https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=1600&auto=format&fit=crop&q=85',
+        backdropImage: 'https://images.unsplash.com/photo-1568454537842-d933259bb258?w=1600&auto=format&fit=crop&q=85',
         accentBadge: 'Oldest Living City',
         heritageSymbol: 'Kashi Vishwanath • Dashashwamedh • Sarnath',
         guideQuote: 'At sunrise, take a wooden rowing boat from Assi to Manikarnika as the morning ragas drift across the water.',

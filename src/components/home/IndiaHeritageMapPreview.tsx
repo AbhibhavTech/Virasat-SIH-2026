@@ -114,7 +114,7 @@ const REAL_HERITAGE_HUBS: HeritageHubPin[] = [
     lng: 83.0107,
     category: 'Sacred Jyotirlinga & Ghats',
     unesco: false,
-    image: 'https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=800&auto=format&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1568454537842-d933259bb258?w=800&auto=format&fit=crop&q=80',
     region: 'North',
     description: 'One of the world’s oldest living cities, spiritual sanctum on the holy Ganges with eternal evening Ganga Aarti.',
   },

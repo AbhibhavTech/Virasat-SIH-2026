@@ -96,7 +96,7 @@ export const UnifiedExperienceSection: React.FC<UnifiedExperienceSectionProps> =
       region: 'New Delhi',
       description: 'Soulful mystic verses penned by Hazrat Amir Khusrau sung in the open marble courtyards of Dargah Nizamuddin Auliya for over 700 years.',
       giTagOrTradition: 'Living Medieval Spiritual Heritage',
-      imageUrl: 'https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=600&auto=format&fit=crop&q=80',
+      imageUrl: 'https://images.unsplash.com/photo-1548013146-72479768bada?w=600&auto=format&fit=crop&q=80',
     },
 
     // Crafts
@@ -140,7 +140,7 @@ export const UnifiedExperienceSection: React.FC<UnifiedExperienceSectionProps> =
       region: 'Dashashwamedh Ghat, Varanasi',
       description: 'Daily twilight ceremonial offering where priests draped in saffron robes manipulate tiered brass lamps weighing over 4.5kg to hymn chants.',
       giTagOrTradition: 'Daily Living Riverfront Ritual',
-      imageUrl: 'https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=600&auto=format&fit=crop&q=80',
+      imageUrl: 'https://images.unsplash.com/photo-1568454537842-d933259bb258?w=600&auto=format&fit=crop&q=80',
     },
     {
       id: 'festival-ganesh',

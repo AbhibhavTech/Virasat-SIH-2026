@@ -82,7 +82,7 @@ export const DiscoverIndiaScrollExperience: React.FC<DiscoverIndiaScrollExperien
       ],
       actionLabel: 'Discover Cultural Traditions',
       actionTab: 'india',
-      imageUrl: 'https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=1200&auto=format&fit=crop&q=85',
+      imageUrl: 'https://images.unsplash.com/photo-1568454537842-d933259bb258?w=1200&auto=format&fit=crop&q=85',
       culturalNote: 'Living Intangible Cultural Heritage',
     },
     {
