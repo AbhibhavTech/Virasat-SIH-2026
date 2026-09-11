@@ -44,6 +44,7 @@ import {
   RoyalBengalTigerEmblem,
 } from '../common/TricolourBranding';
 import { IndiaHeritageMapPreview } from './IndiaHeritageMapPreview';
+import { CompactAIAssistantCard } from './CompactAIAssistantCard';
 
 interface VirasatDashboardProps {
   onSearch: (query: string) => void;
@@ -433,7 +434,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
       category: 'Temples & Spiritual',
       categoryType: 'Temples',
       rating: 4.8,
-      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Stone_Chariot_in_Vittala_Temple.JPG/1280px-Stone_Chariot_in_Vittala_Temple.JPG',
+      imageUrl: 'https://images.unsplash.com/photo-1600100397608-f010f443b780?w=800&auto=format&fit=crop&q=80',
       badge: 'UNESCO',
     },
     {
@@ -443,7 +444,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
       category: 'Forts & Palaces',
       categoryType: 'Forts',
       rating: 4.8,
-      imageUrl: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&auto=format&fit=crop&q=80',
+      imageUrl: 'https://images.unsplash.com/photo-1603288967527-24861e6878b3?w=800&auto=format&fit=crop&q=80',
       badge: 'Hill Forts',
     },
     {
@@ -453,7 +454,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
       category: 'Spiritual & Ghats',
       categoryType: 'Temples',
       rating: 4.9,
-      imageUrl: 'https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&auto=format&fit=crop&q=80',
+      imageUrl: 'https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=800&auto=format&fit=crop&q=80',
       badge: 'Sacred Ghats',
     },
     {
@@ -463,7 +464,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
       category: 'Temples & Spiritual',
       categoryType: 'Temples',
       rating: 4.8,
-      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Konark_Sun_Temple_Wheel.jpg/1280px-Konark_Sun_Temple_Wheel.jpg',
+      imageUrl: 'https://images.unsplash.com/photo-1609137144822-79f972b901fc?w=800&auto=format&fit=crop&q=80',
       badge: 'Stone Chariot',
     },
     {
@@ -473,7 +474,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
       category: 'Natural Heritage & Wildlife',
       categoryType: 'UNESCO',
       rating: 4.7,
-      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/An_Indian_rhinoceros_%28Rhinoceros_unicornis%29%2C_also_known_as_the_greater_one-horned_rhinoceros%2C_at_Kaziranga_National_Park%2C_Assam%2C_India_2.jpg/1280px-An_Indian_rhinoceros_%28Rhinoceros_unicornis%29%2C_also_known_as_the_greater_one-horned_rhinoceros%2C_at_Kaziranga_National_Park%2C_Assam%2C_India_2.jpg',
+      imageUrl: 'https://images.unsplash.com/photo-1575550959106-5a7defe28b56?w=800&auto=format&fit=crop&q=80',
       badge: 'UNESCO Park',
     },
   ];
@@ -494,7 +495,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
       location: 'Patan, Gujarat',
       era: '1063 CE • Solanki Dynasty',
       description: 'Inverted subterranean temple descending 7 tiers with 500+ master sculptures honoring sacred water; depicted on the ₹100 banknote.',
-      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Rani_ki_vav_02.jpg/1280px-Rani_ki_vav_02.jpg',
+      imageUrl: 'https://images.unsplash.com/photo-1609137144822-79f972b901fc?w=800&auto=format&fit=crop&q=80',
       tag: 'UNESCO Subterranean Marvel',
     },
     {
@@ -503,7 +504,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
       location: 'Bagalkot, Karnataka',
       era: '7th-8th Century CE • Chalukya',
       description: 'The ancient cradle of temple architecture where Rekha-Nagara and Dravida vimana designs were harmoniously fused.',
-      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Pattadakal_000.JPG/1280px-Pattadakal_000.JPG',
+      imageUrl: 'https://images.unsplash.com/photo-1600100397608-f010f443b780?w=800&auto=format&fit=crop&q=80',
       tag: 'Architectural Synthesis',
     },
     {
@@ -512,7 +513,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
       location: 'Raisen, Madhya Pradesh',
       era: '3rd Century BCE • Emperor Ashoka',
       description: 'India’s oldest stone sanctuary crowned with ornate torana gateways narrating Jataka tales in microscopic sandstone relief.',
-      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/East_Gateway_-_Stupa_1_-_Sanchi_Hill_2013-02-21_4398.JPG/1280px-East_Gateway_-_Stupa_1_-_Sanchi_Hill_2013-02-21_4398.JPG',
+      imageUrl: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&auto=format&fit=crop&q=80',
       tag: 'Ancient Ashokan Monolith',
     },
     {
@@ -521,74 +522,19 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
       location: 'Kasaragod, Kerala',
       era: '1650 CE • Keladi Nayakas',
       description: 'The largest keyhole-shaped coastal sea fort in Kerala, thrusting directly into the Arabian Sea with fortified observation towers.',
-      imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Bakel_Fort_Beach_Kasaragod7.jpg/1280px-Bakel_Fort_Beach_Kasaragod7.jpg',
+      imageUrl: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80',
       tag: 'Coastal Citadel',
     },
   ];
 
-  // Explore India by Region
-  const indiaRegions = [
-    {
-      id: 'north',
-      name: 'North India',
-      statesCount: '9 States & UTs',
-      highlight: 'Himalayan monasteries, Rajput hill fortresses, and the eternal Ganga ghats.',
-      image: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop&q=80',
-      places: ['Taj Mahal', 'Amber Palace', 'Golden Temple', 'Kashi Vishwanath'],
-      actionQuery: 'North India',
-    },
-    {
-      id: 'south',
-      name: 'South India',
-      statesCount: '5 States & 2 UTs',
-      highlight: 'Dravidian gopurams, Hoysala stone lace, serene backwaters, and spice coasts.',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Stone_Chariot_in_Vittala_Temple.JPG/1280px-Stone_Chariot_in_Vittala_Temple.JPG',
-      places: ['Hampi', 'Brihadisvara Temple', 'Meenakshi Amman', 'Fort Kochi'],
-      actionQuery: 'South India',
-    },
-    {
-      id: 'west',
-      name: 'West India',
-      statesCount: '3 States & 2 UTs',
-      highlight: 'Subterranean stepwells, Maratha hill citadels, and Ajanta-Ellora cave sanctuaries.',
-      image: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&auto=format&fit=crop&q=80',
-      places: ['Gateway of India', 'Rani ki Vav', 'Ajanta Caves', 'Jaisalmer Fort'],
-      actionQuery: 'Western India',
-    },
-    {
-      id: 'east',
-      name: 'East India',
-      statesCount: '4 States',
-      highlight: 'Kalinga stone chariots, ancient Nalanda university ruins, and colonial heritage.',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Konark_Sun_Temple_Wheel.jpg/1280px-Konark_Sun_Temple_Wheel.jpg',
-      places: ['Konark Sun Temple', 'Nalanda Ruins', 'Victoria Memorial', 'Bodh Gaya'],
-      actionQuery: 'Eastern India',
-    },
-    {
-      id: 'central',
-      name: 'Central India',
-      statesCount: '2 States',
-      highlight: 'Paleolithic Bhimbetka cave art, Khajuraho temples, and the Great Sanchi Stupa.',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/East_Gateway_-_Stupa_1_-_Sanchi_Hill_2013-02-21_4398.JPG/1280px-East_Gateway_-_Stupa_1_-_Sanchi_Hill_2013-02-21_4398.JPG',
-      places: ['Khajuraho Group', 'Sanchi Stupa', 'Bhimbetka Shelters', 'Gwalior Fort'],
-      actionQuery: 'Central India',
-    },
-    {
-      id: 'northeast',
-      name: 'Northeast India',
-      statesCount: '8 States',
-      highlight: 'Ahom dynasty monoliths, living root bridges, and Unakoti rock-cut deities.',
-      image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/An_Indian_rhinoceros_%28Rhinoceros_unicornis%29%2C_also_known_as_the_greater_one-horned_rhinoceros%2C_at_Kaziranga_National_Park%2C_Assam%2C_India_2.jpg/1280px-An_Indian_rhinoceros_%28Rhinoceros_unicornis%29%2C_also_known_as_the_greater_one-horned_rhinoceros%2C_at_Kaziranga_National_Park%2C_Assam%2C_India_2.jpg',
-      places: ['Kamakhya Temple', 'Kaziranga', 'Unakoti Carvings', 'Living Root Bridges'],
-      actionQuery: 'Northeast India',
-    },
-  ];
-
-  // 6 Regional Hubs with bespoke architectural vector icons matching template
+  // 6 Regional Hubs with authentic heritage photography, bespoke architectural vector icons, and iconic highlights
   const regionalHubs = [
     {
       id: 'north',
       name: 'North India',
+      statesCount: '9 States & UTs',
+      landmarkHighlight: 'Taj Mahal • Amber Fort • Varanasi',
+      image: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop&q=80',
       icon: NorthIndiaIcon,
       bgColor: 'bg-[#FFF6ED]',
       borderColor: 'border-[#FCE1CE]',
@@ -598,6 +544,9 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
     {
       id: 'south',
       name: 'South India',
+      statesCount: '5 States & 2 UTs',
+      landmarkHighlight: 'Meenakshi • Hampi • Backwaters',
+      image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80',
       icon: SouthIndiaIcon,
       bgColor: 'bg-[#F0F8F3]',
       borderColor: 'border-[#CEEBD9]',
@@ -607,6 +556,9 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
     {
       id: 'east',
       name: 'East India',
+      statesCount: '4 States',
+      landmarkHighlight: 'Victoria Memorial • Konark • Nalanda',
+      image: 'https://images.unsplash.com/photo-1558431382-27e303142255?w=800&auto=format&fit=crop&q=80',
       icon: EastIndiaIcon,
       bgColor: 'bg-[#F0F7FD]',
       borderColor: 'border-[#CCE4F8]',
@@ -616,6 +568,9 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
     {
       id: 'west',
       name: 'West India',
+      statesCount: '3 States & 2 UTs',
+      landmarkHighlight: 'Gateway of India • Jaisalmer • Ajanta',
+      image: 'https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&auto=format&fit=crop&q=80',
       icon: WestIndiaIcon,
       bgColor: 'bg-[#FFF4EC]',
       borderColor: 'border-[#FBDBC6]',
@@ -625,6 +580,9 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
     {
       id: 'central',
       name: 'Central India',
+      statesCount: '2 States',
+      landmarkHighlight: 'Khajuraho Temples • Sanchi Stupa',
+      image: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&auto=format&fit=crop&q=80',
       icon: CentralIndiaIcon,
       bgColor: 'bg-[#EEF8F5]',
       borderColor: 'border-[#CAECE0]',
@@ -634,6 +592,9 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
     {
       id: 'northeast',
       name: 'Northeast India',
+      statesCount: '8 States',
+      landmarkHighlight: 'Living Root Bridges • Kaziranga',
+      image: 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80',
       icon: NortheastIndiaIcon,
       bgColor: 'bg-[#F0F4FC]',
       borderColor: 'border-[#CCD8F7]',
@@ -915,7 +876,122 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
         </button>
       </section>
 
+      {/* ========================================================================= */}
+      {/* 2. THE 4 FEATURE CARDS (EXPLORE, HERITAGE, MAP, AI ASSISTANT)             */}
+      {/* ========================================================================= */}
+      <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+        {/* Card 1: Explore Destinations */}
+        <div
+          onClick={() => onNavigateTab('dashboard')}
+          className="group cursor-pointer rounded-3xl bg-white border border-[#EFE8DF] hover:border-[#FF671F]/50 p-5 shadow-2xs hover:shadow-md transition-all duration-200 flex flex-col justify-between h-[320px] overflow-hidden"
+        >
+          <div>
+            <div className="flex items-center justify-between">
+              <div className="w-11 h-11 rounded-full bg-[#FF671F] text-white flex items-center justify-center shadow-xs">
+                <MapPin className="w-5 h-5 fill-white/20" />
+              </div>
+              <div className="w-8 h-8 rounded-full bg-stone-50 border border-stone-200 text-stone-600 group-hover:bg-[#FF671F] group-hover:text-white group-hover:border-[#FF671F] flex items-center justify-center group-hover:translate-x-0.5 transition-all shadow-2xs">
+                <ArrowRight className="w-4 h-4" />
+              </div>
+            </div>
+            <h3 className="font-serif text-lg font-bold text-stone-900 mt-3.5 tracking-tight">
+              Explore Destinations
+            </h3>
+            <p className="text-xs text-stone-500 mt-1 leading-relaxed">
+              Discover amazing places, cities and unique experiences.
+            </p>
+            <div className="mt-2.5">
+              <span className="text-xs font-bold text-[#FF671F] flex items-center gap-1 group-hover:gap-1.5 transition-all">
+                Start Exploring <ArrowRight className="w-3 h-3" />
+              </span>
+            </div>
+          </div>
+          <div className="h-28 w-full rounded-2xl overflow-hidden mt-3 shadow-inner bg-stone-100 relative">
+            <img
+              src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80"
+              alt="Coastal Shoreline Experience"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+        </div>
 
+        {/* Card 2: Heritage Sites */}
+        <div
+          onClick={() => onNavigateTab('heritage')}
+          className="group cursor-pointer rounded-3xl bg-white border border-[#EFE8DF] hover:border-[#046A38]/50 p-5 shadow-2xs hover:shadow-md transition-all duration-200 flex flex-col justify-between h-[320px] overflow-hidden"
+        >
+          <div>
+            <div className="flex items-center justify-between">
+              <div className="w-11 h-11 rounded-full bg-[#046A38] text-white flex items-center justify-center shadow-xs">
+                <Landmark className="w-5 h-5 text-white" />
+              </div>
+              <div className="w-8 h-8 rounded-full bg-stone-50 border border-stone-200 text-stone-600 group-hover:bg-[#046A38] group-hover:text-white group-hover:border-[#046A38] flex items-center justify-center group-hover:translate-x-0.5 transition-all shadow-2xs">
+                <ArrowRight className="w-4 h-4" />
+              </div>
+            </div>
+            <h3 className="font-serif text-lg font-bold text-stone-900 mt-3.5 tracking-tight">
+              Heritage Sites
+            </h3>
+            <p className="text-xs text-stone-500 mt-1 leading-relaxed">
+              UNESCO sites, monuments, dynasties and sacred spaces.
+            </p>
+            <div className="mt-2.5">
+              <span className="text-xs font-bold text-[#046A38] flex items-center gap-1 group-hover:gap-1.5 transition-all">
+                Discover Heritage <ArrowRight className="w-3 h-3" />
+              </span>
+            </div>
+          </div>
+          <div className="h-28 w-full rounded-2xl overflow-hidden mt-3 shadow-inner bg-stone-100 relative">
+            <img
+              src="https://images.unsplash.com/photo-1600100397608-f010f443b780?w=800&auto=format&fit=crop&q=80"
+              alt="Hampi Stone Temple"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+        </div>
+
+        {/* Card 3: Interactive Map */}
+        <div
+          onClick={() => onNavigateTab('map')}
+          className="group cursor-pointer rounded-3xl bg-white border border-[#EFE8DF] hover:border-[#0284C7]/50 p-5 shadow-2xs hover:shadow-md transition-all duration-200 flex flex-col justify-between h-[320px] overflow-hidden"
+        >
+          <div>
+            <div className="flex items-center justify-between">
+              <div className="w-11 h-11 rounded-full bg-[#0284C7] text-white flex items-center justify-center shadow-xs">
+                <Compass className="w-5 h-5" />
+              </div>
+              <div className="w-8 h-8 rounded-full bg-stone-50 border border-stone-200 text-stone-600 group-hover:bg-[#0284C7] group-hover:text-white group-hover:border-[#0284C7] flex items-center justify-center group-hover:translate-x-0.5 transition-all shadow-2xs">
+                <ArrowRight className="w-4 h-4" />
+              </div>
+            </div>
+            <h3 className="font-serif text-lg font-bold text-stone-900 mt-3.5 tracking-tight">
+              Interactive Map
+            </h3>
+            <p className="text-xs text-stone-500 mt-1 leading-relaxed">
+              Explore locations, plan routes and find nearby attractions.
+            </p>
+            <div className="mt-2.5">
+              <span className="text-xs font-bold text-[#0284C7] flex items-center gap-1 group-hover:gap-1.5 transition-all">
+                Open Map <ArrowRight className="w-3 h-3" />
+              </span>
+            </div>
+          </div>
+          <div className="h-28 w-full rounded-2xl overflow-hidden mt-3 shadow-inner bg-stone-100 relative">
+            <img
+              src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80"
+              alt="Mountain River Valley"
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+        </div>
+
+        {/* Card 4: Virasat Assistant */}
+        <CompactAIAssistantCard
+          onOpenAIChat={onOpenAIChat}
+          onNavigateTab={onNavigateTab}
+          className="h-[320px]"
+        />
+      </section>
 
       {/* ========================================================================= */}
       {/* 3. POPULAR DESTINATIONS                                                   */}
@@ -995,14 +1071,6 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
                   alt={place.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
-                  referrerPolicy="no-referrer"
-                  onError={(e) => {
-                    const target = e.currentTarget;
-                    if (!target.dataset.triedFallback) {
-                      target.dataset.triedFallback = 'true';
-                      target.src = 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&auto=format&fit=crop&q=80';
-                    }
-                  }}
                 />
               </div>
 
@@ -1053,7 +1121,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
 
         {/* 2-Column Layout matching template */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
-          {/* Left: 6 Region Cards in 3x2 Grid */}
+          {/* Left: 6 Region Cards in 3x2 Grid with Authentic Heritage Photography */}
           <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-3.5">
             {regionalHubs.map((reg) => {
               const IconComp = reg.icon;
@@ -1061,14 +1129,42 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
                 <div
                   key={reg.id}
                   onClick={() => onSearch(reg.query)}
-                  className={`group cursor-pointer rounded-2xl p-4 sm:p-5 ${reg.bgColor} border ${reg.borderColor} hover:shadow-md hover:border-[#FF671F]/50 transition-all flex flex-col items-center justify-center text-center gap-3`}
+                  className="group cursor-pointer rounded-2xl overflow-hidden relative border border-stone-200/80 hover:border-[#FF671F] shadow-2xs hover:shadow-warm transition-all duration-300 min-h-[165px] sm:min-h-[175px] flex flex-col justify-between p-3.5 text-left bg-stone-900"
                 >
-                  <div className="w-12 h-12 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <IconComp className={`w-11 h-11 ${reg.iconColor}`} />
+                  {/* Authentic High-Resolution Regional Photo */}
+                  <img
+                    src={reg.image}
+                    alt={`${reg.name} - ${reg.landmarkHighlight}`}
+                    className="absolute inset-0 w-full h-full object-cover group-hover:scale-108 transition-transform duration-500 ease-out"
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
+                  />
+
+                  {/* Gradient Overlay for Optimal Text Readability & Contrast */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-stone-950/95 via-stone-950/50 to-stone-950/20 group-hover:from-stone-950/98 transition-colors" />
+
+                  {/* Top Bar: Regional Architectural Emblem & State Count */}
+                  <div className="relative z-10 flex items-center justify-between gap-1.5">
+                    <div className="w-8 h-8 rounded-lg bg-white/95 backdrop-blur-md flex items-center justify-center shadow-xs border border-white/40 group-hover:scale-105 transition-transform">
+                      <IconComp className={`w-5 h-5 ${reg.iconColor}`} />
+                    </div>
+                    <span className="text-[10px] font-semibold text-stone-100 bg-black/55 backdrop-blur-md px-2 py-0.5 rounded-full border border-white/15">
+                      {reg.statesCount}
+                    </span>
                   </div>
-                  <span className="font-serif font-bold text-stone-900 text-sm tracking-tight">
-                    {reg.name}
-                  </span>
+
+                  {/* Bottom: Region Name & Iconic Heritage Highlights */}
+                  <div className="relative z-10 space-y-0.5 pt-4">
+                    <div className="flex items-center justify-between gap-1">
+                      <h3 className="font-serif font-bold text-white text-sm sm:text-base tracking-tight drop-shadow-sm group-hover:text-amber-300 transition-colors">
+                        {reg.name}
+                      </h3>
+                      <ArrowRight className="w-3.5 h-3.5 text-white/70 group-hover:text-amber-300 group-hover:translate-x-1 transition-all shrink-0" />
+                    </div>
+                    <p className="text-[11px] text-stone-300 line-clamp-1 font-medium drop-shadow-xs">
+                      {reg.landmarkHighlight}
+                    </p>
+                  </div>
                 </div>
               );
             })}
@@ -1110,7 +1206,6 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
                 src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&auto=format&fit=crop&q=80"
                 alt="Majestic Mountain Ridge"
                 className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-transparent" />
               <div className="relative z-10 space-y-1">
@@ -1203,15 +1298,6 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
                   src={item.imageUrl}
                   alt={item.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                  loading="lazy"
-                  referrerPolicy="no-referrer"
-                  onError={(e) => {
-                    const target = e.currentTarget;
-                    if (!target.dataset.triedFallback) {
-                      target.dataset.triedFallback = 'true';
-                      target.src = 'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?w=800&auto=format&fit=crop&q=80';
-                    }
-                  }}
                 />
                 <span className="absolute top-3 left-3 px-2 py-0.5 rounded-md bg-stone-900/80 backdrop-blur-xs text-[10px] font-bold text-amber-200">
                   {item.tag}
