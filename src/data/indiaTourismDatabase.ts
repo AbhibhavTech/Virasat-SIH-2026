@@ -1,5 +1,6 @@
-// Auto-generated synchronized India Tourism Database
-export const INDIA_TOURISM_DATABASE = {
+import { IndiaHierarchyDatabase } from '../types/indiaHierarchy';
+
+export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
   "title": "VIRASAT ΓÇö COMPLETE INDIA TOURISM DATABASE",
   "version": "3.0.0",
   "states_count": 36,
@@ -12099,7 +12100,9 @@ export const INDIA_TOURISM_DATABASE = {
       "description": "Vedic heartland of the epic Mahabharata, ancient Harappan archaeological mounds at Rakhigarhi, and Pinjore Mughal gardens.",
       "status": "verified",
       "verified": true,
-      "total_places": 30
+      "total_places": 30,
+      "official_tourism_url": "https://haryanatourism.gov.in",
+      "verification_status": "verified"
     },
     {
       "id": "himachal-pradesh",
@@ -95013,4 +95016,6 @@ export const INDIA_TOURISM_DATABASE = {
       "license": "Unsplash License"
     }
   ]
-};
+} as unknown as IndiaHierarchyDatabase;
+
+export type IndiaTourismDatabase = typeof INDIA_TOURISM_DATABASE;

@@ -71,7 +71,7 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
       setLoading(true);
       try {
         const [res, statesRes] = await Promise.allSettled([
-          api.getHeritage({ limit: 100 }),
+          api.getHeritage({ limit: 1000 }),
           api.getStates(),
         ]);
 
@@ -79,7 +79,7 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
           setHeritageSites(res.value.data);
         } else {
           // Fallback to places with heritage category
-          const placesRes = await api.getPlaces({ limit: 100 });
+          const placesRes = await api.getPlaces({ limit: 1000 });
           setHeritageSites(placesRes.data || []);
         }
 

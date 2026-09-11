@@ -12098,7 +12098,9 @@
       "description": "Vedic heartland of the epic Mahabharata, ancient Harappan archaeological mounds at Rakhigarhi, and Pinjore Mughal gardens.",
       "status": "verified",
       "verified": true,
-      "total_places": 30
+      "total_places": 30,
+      "official_tourism_url": "https://haryanatourism.gov.in",
+      "verification_status": "verified"
     },
     {
       "id": "himachal-pradesh",
