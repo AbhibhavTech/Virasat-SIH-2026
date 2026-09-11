@@ -3694,7 +3694,8 @@ function getIndiaHierarchyData() {
   try {
     const stats = fs.statSync(p);
     if (!indiaHierarchyData || stats.mtimeMs > indiaHierarchyDataMtime) {
-      indiaHierarchyData = JSON.parse(fs.readFileSync(p, 'utf-8'));
+      const fileContent = fs.readFileSync(p, 'utf-8').replace(/^\uFEFF/, '');
+      indiaHierarchyData = JSON.parse(fileContent);
       indiaHierarchyDataMtime = stats.mtimeMs;
     }
   } catch (err) {

@@ -30,7 +30,6 @@ import {
   ShieldCheck,
   Globe,
   Building2,
-  SlidersHorizontal,
 } from 'lucide-react';
 import {
   StateHierarchyEntity,
@@ -43,6 +42,28 @@ import { ExploreIndiaMap } from '../components/explore-india/ExploreIndiaMap';
 import { PlaceDetailDrawer } from '../components/explore-india/PlaceDetailDrawer';
 import { OfficialImagePending } from '../components/common/OfficialImagePending';
 import { CitizenReportModal } from '../components/common/CitizenReportModal';
+import { RecommendedPlacesNearYou } from '../components/explore-india/RecommendedPlacesNearYou';
+import {
+  haversineDistanceKm,
+  formatDistanceKm,
+  estimateTravelTime,
+  calculateEstimatedVisitMinutes,
+  formatEstimatedVisitMinutes,
+  POPULAR_HERITAGE_HUBS,
+} from '../utils/geoUtils';
+
+export interface NearbyAttractionItem {
+  place: AttractionEntity;
+  stateId: string;
+  stateName: string;
+  cityId: string;
+  cityName: string;
+  district: string;
+  distanceKm: number;
+  driveTimeFormatted: string;
+  estimatedVisitMinutes: number;
+  estimatedVisitFormatted: string;
+}
 
 interface IndiaHierarchyPageProps {
   onSelectPlace?: (placeId: string) => void;
@@ -51,7 +72,7 @@ interface IndiaHierarchyPageProps {
 }
 
 type NavigationLevel = 'india' | 'state' | 'city';
-type TerritoryTab = 'states' | 'uts' | 'all';
+type TerritoryTab = 'states' | 'uts' | 'all' | 'near-me';
 
 export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
   onSelectPlace,
@@ -97,7 +118,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedRegion, setSelectedRegion] = useState('All');
   const [activeCategoryFilter, setActiveCategoryFilter] = useState<string>('all');
-  const [stateCityFilter, setStateCityFilter] = useState<string>('all');
   const [territoryTab, setTerritoryTab] = useState<TerritoryTab>('states');
 
   // Broken Image Tracker (Replaces hardcoded Taj Mahal fallbacks)
@@ -121,6 +141,110 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
       ...prev,
       [attrId]: !prev[attrId],
     }));
+  };
+
+  // User Proximity & Recommended Near Me State
+  const [userCoords, setUserCoords] = useState<{ lat: number; lng: number } | null>({
+    lat: 28.6139,
+    lng: 77.2090, // Default to Delhi NCR hub
+  });
+  const [locationName, setLocationName] = useState<string>('Delhi NCR (Heritage Hub)');
+  const [locationStatus, setLocationStatus] = useState<'idle' | 'detecting' | 'detected' | 'denied' | 'custom'>('custom');
+  const [radiusFilter, setRadiusFilter] = useState<number>(50); // 50 km default
+  const [nearMeCategoryFilter, setNearMeCategoryFilter] = useState<string>('all');
+
+  // Attempt initial GPS location with smooth graceful fallback & real-time watch
+  useEffect(() => {
+    let watchId: number | null = null;
+    if (typeof navigator !== 'undefined' && navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (pos) => {
+          setUserCoords({ lat: pos.coords.latitude, lng: pos.coords.longitude });
+          setLocationName('Current Geolocation');
+          setLocationStatus('detected');
+
+          // Keep active watch for live real-time distance updates
+          try {
+            watchId = navigator.geolocation.watchPosition(
+              (watchPos) => {
+                setUserCoords({
+                  lat: watchPos.coords.latitude,
+                  lng: watchPos.coords.longitude,
+                });
+                setLocationStatus('detected');
+              },
+              (err) => console.warn('Live geolocation watch error:', err.message),
+              { enableHighAccuracy: true, maximumAge: 10000, timeout: 20000 }
+            );
+          } catch (e) {
+            console.warn('watchPosition unavailable', e);
+          }
+        },
+        () => {
+          // Gracefully default to Delhi NCR hub if user denies or timeout
+          setUserCoords({ lat: 28.6139, lng: 77.2090 });
+          setLocationName('Delhi NCR (Heritage Hub)');
+          setLocationStatus('custom');
+        },
+        { timeout: 6000, maximumAge: 300000 }
+      );
+    }
+    return () => {
+      if (watchId !== null && typeof navigator !== 'undefined' && navigator.geolocation) {
+        navigator.geolocation.clearWatch(watchId);
+      }
+    };
+  }, []);
+
+  const handleDetectLocation = () => {
+    if (typeof navigator === 'undefined' || !navigator.geolocation) {
+      setLocationStatus('denied');
+      return;
+    }
+    setLocationStatus('detecting');
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        const coords = { lat: pos.coords.latitude, lng: pos.coords.longitude };
+        setUserCoords(coords);
+        setLocationName('Current Geolocation');
+        setLocationStatus('detected');
+      },
+      (err) => {
+        console.warn('GPS location request declined or timed out:', err.message);
+        setLocationStatus('denied');
+        if (!userCoords) {
+          setUserCoords({ lat: 28.6139, lng: 77.2090 });
+          setLocationName('Delhi NCR (Heritage Hub)');
+        }
+      },
+      { enableHighAccuracy: true, timeout: 8000, maximumAge: 30000 }
+    );
+  };
+
+  const handleSelectHub = (hub: { name: string; state: string; lat: number; lng: number }) => {
+    setUserCoords({ lat: hub.lat, lng: hub.lng });
+    setLocationName(`${hub.name}, ${hub.state}`);
+    setLocationStatus('custom');
+  };
+
+  const handleSelectRecommendedPlace = (place: AttractionEntity, stateId: string, cityId: string) => {
+    setSelectedStateId(stateId);
+    setSelectedCityId(cityId);
+    setActiveLevel('city');
+    setPreviewPlace(place);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleViewAllNearMe = () => {
+    setActiveLevel('india');
+    setViewMode('grid');
+    setTerritoryTab('near-me');
+    setTimeout(() => {
+      const el = document.getElementById('discover-bharat-near-me-grid');
+      if (el) {
+        el.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
   };
 
   // Canonical Union Territory IDs
@@ -229,35 +353,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
     };
   }, [currentState]);
 
-  // All verified places across all cities in the current state
-  const stateAllPlaces: AttractionEntity[] = useMemo(() => {
-    if (!currentState?.cities) return [];
-    const list: AttractionEntity[] = [];
-    for (const city of currentState.cities) {
-      const rawPlaces = [
-        ...(city.heritage || []),
-        ...(city.monuments || []),
-        ...(city.museums || []),
-        ...(city.tourist_places || []),
-        ...(city.religious_cultural || []),
-        ...(city.nature_parks_zoo || []),
-      ];
-      list.push(...rawPlaces.filter(isPlaceVerified));
-    }
-    return list;
-  }, [currentState]);
-
-  // Filtered state places by selected city filter
-  const filteredStatePlaces = useMemo(() => {
-    if (stateCityFilter === 'all') return stateAllPlaces;
-    const target = stateCityFilter.toLowerCase();
-    return stateAllPlaces.filter(
-      (p) =>
-        p.city_id?.toLowerCase() === target ||
-        p.city?.toLowerCase() === target
-    );
-  }, [stateAllPlaces, stateCityFilter]);
-
   // Aggregate verified places in current city/destination (Strictly verified places only)
   const cityAllPlaces: AttractionEntity[] = useMemo(() => {
     if (!currentCity) return [];
@@ -342,6 +437,80 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
     );
   }, [filteredStates, CANONICAL_UTS]);
 
+  // Aggregate and rank all verified places by real proximity to the user's location
+  const allNearbyPlaces: NearbyAttractionItem[] = useMemo(() => {
+    if (!db?.states || !userCoords) return [];
+
+    const items: NearbyAttractionItem[] = [];
+
+    for (const state of db.states) {
+      for (const city of state.cities || []) {
+        const rawPlaces = [
+          ...(city.heritage || []),
+          ...(city.monuments || []),
+          ...(city.museums || []),
+          ...(city.tourist_places || []),
+          ...(city.religious_cultural || []),
+          ...(city.nature_parks_zoo || []),
+        ];
+
+        for (const p of rawPlaces) {
+          const isVerified =
+            p.verification_status === 'verified' || p.status === 'VERIFIED';
+          if (!isVerified) continue;
+
+          const pLat = p.coordinates?.lat || city.coordinates?.lat;
+          const pLng = p.coordinates?.lng || city.coordinates?.lng;
+
+          if (!pLat || !pLng) continue;
+
+          const dist = haversineDistanceKm(userCoords.lat, userCoords.lng, pLat, pLng);
+
+          if (radiusFilter > 0 && dist > radiusFilter) continue;
+
+          const estVisitMins = calculateEstimatedVisitMinutes(p);
+
+          items.push({
+            place: p,
+            stateId: state.id,
+            stateName: state.name,
+            cityId: city.id,
+            cityName: city.name,
+            district: city.district || city.name,
+            distanceKm: dist,
+            driveTimeFormatted: estimateTravelTime(dist),
+            estimatedVisitMinutes: estVisitMins,
+            estimatedVisitFormatted: formatEstimatedVisitMinutes(estVisitMins),
+          });
+        }
+      }
+    }
+
+    // Sort by proximity with UNESCO bonus
+    items.sort((a, b) => {
+      const isAUnesco = a.place.tags?.some((t: string) => t.toLowerCase().includes('unesco')) || a.place.subtopic?.toLowerCase().includes('unesco');
+      const isBUnesco = b.place.tags?.some((t: string) => t.toLowerCase().includes('unesco')) || b.place.subtopic?.toLowerCase().includes('unesco');
+
+      const scoreA = a.distanceKm - (isAUnesco ? 15 : 0);
+      const scoreB = b.distanceKm - (isBUnesco ? 15 : 0);
+      return scoreA - scoreB;
+    });
+
+    return items;
+  }, [db, userCoords, radiusFilter]);
+
+  // Filtered near-me list by category
+  const filteredNearMePlaces = useMemo(() => {
+    if (nearMeCategoryFilter === 'all') return allNearbyPlaces;
+    return allNearbyPlaces.filter((item) => {
+      const cat = (item.place.category || '').toLowerCase();
+      const topic = (item.place.topic || '').toLowerCase();
+      const label = (item.place.category_label || '').toLowerCase();
+      const filter = nearMeCategoryFilter.toLowerCase();
+      return cat.includes(filter) || topic.includes(filter) || label.includes(filter);
+    });
+  }, [allNearbyPlaces, nearMeCategoryFilter]);
+
   // Global search suggestions when typing
   const searchResults = useMemo(() => {
     const q = searchQuery.trim().toLowerCase();
@@ -419,7 +588,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
   // Navigation handlers
   const handleSelectState = (stateId: string) => {
     setSelectedStateId(stateId);
-    setStateCityFilter('all');
     const s = db?.states.find((item) => item.id === stateId);
     if (s && s.cities && s.cities.length > 0) {
       setSelectedCityId(s.cities[0].id);
@@ -888,6 +1056,21 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                       {isLoading ? '...' : filteredStates.length}
                     </span>
                   </button>
+
+                  <button
+                    onClick={() => setTerritoryTab('near-me')}
+                    className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition flex items-center gap-1.5 cursor-pointer whitespace-nowrap ${
+                      territoryTab === 'near-me'
+                        ? 'bg-white text-[#FF671F] shadow-xs'
+                        : 'text-[#7A6E65] hover:text-[#0B192C]'
+                    }`}
+                  >
+                    <MapPin className="w-3.5 h-3.5 text-[#FF671F]" />
+                    <span>Near You in Bharat</span>
+                    <span className="px-1.5 py-0.2 rounded-full text-[10px] bg-emerald-100 text-emerald-800 font-bold">
+                      {isLoading ? '...' : allNearbyPlaces.length}
+                    </span>
+                  </button>
                 </div>
               )}
             </div>
@@ -952,6 +1135,23 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
               />
             ) : (
               <div className="space-y-8">
+                {/* Recommended Places Near You Component */}
+                <RecommendedPlacesNearYou
+                  db={db}
+                  userCoords={userCoords}
+                  locationName={locationName}
+                  locationStatus={locationStatus}
+                  radiusFilter={radiusFilter}
+                  onDetectLocation={handleDetectLocation}
+                  onSelectHub={handleSelectHub}
+                  onSetRadiusFilter={setRadiusFilter}
+                  onSelectPlace={handleSelectRecommendedPlace}
+                  onViewAll={handleViewAllNearMe}
+                  onViewAllNearMe={handleViewAllNearMe}
+                  brokenImages={brokenImages}
+                  onImageError={handleImageError}
+                />
+
                 {/* Verified Coordinates Grounded Claim Banner */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-2xl bg-gradient-to-r from-orange-50/80 via-white to-amber-50/60 border border-orange-200/70 shadow-2xs">
                   <div className="flex items-center gap-2.5">
@@ -1023,6 +1223,197 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                     ) : (
                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                         {utsList.map(renderStateCard)}
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {/* Section: Near You in Discover Bharat (Full Dedicated Grid) */}
+                {territoryTab === 'near-me' && (
+                  <div id="discover-bharat-near-me-grid" className="space-y-4 pt-2">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 bg-white p-4 rounded-2xl border border-[#E7DFD5] shadow-2xs">
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs font-bold uppercase tracking-wider text-[#FF671F]">
+                            All Recommended Places Near You ({filteredNearMePlaces.length})
+                          </span>
+                          <span className="px-2 py-0.5 rounded-full text-[10px] bg-orange-100 text-[#FF671F] font-bold">
+                            {radiusFilter > 0 ? `Within ${radiusFilter} km` : 'All Distances'}
+                          </span>
+                        </div>
+                        <p className="text-xs text-stone-500 mt-0.5">
+                          Calculated from <strong>{locationName}</strong> • Click any card to deep-dive into its town &amp; monument dossier.
+                        </p>
+                      </div>
+
+                      {/* Category Filter Pills for Near Me */}
+                      <div className="flex items-center gap-1.5 overflow-x-auto pb-0.5">
+                        {[
+                          { id: 'all', label: 'All Types' },
+                          { id: 'heritage', label: 'Heritage' },
+                          { id: 'monuments', label: 'Monuments' },
+                          { id: 'religious', label: 'Spiritual' },
+                          { id: 'nature', label: 'Nature' },
+                          { id: 'museums', label: 'Museums' },
+                        ].map((cat) => (
+                          <button
+                            key={cat.id}
+                            onClick={() => setNearMeCategoryFilter(cat.id)}
+                            className={`px-3 py-1 rounded-xl text-xs font-bold transition cursor-pointer whitespace-nowrap ${
+                              nearMeCategoryFilter === cat.id
+                                ? 'bg-[#FF671F] text-white shadow-2xs'
+                                : 'bg-[#FAF8F5] hover:bg-stone-100 text-stone-600 border border-stone-200'
+                            }`}
+                          >
+                            {cat.label}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+
+                    {filteredNearMePlaces.length === 0 ? (
+                      <div className="p-12 text-center text-xs text-stone-500 bg-white rounded-3xl border border-dashed border-[#EFE8DF] space-y-2">
+                        <Compass className="w-8 h-8 text-stone-400 mx-auto" />
+                        <div className="font-bold text-stone-700">No places found matching the selected category.</div>
+                        <button
+                          onClick={() => setNearMeCategoryFilter('all')}
+                          className="px-3.5 py-1.5 rounded-xl bg-[#FF671F] text-white text-xs font-bold cursor-pointer"
+                        >
+                          Clear Category Filter
+                        </button>
+                      </div>
+                    ) : (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                        {filteredNearMePlaces.map((item) => {
+                          const {
+                            place,
+                            stateId,
+                            cityId,
+                            cityName,
+                            stateName,
+                            distanceKm,
+                            driveTimeFormatted,
+                            estimatedVisitMinutes,
+                          } = item;
+                          const isBroken = brokenImages[place.id];
+                          const isUnesco =
+                            place.tags?.some((t: string) => t.toLowerCase().includes('unesco')) ||
+                            place.subtopic?.toLowerCase().includes('unesco');
+
+                          return (
+                            <article
+                              key={`near-grid-${stateId}-${cityId}-${place.id}`}
+                              className="bg-white rounded-2xl border border-[#E7DFD5] hover:border-[#FF671F]/70 hover:shadow-lg transition-all duration-200 flex flex-col overflow-hidden group"
+                            >
+                              <div className="relative aspect-[16/10] bg-stone-100 overflow-hidden">
+                                {isBroken || !place.image_url ? (
+                                  <OfficialImagePending
+                                    heightClass="h-full"
+                                    label="Official Image Pending"
+                                    showBadge={false}
+                                  />
+                                ) : (
+                                  <img
+                                    src={place.image_url}
+                                    alt={place.name}
+                                    loading="lazy"
+                                    onError={() => handleImageError(place.id)}
+                                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                  />
+                                )}
+
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent pointer-events-none" />
+
+                                <div className="absolute top-2.5 left-2.5 flex flex-wrap items-center gap-1.5 max-w-[calc(100%-75px)]">
+                                  <div
+                                    id={`near-grid-dist-${place.id}`}
+                                    className="flex items-center gap-1 px-2.5 py-1 rounded-full bg-stone-900/85 backdrop-blur-md text-white text-[11px] font-bold border border-white/20 shadow-xs shrink-0"
+                                    title={`Real-time distance: ${distanceKm} km from your current geolocation`}
+                                  >
+                                    <MapPin className="w-3 h-3 text-[#FF671F]" />
+                                    <span>{distanceKm} km away</span>
+                                  </div>
+
+                                  <div
+                                    id={`near-grid-visit-${place.id}`}
+                                    className="flex items-center gap-1 px-2 py-1 rounded-full bg-stone-950/85 backdrop-blur-md text-amber-300 text-[11px] font-bold border border-white/20 shadow-xs shrink-0"
+                                    title={`Estimated time to visit: ${estimatedVisitMinutes} minutes based on average site traversal`}
+                                  >
+                                    <Clock className="w-3 h-3 text-amber-300" />
+                                    <span>{estimatedVisitMinutes} mins to visit</span>
+                                  </div>
+                                </div>
+
+                                {isUnesco ? (
+                                  <div className="absolute top-2.5 right-2.5 flex items-center gap-1 px-2 py-0.5 rounded-full bg-amber-500 text-stone-950 text-[10px] font-extrabold uppercase tracking-wider shadow-xs">
+                                    <Award className="w-3 h-3" />
+                                    <span>UNESCO</span>
+                                  </div>
+                                ) : (
+                                  <div className="absolute top-2.5 right-2.5 flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-600/90 text-white text-[10px] font-bold uppercase tracking-wider shadow-xs">
+                                    <ShieldCheck className="w-3 h-3" />
+                                    <span>Verified</span>
+                                  </div>
+                                )}
+
+                                <div className="absolute bottom-2.5 left-2.5 flex items-center gap-1 text-[11px] font-medium text-stone-200">
+                                  <Clock className="w-3 h-3 text-orange-300" />
+                                  <span className="truncate max-w-[200px]">{driveTimeFormatted}</span>
+                                </div>
+                              </div>
+
+                              <div className="p-4 flex-1 flex flex-col justify-between space-y-3">
+                                <div className="space-y-1.5">
+                                  <div className="flex items-center justify-between text-xs text-[#7A6E65]">
+                                    <span className="font-semibold text-[#FF671F] truncate">
+                                      {cityName}, {stateName}
+                                    </span>
+                                    <span className="shrink-0 px-2 py-0.5 rounded-md bg-stone-100 text-stone-700 text-[10px] font-bold">
+                                      {place.category_label || place.category || 'Heritage'}
+                                    </span>
+                                  </div>
+
+                                  <h3
+                                    className="font-bold text-sm sm:text-base text-[#0B192C] group-hover:text-[#FF671F] transition line-clamp-1"
+                                    title={place.name}
+                                  >
+                                    {place.name}
+                                  </h3>
+
+                                  <p className="text-xs text-stone-600 line-clamp-2 leading-relaxed">
+                                    {place.summary || place.short_description || `Explore this verified landmark in ${cityName}, ${stateName}.`}
+                                  </p>
+
+                                  <div className="pt-2 flex flex-wrap items-center justify-between gap-1 text-[11px] text-stone-600 border-t border-stone-100">
+                                    <div className="flex items-center gap-1 text-amber-900 font-semibold bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200">
+                                      <Clock className="w-3 h-3 text-amber-600" />
+                                      <span>{estimatedVisitMinutes} mins to visit</span>
+                                    </div>
+                                    <span className="text-stone-500 font-medium">Drive: {driveTimeFormatted}</span>
+                                  </div>
+                                </div>
+
+                                <div className="pt-3 border-t border-stone-100 flex items-center justify-between gap-2">
+                                  <button
+                                    onClick={() => setPreviewPlace(place)}
+                                    className="px-2.5 py-1.5 rounded-xl border border-stone-200 hover:bg-stone-50 text-stone-700 text-xs font-semibold transition cursor-pointer flex items-center gap-1"
+                                  >
+                                    <Eye className="w-3.5 h-3.5" />
+                                    <span>Quick View</span>
+                                  </button>
+
+                                  <button
+                                    onClick={() => handleSelectRecommendedPlace(place, stateId, cityId)}
+                                    className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-[#FF671F] hover:bg-[#E65100] text-white text-xs font-bold transition shadow-xs cursor-pointer group/btn"
+                                  >
+                                    <span>Enter Town</span>
+                                    <ChevronRight className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 transition-transform" />
+                                  </button>
+                                </div>
+                              </div>
+                            </article>
+                          );
+                        })}
                       </div>
                     )}
                   </div>
@@ -1295,199 +1686,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                 })}
               </div>
             </div>
-
-            {/* Filter / Browse Places by City Section */}
-            <div className="bg-white rounded-3xl border border-[#EFE8DF] p-6 sm:p-8 shadow-xs space-y-6">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                <div>
-                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#FF671F]">
-                    <SlidersHorizontal className="w-4 h-4 text-[#FF671F]" />
-                    <span>Browse &amp; Filter Places by City</span>
-                  </div>
-                  <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#0B192C] mt-1">
-                    Tourist Attractions in {currentState.name} by City
-                  </h2>
-                  <p className="text-xs text-[#7A6E65] mt-0.5">
-                    Filter and discover verified heritage, spiritual shrines, and natural landmarks across {currentState.name} ({stateAllPlaces.length} total places).
-                  </p>
-                </div>
-              </div>
-
-              {/* City Filter Pills */}
-              <div className="flex items-center gap-2 overflow-x-auto pb-2">
-                <button
-                  onClick={() => setStateCityFilter('all')}
-                  className={`px-3.5 py-2 rounded-xl text-xs font-bold transition shrink-0 cursor-pointer ${
-                    stateCityFilter === 'all'
-                      ? 'bg-[#FF671F] text-white shadow-xs'
-                      : 'bg-[#FAF8F5] text-stone-700 hover:bg-stone-100 border border-[#EFE8DF]'
-                  }`}
-                >
-                  All Cities ({stateAllPlaces.length})
-                </button>
-                {currentState.cities.map((c) => {
-                  const cityPlaceCount = (
-                    (c.heritage?.length || 0) +
-                    (c.monuments?.length || 0) +
-                    (c.museums?.length || 0) +
-                    (c.tourist_places?.length || 0) +
-                    (c.religious_cultural?.length || 0) +
-                    (c.nature_parks_zoo?.length || 0)
-                  );
-                  const isSelected =
-                    stateCityFilter.toLowerCase() === c.id.toLowerCase() ||
-                    stateCityFilter.toLowerCase() === c.name.toLowerCase();
-
-                  return (
-                    <button
-                      key={c.id}
-                      onClick={() => setStateCityFilter(c.id)}
-                      className={`px-3.5 py-2 rounded-xl text-xs font-bold transition shrink-0 flex items-center gap-1.5 cursor-pointer ${
-                        isSelected
-                          ? 'bg-[#FF671F] text-white shadow-xs'
-                          : 'bg-[#FAF8F5] text-stone-700 hover:bg-stone-100 border border-[#EFE8DF]'
-                      }`}
-                    >
-                      <MapPin className={`w-3 h-3 ${isSelected ? 'text-white' : 'text-[#FF671F]'}`} />
-                      <span>{c.name}</span>
-                      <span
-                        className={`px-1.5 py-0.2 rounded-full text-[10px] font-mono ${
-                          isSelected ? 'bg-white/20 text-white' : 'bg-stone-200 text-stone-700'
-                        }`}
-                      >
-                        {cityPlaceCount}
-                      </span>
-                    </button>
-                  );
-                })}
-              </div>
-
-              {/* Places Grid */}
-              {filteredStatePlaces.length === 0 ? (
-                <div className="text-center py-10 bg-stone-50 rounded-2xl border border-dashed border-stone-200">
-                  <p className="text-sm text-stone-500">No places found for the selected city filter.</p>
-                </div>
-              ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                  {filteredStatePlaces.map((attr) => {
-                    const isVisited = Boolean(visitedPlaces[attr.id]);
-                    const imgUrl = attr.image_url || attr.thumbnail_url;
-                    const isBroken = brokenImages[attr.id] || !imgUrl;
-
-                    return (
-                      <div
-                        key={attr.id}
-                        className={`bg-white rounded-3xl border overflow-hidden shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between ${
-                          isVisited ? 'border-[#FF671F] bg-amber-50/20' : 'border-[#EFE8DF]'
-                        }`}
-                      >
-                        <div>
-                          {/* Photo with fallback */}
-                          <div className="relative h-44 w-full overflow-hidden bg-stone-100">
-                            {isBroken ? (
-                              <OfficialImagePending
-                                heightClass="h-full"
-                                label="Official image pending"
-                                showBadge={false}
-                              />
-                            ) : (
-                              <img
-                                src={imgUrl}
-                                alt={attr.name}
-                                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                                onError={() => handleImageError(attr.id)}
-                              />
-                            )}
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent pointer-events-none" />
-
-                            <div className="absolute top-3 left-3 flex flex-wrap items-center gap-1.5 pointer-events-none">
-                              <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-orange-600/90 text-white backdrop-blur-xs flex items-center gap-1">
-                                <MapPin className="w-2.5 h-2.5" />
-                                {attr.city || currentState.cities.find((c) => c.id === attr.city_id)?.name}
-                              </span>
-                              {attr.topic && (
-                                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-stone-800/80 text-amber-200 backdrop-blur-xs">
-                                  {attr.topic}
-                                </span>
-                              )}
-                            </div>
-
-                            <button
-                              onClick={() => toggleVisited(attr.id)}
-                              className="absolute top-3 right-3 p-1.5 rounded-full bg-white/90 text-[#FF671F] hover:bg-white transition cursor-pointer shadow-xs"
-                              title={isVisited ? 'Mark as not visited' : 'Mark as visited'}
-                            >
-                              {isVisited ? (
-                                <CheckSquare className="w-4 h-4 text-[#FF671F]" />
-                              ) : (
-                                <Square className="w-4 h-4 text-stone-400" />
-                              )}
-                            </button>
-
-                            <div className="absolute bottom-3 left-4 right-4 text-white pointer-events-none">
-                              <h4 className={`font-serif text-base font-bold leading-snug ${isVisited ? 'line-through text-stone-300' : 'text-white'}`}>
-                                {attr.name}
-                              </h4>
-                            </div>
-                          </div>
-
-                          {/* Body */}
-                          <div className="p-4 space-y-3">
-                            <div className="flex items-center justify-between gap-2">
-                              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-300 flex items-center gap-1">
-                                <ShieldCheck className="w-3 h-3 text-emerald-600" />
-                                <span>Verified place</span>
-                              </span>
-                              {attr.area && (
-                                <span className="text-[10px] text-stone-500 truncate max-w-[130px]" title={attr.area}>
-                                  {attr.area}
-                                </span>
-                              )}
-                            </div>
-
-                            <div className="flex items-center gap-1 text-xs text-stone-600 font-semibold">
-                              <MapPin className="w-3 h-3 text-[#FF671F] shrink-0" />
-                              <span>{attr.city || currentState.cities.find((c) => c.id === attr.city_id)?.name}</span>
-                            </div>
-
-                            <p className="text-xs text-[#5A4E46] leading-relaxed line-clamp-2">
-                              {attr.short_description || attr.summary}
-                            </p>
-
-                            <div className="p-2.5 rounded-xl bg-[#FAF8F5] border border-[#EFE8DF] flex items-center justify-between text-[11px]">
-                              <span className="text-stone-500 font-medium">Entry Fee:</span>
-                              <span className="font-semibold text-stone-800">
-                                {attr.entry_fee === 0 || attr.fees?.free_entry ? 'Free Entry' : `₹${attr.entry_fee || attr.fees?.domestic || 0}`}
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Actions */}
-                        <div className="p-4 pt-0 flex items-center gap-2">
-                          <button
-                            onClick={() => setPreviewPlace(attr)}
-                            className="flex-1 py-2 px-3 rounded-xl bg-[#FAF8F5] hover:bg-[#F3EDE5] border border-[#EFE8DF] text-xs font-bold text-[#E65100] transition flex items-center justify-center gap-1.5 cursor-pointer"
-                          >
-                            <Eye className="w-3.5 h-3.5 text-[#FF671F]" />
-                            <span>Quick Details</span>
-                          </button>
-                          {attr.city_id && (
-                            <button
-                              onClick={() => handleSelectTown(currentState.id, attr.city_id!)}
-                              className="p-2 rounded-xl bg-[#FF671F] hover:bg-[#E65100] text-white transition cursor-pointer"
-                              title={`Explore ${attr.city || 'City'} Hub`}
-                            >
-                              <ArrowRight className="w-4 h-4" />
-                            </button>
-                          )}
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              )}
-            </div>
           </div>
         )}
 
@@ -1501,32 +1699,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
 
           return (
             <div className="space-y-8">
-              {/* Destination Switcher in Current State */}
-              {currentState && currentState.cities && currentState.cities.length > 1 && (
-                <div className="flex items-center gap-2 overflow-x-auto pb-1">
-                  <span className="text-xs font-bold text-stone-500 shrink-0">
-                    Destinations in {currentState.name}:
-                  </span>
-                  {currentState.cities.map((c) => {
-                    const isSelected = c.id === currentCity.id;
-                    return (
-                      <button
-                        key={c.id}
-                        onClick={() => handleSelectTown(currentState.id, c.id)}
-                        className={`px-3 py-1.5 rounded-xl text-xs font-bold transition shrink-0 flex items-center gap-1 cursor-pointer ${
-                          isSelected
-                            ? 'bg-[#FF671F] text-white shadow-xs'
-                            : 'bg-white text-stone-700 hover:bg-stone-100 border border-[#EFE8DF]'
-                        }`}
-                      >
-                        <MapPin className={`w-3 h-3 ${isSelected ? 'text-white' : 'text-[#FF671F]'}`} />
-                        <span>{c.name}</span>
-                      </button>
-                    );
-                  })}
-                </div>
-              )}
-
               {/* Town Hero & Travel Context Banner with honest fallback */}
               <div className="bg-white rounded-3xl border border-[#EFE8DF] overflow-hidden shadow-xs">
                 <div className="grid grid-cols-1 lg:grid-cols-12">
@@ -1778,12 +1950,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                                     <Award className="w-3 h-3" /> UNESCO
                                   </span>
                                 )}
-                                {attr.city && (
-                                  <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-black/60 text-white backdrop-blur-xs flex items-center gap-1">
-                                    <MapPin className="w-2.5 h-2.5 text-[#FF671F]" />
-                                    {attr.city}
-                                  </span>
-                                )}
                               </div>
 
                               {/* Visited Checkbox on photo */}
@@ -1813,7 +1979,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
 
                             {/* Place Details Body */}
                             <div className="p-5 space-y-3.5">
-                              {/* Verification Badge & Area */}
+                              {/* Verification Badge */}
                               <div className="flex items-center justify-between gap-2">
                                 {verified ? (
                                   <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-300 flex items-center gap-1 shadow-2xs">
@@ -1826,21 +1992,11 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                                   </span>
                                 )}
 
-                                {attr.area ? (
-                                  <span className="text-[10px] text-stone-500 font-medium truncate max-w-[140px]" title={attr.area}>
-                                    {attr.area}
-                                  </span>
-                                ) : attr.last_verified_on ? (
+                                {attr.last_verified_on && (
                                   <span className="text-[10px] text-stone-500">
                                     {attr.last_verified_on}
                                   </span>
-                                ) : null}
-                              </div>
-
-                              {/* City & Area Indicator */}
-                              <div className="flex items-center gap-1.5 text-xs text-stone-700 font-semibold">
-                                <MapPin className="w-3.5 h-3.5 text-[#FF671F] shrink-0" />
-                                <span>{attr.city || currentCity.name}</span>
+                                )}
                               </div>
 
                               <p className="text-xs text-[#5A4E46] leading-relaxed line-clamp-3">

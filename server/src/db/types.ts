@@ -197,8 +197,6 @@ export interface MediaRecord {
 export interface PlaceRecord {
   id: string;
   city_id?: string;
-  city?: string;
-  area?: string;
   state_id?: string;
   district?: string;
   name: string;
