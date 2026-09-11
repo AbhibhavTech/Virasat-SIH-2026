@@ -53,7 +53,18 @@ async function runTests() {
     const r3 = await get('/api/india-hierarchy/state/rajasthan');
     console.log(`3. GET /api/india-hierarchy/state/rajasthan: HTTP ${r3.status}, state: ${r3.body?.name}, cities: ${r3.body?.cities?.length}`);
 
-    // 4. Test hot-reload / dynamic read
+    // 4. GET /api/india-hierarchy/city/jaipur
+    const r4 = await get('/api/india-hierarchy/city/jaipur');
+    console.log(`4. GET /api/india-hierarchy/city/jaipur: HTTP ${r4.status}, city: ${r4.body?.name}`);
+
+    // 5. GET /api/india-hierarchy/city/mangalore (alias/redirect to Mangaluru)
+    const r5 = await get('/api/india-hierarchy/city/mangalore');
+    console.log(`5. GET /api/india-hierarchy/city/mangalore: HTTP ${r5.status}, resolved to: ${r5.body?.name}`);
+
+    if (r1.status !== 200 || r2.status !== 200 || r3.status !== 200 || r4.status !== 200 || r5.status !== 200) {
+      throw new Error('One or more endpoints failed');
+    }
+
     console.log(`\nALL API SMOKE TESTS PASSED!`);
   } catch (err) {
     console.error(`Smoke test failed:`, err);

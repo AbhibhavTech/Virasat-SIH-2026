@@ -3632,9 +3632,25 @@ app.get('/api/india-hierarchy/city/:cityId', (req, res) => {
   if (!data || !data.states) {
     return res.status(404).json({ error: 'Database not loaded' });
   }
-  const query = req.params.cityId.toLowerCase();
+  let query = req.params.cityId.toLowerCase();
+
+  const redirectsPath = path.join(process.cwd(), 'data', 'city_id_redirects.json');
+  if (fs.existsSync(redirectsPath)) {
+    try {
+      const redirects = JSON.parse(fs.readFileSync(redirectsPath, 'utf-8'));
+      if (redirects[query]) {
+        query = redirects[query].toLowerCase();
+      }
+    } catch {}
+  }
+
   for (const s of data.states) {
-    const found = s.cities.find((c: any) => c.id.toLowerCase() === query || c.name.toLowerCase() === query);
+    const found = s.cities.find(
+      (c: any) =>
+        c.id.toLowerCase() === query ||
+        c.name.toLowerCase() === query ||
+        c.aliases?.some((a: string) => a.toLowerCase() === query)
+    );
     if (found) {
       return res.json(found);
     }
