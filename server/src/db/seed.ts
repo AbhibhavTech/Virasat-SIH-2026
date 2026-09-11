@@ -69,6 +69,12 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
     'agra-fort': 'https://whc.unesco.org/en/list/251/',
     'jantar-mantar': 'https://whc.unesco.org/en/list/1338/',
     'great-himalayan-national-park': 'https://whc.unesco.org/en/list/1406/',
+    'west_bengal_010': 'https://whc.unesco.org/en/list/452/',
+    'west_bengal_012': 'https://whc.unesco.org/en/list/1675/',
+    'west_bengal_016': 'https://whc.unesco.org/en/list/944/',
+    'sundarbans-national-park': 'https://whc.unesco.org/en/list/452/',
+    'darjeeling-himalayan-railway': 'https://whc.unesco.org/en/list/944/',
+    'shantiniketan': 'https://whc.unesco.org/en/list/1675/',
   };
 
   // -------------------------------------------------------------
@@ -78,6 +84,7 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
     { id: 'src-asi', source_name: 'Archaeological Survey of India (ASI)', source_type: 'tier1_official', url: 'https://asi.nic.in', created_at: now },
     { id: 'src-unesco', source_name: 'UNESCO World Heritage Centre', source_type: 'tier2_trusted', url: 'https://whc.unesco.org', created_at: now },
     { id: 'src-culture', source_name: 'Ministry of Culture, Government of India', source_type: 'tier1_official', url: 'https://indiaculture.gov.in', created_at: now },
+    { id: 'src-wb-tourism', source_name: 'Department of Tourism, Government of West Bengal', source_type: 'tier1_official', url: 'https://wbtourism.gov.in', created_at: now },
     { id: 'src-mtdc', source_name: 'Maharashtra Tourism Development Corporation (MTDC)', source_type: 'tier1_official', url: 'https://maharashtratourism.gov.in', created_at: now },
     { id: 'src-delhi-tourism', source_name: 'Delhi Tourism and Transportation Development (DTTDC)', source_type: 'tier1_official', url: 'https://delhitourism.gov.in', created_at: now },
     { id: 'src-rajasthan-tourism', source_name: 'Department of Tourism, Government of Rajasthan', source_type: 'tier1_official', url: 'https://tourism.rajasthan.gov.in', created_at: now },
@@ -110,9 +117,12 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
             region: s.region || '',
             official_tourism_url: s.official_tourism_url || s.source_url || '',
             description: s.description || '',
-            status: (s.status === 'verified' || ['himachal-pradesh', 'punjab', 'rajasthan', 'uttar-pradesh', 'arunachal-pradesh'].includes(s.id)) ? 'verified' : (s.status || 'verified'),
+            status: (s.status === 'verified' || ['himachal-pradesh', 'punjab', 'rajasthan', 'uttar-pradesh', 'arunachal-pradesh', 'telangana', 'nagaland', 'meghalaya', 'manipur', 'mizoram'].includes(s.id)) ? 'verified' : (s.status || 'verified'),
             hero_image_id: s.hero_image_id,
             hero_image_url: s.hero_image_url,
+            total_cities: s.total_cities || 0,
+            total_attractions: s.total_attractions || s.total_places || 0,
+            total_places: s.total_places || s.total_attractions || 0,
             created_at: now,
           };
         }
@@ -313,9 +323,14 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
   }
 
   // -------------------------------------------------------------
-  // 5. Regional Flagship Datasets (Mumbai, Delhi, Rajasthan, Goa, Kerala, Maharashtra, Madhya Pradesh, Punjab, Gujarat, Himachal Pradesh)
+  // 5. Regional Flagship Datasets (All States & UTs)
   // -------------------------------------------------------------
-  const regionalDirs = ['mumbai', 'delhi', 'rajasthan', 'maharashtra', 'goa', 'kerala', 'ladakh', 'jammu-kashmir', 'punjab', 'madhya-pradesh', 'gujarat', 'himachal-pradesh'];
+  const regionalDirs = [
+    'mumbai', 'delhi', 'rajasthan', 'maharashtra', 'goa', 'kerala', 'ladakh', 'jammu-kashmir', 'punjab',
+    'madhya-pradesh', 'gujarat', 'himachal-pradesh',
+    'kolkata', 'west-bengal', 'telangana', 'nagaland', 'meghalaya', 'manipur', 'mizoram',
+    'bihar', 'uttar-pradesh', 'karnataka', 'chhattisgarh'
+  ];
   for (const reg of regionalDirs) {
     const regPath = path.join(rootDataDir, reg, 'places.json');
     if (fs.existsSync(regPath)) {
@@ -326,7 +341,8 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
             const stateId = (rp.state_id || rp.state || reg).toLowerCase().replace(/[^a-z0-9]+/g, '-');
             const cityId = (rp.city_id || rp.city || reg).toLowerCase().replace(/[^a-z0-9]+/g, '-');
             const normalizedName = rp.name.trim().toLowerCase();
-            const existing = places[rp.id] || Object.values(places).find(p => p.city_id === cityId && p.name.trim().toLowerCase() === normalizedName);
+            const isProtectedRegional = rp.id.startsWith('telangana_') || rp.id.startsWith('nagaland_') || rp.id.startsWith('meghalaya_') || rp.id.startsWith('manipur_') || rp.id.startsWith('mizoram_') || rp.id.startsWith('bihar_') || rp.id.startsWith('uttar_pradesh_') || rp.id.startsWith('karnataka_') || rp.id.startsWith('chhattisgarh_');
+            const existing = places[rp.id] || (!isProtectedRegional && Object.values(places).find(p => p.city_id === cityId && p.name.trim().toLowerCase() === normalizedName));
             if (existing) {
               if (rp.assigned_city) existing.assigned_city = rp.assigned_city;
               if (rp.tourist_place) existing.tourist_place = rp.tourist_place;
@@ -344,6 +360,7 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
             const lng = Number(rp.coordinates?.lng || rp.lng || rp.longitude || 0);
 
             places[rp.id] = {
+              ...rp,
               id: rp.id,
               city_id: cityId,
               state_id: stateId,
@@ -419,6 +436,39 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
         console.error(`[DB Seed] Error reading ${reg}/places.json:`, e);
       }
     }
+  }
+
+  // Deduplicate regional entries that supersede generic monuments
+  if (places['meghalaya_008'] || places['meghalaya_001']) {
+    delete places['living-root-bridges'];
+  }
+  if (places['bihar_001']) {
+    delete places['mahabodhi-temple'];
+    delete places['nalanda-university-ruins'];
+    delete places['golghar-patna'];
+  }
+  if (places['uttar_pradesh_011']) {
+    delete places['taj-mahal'];
+    delete places['fatehpur-sikri'];
+    delete places['agra-fort'];
+    delete places['kashi-vishwanath'];
+    delete places['dashashwamedh-ghat'];
+    delete places['sarnath-complex'];
+    delete places['assi-ghat'];
+    delete places['mehtab-bagh'];
+  }
+  if (places['karnataka_001']) {
+    delete places['hampi-monuments'];
+    delete places['pattadakal-monuments'];
+    delete places['hoysala-temples-belur'];
+    delete places['bangalore-palace'];
+    delete places['hampi-virupaksha'];
+    delete places['hampi-stone-chariot'];
+    delete places['tipu-sultan-palace'];
+    delete places['lalbagh-glasshouse'];
+  }
+  if (places['chhattisgarh_001']) {
+    delete places['sirpur-monuments'];
   }
 
   // -------------------------------------------------------------
@@ -708,6 +758,26 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
   for (const legacyKey of ['amritsar-jallianwala-bagh', 'amritsar-partition-museum', 'patiala-qila-mubarak', 'anandpur-virasat-e-khalsa']) {
     if (places[legacyKey]) {
       delete places[legacyKey];
+    }
+  }
+
+  // Deduplicate Telangana places and ensure they strictly follow telangana_001 - telangana_015
+  if (places['telangana_001']) {
+    for (const legacyKey of [
+      'charminar', 'golconda-fort', 'ramappa-temple',
+      'hyderabad-charminar', 'hyderabad-golconda-fort', 'hyderabad-salar-jung-museum',
+      'hyderabad-hussain-sagar-lake', 'hyderabad-qutb-shahi-tombs', 'hyderabad-ramoji-film-city',
+      'hyderabad-chowmahalla-palace', 'warangal-fort', 'warangal-thousand-pillar-temple',
+      'bhongir-fort', 'thousand-pillar-temple', 'qutb-shahi-tombs', 'salar-jung-museum',
+      'chowmahalla-palace', 'hussain-sagar-lake',
+      'hyderabad-hyderabad-heritage-fort-complex',
+      'nagarjuna-sagar-nagarjuna-sagar-national-wildlife-botanical-park',
+      'kbr-national-park', 'mrugavani-national-park',
+      'warangal-warangal-sacred-temple-cultural-center'
+    ]) {
+      if (places[legacyKey]) {
+        delete places[legacyKey];
+      }
     }
   }
 

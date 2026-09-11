@@ -1,0 +1,1202 @@
+{
+  "dataset": "Uttar Pradesh Tourist Places",
+  "administrative_type": "State",
+  "name": "Uttar Pradesh",
+  "country": "India",
+  "total_places": 40,
+  "total_cities": 12,
+  "cities": [
+    {
+      "id": "uttar_pradesh_city_01",
+      "name": "Lucknow",
+      "place_ids": [
+        "uttar_pradesh_001",
+        "uttar_pradesh_002",
+        "uttar_pradesh_003",
+        "uttar_pradesh_004",
+        "uttar_pradesh_005",
+        "uttar_pradesh_006"
+      ],
+      "total_places": 6
+    },
+    {
+      "id": "uttar_pradesh_city_02",
+      "name": "Varanasi",
+      "place_ids": [
+        "uttar_pradesh_007",
+        "uttar_pradesh_008",
+        "uttar_pradesh_009",
+        "uttar_pradesh_010"
+      ],
+      "total_places": 4
+    },
+    {
+      "id": "uttar_pradesh_city_03",
+      "name": "Agra",
+      "place_ids": [
+        "uttar_pradesh_011",
+        "uttar_pradesh_012",
+        "uttar_pradesh_013",
+        "uttar_pradesh_014",
+        "uttar_pradesh_015"
+      ],
+      "total_places": 5
+    },
+    {
+      "id": "uttar_pradesh_city_04",
+      "name": "Ayodhya",
+      "place_ids": [
+        "uttar_pradesh_016",
+        "uttar_pradesh_017",
+        "uttar_pradesh_018",
+        "uttar_pradesh_019",
+        "uttar_pradesh_020",
+        "uttar_pradesh_030"
+      ],
+      "total_places": 6
+    },
+    {
+      "id": "uttar_pradesh_city_05",
+      "name": "Mathura",
+      "place_ids": [
+        "uttar_pradesh_021",
+        "uttar_pradesh_022",
+        "uttar_pradesh_023"
+      ],
+      "total_places": 3
+    },
+    {
+      "id": "uttar_pradesh_city_06",
+      "name": "Vrindavan",
+      "place_ids": [
+        "uttar_pradesh_024",
+        "uttar_pradesh_025",
+        "uttar_pradesh_026",
+        "uttar_pradesh_027"
+      ],
+      "total_places": 4
+    },
+    {
+      "id": "uttar_pradesh_city_07",
+      "name": "Govardhan",
+      "place_ids": [
+        "uttar_pradesh_028",
+        "uttar_pradesh_029"
+      ],
+      "total_places": 2
+    },
+    {
+      "id": "uttar_pradesh_city_08",
+      "name": "Prayagraj",
+      "place_ids": [
+        "uttar_pradesh_031",
+        "uttar_pradesh_032",
+        "uttar_pradesh_033",
+        "uttar_pradesh_034"
+      ],
+      "total_places": 4
+    },
+    {
+      "id": "uttar_pradesh_city_09",
+      "name": "Vindhyachal",
+      "place_ids": [
+        "uttar_pradesh_035",
+        "uttar_pradesh_040"
+      ],
+      "total_places": 2
+    },
+    {
+      "id": "uttar_pradesh_city_10",
+      "name": "Dudhwa",
+      "place_ids": [
+        "uttar_pradesh_036"
+      ],
+      "total_places": 1
+    },
+    {
+      "id": "uttar_pradesh_city_11",
+      "name": "Jhansi",
+      "place_ids": [
+        "uttar_pradesh_037"
+      ],
+      "total_places": 1
+    },
+    {
+      "id": "uttar_pradesh_city_12",
+      "name": "Chitrakoot",
+      "place_ids": [
+        "uttar_pradesh_038",
+        "uttar_pradesh_039"
+      ],
+      "total_places": 2
+    }
+  ],
+  "places": [
+    {
+      "id": "uttar_pradesh_001",
+      "name": "Lucknow",
+      "category": "heritage_city",
+      "area": "Lucknow district",
+      "description": "The City of Nawabs, known for Awadhi culture, historic monuments, chikankari, and traditional cuisine.",
+      "best_for": [
+        "heritage",
+        "history",
+        "photography"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "opening_hours": "Usually daytime; timings vary by attraction",
+      "visitor_notes": [
+        "Dress respectfully at religious sites",
+        "Check local timings and access rules before visiting"
+      ],
+      "map_search": "Lucknow Uttar Pradesh",
+      "tags": [
+        "heritage_city",
+        "Uttar Pradesh"
+      ],
+      "city": "Lucknow"
+    },
+    {
+      "id": "uttar_pradesh_002",
+      "name": "Bara Imambara",
+      "category": "heritage_monument",
+      "area": "Lucknow",
+      "description": "A grand 18th-century complex famous for its central hall, Bhul Bhulaiya, and architectural design.",
+      "best_for": [
+        "heritage",
+        "history",
+        "photography"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "opening_hours": "Usually daytime; timings vary by attraction",
+      "visitor_notes": [
+        "Dress respectfully at religious sites",
+        "Check local timings and access rules before visiting"
+      ],
+      "map_search": "Bara Imambara Lucknow Uttar Pradesh",
+      "tags": [
+        "heritage_monument",
+        "Uttar Pradesh"
+      ],
+      "city": "Lucknow"
+    },
+    {
+      "id": "uttar_pradesh_003",
+      "name": "Chota Imambara",
+      "category": "heritage_monument",
+      "area": "Lucknow",
+      "description": "An ornate monument known for its chandeliers, domes, and decorative interiors.",
+      "best_for": [
+        "heritage",
+        "history",
+        "photography"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "opening_hours": "Usually daytime; timings vary by attraction",
+      "visitor_notes": [
+        "Dress respectfully at religious sites",
+        "Check local timings and access rules before visiting"
+      ],
+      "map_search": "Chota Imambara Lucknow Uttar Pradesh",
+      "tags": [
+        "heritage_monument",
+        "Uttar Pradesh"
+      ],
+      "city": "Lucknow"
+    },
+    {
+      "id": "uttar_pradesh_004",
+      "name": "Rumi Darwaza",
+      "category": "heritage_monument",
+      "area": "Lucknow",
+      "description": "An iconic 18th-century gateway showcasing Awadhi architectural style.",
+      "best_for": [
+        "heritage",
+        "history",
+        "photography"
+      ],
+      "suggested_duration": "1–2 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Usually free; verify current access rules",
+      "opening_hours": "Open area; timings may vary",
+      "visitor_notes": [
+        "Respect traffic and local surroundings",
+        "Best photographed in daylight"
+      ],
+      "map_search": "Rumi Darwaza Lucknow Uttar Pradesh",
+      "tags": [
+        "heritage_monument",
+        "Uttar Pradesh"
+      ],
+      "city": "Lucknow"
+    },
+    {
+      "id": "uttar_pradesh_005",
+      "name": "British Residency",
+      "category": "historical_site",
+      "area": "Lucknow",
+      "description": "A historic complex associated with the Siege of Lucknow during the Indian Rebellion of 1857.",
+      "best_for": [
+        "history",
+        "heritage",
+        "photography"
+      ],
+      "suggested_duration": "2–3 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "opening_hours": "Usually daytime; timings vary",
+      "visitor_notes": [
+        "Follow monument rules",
+        "Allow time for the museum and grounds"
+      ],
+      "map_search": "British Residency Lucknow Uttar Pradesh",
+      "tags": [
+        "historical_site",
+        "Uttar Pradesh"
+      ],
+      "city": "Lucknow"
+    },
+    {
+      "id": "uttar_pradesh_006",
+      "name": "Hazratganj",
+      "category": "city_culture",
+      "area": "Lucknow",
+      "description": "A historic central market area known for shopping, food, colonial-era character, and Lucknowi culture.",
+      "best_for": [
+        "shopping",
+        "food",
+        "culture"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free; shopping and activities vary",
+      "opening_hours": "Usually daytime to evening; shop timings vary",
+      "visitor_notes": [
+        "Keep belongings secure in crowded areas",
+        "Check individual shop timings"
+      ],
+      "map_search": "Hazratganj Lucknow Uttar Pradesh",
+      "tags": [
+        "shopping",
+        "culture",
+        "Uttar Pradesh"
+      ],
+      "city": "Lucknow"
+    },
+    {
+      "id": "uttar_pradesh_007",
+      "name": "Kashi Vishwanath Temple",
+      "category": "religious_heritage",
+      "area": "Varanasi",
+      "description": "One of the most revered Shiva temples, located near the Ganga in the old city.",
+      "best_for": [
+        "spirituality",
+        "heritage",
+        "culture"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "opening_hours": "Timings vary by darshan and temple schedule",
+      "visitor_notes": [
+        "Follow temple dress and security rules",
+        "Check current darshan and entry requirements"
+      ],
+      "map_search": "Kashi Vishwanath Temple Varanasi Uttar Pradesh",
+      "tags": [
+        "religious_heritage",
+        "Uttar Pradesh"
+      ],
+      "city": "Varanasi"
+    },
+    {
+      "id": "uttar_pradesh_008",
+      "name": "Dashashwamedh Ghat",
+      "category": "riverfront_heritage",
+      "area": "Varanasi",
+      "description": "A famous Ganga ghat known for evening aarti ceremonies and riverside cultural life.",
+      "best_for": [
+        "spirituality",
+        "culture",
+        "photography"
+      ],
+      "suggested_duration": "2–3 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free; boat rides may be paid",
+      "opening_hours": "Accessible throughout the day; aarti timings vary",
+      "visitor_notes": [
+        "Respect religious ceremonies",
+        "Keep valuables secure near crowded ghats"
+      ],
+      "map_search": "Dashashwamedh Ghat Varanasi Uttar Pradesh",
+      "tags": [
+        "riverfront_heritage",
+        "Uttar Pradesh"
+      ],
+      "city": "Varanasi"
+    },
+    {
+      "id": "uttar_pradesh_009",
+      "name": "Sarnath",
+      "category": "Buddhist_heritage",
+      "area": "Varanasi district",
+      "description": "A major Buddhist pilgrimage site where Gautama Buddha is traditionally believed to have delivered his first sermon.",
+      "best_for": [
+        "heritage",
+        "history",
+        "spirituality"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "opening_hours": "Usually daytime; timings vary",
+      "visitor_notes": [
+        "Maintain quiet around religious monuments",
+        "Check museum and monument timings"
+      ],
+      "map_search": "Sarnath Varanasi Uttar Pradesh",
+      "tags": [
+        "Buddhist_heritage",
+        "Uttar Pradesh"
+      ],
+      "city": "Varanasi"
+    },
+    {
+      "id": "uttar_pradesh_010",
+      "name": "Assi Ghat",
+      "category": "riverfront_heritage",
+      "area": "Varanasi",
+      "description": "A popular Ganga ghat known for sunrise views, cultural activities, and spiritual gatherings.",
+      "best_for": [
+        "culture",
+        "spirituality",
+        "photography"
+      ],
+      "suggested_duration": "2–3 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free; activities may be paid",
+      "opening_hours": "Accessible throughout the day",
+      "visitor_notes": [
+        "Respect local customs",
+        "Early morning is popular for riverfront activities"
+      ],
+      "map_search": "Assi Ghat Varanasi Uttar Pradesh",
+      "tags": [
+        "riverfront_heritage",
+        "Uttar Pradesh"
+      ],
+      "city": "Varanasi"
+    },
+    {
+      "id": "uttar_pradesh_011",
+      "name": "Taj Mahal",
+      "category": "monument_heritage",
+      "area": "Agra",
+      "description": "A world-famous white-marble mausoleum and symbol of Mughal architecture.",
+      "best_for": [
+        "heritage",
+        "history",
+        "photography"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Paid; verify current rates",
+      "opening_hours": "Usually daytime; closed on Fridays",
+      "visitor_notes": [
+        "Follow monument security rules",
+        "Check current ticket and opening information"
+      ],
+      "map_search": "Taj Mahal Agra Uttar Pradesh",
+      "tags": [
+        "monument_heritage",
+        "Uttar Pradesh"
+      ],
+      "city": "Agra"
+    },
+    {
+      "id": "uttar_pradesh_012",
+      "name": "Agra Fort",
+      "category": "fort_heritage",
+      "area": "Agra",
+      "description": "A historic Mughal fort containing palaces, halls, courtyards, and defensive walls.",
+      "best_for": [
+        "heritage",
+        "history",
+        "photography"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Paid; verify current rates",
+      "opening_hours": "Usually daytime; timings vary",
+      "visitor_notes": [
+        "Wear comfortable footwear",
+        "Follow monument preservation rules"
+      ],
+      "map_search": "Agra Fort Uttar Pradesh",
+      "tags": [
+        "fort_heritage",
+        "Uttar Pradesh"
+      ],
+      "city": "Agra"
+    },
+    {
+      "id": "uttar_pradesh_013",
+      "name": "Itmad-ud-Daulah's Tomb",
+      "category": "mughal_heritage",
+      "area": "Agra",
+      "description": "An elegant Mughal-era tomb often noted for its detailed marble inlay and garden setting.",
+      "best_for": [
+        "heritage",
+        "architecture",
+        "photography"
+      ],
+      "suggested_duration": "1–2 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Paid; verify current rates",
+      "opening_hours": "Usually daytime",
+      "visitor_notes": [
+        "Follow ASI site rules",
+        "Best explored with time for architectural details"
+      ],
+      "map_search": "Itmad ud Daulah Tomb Agra Uttar Pradesh",
+      "tags": [
+        "mughal_heritage",
+        "Uttar Pradesh"
+      ],
+      "city": "Agra"
+    },
+    {
+      "id": "uttar_pradesh_014",
+      "name": "Mehtab Bagh",
+      "category": "garden_heritage",
+      "area": "Agra",
+      "description": "A historic Mughal garden across the Yamuna offering a notable view toward the Taj Mahal.",
+      "best_for": [
+        "photography",
+        "heritage",
+        "nature"
+      ],
+      "suggested_duration": "1–2 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Paid; verify current rates",
+      "opening_hours": "Usually daytime; timings vary",
+      "visitor_notes": [
+        "Check sunset access timings",
+        "Follow garden and monument-viewing rules"
+      ],
+      "map_search": "Mehtab Bagh Agra Uttar Pradesh",
+      "tags": [
+        "garden_heritage",
+        "Uttar Pradesh"
+      ],
+      "city": "Agra"
+    },
+    {
+      "id": "uttar_pradesh_015",
+      "name": "Fatehpur Sikri",
+      "category": "heritage_city",
+      "area": "Agra district",
+      "description": "A historic Mughal city with palaces, courtyards, mosques, and monumental gateways.",
+      "best_for": [
+        "heritage",
+        "history",
+        "architecture"
+      ],
+      "suggested_duration": "3–5 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Paid; verify current rates",
+      "opening_hours": "Usually daytime; timings vary",
+      "visitor_notes": [
+        "Carry water and comfortable footwear",
+        "Respect active religious spaces"
+      ],
+      "map_search": "Fatehpur Sikri Agra Uttar Pradesh",
+      "tags": [
+        "heritage_city",
+        "Uttar Pradesh"
+      ],
+      "city": "Agra"
+    },
+    {
+      "id": "uttar_pradesh_016",
+      "name": "Ayodhya Ram Mandir",
+      "category": "religious_heritage",
+      "area": "Ayodhya",
+      "description": "A major Hindu pilgrimage destination associated with Lord Rama and the Ram Janmabhoomi site.",
+      "best_for": [
+        "spirituality",
+        "heritage",
+        "culture"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free or paid depending on attraction; verify current rules",
+      "opening_hours": "Timings vary by darshan schedule",
+      "visitor_notes": [
+        "Follow temple security and dress rules",
+        "Check current darshan and entry requirements"
+      ],
+      "map_search": "Ram Mandir Ayodhya Uttar Pradesh",
+      "tags": [
+        "religious_heritage",
+        "Ramayana",
+        "Uttar Pradesh"
+      ],
+      "city": "Ayodhya"
+    },
+    {
+      "id": "uttar_pradesh_017",
+      "name": "Hanuman Garhi",
+      "category": "religious_heritage",
+      "area": "Ayodhya",
+      "description": "A prominent Hanuman temple in Ayodhya, traditionally visited by pilgrims as part of the city's temple circuit.",
+      "best_for": [
+        "spirituality",
+        "heritage",
+        "culture"
+      ],
+      "suggested_duration": "1–2 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Usually free; verify current rules",
+      "opening_hours": "Timings vary by temple schedule",
+      "visitor_notes": [
+        "Follow temple customs",
+        "Expect crowds during major festivals"
+      ],
+      "map_search": "Hanuman Garhi Ayodhya Uttar Pradesh",
+      "tags": [
+        "religious_heritage",
+        "Hanuman",
+        "Uttar Pradesh"
+      ],
+      "city": "Ayodhya"
+    },
+    {
+      "id": "uttar_pradesh_018",
+      "name": "Kanak Bhawan",
+      "category": "religious_heritage",
+      "area": "Ayodhya",
+      "description": "A historic temple dedicated to Rama and Sita, known for its ornate interiors and devotional importance.",
+      "best_for": [
+        "spirituality",
+        "architecture",
+        "culture"
+      ],
+      "suggested_duration": "1–2 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Usually free; verify current rules",
+      "opening_hours": "Timings vary by temple schedule",
+      "visitor_notes": [
+        "Dress respectfully",
+        "Check current temple timings"
+      ],
+      "map_search": "Kanak Bhawan Ayodhya Uttar Pradesh",
+      "tags": [
+        "religious_heritage",
+        "Ramayana",
+        "Uttar Pradesh"
+      ],
+      "city": "Ayodhya"
+    },
+    {
+      "id": "uttar_pradesh_019",
+      "name": "Ram Ki Paidi",
+      "category": "riverfront_heritage",
+      "area": "Ayodhya",
+      "description": "A series of ghats along the Sarayu River, popular for religious visits, evening views, and festivals.",
+      "best_for": [
+        "spirituality",
+        "photography",
+        "culture"
+      ],
+      "suggested_duration": "1–3 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free",
+      "opening_hours": "Accessible throughout the day; local activities vary",
+      "visitor_notes": [
+        "Be careful near the river",
+        "Respect religious ceremonies"
+      ],
+      "map_search": "Ram Ki Paidi Ayodhya Uttar Pradesh",
+      "tags": [
+        "riverfront_heritage",
+        "Ramayana",
+        "Uttar Pradesh"
+      ],
+      "city": "Ayodhya"
+    },
+    {
+      "id": "uttar_pradesh_020",
+      "name": "Ayodhya Ram Katha Park",
+      "category": "cultural_park",
+      "area": "Ayodhya",
+      "description": "A cultural open space used for religious, cultural, and public events in Ayodhya.",
+      "best_for": [
+        "culture",
+        "family",
+        "events"
+      ],
+      "suggested_duration": "1–2 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Usually free; event access may vary",
+      "opening_hours": "Timings vary by event and local administration",
+      "visitor_notes": [
+        "Check event schedules",
+        "Follow park rules"
+      ],
+      "map_search": "Ram Katha Park Ayodhya Uttar Pradesh",
+      "tags": [
+        "cultural_park",
+        "Ramayana",
+        "Uttar Pradesh"
+      ],
+      "city": "Ayodhya"
+    },
+    {
+      "id": "uttar_pradesh_021",
+      "name": "Mathura",
+      "category": "religious_heritage",
+      "area": "Mathura district",
+      "description": "A major pilgrimage city traditionally regarded as the birthplace of Lord Krishna.",
+      "best_for": [
+        "spirituality",
+        "heritage",
+        "culture"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "opening_hours": "Timings vary by attraction",
+      "visitor_notes": [
+        "Dress respectfully at temples",
+        "Expect crowds during festivals"
+      ],
+      "map_search": "Mathura Uttar Pradesh",
+      "tags": [
+        "religious_heritage",
+        "Krishna",
+        "Uttar Pradesh"
+      ],
+      "city": "Mathura"
+    },
+    {
+      "id": "uttar_pradesh_022",
+      "name": "Shri Krishna Janmabhoomi Temple",
+      "category": "religious_heritage",
+      "area": "Mathura",
+      "description": "A major pilgrimage complex associated with the traditional birthplace of Lord Krishna.",
+      "best_for": [
+        "spirituality",
+        "heritage",
+        "culture"
+      ],
+      "suggested_duration": "2–3 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free or paid depending on current arrangements",
+      "opening_hours": "Timings vary by temple schedule",
+      "visitor_notes": [
+        "Security restrictions may apply",
+        "Check current entry and darshan rules"
+      ],
+      "map_search": "Shri Krishna Janmabhoomi Temple Mathura Uttar Pradesh",
+      "tags": [
+        "religious_heritage",
+        "Krishna",
+        "Uttar Pradesh"
+      ],
+      "city": "Mathura"
+    },
+    {
+      "id": "uttar_pradesh_023",
+      "name": "Dwarkadhish Temple Mathura",
+      "category": "religious_heritage",
+      "area": "Mathura",
+      "description": "A historic temple in Mathura known for its Krishna worship, devotional traditions, and ornate setting.",
+      "best_for": [
+        "spirituality",
+        "heritage",
+        "culture"
+      ],
+      "suggested_duration": "1–2 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Usually free; verify current rules",
+      "opening_hours": "Timings vary by temple schedule",
+      "visitor_notes": [
+        "Follow temple customs",
+        "Check festival-day timings"
+      ],
+      "map_search": "Dwarkadhish Temple Mathura Uttar Pradesh",
+      "tags": [
+        "religious_heritage",
+        "Krishna",
+        "Uttar Pradesh"
+      ],
+      "city": "Mathura"
+    },
+    {
+      "id": "uttar_pradesh_024",
+      "name": "Vrindavan",
+      "category": "religious_heritage",
+      "area": "Mathura district",
+      "description": "A sacred town known for Krishna temples, devotional culture, and colorful festivals.",
+      "best_for": [
+        "spirituality",
+        "heritage",
+        "culture"
+      ],
+      "suggested_duration": "3–5 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free or paid depending on attraction",
+      "opening_hours": "Timings vary by temple",
+      "visitor_notes": [
+        "Respect temple customs",
+        "Expect heavy crowds during Holi and Janmashtami"
+      ],
+      "map_search": "Vrindavan Uttar Pradesh",
+      "tags": [
+        "religious_heritage",
+        "Krishna",
+        "Uttar Pradesh"
+      ],
+      "city": "Vrindavan"
+    },
+    {
+      "id": "uttar_pradesh_025",
+      "name": "Banke Bihari Temple",
+      "category": "religious_heritage",
+      "area": "Vrindavan",
+      "description": "One of Vrindavan's best-known Krishna temples and an important center of devotional worship.",
+      "best_for": [
+        "spirituality",
+        "culture",
+        "heritage"
+      ],
+      "suggested_duration": "1–2 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Usually free; verify current rules",
+      "opening_hours": "Timings vary by temple schedule",
+      "visitor_notes": [
+        "Crowds can be significant",
+        "Follow temple security and photography rules"
+      ],
+      "map_search": "Banke Bihari Temple Vrindavan Uttar Pradesh",
+      "tags": [
+        "religious_heritage",
+        "Krishna",
+        "Uttar Pradesh"
+      ],
+      "city": "Vrindavan"
+    },
+    {
+      "id": "uttar_pradesh_026",
+      "name": "ISKCON Vrindavan",
+      "category": "religious_heritage",
+      "area": "Vrindavan",
+      "description": "A prominent Krishna-Balaram temple complex known for devotional activities, architecture, and international pilgrimage.",
+      "best_for": [
+        "spirituality",
+        "culture",
+        "architecture"
+      ],
+      "suggested_duration": "1–2 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Usually free; verify current rules",
+      "opening_hours": "Timings vary by temple schedule",
+      "visitor_notes": [
+        "Maintain temple decorum",
+        "Check current prayer and visitor timings"
+      ],
+      "map_search": "ISKCON Temple Vrindavan Uttar Pradesh",
+      "tags": [
+        "religious_heritage",
+        "Krishna",
+        "Uttar Pradesh"
+      ],
+      "city": "Vrindavan"
+    },
+    {
+      "id": "uttar_pradesh_027",
+      "name": "Prem Mandir",
+      "category": "religious_heritage",
+      "area": "Vrindavan",
+      "description": "A large modern temple complex dedicated to Radha Krishna and Rama Sita, known for detailed devotional sculptures and illumination.",
+      "best_for": [
+        "spirituality",
+        "architecture",
+        "photography"
+      ],
+      "suggested_duration": "2–3 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Usually free; verify current rules",
+      "opening_hours": "Timings vary",
+      "visitor_notes": [
+        "Check evening illumination timings",
+        "Follow temple rules"
+      ],
+      "map_search": "Prem Mandir Vrindavan Uttar Pradesh",
+      "tags": [
+        "religious_heritage",
+        "Krishna",
+        "Uttar Pradesh"
+      ],
+      "city": "Vrindavan"
+    },
+    {
+      "id": "uttar_pradesh_028",
+      "name": "Kusum Sarovar",
+      "category": "heritage_waterbody",
+      "area": "Govardhan, Mathura district",
+      "description": "A historic stepped reservoir associated with the Braj pilgrimage landscape and known for its architectural pavilions.",
+      "best_for": [
+        "heritage",
+        "photography",
+        "spirituality"
+      ],
+      "suggested_duration": "1–2 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Usually free; verify current access",
+      "opening_hours": "Accessible during daytime; local timings vary",
+      "visitor_notes": [
+        "Respect the sacred surroundings",
+        "Avoid littering"
+      ],
+      "map_search": "Kusum Sarovar Govardhan Uttar Pradesh",
+      "tags": [
+        "heritage_waterbody",
+        "Braj",
+        "Uttar Pradesh"
+      ],
+      "city": "Govardhan"
+    },
+    {
+      "id": "uttar_pradesh_029",
+      "name": "Govardhan Hill",
+      "category": "religious_nature",
+      "area": "Govardhan, Mathura district",
+      "description": "A sacred Braj pilgrimage site associated with Krishna and traditionally visited by devotees performing the Govardhan Parikrama.",
+      "best_for": [
+        "spirituality",
+        "nature",
+        "culture"
+      ],
+      "suggested_duration": "3–6 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free",
+      "opening_hours": "Accessible throughout the day; pilgrimage activity varies",
+      "visitor_notes": [
+        "Wear comfortable footwear",
+        "Respect the pilgrimage route and local customs"
+      ],
+      "map_search": "Govardhan Hill Uttar Pradesh",
+      "tags": [
+        "religious_nature",
+        "Krishna",
+        "Uttar Pradesh"
+      ],
+      "city": "Govardhan"
+    },
+    {
+      "id": "uttar_pradesh_030",
+      "name": "Ayodhya Dham Railway Station",
+      "category": "city_landmark",
+      "area": "Ayodhya",
+      "description": "A prominent transport landmark serving visitors traveling to Ayodhya Dham and its pilgrimage attractions.",
+      "best_for": [
+        "travel",
+        "architecture",
+        "city_landmark"
+      ],
+      "suggested_duration": "30–60 minutes",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free for station access; travel tickets separate",
+      "opening_hours": "Operational throughout the day; services vary",
+      "visitor_notes": [
+        "Follow railway security rules",
+        "Do not obstruct passenger movement"
+      ],
+      "map_search": "Ayodhya Dham Railway Station Uttar Pradesh",
+      "tags": [
+        "city_landmark",
+        "Ayodhya",
+        "Uttar Pradesh"
+      ],
+      "city": "Ayodhya"
+    },
+    {
+      "id": "uttar_pradesh_031",
+      "name": "Triveni Sangam",
+      "category": "religious_riverfront",
+      "area": "Prayagraj",
+      "description": "The confluence of the Ganga, Yamuna, and traditionally revered Saraswati rivers, and a major pilgrimage site.",
+      "best_for": [
+        "spirituality",
+        "culture",
+        "photography"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Usually free; boat rides may be paid",
+      "opening_hours": "Accessible during daytime; local conditions vary",
+      "visitor_notes": [
+        "Follow river-safety guidance",
+        "Respect religious activities"
+      ],
+      "map_search": "Triveni Sangam Prayagraj Uttar Pradesh",
+      "tags": [
+        "religious_riverfront",
+        "Kumbh",
+        "Uttar Pradesh"
+      ],
+      "city": "Prayagraj"
+    },
+    {
+      "id": "uttar_pradesh_032",
+      "name": "Kumbh Mela Prayagraj",
+      "category": "religious_festival",
+      "area": "Prayagraj",
+      "description": "A major Hindu pilgrimage festival centered on sacred bathing at the Triveni Sangam and associated religious gatherings.",
+      "best_for": [
+        "spirituality",
+        "culture",
+        "festival"
+      ],
+      "suggested_duration": "1–2 days",
+      "best_time_to_visit": "Festival dates vary; verify the official schedule",
+      "entry_fee": "Generally free for public areas; specific services may be paid",
+      "opening_hours": "Festival activities vary by schedule",
+      "visitor_notes": [
+        "Expect very large crowds during major bathing days",
+        "Follow official crowd, transport, and safety advisories"
+      ],
+      "map_search": "Kumbh Mela Prayagraj Uttar Pradesh",
+      "tags": [
+        "religious_festival",
+        "Kumbh",
+        "Uttar Pradesh"
+      ],
+      "city": "Prayagraj"
+    },
+    {
+      "id": "uttar_pradesh_033",
+      "name": "Allahabad Fort",
+      "category": "fort_heritage",
+      "area": "Prayagraj",
+      "description": "A historic Mughal-era fort near the confluence area, associated with the history of Prayagraj.",
+      "best_for": [
+        "heritage",
+        "history",
+        "architecture"
+      ],
+      "suggested_duration": "1–2 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Access restrictions may apply; verify current rules",
+      "opening_hours": "Timings and public access vary",
+      "visitor_notes": [
+        "Some areas may have restricted access",
+        "Follow security and heritage-site rules"
+      ],
+      "map_search": "Allahabad Fort Prayagraj Uttar Pradesh",
+      "tags": [
+        "fort_heritage",
+        "Prayagraj",
+        "Uttar Pradesh"
+      ],
+      "city": "Prayagraj"
+    },
+    {
+      "id": "uttar_pradesh_034",
+      "name": "Anand Bhavan",
+      "category": "historical_museum",
+      "area": "Prayagraj",
+      "description": "A historic residence and museum associated with the Nehru family and India's modern political history.",
+      "best_for": [
+        "history",
+        "museum",
+        "culture"
+      ],
+      "suggested_duration": "1–2 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Paid; verify current rates",
+      "opening_hours": "Usually daytime; timings vary",
+      "visitor_notes": [
+        "Check museum closure days",
+        "Photography rules may apply"
+      ],
+      "map_search": "Anand Bhavan Prayagraj Uttar Pradesh",
+      "tags": [
+        "historical_museum",
+        "Prayagraj",
+        "Uttar Pradesh"
+      ],
+      "city": "Prayagraj"
+    },
+    {
+      "id": "uttar_pradesh_035",
+      "name": "Vindhyachal Dham",
+      "category": "religious_heritage",
+      "area": "Vindhyachal, Mirzapur district",
+      "description": "A major Shakti pilgrimage destination centered on the Vindhyavasini Devi temple tradition.",
+      "best_for": [
+        "spirituality",
+        "heritage",
+        "culture"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Usually free; verify current rules",
+      "opening_hours": "Timings vary by temple schedule",
+      "visitor_notes": [
+        "Follow temple customs",
+        "Expect crowds during Navratri"
+      ],
+      "map_search": "Vindhyachal Dham Mirzapur Uttar Pradesh",
+      "tags": [
+        "religious_heritage",
+        "Shakti",
+        "Uttar Pradesh"
+      ],
+      "city": "Vindhyachal"
+    },
+    {
+      "id": "uttar_pradesh_036",
+      "name": "Dudhwa National Park",
+      "category": "wildlife_national_park",
+      "area": "Lakhimpur Kheri district",
+      "description": "A protected Terai landscape known for tigers, swamp deer, elephants, and rich birdlife.",
+      "best_for": [
+        "wildlife",
+        "nature",
+        "photography"
+      ],
+      "suggested_duration": "1–2 days",
+      "best_time_to_visit": "November to June; seasonal access varies",
+      "entry_fee": "Paid; verify current rates",
+      "opening_hours": "Safari timings vary by season",
+      "visitor_notes": [
+        "Follow forest department rules",
+        "Book safaris through authorized channels"
+      ],
+      "map_search": "Dudhwa National Park Uttar Pradesh",
+      "tags": [
+        "wildlife_national_park",
+        "nature",
+        "Uttar Pradesh"
+      ],
+      "city": "Dudhwa"
+    },
+    {
+      "id": "uttar_pradesh_037",
+      "name": "Jhansi Fort",
+      "category": "fort_heritage",
+      "area": "Jhansi",
+      "description": "A historic fort associated with Rani Lakshmibai and the events of 1857.",
+      "best_for": [
+        "heritage",
+        "history",
+        "photography"
+      ],
+      "suggested_duration": "2–3 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Paid; verify current rates",
+      "opening_hours": "Usually daytime; timings vary",
+      "visitor_notes": [
+        "Wear comfortable footwear",
+        "Follow monument rules"
+      ],
+      "map_search": "Jhansi Fort Uttar Pradesh",
+      "tags": [
+        "fort_heritage",
+        "Jhansi",
+        "Uttar Pradesh"
+      ],
+      "city": "Jhansi"
+    },
+    {
+      "id": "uttar_pradesh_038",
+      "name": "Chitrakoot",
+      "category": "religious_nature",
+      "area": "Chitrakoot district",
+      "description": "A sacred town associated with the Ramayana and surrounded by forests, rivers, and temples.",
+      "best_for": [
+        "spirituality",
+        "nature",
+        "heritage"
+      ],
+      "suggested_duration": "1–2 days",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free or paid depending on attraction",
+      "opening_hours": "Timings vary by attraction",
+      "visitor_notes": [
+        "Respect religious sites",
+        "Plan transport between dispersed attractions"
+      ],
+      "map_search": "Chitrakoot Uttar Pradesh",
+      "tags": [
+        "religious_nature",
+        "Ramayana",
+        "Uttar Pradesh"
+      ],
+      "city": "Chitrakoot"
+    },
+    {
+      "id": "uttar_pradesh_039",
+      "name": "Ramghat Chitrakoot",
+      "category": "religious_riverfront",
+      "area": "Chitrakoot",
+      "description": "A prominent ghat on the Mandakini River associated with pilgrimage and the Ramayana tradition.",
+      "best_for": [
+        "spirituality",
+        "photography",
+        "culture"
+      ],
+      "suggested_duration": "1–2 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Usually free",
+      "opening_hours": "Accessible during the day; local activities vary",
+      "visitor_notes": [
+        "Respect religious ceremonies",
+        "Take care near the river"
+      ],
+      "map_search": "Ramghat Chitrakoot Uttar Pradesh",
+      "tags": [
+        "religious_riverfront",
+        "Ramayana",
+        "Uttar Pradesh"
+      ],
+      "city": "Chitrakoot"
+    },
+    {
+      "id": "uttar_pradesh_040",
+      "name": "Vindhyavasini Devi Temple",
+      "category": "religious_heritage",
+      "area": "Vindhyachal, Mirzapur district",
+      "description": "A major Shakti shrine dedicated to Goddess Vindhyavasini and an important pilgrimage destination in eastern Uttar Pradesh.",
+      "best_for": [
+        "spirituality",
+        "heritage",
+        "culture"
+      ],
+      "suggested_duration": "1–2 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Usually free; verify current rules",
+      "opening_hours": "Timings vary by temple schedule",
+      "visitor_notes": [
+        "Follow temple customs",
+        "Expect crowds during festivals"
+      ],
+      "map_search": "Vindhyavasini Devi Temple Vindhyachal Uttar Pradesh",
+      "tags": [
+        "religious_heritage",
+        "Shakti",
+        "Uttar Pradesh"
+      ],
+      "city": "Vindhyachal"
+    }
+  ]
+}

@@ -149,6 +149,9 @@ export interface StateRecord {
   source_name?: string;
   creator?: string | null;
   license?: string;
+  total_cities?: number;
+  total_attractions?: number;
+  total_places?: number;
   created_at: string;
 }
 

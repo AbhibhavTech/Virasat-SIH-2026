@@ -1,0 +1,682 @@
+[
+  {
+    "id": "meghalaya_001",
+    "name": "Shillong",
+    "category": "hill_station_city",
+    "area": "East Khasi Hills",
+    "city": "Shillong",
+    "description": "The capital of Meghalaya, known for waterfalls, viewpoints, music, markets, and colonial-era attractions.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to April",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Shillong Meghalaya",
+    "tags": [
+      "hill_station_city",
+      "Meghalaya"
+    ],
+    "city_id": "shillong",
+    "state": "Meghalaya",
+    "state_id": "meghalaya",
+    "country": "India",
+    "summary": "The capital of Meghalaya, known for waterfalls, viewpoints, music, markets, and colonial-era attractions.",
+    "coordinates": {
+      "lat": 25.5788,
+      "lng": 91.8933
+    },
+    "lat": 25.5788,
+    "lng": 91.8933,
+    "latitude": 25.5788,
+    "longitude": 91.8933,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "visiting_info": {
+      "best_time_to_visit": "October to April",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "heritage_status": "State Protected Destination",
+    "data_confidence": "official",
+    "source_url": "https://meghalayatourism.in/destinations/shillong",
+    "source_name": "Meghalaya Tourism Development Corporation",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "meghalaya_002",
+    "name": "Umiam Lake",
+    "category": "lake_recreation",
+    "area": "Ri-Bhoi district",
+    "city": "Umiam",
+    "description": "A large scenic reservoir popular for boating, water activities, and lakeside views.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to April",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Umiam Lake Meghalaya",
+    "tags": [
+      "lake_recreation",
+      "Meghalaya"
+    ],
+    "city_id": "umiam",
+    "state": "Meghalaya",
+    "state_id": "meghalaya",
+    "country": "India",
+    "summary": "A large scenic reservoir popular for boating, water activities, and lakeside views.",
+    "coordinates": {
+      "lat": 25.6667,
+      "lng": 91.8917
+    },
+    "lat": 25.6667,
+    "lng": 91.8917,
+    "latitude": 25.6667,
+    "longitude": 91.8917,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "visiting_info": {
+      "best_time_to_visit": "October to April",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "heritage_status": "State Protected Destination",
+    "data_confidence": "official",
+    "source_url": "https://meghalayatourism.in/destinations/umiam-lake",
+    "source_name": "Meghalaya Tourism Development Corporation",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "meghalaya_003",
+    "name": "Elephant Falls",
+    "category": "waterfall_nature",
+    "area": "Near Shillong",
+    "city": "Shillong",
+    "description": "A multi-tiered waterfall surrounded by lush greenery and an accessible walking trail.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to April",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Elephant Falls Meghalaya",
+    "tags": [
+      "waterfall_nature",
+      "Meghalaya"
+    ],
+    "city_id": "shillong",
+    "state": "Meghalaya",
+    "state_id": "meghalaya",
+    "country": "India",
+    "summary": "A multi-tiered waterfall surrounded by lush greenery and an accessible walking trail.",
+    "coordinates": {
+      "lat": 25.5358,
+      "lng": 91.8228
+    },
+    "lat": 25.5358,
+    "lng": 91.8228,
+    "latitude": 25.5358,
+    "longitude": 91.8228,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "visiting_info": {
+      "best_time_to_visit": "October to April",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "heritage_status": "State Protected Destination",
+    "data_confidence": "official",
+    "source_url": "https://meghalayatourism.in/destinations/elephant-falls",
+    "source_name": "Meghalaya Tourism Development Corporation",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "meghalaya_004",
+    "name": "Shillong Peak",
+    "category": "viewpoint_nature",
+    "area": "East Khasi Hills",
+    "city": "Shillong",
+    "description": "A high viewpoint offering sweeping views of Shillong and the surrounding hills.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to April",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Shillong Peak Meghalaya",
+    "tags": [
+      "viewpoint_nature",
+      "Meghalaya"
+    ],
+    "city_id": "shillong",
+    "state": "Meghalaya",
+    "state_id": "meghalaya",
+    "country": "India",
+    "summary": "A high viewpoint offering sweeping views of Shillong and the surrounding hills.",
+    "coordinates": {
+      "lat": 25.5317,
+      "lng": 91.8542
+    },
+    "lat": 25.5317,
+    "lng": 91.8542,
+    "latitude": 25.5317,
+    "longitude": 91.8542,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "visiting_info": {
+      "best_time_to_visit": "October to April",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "heritage_status": "State Protected Destination",
+    "data_confidence": "official",
+    "source_url": "https://meghalayatourism.in/destinations/shillong-peak",
+    "source_name": "Meghalaya Tourism Development Corporation",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "meghalaya_005",
+    "name": "Cherrapunji",
+    "category": "hill_station_nature",
+    "area": "East Khasi Hills",
+    "city": "Cherrapunji",
+    "description": "A famous high-rainfall destination known for cliffs, waterfalls, caves, and living root bridges.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to April",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Cherrapunji Meghalaya",
+    "tags": [
+      "hill_station_nature",
+      "Meghalaya"
+    ],
+    "city_id": "cherrapunji",
+    "state": "Meghalaya",
+    "state_id": "meghalaya",
+    "country": "India",
+    "summary": "A famous high-rainfall destination known for cliffs, waterfalls, caves, and living root bridges.",
+    "coordinates": {
+      "lat": 25.2702,
+      "lng": 91.7323
+    },
+    "lat": 25.2702,
+    "lng": 91.7323,
+    "latitude": 25.2702,
+    "longitude": 91.7323,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "visiting_info": {
+      "best_time_to_visit": "October to April",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "heritage_status": "State Protected Destination",
+    "data_confidence": "official",
+    "source_url": "https://meghalayatourism.in/destinations/cherrapunji",
+    "source_name": "Meghalaya Tourism Development Corporation",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "meghalaya_006",
+    "name": "Nohkalikai Falls",
+    "category": "waterfall_nature",
+    "area": "Near Cherrapunji",
+    "city": "Cherrapunji",
+    "description": "A dramatic waterfall dropping into a deep blue-green pool.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to April",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Nohkalikai Falls Meghalaya",
+    "tags": [
+      "waterfall_nature",
+      "Meghalaya"
+    ],
+    "city_id": "cherrapunji",
+    "state": "Meghalaya",
+    "state_id": "meghalaya",
+    "country": "India",
+    "summary": "A dramatic waterfall dropping into a deep blue-green pool.",
+    "coordinates": {
+      "lat": 25.2756,
+      "lng": 91.6847
+    },
+    "lat": 25.2756,
+    "lng": 91.6847,
+    "latitude": 25.2756,
+    "longitude": 91.6847,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "visiting_info": {
+      "best_time_to_visit": "October to April",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "heritage_status": "State Protected Destination",
+    "data_confidence": "official",
+    "source_url": "https://meghalayatourism.in/destinations/nohkalikai-falls",
+    "source_name": "Meghalaya Tourism Development Corporation",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "meghalaya_007",
+    "name": "Mawsmai Cave",
+    "category": "cave_nature",
+    "area": "Near Cherrapunji",
+    "city": "Cherrapunji",
+    "description": "A popular limestone cave with narrow passages and striking rock formations.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to April",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Mawsmai Cave Meghalaya",
+    "tags": [
+      "cave_nature",
+      "Meghalaya"
+    ],
+    "city_id": "cherrapunji",
+    "state": "Meghalaya",
+    "state_id": "meghalaya",
+    "country": "India",
+    "summary": "A popular limestone cave with narrow passages and striking rock formations.",
+    "coordinates": {
+      "lat": 25.2447,
+      "lng": 91.7214
+    },
+    "lat": 25.2447,
+    "lng": 91.7214,
+    "latitude": 25.2447,
+    "longitude": 91.7214,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "visiting_info": {
+      "best_time_to_visit": "October to April",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "heritage_status": "State Protected Destination",
+    "data_confidence": "official",
+    "source_url": "https://meghalayatourism.in/destinations/mawsmai-cave",
+    "source_name": "Meghalaya Tourism Development Corporation",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "meghalaya_008",
+    "name": "Living Root Bridge",
+    "category": "heritage_nature",
+    "area": "Nongriat village",
+    "city": "Nongriat",
+    "description": "A remarkable bridge formed by guiding living tree roots across a stream.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to April",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Living Root Bridge Meghalaya",
+    "tags": [
+      "heritage_nature",
+      "Meghalaya"
+    ],
+    "city_id": "nongriat",
+    "state": "Meghalaya",
+    "state_id": "meghalaya",
+    "country": "India",
+    "summary": "A remarkable bridge formed by guiding living tree roots across a stream.",
+    "coordinates": {
+      "lat": 25.2508,
+      "lng": 91.6706
+    },
+    "lat": 25.2508,
+    "lng": 91.6706,
+    "latitude": 25.2508,
+    "longitude": 91.6706,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1511497584788-87676104235f?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1511497584788-87676104235f?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "visiting_info": {
+      "best_time_to_visit": "October to April",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "heritage_status": "State Protected Destination",
+    "data_confidence": "official",
+    "source_url": "https://meghalayatourism.in/destinations/living-root-bridge",
+    "source_name": "Meghalaya Tourism Development Corporation",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "meghalaya_009",
+    "name": "Dawki",
+    "category": "river_border",
+    "area": "West Jaintia Hills",
+    "city": "Dawki",
+    "description": "A scenic border town known for the clear waters of the Umngot River and boating.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to April",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Dawki Meghalaya",
+    "tags": [
+      "river_border",
+      "Meghalaya"
+    ],
+    "city_id": "dawki",
+    "state": "Meghalaya",
+    "state_id": "meghalaya",
+    "country": "India",
+    "summary": "A scenic border town known for the clear waters of the Umngot River and boating.",
+    "coordinates": {
+      "lat": 25.1844,
+      "lng": 92.0197
+    },
+    "lat": 25.1844,
+    "lng": 92.0197,
+    "latitude": 25.1844,
+    "longitude": 92.0197,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "visiting_info": {
+      "best_time_to_visit": "October to April",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "heritage_status": "State Protected Destination",
+    "data_confidence": "official",
+    "source_url": "https://meghalayatourism.in/destinations/dawki",
+    "source_name": "Meghalaya Tourism Development Corporation",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "meghalaya_010",
+    "name": "Mawlynnong",
+    "category": "village_culture",
+    "area": "East Khasi Hills",
+    "city": "Mawlynnong",
+    "description": "A well-known village destination celebrated for cleanliness, greenery, and traditional Khasi surroundings.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to April",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Mawlynnong Meghalaya",
+    "tags": [
+      "village_culture",
+      "Meghalaya"
+    ],
+    "city_id": "mawlynnong",
+    "state": "Meghalaya",
+    "state_id": "meghalaya",
+    "country": "India",
+    "summary": "A well-known village destination celebrated for cleanliness, greenery, and traditional Khasi surroundings.",
+    "coordinates": {
+      "lat": 25.2014,
+      "lng": 91.9161
+    },
+    "lat": 25.2014,
+    "lng": 91.9161,
+    "latitude": 25.2014,
+    "longitude": 91.9161,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "visiting_info": {
+      "best_time_to_visit": "October to April",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "heritage_status": "State Protected Destination",
+    "data_confidence": "official",
+    "source_url": "https://meghalayatourism.in/destinations/mawlynnong",
+    "source_name": "Meghalaya Tourism Development Corporation",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  }
+]

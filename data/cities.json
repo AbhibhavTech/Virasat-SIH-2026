@@ -531,7 +531,17 @@
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&q=80",
     "places_count": 8,
-    "tagline": "Cultural destination in uttar-pradesh"
+    "tagline": "Cultural destination in uttar-pradesh",
+    "total_places": 5,
+    "coordinates": {
+      "lat": 27.1751,
+      "lng": 78.0421
+    },
+    "aliases": [
+      "agra",
+      "agra",
+      "uttar_pradesh_city_03"
+    ]
   },
   {
     "id": "varanasi",
@@ -550,7 +560,17 @@
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=1200&q=80",
     "places_count": 2,
-    "tagline": "Cultural destination in uttar-pradesh"
+    "tagline": "Cultural destination in uttar-pradesh",
+    "total_places": 4,
+    "coordinates": {
+      "lat": 25.3109,
+      "lng": 83.0107
+    },
+    "aliases": [
+      "varanasi",
+      "varanasi",
+      "uttar_pradesh_city_02"
+    ]
   },
   {
     "id": "almora",
@@ -1462,7 +1482,16 @@
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1544735716-403fe359001c?w=1200&auto=format&fit=crop&q=80",
     "places_count": 3,
-    "tagline": "Cultural destination in bihar"
+    "tagline": "Cultural destination in bihar",
+    "total_places": 2,
+    "coordinates": {
+      "lat": 25.1357,
+      "lng": 85.4451
+    },
+    "aliases": [
+      "nalanda",
+      "nalanda"
+    ]
   },
   {
     "id": "patna",
@@ -1481,7 +1510,16 @@
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1609137144815-9f213345a046?w=1200&auto=format&fit=crop&q=80",
     "places_count": 5,
-    "tagline": "Cultural destination in bihar"
+    "tagline": "Cultural destination in bihar",
+    "total_places": 11,
+    "coordinates": {
+      "lat": 25.6105,
+      "lng": 85.1396
+    },
+    "aliases": [
+      "patna",
+      "patna"
+    ]
   },
   {
     "id": "deoghar",
@@ -1785,7 +1823,17 @@
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1506744038138-68495056d5cb?w=1200&auto=format&fit=crop&q=80",
     "places_count": 0,
-    "tagline": "Cultural destination in chhattisgarh"
+    "tagline": "Cultural destination in chhattisgarh",
+    "total_places": 1,
+    "coordinates": {
+      "lat": 18.8954,
+      "lng": 81.3492
+    },
+    "aliases": [
+      "dantewada",
+      "dantewada",
+      "chhattisgarh_city_04"
+    ]
   },
   {
     "id": "jagdalpur",
@@ -1804,7 +1852,17 @@
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1558431384-490525364477?w=1200&auto=format&fit=crop&q=80",
     "places_count": 1,
-    "tagline": "Cultural destination in chhattisgarh"
+    "tagline": "Cultural destination in chhattisgarh",
+    "total_places": 1,
+    "coordinates": {
+      "lat": 19.074,
+      "lng": 82.03
+    },
+    "aliases": [
+      "jagdalpur",
+      "jagdalpur",
+      "chhattisgarh_city_03"
+    ]
   },
   {
     "id": "raipur",
@@ -1823,7 +1881,17 @@
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1596701062353-ae4e36f3b0f3?w=1200&auto=format&fit=crop&q=80",
     "places_count": 4,
-    "tagline": "Cultural destination in chhattisgarh"
+    "tagline": "Cultural destination in chhattisgarh",
+    "total_places": 4,
+    "coordinates": {
+      "lat": 21.28,
+      "lng": 81.76
+    },
+    "aliases": [
+      "raipur",
+      "raipur",
+      "chhattisgarh_city_10"
+    ]
   },
   {
     "id": "rajnandgaon",
@@ -3021,7 +3089,17 @@
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1596405835958-7901e0094b87?w=1200&auto=format&fit=crop&q=80",
     "places_count": 1,
-    "tagline": "Cultural destination in karnataka"
+    "tagline": "Cultural destination in karnataka",
+    "total_places": 1,
+    "coordinates": {
+      "lat": 15.9189,
+      "lng": 75.6766
+    },
+    "aliases": [
+      "badami",
+      "badami",
+      "karnataka_city_05"
+    ]
   },
   {
     "id": "bagalkote",
@@ -3078,7 +3156,17 @@
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1616423640781-5104e80552e0?w=1200&auto=format&fit=crop&q=80",
     "places_count": 6,
-    "tagline": "Cultural destination in karnataka"
+    "tagline": "Cultural destination in karnataka",
+    "total_places": 6,
+    "coordinates": {
+      "lat": 12.9988,
+      "lng": 77.5921
+    },
+    "aliases": [
+      "bengaluru",
+      "bengaluru",
+      "karnataka_city_01"
+    ]
   },
   {
     "id": "bidar",
@@ -3135,7 +3223,17 @@
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1628009848532-98312263ec4f?w=1200&auto=format&fit=crop&q=80",
     "places_count": 1,
-    "tagline": "Cultural destination in karnataka"
+    "tagline": "Cultural destination in karnataka",
+    "total_places": 3,
+    "coordinates": {
+      "lat": 14.5479,
+      "lng": 74.3188
+    },
+    "aliases": [
+      "gokarna",
+      "gokarna",
+      "karnataka_city_11"
+    ]
   },
   {
     "id": "hampi",
@@ -3154,7 +3252,17 @@
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1602216056099-6e73ff3fc277?w=1200&auto=format&fit=crop&q=80",
     "places_count": 1,
-    "tagline": "Cultural destination in karnataka"
+    "tagline": "Cultural destination in karnataka",
+    "total_places": 5,
+    "coordinates": {
+      "lat": 15.335,
+      "lng": 76.46
+    },
+    "aliases": [
+      "hampi",
+      "hampi",
+      "karnataka_city_03"
+    ]
   },
   {
     "id": "kalaburagi",
@@ -3192,7 +3300,17 @@
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1514222134-e80fee1fb106?w=1200&auto=format&fit=crop&q=80",
     "places_count": 0,
-    "tagline": "Cultural destination in karnataka"
+    "tagline": "Cultural destination in karnataka",
+    "total_places": 1,
+    "coordinates": {
+      "lat": 15.3881,
+      "lng": 75.7175
+    },
+    "aliases": [
+      "lakkundi",
+      "lakkundi",
+      "karnataka_city_18"
+    ]
   },
   {
     "id": "mangaluru",
@@ -3216,7 +3334,12 @@
       "Mangalore",
       "mangalore"
     ],
-    "tagline": "Cultural destination in karnataka"
+    "tagline": "Cultural destination in karnataka",
+    "total_places": 2,
+    "coordinates": {
+      "lat": 12.9141,
+      "lng": 74.856
+    }
   },
   {
     "id": "mysuru",
@@ -3235,7 +3358,17 @@
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1606298855675-69213345a05b?w=1200&auto=format&fit=crop&q=80",
     "places_count": 1,
-    "tagline": "Cultural destination in karnataka"
+    "tagline": "Cultural destination in karnataka",
+    "total_places": 4,
+    "coordinates": {
+      "lat": 12.3052,
+      "lng": 76.6552
+    },
+    "aliases": [
+      "mysuru",
+      "mysuru",
+      "karnataka_city_02"
+    ]
   },
   {
     "id": "somnathpura",
@@ -3273,7 +3406,17 @@
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1598890777035-ed046ed06726?w=1200&auto=format&fit=crop&q=80",
     "places_count": 0,
-    "tagline": "Cultural destination in karnataka"
+    "tagline": "Cultural destination in karnataka",
+    "total_places": 2,
+    "coordinates": {
+      "lat": 13.3409,
+      "lng": 74.7521
+    },
+    "aliases": [
+      "udupi",
+      "udupi",
+      "karnataka_city_15"
+    ]
   },
   {
     "id": "vijayapura",
@@ -3292,7 +3435,17 @@
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1627894483219-5461di925165?w=1200&auto=format&fit=crop&q=80",
     "places_count": 0,
-    "tagline": "Cultural destination in karnataka"
+    "tagline": "Cultural destination in karnataka",
+    "total_places": 1,
+    "coordinates": {
+      "lat": 16.8302,
+      "lng": 75.7356
+    },
+    "aliases": [
+      "vijayapura",
+      "vijayapura",
+      "karnataka_city_04"
+    ]
   },
   {
     "id": "alappuzha",
@@ -5166,7 +5319,12 @@
     "created_at": "2026-09-10T20:58:32.104Z",
     "updated_at": "2026-09-10T20:58:32.104Z",
     "verification_status": "VERIFICATION_REQUIRED",
-    "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification."
+    "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+    "total_places": 6,
+    "coordinates": {
+      "lat": 26.7922,
+      "lng": 82.1998
+    }
   },
   {
     "id": "bareilly",
@@ -5222,7 +5380,12 @@
     "created_at": "2026-09-10T20:58:32.104Z",
     "updated_at": "2026-09-10T20:58:32.104Z",
     "verification_status": "VERIFICATION_REQUIRED",
-    "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification."
+    "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+    "total_places": 2,
+    "coordinates": {
+      "lat": 25.1764,
+      "lng": 80.8661
+    }
   },
   {
     "id": "jhansi",
@@ -5250,7 +5413,12 @@
     "created_at": "2026-09-10T20:58:32.104Z",
     "updated_at": "2026-09-10T20:58:32.104Z",
     "verification_status": "VERIFICATION_REQUIRED",
-    "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification."
+    "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+    "total_places": 1,
+    "coordinates": {
+      "lat": 25.4572,
+      "lng": 78.5772
+    }
   },
   {
     "id": "kanpur",
@@ -5306,7 +5474,12 @@
     "created_at": "2026-09-10T20:58:32.104Z",
     "updated_at": "2026-09-10T20:58:32.104Z",
     "verification_status": "VERIFICATION_REQUIRED",
-    "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification."
+    "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+    "total_places": 6,
+    "coordinates": {
+      "lat": 26.8467,
+      "lng": 80.9462
+    }
   },
   {
     "id": "mathura",
@@ -5334,7 +5507,12 @@
     "created_at": "2026-09-10T20:58:32.104Z",
     "updated_at": "2026-09-10T20:58:32.104Z",
     "verification_status": "VERIFICATION_REQUIRED",
-    "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification."
+    "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+    "total_places": 3,
+    "coordinates": {
+      "lat": 27.4924,
+      "lng": 77.6737
+    }
   },
   {
     "id": "prayagraj",
@@ -5362,7 +5540,12 @@
     "created_at": "2026-09-10T20:58:32.104Z",
     "updated_at": "2026-09-10T20:58:32.104Z",
     "verification_status": "VERIFICATION_REQUIRED",
-    "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification."
+    "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
+    "total_places": 4,
+    "coordinates": {
+      "lat": 25.4261,
+      "lng": 81.8847
+    }
   },
   {
     "id": "bathinda",
@@ -5423,6 +5606,1602 @@
     "places_count": 1,
     "tagline": "Northern India's Ramsar Wetland Sanctuary",
     "state": "Punjab"
+  },
+  {
+    "id": "santiniketan",
+    "state_id": "west-bengal",
+    "name": "Santiniketan",
+    "slug": "santiniketan",
+    "entity_type": "city",
+    "district": "Birbhum",
+    "latitude": 23.6788,
+    "longitude": 87.6917,
+    "lat": 23.6788,
+    "lng": 87.6917,
+    "short_description": "UNESCO World Heritage cultural town established by Rabindranath Tagore, home to Visva-Bharati University and vibrant Bengali arts and heritage traditions.",
+    "description": "UNESCO World Heritage cultural town established by Rabindranath Tagore, home to Visva-Bharati University and vibrant Bengali arts and heritage traditions.",
+    "official_url": "https://wbtourism.gov.in",
+    "status": "active",
+    "hero_image_url": "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=1200&auto=format&fit=crop&q=80",
+    "places_count": 2,
+    "tagline": "Cultural destination in west-bengal"
+  },
+  {
+    "id": "hanamkonda",
+    "state_id": "telangana",
+    "name": "Hanamkonda",
+    "slug": "hanamkonda",
+    "entity_type": "city",
+    "district": "Hanamkonda",
+    "latitude": 18.0131,
+    "longitude": 79.5449,
+    "lat": 18.0131,
+    "lng": 79.5449,
+    "short_description": "Historic Kakatiya twin city of Warangal, home to the architectural wonder Thousand Pillar Temple dedicated to Shiva, Vishnu and Surya.",
+    "description": "Historic Kakatiya twin city of Warangal, home to the architectural wonder Thousand Pillar Temple dedicated to Shiva, Vishnu and Surya.",
+    "official_url": "https://tourism.telangana.gov.in",
+    "status": "active",
+    "hero_image_url": "https://images.unsplash.com/photo-1518709268811-ae56080f5489?w=1200&auto=format&fit=crop&q=80",
+    "places_count": 1,
+    "tagline": "Cultural destination in telangana"
+  },
+  {
+    "id": "yadadri-bhuvanagiri",
+    "state_id": "telangana",
+    "name": "Yadadri Bhuvanagiri",
+    "slug": "yadadri-bhuvanagiri",
+    "entity_type": "city",
+    "district": "Yadadri Bhuvanagiri",
+    "latitude": 17.5108,
+    "longitude": 78.8899,
+    "lat": 17.5108,
+    "lng": 78.8899,
+    "short_description": "Heritage district renowned for the massive monolithic Bhongir Fort perched on an egg-shaped rock hill.",
+    "description": "Heritage district renowned for the massive monolithic Bhongir Fort perched on an egg-shaped rock hill.",
+    "official_url": "https://tourism.telangana.gov.in",
+    "status": "active",
+    "hero_image_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80",
+    "places_count": 1,
+    "tagline": "Cultural destination in telangana"
+  },
+  {
+    "id": "yadadri",
+    "state_id": "telangana",
+    "name": "Yadadri",
+    "slug": "yadadri",
+    "entity_type": "city",
+    "district": "Yadadri Bhuvanagiri",
+    "latitude": 17.5878,
+    "longitude": 78.9489,
+    "lat": 17.5878,
+    "lng": 78.9489,
+    "short_description": "Major pilgrimage center famed for the monumental Dravidian-style Sri Lakshmi Narasimha Swamy Temple atop Yadagirigutta.",
+    "description": "Major pilgrimage center famed for the monumental Dravidian-style Sri Lakshmi Narasimha Swamy Temple atop Yadagirigutta.",
+    "official_url": "https://tourism.telangana.gov.in",
+    "status": "active",
+    "hero_image_url": "https://images.unsplash.com/photo-1606298855674-501d842d900e?w=1200&auto=format&fit=crop&q=80",
+    "places_count": 1,
+    "tagline": "Cultural destination in telangana"
+  },
+  {
+    "id": "nirmal",
+    "state_id": "telangana",
+    "name": "Nirmal",
+    "slug": "nirmal",
+    "entity_type": "city",
+    "district": "Nirmal",
+    "latitude": 19.0964,
+    "longitude": 78.3434,
+    "lat": 19.0964,
+    "lng": 78.3434,
+    "short_description": "Town famous for traditional Nirmal wooden toys, craft paintings, and the breathtaking Kuntala Waterfall.",
+    "description": "Town famous for traditional Nirmal wooden toys, craft paintings, and the breathtaking Kuntala Waterfall.",
+    "official_url": "https://tourism.telangana.gov.in",
+    "status": "active",
+    "hero_image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=80",
+    "places_count": 1,
+    "tagline": "Cultural destination in telangana"
+  },
+  {
+    "id": "bhadradri-kothagudem",
+    "state_id": "telangana",
+    "name": "Bhadradri Kothagudem",
+    "slug": "bhadradri-kothagudem",
+    "entity_type": "city",
+    "district": "Bhadradri Kothagudem",
+    "latitude": 17.55,
+    "longitude": 80.6167,
+    "lat": 17.55,
+    "lng": 80.6167,
+    "short_description": "Forested district home to the Kinnerasani Wildlife Sanctuary and sacred Godavari river pilgrimage corridors.",
+    "description": "Forested district home to the Kinnerasani Wildlife Sanctuary and sacred Godavari river pilgrimage corridors.",
+    "official_url": "https://tourism.telangana.gov.in",
+    "status": "active",
+    "hero_image_url": "https://images.unsplash.com/photo-1544735716-958kj803556b?w=1200&auto=format&fit=crop&q=80",
+    "places_count": 1,
+    "tagline": "Cultural destination in telangana"
+  },
+  {
+    "id": "nalgonda",
+    "state_id": "telangana",
+    "name": "Nalgonda",
+    "slug": "nalgonda",
+    "entity_type": "city",
+    "district": "Nalgonda",
+    "latitude": 17.0575,
+    "longitude": 79.2684,
+    "lat": 17.0575,
+    "lng": 79.2684,
+    "short_description": "Historic district home to the magnificent Nagarjuna Sagar Dam masonry marvel and ancient Buddhist archaeological relics.",
+    "description": "Historic district home to the magnificent Nagarjuna Sagar Dam masonry marvel and ancient Buddhist archaeological relics.",
+    "official_url": "https://tourism.telangana.gov.in",
+    "status": "active",
+    "hero_image_url": "https://images.unsplash.com/photo-1609137144820-e47689014591?w=1200&auto=format&fit=crop&q=80",
+    "places_count": 1,
+    "tagline": "Cultural destination in telangana"
+  },
+  {
+    "id": "mon",
+    "state_id": "nagaland",
+    "name": "Mon",
+    "slug": "mon",
+    "entity_type": "city",
+    "district": "Mon",
+    "latitude": 26.8398,
+    "longitude": 95.1486,
+    "lat": 26.8398,
+    "lng": 95.1486,
+    "short_description": "Home of the Konyak Nagas, famous for traditional longhouses and cross-border Longwa village.",
+    "description": "Home of the Konyak Nagas, famous for traditional longhouses and cross-border Longwa village.",
+    "official_url": "https://tourism.nagaland.gov.in",
+    "status": "active",
+    "hero_image_url": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1200&auto=format&fit=crop&q=80",
+    "places_count": 1,
+    "tagline": "Land of the Konyaks"
+  },
+  {
+    "id": "phek",
+    "state_id": "nagaland",
+    "name": "Phek",
+    "slug": "phek",
+    "entity_type": "city",
+    "district": "Phek",
+    "latitude": 25.5684,
+    "longitude": 94.8877,
+    "lat": 25.5684,
+    "lng": 94.8877,
+    "short_description": "Pristine mountain district known for Shilloi Lake and terraced cultivation.",
+    "description": "Pristine mountain district known for Shilloi Lake and terraced cultivation.",
+    "official_url": "https://tourism.nagaland.gov.in",
+    "status": "active",
+    "hero_image_url": "https://images.unsplash.com/photo-1439853941329-a9f2a44052a1?w=1200&auto=format&fit=crop&q=80",
+    "places_count": 1,
+    "tagline": "Scenic Foothills & Legendary Lakes"
+  },
+  {
+    "id": "peren",
+    "state_id": "nagaland",
+    "name": "Peren",
+    "slug": "peren",
+    "entity_type": "city",
+    "district": "Peren",
+    "latitude": 25.5333,
+    "longitude": 93.75,
+    "lat": 25.5333,
+    "lng": 93.75,
+    "short_description": "Land of the Zeliangrong Nagas, home to Mount Pauna and Intangki National Park.",
+    "description": "Land of the Zeliangrong Nagas, home to Mount Pauna and Intangki National Park.",
+    "official_url": "https://tourism.nagaland.gov.in",
+    "status": "active",
+    "hero_image_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1200&auto=format&fit=crop&q=80",
+    "places_count": 2,
+    "tagline": "Biodiversity Haven of Nagaland"
+  },
+  {
+    "id": "umiam",
+    "state_id": "meghalaya",
+    "name": "Umiam",
+    "slug": "umiam",
+    "entity_type": "city",
+    "district": "Ri-Bhoi",
+    "latitude": 25.6667,
+    "longitude": 91.8917,
+    "lat": 25.6667,
+    "lng": 91.8917,
+    "short_description": "Lakeside destination famous for the sprawling Umiam Lake and water sports.",
+    "description": "Lakeside destination famous for the sprawling Umiam Lake and water sports.",
+    "official_url": "https://meghalayatourism.in",
+    "status": "active",
+    "hero_image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
+    "places_count": 1,
+    "tagline": "Scenic Lakeside Retreat"
+  },
+  {
+    "id": "cherrapunji",
+    "state_id": "meghalaya",
+    "name": "Cherrapunji",
+    "slug": "cherrapunji",
+    "entity_type": "city",
+    "district": "East Khasi Hills",
+    "latitude": 25.2702,
+    "longitude": 91.7323,
+    "lat": 25.2702,
+    "lng": 91.7323,
+    "short_description": "World-famous high-rainfall destination known for Nohkalikai Falls and limestone caves.",
+    "description": "World-famous high-rainfall destination known for Nohkalikai Falls and limestone caves.",
+    "official_url": "https://meghalayatourism.in",
+    "status": "active",
+    "hero_image_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&auto=format&fit=crop&q=80",
+    "places_count": 3,
+    "tagline": "Land of Rain & Waterfalls"
+  },
+  {
+    "id": "nongriat",
+    "state_id": "meghalaya",
+    "name": "Nongriat",
+    "slug": "nongriat",
+    "entity_type": "city",
+    "district": "East Khasi Hills",
+    "latitude": 25.2508,
+    "longitude": 91.6706,
+    "lat": 25.2508,
+    "lng": 91.6706,
+    "short_description": "Enchanted valley village renowned globally for the living root bridges.",
+    "description": "Enchanted valley village renowned globally for the living root bridges.",
+    "official_url": "https://meghalayatourism.in",
+    "status": "active",
+    "hero_image_url": "https://images.unsplash.com/photo-1511497584788-87676104235f?w=1200&auto=format&fit=crop&q=80",
+    "places_count": 1,
+    "tagline": "Home of the Living Root Bridges"
+  },
+  {
+    "id": "dawki",
+    "state_id": "meghalaya",
+    "name": "Dawki",
+    "slug": "dawki",
+    "entity_type": "city",
+    "district": "West Jaintia Hills",
+    "latitude": 25.1844,
+    "longitude": 92.0197,
+    "lat": 25.1844,
+    "lng": 92.0197,
+    "short_description": "Border town famed for the emerald-clear waters of the Umngot River.",
+    "description": "Border town famed for the emerald-clear waters of the Umngot River.",
+    "official_url": "https://meghalayatourism.in",
+    "status": "active",
+    "hero_image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=80",
+    "places_count": 1,
+    "tagline": "Crystal Clear Waters of Umngot"
+  },
+  {
+    "id": "mawlynnong",
+    "state_id": "meghalaya",
+    "name": "Mawlynnong",
+    "slug": "mawlynnong",
+    "entity_type": "city",
+    "district": "East Khasi Hills",
+    "latitude": 25.2014,
+    "longitude": 91.9161,
+    "lat": 25.2014,
+    "lng": 91.9161,
+    "short_description": "Asia’s cleanest village, celebrated for eco-friendly living and traditional Khasi culture.",
+    "description": "Asia’s cleanest village, celebrated for eco-friendly living and traditional Khasi culture.",
+    "official_url": "https://meghalayatourism.in",
+    "status": "active",
+    "hero_image_url": "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=1200&auto=format&fit=crop&q=80",
+    "places_count": 1,
+    "tagline": "God’s Own Garden"
+  },
+  {
+    "id": "loktak",
+    "state_id": "manipur",
+    "name": "Loktak",
+    "slug": "loktak",
+    "entity_type": "city",
+    "district": "Bishnupur",
+    "latitude": 24.55,
+    "longitude": 93.8,
+    "lat": 24.55,
+    "lng": 93.8,
+    "short_description": "Scenic freshwater lake destination with floating phumdis and Keibul Lamjao National Park.",
+    "description": "Scenic freshwater lake destination with floating phumdis and Keibul Lamjao National Park.",
+    "official_url": "https://manipurtourism.gov.in",
+    "status": "active",
+    "hero_image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
+    "places_count": 2,
+    "tagline": "The Floating Lake Sanctuary"
+  },
+  {
+    "id": "ukhrul",
+    "state_id": "manipur",
+    "name": "Ukhrul",
+    "slug": "ukhrul",
+    "entity_type": "city",
+    "district": "Ukhrul",
+    "latitude": 25.1167,
+    "longitude": 94.4333,
+    "lat": 25.1167,
+    "lng": 94.4333,
+    "short_description": "Hill town famous for Shirui Hills, the rare Shirui lily, and Tangkhul Naga heritage.",
+    "description": "Hill town famous for Shirui Hills, the rare Shirui lily, and Tangkhul Naga heritage.",
+    "official_url": "https://manipurtourism.gov.in",
+    "status": "active",
+    "hero_image_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&auto=format&fit=crop&q=80",
+    "places_count": 1,
+    "tagline": "Home of the Shirui Lily"
+  },
+  {
+    "id": "dzukou",
+    "state_id": "manipur",
+    "name": "Dzukou Valley",
+    "slug": "dzukou",
+    "entity_type": "valley",
+    "district": "Senapati",
+    "latitude": 25.5562,
+    "longitude": 94.0722,
+    "lat": 25.5562,
+    "lng": 94.0722,
+    "short_description": "Spectacular trekking valley on the Manipur-Nagaland border with emerald meadows.",
+    "description": "Spectacular trekking valley on the Manipur-Nagaland border with emerald meadows.",
+    "official_url": "https://manipurtourism.gov.in",
+    "status": "active",
+    "hero_image_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1200&auto=format&fit=crop&q=80",
+    "places_count": 1,
+    "tagline": "Valley of Flowers of the East"
+  },
+  {
+    "id": "khongjom",
+    "state_id": "manipur",
+    "name": "Khongjom",
+    "slug": "khongjom",
+    "entity_type": "town",
+    "district": "Thoubal",
+    "latitude": 24.5528,
+    "longitude": 93.9939,
+    "lat": 24.5528,
+    "lng": 93.9939,
+    "short_description": "Historic war memorial site honoring the soldiers of the Anglo-Manipur War of 1891.",
+    "description": "Historic war memorial site honoring the soldiers of the Anglo-Manipur War of 1891.",
+    "official_url": "https://manipurtourism.gov.in",
+    "status": "active",
+    "hero_image_url": "https://images.unsplash.com/photo-1588096344356-9b634839cf9e?w=1200&auto=format&fit=crop&q=80",
+    "places_count": 1,
+    "tagline": "Symbol of Valor & Patriotism"
+  },
+  {
+    "id": "bishnupur",
+    "state_id": "manipur",
+    "name": "Bishnupur",
+    "slug": "bishnupur",
+    "entity_type": "city",
+    "district": "Bishnupur",
+    "latitude": 24.6333,
+    "longitude": 93.7667,
+    "lat": 24.6333,
+    "lng": 93.7667,
+    "short_description": "Historic temple district of Manipur with ancient terracotta architecture.",
+    "description": "Historic temple district of Manipur with ancient terracotta architecture.",
+    "official_url": "https://manipurtourism.gov.in",
+    "status": "active",
+    "hero_image_url": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1200&auto=format&fit=crop&q=80",
+    "places_count": 0,
+    "tagline": "Ancient Terracotta Heritage"
+  },
+  {
+    "id": "lawngtlai",
+    "state_id": "mizoram",
+    "name": "Lawngtlai",
+    "slug": "lawngtlai",
+    "entity_type": "city",
+    "district": "Lawngtlai",
+    "latitude": 22.6319,
+    "longitude": 93.0417,
+    "lat": 22.6319,
+    "lng": 93.0417,
+    "short_description": "Southern mountain region home to Phawngpui Blue Mountain National Park.",
+    "description": "Southern mountain region home to Phawngpui Blue Mountain National Park.",
+    "official_url": "https://tourism.mizoram.gov.in",
+    "status": "active",
+    "hero_image_url": "https://images.unsplash.com/photo-1511497584788-87676104235f?w=1200&auto=format&fit=crop&q=80",
+    "places_count": 1,
+    "tagline": "The Blue Mountain Realm"
+  },
+  {
+    "id": "saitual",
+    "state_id": "mizoram",
+    "name": "Saitual",
+    "slug": "saitual",
+    "entity_type": "city",
+    "district": "Saitual",
+    "latitude": 23.7333,
+    "longitude": 92.95,
+    "lat": 23.7333,
+    "lng": 92.95,
+    "short_description": "Peaceful destination renowned for Tam Dil, the largest natural lake in Mizoram.",
+    "description": "Peaceful destination renowned for Tam Dil, the largest natural lake in Mizoram.",
+    "official_url": "https://tourism.mizoram.gov.in",
+    "status": "active",
+    "hero_image_url": "https://images.unsplash.com/photo-1439853941329-a9f2a44052a1?w=1200&auto=format&fit=crop&q=80",
+    "places_count": 1,
+    "tagline": "Tranquil Waters of Tam Dil"
+  },
+  {
+    "id": "siaha",
+    "state_id": "mizoram",
+    "name": "Siaha",
+    "slug": "siaha",
+    "entity_type": "city",
+    "district": "Siaha",
+    "latitude": 22.2036,
+    "longitude": 92.8878,
+    "lat": 22.2036,
+    "lng": 92.8878,
+    "short_description": "Mara autonomous region featuring Palak Lake, a legendary natural water body.",
+    "description": "Mara autonomous region featuring Palak Lake, a legendary natural water body.",
+    "official_url": "https://tourism.mizoram.gov.in",
+    "status": "active",
+    "hero_image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=80",
+    "places_count": 1,
+    "tagline": "Legendary Palak Lake Sanctuary"
+  },
+  {
+    "id": "hmuifang",
+    "state_id": "mizoram",
+    "name": "Hmuifang",
+    "slug": "hmuifang",
+    "entity_type": "town",
+    "district": "Aizawl",
+    "latitude": 23.45,
+    "longitude": 92.75,
+    "lat": 23.45,
+    "lng": 92.75,
+    "short_description": "Scenic hill station known for lush virgin forests and eco-tourism cliffs.",
+    "description": "Scenic hill station known for lush virgin forests and eco-tourism cliffs.",
+    "official_url": "https://tourism.mizoram.gov.in",
+    "status": "active",
+    "hero_image_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&auto=format&fit=crop&q=80",
+    "places_count": 0,
+    "tagline": "Virgin Mountain Escapes"
+  },
+  {
+    "id": "bodh-gaya",
+    "name": "Bodh Gaya",
+    "state": "Bihar",
+    "state_id": "bihar",
+    "coordinates": {
+      "lat": 24.6961,
+      "lng": 84.9869
+    },
+    "tagline": "Experience Bodh Gaya, Bihar",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Bodh Gaya.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 2,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "bodh-gaya",
+      "bodh gaya",
+      "bodh_gaya"
+    ]
+  },
+  {
+    "id": "rajgir",
+    "name": "Rajgir",
+    "state": "Bihar",
+    "state_id": "bihar",
+    "coordinates": {
+      "lat": 25.0306,
+      "lng": 85.4219
+    },
+    "tagline": "Experience Rajgir, Bihar",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Rajgir.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 3,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "rajgir",
+      "rajgir"
+    ]
+  },
+  {
+    "id": "pawapuri",
+    "name": "Pawapuri",
+    "state": "Bihar",
+    "state_id": "bihar",
+    "coordinates": {
+      "lat": 25.0934,
+      "lng": 85.5348
+    },
+    "tagline": "Experience Pawapuri, Bihar",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Pawapuri.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "pawapuri",
+      "pawapuri"
+    ]
+  },
+  {
+    "id": "bhagalpur",
+    "name": "Bhagalpur",
+    "state": "Bihar",
+    "state_id": "bihar",
+    "coordinates": {
+      "lat": 25.3283,
+      "lng": 87.2847
+    },
+    "tagline": "Experience Bhagalpur, Bihar",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Bhagalpur.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 2,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "bhagalpur",
+      "bhagalpur"
+    ]
+  },
+  {
+    "id": "valmiki-nagar",
+    "name": "Valmiki Nagar",
+    "state": "Bihar",
+    "state_id": "bihar",
+    "coordinates": {
+      "lat": 27.4333,
+      "lng": 83.9167
+    },
+    "tagline": "Experience Valmiki Nagar, Bihar",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Valmiki Nagar.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "valmiki-nagar",
+      "valmiki nagar",
+      "valmiki_nagar"
+    ]
+  },
+  {
+    "id": "kesaria",
+    "name": "Kesaria",
+    "state": "Bihar",
+    "state_id": "bihar",
+    "coordinates": {
+      "lat": 26.3571,
+      "lng": 84.8821
+    },
+    "tagline": "Experience Kesaria, Bihar",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Kesaria.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "kesaria",
+      "kesaria"
+    ]
+  },
+  {
+    "id": "vaishali",
+    "name": "Vaishali",
+    "state": "Bihar",
+    "state_id": "bihar",
+    "coordinates": {
+      "lat": 25.9904,
+      "lng": 85.1278
+    },
+    "tagline": "Experience Vaishali, Bihar",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Vaishali.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 2,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "vaishali",
+      "vaishali"
+    ]
+  },
+  {
+    "id": "bhabua",
+    "name": "Bhabua",
+    "state": "Bihar",
+    "state_id": "bihar",
+    "coordinates": {
+      "lat": 24.9386,
+      "lng": 83.5683
+    },
+    "tagline": "Experience Bhabua, Bihar",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Bhabua.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "bhabua",
+      "bhabua"
+    ]
+  },
+  {
+    "id": "jehanabad",
+    "name": "Jehanabad",
+    "state": "Bihar",
+    "state_id": "bihar",
+    "coordinates": {
+      "lat": 25.0069,
+      "lng": 85.0628
+    },
+    "tagline": "Experience Jehanabad, Bihar",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Jehanabad.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "jehanabad",
+      "jehanabad"
+    ]
+  },
+  {
+    "id": "sitamarhi",
+    "name": "Sitamarhi",
+    "state": "Bihar",
+    "state_id": "bihar",
+    "coordinates": {
+      "lat": 26.5944,
+      "lng": 85.4912
+    },
+    "tagline": "Experience Sitamarhi, Bihar",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Sitamarhi.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "sitamarhi",
+      "sitamarhi"
+    ]
+  },
+  {
+    "id": "munger",
+    "name": "Munger",
+    "state": "Bihar",
+    "state_id": "bihar",
+    "coordinates": {
+      "lat": 25.3757,
+      "lng": 86.4744
+    },
+    "tagline": "Experience Munger, Bihar",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Munger.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "munger",
+      "munger"
+    ]
+  },
+  {
+    "id": "patna-city",
+    "name": "Patna City",
+    "state": "Bihar",
+    "state_id": "bihar",
+    "coordinates": {
+      "lat": 25.596,
+      "lng": 85.228
+    },
+    "tagline": "Experience Patna City, Bihar",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Patna City.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "patna-city",
+      "patna city",
+      "patna_city"
+    ]
+  },
+  {
+    "id": "vrindavan",
+    "name": "Vrindavan",
+    "state": "Uttar Pradesh",
+    "state_id": "uttar-pradesh",
+    "coordinates": {
+      "lat": 27.5806,
+      "lng": 77.7006
+    },
+    "tagline": "Experience Vrindavan, Uttar Pradesh",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Vrindavan.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 4,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "vrindavan",
+      "vrindavan",
+      "uttar_pradesh_city_06"
+    ]
+  },
+  {
+    "id": "govardhan",
+    "name": "Govardhan",
+    "state": "Uttar Pradesh",
+    "state_id": "uttar-pradesh",
+    "coordinates": {
+      "lat": 27.5033,
+      "lng": 77.4697
+    },
+    "tagline": "Experience Govardhan, Uttar Pradesh",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Govardhan.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 2,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "govardhan",
+      "govardhan",
+      "uttar_pradesh_city_07"
+    ]
+  },
+  {
+    "id": "vindhyachal",
+    "name": "Vindhyachal",
+    "state": "Uttar Pradesh",
+    "state_id": "uttar-pradesh",
+    "coordinates": {
+      "lat": 25.1614,
+      "lng": 82.5029
+    },
+    "tagline": "Experience Vindhyachal, Uttar Pradesh",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Vindhyachal.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 2,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "vindhyachal",
+      "vindhyachal",
+      "uttar_pradesh_city_09"
+    ]
+  },
+  {
+    "id": "dudhwa",
+    "name": "Dudhwa",
+    "state": "Uttar Pradesh",
+    "state_id": "uttar-pradesh",
+    "coordinates": {
+      "lat": 28.5132,
+      "lng": 80.6482
+    },
+    "tagline": "Experience Dudhwa, Uttar Pradesh",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Dudhwa.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "dudhwa",
+      "dudhwa",
+      "uttar_pradesh_city_10"
+    ]
+  },
+  {
+    "id": "pattadakal",
+    "name": "Pattadakal",
+    "state": "Karnataka",
+    "state_id": "karnataka",
+    "coordinates": {
+      "lat": 15.9486,
+      "lng": 75.8161
+    },
+    "tagline": "Experience Pattadakal, Karnataka",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Pattadakal.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "pattadakal",
+      "pattadakal",
+      "karnataka_city_06"
+    ]
+  },
+  {
+    "id": "aihole",
+    "name": "Aihole",
+    "state": "Karnataka",
+    "state_id": "karnataka",
+    "coordinates": {
+      "lat": 16.0194,
+      "lng": 75.8822
+    },
+    "tagline": "Experience Aihole, Karnataka",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Aihole.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "aihole",
+      "aihole",
+      "karnataka_city_07"
+    ]
+  },
+  {
+    "id": "madikeri",
+    "name": "Madikeri",
+    "state": "Karnataka",
+    "state_id": "karnataka",
+    "coordinates": {
+      "lat": 12.4244,
+      "lng": 75.7382
+    },
+    "tagline": "Experience Madikeri, Karnataka",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Madikeri.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 3,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "madikeri",
+      "madikeri",
+      "karnataka_city_08"
+    ]
+  },
+  {
+    "id": "chikkamagaluru",
+    "name": "Chikkamagaluru",
+    "state": "Karnataka",
+    "state_id": "karnataka",
+    "coordinates": {
+      "lat": 13.3161,
+      "lng": 75.772
+    },
+    "tagline": "Experience Chikkamagaluru, Karnataka",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Chikkamagaluru.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 2,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "chikkamagaluru",
+      "chikkamagaluru",
+      "karnataka_city_09"
+    ]
+  },
+  {
+    "id": "sagara",
+    "name": "Sagara",
+    "state": "Karnataka",
+    "state_id": "karnataka",
+    "coordinates": {
+      "lat": 14.2285,
+      "lng": 74.8122
+    },
+    "tagline": "Experience Sagara, Karnataka",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Sagara.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "sagara",
+      "sagara",
+      "karnataka_city_10"
+    ]
+  },
+  {
+    "id": "murudeshwar",
+    "name": "Murudeshwar",
+    "state": "Karnataka",
+    "state_id": "karnataka",
+    "coordinates": {
+      "lat": 14.0942,
+      "lng": 74.4849
+    },
+    "tagline": "Experience Murudeshwar, Karnataka",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Murudeshwar.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "murudeshwar",
+      "murudeshwar",
+      "karnataka_city_12"
+    ]
+  },
+  {
+    "id": "bandipur",
+    "name": "Bandipur",
+    "state": "Karnataka",
+    "state_id": "karnataka",
+    "coordinates": {
+      "lat": 11.6664,
+      "lng": 76.6334
+    },
+    "tagline": "Experience Bandipur, Karnataka",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Bandipur.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "bandipur",
+      "bandipur",
+      "karnataka_city_13"
+    ]
+  },
+  {
+    "id": "nagarhole",
+    "name": "Nagarhole",
+    "state": "Karnataka",
+    "state_id": "karnataka",
+    "coordinates": {
+      "lat": 12.0298,
+      "lng": 76.1557
+    },
+    "tagline": "Experience Nagarhole, Karnataka",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Nagarhole.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "nagarhole",
+      "nagarhole",
+      "karnataka_city_14"
+    ]
+  },
+  {
+    "id": "chitradurga",
+    "name": "Chitradurga",
+    "state": "Karnataka",
+    "state_id": "karnataka",
+    "coordinates": {
+      "lat": 14.2208,
+      "lng": 76.3986
+    },
+    "tagline": "Experience Chitradurga, Karnataka",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Chitradurga.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "chitradurga",
+      "chitradurga",
+      "karnataka_city_17"
+    ]
+  },
+  {
+    "id": "dandeli",
+    "name": "Dandeli",
+    "state": "Karnataka",
+    "state_id": "karnataka",
+    "coordinates": {
+      "lat": 15.2361,
+      "lng": 74.6173
+    },
+    "tagline": "Experience Dandeli, Karnataka",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Dandeli.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "dandeli",
+      "dandeli",
+      "karnataka_city_19"
+    ]
+  },
+  {
+    "id": "hassan",
+    "name": "Hassan",
+    "state": "Karnataka",
+    "state_id": "karnataka",
+    "coordinates": {
+      "lat": 13.1625,
+      "lng": 75.8603
+    },
+    "tagline": "Experience Hassan, Karnataka",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Hassan.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 2,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "hassan",
+      "hassan"
+    ]
+  },
+  {
+    "id": "chitrakote",
+    "name": "Chitrakote",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "coordinates": {
+      "lat": 19.2014,
+      "lng": 81.7014
+    },
+    "tagline": "Experience Chitrakote, Chhattisgarh",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Chitrakote.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "chitrakote",
+      "chitrakote",
+      "chhattisgarh_city_01"
+    ]
+  },
+  {
+    "id": "kanger-valley",
+    "name": "Kanger Valley",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "coordinates": {
+      "lat": 18.9056,
+      "lng": 81.8619
+    },
+    "tagline": "Experience Kanger Valley, Chhattisgarh",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Kanger Valley.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 2,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "kanger-valley",
+      "kanger valley",
+      "chhattisgarh_city_02"
+    ]
+  },
+  {
+    "id": "bhoramdeo",
+    "name": "Bhoramdeo",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "coordinates": {
+      "lat": 22.1284,
+      "lng": 81.1557
+    },
+    "tagline": "Experience Bhoramdeo, Chhattisgarh",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Bhoramdeo.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "bhoramdeo",
+      "bhoramdeo",
+      "chhattisgarh_city_05"
+    ]
+  },
+  {
+    "id": "barnawapara",
+    "name": "Barnawapara",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "coordinates": {
+      "lat": 21.4014,
+      "lng": 82.4172
+    },
+    "tagline": "Experience Barnawapara, Chhattisgarh",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Barnawapara.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "barnawapara",
+      "barnawapara",
+      "chhattisgarh_city_06"
+    ]
+  },
+  {
+    "id": "sirpur",
+    "name": "Sirpur",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "coordinates": {
+      "lat": 21.3458,
+      "lng": 82.1794
+    },
+    "tagline": "Experience Sirpur, Chhattisgarh",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Sirpur.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "sirpur",
+      "sirpur",
+      "chhattisgarh_city_07"
+    ]
+  },
+  {
+    "id": "rajim",
+    "name": "Rajim",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "coordinates": {
+      "lat": 20.9631,
+      "lng": 81.8806
+    },
+    "tagline": "Experience Rajim, Chhattisgarh",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Rajim.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 2,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "rajim",
+      "rajim",
+      "chhattisgarh_city_08"
+    ]
+  },
+  {
+    "id": "bhilai",
+    "name": "Bhilai",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "coordinates": {
+      "lat": 21.2121,
+      "lng": 81.3733
+    },
+    "tagline": "Experience Bhilai, Chhattisgarh",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Bhilai.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "bhilai",
+      "bhilai",
+      "chhattisgarh_city_09"
+    ]
+  },
+  {
+    "id": "naya-raipur",
+    "name": "Naya Raipur",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "coordinates": {
+      "lat": 21.161,
+      "lng": 81.787
+    },
+    "tagline": "Experience Naya Raipur, Chhattisgarh",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Naya Raipur.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 2,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "naya-raipur",
+      "naya raipur",
+      "chhattisgarh_city_11"
+    ]
+  },
+  {
+    "id": "kanker",
+    "name": "Kanker",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "coordinates": {
+      "lat": 20.2719,
+      "lng": 81.4925
+    },
+    "tagline": "Experience Kanker, Chhattisgarh",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Kanker.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "kanker",
+      "kanker",
+      "chhattisgarh_city_12"
+    ]
+  },
+  {
+    "id": "bastar",
+    "name": "Bastar",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "coordinates": {
+      "lat": 19.16,
+      "lng": 81.92
+    },
+    "tagline": "Experience Bastar, Chhattisgarh",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Bastar.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 2,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "bastar",
+      "bastar",
+      "chhattisgarh_city_13"
+    ]
+  },
+  {
+    "id": "bijapur",
+    "name": "Bijapur",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "coordinates": {
+      "lat": 18.7904,
+      "lng": 80.8164
+    },
+    "tagline": "Experience Bijapur, Chhattisgarh",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Bijapur.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "bijapur",
+      "bijapur",
+      "chhattisgarh_city_14"
+    ]
+  },
+  {
+    "id": "udanti-sitanadi",
+    "name": "Udanti-Sitanadi",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "coordinates": {
+      "lat": 20.16,
+      "lng": 82.1
+    },
+    "tagline": "Experience Udanti-Sitanadi, Chhattisgarh",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Udanti-Sitanadi.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "udanti-sitanadi",
+      "udanti-sitanadi",
+      "chhattisgarh_city_15"
+    ]
+  },
+  {
+    "id": "achanakmar",
+    "name": "Achanakmar",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "coordinates": {
+      "lat": 22.5028,
+      "lng": 81.77
+    },
+    "tagline": "Experience Achanakmar, Chhattisgarh",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Achanakmar.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "achanakmar",
+      "achanakmar",
+      "chhattisgarh_city_16"
+    ]
+  },
+  {
+    "id": "tamor-pingla",
+    "name": "Tamor Pingla",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "coordinates": {
+      "lat": 23.51,
+      "lng": 83.03
+    },
+    "tagline": "Experience Tamor Pingla, Chhattisgarh",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Tamor Pingla.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "tamor-pingla",
+      "tamor pingla",
+      "chhattisgarh_city_17"
+    ]
+  },
+  {
+    "id": "semarsot",
+    "name": "Semarsot",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "coordinates": {
+      "lat": 23.7,
+      "lng": 83.45
+    },
+    "tagline": "Experience Semarsot, Chhattisgarh",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Semarsot.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "semarsot",
+      "semarsot",
+      "chhattisgarh_city_18"
+    ]
+  },
+  {
+    "id": "bhairamgarh",
+    "name": "Bhairamgarh",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "coordinates": {
+      "lat": 18.91,
+      "lng": 80.78
+    },
+    "tagline": "Experience Bhairamgarh, Chhattisgarh",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Bhairamgarh.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "bhairamgarh",
+      "bhairamgarh",
+      "chhattisgarh_city_19"
+    ]
+  },
+  {
+    "id": "sitanadi",
+    "name": "Sitanadi",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "coordinates": {
+      "lat": 20.2,
+      "lng": 81.9
+    },
+    "tagline": "Experience Sitanadi, Chhattisgarh",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Sitanadi.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "sitanadi",
+      "sitanadi",
+      "chhattisgarh_city_20"
+    ]
+  },
+  {
+    "id": "mainpat",
+    "name": "Mainpat",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "coordinates": {
+      "lat": 22.8167,
+      "lng": 83.2833
+    },
+    "tagline": "Experience Mainpat, Chhattisgarh",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Mainpat.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 2,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "mainpat",
+      "mainpat",
+      "chhattisgarh_city_21"
+    ]
+  },
+  {
+    "id": "jashpur",
+    "name": "Jashpur",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "coordinates": {
+      "lat": 22.8833,
+      "lng": 84.15
+    },
+    "tagline": "Experience Jashpur, Chhattisgarh",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Jashpur.",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "jashpur",
+      "jashpur",
+      "chhattisgarh_city_22"
+    ]
   },
   {
     "id": "bhojpur",

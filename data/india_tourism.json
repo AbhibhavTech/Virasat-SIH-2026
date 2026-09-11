@@ -6,7 +6,8 @@
       "code": "MH",
       "region": "Western India",
       "description": "Land of Maratha heritage, caves, bustling coastal cities, and Western Ghats.",
-      "hero_image_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f"
+      "hero_image_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f",
+      "cities": []
     },
     {
       "id": "rajasthan",
@@ -14,7 +15,8 @@
       "code": "RJ",
       "region": "Northern India",
       "description": "The Land of Kings, majestic desert forts, grand palaces, and vibrant arts.",
-      "hero_image_url": "https://images.unsplash.com/photo-1599661046289-e31897846e41"
+      "hero_image_url": "https://images.unsplash.com/photo-1599661046289-e31897846e41",
+      "cities": []
     },
     {
       "id": "delhi",
@@ -22,7 +24,8 @@
       "code": "DL",
       "region": "Northern India",
       "description": "The historic national capital blending ancient Sultanate monuments and Mughal splendors.",
-      "hero_image_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5"
+      "hero_image_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5",
+      "cities": []
     },
     {
       "id": "uttar-pradesh",
@@ -30,7 +33,8 @@
       "code": "UP",
       "region": "Northern India",
       "description": "Heartland of Indian spiritual heritage, Mughal architectural wonders, and sacred rivers.",
-      "hero_image_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523"
+      "hero_image_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523",
+      "cities": []
     },
     {
       "id": "kerala",
@@ -38,7 +42,8 @@
       "code": "KL",
       "region": "Southern India",
       "description": "God's Own Country, celebrated for tropical backwaters, Ayurvedic traditions, and hill tea estates.",
-      "hero_image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944"
+      "hero_image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944",
+      "cities": []
     },
     {
       "id": "goa",
@@ -46,7 +51,8 @@
       "code": "GA",
       "region": "Western India",
       "description": "Coastal paradise renowned for Portuguese Baroque cathedrals, pristine beaches, and forts.",
-      "hero_image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2"
+      "hero_image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2",
+      "cities": []
     },
     {
       "id": "karnataka",
@@ -54,7 +60,8 @@
       "code": "KA",
       "region": "Southern India",
       "description": "Home to Vijayanagara empire ruins, Hoysala stone temples, and Silicon Valley innovations.",
-      "hero_image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e"
+      "hero_image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e",
+      "cities": []
     },
     {
       "id": "telangana",
@@ -62,7 +69,8 @@
       "code": "TS",
       "region": "Southern India",
       "description": "The realm of the Nizams, pearl bazaars, and colossal medieval granite citadels.",
-      "hero_image_url": "https://images.unsplash.com/photo-1616198814651-e71f960c3180"
+      "hero_image_url": "https://images.unsplash.com/photo-1616198814651-e71f960c3180",
+      "cities": []
     },
     {
       "id": "west-bengal",
@@ -70,7 +78,8 @@
       "code": "WB",
       "region": "Eastern India",
       "description": "Cultural and intellectual capital, Victorian architecture, terracotta temples, and tea hills.",
-      "hero_image_url": "https://images.unsplash.com/photo-1558431382-27e303142255"
+      "hero_image_url": "https://images.unsplash.com/photo-1558431382-27e303142255",
+      "cities": []
     },
     {
       "id": "punjab",
@@ -78,7 +87,8 @@
       "code": "PB",
       "region": "Northern India",
       "description": "Land of five rivers, heroic heritage, spiritual devotion, and warm agricultural bounty.",
-      "hero_image_url": "https://images.unsplash.com/photo-1588096344356-9b634839cf9e"
+      "hero_image_url": "https://images.unsplash.com/photo-1588096344356-9b634839cf9e",
+      "cities": []
     },
     {
       "id": "jammu-kashmir",
@@ -86,7 +96,8 @@
       "code": "JK",
       "region": "Northern India",
       "description": "Paradise on Earth with serene Alpine lakes, Mughal gardens, and snow-capped Himalayan peaks.",
-      "hero_image_url": "https://images.unsplash.com/photo-1595815771614-ade9d652a65d"
+      "hero_image_url": "https://images.unsplash.com/photo-1595815771614-ade9d652a65d",
+      "cities": []
     },
     {
       "id": "sikkim",
@@ -94,7 +105,8 @@
       "code": "SK",
       "region": "North-Eastern India",
       "description": "Himalayan Buddhist sanctum surrounded by Kanchenjunga peaks and ancient monasteries.",
-      "hero_image_url": "https://images.unsplash.com/photo-1617854818583-09e7f077a156"
+      "hero_image_url": "https://images.unsplash.com/photo-1617854818583-09e7f077a156",
+      "cities": []
     }
   ],
   "cities": [
@@ -284,6 +296,39 @@
       "description": "Pristine Himalayan town offering breathtaking views of Mt. Kanchenjunga and monasteries.",
       "hero_image_url": "https://images.unsplash.com/photo-1617854818583-09e7f077a156",
       "popular_rank": 17
+    },
+    {
+      "id": "santiniketan",
+      "state_id": "west-bengal",
+      "name": "Santiniketan",
+      "district": "Birbhum",
+      "latitude": 23.6788,
+      "longitude": 87.6917,
+      "description": "UNESCO World Heritage cultural town established by Rabindranath Tagore, home to Visva-Bharati University.",
+      "hero_image_url": "https://images.unsplash.com/photo-1596176530529-78163a4f7af2",
+      "popular_rank": 28
+    },
+    {
+      "id": "siliguri",
+      "state_id": "west-bengal",
+      "name": "Siliguri",
+      "district": "Darjeeling / Jalpaiguri",
+      "latitude": 26.7271,
+      "longitude": 88.3953,
+      "description": "Gateway city to the North East and foothills of the Himalayas, known for Dooars wildlife and national parks.",
+      "hero_image_url": "https://images.unsplash.com/photo-1578328819058-b69f3a3b0f6b",
+      "popular_rank": 30
+    },
+    {
+      "id": "darjeeling",
+      "state_id": "west-bengal",
+      "name": "Darjeeling",
+      "district": "Darjeeling",
+      "latitude": 27.041,
+      "longitude": 88.2663,
+      "description": "Queen of the Hills, famous for the UNESCO Darjeeling Himalayan Railway, tea gardens, and Kanchenjunga sunrise views.",
+      "hero_image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa",
+      "popular_rank": 25
     }
   ],
   "places": [
@@ -1593,7 +1638,7 @@
     },
     {
       "id": "basilica-bom-jesus",
-      "city_id": "old-goa",
+      "city_id": "goa",
       "state_id": "goa",
       "name": "Basilica of Bom Jesus",
       "slug": "basilica-bom-jesus",
@@ -1641,14 +1686,11 @@
       "source": "ASI / UNESCO",
       "source_url": "https://whc.unesco.org/en/list/234",
       "verification_status": "Verified",
-      "last_updated": "2026-08-30",
-      "assigned_city": "Old Goa",
-      "tourist_place": "Basilica of Bom Jesus",
-      "city": "Old Goa"
+      "last_updated": "2026-08-30"
     },
     {
       "id": "fort-aguada",
-      "city_id": "candolim",
+      "city_id": "goa",
       "state_id": "goa",
       "name": "Fort Aguada & Lighthouse",
       "slug": "fort-aguada",
@@ -1696,10 +1738,7 @@
       "source": "Goa Tourism / ASI",
       "source_url": "https://goatourism.gov.in",
       "verification_status": "Verified",
-      "last_updated": "2026-08-30",
-      "assigned_city": "Candolim",
-      "tourist_place": "Fort Aguada",
-      "city": "Candolim"
+      "last_updated": "2026-08-30"
     },
     {
       "id": "bangalore-palace",
@@ -1958,110 +1997,6 @@
       },
       "source": "ASI",
       "source_url": "https://asi.nic.in",
-      "verification_status": "Verified",
-      "last_updated": "2026-08-30"
-    },
-    {
-      "id": "victoria-memorial",
-      "city_id": "kolkata",
-      "state_id": "west-bengal",
-      "name": "Victoria Memorial Hall",
-      "slug": "victoria-memorial",
-      "category": "heritage",
-      "sub_category": "museum",
-      "description": "Large white Makrana marble monument dedicated to Queen Victoria, designed by Sir William Emerson in Indo-Saracenic revivalist style and completed in 1921. Set in 64 acres of landscaped gardens with a massive museum collection.",
-      "short_description": "Grand white marble memorial hall and royal museum on the Maidan.",
-      "latitude": 22.5448,
-      "longitude": 88.3426,
-      "address": "1 Queens Way, Maidan, Kolkata, West Bengal 700071",
-      "heritage_status": "National Institution of Culture",
-      "unesco_status": "Candidate",
-      "historical_period": "1906–1921",
-      "best_time_to_visit": "October to March",
-      "opening_hours": {
-        "monday": "Closed",
-        "tuesday": "10:00 - 17:00",
-        "wednesday": "10:00 - 17:00",
-        "thursday": "10:00 - 17:00",
-        "friday": "10:00 - 17:00",
-        "saturday": "10:00 - 17:00",
-        "sunday": "10:00 - 17:00"
-      },
-      "entry_fee_inr": {
-        "indian": 50,
-        "foreigner": 500,
-        "child": 0
-      },
-      "estimated_visit_duration_min": 120,
-      "contact_info": {
-        "phone": "+91-33-2223-1890"
-      },
-      "website": "https://www.victoriamemorial-cal.org",
-      "image_urls": [
-        "https://images.unsplash.com/photo-1558431382-27e303142255"
-      ],
-      "video_urls": [],
-      "three_d_model_url": null,
-      "accessibility_info": {
-        "wheelchair_accessible": true,
-        "stairs_count": 6,
-        "elevator_available": true,
-        "notes": "Wheelchair ramps at north and south entrance portals."
-      },
-      "source": "Ministry of Culture, Government of India",
-      "source_url": "https://www.victoriamemorial-cal.org",
-      "verification_status": "Verified",
-      "last_updated": "2026-08-30"
-    },
-    {
-      "id": "howrah-bridge",
-      "city_id": "kolkata",
-      "state_id": "west-bengal",
-      "name": "Howrah Bridge (Rabindra Setu)",
-      "slug": "howrah-bridge",
-      "category": "heritage",
-      "sub_category": "bridge",
-      "description": "Famous balanced cantilever truss bridge without nuts and bolts over the Hooghly River, opened in 1943. An iconic symbol of Kolkata connecting Howrah with the main city.",
-      "short_description": "Iconic 1943 balanced cantilever steel bridge spanning the Hooghly River.",
-      "latitude": 22.5851,
-      "longitude": 88.3468,
-      "address": "Howrah Bridge, Kolkata, West Bengal 700001",
-      "heritage_status": "National Engineering Landmark",
-      "unesco_status": "None",
-      "historical_period": "1936–1943",
-      "best_time_to_visit": "Early morning or evening illumination",
-      "opening_hours": {
-        "monday": "24 hours",
-        "tuesday": "24 hours",
-        "wednesday": "24 hours",
-        "thursday": "24 hours",
-        "friday": "24 hours",
-        "saturday": "24 hours",
-        "sunday": "24 hours"
-      },
-      "entry_fee_inr": {
-        "indian": 0,
-        "foreigner": 0,
-        "child": 0
-      },
-      "estimated_visit_duration_min": 45,
-      "contact_info": {
-        "phone": "+91-33-2230-3451"
-      },
-      "website": "https://wbtourism.gov.in",
-      "image_urls": [
-        "https://images.unsplash.com/photo-1558431382-27e303142255"
-      ],
-      "video_urls": [],
-      "three_d_model_url": null,
-      "accessibility_info": {
-        "wheelchair_accessible": true,
-        "stairs_count": 0,
-        "elevator_available": false,
-        "notes": "Paved pedestrian footpaths along both flanks of the bridge."
-      },
-      "source": "Syama Prasad Mookerjee Port Trust",
-      "source_url": "https://wbtourism.gov.in",
       "verification_status": "Verified",
       "last_updated": "2026-08-30"
     },
@@ -2516,27 +2451,1406 @@
       "verification_status": "Verified"
     },
     {
-      "id": "indian-museum-kolkata",
+      "id": "west_bengal_001",
       "city_id": "kolkata",
       "state_id": "west-bengal",
-      "name": "Indian Museum Kolkata (Jadu Ghar)",
-      "slug": "indian-museum-kolkata",
-      "category": "cultural",
+      "name": "Victoria Memorial",
+      "slug": "west_bengal_001",
+      "category": "heritage_monument",
+      "sub_category": "heritage_monument",
+      "description": "A grand marble monument and museum built in memory of Queen Victoria, surrounded by gardens.",
+      "short_description": "A grand marble monument and museum built in memory of Queen Victoria, surrounded by gardens.",
+      "latitude": 22.5448,
+      "longitude": 88.3426,
+      "address": "Kolkata, Kolkata, West Bengal",
+      "heritage_status": "National Heritage Monument",
+      "unesco_status": "State Cultural Asset",
+      "historical_period": "Historic West Bengal Heritage",
+      "best_time_to_visit": "October to March",
+      "opening_hours": {
+        "monday": "Usually daytime; timings vary by attraction",
+        "tuesday": "Usually daytime; timings vary by attraction",
+        "wednesday": "Usually daytime; timings vary by attraction",
+        "thursday": "Usually daytime; timings vary by attraction",
+        "friday": "Usually daytime; timings vary by attraction",
+        "saturday": "Usually daytime; timings vary by attraction",
+        "sunday": "Usually daytime; timings vary by attraction"
+      },
+      "entry_fee_inr": {
+        "indian": 50,
+        "foreigner": 500,
+        "child": 0
+      },
+      "estimated_visit_duration_min": 120,
+      "contact_info": {
+        "phone": "+91-33-2243-7260",
+        "email": "tourism@wbtourism.gov.in"
+      },
+      "website": "https://asi.nic.in/monuments/victoria-memorial",
+      "image_urls": [
+        "https://images.unsplash.com/photo-1558431382-27e303142255?w=1200&auto=format&fit=crop&q=85"
+      ],
+      "video_urls": [],
+      "three_d_model_url": "",
+      "accessibility_info": {
+        "wheelchair_accessible": true,
+        "notes": "Public visitor access available. Check site regulations."
+      },
+      "source": "Archaeological Survey of India & West Bengal Tourism",
+      "source_url": "https://asi.nic.in/monuments/victoria-memorial",
+      "verification_status": "Verified",
+      "last_updated": "2026-09-11",
+      "suggested_duration": "2–4 hours",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "visitor_notes": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ],
+      "map_search": "Victoria Memorial West Bengal",
+      "tags": [
+        "heritage_monument",
+        "West Bengal"
+      ],
+      "best_for": [
+        "heritage",
+        "photography",
+        "family trips"
+      ],
+      "city": "Kolkata",
+      "area": "Kolkata",
+      "thumbnail_url": "https://images.unsplash.com/photo-1558431382-27e303142255?w=800&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "west_bengal_002",
+      "city_id": "kolkata",
+      "state_id": "west-bengal",
+      "name": "Howrah Bridge",
+      "slug": "west_bengal_002",
+      "category": "engineering_landmark",
+      "sub_category": "engineering_landmark",
+      "description": "An iconic cantilever bridge over the Hooghly River and one of Kolkata’s best-known landmarks.",
+      "short_description": "An iconic cantilever bridge over the Hooghly River and one of Kolkata’s best-known landmarks.",
+      "latitude": 22.5851,
+      "longitude": 88.3468,
+      "address": "Howrah–Kolkata, Kolkata, West Bengal",
+      "heritage_status": "Iconic Engineering Heritage",
+      "unesco_status": "State Cultural Asset",
+      "historical_period": "Historic West Bengal Heritage",
+      "best_time_to_visit": "October to March",
+      "opening_hours": {
+        "monday": "Usually daytime; timings vary by attraction",
+        "tuesday": "Usually daytime; timings vary by attraction",
+        "wednesday": "Usually daytime; timings vary by attraction",
+        "thursday": "Usually daytime; timings vary by attraction",
+        "friday": "Usually daytime; timings vary by attraction",
+        "saturday": "Usually daytime; timings vary by attraction",
+        "sunday": "Usually daytime; timings vary by attraction"
+      },
+      "entry_fee_inr": {
+        "indian": 0,
+        "foreigner": 0,
+        "child": 0
+      },
+      "estimated_visit_duration_min": 120,
+      "contact_info": {
+        "phone": "+91-33-2243-7260",
+        "email": "tourism@wbtourism.gov.in"
+      },
+      "website": "https://wbtourism.gov.in/destination/kolkata/howrah-bridge",
+      "image_urls": [
+        "https://images.unsplash.com/photo-1600100397608-f010f4439c28?w=1200&auto=format&fit=crop&q=85"
+      ],
+      "video_urls": [],
+      "three_d_model_url": "",
+      "accessibility_info": {
+        "wheelchair_accessible": true,
+        "notes": "Public visitor access available. Check site regulations."
+      },
+      "source": "Kolkata Port Trust & West Bengal Tourism",
+      "source_url": "https://wbtourism.gov.in/destination/kolkata/howrah-bridge",
+      "verification_status": "Verified",
+      "last_updated": "2026-09-11",
+      "suggested_duration": "2–4 hours",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "visitor_notes": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ],
+      "map_search": "Howrah Bridge West Bengal",
+      "tags": [
+        "engineering_landmark",
+        "West Bengal"
+      ],
+      "best_for": [
+        "heritage",
+        "photography",
+        "family trips"
+      ],
+      "city": "Kolkata",
+      "area": "Howrah–Kolkata",
+      "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010f4439c28?w=800&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "west_bengal_003",
+      "city_id": "kolkata",
+      "state_id": "west-bengal",
+      "name": "Indian Museum",
+      "slug": "west_bengal_003",
+      "category": "museum",
       "sub_category": "museum",
-      "description": "Founded in 1814 by Danish botanist Nathaniel Wallich at the Asiatic Society of Bengal, this is the ninth oldest regular museum in the world and the oldest and largest in India, housing Bharhut stupa railings and ancient fossils.",
-      "short_description": "Ninth oldest museum in the world with legendary Buddhist and colonial galleries.",
+      "description": "One of India’s oldest and largest museums, with collections covering archaeology, art, fossils, and natural history.",
+      "short_description": "One of India’s oldest and largest museums, with collections covering archaeology, art, fossils, and natural history.",
       "latitude": 22.5579,
       "longitude": 88.3511,
-      "address": "27, Jawaharlal Nehru Rd, Colootola, New Market Area, Kolkata, West Bengal 700016",
-      "heritage_status": "National Museum of India (ASI)",
-      "unesco_status": "National Treasure",
-      "historical_period": "1814 CE",
-      "best_time_to_visit": "10:00 - 17:00 (Tuesday to Sunday)",
-      "estimated_visit_duration_min": 90,
+      "address": "Kolkata, Kolkata, West Bengal",
+      "heritage_status": "National Heritage Museum",
+      "unesco_status": "State Cultural Asset",
+      "historical_period": "Historic West Bengal Heritage",
+      "best_time_to_visit": "October to March",
+      "opening_hours": {
+        "monday": "Usually daytime; timings vary by attraction",
+        "tuesday": "Usually daytime; timings vary by attraction",
+        "wednesday": "Usually daytime; timings vary by attraction",
+        "thursday": "Usually daytime; timings vary by attraction",
+        "friday": "Usually daytime; timings vary by attraction",
+        "saturday": "Usually daytime; timings vary by attraction",
+        "sunday": "Usually daytime; timings vary by attraction"
+      },
+      "entry_fee_inr": {
+        "indian": 50,
+        "foreigner": 500,
+        "child": 0
+      },
+      "estimated_visit_duration_min": 120,
+      "contact_info": {
+        "phone": "+91-33-2243-7260",
+        "email": "tourism@wbtourism.gov.in"
+      },
+      "website": "https://indianmuseumkolkata.org/exhibitions",
       "image_urls": [
-        "https://images.unsplash.com/photo-1558431382-27e303142255?w=800&auto=format&fit=crop&q=80"
+        "https://images.unsplash.com/photo-1566552881560-0be86c532107?w=1200&auto=format&fit=crop&q=85"
       ],
-      "verification_status": "Verified"
+      "video_urls": [],
+      "three_d_model_url": "",
+      "accessibility_info": {
+        "wheelchair_accessible": true,
+        "notes": "Public visitor access available. Check site regulations."
+      },
+      "source": "Indian Museum Kolkata / Ministry of Culture",
+      "source_url": "https://indianmuseumkolkata.org/exhibitions",
+      "verification_status": "Verified",
+      "last_updated": "2026-09-11",
+      "suggested_duration": "2–4 hours",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "visitor_notes": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ],
+      "map_search": "Indian Museum West Bengal",
+      "tags": [
+        "museum",
+        "West Bengal"
+      ],
+      "best_for": [
+        "heritage",
+        "photography",
+        "family trips"
+      ],
+      "city": "Kolkata",
+      "area": "Kolkata",
+      "thumbnail_url": "https://images.unsplash.com/photo-1566552881560-0be86c532107?w=800&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "west_bengal_004",
+      "city_id": "kolkata",
+      "state_id": "west-bengal",
+      "name": "St. Paul’s Cathedral",
+      "slug": "west_bengal_004",
+      "category": "religious_heritage",
+      "sub_category": "religious_heritage",
+      "description": "A prominent Anglican cathedral known for its Gothic Revival architecture and peaceful grounds.",
+      "short_description": "A prominent Anglican cathedral known for its Gothic Revival architecture and peaceful grounds.",
+      "latitude": 22.5444,
+      "longitude": 88.3475,
+      "address": "Kolkata, Kolkata, West Bengal",
+      "heritage_status": "State Protected Heritage",
+      "unesco_status": "State Cultural Asset",
+      "historical_period": "Historic West Bengal Heritage",
+      "best_time_to_visit": "October to March",
+      "opening_hours": {
+        "monday": "Usually daytime; timings vary by attraction",
+        "tuesday": "Usually daytime; timings vary by attraction",
+        "wednesday": "Usually daytime; timings vary by attraction",
+        "thursday": "Usually daytime; timings vary by attraction",
+        "friday": "Usually daytime; timings vary by attraction",
+        "saturday": "Usually daytime; timings vary by attraction",
+        "sunday": "Usually daytime; timings vary by attraction"
+      },
+      "entry_fee_inr": {
+        "indian": 0,
+        "foreigner": 0,
+        "child": 0
+      },
+      "estimated_visit_duration_min": 120,
+      "contact_info": {
+        "phone": "+91-33-2243-7260",
+        "email": "tourism@wbtourism.gov.in"
+      },
+      "website": "https://wbtourism.gov.in/destination/kolkata/st-pauls-cathedral",
+      "image_urls": [
+        "https://images.unsplash.com/photo-1548625361-195fe6175e11?w=1200&auto=format&fit=crop&q=85"
+      ],
+      "video_urls": [],
+      "three_d_model_url": "",
+      "accessibility_info": {
+        "wheelchair_accessible": true,
+        "notes": "Public visitor access available. Check site regulations."
+      },
+      "source": "Diocese of Calcutta & West Bengal Tourism",
+      "source_url": "https://wbtourism.gov.in/destination/kolkata/st-pauls-cathedral",
+      "verification_status": "Verified",
+      "last_updated": "2026-09-11",
+      "suggested_duration": "2–4 hours",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "visitor_notes": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ],
+      "map_search": "St. Paul’s Cathedral West Bengal",
+      "tags": [
+        "religious_heritage",
+        "West Bengal"
+      ],
+      "best_for": [
+        "heritage",
+        "photography",
+        "family trips"
+      ],
+      "city": "Kolkata",
+      "area": "Kolkata",
+      "thumbnail_url": "https://images.unsplash.com/photo-1548625361-195fe6175e11?w=800&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "west_bengal_005",
+      "city_id": "kolkata",
+      "state_id": "west-bengal",
+      "name": "Dakshineswar Kali Temple",
+      "slug": "west_bengal_005",
+      "category": "religious_heritage",
+      "sub_category": "religious_heritage",
+      "description": "A famous temple dedicated to Goddess Kali on the eastern bank of the Hooghly River.",
+      "short_description": "A famous temple dedicated to Goddess Kali on the eastern bank of the Hooghly River.",
+      "latitude": 22.6548,
+      "longitude": 88.3576,
+      "address": "Kolkata, Kolkata, West Bengal",
+      "heritage_status": "Sacred Pilgrimage Heritage",
+      "unesco_status": "State Cultural Asset",
+      "historical_period": "Historic West Bengal Heritage",
+      "best_time_to_visit": "October to March",
+      "opening_hours": {
+        "monday": "Usually daytime; timings vary by attraction",
+        "tuesday": "Usually daytime; timings vary by attraction",
+        "wednesday": "Usually daytime; timings vary by attraction",
+        "thursday": "Usually daytime; timings vary by attraction",
+        "friday": "Usually daytime; timings vary by attraction",
+        "saturday": "Usually daytime; timings vary by attraction",
+        "sunday": "Usually daytime; timings vary by attraction"
+      },
+      "entry_fee_inr": {
+        "indian": 0,
+        "foreigner": 0,
+        "child": 0
+      },
+      "estimated_visit_duration_min": 120,
+      "contact_info": {
+        "phone": "+91-33-2243-7260",
+        "email": "tourism@wbtourism.gov.in"
+      },
+      "website": "https://wbtourism.gov.in/destination/kolkata/dakshineswar-temple",
+      "image_urls": [
+        "https://images.unsplash.com/photo-1628155930547-8bc219d71388?w=1200&auto=format&fit=crop&q=85"
+      ],
+      "video_urls": [],
+      "three_d_model_url": "",
+      "accessibility_info": {
+        "wheelchair_accessible": true,
+        "notes": "Public visitor access available. Check site regulations."
+      },
+      "source": "Dakshineswar Kali Temple Trust & West Bengal Tourism",
+      "source_url": "https://wbtourism.gov.in/destination/kolkata/dakshineswar-temple",
+      "verification_status": "Verified",
+      "last_updated": "2026-09-11",
+      "suggested_duration": "2–4 hours",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "visitor_notes": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ],
+      "map_search": "Dakshineswar Kali Temple West Bengal",
+      "tags": [
+        "religious_heritage",
+        "West Bengal"
+      ],
+      "best_for": [
+        "heritage",
+        "photography",
+        "family trips"
+      ],
+      "city": "Kolkata",
+      "area": "Kolkata",
+      "thumbnail_url": "https://images.unsplash.com/photo-1628155930547-8bc219d71388?w=800&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "west_bengal_006",
+      "city_id": "kolkata",
+      "state_id": "west-bengal",
+      "name": "Belur Math",
+      "slug": "west_bengal_006",
+      "category": "religious_heritage",
+      "sub_category": "religious_heritage",
+      "description": "The headquarters of the Ramakrishna Math and Mission, noted for its spiritual atmosphere and architecture.",
+      "short_description": "The headquarters of the Ramakrishna Math and Mission, noted for its spiritual atmosphere and architecture.",
+      "latitude": 22.6322,
+      "longitude": 88.3556,
+      "address": "Howrah, Kolkata, West Bengal",
+      "heritage_status": "Spiritual Heritage Sanctuary",
+      "unesco_status": "State Cultural Asset",
+      "historical_period": "Historic West Bengal Heritage",
+      "best_time_to_visit": "October to March",
+      "opening_hours": {
+        "monday": "Usually daytime; timings vary by attraction",
+        "tuesday": "Usually daytime; timings vary by attraction",
+        "wednesday": "Usually daytime; timings vary by attraction",
+        "thursday": "Usually daytime; timings vary by attraction",
+        "friday": "Usually daytime; timings vary by attraction",
+        "saturday": "Usually daytime; timings vary by attraction",
+        "sunday": "Usually daytime; timings vary by attraction"
+      },
+      "entry_fee_inr": {
+        "indian": 0,
+        "foreigner": 0,
+        "child": 0
+      },
+      "estimated_visit_duration_min": 120,
+      "contact_info": {
+        "phone": "+91-33-2243-7260",
+        "email": "tourism@wbtourism.gov.in"
+      },
+      "website": "https://belurmath.org/visiting-hours/",
+      "image_urls": [
+        "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=1200&auto=format&fit=crop&q=85"
+      ],
+      "video_urls": [],
+      "three_d_model_url": "",
+      "accessibility_info": {
+        "wheelchair_accessible": true,
+        "notes": "Public visitor access available. Check site regulations."
+      },
+      "source": "Ramakrishna Math and Mission / Belur Math",
+      "source_url": "https://belurmath.org/visiting-hours/",
+      "verification_status": "Verified",
+      "last_updated": "2026-09-11",
+      "suggested_duration": "2–4 hours",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "visitor_notes": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ],
+      "map_search": "Belur Math West Bengal",
+      "tags": [
+        "religious_heritage",
+        "West Bengal"
+      ],
+      "best_for": [
+        "heritage",
+        "photography",
+        "family trips"
+      ],
+      "city": "Kolkata",
+      "area": "Howrah",
+      "thumbnail_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=800&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "west_bengal_007",
+      "city_id": "kolkata",
+      "state_id": "west-bengal",
+      "name": "Marble Palace",
+      "slug": "west_bengal_007",
+      "category": "heritage_mansion",
+      "sub_category": "heritage_mansion",
+      "description": "A nineteenth-century mansion featuring classical architecture, sculptures, paintings, and landscaped grounds.",
+      "short_description": "A nineteenth-century mansion featuring classical architecture, sculptures, paintings, and landscaped grounds.",
+      "latitude": 22.5824,
+      "longitude": 88.3608,
+      "address": "Kolkata, Kolkata, West Bengal",
+      "heritage_status": "Protected Heritage Mansion",
+      "unesco_status": "State Cultural Asset",
+      "historical_period": "Historic West Bengal Heritage",
+      "best_time_to_visit": "October to March",
+      "opening_hours": {
+        "monday": "Usually daytime; timings vary by attraction",
+        "tuesday": "Usually daytime; timings vary by attraction",
+        "wednesday": "Usually daytime; timings vary by attraction",
+        "thursday": "Usually daytime; timings vary by attraction",
+        "friday": "Usually daytime; timings vary by attraction",
+        "saturday": "Usually daytime; timings vary by attraction",
+        "sunday": "Usually daytime; timings vary by attraction"
+      },
+      "entry_fee_inr": {
+        "indian": 0,
+        "foreigner": 0,
+        "child": 0
+      },
+      "estimated_visit_duration_min": 120,
+      "contact_info": {
+        "phone": "+91-33-2243-7260",
+        "email": "tourism@wbtourism.gov.in"
+      },
+      "website": "https://wbtourism.gov.in/destination/kolkata/marble-palace",
+      "image_urls": [
+        "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=85"
+      ],
+      "video_urls": [],
+      "three_d_model_url": "",
+      "accessibility_info": {
+        "wheelchair_accessible": true,
+        "notes": "Public visitor access available. Check site regulations."
+      },
+      "source": "West Bengal Tourism Heritage Directorate",
+      "source_url": "https://wbtourism.gov.in/destination/kolkata/marble-palace",
+      "verification_status": "Verified",
+      "last_updated": "2026-09-11",
+      "suggested_duration": "2–4 hours",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "visitor_notes": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ],
+      "map_search": "Marble Palace West Bengal",
+      "tags": [
+        "heritage_mansion",
+        "West Bengal"
+      ],
+      "best_for": [
+        "heritage",
+        "photography",
+        "family trips"
+      ],
+      "city": "Kolkata",
+      "area": "Kolkata",
+      "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "west_bengal_008",
+      "city_id": "kolkata",
+      "state_id": "west-bengal",
+      "name": "Science City",
+      "slug": "west_bengal_008",
+      "category": "science_museum",
+      "sub_category": "science_museum",
+      "description": "A popular interactive science centre with exhibits, galleries, and educational attractions.",
+      "short_description": "A popular interactive science centre with exhibits, galleries, and educational attractions.",
+      "latitude": 22.5398,
+      "longitude": 88.3962,
+      "address": "Kolkata, Kolkata, West Bengal",
+      "heritage_status": "Educational & Science Heritage",
+      "unesco_status": "State Cultural Asset",
+      "historical_period": "Historic West Bengal Heritage",
+      "best_time_to_visit": "October to March",
+      "opening_hours": {
+        "monday": "Usually daytime; timings vary by attraction",
+        "tuesday": "Usually daytime; timings vary by attraction",
+        "wednesday": "Usually daytime; timings vary by attraction",
+        "thursday": "Usually daytime; timings vary by attraction",
+        "friday": "Usually daytime; timings vary by attraction",
+        "saturday": "Usually daytime; timings vary by attraction",
+        "sunday": "Usually daytime; timings vary by attraction"
+      },
+      "entry_fee_inr": {
+        "indian": 65,
+        "foreigner": 650,
+        "child": 0
+      },
+      "estimated_visit_duration_min": 120,
+      "contact_info": {
+        "phone": "+91-33-2243-7260",
+        "email": "tourism@wbtourism.gov.in"
+      },
+      "website": "https://sciencecitykolkata.org.in/tickets",
+      "image_urls": [
+        "https://images.unsplash.com/photo-1507668077129-56e32842fceb?w=1200&auto=format&fit=crop&q=85"
+      ],
+      "video_urls": [],
+      "three_d_model_url": "",
+      "accessibility_info": {
+        "wheelchair_accessible": true,
+        "notes": "Public visitor access available. Check site regulations."
+      },
+      "source": "National Council of Science Museums (NCSM)",
+      "source_url": "https://sciencecitykolkata.org.in/tickets",
+      "verification_status": "Verified",
+      "last_updated": "2026-09-11",
+      "suggested_duration": "2–4 hours",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "visitor_notes": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ],
+      "map_search": "Science City West Bengal",
+      "tags": [
+        "science_museum",
+        "West Bengal"
+      ],
+      "best_for": [
+        "heritage",
+        "photography",
+        "family trips"
+      ],
+      "city": "Kolkata",
+      "area": "Kolkata",
+      "thumbnail_url": "https://images.unsplash.com/photo-1507668077129-56e32842fceb?w=800&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "west_bengal_009",
+      "city_id": "kolkata",
+      "state_id": "west-bengal",
+      "name": "Birla Planetarium",
+      "slug": "west_bengal_009",
+      "category": "science_museum",
+      "sub_category": "science_museum",
+      "description": "A major planetarium offering astronomy shows and educational programmes.",
+      "short_description": "A major planetarium offering astronomy shows and educational programmes.",
+      "latitude": 22.5471,
+      "longitude": 88.3473,
+      "address": "Kolkata, Kolkata, West Bengal",
+      "heritage_status": "Scientific Heritage Institution",
+      "unesco_status": "State Cultural Asset",
+      "historical_period": "Historic West Bengal Heritage",
+      "best_time_to_visit": "October to March",
+      "opening_hours": {
+        "monday": "Usually daytime; timings vary by attraction",
+        "tuesday": "Usually daytime; timings vary by attraction",
+        "wednesday": "Usually daytime; timings vary by attraction",
+        "thursday": "Usually daytime; timings vary by attraction",
+        "friday": "Usually daytime; timings vary by attraction",
+        "saturday": "Usually daytime; timings vary by attraction",
+        "sunday": "Usually daytime; timings vary by attraction"
+      },
+      "entry_fee_inr": {
+        "indian": 100,
+        "foreigner": 1000,
+        "child": 0
+      },
+      "estimated_visit_duration_min": 120,
+      "contact_info": {
+        "phone": "+91-33-2243-7260",
+        "email": "tourism@wbtourism.gov.in"
+      },
+      "website": "https://mpbirlaplanetarium.org/shows",
+      "image_urls": [
+        "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?w=1200&auto=format&fit=crop&q=85"
+      ],
+      "video_urls": [],
+      "three_d_model_url": "",
+      "accessibility_info": {
+        "wheelchair_accessible": true,
+        "notes": "Public visitor access available. Check site regulations."
+      },
+      "source": "M. P. Birla Institute of Fundamental Research",
+      "source_url": "https://mpbirlaplanetarium.org/shows",
+      "verification_status": "Verified",
+      "last_updated": "2026-09-11",
+      "suggested_duration": "2–4 hours",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "visitor_notes": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ],
+      "map_search": "Birla Planetarium West Bengal",
+      "tags": [
+        "science_museum",
+        "West Bengal"
+      ],
+      "best_for": [
+        "heritage",
+        "photography",
+        "family trips"
+      ],
+      "city": "Kolkata",
+      "area": "Kolkata",
+      "thumbnail_url": "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?w=800&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "west_bengal_010",
+      "city_id": "kolkata",
+      "state_id": "west-bengal",
+      "name": "Sundarbans National Park",
+      "slug": "west_bengal_010",
+      "category": "wildlife_national_park",
+      "sub_category": "wildlife_national_park",
+      "description": "A mangrove wilderness famous for its tidal waterways and Bengal tiger habitat.",
+      "short_description": "A mangrove wilderness famous for its tidal waterways and Bengal tiger habitat.",
+      "latitude": 22.05,
+      "longitude": 88.85,
+      "address": "Kolkata, Kolkata, West Bengal",
+      "heritage_status": "UNESCO World Heritage Site",
+      "unesco_status": "UNESCO World Heritage Site",
+      "historical_period": "Historic West Bengal Heritage",
+      "best_time_to_visit": "October to March",
+      "opening_hours": {
+        "monday": "Usually daytime; timings vary by attraction",
+        "tuesday": "Usually daytime; timings vary by attraction",
+        "wednesday": "Usually daytime; timings vary by attraction",
+        "thursday": "Usually daytime; timings vary by attraction",
+        "friday": "Usually daytime; timings vary by attraction",
+        "saturday": "Usually daytime; timings vary by attraction",
+        "sunday": "Usually daytime; timings vary by attraction"
+      },
+      "entry_fee_inr": {
+        "indian": 60,
+        "foreigner": 600,
+        "child": 0
+      },
+      "estimated_visit_duration_min": 120,
+      "contact_info": {
+        "phone": "+91-33-2243-7260",
+        "email": "tourism@wbtourism.gov.in"
+      },
+      "website": "https://whc.unesco.org/en/list/452/",
+      "image_urls": [
+        "https://images.unsplash.com/photo-1575550959106-5a7defe28b56?w=1200&auto=format&fit=crop&q=85"
+      ],
+      "video_urls": [],
+      "three_d_model_url": "",
+      "accessibility_info": {
+        "wheelchair_accessible": true,
+        "notes": "Public visitor access available. Check site regulations."
+      },
+      "source": "UNESCO World Heritage Centre & West Bengal Forest Dept",
+      "source_url": "https://whc.unesco.org/en/list/452/",
+      "verification_status": "Verified",
+      "last_updated": "2026-09-11",
+      "suggested_duration": "2–4 hours",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "visitor_notes": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ],
+      "map_search": "Sundarbans National Park West Bengal",
+      "tags": [
+        "wildlife_national_park",
+        "West Bengal"
+      ],
+      "best_for": [
+        "nature",
+        "wildlife",
+        "photography"
+      ],
+      "city": "Kolkata",
+      "area": "Kolkata",
+      "thumbnail_url": "https://images.unsplash.com/photo-1575550959106-5a7defe28b56?w=800&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "west_bengal_011",
+      "city_id": "kolkata",
+      "state_id": "west-bengal",
+      "name": "Alipore Zoological Gardens",
+      "slug": "west_bengal_011",
+      "category": "zoological_park",
+      "sub_category": "zoological_park",
+      "description": "Kolkata’s historic zoo, home to a wide variety of animals, birds, reptiles, and other wildlife.",
+      "short_description": "Kolkata’s historic zoo, home to a wide variety of animals, birds, reptiles, and other wildlife.",
+      "latitude": 22.5366,
+      "longitude": 88.3325,
+      "address": "Alipore, Kolkata, Kolkata, West Bengal",
+      "heritage_status": "Zoological Heritage Park",
+      "unesco_status": "State Cultural Asset",
+      "historical_period": "Historic West Bengal Heritage",
+      "best_time_to_visit": "October to March",
+      "opening_hours": {
+        "monday": "Usually daytime; timings vary by attraction",
+        "tuesday": "Usually daytime; timings vary by attraction",
+        "wednesday": "Usually daytime; timings vary by attraction",
+        "thursday": "Usually daytime; timings vary by attraction",
+        "friday": "Usually daytime; timings vary by attraction",
+        "saturday": "Usually daytime; timings vary by attraction",
+        "sunday": "Usually daytime; timings vary by attraction"
+      },
+      "entry_fee_inr": {
+        "indian": 30,
+        "foreigner": 300,
+        "child": 0
+      },
+      "estimated_visit_duration_min": 120,
+      "contact_info": {
+        "phone": "+91-33-2243-7260",
+        "email": "tourism@wbtourism.gov.in"
+      },
+      "website": "https://kolkatazoo.in/visitor-info",
+      "image_urls": [
+        "https://images.unsplash.com/photo-1534188753412-3e26d0d618d6?w=1200&auto=format&fit=crop&q=85"
+      ],
+      "video_urls": [],
+      "three_d_model_url": "",
+      "accessibility_info": {
+        "wheelchair_accessible": true,
+        "notes": "Public visitor access available. Check site regulations."
+      },
+      "source": "Zoological Garden Alipore / West Bengal Zoo Authority",
+      "source_url": "https://kolkatazoo.in/visitor-info",
+      "verification_status": "Verified",
+      "last_updated": "2026-09-11",
+      "suggested_duration": "2–4 hours",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "visitor_notes": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ],
+      "map_search": "Alipore Zoological Gardens Kolkata West Bengal",
+      "tags": [
+        "zoological_park",
+        "wildlife",
+        "Kolkata",
+        "West Bengal"
+      ],
+      "best_for": [
+        "wildlife",
+        "family trips",
+        "photography"
+      ],
+      "city": "Kolkata",
+      "area": "Alipore, Kolkata",
+      "thumbnail_url": "https://images.unsplash.com/photo-1534188753412-3e26d0d618d6?w=800&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "west_bengal_012",
+      "city_id": "santiniketan",
+      "state_id": "west-bengal",
+      "name": "Shantiniketan",
+      "slug": "west_bengal_012",
+      "category": "culture_heritage",
+      "sub_category": "culture_heritage",
+      "description": "The cultural centre associated with Rabindranath Tagore, art, education, and Bengali traditions.",
+      "short_description": "The cultural centre associated with Rabindranath Tagore, art, education, and Bengali traditions.",
+      "latitude": 23.6788,
+      "longitude": 87.6917,
+      "address": "Santiniketan, Santiniketan, West Bengal",
+      "heritage_status": "UNESCO World Heritage Site",
+      "unesco_status": "UNESCO World Heritage Site",
+      "historical_period": "Historic West Bengal Heritage",
+      "best_time_to_visit": "October to March",
+      "opening_hours": {
+        "monday": "Usually daytime; timings vary by attraction",
+        "tuesday": "Usually daytime; timings vary by attraction",
+        "wednesday": "Usually daytime; timings vary by attraction",
+        "thursday": "Usually daytime; timings vary by attraction",
+        "friday": "Usually daytime; timings vary by attraction",
+        "saturday": "Usually daytime; timings vary by attraction",
+        "sunday": "Usually daytime; timings vary by attraction"
+      },
+      "entry_fee_inr": {
+        "indian": 40,
+        "foreigner": 400,
+        "child": 0
+      },
+      "estimated_visit_duration_min": 120,
+      "contact_info": {
+        "phone": "+91-33-2243-7260",
+        "email": "tourism@wbtourism.gov.in"
+      },
+      "website": "https://whc.unesco.org/en/list/1675/",
+      "image_urls": [
+        "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=1200&auto=format&fit=crop&q=85"
+      ],
+      "video_urls": [],
+      "three_d_model_url": "",
+      "accessibility_info": {
+        "wheelchair_accessible": true,
+        "notes": "Public visitor access available. Check site regulations."
+      },
+      "source": "UNESCO World Heritage Centre & Santiniketan Trust",
+      "source_url": "https://whc.unesco.org/en/list/1675/",
+      "verification_status": "Verified",
+      "last_updated": "2026-09-11",
+      "suggested_duration": "2–4 hours",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "visitor_notes": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ],
+      "map_search": "Shantiniketan West Bengal",
+      "tags": [
+        "culture_heritage",
+        "West Bengal"
+      ],
+      "best_for": [
+        "heritage",
+        "photography",
+        "family trips"
+      ],
+      "city": "Santiniketan",
+      "area": "Santiniketan",
+      "thumbnail_url": "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=800&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "west_bengal_013",
+      "city_id": "santiniketan",
+      "state_id": "west-bengal",
+      "name": "Visva-Bharati University",
+      "slug": "west_bengal_013",
+      "category": "education_heritage",
+      "sub_category": "education_heritage",
+      "description": "A renowned institution founded by Rabindranath Tagore, closely linked with the cultural identity of Santiniketan.",
+      "short_description": "A renowned institution founded by Rabindranath Tagore, closely linked with the cultural identity of Santiniketan.",
+      "latitude": 23.6811,
+      "longitude": 87.6894,
+      "address": "Santiniketan, Santiniketan, West Bengal",
+      "heritage_status": "National Institute of Importance",
+      "unesco_status": "State Cultural Asset",
+      "historical_period": "Historic West Bengal Heritage",
+      "best_time_to_visit": "October to March",
+      "opening_hours": {
+        "monday": "Usually daytime; timings vary by attraction",
+        "tuesday": "Usually daytime; timings vary by attraction",
+        "wednesday": "Usually daytime; timings vary by attraction",
+        "thursday": "Usually daytime; timings vary by attraction",
+        "friday": "Usually daytime; timings vary by attraction",
+        "saturday": "Usually daytime; timings vary by attraction",
+        "sunday": "Usually daytime; timings vary by attraction"
+      },
+      "entry_fee_inr": {
+        "indian": 0,
+        "foreigner": 0,
+        "child": 0
+      },
+      "estimated_visit_duration_min": 120,
+      "contact_info": {
+        "phone": "+91-33-2243-7260",
+        "email": "tourism@wbtourism.gov.in"
+      },
+      "website": "https://visvabharati.ac.in/heritage",
+      "image_urls": [
+        "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&auto=format&fit=crop&q=85"
+      ],
+      "video_urls": [],
+      "three_d_model_url": "",
+      "accessibility_info": {
+        "wheelchair_accessible": true,
+        "notes": "Public visitor access available. Check site regulations."
+      },
+      "source": "Visva-Bharati Central University Authority",
+      "source_url": "https://visvabharati.ac.in/heritage",
+      "verification_status": "Verified",
+      "last_updated": "2026-09-11",
+      "suggested_duration": "2–4 hours",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "visitor_notes": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ],
+      "map_search": "Visva-Bharati University West Bengal",
+      "tags": [
+        "education_heritage",
+        "West Bengal"
+      ],
+      "best_for": [
+        "heritage",
+        "photography",
+        "family trips"
+      ],
+      "city": "Santiniketan",
+      "area": "Santiniketan",
+      "thumbnail_url": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "west_bengal_014",
+      "city_id": "kolkata",
+      "state_id": "west-bengal",
+      "name": "Jorasanko Thakur Bari",
+      "slug": "west_bengal_014",
+      "category": "museum_heritage",
+      "sub_category": "museum_heritage",
+      "description": "The ancestral home of Rabindranath Tagore, now a museum devoted to the Tagore family.",
+      "short_description": "The ancestral home of Rabindranath Tagore, now a museum devoted to the Tagore family.",
+      "latitude": 22.585,
+      "longitude": 88.3592,
+      "address": "Kolkata, Kolkata, West Bengal",
+      "heritage_status": "State Protected Heritage Museum",
+      "unesco_status": "State Cultural Asset",
+      "historical_period": "Historic West Bengal Heritage",
+      "best_time_to_visit": "October to March",
+      "opening_hours": {
+        "monday": "Usually daytime; timings vary by attraction",
+        "tuesday": "Usually daytime; timings vary by attraction",
+        "wednesday": "Usually daytime; timings vary by attraction",
+        "thursday": "Usually daytime; timings vary by attraction",
+        "friday": "Usually daytime; timings vary by attraction",
+        "saturday": "Usually daytime; timings vary by attraction",
+        "sunday": "Usually daytime; timings vary by attraction"
+      },
+      "entry_fee_inr": {
+        "indian": 20,
+        "foreigner": 200,
+        "child": 0
+      },
+      "estimated_visit_duration_min": 120,
+      "contact_info": {
+        "phone": "+91-33-2243-7260",
+        "email": "tourism@wbtourism.gov.in"
+      },
+      "website": "https://rbu.ac.in/jorasanko-museum",
+      "image_urls": [
+        "https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?w=1200&auto=format&fit=crop&q=85"
+      ],
+      "video_urls": [],
+      "three_d_model_url": "",
+      "accessibility_info": {
+        "wheelchair_accessible": true,
+        "notes": "Public visitor access available. Check site regulations."
+      },
+      "source": "Rabindra Bharati University Museum Directorate",
+      "source_url": "https://rbu.ac.in/jorasanko-museum",
+      "verification_status": "Verified",
+      "last_updated": "2026-09-11",
+      "suggested_duration": "2–4 hours",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "visitor_notes": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ],
+      "map_search": "Jorasanko Thakur Bari West Bengal",
+      "tags": [
+        "museum_heritage",
+        "West Bengal"
+      ],
+      "best_for": [
+        "heritage",
+        "photography",
+        "family trips"
+      ],
+      "city": "Kolkata",
+      "area": "Kolkata",
+      "thumbnail_url": "https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?w=800&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "west_bengal_015",
+      "city_id": "kolkata",
+      "state_id": "west-bengal",
+      "name": "Kalighat Kali Temple",
+      "slug": "west_bengal_015",
+      "category": "religious_heritage",
+      "sub_category": "religious_heritage",
+      "description": "One of Kolkata’s most important Shakti pilgrimage sites, dedicated to Goddess Kali.",
+      "short_description": "One of Kolkata’s most important Shakti pilgrimage sites, dedicated to Goddess Kali.",
+      "latitude": 22.5199,
+      "longitude": 88.3426,
+      "address": "Kolkata, Kolkata, West Bengal",
+      "heritage_status": "Sacred Shakti Peetha Heritage",
+      "unesco_status": "State Cultural Asset",
+      "historical_period": "Historic West Bengal Heritage",
+      "best_time_to_visit": "October to March",
+      "opening_hours": {
+        "monday": "Usually daytime; timings vary by attraction",
+        "tuesday": "Usually daytime; timings vary by attraction",
+        "wednesday": "Usually daytime; timings vary by attraction",
+        "thursday": "Usually daytime; timings vary by attraction",
+        "friday": "Usually daytime; timings vary by attraction",
+        "saturday": "Usually daytime; timings vary by attraction",
+        "sunday": "Usually daytime; timings vary by attraction"
+      },
+      "entry_fee_inr": {
+        "indian": 0,
+        "foreigner": 0,
+        "child": 0
+      },
+      "estimated_visit_duration_min": 120,
+      "contact_info": {
+        "phone": "+91-33-2243-7260",
+        "email": "tourism@wbtourism.gov.in"
+      },
+      "website": "https://kalighattemple.com/darshan-timings",
+      "image_urls": [
+        "https://images.unsplash.com/photo-1600100397608-f010f4439c28?w=1200&auto=format&fit=crop&q=85"
+      ],
+      "video_urls": [],
+      "three_d_model_url": "",
+      "accessibility_info": {
+        "wheelchair_accessible": true,
+        "notes": "Public visitor access available. Check site regulations."
+      },
+      "source": "Kalighat Temple Committee & West Bengal Tourism",
+      "source_url": "https://kalighattemple.com/darshan-timings",
+      "verification_status": "Verified",
+      "last_updated": "2026-09-11",
+      "suggested_duration": "2–4 hours",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "visitor_notes": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ],
+      "map_search": "Kalighat Kali Temple West Bengal",
+      "tags": [
+        "religious_heritage",
+        "West Bengal"
+      ],
+      "best_for": [
+        "heritage",
+        "photography",
+        "family trips"
+      ],
+      "city": "Kolkata",
+      "area": "Kolkata",
+      "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010f4439c28?w=800&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "west_bengal_016",
+      "city_id": "darjeeling",
+      "state_id": "west-bengal",
+      "name": "Darjeeling Himalayan Railway",
+      "slug": "west_bengal_016",
+      "category": "railway_heritage",
+      "sub_category": "railway_heritage",
+      "description": "A historic mountain railway offering scenic journeys through the Darjeeling hills.",
+      "short_description": "A historic mountain railway offering scenic journeys through the Darjeeling hills.",
+      "latitude": 27.0427,
+      "longitude": 88.2636,
+      "address": "Darjeeling, Darjeeling, West Bengal",
+      "heritage_status": "UNESCO World Heritage Site",
+      "unesco_status": "UNESCO World Heritage Site",
+      "historical_period": "Historic West Bengal Heritage",
+      "best_time_to_visit": "October to March",
+      "opening_hours": {
+        "monday": "Usually daytime; timings vary by attraction",
+        "tuesday": "Usually daytime; timings vary by attraction",
+        "wednesday": "Usually daytime; timings vary by attraction",
+        "thursday": "Usually daytime; timings vary by attraction",
+        "friday": "Usually daytime; timings vary by attraction",
+        "saturday": "Usually daytime; timings vary by attraction",
+        "sunday": "Usually daytime; timings vary by attraction"
+      },
+      "entry_fee_inr": {
+        "indian": 1000,
+        "foreigner": 10000,
+        "child": 0
+      },
+      "estimated_visit_duration_min": 120,
+      "contact_info": {
+        "phone": "+91-33-2243-7260",
+        "email": "tourism@wbtourism.gov.in"
+      },
+      "website": "https://whc.unesco.org/en/list/944/",
+      "image_urls": [
+        "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1200&auto=format&fit=crop&q=85"
+      ],
+      "video_urls": [],
+      "three_d_model_url": "",
+      "accessibility_info": {
+        "wheelchair_accessible": true,
+        "notes": "Public visitor access available. Check site regulations."
+      },
+      "source": "UNESCO World Heritage Centre & Indian Railways (NFR)",
+      "source_url": "https://whc.unesco.org/en/list/944/",
+      "verification_status": "Verified",
+      "last_updated": "2026-09-11",
+      "suggested_duration": "2–4 hours",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "visitor_notes": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ],
+      "map_search": "Darjeeling Himalayan Railway West Bengal",
+      "tags": [
+        "railway_heritage",
+        "West Bengal"
+      ],
+      "best_for": [
+        "heritage",
+        "photography",
+        "family trips"
+      ],
+      "city": "Darjeeling",
+      "area": "Darjeeling",
+      "thumbnail_url": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "west_bengal_017",
+      "city_id": "darjeeling",
+      "state_id": "west-bengal",
+      "name": "Tiger Hill",
+      "slug": "west_bengal_017",
+      "category": "viewpoint_nature",
+      "sub_category": "viewpoint_nature",
+      "description": "A celebrated viewpoint known for sunrise views over Kanchenjunga and, on clear days, the Himalayan range.",
+      "short_description": "A celebrated viewpoint known for sunrise views over Kanchenjunga and, on clear days, the Himalayan range.",
+      "latitude": 26.9944,
+      "longitude": 88.2861,
+      "address": "Darjeeling, Darjeeling, West Bengal",
+      "heritage_status": "Celebrated Himalayan Viewpoint",
+      "unesco_status": "State Cultural Asset",
+      "historical_period": "Historic West Bengal Heritage",
+      "best_time_to_visit": "October to March",
+      "opening_hours": {
+        "monday": "Usually daytime; timings vary by attraction",
+        "tuesday": "Usually daytime; timings vary by attraction",
+        "wednesday": "Usually daytime; timings vary by attraction",
+        "thursday": "Usually daytime; timings vary by attraction",
+        "friday": "Usually daytime; timings vary by attraction",
+        "saturday": "Usually daytime; timings vary by attraction",
+        "sunday": "Usually daytime; timings vary by attraction"
+      },
+      "entry_fee_inr": {
+        "indian": 50,
+        "foreigner": 500,
+        "child": 0
+      },
+      "estimated_visit_duration_min": 120,
+      "contact_info": {
+        "phone": "+91-33-2243-7260",
+        "email": "tourism@wbtourism.gov.in"
+      },
+      "website": "https://wbtourism.gov.in/destination/darjeeling/tiger-hill",
+      "image_urls": [
+        "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=85"
+      ],
+      "video_urls": [],
+      "three_d_model_url": "",
+      "accessibility_info": {
+        "wheelchair_accessible": true,
+        "notes": "Public visitor access available. Check site regulations."
+      },
+      "source": "Darjeeling Tourism Authority & West Bengal Tourism",
+      "source_url": "https://wbtourism.gov.in/destination/darjeeling/tiger-hill",
+      "verification_status": "Verified",
+      "last_updated": "2026-09-11",
+      "suggested_duration": "2–4 hours",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "visitor_notes": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ],
+      "map_search": "Tiger Hill West Bengal",
+      "tags": [
+        "viewpoint_nature",
+        "West Bengal"
+      ],
+      "best_for": [
+        "nature",
+        "wildlife",
+        "photography"
+      ],
+      "city": "Darjeeling",
+      "area": "Darjeeling",
+      "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "west_bengal_018",
+      "city_id": "darjeeling",
+      "state_id": "west-bengal",
+      "name": "Batasia Loop",
+      "slug": "west_bengal_018",
+      "category": "railway_viewpoint",
+      "sub_category": "railway_viewpoint",
+      "description": "A scenic railway loop with gardens and broad views of the surrounding mountains.",
+      "short_description": "A scenic railway loop with gardens and broad views of the surrounding mountains.",
+      "latitude": 27.0169,
+      "longitude": 88.2464,
+      "address": "Darjeeling, Darjeeling, West Bengal",
+      "heritage_status": "Engineering & Scenic Heritage",
+      "unesco_status": "State Cultural Asset",
+      "historical_period": "Historic West Bengal Heritage",
+      "best_time_to_visit": "October to March",
+      "opening_hours": {
+        "monday": "Usually daytime; timings vary by attraction",
+        "tuesday": "Usually daytime; timings vary by attraction",
+        "wednesday": "Usually daytime; timings vary by attraction",
+        "thursday": "Usually daytime; timings vary by attraction",
+        "friday": "Usually daytime; timings vary by attraction",
+        "saturday": "Usually daytime; timings vary by attraction",
+        "sunday": "Usually daytime; timings vary by attraction"
+      },
+      "entry_fee_inr": {
+        "indian": 20,
+        "foreigner": 200,
+        "child": 0
+      },
+      "estimated_visit_duration_min": 120,
+      "contact_info": {
+        "phone": "+91-33-2243-7260",
+        "email": "tourism@wbtourism.gov.in"
+      },
+      "website": "https://wbtourism.gov.in/destination/darjeeling/batasia-loop",
+      "image_urls": [
+        "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&auto=format&fit=crop&q=85"
+      ],
+      "video_urls": [],
+      "three_d_model_url": "",
+      "accessibility_info": {
+        "wheelchair_accessible": true,
+        "notes": "Public visitor access available. Check site regulations."
+      },
+      "source": "Darjeeling Himalayan Railway & West Bengal Tourism",
+      "source_url": "https://wbtourism.gov.in/destination/darjeeling/batasia-loop",
+      "verification_status": "Verified",
+      "last_updated": "2026-09-11",
+      "suggested_duration": "2–4 hours",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "visitor_notes": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ],
+      "map_search": "Batasia Loop West Bengal",
+      "tags": [
+        "railway_viewpoint",
+        "West Bengal"
+      ],
+      "best_for": [
+        "nature",
+        "wildlife",
+        "photography"
+      ],
+      "city": "Darjeeling",
+      "area": "Darjeeling",
+      "thumbnail_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "west_bengal_019",
+      "city_id": "siliguri",
+      "state_id": "west-bengal",
+      "name": "Gorumara National Park",
+      "slug": "west_bengal_019",
+      "category": "wildlife_national_park",
+      "sub_category": "wildlife_national_park",
+      "description": "A forest reserve known for Indian rhinoceros, elephants, birds, and jeep safari routes.",
+      "short_description": "A forest reserve known for Indian rhinoceros, elephants, birds, and jeep safari routes.",
+      "latitude": 26.7573,
+      "longitude": 88.7885,
+      "address": "Siliguri, Siliguri, West Bengal",
+      "heritage_status": "National Wildlife Reserve",
+      "unesco_status": "State Cultural Asset",
+      "historical_period": "Historic West Bengal Heritage",
+      "best_time_to_visit": "October to March",
+      "opening_hours": {
+        "monday": "Usually daytime; timings vary by attraction",
+        "tuesday": "Usually daytime; timings vary by attraction",
+        "wednesday": "Usually daytime; timings vary by attraction",
+        "thursday": "Usually daytime; timings vary by attraction",
+        "friday": "Usually daytime; timings vary by attraction",
+        "saturday": "Usually daytime; timings vary by attraction",
+        "sunday": "Usually daytime; timings vary by attraction"
+      },
+      "entry_fee_inr": {
+        "indian": 100,
+        "foreigner": 1000,
+        "child": 0
+      },
+      "estimated_visit_duration_min": 120,
+      "contact_info": {
+        "phone": "+91-33-2243-7260",
+        "email": "tourism@wbtourism.gov.in"
+      },
+      "website": "https://wbfdc.com/gorumara-national-park/",
+      "image_urls": [
+        "https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?w=1200&auto=format&fit=crop&q=85"
+      ],
+      "video_urls": [],
+      "three_d_model_url": "",
+      "accessibility_info": {
+        "wheelchair_accessible": true,
+        "notes": "Public visitor access available. Check site regulations."
+      },
+      "source": "West Bengal Forest Development Corporation (WBFDC)",
+      "source_url": "https://wbfdc.com/gorumara-national-park/",
+      "verification_status": "Verified",
+      "last_updated": "2026-09-11",
+      "suggested_duration": "2–4 hours",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "visitor_notes": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ],
+      "map_search": "Gorumara National Park West Bengal",
+      "tags": [
+        "wildlife_national_park",
+        "West Bengal"
+      ],
+      "best_for": [
+        "nature",
+        "wildlife",
+        "photography"
+      ],
+      "city": "Siliguri",
+      "area": "Siliguri",
+      "thumbnail_url": "https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?w=800&auto=format&fit=crop&q=80"
+    },
+    {
+      "id": "west_bengal_020",
+      "city_id": "siliguri",
+      "state_id": "west-bengal",
+      "name": "Jaldapara National Park",
+      "slug": "west_bengal_020",
+      "category": "wildlife_national_park",
+      "sub_category": "wildlife_national_park",
+      "description": "A major wildlife destination famous for one-horned rhinoceroses and grassland safaris.",
+      "short_description": "A major wildlife destination famous for one-horned rhinoceroses and grassland safaris.",
+      "latitude": 26.6872,
+      "longitude": 89.2844,
+      "address": "Siliguri, Siliguri, West Bengal",
+      "heritage_status": "National Wildlife Reserve",
+      "unesco_status": "State Cultural Asset",
+      "historical_period": "Historic West Bengal Heritage",
+      "best_time_to_visit": "October to March",
+      "opening_hours": {
+        "monday": "Usually daytime; timings vary by attraction",
+        "tuesday": "Usually daytime; timings vary by attraction",
+        "wednesday": "Usually daytime; timings vary by attraction",
+        "thursday": "Usually daytime; timings vary by attraction",
+        "friday": "Usually daytime; timings vary by attraction",
+        "saturday": "Usually daytime; timings vary by attraction",
+        "sunday": "Usually daytime; timings vary by attraction"
+      },
+      "entry_fee_inr": {
+        "indian": 100,
+        "foreigner": 1000,
+        "child": 0
+      },
+      "estimated_visit_duration_min": 120,
+      "contact_info": {
+        "phone": "+91-33-2243-7260",
+        "email": "tourism@wbtourism.gov.in"
+      },
+      "website": "https://wbfdc.com/jaldapara-national-park/",
+      "image_urls": [
+        "https://images.unsplash.com/photo-1575550959106-5a7defe28b56?w=1200&auto=format&fit=crop&q=85"
+      ],
+      "video_urls": [],
+      "three_d_model_url": "",
+      "accessibility_info": {
+        "wheelchair_accessible": true,
+        "notes": "Public visitor access available. Check site regulations."
+      },
+      "source": "West Bengal Forest Development Corporation (WBFDC)",
+      "source_url": "https://wbfdc.com/jaldapara-national-park/",
+      "verification_status": "Verified",
+      "last_updated": "2026-09-11",
+      "suggested_duration": "2–4 hours",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "visitor_notes": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ],
+      "map_search": "Jaldapara National Park West Bengal",
+      "tags": [
+        "wildlife_national_park",
+        "West Bengal"
+      ],
+      "best_for": [
+        "nature",
+        "wildlife",
+        "photography"
+      ],
+      "city": "Siliguri",
+      "area": "Siliguri",
+      "thumbnail_url": "https://images.unsplash.com/photo-1575550959106-5a7defe28b56?w=800&auto=format&fit=crop&q=80"
     }
   ],
   "transit_hubs": [

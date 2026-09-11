@@ -122,8 +122,23 @@
     "description": "Uttar Pradesh, situated in the fertile Indo-Gangetic plain, is a foundational center of Indian classical civilization, home to holy rivers Ganga and Yamuna, world-renowned Mughal and Awadhi monuments, and sacred pilgrimage centers.",
     "status": "verified",
     "hero_image_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&q=80",
-    "total_cities": 2,
-    "total_attractions": 4
+    "total_cities": 12,
+    "total_attractions": 40,
+    "total_places": 40,
+    "cities": [
+      "lucknow",
+      "varanasi",
+      "agra",
+      "ayodhya",
+      "mathura",
+      "vrindavan",
+      "govardhan",
+      "prayagraj",
+      "vindhyachal",
+      "dudhwa",
+      "jhansi",
+      "chitrakoot"
+    ]
   },
   {
     "id": "uttarakhand",
@@ -174,12 +189,13 @@
     "type": "state",
     "capital": "Imphal",
     "region": "Northeastern India",
-    "official_tourism_url": "https://unsplash.com/photos/green-grass-field-near-body-of-water-during-daytime-E_8m4q2Z7v1",
+    "official_tourism_url": "https://manipurtourism.gov.in",
     "description": "Jeweled land featuring Loktak Lake with floating phumdis, Keibul Lamjao Sangai deer park, and Kangla Fort.",
-    "status": "active",
+    "status": "verified",
     "hero_image_url": "https://images.unsplash.com/photo-1616423640778-28d1b53229bd?w=1200&auto=format&fit=crop&q=80",
-    "total_cities": 1,
-    "total_attractions": 6
+    "total_cities": 6,
+    "total_attractions": 10,
+    "total_places": 10
   },
   {
     "id": "meghalaya",
@@ -188,12 +204,13 @@
     "type": "state",
     "capital": "Shillong",
     "region": "Northeastern India",
-    "official_tourism_url": "https://unsplash.com/photos/waterfalls-between-green-mountains-under-white-clouds-during-daytime-C_5m7q9v2Z8",
+    "official_tourism_url": "https://meghalayatourism.in",
     "description": "Abode of Clouds, renowned for living root bridges, Cherrapunjee waterfalls, clean village Mawlynnong, and Khasi culture.",
-    "status": "active",
+    "status": "verified",
     "hero_image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80",
-    "total_cities": 2,
-    "total_attractions": 7
+    "total_cities": 6,
+    "total_attractions": 10,
+    "total_places": 10
   },
   {
     "id": "mizoram",
@@ -202,12 +219,13 @@
     "type": "state",
     "capital": "Aizawl",
     "region": "Northeastern India",
-    "official_tourism_url": "https://unsplash.com/photos/green-mountains-under-blue-sky-during-daytime-F_9m2q5Z1v4",
+    "official_tourism_url": "https://tourism.mizoram.gov.in",
     "description": "Land of Rolling Hills and bamboo forests, known for its ridge-top capital Aizawl, Cheraw bamboo dance, and pristine lakes.",
-    "status": "active",
+    "status": "verified",
     "hero_image_url": "https://images.unsplash.com/photo-1627993077750-6d4323229b48?w=1200&auto=format&fit=crop&q=80",
-    "total_cities": 4,
-    "total_attractions": 6
+    "total_cities": 7,
+    "total_attractions": 10,
+    "total_places": 10
   },
   {
     "id": "nagaland",
@@ -216,12 +234,13 @@
     "type": "state",
     "capital": "Kohima",
     "region": "Northeastern India",
-    "official_tourism_url": "https://unsplash.com/photos/green-grass-field-on-mountain-under-white-clouds-during-daytime-K_1m4q7Z9v2",
+    "official_tourism_url": "https://tourism.nagaland.gov.in",
     "description": "Land of Festivals, celebrated for the Hornbill Festival, 16 indigenous warrior tribes, WWII Kohima War Cemetery, and Dzukou Valley.",
-    "status": "active",
+    "status": "verified",
     "hero_image_url": "https://images.unsplash.com/photo-1628172900406-8d6840742f1b?w=1200&auto=format&fit=crop&q=80",
-    "total_cities": 3,
-    "total_attractions": 6
+    "total_cities": 5,
+    "total_attractions": 10,
+    "total_places": 10
   },
   {
     "id": "sikkim",
@@ -274,10 +293,27 @@
     "region": "Eastern India",
     "official_tourism_url": "https://unsplash.com/photos/brown-concrete-building-under-blue-sky-during-daytime-Vp8w3Y9f8-8",
     "description": "Cradle of ancient empires (Maurya and Gupta), enlightenment grounds of Gautama Buddha, and birthplace of Guru Gobind Singh.",
-    "status": "active",
+    "status": "verified",
     "hero_image_url": "https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=1200&auto=format&fit=crop&q=80",
-    "total_cities": 4,
-    "total_attractions": 10
+    "total_cities": 14,
+    "total_attractions": 30,
+    "total_places": 30,
+    "cities": [
+      "patna",
+      "bodh_gaya",
+      "nalanda",
+      "rajgir",
+      "pawapuri",
+      "bhagalpur",
+      "valmiki_nagar",
+      "kesaria",
+      "vaishali",
+      "bhabua",
+      "jehanabad",
+      "sitamarhi",
+      "munger",
+      "patna_city"
+    ]
   },
   {
     "id": "jharkhand",
@@ -318,8 +354,8 @@
     "description": "Cultural capital of India featuring Victoria Memorial, UNESCO Sundarbans, Darjeeling Himalayan Railway, and terracotta Bishnupur.",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1558431382-27e303142255?w=1200&auto=format&fit=crop&q=80",
-    "total_cities": 6,
-    "total_attractions": 7
+    "total_cities": 7,
+    "total_attractions": 20
   },
   {
     "id": "chhattisgarh",
@@ -330,10 +366,35 @@
     "region": "Central India",
     "official_tourism_url": "https://unsplash.com/photos/waterfalls-during-daytime-7t1oZg0_p8U",
     "description": "Green heartland of India boasting Chitrakote Horseshoe Falls, ancient Sirpur Buddhist brick monuments, and Bastar tribal arts.",
-    "status": "active",
+    "status": "verified",
     "hero_image_url": "https://images.unsplash.com/photo-1627894483216-2138af692e32?w=1200&auto=format&fit=crop&q=80",
-    "total_cities": 5,
-    "total_attractions": 7
+    "total_cities": 22,
+    "total_attractions": 30,
+    "total_places": 30,
+    "cities": [
+      "chitrakote",
+      "kanger-valley",
+      "jagdalpur",
+      "dantewada",
+      "bhoramdeo",
+      "barnawapara",
+      "sirpur",
+      "rajim",
+      "bhilai",
+      "raipur",
+      "naya-raipur",
+      "kanker",
+      "bastar",
+      "bijapur",
+      "udanti-sitanadi",
+      "achanakmar",
+      "tamor-pingla",
+      "semarsot",
+      "bhairamgarh",
+      "sitanadi",
+      "mainpat",
+      "jashpur"
+    ]
   },
   {
     "id": "madhya-pradesh",
@@ -428,10 +489,33 @@
     "region": "Southern India",
     "official_tourism_url": "https://unsplash.com/photos/a-very-tall-temple-with-people-walking-around-it-M9h5r4Z_1p4",
     "description": "One State Many Worlds featuring UNESCO Vijayanagara ruins at Hampi, Hoysala Sacred Ensembles, and Badami Chalukya cave temples.",
-    "status": "active",
+    "status": "verified",
     "hero_image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=80",
-    "total_cities": 15,
-    "total_attractions": 10
+    "total_cities": 20,
+    "total_attractions": 40,
+    "total_places": 40,
+    "cities": [
+      "bengaluru",
+      "mysuru",
+      "hampi",
+      "vijayapura",
+      "badami",
+      "pattadakal",
+      "aihole",
+      "madikeri",
+      "chikkamagaluru",
+      "sagara",
+      "gokarna",
+      "murudeshwar",
+      "bandipur",
+      "nagarhole",
+      "udupi",
+      "mangaluru",
+      "chitradurga",
+      "lakkundi",
+      "dandeli",
+      "hassan"
+    ]
   },
   {
     "id": "kerala",
@@ -496,11 +580,13 @@
     "type": "state",
     "capital": "Hyderabad",
     "region": "Southern India",
-    "official_tourism_url": "https://unsplash.com/photos/charminar-monument-hyderabad-T_4m9q2Z1v5",
-    "description": "City of Pearls and Nizams, home to Charminar, Golconda Fort, and UNESCO World Heritage Kakatiya Rudreshwara (Ramappa) Temple.",
-    "status": "active",
+    "official_tourism_url": "https://tourism.telangana.gov.in",
+    "description": "Heart of Deccan heritage, Nizami architectural marvels, Kakatiya stone gateways, historic Charminar, and sacred pilgrimage destinations.",
+    "status": "verified",
     "hero_image_url": "https://images.unsplash.com/photo-1605335198083-d5d85202874a?w=1200&auto=format&fit=crop&q=80",
-    "total_cities": 5,
-    "total_attractions": 9
+    "total_cities": 8,
+    "total_attractions": 15,
+    "region_type": "state",
+    "total_places": 15
   }
 ]

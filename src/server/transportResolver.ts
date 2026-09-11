@@ -179,6 +179,74 @@ export const STATION_ALIASES: Record<string, { name: string; code: string; city:
   'ahmedabad junction': { name: 'Ahmedabad Junction (ADI)', code: 'ADI', city: 'Ahmedabad', state: 'Gujarat', lat: 23.0225, lng: 72.6011, is_junction: true },
   jp: { name: 'Jaipur Junction (JP)', code: 'JP', city: 'Jaipur', state: 'Rajasthan', lat: 26.9200, lng: 75.7878, is_junction: true },
   'jaipur junction': { name: 'Jaipur Junction (JP)', code: 'JP', city: 'Jaipur', state: 'Rajasthan', lat: 26.9200, lng: 75.7878, is_junction: true },
+  mumbaicsmt: { name: 'Chhatrapati Shivaji Maharaj Terminus (CSMT)', code: 'CSMT', id: 'csmt', city: 'Mumbai', state: 'Maharashtra', lat: 18.9400, lng: 72.8353 },
+  churchgatestation: { name: 'Churchgate Railway Station (CCG)', code: 'CCG', id: 'churchgate', city: 'Mumbai', state: 'Maharashtra', lat: 18.9322, lng: 72.8264 },
+  mumbaicentral: { name: 'Mumbai Central (MMCT)', code: 'MMCT', id: 'mumbai-central', city: 'Mumbai', state: 'Maharashtra', lat: 18.9696, lng: 72.8193 },
+  dadarstation: { name: 'Dadar Junction (DDR)', code: 'DDR', id: 'dadar', city: 'Mumbai', state: 'Maharashtra', lat: 19.0178, lng: 72.8478 },
+  bandrastation: { name: 'Bandra Terminus (BDTS)', code: 'BDTS', id: 'bandra-term', city: 'Mumbai', state: 'Maharashtra', lat: 19.0544, lng: 72.8406 },
+  delhistation: { name: 'New Delhi Railway Station (NDLS)', code: 'NDLS', id: 'ndls', city: 'New Delhi', state: 'Delhi', lat: 28.6430, lng: 77.2195 },
+  newdelhistation: { name: 'New Delhi Railway Station (NDLS)', code: 'NDLS', id: 'ndls', city: 'New Delhi', state: 'Delhi', lat: 28.6430, lng: 77.2195 },
+  nizamuddinstation: { name: 'Hazrat Nizamuddin (NZM)', code: 'NZM', id: 'nzm', city: 'New Delhi', state: 'Delhi', lat: 28.5888, lng: 77.2534 },
+  howrahstation: { name: 'Howrah Junction (HWH)', code: 'HWH', id: 'hwh', city: 'Kolkata', state: 'West Bengal', lat: 22.5833, lng: 88.3425 },
+  kolkatastation: { name: 'Howrah Junction (HWH)', code: 'HWH', id: 'hwh', city: 'Kolkata', state: 'West Bengal', lat: 22.5833, lng: 88.3425 },
+  sealdahstation: { name: 'Sealdah Railway Station (SDAH)', code: 'SDAH', id: 'sdah', city: 'Kolkata', state: 'West Bengal', lat: 22.5697, lng: 88.3713 },
+  njp: { name: 'New Jalpaiguri Junction (NJP)', code: 'NJP', id: 'njp', city: 'Siliguri', state: 'West Bengal', lat: 26.6853, lng: 88.4419 },
+  newjalpaiguristation: { name: 'New Jalpaiguri Junction (NJP)', code: 'NJP', id: 'njp', city: 'Siliguri', state: 'West Bengal', lat: 26.6853, lng: 88.4419 },
+  dj: { name: 'Darjeeling Railway Station (DJ)', code: 'DJ', id: 'dj', city: 'Darjeeling', state: 'West Bengal', lat: 27.0410, lng: 88.2663 },
+  darjeelingstation: { name: 'Darjeeling Railway Station (DJ)', code: 'DJ', id: 'dj', city: 'Darjeeling', state: 'West Bengal', lat: 27.0410, lng: 88.2663 },
+  sina: { name: 'Srinagar Railway Station (SINA)', code: 'SINA', id: 'srinagar-stn', city: 'Srinagar', state: 'Jammu and Kashmir', lat: 34.0384, lng: 74.8384 },
+  srinagarstn: { name: 'Srinagar Railway Station (SINA)', code: 'SINA', id: 'srinagar-stn', city: 'Srinagar', state: 'Jammu and Kashmir', lat: 34.0384, lng: 74.8384 },
+  srinagarstation: { name: 'Srinagar Railway Station (SINA)', code: 'SINA', id: 'srinagar-stn', city: 'Srinagar', state: 'Jammu and Kashmir', lat: 34.0384, lng: 74.8384 },
+  srinagarrailwaystation: { name: 'Srinagar Railway Station (SINA)', code: 'SINA', id: 'srinagar-stn', city: 'Srinagar', state: 'Jammu and Kashmir', lat: 34.0384, lng: 74.8384 },
+  svdk: { name: 'Shri Mata Vaishno Devi Katra (SVDK)', code: 'SVDK', id: 'katra-svdk', city: 'Katra', state: 'Jammu and Kashmir', lat: 32.9856, lng: 74.9547 },
+  katrastation: { name: 'Shri Mata Vaishno Devi Katra (SVDK)', code: 'SVDK', id: 'katra-svdk', city: 'Katra', state: 'Jammu and Kashmir', lat: 32.9856, lng: 74.9547 },
+  jat: { name: 'Jammu Tawi (JAT)', code: 'JAT', id: 'jammu-tawi', city: 'Jammu', state: 'Jammu and Kashmir', lat: 32.7058, lng: 74.8789 },
+  jammustation: { name: 'Jammu Tawi (JAT)', code: 'JAT', id: 'jammu-tawi', city: 'Jammu', state: 'Jammu and Kashmir', lat: 32.7058, lng: 74.8789 },
+  bahl: { name: 'Banihal Railway Station (BAHL)', code: 'BAHL', id: 'banihal-stn', city: 'Banihal', state: 'Jammu and Kashmir', lat: 33.4981, lng: 75.2017 },
+  jaipurstation: { name: 'Jaipur Junction (JP)', code: 'JP', id: 'jp', city: 'Jaipur', state: 'Rajasthan', lat: 26.9196, lng: 75.7878 },
+  agc: { name: 'Agra Cantt (AGC)', code: 'AGC', id: 'agc', city: 'Agra', state: 'Uttar Pradesh', lat: 27.1578, lng: 77.9904 },
+  agrastation: { name: 'Agra Cantt (AGC)', code: 'AGC', id: 'agc', city: 'Agra', state: 'Uttar Pradesh', lat: 27.1578, lng: 77.9904 },
+  bsb: { name: 'Varanasi Junction (BSB)', code: 'BSB', id: 'bsb', city: 'Varanasi', state: 'Uttar Pradesh', lat: 25.3283, lng: 82.9858 },
+  varanasistation: { name: 'Varanasi Junction (BSB)', code: 'BSB', id: 'bsb', city: 'Varanasi', state: 'Uttar Pradesh', lat: 25.3283, lng: 82.9858 },
+  bengalurustation: { name: 'KSR Bengaluru (SBC)', code: 'SBC', id: 'sbc', city: 'Bengaluru', state: 'Karnataka', lat: 12.9781, lng: 77.5694 },
+  bangalorestation: { name: 'KSR Bengaluru (SBC)', code: 'SBC', id: 'sbc', city: 'Bengaluru', state: 'Karnataka', lat: 12.9781, lng: 77.5694 },
+  chennaistation: { name: 'Chennai Central (MAS)', code: 'MAS', id: 'mas', city: 'Chennai', state: 'Tamil Nadu', lat: 13.0827, lng: 80.2756 },
+  ahmedabadstation: { name: 'Ahmedabad Junction (ADI)', code: 'ADI', id: 'adi', city: 'Ahmedabad', state: 'Gujarat', lat: 23.0225, lng: 72.5714 },
+  punestation: { name: 'Pune Junction (PUNE)', code: 'PUNE', id: 'pune', city: 'Pune', state: 'Maharashtra', lat: 18.5289, lng: 73.8744 },
+  lko: { name: 'Lucknow Charbagh (LKO)', code: 'LKO', id: 'lucknow-charbagh', city: 'Lucknow', state: 'Uttar Pradesh', lat: 26.8317, lng: 80.9248 },
+  lucknowstation: { name: 'Lucknow Charbagh (LKO)', code: 'LKO', id: 'lucknow-charbagh', city: 'Lucknow', state: 'Uttar Pradesh', lat: 26.8317, lng: 80.9248 },
+  bpl: { name: 'Bhopal Junction (BPL)', code: 'BPL', id: 'bhopal-jn', city: 'Bhopal', state: 'Madhya Pradesh', lat: 23.2599, lng: 77.4126 },
+  bhopalstation: { name: 'Bhopal Junction (BPL)', code: 'BPL', id: 'bhopal-jn', city: 'Bhopal', state: 'Madhya Pradesh', lat: 23.2599, lng: 77.4126 },
+  suratstation: { name: 'Surat Railway Station (ST)', code: 'ST', id: 'surat-stn', city: 'Surat', state: 'Gujarat', lat: 21.2049, lng: 72.8407 },
+  brc: { name: 'Vadodara Junction (BRC)', code: 'BRC', id: 'vadodara-jn', city: 'Vadodara', state: 'Gujarat', lat: 22.3107, lng: 73.1812 },
+  vadodarastation: { name: 'Vadodara Junction (BRC)', code: 'BRC', id: 'vadodara-jn', city: 'Vadodara', state: 'Gujarat', lat: 22.3107, lng: 73.1812 },
+  barodastation: { name: 'Vadodara Junction (BRC)', code: 'BRC', id: 'vadodara-jn', city: 'Vadodara', state: 'Gujarat', lat: 22.3107, lng: 73.1812 },
+  pnbe: { name: 'Patna Junction (PNBE)', code: 'PNBE', id: 'patna-jn', city: 'Patna', state: 'Bihar', lat: 25.6022, lng: 85.1376 },
+  patnastation: { name: 'Patna Junction (PNBE)', code: 'PNBE', id: 'patna-jn', city: 'Patna', state: 'Bihar', lat: 25.6022, lng: 85.1376 },
+  ghy: { name: 'Guwahati Railway Station (GHY)', code: 'GHY', id: 'guwahati-jn', city: 'Guwahati', state: 'Assam', lat: 26.1824, lng: 91.7516 },
+  guwahatistation: { name: 'Guwahati Railway Station (GHY)', code: 'GHY', id: 'guwahati-jn', city: 'Guwahati', state: 'Assam', lat: 26.1824, lng: 91.7516 },
+  bbs: { name: 'Bhubaneswar Railway Station (BBS)', code: 'BBS', id: 'bhubaneswar-jn', city: 'Bhubaneswar', state: 'Odisha', lat: 20.2666, lng: 85.8436 },
+  bhubaneswarstation: { name: 'Bhubaneswar Railway Station (BBS)', code: 'BBS', id: 'bhubaneswar-jn', city: 'Bhubaneswar', state: 'Odisha', lat: 20.2666, lng: 85.8436 },
+  puri: { name: 'Puri Railway Station (PURI)', code: 'PURI', id: 'puri-stn', city: 'Puri', state: 'Odisha', lat: 19.8135, lng: 85.8315 },
+  puristation: { name: 'Puri Railway Station (PURI)', code: 'PURI', id: 'puri-stn', city: 'Puri', state: 'Odisha', lat: 19.8135, lng: 85.8315 },
+  mao: { name: 'Madgaon Junction (MAO)', code: 'MAO', id: 'madgaon-jn', city: 'Madgaon', state: 'Goa', lat: 15.2736, lng: 73.9678 },
+  goastation: { name: 'Madgaon Junction Goa (MAO)', code: 'MAO', id: 'madgaon-jn', city: 'Madgaon', state: 'Goa', lat: 15.2736, lng: 73.9678 },
+  madgaonstation: { name: 'Madgaon Junction Goa (MAO)', code: 'MAO', id: 'madgaon-jn', city: 'Madgaon', state: 'Goa', lat: 15.2736, lng: 73.9678 },
+  cdg: { name: 'Chandigarh Junction (CDG)', code: 'CDG', id: 'chandigarh-jn', city: 'Chandigarh', state: 'Chandigarh', lat: 30.7056, lng: 76.8013 },
+  chandigarhstation: { name: 'Chandigarh Junction (CDG)', code: 'CDG', id: 'chandigarh-jn', city: 'Chandigarh', state: 'Chandigarh', lat: 30.7056, lng: 76.8013 },
+  asr: { name: 'Amritsar Junction (ASR)', code: 'ASR', id: 'asr', city: 'Amritsar', state: 'Punjab', lat: 31.6340, lng: 74.8723 },
+  amritsarstation: { name: 'Amritsar Junction (ASR)', code: 'ASR', id: 'asr', city: 'Amritsar', state: 'Punjab', lat: 31.6340, lng: 74.8723 },
+  ldh: { name: 'Ludhiana Junction (LDH)', code: 'LDH', id: 'ldh', city: 'Ludhiana', state: 'Punjab', lat: 30.9083, lng: 75.8589 },
+  ludhianastation: { name: 'Ludhiana Junction (LDH)', code: 'LDH', id: 'ldh', city: 'Ludhiana', state: 'Punjab', lat: 30.9083, lng: 75.8589 },
+  jrc: { name: 'Jalandhar Cantt (JRC)', code: 'JRC', id: 'jrc', city: 'Jalandhar', state: 'Punjab', lat: 31.2981, lng: 75.6147 },
+  jalandharstation: { name: 'Jalandhar Cantt (JRC)', code: 'JRC', id: 'jrc', city: 'Jalandhar', state: 'Punjab', lat: 31.2981, lng: 75.6147 },
+  sml: { name: 'Shimla Railway Station (SML)', code: 'SML', id: 'shimla-stn', city: 'Shimla', state: 'Himachal Pradesh', lat: 31.1039, lng: 77.1644 },
+  shimlastation: { name: 'Shimla Railway Station (SML)', code: 'SML', id: 'shimla-stn', city: 'Shimla', state: 'Himachal Pradesh', lat: 31.1039, lng: 77.1644 },
+  ers: { name: 'Ernakulam Junction (ERS)', code: 'ERS', id: 'ers', city: 'Kochi', state: 'Kerala', lat: 9.9678, lng: 76.2891 },
+  kochistation: { name: 'Ernakulam Junction (ERS)', code: 'ERS', id: 'ers', city: 'Kochi', state: 'Kerala', lat: 9.9678, lng: 76.2891 },
+  ernakulamstation: { name: 'Ernakulam Junction (ERS)', code: 'ERS', id: 'ers', city: 'Kochi', state: 'Kerala', lat: 9.9678, lng: 76.2891 },
+  tvc: { name: 'Thiruvananthapuram Central (TVC)', code: 'TVC', id: 'trivandrum-central', city: 'Thiruvananthapuram', state: 'Kerala', lat: 8.4875, lng: 76.9532 },
+  trivandrumstation: { name: 'Thiruvananthapuram Central (TVC)', code: 'TVC', id: 'trivandrum-central', city: 'Thiruvananthapuram', state: 'Kerala', lat: 8.4875, lng: 76.9532 },
 };
 
 // Initialize transport registry
@@ -377,6 +445,23 @@ export function initializeTransportRegistry(rootDir: string = process.cwd()) {
       } catch (e) {
         // Ignore file parse error
       }
+    }
+  }
+
+
+  // Ingest unique stations from STATION_ALIASES
+  for (const alias of Object.values(STATION_ALIASES)) {
+    if (!MASTER_VERIFIED_STATIONS.some((s) => s.code === alias.code || s.name.toLowerCase() === alias.name.toLowerCase())) {
+      MASTER_VERIFIED_STATIONS.push({
+        name: alias.name,
+        code: alias.code,
+        city: alias.city,
+        state: alias.state,
+        lat: alias.lat,
+        lng: alias.lng,
+        is_junction: (alias as any).is_junction,
+        status: 'VERIFIED',
+      });
     }
   }
 }
