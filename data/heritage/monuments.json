@@ -42,9 +42,9 @@
     "nearest_transport": {
       "railway_station": "Agra Cantt (AGC)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&auto=format&fit=crop&q=85",
+      "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop&q=80",
       "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
@@ -118,9 +118,9 @@
     "nearest_transport": {
       "railway_station": "Fatehpur Sikri (FTS) / Agra Cantt (AGC)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -192,9 +192,9 @@
     "nearest_transport": {
       "railway_station": "New Delhi (NDLS) / Qutab Minar Metro"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -266,9 +266,9 @@
     "nearest_transport": {
       "railway_station": "Old Delhi (DLI) / Lal Qila Metro"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1585135497273-1a86b09fe70e?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1585135497273-1a86b09fe70e?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -340,9 +340,9 @@
     "nearest_transport": {
       "railway_station": "Hazrat Nizamuddin (NZM)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1597044141245-3e28e18f26b5?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1597044141245-3e28e18f26b5?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1597044141245-3e28e18f26b5?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1597044141245-3e28e18f26b5?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -414,9 +414,9 @@
     "nearest_transport": {
       "railway_station": "New Delhi (NDLS) / Central Secretariat Metro"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -486,9 +486,9 @@
     "nearest_transport": {
       "railway_station": "Amritsar Junction (ASR)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1588096344356-9b634839cf9e?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1588096344356-9b634839cf9e?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1588096344356-9b634839cf9e?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1588096344356-9b634839cf9e?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -560,9 +560,9 @@
     "nearest_transport": {
       "railway_station": "Shimla (SML) / Kalka (KLK)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -635,9 +635,9 @@
     "nearest_transport": {
       "railway_station": "Rishikesh (RKSH) / Gaurikund Base"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -708,9 +708,9 @@
     "nearest_transport": {
       "railway_station": "Srinagar (SINA)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -781,9 +781,9 @@
     "nearest_transport": {
       "railway_station": "Leh Airport (IXL) / Jammu Tawi (JAT)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -853,9 +853,9 @@
     "nearest_transport": {
       "railway_station": "Chandigarh Junction (CDG)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1596178065887-1198b6148b2b?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -928,9 +928,9 @@
     "nearest_transport": {
       "railway_station": "Jaipur Junction (JP)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1603288967527-24861e6878b3?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1603288967527-24861e6878b3?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1603288967527-24861e6878b3?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1603288967527-24861e6878b3?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -1003,9 +1003,9 @@
     "nearest_transport": {
       "railway_station": "Jaipur Junction (JP) / Badi Chaupar Metro"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1609946850720-6d4323229b46?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1609946850720-6d4323229b46?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1609946850720-6d4323229b46?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1609946850720-6d4323229b46?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -1077,9 +1077,9 @@
     "nearest_transport": {
       "railway_station": "Jaisalmer (JSM)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1577717903315-1691ae25ab3f?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -1152,9 +1152,9 @@
     "nearest_transport": {
       "railway_station": "Patan (PTN) / Mehsana (MSH)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -1227,9 +1227,9 @@
     "nearest_transport": {
       "railway_station": "Vadodara Junction (BRC)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1590483259972-e1c015ea36ef?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1590483259972-e1c015ea36ef?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -1301,9 +1301,9 @@
     "nearest_transport": {
       "railway_station": "Jalgaon (JL) / Aurangabad (AWB)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -1375,9 +1375,9 @@
     "nearest_transport": {
       "railway_station": "Aurangabad (AWB)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1590483259972-e1c015ea36ef?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1590483259972-e1c015ea36ef?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -1450,9 +1450,9 @@
     "nearest_transport": {
       "railway_station": "CSMT / Churchgate (CCG)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1588714477688-cf28a50e94f7?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1588714477688-cf28a50e94f7?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1588714477688-cf28a50e94f7?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1588714477688-cf28a50e94f7?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -1523,9 +1523,9 @@
     "nearest_transport": {
       "railway_station": "CSMT Station"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -1597,9 +1597,9 @@
     "nearest_transport": {
       "railway_station": "Karmali (KRMI) / Madgaon (MAO)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -1673,9 +1673,9 @@
     "nearest_transport": {
       "railway_station": "Hosapete Junction (HPT)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -1748,9 +1748,9 @@
     "nearest_transport": {
       "railway_station": "Badami (BDM)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -1823,9 +1823,9 @@
     "nearest_transport": {
       "railway_station": "Hassan Junction (HAS)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -1898,9 +1898,9 @@
     "nearest_transport": {
       "railway_station": "Thanjavur Junction (TJ)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -1974,9 +1974,9 @@
     "nearest_transport": {
       "railway_station": "Chengalpattu (CGL) / Chennai Central"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1605649487212-47bdab064df8?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1605649487212-47bdab064df8?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -2049,9 +2049,9 @@
     "nearest_transport": {
       "railway_station": "Madurai Junction (MDU)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -2123,9 +2123,9 @@
     "nearest_transport": {
       "railway_station": "Ernakulam Junction (ERS)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -2196,9 +2196,9 @@
     "nearest_transport": {
       "railway_station": "Hindupur (HUP)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -2269,9 +2269,9 @@
     "nearest_transport": {
       "railway_station": "Kazipet (KZJ) / Warangal (WL)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1616198814651-e71f960c3180?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1616198814651-e71f960c3180?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1616198814651-e71f960c3180?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1616198814651-e71f960c3180?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -2344,9 +2344,9 @@
     "nearest_transport": {
       "railway_station": "Hyderabad Deccan (HYB)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1588097281266-31018512954b?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1588097281266-31018512954b?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1588097281266-31018512954b?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1588097281266-31018512954b?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -2416,9 +2416,9 @@
     "nearest_transport": {
       "railway_station": "Hyderabad Deccan (HYB)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1616198814651-e71f960c3180?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1616198814651-e71f960c3180?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1616198814651-e71f960c3180?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1616198814651-e71f960c3180?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -2490,9 +2490,9 @@
     "nearest_transport": {
       "railway_station": "Puducherry (PDY)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -2563,9 +2563,9 @@
     "nearest_transport": {
       "railway_station": "Khajuraho (KURJ)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -2638,9 +2638,9 @@
     "nearest_transport": {
       "railway_station": "Sanchi (SCI) / Bhopal (BPL)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -2713,9 +2713,9 @@
     "nearest_transport": {
       "railway_station": "Mahasamund (MSMD) / Raipur (R)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -2785,9 +2785,9 @@
     "nearest_transport": {
       "railway_station": "Puri (PURI) / Bhubaneswar (BBS)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -2861,9 +2861,9 @@
     "nearest_transport": {
       "railway_station": "Gaya Junction (GAYA)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -2936,9 +2936,9 @@
     "nearest_transport": {
       "railway_station": "Rajgir (RGD) / Bakhtiyarpur (BKP)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1585135497273-1a86b09fe70e?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1585135497273-1a86b09fe70e?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -3012,9 +3012,9 @@
     "nearest_transport": {
       "railway_station": "Howrah Junction (HWH) / Sealdah"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1558431382-27e303142255?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1558431382-27e303142255?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1558431382-27e303142255?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1558431382-27e303142255?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -3085,9 +3085,9 @@
     "nearest_transport": {
       "railway_station": "Jasidih Junction (JSME)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -3157,9 +3157,9 @@
     "nearest_transport": {
       "railway_station": "Furkating (FKG) / Guwahati (GHY)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1576487248805-cf45f6bcc67f?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1576487248805-cf45f6bcc67f?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -3233,9 +3233,9 @@
     "nearest_transport": {
       "railway_station": "Guwahati (GHY) / Tyrna Base"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,
@@ -3307,9 +3307,9 @@
     "nearest_transport": {
       "railway_station": "New Jalpaiguri (NJP)"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1617854818583-09e7f077a156?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1617854818583-09e7f077a156?w=800&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1617854818583-09e7f077a156?w=1200&auto=format&fit=crop&q=85"
+      "https://images.unsplash.com/photo-1617854818583-09e7f077a156?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {
       "available": true,

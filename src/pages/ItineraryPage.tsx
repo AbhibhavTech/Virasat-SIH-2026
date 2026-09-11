@@ -23,11 +23,20 @@ import {
   CheckCircle2,
   Navigation,
   ArrowRight,
+  Play,
+  Pause,
+  Volume2,
+  VolumeX,
+  Film,
+  Eye,
 } from 'lucide-react';
 import { api } from '../services/api';
 import { ItineraryResponse, ItineraryDay } from '../types';
 import { NavTab } from '../components/layout/Sidebar';
 import { ALL_INDIAN_TOURISM_CITIES, CityOption } from '../data/cityItineraryData';
+import { DestinationGalleryCarousel } from '../components/itinerary/DestinationGalleryCarousel';
+import { IncredibleIndiaVideoGallery } from '../components/itinerary/IncredibleIndiaVideoGallery';
+import { ItineraryCostDonutChart } from '../components/itinerary/ItineraryCostDonutChart';
 
 interface ItineraryPageProps {
   onSelectPlace: (id: string) => void;
@@ -81,6 +90,34 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
   const [itinerary, setItinerary] = useState<ItineraryResponse | null>(null);
   const [saveSuccess, setSaveSuccess] = useState(false);
   const [shareSuccess, setShareSuccess] = useState(false);
+
+  const handleSelectCarouselDestination = (cityId: string, cityName: string) => {
+    // Find matching city in tourism registry
+    const targetCityLower = cityName.toLowerCase();
+    const targetIdLower = cityId.toLowerCase();
+    const foundCity = ALL_INDIAN_TOURISM_CITIES.find(
+      (c) =>
+        c.id.toLowerCase() === targetIdLower ||
+        c.name.toLowerCase() === targetCityLower ||
+        targetCityLower.includes(c.name.toLowerCase()) ||
+        c.name.toLowerCase().includes(targetCityLower)
+    );
+
+    if (foundCity) {
+      setSelectedCityObj(foundCity);
+      handleGeneratePlan(foundCity.name, daysCount);
+    } else {
+      handleGeneratePlan(cityName, daysCount);
+    }
+
+    // Smooth scroll down to planner form
+    setTimeout(() => {
+      const plannerSection = document.getElementById('trip-planner-form');
+      if (plannerSection) {
+        plannerSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }, 60);
+  };
 
   // Filter cities for search
   const filteredCities = useMemo(() => {
@@ -335,40 +372,20 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
         </div>
       </div>
 
-      {/* 2. HERO BANNER: PLAN YOUR TRIP */}
-      <div className="rounded-3xl bg-gradient-to-r from-orange-50/70 via-white to-emerald-50/40 border border-stone-200/80 p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xs overflow-hidden relative">
-        <div className="space-y-3 max-w-xl z-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100/80 text-[#FF671F] border border-orange-200/80 text-xs font-semibold">
-            <Sparkles className="w-3.5 h-3.5 text-[#FF671F]" />
-            <span>AI City Trip Planner • Bharat Tourism</span>
-          </div>
-          <h1 className="text-3xl sm:text-4xl font-bold font-serif text-stone-900 tracking-tight">
-            Plan Your Trip
-          </h1>
-          <p className="text-sm sm:text-base text-stone-600 leading-relaxed">
-            Create a personalized travel itinerary for any city in India with nearby attractions,
-            travel routes, and local experiences.
-          </p>
-        </div>
+      {/* 2. FULL-SIZE LIVING HERITAGE VIDEO GALLERY (BRIGHT TONE & INCREDIBLE INDIA AESTHETIC) */}
+      <IncredibleIndiaVideoGallery
+        onSelectDestination={handleSelectCarouselDestination}
+        selectedCityId={selectedCityObj.id}
+      />
 
-        {/* Hero Panorama Illustration / Gateway of India Sunset banner */}
-        <div className="w-full md:w-80 h-40 sm:h-44 rounded-2xl overflow-hidden shadow-sm border border-stone-200 relative shrink-0">
-          <img
-            src="https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&auto=format&fit=crop&q=80"
-            alt="Gateway of India and Taj Mahal Palace, Mumbai"
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-stone-950/70 via-stone-950/20 to-transparent flex items-end p-3">
-            <div className="text-white text-xs">
-              <span className="font-semibold block">{selectedCityObj.name} Heritage</span>
-              <span className="text-[10px] text-stone-200 opacity-90">{selectedCityObj.state}, India</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* 3. DESTINATION HIGHLIGHTS GALLERY CAROUSEL (INCREDIBLE INDIA AESTHETIC) */}
+      <DestinationGalleryCarousel
+        onSelectDestination={handleSelectCarouselDestination}
+        selectedCityId={selectedCityObj.id}
+      />
 
-      {/* 3. INPUT CARD: DESTINATION, DAYS, PACE, BUDGET & PREFERENCES */}
-      <div className="rounded-3xl bg-white border border-stone-200/90 shadow-sm p-6 sm:p-7 space-y-6">
+      {/* 4. INPUT CARD: DESTINATION, DAYS, PACE, BUDGET & PREFERENCES */}
+      <div id="trip-planner-form" className="rounded-3xl bg-white border border-stone-200/90 shadow-sm p-6 sm:p-7 space-y-6 scroll-mt-6">
         {/* Row 1: 4 Selectors + Plan Button */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-end">
           {/* Destination Selector */}
@@ -576,6 +593,14 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
               </button>
             </div>
           </div>
+
+          {/* D3-BASED ESTIMATED COST BREAKDOWN DONUT CHART */}
+          <ItineraryCostDonutChart
+            itinerary={itinerary}
+            selectedCityName={selectedCityObj.name}
+            initialBudgetTier={budget}
+            daysCount={daysCount}
+          />
 
           {/* DAY-BY-DAY CARDS GRID */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">

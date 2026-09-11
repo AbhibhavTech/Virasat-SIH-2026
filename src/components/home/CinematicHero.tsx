@@ -16,8 +16,7 @@ import {
   ShieldCheck, 
   Clock, 
   ExternalLink,
-  ChevronRight,
-  Film
+  ChevronRight
 } from 'lucide-react';
 import { NavTab } from '../layout/Sidebar';
 
@@ -442,20 +441,6 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
                 >
                   <Sparkles className="w-3.5 h-3.5 text-amber-700" />
                   <span>AI Itinerary Planner</span>
-                </button>
-
-                <button
-                  type="button"
-                  onClick={() => {
-                    const el = document.getElementById('incredible-media-section');
-                    if (el) {
-                      el.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }}
-                  className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-[#171513] hover:bg-black text-white border border-stone-800 transition active:scale-98 shadow-2xs font-semibold"
-                >
-                  <Film className="w-3.5 h-3.5 text-[#FF671F]" />
-                  <span>Incredible India Films & Photos</span>
                 </button>
               </div>
             </div>
