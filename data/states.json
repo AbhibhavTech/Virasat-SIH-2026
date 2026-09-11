@@ -53,7 +53,7 @@
     "status": "verified",
     "hero_image_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=1200&q=80",
     "total_cities": 6,
-    "total_attractions": 12
+    "total_attractions": 20
   },
   {
     "id": "jammu-and-kashmir",
@@ -346,8 +346,8 @@
     "description": "The Heart of India with three UNESCO sites: Khajuraho temples, Sanchi Buddhist stupas, and Bhimbetka rock shelters.",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1596405835955-467dbb100e42?w=1200&auto=format&fit=crop&q=80",
-    "total_cities": 15,
-    "total_attractions": 8
+    "total_cities": 14,
+    "total_attractions": 20
   },
   {
     "id": "dadra-and-nagar-haveli-and-daman-and-diu",
@@ -374,8 +374,8 @@
     "description": "Coastal jewel celebrated for UNESCO Churches of Old Goa, golden sandy beaches, Portuguese architecture, and spice plantations.",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1200&auto=format&fit=crop&q=80",
-    "total_cities": 1,
-    "total_attractions": 11
+    "total_cities": 8,
+    "total_attractions": 10
   },
   {
     "id": "gujarat",
@@ -386,10 +386,10 @@
     "region": "Western India",
     "official_tourism_url": "https://unsplash.com/photos/brown-concrete-building-near-green-grass-field-during-daytime-r6t2tE4Z_4A",
     "description": "Land of Legends featuring Ahmedabad World Heritage City, Rani ki Vav stepwell, Champaner, Somnath, and Asiatic Lions of Gir.",
-    "status": "active",
+    "status": "verified",
     "hero_image_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=1200&auto=format&fit=crop&q=80",
     "total_cities": 18,
-    "total_attractions": 8
+    "total_attractions": 27
   },
   {
     "id": "maharashtra",

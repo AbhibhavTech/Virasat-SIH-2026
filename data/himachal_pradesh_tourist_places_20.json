@@ -1,0 +1,87 @@
+{
+  "state": "Himachal Pradesh",
+  "country": "India",
+  "total_places": 20,
+  "tourist_places": [
+    {
+      "tourist_place": "Shimla",
+      "assigned_city": "Shimla"
+    },
+    {
+      "tourist_place": "Mall Road",
+      "assigned_city": "Shimla"
+    },
+    {
+      "tourist_place": "The Ridge",
+      "assigned_city": "Shimla"
+    },
+    {
+      "tourist_place": "Jakhu Temple",
+      "assigned_city": "Shimla"
+    },
+    {
+      "tourist_place": "Kufri",
+      "assigned_city": "Kufri"
+    },
+    {
+      "tourist_place": "Manali",
+      "assigned_city": "Manali"
+    },
+    {
+      "tourist_place": "Solang Valley",
+      "assigned_city": "Manali"
+    },
+    {
+      "tourist_place": "Rohtang Pass",
+      "assigned_city": "Manali"
+    },
+    {
+      "tourist_place": "Hadimba Devi Temple",
+      "assigned_city": "Manali"
+    },
+    {
+      "tourist_place": "Kasol",
+      "assigned_city": "Kasol"
+    },
+    {
+      "tourist_place": "Kheerganga",
+      "assigned_city": "Barshaini"
+    },
+    {
+      "tourist_place": "Dharamshala",
+      "assigned_city": "Dharamshala"
+    },
+    {
+      "tourist_place": "McLeod Ganj",
+      "assigned_city": "McLeod Ganj"
+    },
+    {
+      "tourist_place": "Triund",
+      "assigned_city": "McLeod Ganj"
+    },
+    {
+      "tourist_place": "Dal Lake Dharamshala",
+      "assigned_city": "Dharamshala"
+    },
+    {
+      "tourist_place": "Khajjiar",
+      "assigned_city": "Khajjiar"
+    },
+    {
+      "tourist_place": "Dalhousie",
+      "assigned_city": "Dalhousie"
+    },
+    {
+      "tourist_place": "Chail",
+      "assigned_city": "Chail"
+    },
+    {
+      "tourist_place": "Great Himalayan National Park",
+      "assigned_city": "Kullu"
+    },
+    {
+      "tourist_place": "Spiti Valley",
+      "assigned_city": "Kaza"
+    }
+  ]
+}

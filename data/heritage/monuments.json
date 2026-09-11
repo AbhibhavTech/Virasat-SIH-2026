@@ -1627,7 +1627,9 @@
       "3d": true
     },
     "source_url": "https://whc.unesco.org/en/list/234/",
-    "source_type": "unesco"
+    "source_type": "unesco",
+    "assigned_city": "Old Goa",
+    "tourist_place": "Basilica of Bom Jesus"
   },
   {
     "id": "hampi-monuments",
@@ -2593,7 +2595,9 @@
       "3d": true
     },
     "source_url": "https://whc.unesco.org/en/list/240/",
-    "source_type": "unesco"
+    "source_type": "unesco",
+    "assigned_city": "Khajuraho",
+    "tourist_place": "Khajuraho Group of Monuments"
   },
   {
     "id": "sanchi-stupa",
@@ -2668,7 +2672,9 @@
       "3d": true
     },
     "source_url": "https://whc.unesco.org/en/list/524/",
-    "source_type": "unesco"
+    "source_type": "unesco",
+    "assigned_city": "Sanchi",
+    "tourist_place": "Sanchi Stupa"
   },
   {
     "id": "sirpur-monuments",

@@ -1593,7 +1593,7 @@
     },
     {
       "id": "basilica-bom-jesus",
-      "city_id": "goa",
+      "city_id": "old-goa",
       "state_id": "goa",
       "name": "Basilica of Bom Jesus",
       "slug": "basilica-bom-jesus",
@@ -1641,11 +1641,14 @@
       "source": "ASI / UNESCO",
       "source_url": "https://whc.unesco.org/en/list/234",
       "verification_status": "Verified",
-      "last_updated": "2026-08-30"
+      "last_updated": "2026-08-30",
+      "assigned_city": "Old Goa",
+      "tourist_place": "Basilica of Bom Jesus",
+      "city": "Old Goa"
     },
     {
       "id": "fort-aguada",
-      "city_id": "goa",
+      "city_id": "candolim",
       "state_id": "goa",
       "name": "Fort Aguada & Lighthouse",
       "slug": "fort-aguada",
@@ -1693,7 +1696,10 @@
       "source": "Goa Tourism / ASI",
       "source_url": "https://goatourism.gov.in",
       "verification_status": "Verified",
-      "last_updated": "2026-08-30"
+      "last_updated": "2026-08-30",
+      "assigned_city": "Candolim",
+      "tourist_place": "Fort Aguada",
+      "city": "Candolim"
     },
     {
       "id": "bangalore-palace",
@@ -2851,47 +2857,47 @@
   "fare_rules": [
     {
       "transport_mode": "WALK",
-      "base_fare": 0.0,
-      "per_km_rate": 0.0,
-      "min_distance_km": 0.0,
-      "max_surge_multiplier": 1.0,
+      "base_fare": 0,
+      "per_km_rate": 0,
+      "min_distance_km": 0,
+      "max_surge_multiplier": 1,
       "tariff_source": "Free Active Mobility"
     },
     {
       "transport_mode": "BICYCLE",
-      "base_fare": 15.0,
-      "per_km_rate": 2.0,
+      "base_fare": 15,
+      "per_km_rate": 2,
       "min_distance_km": 0.5,
-      "max_surge_multiplier": 1.0,
+      "max_surge_multiplier": 1,
       "tariff_source": "Public Bike Share (Smart Cities Mission)"
     },
     {
       "transport_mode": "SUBURBAN_RAIL",
-      "base_fare": 5.0,
+      "base_fare": 5,
       "per_km_rate": 0.5,
-      "min_distance_km": 1.0,
-      "max_surge_multiplier": 1.0,
+      "min_distance_km": 1,
+      "max_surge_multiplier": 1,
       "tariff_source": "Indian Railways Suburban Fare Table (Second Class)"
     },
     {
       "transport_mode": "METRO",
-      "base_fare": 10.0,
+      "base_fare": 10,
       "per_km_rate": 2.5,
-      "min_distance_km": 1.0,
-      "max_surge_multiplier": 1.0,
+      "min_distance_km": 1,
+      "max_surge_multiplier": 1,
       "tariff_source": "City Metro Rail Fare Matrix"
     },
     {
       "transport_mode": "BUS",
-      "base_fare": 6.0,
+      "base_fare": 6,
       "per_km_rate": 1.8,
-      "min_distance_km": 1.0,
-      "max_surge_multiplier": 1.0,
+      "min_distance_km": 1,
+      "max_surge_multiplier": 1,
       "tariff_source": "State Road Transport Undertaking (SRTU)"
     },
     {
       "transport_mode": "AUTO_RICKSHAW",
-      "base_fare": 23.0,
+      "base_fare": 23,
       "per_km_rate": 15.33,
       "min_distance_km": 1.5,
       "max_surge_multiplier": 1.25,
@@ -2899,7 +2905,7 @@
     },
     {
       "transport_mode": "TAXI_CAB",
-      "base_fare": 32.0,
+      "base_fare": 32,
       "per_km_rate": 18.5,
       "min_distance_km": 1.5,
       "max_surge_multiplier": 1.5,

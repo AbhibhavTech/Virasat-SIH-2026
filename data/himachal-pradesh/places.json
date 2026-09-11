@@ -1,0 +1,1002 @@
+[
+  {
+    "id": "shimla-town",
+    "name": "Shimla",
+    "tourist_place": "Shimla",
+    "assigned_city": "Shimla",
+    "city": "Shimla",
+    "city_id": "shimla",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "category": "heritage",
+    "categories": [
+      "heritage",
+      "hill_station",
+      "colonial_capital"
+    ],
+    "topic": "Heritage",
+    "subtopic": "Colonial Heritage Cities",
+    "summary": "The historic summer capital of British India nestled in pine forests, famous for Neo-Gothic architecture and pedestrian Mall Road.",
+    "description": "Perched at 2,276 meters across seven hills, Shimla served as the summer capital of British India from 1864. Features the UNESCO Kalka-Shimla Railway, Viceregal Lodge, Gaiety Theatre, and snow-capped Himalayan vistas.",
+    "visiting_hours": "Open All Hours",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 0,
+    "entry_fee_intl": 0,
+    "best_time_to_visit": "March to June; December to February for snow",
+    "coordinates": {
+      "lat": 31.1048,
+      "lng": 77.1734
+    },
+    "rating": 4.8,
+    "image_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "Historic Hill Capital of British India",
+    "data_confidence": "official",
+    "source_name": "Department of Tourism, Government of Himachal Pradesh",
+    "source_url": "https://himachaltourism.gov.in/destination/shimla-town",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "Shimla",
+      "hill_station",
+      "Himachal",
+      "colonial",
+      "mountains"
+    ]
+  },
+  {
+    "id": "mall-road-shimla",
+    "name": "Mall Road",
+    "tourist_place": "Mall Road",
+    "assigned_city": "Shimla",
+    "city": "Shimla",
+    "city_id": "shimla",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "category": "heritage",
+    "categories": [
+      "heritage",
+      "pedestrian_promenade",
+      "shopping"
+    ],
+    "topic": "Heritage",
+    "subtopic": "Historic Promenades",
+    "summary": "The pedestrian heart of Shimla lined with heritage cafes, bookstores, handloom emporiums, and colonial buildings.",
+    "description": "Vehicle-free pedestrian promenade constructed during British rule, linking Scandal Point, Gaiety Theatre, Town Hall, and local handicraft shops under cool mountain breezes.",
+    "visiting_hours": "09:00 AM - 10:00 PM",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 0,
+    "entry_fee_intl": 0,
+    "best_time_to_visit": "All Year; evenings",
+    "coordinates": {
+      "lat": 31.104,
+      "lng": 77.172
+    },
+    "rating": 4.7,
+    "image_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "Heritage Pedestrian Corridor",
+    "data_confidence": "official",
+    "source_name": "Himachal Tourism",
+    "source_url": "https://himachaltourism.gov.in/destination/mall-road-shimla",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "MallRoad",
+      "Shimla",
+      "promenade",
+      "heritage",
+      "shopping"
+    ]
+  },
+  {
+    "id": "the-ridge-shimla",
+    "name": "The Ridge",
+    "tourist_place": "The Ridge",
+    "assigned_city": "Shimla",
+    "city": "Shimla",
+    "city_id": "shimla",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "category": "heritage",
+    "categories": [
+      "heritage",
+      "viewpoint",
+      "colonial_square"
+    ],
+    "topic": "Heritage",
+    "subtopic": "Historic Squares & Viewpoints",
+    "summary": "Spacious open square in the center of Shimla offering panoramic views of the Pir Panjal mountain ranges.",
+    "description": "The cultural hub of Shimla located along Mall Road. Houses the iconic 1857 yellow Neo-Gothic Christ Church, Tudor Library, and statue of Mahatma Gandhi. Site of the annual Summer Festival.",
+    "visiting_hours": "Open All Hours",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 0,
+    "entry_fee_intl": 0,
+    "best_time_to_visit": "All Year",
+    "coordinates": {
+      "lat": 31.1052,
+      "lng": 77.175
+    },
+    "rating": 4.8,
+    "image_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "Colonial Heritage Square",
+    "data_confidence": "official",
+    "source_name": "Himachal Tourism",
+    "source_url": "https://himachaltourism.gov.in/destination/the-ridge-shimla",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "TheRidge",
+      "Shimla",
+      "ChristChurch",
+      "Himalayas",
+      "viewpoint"
+    ]
+  },
+  {
+    "id": "jakhu-temple",
+    "name": "Jakhu Temple",
+    "tourist_place": "Jakhu Temple",
+    "assigned_city": "Shimla",
+    "city": "Shimla",
+    "city_id": "shimla",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "category": "religious_cultural",
+    "categories": [
+      "religious_cultural",
+      "hanuman_temple",
+      "peak"
+    ],
+    "topic": "Spiritual",
+    "subtopic": "Sacred Himalayan Shrines",
+    "summary": "Ancient temple dedicated to Lord Hanuman atop Shimla's highest peak (2,455 m), featuring a colossal 108-foot Hanuman statue.",
+    "description": "Legend holds that Lord Hanuman rested here while searching for the Sanjeevani herb in the Himalayas. Perched atop Jakhu Hill among tall deodar trees, accessible via ropeway or a steep scenic hike.",
+    "visiting_hours": "05:00 AM - 12:00 PM, 04:00 PM - 09:00 PM",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 0,
+    "entry_fee_intl": 0,
+    "best_time_to_visit": "All Year",
+    "coordinates": {
+      "lat": 31.1012,
+      "lng": 77.185
+    },
+    "rating": 4.7,
+    "image_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "Ancient Himalayan Pilgrimage Shrine",
+    "data_confidence": "official",
+    "source_name": "Himachal Pradesh Tourism Development Corporation",
+    "source_url": "https://himachaltourism.gov.in/destination/jakhu-temple",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "JakhuTemple",
+      "Hanuman",
+      "Shimla",
+      "ropeway",
+      "spiritual"
+    ]
+  },
+  {
+    "id": "kufri",
+    "name": "Kufri",
+    "tourist_place": "Kufri",
+    "assigned_city": "Kufri",
+    "city": "Kufri",
+    "city_id": "kufri",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "category": "nature_parks_zoo",
+    "categories": [
+      "nature_parks_zoo",
+      "snow_point",
+      "adventure"
+    ],
+    "topic": "Nature",
+    "subtopic": "Snow Peaks & Adventure",
+    "summary": "Charming hill retreat 16 km from Shimla, renowned for winter skiing, Mahasu Peak horse riding, and the Himalayan Nature Park.",
+    "description": "Located at an elevation of 2,720 meters, Kufri turns into a winter skiing paradise from December to February. Houses the Himalayan Wildlife Zoo with rare snow leopards, monal pheasants, and brown bears.",
+    "visiting_hours": "09:00 AM - 06:00 PM",
+    "entry_fee": {
+      "domestic": 30,
+      "international": 100,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 30,
+    "entry_fee_intl": 100,
+    "best_time_to_visit": "November to March for snow; April to June for pleasant weather",
+    "coordinates": {
+      "lat": 31.0988,
+      "lng": 77.2678
+    },
+    "rating": 4.6,
+    "image_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "Himalayan Eco-Tourism & Winter Sports Hub",
+    "data_confidence": "official",
+    "source_name": "Himachal Tourism",
+    "source_url": "https://himachaltourism.gov.in/destination/kufri",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "Kufri",
+      "snow",
+      "skiing",
+      "Shimla",
+      "Himalayas"
+    ]
+  },
+  {
+    "id": "manali-town",
+    "name": "Manali",
+    "tourist_place": "Manali",
+    "assigned_city": "Manali",
+    "city": "Manali",
+    "city_id": "manali",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "category": "nature_parks_zoo",
+    "categories": [
+      "nature_parks_zoo",
+      "himalayan_valley",
+      "adventure"
+    ],
+    "topic": "Nature",
+    "subtopic": "Himalayan Valleys",
+    "summary": "World-famous valley town on the Beas River, gateway to Rohtang, Spiti and Ladakh, framed by towering snow-capped Pir Panjal peaks.",
+    "description": "Situated at 2,050 meters in Kullu district, Manali is renowned as the Valley of the Gods. Features Old Manali wooden cafes, Apple orchards, Vashisht hot springs, and adventure sports.",
+    "visiting_hours": "Open All Hours",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 0,
+    "entry_fee_intl": 0,
+    "best_time_to_visit": "October to June",
+    "coordinates": {
+      "lat": 32.2396,
+      "lng": 77.1887
+    },
+    "rating": 4.9,
+    "image_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "Premier Himalayan Valley Destination",
+    "data_confidence": "official",
+    "source_name": "Himachal Pradesh Tourism Development Corporation",
+    "source_url": "https://himachaltourism.gov.in/destination/manali-town",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "Manali",
+      "Kullu",
+      "BeasRiver",
+      "Himalayas",
+      "nature"
+    ]
+  },
+  {
+    "id": "solang-valley",
+    "name": "Solang Valley",
+    "tourist_place": "Solang Valley",
+    "assigned_city": "Manali",
+    "city": "Manali",
+    "city_id": "manali",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "category": "nature_parks_zoo",
+    "categories": [
+      "nature_parks_zoo",
+      "adventure_valley",
+      "winter_sports"
+    ],
+    "topic": "Nature",
+    "subtopic": "Adventure Valleys",
+    "summary": "Adventure capital of Himachal Pradesh, famous for paragliding, zorbing, ropeway, and winter snow skiing.",
+    "description": "Located 14 km northwest of Manali at 2,560 meters altitude, Solang Valley offers breathtaking views of glaciers and snow-capped mountain peaks. Connected to Lahaul Valley via the world-famous Atal Tunnel nearby.",
+    "visiting_hours": "09:00 AM - 06:00 PM",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 0,
+    "entry_fee_intl": 0,
+    "best_time_to_visit": "November to March for snow; April to June for paragliding",
+    "coordinates": {
+      "lat": 32.3167,
+      "lng": 77.1583
+    },
+    "rating": 4.8,
+    "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "Premier Himalayan Adventure Zone",
+    "data_confidence": "official",
+    "source_name": "Himachal Tourism",
+    "source_url": "https://himachaltourism.gov.in/destination/solang-valley",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "SolangValley",
+      "Manali",
+      "paragliding",
+      "skiing",
+      "adventure"
+    ]
+  },
+  {
+    "id": "rohtang-pass",
+    "name": "Rohtang Pass",
+    "tourist_place": "Rohtang Pass",
+    "assigned_city": "Manali",
+    "city": "Manali",
+    "city_id": "manali",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "category": "nature_parks_zoo",
+    "categories": [
+      "nature_parks_zoo",
+      "mountain_pass",
+      "glacier"
+    ],
+    "topic": "Nature",
+    "subtopic": "High-Altitude Passes",
+    "summary": "High-altitude mountain pass at 3,978 meters connecting Kullu Valley with the arid Lahaul and Spiti Valleys.",
+    "description": "Located 51 km from Manali on the Pir Panjal range, Rohtang Pass offers year-round snowfields, panoramic glacier views, and the source of the Beas River (Beas Kund). Governed by daily NGT eco-permits.",
+    "visiting_hours": "06:00 AM - 04:00 PM (Closed Tuesdays; weather permitting May-Nov)",
+    "entry_fee": {
+      "domestic": 550,
+      "international": 550,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 550,
+    "entry_fee_intl": 550,
+    "best_time_to_visit": "May to October (NGT Permit Required)",
+    "coordinates": {
+      "lat": 32.3716,
+      "lng": 77.2466
+    },
+    "rating": 4.9,
+    "image_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "Historic High-Altitude Himalayan Pass",
+    "data_confidence": "official",
+    "source_name": "District Administration Kullu / Himachal Tourism",
+    "source_url": "https://rohtangpermits.nic.in/destination/rohtang-pass",
+    "source_type": "district_administration",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "RohtangPass",
+      "Manali",
+      "glacier",
+      "snow",
+      "pass"
+    ]
+  },
+  {
+    "id": "hadimba-devi-temple",
+    "name": "Hadimba Devi Temple",
+    "tourist_place": "Hadimba Devi Temple",
+    "assigned_city": "Manali",
+    "city": "Manali",
+    "city_id": "manali",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "category": "heritage",
+    "categories": [
+      "heritage",
+      "pagoda_temple",
+      "mahabharata_heritage"
+    ],
+    "topic": "Heritage",
+    "subtopic": "Pagoda Architecture",
+    "summary": "Historic 1553 CE wooden pagoda temple dedicated to Hadimba Devi, set amidst a dense cedar (Dhungri) forest in Manali.",
+    "description": "Built by Maharaja Bahadur Singh in 1553 CE, this four-tiered wooden pagoda temple features carved wooden doorways, antler trophies, and an uncarved rock sanctum where Hadimba meditated according to the Mahabharata.",
+    "visiting_hours": "08:00 AM - 06:00 PM",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 0,
+    "entry_fee_intl": 0,
+    "best_time_to_visit": "All Year",
+    "coordinates": {
+      "lat": 32.247,
+      "lng": 77.1812
+    },
+    "rating": 4.8,
+    "image_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "ASI Protected Monument",
+    "data_confidence": "official",
+    "source_name": "Archaeological Survey of India / Himachal Tourism",
+    "source_url": "https://asi.nic.in/monuments-of-national-importance/hadimba-devi-temple",
+    "source_type": "asi",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "HadimbaTemple",
+      "Manali",
+      "pagoda",
+      "cedar",
+      "heritage"
+    ]
+  },
+  {
+    "id": "kasol",
+    "name": "Kasol",
+    "tourist_place": "Kasol",
+    "assigned_city": "Kasol",
+    "city": "Kasol",
+    "city_id": "kasol",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "category": "nature_parks_zoo",
+    "categories": [
+      "nature_parks_zoo",
+      "parvati_valley",
+      "trekking_hub"
+    ],
+    "topic": "Nature",
+    "subtopic": "Riverside Mountain Havens",
+    "summary": "Scenic hamlet on the Parvati River, renowned as the trekking gateway to Tosh, Kheerganga, and Malana.",
+    "description": "Nestled in Parvati Valley between Bhuntar and Manikaran at 1,580 meters, Kasol is famous for pine forests, gushing turquoise waters, Israeli bakeries, and wilderness hiking trails.",
+    "visiting_hours": "Open All Hours",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 0,
+    "entry_fee_intl": 0,
+    "best_time_to_visit": "March to June; September to November",
+    "coordinates": {
+      "lat": 32.01,
+      "lng": 77.315
+    },
+    "rating": 4.7,
+    "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "Parvati Valley Eco-Tourism Destination",
+    "data_confidence": "official",
+    "source_name": "Himachal Tourism",
+    "source_url": "https://himachaltourism.gov.in/destination/kasol",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "Kasol",
+      "ParvatiValley",
+      "trekking",
+      "nature",
+      "Himachal"
+    ]
+  },
+  {
+    "id": "kheerganga",
+    "name": "Kheerganga",
+    "tourist_place": "Kheerganga",
+    "assigned_city": "Barshaini",
+    "city": "Barshaini",
+    "city_id": "barshaini",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "category": "nature_parks_zoo",
+    "categories": [
+      "nature_parks_zoo",
+      "hot_springs",
+      "himalayan_trek"
+    ],
+    "topic": "Nature",
+    "subtopic": "Thermal Springs & Mountain Treks",
+    "summary": "High-altitude meadow at 2,960 meters reached via a 12 km trek from Barshaini, renowned for natural geothermal hot springs.",
+    "description": "Revered in Hindu lore as the meditation ground of Lord Shiva for thousands of years. The 12 km trek from Barshaini passes through apple orchards, pine forests, and waterfalls to therapeutic sulphur baths with snow-capped mountain views.",
+    "visiting_hours": "Trek during daylight (06:00 AM - 05:00 PM)",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 0,
+    "entry_fee_intl": 0,
+    "best_time_to_visit": "April to June; September to November",
+    "coordinates": {
+      "lat": 31.986,
+      "lng": 77.502
+    },
+    "rating": 4.8,
+    "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "Sacred Geothermal Himalayan Meadow",
+    "data_confidence": "official",
+    "source_name": "Himachal Tourism / Forest Department",
+    "source_url": "https://himachaltourism.gov.in/destination/kheerganga",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "Kheerganga",
+      "Barshaini",
+      "hot_springs",
+      "trekking",
+      "nature"
+    ]
+  },
+  {
+    "id": "dharamshala-town",
+    "name": "Dharamshala",
+    "tourist_place": "Dharamshala",
+    "assigned_city": "Dharamshala",
+    "city": "Dharamshala",
+    "city_id": "dharamshala",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "category": "heritage",
+    "categories": [
+      "heritage",
+      "himalayan_city",
+      "kangra_valley"
+    ],
+    "topic": "Heritage",
+    "subtopic": "Kangra Valley Cultural Hubs",
+    "summary": "Picturesque hill station set against the Dhauladhar range, winter capital of Himachal Pradesh and home of Tibetan spiritual culture.",
+    "description": "Divided into Lower Dharamshala (commercial hub, HPCA International Cricket Stadium) and Upper Dharamshala. Framed by deodar forests, tea gardens, and Kangra miniature art traditions.",
+    "visiting_hours": "Open All Hours",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 0,
+    "entry_fee_intl": 0,
+    "best_time_to_visit": "March to June; September to November",
+    "coordinates": {
+      "lat": 32.219,
+      "lng": 76.3234
+    },
+    "rating": 4.8,
+    "image_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "Kangra Valley Cultural Capital",
+    "data_confidence": "official",
+    "source_name": "Department of Tourism, Government of Himachal Pradesh",
+    "source_url": "https://himachaltourism.gov.in/destination/dharamshala-town",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "Dharamshala",
+      "Kangra",
+      "Dhauladhar",
+      "cricket",
+      "Himachal"
+    ]
+  },
+  {
+    "id": "mcleod-ganj",
+    "name": "McLeod Ganj",
+    "tourist_place": "McLeod Ganj",
+    "assigned_city": "McLeod Ganj",
+    "city": "McLeod Ganj",
+    "city_id": "mcleod-ganj",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "category": "religious_cultural",
+    "categories": [
+      "religious_cultural",
+      "tibetan_buddhism",
+      "little_lhasa"
+    ],
+    "topic": "Spiritual",
+    "subtopic": "Tibetan Buddhism Shrines",
+    "summary": "The official residence of His Holiness the 14th Dalai Lama and headquarters of the Central Tibetan Administration, known as 'Little Lhasa'.",
+    "description": "Located at 2,082 meters above Dharamshala, McLeod Ganj is the world center of Tibetan Buddhism in exile. Features the Tsuglagkhang Complex, Namgyal Monastery, Tibet Museum, and meditation centers.",
+    "visiting_hours": "06:00 AM - 07:00 PM",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 0,
+    "entry_fee_intl": 0,
+    "best_time_to_visit": "March to June; September to December",
+    "coordinates": {
+      "lat": 32.2426,
+      "lng": 76.3213
+    },
+    "rating": 4.9,
+    "image_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "Global Tibetan Cultural & Spiritual Headquarters",
+    "data_confidence": "official",
+    "source_name": "Central Tibetan Administration / Himachal Tourism",
+    "source_url": "https://tibet.net/destination/mcleod-ganj",
+    "source_type": "official_institution",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "McLeodGanj",
+      "DalaiLama",
+      "Buddhism",
+      "spiritual",
+      "heritage"
+    ]
+  },
+  {
+    "id": "triund",
+    "name": "Triund",
+    "tourist_place": "Triund",
+    "assigned_city": "McLeod Ganj",
+    "city": "McLeod Ganj",
+    "city_id": "mcleod-ganj",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "category": "nature_parks_zoo",
+    "categories": [
+      "nature_parks_zoo",
+      "ridge_trek",
+      "dhauladhar_view"
+    ],
+    "topic": "Nature",
+    "subtopic": "Alpine Ridges & Treks",
+    "summary": "Spectacular ridge crest at 2,828 meters offering front-row views of towering Dhauladhar snow peaks on one side and Kangra valley on the other.",
+    "description": "One of India's most celebrated one-day treks (9 km from McLeod Ganj). Ascends through oak and rhododendron forests via Magic View cafe to a grassy ridge beneath the sheer Moon Peak.",
+    "visiting_hours": "Day trek (06:00 AM - 05:00 PM)",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 0,
+    "entry_fee_intl": 0,
+    "best_time_to_visit": "March to June; September to December",
+    "coordinates": {
+      "lat": 32.257,
+      "lng": 76.353
+    },
+    "rating": 4.9,
+    "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "Himalayan Ridge Trail & Nature Crest",
+    "data_confidence": "official",
+    "source_name": "Himachal Pradesh Forest Department",
+    "source_url": "https://himachaltourism.gov.in/destination/triund",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "Triund",
+      "McLeodGanj",
+      "Dhauladhar",
+      "trekking",
+      "nature"
+    ]
+  },
+  {
+    "id": "dal-lake-dharamshala",
+    "name": "Dal Lake Dharamshala",
+    "tourist_place": "Dal Lake Dharamshala",
+    "assigned_city": "Dharamshala",
+    "city": "Dharamshala",
+    "city_id": "dharamshala",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "category": "nature_parks_zoo",
+    "categories": [
+      "nature_parks_zoo",
+      "sacred_lake",
+      "deodar_forest"
+    ],
+    "topic": "Nature",
+    "subtopic": "Sacred Himalayan Lakes",
+    "summary": "Serene sacred high-altitude lake surrounded by towering deodar cedar trees and a revered Shiva temple at Tota Rani.",
+    "description": "Located at 1,775 meters altitude near village Naddi and McLeod Ganj, this peaceful mid-altitude lake hosts an annual fair dedicated to Lord Durveshwar (Lord Shiva). A popular boating and reflection retreat.",
+    "visiting_hours": "07:00 AM - 07:00 PM",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 0,
+    "entry_fee_intl": 0,
+    "best_time_to_visit": "March to October",
+    "coordinates": {
+      "lat": 32.246,
+      "lng": 76.305
+    },
+    "rating": 4.5,
+    "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "Sacred Himalayan Deodar Lake",
+    "data_confidence": "official",
+    "source_name": "Himachal Tourism",
+    "source_url": "https://himachaltourism.gov.in/destination/dal-lake-dharamshala",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "DalLake",
+      "Dharamshala",
+      "lake",
+      "deodar",
+      "nature"
+    ]
+  },
+  {
+    "id": "khajjiar",
+    "name": "Khajjiar",
+    "tourist_place": "Khajjiar",
+    "assigned_city": "Khajjiar",
+    "city": "Khajjiar",
+    "city_id": "khajjiar",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "category": "nature_parks_zoo",
+    "categories": [
+      "nature_parks_zoo",
+      "mini_switzerland",
+      "alpine_meadow"
+    ],
+    "topic": "Nature",
+    "subtopic": "Alpine Meadows & Lakes",
+    "summary": "Known as the 'Mini Switzerland of India', a saucer-shaped grassy meadow with a central floating-island lake surrounded by dense cedar woods.",
+    "description": "Officially certified by the Swiss Ambassador in 1992 as a Mini Switzerland. Located at 1,920 meters in Chamba district, it features Khajjiar Lake, 12th-century Khajji Nag wooden temple, and horse riding.",
+    "visiting_hours": "Open All Hours",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 0,
+    "entry_fee_intl": 0,
+    "best_time_to_visit": "March to October; December to February for snow",
+    "coordinates": {
+      "lat": 32.555,
+      "lng": 76.0656
+    },
+    "rating": 4.8,
+    "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "Swiss Certified Mini Switzerland Eco-Meadow",
+    "data_confidence": "official",
+    "source_name": "Department of Tourism, Government of Himachal Pradesh",
+    "source_url": "https://himachaltourism.gov.in/destination/khajjiar",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "Khajjiar",
+      "MiniSwitzerland",
+      "Chamba",
+      "meadow",
+      "nature"
+    ]
+  },
+  {
+    "id": "dalhousie-town",
+    "name": "Dalhousie",
+    "tourist_place": "Dalhousie",
+    "assigned_city": "Dalhousie",
+    "city": "Dalhousie",
+    "city_id": "dalhousie",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "category": "heritage",
+    "categories": [
+      "heritage",
+      "colonial_hill_station",
+      "chamba_gateway"
+    ],
+    "topic": "Heritage",
+    "subtopic": "Colonial Hill Stations",
+    "summary": "Quiet colonial hill retreat founded in 1854 across five hills, known for Scottish church architecture, Bakrota Hills, and Subhash Baoli.",
+    "description": "Named after Lord Dalhousie, this scenic station at 1,970 meters features St. John's Church (1863), St. Francis' Church, Panchpula waterfalls, and views of the snow-clad Dhauladhar and Pir Panjal ranges.",
+    "visiting_hours": "Open All Hours",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 0,
+    "entry_fee_intl": 0,
+    "best_time_to_visit": "March to June; October to February",
+    "coordinates": {
+      "lat": 32.5387,
+      "lng": 75.971
+    },
+    "rating": 4.7,
+    "image_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "Colonial Era Hill Station",
+    "data_confidence": "official",
+    "source_name": "Himachal Tourism",
+    "source_url": "https://himachaltourism.gov.in/destination/dalhousie-town",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "Dalhousie",
+      "Chamba",
+      "colonial",
+      "church",
+      "heritage"
+    ]
+  },
+  {
+    "id": "chail",
+    "name": "Chail",
+    "tourist_place": "Chail",
+    "assigned_city": "Chail",
+    "city": "Chail",
+    "city_id": "chail",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "category": "heritage",
+    "categories": [
+      "heritage",
+      "royal_palace",
+      "highest_cricket_ground"
+    ],
+    "topic": "Heritage",
+    "subtopic": "Royal Hill Retreats",
+    "summary": "Former summer capital of the Maharajas of Patiala, home to the world's highest cricket ground (2,444 m) and Chail Palace.",
+    "description": "Built by Maharaja Bhupinder Singh of Patiala in 1891 after he was barred from Shimla. Features Chail Palace heritage hotel, deodar forests, wildlife sanctuary with chir pheasants, and the world's highest cricket pitch.",
+    "visiting_hours": "09:00 AM - 06:00 PM",
+    "entry_fee": {
+      "domestic": 100,
+      "international": 200,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 100,
+    "entry_fee_intl": 200,
+    "best_time_to_visit": "April to July; September to March",
+    "coordinates": {
+      "lat": 30.968,
+      "lng": 77.195
+    },
+    "rating": 4.7,
+    "image_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "Royal Patiala Heritage Summer Capital",
+    "data_confidence": "official",
+    "source_name": "Himachal Pradesh Tourism Development Corporation",
+    "source_url": "https://himachaltourism.gov.in/destination/chail",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "Chail",
+      "Patiala",
+      "palace",
+      "cricket",
+      "heritage"
+    ]
+  },
+  {
+    "id": "great-himalayan-national-park",
+    "name": "Great Himalayan National Park",
+    "tourist_place": "Great Himalayan National Park",
+    "assigned_city": "Kullu",
+    "city": "Kullu",
+    "city_id": "kullu",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "category": "nature_parks_zoo",
+    "categories": [
+      "nature_parks_zoo",
+      "unesco_world_heritage",
+      "biodiversity"
+    ],
+    "topic": "Nature",
+    "subtopic": "UNESCO World Heritage Sites",
+    "summary": "UNESCO World Heritage Site in Kullu district protecting pristine alpine meadows, glaciers, and endangered Western Tragopan pheasants.",
+    "description": "Inscribed as a UNESCO World Heritage Site in 2014 for outstanding biodiversity. Spans 1,171 sq km across alpine peaks (1,800m to 5,800m) with zero road access, preserving snow leopards, blue sheep, and rare medicinal flora.",
+    "visiting_hours": "Park entry by Forest Dept Permit (06:00 AM - 05:00 PM)",
+    "entry_fee": {
+      "domestic": 100,
+      "international": 400,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 100,
+    "entry_fee_intl": 400,
+    "best_time_to_visit": "April to June; September to November",
+    "coordinates": {
+      "lat": 31.758,
+      "lng": 77.498
+    },
+    "rating": 4.9,
+    "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "UNESCO World Heritage Site",
+    "data_confidence": "official",
+    "source_name": "UNESCO World Heritage Centre",
+    "source_url": "https://whc.unesco.org/en/list/1406/",
+    "source_type": "unesco",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "GHNP",
+      "unesco",
+      "Kullu",
+      "wildlife",
+      "nature"
+    ]
+  },
+  {
+    "id": "spiti-valley",
+    "name": "Spiti Valley",
+    "tourist_place": "Spiti Valley",
+    "assigned_city": "Kaza",
+    "city": "Kaza",
+    "city_id": "kaza",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "category": "heritage",
+    "categories": [
+      "heritage",
+      "cold_desert",
+      "tibetan_monasteries"
+    ],
+    "topic": "Heritage",
+    "subtopic": "Ancient Himalayan Monasteries",
+    "summary": "Cold desert mountain valley at 3,800 meters, home to millennium-old Buddhist monasteries Key and Tabo, and high mountain passes.",
+    "description": "Bordered by Tibet and Ladakh, Spiti ('The Middle Land') is a dramatic high-altitude desert. Kaza is the administrative sub-divisional capital. Features thousand-year-old Tabo Monastery, Key Gompa, Hikkim (highest post office), and Komic village.",
+    "visiting_hours": "Open All Hours",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 0,
+    "entry_fee_intl": 0,
+    "best_time_to_visit": "June to October",
+    "coordinates": {
+      "lat": 32.2276,
+      "lng": 78.071
+    },
+    "rating": 4.9,
+    "image_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "Ancient Himalayan Buddhist Valley",
+    "data_confidence": "official",
+    "source_name": "Himachal Pradesh Tourism Development Corporation",
+    "source_url": "https://himachaltourism.gov.in/destination/spiti-valley",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "SpitiValley",
+      "Kaza",
+      "monastery",
+      "cold_desert",
+      "heritage"
+    ]
+  }
+]

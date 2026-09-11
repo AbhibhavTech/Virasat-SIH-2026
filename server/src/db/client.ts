@@ -250,8 +250,23 @@ class DatabaseManager {
         list = list.filter((p) => p.state_id?.toLowerCase() === filters.stateId?.toLowerCase());
       }
       if (filters?.cityId || filters?.city) {
-        const targetCity = (filters.cityId || filters.city || '').toLowerCase();
-        list = list.filter((p) => p.city_id?.toLowerCase() === targetCity);
+        const rawTarget = (filters.cityId || filters.city || '').trim().toLowerCase();
+        const slugTarget = rawTarget.replace(/[^a-z0-9]+/g, '-');
+        list = list.filter((p) => {
+          const cId = (p.city_id || '').toLowerCase().trim();
+          const aCity = (p.assigned_city || '').toLowerCase().trim();
+          const cName = (p.city || '').toLowerCase().trim();
+          return (
+            cId === rawTarget ||
+            cId === slugTarget ||
+            aCity === rawTarget ||
+            aCity.replace(/[^a-z0-9]+/g, '-') === slugTarget ||
+            cName === rawTarget ||
+            cName.replace(/[^a-z0-9]+/g, '-') === slugTarget ||
+            (aCity.length > 2 && (rawTarget.includes(aCity) || aCity.includes(rawTarget))) ||
+            (cName.length > 2 && (rawTarget.includes(cName) || cName.includes(rawTarget)))
+          );
+        });
       }
       if (filters?.category) {
         const targetCat = filters.category.toLowerCase();
@@ -297,6 +312,9 @@ class DatabaseManager {
         list = list.filter(
           (p) =>
             (p.name?.toLowerCase() || '').includes(q) ||
+            (p.tourist_place?.toLowerCase() || '').includes(q) ||
+            (p.assigned_city?.toLowerCase() || '').includes(q) ||
+            (p.city?.toLowerCase() || '').includes(q) ||
             (p.summary?.toLowerCase() || '').includes(q) ||
             (p.description?.toLowerCase() || '').includes(q) ||
             (p.city_id?.toLowerCase() || '').includes(q) ||

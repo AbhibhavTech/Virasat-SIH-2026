@@ -47,6 +47,8 @@ export interface DestinationRecord {
   state_id?: string;
   city: string;
   city_id?: string;
+  assigned_city?: string;
+  tourist_place?: string;
   country: string;
   category: string;
   summary: string;
@@ -371,7 +373,13 @@ export class MasterTourismDataService {
           const raw = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
           for (const item of raw) {
             if (item && item.id) {
-              this.destinations.set(item.id.toLowerCase(), item);
+              const existing = this.destinations.get(item.id.toLowerCase());
+              if (existing) {
+                if (item.assigned_city) existing.assigned_city = item.assigned_city;
+                if (item.tourist_place) existing.tourist_place = item.tourist_place;
+              } else {
+                this.destinations.set(item.id.toLowerCase(), item);
+              }
             }
           }
         }
@@ -382,7 +390,15 @@ export class MasterTourismDataService {
       loadPlacesFile(path.join(dataDir, 'delhi', 'places.json'));
       loadPlacesFile(path.join(dataDir, 'rajasthan', 'places.json'));
       loadPlacesFile(path.join(dataDir, 'kerala', 'places.json'));
+      loadPlacesFile(path.join(dataDir, 'bihar', 'places.json'));
+      loadPlacesFile(path.join(dataDir, 'ladakh', 'places.json'));
+      loadPlacesFile(path.join(dataDir, 'jammu-kashmir', 'places.json'));
+      loadPlacesFile(path.join(dataDir, 'kolkata', 'places.json'));
+      loadPlacesFile(path.join(dataDir, 'goa', 'places.json'));
+      loadPlacesFile(path.join(dataDir, 'madhya-pradesh', 'places.json'));
       loadPlacesFile(path.join(dataDir, 'punjab', 'places.json'));
+      loadPlacesFile(path.join(dataDir, 'gujarat', 'places.json'));
+      loadPlacesFile(path.join(dataDir, 'himachal-pradesh', 'places.json'));
 
       // 7. Load Heritage & UNESCO sites
       const heritagePath = path.join(dataDir, 'heritage', 'monuments.json');
@@ -391,8 +407,11 @@ export class MasterTourismDataService {
         this.heritage = Array.isArray(rawHeritage) ? rawHeritage : [];
         for (const item of this.heritage) {
           if (item && item.id) {
+            const existing = this.destinations.get(item.id.toLowerCase());
             const normItem: DestinationRecord = {
               ...item,
+              assigned_city: item.assigned_city || existing?.assigned_city,
+              tourist_place: item.tourist_place || existing?.tourist_place || item.name,
               country: 'India',
               category: item.category || 'Architectural & Colonial',
               summary: item.summary || item.historical_significance?.slice(0, 200) || '',
@@ -1080,7 +1099,7 @@ export class MasterTourismDataService {
     if (options.city) {
       const c = options.city.toLowerCase().trim();
       sourceList = sourceList.filter((item) => {
-        const itemCity = (item.city || item.city_name || '').toLowerCase();
+        const itemCity = (item.assigned_city || item.city || item.city_name || '').toLowerCase();
         return itemCity.includes(c) || c.includes(itemCity);
       });
     }

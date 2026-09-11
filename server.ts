@@ -127,6 +127,8 @@ interface PlaceItem {
   state_id?: string;
   city: string;
   city_id?: string;
+  assigned_city?: string;
+  tourist_place?: string;
   country: string;
   category: string;
   summary: string;
@@ -196,7 +198,10 @@ const CITY_ALIASES: Record<string, string[]> = {
   kochi: ['kochi', 'cochin', 'ernakulam'],
   kolkata: ['kolkata', 'calcutta'],
   amritsar: ['amritsar'],
-  goa: ['goa', 'panaji', 'old goa', 'velha goa', 'sinquerim', 'candolim'],
+  goa: ['goa'],
+  'old goa': ['old goa', 'velha goa'],
+  candolim: ['candolim', 'sinquerim'],
+  panaji: ['panaji', 'panjim'],
   bengaluru: ['bengaluru', 'bangalore'],
   hyderabad: ['hyderabad', 'secunderabad'],
   pune: ['pune'],
@@ -226,6 +231,9 @@ const CANONICAL_CITY_NAMES: Record<string, string> = {
   kolkata: 'Kolkata',
   amritsar: 'Amritsar',
   goa: 'Goa',
+  'old goa': 'Old Goa',
+  candolim: 'Candolim',
+  panaji: 'Panaji',
   bengaluru: 'Bengaluru',
   hyderabad: 'Hyderabad',
   pune: 'Pune',
@@ -248,8 +256,15 @@ const CANONICAL_CITY_NAMES: Record<string, string> = {
 function getCanonicalCityId(cityNameOrId: string): string {
   const norm = (cityNameOrId || '').toLowerCase().trim();
   if (!norm) return '';
+  // 1. Exact match against canonical ID or aliases
   for (const [canonId, aliases] of Object.entries(CITY_ALIASES)) {
-    if (canonId === norm || aliases.some((a) => a === norm || norm.includes(a) || a.includes(norm))) {
+    if (canonId === norm || aliases.includes(norm)) {
+      return canonId;
+    }
+  }
+  // 2. Substring matching for multi-word aliases (excluding short parent names like 'goa')
+  for (const [canonId, aliases] of Object.entries(CITY_ALIASES)) {
+    if (canonId !== 'goa' && aliases.some((a) => a.length > 3 && (norm.includes(a) || a.includes(norm)))) {
       return canonId;
     }
   }
@@ -262,20 +277,42 @@ function getCanonicalCityName(cityId: string): string {
   return norm ? norm.charAt(0).toUpperCase() + norm.slice(1) : '';
 }
 
+function matchesCityName(cityName: string, target: string): boolean {
+  if (!cityName || !target) return false;
+  const c = cityName.toLowerCase().trim();
+  const t = target.toLowerCase().trim();
+  if (c === t) return true;
+  if (c.replace(/[^a-z0-9]+/g, '-') === t.replace(/[^a-z0-9]+/g, '-')) return true;
+  try {
+    const escaped = t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const regex = new RegExp(`(^|\\s|[-/,])${escaped}(\\s|[-/,]|$)`, 'i');
+    return regex.test(c);
+  } catch {
+    return c === t;
+  }
+}
+
 function isPlaceInCity(place: any, targetCity: string): boolean {
   if (!place || !targetCity) return false;
+  const rawTarget = targetCity.toLowerCase().trim();
   const targetCanon = getCanonicalCityId(targetCity);
-  if (!targetCanon) return false;
+  if (!targetCanon && !rawTarget) return false;
+
   const pCity = (place.city || '').toLowerCase().trim();
   const pCityId = ((place as any).city_id || '').toLowerCase().trim();
+  const pAssigned = ((place as any).assigned_city || '').toLowerCase().trim();
 
-  if (pCityId && getCanonicalCityId(pCityId) === targetCanon) return true;
-  if (pCity && getCanonicalCityId(pCity) === targetCanon) return true;
+  if (pAssigned && matchesCityName(pAssigned, rawTarget)) return true;
+  if (pAssigned && targetCanon && matchesCityName(pAssigned, targetCanon)) return true;
 
-  const aliases = CITY_ALIASES[targetCanon] || [targetCanon];
+  if (pCityId && matchesCityName(pCityId, targetCanon)) return true;
+  if (pCity && matchesCityName(pCity, targetCanon)) return true;
+
+  const aliases = targetCanon ? (CITY_ALIASES[targetCanon] || [targetCanon]) : [];
   return aliases.some((a) =>
-    (pCity && (pCity === a || pCity.includes(a))) ||
-    (pCityId && (pCityId === a || pCityId.includes(a)))
+    (pCity && matchesCityName(pCity, a)) ||
+    (pCityId && matchesCityName(pCityId, a)) ||
+    (pAssigned && matchesCityName(pAssigned, a))
   );
 }
 
@@ -329,7 +366,13 @@ function loadData() {
         const raw = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
         for (const item of raw) {
           if (item && item.id) {
-            placesData.set(item.id.toLowerCase(), item);
+            const existing = placesData.get(item.id.toLowerCase());
+            if (existing) {
+              if (item.assigned_city) (existing as any).assigned_city = item.assigned_city;
+              if (item.tourist_place) (existing as any).tourist_place = item.tourist_place;
+            } else {
+              placesData.set(item.id.toLowerCase(), item);
+            }
           }
         }
       }
@@ -345,7 +388,10 @@ function loadData() {
     loadPlacesFile(path.join(dataDir, 'jammu-kashmir', 'places.json'));
     loadPlacesFile(path.join(dataDir, 'kolkata', 'places.json'));
     loadPlacesFile(path.join(dataDir, 'goa', 'places.json'));
+    loadPlacesFile(path.join(dataDir, 'madhya-pradesh', 'places.json'));
     loadPlacesFile(path.join(dataDir, 'punjab', 'places.json'));
+    loadPlacesFile(path.join(dataDir, 'gujarat', 'places.json'));
+    loadPlacesFile(path.join(dataDir, 'himachal-pradesh', 'places.json'));
 
     // Load Heritage 42+ structured experiences
     const heritagePath = path.join(dataDir, 'heritage', 'monuments.json');
@@ -354,8 +400,11 @@ function loadData() {
       heritageData.push(...rawHeritage);
       for (const item of rawHeritage) {
         if (item && item.id) {
+          const existing = placesData.get(item.id.toLowerCase());
           const normItem = {
             ...item,
+            assigned_city: item.assigned_city || (existing as any)?.assigned_city,
+            tourist_place: item.tourist_place || (existing as any)?.tourist_place || item.name,
             category: item.category || 'Architectural & Colonial',
             summary: item.summary || item.historical_significance?.slice(0, 200) || '',
             tags: item.tags || ['heritage', 'unesco'],
@@ -1024,13 +1073,20 @@ app.get(['/api/destinations', '/api/places'], (req, res) => {
 
   if (city) {
     const c = (city as string).toLowerCase().trim();
-    results = results.filter((p) =>
-      isPlaceInCity(p, c) ||
-      p.city?.toLowerCase().includes(c) ||
-      (p as any).city_id?.toLowerCase() === c ||
-      c.includes(p.city?.toLowerCase() || '') ||
-      (p.tags && Array.isArray(p.tags) && p.tags.some((t: string) => t.toLowerCase() === c || c.includes(t.toLowerCase())))
-    );
+    const cSlug = c.replace(/[^a-z0-9]+/g, '-');
+    results = results.filter((p) => {
+      const aCity = ((p as any).assigned_city || '').toLowerCase().trim();
+      const aCitySlug = aCity.replace(/[^a-z0-9]+/g, '-');
+      const pCity = (p.city || '').toLowerCase().trim();
+      const pCitySlug = pCity.replace(/[^a-z0-9]+/g, '-');
+      const pCityId = ((p as any).city_id || '').toLowerCase().trim();
+
+      if (aCity && (aCity === c || aCitySlug === cSlug)) return true;
+      if (isPlaceInCity(p, c)) return true;
+      if (pCity && (pCity === c || pCitySlug === cSlug)) return true;
+      if (pCityId && (pCityId === c || pCityId === cSlug)) return true;
+      return false;
+    });
   }
 
   if (category && (category as string).toLowerCase() !== 'all') {
@@ -1426,6 +1482,8 @@ app.get('/api/search', (req, res) => {
     .filter((p) => {
       return (
         p.name.toLowerCase().includes(query) ||
+        ((p as any).tourist_place && (p as any).tourist_place.toLowerCase().includes(query)) ||
+        ((p as any).assigned_city && (p as any).assigned_city.toLowerCase().includes(query)) ||
         p.city.toLowerCase().includes(query) ||
         p.state.toLowerCase().includes(query) ||
         p.category.toLowerCase().includes(query) ||
@@ -1546,6 +1604,8 @@ app.get('/api/locations/suggest', (req, res) => {
   // 3. Search Places & Attractions (skip duplicate monuments already returned)
   for (const p of placesData.values()) {
     const pName = p.name.toLowerCase();
+    const pTouristPlace = ((p as any).tourist_place || '').toLowerCase();
+    const pAssignedCity = ((p as any).assigned_city || '').toLowerCase();
     const pCity = (p.city || '').toLowerCase();
     const pClean = pName.replace(/[^a-z0-9]/g, '');
 
@@ -1556,9 +1616,11 @@ app.get('/api/locations/suggest', (req, res) => {
 
     let score = 0;
     if (p.id.toLowerCase() === query || pClean === cleanQ) score += 90;
-    else if (pName.startsWith(query)) score += 70;
-    else if (pName.includes(query)) score += 48;
-    else if (tokens.length > 0 && tokens.every(tok => pName.includes(tok) || pCity.includes(tok))) score += 35;
+    else if (pTouristPlace && pTouristPlace.replace(/[^a-z0-9]/g, '') === cleanQ) score += 90;
+    else if (pName.startsWith(query) || (pTouristPlace && pTouristPlace.startsWith(query))) score += 70;
+    else if (pName.includes(query) || (pTouristPlace && pTouristPlace.includes(query))) score += 48;
+    else if (pAssignedCity && (pAssignedCity === query || pAssignedCity.startsWith(query))) score += 45;
+    else if (tokens.length > 0 && tokens.every(tok => pName.includes(tok) || pCity.includes(tok) || pTouristPlace.includes(tok) || pAssignedCity.includes(tok))) score += 35;
 
     const uniqueId = seenIds.has(p.id) ? `place-${p.id}` : p.id;
     if (score > 0 && !seenIds.has(uniqueId)) {
