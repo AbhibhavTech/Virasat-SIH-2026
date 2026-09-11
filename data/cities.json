@@ -159,7 +159,7 @@
     "official_url": "https://hpshimla.nic.in",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200&q=80",
-    "places_count": 3
+    "places_count": 4
   },
   {
     "id": "manali",
@@ -177,7 +177,7 @@
     "official_url": "https://hpkullu.nic.in",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1596761611086-455b76615b13?w=1200&q=80",
-    "places_count": 2
+    "places_count": 4
   },
   {
     "id": "spiti-valley",
@@ -195,7 +195,7 @@
     "official_url": "https://hplahaulspiti.nic.in",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1605649487212-47bdab064df8?w=1200&q=80",
-    "places_count": 3
+    "places_count": 1
   },
   {
     "id": "dharamshala",
@@ -213,7 +213,7 @@
     "official_url": "https://hpkangra.nic.in",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1588083949404-c4f1ed1323b3?w=1200&q=80",
-    "places_count": 1
+    "places_count": 4
   },
   {
     "id": "kangra",
@@ -231,7 +231,7 @@
     "official_url": "https://hpkangra.nic.in",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&q=80",
-    "places_count": 2
+    "places_count": 0
   },
   {
     "id": "kullu",
@@ -2553,7 +2553,7 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1558431387-723858697700?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 14
+    "places_count": 40
   },
   {
     "id": "nagpur",
@@ -2607,7 +2607,7 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1628155930547-8bc219d71388?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 14
+    "places_count": 25
   },
   {
     "id": "satara",
@@ -3525,7 +3525,7 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1628009848535-216455961f72?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 5
+    "places_count": 10
   },
   {
     "id": "coimbatore",
@@ -3543,25 +3543,7 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1602216056102-910622621500?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
-  },
-  {
-    "id": "kanchipuram",
-    "state_id": "tamil-nadu",
-    "name": "Kanchipuram",
-    "slug": "kanchipuram",
-    "entity_type": "city",
-    "district": "Kanchipuram",
-    "latitude": 12.8342,
-    "longitude": 79.7036,
-    "lat": 12.8342,
-    "lng": 79.7036,
-    "short_description": "City of Thousand Temples and world-famous Kanchipuram mulberry silk sarees, holding Ekambareswarar, Kailasanathar, and Varadharaja Perumal temples.",
-    "description": "City of Thousand Temples and world-famous Kanchipuram mulberry silk sarees, holding Ekambareswarar, Kailasanathar, and Varadharaja Perumal temples.",
-    "official_url": "https://incredibleindia.org",
-    "status": "active",
-    "hero_image_url": "https://images.unsplash.com/photo-1595815771620-133533171133?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 1
   },
   {
     "id": "kanniyakumari",
@@ -3579,7 +3561,7 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1514222134-1b3300421439?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 2
   },
   {
     "id": "madurai",
@@ -3597,7 +3579,7 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1605335198089-313e72662400?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 2
+    "places_count": 1
   },
   {
     "id": "mamallapuram",
@@ -3615,7 +3597,7 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1606298855678-92546678d38e?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 2
   },
   {
     "id": "ooty",
@@ -3633,7 +3615,7 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1609946850726-c30989885102?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 1
+    "places_count": 3
   },
   {
     "id": "rameswaram",
@@ -3651,7 +3633,7 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1598890777038-103791039059?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 2
   },
   {
     "id": "thanjavur",
@@ -3669,25 +3651,7 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1627894483222-8794gl258498?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 2
-  },
-  {
-    "id": "tiruchirappalli",
-    "state_id": "tamil-nadu",
-    "name": "Tiruchirappalli",
-    "slug": "tiruchirappalli",
-    "entity_type": "city",
-    "district": "Tiruchirappalli",
-    "latitude": 10.7905,
-    "longitude": 78.7047,
-    "lat": 10.7905,
-    "lng": 78.7047,
-    "short_description": "Historic Cauvery river city dominated by the dramatic 83-meter high Rockfort Ucchi Pillayar Temple and colossal Ranganathaswamy Temple complex at Srirangam.",
-    "description": "Historic Cauvery river city dominated by the dramatic 83-meter high Rockfort Ucchi Pillayar Temple and colossal Ranganathaswamy Temple complex at Srirangam.",
-    "official_url": "https://incredibleindia.org",
-    "status": "active",
-    "hero_image_url": "https://images.unsplash.com/photo-1507525428041-230989885105?w=1200&auto=format&fit=crop&q=80",
-    "places_count": 0
+    "places_count": 1
   },
   {
     "id": "bhongir",
@@ -3777,6 +3741,186 @@
     "official_url": "https://incredibleindia.org",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1518709268811-ae56080f5489?w=1200&auto=format&fit=crop&q=80",
+    "places_count": 1
+  },
+  {
+    "id": "kodaikanal",
+    "state_id": "tamil-nadu",
+    "name": "Kodaikanal",
+    "slug": "kodaikanal",
+    "entity_type": "hill_station",
+    "district": "Dindigul",
+    "latitude": 10.2381,
+    "longitude": 77.4892,
+    "lat": 10.2381,
+    "lng": 77.4892,
+    "short_description": "Princess of Hill Stations renowned for star-shaped Kodaikanal Lake, pine forests, Pillar Rocks, and cool mountain climate.",
+    "description": "Scenic hill retreat in the Palani Hills of Tamil Nadu, famous for its misty lake, Coaker’s Walk, waterfalls, and rich flora.",
+    "official_url": "https://www.tamilnadutourism.tn.gov.in/destinations/kodaikanal",
+    "status": "active",
+    "hero_image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
+    "places_count": 1
+  },
+  {
+    "id": "gangaikonda-cholapuram",
+    "state_id": "tamil-nadu",
+    "name": "Gangaikonda Cholapuram",
+    "slug": "gangaikonda-cholapuram",
+    "entity_type": "heritage_site",
+    "district": "Ariyalur",
+    "latitude": 11.2061,
+    "longitude": 79.4503,
+    "lat": 11.2061,
+    "lng": 79.4503,
+    "short_description": "Historic capital of the Chola empire, founded by Rajendra Chola I, housing the magnificent UNESCO World Heritage Brihadisvara Temple.",
+    "description": "An architectural marvel celebrating the victorious expedition of Rajendra Chola I to the River Ganga.",
+    "official_url": "https://whc.unesco.org/en/list/250/",
+    "status": "active",
+    "hero_image_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=1200&auto=format&fit=crop&q=80",
+    "places_count": 1
+  },
+  {
+    "id": "chidambaram",
+    "state_id": "tamil-nadu",
+    "name": "Chidambaram",
+    "slug": "chidambaram",
+    "entity_type": "heritage_site",
+    "district": "Cuddalore",
+    "latitude": 11.3992,
+    "longitude": 79.6934,
+    "lat": 11.3992,
+    "lng": 79.6934,
+    "short_description": "Sacred temple town celebrated for the historic Thillai Nataraja Temple, depicting Lord Shiva in the cosmic Ananda Tandava posture.",
+    "description": "One of the Pancha Bhoota Sthalams representing Akasha (ether), renowned for ancient bronze sculptures and Bharatanatyam dance sculptures.",
+    "official_url": "https://www.tamilnadutourism.tn.gov.in/destinations/chidambaram-nataraja-temple",
+    "status": "active",
+    "hero_image_url": "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?w=1200&auto=format&fit=crop&q=80",
+    "places_count": 1
+  },
+  {
+    "id": "courtallam",
+    "state_id": "tamil-nadu",
+    "name": "Courtallam",
+    "slug": "courtallam",
+    "entity_type": "natural_heritage",
+    "district": "Tenkasi",
+    "latitude": 8.9297,
+    "longitude": 77.2694,
+    "lat": 8.9297,
+    "lng": 77.2694,
+    "short_description": "Spa of South India, famous for mineral-rich medicinal waterfalls cascading down the Western Ghats.",
+    "description": "Popular natural destination featuring Main Falls, Five Falls, and Old Courtallam cascades renowned for therapeutic waters.",
+    "official_url": "https://www.tamilnadutourism.tn.gov.in/destinations/courtallam-falls",
+    "status": "active",
+    "hero_image_url": "https://images.unsplash.com/photo-1546587348-d12660c30c50?w=1200&auto=format&fit=crop&q=80",
+    "places_count": 1
+  },
+  {
+    "id": "yercaud",
+    "state_id": "tamil-nadu",
+    "name": "Yercaud",
+    "slug": "yercaud",
+    "entity_type": "hill_station",
+    "district": "Salem",
+    "latitude": 11.7753,
+    "longitude": 78.2093,
+    "lat": 11.7753,
+    "lng": 78.2093,
+    "short_description": "Tranquil hill station in the Shevaroy Hills celebrated for emerald lakes, coffee plantations, and panoramic viewpoints.",
+    "description": "Jewel of the South located 1515 meters above sea level, offering botanical gardens, deer park, and Pagoda Point.",
+    "official_url": "https://www.tamilnadutourism.tn.gov.in/destinations/yercaud",
+    "status": "active",
+    "hero_image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
+    "places_count": 1
+  },
+  {
+    "id": "kufri",
+    "state_id": "himachal-pradesh",
+    "name": "Kufri",
+    "slug": "kufri",
+    "entity_type": "hill_station",
+    "district": "Shimla",
+    "latitude": 31.098,
+    "longitude": 77.2678,
+    "lat": 31.098,
+    "lng": 77.2678,
+    "short_description": "High-altitude Himalayan resort near Shimla, renowned for panoramic snow views, Himalayan Nature Park, and winter sports.",
+    "description": "Picturesque hill station situated at an altitude of 2,720 metres, known for ski slopes, apple orchards, and Mahasu Peak trail.",
+    "official_url": "https://himachaltourism.gov.in/destination/kufri/",
+    "status": "active",
+    "hero_image_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=80",
+    "places_count": 1
+  },
+  {
+    "id": "kasol",
+    "state_id": "himachal-pradesh",
+    "name": "Kasol",
+    "slug": "kasol",
+    "entity_type": "hill_station",
+    "district": "Kullu",
+    "latitude": 32.01,
+    "longitude": 77.315,
+    "lat": 32.01,
+    "lng": 77.315,
+    "short_description": "Scenic riverside retreat on the banks of Parvati River, popular base for Himalayan treks to Kheerganga and alpine passes.",
+    "description": "Tranquil Himalayan settlement in Parvati Valley famous for coniferous forests, café culture, and mountain trailheads.",
+    "official_url": "https://himachaltourism.gov.in/destination/kasol/",
+    "status": "active",
+    "hero_image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80",
+    "places_count": 2
+  },
+  {
+    "id": "khajjiar",
+    "state_id": "himachal-pradesh",
+    "name": "Khajjiar",
+    "slug": "khajjiar",
+    "entity_type": "meadow_nature",
+    "district": "Chamba",
+    "latitude": 32.5516,
+    "longitude": 76.0656,
+    "lat": 32.5516,
+    "lng": 76.0656,
+    "short_description": "Saucer-shaped alpine meadow surrounded by dense cedar forests in Chamba district, known as Mini Switzerland of India.",
+    "description": "Picturesque high-altitude plateau with a central lake and floating island, framed by the snow-clad Pir Panjal ranges.",
+    "official_url": "https://himachaltourism.gov.in/destination/khajjiar/",
+    "status": "active",
+    "hero_image_url": "https://images.unsplash.com/photo-1472396961693-142e6e269027?w=1200&auto=format&fit=crop&q=80",
+    "places_count": 1
+  },
+  {
+    "id": "dalhousie",
+    "state_id": "himachal-pradesh",
+    "name": "Dalhousie",
+    "slug": "dalhousie",
+    "entity_type": "hill_station",
+    "district": "Chamba",
+    "latitude": 32.5387,
+    "longitude": 75.971,
+    "lat": 32.5387,
+    "lng": 75.971,
+    "short_description": "Colonial-era hill station built across five hills in the Dhauladhar mountain range, featuring Scottish and Victorian architecture.",
+    "description": "Serene mountain haven established in 1854, famous for Subhash Baoli, Panchpula waterfalls, and panoramic Ravi river valley vistas.",
+    "official_url": "https://himachaltourism.gov.in/destination/dalhousie/",
+    "status": "active",
+    "hero_image_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&auto=format&fit=crop&q=80",
+    "places_count": 1
+  },
+  {
+    "id": "chail",
+    "state_id": "himachal-pradesh",
+    "name": "Chail",
+    "slug": "chail",
+    "entity_type": "hill_station",
+    "district": "Solan",
+    "latitude": 30.9686,
+    "longitude": 77.1904,
+    "lat": 30.9686,
+    "lng": 77.1904,
+    "short_description": "Tranquil mountain retreat famous for the historic Maharaja of Patiala Palace, chir pine forests, and high-altitude cricket ground.",
+    "description": "Quiet hill sanctuary offering panoramic vistas of the Sutlej valley, dense wildlife sanctuary, and Kali Ka Tibba temple peak.",
+    "official_url": "https://himachaltourism.gov.in/destination/chail/",
+    "status": "active",
+    "hero_image_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80",
     "places_count": 1
   }
 ]

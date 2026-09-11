@@ -206,6 +206,10 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
   const cityCoordinates: Record<string, { lat: number; lng: number; zoom: number }> = {
     'all-india': { lat: 22.5, lng: 79.0, zoom: 5 },
     mumbai: { lat: 18.9431, lng: 72.833, zoom: 13 },
+    pune: { lat: 18.5204, lng: 73.8567, zoom: 13 },
+    chennai: { lat: 13.0827, lng: 80.2707, zoom: 13 },
+    'tamil-nadu': { lat: 11.1271, lng: 78.6569, zoom: 7 },
+    madurai: { lat: 9.9195, lng: 78.1193, zoom: 13 },
     delhi: { lat: 28.6139, lng: 77.209, zoom: 12 },
     jaipur: { lat: 26.9124, lng: 75.7873, zoom: 13 },
     agra: { lat: 27.1751, lng: 78.0421, zoom: 13 },
@@ -215,6 +219,10 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
     bengaluru: { lat: 12.9716, lng: 77.5946, zoom: 12 },
     kolkata: { lat: 22.5726, lng: 88.3639, zoom: 12 },
     amritsar: { lat: 31.6340, lng: 74.8723, zoom: 13 },
+    shimla: { lat: 31.1048, lng: 77.1734, zoom: 13 },
+    manali: { lat: 32.2432, lng: 77.1892, zoom: 13 },
+    dharamshala: { lat: 32.2190, lng: 76.3234, zoom: 13 },
+    'himachal-pradesh': { lat: 31.8, lng: 77.3, zoom: 8 },
   };
 
   // 2. Initialize Leaflet Map Instance
@@ -1091,6 +1099,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
           {[
             { id: 'all-india', label: 'All India' },
             { id: 'mumbai', label: 'Mumbai' },
+            { id: 'pune', label: 'Pune' },
             { id: 'delhi', label: 'Delhi' },
             { id: 'jaipur', label: 'Jaipur' },
             { id: 'agra', label: 'Agra' },

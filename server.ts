@@ -330,6 +330,8 @@ function loadData() {
     };
 
     loadPlacesFile(path.join(dataDir, 'mumbai', 'places.json'));
+    loadPlacesFile(path.join(dataDir, 'pune', 'places.json'));
+    loadPlacesFile(path.join(dataDir, 'tamil-nadu', 'places.json'));
     loadPlacesFile(path.join(dataDir, 'maharashtra', 'places.json'));
     loadPlacesFile(path.join(dataDir, 'delhi', 'places.json'));
     loadPlacesFile(path.join(dataDir, 'rajasthan', 'places.json'));
@@ -1009,13 +1011,32 @@ app.get(['/api/destinations', '/api/places'], (req, res) => {
 
   if (city) {
     const c = (city as string).toLowerCase().trim();
-    results = results.filter((p) =>
-      isPlaceInCity(p, c) ||
-      p.city?.toLowerCase().includes(c) ||
-      (p as any).city_id?.toLowerCase() === c ||
-      c.includes(p.city?.toLowerCase() || '') ||
-      (p.tags && Array.isArray(p.tags) && p.tags.some((t: string) => t.toLowerCase() === c || c.includes(t.toLowerCase())))
-    );
+    const cityFiltered = results.filter((p) => {
+      const pCityId = ((p as any).city_id || '').toLowerCase().trim();
+      if (pCityId) {
+        return (
+          isPlaceInCity(p, c) ||
+          pCityId === c ||
+          getCanonicalCityId(pCityId) === getCanonicalCityId(c)
+        );
+      }
+      return (
+        isPlaceInCity(p, c) ||
+        p.city?.toLowerCase().includes(c) ||
+        (c.length > 3 && (p.city?.toLowerCase() || '').includes(c)) ||
+        (p.tags && Array.isArray(p.tags) && p.tags.some((t: string) => t.toLowerCase() === c))
+      );
+    });
+
+    const seenNames = new Set<string>();
+    results = [];
+    for (const p of cityFiltered) {
+      const norm = p.name.toLowerCase().trim().replace(/^(the|a|an)\s+/i, '');
+      if (!seenNames.has(norm)) {
+        seenNames.add(norm);
+        results.push(p);
+      }
+    }
   }
 
   if (category && (category as string).toLowerCase() !== 'all') {
@@ -1031,6 +1052,7 @@ app.get(['/api/destinations', '/api/places'], (req, res) => {
     limit: lim,
     offset: off,
     data: paged,
+    places: paged,
   });
 });
 
@@ -1407,19 +1429,31 @@ app.get('/api/search', (req, res) => {
     return res.json([]);
   }
 
-  const matches = Array.from(placesData.values())
-    .filter((p) => {
-      return (
-        p.name.toLowerCase().includes(query) ||
-        p.city.toLowerCase().includes(query) ||
-        p.state.toLowerCase().includes(query) ||
-        p.category.toLowerCase().includes(query) ||
-        p.summary?.toLowerCase().includes(query) ||
-        p.description?.toLowerCase().includes(query) ||
-        (p.tags && p.tags.some((t) => t.toLowerCase().includes(query)))
-      );
-    })
-    .slice(0, limit);
+  const seen = new Set<string>();
+  const matches: any[] = [];
+
+  for (const p of placesData.values()) {
+    const normName = p.name.toLowerCase().trim();
+    if (seen.has(normName)) continue;
+
+    const matchesQuery =
+      p.name.toLowerCase().includes(query) ||
+      p.city.toLowerCase().includes(query) ||
+      p.state.toLowerCase().includes(query) ||
+      p.category.toLowerCase().includes(query) ||
+      p.summary?.toLowerCase().includes(query) ||
+      p.description?.toLowerCase().includes(query) ||
+      Boolean((p as any).area && (p as any).area.toLowerCase().includes(query)) ||
+      Boolean((p as any).map_search && (p as any).map_search.toLowerCase().includes(query)) ||
+      Boolean(p.tags && p.tags.some((t) => t.toLowerCase().includes(query))) ||
+      (query === 'csmt' && (p.id === 'mumbai-001' || p.name.toLowerCase().includes('chhatrapati shivaji maharaj terminus')));
+
+    if (matchesQuery) {
+      seen.add(normName);
+      matches.push(p);
+      if (matches.length >= limit) break;
+    }
+  }
 
   res.json(matches);
 });
@@ -2689,9 +2723,9 @@ function findCityTransportInfo(cityNameOrId: string) {
           city: city.name,
           state: city.state,
           coordinates: city.coordinates,
-          railway_stations: city.transport?.railway_stations || [],
-          airport: city.transport?.airport || null,
-          local_transit: city.transport?.local_transit || null,
+          railway_stations: (city.transport as any)?.railway_stations || [],
+          airport: (city.transport as any)?.airport || null,
+          local_transit: (city.transport as any)?.local_transit || null,
         };
       }
     }

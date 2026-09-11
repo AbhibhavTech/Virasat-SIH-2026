@@ -23,11 +23,20 @@ import {
   CheckCircle2,
   Navigation,
   ArrowRight,
+  Hotel,
+  Utensils,
+  Bus,
+  Train,
+  Car,
+  Footprints,
+  Wallet,
+  Star,
 } from 'lucide-react';
 import { api } from '../services/api';
 import { ItineraryResponse, ItineraryDay } from '../types';
 import { NavTab } from '../components/layout/Sidebar';
 import { ALL_INDIAN_TOURISM_CITIES, CityOption } from '../data/cityItineraryData';
+import { MUMBAI_LOCAL_PICKS, MUMBAI_STAYS, MUMBAI_TRANSPORTATION } from '../data/mumbaiMasterData';
 
 interface ItineraryPageProps {
   onSelectPlace: (id: string) => void;
@@ -81,6 +90,311 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
   const [itinerary, setItinerary] = useState<ItineraryResponse | null>(null);
   const [saveSuccess, setSaveSuccess] = useState(false);
   const [shareSuccess, setShareSuccess] = useState(false);
+
+  const isMumbai = selectedCityObj.name.toLowerCase().includes('mumbai') || selectedCityObj.id.toLowerCase().includes('mumbai');
+  const isPune = selectedCityObj.name.toLowerCase().includes('pune') || selectedCityObj.id.toLowerCase().includes('pune');
+  const isChennai = selectedCityObj.name.toLowerCase().includes('chennai') || selectedCityObj.id.toLowerCase().includes('chennai') || selectedCityObj.state.toLowerCase().includes('tamil nadu');
+  const isHimachal = selectedCityObj.state.toLowerCase().includes('himachal') || ['shimla', 'manali', 'dharamshala'].some((c) => selectedCityObj.name.toLowerCase().includes(c));
+
+  // Stays filtered by budget
+  const stays = useMemo(() => {
+    if (isMumbai) {
+      return (MUMBAI_STAYS as any)[budget] || MUMBAI_STAYS.moderate;
+    }
+    if (isPune) {
+      if (budget === 'budget') {
+        return [
+          {
+            name: 'Zostel Pune & Backpacker Hub',
+            type: 'Heritage Hostel / Pod Stay',
+            area: 'Viman Nagar / Koregaon Park, Pune',
+            price_range: '₹900 – ₹1,800 / night',
+            rating: 4.4,
+            highlights: ['Youth & backpacker friendly', 'High-speed Wi-Fi', 'Close to cafes & transit'],
+            thumbnail_url: 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=600&auto=format&fit=crop&q=80',
+          },
+        ];
+      }
+      if (budget === 'luxury') {
+        return [
+          {
+            name: 'The Ritz-Carlton / JW Marriott Pune',
+            type: '5-Star Luxury Landmark',
+            area: 'Senapati Bapat Road / Airport Road, Pune',
+            price_range: '₹14,000 – ₹24,000 / night',
+            rating: 4.9,
+            highlights: ['Panoramic city vistas', 'Award-winning spa & fine dining', 'Exclusive heritage concierge'],
+            thumbnail_url: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&auto=format&fit=crop&q=80',
+          },
+        ];
+      }
+      return [
+        {
+          name: 'Hotel Shreyas & Deccan Heritage',
+          type: 'Mid-range Cultural Boutique Hotel',
+          area: 'Apte Road, Deccan Gymkhana, Pune',
+          price_range: '₹3,500 – ₹5,500 / night',
+          rating: 4.6,
+          highlights: ['Prime central heritage location', 'World-famous authentic Maharashtrian Thali', 'Valet parking'],
+          thumbnail_url: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&auto=format&fit=crop&q=80',
+        },
+      ];
+    }
+    if (isChennai) {
+      if (budget === 'budget') {
+        return [
+          {
+            name: 'Broad Lands Heritage Lodge',
+            type: 'Colonial Budget Lodge',
+            area: 'Triplicane, Chennai',
+            price_range: '₹1,100 – ₹2,000 / night',
+            rating: 4.3,
+            highlights: ['Walking distance to Marina Beach', 'Historic courtyard architecture', 'Clean & peaceful'],
+            thumbnail_url: 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=600&auto=format&fit=crop&q=80',
+          },
+        ];
+      }
+      if (budget === 'luxury') {
+        return [
+          {
+            name: 'Taj Coromandel / ITC Grand Chola',
+            type: 'Iconic South Indian Luxury Palace',
+            area: 'Nungambakkam / Guindy, Chennai',
+            price_range: '₹15,000 – ₹28,000 / night',
+            rating: 4.9,
+            highlights: ['Chola architectural grandeur', 'Southern Spice award-winning dining', 'Royal presidential suites'],
+            thumbnail_url: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&auto=format&fit=crop&q=80',
+          },
+        ];
+      }
+      return [
+        {
+          name: 'The Residency Towers',
+          type: 'Boutique Business & Heritage Hotel',
+          area: 'T. Nagar, Chennai',
+          price_range: '₹4,000 – ₹7,000 / night',
+          rating: 4.6,
+          highlights: ['Heart of shopping & silk district', 'Rooftop dining & pool', 'South Indian breakfast buffet'],
+          thumbnail_url: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&auto=format&fit=crop&q=80',
+        },
+      ];
+    }
+    if (isHimachal) {
+      if (budget === 'budget') {
+        return [
+          {
+            name: 'The Hosteller / Zostel Mountain Stay',
+            type: 'Alpine Backpacker Hostel',
+            area: `Scenic Hills, ${selectedCityObj.name}`,
+            price_range: '₹1,200 – ₹2,200 / night',
+            rating: 4.5,
+            highlights: ['Panoramic snow peaks view', 'Cozy cedar wood interiors', 'Cafe & common lounge'],
+            thumbnail_url: 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=600&auto=format&fit=crop&q=80',
+          },
+        ];
+      }
+      if (budget === 'luxury') {
+        return [
+          {
+            name: 'The Oberoi Cecil / Wildflower Hall',
+            type: 'Grand Colonial Himalayan Resort',
+            area: 'Chaura Maidan, Shimla & Environs',
+            price_range: '₹22,000 – ₹45,000 / night',
+            rating: 4.9,
+            highlights: ['Over 100 years of colonial history', 'Heated indoor pool with valley views', 'Fine dining ballroom'],
+            thumbnail_url: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&auto=format&fit=crop&q=80',
+          },
+        ];
+      }
+      return [
+        {
+          name: 'Clarkes Hotel (A Heritage Grand)',
+          type: 'Historic British Heritage Hotel',
+          area: 'Mall Road, Shimla',
+          price_range: '₹5,500 – ₹9,500 / night',
+          rating: 4.7,
+          highlights: ['Direct access to vehicle-free Mall Road', 'Classic English timber architecture', 'Mountain view terrace'],
+          thumbnail_url: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&auto=format&fit=crop&q=80',
+        },
+      ];
+    }
+    if (budget === 'budget') {
+      return [
+        {
+          name: `${selectedCityObj.name} Heritage Backpackers`,
+          type: 'Budget Stay / Hostel',
+          area: `Central ${selectedCityObj.name}`,
+          price_range: '₹1,200 – ₹2,200 / night',
+          rating: 4.3,
+          highlights: ['Centrally located', 'Clean AC rooms', 'Transit friendly'],
+          thumbnail_url: 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=600&auto=format&fit=crop&q=80',
+        },
+      ];
+    }
+    if (budget === 'luxury') {
+      return [
+        {
+          name: `The Grand Palace Hotel ${selectedCityObj.name}`,
+          type: 'Luxury Heritage Hotel',
+          area: `Heritage Quarter, ${selectedCityObj.name}`,
+          price_range: '₹18,000 – ₹32,000 / night',
+          rating: 4.8,
+          highlights: ['Signature luxury suites', 'Fine dining restaurant', 'Concierge touring'],
+          thumbnail_url: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&auto=format&fit=crop&q=80',
+        },
+      ];
+    }
+    return [
+      {
+        name: `${selectedCityObj.name} Heritage Residency`,
+        type: 'Mid-range Boutique Hotel',
+        area: `Station / City Hub, ${selectedCityObj.name}`,
+        price_range: '₹3,500 – ₹6,000 / night',
+        rating: 4.5,
+        highlights: ['Convenient location', 'Buffet breakfast', 'Modern amenities'],
+        thumbnail_url: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&auto=format&fit=crop&q=80',
+      },
+    ];
+  }, [isMumbai, isPune, isChennai, isHimachal, budget, selectedCityObj.name]);
+
+  // Transportation filtered by budget
+  const transportation = useMemo(() => {
+    if (isMumbai) {
+      return (MUMBAI_TRANSPORTATION as any)[budget] || MUMBAI_TRANSPORTATION.moderate;
+    }
+    if (isPune) {
+      if (budget === 'budget') {
+        return [
+          { mode: 'Pune Metro (Purple & Aqua Lines)', icon: 'train', cost_indication: '₹10 – ₹35 per ride', description: 'Modern, fast urban metro linking PCMC, Civil Court, Ruby Hall & Vanaz.' },
+          { mode: 'PMPML City Buses & Walking', icon: 'bus', cost_indication: '₹5 – ₹25 per trip', description: 'Extensive public bus transit connecting Swargate, Pune Station & Katraj.' },
+        ];
+      }
+      if (budget === 'luxury') {
+        return [
+          { mode: 'Chauffeur-Driven AC SUV / Executive Sedan', icon: 'car', cost_indication: '₹3,200 – ₹5,000 / day', description: 'Dedicated executive vehicle with hill-experienced driver for city & Sinhagad excursions.' },
+          { mode: 'Private Airport & Intercity Transfer', icon: 'car', cost_indication: '₹1,800 – ₹3,200', description: 'Pre-arranged door-to-door transit between Pune airport, hotels, and Mumbai expressway.' },
+        ];
+      }
+      return [
+        { mode: 'App Cabs (Uber / Ola) & Auto-Rickshaws', icon: 'car', cost_indication: '₹80 – ₹250 per ride', description: 'Prompt and reliable on-demand auto rickshaws and AC cabs across Pune.' },
+        { mode: 'Pune Metro Rail', icon: 'train', cost_indication: '₹15 – ₹30 per trip', description: 'Breeze past peak Deccan and Shivaji Nagar traffic in air-conditioned comfort.' },
+      ];
+    }
+    if (isChennai) {
+      if (budget === 'budget') {
+        return [
+          { mode: 'Chennai Metro & Suburban Train', icon: 'train', cost_indication: '₹10 – ₹40 per trip', description: 'Air-conditioned metro & coastal suburban railway connecting Central to Beach & Airport.' },
+          { mode: 'MTC City Buses', icon: 'bus', cost_indication: '₹5 – ₹20 per trip', description: 'Thorough public bus network serving Marina, Mylapore and Besant Nagar.' },
+        ];
+      }
+      if (budget === 'luxury') {
+        return [
+          { mode: 'Private Chauffeur AC Sedan', icon: 'car', cost_indication: '₹3,500 – ₹5,500 / day', description: 'Dedicated air-conditioned vehicle for exploring Chennai monuments and ECR coastal temples.' },
+          { mode: 'Airport Executive Pickup', icon: 'car', cost_indication: '₹1,500 – ₹2,500', description: 'Premium door-to-door transfer with luggage assistance.' },
+        ];
+      }
+      return [
+        { mode: 'App Cabs (Uber / Ola) & Fast Autos', icon: 'car', cost_indication: '₹100 – ₹300 per trip', description: 'Convenient AC rides and quick city auto-rickshaws for sightseeing.' },
+        { mode: 'Chennai Metro', icon: 'train', cost_indication: '₹20 – ₹50 per trip', description: 'Rapid transit avoiding city heat and road congestion.' },
+      ];
+    }
+    if (isHimachal) {
+      if (budget === 'budget') {
+        return [
+          { mode: 'UNESCO Heritage Toy Train & HRTC Mountain Buses', icon: 'train', cost_indication: '₹50 – ₹120 per trip', description: 'Iconic scenic railway journey and sturdy state mountain buses linking hill towns.' },
+          { mode: 'Foot Exploration on Pedestrian Malls', icon: 'walk', cost_indication: 'Free & Scenic', description: 'Walking along vehicle-free Mall Road, The Ridge, and deodar forest nature trails.' },
+        ];
+      }
+      if (budget === 'luxury') {
+        return [
+          { mode: 'Dedicated Mountain 4x4 / AC Innova with Hill Chauffeur', icon: 'car', cost_indication: '₹4,000 – ₹6,500 / day', description: 'Skilled mountain driver navigating panoramic passes, Kufri, and viewpoints safely.' },
+          { mode: 'Private Heli-Taxi & Scenic Flights', icon: 'car', cost_indication: '₹3,500 – ₹8,000', description: 'Rapid aerial transfer connecting Shimla, Kullu and Chandigarh heliports.' },
+        ];
+      }
+      return [
+        { mode: 'Pre-paid Local Hill Taxis', icon: 'car', cost_indication: '₹300 – ₹800 per excursion', description: 'Regulated taxi union vehicles for local sightseeing (Jakhu, Kufri, Naldera).' },
+        { mode: 'Heritage Stroll & Mountain Walks', icon: 'walk', cost_indication: 'Free', description: 'Pleasant pedestrian explorations in the crisp mountain air.' },
+      ];
+    }
+    if (budget === 'budget') {
+      return [
+        { mode: 'City Bus & Local Transit', icon: 'bus', cost_indication: '₹10 – ₹30 per trip', description: 'Affordable public transit network covering all key city zones.' },
+        { mode: 'Auto-Rickshaws & Walking', icon: 'walk', cost_indication: '₹30 – ₹100 per ride', description: 'Metered or shared three-wheelers and foot exploration in historic bazaars.' },
+      ];
+    }
+    if (budget === 'luxury') {
+      return [
+        { mode: 'Chauffeur-Driven Air-Conditioned Sedan', icon: 'car', cost_indication: '₹3,000 – ₹5,500 / day', description: 'Dedicated executive car with experienced local chauffeur for the day.' },
+        { mode: 'Private Airport Transfers', icon: 'car', cost_indication: '₹1,500 – ₹3,000', description: 'Pre-arranged door-to-door transfer with luggage assistance.' },
+      ];
+    }
+    return [
+      { mode: 'App Cabs (Uber / Ola)', icon: 'car', cost_indication: '₹150 – ₹350 per ride', description: 'Fast and comfortable on-demand cabs for city sightseeing.' },
+      { mode: 'Auto-Rickshaws', icon: 'walk', cost_indication: '₹50 – ₹150 per trip', description: 'Convenient last-mile transit navigating historic streets easily.' },
+    ];
+  }, [isMumbai, isPune, isChennai, isHimachal, budget]);
+
+  // Local Food & Famous Shopping Picks (Invariant across all budgets)
+  const localPicks = useMemo(() => {
+    if (isMumbai) {
+      return MUMBAI_LOCAL_PICKS;
+    }
+    if (isPune) {
+      return {
+        restaurants: [
+          { name: 'Shabree Restaurant (FC Road)', specialty: 'Authentic Maharashtrian Thali & Puran Poli', area: 'Fergusson College Road, Deccan', price_range: '₹₹ (Moderate)', highlights: 'Legendary cultural establishment serving authentic multi-course Maharashtrian culinary feasts.' },
+          { name: 'Chitale Bandhu Mithaiwale', specialty: 'World-Famous Pune Bakarwadi & Mango Barfi', area: 'Bajirao Road / Deccan Gymkhana', price_range: '₹ (Affordable)', highlights: 'Century-old Maharashtrian confectionery institution renowned across the world for crispy Bakarwadi.' },
+          { name: 'Cafe Goodluck (Est. 1935)', specialty: 'Signature Bun Maska, Irani Chai & Kheema Pav', area: 'FC Road Deccan', price_range: '₹ (Affordable)', highlights: 'Pune’s most cherished heritage Irani cafe at the iconic Goodluck Chowk crossroads.' },
+          { name: 'Vaishali Restaurant', specialty: 'Mysore Masala Dosa & Fresh Filter Coffee', area: 'FC Road, Pune', price_range: '₹ (Affordable)', highlights: 'Beloved cultural hotspot where generations of scholars, authors, and locals congregate daily.' },
+        ],
+        shops: [
+          { name: 'Tulsi Baug Historic Market', specialty: 'Traditional Brass Utensils & Maharashtrian Jewellery', area: 'Old Pune / Budhwar Peth', highlights: 'Vibrant centuries-old shopping alleys behind the historic Tulshibaug Ram Temple.' },
+          { name: 'Laxmi Road Silk Quarter', specialty: 'Authentic Handwoven Paithani Sarees & Traditional Wear', area: 'Central Pune', highlights: 'The definitive textile market of Maharashtra boasting royal heritage Paithani weaves.' },
+        ],
+      };
+    }
+    if (isChennai) {
+      return {
+        restaurants: [
+          { name: 'Murugan Idli Shop', specialty: 'Velvety Steamed Idlis with Podi & 4 Signature Chutneys', area: 'T. Nagar / Besant Nagar', price_range: '₹ (Affordable)', highlights: 'Internationally celebrated Tamil culinary legend serving pristine South Indian breakfast staples.' },
+          { name: 'Rayar’s Mess (Est. 1935)', specialty: 'Crispy Medu Vadas, Pongal & Kaapi', area: 'Mylapore, Chennai', price_range: '₹ (Affordable)', highlights: 'A tiny heritage mess in the historic alleys of Mylapore revered by filter-coffee connoisseurs.' },
+          { name: 'Annalakshmi Culinary Institution', specialty: 'Traditional Tamil Vegetarian Thali & Festive Meals', area: 'Egmore, Chennai', price_range: '₹₹ (Moderate)', highlights: 'Fine traditional dining where cultural preservation and culinary artistry meet.' },
+        ],
+        shops: [
+          { name: 'Nalli Chinnasami Chetty (Est. 1928)', specialty: 'Pure Kanchipuram Silk & Traditional Handlooms', area: 'Panagal Park, T. Nagar', highlights: 'Iconic flagship textile emporium famous for authentic silk sarees and traditional weaves.' },
+          { name: 'Mylapore Temple Bazaar', specialty: 'Tanjore Art, Bronze Deities & Brass Pooja Items', area: 'Around Kapaleeswarar Temple Tank', highlights: 'Bustling heritage stalls with handmade incense, temple jewellery, and sacred art.' },
+        ],
+      };
+    }
+    if (isHimachal) {
+      return {
+        restaurants: [
+          { name: 'Himachali Rasoi (Mall Road)', specialty: 'Authentic Kangri & Mandi Dham Served on Brassware', area: 'Middle Bazaar / Mall Road, Shimla', price_range: '₹₹ (Moderate)', highlights: 'Dedicated heritage eatery serving slow-cooked Madra, Sepu Vadi, and festive mountain Dham.' },
+          { name: 'Cafe Simla Times', specialty: 'Wood-Fired Pizza & Artisanal Bakery with Valley Views', area: 'The Ridge, Shimla', price_range: '₹₹ (Moderate)', highlights: 'Charming heritage cafe offering unmatched sunset panoramas over the snow-capped ranges.' },
+          { name: 'Wake & Bake Cafe', specialty: 'French Crepes, Organic Herbal Teas & Apple Pies', area: 'Mall Road, Shimla', price_range: '₹ (Affordable)', highlights: 'A favorite creative retreat for travellers overlooking the bustling Himalayan promenade.' },
+        ],
+        shops: [
+          { name: 'Lakkar Bazaar Crafts Market', specialty: 'Carved Deodar Wood Artifacts & Walking Sticks', area: 'Near The Ridge, Shimla', highlights: 'Historic mountain carpentry market famous for handcrafted pine and deodar keepsakes.' },
+          { name: 'Himachal State Handloom Emporium', specialty: 'Pure Kullu Shawls, Kinnauri Caps & Chamba Rumals', area: 'The Mall, Shimla', highlights: 'Government-certified authentic Himalayan woollens and traditional embroidery.' },
+        ],
+      };
+    }
+    return {
+      restaurants: [
+        { name: `Traditional Thali House of ${selectedCityObj.name}`, specialty: 'Authentic Regional Thali & Specialties', area: 'City Centre', price_range: '₹₹ (Moderate)', highlights: 'Beloved multi-generational eatery serving authentic local culinary staples.' },
+        { name: `${selectedCityObj.name} Heritage Sweets & Chaat`, specialty: 'Famous Street Delicacies & Fresh Sweets', area: 'Old Bazaar Area', price_range: '₹ (Affordable)', highlights: 'Iconic street food counter frequented by locals for decades.' },
+      ],
+      shops: [
+        { name: `Central Heritage Bazaar of ${selectedCityObj.name}`, specialty: 'Handicrafts, Textiles & Souvenirs', area: 'Old City', highlights: 'Bustling traditional market lanes featuring local artisans and state emporiums.' },
+      ],
+    };
+  }, [isMumbai, isPune, isChennai, isHimachal, selectedCityObj.name]);
+
+  // Dynamic Estimated Trip Cost based on Budget
+  const estimatedTotalCost = useMemo(() => {
+    const dailyCost = budget === 'budget' ? 1800 : budget === 'luxury' ? 22000 : 5500;
+    return daysCount * dailyCost;
+  }, [budget, daysCount]);
 
   // Filter cities for search
   const filteredCities = useMemo(() => {
@@ -653,6 +967,218 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* 4B. TRIP COST BREAKDOWN & BUDGET SEPARATION BANNER */}
+          <div className="rounded-2xl bg-gradient-to-r from-amber-500/10 via-orange-500/10 to-amber-500/5 border border-amber-200/90 p-5 sm:p-6 shadow-xs flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+            <div className="space-y-1.5">
+              <div className="flex items-center gap-2 flex-wrap">
+                <Wallet className="w-4 h-4 text-[#FF671F]" />
+                <h3 className="text-base font-bold text-stone-900">
+                  Estimated Trip Cost: ₹{estimatedTotalCost.toLocaleString('en-IN')} for {daysCount} Days
+                </h3>
+                <span className="px-2.5 py-0.5 rounded-full bg-orange-100 text-[#FF671F] text-[11px] font-bold uppercase tracking-wider">
+                  {budget} Tier
+                </span>
+              </div>
+              <p className="text-xs text-stone-600 max-w-2xl leading-relaxed">
+                Estimated for {daysCount} days in {selectedCityObj.name}. Selecting Budget, Mid-range, or Luxury customizes your stays, transit, and estimated trip costs — while the verified heritage attractions and authentic local food picks remain strictly invariant!
+              </p>
+            </div>
+            <div className="flex items-center gap-2 sm:gap-3 shrink-0 text-center">
+              <div className="px-3 py-2 bg-white rounded-xl border border-stone-200 shadow-2xs">
+                <div className="text-[10px] text-stone-500">Stays / Night</div>
+                <div className="text-xs font-bold text-stone-900">
+                  {budget === 'budget' ? '₹1,200 – ₹2,500' : budget === 'luxury' ? '₹18,000 – ₹45,000' : '₹4,000 – ₹7,500'}
+                </div>
+              </div>
+              <div className="px-3 py-2 bg-white rounded-xl border border-stone-200 shadow-2xs">
+                <div className="text-[10px] text-stone-500">Daily Transit</div>
+                <div className="text-xs font-bold text-stone-900">
+                  {budget === 'budget' ? '₹50 – ₹150' : budget === 'luxury' ? '₹3,500 – ₹6,000' : '₹300 – ₹800'}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* 4C. RECOMMENDED STAYS (CHANGES WITH BUDGET DROPDOWN) */}
+          <div className="space-y-3">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <Hotel className="w-4 h-4 text-[#FF671F]" />
+                <h3 className="font-serif text-lg sm:text-xl font-bold text-stone-900">
+                  Recommended Stays ({budget.charAt(0).toUpperCase() + budget.slice(1)})
+                </h3>
+              </div>
+              <span className="text-xs text-stone-500">
+                Updates dynamically with budget tier
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {stays.map((stay: any, idx: number) => (
+                <div
+                  key={idx}
+                  className="rounded-2xl bg-white border border-stone-200/90 shadow-xs hover:shadow-md transition overflow-hidden flex flex-col justify-between group"
+                >
+                  <div>
+                    <div className="relative h-36 w-full overflow-hidden bg-stone-100">
+                      <img
+                        src={stay.thumbnail_url}
+                        alt={stay.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                        loading="lazy"
+                      />
+                      <div className="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-stone-900/70 text-white text-[10px] font-bold backdrop-blur-xs">
+                        {stay.type}
+                      </div>
+                      <div className="absolute bottom-2.5 right-2.5 px-2 py-0.5 rounded-full bg-amber-400 text-stone-950 text-[10px] font-bold flex items-center gap-1 shadow-xs">
+                        <Star className="w-3 h-3 fill-stone-950" />
+                        <span>{stay.rating}</span>
+                      </div>
+                    </div>
+
+                    <div className="p-4 space-y-2">
+                      <div>
+                        <h4 className="font-serif font-bold text-stone-900 text-sm leading-snug">
+                          {stay.name}
+                        </h4>
+                        <div className="text-[11px] text-stone-500 flex items-center gap-1 mt-0.5">
+                          <MapPin className="w-3 h-3 text-[#FF671F] shrink-0" />
+                          <span className="truncate">{stay.area}</span>
+                        </div>
+                      </div>
+
+                      <div className="text-xs font-bold text-[#FF671F] pt-1">
+                        {stay.price_range}
+                      </div>
+
+                      <div className="space-y-1 pt-2 border-t border-stone-100">
+                        {stay.highlights.map((h: string, hIdx: number) => (
+                          <div key={hIdx} className="text-[11px] text-stone-600 flex items-start gap-1.5 leading-snug">
+                            <span className="text-emerald-600 font-bold">✓</span>
+                            <span>{h}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* 4D. RECOMMENDED TRANSPORTATION (CHANGES WITH BUDGET DROPDOWN) */}
+          <div className="space-y-3">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <Navigation className="w-4 h-4 text-[#FF671F]" />
+                <h3 className="font-serif text-lg sm:text-xl font-bold text-stone-900">
+                  Recommended Transportation ({budget.charAt(0).toUpperCase() + budget.slice(1)})
+                </h3>
+              </div>
+              <span className="text-xs text-stone-500">
+                Destination-aware transit options
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {transportation.map((trans: any, idx: number) => (
+                <div
+                  key={idx}
+                  className="rounded-2xl bg-white border border-stone-200/90 p-4 shadow-xs hover:shadow-md transition space-y-2 flex flex-col justify-between"
+                >
+                  <div className="space-y-2">
+                    <div className="w-8 h-8 rounded-xl bg-orange-50 text-[#FF671F] flex items-center justify-center font-bold">
+                      {trans.icon === 'train' ? <Train className="w-4 h-4" /> : trans.icon === 'bus' ? <Bus className="w-4 h-4" /> : trans.icon === 'walk' ? <Footprints className="w-4 h-4" /> : <Car className="w-4 h-4" />}
+                    </div>
+                    <div>
+                      <h4 className="font-bold text-xs text-stone-900 leading-snug">
+                        {trans.mode}
+                      </h4>
+                      <div className="text-[11px] font-semibold text-emerald-700 mt-0.5">
+                        {trans.cost_indication}
+                      </div>
+                    </div>
+                    <p className="text-[11px] text-stone-600 leading-relaxed">
+                      {trans.description}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* 4E. LOCAL FOOD & FAMOUS SHOPPING PICKS (INVARIANT ACROSS BUDGETS) */}
+          <div className="space-y-4">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <Utensils className="w-4 h-4 text-[#FF671F]" />
+                <h3 className="font-serif text-lg sm:text-xl font-bold text-stone-900">
+                  Local Food &amp; Famous Shopping Picks
+                </h3>
+              </div>
+              <span className="text-xs px-2.5 py-0.5 rounded-full bg-stone-100 text-stone-700 font-semibold">
+                Same for all budgets
+              </span>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {/* Local Food Picks */}
+              <div className="rounded-2xl bg-white border border-stone-200/90 p-5 shadow-xs space-y-3">
+                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#FF671F] pb-2 border-b border-stone-100">
+                  <Utensils className="w-3.5 h-3.5" />
+                  <span>Authentic Restaurants &amp; Culinary Institutions</span>
+                </div>
+
+                <div className="space-y-3">
+                  {localPicks.restaurants.map((res: any, idx: number) => (
+                    <div key={idx} className="p-3.5 rounded-xl bg-stone-50 border border-stone-200/80 space-y-1">
+                      <div className="flex items-start justify-between gap-2">
+                        <h5 className="font-bold text-xs text-stone-900">{res.name}</h5>
+                        <span className="text-[10px] font-semibold text-stone-600 px-2 py-0.5 rounded bg-white border border-stone-200 shrink-0">
+                          {res.price_range}
+                        </span>
+                      </div>
+                      <div className="text-[11px] text-[#FF671F] font-semibold">
+                        🍲 {res.specialty}
+                      </div>
+                      <div className="text-[10px] text-stone-500">
+                        📍 {res.area}
+                      </div>
+                      <p className="text-[11px] text-stone-600 leading-relaxed pt-1">
+                        {res.highlights}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Famous Shopping Picks */}
+              <div className="rounded-2xl bg-white border border-stone-200/90 p-5 shadow-xs space-y-3">
+                <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-700 pb-2 border-b border-stone-100">
+                  <ShoppingBag className="w-3.5 h-3.5" />
+                  <span>Famous Local Markets &amp; Bazaars</span>
+                </div>
+
+                <div className="space-y-3">
+                  {localPicks.shops.map((shop: any, idx: number) => (
+                    <div key={idx} className="p-3.5 rounded-xl bg-stone-50 border border-stone-200/80 space-y-1">
+                      <h5 className="font-bold text-xs text-stone-900">{shop.name}</h5>
+                      <div className="text-[11px] text-emerald-800 font-semibold">
+                        🛍️ {shop.specialty}
+                      </div>
+                      <div className="text-[10px] text-stone-500">
+                        📍 {shop.area}
+                      </div>
+                      <p className="text-[11px] text-stone-600 leading-relaxed pt-1">
+                        {shop.highlights}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* 5. TRAVEL RESPONSIBLY GREEN BANNER */}

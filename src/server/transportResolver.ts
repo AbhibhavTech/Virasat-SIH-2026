@@ -127,8 +127,9 @@ export function initializeTransportRegistry(rootDir: string = process.cwd()) {
       const cityLng = city.coordinates?.lng || 0;
 
       // Railway stations
-      if (Array.isArray(city.transport?.railway_stations)) {
-        for (const stn of city.transport.railway_stations) {
+      const cityTransport = city.transport as any;
+      if (Array.isArray(cityTransport?.railway_stations)) {
+        for (const stn of cityTransport.railway_stations) {
           if (stn.name) {
             const exists = MASTER_VERIFIED_STATIONS.some(
               (x) => x.name.toLowerCase() === stn.name.toLowerCase() || (stn.code && x.code === stn.code)
@@ -150,8 +151,8 @@ export function initializeTransportRegistry(rootDir: string = process.cwd()) {
       }
 
       // Airport
-      if (city.transport?.airport?.name) {
-        const apt = city.transport.airport;
+      if (cityTransport?.airport?.name) {
+        const apt = cityTransport.airport;
         const exists = MASTER_VERIFIED_AIRPORTS.some(
           (x) => x.name.toLowerCase() === apt.name.toLowerCase() || (apt.code && x.code === apt.code)
         );
@@ -771,12 +772,13 @@ export function resolveDestinationTransportNode(
         const cLat = city.coordinates?.lat || 20.0;
         const cLng = city.coordinates?.lng || 78.0;
 
-        const cityStn =
-          city.transport?.railway_stations?.[0] ||
+        const cityTransport = city.transport as any;
+        const cityStn: any =
+          cityTransport?.railway_stations?.[0] ||
           MASTER_VERIFIED_STATIONS.find((s) => s.city.toLowerCase() === city.name.toLowerCase());
 
-        const cityApt =
-          city.transport?.airport ||
+        const cityApt: any =
+          cityTransport?.airport ||
           MASTER_VERIFIED_AIRPORTS.find((a) => a.city.toLowerCase() === city.name.toLowerCase());
 
         return {

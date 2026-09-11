@@ -40,6 +40,10 @@ import {
   UserLocationContext,
 } from '../types';
 import { safeLocalStorage } from '../utils/storage';
+import { getMumbaiAttractionById } from '../data/mumbaiMasterData';
+import { getPuneAttractionById } from '../data/puneMasterData';
+import { getTamilNaduAttractionById } from '../data/tamilNaduMasterData';
+import { getHimachalPradeshAttractionById } from '../data/himachalPradeshMasterData';
 
 const API_BASE_URL = '/api';
 
@@ -114,8 +118,28 @@ export const api = {
   },
 
   async getPlaceById(id: string): Promise<PlaceDetail> {
-    const data = await request<any>(`/v1/places/${id}`);
-    return data.place || data.data || data;
+    try {
+      const data = await request<any>(`/v1/places/${id}`);
+      return data.place || data.data || data;
+    } catch (err) {
+      const m = getMumbaiAttractionById(id);
+      if (m) {
+        return m as any;
+      }
+      const p = getPuneAttractionById(id);
+      if (p) {
+        return p as any;
+      }
+      const tn = getTamilNaduAttractionById(id);
+      if (tn) {
+        return tn as any;
+      }
+      const hp = getHimachalPradeshAttractionById(id);
+      if (hp) {
+        return hp as any;
+      }
+      throw err;
+    }
   },
 
   async getPlace(id: string): Promise<PlaceDetail> {

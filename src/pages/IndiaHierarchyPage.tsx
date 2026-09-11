@@ -69,6 +69,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
   const [selectedRegion, setSelectedRegion] = useState('All');
   const [activeCategoryFilter, setActiveCategoryFilter] = useState<string>('all');
   const [territoryTab, setTerritoryTab] = useState<TerritoryTab>('states');
+  const [placesDisplayLimit, setPlacesDisplayLimit] = useState<number>(12);
 
   // Broken Image Tracker (Replaces hardcoded Taj Mahal fallbacks)
   const [brokenImages, setBrokenImages] = useState<Record<string, boolean>>({});
@@ -1319,6 +1320,32 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                         </span>
                       </div>
                     </div>
+
+                    {/* Direct City Hub & Itinerary Navigation Bridge */}
+                    {onNavigateTab && (
+                      <div className="pt-3 border-t border-[#EFE8DF] flex flex-wrap items-center gap-2.5">
+                        <button
+                          onClick={() => {
+                            if (onSelectCity) onSelectCity(currentCity.name);
+                            onNavigateTab('dashboard');
+                          }}
+                          className="py-2 px-3.5 rounded-xl bg-[#FF671F] hover:bg-[#E65100] text-white text-xs font-bold transition flex items-center gap-1.5 cursor-pointer shadow-xs"
+                        >
+                          <Building2 className="w-3.5 h-3.5" />
+                          <span>Explore {currentCity.name} Hub &amp; 3D</span>
+                        </button>
+                        <button
+                          onClick={() => {
+                            if (onSelectCity) onSelectCity(currentCity.name);
+                            onNavigateTab('itinerary');
+                          }}
+                          className="py-2 px-3.5 rounded-xl bg-[#FAF8F5] hover:bg-[#F3EDE5] border border-[#EFE8DF] text-stone-800 hover:text-[#FF671F] text-xs font-bold transition flex items-center gap-1.5 cursor-pointer shadow-xs"
+                        >
+                          <Compass className="w-3.5 h-3.5 text-[#FF671F]" />
+                          <span>Plan {currentCity.name} Itinerary</span>
+                        </button>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -1343,7 +1370,10 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                     ].map((tab) => (
                       <button
                         key={tab.id}
-                        onClick={() => setActiveCategoryFilter(tab.id)}
+                        onClick={() => {
+                          setActiveCategoryFilter(tab.id);
+                          setPlacesDisplayLimit(12);
+                        }}
                         className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition cursor-pointer ${
                           activeCategoryFilter === tab.id
                             ? 'bg-[#FF671F] text-white shadow-xs'
@@ -1362,205 +1392,241 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                     No verified places published yet for {currentCity.name} in this category. Content under verification.
                   </div>
                 ) : (
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                    {filteredCityPlaces.map((attr) => {
-                      const isVisited = Boolean(visitedPlaces[attr.id]);
-                      const isHeritage =
-                        attr.category === 'heritage' ||
-                        attr.topic === 'Heritage' ||
-                        attr.subtopic?.toLowerCase().includes('unesco');
-                      const imgUrl = attr.image_url || attr.thumbnail_url;
-                      const isBroken = brokenImages[attr.id] || !imgUrl;
-                      const verified = isPlaceVerified(attr);
+                  <div className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                      {filteredCityPlaces.slice(0, placesDisplayLimit).map((attr) => {
+                        const isVisited = Boolean(visitedPlaces[attr.id]);
+                        const isHeritage =
+                          attr.category === 'heritage' ||
+                          attr.topic === 'Heritage' ||
+                          attr.subtopic?.toLowerCase().includes('unesco');
+                        const imgUrl = attr.image_url || attr.thumbnail_url;
+                        const isBroken = brokenImages[attr.id] || !imgUrl;
+                        const verified = isPlaceVerified(attr);
 
-                      return (
-                        <div
-                          key={attr.id}
-                          className={`bg-white rounded-3xl border overflow-hidden shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between ${
-                            isVisited ? 'border-[#FF671F] bg-amber-50/20' : 'border-[#EFE8DF]'
-                          }`}
-                        >
-                          <div>
-                            {/* Place Photo with official neutral image pending fallback */}
-                            <div className="relative h-48 w-full overflow-hidden bg-stone-100">
-                              {isBroken ? (
-                                <OfficialImagePending
-                                  heightClass="h-full"
-                                  label="Official image pending"
-                                  showBadge={false}
-                                />
-                              ) : (
-                                <img
-                                  src={imgUrl}
-                                  alt={attr.name}
-                                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                                  onError={() => handleImageError(attr.id)}
-                                />
-                              )}
-                              <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent pointer-events-none" />
-
-                              {/* Badges */}
-                              <div className="absolute top-3 left-3 flex flex-wrap items-center gap-1.5 pointer-events-none">
-                                {attr.topic ? (
-                                  <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-orange-600/90 text-white backdrop-blur-xs">
-                                    {attr.topic}
-                                  </span>
+                        return (
+                          <div
+                            key={attr.id}
+                            className={`bg-white rounded-3xl border overflow-hidden shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between ${
+                              isVisited ? 'border-[#FF671F] bg-amber-50/20' : 'border-[#EFE8DF]'
+                            }`}
+                          >
+                            <div>
+                              {/* Place Photo with official neutral image pending fallback */}
+                              <div className="relative h-48 w-full overflow-hidden bg-stone-100">
+                                {isBroken ? (
+                                  <OfficialImagePending
+                                    heightClass="h-full"
+                                    label="Official image pending"
+                                    showBadge={false}
+                                  />
                                 ) : (
-                                  <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-white/90 text-[#FF671F]">
-                                    {attr.category_label || attr.category}
-                                  </span>
+                                  <img
+                                    src={imgUrl}
+                                    alt={attr.name}
+                                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                                    onError={() => handleImageError(attr.id)}
+                                  />
                                 )}
-                                {attr.subtopic && (
-                                  <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-stone-800/80 text-amber-200 backdrop-blur-xs">
-                                    {attr.subtopic}
-                                  </span>
-                                )}
-                                {isHeritage && !attr.subtopic?.toLowerCase().includes('unesco') && (
-                                  <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#046A38] text-white flex items-center gap-1 backdrop-blur-xs">
-                                    <Award className="w-3 h-3" /> UNESCO
-                                  </span>
-                                )}
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent pointer-events-none" />
+
+                                {/* Badges */}
+                                <div className="absolute top-3 left-3 flex flex-wrap items-center gap-1.5 pointer-events-none">
+                                  {attr.topic ? (
+                                    <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-orange-600/90 text-white backdrop-blur-xs">
+                                      {attr.topic}
+                                    </span>
+                                  ) : (
+                                    <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-white/90 text-[#FF671F]">
+                                      {attr.category_label || attr.category}
+                                    </span>
+                                  )}
+                                  {attr.subtopic && (
+                                    <span className="text-[10px] font-medium px-2 py-0.5 rounded-full bg-stone-800/80 text-amber-200 backdrop-blur-xs">
+                                      {attr.subtopic}
+                                    </span>
+                                  )}
+                                  {isHeritage && !attr.subtopic?.toLowerCase().includes('unesco') && (
+                                    <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-[#046A38] text-white flex items-center gap-1 backdrop-blur-xs">
+                                      <Award className="w-3 h-3" /> UNESCO
+                                    </span>
+                                  )}
+                                </div>
+
+                                {/* Visited Checkbox on photo */}
+                                <button
+                                  onClick={() => toggleVisited(attr.id)}
+                                  className="absolute top-3 right-3 p-1.5 rounded-full bg-white/90 text-[#FF671F] hover:bg-white transition cursor-pointer shadow-xs"
+                                  title={isVisited ? 'Mark as not visited' : 'Mark as visited'}
+                                >
+                                  {isVisited ? (
+                                    <CheckSquare className="w-4 h-4 text-[#FF671F]" />
+                                  ) : (
+                                    <Square className="w-4 h-4 text-stone-400" />
+                                  )}
+                                </button>
+
+                                {/* Title & Area overlay */}
+                                <div className="absolute bottom-3 left-4 right-4 text-white pointer-events-none">
+                                  <h4
+                                    className={`font-serif text-lg font-bold leading-snug ${
+                                      isVisited ? 'line-through text-stone-300' : 'text-white'
+                                    }`}
+                                  >
+                                    {attr.name}
+                                  </h4>
+                                  {(attr as any).area && (
+                                    <div className="text-[11px] text-amber-200 flex items-center gap-1 mt-0.5">
+                                      <MapPin className="w-3 h-3 text-amber-300 shrink-0" />
+                                      <span className="truncate">{(attr as any).area}</span>
+                                    </div>
+                                  )}
+                                </div>
                               </div>
 
-                              {/* Visited Checkbox on photo */}
-                              <button
-                                onClick={() => toggleVisited(attr.id)}
-                                className="absolute top-3 right-3 p-1.5 rounded-full bg-white/90 text-[#FF671F] hover:bg-white transition cursor-pointer shadow-xs"
-                                title={isVisited ? 'Mark as not visited' : 'Mark as visited'}
-                              >
-                                {isVisited ? (
-                                  <CheckSquare className="w-4 h-4 text-[#FF671F]" />
-                                ) : (
-                                  <Square className="w-4 h-4 text-stone-400" />
-                                )}
-                              </button>
+                              {/* Place Details Body */}
+                              <div className="p-5 space-y-3.5">
+                                {/* Verification Badge */}
+                                <div className="flex items-center justify-between gap-2">
+                                  {verified ? (
+                                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-300 flex items-center gap-1 shadow-2xs">
+                                      <ShieldCheck className="w-3 h-3 text-emerald-600" />
+                                      <span>Verified source</span>
+                                    </span>
+                                  ) : (
+                                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-300 flex items-center gap-1 shadow-2xs">
+                                      <span>Under verification</span>
+                                    </span>
+                                  )}
 
-                              {/* Title overlay */}
-                              <div className="absolute bottom-3 left-4 right-4 text-white pointer-events-none">
-                                <h4
-                                  className={`font-serif text-lg font-bold leading-snug ${
-                                    isVisited ? 'line-through text-stone-300' : 'text-white'
-                                  }`}
-                                >
-                                  {attr.name}
-                                </h4>
+                                  {attr.last_verified_on && (
+                                    <span className="text-[10px] text-stone-500">
+                                      {attr.last_verified_on}
+                                    </span>
+                                  )}
+                                </div>
+
+                                <p className="text-xs text-[#5A4E46] leading-relaxed line-clamp-3">
+                                  {attr.short_description || attr.summary || attr.historical_significance}
+                                </p>
+
+                                {/* Tags if present */}
+                                {Array.isArray((attr as any).tags) && (attr as any).tags.length > 0 && (
+                                  <div className="flex flex-wrap gap-1">
+                                    {(attr as any).tags.slice(0, 3).map((t: string) => (
+                                      <span key={t} className="text-[9px] font-mono px-2 py-0.5 rounded-md bg-stone-100 text-stone-600">
+                                        #{t}
+                                      </span>
+                                    ))}
+                                  </div>
+                                )}
+
+                                {/* Visiting Essentials Pill */}
+                                <div className="p-3 rounded-2xl bg-[#FAF8F5] border border-[#EFE8DF] space-y-1.5 text-xs">
+                                  <div className="flex items-center justify-between text-[11px]">
+                                    <span className="text-stone-500 flex items-center gap-1 font-medium">
+                                      <Clock className="w-3.5 h-3.5 text-[#FF671F]" />
+                                      <span>Timings:</span>
+                                    </span>
+                                    <span className="font-semibold text-stone-800 truncate max-w-[150px]">
+                                      {attr.opening_hours || `${attr.timings?.opening_time || '09:00 AM'} - ${attr.timings?.closing_time || '05:30 PM'}`}
+                                    </span>
+                                  </div>
+
+                                  <div className="flex items-center justify-between text-[11px] pt-1 border-t border-[#EFE8DF]">
+                                    <span className="text-stone-500 flex items-center gap-1 font-medium">
+                                      <IndianRupee className="w-3.5 h-3.5 text-[#FF671F]" />
+                                      <span>Entry Fee:</span>
+                                    </span>
+                                    <span className="font-semibold text-stone-800">
+                                      {attr.entry_fee
+                                        ? typeof attr.entry_fee === 'number' ? `₹${attr.entry_fee}` : attr.entry_fee
+                                        : attr.fees?.free_entry
+                                        ? 'Free Entry'
+                                        : `₹${attr.fees?.domestic || 0} (Dom)`}
+                                    </span>
+                                  </div>
+                                </div>
+
+                                {/* Official Source Provenance Bar */}
+                                <div className="pt-2 border-t border-[#EFE8DF] flex items-center justify-between gap-2 text-[10px]">
+                                  {attr.sources?.[0]?.source_url || attr.source_url ? (
+                                    <a
+                                      href={attr.sources?.[0]?.source_url || attr.source_url}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      onClick={(e) => e.stopPropagation()}
+                                      className="text-[#046A38] hover:text-[#03542C] font-semibold flex items-center gap-1 underline decoration-emerald-300 truncate max-w-[160px]"
+                                      title={`Official Source: ${attr.sources?.[0]?.source_name || attr.source_name || 'Official Authority'}`}
+                                    >
+                                      <Globe className="w-3 h-3 shrink-0" />
+                                      <span className="truncate">{attr.sources?.[0]?.source_name || attr.source_name || 'Official Source'}</span>
+                                      <ExternalLink className="w-2.5 h-2.5 shrink-0" />
+                                    </a>
+                                  ) : (
+                                    <span className="text-stone-400 italic">Official source pending</span>
+                                  )}
+                                  <span className="text-stone-400 shrink-0">
+                                    Verified
+                                  </span>
+                                </div>
                               </div>
                             </div>
 
-                            {/* Place Details Body */}
-                            <div className="p-5 space-y-3.5">
-                              {/* Verification Badge */}
-                              <div className="flex items-center justify-between gap-2">
-                                {verified ? (
-                                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-300 flex items-center gap-1 shadow-2xs">
-                                    <ShieldCheck className="w-3 h-3 text-emerald-600" />
-                                    <span>Verified source</span>
-                                  </span>
-                                ) : (
-                                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-300 flex items-center gap-1 shadow-2xs">
-                                    <span>Under verification</span>
-                                  </span>
-                                )}
+                            {/* Card Actions Footer */}
+                            <div className="p-5 pt-0 flex items-center gap-2">
+                              <button
+                                onClick={() => setPreviewPlace(attr)}
+                                className="flex-1 py-2.5 px-3 rounded-xl bg-[#FAF8F5] hover:bg-[#F3EDE5] border border-[#EFE8DF] text-xs font-bold text-[#E65100] transition flex items-center justify-center gap-1.5 cursor-pointer"
+                              >
+                                <Eye className="w-3.5 h-3.5 text-[#FF671F]" />
+                                <span>Quick Details</span>
+                              </button>
 
-                                {attr.last_verified_on && (
-                                  <span className="text-[10px] text-stone-500">
-                                    {attr.last_verified_on}
-                                  </span>
-                                )}
-                              </div>
-
-                              <p className="text-xs text-[#5A4E46] leading-relaxed line-clamp-3">
-                                {attr.short_description || attr.summary || attr.historical_significance}
-                              </p>
-
-                              {/* Visiting Essentials Pill */}
-                              <div className="p-3 rounded-2xl bg-[#FAF8F5] border border-[#EFE8DF] space-y-1.5 text-xs">
-                                <div className="flex items-center justify-between text-[11px]">
-                                  <span className="text-stone-500 flex items-center gap-1 font-medium">
-                                    <Clock className="w-3.5 h-3.5 text-[#FF671F]" />
-                                    <span>Timings:</span>
-                                  </span>
-                                  <span className="font-semibold text-stone-800 truncate max-w-[150px]">
-                                    {attr.opening_hours || `${attr.timings?.opening_time || '09:00 AM'} - ${attr.timings?.closing_time || '05:30 PM'}`}
-                                  </span>
-                                </div>
-
-                                <div className="flex items-center justify-between text-[11px] pt-1 border-t border-[#EFE8DF]">
-                                  <span className="text-stone-500 flex items-center gap-1 font-medium">
-                                    <IndianRupee className="w-3.5 h-3.5 text-[#FF671F]" />
-                                    <span>Entry Fee:</span>
-                                  </span>
-                                  <span className="font-semibold text-stone-800">
-                                    {attr.entry_fee
-                                      ? typeof attr.entry_fee === 'number' ? `₹${attr.entry_fee}` : attr.entry_fee
-                                      : attr.fees?.free_entry
-                                      ? 'Free Entry'
-                                      : `₹${attr.fees?.domestic || 0} (Dom)`}
-                                  </span>
-                                </div>
-                              </div>
-
-                              {/* Official Source Provenance Bar */}
-                              <div className="pt-2 border-t border-[#EFE8DF] flex items-center justify-between gap-2 text-[10px]">
-                                {attr.sources?.[0]?.source_url || attr.source_url ? (
+                              {(() => {
+                                const p = attr as any;
+                                const mapQuery = p.map_search || (attr.coordinates?.lat ? `${attr.coordinates.lat},${attr.coordinates.lng}` : `${attr.name}, ${currentCity.name}`);
+                                return (
                                   <a
-                                    href={attr.sources?.[0]?.source_url || attr.source_url}
+                                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery)}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    onClick={(e) => e.stopPropagation()}
-                                    className="text-[#046A38] hover:text-[#03542C] font-semibold flex items-center gap-1 underline decoration-emerald-300 truncate max-w-[160px]"
-                                    title={`Official Source: ${attr.sources?.[0]?.source_name || attr.source_name || 'Official Authority'}`}
+                                    className="p-2.5 rounded-xl border border-stone-200 hover:border-amber-400 text-stone-600 hover:text-amber-800 bg-white hover:bg-amber-50/50 transition cursor-pointer shrink-0"
+                                    title={`View ${attr.name} on Google Maps`}
+                                    aria-label="Map location"
                                   >
-                                    <Globe className="w-3 h-3 shrink-0" />
-                                    <span className="truncate">{attr.sources?.[0]?.source_name || attr.source_name || 'Official Source'}</span>
-                                    <ExternalLink className="w-2.5 h-2.5 shrink-0" />
+                                    <Navigation className="w-3.5 h-3.5 text-[#FF671F]" />
                                   </a>
-                                ) : (
-                                  <span className="text-stone-400 italic">Official source pending</span>
-                                )}
-                                <span className="text-stone-400 shrink-0">
-                                  Verified
-                                </span>
-                              </div>
+                                );
+                              })()}
+
+                              {onSelectPlace && (
+                                <button
+                                  onClick={() => onSelectPlace(attr.id)}
+                                  className="flex-1 py-2.5 px-3 rounded-xl bg-[#FF671F] hover:bg-[#E65100] text-white text-xs font-bold transition flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
+                                >
+                                  <span>Explore</span>
+                                  <ChevronRight className="w-4 h-4" />
+                                </button>
+                              )}
                             </div>
                           </div>
+                        );
+                      })}
+                    </div>
 
-                          {/* Card Actions Footer */}
-                          <div className="p-5 pt-0 flex items-center gap-2">
-                            <button
-                              onClick={() => setPreviewPlace(attr)}
-                              className="flex-1 py-2.5 px-3 rounded-xl bg-[#FAF8F5] hover:bg-[#F3EDE5] border border-[#EFE8DF] text-xs font-bold text-[#E65100] transition flex items-center justify-center gap-1.5 cursor-pointer"
-                            >
-                              <Eye className="w-3.5 h-3.5 text-[#FF671F]" />
-                              <span>Quick Details</span>
-                            </button>
-
-                            {attr.coordinates?.lat && attr.coordinates?.lng && (
-                              <a
-                                href={`https://www.google.com/maps/search/?api=1&query=${attr.coordinates.lat},${attr.coordinates.lng}`}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="p-2.5 rounded-xl border border-stone-200 hover:border-amber-400 text-stone-600 hover:text-amber-800 bg-white hover:bg-amber-50/50 transition cursor-pointer shrink-0"
-                                title="Verify coordinates on Google Maps"
-                                aria-label="Map location"
-                              >
-                                <Navigation className="w-3.5 h-3.5 text-[#FF671F]" />
-                              </a>
-                            )}
-
-                            {onSelectPlace && (
-                              <button
-                                onClick={() => onSelectPlace(attr.id)}
-                                className="flex-1 py-2.5 px-3 rounded-xl bg-[#FF671F] hover:bg-[#E65100] text-white text-xs font-bold transition flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
-                              >
-                                <span>Explore</span>
-                                <ChevronRight className="w-4 h-4" />
-                              </button>
-                            )}
-                          </div>
-                        </div>
-                      );
-                    })}
+                    {/* Pagination / Load More Button */}
+                    {filteredCityPlaces.length > placesDisplayLimit && (
+                      <div className="text-center pt-4">
+                        <button
+                          onClick={() => setPlacesDisplayLimit((prev) => prev + 12)}
+                          className="px-6 py-3 rounded-2xl bg-white hover:bg-stone-50 border border-stone-300 text-xs font-bold text-stone-800 transition shadow-xs cursor-pointer inline-flex items-center gap-2"
+                        >
+                          <span>Load More Attractions (Showing {Math.min(placesDisplayLimit, filteredCityPlaces.length)} of {filteredCityPlaces.length})</span>
+                          <ChevronRight className="w-3.5 h-3.5 text-[#FF671F]" />
+                        </button>
+                      </div>
+                    )}
                   </div>
                 )}
               </div>

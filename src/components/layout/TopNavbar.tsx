@@ -62,7 +62,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
   const profileDropdownRef = useRef<HTMLDivElement>(null);
 
   // Curated cities list for instant regional switching
-  const cities = ['All India', 'Mumbai', 'Delhi', 'Jaipur', 'Agra', 'Varanasi', 'Kochi', 'Goa', 'Bengaluru'];
+  const cities = ['All India', 'Mumbai', 'Pune', 'Chennai', 'Shimla', 'Delhi', 'Jaipur', 'Agra', 'Varanasi', 'Kochi', 'Goa', 'Bengaluru', 'Udaipur', 'Amritsar'];
 
   // Close dropdowns on outside click
   useEffect(() => {

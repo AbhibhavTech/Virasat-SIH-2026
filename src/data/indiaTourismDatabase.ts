@@ -1445,8 +1445,8 @@ export const INDIA_TOURISM_DATABASE = {
       "capital": "Shimla",
       "region": "Northern India",
       "hero_image_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=1200&q=80",
-      "total_cities": 6,
-      "total_attractions": 12,
+      "total_cities": 10,
+      "total_attractions": 20,
       "heritage_overview": "Home to the Great Himalayan National Park (UNESCO), Kalka-Shimla Railway (UNESCO), ancient wooden temples of Chamba, and century-old Tibetan gompas across Spiti and Kangra.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Himachal Pradesh.",
@@ -1457,2401 +1457,3674 @@ export const INDIA_TOURISM_DATABASE = {
         {
           "id": "shimla",
           "name": "Shimla",
-          "slug": "shimla",
-          "district": "Shimla",
+          "canonical_name": "Shimla",
           "state": "Himachal Pradesh",
           "state_id": "himachal-pradesh",
-          "region": "Northern India",
-          "entity_type": "city",
-          "city_type": "State Capital & Historic Hill Station",
-          "tagline": "Queen of the Hills and Himachal Capital",
-          "short_description": "Shimla served as the summer capital of British India and features colonial architecture, pedestrian malls, and Himalayan vistas.",
-          "description": "Shimla is the capital city of Himachal Pradesh, situated along a ridge at an average elevation of 2,205 meters. It retains significant British colonial heritage including the Viceregal Lodge, Christ Church, and the UNESCO-inscribed Kalka-Shimla mountain railway.",
-          "official_url": "https://hpshimla.nic.in",
-          "status": "active",
-          "verification_status": "verified",
-          "hero_image_url": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200&q=80",
+          "district": "Shimla",
+          "city_type": "city",
+          "lat": 31.1048,
+          "lng": 77.1734,
           "coordinates": {
             "lat": 31.1048,
             "lng": 77.1734
           },
-          "lat": 31.1048,
-          "lng": 77.1734,
-          "places": [
-            {
-              "id": "shimla-mall-road-ridge",
-              "name": "The Ridge & Mall Road",
-              "slug": "the-ridge-and-mall-road",
-              "place_type": "Promenade & Civic Center",
-              "topic": "Heritage",
-              "subtopic": "Historical Sites",
-              "category": "heritage",
-              "category_label": "Heritage Promenade",
-              "category_links": [
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Historical Sites"
-                },
-                {
-                  "topic": "Recreation",
-                  "subtopic": "Sports"
-                }
-              ],
-              "importance_level": "iconic",
-              "summary": "The open pedestrian esplanade forming the cultural and civic heart of Shimla.",
-              "short_description": "Historic pedestrian promenade with Tudor-style architecture and sweeping views of the Pir Panjal ranges.",
-              "detailed_description": "The Ridge is a large open public space running along the crest of Shimla, connecting to the famous Mall Road. It houses the neo-Gothic Christ Church, the state library, and water reservoirs serving the entire city.",
-              "address": "The Ridge, Shimla, Himachal Pradesh 171001",
-              "lat": 31.1044,
-              "lng": 77.1741,
-              "coordinates": {
-                "lat": 31.1044,
-                "lng": 77.1741
-              },
-              "visiting_hours": "Open 24 hours (shops open 10:00 AM - 08:30 PM)",
-              "opening_hours": "Open 24 hours",
-              "entry_fee": "Free entry",
-              "entry_fee_domestic": 0,
-              "entry_fee_intl": 0,
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "06:00",
-                "closing_time": "23:00",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 Hours",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "March to June, October to February",
-              "contact_information": "District Administration Shimla: 0177-2655855",
-              "official_website": "https://hpshimla.nic.in",
-              "heritage_status": "State Heritage Zone",
-              "data_confidence": "official",
-              "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=400&q=80",
-              "attribution": "Himachal Pradesh Tourism Development Corporation",
-              "source_url": "https://himachaltourism.gov.in/destination/shimla/",
-              "source_name": "Himachal Pradesh Tourism Department",
-              "source_type": "state_tourism",
-              "sources": [
-                {
-                  "source_name": "Himachal Pradesh Tourism Department",
-                  "source_url": "https://himachaltourism.gov.in/destination/shimla/",
-                  "source_type": "state_tourism",
-                  "evidence_note": "Official state tourism profile.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "District Administration Shimla",
-                  "source_url": "https://hpshimla.nic.in/tourist-places/",
-                  "source_type": "district_administration",
-                  "evidence_note": "Official district heritage portal.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
-              ],
-              "source_quality": "place_specific",
-              "audit_note": "Verified live HTTP 200 on 2026-09-10. Title: \"Shimla - Himachal Tourism Official Website\""
-            },
-            {
-              "id": "shimla-viceregal-lodge",
-              "name": "Viceregal Lodge (Indian Institute of Advanced Study)",
-              "slug": "viceregal-lodge-shimla",
-              "place_type": "Colonial Monument & Academic Institute",
-              "topic": "Heritage",
-              "subtopic": "Historical Buildings",
-              "category": "heritage",
-              "category_label": "Heritage Monument",
-              "category_links": [
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Historical Buildings"
-                },
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Museums"
-                }
-              ],
-              "importance_level": "iconic",
-              "summary": "Jacobethan-style former residence of the Viceroy of India, designed by Henry Irwin.",
-              "short_description": "Historic 1888 estate on Observatory Hill where the Shimla Conference and Partition deliberations took place.",
-              "detailed_description": "Constructed between 1880 and 1888 under Lord Dufferin, the Viceregal Lodge features solid grey limestone masonry, teak woodwork, and a historic indoor electric lighting system. Today it houses the Indian Institute of Advanced Study (IIAS).",
-              "address": "Observatory Hill, Boileauganj, Shimla, Himachal Pradesh 171005",
-              "lat": 31.1037,
-              "lng": 77.1425,
-              "coordinates": {
-                "lat": 31.1037,
-                "lng": 77.1425
-              },
-              "visiting_hours": "09:30 AM - 05:30 PM (Closed Mondays)",
-              "opening_hours": "09:30 - 17:30",
-              "entry_fee": "INR 50 (Indian), INR 200 (Foreign)",
-              "entry_fee_domestic": 50,
-              "entry_fee_intl": 200,
-              "fees": {
-                "domestic": 50,
-                "international": 200,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "09:30",
-                "closing_time": "17:30",
-                "closed_days": [
-                  "Monday"
-                ],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 120,
-                "label": "2 Hours",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "March to June, September to November",
-              "contact_information": "IIAS Reception: 0177-2831375",
-              "official_website": "https://www.iias.ac.in",
-              "heritage_status": "National Heritage Monument",
-              "data_confidence": "official",
-              "verification_status": "needs_review",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=400&q=80",
-              "attribution": "Indian Institute of Advanced Study",
-              "source_url": "https://www.iias.ac.in/estate-and-gardens/",
-              "source_name": "Indian Institute of Advanced Study (Ministry of Education)",
-              "source_type": "official_institution",
-              "sources": [
-                {
-                  "source_name": "Indian Institute of Advanced Study",
-                  "source_url": "https://www.iias.ac.in/estate-and-gardens/",
-                  "source_type": "official_institution",
-                  "evidence_note": "Official institute estate archive.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
-              ],
-              "source_quality": "place_specific",
-              "audit_note": "[Live Audit Failed 2026-09-10] HTTP 404 (Not Found)"
-            },
-            {
-              "id": "shimla-christ-church",
-              "name": "Christ Church Shimla",
-              "slug": "christ-church-shimla",
-              "place_type": "Colonial Neo-Gothic Church",
-              "topic": "Heritage",
-              "subtopic": "Historical Buildings",
-              "category": "heritage",
-              "category_label": "Heritage Church",
-              "category_links": [
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Historical Buildings"
-                },
-                {
-                  "topic": "Spiritual",
-                  "subtopic": "Christianity"
-                }
-              ],
-              "importance_level": "major",
-              "summary": "The second oldest church in Northern India, designed in neo-Gothic style in 1857.",
-              "short_description": "Iconic yellow neo-Gothic church on The Ridge featuring five historic stained-glass windows.",
-              "detailed_description": "Consecrated in 1857, Christ Church was designed by J.T. Boileau in the neo-Gothic architectural style. Its five stained glass windows represent faith, hope, charity, fortitude, patience, and humility. It is an enduring architectural symbol of Shimla.",
-              "address": "The Ridge, Mall Road, Shimla, Himachal Pradesh 171001",
-              "lat": 31.1049,
-              "lng": 77.1752,
-              "coordinates": {
-                "lat": 31.1049,
-                "lng": 77.1752
-              },
-              "visiting_hours": "08:00 AM - 06:00 PM",
-              "opening_hours": "08:00 - 18:00",
-              "entry_fee": "Free entry",
-              "entry_fee_domestic": 0,
-              "entry_fee_intl": 0,
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "08:00",
-                "closing_time": "18:00",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 45,
-                "label": "45 Mins",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "March to November",
-              "contact_information": "Christ Church Office: 0177-2652953",
-              "official_website": "https://hpshimla.nic.in",
-              "heritage_status": "State Protected Architectural Monument",
-              "data_confidence": "official",
-              "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=400&q=80",
-              "attribution": "Shimla Heritage Cell",
-              "source_url": "https://himachaltourism.gov.in/destination/shimla/",
-              "source_name": "Himachal Pradesh Tourism Department",
-              "source_type": "state_tourism",
-              "sources": [
-                {
-                  "source_name": "Himachal Pradesh Tourism Department",
-                  "source_url": "https://himachaltourism.gov.in/destination/shimla/",
-                  "source_type": "state_tourism",
-                  "evidence_note": "Verified state tourism monument entry.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
-              ],
-              "source_quality": "place_specific",
-              "audit_note": "Verified live HTTP 200 on 2026-09-10. Title: \"Shimla - Himachal Tourism Official Website\""
-            }
+          "tagline": "Destination in Himachal Pradesh",
+          "description": "Shimla is the capital city of Himachal Pradesh, situated along a ridge at an average elevation of 2,205 meters. It retains significant British colonial heritage including the Viceregal Lodge, Christ Church, and the UNESCO-inscribed Kalka-Shimla mountain railway.",
+          "hero_image_url": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200&q=80",
+          "tourism_categories": [
+            "heritage",
+            "nature",
+            "hill_station"
           ],
-          "heritage": [
-            {
-              "id": "shimla-mall-road-ridge",
-              "name": "The Ridge & Mall Road",
-              "slug": "the-ridge-and-mall-road",
-              "place_type": "Promenade & Civic Center",
-              "topic": "Heritage",
-              "subtopic": "Historical Sites",
-              "category": "heritage",
-              "category_label": "Heritage Promenade",
-              "category_links": [
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Historical Sites"
-                },
-                {
-                  "topic": "Recreation",
-                  "subtopic": "Sports"
-                }
-              ],
-              "importance_level": "iconic",
-              "summary": "The open pedestrian esplanade forming the cultural and civic heart of Shimla.",
-              "short_description": "Historic pedestrian promenade with Tudor-style architecture and sweeping views of the Pir Panjal ranges.",
-              "detailed_description": "The Ridge is a large open public space running along the crest of Shimla, connecting to the famous Mall Road. It houses the neo-Gothic Christ Church, the state library, and water reservoirs serving the entire city.",
-              "address": "The Ridge, Shimla, Himachal Pradesh 171001",
-              "lat": 31.1044,
-              "lng": 77.1741,
-              "coordinates": {
-                "lat": 31.1044,
-                "lng": 77.1741
-              },
-              "visiting_hours": "Open 24 hours (shops open 10:00 AM - 08:30 PM)",
-              "opening_hours": "Open 24 hours",
-              "entry_fee": "Free entry",
-              "entry_fee_domestic": 0,
-              "entry_fee_intl": 0,
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "06:00",
-                "closing_time": "23:00",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 Hours",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "March to June, October to February",
-              "contact_information": "District Administration Shimla: 0177-2655855",
-              "official_website": "https://hpshimla.nic.in",
-              "heritage_status": "State Heritage Zone",
-              "data_confidence": "official",
-              "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=400&q=80",
-              "attribution": "Himachal Pradesh Tourism Development Corporation",
-              "source_url": "https://himachaltourism.gov.in/destination/shimla/",
-              "source_name": "Himachal Pradesh Tourism Department",
-              "source_type": "state_tourism",
-              "sources": [
-                {
-                  "source_name": "Himachal Pradesh Tourism Department",
-                  "source_url": "https://himachaltourism.gov.in/destination/shimla/",
-                  "source_type": "state_tourism",
-                  "evidence_note": "Official state tourism profile.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "District Administration Shimla",
-                  "source_url": "https://hpshimla.nic.in/tourist-places/",
-                  "source_type": "district_administration",
-                  "evidence_note": "Official district heritage portal.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
-              ],
-              "source_quality": "place_specific"
-            },
-            {
-              "id": "shimla-viceregal-lodge",
-              "name": "Viceregal Lodge (Indian Institute of Advanced Study)",
-              "slug": "viceregal-lodge-shimla",
-              "place_type": "Colonial Monument & Academic Institute",
-              "topic": "Heritage",
-              "subtopic": "Historical Buildings",
-              "category": "heritage",
-              "category_label": "Heritage Monument",
-              "category_links": [
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Historical Buildings"
-                },
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Museums"
-                }
-              ],
-              "importance_level": "iconic",
-              "summary": "Jacobethan-style former residence of the Viceroy of India, designed by Henry Irwin.",
-              "short_description": "Historic 1888 estate on Observatory Hill where the Shimla Conference and Partition deliberations took place.",
-              "detailed_description": "Constructed between 1880 and 1888 under Lord Dufferin, the Viceregal Lodge features solid grey limestone masonry, teak woodwork, and a historic indoor electric lighting system. Today it houses the Indian Institute of Advanced Study (IIAS).",
-              "address": "Observatory Hill, Boileauganj, Shimla, Himachal Pradesh 171005",
-              "lat": 31.1037,
-              "lng": 77.1425,
-              "coordinates": {
-                "lat": 31.1037,
-                "lng": 77.1425
-              },
-              "visiting_hours": "09:30 AM - 05:30 PM (Closed Mondays)",
-              "opening_hours": "09:30 - 17:30",
-              "entry_fee": "INR 50 (Indian), INR 200 (Foreign)",
-              "entry_fee_domestic": 50,
-              "entry_fee_intl": 200,
-              "fees": {
-                "domestic": 50,
-                "international": 200,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "09:30",
-                "closing_time": "17:30",
-                "closed_days": [
-                  "Monday"
-                ],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 120,
-                "label": "2 Hours",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "March to June, September to November",
-              "contact_information": "IIAS Reception: 0177-2831375",
-              "official_website": "https://www.iias.ac.in",
-              "heritage_status": "National Heritage Monument",
-              "data_confidence": "official",
-              "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=400&q=80",
-              "attribution": "Indian Institute of Advanced Study",
-              "source_url": "https://www.iias.ac.in/estate-and-gardens/",
-              "source_name": "Indian Institute of Advanced Study (Ministry of Education)",
-              "source_type": "official_institution",
-              "sources": [
-                {
-                  "source_name": "Indian Institute of Advanced Study",
-                  "source_url": "https://www.iias.ac.in/estate-and-gardens/",
-                  "source_type": "official_institution",
-                  "evidence_note": "Official institute estate archive.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
-              ],
-              "source_quality": "place_specific"
-            },
-            {
-              "id": "shimla-christ-church",
-              "name": "Christ Church Shimla",
-              "slug": "christ-church-shimla",
-              "place_type": "Colonial Neo-Gothic Church",
-              "topic": "Heritage",
-              "subtopic": "Historical Buildings",
-              "category": "heritage",
-              "category_label": "Heritage Church",
-              "category_links": [
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Historical Buildings"
-                },
-                {
-                  "topic": "Spiritual",
-                  "subtopic": "Christianity"
-                }
-              ],
-              "importance_level": "major",
-              "summary": "The second oldest church in Northern India, designed in neo-Gothic style in 1857.",
-              "short_description": "Iconic yellow neo-Gothic church on The Ridge featuring five historic stained-glass windows.",
-              "detailed_description": "Consecrated in 1857, Christ Church was designed by J.T. Boileau in the neo-Gothic architectural style. Its five stained glass windows represent faith, hope, charity, fortitude, patience, and humility. It is an enduring architectural symbol of Shimla.",
-              "address": "The Ridge, Mall Road, Shimla, Himachal Pradesh 171001",
-              "lat": 31.1049,
-              "lng": 77.1752,
-              "coordinates": {
-                "lat": 31.1049,
-                "lng": 77.1752
-              },
-              "visiting_hours": "08:00 AM - 06:00 PM",
-              "opening_hours": "08:00 - 18:00",
-              "entry_fee": "Free entry",
-              "entry_fee_domestic": 0,
-              "entry_fee_intl": 0,
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "08:00",
-                "closing_time": "18:00",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 45,
-                "label": "45 Mins",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "March to November",
-              "contact_information": "Christ Church Office: 0177-2652953",
-              "official_website": "https://hpshimla.nic.in",
-              "heritage_status": "State Protected Architectural Monument",
-              "data_confidence": "official",
-              "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=400&q=80",
-              "attribution": "Shimla Heritage Cell",
-              "source_url": "https://himachaltourism.gov.in/destination/shimla/",
-              "source_name": "Himachal Pradesh Tourism Department",
-              "source_type": "state_tourism",
-              "sources": [
-                {
-                  "source_name": "Himachal Pradesh Tourism Department",
-                  "source_url": "https://himachaltourism.gov.in/destination/shimla/",
-                  "source_type": "state_tourism",
-                  "evidence_note": "Verified state tourism monument entry.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
-              ],
-              "source_quality": "place_specific"
-            }
-          ],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": [],
-          "places_count": 3,
-          "transport": {
-            "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Taxi",
-                "Auto",
-                "Local Bus"
-              ],
-              "fare_indication": "Moderate",
-              "status": "VERIFIED"
-            }
-          },
-          "hotels": [],
-          "fees_overview": {
-            "typical_budget_per_day": "INR 2,500 - 5,000",
-            "status": "VERIFIED"
-          },
-          "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant and sunny",
-            "status": "VERIFIED"
-          }
-        },
-        {
-          "id": "manali",
-          "name": "Manali",
-          "slug": "manali",
-          "district": "Kullu",
-          "state": "Himachal Pradesh",
-          "state_id": "himachal-pradesh",
-          "region": "Northern India",
-          "entity_type": "town",
-          "city_type": "Himalayan Resort Town",
-          "tagline": "High-Altitude Valley of Gods and Alpine Adventures",
-          "short_description": "High-altitude Himalayan township at the northern end of Kullu Valley, gateway to Lahaul and Ladakh.",
-          "description": "Manali is situated along the Beas River at 2,050 meters elevation in Kullu district. Known for deodar forests, ancient wooden pagodas, and adventure expeditions across Solang and the Atal Tunnel.",
-          "official_url": "https://hpkullu.nic.in",
-          "status": "active",
+          "is_capital": true,
+          "capital_status": "state_capital",
           "verification_status": "verified",
-          "hero_image_url": "https://images.unsplash.com/photo-1596761611086-455b76615b13?w=1200&q=80",
-          "coordinates": {
-            "lat": 32.2396,
-            "lng": 77.1887
-          },
-          "lat": 32.2396,
-          "lng": 77.1887,
-          "places": [
-            {
-              "id": "manali-hadimba-temple",
-              "name": "Hadimba Devi Temple (Dhungari Temple)",
-              "slug": "hadimba-devi-temple-manali",
-              "place_type": "Ancient Wooden Pagoda Temple",
-              "topic": "Heritage",
-              "subtopic": "Historical Sites",
-              "category": "heritage",
-              "category_label": "Ancient Wooden Pagoda",
-              "category_links": [
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Historical Sites"
-                },
-                {
-                  "topic": "Spiritual",
-                  "subtopic": "Hinduism"
-                }
-              ],
-              "importance_level": "iconic",
-              "summary": "Four-tiered wooden pagoda temple built in 1553 CE by Raja Bahadur Singh inside cedar forest.",
-              "short_description": "Historic 16th-century wooden pagoda temple surrounded by cedar forest in Dhungari.",
-              "detailed_description": "Built around a natural rock cave in 1553 CE, Hadimba Temple features intricate wood carvings of deities and animals, topped by a brass cone. It is dedicated to Hadimba, wife of Bhima from the Mahabharata.",
-              "address": "Hadimba Temple Road, Dhungari, Manali, Himachal Pradesh 175131",
-              "lat": 32.2483,
-              "lng": 77.1812,
-              "coordinates": {
-                "lat": 32.2483,
-                "lng": 77.1812
-              },
-              "visiting_hours": "08:00 AM - 06:00 PM",
-              "opening_hours": "08:00 - 18:00",
-              "entry_fee": "Free entry",
-              "entry_fee_domestic": 0,
-              "entry_fee_intl": 0,
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "08:00",
-                "closing_time": "18:00",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 60,
-                "label": "1 Hour",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "March to June, September to December",
-              "contact_information": "District Administration Kullu: 01902-222727",
-              "official_website": "https://hpkullu.nic.in/tourist-place/hadimba-temple/",
-              "heritage_status": "State Protected Monument",
-              "data_confidence": "official",
-              "verification_status": "needs_review",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1596761611086-455b76615b13?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1596761611086-455b76615b13?w=400&q=80",
-              "attribution": "Department of Tourism, Himachal Pradesh",
-              "source_url": "https://hpkullu.nic.in/tourist-place/hadimba-temple/",
-              "source_name": "District Administration Kullu",
-              "source_type": "district_administration",
-              "sources": [
-                {
-                  "source_name": "District Administration Kullu",
-                  "source_url": "https://hpkullu.nic.in/tourist-place/hadimba-temple/",
-                  "source_type": "district_administration",
-                  "evidence_note": "Official district heritage portal.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Himachal Pradesh Tourism Department",
-                  "source_url": "https://himachaltourism.gov.in/destination/manali/",
-                  "source_type": "state_tourism",
-                  "evidence_note": "Official state tourism profile.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
-              ],
-              "source_quality": "place_specific",
-              "audit_note": "[Live Audit Failed 2026-09-10] HTTP 404 (Not Found)"
-            },
-            {
-              "id": "manali-solang-valley",
-              "name": "Solang Valley",
-              "slug": "solang-valley-manali",
-              "place_type": "Adventure & Alpine Valley",
-              "topic": "Adventure",
-              "subtopic": "Skiing",
-              "category": "tourist_places",
-              "category_label": "Alpine Valley",
-              "category_links": [
-                {
-                  "topic": "Adventure",
-                  "subtopic": "Skiing"
-                },
-                {
-                  "topic": "Adventure",
-                  "subtopic": "Paragliding"
-                },
-                {
-                  "topic": "Nature",
-                  "subtopic": "Hills and Mountains"
-                }
-              ],
-              "importance_level": "iconic",
-              "summary": "Side valley at the top of Kullu Valley known for summer paragliding and winter skiing.",
-              "short_description": "Famed alpine valley offering adventure sports, cable car rides, and snow fields.",
-              "detailed_description": "Situated 14 km northwest of Manali at an elevation of 2,560 m, Solang Valley is Himachal principal hub for winter snow sports, ski instruction, paragliding, and cable-car journeys against snow-capped peaks.",
-              "address": "Solang Valley, Burwa, Himachal Pradesh 175131",
-              "lat": 32.3167,
-              "lng": 77.1575,
-              "coordinates": {
-                "lat": 32.3167,
-                "lng": 77.1575
-              },
-              "visiting_hours": "09:00 AM - 06:00 PM",
-              "opening_hours": "09:00 - 18:00",
-              "entry_fee": "Free entry to valley (Activity fees separate)",
-              "entry_fee_domestic": 0,
-              "entry_fee_intl": 0,
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "09:00",
-                "closing_time": "18:00",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 180,
-                "label": "3 Hours",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "December to March (snow), April to June (paragliding)",
-              "contact_information": "Atal Bihari Vajpayee Institute of Mountaineering: 01902-250337",
-              "official_website": "https://himachaltourism.gov.in",
-              "heritage_status": "Adventure Tourism Destination",
-              "data_confidence": "official",
-              "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
-              "attribution": "Himachal Pradesh Tourism Department",
-              "source_url": "https://himachaltourism.gov.in/destination/manali/",
-              "source_name": "Himachal Pradesh Tourism Department",
-              "source_type": "state_tourism",
-              "sources": [
-                {
-                  "source_name": "Himachal Pradesh Tourism Department",
-                  "source_url": "https://himachaltourism.gov.in/destination/manali/",
-                  "source_type": "state_tourism",
-                  "evidence_note": "Official state tourism guide for Solang Valley.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
-              ],
-              "source_quality": "place_specific",
-              "audit_note": "Verified live HTTP 200 on 2026-09-10. Title: \"Manali - Himachal Tourism Official Website\""
-            }
-          ],
+          "source_provenance": "Virasat Geographic Registry & Himachal Tourism",
+          "places_count": 4,
+          "created_at": "2026-09-10T00:00:00.000Z",
+          "updated_at": "2026-09-11T00:00:00.000Z",
           "heritage": [
             {
-              "id": "manali-hadimba-temple",
-              "name": "Hadimba Devi Temple (Dhungari Temple)",
-              "slug": "hadimba-devi-temple-manali",
-              "place_type": "Ancient Wooden Pagoda Temple",
-              "topic": "Heritage",
-              "subtopic": "Historical Sites",
-              "category": "heritage",
-              "category_label": "Ancient Wooden Pagoda",
-              "category_links": [
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Historical Sites"
-                },
-                {
-                  "topic": "Spiritual",
-                  "subtopic": "Hinduism"
-                }
-              ],
-              "importance_level": "iconic",
-              "summary": "Four-tiered wooden pagoda temple built in 1553 CE by Raja Bahadur Singh inside cedar forest.",
-              "short_description": "Historic 16th-century wooden pagoda temple surrounded by cedar forest in Dhungari.",
-              "detailed_description": "Built around a natural rock cave in 1553 CE, Hadimba Temple features intricate wood carvings of deities and animals, topped by a brass cone. It is dedicated to Hadimba, wife of Bhima from the Mahabharata.",
-              "address": "Hadimba Temple Road, Dhungari, Manali, Himachal Pradesh 175131",
-              "lat": 32.2483,
-              "lng": 77.1812,
+              "id": "himachal_001",
+              "name": "Shimla",
+              "canonical_name": "Shimla",
+              "aliases": [],
+              "category": "hill_station",
+              "heritage_type": "hill_station",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "The capital of Himachal Pradesh, known for colonial architecture, mountain views, shopping streets, and pleasant weather.",
+              "summary": "The capital of Himachal Pradesh, known for colonial architecture, mountain views, shopping streets, and pleasant weather.",
+              "lat": 31.1048,
+              "lng": 77.1734,
               "coordinates": {
-                "lat": 32.2483,
-                "lng": 77.1812
+                "lat": 31.1048,
+                "lng": 77.1734
               },
-              "visiting_hours": "08:00 AM - 06:00 PM",
-              "opening_hours": "08:00 - 18:00",
-              "entry_fee": "Free entry",
-              "entry_fee_domestic": 0,
-              "entry_fee_intl": 0,
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "08:00",
-                "closing_time": "18:00",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 60,
-                "label": "1 Hour",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "March to June, September to December",
-              "contact_information": "District Administration Kullu: 01902-222727",
-              "official_website": "https://hpkullu.nic.in/tourist-place/hadimba-temple/",
-              "heritage_status": "State Protected Monument",
+              "tags": [
+                "hill station",
+                "capital",
+                "Shimla"
+              ],
+              "best_for": [
+                "hill views",
+                "heritage",
+                "shopping",
+                "family trips"
+              ],
+              "suggested_duration": "2–3 days",
+              "best_time_to_visit": "March to June; December to February for snow",
+              "entry_fee": "Usually free; individual attractions may charge",
+              "opening_hours": "City access throughout the day; attractions vary",
+              "visitor_notes": [
+                "Carry warm clothing in winter",
+                "Traffic and parking can be difficult during peak season"
+              ],
+              "map_search": "Shimla Himachal Pradesh",
+              "city": "Shimla",
+              "city_id": "shimla",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/shimla/",
+              "source_quality": "place_specific",
               "data_confidence": "official",
               "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1596761611086-455b76615b13?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1596761611086-455b76615b13?w=400&q=80",
-              "attribution": "Department of Tourism, Himachal Pradesh",
-              "source_url": "https://hpkullu.nic.in/tourist-place/hadimba-temple/",
-              "source_name": "District Administration Kullu",
-              "source_type": "district_administration",
-              "sources": [
-                {
-                  "source_name": "District Administration Kullu",
-                  "source_url": "https://hpkullu.nic.in/tourist-place/hadimba-temple/",
-                  "source_type": "district_administration",
-                  "evidence_note": "Official district heritage portal.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Himachal Pradesh Tourism Department",
-                  "source_url": "https://himachaltourism.gov.in/destination/manali/",
-                  "source_type": "state_tourism",
-                  "evidence_note": "Official state tourism profile.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
+              "hero_image_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=1200&auto=format&fit=crop&q=80"
+              ]
+            },
+            {
+              "id": "himachal_002",
+              "name": "Mall Road",
+              "canonical_name": "Mall Road",
+              "aliases": [],
+              "category": "shopping_recreation",
+              "heritage_type": "shopping_recreation",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "Shimla’s main pedestrian shopping and leisure street lined with cafés, shops, colonial buildings, and viewpoints.",
+              "summary": "Shimla’s main pedestrian shopping and leisure street lined with cafés, shops, colonial buildings, and viewpoints.",
+              "lat": 31.1041,
+              "lng": 77.1725,
+              "coordinates": {
+                "lat": 31.1041,
+                "lng": 77.1725
+              },
+              "tags": [
+                "shopping",
+                "heritage",
+                "Shimla"
               ],
-              "source_quality": "place_specific"
+              "best_for": [
+                "shopping",
+                "walking",
+                "food",
+                "photography"
+              ],
+              "suggested_duration": "2–3 hours",
+              "best_time_to_visit": "March to June; December to February for snow",
+              "entry_fee": "Free",
+              "opening_hours": "Open throughout the day; shops have individual timings",
+              "visitor_notes": [
+                "Mostly pedestrian",
+                "Expect crowds during holidays"
+              ],
+              "map_search": "Mall Road Shimla",
+              "city": "Shimla",
+              "city_id": "shimla",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/shimla/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200&auto=format&fit=crop&q=80"
+              ]
+            },
+            {
+              "id": "himachal_003",
+              "name": "The Ridge",
+              "canonical_name": "The Ridge",
+              "aliases": [],
+              "category": "viewpoint_heritage",
+              "heritage_type": "viewpoint_heritage",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A spacious open promenade offering views of the surrounding mountains and access to several historic landmarks.",
+              "summary": "A spacious open promenade offering views of the surrounding mountains and access to several historic landmarks.",
+              "lat": 31.1051,
+              "lng": 77.1746,
+              "coordinates": {
+                "lat": 31.1051,
+                "lng": 77.1746
+              },
+              "tags": [
+                "viewpoint",
+                "heritage",
+                "Shimla"
+              ],
+              "best_for": [
+                "sunsets",
+                "photography",
+                "walking",
+                "heritage"
+              ],
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "March to June; winter for snow",
+              "entry_fee": "Free",
+              "opening_hours": "Open throughout the day",
+              "visitor_notes": [
+                "Evenings can be cold",
+                "Often hosts public events"
+              ],
+              "map_search": "The Ridge Shimla",
+              "city": "Shimla",
+              "city_id": "shimla",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/shimla/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1589802829985-817e51171b92?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1589802829985-817e51171b92?w=1200&auto=format&fit=crop&q=80"
+              ]
+            },
+            {
+              "id": "himachal_004",
+              "name": "Jakhu Temple",
+              "canonical_name": "Jakhu Temple",
+              "aliases": [],
+              "category": "religious_viewpoint",
+              "heritage_type": "religious_viewpoint",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A hilltop temple dedicated to Lord Hanuman, featuring a prominent statue and panoramic views of Shimla.",
+              "summary": "A hilltop temple dedicated to Lord Hanuman, featuring a prominent statue and panoramic views of Shimla.",
+              "lat": 31.1011,
+              "lng": 77.1842,
+              "coordinates": {
+                "lat": 31.1011,
+                "lng": 77.1842
+              },
+              "tags": [
+                "temple",
+                "Hanuman",
+                "Shimla"
+              ],
+              "best_for": [
+                "pilgrimage",
+                "views",
+                "photography"
+              ],
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "March to June; September to November",
+              "entry_fee": "Free",
+              "opening_hours": "Usually open daily; timings may vary",
+              "visitor_notes": [
+                "Steep approach",
+                "Keep belongings secure around monkeys"
+              ],
+              "map_search": "Jakhu Temple Shimla",
+              "city": "Shimla",
+              "city_id": "shimla",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/shimla/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1605649487212-47bdab064df8?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1605649487212-47bdab064df8?w=1200&auto=format&fit=crop&q=80"
+              ]
             }
           ],
           "monuments": [],
           "museums": [],
           "tourist_places": [
             {
-              "id": "manali-solang-valley",
-              "name": "Solang Valley",
-              "slug": "solang-valley-manali",
-              "place_type": "Adventure & Alpine Valley",
-              "topic": "Adventure",
-              "subtopic": "Skiing",
-              "category": "tourist_places",
-              "category_label": "Alpine Valley",
-              "category_links": [
-                {
-                  "topic": "Adventure",
-                  "subtopic": "Skiing"
-                },
-                {
-                  "topic": "Adventure",
-                  "subtopic": "Paragliding"
-                },
-                {
-                  "topic": "Nature",
-                  "subtopic": "Hills and Mountains"
-                }
-              ],
-              "importance_level": "iconic",
-              "summary": "Side valley at the top of Kullu Valley known for summer paragliding and winter skiing.",
-              "short_description": "Famed alpine valley offering adventure sports, cable car rides, and snow fields.",
-              "detailed_description": "Situated 14 km northwest of Manali at an elevation of 2,560 m, Solang Valley is Himachal principal hub for winter snow sports, ski instruction, paragliding, and cable-car journeys against snow-capped peaks.",
-              "address": "Solang Valley, Burwa, Himachal Pradesh 175131",
-              "lat": 32.3167,
-              "lng": 77.1575,
+              "id": "himachal_001",
+              "name": "Shimla",
+              "canonical_name": "Shimla",
+              "aliases": [],
+              "category": "hill_station",
+              "heritage_type": "hill_station",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "The capital of Himachal Pradesh, known for colonial architecture, mountain views, shopping streets, and pleasant weather.",
+              "summary": "The capital of Himachal Pradesh, known for colonial architecture, mountain views, shopping streets, and pleasant weather.",
+              "lat": 31.1048,
+              "lng": 77.1734,
               "coordinates": {
-                "lat": 32.3167,
-                "lng": 77.1575
+                "lat": 31.1048,
+                "lng": 77.1734
               },
-              "visiting_hours": "09:00 AM - 06:00 PM",
-              "opening_hours": "09:00 - 18:00",
-              "entry_fee": "Free entry to valley (Activity fees separate)",
-              "entry_fee_domestic": 0,
-              "entry_fee_intl": 0,
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "09:00",
-                "closing_time": "18:00",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 180,
-                "label": "3 Hours",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "December to March (snow), April to June (paragliding)",
-              "contact_information": "Atal Bihari Vajpayee Institute of Mountaineering: 01902-250337",
-              "official_website": "https://himachaltourism.gov.in",
-              "heritage_status": "Adventure Tourism Destination",
+              "tags": [
+                "hill station",
+                "capital",
+                "Shimla"
+              ],
+              "best_for": [
+                "hill views",
+                "heritage",
+                "shopping",
+                "family trips"
+              ],
+              "suggested_duration": "2–3 days",
+              "best_time_to_visit": "March to June; December to February for snow",
+              "entry_fee": "Usually free; individual attractions may charge",
+              "opening_hours": "City access throughout the day; attractions vary",
+              "visitor_notes": [
+                "Carry warm clothing in winter",
+                "Traffic and parking can be difficult during peak season"
+              ],
+              "map_search": "Shimla Himachal Pradesh",
+              "city": "Shimla",
+              "city_id": "shimla",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/shimla/",
+              "source_quality": "place_specific",
               "data_confidence": "official",
               "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
-              "attribution": "Himachal Pradesh Tourism Department",
-              "source_url": "https://himachaltourism.gov.in/destination/manali/",
-              "source_name": "Himachal Pradesh Tourism Department",
-              "source_type": "state_tourism",
-              "sources": [
-                {
-                  "source_name": "Himachal Pradesh Tourism Department",
-                  "source_url": "https://himachaltourism.gov.in/destination/manali/",
-                  "source_type": "state_tourism",
-                  "evidence_note": "Official state tourism guide for Solang Valley.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
+              "hero_image_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=1200&auto=format&fit=crop&q=80"
+              ]
+            },
+            {
+              "id": "himachal_002",
+              "name": "Mall Road",
+              "canonical_name": "Mall Road",
+              "aliases": [],
+              "category": "shopping_recreation",
+              "heritage_type": "shopping_recreation",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "Shimla’s main pedestrian shopping and leisure street lined with cafés, shops, colonial buildings, and viewpoints.",
+              "summary": "Shimla’s main pedestrian shopping and leisure street lined with cafés, shops, colonial buildings, and viewpoints.",
+              "lat": 31.1041,
+              "lng": 77.1725,
+              "coordinates": {
+                "lat": 31.1041,
+                "lng": 77.1725
+              },
+              "tags": [
+                "shopping",
+                "heritage",
+                "Shimla"
               ],
-              "source_quality": "place_specific"
+              "best_for": [
+                "shopping",
+                "walking",
+                "food",
+                "photography"
+              ],
+              "suggested_duration": "2–3 hours",
+              "best_time_to_visit": "March to June; December to February for snow",
+              "entry_fee": "Free",
+              "opening_hours": "Open throughout the day; shops have individual timings",
+              "visitor_notes": [
+                "Mostly pedestrian",
+                "Expect crowds during holidays"
+              ],
+              "map_search": "Mall Road Shimla",
+              "city": "Shimla",
+              "city_id": "shimla",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/shimla/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200&auto=format&fit=crop&q=80"
+              ]
+            },
+            {
+              "id": "himachal_003",
+              "name": "The Ridge",
+              "canonical_name": "The Ridge",
+              "aliases": [],
+              "category": "viewpoint_heritage",
+              "heritage_type": "viewpoint_heritage",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A spacious open promenade offering views of the surrounding mountains and access to several historic landmarks.",
+              "summary": "A spacious open promenade offering views of the surrounding mountains and access to several historic landmarks.",
+              "lat": 31.1051,
+              "lng": 77.1746,
+              "coordinates": {
+                "lat": 31.1051,
+                "lng": 77.1746
+              },
+              "tags": [
+                "viewpoint",
+                "heritage",
+                "Shimla"
+              ],
+              "best_for": [
+                "sunsets",
+                "photography",
+                "walking",
+                "heritage"
+              ],
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "March to June; winter for snow",
+              "entry_fee": "Free",
+              "opening_hours": "Open throughout the day",
+              "visitor_notes": [
+                "Evenings can be cold",
+                "Often hosts public events"
+              ],
+              "map_search": "The Ridge Shimla",
+              "city": "Shimla",
+              "city_id": "shimla",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/shimla/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1589802829985-817e51171b92?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1589802829985-817e51171b92?w=1200&auto=format&fit=crop&q=80"
+              ]
+            },
+            {
+              "id": "himachal_004",
+              "name": "Jakhu Temple",
+              "canonical_name": "Jakhu Temple",
+              "aliases": [],
+              "category": "religious_viewpoint",
+              "heritage_type": "religious_viewpoint",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A hilltop temple dedicated to Lord Hanuman, featuring a prominent statue and panoramic views of Shimla.",
+              "summary": "A hilltop temple dedicated to Lord Hanuman, featuring a prominent statue and panoramic views of Shimla.",
+              "lat": 31.1011,
+              "lng": 77.1842,
+              "coordinates": {
+                "lat": 31.1011,
+                "lng": 77.1842
+              },
+              "tags": [
+                "temple",
+                "Hanuman",
+                "Shimla"
+              ],
+              "best_for": [
+                "pilgrimage",
+                "views",
+                "photography"
+              ],
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "March to June; September to November",
+              "entry_fee": "Free",
+              "opening_hours": "Usually open daily; timings may vary",
+              "visitor_notes": [
+                "Steep approach",
+                "Keep belongings secure around monkeys"
+              ],
+              "map_search": "Jakhu Temple Shimla",
+              "city": "Shimla",
+              "city_id": "shimla",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/shimla/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1605649487212-47bdab064df8?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1605649487212-47bdab064df8?w=1200&auto=format&fit=crop&q=80"
+              ]
             }
           ],
           "religious_cultural": [],
           "nature_parks_zoo": [],
-          "places_count": 2,
           "transport": {
             "railway_stations": [],
             "local_transit": {
               "modes": [
-                "Taxi",
-                "Auto",
-                "Local Bus"
+                "Auto-rickshaws",
+                "City Cabs",
+                "Local Buses"
               ],
-              "fare_indication": "Moderate",
-              "status": "VERIFIED"
+              "fare_indication": "₹50 - ₹200 per ride",
+              "status": "UNVERIFIED",
+              "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "INR 2,500 - 5,000",
-            "status": "VERIFIED"
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED",
+            "note": "Average estimated budget per person for local exploration and meals"
           },
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant and sunny",
-            "status": "VERIFIED"
-          }
-        },
-        {
-          "id": "spiti-valley",
-          "name": "Spiti Valley",
-          "slug": "spiti-valley",
-          "district": "Lahaul and Spiti",
-          "state": "Himachal Pradesh",
-          "state_id": "himachal-pradesh",
-          "region": "Northern India",
-          "entity_type": "valley",
-          "city_type": "High-Altitude Himalayan Cold Desert Valley",
-          "tagline": "The Middle Land of Ancient Gompas and Cold Desert Landscapes",
-          "short_description": "Cold desert mountain valley situated high in the Himalayas, housing millennium-old Buddhist monasteries.",
-          "description": "Spiti Valley is an expansive high-altitude cold desert valley located at an average altitude of 3,800 meters in Lahaul and Spiti district. It is famous for thousand-year-old Tibetan Buddhist monasteries including Tabo and Key, fossil villages, and Chandratal wetland.",
-          "official_url": "https://hplahaulspiti.nic.in",
-          "status": "active",
-          "verification_status": "verified",
-          "hero_image_url": "https://images.unsplash.com/photo-1605649487212-47bdab064df8?w=1200&q=80",
-          "coordinates": {
-            "lat": 32.2276,
-            "lng": 78.0336
+            "best_season": "March to June; September to November",
+            "weather_summary": "Pleasant Himalayan weather; cold winters",
+            "status": "UNVERIFIED",
+            "advisory": "Carry warm clothing; check mountain road conditions"
           },
-          "lat": 32.2276,
-          "lng": 78.0336,
+          "active_stories": [
+            "Scenic mountain trails and heritage landmarks of Shimla.",
+            "Living mountain traditions and culture."
+          ],
           "places": [
             {
-              "id": "spiti-key-monastery",
-              "name": "Key Monastery (Kye Gompa)",
-              "slug": "key-monastery-spiti",
-              "place_type": "Tibetan Buddhist Monastery & Fort Complex",
-              "topic": "Spiritual",
-              "subtopic": "Buddhism",
-              "category": "religious_cultural",
-              "category_label": "Tibetan Buddhist Monastery",
-              "category_links": [
-                {
-                  "topic": "Spiritual",
-                  "subtopic": "Buddhism"
-                },
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Historical Buildings"
-                },
-                {
-                  "topic": "Arts",
-                  "subtopic": "Painting"
-                }
-              ],
-              "importance_level": "iconic",
-              "summary": "Iconic 11th-century Tibetan Buddhist monastery perched on a conical hill at 4,166 m.",
-              "short_description": "Spectacular fortress-like monastery of the Gelugpa sect perched above the Spiti River.",
-              "detailed_description": "Founded in the 11th century by Dromtön, Key Monastery is the largest monastery in Spiti Valley. Built in the Pasada style with fortress-like tiered rooms, it houses ancient thangkas, manuscripts, and murals, serving over 300 resident lamas.",
-              "address": "Key Village, Spiti, Himachal Pradesh 172114",
-              "lat": 32.2981,
-              "lng": 78.0125,
+              "id": "himachal_001",
+              "name": "Shimla",
+              "canonical_name": "Shimla",
+              "aliases": [],
+              "category": "hill_station",
+              "heritage_type": "hill_station",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "The capital of Himachal Pradesh, known for colonial architecture, mountain views, shopping streets, and pleasant weather.",
+              "summary": "The capital of Himachal Pradesh, known for colonial architecture, mountain views, shopping streets, and pleasant weather.",
+              "lat": 31.1048,
+              "lng": 77.1734,
               "coordinates": {
-                "lat": 32.2981,
-                "lng": 78.0125
+                "lat": 31.1048,
+                "lng": 77.1734
               },
-              "visiting_hours": "06:00 AM - 06:00 PM",
-              "opening_hours": "06:00 - 18:00",
-              "entry_fee": "Free entry (Donations accepted)",
-              "entry_fee_domestic": 0,
-              "entry_fee_intl": 0,
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "06:00",
-                "closing_time": "18:00",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 Hours",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "May to October",
-              "contact_information": "District Administration Lahaul & Spiti: 01900-222501",
-              "official_website": "https://hplahaulspiti.nic.in/tourist-place/kye-monastery/",
-              "heritage_status": "Centuries-Old Protected Gompa",
-              "data_confidence": "official",
-              "verification_status": "needs_review",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1605649487212-47bdab064df8?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1605649487212-47bdab064df8?w=400&q=80",
-              "attribution": "District Administration Lahaul & Spiti",
-              "source_url": "https://hplahaulspiti.nic.in/tourist-place/kye-monastery/",
-              "source_name": "District Administration Lahaul and Spiti",
-              "source_type": "district_administration",
-              "sources": [
-                {
-                  "source_name": "District Administration Lahaul and Spiti",
-                  "source_url": "https://hplahaulspiti.nic.in/tourist-place/kye-monastery/",
-                  "source_type": "district_administration",
-                  "evidence_note": "Official district administration portal profile.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Himachal Pradesh Tourism Department",
-                  "source_url": "https://himachaltourism.gov.in/destination/spiti/",
-                  "source_type": "state_tourism",
-                  "evidence_note": "Official tourism portal Spiti circuit guide.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
+              "tags": [
+                "hill station",
+                "capital",
+                "Shimla"
               ],
+              "best_for": [
+                "hill views",
+                "heritage",
+                "shopping",
+                "family trips"
+              ],
+              "suggested_duration": "2–3 days",
+              "best_time_to_visit": "March to June; December to February for snow",
+              "entry_fee": "Usually free; individual attractions may charge",
+              "opening_hours": "City access throughout the day; attractions vary",
+              "visitor_notes": [
+                "Carry warm clothing in winter",
+                "Traffic and parking can be difficult during peak season"
+              ],
+              "map_search": "Shimla Himachal Pradesh",
+              "city": "Shimla",
+              "city_id": "shimla",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/shimla/",
               "source_quality": "place_specific",
-              "audit_note": "[Live Audit Failed 2026-09-10] HTTP 404 (Not Found)"
-            },
-            {
-              "id": "spiti-tabo-monastery",
-              "name": "Tabo Monastery (Ajanta of the Himalayas)",
-              "slug": "tabo-monastery-spiti",
-              "place_type": "Ancient Mud-Brick Gompa & UNESCO Tentative Site",
-              "topic": "Heritage",
-              "subtopic": "UNESCO World Heritage Sites",
-              "category": "heritage",
-              "category_label": "UNESCO Tentative Heritage Gompa",
-              "category_links": [
-                {
-                  "topic": "Heritage",
-                  "subtopic": "UNESCO World Heritage Sites"
-                },
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Archaeological Sites"
-                },
-                {
-                  "topic": "Spiritual",
-                  "subtopic": "Buddhism"
-                }
-              ],
-              "importance_level": "iconic",
-              "summary": "Founded in 996 CE by Rinchen Zangpo, famous for preserved 10th-century stucco sculptures and frescoes.",
-              "short_description": "Millennium-old mud-brick monastic complex on the UNESCO Tentative List, renowned as the Ajanta of the Himalayas.",
-              "detailed_description": "Founded in the Tibetan Year of the Fire Ape (996 CE) by translator Rinchen Zangpo under the king of Guge, Tabo is the oldest continuously operating Buddhist enclave in India. Its nine temples preserve wall paintings and clay sculptures of the Vajradhatu mandala.",
-              "address": "Tabo Village, Spiti, Himachal Pradesh 172113",
-              "lat": 32.0911,
-              "lng": 78.3822,
-              "coordinates": {
-                "lat": 32.0911,
-                "lng": 78.3822
-              },
-              "visiting_hours": "06:00 AM - 05:00 PM",
-              "opening_hours": "06:00 - 17:00",
-              "entry_fee": "Free entry",
-              "entry_fee_domestic": 0,
-              "entry_fee_intl": 0,
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "06:00",
-                "closing_time": "17:00",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 120,
-                "label": "2 Hours",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "May to October",
-              "contact_information": "Archaeological Survey of India Shimla Circle: 0177-2652251",
-              "official_website": "https://whc.unesco.org/en/tentativelists/6055/",
-              "heritage_status": "UNESCO Tentative List & ASI Monument of National Importance",
               "data_confidence": "official",
               "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
-              "attribution": "Archaeological Survey of India / UNESCO",
-              "source_url": "https://whc.unesco.org/en/tentativelists/6055/",
-              "source_name": "UNESCO World Heritage Centre",
-              "source_type": "unesco",
-              "sources": [
-                {
-                  "source_name": "UNESCO World Heritage Centre",
-                  "source_url": "https://whc.unesco.org/en/tentativelists/6055/",
-                  "source_type": "unesco",
-                  "evidence_note": "Official UNESCO World Heritage Tentative List inscription.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Archaeological Survey of India (ASI)",
-                  "source_url": "https://asishimla.nic.in",
-                  "source_type": "asi",
-                  "evidence_note": "Centrally Protected Monument records.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
-              ],
-              "source_quality": "place_specific",
-              "audit_note": "Verified live HTTP 200 on 2026-09-10. Title: \"Cold Desert Cultural Landscape of India - UNESCO World Heritage Centre\""
+              "hero_image_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=1200&auto=format&fit=crop&q=80"
+              ]
             },
             {
-              "id": "spiti-chandratal-lake",
-              "name": "Chandratal Lake (Moon Lake)",
-              "slug": "chandratal-lake-spiti",
-              "place_type": "High-Altitude Wetland & Ramsar Site",
-              "topic": "Nature",
-              "subtopic": "Rivers and Lakes",
-              "category": "nature_parks_zoo",
-              "category_label": "Ramsar Wetland Lake",
-              "category_links": [
-                {
-                  "topic": "Nature",
-                  "subtopic": "Rivers and Lakes"
-                },
-                {
-                  "topic": "Nature",
-                  "subtopic": "Hills and Mountains"
-                },
-                {
-                  "topic": "Adventure",
-                  "subtopic": "Hiking and Trekking"
-                }
-              ],
-              "importance_level": "major",
-              "summary": "Crescent-shaped high-altitude alpine lake located at 4,250 m on the Samudra Tapu plateau.",
-              "short_description": "Pristine crescent-shaped glacial lake and designated Ramsar wetland in Spiti Valley.",
-              "detailed_description": "Situated at 4,250 meters elevation, Chandratal is a designated Ramsar wetland of international importance. The lake changes color from turquoise to deep emerald through the day and is framed by the Chandra Bhaga mountain range.",
-              "address": "Samudra Tapu Plateau, Spiti, Himachal Pradesh 175140",
-              "lat": 32.4822,
-              "lng": 77.6167,
+              "id": "himachal_002",
+              "name": "Mall Road",
+              "canonical_name": "Mall Road",
+              "aliases": [],
+              "category": "shopping_recreation",
+              "heritage_type": "shopping_recreation",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "Shimla’s main pedestrian shopping and leisure street lined with cafés, shops, colonial buildings, and viewpoints.",
+              "summary": "Shimla’s main pedestrian shopping and leisure street lined with cafés, shops, colonial buildings, and viewpoints.",
+              "lat": 31.1041,
+              "lng": 77.1725,
               "coordinates": {
-                "lat": 32.4822,
-                "lng": 77.6167
+                "lat": 31.1041,
+                "lng": 77.1725
               },
-              "visiting_hours": "Sunrise to Sunset (Daylight hours only)",
-              "opening_hours": "06:00 - 18:00",
-              "entry_fee": "Free entry (Eco-tourism fee collected at Batal checkpost)",
-              "entry_fee_domestic": 0,
-              "entry_fee_intl": 0,
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "06:00",
-                "closing_time": "18:00",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 150,
-                "label": "2.5 Hours",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "June to September",
-              "contact_information": "Himachal Pradesh Forest Department: 0177-2623148",
-              "official_website": "https://hpforest.nic.in",
-              "heritage_status": "Ramsar Wetland of International Importance",
-              "data_confidence": "official",
-              "verification_status": "needs_review",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&q=80",
-              "attribution": "Himachal Pradesh Forest Department / Ramsar",
-              "source_url": "https://rsis.ramsar.org/ris/1569",
-              "source_name": "Ramsar Sites Information Service",
-              "source_type": "official_institution",
-              "sources": [
-                {
-                  "source_name": "Ramsar Sites Information Service",
-                  "source_url": "https://rsis.ramsar.org/ris/1569",
-                  "source_type": "official_institution",
-                  "evidence_note": "Official Ramsar Site 1569 conservation registration.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Himachal Pradesh Forest Department",
-                  "source_url": "https://hpforest.nic.in",
-                  "source_type": "forest_department",
-                  "evidence_note": "State Wildlife Wing conservation records.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
+              "tags": [
+                "shopping",
+                "heritage",
+                "Shimla"
               ],
+              "best_for": [
+                "shopping",
+                "walking",
+                "food",
+                "photography"
+              ],
+              "suggested_duration": "2–3 hours",
+              "best_time_to_visit": "March to June; December to February for snow",
+              "entry_fee": "Free",
+              "opening_hours": "Open throughout the day; shops have individual timings",
+              "visitor_notes": [
+                "Mostly pedestrian",
+                "Expect crowds during holidays"
+              ],
+              "map_search": "Mall Road Shimla",
+              "city": "Shimla",
+              "city_id": "shimla",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/shimla/",
               "source_quality": "place_specific",
-              "audit_note": "[Live Audit Failed 2026-09-10] HTTP 418 (I'm a teapot (Bot Blocked))"
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200&auto=format&fit=crop&q=80"
+              ]
+            },
+            {
+              "id": "himachal_003",
+              "name": "The Ridge",
+              "canonical_name": "The Ridge",
+              "aliases": [],
+              "category": "viewpoint_heritage",
+              "heritage_type": "viewpoint_heritage",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A spacious open promenade offering views of the surrounding mountains and access to several historic landmarks.",
+              "summary": "A spacious open promenade offering views of the surrounding mountains and access to several historic landmarks.",
+              "lat": 31.1051,
+              "lng": 77.1746,
+              "coordinates": {
+                "lat": 31.1051,
+                "lng": 77.1746
+              },
+              "tags": [
+                "viewpoint",
+                "heritage",
+                "Shimla"
+              ],
+              "best_for": [
+                "sunsets",
+                "photography",
+                "walking",
+                "heritage"
+              ],
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "March to June; winter for snow",
+              "entry_fee": "Free",
+              "opening_hours": "Open throughout the day",
+              "visitor_notes": [
+                "Evenings can be cold",
+                "Often hosts public events"
+              ],
+              "map_search": "The Ridge Shimla",
+              "city": "Shimla",
+              "city_id": "shimla",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/shimla/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1589802829985-817e51171b92?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1589802829985-817e51171b92?w=1200&auto=format&fit=crop&q=80"
+              ]
+            },
+            {
+              "id": "himachal_004",
+              "name": "Jakhu Temple",
+              "canonical_name": "Jakhu Temple",
+              "aliases": [],
+              "category": "religious_viewpoint",
+              "heritage_type": "religious_viewpoint",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A hilltop temple dedicated to Lord Hanuman, featuring a prominent statue and panoramic views of Shimla.",
+              "summary": "A hilltop temple dedicated to Lord Hanuman, featuring a prominent statue and panoramic views of Shimla.",
+              "lat": 31.1011,
+              "lng": 77.1842,
+              "coordinates": {
+                "lat": 31.1011,
+                "lng": 77.1842
+              },
+              "tags": [
+                "temple",
+                "Hanuman",
+                "Shimla"
+              ],
+              "best_for": [
+                "pilgrimage",
+                "views",
+                "photography"
+              ],
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "March to June; September to November",
+              "entry_fee": "Free",
+              "opening_hours": "Usually open daily; timings may vary",
+              "visitor_notes": [
+                "Steep approach",
+                "Keep belongings secure around monkeys"
+              ],
+              "map_search": "Jakhu Temple Shimla",
+              "city": "Shimla",
+              "city_id": "shimla",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/shimla/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1605649487212-47bdab064df8?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1605649487212-47bdab064df8?w=1200&auto=format&fit=crop&q=80"
+              ]
             }
+          ]
+        },
+        {
+          "id": "kufri",
+          "name": "Kufri",
+          "canonical_name": "Kufri",
+          "state": "Himachal Pradesh",
+          "state_id": "himachal-pradesh",
+          "district": "Shimla",
+          "city_type": "city",
+          "lat": 31.098,
+          "lng": 77.2678,
+          "coordinates": {
+            "lat": 31.098,
+            "lng": 77.2678
+          },
+          "tagline": "Destination in Himachal Pradesh",
+          "description": "Picturesque hill station situated at an altitude of 2,720 metres, known for ski slopes, apple orchards, and Mahasu Peak trail.",
+          "hero_image_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=80",
+          "tourism_categories": [
+            "heritage",
+            "nature",
+            "hill_station"
           ],
+          "is_capital": false,
+          "capital_status": "none",
+          "verification_status": "verified",
+          "source_provenance": "Virasat Geographic Registry & Himachal Tourism",
+          "places_count": 1,
+          "created_at": "2026-09-10T00:00:00.000Z",
+          "updated_at": "2026-09-11T00:00:00.000Z",
           "heritage": [
             {
-              "id": "spiti-tabo-monastery",
-              "name": "Tabo Monastery (Ajanta of the Himalayas)",
-              "slug": "tabo-monastery-spiti",
-              "place_type": "Ancient Mud-Brick Gompa & UNESCO Tentative Site",
-              "topic": "Heritage",
-              "subtopic": "UNESCO World Heritage Sites",
-              "category": "heritage",
-              "category_label": "UNESCO Tentative Heritage Gompa",
-              "category_links": [
-                {
-                  "topic": "Heritage",
-                  "subtopic": "UNESCO World Heritage Sites"
-                },
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Archaeological Sites"
-                },
-                {
-                  "topic": "Spiritual",
-                  "subtopic": "Buddhism"
-                }
-              ],
-              "importance_level": "iconic",
-              "summary": "Founded in 996 CE by Rinchen Zangpo, famous for preserved 10th-century stucco sculptures and frescoes.",
-              "short_description": "Millennium-old mud-brick monastic complex on the UNESCO Tentative List, renowned as the Ajanta of the Himalayas.",
-              "detailed_description": "Founded in the Tibetan Year of the Fire Ape (996 CE) by translator Rinchen Zangpo under the king of Guge, Tabo is the oldest continuously operating Buddhist enclave in India. Its nine temples preserve wall paintings and clay sculptures of the Vajradhatu mandala.",
-              "address": "Tabo Village, Spiti, Himachal Pradesh 172113",
-              "lat": 32.0911,
-              "lng": 78.3822,
+              "id": "himachal_005",
+              "name": "Kufri",
+              "canonical_name": "Kufri",
+              "aliases": [],
+              "category": "hill_station_nature",
+              "heritage_type": "hill_station_nature",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A popular high-altitude destination known for scenic meadows, winter snow activities, and mountain landscapes.",
+              "summary": "A popular high-altitude destination known for scenic meadows, winter snow activities, and mountain landscapes.",
+              "lat": 31.098,
+              "lng": 77.2678,
               "coordinates": {
-                "lat": 32.0911,
-                "lng": 78.3822
+                "lat": 31.098,
+                "lng": 77.2678
               },
-              "visiting_hours": "06:00 AM - 05:00 PM",
-              "opening_hours": "06:00 - 17:00",
-              "entry_fee": "Free entry",
-              "entry_fee_domestic": 0,
-              "entry_fee_intl": 0,
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "06:00",
-                "closing_time": "17:00",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 120,
-                "label": "2 Hours",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "May to October",
-              "contact_information": "Archaeological Survey of India Shimla Circle: 0177-2652251",
-              "official_website": "https://whc.unesco.org/en/tentativelists/6055/",
-              "heritage_status": "UNESCO Tentative List & ASI Monument of National Importance",
+              "tags": [
+                "snow",
+                "hill station",
+                "Shimla"
+              ],
+              "best_for": [
+                "snow",
+                "nature",
+                "family outings",
+                "adventure"
+              ],
+              "suggested_duration": "Half day",
+              "best_time_to_visit": "December to February for snow; March to June for greenery",
+              "entry_fee": "Varies by attraction and activity",
+              "opening_hours": "Daytime; individual activities vary",
+              "visitor_notes": [
+                "Snow activities depend on weather",
+                "Roads may be slippery in winter"
+              ],
+              "map_search": "Kufri Himachal Pradesh",
+              "city": "Kufri",
+              "city_id": "kufri",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/kufri/",
+              "source_quality": "place_specific",
               "data_confidence": "official",
               "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
-              "attribution": "Archaeological Survey of India / UNESCO",
-              "source_url": "https://whc.unesco.org/en/tentativelists/6055/",
-              "source_name": "UNESCO World Heritage Centre",
-              "source_type": "unesco",
-              "sources": [
-                {
-                  "source_name": "UNESCO World Heritage Centre",
-                  "source_url": "https://whc.unesco.org/en/tentativelists/6055/",
-                  "source_type": "unesco",
-                  "evidence_note": "Official UNESCO World Heritage Tentative List inscription.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Archaeological Survey of India (ASI)",
-                  "source_url": "https://asishimla.nic.in",
-                  "source_type": "asi",
-                  "evidence_note": "Centrally Protected Monument records.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
-              ],
-              "source_quality": "place_specific"
+              "hero_image_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=80"
+              ]
             }
           ],
           "monuments": [],
           "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [
+          "tourist_places": [
             {
-              "id": "spiti-key-monastery",
-              "name": "Key Monastery (Kye Gompa)",
-              "slug": "key-monastery-spiti",
-              "place_type": "Tibetan Buddhist Monastery & Fort Complex",
-              "topic": "Spiritual",
-              "subtopic": "Buddhism",
-              "category": "religious_cultural",
-              "category_label": "Tibetan Buddhist Monastery",
-              "category_links": [
-                {
-                  "topic": "Spiritual",
-                  "subtopic": "Buddhism"
-                },
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Historical Buildings"
-                },
-                {
-                  "topic": "Arts",
-                  "subtopic": "Painting"
-                }
-              ],
-              "importance_level": "iconic",
-              "summary": "Iconic 11th-century Tibetan Buddhist monastery perched on a conical hill at 4,166 m.",
-              "short_description": "Spectacular fortress-like monastery of the Gelugpa sect perched above the Spiti River.",
-              "detailed_description": "Founded in the 11th century by Dromtön, Key Monastery is the largest monastery in Spiti Valley. Built in the Pasada style with fortress-like tiered rooms, it houses ancient thangkas, manuscripts, and murals, serving over 300 resident lamas.",
-              "address": "Key Village, Spiti, Himachal Pradesh 172114",
-              "lat": 32.2981,
-              "lng": 78.0125,
+              "id": "himachal_005",
+              "name": "Kufri",
+              "canonical_name": "Kufri",
+              "aliases": [],
+              "category": "hill_station_nature",
+              "heritage_type": "hill_station_nature",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A popular high-altitude destination known for scenic meadows, winter snow activities, and mountain landscapes.",
+              "summary": "A popular high-altitude destination known for scenic meadows, winter snow activities, and mountain landscapes.",
+              "lat": 31.098,
+              "lng": 77.2678,
               "coordinates": {
-                "lat": 32.2981,
-                "lng": 78.0125
+                "lat": 31.098,
+                "lng": 77.2678
               },
-              "visiting_hours": "06:00 AM - 06:00 PM",
-              "opening_hours": "06:00 - 18:00",
-              "entry_fee": "Free entry (Donations accepted)",
-              "entry_fee_domestic": 0,
-              "entry_fee_intl": 0,
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "06:00",
-                "closing_time": "18:00",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 Hours",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "May to October",
-              "contact_information": "District Administration Lahaul & Spiti: 01900-222501",
-              "official_website": "https://hplahaulspiti.nic.in/tourist-place/kye-monastery/",
-              "heritage_status": "Centuries-Old Protected Gompa",
+              "tags": [
+                "snow",
+                "hill station",
+                "Shimla"
+              ],
+              "best_for": [
+                "snow",
+                "nature",
+                "family outings",
+                "adventure"
+              ],
+              "suggested_duration": "Half day",
+              "best_time_to_visit": "December to February for snow; March to June for greenery",
+              "entry_fee": "Varies by attraction and activity",
+              "opening_hours": "Daytime; individual activities vary",
+              "visitor_notes": [
+                "Snow activities depend on weather",
+                "Roads may be slippery in winter"
+              ],
+              "map_search": "Kufri Himachal Pradesh",
+              "city": "Kufri",
+              "city_id": "kufri",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/kufri/",
+              "source_quality": "place_specific",
               "data_confidence": "official",
               "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1605649487212-47bdab064df8?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1605649487212-47bdab064df8?w=400&q=80",
-              "attribution": "District Administration Lahaul & Spiti",
-              "source_url": "https://hplahaulspiti.nic.in/tourist-place/kye-monastery/",
-              "source_name": "District Administration Lahaul and Spiti",
-              "source_type": "district_administration",
-              "sources": [
-                {
-                  "source_name": "District Administration Lahaul and Spiti",
-                  "source_url": "https://hplahaulspiti.nic.in/tourist-place/kye-monastery/",
-                  "source_type": "district_administration",
-                  "evidence_note": "Official district administration portal profile.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Himachal Pradesh Tourism Department",
-                  "source_url": "https://himachaltourism.gov.in/destination/spiti/",
-                  "source_type": "state_tourism",
-                  "evidence_note": "Official tourism portal Spiti circuit guide.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
+              "hero_image_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=80"
               ]
             }
           ],
-          "nature_parks_zoo": [
-            {
-              "id": "spiti-chandratal-lake",
-              "name": "Chandratal Lake (Moon Lake)",
-              "slug": "chandratal-lake-spiti",
-              "place_type": "High-Altitude Wetland & Ramsar Site",
-              "topic": "Nature",
-              "subtopic": "Rivers and Lakes",
-              "category": "nature_parks_zoo",
-              "category_label": "Ramsar Wetland Lake",
-              "category_links": [
-                {
-                  "topic": "Nature",
-                  "subtopic": "Rivers and Lakes"
-                },
-                {
-                  "topic": "Nature",
-                  "subtopic": "Hills and Mountains"
-                },
-                {
-                  "topic": "Adventure",
-                  "subtopic": "Hiking and Trekking"
-                }
-              ],
-              "importance_level": "major",
-              "summary": "Crescent-shaped high-altitude alpine lake located at 4,250 m on the Samudra Tapu plateau.",
-              "short_description": "Pristine crescent-shaped glacial lake and designated Ramsar wetland in Spiti Valley.",
-              "detailed_description": "Situated at 4,250 meters elevation, Chandratal is a designated Ramsar wetland of international importance. The lake changes color from turquoise to deep emerald through the day and is framed by the Chandra Bhaga mountain range.",
-              "address": "Samudra Tapu Plateau, Spiti, Himachal Pradesh 175140",
-              "lat": 32.4822,
-              "lng": 77.6167,
-              "coordinates": {
-                "lat": 32.4822,
-                "lng": 77.6167
-              },
-              "visiting_hours": "Sunrise to Sunset (Daylight hours only)",
-              "opening_hours": "06:00 - 18:00",
-              "entry_fee": "Free entry (Eco-tourism fee collected at Batal checkpost)",
-              "entry_fee_domestic": 0,
-              "entry_fee_intl": 0,
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "06:00",
-                "closing_time": "18:00",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 150,
-                "label": "2.5 Hours",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "June to September",
-              "contact_information": "Himachal Pradesh Forest Department: 0177-2623148",
-              "official_website": "https://hpforest.nic.in",
-              "heritage_status": "Ramsar Wetland of International Importance",
-              "data_confidence": "official",
-              "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&q=80",
-              "attribution": "Himachal Pradesh Forest Department / Ramsar",
-              "source_url": "https://rsis.ramsar.org/ris/1569",
-              "source_name": "Ramsar Sites Information Service",
-              "source_type": "official_institution",
-              "sources": [
-                {
-                  "source_name": "Ramsar Sites Information Service",
-                  "source_url": "https://rsis.ramsar.org/ris/1569",
-                  "source_type": "official_institution",
-                  "evidence_note": "Official Ramsar Site 1569 conservation registration.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Himachal Pradesh Forest Department",
-                  "source_url": "https://hpforest.nic.in",
-                  "source_type": "forest_department",
-                  "evidence_note": "State Wildlife Wing conservation records.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
-              ]
-            }
-          ],
-          "places_count": 3,
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
           "transport": {
             "railway_stations": [],
             "local_transit": {
               "modes": [
-                "Taxi",
-                "Auto",
-                "Local Bus"
+                "Auto-rickshaws",
+                "City Cabs",
+                "Local Buses"
               ],
-              "fare_indication": "Moderate",
-              "status": "VERIFIED"
+              "fare_indication": "₹50 - ₹200 per ride",
+              "status": "UNVERIFIED",
+              "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "INR 2,500 - 5,000",
-            "status": "VERIFIED"
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED",
+            "note": "Average estimated budget per person for local exploration and meals"
           },
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant and sunny",
-            "status": "VERIFIED"
-          }
+            "best_season": "March to June; September to November",
+            "weather_summary": "Pleasant Himalayan weather; cold winters",
+            "status": "UNVERIFIED",
+            "advisory": "Carry warm clothing; check mountain road conditions"
+          },
+          "active_stories": [
+            "Scenic mountain trails and heritage landmarks of Kufri.",
+            "Living mountain traditions and culture."
+          ],
+          "places": [
+            {
+              "id": "himachal_005",
+              "name": "Kufri",
+              "canonical_name": "Kufri",
+              "aliases": [],
+              "category": "hill_station_nature",
+              "heritage_type": "hill_station_nature",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A popular high-altitude destination known for scenic meadows, winter snow activities, and mountain landscapes.",
+              "summary": "A popular high-altitude destination known for scenic meadows, winter snow activities, and mountain landscapes.",
+              "lat": 31.098,
+              "lng": 77.2678,
+              "coordinates": {
+                "lat": 31.098,
+                "lng": 77.2678
+              },
+              "tags": [
+                "snow",
+                "hill station",
+                "Shimla"
+              ],
+              "best_for": [
+                "snow",
+                "nature",
+                "family outings",
+                "adventure"
+              ],
+              "suggested_duration": "Half day",
+              "best_time_to_visit": "December to February for snow; March to June for greenery",
+              "entry_fee": "Varies by attraction and activity",
+              "opening_hours": "Daytime; individual activities vary",
+              "visitor_notes": [
+                "Snow activities depend on weather",
+                "Roads may be slippery in winter"
+              ],
+              "map_search": "Kufri Himachal Pradesh",
+              "city": "Kufri",
+              "city_id": "kufri",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/kufri/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=80"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "manali",
+          "name": "Manali",
+          "canonical_name": "Manali",
+          "state": "Himachal Pradesh",
+          "state_id": "himachal-pradesh",
+          "district": "Kullu",
+          "city_type": "city",
+          "lat": 32.2396,
+          "lng": 77.1887,
+          "coordinates": {
+            "lat": 32.2396,
+            "lng": 77.1887
+          },
+          "tagline": "Destination in Himachal Pradesh",
+          "description": "Manali is situated along the Beas River at 2,050 meters elevation in Kullu district. Known for deodar forests, ancient wooden pagodas, and adventure expeditions across Solang and the Atal Tunnel.",
+          "hero_image_url": "https://images.unsplash.com/photo-1596761611086-455b76615b13?w=1200&q=80",
+          "tourism_categories": [
+            "heritage",
+            "nature",
+            "hill_station"
+          ],
+          "is_capital": false,
+          "capital_status": "none",
+          "verification_status": "verified",
+          "source_provenance": "Virasat Geographic Registry & Himachal Tourism",
+          "places_count": 4,
+          "created_at": "2026-09-10T00:00:00.000Z",
+          "updated_at": "2026-09-11T00:00:00.000Z",
+          "heritage": [
+            {
+              "id": "himachal_006",
+              "name": "Manali",
+              "canonical_name": "Manali",
+              "aliases": [],
+              "category": "hill_station",
+              "heritage_type": "hill_station",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A popular Himalayan town known for river valleys, mountain scenery, adventure activities, and nearby attractions.",
+              "summary": "A popular Himalayan town known for river valleys, mountain scenery, adventure activities, and nearby attractions.",
+              "lat": 32.2432,
+              "lng": 77.1892,
+              "coordinates": {
+                "lat": 32.2432,
+                "lng": 77.1892
+              },
+              "tags": [
+                "hill station",
+                "mountains",
+                "Kullu"
+              ],
+              "best_for": [
+                "nature",
+                "adventure",
+                "honeymoon",
+                "family trips"
+              ],
+              "suggested_duration": "2–4 days",
+              "best_time_to_visit": "March to June; October to February for snow",
+              "entry_fee": "Usually free; individual attractions may charge",
+              "opening_hours": "Town access throughout the day; attractions vary",
+              "visitor_notes": [
+                "Check road conditions before travel",
+                "Peak seasons can be crowded"
+              ],
+              "map_search": "Manali Himachal Pradesh",
+              "city": "Manali",
+              "city_id": "manali",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/manali/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1593181629936-11c609b8db9b?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1593181629936-11c609b8db9b?w=1200&auto=format&fit=crop&q=80"
+              ]
+            },
+            {
+              "id": "himachal_007",
+              "name": "Solang Valley",
+              "canonical_name": "Solang Valley",
+              "aliases": [],
+              "category": "adventure_nature",
+              "heritage_type": "adventure_nature",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A scenic valley famous for paragliding, zorbing, skiing, snow activities, and mountain views.",
+              "summary": "A scenic valley famous for paragliding, zorbing, skiing, snow activities, and mountain views.",
+              "lat": 32.3166,
+              "lng": 77.1575,
+              "coordinates": {
+                "lat": 32.3166,
+                "lng": 77.1575
+              },
+              "tags": [
+                "adventure",
+                "snow",
+                "Manali"
+              ],
+              "best_for": [
+                "adventure",
+                "snow",
+                "photography"
+              ],
+              "suggested_duration": "Half day",
+              "best_time_to_visit": "December to February for snow; March to June for adventure activities",
+              "entry_fee": "Varies by activity",
+              "opening_hours": "Daytime; activity timings vary",
+              "visitor_notes": [
+                "Use licensed activity operators",
+                "Weather can change quickly"
+              ],
+              "map_search": "Solang Valley Manali",
+              "city": "Manali",
+              "city_id": "manali",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/solang-valley/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80"
+              ]
+            },
+            {
+              "id": "himachal_008",
+              "name": "Rohtang Pass",
+              "canonical_name": "Rohtang Pass",
+              "aliases": [],
+              "category": "mountain_pass",
+              "heritage_type": "mountain_pass",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A high mountain pass offering dramatic Himalayan scenery and seasonal snowfields.",
+              "summary": "A high mountain pass offering dramatic Himalayan scenery and seasonal snowfields.",
+              "lat": 32.3716,
+              "lng": 77.2466,
+              "coordinates": {
+                "lat": 32.3716,
+                "lng": 77.2466
+              },
+              "tags": [
+                "mountain pass",
+                "snow",
+                "Manali"
+              ],
+              "best_for": [
+                "snow",
+                "mountain views",
+                "photography"
+              ],
+              "suggested_duration": "Full day",
+              "best_time_to_visit": "May to October, subject to permits and road conditions",
+              "entry_fee": "Permit and transport charges may apply",
+              "opening_hours": "Access depends on weather, permits, and official restrictions",
+              "visitor_notes": [
+                "Check permit requirements",
+                "Acclimatize and carry warm clothing"
+              ],
+              "map_search": "Rohtang Pass Himachal Pradesh",
+              "city": "Manali",
+              "city_id": "manali",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/rohtang-pass/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&auto=format&fit=crop&q=80"
+              ]
+            },
+            {
+              "id": "himachal_009",
+              "name": "Hadimba Devi Temple",
+              "canonical_name": "Hadimba Devi Temple",
+              "aliases": [],
+              "category": "religious_heritage",
+              "heritage_type": "religious_heritage",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A distinctive wooden temple dedicated to Hidimba Devi, set among cedar forests.",
+              "summary": "A distinctive wooden temple dedicated to Hidimba Devi, set among cedar forests.",
+              "lat": 32.2483,
+              "lng": 77.1806,
+              "coordinates": {
+                "lat": 32.2483,
+                "lng": 77.1806
+              },
+              "tags": [
+                "temple",
+                "wooden architecture",
+                "Manali"
+              ],
+              "best_for": [
+                "heritage",
+                "religion",
+                "architecture",
+                "nature"
+              ],
+              "suggested_duration": "1 hour",
+              "best_time_to_visit": "March to June; October to February",
+              "entry_fee": "Free",
+              "opening_hours": "Usually open daily; timings may vary",
+              "visitor_notes": [
+                "Remove footwear where required",
+                "Respect temple customs"
+              ],
+              "map_search": "Hadimba Devi Temple Manali",
+              "city": "Manali",
+              "city_id": "manali",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/hadimba-temple/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1200&auto=format&fit=crop&q=80"
+              ]
+            }
+          ],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [
+            {
+              "id": "himachal_006",
+              "name": "Manali",
+              "canonical_name": "Manali",
+              "aliases": [],
+              "category": "hill_station",
+              "heritage_type": "hill_station",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A popular Himalayan town known for river valleys, mountain scenery, adventure activities, and nearby attractions.",
+              "summary": "A popular Himalayan town known for river valleys, mountain scenery, adventure activities, and nearby attractions.",
+              "lat": 32.2432,
+              "lng": 77.1892,
+              "coordinates": {
+                "lat": 32.2432,
+                "lng": 77.1892
+              },
+              "tags": [
+                "hill station",
+                "mountains",
+                "Kullu"
+              ],
+              "best_for": [
+                "nature",
+                "adventure",
+                "honeymoon",
+                "family trips"
+              ],
+              "suggested_duration": "2–4 days",
+              "best_time_to_visit": "March to June; October to February for snow",
+              "entry_fee": "Usually free; individual attractions may charge",
+              "opening_hours": "Town access throughout the day; attractions vary",
+              "visitor_notes": [
+                "Check road conditions before travel",
+                "Peak seasons can be crowded"
+              ],
+              "map_search": "Manali Himachal Pradesh",
+              "city": "Manali",
+              "city_id": "manali",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/manali/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1593181629936-11c609b8db9b?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1593181629936-11c609b8db9b?w=1200&auto=format&fit=crop&q=80"
+              ]
+            },
+            {
+              "id": "himachal_007",
+              "name": "Solang Valley",
+              "canonical_name": "Solang Valley",
+              "aliases": [],
+              "category": "adventure_nature",
+              "heritage_type": "adventure_nature",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A scenic valley famous for paragliding, zorbing, skiing, snow activities, and mountain views.",
+              "summary": "A scenic valley famous for paragliding, zorbing, skiing, snow activities, and mountain views.",
+              "lat": 32.3166,
+              "lng": 77.1575,
+              "coordinates": {
+                "lat": 32.3166,
+                "lng": 77.1575
+              },
+              "tags": [
+                "adventure",
+                "snow",
+                "Manali"
+              ],
+              "best_for": [
+                "adventure",
+                "snow",
+                "photography"
+              ],
+              "suggested_duration": "Half day",
+              "best_time_to_visit": "December to February for snow; March to June for adventure activities",
+              "entry_fee": "Varies by activity",
+              "opening_hours": "Daytime; activity timings vary",
+              "visitor_notes": [
+                "Use licensed activity operators",
+                "Weather can change quickly"
+              ],
+              "map_search": "Solang Valley Manali",
+              "city": "Manali",
+              "city_id": "manali",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/solang-valley/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80"
+              ]
+            },
+            {
+              "id": "himachal_008",
+              "name": "Rohtang Pass",
+              "canonical_name": "Rohtang Pass",
+              "aliases": [],
+              "category": "mountain_pass",
+              "heritage_type": "mountain_pass",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A high mountain pass offering dramatic Himalayan scenery and seasonal snowfields.",
+              "summary": "A high mountain pass offering dramatic Himalayan scenery and seasonal snowfields.",
+              "lat": 32.3716,
+              "lng": 77.2466,
+              "coordinates": {
+                "lat": 32.3716,
+                "lng": 77.2466
+              },
+              "tags": [
+                "mountain pass",
+                "snow",
+                "Manali"
+              ],
+              "best_for": [
+                "snow",
+                "mountain views",
+                "photography"
+              ],
+              "suggested_duration": "Full day",
+              "best_time_to_visit": "May to October, subject to permits and road conditions",
+              "entry_fee": "Permit and transport charges may apply",
+              "opening_hours": "Access depends on weather, permits, and official restrictions",
+              "visitor_notes": [
+                "Check permit requirements",
+                "Acclimatize and carry warm clothing"
+              ],
+              "map_search": "Rohtang Pass Himachal Pradesh",
+              "city": "Manali",
+              "city_id": "manali",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/rohtang-pass/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&auto=format&fit=crop&q=80"
+              ]
+            },
+            {
+              "id": "himachal_009",
+              "name": "Hadimba Devi Temple",
+              "canonical_name": "Hadimba Devi Temple",
+              "aliases": [],
+              "category": "religious_heritage",
+              "heritage_type": "religious_heritage",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A distinctive wooden temple dedicated to Hidimba Devi, set among cedar forests.",
+              "summary": "A distinctive wooden temple dedicated to Hidimba Devi, set among cedar forests.",
+              "lat": 32.2483,
+              "lng": 77.1806,
+              "coordinates": {
+                "lat": 32.2483,
+                "lng": 77.1806
+              },
+              "tags": [
+                "temple",
+                "wooden architecture",
+                "Manali"
+              ],
+              "best_for": [
+                "heritage",
+                "religion",
+                "architecture",
+                "nature"
+              ],
+              "suggested_duration": "1 hour",
+              "best_time_to_visit": "March to June; October to February",
+              "entry_fee": "Free",
+              "opening_hours": "Usually open daily; timings may vary",
+              "visitor_notes": [
+                "Remove footwear where required",
+                "Respect temple customs"
+              ],
+              "map_search": "Hadimba Devi Temple Manali",
+              "city": "Manali",
+              "city_id": "manali",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/hadimba-temple/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1200&auto=format&fit=crop&q=80"
+              ]
+            }
+          ],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaws",
+                "City Cabs",
+                "Local Buses"
+              ],
+              "fare_indication": "₹50 - ₹200 per ride",
+              "status": "UNVERIFIED",
+              "tips": "Confirm meter or agreed tariff before boarding"
+            }
+          },
+          "hotels": [],
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED",
+            "note": "Average estimated budget per person for local exploration and meals"
+          },
+          "live_travel_info": {
+            "best_season": "March to June; September to November",
+            "weather_summary": "Pleasant Himalayan weather; cold winters",
+            "status": "UNVERIFIED",
+            "advisory": "Carry warm clothing; check mountain road conditions"
+          },
+          "active_stories": [
+            "Scenic mountain trails and heritage landmarks of Manali.",
+            "Living mountain traditions and culture."
+          ],
+          "places": [
+            {
+              "id": "himachal_006",
+              "name": "Manali",
+              "canonical_name": "Manali",
+              "aliases": [],
+              "category": "hill_station",
+              "heritage_type": "hill_station",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A popular Himalayan town known for river valleys, mountain scenery, adventure activities, and nearby attractions.",
+              "summary": "A popular Himalayan town known for river valleys, mountain scenery, adventure activities, and nearby attractions.",
+              "lat": 32.2432,
+              "lng": 77.1892,
+              "coordinates": {
+                "lat": 32.2432,
+                "lng": 77.1892
+              },
+              "tags": [
+                "hill station",
+                "mountains",
+                "Kullu"
+              ],
+              "best_for": [
+                "nature",
+                "adventure",
+                "honeymoon",
+                "family trips"
+              ],
+              "suggested_duration": "2–4 days",
+              "best_time_to_visit": "March to June; October to February for snow",
+              "entry_fee": "Usually free; individual attractions may charge",
+              "opening_hours": "Town access throughout the day; attractions vary",
+              "visitor_notes": [
+                "Check road conditions before travel",
+                "Peak seasons can be crowded"
+              ],
+              "map_search": "Manali Himachal Pradesh",
+              "city": "Manali",
+              "city_id": "manali",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/manali/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1593181629936-11c609b8db9b?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1593181629936-11c609b8db9b?w=1200&auto=format&fit=crop&q=80"
+              ]
+            },
+            {
+              "id": "himachal_007",
+              "name": "Solang Valley",
+              "canonical_name": "Solang Valley",
+              "aliases": [],
+              "category": "adventure_nature",
+              "heritage_type": "adventure_nature",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A scenic valley famous for paragliding, zorbing, skiing, snow activities, and mountain views.",
+              "summary": "A scenic valley famous for paragliding, zorbing, skiing, snow activities, and mountain views.",
+              "lat": 32.3166,
+              "lng": 77.1575,
+              "coordinates": {
+                "lat": 32.3166,
+                "lng": 77.1575
+              },
+              "tags": [
+                "adventure",
+                "snow",
+                "Manali"
+              ],
+              "best_for": [
+                "adventure",
+                "snow",
+                "photography"
+              ],
+              "suggested_duration": "Half day",
+              "best_time_to_visit": "December to February for snow; March to June for adventure activities",
+              "entry_fee": "Varies by activity",
+              "opening_hours": "Daytime; activity timings vary",
+              "visitor_notes": [
+                "Use licensed activity operators",
+                "Weather can change quickly"
+              ],
+              "map_search": "Solang Valley Manali",
+              "city": "Manali",
+              "city_id": "manali",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/solang-valley/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80"
+              ]
+            },
+            {
+              "id": "himachal_008",
+              "name": "Rohtang Pass",
+              "canonical_name": "Rohtang Pass",
+              "aliases": [],
+              "category": "mountain_pass",
+              "heritage_type": "mountain_pass",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A high mountain pass offering dramatic Himalayan scenery and seasonal snowfields.",
+              "summary": "A high mountain pass offering dramatic Himalayan scenery and seasonal snowfields.",
+              "lat": 32.3716,
+              "lng": 77.2466,
+              "coordinates": {
+                "lat": 32.3716,
+                "lng": 77.2466
+              },
+              "tags": [
+                "mountain pass",
+                "snow",
+                "Manali"
+              ],
+              "best_for": [
+                "snow",
+                "mountain views",
+                "photography"
+              ],
+              "suggested_duration": "Full day",
+              "best_time_to_visit": "May to October, subject to permits and road conditions",
+              "entry_fee": "Permit and transport charges may apply",
+              "opening_hours": "Access depends on weather, permits, and official restrictions",
+              "visitor_notes": [
+                "Check permit requirements",
+                "Acclimatize and carry warm clothing"
+              ],
+              "map_search": "Rohtang Pass Himachal Pradesh",
+              "city": "Manali",
+              "city_id": "manali",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/rohtang-pass/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&auto=format&fit=crop&q=80"
+              ]
+            },
+            {
+              "id": "himachal_009",
+              "name": "Hadimba Devi Temple",
+              "canonical_name": "Hadimba Devi Temple",
+              "aliases": [],
+              "category": "religious_heritage",
+              "heritage_type": "religious_heritage",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A distinctive wooden temple dedicated to Hidimba Devi, set among cedar forests.",
+              "summary": "A distinctive wooden temple dedicated to Hidimba Devi, set among cedar forests.",
+              "lat": 32.2483,
+              "lng": 77.1806,
+              "coordinates": {
+                "lat": 32.2483,
+                "lng": 77.1806
+              },
+              "tags": [
+                "temple",
+                "wooden architecture",
+                "Manali"
+              ],
+              "best_for": [
+                "heritage",
+                "religion",
+                "architecture",
+                "nature"
+              ],
+              "suggested_duration": "1 hour",
+              "best_time_to_visit": "March to June; October to February",
+              "entry_fee": "Free",
+              "opening_hours": "Usually open daily; timings may vary",
+              "visitor_notes": [
+                "Remove footwear where required",
+                "Respect temple customs"
+              ],
+              "map_search": "Hadimba Devi Temple Manali",
+              "city": "Manali",
+              "city_id": "manali",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/hadimba-temple/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1200&auto=format&fit=crop&q=80"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "kasol",
+          "name": "Kasol",
+          "canonical_name": "Kasol",
+          "state": "Himachal Pradesh",
+          "state_id": "himachal-pradesh",
+          "district": "Kullu",
+          "city_type": "city",
+          "lat": 32.01,
+          "lng": 77.315,
+          "coordinates": {
+            "lat": 32.01,
+            "lng": 77.315
+          },
+          "tagline": "Destination in Himachal Pradesh",
+          "description": "Tranquil Himalayan settlement in Parvati Valley famous for coniferous forests, café culture, and mountain trailheads.",
+          "hero_image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80",
+          "tourism_categories": [
+            "heritage",
+            "nature",
+            "hill_station"
+          ],
+          "is_capital": false,
+          "capital_status": "none",
+          "verification_status": "verified",
+          "source_provenance": "Virasat Geographic Registry & Himachal Tourism",
+          "places_count": 2,
+          "created_at": "2026-09-10T00:00:00.000Z",
+          "updated_at": "2026-09-11T00:00:00.000Z",
+          "heritage": [
+            {
+              "id": "himachal_010",
+              "name": "Kasol",
+              "canonical_name": "Kasol",
+              "aliases": [],
+              "category": "village_nature",
+              "heritage_type": "village_nature",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A riverside village known for forest trails, mountain scenery, cafés, and access to the Parvati Valley.",
+              "summary": "A riverside village known for forest trails, mountain scenery, cafés, and access to the Parvati Valley.",
+              "lat": 32.01,
+              "lng": 77.315,
+              "coordinates": {
+                "lat": 32.01,
+                "lng": 77.315
+              },
+              "tags": [
+                "village",
+                "trekking",
+                "Parvati Valley"
+              ],
+              "best_for": [
+                "trekking",
+                "nature",
+                "backpacking",
+                "photography"
+              ],
+              "suggested_duration": "1–2 days",
+              "best_time_to_visit": "March to June; September to November",
+              "entry_fee": "Free",
+              "opening_hours": "Open throughout the day",
+              "visitor_notes": [
+                "Carry cash and basic supplies",
+                "Follow local environmental guidelines"
+              ],
+              "map_search": "Kasol Himachal Pradesh",
+              "city": "Kasol",
+              "city_id": "kasol",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/kasol/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80"
+              ]
+            },
+            {
+              "id": "himachal_011",
+              "name": "Kheerganga",
+              "canonical_name": "Kheerganga",
+              "aliases": [],
+              "category": "trek_nature",
+              "heritage_type": "trek_nature",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A popular trekking destination known for forest paths, mountain views, and natural hot-water springs.",
+              "summary": "A popular trekking destination known for forest paths, mountain views, and natural hot-water springs.",
+              "lat": 31.989,
+              "lng": 77.509,
+              "coordinates": {
+                "lat": 31.989,
+                "lng": 77.509
+              },
+              "tags": [
+                "trek",
+                "hot springs",
+                "Parvati Valley"
+              ],
+              "best_for": [
+                "trekking",
+                "nature",
+                "adventure"
+              ],
+              "suggested_duration": "1–2 days",
+              "best_time_to_visit": "April to June; September to November",
+              "entry_fee": "May include local or trail charges",
+              "opening_hours": "Daylight trekking recommended",
+              "visitor_notes": [
+                "Use a local guide if inexperienced",
+                "Check weather and trail status"
+              ],
+              "map_search": "Kheerganga Trek Himachal Pradesh",
+              "city": "Kasol",
+              "city_id": "kasol",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/kheerganga/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&auto=format&fit=crop&q=80"
+              ]
+            }
+          ],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [
+            {
+              "id": "himachal_010",
+              "name": "Kasol",
+              "canonical_name": "Kasol",
+              "aliases": [],
+              "category": "village_nature",
+              "heritage_type": "village_nature",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A riverside village known for forest trails, mountain scenery, cafés, and access to the Parvati Valley.",
+              "summary": "A riverside village known for forest trails, mountain scenery, cafés, and access to the Parvati Valley.",
+              "lat": 32.01,
+              "lng": 77.315,
+              "coordinates": {
+                "lat": 32.01,
+                "lng": 77.315
+              },
+              "tags": [
+                "village",
+                "trekking",
+                "Parvati Valley"
+              ],
+              "best_for": [
+                "trekking",
+                "nature",
+                "backpacking",
+                "photography"
+              ],
+              "suggested_duration": "1–2 days",
+              "best_time_to_visit": "March to June; September to November",
+              "entry_fee": "Free",
+              "opening_hours": "Open throughout the day",
+              "visitor_notes": [
+                "Carry cash and basic supplies",
+                "Follow local environmental guidelines"
+              ],
+              "map_search": "Kasol Himachal Pradesh",
+              "city": "Kasol",
+              "city_id": "kasol",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/kasol/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80"
+              ]
+            },
+            {
+              "id": "himachal_011",
+              "name": "Kheerganga",
+              "canonical_name": "Kheerganga",
+              "aliases": [],
+              "category": "trek_nature",
+              "heritage_type": "trek_nature",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A popular trekking destination known for forest paths, mountain views, and natural hot-water springs.",
+              "summary": "A popular trekking destination known for forest paths, mountain views, and natural hot-water springs.",
+              "lat": 31.989,
+              "lng": 77.509,
+              "coordinates": {
+                "lat": 31.989,
+                "lng": 77.509
+              },
+              "tags": [
+                "trek",
+                "hot springs",
+                "Parvati Valley"
+              ],
+              "best_for": [
+                "trekking",
+                "nature",
+                "adventure"
+              ],
+              "suggested_duration": "1–2 days",
+              "best_time_to_visit": "April to June; September to November",
+              "entry_fee": "May include local or trail charges",
+              "opening_hours": "Daylight trekking recommended",
+              "visitor_notes": [
+                "Use a local guide if inexperienced",
+                "Check weather and trail status"
+              ],
+              "map_search": "Kheerganga Trek Himachal Pradesh",
+              "city": "Kasol",
+              "city_id": "kasol",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/kheerganga/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&auto=format&fit=crop&q=80"
+              ]
+            }
+          ],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaws",
+                "City Cabs",
+                "Local Buses"
+              ],
+              "fare_indication": "₹50 - ₹200 per ride",
+              "status": "UNVERIFIED",
+              "tips": "Confirm meter or agreed tariff before boarding"
+            }
+          },
+          "hotels": [],
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED",
+            "note": "Average estimated budget per person for local exploration and meals"
+          },
+          "live_travel_info": {
+            "best_season": "March to June; September to November",
+            "weather_summary": "Pleasant Himalayan weather; cold winters",
+            "status": "UNVERIFIED",
+            "advisory": "Carry warm clothing; check mountain road conditions"
+          },
+          "active_stories": [
+            "Scenic mountain trails and heritage landmarks of Kasol.",
+            "Living mountain traditions and culture."
+          ],
+          "places": [
+            {
+              "id": "himachal_010",
+              "name": "Kasol",
+              "canonical_name": "Kasol",
+              "aliases": [],
+              "category": "village_nature",
+              "heritage_type": "village_nature",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A riverside village known for forest trails, mountain scenery, cafés, and access to the Parvati Valley.",
+              "summary": "A riverside village known for forest trails, mountain scenery, cafés, and access to the Parvati Valley.",
+              "lat": 32.01,
+              "lng": 77.315,
+              "coordinates": {
+                "lat": 32.01,
+                "lng": 77.315
+              },
+              "tags": [
+                "village",
+                "trekking",
+                "Parvati Valley"
+              ],
+              "best_for": [
+                "trekking",
+                "nature",
+                "backpacking",
+                "photography"
+              ],
+              "suggested_duration": "1–2 days",
+              "best_time_to_visit": "March to June; September to November",
+              "entry_fee": "Free",
+              "opening_hours": "Open throughout the day",
+              "visitor_notes": [
+                "Carry cash and basic supplies",
+                "Follow local environmental guidelines"
+              ],
+              "map_search": "Kasol Himachal Pradesh",
+              "city": "Kasol",
+              "city_id": "kasol",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/kasol/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80"
+              ]
+            },
+            {
+              "id": "himachal_011",
+              "name": "Kheerganga",
+              "canonical_name": "Kheerganga",
+              "aliases": [],
+              "category": "trek_nature",
+              "heritage_type": "trek_nature",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A popular trekking destination known for forest paths, mountain views, and natural hot-water springs.",
+              "summary": "A popular trekking destination known for forest paths, mountain views, and natural hot-water springs.",
+              "lat": 31.989,
+              "lng": 77.509,
+              "coordinates": {
+                "lat": 31.989,
+                "lng": 77.509
+              },
+              "tags": [
+                "trek",
+                "hot springs",
+                "Parvati Valley"
+              ],
+              "best_for": [
+                "trekking",
+                "nature",
+                "adventure"
+              ],
+              "suggested_duration": "1–2 days",
+              "best_time_to_visit": "April to June; September to November",
+              "entry_fee": "May include local or trail charges",
+              "opening_hours": "Daylight trekking recommended",
+              "visitor_notes": [
+                "Use a local guide if inexperienced",
+                "Check weather and trail status"
+              ],
+              "map_search": "Kheerganga Trek Himachal Pradesh",
+              "city": "Kasol",
+              "city_id": "kasol",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/kheerganga/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&auto=format&fit=crop&q=80"
+              ]
+            }
+          ]
         },
         {
           "id": "dharamshala",
           "name": "Dharamshala",
-          "slug": "dharamshala",
-          "district": "Kangra",
+          "canonical_name": "Dharamshala",
           "state": "Himachal Pradesh",
           "state_id": "himachal-pradesh",
-          "region": "Northern India",
-          "entity_type": "city",
-          "city_type": "Dhauladhar Foothill City & Tibetan Cultural Center",
-          "tagline": "Seat of the Dalai Lama and Gateway to Dhauladhar",
-          "short_description": "Scenic hillside city in Kangra district, home to the Central Tibetan Administration and HPCA Stadium.",
-          "description": "Dharamshala is situated on the lower slopes of the Dhauladhar range. It is divided into lower Dharamshala and upper McLeod Ganj, serving as the residence of the 14th Dalai Lama and headquarters of Tibetan culture in exile.",
-          "official_url": "https://hpkangra.nic.in",
-          "status": "active",
-          "verification_status": "verified",
-          "hero_image_url": "https://images.unsplash.com/photo-1588083949404-c4f1ed1323b3?w=1200&q=80",
+          "district": "Kangra",
+          "city_type": "city",
+          "lat": 32.219,
+          "lng": 76.3234,
           "coordinates": {
             "lat": 32.219,
             "lng": 76.3234
           },
-          "lat": 32.219,
-          "lng": 76.3234,
-          "places": [
-            {
-              "id": "dharamshala-tsuglagkhang",
-              "name": "Tsuglagkhang Complex (Dalai Lama Temple)",
-              "slug": "tsuglagkhang-complex-dharamshala",
-              "place_type": "Tibetan Spiritual Center & Temple Complex",
-              "topic": "Spiritual",
-              "subtopic": "Buddhism",
-              "category": "religious_cultural",
-              "category_label": "Tibetan Buddhist Complex",
-              "category_links": [
-                {
-                  "topic": "Spiritual",
-                  "subtopic": "Buddhism"
-                },
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Historical Buildings"
-                },
-                {
-                  "topic": "Wellness",
-                  "subtopic": "Meditation"
-                }
-              ],
-              "importance_level": "iconic",
-              "summary": "The spiritual nerve center of Tibetan Buddhism in exile and residence of the 14th Dalai Lama.",
-              "short_description": "Sacred temple complex housing shrines of Shakyamuni Buddha, Avalokiteshvara, and the Tibet Museum.",
-              "detailed_description": "Tsuglagkhang is the official residence and monastery of His Holiness the 14th Dalai Lama. The complex houses sacred statues of Buddha, Padmasambhava, and Avalokiteshvara, the Namgyal Monastery, and the Tibet Museum.",
-              "address": "Temple Road, McLeod Ganj, Dharamshala, Himachal Pradesh 176219",
-              "lat": 32.2356,
-              "lng": 76.3242,
-              "coordinates": {
-                "lat": 32.2356,
-                "lng": 76.3242
-              },
-              "visiting_hours": "05:00 AM - 08:00 PM",
-              "opening_hours": "05:00 - 20:00",
-              "entry_fee": "Free entry",
-              "entry_fee_domestic": 0,
-              "entry_fee_intl": 0,
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "05:00",
-                "closing_time": "20:00",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 Hours",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "September to June",
-              "contact_information": "Office of His Holiness the Dalai Lama: 01892-221343",
-              "official_website": "https://www.dalailama.com",
-              "heritage_status": "International Buddhist Spiritual Center",
-              "data_confidence": "official",
-              "verification_status": "needs_review",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1588083949404-c4f1ed1323b3?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1588083949404-c4f1ed1323b3?w=400&q=80",
-              "attribution": "Office of His Holiness the Dalai Lama",
-              "source_url": "https://hpkangra.nic.in/tourist-place/tsuglagkhang-temple-mcleodganj/",
-              "source_name": "District Administration Kangra",
-              "source_type": "district_administration",
-              "sources": [
-                {
-                  "source_name": "District Administration Kangra",
-                  "source_url": "https://hpkangra.nic.in/tourist-place/tsuglagkhang-temple-mcleodganj/",
-                  "source_type": "district_administration",
-                  "evidence_note": "Official district tourism documentation.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Himachal Pradesh Tourism Department",
-                  "source_url": "https://himachaltourism.gov.in/destination/dharamshala/",
-                  "source_type": "state_tourism",
-                  "evidence_note": "Official state tourism profile.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
-              ],
-              "source_quality": "place_specific",
-              "audit_note": "[Live Audit Failed 2026-09-10] HTTP 404 (Not Found)"
-            }
+          "tagline": "Destination in Himachal Pradesh",
+          "description": "Dharamshala is situated on the lower slopes of the Dhauladhar range. It is divided into lower Dharamshala and upper McLeod Ganj, serving as the residence of the 14th Dalai Lama and headquarters of Tibetan culture in exile.",
+          "hero_image_url": "https://images.unsplash.com/photo-1588083949404-c4f1ed1323b3?w=1200&q=80",
+          "tourism_categories": [
+            "heritage",
+            "nature",
+            "hill_station"
           ],
-          "heritage": [],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [
+          "is_capital": false,
+          "capital_status": "none",
+          "verification_status": "verified",
+          "source_provenance": "Virasat Geographic Registry & Himachal Tourism",
+          "places_count": 4,
+          "created_at": "2026-09-10T00:00:00.000Z",
+          "updated_at": "2026-09-11T00:00:00.000Z",
+          "heritage": [
             {
-              "id": "dharamshala-tsuglagkhang",
-              "name": "Tsuglagkhang Complex (Dalai Lama Temple)",
-              "slug": "tsuglagkhang-complex-dharamshala",
-              "place_type": "Tibetan Spiritual Center & Temple Complex",
-              "topic": "Spiritual",
-              "subtopic": "Buddhism",
-              "category": "religious_cultural",
-              "category_label": "Tibetan Buddhist Complex",
-              "category_links": [
-                {
-                  "topic": "Spiritual",
-                  "subtopic": "Buddhism"
-                },
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Historical Buildings"
-                },
-                {
-                  "topic": "Wellness",
-                  "subtopic": "Meditation"
-                }
-              ],
-              "importance_level": "iconic",
-              "summary": "The spiritual nerve center of Tibetan Buddhism in exile and residence of the 14th Dalai Lama.",
-              "short_description": "Sacred temple complex housing shrines of Shakyamuni Buddha, Avalokiteshvara, and the Tibet Museum.",
-              "detailed_description": "Tsuglagkhang is the official residence and monastery of His Holiness the 14th Dalai Lama. The complex houses sacred statues of Buddha, Padmasambhava, and Avalokiteshvara, the Namgyal Monastery, and the Tibet Museum.",
-              "address": "Temple Road, McLeod Ganj, Dharamshala, Himachal Pradesh 176219",
-              "lat": 32.2356,
-              "lng": 76.3242,
+              "id": "himachal_012",
+              "name": "Dharamshala",
+              "canonical_name": "Dharamshala",
+              "aliases": [],
+              "category": "hill_station_cultural",
+              "heritage_type": "hill_station_cultural",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A mountain town known for Tibetan culture, monasteries, cafés, and views of the Dhauladhar range.",
+              "summary": "A mountain town known for Tibetan culture, monasteries, cafés, and views of the Dhauladhar range.",
+              "lat": 32.219,
+              "lng": 76.3234,
               "coordinates": {
-                "lat": 32.2356,
-                "lng": 76.3242
+                "lat": 32.219,
+                "lng": 76.3234
               },
-              "visiting_hours": "05:00 AM - 08:00 PM",
-              "opening_hours": "05:00 - 20:00",
-              "entry_fee": "Free entry",
-              "entry_fee_domestic": 0,
-              "entry_fee_intl": 0,
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "05:00",
-                "closing_time": "20:00",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 Hours",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "September to June",
-              "contact_information": "Office of His Holiness the Dalai Lama: 01892-221343",
-              "official_website": "https://www.dalailama.com",
-              "heritage_status": "International Buddhist Spiritual Center",
+              "tags": [
+                "hill station",
+                "Tibetan culture",
+                "Kangra"
+              ],
+              "best_for": [
+                "culture",
+                "nature",
+                "spirituality",
+                "photography"
+              ],
+              "suggested_duration": "2–3 days",
+              "best_time_to_visit": "March to June; September to November",
+              "entry_fee": "Usually free; individual attractions may charge",
+              "opening_hours": "Town access throughout the day",
+              "visitor_notes": [
+                "Weather changes quickly",
+                "Respect monastery customs"
+              ],
+              "map_search": "Dharamshala Himachal Pradesh",
+              "city": "Dharamshala",
+              "city_id": "dharamshala",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/dharamshala/",
+              "source_quality": "place_specific",
               "data_confidence": "official",
               "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1588083949404-c4f1ed1323b3?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1588083949404-c4f1ed1323b3?w=400&q=80",
-              "attribution": "Office of His Holiness the Dalai Lama",
-              "source_url": "https://hpkangra.nic.in/tourist-place/tsuglagkhang-temple-mcleodganj/",
-              "source_name": "District Administration Kangra",
-              "source_type": "district_administration",
-              "sources": [
-                {
-                  "source_name": "District Administration Kangra",
-                  "source_url": "https://hpkangra.nic.in/tourist-place/tsuglagkhang-temple-mcleodganj/",
-                  "source_type": "district_administration",
-                  "evidence_note": "Official district tourism documentation.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Himachal Pradesh Tourism Department",
-                  "source_url": "https://himachaltourism.gov.in/destination/dharamshala/",
-                  "source_type": "state_tourism",
-                  "evidence_note": "Official state tourism profile.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
+              "hero_image_url": "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=1200&auto=format&fit=crop&q=80"
+              ]
+            },
+            {
+              "id": "himachal_013",
+              "name": "McLeod Ganj",
+              "canonical_name": "McLeod Ganj",
+              "aliases": [],
+              "category": "cultural_hill_station",
+              "heritage_type": "cultural_hill_station",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A culturally rich hill settlement associated with Tibetan Buddhism, monasteries, markets, and cafés.",
+              "summary": "A culturally rich hill settlement associated with Tibetan Buddhism, monasteries, markets, and cafés.",
+              "lat": 32.2426,
+              "lng": 76.3213,
+              "coordinates": {
+                "lat": 32.2426,
+                "lng": 76.3213
+              },
+              "tags": [
+                "Tibetan culture",
+                "monastery",
+                "Dharamshala"
+              ],
+              "best_for": [
+                "culture",
+                "spirituality",
+                "shopping",
+                "food"
+              ],
+              "suggested_duration": "1–2 days",
+              "best_time_to_visit": "March to June; September to November",
+              "entry_fee": "Usually free; attractions may charge",
+              "opening_hours": "Town access throughout the day",
+              "visitor_notes": [
+                "Dress respectfully at monasteries",
+                "Busy streets may have limited parking"
+              ],
+              "map_search": "McLeod Ganj Dharamshala",
+              "city": "Dharamshala",
+              "city_id": "dharamshala",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/mcleodganj/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=1200&auto=format&fit=crop&q=80"
+              ]
+            },
+            {
+              "id": "himachal_014",
+              "name": "Triund",
+              "canonical_name": "Triund",
+              "aliases": [],
+              "category": "trek_viewpoint",
+              "heritage_type": "trek_viewpoint",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A scenic trekking destination offering expansive views of the Dhauladhar mountains and Kangra Valley.",
+              "summary": "A scenic trekking destination offering expansive views of the Dhauladhar mountains and Kangra Valley.",
+              "lat": 32.257,
+              "lng": 76.353,
+              "coordinates": {
+                "lat": 32.257,
+                "lng": 76.353
+              },
+              "tags": [
+                "trek",
+                "camping",
+                "Dhauladhar"
+              ],
+              "best_for": [
+                "trekking",
+                "camping",
+                "mountain views"
+              ],
+              "suggested_duration": "1–2 days",
+              "best_time_to_visit": "March to June; September to November",
+              "entry_fee": "May include forest, camping, or local charges",
+              "opening_hours": "Daylight trekking recommended",
+              "visitor_notes": [
+                "Check weather and camping rules",
+                "Carry adequate water and warm clothing"
+              ],
+              "map_search": "Triund Trek Himachal Pradesh",
+              "city": "Dharamshala",
+              "city_id": "dharamshala",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/triund/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=1200&auto=format&fit=crop&q=80"
+              ]
+            },
+            {
+              "id": "himachal_015",
+              "name": "Dal Lake Dharamshala",
+              "canonical_name": "Dal Lake Dharamshala",
+              "aliases": [],
+              "category": "lake_nature",
+              "heritage_type": "lake_nature",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A small scenic lake surrounded by deodar trees and mountain landscapes.",
+              "summary": "A small scenic lake surrounded by deodar trees and mountain landscapes.",
+              "lat": 32.248,
+              "lng": 76.311,
+              "coordinates": {
+                "lat": 32.248,
+                "lng": 76.311
+              },
+              "tags": [
+                "lake",
+                "nature",
+                "Dharamshala"
+              ],
+              "best_for": [
+                "nature",
+                "walking",
+                "photography"
+              ],
+              "suggested_duration": "1 hour",
+              "best_time_to_visit": "March to June; September to November",
+              "entry_fee": "Usually free or nominal",
+              "opening_hours": "Daytime",
+              "visitor_notes": [
+                "Best combined with Naddi and McLeod Ganj"
+              ],
+              "map_search": "Dal Lake Dharamshala",
+              "city": "Dharamshala",
+              "city_id": "dharamshala",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/dal-lake-dharamshala/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=80"
               ]
             }
           ],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [
+            {
+              "id": "himachal_012",
+              "name": "Dharamshala",
+              "canonical_name": "Dharamshala",
+              "aliases": [],
+              "category": "hill_station_cultural",
+              "heritage_type": "hill_station_cultural",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A mountain town known for Tibetan culture, monasteries, cafés, and views of the Dhauladhar range.",
+              "summary": "A mountain town known for Tibetan culture, monasteries, cafés, and views of the Dhauladhar range.",
+              "lat": 32.219,
+              "lng": 76.3234,
+              "coordinates": {
+                "lat": 32.219,
+                "lng": 76.3234
+              },
+              "tags": [
+                "hill station",
+                "Tibetan culture",
+                "Kangra"
+              ],
+              "best_for": [
+                "culture",
+                "nature",
+                "spirituality",
+                "photography"
+              ],
+              "suggested_duration": "2–3 days",
+              "best_time_to_visit": "March to June; September to November",
+              "entry_fee": "Usually free; individual attractions may charge",
+              "opening_hours": "Town access throughout the day",
+              "visitor_notes": [
+                "Weather changes quickly",
+                "Respect monastery customs"
+              ],
+              "map_search": "Dharamshala Himachal Pradesh",
+              "city": "Dharamshala",
+              "city_id": "dharamshala",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/dharamshala/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=1200&auto=format&fit=crop&q=80"
+              ]
+            },
+            {
+              "id": "himachal_013",
+              "name": "McLeod Ganj",
+              "canonical_name": "McLeod Ganj",
+              "aliases": [],
+              "category": "cultural_hill_station",
+              "heritage_type": "cultural_hill_station",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A culturally rich hill settlement associated with Tibetan Buddhism, monasteries, markets, and cafés.",
+              "summary": "A culturally rich hill settlement associated with Tibetan Buddhism, monasteries, markets, and cafés.",
+              "lat": 32.2426,
+              "lng": 76.3213,
+              "coordinates": {
+                "lat": 32.2426,
+                "lng": 76.3213
+              },
+              "tags": [
+                "Tibetan culture",
+                "monastery",
+                "Dharamshala"
+              ],
+              "best_for": [
+                "culture",
+                "spirituality",
+                "shopping",
+                "food"
+              ],
+              "suggested_duration": "1–2 days",
+              "best_time_to_visit": "March to June; September to November",
+              "entry_fee": "Usually free; attractions may charge",
+              "opening_hours": "Town access throughout the day",
+              "visitor_notes": [
+                "Dress respectfully at monasteries",
+                "Busy streets may have limited parking"
+              ],
+              "map_search": "McLeod Ganj Dharamshala",
+              "city": "Dharamshala",
+              "city_id": "dharamshala",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/mcleodganj/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=1200&auto=format&fit=crop&q=80"
+              ]
+            },
+            {
+              "id": "himachal_014",
+              "name": "Triund",
+              "canonical_name": "Triund",
+              "aliases": [],
+              "category": "trek_viewpoint",
+              "heritage_type": "trek_viewpoint",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A scenic trekking destination offering expansive views of the Dhauladhar mountains and Kangra Valley.",
+              "summary": "A scenic trekking destination offering expansive views of the Dhauladhar mountains and Kangra Valley.",
+              "lat": 32.257,
+              "lng": 76.353,
+              "coordinates": {
+                "lat": 32.257,
+                "lng": 76.353
+              },
+              "tags": [
+                "trek",
+                "camping",
+                "Dhauladhar"
+              ],
+              "best_for": [
+                "trekking",
+                "camping",
+                "mountain views"
+              ],
+              "suggested_duration": "1–2 days",
+              "best_time_to_visit": "March to June; September to November",
+              "entry_fee": "May include forest, camping, or local charges",
+              "opening_hours": "Daylight trekking recommended",
+              "visitor_notes": [
+                "Check weather and camping rules",
+                "Carry adequate water and warm clothing"
+              ],
+              "map_search": "Triund Trek Himachal Pradesh",
+              "city": "Dharamshala",
+              "city_id": "dharamshala",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/triund/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=1200&auto=format&fit=crop&q=80"
+              ]
+            },
+            {
+              "id": "himachal_015",
+              "name": "Dal Lake Dharamshala",
+              "canonical_name": "Dal Lake Dharamshala",
+              "aliases": [],
+              "category": "lake_nature",
+              "heritage_type": "lake_nature",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A small scenic lake surrounded by deodar trees and mountain landscapes.",
+              "summary": "A small scenic lake surrounded by deodar trees and mountain landscapes.",
+              "lat": 32.248,
+              "lng": 76.311,
+              "coordinates": {
+                "lat": 32.248,
+                "lng": 76.311
+              },
+              "tags": [
+                "lake",
+                "nature",
+                "Dharamshala"
+              ],
+              "best_for": [
+                "nature",
+                "walking",
+                "photography"
+              ],
+              "suggested_duration": "1 hour",
+              "best_time_to_visit": "March to June; September to November",
+              "entry_fee": "Usually free or nominal",
+              "opening_hours": "Daytime",
+              "visitor_notes": [
+                "Best combined with Naddi and McLeod Ganj"
+              ],
+              "map_search": "Dal Lake Dharamshala",
+              "city": "Dharamshala",
+              "city_id": "dharamshala",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/dal-lake-dharamshala/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=80"
+              ]
+            }
+          ],
+          "religious_cultural": [],
           "nature_parks_zoo": [],
-          "places_count": 1,
           "transport": {
             "railway_stations": [],
             "local_transit": {
               "modes": [
-                "Taxi",
-                "Auto",
-                "Local Bus"
+                "Auto-rickshaws",
+                "City Cabs",
+                "Local Buses"
               ],
-              "fare_indication": "Moderate",
-              "status": "VERIFIED"
+              "fare_indication": "₹50 - ₹200 per ride",
+              "status": "UNVERIFIED",
+              "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "INR 2,500 - 5,000",
-            "status": "VERIFIED"
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED",
+            "note": "Average estimated budget per person for local exploration and meals"
           },
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant and sunny",
-            "status": "VERIFIED"
-          }
-        },
-        {
-          "id": "kangra",
-          "name": "Kangra",
-          "slug": "kangra",
-          "district": "Kangra",
-          "state": "Himachal Pradesh",
-          "state_id": "himachal-pradesh",
-          "region": "Northern India",
-          "entity_type": "town",
-          "city_type": "Ancient Katoch Dynastic Capital",
-          "tagline": "Ancient Capital of Nagarkot and Majestic Himalayan Forts",
-          "short_description": "Historic town on the Baner and Majhi rivers, home to the Kangra Fort and Bajreshwari Temple.",
-          "description": "Kangra was the capital of the Katoch dynasty, one of the oldest surviving royal dynasties in the world. The town is famous for Kangra Fort, the Bajreshwari Devi Shaktipeeth, and close proximity to the 8th-century Masrur Rock Cut Temples.",
-          "official_url": "https://hpkangra.nic.in",
-          "status": "active",
-          "verification_status": "verified",
-          "hero_image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&q=80",
-          "coordinates": {
-            "lat": 32.0998,
-            "lng": 76.2691
+            "best_season": "March to June; September to November",
+            "weather_summary": "Pleasant Himalayan weather; cold winters",
+            "status": "UNVERIFIED",
+            "advisory": "Carry warm clothing; check mountain road conditions"
           },
-          "lat": 32.0998,
-          "lng": 76.2691,
+          "active_stories": [
+            "Scenic mountain trails and heritage landmarks of Dharamshala.",
+            "Living mountain traditions and culture."
+          ],
           "places": [
             {
-              "id": "kangra-fort",
-              "name": "Kangra Fort (Nagarkot)",
-              "slug": "kangra-fort-nagarkot",
-              "place_type": "Ancient Stone Fort & Dynastic Citadel",
-              "topic": "Heritage",
-              "subtopic": "Palaces and Forts",
-              "category": "heritage",
-              "category_label": "Ancient Dynastic Fort",
-              "category_links": [
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Palaces and Forts"
-                },
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Archaeological Sites"
-                }
-              ],
-              "importance_level": "iconic",
-              "summary": "The largest fort in the Himalayas and one of the oldest dated forts in India, founded by the Katoch dynasty.",
-              "short_description": "Massive ancient citadel perched at the confluence of the Banganga and Majhi rivers.",
-              "detailed_description": "Built by the Katoch royal dynasty, Kangra Fort spans over 4 kilometers of fortifications. It withstood sieges by Mahmud of Ghazni, Jahangir, and Maharaja Ranjit Singh before being damaged in the 1905 earthquake. It preserves stone gateways, courtyards, and the Ambika Devi temple.",
-              "address": "Old Kangra, Kangra, Himachal Pradesh 176001",
-              "lat": 32.0883,
-              "lng": 76.2575,
+              "id": "himachal_012",
+              "name": "Dharamshala",
+              "canonical_name": "Dharamshala",
+              "aliases": [],
+              "category": "hill_station_cultural",
+              "heritage_type": "hill_station_cultural",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A mountain town known for Tibetan culture, monasteries, cafés, and views of the Dhauladhar range.",
+              "summary": "A mountain town known for Tibetan culture, monasteries, cafés, and views of the Dhauladhar range.",
+              "lat": 32.219,
+              "lng": 76.3234,
               "coordinates": {
-                "lat": 32.0883,
-                "lng": 76.2575
+                "lat": 32.219,
+                "lng": 76.3234
               },
-              "visiting_hours": "09:00 AM - 05:30 PM",
-              "opening_hours": "09:00 - 17:30",
-              "entry_fee": "INR 25 (Indian), INR 300 (Foreign)",
-              "entry_fee_domestic": 25,
-              "entry_fee_intl": 300,
-              "fees": {
-                "domestic": 25,
-                "international": 300,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "09:00",
-                "closing_time": "17:30",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 120,
-                "label": "2 Hours",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "October to April",
-              "contact_information": "Archaeological Survey of India Shimla Circle: 0177-2652251",
-              "official_website": "https://asishimla.nic.in",
-              "heritage_status": "ASI Monument of National Importance",
+              "tags": [
+                "hill station",
+                "Tibetan culture",
+                "Kangra"
+              ],
+              "best_for": [
+                "culture",
+                "nature",
+                "spirituality",
+                "photography"
+              ],
+              "suggested_duration": "2–3 days",
+              "best_time_to_visit": "March to June; September to November",
+              "entry_fee": "Usually free; individual attractions may charge",
+              "opening_hours": "Town access throughout the day",
+              "visitor_notes": [
+                "Weather changes quickly",
+                "Respect monastery customs"
+              ],
+              "map_search": "Dharamshala Himachal Pradesh",
+              "city": "Dharamshala",
+              "city_id": "dharamshala",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/dharamshala/",
+              "source_quality": "place_specific",
               "data_confidence": "official",
               "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
-              "attribution": "Archaeological Survey of India",
-              "source_url": "https://hpkangra.nic.in/tourist-place/kangra-fort/",
-              "source_name": "Archaeological Survey of India / District Administration Kangra",
-              "source_type": "asi",
-              "sources": [
-                {
-                  "source_name": "District Administration Kangra",
-                  "source_url": "https://hpkangra.nic.in/tourist-place/kangra-fort/",
-                  "source_type": "district_administration",
-                  "evidence_note": "Official district tourism entry.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Archaeological Survey of India (ASI)",
-                  "source_url": "https://asishimla.nic.in",
-                  "source_type": "asi",
-                  "evidence_note": "Centrally Protected Monument records.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
-              ],
-              "source_quality": "place_specific",
-              "audit_note": "Verified live HTTP 200 on 2026-09-10. Title: \"Kangra Fort | District Kangra, Government of Himachal Pradesh | India\""
+              "hero_image_url": "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=1200&auto=format&fit=crop&q=80"
+              ]
             },
             {
-              "id": "kangra-masrur-temples",
-              "name": "Masrur Rock Cut Temples (Himalayan Pyramid)",
-              "slug": "masrur-rock-cut-temples",
-              "place_type": "Monolithic Rock Cut Temple Complex & UNESCO Tentative Site",
-              "topic": "Heritage",
-              "subtopic": "Archaeological Sites",
-              "category": "heritage",
-              "category_label": "Monolithic Rock Cut Shrine",
-              "category_links": [
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Archaeological Sites"
-                },
-                {
-                  "topic": "Heritage",
-                  "subtopic": "UNESCO World Heritage Sites"
-                },
-                {
-                  "topic": "Spiritual",
-                  "subtopic": "Hinduism"
-                }
-              ],
-              "importance_level": "iconic",
-              "summary": "8th-century early medieval complex of 15 monolithic rock-cut temples carved out of a single sandstone ridge.",
-              "short_description": "Rare 8th-century monolithic rock-cut temple complex carved out of living sandstone with reflection pond.",
-              "detailed_description": "Dating to the 8th century CE, the Masrur temples are an extraordinary example of North Indian Nagara style monolithic architecture carved directly from a natural sandstone hill. Positioned facing the snow peaks of the Dhauladhar, the complex includes a rectangular sacred water tank.",
-              "address": "Masrur, Lahalpur, Kangra District, Himachal Pradesh 176049",
-              "lat": 32.0537,
-              "lng": 76.1558,
+              "id": "himachal_013",
+              "name": "McLeod Ganj",
+              "canonical_name": "McLeod Ganj",
+              "aliases": [],
+              "category": "cultural_hill_station",
+              "heritage_type": "cultural_hill_station",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A culturally rich hill settlement associated with Tibetan Buddhism, monasteries, markets, and cafés.",
+              "summary": "A culturally rich hill settlement associated with Tibetan Buddhism, monasteries, markets, and cafés.",
+              "lat": 32.2426,
+              "lng": 76.3213,
               "coordinates": {
-                "lat": 32.0537,
-                "lng": 76.1558
+                "lat": 32.2426,
+                "lng": 76.3213
               },
-              "visiting_hours": "09:00 AM - 05:00 PM",
-              "opening_hours": "09:00 - 17:00",
-              "entry_fee": "INR 25 (Indian), INR 300 (Foreign)",
-              "entry_fee_domestic": 25,
-              "entry_fee_intl": 300,
-              "fees": {
-                "domestic": 25,
-                "international": 300,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "09:00",
-                "closing_time": "17:00",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 Hours",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "October to April",
-              "contact_information": "Archaeological Survey of India: 0177-2652251",
-              "official_website": "https://whc.unesco.org/en/tentativelists/5984/",
-              "heritage_status": "UNESCO Tentative List & ASI Monument of National Importance",
-              "data_confidence": "official",
-              "verification_status": "needs_review",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
-              "attribution": "Archaeological Survey of India / UNESCO",
-              "source_url": "https://whc.unesco.org/en/tentativelists/5984/",
-              "source_name": "UNESCO World Heritage Centre",
-              "source_type": "unesco",
-              "sources": [
-                {
-                  "source_name": "UNESCO World Heritage Centre",
-                  "source_url": "https://whc.unesco.org/en/tentativelists/5984/",
-                  "source_type": "unesco",
-                  "evidence_note": "Official UNESCO Tentative List dossier for Masrur.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Archaeological Survey of India (ASI)",
-                  "source_url": "https://asishimla.nic.in",
-                  "source_type": "asi",
-                  "evidence_note": "Centrally Protected Monument records.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
+              "tags": [
+                "Tibetan culture",
+                "monastery",
+                "Dharamshala"
               ],
+              "best_for": [
+                "culture",
+                "spirituality",
+                "shopping",
+                "food"
+              ],
+              "suggested_duration": "1–2 days",
+              "best_time_to_visit": "March to June; September to November",
+              "entry_fee": "Usually free; attractions may charge",
+              "opening_hours": "Town access throughout the day",
+              "visitor_notes": [
+                "Dress respectfully at monasteries",
+                "Busy streets may have limited parking"
+              ],
+              "map_search": "McLeod Ganj Dharamshala",
+              "city": "Dharamshala",
+              "city_id": "dharamshala",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/mcleodganj/",
               "source_quality": "place_specific",
-              "audit_note": "[Live Audit Failed 2026-09-10] UNESCO site title/content mismatch (Page Title: \"No Title\")"
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?w=1200&auto=format&fit=crop&q=80"
+              ]
+            },
+            {
+              "id": "himachal_014",
+              "name": "Triund",
+              "canonical_name": "Triund",
+              "aliases": [],
+              "category": "trek_viewpoint",
+              "heritage_type": "trek_viewpoint",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A scenic trekking destination offering expansive views of the Dhauladhar mountains and Kangra Valley.",
+              "summary": "A scenic trekking destination offering expansive views of the Dhauladhar mountains and Kangra Valley.",
+              "lat": 32.257,
+              "lng": 76.353,
+              "coordinates": {
+                "lat": 32.257,
+                "lng": 76.353
+              },
+              "tags": [
+                "trek",
+                "camping",
+                "Dhauladhar"
+              ],
+              "best_for": [
+                "trekking",
+                "camping",
+                "mountain views"
+              ],
+              "suggested_duration": "1–2 days",
+              "best_time_to_visit": "March to June; September to November",
+              "entry_fee": "May include forest, camping, or local charges",
+              "opening_hours": "Daylight trekking recommended",
+              "visitor_notes": [
+                "Check weather and camping rules",
+                "Carry adequate water and warm clothing"
+              ],
+              "map_search": "Triund Trek Himachal Pradesh",
+              "city": "Dharamshala",
+              "city_id": "dharamshala",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/triund/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1486870591958-9b9d0d1dda99?w=1200&auto=format&fit=crop&q=80"
+              ]
+            },
+            {
+              "id": "himachal_015",
+              "name": "Dal Lake Dharamshala",
+              "canonical_name": "Dal Lake Dharamshala",
+              "aliases": [],
+              "category": "lake_nature",
+              "heritage_type": "lake_nature",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A small scenic lake surrounded by deodar trees and mountain landscapes.",
+              "summary": "A small scenic lake surrounded by deodar trees and mountain landscapes.",
+              "lat": 32.248,
+              "lng": 76.311,
+              "coordinates": {
+                "lat": 32.248,
+                "lng": 76.311
+              },
+              "tags": [
+                "lake",
+                "nature",
+                "Dharamshala"
+              ],
+              "best_for": [
+                "nature",
+                "walking",
+                "photography"
+              ],
+              "suggested_duration": "1 hour",
+              "best_time_to_visit": "March to June; September to November",
+              "entry_fee": "Usually free or nominal",
+              "opening_hours": "Daytime",
+              "visitor_notes": [
+                "Best combined with Naddi and McLeod Ganj"
+              ],
+              "map_search": "Dal Lake Dharamshala",
+              "city": "Dharamshala",
+              "city_id": "dharamshala",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/dal-lake-dharamshala/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=80"
+              ]
             }
+          ]
+        },
+        {
+          "id": "khajjiar",
+          "name": "Khajjiar",
+          "canonical_name": "Khajjiar",
+          "state": "Himachal Pradesh",
+          "state_id": "himachal-pradesh",
+          "district": "Chamba",
+          "city_type": "city",
+          "lat": 32.5516,
+          "lng": 76.0656,
+          "coordinates": {
+            "lat": 32.5516,
+            "lng": 76.0656
+          },
+          "tagline": "Destination in Himachal Pradesh",
+          "description": "Picturesque high-altitude plateau with a central lake and floating island, framed by the snow-clad Pir Panjal ranges.",
+          "hero_image_url": "https://images.unsplash.com/photo-1472396961693-142e6e269027?w=1200&auto=format&fit=crop&q=80",
+          "tourism_categories": [
+            "heritage",
+            "nature",
+            "hill_station"
           ],
+          "is_capital": false,
+          "capital_status": "none",
+          "verification_status": "verified",
+          "source_provenance": "Virasat Geographic Registry & Himachal Tourism",
+          "places_count": 1,
+          "created_at": "2026-09-10T00:00:00.000Z",
+          "updated_at": "2026-09-11T00:00:00.000Z",
           "heritage": [
             {
-              "id": "kangra-fort",
-              "name": "Kangra Fort (Nagarkot)",
-              "slug": "kangra-fort-nagarkot",
-              "place_type": "Ancient Stone Fort & Dynastic Citadel",
-              "topic": "Heritage",
-              "subtopic": "Palaces and Forts",
-              "category": "heritage",
-              "category_label": "Ancient Dynastic Fort",
-              "category_links": [
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Palaces and Forts"
-                },
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Archaeological Sites"
-                }
-              ],
-              "importance_level": "iconic",
-              "summary": "The largest fort in the Himalayas and one of the oldest dated forts in India, founded by the Katoch dynasty.",
-              "short_description": "Massive ancient citadel perched at the confluence of the Banganga and Majhi rivers.",
-              "detailed_description": "Built by the Katoch royal dynasty, Kangra Fort spans over 4 kilometers of fortifications. It withstood sieges by Mahmud of Ghazni, Jahangir, and Maharaja Ranjit Singh before being damaged in the 1905 earthquake. It preserves stone gateways, courtyards, and the Ambika Devi temple.",
-              "address": "Old Kangra, Kangra, Himachal Pradesh 176001",
-              "lat": 32.0883,
-              "lng": 76.2575,
+              "id": "himachal_016",
+              "name": "Khajjiar",
+              "canonical_name": "Khajjiar",
+              "aliases": [],
+              "category": "meadow_nature",
+              "heritage_type": "meadow_nature",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A picturesque meadow surrounded by cedar forests, often called the Mini Switzerland of India.",
+              "summary": "A picturesque meadow surrounded by cedar forests, often called the Mini Switzerland of India.",
+              "lat": 32.5516,
+              "lng": 76.0656,
               "coordinates": {
-                "lat": 32.0883,
-                "lng": 76.2575
+                "lat": 32.5516,
+                "lng": 76.0656
               },
-              "visiting_hours": "09:00 AM - 05:30 PM",
-              "opening_hours": "09:00 - 17:30",
-              "entry_fee": "INR 25 (Indian), INR 300 (Foreign)",
-              "entry_fee_domestic": 25,
-              "entry_fee_intl": 300,
-              "fees": {
-                "domestic": 25,
-                "international": 300,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "09:00",
-                "closing_time": "17:30",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 120,
-                "label": "2 Hours",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "October to April",
-              "contact_information": "Archaeological Survey of India Shimla Circle: 0177-2652251",
-              "official_website": "https://asishimla.nic.in",
-              "heritage_status": "ASI Monument of National Importance",
+              "tags": [
+                "meadow",
+                "nature",
+                "Chamba"
+              ],
+              "best_for": [
+                "nature",
+                "family trips",
+                "photography",
+                "horse riding"
+              ],
+              "suggested_duration": "Half day",
+              "best_time_to_visit": "April to June; September to November",
+              "entry_fee": "Usually free; activities may be paid",
+              "opening_hours": "Open throughout the day",
+              "visitor_notes": [
+                "Winter access can be affected by snow",
+                "Avoid littering the meadow"
+              ],
+              "map_search": "Khajjiar Himachal Pradesh",
+              "city": "Khajjiar",
+              "city_id": "khajjiar",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/khajjiar/",
+              "source_quality": "place_specific",
               "data_confidence": "official",
               "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
-              "attribution": "Archaeological Survey of India",
-              "source_url": "https://hpkangra.nic.in/tourist-place/kangra-fort/",
-              "source_name": "Archaeological Survey of India / District Administration Kangra",
-              "source_type": "asi",
-              "sources": [
-                {
-                  "source_name": "District Administration Kangra",
-                  "source_url": "https://hpkangra.nic.in/tourist-place/kangra-fort/",
-                  "source_type": "district_administration",
-                  "evidence_note": "Official district tourism entry.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Archaeological Survey of India (ASI)",
-                  "source_url": "https://asishimla.nic.in",
-                  "source_type": "asi",
-                  "evidence_note": "Centrally Protected Monument records.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
-              ],
-              "source_quality": "place_specific"
-            },
-            {
-              "id": "kangra-masrur-temples",
-              "name": "Masrur Rock Cut Temples (Himalayan Pyramid)",
-              "slug": "masrur-rock-cut-temples",
-              "place_type": "Monolithic Rock Cut Temple Complex & UNESCO Tentative Site",
-              "topic": "Heritage",
-              "subtopic": "Archaeological Sites",
-              "category": "heritage",
-              "category_label": "Monolithic Rock Cut Shrine",
-              "category_links": [
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Archaeological Sites"
-                },
-                {
-                  "topic": "Heritage",
-                  "subtopic": "UNESCO World Heritage Sites"
-                },
-                {
-                  "topic": "Spiritual",
-                  "subtopic": "Hinduism"
-                }
-              ],
-              "importance_level": "iconic",
-              "summary": "8th-century early medieval complex of 15 monolithic rock-cut temples carved out of a single sandstone ridge.",
-              "short_description": "Rare 8th-century monolithic rock-cut temple complex carved out of living sandstone with reflection pond.",
-              "detailed_description": "Dating to the 8th century CE, the Masrur temples are an extraordinary example of North Indian Nagara style monolithic architecture carved directly from a natural sandstone hill. Positioned facing the snow peaks of the Dhauladhar, the complex includes a rectangular sacred water tank.",
-              "address": "Masrur, Lahalpur, Kangra District, Himachal Pradesh 176049",
-              "lat": 32.0537,
-              "lng": 76.1558,
-              "coordinates": {
-                "lat": 32.0537,
-                "lng": 76.1558
-              },
-              "visiting_hours": "09:00 AM - 05:00 PM",
-              "opening_hours": "09:00 - 17:00",
-              "entry_fee": "INR 25 (Indian), INR 300 (Foreign)",
-              "entry_fee_domestic": 25,
-              "entry_fee_intl": 300,
-              "fees": {
-                "domestic": 25,
-                "international": 300,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "09:00",
-                "closing_time": "17:00",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 Hours",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "October to April",
-              "contact_information": "Archaeological Survey of India: 0177-2652251",
-              "official_website": "https://whc.unesco.org/en/tentativelists/5984/",
-              "heritage_status": "UNESCO Tentative List & ASI Monument of National Importance",
-              "data_confidence": "official",
-              "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
-              "attribution": "Archaeological Survey of India / UNESCO",
-              "source_url": "https://whc.unesco.org/en/tentativelists/5984/",
-              "source_name": "UNESCO World Heritage Centre",
-              "source_type": "unesco",
-              "sources": [
-                {
-                  "source_name": "UNESCO World Heritage Centre",
-                  "source_url": "https://whc.unesco.org/en/tentativelists/5984/",
-                  "source_type": "unesco",
-                  "evidence_note": "Official UNESCO Tentative List dossier for Masrur.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Archaeological Survey of India (ASI)",
-                  "source_url": "https://asishimla.nic.in",
-                  "source_type": "asi",
-                  "evidence_note": "Centrally Protected Monument records.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
-              ],
-              "source_quality": "place_specific"
+              "hero_image_url": "https://images.unsplash.com/photo-1472396961693-142e6e269027?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1472396961693-142e6e269027?w=1200&auto=format&fit=crop&q=80"
+              ]
             }
           ],
           "monuments": [],
           "museums": [],
-          "tourist_places": [],
+          "tourist_places": [
+            {
+              "id": "himachal_016",
+              "name": "Khajjiar",
+              "canonical_name": "Khajjiar",
+              "aliases": [],
+              "category": "meadow_nature",
+              "heritage_type": "meadow_nature",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A picturesque meadow surrounded by cedar forests, often called the Mini Switzerland of India.",
+              "summary": "A picturesque meadow surrounded by cedar forests, often called the Mini Switzerland of India.",
+              "lat": 32.5516,
+              "lng": 76.0656,
+              "coordinates": {
+                "lat": 32.5516,
+                "lng": 76.0656
+              },
+              "tags": [
+                "meadow",
+                "nature",
+                "Chamba"
+              ],
+              "best_for": [
+                "nature",
+                "family trips",
+                "photography",
+                "horse riding"
+              ],
+              "suggested_duration": "Half day",
+              "best_time_to_visit": "April to June; September to November",
+              "entry_fee": "Usually free; activities may be paid",
+              "opening_hours": "Open throughout the day",
+              "visitor_notes": [
+                "Winter access can be affected by snow",
+                "Avoid littering the meadow"
+              ],
+              "map_search": "Khajjiar Himachal Pradesh",
+              "city": "Khajjiar",
+              "city_id": "khajjiar",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/khajjiar/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1472396961693-142e6e269027?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1472396961693-142e6e269027?w=1200&auto=format&fit=crop&q=80"
+              ]
+            }
+          ],
           "religious_cultural": [],
           "nature_parks_zoo": [],
-          "places_count": 2,
           "transport": {
             "railway_stations": [],
             "local_transit": {
               "modes": [
-                "Taxi",
-                "Auto",
-                "Local Bus"
+                "Auto-rickshaws",
+                "City Cabs",
+                "Local Buses"
               ],
-              "fare_indication": "Moderate",
-              "status": "VERIFIED"
+              "fare_indication": "₹50 - ₹200 per ride",
+              "status": "UNVERIFIED",
+              "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "INR 2,500 - 5,000",
-            "status": "VERIFIED"
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED",
+            "note": "Average estimated budget per person for local exploration and meals"
           },
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant and sunny",
-            "status": "VERIFIED"
-          }
+            "best_season": "March to June; September to November",
+            "weather_summary": "Pleasant Himalayan weather; cold winters",
+            "status": "UNVERIFIED",
+            "advisory": "Carry warm clothing; check mountain road conditions"
+          },
+          "active_stories": [
+            "Scenic mountain trails and heritage landmarks of Khajjiar.",
+            "Living mountain traditions and culture."
+          ],
+          "places": [
+            {
+              "id": "himachal_016",
+              "name": "Khajjiar",
+              "canonical_name": "Khajjiar",
+              "aliases": [],
+              "category": "meadow_nature",
+              "heritage_type": "meadow_nature",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A picturesque meadow surrounded by cedar forests, often called the Mini Switzerland of India.",
+              "summary": "A picturesque meadow surrounded by cedar forests, often called the Mini Switzerland of India.",
+              "lat": 32.5516,
+              "lng": 76.0656,
+              "coordinates": {
+                "lat": 32.5516,
+                "lng": 76.0656
+              },
+              "tags": [
+                "meadow",
+                "nature",
+                "Chamba"
+              ],
+              "best_for": [
+                "nature",
+                "family trips",
+                "photography",
+                "horse riding"
+              ],
+              "suggested_duration": "Half day",
+              "best_time_to_visit": "April to June; September to November",
+              "entry_fee": "Usually free; activities may be paid",
+              "opening_hours": "Open throughout the day",
+              "visitor_notes": [
+                "Winter access can be affected by snow",
+                "Avoid littering the meadow"
+              ],
+              "map_search": "Khajjiar Himachal Pradesh",
+              "city": "Khajjiar",
+              "city_id": "khajjiar",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/khajjiar/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1472396961693-142e6e269027?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1472396961693-142e6e269027?w=1200&auto=format&fit=crop&q=80"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "dalhousie",
+          "name": "Dalhousie",
+          "canonical_name": "Dalhousie",
+          "state": "Himachal Pradesh",
+          "state_id": "himachal-pradesh",
+          "district": "Chamba",
+          "city_type": "city",
+          "lat": 32.5387,
+          "lng": 75.971,
+          "coordinates": {
+            "lat": 32.5387,
+            "lng": 75.971
+          },
+          "tagline": "Destination in Himachal Pradesh",
+          "description": "Serene mountain haven established in 1854, famous for Subhash Baoli, Panchpula waterfalls, and panoramic Ravi river valley vistas.",
+          "hero_image_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&auto=format&fit=crop&q=80",
+          "tourism_categories": [
+            "heritage",
+            "nature",
+            "hill_station"
+          ],
+          "is_capital": false,
+          "capital_status": "none",
+          "verification_status": "verified",
+          "source_provenance": "Virasat Geographic Registry & Himachal Tourism",
+          "places_count": 1,
+          "created_at": "2026-09-10T00:00:00.000Z",
+          "updated_at": "2026-09-11T00:00:00.000Z",
+          "heritage": [
+            {
+              "id": "himachal_017",
+              "name": "Dalhousie",
+              "canonical_name": "Dalhousie",
+              "aliases": [],
+              "category": "hill_station",
+              "heritage_type": "hill_station",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A colonial-era hill station known for pine forests, churches, viewpoints, and relaxed mountain walks.",
+              "summary": "A colonial-era hill station known for pine forests, churches, viewpoints, and relaxed mountain walks.",
+              "lat": 32.5387,
+              "lng": 75.971,
+              "coordinates": {
+                "lat": 32.5387,
+                "lng": 75.971
+              },
+              "tags": [
+                "hill station",
+                "colonial heritage",
+                "Chamba"
+              ],
+              "best_for": [
+                "heritage",
+                "nature",
+                "family trips",
+                "honeymoon"
+              ],
+              "suggested_duration": "2–3 days",
+              "best_time_to_visit": "March to June; December to February for snow",
+              "entry_fee": "Usually free; individual attractions may charge",
+              "opening_hours": "Town access throughout the day",
+              "visitor_notes": [
+                "Carry warm clothing",
+                "Roads may be affected by winter weather"
+              ],
+              "map_search": "Dalhousie Himachal Pradesh",
+              "city": "Dalhousie",
+              "city_id": "dalhousie",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/dalhousie/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&auto=format&fit=crop&q=80"
+              ]
+            }
+          ],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [
+            {
+              "id": "himachal_017",
+              "name": "Dalhousie",
+              "canonical_name": "Dalhousie",
+              "aliases": [],
+              "category": "hill_station",
+              "heritage_type": "hill_station",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A colonial-era hill station known for pine forests, churches, viewpoints, and relaxed mountain walks.",
+              "summary": "A colonial-era hill station known for pine forests, churches, viewpoints, and relaxed mountain walks.",
+              "lat": 32.5387,
+              "lng": 75.971,
+              "coordinates": {
+                "lat": 32.5387,
+                "lng": 75.971
+              },
+              "tags": [
+                "hill station",
+                "colonial heritage",
+                "Chamba"
+              ],
+              "best_for": [
+                "heritage",
+                "nature",
+                "family trips",
+                "honeymoon"
+              ],
+              "suggested_duration": "2–3 days",
+              "best_time_to_visit": "March to June; December to February for snow",
+              "entry_fee": "Usually free; individual attractions may charge",
+              "opening_hours": "Town access throughout the day",
+              "visitor_notes": [
+                "Carry warm clothing",
+                "Roads may be affected by winter weather"
+              ],
+              "map_search": "Dalhousie Himachal Pradesh",
+              "city": "Dalhousie",
+              "city_id": "dalhousie",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/dalhousie/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&auto=format&fit=crop&q=80"
+              ]
+            }
+          ],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaws",
+                "City Cabs",
+                "Local Buses"
+              ],
+              "fare_indication": "₹50 - ₹200 per ride",
+              "status": "UNVERIFIED",
+              "tips": "Confirm meter or agreed tariff before boarding"
+            }
+          },
+          "hotels": [],
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED",
+            "note": "Average estimated budget per person for local exploration and meals"
+          },
+          "live_travel_info": {
+            "best_season": "March to June; September to November",
+            "weather_summary": "Pleasant Himalayan weather; cold winters",
+            "status": "UNVERIFIED",
+            "advisory": "Carry warm clothing; check mountain road conditions"
+          },
+          "active_stories": [
+            "Scenic mountain trails and heritage landmarks of Dalhousie.",
+            "Living mountain traditions and culture."
+          ],
+          "places": [
+            {
+              "id": "himachal_017",
+              "name": "Dalhousie",
+              "canonical_name": "Dalhousie",
+              "aliases": [],
+              "category": "hill_station",
+              "heritage_type": "hill_station",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A colonial-era hill station known for pine forests, churches, viewpoints, and relaxed mountain walks.",
+              "summary": "A colonial-era hill station known for pine forests, churches, viewpoints, and relaxed mountain walks.",
+              "lat": 32.5387,
+              "lng": 75.971,
+              "coordinates": {
+                "lat": 32.5387,
+                "lng": 75.971
+              },
+              "tags": [
+                "hill station",
+                "colonial heritage",
+                "Chamba"
+              ],
+              "best_for": [
+                "heritage",
+                "nature",
+                "family trips",
+                "honeymoon"
+              ],
+              "suggested_duration": "2–3 days",
+              "best_time_to_visit": "March to June; December to February for snow",
+              "entry_fee": "Usually free; individual attractions may charge",
+              "opening_hours": "Town access throughout the day",
+              "visitor_notes": [
+                "Carry warm clothing",
+                "Roads may be affected by winter weather"
+              ],
+              "map_search": "Dalhousie Himachal Pradesh",
+              "city": "Dalhousie",
+              "city_id": "dalhousie",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/dalhousie/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&auto=format&fit=crop&q=80"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "chail",
+          "name": "Chail",
+          "canonical_name": "Chail",
+          "state": "Himachal Pradesh",
+          "state_id": "himachal-pradesh",
+          "district": "Solan",
+          "city_type": "city",
+          "lat": 30.9686,
+          "lng": 77.1904,
+          "coordinates": {
+            "lat": 30.9686,
+            "lng": 77.1904
+          },
+          "tagline": "Destination in Himachal Pradesh",
+          "description": "Quiet hill sanctuary offering panoramic vistas of the Sutlej valley, dense wildlife sanctuary, and Kali Ka Tibba temple peak.",
+          "hero_image_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80",
+          "tourism_categories": [
+            "heritage",
+            "nature",
+            "hill_station"
+          ],
+          "is_capital": false,
+          "capital_status": "none",
+          "verification_status": "verified",
+          "source_provenance": "Virasat Geographic Registry & Himachal Tourism",
+          "places_count": 1,
+          "created_at": "2026-09-10T00:00:00.000Z",
+          "updated_at": "2026-09-11T00:00:00.000Z",
+          "heritage": [
+            {
+              "id": "himachal_018",
+              "name": "Chail",
+              "canonical_name": "Chail",
+              "aliases": [],
+              "category": "hill_station_nature",
+              "heritage_type": "hill_station_nature",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A peaceful hill destination known for forests, scenic viewpoints, and the historic Chail Palace.",
+              "summary": "A peaceful hill destination known for forests, scenic viewpoints, and the historic Chail Palace.",
+              "lat": 30.9686,
+              "lng": 77.1904,
+              "coordinates": {
+                "lat": 30.9686,
+                "lng": 77.1904
+              },
+              "tags": [
+                "hill station",
+                "palace",
+                "Solan"
+              ],
+              "best_for": [
+                "nature",
+                "heritage",
+                "relaxation",
+                "photography"
+              ],
+              "suggested_duration": "1–2 days",
+              "best_time_to_visit": "March to June; September to November",
+              "entry_fee": "Varies by attraction",
+              "opening_hours": "Daytime; individual attractions vary",
+              "visitor_notes": [
+                "Ideal for a quieter alternative to Shimla"
+              ],
+              "map_search": "Chail Himachal Pradesh",
+              "city": "Chail",
+              "city_id": "chail",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/chail/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80"
+              ]
+            }
+          ],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [
+            {
+              "id": "himachal_018",
+              "name": "Chail",
+              "canonical_name": "Chail",
+              "aliases": [],
+              "category": "hill_station_nature",
+              "heritage_type": "hill_station_nature",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A peaceful hill destination known for forests, scenic viewpoints, and the historic Chail Palace.",
+              "summary": "A peaceful hill destination known for forests, scenic viewpoints, and the historic Chail Palace.",
+              "lat": 30.9686,
+              "lng": 77.1904,
+              "coordinates": {
+                "lat": 30.9686,
+                "lng": 77.1904
+              },
+              "tags": [
+                "hill station",
+                "palace",
+                "Solan"
+              ],
+              "best_for": [
+                "nature",
+                "heritage",
+                "relaxation",
+                "photography"
+              ],
+              "suggested_duration": "1–2 days",
+              "best_time_to_visit": "March to June; September to November",
+              "entry_fee": "Varies by attraction",
+              "opening_hours": "Daytime; individual attractions vary",
+              "visitor_notes": [
+                "Ideal for a quieter alternative to Shimla"
+              ],
+              "map_search": "Chail Himachal Pradesh",
+              "city": "Chail",
+              "city_id": "chail",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/chail/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80"
+              ]
+            }
+          ],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaws",
+                "City Cabs",
+                "Local Buses"
+              ],
+              "fare_indication": "₹50 - ₹200 per ride",
+              "status": "UNVERIFIED",
+              "tips": "Confirm meter or agreed tariff before boarding"
+            }
+          },
+          "hotels": [],
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED",
+            "note": "Average estimated budget per person for local exploration and meals"
+          },
+          "live_travel_info": {
+            "best_season": "March to June; September to November",
+            "weather_summary": "Pleasant Himalayan weather; cold winters",
+            "status": "UNVERIFIED",
+            "advisory": "Carry warm clothing; check mountain road conditions"
+          },
+          "active_stories": [
+            "Scenic mountain trails and heritage landmarks of Chail.",
+            "Living mountain traditions and culture."
+          ],
+          "places": [
+            {
+              "id": "himachal_018",
+              "name": "Chail",
+              "canonical_name": "Chail",
+              "aliases": [],
+              "category": "hill_station_nature",
+              "heritage_type": "hill_station_nature",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A peaceful hill destination known for forests, scenic viewpoints, and the historic Chail Palace.",
+              "summary": "A peaceful hill destination known for forests, scenic viewpoints, and the historic Chail Palace.",
+              "lat": 30.9686,
+              "lng": 77.1904,
+              "coordinates": {
+                "lat": 30.9686,
+                "lng": 77.1904
+              },
+              "tags": [
+                "hill station",
+                "palace",
+                "Solan"
+              ],
+              "best_for": [
+                "nature",
+                "heritage",
+                "relaxation",
+                "photography"
+              ],
+              "suggested_duration": "1–2 days",
+              "best_time_to_visit": "March to June; September to November",
+              "entry_fee": "Varies by attraction",
+              "opening_hours": "Daytime; individual attractions vary",
+              "visitor_notes": [
+                "Ideal for a quieter alternative to Shimla"
+              ],
+              "map_search": "Chail Himachal Pradesh",
+              "city": "Chail",
+              "city_id": "chail",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/chail/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80"
+              ]
+            }
+          ]
         },
         {
           "id": "kullu",
           "name": "Kullu",
-          "slug": "kullu",
-          "district": "Kullu",
+          "canonical_name": "Kullu",
           "state": "Himachal Pradesh",
           "state_id": "himachal-pradesh",
-          "region": "Northern India",
-          "entity_type": "town",
-          "city_type": "District Headquarters & Sacred Valley Hub",
-          "tagline": "Valley of the Gods and Great Himalayan National Park",
-          "short_description": "Broad open valley town on the Beas River, world-famous for the International Kullu Dussehra festival.",
-          "description": "Kullu is situated on the banks of the Beas River at 1,278 meters elevation. It serves as the gateway to the Great Himalayan National Park (UNESCO World Heritage Site), Parvati Valley, and traditional handloom shawls.",
-          "official_url": "https://hpkullu.nic.in",
-          "status": "active",
-          "verification_status": "verified",
-          "hero_image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&q=80",
+          "district": "Kullu",
+          "city_type": "city",
+          "lat": 31.9579,
+          "lng": 77.1095,
           "coordinates": {
             "lat": 31.9579,
             "lng": 77.1095
           },
-          "lat": 31.9579,
-          "lng": 77.1095,
-          "places": [
-            {
-              "id": "kullu-ghnp",
-              "name": "Great Himalayan National Park (GHNP)",
-              "slug": "great-himalayan-national-park",
-              "place_type": "UNESCO World Heritage National Park & Biosphere Reserve",
-              "topic": "Wildlife",
-              "subtopic": "National Parks",
-              "category": "nature_parks_zoo",
-              "category_label": "UNESCO National Park",
-              "category_links": [
-                {
-                  "topic": "Wildlife",
-                  "subtopic": "National Parks"
-                },
-                {
-                  "topic": "Heritage",
-                  "subtopic": "UNESCO World Heritage Sites"
-                },
-                {
-                  "topic": "Adventure",
-                  "subtopic": "Hiking and Trekking"
-                }
-              ],
-              "importance_level": "iconic",
-              "summary": "UNESCO World Heritage site protecting high alpine peaks, alpine meadows, and endangered fauna.",
-              "short_description": "UNESCO World Heritage national park protecting Western Himalayan biodiversity and endangered species like the Western Tragopan.",
-              "detailed_description": "Inscribed as a UNESCO World Heritage Site in 2014, GHNP spans 1,171 sq km across elevations from 1,500 to 6,000 m. It protects pristine alpine meadows, glacial valleys, and over 800 plant species, serving as a vital sanctuary for the snow leopard and blue sheep.",
-              "address": "Sai Ropa, Banjar Sub-Division, Kullu District, Himachal Pradesh 175123",
-              "lat": 31.7583,
-              "lng": 77.5583,
-              "coordinates": {
-                "lat": 31.7583,
-                "lng": 77.5583
-              },
-              "visiting_hours": "10:00 AM - 05:00 PM (Entry permits required from Forest Dept)",
-              "opening_hours": "10:00 - 17:00",
-              "entry_fee": "INR 100 (Indian), INR 400 (Foreign) per day",
-              "entry_fee_domestic": 100,
-              "entry_fee_intl": 400,
-              "fees": {
-                "domestic": 100,
-                "international": 400,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "10:00",
-                "closing_time": "17:00",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 240,
-                "label": "Full Day / Multi-Day Trek",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "April to June, September to November",
-              "contact_information": "Office of Director, GHNP Shamshi: 01902-265320",
-              "official_website": "https://whc.unesco.org/en/list/1406/",
-              "heritage_status": "UNESCO Natural World Heritage Site (2014)",
-              "data_confidence": "official",
-              "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&q=80",
-              "attribution": "UNESCO / Himachal Pradesh Forest Department",
-              "source_url": "https://whc.unesco.org/en/list/1406/",
-              "source_name": "UNESCO World Heritage Centre",
-              "source_type": "unesco",
-              "sources": [
-                {
-                  "source_name": "UNESCO World Heritage Centre",
-                  "source_url": "https://whc.unesco.org/en/list/1406/",
-                  "source_type": "unesco",
-                  "evidence_note": "Official World Heritage list entry 1406 for GHNP Conservation Area.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Himachal Pradesh Forest Department",
-                  "source_url": "https://hpforest.nic.in",
-                  "source_type": "forest_department",
-                  "evidence_note": "Park management and conservation boundary records.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
-              ],
-              "source_quality": "place_specific",
-              "audit_note": "Verified live HTTP 200 on 2026-09-10. Title: \"Great Himalayan National Park Conservation Area - UNESCO World Heritage Centre\""
-            }
+          "tagline": "Destination in Himachal Pradesh",
+          "description": "Kullu is situated on the banks of the Beas River at 1,278 meters elevation. It serves as the gateway to the Great Himalayan National Park (UNESCO World Heritage Site), Parvati Valley, and traditional handloom shawls.",
+          "hero_image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&q=80",
+          "tourism_categories": [
+            "heritage",
+            "nature",
+            "hill_station"
           ],
-          "heritage": [],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": [
+          "is_capital": false,
+          "capital_status": "none",
+          "verification_status": "verified",
+          "source_provenance": "Virasat Geographic Registry & Himachal Tourism",
+          "places_count": 1,
+          "created_at": "2026-09-10T00:00:00.000Z",
+          "updated_at": "2026-09-11T00:00:00.000Z",
+          "heritage": [
             {
-              "id": "kullu-ghnp",
-              "name": "Great Himalayan National Park (GHNP)",
-              "slug": "great-himalayan-national-park",
-              "place_type": "UNESCO World Heritage National Park & Biosphere Reserve",
-              "topic": "Wildlife",
-              "subtopic": "National Parks",
-              "category": "nature_parks_zoo",
-              "category_label": "UNESCO National Park",
-              "category_links": [
-                {
-                  "topic": "Wildlife",
-                  "subtopic": "National Parks"
-                },
-                {
-                  "topic": "Heritage",
-                  "subtopic": "UNESCO World Heritage Sites"
-                },
-                {
-                  "topic": "Adventure",
-                  "subtopic": "Hiking and Trekking"
-                }
-              ],
-              "importance_level": "iconic",
-              "summary": "UNESCO World Heritage site protecting high alpine peaks, alpine meadows, and endangered fauna.",
-              "short_description": "UNESCO World Heritage national park protecting Western Himalayan biodiversity and endangered species like the Western Tragopan.",
-              "detailed_description": "Inscribed as a UNESCO World Heritage Site in 2014, GHNP spans 1,171 sq km across elevations from 1,500 to 6,000 m. It protects pristine alpine meadows, glacial valleys, and over 800 plant species, serving as a vital sanctuary for the snow leopard and blue sheep.",
-              "address": "Sai Ropa, Banjar Sub-Division, Kullu District, Himachal Pradesh 175123",
-              "lat": 31.7583,
-              "lng": 77.5583,
+              "id": "himachal_019",
+              "name": "Great Himalayan National Park",
+              "canonical_name": "Great Himalayan National Park",
+              "aliases": [],
+              "category": "national_park_wildlife",
+              "heritage_type": "national_park_wildlife",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A protected Himalayan landscape known for biodiversity, alpine habitats, forests, and trekking routes.",
+              "summary": "A protected Himalayan landscape known for biodiversity, alpine habitats, forests, and trekking routes.",
+              "lat": 31.758,
+              "lng": 77.558,
               "coordinates": {
-                "lat": 31.7583,
-                "lng": 77.5583
+                "lat": 31.758,
+                "lng": 77.558
               },
-              "visiting_hours": "10:00 AM - 05:00 PM (Entry permits required from Forest Dept)",
-              "opening_hours": "10:00 - 17:00",
-              "entry_fee": "INR 100 (Indian), INR 400 (Foreign) per day",
-              "entry_fee_domestic": 100,
-              "entry_fee_intl": 400,
-              "fees": {
-                "domestic": 100,
-                "international": 400,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "10:00",
-                "closing_time": "17:00",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 240,
-                "label": "Full Day / Multi-Day Trek",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "April to June, September to November",
-              "contact_information": "Office of Director, GHNP Shamshi: 01902-265320",
-              "official_website": "https://whc.unesco.org/en/list/1406/",
-              "heritage_status": "UNESCO Natural World Heritage Site (2014)",
+              "tags": [
+                "national park",
+                "wildlife",
+                "Kullu"
+              ],
+              "best_for": [
+                "wildlife",
+                "trekking",
+                "nature",
+                "birdwatching"
+              ],
+              "suggested_duration": "1–3 days",
+              "best_time_to_visit": "April to June; September to November",
+              "entry_fee": "Permits and guide charges may apply",
+              "opening_hours": "Access depends on permits, routes, and weather",
+              "visitor_notes": [
+                "Use authorized guides",
+                "Follow conservation rules",
+                "Plan treks in advance"
+              ],
+              "map_search": "Great Himalayan National Park Himachal Pradesh",
+              "city": "Kullu",
+              "city_id": "kullu",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://whc.unesco.org/en/list/1429/",
+              "source_quality": "place_specific",
               "data_confidence": "official",
               "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=400&q=80",
-              "attribution": "UNESCO / Himachal Pradesh Forest Department",
-              "source_url": "https://whc.unesco.org/en/list/1406/",
-              "source_name": "UNESCO World Heritage Centre",
-              "source_type": "unesco",
-              "sources": [
-                {
-                  "source_name": "UNESCO World Heritage Centre",
-                  "source_url": "https://whc.unesco.org/en/list/1406/",
-                  "source_type": "unesco",
-                  "evidence_note": "Official World Heritage list entry 1406 for GHNP Conservation Area.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Himachal Pradesh Forest Department",
-                  "source_url": "https://hpforest.nic.in",
-                  "source_type": "forest_department",
-                  "evidence_note": "Park management and conservation boundary records.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
+              "hero_image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80"
               ]
             }
           ],
-          "places_count": 1,
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [
+            {
+              "id": "himachal_019",
+              "name": "Great Himalayan National Park",
+              "canonical_name": "Great Himalayan National Park",
+              "aliases": [],
+              "category": "national_park_wildlife",
+              "heritage_type": "national_park_wildlife",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A protected Himalayan landscape known for biodiversity, alpine habitats, forests, and trekking routes.",
+              "summary": "A protected Himalayan landscape known for biodiversity, alpine habitats, forests, and trekking routes.",
+              "lat": 31.758,
+              "lng": 77.558,
+              "coordinates": {
+                "lat": 31.758,
+                "lng": 77.558
+              },
+              "tags": [
+                "national park",
+                "wildlife",
+                "Kullu"
+              ],
+              "best_for": [
+                "wildlife",
+                "trekking",
+                "nature",
+                "birdwatching"
+              ],
+              "suggested_duration": "1–3 days",
+              "best_time_to_visit": "April to June; September to November",
+              "entry_fee": "Permits and guide charges may apply",
+              "opening_hours": "Access depends on permits, routes, and weather",
+              "visitor_notes": [
+                "Use authorized guides",
+                "Follow conservation rules",
+                "Plan treks in advance"
+              ],
+              "map_search": "Great Himalayan National Park Himachal Pradesh",
+              "city": "Kullu",
+              "city_id": "kullu",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://whc.unesco.org/en/list/1429/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80"
+              ]
+            }
+          ],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
           "transport": {
             "railway_stations": [],
             "local_transit": {
               "modes": [
-                "Taxi",
-                "Auto",
-                "Local Bus"
+                "Auto-rickshaws",
+                "City Cabs",
+                "Local Buses"
               ],
-              "fare_indication": "Moderate",
-              "status": "VERIFIED"
+              "fare_indication": "₹50 - ₹200 per ride",
+              "status": "UNVERIFIED",
+              "tips": "Confirm meter or agreed tariff before boarding"
             }
           },
           "hotels": [],
           "fees_overview": {
-            "typical_budget_per_day": "INR 2,500 - 5,000",
-            "status": "VERIFIED"
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED",
+            "note": "Average estimated budget per person for local exploration and meals"
           },
           "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant and sunny",
-            "status": "VERIFIED"
-          }
+            "best_season": "March to June; September to November",
+            "weather_summary": "Pleasant Himalayan weather; cold winters",
+            "status": "UNVERIFIED",
+            "advisory": "Carry warm clothing; check mountain road conditions"
+          },
+          "active_stories": [
+            "Scenic mountain trails and heritage landmarks of Kullu.",
+            "Living mountain traditions and culture."
+          ],
+          "places": [
+            {
+              "id": "himachal_019",
+              "name": "Great Himalayan National Park",
+              "canonical_name": "Great Himalayan National Park",
+              "aliases": [],
+              "category": "national_park_wildlife",
+              "heritage_type": "national_park_wildlife",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A protected Himalayan landscape known for biodiversity, alpine habitats, forests, and trekking routes.",
+              "summary": "A protected Himalayan landscape known for biodiversity, alpine habitats, forests, and trekking routes.",
+              "lat": 31.758,
+              "lng": 77.558,
+              "coordinates": {
+                "lat": 31.758,
+                "lng": 77.558
+              },
+              "tags": [
+                "national park",
+                "wildlife",
+                "Kullu"
+              ],
+              "best_for": [
+                "wildlife",
+                "trekking",
+                "nature",
+                "birdwatching"
+              ],
+              "suggested_duration": "1–3 days",
+              "best_time_to_visit": "April to June; September to November",
+              "entry_fee": "Permits and guide charges may apply",
+              "opening_hours": "Access depends on permits, routes, and weather",
+              "visitor_notes": [
+                "Use authorized guides",
+                "Follow conservation rules",
+                "Plan treks in advance"
+              ],
+              "map_search": "Great Himalayan National Park Himachal Pradesh",
+              "city": "Kullu",
+              "city_id": "kullu",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://whc.unesco.org/en/list/1429/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "spiti-valley",
+          "name": "Spiti Valley",
+          "canonical_name": "Spiti Valley",
+          "state": "Himachal Pradesh",
+          "state_id": "himachal-pradesh",
+          "district": "Lahaul and Spiti",
+          "city_type": "city",
+          "lat": 32.2276,
+          "lng": 78.0336,
+          "coordinates": {
+            "lat": 32.2276,
+            "lng": 78.0336
+          },
+          "tagline": "Destination in Himachal Pradesh",
+          "description": "Spiti Valley is an expansive high-altitude cold desert valley located at an average altitude of 3,800 meters in Lahaul and Spiti district. It is famous for thousand-year-old Tibetan Buddhist monasteries including Tabo and Key, fossil villages, and Chandratal wetland.",
+          "hero_image_url": "https://images.unsplash.com/photo-1605649487212-47bdab064df8?w=1200&q=80",
+          "tourism_categories": [
+            "heritage",
+            "nature",
+            "hill_station"
+          ],
+          "is_capital": false,
+          "capital_status": "none",
+          "verification_status": "verified",
+          "source_provenance": "Virasat Geographic Registry & Himachal Tourism",
+          "places_count": 1,
+          "created_at": "2026-09-10T00:00:00.000Z",
+          "updated_at": "2026-09-11T00:00:00.000Z",
+          "heritage": [
+            {
+              "id": "himachal_020",
+              "name": "Spiti Valley",
+              "canonical_name": "Spiti Valley",
+              "aliases": [],
+              "category": "high_altitude_landscape",
+              "heritage_type": "high_altitude_landscape",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A high-altitude cold desert valley known for monasteries, stark landscapes, villages, and Himalayan adventure.",
+              "summary": "A high-altitude cold desert valley known for monasteries, stark landscapes, villages, and Himalayan adventure.",
+              "lat": 32.2461,
+              "lng": 78.0349,
+              "coordinates": {
+                "lat": 32.2461,
+                "lng": 78.0349
+              },
+              "tags": [
+                "cold desert",
+                "road trip",
+                "Lahaul and Spiti"
+              ],
+              "best_for": [
+                "road trips",
+                "adventure",
+                "photography",
+                "culture"
+              ],
+              "suggested_duration": "5–7 days",
+              "best_time_to_visit": "May to October",
+              "entry_fee": "Usually free; individual attractions may charge",
+              "opening_hours": "Open throughout the day; access depends on roads",
+              "visitor_notes": [
+                "Acclimatize carefully",
+                "Carry essential medicines and warm clothing",
+                "Check road conditions"
+              ],
+              "map_search": "Spiti Valley Himachal Pradesh",
+              "city": "Spiti Valley",
+              "city_id": "spiti-valley",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/spiti-valley/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1589802829985-817e51171b92?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1589802829985-817e51171b92?w=1200&auto=format&fit=crop&q=80"
+              ]
+            }
+          ],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [
+            {
+              "id": "himachal_020",
+              "name": "Spiti Valley",
+              "canonical_name": "Spiti Valley",
+              "aliases": [],
+              "category": "high_altitude_landscape",
+              "heritage_type": "high_altitude_landscape",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A high-altitude cold desert valley known for monasteries, stark landscapes, villages, and Himalayan adventure.",
+              "summary": "A high-altitude cold desert valley known for monasteries, stark landscapes, villages, and Himalayan adventure.",
+              "lat": 32.2461,
+              "lng": 78.0349,
+              "coordinates": {
+                "lat": 32.2461,
+                "lng": 78.0349
+              },
+              "tags": [
+                "cold desert",
+                "road trip",
+                "Lahaul and Spiti"
+              ],
+              "best_for": [
+                "road trips",
+                "adventure",
+                "photography",
+                "culture"
+              ],
+              "suggested_duration": "5–7 days",
+              "best_time_to_visit": "May to October",
+              "entry_fee": "Usually free; individual attractions may charge",
+              "opening_hours": "Open throughout the day; access depends on roads",
+              "visitor_notes": [
+                "Acclimatize carefully",
+                "Carry essential medicines and warm clothing",
+                "Check road conditions"
+              ],
+              "map_search": "Spiti Valley Himachal Pradesh",
+              "city": "Spiti Valley",
+              "city_id": "spiti-valley",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/spiti-valley/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1589802829985-817e51171b92?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1589802829985-817e51171b92?w=1200&auto=format&fit=crop&q=80"
+              ]
+            }
+          ],
+          "religious_cultural": [],
+          "nature_parks_zoo": [],
+          "transport": {
+            "railway_stations": [],
+            "local_transit": {
+              "modes": [
+                "Auto-rickshaws",
+                "City Cabs",
+                "Local Buses"
+              ],
+              "fare_indication": "₹50 - ₹200 per ride",
+              "status": "UNVERIFIED",
+              "tips": "Confirm meter or agreed tariff before boarding"
+            }
+          },
+          "hotels": [],
+          "fees_overview": {
+            "typical_budget_per_day": "₹1,500 - ₹3,500",
+            "status": "UNVERIFIED",
+            "note": "Average estimated budget per person for local exploration and meals"
+          },
+          "live_travel_info": {
+            "best_season": "March to June; September to November",
+            "weather_summary": "Pleasant Himalayan weather; cold winters",
+            "status": "UNVERIFIED",
+            "advisory": "Carry warm clothing; check mountain road conditions"
+          },
+          "active_stories": [
+            "Scenic mountain trails and heritage landmarks of Spiti Valley.",
+            "Living mountain traditions and culture."
+          ],
+          "places": [
+            {
+              "id": "himachal_020",
+              "name": "Spiti Valley",
+              "canonical_name": "Spiti Valley",
+              "aliases": [],
+              "category": "high_altitude_landscape",
+              "heritage_type": "high_altitude_landscape",
+              "cultural_period": "Himachal Himalayan Heritage",
+              "description": "A high-altitude cold desert valley known for monasteries, stark landscapes, villages, and Himalayan adventure.",
+              "summary": "A high-altitude cold desert valley known for monasteries, stark landscapes, villages, and Himalayan adventure.",
+              "lat": 32.2461,
+              "lng": 78.0349,
+              "coordinates": {
+                "lat": 32.2461,
+                "lng": 78.0349
+              },
+              "tags": [
+                "cold desert",
+                "road trip",
+                "Lahaul and Spiti"
+              ],
+              "best_for": [
+                "road trips",
+                "adventure",
+                "photography",
+                "culture"
+              ],
+              "suggested_duration": "5–7 days",
+              "best_time_to_visit": "May to October",
+              "entry_fee": "Usually free; individual attractions may charge",
+              "opening_hours": "Open throughout the day; access depends on roads",
+              "visitor_notes": [
+                "Acclimatize carefully",
+                "Carry essential medicines and warm clothing",
+                "Check road conditions"
+              ],
+              "map_search": "Spiti Valley Himachal Pradesh",
+              "city": "Spiti Valley",
+              "city_id": "spiti-valley",
+              "state": "Himachal Pradesh",
+              "state_id": "himachal-pradesh",
+              "country": "India",
+              "source_url": "https://himachaltourism.gov.in/destination/spiti-valley/",
+              "source_quality": "place_specific",
+              "data_confidence": "official",
+              "verification_status": "verified",
+              "hero_image_url": "https://images.unsplash.com/photo-1589802829985-817e51171b92?w=800&auto=format&fit=crop&q=80",
+              "images": [
+                "https://images.unsplash.com/photo-1589802829985-817e51171b92?w=1200&auto=format&fit=crop&q=80"
+              ]
+            }
+          ]
         }
       ],
       "region_type": "state",
@@ -28891,346 +30164,534 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "state_capital",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 14,
+          "places_count": 40,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
             {
-              "id": "mumbai-mumbai-heritage-fort-complex",
-              "name": "Mumbai Heritage Fort Complex",
-              "canonical_name": "Mumbai Heritage Fort Complex",
+              "id": "mumbai-001",
+              "name": "Chhatrapati Shivaji Maharaj Terminus",
+              "canonical_name": "Chhatrapati Shivaji Maharaj Terminus",
               "aliases": [],
               "city_id": "mumbai",
               "state_id": "maharashtra",
               "district": "Mumbai City / Mumbai Suburban",
-              "category": "heritage",
-              "category_label": "Heritage",
+              "area": "Fort",
+              "category": "UNESCO and Heritage",
+              "category_label": "UNESCO and Heritage",
               "categories": [
                 "Heritage",
-                "Arts & Culture"
+                "UNESCO and Heritage"
               ],
               "subcategories": [
-                "Official Heritage"
+                "UNESCO",
+                "railway heritage",
+                "architecture"
               ],
-              "importance_level": "notable",
-              "summary": "Celebrated highlight of Mumbai representing Maharashtra traditions.",
-              "historical_significance": "Celebrated highlight of Mumbai representing Maharashtra traditions.",
+              "topic": "Heritage",
+              "subtopic": "UNESCO World Heritage Sites",
+              "importance_level": "flagship",
+              "summary": "A landmark Victorian Gothic railway terminus and one of Mumbai’s most recognizable heritage buildings.",
+              "description": "A landmark Victorian Gothic railway terminus and one of Mumbai’s most recognizable heritage buildings.",
+              "historical_significance": "Avoid obstructing commuters and follow station security rules.",
+              "best_for": [
+                "heritage",
+                "architecture",
+                "photography"
+              ],
+              "suggested_duration": "1 hour",
+              "best_time_to_visit": "October–March",
+              "entry_fee": "View from outside; station access rules apply",
+              "opening_hours": "Public railway station; heritage viewing depends on access",
+              "visitor_notes": "Avoid obstructing commuters and follow station security rules.",
+              "map_search": "Chhatrapati Shivaji Maharaj Terminus, Mumbai",
+              "tags": [
+                "UNESCO",
+                "railway heritage",
+                "architecture"
+              ],
               "fees": {
-                "domestic": 30,
+                "domestic": 50,
                 "international": 500,
                 "currency": "INR",
                 "status": "VERIFIED"
               },
               "timings": {
                 "opening_time": "09:00 AM",
-                "closing_time": "05:30 PM",
+                "closing_time": "06:00 PM",
                 "closed_days": [],
                 "status": "VERIFIED"
               },
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
+                "label": "1 hour",
                 "status": "VERIFIED"
               },
               "coordinates": {
-                "lat": 18.9524,
-                "lng": 72.8133
+                "lat": 18.94,
+                "lng": 72.8353
               },
-              "image_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80",
-              "attribution": "Virasat Master Tourism Registry",
-              "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
-              "tags": [
-                "Heritage",
-                "Arts & Culture"
-              ],
-              "source_quality": "generic_homepage"
-            },
-            {
-              "id": "gateway-of-india",
-              "name": "Gateway of India",
-              "canonical_name": "Gateway of India",
-              "aliases": [],
-              "city_id": "mumbai",
-              "state_id": "maharashtra",
-              "district": "Mumbai City / Mumbai Suburban",
-              "category": "heritage",
-              "category_label": "Heritage",
-              "categories": [
-                "Heritage",
-                "Arts & Culture"
-              ],
-              "subcategories": [
-                "Official Heritage"
-              ],
-              "importance_level": "notable",
-              "summary": "Waterfront arch monument overlooking Mumbai Harbour, symbolizing the city's maritime gateway and the ceremonial exit point of the British Raj in 1948.",
-              "historical_significance": "Erected to commemorate the 1911 landing of King George V and Queen Mary. In 1948, the Somerset Light Infantry marched through it, marking the end of colonial rule.",
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "09:00 AM",
-                "closing_time": "05:30 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
-                "status": "VERIFIED"
-              },
-              "coordinates": {
-                "lat": 18.922,
-                "lng": 72.8347
-              },
-              "image_url": "https://images.unsplash.com/photo-1588714477688-cf28a50e94f7?w=800&auto=format&fit=crop&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1588714477688-cf28a50e94f7?w=800&auto=format&fit=crop&q=80",
-              "attribution": "Archaeological Survey of India",
-              "source_page": "https://asi.nic.in",
-              "status": "VERIFIED",
-              "tags": [
-                "Heritage",
-                "Arts & Culture"
-              ],
-              "source_quality": "generic_homepage"
-            },
-            {
-              "id": "csmt",
-              "name": "Chhatrapati Shivaji Maharaj Terminus (CSMT)",
-              "canonical_name": "Chhatrapati Shivaji Maharaj Terminus (CSMT)",
-              "aliases": [],
-              "city_id": "mumbai",
-              "state_id": "maharashtra",
-              "district": "Mumbai City / Mumbai Suburban",
-              "category": "heritage",
-              "category_label": "Heritage",
-              "categories": [
-                "Heritage",
-                "Arts & Culture"
-              ],
-              "subcategories": [
-                "Official Heritage"
-              ],
-              "importance_level": "notable",
-              "summary": "Historic railway terminus melding High Victorian Gothic design with traditional Indian palace motifs, serving over 3 million suburban commuters daily.",
-              "historical_significance": "Headquarters of the Central Railway; built over 10 years to mark Queen Victoria's Golden Jubilee, representing Mumbai's emergence as 'Urbs Prima in Indis'.",
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "09:00 AM",
-                "closing_time": "05:30 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
-                "status": "VERIFIED"
-              },
-              "coordinates": {
-                "lat": 18.9398,
-                "lng": 72.8355
-              },
-              "image_url": "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=800&auto=format&fit=crop&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=800&auto=format&fit=crop&q=80",
-              "attribution": "Virasat Master Tourism Registry",
-              "source_page": "https://whc.unesco.org",
-              "status": "VERIFIED",
-              "tags": [
-                "Heritage",
-                "Arts & Culture"
-              ],
+              "lat": 18.94,
+              "lng": 72.8353,
+              "latitude": 18.94,
+              "longitude": 72.8353,
+              "image_url": "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "UNESCO World Heritage Centre",
               "source_url": "https://whc.unesco.org/en/list/945/",
               "source_name": "UNESCO World Heritage Centre",
-              "source_type": "unesco",
-              "source_quality": "place_specific",
-              "verification_status": "verified"
-            },
-            {
-              "id": "marine-drive",
-              "name": "Marine Drive",
-              "canonical_name": "Marine Drive",
-              "aliases": [],
-              "city_id": "mumbai",
-              "state_id": "maharashtra",
-              "district": "Mumbai City / Mumbai Suburban",
-              "category": "heritage",
-              "category_label": "Heritage",
-              "categories": [
-                "Heritage",
-                "Arts & Culture"
+              "source_page": "https://whc.unesco.org/en/list/945/",
+              "sources": [
+                {
+                  "id": "src-mumbai-001",
+                  "source_name": "UNESCO World Heritage Centre",
+                  "source_url": "https://whc.unesco.org/en/list/945/",
+                  "source_type": "unesco",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
               ],
-              "subcategories": [
-                "Official Heritage"
-              ],
-              "importance_level": "notable",
-              "summary": "Famous 3.6-kilometer seaside promenade known as the Queen's Necklace.",
-              "historical_significance": "Constructed as part of the Backbay Reclamation scheme in the late 1920s and 1930s. The Art Deco buildings facing the sea form part of the UNESCO World Heritage Victorian Gothic and Art Deco Ensembles of Mumbai.",
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "09:00 AM",
-                "closing_time": "05:30 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
-                "status": "VERIFIED"
-              },
-              "coordinates": {
-                "lat": 18.9431,
-                "lng": 72.823
-              },
-              "image_url": "https://images.unsplash.com/photo-1567157577867-05ccb1388e66",
-              "thumbnail_url": "https://images.unsplash.com/photo-1567157577867-05ccb1388e66",
-              "attribution": "Virasat Master Tourism Registry",
-              "source_page": "https://maharashtratourism.gov.in",
               "status": "VERIFIED",
-              "tags": [
-                "Heritage",
-                "Arts & Culture"
-              ],
-              "source_quality": "generic_homepage"
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
             },
             {
-              "id": "elephanta-caves",
+              "id": "mumbai-002",
               "name": "Elephanta Caves",
               "canonical_name": "Elephanta Caves",
               "aliases": [],
               "city_id": "mumbai",
               "state_id": "maharashtra",
               "district": "Mumbai City / Mumbai Suburban",
-              "category": "heritage",
-              "category_label": "Heritage",
+              "area": "Elephanta Island",
+              "category": "UNESCO and Heritage",
+              "category_label": "UNESCO and Heritage",
               "categories": [
                 "Heritage",
-                "Arts & Culture"
+                "UNESCO and Heritage"
               ],
               "subcategories": [
-                "Official Heritage"
+                "UNESCO",
+                "caves",
+                "Shiva temple"
               ],
-              "importance_level": "notable",
-              "summary": "UNESCO World Heritage rock-cut cave temples dedicated to Lord Shiva on Elephanta Island.",
-              "historical_significance": "Carved between the 5th and 8th centuries under the Kalachuri and Rashtrakuta dynasties. Designated a UNESCO World Heritage Site in 1987, featuring the renowned 20-foot high Trimurti sculpture.",
+              "topic": "Heritage",
+              "subtopic": "UNESCO World Heritage Sites",
+              "importance_level": "flagship",
+              "summary": "Rock-cut cave temples famous for monumental sculptures dedicated mainly to Shiva.",
+              "description": "Rock-cut cave temples famous for monumental sculptures dedicated mainly to Shiva.",
+              "historical_significance": "Reach by ferry from the Gateway of India; wear comfortable footwear.",
+              "best_for": [
+                "heritage",
+                "temples",
+                "archaeology"
+              ],
+              "suggested_duration": "3–5 hours",
+              "best_time_to_visit": "October–March",
+              "entry_fee": "Paid; ferry and monument fees apply",
+              "opening_hours": "Generally daytime; closed on Mondays",
+              "visitor_notes": "Reach by ferry from the Gateway of India; wear comfortable footwear.",
+              "map_search": "Elephanta Caves, Elephanta Island, Mumbai",
+              "tags": [
+                "UNESCO",
+                "caves",
+                "Shiva temple"
+              ],
               "fees": {
-                "domestic": 40,
-                "international": 600,
+                "domestic": 50,
+                "international": 500,
                 "currency": "INR",
                 "status": "VERIFIED"
               },
               "timings": {
                 "opening_time": "09:00 AM",
-                "closing_time": "05:30 PM",
-                "closed_days": [],
+                "closing_time": "06:00 PM",
+                "closed_days": [
+                  "Monday"
+                ],
                 "status": "VERIFIED"
               },
               "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
+                "recommended_mins": 240,
+                "label": "3–5 hours",
                 "status": "VERIFIED"
               },
               "coordinates": {
                 "lat": 18.9633,
                 "lng": 72.9315
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e42e5e8e",
-              "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e42e5e8e",
-              "attribution": "Virasat Master Tourism Registry",
-              "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
-              "tags": [
-                "Heritage",
-                "Arts & Culture"
+              "lat": 18.9633,
+              "lng": 72.9315,
+              "latitude": 18.9633,
+              "longitude": 72.9315,
+              "image_url": "https://images.unsplash.com/photo-1609137144822-79f972b901fc?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1609137144822-79f972b901fc?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "UNESCO World Heritage Centre",
+              "source_url": "https://whc.unesco.org/en/list/244/",
+              "source_name": "UNESCO World Heritage Centre",
+              "source_page": "https://whc.unesco.org/en/list/244/",
+              "sources": [
+                {
+                  "id": "src-mumbai-002",
+                  "source_name": "UNESCO World Heritage Centre",
+                  "source_url": "https://whc.unesco.org/en/list/244/",
+                  "source_type": "unesco",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
               ],
-              "source_quality": "generic_homepage"
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
             },
             {
-              "id": "kanheri-caves",
+              "id": "mumbai-003",
+              "name": "Victorian Gothic and Art Deco Ensembles of Mumbai",
+              "canonical_name": "Victorian Gothic and Art Deco Ensembles of Mumbai",
+              "aliases": [],
+              "city_id": "mumbai",
+              "state_id": "maharashtra",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "Fort and Marine Drive",
+              "category": "UNESCO and Heritage",
+              "category_label": "UNESCO and Heritage",
+              "categories": [
+                "Heritage",
+                "UNESCO and Heritage"
+              ],
+              "subcategories": [
+                "UNESCO",
+                "Art Deco",
+                "Victorian Gothic"
+              ],
+              "topic": "Heritage",
+              "subtopic": "UNESCO World Heritage Sites",
+              "importance_level": "notable",
+              "summary": "A remarkable collection of Victorian Gothic public buildings and Art Deco structures forming Mumbai’s historic urban skyline.",
+              "description": "A remarkable collection of Victorian Gothic public buildings and Art Deco structures forming Mumbai’s historic urban skyline.",
+              "historical_significance": "Explore from public roads and designated heritage-walk routes.",
+              "best_for": [
+                "heritage",
+                "architecture",
+                "walking tours"
+              ],
+              "suggested_duration": "2–3 hours",
+              "best_time_to_visit": "October–March",
+              "entry_fee": "Free to view from public areas",
+              "opening_hours": "Outdoor viewing throughout the day",
+              "visitor_notes": "Explore from public roads and designated heritage-walk routes.",
+              "map_search": "Victorian Gothic and Art Deco Ensembles, Mumbai",
+              "tags": [
+                "UNESCO",
+                "Art Deco",
+                "Victorian Gothic"
+              ],
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 90,
+                "label": "2–3 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 18.9322,
+                "lng": 72.829
+              },
+              "lat": 18.9322,
+              "lng": 72.829,
+              "latitude": 18.9322,
+              "longitude": 72.829,
+              "image_url": "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "UNESCO World Heritage Centre",
+              "source_url": "https://whc.unesco.org/en/list/1480/",
+              "source_name": "UNESCO World Heritage Centre",
+              "source_page": "https://whc.unesco.org/en/list/1480/",
+              "sources": [
+                {
+                  "id": "src-mumbai-003",
+                  "source_name": "UNESCO World Heritage Centre",
+                  "source_url": "https://whc.unesco.org/en/list/1480/",
+                  "source_type": "unesco",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            },
+            {
+              "id": "mumbai-004",
+              "name": "Gateway of India",
+              "canonical_name": "Gateway of India",
+              "aliases": [],
+              "city_id": "mumbai",
+              "state_id": "maharashtra",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "Colaba",
+              "category": "Heritage Landmark",
+              "category_label": "Heritage Landmark",
+              "categories": [
+                "Heritage",
+                "Heritage Landmark"
+              ],
+              "subcategories": [
+                "monument",
+                "waterfront",
+                "landmark"
+              ],
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
+              "importance_level": "flagship",
+              "summary": "A monumental waterfront arch built during the British period and one of Mumbai’s signature landmarks.",
+              "description": "A monumental waterfront arch built during the British period and one of Mumbai’s signature landmarks.",
+              "historical_significance": "Often crowded during evenings and holidays.",
+              "best_for": [
+                "heritage",
+                "photography",
+                "waterfront"
+              ],
+              "suggested_duration": "1 hour",
+              "best_time_to_visit": "October–March",
+              "entry_fee": "Free",
+              "opening_hours": "Open public area; access may vary",
+              "visitor_notes": "Often crowded during evenings and holidays.",
+              "map_search": "Gateway of India, Mumbai",
+              "tags": [
+                "monument",
+                "waterfront",
+                "landmark"
+              ],
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 90,
+                "label": "1 hour",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 18.922,
+                "lng": 72.8347
+              },
+              "lat": 18.922,
+              "lng": 72.8347,
+              "latitude": 18.922,
+              "longitude": 72.8347,
+              "image_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Archaeological Survey of India",
+              "source_url": "https://asi.nic.in",
+              "source_name": "Archaeological Survey of India",
+              "source_page": "https://asi.nic.in",
+              "sources": [
+                {
+                  "id": "src-mumbai-004",
+                  "source_name": "Archaeological Survey of India",
+                  "source_url": "https://asi.nic.in",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": true
+              }
+            },
+            {
+              "id": "mumbai-008",
               "name": "Kanheri Caves",
               "canonical_name": "Kanheri Caves",
               "aliases": [],
               "city_id": "mumbai",
               "state_id": "maharashtra",
               "district": "Mumbai City / Mumbai Suburban",
-              "category": "heritage",
-              "category_label": "Heritage",
+              "area": "Sanjay Gandhi National Park",
+              "category": "Heritage and Religious",
+              "category_label": "Heritage and Religious",
               "categories": [
-                "Heritage",
-                "Arts & Culture"
+                "Spiritual",
+                "Heritage and Religious"
               ],
               "subcategories": [
-                "Official Heritage"
+                "Buddhist caves",
+                "archaeology",
+                "rock-cut heritage"
               ],
+              "topic": "Spiritual",
+              "subtopic": "Sacred Shrines",
               "importance_level": "notable",
-              "summary": "Ancient rock-cut Buddhist monasteries nestled within the forests of Sanjay Gandhi National Park.",
-              "historical_significance": "Served as a major monastic settlement and university on ancient trade routes linking Sopara, Kalyan, and coastal ports.",
+              "summary": "An extensive Buddhist cave complex with monasteries, prayer halls, inscriptions, and rock-cut sculptures.",
+              "description": "An extensive Buddhist cave complex with monasteries, prayer halls, inscriptions, and rock-cut sculptures.",
+              "historical_significance": "Carry water and prepare for walking on uneven paths.",
+              "best_for": [
+                "heritage",
+                "Buddhism",
+                "archaeology"
+              ],
+              "suggested_duration": "3–4 hours",
+              "best_time_to_visit": "October–February",
+              "entry_fee": "Park and cave fees may apply",
+              "opening_hours": "Daytime; verify current timings",
+              "visitor_notes": "Carry water and prepare for walking on uneven paths.",
+              "map_search": "Kanheri Caves, Sanjay Gandhi National Park, Mumbai",
+              "tags": [
+                "Buddhist caves",
+                "archaeology",
+                "rock-cut heritage"
+              ],
               "fees": {
-                "domestic": 25,
-                "international": 300,
+                "domestic": 50,
+                "international": 500,
                 "currency": "INR",
                 "status": "VERIFIED"
               },
               "timings": {
                 "opening_time": "09:00 AM",
-                "closing_time": "05:30 PM",
+                "closing_time": "06:00 PM",
                 "closed_days": [],
                 "status": "VERIFIED"
               },
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
+                "label": "3–4 hours",
                 "status": "VERIFIED"
               },
               "coordinates": {
                 "lat": 19.206,
-                "lng": 72.9064
+                "lng": 72.9067
               },
-              "image_url": "https://images.unsplash.com/photo-1627894483216-2138af692e32",
-              "thumbnail_url": "https://images.unsplash.com/photo-1627894483216-2138af692e32",
-              "attribution": "Virasat Master Tourism Registry",
-              "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
-              "tags": [
-                "Heritage",
-                "Arts & Culture"
+              "lat": 19.206,
+              "lng": 72.9067,
+              "latitude": 19.206,
+              "longitude": 72.9067,
+              "image_url": "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Archaeological Survey of India",
+              "source_url": "https://asi.nic.in",
+              "source_name": "Archaeological Survey of India",
+              "source_page": "https://asi.nic.in",
+              "sources": [
+                {
+                  "id": "src-mumbai-008",
+                  "source_name": "Archaeological Survey of India",
+                  "source_url": "https://asi.nic.in",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
               ],
-              "source_quality": "generic_homepage"
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
             },
             {
-              "id": "worli-sea-face",
-              "name": "Worli Sea Face",
-              "canonical_name": "Worli Sea Face",
+              "id": "mumbai-009",
+              "name": "Mahakali Caves",
+              "canonical_name": "Mahakali Caves",
               "aliases": [],
               "city_id": "mumbai",
               "state_id": "maharashtra",
               "district": "Mumbai City / Mumbai Suburban",
-              "category": "heritage",
-              "category_label": "Heritage",
+              "area": "Andheri East",
+              "category": "Heritage and Religious",
+              "category_label": "Heritage and Religious",
               "categories": [
-                "Heritage",
-                "Arts & Culture"
+                "Spiritual",
+                "Heritage and Religious"
               ],
               "subcategories": [
-                "Official Heritage"
+                "Buddhist caves",
+                "ancient history",
+                "heritage"
               ],
+              "topic": "Spiritual",
+              "subtopic": "Sacred Shrines",
               "importance_level": "notable",
-              "summary": "Scenic coastal promenade providing dramatic views of the Bandra-Worli Sea Link.",
-              "historical_significance": "Developed along the western coast of the Worli island, near the 17th-century Worli Fort built by the British to guard Mahim Bay.",
+              "summary": "A group of ancient Buddhist rock-cut caves dating from the early historic period.",
+              "description": "A group of ancient Buddhist rock-cut caves dating from the early historic period.",
+              "historical_significance": "The site is compact but has uneven steps.",
+              "best_for": [
+                "archaeology",
+                "heritage",
+                "history"
+              ],
+              "suggested_duration": "1 hour",
+              "best_time_to_visit": "October–March",
+              "entry_fee": "Usually free or nominal; verify locally",
+              "opening_hours": "Daytime",
+              "visitor_notes": "The site is compact but has uneven steps.",
+              "map_search": "Mahakali Caves, Andheri East, Mumbai",
+              "tags": [
+                "Buddhist caves",
+                "ancient history",
+                "heritage"
+              ],
               "fees": {
                 "domestic": 0,
                 "international": 0,
@@ -29239,258 +30700,94 @@ export const INDIA_TOURISM_DATABASE = {
               },
               "timings": {
                 "opening_time": "09:00 AM",
-                "closing_time": "05:30 PM",
+                "closing_time": "06:00 PM",
                 "closed_days": [],
                 "status": "VERIFIED"
               },
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
+                "label": "1 hour",
                 "status": "VERIFIED"
               },
               "coordinates": {
-                "lat": 19.0118,
-                "lng": 72.8136
+                "lat": 19.1306,
+                "lng": 72.8722
               },
-              "image_url": "https://images.unsplash.com/photo-1595658658481-d53d3f999875",
-              "thumbnail_url": "https://images.unsplash.com/photo-1595658658481-d53d3f999875",
-              "attribution": "Virasat Master Tourism Registry",
-              "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
-              "tags": [
-                "Heritage",
-                "Arts & Culture"
+              "lat": 19.1306,
+              "lng": 72.8722,
+              "latitude": 19.1306,
+              "longitude": 72.8722,
+              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Archaeological Survey of India",
+              "source_url": "https://asi.nic.in",
+              "source_name": "Archaeological Survey of India",
+              "source_page": "https://asi.nic.in",
+              "sources": [
+                {
+                  "id": "src-mumbai-009",
+                  "source_name": "Archaeological Survey of India",
+                  "source_url": "https://asi.nic.in",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
               ],
-              "source_quality": "generic_homepage"
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
             },
             {
-              "id": "juhu-beach",
-              "name": "Juhu Beach",
-              "canonical_name": "Juhu Beach",
-              "aliases": [],
-              "city_id": "mumbai",
-              "state_id": "maharashtra",
-              "district": "Mumbai City / Mumbai Suburban",
-              "category": "heritage",
-              "category_label": "Heritage",
-              "categories": [
-                "Heritage",
-                "Arts & Culture"
-              ],
-              "subcategories": [
-                "Official Heritage"
-              ],
-              "importance_level": "notable",
-              "summary": "Lively suburban Arabian Sea beach renowned for street food and sunset views.",
-              "historical_significance": "Historically a coastal coconut grove village, Juhu evolved into Mumbai's prime residential beachfront haven in the 20th century.",
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "09:00 AM",
-                "closing_time": "05:30 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
-                "status": "VERIFIED"
-              },
-              "coordinates": {
-                "lat": 19.0988,
-                "lng": 72.8264
-              },
-              "image_url": "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647",
-              "thumbnail_url": "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647",
-              "attribution": "Virasat Master Tourism Registry",
-              "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
-              "tags": [
-                "Heritage",
-                "Arts & Culture"
-              ],
-              "source_quality": "generic_homepage"
-            },
-            {
-              "id": "csmvs-museum",
-              "name": "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya",
-              "canonical_name": "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya",
-              "aliases": [],
-              "city_id": "mumbai",
-              "state_id": "maharashtra",
-              "district": "Mumbai City / Mumbai Suburban",
-              "category": "heritage",
-              "category_label": "Heritage",
-              "categories": [
-                "Heritage",
-                "Arts & Culture"
-              ],
-              "subcategories": [
-                "Official Heritage"
-              ],
-              "importance_level": "notable",
-              "summary": "Premier museum of art, archaeology, and natural history housed in an Indo-Saracenic mansion.",
-              "historical_significance": "Designed by George Wittet in the Indo-Saracenic style and set in expansive heritage palm gardens in the Kala Ghoda Arts District.",
-              "fees": {
-                "domestic": 150,
-                "international": 650,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "09:00 AM",
-                "closing_time": "05:30 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
-                "status": "VERIFIED"
-              },
-              "coordinates": {
-                "lat": 18.9268,
-                "lng": 72.8327
-              },
-              "image_url": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3",
-              "thumbnail_url": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3",
-              "attribution": "Virasat Master Tourism Registry",
-              "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
-              "tags": [
-                "Heritage",
-                "Arts & Culture"
-              ],
-              "source_quality": "generic_homepage"
-            },
-            {
-              "id": "siddhivinayak-temple",
-              "name": "Siddhivinayak Temple",
-              "canonical_name": "Siddhivinayak Temple",
-              "aliases": [],
-              "city_id": "mumbai",
-              "state_id": "maharashtra",
-              "district": "Mumbai City / Mumbai Suburban",
-              "category": "heritage",
-              "category_label": "Heritage",
-              "categories": [
-                "Heritage",
-                "Arts & Culture"
-              ],
-              "subcategories": [
-                "Official Heritage"
-              ],
-              "importance_level": "notable",
-              "summary": "Historic and revered Hindu temple dedicated to Lord Ganesha in Prabhadevi.",
-              "historical_significance": "Originally consecrated in 1801 by Laxman Vithu and Deubai Patil, the modern multi-storied temple complex was rebuilt in the late 20th century.",
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "09:00 AM",
-                "closing_time": "05:30 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
-                "status": "VERIFIED"
-              },
-              "coordinates": {
-                "lat": 19.0169,
-                "lng": 72.8304
-              },
-              "image_url": "https://images.unsplash.com/photo-1567157577867-05ccb1388e66",
-              "thumbnail_url": "https://images.unsplash.com/photo-1567157577867-05ccb1388e66",
-              "attribution": "Virasat Master Tourism Registry",
-              "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
-              "tags": [
-                "Heritage",
-                "Arts & Culture"
-              ],
-              "source_quality": "generic_homepage"
-            },
-            {
-              "id": "haji-ali-dargah",
-              "name": "Haji Ali Dargah",
-              "canonical_name": "Haji Ali Dargah",
-              "aliases": [],
-              "city_id": "mumbai",
-              "state_id": "maharashtra",
-              "district": "Mumbai City / Mumbai Suburban",
-              "category": "heritage",
-              "category_label": "Heritage",
-              "categories": [
-                "Heritage",
-                "Arts & Culture"
-              ],
-              "subcategories": [
-                "Official Heritage"
-              ],
-              "importance_level": "notable",
-              "summary": "15th-century Indo-Islamic mosque and tomb situated on an islet off the coast of Worli.",
-              "historical_significance": "Erected in the 15th century and constructed from white marble in the Indo-Islamic architectural style with slender minarets.",
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "09:00 AM",
-                "closing_time": "05:30 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
-                "status": "VERIFIED"
-              },
-              "coordinates": {
-                "lat": 18.9827,
-                "lng": 72.8089
-              },
-              "image_url": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3",
-              "thumbnail_url": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3",
-              "attribution": "Virasat Master Tourism Registry",
-              "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
-              "tags": [
-                "Heritage",
-                "Arts & Culture"
-              ],
-              "source_quality": "generic_homepage"
-            },
-            {
-              "id": "bandra-fort",
+              "id": "mumbai-010",
               "name": "Bandra Fort",
               "canonical_name": "Bandra Fort",
               "aliases": [],
               "city_id": "mumbai",
               "state_id": "maharashtra",
               "district": "Mumbai City / Mumbai Suburban",
-              "category": "heritage",
-              "category_label": "Heritage",
+              "area": "Bandra West",
+              "category": "Heritage Landmark",
+              "category_label": "Heritage Landmark",
               "categories": [
                 "Heritage",
-                "Arts & Culture"
+                "Heritage Landmark"
               ],
               "subcategories": [
-                "Official Heritage"
+                "fort",
+                "coast",
+                "viewpoint"
               ],
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
               "importance_level": "notable",
-              "summary": "17th-century Portuguese watchtower fort overlooking Mahim Bay and the Bandra-Worli Sea Link.",
-              "historical_significance": "Built by the Portuguese as a strategic lookout point along the sea route, later held by the Marathas and the British East India Company.",
+              "summary": "A historic coastal fort offering views toward the Arabian Sea and the Bandra–Worli Sea Link.",
+              "description": "A historic coastal fort offering views toward the Arabian Sea and the Bandra–Worli Sea Link.",
+              "historical_significance": "Best visited around sunrise or sunset; be careful near the sea edge.",
+              "best_for": [
+                "heritage",
+                "sunset",
+                "photography"
+              ],
+              "suggested_duration": "1 hour",
+              "best_time_to_visit": "October–March",
+              "entry_fee": "Free",
+              "opening_hours": "Generally daytime",
+              "visitor_notes": "Best visited around sunrise or sunset; be careful near the sea edge.",
+              "map_search": "Bandra Fort, Mumbai",
+              "tags": [
+                "fort",
+                "coast",
+                "viewpoint"
+              ],
               "fees": {
                 "domestic": 0,
                 "international": 0,
@@ -29499,50 +30796,94 @@ export const INDIA_TOURISM_DATABASE = {
               },
               "timings": {
                 "opening_time": "09:00 AM",
-                "closing_time": "05:30 PM",
+                "closing_time": "06:00 PM",
                 "closed_days": [],
                 "status": "VERIFIED"
               },
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
+                "label": "1 hour",
                 "status": "VERIFIED"
               },
               "coordinates": {
                 "lat": 19.0416,
-                "lng": 72.8188
+                "lng": 72.8193
               },
-              "image_url": "https://images.unsplash.com/photo-1595658658481-d53d3f999875",
-              "thumbnail_url": "https://images.unsplash.com/photo-1595658658481-d53d3f999875",
-              "attribution": "Virasat Master Tourism Registry",
+              "lat": 19.0416,
+              "lng": 72.8193,
+              "latitude": 19.0416,
+              "longitude": 72.8193,
+              "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Maharashtra Tourism Development Corporation",
+              "source_url": "https://maharashtratourism.gov.in",
+              "source_name": "Maharashtra Tourism Development Corporation",
               "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
-              "tags": [
-                "Heritage",
-                "Arts & Culture"
+              "sources": [
+                {
+                  "id": "src-mumbai-010",
+                  "source_name": "Maharashtra Tourism Development Corporation",
+                  "source_url": "https://maharashtratourism.gov.in",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
               ],
-              "source_quality": "generic_homepage"
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
             },
             {
-              "id": "colaba-causeway",
-              "name": "Colaba Causeway",
-              "canonical_name": "Colaba Causeway",
+              "id": "mumbai-011",
+              "name": "Worli Fort",
+              "canonical_name": "Worli Fort",
               "aliases": [],
               "city_id": "mumbai",
               "state_id": "maharashtra",
               "district": "Mumbai City / Mumbai Suburban",
-              "category": "heritage",
-              "category_label": "Heritage",
+              "area": "Worli",
+              "category": "Heritage Landmark",
+              "category_label": "Heritage Landmark",
               "categories": [
                 "Heritage",
-                "Arts & Culture"
+                "Heritage Landmark"
               ],
               "subcategories": [
-                "Official Heritage"
+                "fort",
+                "coastal heritage",
+                "viewpoint"
               ],
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
               "importance_level": "notable",
-              "summary": "Vibrant commercial and cultural boulevard famous for street markets, vintage cafes, and colonial charm.",
-              "historical_significance": "Constructed by the British East India Company in 1838 to bridge the tidal waters between the islands of Colaba and Bombay.",
+              "summary": "A small historic fort overlooking the sea and the fishing village area of Worli.",
+              "description": "A small historic fort overlooking the sea and the fishing village area of Worli.",
+              "historical_significance": "Access and maintenance conditions can vary.",
+              "best_for": [
+                "heritage",
+                "photography",
+                "coastal views"
+              ],
+              "suggested_duration": "45–60 minutes",
+              "best_time_to_visit": "October–March",
+              "entry_fee": "Free",
+              "opening_hours": "Daylight hours",
+              "visitor_notes": "Access and maintenance conditions can vary.",
+              "map_search": "Worli Fort, Mumbai",
+              "tags": [
+                "fort",
+                "coastal heritage",
+                "viewpoint"
+              ],
               "fees": {
                 "domestic": 0,
                 "international": 0,
@@ -29551,141 +30892,3423 @@ export const INDIA_TOURISM_DATABASE = {
               },
               "timings": {
                 "opening_time": "09:00 AM",
-                "closing_time": "05:30 PM",
+                "closing_time": "06:00 PM",
                 "closed_days": [],
                 "status": "VERIFIED"
               },
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
+                "label": "45–60 minutes",
                 "status": "VERIFIED"
               },
               "coordinates": {
-                "lat": 18.9189,
-                "lng": 72.8298
+                "lat": 19.0222,
+                "lng": 72.8169
               },
-              "image_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f",
-              "thumbnail_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f",
-              "attribution": "Virasat Master Tourism Registry",
+              "lat": 19.0222,
+              "lng": 72.8169,
+              "latitude": 19.0222,
+              "longitude": 72.8169,
+              "image_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Maharashtra Tourism Development Corporation",
+              "source_url": "https://maharashtratourism.gov.in",
+              "source_name": "Maharashtra Tourism Development Corporation",
               "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
-              "tags": [
-                "Heritage",
-                "Arts & Culture"
+              "sources": [
+                {
+                  "id": "src-mumbai-011",
+                  "source_name": "Maharashtra Tourism Development Corporation",
+                  "source_url": "https://maharashtratourism.gov.in",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
               ],
-              "source_quality": "generic_homepage"
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            },
+            {
+              "id": "mumbai-012",
+              "name": "Khotachiwadi Heritage Village",
+              "canonical_name": "Khotachiwadi Heritage Village",
+              "aliases": [],
+              "city_id": "mumbai",
+              "state_id": "maharashtra",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "Girgaon",
+              "category": "Heritage Village",
+              "category_label": "Heritage Village",
+              "categories": [
+                "Heritage",
+                "Heritage Village"
+              ],
+              "subcategories": [
+                "heritage village",
+                "traditional homes",
+                "architecture"
+              ],
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
+              "importance_level": "notable",
+              "summary": "A historic residential quarter known for traditional East Indian homes, narrow lanes, and distinctive architecture.",
+              "description": "A historic residential quarter known for traditional East Indian homes, narrow lanes, and distinctive architecture.",
+              "historical_significance": "This is a living neighborhood; avoid intrusive photography.",
+              "best_for": [
+                "heritage",
+                "architecture",
+                "walking tours"
+              ],
+              "suggested_duration": "1 hour",
+              "best_time_to_visit": "October–March",
+              "entry_fee": "Free to walk public lanes",
+              "opening_hours": "Daytime; respect residential privacy",
+              "visitor_notes": "This is a living neighborhood; avoid intrusive photography.",
+              "map_search": "Khotachiwadi Heritage Village, Mumbai",
+              "tags": [
+                "heritage village",
+                "traditional homes",
+                "architecture"
+              ],
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 90,
+                "label": "1 hour",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 18.9554,
+                "lng": 72.8208
+              },
+              "lat": 18.9554,
+              "lng": 72.8208,
+              "latitude": 18.9554,
+              "longitude": 72.8208,
+              "image_url": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Mumbai Heritage Conservation Committee",
+              "source_url": "https://maharashtratourism.gov.in",
+              "source_name": "Mumbai Heritage Conservation Committee",
+              "source_page": "https://maharashtratourism.gov.in",
+              "sources": [
+                {
+                  "id": "src-mumbai-012",
+                  "source_name": "Mumbai Heritage Conservation Committee",
+                  "source_url": "https://maharashtratourism.gov.in",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            },
+            {
+              "id": "mumbai-013",
+              "name": "Asiatic Society Library",
+              "canonical_name": "Asiatic Society Library",
+              "aliases": [],
+              "city_id": "mumbai",
+              "state_id": "maharashtra",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "Fort",
+              "category": "Heritage and Library",
+              "category_label": "Heritage and Library",
+              "categories": [
+                "Heritage",
+                "Heritage and Library"
+              ],
+              "subcategories": [
+                "library",
+                "heritage building",
+                "neoclassical"
+              ],
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
+              "importance_level": "notable",
+              "summary": "A grand neoclassical library building with an iconic staircase and historic collections.",
+              "description": "A grand neoclassical library building with an iconic staircase and historic collections.",
+              "historical_significance": "Do not disturb library users.",
+              "best_for": [
+                "heritage",
+                "architecture",
+                "literature"
+              ],
+              "suggested_duration": "45–60 minutes",
+              "best_time_to_visit": "October–March",
+              "entry_fee": "Exterior viewing free; interior access may require permission",
+              "opening_hours": "Verify current visitor access",
+              "visitor_notes": "Do not disturb library users.",
+              "map_search": "Asiatic Society Library, Mumbai",
+              "tags": [
+                "library",
+                "heritage building",
+                "neoclassical"
+              ],
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 90,
+                "label": "45–60 minutes",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 18.9318,
+                "lng": 72.8383
+              },
+              "lat": 18.9318,
+              "lng": 72.8383,
+              "latitude": 18.9318,
+              "longitude": 72.8383,
+              "image_url": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "The Asiatic Society of Mumbai",
+              "source_url": "https://asiaticsociety.org.in",
+              "source_name": "The Asiatic Society of Mumbai",
+              "source_page": "https://asiaticsociety.org.in",
+              "sources": [
+                {
+                  "id": "src-mumbai-013",
+                  "source_name": "The Asiatic Society of Mumbai",
+                  "source_url": "https://asiaticsociety.org.in",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            },
+            {
+              "id": "mumbai-014",
+              "name": "Rajabai Clock Tower",
+              "canonical_name": "Rajabai Clock Tower",
+              "aliases": [],
+              "city_id": "mumbai",
+              "state_id": "maharashtra",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "Fort",
+              "category": "Heritage Landmark",
+              "category_label": "Heritage Landmark",
+              "categories": [
+                "Heritage",
+                "Heritage Landmark"
+              ],
+              "subcategories": [
+                "clock tower",
+                "Gothic architecture",
+                "heritage"
+              ],
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
+              "importance_level": "notable",
+              "summary": "A striking Gothic Revival clock tower forming part of the University of Mumbai’s historic campus.",
+              "description": "A striking Gothic Revival clock tower forming part of the University of Mumbai’s historic campus.",
+              "historical_significance": "Interior tours may require prior permission.",
+              "best_for": [
+                "architecture",
+                "heritage",
+                "photography"
+              ],
+              "suggested_duration": "30–45 minutes",
+              "best_time_to_visit": "October–March",
+              "entry_fee": "Exterior viewing free; interior access restricted",
+              "opening_hours": "Exterior viewing during public hours",
+              "visitor_notes": "Interior tours may require prior permission.",
+              "map_search": "Rajabai Clock Tower, University of Mumbai",
+              "tags": [
+                "clock tower",
+                "Gothic architecture",
+                "heritage"
+              ],
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 90,
+                "label": "30–45 minutes",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 18.9298,
+                "lng": 72.8301
+              },
+              "lat": 18.9298,
+              "lng": 72.8301,
+              "latitude": 18.9298,
+              "longitude": 72.8301,
+              "image_url": "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1509062522246-3755977927d7?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "University of Mumbai Heritage Trust",
+              "source_url": "https://mu.ac.in",
+              "source_name": "University of Mumbai Heritage Trust",
+              "source_page": "https://mu.ac.in",
+              "sources": [
+                {
+                  "id": "src-mumbai-014",
+                  "source_name": "University of Mumbai Heritage Trust",
+                  "source_url": "https://mu.ac.in",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            },
+            {
+              "id": "mumbai-015",
+              "name": "David Sassoon Library",
+              "canonical_name": "David Sassoon Library",
+              "aliases": [],
+              "city_id": "mumbai",
+              "state_id": "maharashtra",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "Kala Ghoda",
+              "category": "Heritage and Library",
+              "category_label": "Heritage and Library",
+              "categories": [
+                "Heritage",
+                "Heritage and Library"
+              ],
+              "subcategories": [
+                "library",
+                "Victorian architecture",
+                "heritage"
+              ],
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
+              "importance_level": "notable",
+              "summary": "A historic Victorian library building known for its arched windows, stone façade, and reading rooms.",
+              "description": "A historic Victorian library building known for its arched windows, stone façade, and reading rooms.",
+              "historical_significance": "Maintain quiet inside the library.",
+              "best_for": [
+                "heritage",
+                "architecture",
+                "literature"
+              ],
+              "suggested_duration": "30–60 minutes",
+              "best_time_to_visit": "October–March",
+              "entry_fee": "Exterior free; interior access subject to library rules",
+              "opening_hours": "Verify current timings",
+              "visitor_notes": "Maintain quiet inside the library.",
+              "map_search": "David Sassoon Library, Kala Ghoda, Mumbai",
+              "tags": [
+                "library",
+                "Victorian architecture",
+                "heritage"
+              ],
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 90,
+                "label": "30–60 minutes",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 18.9276,
+                "lng": 72.8325
+              },
+              "lat": 18.9276,
+              "lng": 72.8325,
+              "latitude": 18.9276,
+              "longitude": 72.8325,
+              "image_url": "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "David Sassoon Library Trust",
+              "source_url": "https://davidsassoonlibrary.com",
+              "source_name": "David Sassoon Library Trust",
+              "source_page": "https://davidsassoonlibrary.com",
+              "sources": [
+                {
+                  "id": "src-mumbai-015",
+                  "source_name": "David Sassoon Library Trust",
+                  "source_url": "https://davidsassoonlibrary.com",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            },
+            {
+              "id": "mumbai-034",
+              "name": "Horniman Circle Garden",
+              "canonical_name": "Horniman Circle Garden",
+              "aliases": [],
+              "city_id": "mumbai",
+              "state_id": "maharashtra",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "Fort",
+              "category": "Park and Heritage",
+              "category_label": "Park and Heritage",
+              "categories": [
+                "Nature",
+                "Park and Heritage"
+              ],
+              "subcategories": [
+                "urban park",
+                "heritage district",
+                "garden"
+              ],
+              "topic": "Nature",
+              "subtopic": "National Parks & Greenery",
+              "importance_level": "notable",
+              "summary": "A landscaped urban garden surrounded by historic buildings in Mumbai’s financial district.",
+              "description": "A landscaped urban garden surrounded by historic buildings in Mumbai’s financial district.",
+              "historical_significance": "Combine with the Asiatic Society and nearby heritage buildings.",
+              "best_for": [
+                "parks",
+                "heritage",
+                "photography"
+              ],
+              "suggested_duration": "30–60 minutes",
+              "best_time_to_visit": "October–March",
+              "entry_fee": "Free",
+              "opening_hours": "Generally daytime",
+              "visitor_notes": "Combine with the Asiatic Society and nearby heritage buildings.",
+              "map_search": "Horniman Circle Garden, Mumbai",
+              "tags": [
+                "urban park",
+                "heritage district",
+                "garden"
+              ],
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 90,
+                "label": "30–60 minutes",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 18.9318,
+                "lng": 72.8364
+              },
+              "lat": 18.9318,
+              "lng": 72.8364,
+              "latitude": 18.9318,
+              "longitude": 72.8364,
+              "image_url": "https://images.unsplash.com/photo-1496868834840-5f4c98840aaa?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1496868834840-5f4c98840aaa?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Mumbai Heritage Conservation Committee",
+              "source_url": "https://maharashtratourism.gov.in",
+              "source_name": "Mumbai Heritage Conservation Committee",
+              "source_page": "https://maharashtratourism.gov.in",
+              "sources": [
+                {
+                  "id": "src-mumbai-034",
+                  "source_name": "Mumbai Heritage Conservation Committee",
+                  "source_url": "https://maharashtratourism.gov.in",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
             }
           ],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
+          "monuments": [
+            {
+              "id": "mumbai-001",
+              "name": "Chhatrapati Shivaji Maharaj Terminus",
+              "canonical_name": "Chhatrapati Shivaji Maharaj Terminus",
+              "aliases": [],
+              "city_id": "mumbai",
+              "state_id": "maharashtra",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "Fort",
+              "category": "UNESCO and Heritage",
+              "category_label": "UNESCO and Heritage",
+              "categories": [
+                "Heritage",
+                "UNESCO and Heritage"
+              ],
+              "subcategories": [
+                "UNESCO",
+                "railway heritage",
+                "architecture"
+              ],
+              "topic": "Heritage",
+              "subtopic": "UNESCO World Heritage Sites",
+              "importance_level": "flagship",
+              "summary": "A landmark Victorian Gothic railway terminus and one of Mumbai’s most recognizable heritage buildings.",
+              "description": "A landmark Victorian Gothic railway terminus and one of Mumbai’s most recognizable heritage buildings.",
+              "historical_significance": "Avoid obstructing commuters and follow station security rules.",
+              "best_for": [
+                "heritage",
+                "architecture",
+                "photography"
+              ],
+              "suggested_duration": "1 hour",
+              "best_time_to_visit": "October–March",
+              "entry_fee": "View from outside; station access rules apply",
+              "opening_hours": "Public railway station; heritage viewing depends on access",
+              "visitor_notes": "Avoid obstructing commuters and follow station security rules.",
+              "map_search": "Chhatrapati Shivaji Maharaj Terminus, Mumbai",
+              "tags": [
+                "UNESCO",
+                "railway heritage",
+                "architecture"
+              ],
+              "fees": {
+                "domestic": 50,
+                "international": 500,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 90,
+                "label": "1 hour",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 18.94,
+                "lng": 72.8353
+              },
+              "lat": 18.94,
+              "lng": 72.8353,
+              "latitude": 18.94,
+              "longitude": 72.8353,
+              "image_url": "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "UNESCO World Heritage Centre",
+              "source_url": "https://whc.unesco.org/en/list/945/",
+              "source_name": "UNESCO World Heritage Centre",
+              "source_page": "https://whc.unesco.org/en/list/945/",
+              "sources": [
+                {
+                  "id": "src-mumbai-001",
+                  "source_name": "UNESCO World Heritage Centre",
+                  "source_url": "https://whc.unesco.org/en/list/945/",
+                  "source_type": "unesco",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            },
+            {
+              "id": "mumbai-002",
+              "name": "Elephanta Caves",
+              "canonical_name": "Elephanta Caves",
+              "aliases": [],
+              "city_id": "mumbai",
+              "state_id": "maharashtra",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "Elephanta Island",
+              "category": "UNESCO and Heritage",
+              "category_label": "UNESCO and Heritage",
+              "categories": [
+                "Heritage",
+                "UNESCO and Heritage"
+              ],
+              "subcategories": [
+                "UNESCO",
+                "caves",
+                "Shiva temple"
+              ],
+              "topic": "Heritage",
+              "subtopic": "UNESCO World Heritage Sites",
+              "importance_level": "flagship",
+              "summary": "Rock-cut cave temples famous for monumental sculptures dedicated mainly to Shiva.",
+              "description": "Rock-cut cave temples famous for monumental sculptures dedicated mainly to Shiva.",
+              "historical_significance": "Reach by ferry from the Gateway of India; wear comfortable footwear.",
+              "best_for": [
+                "heritage",
+                "temples",
+                "archaeology"
+              ],
+              "suggested_duration": "3–5 hours",
+              "best_time_to_visit": "October–March",
+              "entry_fee": "Paid; ferry and monument fees apply",
+              "opening_hours": "Generally daytime; closed on Mondays",
+              "visitor_notes": "Reach by ferry from the Gateway of India; wear comfortable footwear.",
+              "map_search": "Elephanta Caves, Elephanta Island, Mumbai",
+              "tags": [
+                "UNESCO",
+                "caves",
+                "Shiva temple"
+              ],
+              "fees": {
+                "domestic": 50,
+                "international": 500,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [
+                  "Monday"
+                ],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 240,
+                "label": "3–5 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 18.9633,
+                "lng": 72.9315
+              },
+              "lat": 18.9633,
+              "lng": 72.9315,
+              "latitude": 18.9633,
+              "longitude": 72.9315,
+              "image_url": "https://images.unsplash.com/photo-1609137144822-79f972b901fc?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1609137144822-79f972b901fc?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "UNESCO World Heritage Centre",
+              "source_url": "https://whc.unesco.org/en/list/244/",
+              "source_name": "UNESCO World Heritage Centre",
+              "source_page": "https://whc.unesco.org/en/list/244/",
+              "sources": [
+                {
+                  "id": "src-mumbai-002",
+                  "source_name": "UNESCO World Heritage Centre",
+                  "source_url": "https://whc.unesco.org/en/list/244/",
+                  "source_type": "unesco",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            },
+            {
+              "id": "mumbai-004",
+              "name": "Gateway of India",
+              "canonical_name": "Gateway of India",
+              "aliases": [],
+              "city_id": "mumbai",
+              "state_id": "maharashtra",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "Colaba",
+              "category": "Heritage Landmark",
+              "category_label": "Heritage Landmark",
+              "categories": [
+                "Heritage",
+                "Heritage Landmark"
+              ],
+              "subcategories": [
+                "monument",
+                "waterfront",
+                "landmark"
+              ],
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
+              "importance_level": "flagship",
+              "summary": "A monumental waterfront arch built during the British period and one of Mumbai’s signature landmarks.",
+              "description": "A monumental waterfront arch built during the British period and one of Mumbai’s signature landmarks.",
+              "historical_significance": "Often crowded during evenings and holidays.",
+              "best_for": [
+                "heritage",
+                "photography",
+                "waterfront"
+              ],
+              "suggested_duration": "1 hour",
+              "best_time_to_visit": "October–March",
+              "entry_fee": "Free",
+              "opening_hours": "Open public area; access may vary",
+              "visitor_notes": "Often crowded during evenings and holidays.",
+              "map_search": "Gateway of India, Mumbai",
+              "tags": [
+                "monument",
+                "waterfront",
+                "landmark"
+              ],
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 90,
+                "label": "1 hour",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 18.922,
+                "lng": 72.8347
+              },
+              "lat": 18.922,
+              "lng": 72.8347,
+              "latitude": 18.922,
+              "longitude": 72.8347,
+              "image_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Archaeological Survey of India",
+              "source_url": "https://asi.nic.in",
+              "source_name": "Archaeological Survey of India",
+              "source_page": "https://asi.nic.in",
+              "sources": [
+                {
+                  "id": "src-mumbai-004",
+                  "source_name": "Archaeological Survey of India",
+                  "source_url": "https://asi.nic.in",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": true
+              }
+            }
+          ],
+          "museums": [
+            {
+              "id": "mumbai-005",
+              "name": "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya",
+              "canonical_name": "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya",
+              "aliases": [],
+              "city_id": "mumbai",
+              "state_id": "maharashtra",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "Kala Ghoda",
+              "category": "Museum and Heritage",
+              "category_label": "Museum and Heritage",
+              "categories": [
+                "Arts & Culture",
+                "Museum and Heritage"
+              ],
+              "subcategories": [
+                "museum",
+                "art",
+                "history"
+              ],
+              "topic": "Arts & Culture",
+              "subtopic": "Museums & Galleries",
+              "importance_level": "notable",
+              "summary": "A major museum displaying Indian art, archaeology, decorative arts, and cultural objects.",
+              "description": "A major museum displaying Indian art, archaeology, decorative arts, and cultural objects.",
+              "historical_significance": "Allow extra time for the permanent galleries and special exhibitions.",
+              "best_for": [
+                "museum",
+                "history",
+                "art"
+              ],
+              "suggested_duration": "2–3 hours",
+              "best_time_to_visit": "October–March",
+              "entry_fee": "Paid; verify current fee",
+              "opening_hours": "Generally daytime; verify current timings",
+              "visitor_notes": "Allow extra time for the permanent galleries and special exhibitions.",
+              "map_search": "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya, Mumbai",
+              "tags": [
+                "museum",
+                "art",
+                "history"
+              ],
+              "fees": {
+                "domestic": 50,
+                "international": 500,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 90,
+                "label": "2–3 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 18.9269,
+                "lng": 72.8327
+              },
+              "lat": 18.9269,
+              "lng": 72.8327,
+              "latitude": 18.9269,
+              "longitude": 72.8327,
+              "image_url": "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "CSMVS Museum Directorate",
+              "source_url": "https://csmvs.gov.in",
+              "source_name": "CSMVS Museum Directorate",
+              "source_page": "https://csmvs.gov.in",
+              "sources": [
+                {
+                  "id": "src-mumbai-005",
+                  "source_name": "CSMVS Museum Directorate",
+                  "source_url": "https://csmvs.gov.in",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            },
+            {
+              "id": "mumbai-006",
+              "name": "Dr. Bhau Daji Lad Museum",
+              "canonical_name": "Dr. Bhau Daji Lad Museum",
+              "aliases": [],
+              "city_id": "mumbai",
+              "state_id": "maharashtra",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "Byculla",
+              "category": "Museum and Heritage",
+              "category_label": "Museum and Heritage",
+              "categories": [
+                "Arts & Culture",
+                "Museum and Heritage"
+              ],
+              "subcategories": [
+                "museum",
+                "city history",
+                "heritage building"
+              ],
+              "topic": "Arts & Culture",
+              "subtopic": "Museums & Galleries",
+              "importance_level": "notable",
+              "summary": "Mumbai’s oldest museum, featuring collections on the city’s history, decorative arts, and social development.",
+              "description": "Mumbai’s oldest museum, featuring collections on the city’s history, decorative arts, and social development.",
+              "historical_significance": "The historic building itself is an important attraction.",
+              "best_for": [
+                "museum",
+                "heritage",
+                "architecture"
+              ],
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "October–March",
+              "entry_fee": "Paid; verify current fee",
+              "opening_hours": "Verify current timings",
+              "visitor_notes": "The historic building itself is an important attraction.",
+              "map_search": "Dr. Bhau Daji Lad Museum, Byculla, Mumbai",
+              "tags": [
+                "museum",
+                "city history",
+                "heritage building"
+              ],
+              "fees": {
+                "domestic": 50,
+                "international": 500,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 90,
+                "label": "1–2 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 18.979,
+                "lng": 72.8353
+              },
+              "lat": 18.979,
+              "lng": 72.8353,
+              "latitude": 18.979,
+              "longitude": 72.8353,
+              "image_url": "https://images.unsplash.com/photo-1588714477688-cf28a50e94f7?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1588714477688-cf28a50e94f7?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Dr. Bhau Daji Lad Museum Trust",
+              "source_url": "https://bdlmuseum.org",
+              "source_name": "Dr. Bhau Daji Lad Museum Trust",
+              "source_page": "https://bdlmuseum.org",
+              "sources": [
+                {
+                  "id": "src-mumbai-006",
+                  "source_name": "Dr. Bhau Daji Lad Museum Trust",
+                  "source_url": "https://bdlmuseum.org",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            },
+            {
+              "id": "mumbai-007",
+              "name": "Mani Bhavan Gandhi Sangrahalaya",
+              "canonical_name": "Mani Bhavan Gandhi Sangrahalaya",
+              "aliases": [],
+              "city_id": "mumbai",
+              "state_id": "maharashtra",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "Gamdevi",
+              "category": "Museum and Religious-Historical",
+              "category_label": "Museum and Religious-Historical",
+              "categories": [
+                "Arts & Culture",
+                "Museum and Religious-Historical"
+              ],
+              "subcategories": [
+                "Gandhi",
+                "museum",
+                "memorial"
+              ],
+              "topic": "Arts & Culture",
+              "subtopic": "Museums & Galleries",
+              "importance_level": "notable",
+              "summary": "A historic building associated with Mahatma Gandhi’s activities in Mumbai, now a museum and memorial.",
+              "description": "A historic building associated with Mahatma Gandhi’s activities in Mumbai, now a museum and memorial.",
+              "historical_significance": "Maintain silence and respect the memorial setting.",
+              "best_for": [
+                "history",
+                "museum",
+                "Gandhian heritage"
+              ],
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "October–March",
+              "entry_fee": "Usually nominal or free; verify locally",
+              "opening_hours": "Verify current timings",
+              "visitor_notes": "Maintain silence and respect the memorial setting.",
+              "map_search": "Mani Bhavan Gandhi Sangrahalaya, Mumbai",
+              "tags": [
+                "Gandhi",
+                "museum",
+                "memorial"
+              ],
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 90,
+                "label": "1–2 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 18.9598,
+                "lng": 72.8122
+              },
+              "lat": 18.9598,
+              "lng": 72.8122,
+              "latitude": 18.9598,
+              "longitude": 72.8122,
+              "image_url": "https://images.unsplash.com/photo-1589802829985-817e51171b92?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1589802829985-817e51171b92?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Mani Bhavan Gandhi Sangrahalaya",
+              "source_url": "https://gandhi-manibhavan.org",
+              "source_name": "Mani Bhavan Gandhi Sangrahalaya",
+              "source_page": "https://gandhi-manibhavan.org",
+              "sources": [
+                {
+                  "id": "src-mumbai-007",
+                  "source_name": "Mani Bhavan Gandhi Sangrahalaya",
+                  "source_url": "https://gandhi-manibhavan.org",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            },
+            {
+              "id": "mumbai-024",
+              "name": "National Museum of Indian Cinema",
+              "canonical_name": "National Museum of Indian Cinema",
+              "aliases": [],
+              "city_id": "mumbai",
+              "state_id": "maharashtra",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "Peddar Road",
+              "category": "Museum",
+              "category_label": "Museum",
+              "categories": [
+                "Arts & Culture",
+                "Museum"
+              ],
+              "subcategories": [
+                "cinema museum",
+                "Bollywood",
+                "film history"
+              ],
+              "topic": "Arts & Culture",
+              "subtopic": "Museums & Galleries",
+              "importance_level": "notable",
+              "summary": "A museum presenting the history, technology, personalities, and cultural impact of Indian cinema.",
+              "description": "A museum presenting the history, technology, personalities, and cultural impact of Indian cinema.",
+              "historical_significance": "Check for special exhibitions and screening programs.",
+              "best_for": [
+                "cinema",
+                "museum",
+                "culture"
+              ],
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "Throughout the year",
+              "entry_fee": "Paid or nominal; verify current fee",
+              "opening_hours": "Verify current timings",
+              "visitor_notes": "Check for special exhibitions and screening programs.",
+              "map_search": "National Museum of Indian Cinema, Mumbai",
+              "tags": [
+                "cinema museum",
+                "Bollywood",
+                "film history"
+              ],
+              "fees": {
+                "domestic": 50,
+                "international": 500,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 90,
+                "label": "1–2 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 18.9705,
+                "lng": 72.8092
+              },
+              "lat": 18.9705,
+              "lng": 72.8092,
+              "latitude": 18.9705,
+              "longitude": 72.8092,
+              "image_url": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "National Film Development Corporation",
+              "source_url": "https://filmsdivision.org",
+              "source_name": "National Film Development Corporation",
+              "source_page": "https://filmsdivision.org",
+              "sources": [
+                {
+                  "id": "src-mumbai-024",
+                  "source_name": "National Film Development Corporation",
+                  "source_url": "https://filmsdivision.org",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            },
+            {
+              "id": "mumbai-025",
+              "name": "National Gallery of Modern Art",
+              "canonical_name": "National Gallery of Modern Art",
+              "aliases": [],
+              "city_id": "mumbai",
+              "state_id": "maharashtra",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "Colaba",
+              "category": "Art Gallery",
+              "category_label": "Art Gallery",
+              "categories": [
+                "Arts & Culture",
+                "Art Gallery"
+              ],
+              "subcategories": [
+                "modern art",
+                "gallery",
+                "Indian art"
+              ],
+              "topic": "Arts & Culture",
+              "subtopic": "Museums & Galleries",
+              "importance_level": "notable",
+              "summary": "A national art gallery showcasing modern and contemporary Indian art exhibitions.",
+              "description": "A national art gallery showcasing modern and contemporary Indian art exhibitions.",
+              "historical_significance": "Exhibitions change periodically.",
+              "best_for": [
+                "art",
+                "culture",
+                "museum"
+              ],
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "Throughout the year",
+              "entry_fee": "Paid or nominal; verify current fee",
+              "opening_hours": "Verify current timings",
+              "visitor_notes": "Exhibitions change periodically.",
+              "map_search": "National Gallery of Modern Art, Mumbai",
+              "tags": [
+                "modern art",
+                "gallery",
+                "Indian art"
+              ],
+              "fees": {
+                "domestic": 50,
+                "international": 500,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 90,
+                "label": "1–2 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 18.9254,
+                "lng": 72.8326
+              },
+              "lat": 18.9254,
+              "lng": 72.8326,
+              "latitude": 18.9254,
+              "longitude": 72.8326,
+              "image_url": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Ministry of Culture, Government of India",
+              "source_url": "https://ngmaindia.gov.in",
+              "source_name": "Ministry of Culture, Government of India",
+              "source_page": "https://ngmaindia.gov.in",
+              "sources": [
+                {
+                  "id": "src-mumbai-025",
+                  "source_name": "Ministry of Culture, Government of India",
+                  "source_url": "https://ngmaindia.gov.in",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            },
+            {
+              "id": "mumbai-026",
+              "name": "Jehangir Art Gallery",
+              "canonical_name": "Jehangir Art Gallery",
+              "aliases": [],
+              "city_id": "mumbai",
+              "state_id": "maharashtra",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "Kala Ghoda",
+              "category": "Art Gallery",
+              "category_label": "Art Gallery",
+              "categories": [
+                "Arts & Culture",
+                "Art Gallery"
+              ],
+              "subcategories": [
+                "art gallery",
+                "Kala Ghoda",
+                "exhibitions"
+              ],
+              "topic": "Arts & Culture",
+              "subtopic": "Museums & Galleries",
+              "importance_level": "notable",
+              "summary": "One of Mumbai’s best-known art galleries, hosting exhibitions by established and emerging artists.",
+              "description": "One of Mumbai’s best-known art galleries, hosting exhibitions by established and emerging artists.",
+              "historical_significance": "Combine with nearby museums and heritage buildings.",
+              "best_for": [
+                "art",
+                "culture",
+                "walking tours"
+              ],
+              "suggested_duration": "1 hour",
+              "best_time_to_visit": "Throughout the year",
+              "entry_fee": "Usually free; special events may vary",
+              "opening_hours": "Verify current timings",
+              "visitor_notes": "Combine with nearby museums and heritage buildings.",
+              "map_search": "Jehangir Art Gallery, Kala Ghoda, Mumbai",
+              "tags": [
+                "art gallery",
+                "Kala Ghoda",
+                "exhibitions"
+              ],
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 90,
+                "label": "1 hour",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 18.9274,
+                "lng": 72.8319
+              },
+              "lat": 18.9274,
+              "lng": 72.8319,
+              "latitude": 18.9274,
+              "longitude": 72.8319,
+              "image_url": "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1518998053901-5348d3961a04?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Jehangir Art Gallery Committee",
+              "source_url": "https://jehangirartgallery.com",
+              "source_name": "Jehangir Art Gallery Committee",
+              "source_page": "https://jehangirartgallery.com",
+              "sources": [
+                {
+                  "id": "src-mumbai-026",
+                  "source_name": "Jehangir Art Gallery Committee",
+                  "source_url": "https://jehangirartgallery.com",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            },
+            {
+              "id": "mumbai-027",
+              "name": "RBI Monetary Museum",
+              "canonical_name": "RBI Monetary Museum",
+              "aliases": [],
+              "city_id": "mumbai",
+              "state_id": "maharashtra",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "Fort",
+              "category": "Museum",
+              "category_label": "Museum",
+              "categories": [
+                "Arts & Culture",
+                "Museum"
+              ],
+              "subcategories": [
+                "currency museum",
+                "banking",
+                "education"
+              ],
+              "topic": "Arts & Culture",
+              "subtopic": "Museums & Galleries",
+              "importance_level": "notable",
+              "summary": "A museum explaining the history of money, banking, coins, currency, and India’s monetary system.",
+              "description": "A museum explaining the history of money, banking, coins, currency, and India’s monetary system.",
+              "historical_significance": "Identification and security checks may apply.",
+              "best_for": [
+                "museum",
+                "economics",
+                "education"
+              ],
+              "suggested_duration": "1 hour",
+              "best_time_to_visit": "Throughout the year",
+              "entry_fee": "Usually free; verify current rules",
+              "opening_hours": "Verify current timings",
+              "visitor_notes": "Identification and security checks may apply.",
+              "map_search": "RBI Monetary Museum, Mumbai",
+              "tags": [
+                "currency museum",
+                "banking",
+                "education"
+              ],
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 90,
+                "label": "1 hour",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 18.9348,
+                "lng": 72.8378
+              },
+              "lat": 18.9348,
+              "lng": 72.8378,
+              "latitude": 18.9348,
+              "longitude": 72.8378,
+              "image_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Reserve Bank of India",
+              "source_url": "https://museum.rbi.org.in",
+              "source_name": "Reserve Bank of India",
+              "source_page": "https://museum.rbi.org.in",
+              "sources": [
+                {
+                  "id": "src-mumbai-027",
+                  "source_name": "Reserve Bank of India",
+                  "source_url": "https://museum.rbi.org.in",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            },
+            {
+              "id": "mumbai-028",
+              "name": "Nehru Centre Art Gallery",
+              "canonical_name": "Nehru Centre Art Gallery",
+              "aliases": [],
+              "city_id": "mumbai",
+              "state_id": "maharashtra",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "Worli",
+              "category": "Art Gallery and Science",
+              "category_label": "Art Gallery and Science",
+              "categories": [
+                "Arts & Culture",
+                "Art Gallery and Science"
+              ],
+              "subcategories": [
+                "art gallery",
+                "exhibitions",
+                "culture"
+              ],
+              "topic": "Arts & Culture",
+              "subtopic": "Museums & Galleries",
+              "importance_level": "notable",
+              "summary": "An exhibition space associated with the Nehru Centre, hosting art and cultural displays.",
+              "description": "An exhibition space associated with the Nehru Centre, hosting art and cultural displays.",
+              "historical_significance": "Check the exhibition schedule before visiting.",
+              "best_for": [
+                "art",
+                "culture",
+                "education"
+              ],
+              "suggested_duration": "1 hour",
+              "best_time_to_visit": "Throughout the year",
+              "entry_fee": "Varies by exhibition",
+              "opening_hours": "Verify current timings",
+              "visitor_notes": "Check the exhibition schedule before visiting.",
+              "map_search": "Nehru Centre Art Gallery, Worli, Mumbai",
+              "tags": [
+                "art gallery",
+                "exhibitions",
+                "culture"
+              ],
+              "fees": {
+                "domestic": 50,
+                "international": 500,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 90,
+                "label": "1 hour",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 18.9897,
+                "lng": 72.8182
+              },
+              "lat": 18.9897,
+              "lng": 72.8182,
+              "latitude": 18.9897,
+              "longitude": 72.8182,
+              "image_url": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Nehru Centre Memorial Trust",
+              "source_url": "https://nehru-centre.org",
+              "source_name": "Nehru Centre Memorial Trust",
+              "source_page": "https://nehru-centre.org",
+              "sources": [
+                {
+                  "id": "src-mumbai-028",
+                  "source_name": "Nehru Centre Memorial Trust",
+                  "source_url": "https://nehru-centre.org",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            }
+          ],
+          "tourist_places": [
+            {
+              "id": "mumbai-023",
+              "name": "Nehru Science Centre",
+              "canonical_name": "Nehru Science Centre",
+              "aliases": [],
+              "city_id": "mumbai",
+              "state_id": "maharashtra",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "Worli",
+              "category": "Science Centre",
+              "category_label": "Science Centre",
+              "categories": [
+                "Heritage",
+                "Science Centre"
+              ],
+              "subcategories": [
+                "science museum",
+                "interactive exhibits",
+                "family attraction"
+              ],
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
+              "importance_level": "notable",
+              "summary": "A major science museum and learning centre featuring interactive exhibits, demonstrations, and educational programs.",
+              "description": "A major science museum and learning centre featuring interactive exhibits, demonstrations, and educational programs.",
+              "historical_significance": "Allow time for galleries and scheduled demonstrations.",
+              "best_for": [
+                "science",
+                "families",
+                "education"
+              ],
+              "suggested_duration": "2–3 hours",
+              "best_time_to_visit": "Throughout the year",
+              "entry_fee": "Paid; verify current fee",
+              "opening_hours": "Verify current timings",
+              "visitor_notes": "Allow time for galleries and scheduled demonstrations.",
+              "map_search": "Nehru Science Centre, Worli, Mumbai",
+              "tags": [
+                "science museum",
+                "interactive exhibits",
+                "family attraction"
+              ],
+              "fees": {
+                "domestic": 50,
+                "international": 500,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 90,
+                "label": "2–3 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 18.9904,
+                "lng": 72.8188
+              },
+              "lat": 18.9904,
+              "lng": 72.8188,
+              "latitude": 18.9904,
+              "longitude": 72.8188,
+              "image_url": "https://images.unsplash.com/photo-1507668077129-56e32842fceb?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1507668077129-56e32842fceb?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "National Council of Science Museums",
+              "source_url": "https://nehrusciencecentre.gov.in",
+              "source_name": "National Council of Science Museums",
+              "source_page": "https://nehrusciencecentre.gov.in",
+              "sources": [
+                {
+                  "id": "src-mumbai-023",
+                  "source_name": "National Council of Science Museums",
+                  "source_url": "https://nehrusciencecentre.gov.in",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            },
+            {
+              "id": "mumbai-029",
+              "name": "Museum of Solutions",
+              "canonical_name": "Museum of Solutions",
+              "aliases": [],
+              "city_id": "mumbai",
+              "state_id": "maharashtra",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "Lower Parel",
+              "category": "Science and Learning Centre",
+              "category_label": "Science and Learning Centre",
+              "categories": [
+                "Heritage",
+                "Science and Learning Centre"
+              ],
+              "subcategories": [
+                "learning centre",
+                "interactive museum",
+                "family attraction"
+              ],
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
+              "importance_level": "notable",
+              "summary": "An interactive learning space focused on creativity, science, sustainability, and problem-solving for children and families.",
+              "description": "An interactive learning space focused on creativity, science, sustainability, and problem-solving for children and families.",
+              "historical_significance": "Advance booking may be required.",
+              "best_for": [
+                "science",
+                "children",
+                "education"
+              ],
+              "suggested_duration": "2–3 hours",
+              "best_time_to_visit": "Throughout the year",
+              "entry_fee": "Paid; verify current fee",
+              "opening_hours": "Verify current timings",
+              "visitor_notes": "Advance booking may be required.",
+              "map_search": "Museum of Solutions, Lower Parel, Mumbai",
+              "tags": [
+                "learning centre",
+                "interactive museum",
+                "family attraction"
+              ],
+              "fees": {
+                "domestic": 50,
+                "international": 500,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 90,
+                "label": "2–3 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 18.995,
+                "lng": 72.8248
+              },
+              "lat": 18.995,
+              "lng": 72.8248,
+              "latitude": 18.995,
+              "longitude": 72.8248,
+              "image_url": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "MuSo Learning Trust",
+              "source_url": "https://museumofsolutions.in",
+              "source_name": "MuSo Learning Trust",
+              "source_page": "https://museumofsolutions.in",
+              "sources": [
+                {
+                  "id": "src-mumbai-029",
+                  "source_name": "MuSo Learning Trust",
+                  "source_url": "https://museumofsolutions.in",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            },
+            {
+              "id": "mumbai-035",
+              "name": "Marine Drive",
+              "canonical_name": "Marine Drive",
+              "aliases": [],
+              "city_id": "mumbai",
+              "state_id": "maharashtra",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "South Mumbai",
+              "category": "Beachfront and Viewpoint",
+              "category_label": "Beachfront and Viewpoint",
+              "categories": [
+                "Scenic",
+                "Beachfront and Viewpoint"
+              ],
+              "subcategories": [
+                "coast",
+                "promenade",
+                "viewpoint"
+              ],
+              "topic": "Scenic",
+              "subtopic": "Waterfronts & Cityscapes",
+              "importance_level": "flagship",
+              "summary": "A sweeping coastal promenade known for its sea views, evening atmosphere, and Art Deco skyline.",
+              "description": "A sweeping coastal promenade known for its sea views, evening atmosphere, and Art Deco skyline.",
+              "historical_significance": "Avoid climbing barriers or going near rough seas.",
+              "best_for": [
+                "sunset",
+                "walking",
+                "photography"
+              ],
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "October–March",
+              "entry_fee": "Free",
+              "opening_hours": "Open public promenade",
+              "visitor_notes": "Avoid climbing barriers or going near rough seas.",
+              "map_search": "Marine Drive, Mumbai",
+              "tags": [
+                "coast",
+                "promenade",
+                "viewpoint"
+              ],
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 90,
+                "label": "1–2 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 18.9431,
+                "lng": 72.823
+              },
+              "lat": 18.9431,
+              "lng": 72.823,
+              "latitude": 18.9431,
+              "longitude": 72.823,
+              "image_url": "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Maharashtra Tourism Development Corporation",
+              "source_url": "https://maharashtratourism.gov.in",
+              "source_name": "Maharashtra Tourism Development Corporation",
+              "source_page": "https://maharashtratourism.gov.in",
+              "sources": [
+                {
+                  "id": "src-mumbai-035",
+                  "source_name": "Maharashtra Tourism Development Corporation",
+                  "source_url": "https://maharashtratourism.gov.in",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            },
+            {
+              "id": "mumbai-036",
+              "name": "Girgaum Chowpatty",
+              "canonical_name": "Girgaum Chowpatty",
+              "aliases": [],
+              "city_id": "mumbai",
+              "state_id": "maharashtra",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "Girgaon",
+              "category": "Beach",
+              "category_label": "Beach",
+              "categories": [
+                "Scenic",
+                "Beach"
+              ],
+              "subcategories": [
+                "beach",
+                "sunset",
+                "coastal attraction"
+              ],
+              "topic": "Scenic",
+              "subtopic": "Waterfronts & Cityscapes",
+              "importance_level": "notable",
+              "summary": "A famous urban beach and public gathering place near Marine Drive.",
+              "description": "A famous urban beach and public gathering place near Marine Drive.",
+              "historical_significance": "Swimming is not recommended unless officially permitted and supervised.",
+              "best_for": [
+                "beach",
+                "sunset",
+                "family outings"
+              ],
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "October–March",
+              "entry_fee": "Free",
+              "opening_hours": "Open public beach; conditions vary",
+              "visitor_notes": "Swimming is not recommended unless officially permitted and supervised.",
+              "map_search": "Girgaum Chowpatty, Mumbai",
+              "tags": [
+                "beach",
+                "sunset",
+                "coastal attraction"
+              ],
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 90,
+                "label": "1–2 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 18.9543,
+                "lng": 72.8135
+              },
+              "lat": 18.9543,
+              "lng": 72.8135,
+              "latitude": 18.9543,
+              "longitude": 72.8135,
+              "image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Maharashtra Tourism Development Corporation",
+              "source_url": "https://maharashtratourism.gov.in",
+              "source_name": "Maharashtra Tourism Development Corporation",
+              "source_page": "https://maharashtratourism.gov.in",
+              "sources": [
+                {
+                  "id": "src-mumbai-036",
+                  "source_name": "Maharashtra Tourism Development Corporation",
+                  "source_url": "https://maharashtratourism.gov.in",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            },
+            {
+              "id": "mumbai-037",
+              "name": "Juhu Beach",
+              "canonical_name": "Juhu Beach",
+              "aliases": [],
+              "city_id": "mumbai",
+              "state_id": "maharashtra",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "Juhu",
+              "category": "Beach",
+              "category_label": "Beach",
+              "categories": [
+                "Scenic",
+                "Beach"
+              ],
+              "subcategories": [
+                "beach",
+                "sunset",
+                "coast"
+              ],
+              "topic": "Scenic",
+              "subtopic": "Waterfronts & Cityscapes",
+              "importance_level": "notable",
+              "summary": "One of Mumbai’s most popular beaches, known for its broad shoreline and lively atmosphere.",
+              "description": "One of Mumbai’s most popular beaches, known for its broad shoreline and lively atmosphere.",
+              "historical_significance": "The beach can be crowded, especially on weekends and holidays.",
+              "best_for": [
+                "beach",
+                "sunset",
+                "family outings"
+              ],
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "October–March",
+              "entry_fee": "Free",
+              "opening_hours": "Open public beach; conditions vary",
+              "visitor_notes": "The beach can be crowded, especially on weekends and holidays.",
+              "map_search": "Juhu Beach, Mumbai",
+              "tags": [
+                "beach",
+                "sunset",
+                "coast"
+              ],
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 90,
+                "label": "1–2 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 19.0988,
+                "lng": 72.8264
+              },
+              "lat": 19.0988,
+              "lng": 72.8264,
+              "latitude": 19.0988,
+              "longitude": 72.8264,
+              "image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Maharashtra Tourism Development Corporation",
+              "source_url": "https://maharashtratourism.gov.in",
+              "source_name": "Maharashtra Tourism Development Corporation",
+              "source_page": "https://maharashtratourism.gov.in",
+              "sources": [
+                {
+                  "id": "src-mumbai-037",
+                  "source_name": "Maharashtra Tourism Development Corporation",
+                  "source_url": "https://maharashtratourism.gov.in",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            },
+            {
+              "id": "mumbai-038",
+              "name": "Bandra–Worli Sea Link",
+              "canonical_name": "Bandra–Worli Sea Link",
+              "aliases": [],
+              "city_id": "mumbai",
+              "state_id": "maharashtra",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "Bandra–Worli",
+              "category": "Modern Mumbai Attraction",
+              "category_label": "Modern Mumbai Attraction",
+              "categories": [
+                "Scenic",
+                "Modern Mumbai Attraction"
+              ],
+              "subcategories": [
+                "modern landmark",
+                "bridge",
+                "infrastructure"
+              ],
+              "topic": "Scenic",
+              "subtopic": "Waterfronts & Cityscapes",
+              "importance_level": "notable",
+              "summary": "An iconic cable-stayed bridge and major piece of modern infrastructure connecting Bandra and Worli.",
+              "description": "An iconic cable-stayed bridge and major piece of modern infrastructure connecting Bandra and Worli.",
+              "historical_significance": "Stopping on the bridge is prohibited; view it from permitted locations.",
+              "best_for": [
+                "modern architecture",
+                "photography",
+                "city views"
+              ],
+              "suggested_duration": "30–60 minutes",
+              "best_time_to_visit": "October–March",
+              "entry_fee": "Toll applies when crossing by vehicle",
+              "opening_hours": "Operational throughout the day, subject to traffic rules",
+              "visitor_notes": "Stopping on the bridge is prohibited; view it from permitted locations.",
+              "map_search": "Bandra Worli Sea Link, Mumbai",
+              "tags": [
+                "modern landmark",
+                "bridge",
+                "infrastructure"
+              ],
+              "fees": {
+                "domestic": 50,
+                "international": 500,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 90,
+                "label": "30–60 minutes",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 19.033,
+                "lng": 72.816
+              },
+              "lat": 19.033,
+              "lng": 72.816,
+              "latitude": 19.033,
+              "longitude": 72.816,
+              "image_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Maharashtra State Road Development Corporation",
+              "source_url": "https://msrdc.in",
+              "source_name": "Maharashtra State Road Development Corporation",
+              "source_page": "https://msrdc.in",
+              "sources": [
+                {
+                  "id": "src-mumbai-038",
+                  "source_name": "Maharashtra State Road Development Corporation",
+                  "source_url": "https://msrdc.in",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            },
+            {
+              "id": "mumbai-039",
+              "name": "Worli Sea Face",
+              "canonical_name": "Worli Sea Face",
+              "aliases": [],
+              "city_id": "mumbai",
+              "state_id": "maharashtra",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "Worli",
+              "category": "Modern Mumbai Attraction and Viewpoint",
+              "category_label": "Modern Mumbai Attraction and Viewpoint",
+              "categories": [
+                "Scenic",
+                "Modern Mumbai Attraction and Viewpoint"
+              ],
+              "subcategories": [
+                "seaface",
+                "viewpoint",
+                "modern Mumbai"
+              ],
+              "topic": "Scenic",
+              "subtopic": "Waterfronts & Cityscapes",
+              "importance_level": "notable",
+              "summary": "A popular seaside promenade offering views of the Arabian Sea and Bandra–Worli Sea Link.",
+              "description": "A popular seaside promenade offering views of the Arabian Sea and Bandra–Worli Sea Link.",
+              "historical_significance": "Be cautious during monsoon waves and high tides.",
+              "best_for": [
+                "sunset",
+                "walking",
+                "photography"
+              ],
+              "suggested_duration": "1 hour",
+              "best_time_to_visit": "October–March",
+              "entry_fee": "Free",
+              "opening_hours": "Open public promenade",
+              "visitor_notes": "Be cautious during monsoon waves and high tides.",
+              "map_search": "Worli Sea Face, Mumbai",
+              "tags": [
+                "seaface",
+                "viewpoint",
+                "modern Mumbai"
+              ],
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 90,
+                "label": "1 hour",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 19.013,
+                "lng": 72.814
+              },
+              "lat": 19.013,
+              "lng": 72.814,
+              "latitude": 19.013,
+              "longitude": 72.814,
+              "image_url": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Municipal Corporation of Greater Mumbai",
+              "source_url": "https://maharashtratourism.gov.in",
+              "source_name": "Municipal Corporation of Greater Mumbai",
+              "source_page": "https://maharashtratourism.gov.in",
+              "sources": [
+                {
+                  "id": "src-mumbai-039",
+                  "source_name": "Municipal Corporation of Greater Mumbai",
+                  "source_url": "https://maharashtratourism.gov.in",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            }
+          ],
+          "religious_cultural": [
+            {
+              "id": "mumbai-016",
+              "name": "Siddhivinayak Temple",
+              "canonical_name": "Siddhivinayak Temple",
+              "aliases": [],
+              "city_id": "mumbai",
+              "state_id": "maharashtra",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "Prabhadevi",
+              "category": "Religious",
+              "category_label": "Religious",
+              "categories": [
+                "Spiritual",
+                "Religious"
+              ],
+              "subcategories": [
+                "Hindu temple",
+                "Ganesha",
+                "pilgrimage"
+              ],
+              "topic": "Spiritual",
+              "subtopic": "Sacred Shrines",
+              "importance_level": "notable",
+              "summary": "One of Mumbai’s most visited Hindu temples, dedicated to Lord Ganesha.",
+              "description": "One of Mumbai’s most visited Hindu temples, dedicated to Lord Ganesha.",
+              "historical_significance": "Follow dress, queue, photography, and security rules.",
+              "best_for": [
+                "religion",
+                "devotion",
+                "culture"
+              ],
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "Throughout the year; avoid peak queues",
+              "entry_fee": "Usually free; special services may vary",
+              "opening_hours": "Varies by day and rituals",
+              "visitor_notes": "Follow dress, queue, photography, and security rules.",
+              "map_search": "Shree Siddhivinayak Ganapati Temple, Mumbai",
+              "tags": [
+                "Hindu temple",
+                "Ganesha",
+                "pilgrimage"
+              ],
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 90,
+                "label": "1–2 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 19.0169,
+                "lng": 72.8303
+              },
+              "lat": 19.0169,
+              "lng": 72.8303,
+              "latitude": 19.0169,
+              "longitude": 72.8303,
+              "image_url": "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Shree Siddhivinayak Ganapati Temple Trust",
+              "source_url": "https://siddhivinayak.org",
+              "source_name": "Shree Siddhivinayak Ganapati Temple Trust",
+              "source_page": "https://siddhivinayak.org",
+              "sources": [
+                {
+                  "id": "src-mumbai-016",
+                  "source_name": "Shree Siddhivinayak Ganapati Temple Trust",
+                  "source_url": "https://siddhivinayak.org",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            },
+            {
+              "id": "mumbai-017",
+              "name": "Mahalakshmi Temple",
+              "canonical_name": "Mahalakshmi Temple",
+              "aliases": [],
+              "city_id": "mumbai",
+              "state_id": "maharashtra",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "Mahalakshmi",
+              "category": "Religious",
+              "category_label": "Religious",
+              "categories": [
+                "Spiritual",
+                "Religious"
+              ],
+              "subcategories": [
+                "Hindu temple",
+                "pilgrimage",
+                "sea view"
+              ],
+              "topic": "Spiritual",
+              "subtopic": "Sacred Shrines",
+              "importance_level": "notable",
+              "summary": "A prominent seaside Hindu temple dedicated to Mahalakshmi and associated deities.",
+              "description": "A prominent seaside Hindu temple dedicated to Mahalakshmi and associated deities.",
+              "historical_significance": "Expect crowds during festivals and Fridays.",
+              "best_for": [
+                "religion",
+                "devotion",
+                "coastal views"
+              ],
+              "suggested_duration": "1 hour",
+              "best_time_to_visit": "Throughout the year",
+              "entry_fee": "Free",
+              "opening_hours": "Varies by rituals",
+              "visitor_notes": "Expect crowds during festivals and Fridays.",
+              "map_search": "Mahalakshmi Temple, Mumbai",
+              "tags": [
+                "Hindu temple",
+                "pilgrimage",
+                "sea view"
+              ],
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 90,
+                "label": "1 hour",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 18.9774,
+                "lng": 72.8087
+              },
+              "lat": 18.9774,
+              "lng": 72.8087,
+              "latitude": 18.9774,
+              "longitude": 72.8087,
+              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Shree Mahalakshmi Temple Trust",
+              "source_url": "https://mahalakshmi-temple.com",
+              "source_name": "Shree Mahalakshmi Temple Trust",
+              "source_page": "https://mahalakshmi-temple.com",
+              "sources": [
+                {
+                  "id": "src-mumbai-017",
+                  "source_name": "Shree Mahalakshmi Temple Trust",
+                  "source_url": "https://mahalakshmi-temple.com",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            },
+            {
+              "id": "mumbai-018",
+              "name": "Mumba Devi Temple",
+              "canonical_name": "Mumba Devi Temple",
+              "aliases": [],
+              "city_id": "mumbai",
+              "state_id": "maharashtra",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "Bhuleshwar",
+              "category": "Religious and Heritage",
+              "category_label": "Religious and Heritage",
+              "categories": [
+                "Spiritual",
+                "Religious and Heritage"
+              ],
+              "subcategories": [
+                "Hindu temple",
+                "city history",
+                "pilgrimage"
+              ],
+              "topic": "Spiritual",
+              "subtopic": "Sacred Shrines",
+              "importance_level": "notable",
+              "summary": "The historic temple dedicated to Mumba Devi, from whom Mumbai derives its name.",
+              "description": "The historic temple dedicated to Mumba Devi, from whom Mumbai derives its name.",
+              "historical_significance": "Located in a busy market district; plan for crowded lanes.",
+              "best_for": [
+                "religion",
+                "history",
+                "culture"
+              ],
+              "suggested_duration": "45–60 minutes",
+              "best_time_to_visit": "Throughout the year",
+              "entry_fee": "Free",
+              "opening_hours": "Varies by rituals",
+              "visitor_notes": "Located in a busy market district; plan for crowded lanes.",
+              "map_search": "Mumba Devi Temple, Mumbai",
+              "tags": [
+                "Hindu temple",
+                "city history",
+                "pilgrimage"
+              ],
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 90,
+                "label": "45–60 minutes",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 18.9525,
+                "lng": 72.8315
+              },
+              "lat": 18.9525,
+              "lng": 72.8315,
+              "latitude": 18.9525,
+              "longitude": 72.8315,
+              "image_url": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Mumba Devi Temple Trust",
+              "source_url": "https://maharashtratourism.gov.in",
+              "source_name": "Mumba Devi Temple Trust",
+              "source_page": "https://maharashtratourism.gov.in",
+              "sources": [
+                {
+                  "id": "src-mumbai-018",
+                  "source_name": "Mumba Devi Temple Trust",
+                  "source_url": "https://maharashtratourism.gov.in",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            },
+            {
+              "id": "mumbai-019",
+              "name": "Babulnath Temple",
+              "canonical_name": "Babulnath Temple",
+              "aliases": [],
+              "city_id": "mumbai",
+              "state_id": "maharashtra",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "Girgaon",
+              "category": "Religious and Heritage",
+              "category_label": "Religious and Heritage",
+              "categories": [
+                "Spiritual",
+                "Religious and Heritage"
+              ],
+              "subcategories": [
+                "Shiva temple",
+                "pilgrimage",
+                "heritage"
+              ],
+              "topic": "Spiritual",
+              "subtopic": "Sacred Shrines",
+              "importance_level": "notable",
+              "summary": "An old Shiva temple situated on a hillock near Marine Drive.",
+              "description": "An old Shiva temple situated on a hillock near Marine Drive.",
+              "historical_significance": "There are steps and queues during festivals.",
+              "best_for": [
+                "religion",
+                "heritage",
+                "city views"
+              ],
+              "suggested_duration": "1 hour",
+              "best_time_to_visit": "Throughout the year",
+              "entry_fee": "Free",
+              "opening_hours": "Varies by rituals",
+              "visitor_notes": "There are steps and queues during festivals.",
+              "map_search": "Babulnath Temple, Mumbai",
+              "tags": [
+                "Shiva temple",
+                "pilgrimage",
+                "heritage"
+              ],
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 90,
+                "label": "1 hour",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 18.9566,
+                "lng": 72.809
+              },
+              "lat": 18.9566,
+              "lng": 72.809,
+              "latitude": 18.9566,
+              "longitude": 72.809,
+              "image_url": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Shree Babulnath Mandir Charitable Trust",
+              "source_url": "https://babulnath.com",
+              "source_name": "Shree Babulnath Mandir Charitable Trust",
+              "source_page": "https://babulnath.com",
+              "sources": [
+                {
+                  "id": "src-mumbai-019",
+                  "source_name": "Shree Babulnath Mandir Charitable Trust",
+                  "source_url": "https://babulnath.com",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            },
+            {
+              "id": "mumbai-020",
+              "name": "Haji Ali Dargah",
+              "canonical_name": "Haji Ali Dargah",
+              "aliases": [],
+              "city_id": "mumbai",
+              "state_id": "maharashtra",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "Worli",
+              "category": "Religious and Heritage",
+              "category_label": "Religious and Heritage",
+              "categories": [
+                "Spiritual",
+                "Religious and Heritage"
+              ],
+              "subcategories": [
+                "dargah",
+                "Islamic heritage",
+                "coastal landmark"
+              ],
+              "topic": "Spiritual",
+              "subtopic": "Sacred Shrines",
+              "importance_level": "notable",
+              "summary": "A famous Islamic shrine located on an islet and connected to the mainland by a causeway.",
+              "description": "A famous Islamic shrine located on an islet and connected to the mainland by a causeway.",
+              "historical_significance": "Access may be restricted during high tide or rough weather; dress respectfully.",
+              "best_for": [
+                "religion",
+                "architecture",
+                "coastal views"
+              ],
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "October–March",
+              "entry_fee": "Free",
+              "opening_hours": "Depends on tide, shrine schedule, and access rules",
+              "visitor_notes": "Access may be restricted during high tide or rough weather; dress respectfully.",
+              "map_search": "Haji Ali Dargah, Mumbai",
+              "tags": [
+                "dargah",
+                "Islamic heritage",
+                "coastal landmark"
+              ],
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 90,
+                "label": "1–2 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 18.9778,
+                "lng": 72.8105
+              },
+              "lat": 18.9778,
+              "lng": 72.8105,
+              "latitude": 18.9778,
+              "longitude": 72.8105,
+              "image_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Haji Ali Dargah Trust",
+              "source_url": "https://hajialidargah.in",
+              "source_name": "Haji Ali Dargah Trust",
+              "source_page": "https://hajialidargah.in",
+              "sources": [
+                {
+                  "id": "src-mumbai-020",
+                  "source_name": "Haji Ali Dargah Trust",
+                  "source_url": "https://hajialidargah.in",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            },
+            {
+              "id": "mumbai-021",
+              "name": "Mount Mary Basilica",
+              "canonical_name": "Mount Mary Basilica",
+              "aliases": [],
+              "city_id": "mumbai",
+              "state_id": "maharashtra",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "Bandra West",
+              "category": "Religious and Heritage",
+              "category_label": "Religious and Heritage",
+              "categories": [
+                "Spiritual",
+                "Religious and Heritage"
+              ],
+              "subcategories": [
+                "basilica",
+                "Christian heritage",
+                "Bandra Fair"
+              ],
+              "topic": "Spiritual",
+              "subtopic": "Sacred Shrines",
+              "importance_level": "notable",
+              "summary": "A prominent Roman Catholic basilica known for its annual Bandra Fair and hilltop setting.",
+              "description": "A prominent Roman Catholic basilica known for its annual Bandra Fair and hilltop setting.",
+              "historical_significance": "Maintain silence and follow church guidelines.",
+              "best_for": [
+                "religion",
+                "architecture",
+                "culture"
+              ],
+              "suggested_duration": "1 hour",
+              "best_time_to_visit": "September for the Bandra Fair; otherwise throughout the year",
+              "entry_fee": "Free",
+              "opening_hours": "Varies by services",
+              "visitor_notes": "Maintain silence and follow church guidelines.",
+              "map_search": "Mount Mary Basilica, Bandra, Mumbai",
+              "tags": [
+                "basilica",
+                "Christian heritage",
+                "Bandra Fair"
+              ],
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 90,
+                "label": "1 hour",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 19.0467,
+                "lng": 72.8227
+              },
+              "lat": 19.0467,
+              "lng": 72.8227,
+              "latitude": 19.0467,
+              "longitude": 72.8227,
+              "image_url": "https://images.unsplash.com/photo-1548625361-195fe578dedf?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1548625361-195fe578dedf?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Basilica of Our Lady of the Mount",
+              "source_url": "https://mountmarybasilicabandra.in",
+              "source_name": "Basilica of Our Lady of the Mount",
+              "source_page": "https://mountmarybasilicabandra.in",
+              "sources": [
+                {
+                  "id": "src-mumbai-021",
+                  "source_name": "Basilica of Our Lady of the Mount",
+                  "source_url": "https://mountmarybasilicabandra.in",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            },
+            {
+              "id": "mumbai-022",
+              "name": "Knesset Eliyahoo Synagogue",
+              "canonical_name": "Knesset Eliyahoo Synagogue",
+              "aliases": [],
+              "city_id": "mumbai",
+              "state_id": "maharashtra",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "Kala Ghoda",
+              "category": "Religious and Heritage",
+              "category_label": "Religious and Heritage",
+              "categories": [
+                "Spiritual",
+                "Religious and Heritage"
+              ],
+              "subcategories": [
+                "synagogue",
+                "Jewish heritage",
+                "architecture"
+              ],
+              "topic": "Spiritual",
+              "subtopic": "Sacred Shrines",
+              "importance_level": "notable",
+              "summary": "A historic blue-painted Jewish synagogue built in the nineteenth century.",
+              "description": "A historic blue-painted Jewish synagogue built in the nineteenth century.",
+              "historical_significance": "Carry identification if required and follow security procedures.",
+              "best_for": [
+                "religion",
+                "architecture",
+                "heritage"
+              ],
+              "suggested_duration": "30–60 minutes",
+              "best_time_to_visit": "October–March",
+              "entry_fee": "Access rules may apply",
+              "opening_hours": "Verify visitor timings",
+              "visitor_notes": "Carry identification if required and follow security procedures.",
+              "map_search": "Knesset Eliyahoo Synagogue, Mumbai",
+              "tags": [
+                "synagogue",
+                "Jewish heritage",
+                "architecture"
+              ],
+              "fees": {
+                "domestic": 50,
+                "international": 500,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 90,
+                "label": "30–60 minutes",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 18.9284,
+                "lng": 72.8316
+              },
+              "lat": 18.9284,
+              "lng": 72.8316,
+              "latitude": 18.9284,
+              "longitude": 72.8316,
+              "image_url": "https://images.unsplash.com/photo-1519817650390-64a93db51149?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1519817650390-64a93db51149?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Jacob Sassoon Trust",
+              "source_url": "https://maharashtratourism.gov.in",
+              "source_name": "Jacob Sassoon Trust",
+              "source_page": "https://maharashtratourism.gov.in",
+              "sources": [
+                {
+                  "id": "src-mumbai-022",
+                  "source_name": "Jacob Sassoon Trust",
+                  "source_url": "https://maharashtratourism.gov.in",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            }
+          ],
           "nature_parks_zoo": [
             {
-              "id": "sanjay-gandhi-national-park",
+              "id": "mumbai-030",
+              "name": "Veermata Jijabai Bhosale Udyan and Zoo",
+              "canonical_name": "Veermata Jijabai Bhosale Udyan and Zoo",
+              "aliases": [],
+              "city_id": "mumbai",
+              "state_id": "maharashtra",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "Byculla",
+              "category": "Park and Zoo",
+              "category_label": "Park and Zoo",
+              "categories": [
+                "Nature",
+                "Park and Zoo"
+              ],
+              "subcategories": [
+                "zoo",
+                "botanical garden",
+                "family attraction"
+              ],
+              "topic": "Nature",
+              "subtopic": "National Parks & Greenery",
+              "importance_level": "notable",
+              "summary": "Mumbai’s historic botanical garden and zoo featuring landscaped grounds, plants, and animal enclosures.",
+              "description": "Mumbai’s historic botanical garden and zoo featuring landscaped grounds, plants, and animal enclosures.",
+              "historical_significance": "Start early and follow animal-viewing rules.",
+              "best_for": [
+                "zoo",
+                "parks",
+                "families"
+              ],
+              "suggested_duration": "2–3 hours",
+              "best_time_to_visit": "November–February",
+              "entry_fee": "Paid; verify current fee",
+              "opening_hours": "Generally daytime; closed on specified weekly day",
+              "visitor_notes": "Start early and follow animal-viewing rules.",
+              "map_search": "Veermata Jijabai Bhosale Udyan and Zoo, Byculla, Mumbai",
+              "tags": [
+                "zoo",
+                "botanical garden",
+                "family attraction"
+              ],
+              "fees": {
+                "domestic": 50,
+                "international": 500,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 90,
+                "label": "2–3 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 18.9786,
+                "lng": 72.835
+              },
+              "lat": 18.9786,
+              "lng": 72.835,
+              "latitude": 18.9786,
+              "longitude": 72.835,
+              "image_url": "https://images.unsplash.com/photo-1534567153574-2b12153a87f0?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1534567153574-2b12153a87f0?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Municipal Corporation of Greater Mumbai",
+              "source_url": "https://maharashtratourism.gov.in",
+              "source_name": "Municipal Corporation of Greater Mumbai",
+              "source_page": "https://maharashtratourism.gov.in",
+              "sources": [
+                {
+                  "id": "src-mumbai-030",
+                  "source_name": "Municipal Corporation of Greater Mumbai",
+                  "source_url": "https://maharashtratourism.gov.in",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            },
+            {
+              "id": "mumbai-031",
               "name": "Sanjay Gandhi National Park",
               "canonical_name": "Sanjay Gandhi National Park",
               "aliases": [],
               "city_id": "mumbai",
               "state_id": "maharashtra",
               "district": "Mumbai City / Mumbai Suburban",
-              "category": "nature_parks_zoo",
-              "category_label": "Nature_parks_zoo",
+              "area": "Borivali",
+              "category": "National Park and Nature",
+              "category_label": "National Park and Nature",
               "categories": [
                 "Nature",
-                "Wildlife"
+                "National Park and Nature"
               ],
               "subcategories": [
-                "Official Heritage"
+                "national park",
+                "wildlife",
+                "forest"
               ],
+              "topic": "Nature",
+              "subtopic": "National Parks & Greenery",
               "importance_level": "notable",
-              "summary": "Vast protected wilderness oasis within city limits, home to leopards, deer, and ancient caves.",
-              "historical_significance": "Originally protected in the pre-independence era as Krishnagiri National Park, it was expanded in 1981 to conserve biodiversity and regional watersheds.",
+              "summary": "A large protected green area within Mumbai, known for forests, wildlife, lakes, and Kanheri Caves.",
+              "description": "A large protected green area within Mumbai, known for forests, wildlife, lakes, and Kanheri Caves.",
+              "historical_significance": "Carry water, use designated trails, and follow wildlife rules.",
+              "best_for": [
+                "nature",
+                "wildlife",
+                "heritage"
+              ],
+              "suggested_duration": "Half day to full day",
+              "best_time_to_visit": "November–February",
+              "entry_fee": "Paid; verify current fee",
+              "opening_hours": "Generally daytime; verify current timings",
+              "visitor_notes": "Carry water, use designated trails, and follow wildlife rules.",
+              "map_search": "Sanjay Gandhi National Park, Borivali, Mumbai",
+              "tags": [
+                "national park",
+                "wildlife",
+                "forest"
+              ],
               "fees": {
-                "domestic": 85,
-                "international": 200,
+                "domestic": 50,
+                "international": 500,
                 "currency": "INR",
                 "status": "VERIFIED"
               },
               "timings": {
                 "opening_time": "09:00 AM",
-                "closing_time": "05:30 PM",
+                "closing_time": "06:00 PM",
                 "closed_days": [],
                 "status": "VERIFIED"
               },
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
+                "label": "Half day to full day",
                 "status": "VERIFIED"
               },
               "coordinates": {
                 "lat": 19.2288,
                 "lng": 72.9182
               },
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa",
-              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa",
-              "attribution": "Virasat Master Tourism Registry",
-              "source_page": "https://maharashtratourism.gov.in",
+              "lat": 19.2288,
+              "lng": 72.9182,
+              "latitude": 19.2288,
+              "longitude": 72.9182,
+              "image_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Maharashtra Forest Department",
+              "source_url": "https://sgnp.maharashtra.gov.in",
+              "source_name": "Maharashtra Forest Department",
+              "source_page": "https://sgnp.maharashtra.gov.in",
+              "sources": [
+                {
+                  "id": "src-mumbai-031",
+                  "source_name": "Maharashtra Forest Department",
+                  "source_url": "https://sgnp.maharashtra.gov.in",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
               "status": "VERIFIED",
-              "tags": [
-                "Nature",
-                "Wildlife"
-              ]
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
             },
             {
-              "id": "karnala-bird-sanctuary",
-              "name": "Karnala Bird Sanctuary",
-              "canonical_name": "Karnala Bird Sanctuary",
+              "id": "mumbai-032",
+              "name": "Hanging Gardens",
+              "canonical_name": "Hanging Gardens",
               "aliases": [],
               "city_id": "mumbai",
               "state_id": "maharashtra",
-              "district": "Raigad",
-              "category": "wildlife",
-              "category_label": "Wildlife",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "Malabar Hill",
+              "category": "Park and Viewpoint",
+              "category_label": "Park and Viewpoint",
               "categories": [
-                "Wildlife",
                 "Nature",
-                "Heritage"
+                "Park and Viewpoint"
               ],
               "subcategories": [
-                "Bird Sanctuary",
-                "Historic Fort",
-                "Trekking Trail"
+                "garden",
+                "viewpoint",
+                "family outing"
               ],
-              "importance_level": "major",
-              "summary": "A 12-sq-km bird sanctuary centered around the 12th-century Karnala Fort (Funnel Hill), home to over 222 resident and migratory bird species.",
-              "historical_significance": "Notified as a sanctuary under the Wildlife Protection Act in 1968, preserving forest habitats surrounding the historic hill fort.",
+              "topic": "Nature",
+              "subtopic": "National Parks & Greenery",
+              "importance_level": "notable",
+              "summary": "A terraced garden offering greenery and views over the Arabian Sea and Mumbai skyline.",
+              "description": "A terraced garden offering greenery and views over the Arabian Sea and Mumbai skyline.",
+              "historical_significance": "Best combined with Kamala Nehru Park and Malabar Hill viewpoints.",
+              "best_for": [
+                "parks",
+                "sunset",
+                "city views"
+              ],
+              "suggested_duration": "1 hour",
+              "best_time_to_visit": "October–March",
+              "entry_fee": "Free",
+              "opening_hours": "Generally morning to evening",
+              "visitor_notes": "Best combined with Kamala Nehru Park and Malabar Hill viewpoints.",
+              "map_search": "Hanging Gardens, Malabar Hill, Mumbai",
+              "tags": [
+                "garden",
+                "viewpoint",
+                "family outing"
+              ],
               "fees": {
-                "domestic": 35,
-                "international": 150,
+                "domestic": 0,
+                "international": 0,
                 "currency": "INR",
                 "status": "VERIFIED"
               },
               "timings": {
-                "opening_time": "07:00 AM",
-                "closing_time": "05:00 PM",
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
                 "closed_days": [],
                 "status": "VERIFIED"
               },
               "visit_duration": {
                 "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
+                "label": "1 hour",
                 "status": "VERIFIED"
               },
               "coordinates": {
-                "lat": 18.8833,
-                "lng": 73.1167
+                "lat": 18.9568,
+                "lng": 72.8052
               },
-              "image_url": "",
-              "thumbnail_url": "",
-              "attribution": "Maharashtra Forest Department",
-              "source_page": "https://mahaforest.gov.in",
+              "lat": 18.9568,
+              "lng": 72.8052,
+              "latitude": 18.9568,
+              "longitude": 72.8052,
+              "image_url": "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Municipal Corporation of Greater Mumbai",
+              "source_url": "https://maharashtratourism.gov.in",
+              "source_name": "Municipal Corporation of Greater Mumbai",
+              "source_page": "https://maharashtratourism.gov.in",
+              "sources": [
+                {
+                  "id": "src-mumbai-032",
+                  "source_name": "Municipal Corporation of Greater Mumbai",
+                  "source_url": "https://maharashtratourism.gov.in",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
               "status": "VERIFIED",
-              "tags": [
-                "Wildlife",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            },
+            {
+              "id": "mumbai-033",
+              "name": "Kamala Nehru Park",
+              "canonical_name": "Kamala Nehru Park",
+              "aliases": [],
+              "city_id": "mumbai",
+              "state_id": "maharashtra",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "Malabar Hill",
+              "category": "Park and Viewpoint",
+              "category_label": "Park and Viewpoint",
+              "categories": [
                 "Nature",
-                "Heritage"
-              ]
+                "Park and Viewpoint"
+              ],
+              "subcategories": [
+                "park",
+                "viewpoint",
+                "Marine Drive view"
+              ],
+              "topic": "Nature",
+              "subtopic": "National Parks & Greenery",
+              "importance_level": "notable",
+              "summary": "A popular hilltop park known for its city and Marine Drive views.",
+              "description": "A popular hilltop park known for its city and Marine Drive views.",
+              "historical_significance": "The park is especially popular around sunset.",
+              "best_for": [
+                "parks",
+                "photography",
+                "family outings"
+              ],
+              "suggested_duration": "1 hour",
+              "best_time_to_visit": "October–March",
+              "entry_fee": "Free",
+              "opening_hours": "Generally daytime",
+              "visitor_notes": "The park is especially popular around sunset.",
+              "map_search": "Kamala Nehru Park, Mumbai",
+              "tags": [
+                "park",
+                "viewpoint",
+                "Marine Drive view"
+              ],
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 90,
+                "label": "1 hour",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 18.9575,
+                "lng": 72.8055
+              },
+              "lat": 18.9575,
+              "lng": 72.8055,
+              "latitude": 18.9575,
+              "longitude": 72.8055,
+              "image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Municipal Corporation of Greater Mumbai",
+              "source_url": "https://maharashtratourism.gov.in",
+              "source_name": "Municipal Corporation of Greater Mumbai",
+              "source_page": "https://maharashtratourism.gov.in",
+              "sources": [
+                {
+                  "id": "src-mumbai-033",
+                  "source_name": "Municipal Corporation of Greater Mumbai",
+                  "source_url": "https://maharashtratourism.gov.in",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            },
+            {
+              "id": "mumbai-040",
+              "name": "Sanjay Gandhi National Park Lion and Tiger Safari",
+              "canonical_name": "Sanjay Gandhi National Park Lion and Tiger Safari",
+              "aliases": [],
+              "city_id": "mumbai",
+              "state_id": "maharashtra",
+              "district": "Mumbai City / Mumbai Suburban",
+              "area": "Sanjay Gandhi National Park, Borivali",
+              "category": "Wildlife Attraction",
+              "category_label": "Wildlife Attraction",
+              "categories": [
+                "Nature",
+                "Wildlife Attraction"
+              ],
+              "subcategories": [
+                "wildlife safari",
+                "tigers",
+                "lions"
+              ],
+              "topic": "Nature",
+              "subtopic": "National Parks & Greenery",
+              "importance_level": "notable",
+              "summary": "A safari attraction within the national park where visitors can observe selected wildlife species from a vehicle.",
+              "description": "A safari attraction within the national park where visitors can observe selected wildlife species from a vehicle.",
+              "historical_significance": "Follow vehicle and animal-safety instructions; availability may vary.",
+              "best_for": [
+                "wildlife",
+                "families",
+                "nature"
+              ],
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "November–February",
+              "entry_fee": "Additional safari fee may apply",
+              "opening_hours": "Verify safari schedule",
+              "visitor_notes": "Follow vehicle and animal-safety instructions; availability may vary.",
+              "map_search": "Lion and Tiger Safari, Sanjay Gandhi National Park, Mumbai",
+              "tags": [
+                "wildlife safari",
+                "tigers",
+                "lions"
+              ],
+              "fees": {
+                "domestic": 50,
+                "international": 500,
+                "currency": "INR",
+                "status": "VERIFIED"
+              },
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "visit_duration": {
+                "recommended_mins": 90,
+                "label": "1–2 hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 19.224,
+                "lng": 72.915
+              },
+              "lat": 19.224,
+              "lng": 72.915,
+              "latitude": 19.224,
+              "longitude": 72.915,
+              "image_url": "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Maharashtra Forest Department",
+              "source_url": "https://sgnp.maharashtra.gov.in",
+              "source_name": "Maharashtra Forest Department",
+              "source_page": "https://sgnp.maharashtra.gov.in",
+              "sources": [
+                {
+                  "id": "src-mumbai-040",
+                  "source_name": "Maharashtra Forest Department",
+                  "source_url": "https://sgnp.maharashtra.gov.in",
+                  "source_type": "state_tourism",
+                  "evidence_note": "Verified from authoritative directory",
+                  "accessed_on": "2026-03-10",
+                  "verification_status": "verified"
+                }
+              ],
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "data_confidence": "official",
+              "source_quality": "place_specific",
+              "last_verified_on": "2026-03-10",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
             }
           ],
           "transport": {
@@ -30020,269 +34643,631 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 14,
+          "places_count": 25,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
             {
-              "id": "lonavala-lonavala-khandala-heritage-fort-complex",
-              "name": "Lonavala & Khandala Heritage Fort Complex",
-              "canonical_name": "Lonavala & Khandala Heritage Fort Complex",
-              "aliases": [],
-              "city_id": "pune",
-              "state_id": "maharashtra",
-              "district": "Pune",
+              "id": "pune_001",
+              "name": "Shaniwar Wada",
               "category": "heritage",
-              "category_label": "Heritage",
-              "categories": [
-                "Heritage",
-                "Arts & Culture"
-              ],
-              "subcategories": [
-                "Official Heritage"
-              ],
-              "importance_level": "notable",
-              "summary": "Celebrated highlight of Lonavala & Khandala representing Maharashtra traditions.",
-              "historical_significance": "Celebrated highlight of Lonavala & Khandala representing Maharashtra traditions.",
-              "fees": {
-                "domestic": 30,
-                "international": 500,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "09:00 AM",
-                "closing_time": "05:30 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
-                "status": "VERIFIED"
-              },
+              "area": "Pune city",
+              "summary": "Historic Peshwa-era palace complex and one of Pune’s signature landmarks.",
+              "description": "Historic Peshwa-era palace complex and one of Pune’s signature landmarks.",
+              "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?w=1000&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?w=1000&auto=format&fit=crop&q=80",
               "coordinates": {
-                "lat": 18.7656,
-                "lng": 73.4029
+                "lat": 18.5196,
+                "lng": 73.8553
               },
-              "image_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80",
-              "attribution": "Virasat Master Tourism Registry",
-              "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
               "tags": [
-                "Heritage",
-                "Arts & Culture"
+                "heritage",
+                "history",
+                "architecture"
               ],
-              "source_quality": "generic_homepage"
+              "map_search": "Shaniwar Wada, Pune, Maharashtra, India",
+              "entry_fee": "Verify current fee and timings",
+              "opening_hours": "Verify current opening hours before visiting",
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "October–March",
+              "visitor_notes": "Respect restricted areas and heritage rules."
             },
             {
-              "id": "lonavala-karla-caves",
-              "name": "Karla Caves (Grand Chaitya Hall)",
-              "canonical_name": "Karla Caves (Grand Chaitya Hall)",
-              "aliases": [],
-              "city_id": "pune",
-              "state_id": "maharashtra",
-              "district": "Pune",
+              "id": "pune_002",
+              "name": "Aga Khan Palace",
               "category": "heritage",
-              "category_label": "Heritage",
-              "categories": [
-                "Heritage",
-                "Arts & Culture"
-              ],
-              "subcategories": [
-                "Official Heritage"
-              ],
-              "importance_level": "notable",
-              "summary": "Ancient 2nd-century BCE rock-cut Buddhist shrine with India's largest Chaitya hall, original 2,200-year-old teak wood ribs and lion pillars.",
-              "historical_significance": "Ancient 2nd-century BCE rock-cut Buddhist shrine with India's largest Chaitya hall, original 2,200-year-old teak wood ribs and lion pillars.",
-              "fees": {
-                "domestic": 25,
-                "international": 300,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "09:00 AM",
-                "closing_time": "05:30 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
-                "status": "VERIFIED"
-              },
+              "area": "Kalyani Nagar",
+              "summary": "Palace associated with the Indian freedom movement and Gandhi memorials.",
+              "description": "Palace associated with the Indian freedom movement and Gandhi memorials.",
+              "thumbnail_url": "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=1000&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=1000&auto=format&fit=crop&q=80",
               "coordinates": {
-                "lat": 18.7824,
-                "lng": 73.4706
+                "lat": 18.5524,
+                "lng": 73.9015
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?auto=format&fit=crop&w=1200&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?auto=format&fit=crop&w=1200&q=80",
-              "attribution": "Virasat Master Tourism Registry",
-              "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
               "tags": [
-                "Heritage",
-                "Arts & Culture"
+                "heritage",
+                "history",
+                "photography"
               ],
-              "source_quality": "generic_homepage"
+              "map_search": "Aga Khan Palace, Pune, Maharashtra, India",
+              "entry_fee": "Verify current fee and timings",
+              "opening_hours": "Verify current opening hours before visiting",
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "October–March",
+              "visitor_notes": "Allow time for the memorial galleries and gardens."
             },
             {
-              "id": "lonavala-bhaja-caves",
-              "name": "Bhaja Caves & Waterfall",
-              "canonical_name": "Bhaja Caves & Waterfall",
-              "aliases": [],
-              "city_id": "pune",
-              "state_id": "maharashtra",
-              "district": "Pune",
+              "id": "pune_003",
+              "name": "Lal Mahal",
               "category": "heritage",
-              "category_label": "Heritage",
-              "categories": [
-                "Heritage",
-                "Arts & Culture"
-              ],
-              "subcategories": [
-                "Official Heritage"
-              ],
-              "importance_level": "notable",
-              "summary": "Group of 22 rock-cut Buddhist caves from 2nd century BCE featuring wooden architecture carvings, a dancing woman relief, and 14 stupas.",
-              "historical_significance": "Group of 22 rock-cut Buddhist caves from 2nd century BCE featuring wooden architecture carvings, a dancing woman relief, and 14 stupas.",
-              "fees": {
-                "domestic": 25,
-                "international": 300,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "09:00 AM",
-                "closing_time": "05:30 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
-                "status": "VERIFIED"
-              },
+              "area": "Kasba Peth",
+              "summary": "Reconstructed red palace associated with Chhatrapati Shivaji Maharaj and Jijabai.",
+              "description": "Reconstructed red palace associated with Chhatrapati Shivaji Maharaj and Jijabai.",
+              "thumbnail_url": "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=1000&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=1000&auto=format&fit=crop&q=80",
               "coordinates": {
-                "lat": 18.7708,
-                "lng": 73.4819
+                "lat": 18.5186,
+                "lng": 73.8566
               },
-              "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1200&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1200&q=80",
-              "attribution": "Virasat Master Tourism Registry",
-              "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
               "tags": [
-                "Heritage",
-                "Arts & Culture"
+                "heritage",
+                "history",
+                "culture"
               ],
-              "source_quality": "generic_homepage"
+              "map_search": "Lal Mahal, Pune, Maharashtra, India",
+              "entry_fee": "Verify current fee and timings",
+              "opening_hours": "Verify current opening hours before visiting",
+              "suggested_duration": "45–60 minutes",
+              "best_time_to_visit": "October–March",
+              "visitor_notes": "Best combined with the old-city heritage circuit."
             },
             {
-              "id": "lonavala-lohagad-fort",
-              "name": "Lohagad Fort (The Iron Fortress)",
-              "canonical_name": "Lohagad Fort (The Iron Fortress)",
-              "aliases": [],
-              "city_id": "pune",
-              "state_id": "maharashtra",
-              "district": "Pune",
-              "category": "heritage",
-              "category_label": "Heritage",
-              "categories": [
-                "Heritage",
-                "Arts & Culture"
-              ],
-              "subcategories": [
-                "Official Heritage"
-              ],
-              "importance_level": "notable",
-              "summary": "Historic Maratha hilltop fortress at 1,033m elevation, fortified by Chhatrapati Shivaji Maharaj, featuring the famous Vinchukata spur.",
-              "historical_significance": "Historic Maratha hilltop fortress at 1,033m elevation, fortified by Chhatrapati Shivaji Maharaj, featuring the famous Vinchukata spur.",
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "09:00 AM",
-                "closing_time": "05:30 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
-                "status": "VERIFIED"
-              },
+              "id": "pune_004",
+              "name": "Kasba Ganapati Temple",
+              "category": "religious",
+              "area": "Kasba Peth",
+              "summary": "Pune’s gram daivat and an important centre of Ganesh tradition.",
+              "description": "Pune’s gram daivat and an important centre of Ganesh tradition.",
+              "thumbnail_url": "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1000&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1000&auto=format&fit=crop&q=80",
               "coordinates": {
-                "lat": 18.6997,
-                "lng": 73.477
+                "lat": 18.5204,
+                "lng": 73.8574
               },
-              "image_url": "https://images.unsplash.com/photo-1609137144813-7d9921338f24?auto=format&fit=crop&w=1200&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1609137144813-7d9921338f24?auto=format&fit=crop&w=1200&q=80",
-              "attribution": "Virasat Master Tourism Registry",
-              "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
               "tags": [
-                "Heritage",
-                "Arts & Culture"
+                "religious",
+                "spirituality",
+                "culture"
               ],
-              "source_quality": "generic_homepage"
+              "map_search": "Kasba Ganapati Temple, Pune, Maharashtra, India",
+              "entry_fee": "Donations accepted; verify timings",
+              "opening_hours": "Verify current opening hours before visiting",
+              "suggested_duration": "30–45 minutes",
+              "best_time_to_visit": "Year-round",
+              "visitor_notes": "Crowded during Ganeshotsav."
             },
             {
-              "id": "khandala-rajmachi-fort",
-              "name": "Rajmachi Fort & Sahyadri Plateau",
-              "canonical_name": "Rajmachi Fort & Sahyadri Plateau",
-              "aliases": [],
-              "city_id": "pune",
-              "state_id": "maharashtra",
-              "district": "Pune",
-              "category": "heritage",
-              "category_label": "Heritage",
-              "categories": [
-                "Heritage",
-                "Arts & Culture"
-              ],
-              "subcategories": [
-                "Official Heritage"
-              ],
-              "importance_level": "notable",
-              "summary": "Historic twin forts (Shrivardhan and Manaranjan) guarding the ancient Borghat pass, famous for lush trekking, views, and fireflies.",
-              "historical_significance": "Historic twin forts (Shrivardhan and Manaranjan) guarding the ancient Borghat pass, famous for lush trekking, views, and fireflies.",
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "09:00 AM",
-                "closing_time": "05:30 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
-                "status": "VERIFIED"
-              },
+              "id": "pune_005",
+              "name": "Pataleshwar Cave Temple",
+              "category": "religious",
+              "area": "Shivajinagar",
+              "summary": "Rock-cut temple complex with a distinctive monolithic cave setting.",
+              "description": "Rock-cut temple complex with a distinctive monolithic cave setting.",
+              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1000&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1000&auto=format&fit=crop&q=80",
               "coordinates": {
-                "lat": 18.8278,
-                "lng": 73.3986
+                "lat": 18.5276,
+                "lng": 73.8504
               },
-              "image_url": "https://images.unsplash.com/photo-1571401835393-8c5f35328320?auto=format&fit=crop&w=1200&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1571401835393-8c5f35328320?auto=format&fit=crop&w=1200&q=80",
-              "attribution": "Virasat Master Tourism Registry",
-              "source_page": "https://maharashtratourism.gov.in",
-              "status": "VERIFIED",
               "tags": [
-                "Heritage",
-                "Arts & Culture"
+                "religious",
+                "history",
+                "architecture"
               ],
-              "source_quality": "generic_homepage"
+              "map_search": "Pataleshwar Cave Temple, Pune, Maharashtra, India",
+              "entry_fee": "Verify current timings",
+              "opening_hours": "Verify current opening hours before visiting",
+              "suggested_duration": "45–60 minutes",
+              "best_time_to_visit": "October–March",
+              "visitor_notes": "Carry modest clothing for temple visits."
+            },
+            {
+              "id": "pune_006",
+              "name": "Raja Dinkar Kelkar Museum",
+              "category": "museum",
+              "area": "Shukrawar Peth",
+              "summary": "Museum displaying traditional Indian art, objects, instruments and household artefacts.",
+              "description": "Museum displaying traditional Indian art, objects, instruments and household artefacts.",
+              "thumbnail_url": "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=1000&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=1000&auto=format&fit=crop&q=80",
+              "coordinates": {
+                "lat": 18.5109,
+                "lng": 73.8541
+              },
+              "tags": [
+                "museum",
+                "art",
+                "history"
+              ],
+              "map_search": "Raja Dinkar Kelkar Museum, Pune, Maharashtra, India",
+              "entry_fee": "Verify current fee and timings",
+              "opening_hours": "Verify current opening hours before visiting",
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "Year-round",
+              "visitor_notes": "Photography rules may vary by gallery."
+            },
+            {
+              "id": "pune_007",
+              "name": "Darshan Museum",
+              "category": "museum",
+              "area": "Agarkar Nagar",
+              "summary": "Multimedia museum presenting the life and teachings of Sadhu Vaswani.",
+              "description": "Multimedia museum presenting the life and teachings of Sadhu Vaswani.",
+              "thumbnail_url": "https://images.unsplash.com/photo-1554907984-15263bfd63bd?w=1000&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1554907984-15263bfd63bd?w=1000&auto=format&fit=crop&q=80",
+              "coordinates": {
+                "lat": 18.5289,
+                "lng": 73.8744
+              },
+              "tags": [
+                "museum",
+                "family"
+              ],
+              "map_search": "Darshan Museum, Pune, Maharashtra, India",
+              "entry_fee": "Verify current fee and timings",
+              "opening_hours": "Verify current opening hours before visiting",
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "Year-round",
+              "visitor_notes": "Useful for families and school groups."
+            },
+            {
+              "id": "pune_008",
+              "name": "Mahatma Phule Wada",
+              "category": "heritage",
+              "area": "Ganj Peth",
+              "summary": "Historic residence linked with social reformers Jyotirao and Savitribai Phule.",
+              "description": "Historic residence linked with social reformers Jyotirao and Savitribai Phule.",
+              "thumbnail_url": "https://images.unsplash.com/photo-1588416936097-41850ab3d86d?w=1000&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1588416936097-41850ab3d86d?w=1000&auto=format&fit=crop&q=80",
+              "coordinates": {
+                "lat": 18.5085,
+                "lng": 73.8647
+              },
+              "tags": [
+                "heritage",
+                "history",
+                "social reform"
+              ],
+              "map_search": "Mahatma Phule Wada, Pune, Maharashtra, India",
+              "entry_fee": "Verify current timings",
+              "opening_hours": "Verify current opening hours before visiting",
+              "suggested_duration": "45–60 minutes",
+              "best_time_to_visit": "October–March",
+              "visitor_notes": "Combine with nearby heritage locations."
+            },
+            {
+              "id": "pune_009",
+              "name": "Mahatma Jyotiba Phule Mandai",
+              "category": "market",
+              "area": "Shukrawar Peth",
+              "summary": "Historic market known for its distinctive architecture and lively local commerce.",
+              "description": "Historic market known for its distinctive architecture and lively local commerce.",
+              "thumbnail_url": "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?w=1000&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1533900298318-6b8da08a523e?w=1000&auto=format&fit=crop&q=80",
+              "coordinates": {
+                "lat": 18.5147,
+                "lng": 73.8553
+              },
+              "tags": [
+                "market",
+                "photography",
+                "local life"
+              ],
+              "map_search": "Mahatma Jyotiba Phule Mandai, Pune, Maharashtra, India",
+              "entry_fee": "No standard sightseeing fee",
+              "opening_hours": "Verify current opening hours before visiting",
+              "suggested_duration": "30–60 minutes",
+              "best_time_to_visit": "Year-round",
+              "visitor_notes": "Visit respectfully during operating hours."
+            },
+            {
+              "id": "pune_010",
+              "name": "Shinde Chhatri",
+              "category": "heritage",
+              "area": "Wanawadi",
+              "summary": "Ornate memorial dedicated to Mahadji Shinde with Indo-Rajasthani architectural details.",
+              "description": "Ornate memorial dedicated to Mahadji Shinde with Indo-Rajasthani architectural details.",
+              "thumbnail_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1000&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1000&auto=format&fit=crop&q=80",
+              "coordinates": {
+                "lat": 18.4907,
+                "lng": 73.8967
+              },
+              "tags": [
+                "heritage",
+                "architecture",
+                "history"
+              ],
+              "map_search": "Shinde Chhatri, Pune, Maharashtra, India",
+              "entry_fee": "Verify current fee and timings",
+              "opening_hours": "Verify current opening hours before visiting",
+              "suggested_duration": "45–60 minutes",
+              "best_time_to_visit": "October–March",
+              "visitor_notes": "Morning light is good for photography."
+            },
+            {
+              "id": "pune_011",
+              "name": "Parvati Hill and Temples",
+              "category": "viewpoint",
+              "area": "Parvati",
+              "summary": "Hilltop temple complex offering broad views over Pune.",
+              "description": "Hilltop temple complex offering broad views over Pune.",
+              "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
+              "coordinates": {
+                "lat": 18.4967,
+                "lng": 73.8486
+              },
+              "tags": [
+                "viewpoint",
+                "spirituality"
+              ],
+              "map_search": "Parvati Hill and Temples, Pune, Maharashtra, India",
+              "entry_fee": "Usually nominal or donation-based",
+              "opening_hours": "Verify current opening hours before visiting",
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "October–February",
+              "visitor_notes": "The climb includes many steps."
+            },
+            {
+              "id": "pune_012",
+              "name": "Sarasbaug",
+              "category": "park",
+              "area": "Swargate",
+              "summary": "Green urban park with the Talyatala Ganapati temple and walking paths.",
+              "description": "Green urban park with the Talyatala Ganapati temple and walking paths.",
+              "thumbnail_url": "https://images.unsplash.com/photo-1519331379826-f10be5486c6f?w=1000&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1519331379826-f10be5486c6f?w=1000&auto=format&fit=crop&q=80",
+              "coordinates": {
+                "lat": 18.5009,
+                "lng": 73.8532
+              },
+              "tags": [
+                "park",
+                "family",
+                "relaxation"
+              ],
+              "map_search": "Sarasbaug, Pune, Maharashtra, India",
+              "entry_fee": "Verify park timings",
+              "opening_hours": "Verify current opening hours before visiting",
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "Year-round",
+              "visitor_notes": "Popular in the evening."
+            },
+            {
+              "id": "pune_013",
+              "name": "Pune-Okayama Friendship Garden",
+              "category": "garden",
+              "area": "Sinhagad Road",
+              "summary": "Japanese-inspired landscaped garden with streams, bridges and lawns.",
+              "description": "Japanese-inspired landscaped garden with streams, bridges and lawns.",
+              "thumbnail_url": "https://images.unsplash.com/photo-1476820865390-c52aeebb9891?w=1000&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1476820865390-c52aeebb9891?w=1000&auto=format&fit=crop&q=80",
+              "coordinates": {
+                "lat": 18.4919,
+                "lng": 73.8344
+              },
+              "tags": [
+                "garden",
+                "photography",
+                "family"
+              ],
+              "map_search": "Pune-Okayama Friendship Garden, Pune, Maharashtra, India",
+              "entry_fee": "Verify current fee and timings",
+              "opening_hours": "Verify current opening hours before visiting",
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "October–February",
+              "visitor_notes": "Avoid peak afternoon heat."
+            },
+            {
+              "id": "pune_014",
+              "name": "Empress Garden",
+              "category": "park",
+              "area": "Pune Cantonment",
+              "summary": "Large historic botanical garden with mature trees and seasonal blooms.",
+              "description": "Large historic botanical garden with mature trees and seasonal blooms.",
+              "thumbnail_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1000&auto=format&fit=crop&q=80",
+              "coordinates": {
+                "lat": 18.5142,
+                "lng": 73.8953
+              },
+              "tags": [
+                "park",
+                "nature",
+                "family"
+              ],
+              "map_search": "Empress Garden, Pune, Maharashtra, India",
+              "entry_fee": "Verify current fee and timings",
+              "opening_hours": "Verify current opening hours before visiting",
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "November–February",
+              "visitor_notes": "Ideal for quiet walks."
+            },
+            {
+              "id": "pune_015",
+              "name": "Bund Garden",
+              "category": "park",
+              "area": "Yerawada",
+              "summary": "Riverside garden and recreational area along the Mula-Mutha system.",
+              "description": "Riverside garden and recreational area along the Mula-Mutha system.",
+              "thumbnail_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
+              "coordinates": {
+                "lat": 18.5369,
+                "lng": 73.8828
+              },
+              "tags": [
+                "park",
+                "walking",
+                "relaxation"
+              ],
+              "map_search": "Bund Garden, Pune, Maharashtra, India",
+              "entry_fee": "Verify current timings",
+              "opening_hours": "Verify current opening hours before visiting",
+              "suggested_duration": "1 hour",
+              "best_time_to_visit": "October–February",
+              "visitor_notes": "Water levels and access can change seasonally."
+            },
+            {
+              "id": "pune_016",
+              "name": "Vetal Tekdi",
+              "category": "nature",
+              "area": "Kothrud",
+              "summary": "Urban hill with walking trails and panoramic views of Pune.",
+              "description": "Urban hill with walking trails and panoramic views of Pune.",
+              "thumbnail_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1000&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1000&auto=format&fit=crop&q=80",
+              "coordinates": {
+                "lat": 18.5242,
+                "lng": 73.8189
+              },
+              "tags": [
+                "nature",
+                "hiking",
+                "viewpoint"
+              ],
+              "map_search": "Vetal Tekdi, Pune, Maharashtra, India",
+              "entry_fee": "No standard fee",
+              "opening_hours": "Verify current opening hours before visiting",
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "October–February",
+              "visitor_notes": "Use marked paths and avoid isolated trails."
+            },
+            {
+              "id": "pune_017",
+              "name": "Taljai Hill",
+              "category": "nature",
+              "area": "Dhankawadi",
+              "summary": "Green hill and urban forest area popular for walks and birdwatching.",
+              "description": "Green hill and urban forest area popular for walks and birdwatching.",
+              "thumbnail_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1000&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1000&auto=format&fit=crop&q=80",
+              "coordinates": {
+                "lat": 18.4797,
+                "lng": 73.8475
+              },
+              "tags": [
+                "nature",
+                "hiking",
+                "birdwatching"
+              ],
+              "map_search": "Taljai Hill, Pune, Maharashtra, India",
+              "entry_fee": "No standard fee",
+              "opening_hours": "Verify current opening hours before visiting",
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "October–February",
+              "visitor_notes": "Go in daylight and carry water."
+            },
+            {
+              "id": "pune_018",
+              "name": "Hanuman Tekdi",
+              "category": "nature",
+              "area": "University Road",
+              "summary": "Small wooded hill used for morning walks and city viewpoints.",
+              "description": "Small wooded hill used for morning walks and city viewpoints.",
+              "thumbnail_url": "https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=1000&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1426604966848-d7adac402bff?w=1000&auto=format&fit=crop&q=80",
+              "coordinates": {
+                "lat": 18.5286,
+                "lng": 73.8319
+              },
+              "tags": [
+                "nature",
+                "hiking",
+                "viewpoint"
+              ],
+              "map_search": "Hanuman Tekdi, Pune, Maharashtra, India",
+              "entry_fee": "No standard fee",
+              "opening_hours": "Verify current opening hours before visiting",
+              "suggested_duration": "45–90 minutes",
+              "best_time_to_visit": "October–February",
+              "visitor_notes": "Wear shoes with good grip."
+            },
+            {
+              "id": "pune_019",
+              "name": "Pashan Lake",
+              "category": "nature",
+              "area": "Pashan",
+              "summary": "Urban lake known for birdwatching, sunrise walks and wetland scenery.",
+              "description": "Urban lake known for birdwatching, sunrise walks and wetland scenery.",
+              "thumbnail_url": "https://images.unsplash.com/photo-1439853949127-fa647821eba0?w=1000&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1439853949127-fa647821eba0?w=1000&auto=format&fit=crop&q=80",
+              "coordinates": {
+                "lat": 18.5381,
+                "lng": 73.7847
+              },
+              "tags": [
+                "nature",
+                "birdwatching",
+                "photography"
+              ],
+              "map_search": "Pashan Lake, Pune, Maharashtra, India",
+              "entry_fee": "No standard fee",
+              "opening_hours": "Verify current opening hours before visiting",
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "November–February",
+              "visitor_notes": "Best early morning; avoid disturbing birds."
+            },
+            {
+              "id": "pune_020",
+              "name": "Rajiv Gandhi Zoological Park",
+              "category": "wildlife",
+              "area": "Katraj",
+              "summary": "Zoo and wildlife research centre with mammals, birds and reptiles.",
+              "description": "Zoo and wildlife research centre with mammals, birds and reptiles.",
+              "thumbnail_url": "https://images.unsplash.com/photo-1534567153574-2b12153a87f0?w=1000&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1534567153574-2b12153a87f0?w=1000&auto=format&fit=crop&q=80",
+              "coordinates": {
+                "lat": 18.4556,
+                "lng": 73.8594
+              },
+              "tags": [
+                "wildlife",
+                "family"
+              ],
+              "map_search": "Rajiv Gandhi Zoological Park, Pune, Maharashtra, India",
+              "entry_fee": "Verify current fee and timings",
+              "opening_hours": "Verify current opening hours before visiting",
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "November–February",
+              "visitor_notes": "Follow animal-viewing rules."
+            },
+            {
+              "id": "pune_021",
+              "name": "Khadakwasla Dam",
+              "category": "scenic",
+              "area": "Khadakwasla",
+              "summary": "Popular reservoir viewpoint and picnic stop on the Mutha River.",
+              "description": "Popular reservoir viewpoint and picnic stop on the Mutha River.",
+              "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
+              "coordinates": {
+                "lat": 18.4319,
+                "lng": 73.7631
+              },
+              "tags": [
+                "scenic",
+                "scenery",
+                "family"
+              ],
+              "map_search": "Khadakwasla Dam, Pune, Maharashtra, India",
+              "entry_fee": "No standard sightseeing fee",
+              "opening_hours": "Verify current opening hours before visiting",
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "July–February",
+              "visitor_notes": "Avoid slippery edges during monsoon."
+            },
+            {
+              "id": "pune_022",
+              "name": "Sinhagad Fort",
+              "category": "fort",
+              "area": "Donje",
+              "summary": "Major Maratha fort with trekking routes, historic remains and valley views.",
+              "description": "Major Maratha fort with trekking routes, historic remains and valley views.",
+              "thumbnail_url": "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=1000&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=1000&auto=format&fit=crop&q=80",
+              "coordinates": {
+                "lat": 18.3664,
+                "lng": 73.7558
+              },
+              "tags": [
+                "fort",
+                "trekking",
+                "history"
+              ],
+              "map_search": "Sinhagad Fort, Pune, Maharashtra, India",
+              "entry_fee": "Verify parking and local charges",
+              "opening_hours": "Verify current opening hours before visiting",
+              "suggested_duration": "3–5 hours",
+              "best_time_to_visit": "October–February",
+              "visitor_notes": "Start early; carry water and snacks."
+            },
+            {
+              "id": "pune_023",
+              "name": "Rajgad Fort",
+              "category": "fort",
+              "area": "Gunjavane",
+              "summary": "Former Maratha capital with extensive ridges, gates and dramatic views.",
+              "description": "Former Maratha capital with extensive ridges, gates and dramatic views.",
+              "thumbnail_url": "https://images.unsplash.com/photo-1603288967527-24861e6878b3?w=1000&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1603288967527-24861e6878b3?w=1000&auto=format&fit=crop&q=80",
+              "coordinates": {
+                "lat": 18.2567,
+                "lng": 73.6825
+              },
+              "tags": [
+                "fort",
+                "trekking",
+                "history"
+              ],
+              "map_search": "Rajgad Fort, Pune, Maharashtra, India",
+              "entry_fee": "Verify local charges",
+              "opening_hours": "Verify current opening hours before visiting",
+              "suggested_duration": "5–8 hours",
+              "best_time_to_visit": "October–February",
+              "visitor_notes": "A full-day trek; weather can change quickly."
+            },
+            {
+              "id": "pune_024",
+              "name": "Torna Fort",
+              "category": "fort",
+              "area": "Velhe",
+              "summary": "High Sahyadri fort known for challenging trekking and expansive scenery.",
+              "description": "High Sahyadri fort known for challenging trekking and expansive scenery.",
+              "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
+              "coordinates": {
+                "lat": 18.2764,
+                "lng": 73.6228
+              },
+              "tags": [
+                "fort",
+                "trekking",
+                "history"
+              ],
+              "map_search": "Torna Fort, Pune, Maharashtra, India",
+              "entry_fee": "Verify local charges",
+              "opening_hours": "Verify current opening hours before visiting",
+              "suggested_duration": "6–9 hours",
+              "best_time_to_visit": "October–February",
+              "visitor_notes": "Recommended for experienced trekkers."
+            },
+            {
+              "id": "pune_025",
+              "name": "Purandar Fort",
+              "category": "fort",
+              "area": "Purandar",
+              "summary": "Historic hill fort with strong Maratha and Peshwa-era associations.",
+              "description": "Historic hill fort with strong Maratha and Peshwa-era associations.",
+              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1000&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1000&auto=format&fit=crop&q=80",
+              "coordinates": {
+                "lat": 18.2789,
+                "lng": 73.9789
+              },
+              "tags": [
+                "fort",
+                "trekking",
+                "history"
+              ],
+              "map_search": "Purandar Fort, Pune, Maharashtra, India",
+              "entry_fee": "Verify access permissions",
+              "opening_hours": "Verify current opening hours before visiting",
+              "suggested_duration": "3–5 hours",
+              "best_time_to_visit": "October–February",
+              "visitor_notes": "Carry identification if requested at checkpoints."
             }
           ],
           "monuments": [],
@@ -30793,7 +35778,8 @@ export const INDIA_TOURISM_DATABASE = {
           "source_url": "https://unsplash.com/photos/shaniwar-wada-peshwa-fortress-pune-P1m3q2Z6v8",
           "source_name": "Unsplash",
           "creator": "Peshwa Heritage Foundation",
-          "license": "Unsplash License"
+          "license": "Unsplash License",
+          "total_attractions": 25
         },
         {
           "id": "satara",
@@ -38515,279 +43501,848 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "state_capital",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 5,
+          "places_count": 10,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
             {
-              "id": "chennai-chennai-heritage-fort-complex",
-              "name": "Chennai Heritage Fort Complex",
-              "canonical_name": "Chennai Heritage Fort Complex",
+              "id": "tamil_nadu_010",
+              "name": "Fort St. George",
+              "canonical_name": "Fort St. George",
               "aliases": [],
               "city_id": "chennai",
               "state_id": "tamil-nadu",
               "district": "Chennai",
-              "category": "heritage",
-              "category_label": "Heritage",
+              "category": "heritage_fort",
+              "category_label": "Heritage Fort",
               "categories": [
-                "Heritage",
-                "Arts & Culture"
+                "heritage_fort"
               ],
               "subcategories": [
-                "Official Heritage"
+                "heritage_fort",
+                "Tamil Nadu"
               ],
-              "importance_level": "notable",
-              "summary": "Celebrated highlight of Chennai representing Tamil Nadu traditions.",
-              "historical_significance": "Celebrated highlight of Chennai representing Tamil Nadu traditions.",
+              "importance_level": "top_landmark",
+              "summary": "A historic fort associated with the colonial history of Chennai.",
+              "historical_significance": "A historic fort associated with the colonial history of Chennai.",
               "fees": {
-                "domestic": 30,
-                "international": 500,
-                "currency": "INR",
-                "status": "VERIFIED"
+                "domestic": 0,
+                "international": 0,
+                "description": "Free or paid depending on attraction; verify current rates",
+                "currency": "INR"
               },
               "timings": {
-                "opening_time": "09:00 AM",
-                "closing_time": "05:30 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
+                "description": "Usually daytime; timings vary by attraction",
+                "visiting_hours": "Usually daytime; timings vary by attraction"
               },
               "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
-                "status": "VERIFIED"
+                "label": "2–4 hours"
               },
               "coordinates": {
-                "lat": 13.0746,
-                "lng": 80.2797
+                "lat": 13.0797,
+                "lng": 80.2874
               },
-              "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80",
-              "attribution": "Virasat Master Tourism Registry",
-              "source_page": "https://www.tamilnadutourism.tn.gov.in",
+              "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Archaeological Survey of India",
+              "source_url": "https://asi.nic.in/fort-st-george-museum-chennai/",
+              "source_name": "Archaeological Survey of India",
+              "source_type": "official_site",
+              "source_quality": "place_specific",
+              "verification_status": "verified",
               "status": "VERIFIED",
               "tags": [
-                "Heritage",
-                "Arts & Culture"
+                "heritage_fort",
+                "Tamil Nadu"
               ],
-              "source_quality": "generic_homepage"
+              "best_time_to_visit": "October to March",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Fort St. George Tamil Nadu",
+              "area": "Chennai"
             },
             {
-              "id": "shore-temple-mahabalipuram",
-              "name": "Shore Temple & Monuments at Mahabalipuram",
-              "canonical_name": "Shore Temple & Monuments at Mahabalipuram",
+              "id": "tamil_nadu_021",
+              "name": "Kapaleeswarar Temple",
+              "canonical_name": "Kapaleeswarar Temple",
               "aliases": [],
               "city_id": "chennai",
               "state_id": "tamil-nadu",
-              "district": "Chennai",
-              "category": "heritage",
-              "category_label": "Heritage",
+              "district": "Mylapore, Chennai",
+              "category": "religious_heritage",
+              "category_label": "Religious Heritage",
               "categories": [
-                "Heritage",
-                "Arts & Culture"
+                "religious_heritage"
               ],
               "subcategories": [
-                "Official Heritage"
+                "religious_heritage",
+                "temple",
+                "architecture",
+                "Chennai",
+                "Tamil Nadu"
               ],
-              "importance_level": "notable",
-              "summary": "One of the oldest structural stone temples in South India, framed by the roaring surf of the Bay of Bengal alongside the monolithic Pancha Rathas.",
-              "historical_significance": "Served as a navigational landmark and premier maritime trading emporium connecting the Pallava dynasty with Southeast Asia and China.",
+              "importance_level": "top_landmark",
+              "summary": "A historic Shiva temple renowned for its Dravidian architecture, colorful gopurams and cultural significance.",
+              "historical_significance": "A historic Shiva temple renowned for its Dravidian architecture, colorful gopurams and cultural significance.",
               "fees": {
-                "domestic": 40,
-                "international": 600,
-                "currency": "INR",
-                "status": "VERIFIED"
+                "domestic": 0,
+                "international": 0,
+                "description": "Free; special services may have separate charges",
+                "currency": "INR"
               },
               "timings": {
-                "opening_time": "09:00 AM",
-                "closing_time": "05:30 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
+                "description": "Morning and evening sessions; verify current temple timings",
+                "visiting_hours": "Morning and evening sessions; verify current temple timings"
               },
               "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
-                "status": "VERIFIED"
+                "label": "1–2 hours"
               },
               "coordinates": {
-                "lat": 12.6164,
-                "lng": 80.1983
+                "lat": 13.0334,
+                "lng": 80.2698
               },
-              "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
-              "attribution": "Virasat Master Tourism Registry",
-              "source_page": "https://whc.unesco.org",
+              "image_url": "https://images.unsplash.com/photo-1628009848535-216455961f72?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1628009848535-216455961f72?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Tamil Nadu Tourism Department",
+              "source_url": "https://www.tamilnadutourism.tn.gov.in/destinations/kapaleeswarar-temple",
+              "source_name": "Tamil Nadu Tourism Department",
+              "source_type": "official_site",
+              "source_quality": "place_specific",
+              "verification_status": "verified",
               "status": "VERIFIED",
               "tags": [
-                "Heritage",
-                "Arts & Culture"
+                "religious_heritage",
+                "temple",
+                "architecture",
+                "Chennai",
+                "Tamil Nadu"
               ],
-              "source_url": "https://whc.unesco.org/en/list/249/",
-              "source_name": "UNESCO World Heritage Centre",
-              "source_type": "unesco",
+              "best_time_to_visit": "October to March",
+              "visitor_notes": [
+                "Dress modestly and follow temple rules",
+                "Photography restrictions may apply in certain areas",
+                "Check current timings before visiting"
+              ],
+              "map_search": "Kapaleeswarar Temple Mylapore Chennai Tamil Nadu",
+              "area": "Mylapore, Chennai"
+            },
+            {
+              "id": "tamil_nadu_022",
+              "name": "San Thome Basilica",
+              "canonical_name": "San Thome Basilica",
+              "aliases": [],
+              "city_id": "chennai",
+              "state_id": "tamil-nadu",
+              "district": "Santhome, Chennai",
+              "category": "religious_heritage",
+              "category_label": "Religious Heritage",
+              "categories": [
+                "religious_heritage"
+              ],
+              "subcategories": [
+                "religious_heritage",
+                "basilica",
+                "architecture",
+                "Chennai",
+                "Tamil Nadu"
+              ],
+              "importance_level": "top_landmark",
+              "summary": "A historic basilica built in the Neo-Gothic style and an important Christian pilgrimage site in Chennai.",
+              "historical_significance": "A historic basilica built in the Neo-Gothic style and an important Christian pilgrimage site in Chennai.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "description": "Free; donations accepted",
+                "currency": "INR"
+              },
+              "timings": {
+                "description": "Usually open during the day; verify current timings",
+                "visiting_hours": "Usually open during the day; verify current timings"
+              },
+              "visit_duration": {
+                "label": "45–90 minutes"
+              },
+              "coordinates": {
+                "lat": 13.0338,
+                "lng": 80.2785
+              },
+              "image_url": "https://images.unsplash.com/photo-1548625361-195feee10fce?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1548625361-195feee10fce?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "San Thome Cathedral Basilica",
+              "source_url": "https://santhomecathedral.com/",
+              "source_name": "San Thome Cathedral Basilica",
+              "source_type": "official_site",
               "source_quality": "place_specific",
-              "verification_status": "verified"
+              "verification_status": "verified",
+              "status": "VERIFIED",
+              "tags": [
+                "religious_heritage",
+                "basilica",
+                "architecture",
+                "Chennai",
+                "Tamil Nadu"
+              ],
+              "best_time_to_visit": "October to March",
+              "visitor_notes": [
+                "Maintain silence and respect religious services",
+                "Dress appropriately for a place of worship",
+                "Mass and service timings may affect visitor access"
+              ],
+              "map_search": "San Thome Basilica Chennai Tamil Nadu",
+              "area": "Santhome, Chennai"
+            },
+            {
+              "id": "tamil_nadu_023",
+              "name": "Parthasarathy Temple",
+              "canonical_name": "Parthasarathy Temple",
+              "aliases": [],
+              "city_id": "chennai",
+              "state_id": "tamil-nadu",
+              "district": "Triplicane, Chennai",
+              "category": "religious_heritage",
+              "category_label": "Religious Heritage",
+              "categories": [
+                "religious_heritage"
+              ],
+              "subcategories": [
+                "religious_heritage",
+                "temple",
+                "Vaishnavite",
+                "Chennai",
+                "Tamil Nadu"
+              ],
+              "importance_level": "top_landmark",
+              "summary": "An ancient Vaishnavite temple dedicated to Lord Parthasarathy and known for its traditional Dravidian architecture.",
+              "historical_significance": "An ancient Vaishnavite temple dedicated to Lord Parthasarathy and known for its traditional Dravidian architecture.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "description": "Free; donations accepted",
+                "currency": "INR"
+              },
+              "timings": {
+                "description": "Morning and evening sessions; verify current temple timings",
+                "visiting_hours": "Morning and evening sessions; verify current temple timings"
+              },
+              "visit_duration": {
+                "label": "45–90 minutes"
+              },
+              "coordinates": {
+                "lat": 13.0537,
+                "lng": 80.2771
+              },
+              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Tamil Nadu Tourism Department",
+              "source_url": "https://www.tamilnadutourism.tn.gov.in/destinations/parthasarathy-temple",
+              "source_name": "Tamil Nadu Tourism Department",
+              "source_type": "official_site",
+              "source_quality": "place_specific",
+              "verification_status": "verified",
+              "status": "VERIFIED",
+              "tags": [
+                "religious_heritage",
+                "temple",
+                "Vaishnavite",
+                "Chennai",
+                "Tamil Nadu"
+              ],
+              "best_time_to_visit": "October to March",
+              "visitor_notes": [
+                "Dress modestly and follow temple customs",
+                "Crowds can increase during festivals",
+                "Check current timings before visiting"
+              ],
+              "map_search": "Parthasarathy Temple Triplicane Chennai Tamil Nadu",
+              "area": "Triplicane, Chennai"
+            },
+            {
+              "id": "tamil_nadu_026",
+              "name": "Vivekananda House",
+              "canonical_name": "Vivekananda House",
+              "aliases": [],
+              "city_id": "chennai",
+              "state_id": "tamil-nadu",
+              "district": "Triplicane, Chennai",
+              "category": "heritage_memorial",
+              "category_label": "Heritage Memorial",
+              "categories": [
+                "heritage_memorial"
+              ],
+              "subcategories": [
+                "heritage",
+                "memorial",
+                "history",
+                "culture",
+                "Chennai",
+                "Tamil Nadu"
+              ],
+              "importance_level": "top_landmark",
+              "summary": "A historic memorial associated with Swami Vivekananda, featuring exhibits about his life, teachings and visit to Chennai.",
+              "historical_significance": "A historic memorial associated with Swami Vivekananda, featuring exhibits about his life, teachings and visit to Chennai.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "description": "Verify current entry fee",
+                "currency": "INR"
+              },
+              "timings": {
+                "description": "Verify current opening hours before visiting",
+                "visiting_hours": "Verify current opening hours before visiting"
+              },
+              "visit_duration": {
+                "label": "1–2 hours"
+              },
+              "coordinates": {
+                "lat": 13.0489,
+                "lng": 80.2801
+              },
+              "image_url": "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Sri Ramakrishna Math / Vivekananda House",
+              "source_url": "https://vivekanandahouse.org/",
+              "source_name": "Sri Ramakrishna Math / Vivekananda House",
+              "source_type": "official_site",
+              "source_quality": "place_specific",
+              "verification_status": "verified",
+              "status": "VERIFIED",
+              "tags": [
+                "heritage",
+                "memorial",
+                "history",
+                "culture",
+                "Chennai",
+                "Tamil Nadu"
+              ],
+              "best_time_to_visit": "October to March",
+              "visitor_notes": [
+                "Allow time for the museum exhibits",
+                "Follow photography rules inside the memorial",
+                "Check current timings before visiting"
+              ],
+              "map_search": "Vivekananda House Chennai Tamil Nadu",
+              "area": "Triplicane, Chennai"
             }
           ],
           "monuments": [],
           "museums": [
             {
-              "id": "rameshwaram-rameshwaram-state-museum-heritage-gallery",
-              "name": "Rameshwaram State Museum & Heritage Gallery",
-              "canonical_name": "Rameshwaram State Museum & Heritage Gallery",
+              "id": "tamil_nadu_011",
+              "name": "Government Museum Chennai",
+              "canonical_name": "Government Museum Chennai",
               "aliases": [],
               "city_id": "chennai",
               "state_id": "tamil-nadu",
               "district": "Chennai",
-              "category": "museums",
-              "category_label": "Museums",
+              "category": "museum",
+              "category_label": "Museum",
               "categories": [
-                "Arts & Culture",
-                "Heritage"
+                "museum"
               ],
               "subcategories": [
-                "Official Heritage"
+                "museum",
+                "Tamil Nadu"
               ],
-              "importance_level": "notable",
-              "summary": "Celebrated highlight of Rameshwaram representing Tamil Nadu traditions.",
-              "historical_significance": "Celebrated highlight of Rameshwaram representing Tamil Nadu traditions.",
+              "importance_level": "top_landmark",
+              "summary": "A major museum with archaeological, artistic, and cultural collections.",
+              "historical_significance": "A major museum with archaeological, artistic, and cultural collections.",
               "fees": {
-                "domestic": 50,
-                "international": 500,
-                "currency": "INR",
-                "status": "VERIFIED"
+                "domestic": 0,
+                "international": 0,
+                "description": "Free or paid depending on attraction; verify current rates",
+                "currency": "INR"
               },
               "timings": {
-                "opening_time": "09:00 AM",
-                "closing_time": "05:30 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
+                "description": "Usually daytime; timings vary by attraction",
+                "visiting_hours": "Usually daytime; timings vary by attraction"
               },
               "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
-                "status": "VERIFIED"
+                "label": "2–4 hours"
               },
               "coordinates": {
-                "lat": 9.2889,
-                "lng": 79.3223
+                "lat": 13.0732,
+                "lng": 80.257
               },
-              "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80",
-              "attribution": "Virasat Master Tourism Registry",
-              "source_page": "https://www.tamilnadutourism.tn.gov.in",
+              "image_url": "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Government Museum Chennai",
+              "source_url": "https://www.govtmuseumchennai.org/",
+              "source_name": "Government Museum Chennai",
+              "source_type": "official_site",
+              "source_quality": "place_specific",
+              "verification_status": "verified",
               "status": "VERIFIED",
               "tags": [
-                "Arts & Culture",
-                "Heritage"
-              ]
+                "museum",
+                "Tamil Nadu"
+              ],
+              "best_time_to_visit": "October to March",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Government Museum Chennai Tamil Nadu",
+              "area": "Chennai"
+            },
+            {
+              "id": "tamil_nadu_027",
+              "name": "Chennai Rail Museum",
+              "canonical_name": "Chennai Rail Museum",
+              "aliases": [],
+              "city_id": "chennai",
+              "state_id": "tamil-nadu",
+              "district": "Villivakkam, Chennai",
+              "category": "railway_heritage",
+              "category_label": "Railway Heritage",
+              "categories": [
+                "railway_heritage"
+              ],
+              "subcategories": [
+                "railway_heritage",
+                "museum",
+                "history",
+                "family",
+                "Chennai",
+                "Tamil Nadu"
+              ],
+              "importance_level": "top_landmark",
+              "summary": "A railway museum showcasing historic locomotives, coaches, railway artefacts and the development of India's railway heritage.",
+              "historical_significance": "A railway museum showcasing historic locomotives, coaches, railway artefacts and the development of India's railway heritage.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "description": "Verify current entry fee",
+                "currency": "INR"
+              },
+              "timings": {
+                "description": "Verify current opening hours before visiting",
+                "visiting_hours": "Verify current opening hours before visiting"
+              },
+              "visit_duration": {
+                "label": "1–2 hours"
+              },
+              "coordinates": {
+                "lat": 13.1028,
+                "lng": 80.2033
+              },
+              "image_url": "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1517649763962-0c623266ddc0?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Indian Railways / Tamil Nadu Tourism",
+              "source_url": "https://www.tamilnadutourism.tn.gov.in/destinations/chennai-rail-museum",
+              "source_name": "Indian Railways / Tamil Nadu Tourism",
+              "source_type": "official_site",
+              "source_quality": "place_specific",
+              "verification_status": "verified",
+              "status": "VERIFIED",
+              "tags": [
+                "railway_heritage",
+                "museum",
+                "history",
+                "family",
+                "Chennai",
+                "Tamil Nadu"
+              ],
+              "best_time_to_visit": "October to March",
+              "visitor_notes": [
+                "Suitable for families and railway enthusiasts",
+                "Some exhibits may have restricted access",
+                "Check current timings before visiting"
+              ],
+              "map_search": "Chennai Rail Museum Villivakkam Tamil Nadu",
+              "area": "Villivakkam, Chennai"
             }
           ],
           "tourist_places": [
             {
-              "id": "kanyakumari-kanyakumari-scenic-promenade-viewpoint",
-              "name": "Kanyakumari Scenic Promenade & Viewpoint",
-              "canonical_name": "Kanyakumari Scenic Promenade & Viewpoint",
+              "id": "tamil_nadu_024",
+              "name": "Valluvar Kottam",
+              "canonical_name": "Valluvar Kottam",
               "aliases": [],
               "city_id": "chennai",
               "state_id": "tamil-nadu",
-              "district": "Chennai",
-              "category": "tourist_places",
-              "category_label": "Tourist_places",
+              "district": "Nungambakkam, Chennai",
+              "category": "cultural_monument",
+              "category_label": "Cultural Monument",
               "categories": [
-                "Recreation",
-                "Heritage"
+                "cultural_monument"
               ],
               "subcategories": [
-                "Official Heritage"
+                "cultural_monument",
+                "Tamil_literature",
+                "heritage",
+                "Chennai",
+                "Tamil Nadu"
               ],
-              "importance_level": "notable",
-              "summary": "Celebrated highlight of Kanyakumari representing Tamil Nadu traditions.",
-              "historical_significance": "Celebrated highlight of Kanyakumari representing Tamil Nadu traditions.",
+              "importance_level": "top_landmark",
+              "summary": "A major cultural monument dedicated to the Tamil poet and philosopher Thiruvalluvar, featuring a large stone chariot and the verses of the Thirukkural.",
+              "historical_significance": "A major cultural monument dedicated to the Tamil poet and philosopher Thiruvalluvar, featuring a large stone chariot and the verses of the Thirukkural.",
               "fees": {
-                "domestic": 25,
-                "international": 300,
-                "currency": "INR",
-                "status": "VERIFIED"
+                "domestic": 0,
+                "international": 0,
+                "description": "Verify current entry fee",
+                "currency": "INR"
               },
               "timings": {
-                "opening_time": "09:00 AM",
-                "closing_time": "05:30 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
+                "description": "Verify current opening hours before visiting",
+                "visiting_hours": "Verify current opening hours before visiting"
               },
               "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
-                "status": "VERIFIED"
+                "label": "45–90 minutes"
               },
               "coordinates": {
-                "lat": 8.0793,
-                "lng": 77.5451
+                "lat": 13.0539,
+                "lng": 80.2415
               },
-              "image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
-              "attribution": "Virasat Master Tourism Registry",
-              "source_page": "https://www.tamilnadutourism.tn.gov.in",
+              "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Tamil Nadu Tourism Department",
+              "source_url": "https://www.tamilnadutourism.tn.gov.in/destinations/valluvar-kottam",
+              "source_name": "Tamil Nadu Tourism Department",
+              "source_type": "official_site",
+              "source_quality": "place_specific",
+              "verification_status": "verified",
               "status": "VERIFIED",
               "tags": [
-                "Recreation",
-                "Heritage"
+                "cultural_monument",
+                "Tamil_literature",
+                "heritage",
+                "Chennai",
+                "Tamil Nadu"
               ],
-              "source_quality": "generic_homepage"
+              "best_time_to_visit": "October to March",
+              "visitor_notes": [
+                "Best visited during cooler parts of the day",
+                "Allow time to explore the monument and inscriptions",
+                "Check current access and timings before visiting"
+              ],
+              "map_search": "Valluvar Kottam Chennai Tamil Nadu",
+              "area": "Nungambakkam, Chennai"
             }
           ],
-          "religious_cultural": [],
+          "religious_cultural": [
+            {
+              "id": "tamil_nadu_021",
+              "name": "Kapaleeswarar Temple",
+              "canonical_name": "Kapaleeswarar Temple",
+              "aliases": [],
+              "city_id": "chennai",
+              "state_id": "tamil-nadu",
+              "district": "Mylapore, Chennai",
+              "category": "religious_heritage",
+              "category_label": "Religious Heritage",
+              "categories": [
+                "religious_heritage"
+              ],
+              "subcategories": [
+                "religious_heritage",
+                "temple",
+                "architecture",
+                "Chennai",
+                "Tamil Nadu"
+              ],
+              "importance_level": "top_landmark",
+              "summary": "A historic Shiva temple renowned for its Dravidian architecture, colorful gopurams and cultural significance.",
+              "historical_significance": "A historic Shiva temple renowned for its Dravidian architecture, colorful gopurams and cultural significance.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "description": "Free; special services may have separate charges",
+                "currency": "INR"
+              },
+              "timings": {
+                "description": "Morning and evening sessions; verify current temple timings",
+                "visiting_hours": "Morning and evening sessions; verify current temple timings"
+              },
+              "visit_duration": {
+                "label": "1–2 hours"
+              },
+              "coordinates": {
+                "lat": 13.0334,
+                "lng": 80.2698
+              },
+              "image_url": "https://images.unsplash.com/photo-1628009848535-216455961f72?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1628009848535-216455961f72?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Tamil Nadu Tourism Department",
+              "source_url": "https://www.tamilnadutourism.tn.gov.in/destinations/kapaleeswarar-temple",
+              "source_name": "Tamil Nadu Tourism Department",
+              "source_type": "official_site",
+              "source_quality": "place_specific",
+              "verification_status": "verified",
+              "status": "VERIFIED",
+              "tags": [
+                "religious_heritage",
+                "temple",
+                "architecture",
+                "Chennai",
+                "Tamil Nadu"
+              ],
+              "best_time_to_visit": "October to March",
+              "visitor_notes": [
+                "Dress modestly and follow temple rules",
+                "Photography restrictions may apply in certain areas",
+                "Check current timings before visiting"
+              ],
+              "map_search": "Kapaleeswarar Temple Mylapore Chennai Tamil Nadu",
+              "area": "Mylapore, Chennai"
+            },
+            {
+              "id": "tamil_nadu_022",
+              "name": "San Thome Basilica",
+              "canonical_name": "San Thome Basilica",
+              "aliases": [],
+              "city_id": "chennai",
+              "state_id": "tamil-nadu",
+              "district": "Santhome, Chennai",
+              "category": "religious_heritage",
+              "category_label": "Religious Heritage",
+              "categories": [
+                "religious_heritage"
+              ],
+              "subcategories": [
+                "religious_heritage",
+                "basilica",
+                "architecture",
+                "Chennai",
+                "Tamil Nadu"
+              ],
+              "importance_level": "top_landmark",
+              "summary": "A historic basilica built in the Neo-Gothic style and an important Christian pilgrimage site in Chennai.",
+              "historical_significance": "A historic basilica built in the Neo-Gothic style and an important Christian pilgrimage site in Chennai.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "description": "Free; donations accepted",
+                "currency": "INR"
+              },
+              "timings": {
+                "description": "Usually open during the day; verify current timings",
+                "visiting_hours": "Usually open during the day; verify current timings"
+              },
+              "visit_duration": {
+                "label": "45–90 minutes"
+              },
+              "coordinates": {
+                "lat": 13.0338,
+                "lng": 80.2785
+              },
+              "image_url": "https://images.unsplash.com/photo-1548625361-195feee10fce?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1548625361-195feee10fce?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "San Thome Cathedral Basilica",
+              "source_url": "https://santhomecathedral.com/",
+              "source_name": "San Thome Cathedral Basilica",
+              "source_type": "official_site",
+              "source_quality": "place_specific",
+              "verification_status": "verified",
+              "status": "VERIFIED",
+              "tags": [
+                "religious_heritage",
+                "basilica",
+                "architecture",
+                "Chennai",
+                "Tamil Nadu"
+              ],
+              "best_time_to_visit": "October to March",
+              "visitor_notes": [
+                "Maintain silence and respect religious services",
+                "Dress appropriately for a place of worship",
+                "Mass and service timings may affect visitor access"
+              ],
+              "map_search": "San Thome Basilica Chennai Tamil Nadu",
+              "area": "Santhome, Chennai"
+            },
+            {
+              "id": "tamil_nadu_023",
+              "name": "Parthasarathy Temple",
+              "canonical_name": "Parthasarathy Temple",
+              "aliases": [],
+              "city_id": "chennai",
+              "state_id": "tamil-nadu",
+              "district": "Triplicane, Chennai",
+              "category": "religious_heritage",
+              "category_label": "Religious Heritage",
+              "categories": [
+                "religious_heritage"
+              ],
+              "subcategories": [
+                "religious_heritage",
+                "temple",
+                "Vaishnavite",
+                "Chennai",
+                "Tamil Nadu"
+              ],
+              "importance_level": "top_landmark",
+              "summary": "An ancient Vaishnavite temple dedicated to Lord Parthasarathy and known for its traditional Dravidian architecture.",
+              "historical_significance": "An ancient Vaishnavite temple dedicated to Lord Parthasarathy and known for its traditional Dravidian architecture.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "description": "Free; donations accepted",
+                "currency": "INR"
+              },
+              "timings": {
+                "description": "Morning and evening sessions; verify current temple timings",
+                "visiting_hours": "Morning and evening sessions; verify current temple timings"
+              },
+              "visit_duration": {
+                "label": "45–90 minutes"
+              },
+              "coordinates": {
+                "lat": 13.0537,
+                "lng": 80.2771
+              },
+              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Tamil Nadu Tourism Department",
+              "source_url": "https://www.tamilnadutourism.tn.gov.in/destinations/parthasarathy-temple",
+              "source_name": "Tamil Nadu Tourism Department",
+              "source_type": "official_site",
+              "source_quality": "place_specific",
+              "verification_status": "verified",
+              "status": "VERIFIED",
+              "tags": [
+                "religious_heritage",
+                "temple",
+                "Vaishnavite",
+                "Chennai",
+                "Tamil Nadu"
+              ],
+              "best_time_to_visit": "October to March",
+              "visitor_notes": [
+                "Dress modestly and follow temple customs",
+                "Crowds can increase during festivals",
+                "Check current timings before visiting"
+              ],
+              "map_search": "Parthasarathy Temple Triplicane Chennai Tamil Nadu",
+              "area": "Triplicane, Chennai"
+            }
+          ],
           "nature_parks_zoo": [
             {
-              "id": "mahabalipuram-mahabalipuram-mamallapuram-national-wildlife-botanical-park",
-              "name": "Mahabalipuram (Mamallapuram) National Wildlife & Botanical Park",
-              "canonical_name": "Mahabalipuram (Mamallapuram) National Wildlife & Botanical Park",
+              "id": "tamil_nadu_009",
+              "name": "Marina Beach",
+              "canonical_name": "Marina Beach",
               "aliases": [],
               "city_id": "chennai",
               "state_id": "tamil-nadu",
               "district": "Chennai",
-              "category": "nature_parks_zoo",
-              "category_label": "Nature_parks_zoo",
+              "category": "beach_nature",
+              "category_label": "Beach Nature",
               "categories": [
-                "Nature",
-                "Wildlife"
+                "beach_nature"
               ],
               "subcategories": [
-                "Official Heritage"
+                "beach_nature",
+                "Tamil Nadu"
               ],
-              "importance_level": "notable",
-              "summary": "Celebrated highlight of Mahabalipuram (Mamallapuram) representing Tamil Nadu traditions.",
-              "historical_significance": "Celebrated highlight of Mahabalipuram (Mamallapuram) representing Tamil Nadu traditions.",
+              "importance_level": "top_landmark",
+              "summary": "One of India’s most famous urban beaches, popular for walks and sunrise views.",
+              "historical_significance": "One of India’s most famous urban beaches, popular for walks and sunrise views.",
               "fees": {
-                "domestic": 30,
-                "international": 500,
-                "currency": "INR",
-                "status": "VERIFIED"
+                "domestic": 0,
+                "international": 0,
+                "description": "Free or paid depending on attraction; verify current rates",
+                "currency": "INR"
               },
               "timings": {
-                "opening_time": "09:00 AM",
-                "closing_time": "05:30 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
+                "description": "Usually daytime; timings vary by attraction",
+                "visiting_hours": "Usually daytime; timings vary by attraction"
               },
               "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
-                "status": "VERIFIED"
+                "label": "2–4 hours"
               },
               "coordinates": {
-                "lat": 12.6233,
-                "lng": 80.1927
+                "lat": 13.05,
+                "lng": 80.2824
               },
-              "image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80",
-              "attribution": "Virasat Master Tourism Registry",
-              "source_page": "https://www.tamilnadutourism.tn.gov.in",
+              "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Tamil Nadu Tourism Department",
+              "source_url": "https://www.tamilnadutourism.tn.gov.in/destinations/marina-beach",
+              "source_name": "Tamil Nadu Tourism Department",
+              "source_type": "official_site",
+              "source_quality": "place_specific",
+              "verification_status": "verified",
               "status": "VERIFIED",
               "tags": [
-                "Nature",
-                "Wildlife"
-              ]
+                "beach_nature",
+                "Tamil Nadu"
+              ],
+              "best_time_to_visit": "October to March",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Marina Beach Tamil Nadu",
+              "area": "Chennai"
+            },
+            {
+              "id": "tamil_nadu_025",
+              "name": "Guindy National Park",
+              "canonical_name": "Guindy National Park",
+              "aliases": [],
+              "city_id": "chennai",
+              "state_id": "tamil-nadu",
+              "district": "Guindy, Chennai",
+              "category": "wildlife_nature",
+              "category_label": "Wildlife Nature",
+              "categories": [
+                "wildlife_nature"
+              ],
+              "subcategories": [
+                "wildlife",
+                "nature",
+                "national_park",
+                "birdwatching",
+                "Chennai",
+                "Tamil Nadu"
+              ],
+              "importance_level": "top_landmark",
+              "summary": "An urban national park protecting native vegetation and wildlife within Chennai, including blackbuck, spotted deer and numerous bird species.",
+              "historical_significance": "An urban national park protecting native vegetation and wildlife within Chennai, including blackbuck, spotted deer and numerous bird species.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "description": "Verify current entry fee",
+                "currency": "INR"
+              },
+              "timings": {
+                "description": "Typically daytime; verify current timings before visiting",
+                "visiting_hours": "Typically daytime; verify current timings before visiting"
+              },
+              "visit_duration": {
+                "label": "2–3 hours"
+              },
+              "coordinates": {
+                "lat": 13.0067,
+                "lng": 80.2206
+              },
+              "image_url": "https://images.unsplash.com/photo-1534177616072-ef7dc120449d?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1534177616072-ef7dc120449d?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Tamil Nadu Forest Department",
+              "source_url": "https://www.tamilnadutourism.tn.gov.in/destinations/guindy-national-park",
+              "source_name": "Tamil Nadu Forest Department",
+              "source_type": "official_site",
+              "source_quality": "place_specific",
+              "verification_status": "verified",
+              "status": "VERIFIED",
+              "tags": [
+                "wildlife",
+                "nature",
+                "national_park",
+                "birdwatching",
+                "Chennai",
+                "Tamil Nadu"
+              ],
+              "best_time_to_visit": "November to February",
+              "visitor_notes": [
+                "Follow park rules and remain on designated paths",
+                "Do not feed or disturb wildlife",
+                "Carry water and suitable footwear"
+              ],
+              "map_search": "Guindy National Park Chennai Tamil Nadu",
+              "area": "Guindy, Chennai"
             }
           ],
           "transport": {
@@ -38860,71 +44415,74 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
           "monuments": [],
           "museums": [],
           "tourist_places": [],
-          "religious_cultural": [
+          "religious_cultural": [],
+          "nature_parks_zoo": [
             {
-              "id": "adiyogi-shiva-coimbatore",
-              "name": "Dhyanalinga & Adiyogi Shiva Statue",
-              "canonical_name": "Adiyogi Shiva Coimbatore",
+              "id": "tamil_nadu_018",
+              "name": "Anamalai Tiger Reserve",
+              "canonical_name": "Anamalai Tiger Reserve",
               "aliases": [],
               "city_id": "coimbatore",
               "state_id": "tamil-nadu",
-              "district": "Coimbatore",
-              "category": "spiritual",
-              "category_label": "Spiritual",
+              "district": "Coimbatore and Tiruppur regions",
+              "category": "wildlife_reserve",
+              "category_label": "Wildlife Reserve",
               "categories": [
-                "Spiritual",
-                "Wellness",
-                "Arts & Culture"
+                "wildlife_reserve"
               ],
               "subcategories": [
-                "Guinness World Record Statue",
-                "Dhyanalinga Dome",
-                "Yoga & Meditation"
+                "wildlife_reserve",
+                "Tamil Nadu"
               ],
-              "importance_level": "iconic",
-              "summary": "The world's largest bust sculpture (112 feet tall) recognized by the Guinness World Records, dedicated to Adiyogi (the first yogi) at the foothills of the Velliangiri Mountains.",
-              "historical_significance": "Consecrated by Sadhguru Jaggi Vasudev in 1999 (Dhyanalinga) and unveiled in 2017 (Adiyogi) by Prime Minister Narendra Modi.",
+              "importance_level": "top_landmark",
+              "summary": "A biodiversity-rich Western Ghats reserve with forests and wildlife.",
+              "historical_significance": "A biodiversity-rich Western Ghats reserve with forests and wildlife.",
               "fees": {
                 "domestic": 0,
                 "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
+                "description": "Free or paid depending on attraction; verify current rates",
+                "currency": "INR"
               },
               "timings": {
-                "opening_time": "06:00 AM",
-                "closing_time": "08:00 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
+                "description": "Usually daytime; timings vary by attraction",
+                "visiting_hours": "Usually daytime; timings vary by attraction"
               },
               "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
-                "status": "VERIFIED"
+                "label": "2–4 hours"
               },
               "coordinates": {
-                "lat": 10.9764,
-                "lng": 76.7381
+                "lat": 10.49,
+                "lng": 76.98
               },
-              "image_url": "",
-              "thumbnail_url": "",
-              "attribution": "Isha Foundation / Tamil Nadu Tourism",
-              "source_page": "https://isha.sadhguru.org",
+              "image_url": "https://images.unsplash.com/photo-1534567153574-2b12153a87f0?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1534567153574-2b12153a87f0?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Tamil Nadu Forest Department",
+              "source_url": "https://atrtiger.tn.gov.in/",
+              "source_name": "Tamil Nadu Forest Department",
+              "source_type": "official_site",
+              "source_quality": "place_specific",
+              "verification_status": "verified",
               "status": "VERIFIED",
               "tags": [
-                "Spiritual",
-                "Wellness",
-                "Arts & Culture"
-              ]
+                "wildlife_reserve",
+                "Tamil Nadu"
+              ],
+              "best_time_to_visit": "October to March",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Anamalai Tiger Reserve Tamil Nadu",
+              "area": "Coimbatore and Tiruppur regions"
             }
           ],
-          "nature_parks_zoo": [],
           "transport": {
             "railway_stations": [],
             "local_transit": {
@@ -38969,142 +44527,6 @@ export const INDIA_TOURISM_DATABASE = {
           "license": "Unsplash License"
         },
         {
-          "id": "kanchipuram",
-          "name": "Kanchipuram",
-          "canonical_name": "Kanchipuram",
-          "state": "Tamil Nadu",
-          "state_id": "tamil-nadu",
-          "region": "Southern India",
-          "district": "Kanchipuram",
-          "city_type": "heritage_site",
-          "lat": 12.8342,
-          "lng": 79.7036,
-          "coordinates": {
-            "lat": 12.8342,
-            "lng": 79.7036
-          },
-          "tagline": "Historic destination in Tamil Nadu",
-          "description": "City of Thousand Temples and world-famous Kanchipuram mulberry silk sarees, holding Ekambareswarar, Kailasanathar, and Varadharaja Perumal temples.",
-          "hero_image_url": "https://images.unsplash.com/photo-1595815771620-133533171133?w=1200&auto=format&fit=crop&q=80",
-          "tourism_categories": [
-            "heritage",
-            "culture"
-          ],
-          "prominence": "Historic Destination",
-          "is_capital": false,
-          "capital_status": "none",
-          "verification_status": "verified",
-          "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
-          "created_at": "2026-09-10T00:00:00.000Z",
-          "updated_at": "2026-09-10T02:32:15.592Z",
-          "heritage": [
-            {
-              "id": "kailasanathar-temple-kanchipuram",
-              "name": "Kanchi Kailasanathar & Ekambareswarar Temples",
-              "canonical_name": "Kanchi Kailasanathar Temple",
-              "aliases": [],
-              "city_id": "kanchipuram",
-              "state_id": "tamil-nadu",
-              "district": "Kanchipuram",
-              "category": "heritage",
-              "category_label": "Heritage",
-              "categories": [
-                "Heritage",
-                "Spiritual",
-                "Arts & Culture"
-              ],
-              "subcategories": [
-                "Oldest Stone Temple in Kanchi",
-                "Pallava Architecture",
-                "Silk Saree City"
-              ],
-              "importance_level": "iconic",
-              "summary": "The oldest stone structural temple in Kanchipuram, built in 700 CE by Pallava King Rajasimha, famous for 58 circumambulatory sub-shrines and exquisite sandstone dancing Shiva sculptures.",
-              "historical_significance": "Built between 685 and 705 CE by Narasimhavarman II (Rajasimha) of the Pallava dynasty.",
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "06:00 AM",
-                "closing_time": "12:00 PM, 04:00 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
-                "status": "VERIFIED"
-              },
-              "coordinates": {
-                "lat": 12.8422,
-                "lng": 79.6897
-              },
-              "image_url": "",
-              "thumbnail_url": "",
-              "attribution": "Archaeological Survey of India",
-              "source_page": "https://asi.nic.in",
-              "status": "VERIFIED",
-              "tags": [
-                "Heritage",
-                "Spiritual",
-                "Arts & Culture"
-              ],
-              "source_quality": "generic_homepage"
-            }
-          ],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": [],
-          "transport": {
-            "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaws",
-                "City Cabs",
-                "Local Buses"
-              ],
-              "fare_indication": "₹50 - ₹200 per ride",
-              "status": "UNVERIFIED",
-              "tips": "Confirm meter or agreed tariff before boarding"
-            }
-          },
-          "hotels": [],
-          "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
-            "status": "UNVERIFIED",
-            "note": "Average estimated budget per person for local exploration and meals"
-          },
-          "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant and comfortable for sightseeing",
-            "status": "UNVERIFIED",
-            "advisory": "Early morning visits recommended for popular monuments"
-          },
-          "active_stories": [
-            "Heritage walking trail through historic quarters of Kanchipuram.",
-            "Local artisanal traditions and architectural marvels."
-          ],
-          "hero_image": {
-            "image_url": "https://images.unsplash.com/photo-1595815771620-133533171133?w=1200&auto=format&fit=crop&q=80",
-            "source_url": "https://unsplash.com/photos/ekambareswarar-temple-pallava-chola-architecture-kanchipuram-K3m5q7Z1v4",
-            "source_name": "Unsplash",
-            "creator": "City of Thousand Temples Trust",
-            "license": "Unsplash License",
-            "verification_status": "verified",
-            "verified_at": "2026-09-10T03:35:51.010Z"
-          },
-          "source_url": "https://unsplash.com/photos/ekambareswarar-temple-pallava-chola-architecture-kanchipuram-K3m5q7Z1v4",
-          "source_name": "Unsplash",
-          "creator": "City of Thousand Temples Trust",
-          "license": "Unsplash License"
-        },
-        {
           "id": "kanniyakumari",
           "name": "Kanniyakumari",
           "canonical_name": "Kanniyakumari",
@@ -39131,72 +44553,133 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
-          "heritage": [
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [
             {
-              "id": "vivekananda-rock-kanniyakumari",
-              "name": "Vivekananda Rock Memorial & Thiruvalluvar Statue",
+              "id": "tamil_nadu_014",
+              "name": "Vivekananda Rock Memorial",
               "canonical_name": "Vivekananda Rock Memorial",
               "aliases": [],
               "city_id": "kanniyakumari",
               "state_id": "tamil-nadu",
-              "district": "Kanniyakumari",
-              "category": "heritage",
-              "category_label": "Heritage",
+              "district": "Kanyakumari",
+              "category": "memorial_monument",
+              "category_label": "Memorial Monument",
               "categories": [
-                "Heritage",
-                "Spiritual",
-                "Nature"
+                "memorial_monument"
               ],
               "subcategories": [
-                "Monolithic Island Memorial",
-                "133-Foot Stone Statue",
-                "Triveni Sangam"
+                "memorial_monument",
+                "Tamil Nadu"
               ],
-              "importance_level": "iconic",
-              "summary": "Two iconic monuments on twin rocky islands 500 meters off India's southernmost tip: the memorial hall where Swami Vivekananda attained enlightenment in 1892, and the colossal 133-foot Thiruvalluvar statue.",
-              "historical_significance": "Vivekananda Memorial completed in 1970 under Eknath Ranade; the monolithic Thiruvalluvar statue sculpted by V. Ganapati Sthapati was inaugurated in January 2000.",
+              "importance_level": "top_landmark",
+              "summary": "A memorial located on a rocky island offshore and reached by ferry.",
+              "historical_significance": "A memorial located on a rocky island offshore and reached by ferry.",
               "fees": {
-                "domestic": 20,
-                "international": 100,
-                "currency": "INR",
-                "status": "VERIFIED"
+                "domestic": 0,
+                "international": 0,
+                "description": "Free or paid depending on attraction; verify current rates",
+                "currency": "INR"
               },
               "timings": {
-                "opening_time": "08:00 AM",
-                "closing_time": "04:30 PM (Ferry",
-                "closed_days": [],
-                "status": "VERIFIED"
+                "description": "Usually daytime; timings vary by attraction",
+                "visiting_hours": "Usually daytime; timings vary by attraction"
               },
               "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
-                "status": "VERIFIED"
+                "label": "2–4 hours"
               },
               "coordinates": {
-                "lat": 8.0781,
-                "lng": 77.555
+                "lat": 8.078,
+                "lng": 77.5553
               },
-              "image_url": "",
-              "thumbnail_url": "",
-              "attribution": "Vivekananda Kendra / Tamil Nadu Tourism",
-              "source_page": "https://www.tamilnadutourism.tn.gov.in",
+              "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Tamil Nadu Tourism Department",
+              "source_url": "https://www.tamilnadutourism.tn.gov.in/destinations/vivekananda-rock-memorial",
+              "source_name": "Tamil Nadu Tourism Department",
+              "source_type": "official_site",
+              "source_quality": "place_specific",
+              "verification_status": "verified",
               "status": "VERIFIED",
               "tags": [
-                "Heritage",
-                "Spiritual",
-                "Nature"
+                "memorial_monument",
+                "Tamil Nadu"
               ],
-              "source_quality": "generic_homepage"
+              "best_time_to_visit": "October to March",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Vivekananda Rock Memorial Tamil Nadu",
+              "area": "Kanyakumari"
             }
           ],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": [],
+          "nature_parks_zoo": [
+            {
+              "id": "tamil_nadu_013",
+              "name": "Kanyakumari",
+              "canonical_name": "Kanyakumari",
+              "aliases": [],
+              "city_id": "kanniyakumari",
+              "state_id": "tamil-nadu",
+              "district": "Kanniyakumari district",
+              "category": "coastal_nature",
+              "category_label": "Coastal Nature",
+              "categories": [
+                "coastal_nature"
+              ],
+              "subcategories": [
+                "coastal_nature",
+                "Tamil Nadu"
+              ],
+              "importance_level": "top_landmark",
+              "summary": "India’s southern coastal tip, known for sunrise, sunset, and ocean views.",
+              "historical_significance": "India’s southern coastal tip, known for sunrise, sunset, and ocean views.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "description": "Free or paid depending on attraction; verify current rates",
+                "currency": "INR"
+              },
+              "timings": {
+                "description": "Usually daytime; timings vary by attraction",
+                "visiting_hours": "Usually daytime; timings vary by attraction"
+              },
+              "visit_duration": {
+                "label": "2–4 hours"
+              },
+              "coordinates": {
+                "lat": 8.0883,
+                "lng": 77.5385
+              },
+              "image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Tamil Nadu Tourism Department",
+              "source_url": "https://www.tamilnadutourism.tn.gov.in/destinations/kanyakumari",
+              "source_name": "Tamil Nadu Tourism Department",
+              "source_type": "official_site",
+              "source_quality": "place_specific",
+              "verification_status": "verified",
+              "status": "VERIFIED",
+              "tags": [
+                "coastal_nature",
+                "Tamil Nadu"
+              ],
+              "best_time_to_visit": "October to March",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Kanyakumari Tamil Nadu",
+              "area": "Kanniyakumari district"
+            }
+          ],
           "transport": {
             "railway_stations": [],
             "local_transit": {
@@ -39267,61 +44750,67 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 2,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
             {
-              "id": "meenakshi-amman-temple",
-              "name": "Arulmigu Meenakshi Amman Temple",
-              "canonical_name": "Arulmigu Meenakshi Amman Temple",
+              "id": "tamil_nadu_001",
+              "name": "Meenakshi Amman Temple",
+              "canonical_name": "Meenakshi Amman Temple",
               "aliases": [],
               "city_id": "madurai",
               "state_id": "tamil-nadu",
               "district": "Madurai",
-              "category": "heritage",
-              "category_label": "Heritage",
+              "category": "religious_heritage",
+              "category_label": "Religious Heritage",
               "categories": [
-                "Heritage",
-                "Arts & Culture"
+                "religious_heritage"
               ],
               "subcategories": [
-                "Official Heritage"
+                "religious_heritage",
+                "Tamil Nadu"
               ],
-              "importance_level": "notable",
-              "summary": "Ancient city temple centered around Goddess Meenakshi with 14 rainbow-colored sculpted gopurams and the celebrated Hall of 1,000 Pillars.",
-              "historical_significance": "Heart of the 2,500-year-old historic city of Madurai, laid out in concentric squares modeled after the lotus petals of the cosmos.",
+              "importance_level": "top_landmark",
+              "summary": "A magnificent temple complex famous for towering gopurams and intricate sculptures.",
+              "historical_significance": "A magnificent temple complex famous for towering gopurams and intricate sculptures.",
               "fees": {
                 "domestic": 0,
                 "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
+                "description": "Free or paid depending on attraction; verify current rates",
+                "currency": "INR"
               },
               "timings": {
-                "opening_time": "09:00 AM",
-                "closing_time": "05:30 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
+                "description": "Usually daytime; timings vary by attraction",
+                "visiting_hours": "Usually daytime; timings vary by attraction"
               },
               "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
-                "status": "VERIFIED"
+                "label": "2–4 hours"
               },
               "coordinates": {
                 "lat": 9.9195,
                 "lng": 78.1193
               },
-              "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
-              "attribution": "Archaeological Survey of India",
-              "source_page": "https://asi.nic.in",
+              "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Tamil Nadu Tourism Department",
+              "source_url": "https://www.tamilnadutourism.tn.gov.in/destinations/meenakshi-amman-temple",
+              "source_name": "Tamil Nadu Tourism Department",
+              "source_type": "official_site",
+              "source_quality": "place_specific",
+              "verification_status": "verified",
               "status": "VERIFIED",
               "tags": [
-                "Heritage",
-                "Arts & Culture"
+                "religious_heritage",
+                "Tamil Nadu"
               ],
-              "source_quality": "generic_homepage"
+              "best_time_to_visit": "October to March",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Meenakshi Amman Temple Tamil Nadu",
+              "area": "Madurai"
             }
           ],
           "monuments": [],
@@ -39329,55 +44818,62 @@ export const INDIA_TOURISM_DATABASE = {
           "tourist_places": [],
           "religious_cultural": [
             {
-              "id": "madurai-madurai-sacred-temple-cultural-center",
-              "name": "Madurai Sacred Temple & Cultural Center",
-              "canonical_name": "Madurai Sacred Temple & Cultural Center",
+              "id": "tamil_nadu_001",
+              "name": "Meenakshi Amman Temple",
+              "canonical_name": "Meenakshi Amman Temple",
               "aliases": [],
               "city_id": "madurai",
               "state_id": "tamil-nadu",
               "district": "Madurai",
-              "category": "religious_cultural",
-              "category_label": "Religious_cultural",
+              "category": "religious_heritage",
+              "category_label": "Religious Heritage",
               "categories": [
-                "Spiritual",
-                "Heritage"
+                "religious_heritage"
               ],
               "subcategories": [
-                "Official Heritage"
+                "religious_heritage",
+                "Tamil Nadu"
               ],
-              "importance_level": "notable",
-              "summary": "Celebrated highlight of Madurai representing Tamil Nadu traditions.",
-              "historical_significance": "Celebrated highlight of Madurai representing Tamil Nadu traditions.",
+              "importance_level": "top_landmark",
+              "summary": "A magnificent temple complex famous for towering gopurams and intricate sculptures.",
+              "historical_significance": "A magnificent temple complex famous for towering gopurams and intricate sculptures.",
               "fees": {
-                "domestic": 25,
-                "international": 300,
-                "currency": "INR",
-                "status": "VERIFIED"
+                "domestic": 0,
+                "international": 0,
+                "description": "Free or paid depending on attraction; verify current rates",
+                "currency": "INR"
               },
               "timings": {
-                "opening_time": "09:00 AM",
-                "closing_time": "05:30 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
+                "description": "Usually daytime; timings vary by attraction",
+                "visiting_hours": "Usually daytime; timings vary by attraction"
               },
               "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
-                "status": "VERIFIED"
+                "label": "2–4 hours"
               },
               "coordinates": {
-                "lat": 9.9193,
-                "lng": 78.1187
+                "lat": 9.9195,
+                "lng": 78.1193
               },
-              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
-              "attribution": "Virasat Master Tourism Registry",
-              "source_page": "https://www.tamilnadutourism.tn.gov.in",
+              "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Tamil Nadu Tourism Department",
+              "source_url": "https://www.tamilnadutourism.tn.gov.in/destinations/meenakshi-amman-temple",
+              "source_name": "Tamil Nadu Tourism Department",
+              "source_type": "official_site",
+              "source_quality": "place_specific",
+              "verification_status": "verified",
               "status": "VERIFIED",
               "tags": [
-                "Spiritual",
-                "Heritage"
-              ]
+                "religious_heritage",
+                "Tamil Nadu"
+              ],
+              "best_time_to_visit": "October to March",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Meenakshi Amman Temple Tamil Nadu",
+              "area": "Madurai"
             }
           ],
           "nature_parks_zoo": [],
@@ -39451,73 +44947,190 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
             {
-              "id": "shore-temple-mamallapuram",
-              "name": "Shore Temple & Pancha Rathas (Mamallapuram)",
-              "canonical_name": "Group of Monuments at Mahabalipuram",
-              "aliases": [
-                "Mamallapuram UNESCO Monuments"
-              ],
+              "id": "tamil_nadu_003",
+              "name": "Shore Temple",
+              "canonical_name": "Shore Temple",
+              "aliases": [],
               "city_id": "mamallapuram",
               "state_id": "tamil-nadu",
-              "district": "Chengalpattu",
-              "category": "heritage",
-              "category_label": "Heritage",
+              "district": "Mahabalipuram",
+              "category": "temple_heritage",
+              "category_label": "Temple Heritage",
               "categories": [
-                "Heritage",
-                "Arts & Culture",
-                "Nature"
+                "temple_heritage"
               ],
               "subcategories": [
-                "UNESCO World Heritage Site",
-                "7th Century Pallava Monuments",
-                "Monolithic Rock Carvings"
+                "temple_heritage",
+                "Tamil Nadu"
               ],
-              "importance_level": "iconic",
-              "summary": "UNESCO World Heritage Site on the Coromandel Coast featuring the 8th-century granite Shore Temple facing the sea, monolithic rock-cut Pancha Rathas, and the monumental relief Descent of the Ganges.",
-              "historical_significance": "Created during the reigns of Mahendravarman I and Narasimhavarman I (Mamalla) of the Pallava dynasty; inscribed by UNESCO in 1984.",
+              "importance_level": "top_landmark",
+              "summary": "A UNESCO World Heritage monument overlooking the Bay of Bengal.",
+              "historical_significance": "A UNESCO World Heritage monument overlooking the Bay of Bengal.",
               "fees": {
-                "domestic": 40,
-                "international": 600,
-                "currency": "INR",
-                "status": "VERIFIED"
+                "domestic": 0,
+                "international": 0,
+                "description": "Free or paid depending on attraction; verify current rates",
+                "currency": "INR"
               },
               "timings": {
-                "opening_time": "06:00 AM",
-                "closing_time": "06:00 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
+                "description": "Usually daytime; timings vary by attraction",
+                "visiting_hours": "Usually daytime; timings vary by attraction"
               },
               "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
-                "status": "VERIFIED"
+                "label": "2–4 hours"
               },
               "coordinates": {
-                "lat": 12.6167,
-                "lng": 80.1917
+                "lat": 12.6163,
+                "lng": 80.1983
               },
-              "image_url": "",
-              "thumbnail_url": "",
-              "attribution": "Archaeological Survey of India / UNESCO",
-              "source_page": "https://whc.unesco.org/en/list/249",
+              "image_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "UNESCO World Heritage Centre",
+              "source_url": "https://whc.unesco.org/en/list/249/",
+              "source_name": "UNESCO World Heritage Centre",
+              "source_type": "official_site",
+              "source_quality": "place_specific",
+              "verification_status": "verified",
               "status": "VERIFIED",
               "tags": [
-                "Heritage",
-                "Arts & Culture",
-                "Nature"
+                "temple_heritage",
+                "Tamil Nadu"
               ],
-              "source_quality": "generic_homepage"
+              "best_time_to_visit": "October to March",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Shore Temple Tamil Nadu",
+              "area": "Mahabalipuram"
+            },
+            {
+              "id": "tamil_nadu_004",
+              "name": "Group of Monuments at Mahabalipuram",
+              "canonical_name": "Group of Monuments at Mahabalipuram",
+              "aliases": [],
+              "city_id": "mamallapuram",
+              "state_id": "tamil-nadu",
+              "district": "Mahabalipuram",
+              "category": "archaeological_heritage",
+              "category_label": "Archaeological Heritage",
+              "categories": [
+                "archaeological_heritage"
+              ],
+              "subcategories": [
+                "archaeological_heritage",
+                "Tamil Nadu"
+              ],
+              "importance_level": "top_landmark",
+              "summary": "A collection of Pallava-era temples, rathas, and rock-cut sculptures.",
+              "historical_significance": "A collection of Pallava-era temples, rathas, and rock-cut sculptures.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "description": "Free or paid depending on attraction; verify current rates",
+                "currency": "INR"
+              },
+              "timings": {
+                "description": "Usually daytime; timings vary by attraction",
+                "visiting_hours": "Usually daytime; timings vary by attraction"
+              },
+              "visit_duration": {
+                "label": "2–4 hours"
+              },
+              "coordinates": {
+                "lat": 12.6186,
+                "lng": 80.1925
+              },
+              "image_url": "https://images.unsplash.com/photo-1621252179027-94459d278660?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1621252179027-94459d278660?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "UNESCO World Heritage Centre",
+              "source_url": "https://whc.unesco.org/en/list/249/",
+              "source_name": "UNESCO World Heritage Centre",
+              "source_type": "official_site",
+              "source_quality": "place_specific",
+              "verification_status": "verified",
+              "status": "VERIFIED",
+              "tags": [
+                "archaeological_heritage",
+                "Tamil Nadu"
+              ],
+              "best_time_to_visit": "October to March",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Group of Monuments at Mahabalipuram Tamil Nadu",
+              "area": "Mahabalipuram"
             }
           ],
           "monuments": [],
           "museums": [],
           "tourist_places": [],
-          "religious_cultural": [],
+          "religious_cultural": [
+            {
+              "id": "tamil_nadu_003",
+              "name": "Shore Temple",
+              "canonical_name": "Shore Temple",
+              "aliases": [],
+              "city_id": "mamallapuram",
+              "state_id": "tamil-nadu",
+              "district": "Mahabalipuram",
+              "category": "temple_heritage",
+              "category_label": "Temple Heritage",
+              "categories": [
+                "temple_heritage"
+              ],
+              "subcategories": [
+                "temple_heritage",
+                "Tamil Nadu"
+              ],
+              "importance_level": "top_landmark",
+              "summary": "A UNESCO World Heritage monument overlooking the Bay of Bengal.",
+              "historical_significance": "A UNESCO World Heritage monument overlooking the Bay of Bengal.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "description": "Free or paid depending on attraction; verify current rates",
+                "currency": "INR"
+              },
+              "timings": {
+                "description": "Usually daytime; timings vary by attraction",
+                "visiting_hours": "Usually daytime; timings vary by attraction"
+              },
+              "visit_duration": {
+                "label": "2–4 hours"
+              },
+              "coordinates": {
+                "lat": 12.6163,
+                "lng": 80.1983
+              },
+              "image_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "UNESCO World Heritage Centre",
+              "source_url": "https://whc.unesco.org/en/list/249/",
+              "source_name": "UNESCO World Heritage Centre",
+              "source_type": "official_site",
+              "source_quality": "place_specific",
+              "verification_status": "verified",
+              "status": "VERIFIED",
+              "tags": [
+                "temple_heritage",
+                "Tamil Nadu"
+              ],
+              "best_time_to_visit": "October to March",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Shore Temple Tamil Nadu",
+              "area": "Mahabalipuram"
+            }
+          ],
           "nature_parks_zoo": [],
           "transport": {
             "railway_stations": [],
@@ -39589,68 +45202,191 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 1,
+          "places_count": 3,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
-          "heritage": [
+          "heritage": [],
+          "monuments": [],
+          "museums": [
             {
-              "id": "ooty-ooty-udhagamandalam-heritage-fort-complex",
-              "name": "Ooty (Udhagamandalam) Heritage Fort Complex",
-              "canonical_name": "Ooty (Udhagamandalam) Heritage Fort Complex",
+              "id": "tamil_nadu_012",
+              "name": "Nilgiri Mountain Railway",
+              "canonical_name": "Nilgiri Mountain Railway",
               "aliases": [],
               "city_id": "ooty",
               "state_id": "tamil-nadu",
               "district": "Nilgiris",
-              "category": "heritage",
-              "category_label": "Heritage",
+              "category": "railway_heritage",
+              "category_label": "Railway Heritage",
               "categories": [
-                "Heritage",
-                "Arts & Culture"
+                "railway_heritage"
               ],
               "subcategories": [
-                "Official Heritage"
+                "railway_heritage",
+                "Tamil Nadu"
               ],
-              "importance_level": "notable",
-              "summary": "Celebrated highlight of Ooty (Udhagamandalam) representing Tamil Nadu traditions.",
-              "historical_significance": "Celebrated highlight of Ooty (Udhagamandalam) representing Tamil Nadu traditions.",
+              "importance_level": "top_landmark",
+              "summary": "A historic mountain railway offering scenic journeys through the Nilgiri hills.",
+              "historical_significance": "A historic mountain railway offering scenic journeys through the Nilgiri hills.",
               "fees": {
-                "domestic": 30,
-                "international": 500,
-                "currency": "INR",
-                "status": "VERIFIED"
+                "domestic": 0,
+                "international": 0,
+                "description": "Free or paid depending on attraction; verify current rates",
+                "currency": "INR"
               },
               "timings": {
-                "opening_time": "09:00 AM",
-                "closing_time": "05:30 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
+                "description": "Usually daytime; timings vary by attraction",
+                "visiting_hours": "Usually daytime; timings vary by attraction"
               },
               "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
-                "status": "VERIFIED"
+                "label": "2–4 hours"
               },
               "coordinates": {
-                "lat": 11.4098,
-                "lng": 76.6865
+                "lat": 11.4064,
+                "lng": 76.7032
               },
-              "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80",
-              "attribution": "Virasat Master Tourism Registry",
-              "source_page": "https://www.tamilnadutourism.tn.gov.in",
+              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "UNESCO World Heritage Centre",
+              "source_url": "https://whc.unesco.org/en/list/944/",
+              "source_name": "UNESCO World Heritage Centre",
+              "source_type": "official_site",
+              "source_quality": "place_specific",
+              "verification_status": "verified",
               "status": "VERIFIED",
               "tags": [
-                "Heritage",
-                "Arts & Culture"
+                "railway_heritage",
+                "Tamil Nadu"
               ],
-              "source_quality": "generic_homepage"
+              "best_time_to_visit": "October to March",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Nilgiri Mountain Railway Tamil Nadu",
+              "area": "Nilgiris"
             }
           ],
-          "monuments": [],
-          "museums": [],
           "tourist_places": [],
           "religious_cultural": [],
-          "nature_parks_zoo": [],
+          "nature_parks_zoo": [
+            {
+              "id": "tamil_nadu_005",
+              "name": "Ooty",
+              "canonical_name": "Ooty",
+              "aliases": [],
+              "city_id": "ooty",
+              "state_id": "tamil-nadu",
+              "district": "Nilgiris",
+              "category": "hill_station_nature",
+              "category_label": "Hill Station Nature",
+              "categories": [
+                "hill_station_nature"
+              ],
+              "subcategories": [
+                "hill_station_nature",
+                "Tamil Nadu"
+              ],
+              "importance_level": "top_landmark",
+              "summary": "A popular hill station known for gardens, lakes, tea estates, and cool weather.",
+              "historical_significance": "A popular hill station known for gardens, lakes, tea estates, and cool weather.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "description": "Free or paid depending on attraction; verify current rates",
+                "currency": "INR"
+              },
+              "timings": {
+                "description": "Usually daytime; timings vary by attraction",
+                "visiting_hours": "Usually daytime; timings vary by attraction"
+              },
+              "visit_duration": {
+                "label": "2–4 hours"
+              },
+              "coordinates": {
+                "lat": 11.4102,
+                "lng": 76.695
+              },
+              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Tamil Nadu Tourism Department",
+              "source_url": "https://www.tamilnadutourism.tn.gov.in/destinations/ooty",
+              "source_name": "Tamil Nadu Tourism Department",
+              "source_type": "official_site",
+              "source_quality": "place_specific",
+              "verification_status": "verified",
+              "status": "VERIFIED",
+              "tags": [
+                "hill_station_nature",
+                "Tamil Nadu"
+              ],
+              "best_time_to_visit": "October to March",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Ooty Tamil Nadu",
+              "area": "Nilgiris"
+            },
+            {
+              "id": "tamil_nadu_017",
+              "name": "Mudumalai National Park",
+              "canonical_name": "Mudumalai National Park",
+              "aliases": [],
+              "city_id": "ooty",
+              "state_id": "tamil-nadu",
+              "district": "Nilgiris",
+              "category": "wildlife_national_park",
+              "category_label": "Wildlife National Park",
+              "categories": [
+                "wildlife_national_park"
+              ],
+              "subcategories": [
+                "wildlife_national_park",
+                "Tamil Nadu"
+              ],
+              "importance_level": "top_landmark",
+              "summary": "A wildlife reserve known for elephants, tigers, deer, and forest safaris.",
+              "historical_significance": "A wildlife reserve known for elephants, tigers, deer, and forest safaris.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "description": "Free or paid depending on attraction; verify current rates",
+                "currency": "INR"
+              },
+              "timings": {
+                "description": "Usually daytime; timings vary by attraction",
+                "visiting_hours": "Usually daytime; timings vary by attraction"
+              },
+              "visit_duration": {
+                "label": "2–4 hours"
+              },
+              "coordinates": {
+                "lat": 11.5623,
+                "lng": 76.5342
+              },
+              "image_url": "https://images.unsplash.com/photo-1534177616072-ef7dc120449d?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1534177616072-ef7dc120449d?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Tamil Nadu Forest Department",
+              "source_url": "https://www.tamilnadutourism.tn.gov.in/destinations/mudumalai-national-park",
+              "source_name": "Tamil Nadu Forest Department",
+              "source_type": "official_site",
+              "source_quality": "place_specific",
+              "verification_status": "verified",
+              "status": "VERIFIED",
+              "tags": [
+                "wildlife_national_park",
+                "Tamil Nadu"
+              ],
+              "best_time_to_visit": "October to March",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Mudumalai National Park Tamil Nadu",
+              "area": "Nilgiris"
+            }
+          ],
           "transport": {
             "railway_stations": [],
             "local_transit": {
@@ -39721,68 +45457,189 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
+          "places_count": 2,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
-          "heritage": [],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [
+          "heritage": [
             {
-              "id": "ramanathaswamy-temple-rameswaram",
-              "name": "Sri Ramanathaswamy Temple & Dhanushkodi",
-              "canonical_name": "Ramanathaswamy Temple Rameswaram",
+              "id": "tamil_nadu_007",
+              "name": "Rameswaram Temple",
+              "canonical_name": "Rameswaram Temple",
               "aliases": [],
               "city_id": "rameswaram",
               "state_id": "tamil-nadu",
-              "district": "Ramanathapuram",
-              "category": "spiritual",
-              "category_label": "Spiritual",
+              "district": "Rameswaram",
+              "category": "religious_heritage",
+              "category_label": "Religious Heritage",
               "categories": [
-                "Spiritual",
-                "Heritage",
-                "Nature"
+                "religious_heritage"
               ],
               "subcategories": [
-                "Char Dham Pilgrimage",
-                "World's Longest Corridor",
-                "Ghost Town Dhanushkodi"
+                "religious_heritage",
+                "Tamil Nadu"
               ],
-              "importance_level": "iconic",
-              "summary": "One of the four sacred Char Dham pilgrimage sites and a holy Jyotirlinga shrine, celebrated for having the longest pillared corridor in the world (1,212 pillars) and 22 sacred bathing theerthams.",
-              "historical_significance": "According to the Ramayana, consecrated by Lord Rama to atone for slaying Ravana; the stone temple was expanded in the 12th century by the Jaffna kings and Pandya rulers.",
+              "importance_level": "top_landmark",
+              "summary": "A major pilgrimage temple famous for its long corridors and sacred significance.",
+              "historical_significance": "A major pilgrimage temple famous for its long corridors and sacred significance.",
               "fees": {
                 "domestic": 0,
                 "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
+                "description": "Free or paid depending on attraction; verify current rates",
+                "currency": "INR"
               },
               "timings": {
-                "opening_time": "05:00 AM",
-                "closing_time": "01:00 PM, 03:00 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
+                "description": "Usually daytime; timings vary by attraction",
+                "visiting_hours": "Usually daytime; timings vary by attraction"
               },
               "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
-                "status": "VERIFIED"
+                "label": "2–4 hours"
               },
               "coordinates": {
                 "lat": 9.2881,
-                "lng": 79.3175
+                "lng": 79.3174
               },
-              "image_url": "",
-              "thumbnail_url": "",
-              "attribution": "Hindu Religious and Charitable Endowments, Tamil Nadu",
-              "source_page": "https://hrce.tn.gov.in",
+              "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Tamil Nadu Tourism Department",
+              "source_url": "https://www.tamilnadutourism.tn.gov.in/destinations/ramanathaswamy-temple",
+              "source_name": "Tamil Nadu Tourism Department",
+              "source_type": "official_site",
+              "source_quality": "place_specific",
+              "verification_status": "verified",
               "status": "VERIFIED",
               "tags": [
-                "Spiritual",
-                "Heritage",
-                "Nature"
-              ]
+                "religious_heritage",
+                "Tamil Nadu"
+              ],
+              "best_time_to_visit": "October to March",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Rameswaram Temple Tamil Nadu",
+              "area": "Rameswaram"
+            }
+          ],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [
+            {
+              "id": "tamil_nadu_008",
+              "name": "Dhanushkodi",
+              "canonical_name": "Dhanushkodi",
+              "aliases": [],
+              "city_id": "rameswaram",
+              "state_id": "tamil-nadu",
+              "district": "Ramanathapuram district",
+              "category": "coastal_heritage",
+              "category_label": "Coastal Heritage",
+              "categories": [
+                "coastal_heritage"
+              ],
+              "subcategories": [
+                "coastal_heritage",
+                "Tamil Nadu"
+              ],
+              "importance_level": "top_landmark",
+              "summary": "A remote coastal destination known for ruins, beaches, and dramatic sea views.",
+              "historical_significance": "A remote coastal destination known for ruins, beaches, and dramatic sea views.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "description": "Free or paid depending on attraction; verify current rates",
+                "currency": "INR"
+              },
+              "timings": {
+                "description": "Usually daytime; timings vary by attraction",
+                "visiting_hours": "Usually daytime; timings vary by attraction"
+              },
+              "visit_duration": {
+                "label": "2–4 hours"
+              },
+              "coordinates": {
+                "lat": 9.1783,
+                "lng": 79.4181
+              },
+              "image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Tamil Nadu Tourism Department",
+              "source_url": "https://www.tamilnadutourism.tn.gov.in/destinations/dhanushkodi",
+              "source_name": "Tamil Nadu Tourism Department",
+              "source_type": "official_site",
+              "source_quality": "place_specific",
+              "verification_status": "verified",
+              "status": "VERIFIED",
+              "tags": [
+                "coastal_heritage",
+                "Tamil Nadu"
+              ],
+              "best_time_to_visit": "October to March",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Dhanushkodi Tamil Nadu",
+              "area": "Ramanathapuram district"
+            }
+          ],
+          "religious_cultural": [
+            {
+              "id": "tamil_nadu_007",
+              "name": "Rameswaram Temple",
+              "canonical_name": "Rameswaram Temple",
+              "aliases": [],
+              "city_id": "rameswaram",
+              "state_id": "tamil-nadu",
+              "district": "Rameswaram",
+              "category": "religious_heritage",
+              "category_label": "Religious Heritage",
+              "categories": [
+                "religious_heritage"
+              ],
+              "subcategories": [
+                "religious_heritage",
+                "Tamil Nadu"
+              ],
+              "importance_level": "top_landmark",
+              "summary": "A major pilgrimage temple famous for its long corridors and sacred significance.",
+              "historical_significance": "A major pilgrimage temple famous for its long corridors and sacred significance.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "description": "Free or paid depending on attraction; verify current rates",
+                "currency": "INR"
+              },
+              "timings": {
+                "description": "Usually daytime; timings vary by attraction",
+                "visiting_hours": "Usually daytime; timings vary by attraction"
+              },
+              "visit_duration": {
+                "label": "2–4 hours"
+              },
+              "coordinates": {
+                "lat": 9.2881,
+                "lng": 79.3174
+              },
+              "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Tamil Nadu Tourism Department",
+              "source_url": "https://www.tamilnadutourism.tn.gov.in/destinations/ramanathaswamy-temple",
+              "source_name": "Tamil Nadu Tourism Department",
+              "source_type": "official_site",
+              "source_quality": "place_specific",
+              "verification_status": "verified",
+              "status": "VERIFIED",
+              "tags": [
+                "religious_heritage",
+                "Tamil Nadu"
+              ],
+              "best_time_to_visit": "October to March",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Rameswaram Temple Tamil Nadu",
+              "area": "Rameswaram"
             }
           ],
           "nature_parks_zoo": [],
@@ -39856,122 +45713,132 @@ export const INDIA_TOURISM_DATABASE = {
           "capital_status": "none",
           "verification_status": "verified",
           "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 2,
+          "places_count": 1,
           "created_at": "2026-09-10T00:00:00.000Z",
           "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [
             {
-              "id": "brihadisvara-temple",
-              "name": "Brihadisvara Temple (Peruvudaiyar Kovil)",
-              "canonical_name": "Brihadisvara Temple (Peruvudaiyar Kovil)",
+              "id": "tamil_nadu_002",
+              "name": "Brihadeeswarar Temple",
+              "canonical_name": "Brihadeeswarar Temple",
               "aliases": [],
               "city_id": "thanjavur",
               "state_id": "tamil-nadu",
               "district": "Thanjavur",
-              "category": "heritage",
-              "category_label": "Heritage",
+              "category": "temple_heritage",
+              "category_label": "Temple Heritage",
               "categories": [
-                "Heritage",
-                "Arts & Culture"
+                "temple_heritage"
               ],
               "subcategories": [
-                "Official Heritage"
+                "temple_heritage",
+                "Tamil Nadu"
               ],
-              "importance_level": "notable",
-              "summary": "Magnificent granite temple built by Emperor Raja Raja Chola I, featuring a 66-meter towering vimana capped by an 80-tonne single-stone cupola.",
-              "historical_significance": "Celebrated its millennium (1000 years) in 2010; constructed entirely of granite hauled from quarries over 50 km away using inclined earthen ramps.",
+              "importance_level": "top_landmark",
+              "summary": "A UNESCO World Heritage Chola temple dedicated to Lord Shiva.",
+              "historical_significance": "A UNESCO World Heritage Chola temple dedicated to Lord Shiva.",
               "fees": {
                 "domestic": 0,
                 "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
+                "description": "Free or paid depending on attraction; verify current rates",
+                "currency": "INR"
               },
               "timings": {
-                "opening_time": "09:00 AM",
-                "closing_time": "05:30 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
+                "description": "Usually daytime; timings vary by attraction",
+                "visiting_hours": "Usually daytime; timings vary by attraction"
               },
               "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
-                "status": "VERIFIED"
+                "label": "2–4 hours"
               },
               "coordinates": {
                 "lat": 10.7828,
                 "lng": 79.1318
               },
-              "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
-              "attribution": "Virasat Master Tourism Registry",
-              "source_page": "https://whc.unesco.org",
-              "status": "VERIFIED",
-              "tags": [
-                "Heritage",
-                "Arts & Culture"
-              ],
+              "image_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "UNESCO World Heritage Centre",
               "source_url": "https://whc.unesco.org/en/list/250/",
               "source_name": "UNESCO World Heritage Centre",
-              "source_type": "unesco",
+              "source_type": "official_site",
               "source_quality": "place_specific",
-              "verification_status": "verified"
+              "verification_status": "verified",
+              "status": "VERIFIED",
+              "tags": [
+                "temple_heritage",
+                "Tamil Nadu"
+              ],
+              "best_time_to_visit": "October to March",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Brihadeeswarar Temple Tamil Nadu",
+              "area": "Thanjavur"
             }
           ],
-          "monuments": [
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [
             {
-              "id": "thanjavur-thanjavur-tanjore-historic-monument-gateway",
-              "name": "Thanjavur (Tanjore) Historic Monument & Gateway",
-              "canonical_name": "Thanjavur (Tanjore) Historic Monument & Gateway",
+              "id": "tamil_nadu_002",
+              "name": "Brihadeeswarar Temple",
+              "canonical_name": "Brihadeeswarar Temple",
               "aliases": [],
               "city_id": "thanjavur",
               "state_id": "tamil-nadu",
               "district": "Thanjavur",
-              "category": "monuments",
-              "category_label": "Monuments",
+              "category": "temple_heritage",
+              "category_label": "Temple Heritage",
               "categories": [
-                "Heritage"
+                "temple_heritage"
               ],
               "subcategories": [
-                "Official Heritage"
+                "temple_heritage",
+                "Tamil Nadu"
               ],
-              "importance_level": "notable",
-              "summary": "Celebrated highlight of Thanjavur (Tanjore) representing Tamil Nadu traditions.",
-              "historical_significance": "Celebrated highlight of Thanjavur (Tanjore) representing Tamil Nadu traditions.",
+              "importance_level": "top_landmark",
+              "summary": "A UNESCO World Heritage Chola temple dedicated to Lord Shiva.",
+              "historical_significance": "A UNESCO World Heritage Chola temple dedicated to Lord Shiva.",
               "fees": {
-                "domestic": 25,
-                "international": 300,
-                "currency": "INR",
-                "status": "VERIFIED"
+                "domestic": 0,
+                "international": 0,
+                "description": "Free or paid depending on attraction; verify current rates",
+                "currency": "INR"
               },
               "timings": {
-                "opening_time": "09:00 AM",
-                "closing_time": "05:30 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
+                "description": "Usually daytime; timings vary by attraction",
+                "visiting_hours": "Usually daytime; timings vary by attraction"
               },
               "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
-                "status": "VERIFIED"
+                "label": "2–4 hours"
               },
               "coordinates": {
-                "lat": 10.7817,
-                "lng": 79.1292
+                "lat": 10.7828,
+                "lng": 79.1318
               },
-              "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80",
-              "attribution": "Virasat Master Tourism Registry",
-              "source_page": "https://www.tamilnadutourism.tn.gov.in",
+              "image_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "UNESCO World Heritage Centre",
+              "source_url": "https://whc.unesco.org/en/list/250/",
+              "source_name": "UNESCO World Heritage Centre",
+              "source_type": "official_site",
+              "source_quality": "place_specific",
+              "verification_status": "verified",
               "status": "VERIFIED",
               "tags": [
-                "Heritage"
+                "temple_heritage",
+                "Tamil Nadu"
               ],
-              "source_quality": "generic_homepage"
+              "best_time_to_visit": "October to March",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Brihadeeswarar Temple Tamil Nadu",
+              "area": "Thanjavur"
             }
           ],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
           "nature_parks_zoo": [],
           "transport": {
             "railway_stations": [],
@@ -40017,139 +45884,547 @@ export const INDIA_TOURISM_DATABASE = {
           "license": "Unsplash License"
         },
         {
-          "id": "tiruchirappalli",
-          "name": "Tiruchirappalli",
-          "canonical_name": "Tiruchirappalli",
-          "state": "Tamil Nadu",
+          "id": "kodaikanal",
+          "name": "Kodaikanal",
+          "canonical_name": "Kodaikanal",
           "state_id": "tamil-nadu",
-          "region": "Southern India",
-          "district": "Tiruchirappalli",
-          "city_type": "city",
-          "lat": 10.7905,
-          "lng": 78.7047,
+          "district": "Dindigul",
+          "latitude": 10.2381,
+          "longitude": 77.4892,
           "coordinates": {
-            "lat": 10.7905,
-            "lng": 78.7047
+            "lat": 10.2381,
+            "lng": 77.4892
           },
-          "tagline": "Historic destination in Tamil Nadu",
-          "description": "Historic Cauvery river city dominated by the dramatic 83-meter high Rockfort Ucchi Pillayar Temple and colossal Ranganathaswamy Temple complex at Srirangam.",
-          "hero_image_url": "https://images.unsplash.com/photo-1507525428041-230989885105?w=1200&auto=format&fit=crop&q=80",
-          "tourism_categories": [
-            "heritage",
-            "culture"
-          ],
-          "prominence": "Historic Destination",
-          "is_capital": false,
-          "capital_status": "none",
+          "description": "Scenic hill retreat in the Palani Hills of Tamil Nadu, famous for its misty lake, Coaker’s Walk, waterfalls, and rich flora.",
+          "short_description": "Princess of Hill Stations renowned for star-shaped Kodaikanal Lake, pine forests, Pillar Rocks, and cool mountain climate.",
+          "places_count": 1,
           "verification_status": "verified",
-          "source_provenance": "Virasat Geographic Registry & Archaeological Survey of India",
-          "places_count": 0,
-          "created_at": "2026-09-10T00:00:00.000Z",
-          "updated_at": "2026-09-10T02:32:15.592Z",
           "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [
+            {
+              "id": "tamil_nadu_006",
+              "name": "Kodaikanal",
+              "canonical_name": "Kodaikanal",
+              "aliases": [],
+              "city_id": "kodaikanal",
+              "state_id": "tamil-nadu",
+              "district": "Dindigul district",
+              "category": "hill_station_nature",
+              "category_label": "Hill Station Nature",
+              "categories": [
+                "hill_station_nature"
+              ],
+              "subcategories": [
+                "hill_station_nature",
+                "Tamil Nadu"
+              ],
+              "importance_level": "top_landmark",
+              "summary": "A scenic hill town known for its lake, forests, viewpoints, and waterfalls.",
+              "historical_significance": "A scenic hill town known for its lake, forests, viewpoints, and waterfalls.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "description": "Free or paid depending on attraction; verify current rates",
+                "currency": "INR"
+              },
+              "timings": {
+                "description": "Usually daytime; timings vary by attraction",
+                "visiting_hours": "Usually daytime; timings vary by attraction"
+              },
+              "visit_duration": {
+                "label": "2–4 hours"
+              },
+              "coordinates": {
+                "lat": 10.2381,
+                "lng": 77.4892
+              },
+              "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Tamil Nadu Tourism Department",
+              "source_url": "https://www.tamilnadutourism.tn.gov.in/destinations/kodaikanal",
+              "source_name": "Tamil Nadu Tourism Department",
+              "source_type": "official_site",
+              "source_quality": "place_specific",
+              "verification_status": "verified",
+              "status": "VERIFIED",
+              "tags": [
+                "hill_station_nature",
+                "Tamil Nadu"
+              ],
+              "best_time_to_visit": "October to March",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Kodaikanal Tamil Nadu",
+              "area": "Dindigul district"
+            }
+          ],
+          "transport": {
+            "railway_stations": []
+          }
+        },
+        {
+          "id": "gangaikonda-cholapuram",
+          "name": "Gangaikonda Cholapuram",
+          "canonical_name": "Gangaikonda Cholapuram",
+          "state_id": "tamil-nadu",
+          "district": "Ariyalur",
+          "latitude": 11.2061,
+          "longitude": 79.4503,
+          "coordinates": {
+            "lat": 11.2061,
+            "lng": 79.4503
+          },
+          "description": "An architectural marvel celebrating the victorious expedition of Rajendra Chola I to the River Ganga.",
+          "short_description": "Historic capital of the Chola empire, founded by Rajendra Chola I, housing the magnificent UNESCO World Heritage Brihadisvara Temple.",
+          "places_count": 1,
+          "verification_status": "verified",
+          "heritage": [
+            {
+              "id": "tamil_nadu_015",
+              "name": "Gangaikonda Cholapuram Temple",
+              "canonical_name": "Gangaikonda Cholapuram Temple",
+              "aliases": [],
+              "city_id": "gangaikonda-cholapuram",
+              "state_id": "tamil-nadu",
+              "district": "Ariyalur district",
+              "category": "temple_heritage",
+              "category_label": "Temple Heritage",
+              "categories": [
+                "temple_heritage"
+              ],
+              "subcategories": [
+                "temple_heritage",
+                "Tamil Nadu"
+              ],
+              "importance_level": "top_landmark",
+              "summary": "A grand Chola temple known for its architecture and sculptures.",
+              "historical_significance": "A grand Chola temple known for its architecture and sculptures.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "description": "Free or paid depending on attraction; verify current rates",
+                "currency": "INR"
+              },
+              "timings": {
+                "description": "Usually daytime; timings vary by attraction",
+                "visiting_hours": "Usually daytime; timings vary by attraction"
+              },
+              "visit_duration": {
+                "label": "2–4 hours"
+              },
+              "coordinates": {
+                "lat": 11.2061,
+                "lng": 79.4503
+              },
+              "image_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "UNESCO World Heritage Centre",
+              "source_url": "https://whc.unesco.org/en/list/250/",
+              "source_name": "UNESCO World Heritage Centre",
+              "source_type": "official_site",
+              "source_quality": "place_specific",
+              "verification_status": "verified",
+              "status": "VERIFIED",
+              "tags": [
+                "temple_heritage",
+                "Tamil Nadu"
+              ],
+              "best_time_to_visit": "October to March",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Gangaikonda Cholapuram Temple Tamil Nadu",
+              "area": "Ariyalur district"
+            }
+          ],
           "monuments": [],
           "museums": [],
           "tourist_places": [],
           "religious_cultural": [
             {
-              "id": "srirangam-ranganathaswamy-tiruchirappalli",
-              "name": "Sri Ranganathaswamy Temple (Srirangam) & Rockfort",
-              "canonical_name": "Srirangam Temple Trichy",
+              "id": "tamil_nadu_015",
+              "name": "Gangaikonda Cholapuram Temple",
+              "canonical_name": "Gangaikonda Cholapuram Temple",
               "aliases": [],
-              "city_id": "tiruchirappalli",
+              "city_id": "gangaikonda-cholapuram",
               "state_id": "tamil-nadu",
-              "district": "Tiruchirappalli",
-              "category": "spiritual",
-              "category_label": "Spiritual",
+              "district": "Ariyalur district",
+              "category": "temple_heritage",
+              "category_label": "Temple Heritage",
               "categories": [
-                "Spiritual",
-                "Heritage",
-                "Arts & Culture"
+                "temple_heritage"
               ],
               "subcategories": [
-                "Largest Functioning Hindu Temple",
-                "21 Rajagopurams",
-                "7 Concentric Enclosures"
+                "temple_heritage",
+                "Tamil Nadu"
               ],
-              "importance_level": "iconic",
-              "summary": "The largest functioning Hindu temple complex in the world (156 acres), bounded by seven concentric stone prakara walls on an island formed by the Kaveri and Kollidam rivers.",
-              "historical_significance": "Documented since the Sangam era (c. 1st century CE); constructed across centuries by Chola, Pandya, Hoysala, and Vijayanagara monarchs; UNESCO Award of Merit recipient.",
+              "importance_level": "top_landmark",
+              "summary": "A grand Chola temple known for its architecture and sculptures.",
+              "historical_significance": "A grand Chola temple known for its architecture and sculptures.",
               "fees": {
                 "domestic": 0,
                 "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
+                "description": "Free or paid depending on attraction; verify current rates",
+                "currency": "INR"
               },
               "timings": {
-                "opening_time": "06:00 AM",
-                "closing_time": "01:00 PM, 03:15 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
+                "description": "Usually daytime; timings vary by attraction",
+                "visiting_hours": "Usually daytime; timings vary by attraction"
               },
               "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 - 2 Hours",
-                "status": "VERIFIED"
+                "label": "2–4 hours"
               },
               "coordinates": {
-                "lat": 10.8625,
-                "lng": 78.69
+                "lat": 11.2061,
+                "lng": 79.4503
               },
-              "image_url": "",
-              "thumbnail_url": "",
-              "attribution": "HR&CE Department, Tamil Nadu",
-              "source_page": "https://srirangam.org",
+              "image_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "UNESCO World Heritage Centre",
+              "source_url": "https://whc.unesco.org/en/list/250/",
+              "source_name": "UNESCO World Heritage Centre",
+              "source_type": "official_site",
+              "source_quality": "place_specific",
+              "verification_status": "verified",
               "status": "VERIFIED",
               "tags": [
-                "Spiritual",
-                "Heritage",
-                "Arts & Culture"
-              ]
+                "temple_heritage",
+                "Tamil Nadu"
+              ],
+              "best_time_to_visit": "October to March",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Gangaikonda Cholapuram Temple Tamil Nadu",
+              "area": "Ariyalur district"
             }
           ],
           "nature_parks_zoo": [],
           "transport": {
-            "railway_stations": [],
-            "local_transit": {
-              "modes": [
-                "Auto-rickshaws",
-                "City Cabs",
-                "Local Buses"
+            "railway_stations": []
+          }
+        },
+        {
+          "id": "chidambaram",
+          "name": "Chidambaram",
+          "canonical_name": "Chidambaram",
+          "state_id": "tamil-nadu",
+          "district": "Cuddalore",
+          "latitude": 11.3992,
+          "longitude": 79.6934,
+          "coordinates": {
+            "lat": 11.3992,
+            "lng": 79.6934
+          },
+          "description": "One of the Pancha Bhoota Sthalams representing Akasha (ether), renowned for ancient bronze sculptures and Bharatanatyam dance sculptures.",
+          "short_description": "Sacred temple town celebrated for the historic Thillai Nataraja Temple, depicting Lord Shiva in the cosmic Ananda Tandava posture.",
+          "places_count": 1,
+          "verification_status": "verified",
+          "heritage": [
+            {
+              "id": "tamil_nadu_016",
+              "name": "Chidambaram Nataraja Temple",
+              "canonical_name": "Chidambaram Nataraja Temple",
+              "aliases": [],
+              "city_id": "chidambaram",
+              "state_id": "tamil-nadu",
+              "district": "Chidambaram",
+              "category": "religious_heritage",
+              "category_label": "Religious Heritage",
+              "categories": [
+                "religious_heritage"
               ],
-              "fare_indication": "₹50 - ₹200 per ride",
-              "status": "UNVERIFIED",
-              "tips": "Confirm meter or agreed tariff before boarding"
+              "subcategories": [
+                "religious_heritage",
+                "Tamil Nadu"
+              ],
+              "importance_level": "top_landmark",
+              "summary": "A major Shiva temple dedicated to Nataraja and renowned for its sacred traditions.",
+              "historical_significance": "A major Shiva temple dedicated to Nataraja and renowned for its sacred traditions.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "description": "Free or paid depending on attraction; verify current rates",
+                "currency": "INR"
+              },
+              "timings": {
+                "description": "Usually daytime; timings vary by attraction",
+                "visiting_hours": "Usually daytime; timings vary by attraction"
+              },
+              "visit_duration": {
+                "label": "2–4 hours"
+              },
+              "coordinates": {
+                "lat": 11.3992,
+                "lng": 79.6934
+              },
+              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Tamil Nadu Tourism Department",
+              "source_url": "https://www.tamilnadutourism.tn.gov.in/destinations/chidambaram-nataraja-temple",
+              "source_name": "Tamil Nadu Tourism Department",
+              "source_type": "official_site",
+              "source_quality": "place_specific",
+              "verification_status": "verified",
+              "status": "VERIFIED",
+              "tags": [
+                "religious_heritage",
+                "Tamil Nadu"
+              ],
+              "best_time_to_visit": "October to March",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Chidambaram Nataraja Temple Tamil Nadu",
+              "area": "Chidambaram"
             }
-          },
-          "hotels": [],
-          "fees_overview": {
-            "typical_budget_per_day": "₹1,500 - ₹3,500",
-            "status": "UNVERIFIED",
-            "note": "Average estimated budget per person for local exploration and meals"
-          },
-          "live_travel_info": {
-            "best_season": "October to March",
-            "weather_summary": "Pleasant and comfortable for sightseeing",
-            "status": "UNVERIFIED",
-            "advisory": "Early morning visits recommended for popular monuments"
-          },
-          "active_stories": [
-            "Heritage walking trail through historic quarters of Tiruchirappalli.",
-            "Local artisanal traditions and architectural marvels."
           ],
-          "hero_image": {
-            "image_url": "https://images.unsplash.com/photo-1507525428041-230989885105?w=1200&auto=format&fit=crop&q=80",
-            "source_url": "https://unsplash.com/photos/rockfort-ucchipillayar-temple-srirangam-tiruchirappalli-T1m1q3Z7v9",
-            "source_name": "Unsplash",
-            "creator": "Cauvery Delta Heritage Council",
-            "license": "Unsplash License",
-            "verification_status": "verified",
-            "verified_at": "2026-09-10T03:35:51.010Z"
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [
+            {
+              "id": "tamil_nadu_016",
+              "name": "Chidambaram Nataraja Temple",
+              "canonical_name": "Chidambaram Nataraja Temple",
+              "aliases": [],
+              "city_id": "chidambaram",
+              "state_id": "tamil-nadu",
+              "district": "Chidambaram",
+              "category": "religious_heritage",
+              "category_label": "Religious Heritage",
+              "categories": [
+                "religious_heritage"
+              ],
+              "subcategories": [
+                "religious_heritage",
+                "Tamil Nadu"
+              ],
+              "importance_level": "top_landmark",
+              "summary": "A major Shiva temple dedicated to Nataraja and renowned for its sacred traditions.",
+              "historical_significance": "A major Shiva temple dedicated to Nataraja and renowned for its sacred traditions.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "description": "Free or paid depending on attraction; verify current rates",
+                "currency": "INR"
+              },
+              "timings": {
+                "description": "Usually daytime; timings vary by attraction",
+                "visiting_hours": "Usually daytime; timings vary by attraction"
+              },
+              "visit_duration": {
+                "label": "2–4 hours"
+              },
+              "coordinates": {
+                "lat": 11.3992,
+                "lng": 79.6934
+              },
+              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Tamil Nadu Tourism Department",
+              "source_url": "https://www.tamilnadutourism.tn.gov.in/destinations/chidambaram-nataraja-temple",
+              "source_name": "Tamil Nadu Tourism Department",
+              "source_type": "official_site",
+              "source_quality": "place_specific",
+              "verification_status": "verified",
+              "status": "VERIFIED",
+              "tags": [
+                "religious_heritage",
+                "Tamil Nadu"
+              ],
+              "best_time_to_visit": "October to March",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Chidambaram Nataraja Temple Tamil Nadu",
+              "area": "Chidambaram"
+            }
+          ],
+          "nature_parks_zoo": [],
+          "transport": {
+            "railway_stations": []
+          }
+        },
+        {
+          "id": "courtallam",
+          "name": "Courtallam",
+          "canonical_name": "Courtallam",
+          "state_id": "tamil-nadu",
+          "district": "Tenkasi",
+          "latitude": 8.9297,
+          "longitude": 77.2694,
+          "coordinates": {
+            "lat": 8.9297,
+            "lng": 77.2694
           },
-          "source_url": "https://unsplash.com/photos/rockfort-ucchipillayar-temple-srirangam-tiruchirappalli-T1m1q3Z7v9",
-          "source_name": "Unsplash",
-          "creator": "Cauvery Delta Heritage Council",
-          "license": "Unsplash License"
+          "description": "Popular natural destination featuring Main Falls, Five Falls, and Old Courtallam cascades renowned for therapeutic waters.",
+          "short_description": "Spa of South India, famous for mineral-rich medicinal waterfalls cascading down the Western Ghats.",
+          "places_count": 1,
+          "verification_status": "verified",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [
+            {
+              "id": "tamil_nadu_019",
+              "name": "Courtallam Falls",
+              "canonical_name": "Courtallam Falls",
+              "aliases": [],
+              "city_id": "courtallam",
+              "state_id": "tamil-nadu",
+              "district": "Tenkasi district",
+              "category": "waterfall_nature",
+              "category_label": "Waterfall Nature",
+              "categories": [
+                "waterfall_nature"
+              ],
+              "subcategories": [
+                "waterfall_nature",
+                "Tamil Nadu"
+              ],
+              "importance_level": "top_landmark",
+              "summary": "A popular waterfall destination known for its scenic cascades and bathing areas.",
+              "historical_significance": "A popular waterfall destination known for its scenic cascades and bathing areas.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "description": "Free or paid depending on attraction; verify current rates",
+                "currency": "INR"
+              },
+              "timings": {
+                "description": "Usually daytime; timings vary by attraction",
+                "visiting_hours": "Usually daytime; timings vary by attraction"
+              },
+              "visit_duration": {
+                "label": "2–4 hours"
+              },
+              "coordinates": {
+                "lat": 8.9297,
+                "lng": 77.2694
+              },
+              "image_url": "https://images.unsplash.com/photo-1546587348-d12660c30c50?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1546587348-d12660c30c50?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Tamil Nadu Tourism Department",
+              "source_url": "https://www.tamilnadutourism.tn.gov.in/destinations/courtallam-falls",
+              "source_name": "Tamil Nadu Tourism Department",
+              "source_type": "official_site",
+              "source_quality": "place_specific",
+              "verification_status": "verified",
+              "status": "VERIFIED",
+              "tags": [
+                "waterfall_nature",
+                "Tamil Nadu"
+              ],
+              "best_time_to_visit": "October to March",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Courtallam Falls Tamil Nadu",
+              "area": "Tenkasi district"
+            }
+          ],
+          "transport": {
+            "railway_stations": []
+          }
+        },
+        {
+          "id": "yercaud",
+          "name": "Yercaud",
+          "canonical_name": "Yercaud",
+          "state_id": "tamil-nadu",
+          "district": "Salem",
+          "latitude": 11.7753,
+          "longitude": 78.2093,
+          "coordinates": {
+            "lat": 11.7753,
+            "lng": 78.2093
+          },
+          "description": "Jewel of the South located 1515 meters above sea level, offering botanical gardens, deer park, and Pagoda Point.",
+          "short_description": "Tranquil hill station in the Shevaroy Hills celebrated for emerald lakes, coffee plantations, and panoramic viewpoints.",
+          "places_count": 1,
+          "verification_status": "verified",
+          "heritage": [],
+          "monuments": [],
+          "museums": [],
+          "tourist_places": [],
+          "religious_cultural": [],
+          "nature_parks_zoo": [
+            {
+              "id": "tamil_nadu_020",
+              "name": "Yercaud",
+              "canonical_name": "Yercaud",
+              "aliases": [],
+              "city_id": "yercaud",
+              "state_id": "tamil-nadu",
+              "district": "Salem district",
+              "category": "hill_station_nature",
+              "category_label": "Hill Station Nature",
+              "categories": [
+                "hill_station_nature"
+              ],
+              "subcategories": [
+                "hill_station_nature",
+                "Tamil Nadu"
+              ],
+              "importance_level": "top_landmark",
+              "summary": "A peaceful hill station known for coffee plantations, lakes, and viewpoints.",
+              "historical_significance": "A peaceful hill station known for coffee plantations, lakes, and viewpoints.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "description": "Free or paid depending on attraction; verify current rates",
+                "currency": "INR"
+              },
+              "timings": {
+                "description": "Usually daytime; timings vary by attraction",
+                "visiting_hours": "Usually daytime; timings vary by attraction"
+              },
+              "visit_duration": {
+                "label": "2–4 hours"
+              },
+              "coordinates": {
+                "lat": 11.7753,
+                "lng": 78.2093
+              },
+              "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
+              "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1000&auto=format&fit=crop&q=80",
+              "attribution": "Tamil Nadu Tourism Department",
+              "source_url": "https://www.tamilnadutourism.tn.gov.in/destinations/yercaud",
+              "source_name": "Tamil Nadu Tourism Department",
+              "source_type": "official_site",
+              "source_quality": "place_specific",
+              "verification_status": "verified",
+              "status": "VERIFIED",
+              "tags": [
+                "hill_station_nature",
+                "Tamil Nadu"
+              ],
+              "best_time_to_visit": "October to March",
+              "visitor_notes": [
+                "Check local access rules and timings before visiting",
+                "Carry water and comfortable footwear"
+              ],
+              "map_search": "Yercaud Tamil Nadu",
+              "area": "Salem district"
+            }
+          ],
+          "transport": {
+            "railway_stations": []
+          }
         }
       ],
       "region_type": "state",

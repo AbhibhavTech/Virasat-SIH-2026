@@ -51,7 +51,7 @@ export function formatCityName(cityId: string): string {
 export function getActiveTabFromPath(pathname: string): NavTab {
   if (pathname === '/' || pathname === '') return 'home';
   if (pathname.startsWith('/explore')) return 'india';
-  if (pathname.startsWith('/city')) return 'dashboard';
+  if (pathname.startsWith('/city') || pathname.startsWith('/destination')) return 'dashboard';
   if (pathname.startsWith('/heritage')) return 'heritage';
   if (pathname.startsWith('/itinerary')) return 'itinerary';
   if (pathname.startsWith('/map')) return 'map';
@@ -258,7 +258,24 @@ export const AppRoutes: React.FC<AppRoutesProps> = ({
       />
 
       <Route
+        path="/destination/:cityId"
+        element={
+          <CityHubRoute
+            onSelectPlace={onSelectPlace}
+            onNavigateTab={onNavigateTab}
+            selectedCity={selectedCity}
+            onSelectCity={onSelectCity}
+          />
+        }
+      />
+
+      <Route
         path="/city"
+        element={<Navigate to={`/city/${selectedCity && selectedCity !== 'All India' ? selectedCity.toLowerCase().replace(/\s+/g, '-') : 'mumbai'}`} replace />}
+      />
+
+      <Route
+        path="/destination"
         element={<Navigate to={`/city/${selectedCity && selectedCity !== 'All India' ? selectedCity.toLowerCase().replace(/\s+/g, '-') : 'mumbai'}`} replace />}
       />
 

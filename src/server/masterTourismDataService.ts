@@ -49,6 +49,11 @@ export interface DestinationRecord {
   city_id?: string;
   country: string;
   category: string;
+  area?: string;
+  best_for?: string;
+  suggested_duration?: string;
+  visitor_notes?: string;
+  map_search?: string;
   summary: string;
   description?: string;
   history?: string;
@@ -375,6 +380,9 @@ export class MasterTourismDataService {
       };
 
       loadPlacesFile(path.join(dataDir, 'mumbai', 'places.json'));
+      loadPlacesFile(path.join(dataDir, 'pune', 'places.json'));
+      loadPlacesFile(path.join(dataDir, 'tamil-nadu', 'places.json'));
+      loadPlacesFile(path.join(dataDir, 'himachal-pradesh', 'places.json'));
       loadPlacesFile(path.join(dataDir, 'maharashtra', 'places.json'));
       loadPlacesFile(path.join(dataDir, 'delhi', 'places.json'));
       loadPlacesFile(path.join(dataDir, 'rajasthan', 'places.json'));
@@ -402,6 +410,42 @@ export class MasterTourismDataService {
             };
             this.destinations.set(item.id.toLowerCase(), normItem);
           }
+        }
+
+        const mumbaiAliases: Record<string, string> = {
+          'mumbai-001': 'gateway-of-india',
+          'mumbai-002': 'csmt',
+          'mumbai-003': 'elephanta-caves',
+          'mumbai-004': 'marine-drive',
+          'mumbai-005': 'victorian-gothic-art-deco',
+          'mumbai-006': 'csmvs',
+          'mumbai-007': 'sanjay-gandhi-national-park',
+          'mumbai-008': 'kanheri-caves',
+          'mumbai-009': 'haji-ali-dargah',
+          'mumbai-010': 'bandra-fort',
+        };
+        for (const [mId, legacyId] of Object.entries(mumbaiAliases)) {
+          if (this.destinations.has(mId) && !this.destinations.has(legacyId)) {
+            this.destinations.set(legacyId, { ...this.destinations.get(mId)!, id: legacyId });
+          } else if (this.destinations.has(legacyId) && this.destinations.has(mId)) {
+            const mItem = this.destinations.get(mId)!;
+            const legItem = this.destinations.get(legacyId)!;
+            Object.assign(legItem, {
+              area: mItem.area,
+              best_for: mItem.best_for,
+              suggested_duration: mItem.suggested_duration,
+              best_time_to_visit: mItem.best_time_to_visit,
+              visitor_notes: mItem.visitor_notes,
+              map_search: mItem.map_search,
+              tags: mItem.tags,
+              thumbnail_url: mItem.thumbnail_url || legItem.thumbnail_url,
+            });
+          }
+        }
+
+        // Clean up legacy/unverified monument duplicate for Himachal Pradesh
+        if (this.destinations.has('himachal_001') && this.destinations.has('kalka-shimla-railway')) {
+          this.destinations.delete('kalka-shimla-railway');
         }
       }
 

@@ -75,17 +75,18 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
   // 1. Official Heritage Sources Registry (Section XI.2)
   // -------------------------------------------------------------
   const officialSources: PlaceSourceRecord[] = [
-    { id: 'src-asi', source_name: 'Archaeological Survey of India (ASI)', source_type: 'tier1_official', url: 'https://asi.nic.in', created_at: now },
-    { id: 'src-unesco', source_name: 'UNESCO World Heritage Centre', source_type: 'tier2_trusted', url: 'https://whc.unesco.org', created_at: now },
-    { id: 'src-culture', source_name: 'Ministry of Culture, Government of India', source_type: 'tier1_official', url: 'https://indiaculture.gov.in', created_at: now },
-    { id: 'src-mtdc', source_name: 'Maharashtra Tourism Development Corporation (MTDC)', source_type: 'tier1_official', url: 'https://maharashtratourism.gov.in', created_at: now },
-    { id: 'src-delhi-tourism', source_name: 'Delhi Tourism and Transportation Development (DTTDC)', source_type: 'tier1_official', url: 'https://delhitourism.gov.in', created_at: now },
-    { id: 'src-rajasthan-tourism', source_name: 'Department of Tourism, Government of Rajasthan', source_type: 'tier1_official', url: 'https://tourism.rajasthan.gov.in', created_at: now },
-    { id: 'src-up-tourism', source_name: 'Uttar Pradesh Tourism Development Corporation', source_type: 'tier1_official', url: 'https://www.uptourism.gov.in', created_at: now },
-    { id: 'src-kerala-tourism', source_name: 'Department of Tourism, Government of Kerala', source_type: 'tier1_official', url: 'https://www.keralatourism.org', created_at: now },
-    { id: 'src-goa-tourism', source_name: 'Department of Tourism, Government of Goa', source_type: 'tier1_official', url: 'https://goatourism.gov.in', created_at: now },
-    { id: 'src-karnataka-tourism', source_name: 'Department of Tourism, Government of Karnataka', source_type: 'tier1_official', url: 'https://karnatakatourism.org', created_at: now },
-    { id: 'src-tamil-nadu-tourism', source_name: 'Tamil Nadu Tourism Development Corporation', source_type: 'tier1_official', url: 'https://www.tamilnadutourism.tn.gov.in', created_at: now },
+    { id: 'src-asi', source_name: 'Archaeological Survey of India (ASI)', source_type: 'tier1_official', source_url: 'https://asi.nic.in', url: 'https://asi.nic.in', created_at: now },
+    { id: 'src-unesco', source_name: 'UNESCO World Heritage Centre', source_type: 'tier2_trusted', source_url: 'https://whc.unesco.org', url: 'https://whc.unesco.org', created_at: now },
+    { id: 'src-culture', source_name: 'Ministry of Culture, Government of India', source_type: 'tier1_official', source_url: 'https://indiaculture.gov.in', url: 'https://indiaculture.gov.in', created_at: now },
+    { id: 'src-mtdc', source_name: 'Maharashtra Tourism Development Corporation (MTDC)', source_type: 'tier1_official', source_url: 'https://maharashtratourism.gov.in', url: 'https://maharashtratourism.gov.in', created_at: now },
+    { id: 'src-delhi-tourism', source_name: 'Delhi Tourism and Transportation Development (DTTDC)', source_type: 'tier1_official', source_url: 'https://delhitourism.gov.in', url: 'https://delhitourism.gov.in', created_at: now },
+    { id: 'src-rajasthan-tourism', source_name: 'Department of Tourism, Government of Rajasthan', source_type: 'tier1_official', source_url: 'https://tourism.rajasthan.gov.in', url: 'https://tourism.rajasthan.gov.in', created_at: now },
+    { id: 'src-up-tourism', source_name: 'Uttar Pradesh Tourism Development Corporation', source_type: 'tier1_official', source_url: 'https://www.uptourism.gov.in', url: 'https://www.uptourism.gov.in', created_at: now },
+    { id: 'src-kerala-tourism', source_name: 'Department of Tourism, Government of Kerala', source_type: 'tier1_official', source_url: 'https://www.keralatourism.org', url: 'https://www.keralatourism.org', created_at: now },
+    { id: 'src-goa-tourism', source_name: 'Department of Tourism, Government of Goa', source_type: 'tier1_official', source_url: 'https://goatourism.gov.in', url: 'https://goatourism.gov.in', created_at: now },
+    { id: 'src-karnataka-tourism', source_name: 'Department of Tourism, Government of Karnataka', source_type: 'tier1_official', source_url: 'https://karnatakatourism.org', url: 'https://karnatakatourism.org', created_at: now },
+    { id: 'src-tamil-nadu-tourism', source_name: 'Tamil Nadu Tourism Development Corporation', source_type: 'tier1_official', source_url: 'https://www.tamilnadutourism.tn.gov.in', url: 'https://www.tamilnadutourism.tn.gov.in', created_at: now },
+    { id: 'src-himachal-tourism', source_name: 'Department of Tourism & Civil Aviation, Government of Himachal Pradesh', source_type: 'tier1_official', source_url: 'https://himachaltourism.gov.in', url: 'https://himachaltourism.gov.in', created_at: now },
   ];
   for (const s of officialSources) {
     place_sources[s.id] = s;
@@ -312,7 +313,7 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
   // -------------------------------------------------------------
   // 5. Regional Flagship Datasets (Mumbai, Delhi, Rajasthan, Goa, Kerala, Maharashtra)
   // -------------------------------------------------------------
-  const regionalDirs = ['mumbai', 'delhi', 'rajasthan', 'maharashtra', 'goa', 'kerala', 'ladakh', 'jammu-kashmir'];
+  const regionalDirs = ['mumbai', 'pune', 'tamil-nadu', 'himachal-pradesh', 'delhi', 'rajasthan', 'maharashtra', 'goa', 'kerala', 'ladakh', 'jammu-kashmir'];
   for (const reg of regionalDirs) {
     const regPath = path.join(rootDataDir, reg, 'places.json');
     if (fs.existsSync(regPath)) {
@@ -320,11 +321,51 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
         const regionalPlaces = JSON.parse(fs.readFileSync(regPath, 'utf-8'));
         if (Array.isArray(regionalPlaces)) {
           for (const rp of regionalPlaces) {
-            const stateId = (rp.state || reg).toLowerCase().replace(/[^a-z0-9]+/g, '-');
-            const cityId = (rp.city || reg).toLowerCase().replace(/[^a-z0-9]+/g, '-');
+            const stateId = (rp.state_id || rp.state || reg).toLowerCase().replace(/[^a-z0-9]+/g, '-');
+            const cityId = (rp.city_id || rp.city || reg).toLowerCase().replace(/[^a-z0-9]+/g, '-');
             const normalizedName = rp.name.trim().toLowerCase();
-            const existing = places[rp.id] || Object.values(places).find(p => p.city_id === cityId && p.name.trim().toLowerCase() === normalizedName);
-            if (existing) continue; // Already ingested via curated monuments
+            const legacyAliasMap: Record<string, string> = {
+              'tamil_nadu_001': 'meenakshi-amman-temple',
+              'tamil_nadu_002': 'brihadisvara-temple',
+              'tamil_nadu_003': 'shore-temple-mahabalipuram',
+              'pune_001': 'shaniwar-wada',
+              'pune_002': 'aga-khan-palace',
+              'pune_022': 'sinhagad-fort',
+              'himachal_001': 'kalka-shimla-railway',
+            };
+            const legacyKey = legacyAliasMap[rp.id];
+            const existing = places[rp.id] || (legacyKey ? places[legacyKey] : undefined) || Object.values(places).find(p => p.city_id === cityId && p.name.trim().toLowerCase() === normalizedName);
+            if (existing) {
+              // Ensure the authoritative dataset ID is mapped as primary
+              if (existing.id !== rp.id) {
+                const oldId = existing.id;
+                delete places[oldId];
+                existing.id = rp.id;
+                places[rp.id] = existing;
+                if (!existing.aliases) existing.aliases = [];
+                if (!existing.aliases.includes(oldId)) existing.aliases.push(oldId);
+                if (!existing.aliases.includes(rp.id)) existing.aliases.push(rp.id);
+              }
+              if (rp.name) existing.name = rp.name;
+              if (rp.category) existing.category = rp.category;
+              if (rp.description) {
+                existing.description = rp.description;
+                existing.summary = rp.description;
+              }
+              if (cityId) existing.city_id = cityId;
+              if (stateId) existing.state_id = stateId;
+              if (rp.area) existing.area = rp.area;
+              if (rp.best_for) existing.best_for = rp.best_for;
+              if (rp.suggested_duration) existing.suggested_duration = rp.suggested_duration;
+              if (rp.best_time_to_visit) existing.best_time_to_visit = rp.best_time_to_visit;
+              if (rp.visitor_notes) existing.visitor_notes = rp.visitor_notes;
+              if (rp.map_search) existing.map_search = rp.map_search;
+              if (rp.tags) existing.tags = rp.tags;
+              if (rp.entry_fee !== undefined) existing.entry_fee = rp.entry_fee;
+              if (rp.opening_hours) existing.opening_hours = rp.opening_hours;
+              if (rp.thumbnail_url) existing.thumbnail_url = rp.thumbnail_url;
+              continue;
+            }
             const sourceUrl = rp.source_url && rp.source_url.startsWith('http') ? rp.source_url : 'https://asi.nic.in';
             const quality = computeSourceQuality(sourceUrl);
             const isVerified = (quality === 'place_specific' || quality === 'official_site');
@@ -332,7 +373,7 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
 
             const domesticFee = Number(rp.entry_fee?.domestic ?? rp.entry_fee_inr ?? 0);
             const intlFee = Number(rp.entry_fee?.international ?? 0);
-            const visitingHours = rp.visiting_hours || rp.visiting_info?.visiting_hours || 'Open Regular Hours';
+            const visitingHours = rp.visiting_hours || rp.visiting_info?.visiting_hours || rp.opening_hours || 'Open Regular Hours';
             const lat = Number(rp.coordinates?.lat || 0);
             const lng = Number(rp.coordinates?.lng || 0);
 
@@ -342,6 +383,13 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
               state_id: stateId,
               name: rp.name,
               category: rp.category || 'heritage',
+              area: rp.area,
+              best_for: rp.best_for,
+              suggested_duration: rp.suggested_duration,
+              best_time_to_visit: rp.best_time_to_visit,
+              visitor_notes: rp.visitor_notes,
+              map_search: rp.map_search,
+              tags: rp.tags || [],
               summary: rp.summary || rp.description || '',
               description: rp.description || rp.summary || '',
               history: rp.history || '',
@@ -349,8 +397,10 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
               lng,
               latitude: lat,
               longitude: lng,
+              entry_fee: rp.entry_fee,
               entry_fee_domestic: domesticFee,
               entry_fee_intl: intlFee,
+              opening_hours: rp.opening_hours || visitingHours,
               visiting_hours: visitingHours,
               heritage_status: rp.heritage_status || 'State Protected Heritage',
               data_confidence: isVerified ? 'official' : 'unverified',
@@ -378,6 +428,18 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
               thumbnail_url: rp.thumbnail_url || (Array.isArray(rp.images) && rp.images[0]) || 'https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&auto=format&fit=crop&q=80',
               created_at: now,
             };
+
+            if (rp.thumbnail_url) {
+              image_licenses[`lic-${rp.id}`] = {
+                id: `lic-${rp.id}`,
+                image_url: rp.thumbnail_url,
+                license_type: 'editorial_heritage_archive',
+                attribution_required: true,
+                attribution_text: `${rp.name} Archive / Tourism Department`,
+                source_portal: 'Regional Tourism Archive',
+                created_at: now,
+              };
+            }
 
             attachVerifiedFacts(
               rp.id,

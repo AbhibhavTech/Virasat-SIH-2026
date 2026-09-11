@@ -24,7 +24,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
     }
   };
 
-  const cities = ['All India', 'Delhi', 'Jaipur', 'Agra', 'Mumbai', 'Varanasi', 'Kochi', 'Goa', 'Bengaluru'];
+  const cities = ['All India', 'Mumbai', 'Pune', 'Chennai', 'Shimla', 'Delhi', 'Jaipur', 'Agra', 'Varanasi', 'Kochi', 'Goa', 'Bengaluru', 'Udaipur', 'Amritsar'];
 
   return (
     <div className="relative rounded-2xl overflow-hidden bg-white border border-slate-200 p-6 sm:p-10 shadow-sm">

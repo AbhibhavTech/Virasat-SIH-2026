@@ -52,8 +52,8 @@
     "description": "Himachal Pradesh is a northern Indian Himalayan state renowned for high-altitude ecosystems, historic Buddhist monasteries, wooden pagoda temples, and historic hill stations.",
     "status": "verified",
     "hero_image_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=1200&q=80",
-    "total_cities": 6,
-    "total_attractions": 12
+    "total_cities": 10,
+    "total_attractions": 20
   },
   {
     "id": "jammu-and-kashmir",
@@ -482,12 +482,12 @@
     "type": "state",
     "capital": "Chennai",
     "region": "Southern India",
-    "official_tourism_url": "https://unsplash.com/photos/hindu-temple-in-madurai-india-M_7m1q5Z8v2",
+    "official_tourism_url": "https://www.tamilnadutourism.tn.gov.in/",
     "description": "Land of Living Chola Temples (UNESCO), soaring Dravidian gopurams of Madurai, Shore Temple of Mamallapuram, and Nilgiri Mountain Railway.",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80",
-    "total_cities": 10,
-    "total_attractions": 10
+    "total_cities": 13,
+    "total_attractions": 27
   },
   {
     "id": "telangana",

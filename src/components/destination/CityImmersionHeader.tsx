@@ -65,6 +65,30 @@ export const CityImmersionHeader: React.FC<CityImmersionHeaderProps> = ({
         dominantPalette: 'from-amber-900/40 via-stone-900/30 to-[#FAF8F5]',
       };
     }
+    if (c.includes('pune')) {
+      return {
+        tagline: 'Cultural capital of Maharashtra, city of Peshwas, scholars and historic hill forts.',
+        subtext: 'Shaniwar Wada palace complex, Pataleshwar rock caves, Aga Khan Palace freedom memorial, Parvati Hill vistas, and majestic Maratha hill forts.',
+        backdropImage: 'https://images.unsplash.com/photo-1600100397608-f010e421e4a3?w=1600&auto=format&fit=crop&q=85',
+        accentBadge: 'Maratha Citadel & Cultural Capital',
+        heritageSymbol: 'Shaniwar Wada • Aga Khan Palace • Sinhagad Fort',
+        guideQuote: 'Walk the historic ramparts of Shaniwar Wada and ascend Sinhagad at sunrise—the echoes of Maratha valor still resonate across these valleys.',
+        guideCharacter: 'virasat',
+        dominantPalette: 'from-amber-900/40 via-stone-900/30 to-[#FAF8F5]',
+      };
+    }
+    if (c.includes('chennai') || c.includes('tamil nadu')) {
+      return {
+        tagline: 'Gateway to South India’s living classical heritage and coastal wonders.',
+        subtext: 'Soaring Dravidian gopurams at Kapaleeswarar, colonial ramparts at Fort St. George, historic Marina Beach, and sacred coastal shrines.',
+        backdropImage: 'https://images.unsplash.com/photo-1628009848535-216455961f72?w=1600&auto=format&fit=crop&q=85',
+        accentBadge: 'Cultural Gateway & Dravidian Heritage',
+        heritageSymbol: 'Kapaleeswarar Temple • Fort St. George • Marina Beach • San Thome',
+        guideQuote: 'From the morning sea breeze along Marina Beach to the ancient rhythm of temple bells in Mylapore, Chennai preserves centuries of living art and architecture.',
+        guideCharacter: 'virasat',
+        dominantPalette: 'from-amber-900/40 via-stone-900/30 to-[#FAF8F5]',
+      };
+    }
     if (c.includes('lonavala') || c.includes('khandala') || c.includes('lonavla')) {
       return {
         tagline: 'Misty Sahyadri cliffs, historic Maratha hill forts and 2,200-year-old Buddhist rock caves.',
@@ -134,6 +158,30 @@ export const CityImmersionHeader: React.FC<CityImmersionHeaderProps> = ({
         heritageSymbol: 'Chinese Fishing Nets • Mattancherry • Fort Kochi',
         guideQuote: 'The fragrance of black pepper, cardamom and ginger still wafts through the ancient warehouse alleys of Jew Town.',
         guideCharacter: 'khoj',
+        dominantPalette: 'from-emerald-950/40 via-stone-900/30 to-[#FAF8F5]',
+      };
+    }
+    if (c.includes('pune')) {
+      return {
+        tagline: 'The cultural capital of Maharashtra, Peshwa legacy and Maratha hill forts.',
+        subtext: 'Historic Peshwa palaces, 8th-century basalt rock-cut cave temples, grand Maratha mountain bastions, and sprawling green tekdis.',
+        backdropImage: 'https://images.unsplash.com/photo-1600100397608-f010e421e4a3?w=1600&auto=format&fit=crop&q=85',
+        accentBadge: 'Peshwa Heritage & Fortresses',
+        heritageSymbol: 'Shaniwar Wada • Aga Khan Palace • Sinhagad Fort',
+        guideQuote: 'From the historic gates of Shaniwar Wada to the misty ramparts of Sinhagad, Pune is the beating heart of Maratha history and valor.',
+        guideCharacter: 'virasat',
+        dominantPalette: 'from-amber-950/40 via-stone-900/30 to-[#FAF8F5]',
+      };
+    }
+    if (c.includes('shimla') || c.includes('himachal') || c.includes('manali') || c.includes('dharamshala')) {
+      return {
+        tagline: 'Queen of the Hills, snow-capped Himalayan peaks, and colonial promenades.',
+        subtext: 'Historic British colonial capitals, ancient deodar pine forests, Himalayan cedar temples, and high-altitude alpine passes.',
+        backdropImage: 'https://images.unsplash.com/photo-1597074866923-dc0589150358?w=1600&auto=format&fit=crop&q=85',
+        accentBadge: 'Himalayan Mountain Haven',
+        heritageSymbol: 'Mall Road • The Ridge • Jakhu Temple • Hadimba Temple',
+        guideQuote: 'Breathe in the crisp Himalayan air as the sun illuminates the snow-capped Dhauladhar and Pir Panjal mountain ranges.',
+        guideCharacter: 'prithvi',
         dominantPalette: 'from-emerald-950/40 via-stone-900/30 to-[#FAF8F5]',
       };
     }

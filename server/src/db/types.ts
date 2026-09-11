@@ -218,6 +218,12 @@ export interface PlaceRecord {
   description: string;
   history: string;
   address?: string;
+  area?: string;
+  best_for?: string;
+  suggested_duration?: string;
+  visitor_notes?: string;
+  map_search?: string;
+  tags?: string[];
   lat: number;
   lng: number;
   latitude?: number;
@@ -403,7 +409,7 @@ export interface PlaceSourceRecord {
   evidence_note?: string;
   accessed_on?: string;
   verification_status?: VerificationStatus | string;
-  created_at: string;
+  created_at?: string;
 }
 
 export interface PlaceFactRecord {

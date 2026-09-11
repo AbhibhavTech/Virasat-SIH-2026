@@ -47,6 +47,8 @@ export interface CityOption {
 }
 
 // ============================================================================
+import { MUMBAI_ITINERARY_CIRCUITS } from './mumbaiMasterData';
+
 // Curated Day-by-Day Blueprints for Key Destinations
 // ============================================================================
 
@@ -59,104 +61,71 @@ export const VERIFIED_CITY_ITINERARIES: Record<string, VerifiedCityItinerary> = 
     tagline: 'City of Dreams & Victorian Gothic Grandeur',
     description: 'A perfect mix of heritage, culture, beaches, food and local experiences — planned with nearby places to make your journey smooth and enjoyable.',
     default_hero_image: 'https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1000&auto=format&fit=crop&q=80',
+    days: MUMBAI_ITINERARY_CIRCUITS as unknown as VerifiedDayBlueprint[],
+  },
+
+  pune: {
+    city_id: 'pune',
+    city_name: 'Pune',
+    state_name: 'Maharashtra',
+    state_id: 'maharashtra',
+    tagline: 'Cultural Capital of Maharashtra & Queen of the Deccan',
+    description: 'Explore the historic seat of the Peshwas, tranquil hill tekdis, freedom struggle landmarks, Maratha citadels and vibrant cultural bazaars in a geographically seamless flow.',
+    default_hero_image: 'https://images.unsplash.com/photo-1600100397608-f010e421e4a3?w=1000&auto=format&fit=crop&q=80',
     days: [
       {
         day_number: 1,
-        area_title: 'South Mumbai Heritage',
-        area_name: 'South Mumbai',
-        subtitle: 'Iconic landmarks, colonial architecture and waterfront views.',
-        hero_image_url: 'https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&auto=format&fit=crop&q=80',
+        area_title: 'Historic Peshwa Heart & Old City',
+        area_name: 'Central Pune & Kasba Peth',
+        subtitle: 'Peshwa-era palaces, rock-cut 8th-century sanctuaries, and historic wadas.',
+        hero_image_url: 'https://images.unsplash.com/photo-1600100397608-f010e421e4a3?w=800&auto=format&fit=crop&q=80',
         places: [
-          { id: 'gateway-of-india', name: 'Gateway of India', distance_info: '0 km', category: 'heritage' },
-          { id: 'csmt', name: 'Chhatrapati Shivaji Maharaj Terminus (CSMT)', distance_info: '~ 3 km', category: 'heritage' },
-          { id: 'kala-ghoda', name: 'Kala Ghoda Art District', distance_info: '~ 2 km', category: 'culture' },
-          { id: 'marine-drive', name: 'Marine Drive', distance_info: '~ 3 km', category: 'coastal' },
+          { id: 'pune_001', name: 'Shaniwar Wada', distance_info: '0 km', category: 'heritage' },
+          { id: 'pune_004', name: 'Pataleshwar Cave Temple', distance_info: '~ 1.8 km', category: 'heritage' },
+          { id: 'pune_005', name: 'Raja Dinkar Kelkar Museum', distance_info: '~ 1.5 km', category: 'museum' },
+          { id: 'pune_006', name: 'Shreemant Dagdusheth Halwai Ganpati', distance_info: '~ 0.9 km', category: 'spiritual' },
         ],
-        shopping: ['Colaba Causeway', 'Crawford Market'],
+        shopping: ['Tulsi Baug Traditional Market', 'Laxmi Road (Maharashtrian Paithani Sarees)'],
       },
       {
         day_number: 2,
-        area_title: 'Bandra & Western Mumbai',
-        area_name: 'Bandra',
-        subtitle: 'Beaches, street culture and vibrant local life.',
-        hero_image_url: 'https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=800&auto=format&fit=crop&q=80',
+        area_title: 'National Heritage, Freedom History & Gardens',
+        area_name: 'Kalyani Nagar & Deccan',
+        subtitle: 'Mahatma Gandhi’s memorial, sprawling botanical gardens, and hilltop temples.',
+        hero_image_url: 'https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=800&auto=format&fit=crop&q=80',
         places: [
-          { id: 'bandra-fort', name: 'Bandra Fort', distance_info: '0 km', category: 'heritage' },
-          { id: 'mount-mary', name: 'Mount Mary Basilica', distance_info: '~ 2 km', category: 'spiritual' },
-          { id: 'bandstand', name: 'Bandstand Promenade', distance_info: '~ 1 km', category: 'coastal' },
-          { id: 'carter-road', name: 'Carter Road', distance_info: '~ 3 km', category: 'coastal' },
+          { id: 'pune_002', name: 'Aga Khan Palace', distance_info: '0 km', category: 'heritage' },
+          { id: 'pune_007', name: 'Parvati Hill & Peshwa Temple Complex', distance_info: '~ 8 km', category: 'spiritual' },
+          { id: 'pune_008', name: 'Empress Botanical Garden', distance_info: '~ 4.5 km', category: 'nature' },
+          { id: 'pune_011', name: 'Vetal Tekdi Nature Trail', distance_info: '~ 6 km', category: 'nature' },
         ],
-        shopping: ['Linking Road', 'Hill Road'],
+        shopping: ['FC Road Boutiques', 'Mahatma Phule Mandai Heritage Market'],
       },
       {
         day_number: 3,
-        area_title: 'Central Mumbai',
-        area_name: 'Central Mumbai',
-        subtitle: 'Temples, museums and cultural experiences.',
-        hero_image_url: 'https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=800&auto=format&fit=crop&q=80',
+        area_title: 'Maratha Citadels & Mountain Bastions',
+        area_name: 'Haveli & Sahyadri Foothills',
+        subtitle: 'Legendary battlements of Tanaji Malusare and panoramic Sahyadri views.',
+        hero_image_url: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800&auto=format&fit=crop&q=80',
         places: [
-          { id: 'siddhivinayak-temple', name: 'Siddhivinayak Temple', distance_info: '0 km', category: 'spiritual' },
-          { id: 'bhau-daji-lad', name: 'Dr. Bhau Daji Lad Museum', distance_info: '~ 4 km', category: 'museum' },
-          { id: 'shivaji-park', name: 'Shivaji Park', distance_info: '~ 3 km', category: 'culture' },
-          { id: 'dadar-flower-bazaar', name: 'Dadar Local Area', distance_info: '~ 2 km', category: 'cultural' },
+          { id: 'pune_003', name: 'Sinhagad Fort', distance_info: '0 km (30 km south of city)', category: 'heritage' },
+          { id: 'pune_009', name: 'Khadakwasla Dam & Lake Promenade', distance_info: '~ 14 km (base of fort)', category: 'nature' },
+          { id: 'pune_012', name: 'Pashan Lake Sanctuary', distance_info: '~ 18 km', category: 'nature' },
         ],
-        shopping: ['Dadar Market', 'Hindmata Market'],
+        shopping: ['Sinhagad Village Kanda Bhaji & Pithla Bhakri Stalls', 'Khadakwasla Local Produce'],
       },
       {
         day_number: 4,
-        area_title: 'Elephanta Island',
-        area_name: 'Elephanta Island',
-        subtitle: 'Ancient caves, history and a peaceful island getaway.',
-        hero_image_url: 'https://images.unsplash.com/photo-1609137144822-79f972b901fc?w=800&auto=format&fit=crop&q=80',
-        places: [
-          { id: 'gateway-ferry', name: 'Gateway of India (Ferry to Elephanta)', distance_info: '0 km', category: 'heritage' },
-          { id: 'elephanta-caves', name: 'Elephanta Caves (Island)', distance_info: '~ 11 km (by ferry)', category: 'heritage' },
-          { id: 'elephanta-island-explore', name: 'Explore the Island & Canon Hill', distance_info: '~ 1 km', category: 'nature' },
-          { id: 'return-ferry-gateway', name: 'Return to Mumbai (Ferry)', distance_info: '~ 11 km (by ferry)', category: 'heritage' },
-        ],
-        shopping: ['Colaba Causeway', 'Local Handicraft Stalls'],
-      },
-      {
-        day_number: 5,
-        area_title: 'Juhu & Western Mumbai',
-        area_name: 'Juhu',
-        subtitle: 'Beaches, spirituality and a relaxed end to your trip.',
-        hero_image_url: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80',
-        places: [
-          { id: 'juhu-beach', name: 'Juhu Beach', distance_info: '0 km', category: 'coastal' },
-          { id: 'iskcon-juhu', name: 'ISKCON Temple', distance_info: '~ 2 km', category: 'spiritual' },
-          { id: 'prithvi-theatre', name: 'Prithvi Theatre Area', distance_info: '~ 3 km', category: 'culture' },
-          { id: 'versova-beach', name: 'Versova (Optional)', distance_info: '~ 4 km', category: 'coastal' },
-        ],
-        shopping: ['Linking Road', 'Juhu Market'],
-      },
-      {
-        day_number: 6,
-        area_title: 'Sanjay Gandhi National Park & Borivali',
-        area_name: 'Borivali',
-        subtitle: 'Lush green forests, ancient Buddhist caves and quiet nature.',
+        area_title: 'Rock-Cut Sanctuaries & Cultural Outskirts',
+        area_name: 'Dehu & Pimpri Chinchwad Environs',
+        subtitle: 'Ancient Buddhist caves, Bhakti saint memorials, and defense heritage.',
         hero_image_url: 'https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&auto=format&fit=crop&q=80',
         places: [
-          { id: 'sanjay-gandhi-national-park', name: 'Sanjay Gandhi National Park', distance_info: '0 km', category: 'nature' },
-          { id: 'kanheri-caves', name: 'Kanheri Caves (Krishnagiri)', distance_info: '~ 6 km', category: 'heritage' },
-          { id: 'sgnp-safari', name: 'Lion & Tiger Safari Area', distance_info: '~ 3 km', category: 'nature' },
-          { id: 'global-pagoda', name: 'Global Vipassana Pagoda Viewpoint', distance_info: '~ 5 km', category: 'spiritual' },
+          { id: 'pune_010', name: 'Bhandara Dongar & Sant Tukaram Sanctuary', distance_info: '0 km (Dehu)', category: 'spiritual' },
+          { id: 'pune_014', name: 'National Defence Academy (NDA Khadakwasla)', distance_info: '~ 20 km', category: 'monument' },
+          { id: 'pune_013', name: 'Pu La Deshpande Japanese Garden', distance_info: '~ 12 km', category: 'nature' },
         ],
-        shopping: ['Borivali Station Market', 'SGNP Souvenir Kiosk'],
-      },
-      {
-        day_number: 7,
-        area_title: 'Worli & Malabar Hill',
-        area_name: 'Worli & Malabar Hill',
-        subtitle: 'Historic shrines, scenic bay promenades and coastal breezes.',
-        hero_image_url: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80',
-        places: [
-          { id: 'haji-ali-dargah', name: 'Haji Ali Dargah', distance_info: '0 km', category: 'spiritual' },
-          { id: 'mahalaxmi-temple', name: 'Mahalaxmi Temple', distance_info: '~ 1.5 km', category: 'spiritual' },
-          { id: 'hanging-gardens', name: 'Hanging Gardens (Malabar Hill)', distance_info: '~ 3 km', category: 'nature' },
-          { id: 'worli-sea-face', name: 'Worli Sea Face', distance_info: '~ 4 km', category: 'coastal' },
-        ],
-        shopping: ['Heera Panna Shopping Centre', 'Tardeo Local Market'],
+        shopping: ['Appa Balwant Chowk (Books & Heritage Prints)', 'Dehu Road Brass Artefacts'],
       },
     ],
   },
@@ -2326,14 +2295,6 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
-    "id": "kanchipuram",
-    "name": "Kanchipuram",
-    "state": "Tamil Nadu",
-    "state_id": "tamil-nadu",
-    "displayName": "Kanchipuram (Tamil Nadu)",
-    "popular": false
-  },
-  {
     "id": "kanniyakumari",
     "name": "Kanniyakumari",
     "state": "Tamil Nadu",
@@ -2379,14 +2340,6 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "state": "Tamil Nadu",
     "state_id": "tamil-nadu",
     "displayName": "Thanjavur (Tamil Nadu)",
-    "popular": false
-  },
-  {
-    "id": "tiruchirappalli",
-    "name": "Tiruchirappalli",
-    "state": "Tamil Nadu",
-    "state_id": "tamil-nadu",
-    "displayName": "Tiruchirappalli (Tamil Nadu)",
     "popular": false
   },
   {

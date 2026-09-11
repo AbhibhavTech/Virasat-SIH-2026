@@ -195,6 +195,25 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
           </button>
 
           <div className="flex items-center gap-2">
+            {/* View on Map button using map_search */}
+            {(() => {
+              const p = place as any;
+              const mapQuery = p.map_search || (place.coordinates?.lat ? `${place.coordinates.lat},${place.coordinates.lng}` : `${place.name}, ${p.area ? `${p.area}, ` : ''}${place.city}`);
+              const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery)}`;
+              return (
+                <a
+                  href={mapUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 px-3 py-2 rounded-full bg-white/90 hover:bg-white text-stone-700 hover:text-[#FF671F] text-xs font-semibold shadow-xs transition backdrop-blur-sm focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none"
+                  title={`View ${place.name} on Google Maps`}
+                >
+                  <Navigation className="w-3.5 h-3.5 text-[#FF671F]" aria-hidden="true" />
+                  <span className="hidden sm:inline">View on Map</span>
+                </a>
+              );
+            })()}
+
             <button
               onClick={() => setIsReportModalOpen(true)}
               className="flex items-center gap-1.5 px-3 py-2 rounded-full bg-white/90 hover:bg-white text-stone-700 hover:text-[#FF671F] text-xs font-semibold shadow-xs transition backdrop-blur-sm focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none"
@@ -270,7 +289,7 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
           <div className="text-xs sm:text-sm text-stone-200 flex items-center gap-2">
             <MapPin className="w-4 h-4 text-amber-300 shrink-0" />
             <span>
-              {place.area_neighborhood ? `${place.area_neighborhood}, ` : ''}
+              {(place as any).area ? `${(place as any).area}, ` : place.area_neighborhood ? `${place.area_neighborhood}, ` : ''}
               {place.city}, {place.state}, {place.country || 'India'}
             </span>
           </div>
