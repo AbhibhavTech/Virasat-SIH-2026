@@ -39,6 +39,7 @@ import {
   AttractionEntity,
   IndiaHierarchyDatabase
 } from '../types/indiaHierarchy';
+import { INDIA_TOURISM_DATABASE } from '../data/indiaTourismDatabase';
 import { NavTab } from '../components/layout/Sidebar';
 import { ExploreIndiaMap } from '../components/explore-india/ExploreIndiaMap';
 import { PlaceDetailDrawer } from '../components/explore-india/PlaceDetailDrawer';
@@ -65,15 +66,12 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
   onNavigateTab,
   onSelectCity,
 }) => {
-  // Live Database from API
-  const [db, setDb] = useState<IndiaHierarchyDatabase | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  // Live Database from API with initial Master Database
+  const [db, setDb] = useState<IndiaHierarchyDatabase | null>(INDIA_TOURISM_DATABASE);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [loadError, setLoadError] = useState<string | null>(null);
 
   const loadHierarchy = () => {
-    setIsLoading(true);
-    setLoadError(null);
-
     fetch('/api/india-hierarchy')
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}: Failed to load hierarchy`);
@@ -84,9 +82,11 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
         setIsLoading(false);
       })
       .catch((err: Error) => {
-        setLoadError(err.message);
+        if (!db) {
+          setLoadError(err.message);
+        }
         setIsLoading(false);
-        console.error('Failed to load India hierarchy:', err);
+        console.warn('Using local hierarchy database, API sync unavailable:', err);
       });
   };
 

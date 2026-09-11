@@ -25,7 +25,7 @@ placesRouter.get('/', async (req: Request, res: Response): Promise<void> => {
     offset,
   } = req.query;
 
-  const parsedLimit = Math.min(Math.max(Number(limit) || 20, 1), 100);
+  const parsedLimit = Math.min(Math.max(Number(limit) || 20, 1), 5000);
   const parsedOffset = Math.max(Number(offset) || 0, 0);
 
   const result = await db.places.findAll({

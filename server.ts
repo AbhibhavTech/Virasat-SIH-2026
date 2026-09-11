@@ -767,7 +767,7 @@ function isPlaceInCity(place: any, targetCity: string): boolean {
   // If place has explicit city or city_id that maps to a canonical city, strictly match canonical IDs
   const pCanon = (pCityId && getCanonicalCityId(pCityId)) || (pCity && getCanonicalCityId(pCity));
   if (pCanon && targetCanon) {
-    if (pCanon === targetCanon) return true;
+    return pCanon === targetCanon;
   }
 
   if (pArea && targetCanon && getCanonicalCityId(pArea) === targetCanon) return true;

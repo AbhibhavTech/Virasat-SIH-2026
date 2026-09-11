@@ -6916,7 +6916,7 @@ export const INDIA_TOURISM_DATABASE = {
       "capital": "Chandigarh",
       "region": "Northern India",
       "hero_image_url": "https://images.unsplash.com/photo-1596701062351-8c2c14d1fdd1?w=1200&auto=format&fit=crop&q=80",
-      "total_cities": 6,
+      "total_cities": 21,
       "total_attractions": 30,
       "heritage_overview": "Vedic heartland of the epic Mahabharata, ancient Harappan archaeological mounds at Rakhigarhi, and Pinjore Mughal gardens.",
       "active_stories": [
@@ -12098,7 +12098,9 @@ export const INDIA_TOURISM_DATABASE = {
       "description": "Vedic heartland of the epic Mahabharata, ancient Harappan archaeological mounds at Rakhigarhi, and Pinjore Mughal gardens.",
       "status": "verified",
       "verified": true,
-      "total_places": 30
+      "total_places": 30,
+      "official_tourism_url": "https://haryanatourism.gov.in",
+      "verification_status": "verified"
     },
     {
       "id": "himachal-pradesh",

@@ -76,7 +76,7 @@ const AppContent: React.FC = () => {
     let isMounted = true;
     const loadAllPlaces = async () => {
       try {
-        const res = await api.getPlaces({ limit: 100 });
+        const res = await api.getPlaces({ limit: 1000 });
         if (isMounted && res && Array.isArray(res.data)) {
           setPlaces(res.data);
         } else if (isMounted) {
