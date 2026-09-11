@@ -61,7 +61,7 @@ app.use(
   })
 );
 app.use(express.json());
-app.use(compression());
+app.use((compression as any)());
 app.use(requestIdMiddleware);
 
 // -------------------------------------------------------------
