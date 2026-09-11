@@ -69,12 +69,6 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
     'agra-fort': 'https://whc.unesco.org/en/list/251/',
     'jantar-mantar': 'https://whc.unesco.org/en/list/1338/',
     'great-himalayan-national-park': 'https://whc.unesco.org/en/list/1406/',
-    'west_bengal_010': 'https://whc.unesco.org/en/list/452/',
-    'west_bengal_012': 'https://whc.unesco.org/en/list/1675/',
-    'west_bengal_016': 'https://whc.unesco.org/en/list/944/',
-    'sundarbans-national-park': 'https://whc.unesco.org/en/list/452/',
-    'darjeeling-himalayan-railway': 'https://whc.unesco.org/en/list/944/',
-    'shantiniketan': 'https://whc.unesco.org/en/list/1675/',
   };
 
   // -------------------------------------------------------------
@@ -84,7 +78,6 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
     { id: 'src-asi', source_name: 'Archaeological Survey of India (ASI)', source_type: 'tier1_official', url: 'https://asi.nic.in', created_at: now },
     { id: 'src-unesco', source_name: 'UNESCO World Heritage Centre', source_type: 'tier2_trusted', url: 'https://whc.unesco.org', created_at: now },
     { id: 'src-culture', source_name: 'Ministry of Culture, Government of India', source_type: 'tier1_official', url: 'https://indiaculture.gov.in', created_at: now },
-    { id: 'src-wb-tourism', source_name: 'Department of Tourism, Government of West Bengal', source_type: 'tier1_official', url: 'https://wbtourism.gov.in', created_at: now },
     { id: 'src-mtdc', source_name: 'Maharashtra Tourism Development Corporation (MTDC)', source_type: 'tier1_official', url: 'https://maharashtratourism.gov.in', created_at: now },
     { id: 'src-delhi-tourism', source_name: 'Delhi Tourism and Transportation Development (DTTDC)', source_type: 'tier1_official', url: 'https://delhitourism.gov.in', created_at: now },
     { id: 'src-rajasthan-tourism', source_name: 'Department of Tourism, Government of Rajasthan', source_type: 'tier1_official', url: 'https://tourism.rajasthan.gov.in', created_at: now },
@@ -319,7 +312,7 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
   // -------------------------------------------------------------
   // 5. Regional Flagship Datasets (Mumbai, Delhi, Rajasthan, Goa, Kerala, Maharashtra)
   // -------------------------------------------------------------
-  const regionalDirs = ['mumbai', 'delhi', 'rajasthan', 'maharashtra', 'goa', 'kerala', 'ladakh', 'jammu-kashmir', 'punjab', 'kolkata', 'west-bengal'];
+  const regionalDirs = ['mumbai', 'delhi', 'rajasthan', 'maharashtra', 'goa', 'kerala', 'ladakh', 'jammu-kashmir'];
   for (const reg of regionalDirs) {
     const regPath = path.join(rootDataDir, reg, 'places.json');
     if (fs.existsSync(regPath)) {
@@ -327,67 +320,55 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
         const regionalPlaces = JSON.parse(fs.readFileSync(regPath, 'utf-8'));
         if (Array.isArray(regionalPlaces)) {
           for (const rp of regionalPlaces) {
-            const stateId = (rp.state_id || rp.state || reg).toLowerCase().replace(/[^a-z0-9]+/g, '-');
-            const cityId = (rp.city_id || rp.city || reg).toLowerCase().replace(/[^a-z0-9]+/g, '-');
+            const stateId = (rp.state || reg).toLowerCase().replace(/[^a-z0-9]+/g, '-');
+            const cityId = (rp.city || reg).toLowerCase().replace(/[^a-z0-9]+/g, '-');
             const normalizedName = rp.name.trim().toLowerCase();
             const existing = places[rp.id] || Object.values(places).find(p => p.city_id === cityId && p.name.trim().toLowerCase() === normalizedName);
             if (existing) continue; // Already ingested via curated monuments
             const sourceUrl = rp.source_url && rp.source_url.startsWith('http') ? rp.source_url : 'https://asi.nic.in';
-            const quality = rp.source_quality || computeSourceQuality(sourceUrl);
-            const isVerified = (quality === 'place_specific' || quality === 'official_site' || rp.verification_status === 'verified');
+            const quality = computeSourceQuality(sourceUrl);
+            const isVerified = (quality === 'place_specific' || quality === 'official_site');
             const verifiedStatus = isVerified ? 'verified' : 'needs_review';
 
-            const domesticFee = typeof rp.entry_fee === 'number' ? rp.entry_fee : Number(rp.entry_fee?.domestic ?? rp.entry_fee_inr ?? 0);
+            const domesticFee = Number(rp.entry_fee?.domestic ?? rp.entry_fee_inr ?? 0);
             const intlFee = Number(rp.entry_fee?.international ?? 0);
-            const visitingHours = rp.visiting_hours || rp.opening_hours || rp.visiting_info?.visiting_hours || 'Open Regular Hours';
-            const lat = Number(rp.coordinates?.lat || rp.lat || rp.latitude || 0);
-            const lng = Number(rp.coordinates?.lng || rp.lng || rp.longitude || 0);
+            const visitingHours = rp.visiting_hours || rp.visiting_info?.visiting_hours || 'Open Regular Hours';
+            const lat = Number(rp.coordinates?.lat || 0);
+            const lng = Number(rp.coordinates?.lng || 0);
 
             places[rp.id] = {
-              ...rp,
               id: rp.id,
               city_id: cityId,
               state_id: stateId,
               name: rp.name,
               category: rp.category || 'heritage',
-              categories: Array.isArray(rp.categories) ? rp.categories : [rp.category || 'heritage'],
-              area: rp.area,
-              city: rp.city,
               summary: rp.summary || rp.description || '',
               description: rp.description || rp.summary || '',
               history: rp.history || '',
-              best_for: rp.best_for,
-              suggested_duration: rp.suggested_duration,
-              best_time_to_visit: rp.best_time_to_visit,
-              visitor_notes: rp.visitor_notes,
-              map_search: rp.map_search,
-              tags: rp.tags,
               lat,
               lng,
               latitude: lat,
               longitude: lng,
-              entry_fee: rp.entry_fee,
-              entry_fee_domestic: isNaN(domesticFee) ? 0 : domesticFee,
-              entry_fee_intl: isNaN(intlFee) ? 0 : intlFee,
-              opening_hours: rp.opening_hours || visitingHours,
+              entry_fee_domestic: domesticFee,
+              entry_fee_intl: intlFee,
               visiting_hours: visitingHours,
               heritage_status: rp.heritage_status || 'State Protected Heritage',
               data_confidence: isVerified ? 'official' : 'unverified',
               source_url: sourceUrl,
-              source_name: rp.source_name || 'State Tourism Department',
-              source_type: (rp.source_type || 'state_tourism') as any,
+              source_name: 'State Tourism Department',
+              source_type: 'state_tourism',
               source_quality: quality,
               verification_status: verifiedStatus,
-              last_verified_on: rp.last_verified_on || '2026-03-10',
+              last_verified_on: '2026-03-10',
               last_verified_at: now,
-              topic: rp.topic || 'Heritage',
-              subtopic: rp.subtopic || 'Historical Sites',
+              topic: 'Heritage',
+              subtopic: 'Historical Sites',
               sources: [
                 {
                   id: `src-${rp.id}`,
-                  source_name: rp.source_name || 'State Tourism Department',
+                  source_name: 'State Tourism Department',
                   source_url: sourceUrl,
-                  source_type: (rp.source_type || 'state_tourism') as any,
+                  source_type: 'state_tourism',
                   evidence_note: isVerified ? 'Deep link verified against state records' : 'Generic homepage documentation under review',
                   accessed_on: '2026-03-10',
                   verification_status: verifiedStatus,
@@ -683,21 +664,6 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
     basilica.categories = Array.from(cats);
     places['basilica-of-bom-jesus'] = basilica;
     delete places['basilica-bom-jesus-goa'];
-  }
-
-  // Deduplicate Golden Temple and ensure Punjab places strictly follow punjab_001 - punjab_020
-  if (places['punjab_001']) {
-    if (places['golden-temple-amritsar']) {
-      delete places['golden-temple-amritsar'];
-    }
-    if (places['amritsar-golden-temple']) {
-      delete places['amritsar-golden-temple'];
-    }
-  }
-  for (const legacyKey of ['amritsar-jallianwala-bagh', 'amritsar-partition-museum', 'patiala-qila-mubarak', 'anandpur-virasat-e-khalsa']) {
-    if (places[legacyKey]) {
-      delete places[legacyKey];
-    }
   }
 
   // Post-processing sanity pass across all places
