@@ -139,6 +139,9 @@ export interface StateRecord {
   source_name?: string;
   creator?: string | null;
   license?: string;
+  total_cities?: number;
+  total_attractions?: number;
+  total_places?: number;
   created_at: string;
 }
 
@@ -197,8 +200,6 @@ export interface MediaRecord {
 export interface PlaceRecord {
   id: string;
   city_id?: string;
-  city?: string;
-  area?: string;
   state_id?: string;
   district?: string;
   name: string;
@@ -230,13 +231,6 @@ export interface PlaceRecord {
   entry_fee_domestic: number;
   entry_fee_intl: number;
   best_time_to_visit?: string;
-  area?: string;
-  city?: string;
-  best_for?: string[];
-  suggested_duration?: string;
-  visitor_notes?: string[];
-  map_search?: string;
-  tags?: string[];
   contact_information?: string;
   official_website?: string;
   heritage_status: string;

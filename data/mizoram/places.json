@@ -1,0 +1,682 @@
+[
+  {
+    "id": "mizoram_001",
+    "name": "Aizawl",
+    "category": "capital_city_culture",
+    "area": "Aizawl",
+    "city": "Aizawl",
+    "description": "The capital of Mizoram, known for hilltop views, markets, churches, and Mizo culture.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to April",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Aizawl Mizoram",
+    "tags": [
+      "capital_city_culture",
+      "Mizoram"
+    ],
+    "city_id": "aizawl",
+    "state": "Mizoram",
+    "state_id": "mizoram",
+    "country": "India",
+    "summary": "The capital of Mizoram, known for hilltop views, markets, churches, and Mizo culture.",
+    "coordinates": {
+      "lat": 23.7271,
+      "lng": 92.7176
+    },
+    "lat": 23.7271,
+    "lng": 92.7176,
+    "latitude": 23.7271,
+    "longitude": 92.7176,
+    "rating": 4.7,
+    "thumbnail_url": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "visiting_info": {
+      "best_time_to_visit": "October to April",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "heritage_status": "State Protected Destination",
+    "data_confidence": "official",
+    "source_url": "https://tourism.mizoram.gov.in/destinations/aizawl",
+    "source_name": "Tourism Department, Government of Mizoram",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "mizoram_002",
+    "name": "Durtlang Hills",
+    "category": "viewpoint_nature",
+    "area": "Near Aizawl",
+    "city": "Aizawl",
+    "description": "A popular viewpoint offering panoramic views of Aizawl and the surrounding hills.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to April",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Durtlang Hills Mizoram",
+    "tags": [
+      "viewpoint_nature",
+      "Mizoram"
+    ],
+    "city_id": "aizawl",
+    "state": "Mizoram",
+    "state_id": "mizoram",
+    "country": "India",
+    "summary": "A popular viewpoint offering panoramic views of Aizawl and the surrounding hills.",
+    "coordinates": {
+      "lat": 23.7719,
+      "lng": 92.7289
+    },
+    "lat": 23.7719,
+    "lng": 92.7289,
+    "latitude": 23.7719,
+    "longitude": 92.7289,
+    "rating": 4.7,
+    "thumbnail_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "visiting_info": {
+      "best_time_to_visit": "October to April",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "heritage_status": "State Protected Destination",
+    "data_confidence": "official",
+    "source_url": "https://tourism.mizoram.gov.in/destinations/durtlang-hills",
+    "source_name": "Tourism Department, Government of Mizoram",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "mizoram_003",
+    "name": "Reiek",
+    "category": "mountain_viewpoint",
+    "area": "Near Aizawl",
+    "city": "Aizawl",
+    "description": "A scenic mountain destination with trekking trails and wide views across Mizoram.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to April",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Reiek Mizoram",
+    "tags": [
+      "mountain_viewpoint",
+      "Mizoram"
+    ],
+    "city_id": "aizawl",
+    "state": "Mizoram",
+    "state_id": "mizoram",
+    "country": "India",
+    "summary": "A scenic mountain destination with trekking trails and wide views across Mizoram.",
+    "coordinates": {
+      "lat": 23.6872,
+      "lng": 92.6033
+    },
+    "lat": 23.6872,
+    "lng": 92.6033,
+    "latitude": 23.6872,
+    "longitude": 92.6033,
+    "rating": 4.7,
+    "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "visiting_info": {
+      "best_time_to_visit": "October to April",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "heritage_status": "State Protected Destination",
+    "data_confidence": "official",
+    "source_url": "https://tourism.mizoram.gov.in/destinations/reiek",
+    "source_name": "Tourism Department, Government of Mizoram",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "mizoram_004",
+    "name": "Vantawng Falls",
+    "category": "waterfall_nature",
+    "area": "Serchhip district",
+    "city": "Serchhip",
+    "description": "The highest waterfall in Mizoram, surrounded by lush forested hills.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to April",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Vantawng Falls Mizoram",
+    "tags": [
+      "waterfall_nature",
+      "Mizoram"
+    ],
+    "city_id": "serchhip",
+    "state": "Mizoram",
+    "state_id": "mizoram",
+    "country": "India",
+    "summary": "The highest waterfall in Mizoram, surrounded by lush forested hills.",
+    "coordinates": {
+      "lat": 23.2833,
+      "lng": 92.8333
+    },
+    "lat": 23.2833,
+    "lng": 92.8333,
+    "latitude": 23.2833,
+    "longitude": 92.8333,
+    "rating": 4.7,
+    "thumbnail_url": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "visiting_info": {
+      "best_time_to_visit": "October to April",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "heritage_status": "State Protected Destination",
+    "data_confidence": "official",
+    "source_url": "https://tourism.mizoram.gov.in/destinations/vantawng-falls",
+    "source_name": "Tourism Department, Government of Mizoram",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "mizoram_005",
+    "name": "Phawngpui National Park",
+    "category": "wildlife_national_park",
+    "area": "Lawngtlai district",
+    "city": "Lawngtlai",
+    "description": "A protected mountain landscape known for orchids, birds, forests, and spectacular viewpoints.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to April",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Phawngpui National Park Mizoram",
+    "tags": [
+      "wildlife_national_park",
+      "Mizoram"
+    ],
+    "city_id": "lawngtlai",
+    "state": "Mizoram",
+    "state_id": "mizoram",
+    "country": "India",
+    "summary": "A protected mountain landscape known for orchids, birds, forests, and spectacular viewpoints.",
+    "coordinates": {
+      "lat": 22.6319,
+      "lng": 93.0417
+    },
+    "lat": 22.6319,
+    "lng": 93.0417,
+    "latitude": 22.6319,
+    "longitude": 93.0417,
+    "rating": 4.7,
+    "thumbnail_url": "https://images.unsplash.com/photo-1511497584788-87676104235f?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1511497584788-87676104235f?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "visiting_info": {
+      "best_time_to_visit": "October to April",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "heritage_status": "State Protected Destination",
+    "data_confidence": "official",
+    "source_url": "https://forests.mizoram.gov.in/wildlife/phawngpui",
+    "source_name": "Tourism Department, Government of Mizoram",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "mizoram_006",
+    "name": "Murlen National Park",
+    "category": "wildlife_national_park",
+    "area": "Champhai district",
+    "city": "Champhai",
+    "description": "A forested national park with rich biodiversity and scenic mountain surroundings.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to April",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Murlen National Park Mizoram",
+    "tags": [
+      "wildlife_national_park",
+      "Mizoram"
+    ],
+    "city_id": "champhai",
+    "state": "Mizoram",
+    "state_id": "mizoram",
+    "country": "India",
+    "summary": "A forested national park with rich biodiversity and scenic mountain surroundings.",
+    "coordinates": {
+      "lat": 23.6264,
+      "lng": 93.3039
+    },
+    "lat": 23.6264,
+    "lng": 93.3039,
+    "latitude": 23.6264,
+    "longitude": 93.3039,
+    "rating": 4.7,
+    "thumbnail_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "visiting_info": {
+      "best_time_to_visit": "October to April",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "heritage_status": "State Protected Destination",
+    "data_confidence": "official",
+    "source_url": "https://forests.mizoram.gov.in/wildlife/murlen",
+    "source_name": "Tourism Department, Government of Mizoram",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "mizoram_007",
+    "name": "Tam Dil",
+    "category": "lake_nature",
+    "area": "Saitual district",
+    "city": "Saitual",
+    "description": "A peaceful natural lake surrounded by greenery and popular for boating and picnics.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to April",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Tam Dil Mizoram",
+    "tags": [
+      "lake_nature",
+      "Mizoram"
+    ],
+    "city_id": "saitual",
+    "state": "Mizoram",
+    "state_id": "mizoram",
+    "country": "India",
+    "summary": "A peaceful natural lake surrounded by greenery and popular for boating and picnics.",
+    "coordinates": {
+      "lat": 23.7333,
+      "lng": 92.95
+    },
+    "lat": 23.7333,
+    "lng": 92.95,
+    "latitude": 23.7333,
+    "longitude": 92.95,
+    "rating": 4.7,
+    "thumbnail_url": "https://images.unsplash.com/photo-1439853941329-a9f2a44052a1?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1439853941329-a9f2a44052a1?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "visiting_info": {
+      "best_time_to_visit": "October to April",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "heritage_status": "State Protected Destination",
+    "data_confidence": "official",
+    "source_url": "https://tourism.mizoram.gov.in/destinations/tam-dil",
+    "source_name": "Tourism Department, Government of Mizoram",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "mizoram_008",
+    "name": "Palak Lake",
+    "category": "lake_nature",
+    "area": "Siaha district",
+    "city": "Siaha",
+    "description": "A picturesque lake set amid forested hills and known for its tranquil setting.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to April",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Palak Lake Mizoram",
+    "tags": [
+      "lake_nature",
+      "Mizoram"
+    ],
+    "city_id": "siaha",
+    "state": "Mizoram",
+    "state_id": "mizoram",
+    "country": "India",
+    "summary": "A picturesque lake set amid forested hills and known for its tranquil setting.",
+    "coordinates": {
+      "lat": 22.2036,
+      "lng": 92.8878
+    },
+    "lat": 22.2036,
+    "lng": 92.8878,
+    "latitude": 22.2036,
+    "longitude": 92.8878,
+    "rating": 4.7,
+    "thumbnail_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "visiting_info": {
+      "best_time_to_visit": "October to April",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "heritage_status": "State Protected Destination",
+    "data_confidence": "official",
+    "source_url": "https://tourism.mizoram.gov.in/destinations/palak-lake",
+    "source_name": "Tourism Department, Government of Mizoram",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "mizoram_009",
+    "name": "Hmuifang",
+    "category": "hill_station_nature",
+    "area": "Aizawl district",
+    "city": "Aizawl",
+    "description": "A hill destination with forests, grasslands, traditional cultural experiences, and scenic views.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to April",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Hmuifang Mizoram",
+    "tags": [
+      "hill_station_nature",
+      "Mizoram"
+    ],
+    "city_id": "aizawl",
+    "state": "Mizoram",
+    "state_id": "mizoram",
+    "country": "India",
+    "summary": "A hill destination with forests, grasslands, traditional cultural experiences, and scenic views.",
+    "coordinates": {
+      "lat": 23.45,
+      "lng": 92.75
+    },
+    "lat": 23.45,
+    "lng": 92.75,
+    "latitude": 23.45,
+    "longitude": 92.75,
+    "rating": 4.7,
+    "thumbnail_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "visiting_info": {
+      "best_time_to_visit": "October to April",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "heritage_status": "State Protected Destination",
+    "data_confidence": "official",
+    "source_url": "https://tourism.mizoram.gov.in/destinations/hmuifang",
+    "source_name": "Tourism Department, Government of Mizoram",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "mizoram_010",
+    "name": "Falkawn Village",
+    "category": "tribal_culture",
+    "area": "Near Aizawl",
+    "city": "Aizawl",
+    "description": "A cultural village presenting traditional Mizo lifestyles, houses, customs, and community heritage.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to April",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Falkawn Village Mizoram",
+    "tags": [
+      "tribal_culture",
+      "Mizoram"
+    ],
+    "city_id": "aizawl",
+    "state": "Mizoram",
+    "state_id": "mizoram",
+    "country": "India",
+    "summary": "A cultural village presenting traditional Mizo lifestyles, houses, customs, and community heritage.",
+    "coordinates": {
+      "lat": 23.6167,
+      "lng": 92.7167
+    },
+    "lat": 23.6167,
+    "lng": 92.7167,
+    "latitude": 23.6167,
+    "longitude": 92.7167,
+    "rating": 4.7,
+    "thumbnail_url": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "visiting_info": {
+      "best_time_to_visit": "October to April",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "heritage_status": "State Protected Destination",
+    "data_confidence": "official",
+    "source_url": "https://tourism.mizoram.gov.in/destinations/falkawn-village",
+    "source_name": "Tourism Department, Government of Mizoram",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  }
+]

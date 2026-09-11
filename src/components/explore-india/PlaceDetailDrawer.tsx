@@ -123,8 +123,8 @@ export const PlaceDetailDrawer: React.FC<PlaceDetailDrawerProps> = ({
             <div className="flex items-center gap-2 text-xs text-stone-200 mt-1">
               <MapPin className="w-3.5 h-3.5 text-amber-300 shrink-0" />
               <span>
-                {place.city || cityName || place.name}
-                {place.area ? ` • ${place.area}` : districtName ? `, ${districtName} Dist` : ''}
+                {cityName || place.name}
+                {districtName ? `, ${districtName} Dist` : ''}
                 {stateName ? `, ${stateName}` : ''}
               </span>
             </div>

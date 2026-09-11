@@ -1,117 +1,2132 @@
 [
   {
-    "id": "golghar-patna",
-    "name": "Golghar in Patna",
+    "id": "bihar_001",
+    "name": "Mahabodhi Temple",
+    "category": "Buddhist_heritage",
+    "area": "Bodh Gaya",
+    "city": "Bodh Gaya",
+    "description": "A UNESCO-listed Buddhist pilgrimage complex associated with Buddha’s enlightenment.",
+    "best_for": [
+      "heritage",
+      "history",
+      "spirituality"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local timings and access rules before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Mahabodhi Temple Bihar",
+    "tags": [
+      "Buddhist_heritage",
+      "Bihar"
+    ],
+    "city_id": "bodh-gaya",
+    "state_id": "bihar",
     "state": "Bihar",
-    "city": "Patna",
     "country": "India",
-    "category": "heritage",
-    "summary": "Historic 1786 CE stupa-shaped beehive granary built by Captain John Garstin with twin spiral staircases and Ganga views.",
-    "description": "Golghar ('Round House') is an iconic 18th-century beehive-shaped granary monument standing in the historic heart of Patna, near Gandhi Maidan. Commissioned by Governor-General Warren Hastings following the devastating Bengal famine of 1770 and engineered by Captain John Garstin of the Bengal Engineers, the structure has a pillarless dome reaching a height of 29 meters (96 feet) and a base circumference of 125 meters.",
-    "history": "Completed on July 20, 1786. Built with a storage capacity of 137,000 tonnes of grain, it was designed with two spiraling exterior staircases consisting of 145 steps that allowed laborers to carry grain sacks up one side, pour them through a hole at the summit, and descend down the other side without collision.",
-    "culture": "A celebrated symbol of Patna and Mauryan-influenced colonial civil engineering. Climbing the 145 spiral stairs offers breathtaking 360-degree panoramic views of the entire city of Patna, the sweeping expanse of the holy River Ganga, and the Gandhi Setu bridge.",
+    "summary": "A UNESCO-listed Buddhist pilgrimage complex associated with Buddha’s enlightenment.",
     "coordinates": {
-      "lat": 25.6174,
-      "lng": 85.1437
+      "lat": 24.6961,
+      "lng": 84.9869
     },
-    "rating": 4.7,
-    "thumbnail_url": "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&auto=format&fit=crop&q=80",
-    "best_time_to_visit": "October to March (Pleasant weather for staircase climb and sunset panoramas)",
-    "visiting_hours": "09:30 AM - 06:00 PM (Closed on Mondays)",
-    "entry_fee": {
-      "domestic": 15,
-      "international": 100,
-      "currency": "INR"
-    },
+    "lat": 24.6961,
+    "lng": 84.9869,
+    "latitude": 24.6961,
+    "longitude": 84.9869,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://tourism.bihar.gov.in/attractions/mahabodhi-temple",
+    "source_name": "Bihar Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
     "visiting_info": {
-      "best_time_to_visit": "Late afternoon (04:00 PM - 05:30 PM)",
-      "visiting_hours": "09:30 AM - 06:00 PM (Closed Mondays)",
-      "recommended_duration": "1 - 1.5 hours",
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
       "tips": [
-        "Climb the 145 spiral steps to the top for the best sunset view over the River Ganga.",
-        "Attend the evening laser light & sound show projecting Bihar's ancient Pataliputra history.",
-        "Combine your visit with the nearby Bihar Museum and Gandhi Sangrahalaya."
+        "Check local timings and access rules before visiting",
+        "Carry water and comfortable footwear"
       ]
     },
-    "images": [
-      "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=1200&auto=format&fit=crop&q=85"
-    ],
-    "model_3d": {
-      "has_model": true,
-      "available": true,
-      "type": "beehive_dome_architecture"
-    },
-    "tags": [
-      "golghar",
-      "patna",
-      "bihar",
-      "heritage",
-      "monument",
-      "famous",
-      "granary",
-      "ganga",
-      "tourist_places"
-    ],
     "features": {
       "map": true,
       "navigation": true,
       "ai": true,
-      "3d": true
+      "3d": false
     }
   },
   {
-    "id": "bihar-museum-patna",
-    "name": "Bihar Museum, Patna",
+    "id": "bihar_002",
+    "name": "Bodh Gaya",
+    "category": "pilgrimage_city",
+    "area": "Gaya district",
+    "city": "Bodh Gaya",
+    "description": "One of the world’s most important Buddhist pilgrimage destinations.",
+    "best_for": [
+      "heritage",
+      "history",
+      "spirituality"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local timings and access rules before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Bodh Gaya Bihar",
+    "tags": [
+      "pilgrimage_city",
+      "Bihar"
+    ],
+    "city_id": "bodh-gaya",
+    "state_id": "bihar",
     "state": "Bihar",
-    "city": "Patna",
     "country": "India",
-    "category": "heritage",
-    "summary": "World-class architectural museum showcasing 3,000 years of Pataliputra, Mauryan, and Buddhist antiquities.",
-    "description": "Designed by Pritzker Prize-winning architecture firm Maki and Associates (Japan), the Bihar Museum on Bailey Road in Patna is one of Asia's finest modern cultural institutions. Spanning 13.9 acres, its corten-steel and terracotta galleries house ancient treasures including the celebrated 3rd-century BCE Didarganj Yakshi, Mauryan polished stone sculptures, and Buddhist bronzes.",
-    "history": "Inaugurated in phases between 2015 and 2017 to celebrate Bihar's monumental contribution to ancient Indian civilization, philosophy, mathematics, and governance.",
-    "culture": "An immersive journey through the historical timelines of Magadha, Ashoka the Great, Chandragupta Maurya, Lord Buddha, and Lord Mahavira.",
+    "summary": "One of the world’s most important Buddhist pilgrimage destinations.",
     "coordinates": {
-      "lat": 25.6083,
-      "lng": 85.1189
+      "lat": 24.698,
+      "lng": 84.991
     },
+    "lat": 24.698,
+    "lng": 84.991,
+    "latitude": 24.698,
+    "longitude": 84.991,
     "rating": 4.8,
-    "thumbnail_url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&auto=format&fit=crop&q=80",
-    "best_time_to_visit": "Year-round (Air-conditioned galleries)",
-    "visiting_hours": "10:00 AM - 05:00 PM (Closed on Mondays)",
-    "entry_fee": {
-      "domestic": 100,
-      "international": 500,
-      "currency": "INR"
-    },
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://tourism.bihar.gov.in/attractions/bodh-gaya",
+    "source_name": "Bihar Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
     "visiting_info": {
-      "best_time_to_visit": "10:30 AM - 02:00 PM",
-      "visiting_hours": "10:00 AM - 05:00 PM (Closed Mondays)",
-      "recommended_duration": "2 - 3 hours",
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
       "tips": [
-        "Don't miss the Masterpiece Gallery featuring the Didarganj Yakshi carved from polished Chunar sandstone.",
-        "Interactive children's discovery wing is ideal for families."
+        "Check local timings and access rules before visiting",
+        "Carry water and comfortable footwear"
       ]
     },
-    "images": [
-      "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=1200&auto=format&fit=crop&q=85"
-    ],
-    "model_3d": {
-      "has_model": true,
-      "available": true
-    },
-    "tags": [
-      "museum",
-      "patna",
-      "bihar",
-      "heritage",
-      "famous",
-      "tourist_places"
-    ],
     "features": {
       "map": true,
       "navigation": true,
       "ai": true,
-      "3d": true
+      "3d": false
+    }
+  },
+  {
+    "id": "bihar_003",
+    "name": "Nalanda Mahavihara",
+    "category": "archaeological_heritage",
+    "area": "Nalanda district",
+    "city": "Nalanda",
+    "description": "Ancient monastic university ruins and a major center of Buddhist learning.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local timings and access rules before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Nalanda Mahavihara Bihar",
+    "tags": [
+      "archaeological_heritage",
+      "Bihar"
+    ],
+    "city_id": "nalanda",
+    "state_id": "bihar",
+    "state": "Bihar",
+    "country": "India",
+    "summary": "Ancient monastic university ruins and a major center of Buddhist learning.",
+    "coordinates": {
+      "lat": 25.1357,
+      "lng": 85.4451
+    },
+    "lat": 25.1357,
+    "lng": 85.4451,
+    "latitude": 25.1357,
+    "longitude": 85.4451,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://tourism.bihar.gov.in/attractions/nalanda-mahavihara",
+    "source_name": "Bihar Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local timings and access rules before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "bihar_004",
+    "name": "Nalanda Archaeological Museum",
+    "category": "museum",
+    "area": "Nalanda",
+    "city": "Nalanda",
+    "description": "A museum displaying sculptures, inscriptions, and artifacts from Nalanda.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local timings and access rules before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Nalanda Archaeological Museum Bihar",
+    "tags": [
+      "museum",
+      "Bihar"
+    ],
+    "city_id": "nalanda",
+    "state_id": "bihar",
+    "state": "Bihar",
+    "country": "India",
+    "summary": "A museum displaying sculptures, inscriptions, and artifacts from Nalanda.",
+    "coordinates": {
+      "lat": 25.137,
+      "lng": 85.442
+    },
+    "lat": 25.137,
+    "lng": 85.442,
+    "latitude": 25.137,
+    "longitude": 85.442,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://tourism.bihar.gov.in/attractions/nalanda-archaeological-museum",
+    "source_name": "Bihar Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local timings and access rules before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "bihar_005",
+    "name": "Rajgir",
+    "category": "heritage_nature",
+    "area": "Nalanda district",
+    "city": "Rajgir",
+    "description": "An ancient city known for Buddhist and Jain sites, hills, hot springs, and ruins.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local timings and access rules before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Rajgir Bihar",
+    "tags": [
+      "heritage_nature",
+      "Bihar"
+    ],
+    "city_id": "rajgir",
+    "state_id": "bihar",
+    "state": "Bihar",
+    "country": "India",
+    "summary": "An ancient city known for Buddhist and Jain sites, hills, hot springs, and ruins.",
+    "coordinates": {
+      "lat": 25.0306,
+      "lng": 85.4219
+    },
+    "lat": 25.0306,
+    "lng": 85.4219,
+    "latitude": 25.0306,
+    "longitude": 85.4219,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://tourism.bihar.gov.in/attractions/rajgir",
+    "source_name": "Bihar Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local timings and access rules before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "bihar_006",
+    "name": "Vishwa Shanti Stupa",
+    "category": "Buddhist_heritage",
+    "area": "Rajgir",
+    "city": "Rajgir",
+    "description": "A hilltop Peace Pagoda offering panoramic views and a tranquil atmosphere.",
+    "best_for": [
+      "heritage",
+      "history",
+      "spirituality"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local timings and access rules before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Vishwa Shanti Stupa Bihar",
+    "tags": [
+      "Buddhist_heritage",
+      "Bihar"
+    ],
+    "city_id": "rajgir",
+    "state_id": "bihar",
+    "state": "Bihar",
+    "country": "India",
+    "summary": "A hilltop Peace Pagoda offering panoramic views and a tranquil atmosphere.",
+    "coordinates": {
+      "lat": 25.0069,
+      "lng": 85.4389
+    },
+    "lat": 25.0069,
+    "lng": 85.4389,
+    "latitude": 25.0069,
+    "longitude": 85.4389,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://tourism.bihar.gov.in/attractions/vishwa-shanti-stupa",
+    "source_name": "Bihar Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local timings and access rules before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "bihar_007",
+    "name": "Griddhakuta Hill",
+    "category": "religious_nature",
+    "area": "Rajgir",
+    "city": "Rajgir",
+    "description": "A sacred hill associated with Buddha’s teachings and Buddhist traditions.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local timings and access rules before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Griddhakuta Hill Bihar",
+    "tags": [
+      "religious_nature",
+      "Bihar"
+    ],
+    "city_id": "rajgir",
+    "state_id": "bihar",
+    "state": "Bihar",
+    "country": "India",
+    "summary": "A sacred hill associated with Buddha’s teachings and Buddhist traditions.",
+    "coordinates": {
+      "lat": 25.0094,
+      "lng": 85.4444
+    },
+    "lat": 25.0094,
+    "lng": 85.4444,
+    "latitude": 25.0094,
+    "longitude": 85.4444,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://tourism.bihar.gov.in/attractions/griddhakuta-hill",
+    "source_name": "Bihar Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local timings and access rules before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "bihar_008",
+    "name": "Pawapuri Jal Mandir",
+    "category": "Jain_heritage",
+    "area": "Nalanda district",
+    "city": "Pawapuri",
+    "description": "A beautiful Jain temple located in the middle of a lotus-filled water tank.",
+    "best_for": [
+      "heritage",
+      "history",
+      "spirituality"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local timings and access rules before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Pawapuri Jal Mandir Bihar",
+    "tags": [
+      "Jain_heritage",
+      "Bihar"
+    ],
+    "city_id": "pawapuri",
+    "state_id": "bihar",
+    "state": "Bihar",
+    "country": "India",
+    "summary": "A beautiful Jain temple located in the middle of a lotus-filled water tank.",
+    "coordinates": {
+      "lat": 25.0934,
+      "lng": 85.5348
+    },
+    "lat": 25.0934,
+    "lng": 85.5348,
+    "latitude": 25.0934,
+    "longitude": 85.5348,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://tourism.bihar.gov.in/attractions/pawapuri-jal-mandir",
+    "source_name": "Bihar Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local timings and access rules before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "bihar_009",
+    "name": "Patna Museum",
+    "category": "museum",
+    "area": "Patna",
+    "city": "Patna",
+    "description": "A major museum containing archaeological, historical, and artistic collections from Bihar.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local timings and access rules before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Patna Museum Bihar",
+    "tags": [
+      "museum",
+      "Bihar"
+    ],
+    "city_id": "patna",
+    "state_id": "bihar",
+    "state": "Bihar",
+    "country": "India",
+    "summary": "A major museum containing archaeological, historical, and artistic collections from Bihar.",
+    "coordinates": {
+      "lat": 25.6105,
+      "lng": 85.1396
+    },
+    "lat": 25.6105,
+    "lng": 85.1396,
+    "latitude": 25.6105,
+    "longitude": 85.1396,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://tourism.bihar.gov.in/attractions/patna-museum",
+    "source_name": "Bihar Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local timings and access rules before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "bihar_010",
+    "name": "Bihar Museum",
+    "category": "museum",
+    "area": "Patna",
+    "city": "Patna",
+    "description": "A modern museum presenting Bihar’s history, art, archaeology, and cultural heritage.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local timings and access rules before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Bihar Museum Bihar",
+    "tags": [
+      "museum",
+      "Bihar"
+    ],
+    "city_id": "patna",
+    "state_id": "bihar",
+    "state": "Bihar",
+    "country": "India",
+    "summary": "A modern museum presenting Bihar’s history, art, archaeology, and cultural heritage.",
+    "coordinates": {
+      "lat": 25.612,
+      "lng": 85.116
+    },
+    "lat": 25.612,
+    "lng": 85.116,
+    "latitude": 25.612,
+    "longitude": 85.116,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://tourism.bihar.gov.in/attractions/bihar-museum",
+    "source_name": "Bihar Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local timings and access rules before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "bihar_011",
+    "name": "Golghar",
+    "category": "heritage_monument",
+    "area": "Patna",
+    "city": "Patna",
+    "description": "An iconic domed granary built in the late 18th century with city views from its top.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local timings and access rules before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Golghar Bihar",
+    "tags": [
+      "heritage_monument",
+      "Bihar"
+    ],
+    "city_id": "patna",
+    "state_id": "bihar",
+    "state": "Bihar",
+    "country": "India",
+    "summary": "An iconic domed granary built in the late 18th century with city views from its top.",
+    "coordinates": {
+      "lat": 25.6186,
+      "lng": 85.1436
+    },
+    "lat": 25.6186,
+    "lng": 85.1436,
+    "latitude": 25.6186,
+    "longitude": 85.1436,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://tourism.bihar.gov.in/attractions/golghar",
+    "source_name": "Bihar Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local timings and access rules before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "bihar_012",
+    "name": "Takht Sri Patna Sahib",
+    "category": "Sikh_heritage",
+    "area": "Patna",
+    "city": "Patna",
+    "description": "One of Sikhism’s five Takhts and the birthplace of Guru Gobind Singh.",
+    "best_for": [
+      "heritage",
+      "history",
+      "spirituality"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local timings and access rules before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Takht Sri Patna Sahib Bihar",
+    "tags": [
+      "Sikh_heritage",
+      "Bihar"
+    ],
+    "city_id": "patna",
+    "state_id": "bihar",
+    "state": "Bihar",
+    "country": "India",
+    "summary": "One of Sikhism’s five Takhts and the birthplace of Guru Gobind Singh.",
+    "coordinates": {
+      "lat": 25.596,
+      "lng": 85.228
+    },
+    "lat": 25.596,
+    "lng": 85.228,
+    "latitude": 25.596,
+    "longitude": 85.228,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://tourism.bihar.gov.in/attractions/takht-sri-patna-sahib",
+    "source_name": "Bihar Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local timings and access rules before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "bihar_013",
+    "name": "Gandhi Ghat",
+    "category": "riverfront_recreation",
+    "area": "Patna",
+    "city": "Patna",
+    "description": "A popular Ganga riverfront known for evening aarti and sunset views.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local timings and access rules before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Gandhi Ghat Bihar",
+    "tags": [
+      "riverfront_recreation",
+      "Bihar"
+    ],
+    "city_id": "patna",
+    "state_id": "bihar",
+    "state": "Bihar",
+    "country": "India",
+    "summary": "A popular Ganga riverfront known for evening aarti and sunset views.",
+    "coordinates": {
+      "lat": 25.6212,
+      "lng": 85.1719
+    },
+    "lat": 25.6212,
+    "lng": 85.1719,
+    "latitude": 25.6212,
+    "longitude": 85.1719,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://tourism.bihar.gov.in/attractions/gandhi-ghat",
+    "source_name": "Bihar Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local timings and access rules before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "bihar_014",
+    "name": "Agam Kuan",
+    "category": "archaeological_heritage",
+    "area": "Patna",
+    "city": "Patna",
+    "description": "An ancient well traditionally associated with the Mauryan period and Ashokan history.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local timings and access rules before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Agam Kuan Bihar",
+    "tags": [
+      "archaeological_heritage",
+      "Bihar"
+    ],
+    "city_id": "patna",
+    "state_id": "bihar",
+    "state": "Bihar",
+    "country": "India",
+    "summary": "An ancient well traditionally associated with the Mauryan period and Ashokan history.",
+    "coordinates": {
+      "lat": 25.5908,
+      "lng": 85.1831
+    },
+    "lat": 25.5908,
+    "lng": 85.1831,
+    "latitude": 25.5908,
+    "longitude": 85.1831,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://tourism.bihar.gov.in/attractions/agam-kuan",
+    "source_name": "Bihar Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local timings and access rules before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "bihar_015",
+    "name": "Vikramshila Archaeological Site",
+    "category": "archaeological_heritage",
+    "area": "Bhagalpur district",
+    "city": "Bhagalpur",
+    "description": "Ruins of an important medieval Buddhist university founded under the Pala dynasty.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local timings and access rules before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Vikramshila Archaeological Site Bihar",
+    "tags": [
+      "archaeological_heritage",
+      "Bihar"
+    ],
+    "city_id": "bhagalpur",
+    "state_id": "bihar",
+    "state": "Bihar",
+    "country": "India",
+    "summary": "Ruins of an important medieval Buddhist university founded under the Pala dynasty.",
+    "coordinates": {
+      "lat": 25.3283,
+      "lng": 87.2847
+    },
+    "lat": 25.3283,
+    "lng": 87.2847,
+    "latitude": 25.3283,
+    "longitude": 87.2847,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://tourism.bihar.gov.in/attractions/vikramshila-archaeological-site",
+    "source_name": "Bihar Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local timings and access rules before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "bihar_016",
+    "name": "Vikramshila Gangetic Dolphin Sanctuary",
+    "category": "wildlife_nature",
+    "area": "Bhagalpur district",
+    "city": "Bhagalpur",
+    "description": "A protected stretch of the Ganga known for the endangered Gangetic river dolphin.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local timings and access rules before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Vikramshila Gangetic Dolphin Sanctuary Bihar",
+    "tags": [
+      "wildlife_nature",
+      "Bihar"
+    ],
+    "city_id": "bhagalpur",
+    "state_id": "bihar",
+    "state": "Bihar",
+    "country": "India",
+    "summary": "A protected stretch of the Ganga known for the endangered Gangetic river dolphin.",
+    "coordinates": {
+      "lat": 25.26,
+      "lng": 87.02
+    },
+    "lat": 25.26,
+    "lng": 87.02,
+    "latitude": 25.26,
+    "longitude": 87.02,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://tourism.bihar.gov.in/attractions/vikramshila-gangetic-dolphin-sanctuary",
+    "source_name": "Bihar Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local timings and access rules before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "bihar_017",
+    "name": "Valmiki National Park",
+    "category": "wildlife_national_park",
+    "area": "West Champaran district",
+    "city": "Valmiki Nagar",
+    "description": "Bihar’s only national park, featuring forests, wildlife, and Himalayan foothill scenery.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local timings and access rules before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Valmiki National Park Bihar",
+    "tags": [
+      "wildlife_national_park",
+      "Bihar"
+    ],
+    "city_id": "valmiki-nagar",
+    "state_id": "bihar",
+    "state": "Bihar",
+    "country": "India",
+    "summary": "Bihar’s only national park, featuring forests, wildlife, and Himalayan foothill scenery.",
+    "coordinates": {
+      "lat": 27.4333,
+      "lng": 83.9167
+    },
+    "lat": 27.4333,
+    "lng": 83.9167,
+    "latitude": 27.4333,
+    "longitude": 83.9167,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://tourism.bihar.gov.in/attractions/valmiki-national-park",
+    "source_name": "Bihar Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local timings and access rules before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "bihar_018",
+    "name": "Kesaria Stupa",
+    "category": "Buddhist_heritage",
+    "area": "East Champaran district",
+    "city": "Kesaria",
+    "description": "A massive ancient Buddhist stupa and important archaeological monument.",
+    "best_for": [
+      "heritage",
+      "history",
+      "spirituality"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local timings and access rules before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Kesaria Stupa Bihar",
+    "tags": [
+      "Buddhist_heritage",
+      "Bihar"
+    ],
+    "city_id": "kesaria",
+    "state_id": "bihar",
+    "state": "Bihar",
+    "country": "India",
+    "summary": "A massive ancient Buddhist stupa and important archaeological monument.",
+    "coordinates": {
+      "lat": 26.3571,
+      "lng": 84.8821
+    },
+    "lat": 26.3571,
+    "lng": 84.8821,
+    "latitude": 26.3571,
+    "longitude": 84.8821,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://tourism.bihar.gov.in/attractions/kesaria-stupa",
+    "source_name": "Bihar Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local timings and access rules before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "bihar_019",
+    "name": "Vaishali",
+    "category": "archaeological_heritage",
+    "area": "Vaishali district",
+    "city": "Vaishali",
+    "description": "An ancient city associated with Buddhism, Jainism, and early republican history.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local timings and access rules before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Vaishali Bihar",
+    "tags": [
+      "archaeological_heritage",
+      "Bihar"
+    ],
+    "city_id": "vaishali",
+    "state_id": "bihar",
+    "state": "Bihar",
+    "country": "India",
+    "summary": "An ancient city associated with Buddhism, Jainism, and early republican history.",
+    "coordinates": {
+      "lat": 25.9904,
+      "lng": 85.1278
+    },
+    "lat": 25.9904,
+    "lng": 85.1278,
+    "latitude": 25.9904,
+    "longitude": 85.1278,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://tourism.bihar.gov.in/attractions/vaishali",
+    "source_name": "Bihar Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local timings and access rules before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "bihar_020",
+    "name": "Mundeshwari Devi Temple",
+    "category": "religious_heritage",
+    "area": "Kaimur district",
+    "city": "Bhabua",
+    "description": "An ancient temple dedicated to Shiva and Shakti, known for its distinctive octagonal design.",
+    "best_for": [
+      "heritage",
+      "history",
+      "spirituality"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local timings and access rules before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Mundeshwari Devi Temple Bihar",
+    "tags": [
+      "religious_heritage",
+      "Bihar"
+    ],
+    "city_id": "bhabua",
+    "state_id": "bihar",
+    "state": "Bihar",
+    "country": "India",
+    "summary": "An ancient temple dedicated to Shiva and Shakti, known for its distinctive octagonal design.",
+    "coordinates": {
+      "lat": 24.9386,
+      "lng": 83.5683
+    },
+    "lat": 24.9386,
+    "lng": 83.5683,
+    "latitude": 24.9386,
+    "longitude": 83.5683,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://tourism.bihar.gov.in/attractions/mundeshwari-devi-temple",
+    "source_name": "Bihar Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local timings and access rules before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "bihar_021",
+    "name": "Patna Science Centre",
+    "category": "science_education",
+    "area": "Patna",
+    "city": "Patna",
+    "description": "A science education centre featuring interactive exhibits and demonstrations.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local timings and access rules before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Patna Science Centre Bihar",
+    "tags": [
+      "science_education",
+      "Bihar"
+    ],
+    "city_id": "patna",
+    "state_id": "bihar",
+    "state": "Bihar",
+    "country": "India",
+    "summary": "A science education centre featuring interactive exhibits and demonstrations.",
+    "coordinates": {
+      "lat": 25.617,
+      "lng": 85.147
+    },
+    "lat": 25.617,
+    "lng": 85.147,
+    "latitude": 25.617,
+    "longitude": 85.147,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://tourism.bihar.gov.in/attractions/patna-science-centre",
+    "source_name": "Bihar Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local timings and access rules before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "bihar_022",
+    "name": "Patna Planetarium",
+    "category": "astronomical_education",
+    "area": "Patna",
+    "city": "Patna",
+    "description": "A popular planetarium offering astronomy shows and educational programs about space.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local timings and access rules before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Patna Planetarium Bihar",
+    "tags": [
+      "astronomical_education",
+      "Bihar"
+    ],
+    "city_id": "patna",
+    "state_id": "bihar",
+    "state": "Bihar",
+    "country": "India",
+    "summary": "A popular planetarium offering astronomy shows and educational programs about space.",
+    "coordinates": {
+      "lat": 25.6111,
+      "lng": 85.135
+    },
+    "lat": 25.6111,
+    "lng": 85.135,
+    "latitude": 25.6111,
+    "longitude": 85.135,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://tourism.bihar.gov.in/attractions/patna-planetarium",
+    "source_name": "Bihar Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local timings and access rules before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "bihar_023",
+    "name": "Sanjay Gandhi Biological Park",
+    "category": "zoo_wildlife",
+    "area": "Patna",
+    "city": "Patna",
+    "description": "A major zoological park in Patna featuring diverse animal species and green spaces.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local timings and access rules before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Sanjay Gandhi Biological Park Bihar",
+    "tags": [
+      "zoo_wildlife",
+      "Bihar"
+    ],
+    "city_id": "patna",
+    "state_id": "bihar",
+    "state": "Bihar",
+    "country": "India",
+    "summary": "A major zoological park in Patna featuring diverse animal species and green spaces.",
+    "coordinates": {
+      "lat": 25.598,
+      "lng": 85.101
+    },
+    "lat": 25.598,
+    "lng": 85.101,
+    "latitude": 25.598,
+    "longitude": 85.101,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://tourism.bihar.gov.in/attractions/sanjay-gandhi-biological-park",
+    "source_name": "Bihar Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local timings and access rules before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "bihar_024",
+    "name": "Patna Sahib Gurudwara",
+    "category": "Sikh_heritage",
+    "area": "Patna City",
+    "city": "Patna City",
+    "description": "A major Sikh pilgrimage site associated with Guru Gobind Singh.",
+    "best_for": [
+      "heritage",
+      "history",
+      "spirituality"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local timings and access rules before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Patna Sahib Gurudwara Bihar",
+    "tags": [
+      "Sikh_heritage",
+      "Bihar"
+    ],
+    "city_id": "patna-city",
+    "state_id": "bihar",
+    "state": "Bihar",
+    "country": "India",
+    "summary": "A major Sikh pilgrimage site associated with Guru Gobind Singh.",
+    "coordinates": {
+      "lat": 25.596,
+      "lng": 85.228
+    },
+    "lat": 25.596,
+    "lng": 85.228,
+    "latitude": 25.596,
+    "longitude": 85.228,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://tourism.bihar.gov.in/attractions/patna-sahib-gurudwara",
+    "source_name": "Bihar Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local timings and access rules before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "bihar_025",
+    "name": "Kumhrar Park",
+    "category": "archaeological_heritage",
+    "area": "Patna",
+    "city": "Patna",
+    "description": "An archaeological site preserving remains associated with ancient Pataliputra.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local timings and access rules before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Kumhrar Park Bihar",
+    "tags": [
+      "archaeological_heritage",
+      "Bihar"
+    ],
+    "city_id": "patna",
+    "state_id": "bihar",
+    "state": "Bihar",
+    "country": "India",
+    "summary": "An archaeological site preserving remains associated with ancient Pataliputra.",
+    "coordinates": {
+      "lat": 25.5986,
+      "lng": 85.1806
+    },
+    "lat": 25.5986,
+    "lng": 85.1806,
+    "latitude": 25.5986,
+    "longitude": 85.1806,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://tourism.bihar.gov.in/attractions/kumhrar-park",
+    "source_name": "Bihar Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local timings and access rules before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "bihar_026",
+    "name": "Golghar Park",
+    "category": "heritage_recreation",
+    "area": "Patna",
+    "city": "Patna",
+    "description": "A landscaped heritage area around the iconic Golghar monument.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local timings and access rules before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Golghar Park Bihar",
+    "tags": [
+      "heritage_recreation",
+      "Bihar"
+    ],
+    "city_id": "patna",
+    "state_id": "bihar",
+    "state": "Bihar",
+    "country": "India",
+    "summary": "A landscaped heritage area around the iconic Golghar monument.",
+    "coordinates": {
+      "lat": 25.619,
+      "lng": 85.144
+    },
+    "lat": 25.619,
+    "lng": 85.144,
+    "latitude": 25.619,
+    "longitude": 85.144,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://tourism.bihar.gov.in/attractions/golghar-park",
+    "source_name": "Bihar Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local timings and access rules before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "bihar_027",
+    "name": "Ashokan Pillar, Vaishali",
+    "category": "archaeological_heritage",
+    "area": "Vaishali district",
+    "city": "Vaishali",
+    "description": "An ancient Ashokan pillar and important archaeological landmark at Vaishali.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local timings and access rules before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Ashokan Pillar, Vaishali Bihar",
+    "tags": [
+      "archaeological_heritage",
+      "Bihar"
+    ],
+    "city_id": "vaishali",
+    "state_id": "bihar",
+    "state": "Bihar",
+    "country": "India",
+    "summary": "An ancient Ashokan pillar and important archaeological landmark at Vaishali.",
+    "coordinates": {
+      "lat": 25.9839,
+      "lng": 85.1228
+    },
+    "lat": 25.9839,
+    "lng": 85.1228,
+    "latitude": 25.9839,
+    "longitude": 85.1228,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://tourism.bihar.gov.in/attractions/ashokan-pillar-vaishali",
+    "source_name": "Bihar Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local timings and access rules before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "bihar_028",
+    "name": "Barabar Caves",
+    "category": "rock_cut_heritage",
+    "area": "Jehanabad district",
+    "city": "Jehanabad",
+    "description": "Ancient rock-cut caves dating to the Mauryan period and among India’s oldest surviving caves.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local timings and access rules before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Barabar Caves Bihar",
+    "tags": [
+      "rock_cut_heritage",
+      "Bihar"
+    ],
+    "city_id": "jehanabad",
+    "state_id": "bihar",
+    "state": "Bihar",
+    "country": "India",
+    "summary": "Ancient rock-cut caves dating to the Mauryan period and among India’s oldest surviving caves.",
+    "coordinates": {
+      "lat": 25.0069,
+      "lng": 85.0628
+    },
+    "lat": 25.0069,
+    "lng": 85.0628,
+    "latitude": 25.0069,
+    "longitude": 85.0628,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://tourism.bihar.gov.in/attractions/barabar-caves",
+    "source_name": "Bihar Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local timings and access rules before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "bihar_029",
+    "name": "Sita Kund",
+    "category": "religious_heritage",
+    "area": "Sitamarhi district",
+    "city": "Sitamarhi",
+    "description": "A pilgrimage site associated with traditions surrounding Sita and the Ramayana.",
+    "best_for": [
+      "heritage",
+      "history",
+      "spirituality"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local timings and access rules before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Sita Kund Bihar",
+    "tags": [
+      "religious_heritage",
+      "Bihar"
+    ],
+    "city_id": "sitamarhi",
+    "state_id": "bihar",
+    "state": "Bihar",
+    "country": "India",
+    "summary": "A pilgrimage site associated with traditions surrounding Sita and the Ramayana.",
+    "coordinates": {
+      "lat": 26.5944,
+      "lng": 85.4912
+    },
+    "lat": 26.5944,
+    "lng": 85.4912,
+    "latitude": 26.5944,
+    "longitude": 85.4912,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://tourism.bihar.gov.in/attractions/sita-kund",
+    "source_name": "Bihar Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local timings and access rules before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "bihar_030",
+    "name": "Munger Fort",
+    "category": "heritage_fort",
+    "area": "Munger district",
+    "city": "Munger",
+    "description": "A historic fort complex overlooking the Ganga and associated with the history of Munger.",
+    "best_for": [
+      "nature",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local timings and access rules before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Munger Fort Bihar",
+    "tags": [
+      "heritage_fort",
+      "Bihar"
+    ],
+    "city_id": "munger",
+    "state_id": "bihar",
+    "state": "Bihar",
+    "country": "India",
+    "summary": "A historic fort complex overlooking the Ganga and associated with the history of Munger.",
+    "coordinates": {
+      "lat": 25.3757,
+      "lng": 86.4744
+    },
+    "lat": 25.3757,
+    "lng": 86.4744,
+    "latitude": 25.3757,
+    "longitude": 86.4744,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://tourism.bihar.gov.in/attractions/munger-fort",
+    "source_name": "Bihar Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local timings and access rules before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
     }
   }
 ]

@@ -40,8 +40,6 @@ export interface AttractionEntity {
   canonical_name?: string;
   aliases?: string[] | readonly string[];
   city_id?: string;
-  city?: string;
-  area?: string;
   state_id?: string;
   district?: string;
   place_type?: string;
