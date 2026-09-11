@@ -37,3 +37,13 @@ yarn-error.log*
 data/.database/
 *.db
 *.sqlite
+
+# Temporary audit / generated files
+data/.tmp_*.json
+data/**/*.backup-*
+data/*.backup-*
+*.backup-*
+
+# Local logs
+*.log
+

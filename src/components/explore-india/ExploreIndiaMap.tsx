@@ -474,6 +474,20 @@ export const ExploreIndiaMap: React.FC<ExploreIndiaMapProps> = ({
         : INDIA_PINS.filter((p) => p.region === selectedRegion);
 
     filteredPins.forEach((pin) => {
+      // Validate coordinates within India bounding box
+      if (
+        pin.lat === null ||
+        pin.lng === null ||
+        isNaN(pin.lat) ||
+        isNaN(pin.lng) ||
+        pin.lat < 6.0 ||
+        pin.lat > 38.0 ||
+        pin.lng < 68.0 ||
+        pin.lng > 98.0
+      ) {
+        return;
+      }
+
       const isSelected = activePin.id === pin.id;
       const isTown = pin.type === 'town';
 

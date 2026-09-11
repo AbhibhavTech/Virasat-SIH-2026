@@ -1,4 +1,5 @@
 import express from 'express';
+import compression from 'compression';
 import cors from 'cors';
 import path from 'path';
 import fs from 'fs';
@@ -60,6 +61,7 @@ app.use(
   })
 );
 app.use(express.json());
+app.use((compression as any)());
 app.use(requestIdMiddleware);
 
 // -------------------------------------------------------------
@@ -3602,12 +3604,20 @@ app.post(['/api/itinerary', '/api/itineraries/generate'], (req, res) => {
 // India Tourism Database Hierarchy Endpoints
 // -------------------------------------------------------------
 let indiaHierarchyData: any = null;
+let indiaHierarchyDataMtime: number = 0;
+
 function getIndiaHierarchyData() {
-  if (!indiaHierarchyData) {
-    const p = path.join(process.cwd(), 'data', 'india_tourism_database.json');
-    if (fs.existsSync(p)) {
+  const p = path.join(process.cwd(), 'data', 'india_tourism_database.json');
+  if (!fs.existsSync(p)) return null;
+
+  try {
+    const stats = fs.statSync(p);
+    if (!indiaHierarchyData || stats.mtimeMs > indiaHierarchyDataMtime) {
       indiaHierarchyData = JSON.parse(fs.readFileSync(p, 'utf-8'));
+      indiaHierarchyDataMtime = stats.mtimeMs;
     }
+  } catch (err) {
+    console.error('[Hierarchy API] Error loading india_tourism_database.json:', err);
   }
   return indiaHierarchyData;
 }
@@ -3656,9 +3666,25 @@ app.get('/api/india-hierarchy/city/:cityId', (req, res) => {
   if (!data || !data.states) {
     return res.status(404).json({ error: 'Database not loaded' });
   }
-  const query = req.params.cityId.toLowerCase();
+  let query = req.params.cityId.toLowerCase();
+
+  const redirectsPath = path.join(process.cwd(), 'data', 'city_id_redirects.json');
+  if (fs.existsSync(redirectsPath)) {
+    try {
+      const redirects = JSON.parse(fs.readFileSync(redirectsPath, 'utf-8'));
+      if (redirects[query]) {
+        query = redirects[query].toLowerCase();
+      }
+    } catch {}
+  }
+
   for (const s of data.states) {
-    const found = s.cities.find((c: any) => c.id.toLowerCase() === query || c.name.toLowerCase() === query);
+    const found = s.cities.find(
+      (c: any) =>
+        c.id.toLowerCase() === query ||
+        c.name.toLowerCase() === query ||
+        c.aliases?.some((a: string) => a.toLowerCase() === query)
+    );
     if (found) {
       return res.json(found);
     }

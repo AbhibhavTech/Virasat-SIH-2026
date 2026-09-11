@@ -403,7 +403,7 @@ export interface PlaceSourceRecord {
   id: string;
   place_id?: string;
   source_name: string;
-  source_url: string;
+  source_url?: string;
   url?: string; // backwards compatibility
   source_type: SourceType;
   evidence_note?: string;

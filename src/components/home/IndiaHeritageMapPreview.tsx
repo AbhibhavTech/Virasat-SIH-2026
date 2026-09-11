@@ -398,6 +398,23 @@ export const IndiaHeritageMapPreview: React.FC<IndiaHeritageMapPreviewProps> = (
 
       const marker = L.marker([hub.lat, hub.lng], { icon: customIcon }).addTo(markersGroup);
 
+      marker.bindPopup(`
+        <div style="font-family: inherit; min-width: 180px; padding: 2px;">
+          <div style="font-size: 10px; font-weight: 700; color: #FF671F; text-transform: uppercase;">
+            ${hub.region} India • ${hub.unesco ? 'UNESCO Heritage' : 'Landmark'}
+          </div>
+          <div style="font-size: 13px; font-weight: 700; color: #1c1917; margin-top: 2px;">
+            ${hub.name}
+          </div>
+          <div style="font-size: 11px; color: #57534e; margin-top: 2px;">
+            📍 ${hub.city}, ${hub.state}
+          </div>
+          <div style="font-size: 10px; color: #78716c; margin-top: 4px; line-height: 1.3;">
+            ${hub.description.slice(0, 100)}...
+          </div>
+        </div>
+      `);
+
       marker.on('click', () => {
         setSelectedHub(hub);
         map.flyTo([hub.lat, hub.lng], 7.5, { duration: 1.1 });
@@ -409,14 +426,6 @@ export const IndiaHeritageMapPreview: React.FC<IndiaHeritageMapPreviewProps> = (
   const handleResetIndiaView = () => {
     if (!mapInstanceRef.current) return;
     mapInstanceRef.current.flyTo([22.8, 79.6], 4.8, { duration: 1.0 });
-  };
-
-  // Handler to select hub from card or list
-  const handleSelectHub = (hub: HeritageHubPin) => {
-    setSelectedHub(hub);
-    if (mapInstanceRef.current) {
-      mapInstanceRef.current.flyTo([hub.lat, hub.lng], 8, { duration: 1.2 });
-    }
   };
 
   const regionsList = ['All', 'North', 'South', 'West', 'East', 'Central', 'Northeast'];
@@ -502,129 +511,38 @@ export const IndiaHeritageMapPreview: React.FC<IndiaHeritageMapPreviewProps> = (
         </button>
       </div>
 
-      {/* Visual Map Canvas Grid */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
-        {/* Real Leaflet Map Container */}
-        <div className="lg:col-span-2 relative min-h-[420px] h-[420px] sm:h-[460px] rounded-3xl bg-stone-100 border border-[#E5DAC8] overflow-hidden shadow-inner">
-          <div ref={mapContainerRef} className="w-full h-full z-0" />
+      {/* Visual Map Canvas Container */}
+      <div className="relative min-h-[460px] h-[480px] sm:h-[540px] rounded-3xl bg-stone-100 border border-[#E5DAC8] overflow-hidden shadow-inner w-full">
+        <div ref={mapContainerRef} className="w-full h-full z-0" />
 
-          {/* Map Overlay Badges */}
-          <div className="absolute top-3 left-3 z-10 pointer-events-none flex flex-col gap-1.5">
-            <div className="bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-xl border border-stone-200 shadow-sm flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-              <span className="text-[11px] font-bold text-stone-800">
-                Real World Geographic GIS Map
-              </span>
-            </div>
-            <div className="bg-stone-900/80 backdrop-blur-md px-2.5 py-1 rounded-lg text-white text-[10px] font-mono tracking-tight self-start">
-              Lat 8°N – 37°N • Lng 68°E – 97°E
-            </div>
+        {/* Map Overlay Badges */}
+        <div className="absolute top-3 left-3 z-10 pointer-events-none flex flex-col gap-1.5">
+          <div className="bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-xl border border-stone-200 shadow-sm flex items-center gap-2">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+            <span className="text-[11px] font-bold text-stone-800">
+              Real World Geographic GIS Map
+            </span>
           </div>
-
-          {/* Bottom Live Controls */}
-          <div className="absolute bottom-3 left-3 z-10 flex items-center gap-2">
-            <div className="bg-white/90 backdrop-blur-xs px-2.5 py-1 rounded-lg border border-stone-200 text-[10px] text-stone-600 font-medium">
-              ★ UNESCO Site • ✦ Iconic Landmark
-            </div>
+          <div className="bg-stone-900/80 backdrop-blur-md px-2.5 py-1 rounded-lg text-white text-[10px] font-mono tracking-tight self-start">
+            Lat 8°N – 37°N • Lng 68°E – 97°E
           </div>
-
-          <button
-            onClick={handleResetIndiaView}
-            className="absolute bottom-3 right-3 z-10 bg-white/95 hover:bg-white text-stone-700 p-2 rounded-xl shadow-md border border-stone-200 transition cursor-pointer text-xs font-semibold flex items-center gap-1.5"
-            title="Recenter India"
-          >
-            <RotateCcw className="w-3.5 h-3.5 text-[#FF671F]" />
-            <span className="hidden sm:inline">Recenter</span>
-          </button>
         </div>
 
-        {/* Right Selected Pin Preview Drawer / Active Info */}
-        <div className="rounded-3xl bg-white border border-[#E5DAC8] p-5 shadow-sm flex flex-col justify-between min-h-[420px]">
-          {selectedHub ? (
-            <div className="space-y-4 flex flex-col h-full justify-between">
-              <div className="space-y-3">
-                <div className="h-44 w-full rounded-2xl overflow-hidden relative group">
-                  <img
-                    src={selectedHub.image}
-                    alt={selectedHub.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    onError={(e) => {
-                      (e.target as HTMLImageElement).src =
-                        'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Delhi_fort.jpg/1280px-Delhi_fort.jpg';
-                    }}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                  <div className="absolute top-2.5 left-2.5">
-                    <span className="px-2.5 py-0.5 rounded-full bg-black/60 backdrop-blur-xs text-white text-[10px] font-bold">
-                      {selectedHub.region} India
-                    </span>
-                  </div>
-                  {selectedHub.unesco && (
-                    <span className="absolute top-2.5 right-2.5 px-2.5 py-0.5 rounded-full bg-[#FF671F] text-white text-[10px] font-bold shadow-xs">
-                      UNESCO World Heritage
-                    </span>
-                  )}
-                  <div className="absolute bottom-2.5 left-3 right-3 text-white">
-                    <div className="text-[11px] font-medium opacity-90">{selectedHub.category}</div>
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="font-serif text-xl font-bold text-stone-900 leading-snug">
-                    {selectedHub.name}
-                  </h3>
-                  <div className="flex items-center gap-1.5 text-xs text-stone-600 mt-1">
-                    <MapPin className="w-3.5 h-3.5 text-[#FF671F] shrink-0" />
-                    <span className="font-semibold text-stone-800">{selectedHub.city}</span>,{' '}
-                    <span>{selectedHub.state}</span>
-                  </div>
-
-                  <p className="text-xs text-stone-600 mt-2 line-clamp-3 leading-relaxed">
-                    {selectedHub.description}
-                  </p>
-
-                  <div className="mt-3 p-2.5 rounded-xl bg-stone-50 border border-stone-200/80 flex items-center justify-between text-[11px] font-mono text-stone-600">
-                    <span>GPS Coordinates</span>
-                    <span className="font-semibold text-stone-900">
-                      {selectedHub.lat.toFixed(4)}° N, {selectedHub.lng.toFixed(4)}° E
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Action Buttons */}
-              <div className="pt-2 flex items-center gap-2">
-                <button
-                  type="button"
-                  onClick={() => onSelectPlace && onSelectPlace(selectedHub.id)}
-                  className="flex-1 py-2.5 rounded-xl bg-[#FF671F] hover:bg-[#E65100] text-white text-xs font-bold text-center transition shadow-xs active:scale-95 cursor-pointer"
-                >
-                  View Destination Dossier
-                </button>
-                <button
-                  type="button"
-                  onClick={() => onNavigateTab('map')}
-                  className="p-2.5 rounded-xl border border-stone-200 hover:bg-stone-50 text-stone-700 transition cursor-pointer"
-                  title="Open in Full Interactive GIS Map"
-                >
-                  <Map className="w-4 h-4 text-stone-600" />
-                </button>
-              </div>
-            </div>
-          ) : (
-            <div className="h-full flex flex-col items-center justify-center text-center p-6 space-y-3">
-              <div className="w-12 h-12 rounded-2xl bg-orange-50 text-[#FF671F] flex items-center justify-center">
-                <MapPin className="w-6 h-6" />
-              </div>
-              <h4 className="font-serif text-base font-bold text-stone-900">
-                Select a Heritage Landmark
-              </h4>
-              <p className="text-xs text-stone-500 max-w-xs leading-relaxed">
-                Click on any verified monument pin on the real world map to explore its coordinates and historical dossier.
-              </p>
-            </div>
-          )}
+        {/* Bottom Live Controls */}
+        <div className="absolute bottom-3 left-3 z-10 flex items-center gap-2">
+          <div className="bg-white/90 backdrop-blur-xs px-2.5 py-1 rounded-lg border border-stone-200 text-[10px] text-stone-600 font-medium">
+            ★ UNESCO Site • ✦ Iconic Landmark
+          </div>
         </div>
+
+        <button
+          onClick={handleResetIndiaView}
+          className="absolute bottom-3 right-3 z-10 bg-white/95 hover:bg-white text-stone-700 p-2 rounded-xl shadow-md border border-stone-200 transition cursor-pointer text-xs font-semibold flex items-center gap-1.5"
+          title="Recenter India"
+        >
+          <RotateCcw className="w-3.5 h-3.5 text-[#FF671F]" />
+          <span className="hidden sm:inline">Recenter</span>
+        </button>
       </div>
     </section>
   );
