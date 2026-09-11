@@ -145,6 +145,9 @@ interface PlaceItem {
   heritage_status?: string;
   area_neighborhood?: string;
   status?: string;
+  verification_status?: string;
+  hotels?: any[];
+  recommended_hotels?: any[];
 }
 
 interface RailwayStation {
