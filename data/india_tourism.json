@@ -187,6 +187,17 @@
       "popular_rank": 5
     },
     {
+      "id": "munnar",
+      "state_id": "kerala",
+      "name": "Munnar",
+      "district": "Idukki",
+      "latitude": 10.0889,
+      "longitude": 77.0595,
+      "description": "Serene hill station enveloped by rolling tea plantations and mist-covered valleys.",
+      "hero_image_url": "https://images.unsplash.com/photo-1596176530529-78163a4f7af2",
+      "popular_rank": 11
+    },
+    {
       "id": "goa",
       "state_id": "goa",
       "name": "Panaji & Coastal Goa",

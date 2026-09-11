@@ -1431,6 +1431,33 @@
     }
   },
   {
+    "entity_id": "khajuraho",
+    "entity_type": "city",
+    "name": "Khajuraho",
+    "state": "Madhya Pradesh",
+    "city": "Khajuraho",
+    "image_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=85",
+    "thumbnail_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=600&auto=format&fit=crop&q=80",
+    "source_page": "https://www.incredibleindia.gov.in/en/madhya-pradesh/khajuraho",
+    "source": "Khajuraho District Administration & Incredible India",
+    "license": "CC-BY-SA-4.0 / Municipal Heritage Records",
+    "creator": "City Heritage Survey Wing",
+    "attribution": "Khajuraho Urban Tourism Administration",
+    "status": "verified",
+    "last_checked": "2026-09-08T20:02:22.196Z",
+    "image": {
+      "status": "verified",
+      "url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=85",
+      "thumbnail_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=600&auto=format&fit=crop&q=80",
+      "source_page": "https://www.incredibleindia.gov.in/en/madhya-pradesh/khajuraho",
+      "source": "Khajuraho District Administration & Incredible India",
+      "license": "CC-BY-SA-4.0 / Municipal Heritage Records",
+      "creator": "City Heritage Survey Wing",
+      "attribution": "Khajuraho Urban Tourism Administration",
+      "last_checked": "2026-09-08T20:02:22.196Z"
+    }
+  },
+  {
     "entity_id": "bhubaneswar",
     "entity_type": "city",
     "name": "Bhubaneswar & Konark",

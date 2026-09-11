@@ -822,11 +822,51 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "guntur",
+    "name": "Guntur",
+    "state": "Andhra Pradesh",
+    "state_id": "andhra-pradesh",
+    "displayName": "Guntur (Andhra Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "kakinada",
+    "name": "Kakinada",
+    "state": "Andhra Pradesh",
+    "state_id": "andhra-pradesh",
+    "displayName": "Kakinada (Andhra Pradesh)",
+    "popular": false
+  },
+  {
     "id": "kurnool",
     "name": "Kurnool",
     "state": "Andhra Pradesh",
     "state_id": "andhra-pradesh",
     "displayName": "Kurnool (Andhra Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "machilipatnam",
+    "name": "Machilipatnam",
+    "state": "Andhra Pradesh",
+    "state_id": "andhra-pradesh",
+    "displayName": "Machilipatnam (Andhra Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "nellore",
+    "name": "Nellore",
+    "state": "Andhra Pradesh",
+    "state_id": "andhra-pradesh",
+    "displayName": "Nellore (Andhra Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "rajahmundry",
+    "name": "Rajahmundry",
+    "state": "Andhra Pradesh",
+    "state_id": "andhra-pradesh",
+    "displayName": "Rajahmundry (Andhra Pradesh)",
     "popular": false
   },
   {
@@ -867,6 +907,22 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "state": "Arunachal Pradesh",
     "state_id": "arunachal-pradesh",
     "displayName": "Bomdila (Arunachal Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "changlang",
+    "name": "Changlang",
+    "state": "Arunachal Pradesh",
+    "state_id": "arunachal-pradesh",
+    "displayName": "Changlang (Arunachal Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "dirang",
+    "name": "Dirang",
+    "state": "Arunachal Pradesh",
+    "state_id": "arunachal-pradesh",
+    "displayName": "Dirang (Arunachal Pradesh)",
     "popular": false
   },
   {
@@ -926,11 +982,27 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "yingkiong",
+    "name": "Yingkiong",
+    "state": "Arunachal Pradesh",
+    "state_id": "arunachal-pradesh",
+    "displayName": "Yingkiong (Arunachal Pradesh)",
+    "popular": false
+  },
+  {
     "id": "ziro",
     "name": "Ziro",
     "state": "Arunachal Pradesh",
     "state_id": "arunachal-pradesh",
     "displayName": "Ziro (Arunachal Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "chirang",
+    "name": "Chirang",
+    "state": "Assam",
+    "state_id": "assam",
+    "displayName": "Chirang (Assam)",
     "popular": false
   },
   {
@@ -955,6 +1027,46 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "state": "Assam",
     "state_id": "assam",
     "displayName": "Jorhat (Assam)",
+    "popular": false
+  },
+  {
+    "id": "majuli",
+    "name": "Majuli",
+    "state": "Assam",
+    "state_id": "assam",
+    "displayName": "Majuli (Assam)",
+    "popular": false
+  },
+  {
+    "id": "sivasagar",
+    "name": "Sivasagar",
+    "state": "Assam",
+    "state_id": "assam",
+    "displayName": "Sivasagar (Assam)",
+    "popular": false
+  },
+  {
+    "id": "tezpur",
+    "name": "Tezpur",
+    "state": "Assam",
+    "state_id": "assam",
+    "displayName": "Tezpur (Assam)",
+    "popular": false
+  },
+  {
+    "id": "tinsukia",
+    "name": "Tinsukia",
+    "state": "Assam",
+    "state_id": "assam",
+    "displayName": "Tinsukia (Assam)",
+    "popular": false
+  },
+  {
+    "id": "umrangso",
+    "name": "Umrangso",
+    "state": "Assam",
+    "state_id": "assam",
+    "displayName": "Umrangso (Assam)",
     "popular": false
   },
   {
@@ -1110,11 +1222,27 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "junagadh",
+    "name": "Junagadh",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "displayName": "Junagadh (Gujarat)",
+    "popular": false
+  },
+  {
     "id": "kutch",
     "name": "Kutch",
     "state": "Gujarat",
     "state_id": "gujarat",
     "displayName": "Kutch (Gujarat)",
+    "popular": false
+  },
+  {
+    "id": "patan",
+    "name": "Patan",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "displayName": "Patan (Gujarat)",
     "popular": false
   },
   {
@@ -1142,11 +1270,27 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "vadnagar",
+    "name": "Vadnagar",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "displayName": "Vadnagar (Gujarat)",
+    "popular": false
+  },
+  {
     "id": "vadodara",
     "name": "Vadodara",
     "state": "Gujarat",
     "state_id": "gujarat",
     "displayName": "Vadodara (Gujarat)",
+    "popular": false
+  },
+  {
+    "id": "valsad",
+    "name": "Valsad",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "displayName": "Valsad (Gujarat)",
     "popular": false
   },
   {
@@ -1206,6 +1350,22 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "chamba",
+    "name": "Chamba",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "displayName": "Chamba (Himachal Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "dalhousie",
+    "name": "Dalhousie",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "displayName": "Dalhousie (Himachal Pradesh)",
+    "popular": false
+  },
+  {
     "id": "dharamshala",
     "name": "Dharamshala",
     "state": "Himachal Pradesh",
@@ -1222,6 +1382,22 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "kasauli",
+    "name": "Kasauli",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "displayName": "Kasauli (Himachal Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "keylong",
+    "name": "Keylong",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "displayName": "Keylong (Himachal Pradesh)",
+    "popular": false
+  },
+  {
     "id": "kullu",
     "name": "Kullu",
     "state": "Himachal Pradesh",
@@ -1235,6 +1411,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "state": "Himachal Pradesh",
     "state_id": "himachal-pradesh",
     "displayName": "Manali (Himachal Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "paonta-sahib",
+    "name": "Paonta Sahib",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "displayName": "Paonta Sahib (Himachal Pradesh)",
     "popular": false
   },
   {
@@ -1302,12 +1486,28 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "belagavi",
+    "name": "Belagavi",
+    "state": "Karnataka",
+    "state_id": "karnataka",
+    "displayName": "Belagavi (Karnataka)",
+    "popular": false
+  },
+  {
     "id": "bengaluru",
     "name": "Bengaluru",
     "state": "Karnataka",
     "state_id": "karnataka",
     "displayName": "Bengaluru (Karnataka)",
     "popular": true
+  },
+  {
+    "id": "bidar",
+    "name": "Bidar",
+    "state": "Karnataka",
+    "state_id": "karnataka",
+    "displayName": "Bidar (Karnataka)",
+    "popular": false
   },
   {
     "id": "dharwad",
@@ -1318,12 +1518,36 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "gokarna",
+    "name": "Gokarna",
+    "state": "Karnataka",
+    "state_id": "karnataka",
+    "displayName": "Gokarna (Karnataka)",
+    "popular": false
+  },
+  {
     "id": "hampi",
     "name": "Hampi",
     "state": "Karnataka",
     "state_id": "karnataka",
     "displayName": "Hampi (Karnataka)",
     "popular": true
+  },
+  {
+    "id": "kalaburagi",
+    "name": "Kalaburagi",
+    "state": "Karnataka",
+    "state_id": "karnataka",
+    "displayName": "Kalaburagi (Karnataka)",
+    "popular": false
+  },
+  {
+    "id": "lakkundi",
+    "name": "Lakkundi",
+    "state": "Karnataka",
+    "state_id": "karnataka",
+    "displayName": "Lakkundi (Karnataka)",
+    "popular": false
   },
   {
     "id": "mangalore",
@@ -1374,6 +1598,22 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "bekal",
+    "name": "Bekal",
+    "state": "Kerala",
+    "state_id": "kerala",
+    "displayName": "Bekal (Kerala)",
+    "popular": false
+  },
+  {
+    "id": "kannur",
+    "name": "Kannur",
+    "state": "Kerala",
+    "state_id": "kerala",
+    "displayName": "Kannur (Kerala)",
+    "popular": false
+  },
+  {
     "id": "kasargod",
     "name": "Kasargod",
     "state": "Kerala",
@@ -1414,6 +1654,54 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "kozhikode",
+    "name": "Kozhikode",
+    "state": "Kerala",
+    "state_id": "kerala",
+    "displayName": "Kozhikode (Kerala)",
+    "popular": false
+  },
+  {
+    "id": "kumarakom",
+    "name": "Kumarakom",
+    "state": "Kerala",
+    "state_id": "kerala",
+    "displayName": "Kumarakom (Kerala)",
+    "popular": false
+  },
+  {
+    "id": "malappuram",
+    "name": "Malappuram",
+    "state": "Kerala",
+    "state_id": "kerala",
+    "displayName": "Malappuram (Kerala)",
+    "popular": false
+  },
+  {
+    "id": "munnar",
+    "name": "Munnar",
+    "state": "Kerala",
+    "state_id": "kerala",
+    "displayName": "Munnar (Kerala)",
+    "popular": false
+  },
+  {
+    "id": "palakkad",
+    "name": "Palakkad",
+    "state": "Kerala",
+    "state_id": "kerala",
+    "displayName": "Palakkad (Kerala)",
+    "popular": false
+  },
+  {
+    "id": "pathanamthitta",
+    "name": "Pathanamthitta",
+    "state": "Kerala",
+    "state_id": "kerala",
+    "displayName": "Pathanamthitta (Kerala)",
+    "popular": false
+  },
+  {
     "id": "sabrimala",
     "name": "Sabrimala",
     "state": "Kerala",
@@ -1430,11 +1718,67 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "thrissur",
+    "name": "Thrissur",
+    "state": "Kerala",
+    "state_id": "kerala",
+    "displayName": "Thrissur (Kerala)",
+    "popular": false
+  },
+  {
+    "id": "varkala",
+    "name": "Varkala",
+    "state": "Kerala",
+    "state_id": "kerala",
+    "displayName": "Varkala (Kerala)",
+    "popular": false
+  },
+  {
+    "id": "wayanad",
+    "name": "Wayanad",
+    "state": "Kerala",
+    "state_id": "kerala",
+    "displayName": "Wayanad (Kerala)",
+    "popular": false
+  },
+  {
+    "id": "anuppur",
+    "name": "Anuppur",
+    "state": "Madhya Pradesh",
+    "state_id": "madhya-pradesh",
+    "displayName": "Anuppur (Madhya Pradesh)",
+    "popular": false
+  },
+  {
     "id": "bhopal",
     "name": "Bhopal",
     "state": "Madhya Pradesh",
     "state_id": "madhya-pradesh",
     "displayName": "Bhopal (Madhya Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "chanderi",
+    "name": "Chanderi",
+    "state": "Madhya Pradesh",
+    "state_id": "madhya-pradesh",
+    "displayName": "Chanderi (Madhya Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "chitrakoot-mp",
+    "name": "Chitrakoot",
+    "state": "Madhya Pradesh",
+    "state_id": "madhya-pradesh",
+    "displayName": "Chitrakoot (Madhya Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "datia",
+    "name": "Datia",
+    "state": "Madhya Pradesh",
+    "state_id": "madhya-pradesh",
+    "displayName": "Datia (Madhya Pradesh)",
     "popular": false
   },
   {
@@ -1462,11 +1806,27 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "khajuraho",
+    "name": "Khajuraho",
+    "state": "Madhya Pradesh",
+    "state_id": "madhya-pradesh",
+    "displayName": "Khajuraho (Madhya Pradesh)",
+    "popular": true
+  },
+  {
     "id": "mandsaur",
     "name": "Mandsaur",
     "state": "Madhya Pradesh",
     "state_id": "madhya-pradesh",
     "displayName": "Mandsaur (Madhya Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "morena",
+    "name": "Morena",
+    "state": "Madhya Pradesh",
+    "state_id": "madhya-pradesh",
+    "displayName": "Morena (Madhya Pradesh)",
     "popular": false
   },
   {
@@ -1718,11 +2078,51 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": true
   },
   {
+    "id": "fatehgarh-sahib",
+    "name": "Fatehgarh Sahib",
+    "state": "Punjab",
+    "state_id": "punjab",
+    "displayName": "Fatehgarh Sahib (Punjab)",
+    "popular": false
+  },
+  {
+    "id": "fazilka",
+    "name": "Fazilka",
+    "state": "Punjab",
+    "state_id": "punjab",
+    "displayName": "Fazilka (Punjab)",
+    "popular": false
+  },
+  {
+    "id": "firozepur",
+    "name": "Firozepur",
+    "state": "Punjab",
+    "state_id": "punjab",
+    "displayName": "Firozepur (Punjab)",
+    "popular": false
+  },
+  {
+    "id": "gurdaspur",
+    "name": "Gurdaspur",
+    "state": "Punjab",
+    "state_id": "punjab",
+    "displayName": "Gurdaspur (Punjab)",
+    "popular": false
+  },
+  {
     "id": "jalandhar",
     "name": "Jalandhar",
     "state": "Punjab",
     "state_id": "punjab",
     "displayName": "Jalandhar (Punjab)",
+    "popular": false
+  },
+  {
+    "id": "kapurthala",
+    "name": "Kapurthala",
+    "state": "Punjab",
+    "state_id": "punjab",
+    "displayName": "Kapurthala (Punjab)",
     "popular": false
   },
   {
@@ -1747,6 +2147,22 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "state": "Punjab",
     "state_id": "punjab",
     "displayName": "Patiala (Punjab)",
+    "popular": false
+  },
+  {
+    "id": "rupnagar",
+    "name": "Rupnagar",
+    "state": "Punjab",
+    "state_id": "punjab",
+    "displayName": "Rupnagar (Punjab)",
+    "popular": false
+  },
+  {
+    "id": "sas-nagar",
+    "name": "SAS Nagar",
+    "state": "Punjab",
+    "state_id": "punjab",
+    "displayName": "SAS Nagar (Punjab)",
     "popular": false
   },
   {
@@ -1790,11 +2206,35 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "bundi",
+    "name": "Bundi",
+    "state": "Rajasthan",
+    "state_id": "rajasthan",
+    "displayName": "Bundi (Rajasthan)",
+    "popular": false
+  },
+  {
     "id": "chittorgarh",
     "name": "Chittorgarh",
     "state": "Rajasthan",
     "state_id": "rajasthan",
     "displayName": "Chittorgarh (Rajasthan)",
+    "popular": false
+  },
+  {
+    "id": "dausa",
+    "name": "Dausa",
+    "state": "Rajasthan",
+    "state_id": "rajasthan",
+    "displayName": "Dausa (Rajasthan)",
+    "popular": false
+  },
+  {
+    "id": "dholpur",
+    "name": "Dholpur",
+    "state": "Rajasthan",
+    "state_id": "rajasthan",
+    "displayName": "Dholpur (Rajasthan)",
     "popular": false
   },
   {
@@ -2027,6 +2467,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "state": "Uttar Pradesh",
     "state_id": "uttar-pradesh",
     "displayName": "Bareilly (Uttar Pradesh)",
+    "popular": false
+  },
+  {
+    "id": "chitrakoot-up",
+    "name": "Chitrakoot",
+    "state": "Uttar Pradesh",
+    "state_id": "uttar-pradesh",
+    "displayName": "Chitrakoot (Uttar Pradesh)",
     "popular": false
   },
   {
