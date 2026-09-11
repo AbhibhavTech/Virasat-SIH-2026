@@ -853,6 +853,14 @@ export const VERIFIED_CITY_ITINERARIES: Record<string, VerifiedCityItinerary> = 
 
 export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
   {
+    "id": "achanakmar",
+    "name": "Achanakmar",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "displayName": "Achanakmar (Chhattisgarh)",
+    "popular": true
+  },
+  {
     "id": "agartala",
     "name": "Agartala",
     "state": "Tripura",
@@ -875,6 +883,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "state_id": "gujarat",
     "displayName": "Ahmedabad (Gujarat)",
     "popular": false
+  },
+  {
+    "id": "aihole",
+    "name": "Aihole",
+    "state": "Karnataka",
+    "state_id": "karnataka",
+    "displayName": "Aihole (Karnataka)",
+    "popular": true
   },
   {
     "id": "aizawl",
@@ -1013,6 +1029,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "bandipur",
+    "name": "Bandipur",
+    "state": "Karnataka",
+    "state_id": "karnataka",
+    "displayName": "Bandipur (Karnataka)",
+    "popular": true
+  },
+  {
     "id": "banswara",
     "name": "Banswara",
     "state": "Rajasthan",
@@ -1027,6 +1051,22 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "state_id": "uttar-pradesh",
     "displayName": "Bareilly (Uttar Pradesh)",
     "popular": false
+  },
+  {
+    "id": "barnawapara",
+    "name": "Barnawapara",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "displayName": "Barnawapara (Chhattisgarh)",
+    "popular": true
+  },
+  {
+    "id": "bastar",
+    "name": "Bastar",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "displayName": "Bastar (Chhattisgarh)",
+    "popular": true
   },
   {
     "id": "bekal",
@@ -1061,12 +1101,36 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "bhabua",
+    "name": "Bhabua",
+    "state": "Bihar",
+    "state_id": "bihar",
+    "displayName": "Bhabua (Bihar)",
+    "popular": true
+  },
+  {
     "id": "bhadradri-kothagudem",
     "name": "Bhadradri Kothagudem",
     "state": "Telangana",
     "state_id": "telangana",
     "displayName": "Bhadradri Kothagudem (Telangana)",
     "popular": false
+  },
+  {
+    "id": "bhagalpur",
+    "name": "Bhagalpur",
+    "state": "Bihar",
+    "state_id": "bihar",
+    "displayName": "Bhagalpur (Bihar)",
+    "popular": true
+  },
+  {
+    "id": "bhairamgarh",
+    "name": "Bhairamgarh",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "displayName": "Bhairamgarh (Chhattisgarh)",
+    "popular": true
   },
   {
     "id": "bharatpur",
@@ -1083,6 +1147,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "state_id": "gujarat",
     "displayName": "Bhavnagar (Gujarat)",
     "popular": false
+  },
+  {
+    "id": "bhilai",
+    "name": "Bhilai",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "displayName": "Bhilai (Chhattisgarh)",
+    "popular": true
   },
   {
     "id": "bhimtal",
@@ -1109,6 +1181,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "bhoramdeo",
+    "name": "Bhoramdeo",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "displayName": "Bhoramdeo (Chhattisgarh)",
+    "popular": true
+  },
+  {
     "id": "bhubaneswar",
     "name": "Bhubaneswar",
     "state": "Odisha",
@@ -1131,6 +1211,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "state_id": "karnataka",
     "displayName": "Bidar (Karnataka)",
     "popular": false
+  },
+  {
+    "id": "bijapur",
+    "name": "Bijapur",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "displayName": "Bijapur (Chhattisgarh)",
+    "popular": true
   },
   {
     "id": "bikaner",
@@ -1163,6 +1251,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "state_id": "manipur",
     "displayName": "Bishnupur (Manipur)",
     "popular": false
+  },
+  {
+    "id": "bodh_gaya",
+    "name": "Bodh Gaya",
+    "state": "Bihar",
+    "state_id": "bihar",
+    "displayName": "Bodh Gaya (Bihar)",
+    "popular": true
   },
   {
     "id": "bomdila",
@@ -1269,12 +1365,28 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": true
   },
   {
+    "id": "chikkamagaluru",
+    "name": "Chikkamagaluru",
+    "state": "Karnataka",
+    "state_id": "karnataka",
+    "displayName": "Chikkamagaluru (Karnataka)",
+    "popular": true
+  },
+  {
     "id": "chirang",
     "name": "Chirang",
     "state": "Assam",
     "state_id": "assam",
     "displayName": "Chirang (Assam)",
     "popular": false
+  },
+  {
+    "id": "chitradurga",
+    "name": "Chitradurga",
+    "state": "Karnataka",
+    "state_id": "karnataka",
+    "displayName": "Chitradurga (Karnataka)",
+    "popular": true
   },
   {
     "id": "chitrakoot-mp",
@@ -1291,6 +1403,22 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "state_id": "uttar-pradesh",
     "displayName": "Chitrakoot (Uttar Pradesh)",
     "popular": false
+  },
+  {
+    "id": "chitrakoot",
+    "name": "Chitrakoot",
+    "state": "Uttar Pradesh",
+    "state_id": "uttar-pradesh",
+    "displayName": "Chitrakoot (Uttar Pradesh)",
+    "popular": true
+  },
+  {
+    "id": "chitrakote",
+    "name": "Chitrakote",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "displayName": "Chitrakote (Chhattisgarh)",
+    "popular": true
   },
   {
     "id": "chittoor",
@@ -1339,6 +1467,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "state_id": "dadra-and-nagar-haveli-and-daman-and-diu",
     "displayName": "Daman (Dadra and Nagar Haveli and Daman and Diu)",
     "popular": false
+  },
+  {
+    "id": "dandeli",
+    "name": "Dandeli",
+    "state": "Karnataka",
+    "state_id": "karnataka",
+    "displayName": "Dandeli (Karnataka)",
+    "popular": true
   },
   {
     "id": "dantewada",
@@ -1461,6 +1597,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "dudhwa",
+    "name": "Dudhwa",
+    "state": "Uttar Pradesh",
+    "state_id": "uttar-pradesh",
+    "displayName": "Dudhwa (Uttar Pradesh)",
+    "popular": true
+  },
+  {
     "id": "durgapur",
     "name": "Durgapur",
     "state": "West Bengal",
@@ -1573,6 +1717,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "govardhan",
+    "name": "Govardhan",
+    "state": "Uttar Pradesh",
+    "state_id": "uttar-pradesh",
+    "displayName": "Govardhan (Uttar Pradesh)",
+    "popular": true
+  },
+  {
     "id": "gulmarg",
     "name": "Gulmarg",
     "state": "Jammu and Kashmir",
@@ -1643,6 +1795,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "state_id": "uttarakhand",
     "displayName": "Haridwar (Uttarakhand)",
     "popular": false
+  },
+  {
+    "id": "hassan",
+    "name": "Hassan",
+    "state": "Karnataka",
+    "state_id": "karnataka",
+    "displayName": "Hassan (Karnataka)",
+    "popular": true
   },
   {
     "id": "hisar",
@@ -1781,6 +1941,22 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "jashpur",
+    "name": "Jashpur",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "displayName": "Jashpur (Chhattisgarh)",
+    "popular": true
+  },
+  {
+    "id": "jehanabad",
+    "name": "Jehanabad",
+    "state": "Bihar",
+    "state_id": "bihar",
+    "displayName": "Jehanabad (Bihar)",
+    "popular": true
+  },
+  {
     "id": "jhansi",
     "name": "Jhansi",
     "state": "Uttar Pradesh",
@@ -1845,12 +2021,28 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "kanger-valley",
+    "name": "Kanger Valley",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "displayName": "Kanger Valley (Chhattisgarh)",
+    "popular": true
+  },
+  {
     "id": "kangra",
     "name": "Kangra",
     "state": "Himachal Pradesh",
     "state_id": "himachal-pradesh",
     "displayName": "Kangra (Himachal Pradesh)",
     "popular": false
+  },
+  {
+    "id": "kanker",
+    "name": "Kanker",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "displayName": "Kanker (Chhattisgarh)",
+    "popular": true
   },
   {
     "id": "kanniyakumari",
@@ -1939,6 +2131,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "state_id": "uttarakhand",
     "displayName": "Kedarnath (Uttarakhand)",
     "popular": false
+  },
+  {
+    "id": "kesaria",
+    "name": "Kesaria",
+    "state": "Bihar",
+    "state_id": "bihar",
+    "displayName": "Kesaria (Bihar)",
+    "popular": true
   },
   {
     "id": "keylong",
@@ -2165,6 +2365,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "madikeri",
+    "name": "Madikeri",
+    "state": "Karnataka",
+    "state_id": "karnataka",
+    "displayName": "Madikeri (Karnataka)",
+    "popular": true
+  },
+  {
     "id": "madurai",
     "name": "Madurai",
     "state": "Tamil Nadu",
@@ -2179,6 +2387,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "state_id": "maharashtra",
     "displayName": "Mahabaleshwar (Maharashtra)",
     "popular": false
+  },
+  {
+    "id": "mainpat",
+    "name": "Mainpat",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "displayName": "Mainpat (Chhattisgarh)",
+    "popular": true
   },
   {
     "id": "majuli",
@@ -2227,6 +2443,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "state_id": "karnataka",
     "displayName": "Mangalore (Karnataka)",
     "popular": false
+  },
+  {
+    "id": "mangaluru",
+    "name": "Mangaluru",
+    "state": "Karnataka",
+    "state_id": "karnataka",
+    "displayName": "Mangaluru (Karnataka)",
+    "popular": true
   },
   {
     "id": "mangan",
@@ -2317,12 +2541,28 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": true
   },
   {
+    "id": "munger",
+    "name": "Munger",
+    "state": "Bihar",
+    "state_id": "bihar",
+    "displayName": "Munger (Bihar)",
+    "popular": true
+  },
+  {
     "id": "munnar",
     "name": "Munnar",
     "state": "Kerala",
     "state_id": "kerala",
     "displayName": "Munnar (Kerala)",
     "popular": false
+  },
+  {
+    "id": "murudeshwar",
+    "name": "Murudeshwar",
+    "state": "Karnataka",
+    "state_id": "karnataka",
+    "displayName": "Murudeshwar (Karnataka)",
+    "popular": true
   },
   {
     "id": "mussoorie",
@@ -2339,6 +2579,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "state_id": "karnataka",
     "displayName": "Mysuru (Karnataka)",
     "popular": false
+  },
+  {
+    "id": "nagarhole",
+    "name": "Nagarhole",
+    "state": "Karnataka",
+    "state_id": "karnataka",
+    "displayName": "Nagarhole (Karnataka)",
+    "popular": true
   },
   {
     "id": "nagpur",
@@ -2387,6 +2635,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "state_id": "maharashtra",
     "displayName": "Nashik (Maharashtra)",
     "popular": false
+  },
+  {
+    "id": "naya-raipur",
+    "name": "Naya Raipur",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "displayName": "Naya Raipur (Chhattisgarh)",
+    "popular": true
   },
   {
     "id": "nellore",
@@ -2533,12 +2789,36 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "patna_city",
+    "name": "Patna City",
+    "state": "Bihar",
+    "state_id": "bihar",
+    "displayName": "Patna City (Bihar)",
+    "popular": true
+  },
+  {
     "id": "patnitop",
     "name": "Patnitop",
     "state": "Jammu and Kashmir",
     "state_id": "jammu-and-kashmir",
     "displayName": "Patnitop (Jammu and Kashmir)",
     "popular": false
+  },
+  {
+    "id": "pattadakal",
+    "name": "Pattadakal",
+    "state": "Karnataka",
+    "state_id": "karnataka",
+    "displayName": "Pattadakal (Karnataka)",
+    "popular": true
+  },
+  {
+    "id": "pawapuri",
+    "name": "Pawapuri",
+    "state": "Bihar",
+    "state_id": "bihar",
+    "displayName": "Pawapuri (Bihar)",
+    "popular": true
   },
   {
     "id": "pelling",
@@ -2629,6 +2909,22 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "rajgir",
+    "name": "Rajgir",
+    "state": "Bihar",
+    "state_id": "bihar",
+    "displayName": "Rajgir (Bihar)",
+    "popular": true
+  },
+  {
+    "id": "rajim",
+    "name": "Rajim",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "displayName": "Rajim (Chhattisgarh)",
+    "popular": true
+  },
+  {
     "id": "rajkot",
     "name": "Rajkot",
     "state": "Gujarat",
@@ -2709,6 +3005,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "sagara",
+    "name": "Sagara",
+    "state": "Karnataka",
+    "state_id": "karnataka",
+    "displayName": "Sagara (Karnataka)",
+    "popular": true
+  },
+  {
     "id": "saitual",
     "name": "Saitual",
     "state": "Mizoram",
@@ -2747,6 +3051,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "state_id": "maharashtra",
     "displayName": "Satara (Maharashtra)",
     "popular": false
+  },
+  {
+    "id": "semarsot",
+    "name": "Semarsot",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "displayName": "Semarsot (Chhattisgarh)",
+    "popular": true
   },
   {
     "id": "serchhip",
@@ -2795,6 +3107,30 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "state_id": "dadra-and-nagar-haveli-and-daman-and-diu",
     "displayName": "Silvassa (Dadra and Nagar Haveli and Daman and Diu)",
     "popular": false
+  },
+  {
+    "id": "sirpur",
+    "name": "Sirpur",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "displayName": "Sirpur (Chhattisgarh)",
+    "popular": true
+  },
+  {
+    "id": "sitamarhi",
+    "name": "Sitamarhi",
+    "state": "Bihar",
+    "state_id": "bihar",
+    "displayName": "Sitamarhi (Bihar)",
+    "popular": true
+  },
+  {
+    "id": "sitanadi",
+    "name": "Sitanadi",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "displayName": "Sitanadi (Chhattisgarh)",
+    "popular": true
   },
   {
     "id": "sivasagar",
@@ -2851,6 +3187,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "state_id": "gujarat",
     "displayName": "Surat (Gujarat)",
     "popular": false
+  },
+  {
+    "id": "tamor-pingla",
+    "name": "Tamor Pingla",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "displayName": "Tamor Pingla (Chhattisgarh)",
+    "popular": true
   },
   {
     "id": "tawang",
@@ -2922,6 +3266,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "state": "Rajasthan",
     "state_id": "rajasthan",
     "displayName": "Udaipur (Rajasthan)",
+    "popular": true
+  },
+  {
+    "id": "udanti-sitanadi",
+    "name": "Udanti-Sitanadi",
+    "state": "Chhattisgarh",
+    "state_id": "chhattisgarh",
+    "displayName": "Udanti-Sitanadi (Chhattisgarh)",
     "popular": true
   },
   {
@@ -2997,6 +3349,22 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "vaishali",
+    "name": "Vaishali",
+    "state": "Bihar",
+    "state_id": "bihar",
+    "displayName": "Vaishali (Bihar)",
+    "popular": true
+  },
+  {
+    "id": "valmiki_nagar",
+    "name": "Valmiki Nagar",
+    "state": "Bihar",
+    "state_id": "bihar",
+    "displayName": "Valmiki Nagar (Bihar)",
+    "popular": true
+  },
+  {
     "id": "valsad",
     "name": "Valsad",
     "state": "Gujarat",
@@ -3029,6 +3397,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "vindhyachal",
+    "name": "Vindhyachal",
+    "state": "Uttar Pradesh",
+    "state_id": "uttar-pradesh",
+    "displayName": "Vindhyachal (Uttar Pradesh)",
+    "popular": true
+  },
+  {
     "id": "visakhapatnam",
     "name": "Visakhapatnam",
     "state": "Andhra Pradesh",
@@ -3043,6 +3419,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "state_id": "andhra-pradesh",
     "displayName": "Vizianagaram (Andhra Pradesh)",
     "popular": false
+  },
+  {
+    "id": "vrindavan",
+    "name": "Vrindavan",
+    "state": "Uttar Pradesh",
+    "state_id": "uttar-pradesh",
+    "displayName": "Vrindavan (Uttar Pradesh)",
+    "popular": true
   },
   {
     "id": "warangal",

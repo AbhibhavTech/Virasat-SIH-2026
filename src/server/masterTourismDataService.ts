@@ -410,6 +410,10 @@ export class MasterTourismDataService {
       loadPlacesFile(path.join(dataDir, 'meghalaya', 'places.json'));
       loadPlacesFile(path.join(dataDir, 'manipur', 'places.json'));
       loadPlacesFile(path.join(dataDir, 'mizoram', 'places.json'));
+      loadPlacesFile(path.join(dataDir, 'bihar', 'places.json'));
+      loadPlacesFile(path.join(dataDir, 'uttar-pradesh', 'places.json'));
+      loadPlacesFile(path.join(dataDir, 'karnataka', 'places.json'));
+      loadPlacesFile(path.join(dataDir, 'chhattisgarh', 'places.json'));
 
       // 7. Load Heritage & UNESCO sites
       const heritagePath = path.join(dataDir, 'heritage', 'monuments.json');
@@ -536,6 +540,39 @@ export class MasterTourismDataService {
         'living-root-bridges'
       ]) {
         this.destinations.delete(legacyKey);
+      }
+
+      // Ensure Bihar destinations strictly use verified bihar_001 - bihar_030 IDs
+      if (this.destinations.has('bihar_001')) {
+        for (const legacyKey of ['mahabodhi-temple', 'nalanda-university-ruins', 'golghar-patna']) {
+          this.destinations.delete(legacyKey);
+        }
+      }
+
+      // Ensure Uttar Pradesh destinations strictly use verified uttar_pradesh_001 - uttar_pradesh_040 IDs
+      if (this.destinations.has('uttar_pradesh_011')) {
+        for (const legacyKey of [
+          'taj-mahal', 'fatehpur-sikri', 'agra-fort', 'kashi-vishwanath',
+          'dashashwamedh-ghat', 'sarnath-complex', 'assi-ghat', 'mehtab-bagh'
+        ]) {
+          this.destinations.delete(legacyKey);
+        }
+      }
+
+      // Ensure Karnataka destinations strictly use verified karnataka_001 - karnataka_040 IDs
+      if (this.destinations.has('karnataka_001')) {
+        for (const legacyKey of [
+          'hampi-monuments', 'pattadakal-monuments', 'hoysala-temples-belur',
+          'bangalore-palace', 'hampi-virupaksha', 'hampi-stone-chariot',
+          'tipu-sultan-palace', 'lalbagh-glasshouse'
+        ]) {
+          this.destinations.delete(legacyKey);
+        }
+      }
+
+      // Ensure Chhattisgarh destinations strictly use verified chhattisgarh_001 - chhattisgarh_030 IDs
+      if (this.destinations.has('chhattisgarh_001')) {
+        this.destinations.delete('sirpur-monuments');
       }
 
       // 10. Perform Normalization & Derive Secondary Master Collections

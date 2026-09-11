@@ -1,0 +1,2842 @@
+[
+  {
+    "id": "karnataka_001",
+    "name": "Bengaluru Palace",
+    "category": "heritage_palace",
+    "area": "Bengaluru",
+    "description": "A grand palace known for Tudor-style architecture and royal history.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Bengaluru Palace Karnataka",
+    "tags": [
+      "heritage_palace",
+      "Karnataka"
+    ],
+    "city": "Bengaluru",
+    "city_id": "bengaluru",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "A grand palace known for Tudor-style architecture and royal history.",
+    "coordinates": {
+      "lat": 12.9988,
+      "lng": 77.5921
+    },
+    "lat": 12.9988,
+    "lng": 77.5921,
+    "latitude": 12.9988,
+    "longitude": 77.5921,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/bengaluru-palace",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_002",
+    "name": "Mysore Palace",
+    "category": "heritage_palace",
+    "area": "Mysuru",
+    "description": "A spectacular palace famous for its architecture, royal collections, and illuminated evenings.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Mysore Palace Karnataka",
+    "tags": [
+      "heritage_palace",
+      "Karnataka"
+    ],
+    "city": "Mysuru",
+    "city_id": "mysuru",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "A spectacular palace famous for its architecture, royal collections, and illuminated evenings.",
+    "coordinates": {
+      "lat": 12.3052,
+      "lng": 76.6552
+    },
+    "lat": 12.3052,
+    "lng": 76.6552,
+    "latitude": 12.3052,
+    "longitude": 76.6552,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/mysore-palace",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_003",
+    "name": "Hampi",
+    "category": "archaeological_heritage",
+    "area": "Vijayanagara district",
+    "description": "A UNESCO World Heritage landscape filled with Vijayanagara-era temples, ruins, and boulder hills.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Hampi Karnataka",
+    "tags": [
+      "archaeological_heritage",
+      "Karnataka"
+    ],
+    "city": "Hampi",
+    "city_id": "hampi",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "A UNESCO World Heritage landscape filled with Vijayanagara-era temples, ruins, and boulder hills.",
+    "coordinates": {
+      "lat": 15.335,
+      "lng": 76.46
+    },
+    "lat": 15.335,
+    "lng": 76.46,
+    "latitude": 15.335,
+    "longitude": 76.46,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/hampi",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_004",
+    "name": "Virupaksha Temple",
+    "category": "religious_heritage",
+    "area": "Hampi",
+    "description": "A historic temple dedicated to Lord Shiva and one of Hampi’s major landmarks.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Virupaksha Temple Karnataka",
+    "tags": [
+      "religious_heritage",
+      "Karnataka"
+    ],
+    "city": "Hampi",
+    "city_id": "hampi",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "A historic temple dedicated to Lord Shiva and one of Hampi’s major landmarks.",
+    "coordinates": {
+      "lat": 15.3353,
+      "lng": 76.4594
+    },
+    "lat": 15.3353,
+    "lng": 76.4594,
+    "latitude": 15.3353,
+    "longitude": 76.4594,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/virupaksha-temple",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_005",
+    "name": "Gol Gumbaz",
+    "category": "heritage_monument",
+    "area": "Vijayapura",
+    "description": "A monumental mausoleum famous for its enormous dome and whispering gallery.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Gol Gumbaz Karnataka",
+    "tags": [
+      "heritage_monument",
+      "Karnataka"
+    ],
+    "city": "Vijayapura",
+    "city_id": "vijayapura",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "A monumental mausoleum famous for its enormous dome and whispering gallery.",
+    "coordinates": {
+      "lat": 16.8302,
+      "lng": 75.7356
+    },
+    "lat": 16.8302,
+    "lng": 75.7356,
+    "latitude": 16.8302,
+    "longitude": 75.7356,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/gol-gumbaz",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_006",
+    "name": "Badami Cave Temples",
+    "category": "cave_heritage",
+    "area": "Badami",
+    "description": "Rock-cut temples featuring Chalukyan architecture and detailed sculptures.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Badami Cave Temples Karnataka",
+    "tags": [
+      "cave_heritage",
+      "Karnataka"
+    ],
+    "city": "Badami",
+    "city_id": "badami",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "Rock-cut temples featuring Chalukyan architecture and detailed sculptures.",
+    "coordinates": {
+      "lat": 15.9189,
+      "lng": 75.6766
+    },
+    "lat": 15.9189,
+    "lng": 75.6766,
+    "latitude": 15.9189,
+    "longitude": 75.6766,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/badami-cave-temples",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_007",
+    "name": "Pattadakal",
+    "category": "temple_heritage",
+    "area": "Bagalkot district",
+    "description": "A UNESCO World Heritage site known for its exceptional early Chalukyan temples.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Pattadakal Karnataka",
+    "tags": [
+      "temple_heritage",
+      "Karnataka"
+    ],
+    "city": "Pattadakal",
+    "city_id": "pattadakal",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "A UNESCO World Heritage site known for its exceptional early Chalukyan temples.",
+    "coordinates": {
+      "lat": 15.9486,
+      "lng": 75.8161
+    },
+    "lat": 15.9486,
+    "lng": 75.8161,
+    "latitude": 15.9486,
+    "longitude": 75.8161,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/pattadakal",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_008",
+    "name": "Aihole",
+    "category": "archaeological_heritage",
+    "area": "Bagalkot district",
+    "description": "An ancient temple complex often called a cradle of Indian temple architecture.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Aihole Karnataka",
+    "tags": [
+      "archaeological_heritage",
+      "Karnataka"
+    ],
+    "city": "Aihole",
+    "city_id": "aihole",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "An ancient temple complex often called a cradle of Indian temple architecture.",
+    "coordinates": {
+      "lat": 16.0194,
+      "lng": 75.8822
+    },
+    "lat": 16.0194,
+    "lng": 75.8822,
+    "latitude": 16.0194,
+    "longitude": 75.8822,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/aihole",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_009",
+    "name": "Coorg",
+    "category": "hill_station_nature",
+    "area": "Kodagu district",
+    "description": "A scenic hill region known for coffee plantations, forests, and waterfalls.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Coorg Karnataka",
+    "tags": [
+      "hill_station_nature",
+      "Karnataka"
+    ],
+    "city": "Madikeri",
+    "city_id": "madikeri",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "A scenic hill region known for coffee plantations, forests, and waterfalls.",
+    "coordinates": {
+      "lat": 12.4244,
+      "lng": 75.7382
+    },
+    "lat": 12.4244,
+    "lng": 75.7382,
+    "latitude": 12.4244,
+    "longitude": 75.7382,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/coorg",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_010",
+    "name": "Chikmagalur",
+    "category": "hill_station_nature",
+    "area": "Chikkamagaluru district",
+    "description": "A mountain destination famous for coffee estates, trekking, and lush landscapes.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Chikmagalur Karnataka",
+    "tags": [
+      "hill_station_nature",
+      "Karnataka"
+    ],
+    "city": "Chikkamagaluru",
+    "city_id": "chikkamagaluru",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "A mountain destination famous for coffee estates, trekking, and lush landscapes.",
+    "coordinates": {
+      "lat": 13.3161,
+      "lng": 75.772
+    },
+    "lat": 13.3161,
+    "lng": 75.772,
+    "latitude": 13.3161,
+    "longitude": 75.772,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/chikmagalur",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_011",
+    "name": "Jog Falls",
+    "category": "waterfall_nature",
+    "area": "Shivamogga district",
+    "description": "One of India’s highest waterfalls, formed by the Sharavathi River.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Jog Falls Karnataka",
+    "tags": [
+      "waterfall_nature",
+      "Karnataka"
+    ],
+    "city": "Sagara",
+    "city_id": "sagara",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "One of India’s highest waterfalls, formed by the Sharavathi River.",
+    "coordinates": {
+      "lat": 14.2285,
+      "lng": 74.8122
+    },
+    "lat": 14.2285,
+    "lng": 74.8122,
+    "latitude": 14.2285,
+    "longitude": 74.8122,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/jog-falls",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_012",
+    "name": "Gokarna",
+    "category": "beach_pilgrimage",
+    "area": "Uttara Kannada district",
+    "description": "A coastal town known for beaches and the Mahabaleshwar Temple.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Gokarna Karnataka",
+    "tags": [
+      "beach_pilgrimage",
+      "Karnataka"
+    ],
+    "city": "Gokarna",
+    "city_id": "gokarna",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "A coastal town known for beaches and the Mahabaleshwar Temple.",
+    "coordinates": {
+      "lat": 14.5479,
+      "lng": 74.3188
+    },
+    "lat": 14.5479,
+    "lng": 74.3188,
+    "latitude": 14.5479,
+    "longitude": 74.3188,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/gokarna",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_013",
+    "name": "Murudeshwar Temple",
+    "category": "religious_heritage",
+    "area": "Uttara Kannada district",
+    "description": "A coastal temple complex featuring a towering Shiva statue and sea views.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Murudeshwar Temple Karnataka",
+    "tags": [
+      "religious_heritage",
+      "Karnataka"
+    ],
+    "city": "Murudeshwar",
+    "city_id": "murudeshwar",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "A coastal temple complex featuring a towering Shiva statue and sea views.",
+    "coordinates": {
+      "lat": 14.0942,
+      "lng": 74.4849
+    },
+    "lat": 14.0942,
+    "lng": 74.4849,
+    "latitude": 14.0942,
+    "longitude": 74.4849,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/murudeshwar-temple",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_014",
+    "name": "Bandipur National Park",
+    "category": "wildlife_national_park",
+    "area": "Chamarajanagar district",
+    "description": "A major wildlife reserve known for elephants, tigers, and forest safaris.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Bandipur National Park Karnataka",
+    "tags": [
+      "wildlife_national_park",
+      "Karnataka"
+    ],
+    "city": "Bandipur",
+    "city_id": "bandipur",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "A major wildlife reserve known for elephants, tigers, and forest safaris.",
+    "coordinates": {
+      "lat": 11.6664,
+      "lng": 76.6334
+    },
+    "lat": 11.6664,
+    "lng": 76.6334,
+    "latitude": 11.6664,
+    "longitude": 76.6334,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/bandipur-national-park",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_015",
+    "name": "Nagarhole National Park",
+    "category": "wildlife_national_park",
+    "area": "Kodagu and Mysuru districts",
+    "description": "A protected forest landscape rich in wildlife and riverine scenery.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Nagarhole National Park Karnataka",
+    "tags": [
+      "wildlife_national_park",
+      "Karnataka"
+    ],
+    "city": "Nagarhole",
+    "city_id": "nagarhole",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "A protected forest landscape rich in wildlife and riverine scenery.",
+    "coordinates": {
+      "lat": 12.0298,
+      "lng": 76.1557
+    },
+    "lat": 12.0298,
+    "lng": 76.1557,
+    "latitude": 12.0298,
+    "longitude": 76.1557,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/nagarhole-national-park",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_016",
+    "name": "Udupi Sri Krishna Temple",
+    "category": "religious_heritage",
+    "area": "Udupi",
+    "description": "A major Krishna temple and important pilgrimage destination.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Udupi Sri Krishna Temple Karnataka",
+    "tags": [
+      "religious_heritage",
+      "Karnataka"
+    ],
+    "city": "Udupi",
+    "city_id": "udupi",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "A major Krishna temple and important pilgrimage destination.",
+    "coordinates": {
+      "lat": 13.3409,
+      "lng": 74.7521
+    },
+    "lat": 13.3409,
+    "lng": 74.7521,
+    "latitude": 13.3409,
+    "longitude": 74.7521,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/udupi-sri-krishna-temple",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_017",
+    "name": "Belur Chennakeshava Temple",
+    "category": "temple_heritage",
+    "area": "Hassan district",
+    "description": "A Hoysala masterpiece known for intricate stone carvings.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Belur Chennakeshava Temple Karnataka",
+    "tags": [
+      "temple_heritage",
+      "Karnataka"
+    ],
+    "city": "Hassan",
+    "city_id": "hassan",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "A Hoysala masterpiece known for intricate stone carvings.",
+    "coordinates": {
+      "lat": 13.1625,
+      "lng": 75.8603
+    },
+    "lat": 13.1625,
+    "lng": 75.8603,
+    "latitude": 13.1625,
+    "longitude": 75.8603,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/belur-chennakeshava-temple",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_018",
+    "name": "Halebidu Hoysaleswara Temple",
+    "category": "temple_heritage",
+    "area": "Hassan district",
+    "description": "A celebrated Hoysala temple featuring detailed sculptures and ornate architecture.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Halebidu Hoysaleswara Temple Karnataka",
+    "tags": [
+      "temple_heritage",
+      "Karnataka"
+    ],
+    "city": "Hassan",
+    "city_id": "hassan",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "A celebrated Hoysala temple featuring detailed sculptures and ornate architecture.",
+    "coordinates": {
+      "lat": 13.2133,
+      "lng": 75.9939
+    },
+    "lat": 13.2133,
+    "lng": 75.9939,
+    "latitude": 13.2133,
+    "longitude": 75.9939,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/halebidu-hoysaleswara-temple",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_019",
+    "name": "Lalbagh Botanical Garden",
+    "category": "garden_nature",
+    "area": "Bengaluru",
+    "description": "A historic botanical garden with diverse plants, glasshouse, and walking paths.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Lalbagh Botanical Garden Karnataka",
+    "tags": [
+      "garden_nature",
+      "Karnataka"
+    ],
+    "city": "Bengaluru",
+    "city_id": "bengaluru",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "A historic botanical garden with diverse plants, glasshouse, and walking paths.",
+    "coordinates": {
+      "lat": 12.9507,
+      "lng": 77.5848
+    },
+    "lat": 12.9507,
+    "lng": 77.5848,
+    "latitude": 12.9507,
+    "longitude": 77.5848,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/lalbagh-botanical-garden",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_020",
+    "name": "Vidhana Soudha",
+    "category": "civic_architecture",
+    "area": "Bengaluru",
+    "description": "An imposing government building known for its Neo-Dravidian architecture.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Vidhana Soudha Karnataka",
+    "tags": [
+      "civic_architecture",
+      "Karnataka"
+    ],
+    "city": "Bengaluru",
+    "city_id": "bengaluru",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "An imposing government building known for its Neo-Dravidian architecture.",
+    "coordinates": {
+      "lat": 12.9797,
+      "lng": 77.5906
+    },
+    "lat": 12.9797,
+    "lng": 77.5906,
+    "latitude": 12.9797,
+    "longitude": 77.5906,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/vidhana-soudha",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_021",
+    "name": "Cubbon Park",
+    "category": "urban_park",
+    "area": "Bengaluru",
+    "description": "A historic green space in central Bengaluru with gardens, walking paths, and cultural landmarks.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Cubbon Park Karnataka",
+    "tags": [
+      "urban_park",
+      "Karnataka"
+    ],
+    "city": "Bengaluru",
+    "city_id": "bengaluru",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "A historic green space in central Bengaluru with gardens, walking paths, and cultural landmarks.",
+    "coordinates": {
+      "lat": 12.9763,
+      "lng": 77.5929
+    },
+    "lat": 12.9763,
+    "lng": 77.5929,
+    "latitude": 12.9763,
+    "longitude": 77.5929,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/cubbon-park",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_022",
+    "name": "ISKCON Temple Bengaluru",
+    "category": "religious_heritage",
+    "area": "Bengaluru",
+    "description": "A prominent Krishna temple complex on Hare Krishna Hill known for its devotional and cultural activities.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "ISKCON Temple Bengaluru Karnataka",
+    "tags": [
+      "religious_heritage",
+      "Karnataka"
+    ],
+    "city": "Bengaluru",
+    "city_id": "bengaluru",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "A prominent Krishna temple complex on Hare Krishna Hill known for its devotional and cultural activities.",
+    "coordinates": {
+      "lat": 13.0098,
+      "lng": 77.5511
+    },
+    "lat": 13.0098,
+    "lng": 77.5511,
+    "latitude": 13.0098,
+    "longitude": 77.5511,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/iskcon-temple-bengaluru",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_023",
+    "name": "Tipu Sultan's Summer Palace",
+    "category": "heritage_palace",
+    "area": "Bengaluru",
+    "description": "An 18th-century palace associated with Tipu Sultan and known for its teak architecture.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Tipu Sultan's Summer Palace Karnataka",
+    "tags": [
+      "heritage_palace",
+      "Karnataka"
+    ],
+    "city": "Bengaluru",
+    "city_id": "bengaluru",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "An 18th-century palace associated with Tipu Sultan and known for its teak architecture.",
+    "coordinates": {
+      "lat": 12.9593,
+      "lng": 77.5737
+    },
+    "lat": 12.9593,
+    "lng": 77.5737,
+    "latitude": 12.9593,
+    "longitude": 77.5737,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/tipu-sultans-summer-palace",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_024",
+    "name": "Mysuru Zoo",
+    "category": "wildlife_zoo",
+    "area": "Mysuru",
+    "description": "A major zoological garden known for diverse animal species and landscaped enclosures.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Mysuru Zoo Karnataka",
+    "tags": [
+      "wildlife_zoo",
+      "Karnataka"
+    ],
+    "city": "Mysuru",
+    "city_id": "mysuru",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "A major zoological garden known for diverse animal species and landscaped enclosures.",
+    "coordinates": {
+      "lat": 12.3023,
+      "lng": 76.6644
+    },
+    "lat": 12.3023,
+    "lng": 76.6644,
+    "latitude": 12.3023,
+    "longitude": 76.6644,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/mysuru-zoo",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_025",
+    "name": "Chamundi Hill",
+    "category": "religious_nature",
+    "area": "Mysuru",
+    "description": "A prominent hill overlooking Mysuru and home to the Chamundeshwari Temple.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Chamundi Hill Karnataka",
+    "tags": [
+      "religious_nature",
+      "Karnataka"
+    ],
+    "city": "Mysuru",
+    "city_id": "mysuru",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "A prominent hill overlooking Mysuru and home to the Chamundeshwari Temple.",
+    "coordinates": {
+      "lat": 12.2748,
+      "lng": 76.671
+    },
+    "lat": 12.2748,
+    "lng": 76.671,
+    "latitude": 12.2748,
+    "longitude": 76.671,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/chamundi-hill",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_026",
+    "name": "Brindavan Gardens",
+    "category": "garden_nature",
+    "area": "Mysuru district",
+    "description": "A landscaped garden near the Krishnaraja Sagara Dam known for fountains and evening illumination.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Brindavan Gardens Karnataka",
+    "tags": [
+      "garden_nature",
+      "Karnataka"
+    ],
+    "city": "Mysuru",
+    "city_id": "mysuru",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "A landscaped garden near the Krishnaraja Sagara Dam known for fountains and evening illumination.",
+    "coordinates": {
+      "lat": 12.4244,
+      "lng": 76.5728
+    },
+    "lat": 12.4244,
+    "lng": 76.5728,
+    "latitude": 12.4244,
+    "longitude": 76.5728,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/brindavan-gardens",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_027",
+    "name": "Vijaya Vittala Temple",
+    "category": "temple_heritage",
+    "area": "Hampi",
+    "description": "A celebrated Hampi monument known for its stone chariot and musical pillars.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Vijaya Vittala Temple Karnataka",
+    "tags": [
+      "temple_heritage",
+      "Karnataka"
+    ],
+    "city": "Hampi",
+    "city_id": "hampi",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "A celebrated Hampi monument known for its stone chariot and musical pillars.",
+    "coordinates": {
+      "lat": 15.3378,
+      "lng": 76.4764
+    },
+    "lat": 15.3378,
+    "lng": 76.4764,
+    "latitude": 15.3378,
+    "longitude": 76.4764,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/vijaya-vittala-temple",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_028",
+    "name": "Elephant Stables",
+    "category": "archaeological_heritage",
+    "area": "Hampi",
+    "description": "A monumental Vijayanagara-era structure with a row of large domed chambers.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Elephant Stables Karnataka",
+    "tags": [
+      "archaeological_heritage",
+      "Karnataka"
+    ],
+    "city": "Hampi",
+    "city_id": "hampi",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "A monumental Vijayanagara-era structure with a row of large domed chambers.",
+    "coordinates": {
+      "lat": 15.3325,
+      "lng": 76.4719
+    },
+    "lat": 15.3325,
+    "lng": 76.4719,
+    "latitude": 15.3325,
+    "longitude": 76.4719,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/elephant-stables",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_029",
+    "name": "Achyutaraya Temple",
+    "category": "temple_heritage",
+    "area": "Hampi",
+    "description": "A historic temple complex set amid the ruins and boulder landscape of Hampi.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Achyutaraya Temple Karnataka",
+    "tags": [
+      "temple_heritage",
+      "Karnataka"
+    ],
+    "city": "Hampi",
+    "city_id": "hampi",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "A historic temple complex set amid the ruins and boulder landscape of Hampi.",
+    "coordinates": {
+      "lat": 15.3364,
+      "lng": 76.4678
+    },
+    "lat": 15.3364,
+    "lng": 76.4678,
+    "latitude": 15.3364,
+    "longitude": 76.4678,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/achyutaraya-temple",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_030",
+    "name": "Kudle Beach",
+    "category": "beach_nature",
+    "area": "Gokarna",
+    "description": "A scenic crescent-shaped beach popular for coastal views, walks, and sunsets.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Kudle Beach Karnataka",
+    "tags": [
+      "beach_nature",
+      "Karnataka"
+    ],
+    "city": "Gokarna",
+    "city_id": "gokarna",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "A scenic crescent-shaped beach popular for coastal views, walks, and sunsets.",
+    "coordinates": {
+      "lat": 14.5369,
+      "lng": 74.3161
+    },
+    "lat": 14.5369,
+    "lng": 74.3161,
+    "latitude": 14.5369,
+    "longitude": 74.3161,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/kudle-beach",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_031",
+    "name": "Om Beach",
+    "category": "beach_nature",
+    "area": "Gokarna",
+    "description": "A distinctive beach shaped like the sacred Om symbol and known for its coastal scenery.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Om Beach Karnataka",
+    "tags": [
+      "beach_nature",
+      "Karnataka"
+    ],
+    "city": "Gokarna",
+    "city_id": "gokarna",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "A distinctive beach shaped like the sacred Om symbol and known for its coastal scenery.",
+    "coordinates": {
+      "lat": 14.5244,
+      "lng": 74.3175
+    },
+    "lat": 14.5244,
+    "lng": 74.3175,
+    "latitude": 14.5244,
+    "longitude": 74.3175,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/om-beach",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_032",
+    "name": "Kudremukh National Park",
+    "category": "wildlife_nature",
+    "area": "Chikkamagaluru district",
+    "description": "A Western Ghats protected landscape known for mountains, forests, streams, and biodiversity.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Kudremukh National Park Karnataka",
+    "tags": [
+      "wildlife_nature",
+      "Karnataka"
+    ],
+    "city": "Chikkamagaluru",
+    "city_id": "chikkamagaluru",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "A Western Ghats protected landscape known for mountains, forests, streams, and biodiversity.",
+    "coordinates": {
+      "lat": 13.2189,
+      "lng": 75.2575
+    },
+    "lat": 13.2189,
+    "lng": 75.2575,
+    "latitude": 13.2189,
+    "longitude": 75.2575,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/kudremukh-national-park",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_033",
+    "name": "Abbey Falls",
+    "category": "waterfall_nature",
+    "area": "Coorg",
+    "description": "A popular waterfall surrounded by coffee and spice plantations.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Abbey Falls Karnataka",
+    "tags": [
+      "waterfall_nature",
+      "Karnataka"
+    ],
+    "city": "Madikeri",
+    "city_id": "madikeri",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "A popular waterfall surrounded by coffee and spice plantations.",
+    "coordinates": {
+      "lat": 12.4519,
+      "lng": 75.7175
+    },
+    "lat": 12.4519,
+    "lng": 75.7175,
+    "latitude": 12.4519,
+    "longitude": 75.7175,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/abbey-falls",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_034",
+    "name": "Talakaveri",
+    "category": "religious_nature",
+    "area": "Kodagu district",
+    "description": "A sacred site in the Brahmagiri hills traditionally regarded as the source of the Kaveri River.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Talakaveri Karnataka",
+    "tags": [
+      "religious_nature",
+      "Karnataka"
+    ],
+    "city": "Madikeri",
+    "city_id": "madikeri",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "A sacred site in the Brahmagiri hills traditionally regarded as the source of the Kaveri River.",
+    "coordinates": {
+      "lat": 12.3833,
+      "lng": 75.4833
+    },
+    "lat": 12.3833,
+    "lng": 75.4833,
+    "latitude": 12.3833,
+    "longitude": 75.4833,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/talakaveri",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_035",
+    "name": "St. Mary's Island",
+    "category": "island_beach",
+    "area": "Udupi district",
+    "description": "A group of islands known for distinctive basalt rock formations and coastal scenery.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "St. Mary's Island Karnataka",
+    "tags": [
+      "island_beach",
+      "Karnataka"
+    ],
+    "city": "Udupi",
+    "city_id": "udupi",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "A group of islands known for distinctive basalt rock formations and coastal scenery.",
+    "coordinates": {
+      "lat": 13.38,
+      "lng": 74.67
+    },
+    "lat": 13.38,
+    "lng": 74.67,
+    "latitude": 13.38,
+    "longitude": 74.67,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/st-marys-island",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_036",
+    "name": "Mangaluru",
+    "category": "coastal_city",
+    "area": "Dakshina Kannada district",
+    "description": "A coastal city known for beaches, temples, churches, seafood, and regional culture.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Mangaluru Karnataka",
+    "tags": [
+      "coastal_city",
+      "Karnataka"
+    ],
+    "city": "Mangaluru",
+    "city_id": "mangaluru",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "A coastal city known for beaches, temples, churches, seafood, and regional culture.",
+    "coordinates": {
+      "lat": 12.9141,
+      "lng": 74.856
+    },
+    "lat": 12.9141,
+    "lng": 74.856,
+    "latitude": 12.9141,
+    "longitude": 74.856,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/mangaluru",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_037",
+    "name": "Sasihithlu Beach",
+    "category": "beach_nature",
+    "area": "Dakshina Kannada district",
+    "description": "A scenic coastal beach near Mangaluru known for estuary views and water activities.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Sasihithlu Beach Karnataka",
+    "tags": [
+      "beach_nature",
+      "Karnataka"
+    ],
+    "city": "Mangaluru",
+    "city_id": "mangaluru",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "A scenic coastal beach near Mangaluru known for estuary views and water activities.",
+    "coordinates": {
+      "lat": 13.06,
+      "lng": 74.79
+    },
+    "lat": 13.06,
+    "lng": 74.79,
+    "latitude": 13.06,
+    "longitude": 74.79,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/sasihithlu-beach",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_038",
+    "name": "Chitradurga Fort",
+    "category": "fort_heritage",
+    "area": "Chitradurga",
+    "description": "A large historic fort complex famous for multiple defensive walls, gateways, and hilltop views.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Chitradurga Fort Karnataka",
+    "tags": [
+      "fort_heritage",
+      "Karnataka"
+    ],
+    "city": "Chitradurga",
+    "city_id": "chitradurga",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "A large historic fort complex famous for multiple defensive walls, gateways, and hilltop views.",
+    "coordinates": {
+      "lat": 14.2208,
+      "lng": 76.3986
+    },
+    "lat": 14.2208,
+    "lng": 76.3986,
+    "latitude": 14.2208,
+    "longitude": 76.3986,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/chitradurga-fort",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_039",
+    "name": "Lakkundi",
+    "category": "archaeological_heritage",
+    "area": "Gadag district",
+    "description": "A historic temple town known for Chalukyan architecture, stepwells, and carved stone monuments.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Lakkundi Karnataka",
+    "tags": [
+      "archaeological_heritage",
+      "Karnataka"
+    ],
+    "city": "Lakkundi",
+    "city_id": "lakkundi",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "A historic temple town known for Chalukyan architecture, stepwells, and carved stone monuments.",
+    "coordinates": {
+      "lat": 15.3881,
+      "lng": 75.7175
+    },
+    "lat": 15.3881,
+    "lng": 75.7175,
+    "latitude": 15.3881,
+    "longitude": 75.7175,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/lakkundi",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  },
+  {
+    "id": "karnataka_040",
+    "name": "Dandeli Wildlife Sanctuary",
+    "category": "wildlife_nature",
+    "area": "Uttara Kannada district",
+    "description": "A forested wildlife destination known for biodiversity, river landscapes, and outdoor activities.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Dandeli Wildlife Sanctuary Karnataka",
+    "tags": [
+      "wildlife_nature",
+      "Karnataka"
+    ],
+    "city": "Dandeli",
+    "city_id": "dandeli",
+    "state_id": "karnataka",
+    "state": "Karnataka",
+    "country": "India",
+    "summary": "A forested wildlife destination known for biodiversity, river landscapes, and outdoor activities.",
+    "coordinates": {
+      "lat": 15.2361,
+      "lng": 74.6173
+    },
+    "lat": 15.2361,
+    "lng": 74.6173,
+    "latitude": 15.2361,
+    "longitude": 74.6173,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "source_url": "https://karnatakatourism.org/attractions/dandeli-wildlife-sanctuary",
+    "source_name": "Karnataka Tourism Department",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-03-11",
+    "last_verified_at": "2026-03-11",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Usually daytime; timings vary by attraction",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    }
+  }
+]

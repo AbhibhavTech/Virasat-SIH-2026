@@ -112,7 +112,7 @@ class DatabaseManager {
     this.isInitialized = true;
 
     // If fresh / empty or missing place_facts or missing newly added regional places, auto-seed
-    if (Object.keys(this.data.places).length === 0 || Object.keys(this.data.place_facts).length === 0 || !this.data.places['telangana_001'] || !this.data.places['nagaland_001'] || !this.data.places['meghalaya_001'] || !this.data.places['manipur_001'] || !this.data.places['mizoram_001']) {
+    if (Object.keys(this.data.places).length === 0 || Object.keys(this.data.place_facts).length === 0 || !this.data.places['telangana_001'] || !this.data.places['nagaland_001'] || !this.data.places['meghalaya_001'] || !this.data.places['manipur_001'] || !this.data.places['mizoram_001'] || !this.data.places['bihar_001'] || !this.data.places['uttar_pradesh_001'] || !this.data.places['karnataka_001'] || !this.data.places['chhattisgarh_001']) {
       await this.seedFromStaticFiles();
     }
   }
@@ -259,12 +259,21 @@ class DatabaseManager {
           const targetNorm = targetCity.replace(/[-_]+/g, ' ');
           const cNorm = cName.replace(/[-_]+/g, ' ');
           const cIdNorm = cId.replace(/[-_]+/g, ' ');
-          if (cId === targetCity || cName === targetCity || area === targetCity || cNorm === targetNorm || cIdNorm === targetNorm) return true;
+          if (cId === targetCity || cName === targetCity || cNorm === targetNorm || cIdNorm === targetNorm) return true;
+          if (targetNorm === 'bodh gaya' && (cId === 'bodh-gaya' || cId === 'bodh_gaya' || cNorm === 'bodh gaya')) return true;
+          if (targetNorm === 'patna city' && (cId === 'patna-city' || cId === 'patna_city' || cNorm === 'patna city')) return true;
+          if (targetNorm === 'valmiki nagar' && (cId === 'valmiki-nagar' || cId === 'valmiki_nagar' || cNorm === 'valmiki nagar')) return true;
+          if (targetNorm === 'kanger valley' && (cId === 'kanger-valley' || cId === 'kanger_valley' || cNorm === 'kanger valley')) return true;
+          if (targetNorm === 'naya raipur' && (cId === 'naya-raipur' || cId === 'naya_raipur' || cNorm === 'naya raipur')) return true;
+          if (targetNorm === 'tamor pingla' && (cId === 'tamor-pingla' || cId === 'tamor_pingla' || cNorm === 'tamor pingla')) return true;
+          if (targetNorm === 'udanti sitanadi' && (cId === 'udanti-sitanadi' || cId === 'udanti_sitanadi' || cNorm === 'udanti sitanadi')) return true;
+          if (targetNorm === 'hassan' && (cId === 'hassan' || cNorm === 'hassan' || area.includes('hassan'))) return true;
           if ((targetCity === 'bhongir' || targetCity === 'bhuvanagiri') && (cId === 'yadadri-bhuvanagiri' || cName === 'yadadri bhuvanagiri' || area.includes('bhuvanagiri'))) return true;
           if (targetCity === 'yadadri' && (cId === 'yadadri' || cName === 'yadadri')) return true;
           if (targetCity === 'kolkata' && (cId === 'kolkata' || area.includes('howrah') || area.includes('kolkata') || cId === 'howrah')) return true;
           if (targetCity === 'dzukou' && (cId === 'dzukou' || cName.includes('dzukou') || area.includes('dzukou'))) return true;
           if ((targetCity === 'cherrapunji' || targetCity === 'cherrapunjee' || targetCity === 'sohra') && (cId === 'cherrapunji' || cName.includes('cherrapunji'))) return true;
+          if (area === targetCity && !cId && !cName) return true;
           return false;
         });
       }

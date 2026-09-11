@@ -216,7 +216,7 @@ const CITY_ALIASES: Record<string, string[]> = {
   hampi: ['hampi', 'vijayanagara', 'hosapete'],
   madurai: ['madurai'],
   'chhatrapati sambhajinagar': ['chhatrapati sambhajinagar', 'aurangabad'],
-  'bodh gaya': ['bodh gaya', 'nalanda', 'rajgir'],
+  'bodh-gaya': ['bodh gaya', 'bodh_gaya', 'bodhgaya', 'gaya', 'gaya district'],
   bhubaneswar: ['bhubaneswar', 'konark', 'puri'],
   srinagar: ['srinagar'],
   'port blair': ['port blair', 'andaman'],
@@ -254,6 +254,73 @@ const CITY_ALIASES: Record<string, string[]> = {
   saitual: ['saitual', 'saitual district'],
   siaha: ['siaha', 'siaha district'],
   hmuifang: ['hmuifang'],
+  // Bihar
+  patna: ['patna', 'patna district'],
+  nalanda: ['nalanda', 'nalanda district', 'nalanda mahavihara'],
+  rajgir: ['rajgir'],
+  pawapuri: ['pawapuri'],
+  bhagalpur: ['bhagalpur', 'bhagalpur district'],
+  'valmiki-nagar': ['valmiki nagar', 'valmiki_nagar', 'valmiki', 'west champaran', 'west champaran district'],
+  kesaria: ['kesaria', 'east champaran', 'east champaran district'],
+  vaishali: ['vaishali', 'vaishali district'],
+  bhabua: ['bhabua', 'kaimur', 'kaimur district'],
+  jehanabad: ['jehanabad', 'jehanabad district'],
+  sitamarhi: ['sitamarhi', 'sitamarhi district'],
+  munger: ['munger', 'munger district'],
+  'patna-city': ['patna city', 'patna_city'],
+  // Uttar Pradesh
+  lucknow: ['lucknow', 'lucknow district'],
+  ayodhya: ['ayodhya', 'faizabad'],
+  mathura: ['mathura', 'mathura district'],
+  vrindavan: ['vrindavan'],
+  govardhan: ['govardhan'],
+  prayagraj: ['prayagraj', 'allahabad'],
+  vindhyachal: ['vindhyachal', 'mirzapur', 'mirzapur district'],
+  dudhwa: ['dudhwa', 'lakhimpur kheri', 'lakhimpur kheri district'],
+  jhansi: ['jhansi', 'jhansi district'],
+  chitrakoot: ['chitrakoot', 'chitrakoot-up', 'chitrakoot district'],
+  // Karnataka
+  mysuru: ['mysuru', 'mysore', 'mysuru district'],
+  vijayapura: ['vijayapura', 'bijapur'],
+  badami: ['badami'],
+  pattadakal: ['pattadakal', 'bagalkot district'],
+  aihole: ['aihole'],
+  madikeri: ['madikeri', 'coorg', 'kodagu', 'kodagu district'],
+  chikkamagaluru: ['chikkamagaluru', 'chikmagalur', 'chikkamagaluru district'],
+  sagara: ['sagara', 'shivamogga', 'shivamogga district', 'shimoga'],
+  gokarna: ['gokarna'],
+  murudeshwar: ['murudeshwar'],
+  bandipur: ['bandipur', 'chamarajanagar', 'chamarajanagar district'],
+  nagarhole: ['nagarhole'],
+  udupi: ['udupi', 'udupi district'],
+  mangaluru: ['mangaluru', 'mangalore', 'dakshina kannada', 'dakshina kannada district'],
+  chitradurga: ['chitradurga', 'chitradurga district'],
+  lakkundi: ['lakkundi', 'gadag', 'gadag district'],
+  dandeli: ['dandeli'],
+  hassan: ['hassan', 'hassan district', 'belur', 'halebidu'],
+  // Chhattisgarh
+  chitrakote: ['chitrakote'],
+  'kanger-valley': ['kanger valley', 'kanger_valley', 'kanger'],
+  jagdalpur: ['jagdalpur'],
+  dantewada: ['dantewada'],
+  bhoramdeo: ['bhoramdeo', 'kabirdham', 'kabirdham district'],
+  barnawapara: ['barnawapara', 'baloda bazar', 'baloda bazar district'],
+  sirpur: ['sirpur', 'mahasamund', 'mahasamund district'],
+  rajim: ['rajim', 'gariaband', 'gariaband district'],
+  bhilai: ['bhilai', 'durg'],
+  raipur: ['raipur', 'raipur district'],
+  'naya-raipur': ['naya raipur', 'naya_raipur', 'nava raipur'],
+  kanker: ['kanker', 'kanker district'],
+  bastar: ['bastar', 'bastar district', 'bastar region'],
+  bijapur: ['bijapur', 'bijapur district'],
+  'udanti-sitanadi': ['udanti-sitanadi', 'udanti sitanadi', 'udanti'],
+  achanakmar: ['achanakmar', 'mungeli', 'mungeli district'],
+  'tamor-pingla': ['tamor pingla', 'tamor_pingla', 'surajpur', 'surajpur district'],
+  semarsot: ['semarsot', 'balrampur', 'balrampur district'],
+  bhairamgarh: ['bhairamgarh'],
+  sitanadi: ['sitanadi', 'dhamtari', 'dhamtari district'],
+  mainpat: ['mainpat', 'surguja', 'surguja district'],
+  jashpur: ['jashpur', 'jashpur district'],
 };
 
 const CANONICAL_CITY_NAMES: Record<string, string> = {
@@ -285,7 +352,7 @@ const CANONICAL_CITY_NAMES: Record<string, string> = {
   hampi: 'Hampi',
   madurai: 'Madurai',
   'chhatrapati sambhajinagar': 'Chhatrapati Sambhajinagar',
-  'bodh gaya': 'Bodh Gaya',
+  'bodh-gaya': 'Bodh Gaya',
   bhubaneswar: 'Bhubaneswar',
   srinagar: 'Srinagar',
   'port blair': 'Port Blair',
@@ -323,16 +390,102 @@ const CANONICAL_CITY_NAMES: Record<string, string> = {
   saitual: 'Saitual',
   siaha: 'Siaha',
   hmuifang: 'Hmuifang',
+  // Bihar
+  patna: 'Patna',
+  nalanda: 'Nalanda',
+  rajgir: 'Rajgir',
+  pawapuri: 'Pawapuri',
+  bhagalpur: 'Bhagalpur',
+  'valmiki-nagar': 'Valmiki Nagar',
+  kesaria: 'Kesaria',
+  vaishali: 'Vaishali',
+  bhabua: 'Bhabua',
+  jehanabad: 'Jehanabad',
+  sitamarhi: 'Sitamarhi',
+  munger: 'Munger',
+  'patna-city': 'Patna City',
+  // Uttar Pradesh
+  lucknow: 'Lucknow',
+  ayodhya: 'Ayodhya',
+  mathura: 'Mathura',
+  vrindavan: 'Vrindavan',
+  govardhan: 'Govardhan',
+  prayagraj: 'Prayagraj',
+  vindhyachal: 'Vindhyachal',
+  dudhwa: 'Dudhwa',
+  jhansi: 'Jhansi',
+  chitrakoot: 'Chitrakoot',
+  // Karnataka
+  mysuru: 'Mysuru',
+  vijayapura: 'Vijayapura',
+  badami: 'Badami',
+  pattadakal: 'Pattadakal',
+  aihole: 'Aihole',
+  madikeri: 'Madikeri',
+  chikkamagaluru: 'Chikkamagaluru',
+  sagara: 'Sagara',
+  gokarna: 'Gokarna',
+  murudeshwar: 'Murudeshwar',
+  bandipur: 'Bandipur',
+  nagarhole: 'Nagarhole',
+  udupi: 'Udupi',
+  mangaluru: 'Mangaluru',
+  chitradurga: 'Chitradurga',
+  lakkundi: 'Lakkundi',
+  dandeli: 'Dandeli',
+  hassan: 'Hassan',
+  // Chhattisgarh
+  chitrakote: 'Chitrakote',
+  'kanger-valley': 'Kanger Valley',
+  jagdalpur: 'Jagdalpur',
+  dantewada: 'Dantewada',
+  bhoramdeo: 'Bhoramdeo',
+  barnawapara: 'Barnawapara',
+  sirpur: 'Sirpur',
+  rajim: 'Rajim',
+  bhilai: 'Bhilai',
+  raipur: 'Raipur',
+  'naya-raipur': 'Naya Raipur',
+  kanker: 'Kanker',
+  bastar: 'Bastar',
+  bijapur: 'Bijapur',
+  'udanti-sitanadi': 'Udanti-Sitanadi',
+  achanakmar: 'Achanakmar',
+  'tamor-pingla': 'Tamor Pingla',
+  semarsot: 'Semarsot',
+  bhairamgarh: 'Bhairamgarh',
+  sitanadi: 'Sitanadi',
+  mainpat: 'Mainpat',
+  jashpur: 'Jashpur',
 };
 
 function getCanonicalCityId(cityNameOrId: string): string {
   const norm = (cityNameOrId || '').toLowerCase().trim();
   if (!norm) return '';
+  const normSpace = norm.replace(/[-_]+/g, ' ');
+
+  // 1. Exact match on canonical key
+  if (CITY_ALIASES[norm]) return norm;
+  const directKey = norm.replace(/[^a-z0-9]/g, '-');
+  if (CITY_ALIASES[directKey]) return directKey;
+
+  // 2. Exact match on aliases
   for (const [canonId, aliases] of Object.entries(CITY_ALIASES)) {
-    if (canonId === norm || aliases.some((a) => a === norm || norm.includes(a) || a.includes(norm))) {
+    if (aliases.some((a) => a.toLowerCase().trim() === norm || a.toLowerCase().trim().replace(/[-_]+/g, ' ') === normSpace)) {
       return canonId;
     }
   }
+
+  // 3. Word boundary substring matching only as fallback
+  for (const [canonId, aliases] of Object.entries(CITY_ALIASES)) {
+    if (aliases.some((a) => {
+      const aSpace = a.toLowerCase().trim().replace(/[-_]+/g, ' ');
+      return normSpace.startsWith(aSpace + ' ') || normSpace.endsWith(' ' + aSpace);
+    })) {
+      return canonId;
+    }
+  }
+
   return norm.replace(/[^a-z0-9]/g, '-');
 }
 
@@ -350,8 +503,12 @@ function isPlaceInCity(place: any, targetCity: string): boolean {
   const pCityId = ((place as any).city_id || '').toLowerCase().trim();
   const pArea = ((place as any).area || '').toLowerCase().trim();
 
-  if (pCityId && getCanonicalCityId(pCityId) === targetCanon) return true;
-  if (pCity && getCanonicalCityId(pCity) === targetCanon) return true;
+  // If place has explicit city or city_id that maps to a canonical city, strictly match canonical IDs
+  const pCanon = (pCityId && getCanonicalCityId(pCityId)) || (pCity && getCanonicalCityId(pCity));
+  if (pCanon) {
+    return pCanon === targetCanon;
+  }
+
   if (pArea && getCanonicalCityId(pArea) === targetCanon) return true;
 
   const aliases = CITY_ALIASES[targetCanon] || [targetCanon];
@@ -435,6 +592,9 @@ function loadData() {
     loadPlacesFile(path.join(dataDir, 'meghalaya', 'places.json'));
     loadPlacesFile(path.join(dataDir, 'manipur', 'places.json'));
     loadPlacesFile(path.join(dataDir, 'mizoram', 'places.json'));
+    loadPlacesFile(path.join(dataDir, 'uttar-pradesh', 'places.json'));
+    loadPlacesFile(path.join(dataDir, 'karnataka', 'places.json'));
+    loadPlacesFile(path.join(dataDir, 'chhattisgarh', 'places.json'));
 
     // Load Heritage 42+ structured experiences
     const heritagePath = path.join(dataDir, 'heritage', 'monuments.json');
@@ -536,6 +696,39 @@ function loadData() {
       'living-root-bridges'
     ]) {
       placesData.delete(legacyKey);
+    }
+
+    // Ensure Bihar places strictly use verified bihar_001 - bihar_030 IDs
+    if (placesData.has('bihar_001')) {
+      placesData.delete('mahabodhi-temple');
+      placesData.delete('nalanda-university-ruins');
+      placesData.delete('golghar-patna');
+    }
+
+    // Ensure Uttar Pradesh places strictly use verified uttar_pradesh_001 - uttar_pradesh_040 IDs
+    if (placesData.has('uttar_pradesh_011')) {
+      for (const legacyKey of [
+        'taj-mahal', 'fatehpur-sikri', 'agra-fort', 'kashi-vishwanath',
+        'dashashwamedh-ghat', 'sarnath-complex', 'assi-ghat', 'mehtab-bagh'
+      ]) {
+        placesData.delete(legacyKey);
+      }
+    }
+
+    // Ensure Karnataka places strictly use verified karnataka_001 - karnataka_040 IDs
+    if (placesData.has('karnataka_001')) {
+      for (const legacyKey of [
+        'hampi-monuments', 'pattadakal-monuments', 'hoysala-temples-belur',
+        'bangalore-palace', 'hampi-virupaksha', 'hampi-stone-chariot',
+        'tipu-sultan-palace', 'lalbagh-glasshouse'
+      ]) {
+        placesData.delete(legacyKey);
+      }
+    }
+
+    // Ensure Chhattisgarh places strictly use verified chhattisgarh_001 - chhattisgarh_030 IDs
+    if (placesData.has('chhattisgarh_001')) {
+      placesData.delete('sirpur-monuments');
     }
 
     // Comprehensive City Normalization pass for all places in placesData
@@ -1142,13 +1335,7 @@ app.get(['/api/destinations', '/api/places'], (req, res) => {
 
   if (city) {
     const c = (city as string).toLowerCase().trim();
-    results = results.filter((p) =>
-      isPlaceInCity(p, c) ||
-      p.city?.toLowerCase().includes(c) ||
-      (p as any).city_id?.toLowerCase() === c ||
-      c.includes(p.city?.toLowerCase() || '') ||
-      (p.tags && Array.isArray(p.tags) && p.tags.some((t: string) => t.toLowerCase() === c || c.includes(t.toLowerCase())))
-    );
+    results = results.filter((p) => isPlaceInCity(p, c));
   }
 
   if (category && (category as string).toLowerCase() !== 'all') {
