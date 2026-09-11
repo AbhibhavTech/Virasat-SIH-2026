@@ -1,0 +1,139 @@
+{
+  "dataset_name": "Puducherry Tourist Places",
+  "administrative_type": "Union Territory",
+  "name": "Puducherry",
+  "country": "India",
+  "total_places": 5,
+  "places": [
+    {
+      "id": "PUD001",
+      "name": "Sri Aurobindo Ashram",
+      "category": "Spiritual and cultural site",
+      "area": "White Town",
+      "description": "A renowned spiritual centre associated with Sri Aurobindo and The Mother, known for its peaceful atmosphere.",
+      "best_for": [
+        "spirituality",
+        "culture",
+        "quiet visits"
+      ],
+      "city": "Puducherry",
+      "union_territory": "Puducherry",
+      "country": "India",
+      "suggested_duration": "1–3 hours",
+      "best_time_to_visit": "October to March for comfortable sightseeing.",
+      "entry_fee": "Varies; verify current fees before visiting.",
+      "opening_hours": "Varies by place; check official timings before visiting.",
+      "visitor_notes": "Respect photography rules and local religious or cultural guidelines. Access to some areas may be restricted.",
+      "map_search": "Sri Aurobindo Ashram, Puducherry",
+      "tags": [
+        "spiritual and cultural site",
+        "puducherry",
+        "tourism"
+      ]
+    },
+    {
+      "id": "PUD002",
+      "name": "Promenade Beach",
+      "category": "Beach and seafront",
+      "area": "White Town",
+      "description": "A popular waterfront stretch along the Bay of Bengal, ideal for walking, photography and sunrise views.",
+      "best_for": [
+        "beach walks",
+        "sunrise",
+        "photography"
+      ],
+      "city": "Puducherry",
+      "union_territory": "Puducherry",
+      "country": "India",
+      "suggested_duration": "1–3 hours",
+      "best_time_to_visit": "October to March for comfortable sightseeing.",
+      "entry_fee": "Varies; verify current fees before visiting.",
+      "opening_hours": "Varies by place; check official timings before visiting.",
+      "visitor_notes": "Respect photography rules and local religious or cultural guidelines. Access to some areas may be restricted.",
+      "map_search": "Promenade Beach, Puducherry",
+      "tags": [
+        "beach and seafront",
+        "puducherry",
+        "tourism"
+      ]
+    },
+    {
+      "id": "PUD003",
+      "name": "Auroville",
+      "category": "International township",
+      "area": "Near Puducherry",
+      "description": "An experimental international township known for its sustainable-living ideals and the Matrimandir.",
+      "best_for": [
+        "culture",
+        "architecture",
+        "spirituality"
+      ],
+      "city": "Puducherry",
+      "union_territory": "Puducherry",
+      "country": "India",
+      "suggested_duration": "1–3 hours",
+      "best_time_to_visit": "October to March for comfortable sightseeing.",
+      "entry_fee": "Varies; verify current fees before visiting.",
+      "opening_hours": "Varies by place; check official timings before visiting.",
+      "visitor_notes": "Respect photography rules and local religious or cultural guidelines. Access to some areas may be restricted.",
+      "map_search": "Auroville, Puducherry",
+      "tags": [
+        "international township",
+        "puducherry",
+        "tourism"
+      ]
+    },
+    {
+      "id": "PUD004",
+      "name": "Matrimandir",
+      "category": "Meditation centre",
+      "area": "Auroville",
+      "description": "A distinctive golden spherical meditation structure surrounded by landscaped gardens.",
+      "best_for": [
+        "architecture",
+        "meditation",
+        "photography"
+      ],
+      "city": "Puducherry",
+      "union_territory": "Puducherry",
+      "country": "India",
+      "suggested_duration": "1–3 hours",
+      "best_time_to_visit": "October to March for comfortable sightseeing.",
+      "entry_fee": "Varies; verify current fees before visiting.",
+      "opening_hours": "Varies by place; check official timings before visiting.",
+      "visitor_notes": "Respect photography rules and local religious or cultural guidelines. Access to some areas may be restricted.",
+      "map_search": "Matrimandir, Puducherry",
+      "tags": [
+        "meditation centre",
+        "puducherry",
+        "tourism"
+      ]
+    },
+    {
+      "id": "PUD005",
+      "name": "Basilica of the Sacred Heart of Jesus",
+      "category": "Church",
+      "area": "Puducherry Railway Station area",
+      "description": "A prominent Gothic-style basilica known for its stained glass, religious architecture and peaceful interior.",
+      "best_for": [
+        "heritage",
+        "architecture",
+        "religious tourism"
+      ],
+      "city": "Puducherry",
+      "union_territory": "Puducherry",
+      "country": "India",
+      "suggested_duration": "1–3 hours",
+      "best_time_to_visit": "October to March for comfortable sightseeing.",
+      "entry_fee": "Varies; verify current fees before visiting.",
+      "opening_hours": "Varies by place; check official timings before visiting.",
+      "visitor_notes": "Respect photography rules and local religious or cultural guidelines. Access to some areas may be restricted.",
+      "map_search": "Basilica of the Sacred Heart of Jesus, Puducherry",
+      "tags": [
+        "church",
+        "puducherry",
+        "tourism"
+      ]
+    }
+  ]
+}

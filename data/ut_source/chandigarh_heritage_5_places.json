@@ -1,0 +1,60 @@
+{
+  "state_or_union_territory": "Chandigarh",
+  "administrative_type": "Union Territory",
+  "dataset_type": "heritage_places",
+  "total_places": 5,
+  "places": [
+    {
+      "id": "chandigarh_heritage_001",
+      "name": "Capitol Complex",
+      "category": "modernist_architecture",
+      "locality": "Sector 1",
+      "description": "Landmark civic complex designed as part of Le Corbusier's planned city of Chandigarh.",
+      "unesco": true,
+      "unesco_note": "Part of The Architectural Work of Le Corbusier, a UNESCO World Heritage property.",
+      "protection_status": "UNESCO World Heritage property"
+    },
+    {
+      "id": "chandigarh_heritage_002",
+      "name": "Open Hand Monument",
+      "category": "monument",
+      "locality": "Capitol Complex, Sector 1",
+      "description": "Symbolic monument representing peace, reconciliation and the principle of giving and receiving.",
+      "unesco": true,
+      "unesco_note": "Located within the UNESCO-listed Capitol Complex.",
+      "protection_status": "Within UNESCO World Heritage property"
+    },
+    {
+      "id": "chandigarh_heritage_003",
+      "name": "Rock Garden of Nek Chand",
+      "category": "sculpture_garden",
+      "locality": "Sector 1",
+      "description": "Distinctive garden created from reused and discarded materials by Nek Chand.",
+      "unesco": false,
+      "protection_status": "Verify current official protection status"
+    },
+    {
+      "id": "chandigarh_heritage_004",
+      "name": "Sukhna Lake",
+      "category": "cultural_landscape",
+      "locality": "Sector 1",
+      "description": "Man-made lake and major landscape landmark associated with Chandigarh's planned urban design.",
+      "unesco": false,
+      "protection_status": "Verify current official protection status"
+    },
+    {
+      "id": "chandigarh_heritage_005",
+      "name": "Government Museum and Art Gallery",
+      "category": "museum",
+      "locality": "Sector 10",
+      "description": "Important cultural institution housing archaeological, historical and art collections.",
+      "unesco": false,
+      "protection_status": "Verify current official protection status"
+    }
+  ],
+  "notes": [
+    "This is a compact website-ready preliminary dataset.",
+    "UNESCO status is marked for the Capitol Complex and the Open Hand Monument because they are part of the UNESCO-listed Capitol Complex.",
+    "Verify current protection status, visitor access and official descriptions before production use."
+  ]
+}

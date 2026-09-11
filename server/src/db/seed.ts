@@ -319,12 +319,12 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
   // -------------------------------------------------------------
   // 5. Regional Flagship Datasets (Mumbai, Delhi, Rajasthan, Goa, Kerala, Maharashtra)
   // -------------------------------------------------------------
-  const regionalDirs = ['mumbai', 'delhi', 'rajasthan', 'maharashtra', 'goa', 'kerala', 'ladakh', 'jammu-kashmir', 'punjab', 'kolkata', 'west-bengal'];
+  const regionalDirs = ['mumbai', 'delhi', 'rajasthan', 'maharashtra', 'goa', 'kerala', 'ladakh', 'jammu-kashmir', 'punjab', 'kolkata', 'west-bengal', 'odisha', 'andhra-pradesh', 'assam', 'arunachal-pradesh', 'himachal-pradesh', 'sikkim', 'tripura', 'uttarakhand'];
   for (const reg of regionalDirs) {
     const regPath = path.join(rootDataDir, reg, 'places.json');
     if (fs.existsSync(regPath)) {
       try {
-        const regionalPlaces = JSON.parse(fs.readFileSync(regPath, 'utf-8'));
+        const regionalPlaces = JSON.parse(fs.readFileSync(regPath, 'utf-8').replace(/^\uFEFF/, ''));
         if (Array.isArray(regionalPlaces)) {
           for (const rp of regionalPlaces) {
             const stateId = (rp.state_id || rp.state || reg).toLowerCase().replace(/[^a-z0-9]+/g, '-');
@@ -770,6 +770,13 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
       accessed_on: p.last_verified_on || '2026-03-10',
       verification_status: p.verification_status,
     }];
+  }
+
+  // Clean up any orphan facts whose place_id was pruned
+  for (const [factId, fact] of Object.entries(place_facts)) {
+    if (!places[fact.place_id]) {
+      delete place_facts[factId];
+    }
   }
 
   console.log(`[DB Seed] Seeding complete: ${Object.keys(states).length} states, ${Object.keys(cities).length} cities, ${Object.keys(places).length} places (${Object.values(places).filter(p => p.data_confidence === 'official').length} verified), ${Object.keys(place_facts).length} granular facts, ${Object.keys(transit_nodes).length} transit nodes.`);

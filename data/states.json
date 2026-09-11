@@ -49,11 +49,11 @@
     "capital": "Shimla",
     "region": "Northern India",
     "official_tourism_url": "https://himachaltourism.gov.in",
-    "description": "Himachal Pradesh is a northern Indian Himalayan state renowned for high-altitude ecosystems, historic Buddhist monasteries, wooden pagoda temples, and historic hill stations.",
+    "description": "The Land of Gods (Dev Bhoomi), celebrated for towering western Himalayan peaks, lush cedar and pine forests, rushing mountain rivers, colonial hill stations, Tibetan monasteries, and high-altitude cold deserts.",
     "status": "verified",
     "hero_image_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=1200&q=80",
-    "total_cities": 6,
-    "total_attractions": 12
+    "total_cities": 12,
+    "total_attractions": 20
   },
   {
     "id": "jammu-and-kashmir",
@@ -104,12 +104,12 @@
     "type": "state",
     "capital": "Jaipur",
     "region": "Western India",
-    "official_tourism_url": "https://www.tourism.rajasthan.gov.in",
-    "description": "Rajasthan, the Land of Kings, showcases royal Rajput architecture, desert expanses, UNESCO World Heritage Hill Forts, intricately painted havelis, wildlife sanctuaries, and vibrant handicrafts.",
+    "official_tourism_url": "https://tourism.rajasthan.gov.in",
+    "description": "Land of Kings: Monumental hill forts of Rajasthan, royal palaces, Thar Desert sand dunes, sacred lakes, and vibrant Rajput heritage.",
     "status": "verified",
     "hero_image_url": "https://images.unsplash.com/photo-1477587458883-47145ed94245?w=1200&q=80",
-    "total_cities": 2,
-    "total_attractions": 4
+    "total_cities": 9,
+    "total_attractions": 20
   },
   {
     "id": "uttar-pradesh",
@@ -132,12 +132,12 @@
     "type": "state",
     "capital": "Dehradun",
     "region": "Northern India",
-    "official_tourism_url": "https://unsplash.com/photos/kedarnath-temple-himalayas-K_5m1q9Z2v4",
-    "description": "Land of Gods (Devbhoomi), sacred Char Dham Himalayan pilgrimage, Yoga capital Rishikesh, and Nanda Devi UNESCO reserve.",
+    "official_tourism_url": "https://uttarakhandtourism.gov.in",
+    "description": "Devbhoomi (Land of the Gods): Divine Himalayan sanctuary home to sacred Chota Char Dham (Yamunotri, Gangotri, Kedarnath, Badrinath), Yoga capital Rishikesh, UNESCO Valley of Flowers, and Nanda Devi peaks.",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
     "total_cities": 17,
-    "total_attractions": 7
+    "total_attractions": 20
   },
   {
     "id": "arunachal-pradesh",
@@ -147,11 +147,11 @@
     "capital": "Itanagar",
     "region": "Northeastern India",
     "official_tourism_url": "https://arunachaltourism.com",
-    "description": "Arunachal Pradesh, known as the Land of the Dawn-Lit Mountains, is India easternmost state, characterized by dramatic Himalayan river valleys, ancient Mahayana Buddhist gompas, and pristine biodiversity hotspots.",
+    "description": "The Land of Dawn-lit Mountains, renowned for dramatic eastern Himalayan landscapes, ancient Tibetan Buddhist monasteries, indigenous tribal culture, and biodiverse rainforests.",
     "status": "verified",
     "hero_image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&q=80",
-    "total_cities": 2,
-    "total_attractions": 4
+    "total_cities": 9,
+    "total_attractions": 15
   },
   {
     "id": "assam",
@@ -160,12 +160,12 @@
     "type": "state",
     "capital": "Dispur",
     "region": "Northeastern India",
-    "official_tourism_url": "https://unsplash.com/photos/a-couple-of-elephants-standing-on-top-of-a-lush-green-field-x4fF2_8iY8c",
-    "description": "Brahmaputra valley home to Kaziranga one-horned rhinos, Majuli river island, Kamakhya temple, and lush tea gardens.",
+    "official_tourism_url": "https://tourism.assam.gov.in",
+    "description": "The Land of Red River & Blue Hills: World heritage sanctuaries of Kaziranga and Manas, sacred Kamakhya Temple on Nilachal Hill, majestic Majuli river island, and royal Ahom monuments.",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=1200&auto=format&fit=crop&q=80",
-    "total_cities": 9,
-    "total_attractions": 7
+    "total_cities": 10,
+    "total_attractions": 15
   },
   {
     "id": "manipur",
@@ -230,12 +230,12 @@
     "type": "state",
     "capital": "Gangtok",
     "region": "Northeastern India",
-    "official_tourism_url": "https://unsplash.com/photos/snow-covered-mountains-under-blue-sky-during-daytime-S_9m2q4Z7v1",
-    "description": "Himalayan wonderland crowned by Mt. Khangchendzonga (UNESCO Mixed World Heritage), Buddhist monasteries, and alpine lakes.",
+    "official_tourism_url": "https://sikkimtourism.gov.in",
+    "description": "The Valley of Rice and Gateway to Kanchenjunga: Pristine Himalayan sanctuary famed for high-altitude glacial lakes, ancient Tibetan monasteries, alpine rhododendron valleys, and dramatic mountain passes.",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?w=1200&auto=format&fit=crop&q=80",
-    "total_cities": 3,
-    "total_attractions": 7
+    "total_cities": 5,
+    "total_attractions": 10
   },
   {
     "id": "tripura",
@@ -244,12 +244,12 @@
     "type": "state",
     "capital": "Agartala",
     "region": "Northeastern India",
-    "official_tourism_url": "https://unsplash.com/photos/white-palace-complex-surrounded-by-gardens-U_8m2q4Z9v1",
-    "description": "Historic kingdom featuring the lakeside Neermahal palace, Ujjayanta Palace, and colossal 7th-9th century rock reliefs at Unakoti.",
+    "official_tourism_url": "https://tripuratourism.gov.in",
+    "description": "Historic kingdom of the royal Manikya dynasty, celebrated for the lakeside Neermahal palace, neoclassical Ujjayanta Palace, ancient Shaivite rock carvings at Unakoti, and lush orange-fringed Jampui Hills.",
     "status": "active",
-    "hero_image_url": "https://images.unsplash.com/photo-1628172900407-7d9921338f28?w=1200&auto=format&fit=crop&q=80",
-    "total_cities": 2,
-    "total_attractions": 6
+    "hero_image_url": "https://images.unsplash.com/photo-1596761403273-049079bfbc06?w=1200&auto=format&fit=crop&q=80",
+    "total_cities": 5,
+    "total_attractions": 5
   },
   {
     "id": "andaman-and-nicobar-islands",
@@ -300,12 +300,12 @@
     "type": "state",
     "capital": "Bhubaneswar",
     "region": "Eastern India",
-    "official_tourism_url": "https://unsplash.com/photos/brown-concrete-statue-during-daytime-P_3m8q1Z5v7",
-    "description": "Soul of Incredible India featuring Konark Sun Temple (UNESCO), Puri Jagannath shrine, Chilika lagoon, and Kalinga architecture.",
+    "official_tourism_url": "https://tourism.odisha.gov.in",
+    "description": "Soul of Incredible India: Sacred Char Dham Jagannath Temple, UNESCO Konark Sun Temple, Asia's largest Chilika lagoon, and living Pattachitra crafts.",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1606298855672-3efb620b78ec?w=1200&auto=format&fit=crop&q=80",
-    "total_cities": 5,
-    "total_attractions": 7
+    "total_cities": 10,
+    "total_attractions": 15
   },
   {
     "id": "west-bengal",
@@ -412,12 +412,12 @@
     "type": "state",
     "capital": "Amaravati",
     "region": "Southern India",
-    "official_tourism_url": "https://unsplash.com/photos/a-large-stone-temple-sitting-on-top-of-a-rock-surface-9Mpmf6Gq69o",
-    "description": "Sacred coastal state home to the Tirumala Venkateswara shrine, Buddhist stupas of Amaravati, and Lepakshi hanging pillar marvel.",
+    "official_tourism_url": "https://tourism.andhra-pradesh.gov.in",
+    "description": "Jewel of Southern India: Sacred Tirumala Venkateswara shrine, misty Araku Valley coffee hills, Bay of Bengal beaches, Vijayanagara Lepakshi temple, and Godavari river canyons.",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?w=1200&auto=format&fit=crop&q=80",
-    "total_cities": 13,
-    "total_attractions": 7
+    "total_cities": 10,
+    "total_attractions": 15
   },
   {
     "id": "karnataka",
@@ -440,12 +440,12 @@
     "type": "state",
     "capital": "Thiruvananthapuram",
     "region": "Southern India",
-    "official_tourism_url": "https://unsplash.com/photos/houseboat-on-water-near-trees-during-daytime-G7k4v8p9m3Q",
-    "description": "God's Own Country featuring palm-fringed backwaters of Alappuzha, Munnar tea hills, historic Fort Kochi, and Kathakali traditions.",
+    "official_tourism_url": "https://keralatourism.org",
+    "description": "God’s Own Country: Tropical paradise of palm-lined backwaters, emerald Western Ghats hill stations, pristine Arabian Sea beaches, historic colonial spice ports, and rich Ayurvedic traditions.",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1200&auto=format&fit=crop&q=80",
-    "total_cities": 19,
-    "total_attractions": 9
+    "total_cities": 15,
+    "total_attractions": 20
   },
   {
     "id": "lakshadweep",

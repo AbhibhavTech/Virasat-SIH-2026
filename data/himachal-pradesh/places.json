@@ -1,0 +1,1296 @@
+[
+  {
+    "id": "himachal_001",
+    "name": "Shimla",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "city": "Shimla",
+    "city_id": "shimla",
+    "country": "India",
+    "area": "Shimla district",
+    "category": "hill_station",
+    "categories": [
+      "hill_station",
+      "himachal_pradesh"
+    ],
+    "summary": "The capital of Himachal Pradesh, known for colonial architecture, mountain views, shopping streets, and pleasant weather.",
+    "description": "The capital of Himachal Pradesh, known for colonial architecture, mountain views, shopping streets, and pleasant weather.",
+    "best_for": [
+      "hill views",
+      "heritage",
+      "shopping",
+      "family trips"
+    ],
+    "suggested_duration": "2–3 days",
+    "best_time_to_visit": "March to June; December to February for snow",
+    "entry_fee": "Usually free; individual attractions may charge",
+    "opening_hours": "City access throughout the day; attractions vary",
+    "visitor_notes": [
+      "Carry warm clothing in winter",
+      "Traffic and parking can be difficult during peak season"
+    ],
+    "map_search": "Shimla Himachal Pradesh",
+    "tags": [
+      "hill station",
+      "capital",
+      "Shimla"
+    ],
+    "coordinates": {
+      "lat": 31.1048,
+      "lng": 77.1734
+    },
+    "lat": 31.1048,
+    "lng": 77.1734,
+    "latitude": 31.1048,
+    "longitude": 77.1734,
+    "rating": 4.8,
+    "reviews_count": "2.5k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Himachal Pradesh Tourism Development Corporation",
+    "source_url": "https://himachaltourism.gov.in",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "himachal_002",
+    "name": "Mall Road",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "city": "Shimla",
+    "city_id": "shimla",
+    "country": "India",
+    "area": "Shimla",
+    "category": "shopping_recreation",
+    "categories": [
+      "shopping_recreation",
+      "himachal_pradesh"
+    ],
+    "summary": "Shimla’s main pedestrian shopping and leisure street lined with cafés, shops, colonial buildings, and viewpoints.",
+    "description": "Shimla’s main pedestrian shopping and leisure street lined with cafés, shops, colonial buildings, and viewpoints.",
+    "best_for": [
+      "shopping",
+      "walking",
+      "food",
+      "photography"
+    ],
+    "suggested_duration": "2–3 hours",
+    "best_time_to_visit": "March to June; December to February for snow",
+    "entry_fee": "Free",
+    "opening_hours": "Open throughout the day; shops have individual timings",
+    "visitor_notes": [
+      "Mostly pedestrian",
+      "Expect crowds during holidays"
+    ],
+    "map_search": "Mall Road Himachal Pradesh",
+    "tags": [
+      "shopping",
+      "heritage",
+      "Shimla"
+    ],
+    "coordinates": {
+      "lat": 31.1042,
+      "lng": 77.1741
+    },
+    "lat": 31.1042,
+    "lng": 77.1741,
+    "latitude": 31.1042,
+    "longitude": 77.1741,
+    "rating": 4.8,
+    "reviews_count": "2.5k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Himachal Pradesh Tourism Development Corporation",
+    "source_url": "https://himachaltourism.gov.in",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "himachal_003",
+    "name": "The Ridge",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "city": "Shimla",
+    "city_id": "shimla",
+    "country": "India",
+    "area": "Shimla",
+    "category": "viewpoint_heritage",
+    "categories": [
+      "viewpoint_heritage",
+      "himachal_pradesh"
+    ],
+    "summary": "A spacious open promenade offering views of the surrounding mountains and access to several historic landmarks.",
+    "description": "A spacious open promenade offering views of the surrounding mountains and access to several historic landmarks.",
+    "best_for": [
+      "sunsets",
+      "photography",
+      "walking",
+      "heritage"
+    ],
+    "suggested_duration": "1–2 hours",
+    "best_time_to_visit": "March to June; winter for snow",
+    "entry_fee": "Free",
+    "opening_hours": "Open throughout the day",
+    "visitor_notes": [
+      "Evenings can be cold",
+      "Often hosts public events"
+    ],
+    "map_search": "The Ridge Himachal Pradesh",
+    "tags": [
+      "viewpoint",
+      "heritage",
+      "Shimla"
+    ],
+    "coordinates": {
+      "lat": 31.1053,
+      "lng": 77.1755
+    },
+    "lat": 31.1053,
+    "lng": 77.1755,
+    "latitude": 31.1053,
+    "longitude": 77.1755,
+    "rating": 4.8,
+    "reviews_count": "2.5k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1562088287-bde35a1ea917?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1562088287-bde35a1ea917?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1562088287-bde35a1ea917?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1562088287-bde35a1ea917?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Himachal Pradesh Tourism Development Corporation",
+    "source_url": "https://himachaltourism.gov.in",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "himachal_004",
+    "name": "Jakhu Temple",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "city": "Shimla",
+    "city_id": "shimla",
+    "country": "India",
+    "area": "Shimla",
+    "category": "religious_viewpoint",
+    "categories": [
+      "religious_viewpoint",
+      "himachal_pradesh"
+    ],
+    "summary": "A hilltop temple dedicated to Lord Hanuman, featuring a prominent statue and panoramic views of Shimla.",
+    "description": "A hilltop temple dedicated to Lord Hanuman, featuring a prominent statue and panoramic views of Shimla.",
+    "best_for": [
+      "pilgrimage",
+      "views",
+      "photography"
+    ],
+    "suggested_duration": "1–2 hours",
+    "best_time_to_visit": "March to June; September to November",
+    "entry_fee": "Free",
+    "opening_hours": "Usually open daily; timings may vary",
+    "visitor_notes": [
+      "Steep approach",
+      "Keep belongings secure around monkeys"
+    ],
+    "map_search": "Jakhu Temple Himachal Pradesh",
+    "tags": [
+      "temple",
+      "Hanuman",
+      "Shimla"
+    ],
+    "coordinates": {
+      "lat": 31.1009,
+      "lng": 77.1839
+    },
+    "lat": 31.1009,
+    "lng": 77.1839,
+    "latitude": 31.1009,
+    "longitude": 77.1839,
+    "rating": 4.8,
+    "reviews_count": "2.5k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f4b66f284e3e?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1600100397608-f4b66f284e3e?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1600100397608-f4b66f284e3e?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1600100397608-f4b66f284e3e?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Himachal Pradesh Tourism Development Corporation",
+    "source_url": "https://himachaltourism.gov.in",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "himachal_005",
+    "name": "Kufri",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "city": "Kufri",
+    "city_id": "kufri",
+    "country": "India",
+    "area": "Near Shimla",
+    "category": "hill_station_nature",
+    "categories": [
+      "hill_station_nature",
+      "himachal_pradesh"
+    ],
+    "summary": "A popular high-altitude destination known for scenic meadows, winter snow activities, and mountain landscapes.",
+    "description": "A popular high-altitude destination known for scenic meadows, winter snow activities, and mountain landscapes.",
+    "best_for": [
+      "snow",
+      "nature",
+      "family outings",
+      "adventure"
+    ],
+    "suggested_duration": "Half day",
+    "best_time_to_visit": "December to February for snow; March to June for greenery",
+    "entry_fee": "Varies by attraction and activity",
+    "opening_hours": "Daytime; individual activities vary",
+    "visitor_notes": [
+      "Snow activities depend on weather",
+      "Roads may be slippery in winter"
+    ],
+    "map_search": "Kufri Himachal Pradesh",
+    "tags": [
+      "snow",
+      "hill station",
+      "Shimla"
+    ],
+    "coordinates": {
+      "lat": 31.0979,
+      "lng": 77.2678
+    },
+    "lat": 31.0979,
+    "lng": 77.2678,
+    "latitude": 31.0979,
+    "longitude": 77.2678,
+    "rating": 4.8,
+    "reviews_count": "2.5k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Himachal Pradesh Tourism Development Corporation",
+    "source_url": "https://himachaltourism.gov.in",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "himachal_006",
+    "name": "Manali",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "city": "Manali",
+    "city_id": "manali",
+    "country": "India",
+    "area": "Kullu district",
+    "category": "hill_station",
+    "categories": [
+      "hill_station",
+      "himachal_pradesh"
+    ],
+    "summary": "A popular Himalayan town known for river valleys, mountain scenery, adventure activities, and nearby attractions.",
+    "description": "A popular Himalayan town known for river valleys, mountain scenery, adventure activities, and nearby attractions.",
+    "best_for": [
+      "nature",
+      "adventure",
+      "honeymoon",
+      "family trips"
+    ],
+    "suggested_duration": "2–4 days",
+    "best_time_to_visit": "March to June; October to February for snow",
+    "entry_fee": "Usually free; individual attractions may charge",
+    "opening_hours": "Town access throughout the day; attractions vary",
+    "visitor_notes": [
+      "Check road conditions before travel",
+      "Peak seasons can be crowded"
+    ],
+    "map_search": "Manali Himachal Pradesh",
+    "tags": [
+      "hill station",
+      "mountains",
+      "Kullu"
+    ],
+    "coordinates": {
+      "lat": 32.2432,
+      "lng": 77.1892
+    },
+    "lat": 32.2432,
+    "lng": 77.1892,
+    "latitude": 32.2432,
+    "longitude": 77.1892,
+    "rating": 4.8,
+    "reviews_count": "2.5k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1571401835393-8c5f35328320?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1571401835393-8c5f35328320?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1571401835393-8c5f35328320?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1571401835393-8c5f35328320?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Himachal Pradesh Tourism Development Corporation",
+    "source_url": "https://himachaltourism.gov.in",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "himachal_007",
+    "name": "Solang Valley",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "city": "Manali",
+    "city_id": "manali",
+    "country": "India",
+    "area": "Near Manali",
+    "category": "adventure_nature",
+    "categories": [
+      "adventure_nature",
+      "himachal_pradesh"
+    ],
+    "summary": "A scenic valley famous for paragliding, zorbing, skiing, snow activities, and mountain views.",
+    "description": "A scenic valley famous for paragliding, zorbing, skiing, snow activities, and mountain views.",
+    "best_for": [
+      "adventure",
+      "snow",
+      "photography"
+    ],
+    "suggested_duration": "Half day",
+    "best_time_to_visit": "December to February for snow; March to June for adventure activities",
+    "entry_fee": "Varies by activity",
+    "opening_hours": "Daytime; activity timings vary",
+    "visitor_notes": [
+      "Use licensed activity operators",
+      "Weather can change quickly"
+    ],
+    "map_search": "Solang Valley Himachal Pradesh",
+    "tags": [
+      "adventure",
+      "snow",
+      "Manali"
+    ],
+    "coordinates": {
+      "lat": 32.3167,
+      "lng": 77.1572
+    },
+    "lat": 32.3167,
+    "lng": 77.1572,
+    "latitude": 32.3167,
+    "longitude": 77.1572,
+    "rating": 4.8,
+    "reviews_count": "2.5k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Himachal Pradesh Tourism Development Corporation",
+    "source_url": "https://himachaltourism.gov.in",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "himachal_008",
+    "name": "Rohtang Pass",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "city": "Manali",
+    "city_id": "manali",
+    "country": "India",
+    "area": "Near Manali",
+    "category": "mountain_pass",
+    "categories": [
+      "mountain_pass",
+      "himachal_pradesh"
+    ],
+    "summary": "A high mountain pass offering dramatic Himalayan scenery and seasonal snowfields.",
+    "description": "A high mountain pass offering dramatic Himalayan scenery and seasonal snowfields.",
+    "best_for": [
+      "snow",
+      "mountain views",
+      "photography"
+    ],
+    "suggested_duration": "Full day",
+    "best_time_to_visit": "May to October, subject to permits and road conditions",
+    "entry_fee": "Permit and transport charges may apply",
+    "opening_hours": "Access depends on weather, permits, and official restrictions",
+    "visitor_notes": [
+      "Check permit requirements",
+      "Acclimatize and carry warm clothing"
+    ],
+    "map_search": "Rohtang Pass Himachal Pradesh",
+    "tags": [
+      "mountain pass",
+      "snow",
+      "Manali"
+    ],
+    "coordinates": {
+      "lat": 32.3716,
+      "lng": 77.2466
+    },
+    "lat": 32.3716,
+    "lng": 77.2466,
+    "latitude": 32.3716,
+    "longitude": 77.2466,
+    "rating": 4.8,
+    "reviews_count": "2.5k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Himachal Pradesh Tourism Development Corporation",
+    "source_url": "https://himachaltourism.gov.in",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "himachal_009",
+    "name": "Hadimba Devi Temple",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "city": "Manali",
+    "city_id": "manali",
+    "country": "India",
+    "area": "Manali",
+    "category": "religious_heritage",
+    "categories": [
+      "religious_heritage",
+      "himachal_pradesh"
+    ],
+    "summary": "A distinctive wooden temple dedicated to Hidimba Devi, set among cedar forests.",
+    "description": "A distinctive wooden temple dedicated to Hidimba Devi, set among cedar forests.",
+    "best_for": [
+      "heritage",
+      "religion",
+      "architecture",
+      "nature"
+    ],
+    "suggested_duration": "1 hour",
+    "best_time_to_visit": "March to June; October to February",
+    "entry_fee": "Free",
+    "opening_hours": "Usually open daily; timings may vary",
+    "visitor_notes": [
+      "Remove footwear where required",
+      "Respect temple customs"
+    ],
+    "map_search": "Hadimba Devi Temple Himachal Pradesh",
+    "tags": [
+      "temple",
+      "wooden architecture",
+      "Manali"
+    ],
+    "coordinates": {
+      "lat": 32.2483,
+      "lng": 77.1806
+    },
+    "lat": 32.2483,
+    "lng": 77.1806,
+    "latitude": 32.2483,
+    "longitude": 77.1806,
+    "rating": 4.8,
+    "reviews_count": "2.5k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Himachal Pradesh Tourism Development Corporation",
+    "source_url": "https://himachaltourism.gov.in",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "himachal_010",
+    "name": "Kasol",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "city": "Kasol",
+    "city_id": "kasol",
+    "country": "India",
+    "area": "Parvati Valley, Kullu district",
+    "category": "village_nature",
+    "categories": [
+      "village_nature",
+      "himachal_pradesh"
+    ],
+    "summary": "A riverside village known for forest trails, mountain scenery, cafés, and access to the Parvati Valley.",
+    "description": "A riverside village known for forest trails, mountain scenery, cafés, and access to the Parvati Valley.",
+    "best_for": [
+      "trekking",
+      "nature",
+      "backpacking",
+      "photography"
+    ],
+    "suggested_duration": "1–2 days",
+    "best_time_to_visit": "March to June; September to November",
+    "entry_fee": "Free",
+    "opening_hours": "Open throughout the day",
+    "visitor_notes": [
+      "Carry cash and basic supplies",
+      "Follow local environmental guidelines"
+    ],
+    "map_search": "Kasol Himachal Pradesh",
+    "tags": [
+      "village",
+      "trekking",
+      "Parvati Valley"
+    ],
+    "coordinates": {
+      "lat": 32.01,
+      "lng": 77.315
+    },
+    "lat": 32.01,
+    "lng": 77.315,
+    "latitude": 32.01,
+    "longitude": 77.315,
+    "rating": 4.8,
+    "reviews_count": "2.5k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Himachal Pradesh Tourism Development Corporation",
+    "source_url": "https://himachaltourism.gov.in",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "himachal_011",
+    "name": "Kheerganga",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "city": "Barshaini",
+    "city_id": "barshaini",
+    "country": "India",
+    "area": "Parvati Valley",
+    "category": "trek_nature",
+    "categories": [
+      "trek_nature",
+      "himachal_pradesh"
+    ],
+    "summary": "A popular trekking destination known for forest paths, mountain views, and natural hot-water springs.",
+    "description": "A popular trekking destination known for forest paths, mountain views, and natural hot-water springs.",
+    "best_for": [
+      "trekking",
+      "nature",
+      "adventure"
+    ],
+    "suggested_duration": "1–2 days",
+    "best_time_to_visit": "April to June; September to November",
+    "entry_fee": "May include local or trail charges",
+    "opening_hours": "Daylight trekking recommended",
+    "visitor_notes": [
+      "Use a local guide if inexperienced",
+      "Check weather and trail status"
+    ],
+    "map_search": "Kheerganga Himachal Pradesh",
+    "tags": [
+      "trek",
+      "hot springs",
+      "Parvati Valley"
+    ],
+    "coordinates": {
+      "lat": 31.9906,
+      "lng": 77.5111
+    },
+    "lat": 31.9906,
+    "lng": 77.5111,
+    "latitude": 31.9906,
+    "longitude": 77.5111,
+    "rating": 4.8,
+    "reviews_count": "2.5k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Himachal Pradesh Tourism Development Corporation",
+    "source_url": "https://himachaltourism.gov.in",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "himachal_012",
+    "name": "Dharamshala",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "city": "Dharamshala",
+    "city_id": "dharamshala",
+    "country": "India",
+    "area": "Kangra district",
+    "category": "hill_station_cultural",
+    "categories": [
+      "hill_station_cultural",
+      "himachal_pradesh"
+    ],
+    "summary": "A mountain town known for Tibetan culture, monasteries, cafés, and views of the Dhauladhar range.",
+    "description": "A mountain town known for Tibetan culture, monasteries, cafés, and views of the Dhauladhar range.",
+    "best_for": [
+      "culture",
+      "nature",
+      "spirituality",
+      "photography"
+    ],
+    "suggested_duration": "2–3 days",
+    "best_time_to_visit": "March to June; September to November",
+    "entry_fee": "Usually free; individual attractions may charge",
+    "opening_hours": "Town access throughout the day",
+    "visitor_notes": [
+      "Weather changes quickly",
+      "Respect monastery customs"
+    ],
+    "map_search": "Dharamshala Himachal Pradesh",
+    "tags": [
+      "hill station",
+      "Tibetan culture",
+      "Kangra"
+    ],
+    "coordinates": {
+      "lat": 32.219,
+      "lng": 76.3234
+    },
+    "lat": 32.219,
+    "lng": 76.3234,
+    "latitude": 32.219,
+    "longitude": 76.3234,
+    "rating": 4.8,
+    "reviews_count": "2.5k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Himachal Pradesh Tourism Development Corporation",
+    "source_url": "https://himachaltourism.gov.in",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "himachal_015",
+    "name": "Dal Lake Dharamshala",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "city": "Dharamshala",
+    "city_id": "dharamshala",
+    "country": "India",
+    "area": "Naddi, Dharamshala",
+    "category": "lake_nature",
+    "categories": [
+      "lake_nature",
+      "himachal_pradesh"
+    ],
+    "summary": "A small scenic lake surrounded by deodar trees and mountain landscapes.",
+    "description": "A small scenic lake surrounded by deodar trees and mountain landscapes.",
+    "best_for": [
+      "nature",
+      "walking",
+      "photography"
+    ],
+    "suggested_duration": "1 hour",
+    "best_time_to_visit": "March to June; September to November",
+    "entry_fee": "Usually free or nominal",
+    "opening_hours": "Daytime",
+    "visitor_notes": [
+      "Best combined with Naddi and McLeod Ganj"
+    ],
+    "map_search": "Dal Lake Dharamshala Himachal Pradesh",
+    "tags": [
+      "lake",
+      "nature",
+      "Dharamshala"
+    ],
+    "coordinates": {
+      "lat": 32.2464,
+      "lng": 76.3075
+    },
+    "lat": 32.2464,
+    "lng": 76.3075,
+    "latitude": 32.2464,
+    "longitude": 76.3075,
+    "rating": 4.8,
+    "reviews_count": "2.5k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1439853941329-a99ce049f08c?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1439853941329-a99ce049f08c?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1439853941329-a99ce049f08c?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1439853941329-a99ce049f08c?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Himachal Pradesh Tourism Development Corporation",
+    "source_url": "https://himachaltourism.gov.in",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "himachal_013",
+    "name": "McLeod Ganj",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "city": "McLeod Ganj",
+    "city_id": "mcleod-ganj",
+    "country": "India",
+    "area": "Dharamshala",
+    "category": "cultural_hill_station",
+    "categories": [
+      "cultural_hill_station",
+      "himachal_pradesh"
+    ],
+    "summary": "A culturally rich hill settlement associated with Tibetan Buddhism, monasteries, markets, and cafés.",
+    "description": "A culturally rich hill settlement associated with Tibetan Buddhism, monasteries, markets, and cafés.",
+    "best_for": [
+      "culture",
+      "spirituality",
+      "shopping",
+      "food"
+    ],
+    "suggested_duration": "1–2 days",
+    "best_time_to_visit": "March to June; September to November",
+    "entry_fee": "Usually free; attractions may charge",
+    "opening_hours": "Town access throughout the day",
+    "visitor_notes": [
+      "Dress respectfully at monasteries",
+      "Busy streets may have limited parking"
+    ],
+    "map_search": "McLeod Ganj Himachal Pradesh",
+    "tags": [
+      "Tibetan culture",
+      "monastery",
+      "Dharamshala"
+    ],
+    "coordinates": {
+      "lat": 32.2426,
+      "lng": 76.3213
+    },
+    "lat": 32.2426,
+    "lng": 76.3213,
+    "latitude": 32.2426,
+    "longitude": 76.3213,
+    "rating": 4.8,
+    "reviews_count": "2.5k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1596761403273-049079bfbc06?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1596761403273-049079bfbc06?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1596761403273-049079bfbc06?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1596761403273-049079bfbc06?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Himachal Pradesh Tourism Development Corporation",
+    "source_url": "https://himachaltourism.gov.in",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "himachal_014",
+    "name": "Triund",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "city": "McLeod Ganj",
+    "city_id": "mcleod-ganj",
+    "country": "India",
+    "area": "Near McLeod Ganj",
+    "category": "trek_viewpoint",
+    "categories": [
+      "trek_viewpoint",
+      "himachal_pradesh"
+    ],
+    "summary": "A scenic trekking destination offering expansive views of the Dhauladhar mountains and Kangra Valley.",
+    "description": "A scenic trekking destination offering expansive views of the Dhauladhar mountains and Kangra Valley.",
+    "best_for": [
+      "trekking",
+      "camping",
+      "mountain views"
+    ],
+    "suggested_duration": "1–2 days",
+    "best_time_to_visit": "March to June; September to November",
+    "entry_fee": "May include forest, camping, or local charges",
+    "opening_hours": "Daylight trekking recommended",
+    "visitor_notes": [
+      "Check weather and camping rules",
+      "Carry adequate water and warm clothing"
+    ],
+    "map_search": "Triund Himachal Pradesh",
+    "tags": [
+      "trek",
+      "camping",
+      "Dhauladhar"
+    ],
+    "coordinates": {
+      "lat": 32.2575,
+      "lng": 76.3533
+    },
+    "lat": 32.2575,
+    "lng": 76.3533,
+    "latitude": 32.2575,
+    "longitude": 76.3533,
+    "rating": 4.8,
+    "reviews_count": "2.5k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Himachal Pradesh Tourism Development Corporation",
+    "source_url": "https://himachaltourism.gov.in",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "himachal_016",
+    "name": "Khajjiar",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "city": "Khajjiar",
+    "city_id": "khajjiar",
+    "country": "India",
+    "area": "Chamba district",
+    "category": "meadow_nature",
+    "categories": [
+      "meadow_nature",
+      "himachal_pradesh"
+    ],
+    "summary": "A picturesque meadow surrounded by cedar forests, often called the Mini Switzerland of India.",
+    "description": "A picturesque meadow surrounded by cedar forests, often called the Mini Switzerland of India.",
+    "best_for": [
+      "nature",
+      "family trips",
+      "photography",
+      "horse riding"
+    ],
+    "suggested_duration": "Half day",
+    "best_time_to_visit": "April to June; September to November",
+    "entry_fee": "Usually free; activities may be paid",
+    "opening_hours": "Open throughout the day",
+    "visitor_notes": [
+      "Winter access can be affected by snow",
+      "Avoid littering the meadow"
+    ],
+    "map_search": "Khajjiar Himachal Pradesh",
+    "tags": [
+      "meadow",
+      "nature",
+      "Chamba"
+    ],
+    "coordinates": {
+      "lat": 32.5511,
+      "lng": 76.0594
+    },
+    "lat": 32.5511,
+    "lng": 76.0594,
+    "latitude": 32.5511,
+    "longitude": 76.0594,
+    "rating": 4.8,
+    "reviews_count": "2.5k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Himachal Pradesh Tourism Development Corporation",
+    "source_url": "https://himachaltourism.gov.in",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "himachal_017",
+    "name": "Dalhousie",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "city": "Dalhousie",
+    "city_id": "dalhousie",
+    "country": "India",
+    "area": "Chamba district",
+    "category": "hill_station",
+    "categories": [
+      "hill_station",
+      "himachal_pradesh"
+    ],
+    "summary": "A colonial-era hill station known for pine forests, churches, viewpoints, and relaxed mountain walks.",
+    "description": "A colonial-era hill station known for pine forests, churches, viewpoints, and relaxed mountain walks.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "family trips",
+      "honeymoon"
+    ],
+    "suggested_duration": "2–3 days",
+    "best_time_to_visit": "March to June; December to February for snow",
+    "entry_fee": "Usually free; individual attractions may charge",
+    "opening_hours": "Town access throughout the day",
+    "visitor_notes": [
+      "Carry warm clothing",
+      "Roads may be affected by winter weather"
+    ],
+    "map_search": "Dalhousie Himachal Pradesh",
+    "tags": [
+      "hill station",
+      "colonial heritage",
+      "Chamba"
+    ],
+    "coordinates": {
+      "lat": 32.5387,
+      "lng": 75.971
+    },
+    "lat": 32.5387,
+    "lng": 75.971,
+    "latitude": 32.5387,
+    "longitude": 75.971,
+    "rating": 4.8,
+    "reviews_count": "2.5k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Himachal Pradesh Tourism Development Corporation",
+    "source_url": "https://himachaltourism.gov.in",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "himachal_018",
+    "name": "Chail",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "city": "Chail",
+    "city_id": "chail",
+    "country": "India",
+    "area": "Solan district",
+    "category": "hill_station_nature",
+    "categories": [
+      "hill_station_nature",
+      "himachal_pradesh"
+    ],
+    "summary": "A peaceful hill destination known for forests, scenic viewpoints, and the historic Chail Palace.",
+    "description": "A peaceful hill destination known for forests, scenic viewpoints, and the historic Chail Palace.",
+    "best_for": [
+      "nature",
+      "heritage",
+      "relaxation",
+      "photography"
+    ],
+    "suggested_duration": "1–2 days",
+    "best_time_to_visit": "March to June; September to November",
+    "entry_fee": "Varies by attraction",
+    "opening_hours": "Daytime; individual attractions vary",
+    "visitor_notes": [
+      "Ideal for a quieter alternative to Shimla"
+    ],
+    "map_search": "Chail Himachal Pradesh",
+    "tags": [
+      "hill station",
+      "palace",
+      "Solan"
+    ],
+    "coordinates": {
+      "lat": 30.9686,
+      "lng": 77.1887
+    },
+    "lat": 30.9686,
+    "lng": 77.1887,
+    "latitude": 30.9686,
+    "longitude": 77.1887,
+    "rating": 4.8,
+    "reviews_count": "2.5k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1511497584788-87676104235f?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1511497584788-87676104235f?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1511497584788-87676104235f?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1511497584788-87676104235f?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Himachal Pradesh Tourism Development Corporation",
+    "source_url": "https://himachaltourism.gov.in",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "himachal_019",
+    "name": "Great Himalayan National Park",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "city": "Kullu",
+    "city_id": "kullu",
+    "country": "India",
+    "area": "Kullu district",
+    "category": "national_park_wildlife",
+    "categories": [
+      "national_park_wildlife",
+      "himachal_pradesh"
+    ],
+    "summary": "A protected Himalayan landscape known for biodiversity, alpine habitats, forests, and trekking routes.",
+    "description": "A protected Himalayan landscape known for biodiversity, alpine habitats, forests, and trekking routes.",
+    "best_for": [
+      "wildlife",
+      "trekking",
+      "nature",
+      "birdwatching"
+    ],
+    "suggested_duration": "1–3 days",
+    "best_time_to_visit": "April to June; September to November",
+    "entry_fee": "Permits and guide charges may apply",
+    "opening_hours": "Access depends on permits, routes, and weather",
+    "visitor_notes": [
+      "Use authorized guides",
+      "Follow conservation rules",
+      "Plan treks in advance"
+    ],
+    "map_search": "Great Himalayan National Park Himachal Pradesh",
+    "tags": [
+      "national park",
+      "wildlife",
+      "Kullu"
+    ],
+    "coordinates": {
+      "lat": 31.7583,
+      "lng": 77.5583
+    },
+    "lat": 31.7583,
+    "lng": 77.5583,
+    "latitude": 31.7583,
+    "longitude": 77.5583,
+    "rating": 4.8,
+    "reviews_count": "2.5k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Himachal Pradesh Tourism Development Corporation",
+    "source_url": "https://himachaltourism.gov.in",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "himachal_020",
+    "name": "Spiti Valley",
+    "state": "Himachal Pradesh",
+    "state_id": "himachal-pradesh",
+    "city": "Kaza",
+    "city_id": "kaza",
+    "country": "India",
+    "area": "Lahaul and Spiti district",
+    "category": "high_altitude_landscape",
+    "categories": [
+      "high_altitude_landscape",
+      "himachal_pradesh"
+    ],
+    "summary": "A high-altitude cold desert valley known for monasteries, stark landscapes, villages, and Himalayan adventure.",
+    "description": "A high-altitude cold desert valley known for monasteries, stark landscapes, villages, and Himalayan adventure.",
+    "best_for": [
+      "road trips",
+      "adventure",
+      "photography",
+      "culture"
+    ],
+    "suggested_duration": "5–7 days",
+    "best_time_to_visit": "May to October",
+    "entry_fee": "Usually free; individual attractions may charge",
+    "opening_hours": "Open throughout the day; access depends on roads",
+    "visitor_notes": [
+      "Acclimatize carefully",
+      "Carry essential medicines and warm clothing",
+      "Check road conditions"
+    ],
+    "map_search": "Spiti Valley Himachal Pradesh",
+    "tags": [
+      "cold desert",
+      "road trip",
+      "Lahaul and Spiti"
+    ],
+    "coordinates": {
+      "lat": 32.2276,
+      "lng": 78.071
+    },
+    "lat": 32.2276,
+    "lng": 78.071,
+    "latitude": 32.2276,
+    "longitude": 78.071,
+    "rating": 4.8,
+    "reviews_count": "2.5k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Himachal Pradesh Tourism Development Corporation",
+    "source_url": "https://himachaltourism.gov.in",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  }
+]

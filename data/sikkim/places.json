@@ -1,0 +1,632 @@
+[
+  {
+    "id": "sikkim_001",
+    "name": "Gangtok",
+    "state": "Sikkim",
+    "state_id": "sikkim",
+    "city": "Gangtok",
+    "city_id": "gangtok",
+    "country": "India",
+    "area": "Gangtok",
+    "category": "hill_station_city",
+    "categories": [
+      "hill_station_city",
+      "sikkim"
+    ],
+    "summary": "The capital of Sikkim, known for mountain views, monasteries, markets, and viewpoints.",
+    "description": "The capital of Sikkim, known for mountain views, monasteries, markets, and viewpoints.",
+    "best_for": [
+      "nature",
+      "photography",
+      "mountain trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "March to May and October to December",
+    "entry_fee": "Free or paid depending on attraction; permits may be required",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Carry warm clothing and comfortable footwear",
+      "Check weather, road conditions, and permit requirements before visiting"
+    ],
+    "map_search": "Gangtok Sikkim",
+    "tags": [
+      "hill_station_city",
+      "Sikkim"
+    ],
+    "coordinates": {
+      "lat": 27.3389,
+      "lng": 88.6065
+    },
+    "lat": 27.3389,
+    "lng": 88.6065,
+    "latitude": 27.3389,
+    "longitude": 88.6065,
+    "rating": 4.8,
+    "reviews_count": "1.8k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1596761403273-049079bfbc06?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1596761403273-049079bfbc06?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1596761403273-049079bfbc06?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1596761403273-049079bfbc06?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Sikkim Tourism Development Corporation (STDC)",
+    "source_url": "https://sikkimtourism.gov.in",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "sikkim_002",
+    "name": "Rumtek Monastery",
+    "state": "Sikkim",
+    "state_id": "sikkim",
+    "city": "Gangtok",
+    "city_id": "gangtok",
+    "country": "India",
+    "area": "Near Gangtok",
+    "category": "religious_heritage",
+    "categories": [
+      "religious_heritage",
+      "sikkim"
+    ],
+    "summary": "A major Buddhist monastery famous for its architecture, religious significance, and Himalayan setting.",
+    "description": "A major Buddhist monastery famous for its architecture, religious significance, and Himalayan setting.",
+    "best_for": [
+      "nature",
+      "photography",
+      "mountain trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "March to May and October to December",
+    "entry_fee": "Free or paid depending on attraction; permits may be required",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Carry warm clothing and comfortable footwear",
+      "Check weather, road conditions, and permit requirements before visiting"
+    ],
+    "map_search": "Rumtek Monastery Sikkim",
+    "tags": [
+      "religious_heritage",
+      "Sikkim"
+    ],
+    "coordinates": {
+      "lat": 27.2889,
+      "lng": 88.5444
+    },
+    "lat": 27.2889,
+    "lng": 88.5444,
+    "latitude": 27.2889,
+    "longitude": 88.5444,
+    "rating": 4.8,
+    "reviews_count": "1.8k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1596761403273-049079bfbc06?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1596761403273-049079bfbc06?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1596761403273-049079bfbc06?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1596761403273-049079bfbc06?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Sikkim Tourism Development Corporation (STDC)",
+    "source_url": "https://sikkimtourism.gov.in",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "sikkim_003",
+    "name": "Tsomgo Lake",
+    "state": "Sikkim",
+    "state_id": "sikkim",
+    "city": "Tsomgo",
+    "city_id": "tsomgo",
+    "country": "India",
+    "area": "East Sikkim",
+    "category": "lake_nature",
+    "categories": [
+      "lake_nature",
+      "sikkim"
+    ],
+    "summary": "A high-altitude glacial lake surrounded by mountains and visited for its scenic beauty.",
+    "description": "A high-altitude glacial lake surrounded by mountains and visited for its scenic beauty.",
+    "best_for": [
+      "nature",
+      "photography",
+      "mountain trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "March to May and October to December",
+    "entry_fee": "Free or paid depending on attraction; permits may be required",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Carry warm clothing and comfortable footwear",
+      "Check weather, road conditions, and permit requirements before visiting"
+    ],
+    "map_search": "Tsomgo Lake Sikkim",
+    "tags": [
+      "lake_nature",
+      "Sikkim"
+    ],
+    "coordinates": {
+      "lat": 27.3742,
+      "lng": 88.7619
+    },
+    "lat": 27.3742,
+    "lng": 88.7619,
+    "latitude": 27.3742,
+    "longitude": 88.7619,
+    "rating": 4.8,
+    "reviews_count": "1.8k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Sikkim Tourism Development Corporation (STDC)",
+    "source_url": "https://sikkimtourism.gov.in",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "sikkim_004",
+    "name": "Nathu La Pass",
+    "state": "Sikkim",
+    "state_id": "sikkim",
+    "city": "Tsomgo",
+    "city_id": "tsomgo",
+    "country": "India",
+    "area": "East Sikkim",
+    "category": "mountain_pass",
+    "categories": [
+      "mountain_pass",
+      "sikkim"
+    ],
+    "summary": "A historic mountain pass on the India–Tibet route, accessible with required permits.",
+    "description": "A historic mountain pass on the India–Tibet route, accessible with required permits.",
+    "best_for": [
+      "nature",
+      "photography",
+      "mountain trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "March to May and October to December",
+    "entry_fee": "Free or paid depending on attraction; permits may be required",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Carry warm clothing and comfortable footwear",
+      "Check weather, road conditions, and permit requirements before visiting"
+    ],
+    "map_search": "Nathu La Pass Sikkim",
+    "tags": [
+      "mountain_pass",
+      "Sikkim"
+    ],
+    "coordinates": {
+      "lat": 27.3865,
+      "lng": 88.831
+    },
+    "lat": 27.3865,
+    "lng": 88.831,
+    "latitude": 27.3865,
+    "longitude": 88.831,
+    "rating": 4.8,
+    "reviews_count": "1.8k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Sikkim Tourism Development Corporation (STDC)",
+    "source_url": "https://sikkimtourism.gov.in",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "sikkim_005",
+    "name": "Baba Harbhajan Singh Temple",
+    "state": "Sikkim",
+    "state_id": "sikkim",
+    "city": "Tsomgo",
+    "city_id": "tsomgo",
+    "country": "India",
+    "area": "East Sikkim",
+    "category": "religious_memorial",
+    "categories": [
+      "religious_memorial",
+      "sikkim"
+    ],
+    "summary": "A high-altitude memorial and pilgrimage site near the Nathu La region.",
+    "description": "A high-altitude memorial and pilgrimage site near the Nathu La region.",
+    "best_for": [
+      "nature",
+      "photography",
+      "mountain trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "March to May and October to December",
+    "entry_fee": "Free or paid depending on attraction; permits may be required",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Carry warm clothing and comfortable footwear",
+      "Check weather, road conditions, and permit requirements before visiting"
+    ],
+    "map_search": "Baba Harbhajan Singh Temple Sikkim",
+    "tags": [
+      "religious_memorial",
+      "Sikkim"
+    ],
+    "coordinates": {
+      "lat": 27.3917,
+      "lng": 88.8167
+    },
+    "lat": 27.3917,
+    "lng": 88.8167,
+    "latitude": 27.3917,
+    "longitude": 88.8167,
+    "rating": 4.8,
+    "reviews_count": "1.8k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Sikkim Tourism Development Corporation (STDC)",
+    "source_url": "https://sikkimtourism.gov.in",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "sikkim_006",
+    "name": "Yumthang Valley",
+    "state": "Sikkim",
+    "state_id": "sikkim",
+    "city": "Lachung",
+    "city_id": "lachung",
+    "country": "India",
+    "area": "North Sikkim",
+    "category": "valley_nature",
+    "categories": [
+      "valley_nature",
+      "sikkim"
+    ],
+    "summary": "A beautiful alpine valley known for seasonal flowers, rivers, and snow-covered mountains.",
+    "description": "A beautiful alpine valley known for seasonal flowers, rivers, and snow-covered mountains.",
+    "best_for": [
+      "nature",
+      "photography",
+      "mountain trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "March to May and October to December",
+    "entry_fee": "Free or paid depending on attraction; permits may be required",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Carry warm clothing and comfortable footwear",
+      "Check weather, road conditions, and permit requirements before visiting"
+    ],
+    "map_search": "Yumthang Valley Sikkim",
+    "tags": [
+      "valley_nature",
+      "Sikkim"
+    ],
+    "coordinates": {
+      "lat": 27.8258,
+      "lng": 88.6961
+    },
+    "lat": 27.8258,
+    "lng": 88.6961,
+    "latitude": 27.8258,
+    "longitude": 88.6961,
+    "rating": 4.8,
+    "reviews_count": "1.8k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Sikkim Tourism Development Corporation (STDC)",
+    "source_url": "https://sikkimtourism.gov.in",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "sikkim_007",
+    "name": "Zero Point",
+    "state": "Sikkim",
+    "state_id": "sikkim",
+    "city": "Lachung",
+    "city_id": "lachung",
+    "country": "India",
+    "area": "North Sikkim",
+    "category": "snow_mountain",
+    "categories": [
+      "snow_mountain",
+      "sikkim"
+    ],
+    "summary": "A high-altitude destination near the Indo-China border, popular for snow and dramatic landscapes.",
+    "description": "A high-altitude destination near the Indo-China border, popular for snow and dramatic landscapes.",
+    "best_for": [
+      "nature",
+      "photography",
+      "mountain trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "March to May and October to December",
+    "entry_fee": "Free or paid depending on attraction; permits may be required",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Carry warm clothing and comfortable footwear",
+      "Check weather, road conditions, and permit requirements before visiting"
+    ],
+    "map_search": "Zero Point Sikkim",
+    "tags": [
+      "snow_mountain",
+      "Sikkim"
+    ],
+    "coordinates": {
+      "lat": 27.9167,
+      "lng": 88.7333
+    },
+    "lat": 27.9167,
+    "lng": 88.7333,
+    "latitude": 27.9167,
+    "longitude": 88.7333,
+    "rating": 4.8,
+    "reviews_count": "1.8k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Sikkim Tourism Development Corporation (STDC)",
+    "source_url": "https://sikkimtourism.gov.in",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "sikkim_008",
+    "name": "Gurudongmar Lake",
+    "state": "Sikkim",
+    "state_id": "sikkim",
+    "city": "Lachen",
+    "city_id": "lachen",
+    "country": "India",
+    "area": "North Sikkim",
+    "category": "lake_nature",
+    "categories": [
+      "lake_nature",
+      "sikkim"
+    ],
+    "summary": "One of the world’s highest lakes, surrounded by striking Himalayan scenery.",
+    "description": "One of the world’s highest lakes, surrounded by striking Himalayan scenery.",
+    "best_for": [
+      "nature",
+      "photography",
+      "mountain trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "March to May and October to December",
+    "entry_fee": "Free or paid depending on attraction; permits may be required",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Carry warm clothing and comfortable footwear",
+      "Check weather, road conditions, and permit requirements before visiting"
+    ],
+    "map_search": "Gurudongmar Lake Sikkim",
+    "tags": [
+      "lake_nature",
+      "Sikkim"
+    ],
+    "coordinates": {
+      "lat": 28.0258,
+      "lng": 88.7117
+    },
+    "lat": 28.0258,
+    "lng": 88.7117,
+    "latitude": 28.0258,
+    "longitude": 88.7117,
+    "rating": 4.8,
+    "reviews_count": "1.8k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Sikkim Tourism Development Corporation (STDC)",
+    "source_url": "https://sikkimtourism.gov.in",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "sikkim_009",
+    "name": "Pelling",
+    "state": "Sikkim",
+    "state_id": "sikkim",
+    "city": "Pelling",
+    "city_id": "pelling",
+    "country": "India",
+    "area": "West Sikkim",
+    "category": "hill_station_city",
+    "categories": [
+      "hill_station_city",
+      "sikkim"
+    ],
+    "summary": "A peaceful mountain town offering views of Kanchenjunga and access to monasteries and heritage sites.",
+    "description": "A peaceful mountain town offering views of Kanchenjunga and access to monasteries and heritage sites.",
+    "best_for": [
+      "nature",
+      "photography",
+      "mountain trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "March to May and October to December",
+    "entry_fee": "Free or paid depending on attraction; permits may be required",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Carry warm clothing and comfortable footwear",
+      "Check weather, road conditions, and permit requirements before visiting"
+    ],
+    "map_search": "Pelling Sikkim",
+    "tags": [
+      "hill_station_city",
+      "Sikkim"
+    ],
+    "coordinates": {
+      "lat": 27.3167,
+      "lng": 88.2333
+    },
+    "lat": 27.3167,
+    "lng": 88.2333,
+    "latitude": 27.3167,
+    "longitude": 88.2333,
+    "rating": 4.8,
+    "reviews_count": "1.8k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Sikkim Tourism Development Corporation (STDC)",
+    "source_url": "https://sikkimtourism.gov.in",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "sikkim_010",
+    "name": "Khecheopalri Lake",
+    "state": "Sikkim",
+    "state_id": "sikkim",
+    "city": "Pelling",
+    "city_id": "pelling",
+    "country": "India",
+    "area": "West Sikkim",
+    "category": "lake_pilgrimage",
+    "categories": [
+      "lake_pilgrimage",
+      "sikkim"
+    ],
+    "summary": "A sacred forest-surrounded lake revered by Buddhists and Hindus for its spiritual importance.",
+    "description": "A sacred forest-surrounded lake revered by Buddhists and Hindus for its spiritual importance.",
+    "best_for": [
+      "nature",
+      "photography",
+      "mountain trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "March to May and October to December",
+    "entry_fee": "Free or paid depending on attraction; permits may be required",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Carry warm clothing and comfortable footwear",
+      "Check weather, road conditions, and permit requirements before visiting"
+    ],
+    "map_search": "Khecheopalri Lake Sikkim",
+    "tags": [
+      "lake_pilgrimage",
+      "Sikkim"
+    ],
+    "coordinates": {
+      "lat": 27.3556,
+      "lng": 88.1989
+    },
+    "lat": 27.3556,
+    "lng": 88.1989,
+    "latitude": 27.3556,
+    "longitude": 88.1989,
+    "rating": 4.8,
+    "reviews_count": "1.8k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Sikkim Tourism Development Corporation (STDC)",
+    "source_url": "https://sikkimtourism.gov.in",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  }
+]

@@ -1,0 +1,318 @@
+[
+  {
+    "id": "tripura-001",
+    "name": "Ujjayanta Palace",
+    "state": "Tripura",
+    "state_id": "tripura",
+    "city": "Agartala",
+    "city_id": "agartala",
+    "country": "India",
+    "area": "Agartala",
+    "category": "Heritage",
+    "categories": [
+      "Heritage",
+      "tripura"
+    ],
+    "summary": "A grand former royal palace known for its white architecture, gardens, water features, and museum collections.",
+    "description": "A grand former royal palace known for its white architecture, gardens, water features, and museum collections.",
+    "best_for": [
+      "history",
+      "architecture",
+      "photography"
+    ],
+    "suggested_duration": "1–2 hours",
+    "best_time_to_visit": "October–March",
+    "entry_fee": "Paid; verify current fee locally",
+    "opening_hours": "Generally daytime; verify before visiting",
+    "visitor_notes": [
+      "Museum access and timings may vary."
+    ],
+    "map_search": "Ujjayanta Palace, Agartala, Tripura",
+    "tags": [
+      "palace",
+      "museum",
+      "royal heritage"
+    ],
+    "coordinates": {
+      "lat": 23.8344,
+      "lng": 91.2828
+    },
+    "lat": 23.8344,
+    "lng": 91.2828,
+    "latitude": 23.8344,
+    "longitude": 91.2828,
+    "rating": 4.8,
+    "reviews_count": "2.1k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1596761403273-049079bfbc06?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1596761403273-049079bfbc06?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1596761403273-049079bfbc06?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1596761403273-049079bfbc06?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Tripura Tourism Development Corporation",
+    "source_url": "https://tripuratourism.gov.in",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "tripura-002",
+    "name": "Neermahal Palace",
+    "state": "Tripura",
+    "state_id": "tripura",
+    "city": "Melaghar",
+    "city_id": "melaghar",
+    "country": "India",
+    "area": "Melaghar",
+    "category": "Heritage",
+    "categories": [
+      "Heritage",
+      "tripura"
+    ],
+    "summary": "A picturesque lake palace situated in the middle of Rudrasagar Lake, blending Mughal and Hindu architectural influences.",
+    "description": "A picturesque lake palace situated in the middle of Rudrasagar Lake, blending Mughal and Hindu architectural influences.",
+    "best_for": [
+      "heritage",
+      "boating",
+      "photography"
+    ],
+    "suggested_duration": "2–3 hours",
+    "best_time_to_visit": "October–March",
+    "entry_fee": "Paid; verify current fee locally",
+    "opening_hours": "Generally daytime; verify before visiting",
+    "visitor_notes": [
+      "Boat services depend on weather and local operations."
+    ],
+    "map_search": "Neermahal Palace, Melaghar, Tripura",
+    "tags": [
+      "lake palace",
+      "heritage",
+      "boating"
+    ],
+    "coordinates": {
+      "lat": 23.4984,
+      "lng": 91.3197
+    },
+    "lat": 23.4984,
+    "lng": 91.3197,
+    "latitude": 23.4984,
+    "longitude": 91.3197,
+    "rating": 4.8,
+    "reviews_count": "2.1k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Tripura Tourism Development Corporation",
+    "source_url": "https://tripuratourism.gov.in",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "tripura-003",
+    "name": "Unakoti",
+    "state": "Tripura",
+    "state_id": "tripura",
+    "city": "Kailashahar",
+    "city_id": "kailashahar",
+    "country": "India",
+    "area": "Kailashahar",
+    "category": "Archaeological and Religious",
+    "categories": [
+      "Archaeological and Religious",
+      "tripura"
+    ],
+    "summary": "An ancient rock-cut pilgrimage site featuring massive stone carvings and reliefs associated with Shiva and other Hindu deities.",
+    "description": "An ancient rock-cut pilgrimage site featuring massive stone carvings and reliefs associated with Shiva and other Hindu deities.",
+    "best_for": [
+      "archaeology",
+      "religion",
+      "nature"
+    ],
+    "suggested_duration": "2–3 hours",
+    "best_time_to_visit": "October–March",
+    "entry_fee": "Usually free or nominal; verify locally",
+    "opening_hours": "Daylight hours",
+    "visitor_notes": [
+      "Wear comfortable footwear; the site includes uneven paths and steps."
+    ],
+    "map_search": "Unakoti, Kailashahar, Tripura",
+    "tags": [
+      "rock carvings",
+      "pilgrimage",
+      "archaeology"
+    ],
+    "coordinates": {
+      "lat": 24.3167,
+      "lng": 92.0167
+    },
+    "lat": 24.3167,
+    "lng": 92.0167,
+    "latitude": 24.3167,
+    "longitude": 92.0167,
+    "rating": 4.8,
+    "reviews_count": "2.1k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1606298855672-3efb620b78ec?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1606298855672-3efb620b78ec?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1606298855672-3efb620b78ec?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1606298855672-3efb620b78ec?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Tripura Tourism Development Corporation",
+    "source_url": "https://tripuratourism.gov.in",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "tripura-004",
+    "name": "Sepahijala Wildlife Sanctuary",
+    "state": "Tripura",
+    "state_id": "tripura",
+    "city": "Bishalgarh",
+    "city_id": "bishalgarh",
+    "country": "India",
+    "area": "Bishalgarh",
+    "category": "Wildlife and Nature",
+    "categories": [
+      "Wildlife and Nature",
+      "tripura"
+    ],
+    "summary": "A forested sanctuary with lakes, bird habitats, wildlife enclosures, and opportunities for nature observation.",
+    "description": "A forested sanctuary with lakes, bird habitats, wildlife enclosures, and opportunities for nature observation.",
+    "best_for": [
+      "wildlife",
+      "birdwatching",
+      "family outings"
+    ],
+    "suggested_duration": "3–4 hours",
+    "best_time_to_visit": "November–February",
+    "entry_fee": "Paid; verify current fee locally",
+    "opening_hours": "Generally daytime; verify before visiting",
+    "visitor_notes": [
+      "Start early for better wildlife and bird sightings."
+    ],
+    "map_search": "Sepahijala Wildlife Sanctuary, Tripura",
+    "tags": [
+      "wildlife sanctuary",
+      "birds",
+      "forest"
+    ],
+    "coordinates": {
+      "lat": 23.6811,
+      "lng": 91.3117
+    },
+    "lat": 23.6811,
+    "lng": 91.3117,
+    "latitude": 23.6811,
+    "longitude": 91.3117,
+    "rating": 4.8,
+    "reviews_count": "2.1k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1534447677768-be436bb09401?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Tripura Tourism Development Corporation",
+    "source_url": "https://tripuratourism.gov.in",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "tripura-005",
+    "name": "Jampui Hills",
+    "state": "Tripura",
+    "state_id": "tripura",
+    "city": "Jampui Hills",
+    "city_id": "jampui-hills",
+    "country": "India",
+    "area": "North Tripura",
+    "category": "Hill Station and Nature",
+    "categories": [
+      "Hill Station and Nature",
+      "tripura"
+    ],
+    "summary": "Tripura’s scenic hill region, known for rolling landscapes, orange orchards, pleasant weather, and viewpoints.",
+    "description": "Tripura’s scenic hill region, known for rolling landscapes, orange orchards, pleasant weather, and viewpoints.",
+    "best_for": [
+      "hills",
+      "nature",
+      "landscapes",
+      "relaxation"
+    ],
+    "suggested_duration": "1–2 days",
+    "best_time_to_visit": "October–February",
+    "entry_fee": "No general entry fee",
+    "opening_hours": "Open throughout the day",
+    "visitor_notes": [
+      "Road travel can take time; plan accommodation and transport in advance."
+    ],
+    "map_search": "Jampui Hills, North Tripura",
+    "tags": [
+      "hill station",
+      "orange orchards",
+      "viewpoints"
+    ],
+    "coordinates": {
+      "lat": 23.9056,
+      "lng": 92.2722
+    },
+    "lat": 23.9056,
+    "lng": 92.2722,
+    "latitude": 23.9056,
+    "longitude": 92.2722,
+    "rating": 4.8,
+    "reviews_count": "2.1k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Tripura Tourism Development Corporation",
+    "source_url": "https://tripuratourism.gov.in",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  }
+]

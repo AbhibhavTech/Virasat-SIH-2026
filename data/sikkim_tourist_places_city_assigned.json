@@ -1,0 +1,331 @@
+{
+  "dataset": "Sikkim Tourist Places",
+  "administrative_type": "State",
+  "name": "Sikkim",
+  "country": "India",
+  "total_places": 10,
+  "cities": [
+    {
+      "city_id": "sikkim_city_001",
+      "city": "Gangtok",
+      "place_ids": [
+        "sikkim_001",
+        "sikkim_002"
+      ]
+    },
+    {
+      "city_id": "sikkim_city_002",
+      "city": "Tsomgo",
+      "place_ids": [
+        "sikkim_003",
+        "sikkim_004",
+        "sikkim_005"
+      ]
+    },
+    {
+      "city_id": "sikkim_city_003",
+      "city": "Lachung",
+      "place_ids": [
+        "sikkim_006",
+        "sikkim_007"
+      ]
+    },
+    {
+      "city_id": "sikkim_city_004",
+      "city": "Lachen",
+      "place_ids": [
+        "sikkim_008"
+      ]
+    },
+    {
+      "city_id": "sikkim_city_005",
+      "city": "Pelling",
+      "place_ids": [
+        "sikkim_009",
+        "sikkim_010"
+      ]
+    }
+  ],
+  "places": [
+    {
+      "id": "sikkim_001",
+      "name": "Gangtok",
+      "state": "Sikkim",
+      "city": "Gangtok",
+      "city_id": "sikkim_city_001",
+      "category": "hill_station_city",
+      "area": "Gangtok",
+      "description": "The capital of Sikkim, known for mountain views, monasteries, markets, and viewpoints.",
+      "best_for": [
+        "nature",
+        "photography",
+        "mountain trips"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "March to May and October to December",
+      "entry_fee": "Free or paid depending on attraction; permits may be required",
+      "opening_hours": "Usually daytime; timings vary by attraction",
+      "visitor_notes": [
+        "Carry warm clothing and comfortable footwear",
+        "Check weather, road conditions, and permit requirements before visiting"
+      ],
+      "map_search": "Gangtok Sikkim",
+      "tags": [
+        "hill_station_city",
+        "Sikkim"
+      ]
+    },
+    {
+      "id": "sikkim_002",
+      "name": "Rumtek Monastery",
+      "state": "Sikkim",
+      "city": "Gangtok",
+      "city_id": "sikkim_city_001",
+      "category": "religious_heritage",
+      "area": "Near Gangtok",
+      "description": "A major Buddhist monastery famous for its architecture, religious significance, and Himalayan setting.",
+      "best_for": [
+        "nature",
+        "photography",
+        "mountain trips"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "March to May and October to December",
+      "entry_fee": "Free or paid depending on attraction; permits may be required",
+      "opening_hours": "Usually daytime; timings vary by attraction",
+      "visitor_notes": [
+        "Carry warm clothing and comfortable footwear",
+        "Check weather, road conditions, and permit requirements before visiting"
+      ],
+      "map_search": "Rumtek Monastery Sikkim",
+      "tags": [
+        "religious_heritage",
+        "Sikkim"
+      ]
+    },
+    {
+      "id": "sikkim_003",
+      "name": "Tsomgo Lake",
+      "state": "Sikkim",
+      "city": "Tsomgo",
+      "city_id": "sikkim_city_002",
+      "category": "lake_nature",
+      "area": "East Sikkim",
+      "description": "A high-altitude glacial lake surrounded by mountains and visited for its scenic beauty.",
+      "best_for": [
+        "nature",
+        "photography",
+        "mountain trips"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "March to May and October to December",
+      "entry_fee": "Free or paid depending on attraction; permits may be required",
+      "opening_hours": "Usually daytime; timings vary by attraction",
+      "visitor_notes": [
+        "Carry warm clothing and comfortable footwear",
+        "Check weather, road conditions, and permit requirements before visiting"
+      ],
+      "map_search": "Tsomgo Lake Sikkim",
+      "tags": [
+        "lake_nature",
+        "Sikkim"
+      ]
+    },
+    {
+      "id": "sikkim_004",
+      "name": "Nathu La Pass",
+      "state": "Sikkim",
+      "city": "Tsomgo",
+      "city_id": "sikkim_city_002",
+      "category": "mountain_pass",
+      "area": "East Sikkim",
+      "description": "A historic mountain pass on the India–Tibet route, accessible with required permits.",
+      "best_for": [
+        "nature",
+        "photography",
+        "mountain trips"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "March to May and October to December",
+      "entry_fee": "Free or paid depending on attraction; permits may be required",
+      "opening_hours": "Usually daytime; timings vary by attraction",
+      "visitor_notes": [
+        "Carry warm clothing and comfortable footwear",
+        "Check weather, road conditions, and permit requirements before visiting"
+      ],
+      "map_search": "Nathu La Pass Sikkim",
+      "tags": [
+        "mountain_pass",
+        "Sikkim"
+      ]
+    },
+    {
+      "id": "sikkim_005",
+      "name": "Baba Harbhajan Singh Temple",
+      "state": "Sikkim",
+      "city": "Tsomgo",
+      "city_id": "sikkim_city_002",
+      "category": "religious_memorial",
+      "area": "East Sikkim",
+      "description": "A high-altitude memorial and pilgrimage site near the Nathu La region.",
+      "best_for": [
+        "nature",
+        "photography",
+        "mountain trips"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "March to May and October to December",
+      "entry_fee": "Free or paid depending on attraction; permits may be required",
+      "opening_hours": "Usually daytime; timings vary by attraction",
+      "visitor_notes": [
+        "Carry warm clothing and comfortable footwear",
+        "Check weather, road conditions, and permit requirements before visiting"
+      ],
+      "map_search": "Baba Harbhajan Singh Temple Sikkim",
+      "tags": [
+        "religious_memorial",
+        "Sikkim"
+      ]
+    },
+    {
+      "id": "sikkim_006",
+      "name": "Yumthang Valley",
+      "state": "Sikkim",
+      "city": "Lachung",
+      "city_id": "sikkim_city_003",
+      "category": "valley_nature",
+      "area": "North Sikkim",
+      "description": "A beautiful alpine valley known for seasonal flowers, rivers, and snow-covered mountains.",
+      "best_for": [
+        "nature",
+        "photography",
+        "mountain trips"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "March to May and October to December",
+      "entry_fee": "Free or paid depending on attraction; permits may be required",
+      "opening_hours": "Usually daytime; timings vary by attraction",
+      "visitor_notes": [
+        "Carry warm clothing and comfortable footwear",
+        "Check weather, road conditions, and permit requirements before visiting"
+      ],
+      "map_search": "Yumthang Valley Sikkim",
+      "tags": [
+        "valley_nature",
+        "Sikkim"
+      ]
+    },
+    {
+      "id": "sikkim_007",
+      "name": "Zero Point",
+      "state": "Sikkim",
+      "city": "Lachung",
+      "city_id": "sikkim_city_003",
+      "category": "snow_mountain",
+      "area": "North Sikkim",
+      "description": "A high-altitude destination near the Indo-China border, popular for snow and dramatic landscapes.",
+      "best_for": [
+        "nature",
+        "photography",
+        "mountain trips"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "March to May and October to December",
+      "entry_fee": "Free or paid depending on attraction; permits may be required",
+      "opening_hours": "Usually daytime; timings vary by attraction",
+      "visitor_notes": [
+        "Carry warm clothing and comfortable footwear",
+        "Check weather, road conditions, and permit requirements before visiting"
+      ],
+      "map_search": "Zero Point Sikkim",
+      "tags": [
+        "snow_mountain",
+        "Sikkim"
+      ]
+    },
+    {
+      "id": "sikkim_008",
+      "name": "Gurudongmar Lake",
+      "state": "Sikkim",
+      "city": "Lachen",
+      "city_id": "sikkim_city_004",
+      "category": "lake_nature",
+      "area": "North Sikkim",
+      "description": "One of the world’s highest lakes, surrounded by striking Himalayan scenery.",
+      "best_for": [
+        "nature",
+        "photography",
+        "mountain trips"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "March to May and October to December",
+      "entry_fee": "Free or paid depending on attraction; permits may be required",
+      "opening_hours": "Usually daytime; timings vary by attraction",
+      "visitor_notes": [
+        "Carry warm clothing and comfortable footwear",
+        "Check weather, road conditions, and permit requirements before visiting"
+      ],
+      "map_search": "Gurudongmar Lake Sikkim",
+      "tags": [
+        "lake_nature",
+        "Sikkim"
+      ]
+    },
+    {
+      "id": "sikkim_009",
+      "name": "Pelling",
+      "state": "Sikkim",
+      "city": "Pelling",
+      "city_id": "sikkim_city_005",
+      "category": "hill_station_city",
+      "area": "West Sikkim",
+      "description": "A peaceful mountain town offering views of Kanchenjunga and access to monasteries and heritage sites.",
+      "best_for": [
+        "nature",
+        "photography",
+        "mountain trips"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "March to May and October to December",
+      "entry_fee": "Free or paid depending on attraction; permits may be required",
+      "opening_hours": "Usually daytime; timings vary by attraction",
+      "visitor_notes": [
+        "Carry warm clothing and comfortable footwear",
+        "Check weather, road conditions, and permit requirements before visiting"
+      ],
+      "map_search": "Pelling Sikkim",
+      "tags": [
+        "hill_station_city",
+        "Sikkim"
+      ]
+    },
+    {
+      "id": "sikkim_010",
+      "name": "Khecheopalri Lake",
+      "state": "Sikkim",
+      "city": "Pelling",
+      "city_id": "sikkim_city_005",
+      "category": "lake_pilgrimage",
+      "area": "West Sikkim",
+      "description": "A sacred forest-surrounded lake revered by Buddhists and Hindus for its spiritual importance.",
+      "best_for": [
+        "nature",
+        "photography",
+        "mountain trips"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "March to May and October to December",
+      "entry_fee": "Free or paid depending on attraction; permits may be required",
+      "opening_hours": "Usually daytime; timings vary by attraction",
+      "visitor_notes": [
+        "Carry warm clothing and comfortable footwear",
+        "Check weather, road conditions, and permit requirements before visiting"
+      ],
+      "map_search": "Khecheopalri Lake Sikkim",
+      "tags": [
+        "lake_pilgrimage",
+        "Sikkim"
+      ]
+    }
+  ]
+}

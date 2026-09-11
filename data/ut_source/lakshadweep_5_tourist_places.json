@@ -1,0 +1,144 @@
+{
+  "dataset_name": "Lakshadweep Tourist Places",
+  "administrative_type": "Union Territory",
+  "name": "Lakshadweep",
+  "country": "India",
+  "total_places": 5,
+  "places": [
+    {
+      "id": "LAK001",
+      "name": "Agatti Island",
+      "category": "Island and beach",
+      "description": "A beautiful coral island known for turquoise lagoons, white-sand beaches and water activities.",
+      "best_for": [
+        "beaches",
+        "snorkeling",
+        "scuba diving",
+        "photography"
+      ],
+      "area": "Agatti Island",
+      "union_territory": "Lakshadweep",
+      "country": "India",
+      "suggested_duration": "1–3 days",
+      "best_time_to_visit": "October to May, subject to weather and transport schedules.",
+      "entry_fee": "Varies; verify current fees and permit requirements.",
+      "opening_hours": "Varies by attraction and island.",
+      "visitor_notes": "Entry permits, ferry/flight schedules, weather and accommodation availability should be confirmed before travel.",
+      "map_search": "Agatti Island, Lakshadweep",
+      "tags": [
+        "island and beach",
+        "lakshadweep",
+        "island tourism",
+        "beaches"
+      ]
+    },
+    {
+      "id": "LAK002",
+      "name": "Bangaram Island",
+      "category": "Island and beach",
+      "description": "A peaceful tropical island surrounded by clear lagoons and coral reefs, ideal for relaxation and marine activities.",
+      "best_for": [
+        "beaches",
+        "relaxation",
+        "snorkeling",
+        "photography"
+      ],
+      "area": "Bangaram Island",
+      "union_territory": "Lakshadweep",
+      "country": "India",
+      "suggested_duration": "1–3 days",
+      "best_time_to_visit": "October to May, subject to weather and transport schedules.",
+      "entry_fee": "Varies; verify current fees and permit requirements.",
+      "opening_hours": "Varies by attraction and island.",
+      "visitor_notes": "Entry permits, ferry/flight schedules, weather and accommodation availability should be confirmed before travel.",
+      "map_search": "Bangaram Island, Lakshadweep",
+      "tags": [
+        "island and beach",
+        "lakshadweep",
+        "island tourism",
+        "beaches"
+      ]
+    },
+    {
+      "id": "LAK003",
+      "name": "Kavaratti Island",
+      "category": "Island and capital",
+      "description": "The capital of Lakshadweep, known for its lagoon, mosques, marine aquarium and water-sports opportunities.",
+      "best_for": [
+        "culture",
+        "beaches",
+        "water sports",
+        "sightseeing"
+      ],
+      "area": "Kavaratti Island",
+      "union_territory": "Lakshadweep",
+      "country": "India",
+      "suggested_duration": "1–3 days",
+      "best_time_to_visit": "October to May, subject to weather and transport schedules.",
+      "entry_fee": "Varies; verify current fees and permit requirements.",
+      "opening_hours": "Varies by attraction and island.",
+      "visitor_notes": "Entry permits, ferry/flight schedules, weather and accommodation availability should be confirmed before travel.",
+      "map_search": "Kavaratti Island, Lakshadweep",
+      "tags": [
+        "island and capital",
+        "lakshadweep",
+        "island tourism",
+        "beaches"
+      ]
+    },
+    {
+      "id": "LAK004",
+      "name": "Kalpeni Island",
+      "category": "Island and lagoon",
+      "description": "An island famous for its shallow lagoon, coral beaches and scenic coastal surroundings.",
+      "best_for": [
+        "beaches",
+        "kayaking",
+        "snorkeling",
+        "nature"
+      ],
+      "area": "Kalpeni Island",
+      "union_territory": "Lakshadweep",
+      "country": "India",
+      "suggested_duration": "1–3 days",
+      "best_time_to_visit": "October to May, subject to weather and transport schedules.",
+      "entry_fee": "Varies; verify current fees and permit requirements.",
+      "opening_hours": "Varies by attraction and island.",
+      "visitor_notes": "Entry permits, ferry/flight schedules, weather and accommodation availability should be confirmed before travel.",
+      "map_search": "Kalpeni Island, Lakshadweep",
+      "tags": [
+        "island and lagoon",
+        "lakshadweep",
+        "island tourism",
+        "beaches"
+      ]
+    },
+    {
+      "id": "LAK005",
+      "name": "Minicoy Island",
+      "category": "Island and cultural site",
+      "description": "The southernmost major island of Lakshadweep, known for its distinctive culture, traditional dance, lighthouse and lagoon.",
+      "best_for": [
+        "culture",
+        "lighthouse visits",
+        "beaches",
+        "photography"
+      ],
+      "area": "Minicoy Island",
+      "union_territory": "Lakshadweep",
+      "country": "India",
+      "suggested_duration": "1–3 days",
+      "best_time_to_visit": "October to May, subject to weather and transport schedules.",
+      "entry_fee": "Varies; verify current fees and permit requirements.",
+      "opening_hours": "Varies by attraction and island.",
+      "visitor_notes": "Entry permits, ferry/flight schedules, weather and accommodation availability should be confirmed before travel.",
+      "map_search": "Minicoy Island, Lakshadweep",
+      "tags": [
+        "island and cultural site",
+        "lakshadweep",
+        "island tourism",
+        "beaches"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "state_or_union_territory": "Andaman and Nicobar Islands",
+  "administrative_type": "Union Territory",
+  "dataset_type": "heritage_places",
+  "total_places": 5,
+  "places": [
+    {
+      "id": "andaman_nicobar_heritage_001",
+      "name": "Cellular Jail",
+      "category": "colonial_prison",
+      "locality": "Port Blair",
+      "description": "Historic colonial-era prison associated with India's freedom movement.",
+      "unesco": false,
+      "protection_status": "National Memorial; verify current official status",
+      "map_search": "Cellular Jail, Port Blair, Andaman and Nicobar Islands, India"
+    },
+    {
+      "id": "andaman_nicobar_heritage_002",
+      "name": "Ross Island",
+      "category": "colonial_ruins",
+      "locality": "Near Port Blair",
+      "description": "Former administrative headquarters of the British in the Andaman Islands, now known for its historic ruins.",
+      "unesco": false,
+      "protection_status": "Verify current official protection status",
+      "map_search": "Ross Island, Andaman and Nicobar Islands, India"
+    },
+    {
+      "id": "andaman_nicobar_heritage_003",
+      "name": "Viper Island",
+      "category": "colonial_prison_ruins",
+      "locality": "Near Port Blair",
+      "description": "Historic island associated with an early colonial prison and penal settlement.",
+      "unesco": false,
+      "protection_status": "Verify current official protection status",
+      "map_search": "Viper Island, Andaman and Nicobar Islands, India"
+    },
+    {
+      "id": "andaman_nicobar_heritage_004",
+      "name": "Japanese Bunkers",
+      "category": "wartime_structure",
+      "locality": "Port Blair and surrounding areas",
+      "description": "World War II-era defensive structures built during the Japanese occupation of the Andaman Islands.",
+      "unesco": false,
+      "protection_status": "Verify current official protection status",
+      "map_search": "Japanese Bunkers, Port Blair, Andaman and Nicobar Islands, India"
+    },
+    {
+      "id": "andaman_nicobar_heritage_005",
+      "name": "Chatham Saw Mill",
+      "category": "industrial_heritage",
+      "locality": "Chatham Island, Port Blair",
+      "description": "Historic sawmill complex representing the industrial and timber-processing history of the islands.",
+      "unesco": false,
+      "protection_status": "Verify current official protection status",
+      "map_search": "Chatham Saw Mill, Port Blair, Andaman and Nicobar Islands, India"
+    }
+  ],
+  "notes": [
+    "This is a compact website-ready preliminary dataset.",
+    "None of the five entries is marked as a UNESCO World Heritage property.",
+    "Verify current protection status, access rules, and official descriptions before production use."
+  ]
+}

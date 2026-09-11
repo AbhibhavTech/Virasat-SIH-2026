@@ -1,0 +1,176 @@
+{
+  "dataset": "Odisha Tourist Places",
+  "administrative_type": "State",
+  "name": "Odisha",
+  "country": "India",
+  "total_places": 15,
+  "cities": [
+    {
+      "city_id": "odisha_city_001",
+      "city_name": "Puri",
+      "places": [
+        "odisha_001",
+        "odisha_003",
+        "odisha_010"
+      ]
+    },
+    {
+      "city_id": "odisha_city_002",
+      "city_name": "Konark",
+      "places": [
+        "odisha_002"
+      ]
+    },
+    {
+      "city_id": "odisha_city_003",
+      "city_name": "Chilika",
+      "places": [
+        "odisha_004"
+      ]
+    },
+    {
+      "city_id": "odisha_city_004",
+      "city_name": "Bhubaneswar",
+      "places": [
+        "odisha_005",
+        "odisha_006",
+        "odisha_007",
+        "odisha_008"
+      ]
+    },
+    {
+      "city_id": "odisha_city_005",
+      "city_name": "Cuttack",
+      "places": [
+        "odisha_009"
+      ]
+    },
+    {
+      "city_id": "odisha_city_006",
+      "city_name": "Baripada",
+      "places": [
+        "odisha_011"
+      ]
+    },
+    {
+      "city_id": "odisha_city_007",
+      "city_name": "Rajnagar",
+      "places": [
+        "odisha_012"
+      ]
+    },
+    {
+      "city_id": "odisha_city_008",
+      "city_name": "Gopalpur",
+      "places": [
+        "odisha_013"
+      ]
+    },
+    {
+      "city_id": "odisha_city_009",
+      "city_name": "Daringbadi",
+      "places": [
+        "odisha_014"
+      ]
+    },
+    {
+      "city_id": "odisha_city_010",
+      "city_name": "Sambalpur",
+      "places": [
+        "odisha_015"
+      ]
+    }
+  ],
+  "places": [
+    {
+      "id": "odisha_001",
+      "name": "Jagannath Temple",
+      "city": "Puri",
+      "city_id": "odisha_city_001"
+    },
+    {
+      "id": "odisha_002",
+      "name": "Konark Sun Temple",
+      "city": "Konark",
+      "city_id": "odisha_city_002"
+    },
+    {
+      "id": "odisha_003",
+      "name": "Puri Beach",
+      "city": "Puri",
+      "city_id": "odisha_city_001"
+    },
+    {
+      "id": "odisha_004",
+      "name": "Chilika Lake",
+      "city": "Chilika",
+      "city_id": "odisha_city_003"
+    },
+    {
+      "id": "odisha_005",
+      "name": "Udayagiri and Khandagiri Caves",
+      "city": "Bhubaneswar",
+      "city_id": "odisha_city_004"
+    },
+    {
+      "id": "odisha_006",
+      "name": "Lingaraj Temple",
+      "city": "Bhubaneswar",
+      "city_id": "odisha_city_004"
+    },
+    {
+      "id": "odisha_007",
+      "name": "Dhauli Shanti Stupa",
+      "city": "Bhubaneswar",
+      "city_id": "odisha_city_004"
+    },
+    {
+      "id": "odisha_008",
+      "name": "Nandankanan Zoological Park",
+      "city": "Bhubaneswar",
+      "city_id": "odisha_city_004"
+    },
+    {
+      "id": "odisha_009",
+      "name": "Barabati Fort",
+      "city": "Cuttack",
+      "city_id": "odisha_city_005"
+    },
+    {
+      "id": "odisha_010",
+      "name": "Raghurajpur Heritage Crafts Village",
+      "city": "Puri",
+      "city_id": "odisha_city_001"
+    },
+    {
+      "id": "odisha_011",
+      "name": "Similipal National Park",
+      "city": "Baripada",
+      "city_id": "odisha_city_006"
+    },
+    {
+      "id": "odisha_012",
+      "name": "Bhitarkanika National Park",
+      "city": "Rajnagar",
+      "city_id": "odisha_city_007"
+    },
+    {
+      "id": "odisha_013",
+      "name": "Gopalpur Beach",
+      "city": "Gopalpur",
+      "city_id": "odisha_city_008"
+    },
+    {
+      "id": "odisha_014",
+      "name": "Daringbadi",
+      "city": "Daringbadi",
+      "city_id": "odisha_city_009"
+    },
+    {
+      "id": "odisha_015",
+      "name": "Hirakud Dam",
+      "city": "Sambalpur",
+      "city_id": "odisha_city_010"
+    }
+  ]
+}

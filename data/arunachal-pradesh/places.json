@@ -1,0 +1,947 @@
+[
+  {
+    "id": "arunachal_pradesh_001",
+    "name": "Tawang Monastery",
+    "state": "Arunachal Pradesh",
+    "state_id": "arunachal-pradesh",
+    "city": "Tawang",
+    "city_id": "tawang",
+    "country": "India",
+    "area": "Tawang district",
+    "category": "religious_heritage",
+    "categories": [
+      "religious_heritage",
+      "arunachal_pradesh"
+    ],
+    "summary": "A major Buddhist monastery set in the Himalayas and one of the most important cultural landmarks of Arunachal Pradesh.",
+    "description": "A major Buddhist monastery set in the Himalayas and one of the most important cultural landmarks of Arunachal Pradesh.",
+    "best_for": [
+      "nature",
+      "photography",
+      "mountain trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to April",
+    "entry_fee": "Free or paid depending on attraction; permits may be required",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Carry warm clothing and comfortable footwear",
+      "Check weather, road conditions, and permit requirements before visiting"
+    ],
+    "map_search": "Tawang Monastery Arunachal Pradesh",
+    "tags": [
+      "religious_heritage",
+      "Arunachal Pradesh"
+    ],
+    "coordinates": {
+      "lat": 27.5861,
+      "lng": 91.8594
+    },
+    "lat": 27.5861,
+    "lng": 91.8594,
+    "latitude": 27.5861,
+    "longitude": 91.8594,
+    "rating": 4.8,
+    "reviews_count": "1.2k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1596761403273-049079bfbc06?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1596761403273-049079bfbc06?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1596761403273-049079bfbc06?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1596761403273-049079bfbc06?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Arunachal Pradesh Tourism Department",
+    "source_url": "https://arunachaltourism.com",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "arunachal_pradesh_002",
+    "name": "Sela Pass",
+    "state": "Arunachal Pradesh",
+    "state_id": "arunachal-pradesh",
+    "city": "Tawang",
+    "city_id": "tawang",
+    "country": "India",
+    "area": "Tawang district",
+    "category": "mountain_pass",
+    "categories": [
+      "mountain_pass",
+      "arunachal_pradesh"
+    ],
+    "summary": "A high-altitude mountain pass surrounded by snow-covered peaks and the scenic Sela Lake.",
+    "description": "A high-altitude mountain pass surrounded by snow-covered peaks and the scenic Sela Lake.",
+    "best_for": [
+      "nature",
+      "photography",
+      "mountain trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to April",
+    "entry_fee": "Free or paid depending on attraction; permits may be required",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Carry warm clothing and comfortable footwear",
+      "Check weather, road conditions, and permit requirements before visiting"
+    ],
+    "map_search": "Sela Pass Arunachal Pradesh",
+    "tags": [
+      "mountain_pass",
+      "Arunachal Pradesh"
+    ],
+    "coordinates": {
+      "lat": 27.5056,
+      "lng": 92.1039
+    },
+    "lat": 27.5056,
+    "lng": 92.1039,
+    "latitude": 27.5056,
+    "longitude": 92.1039,
+    "rating": 4.8,
+    "reviews_count": "1.2k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Arunachal Pradesh Tourism Department",
+    "source_url": "https://arunachaltourism.com",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "arunachal_pradesh_003",
+    "name": "Sela Lake",
+    "state": "Arunachal Pradesh",
+    "state_id": "arunachal-pradesh",
+    "city": "Tawang",
+    "city_id": "tawang",
+    "country": "India",
+    "area": "Tawang district",
+    "category": "lake_nature",
+    "categories": [
+      "lake_nature",
+      "arunachal_pradesh"
+    ],
+    "summary": "A beautiful alpine lake near Sela Pass, often frozen during winter.",
+    "description": "A beautiful alpine lake near Sela Pass, often frozen during winter.",
+    "best_for": [
+      "nature",
+      "photography",
+      "mountain trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to April",
+    "entry_fee": "Free or paid depending on attraction; permits may be required",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Carry warm clothing and comfortable footwear",
+      "Check weather, road conditions, and permit requirements before visiting"
+    ],
+    "map_search": "Sela Lake Arunachal Pradesh",
+    "tags": [
+      "lake_nature",
+      "Arunachal Pradesh"
+    ],
+    "coordinates": {
+      "lat": 27.5028,
+      "lng": 92.1056
+    },
+    "lat": 27.5028,
+    "lng": 92.1056,
+    "latitude": 27.5028,
+    "longitude": 92.1056,
+    "rating": 4.8,
+    "reviews_count": "1.2k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Arunachal Pradesh Tourism Department",
+    "source_url": "https://arunachaltourism.com",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "arunachal_pradesh_004",
+    "name": "Bum La Pass",
+    "state": "Arunachal Pradesh",
+    "state_id": "arunachal-pradesh",
+    "city": "Tawang",
+    "city_id": "tawang",
+    "country": "India",
+    "area": "Tawang district",
+    "category": "mountain_pass",
+    "categories": [
+      "mountain_pass",
+      "arunachal_pradesh"
+    ],
+    "summary": "A high-altitude border destination requiring permits and known for dramatic Himalayan scenery.",
+    "description": "A high-altitude border destination requiring permits and known for dramatic Himalayan scenery.",
+    "best_for": [
+      "nature",
+      "photography",
+      "mountain trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to April",
+    "entry_fee": "Free or paid depending on attraction; permits may be required",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Carry warm clothing and comfortable footwear",
+      "Check weather, road conditions, and permit requirements before visiting"
+    ],
+    "map_search": "Bum La Pass Arunachal Pradesh",
+    "tags": [
+      "mountain_pass",
+      "Arunachal Pradesh"
+    ],
+    "coordinates": {
+      "lat": 27.7258,
+      "lng": 91.8847
+    },
+    "lat": 27.7258,
+    "lng": 91.8847,
+    "latitude": 27.7258,
+    "longitude": 91.8847,
+    "rating": 4.8,
+    "reviews_count": "1.2k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Arunachal Pradesh Tourism Department",
+    "source_url": "https://arunachaltourism.com",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "arunachal_pradesh_005",
+    "name": "Tawang War Memorial",
+    "state": "Arunachal Pradesh",
+    "state_id": "arunachal-pradesh",
+    "city": "Tawang",
+    "city_id": "tawang",
+    "country": "India",
+    "area": "Tawang district",
+    "category": "war_memorial",
+    "categories": [
+      "war_memorial",
+      "arunachal_pradesh"
+    ],
+    "summary": "A memorial dedicated to Indian soldiers who fought in the 1962 Sino-Indian War.",
+    "description": "A memorial dedicated to Indian soldiers who fought in the 1962 Sino-Indian War.",
+    "best_for": [
+      "nature",
+      "photography",
+      "mountain trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to April",
+    "entry_fee": "Free or paid depending on attraction; permits may be required",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Carry warm clothing and comfortable footwear",
+      "Check weather, road conditions, and permit requirements before visiting"
+    ],
+    "map_search": "Tawang War Memorial Arunachal Pradesh",
+    "tags": [
+      "war_memorial",
+      "Arunachal Pradesh"
+    ],
+    "coordinates": {
+      "lat": 27.5819,
+      "lng": 91.8653
+    },
+    "lat": 27.5819,
+    "lng": 91.8653,
+    "latitude": 27.5819,
+    "longitude": 91.8653,
+    "rating": 4.8,
+    "reviews_count": "1.2k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Arunachal Pradesh Tourism Department",
+    "source_url": "https://arunachaltourism.com",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "arunachal_pradesh_006",
+    "name": "Dirang",
+    "state": "Arunachal Pradesh",
+    "state_id": "arunachal-pradesh",
+    "city": "Dirang",
+    "city_id": "dirang",
+    "country": "India",
+    "area": "West Kameng district",
+    "category": "hill_station_nature",
+    "categories": [
+      "hill_station_nature",
+      "arunachal_pradesh"
+    ],
+    "summary": "A scenic valley town known for hot springs, monasteries, orchards, and mountain landscapes.",
+    "description": "A scenic valley town known for hot springs, monasteries, orchards, and mountain landscapes.",
+    "best_for": [
+      "nature",
+      "photography",
+      "mountain trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to April",
+    "entry_fee": "Free or paid depending on attraction; permits may be required",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Carry warm clothing and comfortable footwear",
+      "Check weather, road conditions, and permit requirements before visiting"
+    ],
+    "map_search": "Dirang Arunachal Pradesh",
+    "tags": [
+      "hill_station_nature",
+      "Arunachal Pradesh"
+    ],
+    "coordinates": {
+      "lat": 27.3592,
+      "lng": 92.2384
+    },
+    "lat": 27.3592,
+    "lng": 92.2384,
+    "latitude": 27.3592,
+    "longitude": 92.2384,
+    "rating": 4.8,
+    "reviews_count": "1.2k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Arunachal Pradesh Tourism Department",
+    "source_url": "https://arunachaltourism.com",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "arunachal_pradesh_007",
+    "name": "Bomdila",
+    "state": "Arunachal Pradesh",
+    "state_id": "arunachal-pradesh",
+    "city": "Bomdila",
+    "city_id": "bomdila",
+    "country": "India",
+    "area": "West Kameng district",
+    "category": "hill_station_city",
+    "categories": [
+      "hill_station_city",
+      "arunachal_pradesh"
+    ],
+    "summary": "A hill station offering Himalayan views, monasteries, handicrafts, and cultural experiences.",
+    "description": "A hill station offering Himalayan views, monasteries, handicrafts, and cultural experiences.",
+    "best_for": [
+      "nature",
+      "photography",
+      "mountain trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to April",
+    "entry_fee": "Free or paid depending on attraction; permits may be required",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Carry warm clothing and comfortable footwear",
+      "Check weather, road conditions, and permit requirements before visiting"
+    ],
+    "map_search": "Bomdila Arunachal Pradesh",
+    "tags": [
+      "hill_station_city",
+      "Arunachal Pradesh"
+    ],
+    "coordinates": {
+      "lat": 27.2644,
+      "lng": 92.4239
+    },
+    "lat": 27.2644,
+    "lng": 92.4239,
+    "latitude": 27.2644,
+    "longitude": 92.4239,
+    "rating": 4.8,
+    "reviews_count": "1.2k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Arunachal Pradesh Tourism Department",
+    "source_url": "https://arunachaltourism.com",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "arunachal_pradesh_008",
+    "name": "Ziro Valley",
+    "state": "Arunachal Pradesh",
+    "state_id": "arunachal-pradesh",
+    "city": "Ziro",
+    "city_id": "ziro",
+    "country": "India",
+    "area": "Lower Subansiri district",
+    "category": "valley_culture",
+    "categories": [
+      "valley_culture",
+      "arunachal_pradesh"
+    ],
+    "summary": "A picturesque valley famous for rice fields, Apatani culture, and pleasant landscapes.",
+    "description": "A picturesque valley famous for rice fields, Apatani culture, and pleasant landscapes.",
+    "best_for": [
+      "nature",
+      "photography",
+      "mountain trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to April",
+    "entry_fee": "Free or paid depending on attraction; permits may be required",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Carry warm clothing and comfortable footwear",
+      "Check weather, road conditions, and permit requirements before visiting"
+    ],
+    "map_search": "Ziro Valley Arunachal Pradesh",
+    "tags": [
+      "valley_culture",
+      "Arunachal Pradesh"
+    ],
+    "coordinates": {
+      "lat": 27.5451,
+      "lng": 93.8184
+    },
+    "lat": 27.5451,
+    "lng": 93.8184,
+    "latitude": 27.5451,
+    "longitude": 93.8184,
+    "rating": 4.8,
+    "reviews_count": "1.2k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Arunachal Pradesh Tourism Department",
+    "source_url": "https://arunachaltourism.com",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "arunachal_pradesh_009",
+    "name": "Namdapha National Park",
+    "state": "Arunachal Pradesh",
+    "state_id": "arunachal-pradesh",
+    "city": "Miao",
+    "city_id": "miao",
+    "country": "India",
+    "area": "Changlang district",
+    "category": "wildlife_national_park",
+    "categories": [
+      "wildlife_national_park",
+      "arunachal_pradesh"
+    ],
+    "summary": "A vast protected area with rich biodiversity, forests, and opportunities for wildlife exploration.",
+    "description": "A vast protected area with rich biodiversity, forests, and opportunities for wildlife exploration.",
+    "best_for": [
+      "nature",
+      "photography",
+      "mountain trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to April",
+    "entry_fee": "Free or paid depending on attraction; permits may be required",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Carry warm clothing and comfortable footwear",
+      "Check weather, road conditions, and permit requirements before visiting"
+    ],
+    "map_search": "Namdapha National Park Arunachal Pradesh",
+    "tags": [
+      "wildlife_national_park",
+      "Arunachal Pradesh"
+    ],
+    "coordinates": {
+      "lat": 27.4913,
+      "lng": 96.2081
+    },
+    "lat": 27.4913,
+    "lng": 96.2081,
+    "latitude": 27.4913,
+    "longitude": 96.2081,
+    "rating": 4.8,
+    "reviews_count": "1.2k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Arunachal Pradesh Tourism Department",
+    "source_url": "https://arunachaltourism.com",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "arunachal_pradesh_010",
+    "name": "Mouling National Park",
+    "state": "Arunachal Pradesh",
+    "state_id": "arunachal-pradesh",
+    "city": "Jengging",
+    "city_id": "jengging",
+    "country": "India",
+    "area": "Upper Siang district",
+    "category": "wildlife_national_park",
+    "categories": [
+      "wildlife_national_park",
+      "arunachal_pradesh"
+    ],
+    "summary": "A remote Himalayan park known for forests, mountain ecosystems, and diverse wildlife.",
+    "description": "A remote Himalayan park known for forests, mountain ecosystems, and diverse wildlife.",
+    "best_for": [
+      "nature",
+      "photography",
+      "mountain trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to April",
+    "entry_fee": "Free or paid depending on attraction; permits may be required",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Carry warm clothing and comfortable footwear",
+      "Check weather, road conditions, and permit requirements before visiting"
+    ],
+    "map_search": "Mouling National Park Arunachal Pradesh",
+    "tags": [
+      "wildlife_national_park",
+      "Arunachal Pradesh"
+    ],
+    "coordinates": {
+      "lat": 28.5667,
+      "lng": 94.9833
+    },
+    "lat": 28.5667,
+    "lng": 94.9833,
+    "latitude": 28.5667,
+    "longitude": 94.9833,
+    "rating": 4.8,
+    "reviews_count": "1.2k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1511497584788-87676104235f?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1511497584788-87676104235f?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1511497584788-87676104235f?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1511497584788-87676104235f?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Arunachal Pradesh Tourism Department",
+    "source_url": "https://arunachaltourism.com",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "arunachal_pradesh_011",
+    "name": "Itanagar",
+    "state": "Arunachal Pradesh",
+    "state_id": "arunachal-pradesh",
+    "city": "Itanagar",
+    "city_id": "itanagar",
+    "country": "India",
+    "area": "Papum Pare district",
+    "category": "capital_city_heritage",
+    "categories": [
+      "capital_city_heritage",
+      "arunachal_pradesh"
+    ],
+    "summary": "The state capital, known for cultural attractions, markets, and historic Ita Fort.",
+    "description": "The state capital, known for cultural attractions, markets, and historic Ita Fort.",
+    "best_for": [
+      "nature",
+      "photography",
+      "mountain trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to April",
+    "entry_fee": "Free or paid depending on attraction; permits may be required",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Carry warm clothing and comfortable footwear",
+      "Check weather, road conditions, and permit requirements before visiting"
+    ],
+    "map_search": "Itanagar Arunachal Pradesh",
+    "tags": [
+      "capital_city_heritage",
+      "Arunachal Pradesh"
+    ],
+    "coordinates": {
+      "lat": 27.0844,
+      "lng": 93.6053
+    },
+    "lat": 27.0844,
+    "lng": 93.6053,
+    "latitude": 27.0844,
+    "longitude": 93.6053,
+    "rating": 4.8,
+    "reviews_count": "1.2k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Arunachal Pradesh Tourism Department",
+    "source_url": "https://arunachaltourism.com",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "arunachal_pradesh_012",
+    "name": "Ita Fort",
+    "state": "Arunachal Pradesh",
+    "state_id": "arunachal-pradesh",
+    "city": "Itanagar",
+    "city_id": "itanagar",
+    "country": "India",
+    "area": "Itanagar",
+    "category": "heritage_fort",
+    "categories": [
+      "heritage_fort",
+      "arunachal_pradesh"
+    ],
+    "summary": "A historic fort built mainly with bricks and an important symbol of the region’s past.",
+    "description": "A historic fort built mainly with bricks and an important symbol of the region’s past.",
+    "best_for": [
+      "nature",
+      "photography",
+      "mountain trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to April",
+    "entry_fee": "Free or paid depending on attraction; permits may be required",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Carry warm clothing and comfortable footwear",
+      "Check weather, road conditions, and permit requirements before visiting"
+    ],
+    "map_search": "Ita Fort Arunachal Pradesh",
+    "tags": [
+      "heritage_fort",
+      "Arunachal Pradesh"
+    ],
+    "coordinates": {
+      "lat": 27.0986,
+      "lng": 93.6267
+    },
+    "lat": 27.0986,
+    "lng": 93.6267,
+    "latitude": 27.0986,
+    "longitude": 93.6267,
+    "rating": 4.8,
+    "reviews_count": "1.2k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Arunachal Pradesh Tourism Department",
+    "source_url": "https://arunachaltourism.com",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "arunachal_pradesh_013",
+    "name": "Ganga Lake",
+    "state": "Arunachal Pradesh",
+    "state_id": "arunachal-pradesh",
+    "city": "Itanagar",
+    "city_id": "itanagar",
+    "country": "India",
+    "area": "Itanagar",
+    "category": "lake_nature",
+    "categories": [
+      "lake_nature",
+      "arunachal_pradesh"
+    ],
+    "summary": "A serene natural lake surrounded by rocky formations and greenery near the state capital.",
+    "description": "A serene natural lake surrounded by rocky formations and greenery near the state capital.",
+    "best_for": [
+      "nature",
+      "photography",
+      "mountain trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to April",
+    "entry_fee": "Free or paid depending on attraction; permits may be required",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Carry warm clothing and comfortable footwear",
+      "Check weather, road conditions, and permit requirements before visiting"
+    ],
+    "map_search": "Ganga Lake Arunachal Pradesh",
+    "tags": [
+      "lake_nature",
+      "Arunachal Pradesh"
+    ],
+    "coordinates": {
+      "lat": 27.0722,
+      "lng": 93.5786
+    },
+    "lat": 27.0722,
+    "lng": 93.5786,
+    "latitude": 27.0722,
+    "longitude": 93.5786,
+    "rating": 4.8,
+    "reviews_count": "1.2k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1439853941329-a99ce049f08c?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1439853941329-a99ce049f08c?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1439853941329-a99ce049f08c?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1439853941329-a99ce049f08c?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Arunachal Pradesh Tourism Department",
+    "source_url": "https://arunachaltourism.com",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "arunachal_pradesh_014",
+    "name": "Mechuka Valley",
+    "state": "Arunachal Pradesh",
+    "state_id": "arunachal-pradesh",
+    "city": "Mechuka",
+    "city_id": "mechuka",
+    "country": "India",
+    "area": "Shi-Yomi district",
+    "category": "valley_nature",
+    "categories": [
+      "valley_nature",
+      "arunachal_pradesh"
+    ],
+    "summary": "A remote mountain valley known for scenic villages, rivers, monasteries, and snow-covered peaks.",
+    "description": "A remote mountain valley known for scenic villages, rivers, monasteries, and snow-covered peaks.",
+    "best_for": [
+      "nature",
+      "photography",
+      "mountain trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to April",
+    "entry_fee": "Free or paid depending on attraction; permits may be required",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Carry warm clothing and comfortable footwear",
+      "Check weather, road conditions, and permit requirements before visiting"
+    ],
+    "map_search": "Mechuka Valley Arunachal Pradesh",
+    "tags": [
+      "valley_nature",
+      "Arunachal Pradesh"
+    ],
+    "coordinates": {
+      "lat": 28.6019,
+      "lng": 94.1317
+    },
+    "lat": 28.6019,
+    "lng": 94.1317,
+    "latitude": 28.6019,
+    "longitude": 94.1317,
+    "rating": 4.8,
+    "reviews_count": "1.2k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Arunachal Pradesh Tourism Department",
+    "source_url": "https://arunachaltourism.com",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "arunachal_pradesh_015",
+    "name": "Pasighat",
+    "state": "Arunachal Pradesh",
+    "state_id": "arunachal-pradesh",
+    "city": "Pasighat",
+    "city_id": "pasighat",
+    "country": "India",
+    "area": "East Siang district",
+    "category": "river_nature",
+    "categories": [
+      "river_nature",
+      "arunachal_pradesh"
+    ],
+    "summary": "One of Arunachal Pradesh’s oldest towns, located near the Siang River and known for riverine landscapes.",
+    "description": "One of Arunachal Pradesh’s oldest towns, located near the Siang River and known for riverine landscapes.",
+    "best_for": [
+      "nature",
+      "photography",
+      "mountain trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to April",
+    "entry_fee": "Free or paid depending on attraction; permits may be required",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Carry warm clothing and comfortable footwear",
+      "Check weather, road conditions, and permit requirements before visiting"
+    ],
+    "map_search": "Pasighat Arunachal Pradesh",
+    "tags": [
+      "river_nature",
+      "Arunachal Pradesh"
+    ],
+    "coordinates": {
+      "lat": 28.0667,
+      "lng": 95.3333
+    },
+    "lat": 28.0667,
+    "lng": 95.3333,
+    "latitude": 28.0667,
+    "longitude": 95.3333,
+    "rating": 4.8,
+    "reviews_count": "1.2k",
+    "thumbnail_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=80",
+    "hero_image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "source_name": "Arunachal Pradesh Tourism Department",
+    "source_url": "https://arunachaltourism.com",
+    "source_type": "state_tourism",
+    "source_quality": "official_site"
+  }
+]

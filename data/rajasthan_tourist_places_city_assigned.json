@@ -1,0 +1,653 @@
+{
+  "dataset": "Rajasthan Tourist Places",
+  "administrative_type": "State",
+  "name": "Rajasthan",
+  "country": "India",
+  "total_places": 20,
+  "total_cities": 9,
+  "cities": [
+    {
+      "city_id": "rajasthan_city_001",
+      "city": "Jaipur",
+      "state": "Rajasthan",
+      "state_code": "RJ",
+      "country": "India",
+      "place_ids": [
+        "rajasthan_001",
+        "rajasthan_002",
+        "rajasthan_003",
+        "rajasthan_004",
+        "rajasthan_005"
+      ]
+    },
+    {
+      "city_id": "rajasthan_city_002",
+      "city": "Jaisalmer",
+      "state": "Rajasthan",
+      "state_code": "RJ",
+      "country": "India",
+      "place_ids": [
+        "rajasthan_006",
+        "rajasthan_007"
+      ]
+    },
+    {
+      "city_id": "rajasthan_city_003",
+      "city": "Jodhpur",
+      "state": "Rajasthan",
+      "state_code": "RJ",
+      "country": "India",
+      "place_ids": [
+        "rajasthan_008",
+        "rajasthan_009",
+        "rajasthan_010"
+      ]
+    },
+    {
+      "city_id": "rajasthan_city_004",
+      "city": "Udaipur",
+      "state": "Rajasthan",
+      "state_code": "RJ",
+      "country": "India",
+      "place_ids": [
+        "rajasthan_011",
+        "rajasthan_012",
+        "rajasthan_013"
+      ]
+    },
+    {
+      "city_id": "rajasthan_city_005",
+      "city": "Sawai Madhopur",
+      "state": "Rajasthan",
+      "state_code": "RJ",
+      "country": "India",
+      "place_ids": [
+        "rajasthan_014"
+      ]
+    },
+    {
+      "city_id": "rajasthan_city_006",
+      "city": "Chittorgarh",
+      "state": "Rajasthan",
+      "state_code": "RJ",
+      "country": "India",
+      "place_ids": [
+        "rajasthan_015"
+      ]
+    },
+    {
+      "city_id": "rajasthan_city_007",
+      "city": "Pushkar",
+      "state": "Rajasthan",
+      "state_code": "RJ",
+      "country": "India",
+      "place_ids": [
+        "rajasthan_016",
+        "rajasthan_017"
+      ]
+    },
+    {
+      "city_id": "rajasthan_city_008",
+      "city": "Mount Abu",
+      "state": "Rajasthan",
+      "state_code": "RJ",
+      "country": "India",
+      "place_ids": [
+        "rajasthan_018",
+        "rajasthan_019"
+      ]
+    },
+    {
+      "city_id": "rajasthan_city_009",
+      "city": "Bikaner",
+      "state": "Rajasthan",
+      "state_code": "RJ",
+      "country": "India",
+      "place_ids": [
+        "rajasthan_020"
+      ]
+    }
+  ],
+  "places": [
+    {
+      "id": "rajasthan_001",
+      "name": "Jaipur",
+      "category": "heritage_city",
+      "area": "Jaipur district",
+      "city": "Jaipur",
+      "city_id": "rajasthan_city_001",
+      "description": "The Pink City, known for forts, palaces, markets, and historic architecture.",
+      "best_for": [
+        "heritage",
+        "history",
+        "photography"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "opening_hours": "Usually daytime; timings vary by attraction",
+      "visitor_notes": [
+        "Carry water and sun protection",
+        "Check local timings and access rules before visiting"
+      ],
+      "map_search": "Jaipur Rajasthan",
+      "tags": [
+        "heritage_city",
+        "Rajasthan"
+      ]
+    },
+    {
+      "id": "rajasthan_002",
+      "name": "Amber Fort",
+      "category": "fort_palace",
+      "area": "Jaipur",
+      "city": "Jaipur",
+      "city_id": "rajasthan_city_001",
+      "description": "A grand hilltop fort featuring courtyards, gateways, palaces, and artistic interiors.",
+      "best_for": [
+        "heritage",
+        "history",
+        "photography"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "opening_hours": "Usually daytime; timings vary by attraction",
+      "visitor_notes": [
+        "Carry water and sun protection",
+        "Check local timings and access rules before visiting"
+      ],
+      "map_search": "Amber Fort Rajasthan",
+      "tags": [
+        "fort_palace",
+        "Rajasthan"
+      ]
+    },
+    {
+      "id": "rajasthan_003",
+      "name": "City Palace",
+      "category": "palace_museum",
+      "area": "Jaipur",
+      "city": "Jaipur",
+      "city_id": "rajasthan_city_001",
+      "description": "A royal complex containing courtyards, museums, and palace buildings.",
+      "best_for": [
+        "heritage",
+        "history",
+        "photography"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "opening_hours": "Usually daytime; timings vary by attraction",
+      "visitor_notes": [
+        "Carry water and sun protection",
+        "Check local timings and access rules before visiting"
+      ],
+      "map_search": "City Palace Rajasthan",
+      "tags": [
+        "palace_museum",
+        "Rajasthan"
+      ]
+    },
+    {
+      "id": "rajasthan_004",
+      "name": "Hawa Mahal",
+      "category": "heritage_monument",
+      "area": "Jaipur",
+      "city": "Jaipur",
+      "city_id": "rajasthan_city_001",
+      "description": "An iconic five-storey palace façade famous for its honeycomb windows.",
+      "best_for": [
+        "heritage",
+        "history",
+        "photography"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "opening_hours": "Usually daytime; timings vary by attraction",
+      "visitor_notes": [
+        "Carry water and sun protection",
+        "Check local timings and access rules before visiting"
+      ],
+      "map_search": "Hawa Mahal Rajasthan",
+      "tags": [
+        "heritage_monument",
+        "Rajasthan"
+      ]
+    },
+    {
+      "id": "rajasthan_005",
+      "name": "Jantar Mantar",
+      "category": "scientific_heritage",
+      "area": "Jaipur",
+      "city": "Jaipur",
+      "city_id": "rajasthan_city_001",
+      "description": "A UNESCO-listed astronomical observatory with monumental instruments.",
+      "best_for": [
+        "heritage",
+        "history",
+        "photography"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "opening_hours": "Usually daytime; timings vary by attraction",
+      "visitor_notes": [
+        "Carry water and sun protection",
+        "Check local timings and access rules before visiting"
+      ],
+      "map_search": "Jantar Mantar Rajasthan",
+      "tags": [
+        "scientific_heritage",
+        "Rajasthan"
+      ]
+    },
+    {
+      "id": "rajasthan_006",
+      "name": "Jaisalmer Fort",
+      "category": "fort_heritage",
+      "area": "Jaisalmer",
+      "city": "Jaisalmer",
+      "city_id": "rajasthan_city_006",
+      "description": "A living golden sandstone fort containing residences, temples, shops, and viewpoints.",
+      "best_for": [
+        "heritage",
+        "history",
+        "photography"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "opening_hours": "Usually daytime; timings vary by attraction",
+      "visitor_notes": [
+        "Carry water and sun protection",
+        "Check local timings and access rules before visiting"
+      ],
+      "map_search": "Jaisalmer Fort Rajasthan",
+      "tags": [
+        "fort_heritage",
+        "Rajasthan"
+      ]
+    },
+    {
+      "id": "rajasthan_007",
+      "name": "Sam Sand Dunes",
+      "category": "desert_adventure",
+      "area": "Jaisalmer district",
+      "city": "Jaisalmer",
+      "city_id": "rajasthan_city_006",
+      "description": "A popular desert landscape for camel rides, dune views, and cultural camps.",
+      "best_for": [
+        "nature",
+        "culture",
+        "photography"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "opening_hours": "Usually daytime; timings vary by attraction",
+      "visitor_notes": [
+        "Carry water and sun protection",
+        "Check local timings and access rules before visiting"
+      ],
+      "map_search": "Sam Sand Dunes Rajasthan",
+      "tags": [
+        "desert_adventure",
+        "Rajasthan"
+      ]
+    },
+    {
+      "id": "rajasthan_008",
+      "name": "Mehrangarh Fort",
+      "category": "fort_museum",
+      "area": "Jodhpur",
+      "city": "Jodhpur",
+      "city_id": "rajasthan_city_008",
+      "description": "A massive hilltop fort overlooking the Blue City, with museums and historic palaces.",
+      "best_for": [
+        "heritage",
+        "history",
+        "photography"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "opening_hours": "Usually daytime; timings vary by attraction",
+      "visitor_notes": [
+        "Carry water and sun protection",
+        "Check local timings and access rules before visiting"
+      ],
+      "map_search": "Mehrangarh Fort Rajasthan",
+      "tags": [
+        "fort_museum",
+        "Rajasthan"
+      ]
+    },
+    {
+      "id": "rajasthan_009",
+      "name": "Jaswant Thada",
+      "category": "memorial_heritage",
+      "area": "Jodhpur",
+      "city": "Jodhpur",
+      "city_id": "rajasthan_city_008",
+      "description": "A white-marble memorial known for its delicate carvings and peaceful gardens.",
+      "best_for": [
+        "heritage",
+        "history",
+        "photography"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "opening_hours": "Usually daytime; timings vary by attraction",
+      "visitor_notes": [
+        "Carry water and sun protection",
+        "Check local timings and access rules before visiting"
+      ],
+      "map_search": "Jaswant Thada Rajasthan",
+      "tags": [
+        "memorial_heritage",
+        "Rajasthan"
+      ]
+    },
+    {
+      "id": "rajasthan_010",
+      "name": "Umaid Bhawan Palace",
+      "category": "palace_museum",
+      "area": "Jodhpur",
+      "city": "Jodhpur",
+      "city_id": "rajasthan_city_008",
+      "description": "A grand 20th-century palace showcasing royal history and decorative architecture.",
+      "best_for": [
+        "heritage",
+        "history",
+        "photography"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "opening_hours": "Usually daytime; timings vary by attraction",
+      "visitor_notes": [
+        "Carry water and sun protection",
+        "Check local timings and access rules before visiting"
+      ],
+      "map_search": "Umaid Bhawan Palace Rajasthan",
+      "tags": [
+        "palace_museum",
+        "Rajasthan"
+      ]
+    },
+    {
+      "id": "rajasthan_011",
+      "name": "Lake Pichola",
+      "category": "lake_recreation",
+      "area": "Udaipur",
+      "city": "Udaipur",
+      "city_id": "rajasthan_city_011",
+      "description": "A scenic lake surrounded by palaces, ghats, islands, and Aravalli hills.",
+      "best_for": [
+        "nature",
+        "culture",
+        "photography"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "opening_hours": "Usually daytime; timings vary by attraction",
+      "visitor_notes": [
+        "Carry water and sun protection",
+        "Check local timings and access rules before visiting"
+      ],
+      "map_search": "Lake Pichola Rajasthan",
+      "tags": [
+        "lake_recreation",
+        "Rajasthan"
+      ]
+    },
+    {
+      "id": "rajasthan_012",
+      "name": "City Palace Udaipur",
+      "category": "palace_museum",
+      "area": "Udaipur",
+      "city": "Udaipur",
+      "city_id": "rajasthan_city_011",
+      "description": "A large palace complex overlooking Lake Pichola with museums and courtyards.",
+      "best_for": [
+        "heritage",
+        "history",
+        "photography"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "opening_hours": "Usually daytime; timings vary by attraction",
+      "visitor_notes": [
+        "Carry water and sun protection",
+        "Check local timings and access rules before visiting"
+      ],
+      "map_search": "City Palace Udaipur Rajasthan",
+      "tags": [
+        "palace_museum",
+        "Rajasthan"
+      ]
+    },
+    {
+      "id": "rajasthan_013",
+      "name": "Sajjangarh Monsoon Palace",
+      "category": "palace_viewpoint",
+      "area": "Udaipur",
+      "city": "Udaipur",
+      "city_id": "rajasthan_city_011",
+      "description": "A hilltop palace offering panoramic views over Udaipur and its lakes.",
+      "best_for": [
+        "heritage",
+        "history",
+        "photography"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "opening_hours": "Usually daytime; timings vary by attraction",
+      "visitor_notes": [
+        "Carry water and sun protection",
+        "Check local timings and access rules before visiting"
+      ],
+      "map_search": "Sajjangarh Monsoon Palace Rajasthan",
+      "tags": [
+        "palace_viewpoint",
+        "Rajasthan"
+      ]
+    },
+    {
+      "id": "rajasthan_014",
+      "name": "Ranthambore National Park",
+      "category": "wildlife_national_park",
+      "area": "Sawai Madhopur",
+      "city": "Sawai Madhopur",
+      "city_id": "rajasthan_city_014",
+      "description": "A renowned wildlife reserve known for tigers, forests, lakes, and historic ruins.",
+      "best_for": [
+        "nature",
+        "culture",
+        "photography"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "opening_hours": "Usually daytime; timings vary by attraction",
+      "visitor_notes": [
+        "Carry water and sun protection",
+        "Check local timings and access rules before visiting"
+      ],
+      "map_search": "Ranthambore National Park Rajasthan",
+      "tags": [
+        "wildlife_national_park",
+        "Rajasthan"
+      ]
+    },
+    {
+      "id": "rajasthan_015",
+      "name": "Chittorgarh Fort",
+      "category": "fort_heritage",
+      "area": "Chittorgarh",
+      "city": "Chittorgarh",
+      "city_id": "rajasthan_city_015",
+      "description": "A vast historic fort associated with Rajput history, towers, palaces, and temples.",
+      "best_for": [
+        "heritage",
+        "history",
+        "photography"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "opening_hours": "Usually daytime; timings vary by attraction",
+      "visitor_notes": [
+        "Carry water and sun protection",
+        "Check local timings and access rules before visiting"
+      ],
+      "map_search": "Chittorgarh Fort Rajasthan",
+      "tags": [
+        "fort_heritage",
+        "Rajasthan"
+      ]
+    },
+    {
+      "id": "rajasthan_016",
+      "name": "Pushkar Lake",
+      "category": "religious_lake",
+      "area": "Pushkar",
+      "city": "Pushkar",
+      "city_id": "rajasthan_city_016",
+      "description": "A sacred lake surrounded by bathing ghats and temples in the holy town of Pushkar.",
+      "best_for": [
+        "nature",
+        "culture",
+        "photography"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "opening_hours": "Usually daytime; timings vary by attraction",
+      "visitor_notes": [
+        "Carry water and sun protection",
+        "Check local timings and access rules before visiting"
+      ],
+      "map_search": "Pushkar Lake Rajasthan",
+      "tags": [
+        "religious_lake",
+        "Rajasthan"
+      ]
+    },
+    {
+      "id": "rajasthan_017",
+      "name": "Brahma Temple",
+      "category": "religious_heritage",
+      "area": "Pushkar",
+      "city": "Pushkar",
+      "city_id": "rajasthan_city_016",
+      "description": "One of the best-known temples dedicated to Lord Brahma.",
+      "best_for": [
+        "heritage",
+        "history",
+        "photography"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "opening_hours": "Usually daytime; timings vary by attraction",
+      "visitor_notes": [
+        "Carry water and sun protection",
+        "Check local timings and access rules before visiting"
+      ],
+      "map_search": "Brahma Temple Rajasthan",
+      "tags": [
+        "religious_heritage",
+        "Rajasthan"
+      ]
+    },
+    {
+      "id": "rajasthan_018",
+      "name": "Dilwara Temples",
+      "category": "religious_architecture",
+      "area": "Mount Abu",
+      "city": "Mount Abu",
+      "city_id": "rajasthan_city_018",
+      "description": "Famous Jain temples celebrated for exceptionally detailed marble carvings.",
+      "best_for": [
+        "heritage",
+        "history",
+        "photography"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "opening_hours": "Usually daytime; timings vary by attraction",
+      "visitor_notes": [
+        "Carry water and sun protection",
+        "Check local timings and access rules before visiting"
+      ],
+      "map_search": "Dilwara Temples Rajasthan",
+      "tags": [
+        "religious_architecture",
+        "Rajasthan"
+      ]
+    },
+    {
+      "id": "rajasthan_019",
+      "name": "Mount Abu",
+      "category": "hill_station_nature",
+      "area": "Sirohi district",
+      "city": "Mount Abu",
+      "city_id": "rajasthan_city_018",
+      "description": "Rajasthan’s hill station, known for cool weather, viewpoints, forests, and lakes.",
+      "best_for": [
+        "nature",
+        "culture",
+        "photography"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "opening_hours": "Usually daytime; timings vary by attraction",
+      "visitor_notes": [
+        "Carry water and sun protection",
+        "Check local timings and access rules before visiting"
+      ],
+      "map_search": "Mount Abu Rajasthan",
+      "tags": [
+        "hill_station_nature",
+        "Rajasthan"
+      ]
+    },
+    {
+      "id": "rajasthan_020",
+      "name": "Bikaner Junagarh Fort",
+      "category": "fort_museum",
+      "area": "Bikaner",
+      "city": "Bikaner",
+      "city_id": "rajasthan_city_020",
+      "description": "A well-preserved fort containing palaces, courtyards, museums, and ornate interiors.",
+      "best_for": [
+        "heritage",
+        "history",
+        "photography"
+      ],
+      "suggested_duration": "2–4 hours",
+      "best_time_to_visit": "October to March",
+      "entry_fee": "Free or paid depending on attraction; verify current rates",
+      "opening_hours": "Usually daytime; timings vary by attraction",
+      "visitor_notes": [
+        "Carry water and sun protection",
+        "Check local timings and access rules before visiting"
+      ],
+      "map_search": "Bikaner Junagarh Fort Rajasthan",
+      "tags": [
+        "fort_museum",
+        "Rajasthan"
+      ]
+    }
+  ]
+}

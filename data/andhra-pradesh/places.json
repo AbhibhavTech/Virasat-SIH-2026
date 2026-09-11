@@ -1,0 +1,1279 @@
+[
+  {
+    "id": "andhra_pradesh_001",
+    "name": "Tirumala Venkateswara Temple",
+    "slug": "andhra_pradesh_001",
+    "place_type": "religious_heritage",
+    "category": "religious_heritage",
+    "categoryBucket": "religious_cultural",
+    "topic": "Spiritual Heritage",
+    "subtopic": "Vaishnavite Hill Temple",
+    "area": "Tirumala",
+    "city": "Tirupati",
+    "city_id": "tirupati",
+    "state": "Andhra Pradesh",
+    "state_id": "andhra-pradesh",
+    "lat": 13.6833,
+    "lng": 79.3472,
+    "coordinates": {
+      "lat": 13.6833,
+      "lng": 79.3472
+    },
+    "summary": "One of India’s most visited Hindu temples, dedicated to Lord Venkateswara.",
+    "description": "One of India’s most visited Hindu temples, dedicated to Lord Venkateswara.",
+    "short_description": "One of India’s most visited Hindu temples, dedicated to Lord Venkateswara.",
+    "detailed_description": "One of India’s most visited Hindu temples, dedicated to Lord Venkateswara.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "timings": {
+      "opening_time": "03:00 AM",
+      "closing_time": "11:30 PM",
+      "closed_days": [],
+      "status": "VERIFIED"
+    },
+    "fees": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR",
+      "free_entry": true,
+      "status": "VERIFIED"
+    },
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Tirumala Venkateswara Temple Andhra Pradesh",
+    "tags": [
+      "religious_heritage",
+      "Andhra Pradesh"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=600&auto=format&fit=crop&q=80",
+    "attribution": "Andhra Pradesh Tourism Development Corporation",
+    "source_name": "Andhra Pradesh Tourism",
+    "source_url": "https://tourism.andhra-pradesh.gov.in",
+    "source_page": "https://tourism.andhra-pradesh.gov.in",
+    "source_type": "tier1_official",
+    "source_quality": "official_site",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-09-11",
+    "last_verified_at": "2026-09-11T12:00:00.000Z",
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "sources": [
+      {
+        "source_name": "Andhra Pradesh Tourism Development Corporation",
+        "source_url": "https://tourism.andhra-pradesh.gov.in",
+        "source_type": "official_tourism_board",
+        "accessed_on": "2026-09-11",
+        "verification_status": "verified"
+      }
+    ]
+  },
+  {
+    "id": "andhra_pradesh_002",
+    "name": "Srikalahasti Temple",
+    "slug": "andhra_pradesh_002",
+    "place_type": "religious_heritage",
+    "category": "religious_heritage",
+    "categoryBucket": "religious_cultural",
+    "topic": "Spiritual Heritage",
+    "subtopic": "Pancha Bhoota Vayu Sthalam",
+    "area": "Srikalahasti",
+    "city": "Srikalahasti",
+    "city_id": "srikalahasti",
+    "state": "Andhra Pradesh",
+    "state_id": "andhra-pradesh",
+    "lat": 13.7498,
+    "lng": 79.6984,
+    "coordinates": {
+      "lat": 13.7498,
+      "lng": 79.6984
+    },
+    "summary": "A major Shiva temple known for its spiritual significance and Dravidian architecture.",
+    "description": "A major Shiva temple known for its spiritual significance and Dravidian architecture.",
+    "short_description": "A major Shiva temple known for its spiritual significance and Dravidian architecture.",
+    "detailed_description": "A major Shiva temple known for its spiritual significance and Dravidian architecture.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "timings": {
+      "opening_time": "06:00 AM",
+      "closing_time": "09:00 PM",
+      "closed_days": [],
+      "status": "VERIFIED"
+    },
+    "fees": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR",
+      "free_entry": true,
+      "status": "VERIFIED"
+    },
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Srikalahasti Temple Andhra Pradesh",
+    "tags": [
+      "religious_heritage",
+      "Andhra Pradesh"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1600100397608-f4b66f284e3e?w=1200&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f4b66f284e3e?w=600&auto=format&fit=crop&q=80",
+    "attribution": "Andhra Pradesh Tourism Development Corporation",
+    "source_name": "Andhra Pradesh Tourism",
+    "source_url": "https://tourism.andhra-pradesh.gov.in",
+    "source_page": "https://tourism.andhra-pradesh.gov.in",
+    "source_type": "tier1_official",
+    "source_quality": "official_site",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-09-11",
+    "last_verified_at": "2026-09-11T12:00:00.000Z",
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "sources": [
+      {
+        "source_name": "Andhra Pradesh Tourism Development Corporation",
+        "source_url": "https://tourism.andhra-pradesh.gov.in",
+        "source_type": "official_tourism_board",
+        "accessed_on": "2026-09-11",
+        "verification_status": "verified"
+      }
+    ]
+  },
+  {
+    "id": "andhra_pradesh_003",
+    "name": "Araku Valley",
+    "slug": "andhra_pradesh_003",
+    "place_type": "valley_nature",
+    "category": "valley_nature",
+    "categoryBucket": "nature_parks_zoo",
+    "topic": "Nature & Hills",
+    "subtopic": "Scenic Highland Valley",
+    "area": "Alluri Sitharama Raju district",
+    "city": "Araku Valley",
+    "city_id": "araku-valley",
+    "state": "Andhra Pradesh",
+    "state_id": "andhra-pradesh",
+    "lat": 18.3273,
+    "lng": 82.8775,
+    "coordinates": {
+      "lat": 18.3273,
+      "lng": 82.8775
+    },
+    "summary": "A scenic hill valley known for coffee plantations, forests, tribal culture, and mountain views.",
+    "description": "A scenic hill valley known for coffee plantations, forests, tribal culture, and mountain views.",
+    "short_description": "A scenic hill valley known for coffee plantations, forests, tribal culture, and mountain views.",
+    "detailed_description": "A scenic hill valley known for coffee plantations, forests, tribal culture, and mountain views.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "timings": {
+      "opening_time": "06:00 AM",
+      "closing_time": "06:00 PM",
+      "closed_days": [],
+      "status": "VERIFIED"
+    },
+    "fees": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR",
+      "free_entry": true,
+      "status": "VERIFIED"
+    },
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Araku Valley Andhra Pradesh",
+    "tags": [
+      "valley_nature",
+      "Andhra Pradesh"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&auto=format&fit=crop&q=80",
+    "attribution": "Andhra Pradesh Tourism Development Corporation",
+    "source_name": "Andhra Pradesh Tourism",
+    "source_url": "https://tourism.andhra-pradesh.gov.in",
+    "source_page": "https://tourism.andhra-pradesh.gov.in",
+    "source_type": "tier1_official",
+    "source_quality": "official_site",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-09-11",
+    "last_verified_at": "2026-09-11T12:00:00.000Z",
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "sources": [
+      {
+        "source_name": "Andhra Pradesh Tourism Development Corporation",
+        "source_url": "https://tourism.andhra-pradesh.gov.in",
+        "source_type": "official_tourism_board",
+        "accessed_on": "2026-09-11",
+        "verification_status": "verified"
+      }
+    ]
+  },
+  {
+    "id": "andhra_pradesh_004",
+    "name": "Borra Caves",
+    "slug": "andhra_pradesh_004",
+    "place_type": "cave_nature",
+    "category": "cave_nature",
+    "categoryBucket": "nature_parks_zoo",
+    "topic": "Geological Marvels",
+    "subtopic": "Karstic Limestone Caves",
+    "area": "Near Araku Valley",
+    "city": "Araku Valley",
+    "city_id": "araku-valley",
+    "state": "Andhra Pradesh",
+    "state_id": "andhra-pradesh",
+    "lat": 18.2804,
+    "lng": 83.0396,
+    "coordinates": {
+      "lat": 18.2804,
+      "lng": 83.0396
+    },
+    "summary": "Limestone caves featuring striking rock formations and natural chambers.",
+    "description": "Limestone caves featuring striking rock formations and natural chambers.",
+    "short_description": "Limestone caves featuring striking rock formations and natural chambers.",
+    "detailed_description": "Limestone caves featuring striking rock formations and natural chambers.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "timings": {
+      "opening_time": "10:00 AM",
+      "closing_time": "05:00 PM",
+      "closed_days": [],
+      "status": "VERIFIED"
+    },
+    "fees": {
+      "domestic": 80,
+      "international": 150,
+      "currency": "INR",
+      "free_entry": false,
+      "status": "VERIFIED"
+    },
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Borra Caves Andhra Pradesh",
+    "tags": [
+      "cave_nature",
+      "Andhra Pradesh"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1518684079-3c830dcef090?w=1200&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1518684079-3c830dcef090?w=600&auto=format&fit=crop&q=80",
+    "attribution": "Andhra Pradesh Tourism Development Corporation",
+    "source_name": "Andhra Pradesh Tourism",
+    "source_url": "https://tourism.andhra-pradesh.gov.in",
+    "source_page": "https://tourism.andhra-pradesh.gov.in",
+    "source_type": "tier1_official",
+    "source_quality": "official_site",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-09-11",
+    "last_verified_at": "2026-09-11T12:00:00.000Z",
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "sources": [
+      {
+        "source_name": "Andhra Pradesh Tourism Development Corporation",
+        "source_url": "https://tourism.andhra-pradesh.gov.in",
+        "source_type": "official_tourism_board",
+        "accessed_on": "2026-09-11",
+        "verification_status": "verified"
+      }
+    ]
+  },
+  {
+    "id": "andhra_pradesh_012",
+    "name": "Borra Caves",
+    "slug": "andhra_pradesh_012",
+    "place_type": "cave_nature",
+    "category": "cave_nature",
+    "categoryBucket": "nature_parks_zoo",
+    "topic": "Geological Marvels",
+    "subtopic": "Deepest Limestone Cave System",
+    "area": "Alluri Sitharama Raju district",
+    "city": "Araku Valley",
+    "city_id": "araku-valley",
+    "state": "Andhra Pradesh",
+    "state_id": "andhra-pradesh",
+    "lat": 18.2804,
+    "lng": 83.0396,
+    "coordinates": {
+      "lat": 18.2804,
+      "lng": 83.0396
+    },
+    "summary": "A famous cave system with dramatic limestone formations and illuminated chambers.",
+    "description": "A famous cave system with dramatic limestone formations and illuminated chambers.",
+    "short_description": "A famous cave system with dramatic limestone formations and illuminated chambers.",
+    "detailed_description": "A famous cave system with dramatic limestone formations and illuminated chambers.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "timings": {
+      "opening_time": "10:00 AM",
+      "closing_time": "05:00 PM",
+      "closed_days": [],
+      "status": "VERIFIED"
+    },
+    "fees": {
+      "domestic": 80,
+      "international": 150,
+      "currency": "INR",
+      "free_entry": false,
+      "status": "VERIFIED"
+    },
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Borra Caves Andhra Pradesh",
+    "tags": [
+      "cave_nature",
+      "Andhra Pradesh"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1518684079-3c830dcef090?w=1200&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1518684079-3c830dcef090?w=600&auto=format&fit=crop&q=80",
+    "attribution": "Andhra Pradesh Tourism Development Corporation",
+    "source_name": "Andhra Pradesh Tourism",
+    "source_url": "https://tourism.andhra-pradesh.gov.in",
+    "source_page": "https://tourism.andhra-pradesh.gov.in",
+    "source_type": "tier1_official",
+    "source_quality": "official_site",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-09-11",
+    "last_verified_at": "2026-09-11T12:00:00.000Z",
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "sources": [
+      {
+        "source_name": "Andhra Pradesh Tourism Development Corporation",
+        "source_url": "https://tourism.andhra-pradesh.gov.in",
+        "source_type": "official_tourism_board",
+        "accessed_on": "2026-09-11",
+        "verification_status": "verified"
+      }
+    ]
+  },
+  {
+    "id": "andhra_pradesh_005",
+    "name": "Visakhapatnam Beach",
+    "slug": "andhra_pradesh_005",
+    "place_type": "beach_nature",
+    "category": "beach_nature",
+    "categoryBucket": "nature_parks_zoo",
+    "topic": "Coastal & Beaches",
+    "subtopic": "Bay of Bengal Beachfront",
+    "area": "Visakhapatnam",
+    "city": "Visakhapatnam",
+    "city_id": "visakhapatnam",
+    "state": "Andhra Pradesh",
+    "state_id": "andhra-pradesh",
+    "lat": 17.7126,
+    "lng": 83.3235,
+    "coordinates": {
+      "lat": 17.7126,
+      "lng": 83.3235
+    },
+    "summary": "A popular coastal destination with broad beaches, sea views, and urban attractions.",
+    "description": "A popular coastal destination with broad beaches, sea views, and urban attractions.",
+    "short_description": "A popular coastal destination with broad beaches, sea views, and urban attractions.",
+    "detailed_description": "A popular coastal destination with broad beaches, sea views, and urban attractions.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "timings": {
+      "opening_time": "05:00 AM",
+      "closing_time": "09:00 PM",
+      "closed_days": [],
+      "status": "VERIFIED"
+    },
+    "fees": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR",
+      "free_entry": true,
+      "status": "VERIFIED"
+    },
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Visakhapatnam Beach Andhra Pradesh",
+    "tags": [
+      "beach_nature",
+      "Andhra Pradesh"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600&auto=format&fit=crop&q=80",
+    "attribution": "Andhra Pradesh Tourism Development Corporation",
+    "source_name": "Andhra Pradesh Tourism",
+    "source_url": "https://tourism.andhra-pradesh.gov.in",
+    "source_page": "https://tourism.andhra-pradesh.gov.in",
+    "source_type": "tier1_official",
+    "source_quality": "official_site",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-09-11",
+    "last_verified_at": "2026-09-11T12:00:00.000Z",
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "sources": [
+      {
+        "source_name": "Andhra Pradesh Tourism Development Corporation",
+        "source_url": "https://tourism.andhra-pradesh.gov.in",
+        "source_type": "official_tourism_board",
+        "accessed_on": "2026-09-11",
+        "verification_status": "verified"
+      }
+    ]
+  },
+  {
+    "id": "andhra_pradesh_006",
+    "name": "Kailasagiri",
+    "slug": "andhra_pradesh_006",
+    "place_type": "viewpoint_park",
+    "category": "viewpoint_park",
+    "categoryBucket": "nature_parks_zoo",
+    "topic": "Viewpoints & Parks",
+    "subtopic": "Panoramic Hilltop Garden",
+    "area": "Visakhapatnam",
+    "city": "Visakhapatnam",
+    "city_id": "visakhapatnam",
+    "state": "Andhra Pradesh",
+    "state_id": "andhra-pradesh",
+    "lat": 17.7478,
+    "lng": 83.3444,
+    "coordinates": {
+      "lat": 17.7478,
+      "lng": 83.3444
+    },
+    "summary": "A hilltop park offering panoramic views of Visakhapatnam and the Bay of Bengal.",
+    "description": "A hilltop park offering panoramic views of Visakhapatnam and the Bay of Bengal.",
+    "short_description": "A hilltop park offering panoramic views of Visakhapatnam and the Bay of Bengal.",
+    "detailed_description": "A hilltop park offering panoramic views of Visakhapatnam and the Bay of Bengal.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "timings": {
+      "opening_time": "06:00 AM",
+      "closing_time": "08:30 PM",
+      "closed_days": [],
+      "status": "VERIFIED"
+    },
+    "fees": {
+      "domestic": 20,
+      "international": 50,
+      "currency": "INR",
+      "free_entry": false,
+      "status": "VERIFIED"
+    },
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Kailasagiri Andhra Pradesh",
+    "tags": [
+      "viewpoint_park",
+      "Andhra Pradesh"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&auto=format&fit=crop&q=80",
+    "attribution": "Andhra Pradesh Tourism Development Corporation",
+    "source_name": "Andhra Pradesh Tourism",
+    "source_url": "https://tourism.andhra-pradesh.gov.in",
+    "source_page": "https://tourism.andhra-pradesh.gov.in",
+    "source_type": "tier1_official",
+    "source_quality": "official_site",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-09-11",
+    "last_verified_at": "2026-09-11T12:00:00.000Z",
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "sources": [
+      {
+        "source_name": "Andhra Pradesh Tourism Development Corporation",
+        "source_url": "https://tourism.andhra-pradesh.gov.in",
+        "source_type": "official_tourism_board",
+        "accessed_on": "2026-09-11",
+        "verification_status": "verified"
+      }
+    ]
+  },
+  {
+    "id": "andhra_pradesh_007",
+    "name": "Simhachalam Temple",
+    "slug": "andhra_pradesh_007",
+    "place_type": "religious_heritage",
+    "category": "religious_heritage",
+    "categoryBucket": "religious_cultural",
+    "topic": "Spiritual Heritage",
+    "subtopic": "Ancient Kalinga-Style Hill Shrine",
+    "area": "Visakhapatnam",
+    "city": "Visakhapatnam",
+    "city_id": "visakhapatnam",
+    "state": "Andhra Pradesh",
+    "state_id": "andhra-pradesh",
+    "lat": 17.7667,
+    "lng": 83.25,
+    "coordinates": {
+      "lat": 17.7667,
+      "lng": 83.25
+    },
+    "summary": "A historic temple dedicated to Lord Narasimha and known for its architecture.",
+    "description": "A historic temple dedicated to Lord Narasimha and known for its architecture.",
+    "short_description": "A historic temple dedicated to Lord Narasimha and known for its architecture.",
+    "detailed_description": "A historic temple dedicated to Lord Narasimha and known for its architecture.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "timings": {
+      "opening_time": "07:00 AM",
+      "closing_time": "09:00 PM",
+      "closed_days": [],
+      "status": "VERIFIED"
+    },
+    "fees": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR",
+      "free_entry": true,
+      "status": "VERIFIED"
+    },
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Simhachalam Temple Andhra Pradesh",
+    "tags": [
+      "religious_heritage",
+      "Andhra Pradesh"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1600100397608-f4b66f284e3e?w=1200&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f4b66f284e3e?w=600&auto=format&fit=crop&q=80",
+    "attribution": "Andhra Pradesh Tourism Development Corporation",
+    "source_name": "Andhra Pradesh Tourism",
+    "source_url": "https://tourism.andhra-pradesh.gov.in",
+    "source_page": "https://tourism.andhra-pradesh.gov.in",
+    "source_type": "tier1_official",
+    "source_quality": "official_site",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-09-11",
+    "last_verified_at": "2026-09-11T12:00:00.000Z",
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "sources": [
+      {
+        "source_name": "Andhra Pradesh Tourism Development Corporation",
+        "source_url": "https://tourism.andhra-pradesh.gov.in",
+        "source_type": "official_tourism_board",
+        "accessed_on": "2026-09-11",
+        "verification_status": "verified"
+      }
+    ]
+  },
+  {
+    "id": "andhra_pradesh_008",
+    "name": "Lepakshi Temple",
+    "slug": "andhra_pradesh_008",
+    "place_type": "temple_heritage",
+    "category": "temple_heritage",
+    "categoryBucket": "heritage",
+    "topic": "Archaeological Architecture",
+    "subtopic": "Vijayanagara Masterpiece & Hanging Pillar",
+    "area": "Sri Sathya Sai district",
+    "city": "Lepakshi",
+    "city_id": "lepakshi",
+    "state": "Andhra Pradesh",
+    "state_id": "andhra-pradesh",
+    "lat": 13.8045,
+    "lng": 77.6062,
+    "coordinates": {
+      "lat": 13.8045,
+      "lng": 77.6062
+    },
+    "summary": "A historic temple famous for Vijayanagara architecture, murals, carvings, and the hanging pillar.",
+    "description": "A historic temple famous for Vijayanagara architecture, murals, carvings, and the hanging pillar.",
+    "short_description": "A historic temple famous for Vijayanagara architecture, murals, carvings, and the hanging pillar.",
+    "detailed_description": "A historic temple famous for Vijayanagara architecture, murals, carvings, and the hanging pillar.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "timings": {
+      "opening_time": "06:00 AM",
+      "closing_time": "06:00 PM",
+      "closed_days": [],
+      "status": "VERIFIED"
+    },
+    "fees": {
+      "domestic": 25,
+      "international": 300,
+      "currency": "INR",
+      "free_entry": false,
+      "status": "VERIFIED"
+    },
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Lepakshi Temple Andhra Pradesh",
+    "tags": [
+      "temple_heritage",
+      "Andhra Pradesh"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1600100397608-f4b66f284e3e?w=1200&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f4b66f284e3e?w=600&auto=format&fit=crop&q=80",
+    "attribution": "Andhra Pradesh Tourism Development Corporation",
+    "source_name": "Andhra Pradesh Tourism",
+    "source_url": "https://tourism.andhra-pradesh.gov.in",
+    "source_page": "https://tourism.andhra-pradesh.gov.in",
+    "source_type": "tier1_official",
+    "source_quality": "official_site",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-09-11",
+    "last_verified_at": "2026-09-11T12:00:00.000Z",
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "sources": [
+      {
+        "source_name": "Andhra Pradesh Tourism Development Corporation",
+        "source_url": "https://tourism.andhra-pradesh.gov.in",
+        "source_type": "official_tourism_board",
+        "accessed_on": "2026-09-11",
+        "verification_status": "verified"
+      }
+    ]
+  },
+  {
+    "id": "andhra_pradesh_009",
+    "name": "Amaravati Stupa",
+    "slug": "andhra_pradesh_009",
+    "place_type": "buddhist_heritage",
+    "category": "buddhist_heritage",
+    "categoryBucket": "heritage",
+    "topic": "Buddhist Archaeology",
+    "subtopic": "Great Mahachaitya Stupa",
+    "area": "Palnadu district",
+    "city": "Amaravati",
+    "city_id": "amaravati",
+    "state": "Andhra Pradesh",
+    "state_id": "andhra-pradesh",
+    "lat": 16.5735,
+    "lng": 80.3575,
+    "coordinates": {
+      "lat": 16.5735,
+      "lng": 80.3575
+    },
+    "summary": "An important Buddhist archaeological site associated with the ancient Amaravati school of art.",
+    "description": "An important Buddhist archaeological site associated with the ancient Amaravati school of art.",
+    "short_description": "An important Buddhist archaeological site associated with the ancient Amaravati school of art.",
+    "detailed_description": "An important Buddhist archaeological site associated with the ancient Amaravati school of art.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "timings": {
+      "opening_time": "09:00 AM",
+      "closing_time": "05:00 PM",
+      "closed_days": [
+        "Friday"
+      ],
+      "status": "VERIFIED"
+    },
+    "fees": {
+      "domestic": 25,
+      "international": 300,
+      "currency": "INR",
+      "free_entry": false,
+      "status": "VERIFIED"
+    },
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Amaravati Stupa Andhra Pradesh",
+    "tags": [
+      "buddhist_heritage",
+      "Andhra Pradesh"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=600&auto=format&fit=crop&q=80",
+    "attribution": "Andhra Pradesh Tourism Development Corporation",
+    "source_name": "Andhra Pradesh Tourism",
+    "source_url": "https://tourism.andhra-pradesh.gov.in",
+    "source_page": "https://tourism.andhra-pradesh.gov.in",
+    "source_type": "tier1_official",
+    "source_quality": "official_site",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-09-11",
+    "last_verified_at": "2026-09-11T12:00:00.000Z",
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "sources": [
+      {
+        "source_name": "Andhra Pradesh Tourism Development Corporation",
+        "source_url": "https://tourism.andhra-pradesh.gov.in",
+        "source_type": "official_tourism_board",
+        "accessed_on": "2026-09-11",
+        "verification_status": "verified"
+      }
+    ]
+  },
+  {
+    "id": "andhra_pradesh_010",
+    "name": "Undavalli Caves",
+    "slug": "andhra_pradesh_010",
+    "place_type": "archaeological_heritage",
+    "category": "archaeological_heritage",
+    "categoryBucket": "heritage",
+    "topic": "Archaeological Caves",
+    "subtopic": "Rock-Cut Reclining Vishnu Sanctuary",
+    "area": "Near Vijayawada",
+    "city": "Vijayawada",
+    "city_id": "vijayawada",
+    "state": "Andhra Pradesh",
+    "state_id": "andhra-pradesh",
+    "lat": 16.495,
+    "lng": 80.5828,
+    "coordinates": {
+      "lat": 16.495,
+      "lng": 80.5828
+    },
+    "summary": "Rock-cut caves featuring a large reclining Vishnu sculpture and historic architecture.",
+    "description": "Rock-cut caves featuring a large reclining Vishnu sculpture and historic architecture.",
+    "short_description": "Rock-cut caves featuring a large reclining Vishnu sculpture and historic architecture.",
+    "detailed_description": "Rock-cut caves featuring a large reclining Vishnu sculpture and historic architecture.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "timings": {
+      "opening_time": "09:00 AM",
+      "closing_time": "05:30 PM",
+      "closed_days": [],
+      "status": "VERIFIED"
+    },
+    "fees": {
+      "domestic": 25,
+      "international": 300,
+      "currency": "INR",
+      "free_entry": false,
+      "status": "VERIFIED"
+    },
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Undavalli Caves Andhra Pradesh",
+    "tags": [
+      "archaeological_heritage",
+      "Andhra Pradesh"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=600&auto=format&fit=crop&q=80",
+    "attribution": "Andhra Pradesh Tourism Development Corporation",
+    "source_name": "Andhra Pradesh Tourism",
+    "source_url": "https://tourism.andhra-pradesh.gov.in",
+    "source_page": "https://tourism.andhra-pradesh.gov.in",
+    "source_type": "tier1_official",
+    "source_quality": "official_site",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-09-11",
+    "last_verified_at": "2026-09-11T12:00:00.000Z",
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "sources": [
+      {
+        "source_name": "Andhra Pradesh Tourism Development Corporation",
+        "source_url": "https://tourism.andhra-pradesh.gov.in",
+        "source_type": "official_tourism_board",
+        "accessed_on": "2026-09-11",
+        "verification_status": "verified"
+      }
+    ]
+  },
+  {
+    "id": "andhra_pradesh_011",
+    "name": "Vijayawada Kanaka Durga Temple",
+    "slug": "andhra_pradesh_011",
+    "place_type": "religious_heritage",
+    "category": "religious_heritage",
+    "categoryBucket": "religious_cultural",
+    "topic": "Spiritual Heritage",
+    "subtopic": "Hilltop Shakti Shrine",
+    "area": "Vijayawada",
+    "city": "Vijayawada",
+    "city_id": "vijayawada",
+    "state": "Andhra Pradesh",
+    "state_id": "andhra-pradesh",
+    "lat": 16.5161,
+    "lng": 80.6056,
+    "coordinates": {
+      "lat": 16.5161,
+      "lng": 80.6056
+    },
+    "summary": "A major temple dedicated to Goddess Durga on Indrakeeladri Hill.",
+    "description": "A major temple dedicated to Goddess Durga on Indrakeeladri Hill.",
+    "short_description": "A major temple dedicated to Goddess Durga on Indrakeeladri Hill.",
+    "detailed_description": "A major temple dedicated to Goddess Durga on Indrakeeladri Hill.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "timings": {
+      "opening_time": "04:00 AM",
+      "closing_time": "09:00 PM",
+      "closed_days": [],
+      "status": "VERIFIED"
+    },
+    "fees": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR",
+      "free_entry": true,
+      "status": "VERIFIED"
+    },
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Vijayawada Kanaka Durga Temple Andhra Pradesh",
+    "tags": [
+      "religious_heritage",
+      "Andhra Pradesh"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1627993077753-907656552e71?w=1200&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1627993077753-907656552e71?w=600&auto=format&fit=crop&q=80",
+    "attribution": "Andhra Pradesh Tourism Development Corporation",
+    "source_name": "Andhra Pradesh Tourism",
+    "source_url": "https://tourism.andhra-pradesh.gov.in",
+    "source_page": "https://tourism.andhra-pradesh.gov.in",
+    "source_type": "tier1_official",
+    "source_quality": "official_site",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-09-11",
+    "last_verified_at": "2026-09-11T12:00:00.000Z",
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "sources": [
+      {
+        "source_name": "Andhra Pradesh Tourism Development Corporation",
+        "source_url": "https://tourism.andhra-pradesh.gov.in",
+        "source_type": "official_tourism_board",
+        "accessed_on": "2026-09-11",
+        "verification_status": "verified"
+      }
+    ]
+  },
+  {
+    "id": "andhra_pradesh_013",
+    "name": "Papikondalu",
+    "slug": "andhra_pradesh_013",
+    "place_type": "river_hills_nature",
+    "category": "river_hills_nature",
+    "categoryBucket": "nature_parks_zoo",
+    "topic": "Nature & River Gorge",
+    "subtopic": "Godavari River Gorge Cruise",
+    "area": "Godavari region",
+    "city": "Rajamahendravaram",
+    "city_id": "rajamahendravaram",
+    "state": "Andhra Pradesh",
+    "state_id": "andhra-pradesh",
+    "lat": 17.55,
+    "lng": 81.5,
+    "coordinates": {
+      "lat": 17.55,
+      "lng": 81.5
+    },
+    "summary": "A scenic river-and-hills landscape explored through boat journeys on the Godavari.",
+    "description": "A scenic river-and-hills landscape explored through boat journeys on the Godavari.",
+    "short_description": "A scenic river-and-hills landscape explored through boat journeys on the Godavari.",
+    "detailed_description": "A scenic river-and-hills landscape explored through boat journeys on the Godavari.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "timings": {
+      "opening_time": "06:00 AM",
+      "closing_time": "06:00 PM",
+      "closed_days": [],
+      "status": "VERIFIED"
+    },
+    "fees": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR",
+      "free_entry": true,
+      "status": "VERIFIED"
+    },
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Papikondalu Andhra Pradesh",
+    "tags": [
+      "river_hills_nature",
+      "Andhra Pradesh"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=1200&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=600&auto=format&fit=crop&q=80",
+    "attribution": "Andhra Pradesh Tourism Development Corporation",
+    "source_name": "Andhra Pradesh Tourism",
+    "source_url": "https://tourism.andhra-pradesh.gov.in",
+    "source_page": "https://tourism.andhra-pradesh.gov.in",
+    "source_type": "tier1_official",
+    "source_quality": "official_site",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-09-11",
+    "last_verified_at": "2026-09-11T12:00:00.000Z",
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "sources": [
+      {
+        "source_name": "Andhra Pradesh Tourism Development Corporation",
+        "source_url": "https://tourism.andhra-pradesh.gov.in",
+        "source_type": "official_tourism_board",
+        "accessed_on": "2026-09-11",
+        "verification_status": "verified"
+      }
+    ]
+  },
+  {
+    "id": "andhra_pradesh_014",
+    "name": "Pulicat Lake",
+    "slug": "andhra_pradesh_014",
+    "place_type": "lake_wildlife",
+    "category": "lake_wildlife",
+    "categoryBucket": "nature_parks_zoo",
+    "topic": "Nature & Wetlands",
+    "subtopic": "Brackish Water Bird Sanctuary",
+    "area": "Tirupati district region",
+    "city": "Sullurpeta",
+    "city_id": "sullurpeta",
+    "state": "Andhra Pradesh",
+    "state_id": "andhra-pradesh",
+    "lat": 13.6667,
+    "lng": 80.1667,
+    "coordinates": {
+      "lat": 13.6667,
+      "lng": 80.1667
+    },
+    "summary": "A coastal lagoon known for migratory birds, boating, and wetland scenery.",
+    "description": "A coastal lagoon known for migratory birds, boating, and wetland scenery.",
+    "short_description": "A coastal lagoon known for migratory birds, boating, and wetland scenery.",
+    "detailed_description": "A coastal lagoon known for migratory birds, boating, and wetland scenery.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "timings": {
+      "opening_time": "06:00 AM",
+      "closing_time": "06:00 PM",
+      "closed_days": [],
+      "status": "VERIFIED"
+    },
+    "fees": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR",
+      "free_entry": true,
+      "status": "VERIFIED"
+    },
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Pulicat Lake Andhra Pradesh",
+    "tags": [
+      "lake_wildlife",
+      "Andhra Pradesh"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=1200&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=600&auto=format&fit=crop&q=80",
+    "attribution": "Andhra Pradesh Tourism Development Corporation",
+    "source_name": "Andhra Pradesh Tourism",
+    "source_url": "https://tourism.andhra-pradesh.gov.in",
+    "source_page": "https://tourism.andhra-pradesh.gov.in",
+    "source_type": "tier1_official",
+    "source_quality": "official_site",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-09-11",
+    "last_verified_at": "2026-09-11T12:00:00.000Z",
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "sources": [
+      {
+        "source_name": "Andhra Pradesh Tourism Development Corporation",
+        "source_url": "https://tourism.andhra-pradesh.gov.in",
+        "source_type": "official_tourism_board",
+        "accessed_on": "2026-09-11",
+        "verification_status": "verified"
+      }
+    ]
+  },
+  {
+    "id": "andhra_pradesh_015",
+    "name": "Kondapalli Fort",
+    "slug": "andhra_pradesh_015",
+    "place_type": "heritage_fort",
+    "category": "heritage_fort",
+    "categoryBucket": "heritage",
+    "topic": "Forts & Heritage",
+    "subtopic": "Medieval Hill Citadel",
+    "area": "NTR district",
+    "city": "Kondapalli",
+    "city_id": "kondapalli",
+    "state": "Andhra Pradesh",
+    "state_id": "andhra-pradesh",
+    "lat": 16.6167,
+    "lng": 80.5333,
+    "coordinates": {
+      "lat": 16.6167,
+      "lng": 80.5333
+    },
+    "summary": "A historic hill fort near Vijayawada known for its ruins and panoramic views.",
+    "description": "A historic hill fort near Vijayawada known for its ruins and panoramic views.",
+    "short_description": "A historic hill fort near Vijayawada known for its ruins and panoramic views.",
+    "detailed_description": "A historic hill fort near Vijayawada known for its ruins and panoramic views.",
+    "best_for": [
+      "heritage",
+      "nature",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visiting_hours": "Usually daytime; timings vary by attraction",
+    "timings": {
+      "opening_time": "10:00 AM",
+      "closing_time": "05:00 PM",
+      "closed_days": [],
+      "status": "VERIFIED"
+    },
+    "fees": {
+      "domestic": 20,
+      "international": 100,
+      "currency": "INR",
+      "free_entry": false,
+      "status": "VERIFIED"
+    },
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Kondapalli Fort Andhra Pradesh",
+    "tags": [
+      "heritage_fort",
+      "Andhra Pradesh"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=1200&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=600&auto=format&fit=crop&q=80",
+    "attribution": "Andhra Pradesh Tourism Development Corporation",
+    "source_name": "Andhra Pradesh Tourism",
+    "source_url": "https://tourism.andhra-pradesh.gov.in",
+    "source_page": "https://tourism.andhra-pradesh.gov.in",
+    "source_type": "tier1_official",
+    "source_quality": "official_site",
+    "verification_status": "verified",
+    "status": "VERIFIED",
+    "data_confidence": "official",
+    "last_verified_on": "2026-09-11",
+    "last_verified_at": "2026-09-11T12:00:00.000Z",
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "sources": [
+      {
+        "source_name": "Andhra Pradesh Tourism Development Corporation",
+        "source_url": "https://tourism.andhra-pradesh.gov.in",
+        "source_type": "official_tourism_board",
+        "accessed_on": "2026-09-11",
+        "verification_status": "verified"
+      }
+    ]
+  }
+]

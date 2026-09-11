@@ -1,0 +1,399 @@
+{
+  "dataset_name": "Jammu and Kashmir Tourist Places",
+  "administrative_type": "Union Territory",
+  "name": "Jammu and Kashmir",
+  "country": "India",
+  "total_places": 15,
+  "places": [
+    {
+      "id": "JK001",
+      "name": "Dal Lake",
+      "category": "Lake",
+      "area": "Srinagar",
+      "union_territory": "Jammu and Kashmir",
+      "country": "India",
+      "description": "Famous lake known for houseboats, shikaras, floating gardens and Himalayan views.",
+      "best_for": [
+        "nature",
+        "photography",
+        "sightseeing"
+      ],
+      "suggested_duration": "1–3 hours",
+      "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
+      "entry_fee": "Varies; verify current fee before visiting.",
+      "opening_hours": "Varies by place; check official timings before visiting.",
+      "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
+      "map_search": "Dal Lake, Jammu and Kashmir",
+      "tags": [
+        "lake",
+        "srinagar",
+        "jammu and kashmir",
+        "tourism"
+      ]
+    },
+    {
+      "id": "JK002",
+      "name": "Mughal Gardens",
+      "category": "Garden",
+      "area": "Srinagar",
+      "union_territory": "Jammu and Kashmir",
+      "country": "India",
+      "description": "Historic terraced gardens including Shalimar Bagh, Nishat Bagh and Chashme Shahi.",
+      "best_for": [
+        "sightseeing",
+        "photography",
+        "culture"
+      ],
+      "suggested_duration": "1–3 hours",
+      "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
+      "entry_fee": "Varies; verify current fee before visiting.",
+      "opening_hours": "Varies by place; check official timings before visiting.",
+      "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
+      "map_search": "Mughal Gardens, Jammu and Kashmir",
+      "tags": [
+        "garden",
+        "srinagar",
+        "jammu and kashmir",
+        "tourism"
+      ]
+    },
+    {
+      "id": "JK003",
+      "name": "Hazratbal Shrine",
+      "category": "Religious site",
+      "area": "Srinagar",
+      "union_territory": "Jammu and Kashmir",
+      "country": "India",
+      "description": "Important Muslim shrine located beside Dal Lake, known for its white-domed architecture.",
+      "best_for": [
+        "sightseeing",
+        "photography",
+        "culture"
+      ],
+      "suggested_duration": "1–3 hours",
+      "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
+      "entry_fee": "Varies; verify current fee before visiting.",
+      "opening_hours": "Varies by place; check official timings before visiting.",
+      "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
+      "map_search": "Hazratbal Shrine, Jammu and Kashmir",
+      "tags": [
+        "religious site",
+        "srinagar",
+        "jammu and kashmir",
+        "tourism"
+      ]
+    },
+    {
+      "id": "JK004",
+      "name": "Shankaracharya Temple",
+      "category": "Temple",
+      "area": "Srinagar",
+      "union_territory": "Jammu and Kashmir",
+      "country": "India",
+      "description": "Hilltop Hindu temple offering panoramic views over Srinagar and Dal Lake.",
+      "best_for": [
+        "sightseeing",
+        "photography",
+        "culture"
+      ],
+      "suggested_duration": "1–3 hours",
+      "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
+      "entry_fee": "Varies; verify current fee before visiting.",
+      "opening_hours": "Varies by place; check official timings before visiting.",
+      "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
+      "map_search": "Shankaracharya Temple, Jammu and Kashmir",
+      "tags": [
+        "temple",
+        "srinagar",
+        "jammu and kashmir",
+        "tourism"
+      ]
+    },
+    {
+      "id": "JK005",
+      "name": "Pari Mahal",
+      "category": "Palace garden",
+      "area": "Srinagar",
+      "union_territory": "Jammu and Kashmir",
+      "country": "India",
+      "description": "Seven-terraced historic garden and palace overlooking Dal Lake.",
+      "best_for": [
+        "sightseeing",
+        "photography",
+        "culture"
+      ],
+      "suggested_duration": "1–3 hours",
+      "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
+      "entry_fee": "Varies; verify current fee before visiting.",
+      "opening_hours": "Varies by place; check official timings before visiting.",
+      "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
+      "map_search": "Pari Mahal, Jammu and Kashmir",
+      "tags": [
+        "palace garden",
+        "srinagar",
+        "jammu and kashmir",
+        "tourism"
+      ]
+    },
+    {
+      "id": "JK006",
+      "name": "Gulmarg",
+      "category": "Hill station",
+      "area": "Baramulla district",
+      "union_territory": "Jammu and Kashmir",
+      "country": "India",
+      "description": "Popular mountain destination known for meadows, skiing and the Gulmarg Gondola.",
+      "best_for": [
+        "nature",
+        "photography",
+        "sightseeing"
+      ],
+      "suggested_duration": "1–3 hours",
+      "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
+      "entry_fee": "Varies; verify current fee before visiting.",
+      "opening_hours": "Varies by place; check official timings before visiting.",
+      "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
+      "map_search": "Gulmarg, Jammu and Kashmir",
+      "tags": [
+        "hill station",
+        "baramulla district",
+        "jammu and kashmir",
+        "tourism"
+      ]
+    },
+    {
+      "id": "JK007",
+      "name": "Pahalgam",
+      "category": "Hill station",
+      "area": "Anantnag district",
+      "union_territory": "Jammu and Kashmir",
+      "country": "India",
+      "description": "Scenic valley surrounded by mountains, forests and the Lidder River.",
+      "best_for": [
+        "nature",
+        "photography",
+        "sightseeing"
+      ],
+      "suggested_duration": "1–3 hours",
+      "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
+      "entry_fee": "Varies; verify current fee before visiting.",
+      "opening_hours": "Varies by place; check official timings before visiting.",
+      "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
+      "map_search": "Pahalgam, Jammu and Kashmir",
+      "tags": [
+        "hill station",
+        "anantnag district",
+        "jammu and kashmir",
+        "tourism"
+      ]
+    },
+    {
+      "id": "JK008",
+      "name": "Betaab Valley",
+      "category": "Valley",
+      "area": "Near Pahalgam",
+      "union_territory": "Jammu and Kashmir",
+      "country": "India",
+      "description": "Picturesque valley with green meadows, streams and mountain scenery.",
+      "best_for": [
+        "nature",
+        "photography",
+        "sightseeing"
+      ],
+      "suggested_duration": "1–3 hours",
+      "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
+      "entry_fee": "Varies; verify current fee before visiting.",
+      "opening_hours": "Varies by place; check official timings before visiting.",
+      "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
+      "map_search": "Betaab Valley, Jammu and Kashmir",
+      "tags": [
+        "valley",
+        "near pahalgam",
+        "jammu and kashmir",
+        "tourism"
+      ]
+    },
+    {
+      "id": "JK009",
+      "name": "Aru Valley",
+      "category": "Valley",
+      "area": "Near Pahalgam",
+      "union_territory": "Jammu and Kashmir",
+      "country": "India",
+      "description": "Peaceful alpine valley popular for nature walks, trekking and scenic views.",
+      "best_for": [
+        "nature",
+        "photography",
+        "sightseeing"
+      ],
+      "suggested_duration": "1–3 hours",
+      "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
+      "entry_fee": "Varies; verify current fee before visiting.",
+      "opening_hours": "Varies by place; check official timings before visiting.",
+      "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
+      "map_search": "Aru Valley, Jammu and Kashmir",
+      "tags": [
+        "valley",
+        "near pahalgam",
+        "jammu and kashmir",
+        "tourism"
+      ]
+    },
+    {
+      "id": "JK010",
+      "name": "Sonamarg",
+      "category": "Hill station",
+      "area": "Ganderbal district",
+      "union_territory": "Jammu and Kashmir",
+      "country": "India",
+      "description": "Mountain resort known for glaciers, meadows and routes toward high-altitude trekking areas.",
+      "best_for": [
+        "nature",
+        "photography",
+        "sightseeing"
+      ],
+      "suggested_duration": "1–3 hours",
+      "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
+      "entry_fee": "Varies; verify current fee before visiting.",
+      "opening_hours": "Varies by place; check official timings before visiting.",
+      "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
+      "map_search": "Sonamarg, Jammu and Kashmir",
+      "tags": [
+        "hill station",
+        "ganderbal district",
+        "jammu and kashmir",
+        "tourism"
+      ]
+    },
+    {
+      "id": "JK011",
+      "name": "Doodhpathri",
+      "category": "Meadow",
+      "area": "Budgam district",
+      "union_territory": "Jammu and Kashmir",
+      "country": "India",
+      "description": "Quiet alpine meadow with flowing streams and lush landscapes.",
+      "best_for": [
+        "nature",
+        "photography",
+        "sightseeing"
+      ],
+      "suggested_duration": "1–3 hours",
+      "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
+      "entry_fee": "Varies; verify current fee before visiting.",
+      "opening_hours": "Varies by place; check official timings before visiting.",
+      "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
+      "map_search": "Doodhpathri, Jammu and Kashmir",
+      "tags": [
+        "meadow",
+        "budgam district",
+        "jammu and kashmir",
+        "tourism"
+      ]
+    },
+    {
+      "id": "JK012",
+      "name": "Yusmarg",
+      "category": "Meadow",
+      "area": "Budgam district",
+      "union_territory": "Jammu and Kashmir",
+      "country": "India",
+      "description": "Serene meadow destination surrounded by pine forests and mountain trails.",
+      "best_for": [
+        "nature",
+        "photography",
+        "sightseeing"
+      ],
+      "suggested_duration": "1–3 hours",
+      "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
+      "entry_fee": "Varies; verify current fee before visiting.",
+      "opening_hours": "Varies by place; check official timings before visiting.",
+      "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
+      "map_search": "Yusmarg, Jammu and Kashmir",
+      "tags": [
+        "meadow",
+        "budgam district",
+        "jammu and kashmir",
+        "tourism"
+      ]
+    },
+    {
+      "id": "JK013",
+      "name": "Vaishno Devi Shrine",
+      "category": "Pilgrimage site",
+      "area": "Katra, Reasi district",
+      "union_territory": "Jammu and Kashmir",
+      "country": "India",
+      "description": "Major Hindu pilgrimage shrine located in the Trikuta Mountains.",
+      "best_for": [
+        "sightseeing",
+        "photography",
+        "culture"
+      ],
+      "suggested_duration": "1–3 hours",
+      "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
+      "entry_fee": "Varies; verify current fee before visiting.",
+      "opening_hours": "Varies by place; check official timings before visiting.",
+      "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
+      "map_search": "Vaishno Devi Shrine, Jammu and Kashmir",
+      "tags": [
+        "pilgrimage site",
+        "katra, reasi district",
+        "jammu and kashmir",
+        "tourism"
+      ]
+    },
+    {
+      "id": "JK014",
+      "name": "Bahu Fort",
+      "category": "Fort",
+      "area": "Jammu",
+      "union_territory": "Jammu and Kashmir",
+      "country": "India",
+      "description": "Historic hilltop fort overlooking the Tawi River and surrounding Jammu city.",
+      "best_for": [
+        "sightseeing",
+        "photography",
+        "culture"
+      ],
+      "suggested_duration": "1–3 hours",
+      "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
+      "entry_fee": "Varies; verify current fee before visiting.",
+      "opening_hours": "Varies by place; check official timings before visiting.",
+      "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
+      "map_search": "Bahu Fort, Jammu and Kashmir",
+      "tags": [
+        "fort",
+        "jammu",
+        "jammu and kashmir",
+        "tourism"
+      ]
+    },
+    {
+      "id": "JK015",
+      "name": "Amar Mahal Palace Museum",
+      "category": "Museum and palace",
+      "area": "Jammu",
+      "union_territory": "Jammu and Kashmir",
+      "country": "India",
+      "description": "Historic palace museum displaying royal collections, paintings and cultural exhibits.",
+      "best_for": [
+        "sightseeing",
+        "photography",
+        "culture"
+      ],
+      "suggested_duration": "1–3 hours",
+      "best_time_to_visit": "March to October for general sightseeing; winter is suitable for snow activities in selected mountain destinations.",
+      "entry_fee": "Varies; verify current fee before visiting.",
+      "opening_hours": "Varies by place; check official timings before visiting.",
+      "visitor_notes": "Weather, road access, security restrictions and seasonal availability may change. Verify current conditions before travel.",
+      "map_search": "Amar Mahal Palace Museum, Jammu and Kashmir",
+      "tags": [
+        "museum and palace",
+        "jammu",
+        "jammu and kashmir",
+        "tourism"
+      ]
+    }
+  ]
+}

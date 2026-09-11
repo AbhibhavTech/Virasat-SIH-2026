@@ -1,0 +1,689 @@
+{
+  "dataset": "Himachal Pradesh Tourist Places",
+  "administrative_type": "State",
+  "name": "Himachal Pradesh",
+  "country": "India",
+  "total_places": 20,
+  "cities": [
+    {
+      "city_id": "shimla",
+      "city": "Shimla",
+      "state": "Himachal Pradesh",
+      "place_ids": [
+        "himachal_001",
+        "himachal_002",
+        "himachal_003",
+        "himachal_004"
+      ]
+    },
+    {
+      "city_id": "kufri",
+      "city": "Kufri",
+      "state": "Himachal Pradesh",
+      "place_ids": [
+        "himachal_005"
+      ]
+    },
+    {
+      "city_id": "manali",
+      "city": "Manali",
+      "state": "Himachal Pradesh",
+      "place_ids": [
+        "himachal_006",
+        "himachal_007",
+        "himachal_008",
+        "himachal_009"
+      ]
+    },
+    {
+      "city_id": "kasol",
+      "city": "Kasol",
+      "state": "Himachal Pradesh",
+      "place_ids": [
+        "himachal_010"
+      ]
+    },
+    {
+      "city_id": "barshaini",
+      "city": "Barshaini",
+      "state": "Himachal Pradesh",
+      "place_ids": [
+        "himachal_011"
+      ]
+    },
+    {
+      "city_id": "dharamshala",
+      "city": "Dharamshala",
+      "state": "Himachal Pradesh",
+      "place_ids": [
+        "himachal_012",
+        "himachal_015"
+      ]
+    },
+    {
+      "city_id": "mcleod-ganj",
+      "city": "McLeod Ganj",
+      "state": "Himachal Pradesh",
+      "place_ids": [
+        "himachal_013",
+        "himachal_014"
+      ]
+    },
+    {
+      "city_id": "khajjiar",
+      "city": "Khajjiar",
+      "state": "Himachal Pradesh",
+      "place_ids": [
+        "himachal_016"
+      ]
+    },
+    {
+      "city_id": "dalhousie",
+      "city": "Dalhousie",
+      "state": "Himachal Pradesh",
+      "place_ids": [
+        "himachal_017"
+      ]
+    },
+    {
+      "city_id": "chail",
+      "city": "Chail",
+      "state": "Himachal Pradesh",
+      "place_ids": [
+        "himachal_018"
+      ]
+    },
+    {
+      "city_id": "kullu",
+      "city": "Kullu",
+      "state": "Himachal Pradesh",
+      "place_ids": [
+        "himachal_019"
+      ]
+    },
+    {
+      "city_id": "kaza",
+      "city": "Kaza",
+      "state": "Himachal Pradesh",
+      "place_ids": [
+        "himachal_020"
+      ]
+    }
+  ],
+  "places": [
+    {
+      "id": "himachal_001",
+      "name": "Shimla",
+      "category": "hill_station",
+      "area": "Shimla district",
+      "city": "Shimla",
+      "city_id": "shimla",
+      "description": "The capital of Himachal Pradesh, known for colonial architecture, mountain views, shopping streets, and pleasant weather.",
+      "best_for": [
+        "hill views",
+        "heritage",
+        "shopping",
+        "family trips"
+      ],
+      "suggested_duration": "2–3 days",
+      "best_time_to_visit": "March to June; December to February for snow",
+      "entry_fee": "Usually free; individual attractions may charge",
+      "opening_hours": "City access throughout the day; attractions vary",
+      "visitor_notes": [
+        "Carry warm clothing in winter",
+        "Traffic and parking can be difficult during peak season"
+      ],
+      "map_search": "Shimla Himachal Pradesh",
+      "tags": [
+        "hill station",
+        "capital",
+        "Shimla"
+      ]
+    },
+    {
+      "id": "himachal_002",
+      "name": "Mall Road",
+      "category": "shopping_recreation",
+      "area": "Shimla",
+      "city": "Shimla",
+      "city_id": "shimla",
+      "description": "Shimla’s main pedestrian shopping and leisure street lined with cafés, shops, colonial buildings, and viewpoints.",
+      "best_for": [
+        "shopping",
+        "walking",
+        "food",
+        "photography"
+      ],
+      "suggested_duration": "2–3 hours",
+      "best_time_to_visit": "March to June; December to February for snow",
+      "entry_fee": "Free",
+      "opening_hours": "Open throughout the day; shops have individual timings",
+      "visitor_notes": [
+        "Mostly pedestrian",
+        "Expect crowds during holidays"
+      ],
+      "map_search": "Mall Road Himachal Pradesh",
+      "tags": [
+        "shopping",
+        "heritage",
+        "Shimla"
+      ]
+    },
+    {
+      "id": "himachal_003",
+      "name": "The Ridge",
+      "category": "viewpoint_heritage",
+      "area": "Shimla",
+      "city": "Shimla",
+      "city_id": "shimla",
+      "description": "A spacious open promenade offering views of the surrounding mountains and access to several historic landmarks.",
+      "best_for": [
+        "sunsets",
+        "photography",
+        "walking",
+        "heritage"
+      ],
+      "suggested_duration": "1–2 hours",
+      "best_time_to_visit": "March to June; winter for snow",
+      "entry_fee": "Free",
+      "opening_hours": "Open throughout the day",
+      "visitor_notes": [
+        "Evenings can be cold",
+        "Often hosts public events"
+      ],
+      "map_search": "The Ridge Himachal Pradesh",
+      "tags": [
+        "viewpoint",
+        "heritage",
+        "Shimla"
+      ]
+    },
+    {
+      "id": "himachal_004",
+      "name": "Jakhu Temple",
+      "category": "religious_viewpoint",
+      "area": "Shimla",
+      "city": "Shimla",
+      "city_id": "shimla",
+      "description": "A hilltop temple dedicated to Lord Hanuman, featuring a prominent statue and panoramic views of Shimla.",
+      "best_for": [
+        "pilgrimage",
+        "views",
+        "photography"
+      ],
+      "suggested_duration": "1–2 hours",
+      "best_time_to_visit": "March to June; September to November",
+      "entry_fee": "Free",
+      "opening_hours": "Usually open daily; timings may vary",
+      "visitor_notes": [
+        "Steep approach",
+        "Keep belongings secure around monkeys"
+      ],
+      "map_search": "Jakhu Temple Himachal Pradesh",
+      "tags": [
+        "temple",
+        "Hanuman",
+        "Shimla"
+      ]
+    },
+    {
+      "id": "himachal_005",
+      "name": "Kufri",
+      "category": "hill_station_nature",
+      "area": "Near Shimla",
+      "city": "Kufri",
+      "city_id": "kufri",
+      "description": "A popular high-altitude destination known for scenic meadows, winter snow activities, and mountain landscapes.",
+      "best_for": [
+        "snow",
+        "nature",
+        "family outings",
+        "adventure"
+      ],
+      "suggested_duration": "Half day",
+      "best_time_to_visit": "December to February for snow; March to June for greenery",
+      "entry_fee": "Varies by attraction and activity",
+      "opening_hours": "Daytime; individual activities vary",
+      "visitor_notes": [
+        "Snow activities depend on weather",
+        "Roads may be slippery in winter"
+      ],
+      "map_search": "Kufri Himachal Pradesh",
+      "tags": [
+        "snow",
+        "hill station",
+        "Shimla"
+      ]
+    },
+    {
+      "id": "himachal_006",
+      "name": "Manali",
+      "category": "hill_station",
+      "area": "Kullu district",
+      "city": "Manali",
+      "city_id": "manali",
+      "description": "A popular Himalayan town known for river valleys, mountain scenery, adventure activities, and nearby attractions.",
+      "best_for": [
+        "nature",
+        "adventure",
+        "honeymoon",
+        "family trips"
+      ],
+      "suggested_duration": "2–4 days",
+      "best_time_to_visit": "March to June; October to February for snow",
+      "entry_fee": "Usually free; individual attractions may charge",
+      "opening_hours": "Town access throughout the day; attractions vary",
+      "visitor_notes": [
+        "Check road conditions before travel",
+        "Peak seasons can be crowded"
+      ],
+      "map_search": "Manali Himachal Pradesh",
+      "tags": [
+        "hill station",
+        "mountains",
+        "Kullu"
+      ]
+    },
+    {
+      "id": "himachal_007",
+      "name": "Solang Valley",
+      "category": "adventure_nature",
+      "area": "Near Manali",
+      "city": "Manali",
+      "city_id": "manali",
+      "description": "A scenic valley famous for paragliding, zorbing, skiing, snow activities, and mountain views.",
+      "best_for": [
+        "adventure",
+        "snow",
+        "photography"
+      ],
+      "suggested_duration": "Half day",
+      "best_time_to_visit": "December to February for snow; March to June for adventure activities",
+      "entry_fee": "Varies by activity",
+      "opening_hours": "Daytime; activity timings vary",
+      "visitor_notes": [
+        "Use licensed activity operators",
+        "Weather can change quickly"
+      ],
+      "map_search": "Solang Valley Himachal Pradesh",
+      "tags": [
+        "adventure",
+        "snow",
+        "Manali"
+      ]
+    },
+    {
+      "id": "himachal_008",
+      "name": "Rohtang Pass",
+      "category": "mountain_pass",
+      "area": "Near Manali",
+      "city": "Manali",
+      "city_id": "manali",
+      "description": "A high mountain pass offering dramatic Himalayan scenery and seasonal snowfields.",
+      "best_for": [
+        "snow",
+        "mountain views",
+        "photography"
+      ],
+      "suggested_duration": "Full day",
+      "best_time_to_visit": "May to October, subject to permits and road conditions",
+      "entry_fee": "Permit and transport charges may apply",
+      "opening_hours": "Access depends on weather, permits, and official restrictions",
+      "visitor_notes": [
+        "Check permit requirements",
+        "Acclimatize and carry warm clothing"
+      ],
+      "map_search": "Rohtang Pass Himachal Pradesh",
+      "tags": [
+        "mountain pass",
+        "snow",
+        "Manali"
+      ]
+    },
+    {
+      "id": "himachal_009",
+      "name": "Hadimba Devi Temple",
+      "category": "religious_heritage",
+      "area": "Manali",
+      "city": "Manali",
+      "city_id": "manali",
+      "description": "A distinctive wooden temple dedicated to Hidimba Devi, set among cedar forests.",
+      "best_for": [
+        "heritage",
+        "religion",
+        "architecture",
+        "nature"
+      ],
+      "suggested_duration": "1 hour",
+      "best_time_to_visit": "March to June; October to February",
+      "entry_fee": "Free",
+      "opening_hours": "Usually open daily; timings may vary",
+      "visitor_notes": [
+        "Remove footwear where required",
+        "Respect temple customs"
+      ],
+      "map_search": "Hadimba Devi Temple Himachal Pradesh",
+      "tags": [
+        "temple",
+        "wooden architecture",
+        "Manali"
+      ]
+    },
+    {
+      "id": "himachal_010",
+      "name": "Kasol",
+      "category": "village_nature",
+      "area": "Parvati Valley, Kullu district",
+      "city": "Kasol",
+      "city_id": "kasol",
+      "description": "A riverside village known for forest trails, mountain scenery, cafés, and access to the Parvati Valley.",
+      "best_for": [
+        "trekking",
+        "nature",
+        "backpacking",
+        "photography"
+      ],
+      "suggested_duration": "1–2 days",
+      "best_time_to_visit": "March to June; September to November",
+      "entry_fee": "Free",
+      "opening_hours": "Open throughout the day",
+      "visitor_notes": [
+        "Carry cash and basic supplies",
+        "Follow local environmental guidelines"
+      ],
+      "map_search": "Kasol Himachal Pradesh",
+      "tags": [
+        "village",
+        "trekking",
+        "Parvati Valley"
+      ]
+    },
+    {
+      "id": "himachal_011",
+      "name": "Kheerganga",
+      "category": "trek_nature",
+      "area": "Parvati Valley",
+      "city": "Barshaini",
+      "city_id": "barshaini",
+      "description": "A popular trekking destination known for forest paths, mountain views, and natural hot-water springs.",
+      "best_for": [
+        "trekking",
+        "nature",
+        "adventure"
+      ],
+      "suggested_duration": "1–2 days",
+      "best_time_to_visit": "April to June; September to November",
+      "entry_fee": "May include local or trail charges",
+      "opening_hours": "Daylight trekking recommended",
+      "visitor_notes": [
+        "Use a local guide if inexperienced",
+        "Check weather and trail status"
+      ],
+      "map_search": "Kheerganga Himachal Pradesh",
+      "tags": [
+        "trek",
+        "hot springs",
+        "Parvati Valley"
+      ]
+    },
+    {
+      "id": "himachal_012",
+      "name": "Dharamshala",
+      "category": "hill_station_cultural",
+      "area": "Kangra district",
+      "city": "Dharamshala",
+      "city_id": "dharamshala",
+      "description": "A mountain town known for Tibetan culture, monasteries, cafés, and views of the Dhauladhar range.",
+      "best_for": [
+        "culture",
+        "nature",
+        "spirituality",
+        "photography"
+      ],
+      "suggested_duration": "2–3 days",
+      "best_time_to_visit": "March to June; September to November",
+      "entry_fee": "Usually free; individual attractions may charge",
+      "opening_hours": "Town access throughout the day",
+      "visitor_notes": [
+        "Weather changes quickly",
+        "Respect monastery customs"
+      ],
+      "map_search": "Dharamshala Himachal Pradesh",
+      "tags": [
+        "hill station",
+        "Tibetan culture",
+        "Kangra"
+      ]
+    },
+    {
+      "id": "himachal_013",
+      "name": "McLeod Ganj",
+      "category": "cultural_hill_station",
+      "area": "Dharamshala",
+      "city": "McLeod Ganj",
+      "city_id": "mcleod-ganj",
+      "description": "A culturally rich hill settlement associated with Tibetan Buddhism, monasteries, markets, and cafés.",
+      "best_for": [
+        "culture",
+        "spirituality",
+        "shopping",
+        "food"
+      ],
+      "suggested_duration": "1–2 days",
+      "best_time_to_visit": "March to June; September to November",
+      "entry_fee": "Usually free; attractions may charge",
+      "opening_hours": "Town access throughout the day",
+      "visitor_notes": [
+        "Dress respectfully at monasteries",
+        "Busy streets may have limited parking"
+      ],
+      "map_search": "McLeod Ganj Himachal Pradesh",
+      "tags": [
+        "Tibetan culture",
+        "monastery",
+        "Dharamshala"
+      ]
+    },
+    {
+      "id": "himachal_014",
+      "name": "Triund",
+      "category": "trek_viewpoint",
+      "area": "Near McLeod Ganj",
+      "city": "McLeod Ganj",
+      "city_id": "mcleod-ganj",
+      "description": "A scenic trekking destination offering expansive views of the Dhauladhar mountains and Kangra Valley.",
+      "best_for": [
+        "trekking",
+        "camping",
+        "mountain views"
+      ],
+      "suggested_duration": "1–2 days",
+      "best_time_to_visit": "March to June; September to November",
+      "entry_fee": "May include forest, camping, or local charges",
+      "opening_hours": "Daylight trekking recommended",
+      "visitor_notes": [
+        "Check weather and camping rules",
+        "Carry adequate water and warm clothing"
+      ],
+      "map_search": "Triund Himachal Pradesh",
+      "tags": [
+        "trek",
+        "camping",
+        "Dhauladhar"
+      ]
+    },
+    {
+      "id": "himachal_015",
+      "name": "Dal Lake Dharamshala",
+      "category": "lake_nature",
+      "area": "Naddi, Dharamshala",
+      "city": "Dharamshala",
+      "city_id": "dharamshala",
+      "description": "A small scenic lake surrounded by deodar trees and mountain landscapes.",
+      "best_for": [
+        "nature",
+        "walking",
+        "photography"
+      ],
+      "suggested_duration": "1 hour",
+      "best_time_to_visit": "March to June; September to November",
+      "entry_fee": "Usually free or nominal",
+      "opening_hours": "Daytime",
+      "visitor_notes": [
+        "Best combined with Naddi and McLeod Ganj"
+      ],
+      "map_search": "Dal Lake Dharamshala Himachal Pradesh",
+      "tags": [
+        "lake",
+        "nature",
+        "Dharamshala"
+      ]
+    },
+    {
+      "id": "himachal_016",
+      "name": "Khajjiar",
+      "category": "meadow_nature",
+      "area": "Chamba district",
+      "city": "Khajjiar",
+      "city_id": "khajjiar",
+      "description": "A picturesque meadow surrounded by cedar forests, often called the Mini Switzerland of India.",
+      "best_for": [
+        "nature",
+        "family trips",
+        "photography",
+        "horse riding"
+      ],
+      "suggested_duration": "Half day",
+      "best_time_to_visit": "April to June; September to November",
+      "entry_fee": "Usually free; activities may be paid",
+      "opening_hours": "Open throughout the day",
+      "visitor_notes": [
+        "Winter access can be affected by snow",
+        "Avoid littering the meadow"
+      ],
+      "map_search": "Khajjiar Himachal Pradesh",
+      "tags": [
+        "meadow",
+        "nature",
+        "Chamba"
+      ]
+    },
+    {
+      "id": "himachal_017",
+      "name": "Dalhousie",
+      "category": "hill_station",
+      "area": "Chamba district",
+      "city": "Dalhousie",
+      "city_id": "dalhousie",
+      "description": "A colonial-era hill station known for pine forests, churches, viewpoints, and relaxed mountain walks.",
+      "best_for": [
+        "heritage",
+        "nature",
+        "family trips",
+        "honeymoon"
+      ],
+      "suggested_duration": "2–3 days",
+      "best_time_to_visit": "March to June; December to February for snow",
+      "entry_fee": "Usually free; individual attractions may charge",
+      "opening_hours": "Town access throughout the day",
+      "visitor_notes": [
+        "Carry warm clothing",
+        "Roads may be affected by winter weather"
+      ],
+      "map_search": "Dalhousie Himachal Pradesh",
+      "tags": [
+        "hill station",
+        "colonial heritage",
+        "Chamba"
+      ]
+    },
+    {
+      "id": "himachal_018",
+      "name": "Chail",
+      "category": "hill_station_nature",
+      "area": "Solan district",
+      "city": "Chail",
+      "city_id": "chail",
+      "description": "A peaceful hill destination known for forests, scenic viewpoints, and the historic Chail Palace.",
+      "best_for": [
+        "nature",
+        "heritage",
+        "relaxation",
+        "photography"
+      ],
+      "suggested_duration": "1–2 days",
+      "best_time_to_visit": "March to June; September to November",
+      "entry_fee": "Varies by attraction",
+      "opening_hours": "Daytime; individual attractions vary",
+      "visitor_notes": [
+        "Ideal for a quieter alternative to Shimla"
+      ],
+      "map_search": "Chail Himachal Pradesh",
+      "tags": [
+        "hill station",
+        "palace",
+        "Solan"
+      ]
+    },
+    {
+      "id": "himachal_019",
+      "name": "Great Himalayan National Park",
+      "category": "national_park_wildlife",
+      "area": "Kullu district",
+      "city": "Kullu",
+      "city_id": "kullu",
+      "description": "A protected Himalayan landscape known for biodiversity, alpine habitats, forests, and trekking routes.",
+      "best_for": [
+        "wildlife",
+        "trekking",
+        "nature",
+        "birdwatching"
+      ],
+      "suggested_duration": "1–3 days",
+      "best_time_to_visit": "April to June; September to November",
+      "entry_fee": "Permits and guide charges may apply",
+      "opening_hours": "Access depends on permits, routes, and weather",
+      "visitor_notes": [
+        "Use authorized guides",
+        "Follow conservation rules",
+        "Plan treks in advance"
+      ],
+      "map_search": "Great Himalayan National Park Himachal Pradesh",
+      "tags": [
+        "national park",
+        "wildlife",
+        "Kullu"
+      ]
+    },
+    {
+      "id": "himachal_020",
+      "name": "Spiti Valley",
+      "category": "high_altitude_landscape",
+      "area": "Lahaul and Spiti district",
+      "city": "Kaza",
+      "city_id": "kaza",
+      "description": "A high-altitude cold desert valley known for monasteries, stark landscapes, villages, and Himalayan adventure.",
+      "best_for": [
+        "road trips",
+        "adventure",
+        "photography",
+        "culture"
+      ],
+      "suggested_duration": "5–7 days",
+      "best_time_to_visit": "May to October",
+      "entry_fee": "Usually free; individual attractions may charge",
+      "opening_hours": "Open throughout the day; access depends on roads",
+      "visitor_notes": [
+        "Acclimatize carefully",
+        "Carry essential medicines and warm clothing",
+        "Check road conditions"
+      ],
+      "map_search": "Spiti Valley Himachal Pradesh",
+      "tags": [
+        "cold desert",
+        "road trip",
+        "Lahaul and Spiti"
+      ]
+    }
+  ]
+}

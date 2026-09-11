@@ -1,0 +1,177 @@
+{
+  "dataset": "Tripura Tourist Places",
+  "administrative_type": "State",
+  "name": "Tripura",
+  "country": "India",
+  "total_places": 5,
+  "cities": [
+    {
+      "city_id": "tripura_city_001",
+      "city": "Agartala",
+      "place_ids": [
+        "tripura-001"
+      ]
+    },
+    {
+      "city_id": "tripura_city_002",
+      "city": "Melaghar",
+      "place_ids": [
+        "tripura-002"
+      ]
+    },
+    {
+      "city_id": "tripura_city_003",
+      "city": "Kailashahar",
+      "place_ids": [
+        "tripura-003"
+      ]
+    },
+    {
+      "city_id": "tripura_city_004",
+      "city": "Bishalgarh",
+      "place_ids": [
+        "tripura-004"
+      ]
+    },
+    {
+      "city_id": "tripura_city_005",
+      "city": "Jampui Hills",
+      "place_ids": [
+        "tripura-005"
+      ]
+    }
+  ],
+  "places": [
+    {
+      "id": "tripura-001",
+      "name": "Ujjayanta Palace",
+      "category": "Heritage",
+      "area": "Agartala",
+      "description": "A grand former royal palace known for its white architecture, gardens, water features, and museum collections.",
+      "best_for": [
+        "history",
+        "architecture",
+        "photography"
+      ],
+      "suggested_duration": "1–2 hours",
+      "best_time_to_visit": "October–March",
+      "entry_fee": "Paid; verify current fee locally",
+      "opening_hours": "Generally daytime; verify before visiting",
+      "visitor_notes": "Museum access and timings may vary.",
+      "map_search": "Ujjayanta Palace, Agartala, Tripura",
+      "tags": [
+        "palace",
+        "museum",
+        "royal heritage"
+      ],
+      "state": "Tripura",
+      "city": "Agartala",
+      "city_id": "tripura_city_001"
+    },
+    {
+      "id": "tripura-002",
+      "name": "Neermahal Palace",
+      "category": "Heritage",
+      "area": "Melaghar",
+      "description": "A picturesque lake palace situated in the middle of Rudrasagar Lake, blending Mughal and Hindu architectural influences.",
+      "best_for": [
+        "heritage",
+        "boating",
+        "photography"
+      ],
+      "suggested_duration": "2–3 hours",
+      "best_time_to_visit": "October–March",
+      "entry_fee": "Paid; verify current fee locally",
+      "opening_hours": "Generally daytime; verify before visiting",
+      "visitor_notes": "Boat services depend on weather and local operations.",
+      "map_search": "Neermahal Palace, Melaghar, Tripura",
+      "tags": [
+        "lake palace",
+        "heritage",
+        "boating"
+      ],
+      "state": "Tripura",
+      "city": "Melaghar",
+      "city_id": "tripura_city_002"
+    },
+    {
+      "id": "tripura-003",
+      "name": "Unakoti",
+      "category": "Archaeological and Religious",
+      "area": "Kailashahar",
+      "description": "An ancient rock-cut pilgrimage site featuring massive stone carvings and reliefs associated with Shiva and other Hindu deities.",
+      "best_for": [
+        "archaeology",
+        "religion",
+        "nature"
+      ],
+      "suggested_duration": "2–3 hours",
+      "best_time_to_visit": "October–March",
+      "entry_fee": "Usually free or nominal; verify locally",
+      "opening_hours": "Daylight hours",
+      "visitor_notes": "Wear comfortable footwear; the site includes uneven paths and steps.",
+      "map_search": "Unakoti, Kailashahar, Tripura",
+      "tags": [
+        "rock carvings",
+        "pilgrimage",
+        "archaeology"
+      ],
+      "state": "Tripura",
+      "city": "Kailashahar",
+      "city_id": "tripura_city_003"
+    },
+    {
+      "id": "tripura-004",
+      "name": "Sepahijala Wildlife Sanctuary",
+      "category": "Wildlife and Nature",
+      "area": "Bishalgarh",
+      "description": "A forested sanctuary with lakes, bird habitats, wildlife enclosures, and opportunities for nature observation.",
+      "best_for": [
+        "wildlife",
+        "birdwatching",
+        "family outings"
+      ],
+      "suggested_duration": "3–4 hours",
+      "best_time_to_visit": "November–February",
+      "entry_fee": "Paid; verify current fee locally",
+      "opening_hours": "Generally daytime; verify before visiting",
+      "visitor_notes": "Start early for better wildlife and bird sightings.",
+      "map_search": "Sepahijala Wildlife Sanctuary, Tripura",
+      "tags": [
+        "wildlife sanctuary",
+        "birds",
+        "forest"
+      ],
+      "state": "Tripura",
+      "city": "Bishalgarh",
+      "city_id": "tripura_city_004"
+    },
+    {
+      "id": "tripura-005",
+      "name": "Jampui Hills",
+      "category": "Hill Station and Nature",
+      "area": "North Tripura",
+      "description": "Tripura’s scenic hill region, known for rolling landscapes, orange orchards, pleasant weather, and viewpoints.",
+      "best_for": [
+        "hills",
+        "nature",
+        "landscapes",
+        "relaxation"
+      ],
+      "suggested_duration": "1–2 days",
+      "best_time_to_visit": "October–February",
+      "entry_fee": "No general entry fee",
+      "opening_hours": "Open throughout the day",
+      "visitor_notes": "Road travel can take time; plan accommodation and transport in advance.",
+      "map_search": "Jampui Hills, North Tripura",
+      "tags": [
+        "hill station",
+        "orange orchards",
+        "viewpoints"
+      ],
+      "state": "Tripura",
+      "city": "Jampui Hills",
+      "city_id": "tripura_city_005"
+    }
+  ]
+}
