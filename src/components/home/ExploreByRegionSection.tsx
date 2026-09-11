@@ -138,23 +138,6 @@ export const ExploreByRegionSection: React.FC<ExploreByRegionSectionProps> = ({
         { name: 'Aguada Fort', id: 'aguada-fort' },
       ],
     },
-    {
-      id: 'haryana',
-      stateName: 'Haryana',
-      hindiName: 'हरियाणा',
-      capitalCity: 'Kurukshetra',
-      cityKey: 'kurukshetra',
-      region: 'Northern India',
-      tagline: 'Vedic heartland of the epic Mahabharata, Harappan mounds at Rakhigarhi & scenic Morni Hills.',
-      heritageHighlights: ['Brahma Sarovar & Jyotisar', 'Pinjore Mughal Gardens', 'Rakhigarhi Indus Valley Site', 'Sheikh Chilli’s Tomb'],
-      culture: 'Haryanvi folk music, Saang traditional theater, Raag-Ragini poetic singing, and rich agrarian heritage.',
-      experiences: ['Sunset prayer at Brahma Sarovar', 'Pinjore garden evening light stroll', 'Archaeological exploration at Rakhigarhi', 'Bird watching at Sultanpur National Park'],
-      popularPlaces: [
-        { name: 'Brahma Sarovar', id: 'haryana_007' },
-        { name: 'Pinjore Gardens', id: 'haryana_003' },
-        { name: 'Sultanpur National Park', id: 'haryana_001' },
-      ],
-    },
   ];
 
   // Default to currently selected city's state or Maharashtra

@@ -356,72 +356,43 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
             return <div key={idx} className="h-1.5" />;
           }
 
-          // Format bold markers **text** and *text*
-          const formatInline = (textStr: string) => {
-            const parts = textStr.split(/(\*\*.*?\*\*)/g);
-            return parts.map((part, pIdx) => {
-              if (part.startsWith('**') && part.endsWith('**')) {
-                return (
-                  <strong key={pIdx} className="font-semibold text-stone-900">
-                    {part.slice(2, -2)}
-                  </strong>
-                );
-              }
-              return part;
-            });
-          };
+          // Format bold markers **text**
+          const parts = line.split(/(\*\*.*?\*\*)/g);
+          const renderedLine = parts.map((part, pIdx) => {
+            if (part.startsWith('**') && part.endsWith('**')) {
+              return (
+                <strong key={pIdx} className="font-semibold text-stone-900">
+                  {part.slice(2, -2)}
+                </strong>
+              );
+            }
+            return part;
+          });
 
-          const renderedLine = formatInline(line);
-
-          if (trimmedLine.startsWith('## ')) {
+          if (trimmedLine.startsWith('•') || trimmedLine.startsWith('-')) {
             return (
-              <h3 key={idx} className="font-serif font-bold text-base text-[#0B192C] mt-3 pb-1 border-b border-orange-100 flex items-center gap-1.5">
-                {trimmedLine.replace(/^##\s*/, '')}
-              </h3>
+              <div key={idx} className="flex items-start gap-2 pl-1">
+                <span className="text-[#FF671F] font-bold text-xs mt-0.5">•</span>
+                <span className="flex-1">{renderedLine}</span>
+              </div>
             );
           }
 
-          if (trimmedLine.startsWith('### ')) {
+          if (trimmedLine.startsWith('###')) {
             return (
-              <h4 key={idx} className="font-serif font-bold text-sm text-[#FF671F] mt-2.5 pt-1">
+              <h4 key={idx} className="font-serif font-bold text-sm text-[#0B192C] mt-2 pt-1 border-t border-stone-100">
                 {trimmedLine.replace(/^###\s*/, '')}
               </h4>
             );
           }
 
-          if (trimmedLine.startsWith('•') || trimmedLine.startsWith('-') || trimmedLine.startsWith('* ')) {
-            return (
-              <div key={idx} className="flex items-start gap-2 pl-1 my-0.5">
-                <span className="text-[#FF671F] font-bold text-xs mt-0.5">•</span>
-                <span className="flex-1 text-stone-700 leading-relaxed">{formatInline(trimmedLine.replace(/^[•\-*]\s*/, ''))}</span>
-              </div>
-            );
-          }
-
-          if (trimmedLine.startsWith('|') && trimmedLine.endsWith('|')) {
-            // Render table row cleanly
-            const cells = trimmedLine.split('|').map((c) => c.trim()).filter(Boolean);
-            if (cells.every((c) => /^:?-+:?$/.test(c))) {
-              return null; // separator row
-            }
-            return (
-              <div key={idx} className="grid grid-cols-2 sm:grid-cols-3 gap-2 p-1.5 bg-stone-50 rounded-lg border border-stone-200 text-xs my-1 font-medium">
-                {cells.map((cell, cIdx) => (
-                  <span key={cIdx} className={cIdx === 0 ? 'font-bold text-stone-900' : 'text-stone-700'}>
-                    {formatInline(cell)}
-                  </span>
-                ))}
-              </div>
-            );
-          }
-
-          return <p key={idx} className="leading-relaxed my-1">{renderedLine}</p>;
+          return <p key={idx}>{renderedLine}</p>;
         })}
       </div>
     );
   };
 
-  // Render transit comparison card (Train, Flight, Road, Walking)
+  // Render transit comparison card (Train, Flight, Road)
   const renderTransitComparison = (tc: TransitComparison) => {
     return (
       <div className="mt-4 p-4 rounded-2xl bg-[#FAF8F5] border border-[#EFE8DF] space-y-3">
@@ -431,22 +402,15 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
               <Navigation className="w-3.5 h-3.5" />
             </div>
             <span className="text-xs font-bold text-stone-900">
-              {tc.is_same_city ? 'Intra-City Local Transit' : 'Multimodal Travel Comparison'}: {tc.origin} ➔ {tc.destination}
+              Multimodal Travel Comparison: {tc.origin} ➔ {tc.destination}
             </span>
           </div>
-          {tc.distance_km !== undefined && (
+          {tc.distance_km && (
             <span className="text-[11px] font-semibold text-stone-600 bg-white px-2.5 py-0.5 rounded-full border border-stone-200">
-              ~{tc.distance_km} km {tc.is_same_city ? 'intra-city distance' : 'aerial corridor'}
+              ~{tc.distance_km} km aerial corridor
             </span>
           )}
         </div>
-
-        {tc.is_same_city && tc.notes && (
-          <div className="text-[11px] text-amber-800 bg-amber-50/80 border border-amber-200/70 rounded-xl p-2.5 flex items-start gap-1.5">
-            <Compass className="w-3.5 h-3.5 text-amber-600 shrink-0 mt-0.5" />
-            <span>{tc.notes}</span>
-          </div>
-        )}
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2.5">
           {/* Train Option */}
@@ -455,7 +419,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
               <div>
                 <div className="flex items-center justify-between">
                   <span className="inline-flex items-center gap-1 text-xs font-bold text-blue-900">
-                    <Train className="w-3.5 h-3.5 text-blue-600" /> {tc.is_same_city ? 'Suburban / Local Rail' : 'Train Option'}
+                    <Train className="w-3.5 h-3.5 text-blue-600" /> Train Option
                   </span>
                   {tc.train.approx_duration && (
                     <span className="text-[10px] font-bold text-blue-700 bg-blue-50 px-1.5 py-0.5 rounded">
@@ -472,10 +436,10 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
               </div>
               <button
                 type="button"
-                onClick={() => handleSend(tc.is_same_city ? `Tell me suburban rail routes and transfer tips between ${tc.origin} and ${tc.destination}` : `Tell me detailed train schedule and booking tips for ${tc.destination}`)}
+                onClick={() => handleSend(`Tell me detailed train schedule and booking tips for ${tc.destination}`)}
                 className="text-[11px] font-semibold text-blue-600 hover:text-blue-800 pt-1.5 flex items-center gap-1 border-t border-blue-50 mt-1"
               >
-                <span>{tc.is_same_city ? 'Local rail details' : 'Rail details'}</span>
+                <span>Rail details</span>
                 <ArrowRight className="w-3 h-3" />
               </button>
             </div>
@@ -513,13 +477,13 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
             </div>
           )}
 
-          {/* Road / Taxi Option */}
+          {/* Road Option */}
           {tc.road && (
             <div className="p-3 rounded-xl bg-white border border-amber-100 shadow-2xs hover:border-amber-300 transition space-y-1.5 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between">
                   <span className="inline-flex items-center gap-1 text-xs font-bold text-amber-900">
-                    <Car className="w-3.5 h-3.5 text-amber-600" /> {tc.is_same_city ? 'Taxi / Road Transit' : 'Road / Car Option'}
+                    <Car className="w-3.5 h-3.5 text-amber-600" /> Road / Car Option
                   </span>
                   {tc.road.approx_duration && (
                     <span className="text-[10px] font-bold text-amber-700 bg-amber-50 px-1.5 py-0.5 rounded">
@@ -536,42 +500,10 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
               </div>
               <button
                 type="button"
-                onClick={() => handleSend(tc.is_same_city ? `What is the best road route and cab fare between ${tc.origin} and ${tc.destination}?` : `What is the highway route, driving condition, and scenic road stops to ${tc.destination}?`)}
+                onClick={() => handleSend(`What is the highway route, driving condition, and scenic road stops to ${tc.destination}?`)}
                 className="text-[11px] font-semibold text-amber-700 hover:text-amber-900 pt-1.5 flex items-center gap-1 border-t border-amber-50 mt-1"
               >
-                <span>{tc.is_same_city ? 'Cab / Road details' : 'Road route details'}</span>
-                <ArrowRight className="w-3 h-3" />
-              </button>
-            </div>
-          )}
-
-          {/* Walking Option */}
-          {tc.walking && (
-            <div className="p-3 rounded-xl bg-white border border-emerald-100 shadow-2xs hover:border-emerald-300 transition space-y-1.5 flex flex-col justify-between">
-              <div>
-                <div className="flex items-center justify-between">
-                  <span className="inline-flex items-center gap-1 text-xs font-bold text-emerald-900">
-                    <Navigation className="w-3.5 h-3.5 text-emerald-600" /> Walking Route
-                  </span>
-                  {tc.walking.approx_duration && (
-                    <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded">
-                      {tc.walking.approx_duration}
-                    </span>
-                  )}
-                </div>
-                <p className="text-xs text-stone-800 font-medium mt-1 leading-snug">{tc.walking.summary}</p>
-                {tc.walking.notes && (
-                  <p className="text-[11px] text-stone-500 mt-1 leading-normal italic">
-                    ℹ️ {tc.walking.notes}
-                  </p>
-                )}
-              </div>
-              <button
-                type="button"
-                onClick={() => handleSend(`What is the walking route and landmarks between ${tc.origin} and ${tc.destination}?`)}
-                className="text-[11px] font-semibold text-emerald-700 hover:text-emerald-900 pt-1.5 flex items-center gap-1 border-t border-emerald-50 mt-1"
-              >
-                <span>Walk route details</span>
+                <span>Road route details</span>
                 <ArrowRight className="w-3 h-3" />
               </button>
             </div>
@@ -762,7 +694,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
                   {renderMessageContent(m.content)}
 
                   {/* Multimodal Transit Comparison Cards */}
-                  {!isUser && m.transit_comparison && (m.transit_comparison.train || m.transit_comparison.air || m.transit_comparison.road || m.transit_comparison.walking || m.transit_comparison.taxi || (m.transit_comparison.local_modes && m.transit_comparison.local_modes.length > 0)) && renderTransitComparison(m.transit_comparison)}
+                  {!isUser && m.transit_comparison && (m.transit_comparison.train || m.transit_comparison.air || m.transit_comparison.road) && renderTransitComparison(m.transit_comparison)}
 
                   {/* Suggested Places Cards with Real Distance in Km */}
                   {!isUser && m.suggested_places && m.suggested_places.length > 0 && (

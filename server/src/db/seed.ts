@@ -69,12 +69,6 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
     'agra-fort': 'https://whc.unesco.org/en/list/251/',
     'jantar-mantar': 'https://whc.unesco.org/en/list/1338/',
     'great-himalayan-national-park': 'https://whc.unesco.org/en/list/1406/',
-    'west_bengal_010': 'https://whc.unesco.org/en/list/452/',
-    'west_bengal_012': 'https://whc.unesco.org/en/list/1675/',
-    'west_bengal_016': 'https://whc.unesco.org/en/list/944/',
-    'sundarbans-national-park': 'https://whc.unesco.org/en/list/452/',
-    'darjeeling-himalayan-railway': 'https://whc.unesco.org/en/list/944/',
-    'shantiniketan': 'https://whc.unesco.org/en/list/1675/',
   };
 
   // -------------------------------------------------------------
@@ -84,7 +78,6 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
     { id: 'src-asi', source_name: 'Archaeological Survey of India (ASI)', source_type: 'tier1_official', url: 'https://asi.nic.in', created_at: now },
     { id: 'src-unesco', source_name: 'UNESCO World Heritage Centre', source_type: 'tier2_trusted', url: 'https://whc.unesco.org', created_at: now },
     { id: 'src-culture', source_name: 'Ministry of Culture, Government of India', source_type: 'tier1_official', url: 'https://indiaculture.gov.in', created_at: now },
-    { id: 'src-wb-tourism', source_name: 'Department of Tourism, Government of West Bengal', source_type: 'tier1_official', url: 'https://wbtourism.gov.in', created_at: now },
     { id: 'src-mtdc', source_name: 'Maharashtra Tourism Development Corporation (MTDC)', source_type: 'tier1_official', url: 'https://maharashtratourism.gov.in', created_at: now },
     { id: 'src-delhi-tourism', source_name: 'Delhi Tourism and Transportation Development (DTTDC)', source_type: 'tier1_official', url: 'https://delhitourism.gov.in', created_at: now },
     { id: 'src-rajasthan-tourism', source_name: 'Department of Tourism, Government of Rajasthan', source_type: 'tier1_official', url: 'https://tourism.rajasthan.gov.in', created_at: now },
@@ -117,12 +110,9 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
             region: s.region || '',
             official_tourism_url: s.official_tourism_url || s.source_url || '',
             description: s.description || '',
-            status: (s.status === 'verified' || ['himachal-pradesh', 'punjab', 'rajasthan', 'uttar-pradesh', 'arunachal-pradesh', 'telangana', 'nagaland', 'meghalaya', 'manipur', 'mizoram'].includes(s.id)) ? 'verified' : (s.status || 'verified'),
+            status: (s.status === 'verified' || ['himachal-pradesh', 'punjab', 'rajasthan', 'uttar-pradesh', 'arunachal-pradesh'].includes(s.id)) ? 'verified' : (s.status || 'verified'),
             hero_image_id: s.hero_image_id,
             hero_image_url: s.hero_image_url,
-            total_cities: s.total_cities || 0,
-            total_attractions: s.total_attractions || s.total_places || 0,
-            total_places: s.total_places || s.total_attractions || 0,
             created_at: now,
           };
         }
@@ -248,9 +238,6 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
             city_id: cityId,
             state_id: stateId,
             name: m.name,
-            city: m.city,
-            assigned_city: (m as any).assigned_city || m.city,
-            tourist_place: (m as any).tourist_place || m.name,
             category: 'heritage',
             summary: m.summary || m.historical_significance || '',
             description: m.description || m.summary || '',
@@ -323,89 +310,65 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
   }
 
   // -------------------------------------------------------------
-  // 5. Regional Flagship Datasets (All States & UTs)
+  // 5. Regional Flagship Datasets (Mumbai, Delhi, Rajasthan, Goa, Kerala, Maharashtra)
   // -------------------------------------------------------------
-  const regionalDirs = [
-    'mumbai', 'delhi', 'rajasthan', 'maharashtra', 'goa', 'kerala', 'ladakh', 'jammu-kashmir', 'punjab',
-    'kolkata', 'west-bengal', 'odisha', 'andhra-pradesh', 'assam', 'arunachal-pradesh', 'himachal-pradesh',
-    'sikkim', 'tripura', 'uttarakhand', 'madhya-pradesh', 'gujarat', 'telangana', 'nagaland', 'meghalaya',
-    'manipur', 'mizoram', 'bihar', 'uttar-pradesh', 'karnataka', 'chhattisgarh', 'haryana'
-  ];
+  const regionalDirs = ['mumbai', 'delhi', 'rajasthan', 'maharashtra', 'goa', 'kerala', 'ladakh', 'jammu-kashmir'];
   for (const reg of regionalDirs) {
     const regPath = path.join(rootDataDir, reg, 'places.json');
     if (fs.existsSync(regPath)) {
       try {
-        const regionalPlaces = JSON.parse(fs.readFileSync(regPath, 'utf-8').replace(/^\uFEFF/, ''));
+        const regionalPlaces = JSON.parse(fs.readFileSync(regPath, 'utf-8'));
         if (Array.isArray(regionalPlaces)) {
           for (const rp of regionalPlaces) {
-            const stateId = (rp.state_id || rp.state || reg).toLowerCase().replace(/[^a-z0-9]+/g, '-');
-            const cityId = (rp.city_id || rp.city || reg).toLowerCase().replace(/[^a-z0-9]+/g, '-');
+            const stateId = (rp.state || reg).toLowerCase().replace(/[^a-z0-9]+/g, '-');
+            const cityId = (rp.city || reg).toLowerCase().replace(/[^a-z0-9]+/g, '-');
             const normalizedName = rp.name.trim().toLowerCase();
-            const isProtectedRegional = rp.id.startsWith('telangana_') || rp.id.startsWith('nagaland_') || rp.id.startsWith('meghalaya_') || rp.id.startsWith('manipur_') || rp.id.startsWith('mizoram_') || rp.id.startsWith('bihar_') || rp.id.startsWith('uttar_pradesh_') || rp.id.startsWith('karnataka_') || rp.id.startsWith('chhattisgarh_') || rp.id.startsWith('haryana_');
-            const existing = places[rp.id] || (!isProtectedRegional && Object.values(places).find(p => p.city_id === cityId && p.name.trim().toLowerCase() === normalizedName));
-            if (existing) {
-              if (rp.assigned_city) existing.assigned_city = rp.assigned_city;
-              if (rp.tourist_place) existing.tourist_place = rp.tourist_place;
-              continue; // Already ingested via curated monuments
-            }
+            const existing = places[rp.id] || Object.values(places).find(p => p.city_id === cityId && p.name.trim().toLowerCase() === normalizedName);
+            if (existing) continue; // Already ingested via curated monuments
             const sourceUrl = rp.source_url && rp.source_url.startsWith('http') ? rp.source_url : 'https://asi.nic.in';
-            const quality = (rp.source_quality as SourceQualityTier) || computeSourceQuality(sourceUrl);
-            const isVerified = rp.verification_status === 'verified' || quality === 'place_specific' || quality === 'official_site';
+            const quality = computeSourceQuality(sourceUrl);
+            const isVerified = (quality === 'place_specific' || quality === 'official_site');
             const verifiedStatus = isVerified ? 'verified' : 'needs_review';
 
-            const domesticFee = typeof rp.entry_fee === 'number' ? rp.entry_fee : Number(rp.entry_fee?.domestic ?? rp.entry_fee_inr ?? 0);
+            const domesticFee = Number(rp.entry_fee?.domestic ?? rp.entry_fee_inr ?? 0);
             const intlFee = Number(rp.entry_fee?.international ?? 0);
-            const visitingHours = rp.visiting_hours || rp.opening_hours || rp.visiting_info?.visiting_hours || 'Open Regular Hours';
-            const lat = Number(rp.coordinates?.lat || rp.lat || rp.latitude || 0);
-            const lng = Number(rp.coordinates?.lng || rp.lng || rp.longitude || 0);
+            const visitingHours = rp.visiting_hours || rp.visiting_info?.visiting_hours || 'Open Regular Hours';
+            const lat = Number(rp.coordinates?.lat || 0);
+            const lng = Number(rp.coordinates?.lng || 0);
 
             places[rp.id] = {
-              ...rp,
               id: rp.id,
               city_id: cityId,
               state_id: stateId,
               name: rp.name,
               category: rp.category || 'heritage',
-              categories: Array.isArray(rp.categories) ? rp.categories : [rp.category || 'heritage'],
-              area: rp.area,
-              city: rp.city,
-              assigned_city: rp.assigned_city || rp.city,
-              tourist_place: rp.tourist_place || rp.name,
               summary: rp.summary || rp.description || '',
               description: rp.description || rp.summary || '',
               history: rp.history || '',
-              best_for: rp.best_for,
-              suggested_duration: rp.suggested_duration,
-              best_time_to_visit: rp.best_time_to_visit,
-              visitor_notes: rp.visitor_notes,
-              map_search: rp.map_search,
-              tags: rp.tags,
               lat,
               lng,
               latitude: lat,
               longitude: lng,
-              entry_fee: rp.entry_fee,
-              entry_fee_domestic: isNaN(domesticFee) ? 0 : domesticFee,
-              entry_fee_intl: isNaN(intlFee) ? 0 : intlFee,
-              opening_hours: rp.opening_hours || visitingHours,
+              entry_fee_domestic: domesticFee,
+              entry_fee_intl: intlFee,
               visiting_hours: visitingHours,
               heritage_status: rp.heritage_status || 'State Protected Heritage',
               data_confidence: isVerified ? 'official' : 'unverified',
               source_url: sourceUrl,
-              source_name: rp.source_name || 'State Tourism Department',
-              source_type: (rp.source_type || 'state_tourism') as any,
+              source_name: 'State Tourism Department',
+              source_type: 'state_tourism',
               source_quality: quality,
               verification_status: verifiedStatus,
-              last_verified_on: rp.last_verified_on || '2026-03-10',
+              last_verified_on: '2026-03-10',
               last_verified_at: now,
-              topic: rp.topic || 'Heritage',
-              subtopic: rp.subtopic || 'Historical Sites',
+              topic: 'Heritage',
+              subtopic: 'Historical Sites',
               sources: [
                 {
                   id: `src-${rp.id}`,
-                  source_name: rp.source_name || 'State Tourism Department',
+                  source_name: 'State Tourism Department',
                   source_url: sourceUrl,
-                  source_type: (rp.source_type || 'state_tourism') as any,
+                  source_type: 'state_tourism',
                   evidence_note: isVerified ? 'Deep link verified against state records' : 'Generic homepage documentation under review',
                   accessed_on: '2026-03-10',
                   verification_status: verifiedStatus,
@@ -436,39 +399,6 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
         console.error(`[DB Seed] Error reading ${reg}/places.json:`, e);
       }
     }
-  }
-
-  // Deduplicate regional entries that supersede generic monuments
-  if (places['meghalaya_008'] || places['meghalaya_001']) {
-    delete places['living-root-bridges'];
-  }
-  if (places['bihar_001']) {
-    delete places['mahabodhi-temple'];
-    delete places['nalanda-university-ruins'];
-    delete places['golghar-patna'];
-  }
-  if (places['uttar_pradesh_011']) {
-    delete places['taj-mahal'];
-    delete places['fatehpur-sikri'];
-    delete places['agra-fort'];
-    delete places['kashi-vishwanath'];
-    delete places['dashashwamedh-ghat'];
-    delete places['sarnath-complex'];
-    delete places['assi-ghat'];
-    delete places['mehtab-bagh'];
-  }
-  if (places['karnataka_001']) {
-    delete places['hampi-monuments'];
-    delete places['pattadakal-monuments'];
-    delete places['hoysala-temples-belur'];
-    delete places['bangalore-palace'];
-    delete places['hampi-virupaksha'];
-    delete places['hampi-stone-chariot'];
-    delete places['tipu-sultan-palace'];
-    delete places['lalbagh-glasshouse'];
-  }
-  if (places['chhattisgarh_001']) {
-    delete places['sirpur-monuments'];
   }
 
   // -------------------------------------------------------------
@@ -507,22 +437,16 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
                       if (Array.isArray(attr.sources) && attr.sources.length > 0) {
                         existingPlace.sources = attr.sources;
                       }
-                      if (attr.assigned_city) existingPlace.assigned_city = attr.assigned_city;
-                      if (attr.tourist_place) existingPlace.tourist_place = attr.tourist_place;
                       if (attr.topic) existingPlace.topic = attr.topic;
                       if (attr.subtopic) existingPlace.subtopic = attr.subtopic;
                       if (attr.category_links) existingPlace.category_links = attr.category_links;
                       
-                      if (attr.verification_status === 'verified') {
+                      const quality = computeSourceQuality(existingPlace.source_url);
+                      existingPlace.source_quality = quality;
+                      if (quality === 'generic_homepage' || quality === 'missing' || existingPlace.id === 'capitol-complex-chandigarh') {
+                        existingPlace.verification_status = 'needs_review';
+                      } else if (quality === 'place_specific' || quality === 'official_site') {
                         existingPlace.verification_status = 'verified';
-                      } else if (existingPlace.verification_status !== 'verified') {
-                        const quality = computeSourceQuality(existingPlace.source_url);
-                        existingPlace.source_quality = quality;
-                        if (quality === 'generic_homepage' || quality === 'missing' || existingPlace.id === 'capitol-complex-chandigarh') {
-                          existingPlace.verification_status = 'needs_review';
-                        } else if (quality === 'place_specific' || quality === 'official_site') {
-                          existingPlace.verification_status = 'verified';
-                        }
                       }
                       if (attr.last_verified_on) existingPlace.last_verified_on = attr.last_verified_on;
                       if (attr.detailed_description) existingPlace.detailed_description = attr.detailed_description;
@@ -587,8 +511,6 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
                       city_id: city.id,
                       state_id: state.id,
                       name: attr.name,
-                      assigned_city: attr.assigned_city || city.name,
-                      tourist_place: attr.tourist_place || attr.name,
                       slug: attr.slug || placeId,
                       place_type: attr.place_type || 'Tourist Place',
                       category: attr.category || catKey || 'heritage',
@@ -740,45 +662,8 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
       }
     }
     basilica.categories = Array.from(cats);
-    basilica.assigned_city = 'Old Goa';
-    basilica.tourist_place = 'Basilica of Bom Jesus';
     places['basilica-of-bom-jesus'] = basilica;
     delete places['basilica-bom-jesus-goa'];
-  }
-
-  // Deduplicate Golden Temple and ensure Punjab places strictly follow punjab_001 - punjab_020
-  if (places['punjab_001']) {
-    if (places['golden-temple-amritsar']) {
-      delete places['golden-temple-amritsar'];
-    }
-    if (places['amritsar-golden-temple']) {
-      delete places['amritsar-golden-temple'];
-    }
-  }
-  for (const legacyKey of ['amritsar-jallianwala-bagh', 'amritsar-partition-museum', 'patiala-qila-mubarak', 'anandpur-virasat-e-khalsa']) {
-    if (places[legacyKey]) {
-      delete places[legacyKey];
-    }
-  }
-
-  // Deduplicate Telangana places and ensure they strictly follow telangana_001 - telangana_015
-  if (places['telangana_001']) {
-    for (const legacyKey of [
-      'charminar', 'golconda-fort', 'ramappa-temple',
-      'hyderabad-charminar', 'hyderabad-golconda-fort', 'hyderabad-salar-jung-museum',
-      'hyderabad-hussain-sagar-lake', 'hyderabad-qutb-shahi-tombs', 'hyderabad-ramoji-film-city',
-      'hyderabad-chowmahalla-palace', 'warangal-fort', 'warangal-thousand-pillar-temple',
-      'bhongir-fort', 'thousand-pillar-temple', 'qutb-shahi-tombs', 'salar-jung-museum',
-      'chowmahalla-palace', 'hussain-sagar-lake',
-      'hyderabad-hyderabad-heritage-fort-complex',
-      'nagarjuna-sagar-nagarjuna-sagar-national-wildlife-botanical-park',
-      'kbr-national-park', 'mrugavani-national-park',
-      'warangal-warangal-sacred-temple-cultural-center'
-    ]) {
-      if (places[legacyKey]) {
-        delete places[legacyKey];
-      }
-    }
   }
 
   // Post-processing sanity pass across all places
@@ -847,13 +732,6 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
       accessed_on: p.last_verified_on || '2026-03-10',
       verification_status: p.verification_status,
     }];
-  }
-
-  // Clean up any orphan facts whose place_id was pruned
-  for (const [factId, fact] of Object.entries(place_facts)) {
-    if (!places[fact.place_id]) {
-      delete place_facts[factId];
-    }
   }
 
   console.log(`[DB Seed] Seeding complete: ${Object.keys(states).length} states, ${Object.keys(cities).length} cities, ${Object.keys(places).length} places (${Object.values(places).filter(p => p.data_confidence === 'official').length} verified), ${Object.keys(place_facts).length} granular facts, ${Object.keys(transit_nodes).length} transit nodes.`);
