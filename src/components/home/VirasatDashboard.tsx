@@ -41,6 +41,8 @@ import {
   RoyalBengalTigerEmblem,
 } from '../common/TricolourBranding';
 import { IndiaHeritageMapPreview } from './IndiaHeritageMapPreview';
+import { FeaturedHeritageSection } from './FeaturedHeritageSection';
+import { IncredibleIndiaMediaSection } from './IncredibleIndiaMediaSection';
 import { ScrollReveal } from '../common/ScrollReveal';
 
 interface VirasatDashboardProps {
@@ -936,6 +938,22 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
           ))}
         </div>
       </section>
+
+      {/* ========================================================================= */}
+      {/* FEATURED HERITAGE & ICONIC MONUMENTS                                      */}
+      {/* ========================================================================= */}
+      <FeaturedHeritageSection
+        onSelectPlace={onSelectPlace || (() => {})}
+        onNavigateTab={onNavigateTab}
+      />
+
+      {/* ========================================================================= */}
+      {/* INCREDIBLE INDIA: CINEMATIC FILMS & VISUAL TAPESTRY                       */}
+      {/* ========================================================================= */}
+      <IncredibleIndiaMediaSection
+        onSelectPlace={onSelectPlace || (() => {})}
+        onNavigateTab={onNavigateTab}
+      />
 
       {/* ========================================================================= */}
       {/* 4. EXPLORE INDIA BY REGION                                                */}

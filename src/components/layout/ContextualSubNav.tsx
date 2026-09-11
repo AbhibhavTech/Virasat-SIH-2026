@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavTab } from './Sidebar';
-import { Landmark, Box, Layers, Utensils, Sparkles, MapPin } from 'lucide-react';
+import { Landmark, Box, Layers, Utensils, Sparkles, MapPin, Film, Image as ImageIcon } from 'lucide-react';
 
 interface ContextualSubNavProps {
   activeTab: NavTab;
@@ -74,7 +74,18 @@ export const ContextualSubNav: React.FC<ContextualSubNavProps> = ({
               }`}
             >
               <Landmark className="w-3.5 h-3.5" />
-              <span>Major Monuments & Famous Heritage</span>
+              <span>Heritage Sites & Monuments</span>
+            </button>
+
+            <button
+              onClick={() => {
+                handleNav('heritage');
+                window.dispatchEvent(new CustomEvent('virasat:set-heritage-view', { detail: 'gallery' }));
+              }}
+              className="px-3.5 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1.5 transition bg-amber-50 text-amber-900 border border-amber-200 hover:bg-amber-100"
+            >
+              <ImageIcon className="w-3.5 h-3.5 text-[#FF671F]" />
+              <span>Heritage Gallery</span>
             </button>
 
             <button
@@ -87,6 +98,20 @@ export const ContextualSubNav: React.FC<ContextualSubNavProps> = ({
             >
               <Box className="w-3.5 h-3.5" />
               <span>3D Interactive Museum</span>
+            </button>
+
+            <button
+              onClick={() => {
+                handleNav('home');
+                setTimeout(() => {
+                  const el = document.getElementById('incredible-media-section');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }, 100);
+              }}
+              className="px-3.5 py-1.5 rounded-full text-xs font-semibold flex items-center gap-1.5 transition bg-stone-100 text-stone-700 hover:bg-stone-200"
+            >
+              <Film className="w-3.5 h-3.5 text-[#FF671F]" />
+              <span>Incredible India Films & Photos</span>
             </button>
           </div>
         </div>
