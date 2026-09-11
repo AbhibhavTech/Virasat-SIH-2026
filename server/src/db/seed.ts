@@ -449,6 +449,8 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
                         existingPlace.verification_status = 'verified';
                       }
                       if (attr.last_verified_on) existingPlace.last_verified_on = attr.last_verified_on;
+                      if (attr.city) existingPlace.city = attr.city;
+                      if (attr.area) existingPlace.area = attr.area;
                       if (attr.detailed_description) existingPlace.detailed_description = attr.detailed_description;
                       if (attr.short_description) existingPlace.short_description = attr.short_description;
                       if (attr.best_time_to_visit) existingPlace.best_time_to_visit = attr.best_time_to_visit;
@@ -509,6 +511,8 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
                     places[placeId] = {
                       id: placeId,
                       city_id: city.id,
+                      city: attr.city || city.name,
+                      area: attr.area || city.district,
                       state_id: state.id,
                       name: attr.name,
                       slug: attr.slug || placeId,

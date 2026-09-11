@@ -30,6 +30,7 @@ import {
   ShieldCheck,
   Globe,
   Building2,
+  SlidersHorizontal,
 } from 'lucide-react';
 import {
   StateHierarchyEntity,
@@ -96,6 +97,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedRegion, setSelectedRegion] = useState('All');
   const [activeCategoryFilter, setActiveCategoryFilter] = useState<string>('all');
+  const [stateCityFilter, setStateCityFilter] = useState<string>('all');
   const [territoryTab, setTerritoryTab] = useState<TerritoryTab>('states');
 
   // Broken Image Tracker (Replaces hardcoded Taj Mahal fallbacks)
@@ -226,6 +228,35 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
       hasOfficialSource: Boolean(currentState.official_tourism_url),
     };
   }, [currentState]);
+
+  // All verified places across all cities in the current state
+  const stateAllPlaces: AttractionEntity[] = useMemo(() => {
+    if (!currentState?.cities) return [];
+    const list: AttractionEntity[] = [];
+    for (const city of currentState.cities) {
+      const rawPlaces = [
+        ...(city.heritage || []),
+        ...(city.monuments || []),
+        ...(city.museums || []),
+        ...(city.tourist_places || []),
+        ...(city.religious_cultural || []),
+        ...(city.nature_parks_zoo || []),
+      ];
+      list.push(...rawPlaces.filter(isPlaceVerified));
+    }
+    return list;
+  }, [currentState]);
+
+  // Filtered state places by selected city filter
+  const filteredStatePlaces = useMemo(() => {
+    if (stateCityFilter === 'all') return stateAllPlaces;
+    const target = stateCityFilter.toLowerCase();
+    return stateAllPlaces.filter(
+      (p) =>
+        p.city_id?.toLowerCase() === target ||
+        p.city?.toLowerCase() === target
+    );
+  }, [stateAllPlaces, stateCityFilter]);
 
   // Aggregate verified places in current city/destination (Strictly verified places only)
   const cityAllPlaces: AttractionEntity[] = useMemo(() => {
@@ -388,6 +419,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
   // Navigation handlers
   const handleSelectState = (stateId: string) => {
     setSelectedStateId(stateId);
+    setStateCityFilter('all');
     const s = db?.states.find((item) => item.id === stateId);
     if (s && s.cities && s.cities.length > 0) {
       setSelectedCityId(s.cities[0].id);
@@ -1263,6 +1295,199 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                 })}
               </div>
             </div>
+
+            {/* Filter / Browse Places by City Section */}
+            <div className="bg-white rounded-3xl border border-[#EFE8DF] p-6 sm:p-8 shadow-xs space-y-6">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                <div>
+                  <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#FF671F]">
+                    <SlidersHorizontal className="w-4 h-4 text-[#FF671F]" />
+                    <span>Browse &amp; Filter Places by City</span>
+                  </div>
+                  <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#0B192C] mt-1">
+                    Tourist Attractions in {currentState.name} by City
+                  </h2>
+                  <p className="text-xs text-[#7A6E65] mt-0.5">
+                    Filter and discover verified heritage, spiritual shrines, and natural landmarks across {currentState.name} ({stateAllPlaces.length} total places).
+                  </p>
+                </div>
+              </div>
+
+              {/* City Filter Pills */}
+              <div className="flex items-center gap-2 overflow-x-auto pb-2">
+                <button
+                  onClick={() => setStateCityFilter('all')}
+                  className={`px-3.5 py-2 rounded-xl text-xs font-bold transition shrink-0 cursor-pointer ${
+                    stateCityFilter === 'all'
+                      ? 'bg-[#FF671F] text-white shadow-xs'
+                      : 'bg-[#FAF8F5] text-stone-700 hover:bg-stone-100 border border-[#EFE8DF]'
+                  }`}
+                >
+                  All Cities ({stateAllPlaces.length})
+                </button>
+                {currentState.cities.map((c) => {
+                  const cityPlaceCount = (
+                    (c.heritage?.length || 0) +
+                    (c.monuments?.length || 0) +
+                    (c.museums?.length || 0) +
+                    (c.tourist_places?.length || 0) +
+                    (c.religious_cultural?.length || 0) +
+                    (c.nature_parks_zoo?.length || 0)
+                  );
+                  const isSelected =
+                    stateCityFilter.toLowerCase() === c.id.toLowerCase() ||
+                    stateCityFilter.toLowerCase() === c.name.toLowerCase();
+
+                  return (
+                    <button
+                      key={c.id}
+                      onClick={() => setStateCityFilter(c.id)}
+                      className={`px-3.5 py-2 rounded-xl text-xs font-bold transition shrink-0 flex items-center gap-1.5 cursor-pointer ${
+                        isSelected
+                          ? 'bg-[#FF671F] text-white shadow-xs'
+                          : 'bg-[#FAF8F5] text-stone-700 hover:bg-stone-100 border border-[#EFE8DF]'
+                      }`}
+                    >
+                      <MapPin className={`w-3 h-3 ${isSelected ? 'text-white' : 'text-[#FF671F]'}`} />
+                      <span>{c.name}</span>
+                      <span
+                        className={`px-1.5 py-0.2 rounded-full text-[10px] font-mono ${
+                          isSelected ? 'bg-white/20 text-white' : 'bg-stone-200 text-stone-700'
+                        }`}
+                      >
+                        {cityPlaceCount}
+                      </span>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Places Grid */}
+              {filteredStatePlaces.length === 0 ? (
+                <div className="text-center py-10 bg-stone-50 rounded-2xl border border-dashed border-stone-200">
+                  <p className="text-sm text-stone-500">No places found for the selected city filter.</p>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                  {filteredStatePlaces.map((attr) => {
+                    const isVisited = Boolean(visitedPlaces[attr.id]);
+                    const imgUrl = attr.image_url || attr.thumbnail_url;
+                    const isBroken = brokenImages[attr.id] || !imgUrl;
+
+                    return (
+                      <div
+                        key={attr.id}
+                        className={`bg-white rounded-3xl border overflow-hidden shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between ${
+                          isVisited ? 'border-[#FF671F] bg-amber-50/20' : 'border-[#EFE8DF]'
+                        }`}
+                      >
+                        <div>
+                          {/* Photo with fallback */}
+                          <div className="relative h-44 w-full overflow-hidden bg-stone-100">
+                            {isBroken ? (
+                              <OfficialImagePending
+                                heightClass="h-full"
+                                label="Official image pending"
+                                showBadge={false}
+                              />
+                            ) : (
+                              <img
+                                src={imgUrl}
+                                alt={attr.name}
+                                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                                onError={() => handleImageError(attr.id)}
+                              />
+                            )}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent pointer-events-none" />
+
+                            <div className="absolute top-3 left-3 flex flex-wrap items-center gap-1.5 pointer-events-none">
+                              <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-orange-600/90 text-white backdrop-blur-xs flex items-center gap-1">
+                                <MapPin className="w-2.5 h-2.5" />
+                                {attr.city || currentState.cities.find((c) => c.id === attr.city_id)?.name}
+                              </span>
+                              {attr.topic && (
+                                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-stone-800/80 text-amber-200 backdrop-blur-xs">
+                                  {attr.topic}
+                                </span>
+                              )}
+                            </div>
+
+                            <button
+                              onClick={() => toggleVisited(attr.id)}
+                              className="absolute top-3 right-3 p-1.5 rounded-full bg-white/90 text-[#FF671F] hover:bg-white transition cursor-pointer shadow-xs"
+                              title={isVisited ? 'Mark as not visited' : 'Mark as visited'}
+                            >
+                              {isVisited ? (
+                                <CheckSquare className="w-4 h-4 text-[#FF671F]" />
+                              ) : (
+                                <Square className="w-4 h-4 text-stone-400" />
+                              )}
+                            </button>
+
+                            <div className="absolute bottom-3 left-4 right-4 text-white pointer-events-none">
+                              <h4 className={`font-serif text-base font-bold leading-snug ${isVisited ? 'line-through text-stone-300' : 'text-white'}`}>
+                                {attr.name}
+                              </h4>
+                            </div>
+                          </div>
+
+                          {/* Body */}
+                          <div className="p-4 space-y-3">
+                            <div className="flex items-center justify-between gap-2">
+                              <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-300 flex items-center gap-1">
+                                <ShieldCheck className="w-3 h-3 text-emerald-600" />
+                                <span>Verified place</span>
+                              </span>
+                              {attr.area && (
+                                <span className="text-[10px] text-stone-500 truncate max-w-[130px]" title={attr.area}>
+                                  {attr.area}
+                                </span>
+                              )}
+                            </div>
+
+                            <div className="flex items-center gap-1 text-xs text-stone-600 font-semibold">
+                              <MapPin className="w-3 h-3 text-[#FF671F] shrink-0" />
+                              <span>{attr.city || currentState.cities.find((c) => c.id === attr.city_id)?.name}</span>
+                            </div>
+
+                            <p className="text-xs text-[#5A4E46] leading-relaxed line-clamp-2">
+                              {attr.short_description || attr.summary}
+                            </p>
+
+                            <div className="p-2.5 rounded-xl bg-[#FAF8F5] border border-[#EFE8DF] flex items-center justify-between text-[11px]">
+                              <span className="text-stone-500 font-medium">Entry Fee:</span>
+                              <span className="font-semibold text-stone-800">
+                                {attr.entry_fee === 0 || attr.fees?.free_entry ? 'Free Entry' : `₹${attr.entry_fee || attr.fees?.domestic || 0}`}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Actions */}
+                        <div className="p-4 pt-0 flex items-center gap-2">
+                          <button
+                            onClick={() => setPreviewPlace(attr)}
+                            className="flex-1 py-2 px-3 rounded-xl bg-[#FAF8F5] hover:bg-[#F3EDE5] border border-[#EFE8DF] text-xs font-bold text-[#E65100] transition flex items-center justify-center gap-1.5 cursor-pointer"
+                          >
+                            <Eye className="w-3.5 h-3.5 text-[#FF671F]" />
+                            <span>Quick Details</span>
+                          </button>
+                          {attr.city_id && (
+                            <button
+                              onClick={() => handleSelectTown(currentState.id, attr.city_id!)}
+                              className="p-2 rounded-xl bg-[#FF671F] hover:bg-[#E65100] text-white transition cursor-pointer"
+                              title={`Explore ${attr.city || 'City'} Hub`}
+                            >
+                              <ArrowRight className="w-4 h-4" />
+                            </button>
+                          )}
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
           </div>
         )}
 
@@ -1276,6 +1501,32 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
 
           return (
             <div className="space-y-8">
+              {/* Destination Switcher in Current State */}
+              {currentState && currentState.cities && currentState.cities.length > 1 && (
+                <div className="flex items-center gap-2 overflow-x-auto pb-1">
+                  <span className="text-xs font-bold text-stone-500 shrink-0">
+                    Destinations in {currentState.name}:
+                  </span>
+                  {currentState.cities.map((c) => {
+                    const isSelected = c.id === currentCity.id;
+                    return (
+                      <button
+                        key={c.id}
+                        onClick={() => handleSelectTown(currentState.id, c.id)}
+                        className={`px-3 py-1.5 rounded-xl text-xs font-bold transition shrink-0 flex items-center gap-1 cursor-pointer ${
+                          isSelected
+                            ? 'bg-[#FF671F] text-white shadow-xs'
+                            : 'bg-white text-stone-700 hover:bg-stone-100 border border-[#EFE8DF]'
+                        }`}
+                      >
+                        <MapPin className={`w-3 h-3 ${isSelected ? 'text-white' : 'text-[#FF671F]'}`} />
+                        <span>{c.name}</span>
+                      </button>
+                    );
+                  })}
+                </div>
+              )}
+
               {/* Town Hero & Travel Context Banner with honest fallback */}
               <div className="bg-white rounded-3xl border border-[#EFE8DF] overflow-hidden shadow-xs">
                 <div className="grid grid-cols-1 lg:grid-cols-12">
@@ -1527,6 +1778,12 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                                     <Award className="w-3 h-3" /> UNESCO
                                   </span>
                                 )}
+                                {attr.city && (
+                                  <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-black/60 text-white backdrop-blur-xs flex items-center gap-1">
+                                    <MapPin className="w-2.5 h-2.5 text-[#FF671F]" />
+                                    {attr.city}
+                                  </span>
+                                )}
                               </div>
 
                               {/* Visited Checkbox on photo */}
@@ -1556,7 +1813,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
 
                             {/* Place Details Body */}
                             <div className="p-5 space-y-3.5">
-                              {/* Verification Badge */}
+                              {/* Verification Badge & Area */}
                               <div className="flex items-center justify-between gap-2">
                                 {verified ? (
                                   <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-300 flex items-center gap-1 shadow-2xs">
@@ -1569,11 +1826,21 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                                   </span>
                                 )}
 
-                                {attr.last_verified_on && (
+                                {attr.area ? (
+                                  <span className="text-[10px] text-stone-500 font-medium truncate max-w-[140px]" title={attr.area}>
+                                    {attr.area}
+                                  </span>
+                                ) : attr.last_verified_on ? (
                                   <span className="text-[10px] text-stone-500">
                                     {attr.last_verified_on}
                                   </span>
-                                )}
+                                ) : null}
+                              </div>
+
+                              {/* City & Area Indicator */}
+                              <div className="flex items-center gap-1.5 text-xs text-stone-700 font-semibold">
+                                <MapPin className="w-3.5 h-3.5 text-[#FF671F] shrink-0" />
+                                <span>{attr.city || currentCity.name}</span>
                               </div>
 
                               <p className="text-xs text-[#5A4E46] leading-relaxed line-clamp-3">

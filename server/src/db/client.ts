@@ -251,7 +251,7 @@ class DatabaseManager {
       }
       if (filters?.cityId || filters?.city) {
         const targetCity = (filters.cityId || filters.city || '').toLowerCase();
-        list = list.filter((p) => p.city_id?.toLowerCase() === targetCity);
+        list = list.filter((p) => p.city_id?.toLowerCase() === targetCity || p.city?.toLowerCase() === targetCity);
       }
       if (filters?.category) {
         const targetCat = filters.category.toLowerCase();

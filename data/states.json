@@ -286,12 +286,12 @@
     "type": "state",
     "capital": "Ranchi",
     "region": "Eastern India",
-    "official_tourism_url": "https://unsplash.com/photos/waterfalls-flowing-down-rocky-mountain-during-daytime-Y_7v4m1Z8q4",
-    "description": "Land of Forests and waterfalls, sacred Baidyanath Jyotirlinga at Deoghar, Parasnath Jain pilgrimage, and tribal cultural heritage.",
+    "official_tourism_url": "https://tourism.jharkhand.gov.in",
+    "description": "Land of Forests and waterfalls, sacred Baidyanath Jyotirlinga at Deoghar, Parasnath Jain pilgrimage, Betla National Park, and vibrant tribal cultural heritage.",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1628009848529-650f9f30b91c?w=1200&auto=format&fit=crop&q=80",
-    "total_cities": 3,
-    "total_attractions": 7
+    "total_cities": 9,
+    "total_attractions": 20
   },
   {
     "id": "odisha",

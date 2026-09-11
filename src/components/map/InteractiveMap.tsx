@@ -391,6 +391,8 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
     bengaluru: { lat: 12.9716, lng: 77.5946, zoom: 12 },
     kolkata: { lat: 22.5726, lng: 88.3639, zoom: 12 },
     amritsar: { lat: 31.6340, lng: 74.8723, zoom: 13 },
+    ranchi: { lat: 23.3441, lng: 85.3096, zoom: 12 },
+    deoghar: { lat: 24.4826, lng: 86.6978, zoom: 13 },
   };
 
   // 2. Initialize Leaflet Map Instance
