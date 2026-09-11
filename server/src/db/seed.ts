@@ -322,7 +322,7 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
   // -------------------------------------------------------------
   // 5. Regional Flagship Datasets (Mumbai, Delhi, Rajasthan, Goa, Kerala, Maharashtra)
   // -------------------------------------------------------------
-  const regionalDirs = ['mumbai', 'delhi', 'rajasthan', 'maharashtra', 'goa', 'kerala', 'ladakh', 'jammu-kashmir', 'punjab', 'kolkata', 'west-bengal', 'telangana', 'nagaland', 'meghalaya', 'manipur', 'mizoram', 'bihar', 'uttar-pradesh', 'karnataka', 'chhattisgarh'];
+  const regionalDirs = ['mumbai', 'delhi', 'rajasthan', 'maharashtra', 'goa', 'kerala', 'ladakh', 'jammu-kashmir', 'punjab', 'kolkata', 'west-bengal', 'telangana', 'nagaland', 'meghalaya', 'manipur', 'mizoram', 'bihar', 'uttar-pradesh', 'karnataka', 'chhattisgarh', 'haryana'];
   for (const reg of regionalDirs) {
     const regPath = path.join(rootDataDir, reg, 'places.json');
     if (fs.existsSync(regPath)) {
@@ -333,7 +333,7 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
             const stateId = (rp.state_id || rp.state || reg).toLowerCase().replace(/[^a-z0-9]+/g, '-');
             const cityId = (rp.city_id || rp.city || reg).toLowerCase().replace(/[^a-z0-9]+/g, '-');
             const normalizedName = rp.name.trim().toLowerCase();
-            const isProtectedRegional = rp.id.startsWith('telangana_') || rp.id.startsWith('nagaland_') || rp.id.startsWith('meghalaya_') || rp.id.startsWith('manipur_') || rp.id.startsWith('mizoram_') || rp.id.startsWith('bihar_') || rp.id.startsWith('uttar_pradesh_') || rp.id.startsWith('karnataka_') || rp.id.startsWith('chhattisgarh_');
+            const isProtectedRegional = rp.id.startsWith('telangana_') || rp.id.startsWith('nagaland_') || rp.id.startsWith('meghalaya_') || rp.id.startsWith('manipur_') || rp.id.startsWith('mizoram_') || rp.id.startsWith('bihar_') || rp.id.startsWith('uttar_pradesh_') || rp.id.startsWith('karnataka_') || rp.id.startsWith('chhattisgarh_') || rp.id.startsWith('haryana_');
             const existing = places[rp.id] || (!isProtectedRegional && Object.values(places).find(p => p.city_id === cityId && p.name.trim().toLowerCase() === normalizedName));
             if (existing) continue; // Already ingested via curated monuments
             const sourceUrl = rp.source_url && rp.source_url.startsWith('http') ? rp.source_url : 'https://asi.nic.in';

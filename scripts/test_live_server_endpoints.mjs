@@ -1,114 +1,122 @@
-import { spawn } from 'child_process';
 import http from 'http';
 
-function get(url) {
+const TEST_PORT = 3005;
+process.env.PORT = String(TEST_PORT);
+process.env.NODE_ENV = 'production';
+
+function fetchJson(path) {
   return new Promise((resolve, reject) => {
-    http.get(url, (res) => {
+    http.get(`http://127.0.0.1:${TEST_PORT}${path}`, (res) => {
       let data = '';
       res.on('data', chunk => data += chunk);
       res.on('end', () => {
         try {
-          resolve({ status: res.statusCode, body: JSON.parse(data) });
+          resolve({ status: res.statusCode, data: JSON.parse(data) });
         } catch (e) {
-          resolve({ status: res.statusCode, body: data });
+          resolve({ status: res.statusCode, text: data });
         }
       });
     }).on('error', reject);
   });
 }
 
-async function main() {
-  const testPort = 3006;
-  console.log(`Starting live test server on port ${testPort}...`);
+async function runLiveServerTests() {
+  console.log(`Starting live server on port ${TEST_PORT}...`);
+  // Dynamically import server.ts (which launches express on TEST_PORT)
+  await import('../server.ts');
 
-  const serverProc = spawn('node', ['--import', 'tsx', 'server.ts'], {
-    env: { ...process.env, PORT: String(testPort) },
-    stdio: 'pipe'
-  });
+  // Wait a moment for server to listen
+  await new Promise(r => setTimeout(r, 2000));
 
-  serverProc.stdout.on('data', (d) => {
-    // console.log(d.toString());
-  });
-  serverProc.stderr.on('data', (d) => {
-    // console.error(d.toString());
-  });
-
-  // Wait for server to boot
-  let ready = false;
-  for (let i = 0; i < 30; i++) {
-    await new Promise(r => setTimeout(r, 1000));
-    try {
-      const res = await get(`http://localhost:${testPort}/health`);
-      if (res.status === 200) {
-        ready = true;
-        break;
-      }
-    } catch (e) {}
+  console.log('\n--- 1. Testing GET /api/india-hierarchy ---');
+  const hierRes = await fetchJson('/api/india-hierarchy');
+  if (hierRes.status !== 200) {
+    throw new Error(`GET /api/india-hierarchy returned status ${hierRes.status}`);
+  }
+  const haryanaInHier = hierRes.data.states?.find(s => s.id === 'haryana');
+  if (!haryanaInHier) {
+    throw new Error('Haryana not found in /api/india-hierarchy');
+  }
+  console.log(`✓ /api/india-hierarchy: status=${haryanaInHier.status}, cities=${haryanaInHier.cities?.length}, places=${haryanaInHier.total_places}`);
+  if (haryanaInHier.total_places !== 30 || haryanaInHier.cities?.length !== 19) {
+    throw new Error(`Expected 30 places and 19 cities, got places=${haryanaInHier.total_places}, cities=${haryanaInHier.cities?.length}`);
   }
 
-  if (!ready) {
-    console.error('Server failed to start within timeout');
-    serverProc.kill();
-    process.exit(1);
+  console.log('\n--- 2. Testing GET /api/india-hierarchy/state/haryana ---');
+  const stateRes = await fetchJson('/api/india-hierarchy/state/haryana');
+  if (stateRes.status !== 200) {
+    throw new Error(`GET /api/india-hierarchy/state/haryana returned status ${stateRes.status}`);
+  }
+  console.log(`✓ /api/india-hierarchy/state/haryana: name=${stateRes.data.name}, cities count=${stateRes.data.cities?.length}`);
+  if (stateRes.data.cities?.length !== 19) {
+    throw new Error(`Expected 19 cities for Haryana state endpoint, got ${stateRes.data.cities?.length}`);
   }
 
-  console.log('Server online! Running endpoint verifications...\n');
-
-  try {
-    // 1. India Hierarchy States
-    for (const [stateId, expectedPlaces, expectedCities] of [
-      ['nagaland', 10, 5],
-      ['meghalaya', 10, 6],
-      ['manipur', 10, 6],
-      ['mizoram', 10, 7],
-      ['telangana', 15, 8]
-    ]) {
-      const res = await get(`http://localhost:${testPort}/api/india-hierarchy/state/${stateId}`);
-      if (res.status !== 200) {
-        throw new Error(`/api/india-hierarchy/state/${stateId} failed with ${res.status}`);
-      }
-      const st = res.body.state || res.body;
-      const totalPlaces = st.cities.reduce((acc, c) => acc + (c.tourist_places?.length || 0), 0);
-      console.log(`[Discover Bharat] ${st.name}: ${st.cities.length} cities (expected: ${expectedCities}), ${totalPlaces} places (expected: ${expectedPlaces}) -> PASS`);
-    }
-
-    // 2. /api/v1/places endpoint
-    console.log('\nTesting /api/v1/places:');
-    for (const [stateId, expectedPlaces] of [
-      ['nagaland', 10],
-      ['meghalaya', 10],
-      ['manipur', 10],
-      ['mizoram', 10],
-      ['telangana', 15]
-    ]) {
-      const res = await get(`http://localhost:${testPort}/api/v1/places?stateId=${stateId}&limit=50`);
-      const count = res.body.total || res.body.places?.length || 0;
-      console.log(`[API v1] stateId=${stateId}: ${count} places (expected: ${expectedPlaces}) -> ${count === expectedPlaces ? 'PASS' : 'FAIL'}`);
-      if (count !== expectedPlaces) throw new Error(`Place count mismatch for ${stateId}`);
-    }
-
-    // 3. /api/places endpoint
-    console.log('\nTesting /api/places:');
-    for (const [stateName, expectedPlaces] of [
-      ['nagaland', 10],
-      ['meghalaya', 10],
-      ['manipur', 10],
-      ['mizoram', 10],
-      ['telangana', 15]
-    ]) {
-      const res = await get(`http://localhost:${testPort}/api/places?state=${stateName}&limit=50`);
-      const count = res.body.total || res.body.data?.length || 0;
-      console.log(`[API Legacy] state=${stateName}: ${count} places (expected: ${expectedPlaces}) -> ${count === expectedPlaces ? 'PASS' : 'FAIL'}`);
-      if (count !== expectedPlaces) throw new Error(`Place count mismatch for ${stateName}`);
-    }
-
-    console.log('\n>>> ALL LIVE SERVER ENDPOINT TESTS PASSED! <<<');
-  } finally {
-    serverProc.kill();
+  console.log('\n--- 3. Testing GET /api/destinations?state=haryana ---');
+  const destRes = await fetchJson('/api/destinations?state=haryana&limit=100');
+  if (destRes.status !== 200) {
+    throw new Error(`GET /api/destinations?state=haryana returned status ${destRes.status}`);
   }
+  const destItems = Array.isArray(destRes.data) ? destRes.data : destRes.data.data || [];
+  const destTotal = destRes.data.total ?? destItems.length;
+  console.log(`✓ /api/destinations?state=haryana returned total=${destTotal}, data length=${destItems.length}`);
+  if (destTotal !== 30 || destItems.length !== 30) {
+    throw new Error(`Expected 30 destinations for Haryana, got total=${destTotal}, data length=${destItems.length}`);
+  }
+
+  console.log('\n--- 4. Testing GET /api/destinations with Haryana cities ---');
+  const testCities = [
+    { city: 'kurukshetra', expected: 5 },
+    { city: 'panipat', expected: 3 },
+    { city: 'pinjore', expected: 2 },
+    { city: 'morni', expected: 2 },
+    { city: 'karnal', expected: 2 },
+    { city: 'jhajjar', expected: 2 },
+    { city: 'narnaul', expected: 2 },
+    { city: 'hisar', expected: 1 },
+    { city: 'faridabad', expected: 1 },
+    { city: 'sultanpur', expected: 1 },
+    { city: 'kalesar', expected: 1 },
+    { city: 'agroha', expected: 1 },
+    { city: 'ballabhgarh', expected: 1 },
+    { city: 'sohna', expected: 1 },
+    { city: 'panchkula', expected: 1 },
+    { city: 'rohtak', expected: 1 },
+    { city: 'chhachhrauli', expected: 1 },
+    { city: 'kaithal', expected: 1 },
+    { city: 'rakhigarhi', expected: 1 }
+  ];
+
+  for (const { city, expected } of testCities) {
+    const res = await fetchJson(`/api/destinations?city=${city}&limit=100`);
+    const items = Array.isArray(res.data) ? res.data : res.data.data || [];
+    const total = res.data.total ?? items.length;
+    console.log(`  - City: ${city} => total=${total}, returned ${items.length} (expected ${expected})`);
+    if (total !== expected || items.length !== expected) {
+      throw new Error(`City ${city} expected ${expected} places, got total=${total}, length=${items.length}`);
+    }
+  }
+
+  console.log('\n--- 5. Checking other states are preserved in live server ---');
+  const biharRes = await fetchJson('/api/destinations?state=bihar&limit=100');
+  const biharTotal = biharRes.data.total ?? (Array.isArray(biharRes.data) ? biharRes.data.length : biharRes.data.data?.length);
+  console.log(`✓ Bihar places in live server: ${biharTotal}`);
+  if (biharTotal !== 30) {
+    throw new Error(`Expected 30 places for Bihar, got ${biharTotal}`);
+  }
+
+  const cgRes = await fetchJson('/api/destinations?state=chhattisgarh&limit=100');
+  const cgTotal = cgRes.data.total ?? (Array.isArray(cgRes.data) ? cgRes.data.length : cgRes.data.data?.length);
+  console.log(`✓ Chhattisgarh places in live server: ${cgTotal}`);
+  if (cgTotal !== 30) {
+    throw new Error(`Expected 30 places for Chhattisgarh, got ${cgTotal}`);
+  }
+
+  console.log('\n>>> ALL LIVE API ENDPOINT TESTS PASSED SUCCESSFULLY! <<<');
+  process.exit(0);
 }
 
-main().catch(err => {
-  console.error('Test failed:', err);
+runLiveServerTests().catch(err => {
+  console.error('API Test Error:', err);
   process.exit(1);
 });

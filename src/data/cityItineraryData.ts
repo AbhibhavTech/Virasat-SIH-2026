@@ -877,6 +877,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": true
   },
   {
+    "id": "agroha",
+    "name": "Agroha",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "displayName": "Agroha (Haryana)",
+    "popular": true
+  },
+  {
     "id": "ahmedabad",
     "name": "Ahmedabad",
     "state": "Gujarat",
@@ -1027,6 +1035,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "state_id": "gujarat",
     "displayName": "Balasinor (Gujarat)",
     "popular": false
+  },
+  {
+    "id": "ballabhgarh",
+    "name": "Ballabhgarh",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "displayName": "Ballabhgarh (Haryana)",
+    "popular": true
   },
   {
     "id": "bandipur",
@@ -1354,6 +1370,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "state": "Meghalaya",
     "state_id": "meghalaya",
     "displayName": "Cherrapunji (Meghalaya)",
+    "popular": true
+  },
+  {
+    "id": "chhachhrauli",
+    "name": "Chhachhrauli",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "displayName": "Chhachhrauli (Haryana)",
     "popular": true
   },
   {
@@ -1957,6 +1981,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": true
   },
   {
+    "id": "jhajjar",
+    "name": "Jhajjar",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "displayName": "Jhajjar (Haryana)",
+    "popular": true
+  },
+  {
     "id": "jhansi",
     "name": "Jhansi",
     "state": "Uttar Pradesh",
@@ -1989,6 +2021,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "kaithal",
+    "name": "Kaithal",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "displayName": "Kaithal (Haryana)",
+    "popular": true
+  },
+  {
     "id": "kakinada",
     "name": "Kakinada",
     "state": "Andhra Pradesh",
@@ -2003,6 +2043,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "state_id": "karnataka",
     "displayName": "Kalaburagi (Karnataka)",
     "popular": false
+  },
+  {
+    "id": "kalesar",
+    "name": "Kalesar",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "displayName": "Kalesar (Haryana)",
+    "popular": true
   },
   {
     "id": "kalimpong",
@@ -2091,6 +2139,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "state_id": "telangana",
     "displayName": "Karimnagar (Telangana)",
     "popular": false
+  },
+  {
+    "id": "karnal",
+    "name": "Karnal",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "displayName": "Karnal (Haryana)",
+    "popular": true
   },
   {
     "id": "kasargod",
@@ -2525,6 +2581,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "morni",
+    "name": "Morni",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "displayName": "Morni (Haryana)",
+    "popular": true
+  },
+  {
     "id": "mount-abu",
     "name": "Mount Abu",
     "state": "Rajasthan",
@@ -2629,6 +2693,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "narnaul",
+    "name": "Narnaul",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "displayName": "Narnaul (Haryana)",
+    "popular": true
+  },
+  {
     "id": "nashik",
     "name": "Nashik",
     "state": "Maharashtra",
@@ -2723,6 +2795,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "state_id": "kerala",
     "displayName": "Palakkad (Kerala)",
     "popular": false
+  },
+  {
+    "id": "panchkula",
+    "name": "Panchkula",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "displayName": "Panchkula (Haryana)",
+    "popular": true
   },
   {
     "id": "panipat",
@@ -2845,6 +2925,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "pinjore",
+    "name": "Pinjore",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "displayName": "Pinjore (Haryana)",
+    "popular": true
+  },
+  {
     "id": "pithoragarh",
     "name": "Pithoragarh",
     "state": "Uttarakhand",
@@ -2941,6 +3029,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "rakhigarhi",
+    "name": "Rakhigarhi",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "displayName": "Rakhigarhi (Haryana)",
+    "popular": true
+  },
+  {
     "id": "rameswaram",
     "name": "Rameswaram",
     "state": "Tamil Nadu",
@@ -2979,6 +3075,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "state_id": "uttarakhand",
     "displayName": "Rishikesh (Uttarakhand)",
     "popular": false
+  },
+  {
+    "id": "rohtak",
+    "name": "Rohtak",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "displayName": "Rohtak (Haryana)",
+    "popular": true
   },
   {
     "id": "roing",
@@ -3141,6 +3245,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "popular": false
   },
   {
+    "id": "sohna",
+    "name": "Sohna",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "displayName": "Sohna (Haryana)",
+    "popular": true
+  },
+  {
     "id": "somnathpura",
     "name": "Somnathpura",
     "state": "Karnataka",
@@ -3178,6 +3290,14 @@ export const ALL_INDIAN_TOURISM_CITIES: CityOption[] = [
     "state": "Jammu and Kashmir",
     "state_id": "jammu-and-kashmir",
     "displayName": "Srinagar (Jammu and Kashmir)",
+    "popular": true
+  },
+  {
+    "id": "sultanpur",
+    "name": "Sultanpur",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "displayName": "Sultanpur (Haryana)",
     "popular": true
   },
   {

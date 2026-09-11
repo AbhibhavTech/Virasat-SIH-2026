@@ -290,6 +290,26 @@ export class MasterTourismDataService {
     jodhpur: ['jodhpur'],
     jaisalmer: ['jaisalmer'],
     gangtok: ['gangtok'],
+    // Haryana
+    sultanpur: ['sultanpur', 'sultanpur national park'],
+    kalesar: ['kalesar', 'kalesar national park'],
+    pinjore: ['pinjore', 'pinjore gardens'],
+    morni: ['morni', 'morni hills'],
+    kurukshetra: ['kurukshetra', 'thanesar'],
+    rakhigarhi: ['rakhigarhi'],
+    hisar: ['hisar', 'hissar'],
+    agroha: ['agroha', 'agroha dham'],
+    narnaul: ['narnaul'],
+    ballabhgarh: ['ballabhgarh', 'ballabgarh'],
+    faridabad: ['faridabad'],
+    sohna: ['sohna'],
+    panchkula: ['panchkula'],
+    rohtak: ['rohtak'],
+    panipat: ['panipat'],
+    karnal: ['karnal'],
+    jhajjar: ['jhajjar'],
+    chhachhrauli: ['chhachhrauli'],
+    kaithal: ['kaithal'],
   };
 
   private readonly canonicalCityNames: Record<string, string> = {
@@ -327,6 +347,26 @@ export class MasterTourismDataService {
     jodhpur: 'Jodhpur',
     jaisalmer: 'Jaisalmer',
     gangtok: 'Gangtok',
+    // Haryana
+    sultanpur: 'Sultanpur',
+    kalesar: 'Kalesar',
+    pinjore: 'Pinjore',
+    morni: 'Morni',
+    kurukshetra: 'Kurukshetra',
+    rakhigarhi: 'Rakhigarhi',
+    hisar: 'Hisar',
+    agroha: 'Agroha',
+    narnaul: 'Narnaul',
+    ballabhgarh: 'Ballabhgarh',
+    faridabad: 'Faridabad',
+    sohna: 'Sohna',
+    panchkula: 'Panchkula',
+    rohtak: 'Rohtak',
+    panipat: 'Panipat',
+    karnal: 'Karnal',
+    jhajjar: 'Jhajjar',
+    chhachhrauli: 'Chhachhrauli',
+    kaithal: 'Kaithal',
   };
 
   private constructor() {}
@@ -414,6 +454,7 @@ export class MasterTourismDataService {
       loadPlacesFile(path.join(dataDir, 'uttar-pradesh', 'places.json'));
       loadPlacesFile(path.join(dataDir, 'karnataka', 'places.json'));
       loadPlacesFile(path.join(dataDir, 'chhattisgarh', 'places.json'));
+      loadPlacesFile(path.join(dataDir, 'haryana', 'places.json'));
 
       // 7. Load Heritage & UNESCO sites
       const heritagePath = path.join(dataDir, 'heritage', 'monuments.json');

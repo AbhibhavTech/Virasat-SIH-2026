@@ -112,7 +112,7 @@ class DatabaseManager {
     this.isInitialized = true;
 
     // If fresh / empty or missing place_facts or missing newly added regional places, auto-seed
-    if (Object.keys(this.data.places).length === 0 || Object.keys(this.data.place_facts).length === 0 || !this.data.places['telangana_001'] || !this.data.places['nagaland_001'] || !this.data.places['meghalaya_001'] || !this.data.places['manipur_001'] || !this.data.places['mizoram_001'] || !this.data.places['bihar_001'] || !this.data.places['uttar_pradesh_001'] || !this.data.places['karnataka_001'] || !this.data.places['chhattisgarh_001']) {
+    if (Object.keys(this.data.places).length === 0 || Object.keys(this.data.place_facts).length === 0 || !this.data.places['telangana_001'] || !this.data.places['nagaland_001'] || !this.data.places['meghalaya_001'] || !this.data.places['manipur_001'] || !this.data.places['mizoram_001'] || !this.data.places['bihar_001'] || !this.data.places['uttar_pradesh_001'] || !this.data.places['karnataka_001'] || !this.data.places['chhattisgarh_001'] || !this.data.places['haryana_001']) {
       await this.seedFromStaticFiles();
     }
   }

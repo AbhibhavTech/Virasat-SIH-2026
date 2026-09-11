@@ -54,7 +54,18 @@
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1606298855674-501d842d900e?w=1200&auto=format&fit=crop&q=80",
     "places_count": 1,
-    "tagline": "Cultural destination in haryana"
+    "tagline": "Cultural destination in haryana",
+    "total_places": 1,
+    "coordinates": {
+      "lat": 28.4116,
+      "lng": 77.2798
+    },
+    "aliases": [
+      "faridabad",
+      "faridabad",
+      "haryana_city_11"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": "gurugram",
@@ -92,7 +103,18 @@
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1598890777034-dcf35dc05615?w=1200&auto=format&fit=crop&q=80",
     "places_count": 1,
-    "tagline": "Cultural destination in haryana"
+    "tagline": "Cultural destination in haryana",
+    "total_places": 1,
+    "coordinates": {
+      "lat": 29.1554,
+      "lng": 75.7228
+    },
+    "aliases": [
+      "hisar",
+      "hisar",
+      "haryana_city_07"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": "kurukshetra",
@@ -111,7 +133,18 @@
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1627894483218-4350ch814054?w=1200&auto=format&fit=crop&q=80",
     "places_count": 2,
-    "tagline": "Cultural destination in haryana"
+    "tagline": "Cultural destination in haryana",
+    "total_places": 5,
+    "coordinates": {
+      "lat": 29.9774,
+      "lng": 76.8208
+    },
+    "aliases": [
+      "kurukshetra",
+      "kurukshetra",
+      "haryana_city_05"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": "panipat",
@@ -130,7 +163,18 @@
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1507525428037-ea56fb194f61?w=1200&auto=format&fit=crop&q=80",
     "places_count": 1,
-    "tagline": "Cultural destination in haryana"
+    "tagline": "Cultural destination in haryana",
+    "total_places": 3,
+    "coordinates": {
+      "lat": 29.3941,
+      "lng": 76.9698
+    },
+    "aliases": [
+      "panipat",
+      "panipat",
+      "haryana_city_15"
+    ],
+    "image_url": "https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?w=800&auto=format&fit=crop&q=80"
   },
   {
     "id": "yamunanagar",
@@ -7215,5 +7259,395 @@
       "jashpur",
       "chhattisgarh_city_22"
     ]
+  },
+  {
+    "id": "sultanpur",
+    "name": "Sultanpur",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "coordinates": {
+      "lat": 28.4621,
+      "lng": 76.8956
+    },
+    "tagline": "Experience Sultanpur, Haryana",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Sultanpur.",
+    "image_url": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=800&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "sultanpur",
+      "sultanpur",
+      "haryana_city_01"
+    ],
+    "hero_image_url": "https://images.unsplash.com/photo-1544644181-1484b3fdfc62?w=800&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "kalesar",
+    "name": "Kalesar",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "coordinates": {
+      "lat": 30.3547,
+      "lng": 77.5815
+    },
+    "tagline": "Experience Kalesar, Haryana",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Kalesar.",
+    "image_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "kalesar",
+      "kalesar",
+      "haryana_city_02"
+    ],
+    "hero_image_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "pinjore",
+    "name": "Pinjore",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "coordinates": {
+      "lat": 30.7937,
+      "lng": 76.9149
+    },
+    "tagline": "Experience Pinjore, Haryana",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Pinjore.",
+    "image_url": "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800&auto=format&fit=crop&q=80",
+    "total_places": 2,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "pinjore",
+      "pinjore",
+      "haryana_city_03"
+    ],
+    "hero_image_url": "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=800&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "morni",
+    "name": "Morni",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "coordinates": {
+      "lat": 30.6977,
+      "lng": 77.0862
+    },
+    "tagline": "Experience Morni, Haryana",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Morni.",
+    "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "total_places": 2,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "morni",
+      "morni",
+      "haryana_city_04"
+    ],
+    "hero_image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "rakhigarhi",
+    "name": "Rakhigarhi",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "coordinates": {
+      "lat": 29.2884,
+      "lng": 76.1147
+    },
+    "tagline": "Experience Rakhigarhi, Haryana",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Rakhigarhi.",
+    "image_url": "https://images.unsplash.com/photo-1599839575945-a9e5af0c3fa5?w=800&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "rakhigarhi",
+      "rakhigarhi",
+      "haryana_city_06"
+    ],
+    "hero_image_url": "https://images.unsplash.com/photo-1599839575945-a9e5af0c3fa5?w=800&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "agroha",
+    "name": "Agroha",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "coordinates": {
+      "lat": 29.3308,
+      "lng": 75.6179
+    },
+    "tagline": "Experience Agroha, Haryana",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Agroha.",
+    "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "agroha",
+      "agroha",
+      "haryana_city_08"
+    ],
+    "hero_image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "narnaul",
+    "name": "Narnaul",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "coordinates": {
+      "lat": 28.0601,
+      "lng": 76.0306
+    },
+    "tagline": "Experience Narnaul, Haryana",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Narnaul.",
+    "image_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&auto=format&fit=crop&q=80",
+    "total_places": 2,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "narnaul",
+      "narnaul",
+      "haryana_city_09"
+    ],
+    "hero_image_url": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "ballabhgarh",
+    "name": "Ballabhgarh",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "coordinates": {
+      "lat": 28.3396,
+      "lng": 77.3243
+    },
+    "tagline": "Experience Ballabhgarh, Haryana",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Ballabhgarh.",
+    "image_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "ballabhgarh",
+      "ballabhgarh",
+      "haryana_city_10"
+    ],
+    "hero_image_url": "https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "sohna",
+    "name": "Sohna",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "coordinates": {
+      "lat": 28.3039,
+      "lng": 77.0906
+    },
+    "tagline": "Experience Sohna, Haryana",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Sohna.",
+    "image_url": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "sohna",
+      "sohna",
+      "haryana_city_12"
+    ],
+    "hero_image_url": "https://images.unsplash.com/photo-1501785888041-af3ef285b470?w=800&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "panchkula",
+    "name": "Panchkula",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "coordinates": {
+      "lat": 30.7297,
+      "lng": 76.8488
+    },
+    "tagline": "Experience Panchkula, Haryana",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Panchkula.",
+    "image_url": "https://images.unsplash.com/photo-1561361066-608b49e0c184?w=800&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "panchkula",
+      "panchkula",
+      "haryana_city_13"
+    ],
+    "hero_image_url": "https://images.unsplash.com/photo-1561361066-608b49e0c184?w=800&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "rohtak",
+    "name": "Rohtak",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "coordinates": {
+      "lat": 28.8791,
+      "lng": 76.6269
+    },
+    "tagline": "Experience Rohtak, Haryana",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Rohtak.",
+    "image_url": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "rohtak",
+      "rohtak",
+      "haryana_city_14"
+    ],
+    "hero_image_url": "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "karnal",
+    "name": "Karnal",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "coordinates": {
+      "lat": 29.7289,
+      "lng": 76.9744
+    },
+    "tagline": "Experience Karnal, Haryana",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Karnal.",
+    "image_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&auto=format&fit=crop&q=80",
+    "total_places": 2,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "karnal",
+      "karnal",
+      "haryana_city_16"
+    ],
+    "hero_image_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "jhajjar",
+    "name": "Jhajjar",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "coordinates": {
+      "lat": 28.5369,
+      "lng": 76.5414
+    },
+    "tagline": "Experience Jhajjar, Haryana",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Jhajjar.",
+    "image_url": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=800&auto=format&fit=crop&q=80",
+    "total_places": 2,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "jhajjar",
+      "jhajjar",
+      "haryana_city_17"
+    ],
+    "hero_image_url": "https://images.unsplash.com/photo-1473448912268-2022ce9509d8?w=800&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "chhachhrauli",
+    "name": "Chhachhrauli",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "coordinates": {
+      "lat": 30.2522,
+      "lng": 77.3719
+    },
+    "tagline": "Experience Chhachhrauli, Haryana",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Chhachhrauli.",
+    "image_url": "https://images.unsplash.com/photo-1599839575945-a9e5af0c3fa5?w=800&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "chhachhrauli",
+      "chhachhrauli",
+      "haryana_city_18"
+    ],
+    "hero_image_url": "https://images.unsplash.com/photo-1599839575945-a9e5af0c3fa5?w=800&auto=format&fit=crop&q=80"
+  },
+  {
+    "id": "kaithal",
+    "name": "Kaithal",
+    "state": "Haryana",
+    "state_id": "haryana",
+    "coordinates": {
+      "lat": 30.0139,
+      "lng": 76.4853
+    },
+    "tagline": "Experience Kaithal, Haryana",
+    "description": "Explore the vibrant tourist attractions, historic landmarks and heritage sites of Kaithal.",
+    "image_url": "https://images.unsplash.com/photo-1511497584788-87676104235f?w=800&auto=format&fit=crop&q=80",
+    "total_places": 1,
+    "tier": "Tier 2",
+    "connectivity": {
+      "airport": true,
+      "railway": true,
+      "highway": true
+    },
+    "aliases": [
+      "kaithal",
+      "kaithal",
+      "haryana_city_19"
+    ],
+    "hero_image_url": "https://images.unsplash.com/photo-1511497584788-87676104235f?w=800&auto=format&fit=crop&q=80"
   }
 ]

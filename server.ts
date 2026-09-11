@@ -321,6 +321,26 @@ const CITY_ALIASES: Record<string, string[]> = {
   sitanadi: ['sitanadi', 'dhamtari', 'dhamtari district'],
   mainpat: ['mainpat', 'surguja', 'surguja district'],
   jashpur: ['jashpur', 'jashpur district'],
+  // Haryana
+  sultanpur: ['sultanpur', 'sultanpur national park'],
+  kalesar: ['kalesar', 'kalesar national park'],
+  pinjore: ['pinjore', 'pinjore gardens'],
+  morni: ['morni', 'morni hills'],
+  kurukshetra: ['kurukshetra', 'thanesar'],
+  rakhigarhi: ['rakhigarhi'],
+  hisar: ['hisar', 'hissar'],
+  agroha: ['agroha', 'agroha dham'],
+  narnaul: ['narnaul'],
+  ballabhgarh: ['ballabhgarh', 'ballabgarh'],
+  faridabad: ['faridabad'],
+  sohna: ['sohna'],
+  panchkula: ['panchkula'],
+  rohtak: ['rohtak'],
+  panipat: ['panipat'],
+  karnal: ['karnal'],
+  jhajjar: ['jhajjar'],
+  chhachhrauli: ['chhachhrauli'],
+  kaithal: ['kaithal'],
 };
 
 const CANONICAL_CITY_NAMES: Record<string, string> = {
@@ -457,6 +477,26 @@ const CANONICAL_CITY_NAMES: Record<string, string> = {
   sitanadi: 'Sitanadi',
   mainpat: 'Mainpat',
   jashpur: 'Jashpur',
+  // Haryana
+  sultanpur: 'Sultanpur',
+  kalesar: 'Kalesar',
+  pinjore: 'Pinjore',
+  morni: 'Morni',
+  kurukshetra: 'Kurukshetra',
+  rakhigarhi: 'Rakhigarhi',
+  hisar: 'Hisar',
+  agroha: 'Agroha',
+  narnaul: 'Narnaul',
+  ballabhgarh: 'Ballabhgarh',
+  faridabad: 'Faridabad',
+  sohna: 'Sohna',
+  panchkula: 'Panchkula',
+  rohtak: 'Rohtak',
+  panipat: 'Panipat',
+  karnal: 'Karnal',
+  jhajjar: 'Jhajjar',
+  chhachhrauli: 'Chhachhrauli',
+  kaithal: 'Kaithal',
 };
 
 function getCanonicalCityId(cityNameOrId: string): string {
@@ -595,6 +635,7 @@ function loadData() {
     loadPlacesFile(path.join(dataDir, 'uttar-pradesh', 'places.json'));
     loadPlacesFile(path.join(dataDir, 'karnataka', 'places.json'));
     loadPlacesFile(path.join(dataDir, 'chhattisgarh', 'places.json'));
+    loadPlacesFile(path.join(dataDir, 'haryana', 'places.json'));
 
     // Load Heritage 42+ structured experiences
     const heritagePath = path.join(dataDir, 'heritage', 'monuments.json');
