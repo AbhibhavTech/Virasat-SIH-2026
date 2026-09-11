@@ -6918,8 +6918,8 @@ export const INDIA_TOURISM_DATABASE: IndiaHierarchyDatabase = {
       "capital": "Chandigarh",
       "region": "Northern India",
       "hero_image_url": "https://images.unsplash.com/photo-1596701062351-8c2c14d1fdd1?w=1200&auto=format&fit=crop&q=80",
-      "total_cities": 6,
-      "total_attractions": 7,
+      "total_cities": 21,
+      "total_attractions": 30,
       "heritage_overview": "Vedic heartland of the epic Mahabharata, ancient Harappan archaeological mounds at Rakhigarhi, and Pinjore Mughal gardens.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Haryana.",
