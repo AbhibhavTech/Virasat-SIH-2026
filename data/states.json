@@ -482,11 +482,11 @@
     "capital": "Mumbai",
     "region": "Western India",
     "official_tourism_url": "https://unsplash.com/photos/gateway-of-india-mumbai-X_4r9m2Z1q8",
-    "description": "Gateway to India with 5 UNESCO World Heritage sites: Ajanta, Ellora, Elephanta Caves, Chhatrapati Shivaji Maharaj Terminus, and Victorian Ensembles.",
+    "description": "Gateway to Western India with iconic forts, Jyotirlinga shrines, UNESCO heritage cave complexes, and biodiversity plateaus.",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80",
-    "total_cities": 11,
-    "total_attractions": 34
+    "total_cities": 43,
+    "total_attractions": 51
   },
   {
     "id": "andhra-pradesh",

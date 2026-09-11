@@ -341,7 +341,7 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
             const stateId = (rp.state_id || rp.state || reg).toLowerCase().replace(/[^a-z0-9]+/g, '-');
             const cityId = (rp.city_id || rp.city || reg).toLowerCase().replace(/[^a-z0-9]+/g, '-');
             const normalizedName = rp.name.trim().toLowerCase();
-            const isProtectedRegional = rp.id.startsWith('telangana_') || rp.id.startsWith('nagaland_') || rp.id.startsWith('meghalaya_') || rp.id.startsWith('manipur_') || rp.id.startsWith('mizoram_') || rp.id.startsWith('bihar_') || rp.id.startsWith('uttar_pradesh_') || rp.id.startsWith('karnataka_') || rp.id.startsWith('chhattisgarh_') || rp.id.startsWith('haryana_');
+            const isProtectedRegional = rp.id.startsWith('telangana_') || rp.id.startsWith('nagaland_') || rp.id.startsWith('meghalaya_') || rp.id.startsWith('manipur_') || rp.id.startsWith('mizoram_') || rp.id.startsWith('bihar_') || rp.id.startsWith('uttar_pradesh_') || rp.id.startsWith('karnataka_') || rp.id.startsWith('chhattisgarh_') || rp.id.startsWith('haryana_') || rp.id.startsWith('MH') || rp.id.startsWith('maharashtra_');
             const existing = places[rp.id] || (!isProtectedRegional && Object.values(places).find(p => p.city_id === cityId && p.name.trim().toLowerCase() === normalizedName));
             if (existing) {
               if (rp.assigned_city) existing.assigned_city = rp.assigned_city;

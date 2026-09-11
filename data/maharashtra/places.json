@@ -1,347 +1,3624 @@
 [
   {
-    "id": "ajanta-caves",
+    "id": "MH001",
+    "original_id": "MH001",
     "name": "Ajanta Caves",
+    "tourist_place": "Ajanta Caves",
+    "assigned_city": "Ajanta",
+    "city": "Ajanta",
+    "city_id": "MH-ajanta",
     "state": "Maharashtra",
-    "city": "Aurangabad",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Chhatrapati Sambhajinagar",
     "category": "heritage",
-    "summary": "Rock-cut Buddhist cave monuments featuring world-famous ancient fresco paintings and sculptures.",
-    "description": "Dating from the 2nd century BCE to about 480 CE, the 30 rock-cut caves present masterpieces of Buddhist religious art.",
+    "categories": [
+      "heritage",
+      "tourism"
+    ],
+    "topic": "Heritage",
+    "subtopic": "UNESCO World Heritage Site",
+    "summary": "Ajanta Caves is a premier heritage destination located in Ajanta, Chhatrapati Sambhajinagar, Maharashtra.",
+    "short_description": "Ajanta Caves is a premier heritage destination located in Ajanta, Chhatrapati Sambhajinagar, Maharashtra.",
+    "detailed_description": "Ajanta Caves is a popular tourist destination in Maharashtra, known for its heritage appeal.",
+    "description": "Ajanta Caves is a popular tourist destination in Maharashtra, known for its heritage appeal.",
+    "history": "UNESCO World Heritage Site",
+    "heritage_status": "UNESCO World Heritage Site",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Ajanta Caves, Maharashtra, India",
     "coordinates": {
       "lat": 20.5519,
       "lng": 75.7033
     },
+    "lat": 20.5519,
+    "lng": 75.7033,
+    "latitude": 20.5519,
+    "longitude": 75.7033,
+    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
     "rating": 4.8,
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?auto=format&fit=crop&w=1200&q=80",
-    "best_time_to_visit": "November to March",
-    "visiting_hours": "09:00 AM - 05:00 PM (Closed Mondays)",
-    "entry_fee": {
-      "domestic": 40,
-      "international": 600,
-      "currency": "INR"
-    },
-    "tags": ["unesco", "buddhist", "caves", "fresco", "ancient"]
+    "tags": [
+      "heritage",
+      "Maharashtra",
+      "India",
+      "Ajanta"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
   },
   {
-    "id": "ellora-caves",
-    "name": "Ellora Caves & Kailasa Temple",
+    "id": "MH002",
+    "original_id": "MH002",
+    "name": "Ellora Caves",
+    "tourist_place": "Ellora Caves",
+    "assigned_city": "Verul (Ellora)",
+    "city": "Verul (Ellora)",
+    "city_id": "MH-verul-ellora",
     "state": "Maharashtra",
-    "city": "Aurangabad",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Chhatrapati Sambhajinagar",
     "category": "heritage",
-    "summary": "Colossal multi-religious rock-hewn monolithic temple complex, featuring the famous Cave 16 Kailasa temple.",
-    "description": "Carved out of the Charanandri hills between the 6th and 10th century CE, featuring Hindu, Buddhist, and Jain sanctuaries.",
+    "categories": [
+      "heritage",
+      "tourism"
+    ],
+    "topic": "Heritage",
+    "subtopic": "UNESCO World Heritage Site",
+    "summary": "Ellora Caves is a premier heritage destination located in Verul (Ellora), Chhatrapati Sambhajinagar, Maharashtra.",
+    "short_description": "Ellora Caves is a premier heritage destination located in Verul (Ellora), Chhatrapati Sambhajinagar, Maharashtra.",
+    "detailed_description": "Ellora Caves is a popular tourist destination in Maharashtra, known for its heritage appeal.",
+    "description": "Ellora Caves is a popular tourist destination in Maharashtra, known for its heritage appeal.",
+    "history": "UNESCO World Heritage Site",
+    "heritage_status": "UNESCO World Heritage Site",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Ellora Caves, Maharashtra, India",
     "coordinates": {
       "lat": 20.0268,
       "lng": 75.1792
     },
-    "rating": 4.9,
-    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1200&q=80",
-    "best_time_to_visit": "October to March",
-    "visiting_hours": "06:00 AM - 06:00 PM (Closed Tuesdays)",
-    "entry_fee": {
-      "domestic": 40,
-      "international": 600,
-      "currency": "INR"
-    },
-    "tags": ["unesco", "monolith", "kailasa", "rashtrakuta", "temple"]
-  },
-  {
-    "id": "gateway-of-india",
-    "name": "Gateway of India",
-    "state": "Maharashtra",
-    "city": "Mumbai",
-    "category": "heritage",
-    "summary": "Iconic arch-monument overlooking the Arabian Sea, built in Indo-Saracenic style.",
-    "description": "Erected to commemorate the landing of King George V and Queen Mary in 1911, completed in 1924.",
-    "coordinates": {
-      "lat": 18.9220,
-      "lng": 72.8347
-    },
-    "rating": 4.7,
-    "thumbnail_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?auto=format&fit=crop&w=1200&q=80",
-    "best_time_to_visit": "October to March",
-    "visiting_hours": "Open 24 hours",
-    "entry_fee": {
-      "domestic": 0,
-      "international": 0,
-      "currency": "INR"
-    },
-    "tags": ["landmark", "indo-saracenic", "mumbai-harbour"]
-  },
-  {
-    "id": "lonavala-tigers-point",
-    "name": "Tiger's Point (Tiger's Leap)",
-    "state": "Maharashtra",
-    "city": "Lonavala",
-    "category": "nature",
-    "summary": "Dramatic 650-meter cliff-top viewpoint resembling a leaping tiger into the valley, famous for echo point and rolling Sahyadri clouds.",
-    "description": "Perched high above the valley in Kurvande near Lonavala, Tiger's Leap offers stunning sheer drop views of the Western Ghats, waterfalls, and mist-covered mountain valleys.",
-    "coordinates": {
-      "lat": 18.7180,
-      "lng": 73.3768
-    },
+    "lat": 20.0268,
+    "lng": 75.1792,
+    "latitude": 20.0268,
+    "longitude": 75.1792,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
     "rating": 4.8,
-    "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
-    "best_time_to_visit": "June to February (Monsoon peak)",
-    "visiting_hours": "06:00 AM - 06:30 PM",
-    "entry_fee": {
-      "domestic": 0,
-      "international": 0,
-      "currency": "INR"
-    },
-    "tags": ["lonavala", "khandala", "viewpoint", "sahyadri", "nature", "tourist_places", "famous", "sunset"]
+    "tags": [
+      "heritage",
+      "Maharashtra",
+      "India",
+      "Verul (Ellora)"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
   },
   {
-    "id": "lonavala-bhushi-dam",
-    "name": "Bhushi Dam & Cascades",
+    "id": "MH003",
+    "original_id": "MH003",
+    "name": "Lonar Lake",
+    "tourist_place": "Lonar Lake",
+    "assigned_city": "Lonar",
+    "city": "Lonar",
+    "city_id": "MH-lonar",
     "state": "Maharashtra",
-    "city": "Lonavala",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Buldhana",
     "category": "nature",
-    "summary": "Historic 1860s masonry dam on the Indrayani River, world-famous for its stepped waterfalls and gushing monsoon cascades.",
-    "description": "Constructed in the late 1860s for the Great Indian Peninsula Railway to supply water to steam locomotives, Bhushi Dam is Lonavala's most beloved monsoon tourist hotspot.",
-    "coordinates": {
-      "lat": 18.7302,
-      "lng": 73.4079
-    },
-    "rating": 4.6,
-    "thumbnail_url": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&q=80",
-    "best_time_to_visit": "July to October (Monsoon Season)",
-    "visiting_hours": "09:00 AM - 05:00 PM",
-    "entry_fee": {
-      "domestic": 0,
-      "international": 0,
-      "currency": "INR"
-    },
-    "tags": ["lonavala", "dam", "waterfall", "monsoon", "tourist_places", "nature", "famous"]
-  },
-  {
-    "id": "lonavala-karla-caves",
-    "name": "Karla Caves (Grand Chaitya Hall)",
-    "state": "Maharashtra",
-    "city": "Lonavala",
-    "category": "heritage",
-    "summary": "Ancient 2nd-century BCE rock-cut Buddhist shrine with India's largest Chaitya hall, original 2,200-year-old teak wood ribs and lion pillars.",
-    "description": "An archaeological marvel carved into the rocky hill at Karli, Karla Caves house the largest early Buddhist rock-cut prayer hall in India with 37 majestic octagonal pillars and the sacred Ekvira Temple.",
-    "coordinates": {
-      "lat": 18.7824,
-      "lng": 73.4706
-    },
-    "rating": 4.9,
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?auto=format&fit=crop&w=1200&q=80",
+    "categories": [
+      "nature",
+      "tourism"
+    ],
+    "topic": "Nature",
+    "subtopic": "National Geo-Heritage Monument",
+    "summary": "Lonar Lake is a premier nature destination located in Lonar, Buldhana, Maharashtra.",
+    "short_description": "Lonar Lake is a premier nature destination located in Lonar, Buldhana, Maharashtra.",
+    "detailed_description": "Lonar Lake is a popular tourist destination in Maharashtra, known for its nature appeal.",
+    "description": "Lonar Lake is a popular tourist destination in Maharashtra, known for its nature appeal.",
+    "history": "National Geo-Heritage Monument",
+    "heritage_status": "National Geo-Heritage Monument",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
     "best_time_to_visit": "October to March",
-    "visiting_hours": "09:00 AM - 06:00 PM",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
     "entry_fee": {
-      "domestic": 25,
-      "international": 300,
-      "currency": "INR"
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
     },
-    "tags": ["lonavala", "karla", "buddhist", "caves", "heritage", "monument", "asi", "ancient", "famous"]
-  },
-  {
-    "id": "lonavala-bhaja-caves",
-    "name": "Bhaja Caves & Waterfall",
-    "state": "Maharashtra",
-    "city": "Lonavala",
-    "category": "heritage",
-    "summary": "Group of 22 rock-cut Buddhist caves from 2nd century BCE featuring wooden architecture carvings, a dancing woman relief, and 14 stupas.",
-    "description": "Perched 400 feet above the village of Bhaja near Lonavala, this monastic complex features extraordinary Buddhist reliefs, ancient Hinayana stupas, and a seasonal monsoon waterfall cascade.",
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Lonar Lake, Maharashtra, India",
     "coordinates": {
-      "lat": 18.7708,
-      "lng": 73.4819
+      "lat": 19.9756,
+      "lng": 76.5064
     },
-    "rating": 4.7,
-    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1200&q=80",
-    "best_time_to_visit": "July to March",
-    "visiting_hours": "09:00 AM - 05:30 PM",
-    "entry_fee": {
-      "domestic": 25,
-      "international": 300,
-      "currency": "INR"
-    },
-    "tags": ["lonavala", "bhaja", "caves", "heritage", "monument", "buddhist", "ancient", "famous"]
-  },
-  {
-    "id": "lonavala-lohagad-fort",
-    "name": "Lohagad Fort (The Iron Fortress)",
-    "state": "Maharashtra",
-    "city": "Lonavala",
-    "category": "heritage",
-    "summary": "Historic Maratha hilltop fortress at 1,033m elevation, fortified by Chhatrapati Shivaji Maharaj, featuring the famous Vinchukata spur.",
-    "description": "Lohagad (Iron Fort) divides the Indrayani and Pavana basins. It has four formidable gates—Ganesh Darwaja, Narayan Darwaja, Hanuman Darwaja, and Maha Darwaja—and the iconic 1,500m scorpion-tail fortified ridge.",
-    "coordinates": {
-      "lat": 18.6997,
-      "lng": 73.4770
-    },
+    "lat": 19.9756,
+    "lng": 76.5064,
+    "latitude": 19.9756,
+    "longitude": 76.5064,
+    "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
     "rating": 4.8,
-    "thumbnail_url": "https://images.unsplash.com/photo-1609137144813-7d9921338f24?auto=format&fit=crop&w=1200&q=80",
-    "best_time_to_visit": "July to February",
-    "visiting_hours": "06:00 AM - 06:00 PM",
-    "entry_fee": {
-      "domestic": 0,
-      "international": 0,
-      "currency": "INR"
-    },
-    "tags": ["lonavala", "lohagad", "fort", "heritage", "shivaji-maharaj", "maratha", "monument", "famous"]
+    "tags": [
+      "nature",
+      "Maharashtra",
+      "India",
+      "Lonar"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
   },
   {
-    "id": "khandala-rajmachi-fort",
-    "name": "Rajmachi Fort & Sahyadri Plateau",
+    "id": "MH004",
+    "original_id": "MH004",
+    "name": "Raigad Fort",
+    "tourist_place": "Raigad Fort",
+    "assigned_city": "Mahad",
+    "city": "Mahad",
+    "city_id": "MH-mahad",
     "state": "Maharashtra",
-    "city": "Khandala",
-    "category": "heritage",
-    "summary": "Historic twin forts (Shrivardhan and Manaranjan) guarding the ancient Borghat pass, famous for lush trekking, views, and fireflies.",
-    "description": "Standing strategically in the rugged Sahyadri mountains between Khandala and Karjat, Rajmachi Fort comprises two citadel fortresses offering breathtaking vistas of the Ulhas river valley and Duke's Nose.",
-    "coordinates": {
-      "lat": 18.8278,
-      "lng": 73.3986
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Raigad",
+    "category": "fort",
+    "categories": [
+      "fort",
+      "tourism"
+    ],
+    "topic": "Fort",
+    "subtopic": "Capital of Maratha Empire / ASI Monument",
+    "summary": "Raigad Fort is a premier fort destination located in Mahad, Raigad, Maharashtra.",
+    "short_description": "Raigad Fort is a premier fort destination located in Mahad, Raigad, Maharashtra.",
+    "detailed_description": "Raigad Fort is a popular tourist destination in Maharashtra, known for its fort appeal.",
+    "description": "Raigad Fort is a popular tourist destination in Maharashtra, known for its fort appeal.",
+    "history": "Capital of Maratha Empire / ASI Monument",
+    "heritage_status": "Capital of Maratha Empire / ASI Monument",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
     },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Raigad Fort, Maharashtra, India",
+    "coordinates": {
+      "lat": 18.2356,
+      "lng": 73.4411
+    },
+    "lat": 18.2356,
+    "lng": 73.4411,
+    "latitude": 18.2356,
+    "longitude": 73.4411,
+    "thumbnail_url": "https://images.unsplash.com/photo-1578922746465-3a80a228f223?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1578922746465-3a80a228f223?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
     "rating": 4.8,
-    "thumbnail_url": "https://images.unsplash.com/photo-1571401835393-8c5f35328320?auto=format&fit=crop&w=1200&q=80",
-    "best_time_to_visit": "June to February",
-    "visiting_hours": "Open 24 hours (Daylight recommended for trekking)",
-    "entry_fee": {
-      "domestic": 0,
-      "international": 0,
-      "currency": "INR"
-    },
-    "tags": ["khandala", "lonavala", "rajmachi", "fort", "trekking", "heritage", "famous"]
+    "tags": [
+      "fort",
+      "Maharashtra",
+      "India",
+      "Mahad"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
   },
   {
-    "id": "khandala-dukes-nose",
-    "name": "Duke's Nose (Nagphani Peak)",
+    "id": "MH005",
+    "original_id": "MH005",
+    "name": "Pratapgad Fort",
+    "tourist_place": "Pratapgad Fort",
+    "assigned_city": "Pratapgad",
+    "city": "Pratapgad",
+    "city_id": "MH-pratapgad",
     "state": "Maharashtra",
-    "city": "Khandala",
-    "category": "nature",
-    "summary": "Dramatic cliff peak shaped like a cobra's hood offering thrilling rock climbing, rappelling, and 360-degree Sahyadri valley views.",
-    "description": "Also known as Nagphani due to its resemblance to a cobra's raised hood, the peak was nicknamed Duke's Nose by British surveyors. It is renowned for its sheer vertical drop and sweeping views of the Khandala ghats.",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Satara",
+    "category": "fort",
+    "categories": [
+      "fort",
+      "tourism"
+    ],
+    "topic": "Fort",
+    "subtopic": "Historic Hill Fort of Shivaji Maharaj",
+    "summary": "Pratapgad Fort is a premier fort destination located in Pratapgad, Satara, Maharashtra.",
+    "short_description": "Pratapgad Fort is a premier fort destination located in Pratapgad, Satara, Maharashtra.",
+    "detailed_description": "Pratapgad Fort is a popular tourist destination in Maharashtra, known for its fort appeal.",
+    "description": "Pratapgad Fort is a popular tourist destination in Maharashtra, known for its fort appeal.",
+    "history": "Historic Hill Fort of Shivaji Maharaj",
+    "heritage_status": "Historic Hill Fort of Shivaji Maharaj",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Pratapgad Fort, Maharashtra, India",
     "coordinates": {
-      "lat": 18.7460,
-      "lng": 73.3855
+      "lat": 17.9317,
+      "lng": 73.5794
     },
-    "rating": 4.7,
-    "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?auto=format&fit=crop&w=1200&q=80",
-    "best_time_to_visit": "October to May (Adventures) / July-Sept (Scenery)",
-    "visiting_hours": "07:00 AM - 06:00 PM",
-    "entry_fee": {
-      "domestic": 0,
-      "international": 0,
-      "currency": "INR"
-    },
-    "tags": ["khandala", "cliff", "trekking", "viewpoint", "nature", "famous", "adventure"]
+    "lat": 17.9317,
+    "lng": 73.5794,
+    "latitude": 17.9317,
+    "longitude": 73.5794,
+    "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "fort",
+      "Maharashtra",
+      "India",
+      "Pratapgad"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
   },
   {
-    "id": "khandala-sunset-point",
-    "name": "Khandala Sunset Point (Amrutanjan Ghat)",
+    "id": "MH006",
+    "original_id": "MH006",
+    "name": "Sinhagad Fort",
+    "tourist_place": "Sinhagad Fort",
+    "assigned_city": "Pune",
+    "city": "Pune",
+    "city_id": "MH-pune",
     "state": "Maharashtra",
-    "city": "Khandala",
-    "category": "nature",
-    "summary": "Celebrated scenic vantage point over the deep Bhor Ghat valley and Duke's Nose, famous for spectacular sunsets and cloud phenomena.",
-    "description": "Located near the historic Amrutanjan Bridge on the old Mumbai-Pune highway, this iconic viewpoint provides expansive vistas of lush valleys, train tunnels cutting through mountains, and golden sunsets.",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Pune",
+    "category": "fort",
+    "categories": [
+      "fort",
+      "tourism"
+    ],
+    "topic": "Fort",
+    "subtopic": "Historic Maratha Fortress",
+    "summary": "Sinhagad Fort is a premier fort destination located in Pune, Pune, Maharashtra.",
+    "short_description": "Sinhagad Fort is a premier fort destination located in Pune, Pune, Maharashtra.",
+    "detailed_description": "Sinhagad Fort is a popular tourist destination in Maharashtra, known for its fort appeal.",
+    "description": "Sinhagad Fort is a popular tourist destination in Maharashtra, known for its fort appeal.",
+    "history": "Historic Maratha Fortress",
+    "heritage_status": "Historic Maratha Fortress",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Sinhagad Fort, Maharashtra, India",
     "coordinates": {
-      "lat": 18.7523,
-      "lng": 73.3732
+      "lat": 18.3663,
+      "lng": 73.7558
     },
-    "rating": 4.6,
-    "thumbnail_url": "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=1200&q=80",
-    "best_time_to_visit": "Round the year (Evenings)",
-    "visiting_hours": "06:00 AM - 07:00 PM",
-    "entry_fee": {
-      "domestic": 0,
-      "international": 0,
-      "currency": "INR"
-    },
-    "tags": ["khandala", "sunset", "viewpoint", "scenic", "tourist_places", "famous"]
+    "lat": 18.3663,
+    "lng": 73.7558,
+    "latitude": 18.3663,
+    "longitude": 73.7558,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "fort",
+      "Maharashtra",
+      "India",
+      "Pune"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
   },
   {
-    "id": "khandala-kune-waterfalls",
-    "name": "Kune Waterfalls (Three-Tier Cascade)",
+    "id": "MH007",
+    "original_id": "MH007",
+    "name": "Shaniwar Wada",
+    "tourist_place": "Shaniwar Wada",
+    "assigned_city": "Pune",
+    "city": "Pune",
+    "city_id": "MH-pune",
     "state": "Maharashtra",
-    "city": "Khandala",
-    "category": "nature",
-    "summary": "India's 14th highest waterfall dropping 200 meters in three majestic tiers amid dense Sahyadri greenery.",
-    "description": "Nestled in the lush greenery between Khandala and Lonavala, Kune Falls plunges 660 feet into a rocky basin against the backdrop of the Sahyadri mountains, creating an unforgettable monsoon spectacle.",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Pune",
+    "category": "heritage",
+    "categories": [
+      "heritage",
+      "tourism"
+    ],
+    "topic": "Heritage",
+    "subtopic": "Seat of Peshwa Rulers / ASI Monument",
+    "summary": "Shaniwar Wada is a premier heritage destination located in Pune, Pune, Maharashtra.",
+    "short_description": "Shaniwar Wada is a premier heritage destination located in Pune, Pune, Maharashtra.",
+    "detailed_description": "Shaniwar Wada is a popular tourist destination in Maharashtra, known for its heritage appeal.",
+    "description": "Shaniwar Wada is a popular tourist destination in Maharashtra, known for its heritage appeal.",
+    "history": "Seat of Peshwa Rulers / ASI Monument",
+    "heritage_status": "Seat of Peshwa Rulers / ASI Monument",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Shaniwar Wada, Maharashtra, India",
     "coordinates": {
-      "lat": 18.7583,
-      "lng": 73.3811
+      "lat": 18.5196,
+      "lng": 73.8553
     },
-    "rating": 4.7,
-    "thumbnail_url": "https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?auto=format&fit=crop&w=1200&q=80",
-    "best_time_to_visit": "July to October",
-    "visiting_hours": "06:00 AM - 06:00 PM",
-    "entry_fee": {
-      "domestic": 0,
-      "international": 0,
-      "currency": "INR"
-    },
-    "tags": ["khandala", "lonavala", "waterfall", "nature", "scenic", "famous", "tourist_places"]
+    "lat": 18.5196,
+    "lng": 73.8553,
+    "latitude": 18.5196,
+    "longitude": 73.8553,
+    "thumbnail_url": "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "heritage",
+      "Maharashtra",
+      "India",
+      "Pune"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
   },
   {
-    "id": "lonavala-lions-point",
-    "name": "Lion's Point Viewpoint",
+    "id": "MH008",
+    "original_id": "MH008",
+    "name": "Daulatabad Fort",
+    "tourist_place": "Daulatabad Fort",
+    "assigned_city": "Verul (Ellora)",
+    "city": "Verul (Ellora)",
+    "city_id": "MH-verul-ellora",
     "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Chhatrapati Sambhajinagar",
+    "category": "fort",
+    "categories": [
+      "fort",
+      "tourism"
+    ],
+    "topic": "Fort",
+    "subtopic": "Devagiri Medieval Citadel / ASI Monument",
+    "summary": "Daulatabad Fort is a premier fort destination located in Verul (Ellora), Chhatrapati Sambhajinagar, Maharashtra.",
+    "short_description": "Daulatabad Fort is a premier fort destination located in Verul (Ellora), Chhatrapati Sambhajinagar, Maharashtra.",
+    "detailed_description": "Daulatabad Fort is a popular tourist destination in Maharashtra, known for its fort appeal.",
+    "description": "Daulatabad Fort is a popular tourist destination in Maharashtra, known for its fort appeal.",
+    "history": "Devagiri Medieval Citadel / ASI Monument",
+    "heritage_status": "Devagiri Medieval Citadel / ASI Monument",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Daulatabad Fort, Maharashtra, India",
+    "coordinates": {
+      "lat": 19.9429,
+      "lng": 75.2133
+    },
+    "lat": 19.9429,
+    "lng": 75.2133,
+    "latitude": 19.9429,
+    "longitude": 75.2133,
+    "thumbnail_url": "https://images.unsplash.com/photo-1578922746465-3a80a228f223?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1578922746465-3a80a228f223?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "fort",
+      "Maharashtra",
+      "India",
+      "Verul (Ellora)"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH009",
+    "original_id": "MH009",
+    "name": "Panhala Fort",
+    "tourist_place": "Panhala Fort",
+    "assigned_city": "Panhala",
+    "city": "Panhala",
+    "city_id": "MH-panhala",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Kolhapur",
+    "category": "fort",
+    "categories": [
+      "fort",
+      "tourism"
+    ],
+    "topic": "Fort",
+    "subtopic": "Historic Hill Fort of Tarabai",
+    "summary": "Panhala Fort is a premier fort destination located in Panhala, Kolhapur, Maharashtra.",
+    "short_description": "Panhala Fort is a premier fort destination located in Panhala, Kolhapur, Maharashtra.",
+    "detailed_description": "Panhala Fort is a popular tourist destination in Maharashtra, known for its fort appeal.",
+    "description": "Panhala Fort is a popular tourist destination in Maharashtra, known for its fort appeal.",
+    "history": "Historic Hill Fort of Tarabai",
+    "heritage_status": "Historic Hill Fort of Tarabai",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Panhala Fort, Maharashtra, India",
+    "coordinates": {
+      "lat": 16.8117,
+      "lng": 74.1106
+    },
+    "lat": 16.8117,
+    "lng": 74.1106,
+    "latitude": 16.8117,
+    "longitude": 74.1106,
+    "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "fort",
+      "Maharashtra",
+      "India",
+      "Panhala"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH010",
+    "original_id": "MH010",
+    "name": "Sindhudurg Fort",
+    "tourist_place": "Sindhudurg Fort",
+    "assigned_city": "Malvan",
+    "city": "Malvan",
+    "city_id": "MH-malvan",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Sindhudurg",
+    "category": "fort",
+    "categories": [
+      "fort",
+      "tourism"
+    ],
+    "topic": "Fort",
+    "subtopic": "Sea Fort of Chhatrapati Shivaji / ASI Monument",
+    "summary": "Sindhudurg Fort is a premier fort destination located in Malvan, Sindhudurg, Maharashtra.",
+    "short_description": "Sindhudurg Fort is a premier fort destination located in Malvan, Sindhudurg, Maharashtra.",
+    "detailed_description": "Sindhudurg Fort is a popular tourist destination in Maharashtra, known for its fort appeal.",
+    "description": "Sindhudurg Fort is a popular tourist destination in Maharashtra, known for its fort appeal.",
+    "history": "Sea Fort of Chhatrapati Shivaji / ASI Monument",
+    "heritage_status": "Sea Fort of Chhatrapati Shivaji / ASI Monument",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Sindhudurg Fort, Maharashtra, India",
+    "coordinates": {
+      "lat": 16.0428,
+      "lng": 73.4619
+    },
+    "lat": 16.0428,
+    "lng": 73.4619,
+    "latitude": 16.0428,
+    "longitude": 73.4619,
+    "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "fort",
+      "Maharashtra",
+      "India",
+      "Malvan"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH011",
+    "original_id": "MH011",
+    "name": "Murud-Janjira Fort",
+    "tourist_place": "Murud-Janjira Fort",
+    "assigned_city": "Murud",
+    "city": "Murud",
+    "city_id": "MH-murud",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Raigad",
+    "category": "fort",
+    "categories": [
+      "fort",
+      "tourism"
+    ],
+    "topic": "Fort",
+    "subtopic": "Impregnable Marine Fortress of Siddis",
+    "summary": "Murud-Janjira Fort is a premier fort destination located in Murud, Raigad, Maharashtra.",
+    "short_description": "Murud-Janjira Fort is a premier fort destination located in Murud, Raigad, Maharashtra.",
+    "detailed_description": "Murud-Janjira Fort is a popular tourist destination in Maharashtra, known for its fort appeal.",
+    "description": "Murud-Janjira Fort is a popular tourist destination in Maharashtra, known for its fort appeal.",
+    "history": "Impregnable Marine Fortress of Siddis",
+    "heritage_status": "Impregnable Marine Fortress of Siddis",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Murud-Janjira Fort, Maharashtra, India",
+    "coordinates": {
+      "lat": 18.3006,
+      "lng": 72.9642
+    },
+    "lat": 18.3006,
+    "lng": 72.9642,
+    "latitude": 18.3006,
+    "longitude": 72.9642,
+    "thumbnail_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "fort",
+      "Maharashtra",
+      "India",
+      "Murud"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH012",
+    "original_id": "MH012",
+    "name": "Bibi Ka Maqbara",
+    "tourist_place": "Bibi Ka Maqbara",
+    "assigned_city": "Chhatrapati Sambhajinagar",
+    "city": "Chhatrapati Sambhajinagar",
+    "city_id": "MH-chhatrapati-sambhajinagar",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Chhatrapati Sambhajinagar",
+    "category": "heritage",
+    "categories": [
+      "heritage",
+      "tourism"
+    ],
+    "topic": "Heritage",
+    "subtopic": "Tomb of Rabia-ud-Daurani / Taj of the Deccan",
+    "summary": "Bibi Ka Maqbara is a premier heritage destination located in Chhatrapati Sambhajinagar, Chhatrapati Sambhajinagar, Maharashtra.",
+    "short_description": "Bibi Ka Maqbara is a premier heritage destination located in Chhatrapati Sambhajinagar, Chhatrapati Sambhajinagar, Maharashtra.",
+    "detailed_description": "Bibi Ka Maqbara is a popular tourist destination in Maharashtra, known for its heritage appeal.",
+    "description": "Bibi Ka Maqbara is a popular tourist destination in Maharashtra, known for its heritage appeal.",
+    "history": "Tomb of Rabia-ud-Daurani / Taj of the Deccan",
+    "heritage_status": "Tomb of Rabia-ud-Daurani / Taj of the Deccan",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Bibi Ka Maqbara, Maharashtra, India",
+    "coordinates": {
+      "lat": 19.9014,
+      "lng": 75.3203
+    },
+    "lat": 19.9014,
+    "lng": 75.3203,
+    "latitude": 19.9014,
+    "longitude": 75.3203,
+    "thumbnail_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "heritage",
+      "Maharashtra",
+      "India",
+      "Chhatrapati Sambhajinagar"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH013",
+    "original_id": "MH013",
+    "name": "Aga Khan Palace",
+    "tourist_place": "Aga Khan Palace",
+    "assigned_city": "Pune",
+    "city": "Pune",
+    "city_id": "MH-pune",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Pune",
+    "category": "heritage",
+    "categories": [
+      "heritage",
+      "tourism"
+    ],
+    "topic": "Heritage",
+    "subtopic": "National Monument of Indian Freedom Movement",
+    "summary": "Aga Khan Palace is a premier heritage destination located in Pune, Pune, Maharashtra.",
+    "short_description": "Aga Khan Palace is a premier heritage destination located in Pune, Pune, Maharashtra.",
+    "detailed_description": "Aga Khan Palace is a popular tourist destination in Maharashtra, known for its heritage appeal.",
+    "description": "Aga Khan Palace is a popular tourist destination in Maharashtra, known for its heritage appeal.",
+    "history": "National Monument of Indian Freedom Movement",
+    "heritage_status": "National Monument of Indian Freedom Movement",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Aga Khan Palace, Maharashtra, India",
+    "coordinates": {
+      "lat": 18.5524,
+      "lng": 73.9015
+    },
+    "lat": 18.5524,
+    "lng": 73.9015,
+    "latitude": 18.5524,
+    "longitude": 73.9015,
+    "thumbnail_url": "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "heritage",
+      "Maharashtra",
+      "India",
+      "Pune"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH014",
+    "original_id": "MH014",
+    "name": "Deekshabhoomi",
+    "tourist_place": "Deekshabhoomi",
+    "assigned_city": "Nagpur",
+    "city": "Nagpur",
+    "city_id": "MH-nagpur",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Nagpur",
+    "category": "heritage",
+    "categories": [
+      "heritage",
+      "tourism"
+    ],
+    "topic": "Heritage",
+    "subtopic": "Sacred Stupa of Dr. B.R. Ambedkar Conversion",
+    "summary": "Deekshabhoomi is a premier heritage destination located in Nagpur, Nagpur, Maharashtra.",
+    "short_description": "Deekshabhoomi is a premier heritage destination located in Nagpur, Nagpur, Maharashtra.",
+    "detailed_description": "Deekshabhoomi is a popular tourist destination in Maharashtra, known for its heritage appeal.",
+    "description": "Deekshabhoomi is a popular tourist destination in Maharashtra, known for its heritage appeal.",
+    "history": "Sacred Stupa of Dr. B.R. Ambedkar Conversion",
+    "heritage_status": "Sacred Stupa of Dr. B.R. Ambedkar Conversion",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Deekshabhoomi, Maharashtra, India",
+    "coordinates": {
+      "lat": 21.1278,
+      "lng": 79.0664
+    },
+    "lat": 21.1278,
+    "lng": 79.0664,
+    "latitude": 21.1278,
+    "longitude": 79.0664,
+    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "heritage",
+      "Maharashtra",
+      "India",
+      "Nagpur"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH015",
+    "original_id": "MH015",
+    "name": "Trimbakeshwar Temple",
+    "tourist_place": "Trimbakeshwar Temple",
+    "assigned_city": "Trimbakeshwar",
+    "city": "Trimbakeshwar",
+    "city_id": "MH-trimbakeshwar",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Nashik",
+    "category": "religious",
+    "categories": [
+      "religious",
+      "tourism"
+    ],
+    "topic": "Religious",
+    "subtopic": "One of the 12 Sacred Jyotirlingas",
+    "summary": "Trimbakeshwar Temple is a premier religious destination located in Trimbakeshwar, Nashik, Maharashtra.",
+    "short_description": "Trimbakeshwar Temple is a premier religious destination located in Trimbakeshwar, Nashik, Maharashtra.",
+    "detailed_description": "Trimbakeshwar Temple is a popular tourist destination in Maharashtra, known for its religious appeal.",
+    "description": "Trimbakeshwar Temple is a popular tourist destination in Maharashtra, known for its religious appeal.",
+    "history": "One of the 12 Sacred Jyotirlingas",
+    "heritage_status": "One of the 12 Sacred Jyotirlingas",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Trimbakeshwar Temple, Maharashtra, India",
+    "coordinates": {
+      "lat": 19.9322,
+      "lng": 73.5306
+    },
+    "lat": 19.9322,
+    "lng": 73.5306,
+    "latitude": 19.9322,
+    "longitude": 73.5306,
+    "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "religious",
+      "Maharashtra",
+      "India",
+      "Trimbakeshwar"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH016",
+    "original_id": "MH016",
+    "name": "Bhimashankar Temple",
+    "tourist_place": "Bhimashankar Temple",
+    "assigned_city": "Bhimashankar",
+    "city": "Bhimashankar",
+    "city_id": "MH-bhimashankar",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Pune",
+    "category": "religious",
+    "categories": [
+      "religious",
+      "tourism"
+    ],
+    "topic": "Religious",
+    "subtopic": "One of the 12 Sacred Jyotirlingas & Wildlife Reserve",
+    "summary": "Bhimashankar Temple is a premier religious destination located in Bhimashankar, Pune, Maharashtra.",
+    "short_description": "Bhimashankar Temple is a premier religious destination located in Bhimashankar, Pune, Maharashtra.",
+    "detailed_description": "Bhimashankar Temple is a popular tourist destination in Maharashtra, known for its religious appeal.",
+    "description": "Bhimashankar Temple is a popular tourist destination in Maharashtra, known for its religious appeal.",
+    "history": "One of the 12 Sacred Jyotirlingas & Wildlife Reserve",
+    "heritage_status": "One of the 12 Sacred Jyotirlingas & Wildlife Reserve",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Bhimashankar Temple, Maharashtra, India",
+    "coordinates": {
+      "lat": 19.0722,
+      "lng": 73.5358
+    },
+    "lat": 19.0722,
+    "lng": 73.5358,
+    "latitude": 19.0722,
+    "longitude": 73.5358,
+    "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "religious",
+      "Maharashtra",
+      "India",
+      "Bhimashankar"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH017",
+    "original_id": "MH017",
+    "name": "Grishneshwar Temple",
+    "tourist_place": "Grishneshwar Temple",
+    "assigned_city": "Verul (Ellora)",
+    "city": "Verul (Ellora)",
+    "city_id": "MH-verul-ellora",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Chhatrapati Sambhajinagar",
+    "category": "religious",
+    "categories": [
+      "religious",
+      "tourism"
+    ],
+    "topic": "Religious",
+    "subtopic": "12th and Last Sacred Jyotirlinga of Lord Shiva",
+    "summary": "Grishneshwar Temple is a premier religious destination located in Verul (Ellora), Chhatrapati Sambhajinagar, Maharashtra.",
+    "short_description": "Grishneshwar Temple is a premier religious destination located in Verul (Ellora), Chhatrapati Sambhajinagar, Maharashtra.",
+    "detailed_description": "Grishneshwar Temple is a popular tourist destination in Maharashtra, known for its religious appeal.",
+    "description": "Grishneshwar Temple is a popular tourist destination in Maharashtra, known for its religious appeal.",
+    "history": "12th and Last Sacred Jyotirlinga of Lord Shiva",
+    "heritage_status": "12th and Last Sacred Jyotirlinga of Lord Shiva",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Grishneshwar Temple, Maharashtra, India",
+    "coordinates": {
+      "lat": 20.0231,
+      "lng": 75.1719
+    },
+    "lat": 20.0231,
+    "lng": 75.1719,
+    "latitude": 20.0231,
+    "longitude": 75.1719,
+    "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "religious",
+      "Maharashtra",
+      "India",
+      "Verul (Ellora)"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH018",
+    "original_id": "MH018",
+    "name": "Tulja Bhavani Temple",
+    "tourist_place": "Tulja Bhavani Temple",
+    "assigned_city": "Tuljapur",
+    "city": "Tuljapur",
+    "city_id": "MH-tuljapur",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Dharashiv",
+    "category": "religious",
+    "categories": [
+      "religious",
+      "tourism"
+    ],
+    "topic": "Religious",
+    "subtopic": "One of 51 Shaktipeethas & Kuldaivat of Marathas",
+    "summary": "Tulja Bhavani Temple is a premier religious destination located in Tuljapur, Dharashiv, Maharashtra.",
+    "short_description": "Tulja Bhavani Temple is a premier religious destination located in Tuljapur, Dharashiv, Maharashtra.",
+    "detailed_description": "Tulja Bhavani Temple is a popular tourist destination in Maharashtra, known for its religious appeal.",
+    "description": "Tulja Bhavani Temple is a popular tourist destination in Maharashtra, known for its religious appeal.",
+    "history": "One of 51 Shaktipeethas & Kuldaivat of Marathas",
+    "heritage_status": "One of 51 Shaktipeethas & Kuldaivat of Marathas",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Tulja Bhavani Temple, Maharashtra, India",
+    "coordinates": {
+      "lat": 18.0069,
+      "lng": 76.0694
+    },
+    "lat": 18.0069,
+    "lng": 76.0694,
+    "latitude": 18.0069,
+    "longitude": 76.0694,
+    "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "religious",
+      "Maharashtra",
+      "India",
+      "Tuljapur"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH019",
+    "original_id": "MH019",
+    "name": "Khandoba Temple",
+    "tourist_place": "Khandoba Temple",
+    "assigned_city": "Jejuri",
+    "city": "Jejuri",
+    "city_id": "MH-jejuri",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Jejuri, Pune",
+    "category": "religious",
+    "categories": [
+      "religious",
+      "tourism"
+    ],
+    "topic": "Religious",
+    "subtopic": "Historic Turmeric-clad Temple of Lord Martanda",
+    "summary": "Khandoba Temple is a premier religious destination located in Jejuri, Jejuri, Pune, Maharashtra.",
+    "short_description": "Khandoba Temple is a premier religious destination located in Jejuri, Jejuri, Pune, Maharashtra.",
+    "detailed_description": "Khandoba Temple is a popular tourist destination in Maharashtra, known for its religious appeal.",
+    "description": "Khandoba Temple is a popular tourist destination in Maharashtra, known for its religious appeal.",
+    "history": "Historic Turmeric-clad Temple of Lord Martanda",
+    "heritage_status": "Historic Turmeric-clad Temple of Lord Martanda",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Khandoba Temple, Maharashtra, India",
+    "coordinates": {
+      "lat": 18.275,
+      "lng": 74.1611
+    },
+    "lat": 18.275,
+    "lng": 74.1611,
+    "latitude": 18.275,
+    "longitude": 74.1611,
+    "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "religious",
+      "Maharashtra",
+      "India",
+      "Jejuri"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH020",
+    "original_id": "MH020",
+    "name": "Shirdi Sai Baba Temple",
+    "tourist_place": "Shirdi Sai Baba Temple",
+    "assigned_city": "Shirdi",
+    "city": "Shirdi",
+    "city_id": "MH-shirdi",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Ahmednagar",
+    "category": "religious",
+    "categories": [
+      "religious",
+      "tourism"
+    ],
+    "topic": "Religious",
+    "subtopic": "World-Renowned Shrine of Saint Sai Baba",
+    "summary": "Shirdi Sai Baba Temple is a premier religious destination located in Shirdi, Ahmednagar, Maharashtra.",
+    "short_description": "Shirdi Sai Baba Temple is a premier religious destination located in Shirdi, Ahmednagar, Maharashtra.",
+    "detailed_description": "Shirdi Sai Baba Temple is a popular tourist destination in Maharashtra, known for its religious appeal.",
+    "description": "Shirdi Sai Baba Temple is a popular tourist destination in Maharashtra, known for its religious appeal.",
+    "history": "World-Renowned Shrine of Saint Sai Baba",
+    "heritage_status": "World-Renowned Shrine of Saint Sai Baba",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Shirdi Sai Baba Temple, Maharashtra, India",
+    "coordinates": {
+      "lat": 19.7667,
+      "lng": 74.4764
+    },
+    "lat": 19.7667,
+    "lng": 74.4764,
+    "latitude": 19.7667,
+    "longitude": 74.4764,
+    "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "religious",
+      "Maharashtra",
+      "India",
+      "Shirdi"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH021",
+    "original_id": "MH021",
+    "name": "Hazur Sahib Gurudwara",
+    "tourist_place": "Hazur Sahib Gurudwara",
+    "assigned_city": "Nanded",
+    "city": "Nanded",
+    "city_id": "MH-nanded",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Nanded",
+    "category": "religious",
+    "categories": [
+      "religious",
+      "tourism"
+    ],
+    "topic": "Religious",
+    "subtopic": "One of the Five Takhts of Sikhism (Sachkhand)",
+    "summary": "Hazur Sahib Gurudwara is a premier religious destination located in Nanded, Nanded, Maharashtra.",
+    "short_description": "Hazur Sahib Gurudwara is a premier religious destination located in Nanded, Nanded, Maharashtra.",
+    "detailed_description": "Hazur Sahib Gurudwara is a popular tourist destination in Maharashtra, known for its religious appeal.",
+    "description": "Hazur Sahib Gurudwara is a popular tourist destination in Maharashtra, known for its religious appeal.",
+    "history": "One of the Five Takhts of Sikhism (Sachkhand)",
+    "heritage_status": "One of the Five Takhts of Sikhism (Sachkhand)",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Hazur Sahib Gurudwara, Maharashtra, India",
+    "coordinates": {
+      "lat": 19.1517,
+      "lng": 77.3183
+    },
+    "lat": 19.1517,
+    "lng": 77.3183,
+    "latitude": 19.1517,
+    "longitude": 77.3183,
+    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "religious",
+      "Maharashtra",
+      "India",
+      "Nanded"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH022",
+    "original_id": "MH022",
+    "name": "Aundha Nagnath Temple",
+    "tourist_place": "Aundha Nagnath Temple",
+    "assigned_city": "Aundha Nagnath",
+    "city": "Aundha Nagnath",
+    "city_id": "MH-aundha-nagnath",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Hingoli",
+    "category": "religious",
+    "categories": [
+      "religious",
+      "tourism"
+    ],
+    "topic": "Religious",
+    "subtopic": "Eighth of the Twelve Sacred Jyotirlingas",
+    "summary": "Aundha Nagnath Temple is a premier religious destination located in Aundha Nagnath, Hingoli, Maharashtra.",
+    "short_description": "Aundha Nagnath Temple is a premier religious destination located in Aundha Nagnath, Hingoli, Maharashtra.",
+    "detailed_description": "Aundha Nagnath Temple is a popular tourist destination in Maharashtra, known for its religious appeal.",
+    "description": "Aundha Nagnath Temple is a popular tourist destination in Maharashtra, known for its religious appeal.",
+    "history": "Eighth of the Twelve Sacred Jyotirlingas",
+    "heritage_status": "Eighth of the Twelve Sacred Jyotirlingas",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Aundha Nagnath Temple, Maharashtra, India",
+    "coordinates": {
+      "lat": 19.5375,
+      "lng": 77.0422
+    },
+    "lat": 19.5375,
+    "lng": 77.0422,
+    "latitude": 19.5375,
+    "longitude": 77.0422,
+    "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "religious",
+      "Maharashtra",
+      "India",
+      "Aundha Nagnath"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH023",
+    "original_id": "MH023",
+    "name": "Parli Vaijnath Temple",
+    "tourist_place": "Parli Vaijnath Temple",
+    "assigned_city": "Parli",
+    "city": "Parli",
+    "city_id": "MH-parli",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Beed",
+    "category": "religious",
+    "categories": [
+      "religious",
+      "tourism"
+    ],
+    "topic": "Religious",
+    "subtopic": "Fifth of the Twelve Sacred Jyotirlingas",
+    "summary": "Parli Vaijnath Temple is a premier religious destination located in Parli, Beed, Maharashtra.",
+    "short_description": "Parli Vaijnath Temple is a premier religious destination located in Parli, Beed, Maharashtra.",
+    "detailed_description": "Parli Vaijnath Temple is a popular tourist destination in Maharashtra, known for its religious appeal.",
+    "description": "Parli Vaijnath Temple is a popular tourist destination in Maharashtra, known for its religious appeal.",
+    "history": "Fifth of the Twelve Sacred Jyotirlingas",
+    "heritage_status": "Fifth of the Twelve Sacred Jyotirlingas",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Parli Vaijnath Temple, Maharashtra, India",
+    "coordinates": {
+      "lat": 18.8492,
+      "lng": 76.5369
+    },
+    "lat": 18.8492,
+    "lng": 76.5369,
+    "latitude": 18.8492,
+    "longitude": 76.5369,
+    "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "religious",
+      "Maharashtra",
+      "India",
+      "Parli"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH024",
+    "original_id": "MH024",
+    "name": "Raja Dinkar Kelkar Museum",
+    "tourist_place": "Raja Dinkar Kelkar Museum",
+    "assigned_city": "Pune",
+    "city": "Pune",
+    "city_id": "MH-pune",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Pune",
+    "category": "museum",
+    "categories": [
+      "museum",
+      "tourism"
+    ],
+    "topic": "Museum",
+    "subtopic": "Unique 15,000-Artifact Traditional Arts Museum",
+    "summary": "Raja Dinkar Kelkar Museum is a premier museum destination located in Pune, Pune, Maharashtra.",
+    "short_description": "Raja Dinkar Kelkar Museum is a premier museum destination located in Pune, Pune, Maharashtra.",
+    "detailed_description": "Raja Dinkar Kelkar Museum is a popular tourist destination in Maharashtra, known for its museum appeal.",
+    "description": "Raja Dinkar Kelkar Museum is a popular tourist destination in Maharashtra, known for its museum appeal.",
+    "history": "Unique 15,000-Artifact Traditional Arts Museum",
+    "heritage_status": "Unique 15,000-Artifact Traditional Arts Museum",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Raja Dinkar Kelkar Museum, Maharashtra, India",
+    "coordinates": {
+      "lat": 18.5108,
+      "lng": 73.8542
+    },
+    "lat": 18.5108,
+    "lng": 73.8542,
+    "latitude": 18.5108,
+    "longitude": 73.8542,
+    "thumbnail_url": "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "museum",
+      "Maharashtra",
+      "India",
+      "Pune"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH025",
+    "original_id": "MH025",
+    "name": "Mahatma Phule Museum",
+    "tourist_place": "Mahatma Phule Museum",
+    "assigned_city": "Pune",
+    "city": "Pune",
+    "city_id": "MH-pune",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Pune",
+    "category": "museum",
+    "categories": [
+      "museum",
+      "tourism"
+    ],
+    "topic": "Museum",
+    "subtopic": "Pioneering Industrial and Natural History Museum",
+    "summary": "Mahatma Phule Museum is a premier museum destination located in Pune, Pune, Maharashtra.",
+    "short_description": "Mahatma Phule Museum is a premier museum destination located in Pune, Pune, Maharashtra.",
+    "detailed_description": "Mahatma Phule Museum is a popular tourist destination in Maharashtra, known for its museum appeal.",
+    "description": "Mahatma Phule Museum is a popular tourist destination in Maharashtra, known for its museum appeal.",
+    "history": "Pioneering Industrial and Natural History Museum",
+    "heritage_status": "Pioneering Industrial and Natural History Museum",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Mahatma Phule Museum, Maharashtra, India",
+    "coordinates": {
+      "lat": 18.5208,
+      "lng": 73.8447
+    },
+    "lat": 18.5208,
+    "lng": 73.8447,
+    "latitude": 18.5208,
+    "longitude": 73.8447,
+    "thumbnail_url": "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "museum",
+      "Maharashtra",
+      "India",
+      "Pune"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH026",
+    "original_id": "MH026",
+    "name": "Raman Science Centre",
+    "tourist_place": "Raman Science Centre",
+    "assigned_city": "Nagpur",
+    "city": "Nagpur",
+    "city_id": "MH-nagpur",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Nagpur",
+    "category": "museum",
+    "categories": [
+      "museum",
+      "tourism"
+    ],
+    "topic": "Museum",
+    "subtopic": "Interactive Science Center & Planetarium",
+    "summary": "Raman Science Centre is a premier museum destination located in Nagpur, Nagpur, Maharashtra.",
+    "short_description": "Raman Science Centre is a premier museum destination located in Nagpur, Nagpur, Maharashtra.",
+    "detailed_description": "Raman Science Centre is a popular tourist destination in Maharashtra, known for its museum appeal.",
+    "description": "Raman Science Centre is a popular tourist destination in Maharashtra, known for its museum appeal.",
+    "history": "Interactive Science Center & Planetarium",
+    "heritage_status": "Interactive Science Center & Planetarium",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Raman Science Centre, Maharashtra, India",
+    "coordinates": {
+      "lat": 21.1469,
+      "lng": 79.0911
+    },
+    "lat": 21.1469,
+    "lng": 79.0911,
+    "latitude": 21.1469,
+    "longitude": 79.0911,
+    "thumbnail_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "museum",
+      "Maharashtra",
+      "India",
+      "Nagpur"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH027",
+    "original_id": "MH027",
+    "name": "Central Museum",
+    "tourist_place": "Central Museum",
+    "assigned_city": "Nagpur",
+    "city": "Nagpur",
+    "city_id": "MH-nagpur",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Nagpur",
+    "category": "museum",
+    "categories": [
+      "museum",
+      "tourism"
+    ],
+    "topic": "Museum",
+    "subtopic": "One of the Oldest Colonial-Era Museums in India (1863)",
+    "summary": "Central Museum is a premier museum destination located in Nagpur, Nagpur, Maharashtra.",
+    "short_description": "Central Museum is a premier museum destination located in Nagpur, Nagpur, Maharashtra.",
+    "detailed_description": "Central Museum is a popular tourist destination in Maharashtra, known for its museum appeal.",
+    "description": "Central Museum is a popular tourist destination in Maharashtra, known for its museum appeal.",
+    "history": "One of the Oldest Colonial-Era Museums in India (1863)",
+    "heritage_status": "One of the Oldest Colonial-Era Museums in India (1863)",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Central Museum, Maharashtra, India",
+    "coordinates": {
+      "lat": 21.1481,
+      "lng": 79.0772
+    },
+    "lat": 21.1481,
+    "lng": 79.0772,
+    "latitude": 21.1481,
+    "longitude": 79.0772,
+    "thumbnail_url": "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "museum",
+      "Maharashtra",
+      "India",
+      "Nagpur"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH028",
+    "original_id": "MH028",
+    "name": "Kaas Plateau",
+    "tourist_place": "Kaas Plateau",
+    "assigned_city": "Kaas",
+    "city": "Kaas",
+    "city_id": "MH-kaas",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Satara",
+    "category": "nature",
+    "categories": [
+      "nature",
+      "tourism"
+    ],
+    "topic": "Nature",
+    "subtopic": "UNESCO World Natural Heritage Biosphere / Valley of Flowers",
+    "summary": "Kaas Plateau is a premier nature destination located in Kaas, Satara, Maharashtra.",
+    "short_description": "Kaas Plateau is a premier nature destination located in Kaas, Satara, Maharashtra.",
+    "detailed_description": "Kaas Plateau is a popular tourist destination in Maharashtra, known for its nature appeal.",
+    "description": "Kaas Plateau is a popular tourist destination in Maharashtra, known for its nature appeal.",
+    "history": "UNESCO World Natural Heritage Biosphere / Valley of Flowers",
+    "heritage_status": "UNESCO World Natural Heritage Biosphere / Valley of Flowers",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Kaas Plateau, Maharashtra, India",
+    "coordinates": {
+      "lat": 17.7214,
+      "lng": 73.8239
+    },
+    "lat": 17.7214,
+    "lng": 73.8239,
+    "latitude": 17.7214,
+    "longitude": 73.8239,
+    "thumbnail_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "nature",
+      "Maharashtra",
+      "India",
+      "Kaas"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH029",
+    "original_id": "MH029",
+    "name": "Tadoba-Andhari Tiger Reserve",
+    "tourist_place": "Tadoba-Andhari Tiger Reserve",
+    "assigned_city": "Tadoba",
+    "city": "Tadoba",
+    "city_id": "MH-tadoba",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Chandrapur",
+    "category": "wildlife",
+    "categories": [
+      "wildlife",
+      "tourism"
+    ],
+    "topic": "Wildlife",
+    "subtopic": "Oldest & Largest National Park & Tiger Sanctuary in MH",
+    "summary": "Tadoba-Andhari Tiger Reserve is a premier wildlife destination located in Tadoba, Chandrapur, Maharashtra.",
+    "short_description": "Tadoba-Andhari Tiger Reserve is a premier wildlife destination located in Tadoba, Chandrapur, Maharashtra.",
+    "detailed_description": "Tadoba-Andhari Tiger Reserve is a popular tourist destination in Maharashtra, known for its wildlife appeal.",
+    "description": "Tadoba-Andhari Tiger Reserve is a popular tourist destination in Maharashtra, known for its wildlife appeal.",
+    "history": "Oldest & Largest National Park & Tiger Sanctuary in MH",
+    "heritage_status": "Oldest & Largest National Park & Tiger Sanctuary in MH",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Tadoba-Andhari Tiger Reserve, Maharashtra, India",
+    "coordinates": {
+      "lat": 20.2458,
+      "lng": 79.3017
+    },
+    "lat": 20.2458,
+    "lng": 79.3017,
+    "latitude": 20.2458,
+    "longitude": 79.3017,
+    "thumbnail_url": "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "wildlife",
+      "Maharashtra",
+      "India",
+      "Tadoba"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH030",
+    "original_id": "MH030",
+    "name": "Navegaon National Park",
+    "tourist_place": "Navegaon National Park",
+    "assigned_city": "Navegaon",
+    "city": "Navegaon",
+    "city_id": "MH-navegaon",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Gondia",
+    "category": "wildlife",
+    "categories": [
+      "wildlife",
+      "tourism"
+    ],
+    "topic": "Wildlife",
+    "subtopic": "Renowned Wetland Sanctuary & Bird Haven of Vidarbha",
+    "summary": "Navegaon National Park is a premier wildlife destination located in Navegaon, Gondia, Maharashtra.",
+    "short_description": "Navegaon National Park is a premier wildlife destination located in Navegaon, Gondia, Maharashtra.",
+    "detailed_description": "Navegaon National Park is a popular tourist destination in Maharashtra, known for its wildlife appeal.",
+    "description": "Navegaon National Park is a popular tourist destination in Maharashtra, known for its wildlife appeal.",
+    "history": "Renowned Wetland Sanctuary & Bird Haven of Vidarbha",
+    "heritage_status": "Renowned Wetland Sanctuary & Bird Haven of Vidarbha",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Navegaon National Park, Maharashtra, India",
+    "coordinates": {
+      "lat": 20.9167,
+      "lng": 80.1667
+    },
+    "lat": 20.9167,
+    "lng": 80.1667,
+    "latitude": 20.9167,
+    "longitude": 80.1667,
+    "thumbnail_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "wildlife",
+      "Maharashtra",
+      "India",
+      "Navegaon"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH031",
+    "original_id": "MH031",
+    "name": "Pench National Park",
+    "tourist_place": "Pench National Park",
+    "assigned_city": "Ramtek",
+    "city": "Ramtek",
+    "city_id": "MH-ramtek",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Nagpur",
+    "category": "wildlife",
+    "categories": [
+      "wildlife",
+      "tourism"
+    ],
+    "topic": "Wildlife",
+    "subtopic": "Inspiration for Kipling's Jungle Book / Prime Tiger Habitat",
+    "summary": "Pench National Park is a premier wildlife destination located in Ramtek, Nagpur, Maharashtra.",
+    "short_description": "Pench National Park is a premier wildlife destination located in Ramtek, Nagpur, Maharashtra.",
+    "detailed_description": "Pench National Park is a popular tourist destination in Maharashtra, known for its wildlife appeal.",
+    "description": "Pench National Park is a popular tourist destination in Maharashtra, known for its wildlife appeal.",
+    "history": "Inspiration for Kipling's Jungle Book / Prime Tiger Habitat",
+    "heritage_status": "Inspiration for Kipling's Jungle Book / Prime Tiger Habitat",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Pench National Park, Maharashtra, India",
+    "coordinates": {
+      "lat": 21.6492,
+      "lng": 79.2319
+    },
+    "lat": 21.6492,
+    "lng": 79.2319,
+    "latitude": 21.6492,
+    "longitude": 79.2319,
+    "thumbnail_url": "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "wildlife",
+      "Maharashtra",
+      "India",
+      "Ramtek"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH032",
+    "original_id": "MH032",
+    "name": "Melghat Tiger Reserve",
+    "tourist_place": "Melghat Tiger Reserve",
+    "assigned_city": "Chikhaldara",
+    "city": "Chikhaldara",
+    "city_id": "MH-chikhaldara",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Amravati",
+    "category": "wildlife",
+    "categories": [
+      "wildlife",
+      "tourism"
+    ],
+    "topic": "Wildlife",
+    "subtopic": "Rugged Satpura Forest & Core Project Tiger Sanctuary",
+    "summary": "Melghat Tiger Reserve is a premier wildlife destination located in Chikhaldara, Amravati, Maharashtra.",
+    "short_description": "Melghat Tiger Reserve is a premier wildlife destination located in Chikhaldara, Amravati, Maharashtra.",
+    "detailed_description": "Melghat Tiger Reserve is a popular tourist destination in Maharashtra, known for its wildlife appeal.",
+    "description": "Melghat Tiger Reserve is a popular tourist destination in Maharashtra, known for its wildlife appeal.",
+    "history": "Rugged Satpura Forest & Core Project Tiger Sanctuary",
+    "heritage_status": "Rugged Satpura Forest & Core Project Tiger Sanctuary",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Melghat Tiger Reserve, Maharashtra, India",
+    "coordinates": {
+      "lat": 21.4372,
+      "lng": 77.2917
+    },
+    "lat": 21.4372,
+    "lng": 77.2917,
+    "latitude": 21.4372,
+    "longitude": 77.2917,
+    "thumbnail_url": "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "wildlife",
+      "Maharashtra",
+      "India",
+      "Chikhaldara"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH033",
+    "original_id": "MH033",
+    "name": "Chandoli National Park",
+    "tourist_place": "Chandoli National Park",
+    "assigned_city": "Chandoli",
+    "city": "Chandoli",
+    "city_id": "MH-chandoli",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Sangli/Kolhapur",
+    "category": "wildlife",
+    "categories": [
+      "wildlife",
+      "tourism"
+    ],
+    "topic": "Wildlife",
+    "subtopic": "UNESCO World Natural Heritage Western Ghats Reserve",
+    "summary": "Chandoli National Park is a premier wildlife destination located in Chandoli, Sangli/Kolhapur, Maharashtra.",
+    "short_description": "Chandoli National Park is a premier wildlife destination located in Chandoli, Sangli/Kolhapur, Maharashtra.",
+    "detailed_description": "Chandoli National Park is a popular tourist destination in Maharashtra, known for its wildlife appeal.",
+    "description": "Chandoli National Park is a popular tourist destination in Maharashtra, known for its wildlife appeal.",
+    "history": "UNESCO World Natural Heritage Western Ghats Reserve",
+    "heritage_status": "UNESCO World Natural Heritage Western Ghats Reserve",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Chandoli National Park, Maharashtra, India",
+    "coordinates": {
+      "lat": 17.1333,
+      "lng": 73.85
+    },
+    "lat": 17.1333,
+    "lng": 73.85,
+    "latitude": 17.1333,
+    "longitude": 73.85,
+    "thumbnail_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "wildlife",
+      "Maharashtra",
+      "India",
+      "Chandoli"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH034",
+    "original_id": "MH034",
+    "name": "Ganpatipule Beach",
+    "tourist_place": "Ganpatipule Beach",
+    "assigned_city": "Ganpatipule",
+    "city": "Ganpatipule",
+    "city_id": "MH-ganpatipule",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Ratnagiri",
+    "category": "beach",
+    "categories": [
+      "beach",
+      "tourism"
+    ],
+    "topic": "Beach",
+    "subtopic": "Pristine Konkan Coastline with 400-Year Swayambhu Ganesha",
+    "summary": "Ganpatipule Beach is a premier beach destination located in Ganpatipule, Ratnagiri, Maharashtra.",
+    "short_description": "Ganpatipule Beach is a premier beach destination located in Ganpatipule, Ratnagiri, Maharashtra.",
+    "detailed_description": "Ganpatipule Beach is a popular tourist destination in Maharashtra, known for its beach appeal.",
+    "description": "Ganpatipule Beach is a popular tourist destination in Maharashtra, known for its beach appeal.",
+    "history": "Pristine Konkan Coastline with 400-Year Swayambhu Ganesha",
+    "heritage_status": "Pristine Konkan Coastline with 400-Year Swayambhu Ganesha",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Ganpatipule Beach, Maharashtra, India",
+    "coordinates": {
+      "lat": 17.1467,
+      "lng": 73.2678
+    },
+    "lat": 17.1467,
+    "lng": 73.2678,
+    "latitude": 17.1467,
+    "longitude": 73.2678,
+    "thumbnail_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "beach",
+      "Maharashtra",
+      "India",
+      "Ganpatipule"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH035",
+    "original_id": "MH035",
+    "name": "Tarkarli Beach",
+    "tourist_place": "Tarkarli Beach",
+    "assigned_city": "Tarkarli",
+    "city": "Tarkarli",
+    "city_id": "MH-tarkarli",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Sindhudurg",
+    "category": "beach",
+    "categories": [
+      "beach",
+      "tourism"
+    ],
+    "topic": "Beach",
+    "subtopic": "Crystal Waters, Scuba Haven & Karli River Confluence",
+    "summary": "Tarkarli Beach is a premier beach destination located in Tarkarli, Sindhudurg, Maharashtra.",
+    "short_description": "Tarkarli Beach is a premier beach destination located in Tarkarli, Sindhudurg, Maharashtra.",
+    "detailed_description": "Tarkarli Beach is a popular tourist destination in Maharashtra, known for its beach appeal.",
+    "description": "Tarkarli Beach is a popular tourist destination in Maharashtra, known for its beach appeal.",
+    "history": "Crystal Waters, Scuba Haven & Karli River Confluence",
+    "heritage_status": "Crystal Waters, Scuba Haven & Karli River Confluence",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Tarkarli Beach, Maharashtra, India",
+    "coordinates": {
+      "lat": 16.0358,
+      "lng": 73.4917
+    },
+    "lat": 16.0358,
+    "lng": 73.4917,
+    "latitude": 16.0358,
+    "longitude": 73.4917,
+    "thumbnail_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "beach",
+      "Maharashtra",
+      "India",
+      "Tarkarli"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH036",
+    "original_id": "MH036",
+    "name": "Alibaug Beach",
+    "tourist_place": "Alibaug Beach",
+    "assigned_city": "Alibaug",
+    "city": "Alibaug",
+    "city_id": "MH-alibaug",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Raigad",
+    "category": "beach",
+    "categories": [
+      "beach",
+      "tourism"
+    ],
+    "topic": "Beach",
+    "subtopic": "Coastal Getaway with Views of Kolaba Sea Fort",
+    "summary": "Alibaug Beach is a premier beach destination located in Alibaug, Raigad, Maharashtra.",
+    "short_description": "Alibaug Beach is a premier beach destination located in Alibaug, Raigad, Maharashtra.",
+    "detailed_description": "Alibaug Beach is a popular tourist destination in Maharashtra, known for its beach appeal.",
+    "description": "Alibaug Beach is a popular tourist destination in Maharashtra, known for its beach appeal.",
+    "history": "Coastal Getaway with Views of Kolaba Sea Fort",
+    "heritage_status": "Coastal Getaway with Views of Kolaba Sea Fort",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Alibaug Beach, Maharashtra, India",
+    "coordinates": {
+      "lat": 18.6414,
+      "lng": 72.8722
+    },
+    "lat": 18.6414,
+    "lng": 72.8722,
+    "latitude": 18.6414,
+    "longitude": 72.8722,
+    "thumbnail_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "beach",
+      "Maharashtra",
+      "India",
+      "Alibaug"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH037",
+    "original_id": "MH037",
+    "name": "Kashid Beach",
+    "tourist_place": "Kashid Beach",
+    "assigned_city": "Kashid",
+    "city": "Kashid",
+    "city_id": "MH-kashid",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Raigad",
+    "category": "beach",
+    "categories": [
+      "beach",
+      "tourism"
+    ],
+    "topic": "Beach",
+    "subtopic": "Famous White Sand Beach on the Arabian Sea",
+    "summary": "Kashid Beach is a premier beach destination located in Kashid, Raigad, Maharashtra.",
+    "short_description": "Kashid Beach is a premier beach destination located in Kashid, Raigad, Maharashtra.",
+    "detailed_description": "Kashid Beach is a popular tourist destination in Maharashtra, known for its beach appeal.",
+    "description": "Kashid Beach is a popular tourist destination in Maharashtra, known for its beach appeal.",
+    "history": "Famous White Sand Beach on the Arabian Sea",
+    "heritage_status": "Famous White Sand Beach on the Arabian Sea",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Kashid Beach, Maharashtra, India",
+    "coordinates": {
+      "lat": 18.4619,
+      "lng": 72.9094
+    },
+    "lat": 18.4619,
+    "lng": 72.9094,
+    "latitude": 18.4619,
+    "longitude": 72.9094,
+    "thumbnail_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "beach",
+      "Maharashtra",
+      "India",
+      "Kashid"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH038",
+    "original_id": "MH038",
+    "name": "Bhandardara",
+    "tourist_place": "Bhandardara",
+    "assigned_city": "Bhandardara",
+    "city": "Bhandardara",
+    "city_id": "MH-bhandardara",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Ahmednagar",
+    "category": "nature",
+    "categories": [
+      "nature",
+      "tourism"
+    ],
+    "topic": "Nature",
+    "subtopic": "Scenic Hill Resort with Arthur Lake and Umbrella Falls",
+    "summary": "Bhandardara is a premier nature destination located in Bhandardara, Ahmednagar, Maharashtra.",
+    "short_description": "Bhandardara is a premier nature destination located in Bhandardara, Ahmednagar, Maharashtra.",
+    "detailed_description": "Bhandardara is a popular tourist destination in Maharashtra, known for its nature appeal.",
+    "description": "Bhandardara is a popular tourist destination in Maharashtra, known for its nature appeal.",
+    "history": "Scenic Hill Resort with Arthur Lake and Umbrella Falls",
+    "heritage_status": "Scenic Hill Resort with Arthur Lake and Umbrella Falls",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Bhandardara, Maharashtra, India",
+    "coordinates": {
+      "lat": 19.5333,
+      "lng": 73.7667
+    },
+    "lat": 19.5333,
+    "lng": 73.7667,
+    "latitude": 19.5333,
+    "longitude": 73.7667,
+    "thumbnail_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "nature",
+      "Maharashtra",
+      "India",
+      "Bhandardara"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH039",
+    "original_id": "MH039",
+    "name": "Mahabaleshwar",
+    "tourist_place": "Mahabaleshwar",
+    "assigned_city": "Mahabaleshwar",
+    "city": "Mahabaleshwar",
+    "city_id": "MH-mahabaleshwar",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Satara",
+    "category": "hill station",
+    "categories": [
+      "hill station",
+      "tourism"
+    ],
+    "topic": "Hill station",
+    "subtopic": "Queen of Maharashtra Hill Stations & Source of Krishna River",
+    "summary": "Mahabaleshwar is a premier hill station destination located in Mahabaleshwar, Satara, Maharashtra.",
+    "short_description": "Mahabaleshwar is a premier hill station destination located in Mahabaleshwar, Satara, Maharashtra.",
+    "detailed_description": "Mahabaleshwar is a popular tourist destination in Maharashtra, known for its hill station appeal.",
+    "description": "Mahabaleshwar is a popular tourist destination in Maharashtra, known for its hill station appeal.",
+    "history": "Queen of Maharashtra Hill Stations & Source of Krishna River",
+    "heritage_status": "Queen of Maharashtra Hill Stations & Source of Krishna River",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Mahabaleshwar, Maharashtra, India",
+    "coordinates": {
+      "lat": 17.9237,
+      "lng": 73.6586
+    },
+    "lat": 17.9237,
+    "lng": 73.6586,
+    "latitude": 17.9237,
+    "longitude": 73.6586,
+    "thumbnail_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "hill station",
+      "Maharashtra",
+      "India",
+      "Mahabaleshwar"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH040",
+    "original_id": "MH040",
+    "name": "Matheran",
+    "tourist_place": "Matheran",
+    "assigned_city": "Matheran",
+    "city": "Matheran",
+    "city_id": "MH-matheran",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Raigad",
+    "category": "hill station",
+    "categories": [
+      "hill station",
+      "tourism"
+    ],
+    "topic": "Hill station",
+    "subtopic": "Asia's Only Automobile-Free Eco-Sensitive Hill Retreat",
+    "summary": "Matheran is a premier hill station destination located in Matheran, Raigad, Maharashtra.",
+    "short_description": "Matheran is a premier hill station destination located in Matheran, Raigad, Maharashtra.",
+    "detailed_description": "Matheran is a popular tourist destination in Maharashtra, known for its hill station appeal.",
+    "description": "Matheran is a popular tourist destination in Maharashtra, known for its hill station appeal.",
+    "history": "Asia's Only Automobile-Free Eco-Sensitive Hill Retreat",
+    "heritage_status": "Asia's Only Automobile-Free Eco-Sensitive Hill Retreat",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Matheran, Maharashtra, India",
+    "coordinates": {
+      "lat": 18.9867,
+      "lng": 73.2683
+    },
+    "lat": 18.9867,
+    "lng": 73.2683,
+    "latitude": 18.9867,
+    "longitude": 73.2683,
+    "thumbnail_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "hill station",
+      "Maharashtra",
+      "India",
+      "Matheran"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH041",
+    "original_id": "MH041",
+    "name": "Lonavala",
+    "tourist_place": "Lonavala",
+    "assigned_city": "Lonavala",
     "city": "Lonavala",
-    "category": "nature",
-    "summary": "High-altitude vantage point between Bhushi Dam and Aamby Valley, known for soaring wind currents and panoramic mountain gorges.",
-    "description": "Situated midway between Bhushi Dam and Aamby Valley, Lion's Point offers sharp cliff drops, winds that lift water droplets upwards, and incredible sunrise and sunset vistas across the Sahyadri range.",
-    "coordinates": {
-      "lat": 18.7214,
-      "lng": 73.3820
-    },
-    "rating": 4.7,
-    "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
-    "best_time_to_visit": "Round the year (Monsoon special)",
-    "visiting_hours": "06:00 AM - 07:00 PM",
+    "city_id": "MH-lonavala",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Pune",
+    "category": "hill station",
+    "categories": [
+      "hill station",
+      "tourism"
+    ],
+    "topic": "Hill station",
+    "subtopic": "Lush Sahyadri Mountain Escape Famous for Chikki & Waterfalls",
+    "summary": "Lonavala is a premier hill station destination located in Lonavala, Pune, Maharashtra.",
+    "short_description": "Lonavala is a premier hill station destination located in Lonavala, Pune, Maharashtra.",
+    "detailed_description": "Lonavala is a popular tourist destination in Maharashtra, known for its hill station appeal.",
+    "description": "Lonavala is a popular tourist destination in Maharashtra, known for its hill station appeal.",
+    "history": "Lush Sahyadri Mountain Escape Famous for Chikki & Waterfalls",
+    "heritage_status": "Lush Sahyadri Mountain Escape Famous for Chikki & Waterfalls",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
     "entry_fee": {
-      "domestic": 0,
-      "international": 0,
-      "currency": "INR"
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
     },
-    "tags": ["lonavala", "viewpoint", "nature", "scenic", "famous", "tourist_places"]
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Lonavala, Maharashtra, India",
+    "coordinates": {
+      "lat": 18.7557,
+      "lng": 73.4091
+    },
+    "lat": 18.7557,
+    "lng": 73.4091,
+    "latitude": 18.7557,
+    "longitude": 73.4091,
+    "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "hill station",
+      "Maharashtra",
+      "India",
+      "Lonavala"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
   },
   {
-    "id": "lonavala-pawna-lake",
-    "name": "Pawna Lake & Dam Reserve",
+    "id": "MH042",
+    "original_id": "MH042",
+    "name": "Kalsubai Peak",
+    "tourist_place": "Kalsubai Peak",
+    "assigned_city": "Bari",
+    "city": "Bari",
+    "city_id": "MH-bari",
     "state": "Maharashtra",
-    "city": "Lonavala",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Ahmednagar",
+    "category": "trekking",
+    "categories": [
+      "trekking",
+      "tourism"
+    ],
+    "topic": "Trekking",
+    "subtopic": "Everest of Maharashtra (1,646 m Highest Peak)",
+    "summary": "Kalsubai Peak is a premier trekking destination located in Bari, Ahmednagar, Maharashtra.",
+    "short_description": "Kalsubai Peak is a premier trekking destination located in Bari, Ahmednagar, Maharashtra.",
+    "detailed_description": "Kalsubai Peak is a popular tourist destination in Maharashtra, known for its trekking appeal.",
+    "description": "Kalsubai Peak is a popular tourist destination in Maharashtra, known for its trekking appeal.",
+    "history": "Everest of Maharashtra (1,646 m Highest Peak)",
+    "heritage_status": "Everest of Maharashtra (1,646 m Highest Peak)",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Kalsubai Peak, Maharashtra, India",
+    "coordinates": {
+      "lat": 19.6014,
+      "lng": 73.7103
+    },
+    "lat": 19.6014,
+    "lng": 73.7103,
+    "latitude": 19.6014,
+    "longitude": 73.7103,
+    "thumbnail_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "trekking",
+      "Maharashtra",
+      "India",
+      "Bari"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH043",
+    "original_id": "MH043",
+    "name": "Pawna Lake",
+    "tourist_place": "Pawna Lake",
+    "assigned_city": "Pawna",
+    "city": "Pawna",
+    "city_id": "MH-pawna",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Pune",
     "category": "nature",
-    "summary": "Expansive freshwater reservoir framed by Lohagad, Tikona and Tung forts; premier destination for lakeside camping and kayaking.",
-    "description": "Surrounded by historic Maratha fortresses, Pawna Lake offers calm waters, picturesque lakeside campsites, bonfire evenings, and water sports just 20 km from central Lonavala.",
+    "categories": [
+      "nature",
+      "tourism"
+    ],
+    "topic": "Nature",
+    "subtopic": "Picturesque Artificial Reservoir Bordered by Three Forts",
+    "summary": "Pawna Lake is a premier nature destination located in Pawna, Pune, Maharashtra.",
+    "short_description": "Pawna Lake is a premier nature destination located in Pawna, Pune, Maharashtra.",
+    "detailed_description": "Pawna Lake is a popular tourist destination in Maharashtra, known for its nature appeal.",
+    "description": "Pawna Lake is a popular tourist destination in Maharashtra, known for its nature appeal.",
+    "history": "Picturesque Artificial Reservoir Bordered by Three Forts",
+    "heritage_status": "Picturesque Artificial Reservoir Bordered by Three Forts",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Pawna Lake, Maharashtra, India",
     "coordinates": {
       "lat": 18.6811,
-      "lng": 73.4900
+      "lng": 73.49
     },
+    "lat": 18.6811,
+    "lng": 73.49,
+    "latitude": 18.6811,
+    "longitude": 73.49,
+    "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
     "rating": 4.8,
-    "thumbnail_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
-    "best_time_to_visit": "October to May (Camping) / July-Sept (Lush greens)",
-    "visiting_hours": "Open 24 hours",
-    "entry_fee": {
-      "domestic": 0,
-      "international": 0,
-      "currency": "INR"
-    },
-    "tags": ["lonavala", "lake", "camping", "dam", "nature", "watersports", "famous"]
+    "tags": [
+      "nature",
+      "Maharashtra",
+      "India",
+      "Pawna"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
   },
   {
-    "id": "lonavala-celebrity-wax-museum",
-    "name": "Sunil's Celebrity Wax Museum",
+    "id": "MH044",
+    "original_id": "MH044",
+    "name": "Igatpuri",
+    "tourist_place": "Igatpuri",
+    "assigned_city": "Igatpuri",
+    "city": "Igatpuri",
+    "city_id": "MH-igatpuri",
     "state": "Maharashtra",
-    "city": "Lonavala",
-    "category": "museum",
-    "summary": "Pioneering Indian wax museum housing lifelike statues of historic leaders, scientists, freedom fighters, and cricket icons.",
-    "description": "Founded by wax sculptor Sunil Kandalloor, this popular indoor museum features detailed life-size figures of Chhatrapati Shivaji Maharaj, Dr. APJ Abdul Kalam, Mahatma Gandhi, and global figures.",
-    "coordinates": {
-      "lat": 18.7610,
-      "lng": 73.4245
-    },
-    "rating": 4.5,
-    "thumbnail_url": "https://images.unsplash.com/photo-1566127444979-b3d2b654e3d7?auto=format&fit=crop&w=1200&q=80",
-    "best_time_to_visit": "Round the year",
-    "visiting_hours": "09:00 AM - 09:30 PM",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Nashik",
+    "category": "hill station",
+    "categories": [
+      "hill station",
+      "tourism"
+    ],
+    "topic": "Hill station",
+    "subtopic": "Foggy Mountain Pass & Global Vipassana Meditation Center",
+    "summary": "Igatpuri is a premier hill station destination located in Igatpuri, Nashik, Maharashtra.",
+    "short_description": "Igatpuri is a premier hill station destination located in Igatpuri, Nashik, Maharashtra.",
+    "detailed_description": "Igatpuri is a popular tourist destination in Maharashtra, known for its hill station appeal.",
+    "description": "Igatpuri is a popular tourist destination in Maharashtra, known for its hill station appeal.",
+    "history": "Foggy Mountain Pass & Global Vipassana Meditation Center",
+    "heritage_status": "Foggy Mountain Pass & Global Vipassana Meditation Center",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
     "entry_fee": {
-      "domestic": 200,
-      "international": 200,
-      "currency": "INR"
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
     },
-    "tags": ["lonavala", "museum", "art", "family", "tourist_places", "famous"]
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Igatpuri, Maharashtra, India",
+    "coordinates": {
+      "lat": 19.6967,
+      "lng": 73.5606
+    },
+    "lat": 19.6967,
+    "lng": 73.5606,
+    "latitude": 19.6967,
+    "longitude": 73.5606,
+    "thumbnail_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "hill station",
+      "Maharashtra",
+      "India",
+      "Igatpuri"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH045",
+    "original_id": "MH045",
+    "name": "Karnala Bird Sanctuary",
+    "tourist_place": "Karnala Bird Sanctuary",
+    "assigned_city": "Karnala",
+    "city": "Karnala",
+    "city_id": "MH-karnala",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Raigad",
+    "category": "wildlife",
+    "categories": [
+      "wildlife",
+      "tourism"
+    ],
+    "topic": "Wildlife",
+    "subtopic": "Sanctuary Surrounding Historic 12th Century Hill Fort",
+    "summary": "Karnala Bird Sanctuary is a premier wildlife destination located in Karnala, Raigad, Maharashtra.",
+    "short_description": "Karnala Bird Sanctuary is a premier wildlife destination located in Karnala, Raigad, Maharashtra.",
+    "detailed_description": "Karnala Bird Sanctuary is a popular tourist destination in Maharashtra, known for its wildlife appeal.",
+    "description": "Karnala Bird Sanctuary is a popular tourist destination in Maharashtra, known for its wildlife appeal.",
+    "history": "Sanctuary Surrounding Historic 12th Century Hill Fort",
+    "heritage_status": "Sanctuary Surrounding Historic 12th Century Hill Fort",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Karnala Bird Sanctuary, Maharashtra, India",
+    "coordinates": {
+      "lat": 18.8894,
+      "lng": 73.1189
+    },
+    "lat": 18.8894,
+    "lng": 73.1189,
+    "latitude": 18.8894,
+    "longitude": 73.1189,
+    "thumbnail_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "wildlife",
+      "Maharashtra",
+      "India",
+      "Karnala"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH046",
+    "original_id": "MH046",
+    "name": "Nandur Madhameshwar Bird Sanctuary",
+    "tourist_place": "Nandur Madhameshwar Bird Sanctuary",
+    "assigned_city": "Nandur Madhameshwar",
+    "city": "Nandur Madhameshwar",
+    "city_id": "MH-nandur-madhameshwar",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Nashik",
+    "category": "wildlife",
+    "categories": [
+      "wildlife",
+      "tourism"
+    ],
+    "topic": "Wildlife",
+    "subtopic": "First Ramsar Wetland Site of Maharashtra / Bharatpur of MH",
+    "summary": "Nandur Madhameshwar Bird Sanctuary is a premier wildlife destination located in Nandur Madhameshwar, Nashik, Maharashtra.",
+    "short_description": "Nandur Madhameshwar Bird Sanctuary is a premier wildlife destination located in Nandur Madhameshwar, Nashik, Maharashtra.",
+    "detailed_description": "Nandur Madhameshwar Bird Sanctuary is a popular tourist destination in Maharashtra, known for its wildlife appeal.",
+    "description": "Nandur Madhameshwar Bird Sanctuary is a popular tourist destination in Maharashtra, known for its wildlife appeal.",
+    "history": "First Ramsar Wetland Site of Maharashtra / Bharatpur of MH",
+    "heritage_status": "First Ramsar Wetland Site of Maharashtra / Bharatpur of MH",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Nandur Madhameshwar Bird Sanctuary, Maharashtra, India",
+    "coordinates": {
+      "lat": 20.0167,
+      "lng": 74.0833
+    },
+    "lat": 20.0167,
+    "lng": 74.0833,
+    "latitude": 20.0167,
+    "longitude": 74.0833,
+    "thumbnail_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "wildlife",
+      "Maharashtra",
+      "India",
+      "Nandur Madhameshwar"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH047",
+    "original_id": "MH047",
+    "name": "Bhigwan Bird Sanctuary",
+    "tourist_place": "Bhigwan Bird Sanctuary",
+    "assigned_city": "Bhigwan",
+    "city": "Bhigwan",
+    "city_id": "MH-bhigwan",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Pune",
+    "category": "wildlife",
+    "categories": [
+      "wildlife",
+      "tourism"
+    ],
+    "topic": "Wildlife",
+    "subtopic": "Premier Winter Flamingos & Waterfowl Haven on Ujani Dam",
+    "summary": "Bhigwan Bird Sanctuary is a premier wildlife destination located in Bhigwan, Pune, Maharashtra.",
+    "short_description": "Bhigwan Bird Sanctuary is a premier wildlife destination located in Bhigwan, Pune, Maharashtra.",
+    "detailed_description": "Bhigwan Bird Sanctuary is a popular tourist destination in Maharashtra, known for its wildlife appeal.",
+    "description": "Bhigwan Bird Sanctuary is a popular tourist destination in Maharashtra, known for its wildlife appeal.",
+    "history": "Premier Winter Flamingos & Waterfowl Haven on Ujani Dam",
+    "heritage_status": "Premier Winter Flamingos & Waterfowl Haven on Ujani Dam",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Bhigwan Bird Sanctuary, Maharashtra, India",
+    "coordinates": {
+      "lat": 18.2917,
+      "lng": 74.7708
+    },
+    "lat": 18.2917,
+    "lng": 74.7708,
+    "latitude": 18.2917,
+    "longitude": 74.7708,
+    "thumbnail_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "wildlife",
+      "Maharashtra",
+      "India",
+      "Bhigwan"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH048",
+    "original_id": "MH048",
+    "name": "Koyna Wildlife Sanctuary",
+    "tourist_place": "Koyna Wildlife Sanctuary",
+    "assigned_city": "Koyna",
+    "city": "Koyna",
+    "city_id": "MH-koyna",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Satara",
+    "category": "wildlife",
+    "categories": [
+      "wildlife",
+      "tourism"
+    ],
+    "topic": "Wildlife",
+    "subtopic": "UNESCO World Natural Heritage Site by Shivsagar Lake",
+    "summary": "Koyna Wildlife Sanctuary is a premier wildlife destination located in Koyna, Satara, Maharashtra.",
+    "short_description": "Koyna Wildlife Sanctuary is a premier wildlife destination located in Koyna, Satara, Maharashtra.",
+    "detailed_description": "Koyna Wildlife Sanctuary is a popular tourist destination in Maharashtra, known for its wildlife appeal.",
+    "description": "Koyna Wildlife Sanctuary is a popular tourist destination in Maharashtra, known for its wildlife appeal.",
+    "history": "UNESCO World Natural Heritage Site by Shivsagar Lake",
+    "heritage_status": "UNESCO World Natural Heritage Site by Shivsagar Lake",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Koyna Wildlife Sanctuary, Maharashtra, India",
+    "coordinates": {
+      "lat": 17.6667,
+      "lng": 73.75
+    },
+    "lat": 17.6667,
+    "lng": 73.75,
+    "latitude": 17.6667,
+    "longitude": 73.75,
+    "thumbnail_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "wildlife",
+      "Maharashtra",
+      "India",
+      "Koyna"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH049",
+    "original_id": "MH049",
+    "name": "Pandharpur Vitthal Temple",
+    "tourist_place": "Pandharpur Vitthal Temple",
+    "assigned_city": "Pandharpur",
+    "city": "Pandharpur",
+    "city_id": "MH-pandharpur",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Solapur",
+    "category": "religious",
+    "categories": [
+      "religious",
+      "tourism"
+    ],
+    "topic": "Religious",
+    "subtopic": "Epicenter of Warkari Pilgrimage along Bhima (Chandrabhaga) River",
+    "summary": "Pandharpur Vitthal Temple is a premier religious destination located in Pandharpur, Solapur, Maharashtra.",
+    "short_description": "Pandharpur Vitthal Temple is a premier religious destination located in Pandharpur, Solapur, Maharashtra.",
+    "detailed_description": "Pandharpur Vitthal Temple is one of Maharashtra’s most important pilgrimage destinations, dedicated to Lord Vitthal.",
+    "description": "Pandharpur Vitthal Temple is one of Maharashtra’s most important pilgrimage destinations, dedicated to Lord Vitthal.",
+    "history": "Epicenter of Warkari Pilgrimage along Bhima (Chandrabhaga) River",
+    "heritage_status": "Epicenter of Warkari Pilgrimage along Bhima (Chandrabhaga) River",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Pandharpur Vitthal Temple, Pandharpur, Maharashtra, India",
+    "coordinates": {
+      "lat": 17.6775,
+      "lng": 75.3283
+    },
+    "lat": 17.6775,
+    "lng": 75.3283,
+    "latitude": 17.6775,
+    "longitude": 75.3283,
+    "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "religious",
+      "Maharashtra",
+      "Pandharpur",
+      "India"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH050",
+    "original_id": "MH050",
+    "name": "Akkalkot Swami Samarth Temple",
+    "tourist_place": "Akkalkot Swami Samarth Temple",
+    "assigned_city": "Akkalkot",
+    "city": "Akkalkot",
+    "city_id": "MH-akkalkot",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Solapur",
+    "category": "religious",
+    "categories": [
+      "religious",
+      "tourism"
+    ],
+    "topic": "Religious",
+    "subtopic": "Sacred Samadhi Shrine of 19th Century Mystic Swami Samarth",
+    "summary": "Akkalkot Swami Samarth Temple is a premier religious destination located in Akkalkot, Solapur, Maharashtra.",
+    "short_description": "Akkalkot Swami Samarth Temple is a premier religious destination located in Akkalkot, Solapur, Maharashtra.",
+    "detailed_description": "Akkalkot Swami Samarth Temple is a major spiritual destination associated with Swami Samarth.",
+    "description": "Akkalkot Swami Samarth Temple is a major spiritual destination associated with Swami Samarth.",
+    "history": "Sacred Samadhi Shrine of 19th Century Mystic Swami Samarth",
+    "heritage_status": "Sacred Samadhi Shrine of 19th Century Mystic Swami Samarth",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Akkalkot Swami Samarth Temple, Solapur, Maharashtra, India",
+    "coordinates": {
+      "lat": 17.5256,
+      "lng": 76.2044
+    },
+    "lat": 17.5256,
+    "lng": 76.2044,
+    "latitude": 17.5256,
+    "longitude": 76.2044,
+    "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "religious",
+      "Maharashtra",
+      "Solapur",
+      "India",
+      "Akkalkot"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
+  },
+  {
+    "id": "MH051",
+    "original_id": "MH051",
+    "name": "Harihar Fort",
+    "tourist_place": "Harihar Fort",
+    "assigned_city": "Nirgudpada",
+    "city": "Nirgudpada",
+    "city_id": "MH-nirgudpada",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "area": "Nashik",
+    "category": "fort",
+    "categories": [
+      "fort",
+      "tourism"
+    ],
+    "topic": "Fort",
+    "subtopic": "Iconic Sahyadri Fortress Famous for its 80-Degree Rock-Cut Steps",
+    "summary": "Harihar Fort is a premier fort destination located in Nirgudpada, Nashik, Maharashtra.",
+    "short_description": "Harihar Fort is a premier fort destination located in Nirgudpada, Nashik, Maharashtra.",
+    "detailed_description": "Harihar Fort is a popular tourist destination in Maharashtra, known for its fort appeal.",
+    "description": "Harihar Fort is a popular tourist destination in Maharashtra, known for its fort appeal.",
+    "history": "Iconic Sahyadri Fortress Famous for its 80-Degree Rock-Cut Steps",
+    "heritage_status": "Iconic Sahyadri Fortress Famous for its 80-Degree Rock-Cut Steps",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "visiting_hours": "Varies by location",
+    "timings": "Varies by location",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "fees": {
+      "domestic": 50,
+      "international": 500,
+      "currency": "INR",
+      "details": "Varies; check locally"
+    },
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Harihar Fort, Maharashtra, India",
+    "coordinates": {
+      "lat": 19.9042,
+      "lng": 73.4739
+    },
+    "lat": 19.9042,
+    "lng": 73.4739,
+    "latitude": 19.9042,
+    "longitude": 73.4739,
+    "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "status": "VERIFIED",
+    "verification_status": "verified",
+    "data_confidence": "official",
+    "rating": 4.8,
+    "tags": [
+      "fort",
+      "Maharashtra",
+      "India",
+      "Nirgudpada"
+    ],
+    "source_name": "Maharashtra Tourism Development Corporation (MTDC)",
+    "source_url": "https://www.maharashtratourism.gov.in/",
+    "source_quality": "official_site"
   }
 ]

@@ -1,0 +1,1381 @@
+[
+  {
+    "id": "MH001",
+    "name": "Ajanta Caves",
+    "category": "heritage",
+    "area": "Chhatrapati Sambhajinagar",
+    "description": "Ajanta Caves is a popular tourist destination in Maharashtra, known for its heritage appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Ajanta Caves, Maharashtra, India",
+    "tags": [
+      "heritage",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Ajanta",
+    "city_id": "MH-ajanta",
+    "country": "India"
+  },
+  {
+    "id": "MH002",
+    "name": "Ellora Caves",
+    "category": "heritage",
+    "area": "Chhatrapati Sambhajinagar",
+    "description": "Ellora Caves is a popular tourist destination in Maharashtra, known for its heritage appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Ellora Caves, Maharashtra, India",
+    "tags": [
+      "heritage",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Verul (Ellora)",
+    "city_id": "MH-verul-ellora",
+    "country": "India"
+  },
+  {
+    "id": "MH003",
+    "name": "Lonar Lake",
+    "category": "nature",
+    "area": "Buldhana",
+    "description": "Lonar Lake is a popular tourist destination in Maharashtra, known for its nature appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Lonar Lake, Maharashtra, India",
+    "tags": [
+      "nature",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Lonar",
+    "city_id": "MH-lonar",
+    "country": "India"
+  },
+  {
+    "id": "MH004",
+    "name": "Raigad Fort",
+    "category": "fort",
+    "area": "Raigad",
+    "description": "Raigad Fort is a popular tourist destination in Maharashtra, known for its fort appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Raigad Fort, Maharashtra, India",
+    "tags": [
+      "fort",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Mahad",
+    "city_id": "MH-mahad",
+    "country": "India"
+  },
+  {
+    "id": "MH005",
+    "name": "Pratapgad Fort",
+    "category": "fort",
+    "area": "Satara",
+    "description": "Pratapgad Fort is a popular tourist destination in Maharashtra, known for its fort appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Pratapgad Fort, Maharashtra, India",
+    "tags": [
+      "fort",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Pratapgad",
+    "city_id": "MH-pratapgad",
+    "country": "India"
+  },
+  {
+    "id": "MH006",
+    "name": "Sinhagad Fort",
+    "category": "fort",
+    "area": "Pune",
+    "description": "Sinhagad Fort is a popular tourist destination in Maharashtra, known for its fort appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Sinhagad Fort, Maharashtra, India",
+    "tags": [
+      "fort",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Pune",
+    "city_id": "MH-pune",
+    "country": "India"
+  },
+  {
+    "id": "MH007",
+    "name": "Shaniwar Wada",
+    "category": "heritage",
+    "area": "Pune",
+    "description": "Shaniwar Wada is a popular tourist destination in Maharashtra, known for its heritage appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Shaniwar Wada, Maharashtra, India",
+    "tags": [
+      "heritage",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Pune",
+    "city_id": "MH-pune",
+    "country": "India"
+  },
+  {
+    "id": "MH008",
+    "name": "Daulatabad Fort",
+    "category": "fort",
+    "area": "Chhatrapati Sambhajinagar",
+    "description": "Daulatabad Fort is a popular tourist destination in Maharashtra, known for its fort appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Daulatabad Fort, Maharashtra, India",
+    "tags": [
+      "fort",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Verul (Ellora)",
+    "city_id": "MH-verul-ellora",
+    "country": "India"
+  },
+  {
+    "id": "MH009",
+    "name": "Panhala Fort",
+    "category": "fort",
+    "area": "Kolhapur",
+    "description": "Panhala Fort is a popular tourist destination in Maharashtra, known for its fort appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Panhala Fort, Maharashtra, India",
+    "tags": [
+      "fort",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Panhala",
+    "city_id": "MH-panhala",
+    "country": "India"
+  },
+  {
+    "id": "MH010",
+    "name": "Sindhudurg Fort",
+    "category": "fort",
+    "area": "Sindhudurg",
+    "description": "Sindhudurg Fort is a popular tourist destination in Maharashtra, known for its fort appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Sindhudurg Fort, Maharashtra, India",
+    "tags": [
+      "fort",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Malvan",
+    "city_id": "MH-malvan",
+    "country": "India"
+  },
+  {
+    "id": "MH011",
+    "name": "Murud-Janjira Fort",
+    "category": "fort",
+    "area": "Raigad",
+    "description": "Murud-Janjira Fort is a popular tourist destination in Maharashtra, known for its fort appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Murud-Janjira Fort, Maharashtra, India",
+    "tags": [
+      "fort",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Murud",
+    "city_id": "MH-murud",
+    "country": "India"
+  },
+  {
+    "id": "MH012",
+    "name": "Bibi Ka Maqbara",
+    "category": "heritage",
+    "area": "Chhatrapati Sambhajinagar",
+    "description": "Bibi Ka Maqbara is a popular tourist destination in Maharashtra, known for its heritage appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Bibi Ka Maqbara, Maharashtra, India",
+    "tags": [
+      "heritage",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Chhatrapati Sambhajinagar",
+    "city_id": "MH-chhatrapati-sambhajinagar",
+    "country": "India"
+  },
+  {
+    "id": "MH013",
+    "name": "Aga Khan Palace",
+    "category": "heritage",
+    "area": "Pune",
+    "description": "Aga Khan Palace is a popular tourist destination in Maharashtra, known for its heritage appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Aga Khan Palace, Maharashtra, India",
+    "tags": [
+      "heritage",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Pune",
+    "city_id": "MH-pune",
+    "country": "India"
+  },
+  {
+    "id": "MH014",
+    "name": "Deekshabhoomi",
+    "category": "heritage",
+    "area": "Nagpur",
+    "description": "Deekshabhoomi is a popular tourist destination in Maharashtra, known for its heritage appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Deekshabhoomi, Maharashtra, India",
+    "tags": [
+      "heritage",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Nagpur",
+    "city_id": "MH-nagpur",
+    "country": "India"
+  },
+  {
+    "id": "MH015",
+    "name": "Trimbakeshwar Temple",
+    "category": "religious",
+    "area": "Nashik",
+    "description": "Trimbakeshwar Temple is a popular tourist destination in Maharashtra, known for its religious appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Trimbakeshwar Temple, Maharashtra, India",
+    "tags": [
+      "religious",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Trimbakeshwar",
+    "city_id": "MH-trimbakeshwar",
+    "country": "India"
+  },
+  {
+    "id": "MH016",
+    "name": "Bhimashankar Temple",
+    "category": "religious",
+    "area": "Pune",
+    "description": "Bhimashankar Temple is a popular tourist destination in Maharashtra, known for its religious appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Bhimashankar Temple, Maharashtra, India",
+    "tags": [
+      "religious",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Bhimashankar",
+    "city_id": "MH-bhimashankar",
+    "country": "India"
+  },
+  {
+    "id": "MH017",
+    "name": "Grishneshwar Temple",
+    "category": "religious",
+    "area": "Chhatrapati Sambhajinagar",
+    "description": "Grishneshwar Temple is a popular tourist destination in Maharashtra, known for its religious appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Grishneshwar Temple, Maharashtra, India",
+    "tags": [
+      "religious",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Verul (Ellora)",
+    "city_id": "MH-verul-ellora",
+    "country": "India"
+  },
+  {
+    "id": "MH018",
+    "name": "Tulja Bhavani Temple",
+    "category": "religious",
+    "area": "Dharashiv",
+    "description": "Tulja Bhavani Temple is a popular tourist destination in Maharashtra, known for its religious appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Tulja Bhavani Temple, Maharashtra, India",
+    "tags": [
+      "religious",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Tuljapur",
+    "city_id": "MH-tuljapur",
+    "country": "India"
+  },
+  {
+    "id": "MH019",
+    "name": "Khandoba Temple",
+    "category": "religious",
+    "area": "Jejuri, Pune",
+    "description": "Khandoba Temple is a popular tourist destination in Maharashtra, known for its religious appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Khandoba Temple, Maharashtra, India",
+    "tags": [
+      "religious",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Jejuri",
+    "city_id": "MH-jejuri",
+    "country": "India"
+  },
+  {
+    "id": "MH020",
+    "name": "Shirdi Sai Baba Temple",
+    "category": "religious",
+    "area": "Ahmednagar",
+    "description": "Shirdi Sai Baba Temple is a popular tourist destination in Maharashtra, known for its religious appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Shirdi Sai Baba Temple, Maharashtra, India",
+    "tags": [
+      "religious",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Shirdi",
+    "city_id": "MH-shirdi",
+    "country": "India"
+  },
+  {
+    "id": "MH021",
+    "name": "Hazur Sahib Gurudwara",
+    "category": "religious",
+    "area": "Nanded",
+    "description": "Hazur Sahib Gurudwara is a popular tourist destination in Maharashtra, known for its religious appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Hazur Sahib Gurudwara, Maharashtra, India",
+    "tags": [
+      "religious",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Nanded",
+    "city_id": "MH-nanded",
+    "country": "India"
+  },
+  {
+    "id": "MH022",
+    "name": "Aundha Nagnath Temple",
+    "category": "religious",
+    "area": "Hingoli",
+    "description": "Aundha Nagnath Temple is a popular tourist destination in Maharashtra, known for its religious appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Aundha Nagnath Temple, Maharashtra, India",
+    "tags": [
+      "religious",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Aundha Nagnath",
+    "city_id": "MH-aundha-nagnath",
+    "country": "India"
+  },
+  {
+    "id": "MH023",
+    "name": "Parli Vaijnath Temple",
+    "category": "religious",
+    "area": "Beed",
+    "description": "Parli Vaijnath Temple is a popular tourist destination in Maharashtra, known for its religious appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Parli Vaijnath Temple, Maharashtra, India",
+    "tags": [
+      "religious",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Parli",
+    "city_id": "MH-parli",
+    "country": "India"
+  },
+  {
+    "id": "MH024",
+    "name": "Raja Dinkar Kelkar Museum",
+    "category": "museum",
+    "area": "Pune",
+    "description": "Raja Dinkar Kelkar Museum is a popular tourist destination in Maharashtra, known for its museum appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Raja Dinkar Kelkar Museum, Maharashtra, India",
+    "tags": [
+      "museum",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Pune",
+    "city_id": "MH-pune",
+    "country": "India"
+  },
+  {
+    "id": "MH025",
+    "name": "Mahatma Phule Museum",
+    "category": "museum",
+    "area": "Pune",
+    "description": "Mahatma Phule Museum is a popular tourist destination in Maharashtra, known for its museum appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Mahatma Phule Museum, Maharashtra, India",
+    "tags": [
+      "museum",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Pune",
+    "city_id": "MH-pune",
+    "country": "India"
+  },
+  {
+    "id": "MH026",
+    "name": "Raman Science Centre",
+    "category": "museum",
+    "area": "Nagpur",
+    "description": "Raman Science Centre is a popular tourist destination in Maharashtra, known for its museum appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Raman Science Centre, Maharashtra, India",
+    "tags": [
+      "museum",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Nagpur",
+    "city_id": "MH-nagpur",
+    "country": "India"
+  },
+  {
+    "id": "MH027",
+    "name": "Central Museum",
+    "category": "museum",
+    "area": "Nagpur",
+    "description": "Central Museum is a popular tourist destination in Maharashtra, known for its museum appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Central Museum, Maharashtra, India",
+    "tags": [
+      "museum",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Nagpur",
+    "city_id": "MH-nagpur",
+    "country": "India"
+  },
+  {
+    "id": "MH028",
+    "name": "Kaas Plateau",
+    "category": "nature",
+    "area": "Satara",
+    "description": "Kaas Plateau is a popular tourist destination in Maharashtra, known for its nature appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Kaas Plateau, Maharashtra, India",
+    "tags": [
+      "nature",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Kaas",
+    "city_id": "MH-kaas",
+    "country": "India"
+  },
+  {
+    "id": "MH029",
+    "name": "Tadoba-Andhari Tiger Reserve",
+    "category": "wildlife",
+    "area": "Chandrapur",
+    "description": "Tadoba-Andhari Tiger Reserve is a popular tourist destination in Maharashtra, known for its wildlife appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Tadoba-Andhari Tiger Reserve, Maharashtra, India",
+    "tags": [
+      "wildlife",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Tadoba",
+    "city_id": "MH-tadoba",
+    "country": "India"
+  },
+  {
+    "id": "MH030",
+    "name": "Navegaon National Park",
+    "category": "wildlife",
+    "area": "Gondia",
+    "description": "Navegaon National Park is a popular tourist destination in Maharashtra, known for its wildlife appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Navegaon National Park, Maharashtra, India",
+    "tags": [
+      "wildlife",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Navegaon",
+    "city_id": "MH-navegaon",
+    "country": "India"
+  },
+  {
+    "id": "MH031",
+    "name": "Pench National Park",
+    "category": "wildlife",
+    "area": "Nagpur",
+    "description": "Pench National Park is a popular tourist destination in Maharashtra, known for its wildlife appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Pench National Park, Maharashtra, India",
+    "tags": [
+      "wildlife",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Ramtek",
+    "city_id": "MH-ramtek",
+    "country": "India"
+  },
+  {
+    "id": "MH032",
+    "name": "Melghat Tiger Reserve",
+    "category": "wildlife",
+    "area": "Amravati",
+    "description": "Melghat Tiger Reserve is a popular tourist destination in Maharashtra, known for its wildlife appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Melghat Tiger Reserve, Maharashtra, India",
+    "tags": [
+      "wildlife",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Chikhaldara",
+    "city_id": "MH-chikhaldara",
+    "country": "India"
+  },
+  {
+    "id": "MH033",
+    "name": "Chandoli National Park",
+    "category": "wildlife",
+    "area": "Sangli/Kolhapur",
+    "description": "Chandoli National Park is a popular tourist destination in Maharashtra, known for its wildlife appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Chandoli National Park, Maharashtra, India",
+    "tags": [
+      "wildlife",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Chandoli",
+    "city_id": "MH-chandoli",
+    "country": "India"
+  },
+  {
+    "id": "MH034",
+    "name": "Ganpatipule Beach",
+    "category": "beach",
+    "area": "Ratnagiri",
+    "description": "Ganpatipule Beach is a popular tourist destination in Maharashtra, known for its beach appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Ganpatipule Beach, Maharashtra, India",
+    "tags": [
+      "beach",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Ganpatipule",
+    "city_id": "MH-ganpatipule",
+    "country": "India"
+  },
+  {
+    "id": "MH035",
+    "name": "Tarkarli Beach",
+    "category": "beach",
+    "area": "Sindhudurg",
+    "description": "Tarkarli Beach is a popular tourist destination in Maharashtra, known for its beach appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Tarkarli Beach, Maharashtra, India",
+    "tags": [
+      "beach",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Tarkarli",
+    "city_id": "MH-tarkarli",
+    "country": "India"
+  },
+  {
+    "id": "MH036",
+    "name": "Alibaug Beach",
+    "category": "beach",
+    "area": "Raigad",
+    "description": "Alibaug Beach is a popular tourist destination in Maharashtra, known for its beach appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Alibaug Beach, Maharashtra, India",
+    "tags": [
+      "beach",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Alibaug",
+    "city_id": "MH-alibaug",
+    "country": "India"
+  },
+  {
+    "id": "MH037",
+    "name": "Kashid Beach",
+    "category": "beach",
+    "area": "Raigad",
+    "description": "Kashid Beach is a popular tourist destination in Maharashtra, known for its beach appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Kashid Beach, Maharashtra, India",
+    "tags": [
+      "beach",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Kashid",
+    "city_id": "MH-kashid",
+    "country": "India"
+  },
+  {
+    "id": "MH038",
+    "name": "Bhandardara",
+    "category": "nature",
+    "area": "Ahmednagar",
+    "description": "Bhandardara is a popular tourist destination in Maharashtra, known for its nature appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Bhandardara, Maharashtra, India",
+    "tags": [
+      "nature",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Bhandardara",
+    "city_id": "MH-bhandardara",
+    "country": "India"
+  },
+  {
+    "id": "MH039",
+    "name": "Mahabaleshwar",
+    "category": "hill station",
+    "area": "Satara",
+    "description": "Mahabaleshwar is a popular tourist destination in Maharashtra, known for its hill station appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Mahabaleshwar, Maharashtra, India",
+    "tags": [
+      "hill station",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Mahabaleshwar",
+    "city_id": "MH-mahabaleshwar",
+    "country": "India"
+  },
+  {
+    "id": "MH040",
+    "name": "Matheran",
+    "category": "hill station",
+    "area": "Raigad",
+    "description": "Matheran is a popular tourist destination in Maharashtra, known for its hill station appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Matheran, Maharashtra, India",
+    "tags": [
+      "hill station",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Matheran",
+    "city_id": "MH-matheran",
+    "country": "India"
+  },
+  {
+    "id": "MH041",
+    "name": "Lonavala",
+    "category": "hill station",
+    "area": "Pune",
+    "description": "Lonavala is a popular tourist destination in Maharashtra, known for its hill station appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Lonavala, Maharashtra, India",
+    "tags": [
+      "hill station",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Lonavala",
+    "city_id": "MH-lonavala",
+    "country": "India"
+  },
+  {
+    "id": "MH042",
+    "name": "Kalsubai Peak",
+    "category": "trekking",
+    "area": "Ahmednagar",
+    "description": "Kalsubai Peak is a popular tourist destination in Maharashtra, known for its trekking appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Kalsubai Peak, Maharashtra, India",
+    "tags": [
+      "trekking",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Bari",
+    "city_id": "MH-bari",
+    "country": "India"
+  },
+  {
+    "id": "MH043",
+    "name": "Pawna Lake",
+    "category": "nature",
+    "area": "Pune",
+    "description": "Pawna Lake is a popular tourist destination in Maharashtra, known for its nature appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Pawna Lake, Maharashtra, India",
+    "tags": [
+      "nature",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Pawna",
+    "city_id": "MH-pawna",
+    "country": "India"
+  },
+  {
+    "id": "MH044",
+    "name": "Igatpuri",
+    "category": "hill station",
+    "area": "Nashik",
+    "description": "Igatpuri is a popular tourist destination in Maharashtra, known for its hill station appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Igatpuri, Maharashtra, India",
+    "tags": [
+      "hill station",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Igatpuri",
+    "city_id": "MH-igatpuri",
+    "country": "India"
+  },
+  {
+    "id": "MH045",
+    "name": "Karnala Bird Sanctuary",
+    "category": "wildlife",
+    "area": "Raigad",
+    "description": "Karnala Bird Sanctuary is a popular tourist destination in Maharashtra, known for its wildlife appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Karnala Bird Sanctuary, Maharashtra, India",
+    "tags": [
+      "wildlife",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Karnala",
+    "city_id": "MH-karnala",
+    "country": "India"
+  },
+  {
+    "id": "MH046",
+    "name": "Nandur Madhameshwar Bird Sanctuary",
+    "category": "wildlife",
+    "area": "Nashik",
+    "description": "Nandur Madhameshwar Bird Sanctuary is a popular tourist destination in Maharashtra, known for its wildlife appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Nandur Madhameshwar Bird Sanctuary, Maharashtra, India",
+    "tags": [
+      "wildlife",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Nandur Madhameshwar",
+    "city_id": "MH-nandur-madhameshwar",
+    "country": "India"
+  },
+  {
+    "id": "MH047",
+    "name": "Bhigwan Bird Sanctuary",
+    "category": "wildlife",
+    "area": "Pune",
+    "description": "Bhigwan Bird Sanctuary is a popular tourist destination in Maharashtra, known for its wildlife appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Bhigwan Bird Sanctuary, Maharashtra, India",
+    "tags": [
+      "wildlife",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Bhigwan",
+    "city_id": "MH-bhigwan",
+    "country": "India"
+  },
+  {
+    "id": "MH048",
+    "name": "Koyna Wildlife Sanctuary",
+    "category": "wildlife",
+    "area": "Satara",
+    "description": "Koyna Wildlife Sanctuary is a popular tourist destination in Maharashtra, known for its wildlife appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Koyna Wildlife Sanctuary, Maharashtra, India",
+    "tags": [
+      "wildlife",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Koyna",
+    "city_id": "MH-koyna",
+    "country": "India"
+  },
+  {
+    "id": "MH049",
+    "name": "Pandharpur Vitthal Temple",
+    "category": "religious",
+    "area": "Solapur",
+    "description": "Pandharpur Vitthal Temple is one of Maharashtra’s most important pilgrimage destinations, dedicated to Lord Vitthal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Pandharpur Vitthal Temple, Pandharpur, Maharashtra, India",
+    "tags": [
+      "religious",
+      "Maharashtra",
+      "Pandharpur",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Pandharpur",
+    "city_id": "MH-pandharpur",
+    "country": "India"
+  },
+  {
+    "id": "MH050",
+    "name": "Akkalkot Swami Samarth Temple",
+    "category": "religious",
+    "area": "Solapur",
+    "description": "Akkalkot Swami Samarth Temple is a major spiritual destination associated with Swami Samarth.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Akkalkot Swami Samarth Temple, Solapur, Maharashtra, India",
+    "tags": [
+      "religious",
+      "Maharashtra",
+      "Solapur",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Akkalkot",
+    "city_id": "MH-akkalkot",
+    "country": "India"
+  },
+  {
+    "id": "MH051",
+    "name": "Harihar Fort",
+    "category": "fort",
+    "area": "Nashik",
+    "description": "Harihar Fort is a popular tourist destination in Maharashtra, known for its fort appeal.",
+    "best_for": [
+      "sightseeing",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Varies; check locally",
+    "opening_hours": "Varies by location",
+    "visitor_notes": "Check local conditions, access rules, and weather before visiting.",
+    "map_search": "Harihar Fort, Maharashtra, India",
+    "tags": [
+      "fort",
+      "Maharashtra",
+      "India"
+    ],
+    "state": "Maharashtra",
+    "state_id": "MH",
+    "city": "Nirgudpada",
+    "city_id": "MH-nirgudpada",
+    "country": "India"
+  }
+]
