@@ -29,7 +29,9 @@ import {
   Landmark,
   Car,
   Footprints,
-  Bike,
+  Plane,
+  Calendar,
+  Crosshair,
   X,
   ArrowRight,
   Sparkles,
@@ -43,6 +45,125 @@ import {
   ChevronUp,
   ArrowUpDown
 } from 'lucide-react';
+
+export type MapTransportMode = 'DRIVE' | 'TRANSIT' | 'WALK' | 'FLIGHT';
+
+export interface IndianAirport {
+  iata: string;
+  name: string;
+  city: string;
+  state: string;
+  lat: number;
+  lng: number;
+  aliases: string[];
+}
+
+export const INDIAN_AIRPORTS: IndianAirport[] = [
+  { iata: 'DEL', name: 'Indira Gandhi International Airport', city: 'Delhi', state: 'Delhi', lat: 28.5562, lng: 77.1000, aliases: ['new delhi', 'ncr', 'gurugram', 'noida'] },
+  { iata: 'BOM', name: 'Chhatrapati Shivaji Maharaj International Airport', city: 'Mumbai', state: 'Maharashtra', lat: 19.0896, lng: 72.8656, aliases: ['bombay', 'navi mumbai', 'thane'] },
+  { iata: 'BLR', name: 'Kempegowda International Airport', city: 'Bengaluru', state: 'Karnataka', lat: 13.1986, lng: 77.7066, aliases: ['bangalore'] },
+  { iata: 'MAA', name: 'Chennai International Airport', city: 'Chennai', state: 'Tamil Nadu', lat: 12.9941, lng: 80.1709, aliases: ['madras', 'meenambakkam'] },
+  { iata: 'CCU', name: 'Netaji Subhash Chandra Bose International Airport', city: 'Kolkata', state: 'West Bengal', lat: 22.6547, lng: 88.4467, aliases: ['calcutta', 'dum dum'] },
+  { iata: 'HYD', name: 'Rajiv Gandhi International Airport', city: 'Hyderabad', state: 'Telangana', lat: 17.2403, lng: 78.4294, aliases: ['shamshabad', 'secunderabad'] },
+  { iata: 'COK', name: 'Cochin International Airport', city: 'Kochi', state: 'Kerala', lat: 10.1518, lng: 76.3930, aliases: ['cochin', 'nedumbassery', 'ernakulam'] },
+  { iata: 'GOI', name: 'Dabolim Airport', city: 'Goa', state: 'Goa', lat: 15.3808, lng: 73.8314, aliases: ['south goa', 'vasco'] },
+  { iata: 'GOX', name: 'Manohar International Airport (Mopa)', city: 'Goa', state: 'Goa', lat: 15.7667, lng: 73.8667, aliases: ['north goa', 'mopa'] },
+  { iata: 'PNQ', name: 'Pune Airport', city: 'Pune', state: 'Maharashtra', lat: 18.5822, lng: 73.9197, aliases: ['lohegaon', 'poona'] },
+  { iata: 'JAI', name: 'Jaipur International Airport', city: 'Jaipur', state: 'Rajasthan', lat: 26.8242, lng: 75.8122, aliases: ['sanganer', 'pink city'] },
+  { iata: 'VNS', name: 'Lal Bahadur Shastri International Airport', city: 'Varanasi', state: 'Uttar Pradesh', lat: 25.4524, lng: 82.8593, aliases: ['banaras', 'kashi', 'babatpur'] },
+  { iata: 'AMD', name: 'Sardar Vallabhbhai Patel International Airport', city: 'Ahmedabad', state: 'Gujarat', lat: 23.0726, lng: 72.6347, aliases: ['ahmedabad', 'gandhinagar'] },
+  { iata: 'ATQ', name: 'Sri Guru Ram Dass Jee International Airport', city: 'Amritsar', state: 'Punjab', lat: 31.7096, lng: 74.7973, aliases: ['rajasansi', 'golden temple'] },
+  { iata: 'SXR', name: 'Sheikh ul-Alam International Airport', city: 'Srinagar', state: 'Jammu & Kashmir', lat: 33.9871, lng: 74.7744, aliases: ['kashmir', 'dal lake'] },
+  { iata: 'UDR', name: 'Maharana Pratap Airport', city: 'Udaipur', state: 'Rajasthan', lat: 24.6178, lng: 73.8961, aliases: ['dabok', 'lake city'] },
+  { iata: 'JDH', name: 'Jodhpur Airport', city: 'Jodhpur', state: 'Rajasthan', lat: 26.2514, lng: 73.0489, aliases: ['blue city'] },
+  { iata: 'IXU', name: 'Chhatrapati Sambhaji Nagar Airport (Aurangabad)', city: 'Chhatrapati Sambhajinagar', state: 'Maharashtra', lat: 19.8631, lng: 75.3981, aliases: ['aurangabad', 'ajanta', 'ellora', 'daulatabad'] },
+  { iata: 'HJR', name: 'Khajuraho Airport', city: 'Khajuraho', state: 'Madhya Pradesh', lat: 24.8172, lng: 79.9189, aliases: ['khajuraho temples', 'chhatarpur'] },
+  { iata: 'AGR', name: 'Agra Airport (Kheria)', city: 'Agra', state: 'Uttar Pradesh', lat: 27.1558, lng: 77.9609, aliases: ['taj mahal', 'kheria', 'fatehpur sikri'] },
+  { iata: 'GAU', name: 'Lokpriya Gopinath Bordoloi International Airport', city: 'Guwahati', state: 'Assam', lat: 26.1061, lng: 91.5859, aliases: ['borjhar', 'kamakhya', 'assam'] },
+  { iata: 'BBI', name: 'Biju Patnaik International Airport', city: 'Bhubaneswar', state: 'Odisha', lat: 20.2444, lng: 85.8178, aliases: ['puri', 'konark', 'cuttack'] },
+  { iata: 'PAT', name: 'Jay Prakash Narayan Airport', city: 'Patna', state: 'Bihar', lat: 25.5913, lng: 85.0880, aliases: ['nalanda', 'bodh gaya'] },
+  { iata: 'LKO', name: 'Chaudhary Charan Singh International Airport', city: 'Lucknow', state: 'Uttar Pradesh', lat: 26.7606, lng: 80.8893, aliases: ['amausi', 'ayodhya hub'] },
+  { iata: 'IXC', name: 'Shaheed Bhagat Singh International Airport', city: 'Chandigarh', state: 'Chandigarh', lat: 30.6735, lng: 76.7885, aliases: ['mohali', 'panchkula'] },
+  { iata: 'TRV', name: 'Thiruvananthapuram International Airport', city: 'Thiruvananthapuram', state: 'Kerala', lat: 8.4821, lng: 76.9200, aliases: ['trivandrum', 'kovalam'] },
+  { iata: 'IXB', name: 'Bagdogra International Airport', city: 'Siliguri', state: 'West Bengal', lat: 26.6812, lng: 88.3286, aliases: ['darjeeling', 'gangtok', 'sikkim'] },
+  { iata: 'NAG', name: 'Dr. Babasaheb Ambedkar International Airport', city: 'Nagpur', state: 'Maharashtra', lat: 21.0922, lng: 79.0472, aliases: ['sonegaon', 'orange city'] },
+  { iata: 'IXR', name: 'Birsa Munda Airport', city: 'Ranchi', state: 'Jharkhand', lat: 23.3143, lng: 85.3217, aliases: ['ranchi'] },
+  { iata: 'BDQ', name: 'Vadodara Airport', city: 'Vadodara', state: 'Gujarat', lat: 22.3325, lng: 73.2264, aliases: ['baroda', 'statue of unity'] },
+  { iata: 'VDY', name: 'Jindal Vijayanagar Airport', city: 'Toranagallu', state: 'Karnataka', lat: 15.1683, lng: 76.6342, aliases: ['hampi', 'ballari', 'bellary'] },
+  { iata: 'HBX', name: 'Hubballi Airport', city: 'Hubballi', state: 'Karnataka', lat: 15.3617, lng: 75.0849, aliases: ['hubli', 'dharwad', 'hampi'] },
+  { iata: 'IXM', name: 'Madurai Airport', city: 'Madurai', state: 'Tamil Nadu', lat: 9.8345, lng: 78.0934, aliases: ['meenakshi amman temple'] },
+  { iata: 'TIR', name: 'Tirupati Airport', city: 'Tirupati', state: 'Andhra Pradesh', lat: 13.6325, lng: 79.5433, aliases: ['renigunta', 'tirumala'] },
+  { iata: 'DED', name: 'Jolly Grant Airport', city: 'Dehradun', state: 'Uttarakhand', lat: 30.1897, lng: 78.1803, aliases: ['rishikesh', 'haridwar'] },
+  { iata: 'IXJ', name: 'Jammu Airport', city: 'Jammu', state: 'Jammu & Kashmir', lat: 32.6891, lng: 74.8374, aliases: ['satwari', 'vaishno devi'] },
+  { iata: 'RPR', name: 'Swami Vivekananda Airport', city: 'Raipur', state: 'Chhattisgarh', lat: 21.1804, lng: 81.7388, aliases: ['mana'] },
+  { iata: 'IDR', name: 'Devi Ahilya Bai Holkar Airport', city: 'Indore', state: 'Madhya Pradesh', lat: 22.7217, lng: 75.8011, aliases: ['ujgain gateway', 'indore'] },
+  { iata: 'BHO', name: 'Raja Bhoj Airport', city: 'Bhopal', state: 'Madhya Pradesh', lat: 23.2875, lng: 77.3378, aliases: ['sanchi gateway', 'bhopal'] },
+];
+
+function haversineDistanceKm(lat1: number, lon1: number, lat2: number, lon2: number): number {
+  const R = 6371;
+  const dLat = (lat2 - lat1) * (Math.PI / 180);
+  const dLon = (lon2 - lon1) * (Math.PI / 180);
+  const a =
+    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+    Math.cos(lat1 * (Math.PI / 180)) * Math.cos(lat2 * (Math.PI / 180)) * Math.sin(dLon / 2) * Math.sin(dLon / 2);
+  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+  return Math.round(R * c);
+}
+
+function findNearestAirport(lat: number, lng: number): { airport: IndianAirport; distanceKm: number } {
+  let nearest = INDIAN_AIRPORTS[0];
+  let minDistance = Infinity;
+  for (const ap of INDIAN_AIRPORTS) {
+    const d = haversineDistanceKm(lat, lng, ap.lat, ap.lng);
+    if (d < minDistance) {
+      minDistance = d;
+      nearest = ap;
+    }
+  }
+  return { airport: nearest, distanceKm: minDistance };
+}
+
+function searchAirports(query: string): IndianAirport[] {
+  const q = (query || '').trim().toLowerCase();
+  if (!q) return [];
+  return INDIAN_AIRPORTS.filter((ap) => {
+    if (ap.iata.toLowerCase() === q) return true;
+    if (ap.city.toLowerCase().includes(q)) return true;
+    if (ap.name.toLowerCase().includes(q)) return true;
+    if (ap.state.toLowerCase().includes(q)) return true;
+    if (ap.aliases.some((al) => al.includes(q))) return true;
+    return false;
+  });
+}
+
+function generateFlightArc(p1: [number, number], p2: [number, number], numPoints = 60): [number, number][] {
+  const [lat1, lng1] = p1;
+  const [lat2, lng2] = p2;
+  const midLat = (lat1 + lat2) / 2;
+  const midLng = (lng1 + lng2) / 2;
+  const dLat = lat2 - lat1;
+  const dLng = lng2 - lng1;
+  const dist = Math.sqrt(dLat * dLat + dLng * dLng);
+  const curveFactor = Math.min(Math.max(dist * 0.16, 1.2), 6.5);
+  const normalLat = -dLng / (dist || 1);
+  const normalLng = dLat / (dist || 1);
+  const ctrlLat = midLat + normalLat * curveFactor;
+  const ctrlLng = midLng + normalLng * curveFactor;
+
+  const points: [number, number][] = [];
+  for (let i = 0; i <= numPoints; i++) {
+    const t = i / numPoints;
+    const lat = (1 - t) * (1 - t) * lat1 + 2 * (1 - t) * t * ctrlLat + t * t * lat2;
+    const lng = (1 - t) * (1 - t) * lng1 + 2 * (1 - t) * t * ctrlLng + t * t * lng2;
+    points.push([Number(lat.toFixed(5)), Number(lng.toFixed(5))]);
+  }
+  return points;
+}
+
+function getGoogleFlightsUrl(originQuery: string, destQuery: string, dateStr: string): string {
+  return `https://www.google.com/travel/flights?q=Flights+to+${encodeURIComponent(destQuery)}+from+${encodeURIComponent(originQuery)}+on+${encodeURIComponent(dateStr)}`;
+}
 
 interface InteractiveMapProps {
   onSelectPlace: (id: string) => void;
@@ -76,6 +197,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
   const routePolylineRef = useRef<L.LayerGroup | L.Polyline | null>(null);
   const routeMarkersRef = useRef<L.LayerGroup | null>(null);
   const searchHighlightRef = useRef<L.LayerGroup | null>(null);
+  const userLocationMarkerRef = useRef<L.Marker | null>(null);
 
   // Autocomplete Search States (All India Cities, Stations, Heritage, Tourist Sights)
   const [searchSuggestions, setSearchSuggestions] = useState<LocationSuggestion[]>([]);
@@ -155,11 +277,65 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
   const [routeDestination, setRouteDestination] = useState<string>(initialDestination || 'gateway-of-india');
   const [routeDestName, setRouteDestName] = useState<string>('Gateway of India');
   const [routeDestCoords, setRouteDestCoords] = useState<{ lat: number; lng: number } | null>({ lat: 18.922, lng: 72.8347 });
-  const [selectedMode, setSelectedMode] = useState<TransportMode>('DRIVE');
+  const [selectedMode, setSelectedMode] = useState<MapTransportMode>('DRIVE');
   const [activeRoute, setActiveRoute] = useState<RouteResponse | null>(null);
   const [isCalculatingRoute, setIsCalculatingRoute] = useState(false);
   const [routeError, setRouteError] = useState<string | null>(null);
   const [isRoutePanelMinimized, setIsRoutePanelMinimized] = useState(false);
+  const [isLocating, setIsLocating] = useState(false);
+  const [locationError, setLocationError] = useState<string | null>(null);
+  const [flightDate, setFlightDate] = useState<string>(() => {
+    const d = new Date();
+    d.setDate(d.getDate() + 1);
+    return d.toISOString().split('T')[0];
+  });
+
+  // Dynamically resolve flight endpoints and distances
+  const resolvedFlightInfo = useMemo(() => {
+    const origLat = routeOriginCoords?.lat;
+    const origLng = routeOriginCoords?.lng;
+    const destLat = routeDestCoords?.lat;
+    const destLng = routeDestCoords?.lng;
+
+    let origAirport: IndianAirport | null = null;
+    let destAirport: IndianAirport | null = null;
+    let origDistToAirport = 0;
+    let destDistToAirport = 0;
+
+    if (origLat !== undefined && origLng !== undefined) {
+      const res = findNearestAirport(origLat, origLng);
+      origAirport = res.airport;
+      origDistToAirport = res.distanceKm;
+    } else if (routeOriginName || routeOrigin) {
+      const match = searchAirports(routeOriginName || routeOrigin);
+      if (match.length > 0) origAirport = match[0];
+    }
+
+    if (destLat !== undefined && destLng !== undefined) {
+      const res = findNearestAirport(destLat, destLng);
+      destAirport = res.airport;
+      destDistToAirport = res.distanceKm;
+    } else if (routeDestName || routeDestination) {
+      const match = searchAirports(routeDestName || routeDestination);
+      if (match.length > 0) destAirport = match[0];
+    }
+
+    let distanceKm = 0;
+    let estDurationMinutes = 0;
+    if (origAirport && destAirport) {
+      distanceKm = haversineDistanceKm(origAirport.lat, origAirport.lng, destAirport.lat, destAirport.lng);
+      estDurationMinutes = Math.round((distanceKm / 750) * 60 + 35);
+    }
+
+    return {
+      origAirport,
+      destAirport,
+      origDistToAirport,
+      destDistToAirport,
+      distanceKm,
+      estDurationMinutes,
+    };
+  }, [routeOriginCoords, routeDestCoords, routeOriginName, routeOrigin, routeDestName, routeDestination]);
 
   const handleSwapPoints = () => {
     const tempOrigin = routeOrigin;
@@ -597,11 +773,80 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
     onView3DPlace,
   ]);
 
+  // Browser Geolocation: Use My Location
+  const handleUseMyLocation = () => {
+    if (typeof navigator === 'undefined' || !navigator.geolocation) {
+      setLocationError('Geolocation is not supported by your browser.');
+      return;
+    }
+    setIsLocating(true);
+    setLocationError(null);
+
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        setIsLocating(false);
+        const { latitude, longitude, accuracy } = pos.coords;
+        const lat = Number(latitude.toFixed(5));
+        const lng = Number(longitude.toFixed(5));
+
+        setRouteOrigin('CURRENT_LOCATION');
+        setRouteOriginName(`My Current Location (${lat.toFixed(3)}, ${lng.toFixed(3)})`);
+        setRouteOriginCoords({ lat, lng });
+
+        const map = mapInstanceRef.current;
+        if (map) {
+          if (userLocationMarkerRef.current) {
+            userLocationMarkerRef.current.remove();
+          }
+
+          const userIcon = L.divIcon({
+            className: 'user-current-loc-pin',
+            html: `
+              <div style="position:relative; width:28px; height:28px; display:flex; align-items:center; justify-content:center;">
+                <div style="position:absolute; width:100%; height:100%; border-radius:50%; background:rgba(2, 132, 199, 0.35); animation:ping 2s cubic-bezier(0,0,0.2,1) infinite;"></div>
+                <div style="width:14px; height:14px; border-radius:50%; background:#0284c7; border:2.5px solid white; box-shadow:0 0 10px rgba(2, 132, 199, 0.9);"></div>
+              </div>
+            `,
+            iconSize: [28, 28],
+            iconAnchor: [14, 14],
+          });
+
+          userLocationMarkerRef.current = L.marker([lat, lng], { icon: userIcon })
+            .bindTooltip(`📍 <b>Your Detected Location</b><br/>Lat: ${lat}, Lng: ${lng}<br/>Accuracy: ±${Math.round(accuracy)}m`, { direction: 'top' })
+            .addTo(map);
+
+          map.setView([lat, lng], 13);
+        }
+      },
+      (err) => {
+        setIsLocating(false);
+        switch (err.code) {
+          case 1:
+            setLocationError('Location permission denied. Please allow location access in your browser or enter origin manually.');
+            break;
+          case 2:
+            setLocationError('Location unavailable. Please check your network/GPS connection or enter origin manually.');
+            break;
+          case 3:
+            setLocationError('Location request timed out. Please try again or enter origin manually.');
+            break;
+          default:
+            setLocationError('Unable to detect current location. Please enter origin manually.');
+        }
+      },
+      {
+        enableHighAccuracy: true,
+        timeout: 10000,
+        maximumAge: 60000,
+      }
+    );
+  };
+
   // 5. In-Map Real Routing Execution & Autocomplete Handlers
   const handleCalculateRoute = async (
     customOrigin?: { id: string; name: string; lat?: number; lng?: number },
     customDest?: { id: string; name: string; lat?: number; lng?: number },
-    customMode?: TransportMode
+    customMode?: MapTransportMode
   ) => {
     const originId = customOrigin ? customOrigin.id : routeOrigin;
     const destId = customDest ? customDest.id : routeDestination;
@@ -640,6 +885,167 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
       return;
     }
 
+    // Specialized Flight Routing Path
+    if (mode === 'FLIGHT') {
+      setIsRoutingOpen(true);
+      setIsRoutePanelMinimized(false);
+      setIsCalculatingRoute(true);
+      setRouteError(null);
+
+      try {
+        const map = mapInstanceRef.current;
+        if (!map) return;
+
+        if (routePolylineRef.current) {
+          routePolylineRef.current.remove();
+          routePolylineRef.current = null;
+        }
+        if (routeMarkersRef.current) {
+          routeMarkersRef.current.clearLayers();
+        }
+
+        // Resolve Origin Airport
+        let origAirport: IndianAirport | null = null;
+        if (origLat !== undefined && origLng !== undefined) {
+          origAirport = findNearestAirport(origLat, origLng).airport;
+        } else {
+          const match = searchAirports(originName || originId);
+          if (match.length > 0) origAirport = match[0];
+        }
+
+        // Resolve Destination Airport
+        let destAirport: IndianAirport | null = null;
+        if (destLat !== undefined && destLng !== undefined) {
+          destAirport = findNearestAirport(destLat, destLng).airport;
+        } else {
+          const match = searchAirports(destName || destId);
+          if (match.length > 0) destAirport = match[0];
+        }
+
+        if (!origAirport || !destAirport) {
+          setRouteError('Could not resolve Indian commercial airports for selected points. Please choose recognized Indian cities or airports.');
+          setIsCalculatingRoute(false);
+          return;
+        }
+
+        if (origAirport.iata === destAirport.iata) {
+          setRouteError(`Both points resolve to ${origAirport.name} (${origAirport.iata}). Please choose a different destination airport or city.`);
+          setIsCalculatingRoute(false);
+          return;
+        }
+
+        const polyCoords = generateFlightArc([origAirport.lat, origAirport.lng], [destAirport.lat, destAirport.lng], 60);
+
+        const routeGroup = L.layerGroup();
+
+        // Layer 1: Soft Cyan Glow
+        L.polyline(polyCoords, {
+          color: '#38bdf8',
+          weight: 7,
+          opacity: 0.35,
+          lineCap: 'round',
+        }).addTo(routeGroup);
+
+        // Layer 2: Dashed Deep Sky-Blue Flight Corridor Line
+        L.polyline(polyCoords, {
+          color: '#0284c7',
+          weight: 3.5,
+          opacity: 0.95,
+          dashArray: '8, 8',
+          lineCap: 'round',
+        }).addTo(routeGroup);
+
+        routeGroup.addTo(map);
+        routePolylineRef.current = routeGroup;
+
+        // Airport Departure & Arrival Markers
+        const origIcon = L.divIcon({
+          className: 'flight-orig-pin',
+          html: `<div style="background:#0284c7; color:white; padding:4px 8px; border-radius:12px; display:flex; align-items:center; gap:4px; font-weight:800; font-size:11px; border:2px solid white; box-shadow:0 3px 12px rgba(2,132,199,0.4); white-space:nowrap; cursor:pointer;">
+            <span>🛫</span> <span>${origAirport.iata}</span>
+          </div>`,
+          iconSize: [64, 26],
+          iconAnchor: [32, 13],
+        });
+
+        const destIcon = L.divIcon({
+          className: 'flight-dest-pin',
+          html: `<div style="background:#0369a1; color:white; padding:4px 8px; border-radius:12px; display:flex; align-items:center; gap:4px; font-weight:800; font-size:11px; border:2px solid white; box-shadow:0 3px 12px rgba(3,105,161,0.4); white-space:nowrap; cursor:pointer;">
+            <span>🛬</span> <span>${destAirport.iata}</span>
+          </div>`,
+          iconSize: [64, 26],
+          iconAnchor: [32, 13],
+        });
+
+        if (routeMarkersRef.current) {
+          L.marker([origAirport.lat, origAirport.lng], { icon: origIcon })
+            .bindTooltip(`<b>Origin Airport:</b> ${origAirport.name} (${origAirport.iata})<br/>${origAirport.city}, ${origAirport.state}`, { direction: 'top' })
+            .addTo(routeMarkersRef.current);
+
+          L.marker([destAirport.lat, destAirport.lng], { icon: destIcon })
+            .bindTooltip(`<b>Destination Airport:</b> ${destAirport.name} (${destAirport.iata})<br/>${destAirport.city}, ${destAirport.state}`, { direction: 'top' })
+            .addTo(routeMarkersRef.current);
+
+          // Airplane orientation icon at midpoint along the arc
+          const midIdx = Math.floor(polyCoords.length / 2);
+          const midPt = polyCoords[midIdx];
+          const angleDeg = Math.atan2(destAirport.lat - origAirport.lat, destAirport.lng - origAirport.lng) * (180 / Math.PI);
+          const planeIcon = L.divIcon({
+            className: 'flight-mid-plane',
+            html: `<div style="transform: rotate(${angleDeg - 45}deg); font-size:18px; filter:drop-shadow(0 2px 4px rgba(0,0,0,0.3)); line-height:1;">✈️</div>`,
+            iconSize: [20, 20],
+            iconAnchor: [10, 10],
+          });
+          L.marker(midPt, { icon: planeIcon, interactive: false }).addTo(routeMarkersRef.current);
+        }
+
+        try {
+          const boundsPoly = L.polyline(polyCoords);
+          map.fitBounds(boundsPoly.getBounds(), { padding: [70, 70], maxZoom: 11 });
+        } catch (bErr) {
+          console.warn('[Flight] Bounds fit warning:', bErr);
+        }
+
+        const distKm = haversineDistanceKm(origAirport.lat, origAirport.lng, destAirport.lat, destAirport.lng);
+        const estMins = Math.round((distKm / 750) * 60 + 35);
+
+        setActiveRoute({
+          origin: {
+            id: `airport-${origAirport.iata.toLowerCase()}`,
+            name: `${origAirport.name} (${origAirport.iata})`,
+            latitude: origAirport.lat,
+            longitude: origAirport.lng,
+          },
+          destination: {
+            id: `airport-${destAirport.iata.toLowerCase()}`,
+            name: `${destAirport.name} (${destAirport.iata})`,
+            latitude: destAirport.lat,
+            longitude: destAirport.lng,
+          },
+          options: [
+            {
+              mode: 'FLIGHT' as any,
+              distance_km: distKm,
+              duration_minutes: estMins,
+              duration_formatted: `${Math.floor(estMins / 60)}h ${estMins % 60}m (approx direct)`,
+              fare: 0,
+              polyline: polyCoords,
+              steps_summary: [
+                `Board at ${origAirport.name} (${origAirport.iata}), ${origAirport.city}`,
+                `Aviation corridor between ${origAirport.city} and ${destAirport.city} (${distKm} km geodesic distance)`,
+                `Touchdown at ${destAirport.name} (${destAirport.iata}), ${destAirport.city}`,
+              ],
+            } as any,
+          ],
+        });
+      } catch (fErr: any) {
+        setRouteError('Unable to generate flight corridor. Please check selected airports.');
+      } finally {
+        setIsCalculatingRoute(false);
+      }
+      return;
+    }
+
     setIsRoutingOpen(true);
     setIsRoutePanelMinimized(false);
     setIsCalculatingRoute(true);
@@ -649,7 +1055,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
       const res = await api.getRoutes({
         origin: originId,
         destination: destId,
-        mode: mode,
+        mode: mode as TransportMode,
         city: selectedCity,
         orig_lat: origLat,
         orig_lng: origLng,
@@ -1012,10 +1418,40 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
     }
     try {
       const results = await api.suggestLocations(val, 8);
-      setOriginSuggestions(results);
+      const airportMatches: LocationSuggestion[] = searchAirports(val).slice(0, 4).map((ap) => ({
+        id: `airport-${ap.iata.toLowerCase()}`,
+        name: `${ap.name} (${ap.iata})`,
+        subtitle: `${ap.city}, ${ap.state} • Airport Hub`,
+        type: 'place',
+        categoryType: 'place',
+        badge: 'Airport',
+        code: ap.iata,
+        city: ap.city,
+        state: ap.state,
+        lat: ap.lat,
+        lng: ap.lng,
+      }));
+      const combined = selectedMode === 'FLIGHT'
+        ? [...airportMatches, ...results.filter((r) => !airportMatches.some((a) => a.name.includes(r.name)))]
+        : [...results, ...airportMatches];
+      setOriginSuggestions(combined);
       setIsOriginSuggestOpen(true);
     } catch {
-      setOriginSuggestions([]);
+      const airportMatches: LocationSuggestion[] = searchAirports(val).slice(0, 6).map((ap) => ({
+        id: `airport-${ap.iata.toLowerCase()}`,
+        name: `${ap.name} (${ap.iata})`,
+        subtitle: `${ap.city}, ${ap.state} • Airport Hub`,
+        type: 'place',
+        categoryType: 'place',
+        badge: 'Airport',
+        code: ap.iata,
+        city: ap.city,
+        state: ap.state,
+        lat: ap.lat,
+        lng: ap.lng,
+      }));
+      setOriginSuggestions(airportMatches);
+      setIsOriginSuggestOpen(airportMatches.length > 0);
     }
   };
 
@@ -1043,10 +1479,40 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
     }
     try {
       const results = await api.suggestLocations(val, 8);
-      setDestSuggestions(results);
+      const airportMatches: LocationSuggestion[] = searchAirports(val).slice(0, 4).map((ap) => ({
+        id: `airport-${ap.iata.toLowerCase()}`,
+        name: `${ap.name} (${ap.iata})`,
+        subtitle: `${ap.city}, ${ap.state} • Airport Hub`,
+        type: 'place',
+        categoryType: 'place',
+        badge: 'Airport',
+        code: ap.iata,
+        city: ap.city,
+        state: ap.state,
+        lat: ap.lat,
+        lng: ap.lng,
+      }));
+      const combined = selectedMode === 'FLIGHT'
+        ? [...airportMatches, ...results.filter((r) => !airportMatches.some((a) => a.name.includes(r.name)))]
+        : [...results, ...airportMatches];
+      setDestSuggestions(combined);
       setIsDestSuggestOpen(true);
     } catch {
-      setDestSuggestions([]);
+      const airportMatches: LocationSuggestion[] = searchAirports(val).slice(0, 6).map((ap) => ({
+        id: `airport-${ap.iata.toLowerCase()}`,
+        name: `${ap.name} (${ap.iata})`,
+        subtitle: `${ap.city}, ${ap.state} • Airport Hub`,
+        type: 'place',
+        categoryType: 'place',
+        badge: 'Airport',
+        code: ap.iata,
+        city: ap.city,
+        state: ap.state,
+        lat: ap.lat,
+        lng: ap.lng,
+      }));
+      setDestSuggestions(airportMatches);
+      setIsDestSuggestOpen(airportMatches.length > 0);
     }
   };
 
@@ -1400,22 +1866,47 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
                       <label className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1">
                         <span>🚩</span> Origin (Point A)
                       </label>
-                      {(routeOrigin || routeOriginName) && (
+                      <div className="flex items-center gap-1.5">
                         <button
                           type="button"
-                          onClick={() => {
-                            setRouteOrigin('');
-                            setRouteOriginName('');
-                            setRouteOriginCoords(null);
-                            setOriginSuggestions([]);
-                            setIsOriginSuggestOpen(false);
-                          }}
-                          className="text-[10px] text-slate-400 hover:text-rose-600 font-semibold"
+                          onClick={handleUseMyLocation}
+                          disabled={isLocating}
+                          className="inline-flex items-center gap-1 text-[10px] font-bold text-sky-700 hover:text-sky-800 bg-sky-50 hover:bg-sky-100 px-2 py-0.5 rounded-lg border border-sky-200 transition disabled:opacity-50 touch-manipulation"
+                          title="Use Browser GPS Location"
                         >
-                          Clear
+                          <Crosshair className={`w-3 h-3 ${isLocating ? 'animate-spin text-sky-600' : 'text-sky-600'}`} />
+                          <span>{isLocating ? 'Locating...' : 'Use My Location'}</span>
                         </button>
-                      )}
+                        {(routeOrigin || routeOriginName) && (
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setRouteOrigin('');
+                              setRouteOriginName('');
+                              setRouteOriginCoords(null);
+                              setOriginSuggestions([]);
+                              setIsOriginSuggestOpen(false);
+                            }}
+                            className="text-[10px] text-slate-400 hover:text-rose-600 font-semibold"
+                          >
+                            Clear
+                          </button>
+                        )}
+                      </div>
                     </div>
+                    {locationError && (
+                      <div className="mb-2 p-2 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-[11px] flex items-center justify-between">
+                        <span>{locationError}</span>
+                        <button
+                          type="button"
+                          onClick={() => setLocationError(null)}
+                          className="text-rose-500 hover:text-rose-700 font-bold ml-2 text-xs"
+                          aria-label="Dismiss location error"
+                        >
+                          ×
+                        </button>
+                      </div>
+                    )}
                     <input
                       type="text"
                       value={routeOriginName || routeOrigin}
@@ -1438,14 +1929,18 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
                           >
                             <div
                               className={`w-6 h-6 rounded-lg flex items-center justify-center shrink-0 text-xs font-bold ${
-                                item.type === 'station'
+                                item.badge === 'Airport'
+                                  ? 'bg-sky-100 text-sky-700'
+                                  : item.type === 'station'
                                   ? 'bg-sky-100 text-sky-700'
                                   : item.type === 'heritage'
                                   ? 'bg-orange-100 text-orange-700'
                                   : 'bg-emerald-100 text-emerald-700'
                               }`}
                             >
-                              {item.type === 'station' ? (
+                              {item.badge === 'Airport' ? (
+                                <Plane className="w-3 h-3" />
+                              ) : item.type === 'station' ? (
                                 <Train className="w-3 h-3" />
                               ) : item.type === 'heritage' ? (
                                 <Landmark className="w-3 h-3" />
@@ -1519,14 +2014,18 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
                           >
                             <div
                               className={`w-6 h-6 rounded-lg flex items-center justify-center shrink-0 text-xs font-bold ${
-                                item.type === 'station'
+                                item.badge === 'Airport'
+                                  ? 'bg-sky-100 text-sky-700'
+                                  : item.type === 'station'
                                   ? 'bg-sky-100 text-sky-700'
                                   : item.type === 'heritage'
                                   ? 'bg-orange-100 text-orange-700'
                                   : 'bg-emerald-100 text-emerald-700'
                               }`}
                             >
-                              {item.type === 'station' ? (
+                              {item.badge === 'Airport' ? (
+                                <Plane className="w-3 h-3" />
+                              ) : item.type === 'station' ? (
                                 <Train className="w-3 h-3" />
                               ) : item.type === 'heritage' ? (
                                 <Landmark className="w-3 h-3" />
@@ -1552,10 +2051,10 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
                   </label>
                   <div className="grid grid-cols-4 gap-1.5 sm:gap-2 p-1.5 bg-slate-100 rounded-2xl border border-slate-200">
                     {[
-                      { mode: 'DRIVE' as TransportMode, label: 'Taxi', icon: Car },
-                      { mode: 'TRANSIT' as TransportMode, label: 'Train', icon: Train },
-                      { mode: 'WALK' as TransportMode, label: 'Walk', icon: Footprints },
-                      { mode: 'BICYCLE' as TransportMode, label: 'Cycle', icon: Bike },
+                      { mode: 'DRIVE' as MapTransportMode, label: 'Taxi', icon: Car },
+                      { mode: 'TRANSIT' as MapTransportMode, label: 'Train', icon: Train },
+                      { mode: 'WALK' as MapTransportMode, label: 'Walk', icon: Footprints },
+                      { mode: 'FLIGHT' as MapTransportMode, label: 'Flight', icon: Plane },
                     ].map((m) => {
                       const Icon = m.icon;
                       const isSelected = selectedMode === m.mode;
@@ -1578,16 +2077,133 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
                   </div>
                 </div>
 
+                {/* Flight Studio Controls when Flight is active */}
+                {selectedMode === 'FLIGHT' && (
+                  <div className="space-y-2.5 p-3 rounded-2xl bg-sky-50/70 border border-sky-200/80">
+                    {/* Resolved Airport Hub Badges */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-[11px]">
+                      <div className="p-2 rounded-xl bg-white border border-sky-100 shadow-2xs">
+                        <div className="text-[9px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                          <span>🛫</span> Origin Airport
+                        </div>
+                        {resolvedFlightInfo.origAirport ? (
+                          <div className="mt-0.5">
+                            <div className="font-extrabold text-slate-800 flex items-center gap-1.5 truncate">
+                              <span className="px-1.5 py-0.5 rounded bg-sky-100 text-sky-800 text-[10px] font-black">{resolvedFlightInfo.origAirport.iata}</span>
+                              <span className="truncate">{resolvedFlightInfo.origAirport.city}</span>
+                            </div>
+                            <div className="text-[10px] text-slate-500 truncate">{resolvedFlightInfo.origAirport.name}</div>
+                            {resolvedFlightInfo.origDistToAirport > 0 && (
+                              <div className="text-[9px] text-slate-400 mt-0.5">~{resolvedFlightInfo.origDistToAirport} km from origin point</div>
+                            )}
+                          </div>
+                        ) : (
+                          <div className="text-[10px] text-slate-400 italic mt-0.5">Enter origin city or airport</div>
+                        )}
+                      </div>
+
+                      <div className="p-2 rounded-xl bg-white border border-sky-100 shadow-2xs">
+                        <div className="text-[9px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
+                          <span>🛬</span> Destination Airport
+                        </div>
+                        {resolvedFlightInfo.destAirport ? (
+                          <div className="mt-0.5">
+                            <div className="font-extrabold text-slate-800 flex items-center gap-1.5 truncate">
+                              <span className="px-1.5 py-0.5 rounded bg-sky-100 text-sky-800 text-[10px] font-black">{resolvedFlightInfo.destAirport.iata}</span>
+                              <span className="truncate">{resolvedFlightInfo.destAirport.city}</span>
+                            </div>
+                            <div className="text-[10px] text-slate-500 truncate">{resolvedFlightInfo.destAirport.name}</div>
+                            {resolvedFlightInfo.destDistToAirport > 0 && (
+                              <div className="text-[9px] text-slate-400 mt-0.5">~{resolvedFlightInfo.destDistToAirport} km to destination point</div>
+                            )}
+                          </div>
+                        ) : (
+                          <div className="text-[10px] text-slate-400 italic mt-0.5">Enter destination city or airport</div>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Travel Date Selector for Google Flights */}
+                    <div className="p-2.5 rounded-xl bg-white border border-sky-200 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                      <label className="text-[10px] font-bold uppercase tracking-wider text-slate-500 flex items-center gap-1">
+                        <Calendar className="w-3.5 h-3.5 text-sky-600" />
+                        <span>Travel Date</span>
+                      </label>
+                      <input
+                        type="date"
+                        value={flightDate}
+                        onChange={(e) => setFlightDate(e.target.value)}
+                        min={new Date().toISOString().split('T')[0]}
+                        className="text-xs font-semibold px-2.5 py-1 rounded-lg bg-slate-50 border border-slate-200 text-slate-800 focus:outline-none focus:border-sky-500 focus:bg-white"
+                      />
+                    </div>
+
+                    {/* Distance & Flight Estimates */}
+                    {resolvedFlightInfo.origAirport && resolvedFlightInfo.destAirport && (
+                      <div className="flex items-center justify-between text-[11px] font-bold px-2.5 py-1.5 rounded-xl bg-white border border-sky-100 text-slate-700">
+                        <span className="flex items-center gap-1 text-sky-800">
+                          <span>✈️ Non-stop Corridor:</span>
+                          <span>{resolvedFlightInfo.origAirport.iata} → {resolvedFlightInfo.destAirport.iata}</span>
+                        </span>
+                        <span className="text-slate-500">
+                          {resolvedFlightInfo.distanceKm} km (~{Math.floor(resolvedFlightInfo.estDurationMinutes / 60)}h {resolvedFlightInfo.estDurationMinutes % 60}m)
+                        </span>
+                      </div>
+                    )}
+
+                    {/* Search on Google Flights Action Button */}
+                    <a
+                      href={getGoogleFlightsUrl(
+                        resolvedFlightInfo.origAirport?.iata || routeOriginName || routeOrigin,
+                        resolvedFlightInfo.destAirport?.iata || routeDestName || routeDestination,
+                        flightDate
+                      )}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full min-h-[42px] py-2 px-3 rounded-xl bg-sky-600 hover:bg-sky-700 active:bg-sky-800 text-white font-bold text-xs transition shadow-sm flex items-center justify-center gap-2 touch-manipulation"
+                      title="Search live fares and official schedules on Google Flights"
+                    >
+                      <Plane className="w-4 h-4 shrink-0" />
+                      <span>Search on Google Flights</span>
+                      <ExternalLink className="w-3.5 h-3.5 opacity-80 shrink-0" />
+                    </a>
+
+                    {/* Transparency Notice */}
+                    <div className="text-[10px] text-slate-500 bg-white/80 p-2 rounded-xl border border-sky-100 leading-relaxed flex items-start gap-1.5">
+                      <Info className="w-3.5 h-3.5 text-sky-600 shrink-0 mt-0.5" />
+                      <span>
+                        Live airfares, seat availability, and carrier booking are powered directly via official Google Flights handoff. No ungrounded pricing or simulated flight schedules are displayed.
+                      </span>
+                    </div>
+                  </div>
+                )}
+
                 {/* Action Buttons */}
                 <div className="flex items-center gap-2 pt-1">
                   <button
                     type="button"
                     onClick={() => handleCalculateRoute()}
                     disabled={isCalculatingRoute}
-                    className="flex-1 min-h-[44px] py-2.5 sm:py-3 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white text-xs sm:text-sm font-bold transition shadow-sm flex items-center justify-center gap-2 disabled:opacity-50 touch-manipulation"
+                    className={`flex-1 min-h-[44px] py-2.5 sm:py-3 px-4 rounded-xl text-white text-xs sm:text-sm font-bold transition shadow-sm flex items-center justify-center gap-2 disabled:opacity-50 touch-manipulation ${
+                      selectedMode === 'FLIGHT'
+                        ? 'bg-sky-600 hover:bg-sky-700 active:bg-sky-800'
+                        : 'bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800'
+                    }`}
                   >
-                    <Navigation className="w-4 h-4 shrink-0" />
-                    <span>{isCalculatingRoute ? 'Tracing Route...' : 'Plot Route on Map'}</span>
+                    {selectedMode === 'FLIGHT' ? (
+                      <Plane className="w-4 h-4 shrink-0" />
+                    ) : (
+                      <Navigation className="w-4 h-4 shrink-0" />
+                    )}
+                    <span>
+                      {isCalculatingRoute
+                        ? selectedMode === 'FLIGHT'
+                          ? 'Tracing Flight Corridor...'
+                          : 'Tracing Route...'
+                        : selectedMode === 'FLIGHT'
+                        ? 'Plot Flight Path on Map'
+                        : 'Plot Route on Map'}
+                    </span>
                   </button>
 
                   {activeRoute && (
@@ -1676,17 +2292,35 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
                       </div>
                     )}
 
-                    {/* Verify & Compare with Google Maps button */}
-                    <a
-                      href={`https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(routeOriginName || routeOrigin)}&destination=${encodeURIComponent(routeDestName || routeDestination)}&travelmode=${selectedMode === 'TRANSIT' ? 'transit' : selectedMode === 'WALK' ? 'walking' : selectedMode === 'BICYCLE' ? 'bicycling' : 'driving'}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 font-bold text-xs transition shadow-2xs touch-manipulation"
-                      title="Open same origin & destination on Google Maps to verify railway alignment"
-                    >
-                      <span>Verify & Compare on Google Maps</span>
-                      <ExternalLink className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                    </a>
+                    {/* Verify & Compare link: Google Flights for Flight mode, Google Maps for other modes */}
+                    {selectedMode === 'FLIGHT' ? (
+                      <a
+                        href={getGoogleFlightsUrl(
+                          resolvedFlightInfo.origAirport?.iata || routeOriginName || routeOrigin,
+                          resolvedFlightInfo.destAirport?.iata || routeDestName || routeDestination,
+                          flightDate
+                        )}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl bg-sky-600 hover:bg-sky-700 text-white font-bold text-xs transition shadow-sm touch-manipulation"
+                        title="Search real-time fares and flight schedules on Google Flights"
+                      >
+                        <Plane className="w-3.5 h-3.5 shrink-0" />
+                        <span>Search on Google Flights</span>
+                        <ExternalLink className="w-3.5 h-3.5 opacity-80 shrink-0" />
+                      </a>
+                    ) : (
+                      <a
+                        href={`https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(routeOriginName || routeOrigin)}&destination=${encodeURIComponent(routeDestName || routeDestination)}&travelmode=${selectedMode === 'TRANSIT' ? 'transit' : selectedMode === 'WALK' ? 'walking' : 'driving'}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full flex items-center justify-center gap-2 py-2 px-3 rounded-xl bg-white hover:bg-slate-100 border border-slate-200 text-slate-700 font-bold text-xs transition shadow-2xs touch-manipulation"
+                        title="Open same origin & destination on Google Maps to verify route"
+                      >
+                        <span>Verify & Compare on Google Maps</span>
+                        <ExternalLink className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+                      </a>
+                    )}
 
                     {/* Quick minimize helper on mobile to inspect polyline */}
                     <div className="flex items-center justify-between pt-1 md:hidden">
