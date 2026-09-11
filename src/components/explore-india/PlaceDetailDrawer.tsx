@@ -13,7 +13,8 @@ import {
   BookOpen,
   CheckCircle2,
   AlertCircle,
-  Globe
+  Globe,
+  Building2
 } from 'lucide-react';
 import { AttractionEntity } from '../../types/indiaHierarchy';
 import { OfficialImagePending } from '../common/OfficialImagePending';
@@ -255,6 +256,44 @@ export const PlaceDetailDrawer: React.FC<PlaceDetailDrawerProps> = ({
               <div className="text-[11px] text-stone-500">Ideal season</div>
             </div>
           </div>
+
+          {/* Nearby Accommodations & Hotels */}
+          {(((place as any).hotels && (place as any).hotels.length > 0) || ((place as any).recommended_hotels && (place as any).recommended_hotels.length > 0)) && (
+            <div className="space-y-2.5">
+              <h3 className="text-xs font-bold uppercase tracking-wider text-[#FF671F] flex items-center gap-1.5">
+                <Building2 className="w-4 h-4 text-[#FF671F]" />
+                <span>Nearby Accommodations &amp; Stays</span>
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                {(((place as any).hotels || (place as any).recommended_hotels || [])).slice(0, 4).map((hotel: any, idx: number) => (
+                  <div
+                    key={hotel.id || hotel.name || idx}
+                    className="p-3 rounded-2xl bg-white border border-[#EFE8DF] shadow-2xs hover:shadow-xs transition flex flex-col justify-between gap-1.5"
+                  >
+                    <div>
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="font-semibold text-xs text-stone-900 line-clamp-1">{hotel.name}</span>
+                        {hotel.rating && (
+                          <span className="px-1.5 py-0.5 rounded bg-amber-50 text-amber-800 text-[10px] font-bold border border-amber-200 shrink-0">
+                            ★ {hotel.rating}
+                          </span>
+                        )}
+                      </div>
+                      <div className="text-[11px] text-stone-500 line-clamp-1">
+                        {hotel.category || 'Hotel'} • {hotel.area || cityName || 'Local area'}
+                      </div>
+                    </div>
+                    {hotel.price_range && (
+                      <div className="text-[10px] font-semibold text-[#046A38] bg-emerald-50 px-2 py-0.5 rounded-lg border border-emerald-100 flex items-center justify-between">
+                        <span>Indicative Rate</span>
+                        <span>{hotel.price_range}</span>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
 
           {/* Contact or Official Website if provided */}
           {(place.official_website || place.contact_information) && (

@@ -39,7 +39,7 @@ import { adminRouter } from './server/src/modules/admin/admin.router';
 import { requestLogger, securityHeaders, errorHandler } from './server/src/middleware/observability';
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
 
 const allowedOrigins = process.env.ALLOWED_ORIGINS
   ? process.env.ALLOWED_ORIGINS.split(',')
@@ -405,6 +405,57 @@ function loadData() {
           }
         }
       }
+    }
+
+    // Ingest all consolidated 36 regions & 561 places into placesData
+    try {
+      const consolidatedDbPath = path.join(dataDir, 'india_tourism_database.json');
+      if (fs.existsSync(consolidatedDbPath)) {
+        const consolidatedDb = JSON.parse(fs.readFileSync(consolidatedDbPath, 'utf-8'));
+        if (consolidatedDb && Array.isArray(consolidatedDb.states)) {
+          for (const s of consolidatedDb.states) {
+            for (const c of s.cities || []) {
+              const allCityPlaces = [
+                ...(c.heritage || []),
+                ...(c.monuments || []),
+                ...(c.museums || []),
+                ...(c.tourist_places || []),
+                ...(c.religious_cultural || []),
+                ...(c.nature_parks_zoo || []),
+              ];
+              for (const p of allCityPlaces) {
+                const pid = (p.id || '').toLowerCase();
+                if (pid) {
+                  placesData.set(pid, {
+                    id: p.id,
+                    name: p.name,
+                    state: s.name,
+                    state_id: s.id,
+                    city: c.name,
+                    city_id: c.id,
+                    country: 'India',
+                    category: p.category || 'heritage',
+                    summary: p.summary || p.short_description || p.description || '',
+                    description: p.description || p.detailed_description || '',
+                    coordinates: p.coordinates || { lat: 20.5937, lng: 78.9629 },
+                    rating: p.rating || 4.7,
+                    thumbnail_url: p.thumbnail_url || p.image_url || '',
+                    images: p.images || [p.image_url || p.thumbnail_url].filter(Boolean),
+                    tags: p.tags || ['heritage', 'tourism'],
+                    hotels: p.hotels || [],
+                    recommended_hotels: p.recommended_hotels || [],
+                    features: p.features || { map: true, navigation: true, ai: true, '3d': false },
+                    status: p.status || 'VERIFIED',
+                    verification_status: p.verification_status || 'verified',
+                  });
+                }
+              }
+            }
+          }
+        }
+      }
+    } catch (e) {
+      console.error('[Startup] Failed to ingest consolidated DB into placesData:', e);
     }
 
     // Comprehensive City Normalization pass for all places in placesData
@@ -1401,29 +1452,27 @@ app.use('/api/reports', reportsRouter);
 // -------------------------------------------------------------
 // Search Endpoint & Unified Autocomplete Suggestions
 // -------------------------------------------------------------
-app.get('/api/search', (req, res) => {
-  const query = ((req.query.q as string) || '').toLowerCase().trim();
-  const limit = parseInt(req.query.limit as string, 10) || 30;
-
-  if (!query) {
-    return res.json([]);
+app.get('/api/search', (req, res, next) => {
+  if (req.query.format === 'legacy') {
+    const query = ((req.query.q as string) || '').toLowerCase().trim();
+    const limit = parseInt(req.query.limit as string, 10) || 30;
+    if (!query) return res.json([]);
+    const matches = Array.from(placesData.values())
+      .filter((p) => {
+        return (
+          p.name.toLowerCase().includes(query) ||
+          p.city.toLowerCase().includes(query) ||
+          p.state.toLowerCase().includes(query) ||
+          p.category.toLowerCase().includes(query) ||
+          p.summary?.toLowerCase().includes(query) ||
+          p.description?.toLowerCase().includes(query) ||
+          (p.tags && p.tags.some((t: string) => t.toLowerCase().includes(query)))
+        );
+      })
+      .slice(0, limit);
+    return res.json(matches);
   }
-
-  const matches = Array.from(placesData.values())
-    .filter((p) => {
-      return (
-        p.name.toLowerCase().includes(query) ||
-        p.city.toLowerCase().includes(query) ||
-        p.state.toLowerCase().includes(query) ||
-        p.category.toLowerCase().includes(query) ||
-        p.summary?.toLowerCase().includes(query) ||
-        p.description?.toLowerCase().includes(query) ||
-        (p.tags && p.tags.some((t) => t.toLowerCase().includes(query)))
-      );
-    })
-    .slice(0, limit);
-
-  res.json(matches);
+  return next();
 });
 
 export interface LocationSuggestion {
@@ -3657,6 +3706,302 @@ app.get('/api/india-hierarchy/city/:cityId', (req, res) => {
   }
   res.status(404).json({ error: 'City not found in hierarchy database' });
 });
+
+// -------------------------------------------------------------
+// Virasat / Discover Bharat Consolidated Regional Tourism APIs
+// Country -> Region (State / UT) -> Destination City -> Tourist Place -> Hotels / Metadata
+// -------------------------------------------------------------
+
+// GET /regions and /api/regions
+// Returns all 36 regions (28 states + 8 union territories)
+app.get(['/regions', '/api/regions'], (req, res) => {
+  const data = getIndiaHierarchyData();
+  if (!data || !data.states) {
+    return res.status(500).json({ error: 'Tourism database not loaded' });
+  }
+  const states = data.states.filter((s: any) => s.region_type === 'state');
+  const unionTerritories = data.states.filter((s: any) => s.region_type === 'union_territory');
+
+  const regionsSummary = data.states.map((s: any) => ({
+    id: s.id,
+    name: s.name,
+    code: s.code,
+    capital: s.capital,
+    region: s.region,
+    region_type: s.region_type,
+    type: s.type,
+    total_cities: s.total_cities,
+    total_places: s.total_attractions,
+    hero_image_url: s.hero_image_url,
+    heritage_overview: s.heritage_overview,
+    active_cities: s.cities.map((c: any) => ({
+      id: c.id,
+      name: c.name,
+      places_count: c.places_count,
+    })),
+  }));
+
+  res.json({
+    country: 'India',
+    region_counts: {
+      states: states.length,
+      union_territories: unionTerritories.length,
+      total_regions: data.states.length,
+    },
+    regions: regionsSummary,
+  });
+});
+
+// GET /regions/:region and /api/regions/:region
+// Returns region with its active destination cities
+app.get(['/regions/:region', '/api/regions/:region'], (req, res) => {
+  const data = getIndiaHierarchyData();
+  if (!data || !data.states) {
+    return res.status(500).json({ error: 'Tourism database not loaded' });
+  }
+  const query = req.params.region.toLowerCase().trim();
+  const state = data.states.find(
+    (s: any) =>
+      s.id.toLowerCase() === query ||
+      s.name.toLowerCase() === query ||
+      s.code?.toLowerCase() === query
+  );
+
+  if (!state) {
+    return res.status(404).json({ error: `Region '${req.params.region}' not found` });
+  }
+
+  // Return active destination cities
+  res.json({
+    id: state.id,
+    name: state.name,
+    code: state.code,
+    capital: state.capital,
+    region: state.region,
+    region_type: state.region_type,
+    type: state.type,
+    hero_image_url: state.hero_image_url,
+    description: state.description,
+    heritage_overview: state.heritage_overview,
+    total_active_cities: state.cities.length,
+    total_places: state.total_attractions,
+    cities: state.cities.map((c: any) => ({
+      id: c.id,
+      name: c.name,
+      district: c.district,
+      places_count: c.places_count,
+      tagline: c.tagline,
+      description: c.description,
+      hero_image_url: c.hero_image_url,
+      coordinates: c.coordinates,
+    })),
+  });
+});
+
+// GET /regions/:region/cities/:city and /api/regions/:region/cities/:city
+// Returns all tourist places mapped to that city with hotels & metadata
+app.get(['/regions/:region/cities/:city', '/api/regions/:region/cities/:city'], (req, res) => {
+  const data = getIndiaHierarchyData();
+  if (!data || !data.states) {
+    return res.status(500).json({ error: 'Tourism database not loaded' });
+  }
+  const regQuery = req.params.region.toLowerCase().trim();
+  const cityQuery = req.params.city.toLowerCase().trim();
+
+  const state = data.states.find(
+    (s: any) =>
+      s.id.toLowerCase() === regQuery ||
+      s.name.toLowerCase() === regQuery ||
+      s.code?.toLowerCase() === regQuery
+  );
+
+  if (!state) {
+    return res.status(404).json({ error: `Region '${req.params.region}' not found` });
+  }
+
+  const city = state.cities.find(
+    (c: any) =>
+      c.id.toLowerCase() === cityQuery ||
+      c.name.toLowerCase() === cityQuery ||
+      c.slug?.toLowerCase() === cityQuery
+  );
+
+  if (!city) {
+    return res.status(404).json({ error: `City '${req.params.city}' not found in region '${state.name}'` });
+  }
+
+  // Aggregate all tourist places in city
+  const allPlaces = [
+    ...(city.heritage || []),
+    ...(city.monuments || []),
+    ...(city.museums || []),
+    ...(city.tourist_places || []),
+    ...(city.religious_cultural || []),
+    ...(city.nature_parks_zoo || []),
+  ];
+
+  res.json({
+    region: state.name,
+    region_id: state.id,
+    region_type: state.region_type,
+    city: city.name,
+    city_id: city.id,
+    district: city.district,
+    tagline: city.tagline,
+    description: city.description,
+    coordinates: city.coordinates,
+    hero_image_url: city.hero_image_url,
+    total_places: allPlaces.length,
+    places: allPlaces,
+    hotels: city.hotels || [],
+  });
+});
+
+// GET /places/:place_id and /api/places/:place_id
+// Returns complete place details and attached hotel/tourism metadata
+app.get(['/places/:place_id', '/api/places/:place_id'], (req, res) => {
+  const data = getIndiaHierarchyData();
+  if (!data || !data.states) {
+    return res.status(500).json({ error: 'Tourism database not loaded' });
+  }
+  const targetId = req.params.place_id.toLowerCase().trim();
+
+  for (const s of data.states) {
+    for (const c of s.cities) {
+      const allPlaces = [
+        ...(c.heritage || []),
+        ...(c.monuments || []),
+        ...(c.museums || []),
+        ...(c.tourist_places || []),
+        ...(c.religious_cultural || []),
+        ...(c.nature_parks_zoo || []),
+      ];
+      const found = allPlaces.find(
+        (p: any) =>
+          p.id.toLowerCase() === targetId ||
+          p.canonical_name?.toLowerCase() === targetId ||
+          p.name.toLowerCase() === targetId
+      );
+      if (found) {
+        return res.json({
+          ...found,
+          region: s.name,
+          region_id: s.id,
+          region_type: s.region_type,
+          city: c.name,
+          city_id: c.id,
+        });
+      }
+    }
+  }
+
+  res.status(404).json({ error: `Place with ID '${req.params.place_id}' not found` });
+});
+
+// GET /search and /api/search
+// Searches across region, city, tourist place and relevant metadata
+app.get(['/search', '/api/search'], (req, res) => {
+  const data = getIndiaHierarchyData();
+  if (!data || !data.states) {
+    return res.status(500).json({ error: 'Tourism database not loaded' });
+  }
+  const q = String(req.query.q || req.query.query || '').trim().toLowerCase();
+  if (!q) {
+    return res.json({ query: '', total_results: 0, regions: [], cities: [], places: [] });
+  }
+
+  const matchedRegions: any[] = [];
+  const matchedCities: any[] = [];
+  const matchedPlaces: any[] = [];
+
+  for (const s of data.states) {
+    const stateMatch =
+      s.name.toLowerCase().includes(q) ||
+      s.capital.toLowerCase().includes(q) ||
+      s.description?.toLowerCase().includes(q) ||
+      s.heritage_overview?.toLowerCase().includes(q);
+
+    if (stateMatch) {
+      matchedRegions.push({
+        id: s.id,
+        name: s.name,
+        region_type: s.region_type,
+        capital: s.capital,
+        total_cities: s.total_cities,
+        total_places: s.total_attractions,
+        hero_image_url: s.hero_image_url,
+      });
+    }
+
+    for (const c of s.cities) {
+      const cityMatch =
+        c.name.toLowerCase().includes(q) ||
+        c.district?.toLowerCase().includes(q) ||
+        c.tagline?.toLowerCase().includes(q) ||
+        c.description?.toLowerCase().includes(q);
+
+      if (cityMatch) {
+        matchedCities.push({
+          id: c.id,
+          name: c.name,
+          state: s.name,
+          state_id: s.id,
+          places_count: c.places_count,
+          tagline: c.tagline,
+          hero_image_url: c.hero_image_url,
+        });
+      }
+
+      const allPlaces = [
+        ...(c.heritage || []),
+        ...(c.monuments || []),
+        ...(c.museums || []),
+        ...(c.tourist_places || []),
+        ...(c.religious_cultural || []),
+        ...(c.nature_parks_zoo || []),
+      ];
+
+      for (const p of allPlaces) {
+        const placeMatch =
+          p.name.toLowerCase().includes(q) ||
+          p.id.toLowerCase().includes(q) ||
+          p.summary?.toLowerCase().includes(q) ||
+          p.detailed_description?.toLowerCase().includes(q) ||
+          p.category?.toLowerCase().includes(q) ||
+          p.topic?.toLowerCase().includes(q) ||
+          p.tags?.some((t: string) => t.toLowerCase().includes(q)) ||
+          p.hotels?.some((h: any) => h.name?.toLowerCase().includes(q));
+
+        if (placeMatch) {
+          matchedPlaces.push({
+            id: p.id,
+            name: p.name,
+            category: p.category,
+            topic: p.topic,
+            city: c.name,
+            state: s.name,
+            summary: p.summary,
+            image_url: p.image_url,
+            thumbnail_url: p.thumbnail_url || p.image_url,
+            hotels_count: p.hotels?.length || 0,
+          });
+        }
+      }
+    }
+  }
+
+  const placesSlice = matchedPlaces.slice(0, 50);
+
+  res.json({
+    query: q,
+    total_results: matchedRegions.length + matchedCities.length + matchedPlaces.length,
+    regions: matchedRegions.slice(0, 10),
+    cities: matchedCities.slice(0, 20),
+    places: placesSlice,
+    results: placesSlice,
+  });
+});
+
 
 // -------------------------------------------------------------
 // Persistent Auth, Favorites, and Trips Routers (Replaces In-Memory Stores)

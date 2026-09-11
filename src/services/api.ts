@@ -125,7 +125,11 @@ export const api = {
   async searchPlaces(query: string): Promise<PlaceSummary[]> {
     try {
       const q = new URLSearchParams({ q: query });
-      return await request<PlaceSummary[]>(`/search?${q.toString()}`);
+      const res = await request<any>(`/search?${q.toString()}`);
+      if (Array.isArray(res)) return res;
+      if (res && Array.isArray(res.places)) return res.places;
+      if (res && Array.isArray(res.results)) return res.results;
+      return [];
     } catch {
       return [];
     }

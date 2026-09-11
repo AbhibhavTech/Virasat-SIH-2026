@@ -666,6 +666,17 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
     delete places['basilica-bom-jesus-goa'];
   }
 
+  // Reassign or clean orphan facts from deduplicated IDs
+  for (const [fId, f] of Object.entries(place_facts)) {
+    if (f.place_id === 'amber-palace' || f.place_id === 'jaipur-amber-palace') {
+      f.place_id = 'amber-fort';
+    } else if (f.place_id === 'basilica-bom-jesus-goa') {
+      f.place_id = 'basilica-of-bom-jesus';
+    } else if (!places[f.place_id]) {
+      delete place_facts[fId];
+    }
+  }
+
   // Post-processing sanity pass across all places
   for (const p of Object.values(places)) {
     // 1. Assign UNESCO deep link if known
