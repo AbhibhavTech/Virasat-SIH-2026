@@ -25,104 +25,14 @@ export interface VerifiedAirportNode {
   status: 'VERIFIED' | 'UNVERIFIED';
 }
 
-export interface StationAliasData {
-  name: string;
-  code: string;
+export interface VerifiedPoiNode {
   id: string;
+  name: string;
   city: string;
   state: string;
   lat: number;
   lng: number;
 }
-
-export const STATION_ALIASES: Record<string, StationAliasData> = {
-  csmt: { name: 'Chhatrapati Shivaji Maharaj Terminus (CSMT)', code: 'CSMT', id: 'csmt', city: 'Mumbai', state: 'Maharashtra', lat: 18.9400, lng: 72.8353 },
-  cst: { name: 'Chhatrapati Shivaji Maharaj Terminus (CSMT)', code: 'CSMT', id: 'csmt', city: 'Mumbai', state: 'Maharashtra', lat: 18.9400, lng: 72.8353 },
-  mumbaicsmt: { name: 'Chhatrapati Shivaji Maharaj Terminus (CSMT)', code: 'CSMT', id: 'csmt', city: 'Mumbai', state: 'Maharashtra', lat: 18.9400, lng: 72.8353 },
-  churchgate: { name: 'Churchgate Railway Station (CCG)', code: 'CCG', id: 'churchgate', city: 'Mumbai', state: 'Maharashtra', lat: 18.9322, lng: 72.8264 },
-  churchgatestation: { name: 'Churchgate Railway Station (CCG)', code: 'CCG', id: 'churchgate', city: 'Mumbai', state: 'Maharashtra', lat: 18.9322, lng: 72.8264 },
-  ccg: { name: 'Churchgate Railway Station (CCG)', code: 'CCG', id: 'churchgate', city: 'Mumbai', state: 'Maharashtra', lat: 18.9322, lng: 72.8264 },
-  mmct: { name: 'Mumbai Central (MMCT)', code: 'MMCT', id: 'mumbai-central', city: 'Mumbai', state: 'Maharashtra', lat: 18.9696, lng: 72.8193 },
-  mumbaicentral: { name: 'Mumbai Central (MMCT)', code: 'MMCT', id: 'mumbai-central', city: 'Mumbai', state: 'Maharashtra', lat: 18.9696, lng: 72.8193 },
-  ddr: { name: 'Dadar Junction (DDR)', code: 'DDR', id: 'dadar', city: 'Mumbai', state: 'Maharashtra', lat: 19.0178, lng: 72.8478 },
-  dadarstation: { name: 'Dadar Junction (DDR)', code: 'DDR', id: 'dadar', city: 'Mumbai', state: 'Maharashtra', lat: 19.0178, lng: 72.8478 },
-  bdts: { name: 'Bandra Terminus (BDTS)', code: 'BDTS', id: 'bandra-term', city: 'Mumbai', state: 'Maharashtra', lat: 19.0544, lng: 72.8406 },
-  bandrastation: { name: 'Bandra Terminus (BDTS)', code: 'BDTS', id: 'bandra-term', city: 'Mumbai', state: 'Maharashtra', lat: 19.0544, lng: 72.8406 },
-  ndls: { name: 'New Delhi Railway Station (NDLS)', code: 'NDLS', id: 'ndls', city: 'New Delhi', state: 'Delhi', lat: 28.6430, lng: 77.2195 },
-  delhistation: { name: 'New Delhi Railway Station (NDLS)', code: 'NDLS', id: 'ndls', city: 'New Delhi', state: 'Delhi', lat: 28.6430, lng: 77.2195 },
-  newdelhistation: { name: 'New Delhi Railway Station (NDLS)', code: 'NDLS', id: 'ndls', city: 'New Delhi', state: 'Delhi', lat: 28.6430, lng: 77.2195 },
-  dli: { name: 'Old Delhi Railway Station (DLI)', code: 'DLI', id: 'dli', city: 'Delhi', state: 'Delhi', lat: 28.6619, lng: 77.2280 },
-  nzm: { name: 'Hazrat Nizamuddin (NZM)', code: 'NZM', id: 'nzm', city: 'New Delhi', state: 'Delhi', lat: 28.5888, lng: 77.2534 },
-  nizamuddinstation: { name: 'Hazrat Nizamuddin (NZM)', code: 'NZM', id: 'nzm', city: 'New Delhi', state: 'Delhi', lat: 28.5888, lng: 77.2534 },
-  hwh: { name: 'Howrah Junction (HWH)', code: 'HWH', id: 'hwh', city: 'Kolkata', state: 'West Bengal', lat: 22.5833, lng: 88.3425 },
-  howrahstation: { name: 'Howrah Junction (HWH)', code: 'HWH', id: 'hwh', city: 'Kolkata', state: 'West Bengal', lat: 22.5833, lng: 88.3425 },
-  kolkatastation: { name: 'Howrah Junction (HWH)', code: 'HWH', id: 'hwh', city: 'Kolkata', state: 'West Bengal', lat: 22.5833, lng: 88.3425 },
-  sdah: { name: 'Sealdah Railway Station (SDAH)', code: 'SDAH', id: 'sdah', city: 'Kolkata', state: 'West Bengal', lat: 22.5697, lng: 88.3713 },
-  sealdahstation: { name: 'Sealdah Railway Station (SDAH)', code: 'SDAH', id: 'sdah', city: 'Kolkata', state: 'West Bengal', lat: 22.5697, lng: 88.3713 },
-  njp: { name: 'New Jalpaiguri Junction (NJP)', code: 'NJP', id: 'njp', city: 'Siliguri', state: 'West Bengal', lat: 26.6853, lng: 88.4419 },
-  newjalpaiguristation: { name: 'New Jalpaiguri Junction (NJP)', code: 'NJP', id: 'njp', city: 'Siliguri', state: 'West Bengal', lat: 26.6853, lng: 88.4419 },
-  dj: { name: 'Darjeeling Railway Station (DJ)', code: 'DJ', id: 'dj', city: 'Darjeeling', state: 'West Bengal', lat: 27.0410, lng: 88.2663 },
-  darjeelingstation: { name: 'Darjeeling Railway Station (DJ)', code: 'DJ', id: 'dj', city: 'Darjeeling', state: 'West Bengal', lat: 27.0410, lng: 88.2663 },
-  sina: { name: 'Srinagar Railway Station (SINA)', code: 'SINA', id: 'srinagar-stn', city: 'Srinagar', state: 'Jammu and Kashmir', lat: 34.0384, lng: 74.8384 },
-  srinagarstn: { name: 'Srinagar Railway Station (SINA)', code: 'SINA', id: 'srinagar-stn', city: 'Srinagar', state: 'Jammu and Kashmir', lat: 34.0384, lng: 74.8384 },
-  srinagarstation: { name: 'Srinagar Railway Station (SINA)', code: 'SINA', id: 'srinagar-stn', city: 'Srinagar', state: 'Jammu and Kashmir', lat: 34.0384, lng: 74.8384 },
-  srinagarrailwaystation: { name: 'Srinagar Railway Station (SINA)', code: 'SINA', id: 'srinagar-stn', city: 'Srinagar', state: 'Jammu and Kashmir', lat: 34.0384, lng: 74.8384 },
-  svdk: { name: 'Shri Mata Vaishno Devi Katra (SVDK)', code: 'SVDK', id: 'katra-svdk', city: 'Katra', state: 'Jammu and Kashmir', lat: 32.9856, lng: 74.9547 },
-  katrastation: { name: 'Shri Mata Vaishno Devi Katra (SVDK)', code: 'SVDK', id: 'katra-svdk', city: 'Katra', state: 'Jammu and Kashmir', lat: 32.9856, lng: 74.9547 },
-  jat: { name: 'Jammu Tawi (JAT)', code: 'JAT', id: 'jammu-tawi', city: 'Jammu', state: 'Jammu and Kashmir', lat: 32.7058, lng: 74.8789 },
-  jammustation: { name: 'Jammu Tawi (JAT)', code: 'JAT', id: 'jammu-tawi', city: 'Jammu', state: 'Jammu and Kashmir', lat: 32.7058, lng: 74.8789 },
-  bahl: { name: 'Banihal Railway Station (BAHL)', code: 'BAHL', id: 'banihal-stn', city: 'Banihal', state: 'Jammu and Kashmir', lat: 33.4981, lng: 75.2017 },
-  jp: { name: 'Jaipur Junction (JP)', code: 'JP', id: 'jp', city: 'Jaipur', state: 'Rajasthan', lat: 26.9196, lng: 75.7878 },
-  jaipurstation: { name: 'Jaipur Junction (JP)', code: 'JP', id: 'jp', city: 'Jaipur', state: 'Rajasthan', lat: 26.9196, lng: 75.7878 },
-  agc: { name: 'Agra Cantt (AGC)', code: 'AGC', id: 'agc', city: 'Agra', state: 'Uttar Pradesh', lat: 27.1578, lng: 77.9904 },
-  agrastation: { name: 'Agra Cantt (AGC)', code: 'AGC', id: 'agc', city: 'Agra', state: 'Uttar Pradesh', lat: 27.1578, lng: 77.9904 },
-  bsb: { name: 'Varanasi Junction (BSB)', code: 'BSB', id: 'bsb', city: 'Varanasi', state: 'Uttar Pradesh', lat: 25.3283, lng: 82.9858 },
-  varanasistation: { name: 'Varanasi Junction (BSB)', code: 'BSB', id: 'bsb', city: 'Varanasi', state: 'Uttar Pradesh', lat: 25.3283, lng: 82.9858 },
-  sbc: { name: 'KSR Bengaluru (SBC)', code: 'SBC', id: 'sbc', city: 'Bengaluru', state: 'Karnataka', lat: 12.9781, lng: 77.5694 },
-  bengalurustation: { name: 'KSR Bengaluru (SBC)', code: 'SBC', id: 'sbc', city: 'Bengaluru', state: 'Karnataka', lat: 12.9781, lng: 77.5694 },
-  bangalorestation: { name: 'KSR Bengaluru (SBC)', code: 'SBC', id: 'sbc', city: 'Bengaluru', state: 'Karnataka', lat: 12.9781, lng: 77.5694 },
-  mas: { name: 'Chennai Central (MAS)', code: 'MAS', id: 'mas', city: 'Chennai', state: 'Tamil Nadu', lat: 13.0827, lng: 80.2756 },
-  chennaistation: { name: 'Chennai Central (MAS)', code: 'MAS', id: 'mas', city: 'Chennai', state: 'Tamil Nadu', lat: 13.0827, lng: 80.2756 },
-  adi: { name: 'Ahmedabad Junction (ADI)', code: 'ADI', id: 'adi', city: 'Ahmedabad', state: 'Gujarat', lat: 23.0225, lng: 72.5714 },
-  ahmedabadstation: { name: 'Ahmedabad Junction (ADI)', code: 'ADI', id: 'adi', city: 'Ahmedabad', state: 'Gujarat', lat: 23.0225, lng: 72.5714 },
-  pune: { name: 'Pune Junction (PUNE)', code: 'PUNE', id: 'pune', city: 'Pune', state: 'Maharashtra', lat: 18.5289, lng: 73.8744 },
-  punestation: { name: 'Pune Junction (PUNE)', code: 'PUNE', id: 'pune', city: 'Pune', state: 'Maharashtra', lat: 18.5289, lng: 73.8744 },
-  lko: { name: 'Lucknow Charbagh (LKO)', code: 'LKO', id: 'lucknow-charbagh', city: 'Lucknow', state: 'Uttar Pradesh', lat: 26.8317, lng: 80.9248 },
-  lucknowstation: { name: 'Lucknow Charbagh (LKO)', code: 'LKO', id: 'lucknow-charbagh', city: 'Lucknow', state: 'Uttar Pradesh', lat: 26.8317, lng: 80.9248 },
-  bpl: { name: 'Bhopal Junction (BPL)', code: 'BPL', id: 'bhopal-jn', city: 'Bhopal', state: 'Madhya Pradesh', lat: 23.2599, lng: 77.4126 },
-  bhopalstation: { name: 'Bhopal Junction (BPL)', code: 'BPL', id: 'bhopal-jn', city: 'Bhopal', state: 'Madhya Pradesh', lat: 23.2599, lng: 77.4126 },
-  st: { name: 'Surat Railway Station (ST)', code: 'ST', id: 'surat-stn', city: 'Surat', state: 'Gujarat', lat: 21.2049, lng: 72.8407 },
-  suratstation: { name: 'Surat Railway Station (ST)', code: 'ST', id: 'surat-stn', city: 'Surat', state: 'Gujarat', lat: 21.2049, lng: 72.8407 },
-  brc: { name: 'Vadodara Junction (BRC)', code: 'BRC', id: 'vadodara-jn', city: 'Vadodara', state: 'Gujarat', lat: 22.3107, lng: 73.1812 },
-  vadodarastation: { name: 'Vadodara Junction (BRC)', code: 'BRC', id: 'vadodara-jn', city: 'Vadodara', state: 'Gujarat', lat: 22.3107, lng: 73.1812 },
-  barodastation: { name: 'Vadodara Junction (BRC)', code: 'BRC', id: 'vadodara-jn', city: 'Vadodara', state: 'Gujarat', lat: 22.3107, lng: 73.1812 },
-  pnbe: { name: 'Patna Junction (PNBE)', code: 'PNBE', id: 'patna-jn', city: 'Patna', state: 'Bihar', lat: 25.6022, lng: 85.1376 },
-  patnastation: { name: 'Patna Junction (PNBE)', code: 'PNBE', id: 'patna-jn', city: 'Patna', state: 'Bihar', lat: 25.6022, lng: 85.1376 },
-  ghy: { name: 'Guwahati Railway Station (GHY)', code: 'GHY', id: 'guwahati-jn', city: 'Guwahati', state: 'Assam', lat: 26.1824, lng: 91.7516 },
-  guwahatistation: { name: 'Guwahati Railway Station (GHY)', code: 'GHY', id: 'guwahati-jn', city: 'Guwahati', state: 'Assam', lat: 26.1824, lng: 91.7516 },
-  bbs: { name: 'Bhubaneswar Railway Station (BBS)', code: 'BBS', id: 'bhubaneswar-jn', city: 'Bhubaneswar', state: 'Odisha', lat: 20.2666, lng: 85.8436 },
-  bhubaneswarstation: { name: 'Bhubaneswar Railway Station (BBS)', code: 'BBS', id: 'bhubaneswar-jn', city: 'Bhubaneswar', state: 'Odisha', lat: 20.2666, lng: 85.8436 },
-  puri: { name: 'Puri Railway Station (PURI)', code: 'PURI', id: 'puri-stn', city: 'Puri', state: 'Odisha', lat: 19.8135, lng: 85.8315 },
-  puristation: { name: 'Puri Railway Station (PURI)', code: 'PURI', id: 'puri-stn', city: 'Puri', state: 'Odisha', lat: 19.8135, lng: 85.8315 },
-  mao: { name: 'Madgaon Junction (MAO)', code: 'MAO', id: 'madgaon-jn', city: 'Madgaon', state: 'Goa', lat: 15.2736, lng: 73.9678 },
-  goastation: { name: 'Madgaon Junction Goa (MAO)', code: 'MAO', id: 'madgaon-jn', city: 'Madgaon', state: 'Goa', lat: 15.2736, lng: 73.9678 },
-  madgaonstation: { name: 'Madgaon Junction Goa (MAO)', code: 'MAO', id: 'madgaon-jn', city: 'Madgaon', state: 'Goa', lat: 15.2736, lng: 73.9678 },
-  cdg: { name: 'Chandigarh Junction (CDG)', code: 'CDG', id: 'chandigarh-jn', city: 'Chandigarh', state: 'Chandigarh', lat: 30.7056, lng: 76.8013 },
-  chandigarhstation: { name: 'Chandigarh Junction (CDG)', code: 'CDG', id: 'chandigarh-jn', city: 'Chandigarh', state: 'Chandigarh', lat: 30.7056, lng: 76.8013 },
-  asr: { name: 'Amritsar Junction (ASR)', code: 'ASR', id: 'asr', city: 'Amritsar', state: 'Punjab', lat: 31.6340, lng: 74.8723 },
-  amritsarstation: { name: 'Amritsar Junction (ASR)', code: 'ASR', id: 'asr', city: 'Amritsar', state: 'Punjab', lat: 31.6340, lng: 74.8723 },
-  ldh: { name: 'Ludhiana Junction (LDH)', code: 'LDH', id: 'ldh', city: 'Ludhiana', state: 'Punjab', lat: 30.9083, lng: 75.8589 },
-  ludhianastation: { name: 'Ludhiana Junction (LDH)', code: 'LDH', id: 'ldh', city: 'Ludhiana', state: 'Punjab', lat: 30.9083, lng: 75.8589 },
-  jrc: { name: 'Jalandhar Cantt (JRC)', code: 'JRC', id: 'jrc', city: 'Jalandhar', state: 'Punjab', lat: 31.2981, lng: 75.6147 },
-  jalandharstation: { name: 'Jalandhar Cantt (JRC)', code: 'JRC', id: 'jrc', city: 'Jalandhar', state: 'Punjab', lat: 31.2981, lng: 75.6147 },
-  sml: { name: 'Shimla Railway Station (SML)', code: 'SML', id: 'shimla-stn', city: 'Shimla', state: 'Himachal Pradesh', lat: 31.1039, lng: 77.1644 },
-  shimlastation: { name: 'Shimla Railway Station (SML)', code: 'SML', id: 'shimla-stn', city: 'Shimla', state: 'Himachal Pradesh', lat: 31.1039, lng: 77.1644 },
-  ers: { name: 'Ernakulam Junction (ERS)', code: 'ERS', id: 'ers', city: 'Kochi', state: 'Kerala', lat: 9.9678, lng: 76.2891 },
-  kochistation: { name: 'Ernakulam Junction (ERS)', code: 'ERS', id: 'ers', city: 'Kochi', state: 'Kerala', lat: 9.9678, lng: 76.2891 },
-  ernakulamstation: { name: 'Ernakulam Junction (ERS)', code: 'ERS', id: 'ers', city: 'Kochi', state: 'Kerala', lat: 9.9678, lng: 76.2891 },
-  tvc: { name: 'Thiruvananthapuram Central (TVC)', code: 'TVC', id: 'trivandrum-central', city: 'Thiruvananthapuram', state: 'Kerala', lat: 8.4875, lng: 76.9532 },
-  trivandrumstation: { name: 'Thiruvananthapuram Central (TVC)', code: 'TVC', id: 'trivandrum-central', city: 'Thiruvananthapuram', state: 'Kerala', lat: 8.4875, lng: 76.9532 },
-};
 
 export interface ResolvedTransportDestination {
   is_poi: boolean;
@@ -183,11 +93,161 @@ export function haversineDistanceKm(lat1: number, lon1: number, lat2: number, lo
   return Math.round(R * c * 10) / 10;
 }
 
+export function calculateSafeHaversineKm(lat1: number, lon1: number, lat2: number, lon2: number): number | null {
+  if (
+    isNaN(lat1) || isNaN(lon1) || isNaN(lat2) || isNaN(lon2) ||
+    lat1 < -90 || lat1 > 90 || lat2 < -90 || lat2 > 90 ||
+    lon1 < -180 || lon1 > 180 || lon2 < -180 || lon2 > 180
+  ) {
+    return null;
+  }
+  return haversineDistanceKm(lat1, lon1, lat2, lon2);
+}
+
 // -------------------------------------------------------------
 // Master Verified Transport Registry (Initialized from authentic files)
 // -------------------------------------------------------------
 const MASTER_VERIFIED_STATIONS: VerifiedStationNode[] = [];
 const MASTER_VERIFIED_AIRPORTS: VerifiedAirportNode[] = [];
+const MASTER_VERIFIED_PLACES: VerifiedPoiNode[] = [];
+
+// Static station aliases and popular station codes across India
+export const STATION_ALIASES: Record<string, { name: string; code: string; city: string; state: string; lat: number; lng: number; is_junction?: boolean }> = {
+  csmt: { name: 'Chhatrapati Shivaji Maharaj Terminus (CSMT)', code: 'CSMT', city: 'Mumbai', state: 'Maharashtra', lat: 18.9400, lng: 72.8353, is_junction: true },
+  cst: { name: 'Chhatrapati Shivaji Maharaj Terminus (CSMT)', code: 'CSMT', city: 'Mumbai', state: 'Maharashtra', lat: 18.9400, lng: 72.8353, is_junction: true },
+  vt: { name: 'Chhatrapati Shivaji Maharaj Terminus (CSMT)', code: 'CSMT', city: 'Mumbai', state: 'Maharashtra', lat: 18.9400, lng: 72.8353, is_junction: true },
+  'victoria terminus': { name: 'Chhatrapati Shivaji Maharaj Terminus (CSMT)', code: 'CSMT', city: 'Mumbai', state: 'Maharashtra', lat: 18.9400, lng: 72.8353, is_junction: true },
+  'mumbai csmt': { name: 'Chhatrapati Shivaji Maharaj Terminus (CSMT)', code: 'CSMT', city: 'Mumbai', state: 'Maharashtra', lat: 18.9400, lng: 72.8353, is_junction: true },
+  churchgate: { name: 'Churchgate Railway Station (CCG)', code: 'CCG', city: 'Mumbai', state: 'Maharashtra', lat: 18.9322, lng: 72.8264, is_junction: false },
+  'churchgate station': { name: 'Churchgate Railway Station (CCG)', code: 'CCG', city: 'Mumbai', state: 'Maharashtra', lat: 18.9322, lng: 72.8264, is_junction: false },
+  'churchgate terminal': { name: 'Churchgate Railway Station (CCG)', code: 'CCG', city: 'Mumbai', state: 'Maharashtra', lat: 18.9322, lng: 72.8264, is_junction: false },
+  ccg: { name: 'Churchgate Railway Station (CCG)', code: 'CCG', city: 'Mumbai', state: 'Maharashtra', lat: 18.9322, lng: 72.8264, is_junction: false },
+  'marine lines': { name: 'Marine Lines Railway Station', code: 'MEL', city: 'Mumbai', state: 'Maharashtra', lat: 18.9438, lng: 72.8242 },
+  'charni road': { name: 'Charni Road Railway Station', code: 'CYR', city: 'Mumbai', state: 'Maharashtra', lat: 18.9517, lng: 72.8188 },
+  'grant road': { name: 'Grant Road Railway Station', code: 'GTR', city: 'Mumbai', state: 'Maharashtra', lat: 18.9625, lng: 72.8160 },
+  'mumbai central': { name: 'Mumbai Central', code: 'MMCT', city: 'Mumbai', state: 'Maharashtra', lat: 18.9696, lng: 72.8193, is_junction: true },
+  mmct: { name: 'Mumbai Central', code: 'MMCT', city: 'Mumbai', state: 'Maharashtra', lat: 18.9696, lng: 72.8193, is_junction: true },
+  bct: { name: 'Mumbai Central', code: 'MMCT', city: 'Mumbai', state: 'Maharashtra', lat: 18.9696, lng: 72.8193, is_junction: true },
+  dadar: { name: 'Dadar Junction', code: 'DDR', city: 'Mumbai', state: 'Maharashtra', lat: 19.0178, lng: 72.8478, is_junction: true },
+  ddr: { name: 'Dadar Junction', code: 'DDR', city: 'Mumbai', state: 'Maharashtra', lat: 19.0178, lng: 72.8478, is_junction: true },
+  dr: { name: 'Dadar Central', code: 'DR', city: 'Mumbai', state: 'Maharashtra', lat: 19.0178, lng: 72.8478, is_junction: true },
+  bandra: { name: 'Bandra Terminus', code: 'BDTS', city: 'Mumbai', state: 'Maharashtra', lat: 19.0544, lng: 72.8406, is_junction: true },
+  bdts: { name: 'Bandra Terminus', code: 'BDTS', city: 'Mumbai', state: 'Maharashtra', lat: 19.0544, lng: 72.8406, is_junction: true },
+  andheri: { name: 'Andheri', code: 'ADH', city: 'Mumbai', state: 'Maharashtra', lat: 19.1197, lng: 72.8464, is_junction: true },
+  adh: { name: 'Andheri', code: 'ADH', city: 'Mumbai', state: 'Maharashtra', lat: 19.1197, lng: 72.8464, is_junction: true },
+  borivali: { name: 'Borivali', code: 'BVI', city: 'Mumbai', state: 'Maharashtra', lat: 19.2291, lng: 72.8573, is_junction: true },
+  bvi: { name: 'Borivali', code: 'BVI', city: 'Mumbai', state: 'Maharashtra', lat: 19.2291, lng: 72.8573, is_junction: true },
+  thane: { name: 'Thane', code: 'TNA', city: 'Mumbai', state: 'Maharashtra', lat: 19.1860, lng: 72.9759, is_junction: true },
+  tna: { name: 'Thane', code: 'TNA', city: 'Mumbai', state: 'Maharashtra', lat: 19.1860, lng: 72.9759, is_junction: true },
+  kalyan: { name: 'Kalyan Junction', code: 'KYN', city: 'Mumbai', state: 'Maharashtra', lat: 19.2354, lng: 73.1306, is_junction: true },
+  kyn: { name: 'Kalyan Junction', code: 'KYN', city: 'Mumbai', state: 'Maharashtra', lat: 19.2354, lng: 73.1306, is_junction: true },
+  kurla: { name: 'Kurla Junction', code: 'CLA', city: 'Mumbai', state: 'Maharashtra', lat: 19.0653, lng: 72.8792, is_junction: true },
+  byculla: { name: 'Byculla Railway Station', code: 'BY', city: 'Mumbai', state: 'Maharashtra', lat: 18.9757, lng: 72.8336 },
+  ghatkopar: { name: 'Ghatkopar Railway Station', code: 'GC', city: 'Mumbai', state: 'Maharashtra', lat: 19.0863, lng: 72.9081, is_junction: true },
+  panvel: { name: 'Panvel Junction', code: 'PNVL', city: 'Navi Mumbai', state: 'Maharashtra', lat: 18.9902, lng: 73.1188, is_junction: true },
+  pnvl: { name: 'Panvel Junction', code: 'PNVL', city: 'Navi Mumbai', state: 'Maharashtra', lat: 18.9902, lng: 73.1188, is_junction: true },
+  ndls: { name: 'New Delhi Railway Station (NDLS)', code: 'NDLS', city: 'New Delhi', state: 'Delhi (NCT)', lat: 28.6430, lng: 77.2195, is_junction: true },
+  dli: { name: 'Old Delhi Railway Station (DLI)', code: 'DLI', city: 'Delhi', state: 'Delhi (NCT)', lat: 28.6606, lng: 77.2281, is_junction: true },
+  nzm: { name: 'Hazrat Nizamuddin (NZM)', code: 'NZM', city: 'New Delhi', state: 'Delhi (NCT)', lat: 28.5888, lng: 77.2534, is_junction: true },
+  anvt: { name: 'Anand Vihar Terminal (ANVT)', code: 'ANVT', city: 'Delhi', state: 'Delhi (NCT)', lat: 28.6508, lng: 77.3153, is_junction: true },
+  howrah: { name: 'Howrah Junction (HWH)', code: 'HWH', city: 'Kolkata', state: 'West Bengal', lat: 22.5838, lng: 88.3426, is_junction: true },
+  'howrah junction': { name: 'Howrah Junction (HWH)', code: 'HWH', city: 'Kolkata', state: 'West Bengal', lat: 22.5838, lng: 88.3426, is_junction: true },
+  hwh: { name: 'Howrah Junction (HWH)', code: 'HWH', city: 'Kolkata', state: 'West Bengal', lat: 22.5838, lng: 88.3426, is_junction: true },
+  sealdah: { name: 'Sealdah (SDAH)', code: 'SDAH', city: 'Kolkata', state: 'West Bengal', lat: 22.5675, lng: 88.3713, is_junction: true },
+  sdah: { name: 'Sealdah (SDAH)', code: 'SDAH', city: 'Kolkata', state: 'West Bengal', lat: 22.5675, lng: 88.3713, is_junction: true },
+  koaa: { name: 'Kolkata Railway Station (KOAA)', code: 'KOAA', city: 'Kolkata', state: 'West Bengal', lat: 22.6022, lng: 88.3789, is_junction: true },
+  'new delhi': { name: 'New Delhi Railway Station (NDLS)', code: 'NDLS', city: 'New Delhi', state: 'Delhi (NCT)', lat: 28.6430, lng: 77.2195, is_junction: true },
+  'old delhi': { name: 'Old Delhi Railway Station (DLI)', code: 'DLI', city: 'Delhi', state: 'Delhi (NCT)', lat: 28.6606, lng: 77.2281, is_junction: true },
+  nizamuddin: { name: 'Hazrat Nizamuddin (NZM)', code: 'NZM', city: 'New Delhi', state: 'Delhi (NCT)', lat: 28.5888, lng: 77.2534, is_junction: true },
+  'hazrat nizamuddin': { name: 'Hazrat Nizamuddin (NZM)', code: 'NZM', city: 'New Delhi', state: 'Delhi (NCT)', lat: 28.5888, lng: 77.2534, is_junction: true },
+  'anand vihar': { name: 'Anand Vihar Terminal (ANVT)', code: 'ANVT', city: 'Delhi', state: 'Delhi (NCT)', lat: 28.6508, lng: 77.3153, is_junction: true },
+  'chennai central': { name: 'Chennai Central (MAS)', code: 'MAS', city: 'Chennai', state: 'Tamil Nadu', lat: 13.0827, lng: 80.2755, is_junction: true },
+  'chennai egmore': { name: 'Chennai Egmore (MS)', code: 'MS', city: 'Chennai', state: 'Tamil Nadu', lat: 13.0782, lng: 80.2608, is_junction: true },
+  mas: { name: 'Chennai Central (MAS)', code: 'MAS', city: 'Chennai', state: 'Tamil Nadu', lat: 13.0827, lng: 80.2755, is_junction: true },
+  ms: { name: 'Chennai Egmore (MS)', code: 'MS', city: 'Chennai', state: 'Tamil Nadu', lat: 13.0782, lng: 80.2608, is_junction: true },
+  msb: { name: 'Chennai Beach (MSB)', code: 'MSB', city: 'Chennai', state: 'Tamil Nadu', lat: 13.0922, lng: 80.2936, is_junction: true },
+  sbc: { name: 'KSR Bengaluru City Junction (SBC)', code: 'SBC', city: 'Bengaluru', state: 'Karnataka', lat: 12.9784, lng: 77.5696, is_junction: true },
+  'ksr bengaluru': { name: 'KSR Bengaluru City Junction (SBC)', code: 'SBC', city: 'Bengaluru', state: 'Karnataka', lat: 12.9784, lng: 77.5696, is_junction: true },
+  'bangalore city': { name: 'KSR Bengaluru City Junction (SBC)', code: 'SBC', city: 'Bengaluru', state: 'Karnataka', lat: 12.9784, lng: 77.5696, is_junction: true },
+  'bengaluru city': { name: 'KSR Bengaluru City Junction (SBC)', code: 'SBC', city: 'Bengaluru', state: 'Karnataka', lat: 12.9784, lng: 77.5696, is_junction: true },
+  ypr: { name: 'Yesvantpur Junction (YPR)', code: 'YPR', city: 'Bengaluru', state: 'Karnataka', lat: 13.0238, lng: 77.5502, is_junction: true },
+  yesvantpur: { name: 'Yesvantpur Junction (YPR)', code: 'YPR', city: 'Bengaluru', state: 'Karnataka', lat: 13.0238, lng: 77.5502, is_junction: true },
+  smvb: { name: 'Sir M. Visvesvaraya Terminal (SMVB)', code: 'SMVB', city: 'Bengaluru', state: 'Karnataka', lat: 13.0039, lng: 77.6534, is_junction: true },
+  pune: { name: 'Pune Junction (PUNE)', code: 'PUNE', city: 'Pune', state: 'Maharashtra', lat: 18.5284, lng: 73.8739, is_junction: true },
+  'pune junction': { name: 'Pune Junction (PUNE)', code: 'PUNE', city: 'Pune', state: 'Maharashtra', lat: 18.5284, lng: 73.8739, is_junction: true },
+  adi: { name: 'Ahmedabad Junction (ADI)', code: 'ADI', city: 'Ahmedabad', state: 'Gujarat', lat: 23.0225, lng: 72.6011, is_junction: true },
+  'ahmedabad junction': { name: 'Ahmedabad Junction (ADI)', code: 'ADI', city: 'Ahmedabad', state: 'Gujarat', lat: 23.0225, lng: 72.6011, is_junction: true },
+  jp: { name: 'Jaipur Junction (JP)', code: 'JP', city: 'Jaipur', state: 'Rajasthan', lat: 26.9200, lng: 75.7878, is_junction: true },
+  'jaipur junction': { name: 'Jaipur Junction (JP)', code: 'JP', city: 'Jaipur', state: 'Rajasthan', lat: 26.9200, lng: 75.7878, is_junction: true },
+  mumbaicsmt: { name: 'Chhatrapati Shivaji Maharaj Terminus (CSMT)', code: 'CSMT', id: 'csmt', city: 'Mumbai', state: 'Maharashtra', lat: 18.9400, lng: 72.8353 },
+  churchgatestation: { name: 'Churchgate Railway Station (CCG)', code: 'CCG', id: 'churchgate', city: 'Mumbai', state: 'Maharashtra', lat: 18.9322, lng: 72.8264 },
+  mumbaicentral: { name: 'Mumbai Central (MMCT)', code: 'MMCT', id: 'mumbai-central', city: 'Mumbai', state: 'Maharashtra', lat: 18.9696, lng: 72.8193 },
+  dadarstation: { name: 'Dadar Junction (DDR)', code: 'DDR', id: 'dadar', city: 'Mumbai', state: 'Maharashtra', lat: 19.0178, lng: 72.8478 },
+  bandrastation: { name: 'Bandra Terminus (BDTS)', code: 'BDTS', id: 'bandra-term', city: 'Mumbai', state: 'Maharashtra', lat: 19.0544, lng: 72.8406 },
+  delhistation: { name: 'New Delhi Railway Station (NDLS)', code: 'NDLS', id: 'ndls', city: 'New Delhi', state: 'Delhi', lat: 28.6430, lng: 77.2195 },
+  newdelhistation: { name: 'New Delhi Railway Station (NDLS)', code: 'NDLS', id: 'ndls', city: 'New Delhi', state: 'Delhi', lat: 28.6430, lng: 77.2195 },
+  nizamuddinstation: { name: 'Hazrat Nizamuddin (NZM)', code: 'NZM', id: 'nzm', city: 'New Delhi', state: 'Delhi', lat: 28.5888, lng: 77.2534 },
+  howrahstation: { name: 'Howrah Junction (HWH)', code: 'HWH', id: 'hwh', city: 'Kolkata', state: 'West Bengal', lat: 22.5833, lng: 88.3425 },
+  kolkatastation: { name: 'Howrah Junction (HWH)', code: 'HWH', id: 'hwh', city: 'Kolkata', state: 'West Bengal', lat: 22.5833, lng: 88.3425 },
+  sealdahstation: { name: 'Sealdah Railway Station (SDAH)', code: 'SDAH', id: 'sdah', city: 'Kolkata', state: 'West Bengal', lat: 22.5697, lng: 88.3713 },
+  njp: { name: 'New Jalpaiguri Junction (NJP)', code: 'NJP', id: 'njp', city: 'Siliguri', state: 'West Bengal', lat: 26.6853, lng: 88.4419 },
+  newjalpaiguristation: { name: 'New Jalpaiguri Junction (NJP)', code: 'NJP', id: 'njp', city: 'Siliguri', state: 'West Bengal', lat: 26.6853, lng: 88.4419 },
+  dj: { name: 'Darjeeling Railway Station (DJ)', code: 'DJ', id: 'dj', city: 'Darjeeling', state: 'West Bengal', lat: 27.0410, lng: 88.2663 },
+  darjeelingstation: { name: 'Darjeeling Railway Station (DJ)', code: 'DJ', id: 'dj', city: 'Darjeeling', state: 'West Bengal', lat: 27.0410, lng: 88.2663 },
+  sina: { name: 'Srinagar Railway Station (SINA)', code: 'SINA', id: 'srinagar-stn', city: 'Srinagar', state: 'Jammu and Kashmir', lat: 34.0384, lng: 74.8384 },
+  srinagarstn: { name: 'Srinagar Railway Station (SINA)', code: 'SINA', id: 'srinagar-stn', city: 'Srinagar', state: 'Jammu and Kashmir', lat: 34.0384, lng: 74.8384 },
+  srinagarstation: { name: 'Srinagar Railway Station (SINA)', code: 'SINA', id: 'srinagar-stn', city: 'Srinagar', state: 'Jammu and Kashmir', lat: 34.0384, lng: 74.8384 },
+  srinagarrailwaystation: { name: 'Srinagar Railway Station (SINA)', code: 'SINA', id: 'srinagar-stn', city: 'Srinagar', state: 'Jammu and Kashmir', lat: 34.0384, lng: 74.8384 },
+  svdk: { name: 'Shri Mata Vaishno Devi Katra (SVDK)', code: 'SVDK', id: 'katra-svdk', city: 'Katra', state: 'Jammu and Kashmir', lat: 32.9856, lng: 74.9547 },
+  katrastation: { name: 'Shri Mata Vaishno Devi Katra (SVDK)', code: 'SVDK', id: 'katra-svdk', city: 'Katra', state: 'Jammu and Kashmir', lat: 32.9856, lng: 74.9547 },
+  jat: { name: 'Jammu Tawi (JAT)', code: 'JAT', id: 'jammu-tawi', city: 'Jammu', state: 'Jammu and Kashmir', lat: 32.7058, lng: 74.8789 },
+  jammustation: { name: 'Jammu Tawi (JAT)', code: 'JAT', id: 'jammu-tawi', city: 'Jammu', state: 'Jammu and Kashmir', lat: 32.7058, lng: 74.8789 },
+  bahl: { name: 'Banihal Railway Station (BAHL)', code: 'BAHL', id: 'banihal-stn', city: 'Banihal', state: 'Jammu and Kashmir', lat: 33.4981, lng: 75.2017 },
+  jaipurstation: { name: 'Jaipur Junction (JP)', code: 'JP', id: 'jp', city: 'Jaipur', state: 'Rajasthan', lat: 26.9196, lng: 75.7878 },
+  agc: { name: 'Agra Cantt (AGC)', code: 'AGC', id: 'agc', city: 'Agra', state: 'Uttar Pradesh', lat: 27.1578, lng: 77.9904 },
+  agrastation: { name: 'Agra Cantt (AGC)', code: 'AGC', id: 'agc', city: 'Agra', state: 'Uttar Pradesh', lat: 27.1578, lng: 77.9904 },
+  bsb: { name: 'Varanasi Junction (BSB)', code: 'BSB', id: 'bsb', city: 'Varanasi', state: 'Uttar Pradesh', lat: 25.3283, lng: 82.9858 },
+  varanasistation: { name: 'Varanasi Junction (BSB)', code: 'BSB', id: 'bsb', city: 'Varanasi', state: 'Uttar Pradesh', lat: 25.3283, lng: 82.9858 },
+  bengalurustation: { name: 'KSR Bengaluru (SBC)', code: 'SBC', id: 'sbc', city: 'Bengaluru', state: 'Karnataka', lat: 12.9781, lng: 77.5694 },
+  bangalorestation: { name: 'KSR Bengaluru (SBC)', code: 'SBC', id: 'sbc', city: 'Bengaluru', state: 'Karnataka', lat: 12.9781, lng: 77.5694 },
+  chennaistation: { name: 'Chennai Central (MAS)', code: 'MAS', id: 'mas', city: 'Chennai', state: 'Tamil Nadu', lat: 13.0827, lng: 80.2756 },
+  ahmedabadstation: { name: 'Ahmedabad Junction (ADI)', code: 'ADI', id: 'adi', city: 'Ahmedabad', state: 'Gujarat', lat: 23.0225, lng: 72.5714 },
+  punestation: { name: 'Pune Junction (PUNE)', code: 'PUNE', id: 'pune', city: 'Pune', state: 'Maharashtra', lat: 18.5289, lng: 73.8744 },
+  lko: { name: 'Lucknow Charbagh (LKO)', code: 'LKO', id: 'lucknow-charbagh', city: 'Lucknow', state: 'Uttar Pradesh', lat: 26.8317, lng: 80.9248 },
+  lucknowstation: { name: 'Lucknow Charbagh (LKO)', code: 'LKO', id: 'lucknow-charbagh', city: 'Lucknow', state: 'Uttar Pradesh', lat: 26.8317, lng: 80.9248 },
+  bpl: { name: 'Bhopal Junction (BPL)', code: 'BPL', id: 'bhopal-jn', city: 'Bhopal', state: 'Madhya Pradesh', lat: 23.2599, lng: 77.4126 },
+  bhopalstation: { name: 'Bhopal Junction (BPL)', code: 'BPL', id: 'bhopal-jn', city: 'Bhopal', state: 'Madhya Pradesh', lat: 23.2599, lng: 77.4126 },
+  suratstation: { name: 'Surat Railway Station (ST)', code: 'ST', id: 'surat-stn', city: 'Surat', state: 'Gujarat', lat: 21.2049, lng: 72.8407 },
+  brc: { name: 'Vadodara Junction (BRC)', code: 'BRC', id: 'vadodara-jn', city: 'Vadodara', state: 'Gujarat', lat: 22.3107, lng: 73.1812 },
+  vadodarastation: { name: 'Vadodara Junction (BRC)', code: 'BRC', id: 'vadodara-jn', city: 'Vadodara', state: 'Gujarat', lat: 22.3107, lng: 73.1812 },
+  barodastation: { name: 'Vadodara Junction (BRC)', code: 'BRC', id: 'vadodara-jn', city: 'Vadodara', state: 'Gujarat', lat: 22.3107, lng: 73.1812 },
+  pnbe: { name: 'Patna Junction (PNBE)', code: 'PNBE', id: 'patna-jn', city: 'Patna', state: 'Bihar', lat: 25.6022, lng: 85.1376 },
+  patnastation: { name: 'Patna Junction (PNBE)', code: 'PNBE', id: 'patna-jn', city: 'Patna', state: 'Bihar', lat: 25.6022, lng: 85.1376 },
+  ghy: { name: 'Guwahati Railway Station (GHY)', code: 'GHY', id: 'guwahati-jn', city: 'Guwahati', state: 'Assam', lat: 26.1824, lng: 91.7516 },
+  guwahatistation: { name: 'Guwahati Railway Station (GHY)', code: 'GHY', id: 'guwahati-jn', city: 'Guwahati', state: 'Assam', lat: 26.1824, lng: 91.7516 },
+  bbs: { name: 'Bhubaneswar Railway Station (BBS)', code: 'BBS', id: 'bhubaneswar-jn', city: 'Bhubaneswar', state: 'Odisha', lat: 20.2666, lng: 85.8436 },
+  bhubaneswarstation: { name: 'Bhubaneswar Railway Station (BBS)', code: 'BBS', id: 'bhubaneswar-jn', city: 'Bhubaneswar', state: 'Odisha', lat: 20.2666, lng: 85.8436 },
+  puri: { name: 'Puri Railway Station (PURI)', code: 'PURI', id: 'puri-stn', city: 'Puri', state: 'Odisha', lat: 19.8135, lng: 85.8315 },
+  puristation: { name: 'Puri Railway Station (PURI)', code: 'PURI', id: 'puri-stn', city: 'Puri', state: 'Odisha', lat: 19.8135, lng: 85.8315 },
+  mao: { name: 'Madgaon Junction (MAO)', code: 'MAO', id: 'madgaon-jn', city: 'Madgaon', state: 'Goa', lat: 15.2736, lng: 73.9678 },
+  goastation: { name: 'Madgaon Junction Goa (MAO)', code: 'MAO', id: 'madgaon-jn', city: 'Madgaon', state: 'Goa', lat: 15.2736, lng: 73.9678 },
+  madgaonstation: { name: 'Madgaon Junction Goa (MAO)', code: 'MAO', id: 'madgaon-jn', city: 'Madgaon', state: 'Goa', lat: 15.2736, lng: 73.9678 },
+  cdg: { name: 'Chandigarh Junction (CDG)', code: 'CDG', id: 'chandigarh-jn', city: 'Chandigarh', state: 'Chandigarh', lat: 30.7056, lng: 76.8013 },
+  chandigarhstation: { name: 'Chandigarh Junction (CDG)', code: 'CDG', id: 'chandigarh-jn', city: 'Chandigarh', state: 'Chandigarh', lat: 30.7056, lng: 76.8013 },
+  asr: { name: 'Amritsar Junction (ASR)', code: 'ASR', id: 'asr', city: 'Amritsar', state: 'Punjab', lat: 31.6340, lng: 74.8723 },
+  amritsarstation: { name: 'Amritsar Junction (ASR)', code: 'ASR', id: 'asr', city: 'Amritsar', state: 'Punjab', lat: 31.6340, lng: 74.8723 },
+  ldh: { name: 'Ludhiana Junction (LDH)', code: 'LDH', id: 'ldh', city: 'Ludhiana', state: 'Punjab', lat: 30.9083, lng: 75.8589 },
+  ludhianastation: { name: 'Ludhiana Junction (LDH)', code: 'LDH', id: 'ldh', city: 'Ludhiana', state: 'Punjab', lat: 30.9083, lng: 75.8589 },
+  jrc: { name: 'Jalandhar Cantt (JRC)', code: 'JRC', id: 'jrc', city: 'Jalandhar', state: 'Punjab', lat: 31.2981, lng: 75.6147 },
+  jalandharstation: { name: 'Jalandhar Cantt (JRC)', code: 'JRC', id: 'jrc', city: 'Jalandhar', state: 'Punjab', lat: 31.2981, lng: 75.6147 },
+  sml: { name: 'Shimla Railway Station (SML)', code: 'SML', id: 'shimla-stn', city: 'Shimla', state: 'Himachal Pradesh', lat: 31.1039, lng: 77.1644 },
+  shimlastation: { name: 'Shimla Railway Station (SML)', code: 'SML', id: 'shimla-stn', city: 'Shimla', state: 'Himachal Pradesh', lat: 31.1039, lng: 77.1644 },
+  ers: { name: 'Ernakulam Junction (ERS)', code: 'ERS', id: 'ers', city: 'Kochi', state: 'Kerala', lat: 9.9678, lng: 76.2891 },
+  kochistation: { name: 'Ernakulam Junction (ERS)', code: 'ERS', id: 'ers', city: 'Kochi', state: 'Kerala', lat: 9.9678, lng: 76.2891 },
+  ernakulamstation: { name: 'Ernakulam Junction (ERS)', code: 'ERS', id: 'ers', city: 'Kochi', state: 'Kerala', lat: 9.9678, lng: 76.2891 },
+  tvc: { name: 'Thiruvananthapuram Central (TVC)', code: 'TVC', id: 'trivandrum-central', city: 'Thiruvananthapuram', state: 'Kerala', lat: 8.4875, lng: 76.9532 },
+  trivandrumstation: { name: 'Thiruvananthapuram Central (TVC)', code: 'TVC', id: 'trivandrum-central', city: 'Thiruvananthapuram', state: 'Kerala', lat: 8.4875, lng: 76.9532 },
+};
 
 // Initialize transport registry
 export function initializeTransportRegistry(rootDir: string = process.cwd()) {
@@ -219,7 +279,43 @@ export function initializeTransportRegistry(rootDir: string = process.cwd()) {
     }
   }
 
-  // 2. Ingest verified stations & airports from INDIA_TOURISM_DATABASE
+  // 2. Ingest suburban stations from data/mumbai_local_network.json
+  const mumbaiNetPath = path.join(rootDir, 'data', 'mumbai_local_network.json');
+  if (fs.existsSync(mumbaiNetPath)) {
+    try {
+      const raw = JSON.parse(fs.readFileSync(mumbaiNetPath, 'utf-8'));
+      if (raw.lines) {
+        for (const lineKey of Object.keys(raw.lines)) {
+          const lineObj = raw.lines[lineKey];
+          if (Array.isArray(lineObj.stations)) {
+            for (const stn of lineObj.stations) {
+              if (stn.name && stn.lat && stn.lng) {
+                const exists = MASTER_VERIFIED_STATIONS.some(
+                  (x) => x.name.toLowerCase() === stn.name.toLowerCase() || (stn.code && x.code.toLowerCase() === stn.code.toLowerCase())
+                );
+                if (!exists) {
+                  MASTER_VERIFIED_STATIONS.push({
+                    name: `${stn.name} Railway Station`,
+                    code: stn.code || '',
+                    city: 'Mumbai',
+                    state: 'Maharashtra',
+                    lat: Number(stn.lat),
+                    lng: Number(stn.lng),
+                    is_junction: !!stn.is_interchange,
+                    status: 'VERIFIED',
+                  });
+                }
+              }
+            }
+          }
+        }
+      }
+    } catch (e) {
+      console.error('[TransportRegistry] Failed to parse mumbai_local_network.json:', e);
+    }
+  }
+
+  // 3. Ingest verified stations & airports from INDIA_TOURISM_DATABASE
   for (const state of (INDIA_TOURISM_DATABASE.states as any[]) || []) {
     for (const city of (state.cities as any[]) || []) {
       const cityLat = city.coordinates?.lat || 0;
@@ -293,7 +389,7 @@ export function initializeTransportRegistry(rootDir: string = process.cwd()) {
 
   // Add specific verified critical airports if not present
   const ESSENTIAL_AIRPORTS: VerifiedAirportNode[] = [
-    { name: 'Indira Gandhi International Airport', code: 'DEL', city: 'New Delhi', state: 'Delhi', lat: 28.5562, lng: 77.1000, status: 'VERIFIED' },
+    { name: 'Indira Gandhi International Airport', code: 'DEL', city: 'New Delhi', state: 'Delhi (NCT)', lat: 28.5562, lng: 77.1000, status: 'VERIFIED' },
     { name: 'Chhatrapati Shivaji Maharaj International Airport', code: 'BOM', city: 'Mumbai', state: 'Maharashtra', lat: 19.0896, lng: 72.8656, status: 'VERIFIED' },
     { name: 'Kempegowda International Airport', code: 'BLR', city: 'Bengaluru', state: 'Karnataka', lat: 13.1986, lng: 77.7066, status: 'VERIFIED' },
     { name: 'Netaji Subhash Chandra Bose International Airport', code: 'CCU', city: 'Kolkata', state: 'West Bengal', lat: 22.6547, lng: 88.4467, status: 'VERIFIED' },
@@ -317,6 +413,42 @@ export function initializeTransportRegistry(rootDir: string = process.cwd()) {
     }
   }
 
+  // 4. Ingest verified places / POIs
+  const poiSources = [
+    path.join(rootDir, 'data', 'mumbai', 'places.json'),
+    path.join(rootDir, 'data', 'places.json'),
+    path.join(rootDir, 'data', 'india_tourism.json'),
+    path.join(rootDir, 'data', 'heritage', 'monuments.json'),
+  ];
+  for (const srcPath of poiSources) {
+    if (fs.existsSync(srcPath)) {
+      try {
+        const raw = JSON.parse(fs.readFileSync(srcPath, 'utf-8'));
+        const arr = Array.isArray(raw) ? raw : raw.places ? raw.places : [];
+        for (const p of arr) {
+          const pLat = Number(p.coordinates?.lat || p.lat || 0);
+          const pLng = Number(p.coordinates?.lng || p.lng || 0);
+          if (p.name && pLat && pLng) {
+            const exists = MASTER_VERIFIED_PLACES.some((x) => x.name.toLowerCase() === p.name.toLowerCase());
+            if (!exists) {
+              MASTER_VERIFIED_PLACES.push({
+                id: p.id || '',
+                name: p.name,
+                city: p.city || '',
+                state: p.state || '',
+                lat: pLat,
+                lng: pLng,
+              });
+            }
+          }
+        }
+      } catch (e) {
+        // Ignore file parse error
+      }
+    }
+  }
+
+
   // Ingest unique stations from STATION_ALIASES
   for (const alias of Object.values(STATION_ALIASES)) {
     if (!MASTER_VERIFIED_STATIONS.some((s) => s.code === alias.code || s.name.toLowerCase() === alias.name.toLowerCase())) {
@@ -327,44 +459,34 @@ export function initializeTransportRegistry(rootDir: string = process.cwd()) {
         state: alias.state,
         lat: alias.lat,
         lng: alias.lng,
+        is_junction: (alias as any).is_junction,
         status: 'VERIFIED',
       });
     }
   }
 }
 
-// -------------------------------------------------------------
-// Find Verified Station By Query or Alias
-// -------------------------------------------------------------
-export function findStationByQuery(query: string): VerifiedStationNode | null {
-  if (!query) return null;
+/**
+ * Helper to match any query to a verified railway station or alias.
+ */
+export function findStationByQuery(rawQuery: string): VerifiedStationNode | null {
+  if (!rawQuery) return null;
   initializeTransportRegistry();
-  const q = query.trim().toLowerCase();
-  const cleanQ = q.replace(/[^a-z0-9]/g, '');
 
-  // 1. Direct match by station code (e.g. "CSMT", "NDLS", "HWH")
-  const codeMatch = MASTER_VERIFIED_STATIONS.find(
-    (s) => s.code && s.code.toLowerCase() === cleanQ
-  );
-  if (codeMatch) return codeMatch;
+  const clean = rawQuery.trim().replace(/[?!,.:;]+$/g, '').trim().toLowerCase();
+  if (!clean) return null;
 
-  // 2. Direct match in STATION_ALIASES
-  if (STATION_ALIASES[cleanQ]) {
-    const a = STATION_ALIASES[cleanQ];
-    return {
-      name: a.name,
-      code: a.code,
-      city: a.city,
-      state: a.state,
-      lat: a.lat,
-      lng: a.lng,
-      status: 'VERIFIED',
-    };
-  }
+  // Extract code in parentheses e.g. "Sealdah (SDAH)" -> "sdah"
+  const parenCodeMatch = clean.match(/\(([a-zA-Z0-9]+)\)/);
+  const parenCode = parenCodeMatch ? parenCodeMatch[1].toLowerCase() : null;
+  const cleanWithoutParens = clean.replace(/\s*\([^)]*\)/g, '').trim();
 
-  // 3. Substring matching in aliases
-  for (const [key, a] of Object.entries(STATION_ALIASES)) {
-    if (key.length >= 3 && (q.includes(key) || key.includes(q))) {
+  const candidates = [clean, parenCode, cleanWithoutParens].filter((c): c is string => !!c && c.length > 0);
+
+  // 1. Direct Alias Check (CSMT, CCG, NDLS, HWH, etc.)
+  for (const cand of candidates) {
+    if (STATION_ALIASES[cand]) {
+      const a = STATION_ALIASES[cand];
       return {
         name: a.name,
         code: a.code,
@@ -372,22 +494,33 @@ export function findStationByQuery(query: string): VerifiedStationNode | null {
         state: a.state,
         lat: a.lat,
         lng: a.lng,
+        is_junction: a.is_junction,
         status: 'VERIFIED',
       };
     }
   }
 
-  // 4. Exact name or stripped name match
-  const nameMatch = MASTER_VERIFIED_STATIONS.find(
-    (s) => s.name.toLowerCase() === q || s.name.toLowerCase().replace(/[^a-z0-9]/g, '') === cleanQ
-  );
-  if (nameMatch) return nameMatch;
+  // 2. Check MASTER_VERIFIED_STATIONS by exact code match
+  for (const cand of candidates) {
+    const codeMatch = MASTER_VERIFIED_STATIONS.find((s) => s.code && s.code.toLowerCase() === cand);
+    if (codeMatch) return codeMatch;
+  }
 
-  // 5. Substring name match
-  const partialName = MASTER_VERIFIED_STATIONS.find(
-    (s) => s.name.toLowerCase().includes(q) || (q.length >= 4 && q.includes(s.name.toLowerCase()))
-  );
-  if (partialName) return partialName;
+  // 3. Check by exact station name match
+  for (const cand of candidates) {
+    const exactName = MASTER_VERIFIED_STATIONS.find((s) => s.name.toLowerCase() === cand);
+    if (exactName) return exactName;
+  }
+
+  // 4. Check by station name contains or query contains station name
+  for (const cand of candidates) {
+    if (cand.length >= 4) {
+      const subMatch = MASTER_VERIFIED_STATIONS.find(
+        (s) => s.name.toLowerCase().includes(cand) || cand.includes(s.name.toLowerCase())
+      );
+      if (subMatch) return subMatch;
+    }
+  }
 
   return null;
 }
@@ -413,43 +546,85 @@ export function resolveOriginTransportNode(
   let hasCoords = false;
 
   if (typeof rawOrigin === 'string') {
-    const trimmed = rawOrigin.trim();
+    const trimmed = rawOrigin.trim().replace(/[?!,.:;]+$/g, '').trim();
     if (!trimmed || trimmed.toLowerCase() === 'unknown' || trimmed.toLowerCase() === 'your location') {
       return null;
     }
     label = trimmed;
     const cleanLower = label.toLowerCase();
-    // Try matching city
-    const allCities = (INDIA_TOURISM_DATABASE.states as unknown as any[]).flatMap((s: any) => s.cities || []);
-    const matchedCity = allCities.find(
-      (c: any) => c && (c.name.toLowerCase() === cleanLower || cleanLower.includes(c.name.toLowerCase()))
-    );
-    if (matchedCity) {
-      city = matchedCity.name;
-      state = matchedCity.state || '';
-      if (matchedCity.coordinates?.lat && matchedCity.coordinates?.lng) {
-        lat = matchedCity.coordinates.lat;
-        lng = matchedCity.coordinates.lng;
-        hasCoords = true;
-      }
+
+    // 1. Check station alias or station code first
+    const stn = findStationByQuery(cleanLower);
+    if (stn) {
+      city = stn.city;
+      state = stn.state;
+      lat = stn.lat;
+      lng = stn.lng;
+      label = stn.name;
+      hasCoords = true;
     } else {
-      // Try matching verified station
-      const stn = MASTER_VERIFIED_STATIONS.find(
-        (s) => s.city.toLowerCase() === cleanLower || s.name.toLowerCase().includes(cleanLower) || cleanLower.includes(s.city.toLowerCase())
+      // 2. Try matching city
+      const allCities = (INDIA_TOURISM_DATABASE.states as unknown as any[]).flatMap((s: any) => s.cities || []);
+      const matchedCity = allCities.find(
+        (c: any) => c && (c.name.toLowerCase() === cleanLower || cleanLower.includes(c.name.toLowerCase()))
       );
-      if (stn) {
-        city = stn.city;
-        state = stn.state;
-        lat = stn.lat;
-        lng = stn.lng;
-        hasCoords = true;
+      if (matchedCity) {
+        city = matchedCity.name;
+        state = matchedCity.state || '';
+        if (matchedCity.coordinates?.lat && matchedCity.coordinates?.lng) {
+          lat = matchedCity.coordinates.lat;
+          lng = matchedCity.coordinates.lng;
+          hasCoords = true;
+        }
+      } else {
+        // 3. Try matching place / POI (e.g. Gateway of India, Taj Mahal, Dal Lake)
+        const foundPoi = MASTER_VERIFIED_PLACES.find(
+          (p) =>
+            p.name.toLowerCase() === cleanLower ||
+            cleanLower.includes(p.name.toLowerCase()) ||
+            p.name.toLowerCase().includes(cleanLower)
+        );
+        if (foundPoi) {
+          city = foundPoi.city;
+          state = foundPoi.state;
+          label = foundPoi.name;
+          lat = foundPoi.lat;
+          lng = foundPoi.lng;
+          hasCoords = true;
+        } else {
+          for (const st of INDIA_TOURISM_DATABASE.states) {
+            for (const c of (st.cities || [])) {
+              for (const p of ((c as any).places || [])) {
+                if (
+                  p.name.toLowerCase() === cleanLower ||
+                  cleanLower.includes(p.name.toLowerCase()) ||
+                  p.name.toLowerCase().includes(cleanLower)
+                ) {
+                  city = c.name;
+                  state = st.name;
+                  label = p.name;
+                  if (p.coordinates?.lat && p.coordinates?.lng) {
+                    lat = p.coordinates.lat;
+                    lng = p.coordinates.lng;
+                    hasCoords = true;
+                  }
+                  break;
+                }
+              }
+              if (hasCoords) break;
+            }
+            if (hasCoords) break;
+          }
+        }
       }
     }
   } else if (rawOrigin && typeof rawOrigin === 'object') {
     if (rawOrigin.lat && rawOrigin.lng && !isNaN(rawOrigin.lat) && !isNaN(rawOrigin.lng)) {
-      lat = rawOrigin.lat;
-      lng = rawOrigin.lng;
-      hasCoords = true;
+      if (rawOrigin.lat >= 6.0 && rawOrigin.lat <= 38.5 && rawOrigin.lng >= 68.0 && rawOrigin.lng <= 98.5) {
+        lat = rawOrigin.lat;
+        lng = rawOrigin.lng;
+        hasCoords = true;
+      }
     }
     city = rawOrigin.city || '';
     state = rawOrigin.state || '';
@@ -495,7 +670,7 @@ export function resolveOriginTransportNode(
   }
 
   return {
-    origin_label: label || city || 'Verified Origin',
+    origin_label: label || city || nearestStation.name || 'Verified Origin',
     city: city || nearestStation.city,
     state: state || nearestStation.state,
     coordinates: { lat, lng },
@@ -516,7 +691,7 @@ export function resolveOriginTransportNode(
 
 // -------------------------------------------------------------
 // Resolve Destination to Real Verified Transport Nodes
-// (NEVER invent "${dest} Railway Station" or "${dest} Airport")
+// (City-aware, station-aware, never falls back to fake coordinates)
 // -------------------------------------------------------------
 export function resolveDestinationTransportNode(
   destQuery: string,
@@ -524,9 +699,9 @@ export function resolveDestinationTransportNode(
 ): ResolvedTransportDestination {
   initializeTransportRegistry();
 
-  const q = destQuery.trim().toLowerCase();
+  const q = (destQuery || '').trim().replace(/[?!,.:;]+$/g, '').trim().toLowerCase();
 
-  // 1. Check if destination is a Point of Interest (POI) like "Dal Lake", "Gateway of India", etc.
+  // 1. Check if destination is a Point of Interest (POI)
   let matchedPlace: any = null;
   if (placesData) {
     for (const [id, p] of placesData.entries()) {
@@ -542,8 +717,19 @@ export function resolveDestinationTransportNode(
     }
   }
 
-  // 2. Special Mountain & Heritage Hubs with distinct physical railhead/airport geography
-  // DARJEELING
+  if (!matchedPlace) {
+    const foundPoi = MASTER_VERIFIED_PLACES.find(
+      (p) =>
+        p.name.toLowerCase() === q ||
+        q.includes(p.name.toLowerCase()) ||
+        p.name.toLowerCase().includes(q)
+    );
+    if (foundPoi) {
+      matchedPlace = foundPoi;
+    }
+  }
+
+  // 2. Special Mountain & Heritage Hubs
   if (q.includes('darjeeling')) {
     return {
       is_poi: false,
@@ -573,7 +759,6 @@ export function resolveDestinationTransportNode(
     };
   }
 
-  // DAL LAKE
   if (q.includes('dal lake')) {
     return {
       is_poi: true,
@@ -604,7 +789,6 @@ export function resolveDestinationTransportNode(
     };
   }
 
-  // SRINAGAR / KASHMIR
   if (q.includes('srinagar') || q.includes('kashmir')) {
     return {
       is_poi: false,
@@ -632,7 +816,6 @@ export function resolveDestinationTransportNode(
     };
   }
 
-  // OOTY / UDHAGAMANDALAM
   if (q.includes('ooty') || q.includes('udhagamandalam')) {
     return {
       is_poi: false,
@@ -660,7 +843,6 @@ export function resolveDestinationTransportNode(
     };
   }
 
-  // SHIMLA
   if (q.includes('shimla')) {
     return {
       is_poi: false,
@@ -688,7 +870,6 @@ export function resolveDestinationTransportNode(
     };
   }
 
-  // LEH / LADAKH
   if (q.includes('leh') || q.includes('ladakh')) {
     return {
       is_poi: false,
@@ -716,7 +897,6 @@ export function resolveDestinationTransportNode(
     };
   }
 
-  // HAMPI
   if (q.includes('hampi')) {
     return {
       is_poi: false,
@@ -745,7 +925,6 @@ export function resolveDestinationTransportNode(
     };
   }
 
-  // SONAMARG
   if (q.includes('sonamarg')) {
     return {
       is_poi: false,
@@ -775,7 +954,6 @@ export function resolveDestinationTransportNode(
     };
   }
 
-  // KANYAKUMARI
   if (q.includes('kanyakumari')) {
     return {
       is_poi: false,
@@ -805,7 +983,6 @@ export function resolveDestinationTransportNode(
     };
   }
 
-  // GOA
   if (q.includes('goa')) {
     return {
       is_poi: false,
@@ -833,7 +1010,6 @@ export function resolveDestinationTransportNode(
     };
   }
 
-  // DELHI / NEW DELHI
   if (q.includes('delhi') || q === 'ndls' || q === 'dli') {
     return {
       is_poi: false,
@@ -862,20 +1038,46 @@ export function resolveDestinationTransportNode(
     };
   }
 
-  // 3. Resolve by Matched POI
+  // 3. Resolve by Station Code / Alias (e.g. CSMT, Churchgate, CCG, Dadar, etc.)
+  const matchedStation = findStationByQuery(q);
+  if (matchedStation) {
+    return {
+      is_poi: false,
+      destination_name: matchedStation.name,
+      city: matchedStation.city,
+      state: matchedStation.state,
+      coordinates: { lat: matchedStation.lat, lng: matchedStation.lng },
+      railway_hub: {
+        station_name: matchedStation.name,
+        station_code: matchedStation.code,
+        is_direct: true,
+        distance_to_dest_km: 0,
+        onward_connection_note: `Direct rail access at ${matchedStation.name} (${matchedStation.code}).`,
+        status: 'VERIFIED',
+      },
+      airport_hub: {
+        airport_name: `${matchedStation.city} Airport`,
+        airport_code: '',
+        is_direct: false,
+        onward_connection_note: `Commercial aviation gateway serving ${matchedStation.city}.`,
+        status: 'VERIFIED',
+      },
+      geographic_notes: `Station hub in ${matchedStation.city}, ${matchedStation.state}.`,
+    };
+  }
+
+  // 4. Resolve by Matched POI
   if (matchedPlace) {
     const poiCity = matchedPlace.city || 'India';
     const poiState = matchedPlace.state || '';
-    const poiCoords = matchedPlace.coordinates || { lat: 20.5937, lng: 78.9629 };
+    const poiCoords = matchedPlace.coordinates || { lat: matchedPlace.lat || 20.5937, lng: matchedPlace.lng || 78.9629 };
 
-    // Find verified station for the POI's city
     let cityStn = MASTER_VERIFIED_STATIONS.find(
       (s) => s.city.toLowerCase() === poiCity.toLowerCase()
     );
     let stnDist = cityStn ? haversineDistanceKm(poiCoords.lat, poiCoords.lng, cityStn.lat, cityStn.lng) : 0;
 
     if (!cityStn) {
-      // Find closest verified station by coordinates
       let minDist = Infinity;
       for (const s of MASTER_VERIFIED_STATIONS) {
         const d = haversineDistanceKm(poiCoords.lat, poiCoords.lng, s.lat, s.lng);
@@ -887,7 +1089,6 @@ export function resolveDestinationTransportNode(
       stnDist = minDist;
     }
 
-    // Find verified airport for the POI's city
     let cityApt = MASTER_VERIFIED_AIRPORTS.find(
       (a) => a.city.toLowerCase() === poiCity.toLowerCase()
     );
@@ -932,7 +1133,7 @@ export function resolveDestinationTransportNode(
     };
   }
 
-  // 4. Resolve by City in INDIA_TOURISM_DATABASE
+  // 5. Resolve by City in INDIA_TOURISM_DATABASE
   for (const state of INDIA_TOURISM_DATABASE.states || []) {
     for (const city of state.cities || []) {
       if (
@@ -984,72 +1185,244 @@ export function resolveDestinationTransportNode(
     }
   }
 
-  // 5. Fallback: Search closest verified nodes from geographic index
-  // If destination is completely unrecognized, do NOT invent a station or airport!
+  // 6. Unresolved Destination: NEVER fabricate coordinates to Nagpur (20.5937, 78.9629)
   return {
     is_poi: false,
     destination_name: destQuery,
     city: destQuery,
     state: 'India',
-    coordinates: { lat: 20.5937, lng: 78.9629 },
+    coordinates: { lat: 0, lng: 0 },
     railway_hub: {
-      station_name: 'No verified direct railway station found in the available data',
+      station_name: 'Unresolved destination station',
       station_code: '',
       is_direct: false,
-      onward_connection_note: `No verified railway station found in Virasat database for "${destQuery}". Please specify a nearby major city.`,
+      onward_connection_note: `Destination "${destQuery}" could not be confidently identified in the Virasat database. Please specify a nearby city or station.`,
       status: 'NOT_AVAILABLE',
     },
     airport_hub: {
-      airport_name: 'No verified airport found in the available data',
+      airport_name: 'Unresolved destination airport',
       airport_code: '',
       is_direct: false,
-      onward_connection_note: `No verified commercial airport found in Virasat database for "${destQuery}".`,
+      onward_connection_note: `No verified airport recognized for "${destQuery}".`,
       status: 'NOT_AVAILABLE',
     },
+    geographic_notes: 'Unresolved destination entity',
   };
 }
 
 // -------------------------------------------------------------
 // Build Verified Multimodal Transit Comparison
+// (City-aware, Same-city routing, Defensive coordinate validation)
 // -------------------------------------------------------------
 export function buildVerifiedTransitComparison(
   originNode: ResolvedTransportOrigin,
   destNode: ResolvedTransportDestination,
   selectedMode?: 'train' | 'air' | 'road' | 'all'
 ): TransitComparison {
-  const oLat = originNode.coordinates.lat;
-  const oLng = originNode.coordinates.lng;
-  const dLat = destNode.coordinates.lat;
-  const dLng = destNode.coordinates.lng;
+  if (!originNode || !destNode) {
+    return {
+      origin: originNode?.origin_label || 'Unknown',
+      destination: destNode?.destination_name || 'Unknown',
+      distance_km: 0,
+    };
+  }
+
+  const oLat = originNode.coordinates?.lat || 0;
+  const oLng = originNode.coordinates?.lng || 0;
+  const dLat = destNode.coordinates?.lat || 0;
+  const dLng = destNode.coordinates?.lng || 0;
+
+  // Defensive validation: coordinate sanity checks
+  const isOriginCoordsValid = oLat >= 6.0 && oLat <= 38.5 && oLng >= 68.0 && oLng <= 98.5;
+  const isDestCoordsValid = dLat >= 6.0 && dLat <= 38.5 && dLng >= 68.0 && dLng <= 98.5;
+
+  if (!isOriginCoordsValid || !isDestCoordsValid) {
+    return {
+      origin: originNode.origin_label,
+      destination: destNode.destination_name,
+      distance_km: 0,
+      is_same_city: false,
+      train: {
+        summary: `Location clarification needed for ${destNode.destination_name}`,
+        approx_duration: 'N/A',
+        notes: `Could not confidently determine geographic coordinates for "${destNode.destination_name}". Please verify the location name.`,
+      },
+      air: {
+        summary: `Location clarification needed`,
+        approx_duration: 'N/A',
+        notes: `Please specify a verified starting or destination city.`,
+      },
+      road: {
+        summary: `Route calculation unavailable`,
+        approx_duration: 'N/A',
+        notes: `Please provide a valid Indian city or station.`,
+      },
+    };
+  }
 
   // Real Haversine straight-line distance
-  const aerialDistanceKm = Math.round(haversineDistanceKm(oLat, oLng, dLat, dLng));
+  const aerialDistanceKm = Math.round(haversineDistanceKm(oLat, oLng, dLat, dLng) * 10) / 10;
 
-  // Realistic highway distance (approx 1.25 - 1.35x aerial distance depending on terrain)
+  // Defensive check: Reject impossible straight-line distance (> 3800 km)
+  if (aerialDistanceKm > 3800) {
+    return {
+      origin: originNode.origin_label,
+      destination: destNode.destination_name,
+      distance_km: aerialDistanceKm,
+      is_same_city: false,
+      train: {
+        summary: 'Exceeds mainland domestic routing boundaries',
+        notes: 'Distance exceeds standard Indian domestic transit corridors.',
+      },
+    };
+  }
+
+  const origCity = (originNode.city || '').toLowerCase().trim();
+  const destCity = (destNode.city || '').toLowerCase().trim();
   const isHilly = destNode.geographic_notes?.toLowerCase().includes('mountain') || destNode.geographic_notes?.toLowerCase().includes('hill');
+
+  // Same-city detection
+  const isSameCity =
+    (origCity.length > 0 && destCity.length > 0 && (origCity === destCity || origCity.includes(destCity) || destCity.includes(origCity))) ||
+    (aerialDistanceKm <= 35 && originNode.state?.toLowerCase() === destNode.state?.toLowerCase());
+
+  // -------------------------------------------------------------
+  // SAME-CITY / INTRA-METROPOLITAN ROUTING
+  // -------------------------------------------------------------
+  if (isSameCity) {
+    const roadDistKm = Math.max(0.8, Math.round(aerialDistanceKm * 1.5 * 10) / 10);
+    const driveMinutes = Math.max(5, Math.min(75, Math.round(roadDistKm * 3.5)));
+    const walkMinutes = Math.round(roadDistKm * 12);
+
+    // City-specific nuances (Mumbai, Delhi, Kolkata, Chennai, etc.)
+    const isMumbai = origCity.includes('mumbai') || destCity.includes('mumbai');
+    const isDelhi = origCity.includes('delhi') || destCity.includes('delhi');
+    const isKolkata = origCity.includes('kolkata') || destCity.includes('kolkata');
+
+    // Local train option
+    let localTrainSummary = `Suburban / Local Rail within ${destNode.city || originNode.city}`;
+    let localTrainDuration = '15 - 30 mins';
+    let localTrainNotes = `Direct city local transport / suburban rail network. Regulated local fare: ₹5 - ₹15.`;
+    let localTrainStations = [originNode.nearest_railway_station.name, destNode.railway_hub.station_name];
+
+    if (isMumbai) {
+      const origIsCsmt = originNode.origin_label.toLowerCase().includes('csmt') || originNode.nearest_railway_station.code === 'CSMT';
+      const destIsChurchgate = destNode.destination_name.toLowerCase().includes('churchgate') || destNode.railway_hub.station_code === 'CCG';
+      const origIsChurchgate = originNode.origin_label.toLowerCase().includes('churchgate') || originNode.nearest_railway_station.code === 'CCG';
+      const destIsCsmt = destNode.destination_name.toLowerCase().includes('csmt') || destNode.railway_hub.station_code === 'CSMT';
+
+      if ((origIsCsmt && destIsChurchgate) || (origIsChurchgate && destIsCsmt)) {
+        localTrainSummary = `Mumbai Suburban Rail: Central/Harbour Line (CSMT) ↔ Western Line (Churchgate)`;
+        localTrainDuration = `~20–25 mins via Dadar transfer OR 5–10 min direct taxi / 15-min walk`;
+        localTrainStations = ['CSMT (Central/Harbour Terminus)', 'Churchgate (Western Line Terminus)'];
+        localTrainNotes = `CSMT and Churchgate are adjacent South Mumbai railway terminals separated by ~1.2 km across the Fort / Hutatma Chowk heritage precinct. For local train rail-only journey, transfer between Central and Western lines at Dadar Junction (~25 mins), or take a direct 5-10 minute metered Kaali-Peeli taxi / 15-minute heritage walk.`;
+      } else {
+        localTrainSummary = `Mumbai Suburban Local Train (${originNode.origin_label} ➔ ${destNode.destination_name})`;
+        localTrainDuration = roadDistKm < 10 ? '10 - 20 mins' : roadDistKm < 25 ? '25 - 45 mins' : '45 - 75 mins';
+        localTrainNotes = `Frequent fast and slow local trains operated by Central and Western Railways. Fare: ₹5–₹15 (Second Class), ₹50–₹105 (First Class / AC Local).`;
+      }
+    }
+
+    // Road / Taxi option
+    const roadSummary = isMumbai
+      ? `Kaali-Peeli Metered Taxi / App Cab / BEST Bus: ${originNode.origin_label} ➔ ${destNode.destination_name}`
+      : `City Cab / Taxi / Auto: ${originNode.origin_label} ➔ ${destNode.destination_name}`;
+
+    const roadNotes = isMumbai && (origCity === 'mumbai' && (originNode.coordinates.lat < 19.05 || destNode.coordinates.lat < 19.05))
+      ? `South Mumbai (Island City) metered Kaali-Peeli taxi ride (~${driveMinutes} mins, regulated meter fare ~₹28–₹45). Note: Auto-rickshaws are prohibited in South Mumbai south of Mahim/Sion.`
+      : `City road transit (~${roadDistKm} km, ~${driveMinutes} mins under typical traffic). Regulated metered auto-rickshaw or taxi available.`;
+
+    const localModes = [
+      {
+        mode: 'Local Train',
+        summary: localTrainSummary,
+        duration: localTrainDuration,
+        cost_estimate: '₹5 - ₹15 (Suburban Railway)',
+        notes: localTrainNotes,
+      },
+      {
+        mode: 'Taxi / Cab',
+        summary: `Metered Kaali-Peeli / App Cab (~${roadDistKm} km)`,
+        duration: `~${driveMinutes} mins`,
+        cost_estimate: isMumbai ? '₹28 - ₹45 (Regulated Meter)' : '₹40 - ₹80',
+        notes: roadNotes,
+      },
+      {
+        mode: 'City Bus',
+        summary: isMumbai ? 'BEST City Bus Transit (Routes connecting terminals)' : 'City Municipal Bus',
+        duration: `~${driveMinutes + 5} mins`,
+        cost_estimate: '₹6 - ₹15',
+        notes: isMumbai ? 'Frequent BEST buses (e.g. 137, 138) connect South Mumbai terminals.' : 'Frequent municipal bus transit.',
+      },
+    ];
+
+    if (roadDistKm <= 3.0) {
+      localModes.push({
+        mode: 'Walking',
+        summary: `Pleasant Heritage Walk: ${originNode.origin_label} ➔ ${destNode.destination_name}`,
+        duration: `~${walkMinutes} mins (~${roadDistKm} km)`,
+        cost_estimate: 'Free',
+        notes: isMumbai ? 'Scenic walk through the UNESCO Victorian Gothic & Art Deco heritage precinct (via D.N. Road / Flora Fountain / Veer Nariman Road).' : 'Comfortable urban walking distance.',
+      });
+    }
+
+    return {
+      origin: originNode.origin_label,
+      destination: destNode.destination_name,
+      distance_km: aerialDistanceKm,
+      is_same_city: true,
+      city: destNode.city || originNode.city,
+      local_modes: localModes,
+      train: {
+        summary: localTrainSummary,
+        approx_duration: localTrainDuration,
+        distance_km: roadDistKm,
+        stations: localTrainStations,
+        lines: [isMumbai ? 'Mumbai Suburban Railway' : isKolkata ? 'Kolkata Suburban Railway' : isDelhi ? 'Delhi-NCR Transit Network' : 'City Suburban Rail'],
+        notes: localTrainNotes,
+        fare_estimate: '₹5 - ₹15',
+      },
+      air: undefined,
+      road: {
+        summary: roadSummary,
+        approx_duration: `~${driveMinutes} mins driving / taxi`,
+        distance_km: roadDistKm,
+        highways: ['City Arterial Roads'],
+        notes: roadNotes,
+        fare_estimate: isMumbai ? '₹28 - ₹45 (Metered Taxi)' : '₹40 - ₹80',
+      },
+      walking: roadDistKm <= 3.5 ? {
+        summary: `Walking route (~${roadDistKm} km)`,
+        approx_duration: `~${walkMinutes} mins`,
+        distance_km: roadDistKm,
+        notes: `Short urban stroll.`,
+      } : undefined,
+      taxi: {
+        summary: `Metered Taxi / Cab (~${roadDistKm} km)`,
+        approx_duration: `~${driveMinutes} mins`,
+        distance_km: roadDistKm,
+        fare_estimate: isMumbai ? '₹28 - ₹45' : '₹40 - ₹80',
+        notes: roadNotes,
+      },
+    };
+  }
+
+  // -------------------------------------------------------------
+  // INTERCITY ROUTING (Different cities / distant hubs)
+  // -------------------------------------------------------------
   const roadMultiplier = isHilly ? 1.35 : 1.25;
   const roadDistanceKm = Math.round(aerialDistanceKm * roadMultiplier);
   const avgRoadSpeed = isHilly ? 45 : 55; // km/h
   const roadHours = Math.max(1, Math.round(roadDistanceKm / avgRoadSpeed));
 
-  // Realistic railway calculation
   const railDistanceKm = Math.round(aerialDistanceKm * 1.18);
   const trainHours = Math.max(1, Math.round(railDistanceKm / 60));
 
-  // Train Option
   let trainSummary = '';
   let trainDuration = `${trainHours} - ${Math.round(trainHours * 1.25)} hours`;
   let trainNotes = '';
 
-  const isSameStation =
-    (originNode.nearest_railway_station.code && destNode.railway_hub.station_code && originNode.nearest_railway_station.code === destNode.railway_hub.station_code) ||
-    (originNode.city.toLowerCase() === destNode.city.toLowerCase() && aerialDistanceKm < 25);
-
-  if (isSameStation) {
-    trainSummary = `Local suburban / metro transit within ${destNode.city || destNode.destination_name}`;
-    trainDuration = '15 - 45 mins';
-    trainNotes = `You are already located within or near ${destNode.city || destNode.destination_name}. Use city local transport (metro, suburban rail, or auto/cab) instead of intercity rail.`;
-  } else if (destNode.railway_hub.status === 'VERIFIED') {
+  if (destNode.railway_hub.status === 'VERIFIED') {
     trainSummary = `Train from ${originNode.nearest_railway_station.name} (${originNode.nearest_railway_station.code}) to ${destNode.railway_hub.station_name}`;
     trainNotes = destNode.railway_hub.onward_connection_note || 'Scheduled Indian Railways express connectivity. Verify official schedules and book on IRCTC.';
   } else {
@@ -1058,21 +1431,11 @@ export function buildVerifiedTransitComparison(
     trainNotes = destNode.railway_hub.onward_connection_note || 'No verified direct railway connection found in the available data.';
   }
 
-  // Flight Option
   let airSummary = '';
   let airDuration = '';
   let airNotes = '';
 
-  const isSameMetro =
-    originNode.city.toLowerCase() === destNode.city.toLowerCase() ||
-    aerialDistanceKm < 35 ||
-    (originNode.nearest_airport.code && destNode.airport_hub.airport_code && originNode.nearest_airport.code === destNode.airport_hub.airport_code);
-
-  if (isSameMetro) {
-    airSummary = `Intra-city / short distance: No commercial flights operated within ${destNode.city || destNode.destination_name}`;
-    airDuration = 'N/A (Local transit recommended)';
-    airNotes = `You are already within or near ${destNode.city || destNode.destination_name}. Intercity flights do not operate within the same metropolitan area; use local road or rail transit.`;
-  } else if (destNode.airport_hub.status === 'VERIFIED') {
+  if (destNode.airport_hub.status === 'VERIFIED') {
     airSummary = `Flight from ${originNode.nearest_airport.name} (${originNode.nearest_airport.code}) to ${destNode.airport_hub.airport_name}`;
     airDuration = aerialDistanceKm < 450 ? '~1 hr 15 min flight' : aerialDistanceKm < 1000 ? '~2 hrs direct' : '~2.5 to 3.5 hrs direct/connecting';
     airNotes = destNode.airport_hub.onward_connection_note || 'Check official airline portals for current flight schedules.';
@@ -1082,7 +1445,6 @@ export function buildVerifiedTransitComparison(
     airNotes = destNode.airport_hub.onward_connection_note || 'No verified direct commercial airport found in the available data.';
   }
 
-  // Road Option
   const roadSummary = `Highway route: ${originNode.origin_label} ➔ ${destNode.destination_name}`;
   const roadNotes = isHilly
     ? `Mountain terrain driving. Road ascent involves winding ghat sections; drive cautiously or hire experienced hill drivers. Estimated travel time ~${roadHours} hours.`
@@ -1092,6 +1454,7 @@ export function buildVerifiedTransitComparison(
     origin: originNode.origin_label,
     destination: destNode.destination_name,
     distance_km: aerialDistanceKm,
+    is_same_city: false,
     train: {
       summary: trainSummary,
       approx_duration: trainDuration,

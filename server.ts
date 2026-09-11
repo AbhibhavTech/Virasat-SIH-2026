@@ -127,6 +127,8 @@ interface PlaceItem {
   state_id?: string;
   city: string;
   city_id?: string;
+  assigned_city?: string;
+  tourist_place?: string;
   country: string;
   category: string;
   summary: string;
@@ -199,7 +201,10 @@ const CITY_ALIASES: Record<string, string[]> = {
   santiniketan: ['santiniketan', 'shantiniketan', 'bolpur'],
   siliguri: ['siliguri'],
   amritsar: ['amritsar'],
-  goa: ['goa', 'panaji', 'old goa', 'velha goa', 'sinquerim', 'candolim'],
+  goa: ['goa'],
+  'old goa': ['old goa', 'velha goa'],
+  candolim: ['candolim', 'sinquerim'],
+  panaji: ['panaji', 'panjim'],
   bengaluru: ['bengaluru', 'bangalore'],
   hyderabad: ['hyderabad', 'secunderabad'],
   hanamkonda: ['hanamkonda'],
@@ -451,6 +456,9 @@ const CANONICAL_CITY_NAMES: Record<string, string> = {
   siliguri: 'Siliguri',
   amritsar: 'Amritsar',
   goa: 'Goa',
+  'old goa': 'Old Goa',
+  candolim: 'Candolim',
+  panaji: 'Panaji',
   bengaluru: 'Bengaluru',
   hyderabad: 'Hyderabad',
   hanamkonda: 'Hanamkonda',
@@ -700,50 +708,75 @@ function getCanonicalCityId(cityNameOrId: string): string {
 
   // 2. Exact match on aliases
   for (const [canonId, aliases] of Object.entries(CITY_ALIASES)) {
-    if (aliases.some((a) => a.toLowerCase().trim() === norm || a.toLowerCase().trim().replace(/[-_]+/g, ' ') === normSpace)) {
+    if (canonId === norm || aliases.some((a) => a.toLowerCase().trim() === norm || a.toLowerCase().trim().replace(/[-_]+/g, ' ') === normSpace)) {
       return canonId;
     }
   }
 
   // 3. Word boundary substring matching only as fallback
   for (const [canonId, aliases] of Object.entries(CITY_ALIASES)) {
-    if (aliases.some((a) => {
+    if (canonId !== 'goa' && aliases.some((a) => {
       const aSpace = a.toLowerCase().trim().replace(/[-_]+/g, ' ');
-      return normSpace.startsWith(aSpace + ' ') || normSpace.endsWith(' ' + aSpace);
+      return normSpace.startsWith(aSpace + ' ') || normSpace.endsWith(' ' + aSpace) || (a.length > 3 && (norm.includes(a) || a.includes(norm)));
     })) {
       return canonId;
     }
   }
 
-  return norm.replace(/[^a-z0-9]/g, '-');
+  return '';
 }
 
 function getCanonicalCityName(cityId: string): string {
   const norm = (cityId || '').toLowerCase().trim();
   if (CANONICAL_CITY_NAMES[norm]) return CANONICAL_CITY_NAMES[norm];
+  const directKey = norm.replace(/[^a-z0-9]/g, '-');
+  if (CANONICAL_CITY_NAMES[directKey]) return CANONICAL_CITY_NAMES[directKey];
   return norm ? norm.charAt(0).toUpperCase() + norm.slice(1) : '';
+}
+
+function matchesCityName(cityName: string, target: string): boolean {
+  if (!cityName || !target) return false;
+  const c = cityName.toLowerCase().trim();
+  const t = target.toLowerCase().trim();
+  if (c === t) return true;
+  if (c.replace(/[^a-z0-9]+/g, '-') === t.replace(/[^a-z0-9]+/g, '-')) return true;
+  try {
+    const escaped = t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const regex = new RegExp(`(^|\\s|[-/,])${escaped}(\\s|[-/,]|$)`, 'i');
+    return regex.test(c);
+  } catch {
+    return c === t;
+  }
 }
 
 function isPlaceInCity(place: any, targetCity: string): boolean {
   if (!place || !targetCity) return false;
+  const rawTarget = targetCity.toLowerCase().trim();
   const targetCanon = getCanonicalCityId(targetCity);
-  if (!targetCanon) return false;
+  if (!targetCanon && !rawTarget) return false;
+
   const pCity = (place.city || '').toLowerCase().trim();
   const pCityId = ((place as any).city_id || '').toLowerCase().trim();
+  const pAssigned = ((place as any).assigned_city || '').toLowerCase().trim();
   const pArea = ((place as any).area || '').toLowerCase().trim();
+
+  if (pAssigned && (matchesCityName(pAssigned, rawTarget) || (targetCanon && matchesCityName(pAssigned, targetCanon)))) return true;
+  if (pCityId && (matchesCityName(pCityId, rawTarget) || (targetCanon && matchesCityName(pCityId, targetCanon)))) return true;
+  if (pCity && (matchesCityName(pCity, rawTarget) || (targetCanon && matchesCityName(pCity, targetCanon)))) return true;
 
   // If place has explicit city or city_id that maps to a canonical city, strictly match canonical IDs
   const pCanon = (pCityId && getCanonicalCityId(pCityId)) || (pCity && getCanonicalCityId(pCity));
-  if (pCanon) {
-    return pCanon === targetCanon;
+  if (pCanon && targetCanon) {
+    if (pCanon === targetCanon) return true;
   }
 
-  if (pArea && getCanonicalCityId(pArea) === targetCanon) return true;
+  if (pArea && targetCanon && getCanonicalCityId(pArea) === targetCanon) return true;
 
-  const aliases = CITY_ALIASES[targetCanon] || [targetCanon];
+  const aliases = targetCanon ? (CITY_ALIASES[targetCanon] || [targetCanon]) : [];
   return aliases.some((a) =>
-    (pCity && (pCity === a || pCity.includes(a))) ||
-    (pCityId && (pCityId === a || pCityId.includes(a))) ||
+    (pCity && (pCity === a || matchesCityName(pCity, a) || pCity.includes(a))) ||
+    (pCityId && (pCityId === a || matchesCityName(pCityId, a) || pCityId.includes(a))) ||
+    (pAssigned && (pAssigned === a || matchesCityName(pAssigned, a) || pAssigned.includes(a))) ||
     (pArea && (pArea === a || pArea.includes(a)))
   );
 }
@@ -798,7 +831,13 @@ function loadData() {
         const raw = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
         for (const item of raw) {
           if (item && item.id) {
-            placesData.set(item.id.toLowerCase(), item);
+            const existing = placesData.get(item.id.toLowerCase());
+            if (existing) {
+              if (item.assigned_city) (existing as any).assigned_city = item.assigned_city;
+              if (item.tourist_place) (existing as any).tourist_place = item.tourist_place;
+            } else {
+              placesData.set(item.id.toLowerCase(), item);
+            }
           }
         }
       }
@@ -815,6 +854,7 @@ function loadData() {
     loadPlacesFile(path.join(dataDir, 'kolkata', 'places.json'));
     loadPlacesFile(path.join(dataDir, 'west-bengal', 'places.json'));
     loadPlacesFile(path.join(dataDir, 'goa', 'places.json'));
+    loadPlacesFile(path.join(dataDir, 'madhya-pradesh', 'places.json'));
     loadPlacesFile(path.join(dataDir, 'punjab', 'places.json'));
     loadPlacesFile(path.join(dataDir, 'odisha', 'places.json'));
     loadPlacesFile(path.join(dataDir, 'andhra-pradesh', 'places.json'));
@@ -824,6 +864,7 @@ function loadData() {
     loadPlacesFile(path.join(dataDir, 'sikkim', 'places.json'));
     loadPlacesFile(path.join(dataDir, 'tripura', 'places.json'));
     loadPlacesFile(path.join(dataDir, 'uttarakhand', 'places.json'));
+    loadPlacesFile(path.join(dataDir, 'gujarat', 'places.json'));
     loadPlacesFile(path.join(dataDir, 'telangana', 'places.json'));
     loadPlacesFile(path.join(dataDir, 'nagaland', 'places.json'));
     loadPlacesFile(path.join(dataDir, 'meghalaya', 'places.json'));
@@ -841,8 +882,11 @@ function loadData() {
       heritageData.push(...rawHeritage);
       for (const item of rawHeritage) {
         if (item && item.id) {
+          const existing = placesData.get(item.id.toLowerCase());
           const normItem = {
             ...item,
+            assigned_city: item.assigned_city || (existing as any)?.assigned_city,
+            tourist_place: item.tourist_place || (existing as any)?.tourist_place || item.name,
             category: item.category || 'Architectural & Colonial',
             summary: item.summary || item.historical_significance?.slice(0, 200) || '',
             tags: item.tags || ['heritage', 'unesco'],
@@ -1573,7 +1617,20 @@ app.get(['/api/destinations', '/api/places'], (req, res) => {
 
   if (city) {
     const c = (city as string).toLowerCase().trim();
-    results = results.filter((p) => isPlaceInCity(p, c));
+    const cSlug = c.replace(/[^a-z0-9]+/g, '-');
+    results = results.filter((p) => {
+      const aCity = ((p as any).assigned_city || '').toLowerCase().trim();
+      const aCitySlug = aCity.replace(/[^a-z0-9]+/g, '-');
+      const pCity = (p.city || '').toLowerCase().trim();
+      const pCitySlug = pCity.replace(/[^a-z0-9]+/g, '-');
+      const pCityId = ((p as any).city_id || '').toLowerCase().trim();
+
+      if (aCity && (aCity === c || aCitySlug === cSlug)) return true;
+      if (isPlaceInCity(p, c)) return true;
+      if (pCity && (pCity === c || pCitySlug === cSlug)) return true;
+      if (pCityId && (pCityId === c || pCityId === cSlug)) return true;
+      return false;
+    });
   }
 
   if (category && (category as string).toLowerCase() !== 'all') {
@@ -1969,6 +2026,8 @@ app.get('/api/search', (req, res) => {
     .filter((p) => {
       return (
         p.name.toLowerCase().includes(query) ||
+        ((p as any).tourist_place && (p as any).tourist_place.toLowerCase().includes(query)) ||
+        ((p as any).assigned_city && (p as any).assigned_city.toLowerCase().includes(query)) ||
         p.city.toLowerCase().includes(query) ||
         p.state.toLowerCase().includes(query) ||
         p.category.toLowerCase().includes(query) ||
@@ -2089,6 +2148,8 @@ app.get('/api/locations/suggest', (req, res) => {
   // 3. Search Places & Attractions (skip duplicate monuments already returned)
   for (const p of placesData.values()) {
     const pName = p.name.toLowerCase();
+    const pTouristPlace = ((p as any).tourist_place || '').toLowerCase();
+    const pAssignedCity = ((p as any).assigned_city || '').toLowerCase();
     const pCity = (p.city || '').toLowerCase();
     const pClean = pName.replace(/[^a-z0-9]/g, '');
 
@@ -2099,9 +2160,11 @@ app.get('/api/locations/suggest', (req, res) => {
 
     let score = 0;
     if (p.id.toLowerCase() === query || pClean === cleanQ) score += 90;
-    else if (pName.startsWith(query)) score += 70;
-    else if (pName.includes(query)) score += 48;
-    else if (tokens.length > 0 && tokens.every(tok => pName.includes(tok) || pCity.includes(tok))) score += 35;
+    else if (pTouristPlace && pTouristPlace.replace(/[^a-z0-9]/g, '') === cleanQ) score += 90;
+    else if (pName.startsWith(query) || (pTouristPlace && pTouristPlace.startsWith(query))) score += 70;
+    else if (pName.includes(query) || (pTouristPlace && pTouristPlace.includes(query))) score += 48;
+    else if (pAssignedCity && (pAssignedCity === query || pAssignedCity.startsWith(query))) score += 45;
+    else if (tokens.length > 0 && tokens.every(tok => pName.includes(tok) || pCity.includes(tok) || pTouristPlace.includes(tok) || pAssignedCity.includes(tok))) score += 35;
 
     const uniqueId = seenIds.has(p.id) ? `place-${p.id}` : p.id;
     if (score > 0 && !seenIds.has(uniqueId)) {

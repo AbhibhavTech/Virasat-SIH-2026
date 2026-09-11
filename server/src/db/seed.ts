@@ -248,6 +248,9 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
             city_id: cityId,
             state_id: stateId,
             name: m.name,
+            city: m.city,
+            assigned_city: (m as any).assigned_city || m.city,
+            tourist_place: (m as any).tourist_place || m.name,
             category: 'heritage',
             summary: m.summary || m.historical_significance || '',
             description: m.description || m.summary || '',
@@ -320,12 +323,13 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
   }
 
   // -------------------------------------------------------------
-  // 5. Regional Flagship Datasets (Mumbai, Delhi, Rajasthan, Goa, Kerala, Maharashtra)
+  // 5. Regional Flagship Datasets (All States & UTs)
   // -------------------------------------------------------------
   const regionalDirs = [
-    'mumbai', 'delhi', 'rajasthan', 'maharashtra', 'goa', 'kerala', 'ladakh', 'jammu-kashmir', 'punjab', 'kolkata', 'west-bengal',
-    'odisha', 'andhra-pradesh', 'assam', 'arunachal-pradesh', 'himachal-pradesh', 'sikkim', 'tripura', 'uttarakhand',
-    'telangana', 'nagaland', 'meghalaya', 'manipur', 'mizoram', 'bihar', 'uttar-pradesh', 'karnataka', 'chhattisgarh', 'haryana'
+    'mumbai', 'delhi', 'rajasthan', 'maharashtra', 'goa', 'kerala', 'ladakh', 'jammu-kashmir', 'punjab',
+    'kolkata', 'west-bengal', 'odisha', 'andhra-pradesh', 'assam', 'arunachal-pradesh', 'himachal-pradesh',
+    'sikkim', 'tripura', 'uttarakhand', 'madhya-pradesh', 'gujarat', 'telangana', 'nagaland', 'meghalaya',
+    'manipur', 'mizoram', 'bihar', 'uttar-pradesh', 'karnataka', 'chhattisgarh', 'haryana'
   ];
   for (const reg of regionalDirs) {
     const regPath = path.join(rootDataDir, reg, 'places.json');
@@ -339,10 +343,14 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
             const normalizedName = rp.name.trim().toLowerCase();
             const isProtectedRegional = rp.id.startsWith('telangana_') || rp.id.startsWith('nagaland_') || rp.id.startsWith('meghalaya_') || rp.id.startsWith('manipur_') || rp.id.startsWith('mizoram_') || rp.id.startsWith('bihar_') || rp.id.startsWith('uttar_pradesh_') || rp.id.startsWith('karnataka_') || rp.id.startsWith('chhattisgarh_') || rp.id.startsWith('haryana_');
             const existing = places[rp.id] || (!isProtectedRegional && Object.values(places).find(p => p.city_id === cityId && p.name.trim().toLowerCase() === normalizedName));
-            if (existing) continue; // Already ingested via curated monuments
+            if (existing) {
+              if (rp.assigned_city) existing.assigned_city = rp.assigned_city;
+              if (rp.tourist_place) existing.tourist_place = rp.tourist_place;
+              continue; // Already ingested via curated monuments
+            }
             const sourceUrl = rp.source_url && rp.source_url.startsWith('http') ? rp.source_url : 'https://asi.nic.in';
-            const quality = rp.source_quality || computeSourceQuality(sourceUrl);
-            const isVerified = (quality === 'place_specific' || quality === 'official_site' || rp.verification_status === 'verified');
+            const quality = (rp.source_quality as SourceQualityTier) || computeSourceQuality(sourceUrl);
+            const isVerified = rp.verification_status === 'verified' || quality === 'place_specific' || quality === 'official_site';
             const verifiedStatus = isVerified ? 'verified' : 'needs_review';
 
             const domesticFee = typeof rp.entry_fee === 'number' ? rp.entry_fee : Number(rp.entry_fee?.domestic ?? rp.entry_fee_inr ?? 0);
@@ -361,6 +369,8 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
               categories: Array.isArray(rp.categories) ? rp.categories : [rp.category || 'heritage'],
               area: rp.area,
               city: rp.city,
+              assigned_city: rp.assigned_city || rp.city,
+              tourist_place: rp.tourist_place || rp.name,
               summary: rp.summary || rp.description || '',
               description: rp.description || rp.summary || '',
               history: rp.history || '',
@@ -497,16 +507,22 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
                       if (Array.isArray(attr.sources) && attr.sources.length > 0) {
                         existingPlace.sources = attr.sources;
                       }
+                      if (attr.assigned_city) existingPlace.assigned_city = attr.assigned_city;
+                      if (attr.tourist_place) existingPlace.tourist_place = attr.tourist_place;
                       if (attr.topic) existingPlace.topic = attr.topic;
                       if (attr.subtopic) existingPlace.subtopic = attr.subtopic;
                       if (attr.category_links) existingPlace.category_links = attr.category_links;
                       
-                      const quality = computeSourceQuality(existingPlace.source_url);
-                      existingPlace.source_quality = quality;
-                      if (quality === 'generic_homepage' || quality === 'missing' || existingPlace.id === 'capitol-complex-chandigarh') {
-                        existingPlace.verification_status = 'needs_review';
-                      } else if (quality === 'place_specific' || quality === 'official_site') {
+                      if (attr.verification_status === 'verified') {
                         existingPlace.verification_status = 'verified';
+                      } else if (existingPlace.verification_status !== 'verified') {
+                        const quality = computeSourceQuality(existingPlace.source_url);
+                        existingPlace.source_quality = quality;
+                        if (quality === 'generic_homepage' || quality === 'missing' || existingPlace.id === 'capitol-complex-chandigarh') {
+                          existingPlace.verification_status = 'needs_review';
+                        } else if (quality === 'place_specific' || quality === 'official_site') {
+                          existingPlace.verification_status = 'verified';
+                        }
                       }
                       if (attr.last_verified_on) existingPlace.last_verified_on = attr.last_verified_on;
                       if (attr.detailed_description) existingPlace.detailed_description = attr.detailed_description;
@@ -571,6 +587,8 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
                       city_id: city.id,
                       state_id: state.id,
                       name: attr.name,
+                      assigned_city: attr.assigned_city || city.name,
+                      tourist_place: attr.tourist_place || attr.name,
                       slug: attr.slug || placeId,
                       place_type: attr.place_type || 'Tourist Place',
                       category: attr.category || catKey || 'heritage',
@@ -722,6 +740,8 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
       }
     }
     basilica.categories = Array.from(cats);
+    basilica.assigned_city = 'Old Goa';
+    basilica.tourist_place = 'Basilica of Bom Jesus';
     places['basilica-of-bom-jesus'] = basilica;
     delete places['basilica-bom-jesus-goa'];
   }

@@ -357,8 +357,17 @@ export interface TransitOption {
   stations?: string[];
   lines?: string[];
   airport_origin?: string;
+  fare_estimate?: string;
   airport_dest?: string;
   highways?: string[];
+  notes?: string;
+}
+
+export interface LocalTransitMode {
+  mode: string;
+  summary: string;
+  duration: string;
+  cost_estimate?: string;
   notes?: string;
 }
 
@@ -366,9 +375,18 @@ export interface TransitComparison {
   origin: string;
   destination: string;
   distance_km?: number;
+  is_same_city?: boolean;
+  city?: string;
+  notes?: string;
+  local_modes?: LocalTransitMode[];
   train?: TransitOption;
   air?: TransitOption;
   road?: TransitOption;
+  walking?: TransitOption;
+  taxi?: TransitOption;
+  metro?: TransitOption;
+  bus?: TransitOption;
+  auto?: TransitOption;
 }
 
 export interface AIChatRequest {

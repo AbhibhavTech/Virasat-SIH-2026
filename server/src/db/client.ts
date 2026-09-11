@@ -251,15 +251,30 @@ class DatabaseManager {
         list = list.filter((p) => p.state_id?.toLowerCase() === sTarget || (p as any).state?.toLowerCase() === sTarget);
       }
       if (filters?.cityId || filters?.city) {
-        const targetCity = (filters.cityId || filters.city || '').toLowerCase().trim();
+        const rawTarget = (filters.cityId || filters.city || '').trim().toLowerCase();
+        const slugTarget = rawTarget.replace(/[^a-z0-9]+/g, '-');
+        const targetNorm = rawTarget.replace(/[-_]+/g, ' ');
         list = list.filter((p) => {
           const cId = (p.city_id || '').toLowerCase().trim();
+          const aCity = (p.assigned_city || '').toLowerCase().trim();
           const cName = ((p as any).city || '').toLowerCase().trim();
           const area = ((p as any).area || '').toLowerCase().trim();
-          const targetNorm = targetCity.replace(/[-_]+/g, ' ');
           const cNorm = cName.replace(/[-_]+/g, ' ');
           const cIdNorm = cId.replace(/[-_]+/g, ' ');
-          if (cId === targetCity || cName === targetCity || cNorm === targetNorm || cIdNorm === targetNorm) return true;
+
+          if (
+            cId === rawTarget ||
+            cId === slugTarget ||
+            aCity === rawTarget ||
+            aCity.replace(/[^a-z0-9]+/g, '-') === slugTarget ||
+            cName === rawTarget ||
+            cName.replace(/[^a-z0-9]+/g, '-') === slugTarget ||
+            cNorm === targetNorm ||
+            cIdNorm === targetNorm ||
+            (aCity.length > 2 && (rawTarget.includes(aCity) || aCity.includes(rawTarget))) ||
+            (cName.length > 2 && (rawTarget.includes(cName) || cName.includes(rawTarget)))
+          ) return true;
+
           if (targetNorm === 'bodh gaya' && (cId === 'bodh-gaya' || cId === 'bodh_gaya' || cNorm === 'bodh gaya')) return true;
           if (targetNorm === 'patna city' && (cId === 'patna-city' || cId === 'patna_city' || cNorm === 'patna city')) return true;
           if (targetNorm === 'valmiki nagar' && (cId === 'valmiki-nagar' || cId === 'valmiki_nagar' || cNorm === 'valmiki nagar')) return true;
@@ -268,12 +283,12 @@ class DatabaseManager {
           if (targetNorm === 'tamor pingla' && (cId === 'tamor-pingla' || cId === 'tamor_pingla' || cNorm === 'tamor pingla')) return true;
           if (targetNorm === 'udanti sitanadi' && (cId === 'udanti-sitanadi' || cId === 'udanti_sitanadi' || cNorm === 'udanti sitanadi')) return true;
           if (targetNorm === 'hassan' && (cId === 'hassan' || cNorm === 'hassan' || area.includes('hassan'))) return true;
-          if ((targetCity === 'bhongir' || targetCity === 'bhuvanagiri') && (cId === 'yadadri-bhuvanagiri' || cName === 'yadadri bhuvanagiri' || area.includes('bhuvanagiri'))) return true;
-          if (targetCity === 'yadadri' && (cId === 'yadadri' || cName === 'yadadri')) return true;
-          if (targetCity === 'kolkata' && (cId === 'kolkata' || area.includes('howrah') || area.includes('kolkata') || cId === 'howrah')) return true;
-          if (targetCity === 'dzukou' && (cId === 'dzukou' || cName.includes('dzukou') || area.includes('dzukou'))) return true;
-          if ((targetCity === 'cherrapunji' || targetCity === 'cherrapunjee' || targetCity === 'sohra') && (cId === 'cherrapunji' || cName.includes('cherrapunji'))) return true;
-          if (area === targetCity && !cId && !cName) return true;
+          if ((rawTarget === 'bhongir' || rawTarget === 'bhuvanagiri') && (cId === 'yadadri-bhuvanagiri' || cName === 'yadadri bhuvanagiri' || area.includes('bhuvanagiri'))) return true;
+          if (rawTarget === 'yadadri' && (cId === 'yadadri' || cName === 'yadadri')) return true;
+          if (rawTarget === 'kolkata' && (cId === 'kolkata' || area.includes('howrah') || area.includes('kolkata') || cId === 'howrah')) return true;
+          if (rawTarget === 'dzukou' && (cId === 'dzukou' || cName.includes('dzukou') || area.includes('dzukou'))) return true;
+          if ((rawTarget === 'cherrapunji' || rawTarget === 'cherrapunjee' || rawTarget === 'sohra') && (cId === 'cherrapunji' || cName.includes('cherrapunji'))) return true;
+          if (area === rawTarget && !cId && !cName) return true;
           return false;
         });
       }
@@ -321,6 +336,9 @@ class DatabaseManager {
         list = list.filter(
           (p) =>
             (p.name?.toLowerCase() || '').includes(q) ||
+            (p.tourist_place?.toLowerCase() || '').includes(q) ||
+            (p.assigned_city?.toLowerCase() || '').includes(q) ||
+            (p.city?.toLowerCase() || '').includes(q) ||
             (p.summary?.toLowerCase() || '').includes(q) ||
             (p.description?.toLowerCase() || '').includes(q) ||
             (p.city_id?.toLowerCase() || '').includes(q) ||

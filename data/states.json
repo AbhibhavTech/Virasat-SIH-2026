@@ -38,7 +38,7 @@
     "description": "Vedic heartland of the epic Mahabharata, ancient Harappan archaeological mounds at Rakhigarhi, and Pinjore Mughal gardens.",
     "status": "verified",
     "hero_image_url": "https://images.unsplash.com/photo-1596701062351-8c2c14d1fdd1?w=1200&auto=format&fit=crop&q=80",
-    "total_cities": 19,
+    "total_cities": 6,
     "total_attractions": 30,
     "total_places": 30,
     "cities": [
@@ -144,8 +144,8 @@
     "description": "Uttar Pradesh, situated in the fertile Indo-Gangetic plain, is a foundational center of Indian classical civilization, home to holy rivers Ganga and Yamuna, world-renowned Mughal and Awadhi monuments, and sacred pilgrimage centers.",
     "status": "verified",
     "hero_image_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&q=80",
-    "total_cities": 12,
-    "total_attractions": 40,
+    "total_cities": 10,
+    "total_attractions": 35,
     "total_places": 40,
     "cities": [
       "lucknow",
@@ -215,7 +215,7 @@
     "description": "Jeweled land featuring Loktak Lake with floating phumdis, Keibul Lamjao Sangai deer park, and Kangla Fort.",
     "status": "verified",
     "hero_image_url": "https://images.unsplash.com/photo-1616423640778-28d1b53229bd?w=1200&auto=format&fit=crop&q=80",
-    "total_cities": 6,
+    "total_cities": 1,
     "total_attractions": 10,
     "total_places": 10
   },
@@ -230,7 +230,7 @@
     "description": "Abode of Clouds, renowned for living root bridges, Cherrapunjee waterfalls, clean village Mawlynnong, and Khasi culture.",
     "status": "verified",
     "hero_image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&auto=format&fit=crop&q=80",
-    "total_cities": 6,
+    "total_cities": 2,
     "total_attractions": 10,
     "total_places": 10
   },
@@ -245,7 +245,7 @@
     "description": "Land of Rolling Hills and bamboo forests, known for its ridge-top capital Aizawl, Cheraw bamboo dance, and pristine lakes.",
     "status": "verified",
     "hero_image_url": "https://images.unsplash.com/photo-1627993077750-6d4323229b48?w=1200&auto=format&fit=crop&q=80",
-    "total_cities": 7,
+    "total_cities": 4,
     "total_attractions": 10,
     "total_places": 10
   },
@@ -260,7 +260,7 @@
     "description": "Land of Festivals, celebrated for the Hornbill Festival, 16 indigenous warrior tribes, WWII Kohima War Cemetery, and Dzukou Valley.",
     "status": "verified",
     "hero_image_url": "https://images.unsplash.com/photo-1628172900406-8d6840742f1b?w=1200&auto=format&fit=crop&q=80",
-    "total_cities": 5,
+    "total_cities": 3,
     "total_attractions": 10,
     "total_places": 10
   },
@@ -317,7 +317,7 @@
     "description": "Cradle of ancient empires (Maurya and Gupta), enlightenment grounds of Gautama Buddha, and birthplace of Guru Gobind Singh.",
     "status": "verified",
     "hero_image_url": "https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=1200&auto=format&fit=crop&q=80",
-    "total_cities": 14,
+    "total_cities": 4,
     "total_attractions": 30,
     "total_places": 30,
     "cities": [
@@ -376,8 +376,8 @@
     "description": "Cultural capital of India featuring Victoria Memorial, UNESCO Sundarbans, Darjeeling Himalayan Railway, and terracotta Bishnupur.",
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1558431382-27e303142255?w=1200&auto=format&fit=crop&q=80",
-    "total_cities": 7,
-    "total_attractions": 20
+    "total_cities": 6,
+    "total_attractions": 13
   },
   {
     "id": "chhattisgarh",
@@ -390,7 +390,7 @@
     "description": "Green heartland of India boasting Chitrakote Horseshoe Falls, ancient Sirpur Buddhist brick monuments, and Bastar tribal arts.",
     "status": "verified",
     "hero_image_url": "https://images.unsplash.com/photo-1627894483216-2138af692e32?w=1200&auto=format&fit=crop&q=80",
-    "total_cities": 22,
+    "total_cities": 5,
     "total_attractions": 30,
     "total_places": 30,
     "cities": [
@@ -458,7 +458,7 @@
     "status": "active",
     "hero_image_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1200&auto=format&fit=crop&q=80",
     "total_cities": 1,
-    "total_attractions": 12
+    "total_attractions": 10
   },
   {
     "id": "gujarat",
@@ -469,10 +469,10 @@
     "region": "Western India",
     "official_tourism_url": "https://unsplash.com/photos/brown-concrete-building-near-green-grass-field-during-daytime-r6t2tE4Z_4A",
     "description": "Land of Legends featuring Ahmedabad World Heritage City, Rani ki Vav stepwell, Champaner, Somnath, and Asiatic Lions of Gir.",
-    "status": "active",
+    "status": "verified",
     "hero_image_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=1200&auto=format&fit=crop&q=80",
     "total_cities": 18,
-    "total_attractions": 20
+    "total_attractions": 27
   },
   {
     "id": "maharashtra",
@@ -513,7 +513,7 @@
     "description": "One State Many Worlds featuring UNESCO Vijayanagara ruins at Hampi, Hoysala Sacred Ensembles, and Badami Chalukya cave temples.",
     "status": "verified",
     "hero_image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=1200&auto=format&fit=crop&q=80",
-    "total_cities": 20,
+    "total_cities": 15,
     "total_attractions": 40,
     "total_places": 40,
     "cities": [
@@ -606,7 +606,7 @@
     "description": "Heart of Deccan heritage, Nizami architectural marvels, Kakatiya stone gateways, historic Charminar, and sacred pilgrimage destinations.",
     "status": "verified",
     "hero_image_url": "https://images.unsplash.com/photo-1605335198083-d5d85202874a?w=1200&auto=format&fit=crop&q=80",
-    "total_cities": 8,
+    "total_cities": 5,
     "total_attractions": 15,
     "region_type": "state",
     "total_places": 15

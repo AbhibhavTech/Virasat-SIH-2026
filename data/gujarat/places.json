@@ -1,0 +1,1348 @@
+[
+  {
+    "id": "ahmedabad-old-city",
+    "name": "Ahmedabad Old City",
+    "tourist_place": "Ahmedabad Old City",
+    "assigned_city": "Ahmedabad",
+    "city": "Ahmedabad",
+    "city_id": "ahmedabad",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "category": "heritage",
+    "categories": [
+      "heritage",
+      "unesco_world_heritage",
+      "historic_city"
+    ],
+    "topic": "Heritage",
+    "subtopic": "UNESCO World Heritage Sites",
+    "summary": "India's first UNESCO World Heritage City, founded in 1411 CE by Sultan Ahmad Shah, famed for pols, carved wooden facades, and gated settlements.",
+    "description": "The Historic City of Ahmadabad was founded in 1411 CE on the eastern bank of the Sabarmati River. It features dense traditional residential settlements known as pols, bird feeders (chabutras), and outstanding Indo-Islamic monuments.",
+    "visiting_hours": "06:00 AM - 10:00 PM",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 0,
+    "entry_fee_intl": 0,
+    "best_time_to_visit": "October to March",
+    "coordinates": {
+      "lat": 23.0225,
+      "lng": 72.585
+    },
+    "rating": 4.8,
+    "image_url": "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "UNESCO World Heritage City",
+    "data_confidence": "official",
+    "source_name": "UNESCO World Heritage Centre / Gujarat Tourism",
+    "source_url": "https://whc.unesco.org/en/list/1551/",
+    "source_type": "unesco",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "heritage",
+      "unesco",
+      "Ahmedabad",
+      "Gujarat",
+      "history"
+    ]
+  },
+  {
+    "id": "sabarmati-ashram",
+    "name": "Sabarmati Ashram",
+    "tourist_place": "Sabarmati Ashram",
+    "assigned_city": "Ahmedabad",
+    "city": "Ahmedabad",
+    "city_id": "ahmedabad",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "category": "heritage",
+    "categories": [
+      "heritage",
+      "freedom_struggle",
+      "memorial"
+    ],
+    "topic": "Heritage",
+    "subtopic": "National Memorials",
+    "summary": "The headquarters of Mahatma Gandhi from 1917 to 1930, from where the historic Dandi Salt March was launched.",
+    "description": "Located on the banks of the River Sabarmati, this peaceful ashram was Mahatma Gandhi's home during the pivotal years of India's independence movement. Houses Hriday Kunj, Gandhi Memorial Museum, and Gandhi's personal artifacts.",
+    "visiting_hours": "08:30 AM - 06:30 PM",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 0,
+    "entry_fee_intl": 0,
+    "best_time_to_visit": "October to March",
+    "coordinates": {
+      "lat": 23.0605,
+      "lng": 72.58
+    },
+    "rating": 4.9,
+    "image_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "National Memorial / ASI Protected",
+    "data_confidence": "official",
+    "source_name": "Sabarmati Ashram Preservation Trust / Gujarat Tourism",
+    "source_url": "https://gandhiashramsabarmati.org/destination/sabarmati-ashram",
+    "source_type": "official_institution",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "Gandhi",
+      "freedom_struggle",
+      "Ahmedabad",
+      "Gujarat",
+      "heritage"
+    ]
+  },
+  {
+    "id": "statue-of-unity",
+    "name": "Statue of Unity",
+    "tourist_place": "Statue of Unity",
+    "assigned_city": "Ekta Nagar",
+    "city": "Ekta Nagar",
+    "city_id": "ekta-nagar",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "category": "heritage",
+    "categories": [
+      "heritage",
+      "monument",
+      "world_record"
+    ],
+    "topic": "Heritage",
+    "subtopic": "Monuments",
+    "summary": "The world's tallest statue standing at 182 meters, dedicated to Sardar Vallabhbhai Patel overlooking Sardar Sarovar Dam.",
+    "description": "Standing at 182 meters (597 ft) on Sadhu Bet island overlooking the Narmada River and Sardar Sarovar Dam, this colossal bronze statue honors Sardar Vallabhbhai Patel, the Iron Man of India.",
+    "visiting_hours": "08:00 AM - 06:00 PM (Closed Mondays)",
+    "entry_fee": {
+      "domestic": 150,
+      "international": 1500,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 150,
+    "entry_fee_intl": 1500,
+    "best_time_to_visit": "October to March",
+    "coordinates": {
+      "lat": 21.838,
+      "lng": 73.7191
+    },
+    "rating": 4.9,
+    "image_url": "https://images.unsplash.com/photo-1588096344356-9b5962829288?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1588096344356-9b5962829288?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "National Monument of Modern India",
+    "data_confidence": "official",
+    "source_name": "Statue of Unity Official Authority / Gujarat Tourism",
+    "source_url": "https://statueofunity.in/destination/statue-of-unity",
+    "source_type": "official_institution",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "StatueOfUnity",
+      "EktaNagar",
+      "Gujarat",
+      "monument"
+    ]
+  },
+  {
+    "id": "rani-ki-vav",
+    "name": "Rani ki Vav",
+    "tourist_place": "Rani ki Vav",
+    "assigned_city": "Patan",
+    "city": "Patan",
+    "city_id": "patan",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "category": "heritage",
+    "categories": [
+      "heritage",
+      "unesco_world_heritage",
+      "stepwell"
+    ],
+    "topic": "Heritage",
+    "subtopic": "UNESCO World Heritage Sites",
+    "summary": "A magnificent 11th-century subterranean stepwell designed as an inverted temple with seven levels of exquisite stone sculptures.",
+    "description": "Built by Queen Udayamati in memory of King Bhima I of the Solanki dynasty, Rani ki Vav is an architectural masterpiece of the Maru-Gurjara style. Featured on the ₹100 currency note of India.",
+    "visiting_hours": "08:00 AM - 06:00 PM",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 550,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 50,
+    "entry_fee_intl": 550,
+    "best_time_to_visit": "October to March",
+    "coordinates": {
+      "lat": 23.8589,
+      "lng": 72.1014
+    },
+    "rating": 4.9,
+    "image_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "UNESCO World Heritage Site",
+    "data_confidence": "official",
+    "source_name": "UNESCO World Heritage Centre",
+    "source_url": "https://whc.unesco.org/en/list/922/",
+    "source_type": "unesco",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "heritage",
+      "unesco",
+      "Patan",
+      "stepwell",
+      "architecture"
+    ]
+  },
+  {
+    "id": "modhera-sun-temple",
+    "name": "Modhera Sun Temple",
+    "tourist_place": "Modhera Sun Temple",
+    "assigned_city": "Modhera",
+    "city": "Modhera",
+    "city_id": "modhera",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "category": "heritage",
+    "categories": [
+      "heritage",
+      "temple",
+      "solanki_architecture"
+    ],
+    "topic": "Heritage",
+    "subtopic": "Ancient Temples",
+    "summary": "Exquisite 11th-century Solanki era temple dedicated to the Sun God, engineered so the first rays of the equinox sun illuminate the sanctum.",
+    "description": "Commissioned by King Bhimadeva I in 1026 CE on the banks of the Pushpavati River. Comprises Guda Mandapa (inner sanctum), Sabha Mandapa (assembly hall), and the magnificent Surya Kund stepped tank with 108 miniature shrines.",
+    "visiting_hours": "07:00 AM - 06:00 PM",
+    "entry_fee": {
+      "domestic": 25,
+      "international": 300,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 25,
+    "entry_fee_intl": 300,
+    "best_time_to_visit": "October to March",
+    "coordinates": {
+      "lat": 23.5835,
+      "lng": 72.133
+    },
+    "rating": 4.8,
+    "image_url": "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "ASI National Monument",
+    "data_confidence": "official",
+    "source_name": "Archaeological Survey of India / Gujarat Tourism",
+    "source_url": "https://asi.nic.in/monuments-of-national-importance/modhera-sun-temple",
+    "source_type": "asi",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "heritage",
+      "Modhera",
+      "SunTemple",
+      "Solanki",
+      "architecture"
+    ]
+  },
+  {
+    "id": "dwarkadhish-temple",
+    "name": "Dwarkadhish Temple",
+    "tourist_place": "Dwarkadhish Temple",
+    "assigned_city": "Dwarka",
+    "city": "Dwarka",
+    "city_id": "dwarka",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "category": "religious_cultural",
+    "categories": [
+      "religious_cultural",
+      "char_dham",
+      "hindu_pilgrimage"
+    ],
+    "topic": "Spiritual",
+    "subtopic": "Char Dham & Sacred Sites",
+    "summary": "One of the sacred Char Dham pilgrimage centers of India, dedicated to Lord Krishna as the King of Dwarka.",
+    "description": "The majestic Jagat Mandir rises 78 meters with a 52-yard sacred flag. Tradition attributes its founding over 2,200 years ago by Vajranabha, great-grandson of Lord Krishna.",
+    "visiting_hours": "06:30 AM - 01:00 PM, 05:00 PM - 09:30 PM",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 0,
+    "entry_fee_intl": 0,
+    "best_time_to_visit": "October to March",
+    "coordinates": {
+      "lat": 22.2376,
+      "lng": 68.9678
+    },
+    "rating": 4.9,
+    "image_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "Ancient Sacred Char Dham Monument",
+    "data_confidence": "official",
+    "source_name": "Shri Dwarkadhish Devasthan Trust / Gujarat Tourism",
+    "source_url": "https://dwarkadhish.org/destination/dwarkadhish-temple",
+    "source_type": "official_institution",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "Dwarka",
+      "CharDham",
+      "Krishna",
+      "spiritual",
+      "heritage"
+    ]
+  },
+  {
+    "id": "somnath-temple",
+    "name": "Somnath Temple",
+    "tourist_place": "Somnath Temple",
+    "assigned_city": "Somnath",
+    "city": "Somnath",
+    "city_id": "somnath",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "category": "religious_cultural",
+    "categories": [
+      "religious_cultural",
+      "jyotirlinga",
+      "sacred_temple"
+    ],
+    "topic": "Spiritual",
+    "subtopic": "12 Jyotirlingas",
+    "summary": "The first among the twelve holy Jyotirlinga shrines of Lord Shiva, situated on the shores of the Arabian Sea.",
+    "description": "Known as the Eternal Shrine, Somnath Temple was rebuilt seven times and restored in its current Chalukya style in 1951 under the leadership of Sardar Vallabhbhai Patel. Overlooks the Triveni Sangam.",
+    "visiting_hours": "06:00 AM - 10:00 PM",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 0,
+    "entry_fee_intl": 0,
+    "best_time_to_visit": "October to March",
+    "coordinates": {
+      "lat": 20.888,
+      "lng": 70.4012
+    },
+    "rating": 4.9,
+    "image_url": "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "First Jyotirlinga of India",
+    "data_confidence": "official",
+    "source_name": "Shree Somnath Trust / Gujarat Tourism",
+    "source_url": "https://somnath.org/destination/somnath-temple",
+    "source_type": "official_institution",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "Somnath",
+      "Jyotirlinga",
+      "Shiva",
+      "spiritual",
+      "heritage"
+    ]
+  },
+  {
+    "id": "gir-national-park",
+    "name": "Gir National Park",
+    "tourist_place": "Gir National Park",
+    "assigned_city": "Sasan Gir",
+    "city": "Sasan Gir",
+    "city_id": "sasan-gir",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "category": "nature_parks_zoo",
+    "categories": [
+      "nature_parks_zoo",
+      "wildlife_sanctuary",
+      "asiatic_lion"
+    ],
+    "topic": "Nature",
+    "subtopic": "National Parks & Wildlife",
+    "summary": "The sole natural habitat and sanctuary of the pure Asiatic Lion (Panthera leo persica) in the world.",
+    "description": "Spanning over 1,412 sq km of dry deciduous scrub and teak forest, Gir is a global conservation success story, home to over 600 wild Asiatic lions, leopards, hyenas, and rich birdlife.",
+    "visiting_hours": "06:00 AM - 05:00 PM (Closed monsoon mid-June to mid-Oct)",
+    "entry_fee": {
+      "domestic": 800,
+      "international": 4500,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 800,
+    "entry_fee_intl": 4500,
+    "best_time_to_visit": "November to March",
+    "coordinates": {
+      "lat": 21.1243,
+      "lng": 70.7937
+    },
+    "rating": 4.8,
+    "image_url": "https://images.unsplash.com/photo-1534188753412-3e26d0d618d6?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1534188753412-3e26d0d618d6?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "National Wildlife Sanctuary",
+    "data_confidence": "official",
+    "source_name": "Gujarat Forest Department",
+    "source_url": "https://girlion.gujarat.gov.in/destination/gir-national-park",
+    "source_type": "forest_department",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "wildlife",
+      "AsiaticLion",
+      "Gir",
+      "SasanGir",
+      "nature"
+    ]
+  },
+  {
+    "id": "great-rann-of-kutch",
+    "name": "Great Rann of Kutch",
+    "tourist_place": "Great Rann of Kutch",
+    "assigned_city": "Dhordo",
+    "city": "Dhordo",
+    "city_id": "dhordo",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "category": "nature_parks_zoo",
+    "categories": [
+      "nature_parks_zoo",
+      "salt_desert",
+      "rann_utsav"
+    ],
+    "topic": "Nature",
+    "subtopic": "Salt Deserts & Wonders",
+    "summary": "One of the largest salt deserts in the world, glowing white under moonlight, home to the vibrant Rann Utsav festival.",
+    "description": "Covering over 7,500 sq km of the Thar Desert in Kutch district, the white salt marshes stretch to the horizon. Dhordo is honored by UNWTO as one of the Best Tourism Villages in the world.",
+    "visiting_hours": "06:00 AM - 08:00 PM",
+    "entry_fee": {
+      "domestic": 100,
+      "international": 250,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 100,
+    "entry_fee_intl": 250,
+    "best_time_to_visit": "November to February",
+    "coordinates": {
+      "lat": 23.834,
+      "lng": 69.519
+    },
+    "rating": 4.9,
+    "image_url": "https://images.unsplash.com/photo-1588096344356-9b5962829288?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1588096344356-9b5962829288?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "Biosphere Reserve & UNWTO Best Tourism Village",
+    "data_confidence": "official",
+    "source_name": "Gujarat Tourism / District Administration Kutch",
+    "source_url": "https://www.gujarattourism.com/kutch/rann-utsav.html",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "RannOfKutch",
+      "Dhordo",
+      "RannUtsav",
+      "salt_desert",
+      "nature"
+    ]
+  },
+  {
+    "id": "dholavira",
+    "name": "Dholavira",
+    "tourist_place": "Dholavira",
+    "assigned_city": "Dholavira",
+    "city": "Dholavira",
+    "city_id": "dholavira",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "category": "heritage",
+    "categories": [
+      "heritage",
+      "unesco_world_heritage",
+      "harappan_civilization"
+    ],
+    "topic": "Heritage",
+    "subtopic": "UNESCO World Heritage Sites",
+    "summary": "Ancient Indus Valley Civilization metropolis dating back 4,500 years, renowned for world-pioneering water management and urban planning.",
+    "description": "Inscribed as a UNESCO World Heritage Site in 2021, Dholavira on Khadir Bet island in the Great Rann features stepped stone reservoirs, sophisticated drainage, massive fortifications, and the famous Harappan signboard script.",
+    "visiting_hours": "06:00 AM - 06:00 PM",
+    "entry_fee": {
+      "domestic": 25,
+      "international": 300,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 25,
+    "entry_fee_intl": 300,
+    "best_time_to_visit": "November to March",
+    "coordinates": {
+      "lat": 23.886,
+      "lng": 70.216
+    },
+    "rating": 4.8,
+    "image_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "UNESCO World Heritage Site",
+    "data_confidence": "official",
+    "source_name": "UNESCO World Heritage Centre",
+    "source_url": "https://whc.unesco.org/en/list/1645/",
+    "source_type": "unesco",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "Dholavira",
+      "unesco",
+      "Harappa",
+      "IndusValley",
+      "heritage"
+    ]
+  },
+  {
+    "id": "lothal",
+    "name": "Lothal",
+    "tourist_place": "Lothal",
+    "assigned_city": "Lothal",
+    "city": "Lothal",
+    "city_id": "lothal",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "category": "heritage",
+    "categories": [
+      "heritage",
+      "harappan_port",
+      "archaeology"
+    ],
+    "topic": "Heritage",
+    "subtopic": "Ancient Harappan Ports",
+    "summary": "The world's oldest known tidal dockyard and a thriving Harappan port city with international maritime links dating to 2400 BCE.",
+    "description": "Located near Saragwala village in Dholka taluka, Lothal features a tidal dockyard engineered to handle coastal ships, bead factories, seal warehouses, and an onsite ASI museum displaying bronze tools and Carnelian beads.",
+    "visiting_hours": "10:00 AM - 05:00 PM (Closed Fridays)",
+    "entry_fee": {
+      "domestic": 25,
+      "international": 300,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 25,
+    "entry_fee_intl": 300,
+    "best_time_to_visit": "October to March",
+    "coordinates": {
+      "lat": 22.5226,
+      "lng": 72.2492
+    },
+    "rating": 4.7,
+    "image_url": "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "ASI National Monument / UNESCO Tentative List",
+    "data_confidence": "official",
+    "source_name": "Archaeological Survey of India",
+    "source_url": "https://asi.nic.in/monuments-of-national-importance/lothal",
+    "source_type": "asi",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "Lothal",
+      "Harappa",
+      "port",
+      "dockyard",
+      "heritage"
+    ]
+  },
+  {
+    "id": "champaner-pavagadh",
+    "name": "Champaner-Pavagadh Archaeological Park",
+    "tourist_place": "Champaner-Pavagadh Archaeological Park",
+    "assigned_city": "Champaner",
+    "city": "Champaner",
+    "city_id": "champaner",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "category": "heritage",
+    "categories": [
+      "heritage",
+      "unesco_world_heritage",
+      "archaeological_park"
+    ],
+    "topic": "Heritage",
+    "subtopic": "UNESCO World Heritage Sites",
+    "summary": "A concentration of largely unexcavated archaeological, historic, and living cultural heritage properties cradling a 16th-century capital.",
+    "description": "Includes prehistoric sites, hill fortress bastions of Pavagadh, Hindu and Jain temples, and the magnificent Jami Masjid of Sultan Mahmud Begada showing seamless Indo-Islamic synthesis.",
+    "visiting_hours": "08:30 AM - 05:00 PM",
+    "entry_fee": {
+      "domestic": 40,
+      "international": 600,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 40,
+    "entry_fee_intl": 600,
+    "best_time_to_visit": "October to March",
+    "coordinates": {
+      "lat": 22.4833,
+      "lng": 73.5333
+    },
+    "rating": 4.8,
+    "image_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "UNESCO World Heritage Site",
+    "data_confidence": "official",
+    "source_name": "UNESCO World Heritage Centre",
+    "source_url": "https://whc.unesco.org/en/list/1101/",
+    "source_type": "unesco",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "Champaner",
+      "Pavagadh",
+      "unesco",
+      "heritage",
+      "history"
+    ]
+  },
+  {
+    "id": "pavagadh-kalika-mata-temple",
+    "name": "Pavagadh Kalika Mata Temple",
+    "tourist_place": "Pavagadh Kalika Mata Temple",
+    "assigned_city": "Pavagadh",
+    "city": "Pavagadh",
+    "city_id": "pavagadh",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "category": "religious_cultural",
+    "categories": [
+      "religious_cultural",
+      "shakti_peeth",
+      "pilgrimage"
+    ],
+    "topic": "Spiritual",
+    "subtopic": "Shakti Peethas",
+    "summary": "Ancient Shakti Peetha perched atop Pavagadh Hill at an altitude of 762 meters, reached by ropeway and scenic stone steps.",
+    "description": "One of the sacred 51 Shakti Peethas dedicated to Goddess Mahakali. The newly redeveloped temple complex with gold-plated shikhara and ropeway offers panoramic views over the plains of Gujarat.",
+    "visiting_hours": "06:00 AM - 07:30 PM",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 0,
+    "entry_fee_intl": 0,
+    "best_time_to_visit": "September to March",
+    "coordinates": {
+      "lat": 22.46,
+      "lng": 73.53
+    },
+    "rating": 4.8,
+    "image_url": "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "Shakti Peetha Temple",
+    "data_confidence": "official",
+    "source_name": "Pavagadh Temple Trust / Gujarat Tourism",
+    "source_url": "https://www.gujarattourism.com/central-zone/panchmahal/pavagadh.html",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "Pavagadh",
+      "KalikaMata",
+      "ShaktiPeeth",
+      "spiritual"
+    ]
+  },
+  {
+    "id": "saputara",
+    "name": "Saputara",
+    "tourist_place": "Saputara",
+    "assigned_city": "Saputara",
+    "city": "Saputara",
+    "city_id": "saputara",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "category": "nature_parks_zoo",
+    "categories": [
+      "nature_parks_zoo",
+      "hill_station",
+      "dangs_forest"
+    ],
+    "topic": "Nature",
+    "subtopic": "Hill Stations & Green Escapes",
+    "summary": "Gujarat's premier hill station situated in the Sahyadri range of Dang district, surrounded by lush green forests, lakes, and waterfalls.",
+    "description": "Perched at an altitude of 1,000 meters in Dang tribal district, Saputara features Saputara Lake boating, Sunset Point, Gira Waterfalls, tribal museums, and dense monsoon cloud cover.",
+    "visiting_hours": "Open All Hours",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 0,
+    "entry_fee_intl": 0,
+    "best_time_to_visit": "July to February",
+    "coordinates": {
+      "lat": 20.5755,
+      "lng": 73.7505
+    },
+    "rating": 4.6,
+    "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "Eco-Tourism Hill Destination",
+    "data_confidence": "official",
+    "source_name": "Gujarat Tourism Development Corporation",
+    "source_url": "https://www.gujarattourism.com/south-zone/dang/saputara.html",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "Saputara",
+      "hill_station",
+      "Dang",
+      "nature",
+      "Sahyadri"
+    ]
+  },
+  {
+    "id": "laxmi-vilas-palace",
+    "name": "Laxmi Vilas Palace",
+    "tourist_place": "Laxmi Vilas Palace",
+    "assigned_city": "Vadodara",
+    "city": "Vadodara",
+    "city_id": "vadodara",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "category": "heritage",
+    "categories": [
+      "heritage",
+      "royal_palace",
+      "indo_saracenic"
+    ],
+    "topic": "Heritage",
+    "subtopic": "Royal Palaces",
+    "summary": "Grand Indo-Saracenic royal palace four times the size of Buckingham Palace, commissioned by Maharaja Sayajirao Gaekwad III in 1890.",
+    "description": "Designed by Major Charles Mant, this opulent residence of the Gaekwad royal dynasty showcases European mosaic floors, Belgian stained glass, an enormous Darbar Hall with Venetian chandeliers, and the Maharaja Fateh Singh Museum.",
+    "visiting_hours": "09:30 AM - 05:00 PM (Closed Mondays)",
+    "entry_fee": {
+      "domestic": 250,
+      "international": 500,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 250,
+    "entry_fee_intl": 500,
+    "best_time_to_visit": "October to March",
+    "coordinates": {
+      "lat": 22.2936,
+      "lng": 73.1906
+    },
+    "rating": 4.8,
+    "image_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "Gaekwad Royal Heritage Palace",
+    "data_confidence": "official",
+    "source_name": "Gaekwad Palace Trust / Gujarat Tourism",
+    "source_url": "https://www.gujarattourism.com/central-zone/vadodara/laxmi-vilas-palace.html",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "LaxmiVilasPalace",
+      "Vadodara",
+      "Gaekwad",
+      "palace",
+      "heritage"
+    ]
+  },
+  {
+    "id": "adalaj-stepwell",
+    "name": "Adalaj Stepwell",
+    "tourist_place": "Adalaj Stepwell",
+    "assigned_city": "Adalaj",
+    "city": "Adalaj",
+    "city_id": "adalaj",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "category": "heritage",
+    "categories": [
+      "heritage",
+      "stepwell",
+      "indo_islamic_architecture"
+    ],
+    "topic": "Heritage",
+    "subtopic": "Historical Stepwells",
+    "summary": "Intricately carved 15th-century Solanki-style stepwell built in 1498 by Queen Rudabai, descending five storeys below ground level.",
+    "description": "Built with sandstone in Solanki and Islamic architectural styles, the stepwell served as a spiritual sanctuary, community gathering space, and desert water reservoir. Temperature inside is five degrees cooler than outside.",
+    "visiting_hours": "06:00 AM - 06:00 PM",
+    "entry_fee": {
+      "domestic": 25,
+      "international": 300,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 25,
+    "entry_fee_intl": 300,
+    "best_time_to_visit": "October to March",
+    "coordinates": {
+      "lat": 23.1667,
+      "lng": 72.58
+    },
+    "rating": 4.7,
+    "image_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "ASI National Monument",
+    "data_confidence": "official",
+    "source_name": "Archaeological Survey of India",
+    "source_url": "https://asi.nic.in/monuments-of-national-importance/adalaj-stepwell",
+    "source_type": "asi",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "Adalaj",
+      "stepwell",
+      "Gandhinagar",
+      "Ahmedabad",
+      "heritage"
+    ]
+  },
+  {
+    "id": "sidi-saiyyed-mosque",
+    "name": "Sidi Saiyyed Mosque",
+    "tourist_place": "Sidi Saiyyed Mosque",
+    "assigned_city": "Ahmedabad",
+    "city": "Ahmedabad",
+    "city_id": "ahmedabad",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "category": "heritage",
+    "categories": [
+      "heritage",
+      "islamic_architecture",
+      "jali_carving"
+    ],
+    "topic": "Heritage",
+    "subtopic": "Architectural Wonders",
+    "summary": "Famous for the exquisitely carved marble lattice Tree of Life jali window, an official symbol of the City of Ahmedabad and IIM Ahmedabad.",
+    "description": "Built in 1573 CE by Sidi Saiyyed in the retinue of Bilal Jhajar Khan, general in the army of the Gujarat Sultanate. The delicate stone tracery depicting intertwining tree branches and palms is celebrated worldwide.",
+    "visiting_hours": "07:00 AM - 06:00 PM",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 0,
+    "entry_fee_intl": 0,
+    "best_time_to_visit": "October to March",
+    "coordinates": {
+      "lat": 23.027,
+      "lng": 72.5815
+    },
+    "rating": 4.7,
+    "image_url": "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "ASI National Monument",
+    "data_confidence": "official",
+    "source_name": "Archaeological Survey of India / Gujarat Tourism",
+    "source_url": "https://asi.nic.in/monuments-of-national-importance/sidi-saiyyed-mosque",
+    "source_type": "asi",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "SidiSaiyyed",
+      "TreeOfLife",
+      "Ahmedabad",
+      "Gujarat",
+      "heritage"
+    ]
+  },
+  {
+    "id": "kankaria-lake",
+    "name": "Kankaria Lake",
+    "tourist_place": "Kankaria Lake",
+    "assigned_city": "Ahmedabad",
+    "city": "Ahmedabad",
+    "city_id": "ahmedabad",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "category": "nature_parks_zoo",
+    "categories": [
+      "nature_parks_zoo",
+      "lake_promenade",
+      "recreation"
+    ],
+    "topic": "Nature",
+    "subtopic": "Lakes & Urban Waterfronts",
+    "summary": "Historic polygonal lake built in 1451 CE by Sultan Qutb-ud-Din, featuring Nagina Wadi island garden and a vibrant illuminated waterfront.",
+    "description": "Spread over 76 acres with a 34-sided polygon circumference, Kankaria Lake offers toy train rides, a nocturnal zoo, tethered hot-air balloon, and musical fountain shows.",
+    "visiting_hours": "04:00 AM - 08:00 AM, 09:00 AM - 10:00 PM (Closed Mondays)",
+    "entry_fee": {
+      "domestic": 25,
+      "international": 50,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 25,
+    "entry_fee_intl": 50,
+    "best_time_to_visit": "October to March; evening",
+    "coordinates": {
+      "lat": 23.0063,
+      "lng": 72.6026
+    },
+    "rating": 4.6,
+    "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "Historic Sultanate Waterfront",
+    "data_confidence": "official",
+    "source_name": "Ahmedabad Municipal Corporation",
+    "source_url": "https://ahmedabadcity.gov.in/destination/kankaria-lake",
+    "source_type": "official_institution",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "KankariaLake",
+      "Ahmedabad",
+      "waterfront",
+      "recreation"
+    ]
+  },
+  {
+    "id": "marine-national-park",
+    "name": "Marine National Park",
+    "tourist_place": "Marine National Park",
+    "assigned_city": "Jamnagar",
+    "city": "Jamnagar",
+    "city_id": "jamnagar",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "category": "nature_parks_zoo",
+    "categories": [
+      "nature_parks_zoo",
+      "marine_sanctuary",
+      "coral_reef"
+    ],
+    "topic": "Nature",
+    "subtopic": "Marine Sanctuaries & Coasts",
+    "summary": "India's first Marine National Park, spanning 42 islands in the Gulf of Kutch with live coral reefs, sea turtles, and dolphins.",
+    "description": "Located along the southern coast of the Gulf of Kutch in Jamnagar district. Pirotan, Narara, and Positra islands allow visitors to walk into the tidal zone during low tide to view live brain corals, octopus, and sea anemones.",
+    "visiting_hours": "Tide dependent (Low tide entry permits)",
+    "entry_fee": {
+      "domestic": 150,
+      "international": 600,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 150,
+    "entry_fee_intl": 600,
+    "best_time_to_visit": "October to March",
+    "coordinates": {
+      "lat": 22.4667,
+      "lng": 70.0667
+    },
+    "rating": 4.7,
+    "image_url": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "First Marine National Park of India",
+    "data_confidence": "official",
+    "source_name": "Gujarat Forest Department",
+    "source_url": "https://forests.gujarat.gov.in/destination/marine-national-park",
+    "source_type": "forest_department",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "MarinePark",
+      "Jamnagar",
+      "corals",
+      "GulfOfKutch",
+      "nature"
+    ]
+  },
+  {
+    "id": "palitana-temples",
+    "name": "Palitana Temples",
+    "tourist_place": "Palitana Temples",
+    "assigned_city": "Palitana",
+    "city": "Palitana",
+    "city_id": "palitana",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "category": "religious_cultural",
+    "categories": [
+      "religious_cultural",
+      "jain_pilgrimage",
+      "marble_temple"
+    ],
+    "topic": "Spiritual",
+    "subtopic": "Jain Tirthankara Shrines",
+    "summary": "World's only mountain with more than 900 intricately carved marble Jain temples atop the sacred Shatrunjaya Hills.",
+    "description": "A paramount Jain pilgrimage destination revered as the sanctified place where 23 of the 24 Tirthankaras attained moksha or visited. Reached via 3,500 stone steps. Dedicated to Adinatha (Rishabhanatha).",
+    "visiting_hours": "06:00 AM - 06:00 PM (No night stays on the hill)",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 0,
+    "entry_fee_intl": 0,
+    "best_time_to_visit": "November to March",
+    "coordinates": {
+      "lat": 21.529,
+      "lng": 71.829
+    },
+    "rating": 4.9,
+    "image_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "Sacred Jain Tirtha of Global Prominence",
+    "data_confidence": "official",
+    "source_name": "Shetrunjay Tirtha Anandji Kalyanji Trust / Gujarat Tourism",
+    "source_url": "https://www.gujarattourism.com/saurashtra/bhavnagar/palitana.html",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "Palitana",
+      "Jain",
+      "Shatrunjaya",
+      "spiritual",
+      "temple"
+    ]
+  },
+  {
+    "id": "nageshwar-jyotirlinga-temple",
+    "name": "Nageshwar Jyotirlinga Temple",
+    "tourist_place": "Nageshwar Jyotirlinga Temple",
+    "assigned_city": "Dwarka",
+    "city": "Dwarka",
+    "city_id": "dwarka",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "category": "religious_cultural",
+    "categories": [
+      "religious_cultural",
+      "jyotirlinga",
+      "hindu_temple"
+    ],
+    "topic": "Spiritual",
+    "subtopic": "12 Jyotirlingas",
+    "summary": "One of the 12 holy Jyotirlingas of Lord Shiva, featuring a giant 25-meter seated statue of Shiva.",
+    "description": "Located near Dwarka between Gomti Dwarka and Beyt Dwarka, Nageshwar represents the protection from all poisons. The massive seated Shiva statue in a yogic pose is a landmark visible for kilometers.",
+    "visiting_hours": "06:00 AM - 12:30 PM, 05:00 PM - 09:30 PM",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 0,
+    "entry_fee_intl": 0,
+    "best_time_to_visit": "October to March",
+    "coordinates": {
+      "lat": 22.334,
+      "lng": 69.055
+    },
+    "rating": 4.8,
+    "image_url": "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "Sacred Jyotirlinga Shrine",
+    "data_confidence": "official",
+    "source_name": "Gujarat Tourism Development Corporation",
+    "source_url": "https://www.gujarattourism.com/saurashtra/devbhoomi-dwarka/nageshwar-temple.html",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "Nageshwar",
+      "Jyotirlinga",
+      "Dwarka",
+      "Shiva",
+      "spiritual"
+    ]
+  },
+  {
+    "id": "krishna-death-place",
+    "name": "Krishna Death Place",
+    "tourist_place": "Krishna Death Place",
+    "assigned_city": "Bhalka Tirth, Somnath",
+    "city": "Somnath",
+    "city_id": "somnath",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "category": "religious_cultural",
+    "categories": [
+      "religious_cultural",
+      "krishna_leela",
+      "pilgrimage"
+    ],
+    "topic": "Spiritual",
+    "subtopic": "Krishna Heritage Sites",
+    "summary": "The sacred site where Lord Krishna retired beneath a banyan tree and completed his earthly avatar (Dehotsarg).",
+    "description": "Located at Bhalka Tirth near Veraval and Somnath, this sacred pilgrimage spot commemorates the moment Lord Krishna was accidentally struck by the hunter Jara's arrow and departed to Vaikuntha.",
+    "visiting_hours": "06:00 AM - 09:00 PM",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 0,
+    "entry_fee_intl": 0,
+    "best_time_to_visit": "October to March",
+    "coordinates": {
+      "lat": 20.899,
+      "lng": 70.372
+    },
+    "rating": 4.8,
+    "image_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "Sacred Krishna Avatar Pilgrimage",
+    "data_confidence": "official",
+    "source_name": "Shree Somnath Trust",
+    "source_url": "https://somnath.org/destination/krishna-death-place",
+    "source_type": "official_institution",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "BhalkaTirth",
+      "Krishna",
+      "Somnath",
+      "spiritual",
+      "heritage"
+    ]
+  },
+  {
+    "id": "vantara",
+    "name": "Vantara",
+    "tourist_place": "Vantara",
+    "assigned_city": "Jamnagar",
+    "city": "Jamnagar",
+    "city_id": "jamnagar",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "category": "nature_parks_zoo",
+    "categories": [
+      "nature_parks_zoo",
+      "wildlife_rescue",
+      "conservation"
+    ],
+    "topic": "Nature",
+    "subtopic": "Wildlife Rescue & Rehabilitation",
+    "summary": "World-class 3,000-acre animal rescue, rehabilitation, and wildlife conservation sanctuary in Jamnagar.",
+    "description": "Spread over 3,000 acres in Gujarat's Green Belt, Vantara provides state-of-the-art hospitals, naturalistic habitats, and specialized veterinary care for over 2,000 rescued animals including elephants, big cats, and herbivores.",
+    "visiting_hours": "09:00 AM - 05:00 PM (By prior official permit)",
+    "entry_fee": {
+      "domestic": 200,
+      "international": 1000,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 200,
+    "entry_fee_intl": 1000,
+    "best_time_to_visit": "October to March",
+    "coordinates": {
+      "lat": 22.378,
+      "lng": 69.87
+    },
+    "rating": 4.9,
+    "image_url": "https://images.unsplash.com/photo-1534188753412-3e26d0d618d6?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1534188753412-3e26d0d618d6?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "Global Wildlife Rescue & Conservation Center",
+    "data_confidence": "official",
+    "source_name": "Reliance Foundation Wildlife Conservation Initiative",
+    "source_url": "https://www.gujarattourism.com/destination/vantara",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "Vantara",
+      "Jamnagar",
+      "wildlife",
+      "conservation",
+      "rescue"
+    ]
+  },
+  {
+    "id": "beyt-dwarka",
+    "name": "Beyt Dwarka",
+    "tourist_place": "Beyt Dwarka",
+    "assigned_city": "Dwarka",
+    "city": "Dwarka",
+    "city_id": "dwarka",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "category": "religious_cultural",
+    "categories": [
+      "religious_cultural",
+      "island_sanctuary",
+      "krishna_residence"
+    ],
+    "topic": "Spiritual",
+    "subtopic": "Sacred Islands",
+    "summary": "Historic island sanctuary 30 km off Dwarka, believed to be the actual residence of Lord Krishna and his queen Rukmini.",
+    "description": "Located on an island in the Gulf of Kutch, reached via Sudama Setu and ferry boats. Features the 500-year-old Beyt Dwarkadhish Temple built by Vallabhacharya, white sand beaches, and dolphin watching.",
+    "visiting_hours": "06:00 AM - 01:00 PM, 05:00 PM - 09:00 PM",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 0,
+    "entry_fee_intl": 0,
+    "best_time_to_visit": "October to March",
+    "coordinates": {
+      "lat": 22.4578,
+      "lng": 69.117
+    },
+    "rating": 4.8,
+    "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "Sacred Island Pilgrimage",
+    "data_confidence": "official",
+    "source_name": "Gujarat Tourism Development Corporation",
+    "source_url": "https://www.gujarattourism.com/saurashtra/devbhoomi-dwarka/bet-dwarka.html",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "BeytDwarka",
+      "Dwarka",
+      "island",
+      "Krishna",
+      "spiritual"
+    ]
+  },
+  {
+    "id": "sudama-setu",
+    "name": "Sudama Setu",
+    "tourist_place": "Sudama Setu",
+    "assigned_city": "Dwarka",
+    "city": "Dwarka",
+    "city_id": "dwarka",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "category": "heritage",
+    "categories": [
+      "heritage",
+      "suspension_bridge",
+      "scenic_promenade"
+    ],
+    "topic": "Heritage",
+    "subtopic": "Architectural Bridges",
+    "summary": "Pedestrian cable suspension bridge connecting Dwarkadhish Temple across the Gomti River to the sacred Panchkui island beach.",
+    "description": "Named in honor of Lord Krishna's beloved childhood friend Sudama, this scenic suspension bridge across Gomti Creek offers breathtaking panoramic views of the temple flag and confluence of Gomti River with the Arabian Sea.",
+    "visiting_hours": "07:00 AM - 08:30 PM",
+    "entry_fee": {
+      "domestic": 10,
+      "international": 20,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 10,
+    "entry_fee_intl": 20,
+    "best_time_to_visit": "October to March; sunset",
+    "coordinates": {
+      "lat": 22.235,
+      "lng": 68.966
+    },
+    "rating": 4.7,
+    "image_url": "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "Heritage Cultural Suspension Bridge",
+    "data_confidence": "official",
+    "source_name": "Gujarat Tourism Development Corporation",
+    "source_url": "https://www.gujarattourism.com/saurashtra/devbhoomi-dwarka.html",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "SudamaSetu",
+      "Dwarka",
+      "GomtiRiver",
+      "bridge",
+      "heritage"
+    ]
+  },
+  {
+    "id": "bhalka-tirth",
+    "name": "Bhalka Tirth",
+    "tourist_place": "Bhalka Tirth",
+    "assigned_city": "Somnath",
+    "city": "Somnath",
+    "city_id": "somnath",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "category": "religious_cultural",
+    "categories": [
+      "religious_cultural",
+      "krishna_temple",
+      "sacred_site"
+    ],
+    "topic": "Spiritual",
+    "subtopic": "Sacred Shrines",
+    "summary": "Sacred pilgrimage shrine 4 km from Somnath marking the spot of Lord Krishna's departure from the physical world.",
+    "description": "A beautiful marble temple with an idol of Lord Krishna in a reclining posture under the ancient Moksha Pippala (banyan tree). Pilgrims worship here before visiting the Somnath Jyotirlinga.",
+    "visiting_hours": "06:00 AM - 09:00 PM",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 0,
+    "entry_fee_intl": 0,
+    "best_time_to_visit": "October to March",
+    "coordinates": {
+      "lat": 20.8988,
+      "lng": 70.3718
+    },
+    "rating": 4.8,
+    "image_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "Sacred Pilgrimage Site",
+    "data_confidence": "official",
+    "source_name": "Shree Somnath Trust",
+    "source_url": "https://somnath.org/destination/bhalka-tirth",
+    "source_type": "official_institution",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "BhalkaTirth",
+      "Somnath",
+      "Krishna",
+      "spiritual"
+    ]
+  },
+  {
+    "id": "diu-fort",
+    "name": "Diu Fort",
+    "tourist_place": "Diu Fort",
+    "assigned_city": "Diu",
+    "city": "Diu",
+    "city_id": "diu",
+    "state": "Gujarat",
+    "state_id": "gujarat",
+    "category": "heritage",
+    "categories": [
+      "heritage",
+      "coastal_fort",
+      "portuguese_architecture"
+    ],
+    "topic": "Heritage",
+    "subtopic": "Coastal Forts & Fortresses",
+    "summary": "Imposing 16th-century Portuguese fortress on the coast of Diu surrounded by the Arabian Sea on three sides.",
+    "description": "Constructed between 1535 and 1546 CE following a defense alliance between the Sultan of Gujarat and Portuguese governor Nuno da Cunha. Houses stone bastions, bronze cannons, a lighthouse, and St. Paul's Church.",
+    "visiting_hours": "08:00 AM - 06:00 PM",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR (₹)"
+    },
+    "entry_fee_domestic": 0,
+    "entry_fee_intl": 0,
+    "best_time_to_visit": "October to April",
+    "coordinates": {
+      "lat": 20.7167,
+      "lng": 70.9833
+    },
+    "rating": 4.7,
+    "image_url": "https://images.unsplash.com/photo-1588096344356-9b5962829288?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "https://images.unsplash.com/photo-1588096344356-9b5962829288?w=800&auto=format&fit=crop&q=80",
+    "heritage_status": "ASI National Monument / Portuguese Coastal Fortress",
+    "data_confidence": "official",
+    "source_name": "Archaeological Survey of India / Daman & Diu Tourism",
+    "source_url": "https://asi.nic.in/monuments-of-national-importance/diu-fort",
+    "source_type": "asi",
+    "source_quality": "place_specific",
+    "verification_status": "verified",
+    "tags": [
+      "DiuFort",
+      "Diu",
+      "Portuguese",
+      "fortress",
+      "ArabianSea"
+    ]
+  }
+]

@@ -102,6 +102,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
   // Presentation toggles
   const [viewMode, setViewMode] = useState<'grid' | 'map'>('grid');
   const [searchQuery, setSearchQuery] = useState('');
+  const [citySearchQuery, setCitySearchQuery] = useState('');
   const [selectedRegion, setSelectedRegion] = useState('All');
   const [selectedTheme, setSelectedTheme] = useState('all');
   const [sortBy, setSortBy] = useState<SortOption>('default');
@@ -202,6 +203,34 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
   const stateValidCities: CityHierarchyEntity[] = useMemo(() => {
     return currentState?.cities ?? [];
   }, [currentState]);
+
+  // Filtered Destinations & Cities based on citySearchQuery (city name, district, or assigned tourist places)
+  const filteredStateCities: CityHierarchyEntity[] = useMemo(() => {
+    if (!citySearchQuery.trim()) return stateValidCities;
+    const q = citySearchQuery.toLowerCase().trim();
+    return stateValidCities.filter((city) => {
+      const matchesCity =
+        city.name?.toLowerCase().includes(q) ||
+        city.district?.toLowerCase().includes(q) ||
+        city.tagline?.toLowerCase().includes(q);
+
+      const rawPlaces = [
+        ...(city.heritage || []),
+        ...(city.monuments || []),
+        ...(city.museums || []),
+        ...(city.tourist_places || []),
+        ...(city.religious_cultural || []),
+        ...(city.nature_parks_zoo || []),
+      ];
+      const matchesPlace = rawPlaces.some(
+        (p) =>
+          p.name?.toLowerCase().includes(q) ||
+          ((p as any).tourist_place && (p as any).tourist_place.toLowerCase().includes(q)) ||
+          ((p as any).assigned_city && (p as any).assigned_city.toLowerCase().includes(q))
+      );
+      return matchesCity || matchesPlace;
+    });
+  }, [stateValidCities, citySearchQuery]);
 
   // Currently Selected City / Town / Locality
   const currentCity: CityHierarchyEntity | null = useMemo(() => {
@@ -442,6 +471,8 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
         for (const p of places) {
           if (
             p.name?.toLowerCase().includes(q) ||
+            ((p as any).tourist_place && (p as any).tourist_place.toLowerCase().includes(q)) ||
+            ((p as any).assigned_city && (p as any).assigned_city.toLowerCase().includes(q)) ||
             (p.summary && p.summary.toLowerCase().includes(q)) ||
             (p.category_label && p.category_label.toLowerCase().includes(q))
           ) {
@@ -466,6 +497,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
   // Navigation handlers
   const handleSelectState = (stateId: string) => {
     setSelectedStateId(stateId);
+    setCitySearchQuery('');
     const s = db?.states.find((item) => item.id === stateId);
     if (s && s.cities && s.cities.length > 0) {
       setSelectedCityId(s.cities[0].id);
@@ -1568,129 +1600,198 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             />
 
             <div id="state-destinations-section" className="space-y-6 scroll-mt-24">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
                   <h2 className="font-serif text-xl sm:text-2xl font-bold text-[#0B192C]">
-                    Destinations, Heritage Towns &amp; Localities in {currentState.name}
+                    Destinations, Cities &amp; Assigned Tourist Places in {currentState.name}
                   </h2>
                   <p className="text-xs text-[#7A6E65] mt-0.5">
-                    Showing verified historic cities, sacred pilgrimage centers, and heritage hubs ({stateValidCities.length}).
+                    Showing verified destinations and mapped attractions ({filteredStateCities.length} of {stateValidCities.length}).
                   </p>
+                </div>
+
+                {/* City-wise Search Input */}
+                <div className="relative min-w-[260px] sm:w-80">
+                  <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400" />
+                  <input
+                    type="text"
+                    value={citySearchQuery}
+                    onChange={(e) => setCitySearchQuery(e.target.value)}
+                    placeholder={`Search cities or tourist places in ${currentState.name}...`}
+                    className="w-full pl-9.5 pr-8 py-2.5 rounded-xl border border-[#EFE8DF] bg-white text-xs text-stone-800 placeholder-stone-400 focus:outline-hidden focus:border-[#FF671F] shadow-2xs"
+                  />
+                  {citySearchQuery && (
+                    <button
+                      onClick={() => setCitySearchQuery('')}
+                      className="absolute right-2.5 top-1/2 -translate-y-1/2 text-stone-400 hover:text-stone-600 p-0.5 cursor-pointer"
+                    >
+                      <X className="w-3.5 h-3.5" />
+                    </button>
+                  )}
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                {stateValidCities.map((city, cIdx) => {
-                  const rawPlaces = [
-                    ...(city.heritage || []),
-                    ...(city.monuments || []),
-                    ...(city.museums || []),
-                    ...(city.tourist_places || []),
-                    ...(city.religious_cultural || []),
-                    ...(city.nature_parks_zoo || []),
-                  ];
-                  const places = rawPlaces.filter(isPlaceVerified);
-                  const isBroken = brokenImages[city.id] || !city.hero_image_url;
+              {filteredStateCities.length === 0 ? (
+                <div className="bg-white rounded-3xl border border-[#EFE8DF] p-8 text-center space-y-3">
+                  <MapPin className="w-8 h-8 text-stone-300 mx-auto" />
+                  <p className="text-sm font-semibold text-stone-700">
+                    No destinations or tourist places matched &quot;{citySearchQuery}&quot;
+                  </p>
+                  <button
+                    onClick={() => setCitySearchQuery('')}
+                    className="px-4 py-2 rounded-xl bg-[#FAF8F5] border border-[#EFE8DF] text-xs font-bold text-[#FF671F] hover:bg-orange-50 cursor-pointer"
+                  >
+                    Clear Search
+                  </button>
+                </div>
+              ) : (
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                  {filteredStateCities.map((city, cIdx) => {
+                    const rawPlaces = [
+                      ...(city.heritage || []),
+                      ...(city.monuments || []),
+                      ...(city.museums || []),
+                      ...(city.tourist_places || []),
+                      ...(city.religious_cultural || []),
+                      ...(city.nature_parks_zoo || []),
+                    ];
+                    const places = rawPlaces.filter(isPlaceVerified);
+                    const isBroken = brokenImages[city.id] || !city.hero_image_url;
 
-                  return (
-                    <ScrollReveal
-                      key={city.id}
-                      animation="fade-up"
-                      delay={cIdx * 50}
-                      className="h-full"
-                    >
-                      <div
-                        className="bg-white rounded-3xl border border-[#EFE8DF] overflow-hidden shadow-xs hover:shadow-md transition-all duration-300 flex flex-col group h-full"
+                    return (
+                      <ScrollReveal
+                        key={city.id}
+                        animation="fade-up"
+                        delay={cIdx * 50}
+                        className="h-full"
                       >
-                      {/* Town Hero Photo with honest fallback */}
-                      <div className="relative h-44 w-full overflow-hidden bg-stone-100 shrink-0">
-                        {isBroken ? (
-                          <div className="w-full h-full flex flex-col items-center justify-center bg-stone-100 text-stone-600 p-4 text-center">
-                            <CameraOff className="w-7 h-7 text-stone-400 mb-1" />
-                            <span className="text-xs font-semibold text-stone-700">Photograph unavailable</span>
-                            <span className="text-[10px] text-stone-500">Field verification pending</span>
-                          </div>
-                        ) : (
-                          <img
-                            src={city.hero_image_url}
-                            alt={city.name}
-                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                            onError={() => handleImageError(city.id)}
-                          />
-                        )}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent pointer-events-none" />
+                        <div
+                          className="bg-white rounded-3xl border border-[#EFE8DF] overflow-hidden shadow-xs hover:shadow-md transition-all duration-300 flex flex-col group h-full"
+                        >
+                          {/* Town Hero Photo with honest fallback */}
+                          <div className="relative h-44 w-full overflow-hidden bg-stone-100 shrink-0">
+                            {isBroken ? (
+                              <div className="w-full h-full flex flex-col items-center justify-center bg-stone-100 text-stone-600 p-4 text-center">
+                                <CameraOff className="w-7 h-7 text-stone-400 mb-1" />
+                                <span className="text-xs font-semibold text-stone-700">Photograph unavailable</span>
+                                <span className="text-[10px] text-stone-500">Field verification pending</span>
+                              </div>
+                            ) : (
+                              <img
+                                src={city.hero_image_url}
+                                alt={city.name}
+                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                onError={() => handleImageError(city.id)}
+                              />
+                            )}
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent pointer-events-none" />
 
-                        <div className="absolute top-3 left-3 pointer-events-none flex items-center gap-1.5">
-                          <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-white/90 text-[#FF671F]">
-                            {city.district} District
-                          </span>
-                          {city.entity_type && city.entity_type !== 'city' && (
-                            <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-black/60 text-amber-200">
-                              {city.entity_type}
-                            </span>
-                          )}
-                        </div>
-
-                        {/* City Photographic Provenance Credit */}
-                        {city.creator && !isBroken && (
-                          <div
-                            className="absolute top-3 right-3 text-[9px] px-2 py-0.5 rounded-full bg-black/50 text-white/90 backdrop-blur-xs font-mono truncate max-w-[140px]"
-                            title={`Photo: ${city.creator} (${city.license || 'Verified'})`}
-                          >
-                            📷 {city.creator}
-                          </div>
-                        )}
-
-                        <div className="absolute bottom-3 left-4 right-4 text-white pointer-events-none">
-                          <h3 className="font-serif text-xl font-bold">{city.name}</h3>
-                          <div className="text-[11px] text-amber-200 line-clamp-1 italic mt-0.5">
-                            &quot;{city.tagline}&quot;
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Town Body */}
-                      <div className="p-5 flex flex-col justify-between grow space-y-4">
-                        <p className="text-xs text-[#5A4E46] leading-relaxed line-clamp-3">
-                          {city.description}
-                        </p>
-
-                        {/* Quick Tourism Snapshot */}
-                        <div className="grid grid-cols-2 gap-2 text-xs pt-1">
-                          <div className="p-2.5 rounded-xl bg-[#FAF8F5] border border-[#EFE8DF]">
-                            <div className="text-[10px] font-bold text-[#FF671F] uppercase tracking-wider">
-                              Verified Places
+                            <div className="absolute top-3 left-3 pointer-events-none flex items-center gap-1.5">
+                              <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-white/90 text-[#FF671F]">
+                                {city.district} District
+                              </span>
+                              {city.entity_type && city.entity_type !== 'city' && (
+                                <span className="text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-black/60 text-amber-200">
+                                  {city.entity_type}
+                                </span>
+                              )}
                             </div>
-                            <div className="font-bold text-stone-900 mt-0.5">
-                              {places.length > 0 ? `${places.length} verified places` : 'Content under verification'}
+
+                            {/* City Photographic Provenance Credit */}
+                            {city.creator && !isBroken && (
+                              <div
+                                className="absolute top-3 right-3 text-[9px] px-2 py-0.5 rounded-full bg-black/50 text-white/90 backdrop-blur-xs font-mono truncate max-w-[140px]"
+                                title={`Photo: ${city.creator} (${city.license || 'Verified'})`}
+                              >
+                                📷 {city.creator}
+                              </div>
+                            )}
+
+                            <div className="absolute bottom-3 left-4 right-4 text-white pointer-events-none">
+                              <h3 className="font-serif text-xl font-bold">{city.name}</h3>
+                              <div className="text-[11px] text-amber-200 line-clamp-1 italic mt-0.5">
+                                &quot;{city.tagline}&quot;
+                              </div>
                             </div>
                           </div>
-                          <div className="p-2.5 rounded-xl bg-[#FAF8F5] border border-[#EFE8DF]">
-                            <div className="text-[10px] font-bold text-[#FF671F] uppercase tracking-wider">
-                              Season
+
+                          {/* Town Body */}
+                          <div className="p-5 flex flex-col justify-between grow space-y-4">
+                            <p className="text-xs text-[#5A4E46] leading-relaxed line-clamp-3">
+                              {city.description}
+                            </p>
+
+                            {/* Assigned Tourist Places List */}
+                            <div className="space-y-1.5 pt-1 border-t border-[#EFE8DF]/60">
+                              <div className="text-[10px] font-bold text-[#FF671F] uppercase tracking-wider flex items-center justify-between">
+                                <span>Assigned Tourist Places ({places.length})</span>
+                                <span className="text-[9px] text-stone-400 font-normal">Official Mapping</span>
+                              </div>
+                              {places.length > 0 ? (
+                                <div className="flex flex-wrap gap-1.5 max-h-32 overflow-y-auto pr-0.5">
+                                  {places.map((place) => (
+                                    <button
+                                      key={place.id}
+                                      onClick={(e) => {
+                                        e.stopPropagation();
+                                        if (currentState) {
+                                          handleSelectTown(currentState.id, city.id);
+                                        }
+                                      }}
+                                      className="inline-flex items-center gap-1 text-[11px] font-medium px-2 py-1 rounded-lg bg-[#FAF8F5] hover:bg-orange-50 hover:text-[#FF671F] hover:border-orange-200 border border-[#EFE8DF] text-[#4A3E36] transition text-left cursor-pointer"
+                                      title={`View ${ (place as any).tourist_place || place.name} in ${city.name}`}
+                                    >
+                                      <MapPin className="w-3 h-3 text-[#FF671F] shrink-0" />
+                                      <span className="truncate max-w-[170px]">
+                                        {(place as any).tourist_place || place.name}
+                                      </span>
+                                    </button>
+                                  ))}
+                                </div>
+                              ) : (
+                                <div className="text-[11px] text-stone-400 italic py-1">
+                                  Places being documented
+                                </div>
+                              )}
                             </div>
-                            <div className="font-bold text-stone-900 mt-0.5 truncate">
-                              {city.live_travel_info?.best_season || 'Content under verification'}
+
+                            {/* Quick Tourism Snapshot */}
+                            <div className="grid grid-cols-2 gap-2 text-xs pt-1">
+                              <div className="p-2.5 rounded-xl bg-[#FAF8F5] border border-[#EFE8DF]">
+                                <div className="text-[10px] font-bold text-[#FF671F] uppercase tracking-wider">
+                                  Verified Places
+                                </div>
+                                <div className="font-bold text-stone-900 mt-0.5">
+                                  {places.length > 0 ? `${places.length} verified` : 'Under verification'}
+                                </div>
+                              </div>
+                              <div className="p-2.5 rounded-xl bg-[#FAF8F5] border border-[#EFE8DF]">
+                                <div className="text-[10px] font-bold text-[#FF671F] uppercase tracking-wider">
+                                  Season
+                                </div>
+                                <div className="font-bold text-stone-900 mt-0.5 truncate">
+                                  {city.live_travel_info?.best_season || 'Content under verification'}
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* Actions */}
+                            <div className="pt-2 flex items-center gap-2">
+                              <button
+                                onClick={() => currentState && handleSelectTown(currentState.id, city.id)}
+                                className="w-full py-2.5 px-4 rounded-xl bg-[#FF671F] hover:bg-[#E65100] text-white text-xs font-bold transition flex items-center justify-center gap-2 cursor-pointer shadow-xs"
+                              >
+                                <span>Explore All Places ({places.length > 0 ? places.length : 0})</span>
+                                <ArrowRight className="w-4 h-4" />
+                              </button>
                             </div>
                           </div>
                         </div>
-
-                        {/* Actions */}
-                        <div className="pt-2 flex items-center gap-2">
-                          <button
-                            onClick={() => currentState && handleSelectTown(currentState.id, city.id)}
-                            className="w-full py-2.5 px-4 rounded-xl bg-[#FF671F] hover:bg-[#E65100] text-white text-xs font-bold transition flex items-center justify-center gap-2 cursor-pointer shadow-xs"
-                          >
-                            <span>Explore Places ({places.length > 0 ? places.length : 0})</span>
-                            <ArrowRight className="w-4 h-4" />
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </ScrollReveal>
-                );
-                })}
-              </div>
+                      </ScrollReveal>
+                    );
+                  })}
+                </div>
+              )}
             </div>
           </div>
         )}
@@ -1999,25 +2100,33 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                                     isVisited ? 'line-through text-stone-300' : 'text-white'
                                   }`}
                                 >
-                                  {attr.name}
+                                  {(attr as any).tourist_place || attr.name}
                                 </h4>
                               </div>
                             </div>
 
                             {/* Place Details Body */}
                             <div className="p-5 space-y-3.5">
-                              {/* Verification Badge */}
+                              {/* Verification Badge & Assigned City */}
                               <div className="flex items-center justify-between gap-2">
-                                {verified ? (
-                                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-300 flex items-center gap-1 shadow-2xs">
-                                    <ShieldCheck className="w-3 h-3 text-emerald-600" />
-                                    <span>Verified source</span>
-                                  </span>
-                                ) : (
-                                  <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-300 flex items-center gap-1 shadow-2xs">
-                                    <span>Under verification</span>
-                                  </span>
-                                )}
+                                <div className="flex items-center gap-1.5 flex-wrap">
+                                  {verified ? (
+                                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-300 flex items-center gap-1 shadow-2xs">
+                                      <ShieldCheck className="w-3 h-3 text-emerald-600" />
+                                      <span>Verified source</span>
+                                    </span>
+                                  ) : (
+                                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-50 text-amber-800 border border-amber-300 flex items-center gap-1 shadow-2xs">
+                                      <span>Under verification</span>
+                                    </span>
+                                  )}
+
+                                  {(attr as any).assigned_city && (
+                                    <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-orange-50 text-[#FF671F] border border-orange-200">
+                                      {(attr as any).assigned_city}
+                                    </span>
+                                  )}
+                                </div>
 
                                 {attr.last_verified_on && (
                                   <span className="text-[10px] text-stone-500">

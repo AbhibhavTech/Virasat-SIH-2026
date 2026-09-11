@@ -1,196 +1,470 @@
 [
   {
-    "id": "calangute-baga-beach",
-    "name": "Calangute & Baga Beach",
-    "state": "Goa",
-    "city": "North Goa",
-    "country": "India",
-    "category": "nature",
-    "summary": "The 'Queen of Beaches' renowned for golden sands, parasailing, beach shacks, and vibrant coastal nightlife.",
-    "description": "Stretching along the Arabian Sea in North Goa, Calangute and Baga form Goa's most celebrated coastal strip. Famous for thrilling watersports (parasailing, jet-skiing, banana rides), sun loungers, seafood shacks serving Goan fish curry, and legendary beach clubs like Tito's and Mambos along Baga Creek.",
-    "history": "Discovered by hippies in the late 1960s, transformed into India's premier beach tourism destination while retaining traditional Goan fishing villages nearby.",
-    "culture": "Lively susegad coastal lifestyle with live acoustic music, flea markets, Goan Catholic heritage, and sunset beach gatherings.",
-    "coordinates": {
-      "lat": 15.5439,
-      "lng": 73.7553
-    },
-    "rating": 4.7,
-    "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
-    "best_time_to_visit": "November to February (Pleasant coastal breezes and clear blue waters)",
-    "visiting_hours": "Open 24 Hours (Watersports: 09:00 AM - 05:30 PM; Shacks open till late night)",
-    "entry_fee": {
-      "domestic": 0.0,
-      "international": 0.0,
-      "currency": "INR"
-    },
-    "visiting_info": {
-      "best_time_to_visit": "November to February",
-      "visiting_hours": "Open 24 Hours",
-      "recommended_duration": "Half day to Full day",
-      "tips": [
-        "Head to Baga Creek for water sports early in the morning for calm sea conditions.",
-        "Catch the sunset from a beach shack with fresh Goan poi bread and prawn balchão.",
-        "Calangute market nearby offers Tibetan jewelry, beachwear, and handicraft souvenirs."
-      ]
-    },
-    "images": [
-      "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1200&auto=format&fit=crop&q=80"
-    ],
-    "model_3d": {
-      "has_model": false,
-      "available": false
-    },
-    "tags": ["goa", "beach", "calangute", "baga", "watersports", "nightlife", "nature"],
-    "features": {
-      "map": true,
-      "navigation": true,
-      "ai": true,
-      "3d": false
-    }
-  },
-  {
-    "id": "palolem-beach",
-    "name": "Palolem Beach & Crescent Bay",
-    "state": "Goa",
-    "city": "Canacona (South Goa)",
-    "country": "India",
-    "category": "nature",
-    "summary": "Scenic white-sand crescent bay lined with leaning coconut palms, calm turquoise waters, and dolphin cruises.",
-    "description": "Tucked away in Canacona in pristine South Goa, Palolem is celebrated for its natural semi-circular crescent bay framed by wooded headlands. Its gentle, shallow waters make it one of the safest beaches for swimming and sea-kayaking to Butterfly Beach and Monkey Island.",
-    "history": "Historically a serene Konkan fishing settlement; gained international fame for silent noise head-phone parties and wellness retreats.",
-    "culture": "Laid-back bohemian atmosphere with Ayurvedic yoga shacks, sunset kayak rentals, and eco-friendly bamboo beach huts.",
-    "coordinates": {
-      "lat": 15.0100,
-      "lng": 74.0232
-    },
-    "rating": 4.8,
-    "thumbnail_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80",
-    "best_time_to_visit": "November to March",
-    "visiting_hours": "Open 24 Hours",
-    "entry_fee": {
-      "domestic": 0.0,
-      "international": 0.0,
-      "currency": "INR"
-    },
-    "visiting_info": {
-      "best_time_to_visit": "November to March",
-      "visiting_hours": "Open 24 Hours",
-      "recommended_duration": "1 - 2 days",
-      "tips": [
-        "Take a morning boat ride into the bay for wild dolphin sightings.",
-        "Rent a sea kayak to explore the secluded Butterfly Beach just north of Palolem.",
-        "Enjoy fresh seafood cooked in Goan Kokum and coconut milk curry at waterfront shacks."
-      ]
-    },
-    "images": [
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=80"
-    ],
-    "model_3d": {
-      "has_model": false,
-      "available": false
-    },
-    "tags": ["goa", "palolem", "south goa", "beach", "dolphin safari", "nature", "relaxation"],
-    "features": {
-      "map": true,
-      "navigation": true,
-      "ai": true,
-      "3d": false
-    }
-  },
-  {
-    "id": "fort-aguada-goa",
-    "name": "Fort Aguada & Lighthouse",
-    "state": "Goa",
-    "city": "Sinquerim / Candolim (Goa)",
-    "country": "India",
-    "category": "heritage",
-    "summary": "17th-century Portuguese fortress and 4-storey lighthouse standing proudly on Sinquerim Beach overlooking the Arabian Sea.",
-    "description": "Constructed in 1612 to protect Portuguese maritime trade routes against Dutch fleets and the Marathas, Fort Aguada features formidable laterite stone ramparts and an enormous freshwater cistern ('Aguada' means watering place in Portuguese) that supplied fresh water to merchant ships.",
-    "history": "Built in 1612 during Portuguese rule under King Philip II. It mounted 79 cannons and possessed one of Asia's earliest 19th-century light towers.",
-    "culture": "A premier coastal heritage fortress offering sweeping views of the Arabian Sea, Sinquerim beach, and the confluence of the Mandovi River.",
-    "coordinates": {
-      "lat": 15.4925,
-      "lng": 73.7736
-    },
-    "rating": 4.6,
-    "thumbnail_url": "https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?w=800&auto=format&fit=crop&q=80",
-    "best_time_to_visit": "October to March (Late afternoon for sea breeze)",
-    "visiting_hours": "09:00 AM - 06:00 PM",
-    "entry_fee": {
-      "domestic": 25.0,
-      "international": 300.0,
-      "currency": "INR"
-    },
-    "visiting_info": {
-      "best_time_to_visit": "October to March",
-      "visiting_hours": "09:00 AM - 06:00 PM",
-      "recommended_duration": "1.5 - 2 hours",
-      "tips": [
-        "Visit around 04:30 PM to explore the jail museum and catch the sunset from the lighthouse bastion.",
-        "Wear sunscreen and carry water as the open ramparts get sunny during midday."
-      ]
-    },
-    "images": [
-      "https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?w=1200&auto=format&fit=crop&q=80"
-    ],
-    "model_3d": {
-      "has_model": false,
-      "available": false
-    },
-    "tags": ["goa", "fort", "fort aguada", "candolim", "heritage", "portuguese"],
-    "features": {
-      "map": true,
-      "navigation": true,
-      "ai": true,
-      "3d": false
-    }
-  },
-  {
-    "id": "basilica-bom-jesus-goa",
+    "id": "basilica-of-bom-jesus",
+    "tourist_place": "Basilica of Bom Jesus",
     "name": "Basilica of Bom Jesus",
-    "state": "Goa",
+    "assigned_city": "Old Goa",
     "city": "Old Goa",
+    "city_id": "old-goa",
+    "state": "Goa",
+    "state_id": "goa",
     "country": "India",
     "category": "heritage",
     "summary": "UNESCO World Heritage Baroque basilica consecrated in 1605 holding the sacred relic of St. Francis Xavier.",
     "description": "The Basilica of Bom Jesus in Old Goa is one of the most revered Christian pilgrimage shrines in Asia and a masterpiece of Portuguese Baroque architecture. Constructed of exposed red laterite stone with an ornate carved basaltic facade, it houses the silver casket and mortal remains of Saint Francis Xavier.",
     "history": "Consecrated in May 1605 by Archbishop Dom Fr. Aleixo de Menezes. Inscribed as a UNESCO World Heritage Site in 1986.",
-    "culture": "Hosts the triennial feast of St. Francis Xavier drawing thousands of international pilgrims; features gilded baroque altars and Flemish woodcarvings.",
+    "culture": "Hosts the feast of St. Francis Xavier drawing thousands of international pilgrims; features gilded baroque altars and Flemish woodcarvings.",
+    "lat": 15.5009,
+    "lng": 73.9116,
     "coordinates": {
       "lat": 15.5009,
       "lng": 73.9116
     },
     "rating": 4.8,
     "thumbnail_url": "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?w=800&auto=format&fit=crop&q=80",
-    "best_time_to_visit": "November to February",
-    "visiting_hours": "09:00 AM - 06:30 PM (Sundays: 10:30 AM - 06:30 PM)",
-    "entry_fee": {
-      "domestic": 0.0,
-      "international": 0.0,
-      "currency": "INR"
-    },
-    "visiting_info": {
-      "best_time_to_visit": "November to February",
-      "visiting_hours": "09:00 AM - 06:30 PM",
-      "recommended_duration": "1 - 1.5 hours",
-      "tips": [
-        "Dress respectfully with shoulders and knees covered inside the basilica.",
-        "Cross the street to also visit the grand Se Cathedral and Church of St. Francis of Assisi."
-      ]
-    },
     "images": [
       "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647?w=1200&auto=format&fit=crop&q=80"
     ],
-    "model_3d": {
-      "has_model": false,
-      "available": false
+    "visiting_hours": "09:00 AM - 06:30 PM (Sundays: 10:30 AM - 06:30 PM)",
+    "opening_hours": "09:00 AM - 06:30 PM",
+    "best_time_to_visit": "November to February",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR"
     },
-    "tags": ["goa", "old goa", "unesco", "church", "basilica", "heritage"],
-    "features": {
-      "map": true,
-      "navigation": true,
-      "ai": true,
-      "3d": false
-    }
+    "source_url": "https://whc.unesco.org/en/list/234/",
+    "source_name": "UNESCO World Heritage Centre",
+    "source_type": "unesco",
+    "data_confidence": "official",
+    "verification_status": "verified",
+    "tags": [
+      "goa",
+      "old goa",
+      "unesco",
+      "church",
+      "basilica",
+      "heritage"
+    ]
+  },
+  {
+    "id": "se-cathedral-old-goa",
+    "tourist_place": "Se Cathedral",
+    "name": "Se Cathedral",
+    "assigned_city": "Old Goa",
+    "city": "Old Goa",
+    "city_id": "old-goa",
+    "state": "Goa",
+    "state_id": "goa",
+    "country": "India",
+    "category": "heritage",
+    "summary": "One of the largest churches in Asia, consecrated in 1619, known for its Portuguese-Manueline architecture and Golden Bell.",
+    "description": "Se Cathedral (Sé Catedral de Santa Catarina) is the seat of the Patriarch of the East Indies. Built to commemorate Portuguese victory over an invading Muslim army on the Feast of Saint Catherine, it boasts a Tuscan exterior, gilded Corinthian altars, and the resonant Golden Bell (Sino de Ouro).",
+    "history": "Commissioned by Afonso de Albuquerque; commenced in 1562 under King Dom Sebastião and completed in 1619. Inscribed under UNESCO World Heritage in 1986.",
+    "lat": 15.5034,
+    "lng": 73.9125,
+    "coordinates": {
+      "lat": 15.5034,
+      "lng": 73.9125
+    },
+    "rating": 4.7,
+    "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "visiting_hours": "07:30 AM - 06:00 PM",
+    "opening_hours": "07:30 AM - 06:00 PM",
+    "best_time_to_visit": "November to February",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR"
+    },
+    "source_url": "https://goatourism.gov.in/destination/se-cathedral.html",
+    "source_name": "Department of Tourism, Government of Goa",
+    "source_type": "state_tourism",
+    "data_confidence": "official",
+    "verification_status": "verified",
+    "tags": [
+      "goa",
+      "old goa",
+      "unesco",
+      "cathedral",
+      "golden-bell",
+      "heritage"
+    ]
+  },
+  {
+    "id": "fort-aguada-goa",
+    "tourist_place": "Fort Aguada",
+    "name": "Fort Aguada",
+    "assigned_city": "Candolim",
+    "city": "Candolim",
+    "city_id": "candolim",
+    "state": "Goa",
+    "state_id": "goa",
+    "country": "India",
+    "category": "heritage",
+    "summary": "17th-century Portuguese fortress and 4-storey lighthouse standing proudly on Sinquerim Beach overlooking the Arabian Sea.",
+    "description": "Constructed in 1612 to protect Portuguese maritime trade routes against Dutch fleets and the Marathas, Fort Aguada features formidable laterite stone ramparts and an enormous freshwater cistern that supplied fresh water to merchant ships.",
+    "history": "Built in 1612 during Portuguese rule under King Philip II. It mounted 79 cannons and possessed one of Asia earliest 19th-century light towers.",
+    "lat": 15.4925,
+    "lng": 73.7736,
+    "coordinates": {
+      "lat": 15.4925,
+      "lng": 73.7736
+    },
+    "rating": 4.7,
+    "thumbnail_url": "https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1588668214407-6ea9a6d8c272?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "visiting_hours": "09:00 AM - 06:00 PM",
+    "opening_hours": "09:00 AM - 06:00 PM",
+    "best_time_to_visit": "October to March",
+    "entry_fee": {
+      "domestic": 25,
+      "international": 300,
+      "currency": "INR"
+    },
+    "source_url": "https://goatourism.gov.in/destination/fort-aguada.html",
+    "source_name": "Department of Tourism, Government of Goa",
+    "source_type": "state_tourism",
+    "data_confidence": "official",
+    "verification_status": "verified",
+    "tags": [
+      "goa",
+      "fort",
+      "fort aguada",
+      "candolim",
+      "heritage",
+      "portuguese"
+    ]
+  },
+  {
+    "id": "dudhsagar-falls",
+    "tourist_place": "Dudhsagar Falls",
+    "name": "Dudhsagar Falls",
+    "assigned_city": "Mollem",
+    "city": "Mollem",
+    "city_id": "mollem",
+    "state": "Goa",
+    "state_id": "goa",
+    "country": "India",
+    "category": "nature",
+    "summary": "Four-tiered Sea of Milk waterfall plummeting 310 meters on the Mandovi River along the Western Ghats within Bhagwan Mahaveer Sanctuary.",
+    "description": "Dudhsagar is one of India tallest and most majestic waterfalls, cascading through lush Western Ghats tropical rainforests. Famous for the railway bridge spanning directly across the waterfall spray.",
+    "history": "Ancient Konkan landmark surrounded by tribal legend of the virtuous princess who poured milk to shield her privacy.",
+    "lat": 15.3144,
+    "lng": 74.3143,
+    "coordinates": {
+      "lat": 15.3144,
+      "lng": 74.3143
+    },
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "visiting_hours": "07:00 AM - 05:00 PM (Jeep safaris operated seasonally)",
+    "opening_hours": "07:00 AM - 05:00 PM",
+    "best_time_to_visit": "October to May for safe jeep access; monsoon for dramatic roaring flow",
+    "entry_fee": {
+      "domestic": 50,
+      "international": 50,
+      "currency": "INR"
+    },
+    "source_url": "https://goatourism.gov.in/destination/dudhsagar-waterfalls.html",
+    "source_name": "Department of Tourism, Government of Goa",
+    "source_type": "state_tourism",
+    "data_confidence": "official",
+    "verification_status": "verified",
+    "tags": [
+      "waterfall",
+      "nature",
+      "mollem",
+      "western-ghats",
+      "dudhsagar",
+      "trekking"
+    ]
+  },
+  {
+    "id": "mollem-national-park",
+    "tourist_place": "Mollem National Park",
+    "name": "Mollem National Park",
+    "assigned_city": "Mollem",
+    "city": "Mollem",
+    "city_id": "mollem",
+    "state": "Goa",
+    "state_id": "goa",
+    "country": "India",
+    "category": "wildlife_nature",
+    "summary": "Core area of Bhagwan Mahaveer Sanctuary in the Western Ghats holding evergreen rainforests, leopards, and 12th-century Tambdi Surla temple.",
+    "description": "Mollem National Park protects biodiversity-rich Western Ghats tropical rainforests home to Bengal tigers, black panthers, barking deer, and hornbills. Houses the 12th-century Kadamba-era basalt temple of Mahadeva at Tambdi Surla.",
+    "history": "Notified as a national park in 1978; contains ancient Kadamba dynasty temple architecture.",
+    "lat": 15.3789,
+    "lng": 74.2444,
+    "coordinates": {
+      "lat": 15.3789,
+      "lng": 74.2444
+    },
+    "rating": 4.7,
+    "thumbnail_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1448375240586-882707db888b?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "visiting_hours": "08:00 AM - 05:30 PM",
+    "opening_hours": "08:00 AM - 05:30 PM",
+    "best_time_to_visit": "October to March",
+    "entry_fee": {
+      "domestic": 20,
+      "international": 100,
+      "currency": "INR"
+    },
+    "source_url": "https://goatourism.gov.in/destination/bhagwan-mahavir-wildlife-sanctuary.html",
+    "source_name": "Department of Tourism, Government of Goa",
+    "source_type": "state_tourism",
+    "data_confidence": "official",
+    "verification_status": "verified",
+    "tags": [
+      "wildlife",
+      "national-park",
+      "rainforest",
+      "mollem",
+      "tambdi-surla"
+    ]
+  },
+  {
+    "id": "calangute-beach",
+    "tourist_place": "Calangute Beach",
+    "name": "Calangute Beach",
+    "assigned_city": "Calangute",
+    "city": "Calangute",
+    "city_id": "calangute",
+    "state": "Goa",
+    "state_id": "goa",
+    "country": "India",
+    "category": "nature",
+    "summary": "Goa largest and most famous beach strip, renowned for parasailing, beach shacks, golden sands, and lively markets.",
+    "description": "Known as the Queen of Beaches, Calangute spans a long sandy stretch lined with sunbeds, lively beach shacks offering Goan cuisine, water sports centers, and vibrant shopping streets.",
+    "history": "Transformed in the 1960s and 70s into an international coastal destination.",
+    "lat": 15.5439,
+    "lng": 73.7553,
+    "coordinates": {
+      "lat": 15.5439,
+      "lng": 73.7553
+    },
+    "rating": 4.7,
+    "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "visiting_hours": "Open 24 Hours (Watersports: 09:00 AM - 05:30 PM)",
+    "opening_hours": "Open 24 Hours",
+    "best_time_to_visit": "November to February",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR"
+    },
+    "source_url": "https://goatourism.gov.in/destination/calangute-beach.html",
+    "source_name": "Department of Tourism, Government of Goa",
+    "source_type": "state_tourism",
+    "data_confidence": "official",
+    "verification_status": "verified",
+    "tags": [
+      "beach",
+      "calangute",
+      "watersports",
+      "nature",
+      "goa"
+    ]
+  },
+  {
+    "id": "baga-beach",
+    "tourist_place": "Baga Beach",
+    "name": "Baga Beach",
+    "assigned_city": "Baga",
+    "city": "Baga",
+    "city_id": "baga",
+    "state": "Goa",
+    "state_id": "goa",
+    "country": "India",
+    "category": "nature",
+    "summary": "Lively North Goa beach famous for Tito Lane nightlife, dolphin cruises, water sports, and Baga Creek.",
+    "description": "Baga Beach sits adjacent to Calangute along the Baga Creek estuary, famous for thrilling water sports, sunset beach dining, and legendary music clubs including Tito and Cafe Mambo.",
+    "history": "A traditional fishing village that blossomed into a world-famous coastal party and entertainment hub.",
+    "lat": 15.5553,
+    "lng": 73.7516,
+    "coordinates": {
+      "lat": 15.5553,
+      "lng": 73.7516
+    },
+    "rating": 4.7,
+    "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "visiting_hours": "Open 24 Hours",
+    "opening_hours": "Open 24 Hours",
+    "best_time_to_visit": "November to February",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR"
+    },
+    "source_url": "https://goatourism.gov.in/destination/baga-beach.html",
+    "source_name": "Department of Tourism, Government of Goa",
+    "source_type": "state_tourism",
+    "data_confidence": "official",
+    "verification_status": "verified",
+    "tags": [
+      "beach",
+      "baga",
+      "nightlife",
+      "watersports",
+      "goa",
+      "creek"
+    ]
+  },
+  {
+    "id": "anjuna-beach",
+    "tourist_place": "Anjuna Beach",
+    "name": "Anjuna Beach",
+    "assigned_city": "Anjuna",
+    "city": "Anjuna",
+    "city_id": "anjuna",
+    "state": "Goa",
+    "state_id": "goa",
+    "country": "India",
+    "category": "nature",
+    "summary": "Bohemian North Goa beach renowned for red laterite rock formations, Wednesday flea market, and sunset trance parties.",
+    "description": "Anjuna Beach is world-famous for its free-spirited culture, scenic rocky cliffs, Curlies beach shack, and the bustling weekly Wednesday Flea Market selling handicrafts, jewelry, and eclectic art.",
+    "history": "Epicenter of 1960s hippie trail and birthplace of Goa Trance electronic music culture.",
+    "lat": 15.5818,
+    "lng": 73.7428,
+    "coordinates": {
+      "lat": 15.5818,
+      "lng": 73.7428
+    },
+    "rating": 4.7,
+    "thumbnail_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "visiting_hours": "Open 24 Hours",
+    "opening_hours": "Open 24 Hours",
+    "best_time_to_visit": "November to March",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR"
+    },
+    "source_url": "https://goatourism.gov.in/destination/anjuna-beach.html",
+    "source_name": "Department of Tourism, Government of Goa",
+    "source_type": "state_tourism",
+    "data_confidence": "official",
+    "verification_status": "verified",
+    "tags": [
+      "beach",
+      "anjuna",
+      "flea-market",
+      "curlies",
+      "sunset",
+      "bohemian"
+    ]
+  },
+  {
+    "id": "palolem-beach",
+    "tourist_place": "Palolem Beach",
+    "name": "Palolem Beach",
+    "assigned_city": "Palolem",
+    "city": "Palolem",
+    "city_id": "palolem",
+    "state": "Goa",
+    "state_id": "goa",
+    "country": "India",
+    "category": "nature",
+    "summary": "Scenic white-sand crescent bay in South Goa lined with leaning coconut palms, calm turquoise waters, and dolphin cruises.",
+    "description": "Palolem is celebrated for its natural semi-circular crescent bay framed by wooded headlands. Its gentle, shallow waters make it one of the safest beaches for swimming, sea-kayaking to Butterfly Beach, and silent headphone parties.",
+    "history": "A tranquil Konkan fishing village that emerged into an international sanctuary for wellness, yoga, and sustainable coastal tourism.",
+    "lat": 15.01,
+    "lng": 74.0232,
+    "coordinates": {
+      "lat": 15.01,
+      "lng": 74.0232
+    },
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "visiting_hours": "Open 24 Hours",
+    "opening_hours": "Open 24 Hours",
+    "best_time_to_visit": "November to March",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR"
+    },
+    "source_url": "https://goatourism.gov.in/destination/palolem-beach.html",
+    "source_name": "Department of Tourism, Government of Goa",
+    "source_type": "state_tourism",
+    "data_confidence": "official",
+    "verification_status": "verified",
+    "tags": [
+      "beach",
+      "palolem",
+      "south-goa",
+      "crescent-bay",
+      "nature"
+    ]
+  },
+  {
+    "id": "fontainhas-panaji",
+    "tourist_place": "Fontainhas",
+    "name": "Fontainhas",
+    "assigned_city": "Panaji",
+    "city": "Panaji",
+    "city_id": "panaji",
+    "state": "Goa",
+    "state_id": "goa",
+    "country": "India",
+    "category": "heritage",
+    "summary": "UNESCO-recognized heritage Latin Quarter in Panaji known for colorful 18th-century Portuguese houses, narrow lanes, and azulejos tiles.",
+    "description": "Fontainhas is Goa historic Latin Quarter, built at the base of Altinho hill. Featuring vibrant terracotta-roofed Portuguese homes painted in yellow, blue, and green, charming wrought-iron balconies, cozy bakeries, and art galleries.",
+    "history": "Developed in the late 18th century by Antonio Joao de Sequeira; declared a heritage conservation zone in 1984.",
+    "lat": 15.4989,
+    "lng": 73.8322,
+    "coordinates": {
+      "lat": 15.4989,
+      "lng": 73.8322
+    },
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "visiting_hours": "Open 24 Hours (Best for walking: 08:00 AM - 11:00 AM & 04:00 PM - 07:00 PM)",
+    "opening_hours": "Open 24 Hours",
+    "best_time_to_visit": "November to March",
+    "entry_fee": {
+      "domestic": 0,
+      "international": 0,
+      "currency": "INR"
+    },
+    "source_url": "https://goatourism.gov.in/destination/fontainhas.html",
+    "source_name": "Department of Tourism, Government of Goa",
+    "source_type": "state_tourism",
+    "data_confidence": "official",
+    "verification_status": "verified",
+    "tags": [
+      "heritage",
+      "fontainhas",
+      "panaji",
+      "latin-quarter",
+      "portuguese",
+      "architecture"
+    ]
   }
 ]

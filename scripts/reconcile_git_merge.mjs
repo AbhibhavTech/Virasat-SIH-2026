@@ -7,18 +7,24 @@ const rootDir = process.cwd();
 console.log('=== Starting Master Database Reconciliation for Git Merge ===');
 
 // 1. Get raw JSON strings from git revisions
-console.log('Fetching ITDB and cities from origin/main and local-backup-work...');
+console.log('Fetching ITDB and cities from origin/main and local-backup-2...');
 const originItdbRaw = execSync('git show origin/main:data/india_tourism_database.json', { maxBuffer: 100 * 1024 * 1024, encoding: 'utf8' });
-const localItdbRaw = execSync('git show local-backup-work:data/india_tourism_database.json', { maxBuffer: 100 * 1024 * 1024, encoding: 'utf8' });
+const localItdbRaw = execSync('git show local-backup-2:data/india_tourism_database.json', { maxBuffer: 100 * 1024 * 1024, encoding: 'utf8' });
 
 const originCitiesRaw = execSync('git show origin/main:data/cities.json', { maxBuffer: 100 * 1024 * 1024, encoding: 'utf8' });
-const localCitiesRaw = execSync('git show local-backup-work:data/cities.json', { maxBuffer: 100 * 1024 * 1024, encoding: 'utf8' });
+const localCitiesRaw = execSync('git show local-backup-2:data/cities.json', { maxBuffer: 100 * 1024 * 1024, encoding: 'utf8' });
+
+const originStatesRaw = execSync('git show origin/main:data/states.json', { maxBuffer: 100 * 1024 * 1024, encoding: 'utf8' });
+const localStatesRaw = execSync('git show local-backup-2:data/states.json', { maxBuffer: 100 * 1024 * 1024, encoding: 'utf8' });
 
 const originItdb = JSON.parse(originItdbRaw);
 const localItdb = JSON.parse(localItdbRaw);
 
 const originCities = JSON.parse(originCitiesRaw);
 const localCities = JSON.parse(localCitiesRaw);
+
+const originStatesJson = JSON.parse(originStatesRaw);
+const localStatesJson = JSON.parse(localStatesRaw);
 
 // States where local work has the authoritative city-assigned integration
 const LOCAL_STATES = new Set([
@@ -59,8 +65,17 @@ for (const state of localItdb.states || []) {
 }
 
 const reconciledStates = Array.from(mergedStatesMap.values());
-const totalAttractions = reconciledStates.reduce((sum, s) => sum + (s.total_attractions || (s.cities ? s.cities.reduce((cs, c) => cs + (c.places ? c.places.length : 0), 0) : 0)), 0);
-const totalCities = reconciledStates.reduce((sum, s) => sum + (s.total_cities || (s.cities ? s.cities.length : 0)), 0);
+for (const state of reconciledStates) {
+  let pCount = 0;
+  for (const c of state.cities || []) {
+    pCount += (c.places || []).length;
+  }
+  state.total_attractions = Math.max(state.total_attractions || 0, pCount);
+  state.total_cities = state.total_cities || (state.cities ? state.cities.length : 0);
+}
+
+const totalAttractions = reconciledStates.reduce((sum, s) => sum + (s.total_attractions || 0), 0);
+const totalCities = reconciledStates.reduce((sum, s) => sum + (s.total_cities || 0), 0);
 
 const reconciledItdb = {
   version: '2.0.0',
@@ -93,9 +108,17 @@ fs.writeFileSync(path.join(rootDir, 'data', 'cities.json'), JSON.stringify(recon
 console.log(`✓ Wrote reconciled data/cities.json (Total cities: ${reconciledCities.length})`);
 
 // 5. Reconcile data/states.json
-const statesJsonPath = path.join(rootDir, 'data', 'states.json');
-const statesJson = JSON.parse(fs.readFileSync(statesJsonPath, 'utf8'));
+const statesMap = new Map();
+for (const s of originStatesJson) {
+  statesMap.set(s.id, s);
+}
+for (const s of localStatesJson) {
+  if (LOCAL_STATES.has(s.id)) {
+    statesMap.set(s.id, s);
+  }
+}
 
+const statesJson = Array.from(statesMap.values());
 for (const stateObj of statesJson) {
   const matchingState = mergedStatesMap.get(stateObj.id);
   if (matchingState) {
@@ -104,7 +127,7 @@ for (const stateObj of statesJson) {
   }
 }
 
-fs.writeFileSync(statesJsonPath, JSON.stringify(statesJson, null, 2), 'utf8');
-console.log('✓ Synchronized data/states.json');
+fs.writeFileSync(path.join(rootDir, 'data', 'states.json'), JSON.stringify(statesJson, null, 2), 'utf8');
+console.log(`✓ Synchronized data/states.json (Total states: ${statesJson.length})`);
 
 console.log('=== Database Reconciliation Complete ===');
