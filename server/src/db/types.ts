@@ -95,16 +95,6 @@ export const OFFICIAL_SITE_ALLOWLIST = [
   'partitionmuseum.org',
   'eternalmewar.in',
   'somnath.org',
-  'statueofunity.in',
-  'gandhiashramsabarmati.org',
-  'dwarkadhish.org',
-  'gujarattourism.com',
-  'himachaltourism.gov.in',
-  'girlion.gujarat.gov.in',
-  'rohtangpermits.nic.in',
-  'ahmedabadcity.gov.in',
-  'forests.gujarat.gov.in',
-  'tibet.net',
 ];
 
 export function computeSourceQuality(url?: string): SourceQualityTier {
@@ -149,9 +139,6 @@ export interface StateRecord {
   source_name?: string;
   creator?: string | null;
   license?: string;
-  total_cities?: number;
-  total_attractions?: number;
-  total_places?: number;
   created_at: string;
 }
 
@@ -241,15 +228,6 @@ export interface PlaceRecord {
   entry_fee_domestic: number;
   entry_fee_intl: number;
   best_time_to_visit?: string;
-  area?: string;
-  city?: string;
-  assigned_city?: string;
-  tourist_place?: string;
-  best_for?: string[];
-  suggested_duration?: string;
-  visitor_notes?: string[];
-  map_search?: string;
-  tags?: string[];
   contact_information?: string;
   official_website?: string;
   heritage_status: string;

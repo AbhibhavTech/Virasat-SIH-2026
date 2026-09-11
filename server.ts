@@ -18,8 +18,6 @@ import {
   resolveOriginTransportNode,
   resolveDestinationTransportNode,
   buildVerifiedTransitComparison,
-  findStationByQuery,
-  STATION_ALIASES,
 } from './src/server/transportResolver';
 
 import { db } from './server/src/db/client';
@@ -89,8 +87,6 @@ app.use('/api/v1/reports', reportsRouter);
 app.use('/api/v1/routing', routingRouter);
 app.use('/api/v1/itineraries', itineraryRouter);
 app.use('/api/v1/ai', aiRouter);
-app.use('/api/ai', aiRouter);
-app.use('/api/assistant', aiRouter);
 app.use('/api/v1/analytics', analyticsRouter);
 app.use('/api/analytics', analyticsRouter);
 app.use('/api/v1/admin', adminRouter);
@@ -127,8 +123,6 @@ interface PlaceItem {
   state_id?: string;
   city: string;
   city_id?: string;
-  assigned_city?: string;
-  tourist_place?: string;
   country: string;
   category: string;
   summary: string;
@@ -196,32 +190,17 @@ const CITY_ALIASES: Record<string, string[]> = {
   agra: ['agra', 'agra district'],
   jaipur: ['jaipur'],
   kochi: ['kochi', 'cochin', 'ernakulam'],
-  kolkata: ['kolkata', 'calcutta', 'howrah', 'howrah–kolkata', 'howrah-kolkata', 'alipore'],
-  darjeeling: ['darjeeling'],
-  santiniketan: ['santiniketan', 'shantiniketan', 'bolpur'],
-  siliguri: ['siliguri'],
+  kolkata: ['kolkata', 'calcutta'],
   amritsar: ['amritsar'],
-  goa: ['goa'],
-  'old goa': ['old goa', 'velha goa'],
-  candolim: ['candolim', 'sinquerim'],
-  panaji: ['panaji', 'panjim'],
+  goa: ['goa', 'panaji', 'old goa', 'velha goa', 'sinquerim', 'candolim'],
   bengaluru: ['bengaluru', 'bangalore'],
   hyderabad: ['hyderabad', 'secunderabad'],
-  hanamkonda: ['hanamkonda'],
-  warangal: ['warangal', 'kazipet'],
-  'yadadri-bhuvanagiri': ['yadadri-bhuvanagiri', 'yadadri bhuvanagiri', 'bhongir', 'bhuvanagiri'],
-  'yadadri bhuvanagiri': ['yadadri-bhuvanagiri', 'yadadri bhuvanagiri', 'bhongir', 'bhuvanagiri'],
-  yadadri: ['yadadri', 'yadagirigutta'],
-  nirmal: ['nirmal', 'nirmal district'],
-  'bhadradri-kothagudem': ['bhadradri-kothagudem', 'bhadradri kothagudem', 'kothagudem', 'bhadrachalam'],
-  'bhadradri kothagudem': ['bhadradri-kothagudem', 'bhadradri kothagudem', 'kothagudem', 'bhadrachalam'],
-  nalgonda: ['nalgonda', 'nalgonda district'],
   pune: ['pune'],
   udaipur: ['udaipur'],
   hampi: ['hampi', 'vijayanagara', 'hosapete'],
   madurai: ['madurai'],
   'chhatrapati sambhajinagar': ['chhatrapati sambhajinagar', 'aurangabad'],
-  'bodh-gaya': ['bodh gaya', 'bodh_gaya', 'bodhgaya', 'gaya', 'gaya district'],
+  'bodh gaya': ['bodh gaya', 'nalanda', 'rajgir'],
   bhubaneswar: ['bhubaneswar', 'konark', 'puri'],
   srinagar: ['srinagar'],
   'port blair': ['port blair', 'andaman'],
@@ -231,121 +210,6 @@ const CITY_ALIASES: Record<string, string[]> = {
   gangtok: ['gangtok'],
   lonavala: ['lonavala', 'lonavla', 'khandala', 'lonavala & khandala', 'lonavala and khandala'],
   khandala: ['khandala', 'lonavala', 'lonavla', 'lonavala & khandala', 'lonavala and khandala'],
-  // Nagaland
-  kohima: ['kohima', 'kisama', 'kohima district'],
-  mokokchung: ['mokokchung', 'mokokchung district'],
-  mon: ['mon', 'mon district', 'longwa'],
-  phek: ['phek', 'phek district'],
-  peren: ['peren', 'peren district', 'benreu'],
-  // Meghalaya
-  shillong: ['shillong', 'east khasi hills'],
-  umiam: ['umiam', 'ri-bhoi', 'ri-bhoi district'],
-  cherrapunji: ['cherrapunji', 'sohra', 'cherrapunjee'],
-  nongriat: ['nongriat', 'nongriat village'],
-  dawki: ['dawki', 'west jaintia hills'],
-  mawlynnong: ['mawlynnong'],
-  // Manipur
-  imphal: ['imphal', 'imphal west', 'imphal east'],
-  loktak: ['loktak', 'loktak lake', 'morang'],
-  ukhrul: ['ukhrul', 'ukhrul district'],
-  dzukou: ['dzukou', 'dzukou valley'],
-  khongjom: ['khongjom', 'thoubal', 'thoubal district'],
-  bishnupur: ['bishnupur', 'bishnupur district'],
-  // Mizoram
-  aizawl: ['aizawl', 'aizawl district'],
-  serchhip: ['serchhip', 'serchhip district'],
-  lawngtlai: ['lawngtlai', 'lawngtlai district'],
-  champhai: ['champhai', 'champhai district'],
-  saitual: ['saitual', 'saitual district'],
-  siaha: ['siaha', 'siaha district'],
-  hmuifang: ['hmuifang'],
-  // Bihar
-  patna: ['patna', 'patna district'],
-  nalanda: ['nalanda', 'nalanda district', 'nalanda mahavihara'],
-  rajgir: ['rajgir'],
-  pawapuri: ['pawapuri'],
-  bhagalpur: ['bhagalpur', 'bhagalpur district'],
-  'valmiki-nagar': ['valmiki nagar', 'valmiki_nagar', 'valmiki', 'west champaran', 'west champaran district'],
-  kesaria: ['kesaria', 'east champaran', 'east champaran district'],
-  vaishali: ['vaishali', 'vaishali district'],
-  bhabua: ['bhabua', 'kaimur', 'kaimur district'],
-  jehanabad: ['jehanabad', 'jehanabad district'],
-  sitamarhi: ['sitamarhi', 'sitamarhi district'],
-  munger: ['munger', 'munger district'],
-  'patna-city': ['patna city', 'patna_city'],
-  // Uttar Pradesh
-  lucknow: ['lucknow', 'lucknow district'],
-  ayodhya: ['ayodhya', 'faizabad'],
-  mathura: ['mathura', 'mathura district'],
-  vrindavan: ['vrindavan'],
-  govardhan: ['govardhan'],
-  prayagraj: ['prayagraj', 'allahabad'],
-  vindhyachal: ['vindhyachal', 'mirzapur', 'mirzapur district'],
-  dudhwa: ['dudhwa', 'lakhimpur kheri', 'lakhimpur kheri district'],
-  jhansi: ['jhansi', 'jhansi district'],
-  chitrakoot: ['chitrakoot', 'chitrakoot-up', 'chitrakoot district'],
-  // Karnataka
-  mysuru: ['mysuru', 'mysore', 'mysuru district'],
-  vijayapura: ['vijayapura', 'bijapur'],
-  badami: ['badami'],
-  pattadakal: ['pattadakal', 'bagalkot district'],
-  aihole: ['aihole'],
-  madikeri: ['madikeri', 'coorg', 'kodagu', 'kodagu district'],
-  chikkamagaluru: ['chikkamagaluru', 'chikmagalur', 'chikkamagaluru district'],
-  sagara: ['sagara', 'shivamogga', 'shivamogga district', 'shimoga'],
-  gokarna: ['gokarna'],
-  murudeshwar: ['murudeshwar'],
-  bandipur: ['bandipur', 'chamarajanagar', 'chamarajanagar district'],
-  nagarhole: ['nagarhole'],
-  udupi: ['udupi', 'udupi district'],
-  mangaluru: ['mangaluru', 'mangalore', 'dakshina kannada', 'dakshina kannada district'],
-  chitradurga: ['chitradurga', 'chitradurga district'],
-  lakkundi: ['lakkundi', 'gadag', 'gadag district'],
-  dandeli: ['dandeli'],
-  hassan: ['hassan', 'hassan district', 'belur', 'halebidu'],
-  // Chhattisgarh
-  chitrakote: ['chitrakote'],
-  'kanger-valley': ['kanger valley', 'kanger_valley', 'kanger'],
-  jagdalpur: ['jagdalpur'],
-  dantewada: ['dantewada'],
-  bhoramdeo: ['bhoramdeo', 'kabirdham', 'kabirdham district'],
-  barnawapara: ['barnawapara', 'baloda bazar', 'baloda bazar district'],
-  sirpur: ['sirpur', 'mahasamund', 'mahasamund district'],
-  rajim: ['rajim', 'gariaband', 'gariaband district'],
-  bhilai: ['bhilai', 'durg'],
-  raipur: ['raipur', 'raipur district'],
-  'naya-raipur': ['naya raipur', 'naya_raipur', 'nava raipur'],
-  kanker: ['kanker', 'kanker district'],
-  bastar: ['bastar', 'bastar district', 'bastar region'],
-  bijapur: ['bijapur', 'bijapur district'],
-  'udanti-sitanadi': ['udanti-sitanadi', 'udanti sitanadi', 'udanti'],
-  achanakmar: ['achanakmar', 'mungeli', 'mungeli district'],
-  'tamor-pingla': ['tamor pingla', 'tamor_pingla', 'surajpur', 'surajpur district'],
-  semarsot: ['semarsot', 'balrampur', 'balrampur district'],
-  bhairamgarh: ['bhairamgarh'],
-  sitanadi: ['sitanadi', 'dhamtari', 'dhamtari district'],
-  mainpat: ['mainpat', 'surguja', 'surguja district'],
-  jashpur: ['jashpur', 'jashpur district'],
-  // Haryana
-  sultanpur: ['sultanpur', 'sultanpur national park'],
-  kalesar: ['kalesar', 'kalesar national park'],
-  pinjore: ['pinjore', 'pinjore gardens'],
-  morni: ['morni', 'morni hills'],
-  kurukshetra: ['kurukshetra', 'thanesar'],
-  rakhigarhi: ['rakhigarhi'],
-  hisar: ['hisar', 'hissar'],
-  agroha: ['agroha', 'agroha dham'],
-  narnaul: ['narnaul'],
-  ballabhgarh: ['ballabhgarh', 'ballabgarh'],
-  faridabad: ['faridabad'],
-  sohna: ['sohna'],
-  panchkula: ['panchkula'],
-  rohtak: ['rohtak'],
-  panipat: ['panipat'],
-  karnal: ['karnal'],
-  jhajjar: ['jhajjar'],
-  chhachhrauli: ['chhachhrauli'],
-  kaithal: ['kaithal'],
 };
 
 const CANONICAL_CITY_NAMES: Record<string, string> = {
@@ -356,31 +220,16 @@ const CANONICAL_CITY_NAMES: Record<string, string> = {
   jaipur: 'Jaipur',
   kochi: 'Kochi',
   kolkata: 'Kolkata',
-  darjeeling: 'Darjeeling',
-  santiniketan: 'Santiniketan',
-  siliguri: 'Siliguri',
   amritsar: 'Amritsar',
   goa: 'Goa',
-  'old goa': 'Old Goa',
-  candolim: 'Candolim',
-  panaji: 'Panaji',
   bengaluru: 'Bengaluru',
   hyderabad: 'Hyderabad',
-  hanamkonda: 'Hanamkonda',
-  warangal: 'Warangal',
-  'yadadri-bhuvanagiri': 'Yadadri Bhuvanagiri',
-  'yadadri bhuvanagiri': 'Yadadri Bhuvanagiri',
-  yadadri: 'Yadadri',
-  nirmal: 'Nirmal',
-  'bhadradri-kothagudem': 'Bhadradri Kothagudem',
-  'bhadradri kothagudem': 'Bhadradri Kothagudem',
-  nalgonda: 'Nalgonda',
   pune: 'Pune',
   udaipur: 'Udaipur',
   hampi: 'Hampi',
   madurai: 'Madurai',
   'chhatrapati sambhajinagar': 'Chhatrapati Sambhajinagar',
-  'bodh-gaya': 'Bodh Gaya',
+  'bodh gaya': 'Bodh Gaya',
   bhubaneswar: 'Bhubaneswar',
   srinagar: 'Srinagar',
   'port blair': 'Port Blair',
@@ -390,205 +239,39 @@ const CANONICAL_CITY_NAMES: Record<string, string> = {
   gangtok: 'Gangtok',
   lonavala: 'Lonavala & Khandala',
   khandala: 'Khandala',
-  // Nagaland
-  kohima: 'Kohima',
-  mokokchung: 'Mokokchung',
-  mon: 'Mon',
-  phek: 'Phek',
-  peren: 'Peren',
-  // Meghalaya
-  shillong: 'Shillong',
-  umiam: 'Umiam',
-  cherrapunji: 'Cherrapunji',
-  nongriat: 'Nongriat',
-  dawki: 'Dawki',
-  mawlynnong: 'Mawlynnong',
-  // Manipur
-  imphal: 'Imphal',
-  loktak: 'Loktak',
-  ukhrul: 'Ukhrul',
-  dzukou: 'Dzukou Valley',
-  khongjom: 'Khongjom',
-  bishnupur: 'Bishnupur',
-  // Mizoram
-  aizawl: 'Aizawl',
-  serchhip: 'Serchhip',
-  lawngtlai: 'Lawngtlai',
-  champhai: 'Champhai',
-  saitual: 'Saitual',
-  siaha: 'Siaha',
-  hmuifang: 'Hmuifang',
-  // Bihar
-  patna: 'Patna',
-  nalanda: 'Nalanda',
-  rajgir: 'Rajgir',
-  pawapuri: 'Pawapuri',
-  bhagalpur: 'Bhagalpur',
-  'valmiki-nagar': 'Valmiki Nagar',
-  kesaria: 'Kesaria',
-  vaishali: 'Vaishali',
-  bhabua: 'Bhabua',
-  jehanabad: 'Jehanabad',
-  sitamarhi: 'Sitamarhi',
-  munger: 'Munger',
-  'patna-city': 'Patna City',
-  // Uttar Pradesh
-  lucknow: 'Lucknow',
-  ayodhya: 'Ayodhya',
-  mathura: 'Mathura',
-  vrindavan: 'Vrindavan',
-  govardhan: 'Govardhan',
-  prayagraj: 'Prayagraj',
-  vindhyachal: 'Vindhyachal',
-  dudhwa: 'Dudhwa',
-  jhansi: 'Jhansi',
-  chitrakoot: 'Chitrakoot',
-  // Karnataka
-  mysuru: 'Mysuru',
-  vijayapura: 'Vijayapura',
-  badami: 'Badami',
-  pattadakal: 'Pattadakal',
-  aihole: 'Aihole',
-  madikeri: 'Madikeri',
-  chikkamagaluru: 'Chikkamagaluru',
-  sagara: 'Sagara',
-  gokarna: 'Gokarna',
-  murudeshwar: 'Murudeshwar',
-  bandipur: 'Bandipur',
-  nagarhole: 'Nagarhole',
-  udupi: 'Udupi',
-  mangaluru: 'Mangaluru',
-  chitradurga: 'Chitradurga',
-  lakkundi: 'Lakkundi',
-  dandeli: 'Dandeli',
-  hassan: 'Hassan',
-  // Chhattisgarh
-  chitrakote: 'Chitrakote',
-  'kanger-valley': 'Kanger Valley',
-  jagdalpur: 'Jagdalpur',
-  dantewada: 'Dantewada',
-  bhoramdeo: 'Bhoramdeo',
-  barnawapara: 'Barnawapara',
-  sirpur: 'Sirpur',
-  rajim: 'Rajim',
-  bhilai: 'Bhilai',
-  raipur: 'Raipur',
-  'naya-raipur': 'Naya Raipur',
-  kanker: 'Kanker',
-  bastar: 'Bastar',
-  bijapur: 'Bijapur',
-  'udanti-sitanadi': 'Udanti-Sitanadi',
-  achanakmar: 'Achanakmar',
-  'tamor-pingla': 'Tamor Pingla',
-  semarsot: 'Semarsot',
-  bhairamgarh: 'Bhairamgarh',
-  sitanadi: 'Sitanadi',
-  mainpat: 'Mainpat',
-  jashpur: 'Jashpur',
-  // Haryana
-  sultanpur: 'Sultanpur',
-  kalesar: 'Kalesar',
-  pinjore: 'Pinjore',
-  morni: 'Morni',
-  kurukshetra: 'Kurukshetra',
-  rakhigarhi: 'Rakhigarhi',
-  hisar: 'Hisar',
-  agroha: 'Agroha',
-  narnaul: 'Narnaul',
-  ballabhgarh: 'Ballabhgarh',
-  faridabad: 'Faridabad',
-  sohna: 'Sohna',
-  panchkula: 'Panchkula',
-  rohtak: 'Rohtak',
-  panipat: 'Panipat',
-  karnal: 'Karnal',
-  jhajjar: 'Jhajjar',
-  chhachhrauli: 'Chhachhrauli',
-  kaithal: 'Kaithal',
 };
 
 function getCanonicalCityId(cityNameOrId: string): string {
   const norm = (cityNameOrId || '').toLowerCase().trim();
   if (!norm) return '';
-  const normSpace = norm.replace(/[-_]+/g, ' ');
-
-  // 1. Exact match on canonical key
-  if (CITY_ALIASES[norm]) return norm;
-  const directKey = norm.replace(/[^a-z0-9]/g, '-');
-  if (CITY_ALIASES[directKey]) return directKey;
-
-  // 2. Exact match on aliases
   for (const [canonId, aliases] of Object.entries(CITY_ALIASES)) {
-    if (canonId === norm || aliases.some((a) => a.toLowerCase().trim() === norm || a.toLowerCase().trim().replace(/[-_]+/g, ' ') === normSpace)) {
+    if (canonId === norm || aliases.some((a) => a === norm || norm.includes(a) || a.includes(norm))) {
       return canonId;
     }
   }
-
-  // 3. Word boundary substring matching only as fallback
-  for (const [canonId, aliases] of Object.entries(CITY_ALIASES)) {
-    if (canonId !== 'goa' && aliases.some((a) => {
-      const aSpace = a.toLowerCase().trim().replace(/[-_]+/g, ' ');
-      return normSpace.startsWith(aSpace + ' ') || normSpace.endsWith(' ' + aSpace) || (a.length > 3 && (norm.includes(a) || a.includes(norm)));
-    })) {
-      return canonId;
-    }
-  }
-
-  return '';
+  return norm.replace(/[^a-z0-9]/g, '-');
 }
 
 function getCanonicalCityName(cityId: string): string {
   const norm = (cityId || '').toLowerCase().trim();
   if (CANONICAL_CITY_NAMES[norm]) return CANONICAL_CITY_NAMES[norm];
-  const directKey = norm.replace(/[^a-z0-9]/g, '-');
-  if (CANONICAL_CITY_NAMES[directKey]) return CANONICAL_CITY_NAMES[directKey];
   return norm ? norm.charAt(0).toUpperCase() + norm.slice(1) : '';
-}
-
-function matchesCityName(cityName: string, target: string): boolean {
-  if (!cityName || !target) return false;
-  const c = cityName.toLowerCase().trim();
-  const t = target.toLowerCase().trim();
-  if (c === t) return true;
-  if (c.replace(/[^a-z0-9]+/g, '-') === t.replace(/[^a-z0-9]+/g, '-')) return true;
-  try {
-    const escaped = t.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const regex = new RegExp(`(^|\\s|[-/,])${escaped}(\\s|[-/,]|$)`, 'i');
-    return regex.test(c);
-  } catch {
-    return c === t;
-  }
 }
 
 function isPlaceInCity(place: any, targetCity: string): boolean {
   if (!place || !targetCity) return false;
-  const rawTarget = targetCity.toLowerCase().trim();
   const targetCanon = getCanonicalCityId(targetCity);
-  if (!targetCanon && !rawTarget) return false;
-
+  if (!targetCanon) return false;
   const pCity = (place.city || '').toLowerCase().trim();
   const pCityId = ((place as any).city_id || '').toLowerCase().trim();
-  const pAssigned = ((place as any).assigned_city || '').toLowerCase().trim();
-  const pArea = ((place as any).area || '').toLowerCase().trim();
 
-  if (pAssigned && (matchesCityName(pAssigned, rawTarget) || (targetCanon && matchesCityName(pAssigned, targetCanon)))) return true;
-  if (pCityId && (matchesCityName(pCityId, rawTarget) || (targetCanon && matchesCityName(pCityId, targetCanon)))) return true;
-  if (pCity && (matchesCityName(pCity, rawTarget) || (targetCanon && matchesCityName(pCity, targetCanon)))) return true;
+  if (pCityId && getCanonicalCityId(pCityId) === targetCanon) return true;
+  if (pCity && getCanonicalCityId(pCity) === targetCanon) return true;
 
-  // If place has explicit city or city_id that maps to a canonical city, strictly match canonical IDs
-  const pCanon = (pCityId && getCanonicalCityId(pCityId)) || (pCity && getCanonicalCityId(pCity));
-  if (pCanon && targetCanon) {
-    if (pCanon === targetCanon) return true;
-  }
-
-  if (pArea && targetCanon && getCanonicalCityId(pArea) === targetCanon) return true;
-
-  const aliases = targetCanon ? (CITY_ALIASES[targetCanon] || [targetCanon]) : [];
+  const aliases = CITY_ALIASES[targetCanon] || [targetCanon];
   return aliases.some((a) =>
-    (pCity && (pCity === a || matchesCityName(pCity, a) || pCity.includes(a))) ||
-    (pCityId && (pCityId === a || matchesCityName(pCityId, a) || pCityId.includes(a))) ||
-    (pAssigned && (pAssigned === a || matchesCityName(pAssigned, a) || pAssigned.includes(a))) ||
-    (pArea && (pArea === a || pArea.includes(a)))
+    (pCity && (pCity === a || pCity.includes(a))) ||
+    (pCityId && (pCityId === a || pCityId.includes(a)))
   );
 }
 
@@ -642,13 +325,7 @@ function loadData() {
         const raw = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
         for (const item of raw) {
           if (item && item.id) {
-            const existing = placesData.get(item.id.toLowerCase());
-            if (existing) {
-              if (item.assigned_city) (existing as any).assigned_city = item.assigned_city;
-              if (item.tourist_place) (existing as any).tourist_place = item.tourist_place;
-            } else {
-              placesData.set(item.id.toLowerCase(), item);
-            }
+            placesData.set(item.id.toLowerCase(), item);
           }
         }
       }
@@ -663,21 +340,7 @@ function loadData() {
     loadPlacesFile(path.join(dataDir, 'ladakh', 'places.json'));
     loadPlacesFile(path.join(dataDir, 'jammu-kashmir', 'places.json'));
     loadPlacesFile(path.join(dataDir, 'kolkata', 'places.json'));
-    loadPlacesFile(path.join(dataDir, 'west-bengal', 'places.json'));
     loadPlacesFile(path.join(dataDir, 'goa', 'places.json'));
-    loadPlacesFile(path.join(dataDir, 'madhya-pradesh', 'places.json'));
-    loadPlacesFile(path.join(dataDir, 'punjab', 'places.json'));
-    loadPlacesFile(path.join(dataDir, 'gujarat', 'places.json'));
-    loadPlacesFile(path.join(dataDir, 'himachal-pradesh', 'places.json'));
-    loadPlacesFile(path.join(dataDir, 'telangana', 'places.json'));
-    loadPlacesFile(path.join(dataDir, 'nagaland', 'places.json'));
-    loadPlacesFile(path.join(dataDir, 'meghalaya', 'places.json'));
-    loadPlacesFile(path.join(dataDir, 'manipur', 'places.json'));
-    loadPlacesFile(path.join(dataDir, 'mizoram', 'places.json'));
-    loadPlacesFile(path.join(dataDir, 'uttar-pradesh', 'places.json'));
-    loadPlacesFile(path.join(dataDir, 'karnataka', 'places.json'));
-    loadPlacesFile(path.join(dataDir, 'chhattisgarh', 'places.json'));
-    loadPlacesFile(path.join(dataDir, 'haryana', 'places.json'));
 
     // Load Heritage 42+ structured experiences
     const heritagePath = path.join(dataDir, 'heritage', 'monuments.json');
@@ -686,11 +349,8 @@ function loadData() {
       heritageData.push(...rawHeritage);
       for (const item of rawHeritage) {
         if (item && item.id) {
-          const existing = placesData.get(item.id.toLowerCase());
           const normItem = {
             ...item,
-            assigned_city: item.assigned_city || (existing as any)?.assigned_city,
-            tourist_place: item.tourist_place || (existing as any)?.tourist_place || item.name,
             category: item.category || 'Architectural & Colonial',
             summary: item.summary || item.historical_significance?.slice(0, 200) || '',
             tags: item.tags || ['heritage', 'unesco'],
@@ -745,76 +405,6 @@ function loadData() {
           }
         }
       }
-    }
-
-    // Ensure Punjab places strictly use verified punjab_001 - punjab_020 IDs
-    if (placesData.has('punjab_001')) {
-      placesData.delete('golden-temple-amritsar');
-      placesData.delete('golden-temple');
-      placesData.delete('jallianwala-bagh');
-      placesData.delete('partition-museum');
-    }
-
-    // Ensure Telangana places strictly use verified telangana_001 - telangana_015 IDs
-    if (placesData.has('telangana_001')) {
-      for (const legacyKey of [
-        'charminar', 'golconda-fort', 'ramappa-temple',
-        'hyderabad-charminar', 'hyderabad-golconda-fort', 'hyderabad-salar-jung-museum',
-        'hyderabad-hussain-sagar-lake', 'hyderabad-qutb-shahi-tombs', 'hyderabad-ramoji-film-city',
-        'hyderabad-chowmahalla-palace', 'warangal-fort', 'warangal-thousand-pillar-temple',
-        'bhongir-fort', 'thousand-pillar-temple', 'qutb-shahi-tombs', 'salar-jung-museum',
-        'chowmahalla-palace', 'hussain-sagar-lake',
-        'hyderabad-hyderabad-heritage-fort-complex',
-        'nagarjuna-sagar-nagarjuna-sagar-national-wildlife-botanical-park',
-        'kbr-national-park', 'mrugavani-national-park',
-        'warangal-warangal-sacred-temple-cultural-center'
-      ]) {
-        placesData.delete(legacyKey);
-      }
-    }
-
-    // Ensure Nagaland, Meghalaya, Manipur, Mizoram synthetic & duplicate keys are cleaned
-    for (const legacyKey of [
-      'wobkha-wokha-scenic-promenade-viewpoint',
-      'jowai-jowai-scenic-promenade-viewpoint',
-      'kakching-kakching-scenic-promenade-viewpoint',
-      'kolasib-kolasib-scenic-promenade-viewpoint',
-      'living-root-bridges'
-    ]) {
-      placesData.delete(legacyKey);
-    }
-
-    // Ensure Bihar places strictly use verified bihar_001 - bihar_030 IDs
-    if (placesData.has('bihar_001')) {
-      placesData.delete('mahabodhi-temple');
-      placesData.delete('nalanda-university-ruins');
-      placesData.delete('golghar-patna');
-    }
-
-    // Ensure Uttar Pradesh places strictly use verified uttar_pradesh_001 - uttar_pradesh_040 IDs
-    if (placesData.has('uttar_pradesh_011')) {
-      for (const legacyKey of [
-        'taj-mahal', 'fatehpur-sikri', 'agra-fort', 'kashi-vishwanath',
-        'dashashwamedh-ghat', 'sarnath-complex', 'assi-ghat', 'mehtab-bagh'
-      ]) {
-        placesData.delete(legacyKey);
-      }
-    }
-
-    // Ensure Karnataka places strictly use verified karnataka_001 - karnataka_040 IDs
-    if (placesData.has('karnataka_001')) {
-      for (const legacyKey of [
-        'hampi-monuments', 'pattadakal-monuments', 'hoysala-temples-belur',
-        'bangalore-palace', 'hampi-virupaksha', 'hampi-stone-chariot',
-        'tipu-sultan-palace', 'lalbagh-glasshouse'
-      ]) {
-        placesData.delete(legacyKey);
-      }
-    }
-
-    // Ensure Chhattisgarh places strictly use verified chhattisgarh_001 - chhattisgarh_030 IDs
-    if (placesData.has('chhattisgarh_001')) {
-      placesData.delete('sirpur-monuments');
     }
 
     // Comprehensive City Normalization pass for all places in placesData
@@ -1421,20 +1011,13 @@ app.get(['/api/destinations', '/api/places'], (req, res) => {
 
   if (city) {
     const c = (city as string).toLowerCase().trim();
-    const cSlug = c.replace(/[^a-z0-9]+/g, '-');
-    results = results.filter((p) => {
-      const aCity = ((p as any).assigned_city || '').toLowerCase().trim();
-      const aCitySlug = aCity.replace(/[^a-z0-9]+/g, '-');
-      const pCity = (p.city || '').toLowerCase().trim();
-      const pCitySlug = pCity.replace(/[^a-z0-9]+/g, '-');
-      const pCityId = ((p as any).city_id || '').toLowerCase().trim();
-
-      if (aCity && (aCity === c || aCitySlug === cSlug)) return true;
-      if (isPlaceInCity(p, c)) return true;
-      if (pCity && (pCity === c || pCitySlug === cSlug)) return true;
-      if (pCityId && (pCityId === c || pCityId === cSlug)) return true;
-      return false;
-    });
+    results = results.filter((p) =>
+      isPlaceInCity(p, c) ||
+      p.city?.toLowerCase().includes(c) ||
+      (p as any).city_id?.toLowerCase() === c ||
+      c.includes(p.city?.toLowerCase() || '') ||
+      (p.tags && Array.isArray(p.tags) && p.tags.some((t: string) => t.toLowerCase() === c || c.includes(t.toLowerCase())))
+    );
   }
 
   if (category && (category as string).toLowerCase() !== 'all') {
@@ -1830,8 +1413,6 @@ app.get('/api/search', (req, res) => {
     .filter((p) => {
       return (
         p.name.toLowerCase().includes(query) ||
-        ((p as any).tourist_place && (p as any).tourist_place.toLowerCase().includes(query)) ||
-        ((p as any).assigned_city && (p as any).assigned_city.toLowerCase().includes(query)) ||
         p.city.toLowerCase().includes(query) ||
         p.state.toLowerCase().includes(query) ||
         p.category.toLowerCase().includes(query) ||
@@ -1952,8 +1533,6 @@ app.get('/api/locations/suggest', (req, res) => {
   // 3. Search Places & Attractions (skip duplicate monuments already returned)
   for (const p of placesData.values()) {
     const pName = p.name.toLowerCase();
-    const pTouristPlace = ((p as any).tourist_place || '').toLowerCase();
-    const pAssignedCity = ((p as any).assigned_city || '').toLowerCase();
     const pCity = (p.city || '').toLowerCase();
     const pClean = pName.replace(/[^a-z0-9]/g, '');
 
@@ -1964,11 +1543,9 @@ app.get('/api/locations/suggest', (req, res) => {
 
     let score = 0;
     if (p.id.toLowerCase() === query || pClean === cleanQ) score += 90;
-    else if (pTouristPlace && pTouristPlace.replace(/[^a-z0-9]/g, '') === cleanQ) score += 90;
-    else if (pName.startsWith(query) || (pTouristPlace && pTouristPlace.startsWith(query))) score += 70;
-    else if (pName.includes(query) || (pTouristPlace && pTouristPlace.includes(query))) score += 48;
-    else if (pAssignedCity && (pAssignedCity === query || pAssignedCity.startsWith(query))) score += 45;
-    else if (tokens.length > 0 && tokens.every(tok => pName.includes(tok) || pCity.includes(tok) || pTouristPlace.includes(tok) || pAssignedCity.includes(tok))) score += 35;
+    else if (pName.startsWith(query)) score += 70;
+    else if (pName.includes(query)) score += 48;
+    else if (tokens.length > 0 && tokens.every(tok => pName.includes(tok) || pCity.includes(tok))) score += 35;
 
     const uniqueId = seenIds.has(p.id) ? `place-${p.id}` : p.id;
     if (score > 0 && !seenIds.has(uniqueId)) {
@@ -2960,33 +2537,8 @@ app.post('/api/geo/reverse-geocode', async (req, res) => {
 // -------------------------------------------------------------
 function findEntityInText(text: string): { place: any | null; city: string | null; state: string | null; name: string | null } {
   if (!text) return { place: null, city: null, state: null, name: null };
-  const clean = text.replace(/[?!,.:;]+$/g, '').trim();
-  const t = clean.toLowerCase();
+  const t = text.toLowerCase().trim();
   const allPlaces = Array.from(placesData.values());
-
-  // Check verified railway stations & station aliases across India (e.g. CSMT, Churchgate, NDLS, HWH, etc.)
-  const matchedStation = findStationByQuery(clean);
-  if (matchedStation) {
-    const matchP = allPlaces.find(
-      (x) => x.id?.toLowerCase() === matchedStation.code.toLowerCase() || x.city?.toLowerCase() === matchedStation.city.toLowerCase()
-    );
-    return { place: matchP || null, city: matchedStation.city, state: matchedStation.state, name: matchedStation.name };
-  }
-
-  // Sort station aliases by length descending so longer matches ("churchgate station") match first
-  const sortedAliases = Object.entries(STATION_ALIASES).sort((a, b) => b[0].length - a[0].length);
-  for (const [aliasKey, aliasData] of sortedAliases) {
-    if (aliasKey.length >= 2) {
-      const escaped = aliasKey.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-      const regex = new RegExp(`(^|[^a-zA-Z0-9])${escaped}([^a-zA-Z0-9]|$)`, 'i');
-      if (regex.test(clean)) {
-        const matchP = allPlaces.find(
-          (x) => x.id?.toLowerCase() === aliasData.code.toLowerCase() || x.city?.toLowerCase() === aliasData.city.toLowerCase()
-        );
-        return { place: matchP || null, city: aliasData.city, state: aliasData.state, name: aliasData.name };
-      }
-    }
-  }
 
   // Check for specific multi-word monuments / places first
   if (t.includes('dal lake') || t.includes('dal-lake') || t.includes('shikara')) {
@@ -3278,33 +2830,12 @@ app.post(['/api/ai/chat', '/api/assistant/chat'], async (req, res) => {
   // Detect pace preference (e.g. "I don't want too much travelling", "relaxed", "slow pace", "kam travel")
   const isRelaxedPace = /(too much travelling|too much travel|kam travel|relaxed|slow|easy|aram se|bhag daud nahi|less travel|without travelling much)/i.test(query);
 
-  // Check for explicit "from X to Y" or "X se Y" or "between X and Y" in message
-  let explicitOriginInText: string | null = null;
-  let explicitDestInText: string | null = null;
-  const fromToMatch = query.match(/(?:from|starting from|departing from)\s+([a-zA-Z0-9\s]+?)\s+(?:to|towards)\s+([a-zA-Z0-9\s]+)/i)
-    || query.match(/([a-zA-Z0-9\s]+?)\s+(?:se)\s+([a-zA-Z0-9\s]+?)\s+(?:kaise|jana|jaana|ja sakte|travel|pahuchna|pahuchein|chalein|trip|ghoomne|options|route)/i)
-    || query.match(/between\s+([a-zA-Z0-9\s]+?)\s+and\s+([a-zA-Z0-9\s]+)/i);
-
-  if (fromToMatch && fromToMatch[1]) {
-    const candidate = fromToMatch[1].replace(/[?!,.:;]+$/g, '').trim();
-    if (!/(train|flight|bus|car|air|road|kisi|kahan|yahan|ghoomne|trip|shehar|city|way to travel|best way to travel)/i.test(candidate)) {
-      explicitOriginInText = candidate;
-    }
-  }
-
-  if (fromToMatch && fromToMatch[2]) {
-    const candidateDest = fromToMatch[2].replace(/[?!,.:;]+$/g, '').trim();
-    if (!/(train|flight|bus|car|air|road|options|route|ghoomne)/i.test(candidateDest)) {
-      explicitDestInText = candidateDest;
-    }
-  }
-
   // Intent classification triggers
   const isCurrentLocationQuery = /(meri (current )?location( batao| kya hai)?|where am i|what is my location|current location kya hai|meri location batao)/i.test(query);
   const isItineraryModify = /(day \d+ (ko )?(change|modify|badlo|badal do)|change day \d+|modify day \d+|heritage places zyada|zyada heritage|more heritage|heritage spots add)/i.test(query);
   const isExcludeMumbai = /(mumbai (ke baare mein )?nahi|don't want mumbai|not mumbai|exclude mumbai|mumbai chhod kar|mumbai ke alawa|mumbai nahi)/i.test(query);
   const isNearbyQuery = /(nearby|near me|paas mein|paas|aas paas|close to me|around me|around here|aur kya hai paas|aur paas mein|bagal mein|what is near me|explore near me|kuch interesting dekhna hai)/i.test(query);
-  const isTransitQuery = /(train|railway|station|flight|airport|bus|taxi|cab|walk|how to reach|kaise pahuchu|kaise pahuchein|kaise jayein|kaise jaye|kaise jau|kaise ja sakte|kaise jaa sakte|reach there|route|safar|transit|train se|flight se|flight option|road option|car se|travel options|travel from|way to travel|best way to travel|how to travel|travel between|reach from|how to go from|how can i go from|best route from)/i.test(query) || (!!explicitOriginInText && !!explicitDestInText);
+  const isTransitQuery = /(train|railway|station|flight|airport|bus|how to reach|kaise pahuchu|kaise pahuchein|kaise jayein|kaise jaye|kaise jau|kaise ja sakte|kaise jaa sakte|reach there|route|safar|transit|train se|flight se|flight option|road option|car se|travel options)/i.test(query);
   const isItineraryQuery = /(plan|itinerary|days|din|trip|tour|schedule|circuit|bana do)/i.test(query) || (!!durationMatch && !isTransitQuery);
   const isFeatureQuery = /(how does (this|the) (feature|website|app|map|site|planner|3d) work|how to use|features of virasat|kya hai yeh website|map kaise|feature explain|what can i do on this website|website kaise kaam karti hai|features batao)/i.test(query);
   const isGreeting = /^(hi|hello|hey|namaste|pranam|greetings|hola)\b/i.test(query.trim());
@@ -3312,24 +2843,11 @@ app.post(['/api/ai/chat', '/api/assistant/chat'], async (req, res) => {
   const isExplicitTravelQuery = /(travel to|visit|go to|reach|how to reach|kaise jaye|kaise ja sakte|kaise pahuchein|jana hai|jaana hai|safar|ghoomne|trip to|trip|tour|doosre city jaana)/i.test(query);
 
   // 1. Entity Extraction: Destination identification
-  let activePlace: any = null;
-  let activeCity: string | null = null;
-  let activeState: string | null = null;
-  let activeDestinationName: string | null = null;
-
-  if (explicitDestInText) {
-    const destEntity = findEntityInText(explicitDestInText);
-    activePlace = destEntity.place;
-    activeCity = destEntity.city;
-    activeState = destEntity.state;
-    activeDestinationName = destEntity.name || explicitDestInText;
-  } else {
-    const directEntity = findEntityInText(query);
-    activePlace = directEntity.place;
-    activeCity = directEntity.city;
-    activeState = directEntity.state;
-    activeDestinationName = directEntity.name;
-  }
+  const directEntity = findEntityInText(query);
+  let activePlace = directEntity.place;
+  let activeCity = directEntity.city;
+  let activeState = directEntity.state;
+  let activeDestinationName = directEntity.name;
 
   // 2. If NO direct entity in current query, search backward through conversation history (unless resetting destination)
   if (!activeDestinationName && normalizedHistory.length > 0 && !isResetQuery) {
@@ -3370,6 +2888,31 @@ app.post(['/api/ai/chat', '/api/assistant/chat'], async (req, res) => {
   let useCurrentLocationAsOrigin = false;
   if (/(use my (current )?location as (my )?starting point|meri (current )?location se|from my (current )?location|current location se|yahan se shuru|starting from here|from here|apni location se)/i.test(query)) {
     useCurrentLocationAsOrigin = true;
+  }
+
+  // Check for explicit "from X to Y" or "X se Y" in message
+  let explicitOriginInText: string | null = null;
+  const fromToMatch = query.match(/(?:from|starting from|departing from)\s+([a-zA-Z\s]+?)\s+(?:to|towards)\s+([a-zA-Z\s]+)/i)
+    || query.match(/([a-zA-Z\s]+?)\s+(?:se)\s+([a-zA-Z\s]+?)\s+(?:kaise|jana|jaana|ja sakte|travel|pahuchna|pahuchein|chalein|trip|ghoomne|options|route)/i);
+
+  if (fromToMatch && fromToMatch[1]) {
+    const candidate = fromToMatch[1].trim();
+    if (!/(train|flight|bus|car|air|road|kisi|kahan|yahan|ghoomne|trip|shehar|city)/i.test(candidate)) {
+      explicitOriginInText = candidate;
+    }
+  }
+
+  if (fromToMatch && fromToMatch[2]) {
+    const candidateDest = fromToMatch[2].trim();
+    if (!/(train|flight|bus|car|air|road|options|route|ghoomne)/i.test(candidateDest)) {
+      const destEntity = findEntityInText(candidateDest);
+      if (destEntity.name) {
+        activeDestinationName = destEntity.name;
+        activeCity = destEntity.city || activeCity;
+        activeState = destEntity.state || activeState;
+        activePlace = destEntity.place || activePlace;
+      }
+    }
   }
 
   // Also check if previous assistant turn asked where user is travelling from
@@ -3437,18 +2980,18 @@ app.post(['/api/ai/chat', '/api/assistant/chat'], async (req, res) => {
     intent = 'transit_mode';
   } else if (isItineraryQuery && activeDestinationName) {
     intent = 'itinerary_plan';
-  } else if (activeDestinationName) {
+  } else if (directEntity.name) {
     if (isExplicitTravelQuery || query.includes('trip') || query.includes('tour') || query.includes('safar') || query.includes('doosre city')) {
       intent = 'travel_to_destination';
-    } else if (!activePlace && activeCity) {
+    } else if (!directEntity.place && directEntity.city) {
       intent = 'travel_to_destination';
     } else {
       intent = 'destination_info';
     }
-  } else if (isGreeting) {
+  } else if (isGreeting && !activeDestinationName) {
     intent = 'greeting';
   } else {
-    intent = 'general';
+    intent = activeDestinationName ? 'destination_info' : 'general';
   }
 
   // Collect verified places & transit comparison dynamically
@@ -3618,18 +3161,11 @@ app.post(['/api/ai/chat', '/api/assistant/chat'], async (req, res) => {
         : `Trip Origin: UNKNOWN (Not established yet. DO NOT assume or invent any origin like Mumbai or Delhi. Ask the user for their starting city/station if needed).`;
 
       const transitContextStr = transitComparison
-        ? transitComparison.is_same_city
-          ? `Verified Intra-City / Same-City Transit (${transitComparison.origin} -> ${transitComparison.destination}, City: ${transitComparison.city || 'Local Area'}):\n` +
-            `- Geographic relationship: Both locations are in the same city/metropolitan area (~${transitComparison.distance_km} km apart).\n` +
-            `- Suburban / Local Train: ${transitComparison.train?.summary} (${transitComparison.train?.approx_duration}). Note: ${transitComparison.train?.notes}\n` +
-            `- Road / Taxi / Cab: ${transitComparison.road?.summary} (${transitComparison.road?.approx_duration}). Note: ${transitComparison.road?.notes}\n` +
-            (transitComparison.walking ? `- Walking / Heritage Walk: ${transitComparison.walking?.summary} (${transitComparison.walking?.approx_duration}).\n` : '') +
-            `- Advisory: Intercity flights and long-distance highways do NOT apply to this same-city journey. Recommend suburban train, taxi/cab, bus, or walking.`
-          : `Verified Transit Comparison (${transitComparison.origin} -> ${transitComparison.destination}):\n` +
-            `- Distance: ~${transitComparison.distance_km} km\n` +
-            `- Train: ${transitComparison.train?.summary || 'N/A'} (${transitComparison.train?.approx_duration || ''}). Note: ${transitComparison.train?.notes || ''}\n` +
-            `- Air: ${transitComparison.air?.summary || 'N/A'} (${transitComparison.air?.approx_duration || ''}). Note: ${transitComparison.air?.notes || ''}\n` +
-            `- Road: ${transitComparison.road?.summary || 'N/A'} (~${transitComparison.road?.distance_km || ''} km, ${transitComparison.road?.approx_duration || ''})\n`
+        ? `Verified Transit Comparison (${transitComparison.origin} -> ${transitComparison.destination}):\n` +
+          `- Distance: ~${transitComparison.distance_km} km\n` +
+          `- Train: ${transitComparison.train.summary} (${transitComparison.train.approx_duration}). Note: ${transitComparison.train.notes}\n` +
+          `- Air: ${transitComparison.air.summary} (${transitComparison.air.approx_duration}). Note: ${transitComparison.air.notes}\n` +
+          `- Road: ${transitComparison.road.summary} (~${transitComparison.road.distance_km} km, ${transitComparison.road.approx_duration})\n`
         : 'No transit calculation active.';
 
       const placesContextStr = suggestedPlaces.length > 0
@@ -3761,110 +3297,59 @@ ${placesContextStr}`;
     }
   }
 
-  // 3. Intent: Travel to Another Destination (Compare Train, Air, Road, Local)
+  // 3. Intent: Travel to Another Destination (Compare Train, Air, Road)
   else if (intent === 'travel_to_destination') {
-    if (transitComparison && transitComparison.distance_km > 0) {
+    if (transitComparison) {
       const dest = activeDestinationName!;
       const orig = resolvedOriginName || userLoc?.city || 'Your Location';
-
-      if (transitComparison.is_same_city) {
-        const city = transitComparison.city || 'Mumbai';
-        reply = isHindiHinglish
-          ? `**${orig}** aur **${dest}** dono **${city}** shehar ke andar hi hain (~${transitComparison.distance_km} km doori). Yahan ke verified local transport options ye hain:\n\n` +
-            `🚆 **1. Suburban Local Train**:\n` +
-            `• **Route**: ${transitComparison.train.summary}\n` +
-            `• **Approx Time**: ${transitComparison.train.approx_duration}\n` +
-            `• **Details**: ${transitComparison.train.notes}\n\n` +
-            `🚕 **2. Metered Taxi / Cab**:\n` +
-            `• **Route**: ${transitComparison.road.summary}\n` +
-            `• **Approx Time**: ${transitComparison.road.approx_duration}\n` +
-            `• **Details**: ${transitComparison.road.notes}\n\n` +
-            (transitComparison.walking
-              ? `🚶 **3. Heritage Walk (Walking)**:\n` +
-                `• **Duration**: ${transitComparison.walking.approx_duration}\n` +
-                `• **Route**: ${transitComparison.walking.notes}\n\n`
-              : '') +
-            (suggestedPlaces.length > 0
-              ? `🌟 **Top Highlights in ${dest}**:\n` +
-                suggestedPlaces.slice(0, 3).map((p) => `• **${p.name}**: ${p.reason}`).join('\n') + '\n\n'
-              : '') +
-            `*Kya aap kisi spot ke visiting timings ya ticket rates dekhna chahte hain?*`
-          : `**${orig}** and **${dest}** are both located within **${city}** (~${transitComparison.distance_km} km apart). Here are the recommended local transport options:\n\n` +
-            `🚆 **1. Suburban Local Train**:\n` +
-            `• **Route**: ${transitComparison.train.summary}\n` +
-            `• **Duration**: ${transitComparison.train.approx_duration}\n` +
-            `• **Details**: ${transitComparison.train.notes}\n\n` +
-            `🚕 **2. Metered Taxi / Cab**:\n` +
-            `• **Route**: ${transitComparison.road.summary}\n` +
-            `• **Duration**: ${transitComparison.road.approx_duration}\n` +
-            `• **Details**: ${transitComparison.road.notes}\n\n` +
-            (transitComparison.walking
-              ? `🚶 **3. Scenic Heritage Walk (Walking)**:\n` +
-                `• **Duration**: ${transitComparison.walking.approx_duration}\n` +
-                `• **Details**: ${transitComparison.walking.notes}\n\n`
-              : '') +
-            (suggestedPlaces.length > 0
-              ? `🌟 **Highlights to Explore in ${dest}**:\n` +
-                suggestedPlaces.slice(0, 3).map((p) => `• **${p.name}**: ${p.reason}`).join('\n') + '\n\n'
-              : '') +
-            `How would you like to plan your time in this heritage area?`;
-      } else {
-        reply = isHindiHinglish
-          ? `**${orig}** se **${dest}** ka travel plan aur transport options:\n\n` +
-            `🚆 **1. Train Option**:\n` +
-            `• **Route**: ${transitComparison.train.summary}\n` +
-            `• **Approx Duration**: ${transitComparison.train.approx_duration} (~${transitComparison.train.distance_km} km rail line)\n` +
-            `• **Note**: ${transitComparison.train.notes}\n\n` +
-            `✈️ **2. Flight Option**:\n` +
-            `• **Route**: ${transitComparison.air.summary}\n` +
-            `• **Approx Duration**: ${transitComparison.air.approx_duration}\n` +
-            `• **Note**: ${transitComparison.air.notes}\n\n` +
-            `🚗 **3. Road / Car Option**:\n` +
-            `• **Highway Route**: ${transitComparison.road.summary}\n` +
-            `• **Distance & Time**: ~${transitComparison.road.distance_km} km (${transitComparison.road.approx_duration})\n` +
-            `• **Note**: ${transitComparison.road.notes}\n\n` +
-            (suggestedPlaces.length > 0
-              ? `🌟 **Top Places in ${dest}**:\n` +
-                suggestedPlaces.slice(0, 3).map((p) => `• **${p.name}**: ${p.reason}`).join('\n') + '\n\n'
-              : '') +
-            `*Aap kitne din ke liye plan kar rahe hain? (Jaise 3 din ya 5 din)*`
-          : `Here is the travel guide from **${orig}** to **${dest}**:\n\n` +
-            `🚆 **1. Train Option**:\n` +
-            `• **Route**: ${transitComparison.train.summary}\n` +
-            `• **Approx Duration**: ${transitComparison.train.approx_duration} (~${transitComparison.train.distance_km} km rail network)\n` +
-            `• **Advisory**: ${transitComparison.train.notes}\n\n` +
-            `✈️ **2. Air Option**:\n` +
-            `• **Route**: ${transitComparison.air.summary}\n` +
-            `• **Approx Duration**: ${transitComparison.air.approx_duration}\n` +
-            `• **Advisory**: ${transitComparison.air.notes}\n\n` +
-            `🚗 **3. Road Option**:\n` +
-            `• **Route**: ${transitComparison.road.summary}\n` +
-            `• **Distance & Duration**: ~${transitComparison.road.distance_km} km (${transitComparison.road.approx_duration})\n` +
-            `• **Advisory**: ${transitComparison.road.notes}\n\n` +
-            (suggestedPlaces.length > 0
-              ? `🌟 **Highlights to Explore in ${dest}**:\n` +
-                suggestedPlaces.slice(0, 3).map((p) => `• **${p.name}**: ${p.reason}`).join('\n') + '\n\n'
-              : '') +
-            `How many days are you planning for this trip? (e.g. 3 days, 5 days, or relaxed weekend)`;
-      }
+      reply = isHindiHinglish
+        ? `**${orig}** se **${dest}** ka travel plan aur transport options:\n\n` +
+          `🚆 **1. Train Option**:\n` +
+          `• **Route**: ${transitComparison.train.summary}\n` +
+          `• **Approx Duration**: ${transitComparison.train.approx_duration} (~${transitComparison.train.distance_km} km rail line)\n` +
+          `• **Note**: ${transitComparison.train.notes}\n\n` +
+          `✈️ **2. Flight Option**:\n` +
+          `• **Route**: ${transitComparison.air.summary}\n` +
+          `• **Approx Duration**: ${transitComparison.air.approx_duration}\n` +
+          `• **Note**: ${transitComparison.air.notes}\n\n` +
+          `🚗 **3. Road / Car Option**:\n` +
+          `• **Highway Route**: ${transitComparison.road.summary}\n` +
+          `• **Distance & Time**: ~${transitComparison.road.distance_km} km (${transitComparison.road.approx_duration})\n` +
+          `• **Note**: ${transitComparison.road.notes}\n\n` +
+          (suggestedPlaces.length > 0
+            ? `🌟 **Top Places in ${dest}**:\n` +
+              suggestedPlaces.slice(0, 3).map((p) => `• **${p.name}**: ${p.reason}`).join('\n') + '\n\n'
+            : '') +
+          `*Aap kitne din ke liye plan kar rahe hain? (Jaise 3 din ya 5 din)*`
+        : `Here is the travel guide from **${orig}** to **${dest}**:\n\n` +
+          `🚆 **1. Train Option**:\n` +
+          `• **Route**: ${transitComparison.train.summary}\n` +
+          `• **Approx Duration**: ${transitComparison.train.approx_duration} (~${transitComparison.train.distance_km} km rail network)\n` +
+          `• **Advisory**: ${transitComparison.train.notes}\n\n` +
+          `✈️ **2. Air Option**:\n` +
+          `• **Route**: ${transitComparison.air.summary}\n` +
+          `• **Approx Duration**: ${transitComparison.air.approx_duration}\n` +
+          `• **Advisory**: ${transitComparison.air.notes}\n\n` +
+          `🚗 **3. Road Option**:\n` +
+          `• **Route**: ${transitComparison.road.summary}\n` +
+          `• **Distance & Duration**: ~${transitComparison.road.distance_km} km (${transitComparison.road.approx_duration})\n` +
+          `• **Advisory**: ${transitComparison.road.notes}\n\n` +
+          (suggestedPlaces.length > 0
+            ? `🌟 **Highlights to Explore in ${dest}**:\n` +
+              suggestedPlaces.slice(0, 3).map((p) => `• **${p.name}**: ${p.reason}`).join('\n') + '\n\n'
+            : '') +
+          `How many days are you planning for this trip? (e.g. 3 days, 5 days, or relaxed weekend)`;
     } else {
       reply = isHindiHinglish
-        ? `Kripya batayein ki aap **${activeDestinationName || 'kahan'}** ke liye safar kahan se shuru karna chahte hain? (Jaise New Delhi, Mumbai, Bengaluru, ya 'Use my current location as starting point' chun sakte hain).`
-        : `Where will you be travelling to **${activeDestinationName || 'your destination'}** from? (You can specify your departure city/station such as CSMT, New Delhi or click 'Use my current location as starting point').`;
+        ? `Aap **${activeDestinationName}** ke liye safar kahan se shuru karna chahte hain? (Jaise New Delhi, Mumbai, Bengaluru, ya 'Use my current location as starting point' chun sakte hain).`
+        : `Where will you be travelling to **${activeDestinationName}** from? (You can specify your departure city such as New Delhi or click 'Use my current location as starting point').`;
     }
   }
 
   // 4. Intent: Specific Transit Mode Inquiry ("Train", "What about flight?", "Road")
   else if (intent === 'transit_mode') {
-    if (transitComparison && transitComparison.distance_km > 0) {
-      if (transitComparison.is_same_city) {
-        reply = `🚆 **Local Transit Options (${transitComparison.origin} ➔ ${transitComparison.destination})**:\n\n` +
-          `• **Suburban Rail**: ${transitComparison.train.summary} (${transitComparison.train.approx_duration})\n` +
-          `• **Taxi / Cab**: ${transitComparison.road.summary} (${transitComparison.road.approx_duration})\n` +
-          (transitComparison.walking ? `• **Walking**: ${transitComparison.walking.summary} (${transitComparison.walking.approx_duration})\n` : '') +
-          `• **Local Transit Notes**: ${transitComparison.train.notes}\n\n` +
-          `Would you like sightseeing tips around ${activeDestinationName}?`;
-      } else if (query.includes('flight') || query.includes('air')) {
+    if (transitComparison) {
+      if (query.includes('flight') || query.includes('air')) {
         reply = `✈️ **Air Travel Details to ${activeDestinationName}**:\n\n` +
           `• **Route**: ${transitComparison.air.summary}\n` +
           `• **Flight Duration**: ${transitComparison.air.approx_duration}\n` +
@@ -3888,8 +3373,8 @@ ${placesContextStr}`;
       }
     } else {
       reply = isHindiHinglish
-        ? `Aap **${activeDestinationName || 'kahan'}** travel kar rahe hain? Kripya apna departure city ya station batayein (jaise CSMT, New Delhi, etc.).`
-        : `Where will you be travelling to **${activeDestinationName || 'your destination'}** from? Please share your starting city/station or select 'Use my current location as starting point'.`;
+        ? `Aap **${activeDestinationName}** kahan se travel kar rahe hain? Kripya apna departure city batayein ya apni current location use karein.`
+        : `Where will you be travelling to **${activeDestinationName}** from? Please share your starting city or select 'Use my current location as starting point'.`;
     }
   }
 

@@ -47,8 +47,6 @@ export interface DestinationRecord {
   state_id?: string;
   city: string;
   city_id?: string;
-  assigned_city?: string;
-  tourist_place?: string;
   country: string;
   category: string;
   summary: string;
@@ -139,9 +137,6 @@ export interface HotelRecord {
   price_range: string;
   category: string;
   rating: number;
-  price_per_night?: number;
-  price_indication?: string;
-  location?: string;
   amenities?: string[];
   thumbnail_url?: string;
   image_url?: string;
@@ -264,21 +259,11 @@ export class MasterTourismDataService {
     agra: ['agra', 'agra district'],
     jaipur: ['jaipur'],
     kochi: ['kochi', 'cochin', 'ernakulam'],
-    kolkata: ['kolkata', 'calcutta', 'howrah', 'howrah–kolkata', 'howrah-kolkata', 'alipore'],
-    darjeeling: ['darjeeling'],
-    santiniketan: ['santiniketan', 'shantiniketan', 'bolpur'],
-    siliguri: ['siliguri'],
+    kolkata: ['kolkata', 'calcutta'],
     amritsar: ['amritsar'],
     goa: ['goa', 'panaji', 'old goa', 'velha goa', 'sinquerim', 'candolim'],
     bengaluru: ['bengaluru', 'bangalore'],
     hyderabad: ['hyderabad', 'secunderabad'],
-    hanamkonda: ['hanamkonda'],
-    warangal: ['warangal', 'kazipet'],
-    'yadadri bhuvanagiri': ['yadadri bhuvanagiri', 'yadadri-bhuvanagiri', 'bhongir', 'bhuvanagiri'],
-    yadadri: ['yadadri', 'yadagirigutta'],
-    nirmal: ['nirmal', 'nirmal district'],
-    'bhadradri kothagudem': ['bhadradri kothagudem', 'bhadradri-kothagudem', 'kothagudem', 'bhadrachalam'],
-    nalgonda: ['nalgonda', 'nalgonda district'],
     pune: ['pune'],
     udaipur: ['udaipur'],
     hampi: ['hampi', 'vijayanagara', 'hosapete'],
@@ -292,26 +277,6 @@ export class MasterTourismDataService {
     jodhpur: ['jodhpur'],
     jaisalmer: ['jaisalmer'],
     gangtok: ['gangtok'],
-    // Haryana
-    sultanpur: ['sultanpur', 'sultanpur national park'],
-    kalesar: ['kalesar', 'kalesar national park'],
-    pinjore: ['pinjore', 'pinjore gardens'],
-    morni: ['morni', 'morni hills'],
-    kurukshetra: ['kurukshetra', 'thanesar'],
-    rakhigarhi: ['rakhigarhi'],
-    hisar: ['hisar', 'hissar'],
-    agroha: ['agroha', 'agroha dham'],
-    narnaul: ['narnaul'],
-    ballabhgarh: ['ballabhgarh', 'ballabgarh'],
-    faridabad: ['faridabad'],
-    sohna: ['sohna'],
-    panchkula: ['panchkula'],
-    rohtak: ['rohtak'],
-    panipat: ['panipat'],
-    karnal: ['karnal'],
-    jhajjar: ['jhajjar'],
-    chhachhrauli: ['chhachhrauli'],
-    kaithal: ['kaithal'],
   };
 
   private readonly canonicalCityNames: Record<string, string> = {
@@ -322,20 +287,10 @@ export class MasterTourismDataService {
     jaipur: 'Jaipur',
     kochi: 'Kochi',
     kolkata: 'Kolkata',
-    darjeeling: 'Darjeeling',
-    santiniketan: 'Santiniketan',
-    siliguri: 'Siliguri',
     amritsar: 'Amritsar',
     goa: 'Goa',
     bengaluru: 'Bengaluru',
     hyderabad: 'Hyderabad',
-    hanamkonda: 'Hanamkonda',
-    warangal: 'Warangal',
-    'yadadri bhuvanagiri': 'Yadadri Bhuvanagiri',
-    yadadri: 'Yadadri',
-    nirmal: 'Nirmal',
-    'bhadradri kothagudem': 'Bhadradri Kothagudem',
-    nalgonda: 'Nalgonda',
     pune: 'Pune',
     udaipur: 'Udaipur',
     hampi: 'Hampi',
@@ -349,26 +304,6 @@ export class MasterTourismDataService {
     jodhpur: 'Jodhpur',
     jaisalmer: 'Jaisalmer',
     gangtok: 'Gangtok',
-    // Haryana
-    sultanpur: 'Sultanpur',
-    kalesar: 'Kalesar',
-    pinjore: 'Pinjore',
-    morni: 'Morni',
-    kurukshetra: 'Kurukshetra',
-    rakhigarhi: 'Rakhigarhi',
-    hisar: 'Hisar',
-    agroha: 'Agroha',
-    narnaul: 'Narnaul',
-    ballabhgarh: 'Ballabhgarh',
-    faridabad: 'Faridabad',
-    sohna: 'Sohna',
-    panchkula: 'Panchkula',
-    rohtak: 'Rohtak',
-    panipat: 'Panipat',
-    karnal: 'Karnal',
-    jhajjar: 'Jhajjar',
-    chhachhrauli: 'Chhachhrauli',
-    kaithal: 'Kaithal',
   };
 
   private constructor() {}
@@ -433,13 +368,7 @@ export class MasterTourismDataService {
           const raw = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
           for (const item of raw) {
             if (item && item.id) {
-              const existing = this.destinations.get(item.id.toLowerCase());
-              if (existing) {
-                if (item.assigned_city) existing.assigned_city = item.assigned_city;
-                if (item.tourist_place) existing.tourist_place = item.tourist_place;
-              } else {
-                this.destinations.set(item.id.toLowerCase(), item);
-              }
+              this.destinations.set(item.id.toLowerCase(), item);
             }
           }
         }
@@ -450,25 +379,6 @@ export class MasterTourismDataService {
       loadPlacesFile(path.join(dataDir, 'delhi', 'places.json'));
       loadPlacesFile(path.join(dataDir, 'rajasthan', 'places.json'));
       loadPlacesFile(path.join(dataDir, 'kerala', 'places.json'));
-      loadPlacesFile(path.join(dataDir, 'bihar', 'places.json'));
-      loadPlacesFile(path.join(dataDir, 'ladakh', 'places.json'));
-      loadPlacesFile(path.join(dataDir, 'jammu-kashmir', 'places.json'));
-      loadPlacesFile(path.join(dataDir, 'kolkata', 'places.json'));
-      loadPlacesFile(path.join(dataDir, 'goa', 'places.json'));
-      loadPlacesFile(path.join(dataDir, 'madhya-pradesh', 'places.json'));
-      loadPlacesFile(path.join(dataDir, 'punjab', 'places.json'));
-      loadPlacesFile(path.join(dataDir, 'gujarat', 'places.json'));
-      loadPlacesFile(path.join(dataDir, 'himachal-pradesh', 'places.json'));
-      loadPlacesFile(path.join(dataDir, 'west-bengal', 'places.json'));
-      loadPlacesFile(path.join(dataDir, 'telangana', 'places.json'));
-      loadPlacesFile(path.join(dataDir, 'nagaland', 'places.json'));
-      loadPlacesFile(path.join(dataDir, 'meghalaya', 'places.json'));
-      loadPlacesFile(path.join(dataDir, 'manipur', 'places.json'));
-      loadPlacesFile(path.join(dataDir, 'mizoram', 'places.json'));
-      loadPlacesFile(path.join(dataDir, 'uttar-pradesh', 'places.json'));
-      loadPlacesFile(path.join(dataDir, 'karnataka', 'places.json'));
-      loadPlacesFile(path.join(dataDir, 'chhattisgarh', 'places.json'));
-      loadPlacesFile(path.join(dataDir, 'haryana', 'places.json'));
 
       // 7. Load Heritage & UNESCO sites
       const heritagePath = path.join(dataDir, 'heritage', 'monuments.json');
@@ -477,11 +387,8 @@ export class MasterTourismDataService {
         this.heritage = Array.isArray(rawHeritage) ? rawHeritage : [];
         for (const item of this.heritage) {
           if (item && item.id) {
-            const existing = this.destinations.get(item.id.toLowerCase());
             const normItem: DestinationRecord = {
               ...item,
-              assigned_city: item.assigned_city || existing?.assigned_city,
-              tourist_place: item.tourist_place || existing?.tourist_place || item.name,
               country: 'India',
               category: item.category || 'Architectural & Colonial',
               summary: item.summary || item.historical_significance?.slice(0, 200) || '',
@@ -563,75 +470,7 @@ export class MasterTourismDataService {
       if (fs.existsSync(healthPath)) this.destinationHealthData = JSON.parse(fs.readFileSync(healthPath, 'utf-8'));
 
       const reportsPath = path.join(dataDir, 'reports.json');
-      // Ensure Punjab destinations strictly use verified punjab_001 - punjab_020 IDs
-      if (this.destinations.has('punjab_001')) {
-        this.destinations.delete('golden-temple-amritsar');
-        this.destinations.delete('golden-temple');
-        this.destinations.delete('jallianwala-bagh');
-        this.destinations.delete('partition-museum');
-      }
-
-      // Ensure Telangana destinations strictly use verified telangana_001 - telangana_015 IDs
-      if (this.destinations.has('telangana_001')) {
-        for (const legacyKey of [
-          'charminar', 'golconda-fort', 'ramappa-temple',
-          'hyderabad-charminar', 'hyderabad-golconda-fort', 'hyderabad-salar-jung-museum',
-          'hyderabad-hussain-sagar-lake', 'hyderabad-qutb-shahi-tombs', 'hyderabad-ramoji-film-city',
-          'hyderabad-chowmahalla-palace', 'warangal-fort', 'warangal-thousand-pillar-temple',
-          'bhongir-fort', 'thousand-pillar-temple', 'qutb-shahi-tombs', 'salar-jung-museum',
-          'chowmahalla-palace', 'hussain-sagar-lake',
-          'hyderabad-hyderabad-heritage-fort-complex',
-          'nagarjuna-sagar-nagarjuna-sagar-national-wildlife-botanical-park',
-          'kbr-national-park', 'mrugavani-national-park',
-          'warangal-warangal-sacred-temple-cultural-center'
-        ]) {
-          this.destinations.delete(legacyKey);
-        }
-      }
-
-      // Ensure Nagaland, Meghalaya, Manipur, Mizoram delete any legacy synthetic promenade placeholders & duplicates
-      for (const legacyKey of [
-        'wobkha-wokha-scenic-promenade-viewpoint',
-        'jowai-jowai-scenic-promenade-viewpoint',
-        'kakching-kakching-scenic-promenade-viewpoint',
-        'kolasib-kolasib-scenic-promenade-viewpoint',
-        'living-root-bridges'
-      ]) {
-        this.destinations.delete(legacyKey);
-      }
-
-      // Ensure Bihar destinations strictly use verified bihar_001 - bihar_030 IDs
-      if (this.destinations.has('bihar_001')) {
-        for (const legacyKey of ['mahabodhi-temple', 'nalanda-university-ruins', 'golghar-patna']) {
-          this.destinations.delete(legacyKey);
-        }
-      }
-
-      // Ensure Uttar Pradesh destinations strictly use verified uttar_pradesh_001 - uttar_pradesh_040 IDs
-      if (this.destinations.has('uttar_pradesh_011')) {
-        for (const legacyKey of [
-          'taj-mahal', 'fatehpur-sikri', 'agra-fort', 'kashi-vishwanath',
-          'dashashwamedh-ghat', 'sarnath-complex', 'assi-ghat', 'mehtab-bagh'
-        ]) {
-          this.destinations.delete(legacyKey);
-        }
-      }
-
-      // Ensure Karnataka destinations strictly use verified karnataka_001 - karnataka_040 IDs
-      if (this.destinations.has('karnataka_001')) {
-        for (const legacyKey of [
-          'hampi-monuments', 'pattadakal-monuments', 'hoysala-temples-belur',
-          'bangalore-palace', 'hampi-virupaksha', 'hampi-stone-chariot',
-          'tipu-sultan-palace', 'lalbagh-glasshouse'
-        ]) {
-          this.destinations.delete(legacyKey);
-        }
-      }
-
-      // Ensure Chhattisgarh destinations strictly use verified chhattisgarh_001 - chhattisgarh_030 IDs
-      if (this.destinations.has('chhattisgarh_001')) {
-        this.destinations.delete('sirpur-monuments');
-      }
+      if (fs.existsSync(reportsPath)) this.reportsData = JSON.parse(fs.readFileSync(reportsPath, 'utf-8'));
 
       // 10. Perform Normalization & Derive Secondary Master Collections
       this.deriveMasterIndices(dataDir);
@@ -1231,7 +1070,7 @@ export class MasterTourismDataService {
     if (options.city) {
       const c = options.city.toLowerCase().trim();
       sourceList = sourceList.filter((item) => {
-        const itemCity = (item.assigned_city || item.city || item.city_name || '').toLowerCase();
+        const itemCity = (item.city || item.city_name || '').toLowerCase();
         return itemCity.includes(c) || c.includes(itemCity);
       });
     }
@@ -1435,18 +1274,15 @@ export class MasterTourismDataService {
     if (!targetCanon) return false;
     const pCity = (place.city || '').toLowerCase().trim();
     const pCityId = ((place as any).city_id || '').toLowerCase().trim();
-    const pArea = ((place as any).area || '').toLowerCase().trim();
 
     if (pCityId && this.getCanonicalCityId(pCityId) === targetCanon) return true;
     if (pCity && this.getCanonicalCityId(pCity) === targetCanon) return true;
-    if (pArea && this.getCanonicalCityId(pArea) === targetCanon) return true;
 
     const aliases = this.cityAliases[targetCanon] || [targetCanon];
     return aliases.some(
       (a) =>
         (pCity && (pCity === a || pCity.includes(a))) ||
-        (pCityId && (pCityId === a || pCityId.includes(a))) ||
-        (pArea && (pArea === a || pArea.includes(a)))
+        (pCityId && (pCityId === a || pCityId.includes(a)))
     );
   }
 
