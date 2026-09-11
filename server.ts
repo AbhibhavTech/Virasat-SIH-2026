@@ -190,7 +190,10 @@ const CITY_ALIASES: Record<string, string[]> = {
   agra: ['agra', 'agra district'],
   jaipur: ['jaipur'],
   kochi: ['kochi', 'cochin', 'ernakulam'],
-  kolkata: ['kolkata', 'calcutta'],
+  kolkata: ['kolkata', 'calcutta', 'howrah', 'howrah–kolkata', 'howrah-kolkata', 'alipore'],
+  darjeeling: ['darjeeling'],
+  santiniketan: ['santiniketan', 'shantiniketan', 'bolpur'],
+  siliguri: ['siliguri'],
   amritsar: ['amritsar'],
   goa: ['goa', 'panaji', 'old goa', 'velha goa', 'sinquerim', 'candolim'],
   bengaluru: ['bengaluru', 'bangalore'],
@@ -220,6 +223,9 @@ const CANONICAL_CITY_NAMES: Record<string, string> = {
   jaipur: 'Jaipur',
   kochi: 'Kochi',
   kolkata: 'Kolkata',
+  darjeeling: 'Darjeeling',
+  santiniketan: 'Santiniketan',
+  siliguri: 'Siliguri',
   amritsar: 'Amritsar',
   goa: 'Goa',
   bengaluru: 'Bengaluru',
@@ -264,14 +270,17 @@ function isPlaceInCity(place: any, targetCity: string): boolean {
   if (!targetCanon) return false;
   const pCity = (place.city || '').toLowerCase().trim();
   const pCityId = ((place as any).city_id || '').toLowerCase().trim();
+  const pArea = ((place as any).area || '').toLowerCase().trim();
 
   if (pCityId && getCanonicalCityId(pCityId) === targetCanon) return true;
   if (pCity && getCanonicalCityId(pCity) === targetCanon) return true;
+  if (pArea && getCanonicalCityId(pArea) === targetCanon) return true;
 
   const aliases = CITY_ALIASES[targetCanon] || [targetCanon];
   return aliases.some((a) =>
     (pCity && (pCity === a || pCity.includes(a))) ||
-    (pCityId && (pCityId === a || pCityId.includes(a)))
+    (pCityId && (pCityId === a || pCityId.includes(a))) ||
+    (pArea && (pArea === a || pArea.includes(a)))
   );
 }
 
@@ -340,6 +349,7 @@ function loadData() {
     loadPlacesFile(path.join(dataDir, 'ladakh', 'places.json'));
     loadPlacesFile(path.join(dataDir, 'jammu-kashmir', 'places.json'));
     loadPlacesFile(path.join(dataDir, 'kolkata', 'places.json'));
+    loadPlacesFile(path.join(dataDir, 'west-bengal', 'places.json'));
     loadPlacesFile(path.join(dataDir, 'goa', 'places.json'));
 
     // Load Heritage 42+ structured experiences

@@ -250,8 +250,15 @@ class DatabaseManager {
         list = list.filter((p) => p.state_id?.toLowerCase() === filters.stateId?.toLowerCase());
       }
       if (filters?.cityId || filters?.city) {
-        const targetCity = (filters.cityId || filters.city || '').toLowerCase();
-        list = list.filter((p) => p.city_id?.toLowerCase() === targetCity);
+        const targetCity = (filters.cityId || filters.city || '').toLowerCase().trim();
+        list = list.filter((p) => {
+          const cId = (p.city_id || '').toLowerCase().trim();
+          const cName = ((p as any).city || '').toLowerCase().trim();
+          const area = ((p as any).area || '').toLowerCase().trim();
+          if (cId === targetCity || cName === targetCity || area === targetCity) return true;
+          if (targetCity === 'kolkata' && (cId === 'kolkata' || area.includes('howrah') || area.includes('kolkata') || cId === 'howrah')) return true;
+          return false;
+        });
       }
       if (filters?.category) {
         const targetCat = filters.category.toLowerCase();
@@ -318,7 +325,10 @@ class DatabaseManager {
     },
 
     findById: async (id: string): Promise<PlaceRecord | null> => {
-      return this.data.places[id] || this.data.places[id.toLowerCase()] || null;
+      const direct = this.data.places[id] || this.data.places[id.toLowerCase()];
+      if (direct) return direct;
+      const lower = (id || '').toLowerCase().trim();
+      return Object.values(this.data.places).find((p) => p.id?.toLowerCase() === lower || (p as any).slug?.toLowerCase() === lower) || null;
     },
 
     findNearby: async (lat: number, lng: number, radiusKm = 50, limit = 20): Promise<PlaceRecord[]> => {

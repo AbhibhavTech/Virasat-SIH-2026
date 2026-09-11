@@ -69,6 +69,12 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
     'agra-fort': 'https://whc.unesco.org/en/list/251/',
     'jantar-mantar': 'https://whc.unesco.org/en/list/1338/',
     'great-himalayan-national-park': 'https://whc.unesco.org/en/list/1406/',
+    'west_bengal_010': 'https://whc.unesco.org/en/list/452/',
+    'west_bengal_012': 'https://whc.unesco.org/en/list/1675/',
+    'west_bengal_016': 'https://whc.unesco.org/en/list/944/',
+    'sundarbans-national-park': 'https://whc.unesco.org/en/list/452/',
+    'darjeeling-himalayan-railway': 'https://whc.unesco.org/en/list/944/',
+    'shantiniketan': 'https://whc.unesco.org/en/list/1675/',
   };
 
   // -------------------------------------------------------------
@@ -78,6 +84,7 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
     { id: 'src-asi', source_name: 'Archaeological Survey of India (ASI)', source_type: 'tier1_official', url: 'https://asi.nic.in', created_at: now },
     { id: 'src-unesco', source_name: 'UNESCO World Heritage Centre', source_type: 'tier2_trusted', url: 'https://whc.unesco.org', created_at: now },
     { id: 'src-culture', source_name: 'Ministry of Culture, Government of India', source_type: 'tier1_official', url: 'https://indiaculture.gov.in', created_at: now },
+    { id: 'src-wb-tourism', source_name: 'Department of Tourism, Government of West Bengal', source_type: 'tier1_official', url: 'https://wbtourism.gov.in', created_at: now },
     { id: 'src-mtdc', source_name: 'Maharashtra Tourism Development Corporation (MTDC)', source_type: 'tier1_official', url: 'https://maharashtratourism.gov.in', created_at: now },
     { id: 'src-delhi-tourism', source_name: 'Delhi Tourism and Transportation Development (DTTDC)', source_type: 'tier1_official', url: 'https://delhitourism.gov.in', created_at: now },
     { id: 'src-rajasthan-tourism', source_name: 'Department of Tourism, Government of Rajasthan', source_type: 'tier1_official', url: 'https://tourism.rajasthan.gov.in', created_at: now },
@@ -312,7 +319,7 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
   // -------------------------------------------------------------
   // 5. Regional Flagship Datasets (Mumbai, Delhi, Rajasthan, Goa, Kerala, Maharashtra)
   // -------------------------------------------------------------
-  const regionalDirs = ['mumbai', 'delhi', 'rajasthan', 'maharashtra', 'goa', 'kerala', 'ladakh', 'jammu-kashmir'];
+  const regionalDirs = ['mumbai', 'delhi', 'rajasthan', 'maharashtra', 'goa', 'kerala', 'ladakh', 'jammu-kashmir', 'kolkata', 'west-bengal'];
   for (const reg of regionalDirs) {
     const regPath = path.join(rootDataDir, reg, 'places.json');
     if (fs.existsSync(regPath)) {
@@ -320,23 +327,24 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
         const regionalPlaces = JSON.parse(fs.readFileSync(regPath, 'utf-8'));
         if (Array.isArray(regionalPlaces)) {
           for (const rp of regionalPlaces) {
-            const stateId = (rp.state || reg).toLowerCase().replace(/[^a-z0-9]+/g, '-');
-            const cityId = (rp.city || reg).toLowerCase().replace(/[^a-z0-9]+/g, '-');
+            const stateId = (rp.state_id || rp.state || reg).toLowerCase().replace(/[^a-z0-9]+/g, '-');
+            const cityId = (rp.city_id || rp.city || reg).toLowerCase().replace(/[^a-z0-9]+/g, '-');
             const normalizedName = rp.name.trim().toLowerCase();
             const existing = places[rp.id] || Object.values(places).find(p => p.city_id === cityId && p.name.trim().toLowerCase() === normalizedName);
             if (existing) continue; // Already ingested via curated monuments
             const sourceUrl = rp.source_url && rp.source_url.startsWith('http') ? rp.source_url : 'https://asi.nic.in';
-            const quality = computeSourceQuality(sourceUrl);
-            const isVerified = (quality === 'place_specific' || quality === 'official_site');
+            const quality = rp.source_quality || computeSourceQuality(sourceUrl);
+            const isVerified = (quality === 'place_specific' || quality === 'official_site' || rp.verification_status === 'verified');
             const verifiedStatus = isVerified ? 'verified' : 'needs_review';
 
             const domesticFee = Number(rp.entry_fee?.domestic ?? rp.entry_fee_inr ?? 0);
             const intlFee = Number(rp.entry_fee?.international ?? 0);
-            const visitingHours = rp.visiting_hours || rp.visiting_info?.visiting_hours || 'Open Regular Hours';
+            const visitingHours = rp.visiting_hours || rp.visiting_info?.visiting_hours || rp.opening_hours || 'Open Regular Hours';
             const lat = Number(rp.coordinates?.lat || 0);
             const lng = Number(rp.coordinates?.lng || 0);
 
             places[rp.id] = {
+              ...rp,
               id: rp.id,
               city_id: cityId,
               state_id: stateId,
@@ -355,8 +363,8 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
               heritage_status: rp.heritage_status || 'State Protected Heritage',
               data_confidence: isVerified ? 'official' : 'unverified',
               source_url: sourceUrl,
-              source_name: 'State Tourism Department',
-              source_type: 'state_tourism',
+              source_name: rp.source_name || 'State Tourism Department',
+              source_type: rp.source_type || 'state_tourism',
               source_quality: quality,
               verification_status: verifiedStatus,
               last_verified_on: '2026-03-10',
@@ -366,9 +374,9 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
               sources: [
                 {
                   id: `src-${rp.id}`,
-                  source_name: 'State Tourism Department',
+                  source_name: rp.source_name || 'State Tourism Department',
                   source_url: sourceUrl,
-                  source_type: 'state_tourism',
+                  source_type: rp.source_type || 'state_tourism',
                   evidence_note: isVerified ? 'Deep link verified against state records' : 'Generic homepage documentation under review',
                   accessed_on: '2026-03-10',
                   verification_status: verifiedStatus,

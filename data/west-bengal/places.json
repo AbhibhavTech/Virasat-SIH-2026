@@ -1,0 +1,1405 @@
+[
+  {
+    "id": "west_bengal_001",
+    "name": "Victoria Memorial",
+    "category": "heritage_monument",
+    "area": "Kolkata",
+    "description": "A grand marble monument and museum built in memory of Queen Victoria, surrounded by gardens.",
+    "best_for": [
+      "heritage",
+      "photography",
+      "family trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Victoria Memorial West Bengal",
+    "tags": [
+      "heritage_monument",
+      "West Bengal"
+    ],
+    "city": "Kolkata",
+    "city_id": "kolkata",
+    "state": "West Bengal",
+    "state_id": "west-bengal",
+    "country": "India",
+    "summary": "A grand marble monument and museum built in memory of Queen Victoria, surrounded by gardens.",
+    "history": "Commissioned in 1906 and opened in 1921, designed by William Emerson blending Indo-Saracenic and British classical architecture.",
+    "culture": "Symbolic colonial landmark housing royal British and Indian historical artifacts, paintings, and manicured gardens.",
+    "coordinates": {
+      "lat": 22.5448,
+      "lng": 88.3426
+    },
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1558431382-27e303142255?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1558431382-27e303142255?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "10:00 AM - 06:00 PM (Gardens 05:30 AM - 06:15 PM)",
+    "entry_fee_inr": 50,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "10:00 AM - 06:00 PM",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "model_3d": {
+      "has_model": true,
+      "available": true,
+      "type": "marble_monument"
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": true
+    },
+    "heritage_status": "National Heritage Monument",
+    "data_confidence": "official",
+    "source_url": "https://asi.nic.in/monuments/victoria-memorial",
+    "source_name": "Archaeological Survey of India & West Bengal Tourism",
+    "source_type": "asi",
+    "source_quality": "place_specific",
+    "verification_status": "verified"
+  },
+  {
+    "id": "west_bengal_002",
+    "name": "Howrah Bridge",
+    "category": "engineering_landmark",
+    "area": "Howrah–Kolkata",
+    "description": "An iconic cantilever bridge over the Hooghly River and one of Kolkata’s best-known landmarks.",
+    "best_for": [
+      "heritage",
+      "photography",
+      "family trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Howrah Bridge West Bengal",
+    "tags": [
+      "engineering_landmark",
+      "West Bengal"
+    ],
+    "city": "Kolkata",
+    "city_id": "kolkata",
+    "state": "West Bengal",
+    "state_id": "west-bengal",
+    "country": "India",
+    "summary": "An iconic cantilever bridge over the Hooghly River and one of Kolkata’s best-known landmarks.",
+    "history": "Commissioned in 1943 without nuts and bolts, built by riveting the entire steel structure during World War II.",
+    "culture": "The lifeline of Kolkata connecting Howrah station to the city, carrying hundreds of thousands of commuters daily.",
+    "coordinates": {
+      "lat": 22.5851,
+      "lng": 88.3468
+    },
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010f4439c28?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1600100397608-f010f4439c28?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "Open 24 Hours",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "Open 24 Hours",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "model_3d": {
+      "has_model": false,
+      "available": false
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "heritage_status": "Iconic Engineering Heritage",
+    "data_confidence": "official",
+    "source_url": "https://wbtourism.gov.in/destination/kolkata/howrah-bridge",
+    "source_name": "Kolkata Port Trust & West Bengal Tourism",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified"
+  },
+  {
+    "id": "west_bengal_003",
+    "name": "Indian Museum",
+    "category": "museum",
+    "area": "Kolkata",
+    "description": "One of India’s oldest and largest museums, with collections covering archaeology, art, fossils, and natural history.",
+    "best_for": [
+      "heritage",
+      "photography",
+      "family trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Indian Museum West Bengal",
+    "tags": [
+      "museum",
+      "West Bengal"
+    ],
+    "city": "Kolkata",
+    "city_id": "kolkata",
+    "state": "West Bengal",
+    "state_id": "west-bengal",
+    "country": "India",
+    "summary": "One of India’s oldest and largest museums, with collections covering archaeology, art, fossils, and natural history.",
+    "history": "Founded in 1814 by the Asiatic Society of Bengal, making it the ninth oldest regular museum in the world.",
+    "culture": "Known popularly as Jadu Ghar (House of Magic), housing an Egyptian mummy, Bharhut stupa gateway, and dinosaur fossils.",
+    "coordinates": {
+      "lat": 22.5579,
+      "lng": 88.3511
+    },
+    "rating": 4.7,
+    "thumbnail_url": "https://images.unsplash.com/photo-1566552881560-0be86c532107?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1566552881560-0be86c532107?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "10:00 AM - 05:00 PM (Closed Mondays)",
+    "entry_fee_inr": 50,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "10:00 AM - 05:00 PM",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "model_3d": {
+      "has_model": false,
+      "available": false
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "heritage_status": "National Heritage Museum",
+    "data_confidence": "official",
+    "source_url": "https://indianmuseumkolkata.org/exhibitions",
+    "source_name": "Indian Museum Kolkata / Ministry of Culture",
+    "source_type": "official_institution",
+    "source_quality": "place_specific",
+    "verification_status": "verified"
+  },
+  {
+    "id": "west_bengal_004",
+    "name": "St. Paul’s Cathedral",
+    "category": "religious_heritage",
+    "area": "Kolkata",
+    "description": "A prominent Anglican cathedral known for its Gothic Revival architecture and peaceful grounds.",
+    "best_for": [
+      "heritage",
+      "photography",
+      "family trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "St. Paul’s Cathedral West Bengal",
+    "tags": [
+      "religious_heritage",
+      "West Bengal"
+    ],
+    "city": "Kolkata",
+    "city_id": "kolkata",
+    "state": "West Bengal",
+    "state_id": "west-bengal",
+    "country": "India",
+    "summary": "A prominent Anglican cathedral known for its Gothic Revival architecture and peaceful grounds.",
+    "history": "Consecrated in 1847, it was the first Episcopal church in Asia and noted for its Indo-Gothic style spire.",
+    "culture": "Serene sanctuary featuring stained glass windows designed by Sir Edward Burne-Jones and historic Florentine frescoes.",
+    "coordinates": {
+      "lat": 22.5444,
+      "lng": 88.3475
+    },
+    "rating": 4.7,
+    "thumbnail_url": "https://images.unsplash.com/photo-1548625361-195fe6175e11?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1548625361-195fe6175e11?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "09:00 AM - 05:00 PM",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "09:00 AM - 05:00 PM",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "model_3d": {
+      "has_model": false,
+      "available": false
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "heritage_status": "State Protected Heritage",
+    "data_confidence": "official",
+    "source_url": "https://wbtourism.gov.in/destination/kolkata/st-pauls-cathedral",
+    "source_name": "Diocese of Calcutta & West Bengal Tourism",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified"
+  },
+  {
+    "id": "west_bengal_005",
+    "name": "Dakshineswar Kali Temple",
+    "category": "religious_heritage",
+    "area": "Kolkata",
+    "description": "A famous temple dedicated to Goddess Kali on the eastern bank of the Hooghly River.",
+    "best_for": [
+      "heritage",
+      "photography",
+      "family trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Dakshineswar Kali Temple West Bengal",
+    "tags": [
+      "religious_heritage",
+      "West Bengal"
+    ],
+    "city": "Kolkata",
+    "city_id": "kolkata",
+    "state": "West Bengal",
+    "state_id": "west-bengal",
+    "country": "India",
+    "summary": "A famous temple dedicated to Goddess Kali on the eastern bank of the Hooghly River.",
+    "history": "Built in 1855 by Rani Rashmoni, famously associated with mystic Sri Ramakrishna Paramahamsa.",
+    "culture": "Features a nine-spire Navaratna sanctum surrounded by twelve twin Shiva shrines along the sacred river ghat.",
+    "coordinates": {
+      "lat": 22.6548,
+      "lng": 88.3576
+    },
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1628155930547-8bc219d71388?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1628155930547-8bc219d71388?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "06:00 AM - 12:30 PM, 03:00 PM - 08:30 PM",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "06:00 AM - 12:30 PM, 03:00 PM - 08:30 PM",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "model_3d": {
+      "has_model": false,
+      "available": false
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "heritage_status": "Sacred Pilgrimage Heritage",
+    "data_confidence": "official",
+    "source_url": "https://wbtourism.gov.in/destination/kolkata/dakshineswar-temple",
+    "source_name": "Dakshineswar Kali Temple Trust & West Bengal Tourism",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified"
+  },
+  {
+    "id": "west_bengal_006",
+    "name": "Belur Math",
+    "category": "religious_heritage",
+    "area": "Howrah",
+    "description": "The headquarters of the Ramakrishna Math and Mission, noted for its spiritual atmosphere and architecture.",
+    "best_for": [
+      "heritage",
+      "photography",
+      "family trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Belur Math West Bengal",
+    "tags": [
+      "religious_heritage",
+      "West Bengal"
+    ],
+    "city": "Kolkata",
+    "city_id": "kolkata",
+    "state": "West Bengal",
+    "state_id": "west-bengal",
+    "country": "India",
+    "summary": "The headquarters of the Ramakrishna Math and Mission, noted for its spiritual atmosphere and architecture.",
+    "history": "Founded by Swami Vivekananda in 1897, serving as the international center for Ramakrishna movement.",
+    "culture": "Architecture harmonizes Christian cathedral, Islamic dome, Buddhist stupa, and Hindu temple elements.",
+    "coordinates": {
+      "lat": 22.6322,
+      "lng": 88.3556
+    },
+    "rating": 4.9,
+    "thumbnail_url": "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1609766857041-ed402ea8069a?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "06:30 AM - 11:30 AM, 04:00 PM - 08:30 PM",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "06:30 AM - 11:30 AM, 04:00 PM - 08:30 PM",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "model_3d": {
+      "has_model": false,
+      "available": false
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "heritage_status": "Spiritual Heritage Sanctuary",
+    "data_confidence": "official",
+    "source_url": "https://belurmath.org/visiting-hours/",
+    "source_name": "Ramakrishna Math and Mission / Belur Math",
+    "source_type": "official_institution",
+    "source_quality": "place_specific",
+    "verification_status": "verified"
+  },
+  {
+    "id": "west_bengal_007",
+    "name": "Marble Palace",
+    "category": "heritage_mansion",
+    "area": "Kolkata",
+    "description": "A nineteenth-century mansion featuring classical architecture, sculptures, paintings, and landscaped grounds.",
+    "best_for": [
+      "heritage",
+      "photography",
+      "family trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Marble Palace West Bengal",
+    "tags": [
+      "heritage_mansion",
+      "West Bengal"
+    ],
+    "city": "Kolkata",
+    "city_id": "kolkata",
+    "state": "West Bengal",
+    "state_id": "west-bengal",
+    "country": "India",
+    "summary": "A nineteenth-century mansion featuring classical architecture, sculptures, paintings, and landscaped grounds.",
+    "history": "Built in 1835 by Raja Rajendra Mullick, renowned for its lavish marble walls and neoclassical Corinthian columns.",
+    "culture": "Houses original paintings by Rubens, Titian, and Reynolds alongside Victorian clocks and antique aviaries.",
+    "coordinates": {
+      "lat": 22.5824,
+      "lng": 88.3608
+    },
+    "rating": 4.6,
+    "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "10:00 AM - 04:00 PM (Closed Mondays & Thursdays)",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "10:00 AM - 04:00 PM",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "model_3d": {
+      "has_model": false,
+      "available": false
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "heritage_status": "Protected Heritage Mansion",
+    "data_confidence": "official",
+    "source_url": "https://wbtourism.gov.in/destination/kolkata/marble-palace",
+    "source_name": "West Bengal Tourism Heritage Directorate",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified"
+  },
+  {
+    "id": "west_bengal_008",
+    "name": "Science City",
+    "category": "science_museum",
+    "area": "Kolkata",
+    "description": "A popular interactive science centre with exhibits, galleries, and educational attractions.",
+    "best_for": [
+      "heritage",
+      "photography",
+      "family trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Science City West Bengal",
+    "tags": [
+      "science_museum",
+      "West Bengal"
+    ],
+    "city": "Kolkata",
+    "city_id": "kolkata",
+    "state": "West Bengal",
+    "state_id": "west-bengal",
+    "country": "India",
+    "summary": "A popular interactive science centre with exhibits, galleries, and educational attractions.",
+    "history": "Inaugurated in 1997, it is one of the largest science complexes in the Indian subcontinent.",
+    "culture": "Features Space Odyssey, Dynamotion Hall, Evolution Theme Park, Earth Exploration Hall, and cable cars.",
+    "coordinates": {
+      "lat": 22.5398,
+      "lng": 88.3962
+    },
+    "rating": 4.7,
+    "thumbnail_url": "https://images.unsplash.com/photo-1507668077129-56e32842fceb?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1507668077129-56e32842fceb?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "09:00 AM - 08:00 PM",
+    "entry_fee_inr": 65,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "09:00 AM - 08:00 PM",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "model_3d": {
+      "has_model": false,
+      "available": false
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "heritage_status": "Educational & Science Heritage",
+    "data_confidence": "official",
+    "source_url": "https://sciencecitykolkata.org.in/tickets",
+    "source_name": "National Council of Science Museums (NCSM)",
+    "source_type": "official_institution",
+    "source_quality": "place_specific",
+    "verification_status": "verified"
+  },
+  {
+    "id": "west_bengal_009",
+    "name": "Birla Planetarium",
+    "category": "science_museum",
+    "area": "Kolkata",
+    "description": "A major planetarium offering astronomy shows and educational programmes.",
+    "best_for": [
+      "heritage",
+      "photography",
+      "family trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Birla Planetarium West Bengal",
+    "tags": [
+      "science_museum",
+      "West Bengal"
+    ],
+    "city": "Kolkata",
+    "city_id": "kolkata",
+    "state": "West Bengal",
+    "state_id": "west-bengal",
+    "country": "India",
+    "summary": "A major planetarium offering astronomy shows and educational programmes.",
+    "history": "Inaugurated in 1963 by Prime Minister Jawaharlal Nehru, designed after the Great Stupa at Sanchi.",
+    "culture": "Known as Taramandal, it is one of the largest planetariums in Asia with advanced opto-mechanical projection.",
+    "coordinates": {
+      "lat": 22.5471,
+      "lng": 88.3473
+    },
+    "rating": 4.6,
+    "thumbnail_url": "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "12:00 PM - 07:00 PM",
+    "entry_fee_inr": 100,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "12:00 PM - 07:00 PM",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "model_3d": {
+      "has_model": false,
+      "available": false
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "heritage_status": "Scientific Heritage Institution",
+    "data_confidence": "official",
+    "source_url": "https://mpbirlaplanetarium.org/shows",
+    "source_name": "M. P. Birla Institute of Fundamental Research",
+    "source_type": "official_institution",
+    "source_quality": "place_specific",
+    "verification_status": "verified"
+  },
+  {
+    "id": "west_bengal_010",
+    "name": "Sundarbans National Park",
+    "category": "wildlife_national_park",
+    "area": "Kolkata",
+    "description": "A mangrove wilderness famous for its tidal waterways and Bengal tiger habitat.",
+    "best_for": [
+      "nature",
+      "wildlife",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Sundarbans National Park West Bengal",
+    "tags": [
+      "wildlife_national_park",
+      "West Bengal"
+    ],
+    "city": "Kolkata",
+    "city_id": "kolkata",
+    "state": "West Bengal",
+    "state_id": "west-bengal",
+    "country": "India",
+    "summary": "A mangrove wilderness famous for its tidal waterways and Bengal tiger habitat.",
+    "history": "Designated a UNESCO World Heritage Site in 1987 and a Biosphere Reserve representing the delta eco-system.",
+    "culture": "World's largest coastal mangrove forest, home to royal Bengal tigers, estuarine crocodiles, and Gangetic dolphins.",
+    "coordinates": {
+      "lat": 22.0500,
+      "lng": 88.8500
+    },
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1575550959106-5a7defe28b56?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1575550959106-5a7defe28b56?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "07:00 AM - 05:00 PM (Boat Safaris)",
+    "entry_fee_inr": 60,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "07:00 AM - 05:00 PM",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "model_3d": {
+      "has_model": false,
+      "available": false
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "heritage_status": "UNESCO World Heritage Site",
+    "data_confidence": "official",
+    "source_url": "https://whc.unesco.org/en/list/452/",
+    "source_name": "UNESCO World Heritage Centre & West Bengal Forest Dept",
+    "source_type": "unesco",
+    "source_quality": "place_specific",
+    "verification_status": "verified"
+  },
+  {
+    "id": "west_bengal_011",
+    "name": "Alipore Zoological Gardens",
+    "category": "zoological_park",
+    "area": "Alipore, Kolkata",
+    "description": "Kolkata’s historic zoo, home to a wide variety of animals, birds, reptiles, and other wildlife.",
+    "best_for": [
+      "wildlife",
+      "family trips",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Alipore Zoological Gardens Kolkata West Bengal",
+    "tags": [
+      "zoological_park",
+      "wildlife",
+      "Kolkata",
+      "West Bengal"
+    ],
+    "city": "Kolkata",
+    "city_id": "kolkata",
+    "state": "West Bengal",
+    "state_id": "west-bengal",
+    "country": "India",
+    "summary": "Kolkata’s historic zoo, home to a wide variety of animals, birds, reptiles, and other wildlife.",
+    "history": "Opened in 1876 by the Prince of Wales, making it India’s oldest formally stated zoological park.",
+    "culture": "Houses Royal Bengal tigers, white tigers, giant tortoises, Asian elephants, and a large lake for migratory birds.",
+    "coordinates": {
+      "lat": 22.5366,
+      "lng": 88.3325
+    },
+    "rating": 4.6,
+    "thumbnail_url": "https://images.unsplash.com/photo-1534188753412-3e26d0d618d6?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1534188753412-3e26d0d618d6?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "09:00 AM - 05:00 PM (Closed Thursdays)",
+    "entry_fee_inr": 30,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "09:00 AM - 05:00 PM",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "model_3d": {
+      "has_model": false,
+      "available": false
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "heritage_status": "Zoological Heritage Park",
+    "data_confidence": "official",
+    "source_url": "https://kolkatazoo.in/visitor-info",
+    "source_name": "Zoological Garden Alipore / West Bengal Zoo Authority",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified"
+  },
+  {
+    "id": "west_bengal_012",
+    "name": "Shantiniketan",
+    "category": "culture_heritage",
+    "area": "Santiniketan",
+    "description": "The cultural centre associated with Rabindranath Tagore, art, education, and Bengali traditions.",
+    "best_for": [
+      "heritage",
+      "photography",
+      "family trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Shantiniketan West Bengal",
+    "tags": [
+      "culture_heritage",
+      "West Bengal"
+    ],
+    "city": "Santiniketan",
+    "city_id": "santiniketan",
+    "state": "West Bengal",
+    "state_id": "west-bengal",
+    "country": "India",
+    "summary": "The cultural centre associated with Rabindranath Tagore, art, education, and Bengali traditions.",
+    "history": "Inscribed on UNESCO World Heritage list in 2023, representing Tagore's vision of pan-Asian universal education.",
+    "culture": "Celebrates Basanta Utsav, Poush Mela, Rabindra Sangeet, and renowned red-soil rural Baul traditions.",
+    "coordinates": {
+      "lat": 23.6788,
+      "lng": 87.6917
+    },
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "10:00 AM - 05:00 PM (Closed Wednesdays)",
+    "entry_fee_inr": 40,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "10:00 AM - 05:00 PM",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "model_3d": {
+      "has_model": false,
+      "available": false
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "heritage_status": "UNESCO World Heritage Site",
+    "data_confidence": "official",
+    "source_url": "https://whc.unesco.org/en/list/1675/",
+    "source_name": "UNESCO World Heritage Centre & Santiniketan Trust",
+    "source_type": "unesco",
+    "source_quality": "place_specific",
+    "verification_status": "verified"
+  },
+  {
+    "id": "west_bengal_013",
+    "name": "Visva-Bharati University",
+    "category": "education_heritage",
+    "area": "Santiniketan",
+    "description": "A renowned institution founded by Rabindranath Tagore, closely linked with the cultural identity of Santiniketan.",
+    "best_for": [
+      "heritage",
+      "photography",
+      "family trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Visva-Bharati University West Bengal",
+    "tags": [
+      "education_heritage",
+      "West Bengal"
+    ],
+    "city": "Santiniketan",
+    "city_id": "santiniketan",
+    "state": "West Bengal",
+    "state_id": "west-bengal",
+    "country": "India",
+    "summary": "A renowned institution founded by Rabindranath Tagore, closely linked with the cultural identity of Santiniketan.",
+    "history": "Founded in 1921 by Rabindranath Tagore using his Nobel Prize award money, declared a Central University in 1951.",
+    "culture": "Campus includes Kala Bhavana (Fine Arts), Sangeet Bhavana (Music), and open-air banyan tree classrooms.",
+    "coordinates": {
+      "lat": 23.6811,
+      "lng": 87.6894
+    },
+    "rating": 4.7,
+    "thumbnail_url": "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "09:30 AM - 05:00 PM (Campus guidelines apply)",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "09:30 AM - 05:00 PM",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "model_3d": {
+      "has_model": false,
+      "available": false
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "heritage_status": "National Institute of Importance",
+    "data_confidence": "official",
+    "source_url": "https://visvabharati.ac.in/heritage",
+    "source_name": "Visva-Bharati Central University Authority",
+    "source_type": "official_institution",
+    "source_quality": "place_specific",
+    "verification_status": "verified"
+  },
+  {
+    "id": "west_bengal_014",
+    "name": "Jorasanko Thakur Bari",
+    "category": "museum_heritage",
+    "area": "Kolkata",
+    "description": "The ancestral home of Rabindranath Tagore, now a museum devoted to the Tagore family.",
+    "best_for": [
+      "heritage",
+      "photography",
+      "family trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Jorasanko Thakur Bari West Bengal",
+    "tags": [
+      "museum_heritage",
+      "West Bengal"
+    ],
+    "city": "Kolkata",
+    "city_id": "kolkata",
+    "state": "West Bengal",
+    "state_id": "west-bengal",
+    "country": "India",
+    "summary": "The ancestral home of Rabindranath Tagore, now a museum devoted to the Tagore family.",
+    "history": "Built in the 18th century by Prince Dwarkanath Tagore; birthplace and demise place of poet Rabindranath Tagore.",
+    "culture": "Campus of Rabindra Bharati University with 3 galleries depicting Tagore's life, family paintings, and global travels.",
+    "coordinates": {
+      "lat": 22.5850,
+      "lng": 88.3592
+    },
+    "rating": 4.7,
+    "thumbnail_url": "https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "10:30 AM - 05:00 PM (Closed Mondays)",
+    "entry_fee_inr": 20,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "10:30 AM - 05:00 PM",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "model_3d": {
+      "has_model": false,
+      "available": false
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "heritage_status": "State Protected Heritage Museum",
+    "data_confidence": "official",
+    "source_url": "https://rbu.ac.in/jorasanko-museum",
+    "source_name": "Rabindra Bharati University Museum Directorate",
+    "source_type": "official_institution",
+    "source_quality": "place_specific",
+    "verification_status": "verified"
+  },
+  {
+    "id": "west_bengal_015",
+    "name": "Kalighat Kali Temple",
+    "category": "religious_heritage",
+    "area": "Kolkata",
+    "description": "One of Kolkata’s most important Shakti pilgrimage sites, dedicated to Goddess Kali.",
+    "best_for": [
+      "heritage",
+      "photography",
+      "family trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Kalighat Kali Temple West Bengal",
+    "tags": [
+      "religious_heritage",
+      "West Bengal"
+    ],
+    "city": "Kolkata",
+    "city_id": "kolkata",
+    "state": "West Bengal",
+    "state_id": "west-bengal",
+    "country": "India",
+    "summary": "One of Kolkata’s most important Shakti pilgrimage sites, dedicated to Goddess Kali.",
+    "history": "One of the 51 Shakti Peethas where Sati's right toes are believed to have fallen; rebuilt in 1809 by the Sabarna Roy Choudhury family.",
+    "culture": "Center of Kalighat painting school and historic worship on the banks of Adi Ganga canal.",
+    "coordinates": {
+      "lat": 22.5199,
+      "lng": 88.3426
+    },
+    "rating": 4.7,
+    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010f4439c28?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1600100397608-f010f4439c28?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "05:00 AM - 02:00 PM, 05:00 PM - 10:30 PM",
+    "entry_fee_inr": 0,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "05:00 AM - 02:00 PM, 05:00 PM - 10:30 PM",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "model_3d": {
+      "has_model": false,
+      "available": false
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "heritage_status": "Sacred Shakti Peetha Heritage",
+    "data_confidence": "official",
+    "source_url": "https://kalighattemple.com/darshan-timings",
+    "source_name": "Kalighat Temple Committee & West Bengal Tourism",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified"
+  },
+  {
+    "id": "west_bengal_016",
+    "name": "Darjeeling Himalayan Railway",
+    "category": "railway_heritage",
+    "area": "Darjeeling",
+    "description": "A historic mountain railway offering scenic journeys through the Darjeeling hills.",
+    "best_for": [
+      "heritage",
+      "photography",
+      "family trips"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Darjeeling Himalayan Railway West Bengal",
+    "tags": [
+      "railway_heritage",
+      "West Bengal"
+    ],
+    "city": "Darjeeling",
+    "city_id": "darjeeling",
+    "state": "West Bengal",
+    "state_id": "west-bengal",
+    "country": "India",
+    "summary": "A historic mountain railway offering scenic journeys through the Darjeeling hills.",
+    "history": "Built between 1879 and 1881, inscribed as a UNESCO World Heritage Site in 1999 (Mountain Railways of India).",
+    "culture": "Affectionately known as the Toy Train, famous for zigzag reverses and loops climbing from New Jalpaiguri to Ghoom.",
+    "coordinates": {
+      "lat": 27.0427,
+      "lng": 88.2636
+    },
+    "rating": 4.9,
+    "thumbnail_url": "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "08:00 AM - 05:00 PM (Scheduled Joyrides)",
+    "entry_fee_inr": 1000,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "08:00 AM - 05:00 PM",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "model_3d": {
+      "has_model": false,
+      "available": false
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "heritage_status": "UNESCO World Heritage Site",
+    "data_confidence": "official",
+    "source_url": "https://whc.unesco.org/en/list/944/",
+    "source_name": "UNESCO World Heritage Centre & Indian Railways (NFR)",
+    "source_type": "unesco",
+    "source_quality": "place_specific",
+    "verification_status": "verified"
+  },
+  {
+    "id": "west_bengal_017",
+    "name": "Tiger Hill",
+    "category": "viewpoint_nature",
+    "area": "Darjeeling",
+    "description": "A celebrated viewpoint known for sunrise views over Kanchenjunga and, on clear days, the Himalayan range.",
+    "best_for": [
+      "nature",
+      "wildlife",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Tiger Hill West Bengal",
+    "tags": [
+      "viewpoint_nature",
+      "West Bengal"
+    ],
+    "city": "Darjeeling",
+    "city_id": "darjeeling",
+    "state": "West Bengal",
+    "state_id": "west-bengal",
+    "country": "India",
+    "summary": "A celebrated viewpoint known for sunrise views over Kanchenjunga and, on clear days, the Himalayan range.",
+    "history": "Highest point in the immediate Darjeeling area at 2,590 meters altitude, celebrated since 19th century.",
+    "culture": "Famous dawn pilgrimage where rays illuminate Mount Everest, Makalu, and Kanchenjunga with golden hues.",
+    "coordinates": {
+      "lat": 26.9944,
+      "lng": 88.2861
+    },
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "04:00 AM - 06:00 PM (Early Sunrise Peak)",
+    "entry_fee_inr": 50,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "04:00 AM - 06:00 PM",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "model_3d": {
+      "has_model": false,
+      "available": false
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "heritage_status": "Celebrated Himalayan Viewpoint",
+    "data_confidence": "official",
+    "source_url": "https://wbtourism.gov.in/destination/darjeeling/tiger-hill",
+    "source_name": "Darjeeling Tourism Authority & West Bengal Tourism",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified"
+  },
+  {
+    "id": "west_bengal_018",
+    "name": "Batasia Loop",
+    "category": "railway_viewpoint",
+    "area": "Darjeeling",
+    "description": "A scenic railway loop with gardens and broad views of the surrounding mountains.",
+    "best_for": [
+      "nature",
+      "wildlife",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Batasia Loop West Bengal",
+    "tags": [
+      "railway_viewpoint",
+      "West Bengal"
+    ],
+    "city": "Darjeeling",
+    "city_id": "darjeeling",
+    "state": "West Bengal",
+    "state_id": "west-bengal",
+    "country": "India",
+    "summary": "A scenic railway loop with gardens and broad views of the surrounding mountains.",
+    "history": "Engineered in 1919 to lower the gradient of Darjeeling Himalayan Railway descent, featuring a central Gorkha war memorial.",
+    "culture": "360-degree panoramic view of Darjeeling town and snowy Kanchenjunga amidst manicured hill flora.",
+    "coordinates": {
+      "lat": 27.0169,
+      "lng": 88.2464
+    },
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "05:00 AM - 08:00 PM",
+    "entry_fee_inr": 20,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "05:00 AM - 08:00 PM",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "model_3d": {
+      "has_model": false,
+      "available": false
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "heritage_status": "Engineering & Scenic Heritage",
+    "data_confidence": "official",
+    "source_url": "https://wbtourism.gov.in/destination/darjeeling/batasia-loop",
+    "source_name": "Darjeeling Himalayan Railway & West Bengal Tourism",
+    "source_type": "state_tourism",
+    "source_quality": "place_specific",
+    "verification_status": "verified"
+  },
+  {
+    "id": "west_bengal_019",
+    "name": "Gorumara National Park",
+    "category": "wildlife_national_park",
+    "area": "Siliguri",
+    "description": "A forest reserve known for Indian rhinoceros, elephants, birds, and jeep safari routes.",
+    "best_for": [
+      "nature",
+      "wildlife",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Gorumara National Park West Bengal",
+    "tags": [
+      "wildlife_national_park",
+      "West Bengal"
+    ],
+    "city": "Siliguri",
+    "city_id": "siliguri",
+    "state": "West Bengal",
+    "state_id": "west-bengal",
+    "country": "India",
+    "summary": "A forest reserve known for Indian rhinoceros, elephants, birds, and jeep safari routes.",
+    "history": "Declared a wildlife sanctuary in 1949 and elevated to National Park status in 1994.",
+    "culture": "Famous for Dooars riverine grasslands, watchtowers (Jatraprasad), one-horned rhinos, and gaur (Indian bison).",
+    "coordinates": {
+      "lat": 26.7573,
+      "lng": 88.7885
+    },
+    "rating": 4.7,
+    "thumbnail_url": "https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "06:00 AM - 05:00 PM (Closed during monsoon June 15 - Sept 15)",
+    "entry_fee_inr": 100,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "06:00 AM - 05:00 PM",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "model_3d": {
+      "has_model": false,
+      "available": false
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "heritage_status": "National Wildlife Reserve",
+    "data_confidence": "official",
+    "source_url": "https://wbfdc.com/gorumara-national-park/",
+    "source_name": "West Bengal Forest Development Corporation (WBFDC)",
+    "source_type": "forest_department",
+    "source_quality": "place_specific",
+    "verification_status": "verified"
+  },
+  {
+    "id": "west_bengal_020",
+    "name": "Jaldapara National Park",
+    "category": "wildlife_national_park",
+    "area": "Siliguri",
+    "description": "A major wildlife destination famous for one-horned rhinoceroses and grassland safaris.",
+    "best_for": [
+      "nature",
+      "wildlife",
+      "photography"
+    ],
+    "suggested_duration": "2–4 hours",
+    "best_time_to_visit": "October to March",
+    "entry_fee": "Free or paid depending on attraction; verify current rates",
+    "opening_hours": "Usually daytime; timings vary by attraction",
+    "visitor_notes": [
+      "Check local access rules and timings before visiting",
+      "Carry water and comfortable footwear"
+    ],
+    "map_search": "Jaldapara National Park West Bengal",
+    "tags": [
+      "wildlife_national_park",
+      "West Bengal"
+    ],
+    "city": "Siliguri",
+    "city_id": "siliguri",
+    "state": "West Bengal",
+    "state_id": "west-bengal",
+    "country": "India",
+    "summary": "A major wildlife destination famous for one-horned rhinoceroses and grassland safaris.",
+    "history": "Established as a wildlife sanctuary in 1941 to protect the one-horned rhino, declared a national park in 2012.",
+    "culture": "Located at foothills of eastern Himalayas on Torsa Riverbank, holding the largest population of Indian rhinos in Bengal.",
+    "coordinates": {
+      "lat": 26.6872,
+      "lng": 89.2844
+    },
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1575550959106-5a7defe28b56?w=800&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1575550959106-5a7defe28b56?w=1200&auto=format&fit=crop&q=85"
+    ],
+    "visiting_hours": "06:00 AM - 04:30 PM (Safari hours apply)",
+    "entry_fee_inr": 100,
+    "visiting_info": {
+      "best_time_to_visit": "October to March",
+      "visiting_hours": "06:00 AM - 04:30 PM",
+      "recommended_duration": "2–4 hours",
+      "tips": [
+        "Check local access rules and timings before visiting",
+        "Carry water and comfortable footwear"
+      ]
+    },
+    "model_3d": {
+      "has_model": false,
+      "available": false
+    },
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "heritage_status": "National Wildlife Reserve",
+    "data_confidence": "official",
+    "source_url": "https://wbfdc.com/jaldapara-national-park/",
+    "source_name": "West Bengal Forest Development Corporation (WBFDC)",
+    "source_type": "forest_department",
+    "source_quality": "place_specific",
+    "verification_status": "verified"
+  }
+]
