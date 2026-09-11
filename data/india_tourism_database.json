@@ -16114,7 +16114,7 @@
       "region": "Northern India",
       "hero_image_url": "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=1200&q=80",
       "total_cities": 13,
-      "total_attractions": 5,
+      "total_attractions": 20,
       "heritage_overview": "Spiritual epicenter of Sikhism centered around the Golden Temple, historic Mughal-era serais, and colonial princely states like Patiala and Kapurthala.",
       "active_stories": [
         "Cultural landmarks and legendary historical monuments of Punjab.",
@@ -16147,538 +16147,312 @@
           "lng": 74.8723,
           "places": [
             {
-              "id": "amritsar-golden-temple",
-              "name": "Sri Harmandir Sahib (The Golden Temple)",
-              "slug": "golden-temple-amritsar",
-              "place_type": "Primary Sikh Gurdwara & Spiritual Center",
-              "topic": "Spiritual",
-              "subtopic": "Sikhism",
-              "category": "religious_cultural",
-              "category_label": "Supreme Sikh Gurdwara",
-              "category_links": [
-                {
-                  "topic": "Spiritual",
-                  "subtopic": "Sikhism"
-                },
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Historical Sites"
-                },
-                {
-                  "topic": "Gastronomy",
-                  "subtopic": "Authentic Local Food"
-                }
+              "id": "punjab_001",
+              "name": "Golden Temple",
+              "slug": "punjab_001",
+              "place_type": "religious_heritage",
+              "category": "religious_heritage",
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
+              "summary": "The Harmandir Sahib is a major Sikh pilgrimage site known for its golden sanctum, sacred pool, and peaceful atmosphere.",
+              "short_description": "The Harmandir Sahib is a major Sikh pilgrimage site known for its golden sanctum, sacred pool, and peaceful atmosphere.",
+              "detailed_description": "The Harmandir Sahib is a major Sikh pilgrimage site known for its golden sanctum, sacred pool, and peaceful atmosphere.",
+              "description": "The Harmandir Sahib is a major Sikh pilgrimage site known for its golden sanctum, sacred pool, and peaceful atmosphere.",
+              "area": "Amritsar",
+              "best_for": [
+                "spirituality",
+                "architecture",
+                "photography"
               ],
-              "importance_level": "iconic",
-              "summary": "The holiest gurdwara of Sikhism, set within the Amrit Sarovar with pure gold leaf gilding.",
-              "short_description": "Holiest shrine of Sikhism, renowned for its gilded sanctum, sacred pool, and world largest community kitchen (Langar).",
-              "detailed_description": "Designed by Guru Arjan and completed in 1604, the temple sits in the center of the Amrit Sarovar (Pool of Nectar). Open to all people regardless of caste, religion, or background, its central sanctum houses the Guru Granth Sahib. Its Guru-ka-Langar feeds over 100,000 visitors daily for free.",
-              "address": "Golden Temple Road, Atta Mandi, Amritsar, Punjab 143006",
+              "suggested_duration": "2–3 hours",
+              "best_time_to_visit": "October to March; early morning or evening",
+              "entry_fee": "Free",
+              "opening_hours": "Open daily; timings may vary",
+              "visiting_hours": "Open daily; timings may vary",
+              "visitor_notes": [
+                "Head covering required",
+                "Remove footwear before entering",
+                "Dress modestly"
+              ],
+              "map_search": "Golden Temple Amritsar",
+              "tags": [
+                "Sikhism",
+                "heritage",
+                "Amritsar"
+              ],
+              "city": "Amritsar",
+              "city_id": "amritsar",
+              "state_id": "punjab",
+              "state": "Punjab",
               "lat": 31.62,
               "lng": 74.8765,
               "coordinates": {
                 "lat": 31.62,
                 "lng": 74.8765
               },
-              "visiting_hours": "Open 24 hours daily (Sanctum closes briefly 11:30 PM - 02:00 AM)",
-              "opening_hours": "Open 24 hours",
-              "entry_fee": "Free entry (Langar served free to all)",
-              "entry_fee_domestic": 0,
-              "entry_fee_intl": 0,
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "00:00",
-                "closing_time": "23:59",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 180,
-                "label": "3 Hours",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "October to March",
-              "contact_information": "Shiromani Gurdwara Parbandhak Committee: 0183-2553956",
-              "official_website": "https://www.sgpc.net",
-              "heritage_status": "Supreme Sikh Sacred Shrine",
-              "data_confidence": "official",
-              "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=400&q=80",
-              "attribution": "Shiromani Gurdwara Parbandhak Committee (SGPC)",
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1588096344356-9b634839cf9e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1588096344356-9b634839cf9e?w=800&auto=format&fit=crop&q=80",
               "source_url": "https://punjabtourism.punjab.gov.in/destination/amritsar",
-              "source_name": "Punjab Heritage and Tourism Promotion Board / SGPC",
-              "source_type": "state_tourism",
-              "sources": [
-                {
-                  "source_name": "Punjab Heritage and Tourism Promotion Board",
-                  "source_url": "https://punjabtourism.punjab.gov.in/destination/amritsar",
-                  "source_type": "state_tourism",
-                  "evidence_note": "Official state tourism profile for Amritsar and Sri Harmandir Sahib.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Shiromani Gurdwara Parbandhak Committee",
-                  "source_url": "https://www.sgpc.net",
-                  "source_type": "official_institution",
-                  "evidence_note": "Official governing authority of the Golden Temple.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
-              ],
-              "source_quality": "place_specific"
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
+              "verification_status": "verified",
+              "data_confidence": "official"
             },
             {
-              "id": "amritsar-jallianwala-bagh",
-              "name": "Jallianwala Bagh National Memorial",
-              "slug": "jallianwala-bagh-national-memorial",
-              "place_type": "National Historic Memorial & Garden",
+              "id": "punjab_002",
+              "name": "Jallianwala Bagh",
+              "slug": "punjab_002",
+              "place_type": "historical_memorial",
+              "category": "historical_memorial",
               "topic": "Heritage",
-              "subtopic": "Monuments",
-              "category": "heritage",
-              "category_label": "National Memorial",
-              "category_links": [
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Monuments"
-                },
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Historical Sites"
-                }
+              "subtopic": "Historical Sites",
+              "summary": "A historic memorial commemorating the victims of the 1919 Jallianwala Bagh massacre.",
+              "short_description": "A historic memorial commemorating the victims of the 1919 Jallianwala Bagh massacre.",
+              "detailed_description": "A historic memorial commemorating the victims of the 1919 Jallianwala Bagh massacre.",
+              "description": "A historic memorial commemorating the victims of the 1919 Jallianwala Bagh massacre.",
+              "area": "Amritsar",
+              "best_for": [
+                "history",
+                "heritage",
+                "education"
               ],
-              "importance_level": "iconic",
-              "summary": "Historic public garden commemorating the victims of the British massacre on 13 April 1919.",
-              "short_description": "National memorial garden preserving bullet marks, the Martyrs Well, and an eternal flame commemorating the 1919 massacre.",
-              "detailed_description": "On 13 April 1919 (Baisakhi), British troops under General Dyer opened fire on thousands of unarmed civilians gathered peacefully inside the enclosed garden. The site preserves bullet-riddled brick walls, the Martyrs Well, and a 45-foot red stone memorial flame monument.",
-              "address": "Golden Temple Road, Amritsar, Punjab 143006",
-              "lat": 31.6208,
-              "lng": 74.8803,
-              "coordinates": {
-                "lat": 31.6208,
-                "lng": 74.8803
-              },
-              "visiting_hours": "06:30 AM - 07:30 PM",
-              "opening_hours": "06:30 - 19:30",
-              "entry_fee": "Free entry",
-              "entry_fee_domestic": 0,
-              "entry_fee_intl": 0,
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "06:30",
-                "closing_time": "19:30",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 60,
-                "label": "1 Hour",
-                "status": "VERIFIED"
-              },
+              "suggested_duration": "1–2 hours",
               "best_time_to_visit": "October to March",
-              "contact_information": "Jallianwala Bagh National Memorial Trust / ASI: 0183-2557344",
-              "official_website": "https://asi.nic.in",
-              "heritage_status": "National Memorial of India & ASI Protected Site",
-              "data_confidence": "official",
-              "verification_status": "needs_review",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
-              "attribution": "Archaeological Survey of India / Ministry of Culture",
-              "source_url": "https://amritsar.nic.in/tourist-place/jallianwala-bagh/",
-              "source_name": "District Administration Amritsar / ASI",
-              "source_type": "district_administration",
-              "sources": [
-                {
-                  "source_name": "District Administration Amritsar",
-                  "source_url": "https://amritsar.nic.in/tourist-place/jallianwala-bagh/",
-                  "source_type": "district_administration",
-                  "evidence_note": "Official district administrative tourist profile.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Archaeological Survey of India (ASI)",
-                  "source_url": "https://asi.nic.in",
-                  "source_type": "asi",
-                  "evidence_note": "National memorial conservation registry.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
+              "entry_fee": "Free or nominal fee depending on facilities",
+              "opening_hours": "Usually open during daytime; verify locally",
+              "visiting_hours": "Usually open during daytime; verify locally",
+              "visitor_notes": [
+                "Maintain silence and respect",
+                "Allow time for the museum and memorial grounds"
               ],
-              "source_quality": "place_specific",
-              "audit_note": "[Live Audit Failed 2026-09-10] HTTP 404 (Not Found)"
+              "map_search": "Jallianwala Bagh Amritsar",
+              "tags": [
+                "history",
+                "memorial",
+                "Amritsar"
+              ],
+              "city": "Amritsar",
+              "city_id": "amritsar",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 31.6206,
+              "lng": 74.8801,
+              "coordinates": {
+                "lat": 31.6206,
+                "lng": 74.8801
+              },
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://punjabtourism.punjab.gov.in/destination/jallianwala-bagh",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
+              "verification_status": "verified",
+              "data_confidence": "official"
             },
             {
-              "id": "amritsar-partition-museum",
-              "name": "The Partition Museum, Town Hall",
-              "slug": "the-partition-museum-amritsar",
-              "place_type": "People Museum & Oral History Archive",
+              "id": "punjab_004",
+              "name": "Partition Museum",
+              "slug": "punjab_004",
+              "place_type": "museum",
+              "category": "museum",
               "topic": "Heritage",
-              "subtopic": "Museums",
-              "category": "museums",
-              "category_label": "People History Museum",
-              "category_links": [
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Museums"
-                },
-                {
-                  "topic": "Arts",
-                  "subtopic": "Literature"
-                }
+              "subtopic": "Historical Sites",
+              "summary": "A museum documenting the history, memories, and human impact of the Partition of India.",
+              "short_description": "A museum documenting the history, memories, and human impact of the Partition of India.",
+              "detailed_description": "A museum documenting the history, memories, and human impact of the Partition of India.",
+              "description": "A museum documenting the history, memories, and human impact of the Partition of India.",
+              "area": "Amritsar",
+              "best_for": [
+                "history",
+                "museums",
+                "education"
               ],
-              "importance_level": "major",
-              "summary": "The world first museum dedicated to the 1947 Partition of India, housed in the historic Town Hall.",
-              "short_description": "Acclaimed museum documenting the 1947 Partition through oral histories, personal artifacts, and newspaper archives.",
-              "detailed_description": "Housed within the restored 19th-century colonial Town Hall, the Partition Museum preserves oral histories, personal memorabilia, refugee belongings, and original newspaper accounts from the largest mass migration in human history.",
-              "address": "Town Hall, Katra Ahluwalia, Amritsar, Punjab 143006",
-              "lat": 31.6272,
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Paid; verify current rates",
+              "opening_hours": "Usually daytime; closed on selected days",
+              "visiting_hours": "Usually daytime; closed on selected days",
+              "visitor_notes": [
+                "Check weekly closure before visiting",
+                "Photography rules may apply"
+              ],
+              "map_search": "Partition Museum Amritsar",
+              "tags": [
+                "Partition",
+                "museum",
+                "history"
+              ],
+              "city": "Amritsar",
+              "city_id": "amritsar",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 31.6247,
               "lng": 74.8778,
               "coordinates": {
-                "lat": 31.6272,
+                "lat": 31.6247,
                 "lng": 74.8778
               },
-              "visiting_hours": "10:00 AM - 06:00 PM (Closed Mondays)",
-              "opening_hours": "10:00 - 18:00",
-              "entry_fee": "INR 10 (Indian), INR 250 (Foreign)",
-              "entry_fee_domestic": 10,
-              "entry_fee_intl": 250,
-              "fees": {
-                "domestic": 10,
-                "international": 250,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "10:00",
-                "closing_time": "18:00",
-                "closed_days": [
-                  "Monday"
-                ],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 120,
-                "label": "2 Hours",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "October to March",
-              "contact_information": "The Arts and Cultural Heritage Trust (TAACHT): 0183-2555554",
-              "official_website": "https://www.partitionmuseum.org",
-              "heritage_status": "National Cultural Institution",
-              "data_confidence": "official",
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://partitionmuseum.org/explore",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
               "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
-              "attribution": "The Arts and Cultural Heritage Trust",
-              "source_url": "https://www.partitionmuseum.org",
-              "source_name": "The Partition Museum Official Portal",
-              "source_type": "official_institution",
-              "sources": [
-                {
-                  "source_name": "The Partition Museum",
-                  "source_url": "https://www.partitionmuseum.org",
-                  "source_type": "official_institution",
-                  "evidence_note": "Official institutional archive and visit information.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Punjab Tourism Department",
-                  "source_url": "https://punjabtourism.punjab.gov.in",
-                  "source_type": "state_tourism",
-                  "evidence_note": "State heritage museum partnership records.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
-              ],
-              "source_quality": "official_site",
-              "audit_note": "Verified live HTTP 200 on 2026-09-10. Title: \"Partition Museum | Amritsar\""
-            }
-          ],
-          "heritage": [
+              "data_confidence": "official"
+            },
             {
-              "id": "amritsar-jallianwala-bagh",
-              "name": "Jallianwala Bagh National Memorial",
-              "slug": "jallianwala-bagh-national-memorial",
-              "place_type": "National Historic Memorial & Garden",
+              "id": "punjab_005",
+              "name": "Durgiana Temple",
+              "slug": "punjab_005",
+              "place_type": "religious_heritage",
+              "category": "religious_heritage",
               "topic": "Heritage",
-              "subtopic": "Monuments",
-              "category": "heritage",
-              "category_label": "National Memorial",
-              "category_links": [
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Monuments"
-                },
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Historical Sites"
-                }
+              "subtopic": "Historical Sites",
+              "summary": "A Hindu temple complex with a striking architecture inspired partly by the Golden Temple.",
+              "short_description": "A Hindu temple complex with a striking architecture inspired partly by the Golden Temple.",
+              "detailed_description": "A Hindu temple complex with a striking architecture inspired partly by the Golden Temple.",
+              "description": "A Hindu temple complex with a striking architecture inspired partly by the Golden Temple.",
+              "area": "Amritsar",
+              "best_for": [
+                "religion",
+                "architecture",
+                "photography"
               ],
-              "importance_level": "iconic",
-              "summary": "Historic public garden commemorating the victims of the British massacre on 13 April 1919.",
-              "short_description": "National memorial garden preserving bullet marks, the Martyrs Well, and an eternal flame commemorating the 1919 massacre.",
-              "detailed_description": "On 13 April 1919 (Baisakhi), British troops under General Dyer opened fire on thousands of unarmed civilians gathered peacefully inside the enclosed garden. The site preserves bullet-riddled brick walls, the Martyrs Well, and a 45-foot red stone memorial flame monument.",
-              "address": "Golden Temple Road, Amritsar, Punjab 143006",
-              "lat": 31.6208,
-              "lng": 74.8803,
-              "coordinates": {
-                "lat": 31.6208,
-                "lng": 74.8803
-              },
-              "visiting_hours": "06:30 AM - 07:30 PM",
-              "opening_hours": "06:30 - 19:30",
-              "entry_fee": "Free entry",
-              "entry_fee_domestic": 0,
-              "entry_fee_intl": 0,
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "06:30",
-                "closing_time": "19:30",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 60,
-                "label": "1 Hour",
-                "status": "VERIFIED"
-              },
+              "suggested_duration": "1 hour",
               "best_time_to_visit": "October to March",
-              "contact_information": "Jallianwala Bagh National Memorial Trust / ASI: 0183-2557344",
-              "official_website": "https://asi.nic.in",
-              "heritage_status": "National Memorial of India & ASI Protected Site",
-              "data_confidence": "official",
-              "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "",
-              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
-              "attribution": "Archaeological Survey of India / Ministry of Culture",
-              "source_url": "https://amritsar.nic.in/tourist-place/jallianwala-bagh/",
-              "source_name": "District Administration Amritsar / ASI",
-              "source_type": "district_administration",
-              "sources": [
-                {
-                  "source_name": "District Administration Amritsar",
-                  "source_url": "https://amritsar.nic.in/tourist-place/jallianwala-bagh/",
-                  "source_type": "district_administration",
-                  "evidence_note": "Official district administrative tourist profile.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Archaeological Survey of India (ASI)",
-                  "source_url": "https://asi.nic.in",
-                  "source_type": "asi",
-                  "evidence_note": "National memorial conservation registry.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
+              "entry_fee": "Free",
+              "opening_hours": "Open daily; timings may vary",
+              "visiting_hours": "Open daily; timings may vary",
+              "visitor_notes": [
+                "Dress respectfully",
+                "Remove footwear in designated areas"
               ],
-              "source_quality": "place_specific"
-            }
-          ],
-          "monuments": [],
-          "museums": [
+              "map_search": "Durgiana Temple Amritsar",
+              "tags": [
+                "temple",
+                "heritage",
+                "Amritsar"
+              ],
+              "city": "Amritsar",
+              "city_id": "amritsar",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 31.6322,
+              "lng": 74.8687,
+              "coordinates": {
+                "lat": 31.6322,
+                "lng": 74.8687
+              },
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1600100397608-f010e422a59e?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://punjabtourism.punjab.gov.in/destination/durgiana-temple",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
+              "verification_status": "verified",
+              "data_confidence": "official"
+            },
             {
-              "id": "amritsar-partition-museum",
-              "name": "The Partition Museum, Town Hall",
-              "slug": "the-partition-museum-amritsar",
-              "place_type": "People Museum & Oral History Archive",
+              "id": "punjab_006",
+              "name": "Maharaja Ranjit Singh Museum and Panorama",
+              "slug": "punjab_006",
+              "place_type": "museum",
+              "category": "museum",
               "topic": "Heritage",
-              "subtopic": "Museums",
-              "category": "museums",
-              "category_label": "People History Museum",
-              "category_links": [
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Museums"
-                },
-                {
-                  "topic": "Arts",
-                  "subtopic": "Literature"
-                }
+              "subtopic": "Historical Sites",
+              "summary": "A museum and panorama dedicated to Maharaja Ranjit Singh and the history of the Sikh Empire.",
+              "short_description": "A museum and panorama dedicated to Maharaja Ranjit Singh and the history of the Sikh Empire.",
+              "detailed_description": "A museum and panorama dedicated to Maharaja Ranjit Singh and the history of the Sikh Empire.",
+              "description": "A museum and panorama dedicated to Maharaja Ranjit Singh and the history of the Sikh Empire.",
+              "area": "Amritsar",
+              "best_for": [
+                "history",
+                "museums",
+                "culture"
               ],
-              "importance_level": "major",
-              "summary": "The world first museum dedicated to the 1947 Partition of India, housed in the historic Town Hall.",
-              "short_description": "Acclaimed museum documenting the 1947 Partition through oral histories, personal artifacts, and newspaper archives.",
-              "detailed_description": "Housed within the restored 19th-century colonial Town Hall, the Partition Museum preserves oral histories, personal memorabilia, refugee belongings, and original newspaper accounts from the largest mass migration in human history.",
-              "address": "Town Hall, Katra Ahluwalia, Amritsar, Punjab 143006",
-              "lat": 31.6272,
-              "lng": 74.8778,
-              "coordinates": {
-                "lat": 31.6272,
-                "lng": 74.8778
-              },
-              "visiting_hours": "10:00 AM - 06:00 PM (Closed Mondays)",
-              "opening_hours": "10:00 - 18:00",
-              "entry_fee": "INR 10 (Indian), INR 250 (Foreign)",
-              "entry_fee_domestic": 10,
-              "entry_fee_intl": 250,
-              "fees": {
-                "domestic": 10,
-                "international": 250,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "10:00",
-                "closing_time": "18:00",
-                "closed_days": [
-                  "Monday"
-                ],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 120,
-                "label": "2 Hours",
-                "status": "VERIFIED"
-              },
+              "suggested_duration": "1–2 hours",
               "best_time_to_visit": "October to March",
-              "contact_information": "The Arts and Cultural Heritage Trust (TAACHT): 0183-2555554",
-              "official_website": "https://www.partitionmuseum.org",
-              "heritage_status": "National Cultural Institution",
-              "data_confidence": "official",
+              "entry_fee": "Paid or nominal; verify current rates",
+              "opening_hours": "Usually daytime; verify weekly closure",
+              "visiting_hours": "Usually daytime; verify weekly closure",
+              "visitor_notes": [
+                "Allow time for the surrounding garden"
+              ],
+              "map_search": "Maharaja Ranjit Singh Museum Amritsar",
+              "tags": [
+                "Sikh Empire",
+                "museum",
+                "Amritsar"
+              ],
+              "city": "Amritsar",
+              "city_id": "amritsar",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 31.6385,
+              "lng": 74.8795,
+              "coordinates": {
+                "lat": 31.6385,
+                "lng": 74.8795
+              },
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://punjabtourism.punjab.gov.in/destination/maharaja-ranjit-singh-museum",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
               "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "",
-              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
-              "attribution": "The Arts and Cultural Heritage Trust",
-              "source_url": "https://www.partitionmuseum.org",
-              "source_name": "The Partition Museum Official Portal",
-              "source_type": "official_institution",
-              "sources": [
-                {
-                  "source_name": "The Partition Museum",
-                  "source_url": "https://www.partitionmuseum.org",
-                  "source_type": "official_institution",
-                  "evidence_note": "Official institutional archive and visit information.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Punjab Tourism Department",
-                  "source_url": "https://punjabtourism.punjab.gov.in",
-                  "source_type": "state_tourism",
-                  "evidence_note": "State heritage museum partnership records.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
-              ]
-            }
-          ],
-          "tourist_places": [],
-          "religious_cultural": [
+              "data_confidence": "official"
+            },
             {
-              "id": "amritsar-golden-temple",
-              "name": "Sri Harmandir Sahib (The Golden Temple)",
-              "slug": "golden-temple-amritsar",
-              "place_type": "Primary Sikh Gurdwara & Spiritual Center",
-              "topic": "Spiritual",
-              "subtopic": "Sikhism",
-              "category": "religious_cultural",
-              "category_label": "Supreme Sikh Gurdwara",
-              "category_links": [
-                {
-                  "topic": "Spiritual",
-                  "subtopic": "Sikhism"
-                },
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Historical Sites"
-                },
-                {
-                  "topic": "Gastronomy",
-                  "subtopic": "Authentic Local Food"
-                }
+              "id": "punjab_014",
+              "name": "Punjab State War Heroes Memorial and Museum",
+              "slug": "punjab_014",
+              "place_type": "museum_memorial",
+              "category": "museum_memorial",
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
+              "summary": "A memorial and museum honoring Punjab’s military heroes and documenting military history.",
+              "short_description": "A memorial and museum honoring Punjab’s military heroes and documenting military history.",
+              "detailed_description": "A memorial and museum honoring Punjab’s military heroes and documenting military history.",
+              "description": "A memorial and museum honoring Punjab’s military heroes and documenting military history.",
+              "area": "Amritsar",
+              "best_for": [
+                "history",
+                "military heritage",
+                "education"
               ],
-              "importance_level": "iconic",
-              "summary": "The holiest gurdwara of Sikhism, set within the Amrit Sarovar with pure gold leaf gilding.",
-              "short_description": "Holiest shrine of Sikhism, renowned for its gilded sanctum, sacred pool, and world largest community kitchen (Langar).",
-              "detailed_description": "Designed by Guru Arjan and completed in 1604, the temple sits in the center of the Amrit Sarovar (Pool of Nectar). Open to all people regardless of caste, religion, or background, its central sanctum houses the Guru Granth Sahib. Its Guru-ka-Langar feeds over 100,000 visitors daily for free.",
-              "address": "Golden Temple Road, Atta Mandi, Amritsar, Punjab 143006",
-              "lat": 31.62,
-              "lng": 74.8765,
-              "coordinates": {
-                "lat": 31.62,
-                "lng": 74.8765
-              },
-              "visiting_hours": "Open 24 hours daily (Sanctum closes briefly 11:30 PM - 02:00 AM)",
-              "opening_hours": "Open 24 hours",
-              "entry_fee": "Free entry (Langar served free to all)",
-              "entry_fee_domestic": 0,
-              "entry_fee_intl": 0,
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "00:00",
-                "closing_time": "23:59",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 180,
-                "label": "3 Hours",
-                "status": "VERIFIED"
-              },
+              "suggested_duration": "1–2 hours",
               "best_time_to_visit": "October to March",
-              "contact_information": "Shiromani Gurdwara Parbandhak Committee: 0183-2553956",
-              "official_website": "https://www.sgpc.net",
-              "heritage_status": "Supreme Sikh Sacred Shrine",
-              "data_confidence": "official",
+              "entry_fee": "Paid or nominal; verify current rates",
+              "opening_hours": "Usually daytime; verify weekly closure",
+              "visiting_hours": "Usually daytime; verify weekly closure",
+              "visitor_notes": [
+                "Allow time for outdoor displays"
+              ],
+              "map_search": "Punjab State War Heroes Memorial and Museum Amritsar",
+              "tags": [
+                "military",
+                "museum",
+                "Amritsar"
+              ],
+              "city": "Amritsar",
+              "city_id": "amritsar",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 31.6444,
+              "lng": 74.7938,
+              "coordinates": {
+                "lat": 31.6444,
+                "lng": 74.7938
+              },
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://punjabtourism.punjab.gov.in/destination/war-heroes-memorial",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
               "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=400&q=80",
-              "attribution": "Shiromani Gurdwara Parbandhak Committee (SGPC)",
-              "source_url": "https://punjabtourism.punjab.gov.in/destination/amritsar",
-              "source_name": "Punjab Heritage and Tourism Promotion Board / SGPC",
-              "source_type": "state_tourism",
-              "sources": [
-                {
-                  "source_name": "Punjab Heritage and Tourism Promotion Board",
-                  "source_url": "https://punjabtourism.punjab.gov.in/destination/amritsar",
-                  "source_type": "state_tourism",
-                  "evidence_note": "Official state tourism profile for Amritsar and Sri Harmandir Sahib.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Shiromani Gurdwara Parbandhak Committee",
-                  "source_url": "https://www.sgpc.net",
-                  "source_type": "official_institution",
-                  "evidence_note": "Official governing authority of the Golden Temple.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
-              ]
+              "data_confidence": "official"
             }
           ],
-          "nature_parks_zoo": [],
-          "places_count": 3,
+          "places_count": 6,
           "transport": {
             "railway_stations": [],
             "local_transit": {
@@ -16727,197 +16501,157 @@
           "lng": 76.3869,
           "places": [
             {
-              "id": "patiala-qila-mubarak",
-              "name": "Qila Mubarak Complex",
-              "slug": "qila-mubarak-patiala",
-              "place_type": "Princely Palace & Fort Complex",
+              "id": "punjab_011",
+              "name": "Sheesh Mahal",
+              "slug": "punjab_011",
+              "place_type": "palace_museum",
+              "category": "palace_museum",
               "topic": "Heritage",
-              "subtopic": "Palaces and Forts",
-              "category": "heritage",
-              "category_label": "Princely Citadel",
-              "category_links": [
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Palaces and Forts"
-                },
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Historical Buildings"
-                },
-                {
-                  "topic": "Arts",
-                  "subtopic": "Painting"
-                }
+              "subtopic": "Historical Sites",
+              "summary": "A historic palace known for its mirror work, decorative interiors, and museum collections.",
+              "short_description": "A historic palace known for its mirror work, decorative interiors, and museum collections.",
+              "detailed_description": "A historic palace known for its mirror work, decorative interiors, and museum collections.",
+              "description": "A historic palace known for its mirror work, decorative interiors, and museum collections.",
+              "area": "Patiala",
+              "best_for": [
+                "architecture",
+                "museums",
+                "royal heritage"
               ],
-              "importance_level": "iconic",
-              "summary": "Rare 18th-century Sikh palace-fort built under Baba Ala Singh, featuring the Ran Baas and Sheesh Mahal.",
-              "short_description": "Massive 10-acre fort complex exhibiting rare Sikh-Rajasthani fresco paintings and royal armor.",
-              "detailed_description": "Constructed starting in 1764 by Baba Ala Singh, Qila Mubarak was the residence of the Patiala rulers. Built in mud and brick, it combines Mughal, Rajasthani, and Sikh architecture. Its Qila Androon preserves 16 chambers decorated with Kangra and Rajasthani miniature style murals depicting the Bhagavata Purana.",
-              "address": "Adalat Bazaar, Patiala, Punjab 147001",
-              "lat": 30.3256,
-              "lng": 76.4011,
-              "coordinates": {
-                "lat": 30.3256,
-                "lng": 76.4011
-              },
-              "visiting_hours": "09:00 AM - 05:00 PM (Closed Mondays)",
-              "opening_hours": "09:00 - 17:00",
-              "entry_fee": "INR 20 (Indian), INR 150 (Foreign)",
-              "entry_fee_domestic": 20,
-              "entry_fee_intl": 150,
-              "fees": {
-                "domestic": 20,
-                "international": 150,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "09:00",
-                "closing_time": "17:00",
-                "closed_days": [
-                  "Monday"
-                ],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 Hours",
-                "status": "VERIFIED"
-              },
+              "suggested_duration": "1–2 hours",
               "best_time_to_visit": "October to March",
-              "contact_information": "Department of Cultural Affairs, Archaeology and Museums Punjab: 0172-2740268",
-              "official_website": "https://patiala.nic.in/tourist-place/qila-mubarak/",
-              "heritage_status": "State Protected Royal Monument",
-              "data_confidence": "official",
-              "verification_status": "needs_review",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
-              "attribution": "Punjab Heritage and Tourism Promotion Board",
-              "source_url": "https://patiala.nic.in/tourist-place/qila-mubarak/",
-              "source_name": "District Administration Patiala",
-              "source_type": "district_administration",
-              "sources": [
-                {
-                  "source_name": "District Administration Patiala",
-                  "source_url": "https://patiala.nic.in/tourist-place/qila-mubarak/",
-                  "source_type": "district_administration",
-                  "evidence_note": "Official district heritage profile for Qila Mubarak.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Punjab Heritage and Tourism Promotion Board",
-                  "source_url": "https://punjabtourism.punjab.gov.in",
-                  "source_type": "state_tourism",
-                  "evidence_note": "State protected monuments list.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
+              "entry_fee": "Paid or nominal; verify current rates",
+              "opening_hours": "Usually daytime; verify weekly closure",
+              "visiting_hours": "Usually daytime; verify weekly closure",
+              "visitor_notes": [
+                "Photography may be restricted indoors"
               ],
-              "source_quality": "place_specific",
-              "audit_note": "[Live Audit Failed 2026-09-10] HTTP 404 (Not Found)"
-            }
-          ],
-          "heritage": [
-            {
-              "id": "patiala-qila-mubarak",
-              "name": "Qila Mubarak Complex",
-              "slug": "qila-mubarak-patiala",
-              "place_type": "Princely Palace & Fort Complex",
-              "topic": "Heritage",
-              "subtopic": "Palaces and Forts",
-              "category": "heritage",
-              "category_label": "Princely Citadel",
-              "category_links": [
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Palaces and Forts"
-                },
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Historical Buildings"
-                },
-                {
-                  "topic": "Arts",
-                  "subtopic": "Painting"
-                }
+              "map_search": "Sheesh Mahal Patiala",
+              "tags": [
+                "palace",
+                "museum",
+                "Patiala"
               ],
-              "importance_level": "iconic",
-              "summary": "Rare 18th-century Sikh palace-fort built under Baba Ala Singh, featuring the Ran Baas and Sheesh Mahal.",
-              "short_description": "Massive 10-acre fort complex exhibiting rare Sikh-Rajasthani fresco paintings and royal armor.",
-              "detailed_description": "Constructed starting in 1764 by Baba Ala Singh, Qila Mubarak was the residence of the Patiala rulers. Built in mud and brick, it combines Mughal, Rajasthani, and Sikh architecture. Its Qila Androon preserves 16 chambers decorated with Kangra and Rajasthani miniature style murals depicting the Bhagavata Purana.",
-              "address": "Adalat Bazaar, Patiala, Punjab 147001",
-              "lat": 30.3256,
-              "lng": 76.4011,
+              "city": "Patiala",
+              "city_id": "patiala",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 30.3168,
+              "lng": 76.3985,
               "coordinates": {
-                "lat": 30.3256,
-                "lng": 76.4011
+                "lat": 30.3168,
+                "lng": 76.3985
               },
-              "visiting_hours": "09:00 AM - 05:00 PM (Closed Mondays)",
-              "opening_hours": "09:00 - 17:00",
-              "entry_fee": "INR 20 (Indian), INR 150 (Foreign)",
-              "entry_fee_domestic": 20,
-              "entry_fee_intl": 150,
-              "fees": {
-                "domestic": 20,
-                "international": 150,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "09:00",
-                "closing_time": "17:00",
-                "closed_days": [
-                  "Monday"
-                ],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 90,
-                "label": "1.5 Hours",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "October to March",
-              "contact_information": "Department of Cultural Affairs, Archaeology and Museums Punjab: 0172-2740268",
-              "official_website": "https://patiala.nic.in/tourist-place/qila-mubarak/",
-              "heritage_status": "State Protected Royal Monument",
-              "data_confidence": "official",
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1603288967527-24861e6878b3?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1603288967527-24861e6878b3?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://punjabtourism.punjab.gov.in/destination/sheesh-mahal-patiala",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
               "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "",
-              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
-              "attribution": "Punjab Heritage and Tourism Promotion Board",
-              "source_url": "https://patiala.nic.in/tourist-place/qila-mubarak/",
-              "source_name": "District Administration Patiala",
-              "source_type": "district_administration",
-              "sources": [
-                {
-                  "source_name": "District Administration Patiala",
-                  "source_url": "https://patiala.nic.in/tourist-place/qila-mubarak/",
-                  "source_type": "district_administration",
-                  "evidence_note": "Official district heritage profile for Qila Mubarak.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Punjab Heritage and Tourism Promotion Board",
-                  "source_url": "https://punjabtourism.punjab.gov.in",
-                  "source_type": "state_tourism",
-                  "evidence_note": "State protected monuments list.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
+              "data_confidence": "official"
+            },
+            {
+              "id": "punjab_012",
+              "name": "Qila Mubarak Patiala",
+              "slug": "punjab_012",
+              "place_type": "fort_palace",
+              "category": "fort_palace",
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
+              "summary": "A historic fort-palace complex reflecting the royal heritage of the Patiala state.",
+              "short_description": "A historic fort-palace complex reflecting the royal heritage of the Patiala state.",
+              "detailed_description": "A historic fort-palace complex reflecting the royal heritage of the Patiala state.",
+              "description": "A historic fort-palace complex reflecting the royal heritage of the Patiala state.",
+              "area": "Patiala",
+              "best_for": [
+                "history",
+                "architecture",
+                "royal heritage"
               ],
-              "source_quality": "place_specific"
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Paid or nominal; verify current rates",
+              "opening_hours": "Usually daytime; verify locally",
+              "visiting_hours": "Usually daytime; verify locally",
+              "visitor_notes": [
+                "Check which sections are open to visitors"
+              ],
+              "map_search": "Qila Mubarak Patiala",
+              "tags": [
+                "fort",
+                "palace",
+                "Patiala"
+              ],
+              "city": "Patiala",
+              "city_id": "patiala",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 30.3255,
+              "lng": 76.402,
+              "coordinates": {
+                "lat": 30.3255,
+                "lng": 76.402
+              },
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1596701062351-8c2c14d1fdd1?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1596701062351-8c2c14d1fdd1?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://punjabtourism.punjab.gov.in/destination/qila-mubarak-patiala",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
+              "verification_status": "verified",
+              "data_confidence": "official"
+            },
+            {
+              "id": "punjab_013",
+              "name": "Moti Bagh Palace",
+              "slug": "punjab_013",
+              "place_type": "palace",
+              "category": "palace",
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
+              "summary": "A grand royal palace set in landscaped grounds and associated with the Patiala royal family.",
+              "short_description": "A grand royal palace set in landscaped grounds and associated with the Patiala royal family.",
+              "detailed_description": "A grand royal palace set in landscaped grounds and associated with the Patiala royal family.",
+              "description": "A grand royal palace set in landscaped grounds and associated with the Patiala royal family.",
+              "area": "Patiala",
+              "best_for": [
+                "architecture",
+                "royal heritage",
+                "photography"
+              ],
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Varies by accessible section",
+              "opening_hours": "Access may be limited; verify before visiting",
+              "visiting_hours": "Access may be limited; verify before visiting",
+              "visitor_notes": [
+                "Some areas may be used by sports or cultural institutions"
+              ],
+              "map_search": "Moti Bagh Palace Patiala",
+              "tags": [
+                "palace",
+                "royal heritage",
+                "Patiala"
+              ],
+              "city": "Patiala",
+              "city_id": "patiala",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 30.306,
+              "lng": 76.386,
+              "coordinates": {
+                "lat": 30.306,
+                "lng": 76.386
+              },
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1609946850720-6d4323229b46?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1609946850720-6d4323229b46?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://punjabtourism.punjab.gov.in/destination/moti-bagh-palace",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
+              "verification_status": "verified",
+              "data_confidence": "official"
             }
           ],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": [],
-          "places_count": 1,
+          "places_count": 3,
           "transport": {
             "railway_stations": [],
             "local_transit": {
@@ -16966,196 +16700,160 @@
           "lng": 76.4984,
           "places": [
             {
-              "id": "anandpur-virasat-e-khalsa",
-              "name": "Virasat-e-Khalsa Museum",
-              "slug": "virasat-e-khalsa-museum",
-              "place_type": "Cultural Monument & Heritage Museum",
+              "id": "punjab_007",
+              "name": "Anandpur Sahib",
+              "slug": "punjab_007",
+              "place_type": "religious_heritage",
+              "category": "religious_heritage",
               "topic": "Heritage",
-              "subtopic": "Museums",
-              "category": "museums",
-              "category_label": "Heritage Architecture Museum",
-              "category_links": [
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Museums"
-                },
-                {
-                  "topic": "Arts",
-                  "subtopic": "Literature"
-                },
-                {
-                  "topic": "Spiritual",
-                  "subtopic": "Sikhism"
-                }
+              "subtopic": "Historical Sites",
+              "summary": "A major Sikh religious town associated with Sikh history and the founding of the Khalsa.",
+              "short_description": "A major Sikh religious town associated with Sikh history and the founding of the Khalsa.",
+              "detailed_description": "A major Sikh religious town associated with Sikh history and the founding of the Khalsa.",
+              "description": "A major Sikh religious town associated with Sikh history and the founding of the Khalsa.",
+              "area": "Rupnagar district",
+              "best_for": [
+                "pilgrimage",
+                "history",
+                "culture"
               ],
-              "importance_level": "iconic",
-              "summary": "Moshe Safdie designed museum complex commemorating 500 years of Sikh history and the 300th anniversary of the Khalsa.",
-              "short_description": "Architectural masterpiece museum complex celebrating the culture and history of Punjab and the Sikh Gurus.",
-              "detailed_description": "Opened in 2011, Virasat-e-Khalsa spans two main complexes connected by a ceremonial bridge over a reflecting pool. Designed by Moshe Safdie, its 27 exhibition galleries utilize interactive installations, tapestries, and audio narratives in Punjabi, Hindi, and English.",
-              "address": "Anandpur Sahib, Rupnagar District, Punjab 140118",
-              "lat": 31.2347,
-              "lng": 76.5022,
+              "suggested_duration": "1 day",
+              "best_time_to_visit": "October to March; Hola Mohalla is especially significant",
+              "entry_fee": "Free",
+              "opening_hours": "Open daily; individual sites vary",
+              "visiting_hours": "Open daily; individual sites vary",
+              "visitor_notes": [
+                "Expect crowds during festivals",
+                "Dress modestly"
+              ],
+              "map_search": "Anandpur Sahib Punjab",
+              "tags": [
+                "Sikhism",
+                "pilgrimage",
+                "Rupnagar"
+              ],
+              "city": "Anandpur Sahib",
+              "city_id": "anandpur-sahib",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 31.236,
+              "lng": 76.4984,
               "coordinates": {
-                "lat": 31.2347,
-                "lng": 76.5022
+                "lat": 31.236,
+                "lng": 76.4984
               },
-              "visiting_hours": "10:00 AM - 05:00 PM (Closed Mondays)",
-              "opening_hours": "10:00 - 17:00",
-              "entry_fee": "Free entry (Online pass recommended)",
-              "entry_fee_domestic": 0,
-              "entry_fee_intl": 0,
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "10:00",
-                "closing_time": "17:00",
-                "closed_days": [
-                  "Monday"
-                ],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 180,
-                "label": "3 Hours",
-                "status": "VERIFIED"
-              },
-              "best_time_to_visit": "October to March",
-              "contact_information": "Anandpur Sahib Foundation: 01887-232592",
-              "official_website": "https://rupnagar.nic.in/tourist-place/virasat-e-khalsa/",
-              "heritage_status": "National Cultural Heritage Museum",
-              "data_confidence": "official",
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://punjabtourism.punjab.gov.in/destination/anandpur-sahib",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
               "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&q=80",
-              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
-              "attribution": "Anandpur Sahib Foundation / Punjab Tourism",
-              "source_url": "https://rupnagar.nic.in/tourist-place/virasat-e-khalsa/",
-              "source_name": "District Administration Rupnagar",
-              "source_type": "district_administration",
-              "sources": [
-                {
-                  "source_name": "District Administration Rupnagar",
-                  "source_url": "https://rupnagar.nic.in/tourist-place/virasat-e-khalsa/",
-                  "source_type": "district_administration",
-                  "evidence_note": "Official district administrative museum guide.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Punjab Heritage and Tourism Promotion Board",
-                  "source_url": "https://punjabtourism.punjab.gov.in",
-                  "source_type": "state_tourism",
-                  "evidence_note": "Official state tourism profile.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
-              ],
-              "source_quality": "place_specific",
-              "audit_note": "Verified live HTTP 200 on 2026-09-10. Title: \"Virasat-e-Khalsa | Rupnagar Web Portal | India\""
-            }
-          ],
-          "heritage": [],
-          "monuments": [],
-          "museums": [
+              "data_confidence": "official"
+            },
             {
-              "id": "anandpur-virasat-e-khalsa",
-              "name": "Virasat-e-Khalsa Museum",
-              "slug": "virasat-e-khalsa-museum",
-              "place_type": "Cultural Monument & Heritage Museum",
+              "id": "punjab_008",
+              "name": "Virasat-e-Khalsa",
+              "slug": "punjab_008",
+              "place_type": "museum",
+              "category": "museum",
               "topic": "Heritage",
-              "subtopic": "Museums",
-              "category": "museums",
-              "category_label": "Heritage Architecture Museum",
-              "category_links": [
-                {
-                  "topic": "Heritage",
-                  "subtopic": "Museums"
-                },
-                {
-                  "topic": "Arts",
-                  "subtopic": "Literature"
-                },
-                {
-                  "topic": "Spiritual",
-                  "subtopic": "Sikhism"
-                }
+              "subtopic": "Historical Sites",
+              "summary": "A major museum presenting Sikh history, culture, and the heritage of Punjab through immersive galleries.",
+              "short_description": "A major museum presenting Sikh history, culture, and the heritage of Punjab through immersive galleries.",
+              "detailed_description": "A major museum presenting Sikh history, culture, and the heritage of Punjab through immersive galleries.",
+              "description": "A major museum presenting Sikh history, culture, and the heritage of Punjab through immersive galleries.",
+              "area": "Anandpur Sahib",
+              "best_for": [
+                "museums",
+                "history",
+                "architecture"
               ],
-              "importance_level": "iconic",
-              "summary": "Moshe Safdie designed museum complex commemorating 500 years of Sikh history and the 300th anniversary of the Khalsa.",
-              "short_description": "Architectural masterpiece museum complex celebrating the culture and history of Punjab and the Sikh Gurus.",
-              "detailed_description": "Opened in 2011, Virasat-e-Khalsa spans two main complexes connected by a ceremonial bridge over a reflecting pool. Designed by Moshe Safdie, its 27 exhibition galleries utilize interactive installations, tapestries, and audio narratives in Punjabi, Hindi, and English.",
-              "address": "Anandpur Sahib, Rupnagar District, Punjab 140118",
-              "lat": 31.2347,
-              "lng": 76.5022,
-              "coordinates": {
-                "lat": 31.2347,
-                "lng": 76.5022
-              },
-              "visiting_hours": "10:00 AM - 05:00 PM (Closed Mondays)",
-              "opening_hours": "10:00 - 17:00",
-              "entry_fee": "Free entry (Online pass recommended)",
-              "entry_fee_domestic": 0,
-              "entry_fee_intl": 0,
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED"
-              },
-              "timings": {
-                "opening_time": "10:00",
-                "closing_time": "17:00",
-                "closed_days": [
-                  "Monday"
-                ],
-                "status": "VERIFIED"
-              },
-              "visit_duration": {
-                "recommended_mins": 180,
-                "label": "3 Hours",
-                "status": "VERIFIED"
-              },
+              "suggested_duration": "2–3 hours",
               "best_time_to_visit": "October to March",
-              "contact_information": "Anandpur Sahib Foundation: 01887-232592",
-              "official_website": "https://rupnagar.nic.in/tourist-place/virasat-e-khalsa/",
-              "heritage_status": "National Cultural Heritage Museum",
-              "data_confidence": "official",
+              "entry_fee": "Paid; verify current rates",
+              "opening_hours": "Usually daytime; weekly closure may apply",
+              "visiting_hours": "Usually daytime; weekly closure may apply",
+              "visitor_notes": [
+                "Reserve sufficient time for all galleries",
+                "Check entry rules before visiting"
+              ],
+              "map_search": "Virasat-e-Khalsa Anandpur Sahib",
+              "tags": [
+                "museum",
+                "Sikh history",
+                "Anandpur Sahib"
+              ],
+              "city": "Anandpur Sahib",
+              "city_id": "anandpur-sahib",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 31.2355,
+              "lng": 76.5055,
+              "coordinates": {
+                "lat": 31.2355,
+                "lng": 76.5055
+              },
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://punjabtourism.punjab.gov.in/destination/virasat-e-khalsa",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
               "verification_status": "verified",
-              "last_verified_on": "2026-03-10",
-              "image_url": "",
-              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=400&q=80",
-              "attribution": "Anandpur Sahib Foundation / Punjab Tourism",
-              "source_url": "https://rupnagar.nic.in/tourist-place/virasat-e-khalsa/",
-              "source_name": "District Administration Rupnagar",
-              "source_type": "district_administration",
-              "sources": [
-                {
-                  "source_name": "District Administration Rupnagar",
-                  "source_url": "https://rupnagar.nic.in/tourist-place/virasat-e-khalsa/",
-                  "source_type": "district_administration",
-                  "evidence_note": "Official district administrative museum guide.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                },
-                {
-                  "source_name": "Punjab Heritage and Tourism Promotion Board",
-                  "source_url": "https://punjabtourism.punjab.gov.in",
-                  "source_type": "state_tourism",
-                  "evidence_note": "Official state tourism profile.",
-                  "accessed_on": "2026-03-10",
-                  "verification_status": "verified"
-                }
-              ]
+              "data_confidence": "official"
+            },
+            {
+              "id": "punjab_009",
+              "name": "Takht Sri Kesgarh Sahib",
+              "slug": "punjab_009",
+              "place_type": "religious_heritage",
+              "category": "religious_heritage",
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
+              "summary": "One of the five Takhts of Sikhism and an important historic gurdwara.",
+              "short_description": "One of the five Takhts of Sikhism and an important historic gurdwara.",
+              "detailed_description": "One of the five Takhts of Sikhism and an important historic gurdwara.",
+              "description": "One of the five Takhts of Sikhism and an important historic gurdwara.",
+              "area": "Anandpur Sahib",
+              "best_for": [
+                "pilgrimage",
+                "history",
+                "architecture"
+              ],
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free",
+              "opening_hours": "Open daily",
+              "visiting_hours": "Open daily",
+              "visitor_notes": [
+                "Head covering required",
+                "Follow gurdwara etiquette"
+              ],
+              "map_search": "Takht Sri Kesgarh Sahib",
+              "tags": [
+                "gurdwara",
+                "Sikhism",
+                "Anandpur Sahib"
+              ],
+              "city": "Anandpur Sahib",
+              "city_id": "anandpur-sahib",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 31.235,
+              "lng": 76.499,
+              "coordinates": {
+                "lat": 31.235,
+                "lng": 76.499
+              },
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1588096344356-9b634839cf9e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1588096344356-9b634839cf9e?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://punjabtourism.punjab.gov.in/destination/takht-sri-kesgarh-sahib",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
+              "verification_status": "verified",
+              "data_confidence": "official"
             }
           ],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": [],
-          "places_count": 1,
+          "places_count": 3,
           "transport": {
             "railway_stations": [],
             "local_transit": {
@@ -17206,12 +16904,6 @@
           "search_keywords": [],
           "verification_status": "VERIFICATION_REQUIRED",
           "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
-          "heritage": [],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": [],
           "live_travel_info": {
             "best_season": null,
             "weather_summary": null,
@@ -17229,7 +16921,8 @@
           "coordinates": {
             "lat": 30.6483,
             "lng": 76.3986
-          }
+          },
+          "places": []
         },
         {
           "id": "fazilka",
@@ -17256,12 +16949,6 @@
           "search_keywords": [],
           "verification_status": "VERIFICATION_REQUIRED",
           "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
-          "heritage": [],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": [],
           "live_travel_info": {
             "best_season": null,
             "weather_summary": null,
@@ -17279,7 +16966,8 @@
           "coordinates": {
             "lat": 30.4038,
             "lng": 74.0255
-          }
+          },
+          "places": []
         },
         {
           "id": "firozepur",
@@ -17306,12 +16994,6 @@
           "search_keywords": [],
           "verification_status": "VERIFICATION_REQUIRED",
           "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
-          "heritage": [],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": [],
           "live_travel_info": {
             "best_season": null,
             "weather_summary": null,
@@ -17329,7 +17011,8 @@
           "coordinates": {
             "lat": 30.9237,
             "lng": 74.6118
-          }
+          },
+          "places": []
         },
         {
           "id": "gurdaspur",
@@ -17356,12 +17039,6 @@
           "search_keywords": [],
           "verification_status": "VERIFICATION_REQUIRED",
           "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
-          "heritage": [],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": [],
           "live_travel_info": {
             "best_season": null,
             "weather_summary": null,
@@ -17379,7 +17056,8 @@
           "coordinates": {
             "lat": 32.0419,
             "lng": 75.4053
-          }
+          },
+          "places": []
         },
         {
           "id": "jalandhar",
@@ -17406,12 +17084,6 @@
           "search_keywords": [],
           "verification_status": "VERIFICATION_REQUIRED",
           "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
-          "heritage": [],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": [],
           "live_travel_info": {
             "best_season": null,
             "weather_summary": null,
@@ -17429,7 +17101,8 @@
           "coordinates": {
             "lat": 31.326,
             "lng": 75.5762
-          }
+          },
+          "places": []
         },
         {
           "id": "kapurthala",
@@ -17456,12 +17129,6 @@
           "search_keywords": [],
           "verification_status": "VERIFICATION_REQUIRED",
           "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
-          "heritage": [],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": [],
           "live_travel_info": {
             "best_season": null,
             "weather_summary": null,
@@ -17479,7 +17146,8 @@
           "coordinates": {
             "lat": 31.38,
             "lng": 75.38
-          }
+          },
+          "places": []
         },
         {
           "id": "ludhiana",
@@ -17499,19 +17167,13 @@
           "status": "DRAFT",
           "prominence": null,
           "is_capital": false,
-          "places_count": 0,
+          "places_count": 1,
           "hero_image_url": null,
           "hero_image": null,
           "aliases": [],
           "search_keywords": [],
           "verification_status": "VERIFICATION_REQUIRED",
           "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
-          "heritage": [],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": [],
           "live_travel_info": {
             "best_season": null,
             "weather_summary": null,
@@ -17529,7 +17191,59 @@
           "coordinates": {
             "lat": 30.901,
             "lng": 75.8573
-          }
+          },
+          "places": [
+            {
+              "id": "punjab_020",
+              "name": "Punjab Agricultural University Museum",
+              "slug": "punjab_020",
+              "place_type": "museum",
+              "category": "museum",
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
+              "summary": "A museum presenting rural Punjab life, agricultural traditions, folk culture, and village heritage.",
+              "short_description": "A museum presenting rural Punjab life, agricultural traditions, folk culture, and village heritage.",
+              "detailed_description": "A museum presenting rural Punjab life, agricultural traditions, folk culture, and village heritage.",
+              "description": "A museum presenting rural Punjab life, agricultural traditions, folk culture, and village heritage.",
+              "area": "Ludhiana",
+              "best_for": [
+                "culture",
+                "rural heritage",
+                "education"
+              ],
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Nominal or paid; verify current rates",
+              "opening_hours": "Usually daytime; verify before visiting",
+              "visiting_hours": "Usually daytime; verify before visiting",
+              "visitor_notes": [
+                "Check campus access and museum opening days"
+              ],
+              "map_search": "Punjab Agricultural University Museum Ludhiana",
+              "tags": [
+                "museum",
+                "rural culture",
+                "Ludhiana"
+              ],
+              "city": "Ludhiana",
+              "city_id": "ludhiana",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 30.901,
+              "lng": 75.808,
+              "coordinates": {
+                "lat": 30.901,
+                "lng": 75.808
+              },
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://pau.edu/museums-and-galleries",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
+              "verification_status": "verified",
+              "data_confidence": "official"
+            }
+          ]
         },
         {
           "id": "pathankot",
@@ -17556,12 +17270,6 @@
           "search_keywords": [],
           "verification_status": "VERIFICATION_REQUIRED",
           "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
-          "heritage": [],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": [],
           "live_travel_info": {
             "best_season": null,
             "weather_summary": null,
@@ -17579,7 +17287,8 @@
           "coordinates": {
             "lat": 32.2684,
             "lng": 75.6499
-          }
+          },
+          "places": []
         },
         {
           "id": "rupnagar",
@@ -17599,19 +17308,13 @@
           "status": "DRAFT",
           "prominence": null,
           "is_capital": false,
-          "places_count": 0,
+          "places_count": 1,
           "hero_image_url": null,
           "hero_image": null,
           "aliases": [],
           "search_keywords": [],
           "verification_status": "VERIFICATION_REQUIRED",
           "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
-          "heritage": [],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": [],
           "live_travel_info": {
             "best_season": null,
             "weather_summary": null,
@@ -17629,7 +17332,60 @@
           "coordinates": {
             "lat": 30.9664,
             "lng": 76.5331
-          }
+          },
+          "places": [
+            {
+              "id": "punjab_016",
+              "name": "Ropar Wetland",
+              "slug": "punjab_016",
+              "place_type": "wildlife_nature",
+              "category": "wildlife_nature",
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
+              "summary": "A Ramsar-listed wetland supporting aquatic habitats and migratory birdlife.",
+              "short_description": "A Ramsar-listed wetland supporting aquatic habitats and migratory birdlife.",
+              "detailed_description": "A Ramsar-listed wetland supporting aquatic habitats and migratory birdlife.",
+              "description": "A Ramsar-listed wetland supporting aquatic habitats and migratory birdlife.",
+              "area": "Rupnagar",
+              "best_for": [
+                "birdwatching",
+                "nature",
+                "photography"
+              ],
+              "suggested_duration": "2–3 hours",
+              "best_time_to_visit": "November to February",
+              "entry_fee": "Usually free or nominal",
+              "opening_hours": "Daytime; access may vary",
+              "visiting_hours": "Daytime; access may vary",
+              "visitor_notes": [
+                "Visit with local guidance where possible",
+                "Carry water and sun protection"
+              ],
+              "map_search": "Ropar Wetland Rupnagar",
+              "tags": [
+                "wetland",
+                "birds",
+                "Rupnagar"
+              ],
+              "city": "Rupnagar",
+              "city_id": "rupnagar",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 30.9855,
+              "lng": 76.516,
+              "coordinates": {
+                "lat": 30.9855,
+                "lng": 76.516
+              },
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://punjabtourism.punjab.gov.in/destination/ropar-wetland",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
+              "verification_status": "verified",
+              "data_confidence": "official"
+            }
+          ]
         },
         {
           "id": "sas-nagar",
@@ -17656,12 +17412,6 @@
           "search_keywords": [],
           "verification_status": "VERIFICATION_REQUIRED",
           "verification_note": "City shell added from itinerary city registry. Metadata and places pending verification.",
-          "heritage": [],
-          "monuments": [],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [],
-          "nature_parks_zoo": [],
           "live_travel_info": {
             "best_season": null,
             "weather_summary": null,
@@ -17679,7 +17429,396 @@
           "coordinates": {
             "lat": 30.7046,
             "lng": 76.7179
-          }
+          },
+          "places": []
+        },
+        {
+          "id": "attari",
+          "name": "Attari",
+          "slug": "attari",
+          "state": "Punjab",
+          "state_id": "punjab",
+          "district": "Attari",
+          "entity_type": "city",
+          "status": "active",
+          "verification_status": "verified",
+          "coordinates": {
+            "lat": 31.6048,
+            "lng": 74.5714
+          },
+          "lat": 31.6048,
+          "lng": 74.5714,
+          "places_count": 1,
+          "places": [
+            {
+              "id": "punjab_003",
+              "name": "Wagah–Attari Border",
+              "slug": "punjab_003",
+              "place_type": "cultural_attraction",
+              "category": "cultural_attraction",
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
+              "summary": "The India–Pakistan border famous for its ceremonial lowering-of-the-flags ceremony.",
+              "short_description": "The India–Pakistan border famous for its ceremonial lowering-of-the-flags ceremony.",
+              "detailed_description": "The India–Pakistan border famous for its ceremonial lowering-of-the-flags ceremony.",
+              "description": "The India–Pakistan border famous for its ceremonial lowering-of-the-flags ceremony.",
+              "area": "Attari, Amritsar district",
+              "best_for": [
+                "patriotism",
+                "culture",
+                "family outings"
+              ],
+              "suggested_duration": "3–4 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Usually free; seating or access rules may vary",
+              "opening_hours": "Ceremony timing changes seasonally",
+              "visiting_hours": "Ceremony timing changes seasonally",
+              "visitor_notes": [
+                "Arrive early",
+                "Carry valid identification",
+                "Follow security instructions"
+              ],
+              "map_search": "Attari Wagah Border Ceremony",
+              "tags": [
+                "border",
+                "ceremony",
+                "Amritsar"
+              ],
+              "city": "Attari",
+              "city_id": "attari",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 31.6048,
+              "lng": 74.5714,
+              "coordinates": {
+                "lat": 31.6048,
+                "lng": 74.5714
+              },
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://punjabtourism.punjab.gov.in/destination/wagah-border",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
+              "verification_status": "verified",
+              "data_confidence": "official"
+            }
+          ]
+        },
+        {
+          "id": "bathinda",
+          "name": "Bathinda",
+          "slug": "bathinda",
+          "state": "Punjab",
+          "state_id": "punjab",
+          "district": "Bathinda",
+          "entity_type": "city",
+          "status": "active",
+          "verification_status": "verified",
+          "coordinates": {
+            "lat": 30.211,
+            "lng": 74.9455
+          },
+          "lat": 30.211,
+          "lng": 74.9455,
+          "places_count": 1,
+          "places": [
+            {
+              "id": "punjab_010",
+              "name": "Qila Mubarak",
+              "slug": "punjab_010",
+              "place_type": "fort",
+              "category": "fort",
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
+              "summary": "An ancient fort associated with the history of Bathinda and the region’s medieval past.",
+              "short_description": "An ancient fort associated with the history of Bathinda and the region’s medieval past.",
+              "detailed_description": "An ancient fort associated with the history of Bathinda and the region’s medieval past.",
+              "description": "An ancient fort associated with the history of Bathinda and the region’s medieval past.",
+              "area": "Bathinda",
+              "best_for": [
+                "history",
+                "architecture",
+                "photography"
+              ],
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Free or nominal; verify locally",
+              "opening_hours": "Daytime; may vary",
+              "visiting_hours": "Daytime; may vary",
+              "visitor_notes": [
+                "Some areas may have restricted access"
+              ],
+              "map_search": "Qila Mubarak Bathinda",
+              "tags": [
+                "fort",
+                "history",
+                "Bathinda"
+              ],
+              "city": "Bathinda",
+              "city_id": "bathinda",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 30.211,
+              "lng": 74.9455,
+              "coordinates": {
+                "lat": 30.211,
+                "lng": 74.9455
+              },
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1596701062351-8c2c14d1fdd1?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1596701062351-8c2c14d1fdd1?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://punjabtourism.punjab.gov.in/destination/qila-mubarak-bathinda",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
+              "verification_status": "verified",
+              "data_confidence": "official"
+            }
+          ]
+        },
+        {
+          "id": "harike",
+          "name": "Harike",
+          "slug": "harike",
+          "state": "Punjab",
+          "state_id": "punjab",
+          "district": "Harike",
+          "entity_type": "city",
+          "status": "active",
+          "verification_status": "verified",
+          "coordinates": {
+            "lat": 31.1495,
+            "lng": 74.962
+          },
+          "lat": 31.1495,
+          "lng": 74.962,
+          "places_count": 1,
+          "places": [
+            {
+              "id": "punjab_015",
+              "name": "Harike Wetland and Bird Sanctuary",
+              "slug": "punjab_015",
+              "place_type": "wildlife_nature",
+              "category": "wildlife_nature",
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
+              "summary": "A large wetland and bird habitat known for migratory birds and scenic waterways.",
+              "short_description": "A large wetland and bird habitat known for migratory birds and scenic waterways.",
+              "detailed_description": "A large wetland and bird habitat known for migratory birds and scenic waterways.",
+              "description": "A large wetland and bird habitat known for migratory birds and scenic waterways.",
+              "area": "Tarn Taran and Firozpur districts",
+              "best_for": [
+                "birdwatching",
+                "nature",
+                "photography"
+              ],
+              "suggested_duration": "2–4 hours",
+              "best_time_to_visit": "November to February",
+              "entry_fee": "May vary; verify locally",
+              "opening_hours": "Daytime; access may depend on season and conditions",
+              "visiting_hours": "Daytime; access may depend on season and conditions",
+              "visitor_notes": [
+                "Carry binoculars",
+                "Avoid disturbing birds",
+                "Boat access may be seasonal"
+              ],
+              "map_search": "Harike Wetland Bird Sanctuary Punjab",
+              "tags": [
+                "wetland",
+                "birds",
+                "nature"
+              ],
+              "city": "Harike",
+              "city_id": "harike",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 31.1495,
+              "lng": 74.962,
+              "coordinates": {
+                "lat": 31.1495,
+                "lng": 74.962
+              },
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1448375240586-882707db888b?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://punjabtourism.punjab.gov.in/destination/harike-wetland",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
+              "verification_status": "verified",
+              "data_confidence": "official"
+            }
+          ]
+        },
+        {
+          "id": "chandigarh",
+          "name": "Chandigarh",
+          "slug": "chandigarh",
+          "state": "Punjab",
+          "state_id": "punjab",
+          "district": "Chandigarh",
+          "entity_type": "city",
+          "status": "active",
+          "verification_status": "verified",
+          "coordinates": {
+            "lat": 30.7421,
+            "lng": 76.8188
+          },
+          "lat": 30.7421,
+          "lng": 76.8188,
+          "places_count": 3,
+          "places": [
+            {
+              "id": "punjab_017",
+              "name": "Sukhna Lake",
+              "slug": "punjab_017",
+              "place_type": "lake_recreation",
+              "category": "lake_recreation",
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
+              "summary": "A popular man-made lake offering boating, walking paths, birdwatching, and sunset views.",
+              "short_description": "A popular man-made lake offering boating, walking paths, birdwatching, and sunset views.",
+              "detailed_description": "A popular man-made lake offering boating, walking paths, birdwatching, and sunset views.",
+              "description": "A popular man-made lake offering boating, walking paths, birdwatching, and sunset views.",
+              "area": "Chandigarh",
+              "best_for": [
+                "family outings",
+                "boating",
+                "nature",
+                "photography"
+              ],
+              "suggested_duration": "2–3 hours",
+              "best_time_to_visit": "October to March; early morning or evening",
+              "entry_fee": "Lake access usually free; activities may be paid",
+              "opening_hours": "Generally open from morning to evening",
+              "visiting_hours": "Generally open from morning to evening",
+              "visitor_notes": [
+                "Boating depends on weather and operating hours",
+                "Weekends can be crowded"
+              ],
+              "map_search": "Sukhna Lake Chandigarh",
+              "tags": [
+                "lake",
+                "boating",
+                "Chandigarh"
+              ],
+              "city": "Chandigarh",
+              "city_id": "chandigarh",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 30.7421,
+              "lng": 76.8188,
+              "coordinates": {
+                "lat": 30.7421,
+                "lng": 76.8188
+              },
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://chandigarhtourism.gov.in/sukhna-lake.html",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
+              "verification_status": "verified",
+              "data_confidence": "official"
+            },
+            {
+              "id": "punjab_018",
+              "name": "Rock Garden",
+              "slug": "punjab_018",
+              "place_type": "art_park",
+              "category": "art_park",
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
+              "summary": "An imaginative sculpture garden created from industrial and household waste materials.",
+              "short_description": "An imaginative sculpture garden created from industrial and household waste materials.",
+              "detailed_description": "An imaginative sculpture garden created from industrial and household waste materials.",
+              "description": "An imaginative sculpture garden created from industrial and household waste materials.",
+              "area": "Chandigarh",
+              "best_for": [
+                "art",
+                "architecture",
+                "family outings",
+                "photography"
+              ],
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "October to March",
+              "entry_fee": "Paid; verify current rates",
+              "opening_hours": "Usually daytime; timings vary by season",
+              "visiting_hours": "Usually daytime; timings vary by season",
+              "visitor_notes": [
+                "Wear comfortable footwear",
+                "Allow time for narrow pathways"
+              ],
+              "map_search": "Rock Garden Chandigarh",
+              "tags": [
+                "art",
+                "sculpture",
+                "Chandigarh"
+              ],
+              "city": "Chandigarh",
+              "city_id": "chandigarh",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 30.7525,
+              "lng": 76.8066,
+              "coordinates": {
+                "lat": 30.7525,
+                "lng": 76.8066
+              },
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1598890777032-bde13fbe3493?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1598890777032-bde13fbe3493?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://chandigarhtourism.gov.in/rock-garden.html",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
+              "verification_status": "verified",
+              "data_confidence": "official"
+            },
+            {
+              "id": "punjab_019",
+              "name": "Rose Garden",
+              "slug": "punjab_019",
+              "place_type": "garden",
+              "category": "garden",
+              "topic": "Heritage",
+              "subtopic": "Historical Sites",
+              "summary": "A landscaped garden known for its extensive collection of roses and seasonal floral displays.",
+              "short_description": "A landscaped garden known for its extensive collection of roses and seasonal floral displays.",
+              "detailed_description": "A landscaped garden known for its extensive collection of roses and seasonal floral displays.",
+              "description": "A landscaped garden known for its extensive collection of roses and seasonal floral displays.",
+              "area": "Chandigarh",
+              "best_for": [
+                "nature",
+                "photography",
+                "family outings"
+              ],
+              "suggested_duration": "1–2 hours",
+              "best_time_to_visit": "February to March for rose blooms",
+              "entry_fee": "Usually free",
+              "opening_hours": "Generally open during daylight hours",
+              "visiting_hours": "Generally open during daylight hours",
+              "visitor_notes": [
+                "Best visited in the morning or late afternoon"
+              ],
+              "map_search": "Zakir Hussain Rose Garden Chandigarh",
+              "tags": [
+                "garden",
+                "roses",
+                "Chandigarh"
+              ],
+              "city": "Chandigarh",
+              "city_id": "chandigarh",
+              "state_id": "punjab",
+              "state": "Punjab",
+              "lat": 30.746,
+              "lng": 76.782,
+              "coordinates": {
+                "lat": 30.746,
+                "lng": 76.782
+              },
+              "rating": 4.8,
+              "thumbnail_url": "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=800&auto=format&fit=crop&q=80",
+              "image_url": "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=800&auto=format&fit=crop&q=80",
+              "source_url": "https://chandigarhtourism.gov.in/rose-garden.html",
+              "source_name": "Punjab Tourism & Heritage Promotion Board",
+              "verification_status": "verified",
+              "data_confidence": "official"
+            }
+          ]
         }
       ],
       "region_type": "state",

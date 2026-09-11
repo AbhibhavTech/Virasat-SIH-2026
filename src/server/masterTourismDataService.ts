@@ -137,6 +137,9 @@ export interface HotelRecord {
   price_range: string;
   category: string;
   rating: number;
+  price_per_night?: number;
+  price_indication?: string;
+  location?: string;
   amenities?: string[];
   thumbnail_url?: string;
   image_url?: string;
@@ -379,6 +382,7 @@ export class MasterTourismDataService {
       loadPlacesFile(path.join(dataDir, 'delhi', 'places.json'));
       loadPlacesFile(path.join(dataDir, 'rajasthan', 'places.json'));
       loadPlacesFile(path.join(dataDir, 'kerala', 'places.json'));
+      loadPlacesFile(path.join(dataDir, 'punjab', 'places.json'));
 
       // 7. Load Heritage & UNESCO sites
       const heritagePath = path.join(dataDir, 'heritage', 'monuments.json');
@@ -470,7 +474,13 @@ export class MasterTourismDataService {
       if (fs.existsSync(healthPath)) this.destinationHealthData = JSON.parse(fs.readFileSync(healthPath, 'utf-8'));
 
       const reportsPath = path.join(dataDir, 'reports.json');
-      if (fs.existsSync(reportsPath)) this.reportsData = JSON.parse(fs.readFileSync(reportsPath, 'utf-8'));
+      // Ensure Punjab destinations strictly use verified punjab_001 - punjab_020 IDs
+      if (this.destinations.has('punjab_001')) {
+        this.destinations.delete('golden-temple-amritsar');
+        this.destinations.delete('golden-temple');
+        this.destinations.delete('jallianwala-bagh');
+        this.destinations.delete('partition-museum');
+      }
 
       // 10. Perform Normalization & Derive Secondary Master Collections
       this.deriveMasterIndices(dataDir);
