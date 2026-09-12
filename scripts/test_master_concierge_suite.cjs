@@ -8,10 +8,11 @@ console.log('================================================================\n'
 const PORT = 3014;
 const env = { ...process.env, PORT: String(PORT), NODE_ENV: 'production' };
 
-console.log(`[1] Launching Virasat server on port ${PORT}...`);
+const path = require('path');
+const projectRoot = path.resolve(__dirname, '..');
 const cmd = process.platform === 'win32' ? 'cmd.exe' : 'npx';
 const args = process.platform === 'win32' ? ['/c', 'npx', 'tsx', 'server.ts'] : ['tsx', 'server.ts'];
-const serverProc = spawn(cmd, args, { env });
+const serverProc = spawn(cmd, args, { env, cwd: projectRoot });
 
 let output = '';
 let testsStarted = false;
