@@ -96,6 +96,21 @@ export async function execute(args: {
             if (!matchesQuery) continue;
           }
 
+          const rawTimings = p.visiting_hours || p.timings;
+          let cleanTimings = '9:00 AM - 5:30 PM';
+          if (typeof rawTimings === 'string') cleanTimings = rawTimings;
+          else if (typeof rawTimings === 'object' && rawTimings) {
+            cleanTimings = rawTimings.opening && rawTimings.closing ? `${rawTimings.opening} - ${rawTimings.closing}` : Object.values(rawTimings).join(', ');
+          }
+
+          const rawFee = p.entry_fee;
+          let cleanFee = '₹50 (Indian) / ₹300 (Foreigner)';
+          if (typeof rawFee === 'string') cleanFee = rawFee;
+          else if (typeof rawFee === 'number') cleanFee = `₹${rawFee}`;
+          else if (typeof rawFee === 'object' && rawFee) {
+            cleanFee = rawFee.indian !== undefined ? `₹${rawFee.indian} (Indian) / ₹${rawFee.foreigner || 300} (Foreigner)` : Object.entries(rawFee).map(([k, v]) => `${k}: ₹${v}`).join(' / ');
+          }
+
           matchedPlaces.push({
             id: p.id,
             name: p.name,
@@ -105,8 +120,8 @@ export async function execute(args: {
             summary: p.summary,
             rating: p.rating || 4.7,
             image_url: p.image_url,
-            timings: p.visiting_hours || p.timings || '9:00 AM - 5:30 PM',
-            entry_fee: p.entry_fee || '₹50 (Indian) / ₹300 (Foreigner)',
+            timings: cleanTimings,
+            entry_fee: cleanFee,
             hotels_count: (p.hotels || []).length,
             official_source: p.source_url || 'Archaeological Survey of India / State Tourism',
           });

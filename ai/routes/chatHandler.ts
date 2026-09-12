@@ -3,6 +3,11 @@ import { GoogleGenAI } from '@google/genai';
 import { VIRASAT_SYSTEM_PROMPT } from '../prompts/virasatSystemPrompt';
 import { buildContextPayload, formatContextForPrompt } from '../context/buildContextPayload';
 import { toolRegistry, getGeminiToolDeclarations, executeTool, getAllToolNames } from '../config/toolRegistry';
+import { detectIntent } from '../engine/intentEngine';
+import { extractEntities } from '../engine/entityExtractor';
+import { getConversationState, updateConversationState } from '../engine/conversationMemory';
+import { generateSmartItinerary } from '../engine/itineraryPlanner';
+import { buildResponseForIntent } from '../engine/responseGenerator';
 
 export const aiChatRouter = Router();
 
@@ -41,7 +46,7 @@ aiChatRouter.get('/tools', (_req: Request, res: Response) => {
 aiChatRouter.get('/health', (_req: Request, res: Response) => {
   res.json({
     status: 'ok',
-    service: 'Virasat Isolated AI Subsystem',
+    service: 'Virasat AI Travel & Heritage Concierge',
     tools_registered: getAllToolNames().length,
     gemini_configured: Boolean(process.env.GEMINI_API_KEY),
   });
@@ -63,17 +68,45 @@ aiChatRouter.post('/chat', async (req: Request, res: Response): Promise<void> =>
 
   const sessionId = conversation_id || `session-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`;
   const liveContext = buildContextPayload(req);
-  const contextSummary = formatContextForPrompt(liveContext);
+
+  // 1. Run Intent Engine & Entity Extractor
+  const intentResult = detectIntent(rawQuery, liveContext);
+  const entities = extractEntities(rawQuery, liveContext);
+  entities.query_focus = rawQuery;
+
+  // 2. Update Stateful Multi-Turn Conversation Memory
+  const tripState = updateConversationState(sessionId, entities, intentResult.intent);
+
+  // Set selected city or destination into context if known
+  if (tripState.destination && !liveContext.selectedCity) {
+    liveContext.selectedCity = tripState.destination;
+  }
+  if (tripState.origin && !liveContext.userLocation.city) {
+    liveContext.userLocation.city = tripState.origin;
+  }
 
   const executedToolCalls: Array<{ tool: string; args: any; result: any }> = [];
   let replyText = '';
   let usedEngine = 'Virasat Grounded Assistant';
+  let generatedPlan: any = null;
+  let dynamicQuickActions: string[] = [];
+  let sourceList: string[] | undefined = undefined;
 
   const ai = getAIClient();
 
-  // 1. Try Gemini LLM with function calling
+  // 3. Try Gemini LLM if API Key is available
   if (ai) {
     try {
+      const memoryStr = `ACTIVE TRIP MEMORY:
+Destination: ${tripState.destination || 'Not chosen yet'}
+Origin: ${tripState.origin || 'Not specified'}
+Duration: ${tripState.duration_days ? `${tripState.duration_days} Days` : 'Not specified'}
+Budget: ${tripState.budget ? `₹${tripState.budget}` : 'Flexible'}
+Travel Style: ${tripState.travel_style || 'Moderate'}
+Hotel Tier: ${tripState.hotel_tier || 'Moderate'}
+Interests: ${tripState.interests.join(', ') || 'General Sightseeing'}`;
+
+      const contextSummary = `${formatContextForPrompt(liveContext)}\n\n${memoryStr}`;
       const systemInstruction = `${VIRASAT_SYSTEM_PROMPT}\n\n${contextSummary}`;
       const geminiTools = getGeminiToolDeclarations();
 
@@ -102,7 +135,6 @@ aiChatRouter.post('/chat', async (req: Request, res: Response): Promise<void> =>
             new Promise<any>((_, reject) => setTimeout(() => reject(new Error('Timeout')), 6500)),
           ]);
 
-          // Check if model called functions
           const functionCalls = (response as any)?.functionCalls || [];
           if (functionCalls.length > 0) {
             const toolResultsParts: any[] = [];
@@ -123,7 +155,6 @@ aiChatRouter.post('/chat', async (req: Request, res: Response): Promise<void> =>
               });
             }
 
-            // Second turn: send function response back to Gemini to synthesize natural reply
             contents.push(response.candidates?.[0]?.content);
             contents.push({ role: 'user', parts: toolResultsParts });
 
@@ -146,42 +177,92 @@ aiChatRouter.post('/chat', async (req: Request, res: Response): Promise<void> =>
             usedEngine = mName;
             break;
           }
-        } catch (callErr) {
-          // Try next fallback model
+        } catch {
+          // Fallback to next model
         }
       }
     } catch (err) {
-      console.warn('[AI Router] Gemini inference failed, engaging intelligent tool fallback:', err);
+      console.warn('[AI Router] Gemini inference exception:', err);
     }
   }
 
-  // 2. Intelligent Deterministic Fallback if model was offline or didn't produce replyText
+  // 4. Intelligent Deterministic Brain (Handles All Intents Natively)
   if (!replyText) {
-    const qLower = rawQuery.toLowerCase();
+    const intent = intentResult.intent;
 
-    if (/hotel|stay|resort|lodge|accommodation|room/i.test(qLower)) {
-      const city = liveContext.selectedCity || liveContext.userLocation.city || 'Jaipur';
-      const hotelRes = await executeTool('searchHotels', { city, limit: 3 }, liveContext);
+    // Social / Conversational Intents
+    if (
+      intent === 'GREETING' ||
+      intent === 'CASUAL_CONVERSATION' ||
+      intent === 'ABOUT_VIRASAT' ||
+      intent === 'HELP' ||
+      intent === 'FAREWELL' ||
+      intent === 'THANKS' ||
+      intent === 'COMPARISON'
+    ) {
+      const formatted = buildResponseForIntent(intentResult, tripState);
+      replyText = formatted.reply;
+      dynamicQuickActions = formatted.suggested_actions;
+    } else if (intent === 'YOU_DECIDE') {
+      const formatted = buildResponseForIntent(intentResult, tripState);
+      replyText = formatted.reply;
+      dynamicQuickActions = formatted.suggested_actions;
+    } else if (intent === 'TRIP_PLANNING' || intent === 'ITINERARY_MODIFICATION') {
+      generatedPlan = generateSmartItinerary(tripState);
+      tripState.lastItinerary = generatedPlan;
+
+      // Also invoke searchTouristPlaces tool so frontend receives places
+      const city = tripState.destination || 'Jaipur';
+      const placesRes = await executeTool('searchTouristPlaces', { city, limit: 4 }, liveContext);
+      executedToolCalls.push({ tool: 'searchTouristPlaces', args: { city }, result: placesRes });
+
+      // And get transport options if origin is known
+      if (tripState.origin) {
+        const transRes = await executeTool('getTransportOptions', { origin: tripState.origin, destination: city }, liveContext);
+        executedToolCalls.push({ tool: 'getTransportOptions', args: { origin: tripState.origin, destination: city }, result: transRes });
+      }
+
+      const formatted = buildResponseForIntent(intentResult, tripState, generatedPlan);
+      replyText = formatted.reply;
+      dynamicQuickActions = formatted.suggested_actions;
+      sourceList = formatted.sources;
+    } else if (intent === 'HOTEL_SEARCH' || intent === 'HOTEL_COMPARISON') {
+      const city = tripState.destination || liveContext.selectedCity || 'Jaipur';
+      const hotelRes = await executeTool('searchHotels', { city, category: tripState.hotel_tier, limit: 4 }, liveContext);
       executedToolCalls.push({ tool: 'searchHotels', args: { city }, result: hotelRes });
 
       if (hotelRes.hotels && hotelRes.hotels.length > 0) {
-        replyText = `Here are verified accommodations in **${city}**:\n\n` +
-          hotelRes.hotels.map((h: any) => `🏨 **${h.name}** (${h.category})\n   • Rate: ${h.price} | Rating: ★ ${h.rating}\n   • Location: ${h.location}`).join('\n\n') +
-          `\n\nWould you like transit options or nearby attractions?`;
+        replyText = intentResult.isHinglish
+          ? `Yeh rahe **${city}** ke verified accommodations (${tripState.hotel_tier || 'comfortable'} category):\n\n` +
+            hotelRes.hotels.map((h: any) => `🏨 **${h.name}** (${h.category})\n   • Rate: ${h.price} | Rating: ★ ${h.rating}\n   • Location: ${h.location}`).join('\n\n') +
+            `\n\nKya aap inke paas ke monuments ya transport routes dekhna chahte hain?`
+          : `Here are verified accommodations in **${city}**:\n\n` +
+            hotelRes.hotels.map((h: any) => `🏨 **${h.name}** (${h.category})\n   • Rate: ${h.price} | Rating: ★ ${h.rating}\n   • Location: ${h.location}`).join('\n\n') +
+            `\n\nWould you like nearby monument recommendations or transport options?`;
+      } else {
+        replyText = `Verified hotels list is being updated for ${city}. Standard heritage stays in ${city} range between ₹2,500 and ₹7,000 per night.`;
       }
-    } else if (/food|restaurant|eat|cuisine|dish|thali|sweet|chaat/i.test(qLower)) {
-      const city = liveContext.selectedCity || liveContext.userLocation.city || 'Delhi';
-      const foodRes = await executeTool('searchRestaurants', { city, limit: 3 }, liveContext);
+      dynamicQuickActions = ['Compare Stays', 'Budget Hotels', 'Luxury Palace Hotels', 'Plan Trip to ' + city];
+      sourceList = ['State Tourism Development Corporation', 'Virasat Hotel Registry'];
+    } else if (intent === 'FOOD_SEARCH' || intent === 'RESTAURANT_SEARCH') {
+      const city = tripState.destination || liveContext.selectedCity || 'Agra';
+      const foodRes = await executeTool('searchRestaurants', { city, limit: 4 }, liveContext);
       executedToolCalls.push({ tool: 'searchRestaurants', args: { city }, result: foodRes });
 
       if (foodRes.recommendations && foodRes.recommendations.length > 0) {
-        replyText = `Discover the authentic culinary heritage of **${city}**:\n\n` +
-          foodRes.recommendations.map((r: any) => `🥘 **${r.name}**\n   • ${r.description}\n   • Famous at: ${r.popular_locations?.join(', ')}`).join('\n\n') +
-          `\n\nWould you like monument recommendations near these dining hubs?`;
+        replyText = intentResult.isHinglish
+          ? `**${city}** ka authentic culinary heritage aur mashhoor swad:\n\n` +
+            foodRes.recommendations.map((r: any) => `🥘 **${r.name}**\n   • ${r.description}\n   • Kahan milega: ${r.popular_locations?.join(', ')}`).join('\n\n') +
+            `\n\nIn food streets ke aas-paas ke heritage spots dekhne hain?`
+          : `Authentic culinary heritage of **${city}**:\n\n` +
+            foodRes.recommendations.map((r: any) => `🥘 **${r.name}**\n   • ${r.description}\n   • Famous locations: ${r.popular_locations?.join(', ')}`).join('\n\n') +
+            `\n\nWould you like monument recommendations near these culinary lanes?`;
       }
-    } else if (/train|flight|airport|station|rail|route|transit|reach|how to go/i.test(qLower)) {
-      const dest = liveContext.selectedCity || 'Jaipur';
-      const orig = liveContext.userLocation.city || 'New Delhi';
+      dynamicQuickActions = ['Nearby Monuments', 'Traditional Bazaars', 'Find Stays', 'How to Reach'];
+      sourceList = ['Ministry of Culture Gastronomic Archives', 'Virasat Culinary Guide'];
+    } else if (intent === 'TRAIN_SEARCH' || intent === 'FLIGHT_SEARCH' || intent === 'TRANSPORT_SEARCH') {
+      const dest = tripState.destination || 'Jaipur';
+      const orig = tripState.origin || 'New Delhi';
       const transRes = await executeTool('getTransportOptions', { origin: orig, destination: dest }, liveContext);
       executedToolCalls.push({ tool: 'getTransportOptions', args: { origin: orig, destination: dest }, result: transRes });
 
@@ -190,76 +271,138 @@ aiChatRouter.post('/chat', async (req: Request, res: Response): Promise<void> =>
       const airMsg = opt.air?.available ? `✈️ **Flight**: ${opt.air.summary} (${opt.air.approx_duration})` : '';
       const roadMsg = opt.road?.available ? `🚗 **Road**: ${opt.road.summary} (${opt.road.approx_duration})` : '';
 
-      replyText = `Verified multimodal transit options from **${transRes.origin}** to **${transRes.destination}** (~${transRes.straight_line_km} km):\n\n` +
-        [trainMsg, airMsg, roadMsg].filter(Boolean).join('\n\n') +
-        `\n\nAll rail routing connects via official Indian Railways IRCTC mainline junctions.`;
-    } else if (/weather|climate|rain|temperature|best time/i.test(qLower)) {
-      const city = liveContext.selectedCity || liveContext.userLocation.city || 'Delhi';
+      replyText = intentResult.isHinglish
+        ? `**${transRes.origin}** se **${transRes.destination}** tak ke verified multimodal transit vikalp (~${transRes.straight_line_km} km):\n\n` +
+          [trainMsg, airMsg, roadMsg].filter(Boolean).join('\n\n') +
+          `\n\nSabhi rail connections official Indian Railways IRCTC mainline junctions se connected hain.`
+        : `Verified multimodal travel options from **${transRes.origin}** to **${transRes.destination}** (~${transRes.straight_line_km} km):\n\n` +
+          [trainMsg, airMsg, roadMsg].filter(Boolean).join('\n\n') +
+          `\n\nAll rail connections are connected via official Indian Railways IRCTC mainline junctions.`;
+
+      dynamicQuickActions = ['Find Hotels in ' + dest, 'Estimated Budget', 'Emergency Helplines', 'Top Sights in ' + dest];
+      sourceList = ['Indian Railways IRCTC', 'National Highways Authority of India'];
+    } else if (intent === 'WEATHER_QUERY') {
+      const city = tripState.destination || liveContext.selectedCity || 'Shimla';
       const weatherRes = await executeTool('getWeather', { city }, liveContext);
       executedToolCalls.push({ tool: 'getWeather', args: { city }, result: weatherRes });
 
-      replyText = `🌤️ **Seasonal Climate for ${weatherRes.city}** (${weatherRes.month}):\n\n` +
-        `• **Temperature Range**: ${weatherRes.temperature_range}\n` +
-        `• **Conditions**: ${weatherRes.condition}\n` +
-        `• **Best Season to Visit**: ${weatherRes.best_time_to_visit}\n` +
-        `• **Travel Advisory**: ${weatherRes.travel_advisory}`;
-    } else if (/budget|cost|expense|kitna kharcha/i.test(qLower)) {
-      const dest = liveContext.selectedCity || 'Rajasthan';
-      const budgetRes = await executeTool('estimateBudget', { destination: dest, duration_days: 3 }, liveContext);
+      replyText = intentResult.isHinglish
+        ? `🌤️ **${weatherRes.city} ka Mausam aur Travel Advisory** (${weatherRes.month}):\n\n` +
+          `• **Temperature**: ${weatherRes.temperature_range}\n` +
+          `• **Conditions**: ${weatherRes.condition}\n` +
+          `• **Ghumne ka Sabse Accha Samay**: ${weatherRes.best_time_to_visit}\n` +
+          `• **Advisory**: ${weatherRes.travel_advisory}`
+        : `🌤️ **Seasonal Climate for ${weatherRes.city}** (${weatherRes.month}):\n\n` +
+          `• **Temperature Range**: ${weatherRes.temperature_range}\n` +
+          `• **Condition**: ${weatherRes.condition}\n` +
+          `• **Best Season to Visit**: ${weatherRes.best_time_to_visit}\n` +
+          `• **Travel Advisory**: ${weatherRes.travel_advisory}`;
+
+      dynamicQuickActions = ['Best Season to Visit', 'Recommended Clothing', 'Plan Trip to ' + city, 'Find Stays'];
+      sourceList = ['India Meteorological Department Guidelines', 'State Tourism Climate Guide'];
+    } else if (intent === 'BUDGET_PLANNING') {
+      const dest = tripState.destination || 'Rajasthan';
+      const budgetRes = await executeTool(
+        'estimateBudget',
+        { destination: dest, duration_days: tripState.duration_days || 3, travel_style: tripState.travel_style },
+        liveContext
+      );
       executedToolCalls.push({ tool: 'estimateBudget', args: { destination: dest }, result: budgetRes });
 
-      replyText = `💰 **Estimated Trip Budget for ${budgetRes.destination}** (${budgetRes.duration}, ${budgetRes.party_size}):\n\n` +
-        `• **Accommodation**: ${budgetRes.breakdown_inr.accommodation}\n` +
-        `• **Meals & Dining**: ${budgetRes.breakdown_inr.food_dining}\n` +
-        `• **Local Transit**: ${budgetRes.breakdown_inr.local_transit}\n` +
-        `• **Monument Entries**: ${budgetRes.breakdown_inr.monument_tickets}\n\n` +
-        `**Total Estimate**: ${budgetRes.total_estimated_budget} (~${budgetRes.estimated_per_person} per person).`;
-    } else if (/emergency|help|hospital|police|helpline|safe/i.test(qLower)) {
-      const city = liveContext.selectedCity || liveContext.userLocation.city || 'India';
+      replyText = intentResult.isHinglish
+        ? `💰 **${budgetRes.destination} ka Estimated Trip Budget** (${budgetRes.duration}, ${budgetRes.party_size}):\n\n` +
+          `• **Hotel/Stay**: ${budgetRes.breakdown_inr.accommodation}\n` +
+          `• **Khana/Dining**: ${budgetRes.breakdown_inr.food_dining}\n` +
+          `• **Local Cab/Auto**: ${budgetRes.breakdown_inr.local_transit}\n` +
+          `• **Monument Entry Tickets**: ${budgetRes.breakdown_inr.monument_tickets}\n\n` +
+          `**Kul Estimated Kharcha**: ${budgetRes.total_estimated_budget} (~${budgetRes.estimated_per_person} prati vyakti).`
+        : `💰 **Estimated Trip Budget for ${budgetRes.destination}** (${budgetRes.duration}, ${budgetRes.party_size}):\n\n` +
+          `• **Accommodation**: ${budgetRes.breakdown_inr.accommodation}\n` +
+          `• **Meals & Dining**: ${budgetRes.breakdown_inr.food_dining}\n` +
+          `• **Local Transit**: ${budgetRes.breakdown_inr.local_transit}\n` +
+          `• **Monument Entries**: ${budgetRes.breakdown_inr.monument_tickets}\n\n` +
+          `**Total Estimated Cost**: ${budgetRes.total_estimated_budget} (~${budgetRes.estimated_per_person} per person).`;
+
+      dynamicQuickActions = ['Itemized Breakdown', 'Cost-Saving Tips', 'Check Train Tickets', 'Find Budget Stays'];
+      sourceList = ['Virasat Tariff Calculator', 'State Tourism Standard Tariffs'];
+    } else if (intent === 'EMERGENCY_QUERY') {
+      const city = tripState.destination || liveContext.selectedCity || 'India';
       const emergRes = await executeTool('getNearbyEmergencyServices', { city }, liveContext);
       executedToolCalls.push({ tool: 'getNearbyEmergencyServices', args: { city }, result: emergRes });
 
-      replyText = `🚨 **Official 24x7 Tourism & Emergency Helplines**:\n\n` +
-        `• **National Emergency**: 112 (Police, Fire, Ambulance)\n` +
-        `• **Ministry of Tourism 24x7 Tourist Helpline**: 1363 (Toll-Free, 12 languages)\n` +
-        `• **Medical Emergency**: 108\n` +
-        `• **Railway Security Assistance**: 139\n` +
-        `• **Women Safety**: 1091\n\n` +
-        `Tourist police assist desks are situated at all major UNESCO World Heritage monuments.`;
-    } else if (/festival|event|mela|calendar|celebration/i.test(qLower)) {
-      const city = liveContext.selectedCity;
+      replyText = intentResult.isHinglish
+        ? `🚨 **Official 24x7 Tourism & Emergency Helplines**:\n\n` +
+          `• **National Emergency**: 112 (Police, Fire, Ambulance)\n` +
+          `• **Ministry of Tourism 24x7 Tourist Helpline**: 1363 (Toll-Free, 12 bhashaon mein)\n` +
+          `• **Medical Emergency (Ambulance)**: 108\n` +
+          `• **Railway Security Assistance**: 139\n` +
+          `• **Women Safety Helpline**: 1091\n\n` +
+          `Tourist police assist desks sabhi pramukh UNESCO World Heritage monuments par sthit hain.`
+        : `🚨 **Official 24x7 Tourism & Emergency Helplines**:\n\n` +
+          `• **All-in-One National Emergency**: 112 (Police, Fire, Ambulance)\n` +
+          `• **Ministry of Tourism 24x7 Tourist Helpline**: 1363 (Toll-Free in 12 languages)\n` +
+          `• **Medical Emergency**: 108\n` +
+          `• **Railway Security Assistance**: 139\n` +
+          `• **Women Safety Helpline**: 1091\n\n` +
+          `Tourist police assist desks are situated at all major UNESCO World Heritage monuments.`;
+
+      dynamicQuickActions = ['Call 1363 Helpline', 'Nearest Tourist Police', 'Medical Help 108', 'Main Station Help'];
+      sourceList = ['Ministry of Tourism National Emergency Registry'];
+    } else if (intent === 'FESTIVAL_QUERY') {
+      const city = tripState.destination || liveContext.selectedCity;
       const eventsRes = await executeTool('getEventsCalendar', { city }, liveContext);
       executedToolCalls.push({ tool: 'getEventsCalendar', args: { city }, result: eventsRes });
 
       if (eventsRes.events && eventsRes.events.length > 0) {
-        replyText = `🗓️ **Cultural Festivals & Heritage Fairs**:\n\n` +
-          eventsRes.events.map((e: any) => `🎉 **${e.festival}** (${e.location})\n   • Timing: ${e.season_timing}\n   • Significance: ${e.cultural_significance}`).join('\n\n');
+        replyText = intentResult.isHinglish
+          ? `🗓️ **Pramukh Cultural Festivals & Fairs**:\n\n` +
+            eventsRes.events.map((e: any) => `🎉 **${e.festival}** (${e.location})\n   • Samay: ${e.season_timing}\n   • Significance: ${e.cultural_significance}`).join('\n\n')
+          : `🗓️ **Prominent Cultural Festivals & Heritage Fairs**:\n\n` +
+            eventsRes.events.map((e: any) => `🎉 **${e.festival}** (${e.location})\n   • Timing: ${e.season_timing}\n   • Significance: ${e.cultural_significance}`).join('\n\n');
       }
-    } else if (/market|bazaar|shopping|craft|souvenir/i.test(qLower)) {
-      const city = liveContext.selectedCity || 'Jaipur';
+      dynamicQuickActions = ['Festival Timings', 'Nearby Stays', 'Temple Guidelines', 'Plan Trip'];
+      sourceList = ['Ministry of Culture Living Heritage Registry'];
+    } else if (intent === 'SHOPPING_SEARCH' || intent === 'MARKET_SEARCH') {
+      const city = tripState.destination || liveContext.selectedCity || 'Jaipur';
       const marketRes = await executeTool('searchMarkets', { city }, liveContext);
       executedToolCalls.push({ tool: 'searchMarkets', args: { city }, result: marketRes });
 
-      replyText = `🛍️ **Artisan Studios & Heritage Bazaars in ${marketRes.city}**:\n\n` +
-        (marketRes.artisan_studios || []).map((a: any) => `✨ **${a.name}** (${a.craft})\n   • ${a.story}\n   • Price: ${a.price_range}`).join('\n\n') +
-        `\n\nTip: Always look for official GI (Geographical Indication) tags for authentic crafts.`;
+      replyText = intentResult.isHinglish
+        ? `🛍️ **${marketRes.city} ke Historic Bazaars & GI Artisan Studios**:\n\n` +
+          (marketRes.artisan_studios || []).map((a: any) => `✨ **${a.name}** (${a.craft})\n   • ${a.story}\n   • Rate: ${a.price_range}`).join('\n\n') +
+          `\n\nSalah: Asli hastshilp (handicrafts) aur silk ke liye hamesha official GI (Geographical Indication) tag check karein.`
+        : `🛍️ **Historic Bazaars & GI Artisan Studios in ${marketRes.city}**:\n\n` +
+          (marketRes.artisan_studios || []).map((a: any) => `✨ **${a.name}** (${a.craft})\n   • ${a.story}\n   • Price range: ${a.price_range}`).join('\n\n') +
+          `\n\nTip: Always look for official GI (Geographical Indication) marks on authentic textiles and handicrafts.`;
+
+      dynamicQuickActions = ['Famous Bazaars', 'GI Crafts Info', 'Bargaining Tips', 'Nearby Monuments'];
+      sourceList = ['Geographical Indications Registry of India', 'State Craft Guilds'];
     } else {
-      // Default: search tourist places
-      const city = liveContext.selectedCity;
-      const placesRes = await executeTool('searchTouristPlaces', { query: rawQuery, city, limit: 3 }, liveContext);
-      executedToolCalls.push({ tool: 'searchTouristPlaces', args: { query: rawQuery, city }, result: placesRes });
+      // Default: Search Tourist Places for Destination / State / Query
+      const city = tripState.destination || liveContext.selectedCity;
+      const queryToSearch = rawQuery.replace(/ke baare mein batao|tell me about|places to visit in|best places in/gi, '').trim() || city || 'Jaipur';
+      const placesRes = await executeTool('searchTouristPlaces', { query: queryToSearch, city, limit: 4 }, liveContext);
+      executedToolCalls.push({ tool: 'searchTouristPlaces', args: { query: queryToSearch, city }, result: placesRes });
 
       if (placesRes.results && placesRes.results.length > 0) {
-        replyText = `Based on verified ASI & State Tourism records, here are key destinations:\n\n` +
-          placesRes.results.map((p: any, idx: number) => `${idx + 1}. 🏛️ **${p.name}** (${p.city}, ${p.state})\n   ${p.summary}\n   • Timings: ${p.timings} | Fee: ${p.entry_fee}`).join('\n\n') +
-          `\n\nWould you like me to build a multi-day itinerary or check transport connections?`;
+        replyText = intentResult.isHinglish
+          ? `Archaeological Survey of India (ASI) aur State Tourism records ke anusar, yeh rahe pramukh heritage sthal:\n\n` +
+            placesRes.results.map((p: any, idx: number) => `${idx + 1}. 🏛️ **${p.name}** (${p.city}, ${p.state})\n   ${p.summary}\n   • Timings: ${p.timings} | Fee: ${p.entry_fee}`).join('\n\n') +
+            `\n\nKya aap inka multi-day itinerary plan karna chahte hain ya hotel aur train options check karne hain?`
+          : `Based on verified Archaeological Survey of India (ASI) and State Tourism records, here are key highlights:\n\n` +
+            placesRes.results.map((p: any, idx: number) => `${idx + 1}. 🏛️ **${p.name}** (${p.city}, ${p.state})\n   ${p.summary}\n   • Timings: ${p.timings} | Fee: ${p.entry_fee}`).join('\n\n') +
+            `\n\nWould you like me to build a multi-day itinerary or check transport connections?`;
+        sourceList = ['Archaeological Survey of India', 'State Tourism Gazette', 'Virasat Tourism Database'];
       } else {
-        replyText = `Namaste! Welcome to Virasat AI Concierge (विरासत - Discover Bharat). You can ask me about verified monuments, train connections, heritage stays, local culinary specialties, or multi-day itineraries across all 28 States and 8 Union Territories. How may I assist your journey?`;
+        replyText = intentResult.isHinglish
+          ? `Namaste! Main Virasat hoon. Main Bharat ke sabhi 28 States aur 8 Union Territories ke verified monuments, trains, hotels aur multi-day itineraries ke baare mein jankari de sakta hoon. Aap kis shehar ya monument ke baare mein jaanna chahte hain?`
+          : `Namaste! I am Virasat. I can assist you across all 28 States and 8 Union Territories with verified monuments, train routes, heritage stays, and tailored multi-day itineraries. Which destination would you like to explore?`;
       }
+      dynamicQuickActions = ['Plan a Trip', 'Explore Near Me', 'Top Heritage Forts', 'Emergency Helpline'];
     }
   }
 
-  // Extract structured cards for frontend rendering
+  // 5. Extract Structured Cards for Frontend UI Rendering
   let suggestedPlaces: any[] = [];
   const placeCall = executedToolCalls.find((t) => t.tool === 'searchTouristPlaces');
   if (placeCall && Array.isArray(placeCall.result?.results)) {
@@ -308,16 +451,9 @@ aiChatRouter.post('/chat', async (req: Request, res: Response): Promise<void> =>
     };
   }
 
-  let suggestedActions: string[] = ['Plan Multi-Day Itinerary', 'Find Heritage Hotels', 'Check Train Routes', 'Authentic Food Streets'];
-  const qLow = rawQuery.toLowerCase();
-  if (qLow.includes('hotel') || qLow.includes('stay')) {
-    suggestedActions = ['Local Food Recommendations', 'Monument Entry Timings', 'Check Weather', 'Book Heritage Stays'];
-  } else if (qLow.includes('food') || qLow.includes('restaurant')) {
-    suggestedActions = ['Nearby Monuments', 'Traditional Bazaars', 'Find Stays', 'How to Reach'];
-  } else if (qLow.includes('train') || qLow.includes('reach') || qLow.includes('transit')) {
-    suggestedActions = ['Nearby Hotels', 'Estimated Trip Budget', 'Emergency Helplines', 'Top Sights in City'];
-  } else if (qLow.includes('budget') || qLow.includes('cost')) {
-    suggestedActions = ['Itemized Breakdown', 'Cost-Saving Tips', 'Check Train Tickets', 'Find Budget Stays'];
+  // Default dynamic quick actions if not already set
+  if (dynamicQuickActions.length === 0) {
+    dynamicQuickActions = ['Plan Multi-Day Itinerary', 'Find Heritage Hotels', 'Check Train Routes', 'Authentic Food Streets'];
   }
 
   res.json({
@@ -329,20 +465,23 @@ aiChatRouter.post('/chat', async (req: Request, res: Response): Promise<void> =>
     model_used: usedEngine,
     suggested_places: suggestedPlaces.length > 0 ? suggestedPlaces : undefined,
     transit_comparison: transitComparison || undefined,
-    suggested_actions: suggestedActions,
-    sources: [
-      'Archaeological Survey of India (ASI)',
-      'Ministry of Tourism (Incredible India)',
-      'Indian Railways IRCTC Mainline Network',
-      'Virasat 36-Region Heritage Database',
-    ],
-    grounding_score: 0.98,
+    suggested_actions: dynamicQuickActions,
+    sources: sourceList || (executedToolCalls.length > 0
+      ? ['Archaeological Survey of India (ASI)', 'Ministry of Tourism (Incredible India)', 'Indian Railways IRCTC']
+      : undefined),
     tool_calls: executedToolCalls,
     latency_ms: Date.now() - startTime,
     context: {
       route: liveContext.currentRoute,
-      city: liveContext.selectedCity,
+      city: tripState.destination || liveContext.selectedCity,
       place_id: liveContext.selectedPlaceId,
+      memory: {
+        origin: tripState.origin,
+        destination: tripState.destination,
+        duration_days: tripState.duration_days,
+        budget: tripState.budget,
+        hotel_tier: tripState.hotel_tier,
+      },
     },
   });
 });
