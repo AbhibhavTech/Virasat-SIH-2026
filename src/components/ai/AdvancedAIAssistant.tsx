@@ -152,7 +152,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
                   return [
                     {
                       role: 'assistant',
-                      content: `Namaste! It looks like you're currently near **${areaName}**.\n\nWhere would you like to go today?`,
+                      content: `Namaste! Based on your general area (**${areaName}**), I can help you discover nearby heritage monuments or plan journeys across India.\n\nWhere would you like to go today?`,
                       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
                       suggested_actions: [
                         'Explore Near Me',
@@ -318,9 +318,9 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
       userLocation
         ? {
             role: 'assistant',
-            content: `Namaste! It looks like you're currently near **${
+            content: `Namaste! Based on your general area (**${
               userLocation.locality ? `${userLocation.locality}, ` : ''
-            }${userLocation.city || userLocation.state || 'your area'}**.\n\nWhere would you like to go today?`,
+            }${userLocation.city || userLocation.state || 'your area'}**), I can help you discover nearby heritage monuments or plan journeys across India.\n\nWhere would you like to go today?`,
             timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
             suggested_actions: [
               'Explore Near Me',

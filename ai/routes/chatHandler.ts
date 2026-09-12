@@ -58,7 +58,7 @@ aiChatRouter.get('/health', (_req: Request, res: Response) => {
  */
 aiChatRouter.post('/chat', async (req: Request, res: Response): Promise<void> => {
   const startTime = Date.now();
-  const { message, conversation_id, history } = req.body || {};
+  const { message, conversation_id, session_id, history } = req.body || {};
   const rawQuery = (message || '').trim();
 
   if (!rawQuery) {
@@ -66,16 +66,38 @@ aiChatRouter.post('/chat', async (req: Request, res: Response): Promise<void> =>
     return;
   }
 
-  const sessionId = conversation_id || `session-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`;
+  const sessionId = conversation_id || session_id || `session-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`;
   const liveContext = buildContextPayload(req);
+  const existingState = getConversationState(sessionId);
 
-  // 1. Run Intent Engine & Entity Extractor
-  const intentResult = detectIntent(rawQuery, liveContext);
-  const entities = extractEntities(rawQuery, liveContext);
+  // Propagate active memory for entity & place resolution
+  if (existingState.lastPlace) {
+    (liveContext as any).lastPlace = existingState.lastPlace;
+  }
+  if (existingState.destination && !liveContext.selectedCity) {
+    liveContext.selectedCity = existingState.destination;
+  }
+
+  // 1. Run Intent Engine & Entity Extractor with state awareness
+  const contextForResolution = {
+    ...liveContext,
+    lastPlace: existingState.lastPlace,
+    destination: existingState.destination,
+  };
+  const intentResult = detectIntent(rawQuery, contextForResolution);
+  const entities = extractEntities(rawQuery, contextForResolution);
   entities.query_focus = rawQuery;
 
   // 2. Update Stateful Multi-Turn Conversation Memory
   const tripState = updateConversationState(sessionId, entities, intentResult.intent);
+
+  // Explicitly persist resolvedPlace into memory and liveContext
+  if (intentResult.resolvedPlace) {
+    tripState.lastPlace = intentResult.resolvedPlace;
+    tripState.lastPlaceId = intentResult.resolvedPlace.id;
+    tripState.destination = intentResult.resolvedPlace.city;
+    liveContext.selectedCity = intentResult.resolvedPlace.city;
+  }
 
   // Set selected city or destination into context if known
   if (tripState.destination && !liveContext.selectedCity) {
@@ -203,6 +225,60 @@ Interests: ${tripState.interests.join(', ') || 'General Sightseeing'}`;
       const formatted = buildResponseForIntent(intentResult, tripState);
       replyText = formatted.reply;
       dynamicQuickActions = formatted.suggested_actions;
+    } else if (intent === 'MONUMENT_INFO' || intent === 'HERITAGE_QUERY') {
+      const place = intentResult.resolvedPlace || tripState.lastPlace;
+      const formatted = buildResponseForIntent(intentResult, tripState);
+      replyText = formatted.reply;
+      dynamicQuickActions = formatted.suggested_actions;
+      sourceList = formatted.sources;
+
+      if (place) {
+        executedToolCalls.push({
+          tool: 'searchTouristPlaces',
+          args: { query: place.name, city: place.city },
+          result: {
+            results: [{
+              id: place.id,
+              name: place.name,
+              city: place.city,
+              state: place.state,
+              category: place.category,
+              summary: place.summary,
+              timings: place.visiting_hours,
+              entry_fee: place.entry_fee,
+              official_source: place.official_source
+            }]
+          }
+        });
+      }
+    } else if (intent === 'NEARBY_SEARCH') {
+      const place = intentResult.resolvedPlace || tripState.lastPlace;
+      const city = place?.city || tripState.destination || liveContext.selectedCity || 'Mumbai';
+      const placesRes = await executeTool('searchTouristPlaces', { city, limit: 4 }, liveContext);
+      executedToolCalls.push({ tool: 'searchTouristPlaces', args: { city }, result: placesRes });
+
+      const formatted = buildResponseForIntent(intentResult, tripState);
+      replyText = formatted.reply;
+      dynamicQuickActions = formatted.suggested_actions;
+      sourceList = formatted.sources;
+    } else if (intent === 'STATE_INFO' || intent === 'UT_INFO') {
+      const stateName = entities.state || 'Rajasthan';
+      const placesRes = await executeTool('searchTouristPlaces', { state: stateName, limit: 6 }, liveContext);
+      executedToolCalls.push({ tool: 'searchTouristPlaces', args: { state: stateName }, result: placesRes });
+
+      if (placesRes.results && placesRes.results.length > 0) {
+        replyText = intentResult.isHinglish
+          ? `**${stateName} ke Verified World Heritage & Iconic Sthal** (Archaeological Survey of India & State Tourism archives):\n\n` +
+            placesRes.results.map((p: any, idx: number) => `${idx + 1}. 🏛️ **${p.name}** (${p.city}, ${p.state})\n   ${p.summary}\n   • Timings: ${p.timings} | Fee: ${p.entry_fee}`).join('\n\n') +
+            `\n\nKya aap inka multi-city circuit itinerary plan karna chahte hain ya specific monument ki details dekhni hain?`
+          : `**Verified Heritage Landmarks in ${stateName}**:\n\n` +
+            placesRes.results.map((p: any, idx: number) => `${idx + 1}. 🏛️ **${p.name}** (${p.city}, ${p.state})\n   ${p.summary}\n   • Timings: ${p.timings} | Fee: ${p.entry_fee}`).join('\n\n') +
+            `\n\nWould you like me to build a multi-city travel circuit or explore stays in ${stateName}?`;
+      } else {
+        replyText = `Verified heritage landmarks in ${stateName} are available across its premier historical cities.`;
+      }
+      dynamicQuickActions = [`Plan ${stateName} Trip`, 'Heritage Forts', 'Find Stays', 'How to Reach'];
+      sourceList = ['Archaeological Survey of India (ASI)', `${stateName} State Tourism Department`, 'Virasat Master Tourism Registry'];
     } else if (intent === 'YOU_DECIDE') {
       const formatted = buildResponseForIntent(intentResult, tripState);
       replyText = formatted.reply;
@@ -227,34 +303,37 @@ Interests: ${tripState.interests.join(', ') || 'General Sightseeing'}`;
       dynamicQuickActions = formatted.suggested_actions;
       sourceList = formatted.sources;
     } else if (intent === 'HOTEL_SEARCH' || intent === 'HOTEL_COMPARISON') {
-      const city = tripState.destination || liveContext.selectedCity || 'Jaipur';
-      const hotelRes = await executeTool('searchHotels', { city, category: tripState.hotel_tier, limit: 4 }, liveContext);
-      executedToolCalls.push({ tool: 'searchHotels', args: { city }, result: hotelRes });
+      const city = tripState.lastPlace?.city || tripState.destination || liveContext.selectedCity || 'Jaipur';
+      const placeId = tripState.lastPlace?.id;
+      const hotelRes = await executeTool('searchHotels', { city, place_id: placeId, category: tripState.hotel_tier, limit: 4 }, liveContext);
+      executedToolCalls.push({ tool: 'searchHotels', args: { city, place_id: placeId }, result: hotelRes });
 
       if (hotelRes.hotels && hotelRes.hotels.length > 0) {
+        const placePrefix = tripState.lastPlace ? `**${tripState.lastPlace.name} (${city})** ke paas ` : `**${city}** ke `;
         replyText = intentResult.isHinglish
-          ? `Yeh rahe **${city}** ke verified accommodations (${tripState.hotel_tier || 'comfortable'} category):\n\n` +
+          ? `Yeh rahe ${placePrefix}verified accommodations (${tripState.hotel_tier || 'comfortable'} category):\n\n` +
             hotelRes.hotels.map((h: any) => `🏨 **${h.name}** (${h.category})\n   • Rate: ${h.price} | Rating: ★ ${h.rating}\n   • Location: ${h.location}`).join('\n\n') +
             `\n\nKya aap inke paas ke monuments ya transport routes dekhna chahte hain?`
-          : `Here are verified accommodations in **${city}**:\n\n` +
+          : `Here are verified accommodations ${tripState.lastPlace ? `near **${tripState.lastPlace.name}** in ` : 'in '}**${city}**:\n\n` +
             hotelRes.hotels.map((h: any) => `🏨 **${h.name}** (${h.category})\n   • Rate: ${h.price} | Rating: ★ ${h.rating}\n   • Location: ${h.location}`).join('\n\n') +
             `\n\nWould you like nearby monument recommendations or transport options?`;
       } else {
         replyText = `Verified hotels list is being updated for ${city}. Standard heritage stays in ${city} range between ₹2,500 and ₹7,000 per night.`;
       }
-      dynamicQuickActions = ['Compare Stays', 'Budget Hotels', 'Luxury Palace Hotels', 'Plan Trip to ' + city];
+      dynamicQuickActions = ['Compare Stays', 'Budget Hotels', 'Luxury Palace Hotels', `Plan 1-Day ${city} Plan`];
       sourceList = ['State Tourism Development Corporation', 'Virasat Hotel Registry'];
     } else if (intent === 'FOOD_SEARCH' || intent === 'RESTAURANT_SEARCH') {
-      const city = tripState.destination || liveContext.selectedCity || 'Agra';
+      const city = tripState.lastPlace?.city || tripState.destination || liveContext.selectedCity || 'Agra';
       const foodRes = await executeTool('searchRestaurants', { city, limit: 4 }, liveContext);
       executedToolCalls.push({ tool: 'searchRestaurants', args: { city }, result: foodRes });
 
       if (foodRes.recommendations && foodRes.recommendations.length > 0) {
+        const placePrefix = tripState.lastPlace ? `**${tripState.lastPlace.name} (${city})** ke aas-paas ka ` : `**${city}** ka `;
         replyText = intentResult.isHinglish
-          ? `**${city}** ka authentic culinary heritage aur mashhoor swad:\n\n` +
+          ? `${placePrefix}authentic culinary heritage aur mashhoor swad:\n\n` +
             foodRes.recommendations.map((r: any) => `🥘 **${r.name}**\n   • ${r.description}\n   • Kahan milega: ${r.popular_locations?.join(', ')}`).join('\n\n') +
             `\n\nIn food streets ke aas-paas ke heritage spots dekhne hain?`
-          : `Authentic culinary heritage of **${city}**:\n\n` +
+          : `Authentic culinary heritage ${tripState.lastPlace ? `near **${tripState.lastPlace.name}** in ` : 'of '}**${city}**:\n\n` +
             foodRes.recommendations.map((r: any) => `🥘 **${r.name}**\n   • ${r.description}\n   • Famous locations: ${r.popular_locations?.join(', ')}`).join('\n\n') +
             `\n\nWould you like monument recommendations near these culinary lanes?`;
       }
@@ -380,7 +459,9 @@ Interests: ${tripState.interests.join(', ') || 'General Sightseeing'}`;
     } else {
       // Default: Search Tourist Places for Destination / State / Query
       const city = tripState.destination || liveContext.selectedCity;
-      const queryToSearch = rawQuery.replace(/ke baare mein batao|tell me about|places to visit in|best places in/gi, '').trim() || city || 'Jaipur';
+      const queryToSearch = rawQuery
+        .replace(/ke baare mein batao|k baare main batao|ke baare me batao|k bare me|ke bare mein|k baare me|tell me about|places to visit in|best places in/gi, '')
+        .trim() || city || 'Jaipur';
       const placesRes = await executeTool('searchTouristPlaces', { query: queryToSearch, city, limit: 4 }, liveContext);
       executedToolCalls.push({ tool: 'searchTouristPlaces', args: { query: queryToSearch, city }, result: placesRes });
 
@@ -394,9 +475,10 @@ Interests: ${tripState.interests.join(', ') || 'General Sightseeing'}`;
             `\n\nWould you like me to build a multi-day itinerary or check transport connections?`;
         sourceList = ['Archaeological Survey of India', 'State Tourism Gazette', 'Virasat Tourism Database'];
       } else {
+        const activeName = tripState.lastPlace?.name || tripState.destination || 'Bharat';
         replyText = intentResult.isHinglish
-          ? `Namaste! Main Virasat hoon. Main Bharat ke sabhi 28 States aur 8 Union Territories ke verified monuments, trains, hotels aur multi-day itineraries ke baare mein jankari de sakta hoon. Aap kis shehar ya monument ke baare mein jaanna chahte hain?`
-          : `Namaste! I am Virasat. I can assist you across all 28 States and 8 Union Territories with verified monuments, train routes, heritage stays, and tailored multi-day itineraries. Which destination would you like to explore?`;
+          ? `Main ${activeName} ya kisi bhi monument, train routes, heritage stays aur multi-day itinerary ke baare mein verified jankari de sakta hoon. Aap kis baare mein jaanna chahte hain?`
+          : `I can assist with verified monuments, train routes, heritage hotels, and day-wise itineraries for ${activeName} or any Indian destination. What would you like to explore?`;
       }
       dynamicQuickActions = ['Plan a Trip', 'Explore Near Me', 'Top Heritage Forts', 'Emergency Helpline'];
     }

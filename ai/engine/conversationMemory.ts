@@ -1,4 +1,5 @@
 import { ExtractedEntities } from './entityExtractor';
+import { ResolvedPlace } from './placeResolver';
 
 export interface TripMemoryState {
   sessionId: string;
@@ -13,6 +14,8 @@ export interface TripMemoryState {
   transport_mode?: 'train' | 'flight' | 'road' | 'bus' | 'all';
   interests: string[];
   party_size?: string;
+  lastPlace?: ResolvedPlace;
+  lastPlaceId?: string;
   lastItinerary?: any;
   lastPlaces?: any[];
   lastHotels?: any[];
@@ -69,6 +72,14 @@ export function updateConversationState(
   if (newEntities.transport_mode) state.transport_mode = newEntities.transport_mode;
   if (newEntities.party_size) state.party_size = newEntities.party_size;
 
+  if (newEntities.resolvedPlace) {
+    state.lastPlace = newEntities.resolvedPlace;
+    state.lastPlaceId = newEntities.resolvedPlace.id;
+    if (!state.destination) {
+      state.destination = newEntities.resolvedPlace.city;
+    }
+  }
+
   for (const intr of newEntities.interests) {
     if (!state.interests.includes(intr)) {
       state.interests.push(intr);
@@ -77,6 +88,9 @@ export function updateConversationState(
 
   // Handle natural language modification commands (Section 17)
   const queryLower = (newEntities.query_focus || '').toLowerCase();
+  if (/add food|food bhi add|khana add/i.test(queryLower)) {
+    if (!state.interests.includes('food')) state.interests.push('food');
+  }
   if (/make it cheaper|aur sasta|kam budget|sasta karo/i.test(queryLower)) {
     state.travel_style = 'budget';
     state.hotel_tier = 'budget';

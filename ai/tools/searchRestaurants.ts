@@ -89,8 +89,10 @@ export async function execute(args: {
         { name: 'Rawat Mishthan Bhandar', area: 'Station Road', specialty: 'Pyaaz Kachori, Mawa Kachori', type: 'Iconic Breakfast & Sweets' },
       ],
       mumbai: [
+        { name: 'Cafe Mondegar & Leopold Cafe', area: 'Colaba Causeway (Near Gateway of India)', specialty: 'Continental, draught beer, heritage cafe vibe', type: 'Historic Art Deco Irani / Cafe (est. 1871/1932)' },
+        { name: 'Bademiya', area: 'Tulloch Road, Colaba (Behind Taj Mahal Palace)', specialty: 'Seekh Kababs, Baida Roti, Chicken Tikka Rolls', type: 'Iconic Late-night Kebabs' },
         { name: 'Britannia & Co. Restaurant', area: 'Ballard Estate, Fort', specialty: 'Berry Pulao, Sali Boti, Caramel Custard', type: 'Parsi Heritage Cafe' },
-        { name: 'Gajalee & Trishna', area: 'Fort / Vile Parle', specialty: 'Butter Garlic Crab, Coastal Malvani Fish Curry', type: 'Coastal Seafood Institution' },
+        { name: 'Gajalee & Trishna', area: 'Fort / Kala Ghoda', specialty: 'Butter Garlic Crab, Coastal Malvani Fish Curry', type: 'Coastal Seafood Institution' },
       ],
       varanasi: [
         { name: 'Kashi Chaat Bhandar', area: 'Godowlia Chowk', specialty: 'Tamatar Chaat, Palak Chaat', type: 'Iconic Ghatside Chaat' },

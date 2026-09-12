@@ -1,3 +1,5 @@
+import { resolvePlaceEntity, ResolvedPlace } from './placeResolver';
+
 export interface ExtractedEntities {
   destination?: string;
   origin?: string;
@@ -11,6 +13,9 @@ export interface ExtractedEntities {
   interests: string[];
   party_size?: string;
   query_focus?: string;
+  resolvedPlace?: ResolvedPlace;
+  place_id?: string;
+  place_name?: string;
 }
 
 const COMMON_ORIGINS = [
@@ -39,15 +44,17 @@ export function extractEntities(rawText: string, existingContext?: any): Extract
     interests: [],
   };
 
-  // 1. Duration Extraction (e.g., "3 din", "3 days", "5 day", "weekend")
+  // 1. Duration Extraction (e.g., "3 din", "3 days", "5 day", "weekend", "1 din", "ek din")
   const dayMatch = text.match(/(\d+)\s*(?:day|days|din|raat|nights)/i);
   if (dayMatch) {
     entities.duration_days = parseInt(dayMatch[1], 10);
   } else if (/weekend/i.test(text)) {
     entities.duration_days = 2;
+  } else if (/(?:ek|one)\s*(?:day|din)/i.test(text)) {
+    entities.duration_days = 1;
   }
 
-  // 2. Budget Extraction (e.g., "15k", "15000", "₹15000", "15000 rs", "15 hazaar")
+  // 2. Budget Extraction (e.g., "15k", "15000", "₹15000", "15000 rs", "15 hazaar", "2000")
   const kBudgetMatch = text.match(/(\d+)\s*k\b/i);
   const numberBudgetMatch = text.match(/(?:₹|rs\.?|inr|budget)?\s*(\d{4,6})\b/i);
   const hazarBudgetMatch = text.match(/(\d+)\s*(?:hazar|hazaar)\b/i);
@@ -60,7 +67,21 @@ export function extractEntities(rawText: string, existingContext?: any): Extract
     entities.budget = parseInt(numberBudgetMatch[1], 10);
   }
 
-  // 3. Origin & Destination Extraction
+  // 3. Place & Monument Resolution
+  const placeResult = resolvePlaceEntity(rawText, existingContext);
+  if (placeResult) {
+    entities.resolvedPlace = placeResult.place;
+    entities.place_id = placeResult.place.id;
+    entities.place_name = placeResult.place.name;
+    entities.destination = placeResult.place.city;
+    entities.state = placeResult.place.state;
+    entities.query_focus = placeResult.queryFocus;
+    if (placeResult.place.category === 'religious_cultural' && !entities.interests.includes('spiritual')) {
+      entities.interests.push('spiritual');
+    }
+  }
+
+  // 4. Origin & Destination Extraction
   // Pattern: "from X to Y", "X se Y", "X to Y"
   const fromToMatch = text.match(/(?:from|se|starting from)\s+([a-zA-Z\s]+?)\s+(?:to|tak|jana hai|travel to)\s+([a-zA-Z\s]+)/i);
   if (fromToMatch) {
@@ -75,16 +96,39 @@ export function extractEntities(rawText: string, existingContext?: any): Extract
       }
     }
 
-    // Check for known destination mentions
-    for (const d of KNOWN_DESTINATIONS) {
-      if (new RegExp(`\\b${d}\\b`, 'i').test(text)) {
-        // If it's not the already identified origin
-        if (!entities.origin || entities.origin.toLowerCase() !== d) {
-          entities.destination = d.charAt(0).toUpperCase() + d.slice(1);
-          break;
+    // Check for known destination mentions if not already set by place resolution
+    if (!entities.destination) {
+      for (const d of KNOWN_DESTINATIONS) {
+        if (new RegExp(`\\b${d}\\b`, 'i').test(text)) {
+          if (!entities.origin || entities.origin.toLowerCase() !== d) {
+            entities.destination = d.charAt(0).toUpperCase() + d.slice(1);
+            break;
+          }
         }
       }
     }
+  }
+
+  // 4b. State & UT Extraction
+  const ALL_INDIAN_STATES = [
+    'andhra pradesh', 'arunachal pradesh', 'assam', 'bihar', 'chhattisgarh', 'goa',
+    'gujarat', 'haryana', 'himachal pradesh', 'jharkhand', 'karnataka', 'kerala',
+    'madhya pradesh', 'maharashtra', 'manipur', 'meghalaya', 'mizoram', 'nagaland',
+    'odisha', 'punjab', 'rajasthan', 'sikkim', 'tamil nadu', 'telangana', 'tripura',
+    'uttar pradesh', 'uttarakhand', 'west bengal',
+    'andaman and nicobar', 'chandigarh', 'dadra and nagar haveli', 'daman and diu',
+    'delhi', 'jammu and kashmir', 'ladakh', 'lakshadweep', 'puducherry'
+  ];
+  for (const s of ALL_INDIAN_STATES) {
+    if (new RegExp(`\\b${s}\\b`, 'i').test(text)) {
+      entities.state = s.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+      break;
+    }
+  }
+
+  // 5. Party / Family Context
+  if (/family|parivar|bachon|kids|parents|buzurg|with family/i.test(text)) {
+    entities.party_size = 'family';
   }
 
   // 4. Travel Style & Hotel Preference

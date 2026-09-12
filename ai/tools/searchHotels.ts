@@ -78,6 +78,28 @@ export async function execute(args: {
     if (matched.length >= limit) break;
   }
 
+  // If place proximity didn't fill limit, add other hotels from same city
+  if (matched.length < limit && cityFilter) {
+    for (const h of baseHotels) {
+      if (!h.city.toLowerCase().includes(cityFilter)) continue;
+      if (catFilter && !h.category.toLowerCase().includes(catFilter)) continue;
+      if (matched.some((m) => m.id === h.id)) continue;
+
+      matched.push({
+        id: h.id,
+        name: h.name,
+        city: h.city,
+        state: h.state,
+        category: h.category,
+        rating: h.rating,
+        price: h.price_indication || '₹3,500 - ₹7,000 / night',
+        location: h.location,
+        amenities: h.amenities || ['Free Wi-Fi', 'Breakfast Included'],
+      });
+      if (matched.length >= limit) break;
+    }
+  }
+
   // Also search place-level hotels if place_id was provided or matched count is low
   if (matched.length < limit) {
     try {

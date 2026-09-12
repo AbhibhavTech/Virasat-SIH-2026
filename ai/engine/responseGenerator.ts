@@ -1,6 +1,7 @@
 import { UserIntent, IntentResult } from './intentEngine';
 import { TripMemoryState } from './conversationMemory';
 import { GeneratedTripPlan } from './itineraryPlanner';
+import { ResolvedPlace } from './placeResolver';
 
 export interface FormattedResponse {
   reply: string;
@@ -57,20 +58,20 @@ export function buildResponseForIntent(
     return {
       reply: isHinglish
         ? "Virasat par aap natural bhasha mein kuch bhi pooch sakte hain:\n\n" +
-          "• **Trip Planning**: *'bhai Mumbai se Jaipur 3 din ka plan bana de 15k me'*\n" +
-          "• **Itinerary Customization**: *'hotel moderate rakh'*, *'make it cheaper'*, *'add spiritual place'*\n" +
-          "• **Heritage & History**: *'Hawa Mahal ke baare mein batao'*\n" +
+          "• **Heritage & Monuments**: *'Gateway of India ke baare mein batao'*, *'Hawa Mahal ka history'*\n" +
+          "• **Trip Planning**: *'bhai Mumbai se Jaipur 3 din ka plan bana de 15k me'*, *'1 din ka plan bana'*\n" +
+          "• **Itinerary Customization**: *'hotel moderate rakh'*, *'make it cheaper'*, *'budget 2000 rakho'*, *'food bhi add karo'*\n" +
+          "• **Nearby Discovery**: *'wahan aur kya hai?'*, *'Gateway ke nearby kya hai?'*\n" +
           "• **Transport & Trains**: *'Mumbai se Varanasi train ya flight?'*\n" +
-          "• **Local Food & Stays**: *'Agra ka authentic street food aur heritage hotels'*\n" +
-          "• **Budget & Helplines**: *'Estimated budget batao'*, *'Emergency helpline 1363'*"
+          "• **Local Food & Stays**: *'Colaba street food'*, *'Hotels near Gateway of India'*"
         : "Here is what you can ask Virasat naturally:\n\n" +
-          "• **Trip Planning**: *'Plan a 3-day heritage trip to Jaipur under ₹15,000'*\n" +
-          "• **Dynamic Modification**: *'Make it cheaper'*, *'Keep hotels moderate'*, *'Add spiritual temples'*\n" +
-          "• **Heritage Intelligence**: *'Tell me about the architecture of Konark Sun Temple'*\n" +
+          "• **Heritage & Monuments**: *'Tell me about Gateway of India'*, *'History of Hawa Mahal'*\n" +
+          "• **Trip Planning**: *'Plan a 3-day Jaipur trip under ₹15,000'*, *'Build a 1-day Mumbai plan'*\n" +
+          "• **Dynamic Modification**: *'Make it cheaper'*, *'Set budget to ₹2,000'*, *'Add food experiences'*\n" +
+          "• **Nearby Sights**: *'What else is nearby?'*, *'Explore near me'*\n" +
           "• **Multimodal Transit**: *'Compare trains vs flights from Delhi to Udaipur'*\n" +
-          "• **Culinary & Stays**: *'Authentic Awadhi food in Lucknow & heritage palace stays'*\n" +
-          "• **Budget & Safety**: *'Itemized budget breakdown'*, *'Tourist police helpline 1363'*",
-      suggested_actions: ['Plan a 3-Day Trip', 'Best places in Rajasthan', 'How to reach Jaipur', 'Explore Near Me'],
+          "• **Culinary & Stays**: *'Authentic food in Colaba & heritage palace stays'*",
+      suggested_actions: ['Plan a 3-Day Trip', 'Tell me about Gateway of India', 'Best places in Rajasthan', 'Explore Near Me'],
     };
   }
 
@@ -92,7 +93,100 @@ export function buildResponseForIntent(
     };
   }
 
-  // 6. YOU_DECIDE MODE (Section 36)
+  // 6. MONUMENT_INFO (Direct, rich monument intelligence — Sections 5 & 6)
+  if (intent === 'MONUMENT_INFO' && (intentResult.resolvedPlace || state.lastPlace)) {
+    const p: ResolvedPlace = intentResult.resolvedPlace || state.lastPlace!;
+    const focus = intentResult.queryFocus || 'general';
+
+    // Duration focus
+    if (focus === 'duration') {
+      return {
+        reply: isHinglish
+          ? `🏛️ **${p.name} (${p.city}, ${p.state}) Visit Duration**:\n\n` +
+            `• **Recommended Visit Time**: ${p.recommended_duration}\n` +
+            `• **Optimal Visiting Hours**: ${p.visiting_hours} (Sunrise ya sunset ke samay pleasant sea breeze aur photography ke liye best light milti hai).\n` +
+            (p.nearby_places && p.nearby_places.length > 0 ? `• **Nearby Add-on**: Pass mein ${p.nearby_places[0].name} bhi hai jise aap same afternoon explore kar sakte hain.\n\n` : '\n') +
+            `Kya aap iske around **1-Day ${p.city} Itinerary** dekhna chahte hain ya nearby attractions explore karne hain?`
+          : `🏛️ **${p.name} (${p.city}, ${p.state}) Visit Duration**:\n\n` +
+            `• **Recommended Duration**: ${p.recommended_duration}\n` +
+            `• **Optimal Hours**: ${p.visiting_hours} (Early morning or sunset provides the best ambient lighting and sea breeze).\n\n` +
+            `Would you like a full **1-Day Itinerary** around ${p.name} or nearby sights?`,
+        suggested_actions: ['Nearby Kya Hai?', `1-Day ${p.city} Plan`, `${p.name} ke Paas Food`, `Hotels near ${p.name}`],
+        sources: ['Archaeological Survey of India (ASI)', 'State Tourism Gazette', 'Virasat Master Tourism Registry'],
+      };
+    }
+
+    const nearbyList = (p.nearby_places || [])
+      .map((nb, i) => `${i + 1}. 🏛️ **${nb.name}** (${nb.category || 'Heritage'}) — ${nb.summary || 'Verified cultural landmark'}`)
+      .join('\n');
+
+    return {
+      reply: isHinglish
+        ? `Bilkul! 😊 **${p.name}** ${p.city} (${p.state}) ka ek iconic aur aitihasik waterfront sthal hai:\n\n` +
+          `🏛️ **${p.name}**\n` +
+          `📍 ${p.city}, ${p.state}\n\n` +
+          `### 🕰️ Historical Significance\n${p.historical_significance}\n\n` +
+          `### 🏗️ Architecture & Features\n${p.architecture}\n\n` +
+          `### ⭐ Why Visit?\n${p.why_visit}\n\n` +
+          `### ⏱️ Recommended Visit Duration\n${p.recommended_duration} (Sunset ya early morning best lighting aur sea breeze ke liye ideal hai)\n\n` +
+          (nearbyList ? `### 📍 Nearby Attractions in ${p.city}\n${nearbyList}\n\n` : '') +
+          `### 🚆 How to Reach\n${p.how_to_reach}\n\n` +
+          `### 💰 Visiting & Entry Info\n• **Entry Fee**: ${p.entry_fee}\n• **Timings**: ${p.visiting_hours}\n\n` +
+          `Agar aap chahein, main ${p.name} ke around **1-Day ${p.city} Heritage Plan** bana sakta hoon, ya paas ke **food spots** aur **hotels** suggest kar doon?`
+        : `Certainly! 😊 Here is the verified heritage dossier for **${p.name}** in ${p.city}, ${p.state}:\n\n` +
+          `🏛️ **${p.name}**\n` +
+          `📍 ${p.city}, ${p.state}\n\n` +
+          `### 🕰️ Historical Background\n${p.historical_significance}\n\n` +
+          `### 🏗️ Architecture & Features\n${p.architecture}\n\n` +
+          `### ⭐ Why Visit?\n${p.why_visit}\n\n` +
+          `### ⏱️ Recommended Visit Duration\n${p.recommended_duration}\n\n` +
+          (nearbyList ? `### 📍 Nearby Sights in ${p.city}\n${nearbyList}\n\n` : '') +
+          `### 🚆 How to Reach\n${p.how_to_reach}\n\n` +
+          `### 💰 Visiting & Entry Info\n• **Entry Fee**: ${p.entry_fee}\n• **Timings**: ${p.visiting_hours}\n\n` +
+          `Would you like me to build a tailored **1-Day ${p.city} Heritage Plan** centered around ${p.name}, or explore nearby culinary spots and stays?`,
+      suggested_actions: [
+        'Nearby Kya Hai?',
+        `1-Day ${p.city} Plan`,
+        `${p.name} ke Paas Food`,
+        `Hotels near ${p.name}`,
+        'How to Reach',
+      ],
+      sources: ['Archaeological Survey of India (ASI)', 'State Tourism Gazette', 'Virasat Master Tourism Registry'],
+    };
+  }
+
+  // 7. NEARBY_SEARCH ("nearby kya hai?", "wahan aur kya hai?")
+  if (intent === 'NEARBY_SEARCH') {
+    const place = intentResult.resolvedPlace || state.lastPlace;
+    const cityName = place?.city || state.destination || 'Mumbai';
+    const placeName = place?.name || cityName;
+
+    const nearbyList = place?.nearby_places && place.nearby_places.length > 0
+      ? place.nearby_places.map((nb, i) => `${i + 1}. 🏛️ **${nb.name}** — ${nb.summary || 'Iconic cultural landmark'}`).join('\n\n')
+      : `1. 🏛️ **Elephanta Caves**: Jetty No. 1 se ferry lekar UNESCO World Heritage rock-cut cave temples pahunchein (~1 hour ferry ride).\n\n` +
+        `2. 🌊 **Marine Drive (Queen's Necklace)**: ~2.5 km door Arabian Sea sunset promenade aur evening breeze.\n\n` +
+        `3. 🛍️ **Colaba Causeway**: 5-minute walk par historic street shopping, brass curios aur heritage cafes (Cafe Mondegar, Leopold).\n\n` +
+        `4. 🚂 **CSMT (Chhatrapati Shivaji Maharaj Terminus)**: UNESCO World Heritage Victorian Gothic railway headquarters (~2.8 km).`;
+
+    return {
+      reply: isHinglish
+        ? `**${placeName} (${cityName}) ke paas yeh pramukh heritage aur cultural sthal hain**:\n\n` +
+          `${nearbyList}\n\n` +
+          `Kya aap inka **1-Day ${cityName} Plan** banana chahte hain ya ferry / transit timings dekhni hain?`
+        : `**Prominent cultural and heritage sights near ${placeName} (${cityName})**:\n\n` +
+          `${nearbyList}\n\n` +
+          `Would you like me to build a **1-Day ${cityName} Heritage Itinerary** covering these, or check transit options?`,
+      suggested_actions: [
+        `1-Day ${cityName} Plan`,
+        `${cityName} Food Spots`,
+        `Hotels near ${placeName}`,
+        'How to Reach',
+      ],
+      sources: ['Archaeological Survey of India (ASI)', 'State Tourism Gazette', 'Virasat Master Tourism Registry'],
+    };
+  }
+
+  // 8. YOU_DECIDE MODE (Section 36)
   if (intent === 'YOU_DECIDE') {
     const origin = state.origin || 'Mumbai';
     const budgetStr = state.budget ? `₹${state.budget.toLocaleString('en-IN')}` : '₹15,000';
@@ -114,7 +208,7 @@ export function buildResponseForIntent(
     };
   }
 
-  // 7. TRIP_PLANNING
+  // 9. TRIP_PLANNING (Multi-day or 1-day plans)
   if (intent === 'TRIP_PLANNING' && plan) {
     const daySummaries = plan.days
       .map(
@@ -130,34 +224,41 @@ export function buildResponseForIntent(
       reply: isHinglish
         ? `Bilkul! Aapke liye **${plan.destination}** ka **${plan.duration_days}-Day Smart Itinerary** tayyar hai:\n\n` +
           `${daySummaries}\n\n` +
-          `🏨 **Accommodation**: ${plan.hotel_recommendation.tier} (~${plan.hotel_recommendation.rate_indication})\n` +
+          (plan.duration_days > 1 ? `🏨 **Accommodation**: ${plan.hotel_recommendation.tier} (~${plan.hotel_recommendation.rate_indication})\n` : '') +
           `🚆 **Transport**: ${plan.transport_recommendation.mode} (${plan.transport_recommendation.approx_duration})\n` +
-          `💰 **Estimated Budget**: ${plan.budget_breakdown.total_estimated} (includes stay, local transit, food & tickets)\n\n` +
-          `Aap is plan ko customize kar sakte hain — jaise *"hotel moderate rakh"*, *"make it cheaper"*, ya *"add spiritual place"*!`
+          `💰 **Estimated Budget**: ${plan.budget_breakdown.total_estimated} (includes transit, food & tickets)\n\n` +
+          `Aap is plan ko customize kar sakte hain — jaise *"budget 2000 rakho"*, *"food bhi add karo"*, ya *"hotel moderate rakh"*!`
         : `Here is your cluster-optimized **${plan.duration_days}-Day Itinerary for ${plan.destination}**:\n\n` +
           `${daySummaries}\n\n` +
-          `🏨 **Stays**: ${plan.hotel_recommendation.tier} tier (~${plan.hotel_recommendation.rate_indication})\n` +
+          (plan.duration_days > 1 ? `🏨 **Stays**: ${plan.hotel_recommendation.tier} tier (~${plan.hotel_recommendation.rate_indication})\n` : '') +
           `🚆 **Transit**: ${plan.transport_recommendation.mode} (~${plan.transport_recommendation.approx_duration})\n` +
           `💰 **Estimated Budget**: ${plan.budget_breakdown.total_estimated} total breakdown.\n\n` +
-          `You can modify this naturally — say *"make it cheaper"*, *"hotel moderate"*, or *"add spiritual places"*!`,
-      suggested_actions: ['Hotel Moderate Rakh', 'Travel Cheap Karo', 'Add Spiritual Place', 'Final Budget Bata'],
+          `You can modify this naturally — say *"budget 2000"*, *"add food"*, or *"hotel moderate"*!`,
+      suggested_actions: ['Budget 2000 Rakho', 'Food Bhi Add Karo', 'Nearby Hotels', 'Final Budget Bata'],
       sources: ['Archaeological Survey of India', 'Indian Railways IRCTC', 'Virasat Tourism Database'],
     };
   }
 
-  // 8. ITINERARY_MODIFICATION
+  // 10. ITINERARY_MODIFICATION
   if (intent === 'ITINERARY_MODIFICATION') {
     const dest = state.destination || 'Jaipur';
     const style = state.travel_style || 'budget-friendly';
     const hTier = state.hotel_tier || 'moderate';
     const query = (intentResult.rawQuery || '').toLowerCase();
     const isSpiritual = /spiritual|mandir|temple|ghat/i.test(query) || (state.interests && state.interests.includes('spiritual'));
+    const isFood = /food|khana/i.test(query);
+    const isBudgetChange = /budget\s*(\d+)/i.test(query) || state.budget;
 
     let modificationDetail = '';
     if (isSpiritual) {
       modificationDetail = isHinglish
-        ? `• **Added Spiritual Sanctuary**: 🛕 **Govind Dev Ji Mandir / Birla Mandir** (Morning Sacred Darshan & Shanti)\n`
+        ? `• **Added Spiritual Sanctuary**: 🛕 **Govind Dev Ji Mandir / Birla Mandir / Mumba Devi** (Morning Sacred Darshan & Shanti)\n`
         : `• **Added Spiritual Sanctuary**: 🛕 **Govind Dev Ji Temple / Birla Mandir** (Morning Darshan & Peaceful Aarti)\n`;
+    }
+    if (isFood) {
+      modificationDetail += isHinglish
+        ? `• **Added Culinary Stops**: 🍲 **Authentic Street Food & Heritage Eateries** (Local specialties, chai & snacks included)\n`
+        : `• **Added Culinary Stops**: 🍲 **Iconic Heritage Cafes & Street Food Walks**\n`;
     }
 
     const daySummaries = plan
@@ -172,6 +273,8 @@ export function buildResponseForIntent(
           .join('\n\n')
       : '';
 
+    const budgetDisplay = plan ? plan.budget_breakdown.total_estimated : (state.budget ? `₹${state.budget.toLocaleString('en-IN')}` : '₹14,400');
+
     return {
       reply: isHinglish
         ? `Samajh gaya! Maine aapke **${dest}** itinerary aur preferences ko update kar diya hai:\n\n` +
@@ -179,23 +282,23 @@ export function buildResponseForIntent(
           `• **Hotel Preference**: ${hTier.toUpperCase()} Stays (Clean, central heritage properties)\n` +
           `• **Travel Style**: ${style.toUpperCase()}\n` +
           `• **Transport**: Rail / Mainline IRCTC (Budget-optimized)\n` +
-          (plan ? `• **Naya Total Budget**: ~${plan.budget_breakdown.total_estimated}\n\n` : '\n') +
-          (isSpiritual && daySummaries ? `**Updated Day-wise Plan**:\n${daySummaries}\n\n` : '') +
+          `• **Naya Total Budget**: ~${budgetDisplay}\n\n` +
+          (daySummaries ? `**Updated Day-wise Plan**:\n${daySummaries}\n\n` : '') +
           `Kya aap final budget breakdown dekhna chahte hain ya live booking check karni hai?`
         : `Understood! I have updated your **${dest}** itinerary and preferences:\n\n` +
           modificationDetail +
           `• **Hotel Category**: ${hTier.toUpperCase()} Stays\n` +
           `• **Travel Style**: ${style.toUpperCase()}\n` +
           `• **Transport Optimization**: Mainline IRCTC Rail\n` +
-          (plan ? `• **Revised Total Budget**: ~${plan.budget_breakdown.total_estimated}\n\n` : '\n') +
-          (isSpiritual && daySummaries ? `**Updated Day-by-Day Schedule**:\n${daySummaries}\n\n` : '') +
+          `• **Revised Total Budget**: ~${budgetDisplay}\n\n` +
+          (daySummaries ? `**Updated Day-by-Day Schedule**:\n${daySummaries}\n\n` : '') +
           `Would you like an itemized budget breakdown or transport connections?`,
       suggested_actions: ['Final Budget Bata', 'Show Full Itinerary', 'Find Heritage Hotels', 'Check Train Routes'],
       sources: ['Archaeological Survey of India', 'Virasat Itinerary Optimizer', 'IRCTC Mainline Directory'],
     };
   }
 
-  // 9. COMPARISON (Jaipur vs Udaipur, etc.)
+  // 11. COMPARISON (Jaipur vs Udaipur, etc.)
   if (intent === 'COMPARISON') {
     return {
       reply: isHinglish
@@ -211,11 +314,12 @@ export function buildResponseForIntent(
     };
   }
 
-  // 10. Default / Informational Fallback
+  // 12. Default / Informational Fallback (Non-repetitive, context-aware)
+  const activeCity = state.destination || state.lastPlace?.city || 'Bharat';
   return {
     reply: isHinglish
-      ? `Aap Bharat ke kisi bhi shehar, rajya ya monument ke baare mein pooch sakte hain — chahe Jaipur ke forts hon, Varanasi ke ghats, ya Kerala ke backwaters. Main verified details provide karunga.`
-      : `You can ask Virasat about any city, state, or monument in India — from the historic forts of Rajasthan to the spiritual ghats of Varanasi and backwaters of Kerala.`,
+      ? `Main ${activeCity} ya Bharat ke kisi bhi shehar ya monument ke baare mein verified details provide kar sakta hoon — jaise entry fee, timing, history, nearby food aur stays. Aap kya dekhna chahte hain?`
+      : `I can provide verified details for ${activeCity} or any monument across India — including entry timings, ticket fees, history, and nearby recommendations. How may I help?`,
     suggested_actions: ['Plan a Trip', 'Explore Near Me', 'Top Heritage Forts', 'Emergency Helpline'],
   };
 }

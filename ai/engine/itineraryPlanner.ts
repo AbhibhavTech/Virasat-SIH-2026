@@ -114,6 +114,27 @@ export function generateSmartItinerary(state: TripMemoryState): GeneratedTripPla
     }
   }
 
+  // If a specific monument was discussed in active conversation, start Day 1 with it
+  if (state.lastPlace && state.lastPlace.city.toLowerCase().includes(cleanDest)) {
+    const existingIdx = availablePlaces.findIndex(
+      (p) => p.id === state.lastPlace?.id || p.name.toLowerCase() === state.lastPlace?.name.toLowerCase()
+    );
+    if (existingIdx > 0) {
+      const [item] = availablePlaces.splice(existingIdx, 1);
+      availablePlaces.unshift(item);
+    } else if (existingIdx === -1) {
+      availablePlaces.unshift({
+        id: state.lastPlace.id,
+        name: state.lastPlace.name,
+        category: state.lastPlace.category,
+        topic: state.lastPlace.topic,
+        summary: state.lastPlace.summary,
+        timings: state.lastPlace.visiting_hours,
+        entry_fee: state.lastPlace.entry_fee,
+      });
+    }
+  }
+
   // Filter or prioritize based on interests
   if (state.interests.includes('spiritual')) {
     availablePlaces.sort((a, b) => {
@@ -176,10 +197,21 @@ export function generateSmartItinerary(state: TripMemoryState): GeneratedTripPla
   if (style === 'budget') transitDaily = 400;
   if (style === 'luxury') transitDaily = 2800;
 
-  const totalHotel = hotelRate * Math.max(daysCount - 1, 1);
-  const totalFood = foodRate * daysCount;
-  const totalTransit = transitDaily * daysCount;
-  const totalTickets = 350 * daysCount;
+  let totalHotel = hotelRate * Math.max(daysCount - 1, 1);
+  let totalFood = foodRate * daysCount;
+  let totalTransit = transitDaily * daysCount;
+  let totalTickets = 350 * daysCount;
+
+  // If user requested a 1-day local day plan with low budget (e.g. ₹2000)
+  if (daysCount === 1 && state.budget && state.budget <= 3000) {
+    totalHotel = 0; // Day trip without overnight stay
+    totalTransit = 250;
+    totalFood = 650;
+    totalTickets = 300;
+  } else if (daysCount === 1) {
+    totalHotel = 0; // Day trip
+  }
+
   const grandTotal = totalHotel + totalFood + totalTransit + totalTickets;
 
   return {

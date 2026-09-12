@@ -1,4 +1,3 @@
-import { db } from '../../server/src/db/client';
 import fs from 'fs';
 import path from 'path';
 

@@ -166,8 +166,158 @@ async function runMasterTests() {
       throw new Error('Test 10 failed: Monument info missing');
     }
 
+    // =========================================================================
+    // SECTION 19 & 20: VIRASAT CONCIERGE & GATEWAY OF INDIA MULTI-TURN FLOW
+    // =========================================================================
+    const gwSession = 'gateway-session-' + Date.now();
+
+    // TEST 11: Direct Monument Resolution - "mujhe gateway of india k baare main batao"
+    console.log('\n--- TEST 11: CRITICAL BUG FIX - "mujhe gateway of india k baare main batao" ---');
+    const t11 = await request('POST', '/api/ai/chat', {
+      message: 'mujhe gateway of india k baare main batao',
+      session_id: gwSession,
+    });
+    console.log('Query: "mujhe gateway of india k baare main batao"');
+    console.log('Reply Preview:\n', t11.body.reply.slice(0, 400) + '...');
+    console.log('Actions:', t11.body.suggested_actions);
+    if (t11.body.reply.includes('Main Bharat ke sabhi 28 States aur 8 Union Territories ke verified monuments')) {
+      throw new Error('Test 11 failed: Canned introduction returned instead of Gateway of India dossier!');
+    }
+    if (!t11.body.reply.includes('Gateway of India') || !t11.body.reply.includes('Mumbai')) {
+      throw new Error('Test 11 failed: Gateway of India and Mumbai not resolved in reply');
+    }
+    if (!t11.body.reply.includes('Historical Significance') || !t11.body.reply.includes('Architecture')) {
+      throw new Error('Test 11 failed: Structured sections missing from monument reply');
+    }
+
+    // TEST 12: Contextual Nearby Query - "nearby kya hai?"
+    console.log('\n--- TEST 12: Contextual Nearby - "nearby kya hai?" ---');
+    const t12 = await request('POST', '/api/ai/chat', {
+      message: 'nearby kya hai?',
+      session_id: gwSession,
+    });
+    console.log('Query: "nearby kya hai?"');
+    console.log('Reply Preview:\n', t12.body.reply.slice(0, 300) + '...');
+    if (!t12.body.reply.includes('Gateway of India') && !t12.body.reply.includes('Mumbai')) {
+      throw new Error('Test 12 failed: Contextual nearby did not associate with Gateway of India / Mumbai');
+    }
+
+    // TEST 13: Contextual 1-Day Plan - "1 din ka plan bana"
+    console.log('\n--- TEST 13: Contextual 1-Day Itinerary - "1 din ka plan bana" ---');
+    const t13 = await request('POST', '/api/ai/chat', {
+      message: '1 din ka plan bana',
+      session_id: gwSession,
+    });
+    console.log('Query: "1 din ka plan bana"');
+    console.log('Reply Preview:\n', t13.body.reply.slice(0, 350) + '...');
+    if (!t13.body.reply.includes('Day 1') || !t13.body.reply.includes('Mumbai')) {
+      throw new Error('Test 13 failed: Did not generate 1-day Mumbai itinerary centered on Gateway of India');
+    }
+
+    // TEST 14: Contextual Budget Optimization - "budget 2000 rakho"
+    console.log('\n--- TEST 14: Contextual Budget Optimization - "budget 2000 rakho" ---');
+    const t14 = await request('POST', '/api/ai/chat', {
+      message: 'budget 2000 rakho',
+      session_id: gwSession,
+    });
+    console.log('Query: "budget 2000 rakho"');
+    console.log('Reply Preview:\n', t14.body.reply.slice(0, 300) + '...');
+    if (!t14.body.reply.includes('2,000') && !t14.body.reply.includes('1,200') && !t14.body.reply.includes('Budget')) {
+      throw new Error('Test 14 failed: Budget not optimized to ₹2,000');
+    }
+
+    // TEST 15: Contextual Food Addition - "food bhi add karo"
+    console.log('\n--- TEST 15: Contextual Food Integration - "food bhi add karo" ---');
+    const t15 = await request('POST', '/api/ai/chat', {
+      message: 'food bhi add karo',
+      session_id: gwSession,
+    });
+    console.log('Query: "food bhi add karo"');
+    console.log('Reply Preview:\n', t15.body.reply.slice(0, 300) + '...');
+    if (!t15.body.reply.toLowerCase().includes('food') && !t15.body.reply.toLowerCase().includes('culinary')) {
+      throw new Error('Test 15 failed: Food experiences not integrated');
+    }
+
+    // TEST 16: Contextual Hotels - "ab hotel bata"
+    console.log('\n--- TEST 16: Contextual Hotels - "ab hotel bata" ---');
+    const t16 = await request('POST', '/api/ai/chat', {
+      message: 'ab hotel bata',
+      session_id: gwSession,
+    });
+    console.log('Query: "ab hotel bata"');
+    console.log('Reply Preview:\n', t16.body.reply.slice(0, 350) + '...');
+    if (!t16.body.reply.includes('Taj Mahal Palace') && !t16.body.reply.includes('Mumbai')) {
+      throw new Error('Test 16 failed: Did not recommend Mumbai/Colaba hotels near Gateway of India');
+    }
+
+    // TEST 17: Food query directly - "Gateway of India ke paas food kaha milega?"
+    console.log('\n--- TEST 17: Direct Food Query - "Gateway of India ke paas food kaha milega?" ---');
+    const t17 = await request('POST', '/api/ai/chat', {
+      message: 'Gateway of India ke paas food kaha milega?',
+    });
+    console.log('Query: "Gateway of India ke paas food kaha milega?"');
+    console.log('Reply Preview:\n', t17.body.reply.slice(0, 300) + '...');
+    if (!t17.body.reply.includes('Cafe Mondegar') && !t17.body.reply.includes('Bademiya') && !t17.body.reply.includes('Mumbai')) {
+      throw new Error('Test 17 failed: Colaba culinary landmarks missing');
+    }
+
+    // TEST 18: Gateway of India History
+    console.log('\n--- TEST 18: History Query - "Gateway of India ka history batao" ---');
+    const t18 = await request('POST', '/api/ai/chat', {
+      message: 'Gateway of India ka history batao',
+    });
+    console.log('Query: "Gateway of India ka history batao"');
+    console.log('Reply Preview:\n', t18.body.reply.slice(0, 300) + '...');
+    if (!t18.body.reply.includes('George V') && !t18.body.reply.includes('1911')) {
+      throw new Error('Test 18 failed: Historical facts missing');
+    }
+
+    // TEST 19: Destination Info - "Jaipur ke baare mein batao"
+    console.log('\n--- TEST 19: Destination Info - "Jaipur ke baare mein batao" ---');
+    const t19 = await request('POST', '/api/ai/chat', {
+      message: 'Jaipur ke baare mein batao',
+    });
+    console.log('Query: "Jaipur ke baare mein batao"');
+    console.log('Reply Preview:\n', t19.body.reply.slice(0, 300) + '...');
+    if (!t19.body.reply.includes('Jaipur') || (!t19.body.reply.includes('Hawa Mahal') && !t19.body.reply.includes('Rajasthan'))) {
+      throw new Error('Test 19 failed: Jaipur details missing');
+    }
+
+    // TEST 20: Hampi query - "Tell me about Hampi"
+    console.log('\n--- TEST 20: Hampi Query - "Tell me about Hampi" ---');
+    const t20 = await request('POST', '/api/ai/chat', {
+      message: 'Tell me about Hampi',
+    });
+    console.log('Query: "Tell me about Hampi"');
+    console.log('Reply Preview:\n', t20.body.reply.slice(0, 300) + '...');
+    if (!t20.body.reply.includes('Hampi') || !t20.body.reply.includes('Karnataka')) {
+      throw new Error('Test 20 failed: Hampi details missing');
+    }
+
+    // TEST 21: State Query - "Rajasthan ke best heritage places batao"
+    console.log('\n--- TEST 21: State Query - "Rajasthan ke best heritage places batao" ---');
+    const t21 = await request('POST', '/api/ai/chat', {
+      message: 'Rajasthan ke best heritage places batao',
+    });
+    console.log('Query: "Rajasthan ke best heritage places batao"');
+    console.log('Reply Preview:\n', t21.body.reply.slice(0, 300) + '...');
+    if (!t21.body.reply.includes('Rajasthan') && !t21.body.reply.includes('Jaipur')) {
+      throw new Error('Test 21 failed: Rajasthan heritage places missing');
+    }
+
+    // TEST 22: What is Virasat
+    console.log('\n--- TEST 22: Explaining Virasat - "what is Virasat?" ---');
+    const t22 = await request('POST', '/api/ai/chat', {
+      message: 'what is Virasat?',
+    });
+    console.log('Query: "what is Virasat?"');
+    console.log('Reply Preview:\n', t22.body.reply.slice(0, 300) + '...');
+    if (!t22.body.reply.includes('Virasat') && !t22.body.reply.includes('heritage')) {
+      throw new Error('Test 22 failed: Virasat explanation missing');
+    }
+
     console.log('\n================================================================');
-    console.log('🎉 ALL 10 MASTER CONCIERGE & MULTI-TURN AI TESTS PASSED!');
+    console.log('🎉 ALL 22 MASTER CONCIERGE & MULTI-TURN AI TESTS PASSED!');
     console.log('================================================================\n');
   } catch (err) {
     console.error('❌ Master Test suite failed:', err);

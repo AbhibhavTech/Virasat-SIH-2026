@@ -3516,7 +3516,7 @@ ${placesContextStr}`;
   } else {
     reply = `Namaste! 👋 I am your Virasat Travel & Heritage Concierge.\n\n` +
       (userLoc
-        ? `It looks like you're currently near **${userLoc.locality ? `${userLoc.locality}, ` : ''}${userLoc.city || userLoc.state || ''}**.\n\nWhere would you like to go today?`
+        ? `Based on your general area (**${userLoc.locality ? `${userLoc.locality}, ` : ''}${userLoc.city || userLoc.state || ''}**), I can help you discover nearby heritage sites or plan travel across India.\n\nWhere would you like to go today?`
         : `Where would you like to go today? You can choose **Explore Near Me** or name any destination across India.`);
   }
 
