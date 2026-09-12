@@ -342,12 +342,12 @@ export const api = {
   // -------------------------------------------------------------
   async sendAIChat(req: AIChatRequest): Promise<AIChatResponse> {
     try {
-      return await request<AIChatResponse>('/v1/ai/chat', {
+      return await request<AIChatResponse>('/ai/chat', {
         method: 'POST',
         body: JSON.stringify(req),
       });
     } catch {
-      return await request<AIChatResponse>('/ai/chat', {
+      return await request<AIChatResponse>('/v1/ai/chat', {
         method: 'POST',
         body: JSON.stringify(req),
       });
