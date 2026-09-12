@@ -116,6 +116,25 @@ export function buildResponseForIntent(
       };
     }
 
+    // How to reach focus
+    if (focus === 'how_to_reach') {
+      return {
+        reply: isHinglish
+          ? `🚆 **${p.name} (${p.city}, ${p.state}) Kaise Pahunchein**:\n\n` +
+            `${p.how_to_reach}\n\n` +
+            `• **Visiting Hours**: ${p.visiting_hours}\n` +
+            `• **Entry Fee**: ${p.entry_fee}\n\n` +
+            `Kya aap iske paas ke hotels dekhna chahte hain ya ${p.city} ka full plan banana hai?`
+          : `🚆 **How to Reach ${p.name} (${p.city}, ${p.state})**:\n\n` +
+            `${p.how_to_reach}\n\n` +
+            `• **Visiting Hours**: ${p.visiting_hours}\n` +
+            `• **Entry Fee**: ${p.entry_fee}\n\n` +
+            `Would you like to check hotels near ${p.name} or plan a full trip to ${p.city}?`,
+        suggested_actions: ['Nearby Kya Hai?', `Hotels near ${p.name}`, `1-Day ${p.city} Plan`, 'Ticket Info'],
+        sources: ['Archaeological Survey of India (ASI)', 'State Tourism Gazette', 'Virasat Master Tourism Registry'],
+      };
+    }
+
     const nearbyList = (p.nearby_places || [])
       .map((nb, i) => `${i + 1}. 🏛️ **${nb.name}** (${nb.category || 'Heritage'}) — ${nb.summary || 'Verified cultural landmark'}`)
       .join('\n');

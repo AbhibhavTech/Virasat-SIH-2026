@@ -28,6 +28,17 @@ export interface ResolvedPlace {
   aliases: string[];
 }
 
+export type QueryFocus =
+  | 'general'
+  | 'history'
+  | 'architecture'
+  | 'nearby'
+  | 'timing'
+  | 'ticket'
+  | 'duration'
+  | 'family'
+  | 'how_to_reach';
+
 let cachedPlacesIndex: Map<string, ResolvedPlace> | null = null;
 let cachedPlacesList: ResolvedPlace[] | null = null;
 let cityPlacesMap: Map<string, ResolvedPlace[]> = new Map();
@@ -299,7 +310,7 @@ export function resolvePlaceEntity(
 ): {
   place: ResolvedPlace;
   matchType: 'exact' | 'fuzzy' | 'alias' | 'contextual';
-  queryFocus: 'general' | 'history' | 'architecture' | 'nearby' | 'timing' | 'ticket' | 'duration' | 'family';
+  queryFocus: QueryFocus;
 } | null {
   const { list, index } = loadPlacesRegistry();
   if (!list.length) return null;
@@ -307,11 +318,13 @@ export function resolvePlaceEntity(
   const rawLower = (rawQuery || '').toLowerCase().trim();
 
   // Determine query focus
-  let queryFocus: 'general' | 'history' | 'architecture' | 'nearby' | 'timing' | 'ticket' | 'duration' | 'family' = 'general';
+  let queryFocus: QueryFocus = 'general';
   if (/history|itihaas|kab bana|kisne banaya|story|british|king george/i.test(rawLower)) {
     queryFocus = 'history';
   } else if (/architecture|design|structure|architect|kaisa dikhta hai|banawat/i.test(rawLower)) {
     queryFocus = 'architecture';
+  } else if (/how to reach|kaise jau|kaise jaye|kaise pahunche|reach|transport|route|distance/i.test(rawLower)) {
+    queryFocus = 'how_to_reach';
   } else if (/nearby|wahan aur kya|waha aur kya|paas me|around|aur kya dekh sakte|what else to see/i.test(rawLower)) {
     queryFocus = 'nearby';
   } else if (/kitna time|kitna samay|how long|duration|kab tak ghum sakte/i.test(rawLower)) {

@@ -1,4 +1,4 @@
-import { resolvePlaceEntity, ResolvedPlace } from './placeResolver';
+import { resolvePlaceEntity, ResolvedPlace, QueryFocus } from './placeResolver';
 
 export type UserIntent =
   | 'GREETING'
@@ -43,7 +43,7 @@ export interface IntentResult {
   isHinglish: boolean;
   rawQuery: string;
   resolvedPlace?: ResolvedPlace;
-  queryFocus?: string;
+  queryFocus?: QueryFocus;
 }
 
 const INDIAN_STATES_AND_UTS = [
@@ -68,7 +68,7 @@ function _classifyIntent(
   language: 'en' | 'hi_hinglish';
   isHinglish: boolean;
   resolvedPlace?: ResolvedPlace;
-  queryFocus?: string;
+  queryFocus?: QueryFocus;
 } {
   const text = (rawText || '').trim().toLowerCase();
 
@@ -95,7 +95,7 @@ function _classifyIntent(
   if (/^(thank you|thanks|shukriya|dhanyawad|dhanyavaad|thx)[\s!.]*$/i.test(text)) {
     return { intent: 'THANKS', confidence: 0.98, language, isHinglish };
   }
-  if (/(what is this|who are you|tum kaun ho|ye kya hai|virasat kya hai|about virasat|introduce yourself)/i.test(text)) {
+  if (/(what is this|who are you|tum kaun ho|ye kya hai|what is virasat|virasat kya hai|about virasat|introduce yourself)/i.test(text)) {
     return { intent: 'ABOUT_VIRASAT', confidence: 0.95, language, isHinglish };
   }
   if (/^(help|madad|what can you do|tum kya kar sakte ho|features batao|options batao)[\s!.]*$/i.test(text)) {

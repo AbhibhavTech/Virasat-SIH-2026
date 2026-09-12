@@ -91,13 +91,6 @@ export function auditHallucinations(
   modelUsed: string
 ): GroundingAudit {
   const textLower = replyText.toLowerCase();
-  const confirmedPlaces: string[] = [];
-
-  for (const p of allPlaces) {
-    if (textLower.includes(p.name.toLowerCase()) || (p.id && textLower.includes(p.id.toLowerCase()))) {
-      confirmedPlaces.push(p.name);
-    }
-  }
 
   // Scan for potential hallucinated monuments (named entities ending in heritage terms not in DB)
   const heritagePattern = /([A-Z][a-z]+(?:\s+[A-Z][a-z]+)*\s+(?:Fort|Palace|Temple|Mahal|Mosque|Caves|Minar|Ghat|Tomb|Bagh|Stupa))\b/g;
@@ -126,14 +119,27 @@ export function auditHallucinations(
       const pNameLower = p.name.toLowerCase();
       const pIdLower = (p.id || '').toLowerCase();
       return (
+        pNameLower === cleanLower ||
         pNameLower.includes(cleanLower) ||
-        cleanLower.includes(pNameLower) ||
         pIdLower === cleanLower.replace(/[^a-z0-9]+/g, '-') ||
-        cleanLower.split(/\s+/).filter((w) => w.length >= 4).every((w) => pNameLower.includes(w) || pIdLower.includes(w))
+        (cleanLower.split(/\s+/).filter((w) => w.length >= 4).length > 1 &&
+          cleanLower.split(/\s+/).filter((w) => w.length >= 4).every((w) => pNameLower.includes(w) || pIdLower.includes(w)))
       );
     });
     if (!isKnown && !flaggedUnverified.includes(cleanMatch)) {
       flaggedUnverified.push(cleanMatch);
+    }
+  }
+
+  const confirmedPlaces: string[] = [];
+  for (const p of allPlaces) {
+    const pNameLower = p.name.toLowerCase();
+    if (
+      p.id !== p.city_id &&
+      !flaggedUnverified.some((fu) => fu.toLowerCase().includes(pNameLower)) &&
+      (textLower.includes(pNameLower) || (p.id && textLower.includes(p.id.toLowerCase())))
+    ) {
+      confirmedPlaces.push(p.name);
     }
   }
 

@@ -125,7 +125,7 @@ async function runPhase3BTests() {
   // Register place in memory store for health testing
   await db.places.create({
     id: healthMonumentId,
-    name: 'Test Heritage Site',
+    name: `Test Heritage Site ${healthMonumentId}`,
     state_id: 'rajasthan',
     city_id: 'jaipur',
     category: 'Monuments & Forts',
@@ -230,6 +230,9 @@ async function runPhase3BTests() {
     userSpecificReports.every((r) => r.user_id === testUserId),
     'User-scoped reports strictly isolate queries to the authenticated citizen (IDOR protection)'
   );
+
+  // Cleanup test monument
+  await db.places.delete(healthMonumentId);
 
   // Summary
   console.log('\n=============================================================');

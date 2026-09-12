@@ -256,7 +256,7 @@ async function runPhase7Tests() {
   assert(traveller.id !== undefined, 'E2E Step 1: Traveller successfully registers account');
 
   // Step 2: Search Destination (Jaipur monuments)
-  const jaipurPlaces = await db.places.findAll({ city: 'jaipur' });
+  const jaipurPlaces = await db.places.findAll({ city: 'jaipur', includeAllStatuses: true });
   assert(jaipurPlaces.places.length > 0, `E2E Step 2: Traveller discovers Jaipur destinations (${jaipurPlaces.places.length} places found)`);
 
   // Step 3: Multimodal Routing (Delhi to Jaipur)

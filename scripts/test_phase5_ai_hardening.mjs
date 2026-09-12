@@ -32,7 +32,7 @@ async function runPhase5Tests() {
   // Test Suite 1: Grounded Response Audit (High Confidence)
   // -------------------------------------------------------------
   console.log('--- Test Suite 1: Grounded Response Audit (High Confidence) ---');
-  const placesResult = await db.places.findAll({ limit: 1000 });
+  const placesResult = await db.places.findAll({ limit: 1000, includeAllStatuses: true });
   const allPlaces = placesResult.places;
 
   const verifiedText = `In Jaipur, you can visit the magnificent Amber Fort and the iconic Hawa Mahal. Both are verified monuments maintained by the Archaeological Survey of India.`;

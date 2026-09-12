@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { db } from '../../server/src/db/client';
 
 export const declaration = {
   name: 'searchTouristPlaces',
@@ -135,6 +136,7 @@ export async function execute(args: {
 
   // Fallback to db repository if needed
   if (matchedPlaces.length === 0) {
+    await db.init();
     const dbRes = await db.places.findAll();
     for (const p of dbRes.places) {
       if (q && !p.name.toLowerCase().includes(q) && !(p.city_id || '').toLowerCase().includes(q)) continue;
