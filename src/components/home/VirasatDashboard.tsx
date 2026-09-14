@@ -449,7 +449,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
       category: 'Spiritual & Ghats',
       categoryType: 'Temples',
       rating: 4.9,
-      imageUrl: 'https://images.unsplash.com/photo-1568454537842-d933259bb258?w=800&auto=format&fit=crop&q=80',
+      imageUrl: '/images/varanasi-ganga-aarti.jpg',
       badge: 'Sacred Ghats',
     },
     {

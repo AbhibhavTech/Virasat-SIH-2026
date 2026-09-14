@@ -89,7 +89,7 @@ export const HERITAGE_CIRCUIT_DESTINATIONS: HeritageCircuitDestination[] = [
     state: 'Uttar Pradesh',
     region: 'Sacred Heart of Bharat',
     category: 'spiritual',
-    imageUrl: 'https://images.unsplash.com/photo-1568454537842-d933259bb258?w=1600&auto=format&fit=crop&q=85',
+    imageUrl: '/images/varanasi-ganga-aarti.jpg',
     badge: 'Oldest Living City on Earth',
     bestSeason: 'Oct - Mar',
     highlights: ['Dashashwamedh Maha Aarti', 'Sunrise Subah-e-Banaras Boat', 'Assi Ghat Walks', 'Sarnath Deer Park'],

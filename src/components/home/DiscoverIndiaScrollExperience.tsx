@@ -82,7 +82,7 @@ export const DiscoverIndiaScrollExperience: React.FC<DiscoverIndiaScrollExperien
       ],
       actionLabel: 'Discover Cultural Traditions',
       actionTab: 'india',
-      imageUrl: 'https://images.unsplash.com/photo-1568454537842-d933259bb258?w=1200&auto=format&fit=crop&q=85',
+      imageUrl: '/images/varanasi-ganga-aarti.jpg',
       culturalNote: 'Living Intangible Cultural Heritage',
     },
     {

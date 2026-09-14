@@ -222,11 +222,11 @@ export const STATE_CURATED_IMAGES: Record<string, CuratedStateImage> = {
 
   // Southern Region
   'andhra-pradesh': {
-    imageUrl: 'https://images.unsplash.com/photo-1628155930542-3c7a64e2c833?w=1200&auto=format&fit=crop&q=80',
-    creator: 'Andhra Tourism / Tirupati',
-    landmark: 'Tirumala Venkateswara & Lepakshi',
-    bestSeason: 'Oct - Mar',
-    tags: ['Tirupati Pilgrimage', 'Lepakshi Hanging Pillar', 'Araku Valley'],
+    imageUrl: '/images/andhra-pradesh-tirumala-4k.jpg',
+    creator: 'Tirumala Tirupati Devasthanams / Wikimedia Commons',
+    landmark: 'Tirumala Venkateswara Temple Gopuram & Ananda Nilayam',
+    bestSeason: 'Sep - Feb',
+    tags: ['Tirumala Tirupati', 'Sri Venkateswara Swamy', 'Ananda Nilayam', 'Lepakshi Heritage'],
   },
   'karnataka': {
     imageUrl: 'https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80',

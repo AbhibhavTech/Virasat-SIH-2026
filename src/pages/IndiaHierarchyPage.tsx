@@ -891,13 +891,21 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                   </button>
                 </nav>
 
-                <div>
-                  <h1 className="font-serif text-2xl sm:text-4xl font-bold text-[#0B192C] tracking-tight">
-                    Discover Bharat — 28 States &amp; 8 Union Territories
-                  </h1>
-                  <p className="text-xs sm:text-sm text-[#6B5E55] max-w-3xl leading-relaxed mt-1.5">
-                    Explore India&apos;s rich cultural heritage across all 28 States and 8 Union Territories. Discover verified UNESCO World Heritage monuments, historic towns, sacred sites, and living traditions with documented photographic provenance.
-                  </p>
+                <div className="flex items-start gap-4">
+                  <img
+                    src="/images/india-flag-map.png"
+                    alt="Bharat Map"
+                    className="w-14 h-14 sm:w-16 sm:h-16 object-contain drop-shadow-md shrink-0 hidden sm:block"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div>
+                    <h1 className="font-serif text-2xl sm:text-4xl font-bold text-[#0B192C] tracking-tight">
+                      Discover Bharat — 28 States &amp; 8 Union Territories
+                    </h1>
+                    <p className="text-xs sm:text-sm text-[#6B5E55] max-w-3xl leading-relaxed mt-1.5">
+                      Explore India&apos;s rich cultural heritage across all 28 States and 8 Union Territories. Discover verified UNESCO World Heritage monuments, historic towns, sacred sites, and living traditions with documented photographic provenance.
+                    </p>
+                  </div>
                 </div>
               </div>
 
@@ -1240,10 +1248,13 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
               <div className="space-y-8">
                 {/* Verified Coordinates Grounded Claim Banner */}
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-4 rounded-2xl bg-gradient-to-r from-orange-50/80 via-white to-amber-50/60 border border-orange-200/70 shadow-2xs">
-                  <div className="flex items-center gap-2.5">
-                    <div className="w-8 h-8 rounded-xl bg-[#FF671F] text-white flex items-center justify-center shadow-xs">
-                      <MapIcon className="w-4 h-4" />
-                    </div>
+                  <div className="flex items-center gap-3">
+                    <img
+                      src="/images/india-flag-map.png"
+                      alt="Bharat Map"
+                      className="w-10 h-10 object-contain drop-shadow-xs shrink-0"
+                      referrerPolicy="no-referrer"
+                    />
                     <div>
                       <div className="text-xs font-bold text-stone-900">
                         Accurate Real-World Bharat Geographic &amp; Satellite Map

@@ -464,51 +464,16 @@ export const NortheastIndiaIcon: React.FC<{ className?: string }> = ({ className
 );
 
 /**
- * Illustrated Mini India Map with Location Pins for "Explore on Map" card
+ * Illustrated Mini India Map with National Flag for "Explore on Map" card
  */
 export const IndiaIllustratedMapGraphic: React.FC<{ className?: string }> = ({ className = 'w-24 h-24' }) => (
   <div className={`relative ${className} select-none shrink-0 flex items-center justify-center`}>
-    <svg viewBox="0 0 140 160" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
-      <defs>
-        <linearGradient id="mapFillGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="#FFF2E8" />
-          <stop offset="50%" stopColor="#E8F4EC" />
-          <stop offset="100%" stopColor="#E6EFF9" />
-        </linearGradient>
-      </defs>
-      {/* India Outline Silhouette */}
-      <path
-        d="M62 10 C66 12, 74 12, 78 18 C83 24, 88 28, 85 35 C81 41, 92 45, 96 50 C100 55, 109 57, 114 61 C121 63, 134 59, 138 65 C139 70, 133 77, 127 79 C121 81, 112 76, 105 78 C101 81, 98 86, 102 93 C104 98, 109 104, 107 111 C105 116, 98 121, 94 128 C90 135, 86 145, 80 152 C76 156, 73 150, 70 142 C67 132, 62 124, 58 116 C55 109, 50 102, 48 97 C45 92, 38 88, 33 85 C28 80, 21 77, 19 70 C17 65, 24 60, 28 57 C33 52, 39 50, 42 45 C47 40, 50 35, 53 28 C56 22, 60 14, 62 10 Z"
-        fill="url(#mapFillGrad)"
-        stroke="#D5D9E2"
-        strokeWidth="1.5"
-      />
-      {/* Colorful Location Pins */}
-      {/* Delhi / North - Red */}
-      <circle cx="60" cy="42" r="5" fill="#EF4444" />
-      <circle cx="60" cy="42" r="2" fill="#FFFFFF" />
-      <path d="M60 47 L60 52" stroke="#EF4444" strokeWidth="1.5" strokeLinecap="round" />
-
-      {/* Jaipur / West - Orange */}
-      <circle cx="48" cy="54" r="4.5" fill="#FF671F" />
-      <circle cx="48" cy="54" r="1.8" fill="#FFFFFF" />
-      <path d="M48 58.5 L48 63" stroke="#FF671F" strokeWidth="1.5" strokeLinecap="round" />
-
-      {/* Kolkata / East - Blue */}
-      <circle cx="102" cy="74" r="4.5" fill="#0284C7" />
-      <circle cx="102" cy="74" r="1.8" fill="#FFFFFF" />
-      <path d="M102 78.5 L102 83" stroke="#0284C7" strokeWidth="1.5" strokeLinecap="round" />
-
-      {/* Mumbai / West - Green */}
-      <circle cx="40" cy="94" r="4" fill="#046A38" />
-      <circle cx="40" cy="94" r="1.6" fill="#FFFFFF" />
-      <path d="M40 98 L40 102" stroke="#046A38" strokeWidth="1.5" strokeLinecap="round" />
-
-      {/* South / Bengaluru / Hampi - Purple */}
-      <circle cx="62" cy="120" r="4.5" fill="#8B5CF6" />
-      <circle cx="62" cy="120" r="1.8" fill="#FFFFFF" />
-      <path d="M62 124.5 L62 129" stroke="#8B5CF6" strokeWidth="1.5" strokeLinecap="round" />
-    </svg>
+    <img
+      src="/images/india-flag-map.png"
+      alt="India Map"
+      className="w-full h-full object-contain filter drop-shadow-md select-none transition-transform duration-300 group-hover:scale-105"
+      referrerPolicy="no-referrer"
+    />
   </div>
 );
 

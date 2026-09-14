@@ -93,7 +93,7 @@ export const DESTINATION_HIGHLIGHTS: DestinationHighlight[] = [
     category: 'spiritual',
     categoryLabel: 'Spiritual & Sacred',
     badge: 'Oldest Living City',
-    imageUrl: 'https://images.unsplash.com/photo-1568454537842-d933259bb258?w=1200&auto=format&fit=crop&q=80',
+    imageUrl: '/images/varanasi-ganga-aarti.jpg',
     tagline: 'Ethereal evening brass lamp ceremonies, conch shells, and boat rides along 84 historic stone riverfronts.',
     era: 'Over 3,000 years of continuous cultural living heritage',
     architecture: 'North Indian Riverfront Ghats & Sandstone Pavilions',

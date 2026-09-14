@@ -82,7 +82,7 @@ export const MoodDiscoverySection: React.FC<MoodDiscoverySectionProps> = ({
       title: 'Festivals & Events',
       hindiTitle: 'उत्सव व संगम',
       tagline: 'Sacred riverfront Ganga Aartis, classical dances & royal celebrations.',
-      imageUrl: 'https://images.unsplash.com/photo-1568454537842-d933259bb258?w=800&auto=format&fit=crop&q=80',
+      imageUrl: '/images/varanasi-ganga-aarti.jpg',
       actionType: 'tab',
       targetTab: 'india',
       badge: 'Sacred Gatherings',
