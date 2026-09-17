@@ -41,7 +41,7 @@ import { adminRouter } from './server/src/modules/admin/admin.router';
 import { requestLogger, securityHeaders, errorHandler } from './server/src/middleware/observability';
 
 const app = express();
-const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
+const PORT = 3000;
 
 app.use(securityHeaders);
 app.use(requestLogger);
