@@ -284,6 +284,19 @@ export const INDIA_PINS: MapPinData[] = [
   },
   // Northeast
   {
+    id: 'arunachal-pradesh',
+    name: 'Arunachal Pradesh (Tawang Monastery)',
+    type: 'town',
+    stateId: 'arunachal-pradesh',
+    townId: 'tawang',
+    stateName: 'Arunachal Pradesh',
+    region: 'Northeastern India',
+    iconicPlace: 'Tawang Monastery & Eastern Himalayas',
+    lat: 27.5861,
+    lng: 91.8594,
+    thumbnail: '/images/arunachal-pradesh-tawang-4k.jpg',
+  },
+  {
     id: 'assam',
     name: 'Assam (Majuli & Kaziranga)',
     type: 'town',

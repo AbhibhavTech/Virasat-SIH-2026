@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState, useMemo } from 'react';
 import L from 'leaflet';
 import { PlaceSummary, RouteResponse, TransportMode, LocationSuggestion } from '../../types';
 import { api } from '../../services/api';
+import { ALL_CITIES_LIST, CityMapItem, findNearestCity, calculateHaversineKm } from '../../data/citiesData';
+import { VERIFIED_HIDDEN_GEMS, HiddenGemItem } from '../../data/hiddenGemsData';
 
 // Helper to detect dual-point route searches like "srinagar station to csmt" or "srinagar - csmt"
 function parseDualPointsQuery(query: string): { originQuery: string; destQuery: string } | null {
@@ -194,10 +196,13 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
   const heritageLayerRef = useRef<L.LayerGroup | null>(null);
   const stationLayerRef = useRef<L.LayerGroup | null>(null);
   const sightsLayerRef = useRef<L.LayerGroup | null>(null);
+  const citiesLayerRef = useRef<L.LayerGroup | null>(null);
+  const hiddenGemsLayerRef = useRef<L.LayerGroup | null>(null);
   const routePolylineRef = useRef<L.LayerGroup | L.Polyline | null>(null);
   const routeMarkersRef = useRef<L.LayerGroup | null>(null);
   const searchHighlightRef = useRef<L.LayerGroup | null>(null);
   const userLocationMarkerRef = useRef<L.Marker | null>(null);
+  const userAccuracyCircleRef = useRef<L.Circle | null>(null);
 
   // Autocomplete Search States (All India Cities, Stations, Heritage, Tourist Sights)
   const [searchSuggestions, setSearchSuggestions] = useState<LocationSuggestion[]>([]);
@@ -229,6 +234,8 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
   const [heritageSites, setHeritageSites] = useState<any[]>([]);
   const [stations, setStations] = useState<any[]>([]);
   const [allPlaces, setAllPlaces] = useState<PlaceSummary[]>([]);
+  const [citiesList] = useState<CityMapItem[]>(ALL_CITIES_LIST);
+  const [hiddenGemsList] = useState<HiddenGemItem[]>(VERIFIED_HIDDEN_GEMS);
   const [loading, setLoading] = useState(true);
 
   // Filters & Search
@@ -239,6 +246,20 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
   const [showHeritage, setShowHeritage] = useState(true);
   const [showStations, setShowStations] = useState(true);
   const [showSights, setShowSights] = useState(true);
+  const [showCities, setShowCities] = useState(true);
+  const [showHiddenGems, setShowHiddenGems] = useState(true);
+
+  // User Geolocation Detailed Info (Our Location)
+  const [userLocation, setUserLocation] = useState<{
+    lat: number;
+    lng: number;
+    accuracy: number;
+    timestamp: number;
+    nearestCity?: string;
+    nearestCityDist?: number;
+    nearestHeritage?: string;
+    nearestHeritageDist?: number;
+  } | null>(null);
 
   // Safe LatLng coordinate parser & extractor to prevent Leaflet "Invalid LatLng object: (NaN, NaN)" exceptions
   const parseLatLng = (latVal: any, lngVal: any): [number, number] | null => {
@@ -432,6 +453,8 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
       heritageLayerRef.current = L.layerGroup().addTo(map);
       stationLayerRef.current = L.layerGroup().addTo(map);
       sightsLayerRef.current = L.layerGroup().addTo(map);
+      citiesLayerRef.current = L.layerGroup().addTo(map);
+      hiddenGemsLayerRef.current = L.layerGroup().addTo(map);
       routeMarkersRef.current = L.layerGroup().addTo(map);
       searchHighlightRef.current = L.layerGroup().addTo(map);
     } catch (initErr) {
@@ -442,6 +465,21 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
       if (searchHighlightRef.current) {
         try {
           searchHighlightRef.current.clearLayers();
+        } catch {}
+      }
+      if (citiesLayerRef.current) {
+        try {
+          citiesLayerRef.current.clearLayers();
+        } catch {}
+      }
+      if (hiddenGemsLayerRef.current) {
+        try {
+          hiddenGemsLayerRef.current.clearLayers();
+        } catch {}
+      }
+      if (userAccuracyCircleRef.current) {
+        try {
+          userAccuracyCircleRef.current.remove();
         } catch {}
       }
       if (mapInstanceRef.current) {
@@ -500,10 +538,14 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
     const hLayer = heritageLayerRef.current;
     const stLayer = stationLayerRef.current;
     const sLayer = sightsLayerRef.current;
+    const cLayer = citiesLayerRef.current;
+    const gLayer = hiddenGemsLayerRef.current;
 
     if (hLayer) hLayer.clearLayers();
     if (stLayer) stLayer.clearLayers();
     if (sLayer) sLayer.clearLayers();
+    if (cLayer) cLayer.clearLayers();
+    if (gLayer) gLayer.clearLayers();
 
     const q = searchQuery.toLowerCase().trim();
 
@@ -761,19 +803,255 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
         }
       });
     }
+
+    // D. Plot All Cities (169 Cultural & Administrative Hubs Across India)
+    if (showCities && cLayer) {
+      citiesList.forEach((c) => {
+        try {
+          const coords = parseLatLng(c.lat, c.lng);
+          if (!coords) return;
+
+          const matchesSearch =
+            !q ||
+            c.name.toLowerCase().includes(q) ||
+            c.district.toLowerCase().includes(q) ||
+            c.state.toLowerCase().includes(q);
+
+          if (!matchesSearch) return;
+
+          const iconHtml = `
+            <div style="background: linear-gradient(135deg, #4f46e5, #7c3aed); width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2.5px solid #ffffff; box-shadow: 0 4px 10px rgba(79, 70, 229, 0.45); cursor: pointer; transition: transform 0.2s;" title="${c.name} (${c.state})">
+              <span style="font-size: 14px;">🏙️</span>
+            </div>
+          `;
+          const markerIcon = L.divIcon({
+            className: 'city-pin',
+            html: iconHtml,
+            iconSize: [30, 30],
+            iconAnchor: [15, 15],
+            popupAnchor: [0, -16],
+          });
+
+          const marker = L.marker(coords, { icon: markerIcon });
+          marker.bindTooltip(
+            `🏙️ <b>${c.name}</b><br/><span style="color:#64748b; font-size:11px;">${c.district ? `${c.district}, ` : ''}${c.state} • ${c.places_count} Sights</span>`,
+            { direction: 'top', offset: [0, -14] }
+          );
+
+          const card = document.createElement('div');
+          card.className = 'p-3 text-slate-900 max-w-[275px] font-sans rounded-xl';
+          card.innerHTML = `
+            ${c.hero_image_url ? `
+              <div style="position: relative; margin: -12px -12px 10px -12px; border-top-left-radius: 12px; border-top-right-radius: 12px; overflow: hidden; height: 110px;">
+                <img src="${c.hero_image_url}" alt="${c.name}" style="width: 100%; height: 100%; object-fit: cover;" />
+                <span style="position: absolute; bottom: 8px; left: 8px; font-size: 10px; font-weight: 700; background: rgba(79, 70, 229, 0.9); color: #fff; padding: 2px 7px; border-radius: 6px; text-transform: uppercase;">
+                  City Hub • 169 Cities
+                </span>
+              </div>
+            ` : ''}
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2px;">
+              <h4 style="font-weight: 800; font-size: 15px; margin: 0; color: #0f172a; line-height: 1.25;">${c.name}</h4>
+              <span style="font-size: 11px; font-weight: 700; background: #e0e7ff; color: #4338ca; padding: 2px 6px; border-radius: 6px;">
+                ${c.places_count} Sights
+              </span>
+            </div>
+            <div style="font-size: 11px; color: #64748b; margin-bottom: 6px;">
+              ${c.district ? `District: ${c.district} • ` : ''}${c.state}
+            </div>
+            <p style="font-size: 11px; color: #334155; line-height: 1.4; margin-bottom: 10px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">
+              ${c.description}
+            </p>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 6px;">
+              <button id="btn-city-origin-${c.id}" style="background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; border-radius: 6px; padding: 5px; font-size: 10px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px;">
+                🚩 Start Route
+              </button>
+              <button id="btn-city-dest-${c.id}" style="background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; border-radius: 6px; padding: 5px; font-size: 10px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px;">
+                🎯 Route Here
+              </button>
+            </div>
+
+            <button id="btn-city-explore-${c.id}" style="width: 100%; background: #4f46e5; color: #fff; border: none; border-radius: 6px; padding: 6px 0; font-size: 11px; font-weight: 700; cursor: pointer;">
+              Explore ${c.name} Sights
+            </button>
+          `;
+          marker.bindPopup(card);
+
+          marker.on('popupopen', () => {
+            const btnExplore = document.getElementById(`btn-city-explore-${c.id}`);
+            if (btnExplore) {
+              btnExplore.onclick = () => {
+                if (onSelectCity) onSelectCity(c.name.toLowerCase());
+                mapInstanceRef.current?.flyTo(coords, 12, { duration: 1 });
+              };
+            }
+
+            const btnOrigin = document.getElementById(`btn-city-origin-${c.id}`);
+            if (btnOrigin) {
+              btnOrigin.onclick = () => {
+                setRouteOrigin(c.id);
+                setRouteOriginName(`${c.name} (${c.state})`);
+                setRouteOriginCoords({ lat: coords[0], lng: coords[1] });
+                setIsRoutingOpen(true);
+                setIsRoutePanelMinimized(false);
+              };
+            }
+
+            const btnDest = document.getElementById(`btn-city-dest-${c.id}`);
+            if (btnDest) {
+              btnDest.onclick = () => {
+                setRouteDestination(c.id);
+                setRouteDestName(`${c.name} (${c.state})`);
+                setRouteDestCoords({ lat: coords[0], lng: coords[1] });
+                setIsRoutingOpen(true);
+                setIsRoutePanelMinimized(false);
+              };
+            }
+          });
+
+          cLayer.addLayer(marker);
+        } catch (err) {
+          console.warn('[Map] Error plotting city marker:', c.name, err);
+        }
+      });
+    }
+
+    // E. Plot Verified Hidden Gems (Secret / Undiscovered India)
+    if (showHiddenGems && gLayer) {
+      hiddenGemsList.forEach((gem) => {
+        try {
+          const coords = parseLatLng(gem.lat, gem.lng);
+          if (!coords) return;
+
+          const matchesSearch =
+            !q ||
+            gem.name.toLowerCase().includes(q) ||
+            gem.city.toLowerCase().includes(q) ||
+            gem.state.toLowerCase().includes(q) ||
+            gem.category.toLowerCase().includes(q) ||
+            gem.whyInteresting.toLowerCase().includes(q) ||
+            gem.tags.some((t) => t.toLowerCase().includes(q)) ||
+            /hidden|secret|gem|rare|marvel|crater|stepwell|canyon|caves|bridge|falls/i.test(q);
+
+          if (!matchesSearch) return;
+
+          const iconHtml = `
+            <div style="background: linear-gradient(135deg, #9333ea, #ec4899); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2.5px solid #ffffff; box-shadow: 0 4px 12px rgba(147, 51, 234, 0.55); cursor: pointer; transition: transform 0.2s;" title="💎 ${gem.name} (Hidden Gem)">
+              <span style="font-size: 15px;">💎</span>
+            </div>
+          `;
+          const markerIcon = L.divIcon({
+            className: 'gem-pin',
+            html: iconHtml,
+            iconSize: [32, 32],
+            iconAnchor: [16, 16],
+            popupAnchor: [0, -18],
+          });
+
+          const marker = L.marker(coords, { icon: markerIcon });
+          marker.bindTooltip(
+            `💎 <b>${gem.name}</b> (Hidden Gem)<br/><span style="color:#7e22ce; font-size:11px;">${gem.city}, ${gem.state} • ${gem.category}</span>`,
+            { direction: 'top', offset: [0, -16] }
+          );
+
+          const card = document.createElement('div');
+          card.className = 'p-3 text-slate-900 max-w-[285px] font-sans rounded-xl';
+          card.innerHTML = `
+            ${gem.thumbnailUrl ? `
+              <div style="position: relative; margin: -12px -12px 10px -12px; border-top-left-radius: 12px; border-top-right-radius: 12px; overflow: hidden; height: 120px;">
+                <img src="${gem.thumbnailUrl}" alt="${gem.name}" style="width: 100%; height: 100%; object-fit: cover;" />
+                <span style="position: absolute; bottom: 8px; left: 8px; font-size: 10px; font-weight: 800; background: rgba(147, 51, 234, 0.9); color: #fff; padding: 2.5px 8px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.05em;">
+                  💎 Hidden Gem • ${gem.century}
+                </span>
+              </div>
+            ` : ''}
+            <h4 style="font-weight: 800; font-size: 15px; margin: 0 0 2px 0; color: #0f172a; line-height: 1.25;">${gem.name}</h4>
+            <div style="font-size: 11px; color: #64748b; margin-bottom: 8px;">
+              ${gem.city}, ${gem.state} • <span style="color:#9333ea; font-weight:700;">${gem.category}</span>
+            </div>
+
+            <div style="background: #faf5ff; border: 1px solid #e9d5ff; border-radius: 8px; padding: 8px; margin-bottom: 8px;">
+              <div style="font-size: 9px; font-weight: 800; text-transform: uppercase; color: #7e22ce; margin-bottom: 2px;">
+                ✨ Secret Wonder & Lore
+              </div>
+              <div style="font-size: 11px; color: #4c1d95; line-height: 1.45;">
+                ${gem.whyInteresting}
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 8px;">
+              ${gem.tags.slice(0, 3).map((t) => `<span style="font-size: 9px; background: #f3e8ff; color: #6b21a8; font-weight: 700; padding: 2px 6px; border-radius: 4px;">#${t}</span>`).join('')}
+              <span style="font-size: 9px; background: #ecfdf5; color: #047857; font-weight: 700; padding: 2px 6px; border-radius: 4px;">⏰ ${gem.bestTimeToVisit}</span>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 6px;">
+              <button id="btn-gem-origin-${gem.id}" style="background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; border-radius: 6px; padding: 5px; font-size: 10px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px;">
+                🚩 Start Route
+              </button>
+              <button id="btn-gem-dest-${gem.id}" style="background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; border-radius: 6px; padding: 5px; font-size: 10px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px;">
+                🎯 Route To Here
+              </button>
+            </div>
+
+            <button id="btn-gem-dossier-${gem.id}" style="width: 100%; background: #9333ea; color: #fff; border: none; border-radius: 6px; padding: 6px 0; font-size: 11px; font-weight: 700; cursor: pointer;">
+              View Secret Place Dossier
+            </button>
+          `;
+          marker.bindPopup(card);
+
+          marker.on('popupopen', () => {
+            const btnDossier = document.getElementById(`btn-gem-dossier-${gem.id}`);
+            if (btnDossier) {
+              btnDossier.onclick = () => onSelectPlace(gem.id);
+            }
+
+            const btnOrigin = document.getElementById(`btn-gem-origin-${gem.id}`);
+            if (btnOrigin) {
+              btnOrigin.onclick = () => {
+                setRouteOrigin(gem.id);
+                setRouteOriginName(`${gem.name} (${gem.city})`);
+                setRouteOriginCoords({ lat: coords[0], lng: coords[1] });
+                setIsRoutingOpen(true);
+                setIsRoutePanelMinimized(false);
+              };
+            }
+
+            const btnDest = document.getElementById(`btn-gem-dest-${gem.id}`);
+            if (btnDest) {
+              btnDest.onclick = () => {
+                setRouteDestination(gem.id);
+                setRouteDestName(`${gem.name} (${gem.city})`);
+                setRouteDestCoords({ lat: coords[0], lng: coords[1] });
+                setIsRoutingOpen(true);
+                setIsRoutePanelMinimized(false);
+              };
+            }
+          });
+
+          gLayer.addLayer(marker);
+        } catch (err) {
+          console.warn('[Map] Error plotting hidden gem marker:', gem.name, err);
+        }
+      });
+    }
   }, [
     heritageSites,
     stations,
     allPlaces,
+    citiesList,
+    hiddenGemsList,
     showHeritage,
     showStations,
     showSights,
+    showCities,
+    showHiddenGems,
     searchQuery,
     onSelectPlace,
+    onSelectCity,
     onView3DPlace,
   ]);
 
-  // Browser Geolocation: Use My Location
+  // Browser Geolocation: Use Our Location
   const handleUseMyLocation = () => {
     if (typeof navigator === 'undefined' || !navigator.geolocation) {
       setLocationError('Geolocation is not supported by your browser.');
@@ -789,8 +1067,36 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
         const lat = Number(latitude.toFixed(5));
         const lng = Number(longitude.toFixed(5));
 
+        // Find nearest city from ALL_CITIES_LIST
+        const { city: nearestCity, distanceKm: cityDist } = findNearestCity(lat, lng);
+
+        // Find nearest heritage site
+        let nearestHeritage: any = heritageSites[0];
+        let minHDist = Infinity;
+        for (const h of heritageSites) {
+          const coords = extractValidCoordinates(h);
+          if (coords) {
+            const d = calculateHaversineKm(lat, lng, coords[0], coords[1]);
+            if (d < minHDist) {
+              minHDist = d;
+              nearestHeritage = h;
+            }
+          }
+        }
+
+        setUserLocation({
+          lat,
+          lng,
+          accuracy: Math.round(accuracy),
+          timestamp: Date.now(),
+          nearestCity: nearestCity?.name,
+          nearestCityDist: cityDist,
+          nearestHeritage: nearestHeritage?.name,
+          nearestHeritageDist: Number.isFinite(minHDist) ? Math.round(minHDist) : undefined,
+        });
+
         setRouteOrigin('CURRENT_LOCATION');
-        setRouteOriginName(`My Current Location (${lat.toFixed(3)}, ${lng.toFixed(3)})`);
+        setRouteOriginName(`Our Location (${nearestCity ? `${nearestCity.name} area` : `${lat.toFixed(3)}, ${lng.toFixed(3)}`})`);
         setRouteOriginCoords({ lat, lng });
 
         const map = mapInstanceRef.current;
@@ -798,24 +1104,87 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
           if (userLocationMarkerRef.current) {
             userLocationMarkerRef.current.remove();
           }
+          if (userAccuracyCircleRef.current) {
+            userAccuracyCircleRef.current.remove();
+          }
 
+          // Blue accuracy radius circle
+          userAccuracyCircleRef.current = L.circle([lat, lng], {
+            radius: Math.max(accuracy, 60),
+            color: '#0284c7',
+            fillColor: '#38bdf8',
+            fillOpacity: 0.15,
+            weight: 1.5,
+            dashArray: '4, 4',
+          }).addTo(map);
+
+          // Radar pulsing live GPS pin
           const userIcon = L.divIcon({
             className: 'user-current-loc-pin',
             html: `
-              <div style="position:relative; width:28px; height:28px; display:flex; align-items:center; justify-content:center;">
-                <div style="position:absolute; width:100%; height:100%; border-radius:50%; background:rgba(2, 132, 199, 0.35); animation:ping 2s cubic-bezier(0,0,0.2,1) infinite;"></div>
-                <div style="width:14px; height:14px; border-radius:50%; background:#0284c7; border:2.5px solid white; box-shadow:0 0 10px rgba(2, 132, 199, 0.9);"></div>
+              <div style="position:relative; width:36px; height:36px; display:flex; align-items:center; justify-content:center;">
+                <div style="position:absolute; width:100%; height:100%; border-radius:50%; background:rgba(2, 132, 199, 0.4); animation:ping 2s cubic-bezier(0,0,0.2,1) infinite;"></div>
+                <div style="width:20px; height:20px; border-radius:50%; background:#0284c7; border:3px solid white; box-shadow:0 0 12px rgba(2, 132, 199, 0.95); display:flex; align-items:center; justify-content:center; color:white; font-size:10px; font-weight:bold;">📍</div>
               </div>
             `,
-            iconSize: [28, 28],
-            iconAnchor: [14, 14],
+            iconSize: [36, 36],
+            iconAnchor: [18, 18],
+            popupAnchor: [0, -18],
           });
 
+          const card = document.createElement('div');
+          card.className = 'p-3 font-sans max-w-[280px] text-slate-900';
+          card.innerHTML = `
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+              <span style="font-size:20px;">📍</span>
+              <div>
+                <div style="font-size:14px; font-weight:800; color:#0f172a;">Our Current Location</div>
+                <div style="font-size:11px; font-weight:600; color:#0284c7;">GPS Precision: ±${Math.round(accuracy)}m</div>
+              </div>
+            </div>
+            <div style="font-size:11px; color:#334155; background:#f0f9ff; border:1px solid #bae6fd; border-radius:8px; padding:8px; margin-bottom:10px; line-height:1.45;">
+              <div><b>Coordinates:</b> ${lat.toFixed(4)}°N, ${lng.toFixed(4)}°E</div>
+              ${nearestCity ? `<div style="margin-top:3px;">🏙️ <b>Nearest City:</b> ${nearestCity.name} (~${cityDist} km)</div>` : ''}
+              ${nearestHeritage ? `<div style="margin-top:2px;">🏛️ <b>Nearest Heritage:</b> ${nearestHeritage.name} (~${Math.round(minHDist)} km)</div>` : ''}
+            </div>
+            <div style="display:flex; flex-direction:column; gap:6px;">
+              <button id="btn-user-start-route" style="background:#0284c7; color:#fff; border:none; border-radius:6px; padding:7px; font-size:11px; font-weight:700; cursor:pointer;">
+                🚩 Start Route From Our Location
+              </button>
+              ${nearestCity ? `
+                <button id="btn-user-fly-city" style="background:#e0e7ff; color:#4338ca; border:1px solid #c7d2fe; border-radius:6px; padding:5px; font-size:10px; font-weight:700; cursor:pointer;">
+                  Explore Nearest City (${nearestCity.name})
+                </button>
+              ` : ''}
+            </div>
+          `;
+
           userLocationMarkerRef.current = L.marker([lat, lng], { icon: userIcon })
-            .bindTooltip(`📍 <b>Your Detected Location</b><br/>Lat: ${lat}, Lng: ${lng}<br/>Accuracy: ±${Math.round(accuracy)}m`, { direction: 'top' })
+            .bindPopup(card)
             .addTo(map);
 
-          map.setView([lat, lng], 13);
+          userLocationMarkerRef.current.on('popupopen', () => {
+            const btnRoute = document.getElementById('btn-user-start-route');
+            if (btnRoute) {
+              btnRoute.onclick = () => {
+                setRouteOrigin('CURRENT_LOCATION');
+                setRouteOriginName(`Our Location (${lat.toFixed(3)}, ${lng.toFixed(3)})`);
+                setRouteOriginCoords({ lat, lng });
+                setIsRoutingOpen(true);
+                setIsRoutePanelMinimized(false);
+              };
+            }
+            const btnCity = document.getElementById('btn-user-fly-city');
+            if (btnCity && nearestCity) {
+              btnCity.onclick = () => {
+                if (onSelectCity) onSelectCity(nearestCity.name.toLowerCase());
+                map.flyTo([nearestCity.lat, nearestCity.lng], 12, { duration: 1.2 });
+              };
+            }
+          });
+
+          map.flyTo([lat, lng], 13, { duration: 1.5 });
+          userLocationMarkerRef.current.openPopup();
         }
       },
       (err) => {
@@ -836,7 +1205,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
       },
       {
         enableHighAccuracy: true,
-        timeout: 10000,
+        timeout: 12000,
         maximumAge: 60000,
       }
     );
@@ -1209,9 +1578,9 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
     }
   };
 
-  // Debounced search for top search bar
+  // Debounced search for top search bar (Every City, Hidden Gems, Our Location, Stations, Heritage, Sights)
   useEffect(() => {
-    const trimmed = searchQuery.trim();
+    const trimmed = searchQuery.trim().toLowerCase();
     if (!trimmed || trimmed.length < 2) {
       setSearchSuggestions([]);
       setIsSearchDropdownOpen(false);
@@ -1221,18 +1590,106 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
     const timer = setTimeout(async () => {
       setIsSearching(true);
       try {
-        const results = await api.suggestLocations(trimmed, 10);
-        setSearchSuggestions(results);
+        const localSuggestions: LocationSuggestion[] = [];
+
+        // 1. Current GPS Location detection
+        const isLocQuery = /my location|our location|current location|where am i|locate me|^location$|^me$|^gps$/i.test(trimmed);
+        if (isLocQuery || userLocation) {
+          localSuggestions.push({
+            id: 'current-user-location',
+            name: '📍 Our Current GPS Location',
+            type: 'current_location',
+            categoryType: 'current_location',
+            city: userLocation?.nearestCity || 'Your Area',
+            state: 'Live GPS',
+            lat: userLocation?.lat || 20.5937,
+            lng: userLocation?.lng || 78.9629,
+            subtitle: userLocation
+              ? `Detected at ${userLocation.lat.toFixed(4)}, ${userLocation.lng.toFixed(4)} (${userLocation.nearestCity || 'Current Position'})`
+              : 'Tap to locate and focus our live position on the map',
+            badge: 'Live GPS',
+            score: 1000,
+          });
+        }
+
+        // 2. Client-side instant match for Every City (169 Hubs)
+        const cityMatches = ALL_CITIES_LIST.filter(
+          (c) =>
+            c.name.toLowerCase().includes(trimmed) ||
+            c.district.toLowerCase().includes(trimmed) ||
+            c.state.toLowerCase().includes(trimmed)
+        )
+          .slice(0, 6)
+          .map((c) => ({
+            id: `city-${c.id}`,
+            name: c.name,
+            type: 'city' as const,
+            categoryType: 'city' as const,
+            city: c.name,
+            state: c.state,
+            lat: c.lat,
+            lng: c.lng,
+            subtitle: `${c.district ? `District: ${c.district}, ` : ''}${c.state} • ${c.places_count} Sights`,
+            badge: 'City Hub',
+            score: c.name.toLowerCase().startsWith(trimmed) ? 95 : 75,
+          }));
+
+        // 3. Client-side instant match for Hidden Gems (35+ Verified Gems)
+        const isGemTerm = /hidden|secret|gem|rare|marvel|crater|stepwell|canyon|caves|bridge|undiscovered/i.test(trimmed);
+        const gemMatches = VERIFIED_HIDDEN_GEMS.filter(
+          (g) =>
+            g.name.toLowerCase().includes(trimmed) ||
+            g.city.toLowerCase().includes(trimmed) ||
+            g.state.toLowerCase().includes(trimmed) ||
+            g.category.toLowerCase().includes(trimmed) ||
+            g.whyInteresting.toLowerCase().includes(trimmed) ||
+            g.tags.some((t) => t.toLowerCase().includes(trimmed)) ||
+            isGemTerm
+        )
+          .slice(0, 6)
+          .map((g) => ({
+            id: `gem-${g.id}`,
+            name: g.name,
+            type: 'hidden_gem' as const,
+            categoryType: 'hidden_gem' as const,
+            city: g.city,
+            state: g.state,
+            lat: g.lat,
+            lng: g.lng,
+            subtitle: `${g.city}, ${g.state} • ${g.category} (${g.century})`,
+            badge: '💎 Hidden Gem',
+            score: g.name.toLowerCase().startsWith(trimmed) ? 98 : 80,
+          }));
+
+        // 4. API suggestions for stations, monuments, and places
+        let apiResults: LocationSuggestion[] = [];
+        try {
+          apiResults = await api.suggestLocations(trimmed, 12);
+        } catch {}
+
+        // Combine and deduplicate
+        const merged: LocationSuggestion[] = [...localSuggestions, ...gemMatches, ...cityMatches];
+        const seenNames = new Set<string>(merged.map((m) => m.name.toLowerCase()));
+
+        for (const item of apiResults) {
+          const norm = item.name.toLowerCase();
+          if (!seenNames.has(norm)) {
+            seenNames.add(norm);
+            merged.push(item);
+          }
+        }
+
+        setSearchSuggestions(merged.slice(0, 15));
         setIsSearchDropdownOpen(true);
       } catch (err) {
         console.error('Error fetching search suggestions:', err);
       } finally {
         setIsSearching(false);
       }
-    }, 180);
+    }, 120);
 
     return () => clearTimeout(timer);
-  }, [searchQuery]);
+  }, [searchQuery, userLocation]);
 
   // Dual-query detection (e.g. "srinagar station to csmt" or "srinagar station and second destination - csmt")
   const dualQuery = useMemo(() => parseDualPointsQuery(searchQuery), [searchQuery]);
@@ -1300,10 +1757,16 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
     const map = mapInstanceRef.current;
     if (!map) return;
 
+    if (loc.categoryType === 'city') setShowCities(true);
+    if (loc.categoryType === 'hidden_gem') setShowHiddenGems(true);
+    if (loc.categoryType === 'heritage') setShowHeritage(true);
+    if (loc.categoryType === 'station') setShowStations(true);
+    if (loc.categoryType === 'place') setShowSights(true);
+
     const coords = parseLatLng(loc.lat, loc.lng);
     if (!coords) return;
 
-    map.flyTo(coords, Math.max(map.getZoom(), 12), { duration: 1.2 });
+    map.flyTo(coords, Math.max(map.getZoom(), 13), { duration: 1.2 });
 
     if (searchHighlightRef.current) {
       searchHighlightRef.current.clearLayers();
@@ -1314,7 +1777,11 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
           : loc.categoryType === 'heritage'
           ? '#ea580c'
           : loc.categoryType === 'city'
-          ? '#6366f1'
+          ? '#4f46e5'
+          : loc.categoryType === 'hidden_gem'
+          ? '#9333ea'
+          : loc.categoryType === 'current_location'
+          ? '#0284c7'
           : '#10b981';
       const iconEmoji =
         loc.categoryType === 'station'
@@ -1323,6 +1790,10 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
           ? '🏛️'
           : loc.categoryType === 'city'
           ? '🏙️'
+          : loc.categoryType === 'hidden_gem'
+          ? '💎'
+          : loc.categoryType === 'current_location'
+          ? '📍'
           : '📍';
 
       const iconHtml = `
@@ -1345,11 +1816,11 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
       const marker = L.marker(coords, { icon: markerIcon });
 
       const popupContent = `
-        <div style="padding: 10px; min-width: 220px; font-family: system-ui, -apple-system, sans-serif;">
+        <div style="padding: 10px; min-width: 230px; font-family: system-ui, -apple-system, sans-serif;">
           <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
             <span style="font-size: 14px;">${iconEmoji}</span>
             <span style="font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: ${iconBg};">
-              ${loc.categoryType}
+              ${loc.categoryType.replace('_', ' ')}
             </span>
           </div>
           <h4 style="font-size: 13px; font-weight: 800; color: #0f172a; margin: 0 0 4px 0; line-height: 1.3;">${loc.name}</h4>
@@ -1576,7 +2047,27 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
 
         {/* Layer Toggles & Route Studio Button */}
         <div className="flex items-center gap-2 flex-wrap">
-          <label className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-orange-50 text-orange-800 border border-orange-200 cursor-pointer">
+          <label className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-indigo-50 text-indigo-800 border border-indigo-200 cursor-pointer hover:bg-indigo-100/70 transition">
+            <input
+              type="checkbox"
+              checked={showCities}
+              onChange={(e) => setShowCities(e.target.checked)}
+              className="accent-indigo-600 rounded cursor-pointer"
+            />
+            <span>🏙️ Cities ({citiesList.length})</span>
+          </label>
+
+          <label className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-purple-50 text-purple-800 border border-purple-200 cursor-pointer hover:bg-purple-100/70 transition">
+            <input
+              type="checkbox"
+              checked={showHiddenGems}
+              onChange={(e) => setShowHiddenGems(e.target.checked)}
+              className="accent-purple-600 rounded cursor-pointer"
+            />
+            <span>💎 Hidden Gems ({hiddenGemsList.length})</span>
+          </label>
+
+          <label className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-orange-50 text-orange-800 border border-orange-200 cursor-pointer hover:bg-orange-100/70 transition">
             <input
               type="checkbox"
               checked={showHeritage}
@@ -1586,7 +2077,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
             <span>🏛️ Heritage ({heritageSites.length})</span>
           </label>
 
-          <label className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-sky-50 text-sky-800 border border-sky-200 cursor-pointer">
+          <label className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-sky-50 text-sky-800 border border-sky-200 cursor-pointer hover:bg-sky-100/70 transition">
             <input
               type="checkbox"
               checked={showStations}
@@ -1596,7 +2087,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
             <span>🚆 Stations ({stations.length})</span>
           </label>
 
-          <label className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200 cursor-pointer">
+          <label className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200 cursor-pointer hover:bg-emerald-100/70 transition">
             <input
               type="checkbox"
               checked={showSights}
@@ -1605,6 +2096,20 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
             />
             <span>📍 Sights</span>
           </label>
+
+          <button
+            onClick={handleUseMyLocation}
+            disabled={isLocating}
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold border transition ${
+              userLocation
+                ? 'bg-sky-600 text-white border-sky-700 shadow-sm'
+                : 'bg-white text-sky-800 border-sky-200 hover:bg-sky-50'
+            }`}
+            title="Locate and center on our live position"
+          >
+            <Crosshair className={`w-3.5 h-3.5 ${isLocating ? 'animate-spin' : userLocation ? 'animate-pulse' : ''}`} />
+            <span>{isLocating ? 'Locating...' : userLocation ? 'Our Location' : 'Locate Me'}</span>
+          </button>
 
           <button
             onClick={() => setIsRoutingOpen(!isRoutingOpen)}
@@ -1695,42 +2200,71 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
                   key={`search-sugg-${item.categoryType || item.type || 'loc'}-${item.id}-${idx}`}
                   className="p-2.5 hover:bg-slate-50 transition flex items-center justify-between gap-2 group cursor-pointer"
                   onClick={() => {
-                    highlightAndFocusLocation({
-                      id: item.id,
-                      name: item.name,
-                      categoryType: item.categoryType || item.type || 'place',
-                      lat: item.lat,
-                      lng: item.lng,
-                      subtitle: item.subtitle,
-                      city: item.city,
-                      state: item.state,
-                    });
+                    if (item.categoryType === 'current_location' || item.type === 'current_location') {
+                      handleUseMyLocation();
+                    } else {
+                      highlightAndFocusLocation({
+                        id: item.id,
+                        name: item.name,
+                        categoryType: item.categoryType || item.type || 'place',
+                        lat: item.lat,
+                        lng: item.lng,
+                        subtitle: item.subtitle,
+                        city: item.city,
+                        state: item.state,
+                      });
+                    }
                     setIsSearchDropdownOpen(false);
                   }}
                 >
                   <div className="flex items-center gap-2.5 min-w-0 flex-1">
                     <div
                       className={`w-7 h-7 rounded-xl flex items-center justify-center shrink-0 text-xs font-bold ${
-                        item.type === 'station'
+                        item.type === 'station' || item.categoryType === 'station'
                           ? 'bg-sky-100 text-sky-700'
-                          : item.type === 'heritage'
+                          : item.type === 'heritage' || item.categoryType === 'heritage'
                           ? 'bg-orange-100 text-orange-700'
-                          : item.type === 'city'
+                          : item.type === 'city' || item.categoryType === 'city'
                           ? 'bg-indigo-100 text-indigo-700'
+                          : item.type === 'hidden_gem' || item.categoryType === 'hidden_gem'
+                          ? 'bg-purple-100 text-purple-700'
+                          : item.type === 'current_location' || item.categoryType === 'current_location'
+                          ? 'bg-cyan-100 text-cyan-700'
                           : 'bg-emerald-100 text-emerald-700'
                       }`}
                     >
-                      {item.type === 'station' ? (
+                      {item.type === 'station' || item.categoryType === 'station' ? (
                         <Train className="w-3.5 h-3.5" />
-                      ) : item.type === 'heritage' ? (
+                      ) : item.type === 'heritage' || item.categoryType === 'heritage' ? (
                         <Landmark className="w-3.5 h-3.5" />
+                      ) : item.type === 'city' || item.categoryType === 'city' ? (
+                        <span className="text-sm">🏙️</span>
+                      ) : item.type === 'hidden_gem' || item.categoryType === 'hidden_gem' ? (
+                        <span className="text-sm">💎</span>
+                      ) : item.type === 'current_location' || item.categoryType === 'current_location' ? (
+                        <Crosshair className="w-3.5 h-3.5" />
                       ) : (
                         <MapPin className="w-3.5 h-3.5" />
                       )}
                     </div>
                     <div className="min-w-0 flex-1">
-                      <div className="text-xs font-bold text-slate-800 truncate group-hover:text-emerald-700 transition">
-                        {item.name}
+                      <div className="text-xs font-bold text-slate-800 truncate group-hover:text-emerald-700 transition flex items-center gap-1.5">
+                        <span className="truncate">{item.name}</span>
+                        {item.badge && (
+                          <span
+                            className={`text-[9px] px-1.5 py-0.2 rounded font-bold uppercase tracking-wider shrink-0 ${
+                              item.categoryType === 'hidden_gem' || item.type === 'hidden_gem'
+                                ? 'bg-purple-100 text-purple-700'
+                                : item.categoryType === 'city' || item.type === 'city'
+                                ? 'bg-indigo-100 text-indigo-700'
+                                : item.categoryType === 'current_location' || item.type === 'current_location'
+                                ? 'bg-cyan-100 text-cyan-800'
+                                : 'bg-slate-100 text-slate-600'
+                            }`}
+                          >
+                            {item.badge}
+                          </span>
+                        )}
                       </div>
                       <div className="text-[10px] text-slate-400 truncate">
                         {item.subtitle}
@@ -1743,17 +2277,21 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
                     <button
                       type="button"
                       onClick={() => {
-                        setRouteOrigin(item.id);
-                        setRouteOriginName(item.name);
-                        setRouteOriginCoords({ lat: item.lat, lng: item.lng });
-                        setIsRoutingOpen(true);
-                        setIsRoutePanelMinimized(false);
-                        setIsSearchDropdownOpen(false);
-                        if (routeDestination && routeDestination !== item.id) {
-                          handleCalculateRoute(
-                            { id: item.id, name: item.name, lat: item.lat, lng: item.lng },
-                            undefined
-                          );
+                        if (item.categoryType === 'current_location' || item.type === 'current_location') {
+                          handleUseMyLocation();
+                        } else {
+                          setRouteOrigin(item.id);
+                          setRouteOriginName(item.name);
+                          setRouteOriginCoords({ lat: item.lat, lng: item.lng });
+                          setIsRoutingOpen(true);
+                          setIsRoutePanelMinimized(false);
+                          setIsSearchDropdownOpen(false);
+                          if (routeDestination && routeDestination !== item.id) {
+                            handleCalculateRoute(
+                              { id: item.id, name: item.name, lat: item.lat, lng: item.lng },
+                              undefined
+                            );
+                          }
                         }
                       }}
                       className="px-2 py-1 rounded-lg text-[10px] font-bold bg-sky-50 hover:bg-sky-100 text-sky-700 border border-sky-200 transition"

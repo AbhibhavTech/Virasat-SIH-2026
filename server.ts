@@ -7,6 +7,7 @@ import { GoogleGenAI } from '@google/genai';
 import { masterTourismDataService } from './src/server/masterTourismDataService';
 import { INDIA_TOURISM_DATABASE } from './src/data/indiaTourismDatabase';
 import { getVerifiedCityPlan, ALL_INDIAN_TOURISM_CITIES } from './src/data/cityItineraryData';
+import { VERIFIED_HIDDEN_GEMS } from './src/data/hiddenGemsData';
 import {
   findConnectedRailRoute,
   getRealRoadRoute,
@@ -42,22 +43,12 @@ import { requestLogger, securityHeaders, errorHandler } from './server/src/middl
 const app = express();
 const PORT = process.env.PORT ? parseInt(process.env.PORT, 10) : 3000;
 
-const allowedOrigins = process.env.ALLOWED_ORIGINS
-  ? process.env.ALLOWED_ORIGINS.split(',')
-  : ['http://localhost:3000', 'http://127.0.0.1:3000', 'http://localhost:5173'];
-
 app.use(securityHeaders);
 app.use(requestLogger);
 
 app.use(
   cors({
-    origin: (origin, callback) => {
-      if (!origin || allowedOrigins.includes(origin) || process.env.NODE_ENV !== 'production') {
-        callback(null, true);
-      } else {
-        callback(new Error('Not allowed by CORS'));
-      }
-    },
+    origin: true,
     credentials: true,
   })
 );
@@ -1484,8 +1475,8 @@ export interface LocationSuggestion {
   id: string;
   name: string;
   code?: string;
-  type: 'station' | 'heritage' | 'place' | 'city';
-  categoryType: 'station' | 'heritage' | 'place' | 'city';
+  type: 'station' | 'heritage' | 'place' | 'city' | 'hidden_gem' | 'current_location';
+  categoryType: 'station' | 'heritage' | 'place' | 'city' | 'hidden_gem' | 'current_location';
   city?: string;
   state?: string;
   lat: number;
@@ -1650,8 +1641,54 @@ app.get('/api/locations/suggest', (req, res) => {
     }
   }
 
+  // 5. Search Hidden Gems & Secret Spots
+  for (const gem of VERIFIED_HIDDEN_GEMS) {
+    const gName = gem.name.toLowerCase();
+    const gCity = gem.city.toLowerCase();
+    const gState = gem.state.toLowerCase();
+    const gCat = gem.category.toLowerCase();
+    const gLore = gem.whyInteresting.toLowerCase();
+    const isHiddenSearch = /hidden|secret|gem|rare|marvel|unknown|undiscovered|stepwell|canyon|crater|cave/i.test(query);
+
+    let score = 0;
+    if (gem.id.toLowerCase() === query || gName === query) score += 95;
+    else if (gName.startsWith(query)) score += 80;
+    else if (gName.includes(query)) score += 60;
+    else if (gCity.includes(query) || gState.includes(query)) score += 45;
+    else if (gCat.includes(query) || gLore.includes(query)) score += 35;
+    else if (isHiddenSearch) score += 55;
+
+    const uniqueId = `gem-${gem.id}`;
+    if (score > 0 && !seenIds.has(uniqueId)) {
+      seenIds.add(uniqueId);
+      suggestions.push({
+        id: gem.id,
+        name: gem.name,
+        type: 'place',
+        categoryType: 'hidden_gem',
+        city: gem.city,
+        state: gem.state,
+        lat: gem.lat,
+        lng: gem.lng,
+        subtitle: `${gem.city}, ${gem.state} · ${gem.category} (${gem.century})`,
+        badge: '💎 Hidden Gem',
+        score: score + 10,
+      });
+    }
+  }
+
   suggestions.sort((a, b) => b.score - a.score);
   res.json(suggestions.slice(0, limit));
+});
+
+// -------------------------------------------------------------
+// Hidden Gems Endpoint
+// -------------------------------------------------------------
+app.get('/api/hidden-gems', (req, res) => {
+  res.json({
+    total: VERIFIED_HIDDEN_GEMS.length,
+    data: VERIFIED_HIDDEN_GEMS,
+  });
 });
 
 // -------------------------------------------------------------
@@ -3628,18 +3665,18 @@ let indiaHierarchyDataMtime: number = 0;
 
 function getIndiaHierarchyData() {
   const p = path.join(process.cwd(), 'data', 'india_tourism_database.json');
-  if (!fs.existsSync(p)) return null;
-
-  try {
-    const stats = fs.statSync(p);
-    if (!indiaHierarchyData || stats.mtimeMs > indiaHierarchyDataMtime) {
-      indiaHierarchyData = JSON.parse(fs.readFileSync(p, 'utf-8'));
-      indiaHierarchyDataMtime = stats.mtimeMs;
+  if (fs.existsSync(p)) {
+    try {
+      const stats = fs.statSync(p);
+      if (!indiaHierarchyData || stats.mtimeMs > indiaHierarchyDataMtime) {
+        indiaHierarchyData = JSON.parse(fs.readFileSync(p, 'utf-8'));
+        indiaHierarchyDataMtime = stats.mtimeMs;
+      }
+    } catch (err) {
+      console.error('[Hierarchy API] Error loading india_tourism_database.json:', err);
     }
-  } catch (err) {
-    console.error('[Hierarchy API] Error loading india_tourism_database.json:', err);
   }
-  return indiaHierarchyData;
+  return indiaHierarchyData || INDIA_TOURISM_DATABASE;
 }
 
 app.get('/api/india-hierarchy', (req, res) => {

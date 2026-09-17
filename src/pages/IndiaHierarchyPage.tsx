@@ -45,6 +45,7 @@ import { PlaceDetailDrawer } from '../components/explore-india/PlaceDetailDrawer
 import { StateCard } from '../components/explore-india/StateCard';
 import { StateQuickLookModal } from '../components/explore-india/StateQuickLookModal';
 import { STATE_CURATED_IMAGES, getCuratedStateImage } from '../data/stateCuratedImages';
+import { INDIA_TOURISM_DATABASE } from '../data/indiaTourismDatabase';
 import { OfficialImagePending } from '../components/common/OfficialImagePending';
 import { CitizenReportModal } from '../components/common/CitizenReportModal';
 import { ScrollReveal } from '../components/common/ScrollReveal';
@@ -65,28 +66,31 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
   onNavigateTab,
   onSelectCity,
 }) => {
-  // Live Database from API
-  const [db, setDb] = useState<IndiaHierarchyDatabase | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  // Live Database with robust bundled database initialization and fallback
+  const [db, setDb] = useState<IndiaHierarchyDatabase>(
+    () => (INDIA_TOURISM_DATABASE as unknown as IndiaHierarchyDatabase)
+  );
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [loadError, setLoadError] = useState<string | null>(null);
 
   const loadHierarchy = () => {
-    setIsLoading(true);
-    setLoadError(null);
-
     fetch('/api/india-hierarchy')
       .then((res) => {
         if (!res.ok) throw new Error(`HTTP ${res.status}: Failed to load hierarchy`);
         return res.json();
       })
       .then((data: IndiaHierarchyDatabase) => {
-        setDb(data);
+        if (data && data.states && data.states.length > 0) {
+          setDb(data);
+        }
+        setLoadError(null);
         setIsLoading(false);
       })
       .catch((err: Error) => {
-        setLoadError(err.message);
+        console.warn('Live API fetch warning, utilizing bundled verified database:', err.message);
+        setDb((current) => current || (INDIA_TOURISM_DATABASE as unknown as IndiaHierarchyDatabase));
+        setLoadError(null);
         setIsLoading(false);
-        console.error('Failed to load India hierarchy:', err);
       });
   };
 
@@ -507,7 +511,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
     );
   }
 
-  if (loadError || !db) {
+  if (loadError && !db) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-[#FFF7E6] to-white flex items-center justify-center">
         <div className="text-center max-w-md">

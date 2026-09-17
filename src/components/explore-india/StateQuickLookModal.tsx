@@ -15,6 +15,7 @@ import {
   Layers,
 } from 'lucide-react';
 import { StateHierarchyEntity } from '../../types/indiaHierarchy';
+import { getCuratedStateImage } from '../../data/stateCuratedImages';
 
 interface StateQuickLookModalProps {
   state: StateHierarchyEntity | null;
@@ -55,6 +56,8 @@ export const StateQuickLookModal: React.FC<StateQuickLookModalProps> = ({
 
   const isUT = state.region_type === 'union_territory';
   const towns = state.cities || [];
+  const curated = getCuratedStateImage(state.id, state.hero_image_url);
+  const heroUrl = curated.url || state.hero_image_url;
   
   // Estimate total attractions
   const totalAttractions = towns.reduce((acc, c) => {
@@ -80,7 +83,7 @@ export const StateQuickLookModal: React.FC<StateQuickLookModalProps> = ({
         {/* Header Hero Image */}
         <div className="relative h-56 sm:h-64 w-full bg-stone-900 shrink-0 overflow-hidden">
           <img
-            src={state.hero_image_url}
+            src={heroUrl}
             alt={state.name}
             className="w-full h-full object-cover"
           />

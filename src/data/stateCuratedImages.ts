@@ -81,11 +81,11 @@ export const STATE_CURATED_IMAGES: Record<string, CuratedStateImage> = {
 
   // Northeast Region
   'arunachal-pradesh': {
-    imageUrl: 'https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=1200&auto=format&fit=crop&q=80',
-    creator: 'Arunachal Tourism / Tawang',
-    landmark: 'Tawang Monastery & Sela Pass',
+    imageUrl: '/images/arunachal-pradesh-tawang-4k.jpg',
+    creator: 'Trideep Dutta / Wikimedia Commons',
+    landmark: 'Tawang Monastery & Eastern Himalayas',
     bestSeason: 'Oct - Apr',
-    tags: ['Tawang Monastery', 'Ziro Valley', 'Namdapha'],
+    tags: ['Tawang Monastery', 'Galden Namgyal Lhatse', 'Sela Pass', 'Ziro Valley'],
   },
   'assam': {
     imageUrl: 'https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=1200&auto=format&fit=crop&q=80',

@@ -67,7 +67,10 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   // Northeast Region
   'kaziranga-living-heritage': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Beauty_of_Kaziranga_National_Park.jpg/1280px-Beauty_of_Kaziranga_National_Park.jpg',
   'living-root-bridges': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Living_root_bridges%2C_Nongriat_village%2C_Meghalaya2.jpg/1280px-Living_root_bridges%2C_Nongriat_village%2C_Meghalaya2.jpg',
-  'rumtek-monastery': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Rumtek_Monastery_alias_Dharma_Chakra_Centre_near_Gangtok%2C_East_Sikkim_09.jpg/1280px-Rumtek_Monastery_alias_Dharma_Chakra_Centre_near_Gangtok%2C_East_Sikkim_09.jpg'
+  'rumtek-monastery': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/99/Rumtek_Monastery_alias_Dharma_Chakra_Centre_near_Gangtok%2C_East_Sikkim_09.jpg/1280px-Rumtek_Monastery_alias_Dharma_Chakra_Centre_near_Gangtok%2C_East_Sikkim_09.jpg',
+  'tawang-monastery': '/images/arunachal-pradesh-tawang-4k.jpg',
+  'tawang': '/images/arunachal-pradesh-tawang-4k.jpg',
+  'arunachal-pradesh': '/images/arunachal-pradesh-tawang-4k.jpg'
 };
 
 export function getMonumentRealImage(id?: string, fallback?: string): string {

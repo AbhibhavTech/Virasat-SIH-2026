@@ -730,8 +730,8 @@ export interface LocationSuggestion {
   id: string;
   name: string;
   code?: string;
-  type?: 'station' | 'heritage' | 'place' | 'city';
-  categoryType: 'station' | 'heritage' | 'place' | 'city';
+  type?: 'station' | 'heritage' | 'place' | 'city' | 'hidden_gem' | 'current_location';
+  categoryType: 'station' | 'heritage' | 'place' | 'city' | 'hidden_gem' | 'current_location';
   city?: string;
   state?: string;
   lat: number;
