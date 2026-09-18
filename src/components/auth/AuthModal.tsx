@@ -20,18 +20,14 @@ export const AuthModal: React.FC = () => {
     setError(null);
     setGoogleLoading(true);
     try {
-      // In production, token is provided by Google Identity Services GSI library
-      // Here we support GSI callback or structured Google payload
-      const targetEmail = email.trim() || 'explorer.google@virasat.in';
-      const targetName = name.trim() || targetEmail.split('@')[0].replace(/[._]/g, ' ');
-      await loginWithGoogle({
-        email: targetEmail,
-        name: targetName,
-        picture: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80',
-        sub: `google-${Math.random().toString(36).substring(2, 10)}`,
-      });
+      await loginWithGoogle();
     } catch (err: any) {
-      setError(err?.message || 'Google authentication failed. Please try again.');
+      // If user closed popup or provider error, show helpful message
+      if (err?.code === 'auth/popup-closed-by-user') {
+        setError('Google sign-in was closed. Please try again.');
+      } else {
+        setError(err?.message || 'Google authentication failed. Please try again.');
+      }
     } finally {
       setGoogleLoading(false);
     }

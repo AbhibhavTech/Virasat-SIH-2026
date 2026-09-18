@@ -3,6 +3,8 @@ import { Bookmark, Calendar, Trash2, Clock, IndianRupee, MapPin, ArrowRight, Nav
 import { api } from '../services/api';
 import { TripItem } from '../types';
 import { NavTab } from '../components/layout/Sidebar';
+import { useAuth } from '../contexts/AuthContext';
+import { getTripsFromFirestore, deleteTripFromFirestore } from '../services/firebase';
 
 interface MyTripsPageProps {
   onNavigateTab: (tab: NavTab) => void;
@@ -10,12 +12,21 @@ interface MyTripsPageProps {
 }
 
 export const MyTripsPage: React.FC<MyTripsPageProps> = ({ onNavigateTab, onSelectPlace }) => {
+  const { user } = useAuth();
   const [trips, setTrips] = useState<TripItem[]>([]);
   const [loading, setLoading] = useState(true);
 
   const fetchTrips = async () => {
     setLoading(true);
     try {
+      if (user?.id) {
+        const fsTrips = await getTripsFromFirestore(user.id);
+        if (fsTrips && fsTrips.length > 0) {
+          setTrips(fsTrips);
+          setLoading(false);
+          return;
+        }
+      }
       const data = await api.getTrips();
       setTrips(data);
     } catch (err) {
@@ -27,10 +38,13 @@ export const MyTripsPage: React.FC<MyTripsPageProps> = ({ onNavigateTab, onSelec
 
   useEffect(() => {
     fetchTrips();
-  }, []);
+  }, [user?.id]);
 
   const handleDelete = async (id: string) => {
     try {
+      if (user?.id) {
+        deleteTripFromFirestore(user.id, id).catch((err) => console.warn('Firestore deleteTrip err:', err));
+      }
       await api.deleteTrip(id);
       setTrips((prev) => prev.filter((t) => t.id !== id));
     } catch (err) {
@@ -40,13 +54,13 @@ export const MyTripsPage: React.FC<MyTripsPageProps> = ({ onNavigateTab, onSelec
 
   return (
     <div className="space-y-6 w-full pb-8">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-6 rounded-3xl bg-white border border-[#EFE8DF] shadow-sm">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white border border-[#EFE8DF] shadow-sm">
         <div>
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 text-[#FF671F] border border-orange-200 text-xs font-bold">
             <Bookmark className="w-3.5 h-3.5" />
             <span>Itinerary Registry</span>
           </div>
-          <h1 className="font-serif text-2xl font-bold text-[#0B192C] mt-1">My Saved Trips</h1>
+          <h1 className="font-serif text-xl sm:text-2xl font-bold text-[#0B192C] mt-1">My Saved Trips</h1>
           <p className="text-xs text-slate-500">
             Stored daily plans and multi-stop circuits created via the Smart Day Planner.
           </p>
@@ -54,7 +68,7 @@ export const MyTripsPage: React.FC<MyTripsPageProps> = ({ onNavigateTab, onSelec
 
         <button
           onClick={() => onNavigateTab('itinerary')}
-          className="inline-flex items-center gap-2 px-4 py-2.5 rounded-2xl bg-[#FF671F] hover:bg-[#E65100] text-white text-xs font-bold transition shadow-sm self-start sm:self-auto"
+          className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-2xl bg-[#FF671F] hover:bg-[#E65100] text-white text-xs font-bold transition shadow-sm self-start sm:self-auto"
         >
           <Calendar className="w-4 h-4" />
           <span>Plan New Day Trip</span>
@@ -66,7 +80,7 @@ export const MyTripsPage: React.FC<MyTripsPageProps> = ({ onNavigateTab, onSelec
           Loading your travel itineraries...
         </div>
       ) : trips.length === 0 ? (
-        <div className="text-center py-20 rounded-3xl bg-white border border-[#EFE8DF] p-8 space-y-3 shadow-sm">
+        <div className="text-center py-16 sm:py-20 rounded-2xl sm:rounded-3xl bg-white border border-[#EFE8DF] p-6 sm:p-8 space-y-3 shadow-sm">
           <div className="w-12 h-12 rounded-2xl bg-slate-100 text-slate-400 flex items-center justify-center mx-auto">
             <Calendar className="w-6 h-6" />
           </div>
@@ -86,21 +100,21 @@ export const MyTripsPage: React.FC<MyTripsPageProps> = ({ onNavigateTab, onSelec
           {trips.map((trip) => (
             <div
               key={trip.id}
-              className="rounded-3xl bg-white border border-[#EFE8DF] p-6 space-y-4 shadow-sm"
+              className="rounded-2xl sm:rounded-3xl bg-white border border-[#EFE8DF] p-4 sm:p-6 space-y-3 sm:space-y-4 shadow-sm"
             >
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-100">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 sm:pb-4 border-b border-slate-100">
                 <div>
-                  <h3 className="text-base font-bold text-slate-900">{trip.title}</h3>
-                  <p className="text-xs text-slate-500">
+                  <h3 className="text-sm sm:text-base font-bold text-slate-900">{trip.title}</h3>
+                  <p className="text-[11px] sm:text-xs text-slate-500">
                     {trip.city} • Created {new Date(trip.created_at).toLocaleDateString()}
                   </p>
                 </div>
 
-                <div className="flex items-center gap-3">
-                  <div className="flex items-center gap-3 text-xs font-bold bg-slate-50 px-3 py-1.5 rounded-xl border border-[#EFE8DF]">
+                <div className="flex flex-wrap items-center gap-2 sm:gap-3">
+                  <div className="flex items-center gap-2 sm:gap-3 text-[11px] sm:text-xs font-bold bg-slate-50 px-2.5 sm:px-3 py-1.5 rounded-xl border border-[#EFE8DF]">
                     <span className="flex items-center gap-1 text-slate-600">
                       <Clock className="w-3.5 h-3.5 text-orange-500" />
-                      {trip.duration_hours}h circuit
+                      {trip.duration_hours}h
                     </span>
                     <span className="text-slate-300">•</span>
                     <span className="flex items-center gap-1 text-[#046A38]">
@@ -111,7 +125,7 @@ export const MyTripsPage: React.FC<MyTripsPageProps> = ({ onNavigateTab, onSelec
 
                   <button
                     onClick={() => onNavigateTab('map')}
-                    className="flex items-center gap-1 px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold border border-[#EFE8DF] transition"
+                    className="flex items-center gap-1 px-2.5 sm:px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold border border-[#EFE8DF] transition"
                   >
                     <Navigation className="w-3.5 h-3.5" />
                     <span>Map</span>
@@ -119,7 +133,7 @@ export const MyTripsPage: React.FC<MyTripsPageProps> = ({ onNavigateTab, onSelec
 
                   <button
                     onClick={() => handleDelete(trip.id)}
-                    className="p-2 rounded-xl text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition"
+                    className="p-1.5 sm:p-2 rounded-xl text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition"
                     title="Delete Trip"
                   >
                     <Trash2 className="w-4 h-4" />

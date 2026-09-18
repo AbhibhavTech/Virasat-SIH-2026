@@ -431,15 +431,15 @@ export const IndiaHeritageMapPreview: React.FC<IndiaHeritageMapPreviewProps> = (
   const regionsList = ['All', 'North', 'South', 'West', 'East', 'Central', 'Northeast'];
 
   return (
-    <section className="rounded-3xl bg-[#FAF8F5] border border-[#EAE2D5] p-6 sm:p-8 space-y-6">
+    <section className="rounded-2xl sm:rounded-3xl bg-[#FAF8F5] border border-[#EAE2D5] p-3.5 sm:p-8 space-y-4 sm:space-y-6">
       {/* Section Header */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
         <div>
-          <div className="inline-flex items-center gap-1.5 text-xs font-bold text-[#FF671F] uppercase tracking-wider mb-1">
+          <div className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-bold text-[#FF671F] uppercase tracking-wider mb-1">
             <Compass className="w-3.5 h-3.5 text-[#FF671F]" />
             <span>Real Geographic GIS Distribution</span>
           </div>
-          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">
+          <h2 className="font-serif text-xl sm:text-3xl font-bold text-stone-900 tracking-tight">
             India Heritage Map Preview
           </h2>
           <p className="text-xs sm:text-sm text-stone-600 mt-1 font-normal">
@@ -447,51 +447,51 @@ export const IndiaHeritageMapPreview: React.FC<IndiaHeritageMapPreviewProps> = (
           </p>
         </div>
 
-        <div className="flex items-center gap-2 self-start sm:self-auto">
+        <div className="flex flex-wrap items-center gap-2 self-start sm:self-auto">
           {/* Tile Style Switcher */}
           <div className="flex bg-stone-200/80 p-0.5 rounded-full text-xs">
             <button
               onClick={() => setMapStyle('voyager')}
-              className={`px-3 py-1 rounded-full font-medium transition cursor-pointer ${
+              className={`px-2.5 sm:px-3 py-1 rounded-full font-medium text-[11px] sm:text-xs transition cursor-pointer ${
                 mapStyle === 'voyager'
                   ? 'bg-white text-stone-900 shadow-2xs'
                   : 'text-stone-600 hover:text-stone-900'
               }`}
             >
-              Street &amp; Carto
+              Street
             </button>
             <button
               onClick={() => setMapStyle('satellite')}
-              className={`px-3 py-1 rounded-full font-medium transition cursor-pointer ${
+              className={`px-2.5 sm:px-3 py-1 rounded-full font-medium text-[11px] sm:text-xs transition cursor-pointer ${
                 mapStyle === 'satellite'
                   ? 'bg-[#0B192C] text-white shadow-2xs'
                   : 'text-stone-600 hover:text-stone-900'
               }`}
             >
-              Satellite Real
+              Satellite
             </button>
           </div>
 
           <button
             onClick={() => onNavigateTab('map')}
-            className="px-3.5 py-1.5 rounded-full bg-[#FF671F] hover:bg-[#E65100] text-white text-xs font-semibold flex items-center gap-1.5 shadow-2xs transition active:scale-95 cursor-pointer"
+            className="px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-[#FF671F] hover:bg-[#E65100] text-white text-[11px] sm:text-xs font-semibold flex items-center gap-1.5 shadow-2xs transition active:scale-95 cursor-pointer"
           >
             <span>Full Map</span>
-            <ExternalLink className="w-3.5 h-3.5" />
+            <ExternalLink className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
           </button>
         </div>
       </div>
 
       {/* Region Filter Chips */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
-        <span className="text-xs font-bold text-stone-400 uppercase tracking-wider shrink-0 mr-1">
+      <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 no-scrollbar scrollbar-none">
+        <span className="text-[10px] sm:text-xs font-bold text-stone-400 uppercase tracking-wider shrink-0 mr-1">
           Region:
         </span>
         {regionsList.map((reg) => (
           <button
             key={reg}
             onClick={() => setActiveRegion(reg)}
-            className={`px-3 py-1 rounded-full text-xs font-medium shrink-0 transition cursor-pointer ${
+            className={`px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-medium shrink-0 transition cursor-pointer ${
               activeRegion === reg
                 ? 'bg-[#FF671F] text-white shadow-2xs'
                 : 'bg-white text-stone-600 hover:bg-stone-100 border border-stone-200/80'
@@ -503,16 +503,16 @@ export const IndiaHeritageMapPreview: React.FC<IndiaHeritageMapPreviewProps> = (
 
         <button
           onClick={handleResetIndiaView}
-          className="ml-auto px-3 py-1 rounded-full bg-white hover:bg-stone-100 border border-stone-200 text-stone-700 text-xs font-semibold flex items-center gap-1 shrink-0 transition cursor-pointer"
+          className="ml-auto px-2.5 sm:px-3 py-1 rounded-full bg-white hover:bg-stone-100 border border-stone-200 text-stone-700 text-[11px] sm:text-xs font-semibold flex items-center gap-1 shrink-0 transition cursor-pointer"
           title="Reset to All-India View"
         >
           <RotateCcw className="w-3 h-3 text-stone-500" />
-          <span>Reset India View</span>
+          <span>Reset</span>
         </button>
       </div>
 
       {/* Visual Map Canvas Container */}
-      <div className="relative min-h-[460px] h-[480px] sm:h-[540px] rounded-3xl bg-stone-100 border border-[#E5DAC8] overflow-hidden shadow-inner w-full">
+      <div className="relative min-h-[320px] h-[340px] sm:h-[540px] rounded-2xl sm:rounded-3xl bg-stone-100 border border-[#E5DAC8] overflow-hidden shadow-inner w-full">
         <div ref={mapContainerRef} className="w-full h-full z-0" />
 
         {/* Map Overlay Badges */}

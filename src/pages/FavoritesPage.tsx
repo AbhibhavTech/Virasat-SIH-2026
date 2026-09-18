@@ -55,30 +55,30 @@ export const FavoritesPage: React.FC<FavoritesPageProps> = ({
   return (
     <div className="space-y-6 w-full pb-8">
       {/* Header Banner */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-6 rounded-3xl bg-white border border-[#EFE8DF] shadow-sm">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white border border-[#EFE8DF] shadow-sm">
         <div className="space-y-1">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-50 text-rose-700 border border-rose-200 text-xs font-bold">
             <Heart className="w-3.5 h-3.5 fill-rose-600 text-rose-600" />
             <span>Curated Travel Wishlist</span>
           </div>
-          <h1 className="font-serif text-2xl sm:text-3xl font-bold text-[#0B192C] tracking-tight">Saved Heritage & Destinations</h1>
+          <h1 className="font-serif text-xl sm:text-3xl font-bold text-[#0B192C] tracking-tight">Saved Heritage & Destinations</h1>
           <p className="text-xs sm:text-sm text-slate-500 max-w-2xl">
             Your personal collection of bookmarked monuments, rock-cut caves, temples, and coastal landmarks across India.
           </p>
         </div>
 
         {onNavigateTab && favoritePlaces.length > 0 && (
-          <div className="flex items-center gap-2 self-start sm:self-auto">
+          <div className="flex flex-wrap items-center gap-2 self-start sm:self-auto">
             <button
               onClick={() => onNavigateTab('itinerary')}
-              className="flex items-center gap-1.5 px-4 py-2.5 rounded-2xl bg-[#FF671F] hover:bg-[#E65100] text-white text-xs font-bold transition shadow-sm"
+              className="flex items-center gap-1.5 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-2xl bg-[#FF671F] hover:bg-[#E65100] text-white text-xs font-bold transition shadow-sm"
             >
               <Sparkles className="w-3.5 h-3.5" />
               <span>Plan Trip from Saved</span>
             </button>
             <button
               onClick={() => onNavigateTab('map')}
-              className="flex items-center gap-1.5 px-3.5 py-2.5 rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold border border-[#EFE8DF] transition"
+              className="flex items-center gap-1.5 px-3 sm:px-3.5 py-2 sm:py-2.5 rounded-2xl bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-bold border border-[#EFE8DF] transition"
             >
               <Navigation className="w-3.5 h-3.5" />
               <span>View Map</span>
@@ -92,7 +92,7 @@ export const FavoritesPage: React.FC<FavoritesPageProps> = ({
           Loading your saved destinations...
         </div>
       ) : favoritePlaces.length === 0 ? (
-        <div className="text-center py-20 rounded-3xl bg-white border border-[#EFE8DF] p-8 space-y-3 shadow-sm">
+        <div className="text-center py-16 sm:py-20 rounded-2xl sm:rounded-3xl bg-white border border-[#EFE8DF] p-6 sm:p-8 space-y-3 shadow-sm">
           <div className="w-12 h-12 rounded-2xl bg-rose-50 text-rose-500 flex items-center justify-center mx-auto">
             <Heart className="w-6 h-6" />
           </div>
@@ -110,13 +110,13 @@ export const FavoritesPage: React.FC<FavoritesPageProps> = ({
           )}
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5 sm:gap-5">
           {favoritePlaces.map((p) => (
             <div
               key={p.id}
-              className="group relative rounded-3xl bg-white border border-[#EFE8DF] hover:border-[#FF671F]/40 overflow-hidden transition-all shadow-sm hover:shadow-md flex flex-col justify-between"
+              className="group relative rounded-2xl sm:rounded-3xl bg-white border border-[#EFE8DF] hover:border-[#FF671F]/40 overflow-hidden transition-all shadow-sm hover:shadow-md flex flex-col justify-between"
             >
-              <div className="relative h-48 overflow-hidden bg-slate-100">
+              <div className="relative h-40 sm:h-48 overflow-hidden bg-slate-100">
                 {p.thumbnail_url || (p.images && p.images[0]) ? (
                   <img
                     src={p.thumbnail_url || (p.images && p.images[0])}
@@ -150,7 +150,7 @@ export const FavoritesPage: React.FC<FavoritesPageProps> = ({
                 </div>
               </div>
 
-              <div className="p-5 space-y-3 flex-1 flex flex-col justify-between">
+              <div className="p-3.5 sm:p-5 space-y-2.5 sm:space-y-3 flex-1 flex flex-col justify-between">
                 <div>
                   <div className="text-[11px] font-bold text-[#FF671F] uppercase tracking-wider mb-1">
                     {p.category || 'Heritage Landmark'}

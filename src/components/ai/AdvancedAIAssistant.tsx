@@ -516,63 +516,63 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
   return (
     <div className="w-full space-y-3">
       {/* Top Controls Bar: Location State & Quick Status */}
-      <div className="w-full p-3.5 sm:p-4 rounded-3xl bg-white border border-[#EFE8DF] shadow-2xs flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-2xl bg-gradient-to-br from-[#FF671F] to-[#046A38] p-0.5 shadow-warm flex items-center justify-center text-white shrink-0">
+      <div className="w-full p-3 sm:p-4 rounded-2xl sm:rounded-3xl bg-white border border-[#EFE8DF] shadow-2xs flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
+        <div className="flex items-center gap-2.5 sm:gap-3">
+          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-gradient-to-br from-[#FF671F] to-[#046A38] p-0.5 shadow-warm flex items-center justify-center text-white shrink-0">
             <div className="w-full h-full bg-white rounded-[14px] flex items-center justify-center">
-              <Bot className="w-5 h-5 text-[#FF671F]" />
+              <Bot className="w-4 h-4 sm:w-5 sm:h-5 text-[#FF671F]" />
             </div>
           </div>
           <div>
             <div className="flex items-center gap-2 flex-wrap">
-              <h2 className="font-serif text-base sm:text-lg font-bold text-[#0B192C] tracking-tight">
-                Virasat AI Travel & Heritage Concierge
+              <h2 className="font-serif text-sm sm:text-lg font-bold text-[#0B192C] tracking-tight">
+                Virasat AI Concierge
               </h2>
               <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                 Grounded
               </span>
             </div>
-            <p className="text-xs text-stone-500">
-              Location-aware guidance • Dynamic multimodal routing • Verified ASI & UNESCO database
+            <p className="text-[11px] sm:text-xs text-stone-500">
+              Location-aware guidance • Multimodal routing • Verified ASI & UNESCO
             </p>
           </div>
         </div>
 
         {/* Location Badge, City Selector, and Reset */}
-        <div className="flex items-center gap-2 self-stretch md:self-auto flex-wrap">
+        <div className="flex items-center gap-1.5 sm:gap-2 self-stretch md:self-auto flex-wrap">
           {/* Location Status Pill */}
           {locationStatus === 'granted' && userLocation ? (
-            <div className="flex items-center gap-1.5 px-3 py-1.5 bg-emerald-50 border border-emerald-200 rounded-xl text-xs text-emerald-800 font-medium shadow-2xs">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <div className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 bg-emerald-50 border border-emerald-200 rounded-xl text-[11px] sm:text-xs text-emerald-800 font-medium shadow-2xs">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
               <MapPin className="w-3.5 h-3.5 text-emerald-600" />
-              <span className="max-w-[180px] sm:max-w-[220px] truncate">
+              <span className="max-w-[130px] sm:max-w-[220px] truncate">
                 Near {userLocation.locality ? `${userLocation.locality}, ` : ''}{userLocation.city || userLocation.state}
               </span>
             </div>
           ) : locationStatus === 'detecting' ? (
-            <div className="flex items-center gap-1.5 px-3 py-1.5 bg-amber-50 border border-amber-200 rounded-xl text-xs text-amber-800 font-medium">
+            <div className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 bg-amber-50 border border-amber-200 rounded-xl text-[11px] sm:text-xs text-amber-800 font-medium">
               <Loader2 className="w-3.5 h-3.5 animate-spin text-amber-600" />
-              <span>Detecting location...</span>
+              <span>Detecting...</span>
             </div>
           ) : (
             <button
               type="button"
               onClick={() => requestLocation(false)}
-              className="flex items-center gap-1.5 px-3 py-1.5 bg-white hover:bg-orange-50/60 border border-[#EFE8DF] hover:border-orange-300 rounded-xl text-xs font-semibold text-stone-700 hover:text-[#FF671F] transition shadow-2xs"
+              className="flex items-center gap-1 px-2.5 sm:px-3 py-1 sm:py-1.5 bg-white hover:bg-orange-50/60 border border-[#EFE8DF] hover:border-orange-300 rounded-xl text-[11px] sm:text-xs font-semibold text-stone-700 hover:text-[#FF671F] transition shadow-2xs"
               title="Detect your device location"
             >
-              <Crosshair className="w-3.5 h-3.5 text-[#FF671F]" />
-              <span>Detect Location</span>
+              <Crosshair className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#FF671F]" />
+              <span>Location</span>
             </button>
           )}
 
           {/* City selector */}
-          <div className="flex items-center gap-1.5 px-3 py-1.5 bg-[#FAF8F5] border border-[#EFE8DF] rounded-xl text-xs text-stone-700">
+          <div className="flex items-center gap-1 px-2.5 sm:px-3 py-1 sm:py-1.5 bg-[#FAF8F5] border border-[#EFE8DF] rounded-xl text-[11px] sm:text-xs text-stone-700">
             <select
               value={activeCity}
               onChange={(e) => setActiveCity(e.target.value)}
-              className="bg-transparent border-none focus:outline-none font-medium text-xs text-stone-800 cursor-pointer"
+              className="bg-transparent border-none focus:outline-none font-medium text-[11px] sm:text-xs text-stone-800 cursor-pointer"
               aria-label="Filter context by city"
             >
               <option value="All India">All India</option>
@@ -593,11 +593,11 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
           <button
             onClick={handleResetConversation}
             type="button"
-            className="flex items-center gap-1.5 px-3 py-1.5 bg-white hover:bg-stone-50 border border-[#EFE8DF] rounded-xl text-xs font-semibold text-stone-600 hover:text-stone-900 transition shadow-2xs"
+            className="flex items-center gap-1 px-2.5 sm:px-3 py-1 sm:py-1.5 bg-white hover:bg-stone-50 border border-[#EFE8DF] rounded-xl text-[11px] sm:text-xs font-semibold text-stone-600 hover:text-stone-900 transition shadow-2xs"
             title="Start New Conversation"
           >
-            <RotateCcw className="w-3.5 h-3.5" />
-            <span>New Chat</span>
+            <RotateCcw className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+            <span>Reset</span>
           </button>
         </div>
       </div>
@@ -609,9 +609,9 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
             <Sparkles className="w-3.5 h-3.5 text-[#FF671F]" />
             Quick Prompts & Actions
           </span>
-          <span className="text-[11px] text-stone-400">Tap any question to start</span>
+          <span className="text-[11px] text-stone-400">Tap to start</span>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-1.5 sm:gap-2">
           {coreSuggestions.map((item, idx) => (
             <button
               key={idx}
@@ -623,26 +623,26 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
                   handleSend(item.prompt);
                 }
               }}
-              className="text-left p-2.5 rounded-2xl bg-white hover:bg-orange-50/50 border border-[#EFE8DF] hover:border-orange-300 text-xs text-stone-800 hover:text-[#FF671F] transition shadow-2xs group flex items-center justify-between gap-1.5"
+              className="text-left p-2 sm:p-2.5 rounded-xl sm:rounded-2xl bg-white hover:bg-orange-50/50 border border-[#EFE8DF] hover:border-orange-300 text-xs text-stone-800 hover:text-[#FF671F] transition shadow-2xs group flex items-center justify-between gap-1.5"
             >
-              <span className="font-semibold text-xs leading-tight truncate">{item.label}</span>
-              <ArrowRight className="w-3.5 h-3.5 text-stone-400 group-hover:text-[#FF671F] group-hover:translate-x-0.5 transition shrink-0" />
+              <span className="font-semibold text-[11px] sm:text-xs leading-tight truncate">{item.label}</span>
+              <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-stone-400 group-hover:text-[#FF671F] group-hover:translate-x-0.5 transition shrink-0" />
             </button>
           ))}
         </div>
       </div>
 
       {/* Active Dialogue Box */}
-      <div className="w-full flex flex-col h-[580px] sm:h-[640px] lg:h-[680px] rounded-3xl bg-white border border-[#EFE8DF] shadow-warm overflow-hidden">
+      <div className="w-full flex flex-col h-[500px] sm:h-[640px] lg:h-[680px] rounded-2xl sm:rounded-3xl bg-white border border-[#EFE8DF] shadow-warm overflow-hidden">
         {/* Chat Stream Header */}
-        <div className="p-3.5 px-5 sm:px-6 bg-[#FAF8F5] border-b border-[#EFE8DF] flex items-center justify-between flex-wrap gap-2">
-          <div className="flex items-center gap-2.5">
+        <div className="p-2.5 sm:p-3.5 px-3.5 sm:px-6 bg-[#FAF8F5] border-b border-[#EFE8DF] flex items-center justify-between flex-wrap gap-2">
+          <div className="flex items-center gap-2">
             <Bot className="w-4 h-4 text-[#FF671F]" />
             <span className="text-xs font-bold text-stone-800">
               Active Dialogue Stream
             </span>
-            <span className="text-[11px] text-stone-400">
-              ({messages.length} messages)
+            <span className="text-[10px] sm:text-[11px] text-stone-400">
+              ({messages.length})
             </span>
             {travelContext.destination && (
               <span className="hidden sm:inline-flex items-center gap-1 text-[11px] font-bold text-[#FF671F] bg-orange-50 border border-orange-200 px-2 py-0.5 rounded-full">
@@ -652,9 +652,9 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
           </div>
 
           <div className="flex items-center gap-2 text-[10px] text-stone-500">
-            <span className="flex items-center gap-1 font-medium text-stone-700 bg-stone-100 px-2.5 py-0.5 rounded-full border border-stone-200">
+            <span className="flex items-center gap-1 font-medium text-stone-700 bg-stone-100 px-2 py-0.5 rounded-full border border-stone-200 text-[10px] sm:text-[11px]">
               <Compass className="w-3 h-3 text-[#FF671F]" />
-              Verified Knowledge & Transit Hubs
+              Verified Transit Hubs
             </span>
           </div>
         </div>
@@ -662,29 +662,29 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
         {/* Messages Stream */}
         <div
           ref={messagesContainerRef}
-          className="flex-1 overflow-y-auto p-4 sm:p-6 lg:p-8 space-y-6 bg-[#FAF8F5]/30"
+          className="flex-1 overflow-y-auto p-3 sm:p-6 lg:p-8 space-y-4 sm:space-y-6 bg-[#FAF8F5]/30"
         >
           {messages.map((m, idx) => {
             const isUser = m.role === 'user';
             return (
               <div
                 key={idx}
-                className={`flex items-start gap-3.5 ${isUser ? 'flex-row-reverse' : ''}`}
+                className={`flex items-start gap-2.5 sm:gap-3.5 ${isUser ? 'flex-row-reverse' : ''}`}
               >
                 {/* Avatar */}
                 <div
                   className={`rounded-2xl flex items-center justify-center shrink-0 shadow-xs ${
                     isUser
-                      ? 'w-8 h-8 bg-[#FF671F] text-white font-bold'
-                      : 'w-8 h-8 bg-white border border-stone-200 text-[#FF671F]'
+                      ? 'w-7 h-7 sm:w-8 sm:h-8 bg-[#FF671F] text-white font-bold'
+                      : 'w-7 h-7 sm:w-8 sm:h-8 bg-white border border-stone-200 text-[#FF671F]'
                   }`}
                 >
-                  {isUser ? <User className="w-4 h-4" /> : <Bot className="w-4 h-4" />}
+                  {isUser ? <User className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> : <Bot className="w-3.5 h-3.5 sm:w-4 sm:h-4" />}
                 </div>
 
                 {/* Bubble - Full extent */}
                 <div
-                  className={`w-full max-w-[96%] sm:max-w-[92%] lg:max-w-[88%] rounded-3xl p-4 sm:p-6 text-xs sm:text-sm leading-relaxed shadow-xs relative group ${
+                  className={`w-full max-w-[96%] sm:max-w-[92%] lg:max-w-[88%] rounded-2xl sm:rounded-3xl p-3 sm:p-6 text-xs sm:text-sm leading-relaxed shadow-xs relative group ${
                     isUser
                       ? 'bg-[#FF671F] text-white font-medium rounded-tr-sm ml-auto'
                       : 'bg-white border border-[#EFE8DF] text-stone-800 rounded-tl-sm mr-auto'

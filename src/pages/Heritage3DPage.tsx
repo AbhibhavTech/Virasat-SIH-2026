@@ -43,31 +43,31 @@ export const Heritage3DPage: React.FC = () => {
   const current = monuments.find((m) => m.name === selectedMonument) || monuments[0];
 
   return (
-    <div className="space-y-6 w-full animate-fadeIn pb-8">
-      <div className="space-y-2">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-orange-50 text-[#FF671F] border border-orange-200 text-xs font-semibold">
-          <Box className="w-3.5 h-3.5 text-[#FF671F]" />
+    <div className="space-y-4 sm:space-y-6 w-full animate-fadeIn pb-8">
+      <div className="space-y-1.5 sm:space-y-2">
+        <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 sm:px-3 sm:py-1 rounded-full bg-orange-50 text-[#FF671F] border border-orange-200 text-[11px] sm:text-xs font-semibold">
+          <Box className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#FF671F]" />
           <span>WebGL 3D Architectural Simulation</span>
         </div>
-        <h1 className="font-serif text-2xl sm:text-3xl font-bold text-[#0B192C] tracking-tight">3D Heritage Explorer</h1>
+        <h1 className="font-serif text-xl sm:text-3xl font-bold text-[#0B192C] tracking-tight">3D Heritage Explorer</h1>
         <p className="text-xs sm:text-sm text-stone-600 max-w-2xl leading-relaxed">
           Interactive real-time three-dimensional models of historical Indian structures. Rotate, toggle wireframes, and inspect volumetric proportions.
         </p>
       </div>
 
       {/* Monument selector tabs */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+      <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 scrollbar-none">
         {monuments.map((m) => (
           <button
             key={m.name}
             onClick={() => setSelectedMonument(m.name)}
-            className={`px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition flex items-center gap-2 cursor-pointer ${
+            className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition flex items-center gap-1.5 sm:gap-2 cursor-pointer ${
               selectedMonument === m.name
                 ? 'bg-[#FF671F] text-white font-bold shadow-xs border border-[#FF671F]'
                 : 'bg-white text-stone-700 hover:bg-stone-50 hover:text-stone-900 border border-stone-200'
             }`}
           >
-            <Compass className="w-3.5 h-3.5" />
+            <Compass className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
             <span>{m.name}</span>
           </button>
         ))}
@@ -77,26 +77,26 @@ export const Heritage3DPage: React.FC = () => {
       <GatewayOfIndia3D placeName={current.name} />
 
       {/* Architectural Dossier */}
-      <div className="rounded-2xl bg-white border border-[#EFE8DF] p-6 space-y-4 shadow-xs">
-        <div className="flex items-center gap-2 text-sm font-bold text-[#0B192C]">
-          <Info className="w-4 h-4 text-[#046A38]" />
+      <div className="rounded-2xl bg-white border border-[#EFE8DF] p-3.5 sm:p-6 space-y-3 sm:space-y-4 shadow-xs">
+        <div className="flex items-center gap-2 text-xs sm:text-sm font-bold text-[#0B192C]">
+          <Info className="w-4 h-4 text-[#046A38] shrink-0" />
           <span>Architectural Breakdown: {current.name}</span>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
-          <div className="p-3.5 rounded-xl bg-stone-50 border border-stone-200 space-y-1">
-            <span className="text-stone-500 font-semibold block uppercase text-[10px]">Era & Style</span>
-            <span className="font-bold text-stone-900">{current.era}</span>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-3 text-xs">
+          <div className="p-2.5 sm:p-3.5 rounded-xl bg-stone-50 border border-stone-200 space-y-0.5 sm:space-y-1">
+            <span className="text-stone-500 font-semibold block uppercase text-[9px] sm:text-[10px]">Era & Style</span>
+            <span className="font-bold text-stone-900 text-xs sm:text-sm">{current.era}</span>
           </div>
 
-          <div className="p-3.5 rounded-xl bg-stone-50 border border-stone-200 space-y-1">
-            <span className="text-stone-500 font-semibold block uppercase text-[10px]">Master Architect</span>
-            <span className="font-bold text-stone-900">{current.architect}</span>
+          <div className="p-2.5 sm:p-3.5 rounded-xl bg-stone-50 border border-stone-200 space-y-0.5 sm:space-y-1">
+            <span className="text-stone-500 font-semibold block uppercase text-[9px] sm:text-[10px]">Master Architect</span>
+            <span className="font-bold text-stone-900 text-xs sm:text-sm">{current.architect}</span>
           </div>
 
-          <div className="p-3.5 rounded-xl bg-stone-50 border border-stone-200 space-y-1">
-            <span className="text-stone-500 font-semibold block uppercase text-[10px]">Materiality</span>
-            <span className="font-bold text-stone-900">{current.material}</span>
+          <div className="p-2.5 sm:p-3.5 rounded-xl bg-stone-50 border border-stone-200 space-y-0.5 sm:space-y-1">
+            <span className="text-stone-500 font-semibold block uppercase text-[9px] sm:text-[10px]">Materiality</span>
+            <span className="font-bold text-stone-900 text-xs sm:text-sm">{current.material}</span>
           </div>
         </div>
 

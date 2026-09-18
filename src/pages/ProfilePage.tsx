@@ -63,24 +63,24 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({ onNavigateTab }) => {
   const isGoogleUser = user.auth_provider === 'google' || user.auth_provider === 'google_linked' || Boolean(user.google_id);
 
   return (
-    <div className="w-full max-w-5xl xl:max-w-6xl mx-auto px-2 sm:px-4 py-6 space-y-6 pb-12">
+    <div className="w-full max-w-5xl xl:max-w-6xl mx-auto px-2 sm:px-4 py-4 sm:py-6 space-y-4 sm:space-y-6 pb-12">
       {/* Profile Header */}
-      <div className="rounded-3xl bg-white border border-[#EFE8DF] p-6 sm:p-8 flex flex-col sm:flex-row items-center gap-6 shadow-sm">
+      <div className="rounded-2xl sm:rounded-3xl bg-white border border-[#EFE8DF] p-4 sm:p-8 flex flex-col sm:flex-row items-center gap-4 sm:gap-6 shadow-sm">
         {user.avatar_url ? (
           <img
             src={user.avatar_url}
             alt={user.name}
-            className="w-20 h-20 rounded-3xl object-cover border-2 border-[#EFE8DF] shadow-md shrink-0"
+            className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl sm:rounded-3xl object-cover border-2 border-[#EFE8DF] shadow-md shrink-0"
           />
         ) : (
-          <div className="w-20 h-20 rounded-3xl bg-gradient-to-br from-[#FF671F] to-[#046A38] text-white font-black text-2xl flex items-center justify-center shadow-md shrink-0">
+          <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-[#FF671F] to-[#046A38] text-white font-black text-xl sm:text-2xl flex items-center justify-center shadow-md shrink-0">
             {user.name ? user.name.charAt(0).toUpperCase() : 'Y'}
           </div>
         )}
 
         <div className="flex-1 text-center sm:text-left space-y-1.5">
           <div className="flex items-center justify-center sm:justify-start gap-2 flex-wrap">
-            <h1 className="font-serif text-2xl font-bold text-[#0B192C]">{user.name}</h1>
+            <h1 className="font-serif text-xl sm:text-2xl font-bold text-[#0B192C]">{user.name}</h1>
             
             {/* Role Badge */}
             <span className={`inline-flex items-center gap-1 text-[10px] font-bold px-2.5 py-0.5 rounded-full border ${
@@ -114,17 +114,17 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({ onNavigateTab }) => {
             )}
           </div>
           <p className="text-xs text-slate-500 font-medium">{user.email}</p>
-          <div className="flex items-center justify-center sm:justify-start gap-2 pt-2 flex-wrap">
-            <span className="inline-flex items-center gap-1 text-xs px-3 py-1 rounded-xl bg-slate-50 border border-[#EFE8DF] text-slate-700 font-semibold">
+          <div className="flex items-center justify-center sm:justify-start gap-1.5 sm:gap-2 pt-2 flex-wrap">
+            <span className="inline-flex items-center gap-1 text-[11px] sm:text-xs px-2.5 sm:px-3 py-1 rounded-xl bg-slate-50 border border-[#EFE8DF] text-slate-700 font-semibold">
               <MapPin className="w-3.5 h-3.5 text-orange-500" />
-              Base Hub: {user.home_city || 'Mumbai'}
+              Base: {user.home_city || 'Mumbai'}
             </span>
-            <span className="inline-flex items-center gap-1 text-xs px-3 py-1 rounded-xl bg-orange-50 border border-orange-200 text-orange-800 font-bold capitalize">
+            <span className="inline-flex items-center gap-1 text-[11px] sm:text-xs px-2.5 sm:px-3 py-1 rounded-xl bg-orange-50 border border-orange-200 text-orange-800 font-bold capitalize">
               <Sparkles className="w-3.5 h-3.5 text-orange-600" />
               {travelStyle?.replace('_', ' ') || 'Heritage Explorer'}
             </span>
             {user.survey?.interests && user.survey.interests.length > 0 && (
-              <span className="inline-flex items-center gap-1 text-xs px-3 py-1 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 font-semibold">
+              <span className="inline-flex items-center gap-1 text-[11px] sm:text-xs px-2.5 sm:px-3 py-1 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-800 font-semibold">
                 <span>🎯 {user.survey.interests.slice(0, 2).join(', ')}</span>
               </span>
             )}
@@ -133,7 +133,7 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({ onNavigateTab }) => {
 
         <button
           onClick={logout}
-          className="px-4 py-2 rounded-xl bg-slate-50 hover:bg-rose-50 border border-[#EFE8DF] text-xs font-bold text-slate-600 hover:text-rose-600 transition flex items-center gap-1.5 self-center sm:self-start"
+          className="px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-slate-50 hover:bg-rose-50 border border-[#EFE8DF] text-xs font-bold text-slate-600 hover:text-rose-600 transition flex items-center gap-1.5 self-center sm:self-start"
         >
           <LogOut className="w-3.5 h-3.5" />
           <span>Sign Out</span>
@@ -141,34 +141,34 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({ onNavigateTab }) => {
       </div>
 
       {/* Stats Cards */}
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-3 sm:gap-4">
         <div
           onClick={() => onNavigateTab('favorites')}
-          className="p-6 rounded-3xl bg-white border border-[#EFE8DF] hover:border-[#FF671F]/40 cursor-pointer transition shadow-sm space-y-2 group"
+          className="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white border border-[#EFE8DF] hover:border-[#FF671F]/40 cursor-pointer transition shadow-sm space-y-1 sm:space-y-2 group"
         >
           <div className="flex items-center justify-between text-xs font-bold text-slate-400">
-            <span>Bookmarked Places</span>
-            <Heart className="w-5 h-5 text-rose-500 fill-rose-500/20 group-hover:scale-110 transition-transform" />
+            <span>Bookmarked</span>
+            <Heart className="w-4 h-4 sm:w-5 sm:h-5 text-rose-500 fill-rose-500/20 group-hover:scale-110 transition-transform" />
           </div>
-          <p className="text-3xl font-black text-[#0B192C]">{favorites.length}</p>
-          <p className="text-xs text-[#046A38] font-semibold">View Bookmarks →</p>
+          <p className="text-2xl sm:text-3xl font-black text-[#0B192C]">{favorites.length}</p>
+          <p className="text-[11px] sm:text-xs text-[#046A38] font-semibold">View Bookmarks →</p>
         </div>
 
         <div
           onClick={() => onNavigateTab('trips')}
-          className="p-6 rounded-3xl bg-white border border-[#EFE8DF] hover:border-[#FF671F]/40 cursor-pointer transition shadow-sm space-y-2 group"
+          className="p-4 sm:p-6 rounded-2xl sm:rounded-3xl bg-white border border-[#EFE8DF] hover:border-[#FF671F]/40 cursor-pointer transition shadow-sm space-y-1 sm:space-y-2 group"
         >
           <div className="flex items-center justify-between text-xs font-bold text-slate-400">
-            <span>Saved Itineraries</span>
-            <Bookmark className="w-5 h-5 text-orange-500 fill-orange-500/20 group-hover:scale-110 transition-transform" />
+            <span>Itineraries</span>
+            <Bookmark className="w-4 h-4 sm:w-5 sm:h-5 text-orange-500 fill-orange-500/20 group-hover:scale-110 transition-transform" />
           </div>
-          <p className="text-3xl font-black text-[#0B192C]">Registered</p>
-          <p className="text-xs text-[#046A38] font-semibold">Manage Saved Trips →</p>
+          <p className="text-2xl sm:text-3xl font-black text-[#0B192C]">Saved</p>
+          <p className="text-[11px] sm:text-xs text-[#046A38] font-semibold">Manage Trips →</p>
         </div>
       </div>
 
       {/* Edit Preferences Form */}
-      <div className="rounded-3xl bg-white border border-[#EFE8DF] p-6 sm:p-8 space-y-6 shadow-sm">
+      <div className="rounded-2xl sm:rounded-3xl bg-white border border-[#EFE8DF] p-4 sm:p-8 space-y-4 sm:space-y-6 shadow-sm">
         <div className="flex items-center justify-between pb-3 border-b border-slate-100">
           <h2 className="text-base font-bold text-[#0B192C] flex items-center gap-2">
             <Settings className="w-4 h-4 text-[#046A38]" />

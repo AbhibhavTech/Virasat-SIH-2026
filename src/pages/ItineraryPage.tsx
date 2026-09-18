@@ -38,6 +38,8 @@ import { ItineraryResponse, ItineraryDay } from '../types';
 import { NavTab } from '../components/layout/Sidebar';
 import { ALL_INDIAN_TOURISM_CITIES, CityOption } from '../data/cityItineraryData';
 import { IncredibleIndiaVideoGallery } from '../components/itinerary/IncredibleIndiaVideoGallery';
+import { useAuth } from '../contexts/AuthContext';
+import { saveTripToFirestore } from '../services/firebase';
 import { ItineraryCostDonutChart } from '../components/itinerary/ItineraryCostDonutChart';
 
 interface ItineraryPageProps {
@@ -66,6 +68,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
   onNavigateTab,
   selectedCity = 'Mumbai',
 }) => {
+  const { user } = useAuth();
   // Destination state
   const [selectedCityObj, setSelectedCityObj] = useState<CityOption>(() => {
     const found = ALL_INDIAN_TOURISM_CITIES.find(
@@ -228,7 +231,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
         })),
       });
 
-      await api.saveTrip({
+      const savedTrip = await api.saveTrip({
         title: itinerary.title || `${selectedCityObj.name} ${daysCount}-Day Tour`,
         city: itinerary.city || selectedCityObj.name,
         duration_hours: daysCount * 8,
@@ -240,6 +243,13 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
           visit_minutes: item.recommended_duration_minutes || 60,
         })),
       });
+
+      if (user?.id && savedTrip) {
+        saveTripToFirestore(user.id, savedTrip).catch((err) => {
+          console.warn('Firestore saveTrip error:', err);
+        });
+      }
+
       setSaveSuccess(true);
       setTimeout(() => setSaveSuccess(false), 3000);
     } catch (err) {
@@ -414,9 +424,9 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
       />
 
       {/* 3. INPUT CARD: DESTINATION, DAYS, PACE, BUDGET & PREFERENCES */}
-      <div id="trip-planner-form" className="rounded-3xl bg-white border border-stone-200/90 shadow-sm p-6 sm:p-7 space-y-6 scroll-mt-6">
+      <div id="trip-planner-form" className="rounded-2xl sm:rounded-3xl bg-white border border-stone-200/90 shadow-sm p-4 sm:p-7 space-y-4 sm:space-y-6 scroll-mt-6">
         {/* Row 1: 4 Selectors + Plan Button */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 items-end">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5 sm:gap-4 items-end">
           {/* Destination Selector */}
           <div className="space-y-1.5">
             <label className="text-xs font-bold uppercase tracking-wider text-stone-700 flex items-center gap-1">
@@ -555,17 +565,17 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
 
       {/* 4. ITINERARY RESULTS SECTION */}
       {itinerary && (
-        <div className="space-y-6 animate-fadeIn">
+        <div className="space-y-4 sm:space-y-6 animate-fadeIn">
           {/* Section Header with Actions */}
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-5 rounded-3xl bg-white border border-stone-200 shadow-xs">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 sm:gap-4 p-4 sm:p-5 rounded-2xl sm:rounded-3xl bg-white border border-stone-200 shadow-xs">
             <div className="space-y-1">
-              <div className="flex items-center gap-2 text-xs text-[#FF671F] font-bold tracking-wider uppercase">
+              <div className="flex items-center gap-1.5 sm:gap-2 text-[11px] sm:text-xs text-[#FF671F] font-bold tracking-wider uppercase flex-wrap">
                 <Compass className="w-3.5 h-3.5" />
-                <span>{itinerary.city || selectedCityObj.name} Cultural Immersion</span>
+                <span>{itinerary.city || selectedCityObj.name} Immersion</span>
                 <span>•</span>
-                <span>{itinerary.days_count || daysCount} Days Optimized Route</span>
+                <span>{itinerary.days_count || daysCount} Days</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-bold font-serif text-stone-900">
+              <h2 className="text-xl sm:text-3xl font-bold font-serif text-stone-900">
                 {itinerary.title || `${selectedCityObj.name} Complete Heritage Journey`}
               </h2>
               <p className="text-xs sm:text-sm text-stone-600 max-w-3xl leading-relaxed">
@@ -575,10 +585,10 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
             </div>
 
             {/* Header Action Buttons */}
-            <div className="flex items-center gap-2 flex-wrap shrink-0">
+            <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap shrink-0">
               <button
                 onClick={() => onNavigateTab('map')}
-                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-stone-50 hover:bg-stone-100 border border-stone-200 text-xs font-semibold text-stone-700 shadow-xs transition cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:py-2 rounded-xl bg-stone-50 hover:bg-stone-100 border border-stone-200 text-xs font-semibold text-stone-700 shadow-xs transition cursor-pointer"
               >
                 <MapIcon className="w-3.5 h-3.5 text-stone-600" />
                 <span>Map Route</span>
@@ -586,7 +596,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
 
               <button
                 onClick={handleDownloadPlan}
-                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-stone-50 hover:bg-stone-100 border border-stone-200 text-xs font-semibold text-stone-700 shadow-xs transition cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:py-2 rounded-xl bg-stone-50 hover:bg-stone-100 border border-stone-200 text-xs font-semibold text-stone-700 shadow-xs transition cursor-pointer"
               >
                 <Download className="w-3.5 h-3.5 text-stone-600" />
                 <span>Export TXT</span>
@@ -594,7 +604,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
 
               <button
                 onClick={handleSharePlan}
-                className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-stone-50 hover:bg-stone-100 border border-stone-200 text-xs font-semibold text-stone-700 shadow-xs transition cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:py-2 rounded-xl bg-stone-50 hover:bg-stone-100 border border-stone-200 text-xs font-semibold text-stone-700 shadow-xs transition cursor-pointer"
               >
                 {shareSuccess ? (
                   <>
@@ -612,12 +622,12 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
               <button
                 onClick={handleSavePlan}
                 disabled={saveSuccess}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-[#FF671F] hover:bg-[#E65100] text-white text-xs font-semibold shadow-xs transition cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-[#FF671F] hover:bg-[#E65100] text-white text-xs font-semibold shadow-xs transition cursor-pointer"
               >
                 {saveSuccess ? (
                   <>
                     <Check className="w-3.5 h-3.5 text-white" />
-                    <span>Saved to My Trips!</span>
+                    <span>Saved!</span>
                   </>
                 ) : (
                   <>
@@ -662,7 +672,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                       setPlannerViewMode('pages');
                       setActiveDayIndex(idx);
                     }}
-                    className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold shrink-0 transition cursor-pointer ${
+                    className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold shrink-0 transition cursor-pointer ${
                       plannerViewMode === 'pages' && activeDayIndex === idx
                         ? 'bg-[#FF671F] text-white shadow-xs'
                         : 'bg-stone-100 text-stone-700 hover:bg-stone-200'
@@ -708,9 +718,9 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
 
             {/* OPTION A: EXPANDED SINGLE-DAY PAGE VIEW */}
             {plannerViewMode === 'pages' && currentDay && (
-              <div className="rounded-3xl bg-white border border-stone-200 shadow-md overflow-hidden animate-fadeIn">
+              <div className="rounded-2xl sm:rounded-3xl bg-white border border-stone-200 shadow-md overflow-hidden animate-fadeIn">
                 {/* Hero Banner for Day Page */}
-                <div className="relative h-48 sm:h-60 w-full overflow-hidden bg-stone-100 border-b border-stone-200">
+                <div className="relative h-44 sm:h-60 w-full overflow-hidden bg-stone-100 border-b border-stone-200">
                   <img
                     src={
                       currentDay.hero_image_url ||
@@ -721,30 +731,30 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-white/25" />
 
-                  <div className="absolute bottom-5 inset-x-6 sm:inset-x-8 flex flex-col sm:flex-row sm:items-end justify-between gap-3 text-stone-900">
-                    <div className="space-y-1">
+                  <div className="absolute bottom-3 sm:bottom-5 inset-x-3.5 sm:inset-x-8 flex flex-col sm:flex-row sm:items-end justify-between gap-2 sm:gap-3 text-stone-900">
+                    <div className="space-y-0.5 sm:space-y-1">
                       <div className="flex items-center gap-2">
-                        <span className="px-3 py-0.5 rounded-full bg-[#FF671F] text-white font-bold text-xs shadow-xs">
-                          Day {currentDay.day_number} Dossier Page
+                        <span className="px-2.5 sm:px-3 py-0.5 rounded-full bg-[#FF671F] text-white font-bold text-[11px] sm:text-xs shadow-xs">
+                          Day {currentDay.day_number} Dossier
                         </span>
-                        <span className="text-xs text-stone-600 font-mono font-semibold">
-                          {currentDay.places.length} Verified Stops
+                        <span className="text-[11px] sm:text-xs text-stone-600 font-mono font-semibold">
+                          {currentDay.places.length} Stops
                         </span>
                       </div>
-                      <h3 className="text-2xl sm:text-3xl font-bold font-serif text-stone-900">
+                      <h3 className="text-lg sm:text-3xl font-bold font-serif text-stone-900">
                         {currentDay.area_title}
                       </h3>
-                      <p className="text-xs sm:text-sm text-stone-700 max-w-2xl font-medium">
+                      <p className="text-[11px] sm:text-sm text-stone-700 max-w-2xl font-medium line-clamp-2 sm:line-clamp-none">
                         {currentDay.subtitle || 'Immersive cultural journey and architectural highlights.'}
                       </p>
                     </div>
 
                     <button
                       onClick={() => setSelectedModalDay(currentDay)}
-                      className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-white hover:bg-stone-50 text-stone-800 border border-stone-200 text-xs font-semibold shadow-xs transition cursor-pointer self-start sm:self-end"
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:py-2 rounded-xl bg-white hover:bg-stone-50 text-stone-800 border border-stone-200 text-xs font-semibold shadow-xs transition cursor-pointer self-start sm:self-end"
                     >
                       <Printer className="w-3.5 h-3.5 text-[#FF671F]" />
-                      <span>Print / Expand Sheet</span>
+                      <span>Print / Expand</span>
                     </button>
                   </div>
                 </div>

@@ -15,16 +15,16 @@ export const SimpleFooter: React.FC<SimpleFooterProps> = ({
   onOpenDatabaseStatus,
 }) => {
   return (
-    <footer className="mt-20 border-t border-[#EFE8DF] bg-white text-[#0B192C] relative overflow-hidden">
+    <footer className="mt-10 sm:mt-20 border-t border-[#EFE8DF] bg-white text-[#0B192C] relative overflow-hidden pb-24 md:pb-8">
       {/* Subtle Flowing Tricolour Accent in Background */}
       <div className="absolute top-0 left-0 right-0 pointer-events-none opacity-40">
         <FlowingTricolourRibbon variant="footer" />
       </div>
 
-      <div className="w-full max-w-[96%] lg:max-w-[94%] xl:max-w-[92%] 2xl:max-w-[1760px] mx-auto px-3 sm:px-6 lg:px-8 xl:px-10 pt-16 pb-8 space-y-12 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10">
+      <div className="w-full max-w-[96%] lg:max-w-[94%] xl:max-w-[92%] 2xl:max-w-[1760px] mx-auto px-3 sm:px-6 lg:px-8 xl:px-10 pt-8 sm:pt-16 pb-4 sm:pb-8 space-y-8 sm:space-y-12 relative z-10">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 lg:gap-10">
           {/* Brand & Mission */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="col-span-2 lg:col-span-2 space-y-4">
             <VirasatBrand onClick={() => onNavigateTab('home')} size="lg" />
 
             <p className="text-xs sm:text-sm text-stone-600 leading-relaxed max-w-sm pt-1">

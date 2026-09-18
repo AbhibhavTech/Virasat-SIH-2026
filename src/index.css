@@ -560,3 +560,45 @@
   }
 }
 
+/* ========================================================================= */
+/* Native Mobile App Touch, Viewport, and Safe Area Optimizations            */
+/* Applied cleanly to mobile viewports without altering laptop/tablet styling */
+/* ========================================================================= */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .pt-safe {
+    padding-top: env(safe-area-inset-top);
+  }
+}
+
+/* Remove default web tap-highlight flashes on mobile */
+@media (max-width: 768px) {
+  html, body {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-text-size-adjust: 100%;
+    overscroll-behavior-y: none;
+  }
+
+  /* Prevent awkward horizontal rubber-banding on mobile */
+  #root {
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+  }
+}
+
+/* Mobile smooth horizontal momentum scroll row for cards, chips, and filters */
+.mobile-scroll-row {
+  display: flex;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.mobile-scroll-row::-webkit-scrollbar {
+  display: none;
+}
+
+

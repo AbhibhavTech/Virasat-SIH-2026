@@ -601,28 +601,28 @@ export const ExploreIndiaMap: React.FC<ExploreIndiaMapProps> = ({
   ];
 
   return (
-    <div className="bg-[#FCFBF9] rounded-3xl border border-[#EFE8DF] p-6 sm:p-8 shadow-xs space-y-6">
+    <div className="bg-[#FCFBF9] rounded-2xl sm:rounded-3xl border border-[#EFE8DF] p-3.5 sm:p-6 md:p-8 shadow-xs space-y-4 sm:space-y-6">
       {/* Header & Controls */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
         <div>
-          <div className="inline-flex items-center gap-1.5 text-xs font-bold text-[#FF671F] uppercase tracking-wider mb-1">
+          <div className="inline-flex items-center gap-1.5 text-[10px] sm:text-xs font-bold text-[#FF671F] uppercase tracking-wider mb-1">
             <Globe2 className="w-3.5 h-3.5 text-[#FF671F]" />
             <span>Accurate Real World GIS &amp; Political Subcontinent Map</span>
           </div>
-          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">
+          <h2 className="font-serif text-xl sm:text-3xl font-bold text-stone-900 tracking-tight">
             Explore India — Geographic &amp; Heritage Map
           </h2>
-          <p className="text-xs sm:text-sm text-stone-600 mt-1">
+          <p className="text-xs sm:text-sm text-stone-600 mt-0.5 sm:mt-1">
             Real satellite &amp; street cartography mapped with authentic coordinates of India&apos;s 36 States, Union Territories, &amp; Heritage Towns
           </p>
         </div>
 
         {/* Tile Switcher & Reset Button */}
-        <div className="flex items-center gap-2 self-start sm:self-auto">
+        <div className="flex items-center gap-2 self-start sm:self-auto shrink-0">
           <div className="flex bg-stone-200/80 p-0.5 rounded-full text-xs">
             <button
               onClick={() => setMapTileStyle('voyager')}
-              className={`px-3 py-1 rounded-full font-medium transition cursor-pointer ${
+              className={`px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-medium transition cursor-pointer ${
                 mapTileStyle === 'voyager'
                   ? 'bg-white text-stone-900 shadow-2xs'
                   : 'text-stone-600 hover:text-stone-900'
@@ -632,19 +632,19 @@ export const ExploreIndiaMap: React.FC<ExploreIndiaMapProps> = ({
             </button>
             <button
               onClick={() => setMapTileStyle('satellite')}
-              className={`px-3 py-1 rounded-full font-medium transition cursor-pointer ${
+              className={`px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-medium transition cursor-pointer ${
                 mapTileStyle === 'satellite'
                   ? 'bg-[#0B192C] text-white shadow-2xs'
                   : 'text-stone-600 hover:text-stone-900'
               }`}
             >
-              Satellite Real
+              Satellite
             </button>
           </div>
 
           <button
             onClick={handleResetView}
-            className="px-3 py-1.5 rounded-full bg-white hover:bg-stone-100 border border-stone-200 text-stone-700 text-xs font-semibold flex items-center gap-1 shadow-2xs transition cursor-pointer"
+            className="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-white hover:bg-stone-100 border border-stone-200 text-stone-700 text-[11px] sm:text-xs font-semibold flex items-center gap-1 shadow-2xs transition cursor-pointer"
             title="Reset India View"
           >
             <RotateCcw className="w-3.5 h-3.5 text-stone-500" />
@@ -654,15 +654,15 @@ export const ExploreIndiaMap: React.FC<ExploreIndiaMapProps> = ({
       </div>
 
       {/* Region Filter Chips */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
-        <span className="text-xs font-bold text-stone-400 uppercase tracking-wider shrink-0 mr-1">
+      <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 scrollbar-none no-scrollbar">
+        <span className="text-[10px] sm:text-xs font-bold text-stone-400 uppercase tracking-wider shrink-0 mr-1">
           Zone:
         </span>
         {regionsList.map((reg) => (
           <button
             key={reg}
             onClick={() => handleRegionChange(reg)}
-            className={`px-3 py-1 rounded-full text-xs font-medium shrink-0 transition cursor-pointer ${
+            className={`px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[11px] sm:text-xs font-medium shrink-0 transition cursor-pointer ${
               selectedRegion === reg
                 ? 'bg-[#FF671F] text-white shadow-2xs'
                 : 'bg-white text-stone-600 hover:bg-stone-100 border border-stone-200/80'
@@ -674,33 +674,33 @@ export const ExploreIndiaMap: React.FC<ExploreIndiaMapProps> = ({
       </div>
 
       {/* Map + Detail Grid */}
-      <div className="flex flex-col lg:flex-row gap-6 items-stretch">
+      <div className="flex flex-col lg:flex-row gap-4 sm:gap-6 items-stretch">
         {/* Left: Real World Leaflet Map Canvas */}
         <div className="w-full lg:w-3/5">
-          <div className="relative w-full h-[450px] sm:h-[500px] rounded-2xl bg-stone-100 border border-[#E7DFD5] overflow-hidden shadow-inner">
+          <div className="relative w-full h-[320px] sm:h-[450px] md:h-[500px] rounded-2xl bg-stone-100 border border-[#E7DFD5] overflow-hidden shadow-inner">
             <div ref={mapContainerRef} className="w-full h-full z-0" />
 
             {/* Map Status Overlays */}
-            <div className="absolute top-3 left-3 z-10 pointer-events-none flex flex-col gap-1.5">
-              <div className="bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-xl border border-stone-200 shadow-sm flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-                <span className="text-[11px] font-bold text-stone-800">
-                  Real Geographic Coordinates Active
+            <div className="absolute top-2.5 left-2.5 sm:top-3 sm:left-3 z-10 pointer-events-none flex flex-col gap-1">
+              <div className="bg-white/95 backdrop-blur-md px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl border border-stone-200 shadow-sm flex items-center gap-1.5">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping shrink-0" />
+                <span className="text-[10px] sm:text-[11px] font-bold text-stone-800">
+                  GIS Coordinates Active
                 </span>
               </div>
             </div>
 
             {/* Map Legend on Canvas */}
-            <div className="absolute bottom-3 left-3 z-10 flex items-center gap-2 bg-white/90 backdrop-blur-xs px-3 py-1.5 rounded-xl border border-stone-200 text-[10px] text-stone-700 font-medium shadow-xs">
+            <div className="absolute bottom-2.5 left-2.5 sm:bottom-3 sm:left-3 z-10 flex items-center gap-1.5 bg-white/90 backdrop-blur-xs px-2 sm:px-3 py-1 sm:py-1.5 rounded-xl border border-stone-200 text-[9px] sm:text-[10px] text-stone-700 font-medium shadow-xs max-w-[calc(100%-4rem)] overflow-hidden truncate">
               <span className="flex items-center gap-1">
                 <span className="w-2 h-2 rounded-full bg-[#0B192C]" />
-                State / Territory
+                State
               </span>
-              <span className="flex items-center gap-1 ml-2">
+              <span className="flex items-center gap-1 ml-1.5">
                 <span className="w-2 h-2 rounded-full bg-[#059669]" />
-                Heritage Town
+                Town
               </span>
-              <span className="flex items-center gap-1 ml-2">
+              <span className="flex items-center gap-1 ml-1.5">
                 <span className="w-2 h-2 rounded-full bg-[#FF671F]" />
                 Selected
               </span>
@@ -708,7 +708,7 @@ export const ExploreIndiaMap: React.FC<ExploreIndiaMapProps> = ({
 
             <button
               onClick={handleResetView}
-              className="absolute bottom-3 right-3 z-10 bg-white/95 hover:bg-white text-stone-700 p-2 rounded-xl shadow-md border border-stone-200 transition cursor-pointer text-xs font-semibold flex items-center gap-1.5"
+              className="absolute bottom-2.5 right-2.5 sm:bottom-3 sm:right-3 z-10 bg-white/95 hover:bg-white text-stone-700 p-1.5 sm:p-2 rounded-xl shadow-md border border-stone-200 transition cursor-pointer text-xs font-semibold flex items-center gap-1"
               title="Reset India View"
             >
               <RotateCcw className="w-3.5 h-3.5 text-[#FF671F]" />

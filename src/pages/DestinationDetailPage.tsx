@@ -170,9 +170,9 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
   const nearby = (place as any).nearby_places || [];
 
   return (
-    <div className="min-h-screen text-stone-900 pb-20 space-y-10 animate-fadeIn">
+    <div className="min-h-screen text-stone-900 pb-20 space-y-6 sm:space-y-10 animate-fadeIn">
       {/* 1. Hero image & Top Navigation */}
-      <div className="relative h-80 sm:h-[420px] w-full overflow-hidden rounded-3xl border border-[#EFE8DF] shadow-warm bg-stone-100">
+      <div className="relative h-64 sm:h-[420px] w-full overflow-hidden rounded-2xl sm:rounded-3xl border border-[#EFE8DF] shadow-warm bg-stone-100">
         <img
           src={
             place.thumbnail_url ||
@@ -185,19 +185,19 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
         <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/30 to-stone-900/10" />
 
         {/* Back and Action Bar */}
-        <div className="absolute top-5 left-4 sm:left-6 right-4 sm:right-6 flex items-center justify-between z-10">
+        <div className="absolute top-3 sm:top-5 left-3 sm:left-6 right-3 sm:right-6 flex items-center justify-between z-10">
           <button
             onClick={onBack}
-            className="flex items-center gap-2 px-3.5 py-2 rounded-full bg-white/90 hover:bg-white text-stone-900 text-xs font-semibold shadow-xs transition backdrop-blur-sm"
+            className="flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-full bg-white/90 hover:bg-white text-stone-900 text-[11px] sm:text-xs font-semibold shadow-xs transition backdrop-blur-sm"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
-            <span>Back to Explorer</span>
+            <span>Back</span>
           </button>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 sm:gap-2">
             <button
               onClick={() => setIsReportModalOpen(true)}
-              className="flex items-center gap-1.5 px-3 py-2 rounded-full bg-white/90 hover:bg-white text-stone-700 hover:text-[#FF671F] text-xs font-semibold shadow-xs transition backdrop-blur-sm focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none"
+              className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-white/90 hover:bg-white text-stone-700 hover:text-[#FF671F] text-[11px] sm:text-xs font-semibold shadow-xs transition backdrop-blur-sm focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none"
               title="Report Heritage Issue / Maintenance"
               aria-label="Report Heritage Issue or Maintenance need"
             >
@@ -206,7 +206,7 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
             </button>
             <button
               onClick={() => toggleFavorite(place.id)}
-              className={`p-2.5 rounded-full shadow-xs transition backdrop-blur-sm focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none ${
+              className={`p-1.5 sm:p-2.5 rounded-full shadow-xs transition backdrop-blur-sm focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none ${
                 favActive
                   ? 'bg-rose-50 text-rose-600 border border-rose-200'
                   : 'bg-white/90 hover:bg-white text-stone-700'
@@ -214,7 +214,7 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
               title="Save to Favorites"
               aria-label={favActive ? 'Remove from saved favorites' : 'Save to favorites'}
             >
-              <Heart className={`w-4 h-4 ${favActive ? 'fill-rose-500' : ''}`} aria-hidden="true" />
+              <Heart className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${favActive ? 'fill-rose-500' : ''}`} aria-hidden="true" />
             </button>
             <button
               onClick={() => {
@@ -222,31 +222,31 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
                   navigator.clipboard.writeText(window.location.href).catch(() => {});
                 }
               }}
-              className="p-2.5 rounded-full bg-white/90 hover:bg-white text-stone-700 shadow-xs transition backdrop-blur-sm focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none"
+              className="p-1.5 sm:p-2.5 rounded-full bg-white/90 hover:bg-white text-stone-700 shadow-xs transition backdrop-blur-sm focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none"
               title="Share Place"
               aria-label="Copy place link to clipboard"
             >
-              <Share2 className="w-4 h-4" aria-hidden="true" />
+              <Share2 className="w-3.5 h-3.5 sm:w-4 sm:h-4" aria-hidden="true" />
             </button>
           </div>
         </div>
 
         {/* 2. Monument name + 3. Location & Heritage Status */}
-        <div className="absolute bottom-6 left-4 sm:left-8 right-4 sm:right-8 space-y-2 text-white">
-          <div className="flex items-center gap-2 flex-wrap">
+        <div className="absolute bottom-3 sm:bottom-6 left-3 sm:left-8 right-3 sm:right-8 space-y-1 sm:space-y-2 text-white">
+          <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
             <ProvenanceBadge
               type={place.data_confidence || 'OFFICIAL'}
               sourceUrl={place.source_url}
               verifiedAt={place.last_verified_at}
             />
             {place.heritage_status && (
-              <span className="px-3 py-1 rounded-full bg-orange-100 text-[#FF671F] text-xs font-bold shadow-xs flex items-center gap-1">
-                <ShieldCheck className="w-3.5 h-3.5 text-[#FF671F]" />
+              <span className="px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-orange-100 text-[#FF671F] text-[10px] sm:text-xs font-bold shadow-xs flex items-center gap-1">
+                <ShieldCheck className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-[#FF671F]" />
                 <span>{place.heritage_status}</span>
               </span>
             )}
             <span
-              className={`px-3 py-1 rounded-full backdrop-blur-md border text-xs font-bold flex items-center gap-1 ${
+              className={`px-2 sm:px-3 py-0.5 sm:py-1 rounded-full backdrop-blur-md border text-[10px] sm:text-xs font-bold flex items-center gap-1 ${
                 (healthScore ?? 96) >= 80
                   ? 'bg-emerald-500/20 border-emerald-400/40 text-emerald-100'
                   : (healthScore ?? 96) >= 60
@@ -255,21 +255,21 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
               }`}
               title={healthStatus}
             >
-              <ShieldCheck className="w-3 h-3 text-emerald-400" />
+              <ShieldCheck className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-emerald-400" />
               <span>Preservation: {healthScore ?? 96}%</span>
             </span>
-            <span className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md text-white text-xs font-medium">
+            <span className="px-2 sm:px-3 py-0.5 sm:py-1 rounded-full bg-white/20 backdrop-blur-md text-white text-[10px] sm:text-xs font-medium">
               {place.category}
             </span>
           </div>
 
-          <h1 className="font-serif text-3xl sm:text-5xl font-bold tracking-tight drop-shadow-sm">
+          <h1 className="font-serif text-xl sm:text-5xl font-bold tracking-tight drop-shadow-sm">
             {place.name}
           </h1>
 
-          <div className="text-xs sm:text-sm text-stone-200 flex items-center gap-2">
-            <MapPin className="w-4 h-4 text-amber-300 shrink-0" />
-            <span>
+          <div className="text-[11px] sm:text-sm text-stone-200 flex items-center gap-1.5 sm:gap-2">
+            <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-300 shrink-0" />
+            <span className="truncate">
               {place.area_neighborhood ? `${place.area_neighborhood}, ` : ''}
               {place.city}, {place.state}, {place.country || 'India'}
             </span>
@@ -278,22 +278,22 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
       </div>
 
       {/* Main Editorial Content Column */}
-      <div className="w-full max-w-5xl xl:max-w-6xl mx-auto space-y-12 sm:space-y-14 px-2 sm:px-4 pb-16">
+      <div className="w-full max-w-5xl xl:max-w-6xl mx-auto space-y-8 sm:space-y-14 px-2 sm:px-4 pb-16">
         {/* 4. Short Introduction */}
-        <section className="space-y-4">
-          <div className="text-xs font-bold uppercase tracking-wider text-[#FF671F] flex items-center gap-1.5">
+        <section className="space-y-2.5 sm:space-y-4">
+          <div className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#FF671F] flex items-center gap-1.5">
             <Compass className="w-3.5 h-3.5" />
             <span>Overview</span>
           </div>
-          <p className="font-serif text-lg sm:text-xl text-stone-800 leading-relaxed">
+          <p className="font-serif text-base sm:text-xl text-stone-800 leading-relaxed">
             {place.description || place.summary}
           </p>
           {place.tags && (
-            <div className="flex flex-wrap gap-1.5 pt-2">
+            <div className="flex flex-wrap gap-1.5 pt-1 sm:pt-2">
               {place.tags.map((tag, idx) => (
                 <span
                   key={idx}
-                  className="px-2.5 py-1 rounded-md bg-stone-100 text-stone-600 text-xs font-medium border border-stone-200"
+                  className="px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-md bg-stone-100 text-stone-600 text-[11px] sm:text-xs font-medium border border-stone-200"
                 >
                   #{tag}
                 </span>
@@ -303,15 +303,15 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
         </section>
 
         {/* 5. History */}
-        <section className="space-y-4 pt-6 border-t border-[#EFE8DF]">
-          <div className="text-xs font-bold uppercase tracking-wider text-[#FF671F] flex items-center gap-1.5">
+        <section className="space-y-2.5 sm:space-y-4 pt-4 sm:pt-6 border-t border-[#EFE8DF]">
+          <div className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#FF671F] flex items-center gap-1.5">
             <BookOpen className="w-3.5 h-3.5" />
             <span>Historical Significance</span>
           </div>
-          <h2 className="font-serif text-2xl font-bold text-stone-900">
+          <h2 className="font-serif text-lg sm:text-2xl font-bold text-stone-900">
             Origins & Heritage Chronicles
           </h2>
-          <div className="text-sm text-stone-700 leading-relaxed space-y-3">
+          <div className="text-xs sm:text-sm text-stone-700 leading-relaxed space-y-2 sm:space-y-3">
             <p>
               {place.history ||
                 `${place.name} has stood for centuries as an enduring symbol of regional craftsmanship, civic legacy, and cultural identity.`}
@@ -325,42 +325,42 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
         </section>
 
         {/* 6. Architecture */}
-        <section className="space-y-4 pt-6 border-t border-[#EFE8DF]">
-          <div className="text-xs font-bold uppercase tracking-wider text-[#FF671F] flex items-center gap-1.5">
+        <section className="space-y-2.5 sm:space-y-4 pt-4 sm:pt-6 border-t border-[#EFE8DF]">
+          <div className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#FF671F] flex items-center gap-1.5">
             <Landmark className="w-3.5 h-3.5" />
             <span>Architectural Craftsmanship</span>
           </div>
-          <h2 className="font-serif text-2xl font-bold text-stone-900">
+          <h2 className="font-serif text-lg sm:text-2xl font-bold text-stone-900">
             Structural Geometry & Masonry
           </h2>
-          <p className="text-sm text-stone-700 leading-relaxed">
+          <p className="text-xs sm:text-sm text-stone-700 leading-relaxed">
             {(place as any).architecture ||
               `${place.name} showcases signature traditional Indian architectural motifs, combining precision stone geometry, ornate arches, and master craftsmanship designed to withstand the test of time.`}
           </p>
 
           {/* 3D Architectural Model Viewer */}
           {resolve3DMonumentType(place.id) && (
-            <div className="pt-3 space-y-3">
+            <div className="pt-2 sm:pt-3 space-y-2.5 sm:space-y-3">
               <div className="flex items-center justify-between">
-                <span className="text-xs font-bold text-stone-700 flex items-center gap-1.5">
+                <span className="text-[11px] sm:text-xs font-bold text-stone-700 flex items-center gap-1.5">
                   <Box className="w-3.5 h-3.5 text-[#FF671F]" />
-                  <span>360° Interactive 3D Architectural Reconstruction</span>
+                  <span>360° Interactive 3D Model</span>
                 </span>
                 <button
                   onClick={() => setShow3DModel((prev) => !prev)}
-                  className="px-3 py-1 rounded-lg bg-orange-50 hover:bg-orange-100 text-[#FF671F] border border-orange-200 text-xs font-semibold transition"
+                  className="px-2.5 sm:px-3 py-1 rounded-lg bg-orange-50 hover:bg-orange-100 text-[#FF671F] border border-orange-200 text-[11px] sm:text-xs font-semibold transition cursor-pointer"
                 >
                   {show3DModel ? 'Hide 3D Model' : 'Open 3D Model'}
                 </button>
               </div>
 
               {show3DModel && (
-                <div className="rounded-3xl overflow-hidden border border-[#EFE8DF] shadow-warm">
+                <div className="rounded-2xl sm:rounded-3xl overflow-hidden border border-[#EFE8DF] shadow-warm">
                   <InteractiveHeritageMonument3D
                     monumentType={resolve3DMonumentType(place.id)!}
                     monumentName={place.name}
                     cityName={place.city}
-                    heightClass="h-80 sm:h-96"
+                    heightClass="h-64 sm:h-96"
                   />
                 </div>
               )}
@@ -380,23 +380,23 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
         </section>
 
         {/* 7. Visitor Information */}
-        <section className="space-y-4 pt-6 border-t border-[#EFE8DF]">
-          <div className="text-xs font-bold uppercase tracking-wider text-[#FF671F] flex items-center gap-1.5">
+        <section className="space-y-2.5 sm:space-y-4 pt-4 sm:pt-6 border-t border-[#EFE8DF]">
+          <div className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#FF671F] flex items-center gap-1.5">
             <Clock className="w-3.5 h-3.5" />
             <span>Practical Information</span>
           </div>
-          <h2 className="font-serif text-2xl font-bold text-stone-900">
+          <h2 className="font-serif text-lg sm:text-2xl font-bold text-stone-900">
             Visitor Guidelines & Timings
           </h2>
           <VisitingInfoCard place={place} />
         </section>
 
         {/* 7B. Data Provenance & Official Source Citations (Section XI.1 & XV.2) */}
-        <section className="space-y-4 pt-6 border-t border-[#EFE8DF] bg-white p-6 sm:p-8 rounded-3xl border shadow-warm">
+        <section className="space-y-3 sm:space-y-4 pt-4 sm:pt-6 border-t border-[#EFE8DF] bg-white p-4 sm:p-8 rounded-2xl sm:rounded-3xl border shadow-warm">
           <div className="flex items-center justify-between flex-wrap gap-2">
-            <div className="text-xs font-bold uppercase tracking-wider text-[#FF671F] flex items-center gap-1.5">
-              <ShieldCheck className="w-4 h-4 text-emerald-600" />
-              <span>Archival Integrity & Field-Level Provenance</span>
+            <div className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#FF671F] flex items-center gap-1.5">
+              <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-600" />
+              <span>Archival Integrity & Provenance</span>
             </div>
             <ProvenanceBadge
               type={place.data_confidence || 'OFFICIAL'}
@@ -405,21 +405,21 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
             />
           </div>
 
-          <h2 className="font-serif text-2xl font-bold text-stone-900">
+          <h2 className="font-serif text-lg sm:text-2xl font-bold text-stone-900">
             Source Authority & Audit Traceability
           </h2>
 
-          <p className="text-xs sm:text-sm text-stone-600 leading-relaxed">
+          <p className="text-[11px] sm:text-sm text-stone-600 leading-relaxed">
             Every factual claim in Virasat carries individual field-level provenance to ensure strict compliance with Archaeological Survey of India (ASI) standards and prevent synthetic or unverified hallucination.
           </p>
 
           {/* Provenance Facts Grid */}
           {Array.isArray((place as any).facts) && (place as any).facts.length > 0 && (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 pt-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-3 pt-2">
               {(place as any).facts.map((fact: any) => (
-                <div key={fact.id || fact.fact_key} className="p-3 rounded-2xl bg-stone-50 border border-stone-200/80 space-y-1">
+                <div key={fact.id || fact.fact_key} className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-stone-50 border border-stone-200/80 space-y-1">
                   <div className="flex items-center justify-between">
-                    <span className="text-[11px] font-bold text-stone-500 uppercase tracking-wider">
+                    <span className="text-[10px] sm:text-[11px] font-bold text-stone-500 uppercase tracking-wider">
                       {fact.fact_key.replace(/_/g, ' ')}
                     </span>
                     <ProvenanceBadge type={fact.data_confidence} size="sm" />
@@ -433,9 +433,9 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
           )}
 
           {/* Official Source Link & Citation */}
-          <div className="flex items-center justify-between flex-wrap gap-3 pt-4 border-t border-stone-100 text-xs text-stone-500">
-            <div className="flex items-center gap-2">
-              <span className="font-semibold text-stone-700">Official Source Authority:</span>
+          <div className="flex items-center justify-between flex-wrap gap-2 sm:gap-3 pt-3 sm:pt-4 border-t border-stone-100 text-[11px] sm:text-xs text-stone-500">
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <span className="font-semibold text-stone-700">Source Authority:</span>
               <a
                 href={place.source_url || 'https://asi.nic.in'}
                 target="_blank"

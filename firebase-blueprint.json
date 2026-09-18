@@ -1,0 +1,146 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User profile document storing traveller identity, preferences, and permissions",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "email": {
+          "type": "string",
+          "maxLength": 256
+        },
+        "name": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "avatar_url": {
+          "type": "string",
+          "maxLength": 1024
+        },
+        "home_city": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "travel_style": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "role": {
+          "type": "string",
+          "enum": ["traveller", "contributor", "admin"]
+        },
+        "created_at": {
+          "type": "string",
+          "maxLength": 64
+        },
+        "updated_at": {
+          "type": "string",
+          "maxLength": 64
+        }
+      },
+      "required": [
+        "id",
+        "email",
+        "name",
+        "role",
+        "created_at"
+      ]
+    },
+    "TripItem": {
+      "title": "TripItem",
+      "description": "Saved multimodal itinerary plan for a user",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "userId": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "title": {
+          "type": "string",
+          "maxLength": 160
+        },
+        "city": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "duration_hours": {
+          "type": "number"
+        },
+        "total_places": {
+          "type": "number"
+        },
+        "estimated_cost": {
+          "type": "number"
+        },
+        "created_at": {
+          "type": "string",
+          "maxLength": 64
+        }
+      },
+      "required": [
+        "id",
+        "userId",
+        "title",
+        "city",
+        "created_at"
+      ]
+    },
+    "FavoriteItem": {
+      "title": "FavoriteItem",
+      "description": "Bookmarked heritage destination or monument for a user",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "userId": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "place_id": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "created_at": {
+          "type": "string",
+          "maxLength": 64
+        }
+      },
+      "required": [
+        "id",
+        "userId",
+        "place_id",
+        "created_at"
+      ]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "User profile records containing account settings, travel preferences, and roles"
+    },
+    "/users/{userId}/trips/{tripId}": {
+      "schema": "TripItem",
+      "description": "Subcollection of saved itineraries belonging strictly to the owning user"
+    },
+    "/users/{userId}/favorites/{favoriteId}": {
+      "schema": "FavoriteItem",
+      "description": "Subcollection of bookmarked heritage places belonging strictly to the owning user"
+    }
+  }
+}

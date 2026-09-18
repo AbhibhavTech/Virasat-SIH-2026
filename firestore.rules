@@ -1,0 +1,141 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Default deny all access
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && (
+        (request.auth.token.email == 'abhibhavsinha82@gmail.com' && request.auth.token.email_verified == true) ||
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid))
+      );
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() > 0 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    // Validation helper for UserProfile
+    function isValidUserProfile(data) {
+      return data.id is string && isValidId(data.id) &&
+             data.email is string && data.email.size() > 0 && data.email.size() <= 256 &&
+             data.name is string && data.name.size() > 0 && data.name.size() <= 128 &&
+             data.role is string && (data.role == 'traveller' || data.role == 'contributor' || data.role == 'admin') &&
+             data.created_at is string && data.created_at.size() <= 64 &&
+             (!('avatar_url' in data) || (data.avatar_url is string && data.avatar_url.size() <= 1024)) &&
+             (!('home_city' in data) || (data.home_city is string && data.home_city.size() <= 128)) &&
+             (!('travel_style' in data) || (data.travel_style is string && data.travel_style.size() <= 64)) &&
+             (!('updated_at' in data) || (data.updated_at is string && data.updated_at.size() <= 64));
+    }
+
+    // Validation helper for TripItem
+    function isValidTripItem(data) {
+      return data.id is string && isValidId(data.id) &&
+             data.userId is string && isValidId(data.userId) &&
+             data.title is string && data.title.size() > 0 && data.title.size() <= 160 &&
+             data.city is string && data.city.size() > 0 && data.city.size() <= 128 &&
+             data.created_at is string && data.created_at.size() <= 64 &&
+             (!('duration_hours' in data) || (data.duration_hours is number && data.duration_hours >= 0 && data.duration_hours <= 720)) &&
+             (!('total_places' in data) || (data.total_places is number && data.total_places >= 0 && data.total_places <= 100)) &&
+             (!('estimated_cost' in data) || (data.estimated_cost is number && data.estimated_cost >= 0 && data.estimated_cost <= 10000000));
+    }
+
+    // Validation helper for FavoriteItem
+    function isValidFavoriteItem(data) {
+      return data.id is string && isValidId(data.id) &&
+             data.userId is string && isValidId(data.userId) &&
+             data.place_id is string && isValidId(data.place_id) &&
+             data.created_at is string && data.created_at.size() <= 64;
+    }
+
+    // Match rules for Users collection
+    match /users/{userId} {
+      allow get: if isOwner(userId) || isAdmin();
+      allow list: if isAdmin();
+
+      allow create: if isOwner(userId) &&
+                      isValidId(userId) &&
+                      isValidUserProfile(incoming()) &&
+                      incoming().id == userId &&
+                      (incoming().role == 'traveller' || isAdmin());
+
+      allow update: if (isOwner(userId) || isAdmin()) &&
+                      isValidId(userId) &&
+                      isValidUserProfile(incoming()) &&
+                      incoming().id == existing().id &&
+                      incoming().created_at == existing().created_at &&
+                      (incoming().role == existing().role || isAdmin());
+
+      allow delete: if isOwner(userId) || isAdmin();
+
+      // Subcollection: Trips
+      match /trips/{tripId} {
+        allow get: if isOwner(userId) || isAdmin();
+        allow list: if isOwner(userId) || isAdmin();
+
+        allow create: if isOwner(userId) &&
+                        isValidId(userId) &&
+                        isValidId(tripId) &&
+                        isValidTripItem(incoming()) &&
+                        incoming().userId == userId &&
+                        incoming().id == tripId;
+
+        allow update: if (isOwner(userId) || isAdmin()) &&
+                        isValidId(userId) &&
+                        isValidId(tripId) &&
+                        isValidTripItem(incoming()) &&
+                        incoming().userId == existing().userId &&
+                        incoming().id == existing().id &&
+                        incoming().created_at == existing().created_at;
+
+        allow delete: if isOwner(userId) || isAdmin();
+      }
+
+      // Subcollection: Favorites
+      match /favorites/{favoriteId} {
+        allow get: if isOwner(userId) || isAdmin();
+        allow list: if isOwner(userId) || isAdmin();
+
+        allow create: if isOwner(userId) &&
+                        isValidId(userId) &&
+                        isValidId(favoriteId) &&
+                        isValidFavoriteItem(incoming()) &&
+                        incoming().userId == userId &&
+                        incoming().id == favoriteId;
+
+        allow update: if (isOwner(userId) || isAdmin()) &&
+                        isValidId(userId) &&
+                        isValidId(favoriteId) &&
+                        isValidFavoriteItem(incoming()) &&
+                        incoming().userId == existing().userId &&
+                        incoming().id == existing().id;
+
+        allow delete: if isOwner(userId) || isAdmin();
+      }
+    }
+
+    // Test connection document rule for health checks
+    match /test/{docId} {
+      allow read: if true;
+    }
+  }
+}
