@@ -445,15 +445,19 @@ aiRouter.post('/visual-identify', async (req: Request, res: Response): Promise<v
       return;
     }
 
-    // Extract base64 and mime type
+    // Extract base64 and mime type safely without catastrophic regex backtracking
     let mimeType = 'image/jpeg';
     let base64Data = image;
 
     if (image.startsWith('data:')) {
-      const matches = image.match(/^data:([a-zA-Z0-9]+\/[a-zA-Z0-9-.+]+);base64,(.+)$/);
-      if (matches && matches.length === 3) {
-        mimeType = matches[1];
-        base64Data = matches[2];
+      const commaIdx = image.indexOf(',');
+      if (commaIdx !== -1) {
+        const header = image.substring(0, commaIdx);
+        const mimeMatch = header.match(/data:([^;]+)/);
+        if (mimeMatch && mimeMatch[1]) {
+          mimeType = mimeMatch[1];
+        }
+        base64Data = image.substring(commaIdx + 1);
       }
     }
 

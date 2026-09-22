@@ -941,9 +941,26 @@ export const api = {
     mode?: 'identify' | 'ar_facts';
     current_location?: { latitude: number; longitude: number };
   }): Promise<VisualIdentificationResult> {
-    return await request<VisualIdentificationResult>('/v1/ai/visual-identify', {
-      method: 'POST',
-      body: JSON.stringify(payload),
-    });
+    try {
+      return await request<VisualIdentificationResult>('/v1/ai/visual-identify', {
+        method: 'POST',
+        body: JSON.stringify(payload),
+      });
+    } catch (err: any) {
+      // Retry once on transient fetch / socket disconnect issues
+      const isFetchError =
+        err?.message?.includes('Failed to fetch') ||
+        err?.message?.includes('NetworkError') ||
+        err?.name === 'TypeError';
+
+      if (isFetchError) {
+        await new Promise((resolve) => setTimeout(resolve, 600));
+        return await request<VisualIdentificationResult>('/v1/ai/visual-identify', {
+          method: 'POST',
+          body: JSON.stringify(payload),
+        });
+      }
+      throw err;
+    }
   },
 };
