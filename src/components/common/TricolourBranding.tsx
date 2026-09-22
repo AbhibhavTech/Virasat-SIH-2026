@@ -72,43 +72,47 @@ export const VirasatBrand: React.FC<{
   onClick?: () => void;
   size?: 'sm' | 'md' | 'lg';
   variant?: 'light' | 'dark';
-}> = ({ onClick, size = 'md', variant = 'light' }) => {
+  showSubtitle?: boolean;
+  className?: string;
+}> = ({ onClick, size = 'md', variant = 'light', showSubtitle = true, className = '' }) => {
   const isSm = size === 'sm';
   const isLg = size === 'lg';
 
   return (
     <div
       onClick={onClick}
-      className={`flex items-center gap-2.5 text-left group select-none ${
+      className={`flex items-center gap-1.5 sm:gap-2.5 text-left group select-none shrink-0 ${
         onClick ? 'cursor-pointer focus:outline-none' : ''
-      }`}
+      } ${className}`}
     >
       <div
         className={`${
-          isSm ? 'w-8 h-8' : isLg ? 'w-11 h-11' : 'w-10 h-10'
-        } rounded-xl bg-white border border-[#EFE8DF] shadow-xs flex items-center justify-center group-hover:scale-105 transition-transform duration-200 p-1`}
+          isSm ? 'w-7 h-7 sm:w-8 sm:h-8 p-0.5 sm:p-1' : isLg ? 'w-11 h-11 p-1' : 'w-10 h-10 p-1'
+        } rounded-lg sm:rounded-xl bg-white border border-[#EFE8DF] shadow-xs flex items-center justify-center group-hover:scale-105 transition-transform duration-200 shrink-0`}
       >
-        <VirasatLogoMark className={isSm ? 'w-7 h-7' : isLg ? 'w-9 h-9' : 'w-8 h-8'} />
+        <VirasatLogoMark className={isSm ? 'w-5.5 h-5.5 sm:w-7 sm:h-7' : isLg ? 'w-9 h-9' : 'w-8 h-8'} />
       </div>
 
-      <div className="flex flex-col">
-        <div className="flex items-center gap-1.5">
+      <div className="flex flex-col min-w-0 justify-center">
+        <div className="flex items-center gap-1 sm:gap-1.5">
           <span
-            className={`font-serif font-bold tracking-tight leading-tight ${
-              isSm ? 'text-lg' : isLg ? 'text-2xl' : 'text-xl'
+            className={`font-serif font-bold tracking-tight leading-tight whitespace-nowrap ${
+              isSm ? 'text-[15px] sm:text-base md:text-lg' : isLg ? 'text-2xl' : 'text-xl'
             } ${variant === 'dark' ? 'text-white' : 'text-[#0B192C]'}`}
           >
             Virasat
           </span>
-          <span className="hidden sm:inline-block w-1.5 h-1.5 rounded-full bg-[#FF671F]" />
+          <span className="hidden sm:inline-block w-1.5 h-1.5 rounded-full bg-[#FF671F] shrink-0" />
         </div>
-        <span
-          className={`text-[10px] font-medium tracking-tight ${
-            variant === 'dark' ? 'text-stone-300' : 'text-stone-500'
-          }`}
-        >
-          Explore India&apos;s Heritage
-        </span>
+        {showSubtitle && (
+          <span
+            className={`text-[9px] sm:text-[10px] font-medium tracking-tight truncate ${
+              isSm ? 'hidden sm:inline-block' : ''
+            } ${variant === 'dark' ? 'text-stone-300' : 'text-stone-500'}`}
+          >
+            Explore India&apos;s Heritage
+          </span>
+        )}
       </div>
     </div>
   );

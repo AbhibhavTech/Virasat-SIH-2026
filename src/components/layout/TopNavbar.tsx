@@ -139,8 +139,8 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[#EFE8DF] transition-all duration-200">
       <TricolourTopBar />
-      <div className="w-full max-w-[96%] lg:max-w-[94%] xl:max-w-[92%] 2xl:max-w-[1760px] mx-auto px-2.5 sm:px-6 lg:px-8 xl:px-10">
-        <div className="flex items-center justify-between h-14 sm:h-16 md:h-18 gap-2 sm:gap-4">
+      <div className="w-full max-w-[98%] sm:max-w-[96%] lg:max-w-[94%] xl:max-w-[92%] 2xl:max-w-[1760px] mx-auto px-1.5 sm:px-6 lg:px-8 xl:px-10">
+        <div className="flex items-center justify-between h-13 sm:h-16 md:h-18 gap-1 sm:gap-4">
           {/* Brand Logo */}
           <VirasatBrand onClick={() => handleNav('home')} size="sm" />
 
@@ -285,28 +285,28 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
           </nav>
 
           {/* Right Action Tools: City Switcher, Search, Saved, Auth */}
-          <div className="flex items-center gap-1.5 sm:gap-2">
+          <div className="flex items-center gap-1 sm:gap-1.5 shrink-0">
             {/* Quick Mobile Search Button */}
             {onOpenSearch && (
               <button
                 onClick={onOpenSearch}
-                className="md:hidden p-2 rounded-full text-stone-700 hover:text-stone-900 hover:bg-stone-100 transition min-h-[40px] min-w-[40px] flex items-center justify-center focus-visible:ring-2 focus-visible:ring-amber-600 focus:outline-none"
+                className="md:hidden p-1.5 sm:p-2 rounded-full text-stone-700 hover:text-stone-900 hover:bg-stone-100 transition min-h-[32px] min-w-[32px] sm:min-h-[40px] sm:min-w-[40px] flex items-center justify-center shrink-0 focus-visible:ring-2 focus-visible:ring-amber-600 focus:outline-none cursor-pointer"
                 title="Search destinations & monuments"
                 aria-label="Search"
               >
-                <Search className="w-4.5 h-4.5 text-stone-700" aria-hidden="true" />
+                <Search className="w-4 h-4 text-stone-700" aria-hidden="true" />
               </button>
             )}
 
             {/* City Selector Pill */}
-            <div className="relative" ref={cityDropdownRef}>
+            <div className="relative shrink-0" ref={cityDropdownRef}>
               <button
                 onClick={() => setCityDropdownOpen(!cityDropdownOpen)}
-                className="flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-white border border-stone-200 hover:border-[#FF671F]/50 text-xs font-semibold text-[#0B192C] shadow-2xs transition cursor-pointer max-w-[88px] sm:max-w-none"
+                className="flex items-center gap-1 px-1.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-white border border-stone-200 hover:border-[#FF671F]/50 text-xs font-semibold text-[#0B192C] shadow-2xs transition cursor-pointer max-w-[70px] xs:max-w-[85px] sm:max-w-none shrink-0"
                 title="Filter regional content"
               >
-                <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#FF671F] shrink-0" />
-                <span className="truncate text-[10px] sm:text-xs">{selectedCity}</span>
+                <MapPin className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 text-[#FF671F] shrink-0" />
+                <span className="truncate text-[10px] sm:text-xs font-bold">{selectedCity}</span>
                 <ChevronDown className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-stone-400 shrink-0" />
               </button>
 
@@ -343,29 +343,29 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
               <button
                 type="button"
                 onClick={onOpenARCamera}
-                className="p-1.5 sm:p-2 rounded-full bg-orange-50 hover:bg-orange-100 text-[#FF671F] border border-orange-200/80 transition-all hover:scale-105 active:scale-95 shadow-2xs flex items-center justify-center cursor-pointer min-h-[36px] min-w-[36px]"
+                className="p-1.5 sm:p-2 rounded-full bg-orange-50 hover:bg-orange-100 text-[#FF671F] border border-orange-200/80 transition-all hover:scale-105 active:scale-95 shadow-2xs flex items-center justify-center cursor-pointer min-h-[32px] min-w-[32px] sm:min-h-[36px] sm:min-w-[36px] shrink-0"
                 title="Open AR Camera & Monument Scanner"
                 aria-label="AR Camera Scanner"
               >
-                <Camera className="w-4 h-4 text-[#FF671F]" />
+                <Camera className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FF671F]" />
               </button>
             )}
 
             {/* Notifications & Updates Bell */}
             <button
               onClick={() => handleNav('favorites')}
-              className="p-2 sm:p-2.5 rounded-full text-stone-800 hover:text-stone-950 hover:bg-stone-200/50 transition relative min-h-[36px] min-w-[36px] sm:min-h-[44px] sm:min-w-[44px] flex items-center justify-center focus-visible:ring-2 focus-visible:ring-amber-600 focus:outline-none"
+              className="p-1.5 sm:p-2 rounded-full text-stone-800 hover:text-stone-950 hover:bg-stone-200/50 transition relative min-h-[32px] min-w-[32px] sm:min-h-[44px] sm:min-w-[44px] hidden xs:flex items-center justify-center shrink-0 focus-visible:ring-2 focus-visible:ring-amber-600 focus:outline-none cursor-pointer"
               title="Notifications & Saved"
               aria-label="Notifications and Saved Favorites"
             >
-              <Bell className="w-4 h-4 text-stone-800" aria-hidden="true" />
-              <span className="absolute top-1 sm:top-1.5 right-1 sm:right-1.5 w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-[#FF671F] text-white text-[7px] sm:text-[8px] font-bold flex items-center justify-center shadow-xs">
+              <Bell className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-800" aria-hidden="true" />
+              <span className="absolute top-0.5 sm:top-1.5 right-0.5 sm:right-1.5 w-2 h-2 sm:w-3 sm:h-3 rounded-full bg-[#FF671F] text-white text-[7px] sm:text-[8px] font-bold flex items-center justify-center shadow-xs">
                 1
               </span>
             </button>
 
-            {/* Profile / Auth Button */}
-            <div className="relative" ref={profileDropdownRef}>
+            {/* Profile / Auth Button (High Visibility on Mobile) */}
+            <div className="relative shrink-0" ref={profileDropdownRef}>
               <button
                 onClick={() => {
                   if (isAuthenticated) {
@@ -376,17 +376,17 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
                     handleNav('profile');
                   }
                 }}
-                className={`flex items-center gap-1 sm:gap-1.5 px-2.5 sm:px-4 py-1 sm:py-2 rounded-full border transition min-h-[36px] sm:min-h-[44px] focus-visible:ring-2 focus-visible:ring-amber-600 focus:outline-none ${
+                className={`flex items-center gap-1 sm:gap-1.5 px-2 sm:px-3.5 py-1 sm:py-1.5 rounded-full border transition min-h-[32px] sm:min-h-[38px] shrink-0 focus-visible:ring-2 focus-visible:ring-amber-600 focus:outline-none cursor-pointer ${
                   isAuthenticated
                     ? 'bg-white border-[#EFE8DF] hover:border-[#046A38] text-stone-800 shadow-2xs'
-                    : 'bg-[#046A38] hover:bg-[#03542C] border-[#046A38] text-white shadow-xs font-semibold text-[11px] sm:text-xs active:scale-95 cursor-pointer'
+                    : 'bg-[#046A38] hover:bg-[#03542C] border-[#046A38] text-white shadow-xs font-semibold text-[11px] sm:text-xs active:scale-95'
                 }`}
                 title={isAuthenticated ? 'Account Profile' : 'Sign In'}
                 aria-expanded={profileDropdownOpen}
                 aria-haspopup="true"
               >
-                <User className="w-3 h-3 sm:w-3.5 sm:h-3.5" aria-hidden="true" />
-                <span className="text-[11px] sm:text-xs font-bold">
+                <User className="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" aria-hidden="true" />
+                <span className="text-[11px] sm:text-xs font-bold whitespace-nowrap">
                   {isAuthenticated ? user?.name?.split(' ')[0] || 'Profile' : 'Sign In'}
                 </span>
               </button>
@@ -435,11 +435,11 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
             {/* Mobile Menu Toggle Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-1.5 sm:p-2 rounded-xl text-stone-800 hover:bg-stone-200/60 focus:outline-none min-h-[36px] min-w-[36px] sm:min-h-[44px] sm:min-w-[44px] flex items-center justify-center focus-visible:ring-2 focus-visible:ring-amber-600"
+              className="md:hidden p-1.5 sm:p-2 rounded-xl text-stone-800 hover:bg-stone-200/60 focus:outline-none min-h-[32px] min-w-[32px] sm:min-h-[40px] sm:min-w-[40px] flex items-center justify-center shrink-0 focus-visible:ring-2 focus-visible:ring-amber-600 cursor-pointer"
               aria-label="Toggle navigation menu"
               aria-expanded={mobileMenuOpen}
             >
-              {mobileMenuOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" aria-hidden="true" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" aria-hidden="true" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" aria-hidden="true" /> : <Menu className="w-5 h-5" aria-hidden="true" />}
             </button>
           </div>
         </div>
@@ -449,99 +449,187 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
       {mobileMenuOpen && (
         <>
           <div
-            className="fixed inset-0 top-14 bg-black/40 backdrop-blur-xs z-40 md:hidden animate-fadeIn"
+            className="fixed inset-0 top-13 sm:top-14 bg-black/40 backdrop-blur-xs z-40 md:hidden animate-fadeIn"
             onClick={() => setMobileMenuOpen(false)}
             aria-hidden="true"
           />
-          <div className="fixed top-14 left-0 right-0 max-h-[calc(100dvh-4.5rem)] overflow-y-auto z-50 md:hidden border-b border-[#EFE8DF] bg-[#FAF8F5] px-3 pt-2.5 pb-24 space-y-2.5 shadow-2xl rounded-b-2xl animate-fadeIn">
-          {/* Region Switcher on Mobile */}
-          <div className="flex items-center justify-between p-2 rounded-xl bg-white border border-[#EFE8DF] text-xs min-h-[38px]">
-            <div className="flex items-center gap-1.5 shrink-0">
-              <MapPin className="w-3.5 h-3.5 text-amber-700" aria-hidden="true" />
-              <span className="font-semibold text-stone-800 text-[11px]">Region:</span>
-            </div>
-            <select
-              value={selectedCity}
-              onChange={(e) => onSelectCity(e.target.value)}
-              className="bg-transparent text-[11px] font-bold text-stone-900 border-0 focus:ring-0 cursor-pointer max-w-[170px] truncate"
-              aria-label="Select region or city"
-            >
-              {cities.map((c) => (
-                <option key={c} value={c}>
-                  {c}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          {/* Primary Navigation on Mobile */}
-          <div className="space-y-0.5">
-            <div className="px-2 text-[9px] font-bold text-stone-500 uppercase tracking-wider">
-              Explore India
-            </div>
-            {mainNavLinks.map((link) => (
-              <button
-                key={link.id}
-                onClick={() => handleNav(link.id)}
-                className={`w-full flex items-center justify-between px-3 py-1.5 rounded-xl text-[11px] sm:text-xs font-bold transition min-h-[36px] ${
-                  link.isActive
-                    ? 'bg-amber-100 text-amber-950'
-                    : 'text-stone-800 hover:bg-stone-200/50'
-                }`}
-              >
-                <span>{link.label}</span>
-                {link.isActive && <span className="w-1.5 h-1.5 rounded-full bg-amber-700" aria-hidden="true" />}
-              </button>
-            ))}
-          </div>
-
-          {/* Secondary Tools on Mobile */}
-          <div className="space-y-0.5 pt-2 border-t border-[#EFE8DF]">
-            <div className="px-2 text-[9px] font-bold text-stone-500 uppercase tracking-wider">
-              Specialized Tools
-            </div>
-            {secondaryItems.map((item) => {
-              const Icon = item.icon;
-              const isSelected = activeTab === item.id;
-              return (
+          <div className="fixed top-13 sm:top-14 left-0 right-0 max-h-[calc(100dvh-4rem)] overflow-y-auto z-50 md:hidden border-b border-[#EFE8DF] bg-[#FAF8F5] px-3 pt-3 pb-24 space-y-3 shadow-2xl rounded-b-2xl animate-fadeIn">
+            {/* Dedicated Authentication Card on Mobile */}
+            {!isAuthenticated ? (
+              <div className="p-3.5 rounded-2xl bg-gradient-to-r from-emerald-50 via-white to-amber-50 border border-emerald-200/80 shadow-xs flex items-center justify-between gap-3">
+                <div className="flex items-center gap-2.5 min-w-0">
+                  <div className="w-10 h-10 rounded-xl bg-[#046A38] text-white flex items-center justify-center shrink-0 shadow-xs">
+                    <User className="w-5 h-5" aria-hidden="true" />
+                  </div>
+                  <div className="min-w-0">
+                    <div className="text-xs font-bold text-stone-900">Welcome to Virasat</div>
+                    <div className="text-[11px] text-stone-500 truncate">Sign in to save trips & favorites</div>
+                  </div>
+                </div>
                 <button
-                  key={item.id}
-                  onClick={() => handleNav(item.id)}
-                  className={`w-full flex items-center gap-2 px-3 py-1.5 rounded-xl text-[11px] sm:text-xs transition min-h-[36px] ${
-                    isSelected
-                      ? 'bg-amber-50 text-amber-950 font-bold'
-                      : 'text-stone-800 hover:bg-stone-200/40 font-medium'
+                  type="button"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    if (onOpenAuthModal) onOpenAuthModal();
+                    else handleNav('profile');
+                  }}
+                  className="px-3.5 py-1.5 rounded-full bg-[#046A38] hover:bg-[#03542C] text-white text-xs font-bold shadow-xs active:scale-95 shrink-0 cursor-pointer transition flex items-center gap-1"
+                >
+                  <User className="w-3.5 h-3.5" />
+                  <span>Sign In</span>
+                </button>
+              </div>
+            ) : (
+              <div className="p-3 rounded-2xl bg-white border border-[#EFE8DF] shadow-xs space-y-2.5">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2.5 min-w-0">
+                    <div className="w-9 h-9 rounded-xl bg-amber-100 border border-amber-200 text-amber-900 flex items-center justify-center font-bold text-xs shrink-0">
+                      {user?.name ? user.name[0].toUpperCase() : 'U'}
+                    </div>
+                    <div className="min-w-0">
+                      <div className="text-xs font-bold text-stone-900 truncate">{user?.name || 'Explorer'}</div>
+                      <div className="text-[10px] text-stone-500 truncate">{user?.email}</div>
+                    </div>
+                  </div>
+                  <span className="text-[9px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 border border-emerald-200 shrink-0">
+                    Signed In
+                  </span>
+                </div>
+                <div className="grid grid-cols-2 gap-1.5 pt-1 border-t border-stone-100">
+                  <button
+                    onClick={() => handleNav('profile')}
+                    className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-stone-50 hover:bg-stone-100 text-stone-800 text-[11px] font-semibold"
+                  >
+                    <User className="w-3.5 h-3.5 text-stone-500" />
+                    <span>My Profile</span>
+                  </button>
+                  <button
+                    onClick={() => handleNav('favorites')}
+                    className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-stone-50 hover:bg-stone-100 text-stone-800 text-[11px] font-semibold"
+                  >
+                    <Heart className="w-3.5 h-3.5 text-rose-500" />
+                    <span>Saved ({favorites?.length || 0})</span>
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {/* Region Switcher on Mobile */}
+            <div className="flex items-center justify-between p-2 rounded-xl bg-white border border-[#EFE8DF] text-xs min-h-[38px]">
+              <div className="flex items-center gap-1.5 shrink-0">
+                <MapPin className="w-3.5 h-3.5 text-amber-700" aria-hidden="true" />
+                <span className="font-semibold text-stone-800 text-[11px]">Region:</span>
+              </div>
+              <select
+                value={selectedCity}
+                onChange={(e) => onSelectCity(e.target.value)}
+                className="bg-transparent text-[11px] font-bold text-stone-900 border-0 focus:ring-0 cursor-pointer max-w-[170px] truncate"
+                aria-label="Select region or city"
+              >
+                {cities.map((c) => (
+                  <option key={c} value={c}>
+                    {c}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* Primary Navigation on Mobile */}
+            <div className="space-y-0.5">
+              <div className="px-2 text-[9px] font-bold text-stone-500 uppercase tracking-wider">
+                Explore India
+              </div>
+              {mainNavLinks.map((link) => (
+                <button
+                  key={link.id}
+                  onClick={() => handleNav(link.id)}
+                  className={`w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-bold transition min-h-[38px] ${
+                    link.isActive
+                      ? 'bg-amber-100 text-amber-950'
+                      : 'text-stone-800 hover:bg-stone-200/50'
                   }`}
                 >
-                  <Icon className="w-3.5 h-3.5 text-amber-700 shrink-0" aria-hidden="true" />
-                  <span className="truncate">{item.label}</span>
+                  <span>{link.label}</span>
+                  {link.isActive && <span className="w-1.5 h-1.5 rounded-full bg-amber-700" aria-hidden="true" />}
                 </button>
-              );
-            })}
+              ))}
+            </div>
 
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                onOpenDatabaseStatus?.();
-              }}
-              className="w-full flex items-center gap-2 px-3 py-1.5 rounded-xl text-[11px] text-amber-950 bg-amber-50/80 border border-amber-300 font-semibold mt-1.5 min-h-[36px]"
-            >
-              <Database className="w-3.5 h-3.5 text-amber-800 shrink-0" aria-hidden="true" />
-              <span className="truncate">Master Database Architecture</span>
-            </button>
+            {/* Secondary Tools on Mobile */}
+            <div className="space-y-0.5 pt-2 border-t border-[#EFE8DF]">
+              <div className="px-2 text-[9px] font-bold text-stone-500 uppercase tracking-wider">
+                Specialized Tools
+              </div>
+              {secondaryItems.map((item) => {
+                const Icon = item.icon;
+                const isSelected = activeTab === item.id;
+                return (
+                  <button
+                    key={item.id}
+                    onClick={() => handleNav(item.id)}
+                    className={`w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs transition min-h-[38px] ${
+                      isSelected
+                        ? 'bg-amber-50 text-amber-950 font-bold'
+                        : 'text-stone-800 hover:bg-stone-200/40 font-medium'
+                    }`}
+                  >
+                    <Icon className="w-3.5 h-3.5 text-amber-700 shrink-0" aria-hidden="true" />
+                    <span className="truncate">{item.label}</span>
+                  </button>
+                );
+              })}
 
-            <button
-              onClick={() => {
-                setMobileMenuOpen(false);
-                navigate('/admin');
-              }}
-              className="w-full flex items-center gap-2 px-3 py-1.5 rounded-xl text-[11px] text-emerald-950 bg-emerald-50/80 border border-emerald-300 font-semibold mt-1 min-h-[36px]"
-            >
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-800 shrink-0" aria-hidden="true" />
-              <span className="truncate">Admin Verification Portal</span>
-            </button>
+              {onOpenARCamera && (
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    onOpenARCamera();
+                  }}
+                  className="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs text-orange-950 bg-orange-50/80 border border-orange-200 font-semibold mt-1 min-h-[38px]"
+                >
+                  <Camera className="w-3.5 h-3.5 text-[#FF671F] shrink-0" aria-hidden="true" />
+                  <span className="truncate">AR Camera Monument Scanner</span>
+                </button>
+              )}
+
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenDatabaseStatus?.();
+                }}
+                className="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs text-amber-950 bg-amber-50/80 border border-amber-300 font-semibold mt-1 min-h-[38px]"
+              >
+                <Database className="w-3.5 h-3.5 text-amber-800 shrink-0" aria-hidden="true" />
+                <span className="truncate">Master Database Architecture</span>
+              </button>
+
+              <button
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  navigate('/admin');
+                }}
+                className="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs text-emerald-950 bg-emerald-50/80 border border-emerald-300 font-semibold mt-1 min-h-[38px]"
+              >
+                <ShieldCheck className="w-3.5 h-3.5 text-emerald-800 shrink-0" aria-hidden="true" />
+                <span className="truncate">Admin Verification Portal</span>
+              </button>
+            </div>
+
+            {/* Logout on Mobile if authenticated */}
+            {isAuthenticated && (
+              <div className="pt-2 border-t border-[#EFE8DF]">
+                <button
+                  onClick={() => {
+                    logout();
+                    setMobileMenuOpen(false);
+                  }}
+                  className="w-full text-center py-2 text-xs font-bold text-rose-700 hover:bg-rose-50 rounded-xl transition"
+                >
+                  Sign Out of Account
+                </button>
+              </div>
+            )}
           </div>
-        </div>
         </>
       )}
     </header>
