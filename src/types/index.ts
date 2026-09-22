@@ -751,6 +751,7 @@ export interface AROverlayPin {
 
 export interface VisualIdentificationResult {
   success: boolean;
+  is_ai_generated?: boolean;
   identified_name: string;
   confidence: number;
   city?: string;

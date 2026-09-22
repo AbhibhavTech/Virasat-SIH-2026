@@ -462,10 +462,10 @@ aiRouter.post('/visual-identify', async (req: Request, res: Response): Promise<v
     const allDbPlaces = placesResult.places || [];
 
     let identifiedData: any = null;
+    let isAiGenerated = false;
 
     if (ai) {
-      try {
-        const prompt = `You are the chief architectural and cultural heritage vision expert for the Archaeological Survey of India (ASI) and Virasat Heritage Explorer.
+      const prompt = `You are the chief architectural and cultural heritage vision expert for the Archaeological Survey of India (ASI) and Virasat Heritage Explorer.
 Analyze this photo of a monument, temple, fort, palace, cave, stupa, church, or historical landmark.
 
 Identify:
@@ -496,39 +496,62 @@ Respond strictly in valid JSON format matching this schema:
   "unesco_status": true
 }`;
 
-        const geminiRes = await ai.models.generateContent({
-          model: 'gemini-3.8-flash',
-          contents: [
-            {
-              role: 'user',
-              parts: [
+      // Try primary model gemini-3.8-flash with retry and exponential backoff, then secondary gemini-2.5-flash
+      const visionModels = ['gemini-3.8-flash', 'gemini-2.5-flash'];
+      for (const modelName of visionModels) {
+        if (identifiedData?.identified_name) break;
+
+        // Try up to 2 attempts per model for transient errors (e.g. 503 high demand)
+        for (let attempt = 1; attempt <= 2; attempt++) {
+          try {
+            const geminiRes = await ai.models.generateContent({
+              model: modelName,
+              contents: [
                 {
-                  inlineData: {
-                    mimeType: mimeType || 'image/jpeg',
-                    data: base64Data,
-                  },
-                },
-                {
-                  text: prompt,
+                  role: 'user',
+                  parts: [
+                    {
+                      inlineData: {
+                        mimeType: mimeType || 'image/jpeg',
+                        data: base64Data,
+                      },
+                    },
+                    {
+                      text: prompt,
+                    },
+                  ],
                 },
               ],
-            },
-          ],
-          config: {
-            responseMimeType: 'application/json',
-          },
-        });
+              config: {
+                responseMimeType: 'application/json',
+              },
+            });
 
-        if (geminiRes?.text) {
-          try {
-            identifiedData = JSON.parse(geminiRes.text.trim());
-          } catch {
-            const cleaned = geminiRes.text.replace(/```json\n?|\n?```/g, '').trim();
-            identifiedData = JSON.parse(cleaned);
+            if (geminiRes?.text) {
+              try {
+                identifiedData = JSON.parse(geminiRes.text.trim());
+              } catch {
+                const cleaned = geminiRes.text.replace(/```json\n?|\n?```/g, '').trim();
+                identifiedData = JSON.parse(cleaned);
+              }
+
+              if (identifiedData?.identified_name) {
+                isAiGenerated = true;
+                break;
+              }
+            }
+          } catch (err: any) {
+            const isTransient = err?.status === 503 || err?.message?.includes('503') || err?.message?.includes('high demand') || err?.message?.includes('UNAVAILABLE');
+            console.warn(`Vision model ${modelName} attempt ${attempt} failed:`, isTransient ? '503 High Demand (Transient)' : err?.message || err);
+            
+            if (isTransient && attempt < 2) {
+              // Wait 750ms before retrying transient spike
+              await new Promise((r) => setTimeout(r, 750));
+            } else {
+              break;
+            }
           }
         }
-      } catch (err) {
-        console.warn('Gemini vision model call error:', err);
       }
     }
 
@@ -651,6 +674,7 @@ Respond strictly in valid JSON format matching this schema:
 
     res.json({
       success: true,
+      is_ai_generated: isAiGenerated,
       identified_name: identifiedData.identified_name,
       confidence: identifiedData.confidence || 0.92,
       city: identifiedData.city,

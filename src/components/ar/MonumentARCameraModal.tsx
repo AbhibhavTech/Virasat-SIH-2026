@@ -268,7 +268,12 @@ export const MonumentARCameraModal: React.FC<MonumentARCameraModalProps> = ({
       }
     } catch (err: any) {
       console.error('AR analysis failed:', err);
-      setErrorMessage('Could not identify monument from this camera frame. Try adjusting the angle or lighting.');
+      const isUnavailable = err?.message?.includes('503') || err?.message?.includes('high demand') || err?.message?.includes('UNAVAILABLE');
+      setErrorMessage(
+        isUnavailable
+          ? 'AI Vision model is experiencing brief high demand. Please tap the shutter to retry in a few seconds.'
+          : 'Could not identify monument from this camera frame. Try adjusting the angle or lighting.'
+      );
     } finally {
       setIsAnalyzing(false);
     }
@@ -306,7 +311,12 @@ export const MonumentARCameraModal: React.FC<MonumentARCameraModalProps> = ({
       }
     } catch (err: any) {
       console.error('Image upload analysis error:', err);
-      setErrorMessage('Failed to analyze the photo. Please check network connection or try another photo.');
+      const isUnavailable = err?.message?.includes('503') || err?.message?.includes('high demand') || err?.message?.includes('UNAVAILABLE');
+      setErrorMessage(
+        isUnavailable
+          ? 'AI Vision model is currently experiencing high demand. Please retry in a moment.'
+          : 'Failed to analyze the photo. Please check network connection or try another photo.'
+      );
     } finally {
       setIsAnalyzing(false);
     }
@@ -547,6 +557,23 @@ export const MonumentARCameraModal: React.FC<MonumentARCameraModalProps> = ({
         {/* Viewport Content Area */}
         <div className="relative flex-1 min-h-[380px] sm:min-h-[480px] max-h-[70vh] overflow-y-auto bg-black flex flex-col">
           
+          {/* Transient Error or Availability Alert Banner */}
+          {errorMessage && (
+            <div className="bg-amber-950/90 border-b border-amber-500/30 text-amber-200 px-4 py-2.5 text-xs flex items-center justify-between gap-3 z-30 animate-fadeIn">
+              <div className="flex items-center gap-2">
+                <AlertCircle className="w-4 h-4 text-amber-400 shrink-0" />
+                <span>{errorMessage}</span>
+              </div>
+              <button
+                type="button"
+                onClick={() => setErrorMessage(null)}
+                className="text-amber-400 hover:text-white text-xs underline font-medium cursor-pointer shrink-0"
+              >
+                Dismiss
+              </button>
+            </div>
+          )}
+
           {/* TAB 1: LIVE AR CAMERA */}
           {activeTab === 'camera' && (
             <div className="relative flex-1 w-full h-full min-h-[360px] sm:min-h-[460px] flex items-center justify-center overflow-hidden">
@@ -828,6 +855,16 @@ export const MonumentARCameraModal: React.FC<MonumentARCameraModalProps> = ({
                     {analysisResult.unesco_status && (
                       <span className="px-2 py-0.5 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-400 text-[10px] font-bold">
                         UNESCO
+                      </span>
+                    )}
+                    {analysisResult.is_ai_generated ? (
+                      <span className="px-2 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-[10px] font-bold flex items-center gap-1">
+                        <Sparkles className="w-2.5 h-2.5" />
+                        AI Vision
+                      </span>
+                    ) : (
+                      <span className="px-2 py-0.5 rounded-full bg-blue-500/20 border border-blue-500/40 text-blue-300 text-[10px] font-bold">
+                        Virasat Archive
                       </span>
                     )}
                   </div>
