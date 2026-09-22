@@ -20,11 +20,13 @@ import {
   Info,
   CheckSquare,
   Square,
-  CheckCircle2
+  CheckCircle2,
+  Camera,
 } from 'lucide-react';
 import { GuideIllustration } from '../components/cultural-guides/GuideIllustrations';
 import { GuideSpeechBubble } from '../components/cultural-guides/GuideSpeechBubble';
 import { getMonumentRealImage } from '../data/monumentRealImages';
+import { MonumentARCameraModal } from '../components/ar/MonumentARCameraModal';
 
 interface HeritageSitesPageProps {
   onSelectPlace: (placeId: string) => void;
@@ -45,6 +47,7 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedState, setSelectedState] = useState('All');
   const [selectedSiteForModal, setSelectedSiteForModal] = useState<any | null>(null);
+  const [isARModalOpen, setIsARModalOpen] = useState(false);
   const [visitedSites, setVisitedSites] = useState<Record<string, boolean>>(() => {
     try {
       const saved = safeLocalStorage.getItem('yatra_visited_heritage');
@@ -242,12 +245,16 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
             nonBlocking={true}
             quickActions={[
               {
+                label: 'AR Camera Lens 📸',
+                onClick: () => setIsARModalOpen(true),
+                primary: true,
+              },
+              {
                 label: 'Famous UNESCO Sites',
                 onClick: () => {
                   setSelectedCategory('All');
                   setSearchQuery('UNESCO');
                 },
-                primary: true,
               },
               {
                 label: 'Major Monuments',
@@ -283,6 +290,17 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
               </button>
             )}
           </div>
+
+          {/* AR Camera Lens Button Small */}
+          <button
+            type="button"
+            onClick={() => setIsARModalOpen(true)}
+            title="Scan Monument with AR Camera or Upload Photo"
+            className="flex items-center justify-center gap-1.5 px-3 py-2 sm:py-2.5 rounded-lg sm:rounded-xl bg-gradient-to-r from-[#FF671F] to-[#E65100] hover:from-[#E65100] hover:to-[#D84315] text-white text-xs font-bold shadow-xs hover:shadow transition-all active:scale-95 cursor-pointer whitespace-nowrap shrink-0"
+          >
+            <Camera className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+            <span>AR Camera 📸</span>
+          </button>
 
           {/* State Filter Dropdown */}
           <div className="flex items-center gap-2">
@@ -519,6 +537,14 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
           })}
         </div>
       )}
+
+      {/* AR Camera & Visual Monument Identification Modal */}
+      <MonumentARCameraModal
+        isOpen={isARModalOpen}
+        onClose={() => setIsARModalOpen(false)}
+        onSelectPlace={onSelectPlace}
+        onNavigateTab={onNavigateTab}
+      />
     </div>
   );
 };

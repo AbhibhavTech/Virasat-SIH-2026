@@ -250,8 +250,8 @@ export const CityHubPage: React.FC<CityHubPageProps> = ({
       />
 
       {/* Filter Tabs & Quick Action Navigation Bar */}
-      <div className="flex items-center justify-between gap-4 flex-wrap p-4 bg-white rounded-2xl border border-[#EFE8DF] shadow-xs">
-        <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none">
+      <div className="flex items-center justify-between gap-3 sm:gap-4 flex-wrap p-3 sm:p-4 bg-white rounded-2xl border border-[#EFE8DF] shadow-xs">
+        <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 scrollbar-none w-full sm:w-auto">
           {CATEGORIES.map((cat) => {
             const Icon = cat.icon;
             const count = categoryCounts[cat.id] ?? 0;
@@ -260,7 +260,7 @@ export const CityHubPage: React.FC<CityHubPageProps> = ({
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`px-3.5 py-2 rounded-xl text-xs font-bold flex items-center gap-1.5 transition whitespace-nowrap ${
+                className={`px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-xl text-[11px] sm:text-xs font-bold flex items-center gap-1.5 transition whitespace-nowrap cursor-pointer ${
                   isActive
                     ? 'bg-[#FF671F] text-white shadow-xs'
                     : 'bg-[#FAF8F5] text-stone-700 hover:bg-stone-100 border border-[#EFE8DF]'
@@ -280,24 +280,24 @@ export const CityHubPage: React.FC<CityHubPageProps> = ({
           })}
         </div>
 
-        <div className="flex items-center gap-2 flex-wrap">
+        <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
           <button
             onClick={() => onNavigateTab('heritage')}
-            className="px-3.5 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 border border-orange-200 text-xs font-bold text-[#FF671F] flex items-center gap-1.5 transition"
+            className="px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl bg-orange-50 hover:bg-orange-100 border border-orange-200 text-[11px] sm:text-xs font-bold text-[#FF671F] flex items-center gap-1.5 transition cursor-pointer"
           >
             <Landmark className="w-3.5 h-3.5 text-[#FF671F]" />
             <span>Major Monuments</span>
           </button>
           <button
             onClick={() => onNavigateTab('india')}
-            className="px-3.5 py-2 rounded-xl bg-stone-50 hover:bg-stone-100 border border-stone-200 text-xs font-bold text-stone-800 flex items-center gap-1.5 transition"
+            className="px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl bg-stone-50 hover:bg-stone-100 border border-stone-200 text-[11px] sm:text-xs font-bold text-stone-800 flex items-center gap-1.5 transition cursor-pointer"
           >
             <Layers className="w-3.5 h-3.5 text-stone-700" />
             <span>28 States DB</span>
           </button>
           <button
             onClick={() => onNavigateTab('map')}
-            className="px-3.5 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 border border-stone-200 text-xs font-bold text-stone-800 flex items-center gap-1.5 transition"
+            className="px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl bg-stone-100 hover:bg-stone-200 border border-stone-200 text-[11px] sm:text-xs font-bold text-stone-800 flex items-center gap-1.5 transition cursor-pointer"
           >
             <Compass className="w-3.5 h-3.5 text-stone-700" />
             <span>Interactive Map</span>
@@ -333,7 +333,7 @@ export const CityHubPage: React.FC<CityHubPageProps> = ({
             </button>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5 sm:gap-6">
             {places.map((p) => {
               return (
                 <ThreeDDestinationCard
@@ -352,7 +352,7 @@ export const CityHubPage: React.FC<CityHubPageProps> = ({
           </div>
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5 sm:gap-6">
           {filteredPlaces.map((p) => {
             return (
               <ThreeDDestinationCard

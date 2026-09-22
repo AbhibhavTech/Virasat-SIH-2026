@@ -49,26 +49,26 @@ export const SearchPage: React.FC<SearchPageProps> = ({
   return (
     <div className="space-y-6 w-full animate-fadeIn pb-8">
       {/* Search Header */}
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-2 sm:gap-3">
         <button
           onClick={onBack}
-          className="p-2.5 rounded-xl bg-white border border-stone-200 text-stone-600 hover:text-stone-900 hover:bg-stone-50 transition shadow-xs"
+          className="p-2 sm:p-2.5 rounded-xl bg-white border border-stone-200 text-stone-600 hover:text-stone-900 hover:bg-stone-50 transition shadow-xs cursor-pointer"
         >
           <ArrowLeft className="w-4 h-4" />
         </button>
         <div className="relative flex-1">
-          <Search className="absolute left-4 top-3.5 w-4 h-4 text-stone-400" />
+          <Search className="absolute left-3.5 top-3 sm:top-3.5 w-4 h-4 text-stone-400" />
           <input
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onKeyDown={(e) => e.key === 'Enter' && executeSearch(query)}
-            placeholder="Search monuments, forts, temples, or cities across India..."
-            className="w-full pl-11 pr-24 py-3 rounded-2xl bg-white border border-stone-200 text-xs sm:text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:border-[#FF671F] focus:ring-2 focus:ring-[#FF671F]/20 transition shadow-xs"
+            placeholder="Search monuments, forts, temples..."
+            className="w-full pl-9 sm:pl-11 pr-20 sm:pr-24 py-2 sm:py-3 rounded-xl sm:rounded-2xl bg-white border border-stone-200 text-xs sm:text-sm text-stone-900 placeholder:text-stone-400 focus:outline-none focus:border-[#FF671F] focus:ring-2 focus:ring-[#FF671F]/20 transition shadow-xs"
           />
           <button
             onClick={() => executeSearch(query)}
-            className="absolute right-2 top-2 bottom-2 px-4 rounded-xl bg-[#FF671F] hover:bg-[#E65100] text-white text-xs font-bold transition shadow-xs cursor-pointer"
+            className="absolute right-1.5 sm:right-2 top-1.5 sm:top-2 bottom-1.5 sm:bottom-2 px-3 sm:px-4 rounded-lg sm:rounded-xl bg-[#FF671F] hover:bg-[#E65100] text-white text-[11px] sm:text-xs font-bold transition shadow-xs cursor-pointer"
           >
             Search
           </button>
@@ -76,12 +76,12 @@ export const SearchPage: React.FC<SearchPageProps> = ({
       </div>
 
       {/* Filter Chips */}
-      <div className="flex items-center gap-2 overflow-x-auto pb-1">
+      <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 scrollbar-none">
         {['all', 'heritage', 'museum', 'coastal', 'nature'].map((c) => (
           <button
             key={c}
             onClick={() => setCategoryFilter(c)}
-            className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold capitalize transition ${
+            className={`px-3 sm:px-3.5 py-1 sm:py-1.5 rounded-xl text-[11px] sm:text-xs font-semibold capitalize transition whitespace-nowrap cursor-pointer ${
               categoryFilter === c
                 ? 'bg-[#FF671F] text-white shadow-xs'
                 : 'bg-white text-stone-600 hover:text-stone-900 hover:bg-stone-50 border border-stone-200'

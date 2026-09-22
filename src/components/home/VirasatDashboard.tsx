@@ -20,11 +20,13 @@ import {
   SlidersHorizontal,
   ExternalLink,
   Layers,
-  Bot
+  Bot,
+  Camera,
 } from 'lucide-react';
 import { NavTab } from '../layout/Sidebar';
 import { PlaceSummary } from '../../types';
 import { api } from '../../services/api';
+import { MonumentARCameraModal } from '../ar/MonumentARCameraModal';
 import {
   AshokaChakra,
   FlowingTricolourRibbon,
@@ -281,6 +283,9 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
   const searchContainerRef = useRef<HTMLDivElement>(null);
+
+  // AR Camera Scanner Modal State
+  const [isARModalOpen, setIsARModalOpen] = useState(false);
 
   // Popular destinations category filter
   const [activePopularCategory, setActivePopularCategory] = useState<'All' | 'Forts' | 'Temples' | 'UNESCO'>('All');
@@ -682,6 +687,16 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
                     className="w-full bg-transparent text-xs sm:text-sm text-stone-800 placeholder-stone-400 focus:outline-none"
                   />
                   {isSearching && <Loader2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-600 animate-spin mr-1 shrink-0" />}
+                  {/* Camera Button Small for AR Monument Explorer */}
+                  <button
+                    type="button"
+                    onClick={() => setIsARModalOpen(true)}
+                    title="Scan Monument with AR Camera or Upload Photo"
+                    className="p-1.5 sm:p-2 rounded-full bg-orange-50 hover:bg-orange-100 text-[#FF671F] border border-orange-200/80 transition-all hover:scale-105 active:scale-95 shrink-0 flex items-center justify-center cursor-pointer shadow-2xs"
+                    aria-label="Open AR Camera & Visual Identification"
+                  >
+                    <Camera className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FF671F]" />
+                  </button>
                   <button
                     type="submit"
                     className="bg-[#FF671F] hover:bg-[#E65100] text-white px-3 sm:px-6 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold flex items-center gap-1 transition active:scale-95 shrink-0 shadow-xs cursor-pointer"
@@ -735,6 +750,14 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
 
             {/* Destination Quick Chips */}
             <div className="flex overflow-x-auto sm:flex-wrap items-center gap-1.5 sm:gap-2.5 mt-3.5 sm:mt-5 pb-1 scrollbar-none mobile-scroll-row">
+              <button
+                type="button"
+                onClick={() => setIsARModalOpen(true)}
+                className="px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-gradient-to-r from-orange-50 to-amber-50 hover:from-orange-100 hover:to-amber-100 border border-orange-300 text-[11px] sm:text-xs font-bold text-orange-950 shadow-2xs hover:shadow-xs transition flex items-center gap-1 sm:gap-1.5 cursor-pointer active:scale-95 whitespace-nowrap shrink-0"
+              >
+                <Camera className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#FF671F] shrink-0" />
+                <span>AR Lens 📸</span>
+              </button>
               {quickChips.map((chip) => (
                 <button
                   key={chip.name}
@@ -1320,6 +1343,14 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
       {/* 6. INDIA MAP PREVIEW (ACCURATE REAL WORLD GIS MAP & INTERACTIVE MONUMENT PINS) */}
       {/* ========================================================================= */}
       <IndiaHeritageMapPreview
+        onSelectPlace={onSelectPlace}
+        onNavigateTab={onNavigateTab}
+      />
+
+      {/* AR Camera & Visual Monument Identification Modal */}
+      <MonumentARCameraModal
+        isOpen={isARModalOpen}
+        onClose={() => setIsARModalOpen(false)}
         onSelectPlace={onSelectPlace}
         onNavigateTab={onNavigateTab}
       />

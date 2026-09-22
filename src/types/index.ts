@@ -741,5 +741,52 @@ export interface LocationSuggestion {
   score?: number;
 }
 
+export interface AROverlayPin {
+  id: string;
+  label: string;
+  detail: string;
+  type: 'history' | 'architecture' | 'dynasty' | 'tip';
+  position: { x: number; y: number };
+}
+
+export interface VisualIdentificationResult {
+  success: boolean;
+  identified_name: string;
+  confidence: number;
+  city?: string;
+  state?: string;
+  country?: string;
+  era?: string;
+  year_built?: string;
+  architectural_style?: string;
+  short_summary: string;
+  historical_facts: string[];
+  architectural_highlights?: string[];
+  best_time_to_visit?: string;
+  unesco_status?: boolean;
+  matched_place?: {
+    id: string;
+    name: string;
+    city: string;
+    state: string;
+    category?: string;
+    thumbnail_url?: string;
+    summary?: string;
+    rating?: number;
+    heritage_status?: string;
+    is_in_database: boolean;
+  } | null;
+  suggested_database_places?: Array<{
+    id: string;
+    name: string;
+    city: string;
+    state: string;
+    category?: string;
+    thumbnail_url?: string;
+    summary?: string;
+  }>;
+  ar_overlays?: AROverlayPin[];
+}
+
 export * from './database';
 

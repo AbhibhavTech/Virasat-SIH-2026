@@ -38,6 +38,7 @@ import {
   LocationSuggestion,
   ReverseGeocodeResponse,
   UserLocationContext,
+  VisualIdentificationResult,
 } from '../types';
 import { safeLocalStorage } from '../utils/storage';
 
@@ -930,5 +931,19 @@ export const api = {
 
   async getIndiaCity(cityId: string): Promise<any> {
     return await request<any>(`/india-hierarchy/city/${encodeURIComponent(cityId)}`);
+  },
+
+  // -------------------------------------------------------------
+  // Augmented Reality & Visual Monument Identification
+  // -------------------------------------------------------------
+  async visualIdentify(payload: {
+    image: string;
+    mode?: 'identify' | 'ar_facts';
+    current_location?: { latitude: number; longitude: number };
+  }): Promise<VisualIdentificationResult> {
+    return await request<VisualIdentificationResult>('/v1/ai/visual-identify', {
+      method: 'POST',
+      body: JSON.stringify(payload),
+    });
   },
 };

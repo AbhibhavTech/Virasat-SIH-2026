@@ -20,6 +20,7 @@ import {
   Database,
   Home,
   BarChart3,
+  Camera,
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { NavTab } from './Sidebar';
@@ -36,6 +37,7 @@ interface TopNavbarProps {
   onOpenSearch?: () => void;
   onOpenDatabaseStatus?: () => void;
   onOpenAnalytics?: () => void;
+  onOpenARCamera?: () => void;
 }
 
 export const TopNavbar: React.FC<TopNavbarProps> = ({
@@ -47,6 +49,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
   onOpenSearch,
   onOpenDatabaseStatus,
   onOpenAnalytics,
+  onOpenARCamera,
 }) => {
   const navigate = useNavigate();
   const { user, logout } = useAuth();
@@ -334,6 +337,19 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
                 </div>
               )}
             </div>
+
+            {/* AR Camera Lens Small Button */}
+            {onOpenARCamera && (
+              <button
+                type="button"
+                onClick={onOpenARCamera}
+                className="p-1.5 sm:p-2 rounded-full bg-orange-50 hover:bg-orange-100 text-[#FF671F] border border-orange-200/80 transition-all hover:scale-105 active:scale-95 shadow-2xs flex items-center justify-center cursor-pointer min-h-[36px] min-w-[36px]"
+                title="Open AR Camera & Monument Scanner"
+                aria-label="AR Camera Scanner"
+              >
+                <Camera className="w-4 h-4 text-[#FF671F]" />
+              </button>
+            )}
 
             {/* Notifications & Updates Bell */}
             <button

@@ -15,6 +15,7 @@ import { OnboardingSurveyModal } from './components/auth/OnboardingSurveyModal';
 import { BrandSplashScreen } from './components/common/BrandSplashScreen';
 import { DatabaseStatusModal } from './components/database/DatabaseStatusModal';
 import { AnalyticsDashboardModal } from './components/analytics/AnalyticsDashboardModal';
+import { MonumentARCameraModal } from './components/ar/MonumentARCameraModal';
 import { PlaceSummary } from './types';
 import { api } from './services/api';
 import { useAuth } from './contexts/AuthContext';
@@ -30,6 +31,7 @@ const AppContent: React.FC = () => {
   const [places, setPlaces] = useState<PlaceSummary[]>([]);
   const [isDatabaseModalOpen, setIsDatabaseModalOpen] = useState<boolean>(false);
   const [isAnalyticsModalOpen, setIsAnalyticsModalOpen] = useState<boolean>(false);
+  const [isGlobalARModalOpen, setIsGlobalARModalOpen] = useState<boolean>(false);
   const [isAppInitializing, setIsAppInitializing] = useState<boolean>(true);
 
   const activeTab: NavTab = getActiveTabFromPath(location.pathname);
@@ -144,6 +146,7 @@ const AppContent: React.FC = () => {
         onOpenAuthModal={() => setIsAuthModalOpen(true)}
         onOpenDatabaseStatus={() => setIsDatabaseModalOpen(true)}
         onOpenAnalytics={() => setIsAnalyticsModalOpen(true)}
+        onOpenARCamera={() => setIsGlobalARModalOpen(true)}
       />
 
       {/* Contextual Sub-Nav Bar */}
@@ -194,6 +197,12 @@ const AppContent: React.FC = () => {
       <AnalyticsDashboardModal
         isOpen={isAnalyticsModalOpen}
         onClose={() => setIsAnalyticsModalOpen(false)}
+      />
+      <MonumentARCameraModal
+        isOpen={isGlobalARModalOpen}
+        onClose={() => setIsGlobalARModalOpen(false)}
+        onSelectPlace={handleSelectPlace}
+        onNavigateTab={handleNavigateTab}
       />
     </div>
   );
