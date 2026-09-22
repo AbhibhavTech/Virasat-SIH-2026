@@ -19584,7 +19584,7 @@ export const INDIA_TOURISM_DATABASE: any = {
       "code": "BI",
       "capital": "Patna",
       "region": "Eastern India",
-      "hero_image_url": "https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=1200&auto=format&fit=crop&q=80",
+      "hero_image_url": "/images/bihar-great-buddha.jpg",
       "total_cities": 4,
       "total_attractions": 11,
       "heritage_overview": "Cradle of ancient empires (Maurya and Gupta), enlightenment grounds of Gautama Buddha, and birthplace of Guru Gobind Singh.",
@@ -19854,9 +19854,9 @@ export const INDIA_TOURISM_DATABASE: any = {
                 "lat": 24.696,
                 "lng": 84.9914
               },
-              "image_url": "",
-              "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80",
-              "attribution": "Virasat Master Tourism Registry",
+              "image_url": "/images/bihar-mahabodhi-4k.jpg",
+              "thumbnail_url": "/images/bihar-mahabodhi.jpg",
+              "attribution": "Amitabha Gupta / UNESCO Bodh Gaya",
               "source_page": "https://whc.unesco.org",
               "status": "VERIFIED",
               "tags": [

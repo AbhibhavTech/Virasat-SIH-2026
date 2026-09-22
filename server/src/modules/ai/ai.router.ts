@@ -17,7 +17,7 @@ function getAIClient(): GoogleGenAI | null {
   if (!aiClient) {
     aiClient = new GoogleGenAI({
       apiKey: process.env.GEMINI_API_KEY,
-      httpOptions: { headers: { 'User-Agent': 'virasat-ai-concierge/1.0' } },
+      httpOptions: { headers: { 'User-Agent': 'aistudio-build' } },
     });
   }
   return aiClient;
@@ -288,7 +288,7 @@ ${transitContextStr}`;
       { role: 'user', parts: [{ text: rawQuery }] },
     ];
 
-    const modelsToTry = ['gemini-2.5-flash', 'gemini-2.0-flash'];
+    const modelsToTry = ['gemini-flash-latest', 'gemini-3.1-flash-lite', 'gemini-3.8-flash'];
     for (const modelName of modelsToTry) {
       try {
         const callRes = await Promise.race([
@@ -297,15 +297,15 @@ ${transitContextStr}`;
             contents,
             config: { systemInstruction },
           }),
-          new Promise<any>((_, reject) => setTimeout(() => reject(new Error('Timeout')), 5000)),
+          new Promise<any>((_, reject) => setTimeout(() => reject(new Error('Timeout')), 6500)),
         ]);
         if (callRes?.text) {
           replyText = callRes.text;
-          usedModel = modelName === 'gemini-2.5-flash' ? 'Gemini 2.5 Flash' : 'Gemini 2.0 Flash';
+          usedModel = modelName;
           break;
         }
       } catch {
-        // Try next fallback model
+        // Try next fallback model in pool
       }
     }
   }
@@ -462,7 +462,7 @@ aiRouter.post('/visual-identify', async (req: Request, res: Response): Promise<v
     }
 
     const ai = getAIClient();
-    const placesResult = await db.places.findAll();
+    const placesResult = await db.places.findAll({ includeAllStatuses: true });
     const allDbPlaces = placesResult.places || [];
 
     let identifiedData: any = null;
@@ -472,89 +472,104 @@ aiRouter.post('/visual-identify', async (req: Request, res: Response): Promise<v
       const prompt = `You are the chief architectural and cultural heritage vision expert for the Archaeological Survey of India (ASI) and Virasat Heritage Explorer.
 Analyze this photo of a monument, temple, fort, palace, cave, stupa, church, or historical landmark.
 
-Identify:
-1. Exact Monument / Site Name (e.g., "Taj Mahal", "Gateway of India", "Amber Palace", "Red Fort", "Konark Sun Temple", "Hampi Virupaksha Temple", "Qutub Minar", "Hawa Mahal", "Meenakshi Temple", "Victoria Memorial", "Brihadisvara Temple", "Ajanta Caves", etc.).
-2. City and State / Union Territory in India. If international, state country and nearest region.
-3. Architectural Style (e.g., Mughal, Dravidian, Rajput, Indo-Saracenic, Kalinga, Nagara, Vesara, Rock-cut, Maratha, Portuguese-Gothic).
-4. Historical Era / Dynasty (e.g., Mughal Empire, Chola Dynasty, Vijayanagara Empire, British Raj, Maurya Dynasty, etc.) and approximate construction period/century.
-5. 3 to 5 captivating historical facts and architectural secrets that can be displayed as Augmented Reality (AR) HUD overlays on the view.
-6. 2 to 3 distinct architectural highlight features (e.g., "Central Onion Dome", "Minarets with optical tilt", "Jharokha screened windows", "Monolithic carved stone chariot").
-7. Best time to visit and photography lighting tip.
-8. UNESCO World Heritage Site designation status (true/false).
-9. Confidence score between 0.0 and 1.0.
+Identify with precision:
+1. Exact Monument / Site Name in English (e.g., "Taj Mahal", "Gateway of India", "Amber Palace", "Red Fort", "Konark Sun Temple", "Hampi Virupaksha Temple", "Qutub Minar", "Hawa Mahal", "Meenakshi Temple", "Victoria Memorial", "Brihadisvara Temple", "Ajanta Caves", etc.).
+2. Name in Hindi (Devanagari script, e.g. "ताज महल", "हवा महल", "कुतुब मीनार", "गेटवे ऑफ़ इंडिया").
+3. City and State / Union Territory in India. If international, state country and nearest region.
+4. Architectural Style (e.g., Mughal, Dravidian, Rajput, Indo-Saracenic, Kalinga, Nagara, Vesara, Rock-cut, Maratha, Portuguese-Gothic).
+5. Historical Era / Dynasty (e.g., Mughal Empire, Chola Dynasty, Vijayanagara Empire, British Raj, Maurya Dynasty, etc.) and who built it (e.g. Emperor Shah Jahan, Raja Man Singh, King Narasimhadeva I).
+6. Year or century of construction.
+7. Easy Explanation ("easy_explanation"): A 2-3 sentence, highly clear, jargon-free explanation in simple language that explains what this monument is, why it was constructed, and why it is historically famous so any tourist, student, or everyday user can understand it easily.
+8. 3 to 5 captivating historical facts and architectural secrets.
+9. 2 to 3 distinct architectural highlight features (e.g., "Central Onion Dome", "Minarets with optical tilt", "Jharokha screened windows", "Monolithic carved stone chariot").
+10. Best time to visit and photography lighting tip.
+11. UNESCO World Heritage Site designation status (true/false).
+12. Confidence score between 0.0 and 1.0.
 
 Respond strictly in valid JSON format matching this schema:
 {
   "identified_name": "string",
+  "identified_name_hindi": "string",
   "confidence": 0.95,
   "city": "string",
   "state": "string",
   "country": "India",
   "era": "string",
+  "who_built_it": "string",
   "year_built": "string",
   "architectural_style": "string",
+  "easy_explanation": "string",
   "short_summary": "string",
   "historical_facts": ["string", "string", "string"],
   "architectural_highlights": ["string", "string"],
   "best_time_to_visit": "string",
+  "visiting_tips": "string",
   "unesco_status": true
 }`;
 
-      // Try primary model gemini-3.8-flash with retry and exponential backoff, then secondary gemini-2.5-flash
-      const visionModels = ['gemini-3.8-flash', 'gemini-2.5-flash'];
+      // Resilient model fallback pool across separate capacity endpoints:
+      // 1. gemini-flash-latest (stable production multimodal)
+      // 2. gemini-3.1-flash-lite (high-speed multimodal with separate quota pool)
+      // 3. gemini-3.8-flash (flagship flash model)
+      const visionModels = ['gemini-flash-latest', 'gemini-3.1-flash-lite', 'gemini-3.8-flash'];
       for (const modelName of visionModels) {
         if (identifiedData?.identified_name) break;
 
-        // Try up to 2 attempts per model for transient errors (e.g. 503 high demand)
-        for (let attempt = 1; attempt <= 2; attempt++) {
-          try {
-            const geminiRes = await ai.models.generateContent({
-              model: modelName,
-              contents: [
-                {
-                  role: 'user',
-                  parts: [
-                    {
-                      inlineData: {
-                        mimeType: mimeType || 'image/jpeg',
-                        data: base64Data,
-                      },
+        try {
+          const timeoutPromise = new Promise<any>((_, reject) =>
+            setTimeout(() => reject(new Error('Vision timeout')), 9000)
+          );
+          const callPromise = ai.models.generateContent({
+            model: modelName,
+            contents: [
+              {
+                role: 'user',
+                parts: [
+                  {
+                    inlineData: {
+                      mimeType: mimeType || 'image/jpeg',
+                      data: base64Data,
                     },
-                    {
-                      text: prompt,
-                    },
-                  ],
-                },
-              ],
-              config: {
-                responseMimeType: 'application/json',
+                  },
+                  {
+                    text: prompt,
+                  },
+                ],
               },
-            });
+            ],
+            config: {
+              responseMimeType: 'application/json',
+            },
+          });
 
-            if (geminiRes?.text) {
-              try {
-                identifiedData = JSON.parse(geminiRes.text.trim());
-              } catch {
-                const cleaned = geminiRes.text.replace(/```json\n?|\n?```/g, '').trim();
-                identifiedData = JSON.parse(cleaned);
-              }
+          const geminiRes = await Promise.race([callPromise, timeoutPromise]);
 
-              if (identifiedData?.identified_name) {
-                isAiGenerated = true;
-                break;
-              }
+          if (geminiRes?.text) {
+            try {
+              identifiedData = JSON.parse(geminiRes.text.trim());
+            } catch {
+              const cleaned = geminiRes.text.replace(/```json\n?|\n?```/g, '').trim();
+              identifiedData = JSON.parse(cleaned);
             }
-          } catch (err: any) {
-            const isTransient = err?.status === 503 || err?.message?.includes('503') || err?.message?.includes('high demand') || err?.message?.includes('UNAVAILABLE');
-            console.warn(`Vision model ${modelName} attempt ${attempt} failed:`, isTransient ? '503 High Demand (Transient)' : err?.message || err);
-            
-            if (isTransient && attempt < 2) {
-              // Wait 750ms before retrying transient spike
-              await new Promise((r) => setTimeout(r, 750));
-            } else {
+
+            if (identifiedData?.identified_name) {
+              isAiGenerated = true;
               break;
             }
           }
+        } catch (err: any) {
+          const isTransient =
+            err?.status === 503 ||
+            err?.message?.includes('503') ||
+            err?.message?.includes('high demand') ||
+            err?.message?.includes('UNAVAILABLE') ||
+            err?.status === 429 ||
+            err?.message?.includes('429');
+          console.warn(
+            `Vision model ${modelName} failed:`,
+            isTransient ? '503 High Demand (Transient) / Rate limit' : err?.message || err
+          );
+          // Immediately fall over to next candidate in the pool
         }
       }
     }
@@ -595,26 +610,101 @@ Respond strictly in valid JSON format matching this schema:
       };
     }
 
-    // Cross-reference with Virasat Database
+    // Cross-reference with Virasat Database with smart token matching and aliases
     const identifiedNameLower = (identifiedData.identified_name || '').toLowerCase();
     const cityLower = (identifiedData.city || '').toLowerCase();
     const stateLower = (identifiedData.state || '').toLowerCase();
 
+    const normalizeTokens = (str: string) => {
+      return (str || '')
+        .toLowerCase()
+        .replace(/[^a-z0-9\s]/g, ' ')
+        .split(/\s+/)
+        .filter(t => t.length > 2 && !['the', 'and', 'near', 'site', 'monument', 'heritage', 'complex'].includes(t));
+    };
+
+    const identifiedTokens = normalizeTokens(identifiedNameLower);
+
+    // Known alias dictionary to direct canonical database IDs
+    const ALIAS_MAP: Record<string, string> = {
+      'taj mahal': 'taj-mahal',
+      'qutub minar': 'qutub-minar',
+      'qutb minar': 'qutub-minar',
+      'amber palace': 'amber-fort',
+      'amber fort': 'amber-fort',
+      'amer fort': 'amber-fort',
+      'red fort': 'red-fort',
+      'lal qila': 'red-fort',
+      'hawa mahal': 'hawa-mahal',
+      'konark sun temple': 'konark-sun-temple',
+      'sun temple konark': 'konark-sun-temple',
+      'sun temple': 'konark-sun-temple',
+      'gateway of india': 'gateway-of-india',
+      'victoria memorial': 'victoria-memorial',
+      'charminar': 'charminar',
+      'hampi': 'hampi-monuments',
+      'virupaksha temple': 'virupaksha-temple',
+      'golden temple': 'golden-temple',
+      'harmandir sahib': 'golden-temple',
+      'meenakshi temple': 'meenakshi-temple',
+      'meenakshi amman': 'meenakshi-temple',
+      'brihadisvara temple': 'brihadisvara-temple',
+      'brihadeeswarar temple': 'brihadisvara-temple',
+      'ajanta caves': 'ajanta-caves',
+      'ellora caves': 'ellora-caves',
+      'khajuraho': 'khajuraho-monuments',
+      'basilica of bom jesus': 'basilica-of-bom-jesus',
+      'fatehpur sikri': 'fatehpur-sikri',
+      'mysore palace': 'mysore-palace',
+      'mysuru palace': 'mysore-palace',
+      'elephanta caves': 'elephanta-caves',
+    };
+
     let matchedPlace: any = null;
 
-    // 1. Direct name match or substring match
-    matchedPlace = allDbPlaces.find((p: any) => {
-      const pName = (p.name || '').toLowerCase();
-      const pId = (p.id || '').toLowerCase();
-      return (
-        pName === identifiedNameLower ||
-        identifiedNameLower.includes(pName) ||
-        pName.includes(identifiedNameLower) ||
-        pId === identifiedNameLower.replace(/[^a-z0-9]+/g, '-')
-      );
-    });
+    // 1. Check alias dictionary
+    for (const [aliasKey, targetId] of Object.entries(ALIAS_MAP)) {
+      if (identifiedNameLower.includes(aliasKey) || aliasKey.includes(identifiedNameLower)) {
+        matchedPlace = allDbPlaces.find((p: any) => p.id === targetId);
+        if (matchedPlace) break;
+      }
+    }
 
-    // 2. City + landmark keyword match
+    // 2. Direct name or ID equality or substring match
+    if (!matchedPlace) {
+      matchedPlace = allDbPlaces.find((p: any) => {
+        const pName = (p.name || '').toLowerCase();
+        const pId = (p.id || '').toLowerCase();
+        return (
+          pName === identifiedNameLower ||
+          identifiedNameLower.includes(pName) ||
+          pName.includes(identifiedNameLower) ||
+          pId === identifiedNameLower.replace(/[^a-z0-9]+/g, '-')
+        );
+      });
+    }
+
+    // 3. Token intersection match
+    if (!matchedPlace && identifiedTokens.length > 0) {
+      let bestScore = 0;
+      let candidate: any = null;
+
+      for (const p of allDbPlaces) {
+        const pTokens = normalizeTokens(p.name);
+        const intersection = identifiedTokens.filter(t => pTokens.includes(t));
+        const score = intersection.length;
+        if (score > bestScore && score >= 1) {
+          bestScore = score;
+          candidate = p;
+        }
+      }
+
+      if (bestScore >= 1) {
+        matchedPlace = candidate;
+      }
+    }
+
+    // 4. City + landmark keyword match
     if (!matchedPlace && cityLower) {
       matchedPlace = allDbPlaces.find((p: any) => {
         const pCity = (p.city_id || (p as any).city || '').toLowerCase();
@@ -630,14 +720,14 @@ Respond strictly in valid JSON format matching this schema:
       });
     }
 
-    // 3. Fallback related database places
+    // 5. Fallback related database places for surrounding exploration
     const suggestedDatabasePlaces: any[] = allDbPlaces
       .filter((p: any) => {
-        const pState = (p.state || '').toLowerCase();
+        const pState = (p.state || p.state_id || '').toLowerCase();
         const pCity = (p.city_id || (p as any).city || '').toLowerCase();
         return (
           (!matchedPlace || p.id !== matchedPlace.id) &&
-          (pState.includes(stateLower) || pCity.includes(cityLower) || p.data_confidence === 'official')
+          (pState.includes(stateLower) || pCity.includes(cityLower) || p.data_confidence === 'tier1_official' || p.heritage_status?.includes('UNESCO'))
         );
       })
       .slice(0, 4)
@@ -645,10 +735,12 @@ Respond strictly in valid JSON format matching this schema:
         id: p.id,
         name: p.name,
         city: p.city_id || (p as any).city,
-        state: p.state,
+        state: p.state || p.state_id,
         category: p.category,
-        thumbnail_url: p.thumbnail_url || (p.images && p.images[0]),
+        thumbnail_url: p.thumbnail_url || (Array.isArray(p.images) ? p.images[0] : null) || 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=400',
         summary: p.summary,
+        visiting_hours: p.visiting_hours,
+        entry_fee_domestic: p.entry_fee_domestic,
       }));
 
     // Generate AR overlay pins with relative spatial coordinates for HUD
@@ -656,23 +748,23 @@ Respond strictly in valid JSON format matching this schema:
       {
         id: 'overlay-dynasty',
         label: `${identifiedData.era || 'Historic Period'}`,
-        detail: `Constructed: ${identifiedData.year_built || 'Centuries ago'}`,
+        detail: identifiedData.who_built_it ? `Commissioned by: ${identifiedData.who_built_it}` : `Constructed: ${identifiedData.year_built || 'Centuries ago'}`,
         type: 'dynasty',
-        position: { x: 28, y: 32 },
+        position: { x: 26, y: 30 },
       },
       {
         id: 'overlay-style',
         label: `${identifiedData.architectural_style || 'Heritage Architecture'}`,
         detail: (identifiedData.architectural_highlights && identifiedData.architectural_highlights[0]) || 'Distinctive structural masonry',
         type: 'architecture',
-        position: { x: 72, y: 38 },
+        position: { x: 74, y: 36 },
       },
       {
         id: 'overlay-fact',
         label: 'Historical Fact',
-        detail: (identifiedData.historical_facts && identifiedData.historical_facts[0]) || 'Protected heritage landmark.',
+        detail: (identifiedData.historical_facts && identifiedData.historical_facts[0]) || 'Protected national heritage monument.',
         type: 'history',
-        position: { x: 50, y: 62 },
+        position: { x: 50, y: 64 },
       },
     ];
 
@@ -680,29 +772,43 @@ Respond strictly in valid JSON format matching this schema:
       success: true,
       is_ai_generated: isAiGenerated,
       identified_name: identifiedData.identified_name,
+      identified_name_hindi: identifiedData.identified_name_hindi || '',
       confidence: identifiedData.confidence || 0.92,
-      city: identifiedData.city,
-      state: identifiedData.state,
+      city: identifiedData.city || (matchedPlace ? (matchedPlace.city_id || matchedPlace.city) : ''),
+      state: identifiedData.state || (matchedPlace ? (matchedPlace.state || matchedPlace.state_id) : ''),
       country: identifiedData.country || 'India',
       era: identifiedData.era,
+      who_built_it: identifiedData.who_built_it || '',
       year_built: identifiedData.year_built,
       architectural_style: identifiedData.architectural_style,
+      easy_explanation: identifiedData.easy_explanation || identifiedData.short_summary,
       short_summary: identifiedData.short_summary,
       historical_facts: identifiedData.historical_facts || [],
       architectural_highlights: identifiedData.architectural_highlights || [],
       best_time_to_visit: identifiedData.best_time_to_visit,
-      unesco_status: Boolean(identifiedData.unesco_status),
+      visiting_tips: identifiedData.visiting_tips || '',
+      unesco_status: Boolean(identifiedData.unesco_status || matchedPlace?.heritage_status?.includes('UNESCO')),
       matched_place: matchedPlace
         ? {
             id: matchedPlace.id,
             name: matchedPlace.name,
             city: matchedPlace.city_id || (matchedPlace as any).city,
-            state: matchedPlace.state,
+            state: matchedPlace.state || matchedPlace.state_id,
             category: matchedPlace.category,
-            thumbnail_url: matchedPlace.thumbnail_url || (matchedPlace.images && matchedPlace.images[0]),
-            summary: matchedPlace.summary,
+            thumbnail_url: matchedPlace.thumbnail_url || (Array.isArray(matchedPlace.images) ? matchedPlace.images[0] : null) || 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800',
+            summary: matchedPlace.summary || matchedPlace.description,
+            description: matchedPlace.description || matchedPlace.summary,
+            history: matchedPlace.history || '',
+            visiting_hours: matchedPlace.visiting_hours || 'Sunrise to Sunset (06:00 AM - 06:00 PM)',
+            entry_fee_domestic: matchedPlace.entry_fee_domestic ?? 50,
+            entry_fee_intl: matchedPlace.entry_fee_intl ?? 1100,
+            heritage_status: matchedPlace.heritage_status || (matchedPlace.unesco_site ? 'UNESCO World Heritage Site' : 'ASI National Protected Monument'),
+            data_confidence: matchedPlace.data_confidence || 'tier1_official',
+            source_name: matchedPlace.source_name || 'Archaeological Survey of India (ASI)',
+            source_url: matchedPlace.source_url || 'https://asi.nic.in',
             rating: matchedPlace.rating || 4.8,
-            heritage_status: matchedPlace.heritage_status || (matchedPlace.unesco_site ? 'UNESCO World Heritage' : 'National Monument'),
+            lat: matchedPlace.lat || matchedPlace.latitude,
+            lng: matchedPlace.lng || matchedPlace.longitude,
             is_in_database: true,
           }
         : null,

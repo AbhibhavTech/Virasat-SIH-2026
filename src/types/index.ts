@@ -753,17 +753,21 @@ export interface VisualIdentificationResult {
   success: boolean;
   is_ai_generated?: boolean;
   identified_name: string;
+  identified_name_hindi?: string;
   confidence: number;
   city?: string;
   state?: string;
   country?: string;
   era?: string;
+  who_built_it?: string;
   year_built?: string;
   architectural_style?: string;
+  easy_explanation?: string;
   short_summary: string;
   historical_facts: string[];
   architectural_highlights?: string[];
   best_time_to_visit?: string;
+  visiting_tips?: string;
   unesco_status?: boolean;
   matched_place?: {
     id: string;
@@ -773,8 +777,18 @@ export interface VisualIdentificationResult {
     category?: string;
     thumbnail_url?: string;
     summary?: string;
-    rating?: number;
+    description?: string;
+    history?: string;
+    visiting_hours?: string;
+    entry_fee_domestic?: number;
+    entry_fee_intl?: number;
     heritage_status?: string;
+    rating?: number;
+    data_confidence?: string;
+    source_name?: string;
+    source_url?: string;
+    lat?: number;
+    lng?: number;
     is_in_database: boolean;
   } | null;
   suggested_database_places?: Array<{
@@ -785,6 +799,8 @@ export interface VisualIdentificationResult {
     category?: string;
     thumbnail_url?: string;
     summary?: string;
+    visiting_hours?: string;
+    entry_fee_domestic?: number;
   }>;
   ar_overlays?: AROverlayPin[];
 }

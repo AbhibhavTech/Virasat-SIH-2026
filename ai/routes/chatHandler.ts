@@ -33,7 +33,7 @@ function getAIClient(): GoogleGenAI | null {
         apiKey: process.env.GEMINI_API_KEY,
         httpOptions: {
           headers: {
-            'User-Agent': 'virasat-isolated-ai/1.0',
+            'User-Agent': 'aistudio-build',
           },
         },
       });
@@ -360,8 +360,9 @@ Interests: ${tripState.interests?.join(', ') ||
         ];
 
         const modelNames = [
-          'gemini-2.5-flash',
-          'gemini-2.0-flash',
+          'gemini-flash-latest',
+          'gemini-3.1-flash-lite',
+          'gemini-3.8-flash',
         ];
 
         for (const mName of modelNames) {

@@ -20,7 +20,6 @@ import {
   Database,
   Home,
   BarChart3,
-  Camera,
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { NavTab } from './Sidebar';
@@ -338,19 +337,6 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
               )}
             </div>
 
-            {/* AR Camera Lens Small Button */}
-            {onOpenARCamera && (
-              <button
-                type="button"
-                onClick={onOpenARCamera}
-                className="p-1.5 sm:p-2 rounded-full bg-orange-50 hover:bg-orange-100 text-[#FF671F] border border-orange-200/80 transition-all hover:scale-105 active:scale-95 shadow-2xs flex items-center justify-center cursor-pointer min-h-[32px] min-w-[32px] sm:min-h-[36px] sm:min-w-[36px] shrink-0"
-                title="Open AR Camera & Monument Scanner"
-                aria-label="AR Camera Scanner"
-              >
-                <Camera className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FF671F]" />
-              </button>
-            )}
-
             {/* Notifications & Updates Bell */}
             <button
               onClick={() => handleNav('favorites')}
@@ -578,19 +564,6 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
                   </button>
                 );
               })}
-
-              {onOpenARCamera && (
-                <button
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    onOpenARCamera();
-                  }}
-                  className="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs text-orange-950 bg-orange-50/80 border border-orange-200 font-semibold mt-1 min-h-[38px]"
-                >
-                  <Camera className="w-3.5 h-3.5 text-[#FF671F] shrink-0" aria-hidden="true" />
-                  <span className="truncate">AR Camera Monument Scanner</span>
-                </button>
-              )}
 
               <button
                 onClick={() => {

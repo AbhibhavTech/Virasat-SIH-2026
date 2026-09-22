@@ -146,11 +146,11 @@ export const STATE_CURATED_IMAGES: Record<string, CuratedStateImage> = {
     tags: ['Cellular Jail Memorial', 'Coral Reefs', 'Havelock Island'],
   },
   'bihar': {
-    imageUrl: 'https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=1200&auto=format&fit=crop&q=80',
-    creator: 'Unsplash / Bodh Gaya',
-    landmark: 'Mahabodhi Temple & Ancient Nalanda',
+    imageUrl: '/images/bihar-great-buddha.jpg',
+    creator: 'Andrew Moore / Great Buddha Statue, Bodh Gaya',
+    landmark: 'Great Buddha Statue, Bodh Gaya',
     bestSeason: 'Oct - Mar',
-    tags: ['UNESCO Bodh Gaya', 'Ancient Nalanda University', 'Rajgir'],
+    tags: ['Great Buddha Statue (80-ft)', 'Bodh Gaya', 'Mahabodhi Temple', 'Ancient Nalanda University'],
   },
   'jharkhand': {
     imageUrl: 'https://images.unsplash.com/photo-1432405972618-c60b0225b8f9?w=1200&auto=format&fit=crop&q=80',

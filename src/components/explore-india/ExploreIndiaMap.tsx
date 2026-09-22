@@ -188,10 +188,10 @@ export const INDIA_PINS: MapPinData[] = [
     townId: 'bodh-gaya',
     stateName: 'Bihar',
     region: 'Eastern India',
-    iconicPlace: 'Mahabodhi Temple & Nalanda Ancient University',
+    iconicPlace: 'Great Buddha Statue & Bodh Gaya',
     lat: 24.696,
     lng: 84.9913,
-    thumbnail: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=500&auto=format&fit=crop&q=80',
+    thumbnail: '/images/bihar-great-buddha.jpg',
   },
   {
     id: 'west-bengal',

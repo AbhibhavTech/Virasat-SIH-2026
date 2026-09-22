@@ -23,7 +23,14 @@ import {
   Layers,
   Eye,
   Loader2,
-  AlertCircle
+  AlertCircle,
+  Clock,
+  Ticket,
+  Sun,
+  RotateCcw,
+  BookOpen,
+  Crown,
+  ScanLine
 } from 'lucide-react';
 import { api } from '../../services/api';
 import { VisualIdentificationResult, AROverlayPin } from '../../types';
@@ -41,6 +48,7 @@ interface MonumentARCameraModalProps {
 const SAMPLE_MONUMENTS = [
   {
     name: 'Taj Mahal',
+    nameHindi: 'ताज महल',
     city: 'Agra',
     state: 'Uttar Pradesh',
     imageUrl: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop&q=80',
@@ -48,6 +56,7 @@ const SAMPLE_MONUMENTS = [
   },
   {
     name: 'Amber Palace',
+    nameHindi: 'आमेर किला',
     city: 'Jaipur',
     state: 'Rajasthan',
     imageUrl: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&auto=format&fit=crop&q=80',
@@ -55,6 +64,7 @@ const SAMPLE_MONUMENTS = [
   },
   {
     name: 'Gateway of India',
+    nameHindi: 'गेटवे ऑफ इंडिया',
     city: 'Mumbai',
     state: 'Maharashtra',
     imageUrl: 'https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&auto=format&fit=crop&q=80',
@@ -62,13 +72,23 @@ const SAMPLE_MONUMENTS = [
   },
   {
     name: 'Konark Sun Temple',
+    nameHindi: 'कोणार्क सूर्य मंदिर',
     city: 'Konark',
     state: 'Odisha',
     imageUrl: 'https://images.unsplash.com/photo-1620619767323-b95a89183081?w=800&auto=format&fit=crop&q=80',
     placeId: 'konark-sun-temple',
   },
   {
+    name: 'Qutub Minar',
+    nameHindi: 'क़ुतुब मीनार',
+    city: 'New Delhi',
+    state: 'Delhi',
+    imageUrl: 'https://images.unsplash.com/photo-1548013146-72479768bada?w=800&auto=format&fit=crop&q=80',
+    placeId: 'qutub-minar',
+  },
+  {
     name: 'Hampi Virupaksha',
+    nameHindi: 'विरूपाक्ष मंदिर हम्पी',
     city: 'Hampi',
     state: 'Karnataka',
     imageUrl: 'https://images.unsplash.com/photo-1600100397608-f010f443b71e?w=800&auto=format&fit=crop&q=80',
@@ -84,7 +104,7 @@ export const MonumentARCameraModal: React.FC<MonumentARCameraModalProps> = ({
   initialSiteName,
   initialSiteCity,
 }) => {
-  const [activeTab, setActiveTab] = useState<'camera' | 'upload'>('camera');
+  const [activeTab, setActiveTab] = useState<'camera' | 'upload'>('upload');
 
   // Camera State
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -109,6 +129,30 @@ export const MonumentARCameraModal: React.FC<MonumentARCameraModalProps> = ({
 
   // Audio Speech Synthesis
   const [isSpeaking, setIsSpeaking] = useState(false);
+
+  // Clipboard Paste Listener (Ctrl+V / Cmd+V anywhere while modal is open)
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handlePaste = (e: ClipboardEvent) => {
+      const items = e.clipboardData?.items;
+      if (!items) return;
+      for (let i = 0; i < items.length; i++) {
+        if (items[i].type.indexOf('image') !== -1) {
+          const file = items[i].getAsFile();
+          if (file) {
+            processUploadedFile(file);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener('paste', handlePaste);
+    return () => {
+      window.removeEventListener('paste', handlePaste);
+    };
+  }, [isOpen]);
 
   // Compass Orientation listener for mobile devices
   useEffect(() => {
@@ -531,6 +575,11 @@ export const MonumentARCameraModal: React.FC<MonumentARCameraModalProps> = ({
         'Spoke shadows on the carved stone wheels function as accurate solar sundials.',
         '13th-century architectural marvel engineered by King Narasimhadeva I of the Eastern Ganga dynasty.',
       ],
+      'Qutub Minar': [
+        'World’s tallest brick minaret at 72.5 meters, tapering from 14.3 meters at base to 2.7 meters at top.',
+        'Adjoining 4th-century Iron Pillar of Chandragupta II has resisted corrosion for over 1,600 years.',
+        'Intricate Quranic inscriptions and fluted balconies carved from red and buff sandstone.',
+      ],
       'Hampi Virupaksha': [
         'One of the oldest continuously functioning temples in India, dating from the 7th century CE.',
         'Features an inverted pinhole camera shadow phenomenon of the gopuram inside a sanctuary chamber.',
@@ -538,23 +587,108 @@ export const MonumentARCameraModal: React.FC<MonumentARCameraModalProps> = ({
       ],
     };
 
+    const sampleMeta: Record<string, any> = {
+      'Taj Mahal': {
+        hindi: 'ताज महल',
+        builder: 'Mughal Emperor Shah Jahan',
+        year: '1632 - 1653 CE',
+        style: 'Mughal / Indo-Islamic Marble Architecture',
+        easy: 'यह सफेद संगमरमर से बना विश्व प्रसिद्ध मकबरा है, जिसे सम्राट शाहजहाँ ने अपनी बेगम मुमताज़ महल की याद में बनवाया था। यह प्रेम का अमर प्रतीक और दुनिया के सात अजूबों में से एक है।',
+        visitingHours: 'Sunrise to Sunset (06:00 AM - 06:00 PM), Closed on Fridays',
+        domesticFee: 50,
+        intlFee: 1100,
+        tips: 'Visit at dawn for gentle pink morning light, fewer crowds, and stunning reflection pond photography.',
+      },
+      'Amber Palace': {
+        hindi: 'आमेर किला',
+        builder: 'Raja Man Singh I',
+        year: '1592 CE',
+        style: 'Rajput & Mughal Hill Architecture',
+        easy: 'यह जयपुर की पहाड़ियों पर स्थित एक विशाल और भव्य राजपूत किला है। इसके अंदर का शीश महल (दर्पणों का महल) इतना अनूठा है कि एक मोमबत्ती से पूरा कमरा जगमगा उठता है।',
+        visitingHours: '08:00 AM - 05:30 PM (Daily)',
+        domesticFee: 100,
+        intlFee: 500,
+        tips: 'Combine with the evening sound-and-light show over Maota Lake.',
+      },
+      'Gateway of India': {
+        hindi: 'गेटवे ऑफ इंडिया',
+        builder: 'George Wittet (Architect) / British India',
+        year: '1924 CE',
+        style: 'Indo-Saracenic Revival',
+        easy: 'यह मुंबई के समुद्र तट पर खड़ा एक ऐतिहासिक विशाल प्रवेश द्वार है, जो भारत में आने वाले समुद्री जहाजों का भव्य स्वागत करता था।',
+        visitingHours: 'Open 24 Hours (Free Public Access)',
+        domesticFee: 0,
+        intlFee: 0,
+        tips: 'Best visited during late afternoon sea breeze and sunset over Mumbai Harbour.',
+      },
+      'Konark Sun Temple': {
+        hindi: 'कोणार्क सूर्य मंदिर',
+        builder: 'King Narasimhadeva I (Eastern Ganga Dynasty)',
+        year: '1250 CE',
+        style: 'Kalinga Stone Temple Architecture',
+        easy: 'यह सूर्य देव को समर्पित एक विशालकाय पत्थर का रथ है, जिसमें 24 अलंकृत पहिये और 7 घोड़े तराशे गए हैं। इसके पहिये धूपघड़ी की तरह सटीक समय बताते हैं।',
+        visitingHours: '06:00 AM - 08:00 PM (Daily)',
+        domesticFee: 40,
+        intlFee: 600,
+        tips: 'Examine the sun dial spokes with a local guide to see ancient time calculations in action.',
+      },
+      'Qutub Minar': {
+        hindi: 'क़ुतुब मीनार',
+        builder: 'Qutb-ud-din Aibak & Shams-ud-din Iltutmish',
+        year: '1199 - 1220 CE',
+        style: 'Early Indo-Islamic Sandstone Architecture',
+        easy: 'यह दिल्ली में स्थित दुनिया की सबसे ऊंची ईंटों से बनी मीनार है। इसके परिसर में 1600 साल पुराना जंग-रहित लोह स्तंभ भी है।',
+        visitingHours: '07:00 AM - 05:00 PM (Daily)',
+        domesticFee: 35,
+        intlFee: 550,
+        tips: 'Look for the ancient Iron Pillar that has never rusted despite exposure to rain and sun for over 16 centuries.',
+      },
+      'Hampi Virupaksha': {
+        hindi: 'विरूपाक्ष मंदिर हम्पी',
+        builder: 'Vijayanagara Emperors (Krishnadevaraya additions)',
+        year: '7th Century CE onwards',
+        style: 'Dravidian Vijayanagara Architecture',
+        easy: 'यह कर्नाटक के हम्पी में तुंगभद्रा नदी के तट पर स्थित भगवान शिव का प्राचीन जीवंत मंदिर है, जो विजयनगर साम्राज्य की समृद्ध कला का प्रतीक है।',
+        visitingHours: '06:00 AM - 08:00 PM (Daily)',
+        domesticFee: 30,
+        intlFee: 500,
+        tips: 'Do not miss the inverted pinhole camera shadow of the main gopuram inside the rear sanctum room.',
+      },
+    };
+
+    const meta = sampleMeta[sample.name] || {
+      hindi: sample.nameHindi || sample.name,
+      builder: 'Royal Patronage',
+      year: 'Historic Era',
+      style: 'Classical Indian Heritage',
+      easy: `Celebrated historical monument in ${sample.city}, ${sample.state}.`,
+      visitingHours: '09:00 AM - 05:00 PM',
+      domesticFee: 50,
+      intlFee: 500,
+      tips: 'Best visited during morning hours.',
+    };
+
     setAnalysisResult({
       success: true,
       identified_name: sample.name,
-      confidence: 0.96,
+      identified_name_hindi: meta.hindi,
+      confidence: 0.98,
       city: sample.city,
       state: sample.state,
       country: 'India',
-      era: 'Imperial Heritage Period',
-      year_built: 'Iconic Century',
-      architectural_style: 'Classical Indian Heritage',
-      short_summary: `Globally celebrated landmark in ${sample.city}, ${sample.state}.`,
+      era: meta.builder ? `${meta.builder} Era` : 'Imperial Heritage Period',
+      who_built_it: meta.builder,
+      year_built: meta.year,
+      architectural_style: meta.style,
+      easy_explanation: meta.easy,
+      short_summary: `Globally celebrated landmark in ${sample.city}, ${sample.state}. Protected as an enduring symbol of India's cultural heritage.`,
       historical_facts: sampleFacts[sample.name] || [
         'Protected by Archaeological Survey of India (ASI).',
         'Recognized for exceptional architectural masonry and cultural significance.',
       ],
-      architectural_highlights: ['Grand Entry Portal', 'Carved Stone Masonry', 'Imperial Plinth Geometry'],
-      best_time_to_visit: 'October to March during morning golden hour.',
+      architectural_highlights: ['Imperial Stone Portal', 'Carved Reliefs & Inlays', 'Precision Geometry & Elevation'],
+      best_time_to_visit: 'October to March during morning golden hours.',
+      visiting_tips: meta.tips,
       unesco_status: true,
       matched_place: {
         id: sample.placeId,
@@ -564,22 +698,27 @@ export const MonumentARCameraModal: React.FC<MonumentARCameraModalProps> = ({
         category: 'UNESCO World Heritage',
         thumbnail_url: sample.imageUrl,
         summary: `Celebrated historical heritage site located in ${sample.city}, ${sample.state}.`,
+        visiting_hours: meta.visitingHours,
+        entry_fee_domestic: meta.domesticFee,
+        entry_fee_intl: meta.intlFee,
         rating: 4.9,
-        heritage_status: 'UNESCO World Heritage',
+        heritage_status: 'UNESCO World Heritage & ASI Protected',
+        source_name: 'Archaeological Survey of India (ASI)',
+        source_url: 'https://asi.nic.in',
         is_in_database: true,
       },
       ar_overlays: [
         {
           id: 'dynasty',
           label: 'Imperial Era',
-          detail: 'Constructed under royal royal patronage across centuries.',
+          detail: `Commissioned by ${meta.builder}.`,
           type: 'dynasty',
           position: { x: 30, y: 35 },
         },
         {
           id: 'architecture',
           label: 'Stone Architecture',
-          detail: 'Masterwork of historic geometry and masonry.',
+          detail: meta.style,
           type: 'architecture',
           position: { x: 70, y: 40 },
         },
@@ -595,6 +734,18 @@ export const MonumentARCameraModal: React.FC<MonumentARCameraModalProps> = ({
     setIsAnalyzing(false);
   };
 
+  // Reset scan state to allow analyzing another image
+  const handleResetScan = () => {
+    setAnalysisResult(null);
+    setUploadedImagePreview(null);
+    setSelectedOverlayPin(null);
+    setErrorMessage(null);
+    if (isSpeaking && typeof window !== 'undefined' && 'speechSynthesis' in window) {
+      window.speechSynthesis.cancel();
+      setIsSpeaking(false);
+    }
+  };
+
   // Text to Speech Narration
   const toggleSpeechNarration = () => {
     if (typeof window === 'undefined' || !('speechSynthesis' in window)) return;
@@ -607,8 +758,9 @@ export const MonumentARCameraModal: React.FC<MonumentARCameraModalProps> = ({
 
     if (!analysisResult) return;
 
-    const factsText = analysisResult.historical_facts.join('. ');
-    const textToSpeak = `${analysisResult.identified_name} in ${analysisResult.city || ''}, ${analysisResult.state || ''}. Era: ${analysisResult.era || 'Historic'}. ${analysisResult.short_summary || ''}. Key Facts: ${factsText}`;
+    const easyExplanation = analysisResult.easy_explanation || analysisResult.short_summary || '';
+    const factsText = analysisResult.historical_facts?.slice(0, 3).join('. ') || '';
+    const textToSpeak = `${analysisResult.identified_name}${analysisResult.identified_name_hindi ? ', ' + analysisResult.identified_name_hindi : ''} in ${analysisResult.city || ''}, ${analysisResult.state || ''}. ${easyExplanation}. Key facts: ${factsText}`;
 
     const utterance = new SpeechSynthesisUtterance(textToSpeak);
     utterance.rate = 0.95;
@@ -1097,174 +1249,324 @@ export const MonumentARCameraModal: React.FC<MonumentARCameraModalProps> = ({
             </motion.div>
           )}
 
-          {/* DYNAMIC HISTORICAL FACTS & DATABASE LINK PANEL (Overlaid on Bottom) */}
+          {/* DYNAMIC HISTORICAL FACTS & DATABASE LINK PANEL */}
           {analysisResult && (
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="border-t border-stone-800 bg-[#141C2B] p-3 sm:p-5"
+              transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+              className="border-t border-stone-800 bg-[#0F172A] p-3 sm:p-6 space-y-4"
             >
-              
-              {/* Header Title & Database Match Alert */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-stone-800">
-                <div>
-                  <div className="flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#046A38] animate-pulse" />
-                    <h3 className="text-sm sm:text-lg font-serif font-bold text-white">
-                      {analysisResult.identified_name}
-                    </h3>
-                    {analysisResult.unesco_status && (
-                      <span className="px-2 py-0.5 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-400 text-[10px] font-bold">
-                        UNESCO
-                      </span>
-                    )}
-                    {analysisResult.is_ai_generated ? (
-                      <span className="px-2 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-[10px] font-bold flex items-center gap-1">
-                        <Sparkles className="w-2.5 h-2.5" />
-                        AI Vision
-                      </span>
-                    ) : (
-                      <span className="px-2 py-0.5 rounded-full bg-blue-500/20 border border-blue-500/40 text-blue-300 text-[10px] font-bold">
-                        Virasat Archive
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-[11px] sm:text-xs text-stone-400 flex items-center gap-1.5 mt-0.5">
-                    <MapPin className="w-3 h-3 text-[#FF671F]" />
-                    <span>{analysisResult.city || 'India'}, {analysisResult.state || ''}</span>
-                    <span className="text-stone-600">•</span>
-                    <span className="text-stone-300 font-medium">{analysisResult.architectural_style || 'Heritage Style'}</span>
-                  </p>
-                </div>
-
-                {/* Audio Speech Narration Button */}
-                <button
-                  type="button"
-                  onClick={toggleSpeechNarration}
-                  className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-bold transition cursor-pointer self-start sm:self-auto ${
-                    isSpeaking
-                      ? 'bg-amber-500 text-stone-950 border-amber-400 animate-pulse'
-                      : 'bg-stone-800 hover:bg-stone-700 text-stone-200 border-stone-700'
-                  }`}
-                  title="Audio Guide Narration"
-                >
-                  {isSpeaking ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5 text-[#FF671F]" />}
-                  <span>{isSpeaking ? 'Stop Audio' : 'Listen to History'}</span>
-                </button>
-              </div>
-
-              {/* Summary Description */}
-              <p className="text-xs text-stone-300 mt-2.5 leading-relaxed font-sans">
-                {analysisResult.short_summary}
-              </p>
-
-              {/* Historical Facts & Architecture Highlights in AR format */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 mt-3">
-                <div className="bg-stone-900/80 rounded-xl p-2.5 border border-stone-800">
-                  <div className="text-[10px] font-bold text-[#FF671F] uppercase tracking-wider mb-1.5 flex items-center gap-1">
-                    <Landmark className="w-3 h-3" />
-                    <span>Architectural & Dynasty Secrets</span>
-                  </div>
-                  <ul className="space-y-1.5 text-[11px] text-stone-300">
-                    <li className="flex items-start gap-1.5">
-                      <span className="text-[#FF671F] mt-0.5">•</span>
-                      <span><strong>Era / Dynasty:</strong> {analysisResult.era || 'Historic Indian Dynasty'}</span>
-                    </li>
-                    <li className="flex items-start gap-1.5">
-                      <span className="text-[#FF671F] mt-0.5">•</span>
-                      <span><strong>Constructed:</strong> {analysisResult.year_built || 'Centuries ago'}</span>
-                    </li>
-                    {analysisResult.architectural_highlights?.map((h, idx) => (
-                      <li key={idx} className="flex items-start gap-1.5">
-                        <span className="text-[#046A38] mt-0.5">•</span>
-                        <span>{h}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="bg-stone-900/80 rounded-xl p-2.5 border border-stone-800">
-                  <div className="text-[10px] font-bold text-emerald-400 uppercase tracking-wider mb-1.5 flex items-center gap-1">
-                    <Sparkles className="w-3 h-3" />
-                    <span>Historical Facts Overlaid</span>
-                  </div>
-                  <ul className="space-y-1.5 text-[11px] text-stone-300">
-                    {analysisResult.historical_facts?.slice(0, 3).map((f, idx) => (
-                      <li key={idx} className="flex items-start gap-1.5">
-                        <CheckCircle2 className="w-3 h-3 text-[#FF671F] shrink-0 mt-0.5" />
-                        <span>{f}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-              {/* CRITICAL USER REQUIREMENT:
-                  "if found it Should lead to the page the user desires of anything the database contains in the explore page"
-              */}
-              {analysisResult.matched_place ? (
-                <div className="mt-3.5 p-3 rounded-xl bg-gradient-to-r from-emerald-950/60 via-stone-900 to-orange-950/40 border border-emerald-500/40 flex flex-col sm:flex-row items-center justify-between gap-3 shadow-md">
-                  <div className="flex items-center gap-3 w-full sm:w-auto">
-                    {analysisResult.matched_place.thumbnail_url && (
+              {/* Header Title, Badges & Action Buttons */}
+              <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 pb-3 border-b border-stone-800/80">
+                <div className="flex items-start gap-3">
+                  {(uploadedImagePreview || analysisResult.matched_place?.thumbnail_url) && (
+                    <div className="relative shrink-0">
                       <img
-                        src={analysisResult.matched_place.thumbnail_url}
-                        alt={analysisResult.matched_place.name}
-                        className="w-12 h-12 rounded-lg object-cover border border-emerald-500/40 shrink-0"
+                        src={uploadedImagePreview || analysisResult.matched_place?.thumbnail_url}
+                        alt={analysisResult.identified_name}
+                        className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl object-cover border-2 border-[#FF671F]/60 shadow-md"
                         referrerPolicy="no-referrer"
                       />
-                    )}
-                    <div>
-                      <div className="flex items-center gap-1.5">
-                        <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                        <span className="text-[11px] font-bold text-emerald-300 uppercase tracking-wider">
-                          Verified in Virasat Database
+                      <span className="absolute -bottom-1 -right-1 bg-emerald-500 text-stone-950 p-0.5 rounded-full" title="Verified Scan">
+                        <CheckCircle2 className="w-3.5 h-3.5" />
+                      </span>
+                    </div>
+                  )}
+
+                  <div>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <h3 className="text-base sm:text-xl font-serif font-bold text-white tracking-wide">
+                        {analysisResult.identified_name}
+                      </h3>
+                      {analysisResult.identified_name_hindi && (
+                        <span className="text-[#FF671F] font-serif font-semibold text-sm sm:text-base">
+                          ({analysisResult.identified_name_hindi})
                         </span>
-                      </div>
-                      <div className="text-xs sm:text-sm font-bold text-white">
-                        {analysisResult.matched_place.name}
-                      </div>
-                      <div className="text-[10px] text-stone-400">
-                        {analysisResult.matched_place.city}, {analysisResult.matched_place.state}
-                      </div>
+                      )}
+                    </div>
+
+                    {/* Verification Badges */}
+                    <div className="flex flex-wrap items-center gap-1.5 mt-1.5">
+                      <span className="px-2 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-300 text-[10px] font-bold flex items-center gap-1">
+                        <CheckCircle2 className="w-3 h-3 text-emerald-400" />
+                        <span>{Math.round(analysisResult.confidence * 100)}% Match</span>
+                      </span>
+
+                      {analysisResult.matched_place && (
+                        <span className="px-2 py-0.5 rounded-full bg-blue-500/15 border border-blue-500/30 text-blue-300 text-[10px] font-bold flex items-center gap-1">
+                          <ShieldCheck className="w-3 h-3 text-blue-400" />
+                          <span>Verified in Virasat Database</span>
+                        </span>
+                      )}
+
+                      {analysisResult.unesco_status && (
+                        <span className="px-2 py-0.5 rounded-full bg-amber-500/20 border border-amber-500/40 text-amber-300 text-[10px] font-bold flex items-center gap-1">
+                          <Crown className="w-3 h-3 text-amber-400" />
+                          <span>UNESCO World Heritage</span>
+                        </span>
+                      )}
+                    </div>
+
+                    <p className="text-[11px] sm:text-xs text-stone-300 flex items-center gap-1.5 mt-1.5">
+                      <MapPin className="w-3.5 h-3.5 text-[#FF671F] shrink-0" />
+                      <span>{analysisResult.city || 'Heritage Site'}, {analysisResult.state || 'India'}</span>
+                      <span className="text-stone-600">•</span>
+                      <span className="text-stone-400">{analysisResult.country || 'India'}</span>
+                    </p>
+                  </div>
+                </div>
+
+                {/* Quick Actions (Audio Guide & Scan Another) */}
+                <div className="flex items-center gap-2 self-start sm:self-auto shrink-0">
+                  <button
+                    type="button"
+                    onClick={toggleSpeechNarration}
+                    className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl border text-xs font-bold transition cursor-pointer ${
+                      isSpeaking
+                        ? 'bg-amber-500 text-stone-950 border-amber-400 animate-pulse'
+                        : 'bg-stone-800 hover:bg-stone-700 text-stone-200 border-stone-700'
+                    }`}
+                    title="Listen to Monument Story"
+                  >
+                    {isSpeaking ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5 text-[#FF671F]" />}
+                    <span>{isSpeaking ? 'Stop Audio' : 'Listen / सुनें'}</span>
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={handleResetScan}
+                    className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-stone-800 hover:bg-stone-700 text-stone-200 border border-stone-700 text-xs font-bold transition cursor-pointer"
+                    title="Scan another monument image"
+                  >
+                    <RotateCcw className="w-3.5 h-3.5 text-[#FF671F]" />
+                    <span>Scan Another</span>
+                  </button>
+                </div>
+              </div>
+
+              {/* SECTION 1: EASY HERITAGE OVERVIEW (सरल परिचय) */}
+              <div className="bg-[#1E293B]/80 rounded-2xl p-3.5 sm:p-4 border border-stone-800 shadow-xs">
+                <div className="flex items-center gap-2 mb-2 text-xs font-bold text-amber-400 uppercase tracking-wider">
+                  <BookOpen className="w-4 h-4 text-[#FF671F]" />
+                  <span>Heritage Significance & Easy Overview (सरल परिचय)</span>
+                </div>
+                
+                {analysisResult.easy_explanation && (
+                  <p className="text-xs sm:text-sm text-stone-100 leading-relaxed font-sans font-medium mb-2 bg-[#0F172A]/70 p-3 rounded-xl border border-stone-700/50">
+                    {analysisResult.easy_explanation}
+                  </p>
+                )}
+
+                {analysisResult.short_summary && (
+                  <p className="text-xs text-stone-300 leading-relaxed font-sans">
+                    {analysisResult.short_summary}
+                  </p>
+                )}
+              </div>
+
+              {/* SECTION 2: ARCHITECTURAL & DYNASTY INFORMATION */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {/* Builder & Era */}
+                <div className="bg-[#1E293B]/80 rounded-2xl p-3.5 sm:p-4 border border-stone-800">
+                  <div className="flex items-center gap-2 mb-2 text-xs font-bold text-[#FF671F] uppercase tracking-wider">
+                    <Crown className="w-4 h-4" />
+                    <span>Dynasty & Patron (किसने व कब बनवाया)</span>
+                  </div>
+                  <ul className="space-y-2 text-xs text-stone-300 font-sans">
+                    <li className="flex items-start justify-between gap-2 border-b border-stone-800/80 pb-1.5">
+                      <span className="text-stone-400">Patron / Builder:</span>
+                      <span className="font-semibold text-white text-right">
+                        {analysisResult.who_built_it || analysisResult.era || 'Imperial Patronage'}
+                      </span>
+                    </li>
+                    <li className="flex items-start justify-between gap-2 border-b border-stone-800/80 pb-1.5">
+                      <span className="text-stone-400">Constructed / Year:</span>
+                      <span className="font-semibold text-white text-right">
+                        {analysisResult.year_built || 'Centuries ago'}
+                      </span>
+                    </li>
+                    <li className="flex items-start justify-between gap-2">
+                      <span className="text-stone-400">Historical Era:</span>
+                      <span className="font-semibold text-white text-right">
+                        {analysisResult.era || 'Classical Indian Era'}
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Architecture Style & Highlights */}
+                <div className="bg-[#1E293B]/80 rounded-2xl p-3.5 sm:p-4 border border-stone-800">
+                  <div className="flex items-center gap-2 mb-2 text-xs font-bold text-emerald-400 uppercase tracking-wider">
+                    <Landmark className="w-4 h-4" />
+                    <span>Architecture Marvel (वास्तुकला की विशेषताएं)</span>
+                  </div>
+                  <div className="text-xs text-stone-300 mb-2">
+                    <span className="text-stone-400">Style: </span>
+                    <strong className="text-white">{analysisResult.architectural_style || 'Classical Indian Architecture'}</strong>
+                  </div>
+                  {analysisResult.architectural_highlights && analysisResult.architectural_highlights.length > 0 && (
+                    <div className="flex flex-wrap gap-1.5 mt-2">
+                      {analysisResult.architectural_highlights.map((h, idx) => (
+                        <span key={idx} className="px-2 py-1 rounded-lg bg-stone-900 border border-stone-700 text-[11px] text-stone-200 flex items-center gap-1.5">
+                          <CheckCircle2 className="w-3 h-3 text-[#FF671F] shrink-0" />
+                          <span>{h}</span>
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {/* SECTION 3: VIRASAT DATABASE VERIFIED VISITOR INFORMATION */}
+              <div className="bg-gradient-to-br from-emerald-950/40 via-[#1E293B]/90 to-stone-900 rounded-2xl p-3.5 sm:p-5 border border-emerald-500/30 shadow-md">
+                <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center gap-2">
+                    <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                    <span className="text-xs sm:text-sm font-bold text-emerald-300 uppercase tracking-wider">
+                      Virasat Database Verified Visitor Information (डेटाबेस से सत्यापित जानकारी)
+                    </span>
+                  </div>
+                  {analysisResult.matched_place?.heritage_status && (
+                    <span className="hidden sm:inline-block px-2.5 py-0.5 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-[10px] font-bold">
+                      {analysisResult.matched_place.heritage_status}
+                    </span>
+                  )}
+                </div>
+
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                  {/* Timings */}
+                  <div className="bg-stone-900/90 rounded-xl p-2.5 sm:p-3 border border-stone-800">
+                    <div className="text-[10px] text-stone-400 uppercase tracking-wider flex items-center gap-1.5 mb-1">
+                      <Clock className="w-3.5 h-3.5 text-[#FF671F]" />
+                      <span>Visiting Hours (समय)</span>
+                    </div>
+                    <div className="text-xs sm:text-sm font-bold text-white">
+                      {analysisResult.matched_place?.visiting_hours || 'Sunrise to Sunset (06:00 AM - 06:00 PM)'}
                     </div>
                   </div>
 
-                  {/* Direct Button to open the desired Monument/Place Page */}
-                  <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
-                    <button
-                      type="button"
-                      onClick={() => handleGoToPlacePage(analysisResult.matched_place!.id)}
-                      className="w-full sm:w-auto px-4 py-2 rounded-xl bg-gradient-to-r from-[#FF671F] to-[#E65100] hover:from-[#E65100] hover:to-[#D84315] text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-md transition active:scale-95 cursor-pointer"
-                    >
-                      <span>Explore Destination Dossier</span>
-                      <ArrowRight className="w-3.5 h-3.5" />
-                    </button>
+                  {/* Entry Fees */}
+                  <div className="bg-stone-900/90 rounded-xl p-2.5 sm:p-3 border border-stone-800">
+                    <div className="text-[10px] text-stone-400 uppercase tracking-wider flex items-center gap-1.5 mb-1">
+                      <Ticket className="w-3.5 h-3.5 text-emerald-400" />
+                      <span>Entry Fee (प्रवेश शुल्क)</span>
+                    </div>
+                    <div className="text-xs sm:text-sm font-bold text-white">
+                      {analysisResult.matched_place?.entry_fee_domestic === 0
+                        ? 'Free Public Entry'
+                        : `₹${analysisResult.matched_place?.entry_fee_domestic ?? 50} (Indians) / ₹${analysisResult.matched_place?.entry_fee_intl ?? 1100} (Foreigners)`
+                      }
+                    </div>
+                  </div>
+
+                  {/* Best Time to Visit */}
+                  <div className="bg-stone-900/90 rounded-xl p-2.5 sm:p-3 border border-stone-800">
+                    <div className="text-[10px] text-stone-400 uppercase tracking-wider flex items-center gap-1.5 mb-1">
+                      <Sun className="w-3.5 h-3.5 text-amber-400" />
+                      <span>Best Time to Visit</span>
+                    </div>
+                    <div className="text-xs sm:text-sm font-bold text-white">
+                      {analysisResult.best_time_to_visit || 'October to March during morning golden hours'}
+                    </div>
                   </div>
                 </div>
-              ) : (
-                /* Fallback if monument is not directly an exact match, recommend related DB places */
-                analysisResult.suggested_database_places && analysisResult.suggested_database_places.length > 0 && (
-                  <div className="mt-3.5 p-3 rounded-xl bg-stone-900 border border-stone-800">
-                    <div className="text-[10px] font-bold text-stone-400 uppercase tracking-wider mb-2">
-                      Related Verified Monuments in Virasat Database:
-                    </div>
-                    <div className="flex flex-wrap gap-2">
-                      {analysisResult.suggested_database_places.map((p) => (
-                        <button
-                          key={p.id}
-                          type="button"
-                          onClick={() => handleGoToPlacePage(p.id)}
-                          className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-stone-800 hover:bg-stone-700 border border-stone-700 text-xs text-white transition cursor-pointer"
-                        >
-                          <Landmark className="w-3 h-3 text-[#FF671F]" />
-                          <span>{p.name}</span>
-                          <ChevronRight className="w-3 h-3 text-stone-400" />
-                        </button>
-                      ))}
-                    </div>
+
+                {/* Visiting Tips */}
+                {analysisResult.visiting_tips && (
+                  <div className="mt-3 p-2.5 rounded-xl bg-stone-900/60 border border-stone-800 text-xs text-stone-300 flex items-start gap-2">
+                    <Sparkles className="w-4 h-4 text-[#FF671F] shrink-0 mt-0.5" />
+                    <span><strong>Visiting Tip:</strong> {analysisResult.visiting_tips}</span>
                   </div>
-                )
+                )}
+
+                {/* Official Source Link if available */}
+                {analysisResult.matched_place?.source_url && (
+                  <div className="mt-2.5 text-right">
+                    <a
+                      href={analysisResult.matched_place.source_url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 text-[11px] text-stone-400 hover:text-emerald-300 transition"
+                    >
+                      <span>Official Registry Record ({analysisResult.matched_place.source_name || 'ASI'})</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+                  </div>
+                )}
+              </div>
+
+              {/* SECTION 4: HISTORICAL SECRETS & FACTS */}
+              {analysisResult.historical_facts && analysisResult.historical_facts.length > 0 && (
+                <div className="bg-[#1E293B]/80 rounded-2xl p-3.5 sm:p-4 border border-stone-800">
+                  <div className="flex items-center gap-2 mb-2 text-xs font-bold text-amber-400 uppercase tracking-wider">
+                    <Sparkles className="w-4 h-4 text-[#FF671F]" />
+                    <span>Fascinating Historical Secrets (रोचक ऐतिहासिक रहस्य)</span>
+                  </div>
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-2 text-xs text-stone-300 font-sans">
+                    {analysisResult.historical_facts.map((fact, idx) => (
+                      <li key={idx} className="flex items-start gap-2 bg-stone-900/70 p-2.5 rounded-xl border border-stone-800">
+                        <CheckCircle2 className="w-4 h-4 text-[#FF671F] shrink-0 mt-0.5" />
+                        <span>{fact}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* SECTION 5: PRIMARY NAVIGATION CTA TO EXPLORE PAGE */}
+              {analysisResult.matched_place && (
+                <div className="pt-2 flex flex-col sm:flex-row items-center justify-between gap-3 p-3.5 rounded-2xl bg-gradient-to-r from-[#FF671F]/20 via-[#1E293B] to-emerald-950/30 border border-[#FF671F]/40 shadow-lg">
+                  <div>
+                    <div className="text-xs sm:text-sm font-bold text-white flex items-center gap-2">
+                      <Landmark className="w-4 h-4 text-[#FF671F]" />
+                      <span>Ready to explore {analysisResult.matched_place.name}?</span>
+                    </div>
+                    <p className="text-[11px] text-stone-300 mt-0.5">
+                      Open full destination dossier, interactive 3D model, audio tales, and route map.
+                    </p>
+                  </div>
+
+                  <button
+                    type="button"
+                    onClick={() => handleGoToPlacePage(analysisResult.matched_place!.id)}
+                    className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#FF671F] to-[#E65100] hover:from-[#E65100] hover:to-[#D84315] text-white text-xs sm:text-sm font-bold flex items-center justify-center gap-2 shadow-md transition active:scale-95 cursor-pointer shrink-0"
+                  >
+                    <span>Explore Destination Dossier</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
+              )}
+
+              {/* SECTION 6: SUGGESTED REGIONAL MONUMENTS FROM DATABASE */}
+              {analysisResult.suggested_database_places && analysisResult.suggested_database_places.length > 0 && (
+                <div className="pt-1">
+                  <div className="text-[11px] font-bold text-stone-400 uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                    <Landmark className="w-3.5 h-3.5 text-[#FF671F]" />
+                    <span>Other Verified Monuments in {analysisResult.state || analysisResult.city || 'India'}:</span>
+                  </div>
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                    {analysisResult.suggested_database_places.map((place) => (
+                      <button
+                        key={place.id}
+                        type="button"
+                        onClick={() => handleGoToPlacePage(place.id)}
+                        className="group flex flex-col p-2 rounded-xl bg-stone-900 border border-stone-800 hover:border-[#FF671F] text-left transition cursor-pointer"
+                      >
+                        {place.thumbnail_url && (
+                          <img
+                            src={place.thumbnail_url}
+                            alt={place.name}
+                            className="w-full h-16 object-cover rounded-lg mb-1.5 group-hover:scale-105 transition-transform duration-300"
+                            referrerPolicy="no-referrer"
+                          />
+                        )}
+                        <span className="text-xs font-bold text-white truncate">{place.name}</span>
+                        <span className="text-[10px] text-stone-400">{place.city}, {place.state}</span>
+                      </button>
+                    ))}
+                  </div>
+                </div>
               )}
             </motion.div>
           )}

@@ -2899,10 +2899,10 @@
     "nearest_transport": {
       "railway_station": "Gaya Junction (GAYA)"
     },
-    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Mahabodhitemple.jpg/1280px-Mahabodhitemple.jpg",
+    "thumbnail_url": "/images/bihar-mahabodhi-4k.jpg",
     "images": [
-      "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4e/Mahabodhitemple.jpg/1280px-Mahabodhitemple.jpg",
-      "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80"
+      "/images/bihar-mahabodhi-4k.jpg",
+      "/images/bihar-mahabodhi.jpg"
     ],
     "model_3d": {
       "available": true,

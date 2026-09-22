@@ -8,7 +8,6 @@ import {
   Camera,
   Compass,
   Calendar,
-  Sparkles,
 } from 'lucide-react';
 import { StateHierarchyEntity } from '../../types/indiaHierarchy';
 import { getCuratedStateImage } from '../../data/stateCuratedImages';
@@ -99,16 +98,6 @@ export const StateCard: React.FC<StateCardProps> = ({
             <Heart className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${isFavorite ? 'fill-white' : ''}`} />
           </button>
         </div>
-
-        {/* Iconic Landmark Tag */}
-        {curated.landmark && (
-          <div className="absolute top-10 sm:top-12 left-2.5 sm:left-3 right-2.5 sm:right-3 pointer-events-none">
-            <span className="inline-flex items-center gap-1 text-[9px] sm:text-[10px] px-2 py-0.5 rounded-md bg-amber-500/90 text-stone-900 font-semibold backdrop-blur-xs max-w-full truncate shadow-2xs">
-              <Sparkles className="w-2.5 h-2.5 sm:w-3 sm:h-3 shrink-0 text-stone-900" />
-              <span className="truncate">{curated.landmark}</span>
-            </span>
-          </div>
-        )}
 
         {/* Photographic Provenance Badge */}
         {curated.creator && (
