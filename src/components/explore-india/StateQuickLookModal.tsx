@@ -110,6 +110,11 @@ export const StateQuickLookModal: React.FC<StateQuickLookModalProps> = ({
               <ShieldCheck className="w-3 h-3" />
               <span>Verified</span>
             </span>
+            {heroUrl?.includes('4k') && (
+              <span className="px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full text-[9px] sm:text-[10px] font-bold bg-amber-500/90 text-white backdrop-blur-xs font-mono tracking-wider shadow-xs">
+                4K UHD
+              </span>
+            )}
           </div>
 
           {/* Photo Credit */}

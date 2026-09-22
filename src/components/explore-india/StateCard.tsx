@@ -78,6 +78,11 @@ export const StateCard: React.FC<StateCardProps> = ({
           <span className="text-[9px] sm:text-[10px] font-medium px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full bg-black/50 text-white backdrop-blur-xs">
             {isUT ? 'Union Territory' : state.region}
           </span>
+          {imageSrc.includes('4k') && (
+            <span className="text-[9px] sm:text-[10px] font-bold px-1.5 sm:px-2 py-0.5 rounded-full bg-amber-500/90 text-white backdrop-blur-xs shadow-xs font-mono tracking-wider">
+              4K UHD
+            </span>
+          )}
         </div>
 
         {/* Top Right: Heart (Wishlist) & Quick Look */}
