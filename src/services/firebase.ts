@@ -22,23 +22,19 @@ import {
 } from 'firebase/firestore';
 import { UserProfile, TripItem, FavoriteItem } from '../types';
 
-// Firebase Web Client Configuration
-// Assembled dynamically to maintain clean CI/CD asset hygiene (preventing false-positive Gemini API key detection in dist/assets)
-const p1 = ['A', 'I', 'z', 'a'].join('');
-const p2 = ['S', 'y'].join('');
-const p3 = 'C3LOkNQ2FbeDSJASkJCmi6jKfISt7lDRU';
+import firebaseAppletConfig from '../../firebase-applet-config.json';
 
 export const firebaseConfig = {
-  projectId: 'gen-lang-client-0058309080',
-  appId: '1:477345081769:web:0e3ac3253582c56fde3cb8',
-  apiKey: `${p1}${p2}${p3}`,
-  authDomain: 'gen-lang-client-0058309080.firebaseapp.com',
-  firestoreDatabaseId: 'ai-studio-virasatsih2026-1a85c5f4-bc6f-45d8-9d92-d07cc04c901a',
-  storageBucket: 'gen-lang-client-0058309080.firebasestorage.app',
-  messagingSenderId: '477345081769',
-  measurementId: '',
-  oAuthClientId: '477345081769-kigt2pvsiupe8e3diasom7bm1bhgk1pd.apps.googleusercontent.com',
-  recaptchaSiteKey: '',
+  projectId: firebaseAppletConfig.projectId || 'gen-lang-client-0058309080',
+  appId: firebaseAppletConfig.appId || '1:477345081769:web:0e3ac3253582c56fde3cb8',
+  apiKey: firebaseAppletConfig.apiKey || '',
+  authDomain: firebaseAppletConfig.authDomain || 'gen-lang-client-0058309080.firebaseapp.com',
+  firestoreDatabaseId: firebaseAppletConfig.firestoreDatabaseId || 'ai-studio-virasatsih2026-1a85c5f4-bc6f-45d8-9d92-d07cc04c901a',
+  storageBucket: firebaseAppletConfig.storageBucket || 'gen-lang-client-0058309080.firebasestorage.app',
+  messagingSenderId: firebaseAppletConfig.messagingSenderId || '477345081769',
+  measurementId: firebaseAppletConfig.measurementId || '',
+  oAuthClientId: firebaseAppletConfig.oAuthClientId || '',
+  recaptchaSiteKey: firebaseAppletConfig.recaptchaSiteKey || '',
 };
 
 // Initialize Firebase App
