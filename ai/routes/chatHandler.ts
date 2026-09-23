@@ -127,6 +127,8 @@ aiChatRouter.post(
         .toString(36)
         .substring(2, 7)}`;
 
+    try {
+
     /**
      * Live browser/request context.
      */
@@ -359,6 +361,18 @@ Interests: ${tripState.interests?.join(', ') ||
           },
         ];
 
+        const conversationalIntents = [
+          'GREETING',
+          'CASUAL_CONVERSATION',
+          'ABOUT_VIRASAT',
+          'HELP',
+          'FAREWELL',
+          'THANKS',
+        ];
+
+        const needsTools = !conversationalIntents.includes(intentResult.intent);
+        const toolsConfig = needsTools ? { tools: geminiTools } : {};
+
         const modelNames = [
           'gemini-flash-latest',
           'gemini-3.1-flash-lite',
@@ -367,13 +381,14 @@ Interests: ${tripState.interests?.join(', ') ||
 
         for (const mName of modelNames) {
           try {
+            const timeoutMs = needsTools ? 14000 : 9000;
             const response = await Promise.race([
               ai.models.generateContent({
                 model: mName,
                 contents,
                 config: {
                   systemInstruction,
-                  tools: geminiTools,
+                  ...toolsConfig,
                 },
               }),
               new Promise<any>((_, reject) =>
@@ -382,7 +397,7 @@ Interests: ${tripState.interests?.join(', ') ||
                     reject(
                       new Error('Timeout')
                     ),
-                  6500
+                  timeoutMs
                 )
               ),
             ]);
@@ -445,7 +460,7 @@ Interests: ${tripState.interests?.join(', ') ||
                             'Timeout'
                           )
                         ),
-                      5500
+                      10000
                     )
                   ),
                 ]);
@@ -464,17 +479,15 @@ Interests: ${tripState.interests?.join(', ') ||
               usedEngine = mName;
               break;
             }
-          } catch (err) {
-            console.warn(
-              `[AI Router] ${mName} failed:`,
-              err
+          } catch (err: any) {
+            console.info(
+              `[AI Router] ${mName} transient fallback: ${err?.message || 'timed out or busy'}`
             );
           }
         }
-      } catch (err) {
-        console.warn(
-          '[AI Router] Gemini inference exception:',
-          err
+      } catch (err: any) {
+        console.info(
+          `[AI Router] Gemini inference fallback to Virasat Brain: ${err?.message || 'switched to deterministic'}`
         );
       }
     }
@@ -1876,5 +1889,19 @@ Interests: ${tripState.interests?.join(', ') ||
         },
       },
     });
+    } catch (routeErr: any) {
+      console.info('[AI Chat] Route fallback invoked:', routeErr?.message || routeErr);
+      res.json({
+        success: true,
+        conversation_id: sessionId,
+        session_id: sessionId,
+        reply: 'Namaste! Main Virasat AI Heritage Assistant hoon. Main aapko verified monuments, itineraries, trains, flights, aur hotels plan karne mein madad kar sakta hoon. Aap kahan ghoomna chahte hain?',
+        engine: 'Virasat Grounded Assistant (Deterministic Fallback)',
+        model_used: 'Virasat Grounded Assistant (Deterministic Fallback)',
+        suggested_actions: ['Explore Popular Monuments', 'Plan a 3-Day Trip', 'Find Heritage Hotels'],
+        tool_calls: [],
+        latency_ms: Date.now() - startTime,
+      });
+    }
   }
 );

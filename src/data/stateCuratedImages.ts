@@ -16,11 +16,11 @@ export const STATE_CURATED_IMAGES: Record<string, CuratedStateImage> = {
     tags: ['Le Corbusier Architecture', 'Rock Garden', 'Sukhna Lake'],
   },
   'delhi': {
-    imageUrl: 'https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=80',
-    creator: 'Unsplash / Qutub Complex',
-    landmark: 'Qutub Minar & Historic Monuments',
+    imageUrl: '/images/delhi-red-fort-4k.jpg',
+    creator: 'Getty Images / Delhi Heritage',
+    landmark: 'Red Fort (Lal Qila) & Lahori Gate',
     bestSeason: 'Oct - Mar',
-    tags: ['UNESCO Heritage', 'Red Fort', 'Humayun Tomb'],
+    tags: ['UNESCO Red Fort 4K', 'Tiranga Ramparts', 'Qutub Minar', 'Humayun Tomb', 'India Gate'],
   },
   'haryana': {
     imageUrl: '/images/haryana-kapal-mochan-4k.jpg',
@@ -72,11 +72,11 @@ export const STATE_CURATED_IMAGES: Record<string, CuratedStateImage> = {
     tags: ['UNESCO Taj Mahal', 'Varanasi Ghats', 'Ayodhya', 'Fatehpur Sikri'],
   },
   'uttarakhand': {
-    imageUrl: 'https://images.unsplash.com/photo-1584551246679-0daf3d275d0f?w=1200&auto=format&fit=crop&q=80',
-    creator: 'Unsplash / Kedarnath Himalayas',
-    landmark: 'Rishikesh Ganga & Garhwal Peaks',
-    bestSeason: 'Year-round',
-    tags: ['Yoga Capital Rishikesh', 'Char Dham', 'Jim Corbett'],
+    imageUrl: '/images/uttarakhand-kedarnath-4k.jpg',
+    creator: 'Shivam Kumar / Wikimedia Commons',
+    landmark: 'Kedarnath Temple & Garhwal Himalayas',
+    bestSeason: 'May - Jun, Sep - Nov',
+    tags: ['Kedarnath 4K', 'Char Dham Pilgrimage', 'Garhwal Himalayas', 'Rishikesh Yoga Capital'],
   },
 
   // Northeast Region
@@ -123,11 +123,11 @@ export const STATE_CURATED_IMAGES: Record<string, CuratedStateImage> = {
     tags: ['Hornbill Festival', 'Dzukou Valley', 'Tribal Heritage'],
   },
   'sikkim': {
-    imageUrl: 'https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?w=1200&auto=format&fit=crop&q=80',
-    creator: 'Unsplash / Kanchenjunga Sikkim',
-    landmark: 'Mt. Kanchenjunga & Gurudongmar',
+    imageUrl: '/images/sikkim-rabdentse-ruins-4k.jpg',
+    creator: 'Amitabha Gupta / Archaeological Survey of India (Wikimedia Commons)',
+    landmark: 'Rabdentse Palace Ruins & Kanchenjunga View, Pelling',
     bestSeason: 'Mar - May & Oct - Dec',
-    tags: ['Kanchenjunga UNESCO', 'Rumtek Gompa', 'Tsomgo Lake'],
+    tags: ['Rabdentse Royal Ruins', 'Ancient Capital of Sikkim', 'Chortens & Palace', 'Pemayangtse Heritage'],
   },
   'tripura': {
     imageUrl: 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80',
@@ -160,11 +160,11 @@ export const STATE_CURATED_IMAGES: Record<string, CuratedStateImage> = {
     tags: ['Baba Baidyanath Dham', 'Deoghar Jyotirlinga', 'Panchshul & Gathbandhan', 'Shravani Mela'],
   },
   'odisha': {
-    imageUrl: 'https://images.unsplash.com/photo-1627894483216-2138af692e32?w=1200&auto=format&fit=crop&q=80',
-    creator: 'Unsplash / Konark Sun Temple',
-    landmark: 'Konark Sun Temple & Jagannath Puri',
+    imageUrl: '/images/odisha-puri-jagannath-4k.jpg',
+    creator: 'Debojit Sahu / Wikimedia Commons',
+    landmark: 'Shree Jagannath Temple, Puri',
     bestSeason: 'Oct - Mar',
-    tags: ['UNESCO Sun Temple', 'Jagannath Puri Rath Yatra', 'Chilika Lake'],
+    tags: ['Jagannath Puri 4K', 'Rath Yatra & Nilachakra', 'Konark Sun Temple', 'Chilika Lake & Golden Beach'],
   },
   'west-bengal': {
     imageUrl: 'https://images.unsplash.com/photo-1558431382-27e303142255?w=1200&auto=format&fit=crop&q=80',
@@ -264,11 +264,11 @@ export const STATE_CURATED_IMAGES: Record<string, CuratedStateImage> = {
     tags: ['UNESCO Shore Temple', 'Madurai Meenakshi', 'Brihadeeswarar Thanjavur'],
   },
   'telangana': {
-    imageUrl: 'https://images.unsplash.com/photo-1572445271230-a78b5944a659?w=1200&auto=format&fit=crop&q=80',
-    creator: 'Unsplash / Hyderabad Charminar',
-    landmark: 'Charminar & Golconda Fort, Hyderabad',
+    imageUrl: '/images/telangana-charminar-4k.jpg',
+    creator: 'ASI / Hyderabad Old City Heritage',
+    landmark: 'Charminar & Historic Old City, Hyderabad',
     bestSeason: 'Oct - Mar',
-    tags: ['Charminar', 'UNESCO Ramappa Temple', 'Golconda Fort Acoustical Vaults'],
+    tags: ['Charminar 4K', 'UNESCO Ramappa Temple', 'Golconda Fort Acoustical Vaults', 'Laad Bazaar & Charkaman'],
   },
 };
 

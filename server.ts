@@ -3303,7 +3303,7 @@ ${placesContextStr}`;
       for (const modelName of candidateModels) {
         try {
           const timeoutPromise = new Promise((_, reject) =>
-            setTimeout(() => reject(new Error('Model timeout')), 8000)
+            setTimeout(() => reject(new Error('Model timeout')), 12000)
           );
           const callPromise = ai.models.generateContent({
             model: modelName,

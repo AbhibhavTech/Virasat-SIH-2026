@@ -297,7 +297,7 @@ ${transitContextStr}`;
             contents,
             config: { systemInstruction },
           }),
-          new Promise<any>((_, reject) => setTimeout(() => reject(new Error('Timeout')), 6500)),
+          new Promise<any>((_, reject) => setTimeout(() => reject(new Error('Timeout')), 12000)),
         ]);
         if (callRes?.text) {
           replyText = callRes.text;

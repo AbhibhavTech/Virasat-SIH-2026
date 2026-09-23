@@ -62,7 +62,7 @@
       "code": "TS",
       "region": "Southern India",
       "description": "The realm of the Nizams, pearl bazaars, and colossal medieval granite citadels.",
-      "hero_image_url": "https://images.unsplash.com/photo-1616198814651-e71f960c3180"
+      "hero_image_url": "/images/telangana-charminar-4k.jpg"
     },
     {
       "id": "west-bengal",
@@ -94,7 +94,7 @@
       "code": "SK",
       "region": "North-Eastern India",
       "description": "Himalayan Buddhist sanctum surrounded by Kanchenjunga peaks and ancient monasteries.",
-      "hero_image_url": "https://images.unsplash.com/photo-1617854818583-09e7f077a156"
+      "hero_image_url": "/images/sikkim-rabdentse-ruins-4k.jpg"
     }
   ],
   "cities": [
