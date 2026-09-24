@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mic, MicOff, AlertCircle } from 'lucide-react';
+import { Mic, MicOff, AlertCircle, X } from 'lucide-react';
 import { useVoiceInput } from '../../hooks/useVoiceInput';
 
 interface VoiceInputButtonProps {
@@ -43,6 +43,9 @@ export const VoiceInputButton: React.FC<VoiceInputButtonProps> = ({
   const handleClick = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
+    if (errorMessage) {
+      clearError();
+    }
     if (!isSupported) {
       alert('Voice search is not supported by your browser. Please try Chrome, Edge, or Safari.');
       return;
@@ -89,7 +92,7 @@ export const VoiceInputButton: React.FC<VoiceInputButtonProps> = ({
       {/* Floating Listening Banner / Live Feedback */}
       {isListening && (
         <div
-          className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 px-4 py-3 rounded-2xl bg-stone-900/95 text-white shadow-2xl backdrop-blur-md border border-stone-700/80 flex items-center gap-3 animate-fadeIn max-w-sm sm:max-w-md w-[90%]"
+          className="fixed bottom-20 md:bottom-8 left-1/2 -translate-x-1/2 z-50 px-4 py-3 rounded-2xl bg-stone-900/95 text-white shadow-2xl backdrop-blur-md border border-stone-700/80 flex items-center gap-3 animate-fadeIn max-w-sm sm:max-w-md w-[90%]"
           role="status"
           aria-live="polite"
         >
@@ -117,21 +120,68 @@ export const VoiceInputButton: React.FC<VoiceInputButtonProps> = ({
         </div>
       )}
 
-      {/* Error message popup */}
+      {/* Error message popup: Positioned ABOVE input area with high z-index, compact design, anchored near mic */}
       {errorMessage && (
-        <div className="absolute top-full mt-2 right-0 z-50 w-64 p-3 rounded-xl bg-white border border-rose-200 text-rose-700 shadow-xl text-xs space-y-1.5 animate-fadeIn">
-          <div className="flex items-center gap-1.5 font-bold">
-            <AlertCircle className="w-4 h-4 text-rose-500 shrink-0" />
-            <span>Voice Input Notice</span>
+        <div
+          className="absolute bottom-full mb-2.5 right-0 z-50 w-64 sm:w-72 max-w-[calc(100vw-2rem)] p-2.5 sm:p-3 rounded-xl bg-white border border-rose-200 text-stone-800 shadow-xl space-y-1.5 animate-fadeIn select-none"
+          role="alert"
+          aria-live="assertive"
+        >
+          {/* Header with Title and Close X Button */}
+          <div className="flex items-center justify-between gap-1.5 pb-1 border-b border-rose-100">
+            <div className="flex items-center gap-1.5 font-bold text-rose-800 text-[11px] sm:text-xs">
+              <AlertCircle className="w-3.5 h-3.5 text-rose-500 shrink-0" />
+              <span>Microphone access denied</span>
+            </div>
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                clearError();
+              }}
+              className="p-0.5 text-stone-400 hover:text-stone-700 rounded hover:bg-stone-100 transition cursor-pointer"
+              title="Close notice"
+              aria-label="Close notice"
+            >
+              <X className="w-3.5 h-3.5" />
+            </button>
           </div>
-          <p className="text-[11px] text-stone-600 leading-relaxed">{errorMessage}</p>
-          <button
-            type="button"
-            onClick={clearError}
-            className="text-[10px] font-bold uppercase text-stone-400 hover:text-stone-700 underline cursor-pointer"
-          >
-            Dismiss
-          </button>
+
+          {/* Compact error message (1-2 lines) */}
+          <p className="text-[11px] text-stone-600 leading-snug font-sans line-clamp-2">
+            {errorMessage}
+          </p>
+
+          {/* Actions: Small Retry & Dismiss */}
+          <div className="flex items-center justify-end gap-1.5 pt-0.5 text-[10px] sm:text-[11px]">
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                clearError();
+                toggleListening();
+              }}
+              className="px-2 py-0.5 font-semibold bg-rose-600 hover:bg-rose-700 text-white rounded-md transition cursor-pointer shadow-2xs"
+            >
+              Retry
+            </button>
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                clearError();
+              }}
+              className="px-2 py-0.5 font-medium text-stone-600 hover:text-stone-800 hover:bg-stone-100 rounded-md transition border border-stone-200 cursor-pointer"
+            >
+              Dismiss
+            </button>
+          </div>
+
+          {/* Downward indicator pointer anchored to microphone button */}
+          <div
+            className="absolute -bottom-1 right-3.5 w-2.5 h-2.5 bg-white border-r border-b border-rose-200 rotate-45 pointer-events-none"
+            aria-hidden="true"
+          />
         </div>
       )}
 

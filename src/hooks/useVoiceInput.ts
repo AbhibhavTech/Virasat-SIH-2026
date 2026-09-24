@@ -75,7 +75,7 @@ export function useVoiceInput({
     setIsListening(false);
   }, []);
 
-  const startListening = useCallback(() => {
+  const startListening = useCallback(async () => {
     setErrorMessage(null);
     finalTranscriptAccumulator.current = '';
     setTranscript('');
@@ -83,11 +83,48 @@ export function useVoiceInput({
 
     if (typeof window === 'undefined') return;
 
+    // Check if permission was already permanently denied at the browser site-settings level
+    if (navigator.permissions && navigator.permissions.query) {
+      try {
+        const permissionStatus = await navigator.permissions.query({ name: 'microphone' as PermissionName });
+        if (permissionStatus.state === 'denied') {
+          setErrorMessage('Microphone blocked in browser. Please enable microphone access in your browser site settings.');
+          setIsListening(false);
+          return;
+        }
+      } catch (e) {
+        // navigator.permissions.query may not support 'microphone' in some browsers/environments; ignore and proceed
+      }
+    }
+
+    // Explicitly request browser microphone permission using the native Web Media API
+    // directly from the user click event. This triggers the browser's native prompt if not yet decided.
+    let audioStream: MediaStream | null = null;
+    if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+      try {
+        audioStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      } catch (err: any) {
+        console.warn('Microphone permission denied or unavailable:', err);
+        const isDenied = err.name === 'NotAllowedError' || err.name === 'PermissionDeniedError';
+        if (isDenied) {
+          setErrorMessage('Microphone access was denied. Please allow microphone permissions in your browser settings.');
+        } else {
+          setErrorMessage('Microphone not detected. Please ensure a microphone is connected and allowed.');
+        }
+        setIsListening(false);
+        return;
+      }
+    }
+
     const SpeechRecognitionClass =
       window.SpeechRecognition || window.webkitSpeechRecognition;
 
     if (!SpeechRecognitionClass) {
+      if (audioStream) {
+        audioStream.getTracks().forEach((track) => track.stop());
+      }
       setErrorMessage('Speech recognition is not supported in this browser. Please use Chrome, Edge, or Safari.');
+      setIsListening(false);
       return;
     }
 
@@ -141,7 +178,7 @@ export function useVoiceInput({
       recognition.onerror = (event: SpeechRecognitionErrorEvent) => {
         let message = 'Error recognizing speech.';
         if (event.error === 'not-allowed' || event.error === 'service-not-allowed') {
-          message = 'Microphone permission was denied. Please allow microphone access in your browser.';
+          message = 'Microphone permission was denied. Please allow microphone access in your browser site settings.';
         } else if (event.error === 'no-speech') {
           message = 'No speech detected. Please speak clearly into your microphone.';
         } else if (event.error === 'network') {
@@ -156,6 +193,14 @@ export function useVoiceInput({
 
       recognition.onend = () => {
         setIsListening(false);
+        // Release audio stream when speech recognition ends
+        if (audioStream) {
+          try {
+            audioStream.getTracks().forEach((track) => track.stop());
+          } catch (e) {
+            // no-op
+          }
+        }
         const finalRecorded = finalTranscriptAccumulator.current.trim();
         if (finalRecorded && onFinalResult) {
           onFinalResult(finalRecorded);
@@ -165,6 +210,13 @@ export function useVoiceInput({
       recognitionRef.current = recognition;
       recognition.start();
     } catch (err) {
+      if (audioStream) {
+        try {
+          audioStream.getTracks().forEach((track) => track.stop());
+        } catch (e) {
+          // no-op
+        }
+      }
       console.error('Failed to start speech recognition:', err);
       setErrorMessage('Could not initialize voice input.');
       setIsListening(false);
