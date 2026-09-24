@@ -26,6 +26,7 @@ import {
 } from 'lucide-react';
 import { api } from '../../services/api';
 import { AIChatMessage, UserLocationContext, TransitComparison, GroundingCitation } from '../../types';
+import { VoiceInputButton } from '../common/VoiceInputButton';
 
 interface ExtendedChatMessage extends AIChatMessage {
   suggested_places?: Array<{
@@ -882,17 +883,30 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
             }}
             className="flex items-center gap-2"
           >
-            <input
-              type="text"
-              value={input}
-              onChange={(e) => setInput(e.target.value)}
-              placeholder="Ask Virasat about any destination, explore near me, compare transit, or plan an itinerary..."
-              className="flex-1 px-4 py-3 sm:py-3.5 rounded-2xl bg-[#FAF8F5] border border-[#EFE8DF] text-xs sm:text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#FF671F] focus:bg-white focus:ring-1 focus:ring-[#FF671F] transition"
-            />
+            <div className="relative flex-1">
+              <input
+                type="text"
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                placeholder="Ask Virasat about any destination, explore near me, compare transit, or plan an itinerary..."
+                className="w-full pl-4 pr-12 py-3 sm:py-3.5 rounded-2xl bg-[#FAF8F5] border border-[#EFE8DF] text-xs sm:text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#FF671F] focus:bg-white focus:ring-1 focus:ring-[#FF671F] transition"
+              />
+              <div className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center">
+                <VoiceInputButton
+                  variant="ai"
+                  title="Speak to Virasat AI"
+                  placeholderPrompt="Listening... (e.g. 'Plan a 3-day trip to Jaipur')"
+                  onTranscript={(text) => setInput(text)}
+                  onFinalTranscript={(text) => {
+                    setInput(text);
+                  }}
+                />
+              </div>
+            </div>
             <button
               type="submit"
               disabled={loading || !input.trim()}
-              className="px-5 sm:px-6 py-3 sm:py-3.5 rounded-2xl bg-[#FF671F] hover:bg-[#E65100] disabled:opacity-40 disabled:cursor-not-allowed text-white text-xs sm:text-sm font-bold transition shadow-xs flex items-center gap-2 shrink-0"
+              className="px-5 sm:px-6 py-3 sm:py-3.5 rounded-2xl bg-[#FF671F] hover:bg-[#E65100] disabled:opacity-40 disabled:cursor-not-allowed text-white text-xs sm:text-sm font-bold transition shadow-xs flex items-center gap-2 shrink-0 cursor-pointer"
               aria-label="Send message"
             >
               <span>Ask</span>

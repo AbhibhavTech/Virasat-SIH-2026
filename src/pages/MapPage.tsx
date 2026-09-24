@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Map as MapIcon, Layers, Sparkles, Navigation } from 'lucide-react';
+import { Map as MapIcon, Landmark, Sparkles, Train } from 'lucide-react';
 import { InteractiveMap } from '../components/map/InteractiveMap';
 import { MapErrorBoundary } from '../components/map/MapErrorBoundary';
 
@@ -18,30 +18,30 @@ export const MapPage: React.FC<MapPageProps> = ({
 }) => {
   return (
     <div className="space-y-4 w-full pb-8">
-      {/* Header Banner */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 rounded-3xl bg-white border border-slate-200 shadow-sm">
+      {/* Header Banner - Minimal and clean for SIH prototype */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-5 rounded-3xl bg-white border border-stone-200/80 shadow-xs">
         <div className="space-y-1">
-          <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-bold">
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200 text-xs font-bold">
             <MapIcon className="w-3.5 h-3.5" />
-            <span>Real Virasat Cartography & Routing</span>
+            <span>Smart SIH Heritage Cartography</span>
           </div>
-          <h1 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">Interactive Heritage & Transit Map</h1>
-          <p className="text-xs text-slate-500">
-            India-wide geospatial network spanning 45 UNESCO/ASI heritage sites, suburban railway hubs, and multi-modal routing.
+          <h1 className="text-xl sm:text-2xl font-black text-stone-900 tracking-tight">Interactive Heritage & Discovery Map</h1>
+          <p className="text-xs text-stone-500 max-w-2xl">
+            Clustered geospatial view of verified UNESCO/ASI monuments and hidden gems across India with search, GPS location, and Route Studio.
           </p>
         </div>
 
-        <div className="flex flex-wrap items-center gap-2 text-xs font-semibold text-slate-600 bg-slate-50 p-2.5 rounded-2xl border border-slate-200">
-          <span className="flex items-center gap-1">
-            <span className="w-2.5 h-2.5 rounded-full bg-orange-500 inline-block" /> 45 Heritage Sites
+        <div className="flex flex-wrap items-center gap-2 text-xs font-semibold text-stone-600 bg-stone-50 p-2.5 rounded-2xl border border-stone-200/80">
+          <span className="flex items-center gap-1.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-amber-600 inline-block" /> 🏛️ Heritage Sites
           </span>
-          <span className="text-slate-300">•</span>
-          <span className="flex items-center gap-1">
-            <span className="w-2.5 h-2.5 rounded-full bg-sky-500 inline-block" /> Rail Network
+          <span className="text-stone-300">•</span>
+          <span className="flex items-center gap-1.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-purple-600 inline-block" /> 💎 Hidden Gems
           </span>
-          <span className="text-slate-300">•</span>
-          <span className="flex items-center gap-1">
-            <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 inline-block" /> Sights
+          <span className="text-stone-300">•</span>
+          <span className="flex items-center gap-1.5 text-stone-400">
+            <span className="w-2.5 h-2.5 rounded-full bg-sky-500 inline-block" /> 🚆 Stations (Default Off)
           </span>
         </div>
       </div>

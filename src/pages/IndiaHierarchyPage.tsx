@@ -13,6 +13,8 @@ import {
   Eye,
   ChevronRight,
   ChevronLeft,
+  ChevronUp,
+  ChevronDown,
   Sparkles,
   ExternalLink,
   Navigation,
@@ -32,7 +34,11 @@ import {
   Building2,
   Dice5,
   ArrowUpDown,
+  Trash2,
+  History,
+  AlertTriangle,
 } from 'lucide-react';
+import { VoiceInputButton } from '../components/common/VoiceInputButton';
 import {
   StateHierarchyEntity,
   CityHierarchyEntity,
@@ -111,6 +117,13 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
   const [sortBy, setSortBy] = useState<SortOption>('default');
   const [activeCategoryFilter, setActiveCategoryFilter] = useState<string>('all');
   const [territoryTab, setTerritoryTab] = useState<TerritoryTab>('states');
+  const [showAllCards, setShowAllCards] = useState<boolean>(false);
+
+  // 6 Popular Featured Destinations for clean minimal SIH prototype presentation
+  const FEATURED_STATE_IDS = useMemo(
+    () => ['rajasthan', 'kerala', 'maharashtra', 'delhi', 'uttar-pradesh', 'goa'],
+    []
+  );
 
   // State Quick Look Modal
   const [quickLookState, setQuickLookState] = useState<StateHierarchyEntity | null>(null);
@@ -143,6 +156,75 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
     const randomIndex = Math.floor(Math.random() * db.states.length);
     const randomState = db.states[randomIndex];
     setQuickLookState(randomState);
+  };
+
+  // Recent Searches for Explore Bharat Page
+  const [exploreRecentSearches, setExploreRecentSearches] = useState<Array<{ id: string; query: string; timestamp: number }>>(() => {
+    try {
+      const stored =
+        localStorage.getItem('virasat_explore_recent_searches') ||
+        localStorage.getItem('virasat_recent_searches');
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        if (Array.isArray(parsed)) {
+          return parsed.filter(
+            (item) => item && typeof item.query === 'string' && item.query.trim().length > 0
+          );
+        }
+      }
+    } catch {
+      // fallback
+    }
+    return [];
+  });
+
+  const [showClearConfirmModal, setShowClearConfirmModal] = useState(false);
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
+
+  // Close modal on Escape key
+  useEffect(() => {
+    if (!showClearConfirmModal) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setShowClearConfirmModal(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [showClearConfirmModal]);
+
+  const saveExploreRecentSearches = (items: Array<{ id: string; query: string; timestamp: number }>) => {
+    setExploreRecentSearches(items);
+    try {
+      localStorage.setItem('virasat_explore_recent_searches', JSON.stringify(items));
+    } catch (e) {
+      console.warn('Failed to save explore recent searches:', e);
+    }
+  };
+
+  const recordExploreSearch = (term: string) => {
+    const trimmed = term.trim();
+    if (!trimmed || trimmed.length < 2) return;
+    const lower = trimmed.toLowerCase();
+    const filtered = exploreRecentSearches.filter((item) => item.query.toLowerCase() !== lower);
+    const updated = [
+      { id: `${Date.now()}_${Math.random().toString(36).slice(2, 6)}`, query: trimmed, timestamp: Date.now() },
+      ...filtered,
+    ].slice(0, 10);
+    saveExploreRecentSearches(updated);
+  };
+
+  const handleRemoveRecentSearch = (queryToRemove: string, e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
+    const updated = exploreRecentSearches.filter(
+      (item) => item.query.toLowerCase() !== queryToRemove.toLowerCase()
+    );
+    saveExploreRecentSearches(updated);
+  };
+
+  const handleConfirmClearAll = () => {
+    saveExploreRecentSearches([]);
+    setShowClearConfirmModal(false);
   };
 
   // Broken Image Tracker (Replaces hardcoded Taj Mahal fallbacks)
@@ -184,16 +266,15 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
     []
   );
 
-  // Regions list
+  // Simple 6 Geographic Region filters per SIH prototype guidelines
   const regions = [
     'All',
-    'Northern India',
-    'Western India',
-    'Southern India',
-    'Eastern India',
-    'Central India',
-    'Northeastern India',
-    'Union Territories',
+    'North',
+    'South',
+    'East',
+    'West',
+    'Central',
+    'Northeast',
   ];
 
   // Currently Selected State
@@ -321,15 +402,23 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
 
       // Region match
       if (selectedRegion !== 'All') {
-        if (selectedRegion === 'Union Territories') {
-          const isUT = CANONICAL_UTS.has(state.id) || state.region_type === 'union_territory';
-          if (!isUT) return false;
-        } else {
-          const match = state.region
-            .toLowerCase()
-            .includes(selectedRegion.toLowerCase().replace(' india', ''));
-          if (!match) return false;
+        const reg = selectedRegion.toLowerCase();
+        const stateReg = (state.region || '').toLowerCase();
+        let match = false;
+        if (reg === 'north') {
+          match = (stateReg.includes('north') || stateReg.includes('ncr')) && !stateReg.includes('northeast') && !stateReg.includes('north-east') && !stateReg.includes('eastern');
+        } else if (reg === 'south') {
+          match = stateReg.includes('south');
+        } else if (reg === 'east') {
+          match = stateReg.includes('east') && !stateReg.includes('northeast') && !stateReg.includes('north-east');
+        } else if (reg === 'west') {
+          match = stateReg.includes('west');
+        } else if (reg === 'central') {
+          match = stateReg.includes('central');
+        } else if (reg === 'northeast') {
+          match = stateReg.includes('northeast') || stateReg.includes('north-east') || stateReg.includes('north eastern');
         }
+        if (!match) return false;
       }
 
       // Experience / Theme filter
@@ -392,6 +481,15 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
       (s) => s.region_type === 'union_territory' || CANONICAL_UTS.has(s.id)
     );
   }, [filteredStates, CANONICAL_UTS]);
+
+  // 6 Featured destinations shown first for clean minimal view, or all 28 states when expanded or filtered
+  const displayedStates = useMemo(() => {
+    if (showAllCards || searchQuery.trim() || selectedRegion !== 'All' || territoryTab !== 'states') {
+      return statesList;
+    }
+    const featured = statesList.filter((s) => FEATURED_STATE_IDS.includes(s.id));
+    return featured.length >= 6 ? featured.slice(0, 6) : statesList.slice(0, 6);
+  }, [statesList, showAllCards, searchQuery, selectedRegion, territoryTab, FEATURED_STATE_IDS]);
 
   // Global search suggestions when typing
   const searchResults = useMemo(() => {
@@ -914,22 +1012,13 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
               </div>
 
               {/* Right Controls: View Switcher (Grid vs Map) */}
-              <div className="flex flex-wrap items-center gap-2 shrink-0 self-start lg:self-auto">
-                <button
-                  onClick={handleSurpriseMe}
-                  className="px-3 sm:px-3.5 py-1.5 sm:py-2 rounded-xl sm:rounded-2xl bg-gradient-to-r from-amber-500 via-[#FF671F] to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white text-[11px] sm:text-xs font-bold transition-all shadow-xs hover:shadow-md flex items-center gap-1.5 cursor-pointer active:scale-95"
-                  title="Discover a random state or Union Territory"
-                >
-                  <Dice5 className="w-3.5 h-3.5" />
-                  <span>Surprise Me!</span>
-                </button>
-
+              <div className="flex items-center gap-2 shrink-0 self-start lg:self-auto">
                 <div className="flex items-center p-0.5 sm:p-1 rounded-xl sm:rounded-2xl bg-[#F5EFEB] border border-[#E7DFD5]">
                   <button
                     onClick={() => setViewMode('grid')}
                     className={`px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-bold transition flex items-center gap-1.5 cursor-pointer ${
                       viewMode === 'grid'
-                        ? 'bg-white text-[#FF671F] shadow-xs'
+                        ? 'bg-white text-amber-800 shadow-xs'
                         : 'text-[#7A6E65] hover:text-[#0B192C]'
                     }`}
                   >
@@ -940,7 +1029,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                     onClick={() => setViewMode('map')}
                     className={`px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-bold transition flex items-center gap-1.5 cursor-pointer ${
                       viewMode === 'map'
-                        ? 'bg-white text-[#FF671F] shadow-xs'
+                        ? 'bg-white text-amber-800 shadow-xs'
                         : 'text-[#7A6E65] hover:text-[#0B192C]'
                     }`}
                   >
@@ -951,28 +1040,81 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
               </div>
             </div>
 
+            {/* Prominent AI "Surprise Me!" Spotlight Feature Banner */}
+            <div className="mt-5 p-4 sm:p-5 rounded-2xl bg-gradient-to-r from-amber-500/10 via-orange-500/10 to-amber-700/10 border border-amber-500/30 flex flex-col sm:flex-row sm:items-center justify-between gap-4 shadow-2xs">
+              <div className="flex items-center gap-3.5">
+                <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-amber-600 via-orange-600 to-amber-700 text-white flex items-center justify-center shrink-0 shadow-md">
+                  <Sparkles className="w-5 h-5 animate-pulse" />
+                </div>
+                <div>
+                  <div className="flex items-center gap-2">
+                    <h3 className="text-sm sm:text-base font-bold text-stone-900">
+                      Can&apos;t decide where to explore?
+                    </h3>
+                    <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 border border-amber-300">
+                      AI Discovery
+                    </span>
+                  </div>
+                  <p className="text-xs text-stone-600 mt-0.5">
+                    Let Virasat AI select an offbeat heritage destination across India for your next trip.
+                  </p>
+                </div>
+              </div>
+
+              <button
+                onClick={handleSurpriseMe}
+                className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 hover:from-amber-700 hover:to-orange-700 text-white text-xs sm:text-sm font-bold transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 cursor-pointer active:scale-95 shrink-0"
+                title="Discover a random state or Union Territory with AI"
+              >
+                <Dice5 className="w-4 h-4" />
+                <span>Surprise Me! — AI Discovery</span>
+              </button>
+            </div>
+
           {/* Unified Controls: Territory Tabs, Search & Filter Bar (Zero dead space) */}
           <div className="mt-4 sm:mt-6 pt-3.5 sm:pt-5 border-t border-[#EFE8DF] space-y-3 sm:space-y-4">
             <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-3 sm:gap-4">
-              {/* Search input with clean autocomplete */}
+              {/* Search input with clean autocomplete & voice input */}
               <div className="relative w-full lg:w-96 shrink-0">
                 <Search className="absolute left-3.5 top-3 w-4 h-4 text-[#FF671F]" />
                 <input
                   type="text"
                   value={searchQuery}
+                  onFocus={() => setIsSearchFocused(true)}
+                  onBlur={() => {
+                    setTimeout(() => setIsSearchFocused(false), 250);
+                  }}
                   onChange={(e) => setSearchQuery(e.target.value)}
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' && searchQuery.trim()) {
+                      recordExploreSearch(searchQuery);
+                    }
+                  }}
                   placeholder="Search 36 states/UTs, 257 towns, or monuments..."
-                  className="w-full pl-10 pr-10 py-2 sm:py-2.5 bg-white border border-[#D5C7B8] rounded-xl text-xs text-[#0B192C] placeholder:text-[#A09388] focus:outline-none focus:border-[#FF671F] focus:ring-1 focus:ring-[#FF671F] transition shadow-xs"
+                  className="w-full pl-10 pr-20 py-2 sm:py-2.5 bg-white border border-[#D5C7B8] rounded-xl text-xs text-[#0B192C] placeholder:text-[#A09388] focus:outline-none focus:border-[#FF671F] focus:ring-1 focus:ring-[#FF671F] transition shadow-xs"
                 />
-                {searchQuery && (
-                  <button
-                    onClick={() => setSearchQuery('')}
-                    className="absolute right-3 top-2.5 text-stone-400 hover:text-stone-700 cursor-pointer"
-                    aria-label="Clear search"
-                  >
-                    <X className="w-4 h-4" />
-                  </button>
-                )}
+
+                <div className="absolute right-2.5 top-1/2 -translate-y-1/2 flex items-center gap-0.5">
+                  {searchQuery && (
+                    <button
+                      onClick={() => setSearchQuery('')}
+                      className="p-1 text-stone-400 hover:text-stone-700 cursor-pointer"
+                      aria-label="Clear search"
+                    >
+                      <X className="w-3.5 h-3.5" />
+                    </button>
+                  )}
+                  <VoiceInputButton
+                    variant="minimal"
+                    title="Speak to search Explore Bharat"
+                    placeholderPrompt="Listening... Say any state, town, or monument"
+                    onTranscript={(text) => setSearchQuery(text)}
+                    onFinalTranscript={(text) => {
+                      setSearchQuery(text);
+                      recordExploreSearch(text);
+                    }}
+                  />
+                </div>
 
                 {/* Instant Search Results Dropdown */}
                 {searchResults && (
@@ -989,6 +1131,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                               key={s.id}
                               onClick={() => {
                                 handleSelectState(s.id);
+                                recordExploreSearch(s.name);
                                 setSearchQuery('');
                               }}
                               className="w-full text-left px-3 py-2 rounded-xl text-xs hover:bg-[#FAF8F5] flex items-center justify-between transition cursor-pointer"
@@ -1015,6 +1158,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                               key={`${t.stateId}-${t.townId}`}
                               onClick={() => {
                                 handleSelectTown(t.stateId, t.townId);
+                                recordExploreSearch(t.townName);
                                 setSearchQuery('');
                               }}
                               className="w-full text-left px-3 py-2 rounded-xl text-xs hover:bg-[#FAF8F5] flex items-center justify-between transition cursor-pointer"
@@ -1045,6 +1189,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                               onClick={() => {
                                 handleSelectTown(item.stateId, item.townId);
                                 setPreviewPlace(item.place);
+                                recordExploreSearch(item.place.name);
                                 setSearchQuery('');
                               }}
                               className="w-full text-left px-3 py-2 rounded-xl text-xs hover:bg-[#FAF8F5] flex items-center justify-between transition cursor-pointer"
@@ -1073,6 +1218,59 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                       )}
                   </div>
                 )}
+
+                {/* Dropdown for Recent Searches when search box is focused and query is empty */}
+                {isSearchFocused && !searchQuery.trim() && exploreRecentSearches.length > 0 && !searchResults && (
+                  <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl border border-[#EFE8DF] shadow-xl p-3 z-30 space-y-2 animate-fadeIn">
+                    <div className="flex items-center justify-between px-1 pb-1 border-b border-stone-100">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-[#FF671F] flex items-center gap-1">
+                        <History className="w-3 h-3" />
+                        <span>Recent Searches</span>
+                      </span>
+                      <button
+                        type="button"
+                        onMouseDown={(e) => {
+                          e.preventDefault();
+                          setShowClearConfirmModal(true);
+                        }}
+                        className="text-[10px] font-semibold text-rose-600 hover:text-rose-700 hover:underline cursor-pointer flex items-center gap-1"
+                      >
+                        <Trash2 className="w-2.5 h-2.5" />
+                        <span>Clear All</span>
+                      </button>
+                    </div>
+                    <div className="space-y-1">
+                      {exploreRecentSearches.slice(0, 6).map((item) => (
+                        <div
+                          key={item.id}
+                          onMouseDown={(e) => {
+                            e.preventDefault();
+                            setSearchQuery(item.query);
+                            recordExploreSearch(item.query);
+                          }}
+                          className="w-full text-left px-2.5 py-1.5 rounded-xl text-xs hover:bg-orange-50/70 text-stone-700 flex items-center justify-between transition cursor-pointer group"
+                        >
+                          <div className="flex items-center gap-2 min-w-0">
+                            <Clock className="w-3 h-3 text-stone-400 group-hover:text-[#FF671F] shrink-0" />
+                            <span className="font-medium group-hover:text-stone-900 truncate">{item.query}</span>
+                          </div>
+                          <button
+                            type="button"
+                            onMouseDown={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              handleRemoveRecentSearch(item.query);
+                            }}
+                            className="p-1 text-stone-300 hover:text-stone-600 rounded-md shrink-0"
+                            title="Remove from history"
+                          >
+                            <X className="w-3 h-3" />
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
 
               {/* State vs UT vs Wishlist Toggle Tabs & Sort Selector */}
@@ -1083,12 +1281,14 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                       onClick={() => setTerritoryTab('states')}
                       className={`px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-bold transition flex items-center gap-1 sm:gap-1.5 cursor-pointer whitespace-nowrap shrink-0 ${
                         territoryTab === 'states'
-                          ? 'bg-white text-[#FF671F] shadow-xs'
+                          ? 'bg-[#FF671F] text-white shadow-xs'
                           : 'text-[#7A6E65] hover:text-[#0B192C]'
                       }`}
                     >
                       <span>28 States</span>
-                      <span className="px-1.5 py-0.2 rounded-full text-[9px] sm:text-[10px] bg-orange-100 text-[#FF671F]">
+                      <span className={`px-1.5 py-0.2 rounded-full text-[9px] sm:text-[10px] ${
+                        territoryTab === 'states' ? 'bg-white/25 text-white' : 'bg-orange-100 text-[#FF671F]'
+                      }`}>
                         {isLoading ? '...' : statesList.length}
                       </span>
                     </button>
@@ -1097,12 +1297,14 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                       onClick={() => setTerritoryTab('uts')}
                       className={`px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-bold transition flex items-center gap-1 sm:gap-1.5 cursor-pointer whitespace-nowrap shrink-0 ${
                         territoryTab === 'uts'
-                          ? 'bg-white text-[#FF671F] shadow-xs'
+                          ? 'bg-[#FF671F] text-white shadow-xs'
                           : 'text-[#7A6E65] hover:text-[#0B192C]'
                       }`}
                     >
                       <span>8 UTs</span>
-                      <span className="px-1.5 py-0.2 rounded-full text-[9px] sm:text-[10px] bg-stone-200 text-stone-700">
+                      <span className={`px-1.5 py-0.2 rounded-full text-[9px] sm:text-[10px] ${
+                        territoryTab === 'uts' ? 'bg-white/25 text-white' : 'bg-stone-200 text-stone-700'
+                      }`}>
                         {isLoading ? '...' : utsList.length}
                       </span>
                     </button>
@@ -1111,12 +1313,14 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                       onClick={() => setTerritoryTab('all')}
                       className={`px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-bold transition flex items-center gap-1 sm:gap-1.5 cursor-pointer whitespace-nowrap shrink-0 ${
                         territoryTab === 'all'
-                          ? 'bg-white text-[#FF671F] shadow-xs'
+                          ? 'bg-[#FF671F] text-white shadow-xs'
                           : 'text-[#7A6E65] hover:text-[#0B192C]'
                       }`}
                     >
                       <span>All 36</span>
-                      <span className="px-1.5 py-0.2 rounded-full text-[9px] sm:text-[10px] bg-stone-200 text-stone-700">
+                      <span className={`px-1.5 py-0.2 rounded-full text-[9px] sm:text-[10px] ${
+                        territoryTab === 'all' ? 'bg-white/25 text-white' : 'bg-stone-200 text-stone-700'
+                      }`}>
                         {isLoading ? '...' : filteredStates.length}
                       </span>
                     </button>
@@ -1157,9 +1361,63 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
               )}
             </div>
 
+            {/* Recent Searches Section on Explore Bharat */}
+            {exploreRecentSearches.length > 0 && (
+              <div className="flex items-center gap-2 overflow-x-auto pb-1.5 pt-2 border-t border-dashed border-[#EFE8DF] scrollbar-none no-scrollbar">
+                <div className="flex items-center gap-1.5 text-[11px] font-bold text-stone-500 uppercase tracking-wider shrink-0 mr-1">
+                  <History className="w-3.5 h-3.5 text-[#FF671F]" />
+                  <span className="hidden sm:inline">Recent Searches:</span>
+                  <span className="sm:hidden">Recent:</span>
+                </div>
+
+                <div className="flex items-center gap-1.5 shrink-0 flex-wrap sm:flex-nowrap">
+                  {exploreRecentSearches.map((item) => {
+                    const isCurrent = searchQuery.toLowerCase() === item.query.toLowerCase();
+                    return (
+                      <div
+                        key={item.id}
+                        onClick={() => {
+                          setSearchQuery(item.query);
+                          recordExploreSearch(item.query);
+                        }}
+                        className={`group inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold transition-all cursor-pointer border shadow-2xs ${
+                          isCurrent
+                            ? 'bg-orange-50 text-[#FF671F] border-orange-300 ring-1 ring-[#FF671F]/30'
+                            : 'bg-white text-stone-700 hover:text-[#FF671F] hover:bg-orange-50/50 border-stone-200 hover:border-orange-200'
+                        }`}
+                        title={`Search "${item.query}"`}
+                      >
+                        <Clock className="w-3 h-3 text-stone-400 group-hover:text-[#FF671F] transition-colors" />
+                        <span className="truncate max-w-[130px] sm:max-w-[170px]">{item.query}</span>
+                        <button
+                          type="button"
+                          onClick={(e) => handleRemoveRecentSearch(item.query, e)}
+                          className="p-0.5 rounded-full hover:bg-stone-200/70 text-stone-400 hover:text-stone-700 transition"
+                          title={`Remove "${item.query}" from history`}
+                          aria-label={`Remove ${item.query}`}
+                        >
+                          <X className="w-2.5 h-2.5" />
+                        </button>
+                      </div>
+                    );
+                  })}
+                </div>
+
+                <button
+                  type="button"
+                  onClick={() => setShowClearConfirmModal(true)}
+                  className="inline-flex items-center gap-1 text-xs font-semibold text-rose-600 hover:text-rose-700 bg-rose-50 hover:bg-rose-100 border border-rose-200/80 px-2.5 py-1 rounded-xl transition ml-2 whitespace-nowrap cursor-pointer shrink-0 shadow-2xs active:scale-95"
+                  title="Clear all explore search history"
+                >
+                  <Trash2 className="w-3 h-3" />
+                  <span>Clear All</span>
+                </button>
+              </div>
+            )}
+
             {/* Region Filter Pills (Applicable on Level 1) */}
             {activeLevel === 'india' && viewMode === 'grid' && (
-              <div className="space-y-2 pt-1">
+              <div className="pt-1">
                 <div className="flex items-center gap-1 sm:gap-1.5 overflow-x-auto pb-1 scrollbar-none no-scrollbar">
                   <span className="text-[10px] font-bold text-stone-400 uppercase tracking-wider mr-1 hidden md:inline shrink-0">
                     Region:
@@ -1180,33 +1438,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                       }`}
                     >
                       {reg}
-                    </button>
-                  ))}
-                </div>
-
-                {/* Experience / Theme Filter Pills */}
-                <div className="flex items-center gap-1 sm:gap-1.5 overflow-x-auto pb-1 scrollbar-none no-scrollbar">
-                  <span className="text-[10px] font-bold text-stone-400 uppercase tracking-wider mr-1 hidden md:inline shrink-0">
-                    Experience:
-                  </span>
-                  {[
-                    { id: 'all', label: 'All Experiences' },
-                    { id: 'unesco', label: '🏛️ UNESCO' },
-                    { id: 'hills', label: '⛰️ Hill Stations' },
-                    { id: 'coastal', label: '🌊 Coastal' },
-                    { id: 'forts', label: '🏰 Forts & Palaces' },
-                    { id: 'spiritual', label: '🛕 Sacred' },
-                  ].map((theme) => (
-                    <button
-                      key={theme.id}
-                      onClick={() => setSelectedTheme(theme.id)}
-                      className={`px-2.5 sm:px-3 py-1 sm:py-1.2 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-semibold whitespace-nowrap transition cursor-pointer flex items-center gap-1 shrink-0 ${
-                        selectedTheme === theme.id
-                          ? 'bg-[#0B192C] text-white shadow-xs'
-                          : 'bg-[#FAF8F5] hover:bg-white text-[#5A4E46] border border-[#EFE8DF]'
-                      }`}
-                    >
-                      <span>{theme.label}</span>
                     </button>
                   ))}
                 </div>
@@ -1316,7 +1547,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                         </button>
                       </div>
                     ) : (
-                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {filteredStates.map((state) => (
                           <StateCard
                             key={state.id}
@@ -1340,28 +1571,32 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                     <HeritageDivider
                       variant="lotus"
                       accent="saffron"
-                      label="28 States of Bharat"
+                      label={!showAllCards && !searchQuery.trim() && selectedRegion === 'All' && territoryTab === 'states' ? "Featured Destinations" : "28 States of Bharat"}
                       subtitle="Sovereign landscapes, historic kingdoms & cultural sanctuaries"
                     />
 
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <span className="text-xs font-bold uppercase tracking-wider text-[#FF671F]">
-                          28 States of Bharat ({statesList.length})
+                        <span className="text-xs font-bold uppercase tracking-wider text-amber-800">
+                          {!showAllCards && !searchQuery.trim() && selectedRegion === 'All' && territoryTab === 'states'
+                            ? `Featured Destinations (${displayedStates.length})`
+                            : `28 States of Bharat (${statesList.length})`}
                         </span>
                         <span className="text-xs text-stone-500 font-medium hidden sm:inline">
-                          Canonical constituent states of the Republic of India
+                          {!showAllCards && !searchQuery.trim() && selectedRegion === 'All' && territoryTab === 'states'
+                            ? 'Top handpicked cultural destinations for SIH prototype exploration'
+                            : 'Canonical constituent states of the Republic of India'}
                         </span>
                       </div>
                     </div>
 
-                    {statesList.length === 0 ? (
+                    {displayedStates.length === 0 ? (
                       <div className="p-12 text-center text-xs text-stone-500 bg-white rounded-3xl border border-dashed border-[#EFE8DF]">
                         No states found matching your search or filter.
                       </div>
                     ) : (
-                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                        {statesList.map((state) => (
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {displayedStates.map((state) => (
                           <StateCard
                             key={state.id}
                             state={state}
@@ -1373,6 +1608,36 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                             onQuickLook={(s) => setQuickLookState(s)}
                           />
                         ))}
+                      </div>
+                    )}
+
+                    {/* View all 28 States toggle button */}
+                    {!searchQuery.trim() && selectedRegion === 'All' && territoryTab === 'states' && (
+                      <div className="flex flex-col items-center justify-center pt-8 pb-4">
+                        {showAllCards ? (
+                          <button
+                            onClick={() => setShowAllCards(false)}
+                            className="px-7 py-3.5 rounded-2xl bg-[#FF671F] hover:bg-[#E65100] text-white text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition-all flex items-center gap-2 cursor-pointer active:scale-95"
+                          >
+                            <ChevronUp className="w-4 h-4 text-white" />
+                            <span>Show Featured 6 Destinations</span>
+                          </button>
+                        ) : (
+                          <button
+                            onClick={() => {
+                              setShowAllCards(true);
+                            }}
+                            className="px-7 py-3.5 rounded-2xl bg-[#FF671F] hover:bg-[#E65100] text-white text-xs sm:text-sm font-bold shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 cursor-pointer active:scale-95"
+                          >
+                            <ChevronDown className="w-4 h-4 text-white" />
+                            <span>View All 28 States</span>
+                          </button>
+                        )}
+                        {!showAllCards && (
+                          <p className="text-xs text-stone-500 mt-2.5 text-center">
+                            Showing 6 popular destinations. Click above to view all 28 States of Bharat.
+                          </p>
+                        )}
                       </div>
                     )}
                   </div>
@@ -1404,7 +1669,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                         No union territories found matching your filters.
                       </div>
                     ) : (
-                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {utsList.map((state) => (
                           <StateCard
                             key={state.id}
@@ -2186,6 +2451,88 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
           defaultIssueType="other"
           defaultTitle={`Missing verified places for ${currentCity.name}`}
         />
+      )}
+
+      {/* Clear All Confirmation Modal */}
+      {showClearConfirmModal && (
+        <div
+          className="fixed inset-0 z-50 bg-black/60 backdrop-blur-xs flex items-center justify-center p-4 animate-fadeIn"
+          onClick={() => setShowClearConfirmModal(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="clear-explore-modal-title"
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="bg-white rounded-3xl border border-stone-200/90 max-w-md w-full p-6 shadow-2xl space-y-5 animate-scaleUp"
+          >
+            <div className="flex items-start justify-between gap-3">
+              <div className="flex items-center gap-3">
+                <div className="w-11 h-11 rounded-2xl bg-rose-50 border border-rose-200 text-rose-600 flex items-center justify-center shrink-0">
+                  <AlertTriangle className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 id="clear-explore-modal-title" className="text-base font-bold text-stone-900">
+                    Clear Explore Search History?
+                  </h3>
+                  <p className="text-xs text-stone-500 mt-0.5">
+                    This action cannot be undone.
+                  </p>
+                </div>
+              </div>
+
+              <button
+                onClick={() => setShowClearConfirmModal(false)}
+                className="p-1.5 rounded-xl hover:bg-stone-100 text-stone-400 hover:text-stone-600 transition cursor-pointer"
+                aria-label="Close dialog"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            <div className="p-3.5 rounded-2xl bg-[#FAF8F5] border border-stone-200/80 space-y-2">
+              <p className="text-xs text-stone-700 leading-relaxed">
+                Are you sure you want to remove your entire search history from Explore Bharat? You will lose quick access to{' '}
+                <strong className="text-stone-900 font-bold">
+                  {exploreRecentSearches.length} {exploreRecentSearches.length === 1 ? 'saved query' : 'saved queries'}
+                </strong>.
+              </p>
+              {exploreRecentSearches.length > 0 && (
+                <div className="flex flex-wrap gap-1.5 pt-1">
+                  {exploreRecentSearches.slice(0, 6).map((s) => (
+                    <span
+                      key={s.id}
+                      className="text-[10px] font-medium bg-white px-2.5 py-0.5 rounded-lg border border-stone-200 text-stone-600 shadow-2xs"
+                    >
+                      {s.query}
+                    </span>
+                  ))}
+                  {exploreRecentSearches.length > 6 && (
+                    <span className="text-[10px] font-medium text-stone-400 px-1.5 py-0.5">
+                      +{exploreRecentSearches.length - 6} more
+                    </span>
+                  )}
+                </div>
+              )}
+            </div>
+
+            <div className="flex items-center justify-end gap-2.5 pt-1">
+              <button
+                onClick={() => setShowClearConfirmModal(false)}
+                className="px-4 py-2.5 rounded-xl border border-stone-200 hover:bg-stone-100 text-stone-700 text-xs font-semibold transition cursor-pointer"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={handleConfirmClearAll}
+                className="px-5 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-bold transition flex items-center gap-1.5 shadow-sm active:scale-95 cursor-pointer"
+              >
+                <Trash2 className="w-3.5 h-3.5" />
+                <span>Yes, Clear History</span>
+              </button>
+            </div>
+          </div>
+        </div>
       )}
     </div>
   );

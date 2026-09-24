@@ -187,10 +187,10 @@ export const ExploreByRegionSection: React.FC<ExploreByRegionSectionProps> = ({
         {/* Preserve the existing 36 States/UT functionality */}
         <button
           onClick={() => onNavigateTab('dashboard')}
-          className="inline-flex items-center gap-1.5 text-xs font-semibold text-stone-700 hover:text-amber-900 bg-white hover:bg-amber-50 px-4 py-2 rounded-xl border border-stone-200/90 hover:border-amber-300 transition shadow-2xs self-start sm:self-auto"
+          className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-[#FF671F] hover:bg-[#E65100] px-4 py-2 rounded-xl transition shadow-xs self-start sm:self-auto cursor-pointer active:scale-95"
         >
           <span>View All 36 States & UTs</span>
-          <ChevronRight className="w-4 h-4 text-amber-700" />
+          <ChevronRight className="w-4 h-4 text-white" />
         </button>
       </div>
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Bot, ArrowRight, Sparkles, Compass, MapPin } from 'lucide-react';
+import { VoiceInputButton } from '../common/VoiceInputButton';
 
 interface CompactAIAssistantCardProps {
   onOpenAIChat?: (prompt: string) => void;
@@ -111,16 +112,30 @@ export const CompactAIAssistantCard: React.FC<CompactAIAssistantCardProps> = ({
           }}
           className="flex items-center gap-2"
         >
-          <input
-            type="text"
-            value={query}
-            onChange={(e) => setQuery(e.target.value)}
-            placeholder="Ask anything or pick a topic..."
-            className="flex-1 px-3 py-2 rounded-xl bg-stone-50 border border-stone-200 text-xs text-stone-800 placeholder-stone-400 focus:outline-none focus:border-indigo-500 focus:bg-white transition"
-          />
+          <div className="relative flex-1">
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => setQuery(e.target.value)}
+              placeholder="Ask anything or pick a topic..."
+              className="w-full pl-3 pr-10 py-2 rounded-xl bg-stone-50 border border-stone-200 text-xs text-stone-800 placeholder-stone-400 focus:outline-none focus:border-indigo-500 focus:bg-white transition"
+            />
+            <div className="absolute right-1 top-1/2 -translate-y-1/2 flex items-center">
+              <VoiceInputButton
+                variant="minimal"
+                title="Speak to Virasat AI"
+                placeholderPrompt="Listening... Speak your prompt"
+                onTranscript={(text) => setQuery(text)}
+                onFinalTranscript={(text) => {
+                  setQuery(text);
+                  handleOpen(text);
+                }}
+              />
+            </div>
+          </div>
           <button
             type="submit"
-            className="px-3.5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold transition shadow-xs flex items-center gap-1 whitespace-nowrap shrink-0 group-hover:bg-indigo-700"
+            className="px-3.5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold transition shadow-xs flex items-center gap-1 whitespace-nowrap shrink-0 group-hover:bg-indigo-700 cursor-pointer"
           >
             <span>Ask Virasat</span>
             <ArrowRight className="w-3.5 h-3.5" />

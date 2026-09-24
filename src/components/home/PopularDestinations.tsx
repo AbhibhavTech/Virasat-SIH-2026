@@ -63,10 +63,10 @@ export const PopularDestinations: React.FC<PopularDestinationsProps> = ({
 
         <button
           onClick={() => onNavigateTab('dashboard')}
-          className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-700 hover:text-emerald-800 transition-colors"
+          className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-[#FF671F] hover:bg-[#E65100] px-3.5 py-1.5 rounded-xl transition shadow-xs cursor-pointer active:scale-95"
         >
           <span>View All 36 States & UTs</span>
-          <ArrowRight className="w-3.5 h-3.5" />
+          <ArrowRight className="w-3.5 h-3.5 text-white" />
         </button>
       </div>
 
