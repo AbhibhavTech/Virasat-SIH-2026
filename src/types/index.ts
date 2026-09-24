@@ -417,10 +417,29 @@ export interface AIChatResponse {
   sources?: string[];
   grounding_chunks?: any[];
   grounding_citations?: GroundingCitation[];
+  maps_grounding?: GoogleMapsGroundingItem[];
   grounding_score?: number;
   grounding_audit?: any;
   latency_ms?: number;
   model_used?: string;
+}
+
+export interface GoogleMapsGroundingItem {
+  uri: string;
+  title: string;
+  reviewSnippets?: string[];
+}
+
+export interface GoogleMapsPlaceInfo {
+  success: boolean;
+  place_name: string;
+  verified_title?: string;
+  city?: string;
+  maps_url: string;
+  directions_url?: string;
+  summary: string;
+  review_snippets: string[];
+  coordinates?: { lat: number; lng: number };
 }
 
 export interface ReverseGeocodeResponse {

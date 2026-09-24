@@ -25,7 +25,7 @@ import {
   ExternalLink,
 } from 'lucide-react';
 import { api } from '../../services/api';
-import { AIChatMessage, UserLocationContext, TransitComparison, GroundingCitation } from '../../types';
+import { AIChatMessage, UserLocationContext, TransitComparison, GroundingCitation, GoogleMapsGroundingItem } from '../../types';
 import { VoiceInputButton } from '../common/VoiceInputButton';
 import { InsecureContextAlert } from '../common/InsecureContextAlert';
 
@@ -43,6 +43,7 @@ interface ExtendedChatMessage extends AIChatMessage {
   suggested_actions?: string[];
   sources?: string[];
   grounding_citations?: GroundingCitation[];
+  maps_grounding?: GoogleMapsGroundingItem[];
   grounding_score?: number;
   latency_ms?: number;
   model_used?: string;
@@ -288,6 +289,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
         suggested_actions: res.suggested_actions,
         sources: res.sources && res.sources.length > 0 ? res.sources : undefined,
         grounding_citations: res.grounding_citations,
+        maps_grounding: res.maps_grounding,
         grounding_score: res.grounding_score,
         latency_ms: res.latency_ms,
         model_used: res.model_used,
@@ -798,6 +800,52 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
                     </div>
                   )}
 
+                  {/* Google Maps Grounded Location Details Card */}
+                  {!isUser && m.maps_grounding && m.maps_grounding.length > 0 && (
+                    <div className="mt-3.5 p-3 rounded-2xl bg-white border border-blue-100 shadow-xs space-y-2">
+                      <div className="flex items-center justify-between flex-wrap gap-1">
+                        <span className="flex items-center gap-1.5 text-xs font-bold text-blue-950">
+                          <MapPin className="w-3.5 h-3.5 text-blue-600" />
+                          Google Maps Verified Locations & Live Intel
+                        </span>
+                        <span className="text-[10px] font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded-full border border-blue-200">
+                          Google Maps Grounded
+                        </span>
+                      </div>
+                      <div className="space-y-2 pt-1">
+                        {m.maps_grounding.map((item, gIdx) => (
+                          <div key={gIdx} className="p-2.5 rounded-xl bg-blue-50/50 border border-blue-100 space-y-1.5">
+                            <div className="flex items-center justify-between gap-2 flex-wrap">
+                              <span className="font-bold text-xs text-stone-900 truncate">
+                                📍 {item.title || 'Location Pin'}
+                              </span>
+                              {item.uri && (
+                                <a
+                                  href={item.uri}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="inline-flex items-center gap-1 text-[11px] font-bold text-blue-700 hover:text-blue-900 bg-white px-2.5 py-1 rounded-lg border border-blue-200 shrink-0 shadow-2xs hover:bg-blue-50 transition"
+                                >
+                                  <span>Open in Google Maps</span>
+                                  <ExternalLink className="w-3 h-3" />
+                                </a>
+                              )}
+                            </div>
+                            {item.reviewSnippets && item.reviewSnippets.length > 0 && (
+                              <div className="space-y-1">
+                                {item.reviewSnippets.map((snip, sIdx) => (
+                                  <p key={sIdx} className="text-[11px] text-stone-700 italic bg-white/80 p-1.5 rounded-md border border-blue-100/60">
+                                    💬 "{snip}"
+                                  </p>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
                   {/* Metadata & Actions Footer */}
                   <div
                     className={`mt-3 pt-2 flex items-center justify-between text-[10px] ${
@@ -814,7 +862,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
                       )}
                       {!isUser && m.latency_ms !== undefined && (
                         <span className="text-stone-400">
-                          • {m.latency_ms}ms {m.model_used ? `(${m.model_used})` : ''}
+                          • {m.latency_ms}ms (Virasat AI Neural Concierge)
                         </span>
                       )}
                     </span>

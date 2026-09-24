@@ -306,6 +306,7 @@ aiChatRouter.post(
     let generatedPlan: any = null;
     let dynamicQuickActions: string[] = [];
     let sourceList: string[] | undefined = undefined;
+    let mapsGroundingChunks: Array<{ uri: string; title: string; reviewSnippets?: string[] }> = [];
 
     /**
      * ============================================================
@@ -426,26 +427,43 @@ Interests: ${tripState.interests?.join(', ') ||
           'THANKS',
         ];
 
+        const isGeoOrPlaceQuery = /(where|reach|how to|visit|place|monument|temple|mandir|fort|distance|location|map|hotel|restaurant|market|shop)/i.test(rawQuery);
         const needsTools = !conversationalIntents.includes(intentResult.intent);
-        const toolsConfig = needsTools ? { tools: geminiTools } : {};
 
-        const modelNames = [
-          'gemini-flash-latest',
-          'gemini-3.1-flash-lite',
-          'gemini-3.8-flash',
+        // Models priority: gemini-3.5-flash (with Maps Grounding when geo/place query), then gemini-3.8-flash, gemini-3.1-flash-lite
+        const candidateModels = [
+          { name: 'gemini-3.5-flash', useMaps: isGeoOrPlaceQuery },
+          { name: 'gemini-3.8-flash', useMaps: false },
+          { name: 'gemini-3.1-flash-lite', useMaps: false },
         ];
 
-        for (const mName of modelNames) {
+        for (const candidate of candidateModels) {
+          const mName = candidate.name;
           try {
-            const timeoutMs = needsTools ? 14000 : 9000;
+            const timeoutMs = needsTools ? 15000 : 10000;
+            const config: any = { systemInstruction };
+
+            if (candidate.useMaps) {
+              config.tools = [{ googleMaps: {} }];
+              if (liveContext?.userLocation?.lat && liveContext?.userLocation?.lng) {
+                config.toolConfig = {
+                  retrievalConfig: {
+                    latLng: {
+                      latitude: Number(liveContext.userLocation.lat),
+                      longitude: Number(liveContext.userLocation.lng),
+                    },
+                  },
+                };
+              }
+            } else if (needsTools) {
+              config.tools = geminiTools;
+            }
+
             const response = await Promise.race([
               ai.models.generateContent({
                 model: mName,
                 contents,
-                config: {
-                  systemInstruction,
-                  ...toolsConfig,
-                },
+                config,
               }),
               new Promise<any>((_, reject) =>
                 setTimeout(
@@ -461,6 +479,21 @@ Interests: ${tripState.interests?.join(', ') ||
             const functionCalls =
               (response as any)?.functionCalls ||
               [];
+
+            // Extract Google Maps grounding if present
+            const candidateResp = response?.candidates?.[0];
+            const gChunks = (candidateResp as any)?.groundingMetadata?.groundingChunks;
+            if (Array.isArray(gChunks)) {
+              for (const ch of gChunks) {
+                if (ch.maps) {
+                  mapsGroundingChunks.push({
+                    uri: ch.maps.uri || '',
+                    title: ch.maps.title || '',
+                    reviewSnippets: ch.maps.placeAnswerSources?.reviewSnippets || [],
+                  });
+                }
+              }
+            }
 
             if (functionCalls.length > 0) {
               const toolResultsParts: any[] = [];
@@ -526,13 +559,13 @@ Interests: ${tripState.interests?.join(', ') ||
                   secondResponse.text;
 
                 usedEngine =
-                  `${mName} (Tool-Grounded)`;
+                  candidate.useMaps ? 'Virasat AI Neural Concierge (Maps Grounded)' : 'Virasat AI Neural Concierge';
 
                 break;
               }
             } else if (response?.text) {
               replyText = response.text;
-              usedEngine = mName;
+              usedEngine = candidate.useMaps ? 'Virasat AI Neural Concierge (Maps Grounded)' : 'Virasat AI Neural Concierge';
               break;
             }
           } catch (err: any) {
@@ -2024,6 +2057,11 @@ Interests: ${tripState.interests?.join(', ') ||
       transit_comparison:
         transitComparison ||
         undefined,
+
+      maps_grounding:
+        mapsGroundingChunks.length > 0
+          ? mapsGroundingChunks
+          : undefined,
 
       suggested_actions:
         dynamicQuickActions,

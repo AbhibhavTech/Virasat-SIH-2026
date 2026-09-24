@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState, useMemo, useCallback } from 'react';
 import L from 'leaflet';
-import { PlaceSummary, RouteResponse, TransportMode, LocationSuggestion } from '../../types';
+import { PlaceSummary, RouteResponse, TransportMode, LocationSuggestion, GoogleMapsPlaceInfo } from '../../types';
 import { api } from '../../services/api';
 import { findNearestCity, calculateHaversineKm } from '../../data/citiesData';
 import { VERIFIED_HIDDEN_GEMS, HiddenGemItem } from '../../data/hiddenGemsData';
@@ -226,6 +226,31 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
   const [showHeritage, setShowHeritage] = useState(true);
   const [showHiddenGems, setShowHiddenGems] = useState(true);
   const [showStations, setShowStations] = useState(false); // Default HIDDEN
+
+  // Google Maps Live Place Intel Drawer State
+  const [mapsIntelPoint, setMapsIntelPoint] = useState<MapPointItem | null>(null);
+  const [mapsIntelLoading, setMapsIntelLoading] = useState(false);
+  const [mapsIntelData, setMapsIntelData] = useState<GoogleMapsPlaceInfo | null>(null);
+
+  const handleOpenMapsIntel = async (item: MapPointItem) => {
+    setMapsIntelPoint(item);
+    setMapsIntelLoading(true);
+    setMapsIntelData(null);
+    try {
+      const data = await api.getPlaceMapsInfo({
+        place_name: item.name,
+        city: item.city,
+        state: item.state,
+        lat: item.lat,
+        lng: item.lng,
+      });
+      setMapsIntelData(data);
+    } catch (err) {
+      console.error('Failed to load Google Maps intel:', err);
+    } finally {
+      setMapsIntelLoading(false);
+    }
+  };
 
   // Autocomplete Search States
   const [searchSuggestions, setSearchSuggestions] = useState<LocationSuggestion[]>([]);
@@ -470,6 +495,15 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
           </button>
         </div>
 
+        <div style="display: flex; gap: 4px; margin-bottom: 6px;">
+          <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(site.name + ' ' + (site.city || ''))}" target="_blank" rel="noopener noreferrer" style="flex: 1; text-decoration: none; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; border-radius: 6px; padding: 4px 6px; font-size: 10px; font-weight: 700; text-align: center; display: flex; align-items: center; justify-content: center; gap: 4px;">
+            <span>🗺️ Google Maps</span>
+          </a>
+          <button id="btn-maps-intel-${site.id}" style="flex: 1; background: #ecfdf5; color: #047857; border: 1px solid #a7f3d0; border-radius: 6px; padding: 4px 6px; font-size: 10px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px;">
+            <span>📍 Maps Intel</span>
+          </button>
+        </div>
+
         <div style="display: flex; gap: 6px;">
           <button id="btn-dossier-${site.id}" style="flex: 1; background: #ea580c; color: #fff; border: none; border-radius: 6px; padding: 6px 0; font-size: 11px; font-weight: 700; cursor: pointer;">
             View Details
@@ -508,6 +542,15 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
           </button>
         </div>
 
+        <div style="display: flex; gap: 4px; margin-bottom: 6px;">
+          <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(gem.name + ' ' + (gem.city || ''))}" target="_blank" rel="noopener noreferrer" style="flex: 1; text-decoration: none; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; border-radius: 6px; padding: 4px 6px; font-size: 10px; font-weight: 700; text-align: center; display: flex; align-items: center; justify-content: center; gap: 4px;">
+            <span>🗺️ Google Maps</span>
+          </a>
+          <button id="btn-maps-intel-${gem.id}" style="flex: 1; background: #ecfdf5; color: #047857; border: 1px solid #a7f3d0; border-radius: 6px; padding: 4px 6px; font-size: 10px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px;">
+            <span>📍 Maps Intel</span>
+          </button>
+        </div>
+
         <button id="btn-dossier-${gem.id}" style="width: 100%; background: #9333ea; color: #fff; border: none; border-radius: 6px; padding: 6px 0; font-size: 11px; font-weight: 700; cursor: pointer;">
           View Secret Place Dossier
         </button>
@@ -531,6 +574,15 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
             🎯 Route Here
           </button>
         </div>
+
+        <div style="display: flex; gap: 4px; margin-bottom: 6px;">
+          <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(st.name + ' ' + (st.city || '') + ' Railway Station')}" target="_blank" rel="noopener noreferrer" style="flex: 1; text-decoration: none; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; border-radius: 6px; padding: 4px 6px; font-size: 10px; font-weight: 700; text-align: center; display: flex; align-items: center; justify-content: center; gap: 4px;">
+            <span>🗺️ Google Maps</span>
+          </a>
+          <button id="btn-maps-intel-${st.id}" style="flex: 1; background: #ecfdf5; color: #047857; border: 1px solid #a7f3d0; border-radius: 6px; padding: 4px 6px; font-size: 10px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px;">
+            <span>📍 Maps Intel</span>
+          </button>
+        </div>
       `;
     }
 
@@ -541,6 +593,11 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
     const btnDossier = card.querySelector(`#btn-dossier-${item.id}`) as HTMLElement;
     if (btnDossier) {
       btnDossier.onclick = () => onSelectPlace(item.id);
+    }
+
+    const btnMaps = card.querySelector(`#btn-maps-intel-${item.id}`) as HTMLElement;
+    if (btnMaps) {
+      btnMaps.onclick = () => handleOpenMapsIntel(item);
     }
 
     const btnOrigin = card.querySelector(`#btn-orig-${item.id}`) as HTMLElement;
@@ -1726,6 +1783,137 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
                 )}
               </div>
             )}
+          </div>
+        )}
+
+        {/* Floating Google Maps Verified Place Intel Drawer */}
+        {mapsIntelPoint && (
+          <div className="absolute top-3 right-3 sm:top-4 sm:right-4 z-[460] w-80 sm:w-96 max-h-[88%] bg-white/98 backdrop-blur-md rounded-3xl border border-stone-200/90 shadow-2xl overflow-hidden flex flex-col animate-fadeIn">
+            {/* Header */}
+            <div className="flex items-center justify-between px-4 py-3 bg-gradient-to-r from-blue-50 to-emerald-50 border-b border-stone-200">
+              <div className="flex items-center gap-2 min-w-0">
+                <div className="w-7 h-7 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-xs shrink-0 shadow-2xs">
+                  🗺️
+                </div>
+                <div className="min-w-0">
+                  <h4 className="text-xs font-bold text-stone-900 truncate">
+                    {mapsIntelPoint.name}
+                  </h4>
+                  <div className="flex items-center gap-1.5 text-[10px] text-blue-700 font-semibold">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                    <span>Google Maps Verified Cartography</span>
+                  </div>
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() => setMapsIntelPoint(null)}
+                className="p-1 rounded-full text-stone-400 hover:text-stone-700 hover:bg-white/80 transition"
+                aria-label="Close Maps Intel"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            {/* Body */}
+            <div className="p-4 space-y-3 overflow-y-auto text-xs text-stone-700">
+              {mapsIntelLoading ? (
+                <div className="py-8 flex flex-col items-center justify-center gap-2 text-stone-500">
+                  <div className="w-6 h-6 border-2 border-blue-600 border-t-transparent rounded-full animate-spin" />
+                  <span className="text-xs font-medium">Retrieving Google Maps data...</span>
+                </div>
+              ) : (
+                <>
+                  {/* Location badge & Coordinates */}
+                  <div className="flex items-center justify-between text-[11px] bg-stone-50 p-2 rounded-xl border border-stone-100">
+                    <span className="font-semibold text-stone-800">
+                      📍 {mapsIntelPoint.city || 'India'}, {mapsIntelPoint.state || ''}
+                    </span>
+                    <span className="text-stone-400 font-mono text-[10px]">
+                      {mapsIntelPoint.lat.toFixed(4)}, {mapsIntelPoint.lng.toFixed(4)}
+                    </span>
+                  </div>
+
+                  {/* Summary */}
+                  {mapsIntelData?.summary && (
+                    <div className="space-y-1">
+                      <div className="text-[10px] uppercase tracking-wider font-bold text-stone-400">
+                        Live Highlights & Visiting Intel
+                      </div>
+                      <p className="text-xs text-stone-700 leading-relaxed bg-white p-2.5 rounded-xl border border-stone-100">
+                        {mapsIntelData.summary}
+                      </p>
+                    </div>
+                  )}
+
+                  {/* Review Snippets from Google Maps */}
+                  {mapsIntelData?.review_snippets && mapsIntelData.review_snippets.length > 0 && (
+                    <div className="space-y-1.5">
+                      <div className="text-[10px] uppercase tracking-wider font-bold text-stone-400 flex items-center gap-1">
+                        <span>💬 Visitor Insights from Google Maps</span>
+                      </div>
+                      <div className="space-y-1">
+                        {mapsIntelData.review_snippets.map((snip, idx) => (
+                          <div key={idx} className="p-2 rounded-lg bg-blue-50/60 border border-blue-100 text-[11px] text-stone-700 italic">
+                            "{snip}"
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Direct Action Links */}
+                  <div className="pt-2 space-y-2">
+                    <a
+                      href={mapsIntelData?.maps_url || `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapsIntelPoint.name + ' ' + (mapsIntelPoint.city || ''))}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full py-2 px-3 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs transition flex items-center justify-center gap-1.5 shadow-2xs"
+                    >
+                      <span>Open on Google Maps</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </a>
+
+                    <a
+                      href={mapsIntelData?.directions_url || `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(mapsIntelPoint.name + ' ' + (mapsIntelPoint.city || ''))}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full py-2 px-3 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-bold text-xs border border-emerald-200 transition flex items-center justify-center gap-1.5"
+                    >
+                      <Navigation className="w-3.5 h-3.5" />
+                      <span>Directions on Google Maps</span>
+                    </a>
+
+                    <div className="grid grid-cols-2 gap-2 pt-1">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setRouteDestination(mapsIntelPoint.id);
+                          setRouteDestName(mapsIntelPoint.name);
+                          setRouteDestCoords({ lat: mapsIntelPoint.lat, lng: mapsIntelPoint.lng });
+                          setIsRoutingOpen(true);
+                          setIsRoutePanelMinimized(false);
+                          setMapsIntelPoint(null);
+                        }}
+                        className="py-1.5 px-2 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-700 font-bold text-[11px] transition text-center"
+                      >
+                        🎯 Route Here
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          onSelectPlace(mapsIntelPoint.id);
+                          setMapsIntelPoint(null);
+                        }}
+                        className="py-1.5 px-2 rounded-lg bg-orange-50 hover:bg-orange-100 text-[#FF671F] font-bold text-[11px] border border-orange-200 transition text-center"
+                      >
+                        🏛️ View Place
+                      </button>
+                    </div>
+                  </div>
+                </>
+              )}
+            </div>
           </div>
         )}
 

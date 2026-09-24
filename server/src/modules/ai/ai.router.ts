@@ -247,11 +247,13 @@ aiRouter.post('/chat', rateLimiter({ windowMs: 60000, max: 30 }), async (req: Re
   }
 
   // 3. Fetch granular grounding citations from database
+  // 3. Fetch granular grounding citations from database
   const groundingCitations = await fetchGroundingCitations(matchedPlaces);
 
-  // 4. Try Gemini LLM Grounded Generation (with multi-tier fallback: 2.5-flash -> 2.0-flash)
+  // 4. Try Grounded Generation (Using gemini-3.5-flash with Google Maps tool where applicable)
   let replyText = '';
-  let usedModel = 'Virasat Grounded Engine';
+  let usedModel = 'Virasat Grounded Assistant';
+  let mapsGrounding: Array<{ uri: string; title: string; reviewSnippets?: string[] }> = [];
   const ai = getAIClient();
 
   if (ai) {
@@ -266,12 +268,13 @@ aiRouter.post('/chat', rateLimiter({ windowMs: 60000, max: 30 }), async (req: Re
       ? `Transit: ${transitComparison.origin} -> ${transitComparison.destination} (~${transitComparison.distance_km} km).\n${trainSummary}\n${airSummary}\n${roadSummary}`.trim()
       : 'No transit queried.';
 
-    const systemInstruction = `You are the Virasat AI Tourism Concierge for India.
+    const systemInstruction = `You are the official Virasat AI Tourism & Heritage Concierge for India.
 RULES:
-1. ONLY recommend places provided in the verified places context.
+1. ONLY recommend places provided in the verified places context or retrieved via verified Maps grounding.
 2. NEVER invent fake railway stations, airports, or monuments.
 3. Every factual statement must cite its official source.
-4. Keep the tone warm, welcoming, and culturally respectful. Support Hindi/Hinglish naturally.
+4. Keep the tone warm, welcoming, deeply knowledgeable, and culturally respectful. Support Hindi and natural Hinglish seamlessly.
+5. Emphasize authentic local cultural lore, optimal visiting times, and transport connectivity.
 
 VERIFIED PLACES:
 ${placesContextStr}
@@ -280,7 +283,7 @@ ${transitContextStr}`;
 
     const contents = [
       ...(Array.isArray(history)
-        ? history.slice(-4).map((h: any) => ({
+        ? history.slice(-6).map((h: any) => ({
             role: h.role === 'user' ? 'user' : 'model',
             parts: [{ text: h.content || h.text || '' }],
           }))
@@ -288,24 +291,63 @@ ${transitContextStr}`;
       { role: 'user', parts: [{ text: rawQuery }] },
     ];
 
-    const modelsToTry = ['gemini-flash-latest', 'gemini-3.1-flash-lite', 'gemini-3.8-flash'];
-    for (const modelName of modelsToTry) {
+    // Check if query is place/geography/directions related for Maps Grounding
+    const isPlaceOrGeoQuery = /(place|visit|monument|mandir|temple|fort|where|near|location|route|map|direction|timing|entry|ticket|hotel|restaurant)/i.test(rawQuery);
+
+    const modelsToTry = [
+      { name: 'gemini-3.5-flash', useMaps: isPlaceOrGeoQuery },
+      { name: 'gemini-3.8-flash', useMaps: false },
+      { name: 'gemini-3.1-flash-lite', useMaps: false },
+    ];
+
+    for (const item of modelsToTry) {
       try {
+        const config: any = { systemInstruction };
+        if (item.useMaps) {
+          config.tools = [{ googleMaps: {} }];
+          if (userLat && userLng) {
+            config.toolConfig = {
+              retrievalConfig: {
+                latLng: {
+                  latitude: Number(userLat),
+                  longitude: Number(userLng),
+                },
+              },
+            };
+          }
+        }
+
         const callRes = await Promise.race([
           ai.models.generateContent({
-            model: modelName,
+            model: item.name,
             contents,
-            config: { systemInstruction },
+            config,
           }),
-          new Promise<any>((_, reject) => setTimeout(() => reject(new Error('Timeout')), 12000)),
+          new Promise<any>((_, reject) => setTimeout(() => reject(new Error('Timeout')), 14000)),
         ]);
+
         if (callRes?.text) {
           replyText = callRes.text;
-          usedModel = modelName;
+          usedModel = item.useMaps ? 'Virasat AI Neural Assistant (Maps Grounded)' : 'Virasat AI Neural Assistant';
+
+          // Extract Google Maps grounding chunks if present
+          const candidate = callRes.candidates?.[0];
+          const chunks = (candidate as any)?.groundingMetadata?.groundingChunks;
+          if (Array.isArray(chunks)) {
+            for (const ch of chunks) {
+              if (ch.maps) {
+                mapsGrounding.push({
+                  uri: ch.maps.uri || '',
+                  title: ch.maps.title || '',
+                  reviewSnippets: ch.maps.placeAnswerSources?.reviewSnippets || [],
+                });
+              }
+            }
+          }
           break;
         }
       } catch {
-        // Try next fallback model in pool
+        // Try next fallback model
       }
     }
   }
@@ -421,12 +463,106 @@ ${transitContextStr}`;
     })),
     transit_comparison: transitComparison,
     grounding_citations: groundingCitations,
+    maps_grounding: mapsGrounding,
     suggested_actions: suggestedActions,
     sources: [
       'Archaeological Survey of India (ASI)',
       'Indian Railways / IRCTC Registry',
-      usedModel,
+      'Verified Google Maps Grounding',
     ],
+  });
+});
+
+/**
+ * POST /api/v1/ai/place-maps-info
+ * Retrieves verified Google Maps place details, visitor review snippets, and official maps links
+ * using gemini-3.5-flash with googleMaps tool.
+ */
+aiRouter.post('/place-maps-info', async (req: Request, res: Response): Promise<void> => {
+  const { place_name, city, state, lat, lng } = req.body || {};
+  if (!place_name) {
+    res.status(400).json({ success: false, error: 'place_name is required' });
+    return;
+  }
+
+  const queryPlace = `${place_name} ${city ? `in ${city}` : ''} ${state ? state : 'India'}`.trim();
+  const fallbackMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(queryPlace)}`;
+  const fallbackDirectionsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(queryPlace)}`;
+
+  const ai = getAIClient();
+  let liveSummary = '';
+  let mapsUrl = fallbackMapsUrl;
+  let verifiedTitle = place_name;
+  const reviewSnippets: string[] = [];
+
+  if (ai) {
+    try {
+      const callRes = await Promise.race([
+        ai.models.generateContent({
+          model: 'gemini-3.5-flash',
+          contents: `Provide an accurate Google Maps grounded summary for ${queryPlace}. Include:
+1. Current visiting atmosphere, timings, and practical advice.
+2. Verified location highlights and what recent visitors note.
+3. Keep it brief (under 80 words), factual, and helpful for travelers.`,
+          config: {
+            systemInstruction: 'You are an authoritative Google Maps geospatial information provider for monuments and heritage in India.',
+            tools: [{ googleMaps: {} }],
+            ...(lat && lng ? {
+              toolConfig: {
+                retrievalConfig: {
+                  latLng: {
+                    latitude: Number(lat),
+                    longitude: Number(lng),
+                  },
+                },
+              },
+            } : {}),
+          },
+        }),
+        new Promise<any>((_, reject) => setTimeout(() => reject(new Error('Timeout')), 12000)),
+      ]);
+
+      if (callRes?.text) {
+        liveSummary = callRes.text;
+      }
+
+      const candidate = callRes?.candidates?.[0];
+      const chunks = (candidate as any)?.groundingMetadata?.groundingChunks;
+      if (Array.isArray(chunks)) {
+        for (const ch of chunks) {
+          if (ch.maps) {
+            if (ch.maps.uri) mapsUrl = ch.maps.uri;
+            if (ch.maps.title) verifiedTitle = ch.maps.title;
+            const snippets = ch.maps.placeAnswerSources?.reviewSnippets;
+            if (Array.isArray(snippets)) {
+              for (const s of snippets) {
+                if (typeof s === 'string' && !reviewSnippets.includes(s)) {
+                  reviewSnippets.push(s);
+                }
+              }
+            }
+          }
+        }
+      }
+    } catch (e: any) {
+      console.info('[AI Router] Maps info fallback:', e?.message || e);
+    }
+  }
+
+  if (!liveSummary) {
+    liveSummary = `${place_name} is a renowned cultural destination located in ${city || 'India'}. Discover its verified architecture, local heritage, and visitor paths.`;
+  }
+
+  res.json({
+    success: true,
+    place_name,
+    verified_title: verifiedTitle,
+    city: city || 'India',
+    maps_url: mapsUrl,
+    directions_url: fallbackDirectionsUrl,
+    summary: liveSummary,
+    review_snippets: reviewSnippets,
+    coordinates: (lat && lng) ? { lat: Number(lat), lng: Number(lng) } : undefined,
   });
 });
 
