@@ -12,7 +12,10 @@ import {
   getAllToolNames,
 } from '../config/toolRegistry';
 import { detectIntent } from '../engine/intentEngine';
-import { extractEntities } from '../engine/entityExtractor';
+import {
+  extractEntities,
+  INDIAN_DESTINATION_ALIASES,
+} from '../engine/entityExtractor';
 import {
   getConversationState,
   updateConversationState,
@@ -23,6 +26,57 @@ import { buildResponseForIntent } from '../engine/responseGenerator';
 export const aiChatRouter = Router();
 
 let aiClient: GoogleGenAI | null = null;
+let geminiCircuitCooldownUntil = 0;
+
+function isGeminiCircuitOpen(): boolean {
+  return Date.now() < geminiCircuitCooldownUntil;
+}
+
+function handleGeminiError(err: any, modelName: string): { shouldBreakAll: boolean } {
+  const errMsg = String(err?.message || err || '');
+  const is429 =
+    errMsg.includes('429') ||
+    errMsg.includes('RESOURCE_EXHAUSTED') ||
+    errMsg.includes('quota') ||
+    errMsg.includes('Quota exceeded');
+  const is503 =
+    errMsg.includes('503') ||
+    errMsg.includes('UNAVAILABLE') ||
+    errMsg.includes('high demand');
+  const isTimeout = errMsg.includes('Timeout') || errMsg.includes('timed out');
+
+  if (is429) {
+    let cooldownMs = 30000;
+    const retryMatch = errMsg.match(/retry in\s+([0-9.]+)\s*s/i) || errMsg.match(/"retryDelay":\s*"(\d+)s"/i);
+    if (retryMatch) {
+      const parsedSec = parseFloat(retryMatch[1]);
+      if (!isNaN(parsedSec) && parsedSec > 0) {
+        cooldownMs = Math.min(Math.round(parsedSec * 1000) + 2000, 60000);
+      }
+    }
+    geminiCircuitCooldownUntil = Date.now() + cooldownMs;
+    console.info(
+      `[AI Router] Rate quota limit encountered on ${modelName}. Active cooldown ${Math.round(cooldownMs / 1000)}s; seamlessly switching to Virasat Grounded Engine.`
+    );
+    return { shouldBreakAll: true };
+  }
+
+  if (is503) {
+    geminiCircuitCooldownUntil = Date.now() + 15000;
+    console.info(
+      `[AI Router] Upstream service high demand on ${modelName}. Active cooldown 15s; switching to Virasat Grounded Engine.`
+    );
+    return { shouldBreakAll: false };
+  }
+
+  if (isTimeout) {
+    console.info(`[AI Router] ${modelName} timed out. Engaging Virasat Grounded Engine.`);
+    return { shouldBreakAll: false };
+  }
+
+  console.info(`[AI Router] ${modelName} transient fallback to Virasat Grounded Engine.`);
+  return { shouldBreakAll: false };
+}
 
 function getAIClient(): GoogleGenAI | null {
   if (!process.env.GEMINI_API_KEY) return null;
@@ -37,10 +91,9 @@ function getAIClient(): GoogleGenAI | null {
           },
         },
       });
-    } catch (err) {
-      console.warn(
-        '[AI Router] Failed to initialize GoogleGenAI client:',
-        err
+    } catch {
+      console.info(
+        '[AI Router] GoogleGenAI client unavailable; using Virasat Grounded Engine.'
       );
       return null;
     }
@@ -265,6 +318,9 @@ aiChatRouter.post(
     const factualIntents = [
       'MONUMENT_INFO',
       'HERITAGE_QUERY',
+      'DESTINATION_INFO',
+      'CITY_INFO',
+      'TOURIST_PLACE_SEARCH',
       'STATE_INFO',
       'UT_INFO',
       'NEARBY_SEARCH',
@@ -304,7 +360,7 @@ aiChatRouter.post(
      * - trip planning
      * - conversational follow-ups
      */
-    if (ai && !isFactualIntent) {
+    if (ai && !isFactualIntent && !isGeminiCircuitOpen()) {
       try {
         const memoryStr = `ACTIVE TRIP MEMORY:
 Destination: ${tripState.destination || 'Not chosen yet'}
@@ -480,15 +536,14 @@ Interests: ${tripState.interests?.join(', ') ||
               break;
             }
           } catch (err: any) {
-            console.info(
-              `[AI Router] ${mName} transient fallback: ${err?.message || 'timed out or busy'}`
-            );
+            const { shouldBreakAll } = handleGeminiError(err, mName);
+            if (shouldBreakAll) {
+              break;
+            }
           }
         }
       } catch (err: any) {
-        console.info(
-          `[AI Router] Gemini inference fallback to Virasat Brain: ${err?.message || 'switched to deterministic'}`
-        );
+        handleGeminiError(err, 'Gemini Suite');
       }
     }
 
@@ -517,16 +572,29 @@ Interests: ${tripState.interests?.join(', ') ||
         intent === 'THANKS' ||
         intent === 'COMPARISON'
       ) {
-        const formatted =
-          buildResponseForIntent(
-            intentResult,
-            tripState
-          );
+        if (entityData.rejected_city) {
+          replyText = intentResult.isHinglish
+            ? `Theek hai, **${entityData.rejected_city}** nahi! Aap Bharat ke kis destination ya city ke baare mein plan karna chahenge? (Jaise Jaipur, Delhi, Mumbai, Chennai, Goa, Varanasi)`
+            : `Understood, no **${entityData.rejected_city}**! Which destination or city in India would you like to explore? (e.g. Jaipur, Delhi, Mumbai, Chennai, Goa, Varanasi)`;
+          dynamicQuickActions = [
+            'Explore Chennai',
+            'Plan Jaipur Trip',
+            'Delhi Tourism',
+            'Explore Heritage',
+          ];
+          sourceList = ['Virasat Tourism Assistant'];
+        } else {
+          const formatted =
+            buildResponseForIntent(
+              intentResult,
+              tripState
+            );
 
-        replyText = formatted.reply;
-        dynamicQuickActions =
-          formatted.suggested_actions;
-        sourceList = formatted.sources;
+          replyText = formatted.reply;
+          dynamicQuickActions =
+            formatted.suggested_actions;
+          sourceList = formatted.sources;
+        }
       }
 
       /**
@@ -779,6 +847,109 @@ Interests: ${tripState.interests?.join(', ') ||
 
           dynamicQuickActions = [
             `Plan ${stateName} Trip`,
+            'Explore Heritage',
+            'Find Stays',
+            'How to Reach',
+          ];
+        }
+      }
+
+      /**
+       * ----------------------------------------------------------
+       * DESTINATION / CITY INFO & TOURIST PLACE SEARCH
+       * ----------------------------------------------------------
+       */
+      else if (
+        intent === 'DESTINATION_INFO' ||
+        intent === 'CITY_INFO' ||
+        intent === 'TOURIST_PLACE_SEARCH'
+      ) {
+        const cityName =
+          entityData.city ||
+          entityData.destination ||
+          intentResult.resolvedPlace?.city ||
+          tripState.destination ||
+          null;
+
+        if (!cityName) {
+          replyText =
+            intentResult.isHinglish
+              ? 'Aap kis destination ya city ke baare mein jaanna chahte hain? (Jaise Chennai, Jaipur, Delhi, Mumbai, Varanasi)'
+              : 'Which destination or city would you like to explore? (e.g. Chennai, Jaipur, Delhi, Mumbai, Varanasi)';
+
+          dynamicQuickActions = [
+            'Explore Chennai',
+            'Plan Jaipur Trip',
+            'Delhi Tourism',
+            'Explore Heritage',
+          ];
+        } else {
+          // Persist verified destination in trip state
+          tripState.destination = cityName;
+
+          const placesRes =
+            await executeTool(
+              'searchTouristPlaces',
+              {
+                city: cityName,
+                limit: 6,
+              },
+              liveContext
+            );
+
+          executedToolCalls.push({
+            tool: 'searchTouristPlaces',
+            args: {
+              city: cityName,
+            },
+            result: placesRes,
+          });
+
+          if (
+            placesRes.results &&
+            placesRes.results.length > 0
+          ) {
+            replyText =
+              intentResult.isHinglish
+                ? `### 🏛️ Tourism in ${cityName}\n\nVirasat ke available tourism data ke basis par:\n\n` +
+                placesRes.results
+                  .map(
+                    (
+                      p: any,
+                      idx: number
+                    ) =>
+                      `${idx + 1}. **${p.name}** — ${p.city}, ${p.state}\n   ${p.summary || ''}`
+                  )
+                  .join('\n\n') +
+                `\n\nAap kisi specific monument, itinerary, hotels ya transport ke baare mein pooch sakte hain.`
+                : `### 🏛️ Tourism in ${cityName}\n\nBased on Virasat's available tourism data:\n\n` +
+                placesRes.results
+                  .map(
+                    (
+                      p: any,
+                      idx: number
+                    ) =>
+                      `${idx + 1}. **${p.name}** — ${p.city}, ${p.state}\n   ${p.summary || ''}`
+                  )
+                  .join('\n\n') +
+                `\n\nYou can ask about a specific monument, itinerary, hotels, or how to reach.`;
+
+            sourceList = [
+              'Virasat Master Tourism Registry',
+            ];
+          } else {
+            replyText =
+              intentResult.isHinglish
+                ? `${cityName} ke liye mujhe abhi reliable tourism records nahi mile.`
+                : `I couldn't find reliable tourism records for ${cityName}.`;
+
+            sourceList = [
+              'Virasat Master Tourism Registry',
+            ];
+          }
+
+          dynamicQuickActions = [
+            `Plan ${cityName} Trip`,
             'Explore Heritage',
             'Find Stays',
             'How to Reach',
@@ -1581,17 +1752,29 @@ Interests: ${tripState.interests?.join(', ') ||
        * No fake city fallback.
        */
       else {
-        const city =
+        let city =
           entityData.city ||
+          entityData.destination ||
           intentResult.resolvedPlace?.city ||
           tripState.destination ||
-          liveContext.selectedCity ||
           null;
+
+        // If no explicit city was identified, check if query contains any known Indian destination
+        if (!city) {
+          const rawLower = rawQuery.toLowerCase();
+          for (const [alias, canonical] of Object.entries(INDIAN_DESTINATION_ALIASES)) {
+            if (new RegExp(`\\b${alias}\\b`, 'i').test(rawLower)) {
+              city = canonical;
+              tripState.destination = canonical;
+              break;
+            }
+          }
+        }
 
         const queryToSearch =
           entityData.place?.name ||
           entityData.place_name ||
-          entityData.city ||
+          (entityData.city && entityData.city !== city ? entityData.city : undefined) ||
           entityData.state ||
           rawQuery
             .replace(
@@ -1654,8 +1837,8 @@ Interests: ${tripState.interests?.join(', ') ||
           ];
         } else {
           const activeName =
-            tripState.lastPlace?.name ||
-            tripState.destination ||
+            entityData.city ||
+            entityData.destination ||
             city;
 
           replyText =
@@ -1664,8 +1847,8 @@ Interests: ${tripState.interests?.join(', ') ||
                 ? `Mujhe **${activeName}** ke liye is query par reliable tourism record nahi mila, isliye main guess nahi karunga.`
                 : `I couldn't find reliable tourism data for **${activeName}** for this query, so I won't guess.`
               : intentResult.isHinglish
-                ? 'Mujhe is query ke liye reliable tourism record nahi mila. Aap city, state, monument ya destination ka naam bata sakte hain.'
-                : 'I could not find reliable tourism data for this query. You can specify a city, state, monument, or destination.';
+                ? 'Mujhe is query ke liye reliable tourism record nahi mila. Aap Bharat ke kisi city, state, monument ya destination ka naam bata sakte hain (jaise Jaipur, Chennai, Delhi, Mumbai, Varanasi).'
+                : 'I could not find reliable tourism data for this query. You can specify an Indian city, state, monument, or destination (such as Jaipur, Chennai, Delhi, Mumbai, Varanasi).';
 
           sourceList = [
             'Virasat Master Tourism Registry',

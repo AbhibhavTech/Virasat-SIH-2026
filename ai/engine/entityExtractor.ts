@@ -2,6 +2,7 @@ import { resolvePlaceEntity, ResolvedPlace } from './placeResolver';
 
 export interface ExtractedEntities {
   destination?: string;
+  city?: string;
   origin?: string;
   state?: string;
   duration_days?: number;
@@ -16,6 +17,7 @@ export interface ExtractedEntities {
   resolvedPlace?: ResolvedPlace;
   place_id?: string;
   place_name?: string;
+  rejected_city?: string;
 }
 
 const COMMON_ORIGINS = [
@@ -24,14 +26,171 @@ const COMMON_ORIGINS = [
   'surat', 'indore', 'bhopal', 'nagpur', 'kochi', 'guwahati'
 ];
 
-const KNOWN_DESTINATIONS = [
-  'jaipur', 'udaipur', 'jodhpur', 'jaisalmer', 'agra', 'varanasi', 'delhi', 'new delhi',
-  'mumbai', 'goa', 'hampi', 'mysuru', 'mysore', 'kochi', 'munnar', 'shimla', 'manali',
-  'dharamshala', 'leh', 'ladakh', 'srinagar', 'rishikesh', 'haridwar', 'amritsar',
-  'khajuraho', 'bhubaneswar', 'puri', 'konark', 'madurai', 'thanjavur', 'mahabalipuram',
-  'darjeeling', 'gangtok', 'shillong', 'kaziranga', 'gwalior', 'orchha', 'bhopal',
-  'hyderabad', 'aurangabad', 'ajanta', 'ellora', 'port blair', 'kavaratti', 'pondicherry', 'puducherry'
-];
+export const INDIAN_DESTINATION_ALIASES: Record<string, string> = {
+  // Chennai & Tamil Nadu
+  chennai: 'Chennai',
+  channi: 'Chennai',
+  channai: 'Chennai',
+  chenai: 'Chennai',
+  chinai: 'Chennai',
+  madras: 'Chennai',
+  madurai: 'Madurai',
+  coimbatore: 'Coimbatore',
+  kovai: 'Coimbatore',
+  mamallapuram: 'Mamallapuram',
+  mahabalipuram: 'Mamallapuram',
+  ooty: 'Ooty',
+  udhagamandalam: 'Ooty',
+  rameswaram: 'Rameswaram',
+  thanjavur: 'Thanjavur',
+  tanjore: 'Thanjavur',
+  tiruchirappalli: 'Tiruchirappalli',
+  trichy: 'Tiruchirappalli',
+  kanniyakumari: 'Kanniyakumari',
+  kanyakumari: 'Kanniyakumari',
+  kodaikanal: 'Kodaikanal',
+
+  // Maharashtra
+  mumbai: 'Mumbai',
+  bombay: 'Mumbai',
+  pune: 'Pune',
+  nagpur: 'Nagpur',
+  nashik: 'Nashik',
+  nasik: 'Nashik',
+  shirdi: 'Shirdi',
+  kolhapur: 'Kolhapur',
+  aurangabad: 'Chhatrapati Sambhaji Nagar',
+  'chhatrapati sambhaji nagar': 'Chhatrapati Sambhaji Nagar',
+  'sambhaji nagar': 'Chhatrapati Sambhaji Nagar',
+  mahabaleshwar: 'Mahabaleshwar',
+  igatpuri: 'Igatpuri',
+  lonavala: 'Lonavala',
+  khandala: 'Khandala',
+  alibaug: 'Alibaug',
+
+  // North India
+  delhi: 'Delhi',
+  'new delhi': 'Delhi',
+  dilli: 'Delhi',
+  agra: 'Agra',
+  jaipur: 'Jaipur',
+  jaypur: 'Jaipur',
+  udaipur: 'Udaipur',
+  jodhpur: 'Jodhpur',
+  jaisalmer: 'Jaisalmer',
+  bikaner: 'Bikaner',
+  ajmer: 'Ajmer',
+  pushkar: 'Pushkar',
+  'mount abu': 'Mount Abu',
+  varanasi: 'Varanasi',
+  kashi: 'Varanasi',
+  banaras: 'Varanasi',
+  lucknow: 'Lucknow',
+  prayagraj: 'Prayagraj',
+  allahabad: 'Prayagraj',
+  ayodhya: 'Ayodhya',
+  mathura: 'Mathura',
+  vrindavan: 'Vrindavan',
+  haridwar: 'Haridwar',
+  rishikesh: 'Rishikesh',
+  dehradun: 'Dehradun',
+  mussoorie: 'Mussoorie',
+  nainital: 'Nainital',
+  shimla: 'Shimla',
+  manali: 'Manali',
+  dharamshala: 'Dharamshala',
+  dharamsala: 'Dharamshala',
+  amritsar: 'Amritsar',
+  chandigarh: 'Chandigarh',
+  srinagar: 'Srinagar',
+  gulmarg: 'Gulmarg',
+  pahalgam: 'Pahalgam',
+  jammu: 'Jammu',
+  leh: 'Leh',
+  ladakh: 'Leh',
+  'spiti valley': 'Spiti Valley',
+  spiti: 'Spiti Valley',
+
+  // East & North East
+  kolkata: 'Kolkata',
+  calcutta: 'Kolkata',
+  kolkatta: 'Kolkata',
+  darjeeling: 'Darjeeling',
+  darjiling: 'Darjeeling',
+  siliguri: 'Siliguri',
+  gangtok: 'Gangtok',
+  pelling: 'Pelling',
+  shillong: 'Shillong',
+  cherrapunjee: 'Cherrapunjee',
+  cherrapunji: 'Cherrapunjee',
+  sohra: 'Cherrapunjee',
+  guwahati: 'Guwahati',
+  kaziranga: 'Kaziranga',
+  tawang: 'Tawang',
+  patna: 'Patna',
+  gaya: 'Gaya',
+  nalanda: 'Nalanda',
+  bhubaneswar: 'Bhubaneswar',
+  puri: 'Puri',
+  konark: 'Konark',
+  cuttack: 'Cuttack',
+  ranchi: 'Ranchi',
+  deoghar: 'Deoghar',
+
+  // South India
+  bengaluru: 'Bengaluru',
+  bangalore: 'Bengaluru',
+  bangaluru: 'Bengaluru',
+  banglore: 'Bengaluru',
+  mysuru: 'Mysuru',
+  mysore: 'Mysuru',
+  hampi: 'Hampi',
+  badami: 'Badami',
+  gokarna: 'Gokarna',
+  coorg: 'Coorg',
+  mangalore: 'Mangaluru',
+  mangaluru: 'Mangaluru',
+  kochi: 'Kochi',
+  cochin: 'Kochi',
+  munnar: 'Munnar',
+  alappuzha: 'Alappuzha',
+  alleppey: 'Alappuzha',
+  wayanad: 'Wayanad',
+  thiruvananthapuram: 'Thiruvananthapuram',
+  trivandrum: 'Thiruvananthapuram',
+  kovalam: 'Kovalam',
+  varkala: 'Varkala',
+  hyderabad: 'Hyderabad',
+  warangal: 'Warangal',
+  visakhapatnam: 'Visakhapatnam',
+  vizag: 'Visakhapatnam',
+  tirupati: 'Tirupati',
+  vijayawada: 'Vijayawada',
+  pondicherry: 'Puducherry',
+  puducherry: 'Puducherry',
+
+  // West & Central
+  ahmedabad: 'Ahmedabad',
+  surat: 'Surat',
+  vadodara: 'Vadodara',
+  baroda: 'Vadodara',
+  bhopal: 'Bhopal',
+  indore: 'Indore',
+  gwalior: 'Gwalior',
+  orchha: 'Orchha',
+  khajuraho: 'Khajuraho',
+  ujjain: 'Ujjain',
+  jabalpur: 'Jabalpur',
+  sanchi: 'Sanchi',
+  pachmarhi: 'Pachmarhi',
+  goa: 'Goa',
+  panaji: 'Goa',
+  daman: 'Daman',
+  diu: 'Diu',
+  'port blair': 'Port Blair',
+  'sri vijaya puram': 'Sri Vijaya Puram',
+  kavaratti: 'Kavaratti',
+};
 
 /**
  * Extracts travel entities from natural language query
@@ -43,6 +202,21 @@ export function extractEntities(rawText: string, existingContext?: any): Extract
     currency: 'INR',
     interests: [],
   };
+
+  // 0. Location Rejection (e.g. "no panvel nahi bhai", "panvel nahi", "not panvel")
+  const rejectionMatch =
+    text.match(/(?:no|nahi|not)\s+([a-zA-Z\s]+)/i) ||
+    text.match(/^([a-zA-Z\s]+?)\s+nahi\b/i);
+  if (rejectionMatch) {
+    const candidate = rejectionMatch[1]
+      .replace(/\b(?:nahi|na|not|bhai|yaar|dost|bhaiya|plz|please)\b/gi, ' ')
+      .replace(/\s+/g, ' ')
+      .trim()
+      .toLowerCase();
+    if (candidate && candidate.length > 2 && !['kuch', 'koi', 'aisa', 'kisi', 'yeh', 'ye'].includes(candidate)) {
+      entities.rejected_city = candidate.charAt(0).toUpperCase() + candidate.slice(1);
+    }
+  }
 
   // 1. Duration Extraction (e.g., "3 din", "3 days", "5 day", "weekend", "1 din", "ek din")
   const dayMatch = text.match(/(\d+)\s*(?:day|days|din|raat|nights)/i);
@@ -74,6 +248,7 @@ export function extractEntities(rawText: string, existingContext?: any): Extract
     entities.place_id = placeResult.place.id;
     entities.place_name = placeResult.place.name;
     entities.destination = placeResult.place.city;
+    entities.city = placeResult.place.city;
     entities.state = placeResult.place.state;
     entities.query_focus = placeResult.queryFocus;
     if (placeResult.place.category === 'religious_cultural' && !entities.interests.includes('spiritual')) {
@@ -85,8 +260,11 @@ export function extractEntities(rawText: string, existingContext?: any): Extract
   // Pattern: "from X to Y", "X se Y", "X to Y"
   const fromToMatch = text.match(/(?:from|se|starting from)\s+([a-zA-Z\s]+?)\s+(?:to|tak|jana hai|travel to)\s+([a-zA-Z\s]+)/i);
   if (fromToMatch) {
-    entities.origin = fromToMatch[1].trim();
-    entities.destination = fromToMatch[2].trim();
+    const rawOrig = fromToMatch[1].trim().toLowerCase();
+    const rawDest = fromToMatch[2].trim().toLowerCase();
+    entities.origin = INDIAN_DESTINATION_ALIASES[rawOrig] || (rawOrig.charAt(0).toUpperCase() + rawOrig.slice(1));
+    entities.destination = INDIAN_DESTINATION_ALIASES[rawDest] || (rawDest.charAt(0).toUpperCase() + rawDest.slice(1));
+    entities.city = entities.destination;
   } else {
     // Check for origin indicators ("Mumbai se", "from Delhi")
     for (const o of COMMON_ORIGINS) {
@@ -96,14 +274,27 @@ export function extractEntities(rawText: string, existingContext?: any): Extract
       }
     }
 
-    // Check for known destination mentions if not already set by place resolution
+    // Check for known destination mentions or phonetic aliases if not already set by place resolution
     if (!entities.destination) {
-      for (const d of KNOWN_DESTINATIONS) {
-        if (new RegExp(`\\b${d}\\b`, 'i').test(text)) {
-          if (!entities.origin || entities.origin.toLowerCase() !== d) {
-            entities.destination = d.charAt(0).toUpperCase() + d.slice(1);
+      for (const [alias, canonicalName] of Object.entries(INDIAN_DESTINATION_ALIASES)) {
+        if (new RegExp(`\\b${alias}\\b`, 'i').test(text)) {
+          if (!entities.origin || entities.origin.toLowerCase() !== alias) {
+            entities.destination = canonicalName;
+            entities.city = canonicalName;
             break;
           }
+        }
+      }
+    }
+
+    // Travel query patterns like "chennai ghumna hain", "ke Channi ghoom sakta hun", "visit jaipur"
+    if (!entities.destination) {
+      const travelPattern = text.match(/(?:ke|kya|main|hum)?\s*([a-zA-Z\s]{3,20}?)\s*(?:ghoom sakta|ghoom sakte|ghumna|ghumo|visit|explore|travel|trip|jana|ja sakta)/i);
+      if (travelPattern) {
+        const potentialCity = travelPattern[1].trim().toLowerCase();
+        if (INDIAN_DESTINATION_ALIASES[potentialCity]) {
+          entities.destination = INDIAN_DESTINATION_ALIASES[potentialCity];
+          entities.city = entities.destination;
         }
       }
     }

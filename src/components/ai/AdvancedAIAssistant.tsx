@@ -27,6 +27,7 @@ import {
 import { api } from '../../services/api';
 import { AIChatMessage, UserLocationContext, TransitComparison, GroundingCitation } from '../../types';
 import { VoiceInputButton } from '../common/VoiceInputButton';
+import { InsecureContextAlert } from '../common/InsecureContextAlert';
 
 interface ExtendedChatMessage extends AIChatMessage {
   suggested_places?: Array<{
@@ -876,6 +877,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
 
         {/* Input Bar (Full width) */}
         <div className="p-3.5 sm:p-4 bg-white border-t border-[#EFE8DF]">
+          <InsecureContextAlert variant="banner" className="mb-2.5" />
           <form
             onSubmit={(e) => {
               e.preventDefault();

@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
+import { isSecureContext, INSECURE_MEDIA_ERROR_MESSAGE } from '../utils/securityContext';
 
 // Declarations for Web Speech API to satisfy TypeScript without extra packages
 interface SpeechRecognitionEvent extends Event {
@@ -48,6 +49,7 @@ export function useVoiceInput({
 }: UseVoiceInputOptions = {}) {
   const [isListening, setIsListening] = useState(false);
   const [isSupported, setIsSupported] = useState(false);
+  const [isSecure, setIsSecure] = useState(true);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [transcript, setTranscript] = useState('');
 
@@ -57,9 +59,14 @@ export function useVoiceInput({
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
+      const secure = isSecureContext();
+      setIsSecure(secure);
       const SpeechRecognition =
         window.SpeechRecognition || window.webkitSpeechRecognition;
       setIsSupported(Boolean(SpeechRecognition));
+      if (!secure) {
+        setErrorMessage(INSECURE_MEDIA_ERROR_MESSAGE);
+      }
     }
   }, []);
 
@@ -82,6 +89,15 @@ export function useVoiceInput({
     isManuallyStoppedRef.current = false;
 
     if (typeof window === 'undefined') return;
+
+    // 0. Verify secure context (HTTPS or localhost)
+    // MediaDevices and Speech APIs are restricted to secure origins in web browsers
+    if (!isSecureContext()) {
+      setIsSecure(false);
+      setErrorMessage(INSECURE_MEDIA_ERROR_MESSAGE);
+      setIsListening(false);
+      return;
+    }
 
     // Check if permission was already permanently denied at the browser site-settings level
     if (navigator.permissions && navigator.permissions.query) {
@@ -111,6 +127,14 @@ export function useVoiceInput({
         } else {
           setErrorMessage('Microphone not detected. Please ensure a microphone is connected and allowed.');
         }
+        setIsListening(false);
+        return;
+      }
+    } else {
+      // navigator.mediaDevices is undefined when running under insecure HTTP
+      if (!isSecureContext()) {
+        setIsSecure(false);
+        setErrorMessage(INSECURE_MEDIA_ERROR_MESSAGE);
         setIsListening(false);
         return;
       }
@@ -247,6 +271,7 @@ export function useVoiceInput({
   return {
     isListening,
     isSupported,
+    isSecure,
     errorMessage,
     transcript,
     startListening,

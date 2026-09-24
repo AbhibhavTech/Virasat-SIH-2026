@@ -45,7 +45,8 @@ export function buildContextPayload(req: Request): LiveContextPayload {
   // Extract route / page navigation state
   const currentRoute = body.currentRoute || body.path || (req.headers['x-virasat-route'] as string) || '/';
   const selectedPlaceId = body.place_id || body.selectedPlaceId || (query.place_id ? String(query.place_id) : undefined);
-  const selectedCity = body.selectedCity || city;
+  // selectedCity is specifically a tourist destination explicitly chosen by the user, never the user's current GPS anchor
+  const selectedCity = body.selectedCity || (query.selectedCity ? String(query.selectedCity) : undefined);
   const activeItinerary = body.activeItinerary || body.itinerary || null;
 
   // Extract user info if authenticated via middleware

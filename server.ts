@@ -610,19 +610,57 @@ function haversineDistanceKm(lat1: number, lon1: number, lat2: number, lon2: num
   return Math.round(R * c * 100) / 100;
 }
 
-// Lazy Gemini AI Client initialization
+// Lazy Gemini AI Client initialization with circuit breaker
 let aiClient: GoogleGenAI | null = null;
+let serverGeminiCircuitCooldownUntil = 0;
+
+function isServerGeminiCircuitOpen(): boolean {
+  return Date.now() < serverGeminiCircuitCooldownUntil;
+}
+
+function handleServerGeminiError(err: any, modelName: string): { shouldBreakAll: boolean } {
+  const errMsg = String(err?.message || err || '');
+  const is429 = errMsg.includes('429') || errMsg.includes('RESOURCE_EXHAUSTED') || errMsg.includes('quota') || errMsg.includes('Quota exceeded');
+  const is503 = errMsg.includes('503') || errMsg.includes('UNAVAILABLE') || errMsg.includes('high demand');
+
+  if (is429) {
+    let cooldownMs = 30000;
+    const retryMatch = errMsg.match(/retry in\s+([0-9.]+)\s*s/i) || errMsg.match(/"retryDelay":\s*"(\d+)s"/i);
+    if (retryMatch) {
+      const parsedSec = parseFloat(retryMatch[1]);
+      if (!isNaN(parsedSec) && parsedSec > 0) cooldownMs = Math.min(Math.round(parsedSec * 1000) + 2000, 60000);
+    }
+    serverGeminiCircuitCooldownUntil = Date.now() + cooldownMs;
+    console.info(`[Server] Rate quota limit encountered on ${modelName}. Active cooldown ${Math.round(cooldownMs / 1000)}s; engaging local engine.`);
+    return { shouldBreakAll: true };
+  }
+
+  if (is503) {
+    serverGeminiCircuitCooldownUntil = Date.now() + 15000;
+    console.info(`[Server] Upstream high demand on ${modelName}. Active cooldown 15s; engaging local engine.`);
+    return { shouldBreakAll: false };
+  }
+
+  console.info(`[Server] ${modelName} transient fallback; engaging local engine.`);
+  return { shouldBreakAll: false };
+}
+
 function getAIClient(): GoogleGenAI | null {
   if (!process.env.GEMINI_API_KEY) return null;
   if (!aiClient) {
-    aiClient = new GoogleGenAI({
-      apiKey: process.env.GEMINI_API_KEY,
-      httpOptions: {
-        headers: {
-          'User-Agent': 'aistudio-build',
+    try {
+      aiClient = new GoogleGenAI({
+        apiKey: process.env.GEMINI_API_KEY,
+        httpOptions: {
+          headers: {
+            'User-Agent': 'aistudio-build',
+          },
         },
-      },
-    });
+      });
+    } catch {
+      console.info('[Server] GoogleGenAI client unavailable; engaging local engine.');
+      return null;
+    }
   }
   return aiClient;
 }
@@ -3242,7 +3280,7 @@ app.post(['/api/ai/chat', '/api/assistant/chat'], async (req, res) => {
   // Try Gemini AI with Grounded Dynamic Context & Verified Facts
   // -------------------------------------------------------------
   const ai = getAIClient();
-  if (ai) {
+  if (ai && !isServerGeminiCircuitOpen()) {
     try {
       const locationContextStr = userLoc
         ? `User's Verified Location: ${userLoc.locality ? `${userLoc.locality}, ` : ''}${userLoc.city || ''}, ${userLoc.state || ''} (Coordinates provided: ${userHasCoords ? 'Yes' : 'No'})`
@@ -3317,7 +3355,9 @@ ${placesContextStr}`;
             usedModel = modelName;
             break;
           }
-        } catch {
+        } catch (err: any) {
+          const { shouldBreakAll } = handleServerGeminiError(err, modelName);
+          if (shouldBreakAll) break;
           continue;
         }
       }

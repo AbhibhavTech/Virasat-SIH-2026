@@ -1,4 +1,5 @@
 import { resolvePlaceEntity, ResolvedPlace, QueryFocus } from './placeResolver';
+import { INDIAN_DESTINATION_ALIASES } from './entityExtractor';
 
 export type UserIntent =
   | 'GREETING'
@@ -83,16 +84,19 @@ function _classifyIntent(
   const language = isHinglish ? 'hi_hinglish' : 'en';
 
   // 1. Casual Greetings & Social
-  if (/^(hello|hi|hey|heya|namaste|namaskar|pranam|adaab|vanakkam|sasriakal)[\s!.]*$/i.test(text)) {
+  if (/\b(hello|hi|hey|heya|namaste|namaskar|pranam|adaab|vanakkam|sasriakal)\b/i.test(text)) {
+    if (/(kaise ho|how are you|kya haal|whats up|sup|sab badhiya|kya chal raha hai)/i.test(text)) {
+      return { intent: 'CASUAL_CONVERSATION', confidence: 0.98, language, isHinglish };
+    }
     return { intent: 'GREETING', confidence: 0.99, language, isHinglish };
   }
-  if (/^(kaise ho|how are you|kya haal|whats up|sup|sab badhiya|kya chal raha hai)[\s!?.]*$/i.test(text)) {
+  if (/(kaise ho|how are you|kya haal|whats up|sup|sab badhiya|kya chal raha hai)/i.test(text)) {
     return { intent: 'CASUAL_CONVERSATION', confidence: 0.98, language, isHinglish };
   }
-  if (/^(bye|alvida|goodbye|see you|tata|baad me baat karte|chalta hu)[\s!.]*$/i.test(text)) {
+  if (/\b(bye|alvida|goodbye|see you|tata|baad me baat karte|chalta hu)\b/i.test(text)) {
     return { intent: 'FAREWELL', confidence: 0.98, language, isHinglish };
   }
-  if (/^(thank you|thanks|shukriya|dhanyawad|dhanyavaad|thx)[\s!.]*$/i.test(text)) {
+  if (/\b(thank you|thanks|shukriya|dhanyawad|dhanyavaad|thx)\b/i.test(text)) {
     return { intent: 'THANKS', confidence: 0.98, language, isHinglish };
   }
   if (/(what is this|who are you|tum kaun ho|ye kya hai|what is virasat|virasat kya hai|about virasat|introduce yourself)/i.test(text)) {
@@ -195,10 +199,37 @@ function _classifyIntent(
     return { intent: 'MONUMENT_INFO', confidence: 0.99, language, isHinglish, resolvedPlace, queryFocus };
   }
 
+  // 17b. Rejection of a location (e.g. "no panvel nahi bhai", "panvel nahi", "not panvel")
+  if (/(?:no|nahi|not)\s+[a-zA-Z\s]+?(?:nahi|bhai|yaar)?$/i.test(text) || /^[a-zA-Z\s]+?\s+nahi\b/i.test(text)) {
+    return { intent: 'CASUAL_CONVERSATION', confidence: 0.98, language, isHinglish };
+  }
+
+  // 17c. Destination / City Inquiry (e.g. "chennai ghumna hain mujhe", "ke Channi ghoom sakta hun main", "chennai", "delhi??")
+  const cleanedSingleWord = text.replace(/[?!.,;]/g, '').trim();
+  if (INDIAN_DESTINATION_ALIASES[cleanedSingleWord]) {
+    return { intent: 'DESTINATION_INFO', confidence: 0.98, language, isHinglish };
+  }
+
+  // Check if any destination alias exists with travel verbs ("ghumna", "ghoom", "visit", "trip", "explore")
+  for (const alias of Object.keys(INDIAN_DESTINATION_ALIASES)) {
+    if (new RegExp(`\\b${alias}\\b`, 'i').test(text)) {
+      if (/(ghoom|ghumna|visit|explore|travel|trip|tour|jana|ja sakte|ghumte|chalna)/i.test(text)) {
+        return { intent: 'DESTINATION_INFO', confidence: 0.96, language, isHinglish };
+      }
+    }
+  }
+
   // 18. State / UT Query
   for (const reg of INDIAN_STATES_AND_UTS) {
     if (new RegExp(`\\b${reg}\\b`, 'i').test(text)) {
       return { intent: 'STATE_INFO', confidence: 0.95, language, isHinglish };
+    }
+  }
+
+  // 18b. General Destination / City match
+  for (const alias of Object.keys(INDIAN_DESTINATION_ALIASES)) {
+    if (new RegExp(`\\b${alias}\\b`, 'i').test(text)) {
+      return { intent: 'DESTINATION_INFO', confidence: 0.92, language, isHinglish };
     }
   }
 

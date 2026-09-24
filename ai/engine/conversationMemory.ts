@@ -54,6 +54,21 @@ export function updateConversationState(
 ): TripMemoryState {
   const state = getConversationState(sessionId);
 
+  // If user explicitly rejects a location ("no panvel nahi", "panvel nahi", etc.)
+  if (newEntities.rejected_city) {
+    const rejLower = newEntities.rejected_city.toLowerCase();
+    if (state.destination && state.destination.toLowerCase().includes(rejLower)) {
+      delete state.destination;
+    }
+    if (state.lastPlace && (state.lastPlace.city.toLowerCase().includes(rejLower) || state.lastPlace.name.toLowerCase().includes(rejLower))) {
+      delete state.lastPlace;
+      delete state.lastPlaceId;
+    }
+    if (state.multiCities) {
+      state.multiCities = state.multiCities.filter((c) => !c.toLowerCase().includes(rejLower));
+    }
+  }
+
   if (newEntities.origin) state.origin = newEntities.origin;
   if (newEntities.destination) {
     // If state already had destination and user adds another, handle multi-city

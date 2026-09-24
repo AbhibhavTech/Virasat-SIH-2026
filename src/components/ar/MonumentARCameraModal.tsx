@@ -34,6 +34,7 @@ import {
 } from 'lucide-react';
 import { api } from '../../services/api';
 import { VisualIdentificationResult, AROverlayPin } from '../../types';
+import { isSecureContext } from '../../utils/securityContext';
 
 interface MonumentARCameraModalProps {
   isOpen: boolean;
@@ -189,7 +190,12 @@ export const MonumentARCameraModal: React.FC<MonumentARCameraModalProps> = ({
 
   // Start device camera
   const startCamera = async (facing: 'environment' | 'user' = facingMode) => {
-    if (typeof navigator === 'undefined' || !navigator.mediaDevices?.getUserMedia) {
+    if (!isSecureContext() || typeof navigator === 'undefined' || !navigator.mediaDevices?.getUserMedia) {
+      if (!isSecureContext()) {
+        setErrorMessage(
+          'Camera access requires HTTPS or a local development environment (localhost). The browser disables the MediaDevices API in insecure HTTP environments.'
+        );
+      }
       setCameraStatus('unsupported');
       return;
     }
@@ -1116,9 +1122,13 @@ export const MonumentARCameraModal: React.FC<MonumentARCameraModalProps> = ({
               {cameraStatus === 'unsupported' && (
                 <div className="absolute inset-0 flex flex-col items-center justify-center bg-stone-950 text-white p-6 text-center z-20">
                   <AlertCircle className="w-8 h-8 text-amber-500 mb-3" />
-                  <h3 className="text-sm sm:text-base font-bold">Camera Not Supported in this Environment</h3>
+                  <h3 className="text-sm sm:text-base font-bold">
+                    {!isSecureContext() ? 'HTTPS or Localhost Required' : 'Camera Not Supported in this Environment'}
+                  </h3>
                   <p className="text-xs text-stone-400 mt-1 max-w-sm">
-                    Your current browser environment does not support WebRTC camera feeds. Please use Photo Upload mode below.
+                    {!isSecureContext()
+                      ? 'Web browsers strictly disable the MediaDevices API over insecure HTTP. Please access this app via HTTPS or on localhost to use the live camera feed.'
+                      : 'Your current browser environment does not support WebRTC camera feeds. Please use Photo Upload mode below.'}
                   </p>
                   <button
                     type="button"
