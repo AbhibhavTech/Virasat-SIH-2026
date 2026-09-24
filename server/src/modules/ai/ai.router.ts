@@ -1,6 +1,15 @@
 import { Router, Request, Response } from 'express';
 import { GoogleGenAI } from '@google/genai';
 import { db } from '../../db/client';
+
+const Type = {
+  STRING: 'STRING',
+  NUMBER: 'NUMBER',
+  INTEGER: 'INTEGER',
+  BOOLEAN: 'BOOLEAN',
+  ARRAY: 'ARRAY',
+  OBJECT: 'OBJECT',
+} as const;
 import { rateLimiter } from '../../middleware/rateLimiter';
 import {
   resolveOriginTransportNode,
@@ -564,6 +573,256 @@ aiRouter.post('/place-maps-info', async (req: Request, res: Response): Promise<v
     review_snippets: reviewSnippets,
     coordinates: (lat && lng) ? { lat: Number(lat), lng: Number(lng) } : undefined,
   });
+});
+
+/**
+ * POST /api/v1/ai/heritage-route-analyzer
+ * Uses Gemini API to suggest optimized transit routes between multiple monuments,
+ * calculating travel times and rich historical significance for each segment.
+ */
+aiRouter.post('/heritage-route-analyzer', async (req: Request, res: Response): Promise<void> => {
+  const { monuments, transport_mode = 'DRIVE', city, travel_style = 'balanced' } = req.body || {};
+
+  if (!Array.isArray(monuments) || monuments.length < 2) {
+    res.status(400).json({
+      success: false,
+      error: 'At least 2 monuments are required to analyze a heritage transit route.',
+    });
+    return;
+  }
+
+  const ai = getAIClient();
+  const validMonuments = monuments.map((m: any, idx: number) => ({
+    id: m.id || `monument-${idx}`,
+    name: m.name,
+    city: m.city || city || 'India',
+    lat: Number(m.lat) || 0,
+    lng: Number(m.lng) || 0,
+    summary: m.summary || '',
+  }));
+
+  const modeSpeedKmH = transport_mode === 'WALK' ? 4.5 : transport_mode === 'TRANSIT' ? 22 : 32;
+
+  // Fallback calculation helper in case AI call fails
+  const computeFallbackRoute = () => {
+    const ordered: any[] = [];
+    const remaining = [...validMonuments];
+    let current = remaining.shift()!;
+    ordered.push({
+      stop_order: 1,
+      id: current.id,
+      name: current.name,
+      lat: current.lat,
+      lng: current.lng,
+      visit_duration_minutes: 60,
+      historical_era: 'Classical Heritage Era',
+      key_highlight: current.summary || 'Prominent regional cultural landmark',
+    });
+
+    while (remaining.length > 0) {
+      let nearestIdx = 0;
+      let minD = Infinity;
+      for (let i = 0; i < remaining.length; i++) {
+        const d = haversineKm(current.lat, current.lng, remaining[i].lat, remaining[i].lng);
+        if (d < minD) {
+          minD = d;
+          nearestIdx = i;
+        }
+      }
+      current = remaining.splice(nearestIdx, 1)[0];
+      ordered.push({
+        stop_order: ordered.length + 1,
+        id: current.id,
+        name: current.name,
+        lat: current.lat,
+        lng: current.lng,
+        visit_duration_minutes: 60,
+        historical_era: 'Living Tradition & Architecture',
+        key_highlight: current.summary || 'Sacred architecture and historic craftsmanship',
+      });
+    }
+
+    const segments: any[] = [];
+    let totalDist = 0;
+    let totalTransitMin = 0;
+
+    for (let i = 0; i < ordered.length - 1; i++) {
+      const from = ordered[i];
+      const to = ordered[i + 1];
+      const dist = Math.round(haversineKm(from.lat, from.lng, to.lat, to.lng) * 1.3 * 10) / 10;
+      const mins = Math.max(8, Math.round((dist / modeSpeedKmH) * 60));
+      totalDist += dist;
+      totalTransitMin += mins;
+
+      segments.push({
+        segment_index: i + 1,
+        from_stop_id: from.id,
+        from_name: from.name,
+        to_stop_id: to.id,
+        to_name: to.name,
+        distance_km: dist,
+        travel_time_minutes: mins,
+        recommended_mode: transport_mode === 'WALK' ? 'Heritage Footpath Walk' : transport_mode === 'TRANSIT' ? 'Metro / Public Bus' : 'Auto-Rickshaw / Taxi',
+        transit_tip: `Connect via arterial heritage corridors between ${from.name} and ${to.name}.`,
+        historical_significance: `This transit corridor bridges the architectural shift from ${from.name} to ${to.name}, demonstrating regional stone craftsmanship and historical patronage evolution.`,
+        architectural_transition: `Transitioning from classical carved ornamentation to later structural additions along the civic axis.`,
+        notable_landmarks_en_route: ['Traditional Craft Bazaars', 'Historic City Gateways'],
+      });
+    }
+
+    return {
+      success: true,
+      circuit_title: `${city || 'Heritage'} Discovery Circuit`,
+      narrative_theme: `Chronological exploration of ${ordered.length} master monuments connecting ancient traditions with royal architectural milestones.`,
+      total_distance_km: Math.round(totalDist * 10) / 10,
+      total_transit_minutes: totalTransitMin,
+      total_recommended_hours: Math.round((totalTransitMin / 60 + ordered.length * 1.2) * 10) / 10,
+      ordered_stops: ordered,
+      segments,
+      expert_recommendation: `Begin early in the morning at ${ordered[0].name} to take advantage of soft natural lighting and avoid afternoon crowds.`,
+    };
+  };
+
+  if (ai) {
+    try {
+      const monumentsListText = validMonuments
+        .map(
+          (m, idx) =>
+            `${idx + 1}. ${m.name} (ID: ${m.id}, Lat: ${m.lat}, Lng: ${m.lng}, City: ${m.city})\n   Summary: ${m.summary}`
+        )
+        .join('\n');
+
+      const systemInstruction = `You are the Virasat Senior Heritage Historian and Multimodal Transit Route Architect for India.
+Your mission is to analyze a group of monuments and generate an optimized 'Heritage Route Analysis':
+1. Sequence optimization: Order the monuments logically to minimize transit time while maximizing chronological narrative flow.
+2. For EACH segment between consecutive stops (Stop i -> Stop i+1):
+   - travel_time_minutes: Realistic travel duration in minutes based on ${transport_mode}.
+   - distance_km: Realistic road/pedestrian distance in km.
+   - historical_significance: Rich, specific historical transition between these two monuments (dynasty changes, architectural style progression, cultural shifts, or historical royal processions).
+   - architectural_transition: Contrast in design elements (e.g., corbelled vs true arches, Rajput chhatris vs Mughal charbagh, rock-cut vs structural temples).
+   - recommended_mode: Best practical vehicle (Auto-Rickshaw, Metro, Taxi, Heritage Walk).
+   - transit_tip: Practical navigation or street-level tip for travelers.
+   - notable_landmarks_en_route: 1-3 interesting sights or bazaars between them.
+3. Circuit Overview:
+   - circuit_title: Evocative title for the journey.
+   - narrative_theme: 2-3 sentence overview of this cultural trail.
+   - total_distance_km: Sum of segment distances.
+   - total_transit_minutes: Sum of travel times.
+   - total_recommended_hours: Total time needed including ~60-90 min exploration at each monument.
+   - expert_recommendation: Insider advice on timing, dress codes, or photography angles.
+
+Return ONLY valid JSON according to schema.`;
+
+      const prompt = `Analyze and optimize this heritage route containing ${validMonuments.length} monuments in ${city || 'India'} for ${transport_mode} mode:\n\n${monumentsListText}`;
+
+      const modelsToTry = ['gemini-3.5-flash', 'gemini-3.8-flash'];
+      for (const mName of modelsToTry) {
+        try {
+          const callRes = await Promise.race([
+            ai.models.generateContent({
+              model: mName,
+              contents: prompt,
+              config: {
+                systemInstruction,
+                responseMimeType: 'application/json',
+                responseSchema: {
+                  type: Type.OBJECT,
+                  properties: {
+                    circuit_title: { type: Type.STRING },
+                    narrative_theme: { type: Type.STRING },
+                    total_distance_km: { type: Type.NUMBER },
+                    total_transit_minutes: { type: Type.INTEGER },
+                    total_recommended_hours: { type: Type.NUMBER },
+                    ordered_stops: {
+                      type: Type.ARRAY,
+                      items: {
+                        type: Type.OBJECT,
+                        properties: {
+                          stop_order: { type: Type.INTEGER },
+                          id: { type: Type.STRING },
+                          name: { type: Type.STRING },
+                          lat: { type: Type.NUMBER },
+                          lng: { type: Type.NUMBER },
+                          visit_duration_minutes: { type: Type.INTEGER },
+                          historical_era: { type: Type.STRING },
+                          key_highlight: { type: Type.STRING },
+                        },
+                        required: ['stop_order', 'id', 'name', 'lat', 'lng', 'historical_era', 'key_highlight'],
+                      },
+                    },
+                    segments: {
+                      type: Type.ARRAY,
+                      items: {
+                        type: Type.OBJECT,
+                        properties: {
+                          segment_index: { type: Type.INTEGER },
+                          from_stop_id: { type: Type.STRING },
+                          from_name: { type: Type.STRING },
+                          to_stop_id: { type: Type.STRING },
+                          to_name: { type: Type.STRING },
+                          distance_km: { type: Type.NUMBER },
+                          travel_time_minutes: { type: Type.INTEGER },
+                          recommended_mode: { type: Type.STRING },
+                          transit_tip: { type: Type.STRING },
+                          historical_significance: { type: Type.STRING },
+                          architectural_transition: { type: Type.STRING },
+                          notable_landmarks_en_route: {
+                            type: Type.ARRAY,
+                            items: { type: Type.STRING },
+                          },
+                        },
+                        required: [
+                          'segment_index',
+                          'from_stop_id',
+                          'from_name',
+                          'to_stop_id',
+                          'to_name',
+                          'distance_km',
+                          'travel_time_minutes',
+                          'recommended_mode',
+                          'historical_significance',
+                          'architectural_transition',
+                        ],
+                      },
+                    },
+                    expert_recommendation: { type: Type.STRING },
+                  },
+                  required: ['circuit_title', 'narrative_theme', 'total_distance_km', 'total_transit_minutes', 'ordered_stops', 'segments'],
+                },
+              },
+            }),
+            new Promise<any>((_, reject) => setTimeout(() => reject(new Error('Timeout')), 16000)),
+          ]);
+
+          if (callRes?.text) {
+            const parsed = JSON.parse(callRes.text);
+            if (Array.isArray(parsed.ordered_stops) && parsed.ordered_stops.length >= 2 && Array.isArray(parsed.segments)) {
+              parsed.ordered_stops.forEach((st: any) => {
+                const match = validMonuments.find((vm) => vm.id === st.id || vm.name.toLowerCase() === st.name.toLowerCase());
+                if (match) {
+                  st.lat = match.lat;
+                  st.lng = match.lng;
+                  st.id = match.id;
+                }
+              });
+
+              res.json({
+                success: true,
+                ...parsed,
+              });
+              return;
+            }
+          }
+        } catch {
+          // Try next fallback model
+        }
+      }
+    } catch (e: any) {
+      console.error('[AI Router] Heritage route analyzer error:', e?.message || e);
+    }
+  }
+
+  res.json(computeFallbackRoute());
 });
 
 /**

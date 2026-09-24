@@ -27,11 +27,15 @@ export const MapPage: React.FC<MapPageProps> = ({
           </div>
           <h1 className="text-xl sm:text-2xl font-black text-stone-900 tracking-tight">Interactive Heritage & Discovery Map</h1>
           <p className="text-xs text-stone-500 max-w-2xl">
-            Clustered geospatial view of verified UNESCO/ASI monuments and hidden gems across India with search, GPS location, and Route Studio.
+            Clustered geospatial view of verified UNESCO/ASI monuments and hidden gems across India with Gemini-powered Heritage Route Analyzer, historical segment narratives, and Route Studio.
           </p>
         </div>
 
         <div className="flex flex-wrap items-center gap-2 text-xs font-semibold text-stone-600 bg-stone-50 p-2.5 rounded-2xl border border-stone-200/80">
+          <span className="flex items-center gap-1.5 font-bold text-amber-800 bg-amber-100/70 px-2 py-0.5 rounded-lg">
+            <Sparkles className="w-3 h-3 text-amber-600" /> Route Analyzer
+          </span>
+          <span className="text-stone-300">•</span>
           <span className="flex items-center gap-1.5">
             <span className="w-2.5 h-2.5 rounded-full bg-amber-600 inline-block" /> 🏛️ Heritage Sites
           </span>

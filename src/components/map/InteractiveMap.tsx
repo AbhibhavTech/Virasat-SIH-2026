@@ -1,9 +1,14 @@
 import React, { useEffect, useRef, useState, useMemo, useCallback } from 'react';
 import L from 'leaflet';
-import { PlaceSummary, RouteResponse, TransportMode, LocationSuggestion, GoogleMapsPlaceInfo } from '../../types';
+import { PlaceSummary, RouteResponse, TransportMode, LocationSuggestion, GoogleMapsPlaceInfo, HeritageRouteAnalysisResult } from '../../types';
 import { api } from '../../services/api';
 import { findNearestCity, calculateHaversineKm } from '../../data/citiesData';
 import { VERIFIED_HIDDEN_GEMS, HiddenGemItem } from '../../data/hiddenGemsData';
+import {
+  HeritageRouteAnalyzer,
+  SelectedMonumentItem,
+  CURATED_HERITAGE_CIRCUITS,
+} from './HeritageRouteAnalyzer';
 import {
   MapPin,
   Search,
@@ -212,12 +217,21 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
   const searchHighlightRef = useRef<L.LayerGroup | null>(null);
   const userLocationMarkerRef = useRef<L.Marker | null>(null);
   const userAccuracyCircleRef = useRef<L.Circle | null>(null);
+  const heritageRouteGroupRef = useRef<L.LayerGroup | null>(null);
+  const segmentPolylinesRef = useRef<Record<number, L.Polyline>>({});
 
   // Datasets
   const [heritageSites, setHeritageSites] = useState<any[]>([]);
   const [stations, setStations] = useState<any[]>([]);
   const [hiddenGemsList] = useState<HiddenGemItem[]>(VERIFIED_HIDDEN_GEMS);
   const [loading, setLoading] = useState(true);
+
+  // Heritage Route Analyzer State
+  const [isHeritageAnalyzerOpen, setIsHeritageAnalyzerOpen] = useState(false);
+  const [selectedHeritageMonuments, setSelectedHeritageMonuments] = useState<SelectedMonumentItem[]>(() => {
+    return CURATED_HERITAGE_CIRCUITS[0]?.monuments || [];
+  });
+  const [activeHeritageResult, setActiveHeritageResult] = useState<HeritageRouteAnalysisResult | null>(null);
 
   // Filters & Search
   const [searchQuery, setSearchQuery] = useState('');
@@ -399,11 +413,17 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
       clusterLayerRef.current = L.layerGroup().addTo(map);
       routeMarkersRef.current = L.layerGroup().addTo(map);
       searchHighlightRef.current = L.layerGroup().addTo(map);
+      heritageRouteGroupRef.current = L.layerGroup().addTo(map);
     } catch (initErr) {
       console.error('[Map] Failed to initialize Leaflet:', initErr);
     }
 
     return () => {
+      if (heritageRouteGroupRef.current) {
+        try {
+          heritageRouteGroupRef.current.clearLayers();
+        } catch {}
+      }
       if (searchHighlightRef.current) {
         try {
           searchHighlightRef.current.clearLayers();
@@ -504,6 +524,10 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
           </button>
         </div>
 
+        <button id="btn-add-analyzer-${site.id}" style="width: 100%; background: #fff7ed; color: #c2410c; border: 1px solid #fed7aa; border-radius: 6px; padding: 4px 6px; font-size: 10px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px; margin-bottom: 6px;">
+          <span>🏛️ Add to Heritage Route Analyzer</span>
+        </button>
+
         <div style="display: flex; gap: 6px;">
           <button id="btn-dossier-${site.id}" style="flex: 1; background: #ea580c; color: #fff; border: none; border-radius: 6px; padding: 6px 0; font-size: 11px; font-weight: 700; cursor: pointer;">
             View Details
@@ -550,6 +574,10 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
             <span>📍 Maps Intel</span>
           </button>
         </div>
+
+        <button id="btn-add-analyzer-${gem.id}" style="width: 100%; background: #fff7ed; color: #c2410c; border: 1px solid #fed7aa; border-radius: 6px; padding: 4px 6px; font-size: 10px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px; margin-bottom: 6px;">
+          <span>🏛️ Add to Heritage Route Analyzer</span>
+        </button>
 
         <button id="btn-dossier-${gem.id}" style="width: 100%; background: #9333ea; color: #fff; border: none; border-radius: 6px; padding: 6px 0; font-size: 11px; font-weight: 700; cursor: pointer;">
           View Secret Place Dossier
@@ -598,6 +626,23 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
     const btnMaps = card.querySelector(`#btn-maps-intel-${item.id}`) as HTMLElement;
     if (btnMaps) {
       btnMaps.onclick = () => handleOpenMapsIntel(item);
+    }
+
+    const btnAddAnalyzer = card.querySelector(`#btn-add-analyzer-${item.id}`) as HTMLElement;
+    if (btnAddAnalyzer) {
+      btnAddAnalyzer.onclick = () => {
+        handleAddMonumentToAnalyzer({
+          id: item.id,
+          name: item.name,
+          city: item.city,
+          state: item.state,
+          lat: item.lat,
+          lng: item.lng,
+          summary: item.raw?.summary || item.raw?.whyInteresting || '',
+          category: item.raw?.category,
+        });
+        setIsHeritageAnalyzerOpen(true);
+      };
     }
 
     const btnOrigin = card.querySelector(`#btn-orig-${item.id}`) as HTMLElement;
@@ -1370,6 +1415,190 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
     setRouteError(null);
   };
 
+  const handleAddMonumentToAnalyzer = (monument: SelectedMonumentItem) => {
+    setSelectedHeritageMonuments((prev) => {
+      if (prev.some((m) => m.id === monument.id || m.name.toLowerCase() === monument.name.toLowerCase())) {
+        return prev;
+      }
+      return [...prev, monument];
+    });
+  };
+
+  const handleRemoveMonumentFromAnalyzer = (monumentId: string) => {
+    setSelectedHeritageMonuments((prev) => prev.filter((m) => m.id !== monumentId));
+  };
+
+  const handleReorderMonumentsInAnalyzer = (newOrder: SelectedMonumentItem[]) => {
+    setSelectedHeritageMonuments(newOrder);
+  };
+
+  const handleClearMonumentsInAnalyzer = () => {
+    setSelectedHeritageMonuments([]);
+  };
+
+  const handleClearHeritageRoute = () => {
+    if (heritageRouteGroupRef.current) {
+      heritageRouteGroupRef.current.clearLayers();
+    }
+    segmentPolylinesRef.current = {};
+    setActiveHeritageResult(null);
+  };
+
+  const handleApplyHeritageRouteToMap = (result: HeritageRouteAnalysisResult) => {
+    if (!mapInstanceRef.current || !result.ordered_stops || result.ordered_stops.length === 0) return;
+
+    setActiveHeritageResult(result);
+
+    // Clear previous heritage route layers
+    if (heritageRouteGroupRef.current) {
+      heritageRouteGroupRef.current.clearLayers();
+    } else {
+      heritageRouteGroupRef.current = L.layerGroup().addTo(mapInstanceRef.current);
+    }
+
+    // Also clear point-to-point route studio to avoid clutter
+    if (routePolylineRef.current) {
+      routePolylineRef.current.remove();
+      routePolylineRef.current = null;
+    }
+    if (routeMarkersRef.current) {
+      routeMarkersRef.current.clearLayers();
+    }
+
+    const segmentPolylines: Record<number, L.Polyline> = {};
+    const latLngs: L.LatLngExpression[] = [];
+
+    const segmentColors = ['#ea580c', '#9333ea', '#059669', '#0284c7', '#d97706', '#db2777', '#10b981'];
+
+    // 1. Draw Numbered Stop Markers
+    result.ordered_stops.forEach((stop) => {
+      if (!stop.lat || !stop.lng) return;
+      const pos: [number, number] = [stop.lat, stop.lng];
+      latLngs.push(pos);
+
+      const stopIcon = L.divIcon({
+        className: 'heritage-route-stop-icon',
+        html: `
+          <div style="background: linear-gradient(135deg, #ea580c, #c2410c); width: 34px; height: 34px; border-radius: 50%; border: 3px solid #ffffff; box-shadow: 0 4px 14px rgba(234, 88, 12, 0.7); display: flex; align-items: center; justify-content: center; color: #ffffff; font-weight: 900; font-size: 13px; cursor: pointer; text-shadow: 0 1px 2px rgba(0,0,0,0.4);">
+            ${stop.stop_order}
+          </div>
+        `,
+        iconSize: [34, 34],
+        iconAnchor: [17, 17],
+      });
+
+      const marker = L.marker(pos, { icon: stopIcon }).addTo(heritageRouteGroupRef.current!);
+
+      marker.bindPopup(`
+        <div style="font-family: sans-serif; padding: 4px; max-width: 250px;">
+          <div style="font-size: 10px; font-weight: 800; color: #ea580c; text-transform: uppercase;">Stop ${stop.stop_order}</div>
+          <h4 style="font-size: 13px; font-weight: 800; margin: 2px 0 4px 0; color: #0f172a;">${stop.name}</h4>
+          <div style="font-size: 11px; color: #b45309; font-weight: 700; margin-bottom: 4px;">🏛️ ${stop.historical_era}</div>
+          <div style="font-size: 11px; color: #475569; line-height: 1.35; margin-bottom: 6px;">${stop.key_highlight}</div>
+          ${stop.visit_duration_minutes ? `<div style="font-size: 10px; color: #64748b; font-weight: 600;">⏱️ Recommended Visit: ~${stop.visit_duration_minutes} min</div>` : ''}
+          <div style="display: flex; gap: 4px; margin-top: 6px;">
+            <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(stop.name)}" target="_blank" rel="noopener noreferrer" style="flex: 1; text-align: center; background: #2563eb; color: #ffffff; font-size: 10px; font-weight: 700; padding: 5px; border-radius: 6px; text-decoration: none;">
+              Google Maps ↗
+            </a>
+          </div>
+        </div>
+      `);
+    });
+
+    // 2. Draw Interactive Segment Polylines
+    result.segments.forEach((seg, idx) => {
+      const fromStop = result.ordered_stops.find((s) => s.id === seg.from_stop_id) || result.ordered_stops[idx];
+      const toStop = result.ordered_stops.find((s) => s.id === seg.to_stop_id) || result.ordered_stops[idx + 1];
+
+      if (!fromStop || !toStop || !fromStop.lat || !toStop.lat) return;
+
+      const segPoints: [number, number][] = [
+        [fromStop.lat, fromStop.lng],
+        [toStop.lat, toStop.lng],
+      ];
+
+      const segColor = segmentColors[idx % segmentColors.length];
+
+      const polyline = L.polyline(segPoints, {
+        color: segColor,
+        weight: 5,
+        opacity: 0.9,
+        lineCap: 'round',
+        lineJoin: 'round',
+        dashArray: '8, 8',
+      }).addTo(heritageRouteGroupRef.current!);
+
+      segmentPolylines[idx] = polyline;
+
+      polyline.bindPopup(`
+        <div style="max-width: 290px; font-family: sans-serif; padding: 4px;">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 4px;">
+            <span style="font-size: 10px; font-weight: 800; color: ${segColor}; text-transform: uppercase;">
+              Transit Segment ${seg.segment_index}
+            </span>
+            <span style="font-size: 10px; font-weight: 700; background: #f1f5f9; padding: 2px 6px; border-radius: 4px; color: #334155;">
+              ${seg.recommended_mode}
+            </span>
+          </div>
+          <h4 style="font-size: 13px; font-weight: 800; margin: 0 0 6px 0; color: #0f172a;">
+            ${seg.from_name} ➔ ${seg.to_name}
+          </h4>
+          <div style="display: flex; gap: 6px; margin-bottom: 8px; font-size: 11px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 6px 8px;">
+            <div style="flex: 1;">
+              <div style="font-size: 9px; text-transform: uppercase; color: #94a3b8; font-weight: 700;">Duration</div>
+              <div style="font-weight: 800; color: #0f172a;">${seg.travel_time_minutes} mins</div>
+            </div>
+            <div style="flex: 1; border-left: 1px solid #e2e8f0; padding-left: 6px;">
+              <div style="font-size: 9px; text-transform: uppercase; color: #94a3b8; font-weight: 700;">Distance</div>
+              <div style="font-weight: 800; color: #0f172a;">${seg.distance_km} km</div>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 8px;">
+            <div style="font-size: 10px; font-weight: 800; color: #78350f; text-transform: uppercase; margin-bottom: 2px;">
+              📜 Historical Significance
+            </div>
+            <div style="font-size: 11px; color: #334155; line-height: 1.4; background: #fffbeb; padding: 6px 8px; border-radius: 6px; border: 1px solid #fef3c7;">
+              ${seg.historical_significance}
+            </div>
+          </div>
+
+          ${seg.architectural_transition ? `
+            <div style="font-size: 10px; color: #64748b; margin-bottom: 8px;">
+              <b>Architecture:</b> ${seg.architectural_transition}
+            </div>
+          ` : ''}
+
+          <a href="https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(seg.from_name)}&destination=${encodeURIComponent(seg.to_name)}" target="_blank" rel="noopener noreferrer" style="display: block; text-align: center; background: #2563eb; color: #ffffff; font-size: 10px; font-weight: 700; padding: 6px; border-radius: 6px; text-decoration: none;">
+            Open Segment Directions in Google Maps ↗
+          </a>
+        </div>
+      `);
+
+      polyline.on('mouseover', () => {
+        polyline.setStyle({ weight: 8, opacity: 1 });
+      });
+      polyline.on('mouseout', () => {
+        polyline.setStyle({ weight: 5, opacity: 0.9 });
+      });
+    });
+
+    segmentPolylinesRef.current = segmentPolylines;
+
+    if (latLngs.length >= 2) {
+      const bounds = L.latLngBounds(latLngs);
+      mapInstanceRef.current.fitBounds(bounds, { padding: [50, 50], maxZoom: 15 });
+    }
+  };
+
+  const handleHighlightSegmentOnMap = (segmentIndex: number) => {
+    if (!mapInstanceRef.current || !segmentPolylinesRef.current[segmentIndex]) return;
+    const poly = segmentPolylinesRef.current[segmentIndex];
+    const bounds = poly.getBounds();
+    mapInstanceRef.current.fitBounds(bounds, { padding: [70, 70], maxZoom: 16 });
+    poly.openPopup();
+  };
+
   const handleCityJump = (cityKey: string) => {
     const key = cityKey.toLowerCase().replace(/\s+/g, '-');
     const cfg = cityCoordinates[key] || cityCoordinates['all-india'];
@@ -1471,7 +1700,12 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
 
           {/* Route Studio */}
           <button
-            onClick={() => setIsRoutingOpen(!isRoutingOpen)}
+            onClick={() => {
+              setIsRoutingOpen(!isRoutingOpen);
+              if (!isRoutingOpen) {
+                setIsHeritageAnalyzerOpen(false);
+              }
+            }}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold border transition ${
               isRoutingOpen
                 ? 'bg-emerald-700 text-white border-emerald-800 shadow-2xs'
@@ -1480,6 +1714,32 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
           >
             <Navigation className="w-3.5 h-3.5" />
             <span>Route Studio</span>
+          </button>
+
+          {/* Heritage Route Analyzer (Gemini AI Powered) */}
+          <button
+            onClick={() => {
+              setIsHeritageAnalyzerOpen(!isHeritageAnalyzerOpen);
+              if (!isHeritageAnalyzerOpen) {
+                setIsRoutingOpen(false);
+              }
+            }}
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold border transition ${
+              isHeritageAnalyzerOpen
+                ? 'bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 text-white border-amber-800 shadow-sm'
+                : 'bg-amber-50 text-amber-900 border-amber-300 hover:bg-amber-100 shadow-2xs'
+            }`}
+            title="Analyze multi-monument transit routes and historical significance with Gemini API"
+          >
+            <Sparkles className={`w-3.5 h-3.5 ${isHeritageAnalyzerOpen ? 'text-amber-200' : 'text-amber-600'}`} />
+            <span>Heritage Route Analyzer</span>
+            {selectedHeritageMonuments.length > 0 && (
+              <span className={`text-[10px] font-black px-1.5 py-0.2 rounded-full ${
+                isHeritageAnalyzerOpen ? 'bg-white/20 text-white' : 'bg-amber-200 text-amber-900'
+              }`}>
+                {selectedHeritageMonuments.length}
+              </span>
+            )}
           </button>
         </div>
       </div>
@@ -1916,6 +2176,55 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
             </div>
           </div>
         )}
+
+        {/* Floating Active Heritage Route Banner */}
+        {activeHeritageResult && (
+          <div className="absolute top-3 left-1/2 -translate-x-1/2 z-[410] max-w-[90%] sm:max-w-md bg-white/95 backdrop-blur-md px-3.5 py-2 rounded-2xl border border-amber-300 shadow-lg flex items-center justify-between gap-3 animate-fadeIn">
+            <div className="flex items-center gap-2 min-w-0">
+              <span className="w-2.5 h-2.5 rounded-full bg-amber-600 animate-ping shrink-0" />
+              <div className="min-w-0">
+                <div className="text-[11px] font-extrabold text-stone-900 truncate">
+                  {activeHeritageResult.circuit_title}
+                </div>
+                <div className="text-[10px] text-amber-800 font-semibold truncate">
+                  {activeHeritageResult.ordered_stops.length} Monuments • {activeHeritageResult.total_distance_km} km • ~{activeHeritageResult.total_transit_minutes}m transit
+                </div>
+              </div>
+            </div>
+            <div className="flex items-center gap-1.5 shrink-0">
+              <button
+                type="button"
+                onClick={() => setIsHeritageAnalyzerOpen(true)}
+                className="px-2 py-1 rounded-lg bg-amber-100 hover:bg-amber-200 text-amber-900 font-bold text-[10px] transition"
+              >
+                View Route
+              </button>
+              <button
+                type="button"
+                onClick={handleClearHeritageRoute}
+                className="p-1 text-stone-400 hover:text-stone-700 rounded-lg hover:bg-stone-100 transition"
+                title="Clear route from map"
+              >
+                <X className="w-3.5 h-3.5" />
+              </button>
+            </div>
+          </div>
+        )}
+
+        {/* Heritage Route Analyzer Drawer */}
+        <HeritageRouteAnalyzer
+          isOpen={isHeritageAnalyzerOpen}
+          onClose={() => setIsHeritageAnalyzerOpen(false)}
+          availableMonuments={heritageSites}
+          selectedMonuments={selectedHeritageMonuments}
+          onAddMonument={handleAddMonumentToAnalyzer}
+          onRemoveMonument={handleRemoveMonumentFromAnalyzer}
+          onReorderMonuments={handleReorderMonumentsInAnalyzer}
+          onClearMonuments={handleClearMonumentsInAnalyzer}
+          onApplyRouteToMap={handleApplyHeritageRouteToMap}
+          onHighlightSegmentOnMap={handleHighlightSegmentOnMap}
+          selectedCity={selectedCity}
+        />
 
         {/* Loading Overlay */}
         {loading && (

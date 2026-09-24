@@ -40,6 +40,7 @@ import {
   UserLocationContext,
   VisualIdentificationResult,
   GoogleMapsPlaceInfo,
+  HeritageRouteAnalysisResult,
 } from '../types';
 import { safeLocalStorage } from '../utils/storage';
 
@@ -386,6 +387,25 @@ export const api = {
         coordinates: params.lat && params.lng ? { lat: params.lat, lng: params.lng } : undefined,
       };
     }
+  },
+
+  async analyzeHeritageRoute(params: {
+    monuments: Array<{
+      id: string;
+      name: string;
+      city?: string;
+      lat: number;
+      lng: number;
+      summary?: string;
+    }>;
+    transport_mode?: 'DRIVE' | 'TRANSIT' | 'WALK';
+    city?: string;
+    travel_style?: string;
+  }): Promise<HeritageRouteAnalysisResult> {
+    return await request<HeritageRouteAnalysisResult>('/v1/ai/heritage-route-analyzer', {
+      method: 'POST',
+      body: JSON.stringify(params),
+    });
   },
 
   async reverseGeocode(latitude: number, longitude: number): Promise<ReverseGeocodeResponse> {

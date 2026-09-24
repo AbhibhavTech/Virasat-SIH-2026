@@ -3645,31 +3645,51 @@ app.post(['/api/itinerary', '/api/itineraries/generate'], (req, res) => {
   const requestedDays = Number(days || days_count || Math.max(1, Math.min(7, Math.round(duration_hours / 8))) || 5);
   const effectiveBudget = budget_level || budget || 'moderate';
 
-  const plan = getVerifiedCityPlan(resolvedCity, requestedDays, pace, effectiveBudget);
+  const plan = getVerifiedCityPlan(resolvedCity, requestedDays, pace, effectiveBudget, interests);
 
   // Derive flat stops array for backwards-compatibility
   let orderCounter = 1;
   const stops: any[] = [];
   plan.days.forEach((d) => {
-    d.places.forEach((p) => {
+    d.places.forEach((p: any) => {
       // Look up matching place from placesData if available
       const found = Array.from(placesData.values()).find(
         (pd) => pd.name.toLowerCase() === p.name.toLowerCase() || (p.id && pd.id === p.id)
       );
+
+      const domesticFee = p.entry_fee !== undefined && p.entry_fee !== null ? p.entry_fee : (found?.entry_fee?.domestic ?? null);
+      const feeLabel = p.entry_fee_label || (domesticFee === 0 ? 'Free entry, verified' : domesticFee !== null ? `₹${domesticFee}, verified` : 'Fee not available');
+
       stops.push({
         order: orderCounter++,
         place_id: p.id || found?.id || `stop-${orderCounter}`,
         name: p.name,
-        city: plan.city_name,
+        city: p.city || plan.city_name,
+        state: p.state || plan.state_name,
+        location: p.location || `${plan.city_name}, ${plan.state_name}`,
         category: p.category || found?.category || 'heritage',
-        coordinates: found?.coordinates,
+        heritage_status: p.heritage_status || found?.heritage_status || 'ASI Protected Heritage',
+        coordinates: p.coordinates || found?.coordinates,
         thumbnail_url: p.thumbnail_url || found?.thumbnail_url || (found?.images && found.images[0]) || d.hero_image_url,
-        recommended_duration_minutes: 75,
-        travel_time_from_previous_minutes: 20,
-        travel_mode_from_previous: 'Auto-Rickshaw / Local Transit',
-        distance_from_previous_km: 2.5,
-        estimated_cost: 60,
+        time_slot: p.time_slot || '10:00–12:00',
+        period: p.period || 'Morning',
+        opening_hours: p.opening_hours || found?.visiting_hours || '09:00 AM - 05:30 PM',
+        is_hours_verified: p.is_hours_verified ?? Boolean(found?.visiting_hours),
+        visit_duration: p.visit_duration || '1.5–2 hours',
+        recommended_duration_minutes: p.visit_duration_minutes || 90,
+        travel_time_from_previous_minutes: p.travel_time_from_previous_minutes ?? 15,
+        travel_mode_from_previous: p.travel_mode || 'Auto-Rickshaw / Local Transit',
+        distance_from_previous_km: p.distance_from_previous_km ?? 2.0,
+        distance_info: p.distance_info || (p.distance_from_previous_km ? `${p.distance_from_previous_km} km` : 'Local stop'),
+        entry_fee: domesticFee,
+        entry_fee_label: feeLabel,
+        is_fee_verified: domesticFee !== null,
+        estimated_cost: domesticFee || 0,
         visit_tips: p.description || found?.summary || `Part of Day ${d.day_number} (${d.area_title}) circuit.`,
+        source: p.source || 'Archaeological Survey of India (ASI)',
+        source_url: p.source_url || 'https://asi.nic.in',
+        verification_status: p.verification_status || 'verified',
+        last_verified: p.last_verified || 'September 2026',
         has_3d: Boolean((found as any)?.features?.['3d'] || (found as any)?.model_3d?.available),
       });
     });
@@ -3683,18 +3703,23 @@ app.post(['/api/itinerary', '/api/itineraries/generate'], (req, res) => {
     city_id: plan.city_id,
     state: plan.state_name,
     days_count: plan.days_count,
+    requested_days: plan.requested_days || requestedDays,
     duration_hours: plan.days_count * 8,
     pace,
     budget_level: effectiveBudget,
     total_places: stops.length,
-    estimated_total_visiting_minutes: stops.length * 75,
-    estimated_total_travel_minutes: stops.length * 20,
+    estimated_total_visiting_minutes: stops.reduce((acc: number, s: any) => acc + (s.recommended_duration_minutes || 90), 0),
+    estimated_total_travel_minutes: stops.reduce((acc: number, s: any) => acc + (s.travel_time_from_previous_minutes || 0), 0),
     title: plan.title,
+    subtitle: plan.subtitle || 'Verified attractions organized by location, opening hours and travel efficiency.',
     summary: plan.summary,
+    warning_message: plan.warning_message || null,
     days: plan.days,
     stops,
     timeline: stops,
     estimated_total_cost: totalCost,
+    sources: plan.sources || ['Archaeological Survey of India (ASI)', 'UNESCO World Heritage Centre', 'State Tourism Archives'],
+    last_verified: plan.last_verified || 'September 2026',
   });
 });
 

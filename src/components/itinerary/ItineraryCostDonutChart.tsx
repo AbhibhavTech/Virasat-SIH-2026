@@ -23,6 +23,8 @@ export interface CostCategoryItem {
   description: string;
   inclusions: string[];
   amount: number;
+  minAmount: number;
+  maxAmount: number;
   percentage: number;
 }
 
@@ -119,8 +121,11 @@ export const ItineraryCostDonutChart: React.FC<ItineraryCostDonutChartProps> = (
     // Lodging (billed per room: 1-2 travelers = 1 room, 3-4 = 2 rooms)
     const roomsCount = Math.max(1, Math.ceil(travelersCount / 2));
     const baseLodging = Math.round(tierConfig.lodgingDaily * Math.max(1, effectiveDays - 1 || 1) * cityMultiplier * roomsCount);
-    // Activities (scales with places & traveler count)
-    const placeBonus = Math.round(totalStopsCount * 45 * travelersCount);
+    // Activities (incorporating verified entry fees from Master Tourism Database)
+    const verifiedFeesSum = (itinerary.days || []).reduce((acc, d) => {
+      return acc + (d.places || []).reduce((pAcc, p) => pAcc + (typeof p.entry_fee === 'number' ? p.entry_fee : 0), 0);
+    }, 0);
+    const placeBonus = verifiedFeesSum > 0 ? (verifiedFeesSum * travelersCount) : Math.round(totalStopsCount * 45 * travelersCount);
     const baseActivities = Math.round(tierConfig.activitiesDaily * effectiveDays * travelersCount + placeBonus);
     // Meals (scales per person per day)
     const baseMeals = Math.round(tierConfig.mealsDaily * effectiveDays * travelersCount);
@@ -130,7 +135,7 @@ export const ItineraryCostDonutChart: React.FC<ItineraryCostDonutChartProps> = (
     const items: CostCategoryItem[] = [
       {
         id: 'transport',
-        name: 'Transport & Transit',
+        name: 'Transport',
         shortName: 'Transport',
         icon: '🚗',
         color: '#FF671F', // Virasat iconic saffron
@@ -143,15 +148,17 @@ export const ItineraryCostDonutChart: React.FC<ItineraryCostDonutChartProps> = (
           'Inter-monument local transfers',
           'Metro / suburban rail connectivity',
           'Station & airport transit',
-          'Last-mile auto-rickshaws',
+          'Local auto-rickshaws',
         ],
         amount: baseTransport,
+        minAmount: Math.round((baseTransport * 0.9) / 100) * 100,
+        maxAmount: Math.round((baseTransport * 1.15) / 100) * 100,
         percentage: Math.round((baseTransport / total) * 100),
       },
       {
         id: 'lodging',
-        name: 'Lodging & Accommodation',
-        shortName: 'Lodging',
+        name: 'Accommodation',
+        shortName: 'Accommodation',
         icon: '🏨',
         color: '#2563EB', // Royal Blue
         hoverColor: '#1D4ED8',
@@ -162,16 +169,18 @@ export const ItineraryCostDonutChart: React.FC<ItineraryCostDonutChartProps> = (
         inclusions: [
           `${effectiveDays > 1 ? effectiveDays - 1 : 1} night(s) stay (${roomsCount} room${roomsCount > 1 ? 's' : ''})`,
           'Verified tourist neighborhoods',
-          'Breakfast inclusion (standard)',
-          'Taxes & city heritage cess',
+          'Standard breakfast inclusion',
+          'Applicable hospitality taxes',
         ],
         amount: baseLodging,
+        minAmount: Math.round((baseLodging * 0.9) / 100) * 100,
+        maxAmount: Math.round((baseLodging * 1.15) / 100) * 100,
         percentage: Math.round((baseLodging / total) * 100),
       },
       {
         id: 'activities',
-        name: 'Activities & Monuments',
-        shortName: 'Activities',
+        name: 'Activities & Entry Fees',
+        shortName: 'Activities & Fees',
         icon: '🎟️',
         color: '#059669', // Emerald Green
         hoverColor: '#047857',
@@ -180,18 +189,20 @@ export const ItineraryCostDonutChart: React.FC<ItineraryCostDonutChartProps> = (
         borderColor: 'border-emerald-200',
         description: tierConfig.activitiesLabel,
         inclusions: [
-          `Entry tickets for ${totalStopsCount} curated attractions`,
-          'ASI ticket counter / online pass fees',
+          `Verified entry fees for ${totalStopsCount} curated attractions`,
+          'Official ASI ticketing counter rates',
           'Audio guide device rentals',
           'Monument camera permissions',
         ],
         amount: baseActivities,
+        minAmount: Math.round((baseActivities * 0.9) / 100) * 100,
+        maxAmount: Math.round((baseActivities * 1.15) / 100) * 100,
         percentage: Math.round((baseActivities / total) * 100),
       },
       {
         id: 'meals',
-        name: 'Meals & Regional Food',
-        shortName: 'Meals',
+        name: 'Food',
+        shortName: 'Food',
         icon: '🍲',
         color: '#E11D48', // Rose / Crimson
         hoverColor: '#BE123C',
@@ -200,12 +211,14 @@ export const ItineraryCostDonutChart: React.FC<ItineraryCostDonutChartProps> = (
         borderColor: 'border-rose-200',
         description: tierConfig.diningLabel,
         inclusions: [
-          'Daily breakfast, lunch & dinner',
-          'Authentic regional thalis & cuisine',
-          'Evening street delicacies & chai',
+          'Daily regional breakfast, lunch & dinner',
+          'Authentic local cuisine & dining',
+          'Evening tea & light refreshments',
           'Packaged drinking water',
         ],
         amount: baseMeals,
+        minAmount: Math.round((baseMeals * 0.9) / 100) * 100,
+        maxAmount: Math.round((baseMeals * 1.15) / 100) * 100,
         percentage: Math.round((baseMeals / total) * 100),
       },
     ];
@@ -223,12 +236,22 @@ export const ItineraryCostDonutChart: React.FC<ItineraryCostDonutChartProps> = (
     return costBreakdown.reduce((sum, item) => sum + item.amount, 0);
   }, [costBreakdown]);
 
-  const displayedCost = useMemo(() => {
+  const totalMinCost = useMemo(() => {
+    return Math.round((totalCost * 0.9) / 500) * 500;
+  }, [totalCost]);
+
+  const totalMaxCost = useMemo(() => {
+    return Math.round((totalCost * 1.15) / 500) * 500;
+  }, [totalCost]);
+
+  const displayedCostRange = useMemo(() => {
     if (viewMode === 'per_day') {
-      return Math.round(totalCost / effectiveDays);
+      const minPerDay = Math.round(totalMinCost / effectiveDays / 100) * 100;
+      const maxPerDay = Math.round(totalMaxCost / effectiveDays / 100) * 100;
+      return `₹${minPerDay.toLocaleString('en-IN')} – ₹${maxPerDay.toLocaleString('en-IN')}`;
     }
-    return totalCost;
-  }, [viewMode, totalCost, effectiveDays]);
+    return `₹${totalMinCost.toLocaleString('en-IN')} – ₹${totalMaxCost.toLocaleString('en-IN')}`;
+  }, [viewMode, totalMinCost, totalMaxCost, effectiveDays]);
 
   // Primary D3 Chart Builder - ONLY rebuilds when cost data changes, NOT on hover
   useEffect(() => {
@@ -361,15 +384,14 @@ export const ItineraryCostDonutChart: React.FC<ItineraryCostDonutChartProps> = (
               <IndianRupee className="w-4 h-4" />
             </span>
             <h3 className="text-base sm:text-lg font-bold font-serif text-stone-900">
-              Estimated Cost Breakdown & Budget Intelligence
+              Estimated Trip Cost
             </h3>
-            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-amber-100/90 text-amber-900 text-[10px] font-bold uppercase tracking-wider border border-amber-300">
-              <Sparkles className="w-3 h-3 text-[#FF671F]" />
-              ASI Verified Indexes
+            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-stone-100 text-stone-700 text-[10px] font-bold uppercase tracking-wider border border-stone-300">
+              Indicative estimate
             </span>
           </div>
           <p className="text-xs text-stone-600">
-            Real-time estimated allocation for {selectedCityName} across transport, lodging, activities & dining based on official ASI tariffs and regional living indexes.
+            Estimated expenditure range for {selectedCityName} across transport, accommodation, activities & entry fees, and food based on standard regional tariffs.
           </p>
         </div>
 
@@ -387,9 +409,9 @@ export const ItineraryCostDonutChart: React.FC<ItineraryCostDonutChartProps> = (
                     : 'text-stone-600 hover:text-stone-900'
                 }`}
               >
-                {tier === 'budget' && '₹ Budget'}
-                {tier === 'moderate' && '₹₹ Mid-range'}
-                {tier === 'luxury' && '₹₹₹ Luxury'}
+                {tier === 'budget' && 'Budget'}
+                {tier === 'moderate' && 'Mid-range'}
+                {tier === 'luxury' && 'Luxury'}
               </button>
             ))}
           </div>
@@ -403,9 +425,9 @@ export const ItineraryCostDonutChart: React.FC<ItineraryCostDonutChartProps> = (
               aria-label="Number of travelers"
               className="bg-transparent text-stone-900 font-bold focus:outline-hidden cursor-pointer"
             >
-              <option value={1}>1 Traveler (Solo)</option>
-              <option value={2}>2 Travelers (Couple)</option>
-              <option value={4}>4 Travelers (Family/Group)</option>
+              <option value={1}>1 Traveller (Solo)</option>
+              <option value={2}>2 Travellers (Couple)</option>
+              <option value={4}>4 Travellers (Group)</option>
             </select>
           </div>
 
@@ -438,14 +460,14 @@ export const ItineraryCostDonutChart: React.FC<ItineraryCostDonutChartProps> = (
       {/* 2. MAIN VISUALIZATION STAGE: BALANCED & EXPANSIVE GRID */}
       <div className="p-5 sm:p-7 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
         {/* Left: D3 Donut Chart with Center Callout */}
-        <div className="lg:col-span-4 xl:col-span-4 flex flex-col items-center justify-center relative">
+        <div className="lg:col-span-5 xl:col-span-5 flex flex-col items-center justify-center relative">
           <div className="relative w-[240px] h-[240px] sm:w-[260px] sm:h-[260px] flex items-center justify-center select-none">
             {/* SVG Render Target */}
             <svg ref={svgRef} className="w-full h-full transform transition-all duration-300" />
 
             {/* Dynamic Center Hole Card */}
             <div
-              className="absolute inset-0 m-auto w-[145px] h-[145px] sm:w-[155px] sm:h-[155px] rounded-full bg-white/98 backdrop-blur-sm border border-stone-200 shadow-inner flex flex-col items-center justify-center text-center p-2.5 pointer-events-none transition-all duration-300"
+              className="absolute inset-0 m-auto w-[150px] h-[150px] sm:w-[160px] sm:h-[160px] rounded-full bg-white/98 backdrop-blur-sm border border-stone-200 shadow-inner flex flex-col items-center justify-center text-center p-2.5 pointer-events-none transition-all duration-300"
               style={{
                 borderColor: activeItem ? activeItem.color : '#E5E7EB',
               }}
@@ -457,31 +479,28 @@ export const ItineraryCostDonutChart: React.FC<ItineraryCostDonutChartProps> = (
                     {activeItem.shortName}
                   </div>
                   <div
-                    className="text-base sm:text-lg font-mono font-extrabold tracking-tight"
+                    className="text-xs sm:text-sm font-mono font-extrabold tracking-tight"
                     style={{ color: activeItem.color }}
                   >
-                    ₹{activeItem.amount.toLocaleString('en-IN')}
+                    ₹{activeItem.minAmount.toLocaleString('en-IN')} – ₹{activeItem.maxAmount.toLocaleString('en-IN')}
                   </div>
                   <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-stone-100 text-[10px] font-bold text-stone-700">
-                    <span>{activeItem.percentage}% of budget</span>
-                  </div>
-                  <div className="text-[9px] text-stone-400">
-                    ≈ ₹{Math.round(activeItem.amount / effectiveDays).toLocaleString('en-IN')}/day
+                    <span>{activeItem.percentage}% allocation</span>
                   </div>
                 </div>
               ) : (
                 <div className="space-y-0.5">
-                  <span className="text-[10px] uppercase font-bold tracking-wider text-stone-400 block">
-                    {viewMode === 'total' ? `Total Trip (${effectiveDays} Days)` : 'Estimated Daily Cost'}
+                  <span className="text-[9px] uppercase font-bold tracking-wider text-stone-400 block">
+                    Estimated Trip Cost
                   </span>
-                  <div className="text-lg sm:text-xl font-mono font-black text-stone-900 tracking-tight">
-                    ₹{displayedCost.toLocaleString('en-IN')}
+                  <div className="text-xs sm:text-sm font-mono font-black text-stone-900 tracking-tight leading-tight">
+                    {displayedCostRange}
                   </div>
-                  <div className="text-[10px] text-stone-500 font-medium">
-                    {travelersCount} Traveler{travelersCount > 1 ? 's' : ''} • {budgetTier}
-                  </div>
-                  <div className="text-[9px] text-[#FF671F] font-semibold pt-0.5">
-                    Hover slices to inspect
+                  <span className="inline-block px-1.5 py-0.2 rounded bg-amber-50 text-amber-800 text-[9px] font-bold">
+                    Indicative range
+                  </span>
+                  <div className="text-[9px] text-stone-500 font-medium pt-0.5">
+                    {travelersCount} Traveller{travelersCount > 1 ? 's' : ''} • {effectiveDays} Days
                   </div>
                 </div>
               )}
@@ -490,18 +509,19 @@ export const ItineraryCostDonutChart: React.FC<ItineraryCostDonutChartProps> = (
 
           <div className="text-center mt-2">
             <span className="text-[11px] text-stone-500 flex items-center justify-center gap-1">
-              <Info className="w-3.5 h-3.5 text-[#FF671F]" />
-              Tap or hover any donut segment to highlight cost inclusions
+              <Info className="w-3.5 h-3.5 text-stone-400" />
+              Hover category segments to inspect breakdown
             </span>
           </div>
         </div>
 
         {/* Right: The 4 Required Categories Breakdown Cards in 2x2 Grid */}
-        <div className="lg:col-span-8 xl:col-span-8 space-y-3">
+        <div className="lg:col-span-7 xl:col-span-7 space-y-3">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
             {costBreakdown.map((cat) => {
               const isHovered = (hoveredCategory === cat.id) || (selectedCategory === cat.id);
-              const perDayAmount = Math.round(cat.amount / effectiveDays);
+              const minPerDay = Math.round(cat.minAmount / effectiveDays / 50) * 50;
+              const maxPerDay = Math.round(cat.maxAmount / effectiveDays / 50) * 50;
 
               return (
                 <div
@@ -520,24 +540,23 @@ export const ItineraryCostDonutChart: React.FC<ItineraryCostDonutChartProps> = (
                     '--tw-ring-color': cat.color,
                   }}
                 >
-                  {/* Category Header with Icon & Amount */}
+                  {/* Category Header with Icon & Amount Range */}
                   <div className="space-y-1.5">
                     <div className="flex items-center justify-between">
                       <div className="flex items-center gap-2">
-                        <span className="text-lg leading-none">{cat.icon}</span>
+                        <span className="text-base leading-none">{cat.icon}</span>
                         <span className="text-xs font-bold text-stone-900">{cat.name}</span>
                       </div>
-                      <div className="text-right">
-                        <div
-                          className="font-mono font-bold text-sm"
-                          style={{ color: cat.color }}
-                        >
-                          ₹{cat.amount.toLocaleString('en-IN')}
-                        </div>
-                        <div className="text-[10px] text-stone-400 font-medium">
-                          {cat.percentage}% of total
-                        </div>
-                      </div>
+                      <span className="text-[10px] text-stone-400 font-medium">
+                        {cat.percentage}%
+                      </span>
+                    </div>
+
+                    <div
+                      className="font-mono font-bold text-xs sm:text-sm"
+                      style={{ color: cat.color }}
+                    >
+                      ₹{cat.minAmount.toLocaleString('en-IN')} – ₹{cat.maxAmount.toLocaleString('en-IN')}
                     </div>
 
                     {/* Progress Bar Proportion */}
@@ -552,7 +571,7 @@ export const ItineraryCostDonutChart: React.FC<ItineraryCostDonutChartProps> = (
                     </div>
 
                     {/* Sub-label */}
-                    <p className="text-[11px] text-stone-600 line-clamp-1 font-medium pt-0.5">
+                    <p className="text-[10px] text-stone-600 line-clamp-1 font-medium pt-0.5">
                       {cat.description}
                     </p>
                   </div>
@@ -565,10 +584,10 @@ export const ItineraryCostDonutChart: React.FC<ItineraryCostDonutChartProps> = (
                         <span className="line-clamp-1">{inc}</span>
                       </div>
                     ))}
-                    <div className="flex items-center justify-between text-[10px] text-stone-400 pt-1 font-medium">
-                      <span>Daily estimate:</span>
+                    <div className="flex items-center justify-between text-[10px] text-stone-400 pt-0.5 font-medium">
+                      <span>Daily range:</span>
                       <span className="font-mono font-semibold text-stone-700">
-                        ₹{perDayAmount.toLocaleString('en-IN')}/day
+                        ₹{minPerDay.toLocaleString('en-IN')} – ₹{maxPerDay.toLocaleString('en-IN')}
                       </span>
                     </div>
                   </div>
@@ -577,16 +596,22 @@ export const ItineraryCostDonutChart: React.FC<ItineraryCostDonutChartProps> = (
             })}
           </div>
 
-          {/* 3. COST SAVINGS & HERITAGE INSIGHT NOTE */}
-          <div className="p-3.5 rounded-2xl bg-amber-50/80 border border-amber-200/90 flex items-start gap-2.5 text-xs">
-            <TrendingDown className="w-4 h-4 text-[#FF671F] shrink-0 mt-0.5" />
-            <div className="space-y-0.5">
-              <span className="font-bold text-stone-900 text-xs">
-                Smart Heritage Trip Tip for {selectedCityName}:
+          {/* 3. FORMAL PLANNING ASSUMPTIONS CARD */}
+          <div className="p-3.5 rounded-2xl bg-stone-50 border border-stone-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
+            <div className="space-y-1">
+              <span className="font-bold text-stone-900 text-xs flex items-center gap-1.5">
+                <Info className="w-3.5 h-3.5 text-stone-500" />
+                <span>Planning Assumptions ({selectedCityName}):</span>
               </span>
-              <p className="text-[11px] text-stone-600 leading-relaxed">
-                Booking your ASI monument tickets online provides a 10% discount on official tariffs. Local public transit and metro connectivity reduce transfer costs significantly compared to private taxis.
-              </p>
+              <div className="text-[11px] text-stone-600 flex flex-wrap gap-x-3 gap-y-0.5">
+                <span>• {travelersCount} traveller{travelersCount > 1 ? 's' : ''}</span>
+                <span>• {effectiveDays} days</span>
+                <span>• {budgetTier === 'luxury' ? 'Luxury accommodation' : budgetTier === 'budget' ? 'Budget accommodation' : 'Mid-range accommodation'}</span>
+                <span>• Local transport included</span>
+              </div>
+            </div>
+            <div className="text-[10px] text-stone-400 max-w-xs sm:text-right leading-tight">
+              Indicative estimate for planning purposes. Not a live booking price.
             </div>
           </div>
         </div>

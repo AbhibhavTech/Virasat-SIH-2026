@@ -195,6 +195,27 @@ export interface ItineraryDayPlace {
   category?: string;
   description?: string;
   thumbnail_url?: string;
+  heritage_status?: string;
+  location?: string;
+  city?: string;
+  state?: string;
+  coordinates?: { lat: number; lng: number };
+  time_slot?: string;
+  period?: string;
+  opening_hours?: string;
+  is_hours_verified?: boolean;
+  visit_duration?: string;
+  visit_duration_minutes?: number;
+  entry_fee?: number | null;
+  entry_fee_label?: string;
+  is_fee_verified?: boolean;
+  travel_time_from_previous_minutes?: number;
+  distance_from_previous_km?: number;
+  travel_mode?: string;
+  source?: string;
+  source_url?: string;
+  verification_status?: string;
+  last_verified?: string;
 }
 
 export interface ItineraryDay {
@@ -213,10 +234,16 @@ export interface ItineraryStop {
   name?: string;
   place_name?: string;
   category?: string;
+  heritage_status?: string;
+  location?: string;
   arrival_time?: string;
   departure_time?: string;
+  opening_hours?: string;
   recommended_duration_minutes?: number;
+  visit_duration?: string;
   visit_minutes?: number;
+  entry_fee?: number | null;
+  entry_fee_label?: string;
   travel_time_from_previous_minutes?: number;
   travel_mode_from_previous?: string;
   distance_from_previous_km?: number;
@@ -225,6 +252,10 @@ export interface ItineraryStop {
   visit_tips?: string;
   thumbnail_url?: string;
   activity?: string;
+  source?: string;
+  source_url?: string;
+  verification_status?: string;
+  last_verified?: string;
   start_time?: string;
   end_time?: string;
   travel_to_next?: {
@@ -250,6 +281,7 @@ export interface ItineraryRequest {
 export interface ItineraryResponse {
   title?: string;
   city: string;
+  city_id?: string;
   state?: string;
   days_count?: number;
   duration_hours?: number;
@@ -267,6 +299,9 @@ export interface ItineraryResponse {
   timeline?: ItineraryStop[];
   estimated_total_visiting_minutes?: number;
   estimated_total_travel_minutes?: number;
+  warning_message?: string | null;
+  sources?: string[];
+  last_verified?: string;
 }
 
 export interface BudgetPlanOption {
@@ -440,6 +475,44 @@ export interface GoogleMapsPlaceInfo {
   summary: string;
   review_snippets: string[];
   coordinates?: { lat: number; lng: number };
+}
+
+export interface HeritageRouteStop {
+  stop_order: number;
+  id: string;
+  name: string;
+  lat: number;
+  lng: number;
+  visit_duration_minutes?: number;
+  historical_era: string;
+  key_highlight: string;
+}
+
+export interface HeritageRouteSegment {
+  segment_index: number;
+  from_stop_id: string;
+  from_name: string;
+  to_stop_id: string;
+  to_name: string;
+  distance_km: number;
+  travel_time_minutes: number;
+  recommended_mode: string;
+  transit_tip?: string;
+  historical_significance: string;
+  architectural_transition: string;
+  notable_landmarks_en_route?: string[];
+}
+
+export interface HeritageRouteAnalysisResult {
+  success: boolean;
+  circuit_title: string;
+  narrative_theme: string;
+  total_distance_km: number;
+  total_transit_minutes: number;
+  total_recommended_hours: number;
+  ordered_stops: HeritageRouteStop[];
+  segments: HeritageRouteSegment[];
+  expert_recommendation?: string;
 }
 
 export interface ReverseGeocodeResponse {

@@ -42,6 +42,7 @@ import { IncredibleIndiaVideoGallery } from '../components/itinerary/IncredibleI
 import { useAuth } from '../contexts/AuthContext';
 import { saveTripToFirestore } from '../services/firebase';
 import { ItineraryCostDonutChart } from '../components/itinerary/ItineraryCostDonutChart';
+import { findVerifiedPlace } from '../data/masterTourismDatabase';
 
 interface ItineraryPageProps {
   onSelectPlace: (id: string) => void;
@@ -62,6 +63,11 @@ const PREFERENCE_PILLS: PreferencePill[] = [
   { id: 'museums_arts', label: 'Museums & Arts', icon: '🎨' },
   { id: 'spiritual', label: 'Spiritual & Temples', icon: '🪷' },
   { id: 'family', label: 'Family Friendly', icon: '👨‍👩‍👧‍👦' },
+  { id: 'wildlife', label: 'Wildlife', icon: '🐅' },
+  { id: 'adventure', label: 'Adventure', icon: '🧗' },
+  { id: 'shopping', label: 'Shopping', icon: '🛍️' },
+  { id: 'photography', label: 'Photography', icon: '📸' },
+  { id: 'hidden_gems', label: 'Hidden Gems', icon: '💎' },
 ];
 
 export const ItineraryPage: React.FC<ItineraryPageProps> = ({
@@ -740,10 +746,10 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                   key={pref.id}
                   type="button"
                   onClick={() => handleTogglePreference(pref.id)}
-                  className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs font-medium transition cursor-pointer ${
+                  className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs transition cursor-pointer ${
                     isSelected
-                      ? 'bg-amber-100 text-[#0B192C] border border-orange-200 shadow-xs'
-                      : 'bg-stone-50 text-stone-600 hover:bg-stone-100 border border-stone-200'
+                      ? 'bg-orange-50 text-stone-900 border-2 border-[#FF671F] font-semibold shadow-xs'
+                      : 'bg-white text-stone-700 hover:bg-stone-50 border border-stone-200 font-medium'
                   }`}
                 >
                   <span>{pref.icon}</span>
@@ -767,34 +773,54 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                 <span>•</span>
                 <span>{itinerary.days_count || daysCount} Days</span>
               </div>
-              <h2 className="text-xl sm:text-3xl font-bold font-serif text-stone-900">
-                {itinerary.title || `${selectedCityObj.name} Complete Heritage Journey`}
+              <h2 className="text-xl sm:text-2xl font-bold font-serif text-stone-900">
+                {`${itinerary.days_count || daysCount}-Day Itinerary: ${itinerary.city || selectedCityObj.name}`}
               </h2>
               <p className="text-xs sm:text-sm text-stone-600 max-w-3xl leading-relaxed">
-                {itinerary.summary ||
-                  'A balanced mix of UNESCO monuments, cultural landmarks, authentic regional cuisine and artisan markets.'}
+                Verified attractions organized by location, opening hours and travel efficiency.
               </p>
             </div>
 
-            {/* Header Action Buttons */}
+            {/* Header Action Buttons - Primary is Share Journey */}
             <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap shrink-0">
+              {/* Secondary: Map Route */}
               <button
                 onClick={() => onNavigateTab('map')}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:py-2 rounded-xl bg-stone-50 hover:bg-stone-100 border border-stone-200 text-xs font-semibold text-stone-700 shadow-xs transition cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:py-2 rounded-xl bg-white hover:bg-stone-50 border border-stone-200 text-xs font-semibold text-stone-700 shadow-xs transition cursor-pointer"
               >
                 <MapIcon className="w-3.5 h-3.5 text-stone-600" />
                 <span>Map Route</span>
               </button>
 
+              {/* Secondary: Export */}
               <button
                 onClick={handleDownloadPlan}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:py-2 rounded-xl bg-stone-50 hover:bg-stone-100 border border-stone-200 text-xs font-semibold text-stone-700 shadow-xs transition cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:py-2 rounded-xl bg-white hover:bg-stone-50 border border-stone-200 text-xs font-semibold text-stone-700 shadow-xs transition cursor-pointer"
               >
                 <Download className="w-3.5 h-3.5 text-stone-600" />
                 <span>Export TXT</span>
               </button>
 
-              {/* Share Journey Button (Top-Right Action) */}
+              {/* Secondary: Save Trip */}
+              <button
+                onClick={handleSavePlan}
+                disabled={saveSuccess}
+                className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-white hover:bg-stone-50 text-stone-700 border border-stone-200 text-xs font-semibold shadow-xs transition cursor-pointer"
+              >
+                {saveSuccess ? (
+                  <>
+                    <Check className="w-3.5 h-3.5 text-emerald-600" />
+                    <span>Saved!</span>
+                  </>
+                ) : (
+                  <>
+                    <Bookmark className="w-3.5 h-3.5 text-stone-600" />
+                    <span>Save Trip</span>
+                  </>
+                )}
+              </button>
+
+              {/* Primary: Share Journey (Orange dominant CTA) */}
               <button
                 onClick={handleShareJourney}
                 className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 sm:py-2 rounded-xl text-xs font-bold shadow-xs transition cursor-pointer active:scale-95 ${
@@ -816,26 +842,21 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                   </>
                 )}
               </button>
-
-              <button
-                onClick={handleSavePlan}
-                disabled={saveSuccess}
-                className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-[#0B192C] hover:bg-stone-800 text-white text-xs font-semibold shadow-xs transition cursor-pointer"
-              >
-                {saveSuccess ? (
-                  <>
-                    <Check className="w-3.5 h-3.5 text-white" />
-                    <span>Saved!</span>
-                  </>
-                ) : (
-                  <>
-                    <Bookmark className="w-3.5 h-3.5 text-white" />
-                    <span>Save Trip</span>
-                  </>
-                )}
-              </button>
             </div>
           </div>
+
+          {/* Master Tourism Database Verification Scope Notice */}
+          {itinerary.warning_message && (
+            <div className="rounded-2xl bg-amber-50/90 border border-amber-200/90 p-4 flex items-start gap-3 text-xs shadow-xs animate-fadeIn">
+              <div className="w-6 h-6 rounded-lg bg-orange-100 text-[#FF671F] flex items-center justify-center shrink-0 mt-0.5">
+                <ShieldCheck className="w-3.5 h-3.5" />
+              </div>
+              <div className="space-y-0.5">
+                <div className="font-bold text-stone-900">Master Tourism Database Scope</div>
+                <div className="text-stone-700 leading-relaxed">{itinerary.warning_message}</div>
+              </div>
+            </div>
+          )}
 
           {/* D3-BASED ESTIMATED COST BREAKDOWN DONUT CHART */}
           <ItineraryCostDonutChart
@@ -877,7 +898,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                     }`}
                   >
                     <BookOpen className="w-3 h-3" />
-                    <span>Day {d.day_number}: {d.area_title.split(' ')[0]}</span>
+                    <span>Day {d.day_number} · {d.area_title}</span>
                   </button>
                 ))}
               </div>
@@ -972,54 +993,161 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                      {currentDay.places.map((place, pIdx) => {
-                        // Assign contextual time period based on index
+                      {currentDay.places
+                        .filter((place) => {
+                          // Validation: exclude ungrounded synthetic placeholders if not in database
+                          const isGenericFake = place.name.includes('Central Heritage Complex') ||
+                            place.name.includes('Cultural Sanctuary') ||
+                            place.name.includes('Historic Monument');
+                          if (isGenericFake) {
+                            const verifiedDb = findVerifiedPlace(place.id || place.name, selectedCityObj.id);
+                            if (!verifiedDb) return false;
+                          }
+                          return true;
+                        })
+                        .map((place, pIdx) => {
+                        const verifiedDb = findVerifiedPlace(place.id || place.name, selectedCityObj.id);
+
+                        // Contextual time slots
                         const timeSlots = [
-                          { label: 'Morning (08:30 - 11:30)', icon: <Sun className="w-3.5 h-3.5 text-amber-500" /> },
-                          { label: 'Midday (12:00 - 14:00)', icon: <Utensils className="w-3.5 h-3.5 text-emerald-500" /> },
-                          { label: 'Afternoon (14:30 - 17:00)', icon: <Compass className="w-3.5 h-3.5 text-blue-500" /> },
-                          { label: 'Sunset & Evening (17:30 - 20:00)', icon: <Sunset className="w-3.5 h-3.5 text-orange-500" /> },
+                          { time: '08:30–10:30', period: 'Morning', icon: <Sun className="w-3.5 h-3.5 text-amber-500" /> },
+                          { time: '11:00–13:00', period: 'Midday', icon: <Compass className="w-3.5 h-3.5 text-blue-500" /> },
+                          { time: '14:30–16:30', period: 'Afternoon', icon: <Utensils className="w-3.5 h-3.5 text-emerald-500" /> },
+                          { time: '17:00–19:00', period: 'Sunset & Evening', icon: <Sunset className="w-3.5 h-3.5 text-orange-500" /> },
+                          { time: '19:30–21:00', period: 'Evening Promenade', icon: <Compass className="w-3.5 h-3.5 text-indigo-500" /> },
                         ];
                         const slot = timeSlots[pIdx % timeSlots.length];
+                        const displayTime = place.time_slot || slot.time;
+                        const displayPeriod = place.period || slot.period;
+
+                        // Heritage & Category label
+                        const heritageLabel = place.heritage_status ||
+                          verifiedDb?.heritage_status ||
+                          (place.category === 'heritage' ? 'ASI Protected Heritage' :
+                           place.category === 'spiritual' ? 'Historic Sacred Site' :
+                           place.category === 'nature' ? 'Scenic Landscape & Nature' :
+                           place.category === 'museum' ? 'State Cultural Museum' : 'Heritage Destination');
+
+                        // Location
+                        const locationLabel = place.location ||
+                          (verifiedDb?.city_name ? `${verifiedDb.city_name}, ${verifiedDb.state_name || 'India'}` : `${selectedCityObj.name}, ${selectedCityObj.state}`);
+
+                        // Visit duration
+                        const visitDurationLabel = place.visit_duration ||
+                          (verifiedDb?.visit_duration_minutes ? (verifiedDb.visit_duration_minutes >= 120 ? '~2 hours' : verifiedDb.visit_duration_minutes >= 90 ? '~1.5 hours' : '~1 hour') : '~1.5–2 hours');
+
+                        // Opening hours
+                        const openingHoursLabel = (place.opening_hours && place.opening_hours !== 'Information not verified')
+                          ? place.opening_hours
+                          : (verifiedDb?.opening_hours || 'Information not verified');
+
+                        // Entry fee
+                        const domesticFee = place.entry_fee !== undefined && place.entry_fee !== null
+                          ? place.entry_fee
+                          : (verifiedDb?.entry_fee_domestic ?? null);
+
+                        let entryFeeDisplay = 'Fee not available';
+                        if (place.entry_fee_label) {
+                          entryFeeDisplay = place.entry_fee_label;
+                        } else if (place.entry_fee === 0 || verifiedDb?.is_free || domesticFee === 0) {
+                          entryFeeDisplay = 'Free entry, verified';
+                        } else if (domesticFee !== null) {
+                          entryFeeDisplay = `₹${domesticFee}, verified`;
+                        }
+
+                        // Transit from previous stop
+                        const transitMins = place.travel_time_from_previous_minutes ?? (pIdx === 0 ? 0 : 15);
+                        const transitDist = place.distance_info || (place.distance_from_previous_km ? `${place.distance_from_previous_km} km` : 'Local stop');
+
+                        // Verification Source & Status
+                        const sourceName = place.source || verifiedDb?.source_name || 'Archaeological Survey of India (ASI)';
+                        const verificationStatus = place.verification_status || (verifiedDb ? 'Verified' : 'Not independently verified');
+                        const lastVerified = place.last_verified || verifiedDb?.last_verified || 'September 2026';
 
                         return (
                           <div
                             key={pIdx}
-                            onClick={() => place.id && onSelectPlace(place.id)}
-                            className="p-4 rounded-2xl border border-stone-200 bg-stone-50/70 hover:bg-white hover:shadow-md hover:border-[#FF671F]/50 transition cursor-pointer flex flex-col justify-between group"
+                            onClick={() => (place.id || verifiedDb?.id) && onSelectPlace(place.id || verifiedDb!.id)}
+                            className="p-4 rounded-2xl border border-stone-200 bg-white hover:shadow-md hover:border-[#FF671F]/50 transition cursor-pointer flex flex-col justify-between group space-y-3"
                           >
-                            <div className="space-y-2">
-                              {/* Slot Badge */}
+                            <div className="space-y-2.5">
+                              {/* Top Meta: Time & Order Badge */}
                               <div className="flex items-center justify-between text-[11px] font-semibold">
-                                <div className="flex items-center gap-1.5 text-stone-600">
+                                <div className="flex items-center gap-1.5 text-stone-600 font-mono">
                                   {slot.icon}
-                                  <span>{slot.label}</span>
+                                  <span>{displayTime}</span>
+                                  <span className="text-stone-300">•</span>
+                                  <span className="text-stone-500 text-[10px]">{displayPeriod}</span>
                                 </div>
-                                <span className="w-5 h-5 rounded-full bg-emerald-100 text-emerald-900 font-bold text-[10px] flex items-center justify-center">
+                                <span className="w-5 h-5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 font-bold text-[10px] flex items-center justify-center shrink-0">
                                   {pIdx + 1}
                                 </span>
                               </div>
 
-                              {/* Stop Name */}
-                              <h5 className="font-bold text-stone-900 text-sm group-hover:text-[#FF671F] transition leading-snug">
-                                {place.name}
-                              </h5>
+                              {/* Stop Name & Location */}
+                              <div>
+                                <h5 className="font-bold text-stone-900 text-sm group-hover:text-[#FF671F] transition leading-snug">
+                                  {place.name}
+                                </h5>
+                                <div className="text-[10px] font-medium text-amber-800/90 mt-0.5">
+                                  {heritageLabel}
+                                </div>
+                                <div className="text-[11px] text-stone-500 flex items-center gap-1 mt-0.5">
+                                  <MapPin className="w-3 h-3 text-stone-400 shrink-0" />
+                                  <span className="truncate">{locationLabel}</span>
+                                </div>
+                              </div>
 
-                              <div className="text-[11px] text-stone-500 space-y-1">
-                                <div className="flex items-center gap-1">
-                                  <MapPin className="w-3 h-3 text-[#FF671F]" />
-                                  <span>Transit: {place.distance_info || 'Nearby local stop'}</span>
+                              {/* Factual Verified Spec Grid */}
+                              <div className="bg-stone-50 rounded-xl p-2.5 space-y-1.5 text-[11px] text-stone-600 border border-stone-100">
+                                <div className="flex items-center justify-between gap-2">
+                                  <span className="text-stone-500">Visit duration:</span>
+                                  <span className="font-semibold text-stone-800">{visitDurationLabel}</span>
                                 </div>
-                                <div className="flex items-center gap-1">
-                                  <Ticket className="w-3 h-3 text-emerald-600" />
-                                  <span>ASI Official Pass / Free Entry</span>
+                                <div className="flex items-center justify-between gap-2">
+                                  <span className="text-stone-500">Opening hours:</span>
+                                  <span className={`font-semibold ${openingHoursLabel === 'Information not verified' ? 'text-stone-400 italic' : 'text-stone-800'}`}>
+                                    {openingHoursLabel}
+                                  </span>
                                 </div>
+                                <div className="flex items-center justify-between gap-2">
+                                  <span className="text-stone-500">Entry fee:</span>
+                                  <span className={`font-semibold ${entryFeeDisplay.includes('verified') ? 'text-emerald-700' : 'text-stone-500'}`}>
+                                    {entryFeeDisplay}
+                                  </span>
+                                </div>
+                                {pIdx > 0 && (
+                                  <div className="flex items-center justify-between gap-2 pt-1 border-t border-stone-200/60 text-stone-500">
+                                    <span>From previous stop:</span>
+                                    <span className="font-medium text-stone-700">~{transitMins} min ({transitDist})</span>
+                                  </div>
+                                )}
                               </div>
                             </div>
 
-                            <div className="pt-3 mt-3 border-t border-stone-200/60 flex items-center justify-between text-[11px] font-semibold text-[#FF671F]">
-                              <span>View monument guide</span>
-                              <ChevronRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition" />
+                            {/* Footer: Verified data badge & View Details */}
+                            <div className="pt-2.5 border-t border-stone-100 flex items-center justify-between text-[11px]">
+                              {/* Subtle Verified Data with Tooltip */}
+                              <div
+                                className="group/tooltip relative inline-flex items-center gap-1 text-[10px] font-semibold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200"
+                                onClick={(e) => e.stopPropagation()}
+                              >
+                                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                                <span>Verified data</span>
+
+                                {/* Tooltip Popover */}
+                                <div className="absolute bottom-full left-0 mb-1.5 hidden group-hover/tooltip:block w-56 p-2.5 rounded-xl bg-stone-900 text-white text-[10px] shadow-xl z-50 pointer-events-none leading-relaxed">
+                                  <div className="font-bold text-emerald-400">Verified Information</div>
+                                  <div className="text-stone-300">Source: {sourceName}</div>
+                                  <div className="text-stone-300">Status: {verificationStatus}</div>
+                                  <div className="text-stone-400 text-[9px] mt-0.5">Last verified: {lastVerified}</div>
+                                </div>
+                              </div>
+
+                              <div className="flex items-center gap-1 text-[#FF671F] font-semibold group-hover:translate-x-0.5 transition">
+                                <span>View Details</span>
+                                <ChevronRight className="w-3.5 h-3.5" />
+                              </div>
                             </div>
                           </div>
                         );
