@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useMemo, useRef } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import {
   Calendar,
   Clock,
@@ -96,11 +97,15 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
   const [activeDayIndex, setActiveDayIndex] = useState<number>(0);
   const [selectedModalDay, setSelectedModalDay] = useState<ItineraryDay | null>(null);
 
+  const [searchParams] = useSearchParams();
+
   // Plan generation state
   const [loading, setLoading] = useState(false);
   const [itinerary, setItinerary] = useState<ItineraryResponse | null>(null);
   const [saveSuccess, setSaveSuccess] = useState(false);
   const [shareSuccess, setShareSuccess] = useState(false);
+  const [shareMessage, setShareMessage] = useState('');
+  const [restoredNotice, setRestoredNotice] = useState<string | null>(null);
 
   const handleSelectCarouselDestination = (cityId: string, cityName: string) => {
     const targetCityLower = cityName.toLowerCase();
@@ -153,12 +158,6 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Initial load: Generate initial plan
-  useEffect(() => {
-    handleGeneratePlan(selectedCityObj.name, daysCount);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   const handleTogglePreference = (id: string) => {
     setSelectedPreferences((prev) =>
       prev.includes(id) ? prev.filter((p) => p !== id) : [...prev, id]
@@ -171,9 +170,18 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
     setIsCityDropdownOpen(false);
   };
 
-  const handleGeneratePlan = async (targetCityName?: string, targetDays?: number) => {
+  const handleGeneratePlan = async (
+    targetCityName?: string,
+    targetDays?: number,
+    targetPace?: 'relaxed' | 'moderate' | 'fast',
+    targetBudget?: 'budget' | 'moderate' | 'luxury',
+    targetPrefs?: string[]
+  ) => {
     const cityToQuery = targetCityName || selectedCityObj.name;
     const daysToQuery = targetDays || daysCount;
+    const paceToQuery = targetPace || pace;
+    const budgetToQuery = targetBudget || budget;
+    const prefsToQuery = targetPrefs || selectedPreferences;
 
     setLoading(true);
     setSaveSuccess(false);
@@ -186,9 +194,9 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
         days: daysToQuery,
         days_count: daysToQuery,
         duration_hours: daysToQuery * 8,
-        pace,
-        budget_level: budget,
-        interests: selectedPreferences,
+        pace: paceToQuery,
+        budget_level: budgetToQuery,
+        interests: prefsToQuery,
       });
       setItinerary(plan);
     } catch (err) {
@@ -197,6 +205,116 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
       setLoading(false);
     }
   };
+
+  // Initial load: Check for shared deep-link query or generate initial plan
+  useEffect(() => {
+    const journeyParam = searchParams.get('journey');
+    const cityParam = searchParams.get('city');
+    const daysParam = searchParams.get('days');
+    const paceParam = searchParams.get('pace');
+    const budgetParam = searchParams.get('budget');
+    const prefsParam = searchParams.get('prefs');
+
+    let restoredFromEncodedData = false;
+
+    // 1. Check if a complete journey payload was shared in deep link
+    if (journeyParam) {
+      try {
+        const jsonStr = decodeURIComponent(atob(journeyParam));
+        const parsedItinerary = JSON.parse(jsonStr) as ItineraryResponse;
+        if (
+          parsedItinerary &&
+          (parsedItinerary.city || (parsedItinerary.days && parsedItinerary.days.length > 0))
+        ) {
+          setItinerary(parsedItinerary);
+          restoredFromEncodedData = true;
+
+          const cityName = parsedItinerary.city || cityParam;
+          if (cityName) {
+            const found = ALL_INDIAN_TOURISM_CITIES.find(
+              (c) =>
+                c.name.toLowerCase() === cityName.toLowerCase() ||
+                c.id.toLowerCase() === cityName.toLowerCase()
+            );
+            if (found) setSelectedCityObj(found);
+          }
+
+          const resolvedDays =
+            parsedItinerary.days_count ||
+            (parsedItinerary.days ? parsedItinerary.days.length : daysParam ? Number(daysParam) : 5);
+          setDaysCount(Math.min(7, Math.max(1, resolvedDays)));
+
+          if (paceParam && ['relaxed', 'moderate', 'fast'].includes(paceParam)) {
+            setPace(paceParam as any);
+          }
+          if (budgetParam && ['budget', 'moderate', 'luxury'].includes(budgetParam)) {
+            setBudget(budgetParam as any);
+          }
+          if (prefsParam) {
+            const p = prefsParam.split(',').map((s) => s.trim()).filter(Boolean);
+            if (p.length > 0) setSelectedPreferences(p);
+          }
+
+          setRestoredNotice(`Restored shared journey for ${cityName || 'destination'}!`);
+          setTimeout(() => setRestoredNotice(null), 5000);
+        }
+      } catch (err) {
+        console.warn('Failed to parse journey deep link:', err);
+      }
+    }
+
+    // 2. If no full payload or payload failed, check query params (e.g. ?city=...&days=...)
+    if (!restoredFromEncodedData) {
+      let targetCity = selectedCityObj.name;
+      let targetDays = daysCount;
+      let targetPace = pace;
+      let targetBudget = budget;
+      let targetPrefs = selectedPreferences;
+
+      if (cityParam) {
+        const found = ALL_INDIAN_TOURISM_CITIES.find(
+          (c) =>
+            c.name.toLowerCase() === cityParam.toLowerCase() ||
+            c.id.toLowerCase() === cityParam.toLowerCase()
+        );
+        if (found) {
+          setSelectedCityObj(found);
+          targetCity = found.name;
+        } else {
+          targetCity = cityParam;
+        }
+      }
+
+      if (daysParam && !isNaN(Number(daysParam))) {
+        targetDays = Math.min(7, Math.max(1, Number(daysParam)));
+        setDaysCount(targetDays);
+      }
+
+      if (paceParam && ['relaxed', 'moderate', 'fast'].includes(paceParam)) {
+        targetPace = paceParam as any;
+        setPace(paceParam as any);
+      }
+      if (budgetParam && ['budget', 'moderate', 'luxury'].includes(budgetParam)) {
+        targetBudget = budgetParam as any;
+        setBudget(budgetParam as any);
+      }
+      if (prefsParam) {
+        const p = prefsParam.split(',').map((s) => s.trim()).filter(Boolean);
+        if (p.length > 0) {
+          targetPrefs = p;
+          setSelectedPreferences(p);
+        }
+      }
+
+      if (cityParam || daysParam) {
+        setRestoredNotice(`Restored journey route for ${targetCity}`);
+        setTimeout(() => setRestoredNotice(null), 5000);
+      }
+
+      handleGeneratePlan(targetCity, targetDays, targetPace, targetBudget, targetPrefs);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const handleSavePlan = async () => {
     if (!itinerary) return;
@@ -257,16 +375,90 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
     }
   };
 
-  const handleSharePlan = () => {
+  // Share Journey: Generates shareable deep-link, invokes Web Share API if available, or copies to clipboard
+  const handleShareJourney = async () => {
     if (!itinerary) return;
-    const url = window.location.href;
-    if (navigator?.clipboard?.writeText) {
-      navigator.clipboard.writeText(`${itinerary.title} - Planned with VIRASAT: ${url}`)
-        .then(() => {
+
+    try {
+      const origin = window.location.origin;
+      const path = '/itinerary';
+      const params = new URLSearchParams();
+
+      const cityVal = itinerary.city || selectedCityObj.name;
+      params.set('city', cityVal);
+      params.set('days', String(itinerary.days_count || daysCount));
+      params.set('pace', pace);
+      params.set('budget', budget);
+      if (selectedPreferences && selectedPreferences.length > 0) {
+        params.set('prefs', selectedPreferences.join(','));
+      }
+
+      // Compact representation of the itinerary for seamless offline/instant restore
+      try {
+        const jsonString = JSON.stringify(itinerary);
+        const encodedData = btoa(encodeURIComponent(jsonString));
+        // Only append if url won't exceed safe URL query length (~7500 chars)
+        if (encodedData.length < 7500) {
+          params.set('journey', encodedData);
+        }
+      } catch (e) {
+        console.warn('Encoding journey payload failed:', e);
+      }
+
+      const deepLink = `${origin}${path}?${params.toString()}`;
+      const shareTitle = itinerary.title || `${cityVal} ${daysCount}-Day Tour`;
+      const shareText = `Explore this curated ${daysCount}-Day journey in ${cityVal} on VIRASAT: ${shareTitle}`;
+
+      // 1. Try Web Share API if available
+      let sharedViaNative = false;
+      if (typeof navigator !== 'undefined' && typeof navigator.share === 'function') {
+        try {
+          await navigator.share({
+            title: shareTitle,
+            text: shareText,
+            url: deepLink,
+          });
+          sharedViaNative = true;
+          setShareMessage('Journey shared successfully!');
           setShareSuccess(true);
-          setTimeout(() => setShareSuccess(false), 3000);
-        })
-        .catch(() => {});
+          setTimeout(() => {
+            setShareSuccess(false);
+            setShareMessage('');
+          }, 3500);
+          return;
+        } catch (shareErr: any) {
+          if (shareErr?.name === 'AbortError') {
+            // User cancelled/closed native share sheet, do not fallback to clipboard
+            return;
+          }
+          console.warn('Web Share API error, falling back to clipboard:', shareErr);
+        }
+      }
+
+      // 2. Fallback: Copy link to clipboard
+      if (!sharedViaNative) {
+        if (navigator?.clipboard?.writeText) {
+          await navigator.clipboard.writeText(deepLink);
+        } else {
+          const tempInput = document.createElement('textarea');
+          tempInput.value = deepLink;
+          tempInput.style.position = 'fixed';
+          tempInput.style.opacity = '0';
+          document.body.appendChild(tempInput);
+          tempInput.focus();
+          tempInput.select();
+          document.execCommand('copy');
+          document.body.removeChild(tempInput);
+        }
+        setShareMessage('Link copied');
+        setShareSuccess(true);
+        setTimeout(() => {
+          setShareSuccess(false);
+          setShareMessage('');
+        }, 3500);
+      }
+    } catch (err) {
+      console.error('Failed to share journey:', err);
     }
   };
 
@@ -602,19 +794,25 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                 <span>Export TXT</span>
               </button>
 
+              {/* Share Journey Button (Top-Right Action) */}
               <button
-                onClick={handleSharePlan}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:py-2 rounded-xl bg-stone-50 hover:bg-stone-100 border border-stone-200 text-xs font-semibold text-stone-700 shadow-xs transition cursor-pointer"
+                onClick={handleShareJourney}
+                className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 sm:py-2 rounded-xl text-xs font-bold shadow-xs transition cursor-pointer active:scale-95 ${
+                  shareSuccess
+                    ? 'bg-emerald-600 hover:bg-emerald-700 text-white border border-emerald-600'
+                    : 'bg-[#FF671F] hover:bg-[#E65100] text-white border border-[#FF671F]'
+                }`}
+                title="Share this journey itinerary & route"
               >
                 {shareSuccess ? (
                   <>
-                    <Check className="w-3.5 h-3.5 text-emerald-600" />
-                    <span className="text-emerald-700 font-bold">Link Copied!</span>
+                    <Check className="w-3.5 h-3.5 text-white" />
+                    <span>{shareMessage || 'Link copied'}</span>
                   </>
                 ) : (
                   <>
-                    <Share2 className="w-3.5 h-3.5 text-stone-600" />
-                    <span>Share</span>
+                    <Share2 className="w-3.5 h-3.5 text-white" />
+                    <span>Share Journey</span>
                   </>
                 )}
               </button>
@@ -622,7 +820,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
               <button
                 onClick={handleSavePlan}
                 disabled={saveSuccess}
-                className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-[#FF671F] hover:bg-[#E65100] text-white text-xs font-semibold shadow-xs transition cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-xl bg-[#0B192C] hover:bg-stone-800 text-white text-xs font-semibold shadow-xs transition cursor-pointer"
               >
                 {saveSuccess ? (
                   <>
@@ -1107,6 +1305,32 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                 Close Sheet
               </button>
             </div>
+          </div>
+        </div>
+      )}
+
+      {/* Floating Link Copied / Share Toast */}
+      {shareSuccess && (
+        <div className="fixed bottom-6 right-6 z-50 bg-[#0B192C] text-white px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-3 border border-white/10 animate-fadeIn">
+          <div className="w-7 h-7 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0">
+            <Check className="w-4 h-4" />
+          </div>
+          <div>
+            <p className="text-xs font-bold">{shareMessage || 'Link copied'}</p>
+            <p className="text-[11px] text-stone-300">Shareable deep-link copied to clipboard.</p>
+          </div>
+        </div>
+      )}
+
+      {/* Floating Restored Journey Notice */}
+      {restoredNotice && (
+        <div className="fixed bottom-6 left-6 z-50 bg-[#0B192C] text-white px-4 py-3 rounded-2xl shadow-2xl flex items-center gap-3 border border-[#FF671F]/40 animate-fadeIn">
+          <div className="w-7 h-7 rounded-full bg-[#FF671F]/20 text-[#FF671F] flex items-center justify-center shrink-0">
+            <Compass className="w-4 h-4" />
+          </div>
+          <div>
+            <p className="text-xs font-bold text-orange-400">Journey Restored</p>
+            <p className="text-[11px] text-stone-300">{restoredNotice}</p>
           </div>
         </div>
       )}

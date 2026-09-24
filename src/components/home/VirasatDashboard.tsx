@@ -22,6 +22,9 @@ import {
   Layers,
   Bot,
   Camera,
+  History,
+  Trash2,
+  X,
 } from 'lucide-react';
 import { NavTab } from '../layout/Sidebar';
 import { PlaceSummary } from '../../types';
@@ -282,7 +285,60 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
   const [searchSuggestions, setSearchSuggestions] = useState<PlaceSummary[]>([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [isSearching, setIsSearching] = useState(false);
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
   const searchContainerRef = useRef<HTMLDivElement>(null);
+
+  // Recent Searches for Explore Page (stored in localStorage)
+  const [recentSearches, setRecentSearches] = useState<Array<{ id: string; query: string; timestamp: number }>>(() => {
+    try {
+      const stored = localStorage.getItem('virasat_recent_searches');
+      if (stored) {
+        const parsed = JSON.parse(stored);
+        if (Array.isArray(parsed)) {
+          return parsed.filter(
+            (item) => item && typeof item.query === 'string' && item.query.trim().length > 0
+          );
+        }
+      }
+    } catch (e) {
+      console.warn('Failed to parse recent searches:', e);
+    }
+    return [];
+  });
+
+  const saveRecentSearches = (items: Array<{ id: string; query: string; timestamp: number }>) => {
+    setRecentSearches(items);
+    try {
+      localStorage.setItem('virasat_recent_searches', JSON.stringify(items));
+    } catch (e) {
+      console.warn('Failed to save recent searches:', e);
+    }
+  };
+
+  const recordRecentSearch = (term: string) => {
+    const trimmed = term.trim();
+    if (!trimmed || trimmed.length < 2) return;
+    const lower = trimmed.toLowerCase();
+    const filtered = recentSearches.filter((item) => item.query.toLowerCase() !== lower);
+    const updated = [
+      { id: `${Date.now()}_${Math.random().toString(36).slice(2, 6)}`, query: trimmed, timestamp: Date.now() },
+      ...filtered,
+    ].slice(0, 10);
+    saveRecentSearches(updated);
+  };
+
+  const handleRemoveRecentSearch = (queryToRemove: string, e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
+    const updated = recentSearches.filter(
+      (item) => item.query.toLowerCase() !== queryToRemove.toLowerCase()
+    );
+    saveRecentSearches(updated);
+  };
+
+  const handleClearHistory = (e?: React.MouseEvent) => {
+    if (e) e.stopPropagation();
+    saveRecentSearches([]);
+  };
 
   // AR Camera Scanner Modal State
   const [isARModalOpen, setIsARModalOpen] = useState(false);
@@ -302,6 +358,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
     const handleClickOutside = (e: MouseEvent) => {
       if (searchContainerRef.current && !searchContainerRef.current.contains(e.target as Node)) {
         setShowSuggestions(false);
+        setIsSearchFocused(false);
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -332,7 +389,9 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
   const handleSearchSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setShowSuggestions(false);
+    setIsSearchFocused(false);
     if (searchQuery.trim()) {
+      recordRecentSearch(searchQuery.trim());
       onSearch(searchQuery.trim());
     }
   };
@@ -681,11 +740,25 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}
                     onFocus={() => {
+                      setIsSearchFocused(true);
                       if (searchSuggestions.length > 0) setShowSuggestions(true);
                     }}
                     placeholder="Search monuments, cities, or trails..."
                     className="w-full bg-transparent text-xs sm:text-sm text-stone-800 placeholder-stone-400 focus:outline-none"
                   />
+                  {searchQuery && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setSearchQuery('');
+                        setSearchSuggestions([]);
+                      }}
+                      className="p-1 text-stone-400 hover:text-stone-700 cursor-pointer shrink-0"
+                      aria-label="Clear search query"
+                    >
+                      <X className="w-3.5 h-3.5" />
+                    </button>
+                  )}
                   {isSearching && <Loader2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-600 animate-spin mr-1 shrink-0" />}
                   {/* Camera Button Small for AR Monument Explorer */}
                   <button
@@ -707,6 +780,82 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
                 </div>
               </form>
 
+              {/* Recent Searches Dropdown: Shown when clicking/focusing search bar with empty query */}
+              {isSearchFocused && !searchQuery.trim() && recentSearches.length > 0 && !showSuggestions && (
+                <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-xl border border-stone-200 overflow-hidden z-30 animate-fadeIn">
+                  <div className="p-2.5 border-b border-stone-100 flex items-center justify-between px-3.5">
+                    <span className="text-[11px] font-bold text-stone-500 uppercase tracking-wider flex items-center gap-1.5">
+                      <History className="w-3.5 h-3.5 text-[#FF671F]" />
+                      <span>Recent Searches</span>
+                    </span>
+                    <button
+                      type="button"
+                      onMouseDown={(e) => {
+                        e.preventDefault();
+                        handleClearHistory(e);
+                      }}
+                      className="text-[11px] font-semibold text-rose-600 hover:text-rose-700 hover:underline flex items-center gap-1 cursor-pointer transition"
+                      title="Clear recent search history"
+                    >
+                      <Trash2 className="w-3 h-3" />
+                      <span>Clear History</span>
+                    </button>
+                  </div>
+
+                  <div className="divide-y divide-stone-100 max-h-64 overflow-y-auto">
+                    {recentSearches.slice(0, 5).map((item) => (
+                      <div
+                        key={item.id}
+                        onMouseDown={(e) => {
+                          e.preventDefault();
+                          setSearchQuery(item.query);
+                          recordRecentSearch(item.query);
+                          setShowSuggestions(false);
+                          setIsSearchFocused(false);
+                          onSearch(item.query);
+                        }}
+                        className="p-3 hover:bg-orange-50/60 cursor-pointer transition flex items-center justify-between gap-3 group"
+                      >
+                        <div className="flex items-center gap-2.5 min-w-0">
+                          <Clock className="w-3.5 h-3.5 text-stone-400 group-hover:text-[#FF671F] shrink-0 transition-colors" />
+                          <span className="text-xs font-medium text-stone-800 group-hover:text-stone-950 truncate">
+                            {item.query}
+                          </span>
+                        </div>
+                        <button
+                          type="button"
+                          onMouseDown={(e) => {
+                            e.preventDefault();
+                            e.stopPropagation();
+                            handleRemoveRecentSearch(item.query, e);
+                          }}
+                          className="p-1 rounded-md text-stone-300 hover:text-stone-700 hover:bg-stone-200/50 transition shrink-0"
+                          title={`Remove "${item.query}"`}
+                          aria-label={`Remove ${item.query}`}
+                        >
+                          <X className="w-3.5 h-3.5" />
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+
+                  <div className="p-2 border-t border-stone-100 bg-[#FAF8F5] flex items-center justify-between px-3.5">
+                    <span className="text-[11px] text-stone-400">Latest {Math.min(5, recentSearches.length)} searches</span>
+                    <button
+                      type="button"
+                      onMouseDown={(e) => {
+                        e.preventDefault();
+                        handleClearHistory(e);
+                      }}
+                      className="text-[11px] font-semibold text-rose-600 hover:text-rose-700 hover:underline flex items-center gap-1 cursor-pointer transition"
+                    >
+                      <Trash2 className="w-3 h-3" />
+                      <span>Clear History</span>
+                    </button>
+                  </div>
+                </div>
+              )}
+
               {/* Live Suggestions Dropdown */}
               {showSuggestions && searchSuggestions.length > 0 && (
                 <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-xl border border-stone-200 overflow-hidden z-30 animate-fadeIn">
@@ -719,6 +868,8 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
                         key={item.id}
                         onClick={() => {
                           setShowSuggestions(false);
+                          setIsSearchFocused(false);
+                          recordRecentSearch(item.name);
                           if (onSelectPlace) {
                             onSelectPlace(item.id);
                           } else {
@@ -750,14 +901,6 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
 
             {/* Destination Quick Chips */}
             <div className="flex overflow-x-auto sm:flex-wrap items-center gap-1.5 sm:gap-2.5 mt-3.5 sm:mt-5 pb-1 scrollbar-none mobile-scroll-row">
-              <button
-                type="button"
-                onClick={() => setIsARModalOpen(true)}
-                className="px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-gradient-to-r from-orange-50 to-amber-50 hover:from-orange-100 hover:to-amber-100 border border-orange-300 text-[11px] sm:text-xs font-bold text-orange-950 shadow-2xs hover:shadow-xs transition flex items-center gap-1 sm:gap-1.5 cursor-pointer active:scale-95 whitespace-nowrap shrink-0"
-              >
-                <Camera className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#FF671F] shrink-0" />
-                <span>AR Lens 📸</span>
-              </button>
               {quickChips.map((chip) => (
                 <button
                   key={chip.name}

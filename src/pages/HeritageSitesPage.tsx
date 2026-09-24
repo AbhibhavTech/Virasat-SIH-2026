@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { api } from '../services/api';
-import { safeLocalStorage } from '../utils/storage';
 import { PlaceSummary } from '../types';
 import { useFavorites } from '../contexts/FavoritesContext';
 import {
@@ -18,9 +17,6 @@ import {
   Train,
   SlidersHorizontal,
   Info,
-  CheckSquare,
-  Square,
-  CheckCircle2,
   Camera,
 } from 'lucide-react';
 import { GuideIllustration } from '../components/cultural-guides/GuideIllustrations';
@@ -48,26 +44,6 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
   const [selectedState, setSelectedState] = useState('All');
   const [selectedSiteForModal, setSelectedSiteForModal] = useState<any | null>(null);
   const [isARModalOpen, setIsARModalOpen] = useState(false);
-  const [visitedSites, setVisitedSites] = useState<Record<string, boolean>>(() => {
-    try {
-      const saved = safeLocalStorage.getItem('yatra_visited_heritage');
-      return saved ? JSON.parse(saved) : {};
-    } catch {
-      return {};
-    }
-  });
-
-  const toggleVisited = (siteId: string) => {
-    setVisitedSites(prev => {
-      const updated = { ...prev, [siteId]: !prev[siteId] };
-      try {
-        safeLocalStorage.setItem('yatra_visited_heritage', JSON.stringify(updated));
-      } catch {
-        // Safe ignore
-      }
-      return updated;
-    });
-  };
 
   useEffect(() => {
     const fetchHeritage = async () => {
@@ -208,8 +184,8 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
           <h1 className="text-lg sm:text-4xl font-serif font-bold tracking-tight text-[#0B192C]">
             Major Monuments, Famous Tourist Places & Iconic Heritage
           </h1>
-          <p className="text-xs sm:text-base text-stone-600 leading-relaxed font-sans line-clamp-3 sm:line-clamp-none">
-            Curated catalog of India&apos;s most famous monuments, world-renowned heritage sites, and iconic tourist attractions. Inspect detailed architectural dynasties, verified visiting hours, entry fees, nearest transit corridors, and interactive 3D virtual reconstructions.
+          <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-sans">
+            Curated catalog of India&apos;s most famous monuments and iconic heritage sites, with verified visiting hours, transit corridors, and 3D architectural reconstructions.
           </p>
           <div className="flex flex-wrap items-center gap-2 sm:gap-4 pt-1 sm:pt-2 text-[10px] sm:text-xs text-stone-600 font-medium">
             <div className="flex items-center gap-1.5">
@@ -223,10 +199,6 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
             <div className="flex items-center gap-1.5">
               <span className="w-2 sm:w-2.5 h-2 sm:h-2.5 rounded-full bg-[#000080]"></span>
               <span>Authentic Photography</span>
-            </div>
-            <div className="flex items-center gap-1.5 px-2 sm:px-3 py-0.5 sm:py-1 rounded-lg sm:rounded-xl bg-orange-50 text-orange-900 border border-orange-200 font-bold">
-              <CheckCircle2 className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-[#FF671F]" />
-              <span>Visited: {Object.values(visitedSites).filter(Boolean).length} / {heritageSites.length}</span>
             </div>
           </div>
         </div>
@@ -421,26 +393,6 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
                     </span>
                   </div>
 
-                  {/* Visited / Wishlist Toggle */}
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      toggleVisited(site.id);
-                    }}
-                    className={`absolute top-2.5 sm:top-3 right-10 sm:right-12 p-1.5 sm:p-2 rounded-full backdrop-blur-md transition-all cursor-pointer ${
-                      visitedSites[site.id]
-                        ? 'bg-[#046A38] text-white shadow-md'
-                        : 'bg-black/40 text-white hover:bg-black/60'
-                    }`}
-                    title={visitedSites[site.id] ? 'Mark as unvisited' : 'Mark as visited'}
-                  >
-                    {visitedSites[site.id] ? (
-                      <CheckSquare className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
-                    ) : (
-                      <Square className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
-                    )}
-                  </button>
-
                   {/* Favorite Button */}
                   <button
                     onClick={() => toggleFavorite(site.id)}
@@ -460,7 +412,7 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
                       <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-emerald-400 flex-shrink-0" />
                       <span className="truncate">{site.city}, {site.state}</span>
                     </div>
-                    {site.rating && (
+                    {site.rating && (site.rating_source || site.reviews_count || site.rating_count) && (
                       <span className="text-[10px] sm:text-[11px] font-bold bg-black/60 px-1.5 sm:px-2 py-0.5 rounded-full text-amber-300 backdrop-blur-xs">
                         ★ {site.rating}
                       </span>
@@ -474,11 +426,6 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
                     <h3 className="font-serif font-bold text-stone-900 text-sm sm:text-base leading-snug group-hover:text-[#FF671F] transition-colors">
                       {site.name}
                     </h3>
-                    {site.architectural_style && (
-                      <p className="text-[10px] sm:text-[11px] font-semibold text-[#046A38] mt-0.5">
-                        Style: {site.architectural_style}
-                      </p>
-                    )}
                     <p className="text-[11px] sm:text-xs text-stone-600 mt-1.5 sm:mt-2 line-clamp-2 leading-relaxed font-sans">
                       {site.summary || site.historical_significance}
                     </p>
