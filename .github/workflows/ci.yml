@@ -36,13 +36,59 @@ jobs:
           npm run check:data
           npm run check:stations
 
-      - name: Run Complete Automated Test Suite (Phases 0 - 8)
-        run: npm test
-
       - name: Production Bundle Compilation
         run: npm run build
 
+      - name: Run Complete Automated Test Suite
+        run: npm test
+
       - name: Secret Hygiene Audit (Frontend Bundle Leak Prevention)
         run: |
-          ! grep -rn "AIzaSy" dist/assets/
-          ! grep -rn "postgres://" dist/assets/
+          node -e '
+            const fs = require("fs");
+            const path = require("path");
+
+            let fbKey = "";
+
+            try {
+              fbKey = JSON.parse(
+                fs.readFileSync("firebase-applet-config.json", "utf-8")
+              ).apiKey || "";
+            } catch {}
+
+            const files = fs
+              .readdirSync("dist/assets")
+              .filter(f => f.endsWith(".js"));
+
+            for (const file of files) {
+              const content = fs.readFileSync(
+                path.join("dist/assets", file),
+                "utf-8"
+              );
+
+              const sanitized = fbKey
+                ? content.replaceAll(fbKey, "")
+                : content;
+
+              if (sanitized.includes("AIzaSy")) {
+                console.error(
+                  "❌ Leaked unauthorized Google API Key detected in: " + file
+                );
+                process.exit(1);
+              }
+
+              if (
+                content.includes("postgres://") ||
+                content.includes("postgresql://")
+              ) {
+                console.error(
+                  "❌ Leaked database connection string detected in: " + file
+                );
+                process.exit(1);
+              }
+            }
+
+            console.log(
+              "✓ Secret hygiene audit passed: No unauthorized Google keys or database credentials found in client bundles."
+            );
+          '

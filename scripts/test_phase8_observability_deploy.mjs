@@ -152,10 +152,23 @@ async function runPhase8Tests() {
     const assetFiles = fs.readdirSync(distAssetsDir).filter((f) => f.endsWith('.js'));
     assert(assetFiles.length > 0, `Compiled frontend assets detected (${assetFiles.length} bundles)`);
 
+    // Dynamically retrieve configured public Firebase Web client API key for exemption
+    let firebaseWebApiKey = '';
+    const firebaseConfigFile = path.join(rootDir, 'firebase-applet-config.json');
+    if (fs.existsSync(firebaseConfigFile)) {
+      try {
+        const parsed = JSON.parse(fs.readFileSync(firebaseConfigFile, 'utf-8'));
+        firebaseWebApiKey = parsed.apiKey || '';
+      } catch {
+        // Fall back to no exemption if parsing fails
+      }
+    }
+
     let leakedSecretsCount = 0;
     for (const file of assetFiles) {
       const content = fs.readFileSync(path.join(distAssetsDir, file), 'utf-8');
-      if (content.includes('AIzaSy') || content.includes('postgres://') || content.includes('postgresql://')) {
+      const sanitized = firebaseWebApiKey ? content.replaceAll(firebaseWebApiKey, '') : content;
+      if (sanitized.includes('AIzaSy') || content.includes('postgres://') || content.includes('postgresql://')) {
         leakedSecretsCount++;
         console.error(`  ❌ Credential leak detected in client bundle: ${file}`);
       }
@@ -175,6 +188,7 @@ async function runPhase8Tests() {
   if (failed > 0) {
     process.exit(1);
   }
+  process.exit(0);
 }
 
 runPhase8Tests().catch((err) => {

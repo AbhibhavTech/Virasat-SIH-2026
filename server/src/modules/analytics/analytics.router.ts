@@ -59,7 +59,7 @@ analyticsRouter.post('/event', async (req: Request, res: Response) => {
     // Record immutable audit telemetry log
     await db.audit.log({
       id: crypto.randomUUID(),
-      actor_id: (req as any).user?.id || `anon:${clientSession}`,
+      actor_id: (req as any).user?.id || null,
       action: 'ANALYTICS_EVENT',
       entity_type: 'telemetry',
       entity_id: event_type,

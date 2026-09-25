@@ -28,10 +28,14 @@ async function runPhase5Tests() {
     }
   }
 
-  // -------------------------------------------------------------
-  // Test Suite 1: Grounded Response Audit (High Confidence)
-  // -------------------------------------------------------------
-  console.log('--- Test Suite 1: Grounded Response Audit (High Confidence) ---');
+  let auditUserId = null;
+  let auditLogId = null;
+
+  try {
+    // -------------------------------------------------------------
+    // Test Suite 1: Grounded Response Audit (High Confidence)
+    // -------------------------------------------------------------
+    console.log('--- Test Suite 1: Grounded Response Audit (High Confidence) ---');
   const placesResult = await db.places.findAll({ limit: 1000, includeAllStatuses: true });
   const allPlaces = placesResult.places;
 
@@ -139,10 +143,22 @@ async function runPhase5Tests() {
   // -------------------------------------------------------------
   console.log('\n--- Test Suite 4: Immutable AI Audit Trail Logging ---');
   const auditSessionId = `session-audit-${Date.now()}`;
-  const auditUserId = `user-ai-auditor-${Date.now()}`;
+  auditUserId = `user-ai-auditor-${Date.now()}`;
+  auditLogId = `audit-ai-test-${Date.now()}`;
+
+  // Ensure user exists for foreign key constraint in PostgreSQL (audit_logs.actor_id -> users.id)
+  await db.users.create({
+    id: auditUserId,
+    email: `ai.auditor.${Date.now()}@test.virasat.internal`,
+    password_hash: '',
+    name: 'AI Auditor',
+    role: 'admin',
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
+  });
 
   await db.audit.log({
-    id: `audit-ai-test-${Date.now()}`,
+    id: auditLogId,
     actor_id: auditUserId,
     action: 'AI_QUERY_GROUNDED',
     entity_type: 'ai_session',
@@ -176,6 +192,21 @@ async function runPhase5Tests() {
   const sampleFact = citations[0];
   assert(sampleFact.fact_key !== undefined, 'Fact record contains fact_key');
   assert(sampleFact.source_url.startsWith('https://'), 'Fact record cites secure https provenance source');
+  } finally {
+    // Cleanup Phase 5 test fixtures
+    try {
+      if (db.mode === 'postgresql') {
+        if (auditLogId) await db.query('DELETE FROM audit_logs WHERE id = $1', [auditLogId]);
+        if (auditUserId) await db.query('DELETE FROM users WHERE id = $1', [auditUserId]);
+      } else if (db.data) {
+        if (auditLogId && db.data.audit_logs) delete db.data.audit_logs[auditLogId];
+        if (auditUserId && db.data.users) delete db.data.users[auditUserId];
+        db.persist();
+      }
+    } catch (cleanupErr) {
+      console.warn('⚠️ Warning cleaning up Phase 5 test fixtures:', cleanupErr.message);
+    }
+  }
 
   // Summary
   console.log('\n=============================================================');
@@ -185,6 +216,7 @@ async function runPhase5Tests() {
   if (failed > 0) {
     process.exit(1);
   }
+  process.exit(0);
 }
 
 runPhase5Tests().catch((err) => {
