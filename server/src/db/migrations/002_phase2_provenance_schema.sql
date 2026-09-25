@@ -13,12 +13,13 @@ CREATE TABLE IF NOT EXISTS place_sources (
 );
 
 -- 2. Granular field-level facts table (Section XI.1 & XV.2)
+-- data_confidence check is normalized to case-insensitive lower to match data_confidence_enum and TypeScript DataConfidence type
 CREATE TABLE IF NOT EXISTS place_facts (
     id VARCHAR(64) PRIMARY KEY,
     place_id VARCHAR(128) NOT NULL REFERENCES places(id) ON DELETE CASCADE,
     fact_key VARCHAR(64) NOT NULL,
     fact_value TEXT NOT NULL,
-    data_confidence VARCHAR(32) NOT NULL CHECK (data_confidence IN ('OFFICIAL', 'TRUSTED_THIRD_PARTY', 'COMMUNITY_REPORTED', 'MODELLED', 'ESTIMATED', 'STALE', 'UNVERIFIED')),
+    data_confidence VARCHAR(32) NOT NULL CHECK (LOWER(data_confidence) IN ('official', 'trusted_third_party', 'community_reported', 'modelled', 'estimated', 'stale', 'unverified')),
     source_url VARCHAR(512) NOT NULL,
     source_type VARCHAR(32) NOT NULL CHECK (source_type IN ('tier1_official', 'tier2_trusted', 'tier3_secondary', 'tier4_community')),
     verified_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
