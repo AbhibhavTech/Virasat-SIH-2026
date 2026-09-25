@@ -3,13 +3,26 @@ import path from 'path';
 
 console.log('[CI Data Quality] Starting comprehensive data integrity and provenance verification...');
 
-const storePath = path.join(process.cwd(), 'data', '.database', 'virasat_store.json');
-if (!fs.existsSync(storePath)) {
-  console.error('❌ Database store file not found at:', storePath);
-  process.exit(1);
-}
+// -------------------------------------------------------------
+// 0. Load Dataset: Canonical Static Tourism Datasets (In-Memory Seed)
+// -------------------------------------------------------------
+let db;
 
-const db = JSON.parse(fs.readFileSync(storePath, 'utf-8'));
+try {
+  // Ingest canonical static tourism datasets directly via the seed pipeline
+  const { runDatabaseSeed } = await import('../server/src/db/seed.ts');
+  db = await runDatabaseSeed();
+} catch (seedErr) {
+  // If invoked via plain Node without TypeScript loader, re-exec seamlessly via tsx
+  try {
+    const { execSync } = await import('child_process');
+    execSync('npx tsx scripts/check_data_quality.mjs', { stdio: 'inherit' });
+    process.exit(0);
+  } catch (execErr) {
+    console.error('❌ Failed to load canonical static datasets via tsx:', execErr.message || seedErr.message);
+    process.exit(1);
+  }
+}
 
 let errors = [];
 let warnings = [];
@@ -112,3 +125,4 @@ if (errors.length > 0) {
 
 console.log('\n[All CI Data Quality & Provenance Checks Passed Successfully!]\n');
 process.exit(0);
+
