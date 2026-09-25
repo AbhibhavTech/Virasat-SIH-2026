@@ -15,10 +15,12 @@ COPY vite.config.ts ./
 COPY tailwind.config.js ./
 COPY postcss.config.js ./
 COPY index.html ./
+COPY public/ ./public/
 COPY src/ ./src/
 COPY server.ts ./
 COPY server/ ./server/
 COPY data/ ./data/
+COPY scripts/ ./scripts/
 
 # Build Vite client static assets and bundle backend server
 RUN npm run build

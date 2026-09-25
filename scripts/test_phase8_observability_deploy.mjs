@@ -153,9 +153,9 @@ async function runPhase8Tests() {
     assert(assetFiles.length > 0, `Compiled frontend assets detected (${assetFiles.length} bundles)`);
 
     // Dynamically retrieve configured public Firebase Web client API key for exemption
-    let firebaseWebApiKey = '';
+    let firebaseWebApiKey = process.env.VITE_FIREBASE_API_KEY || '';
     const firebaseConfigFile = path.join(rootDir, 'firebase-applet-config.json');
-    if (fs.existsSync(firebaseConfigFile)) {
+    if (!firebaseWebApiKey && fs.existsSync(firebaseConfigFile)) {
       try {
         const parsed = JSON.parse(fs.readFileSync(firebaseConfigFile, 'utf-8'));
         firebaseWebApiKey = parsed.apiKey || '';
