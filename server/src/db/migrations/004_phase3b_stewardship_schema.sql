@@ -3,16 +3,16 @@
 -- Conforms to Section XI.3, XV.2, and Risk #14 of Master Blueprint V2
 -- ============================================================================
 
--- 1. Enhanced Citizen Heritage Issue Reports
+-- 1. Enhanced Citizen Heritage Issue Reports (Aligned with TypeScript CitizenReportRecord)
 CREATE TABLE IF NOT EXISTS citizen_reports (
     id VARCHAR(64) PRIMARY KEY,
     place_id VARCHAR(128) REFERENCES places(id) ON DELETE SET NULL,
-    place_name VARCHAR(255) NOT NULL,
-    city VARCHAR(128) NOT NULL,
+    place_name VARCHAR(255),
+    city VARCHAR(128),
     reported_by VARCHAR(255) NOT NULL,
     user_id VARCHAR(64) REFERENCES users(id) ON DELETE SET NULL,
     issue_type VARCHAR(64) NOT NULL CHECK (issue_type IN ('cleanliness', 'structural_damage', 'vandalism', 'overcrowding', 'accessibility', 'signage', 'ticket_fraud', 'other')),
-    title VARCHAR(255) NOT NULL,
+    title VARCHAR(255),
     description TEXT NOT NULL,
     severity VARCHAR(32) NOT NULL DEFAULT 'medium' CHECK (severity IN ('low', 'medium', 'high', 'critical')),
     status VARCHAR(32) NOT NULL DEFAULT 'PENDING' CHECK (status IN ('PENDING', 'UNDER_REVIEW', 'IN_PROGRESS', 'RESOLVED', 'REJECTED')),
