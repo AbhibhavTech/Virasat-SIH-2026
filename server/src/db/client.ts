@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import dotenv from 'dotenv';
 import { Pool, PoolClient } from 'pg';
 import {
   UserRecord,
@@ -94,9 +95,17 @@ class DatabaseManager {
   public async init(): Promise<void> {
     if (this.isInitialized) return;
 
+    if (!process.env.DATABASE_URL) {
+      dotenv.config({ path: path.resolve(process.cwd(), 'server/.env') });
+      if (!process.env.DATABASE_URL) {
+        dotenv.config({ path: path.resolve(process.cwd(), '.env') });
+      }
+    }
+
     const rawDbUrl = process.env.DATABASE_URL?.trim();
 
     if (rawDbUrl) {
+      let isConnected = false;
       try {
         const isRemoteOrSupabase =
           rawDbUrl.includes('supabase') ||
@@ -123,7 +132,7 @@ class DatabaseManager {
         this.mode = 'postgresql';
         this.isInitialized = true;
         console.log('[DB] Database mode: PostgreSQL');
-        return;
+        isConnected = true;
       } catch (err: any) {
         console.error('[DB] PostgreSQL connection check failed:', err?.message || 'Unknown error');
         console.warn('[DB] Reverting to local JSON store fallback.');
@@ -133,6 +142,23 @@ class DatabaseManager {
           } catch {}
           this.pool = null;
         }
+      }
+
+      if (isConnected) {
+        try {
+          const res = await this.query<{ count: string | number }>('SELECT COUNT(*) AS count FROM places');
+          const count = parseInt(String(res[0]?.count || '0'), 10);
+          if (count === 0) {
+            console.log('[DB] PostgreSQL database is empty. Starting static data seed...');
+            await this.seedFromStaticFiles();
+          } else {
+            console.log(`[DB] PostgreSQL database already contains ${count} places. Skipping static seed.`);
+          }
+        } catch (seedErr: any) {
+          console.error('[DB] PostgreSQL database verification/seed failed:', seedErr?.message || seedErr);
+          throw seedErr;
+        }
+        return;
       }
     }
 
@@ -198,17 +224,406 @@ class DatabaseManager {
 
   public async seedFromStaticFiles(): Promise<void> {
     const seeded = await runDatabaseSeed();
-    this.data.states = seeded.states;
-    this.data.cities = seeded.cities;
-    this.data.places = seeded.places;
-    this.data.transit_nodes = seeded.transit_nodes;
-    this.data.place_sources = seeded.place_sources;
-    this.data.place_facts = seeded.place_facts;
-    this.data.image_licenses = seeded.image_licenses;
-    if (Object.keys(this.data.users).length === 0) {
-      this.data.users = seeded.users;
+
+    if (this.mode !== 'postgresql') {
+      this.data.states = seeded.states;
+      this.data.cities = seeded.cities;
+      this.data.places = seeded.places;
+      this.data.transit_nodes = seeded.transit_nodes;
+      this.data.place_sources = seeded.place_sources;
+      this.data.place_facts = seeded.place_facts;
+      this.data.image_licenses = seeded.image_licenses;
+      if (Object.keys(this.data.users).length === 0) {
+        this.data.users = seeded.users;
+      }
+      this.persist();
+      return;
     }
-    this.persist();
+
+    // PostgreSQL Import
+    console.log('[DB Seed] PostgreSQL import started...');
+
+    // 1. STATES
+    let insertedStates = 0;
+    let skippedStates = 0;
+    const existingStateRows = await this.query<{ id: string }>('SELECT id FROM states;');
+    const existingStateIds = new Set(existingStateRows.map((r) => r.id.toLowerCase()));
+
+    const stateSql = `
+      INSERT INTO states (
+        id, name, slug, type, region_type, capital, region,
+        official_tourism_url, description, status, hero_image_id, hero_image_url,
+        hero_image, source_url, source_name, creator, license, created_at, updated_at
+      ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19)
+      ON CONFLICT (id) DO NOTHING;
+    `;
+
+    for (const s of Object.values(seeded.states)) {
+      if (existingStateIds.has(s.id.toLowerCase())) {
+        skippedStates++;
+        continue;
+      }
+      const params = [
+        s.id,
+        s.name,
+        s.slug || s.id,
+        s.type || s.region_type || 'state',
+        s.region_type || s.type || 'state',
+        s.capital || '',
+        s.region || '',
+        s.official_tourism_url || s.source_url || null,
+        s.description || '',
+        s.status || 'verified',
+        s.hero_image_id || null,
+        s.hero_image_url || null,
+        s.hero_image ? JSON.stringify(s.hero_image) : null,
+        s.source_url || null,
+        s.source_name || null,
+        s.creator || null,
+        s.license || null,
+        s.created_at || new Date().toISOString(),
+        new Date().toISOString(),
+      ];
+      await this.query(stateSql, params);
+      existingStateIds.add(s.id.toLowerCase());
+      insertedStates++;
+    }
+    console.log(`[DB Seed] States: inserted ${insertedStates}, skipped ${skippedStates}`);
+
+    // 2. CITIES
+    let insertedCities = 0;
+    let skippedCities = 0;
+    const existingCityRows = await this.query<{ id: string }>('SELECT id FROM cities;');
+    const existingCityIds = new Set(existingCityRows.map((r) => r.id.toLowerCase()));
+
+    const citySql = `
+      INSERT INTO cities (
+        id, state_id, name, slug, canonical_name, entity_type, district, lat, lng,
+        short_description, description, tagline, official_url, status, state, region,
+        city_type, tourism_categories, prominence, is_capital, capital_status,
+        verification_status, source_provenance, hero_image_url, hero_image, source_url,
+        source_name, creator, license, places_count, created_at, updated_at
+      ) VALUES (
+        $1, $2, $3, $4, $5, $6, $7, $8, $9,
+        $10, $11, $12, $13, $14, $15, $16,
+        $17, $18, $19, $20, $21,
+        $22, $23, $24, $25, $26,
+        $27, $28, $29, $30, $31, $32
+      )
+      ON CONFLICT (id) DO NOTHING;
+    `;
+
+    for (const c of Object.values(seeded.cities)) {
+      if (existingCityIds.has(c.id.toLowerCase())) {
+        skippedCities++;
+        continue;
+      }
+      const lat = c.lat ?? c.latitude ?? 20.5937;
+      const lng = c.lng ?? c.longitude ?? 78.9629;
+      const validStateId = c.state_id && existingStateIds.has(c.state_id.toLowerCase())
+        ? c.state_id
+        : (existingStateIds.has('delhi') && c.state_id?.toLowerCase().includes('delhi'))
+          ? 'delhi'
+          : c.state_id;
+
+      const params = [
+        c.id,
+        validStateId,
+        c.name,
+        c.slug || c.id,
+        c.canonical_name || c.name,
+        c.entity_type || 'city',
+        c.district || null,
+        lat,
+        lng,
+        c.short_description || c.description || '',
+        c.description || '',
+        c.tagline || '',
+        c.official_url || null,
+        c.status || 'verified',
+        c.state || '',
+        c.region || '',
+        c.city_type || 'city',
+        JSON.stringify(c.tourism_categories || []),
+        c.prominence || '',
+        Boolean(c.is_capital),
+        c.capital_status || '',
+        c.verification_status || 'verified',
+        c.source_provenance || '',
+        c.hero_image_url || '',
+        c.hero_image ? JSON.stringify(c.hero_image) : null,
+        c.source_url || '',
+        c.source_name || '',
+        c.creator || null,
+        c.license || '',
+        c.places_count || 0,
+        c.created_at || new Date().toISOString(),
+        new Date().toISOString(),
+      ];
+      await this.query(citySql, params);
+      existingCityIds.add(c.id.toLowerCase());
+      insertedCities++;
+    }
+    console.log(`[DB Seed] Cities: inserted ${insertedCities}, skipped ${skippedCities}`);
+
+    // 3. PLACES
+    let insertedPlaces = 0;
+    let skippedPlaces = 0;
+    const existingPlaceRows = await this.query<{ id: string }>('SELECT id FROM places;');
+    const existingPlaceIds = new Set(existingPlaceRows.map((r) => r.id.toLowerCase()));
+
+    const placeSql = `
+      INSERT INTO places (
+        id, city_id, state_id, district, name, slug, canonical_name, aliases, place_type,
+        category, categories, subcategories, topic, subtopic, category_links, importance_level,
+        locality_type, short_description, summary, detailed_description, description, history,
+        address, area, best_for, suggested_duration, visitor_notes, map_search, tags,
+        lat, lng, latitude, longitude, opening_hours, visiting_hours, entry_fee,
+        entry_fee_domestic, entry_fee_intl, best_time_to_visit, contact_information, official_website,
+        heritage_status, data_confidence, source_url, source_name, source_type, provenance_type,
+        verification_status, source_quality, last_verified_on, last_verified_at, rating,
+        thumbnail_url, sources, media, created_at, updated_at
+      ) VALUES (
+        $1, $2, $3, $4, $5, $6, $7, $8, $9,
+        $10, $11, $12, $13, $14, $15, $16,
+        $17, $18, $19, $20, $21, $22,
+        $23, $24, $25, $26, $27, $28, $29,
+        $30, $31, $32, $33, $34, $35, $36,
+        $37, $38, $39, $40, $41,
+        $42, $43, $44, $45, $46, $47,
+        $48, $49, $50, $51, $52,
+        $53, $54, $55, $56, $57
+      )
+      ON CONFLICT (id) DO NOTHING;
+    `;
+
+    for (const p of Object.values(seeded.places)) {
+      if (existingPlaceIds.has(p.id.toLowerCase())) {
+        skippedPlaces++;
+        continue;
+      }
+      const lat = p.lat ?? p.latitude ?? 20.5937;
+      const lng = p.lng ?? p.longitude ?? 78.9629;
+
+      const validStateId = p.state_id && existingStateIds.has(p.state_id.toLowerCase())
+        ? p.state_id
+        : (existingStateIds.has('delhi') && p.state_id?.toLowerCase().includes('delhi'))
+          ? 'delhi'
+          : null;
+
+      let validCityId: string | null = null;
+      if (p.city_id && existingCityIds.has(p.city_id.toLowerCase())) {
+        validCityId = p.city_id;
+      } else if (p.city_id && p.city_id.toLowerCase().includes('delhi') && existingCityIds.has('delhi')) {
+        validCityId = 'delhi';
+      }
+
+      const params = [
+        p.id,
+        validCityId,
+        validStateId,
+        p.district || null,
+        p.name,
+        p.slug || p.id,
+        p.canonical_name || p.name,
+        JSON.stringify(p.aliases || []),
+        p.place_type || null,
+        p.category || 'Monuments & Forts',
+        JSON.stringify(p.categories || []),
+        JSON.stringify(p.subcategories || []),
+        p.topic || null,
+        p.subtopic || null,
+        JSON.stringify(p.category_links || []),
+        p.importance_level || 'national_significance',
+        p.locality_type || null,
+        p.short_description || null,
+        p.summary || p.description || '',
+        p.detailed_description || null,
+        p.description || p.summary || '',
+        p.history || '',
+        p.address || null,
+        (p as any).area || null,
+        (p as any).best_for || null,
+        (p as any).suggested_duration || null,
+        (p as any).visitor_notes || null,
+        (p as any).map_search || null,
+        JSON.stringify((p as any).tags || []),
+        lat,
+        lng,
+        p.latitude ?? lat,
+        p.longitude ?? lng,
+        p.opening_hours || null,
+        p.visiting_hours || 'Sunrise to Sunset',
+        p.entry_fee ? String(p.entry_fee) : null,
+        p.entry_fee_domestic || 0,
+        p.entry_fee_intl || 0,
+        p.best_time_to_visit || null,
+        p.contact_information || null,
+        p.official_website || null,
+        p.heritage_status || 'verified',
+        p.data_confidence || 'unverified',
+        p.source_url || null,
+        p.source_name || null,
+        p.source_type || null,
+        p.provenance_type || null,
+        p.verification_status || 'unverified',
+        p.source_quality || null,
+        p.last_verified_on || null,
+        p.last_verified_at || null,
+        p.rating || 4.5,
+        p.thumbnail_url || null,
+        JSON.stringify(p.sources || []),
+        JSON.stringify(p.media || []),
+        p.created_at || new Date().toISOString(),
+        new Date().toISOString(),
+      ];
+      await this.query(placeSql, params);
+      existingPlaceIds.add(p.id.toLowerCase());
+      insertedPlaces++;
+    }
+    console.log(`[DB Seed] Places: inserted ${insertedPlaces}, skipped ${skippedPlaces}`);
+
+    // 4. TRANSIT NODES
+    let insertedTransit = 0;
+    let skippedTransit = 0;
+    const existingTransitRows = await this.query<{ id: string }>('SELECT id FROM transit_nodes;');
+    const existingTransitIds = new Set(existingTransitRows.map((r) => r.id.toLowerCase()));
+
+    const transitSql = `
+      INSERT INTO transit_nodes (
+        id, type, name, code, lat, lng, city_id, is_junction, created_at
+      ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)
+      ON CONFLICT (id) DO NOTHING;
+    `;
+
+    for (const t of Object.values(seeded.transit_nodes)) {
+      if (existingTransitIds.has(t.id.toLowerCase())) {
+        skippedTransit++;
+        continue;
+      }
+      const validCityId = t.city_id && existingCityIds.has(t.city_id.toLowerCase()) ? t.city_id : null;
+      const params = [
+        t.id,
+        t.type,
+        t.name,
+        t.code,
+        t.lat,
+        t.lng,
+        validCityId,
+        Boolean(t.is_junction),
+        t.created_at || new Date().toISOString(),
+      ];
+      await this.query(transitSql, params);
+      existingTransitIds.add(t.id.toLowerCase());
+      insertedTransit++;
+    }
+    console.log(`[DB Seed] Transit nodes: inserted ${insertedTransit}, skipped ${skippedTransit}`);
+
+    // 5. PLACE SOURCES
+    let insertedSources = 0;
+    let skippedSources = 0;
+    const existingSourceRows = await this.query<{ id: string }>('SELECT id FROM place_sources;');
+    const existingSourceIds = new Set(existingSourceRows.map((r) => r.id.toLowerCase()));
+
+    const sourceSql = `
+      INSERT INTO place_sources (
+        id, source_name, source_type, url, created_at
+      ) VALUES ($1, $2, $3, $4, $5)
+      ON CONFLICT (id) DO NOTHING;
+    `;
+
+    for (const s of Object.values(seeded.place_sources)) {
+      if (existingSourceIds.has(s.id.toLowerCase())) {
+        skippedSources++;
+        continue;
+      }
+      const params = [
+        s.id,
+        s.source_name,
+        s.source_type,
+        s.url,
+        s.created_at || new Date().toISOString(),
+      ];
+      await this.query(sourceSql, params);
+      existingSourceIds.add(s.id.toLowerCase());
+      insertedSources++;
+    }
+    console.log(`[DB Seed] Place sources: inserted ${insertedSources}, skipped ${skippedSources}`);
+
+    // 6. PLACE FACTS
+    let insertedFacts = 0;
+    let skippedFacts = 0;
+    const existingFactRows = await this.query<{ id: string }>('SELECT id FROM place_facts;');
+    const existingFactIds = new Set(existingFactRows.map((r) => r.id.toLowerCase()));
+
+    const factSql = `
+      INSERT INTO place_facts (
+        id, place_id, fact_key, fact_value, data_confidence, source_url, source_type, verified_at, expires_at, created_at
+      ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)
+      ON CONFLICT (id) DO NOTHING;
+    `;
+
+    for (const f of Object.values(seeded.place_facts)) {
+      if (existingFactIds.has(f.id.toLowerCase())) {
+        skippedFacts++;
+        continue;
+      }
+      if (!existingPlaceIds.has(f.place_id.toLowerCase())) {
+        skippedFacts++;
+        continue;
+      }
+      const params = [
+        f.id,
+        f.place_id,
+        f.fact_key,
+        f.fact_value,
+        f.data_confidence || 'unverified',
+        f.source_url,
+        f.source_type,
+        f.verified_at || new Date().toISOString(),
+        f.expires_at || null,
+        f.created_at || new Date().toISOString(),
+      ];
+      await this.query(factSql, params);
+      existingFactIds.add(f.id.toLowerCase());
+      insertedFacts++;
+    }
+    console.log(`[DB Seed] Place facts: inserted ${insertedFacts}, skipped ${skippedFacts}`);
+
+    // 7. IMAGE LICENSES
+    let insertedImages = 0;
+    let skippedImages = 0;
+    const existingImageRows = await this.query<{ id: string }>('SELECT id FROM image_licenses;');
+    const existingImageIds = new Set(existingImageRows.map((r) => r.id.toLowerCase()));
+
+    const imageSql = `
+      INSERT INTO image_licenses (
+        id, image_url, license_type, attribution_required, attribution_text, source_portal, created_at
+      ) VALUES ($1, $2, $3, $4, $5, $6, $7)
+      ON CONFLICT (id) DO NOTHING;
+    `;
+
+    for (const img of Object.values(seeded.image_licenses)) {
+      if (existingImageIds.has(img.id.toLowerCase())) {
+        skippedImages++;
+        continue;
+      }
+      const params = [
+        img.id,
+        img.image_url,
+        img.license_type || 'editorial_fair_use',
+        img.attribution_required !== undefined ? Boolean(img.attribution_required) : true,
+        img.attribution_text || null,
+        img.source_portal || null,
+        img.created_at || new Date().toISOString(),
+      ];
+      await this.query(imageSql, params);
+      existingImageIds.add(img.id.toLowerCase());
+      insertedImages++;
+    }
+    console.log(`[DB Seed] Image licenses: inserted ${insertedImages}, skipped ${skippedImages}`);
+
+    console.log('[DB Seed] PostgreSQL import complete.');
   }
 
   // -------------------------------------------------------------
@@ -407,7 +822,7 @@ class DatabaseManager {
       sources: typeof row.sources === 'string' ? JSON.parse(row.sources) : row.sources || [],
       media: typeof row.media === 'string' ? JSON.parse(row.media) : row.media || [],
       created_at: row.created_at instanceof Date ? row.created_at.toISOString() : String(row.created_at || new Date().toISOString()),
-    };
+    } as unknown as PlaceRecord;
   }
 
   private mapTransitNode(row: any): TransitNodeRecord {
@@ -769,10 +1184,12 @@ class DatabaseManager {
         let pIndex = 1;
 
         const statusFilter = filters?.verification_status || filters?.status;
-        if (statusFilter && statusFilter !== 'all') {
+        const isExplicitAll = statusFilter?.toLowerCase() === 'all' || Boolean(filters?.includeAllStatuses);
+
+        if (statusFilter && statusFilter.toLowerCase() !== 'all') {
           conditions.push(`LOWER(verification_status) = $${pIndex++}`);
           params.push(statusFilter.toLowerCase());
-        } else if (!filters?.includeAllStatuses) {
+        } else if (!isExplicitAll) {
           conditions.push(`LOWER(verification_status) = 'verified' AND LOWER(source_quality) IN ('place_specific', 'official_site')`);
         }
 
@@ -867,9 +1284,11 @@ class DatabaseManager {
       let list = Object.values(this.data.places);
 
       const statusFilter = filters?.verification_status || filters?.status;
-      if (statusFilter && statusFilter !== 'all') {
+      const isExplicitAll = statusFilter?.toLowerCase() === 'all' || Boolean(filters?.includeAllStatuses);
+
+      if (statusFilter && statusFilter.toLowerCase() !== 'all') {
         list = list.filter((p) => (p.verification_status || 'draft').toLowerCase() === statusFilter.toLowerCase());
-      } else if (!filters?.includeAllStatuses) {
+      } else if (!isExplicitAll) {
         list = list.filter((p) => {
           const s = (p.verification_status || 'draft').toLowerCase();
           const q = p.source_quality || computeSourceQuality(p.source_url || (p.sources && p.sources[0]?.source_url));
@@ -1153,12 +1572,12 @@ class DatabaseManager {
           cleanRecord.description,
           cleanRecord.history || '',
           cleanRecord.address || null,
-          cleanRecord.area || null,
-          cleanRecord.best_for || null,
-          cleanRecord.suggested_duration || null,
-          cleanRecord.visitor_notes || null,
-          cleanRecord.map_search || null,
-          JSON.stringify(cleanRecord.tags || []),
+          (cleanRecord as any).area || null,
+          (cleanRecord as any).best_for || null,
+          (cleanRecord as any).suggested_duration || null,
+          (cleanRecord as any).visitor_notes || null,
+          (cleanRecord as any).map_search || null,
+          JSON.stringify((cleanRecord as any).tags || []),
           cleanRecord.lat,
           cleanRecord.lng,
           cleanRecord.latitude ?? cleanRecord.lat,
@@ -1293,12 +1712,12 @@ class DatabaseManager {
           merged.description,
           merged.history || '',
           merged.address || null,
-          merged.area || null,
-          merged.best_for || null,
-          merged.suggested_duration || null,
-          merged.visitor_notes || null,
-          merged.map_search || null,
-          JSON.stringify(merged.tags || []),
+          (merged as any).area || null,
+          (merged as any).best_for || null,
+          (merged as any).suggested_duration || null,
+          (merged as any).visitor_notes || null,
+          (merged as any).map_search || null,
+          JSON.stringify((merged as any).tags || []),
           merged.lat,
           merged.lng,
           merged.latitude ?? merged.lat,
