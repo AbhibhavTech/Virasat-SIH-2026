@@ -115,6 +115,20 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     picture?: string;
     sub?: string;
   }) => {
+    // If a direct Google credential/profile payload is provided, authenticate directly via backend
+    if (payload && (payload.email || payload.credential || payload.id_token)) {
+      const res = await api.loginWithGoogle(payload);
+      if (res?.profile) {
+        setUser(res.profile);
+        syncUserProfileToFirestore(res.profile).catch(() => {});
+        setIsAuthModalOpen(false);
+        if (!res.profile.survey || Object.keys(res.profile.survey).length === 0) {
+          setIsOnboardingModalOpen(true);
+        }
+      }
+      return;
+    }
+
     try {
       // 1. Firebase Google Auth Popup
       const userCredential = await signInWithGooglePopup();
@@ -160,13 +174,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setIsOnboardingModalOpen(true);
       }
     } catch (firebaseErr: any) {
-      // If popup was cancelled or fallback needed with provided payload
-      if (payload && payload.email) {
-        const res = await api.loginWithGoogle(payload);
-        setUser(res.profile);
-        setIsAuthModalOpen(false);
-        return;
-      }
+      // If popup was cancelled or domain unauthorized, rethrow for UI handler with context
       throw firebaseErr;
     }
   };

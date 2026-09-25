@@ -21,24 +21,32 @@ import {
   serverTimestamp,
 } from 'firebase/firestore';
 import { UserProfile, TripItem, FavoriteItem } from '../types';
-
-// Safe fallback client API key decoded at runtime to avoid raw credentials in source code
-const DEFAULT_FIREBASE_KEY = typeof atob === 'function'
-  ? atob('QUl6YVN5QzNMT2tOUTJGYmVEU0pBU2tKQ21pNmpLZklTdDdsRFJV')
-  : '';
+import appletConfig from '../../firebase-applet-config.json';
 
 export const firebaseConfig = {
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || 'gen-lang-client-0058309080',
-  appId: import.meta.env.VITE_FIREBASE_APP_ID || '1:477345081769:web:0e3ac3253582c56fde3cb8',
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || DEFAULT_FIREBASE_KEY,
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || 'gen-lang-client-0058309080.firebaseapp.com',
-  firestoreDatabaseId: import.meta.env.VITE_FIREBASE_FIRESTORE_DATABASE_ID || 'ai-studio-virasatsih2026-1a85c5f4-bc6f-45d8-9d92-d07cc04c901a',
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || 'gen-lang-client-0058309080.firebasestorage.app',
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || '477345081769',
-  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID || '',
-  oAuthClientId: import.meta.env.VITE_FIREBASE_OAUTH_CLIENT_ID || '477345081769-kigt2pvsiupe8e3diasom7bm1bhgk1pd.apps.googleusercontent.com',
-  recaptchaSiteKey: import.meta.env.VITE_FIREBASE_RECAPTCHA_SITE_KEY || '',
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || appletConfig.projectId,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID || appletConfig.appId,
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || appletConfig.apiKey,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || appletConfig.authDomain,
+  firestoreDatabaseId: import.meta.env.VITE_FIREBASE_FIRESTORE_DATABASE_ID || appletConfig.firestoreDatabaseId,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || appletConfig.storageBucket,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || appletConfig.messagingSenderId,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID || appletConfig.measurementId || '',
+  oAuthClientId: import.meta.env.VITE_FIREBASE_OAUTH_CLIENT_ID || appletConfig.oAuthClientId,
+  recaptchaSiteKey: import.meta.env.VITE_FIREBASE_RECAPTCHA_SITE_KEY || appletConfig.recaptchaSiteKey || '',
 };
+
+export function isUnauthorizedDomainError(error: unknown): boolean {
+  if (!error) return false;
+  const err = error as Record<string, any>;
+  const code = String(err?.code || '');
+  const msg = String(err?.message || '');
+  return (
+    code === 'auth/unauthorized-domain' ||
+    msg.includes('auth/unauthorized-domain') ||
+    msg.includes('unauthorized-domain')
+  );
+}
 
 // Initialize Firebase App
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
