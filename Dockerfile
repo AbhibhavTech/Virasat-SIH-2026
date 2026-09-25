@@ -19,6 +19,7 @@ COPY public/ ./public/
 COPY src/ ./src/
 COPY server.ts ./
 COPY server/ ./server/
+COPY ai/ ./ai/
 COPY data/ ./data/
 COPY scripts/ ./scripts/
 
