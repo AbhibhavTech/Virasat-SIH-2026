@@ -28,18 +28,49 @@ async function runPhase4Tests() {
     }
   }
 
-  // -------------------------------------------------------------
-  // Test Suite 1: Google OAuth Registration (New User)
-  // -------------------------------------------------------------
-  console.log('--- Test Suite 1: Google OAuth Registration for New User ---');
-  const googleEmail = `priya.sharma.${Date.now()}@gmail.com`;
-  const googleSub = `g-sub-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`;
-  const googlePicture = 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150';
+  let newUserId = `user-google-${Date.now()}`;
+  let existingUserId = `user-local-${Date.now()}`;
 
-  // Simulate Google sign-in payload
-  const newUserId = `user-google-${Date.now()}`;
-  const googleUser = await db.users.create({
-    id: newUserId,
+  const cleanupFixtures = async () => {
+    try {
+      if (db.mode === 'postgresql') {
+        const userIds = [newUserId, existingUserId].filter(Boolean);
+        if (userIds.length > 0) {
+          await db.query('DELETE FROM favorites WHERE user_id = ANY($1)', [userIds]);
+          await db.query('DELETE FROM users WHERE id = ANY($1)', [userIds]);
+        }
+      } else if (db.data) {
+        if (db.data.favorites) {
+          for (const key of Object.keys(db.data.favorites)) {
+            const f = db.data.favorites[key];
+            if (f && (f.user_id === newUserId || f.user_id === existingUserId)) {
+              delete db.data.favorites[key];
+            }
+          }
+        }
+        if (db.data.users) {
+          if (newUserId) delete db.data.users[newUserId];
+          if (existingUserId) delete db.data.users[existingUserId];
+        }
+        db.persist();
+      }
+    } catch (cleanupErr) {
+      console.warn('⚠️ Warning cleaning up Phase 4 test fixtures:', cleanupErr.message);
+    }
+  };
+
+  try {
+    // -------------------------------------------------------------
+    // Test Suite 1: Google OAuth Registration (New User)
+    // -------------------------------------------------------------
+    console.log('--- Test Suite 1: Google OAuth Registration for New User ---');
+    const googleEmail = `priya.sharma.${Date.now()}@gmail.com`;
+    const googleSub = `g-sub-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`;
+    const googlePicture = 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150';
+
+    // Simulate Google sign-in payload
+    const googleUser = await db.users.create({
+      id: newUserId,
     email: googleEmail,
     password_hash: '',
     name: 'Priya Sharma',
@@ -88,7 +119,7 @@ async function runPhase4Tests() {
   // -------------------------------------------------------------
   console.log('\n--- Test Suite 2: Account Merging & Identity Linking ---');
   const existingEmail = `rohit.patel.${Date.now()}@gmail.com`;
-  const existingUserId = `user-local-${Date.now()}`;
+  existingUserId = `user-local-${Date.now()}`;
 
   // 1. Create standard email/password user
   const bcrypt = await import('bcryptjs');
@@ -111,7 +142,7 @@ async function runPhase4Tests() {
   assert(initialUser.google_id === undefined, 'Initial account has no google_id');
 
   // 2. User creates a favorite bookmark
-  const fav = await db.favorites.add(existingUserId, 'monument-qutub-minar');
+  const fav = await db.favorites.add(existingUserId, 'qutub-minar');
 
   // 3. User logs in with Google OAuth using the exact same email
   const rohitGoogleSub = `g-rohit-${Date.now()}`;
@@ -220,6 +251,10 @@ async function runPhase4Tests() {
   assert(safeProfile.role === 'traveller', 'Default role is verified as traveller');
   assert(safeProfile.avatar_url === googlePicture, 'Safe profile includes avatar_url');
 
+  } finally {
+    await cleanupFixtures();
+  }
+
   // Summary
   console.log('\n=============================================================');
   console.log(`📊 Phase 4 Test Results: ${passed} Passed, ${failed} Failed`);
@@ -228,6 +263,7 @@ async function runPhase4Tests() {
   if (failed > 0) {
     process.exit(1);
   }
+  process.exit(0);
 }
 
 runPhase4Tests().catch((err) => {

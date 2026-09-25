@@ -30,10 +30,113 @@ async function runPhase7Tests() {
     }
   }
 
-  // -------------------------------------------------------------
-  // Test Suite 1: Security & Injection Attack Defense
-  // -------------------------------------------------------------
-  console.log('--- Test Suite 1: Security & Injection Attack Defense ---');
+  const hackerId = `user-hacker-${Date.now()}`;
+  const userAliceId = `user-alice-${Date.now()}`;
+  const userBobId = `user-bob-${Date.now()}`;
+  const officerId = `officer-${Date.now()}`;
+  let travellerId = null;
+
+  let xssReportId = null;
+  let aliceTripId = null;
+  let aliceReportId = null;
+  let triagedReportId = null;
+
+  const cleanupFixtures = async () => {
+    try {
+      if (db.mode === 'postgresql') {
+        const reportIds = [xssReportId, aliceReportId, triagedReportId].filter(Boolean);
+        const userIds = [hackerId, userAliceId, userBobId, officerId, travellerId].filter(Boolean);
+        const tripIds = [aliceTripId].filter(Boolean);
+
+        if (reportIds.length > 0) {
+          await db.query('DELETE FROM audit_logs WHERE entity_id = ANY($1)', [reportIds]);
+          await db.query('DELETE FROM citizen_reports WHERE id = ANY($1)', [reportIds]);
+        }
+        if (tripIds.length > 0) {
+          await db.query('DELETE FROM itineraries WHERE id = ANY($1)', [tripIds]);
+        }
+        if (userIds.length > 0) {
+          await db.query('DELETE FROM audit_logs WHERE actor_id = ANY($1)', [userIds]);
+          await db.query('DELETE FROM favorites WHERE user_id = ANY($1)', [userIds]);
+          await db.query('DELETE FROM users WHERE id = ANY($1)', [userIds]);
+        }
+      } else if (db.data) {
+        if (db.data.citizen_reports) {
+          if (xssReportId) delete db.data.citizen_reports[xssReportId];
+          if (aliceReportId) delete db.data.citizen_reports[aliceReportId];
+          if (triagedReportId) delete db.data.citizen_reports[triagedReportId];
+        }
+        if (db.data.reports) {
+          if (xssReportId) delete db.data.reports[xssReportId];
+          if (aliceReportId) delete db.data.reports[aliceReportId];
+          if (triagedReportId) delete db.data.reports[triagedReportId];
+        }
+        if (db.data.itineraries && aliceTripId) {
+          delete db.data.itineraries[aliceTripId];
+        }
+        if (db.data.trips && aliceTripId) {
+          delete db.data.trips[aliceTripId];
+        }
+        if (db.data.users) {
+          if (hackerId) delete db.data.users[hackerId];
+          if (userAliceId) delete db.data.users[userAliceId];
+          if (userBobId) delete db.data.users[userBobId];
+          if (officerId) delete db.data.users[officerId];
+          if (travellerId) delete db.data.users[travellerId];
+        }
+        db.persist();
+      }
+    } catch (cleanupErr) {
+      console.warn('⚠️ Warning cleaning up Phase 7 test fixtures:', cleanupErr.message);
+    }
+  };
+
+  try {
+    // Create users upfront to satisfy foreign key constraints in PostgreSQL
+    await db.users.create({
+      id: hackerId,
+      email: `hacker.${Date.now()}@test.internal`,
+      password_hash: '',
+      name: 'Test Attacker',
+      role: 'traveller',
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    });
+
+    await db.users.create({
+      id: userAliceId,
+      email: `alice.${Date.now()}@test.internal`,
+      password_hash: '',
+      name: 'Alice Traveler',
+      role: 'traveller',
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    });
+
+    await db.users.create({
+      id: userBobId,
+      email: `bob.${Date.now()}@test.internal`,
+      password_hash: '',
+      name: 'Bob Traveler',
+      role: 'traveller',
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    });
+
+    await db.users.create({
+      id: officerId,
+      email: `officer.${Date.now()}@test.internal`,
+      password_hash: '',
+      name: 'Heritage Officer',
+      role: 'heritage_officer',
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    });
+
+    // -------------------------------------------------------------
+    // Test Suite 1: Security & Injection Attack Defense
+    // -------------------------------------------------------------
+    console.log('--- Test Suite 1: Security & Injection Attack Defense ---');
 
   // A. SQL Injection payloads against place searches
   const sqlInjectionPayloads = [
@@ -62,14 +165,14 @@ async function runPhase7Tests() {
 
   // B. Stored XSS Sanitization in Citizen Reports
   const xssPayload = "<script>alert('XSS-EXPLOIT');</script><img src=x onerror=alert('PWNED')>";
-  const xssReportId = `rep-xss-${Date.now()}`;
+  xssReportId = `rep-xss-${Date.now()}`;
   const xssReport = await db.reports.create({
     id: xssReportId,
     place_id: 'amber-fort',
     place_name: 'Amber Fort',
     city: 'Jaipur',
     reported_by: 'Test Attacker',
-    user_id: 'user-hacker-test',
+    user_id: hackerId,
     issue_type: 'cleanliness',
     title: 'XSS Injection Probe',
     description: xssPayload,
@@ -89,14 +192,13 @@ async function runPhase7Tests() {
   // -------------------------------------------------------------
   console.log('\n--- Test Suite 2: Strict IDOR Isolation & Data Privacy ---');
 
-  const userAliceId = `user-alice-${Date.now()}`;
-  const userBobId = `user-bob-${Date.now()}`;
-
   // Alice creates a private trip
-  const aliceTripId = `trip-alice-${Date.now()}`;
+  aliceTripId = `trip-alice-${Date.now()}`;
   await db.trips.create({
     id: aliceTripId,
     user_id: userAliceId,
+    destination: 'Jaipur',
+    city: 'Jaipur',
     city_id: 'jaipur',
     title: "Alice's Private Golden Triangle Trip",
     start_date: '2026-10-01',
@@ -112,7 +214,7 @@ async function runPhase7Tests() {
   assert(!foundAliceTripInBob, "Bob cannot view Alice's private saved trips (IDOR query isolation)");
 
   // Alice creates a private citizen report
-  const aliceReportId = `rep-alice-${Date.now()}`;
+  aliceReportId = `rep-alice-${Date.now()}`;
   await db.reports.create({
     id: aliceReportId,
     place_id: 'taj-mahal',
@@ -120,7 +222,7 @@ async function runPhase7Tests() {
     city: 'Agra',
     reported_by: 'Alice Traveler',
     user_id: userAliceId,
-    issue_type: 'crowd_management',
+    issue_type: 'overcrowding',
     title: 'High crowd density at south gate',
     description: 'Private report filed by Alice',
     severity: 'medium',
@@ -198,8 +300,7 @@ async function runPhase7Tests() {
   // -------------------------------------------------------------
   console.log('\n--- Test Suite 4: RBAC Gating & Destination Health ---');
 
-  const officerId = `officer-${Date.now()}`;
-  const triagedReportId = `rep-triage-${Date.now()}`;
+  triagedReportId = `rep-triage-${Date.now()}`;
   const healthMonId = 'amber-fort';
 
   await db.reports.create({
@@ -242,8 +343,9 @@ async function runPhase7Tests() {
 
   // Step 1: User Registration
   const travellerEmail = `e2e.traveller.${Date.now()}@virasat.in`;
+  travellerId = `user-e2e-${Date.now()}`;
   const traveller = await db.users.create({
-    id: `user-e2e-${Date.now()}`,
+    id: travellerId,
     email: travellerEmail,
     password_hash: 'hashed_password_mock',
     name: 'Kabir Verma',
@@ -277,6 +379,9 @@ async function runPhase7Tests() {
   await db.favorites.add(traveller.id, favPlaceId);
   const savedFavorites = await db.favorites.listByUser(traveller.id);
   assert(savedFavorites.some((f) => f.place_id === favPlaceId), 'E2E Step 5: Traveller successfully bookmarks destination in favorites');
+  } finally {
+    await cleanupFixtures();
+  }
 
   // Summary
   console.log('\n=============================================================');
@@ -286,6 +391,7 @@ async function runPhase7Tests() {
   if (failed > 0) {
     process.exit(1);
   }
+  process.exit(0);
 }
 
 runPhase7Tests().catch((err) => {

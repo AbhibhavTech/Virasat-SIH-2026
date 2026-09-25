@@ -1,22 +1,29 @@
 -- ============================================================================
 -- VIRASAT DATABASE SCHEMA — MIGRATION 003 (PHASE 3: ITINERARIES, ROUTING, AI)
 -- Conforms to Section XV.2 and XXI of Master Blueprint V2
+-- Canonical owner of itineraries, days, stops, and AI concierge sessions
 -- ============================================================================
 
--- 1. Persistent Multi-Day Itineraries
+-- 1. Persistent Multi-Day Itineraries (Canonical Model)
 CREATE TABLE IF NOT EXISTS itineraries (
     id VARCHAR(64) PRIMARY KEY,
     user_id VARCHAR(64) REFERENCES users(id) ON DELETE CASCADE,
     title VARCHAR(255) NOT NULL,
     destination VARCHAR(128) NOT NULL,
-    city VARCHAR(128) NOT NULL,
+    city VARCHAR(128),
     state VARCHAR(128),
     days_count INTEGER NOT NULL DEFAULT 1,
     pace VARCHAR(32) NOT NULL DEFAULT 'moderate' CHECK (pace IN ('relaxed', 'moderate', 'fast')),
     budget_level VARCHAR(32) NOT NULL DEFAULT 'moderate' CHECK (budget_level IN ('budget', 'moderate', 'luxury')),
     summary TEXT,
     total_cost NUMERIC(10, 2) DEFAULT 0,
+    start_date DATE,
+    end_date DATE,
+    city_ids JSONB DEFAULT '[]'::jsonb,
     is_public BOOLEAN NOT NULL DEFAULT false,
+    places_count INTEGER DEFAULT 0,
+    total_distance_km NUMERIC(8, 2) DEFAULT 0,
+    estimated_budget NUMERIC(10, 2) DEFAULT 0,
     created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 );
@@ -45,7 +52,7 @@ CREATE TABLE IF NOT EXISTS itinerary_stops (
     place_id VARCHAR(128) REFERENCES places(id) ON DELETE SET NULL,
     place_name VARCHAR(255) NOT NULL,
     stop_order INTEGER NOT NULL,
-    arrival_time VARCHAR(16),
+    arrival_time VARCHAR(32),
     duration_minutes INTEGER NOT NULL DEFAULT 60,
     travel_mode VARCHAR(64) DEFAULT 'Auto-Rickshaw / Local Transit',
     travel_duration_minutes INTEGER DEFAULT 15,

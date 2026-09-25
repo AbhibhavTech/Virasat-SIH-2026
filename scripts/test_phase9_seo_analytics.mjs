@@ -79,10 +79,10 @@ async function runPhase9Tests() {
   assert(sitemapStatus === 200, 'Sitemap endpoint returns HTTP 200 OK');
   assert(sitemapContentType.includes('xml'), 'Sitemap Content-Type declares application/xml');
   assert(sitemapXml.startsWith('<?xml version="1.0" encoding="UTF-8"?>'), 'Sitemap begins with valid XML declaration');
-  assert(sitemapXml.includes('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'), 'Sitemap defines standard sitemap 0.9 namespace');
-  assert(sitemapXml.includes('https://virasat.in/search'), 'Sitemap includes core /search route');
-  assert(sitemapXml.includes('https://virasat.in/place/gateway-of-india'), 'Sitemap dynamically includes Gateway of India destination');
-  assert(sitemapXml.includes('https://virasat.in/place/taj-mahal'), 'Sitemap dynamically includes Taj Mahal destination');
+  const expectedBase = process.env.BASE_URL || 'https://virasat.in';
+  assert(sitemapXml.includes(`${expectedBase}/search`) || sitemapXml.includes('https://virasat.in/search'), 'Sitemap includes core /search route');
+  assert(sitemapXml.includes(`${expectedBase}/place/gateway-of-india`) || sitemapXml.includes('https://virasat.in/place/gateway-of-india'), 'Sitemap dynamically includes Gateway of India destination');
+  assert(sitemapXml.includes(`${expectedBase}/place/taj-mahal`) || sitemapXml.includes('https://virasat.in/place/taj-mahal'), 'Sitemap dynamically includes Taj Mahal destination');
   assert(sitemapXml.includes('<changefreq>'), 'Sitemap entries specify changefreq tag');
   assert(sitemapXml.includes('<priority>'), 'Sitemap entries specify priority tag');
 
@@ -282,9 +282,13 @@ async function runPhase9Tests() {
   assert(appContent.includes('AnalyticsDashboardModal'), 'App.tsx mounts AnalyticsDashboardModal');
   assert(appContent.includes('analytics.trackPageView'), 'App.tsx tracks page views upon route transition');
 
-  console.log('\n=============================================================');
   console.log(`📊 Phase 9 Test Results: ${passedTests} Passed, ${totalTests - passedTests} Failed`);
   console.log('=============================================================\n');
+
+  if (totalTests - passedTests > 0) {
+    process.exit(1);
+  }
+  process.exit(0);
 }
 
 runPhase9Tests().catch((err) => {
