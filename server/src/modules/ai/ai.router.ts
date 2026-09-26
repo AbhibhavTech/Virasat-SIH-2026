@@ -422,9 +422,9 @@ ${transitContextStr}`;
     const isPlaceOrGeoQuery = /(place|visit|monument|mandir|temple|fort|where|near|location|route|map|direction|timing|entry|ticket|hotel|restaurant)/i.test(rawQuery);
 
     const modelsToTry = [
-      { name: 'gemini-3.5-flash', useMaps: isPlaceOrGeoQuery },
-      { name: 'gemini-3.8-flash', useMaps: false },
-      { name: 'gemini-3.1-flash-lite', useMaps: false },
+      { name: 'gemini-2.5-flash', useMaps: isPlaceOrGeoQuery },
+      { name: 'gemini-2.0-flash', useMaps: false },
+      { name: 'gemini-1.5-flash', useMaps: false },
     ];
 
     for (const item of modelsToTry) {
@@ -450,7 +450,7 @@ ${transitContextStr}`;
             contents,
             config,
           }),
-          new Promise<any>((_, reject) => setTimeout(() => reject(new Error('Timeout')), 14000)),
+          new Promise<any>((_, reject) => setTimeout(() => reject(new Error('Timeout')), 4500)),
         ]);
 
         if (callRes?.text) {
@@ -626,6 +626,23 @@ ${transitContextStr}`;
     grounding_citations: groundingCitations,
     maps_grounding: mapsGrounding,
     suggested_actions: suggestedActions,
+    actions: transitComparison
+      ? [
+          { type: 'booking_link', label: 'Official IRCTC Rail Link', url: 'https://www.irctc.co.in/' },
+          { type: 'open_map', label: 'View Route on Map', url: `/map?origin=${encodeURIComponent(transitComparison.origin)}&destination=${encodeURIComponent(transitComparison.destination)}` },
+          { type: 'plan_itinerary', label: `Plan ${transitComparison.destination} Trip`, url: `/itinerary?city=${encodeURIComponent(transitComparison.destination)}` },
+        ]
+      : matchedCity
+      ? [
+          { type: 'open_map', label: `Show ${matchedCity.name} on Map`, url: `/map?city=${encodeURIComponent(matchedCity.name)}` },
+          { type: 'plan_itinerary', label: `Plan ${matchedCity.name} Trip`, url: `/itinerary?city=${encodeURIComponent(matchedCity.name)}` },
+          { type: 'view_destination', label: `View ${matchedCity.name}`, url: `/city/${encodeURIComponent(matchedCity.name.toLowerCase().replace(/\s+/g, '-'))}` },
+        ]
+      : [
+          { type: 'explore_heritage', label: 'Explore Heritage', url: '/heritage' },
+          { type: 'open_map', label: 'Open Map', url: '/map' },
+          { type: 'plan_itinerary', label: 'Plan Itinerary', url: '/itinerary' },
+        ],
     sources: [
       'Archaeological Survey of India (ASI)',
       'Indian Railways / IRCTC Registry',

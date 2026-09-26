@@ -21,7 +21,7 @@ import {
   updateConversationState,
 } from '../engine/conversationMemory';
 import { generateSmartItinerary } from '../engine/itineraryPlanner';
-import { buildResponseForIntent } from '../engine/responseGenerator';
+import { buildResponseForIntent, AIAction } from '../engine/responseGenerator';
 
 export const aiChatRouter = Router();
 
@@ -305,6 +305,7 @@ aiChatRouter.post(
     let usedEngine = 'Virasat Grounded Assistant';
     let generatedPlan: any = null;
     let dynamicQuickActions: string[] = [];
+    let actionList: AIAction[] = [];
     let sourceList: string[] | undefined = undefined;
     let mapsGroundingChunks: Array<{ uri: string; title: string; reviewSnippets?: string[] }> = [];
 
@@ -336,6 +337,13 @@ aiChatRouter.post(
       'FLIGHT_SEARCH',
       'WEATHER_QUERY',
       'FESTIVAL_QUERY',
+      'MAP_ACTION',
+      'TICKET_BOOKING',
+      'UNESCO_QUERY',
+      'NATIONAL_PARK_QUERY',
+      'HIDDEN_GEMS_QUERY',
+      'BUDGET_PLANNING',
+      'TIME_QUERY',
     ];
 
     const isFactualIntent = factualIntents.includes(
@@ -430,17 +438,17 @@ Interests: ${tripState.interests?.join(', ') ||
         const isGeoOrPlaceQuery = /(where|reach|how to|visit|place|monument|temple|mandir|fort|distance|location|map|hotel|restaurant|market|shop)/i.test(rawQuery);
         const needsTools = !conversationalIntents.includes(intentResult.intent);
 
-        // Models priority: gemini-3.5-flash (with Maps Grounding when geo/place query), then gemini-3.8-flash, gemini-3.1-flash-lite
+        // Models priority: gemini-2.5-flash (with Maps Grounding when geo/place query), then gemini-2.0-flash, gemini-1.5-flash
         const candidateModels = [
-          { name: 'gemini-3.5-flash', useMaps: isGeoOrPlaceQuery },
-          { name: 'gemini-3.8-flash', useMaps: false },
-          { name: 'gemini-3.1-flash-lite', useMaps: false },
+          { name: 'gemini-2.5-flash', useMaps: isGeoOrPlaceQuery },
+          { name: 'gemini-2.0-flash', useMaps: false },
+          { name: 'gemini-1.5-flash', useMaps: false },
         ];
 
         for (const candidate of candidateModels) {
           const mName = candidate.name;
           try {
-            const timeoutMs = needsTools ? 15000 : 10000;
+            const timeoutMs = 4500;
             const config: any = { systemInstruction };
 
             if (candidate.useMaps) {
@@ -626,8 +634,28 @@ Interests: ${tripState.interests?.join(', ') ||
           replyText = formatted.reply;
           dynamicQuickActions =
             formatted.suggested_actions;
+          if (formatted.actions) actionList.push(...formatted.actions);
           sourceList = formatted.sources;
         }
+      }
+
+      /**
+       * ----------------------------------------------------------
+       * MAP ACTION / TICKET BOOKING / UNESCO / NATIONAL PARKS / HIDDEN GEMS
+       * ----------------------------------------------------------
+       */
+      else if (
+        intent === 'MAP_ACTION' ||
+        intent === 'TICKET_BOOKING' ||
+        intent === 'UNESCO_QUERY' ||
+        intent === 'NATIONAL_PARK_QUERY' ||
+        intent === 'HIDDEN_GEMS_QUERY'
+      ) {
+        const formatted = buildResponseForIntent(intentResult, tripState);
+        replyText = formatted.reply;
+        dynamicQuickActions = formatted.suggested_actions;
+        if (formatted.actions) actionList.push(...formatted.actions);
+        sourceList = formatted.sources;
       }
 
       /**
@@ -657,6 +685,7 @@ Interests: ${tripState.interests?.join(', ') ||
         replyText = formatted.reply;
         dynamicQuickActions =
           formatted.suggested_actions;
+        if (formatted.actions) actionList.push(...formatted.actions);
         sourceList = formatted.sources;
 
         if (place) {
@@ -788,6 +817,11 @@ Interests: ${tripState.interests?.join(', ') ||
             'Find Food Nearby',
             'How to Reach',
           ];
+
+          actionList.push(
+            { type: 'open_map', label: `Show ${city} on Map`, url: `/map?city=${encodeURIComponent(city)}` },
+            { type: 'plan_itinerary', label: `Plan ${city} Trip`, url: `/itinerary?city=${encodeURIComponent(city)}` }
+          );
         }
       }
 
@@ -884,6 +918,11 @@ Interests: ${tripState.interests?.join(', ') ||
             'Find Stays',
             'How to Reach',
           ];
+
+          actionList.push(
+            { type: 'explore_states', label: `Explore ${stateName}`, url: '/explore' },
+            { type: 'open_map', label: `View ${stateName} on Map`, url: `/map?city=${encodeURIComponent(stateName)}` }
+          );
         }
       }
 
@@ -987,6 +1026,12 @@ Interests: ${tripState.interests?.join(', ') ||
             'Find Stays',
             'How to Reach',
           ];
+
+          actionList.push(
+            { type: 'open_map', label: `Show ${cityName} on Map`, url: `/map?city=${encodeURIComponent(cityName)}` },
+            { type: 'plan_itinerary', label: `Plan ${cityName} Trip`, url: `/itinerary?city=${encodeURIComponent(cityName)}` },
+            { type: 'view_destination', label: `Explore ${cityName}`, url: `/city/${encodeURIComponent(cityName.toLowerCase().replace(/\s+/g, '-'))}` }
+          );
         }
       }
 
@@ -1005,6 +1050,7 @@ Interests: ${tripState.interests?.join(', ') ||
         replyText = formatted.reply;
         dynamicQuickActions =
           formatted.suggested_actions;
+        if (formatted.actions) actionList.push(...formatted.actions);
         sourceList = formatted.sources;
       }
 
@@ -1090,6 +1136,7 @@ Interests: ${tripState.interests?.join(', ') ||
         replyText = formatted.reply;
         dynamicQuickActions =
           formatted.suggested_actions;
+        if (formatted.actions) actionList.push(...formatted.actions);
         sourceList = formatted.sources;
       }
 
@@ -1212,6 +1259,11 @@ Interests: ${tripState.interests?.join(', ') ||
             'Premium Hotels',
             `Plan ${city} Trip`,
           ];
+
+          actionList.push(
+            { type: 'find_hotels', label: `Find Hotels in ${city}`, url: `/itinerary?city=${encodeURIComponent(city)}` },
+            { type: 'open_map', label: `Show ${city} Map`, url: `/map?city=${encodeURIComponent(city)}` }
+          );
         }
       }
 
@@ -1449,6 +1501,12 @@ Interests: ${tripState.interests?.join(', ') ||
             'Estimated Budget',
             `Top Sights in ${destination}`,
           ];
+
+          actionList.push(
+            { type: 'booking_link', label: 'Official IRCTC Rail Link', url: 'https://www.irctc.co.in/' },
+            { type: 'open_map', label: `Show Route on Map (${transRes.origin} ➔ ${transRes.destination})`, url: `/map?origin=${encodeURIComponent(transRes.origin)}&destination=${encodeURIComponent(transRes.destination)}` },
+            { type: 'plan_itinerary', label: `Plan ${destination} Trip`, url: `/itinerary?city=${encodeURIComponent(destination)}` }
+          );
         }
       }
 
@@ -1631,68 +1689,118 @@ Interests: ${tripState.interests?.join(', ') ||
           liveContext.selectedCity ||
           null;
 
-        if (!city) {
+        const eventsRes =
+          await executeTool(
+            'getEventsCalendar',
+            {
+              query: rawQuery,
+              city: city || undefined,
+            },
+            liveContext
+          );
+
+        executedToolCalls.push({
+          tool: 'getEventsCalendar',
+          args: { query: rawQuery, city },
+          result: eventsRes,
+        });
+
+        if (
+          eventsRes.events &&
+          eventsRes.events.length > 0
+        ) {
+          const firstEvt = eventsRes.events[0];
           replyText =
             intentResult.isHinglish
-              ? 'Festival information ke liye city ya state batao.'
-              : 'Which city or state should I check festivals for?';
+              ? `🗓️ **Verified Cultural Festival Details**:\n\n` +
+              eventsRes.events
+                .slice(0, 3)
+                .map(
+                  (e: any) =>
+                    `🎉 **${e.festival}** (${e.location})\n   • **Timing / Season**: ${e.season_timing}\n   • **Cultural Significance**: ${e.cultural_significance}\n   • **Vibe & Atmosphere**: ${e.cultural_vibe || 'Living heritage celebration'}`
+                )
+                .join('\n\n') +
+              `\n\n📌 *Advisory*: ${eventsRes.advisory}`
+              : `🗓️ **Verified Cultural Festival Details**:\n\n` +
+              eventsRes.events
+                .slice(0, 3)
+                .map(
+                  (e: any) =>
+                    `🎉 **${e.festival}** (${e.location})\n   • **Timing / Season**: ${e.season_timing}\n   • **Cultural Significance**: ${e.cultural_significance}\n   • **Traditions & Atmosphere**: ${e.cultural_vibe || 'Living cultural observance'}`
+                )
+                .join('\n\n') +
+              `\n\n📌 *Advisory*: ${eventsRes.advisory}`;
+
+          sourceList = [
+            'Ministry of Culture / State Tourism Archives',
+            'Virasat Pan-India Festival Registry',
+          ];
 
           dynamicQuickActions = [
-            'Festivals in Rajasthan',
-            'Festivals in Kerala',
-            'Festivals in Bihar',
+            `Explore ${firstEvt.festival}`,
+            `Show ${firstEvt.city} on Map`,
+            `Plan ${firstEvt.city} Trip`,
+            'Explore Stays',
           ];
+
+          actionList.push(
+            { type: 'explore_festival', label: `Explore ${firstEvt.festival}`, url: `/festivals?q=${encodeURIComponent(firstEvt.festival)}` },
+            { type: 'open_map', label: `Show ${firstEvt.city} on Map`, url: `/map?city=${encodeURIComponent(firstEvt.city)}` },
+            { type: 'plan_itinerary', label: `Plan ${firstEvt.city} Trip`, url: `/itinerary?city=${encodeURIComponent(firstEvt.city)}&days=2` }
+          );
         } else {
-          const eventsRes =
-            await executeTool(
-              'getEventsCalendar',
-              { city },
-              liveContext
-            );
-
-          executedToolCalls.push({
-            tool: 'getEventsCalendar',
-            args: { city },
-            result: eventsRes,
-          });
-
-          if (
-            eventsRes.events &&
-            eventsRes.events.length > 0
-          ) {
-            replyText =
-              intentResult.isHinglish
-                ? `🗓️ **${city} ke Festivals & Cultural Events**\n\n` +
-                eventsRes.events
-                  .map(
-                    (e: any) =>
-                      `🎉 **${e.festival}** (${e.location})\n   • Timing: ${e.season_timing}\n   • Significance: ${e.cultural_significance}`
-                  )
-                  .join('\n\n')
-                : `🗓️ **Festivals & Cultural Events in ${city}**\n\n` +
-                eventsRes.events
-                  .map(
-                    (e: any) =>
-                      `🎉 **${e.festival}** (${e.location})\n   • Timing: ${e.season_timing}\n   • Significance: ${e.cultural_significance}`
-                  )
-                  .join('\n\n');
-
-            sourceList = [
-              'Virasat Cultural Events Registry',
-            ];
-          } else {
-            replyText =
-              intentResult.isHinglish
-                ? `${city} ke liye mujhe abhi reliable festival records nahi mile.`
-                : `I couldn't find reliable festival records for ${city}.`;
-          }
+          replyText =
+            intentResult.isHinglish
+              ? `Mujhe is query ke liye exact verified festival record nahi mila. Aap Mysore Dasara, Durga Puja, Pushkar Fair, Hornbill Festival, ya kisi specific rajya ke festivals ke baare mein pooch sakte hain.`
+              : `I could not find a verified festival record matching this query. You can ask about Mysore Dasara, Durga Puja, Pushkar Fair, Hornbill Festival, or festivals in a specific region.`;
 
           dynamicQuickActions = [
-            'Nearby Stays',
-            'Heritage Places',
-            'Plan Trip',
+            'Mysore Dasara Info',
+            'Durga Puja Kolkata',
+            'Pushkar Fair',
+            'Explore Festivals',
           ];
+
+          actionList.push({ type: 'explore_festival', label: 'Explore All 83 Festivals', url: '/festivals' });
         }
+      }
+
+      /**
+       * ----------------------------------------------------------
+       * TIME / TOMORROW OPTIONS QUERY
+       * ----------------------------------------------------------
+       */
+      else if (intent === 'TIME_QUERY') {
+        const city =
+          entityData.city ||
+          tripState.destination ||
+          liveContext.selectedCity ||
+          'Jaipur';
+
+        replyText =
+          intentResult.isHinglish
+            ? `🌅 **${city} mein kal ke liye best options:**\n\n` +
+            `• **Morning (06:00 AM - 10:00 AM)**: Historic monuments & sunrise viewpoints visit karein jab bheed kam aur mausam pleasant ho.\n` +
+            `• **Afternoon (11:00 AM - 03:30 PM)**: Indoor royal palace museums, art galleries aur authentic local dining enjoy karein.\n` +
+            `• **Evening (04:30 PM - 08:00 PM)**: Sunset viewpoint / lakeside promenade, heritage illumination, aur traditional handicraft bazaars explore karein.\n\n` +
+            `Aap kisi specific monument ya full 1-day itinerary plan karna chahte hain?`
+            : `🌅 **Top Options for Tomorrow in ${city}:**\n\n` +
+            `• **Morning (06:00 AM - 10:00 AM)**: Major heritage monuments and sunrise viewpoints with pleasant ambient light and thin crowds.\n` +
+            `• **Afternoon (11:00 AM - 03:30 PM)**: Palace museums and authentic regional culinary lunch.\n` +
+            `• **Evening (04:30 PM - 08:00 PM)**: Sunset viewpoints, heritage illuminations, and bustling artisan bazaars.\n\n` +
+            `Would you like to build a full 1-day itinerary or check specific sights?`;
+
+        dynamicQuickActions = [
+          `1-Day ${city} Itinerary`,
+          `Show ${city} on Map`,
+          'Nearby Heritage Places',
+          'Find Stays',
+        ];
+
+        actionList.push(
+          { type: 'open_map', label: `Open ${city} Map`, url: `/map?city=${encodeURIComponent(city)}` },
+          { type: 'plan_itinerary', label: `Plan ${city} Trip`, url: `/itinerary?city=${encodeURIComponent(city)}&days=1` }
+        );
       }
 
       /**
@@ -2066,6 +2174,11 @@ Interests: ${tripState.interests?.join(', ') ||
       suggested_actions:
         dynamicQuickActions,
 
+      actions:
+        actionList.length > 0
+          ? actionList.slice(0, 4)
+          : undefined,
+
       sources:
         sourceList ||
         (executedToolCalls.length > 0
@@ -2120,6 +2233,11 @@ Interests: ${tripState.interests?.join(', ') ||
         engine: 'Virasat Grounded Assistant (Deterministic Fallback)',
         model_used: 'Virasat Grounded Assistant (Deterministic Fallback)',
         suggested_actions: ['Explore Popular Monuments', 'Plan a 3-Day Trip', 'Find Heritage Hotels'],
+        actions: [
+          { type: 'explore_heritage', label: 'Explore Heritage', url: '/heritage' },
+          { type: 'open_map', label: 'Open Map', url: '/map' },
+          { type: 'plan_itinerary', label: 'Plan Itinerary', url: '/itinerary' },
+        ],
         tool_calls: [],
         latency_ms: Date.now() - startTime,
       });

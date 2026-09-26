@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   Send,
   User,
@@ -25,7 +26,14 @@ import {
   ExternalLink,
 } from 'lucide-react';
 import { api } from '../../services/api';
-import { AIChatMessage, UserLocationContext, TransitComparison, GroundingCitation, GoogleMapsGroundingItem } from '../../types';
+import {
+  AIChatMessage,
+  UserLocationContext,
+  TransitComparison,
+  GroundingCitation,
+  GoogleMapsGroundingItem,
+  AIAction,
+} from '../../types';
 import { VoiceInputButton } from '../common/VoiceInputButton';
 import { InsecureContextAlert } from '../common/InsecureContextAlert';
 
@@ -41,6 +49,7 @@ interface ExtendedChatMessage extends AIChatMessage {
   }>;
   transit_comparison?: TransitComparison;
   suggested_actions?: string[];
+  actions?: AIAction[];
   sources?: string[];
   grounding_citations?: GroundingCitation[];
   maps_grounding?: GoogleMapsGroundingItem[];
@@ -67,14 +76,80 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
   selectedCity = 'All India',
   initialPrompt,
 }) => {
+  const navigate = useNavigate();
   const [userLocation, setUserLocation] = useState<UserLocationContext | null>(null);
   const [locationStatus, setLocationStatus] = useState<'idle' | 'detecting' | 'granted' | 'denied' | 'error'>('idle');
 
   const initialGreeting: ExtendedChatMessage = {
     role: 'assistant',
-    content: `Namaste! 👋 I am your Virasat Travel & Heritage Concierge.\n\nWhere would you like to go today? You can choose **Explore Near Me** or name any destination across India.`,
+    content: `Namaste! 🙏 Main Virasat hoon — aapka AI Travel & Heritage Concierge.\n\nMain verified monuments, royal itineraries, train routes, Indian festivals aur hidden gems ke sath assist kar sakta hoon. Aap kahan ghumna chahte hain?`,
     timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-    suggested_actions: ['Explore Near Me', 'I want to visit Darjeeling', 'Plan a Trip to Jaipur', 'How does Virasat work?'],
+    suggested_actions: ['Jaipur 2-Day Plan', 'Udaipur Hidden Gems', 'Mumbai to Goa Rail', 'Mysore Dasara Info'],
+    actions: [
+      { type: 'plan_itinerary', label: 'Plan Itinerary', url: '/itinerary' },
+      { type: 'explore_heritage', label: 'UNESCO Monuments', url: '/heritage' },
+      { type: 'open_map', label: 'Open Map', url: '/map' },
+      { type: 'explore_festival', label: 'Explore Festivals', url: '/festivals' },
+    ],
+  };
+
+  const handleExecuteAction = (action: AIAction) => {
+    if (action.type === 'booking_link' || action.type === 'external_link') {
+      if (action.url) {
+        window.open(action.url, '_blank', 'noopener,noreferrer');
+      }
+      return;
+    }
+
+    if (action.url) {
+      if (action.url.startsWith('http://') || action.url.startsWith('https://')) {
+        window.open(action.url, '_blank', 'noopener,noreferrer');
+      } else {
+        navigate(action.url);
+      }
+      return;
+    }
+
+    switch (action.type) {
+      case 'open_map':
+        navigate('/map');
+        break;
+      case 'plan_itinerary':
+        navigate('/itinerary');
+        break;
+      case 'explore_festival':
+        navigate('/festivals');
+        break;
+      case 'explore_heritage':
+        navigate('/heritage');
+        break;
+      case 'explore_states':
+        navigate('/explore');
+        break;
+      default:
+        navigate('/map');
+    }
+  };
+
+  const getActionIcon = (type: string) => {
+    switch (type) {
+      case 'open_map':
+        return <Navigation className="w-3.5 h-3.5" />;
+      case 'view_destination':
+        return <Landmark className="w-3.5 h-3.5" />;
+      case 'explore_festival':
+        return <Calendar className="w-3.5 h-3.5" />;
+      case 'plan_itinerary':
+        return <Compass className="w-3.5 h-3.5" />;
+      case 'find_hotels':
+      case 'nearby_places':
+        return <MapPin className="w-3.5 h-3.5" />;
+      case 'booking_link':
+      case 'external_link':
+        return <ExternalLink className="w-3.5 h-3.5" />;
+      default:
+        return <Sparkles className="w-3.5 h-3.5" />;
+    }
   };
 
   const [messages, setMessages] = useState<ExtendedChatMessage[]>([initialGreeting]);
@@ -193,10 +268,13 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
   // Neutral, context-driven core suggestions
   const coreSuggestions = [
     { label: 'Explore Near Me', prompt: 'Explore heritage and tourism places near my current location' },
-    { label: 'Darjeeling Trip', prompt: 'I want to visit Darjeeling' },
-    { label: 'Jaipur Heritage', prompt: 'Help me plan a trip to Jaipur' },
-    { label: 'How does map work?', prompt: 'How do I use the interactive map to find places and calculate distances?' },
-    { label: 'How does Virasat work?', prompt: 'How does this website work? Explain Virasat features.' },
+    { label: 'Jaipur 2-Day Plan', prompt: 'Mujhe Jaipur ghumna hai 2 din mein' },
+    { label: 'Udaipur Hidden Gems', prompt: 'What are the hidden gems near Udaipur?' },
+    { label: 'Mumbai to Goa Rail', prompt: 'Mumbai se Goa train se kaise jaun?' },
+    { label: 'UNESCO Sites', prompt: 'India ke UNESCO World Heritage Sites ke examples batao' },
+    { label: 'Mysore Dasara', prompt: 'Mysore Dasara kab hota hai aur kyun famous hai?' },
+    { label: 'Kaziranga Park', prompt: 'Kaziranga National Park kis state mein hai?' },
+    { label: 'Durga Puja Kolkata', prompt: 'Kolkata mein Durga Puja ka cultural significance kya hai?' },
   ];
 
   const scrollToBottom = (behavior: ScrollBehavior = 'smooth') => {
@@ -287,6 +365,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
         suggested_places: res.suggested_places,
         transit_comparison: res.transit_comparison,
         suggested_actions: res.suggested_actions,
+        actions: res.actions,
         sources: res.sources && res.sources.length > 0 ? res.sources : undefined,
         grounding_citations: res.grounding_citations,
         maps_grounding: res.maps_grounding,
@@ -747,6 +826,34 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
                               </button>
                             </div>
                           </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Interactive Website Action Buttons (Open Map, Plan Itinerary, View Destination, IRCTC Booking Link, etc.) */}
+                  {!isUser && m.actions && m.actions.length > 0 && (
+                    <div className="mt-3.5 pt-2.5 border-t border-stone-100 space-y-2">
+                      <div className="flex items-center gap-1.5 text-[11px] font-bold text-stone-700">
+                        <Sparkles className="w-3.5 h-3.5 text-[#FF671F]" />
+                        <span>Interactive Actions:</span>
+                      </div>
+                      <div className="flex flex-wrap gap-2">
+                        {m.actions.map((act, actIdx) => (
+                          <button
+                            key={actIdx}
+                            type="button"
+                            onClick={() => handleExecuteAction(act)}
+                            className="px-3 py-1.5 rounded-xl text-xs font-bold bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white shadow-xs hover:shadow-warm transition flex items-center gap-1.5 group cursor-pointer"
+                          >
+                            {getActionIcon(act.type)}
+                            <span>{act.label}</span>
+                            {act.type === 'booking_link' || act.type === 'external_link' ? (
+                              <ExternalLink className="w-3 h-3 text-white/80" />
+                            ) : (
+                              <ArrowRight className="w-3 h-3 text-white/80 group-hover:translate-x-0.5 transition" />
+                            )}
+                          </button>
                         ))}
                       </div>
                     </div>

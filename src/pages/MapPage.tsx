@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Map as MapIcon, Landmark, Sparkles, Train } from 'lucide-react';
 import { InteractiveMap } from '../components/map/InteractiveMap';
 import { MapErrorBoundary } from '../components/map/MapErrorBoundary';
@@ -14,6 +15,19 @@ export const MapPage: React.FC<MapPageProps> = ({
   selectedCity,
   onSelectCity,
 }) => {
+  const [searchParams] = useSearchParams();
+  const cityParam = searchParams.get('city');
+  const originParam = searchParams.get('origin');
+  const destParam = searchParams.get('destination');
+  const queryParam = searchParams.get('q');
+
+  useEffect(() => {
+    if (cityParam && cityParam.toLowerCase() !== selectedCity.toLowerCase()) {
+      onSelectCity(cityParam);
+    }
+  }, [cityParam, selectedCity, onSelectCity]);
+
+  const activeCity = cityParam || selectedCity;
   return (
     <div className="space-y-4 w-full pb-8">
       {/* Header Banner - Minimal and clean for SIH prototype */}
@@ -52,8 +66,10 @@ export const MapPage: React.FC<MapPageProps> = ({
       <MapErrorBoundary height="clamp(480px, 72vh, 660px)">
         <InteractiveMap
           onSelectPlace={onSelectPlace}
-          selectedCity={selectedCity}
+          selectedCity={activeCity}
           onSelectCity={onSelectCity}
+          initialOrigin={originParam || undefined}
+          initialDestination={destParam || queryParam || undefined}
           height="clamp(480px, 72vh, 660px)"
         />
       </MapErrorBoundary>

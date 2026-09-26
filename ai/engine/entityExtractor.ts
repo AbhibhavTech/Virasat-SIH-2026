@@ -13,6 +13,7 @@ export interface ExtractedEntities {
   transport_mode?: 'train' | 'flight' | 'road' | 'bus';
   interests: string[];
   party_size?: string;
+  party_size_count?: number;
   query_focus?: string;
   resolvedPlace?: ResolvedPlace;
   place_id?: string;
@@ -257,8 +258,8 @@ export function extractEntities(rawText: string, existingContext?: any): Extract
   }
 
   // 4. Origin & Destination Extraction
-  // Pattern: "from X to Y", "X se Y", "X to Y"
-  const fromToMatch = text.match(/(?:from|se|starting from)\s+([a-zA-Z\s]+?)\s+(?:to|tak|jana hai|travel to)\s+([a-zA-Z\s]+)/i);
+  // Pattern A: "from X to Y", "starting from X to Y"
+  const fromToMatch = text.match(/(?:from|starting from)\s+([a-zA-Z\s]+?)\s+(?:to|tak|jana hai|travel to)\s+([a-zA-Z\s]+)/i);
   if (fromToMatch) {
     const rawOrig = fromToMatch[1].trim().toLowerCase();
     const rawDest = fromToMatch[2].trim().toLowerCase();
@@ -266,11 +267,25 @@ export function extractEntities(rawText: string, existingContext?: any): Extract
     entities.destination = INDIAN_DESTINATION_ALIASES[rawDest] || (rawDest.charAt(0).toUpperCase() + rawDest.slice(1));
     entities.city = entities.destination;
   } else {
-    // Check for origin indicators ("Mumbai se", "from Delhi")
-    for (const o of COMMON_ORIGINS) {
-      if (new RegExp(`(?:from|se)\\s+${o}\\b|\\b${o}\\s+se\\b`, 'i').test(text)) {
-        entities.origin = o.charAt(0).toUpperCase() + o.slice(1);
-        break;
+    // Pattern B: "X se Y" (e.g. "Mumbai se Goa train se kaise jaun", "Delhi se Jaipur")
+    const sePattern = text.match(/\b([a-zA-Z\s]{2,25}?)\s+se\s+([a-zA-Z\s]{2,25}?)(?:\s+(?:train|railway|flight|bus|cab|taxi|road|kaise|jaun|jaaun|jaye|pahunche|travel|jana|tak|options|ticket|$))/i);
+    if (sePattern) {
+      const origCand = sePattern[1].trim().toLowerCase();
+      const destCand = sePattern[2].trim().toLowerCase();
+      if (INDIAN_DESTINATION_ALIASES[origCand] && INDIAN_DESTINATION_ALIASES[destCand]) {
+        entities.origin = INDIAN_DESTINATION_ALIASES[origCand];
+        entities.destination = INDIAN_DESTINATION_ALIASES[destCand];
+        entities.city = entities.destination;
+      }
+    }
+
+    // Check for origin indicators ("Mumbai se", "from Delhi", "Jaipur se")
+    if (!entities.origin) {
+      for (const [alias, canonicalName] of Object.entries(INDIAN_DESTINATION_ALIASES)) {
+        if (new RegExp(`(?:from|starting from)\\s+${alias}\\b|\\b${alias}\\s+se\\b`, 'i').test(text)) {
+          entities.origin = canonicalName;
+          break;
+        }
       }
     }
 
@@ -353,10 +368,23 @@ export function extractEntities(rawText: string, existingContext?: any): Extract
   if (/market|shopping|bazaar|handicraft|silk|souvenir/i.test(text)) entities.interests.push('shopping');
 
   // 7. Party Size
-  if (/solo|alone|akele/i.test(text)) entities.party_size = 'Solo Traveler';
-  else if (/couple|honeymoon|partner/i.test(text)) entities.party_size = 'Couple';
-  else if (/family|parivar|parents|kids/i.test(text)) entities.party_size = 'Family';
-  else if (/friends|dost|group/i.test(text)) entities.party_size = 'Friends Group';
+  const friendCountMatch = text.match(/(\d+)\s*(?:friends|dost|log|people|person|members)/i);
+  if (friendCountMatch) {
+    entities.party_size = `${friendCountMatch[1]} Friends Group`;
+    entities.party_size_count = parseInt(friendCountMatch[1], 10);
+  } else if (/solo|alone|akele/i.test(text)) {
+    entities.party_size = 'Solo Traveler';
+    entities.party_size_count = 1;
+  } else if (/couple|honeymoon|partner/i.test(text)) {
+    entities.party_size = 'Couple';
+    entities.party_size_count = 2;
+  } else if (/family|parivar|parents|kids/i.test(text)) {
+    entities.party_size = 'Family';
+    entities.party_size_count = 4;
+  } else if (/friends|dost|group/i.test(text)) {
+    entities.party_size = 'Friends Group';
+    entities.party_size_count = 3;
+  }
 
   return entities;
 }

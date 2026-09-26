@@ -432,6 +432,14 @@ export interface GroundingCitation {
   source_url: string;
 }
 
+export interface AIAction {
+  id?: string;
+  type: 'open_map' | 'view_destination' | 'explore_festival' | 'plan_itinerary' | 'nearby_places' | 'view_transport' | 'find_hotels' | 'booking_link' | 'explore_heritage' | 'explore_states' | 'external_link';
+  label: string;
+  url?: string;
+  payload?: Record<string, any>;
+}
+
 export interface AIChatResponse {
   conversation_id?: string;
   reply: string;
@@ -449,6 +457,7 @@ export interface AIChatResponse {
   transit_comparison?: TransitComparison;
   detected_location?: UserLocationContext;
   suggested_actions?: string[];
+  actions?: AIAction[];
   sources?: string[];
   grounding_chunks?: any[];
   grounding_citations?: GroundingCitation[];
