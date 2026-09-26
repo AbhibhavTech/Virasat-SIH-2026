@@ -1,3 +1,5 @@
+import fs from 'fs';
+import path from 'path';
 import { Router, Request, Response } from 'express';
 import { GoogleGenAI } from '@google/genai';
 import { db } from '../../db/client';
@@ -11,6 +13,11 @@ const Type = {
   OBJECT: 'OBJECT',
 } as const;
 import { rateLimiter } from '../../middleware/rateLimiter';
+import {
+  resolveCanonicalCityId,
+  isCityExactMatch,
+  normalizeTransliteration,
+} from '../../db/canonicalLocationResolver';
 import {
   resolveOriginTransportNode,
   resolveDestinationTransportNode,
@@ -203,17 +210,82 @@ aiRouter.post('/chat', rateLimiter({ windowMs: 60000, max: 30 }), async (req: Re
     });
   }
 
-  // 1. Identify destination and entities from query and DB
+  // 1. Load static verified resources
+  let verifiedHotels: any[] = [];
+  try {
+    const hotelsPath = path.join(process.cwd(), 'data', 'hotels.json');
+    if (fs.existsSync(hotelsPath)) {
+      verifiedHotels = JSON.parse(fs.readFileSync(hotelsPath, 'utf-8'));
+    }
+  } catch (e) {
+    console.error('[AI Router] Failed to load hotels.json:', e);
+  }
+
+  // 2. Identify destination city/state and entities from query
+  const queryNorm = normalizeTransliteration(rawQuery.toLowerCase());
+  const allStates = await db.states.findAll();
+  const allCities = await db.cities.findAll();
   const placesResult = await db.places.findAll();
   const allDbPlaces = placesResult.places;
-  let matchedPlaces: any[] = allDbPlaces.filter((p: any) => {
-    const pName = p.name.toLowerCase();
-    return query.includes(pName) || (p.city_id && query.includes(p.city_id.toLowerCase()));
+
+  // Resolve matching state if mentioned
+  const matchedState = allStates.find((s) => {
+    const sName = s.name.toLowerCase();
+    const sId = s.id.toLowerCase();
+    return queryNorm.includes(sName) || queryNorm.includes(sId);
   });
 
-  if (matchedPlaces.length === 0 && city) {
-    matchedPlaces = allDbPlaces.filter((p: any) => p.city_id?.toLowerCase() === city.toLowerCase());
+  // Resolve matching city if mentioned
+  let matchedCity = allCities.find((c) => {
+    const cName = normalizeTransliteration(c.name.toLowerCase());
+    const cCanon = resolveCanonicalCityId(c.name);
+    return (
+      isCityExactMatch(c.name, queryNorm) ||
+      (cCanon && queryNorm.includes(cCanon.toLowerCase())) ||
+      (cName.length > 3 && queryNorm.includes(cName))
+    );
+  });
+
+  if (!matchedCity && city) {
+    matchedCity = allCities.find((c) => isCityExactMatch(c.name, city));
   }
+
+  // 3. Resolve Places, Heritage & Markets
+  let matchedPlaces: any[] = [];
+  let matchedMarkets: any[] = [];
+
+  if (matchedCity) {
+    const canonId = resolveCanonicalCityId(matchedCity.name) || matchedCity.id;
+    matchedPlaces = allDbPlaces.filter(
+      (p: any) =>
+        p.city_id?.toLowerCase() === canonId.toLowerCase() ||
+        isCityExactMatch(p.city_id || '', matchedCity!.name)
+    );
+  } else if (matchedState) {
+    matchedPlaces = allDbPlaces.filter(
+      (p: any) => p.state_id?.toLowerCase() === matchedState.id.toLowerCase()
+    );
+  }
+
+  if (matchedPlaces.length === 0) {
+    matchedPlaces = allDbPlaces.filter((p: any) => {
+      const pName = normalizeTransliteration(p.name.toLowerCase());
+      return queryNorm.includes(pName) || (p.city_id && queryNorm.includes(p.city_id.toLowerCase()));
+    });
+  }
+
+  // Extract markets
+  matchedMarkets = allDbPlaces.filter((p: any) => {
+    const isMarket = (p.category || '').toLowerCase() === 'market' ||
+      (p.name || '').toLowerCase().includes('market') ||
+      (p.name || '').toLowerCase().includes('bazaar');
+    if (!isMarket) return false;
+    if (matchedCity) {
+      return isCityExactMatch(p.city_id || '', matchedCity.name) ||
+        p.city_id?.toLowerCase() === matchedCity.id.toLowerCase();
+    }
+    return queryNorm.includes(p.name.toLowerCase());
+  });
 
   // If nearby query with coordinates
   const userLat = location?.latitude || location?.lat;
@@ -223,22 +295,48 @@ aiRouter.post('/chat', rateLimiter({ windowMs: 60000, max: 30 }), async (req: Re
       .map((p: any) => ({ ...p, distance_km: Math.round(haversineKm(userLat, userLng, p.lat, p.lng) * 10) / 10 }))
       .filter((p: any) => p.distance_km <= 150)
       .sort((a: any, b: any) => a.distance_km - b.distance_km)
-      .slice(0, 5);
+      .slice(0, 6);
   } else if (matchedPlaces.length === 0) {
-    // Default fallback to 3 top official verified places
-    matchedPlaces = allDbPlaces.filter((p: any) => p.data_confidence === 'official').slice(0, 3);
+    matchedPlaces = allDbPlaces.filter((p: any) => p.data_confidence === 'official').slice(0, 4);
   } else {
-    matchedPlaces = matchedPlaces.slice(0, 4);
+    matchedPlaces = matchedPlaces.slice(0, 6);
   }
 
-  // 2. Multimodal transit calculation if routing is queried
+  // 4. Resolve Festivals
+  let matchedFestivals: any[] = [];
+  const isFestivalQuery = /(festival|festivals|utsav|mela|puja|celebration|fair|parv)/i.test(queryNorm);
+  if (matchedState) {
+    matchedFestivals = await db.festivals.findByState(matchedState.name);
+  } else if (matchedCity) {
+    matchedFestivals = await db.festivals.findByCity(matchedCity.name);
+  } else if (isFestivalQuery) {
+    const searchRes = await db.festivals.search(rawQuery);
+    matchedFestivals = searchRes;
+  }
+
+  // 5. Resolve Hotels
+  let matchedHotels: any[] = [];
+  const isHotelQuery = /(hotel|hotels|stay|resort|accommodation|where to stay|lodge|dharamshala)/i.test(queryNorm);
+  if (matchedCity) {
+    const targetCanon = resolveCanonicalCityId(matchedCity.name);
+    matchedHotels = verifiedHotels.filter((h) => {
+      const hCity = h.city || '';
+      const hCityId = (h as any).city_id || resolveCanonicalCityId(hCity);
+      if (targetCanon && hCityId && hCityId.toLowerCase() === targetCanon.toLowerCase()) {
+        return true;
+      }
+      return isCityExactMatch(hCity, matchedCity!.name);
+    });
+  }
+
+  // 6. Multimodal transit calculation if routing is queried
   let transitComparison = null;
-  const isTransitQuery = /(train|railway|station|flight|airport|bus|how to reach|kaise pahuchu|route|safar|transit)/i.test(query);
-  const fromToMatch = query.match(/(?:from|starting from)\s+([a-zA-Z\s]+?)\s+(?:to|towards)\s+([a-zA-Z\s]+)/i);
+  const isTransitQuery = /(train|railway|station|flight|airport|bus|how to reach|kaise pahuchu|route|safar|transit|how can i go)/i.test(query);
+  const fromToMatch = query.match(/(?:from|starting from|between)\s+([a-zA-Z\s]+?)\s+(?:to|towards|and)\s+([a-zA-Z\s]+)/i);
 
   if (isTransitQuery || fromToMatch) {
     const originName = fromToMatch ? fromToMatch[1].trim() : travel_context?.origin || 'New Delhi';
-    const destName = fromToMatch ? fromToMatch[2].trim() : matchedPlaces[0]?.name || city || 'Jaipur';
+    const destName = fromToMatch ? fromToMatch[2].trim() : matchedCity?.name || matchedPlaces[0]?.name || city || 'Jaipur';
 
     const origNode = resolveOriginTransportNode(
       userLat && userLng ? { lat: userLat, lng: userLng, city: originName } : originName
@@ -255,11 +353,10 @@ aiRouter.post('/chat', rateLimiter({ windowMs: 60000, max: 30 }), async (req: Re
     transitComparison = buildVerifiedTransitComparison(origNode, destNode);
   }
 
-  // 3. Fetch granular grounding citations from database
-  // 3. Fetch granular grounding citations from database
+  // 7. Fetch granular grounding citations from database
   const groundingCitations = await fetchGroundingCitations(matchedPlaces);
 
-  // 4. Try Grounded Generation (Using gemini-3.5-flash with Google Maps tool where applicable)
+  // 8. Try Grounded Generation (with Google Maps tool & multi-tier fallback where applicable)
   let replyText = '';
   let usedModel = 'Virasat Grounded Assistant';
   let mapsGrounding: Array<{ uri: string; title: string; reviewSnippets?: string[] }> = [];
@@ -267,8 +364,22 @@ aiRouter.post('/chat', rateLimiter({ windowMs: 60000, max: 30 }), async (req: Re
 
   if (ai) {
     const placesContextStr = matchedPlaces
-      .map((p: any) => `- ${p.name} (${p.city_id || 'India'}): ${p.summary} [Confidence: ${p.data_confidence}, Source: ${p.source_url}]`)
+      .map((p: any) => `- ${p.name} (${p.city_id || 'India'}): ${p.summary} [Fee: ₹${p.entry_fee_domestic || 0}, Hours: ${p.visiting_hours || 'Sunrise to Sunset'}, Confidence: ${p.data_confidence}, Source: ${p.source_url}]`)
       .join('\n');
+
+    const festivalsContextStr = matchedFestivals.length > 0
+      ? `VERIFIED FESTIVALS:\n` + matchedFestivals.map((f: any) => `- ${f.name} in ${f.primary_city}, ${f.state}: ${f.description} [Dates: ${f.is_date_verified ? `${f.exact_date_start} to ${f.exact_date_end}` : `Expected Season: ${f.typical_season}`}, Vibe: ${f.cultural_vibe || 'Cultural'}]`).join('\n')
+      : 'No specific festivals queried.';
+
+    const hotelsContextStr = matchedHotels.length > 0
+      ? `VERIFIED HOTELS:\n` + matchedHotels.map((h: any) => `- ${h.name} (${h.category}, ${h.city}): ${h.location || ''} [Price indication: ${h.price_indication || 'Fare unavailable'}, Rating: ${h.rating || '4.5'}]`).join('\n')
+      : isHotelQuery
+      ? `NOTE ON HOTELS: No verified hotel records exist in database for ${matchedCity?.name || 'this location'}. State that verified hotel records are currently unavailable.`
+      : '';
+
+    const marketsContextStr = matchedMarkets.length > 0
+      ? `VERIFIED MARKETS:\n` + matchedMarkets.map((m: any) => `- ${m.name} (${m.city_id}): ${m.summary} [Hours: ${m.visiting_hours || 'Daytime'}]`).join('\n')
+      : '';
 
     const trainSummary = transitComparison?.train ? `Train: ${transitComparison.train.summary} (${transitComparison.train.approx_duration})` : '';
     const airSummary = transitComparison?.air ? `Air: ${transitComparison.air.summary} (${transitComparison.air.approx_duration})` : '';
@@ -278,15 +389,22 @@ aiRouter.post('/chat', rateLimiter({ windowMs: 60000, max: 30 }), async (req: Re
       : 'No transit queried.';
 
     const systemInstruction = `You are the official Virasat AI Tourism & Heritage Concierge for India.
-RULES:
-1. ONLY recommend places provided in the verified places context or retrieved via verified Maps grounding.
-2. NEVER invent fake railway stations, airports, or monuments.
-3. Every factual statement must cite its official source.
-4. Keep the tone warm, welcoming, deeply knowledgeable, and culturally respectful. Support Hindi and natural Hinglish seamlessly.
-5. Emphasize authentic local cultural lore, optimal visiting times, and transport connectivity.
+CRITICAL SAFETY & GROUNDING RULES:
+1. ONLY recommend places, festivals, hotels, and markets provided in the verified context below or retrieved via verified Maps grounding.
+2. NEVER invent fake railway stations, airports, flight numbers, train numbers, fares, hotel names, festival dates, or monuments.
+3. If price or fare data is not provided, state "Fare unavailable" or "Please check IRCTC / official counter".
+4. Every factual statement must cite its official source.
+5. Keep the tone warm, welcoming, deeply knowledgeable, informative, and culturally respectful. Support Hindi and natural Hinglish seamlessly.
+6. Emphasize authentic local cultural lore, optimal visiting times, and transport connectivity.
 
-VERIFIED PLACES:
+VERIFIED DESTINATIONS & MONUMENTS:
 ${placesContextStr}
+
+${festivalsContextStr}
+
+${hotelsContextStr}
+
+${marketsContextStr}
 
 ${transitContextStr}`;
 
@@ -361,27 +479,61 @@ ${transitContextStr}`;
     }
   }
 
-  // 5. Deterministic fallback if Gemini is offline, timed out, or unconfigured
+  // 9. Deterministic fallback if Gemini is offline, timed out, or unconfigured
   if (!replyText) {
-    if (transitComparison) {
+    if (isHotelQuery) {
+      if (matchedHotels.length > 0) {
+        replyText = `Here are verified hotel accommodations in **${matchedCity?.name || 'the area'}**:\n\n` +
+          matchedHotels
+            .map(
+              (h: any, i: number) =>
+                `${i + 1}. 🏨 **${h.name}** (${h.category})\n   📍 Location: ${h.location || h.city}\n   💰 Indicative Tariff: ${h.price_indication || 'Fare unavailable'}\n   ⭐ Rating: ${h.rating || '4.5'} (${h.reviews_count || 'Verified'})\n   ✨ Amenities: ${Array.isArray(h.amenities) ? h.amenities.join(', ') : 'Heritage Stay'}`
+            )
+            .join('\n\n') +
+          `\n\n*Note: Indicative tariffs only. Please confirm current rates and availability directly with the property.*`;
+      } else {
+        replyText = `Verified hotel listings for **${matchedCity?.name || 'this city'}** are currently unavailable in the verified database.\n\nWe recommend booking through authorized State Tourism Development Corporation guest houses or licensed hospitality platforms.`;
+      }
+    } else if (isFestivalQuery && matchedFestivals.length > 0) {
+      replyText = `Here are verified flagship cultural celebrations in **${matchedState?.name || matchedCity?.name || 'India'}**:\n\n` +
+        matchedFestivals
+          .map(
+            (f: any, i: number) =>
+              `${i + 1}. 🪔 **${f.name}** (${f.primary_city}, ${f.state})\n   ${f.description}\n   📅 **Dates**: ${f.is_date_verified && f.exact_date_start ? `${f.exact_date_start} to ${f.exact_date_end} (Verified 2026 Calendar)` : `Typical Season: ${f.typical_season}`}\n   🎭 **Cultural Essence**: ${f.cultural_vibe || 'Cultural Tradition'}\n   *Source: ${f.source_name || 'Ministry of Tourism / State Tourism'}*`
+          )
+          .join('\n\n') +
+        `\n\nWould you like me to build a multi-day itinerary around one of these festivals?`;
+    } else if (transitComparison) {
       const trainMsg = transitComparison.train ? `🚆 **Train Option**: ${transitComparison.train.summary} (${transitComparison.train.approx_duration}). ${transitComparison.train.notes || ''}\n\n` : '';
       const airMsg = transitComparison.air ? `✈️ **Flight Option**: ${transitComparison.air.summary} (${transitComparison.air.approx_duration}). ${transitComparison.air.notes || ''}\n\n` : '';
       const roadMsg = transitComparison.road ? `🚗 **Road Option**: ${transitComparison.road.summary} (${transitComparison.road.approx_duration}).\n\n` : '';
 
-      replyText = `Here is the verified transit itinerary from **${transitComparison.origin}** to **${transitComparison.destination}** (~${transitComparison.distance_km} km):\n\n` +
+      replyText = `Here is the verified transit route from **${transitComparison.origin}** to **${transitComparison.destination}** (~${transitComparison.distance_km} km):\n\n` +
         trainMsg + airMsg + roadMsg +
-        `All railway recommendations are connected via Indian Railways IRCTC mainline stations.`;
+        `All railway recommendations are connected via Indian Railways IRCTC mainline stations. Fares and live chart reservation availability should be confirmed on the official IRCTC portal.`;
+    } else if (matchedMarkets.length > 0 && /(market|bazaar|shopping|craft)/i.test(queryNorm)) {
+      replyText = `Here are famous historic bazaars and markets in **${matchedCity?.name || 'the area'}**:\n\n` +
+        matchedMarkets
+          .map(
+            (m: any, i: number) =>
+              `${i + 1}. 🛍️ **${m.name}**\n   ${m.summary}\n   ⏰ Visiting Hours: ${m.visiting_hours || '10:00 AM - 08:30 PM'}\n   *Citation: ${m.source_url || 'Official Tourism Directory'}*`
+          )
+          .join('\n\n');
     } else if (matchedPlaces.length > 0) {
-      replyText = `Based on verified ASI & State Tourism archives, here are key heritage destinations:\n\n` +
+      const locLabel = matchedCity?.name || matchedState?.name || 'India';
+      replyText = `Based on verified ASI & State Tourism archives, here are key destinations in **${locLabel}**:\n\n` +
         matchedPlaces
           .map(
             (p: any, i: number) =>
-              `${i + 1}. 🏛️ **${p.name}** (${p.city_id || 'India'})\n   ${p.summary}\n   *Official Citation: ${p.source_url || 'ASI National Portal'}*`
+              `${i + 1}. 🏛️ **${p.name}** (${p.city_id || 'India'})\n   ${p.summary}\n   🎫 Entry: ₹${p.entry_fee_domestic || 0} (Domestic) | ⏰ Hours: ${p.visiting_hours || 'Sunrise to Sunset'}\n   *Official Citation: ${p.source_url || 'ASI National Portal'}*`
           )
           .join('\n\n') +
-        `\n\nWould you like me to build a multi-day itinerary or check multimodal train connections?`;
+        (matchedFestivals.length > 0
+          ? `\n\n🪔 **Upcoming Festival**: ${matchedFestivals[0].name} (${matchedFestivals[0].typical_season})`
+          : '') +
+        `\n\nWould you like me to build a day-by-day itinerary or check multimodal train connections?`;
     } else {
-      replyText = `Welcome to Virasat! You can explore verified monuments, plan multi-day circuits, or calculate multimodal train and road routes across India. What destination would you like to discover?`;
+      replyText = `Welcome to Virasat! You can explore verified monuments, search local heritage markets, discover authentic festivals, or calculate multimodal train and road routes across India. What destination or festival would you like to explore?`;
     }
   }
 

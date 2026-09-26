@@ -23,8 +23,10 @@ import {
   AISessionRecord,
   AIMessageRecord,
   AIGroundingRecord,
+  FestivalRecord,
 } from './types';
 import { runDatabaseSeed } from './seed';
+import { resolveCanonicalCityId, isCityExactMatch } from './canonicalLocationResolver';
 
 interface DatabaseData {
   users: Record<string, UserRecord>;
@@ -44,6 +46,7 @@ interface DatabaseData {
   ai_sessions: Record<string, AISessionRecord>;
   ai_messages: Record<string, AIMessageRecord>;
   ai_groundings: Record<string, AIGroundingRecord>;
+  festivals: Record<string, FestivalRecord>;
 }
 
 export type DatabaseMode = 'postgresql' | 'json';
@@ -86,6 +89,7 @@ class DatabaseManager {
       ai_sessions: {},
       ai_messages: {},
       ai_groundings: {},
+      festivals: {},
     };
   }
 
@@ -196,14 +200,21 @@ class DatabaseManager {
           ai_sessions: parsed.ai_sessions || {},
           ai_messages: parsed.ai_messages || {},
           ai_groundings: parsed.ai_groundings || {},
+          festivals: parsed.festivals || {},
         };
       } catch (err) {
         console.error('[DB] Failed to load local database, initializing fresh store:', err);
       }
     }
 
-    // If fresh / empty or missing place_facts from Phase 2, auto-seed
-    if (Object.keys(this.data.places).length === 0 || Object.keys(this.data.place_facts).length === 0) {
+    // If fresh / empty or missing place_facts, festivals, or flagship markets, auto-seed
+    if (
+      Object.keys(this.data.places).length === 0 ||
+      Object.keys(this.data.place_facts).length === 0 ||
+      !this.data.festivals ||
+      Object.keys(this.data.festivals).length === 0 ||
+      !this.data.places['crawford-market']
+    ) {
       await this.seedFromStaticFiles();
     }
   }
@@ -224,7 +235,6 @@ class DatabaseManager {
 
   public async seedFromStaticFiles(): Promise<void> {
     const seeded = await runDatabaseSeed();
-
     if (this.mode !== 'postgresql') {
       this.data.states = seeded.states;
       this.data.cities = seeded.cities;
@@ -233,6 +243,7 @@ class DatabaseManager {
       this.data.place_sources = seeded.place_sources;
       this.data.place_facts = seeded.place_facts;
       this.data.image_licenses = seeded.image_licenses;
+      this.data.festivals = seeded.festivals;
       if (Object.keys(this.data.users).length === 0) {
         this.data.users = seeded.users;
       }
@@ -3323,6 +3334,154 @@ class DatabaseManager {
     },
     findAll: async (limit = 100): Promise<AuditLogRecord[]> => {
       return this.audit.findAll(limit);
+    },
+  };
+
+  // -------------------------------------------------------------
+  // FESTIVALS REPOSITORY (Flagship National & Cultural Festivals)
+  // -------------------------------------------------------------
+  public festivals = {
+    findAll: async (filters?: {
+      state?: string;
+      state_id?: string;
+      city?: string;
+      city_id?: string;
+      month?: string;
+      search?: string;
+      limit?: number;
+      offset?: number;
+    }): Promise<{ festivals: FestivalRecord[]; total: number }> => {
+      let list = Object.values(this.data.festivals);
+
+      if (filters?.search) {
+        const q = filters.search.toLowerCase().trim();
+        list = list.filter(
+          (f) =>
+            f.name.toLowerCase().includes(q) ||
+            f.description.toLowerCase().includes(q) ||
+            f.state.toLowerCase().includes(q) ||
+            f.primary_city.toLowerCase().includes(q) ||
+            (f.cultural_vibe && f.cultural_vibe.toLowerCase().includes(q)) ||
+            (f.alternate_locations && f.alternate_locations.some((loc) => loc.toLowerCase().includes(q)))
+        );
+      }
+
+      if (filters?.state_id) {
+        list = list.filter((f) => f.state_id?.toLowerCase() === filters.state_id!.toLowerCase());
+      } else if (filters?.state) {
+        const s = filters.state.toLowerCase().trim();
+        list = list.filter((f) => f.state.toLowerCase().includes(s) || f.state_id?.toLowerCase() === s);
+      }
+
+      if (filters?.city_id) {
+        list = list.filter((f) => f.primary_city_id?.toLowerCase() === filters.city_id!.toLowerCase());
+      } else if (filters?.city) {
+        const targetCity = filters.city.trim();
+        const targetCityId = resolveCanonicalCityId(targetCity);
+        list = list.filter((f) => {
+          if (targetCityId && f.primary_city_id && f.primary_city_id.toLowerCase() === targetCityId.toLowerCase()) {
+            return true;
+          }
+          return isCityExactMatch(f.primary_city, targetCity);
+        });
+      }
+
+      if (filters?.month) {
+        const m = filters.month.toLowerCase().trim();
+        list = list.filter((f) => {
+          const tm = (f.typical_month || '').toLowerCase();
+          const ts = (f.typical_season || '').toLowerCase();
+          const start = f.exact_date_start || '';
+          return tm.includes(m) || ts.includes(m) || start.includes(`-${m}-`);
+        });
+      }
+
+      const total = list.length;
+      const offset = filters?.offset || 0;
+      const limit = filters?.limit || 100;
+      return {
+        festivals: list.slice(offset, offset + limit),
+        total,
+      };
+    },
+
+    findById: async (id: string): Promise<FestivalRecord | null> => {
+      return this.data.festivals[id] || this.data.festivals[id.toLowerCase()] || null;
+    },
+
+    findByCity: async (cityName: string): Promise<FestivalRecord[]> => {
+      const canonicalCityId = resolveCanonicalCityId(cityName);
+      return Object.values(this.data.festivals).filter((f) => {
+        if (canonicalCityId && f.primary_city_id && f.primary_city_id.toLowerCase() === canonicalCityId.toLowerCase()) {
+          return true;
+        }
+        return isCityExactMatch(f.primary_city, cityName);
+      });
+    },
+
+    findByState: async (stateName: string): Promise<FestivalRecord[]> => {
+      const s = stateName.toLowerCase().trim();
+      return Object.values(this.data.festivals).filter(
+        (f) => f.state.toLowerCase() === s || f.state_id?.toLowerCase() === s
+      );
+    },
+
+    findCurrentAndUpcoming: async (
+      currentDate = '2026-09-26',
+      limit = 20
+    ): Promise<{ current: FestivalRecord[]; upcoming: FestivalRecord[] }> => {
+      const now = new Date(currentDate);
+      const all = Object.values(this.data.festivals);
+
+      const current: FestivalRecord[] = [];
+      const upcoming: FestivalRecord[] = [];
+
+      for (const f of all) {
+        if (f.exact_date_start && f.exact_date_end && f.is_date_verified) {
+          const start = new Date(f.exact_date_start);
+          const end = new Date(f.exact_date_end);
+          if (now >= start && now <= end) {
+            current.push(f);
+            continue;
+          }
+          if (start > now) {
+            upcoming.push(f);
+            continue;
+          }
+        }
+        // Fallback for seasonal/recurring without verified exact range:
+        const currentMonthName = now.toLocaleString('en-US', { month: 'long' }).toLowerCase();
+        if (f.typical_month?.toLowerCase().includes(currentMonthName)) {
+          upcoming.push(f);
+        } else if (f.typical_season?.toLowerCase().includes('autumn') || f.typical_season?.toLowerCase().includes('winter')) {
+          upcoming.push(f);
+        }
+      }
+
+      return {
+        current: current.slice(0, limit),
+        upcoming: upcoming.slice(0, limit),
+      };
+    },
+
+    search: async (query: string, limit = 20): Promise<FestivalRecord[]> => {
+      const q = query.toLowerCase().trim();
+      return Object.values(this.data.festivals)
+        .filter(
+          (f) =>
+            f.name.toLowerCase().includes(q) ||
+            f.description.toLowerCase().includes(q) ||
+            f.state.toLowerCase().includes(q) ||
+            f.primary_city.toLowerCase().includes(q) ||
+            (f.cultural_vibe && f.cultural_vibe.toLowerCase().includes(q))
+        )
+        .slice(0, limit);
+    },
+
+    create: async (record: FestivalRecord): Promise<FestivalRecord> => {
+      this.data.festivals[record.id] = { ...record };
+      this.persist();
+      return record;
     },
   };
 }

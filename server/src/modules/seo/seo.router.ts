@@ -47,6 +47,7 @@ export async function buildSitemapXml(): Promise<string> {
     { path: '/3d', priority: '0.8', changefreq: 'weekly' },
     { path: '/ai', priority: '0.8', changefreq: 'weekly' },
     { path: '/search', priority: '0.8', changefreq: 'daily' },
+    { path: '/festivals', priority: '0.8', changefreq: 'daily' },
   ];
 
   // Fetch all destination places from database for sitemap indexing

@@ -11,6 +11,10 @@ import {
   resolveDestinationTransportNode,
   buildVerifiedTransitComparison,
 } from '../../../../src/server/transportResolver';
+import {
+  getVerifiedTrainSchedules,
+  getVerifiedFlightSchedules,
+} from '../../../../src/server/transitDataService';
 import { db } from '../../db/client';
 
 export const routingRouter = Router();
@@ -136,6 +140,10 @@ routingRouter.get('/calculate', async (req: Request, res: Response): Promise<voi
     resolvedDest.coordinates.lng
   );
 
+  const travelDate = (req.query.date as string) || undefined;
+  const verifiedTrains = getVerifiedTrainSchedules(resolvedOrigin.city, resolvedDest.city, travelDate);
+  const verifiedFlights = getVerifiedFlightSchedules(resolvedOrigin.city, resolvedDest.city, travelDate);
+
   res.json({
     success: true,
     origin: resolvedOrigin,
@@ -143,10 +151,13 @@ routingRouter.get('/calculate', async (req: Request, res: Response): Promise<voi
     transit_comparison: transitComparison,
     rail_route: railRouteDetails,
     road_route: roadRouteDetails,
+    verified_trains: verifiedTrains,
+    verified_flights: verifiedFlights,
     sources: [
       'Ministry of Railways / IRCTC Station Database',
       'AAI Airport Master Directory',
       'State Transport Authority Regulated Meter Tariffs',
+      'Civil Aviation Schedules Directory',
     ],
   });
 });
