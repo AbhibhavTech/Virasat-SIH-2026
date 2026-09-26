@@ -3485,46 +3485,99 @@ class DatabaseManager {
       limit?: number;
       offset?: number;
     }): Promise<{ festivals: FestivalRecord[]; total: number }> => {
+      const FESTIVAL_SEARCH_ALIASES: Record<string, string[]> = {
+        holi: ['lathmar holi', 'braj holi', 'holi', 'barsana', 'rangwali holi', 'gulal'],
+        diwali: ['dev deepawali', 'ayodhya deepotsav', 'diwali', 'deepawali', 'deepavali', 'deepotsav', 'festival of lights', 'karthigai deepam'],
+        deepawali: ['dev deepawali', 'ayodhya deepotsav', 'diwali', 'deepawali', 'deepavali', 'deepotsav', 'festival of lights', 'karthigai deepam'],
+        deepavali: ['dev deepawali', 'ayodhya deepotsav', 'diwali', 'deepawali', 'deepavali', 'deepotsav', 'festival of lights', 'karthigai deepam'],
+        navratri: ['gujarat navratri', 'navratri', 'navaratri', 'garba', 'sharad navratri', 'dandiya raas'],
+        navaratri: ['gujarat navratri', 'navratri', 'navaratri', 'garba', 'dandiya raas'],
+        dasara: ['mysore dasara', 'kullu dussehra', 'bastar dussehra', 'ganga dussehra', 'dussehra', 'dasara', 'vijayadashami'],
+        dussehra: ['mysore dasara', 'kullu dussehra', 'bastar dussehra', 'ganga dussehra', 'dussehra', 'dasara', 'vijayadashami'],
+        ganesh: ['ganeshotsav', 'ganesh chaturthi', 'vinayaka chaturthi', 'ganpati'],
+        ganeshotsav: ['ganesh', 'ganesh chaturthi', 'vinayaka chaturthi', 'ganpati'],
+        onam: ['thiruvonam', 'onam harvest', 'vallam kali', 'alappuzha'],
+        pongal: ['thai pongal', 'makar sankranti', 'jallikattu', 'harvest festival'],
+        bihu: ['bohag bihu', 'rongali bihu', 'assam'],
+        baisakhi: ['vaisakhi', 'anandpur sahib', 'amritsar'],
+        kumbh: ['kumbh mela', 'maha kumbh', 'prayagraj'],
+        chhath: ['chhath puja', 'dala chhath', 'surya shashthi', 'bihar'],
+        pushkar: ['pushkar camel fair', 'pushkar mela', 'rajasthan'],
+        hornbill: ['hornbill festival', 'kisama', 'nagaland'],
+        yaoshang: ['yaoshang festival', 'thabal chongba', 'manipur spring'],
+        shigmo: ['shigmotsav', 'goan spring festival', 'shigmo'],
+      };
+
       if (this.mode === 'postgresql') {
         try {
-          const conditions: string[] = [];
-          const params: any[] = [];
-          let pIdx = 1;
+          // Check if PostgreSQL table is actually populated before querying it
+          const countTotalRows = await this.query<{ count: string | number }>('SELECT COUNT(*) AS count FROM festivals');
+          const totalInDb = parseInt(String(countTotalRows[0]?.count || '0'), 10);
 
-          if (filters?.search) {
-            conditions.push(`(LOWER(name) LIKE $${pIdx} OR LOWER(description) LIKE $${pIdx} OR LOWER(state) LIKE $${pIdx} OR LOWER(primary_city) LIKE $${pIdx} OR LOWER(cultural_vibe) LIKE $${pIdx})`);
-            params.push(`%${filters.search.toLowerCase().trim()}%`);
-            pIdx++;
-          }
-          if (filters?.state_id) {
-            conditions.push(`LOWER(state_id) = LOWER($${pIdx})`);
-            params.push(filters.state_id.trim());
-            pIdx++;
-          } else if (filters?.state) {
-            conditions.push(`(LOWER(state) LIKE $${pIdx} OR LOWER(state_id) = LOWER($${pIdx}))`);
-            params.push(`%${filters.state.toLowerCase().trim()}%`);
-            pIdx++;
-          }
-          if (filters?.city_id) {
-            conditions.push(`LOWER(primary_city_id) = LOWER($${pIdx})`);
-            params.push(filters.city_id.trim());
-            pIdx++;
-          } else if (filters?.city) {
-            conditions.push(`(LOWER(primary_city) LIKE $${pIdx} OR LOWER(primary_city_id) = LOWER($${pIdx}))`);
-            params.push(`%${filters.city.toLowerCase().trim()}%`);
-            pIdx++;
-          }
-          if (filters?.month) {
-            conditions.push(`(LOWER(typical_month) LIKE $${pIdx} OR LOWER(typical_season) LIKE $${pIdx})`);
-            params.push(`%${filters.month.toLowerCase().trim()}%`);
-            pIdx++;
-          }
+          if (totalInDb > 0) {
+            const conditions: string[] = [];
+            const params: any[] = [];
+            let pIdx = 1;
 
-          const whereSql = conditions.length > 0 ? `WHERE ${conditions.join(' AND ')}` : '';
-          const countRows = await this.query<{ total: string | number }>(`SELECT COUNT(*) AS total FROM festivals ${whereSql}`, params);
-          const total = parseInt(String(countRows[0]?.total || '0'), 10);
+            if (filters?.search && filters.search.trim()) {
+              const rawQ = filters.search.trim();
+              const q = rawQ.toLowerCase();
+              const aliasTerms = FESTIVAL_SEARCH_ALIASES[q] || [];
 
-          if (total > 0 || conditions.length > 0) {
+              const searchOrs: string[] = [
+                `LOWER(name) LIKE $${pIdx}`,
+                `LOWER(state) LIKE $${pIdx}`,
+                `LOWER(primary_city) LIKE $${pIdx}`,
+                `LOWER(cultural_vibe) LIKE $${pIdx}`,
+              ];
+              params.push(`%${q}%`);
+              pIdx++;
+
+              for (const term of aliasTerms) {
+                searchOrs.push(`LOWER(name) LIKE $${pIdx}`);
+                params.push(`%${term}%`);
+                pIdx++;
+              }
+
+              // Word-boundary description matching to avoid false positives like 'cholis' for 'holi'
+              const isMajorTerm = ['holi', 'diwali', 'navratri', 'dasara', 'dussehra'].includes(q);
+              if (!isMajorTerm) {
+                searchOrs.push(`description ~* $${pIdx}`);
+                params.push(`\\m${q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`);
+                pIdx++;
+              }
+
+              conditions.push(`(${searchOrs.join(' OR ')})`);
+            }
+
+            if (filters?.state_id) {
+              conditions.push(`LOWER(state_id) = LOWER($${pIdx})`);
+              params.push(filters.state_id.trim());
+              pIdx++;
+            } else if (filters?.state) {
+              conditions.push(`(LOWER(state) LIKE $${pIdx} OR LOWER(state_id) = LOWER($${pIdx}))`);
+              params.push(`%${filters.state.toLowerCase().trim()}%`);
+              pIdx++;
+            }
+            if (filters?.city_id) {
+              conditions.push(`LOWER(primary_city_id) = LOWER($${pIdx})`);
+              params.push(filters.city_id.trim());
+              pIdx++;
+            } else if (filters?.city) {
+              conditions.push(`(LOWER(primary_city) LIKE $${pIdx} OR LOWER(primary_city_id) = LOWER($${pIdx}))`);
+              params.push(`%${filters.city.toLowerCase().trim()}%`);
+              pIdx++;
+            }
+            if (filters?.month) {
+              conditions.push(`(LOWER(typical_month) LIKE $${pIdx} OR LOWER(typical_season) LIKE $${pIdx})`);
+              params.push(`%${filters.month.toLowerCase().trim()}%`);
+              pIdx++;
+            }
+
+            const whereSql = conditions.length > 0 ? `WHERE ${conditions.join(' AND ')}` : '';
+            const countRows = await this.query<{ total: string | number }>(`SELECT COUNT(*) AS total FROM festivals ${whereSql}`, params);
+            const total = parseInt(String(countRows[0]?.total || '0'), 10);
+
             const limit = filters?.limit || 100;
             const offset = filters?.offset || 0;
             const limitClause = `LIMIT $${pIdx} OFFSET $${pIdx + 1}`;
@@ -3542,17 +3595,80 @@ class DatabaseManager {
       this.loadStaticFestivalsFallback();
       let list = Object.values(this.data.festivals);
 
-      if (filters?.search) {
-        const q = filters.search.toLowerCase().trim();
-        list = list.filter(
-          (f) =>
-            f.name.toLowerCase().includes(q) ||
-            f.description.toLowerCase().includes(q) ||
-            f.state.toLowerCase().includes(q) ||
-            f.primary_city.toLowerCase().includes(q) ||
-            (f.cultural_vibe && f.cultural_vibe.toLowerCase().includes(q)) ||
-            (f.alternate_locations && f.alternate_locations.some((loc) => loc.toLowerCase().includes(q)))
-        );
+      if (filters?.search && filters.search.trim()) {
+        const rawQ = filters.search.trim();
+        const q = rawQ.toLowerCase();
+        const aliasTerms = FESTIVAL_SEARCH_ALIASES[q] || [];
+        const wordPattern = q.length <= 4
+          ? new RegExp(`\\b${q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i')
+          : new RegExp(`\\b${q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`, 'i');
+
+        list = list.filter((item) => {
+          const nameLower = item.name.toLowerCase();
+          const idLower = item.id.toLowerCase();
+          const slugLower = (item.slug || '').toLowerCase();
+
+          // 1. Direct match on name, slug, id in either direction
+          if (nameLower.includes(q) || idLower.includes(q) || slugLower.includes(q)) {
+            return true;
+          }
+          if (q.includes(nameLower) || (slugLower && q.includes(slugLower)) || q.includes(idLower)) {
+            return true;
+          }
+
+          // Multi-word festival name has all its main tokens in query (e.g. "Mysore Dasara kab hota hai...")
+          const nameWords = nameLower.replace(/[^a-z0-9\s]/g, '').split(/\s+/).filter((w) => w.length > 2);
+          if (nameWords.length >= 2 && nameWords.every((w) => q.includes(w))) {
+            return true;
+          }
+
+          // 2. Direct match on city, state, alternate locations
+          if (item.primary_city.toLowerCase().includes(q)) return true;
+          if (item.state.toLowerCase().includes(q)) return true;
+          if (item.alternate_locations && item.alternate_locations.some((loc) => loc.toLowerCase().includes(q))) return true;
+
+          // 3. Cultural vibe match
+          if (item.cultural_vibe && item.cultural_vibe.toLowerCase().includes(q)) return true;
+
+          // 4. Aliases match
+          if (Array.isArray((item as any).aliases)) {
+            for (const a of (item as any).aliases) {
+              const aLower = a.toLowerCase();
+              if (aLower.includes(q) || (aLower.length >= 4 && q.includes(aLower))) return true;
+            }
+          }
+          for (const term of aliasTerms) {
+            if (nameLower.includes(term) || idLower.includes(term)) return true;
+            if (q.includes(term)) return true;
+            if (Array.isArray((item as any).aliases) && (item as any).aliases.some((a: string) => a.toLowerCase().includes(term))) return true;
+          }
+
+          // 5. Description word-boundary match (avoid substring false-positives like 'cholis' for 'holi')
+          const isMajorTerm = ['holi', 'diwali', 'navratri', 'dasara', 'dussehra'].includes(q);
+          if (!isMajorTerm && wordPattern.test(item.description)) {
+            return true;
+          }
+
+          return false;
+        });
+
+        // Relevance ranking: exact name match and query token density first
+        list.sort((a, b) => {
+          const aName = a.name.toLowerCase();
+          const bName = b.name.toLowerCase();
+
+          const aDirect = aName === q || q.includes(aName) || aName.includes(q);
+          const bDirect = bName === q || q.includes(bName) || bName.includes(q);
+          if (aDirect && !bDirect) return -1;
+          if (!aDirect && bDirect) return 1;
+
+          const qWords = q.replace(/[^a-z0-9\s]/g, '').split(/\s+/).filter((w) => w.length > 2);
+          const aScore = qWords.filter((w) => aName.includes(w) || a.primary_city.toLowerCase().includes(w)).length;
+          const bScore = qWords.filter((w) => bName.includes(w) || b.primary_city.toLowerCase().includes(w)).length;
+          if (aScore !== bScore) return bScore - aScore;
+
+          return a.name.localeCompare(b.name);
+        });
       }
 
       if (filters?.state_id) {
@@ -3693,17 +3809,8 @@ class DatabaseManager {
     },
 
     search: async (query: string, limit = 20): Promise<FestivalRecord[]> => {
-      const q = query.toLowerCase().trim();
-      return Object.values(this.data.festivals)
-        .filter(
-          (f) =>
-            f.name.toLowerCase().includes(q) ||
-            f.description.toLowerCase().includes(q) ||
-            f.state.toLowerCase().includes(q) ||
-            f.primary_city.toLowerCase().includes(q) ||
-            (f.cultural_vibe && f.cultural_vibe.toLowerCase().includes(q))
-        )
-        .slice(0, limit);
+      const res = await this.festivals.findAll({ search: query, limit });
+      return res.festivals;
     },
 
     create: async (record: FestivalRecord): Promise<FestivalRecord> => {

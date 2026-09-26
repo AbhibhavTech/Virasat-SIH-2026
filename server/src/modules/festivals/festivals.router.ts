@@ -34,9 +34,10 @@ festivalsRouter.get('/current-upcoming', async (req: Request, res: Response): Pr
  */
 festivalsRouter.get('/', async (req: Request, res: Response): Promise<void> => {
   try {
-    const { state, state_id, city, city_id, month, search, limit, offset } = req.query;
+    const { state, state_id, city, city_id, month, search, q, limit, offset } = req.query;
     const parsedLimit = limit ? parseInt(limit as string, 10) : 100;
     const parsedOffset = offset ? parseInt(offset as string, 10) : 0;
+    const searchTerm = (search || q) as string | undefined;
 
     const result = await db.festivals.findAll({
       state: state as string,
@@ -44,7 +45,7 @@ festivalsRouter.get('/', async (req: Request, res: Response): Promise<void> => {
       city: city as string,
       city_id: city_id as string,
       month: month as string,
-      search: search as string,
+      search: searchTerm,
       limit: parsedLimit,
       offset: parsedOffset,
     });

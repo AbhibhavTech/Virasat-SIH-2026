@@ -128,28 +128,108 @@ export const FestivalsPage: React.FC<FestivalsPageProps> = ({
     setVisibleCount(12);
   }, [searchQuery, selectedState, selectedCity, selectedMonth, activeFilterTab, setSearchParams]);
 
-  // Filtered festival list
-  const filteredFestivals = useMemo(() => {
+const FESTIVAL_SEARCH_ALIASES: Record<string, string[]> = {
+  holi: ['lathmar holi', 'braj holi', 'rangwali holi', 'dol jatra', 'barsana', 'gulal'],
+  diwali: ['deepawali', 'deepavali', 'deepotsav', 'dev deepawali', 'karthigai deepam', 'kali puja'],
+  deepawali: ['diwali', 'deepavali', 'deepotsav', 'dev deepawali'],
+  deepavali: ['diwali', 'deepawali', 'deepotsav', 'dev deepawali'],
+  navratri: ['navaratri', 'durga puja', 'garba', 'dandiya', 'bathukamma'],
+  navaratri: ['navratri', 'durga puja', 'garba'],
+  dasara: ['dussehra', 'vijayadashami', 'mysuru dasara', 'kullu dussehra', 'bastar dussehra', 'kota dussehra'],
+  dussehra: ['dasara', 'vijayadashami', 'mysuru dasara', 'kullu dussehra', 'bastar dussehra', 'kota dussehra'],
+  durga: ['durga puja', 'navratri', 'dussehra'],
+  chath: ['chhath puja', 'chhath', 'surya shashthi'],
+  chhath: ['chhath puja', 'surya shashthi', 'dala chhath'],
+  onam: ['thiruvonam', 'vallam kali'],
+  pongal: ['thai pongal', 'jallikattu', 'makar sankranti', 'uttarayan'],
+  bihu: ['rongali bihu', 'bohag bihu', 'magh bihu', 'kati bihu'],
+  baisakhi: ['vaisakhi', 'khalsa sirjana'],
+  vaisakhi: ['baisakhi'],
+  eid: ['eid ul fitr', 'eid al adha', 'eid milad un nabi'],
+  christmas: ['feast of st francis xavier', 'carnival of goa'],
+  losar: ['tibetan new year', 'ladakhi new year', 'spiti new year'],
+  shigmo: ['shigmotsav', 'goa spring festival'],
+  yaoshang: ['yaoshang festival', 'manipur spring', 'thabal chongba'],
+};
+
+  // Base list filtered by search, state, city, month (independent of activeFilterTab)
+  const baseFilteredFestivals = useMemo(() => {
     let list = festivals;
 
-    if (activeFilterTab === 'current') {
-      const currentIds = new Set(currentFestivals.map((f) => f.id));
-      list = list.filter((f) => currentIds.has(f.id));
-    } else if (activeFilterTab === 'upcoming') {
-      const upcomingIds = new Set(upcomingFestivals.map((f) => f.id));
-      list = list.filter((f) => upcomingIds.has(f.id));
-    }
-
     if (searchQuery.trim()) {
-      const q = searchQuery.toLowerCase().trim();
-      list = list.filter(
-        (f) =>
-          f.name.toLowerCase().includes(q) ||
-          f.description.toLowerCase().includes(q) ||
-          f.state.toLowerCase().includes(q) ||
-          f.primary_city.toLowerCase().includes(q) ||
-          (f.cultural_vibe && f.cultural_vibe.toLowerCase().includes(q))
-      );
+      const rawQ = searchQuery.trim();
+      const q = rawQ.toLowerCase();
+      const aliasTerms = FESTIVAL_SEARCH_ALIASES[q] || [];
+      const wordPattern = q.length <= 4
+        ? new RegExp(`\\b${q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i')
+        : new RegExp(`\\b${q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`, 'i');
+
+      list = list.filter((item) => {
+        const nameLower = item.name.toLowerCase();
+        const idLower = item.id.toLowerCase();
+        const slugLower = (item.slug || '').toLowerCase();
+
+        // 1. Direct match on name, slug, id in either direction
+        if (nameLower.includes(q) || idLower.includes(q) || slugLower.includes(q)) {
+          return true;
+        }
+        if (q.includes(nameLower) || (slugLower && q.includes(slugLower)) || q.includes(idLower)) {
+          return true;
+        }
+
+        // Multi-word festival name has all its main tokens in query (e.g. "Mysore Dasara kab hota hai...")
+        const nameWords = nameLower.replace(/[^a-z0-9\s]/g, '').split(/\s+/).filter((w) => w.length > 2);
+        if (nameWords.length >= 2 && nameWords.every((w) => q.includes(w))) {
+          return true;
+        }
+
+        // 2. Direct match on primary city, state, alternate locations
+        if (item.primary_city.toLowerCase().includes(q)) return true;
+        if (item.state.toLowerCase().includes(q)) return true;
+        if (item.alternate_locations && item.alternate_locations.some((loc) => loc.toLowerCase().includes(q))) return true;
+
+        // 3. Cultural vibe match
+        if (item.cultural_vibe && item.cultural_vibe.toLowerCase().includes(q)) return true;
+
+        // 4. Aliases match (from item.aliases or FESTIVAL_SEARCH_ALIASES dictionary)
+        if (Array.isArray(item.aliases)) {
+          for (const a of item.aliases) {
+            const aLower = a.toLowerCase();
+            if (aLower.includes(q) || (aLower.length >= 4 && q.includes(aLower))) return true;
+          }
+        }
+        for (const term of aliasTerms) {
+          if (nameLower.includes(term) || idLower.includes(term)) return true;
+          if (q.includes(term)) return true;
+          if (Array.isArray(item.aliases) && item.aliases.some((a) => a.toLowerCase().includes(term))) return true;
+        }
+
+        // 5. Description word-boundary match (avoid substring false-positives like 'cholis' for 'holi')
+        const isMajorTerm = ['holi', 'diwali', 'navratri', 'dasara', 'dussehra'].includes(q);
+        if (!isMajorTerm && wordPattern.test(item.description)) {
+          return true;
+        }
+
+        return false;
+      });
+
+      // Relevance ranking: exact name match and query token density first
+      list.sort((a, b) => {
+        const aName = a.name.toLowerCase();
+        const bName = b.name.toLowerCase();
+
+        const aDirect = aName === q || q.includes(aName) || aName.includes(q);
+        const bDirect = bName === q || q.includes(bName) || bName.includes(q);
+        if (aDirect && !bDirect) return -1;
+        if (!aDirect && bDirect) return 1;
+
+        const qWords = q.replace(/[^a-z0-9\s]/g, '').split(/\s+/).filter((w) => w.length > 2);
+        const aScore = qWords.filter((w) => aName.includes(w) || a.primary_city.toLowerCase().includes(w)).length;
+        const bScore = qWords.filter((w) => bName.includes(w) || b.primary_city.toLowerCase().includes(w)).length;
+        if (aScore !== bScore) return bScore - aScore;
+
+        return a.name.localeCompare(b.name);
+      });
     }
 
     if (selectedState !== 'All') {
@@ -159,7 +239,12 @@ export const FestivalsPage: React.FC<FestivalsPageProps> = ({
 
     if (selectedCity !== 'All') {
       const c = selectedCity.toLowerCase();
-      list = list.filter((f) => f.primary_city.toLowerCase().includes(c) || f.primary_city_id?.toLowerCase() === c);
+      list = list.filter(
+        (f) =>
+          f.primary_city.toLowerCase().includes(c) ||
+          f.primary_city_id?.toLowerCase() === c ||
+          (f.alternate_locations && f.alternate_locations.some((loc) => loc.toLowerCase().includes(c)))
+      );
     }
 
     if (selectedMonth !== 'All') {
@@ -173,7 +258,30 @@ export const FestivalsPage: React.FC<FestivalsPageProps> = ({
     }
 
     return list;
-  }, [festivals, activeFilterTab, currentFestivals, upcomingFestivals, searchQuery, selectedState, selectedCity, selectedMonth]);
+  }, [festivals, searchQuery, selectedState, selectedCity, selectedMonth]);
+
+  // Tab counts and IDs
+  const currentIds = useMemo(() => new Set(currentFestivals.map((f) => f.id)), [currentFestivals]);
+  const upcomingIds = useMemo(() => new Set(upcomingFestivals.map((f) => f.id)), [upcomingFestivals]);
+
+  const currentMatchingCount = useMemo(() => {
+    return baseFilteredFestivals.filter((f) => currentIds.has(f.id)).length;
+  }, [baseFilteredFestivals, currentIds]);
+
+  const upcomingMatchingCount = useMemo(() => {
+    return baseFilteredFestivals.filter((f) => upcomingIds.has(f.id)).length;
+  }, [baseFilteredFestivals, upcomingIds]);
+
+  // Filtered festival list respecting active tab
+  const filteredFestivals = useMemo(() => {
+    if (activeFilterTab === 'current') {
+      return baseFilteredFestivals.filter((f) => currentIds.has(f.id));
+    }
+    if (activeFilterTab === 'upcoming') {
+      return baseFilteredFestivals.filter((f) => upcomingIds.has(f.id));
+    }
+    return baseFilteredFestivals;
+  }, [baseFilteredFestivals, activeFilterTab, currentIds, upcomingIds]);
 
   // Actions
   const handleShowOnMap = (festival: FestivalItem) => {
@@ -223,19 +331,26 @@ export const FestivalsPage: React.FC<FestivalsPageProps> = ({
           </p>
 
           {/* Quick Search Bar */}
-          <div className="bg-white/95 backdrop-blur-md p-2 rounded-2xl shadow-xl max-w-3xl flex flex-col sm:flex-row items-center gap-2 border border-white/20">
+          <form
+            onSubmit={(e) => {
+              e.preventDefault();
+              document.getElementById('festival-filter-section')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="bg-white/95 backdrop-blur-md p-2 rounded-2xl shadow-xl max-w-3xl flex flex-col sm:flex-row items-center gap-2 border border-white/20"
+          >
             <div className="flex items-center gap-3 px-3 flex-1 w-full text-neutral-800">
               <Search className="w-5 h-5 text-neutral-400 shrink-0" />
               <input
                 id="festival-search-input"
                 type="text"
-                placeholder="Search Ganeshotsav, Durga Puja, Pushkar Fair, Hornbill..."
+                placeholder="Search Holi, Diwali, Durga Puja, Navratri, Hornbill, Bihu..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 className="w-full py-2.5 bg-transparent border-none outline-none text-sm text-neutral-900 placeholder-neutral-400"
               />
               {searchQuery && (
                 <button
+                  type="button"
                   onClick={() => setSearchQuery('')}
                   className="p-1 hover:bg-neutral-100 rounded-full text-neutral-400 hover:text-neutral-700"
                 >
@@ -244,20 +359,20 @@ export const FestivalsPage: React.FC<FestivalsPageProps> = ({
               )}
             </div>
             <button
-              onClick={() => {}}
+              type="submit"
               className="w-full sm:w-auto px-6 py-3 bg-[#E06D24] hover:bg-[#D45B10] text-white text-sm font-semibold rounded-xl transition-all shadow-md shrink-0 flex items-center justify-center gap-2"
             >
               <Filter className="w-4 h-4" />
               Filter Events
             </button>
-          </div>
+          </form>
         </div>
       </section>
 
       {/* Main Content Area */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-8 relative z-20">
         {/* Current & Upcoming Section Highlight */}
-        <section className="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-[#EFE8DF] mb-10">
+        <section id="festival-filter-section" className="bg-white rounded-3xl p-6 sm:p-8 shadow-sm border border-[#EFE8DF] mb-10">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
             <div>
               <div className="flex items-center gap-2 text-[#E06D24] text-xs font-bold uppercase tracking-wider mb-1">
@@ -279,7 +394,7 @@ export const FestivalsPage: React.FC<FestivalsPageProps> = ({
                     : 'text-neutral-600 hover:text-neutral-900'
                 }`}
               >
-                All ({festivals.length})
+                All ({baseFilteredFestivals.length})
               </button>
               <button
                 onClick={() => setActiveFilterTab('current')}
@@ -290,7 +405,7 @@ export const FestivalsPage: React.FC<FestivalsPageProps> = ({
                 }`}
               >
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                Live Now ({currentFestivals.length})
+                Live Now ({currentMatchingCount})
               </button>
               <button
                 onClick={() => setActiveFilterTab('upcoming')}
@@ -300,7 +415,7 @@ export const FestivalsPage: React.FC<FestivalsPageProps> = ({
                     : 'text-[#E06D24] hover:text-orange-700'
                 }`}
               >
-                Upcoming Autumn & Winter ({upcomingFestivals.length})
+                Upcoming Autumn & Winter ({upcomingMatchingCount})
               </button>
             </div>
           </div>
@@ -420,11 +535,22 @@ export const FestivalsPage: React.FC<FestivalsPageProps> = ({
         </section>
 
         {/* Results Counter & Active Query Info */}
-        <div className="flex items-center justify-between gap-4 mb-6">
+        <div className="flex flex-wrap items-center justify-between gap-4 mb-6">
           <div className="text-sm font-semibold text-neutral-700">
-            Showing <span className="text-[#E06D24] font-bold">{filteredFestivals.length}</span> structured festival records across India
+            {searchQuery.trim() || selectedState !== 'All' || selectedCity !== 'All' || selectedMonth !== 'All' ? (
+              <span>
+                Found <span className="text-[#E06D24] font-bold">{filteredFestivals.length}</span> matching {filteredFestivals.length === 1 ? 'festival' : 'festivals'} (of {festivals.length} across India)
+                {searchQuery.trim() && (
+                  <span className="text-neutral-500 font-normal"> for &ldquo;<span className="text-neutral-900 font-semibold">{searchQuery}</span>&rdquo;</span>
+                )}
+              </span>
+            ) : (
+              <span>
+                Showing <span className="text-[#E06D24] font-bold">{filteredFestivals.length}</span> structured festival records across India
+              </span>
+            )}
           </div>
-          {(selectedState !== 'All' || selectedCity !== 'All' || selectedMonth !== 'All' || searchQuery) && (
+          {(selectedState !== 'All' || selectedCity !== 'All' || selectedMonth !== 'All' || searchQuery || activeFilterTab !== 'all') && (
             <button
               onClick={() => {
                 setSelectedState('All');
@@ -434,9 +560,10 @@ export const FestivalsPage: React.FC<FestivalsPageProps> = ({
                 setActiveFilterTab('all');
                 setVisibleCount(12);
               }}
-              className="text-xs font-semibold text-[#E06D24] hover:underline flex items-center gap-1"
+              className="text-xs font-semibold text-[#E06D24] hover:underline flex items-center gap-1.5 bg-orange-50 hover:bg-orange-100 px-3 py-1.5 rounded-lg border border-orange-200 transition-colors"
             >
-              Reset to All India
+              <RefreshCw className="w-3.5 h-3.5" />
+              Reset Filters & Show All {festivals.length}
             </button>
           )}
         </div>
@@ -483,9 +610,10 @@ export const FestivalsPage: React.FC<FestivalsPageProps> = ({
                 setActiveFilterTab('all');
                 setVisibleCount(12);
               }}
-              className="px-6 py-2.5 bg-[#E06D24] text-white font-semibold text-sm rounded-xl shadow-md"
+              className="px-6 py-2.5 bg-[#E06D24] hover:bg-[#D45B10] text-white font-semibold text-sm rounded-xl shadow-md inline-flex items-center gap-2 transition-colors"
             >
-              Reset to All India
+              <RefreshCw className="w-4 h-4" />
+              Reset Filters & Show All {festivals.length} Celebrations
             </button>
           </div>
         ) : (
@@ -660,6 +788,9 @@ export const FestivalsPage: React.FC<FestivalsPageProps> = ({
                 src={selectedFestival.image_url}
                 alt={selectedFestival.name}
                 className="w-full h-full object-cover"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b2?w=1200&auto=format&fit=crop&q=80';
+                }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
               <button

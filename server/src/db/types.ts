@@ -433,6 +433,7 @@ export interface FestivalRecord {
   id: string;
   name: string;
   slug?: string;
+  aliases?: string[];
   state: string;
   state_id: string;
   primary_city: string;

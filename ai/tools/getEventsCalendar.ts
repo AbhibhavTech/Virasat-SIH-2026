@@ -67,66 +67,144 @@ export async function execute(args: {
   const monthFilter = (args.month || '').trim().toLowerCase();
   const limit = Math.min(Math.max(args.limit || 6, 1), 20);
 
-  let allFestivals = getVerifiedFestivalsList();
+  let matches: any[] = [];
 
-  // Try db.festivals if available
+  // 1. Try enhanced db.festivals.findAll
   try {
-    const dbRes = await db.festivals.findAll({ limit: 100 });
-    if (dbRes && dbRes.festivals && dbRes.festivals.length > 0) {
-      allFestivals = dbRes.festivals;
+    const dbRes = await db.festivals.findAll({
+      search: q || undefined,
+      city: cityFilter || undefined,
+      state: stateFilter || undefined,
+      month: monthFilter || undefined,
+      limit: 100,
+    });
+    if (dbRes && Array.isArray(dbRes.festivals)) {
+      matches = dbRes.festivals;
     }
   } catch {
-    // fallback to loaded array
+    // fallback to in-memory list
   }
 
-  let matches = allFestivals;
+  // 2. If db did not return results and we have static cache fallback:
+  if (matches.length === 0) {
+    let allFestivals = getVerifiedFestivalsList();
+    matches = allFestivals;
 
-  if (q) {
-    matches = matches.filter((f) => {
-      const name = (f.name || '').toLowerCase();
-      const desc = (f.description || '').toLowerCase();
-      const vibe = (f.cultural_vibe || '').toLowerCase();
-      const city = (f.primary_city || '').toLowerCase();
-      const state = (f.state || '').toLowerCase();
-      const alts = Array.isArray(f.alternate_locations)
-        ? f.alternate_locations.join(' ').toLowerCase()
-        : '';
-      return (
-        name.includes(q) ||
-        desc.includes(q) ||
-        vibe.includes(q) ||
-        city.includes(q) ||
-        state.includes(q) ||
-        alts.includes(q) ||
-        q.includes(name)
-      );
-    });
-  }
+    const FESTIVAL_SEARCH_ALIASES: Record<string, string[]> = {
+      holi: ['lathmar holi', 'braj holi', 'rangwali holi', 'dol jatra', 'barsana', 'gulal'],
+      diwali: ['deepawali', 'deepavali', 'deepotsav', 'dev deepawali', 'karthigai deepam', 'kali puja'],
+      deepawali: ['diwali', 'deepavali', 'deepotsav', 'dev deepawali'],
+      deepavali: ['diwali', 'deepawali', 'deepotsav', 'dev deepawali'],
+      navratri: ['navaratri', 'durga puja', 'garba', 'dandiya', 'bathukamma'],
+      navaratri: ['navratri', 'durga puja', 'garba'],
+      dasara: ['dussehra', 'vijayadashami', 'mysuru dasara', 'kullu dussehra', 'bastar dussehra', 'kota dussehra'],
+      dussehra: ['dasara', 'vijayadashami', 'mysuru dasara', 'kullu dussehra', 'bastar dussehra', 'kota dussehra'],
+      durga: ['durga puja', 'navratri', 'dussehra'],
+      chath: ['chhath puja', 'chhath', 'surya shashthi'],
+      chhath: ['chhath puja', 'surya shashthi', 'dala chhath'],
+      onam: ['thiruvonam', 'vallam kali'],
+      pongal: ['thai pongal', 'jallikattu', 'makar sankranti', 'uttarayan'],
+      bihu: ['rongali bihu', 'bohag bihu', 'magh bihu', 'kati bihu'],
+      baisakhi: ['vaisakhi', 'khalsa sirjana'],
+      vaisakhi: ['baisakhi'],
+      eid: ['eid ul fitr', 'eid al adha', 'eid milad un nabi'],
+      christmas: ['feast of st francis xavier', 'carnival of goa'],
+      losar: ['tibetan new year', 'ladakhi new year', 'spiti new year'],
+      shigmo: ['shigmotsav', 'goa spring festival'],
+      yaoshang: ['yaoshang festival', 'manipur spring', 'thabal chongba'],
+    };
 
-  if (cityFilter) {
-    matches = matches.filter((f) => {
-      const city = (f.primary_city || '').toLowerCase();
-      const alts = Array.isArray(f.alternate_locations)
-        ? f.alternate_locations.join(' ').toLowerCase()
-        : '';
-      return city.includes(cityFilter) || alts.includes(cityFilter);
-    });
-  }
+    if (q) {
+      const aliasTerms = FESTIVAL_SEARCH_ALIASES[q] || [];
+      const wordPattern = q.length <= 4
+        ? new RegExp(`\\b${q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i')
+        : new RegExp(`\\b${q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`, 'i');
 
-  if (stateFilter) {
-    matches = matches.filter((f) => {
-      const state = (f.state || '').toLowerCase();
-      const stateId = (f.state_id || '').toLowerCase();
-      return state.includes(stateFilter) || stateId.includes(stateFilter);
-    });
-  }
+      matches = matches.filter((item) => {
+        const nameLower = item.name.toLowerCase();
+        const idLower = item.id.toLowerCase();
+        const slugLower = (item.slug || '').toLowerCase();
 
-  if (monthFilter) {
-    matches = matches.filter((f) => {
-      const m = (f.typical_month || '').toLowerCase();
-      const s = (f.typical_season || '').toLowerCase();
-      return m.includes(monthFilter) || s.includes(monthFilter);
-    });
+        // 1. Direct match on name, slug, id in either direction
+        if (nameLower.includes(q) || idLower.includes(q) || slugLower.includes(q)) {
+          return true;
+        }
+        if (q.includes(nameLower) || (slugLower && q.includes(slugLower)) || q.includes(idLower)) {
+          return true;
+        }
+
+        // Multi-word festival name has all its main tokens in query (e.g. "Mysore Dasara kab hota hai...")
+        const nameWords = nameLower.replace(/[^a-z0-9\s]/g, '').split(/\s+/).filter((w: string) => w.length > 2);
+        if (nameWords.length >= 2 && nameWords.every((w: string) => q.includes(w))) {
+          return true;
+        }
+
+        if (item.primary_city.toLowerCase().includes(q)) return true;
+        if (item.state.toLowerCase().includes(q)) return true;
+        if (item.alternate_locations && item.alternate_locations.some((loc: string) => loc.toLowerCase().includes(q))) return true;
+        if (item.cultural_vibe && item.cultural_vibe.toLowerCase().includes(q)) return true;
+        if (Array.isArray(item.aliases)) {
+          for (const a of item.aliases) {
+            const aLower = a.toLowerCase();
+            if (aLower.includes(q) || (aLower.length >= 4 && q.includes(aLower))) return true;
+          }
+        }
+        for (const term of aliasTerms) {
+          if (nameLower.includes(term) || idLower.includes(term)) return true;
+          if (q.includes(term)) return true;
+          if (Array.isArray(item.aliases) && item.aliases.some((a: string) => a.toLowerCase().includes(term))) return true;
+        }
+        const isMajorTerm = ['holi', 'diwali', 'navratri', 'dasara', 'dussehra'].includes(q);
+        if (!isMajorTerm && wordPattern.test(item.description)) {
+          return true;
+        }
+        return false;
+      });
+
+      // Relevance ranking
+      matches.sort((a, b) => {
+        const aName = a.name.toLowerCase();
+        const bName = b.name.toLowerCase();
+
+        const aDirect = aName === q || q.includes(aName) || aName.includes(q);
+        const bDirect = bName === q || q.includes(bName) || bName.includes(q);
+        if (aDirect && !bDirect) return -1;
+        if (!aDirect && bDirect) return 1;
+
+        const qWords = q.replace(/[^a-z0-9\s]/g, '').split(/\s+/).filter((w: string) => w.length > 2);
+        const aScore = qWords.filter((w: string) => aName.includes(w) || a.primary_city.toLowerCase().includes(w)).length;
+        const bScore = qWords.filter((w: string) => bName.includes(w) || b.primary_city.toLowerCase().includes(w)).length;
+        if (aScore !== bScore) return bScore - aScore;
+
+        return a.name.localeCompare(b.name);
+      });
+    }
+
+    if (cityFilter) {
+      matches = matches.filter((f) => {
+        const city = (f.primary_city || '').toLowerCase();
+        const alts = Array.isArray(f.alternate_locations)
+          ? f.alternate_locations.join(' ').toLowerCase()
+          : '';
+        return city.includes(cityFilter) || alts.includes(cityFilter);
+      });
+    }
+
+    if (stateFilter) {
+      matches = matches.filter((f) => {
+        const state = (f.state || '').toLowerCase();
+        const stateId = (f.state_id || '').toLowerCase();
+        return state.includes(stateFilter) || stateId.includes(stateFilter);
+      });
+    }
+
+    if (monthFilter) {
+      matches = matches.filter((f) => {
+        const m = (f.typical_month || '').toLowerCase();
+        const s = (f.typical_season || '').toLowerCase();
+        return m.includes(monthFilter) || s.includes(monthFilter);
+      });
+    }
   }
 
   const results = matches.slice(0, limit).map((f) => {

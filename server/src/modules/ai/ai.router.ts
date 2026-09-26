@@ -304,7 +304,7 @@ aiRouter.post('/chat', rateLimiter({ windowMs: 60000, max: 30 }), async (req: Re
 
   // 4. Resolve Festivals
   let matchedFestivals: any[] = [];
-  const isFestivalQuery = /(festival|festivals|utsav|mela|puja|celebration|fair|parv)/i.test(queryNorm);
+  const isFestivalQuery = /(festival|festivals|utsav|mela|puja|celebration|fair|parv|holi|diwali|deepawali|deepavali|navratri|dasara|dussehra|bihu|onam|pongal|chhath|baisakhi|losar)/i.test(queryNorm);
   if (matchedState) {
     matchedFestivals = await db.festivals.findByState(matchedState.name);
   } else if (matchedCity) {
