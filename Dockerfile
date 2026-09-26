@@ -7,7 +7,7 @@ WORKDIR /app
 
 # Install build dependencies
 COPY package*.json ./
-RUN npm ci
+RUN npm install
 
 # Copy source files and configuration
 COPY tsconfig*.json ./
@@ -22,6 +22,7 @@ COPY server/ ./server/
 COPY ai/ ./ai/
 COPY data/ ./data/
 COPY scripts/ ./scripts/
+COPY firebase-applet-config.json ./
 
 # Build Vite client static assets and bundle backend server
 RUN npm run build
@@ -38,7 +39,7 @@ ENV PORT=3000
 
 # Install production dependencies only
 COPY package*.json ./
-RUN npm ci --omit=dev && npm cache clean --force
+RUN npm install --omit=dev && npm cache clean --force
 
 # Copy compiled assets from builder
 COPY --from=builder /app/dist ./dist

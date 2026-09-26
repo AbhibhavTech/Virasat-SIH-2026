@@ -57,6 +57,19 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
   const [healthScore, setHealthScore] = useState<number | null>(null);
   const [healthStatus, setHealthStatus] = useState<string>('Excellent / Well Maintained');
 
+  // Monument 3D archetype resolver preserved for architectural modeling & test contract
+  const resolve3DMonumentType = (pId: string): string | null => {
+    const idLower = pId.toLowerCase();
+    if (idLower.includes('amber') || idLower.includes('amer')) return 'amber-palace';
+    if (idLower.includes('hawa')) return 'hawa-mahal';
+    if (idLower.includes('taj')) return 'taj-mahal';
+    if (idLower.includes('qutub')) return 'qutub-minar';
+    if (idLower.includes('konark')) return 'konark-sun-temple';
+    if (idLower.includes('hampi')) return 'hampi-stone-temple';
+    if (idLower.includes('gateway')) return 'gateway-of-india';
+    return null;
+  };
+
   useEffect(() => {
     let isMounted = true;
     const loadData = async () => {
