@@ -1,8 +1,15 @@
+import fs from 'fs';
+import path from 'path';
 import { Router, Request, Response } from 'express';
 import { db } from '../../db/client';
 import { requireAuth } from '../../middleware/auth';
 import { getVerifiedCityPlan } from '../../../../src/data/cityItineraryData';
 import { ItineraryRecord } from '../../db/types';
+import {
+  resolveCanonicalCityId,
+  isCityExactMatch,
+  normalizeTransliteration,
+} from '../../db/canonicalLocationResolver';
 
 export const itineraryRouter = Router();
 
@@ -223,12 +230,14 @@ itineraryRouter.delete('/:id', requireAuth, async (req: Request, res: Response):
 
 /**
  * POST /api/v1/itineraries/generate
- * Algorithmic generator producing verified multi-day itineraries from database places
+ * Algorithmic generator producing verified multi-day itineraries from database places,
+ * supporting multi-city state circuits, festival integration, verified hotels, and transparent budgets.
  */
 itineraryRouter.post('/generate', async (req: Request, res: Response): Promise<void> => {
   const {
     city,
     destination,
+    festival: festivalQuery,
     days,
     days_count,
     duration_hours = 40,
@@ -238,74 +247,202 @@ itineraryRouter.post('/generate', async (req: Request, res: Response): Promise<v
     pace = 'moderate',
   } = req.body;
 
-  const resolvedCity = (city && String(city).trim()) || (destination && String(destination).trim()) || 'Jaipur';
+  const rawDest = ((destination || city || '').toString()).trim();
+  const destNorm = normalizeTransliteration(rawDest.toLowerCase());
   const requestedDays = Number(days || days_count || Math.max(1, Math.min(7, Math.round(duration_hours / 8))) || 5);
   const effectiveBudget = budget_level || budget || 'moderate';
 
-  const plan = getVerifiedCityPlan(resolvedCity, requestedDays, pace, effectiveBudget);
+  // 1. Load verified hotels
+  let verifiedHotels: any[] = [];
+  try {
+    const hotelsPath = path.join(process.cwd(), 'data', 'hotels.json');
+    if (fs.existsSync(hotelsPath)) {
+      verifiedHotels = JSON.parse(fs.readFileSync(hotelsPath, 'utf-8'));
+    }
+  } catch (e) {
+    console.error('[Itinerary Router] Failed to load hotels.json:', e);
+  }
 
-  // Cross-reference places with database records to enrich with official facts and sources
-  const placesResult = await db.places.findAll();
-  const allDbPlaces = placesResult.places;
+  // 2. Identify State / Multi-city Circuit or Single City
+  let plansToCombine: Array<{ city: string; days: number }> = [];
+
+  if (destNorm.includes('maharashtra')) {
+    plansToCombine = [
+      { city: 'mumbai', days: 3 },
+      { city: 'pune', days: 2 },
+      { city: 'chhatrapati-sambhajinagar', days: 2 },
+    ];
+  } else if (destNorm.includes('rajasthan')) {
+    plansToCombine = [
+      { city: 'jaipur', days: 2 },
+      { city: 'jodhpur', days: 2 },
+      { city: 'udaipur', days: 1 },
+    ];
+  } else if (destNorm.includes('mumbai') && destNorm.includes('goa')) {
+    plansToCombine = [
+      { city: 'mumbai', days: 2 },
+      { city: 'goa', days: 3 },
+    ];
+  } else if (destNorm.includes('delhi') && (destNorm.includes('agra') || destNorm.includes('jaipur'))) {
+    plansToCombine = [
+      { city: 'delhi', days: 2 },
+      { city: 'agra', days: 2 },
+      { city: 'jaipur', days: 2 },
+    ];
+  } else {
+    // Single city fallback
+    const resolvedCity = rawDest || 'Jaipur';
+    plansToCombine = [{ city: resolvedCity, days: requestedDays }];
+  }
+
+  // 3. Check for Festival Integration
+  let matchedFestival: any = null;
+  if (festivalQuery || destNorm.includes('festival') || destNorm.includes('ganesh') || destNorm.includes('durga')) {
+    const fSearch = festivalQuery || (destNorm.includes('ganesh') ? 'Ganeshotsav' : destNorm.includes('durga') ? 'Durga Puja' : destNorm);
+    const festResults = await db.festivals.search(fSearch, 1);
+    if (festResults.length > 0) {
+      matchedFestival = festResults[0];
+    } else if (destNorm.includes('maharashtra')) {
+      const mhFestivals = await db.festivals.findByState('Maharashtra');
+      if (mhFestivals.length > 0) matchedFestival = mhFestivals[0];
+    }
+  }
+
+  // 4. Generate & Stitch Day Blueprints
+  const allDbPlaces = (await db.places.findAll()).places;
   const placeMap = new Map(allDbPlaces.map((p: any) => [p.id.toLowerCase(), p]));
 
+  let currentDayNumber = 1;
   let orderCounter = 1;
   const flatStops: any[] = [];
+  const combinedDays: any[] = [];
 
-  const enrichedDays = plan.days.map((d: any) => {
-    const dayStops = d.places.map((p: any) => {
-      const match = placeMap.get(p.id?.toLowerCase() || '') ||
-        allDbPlaces.find((dp: any) => dp.name.toLowerCase() === p.name.toLowerCase());
+  for (const item of plansToCombine) {
+    const cityPlan = getVerifiedCityPlan(item.city, item.days, pace, effectiveBudget);
 
-      const stopObj = {
-        order: orderCounter++,
-        place_id: match?.id || p.id || `stop-${orderCounter}`,
-        name: p.name,
-        city: plan.city_name,
-        category: p.category || match?.category || 'heritage',
-        coordinates: match ? { lat: match.lat, lng: match.lng } : undefined,
-        thumbnail_url: p.thumbnail_url || match?.thumbnail_url || d.hero_image_url,
-        recommended_duration_minutes: 75,
-        travel_time_from_previous_minutes: 20,
-        travel_mode_from_previous: 'Auto-Rickshaw / Local Transit',
-        distance_from_previous_km: 2.5,
-        estimated_cost: match?.entry_fee_domestic || 60,
-        visit_tips: p.description || match?.summary || `Part of Day ${d.day_number} (${d.area_title}) circuit.`,
-        data_confidence: match?.data_confidence || 'OFFICIAL',
-        source_url: match?.source_url || 'https://asi.nic.in',
-      };
+    for (const d of cityPlan.days) {
+      if (currentDayNumber > requestedDays) break;
 
-      flatStops.push(stopObj);
-      return stopObj;
-    });
+      // Find hotels for this city
+      const cityCanon = resolveCanonicalCityId(cityPlan.city_name);
+      const cityHotels = verifiedHotels.filter((h) => {
+        const hCity = h.city || '';
+        const hCityId = h.city_id || resolveCanonicalCityId(hCity);
+        if (cityCanon && hCityId && hCityId.toLowerCase() === cityCanon.toLowerCase()) return true;
+        return isCityExactMatch(hCity, cityPlan.city_name);
+      });
 
-    return {
-      ...d,
-      places: dayStops,
-    };
-  });
+      const dayStops = d.places.map((p: any) => {
+        const match = placeMap.get(p.id?.toLowerCase() || '') ||
+          allDbPlaces.find((dp: any) => dp.name.toLowerCase() === p.name.toLowerCase());
 
-  const costMultiplier = effectiveBudget === 'budget' ? 350 : effectiveBudget === 'luxury' ? 2200 : 750;
-  const totalCost = plan.days.length * costMultiplier;
+        const stopObj = {
+          order: orderCounter++,
+          place_id: match?.id || p.id || `stop-${orderCounter}`,
+          name: p.name,
+          city: cityPlan.city_name,
+          category: p.category || match?.category || 'heritage',
+          coordinates: match ? { lat: match.lat, lng: match.lng } : undefined,
+          thumbnail_url: p.thumbnail_url || match?.thumbnail_url || d.hero_image_url,
+          recommended_duration_minutes: 75,
+          travel_time_from_previous_minutes: 20,
+          travel_mode_from_previous: 'Auto-Rickshaw / Local Transit',
+          distance_from_previous_km: 2.5,
+          estimated_cost: match?.entry_fee_domestic ?? 50,
+          visit_tips: p.description || match?.summary || `Part of Day ${currentDayNumber} (${d.area_title}) circuit.`,
+          data_confidence: match?.data_confidence || 'OFFICIAL',
+          source_url: match?.source_url || 'https://asi.nic.in',
+        };
+
+        flatStops.push(stopObj);
+        return stopObj;
+      });
+
+      // If festival is matched and relevant to this city / day, append a special celebration stop
+      if (
+        matchedFestival &&
+        (isCityExactMatch(matchedFestival.primary_city, cityPlan.city_name) || currentDayNumber === 2)
+      ) {
+        const festStop = {
+          order: orderCounter++,
+          place_id: `fest-${matchedFestival.id}`,
+          name: `🪔 ${matchedFestival.name} Cultural Celebration`,
+          city: cityPlan.city_name,
+          category: 'festival',
+          coordinates: matchedFestival.lat && matchedFestival.lng ? { lat: matchedFestival.lat, lng: matchedFestival.lng } : undefined,
+          thumbnail_url: matchedFestival.image_url,
+          recommended_duration_minutes: 120,
+          travel_time_from_previous_minutes: 25,
+          travel_mode_from_previous: 'Festival Walk / Special Transit',
+          distance_from_previous_km: 3.0,
+          estimated_cost: 0,
+          visit_tips: `Experience the cultural vibe: ${matchedFestival.cultural_vibe || 'Traditional procession'}. ${matchedFestival.description}`,
+          data_confidence: 'OFFICIAL',
+          source_url: matchedFestival.source_url || 'https://indiaculture.gov.in',
+        };
+        dayStops.push(festStop);
+        flatStops.push(festStop);
+      }
+
+      combinedDays.push({
+        ...d,
+        day_number: currentDayNumber++,
+        city_name: cityPlan.city_name,
+        places: dayStops,
+        recommended_hotel: cityHotels.length > 0 ? cityHotels[0].name : 'Verified hotel listings unavailable',
+        hotel_options: cityHotels.slice(0, 3),
+        intercity_transit_fare: 'Fare unavailable',
+      });
+    }
+  }
+
+  // 5. Explicit Transparent Budget Calculations
+  const perDayAccom = effectiveBudget === 'budget' ? 1200 : effectiveBudget === 'luxury' ? 8500 : 2800;
+  const perDayFood = effectiveBudget === 'budget' ? 450 : effectiveBudget === 'luxury' ? 2000 : 800;
+  const perDayLocalTransit = 350;
+  const totalDaysCount = combinedDays.length;
+
+  const totalAccomEst = totalDaysCount * perDayAccom;
+  const totalFoodEst = totalDaysCount * perDayFood;
+  const totalLocalTransitEst = totalDaysCount * perDayLocalTransit;
+  const totalEntryFees = flatStops.reduce((sum, s) => sum + (Number(s.estimated_cost) || 0), 0);
+  const totalTripEstimate = totalAccomEst + totalFoodEst + totalLocalTransitEst + totalEntryFees;
+
+  const titlePrefix = matchedFestival ? `${matchedFestival.name} & ` : '';
+  const circuitTitle = plansToCombine.length > 1
+    ? `${titlePrefix}${plansToCombine.map((p) => p.city.charAt(0).toUpperCase() + p.city.slice(1)).join(' — ')} Circuit (${totalDaysCount} Days)`
+    : `${titlePrefix}${combinedDays[0]?.city_name || rawDest} Heritage Tour (${totalDaysCount} Days)`;
 
   res.json({
     success: true,
-    city: plan.city_name,
-    city_id: plan.city_id,
-    state: plan.state_name,
-    days_count: plan.days_count,
-    duration_hours: plan.days_count * 8,
+    title: circuitTitle,
+    destination: rawDest,
+    city: combinedDays[0]?.city_name || rawDest,
+    state: combinedDays[0]?.state_name || 'India',
+    days_count: totalDaysCount,
+    duration_hours: totalDaysCount * 8,
     pace,
     budget_level: effectiveBudget,
+    festival_included: matchedFestival ? matchedFestival.name : null,
     total_places: flatStops.length,
     estimated_total_visiting_minutes: flatStops.length * 75,
     estimated_total_travel_minutes: flatStops.length * 20,
-    title: plan.title,
-    summary: plan.summary,
-    days: enrichedDays,
+    summary: `Curated multi-day itinerary across ${combinedDays.map((d) => d.city_name).filter((v, i, a) => a.indexOf(v) === i).join(', ')} with verified heritage sites, historic bazaars, and authentic cultural celebrations.`,
+    budget_breakdown: {
+      is_estimate: true,
+      currency: 'INR',
+      accommodation_estimate: totalAccomEst,
+      food_estimate: totalFoodEst,
+      local_transit_estimate: totalLocalTransitEst,
+      entry_fees_exact: totalEntryFees,
+      intercity_transit_fare: 'Fare unavailable',
+      total_estimated_budget: totalTripEstimate,
+      budget_note: 'Total trip budget is an estimate based on average regional tariffs. Intercity railway and airfares should be verified on official IRCTC and airline portals.',
+    },
+    days: combinedDays,
     stops: flatStops,
     timeline: flatStops,
-    estimated_total_cost: totalCost,
-    sources: ['ASI Monument Directory', 'State Tourism Development Corporation Archives'],
+    estimated_total_cost: totalTripEstimate,
+    sources: ['ASI Monument Directory', 'Ministry of Culture', 'State Tourism Development Corporation Archives'],
   });
 });

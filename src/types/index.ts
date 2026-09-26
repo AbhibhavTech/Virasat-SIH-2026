@@ -730,8 +730,8 @@ export interface LocationSuggestion {
   id: string;
   name: string;
   code?: string;
-  type?: 'station' | 'heritage' | 'place' | 'city';
-  categoryType: 'station' | 'heritage' | 'place' | 'city';
+  type?: 'station' | 'heritage' | 'place' | 'city' | 'hotel' | 'festival';
+  categoryType: 'station' | 'heritage' | 'place' | 'city' | 'hotel' | 'festival';
   city?: string;
   state?: string;
   lat: number;
@@ -741,5 +741,34 @@ export interface LocationSuggestion {
   score?: number;
 }
 
-export * from './database';
+export interface FestivalItem {
+  id: string;
+  name: string;
+  slug?: string;
+  state: string;
+  state_id: string;
+  primary_city: string;
+  primary_city_id?: string;
+  alternate_locations?: string[];
+  description: string;
+  cultural_vibe: string;
+  typical_season: string;
+  typical_month?: string;
+  exact_date_start?: string;
+  exact_date_end?: string;
+  is_date_verified: boolean;
+  is_recurring: boolean;
+  associated_places?: string[];
+  lat?: number;
+  lng?: number;
+  image_url: string;
+  source_url: string;
+  source_name: string;
+  license?: string;
+  attribution_text?: string;
+  verification_status: 'verified' | 'unverified' | 'needs_review';
+  created_at?: string;
+  updated_at?: string;
+}
 
+export * from './database';

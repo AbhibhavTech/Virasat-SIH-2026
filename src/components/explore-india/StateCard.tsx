@@ -9,6 +9,8 @@ import {
   Compass,
   Calendar,
   Sparkles,
+  ChevronDown,
+  ChevronUp,
 } from 'lucide-react';
 import { StateHierarchyEntity } from '../../types/indiaHierarchy';
 import { getCuratedStateImage } from '../../data/stateCuratedImages';
@@ -45,6 +47,7 @@ export const StateCard: React.FC<StateCardProps> = ({
   };
 
   const towns = state.cities || [];
+  const [showAllTowns, setShowAllTowns] = useState(false);
   const topTowns = towns.slice(0, 3);
   const remainingCount = towns.length - topTowns.length;
 
@@ -157,27 +160,54 @@ export const StateCard: React.FC<StateCardProps> = ({
           </div>
 
           {towns.length > 0 ? (
-            <div className="flex flex-wrap items-center gap-1.5">
-              {topTowns.map((city) => (
-                <button
-                  key={city.id}
-                  onClick={() => onSelectTown(state.id, city.id)}
-                  className="px-2.5 py-1 rounded-lg bg-[#FAF8F5] hover:bg-[#FF671F] text-[#4A3E36] hover:text-white border border-[#EFE8DF] hover:border-[#FF671F] text-[11px] font-semibold transition cursor-pointer flex items-center gap-1 group/chip shadow-2xs"
-                  title={`Directly explore ${city.name}`}
-                >
-                  <span>{city.name}</span>
-                  <ArrowRight className="w-2.5 h-2.5 opacity-50 group-hover/chip:opacity-100 transition-opacity" />
-                </button>
-              ))}
+            <div className="space-y-2">
+              <div className={`flex flex-wrap items-center gap-1.5 ${showAllTowns ? 'max-h-48 overflow-y-auto pr-1' : ''}`}>
+                {(showAllTowns ? towns : topTowns).map((city) => (
+                  <button
+                    key={city.id}
+                    onClick={() => onSelectTown(state.id, city.id)}
+                    className="px-2.5 py-1 rounded-lg bg-[#FAF8F5] hover:bg-[#FF671F] text-[#4A3E36] hover:text-white border border-[#EFE8DF] hover:border-[#FF671F] text-[11px] font-semibold transition cursor-pointer flex items-center gap-1 group/chip shadow-2xs"
+                    title={`Directly explore ${city.name}`}
+                  >
+                    <span>{city.name}</span>
+                    <ArrowRight className="w-2.5 h-2.5 opacity-50 group-hover/chip:opacity-100 transition-opacity" />
+                  </button>
+                ))}
+              </div>
 
-              {remainingCount > 0 && (
-                <button
-                  onClick={() => onSelectState(state.id)}
-                  className="px-2 py-1 rounded-lg bg-stone-100 hover:bg-stone-200 text-stone-600 text-[11px] font-medium transition cursor-pointer"
-                  title={`View all ${towns.length} towns in ${state.name}`}
-                >
-                  +{remainingCount} more
-                </button>
+              {towns.length > 3 && (
+                <div className="flex items-center justify-between pt-0.5">
+                  <button
+                    type="button"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setShowAllTowns(!showAllTowns);
+                    }}
+                    className="text-[11px] font-bold text-[#FF671F] hover:text-[#E65100] flex items-center gap-1 cursor-pointer transition-colors"
+                  >
+                    {showAllTowns ? (
+                      <>
+                        <span>Show fewer cities</span>
+                        <ChevronUp className="w-3 h-3" />
+                      </>
+                    ) : (
+                      <>
+                        <span>Show all {towns.length} cities</span>
+                        <ChevronDown className="w-3 h-3" />
+                      </>
+                    )}
+                  </button>
+
+                  {!showAllTowns && (
+                    <button
+                      type="button"
+                      onClick={() => onSelectState(state.id)}
+                      className="text-[10px] text-stone-500 hover:text-stone-800 underline cursor-pointer"
+                    >
+                      View state page →
+                    </button>
+                  )}
+                </div>
               )}
             </div>
           ) : (

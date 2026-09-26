@@ -16,6 +16,7 @@ import { SearchPage } from '../pages/SearchPage';
 import { HeritageSitesPage } from '../pages/HeritageSitesPage';
 import { IndiaHierarchyPage } from '../pages/IndiaHierarchyPage';
 import { AdminDashboardPage } from '../pages/AdminDashboardPage';
+import { FestivalsPage } from '../pages/FestivalsPage';
 
 export function formatCityName(cityId: string): string {
   if (!cityId) return 'Mumbai';
@@ -51,6 +52,7 @@ export function formatCityName(cityId: string): string {
 export function getActiveTabFromPath(pathname: string): NavTab {
   if (pathname === '/' || pathname === '') return 'home';
   if (pathname.startsWith('/explore')) return 'india';
+  if (pathname.startsWith('/festivals')) return 'festivals';
   if (pathname.startsWith('/city')) return 'dashboard';
   if (pathname.startsWith('/heritage')) return 'heritage';
   if (pathname.startsWith('/itinerary')) return 'itinerary';
@@ -69,6 +71,8 @@ export function getPathForTab(tab: NavTab, city?: string): string {
   switch (tab) {
     case 'home':
       return '/';
+    case 'festivals':
+      return '/festivals';
     case 'india':
       return '/explore';
     case 'dashboard':
@@ -241,6 +245,16 @@ export const AppRoutes: React.FC<AppRoutesProps> = ({
             onSelectPlace={onSelectPlace}
             onNavigateTab={onNavigateTab}
             onSelectCity={onSelectCity}
+          />
+        }
+      />
+
+      <Route
+        path="/festivals"
+        element={
+          <FestivalsPage
+            onSelectPlace={onSelectPlace}
+            onNavigateTab={onNavigateTab}
           />
         }
       />

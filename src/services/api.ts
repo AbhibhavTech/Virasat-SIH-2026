@@ -38,6 +38,7 @@ import {
   LocationSuggestion,
   ReverseGeocodeResponse,
   UserLocationContext,
+  FestivalItem,
 } from '../types';
 import { safeLocalStorage } from '../utils/storage';
 
@@ -272,6 +273,8 @@ export const api = {
     let dLat = destLat;
     let dLng = destLng;
 
+    let qParamDate: string | undefined = undefined;
+
     if (typeof originOrObj === 'object' && originOrObj !== null) {
       orig = originOrObj.origin;
       dest = originOrObj.destination;
@@ -281,6 +284,7 @@ export const api = {
       if (originOrObj.orig_lng !== undefined) oLng = originOrObj.orig_lng;
       if (originOrObj.dest_lat !== undefined) dLat = originOrObj.dest_lat;
       if (originOrObj.dest_lng !== undefined) dLng = originOrObj.dest_lng;
+      if (originOrObj.date) qParamDate = originOrObj.date;
     } else {
       orig = originOrObj;
       dest = destination || 'gateway-of-india';
@@ -289,6 +293,7 @@ export const api = {
     const q = new URLSearchParams({ origin: orig, destination: dest });
     if (m) q.set('mode', m);
     if (c) q.set('city', c);
+    if (qParamDate) q.set('date', qParamDate);
     if (oLat !== undefined && !isNaN(oLat)) q.set('orig_lat', String(oLat));
     if (oLng !== undefined && !isNaN(oLng)) q.set('orig_lng', String(oLng));
     if (dLat !== undefined && !isNaN(dLat)) q.set('dest_lat', String(dLat));
@@ -926,5 +931,76 @@ export const api = {
 
   async getIndiaCity(cityId: string): Promise<any> {
     return await request<any>(`/india-hierarchy/city/${encodeURIComponent(cityId)}`);
+  },
+
+  // -------------------------------------------------------------
+  // Festivals (Flagship Cultural & Heritage Festivals)
+  // -------------------------------------------------------------
+  async getFestivals(params?: {
+    state?: string;
+    state_id?: string;
+    city?: string;
+    city_id?: string;
+    month?: string;
+    search?: string;
+    limit?: number;
+    offset?: number;
+  }): Promise<FestivalItem[]> {
+    try {
+      const q = new URLSearchParams();
+      if (params?.state) q.set('state', params.state);
+      if (params?.state_id) q.set('state_id', params.state_id);
+      if (params?.city) q.set('city', params.city);
+      if (params?.city_id) q.set('city_id', params.city_id);
+      if (params?.month) q.set('month', params.month);
+      if (params?.search) q.set('search', params.search);
+      if (params?.limit) q.set('limit', String(params.limit));
+      if (params?.offset) q.set('offset', String(params.offset));
+
+      const res = await request<any>(`/v1/festivals?${q.toString()}`);
+      return Array.isArray(res) ? res : (res.festivals || res.data || []);
+    } catch {
+      return [];
+    }
+  },
+
+  async getCurrentUpcomingFestivals(date = '2026-09-26'): Promise<{
+    current: FestivalItem[];
+    upcoming: FestivalItem[];
+    currentDate: string;
+  }> {
+    try {
+      const res = await request<any>(`/v1/festivals/current-upcoming?date=${encodeURIComponent(date)}`);
+      return {
+        current: res.current || res.data?.current || [],
+        upcoming: res.upcoming || res.data?.upcoming || [],
+        currentDate: res.currentDate || date,
+      };
+    } catch {
+      return { current: [], upcoming: [], currentDate: date };
+    }
+  },
+
+  async getFestivalById(id: string): Promise<FestivalItem | null> {
+    try {
+      const res = await request<any>(`/v1/festivals/${encodeURIComponent(id)}`);
+      return res.festival || res.data || null;
+    } catch {
+      return null;
+    }
+  },
+
+  async getHotels(params?: { city?: string; lat?: number; lng?: number; radius?: number }): Promise<any[]> {
+    try {
+      const q = new URLSearchParams();
+      if (params?.city) q.set('city', params.city);
+      if (params?.lat !== undefined) q.set('lat', String(params.lat));
+      if (params?.lng !== undefined) q.set('lng', String(params.lng));
+      if (params?.radius !== undefined) q.set('radius', String(params.radius));
+      const res = await request<any>(`/hotels/nearby?${q.toString()}`);
+      return res.data || [];
+    } catch {
+      return [];
+    }
   },
 };

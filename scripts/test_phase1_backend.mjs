@@ -18,7 +18,7 @@ async function runTests() {
 
   // Verify seed counts
   const states = await db.states.findAll();
-  const places = await db.places.findAll({ limit: 300 });
+  const places = await db.places.findAll({ limit: 300, includeAllStatuses: true });
   const transit = await db.transit.findAll();
 
   if (states.length === 0 || places.total === 0 || transit.length === 0) {

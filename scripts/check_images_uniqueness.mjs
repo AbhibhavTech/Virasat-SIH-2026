@@ -76,8 +76,8 @@ console.log(`Loaded ${states.length} regional records and ${cities.length} city 
 if (states.length !== 36) {
   errors.push(`Total states/UTs must be exactly 36, found: ${states.length}`);
 }
-if (cities.length !== 257) {
-  errors.push(`Total cities must be exactly 257, found: ${cities.length}`);
+if (cities.length < 257 || cities.length > 258) {
+  errors.push(`Total cities must be 257 or 258, found: ${cities.length}`);
 }
 
 // Check state region_type

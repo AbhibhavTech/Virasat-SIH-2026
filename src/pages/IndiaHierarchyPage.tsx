@@ -44,6 +44,7 @@ import { ExploreIndiaMap } from '../components/explore-india/ExploreIndiaMap';
 import { PlaceDetailDrawer } from '../components/explore-india/PlaceDetailDrawer';
 import { StateCard } from '../components/explore-india/StateCard';
 import { StateQuickLookModal } from '../components/explore-india/StateQuickLookModal';
+import { StateCitiesDirectory } from '../components/explore-india/StateCitiesDirectory';
 import { STATE_CURATED_IMAGES, getCuratedStateImage } from '../data/stateCuratedImages';
 import { OfficialImagePending } from '../components/common/OfficialImagePending';
 import { CitizenReportModal } from '../components/common/CitizenReportModal';
@@ -100,7 +101,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
   const [selectedCityId, setSelectedCityId] = useState<string>('jaipur');
 
   // Presentation toggles
-  const [viewMode, setViewMode] = useState<'grid' | 'map'>('grid');
+  const [viewMode, setViewMode] = useState<'grid' | 'cities' | 'map'>('grid');
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedRegion, setSelectedRegion] = useState('All');
   const [selectedTheme, setSelectedTheme] = useState('all');
@@ -925,6 +926,17 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                     <span>Regional Cards</span>
                   </button>
                   <button
+                    onClick={() => setViewMode('cities')}
+                    className={`px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 cursor-pointer ${
+                      viewMode === 'cities'
+                        ? 'bg-white text-[#FF671F] shadow-xs'
+                        : 'text-[#7A6E65] hover:text-[#0B192C]'
+                    }`}
+                  >
+                    <Building2 className="w-3.5 h-3.5" />
+                    <span>Cities by State</span>
+                  </button>
+                  <button
                     onClick={() => setViewMode('map')}
                     className={`px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 cursor-pointer ${
                       viewMode === 'map'
@@ -1064,7 +1076,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
               </div>
 
               {/* State vs UT vs Wishlist Toggle Tabs & Sort Selector */}
-              {activeLevel === 'india' && viewMode === 'grid' && (
+              {activeLevel === 'india' && (viewMode === 'grid' || viewMode === 'cities') && (
                 <div className="flex flex-wrap items-center justify-between gap-3 w-full lg:w-auto">
                   <div className="flex items-center p-1 rounded-2xl bg-[#F5EFEB] border border-[#E7DFD5] overflow-x-auto">
                     <button
@@ -1146,7 +1158,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </div>
 
             {/* Region Filter Pills (Applicable on Level 1) */}
-            {activeLevel === 'india' && viewMode === 'grid' && (
+            {activeLevel === 'india' && (viewMode === 'grid' || viewMode === 'cities') && (
               <div className="space-y-2 pt-1">
                 <div className="flex items-center gap-1.5 overflow-x-auto pb-1">
                   <span className="text-[10px] font-bold text-stone-400 uppercase tracking-wider mr-1 hidden md:inline shrink-0">
@@ -1235,6 +1247,15 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
               <ExploreIndiaMap
                 onSelectState={handleSelectState}
                 onSelectTown={handleSelectTown}
+              />
+            ) : viewMode === 'cities' ? (
+              <StateCitiesDirectory
+                states={filteredStates}
+                onSelectState={handleSelectState}
+                onSelectTown={handleSelectTown}
+                onQuickLook={(s) => setQuickLookState(s)}
+                savedStates={savedStates}
+                onToggleFavorite={handleToggleFavoriteState}
               />
             ) : (
               <div className="space-y-8">

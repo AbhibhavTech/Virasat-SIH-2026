@@ -123,6 +123,13 @@ async function runPhase3BTests() {
   const healthMonumentId = `monument-health-test-${Date.now()}`;
 
   // Register place in memory store for health testing
+  const existingTestPlaces = (await db.places.findAll({ cityId: 'jaipur', includeAllStatuses: true, limit: 100 })).places.filter(
+    (p) => p.id.startsWith('monument-health-test-') || p.name.toLowerCase() === 'test heritage site'
+  );
+  for (const p of existingTestPlaces) {
+    await db.places.delete(p.id);
+  }
+
   await db.places.create({
     id: healthMonumentId,
     name: 'Test Heritage Site',
@@ -230,6 +237,9 @@ async function runPhase3BTests() {
     userSpecificReports.every((r) => r.user_id === testUserId),
     'User-scoped reports strictly isolate queries to the authenticated citizen (IDOR protection)'
   );
+
+  // Cleanup test monument
+  await db.places.delete(healthMonumentId).catch(() => {});
 
   // Summary
   console.log('\n=============================================================');

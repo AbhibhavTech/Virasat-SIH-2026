@@ -11,7 +11,9 @@ import {
   UserRecord,
   computeSourceQuality,
   SourceQualityTier,
+  FestivalRecord,
 } from './types';
+import { resolveCanonicalCityId } from './canonicalLocationResolver';
 
 export interface SeedPayload {
   users: Record<string, UserRecord>;
@@ -22,6 +24,7 @@ export interface SeedPayload {
   place_sources: Record<string, PlaceSourceRecord>;
   place_facts: Record<string, PlaceFactRecord>;
   image_licenses: Record<string, ImageLicenseRecord>;
+  festivals: Record<string, FestivalRecord>;
 }
 
 export async function runDatabaseSeed(): Promise<SeedPayload> {
@@ -564,6 +567,124 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
   }
 
   // -------------------------------------------------------------
+  // 6b. Flagship Verified Cultural Markets
+  // -------------------------------------------------------------
+  const flagshipMarkets: PlaceRecord[] = [
+    {
+      id: 'crawford-market',
+      city_id: 'mumbai',
+      state_id: 'maharashtra',
+      name: 'Crawford Market (Mahatma Jyotiba Phule Mandai)',
+      category: 'market',
+      categories: ['market', 'heritage', 'shopping'],
+      summary: 'Historic Victorian-Gothic market building designed by William Emerson in 1869, famous for Lockwood Kipling friezes, spices, fresh produce, and heritage architectural arches.',
+      description: 'Historic Victorian-Gothic market building designed by William Emerson in 1869, famous for Lockwood Kipling friezes, spices, fresh produce, and heritage architectural arches.',
+      history: 'Completed in 1869 during the British Raj and renamed in honor of Mahatma Jyotirao Phule. Features bas-reliefs sculpted by Lockwood Kipling.',
+      lat: 18.9472,
+      lng: 72.8347,
+      latitude: 18.9472,
+      longitude: 72.8347,
+      visiting_hours: '09:00 AM - 08:00 PM',
+      entry_fee_domestic: 0,
+      entry_fee_intl: 0,
+      heritage_status: 'State Protected Heritage Market',
+      data_confidence: 'official',
+      verification_status: 'verified',
+      source_url: 'https://maharashtratourism.gov.in',
+      source_name: 'Maharashtra Tourism Development Corporation',
+      source_type: 'tier1_official',
+      rating: 4.6,
+      thumbnail_url: 'https://images.unsplash.com/photo-1596178065887-1198b6148b2b?w=800&auto=format&fit=crop&q=80',
+      created_at: now,
+    },
+    {
+      id: 'chandni-chowk',
+      city_id: 'delhi',
+      state_id: 'delhi',
+      name: 'Chandni Chowk Heritage Market',
+      category: 'market',
+      categories: ['market', 'heritage', 'shopping', 'culinary'],
+      summary: 'Historic 17th-century Mughal commercial avenue and heritage market designed by Princess Jahanara Begum, famous for street food, traditional spices, and historic havelis.',
+      description: 'Historic 17th-century Mughal commercial avenue and heritage market designed by Princess Jahanara Begum, famous for street food, traditional spices, and historic havelis.',
+      history: 'Built in 1650 CE by Mughal Emperor Shah Jahan and designed by his daughter Jahanara. Once divided by canals reflecting moonlight.',
+      lat: 28.6506,
+      lng: 77.2303,
+      latitude: 28.6506,
+      longitude: 77.2303,
+      visiting_hours: '10:00 AM - 08:00 PM',
+      entry_fee_domestic: 0,
+      entry_fee_intl: 0,
+      heritage_status: 'Historic Mughal Commercial Zone',
+      data_confidence: 'official',
+      verification_status: 'verified',
+      source_url: 'https://delhitourism.gov.in',
+      source_name: 'Delhi Tourism Development Corporation',
+      source_type: 'tier1_official',
+      rating: 4.7,
+      thumbnail_url: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop&q=80',
+      created_at: now,
+    },
+    {
+      id: 'johari-bazaar',
+      city_id: 'jaipur',
+      state_id: 'rajasthan',
+      name: 'Johari Bazaar',
+      category: 'market',
+      categories: ['market', 'heritage', 'shopping', 'crafts'],
+      summary: 'Traditional gem and jewelry bazaar situated within Jaipur\'s UNESCO World Heritage Walled City, renowned for Kundan, Meenakari, and traditional textiles.',
+      description: 'Traditional gem and jewelry bazaar situated within Jaipur\'s UNESCO World Heritage Walled City, renowned for Kundan, Meenakari, and traditional textiles.',
+      history: 'Established in 1727 CE by Maharaja Sawai Jai Singh II as part of the grid-planned pink walled city.',
+      lat: 26.9201,
+      lng: 75.8267,
+      latitude: 26.9201,
+      longitude: 75.8267,
+      visiting_hours: '10:30 AM - 08:30 PM',
+      entry_fee_domestic: 0,
+      entry_fee_intl: 0,
+      heritage_status: 'UNESCO Walled City Heritage Market',
+      data_confidence: 'official',
+      verification_status: 'verified',
+      source_url: 'https://tourism.rajasthan.gov.in',
+      source_name: 'Rajasthan Tourism',
+      source_type: 'tier1_official',
+      rating: 4.6,
+      thumbnail_url: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&auto=format&fit=crop&q=80',
+      created_at: now,
+    },
+    {
+      id: 'laad-bazaar',
+      city_id: 'hyderabad',
+      state_id: 'telangana',
+      name: 'Laad Bazaar (Choodi Bazaar)',
+      category: 'market',
+      categories: ['market', 'heritage', 'shopping', 'crafts'],
+      summary: 'Historic bazaar located adjacent to Charminar, renowned since the Qutb Shahi era for lacquer bangles, pearls, Kalamkari fabrics, and bridal jewelry.',
+      description: 'Historic bazaar located adjacent to Charminar, renowned since the Qutb Shahi era for lacquer bangles, pearls, Kalamkari fabrics, and bridal jewelry.',
+      history: 'Operating since the founding of Hyderabad by Muhammad Quli Qutb Shah in the late 16th century.',
+      lat: 17.3616,
+      lng: 78.4735,
+      latitude: 17.3616,
+      longitude: 78.4735,
+      visiting_hours: '11:00 AM - 10:00 PM',
+      entry_fee_domestic: 0,
+      entry_fee_intl: 0,
+      heritage_status: 'Historic Bazaar of Hyderabad',
+      data_confidence: 'official',
+      verification_status: 'verified',
+      source_url: 'https://tourism.telangana.gov.in',
+      source_name: 'Telangana Tourism',
+      source_type: 'tier1_official',
+      rating: 4.5,
+      thumbnail_url: 'https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=800&auto=format&fit=crop&q=80',
+      created_at: now,
+    },
+  ];
+
+  for (const mkt of flagshipMarkets) {
+    places[mkt.id] = mkt;
+  }
+
+  // -------------------------------------------------------------
   // 7. Railway Stations (Deduplicated)
   // -------------------------------------------------------------
   const stationsPath = path.join(rootDataDir, 'railway_stations.json');
@@ -577,6 +698,8 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
           if (seenCodes.has(code)) continue;
           seenCodes.add(code);
           const stnId = stn.id || code.toLowerCase();
+          const rawCity = stn.city_id || stn.city || '';
+          const resolvedCityId = resolveCanonicalCityId(rawCity);
           transit_nodes[stnId] = {
             id: stnId,
             type: 'railway',
@@ -584,7 +707,7 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
             code,
             lat: Number(stn.lat) || 0,
             lng: Number(stn.lng) || 0,
-            city_id: stn.city_id,
+            city_id: (resolvedCityId && cities[resolvedCityId]) ? resolvedCityId : (stn.city_id || resolvedCityId || undefined),
             is_junction: Boolean(stn.is_junction || stn.isJunction),
             created_at: now,
           };
@@ -638,6 +761,13 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
     places['amber-fort'] = amberFort;
     delete places['jaipur-amber-palace'];
     delete places['amber-palace'];
+
+    // Clean up duplicate/orphaned facts referencing deleted place IDs
+    for (const [factId, fact] of Object.entries(place_facts)) {
+      if (fact.place_id === 'amber-palace' || fact.place_id === 'jaipur-amber-palace') {
+        delete place_facts[factId];
+      }
+    }
   }
 
   // FIX 4: Deduplicate Basilica of Bom Jesus in Goa
@@ -664,10 +794,24 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
     basilica.categories = Array.from(cats);
     places['basilica-of-bom-jesus'] = basilica;
     delete places['basilica-bom-jesus-goa'];
+
+    // Clean up duplicate/orphaned facts referencing deleted place IDs
+    for (const [factId, fact] of Object.entries(place_facts)) {
+      if (fact.place_id === 'basilica-bom-jesus-goa') {
+        delete place_facts[factId];
+      }
+    }
   }
 
   // Post-processing sanity pass across all places
   for (const p of Object.values(places)) {
+    // Reconcile orphaned city references using canonical resolver
+    if (p.city_id) {
+      const canonicalCity = resolveCanonicalCityId(p.city_id);
+      if (canonicalCity && cities[canonicalCity]) {
+        p.city_id = canonicalCity;
+      }
+    }
     // 1. Assign UNESCO deep link if known
     if (VERIFIED_UNESCO_DEEP_LINKS[p.id]) {
       p.source_url = VERIFIED_UNESCO_DEEP_LINKS[p.id];
@@ -734,7 +878,32 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
     }];
   }
 
-  console.log(`[DB Seed] Seeding complete: ${Object.keys(states).length} states, ${Object.keys(cities).length} cities, ${Object.keys(places).length} places (${Object.values(places).filter(p => p.data_confidence === 'official').length} verified), ${Object.keys(place_facts).length} granular facts, ${Object.keys(transit_nodes).length} transit nodes.`);
+  // -------------------------------------------------------------
+  // 9. Festivals (Flagship National & Cultural Festivals)
+  // -------------------------------------------------------------
+  const festivals: Record<string, FestivalRecord> = {};
+  const festivalsPath = path.join(rootDataDir, 'festivals.json');
+  if (fs.existsSync(festivalsPath)) {
+    try {
+      const festivalList = JSON.parse(fs.readFileSync(festivalsPath, 'utf-8'));
+      if (Array.isArray(festivalList)) {
+        for (const f of festivalList) {
+          const rawCity = f.primary_city_id || f.primary_city || '';
+          const resolvedCityId = resolveCanonicalCityId(rawCity);
+          festivals[f.id] = {
+            ...f,
+            primary_city_id: (resolvedCityId && cities[resolvedCityId]) ? resolvedCityId : (f.primary_city_id || resolvedCityId || undefined),
+            created_at: f.created_at || now,
+            updated_at: f.updated_at || now,
+          };
+        }
+      }
+    } catch (e) {
+      console.error('[DB Seed] Error reading festivals.json:', e);
+    }
+  }
+
+  console.log(`[DB Seed] Seeding complete: ${Object.keys(states).length} states, ${Object.keys(cities).length} cities, ${Object.keys(places).length} places (${Object.values(places).filter(p => p.data_confidence === 'official').length} verified), ${Object.keys(place_facts).length} granular facts, ${Object.keys(transit_nodes).length} transit nodes, ${Object.keys(festivals).length} festivals.`);
 
   return {
     users,
@@ -745,5 +914,6 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
     place_sources,
     place_facts,
     image_licenses,
+    festivals,
   };
 }

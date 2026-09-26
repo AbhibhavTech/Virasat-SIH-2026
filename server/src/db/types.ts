@@ -429,3 +429,32 @@ export interface ImageLicenseRecord {
   created_at: string;
 }
 
+export interface FestivalRecord {
+  id: string;
+  name: string;
+  slug?: string;
+  state: string;
+  state_id: string;
+  primary_city: string;
+  primary_city_id?: string;
+  alternate_locations?: string[];
+  description: string;
+  cultural_vibe: string;
+  typical_season: string;
+  typical_month?: string;
+  exact_date_start?: string;
+  exact_date_end?: string;
+  is_date_verified: boolean;
+  is_recurring: boolean;
+  associated_places?: string[];
+  lat?: number;
+  lng?: number;
+  image_url: string;
+  source_url: string;
+  source_name: string;
+  license?: string;
+  attribution_text?: string;
+  verification_status: 'verified' | 'unverified' | 'needs_review';
+  created_at: string;
+  updated_at: string;
+}

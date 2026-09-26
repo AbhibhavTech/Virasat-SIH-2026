@@ -269,14 +269,14 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
     return parseLatLng(topLat, topLng);
   };
 
-  // In-Map Route State
+  // In-Map Route State - Empty by default (no hardcoded CSMT or Mumbai)
   const [isRoutingOpen, setIsRoutingOpen] = useState(Boolean(initialOrigin || initialDestination));
-  const [routeOrigin, setRouteOrigin] = useState<string>(initialOrigin || 'csmt');
-  const [routeOriginName, setRouteOriginName] = useState<string>('CSMT Railway Station');
-  const [routeOriginCoords, setRouteOriginCoords] = useState<{ lat: number; lng: number } | null>({ lat: 18.94, lng: 72.8353 });
-  const [routeDestination, setRouteDestination] = useState<string>(initialDestination || 'gateway-of-india');
-  const [routeDestName, setRouteDestName] = useState<string>('Gateway of India');
-  const [routeDestCoords, setRouteDestCoords] = useState<{ lat: number; lng: number } | null>({ lat: 18.922, lng: 72.8347 });
+  const [routeOrigin, setRouteOrigin] = useState<string>(initialOrigin || '');
+  const [routeOriginName, setRouteOriginName] = useState<string>(initialOrigin ? 'Origin Location' : '');
+  const [routeOriginCoords, setRouteOriginCoords] = useState<{ lat: number; lng: number } | null>(null);
+  const [routeDestination, setRouteDestination] = useState<string>(initialDestination || '');
+  const [routeDestName, setRouteDestName] = useState<string>(initialDestination ? 'Destination' : '');
+  const [routeDestCoords, setRouteDestCoords] = useState<{ lat: number; lng: number } | null>(null);
   const [selectedMode, setSelectedMode] = useState<MapTransportMode>('DRIVE');
   const [activeRoute, setActiveRoute] = useState<RouteResponse | null>(null);
   const [isCalculatingRoute, setIsCalculatingRoute] = useState(false);
@@ -1315,6 +1315,10 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
           ? '#ea580c'
           : loc.categoryType === 'city'
           ? '#6366f1'
+          : loc.categoryType === 'hotel'
+          ? '#8b5cf6'
+          : loc.categoryType === 'festival'
+          ? '#d97706'
           : '#10b981';
       const iconEmoji =
         loc.categoryType === 'station'
@@ -1323,6 +1327,10 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
           ? '🏛️'
           : loc.categoryType === 'city'
           ? '🏙️'
+          : loc.categoryType === 'hotel'
+          ? '🏨'
+          : loc.categoryType === 'festival'
+          ? '🪔'
           : '📍';
 
       const iconHtml = `
@@ -1638,7 +1646,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
                   setIsSearchDropdownOpen(true);
                 }
               }}
-              placeholder="Search station, city, monument (e.g. srinagar to csmt)..."
+              placeholder="Search cities, monuments, hotels, markets, festivals..."
               className="w-full pl-10 pr-9 py-2.5 rounded-2xl bg-transparent text-xs text-slate-800 font-medium placeholder-slate-400 focus:outline-none"
             />
             {isSearching && (
@@ -1914,7 +1922,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
                       onFocus={() => {
                         if (originSuggestions.length > 0) setIsOriginSuggestOpen(true);
                       }}
-                      placeholder="Type station (e.g. Srinagar, CSMT), city, heritage..."
+                      placeholder="Type starting city, station, hotel, or monument..."
                       className="w-full min-h-[44px] px-3.5 py-2.5 text-xs sm:text-sm rounded-xl bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-emerald-500 focus:bg-white transition"
                     />
 
@@ -1999,7 +2007,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
                       onFocus={() => {
                         if (destSuggestions.length > 0) setIsDestSuggestOpen(true);
                       }}
-                      placeholder="Type destination station, city, tourist place..."
+                      placeholder="Type destination city, station, hotel, or landmark..."
                       className="w-full min-h-[44px] px-3.5 py-2.5 text-xs sm:text-sm rounded-xl bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-emerald-500 focus:bg-white transition"
                     />
 

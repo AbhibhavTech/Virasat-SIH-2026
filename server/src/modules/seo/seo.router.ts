@@ -49,8 +49,8 @@ export async function buildSitemapXml(): Promise<string> {
     { path: '/search', priority: '0.8', changefreq: 'daily' },
   ];
 
-  // Fetch verified destination places from database
-  const placesResult = await db.places.findAll({ limit: 1000 });
+  // Fetch destination places from database
+  const placesResult = await db.places.findAll({ limit: 2000, includeAllStatuses: true });
   const places = placesResult.places || [];
   const verifiedCities = new Set<string>();
 
