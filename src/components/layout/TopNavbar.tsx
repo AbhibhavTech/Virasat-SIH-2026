@@ -284,17 +284,36 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
           </nav>
 
           {/* Right Action Tools: City Switcher, Search, Saved, Auth */}
-          <div className="flex items-center gap-1 sm:gap-1.5 shrink-0">
-            {/* Quick Mobile Search Button */}
+          <div className="flex items-center gap-1 sm:gap-2 shrink-0">
+            {/* Universal Search Bar Trigger */}
             {onOpenSearch && (
-              <button
-                onClick={onOpenSearch}
-                className="md:hidden p-1.5 sm:p-2 rounded-full text-stone-700 hover:text-stone-900 hover:bg-stone-100 transition min-h-[32px] min-w-[32px] sm:min-h-[40px] sm:min-w-[40px] flex items-center justify-center shrink-0 focus-visible:ring-2 focus-visible:ring-amber-600 focus:outline-none cursor-pointer"
-                title="Search destinations & monuments"
-                aria-label="Search"
-              >
-                <Search className="w-4 h-4 text-stone-700" aria-hidden="true" />
-              </button>
+              <>
+                {/* Desktop Search Trigger */}
+                <div className="hidden md:flex items-center">
+                  <button
+                    type="button"
+                    onClick={onOpenSearch}
+                    className="flex items-center gap-2 pl-3 pr-3.5 py-1.5 rounded-full bg-stone-100 hover:bg-stone-200/80 border border-stone-200 text-stone-600 hover:text-stone-900 text-xs transition cursor-pointer shadow-2xs focus-visible:ring-2 focus-visible:ring-amber-600 focus:outline-none w-36 lg:w-48"
+                    title="Search destinations & monuments"
+                    aria-label="Search destinations & monuments"
+                  >
+                    <Search className="w-3.5 h-3.5 text-stone-500 shrink-0" aria-hidden="true" />
+                    <span className="truncate text-[11px] text-stone-500 font-medium">Search heritage...</span>
+                    <span className="ml-auto text-[9px] font-mono text-stone-400 bg-white px-1.5 py-0.5 rounded border border-stone-200 hidden lg:inline">⌘K</span>
+                  </button>
+                </div>
+
+                {/* Mobile Search Button */}
+                <button
+                  type="button"
+                  onClick={onOpenSearch}
+                  className="md:hidden p-1.5 sm:p-2 rounded-full text-stone-700 hover:text-stone-900 hover:bg-stone-100 transition min-h-[32px] min-w-[32px] sm:min-h-[40px] sm:min-w-[40px] flex items-center justify-center shrink-0 focus-visible:ring-2 focus-visible:ring-amber-600 focus:outline-none cursor-pointer"
+                  title="Search destinations & monuments"
+                  aria-label="Search"
+                >
+                  <Search className="w-4 h-4 text-stone-700" aria-hidden="true" />
+                </button>
+              </>
             )}
 
             {/* City Selector Pill */}
@@ -354,9 +373,13 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
             <div className="relative shrink-0" ref={profileDropdownRef}>
               <button
                 onClick={() => {
+                  setMoreDropdownOpen(false);
+                  setCityDropdownOpen(false);
+                  setMobileMenuOpen(false);
                   if (isAuthenticated) {
                     setProfileDropdownOpen(!profileDropdownOpen);
                   } else if (onOpenAuthModal) {
+                    setProfileDropdownOpen(false);
                     onOpenAuthModal();
                   } else {
                     handleNav('profile');

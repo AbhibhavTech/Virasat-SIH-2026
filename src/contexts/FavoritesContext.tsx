@@ -26,12 +26,16 @@ export const FavoritesProvider: React.FC<{ children: React.ReactNode }> = ({ chi
       setLoading(true);
       try {
         if (user?.id) {
-          // Fetch from Firestore
-          const fsFavs = await getFavoritesFromFirestore(user.id);
-          if (fsFavs && fsFavs.length > 0) {
-            setFavorites(fsFavs);
-            setLoading(false);
-            return;
+          // Attempt to fetch from Firestore if authorized
+          try {
+            const fsFavs = await getFavoritesFromFirestore(user.id);
+            if (fsFavs && fsFavs.length > 0) {
+              setFavorites(fsFavs);
+              setLoading(false);
+              return;
+            }
+          } catch (fsErr) {
+            console.info('Firestore favorites unavailable, falling back to API:', fsErr);
           }
         }
         // Fallback or guest favorites from API

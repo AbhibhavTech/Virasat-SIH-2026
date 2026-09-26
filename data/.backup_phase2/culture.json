@@ -10,16 +10,8 @@
     "cultural_significance": "Traditional confectionery perfected by royal confectioners in Tajganj; holds GI-recognition advocacy.",
     "provenance": "OFFICIAL",
     "thumbnail_url": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=800&auto=format&fit=crop&q=80",
-    "best_locations": [
-      "Noori Gate, Tajganj, Sadar Bazaar"
-    ],
-    "tags": [
-      "GI Craft",
-      "Mughal Heritage",
-      "Vegetarian Sweet",
-      "Street Food"
-    ],
-    "city_id": "agra"
+    "best_locations": ["Noori Gate, Tajganj, Sadar Bazaar"],
+    "tags": ["GI Craft", "Mughal Heritage", "Vegetarian Sweet", "Street Food"]
   },
   {
     "id": "cul-jaipur-blue-pottery",
@@ -32,18 +24,8 @@
     "cultural_significance": "Geographical Indication (GI) tagged traditional art form revived under Maharaja Sawai Ram Singh II in the 19th century.",
     "provenance": "OFFICIAL",
     "thumbnail_url": "https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=800&auto=format&fit=crop&q=80",
-    "best_locations": [
-      "Kot Jewar",
-      "Sanganer",
-      "Amer Craft Village"
-    ],
-    "tags": [
-      "GI Tagged",
-      "Royal Craft",
-      "Eco-friendly",
-      "Workshop Available"
-    ],
-    "city_id": "jaipur"
+    "best_locations": ["Kot Jewar", "Sanganer", "Amer Craft Village"],
+    "tags": ["GI Tagged", "Royal Craft", "Eco-friendly", "Workshop Available"]
   },
   {
     "id": "cul-mumbai-street-food",
@@ -56,18 +38,8 @@
     "cultural_significance": "Pioneered in 1966 outside Dadar railway station, representing the working-class spirit and community resilience of Mumbai.",
     "provenance": "VERIFIED_SECONDARY",
     "thumbnail_url": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800&auto=format&fit=crop&q=80",
-    "best_locations": [
-      "Girgaon Chowpatty",
-      "Dadar Station East",
-      "Fort Heritage Precinct"
-    ],
-    "tags": [
-      "Iconic Street Food",
-      "Culinary Heritage",
-      "Affordable",
-      "Vegetarian & Seafood"
-    ],
-    "city_id": "mumbai"
+    "best_locations": ["Girgaon Chowpatty", "Dadar Station East", "Fort Heritage Precinct"],
+    "tags": ["Iconic Street Food", "Culinary Heritage", "Affordable", "Vegetarian & Seafood"]
   },
   {
     "id": "cul-varanasi-banarasi-silk",
@@ -80,18 +52,8 @@
     "cultural_significance": "UNESCO and GI-protected heritage craft practiced by master weavers (karigars) for over six centuries along the ghats.",
     "provenance": "OFFICIAL",
     "thumbnail_url": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=800&auto=format&fit=crop&q=80",
-    "best_locations": [
-      "Madanpura",
-      "Peeli Kothi",
-      "Chowk Bunkar Colony"
-    ],
-    "tags": [
-      "GI Tagged",
-      "Master Artisans",
-      "Handloom",
-      "Sustainable Luxury"
-    ],
-    "city_id": "varanasi"
+    "best_locations": ["Madanpura", "Peeli Kothi", "Chowk Bunkar Colony"],
+    "tags": ["GI Tagged", "Master Artisans", "Handloom", "Sustainable Luxury"]
   },
   {
     "id": "cul-kochi-kathakali",
@@ -104,42 +66,22 @@
     "cultural_significance": "Recognized intangible cultural heritage rooted in temple traditions and centuries of international maritime exchange.",
     "provenance": "OFFICIAL",
     "thumbnail_url": "https://images.unsplash.com/photo-1588099768531-a72d4a198538?w=800&auto=format&fit=crop&q=80",
-    "best_locations": [
-      "Fort Kochi",
-      "Mattancherry Jew Town",
-      "Kerala Kathakali Centre"
-    ],
-    "tags": [
-      "Living Heritage",
-      "Classical Arts",
-      "Spice Trade",
-      "Evening Performance"
-    ],
-    "city_id": "kochi"
+    "best_locations": ["Fort Kochi", "Mattancherry Jew Town", "Kerala Kathakali Centre"],
+    "tags": ["Living Heritage", "Classical Arts", "Spice Trade", "Evening Performance"]
   },
   {
     "id": "cul-delhi-chandni-chowk",
     "name": "Old Delhi Culinary & Zardozi Heritage",
     "category": "Food & Traditional Craft",
-    "city": "Delhi",
+    "city": "New Delhi",
     "state": "Delhi (NCT)",
     "region": "Northern India",
     "description": "Shahjahanabad's historic culinary lanes (Paranthe Wali Gali, Karim's) intertwined with Kinari Bazaar's silver tinsel and 300-year-old heavy gold zardozi embroidery ateliers.",
     "cultural_significance": "Historical street market designed in 1650 by Princess Jahanara Begum, reflecting living Mughal and Delhi Sultanate traditions.",
     "provenance": "OFFICIAL",
     "thumbnail_url": "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=800&auto=format&fit=crop&q=80",
-    "best_locations": [
-      "Chandni Chowk",
-      "Dariba Kalan",
-      "Khari Baoli Spice Market"
-    ],
-    "tags": [
-      "Mughal Era",
-      "Spice Capital",
-      "Heritage Walk",
-      "Street Food"
-    ],
-    "city_id": "delhi"
+    "best_locations": ["Chandni Chowk", "Dariba Kalan", "Khari Baoli Spice Market"],
+    "tags": ["Mughal Era", "Spice Capital", "Heritage Walk", "Street Food"]
   },
   {
     "id": "cul-kolkata-durga-puja",
@@ -152,18 +94,8 @@
     "cultural_significance": "UNESCO inscribed festival in 2021 as a public celebration of art, religion, social harmony, and artisan craftsmanship.",
     "provenance": "OFFICIAL",
     "thumbnail_url": "https://images.unsplash.com/photo-1603228254119-e6a4d095dc59?w=800&auto=format&fit=crop&q=80",
-    "best_locations": [
-      "Kumartuli Potter Colony",
-      "College Street",
-      "Shyambazar"
-    ],
-    "tags": [
-      "UNESCO Intangible Heritage",
-      "Clay Sculptors",
-      "Cultural Fest",
-      "GI Confectionery"
-    ],
-    "city_id": "kolkata"
+    "best_locations": ["Kumartuli Potter Colony", "College Street", "Shyambazar"],
+    "tags": ["UNESCO Intangible Heritage", "Clay Sculptors", "Cultural Fest", "GI Confectionery"]
   },
   {
     "id": "cul-chennai-carnatic",
@@ -176,17 +108,7 @@
     "cultural_significance": "Over a millennium of temple arts, literary Sangam heritage, and south Indian classical music preservation.",
     "provenance": "OFFICIAL",
     "thumbnail_url": "https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80",
-    "best_locations": [
-      "Mylapore Kapaleeshwarar Precinct",
-      "The Music Academy",
-      "Kalakshetra Foundation"
-    ],
-    "tags": [
-      "UNESCO Creative City",
-      "Classical Music",
-      "GI Silk",
-      "Temple Traditions"
-    ],
-    "city_id": "chennai"
+    "best_locations": ["Mylapore Kapaleeshwarar Precinct", "The Music Academy", "Kalakshetra Foundation"],
+    "tags": ["UNESCO Creative City", "Classical Music", "GI Silk", "Temple Traditions"]
   }
 ]

@@ -44,13 +44,69 @@ function getHotels() {
   return cachedHotels;
 }
 
+function matchesCity(targetCityName: string, targetCityIdOrSlug: string | undefined, queryCity: string): boolean {
+  if (!queryCity) return true;
+  const q = queryCity.trim().toLowerCase();
+  if (!q) return true;
+
+  const targetName = (targetCityName || '').trim().toLowerCase();
+  const targetSlug = (targetCityIdOrSlug || '').trim().toLowerCase();
+
+  // 1. Exact match against name or slug/id
+  if (targetName === q || targetSlug === q) return true;
+
+  // 2. Normalize hyphens and common punctuation
+  const cleanQ = q.replace(/[^a-z0-9]/g, '');
+  const cleanTargetName = targetName.replace(/[^a-z0-9]/g, '');
+  const cleanTargetSlug = targetSlug.replace(/[^a-z0-9]/g, '');
+  if (cleanTargetName === cleanQ || cleanTargetSlug === cleanQ) return true;
+
+  // 3. Known historical/administrative aliases
+  const aliases: Record<string, string[]> = {
+    'delhi': ['new delhi', 'nct of delhi', 'old delhi'],
+    'new delhi': ['delhi', 'nct of delhi', 'old delhi'],
+    'mumbai': ['bombay'],
+    'bombay': ['mumbai'],
+    'kolkata': ['calcutta'],
+    'calcutta': ['kolkata'],
+    'chennai': ['madras'],
+    'madras': ['chennai'],
+    'bengaluru': ['bangalore'],
+    'bangalore': ['bengaluru'],
+    'varanasi': ['banaras', 'kashi'],
+    'banaras': ['varanasi', 'kashi'],
+    'kashi': ['varanasi', 'banaras'],
+    'prayagraj': ['allahabad'],
+    'allahabad': ['prayagraj'],
+    'puducherry': ['pondicherry'],
+    'pondicherry': ['puducherry'],
+    'kochi': ['cochin', 'ernakulam'],
+    'cochin': ['kochi', 'ernakulam'],
+  };
+
+  const qAliases = aliases[q];
+  if (qAliases && (qAliases.includes(targetName) || qAliases.includes(targetSlug))) return true;
+
+  const targetAliases = aliases[targetName];
+  if (targetAliases && targetAliases.includes(q)) return true;
+
+  // 4. Word boundary match only if query has multiple words or full word token match
+  // E.g. "Jaipur City" matches "Jaipur", "New Delhi" matches "Delhi"
+  // BUT "Patna" must NEVER match "Visakhapatnam"!
+  const wordsTarget = targetName.split(/[\s,/-]+/);
+  if (wordsTarget.includes(q)) return true;
+
+  return false;
+}
+
 export async function execute(args: {
   city?: string;
   place_id?: string;
   category?: string;
   limit?: number;
 }): Promise<any> {
-  const cityFilter = (args.city || '').trim().toLowerCase();
+  const rawCity = (args.city || '').trim();
+  const cityFilter = rawCity.toLowerCase();
   const placeIdFilter = (args.place_id || '').trim().toLowerCase();
   const catFilter = (args.category || '').trim().toLowerCase();
   const limit = Math.min(Math.max(args.limit || 5, 1), 15);
@@ -59,7 +115,7 @@ export async function execute(args: {
   const baseHotels = getHotels() || [];
 
   for (const h of baseHotels) {
-    if (cityFilter && !h.city.toLowerCase().includes(cityFilter)) continue;
+    if (cityFilter && !matchesCity(h.city, h.city_id || h.id, cityFilter)) continue;
     if (catFilter && !h.category.toLowerCase().includes(catFilter)) continue;
     if (placeIdFilter && h.nearby_heritage && !h.nearby_heritage.includes(placeIdFilter)) continue;
 
@@ -81,7 +137,7 @@ export async function execute(args: {
   // If place proximity didn't fill limit, add other hotels from same city
   if (matched.length < limit && cityFilter) {
     for (const h of baseHotels) {
-      if (!h.city.toLowerCase().includes(cityFilter)) continue;
+      if (!matchesCity(h.city, h.city_id || h.id, cityFilter)) continue;
       if (catFilter && !h.category.toLowerCase().includes(catFilter)) continue;
       if (matched.some((m) => m.id === h.id)) continue;
 
@@ -108,7 +164,7 @@ export async function execute(args: {
         const dbData = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
         for (const s of dbData.states || []) {
           for (const c of s.cities || []) {
-            if (cityFilter && !c.name.toLowerCase().includes(cityFilter)) continue;
+            if (cityFilter && !matchesCity(c.name, c.id || c.slug, cityFilter)) continue;
             const places = [
               ...(c.heritage || []),
               ...(c.monuments || []),
@@ -121,6 +177,7 @@ export async function execute(args: {
               if (placeIdFilter && p.id.toLowerCase() !== placeIdFilter) continue;
               if (p.hotels && Array.isArray(p.hotels)) {
                 for (const ph of p.hotels) {
+                  if (matched.some(m => m.name.toLowerCase() === ph.name.toLowerCase())) continue;
                   matched.push({
                     id: ph.id || ph.name,
                     name: ph.name,

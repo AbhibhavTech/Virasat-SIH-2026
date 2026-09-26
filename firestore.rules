@@ -72,7 +72,7 @@ service cloud.firestore {
       allow get: if isOwner(userId) || isAdmin();
       allow list: if isAdmin();
 
-      allow create: if isOwner(userId) &&
+      allow create: if (isOwner(userId) || isAdmin()) &&
                       isValidId(userId) &&
                       isValidUserProfile(incoming()) &&
                       incoming().id == userId &&
@@ -92,7 +92,7 @@ service cloud.firestore {
         allow get: if isOwner(userId) || isAdmin();
         allow list: if isOwner(userId) || isAdmin();
 
-        allow create: if isOwner(userId) &&
+        allow create: if (isOwner(userId) || isAdmin()) &&
                         isValidId(userId) &&
                         isValidId(tripId) &&
                         isValidTripItem(incoming()) &&
@@ -115,7 +115,7 @@ service cloud.firestore {
         allow get: if isOwner(userId) || isAdmin();
         allow list: if isOwner(userId) || isAdmin();
 
-        allow create: if isOwner(userId) &&
+        allow create: if (isOwner(userId) || isAdmin()) &&
                         isValidId(userId) &&
                         isValidId(favoriteId) &&
                         isValidFavoriteItem(incoming()) &&

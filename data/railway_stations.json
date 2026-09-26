@@ -12,7 +12,8 @@
       "Harbour Line",
       "Express Hub"
     ],
-    "is_junction": true
+    "is_junction": true,
+    "city_id": "mumbai"
   },
   {
     "id": "churchgate",
@@ -25,7 +26,8 @@
     "lines": [
       "Western Line Terminal"
     ],
-    "is_junction": false
+    "is_junction": false,
+    "city_id": "mumbai"
   },
   {
     "id": "marine-lines",
@@ -38,7 +40,8 @@
     "lines": [
       "Western Line"
     ],
-    "is_junction": false
+    "is_junction": false,
+    "city_id": "mumbai"
   },
   {
     "id": "charni-road",
@@ -51,7 +54,8 @@
     "lines": [
       "Western Line"
     ],
-    "is_junction": false
+    "is_junction": false,
+    "city_id": "mumbai"
   },
   {
     "id": "mumbai-central",
@@ -65,7 +69,8 @@
       "Western Line",
       "National Express"
     ],
-    "is_junction": true
+    "is_junction": true,
+    "city_id": "mumbai"
   },
   {
     "id": "dadar",
@@ -79,7 +84,8 @@
       "Western Line",
       "Central Line Interchange"
     ],
-    "is_junction": true
+    "is_junction": true,
+    "city_id": "mumbai"
   },
   {
     "id": "bandra",
@@ -93,7 +99,8 @@
       "Western Line",
       "Express"
     ],
-    "is_junction": true
+    "is_junction": true,
+    "city_id": "mumbai"
   },
   {
     "id": "andheri",
@@ -108,7 +115,8 @@
       "Harbour Line",
       "Metro Line 1"
     ],
-    "is_junction": true
+    "is_junction": true,
+    "city_id": "mumbai"
   },
   {
     "id": "borivali",
@@ -121,7 +129,8 @@
     "lines": [
       "Western Line Fast Hub"
     ],
-    "is_junction": true
+    "is_junction": true,
+    "city_id": "mumbai"
   },
   {
     "id": "thane",
@@ -135,7 +144,8 @@
       "Central Line",
       "Trans-Harbour Line"
     ],
-    "is_junction": true
+    "is_junction": true,
+    "city_id": "mumbai"
   },
   {
     "id": "new-delhi",
@@ -150,7 +160,8 @@
       "Yellow Metro Line",
       "Airport Express"
     ],
-    "is_junction": true
+    "is_junction": true,
+    "city_id": "delhi"
   },
   {
     "id": "old-delhi",
@@ -164,7 +175,8 @@
       "Northern Railway",
       "Yellow Metro Line"
     ],
-    "is_junction": true
+    "is_junction": true,
+    "city_id": "delhi"
   },
   {
     "id": "hazrat-nizamuddin",
@@ -178,7 +190,8 @@
       "Northern Railway",
       "Pink Metro Line"
     ],
-    "is_junction": true
+    "is_junction": true,
+    "city_id": "delhi"
   },
   {
     "id": "jaipur-jn",
@@ -192,7 +205,8 @@
       "North Western Railway Hub",
       "Jaipur Metro Pink Line"
     ],
-    "is_junction": true
+    "is_junction": true,
+    "city_id": "jaipur"
   },
   {
     "id": "gandhinagar-jpr",
@@ -205,7 +219,8 @@
     "lines": [
       "North Western Railway"
     ],
-    "is_junction": false
+    "is_junction": false,
+    "city_id": "jaipur"
   },
   {
     "id": "agra-cantt",
@@ -225,7 +240,8 @@
       "Taj Mahal",
       "Agra Fort",
       "Fatehpur Sikri"
-    ]
+    ],
+    "city_id": "agra"
   },
   {
     "id": "agra-fort",
@@ -243,7 +259,8 @@
     "nearby_landmarks": [
       "Agra Fort",
       "Jama Masjid Agra"
-    ]
+    ],
+    "city_id": "agra"
   },
   {
     "id": "ernakulam-jn",
@@ -263,7 +280,8 @@
       "Fort Kochi",
       "Mattancherry Palace",
       "Chinese Fishing Nets"
-    ]
+    ],
+    "city_id": "kochi"
   },
   {
     "id": "varanasi-jn",
@@ -283,7 +301,8 @@
       "Kashi Vishwanath Temple",
       "Dashashwamedh Ghat",
       "Sarnath"
-    ]
+    ],
+    "city_id": "varanasi"
   },
   {
     "id": "amritsar-jn",
@@ -302,7 +321,8 @@
       "Golden Temple",
       "Jallianwala Bagh",
       "Wagah Border"
-    ]
+    ],
+    "city_id": "amritsar"
   },
   {
     "id": "howrah-jn",
@@ -323,7 +343,8 @@
       "Howrah Bridge",
       "Victoria Memorial",
       "Dakshineswar Kali Temple"
-    ]
+    ],
+    "city_id": "kolkata"
   },
   {
     "id": "chennai-central",
@@ -344,7 +365,8 @@
       "Marina Beach",
       "Kapaleeshwarar Temple",
       "Mahabalipuram transit"
-    ]
+    ],
+    "city_id": "chennai"
   },
   {
     "id": "ksr-bengaluru",
@@ -364,7 +386,8 @@
       "Bangalore Palace",
       "Tipu Sultan Summer Palace",
       "Lalbagh"
-    ]
+    ],
+    "city_id": "bengaluru"
   },
   {
     "id": "secunderabad-jn",
@@ -385,7 +408,8 @@
       "Charminar",
       "Golconda Fort",
       "Hussain Sagar"
-    ]
+    ],
+    "city_id": "hyderabad"
   },
   {
     "id": "madgaon-jn",
@@ -405,7 +429,8 @@
       "Basilica of Bom Jesus",
       "Colva Beach",
       "Fort Aguada"
-    ]
+    ],
+    "city_id": "goa"
   },
   {
     "id": "aurangabad-stn",
@@ -425,7 +450,8 @@
       "Ajanta Caves",
       "Bibi Ka Maqbara",
       "Daulatabad Fort"
-    ]
+    ],
+    "city_id": "chhatrapati-sambhaji-nagar"
   },
   {
     "id": "puri-stn",
@@ -444,7 +470,8 @@
       "Jagannath Temple",
       "Konark Sun Temple corridor",
       "Golden Beach"
-    ]
+    ],
+    "city_id": "puri"
   },
   {
     "id": "bhubaneswar-stn",
@@ -463,7 +490,8 @@
       "Lingaraj Temple",
       "Udayagiri and Khandagiri Caves",
       "Konark Highway"
-    ]
+    ],
+    "city_id": "bhubaneswar"
   },
   {
     "id": "hosapete-jn",
@@ -482,7 +510,8 @@
       "Virupaksha Temple",
       "Hampi Stone Chariot",
       "Vijayanagara Ruins"
-    ]
+    ],
+    "city_id": "hampi"
   },
   {
     "id": "khajuraho-stn",
@@ -500,7 +529,8 @@
     "nearby_landmarks": [
       "Kandariya Mahadeva Temple",
       "Western Group of Temples"
-    ]
+    ],
+    "city_id": "orchha"
   },
   {
     "id": "bhopal-jn",
@@ -519,7 +549,8 @@
       "Sanchi Stupa",
       "Bhimbetka Rock Shelters",
       "Taj-ul-Masajid"
-    ]
+    ],
+    "city_id": "bhopal"
   },
   {
     "id": "gaya-jn",
@@ -538,7 +569,8 @@
       "Mahabodhi Temple (Bodh Gaya)",
       "Vishnupad Temple",
       "Nalanda feeder"
-    ]
+    ],
+    "city_id": "gaya"
   },
   {
     "id": "ahmedabad-jn",
@@ -558,7 +590,8 @@
       "Sabarmati Ashram",
       "Adalaj Stepwell",
       "Sun Temple Modhera feeder"
-    ]
+    ],
+    "city_id": "ahmedabad"
   },
   {
     "id": "madurai-jn",
@@ -576,7 +609,8 @@
     "nearby_landmarks": [
       "Meenakshi Amman Temple",
       "Thirumalai Nayakkar Mahal"
-    ]
+    ],
+    "city_id": "madurai"
   },
   {
     "id": "srinagar-stn",
@@ -596,7 +630,8 @@
       "Shalimar Bagh",
       "Shankaracharya Temple",
       "Lal Chowk"
-    ]
+    ],
+    "city_id": "srinagar"
   },
   {
     "id": "jammu-tawi",
@@ -614,7 +649,8 @@
     "nearby_landmarks": [
       "Bahu Fort",
       "Raghunath Temple"
-    ]
+    ],
+    "city_id": "jammu"
   },
   {
     "id": "katra-svdk",
@@ -632,7 +668,8 @@
     "nearby_landmarks": [
       "Vaishno Devi Shrine Bhavan",
       "Ban Ganga"
-    ]
+    ],
+    "city_id": "jammu"
   },
   {
     "id": "banihal-stn",
@@ -650,7 +687,8 @@
     "nearby_landmarks": [
       "Pir Panjal Pass",
       "Kashmir Gateway"
-    ]
+    ],
+    "city_id": "srinagar"
   },
   {
     "id": "pathankot-cantt",
@@ -668,7 +706,8 @@
     "nearby_landmarks": [
       "Kangra Valley feeder",
       "Nurpur Fort"
-    ]
+    ],
+    "city_id": "amritsar"
   },
   {
     "id": "chandigarh-jn",
@@ -687,7 +726,8 @@
       "Rock Garden",
       "Sukhna Lake",
       "Capitol Complex"
-    ]
+    ],
+    "city_id": "chandigarh"
   },
   {
     "id": "shimla-stn",
@@ -706,7 +746,8 @@
       "The Ridge",
       "Mall Road",
       "Jakhu Temple"
-    ]
+    ],
+    "city_id": "shimla"
   },
   {
     "id": "lucknow-charbagh",
@@ -725,7 +766,8 @@
       "Bara Imambara",
       "Chhota Imambara",
       "Rumi Darwaza"
-    ]
+    ],
+    "city_id": "lucknow"
   },
   {
     "id": "patna-jn",
@@ -744,7 +786,8 @@
       "Golghar",
       "Patna Sahib Takht",
       "Bihar Museum"
-    ]
+    ],
+    "city_id": "patna"
   },
   {
     "id": "guwahati-jn",
@@ -763,7 +806,8 @@
       "Kamakhya Temple",
       "Umananda Island",
       "Brahmaputra Riverfront"
-    ]
+    ],
+    "city_id": "guwahati"
   },
   {
     "id": "gwalior-jn",
@@ -782,7 +826,8 @@
       "Gwalior Fort",
       "Jai Vilas Palace",
       "Tansen Tomb"
-    ]
+    ],
+    "city_id": "gwalior"
   },
   {
     "id": "vadodara-jn",
@@ -801,7 +846,8 @@
       "Laxmi Vilas Palace",
       "Champaner-Pavagadh UNESCO",
       "Statue of Unity feeder"
-    ]
+    ],
+    "city_id": "vadodara"
   },
   {
     "id": "surat-stn",
@@ -820,7 +866,8 @@
       "Surat Castle",
       "Dumas Beach",
       "Diamond Research & Mercantile City"
-    ]
+    ],
+    "city_id": "surat"
   },
   {
     "id": "nagpur-jn",
@@ -839,7 +886,8 @@
       "Zero Mile Stone",
       "Deekshabhoomi",
       "Futala Lake"
-    ]
+    ],
+    "city_id": "nagpur"
   },
   {
     "id": "mysuru-jn",
@@ -858,7 +906,8 @@
       "Mysore Palace",
       "Chamundi Hill",
       "Brindavan Gardens"
-    ]
+    ],
+    "city_id": "mysuru"
   },
   {
     "id": "trivandrum-central",
@@ -877,7 +926,8 @@
       "Padmanabhaswamy Temple",
       "Kovalam Beach",
       "Napier Museum"
-    ]
+    ],
+    "city_id": "thiruvananthapuram"
   },
   {
     "id": "udaipur-city",
@@ -896,6 +946,7 @@
       "City Palace Udaipur",
       "Lake Pichola",
       "Jag Mandir"
-    ]
+    ],
+    "city_id": "udaipur"
   }
 ]

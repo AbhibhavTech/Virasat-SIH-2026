@@ -571,12 +571,54 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
     try {
       const stationsList = JSON.parse(fs.readFileSync(stationsPath, 'utf-8'));
       if (Array.isArray(stationsList)) {
+        const stationCityToCityId: Record<string, string> = {
+          'mumbai': 'mumbai',
+          'delhi': 'delhi',
+          'new delhi': 'delhi',
+          'kolkata': 'kolkata',
+          'patna': 'patna',
+          'agra': 'agra',
+          'jaipur': 'jaipur',
+          'varanasi': 'varanasi',
+          'amritsar': 'amritsar',
+          'bengaluru': 'bengaluru',
+          'chennai': 'chennai',
+          'hyderabad': 'hyderabad',
+          'ahmedabad': 'ahmedabad',
+          'pune': 'pune',
+          'bhopal': 'bhopal',
+          'lucknow': 'lucknow',
+          'kochi': 'kochi',
+          'thiruvananthapuram': 'thiruvananthapuram',
+          'guwahati': 'guwahati',
+          'bhubaneswar': 'bhubaneswar',
+          'puri': 'puri',
+          'shimla': 'shimla',
+          'dehradun': 'dehradun',
+          'haridwar': 'haridwar',
+          'rishikesh': 'rishikesh',
+          'madurai': 'madurai',
+          'mysuru': 'mysuru',
+          'gwalior': 'gwalior',
+          'jodhpur': 'jodhpur',
+          'udaipur': 'udaipur',
+          'chhatrapati sambhajinagar': 'chhatrapati-sambhaji-nagar',
+          'hosapete / hampi': 'hampi',
+          'khajuraho': 'khajuraho',
+          'katra': 'jammu',
+          'banihal': 'srinagar',
+          'pathankot': 'amritsar',
+        };
+
         const seenCodes = new Set<string>();
         for (const stn of stationsList) {
           const code = (stn.code || stn.id).toUpperCase();
           if (seenCodes.has(code)) continue;
           seenCodes.add(code);
           const stnId = stn.id || code.toLowerCase();
+          const normCity = String(stn.city || '').toLowerCase().trim();
+          const resolvedCityId = stn.city_id || stationCityToCityId[normCity] || (cities[normCity] ? normCity : undefined);
+
           transit_nodes[stnId] = {
             id: stnId,
             type: 'railway',
@@ -584,7 +626,7 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
             code,
             lat: Number(stn.lat) || 0,
             lng: Number(stn.lng) || 0,
-            city_id: stn.city_id,
+            city_id: resolvedCityId,
             is_junction: Boolean(stn.is_junction || stn.isJunction),
             created_at: now,
           };

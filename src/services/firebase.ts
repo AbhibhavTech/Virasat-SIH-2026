@@ -48,6 +48,19 @@ export function isUnauthorizedDomainError(error: unknown): boolean {
   );
 }
 
+export function isPopupBlockedError(error: unknown): boolean {
+  if (!error) return false;
+  const err = error as Record<string, any>;
+  const code = String(err?.code || '');
+  const msg = String(err?.message || '');
+  return (
+    code === 'auth/popup-blocked' ||
+    msg.includes('auth/popup-blocked') ||
+    msg.includes('popup-blocked') ||
+    msg.includes('blocked by the browser')
+  );
+}
+
 // Initialize Firebase App
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 
@@ -138,10 +151,22 @@ export async function signOutFirebase() {
   return await firebaseSignOut(auth);
 }
 
+function canAccessFirestoreUser(userId: string): boolean {
+  if (!auth.currentUser) return false;
+  if (auth.currentUser.uid === userId) return true;
+  if (auth.currentUser.email === 'abhibhavsinha82@gmail.com' && auth.currentUser.emailVerified) return true;
+  return false;
+}
+
 /**
  * Sync user profile to Firestore (/users/{userId})
  */
 export async function syncUserProfileToFirestore(profile: UserProfile): Promise<void> {
+  // Only sync to Firestore if Firebase Auth user is active and authorized
+  if (!canAccessFirestoreUser(profile.id)) {
+    return;
+  }
+
   const path = `users/${profile.id}`;
   try {
     const userRef = doc(db, 'users', profile.id);
@@ -179,6 +204,11 @@ export async function syncUserProfileToFirestore(profile: UserProfile): Promise<
  * Fetch user profile from Firestore
  */
 export async function getUserProfileFromFirestore(userId: string): Promise<UserProfile | null> {
+  // Only query Firestore if a Firebase Auth user is active and authorized
+  if (!canAccessFirestoreUser(userId)) {
+    return null;
+  }
+
   const path = `users/${userId}`;
   try {
     const snap = await getDoc(doc(db, 'users', userId));
@@ -196,6 +226,10 @@ export async function getUserProfileFromFirestore(userId: string): Promise<UserP
  * Save user trip to Firestore (/users/{userId}/trips/{tripId})
  */
 export async function saveTripToFirestore(userId: string, trip: TripItem): Promise<void> {
+  if (!canAccessFirestoreUser(userId)) {
+    return;
+  }
+
   const path = `users/${userId}/trips/${trip.id}`;
   try {
     const tripRef = doc(db, 'users', userId, 'trips', trip.id);
@@ -219,6 +253,10 @@ export async function saveTripToFirestore(userId: string, trip: TripItem): Promi
  * Get trips from Firestore for a user
  */
 export async function getTripsFromFirestore(userId: string): Promise<TripItem[]> {
+  if (!canAccessFirestoreUser(userId)) {
+    return [];
+  }
+
   const path = `users/${userId}/trips`;
   try {
     const colRef = collection(db, 'users', userId, 'trips');
@@ -238,6 +276,10 @@ export async function getTripsFromFirestore(userId: string): Promise<TripItem[]>
  * Delete a trip from Firestore
  */
 export async function deleteTripFromFirestore(userId: string, tripId: string): Promise<void> {
+  if (!canAccessFirestoreUser(userId)) {
+    return;
+  }
+
   const path = `users/${userId}/trips/${tripId}`;
   try {
     await deleteDoc(doc(db, 'users', userId, 'trips', tripId));
@@ -250,6 +292,10 @@ export async function deleteTripFromFirestore(userId: string, tripId: string): P
  * Add favorite to Firestore (/users/{userId}/favorites/{placeId})
  */
 export async function addFavoriteToFirestore(userId: string, placeId: string): Promise<void> {
+  if (!canAccessFirestoreUser(userId)) {
+    return;
+  }
+
   const path = `users/${userId}/favorites/${placeId}`;
   try {
     const favRef = doc(db, 'users', userId, 'favorites', placeId);
@@ -268,6 +314,10 @@ export async function addFavoriteToFirestore(userId: string, placeId: string): P
  * Remove favorite from Firestore
  */
 export async function removeFavoriteFromFirestore(userId: string, placeId: string): Promise<void> {
+  if (!canAccessFirestoreUser(userId)) {
+    return;
+  }
+
   const path = `users/${userId}/favorites/${placeId}`;
   try {
     await deleteDoc(doc(db, 'users', userId, 'favorites', placeId));
@@ -280,6 +330,10 @@ export async function removeFavoriteFromFirestore(userId: string, placeId: strin
  * Get all favorites from Firestore for a user
  */
 export async function getFavoritesFromFirestore(userId: string): Promise<string[]> {
+  if (!canAccessFirestoreUser(userId)) {
+    return [];
+  }
+
   const path = `users/${userId}/favorites`;
   try {
     const colRef = collection(db, 'users', userId, 'favorites');

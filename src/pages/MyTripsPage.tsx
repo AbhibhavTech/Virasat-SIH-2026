@@ -20,11 +20,15 @@ export const MyTripsPage: React.FC<MyTripsPageProps> = ({ onNavigateTab, onSelec
     setLoading(true);
     try {
       if (user?.id) {
-        const fsTrips = await getTripsFromFirestore(user.id);
-        if (fsTrips && fsTrips.length > 0) {
-          setTrips(fsTrips);
-          setLoading(false);
-          return;
+        try {
+          const fsTrips = await getTripsFromFirestore(user.id);
+          if (fsTrips && fsTrips.length > 0) {
+            setTrips(fsTrips);
+            setLoading(false);
+            return;
+          }
+        } catch (fsErr) {
+          console.info('Firestore trips unavailable, falling back to API:', fsErr);
         }
       }
       const data = await api.getTrips();

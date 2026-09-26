@@ -347,7 +347,7 @@
   {
     "id": "rani-ki-vav",
     "name": "Rani ki Vav (The Queen's Stepwell)",
-    "city_id": "ahmedabad",
+    "city_id": "patan",
     "city_name": "Patan",
     "state_id": "gujarat",
     "state_name": "Gujarat",
@@ -370,7 +370,7 @@
   {
     "id": "champaner-pavagadh",
     "name": "Champaner-Pavagadh Archaeological Park",
-    "city_id": "champaner",
+    "city_id": "panchmahal",
     "city_name": "Panchmahal",
     "state_id": "gujarat",
     "state_name": "Gujarat",
@@ -5200,7 +5200,7 @@
   {
     "id": "himachal_015",
     "name": "Dal Lake Dharamshala",
-    "city_id": "dharamshala",
+    "city_id": "kullu",
     "city_name": "Kullu",
     "state_id": "himachal-pradesh",
     "state_name": "Himachal Pradesh",
@@ -5246,7 +5246,7 @@
   {
     "id": "himachal_020",
     "name": "Spiti Valley",
-    "city_id": "spiti-valley",
+    "city_id": "bilaspur",
     "city_name": "Bilaspur",
     "state_id": "himachal-pradesh",
     "state_name": "Himachal Pradesh",
@@ -6718,7 +6718,7 @@
   {
     "id": "madhya_pradesh_001",
     "name": "Khajuraho Group of Monuments",
-    "city_id": "orchha",
+    "city_id": "bhopal",
     "city_name": "Bhopal",
     "state_id": "madhya-pradesh",
     "state_name": "Madhya Pradesh",
@@ -8949,9 +8949,9 @@
   {
     "id": "punjab_017",
     "name": "Sukhna Lake",
-    "city_id": "chandigarh",
+    "city_id": "anandpur-sahib",
     "city_name": "Anandpur Sahib",
-    "state_id": "chandigarh",
+    "state_id": "punjab",
     "state_name": "Punjab",
     "category": "nature_parks_zoo",
     "heritage_status": "Local Administration",

@@ -47,8 +47,8 @@ export const OnboardingSurveyModal: React.FC = () => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-stone-900/40 backdrop-blur-xs animate-fadeIn">
-      <div className="relative w-full max-w-lg rounded-3xl bg-white border border-stone-200 p-6 sm:p-8 shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto">
+    <div className="fixed inset-0 z-[2000] flex items-center justify-center p-3 sm:p-6 bg-stone-950/80 backdrop-blur-md animate-fadeIn overflow-y-auto">
+      <div className="relative w-full max-w-lg my-auto rounded-3xl bg-white border border-stone-200 p-6 sm:p-8 shadow-2xl space-y-6 max-h-[calc(100vh-2.5rem)] overflow-y-auto">
         <button
           onClick={() => setIsOnboardingModalOpen(false)}
           className="absolute top-5 right-5 p-2 rounded-xl text-stone-400 hover:text-stone-700 hover:bg-stone-100 transition cursor-pointer"
