@@ -156,7 +156,8 @@ function canAccessFirestoreUser(userId: string): boolean {
   if (auth.currentUser.uid === userId) return true;
   if (
     (auth.currentUser.email === 'abhibhavsinha82@gmail.com' ||
-      auth.currentUser.email === 'alazelersinha111@gmail.com') &&
+      auth.currentUser.email === 'alazelersinha111@gmail.com' ||
+      auth.currentUser.email === 'sahilacharekar2461968@gmail.com') &&
     auth.currentUser.emailVerified
   ) {
     return true;
