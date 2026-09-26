@@ -47,6 +47,8 @@ const AppContent: React.FC = () => {
       title = "Discover India's Living Heritage";
     } else if (location.pathname.startsWith('/explore')) {
       title = "Explore Indian States & Living Heritage";
+    } else if (location.pathname.startsWith('/festivals')) {
+      title = "Festivals of India • Living Heritage & Cultural Calendar";
     } else if (location.pathname.startsWith('/heritage')) {
       title = "Verified Heritage Sites & UNESCO Monuments";
     } else if (location.pathname.startsWith('/itinerary')) {

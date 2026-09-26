@@ -288,14 +288,14 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
   const [isLocating, setIsLocating] = useState(false);
   const [locationError, setLocationError] = useState<string | null>(null);
 
-  // In-Map Route State
+  // In-Map Route State - Empty by default (no hardcoded CSMT or Mumbai)
   const [isRoutingOpen, setIsRoutingOpen] = useState(Boolean(initialOrigin || initialDestination));
-  const [routeOrigin, setRouteOrigin] = useState<string>(initialOrigin || 'csmt');
-  const [routeOriginName, setRouteOriginName] = useState<string>('CSMT Railway Station');
-  const [routeOriginCoords, setRouteOriginCoords] = useState<{ lat: number; lng: number } | null>({ lat: 18.94, lng: 72.8353 });
-  const [routeDestination, setRouteDestination] = useState<string>(initialDestination || 'gateway-of-india');
-  const [routeDestName, setRouteDestName] = useState<string>('Gateway of India');
-  const [routeDestCoords, setRouteDestCoords] = useState<{ lat: number; lng: number } | null>({ lat: 18.922, lng: 72.8347 });
+  const [routeOrigin, setRouteOrigin] = useState<string>(initialOrigin || '');
+  const [routeOriginName, setRouteOriginName] = useState<string>(initialOrigin ? 'Origin Location' : '');
+  const [routeOriginCoords, setRouteOriginCoords] = useState<{ lat: number; lng: number } | null>(null);
+  const [routeDestination, setRouteDestination] = useState<string>(initialDestination || '');
+  const [routeDestName, setRouteDestName] = useState<string>(initialDestination ? 'Destination' : '');
+  const [routeDestCoords, setRouteDestCoords] = useState<{ lat: number; lng: number } | null>(null);
   const [selectedMode, setSelectedMode] = useState<MapTransportMode>('DRIVE');
   const [activeRoute, setActiveRoute] = useState<RouteResponse | null>(null);
   const [isCalculatingRoute, setIsCalculatingRoute] = useState(false);
@@ -346,6 +346,65 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
     varanasi: { lat: 25.3176, lng: 82.9739, zoom: 13 },
     kochi: { lat: 9.9312, lng: 76.2673, zoom: 13 },
     goa: { lat: 15.4909, lng: 73.8278, zoom: 12 },
+  };
+
+  // Dynamically resolve flight endpoints and distances
+  const resolvedFlightInfo = useMemo(() => {
+    const origLat = routeOriginCoords?.lat;
+    const origLng = routeOriginCoords?.lng;
+    const destLat = routeDestCoords?.lat;
+    const destLng = routeDestCoords?.lng;
+
+    let origAirport: IndianAirport | null = null;
+    let destAirport: IndianAirport | null = null;
+    let origDistToAirport = 0;
+    let destDistToAirport = 0;
+
+    if (origLat !== undefined && origLng !== undefined) {
+      const res = findNearestAirport(origLat, origLng);
+      origAirport = res.airport;
+      origDistToAirport = res.distanceKm;
+    } else if (routeOriginName || routeOrigin) {
+      const match = searchAirports(routeOriginName || routeOrigin);
+      if (match.length > 0) origAirport = match[0];
+    }
+
+    if (destLat !== undefined && destLng !== undefined) {
+      const res = findNearestAirport(destLat, destLng);
+      destAirport = res.airport;
+      destDistToAirport = res.distanceKm;
+    } else if (routeDestName || routeDestination) {
+      const match = searchAirports(routeDestName || routeDestination);
+      if (match.length > 0) destAirport = match[0];
+    }
+
+    let distanceKm = 0;
+    let estDurationMinutes = 0;
+    if (origAirport && destAirport) {
+      distanceKm = haversineDistanceKm(origAirport.lat, origAirport.lng, destAirport.lat, destAirport.lng);
+      estDurationMinutes = Math.round((distanceKm / 750) * 60 + 35);
+    }
+
+    return {
+      origAirport,
+      destAirport,
+      origDistToAirport,
+      destDistToAirport,
+      distanceKm,
+      estDurationMinutes,
+    };
+  }, [routeOriginCoords, routeDestCoords, routeOriginName, routeOrigin, routeDestName, routeDestination]);
+
+  const handleSwapPoints = () => {
+    const tempOrigin = routeOrigin;
+    const tempOriginName = routeOriginName;
+    const tempOriginCoords = routeOriginCoords;
+    setRouteOrigin(routeDestination);
+    setRouteOriginName(routeDestName);
+    setRouteOriginCoords(routeDestCoords);
+    setRouteDestination(tempOrigin);
+    setRouteDestName(tempOriginName);
+    setRouteDestCoords(tempOriginCoords);
   };
 
   // 1. Fetch datasets: Heritage & Stations
@@ -1384,22 +1443,245 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
   const handleSelectSearchItem = (item: LocationSuggestion) => {
     setIsSearchDropdownOpen(false);
     setSearchQuery(item.name);
-    const map = mapInstanceRef.current;
-    if (map && item.lat && item.lng) {
-      map.flyTo([item.lat, item.lng], 14, { duration: 1 });
+    const loc = item;
+    const coords = parseLatLng(loc.lat, loc.lng);
+    if (!coords) return;
 
-      if (searchHighlightRef.current) {
-        searchHighlightRef.current.clearLayers();
-        const icon = L.divIcon({
-          className: 'search-pin',
-          html: `<div style="background:#ea580c; width:34px; height:34px; border-radius:50%; border:3px solid white; box-shadow:0 0 16px rgba(234,88,12,0.8); display:flex; align-items:center; justify-content:center; color:white; font-size:16px;">📍</div>`,
-          iconSize: [34, 34],
-          iconAnchor: [17, 17],
-        });
-        L.marker([item.lat, item.lng], { icon })
-          .bindTooltip(`<b>${item.name}</b><br/>${item.subtitle}`, { permanent: false })
-          .addTo(searchHighlightRef.current);
-      }
+    const map = mapInstanceRef.current;
+    if (!map) return;
+
+    map.flyTo(coords, Math.max(map.getZoom(), 12), { duration: 1.2 });
+
+    if (searchHighlightRef.current) {
+      searchHighlightRef.current.clearLayers();
+
+      const iconBg =
+        loc.categoryType === 'station'
+          ? '#0284c7'
+          : loc.categoryType === 'heritage'
+          ? '#ea580c'
+          : loc.categoryType === 'city'
+          ? '#6366f1'
+          : loc.categoryType === 'hotel'
+          ? '#8b5cf6'
+          : loc.categoryType === 'festival'
+          ? '#d97706'
+          : '#10b981';
+      const iconEmoji =
+        loc.categoryType === 'station'
+          ? '🚆'
+          : loc.categoryType === 'heritage'
+          ? '🏛️'
+          : loc.categoryType === 'city'
+          ? '🏙️'
+          : loc.categoryType === 'hotel'
+          ? '🏨'
+          : loc.categoryType === 'festival'
+          ? '🪔'
+          : '📍';
+
+      const iconHtml = `
+        <div style="position: relative; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center;">
+          <div style="position: absolute; width: 44px; height: 44px; border-radius: 50%; background: ${iconBg}; opacity: 0.35; animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;"></div>
+          <div style="background-color: ${iconBg}; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid #ffffff; box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35); font-size: 18px; z-index: 2;">
+            ${iconEmoji}
+          </div>
+        </div>
+      `;
+
+      const markerIcon = L.divIcon({
+        className: 'search-focus-pin',
+        html: iconHtml,
+        iconSize: [44, 44],
+        iconAnchor: [22, 22],
+        popupAnchor: [0, -22],
+      });
+
+      const marker = L.marker(coords, { icon: markerIcon });
+
+      const popupContent = `
+        <div style="padding: 10px; min-width: 220px; font-family: system-ui, -apple-system, sans-serif;">
+          <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
+            <span style="font-size: 14px;">${iconEmoji}</span>
+            <span style="font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: ${iconBg};">
+              ${loc.categoryType}
+            </span>
+          </div>
+          <h4 style="font-size: 13px; font-weight: 800; color: #0f172a; margin: 0 0 4px 0; line-height: 1.3;">${loc.name}</h4>
+          <p style="font-size: 11px; color: #64748b; margin: 0 0 10px 0;">${loc.subtitle || `${loc.city || ''} ${loc.state || ''}`}</p>
+          <div style="display: flex; gap: 6px;">
+            <button id="btn-search-orig-${loc.id}" style="flex: 1; background: #0284c7; color: #fff; border: none; border-radius: 8px; padding: 7px 0; font-size: 11px; font-weight: 700; cursor: pointer;">
+              🚩 Set Origin (A)
+            </button>
+            <button id="btn-search-dest-${loc.id}" style="flex: 1; background: #ea580c; color: #fff; border: none; border-radius: 8px; padding: 7px 0; font-size: 11px; font-weight: 700; cursor: pointer;">
+              🎯 Set Dest (B)
+            </button>
+          </div>
+        </div>
+      `;
+
+      marker.bindPopup(popupContent).openPopup();
+
+      marker.on('popupopen', () => {
+        const btnOrig = document.getElementById(`btn-search-orig-${loc.id}`);
+        if (btnOrig) {
+          btnOrig.onclick = () => {
+            setRouteOrigin(loc.id);
+            setRouteOriginName(loc.name);
+            setRouteOriginCoords({ lat: coords[0], lng: coords[1] });
+            setIsRoutingOpen(true);
+            setIsRoutePanelMinimized(false);
+            if (routeDestination && routeDestination !== loc.id) {
+              handleCalculateRoute(
+                { id: loc.id, name: loc.name, lat: coords[0], lng: coords[1] },
+                undefined
+              );
+            }
+          };
+        }
+
+        const btnDst = document.getElementById(`btn-search-dest-${loc.id}`);
+        if (btnDst) {
+          btnDst.onclick = () => {
+            setRouteDestination(loc.id);
+            setRouteDestName(loc.name);
+            setRouteDestCoords({ lat: coords[0], lng: coords[1] });
+            setIsRoutingOpen(true);
+            setIsRoutePanelMinimized(false);
+            if (routeOrigin && routeOrigin !== loc.id) {
+              handleCalculateRoute(
+                undefined,
+                { id: loc.id, name: loc.name, lat: coords[0], lng: coords[1] }
+              );
+            }
+          };
+        }
+      });
+
+      searchHighlightRef.current.addLayer(marker);
+    }
+  };
+
+  // Route Studio Autocomplete Handlers
+  const handleOriginSearch = async (val: string) => {
+    setRouteOrigin(val);
+    setRouteOriginName(val);
+    if (!val.trim() || val.trim().length < 2) {
+      setOriginSuggestions([]);
+      setIsOriginSuggestOpen(false);
+      return;
+    }
+    try {
+      const results = await api.suggestLocations(val, 8);
+      const airportMatches: LocationSuggestion[] = searchAirports(val).slice(0, 4).map((ap) => ({
+        id: `airport-${ap.iata.toLowerCase()}`,
+        name: `${ap.name} (${ap.iata})`,
+        subtitle: `${ap.city}, ${ap.state} • Airport Hub`,
+        type: 'place',
+        categoryType: 'place',
+        badge: 'Airport',
+        code: ap.iata,
+        city: ap.city,
+        state: ap.state,
+        lat: ap.lat,
+        lng: ap.lng,
+      }));
+      const combined = selectedMode === 'FLIGHT'
+        ? [...airportMatches, ...results.filter((r) => !airportMatches.some((a) => a.name.includes(r.name)))]
+        : [...results, ...airportMatches];
+      setOriginSuggestions(combined);
+      setIsOriginSuggestOpen(true);
+    } catch {
+      const airportMatches: LocationSuggestion[] = searchAirports(val).slice(0, 6).map((ap) => ({
+        id: `airport-${ap.iata.toLowerCase()}`,
+        name: `${ap.name} (${ap.iata})`,
+        subtitle: `${ap.city}, ${ap.state} • Airport Hub`,
+        type: 'place',
+        categoryType: 'place',
+        badge: 'Airport',
+        code: ap.iata,
+        city: ap.city,
+        state: ap.state,
+        lat: ap.lat,
+        lng: ap.lng,
+      }));
+      setOriginSuggestions(airportMatches);
+      setIsOriginSuggestOpen(airportMatches.length > 0);
+    }
+  };
+
+  const handleSelectOriginSuggestion = (item: LocationSuggestion) => {
+    setRouteOrigin(item.id);
+    setRouteOriginName(item.name);
+    setRouteOriginCoords({ lat: item.lat, lng: item.lng });
+    setIsOriginSuggestOpen(false);
+
+    if (routeDestination && routeDestination !== item.id) {
+      handleCalculateRoute(
+        { id: item.id, name: item.name, lat: item.lat, lng: item.lng },
+        undefined
+      );
+    }
+  };
+
+  const handleDestSearch = async (val: string) => {
+    setRouteDestination(val);
+    setRouteDestName(val);
+    if (!val.trim() || val.trim().length < 2) {
+      setDestSuggestions([]);
+      setIsDestSuggestOpen(false);
+      return;
+    }
+    try {
+      const results = await api.suggestLocations(val, 8);
+      const airportMatches: LocationSuggestion[] = searchAirports(val).slice(0, 4).map((ap) => ({
+        id: `airport-${ap.iata.toLowerCase()}`,
+        name: `${ap.name} (${ap.iata})`,
+        subtitle: `${ap.city}, ${ap.state} • Airport Hub`,
+        type: 'place',
+        categoryType: 'place',
+        badge: 'Airport',
+        code: ap.iata,
+        city: ap.city,
+        state: ap.state,
+        lat: ap.lat,
+        lng: ap.lng,
+      }));
+      const combined = selectedMode === 'FLIGHT'
+        ? [...airportMatches, ...results.filter((r) => !airportMatches.some((a) => a.name.includes(r.name)))]
+        : [...results, ...airportMatches];
+      setDestSuggestions(combined);
+      setIsDestSuggestOpen(true);
+    } catch {
+      const airportMatches: LocationSuggestion[] = searchAirports(val).slice(0, 6).map((ap) => ({
+        id: `airport-${ap.iata.toLowerCase()}`,
+        name: `${ap.name} (${ap.iata})`,
+        subtitle: `${ap.city}, ${ap.state} • Airport Hub`,
+        type: 'place',
+        categoryType: 'place',
+        badge: 'Airport',
+        code: ap.iata,
+        city: ap.city,
+        state: ap.state,
+        lat: ap.lat,
+        lng: ap.lng,
+      }));
+      setDestSuggestions(airportMatches);
+      setIsDestSuggestOpen(airportMatches.length > 0);
+    }
+  };
+
+  const handleSelectDestSuggestion = (item: LocationSuggestion) => {
+    setRouteDestination(item.id);
+    setRouteDestName(item.name);
+    setRouteDestCoords({ lat: item.lat, lng: item.lng });
+    setIsDestSuggestOpen(false);
+
+    if (routeOrigin && routeOrigin !== item.id) {
+      handleCalculateRoute(
+        undefined,
+        { id: item.id, name: item.name, lat: item.lat, lng: item.lng }
+      );
     }
   };
 
@@ -1760,8 +2042,8 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
               onFocus={() => {
                 if (searchSuggestions.length > 0) setIsSearchDropdownOpen(true);
               }}
-              placeholder="Search heritage, hidden gems, stations..."
-              className="w-full pl-10 pr-9 py-2 rounded-2xl bg-transparent text-xs text-stone-800 font-medium placeholder-stone-400 focus:outline-none"
+              placeholder="Search cities, monuments, hotels, markets, festivals..."
+              className="w-full pl-10 pr-9 py-2.5 rounded-2xl bg-transparent text-xs text-slate-800 font-medium placeholder-slate-400 focus:outline-none"
             />
             {isSearching && (
               <div className="absolute right-9 top-2.5 w-3.5 h-3.5 border-2 border-amber-600 border-t-transparent rounded-full animate-spin" />
@@ -1897,8 +2179,8 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
                         setRouteOrigin(e.target.value);
                         setRouteOriginName(e.target.value);
                       }}
-                      placeholder="e.g. CSMT Railway Station or Delhi"
-                      className="w-full px-3 py-2 rounded-xl bg-stone-50 border border-stone-200 text-xs text-stone-900 font-medium focus:outline-none focus:border-emerald-600"
+                      placeholder="Type starting city, station, hotel, or monument..."
+                      className="w-full min-h-[44px] px-3.5 py-2.5 text-xs sm:text-sm rounded-xl bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-emerald-500 focus:bg-white transition"
                     />
                   </div>
 
@@ -1913,8 +2195,8 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
                         setRouteDestination(e.target.value);
                         setRouteDestName(e.target.value);
                       }}
-                      placeholder="e.g. Gateway of India or Taj Mahal"
-                      className="w-full px-3 py-2 rounded-xl bg-stone-50 border border-stone-200 text-xs text-stone-900 font-medium focus:outline-none focus:border-emerald-600"
+                      placeholder="Type destination city, station, hotel, or landmark..."
+                      className="w-full min-h-[44px] px-3.5 py-2.5 text-xs sm:text-sm rounded-xl bg-slate-50 border border-slate-200 text-slate-800 placeholder-slate-400 focus:outline-none focus:border-emerald-500 focus:bg-white transition"
                     />
                   </div>
                 </div>

@@ -24,6 +24,7 @@ import { VirasatBrand } from '../common/TricolourBranding';
 export type NavTab = 
   | 'home'
   | 'india'
+  | 'festivals'
   | 'heritage'
   | 'dashboard'
   | 'map'
@@ -57,6 +58,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
     badgeColor?: string;
   }> = [
     { id: 'home', label: 'Explore & Overview', icon: Compass },
+    { id: 'festivals', label: 'Festivals of India', icon: Sparkles, badge: 'Live Calendar', badgeColor: 'bg-amber-100 text-amber-900 border-amber-200' },
     { id: 'india', label: 'Explore India', icon: Compass, badge: 'States & Gems', badgeColor: 'bg-orange-100 text-orange-900 border-orange-200' },
     { id: 'heritage', label: 'Major Monuments & Heritage', icon: Landmark, badge: 'UNESCO & ASI', badgeColor: 'bg-emerald-100 text-emerald-900 border-emerald-200' },
     { id: 'dashboard', label: 'States & Hubs', icon: Layers, badge: '36 States/UTs', badgeColor: 'bg-emerald-100 text-emerald-900 border-emerald-200' },

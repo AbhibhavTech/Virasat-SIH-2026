@@ -38,6 +38,9 @@ import { healthRouter } from './server/src/modules/health/health.router';
 import { seoRouter } from './server/src/modules/seo/seo.router';
 import { analyticsRouter } from './server/src/modules/analytics/analytics.router';
 import { adminRouter } from './server/src/modules/admin/admin.router';
+import { festivalsRouter } from './server/src/modules/festivals/festivals.router';
+import { resolveCanonicalCityId, isCityExactMatch, normalizeTransliteration } from './server/src/db/canonicalLocationResolver';
+import { getVerifiedTrainSchedules, getVerifiedFlightSchedules } from './src/server/transitDataService';
 import { requestLogger, securityHeaders, errorHandler } from './server/src/middleware/observability';
 
 const app = express();
@@ -84,6 +87,8 @@ app.use('/api/ai', aiChatRouter);
 app.use('/api/v1/analytics', analyticsRouter);
 app.use('/api/analytics', analyticsRouter);
 app.use('/api/v1/admin', adminRouter);
+app.use('/api/v1/festivals', festivalsRouter);
+app.use('/api/festivals', festivalsRouter);
 
 // -------------------------------------------------------------
 // Data Repositories & In-Memory Store
@@ -163,6 +168,7 @@ const heritageData: any[] = [];
 const railwayStationsData: RailwayStation[] = [];
 let mumbaiLocalNetwork: any = null;
 let hotelsData: any[] = [];
+let festivalsData: any[] = [];
 let faresConfig: any = null;
 let cultureData: any[] = [];
 let artisansData: any[] = [];
@@ -302,6 +308,12 @@ function loadData() {
     const hotelsPath = path.join(dataDir, 'hotels.json');
     if (fs.existsSync(hotelsPath)) {
       hotelsData = JSON.parse(fs.readFileSync(hotelsPath, 'utf-8'));
+    }
+
+    // Load festivals
+    const festivalsPath = path.join(dataDir, 'festivals.json');
+    if (fs.existsSync(festivalsPath)) {
+      festivalsData = JSON.parse(fs.readFileSync(festivalsPath, 'utf-8'));
     }
 
     // Load fare tariffs
@@ -1289,7 +1301,15 @@ app.get('/api/hotels/nearby', (req, res) => {
       .filter((h) => h.calculated_distance_km <= radius)
       .sort((a, b) => a.calculated_distance_km - b.calculated_distance_km);
   } else if (city) {
-    matches = matches.filter((h) => h.city.toLowerCase().includes(city));
+    const targetCanon = resolveCanonicalCityId(city);
+    matches = matches.filter((h) => {
+      const hCity = h.city || '';
+      const hCityId = (h as any).city_id || resolveCanonicalCityId(hCity);
+      if (targetCanon && hCityId && hCityId.toLowerCase() === targetCanon.toLowerCase()) {
+        return true;
+      }
+      return isCityExactMatch(hCity, city);
+    });
   }
 
   res.json({
@@ -1514,8 +1534,8 @@ export interface LocationSuggestion {
   id: string;
   name: string;
   code?: string;
-  type: 'station' | 'heritage' | 'place' | 'city' | 'hidden_gem' | 'current_location';
-  categoryType: 'station' | 'heritage' | 'place' | 'city' | 'hidden_gem' | 'current_location';
+  type: 'station' | 'heritage' | 'place' | 'city' | 'hidden_gem' | 'current_location' | 'hotel' | 'festival';
+  categoryType: 'station' | 'heritage' | 'place' | 'city' | 'hidden_gem' | 'current_location' | 'hotel' | 'festival';
   city?: string;
   state?: string;
   lat: number;
@@ -1716,6 +1736,71 @@ app.get('/api/locations/suggest', (req, res) => {
     }
   }
 
+  // 6. Search Hotels
+  const isHotelQuery = /hotel|stay|resort|lodge/i.test(query);
+  for (const h of hotelsData) {
+    const hName = h.name.toLowerCase();
+    const hCity = (h.city || '').toLowerCase();
+    const hClean = hName.replace(/[^a-z0-9]/g, '');
+
+    let score = 0;
+    if (hClean === cleanQ || h.id.toLowerCase() === query) score += 92;
+    else if (hName.startsWith(query)) score += 78;
+    else if (hName.includes(query)) score += 58;
+    else if (isHotelQuery && (query.includes(hCity) || isCityExactMatch(hCity, query.replace(/hotels?|stays?|where\s+to\s+stay\s+in/gi, '').trim()))) score += 65;
+
+    const uniqueId = `hotel-${h.id}`;
+    if (score > 0 && !seenIds.has(uniqueId) && h.lat && h.lng) {
+      seenIds.add(uniqueId);
+      suggestions.push({
+        id: uniqueId,
+        name: h.name,
+        type: 'hotel',
+        categoryType: 'hotel',
+        city: h.city,
+        state: h.state,
+        lat: h.lat,
+        lng: h.lng,
+        subtitle: `${h.location || h.city}, ${h.state} · ${h.category || 'Hotel'}`,
+        badge: h.rating ? `★ ${h.rating} Hotel` : 'Verified Hotel',
+        score,
+      });
+    }
+  }
+
+  // 7. Search Festivals
+  const isFestQuery = /festival|utsav|mela|puja|fair/i.test(query);
+  for (const f of festivalsData) {
+    const fName = f.name.toLowerCase();
+    const fCity = (f.primary_city || '').toLowerCase();
+    const fState = (f.state || '').toLowerCase();
+    const fClean = fName.replace(/[^a-z0-9]/g, '');
+
+    let score = 0;
+    if (fClean === cleanQ || f.id.toLowerCase() === query) score += 96;
+    else if (fName.startsWith(query)) score += 82;
+    else if (fName.includes(query)) score += 62;
+    else if (isFestQuery && (query.includes(fCity) || query.includes(fState))) score += 70;
+
+    const uniqueId = `festival-${f.id}`;
+    if (score > 0 && !seenIds.has(uniqueId) && f.lat && f.lng) {
+      seenIds.add(uniqueId);
+      suggestions.push({
+        id: uniqueId,
+        name: f.name,
+        type: 'festival',
+        categoryType: 'festival',
+        city: f.primary_city,
+        state: f.state,
+        lat: f.lat,
+        lng: f.lng,
+        subtitle: `${f.primary_city}, ${f.state} · ${f.typical_season || 'Celebration'}`,
+        badge: f.is_date_verified ? 'Verified Festival' : 'Cultural Festival',
+        score,
+      });
+    }
+  }
+
   suggestions.sort((a, b) => b.score - a.score);
   res.json(suggestions.slice(0, limit));
 });
@@ -1832,6 +1917,8 @@ function resolveLocation(queryOrId?: string, lat?: number, lng?: number, cityCon
 
   const raw = (queryOrId || '').trim();
   const q = raw.toLowerCase();
+  const normQ = normalizeTransliteration(q);
+  const canonicalCity = resolveCanonicalCityId(normQ);
   const cContext = (cityContext || '').toLowerCase().trim();
 
   // Known station aliases
@@ -2005,6 +2092,34 @@ function resolveLocation(queryOrId?: string, lat?: number, lng?: number, cityCon
       };
     }
 
+    // 2.5 Festival match
+    const festival = festivalsData.find((f: any) => {
+      const fName = (f.name || '').toLowerCase();
+      return f.id.toLowerCase() === normQ || fName === normQ || fName.includes(normQ) || normQ.includes(fName);
+    });
+    if (festival) {
+      return {
+        name: festival.name,
+        place_id: festival.id,
+        latitude: festival.coordinates?.lat || festival.lat || 18.9400,
+        longitude: festival.coordinates?.lng || festival.lng || 72.8353,
+      };
+    }
+
+    // 2.6 Hotel match
+    const hotel = hotelsData.find(h => {
+      const hName = h.name.toLowerCase();
+      return h.id.toLowerCase() === normQ || hName === normQ || hName.includes(normQ) || normQ.includes(hName);
+    });
+    if (hotel) {
+      return {
+        name: hotel.name,
+        place_id: hotel.id,
+        latitude: hotel.coordinates?.lat || 18.9400,
+        longitude: hotel.coordinates?.lng || 72.8353,
+      };
+    }
+
     // 3. Railway station match (general)
     const station = railwayStationsData.find(s => {
       const sName = s.name.toLowerCase();
@@ -2015,10 +2130,11 @@ function resolveLocation(queryOrId?: string, lat?: number, lng?: number, cityCon
       return { name: station.name, place_id: station.id, latitude: station.lat, longitude: station.lng };
     }
 
-    // 4. City match
+    // 4. City match (Exact / canonical to prevent "visakhapatnam" matching "patna")
     const city = citiesData.find(c => {
-      const cName = c.name.toLowerCase();
-      return c.id.toLowerCase() === q || cName === q || cName.includes(q) || (queryTokens.length > 0 && queryTokens.some(tok => cName.includes(tok)));
+      if (canonicalCity && c.id.toLowerCase() === canonicalCity) return true;
+      if (isCityExactMatch(c.name, normQ) || isCityExactMatch(c.id, normQ)) return true;
+      return false;
     });
     if (city) {
       return { name: city.name, place_id: city.id, latitude: city.lat, longitude: city.lng };
@@ -2227,6 +2343,7 @@ app.get('/api/routes', async (req, res) => {
     const destLng = parseFloat(req.query.dest_lng as string);
     const cityContext = (req.query.city as string) || '';
     const requestedMode = (req.query.mode as string)?.toUpperCase();
+    const travelDate = (req.query.date as string) || undefined;
 
     const originLoc = resolveLocation(originStr, origLat, origLng, cityContext);
     const destLoc = resolveLocation(destStr, destLat, destLng, cityContext);
@@ -2257,7 +2374,7 @@ app.get('/api/routes', async (req, res) => {
 
     if (isInterCity) {
       // -------------------------------------------------------------
-      // INTER-CITY ROUTING: Authentic Indian Railways + Real Highway
+      // INTER-CITY ROUTING: Authentic Indian Railways + Real Highway + Flights
       // -------------------------------------------------------------
       const railDist = railResult.distanceKm;
       const railMins = railResult.durationMinutes;
@@ -2267,31 +2384,52 @@ app.get('/api/routes', async (req, res) => {
         ? `Via ${railResult.stops.slice(1, -1).join(' → ')}`
         : (railResult.corridorName || 'Direct Mainline Corridor');
 
-      // 1. Indian Railways Express / Vande Bharat (Rail)
-      const trainFare3AC = Math.round(railDist * 1.32 + 90);
-      const trainFareSL = Math.round(railDist * 0.44 + 50);
-      const trainFareVB = Math.round(railDist * 2.05 + 140);
+      // 1. Indian Railways Express / Vande Bharat (Rail) - Verified Schedules
+      const verifiedTrainsResult = getVerifiedTrainSchedules(originLoc.name, destLoc.name, travelDate);
+      const hasVerifiedTrains = verifiedTrainsResult.available && verifiedTrainsResult.trains.length > 0;
+      const recTrain = hasVerifiedTrains ? verifiedTrainsResult.trains[0] : null;
+
+      const trainFare3AC = recTrain?.classes.find(c => c.class_code === '3A')?.fare
+        ?? (recTrain?.classes.find(c => c.class_code === 'CC')?.fare || Math.round(railDist * 1.32 + 90));
+
+      const classNotes = recTrain
+        ? recTrain.classes.map(c => c.available ? `${c.class_code}: ₹${c.fare}` : `${c.class_code}: Unavailable`).join(' | ')
+        : `3A: ₹${Math.round(railDist * 1.32 + 90)} | SL: ₹${Math.round(railDist * 0.44 + 50)}`;
 
       options.push({
         mode: 'TRANSIT',
-        title: railResult.expressTier === 'rajdhani_vande_bharat'
+        title: recTrain
+          ? `${recTrain.train_name} (${recTrain.train_number})`
+          : railResult.expressTier === 'rajdhani_vande_bharat'
           ? 'Indian Railways Vande Bharat / Rajdhani Express'
           : 'Indian Railways Superfast Express',
         duration_minutes: railMins,
-        duration_formatted: railFormatted,
+        duration_formatted: recTrain ? recTrain.duration : railFormatted,
         distance_km: railDist,
         estimated_fare: trainFare3AC,
-        fare_status: 'estimated',
+        fare_status: recTrain ? 'verified' : 'estimated',
         provider: 'Indian Railways (IRCTC)',
         speed_tier: 'fastest',
-        fare_note: `Tariff estimates: 3-Tier AC: ₹${trainFare3AC} | Sleeper: ₹${trainFareSL} | Executive / Vande Bharat: ₹${trainFareVB}`,
+        recommended_train: recTrain ? {
+          train_number: recTrain.train_number,
+          train_name: recTrain.train_name,
+          departure_time: recTrain.departure_time,
+          arrival_time: recTrain.arrival_time,
+          duration: recTrain.duration,
+          operates_on_date: recTrain.operates_on_date,
+          classes: recTrain.classes,
+        } : undefined,
+        verified_trains: hasVerifiedTrains ? verifiedTrainsResult.trains : [],
+        fare_note: recTrain
+          ? `Train #${recTrain.train_number} (${recTrain.departure_time} ➔ ${recTrain.arrival_time}): Classes: ${classNotes}. Operates on ${verifiedTrainsResult.travel_date} (${verifiedTrainsResult.day_of_week}): ${recTrain.operates_on_date ? 'YES' : 'NO (Check operating schedule)'}.`
+          : `Tariff estimates: 3-Tier AC: ₹${Math.round(railDist * 1.32 + 90)} | Sleeper: ₹${Math.round(railDist * 0.44 + 50)} | Executive: ₹${Math.round(railDist * 2.05 + 140)}`,
         railway_corridor: railResult.corridorName,
         railway_stops: railResult.stops,
         steps_summary: [
-          `Board train at origin railhead (${originLoc.name})`,
+          `Board train at origin railhead (${originLoc.name})${recTrain ? ` - Dept: ${recTrain.departure_time}` : ''}`,
           `Proceed along ${railResult.corridorName} (${haltsText})`,
-          `Official track rail distance: ${railDist} km (${railFormatted})`,
-          `Alight at destination railhead (${destLoc.name})`
+          `Official track rail distance: ${railDist} km (${recTrain ? recTrain.duration : railFormatted})`,
+          `Alight at destination railhead (${destLoc.name})${recTrain ? ` - Arrv: ${recTrain.arrival_time}` : ''}`
         ],
         polyline: railResult.polyline,
         routing_engine: 'Virasat Track-Aligned Railway Engine (IR Trunk Geometry)'
@@ -2368,6 +2506,58 @@ app.get('/api/routes', async (req, res) => {
         polyline: roadDriveResult.polyline,
         routing_engine: 'Virasat Bus Route Engine'
       });
+
+      // 5. Commercial Aviation Flight Route
+      const verifiedFlightsResult = getVerifiedFlightSchedules(originLoc.name, destLoc.name, travelDate);
+      if (verifiedFlightsResult.available && verifiedFlightsResult.flights.length > 0) {
+        const topFlight = verifiedFlightsResult.flights[0];
+        const econFare = topFlight.cabins.find(c => c.cabin === 'Economy')?.fare || null;
+        const bizFare = topFlight.cabins.find(c => c.cabin === 'Business')?.fare || null;
+        options.push({
+          mode: 'FLIGHT',
+          title: `${topFlight.airline} (${topFlight.flight_number}) Direct Flight`,
+          duration_minutes: 135,
+          duration_formatted: topFlight.duration,
+          distance_km: Math.round(distKm),
+          estimated_fare: econFare,
+          fare_status: econFare ? 'verified' : 'estimated',
+          provider: `${topFlight.airline} Aviation`,
+          speed_tier: 'fastest',
+          airline: topFlight.airline,
+          flight_number: topFlight.flight_number,
+          departure_time: topFlight.departure_time,
+          arrival_time: topFlight.arrival_time,
+          cabins: topFlight.cabins,
+          verified_flights: verifiedFlightsResult.flights,
+          fare_note: `Verified scheduled flight: ${topFlight.airline} ${topFlight.flight_number} (Dept: ${topFlight.departure_time}, Arrv: ${topFlight.arrival_time}). Economy: ${econFare ? `₹${econFare}` : 'Fare unavailable'}${bizFare ? ` | Business: ₹${bizFare}` : ''}. Date: ${verifiedFlightsResult.travel_date} (${verifiedFlightsResult.day_of_week}).`,
+          steps_summary: [
+            `Depart from ${topFlight.origin_airport.name} (${topFlight.origin_airport.iata}) at ${topFlight.departure_time}`,
+            `Direct aviation corridor flight (${topFlight.duration})`,
+            `Touchdown at ${topFlight.dest_airport.name} (${topFlight.dest_airport.iata}) at ${topFlight.arrival_time}`
+          ],
+          polyline: railResult.polyline,
+          routing_engine: 'Civil Aviation Direct Corridor'
+        });
+      } else if (requestedMode === 'FLIGHT') {
+        options.push({
+          mode: 'FLIGHT',
+          title: 'Commercial Flight Corridor',
+          duration_minutes: 0,
+          duration_formatted: 'N/A',
+          distance_km: Math.round(distKm),
+          estimated_fare: null,
+          fare_status: 'unavailable',
+          provider: 'Commercial Aviation Directory',
+          speed_tier: 'flexible',
+          fare_note: 'No direct flight data available for this route/date. Connecting flights or regional transfer required.',
+          steps_summary: [
+            `No direct commercial flight operated between ${originLoc.name} and ${destLoc.name} on selected date.`,
+            'Check major nearby hub airports or choose Train / Highway Drive options.'
+          ],
+          verified_flights: [],
+          routing_engine: 'Civil Aviation Direct Corridor'
+        });
+      }
 
     } else {
       // -------------------------------------------------------------
@@ -2520,6 +2710,28 @@ app.get('/api/routes', async (req, res) => {
           polyline: walkResult.polyline,
           speed_tier: 'balanced',
           fare_note: 'Zero fare - scenic and healthy pedestrian walkway',
+        });
+      }
+
+      // 7. Flight mode selected for local route
+      if (requestedMode === 'FLIGHT') {
+        options.push({
+          mode: 'FLIGHT',
+          title: 'Intra-City Route (No Flights)',
+          duration_minutes: 0,
+          duration_formatted: 'N/A',
+          distance_km: roadDist,
+          estimated_fare: null,
+          fare_status: 'unavailable',
+          provider: 'Civil Aviation Directory',
+          speed_tier: 'flexible',
+          fare_note: `Intra-city short distance (~${roadDist} km): No commercial flights operate within the same municipal region. City road transit or metro recommended.`,
+          steps_summary: [
+            `Commercial air services do not operate intra-city routes within ${originLoc.name}.`,
+            'Select Taxi, Auto-Rickshaw, or Metro for local journey.'
+          ],
+          polyline: roadDriveResult.polyline,
+          routing_engine: 'Civil Aviation Direct Corridor'
         });
       }
     }
