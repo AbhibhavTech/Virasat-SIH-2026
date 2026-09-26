@@ -16,9 +16,11 @@ console.log('✓ Exactly 83 unique festival records preserved in data/festivals.
 // Canonical alias dictionary (shared across frontend, backend, and AI tools)
 const FESTIVAL_SEARCH_ALIASES = {
   holi: ['lathmar holi', 'braj holi', 'rangwali holi', 'dol jatra', 'barsana', 'gulal'],
-  diwali: ['deepawali', 'deepavali', 'deepotsav', 'dev deepawali', 'karthigai deepam', 'kali puja'],
-  deepawali: ['diwali', 'deepavali', 'deepotsav', 'dev deepawali'],
-  deepavali: ['diwali', 'deepawali', 'deepotsav', 'dev deepawali'],
+  diwali: ['deepawali', 'deepavali', 'deepotsav', 'dev deepawali', 'ayodhya deepotsav'],
+  deepawali: ['diwali', 'deepavali', 'deepotsav', 'dev deepawali', 'ayodhya deepotsav'],
+  deepavali: ['diwali', 'deepawali', 'deepotsav', 'dev deepawali', 'ayodhya deepotsav'],
+  karthigai: ['karthigai deepam', 'annamalai deepam', 'tiruvannamalai deepam'],
+  deepam: ['karthigai deepam', 'annamalai deepam', 'tiruvannamalai deepam'],
   navratri: ['navaratri', 'durga puja', 'garba', 'dandiya', 'bathukamma'],
   navaratri: ['navratri', 'durga puja', 'garba'],
   dasara: ['dussehra', 'vijayadashami', 'mysuru dasara', 'kullu dussehra', 'bastar dussehra', 'kota dussehra'],
@@ -122,8 +124,13 @@ for (const q of ['Diwali', 'diwali', 'Deepawali', 'deepawali', 'deepavali']) {
   assert(diwaliRes.length > 0, `Search for "${q}" should find matching records`);
   const names = diwaliRes.map((r) => r.name);
   assert(names.some((n) => n.includes('Deepawali') || n.includes('Deepotsav')), `Results for "${q}" should include Dev Deepawali / Ayodhya Deepotsav`);
-  console.log(`✓ "${q}" correctly returned ${diwaliRes.length} records: ${names.join(' | ')}`);
+  assert(!names.includes('Karthigai Deepam'), `Results for "${q}" must NOT include Karthigai Deepam`);
+  console.log(`✓ "${q}" correctly returned ${diwaliRes.length} records: ${names.join(' | ')} (Karthigai Deepam excluded)`);
 }
+
+const karthigaiRes = filterFestivals(festivals, { search: 'Karthigai' });
+assert(karthigaiRes.some((r) => r.name.includes('Karthigai Deepam')), 'Searching "Karthigai" must find Karthigai Deepam');
+console.log(`✓ "Karthigai" correctly found: ${karthigaiRes.map((r) => r.name).join(' | ')}`);
 
 // Test 3: Searching "Navratri"
 console.log('\n[TEST 3] Searching "Navratri"');

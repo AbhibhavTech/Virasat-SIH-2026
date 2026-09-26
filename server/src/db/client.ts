@@ -3487,9 +3487,11 @@ class DatabaseManager {
     }): Promise<{ festivals: FestivalRecord[]; total: number }> => {
       const FESTIVAL_SEARCH_ALIASES: Record<string, string[]> = {
         holi: ['lathmar holi', 'braj holi', 'holi', 'barsana', 'rangwali holi', 'gulal'],
-        diwali: ['dev deepawali', 'ayodhya deepotsav', 'diwali', 'deepawali', 'deepavali', 'deepotsav', 'festival of lights', 'karthigai deepam'],
-        deepawali: ['dev deepawali', 'ayodhya deepotsav', 'diwali', 'deepawali', 'deepavali', 'deepotsav', 'festival of lights', 'karthigai deepam'],
-        deepavali: ['dev deepawali', 'ayodhya deepotsav', 'diwali', 'deepawali', 'deepavali', 'deepotsav', 'festival of lights', 'karthigai deepam'],
+        diwali: ['dev deepawali', 'ayodhya deepotsav', 'diwali', 'deepawali', 'deepavali', 'deepotsav'],
+        deepawali: ['dev deepawali', 'ayodhya deepotsav', 'diwali', 'deepawali', 'deepavali', 'deepotsav'],
+        deepavali: ['dev deepawali', 'ayodhya deepotsav', 'diwali', 'deepawali', 'deepavali', 'deepotsav'],
+        karthigai: ['karthigai deepam', 'annamalai deepam', 'tiruvannamalai deepam'],
+        deepam: ['karthigai deepam', 'annamalai deepam', 'tiruvannamalai deepam'],
         navratri: ['gujarat navratri', 'navratri', 'navaratri', 'garba', 'sharad navratri', 'dandiya raas'],
         navaratri: ['gujarat navratri', 'navratri', 'navaratri', 'garba', 'dandiya raas'],
         dasara: ['mysore dasara', 'kullu dussehra', 'bastar dussehra', 'ganga dussehra', 'dussehra', 'dasara', 'vijayadashami'],
@@ -3638,8 +3640,7 @@ class DatabaseManager {
             }
           }
           for (const term of aliasTerms) {
-            if (nameLower.includes(term) || idLower.includes(term)) return true;
-            if (q.includes(term)) return true;
+            if (nameLower.includes(term) || idLower.includes(term) || (slugLower && slugLower.includes(term))) return true;
             if (Array.isArray((item as any).aliases) && (item as any).aliases.some((a: string) => a.toLowerCase().includes(term))) return true;
           }
 

@@ -130,9 +130,11 @@ export const FestivalsPage: React.FC<FestivalsPageProps> = ({
 
 const FESTIVAL_SEARCH_ALIASES: Record<string, string[]> = {
   holi: ['lathmar holi', 'braj holi', 'rangwali holi', 'dol jatra', 'barsana', 'gulal'],
-  diwali: ['deepawali', 'deepavali', 'deepotsav', 'dev deepawali', 'karthigai deepam', 'kali puja'],
-  deepawali: ['diwali', 'deepavali', 'deepotsav', 'dev deepawali'],
-  deepavali: ['diwali', 'deepawali', 'deepotsav', 'dev deepawali'],
+  diwali: ['deepawali', 'deepavali', 'deepotsav', 'dev deepawali', 'ayodhya deepotsav'],
+  deepawali: ['diwali', 'deepavali', 'deepotsav', 'dev deepawali', 'ayodhya deepotsav'],
+  deepavali: ['diwali', 'deepawali', 'deepotsav', 'dev deepawali', 'ayodhya deepotsav'],
+  karthigai: ['karthigai deepam', 'annamalai deepam', 'tiruvannamalai deepam'],
+  deepam: ['karthigai deepam', 'annamalai deepam', 'tiruvannamalai deepam'],
   navratri: ['navaratri', 'durga puja', 'garba', 'dandiya', 'bathukamma'],
   navaratri: ['navratri', 'durga puja', 'garba'],
   dasara: ['dussehra', 'vijayadashami', 'mysuru dasara', 'kullu dussehra', 'bastar dussehra', 'kota dussehra'],
@@ -199,8 +201,7 @@ const FESTIVAL_SEARCH_ALIASES: Record<string, string[]> = {
           }
         }
         for (const term of aliasTerms) {
-          if (nameLower.includes(term) || idLower.includes(term)) return true;
-          if (q.includes(term)) return true;
+          if (nameLower.includes(term) || idLower.includes(term) || (slugLower && slugLower.includes(term))) return true;
           if (Array.isArray(item.aliases) && item.aliases.some((a) => a.toLowerCase().includes(term))) return true;
         }
 
