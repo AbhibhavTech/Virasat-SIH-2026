@@ -149,6 +149,7 @@ class DatabaseManager {
       }
 
       if (isConnected) {
+        this.loadStaticFestivalsFallback();
         try {
           const res = await this.query<{ count: string | number }>('SELECT COUNT(*) AS count FROM places');
           const count = parseInt(String(res[0]?.count || '0'), 10);
@@ -170,7 +171,36 @@ class DatabaseManager {
     this.mode = 'json';
     console.log('[DB] Database mode: JSON fallback');
     await this.initJsonStore();
+    this.loadStaticFestivalsFallback();
     this.isInitialized = true;
+  }
+
+  public loadStaticFestivalsFallback(): void {
+    if (this.data.festivals && Object.keys(this.data.festivals).length > 0) return;
+    try {
+      const candidates = [
+        path.resolve(process.cwd(), 'data/festivals.json'),
+        path.resolve(this.dataDir, '../festivals.json'),
+        path.resolve(process.cwd(), 'dist/data/festivals.json'),
+      ];
+      for (const p of candidates) {
+        if (fs.existsSync(p)) {
+          const raw = JSON.parse(fs.readFileSync(p, 'utf-8'));
+          if (Array.isArray(raw)) {
+            this.data.festivals = {};
+            for (const f of raw) {
+              if (f && f.id) {
+                this.data.festivals[f.id] = f;
+              }
+            }
+            console.log(`[DB] Pre-loaded ${Object.keys(this.data.festivals).length} verified festivals into memory fallback.`);
+            return;
+          }
+        }
+      }
+    } catch (e) {
+      console.error('[DB] Failed to load static festivals fallback:', e);
+    }
   }
 
   private async initJsonStore(): Promise<void> {
@@ -235,6 +265,7 @@ class DatabaseManager {
 
   public async seedFromStaticFiles(): Promise<void> {
     const seeded = await runDatabaseSeed();
+    this.data.festivals = seeded.festivals;
     if (this.mode !== 'postgresql') {
       this.data.states = seeded.states;
       this.data.cities = seeded.cities;
@@ -243,7 +274,6 @@ class DatabaseManager {
       this.data.place_sources = seeded.place_sources;
       this.data.place_facts = seeded.place_facts;
       this.data.image_licenses = seeded.image_licenses;
-      this.data.festivals = seeded.festivals;
       if (Object.keys(this.data.users).length === 0) {
         this.data.users = seeded.users;
       }
@@ -634,6 +664,68 @@ class DatabaseManager {
     }
     console.log(`[DB Seed] Image licenses: inserted ${insertedImages}, skipped ${skippedImages}`);
 
+    // 8. FESTIVALS (Additive, Idempotent)
+    let insertedFestivals = 0;
+    let skippedFestivals = 0;
+    try {
+      const existingFestivals = await this.query<{ id: string }>('SELECT id FROM festivals;');
+      const existingFestIds = new Set(existingFestivals.map((f) => f.id.toLowerCase()));
+
+      const festSql = `
+        INSERT INTO festivals (
+          id, name, slug, state, state_id, primary_city, primary_city_id,
+          alternate_locations, description, cultural_vibe, typical_season, typical_month,
+          exact_date_start, exact_date_end, is_date_verified, is_recurring,
+          associated_places, lat, lng, image_url, source_url, source_name,
+          license, attribution_text, verification_status, created_at, updated_at
+        ) VALUES (
+          $1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21, $22, $23, $24, $25, $26, $27
+        )
+        ON CONFLICT (id) DO NOTHING;
+      `;
+
+      for (const f of Object.values(seeded.festivals)) {
+        if (existingFestIds.has(f.id.toLowerCase())) {
+          skippedFestivals++;
+          continue;
+        }
+        await this.query(festSql, [
+          f.id,
+          f.name,
+          f.slug || f.id,
+          f.state,
+          f.state_id,
+          f.primary_city,
+          f.primary_city_id || null,
+          f.alternate_locations || [],
+          f.description,
+          f.cultural_vibe || '',
+          f.typical_season || '',
+          f.typical_month || null,
+          f.exact_date_start || null,
+          f.exact_date_end || null,
+          f.is_date_verified || false,
+          f.is_recurring !== undefined ? f.is_recurring : true,
+          f.associated_places || [],
+          f.lat || null,
+          f.lng || null,
+          f.image_url || '',
+          f.source_url || '',
+          f.source_name || '',
+          f.license || 'editorial_fair_use',
+          f.attribution_text || null,
+          f.verification_status || 'verified',
+          f.created_at || new Date().toISOString(),
+          f.updated_at || new Date().toISOString(),
+        ]);
+        existingFestIds.add(f.id.toLowerCase());
+        insertedFestivals++;
+      }
+      console.log(`[DB Seed] Festivals: inserted ${insertedFestivals}, skipped ${skippedFestivals}`);
+    } catch (e: any) {
+      console.log(`[DB Seed] Festivals table note: ${e?.message || e}. Using verified in-memory dataset.`);
+    }
+
     console.log('[DB Seed] PostgreSQL import complete.');
   }
 
@@ -1021,6 +1113,42 @@ class DatabaseManager {
       from_value: row.from_value,
       to_value: row.to_value,
       created_at: row.created_at instanceof Date ? row.created_at.toISOString() : String(row.created_at),
+    };
+  }
+
+  private mapFestival(row: any): FestivalRecord {
+    return {
+      id: row.id,
+      name: row.name,
+      slug: row.slug || undefined,
+      state: row.state,
+      state_id: row.state_id,
+      primary_city: row.primary_city,
+      primary_city_id: row.primary_city_id || undefined,
+      alternate_locations: Array.isArray(row.alternate_locations)
+        ? row.alternate_locations
+        : (typeof row.alternate_locations === 'string' ? JSON.parse(row.alternate_locations) : undefined),
+      description: row.description,
+      cultural_vibe: row.cultural_vibe || '',
+      typical_season: row.typical_season || '',
+      typical_month: row.typical_month || undefined,
+      exact_date_start: row.exact_date_start ? (row.exact_date_start instanceof Date ? row.exact_date_start.toISOString().split('T')[0] : String(row.exact_date_start)) : undefined,
+      exact_date_end: row.exact_date_end ? (row.exact_date_end instanceof Date ? row.exact_date_end.toISOString().split('T')[0] : String(row.exact_date_end)) : undefined,
+      is_date_verified: Boolean(row.is_date_verified),
+      is_recurring: row.is_recurring !== undefined ? Boolean(row.is_recurring) : true,
+      associated_places: Array.isArray(row.associated_places)
+        ? row.associated_places
+        : (typeof row.associated_places === 'string' ? JSON.parse(row.associated_places) : undefined),
+      lat: row.lat !== null && row.lat !== undefined ? Number(row.lat) : undefined,
+      lng: row.lng !== null && row.lng !== undefined ? Number(row.lng) : undefined,
+      image_url: row.image_url || '',
+      source_url: row.source_url || '',
+      source_name: row.source_name || '',
+      license: row.license || undefined,
+      attribution_text: row.attribution_text || undefined,
+      verification_status: row.verification_status || 'verified',
+      created_at: row.created_at instanceof Date ? row.created_at.toISOString() : String(row.created_at || new Date().toISOString()),
+      updated_at: row.updated_at instanceof Date ? row.updated_at.toISOString() : String(row.updated_at || new Date().toISOString()),
     };
   }
 
@@ -3351,6 +3479,61 @@ class DatabaseManager {
       limit?: number;
       offset?: number;
     }): Promise<{ festivals: FestivalRecord[]; total: number }> => {
+      if (this.mode === 'postgresql') {
+        try {
+          const conditions: string[] = [];
+          const params: any[] = [];
+          let pIdx = 1;
+
+          if (filters?.search) {
+            conditions.push(`(LOWER(name) LIKE $${pIdx} OR LOWER(description) LIKE $${pIdx} OR LOWER(state) LIKE $${pIdx} OR LOWER(primary_city) LIKE $${pIdx} OR LOWER(cultural_vibe) LIKE $${pIdx})`);
+            params.push(`%${filters.search.toLowerCase().trim()}%`);
+            pIdx++;
+          }
+          if (filters?.state_id) {
+            conditions.push(`LOWER(state_id) = LOWER($${pIdx})`);
+            params.push(filters.state_id.trim());
+            pIdx++;
+          } else if (filters?.state) {
+            conditions.push(`(LOWER(state) LIKE $${pIdx} OR LOWER(state_id) = LOWER($${pIdx}))`);
+            params.push(`%${filters.state.toLowerCase().trim()}%`);
+            pIdx++;
+          }
+          if (filters?.city_id) {
+            conditions.push(`LOWER(primary_city_id) = LOWER($${pIdx})`);
+            params.push(filters.city_id.trim());
+            pIdx++;
+          } else if (filters?.city) {
+            conditions.push(`(LOWER(primary_city) LIKE $${pIdx} OR LOWER(primary_city_id) = LOWER($${pIdx}))`);
+            params.push(`%${filters.city.toLowerCase().trim()}%`);
+            pIdx++;
+          }
+          if (filters?.month) {
+            conditions.push(`(LOWER(typical_month) LIKE $${pIdx} OR LOWER(typical_season) LIKE $${pIdx})`);
+            params.push(`%${filters.month.toLowerCase().trim()}%`);
+            pIdx++;
+          }
+
+          const whereSql = conditions.length > 0 ? `WHERE ${conditions.join(' AND ')}` : '';
+          const countRows = await this.query<{ total: string | number }>(`SELECT COUNT(*) AS total FROM festivals ${whereSql}`, params);
+          const total = parseInt(String(countRows[0]?.total || '0'), 10);
+
+          if (total > 0 || conditions.length > 0) {
+            const limit = filters?.limit || 100;
+            const offset = filters?.offset || 0;
+            const limitClause = `LIMIT $${pIdx} OFFSET $${pIdx + 1}`;
+            const rows = await this.query(`SELECT * FROM festivals ${whereSql} ORDER BY name ASC ${limitClause}`, [...params, limit, offset]);
+            return {
+              festivals: rows.map((r) => this.mapFestival(r)),
+              total,
+            };
+          }
+        } catch {
+          // Table does not exist in PostgreSQL yet or query threw; fall back to verified memory dataset
+        }
+      }
+
+      this.loadStaticFestivalsFallback();
       let list = Object.values(this.data.festivals);
 
       if (filters?.search) {
@@ -3406,10 +3589,30 @@ class DatabaseManager {
     },
 
     findById: async (id: string): Promise<FestivalRecord | null> => {
+      if (this.mode === 'postgresql') {
+        try {
+          const rows = await this.query('SELECT * FROM festivals WHERE LOWER(id) = LOWER($1)', [id]);
+          if (rows[0]) return this.mapFestival(rows[0]);
+        } catch {}
+      }
+      this.loadStaticFestivalsFallback();
       return this.data.festivals[id] || this.data.festivals[id.toLowerCase()] || null;
     },
 
     findByCity: async (cityName: string): Promise<FestivalRecord[]> => {
+      if (this.mode === 'postgresql') {
+        try {
+          const canonicalCityId = resolveCanonicalCityId(cityName);
+          let rows: any[] = [];
+          if (canonicalCityId) {
+            rows = await this.query('SELECT * FROM festivals WHERE LOWER(primary_city_id) = LOWER($1) OR LOWER(primary_city) = LOWER($2)', [canonicalCityId, cityName]);
+          } else {
+            rows = await this.query('SELECT * FROM festivals WHERE LOWER(primary_city) = LOWER($1)', [cityName]);
+          }
+          if (rows.length > 0) return rows.map((r) => this.mapFestival(r));
+        } catch {}
+      }
+      this.loadStaticFestivalsFallback();
       const canonicalCityId = resolveCanonicalCityId(cityName);
       return Object.values(this.data.festivals).filter((f) => {
         if (canonicalCityId && f.primary_city_id && f.primary_city_id.toLowerCase() === canonicalCityId.toLowerCase()) {
@@ -3421,6 +3624,13 @@ class DatabaseManager {
 
     findByState: async (stateName: string): Promise<FestivalRecord[]> => {
       const s = stateName.toLowerCase().trim();
+      if (this.mode === 'postgresql') {
+        try {
+          const rows = await this.query('SELECT * FROM festivals WHERE LOWER(state) = LOWER($1) OR LOWER(state_id) = LOWER($1)', [s]);
+          if (rows.length > 0) return rows.map((r) => this.mapFestival(r));
+        } catch {}
+      }
+      this.loadStaticFestivalsFallback();
       return Object.values(this.data.festivals).filter(
         (f) => f.state.toLowerCase() === s || f.state_id?.toLowerCase() === s
       );
@@ -3430,9 +3640,21 @@ class DatabaseManager {
       currentDate = '2026-09-26',
       limit = 20
     ): Promise<{ current: FestivalRecord[]; upcoming: FestivalRecord[] }> => {
-      const now = new Date(currentDate);
-      const all = Object.values(this.data.festivals);
+      let all: FestivalRecord[] = [];
+      if (this.mode === 'postgresql') {
+        try {
+          const rows = await this.query('SELECT * FROM festivals ORDER BY name ASC');
+          if (rows && rows.length > 0) {
+            all = rows.map((r) => this.mapFestival(r));
+          }
+        } catch {}
+      }
+      if (all.length === 0) {
+        this.loadStaticFestivalsFallback();
+        all = Object.values(this.data.festivals);
+      }
 
+      const now = new Date(currentDate);
       const current: FestivalRecord[] = [];
       const upcoming: FestivalRecord[] = [];
 
