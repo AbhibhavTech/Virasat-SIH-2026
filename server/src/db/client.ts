@@ -176,7 +176,6 @@ class DatabaseManager {
   }
 
   public loadStaticFestivalsFallback(): void {
-    if (this.data.festivals && Object.keys(this.data.festivals).length > 0) return;
     try {
       const candidates = [
         path.resolve(process.cwd(), 'data/festivals.json'),
@@ -187,13 +186,15 @@ class DatabaseManager {
         if (fs.existsSync(p)) {
           const raw = JSON.parse(fs.readFileSync(p, 'utf-8'));
           if (Array.isArray(raw)) {
-            this.data.festivals = {};
-            for (const f of raw) {
-              if (f && f.id) {
-                this.data.festivals[f.id] = f;
+            if (!this.data.festivals) this.data.festivals = {};
+            if (Object.keys(this.data.festivals).length < raw.length) {
+              for (const f of raw) {
+                if (f && f.id) {
+                  this.data.festivals[f.id] = f;
+                }
               }
+              console.log(`[DB] Synchronized ${Object.keys(this.data.festivals).length} verified festivals into memory fallback.`);
             }
-            console.log(`[DB] Pre-loaded ${Object.keys(this.data.festivals).length} verified festivals into memory fallback.`);
             return;
           }
         }
@@ -237,6 +238,9 @@ class DatabaseManager {
       }
     }
 
+    // Ingest latest festivals if festivals.json has more records than local store
+    this.loadStaticFestivalsFallback();
+
     // If fresh / empty or missing place_facts, festivals, or flagship markets, auto-seed
     if (
       Object.keys(this.data.places).length === 0 ||
@@ -246,6 +250,8 @@ class DatabaseManager {
       !this.data.places['crawford-market']
     ) {
       await this.seedFromStaticFiles();
+    } else {
+      this.persist();
     }
   }
 
