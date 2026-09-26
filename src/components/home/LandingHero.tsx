@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Search, Compass, Sparkles, Calendar, Box, ArrowRight, MapPin, Landmark } from 'lucide-react';
+import { Search, Compass, Sparkles, Calendar, ArrowRight, MapPin, Landmark } from 'lucide-react';
 import { NavTab } from '../layout/Sidebar';
 
 interface LandingHeroProps {
@@ -45,7 +45,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
             <span className="text-emerald-700">Navigate Smarter.</span>
           </h1>
           <p className="text-sm sm:text-base text-slate-600 max-w-2xl leading-relaxed">
-            Pan-India geospatial tourism system featuring verified UNESCO heritage monuments across all 28 States & 8 UTs, multimodal routing with railway intelligence, 3D WebGL reconstructions, and Gemini AI travel planning.
+            Pan-India geospatial tourism system featuring verified UNESCO heritage monuments across all 28 States & 8 UTs, multimodal routing with railway intelligence, and Gemini AI travel planning.
           </p>
         </div>
 
@@ -116,14 +116,6 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
           >
             <Compass className="w-3.5 h-3.5 text-emerald-600" />
             <span>Interactive Map</span>
-          </button>
-
-          <button
-            onClick={() => onNavigateTab('3d')}
-            className="px-3.5 py-2 rounded-lg bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 text-xs font-semibold text-indigo-900 flex items-center gap-1.5 transition"
-          >
-            <Box className="w-3.5 h-3.5 text-indigo-600" />
-            <span>3D Monuments</span>
           </button>
         </div>
       </div>

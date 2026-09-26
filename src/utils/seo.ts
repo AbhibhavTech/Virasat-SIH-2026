@@ -16,7 +16,7 @@ export interface PageSEOConfig {
 const SITE_NAME = 'Virasat';
 const BASE_URL = 'https://virasat.in';
 const DEFAULT_IMAGE = 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1200&q=80';
-const DEFAULT_DESCRIPTION = "Explore India's verified monuments, cultural heritage, and living traditions with AI travel planning and 3D architectural exploration.";
+const DEFAULT_DESCRIPTION = "Explore India's verified monuments, cultural heritage, and living traditions with AI travel planning and heritage exploration.";
 
 export function generateWebSiteSchema() {
   return {

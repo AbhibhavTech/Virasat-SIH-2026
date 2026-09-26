@@ -1533,7 +1533,7 @@ export const MonumentARCameraModal: React.FC<MonumentARCameraModalProps> = ({
                       <span>Ready to explore {analysisResult.matched_place.name}?</span>
                     </div>
                     <p className="text-[11px] text-stone-300 mt-0.5">
-                      Open full destination dossier, interactive 3D model, audio tales, and route map.
+                      Open full destination dossier, architectural heritage notes, audio tales, and route map.
                     </p>
                   </div>
 

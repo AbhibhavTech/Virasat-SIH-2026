@@ -41,7 +41,7 @@ const AppContent: React.FC = () => {
 
     const isPrivate = ['/profile', '/trips', '/favorites'].some((p) => location.pathname.startsWith(p));
     let title = "Discover India's Living Heritage";
-    const desc = "Explore verified monuments, cultural heritage, and living traditions across India with multimodal routing and 3D exploration.";
+    const desc = "Explore verified monuments, cultural heritage, and living traditions across India with multimodal routing and heritage exploration.";
 
     if (location.pathname === '/') {
       title = "Discover India's Living Heritage";
@@ -55,8 +55,6 @@ const AppContent: React.FC = () => {
       title = "AI Multimodal Itinerary & Trip Planner";
     } else if (location.pathname.startsWith('/map')) {
       title = "Interactive Heritage Map & Transport Geometry";
-    } else if (location.pathname.startsWith('/3d')) {
-      title = "Interactive 3D Heritage Monument Explorer";
     } else if (location.pathname.startsWith('/ai')) {
       title = "Virasat AI Heritage Concierge & Travel Guide";
     } else if (location.pathname.startsWith('/trips')) {

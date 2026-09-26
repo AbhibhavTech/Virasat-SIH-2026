@@ -81,7 +81,7 @@ export const MultimodalRoute3DVisualizer: React.FC<MultimodalRoute3DVisualizerPr
           </div>
           <div>
             <h4 className="font-serif text-sm sm:text-base font-bold text-stone-900">
-              3D Multimodal Route Sequence
+              Multimodal Route Sequence
             </h4>
             <p className="text-[11px] text-stone-500 font-medium">
               Verified spatial progression from origin to destination

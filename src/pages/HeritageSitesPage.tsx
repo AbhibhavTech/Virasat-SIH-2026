@@ -185,7 +185,7 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
             Major Monuments, Famous Tourist Places & Iconic Heritage
           </h1>
           <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-sans">
-            Curated catalog of India&apos;s most famous monuments and iconic heritage sites, with verified visiting hours, transit corridors, and 3D architectural reconstructions.
+            Curated catalog of India&apos;s most famous monuments and iconic heritage sites, with verified visiting hours, transit corridors, and architectural insights.
           </p>
           <div className="flex flex-wrap items-center gap-2 sm:gap-4 pt-1 sm:pt-2 text-[10px] sm:text-xs text-stone-600 font-medium">
             <div className="flex items-center gap-1.5">

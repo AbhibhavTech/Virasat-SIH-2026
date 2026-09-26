@@ -7,14 +7,12 @@ interface MapPageProps {
   onSelectPlace: (id: string) => void;
   selectedCity: string;
   onSelectCity: (city: string) => void;
-  onView3DPlace?: (placeId: string) => void;
 }
 
 export const MapPage: React.FC<MapPageProps> = ({
   onSelectPlace,
   selectedCity,
   onSelectCity,
-  onView3DPlace,
 }) => {
   return (
     <div className="space-y-4 w-full pb-8">
@@ -56,7 +54,6 @@ export const MapPage: React.FC<MapPageProps> = ({
           onSelectPlace={onSelectPlace}
           selectedCity={selectedCity}
           onSelectCity={onSelectCity}
-          onView3DPlace={onView3DPlace}
           height="clamp(480px, 72vh, 660px)"
         />
       </MapErrorBoundary>

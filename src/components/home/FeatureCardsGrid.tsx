@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Calendar, Landmark, Bot, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Compass, Calendar, Landmark, Bot, ArrowRight, ShieldCheck } from 'lucide-react';
 import { NavTab } from '../layout/Sidebar';
 
 interface FeatureCardsGridProps {
@@ -36,12 +36,12 @@ export const FeatureCardsGrid: React.FC<FeatureCardsGridProps> = ({ onNavigateTa
       badgeClass: 'bg-emerald-50 text-emerald-800 border-emerald-200',
     },
     {
-      tab: '3d' as NavTab,
-      title: 'WebGL 3D Heritage Experiences',
-      desc: 'Inspect iconic Indian monuments in full 3D with interactive lighting and spatial geometry.',
-      icon: Box,
+      tab: 'map' as NavTab,
+      title: 'Interactive Heritage Cartography',
+      desc: 'Pan-India clustered GIS map showcasing verified UNESCO/ASI monuments, hidden gems, and route studios.',
+      icon: Compass,
       color: 'text-indigo-600',
-      badge: 'WebGL Real-time',
+      badge: 'Interactive GIS',
       badgeClass: 'bg-indigo-50 text-indigo-800 border-indigo-200',
     },
   ];

@@ -74,14 +74,6 @@ export const SimpleFooter: React.FC<SimpleFooterProps> = ({
                   Interactive GIS Heritage Map
                 </button>
               </li>
-              <li>
-                <button
-                  onClick={() => onNavigateTab('3d')}
-                  className="text-stone-600 hover:text-amber-800 transition"
-                >
-                  3D WebGL Museum
-                </button>
-              </li>
             </ul>
           </div>
 

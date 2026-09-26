@@ -11,7 +11,7 @@ import {
   RotateCcw,
   Copy,
   Check,
-  Box,
+  Landmark,
   Layers,
   Calendar,
   AlertCircle,
@@ -979,10 +979,10 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
                   </button>
                   <button
                     type="button"
-                    onClick={() => onNavigateTab('3d')}
+                    onClick={() => onNavigateTab('heritage')}
                     className="hover:text-[#FF671F] font-semibold flex items-center gap-1 transition"
                   >
-                    <Box className="w-3 h-3" /> 3D Models
+                    <Landmark className="w-3 h-3" /> Monuments
                   </button>
                   <button
                     type="button"

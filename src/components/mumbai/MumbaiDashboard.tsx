@@ -386,15 +386,6 @@ export const MumbaiDashboard: React.FC<MumbaiDashboardProps> = ({
                       >
                         Explore
                       </button>
-                      {place.features && place.features['3d'] && onView3DPlace && (
-                        <button
-                          onClick={() => onView3DPlace(place.id)}
-                          className="p-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-charcoal-light hover:text-charcoal border border-parchment-300"
-                          title="Explore in 3D"
-                        >
-                          <Box className="w-3.5 h-3.5 text-terracotta" />
-                        </button>
-                      )}
                     </div>
                   </div>
                 </div>

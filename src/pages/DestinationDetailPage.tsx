@@ -7,7 +7,6 @@ import {
   Compass,
   Sparkles,
   Navigation,
-  Box,
   Share2,
   Heart,
   Landmark,
@@ -29,8 +28,6 @@ import { VisitingInfoCard } from '../components/destination/VisitingInfoCard';
 import { RailwayStationsCard } from '../components/destination/RailwayStationsCard';
 import { NearbyCarousel } from '../components/destination/NearbyCarousel';
 import { RouteCalculator } from '../components/destination/RouteCalculator';
-import { GatewayOfIndia3D } from '../components/threed/GatewayOfIndia3D';
-import { InteractiveHeritageMonument3D, Monument3DType } from '../components/threed/InteractiveHeritageMonument3D';
 import { VirasatHeritageGuide } from '../components/cultural-guides/VirasatHeritageGuide';
 import { SafarRouteGuide } from '../components/cultural-guides/SafarRouteGuide';
 import { updatePageSEO, generateTouristAttractionSchema } from '../utils/seo';
@@ -56,22 +53,9 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
   const [place, setPlace] = useState<PlaceDetail | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
-  const [show3DModel, setShow3DModel] = useState(false);
   const [isReportModalOpen, setIsReportModalOpen] = useState(false);
   const [healthScore, setHealthScore] = useState<number | null>(null);
   const [healthStatus, setHealthStatus] = useState<string>('Excellent / Well Maintained');
-
-  const resolve3DMonumentType = (pId: string): Monument3DType | null => {
-    const idLower = pId.toLowerCase();
-    if (idLower.includes('amber') || idLower.includes('amer')) return 'amber-palace';
-    if (idLower.includes('hawa')) return 'hawa-mahal';
-    if (idLower.includes('taj')) return 'taj-mahal';
-    if (idLower.includes('qutub')) return 'qutub-minar';
-    if (idLower.includes('konark')) return 'konark-sun-temple';
-    if (idLower.includes('hampi')) return 'hampi-stone-temple';
-    if (idLower.includes('gateway')) return 'gateway-of-india';
-    return null;
-  };
 
   useEffect(() => {
     let isMounted = true;
@@ -165,7 +149,6 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
         },
       ];
 
-  const has3D = Boolean(place.features && place.features['3d']);
   const favActive = isFavorite(place.id);
   const nearby = (place as any).nearby_places || [];
 
@@ -338,35 +321,6 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
               `${place.name} showcases signature traditional Indian architectural motifs, combining precision stone geometry, ornate arches, and master craftsmanship designed to withstand the test of time.`}
           </p>
 
-          {/* 3D Architectural Model Viewer */}
-          {resolve3DMonumentType(place.id) && (
-            <div className="pt-2 sm:pt-3 space-y-2.5 sm:space-y-3">
-              <div className="flex items-center justify-between">
-                <span className="text-[11px] sm:text-xs font-bold text-stone-700 flex items-center gap-1.5">
-                  <Box className="w-3.5 h-3.5 text-[#FF671F]" />
-                  <span>360° Interactive 3D Model</span>
-                </span>
-                <button
-                  onClick={() => setShow3DModel((prev) => !prev)}
-                  className="px-2.5 sm:px-3 py-1 rounded-lg bg-orange-50 hover:bg-orange-100 text-[#FF671F] border border-orange-200 text-[11px] sm:text-xs font-semibold transition cursor-pointer"
-                >
-                  {show3DModel ? 'Hide 3D Model' : 'Open 3D Model'}
-                </button>
-              </div>
-
-              {show3DModel && (
-                <div className="rounded-2xl sm:rounded-3xl overflow-hidden border border-[#EFE8DF] shadow-warm">
-                  <InteractiveHeritageMonument3D
-                    monumentType={resolve3DMonumentType(place.id)!}
-                    monumentName={place.name}
-                    cityName={place.city}
-                    heightClass="h-64 sm:h-96"
-                  />
-                </div>
-              )}
-            </div>
-          )}
-
           {/* Virasat Cultural Heritage Guide */}
           <div className="pt-2">
             <VirasatHeritageGuide
@@ -374,7 +328,6 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
               location={`${place.city}, ${place.state}`}
               heritageStatus={place.heritage_status || 'Catalogued Heritage Site'}
               onAskHeritageAI={(prompt) => onOpenAIChat?.(place.id, prompt)}
-              onView3DModel={resolve3DMonumentType(place.id) ? () => setShow3DModel(true) : undefined}
             />
           </div>
         </section>
@@ -509,27 +462,7 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
           />
         </section>
 
-        {/* 10. 3D Experience (if available) */}
-        {has3D && (
-          <section className="space-y-4 pt-6 border-t border-[#EFE8DF]">
-            <div className="text-xs font-bold uppercase tracking-wider text-[#FF671F] flex items-center gap-1.5">
-              <Box className="w-3.5 h-3.5" />
-              <span>3D Digital Twin</span>
-            </div>
-            <h2 className="font-serif text-2xl font-bold text-stone-900">
-              Interactive 3D Heritage Explorer
-            </h2>
-            <p className="text-xs text-stone-600">
-              Inspect architectural arches, dome elevations, and stone masonry details in WebGL.
-            </p>
-            <GatewayOfIndia3D
-              onPlanVisit={() => {}}
-              height="h-[550px]"
-            />
-          </section>
-        )}
-
-        {/* 11. AI Guide */}
+        {/* AI Guide */}
         <section className="pt-6 border-t border-[#EFE8DF]">
           <div className="rounded-3xl bg-white border border-[#EFE8DF] shadow-warm p-6 sm:p-8 space-y-4">
             <div className="flex items-center gap-2 text-[#FF671F] text-xs font-bold uppercase tracking-wider">

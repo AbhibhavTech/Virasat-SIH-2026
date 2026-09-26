@@ -1,5 +1,5 @@
 import React from 'react';
-import { Landmark, ArrowRight, ShieldCheck, Box, Sparkles, MapPin } from 'lucide-react';
+import { Landmark, ArrowRight, ShieldCheck, Sparkles, MapPin } from 'lucide-react';
 import { NavTab } from '../layout/Sidebar';
 import { GuideIllustration } from '../cultural-guides/GuideIllustrations';
 
@@ -26,7 +26,6 @@ export const EditorialHeritageSection: React.FC<EditorialHeritageSectionProps> =
       status: 'UNESCO World Heritage Site',
       summary: 'A pristine masterpiece of symmetrical Makrana white marble and floral pietra dura gemstone inlay, commissioned by Mughal Emperor Shah Jahan along the Yamuna riverfront.',
       imageUrl: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1000&auto=format&fit=crop&q=85',
-      has3D: true,
       featured: true,
     },
     {
@@ -39,7 +38,6 @@ export const EditorialHeritageSection: React.FC<EditorialHeritageSectionProps> =
       status: 'UNESCO World Heritage Site',
       summary: 'The tallest brick minaret in the world at 72.5m, intricately fluted with Arabic epigraphy, flanked by the 4th-century rust-resistant Iron Pillar of King Chandragupta II.',
       imageUrl: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop&q=80',
-      has3D: false,
       featured: false,
     },
     {
@@ -52,7 +50,6 @@ export const EditorialHeritageSection: React.FC<EditorialHeritageSectionProps> =
       status: 'UNESCO Hill Forts of Rajasthan',
       summary: 'An opulent red sandstone and marble fortress crowning the rugged Aravalli ridge, famed for the glittering Sheesh Mahal mirror mosaics that illuminate with a single lamp.',
       imageUrl: 'https://images.unsplash.com/photo-1603262110263-fb010d6e59d4?w=800&auto=format&fit=crop&q=80',
-      has3D: false,
       featured: false,
     },
     {
@@ -65,7 +62,6 @@ export const EditorialHeritageSection: React.FC<EditorialHeritageSectionProps> =
       status: 'National Monument & UNESCO Enclave',
       summary: 'Mumbai’s monumental yellow basalt arch overlooking the Arabian Sea, serving as the ferry departure point for the ancient 6th-century Trimurti Sadashiva cave sanctum.',
       imageUrl: 'https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&auto=format&fit=crop&q=80',
-      has3D: true,
       featured: false,
     },
   ];
@@ -125,7 +121,7 @@ export const EditorialHeritageSection: React.FC<EditorialHeritageSectionProps> =
             </span>
           </div>
           <p className="text-xs sm:text-sm text-stone-700 leading-relaxed max-w-2xl">
-            "Every carved arch and corbelled dome holds an architectural lineage. I have cataloged India's major monuments, most famous tourist places, and world-renowned heritage sites with dynastic timelines, stone types, and virtual 3D reconstructions to help you experience their true antiquity."
+            "Every carved arch and corbelled dome holds an architectural lineage. I have cataloged India's major monuments, most famous tourist places, and world-renowned heritage sites with dynastic timelines and stone types to help you experience their true antiquity."
           </p>
           <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 mt-3">
             <button
@@ -133,13 +129,6 @@ export const EditorialHeritageSection: React.FC<EditorialHeritageSectionProps> =
               className="text-xs font-medium text-blue-900 bg-blue-100/80 hover:bg-blue-200 px-3 py-1 rounded-lg transition"
             >
               Browse Major Monuments & Famous Sites →
-            </button>
-            <button
-              onClick={() => onNavigateTab('3d')}
-              className="text-xs font-medium text-blue-900 bg-white border border-blue-200 hover:bg-blue-50 px-3 py-1 rounded-lg transition flex items-center gap-1"
-            >
-              <Box className="w-3 h-3 text-blue-700" />
-              <span>3D Virtual Artifacts</span>
             </button>
           </div>
         </div>
@@ -167,12 +156,6 @@ export const EditorialHeritageSection: React.FC<EditorialHeritageSectionProps> =
                 <ShieldCheck className="w-3 h-3 text-amber-700" />
                 <span>{leadSite.status}</span>
               </span>
-              {leadSite.has3D && (
-                <span className="px-2.5 py-1 rounded-full bg-blue-900/90 backdrop-blur-md text-[10px] font-bold text-white uppercase tracking-wide flex items-center gap-1">
-                  <Box className="w-3 h-3" />
-                  <span>3D Reconstructed</span>
-                </span>
-              )}
             </div>
 
             {/* Title on Lead Image */}
@@ -221,11 +204,6 @@ export const EditorialHeritageSection: React.FC<EditorialHeritageSectionProps> =
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   loading="lazy"
                 />
-                {site.has3D && (
-                  <div className="absolute top-1.5 left-1.5 p-1 rounded-md bg-blue-900/90 text-white">
-                    <Box className="w-3 h-3" />
-                  </div>
-                )}
               </div>
 
               <div className="flex-1 min-w-0">

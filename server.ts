@@ -20,6 +20,7 @@ import {
   resolveDestinationTransportNode,
   buildVerifiedTransitComparison,
 } from './src/server/transportResolver';
+import { INDIAN_AIRPORTS, STATE_COORDINATES, HISTORIC_INDIAN_MARKETS } from './src/data/indianAirports';
 
 import { db } from './server/src/db/client';
 import { requestIdMiddleware } from './server/src/middleware/validate';
@@ -798,9 +799,7 @@ app.get('/api/database/schema-template', (req, res) => {
 
 // Platform Statistics
 app.get('/api/stats', (req, res) => {
-  const threeDCount = Array.from(placesData.values()).filter(
-    (p) => p.features?.['3d'] || p.model_3d?.has_model || p.model_3d?.available
-  ).length;
+  const threeDCount = 0;
 
   const mumbaiStationCount = mumbaiLocalNetwork
     ? (mumbaiLocalNetwork.lines?.western?.stations?.length || 0) +
@@ -1534,8 +1533,8 @@ export interface LocationSuggestion {
   id: string;
   name: string;
   code?: string;
-  type: 'station' | 'heritage' | 'place' | 'city' | 'hidden_gem' | 'current_location' | 'hotel' | 'festival';
-  categoryType: 'station' | 'heritage' | 'place' | 'city' | 'hidden_gem' | 'current_location' | 'hotel' | 'festival';
+  type: 'station' | 'heritage' | 'place' | 'city' | 'hidden_gem' | 'current_location' | 'hotel' | 'festival' | 'state' | 'airport' | 'market';
+  categoryType: 'station' | 'heritage' | 'place' | 'city' | 'hidden_gem' | 'current_location' | 'hotel' | 'festival' | 'state' | 'airport' | 'market';
   city?: string;
   state?: string;
   lat: number;
@@ -1554,253 +1553,478 @@ app.get('/api/locations/suggest', (req, res) => {
   }
 
   const cleanQ = query.replace(/[^a-z0-9]/g, '');
-  const tokens = query.split(/[\s,.-]+/).filter(t => t.length > 1);
+  const tokens = query.split(/[\s,.-]+/).filter((t) => t.length > 0);
+  const qEscaped = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const wordBoundaryRegex = new RegExp(`(^|\\b|\\s|[-/])${qEscaped}`, 'i');
+  const exactWordRegex = new RegExp(`(^|\\b|\\s|[-/])${qEscaped}($|\\b|\\s|[-/])`, 'i');
   const isRailQuery = /station|railway|stn|junction|terminus|cantt|rail|terminal/i.test(query);
 
   const suggestions: LocationSuggestion[] = [];
   const seenIds = new Set<string>();
   const seenNameKeys = new Set<string>();
 
-  // 1. Search Railway Stations
+  // Helper to compute priority score
+  const scoreEntity = (
+    name: string,
+    cleanName: string,
+    type: 'state' | 'city' | 'station' | 'airport' | 'heritage' | 'hidden_gem' | 'hotel' | 'market' | 'festival' | 'place',
+    code?: string,
+    entityCity?: string,
+    entityState?: string
+  ): number => {
+    const lName = name.toLowerCase();
+    const lCode = (code || '').toLowerCase();
+    const lCity = (entityCity || '').toLowerCase();
+    const lState = (entityState || '').toLowerCase();
+
+    // 1. Exact match on main name or code
+    if (lName === query || cleanName === cleanQ) {
+      if (type === 'city') return 5000;
+      if (type === 'state') return 4900;
+      if (type === 'station') return 4500;
+      if (type === 'airport') return 4400;
+      if (type === 'heritage') return 4300;
+      if (type === 'market') return 4250;
+      if (type === 'hidden_gem') return 4200;
+      if (type === 'hotel') return 4150;
+      if (type === 'festival') return 4100;
+      return 4000;
+    }
+
+    if (lCode && (lCode === query || lCode === cleanQ)) {
+      return 4800;
+    }
+
+    // 2. Starts with query followed by a word break (e.g. "Patna Junction", "Jaipur Palace")
+    if (lName.startsWith(query + ' ') || lName.startsWith(query + '-')) {
+      if (type === 'city') return 3600;
+      if (type === 'state') return 3500;
+      if (type === 'station') return 3200;
+      if (type === 'airport') return 3100;
+      return 2900;
+    }
+
+    // 3. Exact word contained in name (e.g. "Jay Prakash Narayan Airport Patna")
+    if (exactWordRegex.test(lName)) {
+      if (type === 'city') return 3400;
+      if (type === 'state') return 3300;
+      if (type === 'station') return 3000;
+      if (type === 'airport') return 2900;
+      return 2700;
+    }
+
+    // 4. Starts with query (prefix substring)
+    if (lName.startsWith(query)) {
+      if (type === 'city') return 2900;
+      if (type === 'state') return 2800;
+      if (type === 'station') return 2500;
+      if (type === 'airport') return 2400;
+      return 2200;
+    }
+
+    // 5. Matches at word boundary in name
+    if (wordBoundaryRegex.test(lName)) {
+      if (type === 'city') return 2400;
+      if (type === 'state') return 2300;
+      if (type === 'station') return 2100;
+      if (type === 'airport') return 2000;
+      return 1800;
+    }
+
+    // 6. Queried city or state exact match (e.g. searching "Patna" and finding places in Patna)
+    if (lCity === query || (cleanQ.length > 2 && lCity.replace(/[^a-z0-9]/g, '') === cleanQ)) {
+      if (type === 'station') return 2400;
+      if (type === 'airport') return 2300;
+      if (type === 'heritage') return 1600;
+      if (type === 'market') return 1550;
+      if (type === 'hotel') return 1500;
+      return 1400;
+    }
+
+    if (lState === query) {
+      return 1100;
+    }
+
+    if (lCity && exactWordRegex.test(lCity)) {
+      return 1200;
+    }
+
+    if (lCity && wordBoundaryRegex.test(lCity)) {
+      return 900;
+    }
+
+    if (lState && wordBoundaryRegex.test(lState)) {
+      return 700;
+    }
+
+    // 7. Token containment (all words match words in the entity)
+    if (tokens.length > 1 && tokens.every((tok) => lName.includes(tok) || lCity.includes(tok) || lState.includes(tok))) {
+      return 600;
+    }
+
+    // 8. Category keyword matching (e.g. searching "hotel", "airport", "market", "festival", "station")
+    const isCatKeyword =
+      (type === 'hotel' && /^(hotel|hotels|stay|stays|resort|resorts)$/i.test(query)) ||
+      (type === 'airport' && /^(airport|airports|flight|flights|aerodrome)$/i.test(query)) ||
+      (type === 'station' && isRailQuery) ||
+      (type === 'festival' && /^(festival|festivals|utsav|fair|fairs|mela|melas|puja)$/i.test(query)) ||
+      (type === 'market' && /^(market|markets|bazaar|bazaars|bazar|shopping|mandi|haat)$/i.test(query)) ||
+      (type === 'heritage' && /^(heritage|monument|monuments|fort|forts|palace|palaces|unesco)$/i.test(query)) ||
+      (type === 'hidden_gem' && /^(hidden gem|hidden gems|gem|gems|secret|secrets|offbeat)$/i.test(query));
+    if (isCatKeyword) {
+      return 500;
+    }
+
+    // 9. Unrelated embedded substring inside another word (e.g. "patna" inside "visakhapatnam")
+    if (lName.includes(query)) {
+      return 15;
+    }
+    if (lCity.includes(query)) {
+      return 5;
+    }
+
+    return 0;
+  };
+
+  // 1. Search Cities
+  for (const c of citiesData) {
+    const cName = c.name;
+    const cClean = cName.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const score = scoreEntity(cName, cClean, 'city', undefined, c.name, c.state);
+
+    if (score > 0) {
+      const uniqueId = `city-${c.id}`;
+      if (!seenIds.has(uniqueId)) {
+        seenIds.add(uniqueId);
+        seenNameKeys.add(`city:${cClean}`);
+        suggestions.push({
+          id: uniqueId,
+          name: c.name,
+          type: 'city',
+          categoryType: 'city',
+          city: c.name,
+          state: c.state,
+          lat: c.lat,
+          lng: c.lng,
+          subtitle: `${c.state} · ${c.places_count ? `${c.places_count} sights` : 'City Destination'}`,
+          badge: (c as any).is_capital ? 'State Capital' : 'City',
+          score,
+        });
+      }
+    }
+  }
+
+  // 2. Search States
+  for (const s of statesData) {
+    const sName = s.name;
+    const sClean = sName.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const stateCoord = STATE_COORDINATES[s.id] || STATE_COORDINATES[s.name.toLowerCase().replace(/\s+/g, '-')] || {
+      lat: 22.5,
+      lng: 79.0,
+      zoom: 6.5,
+      capital: s.capital || '',
+    };
+    const score = scoreEntity(sName, sClean, 'state', (s as any).code, s.capital, s.name);
+
+    if (score > 0) {
+      const uniqueId = `state-${s.id}`;
+      if (!seenIds.has(uniqueId)) {
+        seenIds.add(uniqueId);
+        seenNameKeys.add(`state:${sClean}`);
+        suggestions.push({
+          id: uniqueId,
+          name: s.name,
+          type: 'state',
+          categoryType: 'state',
+          city: s.capital || stateCoord.capital,
+          state: s.name,
+          lat: stateCoord.lat,
+          lng: stateCoord.lng,
+          subtitle: `${s.capital ? `Capital: ${s.capital} • ` : ''}${s.region || 'India'}`,
+          badge: (s as any).region_type === 'union_territory' || s.name.includes('Territory') || s.name.includes('Delhi') ? 'Union Territory' : 'Indian State',
+          score,
+        });
+      }
+    }
+  }
+
+  // 3. Search Railway Stations
   for (const s of railwayStationsData) {
-    const sName = s.name.toLowerCase();
-    const sCode = (s.code || '').toLowerCase();
-    const sCity = s.city.toLowerCase();
-    const sCleanName = sName.replace(/[^a-z0-9]/g, '');
+    const sName = s.name;
+    const sClean = sName.toLowerCase().replace(/[^a-z0-9]/g, '');
+    let score = scoreEntity(sName, sClean, 'station', s.code, s.city, s.state);
+    if (isRailQuery && score > 0) score += 300;
 
-    let score = 0;
-    if (sCode === query || cleanQ === sCode) score += 100;
-    else if (sCleanName === cleanQ) score += 90;
-    else if (sCode.startsWith(query)) score += 80;
-    else if (sName.startsWith(query)) score += 70;
-    else if (sName.includes(query)) score += 50;
-    else if (query.includes(sCity) && isRailQuery) score += 65;
-    else if (tokens.length > 0 && tokens.every(tok => sName.includes(tok) || sCity.includes(tok) || sCode.includes(tok))) score += 45;
-
-    const uniqueId = s.id;
-    if (score > 0 && !seenIds.has(uniqueId)) {
-      seenIds.add(uniqueId);
-      seenNameKeys.add(`station:${sCleanName}`);
-      suggestions.push({
-        id: uniqueId,
-        name: s.name,
-        code: s.code,
-        type: 'station',
-        categoryType: 'station',
-        city: s.city,
-        state: s.state,
-        lat: s.lat,
-        lng: s.lng,
-        subtitle: `${s.code ? `[${s.code}] ` : ''}${s.city}, ${s.state} · Indian Railways`,
-        badge: s.is_junction ? 'Major Rail Junction' : 'Railway Station',
-        score: score + (isRailQuery ? 20 : 0),
-      });
+    if (score > 0) {
+      const uniqueId = `station-${s.id || s.code}`;
+      if (!seenIds.has(uniqueId)) {
+        seenIds.add(uniqueId);
+        seenNameKeys.add(`station:${sClean}`);
+        suggestions.push({
+          id: uniqueId,
+          name: `${s.name}${s.code ? ` (${s.code})` : ''}`,
+          code: s.code,
+          type: 'station',
+          categoryType: 'station',
+          city: s.city,
+          state: s.state,
+          lat: s.lat,
+          lng: s.lng,
+          subtitle: `${s.city}, ${s.state} · Code: ${s.code || 'IR'}`,
+          badge: s.is_junction ? 'Rail Junction' : 'Railway Station',
+          score,
+        });
+      }
     }
   }
 
-  // 2. Search Heritage Monuments
+  // 4. Search Airports
+  for (const ap of INDIAN_AIRPORTS) {
+    const apName = ap.name;
+    const apClean = apName.toLowerCase().replace(/[^a-z0-9]/g, '');
+    let score = scoreEntity(apName, apClean, 'airport', ap.iata, ap.city, ap.state);
+    if (ap.aliases && ap.aliases.some((al) => al.toLowerCase() === query || al.toLowerCase().startsWith(query))) {
+      score = Math.max(score, 2400);
+    }
+
+    if (score > 0) {
+      const uniqueId = `airport-${ap.iata.toLowerCase()}`;
+      if (!seenIds.has(uniqueId)) {
+        seenIds.add(uniqueId);
+        seenNameKeys.add(`airport:${ap.iata.toLowerCase()}`);
+        suggestions.push({
+          id: uniqueId,
+          name: `${ap.name} (${ap.iata})`,
+          code: ap.iata,
+          type: 'airport',
+          categoryType: 'airport',
+          city: ap.city,
+          state: ap.state,
+          lat: ap.lat,
+          lng: ap.lng,
+          subtitle: `${ap.city}, ${ap.state} · Airport Hub`,
+          badge: 'Airport',
+          score,
+        });
+      }
+    }
+  }
+
+  // 5. Search Heritage Monuments
   for (const h of heritageData) {
-    const hName = h.name.toLowerCase();
-    const hCity = (h.city || '').toLowerCase();
-    const hState = (h.state || '').toLowerCase();
-    const hClean = hName.replace(/[^a-z0-9]/g, '');
+    const hName = h.name;
+    const hClean = hName.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const score = scoreEntity(hName, hClean, 'heritage', undefined, h.city, h.state);
 
-    let score = 0;
-    if (h.id.toLowerCase() === query || hClean === cleanQ) score += 95;
-    else if (hName.startsWith(query)) score += 75;
-    else if (hName.includes(query)) score += 55;
-    else if (tokens.length > 0 && tokens.every(tok => hName.includes(tok) || hCity.includes(tok) || hState.includes(tok))) score += 40;
-
-    // Disambiguate if an existing station shares the exact same ID (e.g. csmt)
-    const uniqueId = seenIds.has(h.id) ? `heritage-${h.id}` : h.id;
-    if (score > 0 && !seenIds.has(uniqueId)) {
-      seenIds.add(uniqueId);
-      seenNameKeys.add(`heritage:${hClean}`);
-      seenNameKeys.add(`place:${hClean}`);
-      seenIds.add(`monument-${h.id}`);
-      suggestions.push({
-        id: uniqueId,
-        name: h.name,
-        type: 'heritage',
-        categoryType: 'heritage',
-        city: h.city,
-        state: h.state,
-        lat: h.coordinates?.lat || 28.6129,
-        lng: h.coordinates?.lng || 77.2295,
-        subtitle: `${h.city ? `${h.city}, ` : ''}${h.state} · ${h.category || 'National Monument'}`,
-        badge: h.unesco ? 'UNESCO Heritage' : 'ASI Monument',
-        score,
-      });
+    if (score > 0) {
+      const uniqueId = `heritage-${h.id}`;
+      if (!seenIds.has(uniqueId) && !seenNameKeys.has(`place:${hClean}`)) {
+        seenIds.add(uniqueId);
+        seenNameKeys.add(`heritage:${hClean}`);
+        suggestions.push({
+          id: h.id,
+          name: h.name,
+          type: 'heritage',
+          categoryType: 'heritage',
+          city: h.city,
+          state: h.state,
+          lat: h.coordinates?.lat || 28.6129,
+          lng: h.coordinates?.lng || 77.2295,
+          subtitle: `${h.city ? `${h.city}, ` : ''}${h.state} · ${h.category || 'National Monument'}`,
+          badge: h.unesco ? 'UNESCO Heritage' : 'Heritage Site',
+          score,
+        });
+      }
     }
   }
 
-  // 3. Search Places & Attractions (skip duplicate monuments already returned)
-  for (const p of placesData.values()) {
-    const pName = p.name.toLowerCase();
-    const pCity = (p.city || '').toLowerCase();
-    const pClean = pName.replace(/[^a-z0-9]/g, '');
+  // 6. Search Hidden Gems
+  for (const gem of VERIFIED_HIDDEN_GEMS) {
+    const gName = gem.name;
+    const gClean = gName.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const score = scoreEntity(gName, gClean, 'hidden_gem', undefined, gem.city, gem.state);
 
-    // If identical place or heritage monument is already in suggestions, skip duplicate
-    if (seenIds.has(p.id) || seenIds.has(`monument-${p.id}`) || seenNameKeys.has(`heritage:${pClean}`) || seenNameKeys.has(`place:${pClean}`)) {
+    if (score > 0) {
+      const uniqueId = `gem-${gem.id}`;
+      if (!seenIds.has(uniqueId) && !seenNameKeys.has(`place:${gClean}`)) {
+        seenIds.add(uniqueId);
+        seenNameKeys.add(`gem:${gClean}`);
+        suggestions.push({
+          id: gem.id,
+          name: gem.name,
+          type: 'hidden_gem',
+          categoryType: 'hidden_gem',
+          city: gem.city,
+          state: gem.state,
+          lat: gem.lat,
+          lng: gem.lng,
+          subtitle: `${gem.city}, ${gem.state} · ${gem.category}`,
+          badge: 'Hidden Gem',
+          score,
+        });
+      }
+    }
+  }
+
+  // 7. Search Places & Markets
+  for (const p of placesData.values()) {
+    const pName = p.name;
+    const pClean = pName.toLowerCase().replace(/[^a-z0-9]/g, '');
+
+    if (seenNameKeys.has(`heritage:${pClean}`) || seenNameKeys.has(`gem:${pClean}`)) {
       continue;
     }
 
-    let score = 0;
-    if (p.id.toLowerCase() === query || pClean === cleanQ) score += 90;
-    else if (pName.startsWith(query)) score += 70;
-    else if (pName.includes(query)) score += 48;
-    else if (tokens.length > 0 && tokens.every(tok => pName.includes(tok) || pCity.includes(tok))) score += 35;
+    const isMarket =
+      (p.category || '').toLowerCase().includes('market') ||
+      (p.category || '').toLowerCase().includes('bazaar') ||
+      (p.tags && p.tags.some((t: string) => /market|bazaar|shopping/i.test(t))) ||
+      /\b(market|bazaar|mandi|mandai|chowk)\b/i.test(p.name);
 
-    const uniqueId = seenIds.has(p.id) ? `place-${p.id}` : p.id;
-    if (score > 0 && !seenIds.has(uniqueId)) {
-      seenIds.add(uniqueId);
-      seenNameKeys.add(`place:${pClean}`);
-      suggestions.push({
-        id: uniqueId,
-        name: p.name,
-        type: 'place',
-        categoryType: 'place',
-        city: p.city,
-        state: p.state,
-        lat: p.coordinates?.lat || 28.6129,
-        lng: p.coordinates?.lng || 77.2295,
-        subtitle: `${p.city}, ${p.state} · ${p.category || 'Sight'}`,
-        badge: p.rating ? `★ ${p.rating}` : 'Tourist Landmark',
-        score,
-      });
+    const typeKey = isMarket ? 'market' : 'place';
+    const score = scoreEntity(pName, pClean, typeKey, undefined, p.city, p.state);
+
+    if (score > 0) {
+      const uniqueId = `place-${p.id}`;
+      if (!seenIds.has(uniqueId)) {
+        seenIds.add(uniqueId);
+        seenNameKeys.add(`place:${pClean}`);
+        suggestions.push({
+          id: p.id,
+          name: p.name,
+          type: isMarket ? 'market' : 'place',
+          categoryType: isMarket ? 'market' : 'place',
+          city: p.city,
+          state: p.state,
+          lat: p.coordinates?.lat || 28.6129,
+          lng: p.coordinates?.lng || 77.2295,
+          subtitle: `${p.city}, ${p.state} · ${isMarket ? 'Historic Market' : p.category || 'Sight'}`,
+          badge: isMarket ? 'Historic Market' : p.rating ? `★ ${p.rating}` : 'Tourist Landmark',
+          score,
+        });
+      }
     }
   }
 
-  // 4. Search Cities
-  for (const c of citiesData) {
-    const cName = c.name.toLowerCase();
-    const cClean = cName.replace(/[^a-z0-9]/g, '');
-
-    let score = 0;
-    if (c.id.toLowerCase() === query || cClean === cleanQ) score += 85;
-    else if (cName.startsWith(query)) score += 65;
-    else if (cName.includes(query)) score += 40;
-
-    const uniqueId = seenIds.has(c.id) ? `city-${c.id}` : c.id;
-    if (score > 0 && !seenIds.has(uniqueId)) {
-      seenIds.add(uniqueId);
-      suggestions.push({
-        id: uniqueId,
-        name: c.name,
-        type: 'city',
-        categoryType: 'city',
-        city: c.name,
-        state: c.state,
-        lat: c.lat,
-        lng: c.lng,
-        subtitle: `${c.state} · ${c.places_count ? `${c.places_count} sights` : 'City Destination'}`,
-        badge: 'City / Region',
-        score: score - (isRailQuery ? 15 : 0),
-      });
+  // 7b. Search Historic Indian Heritage Markets
+  for (const m of HISTORIC_INDIAN_MARKETS) {
+    const mName = m.name;
+    const mClean = mName.toLowerCase().replace(/[^a-z0-9]/g, '');
+    let score = scoreEntity(mName, mClean, 'market', undefined, m.city, m.state);
+    if (/^(market|markets|bazaar|bazaars|bazar|shopping|mandi|haat)$/i.test(query)) {
+      score = Math.max(score, 1800);
+    }
+    if (score > 0) {
+      const uniqueId = `market-${m.id}`;
+      if (!seenIds.has(uniqueId)) {
+        seenIds.add(uniqueId);
+        seenNameKeys.add(`market:${mClean}`);
+        suggestions.push({
+          id: m.id,
+          name: m.name,
+          type: 'market',
+          categoryType: 'market',
+          city: m.city,
+          state: m.state,
+          lat: m.lat,
+          lng: m.lng,
+          subtitle: `${m.city}, ${m.state} · ${m.specialty}`,
+          badge: m.badge || 'Historic Market',
+          score,
+        });
+      }
     }
   }
 
-  // 5. Search Hidden Gems & Secret Spots
-  for (const gem of VERIFIED_HIDDEN_GEMS) {
-    const gName = gem.name.toLowerCase();
-    const gCity = gem.city.toLowerCase();
-    const gState = gem.state.toLowerCase();
-    const gCat = gem.category.toLowerCase();
-    const gLore = gem.whyInteresting.toLowerCase();
-    const isHiddenSearch = /hidden|secret|gem|rare|marvel|unknown|undiscovered|stepwell|canyon|crater|cave/i.test(query);
-
-    let score = 0;
-    if (gem.id.toLowerCase() === query || gName === query) score += 95;
-    else if (gName.startsWith(query)) score += 80;
-    else if (gName.includes(query)) score += 60;
-    else if (gCity.includes(query) || gState.includes(query)) score += 45;
-    else if (gCat.includes(query) || gLore.includes(query)) score += 35;
-    else if (isHiddenSearch) score += 55;
-
-    const uniqueId = `gem-${gem.id}`;
-    if (score > 0 && !seenIds.has(uniqueId)) {
-      seenIds.add(uniqueId);
-      suggestions.push({
-        id: gem.id,
-        name: gem.name,
-        type: 'place',
-        categoryType: 'hidden_gem',
-        city: gem.city,
-        state: gem.state,
-        lat: gem.lat,
-        lng: gem.lng,
-        subtitle: `${gem.city}, ${gem.state} · ${gem.category} (${gem.century})`,
-        badge: '💎 Hidden Gem',
-        score: score + 10,
-      });
-    }
-  }
-
-  // 6. Search Hotels
-  const isHotelQuery = /hotel|stay|resort|lodge/i.test(query);
+  // 8. Search Hotels
   for (const h of hotelsData) {
-    const hName = h.name.toLowerCase();
-    const hCity = (h.city || '').toLowerCase();
-    const hClean = hName.replace(/[^a-z0-9]/g, '');
+    const hName = h.name;
+    const hClean = hName.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const score = scoreEntity(hName, hClean, 'hotel', undefined, h.city, h.state);
 
-    let score = 0;
-    if (hClean === cleanQ || h.id.toLowerCase() === query) score += 92;
-    else if (hName.startsWith(query)) score += 78;
-    else if (hName.includes(query)) score += 58;
-    else if (isHotelQuery && (query.includes(hCity) || isCityExactMatch(hCity, query.replace(/hotels?|stays?|where\s+to\s+stay\s+in/gi, '').trim()))) score += 65;
-
-    const uniqueId = `hotel-${h.id}`;
-    if (score > 0 && !seenIds.has(uniqueId) && h.lat && h.lng) {
-      seenIds.add(uniqueId);
-      suggestions.push({
-        id: uniqueId,
-        name: h.name,
-        type: 'hotel',
-        categoryType: 'hotel',
-        city: h.city,
-        state: h.state,
-        lat: h.lat,
-        lng: h.lng,
-        subtitle: `${h.location || h.city}, ${h.state} · ${h.category || 'Hotel'}`,
-        badge: h.rating ? `★ ${h.rating} Hotel` : 'Verified Hotel',
-        score,
-      });
+    if (score > 0 && h.lat && h.lng) {
+      const uniqueId = `hotel-${h.id}`;
+      if (!seenIds.has(uniqueId)) {
+        seenIds.add(uniqueId);
+        suggestions.push({
+          id: uniqueId,
+          name: h.name,
+          type: 'hotel',
+          categoryType: 'hotel',
+          city: h.city,
+          state: h.state,
+          lat: h.lat,
+          lng: h.lng,
+          subtitle: `${h.location || h.city}, ${h.state} · ${h.category || 'Hotel'}`,
+          badge: h.rating ? `★ ${h.rating} Hotel` : 'Verified Stay',
+          score,
+        });
+      }
     }
   }
 
-  // 7. Search Festivals
-  const isFestQuery = /festival|utsav|mela|puja|fair/i.test(query);
+  // 9. Search Festivals
   for (const f of festivalsData) {
-    const fName = f.name.toLowerCase();
-    const fCity = (f.primary_city || '').toLowerCase();
-    const fState = (f.state || '').toLowerCase();
-    const fClean = fName.replace(/[^a-z0-9]/g, '');
+    const fName = f.name;
+    const fClean = fName.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const score = scoreEntity(fName, fClean, 'festival', undefined, f.primary_city, f.state);
 
-    let score = 0;
-    if (fClean === cleanQ || f.id.toLowerCase() === query) score += 96;
-    else if (fName.startsWith(query)) score += 82;
-    else if (fName.includes(query)) score += 62;
-    else if (isFestQuery && (query.includes(fCity) || query.includes(fState))) score += 70;
-
-    const uniqueId = `festival-${f.id}`;
-    if (score > 0 && !seenIds.has(uniqueId) && f.lat && f.lng) {
-      seenIds.add(uniqueId);
-      suggestions.push({
-        id: uniqueId,
-        name: f.name,
-        type: 'festival',
-        categoryType: 'festival',
-        city: f.primary_city,
-        state: f.state,
-        lat: f.lat,
-        lng: f.lng,
-        subtitle: `${f.primary_city}, ${f.state} · ${f.typical_season || 'Celebration'}`,
-        badge: f.is_date_verified ? 'Verified Festival' : 'Cultural Festival',
-        score,
-      });
+    if (score > 0 && f.lat && f.lng) {
+      const uniqueId = `festival-${f.id}`;
+      if (!seenIds.has(uniqueId)) {
+        seenIds.add(uniqueId);
+        suggestions.push({
+          id: uniqueId,
+          name: f.name,
+          type: 'festival',
+          categoryType: 'festival',
+          city: f.primary_city,
+          state: f.state,
+          lat: f.lat,
+          lng: f.lng,
+          subtitle: `${f.primary_city}, ${f.state} · ${f.typical_season || 'Celebration'}`,
+          badge: 'Living Festival',
+          score,
+        });
+      }
     }
   }
 
+  // 10. Search Artisans & Craft Markets
+  for (const a of artisansData) {
+    const aName = a.artisan_name || a.name;
+    if (!aName) continue;
+    const aClean = aName.toLowerCase().replace(/[^a-z0-9]/g, '');
+    const craft = (a.craft_tradition || '').toLowerCase();
+    let score = scoreEntity(aName, aClean, 'market', undefined, a.city, a.state);
+    if ((query.includes('craft') || query.includes('artisan') || craft.includes(query) || (tokens.length > 0 && tokens.some(t => craft.includes(t)))) && score === 0) {
+      score = 1500;
+    }
+    if (score > 0) {
+      const cityCoord = citiesData.find((c) => c.name.toLowerCase() === (a.city || '').toLowerCase());
+      const lat = a.lat || cityCoord?.lat || 20.5937;
+      const lng = a.lng || cityCoord?.lng || 78.9629;
+      const uniqueId = `artisan-${a.id}`;
+      if (!seenIds.has(uniqueId)) {
+        seenIds.add(uniqueId);
+        suggestions.push({
+          id: uniqueId,
+          name: aName,
+          type: 'market',
+          categoryType: 'market',
+          city: a.city,
+          state: a.state,
+          lat,
+          lng,
+          subtitle: `${a.city}, ${a.state} · ${a.craft_tradition || 'GI Craft Workshop'}`,
+          badge: 'GI Craft Atelier',
+          score,
+        });
+      }
+    }
+  }
+
+  // Sort descending by priority score
   suggestions.sort((a, b) => b.score - a.score);
   res.json(suggestions.slice(0, limit));
 });
@@ -3781,7 +4005,7 @@ ${placesContextStr}`;
         `4. **Detail Drawers**: Click any pin for historical significance, official entry fees, and visiting hours.`;
     } else {
       reply = `Welcome to **Virasat (Discover India's Living Heritage)**!\n\n` +
-        `• 🏛️ **Explore**: Certified heritage circuits, 3D monument museum, and this AI concierge.\n` +
+        `• 🏛️ **Explore**: Certified heritage circuits, verified UNESCO monuments, and this AI concierge.\n` +
         `• 🧭 **India Explorer**: Interactive directory of all 36 States and Union Territories.\n` +
         `• 🗺️ **Interactive Map**: GIS map with proximity measurement and category filters.\n` +
         `• 🚆 **Travel & Multimodal Routing**: Compare train, flight, and road routes across India.\n\n` +

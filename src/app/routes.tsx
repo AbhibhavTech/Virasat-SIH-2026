@@ -5,7 +5,6 @@ import { PlaceSummary } from '../types';
 import { HomePage } from '../pages/HomePage';
 import { CityHubPage } from '../pages/CityHubPage';
 import { ItineraryPage } from '../pages/ItineraryPage';
-import { Heritage3DPage } from '../pages/Heritage3DPage';
 import { MapPage } from '../pages/MapPage';
 import { AIAssistantPage } from '../pages/AIAssistantPage';
 import { MyTripsPage } from '../pages/MyTripsPage';
@@ -57,7 +56,7 @@ export function getActiveTabFromPath(pathname: string): NavTab {
   if (pathname.startsWith('/heritage')) return 'heritage';
   if (pathname.startsWith('/itinerary')) return 'itinerary';
   if (pathname.startsWith('/map')) return 'map';
-  if (pathname.startsWith('/3d')) return '3d';
+  if (pathname.startsWith('/3d')) return 'heritage';
   if (pathname.startsWith('/ai')) return 'ai';
   if (pathname.startsWith('/trips')) return 'trips';
   if (pathname.startsWith('/favorites')) return 'favorites';
@@ -84,7 +83,7 @@ export function getPathForTab(tab: NavTab, city?: string): string {
     case 'map':
       return '/map';
     case '3d':
-      return '/3d';
+      return '/heritage';
     case 'ai':
       return '/ai';
     case 'trips':
@@ -309,15 +308,11 @@ export const AppRoutes: React.FC<AppRoutesProps> = ({
             onSelectPlace={onSelectPlace}
             selectedCity={selectedCity}
             onSelectCity={onSelectCity}
-            onView3DPlace={() => {
-              navigate('/3d');
-              window.scrollTo({ top: 0, behavior: 'smooth' });
-            }}
           />
         }
       />
 
-      <Route path="/3d" element={<Heritage3DPage />} />
+      <Route path="/3d" element={<Navigate to="/heritage" replace />} />
 
       <Route
         path="/ai"

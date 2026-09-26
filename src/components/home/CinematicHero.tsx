@@ -421,7 +421,7 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
                   className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-amber-800 hover:bg-amber-900 text-white shadow-xs transition active:scale-98 font-bold"
                 >
                   <Landmark className="w-3.5 h-3.5 text-amber-300" />
-                  <span>Explore Gateway in 3D</span>
+                  <span>Explore Gateway of India</span>
                 </button>
 
                 <button
@@ -454,7 +454,7 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
               <div className="flex items-center justify-between gap-2 border-b border-[#EFE7D8] pb-3">
                 <div className="flex items-center gap-1.5">
                   <span className="w-2.5 h-2.5 rounded-full bg-amber-600" />
-                  <span className="text-xs font-bold text-stone-900">Featured 3D Heritage</span>
+                  <span className="text-xs font-bold text-stone-900">Featured Heritage</span>
                 </div>
                 <div className="flex items-center gap-1">
                   {monumentShowcase.map((m, idx) => (
@@ -493,18 +493,18 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
                 <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
                   <span className="px-2.5 py-1 rounded-full bg-black/60 backdrop-blur-md text-[10px] font-bold text-white border border-white/20 flex items-center gap-1">
                     <Sparkles className="w-3 h-3 text-amber-400" />
-                    <span>3D Interactive Architecture</span>
+                    <span>Verified Heritage Site</span>
                   </span>
                   <span className="text-[10px] font-mono text-amber-300 font-bold bg-amber-950/80 px-2 py-0.5 rounded-md border border-amber-600/30">
                     {currentMonument.year}
                   </span>
                 </div>
 
-                {/* Floating 3D WebGL trigger badge */}
+                {/* Floating view dossier trigger badge */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover/card:opacity-100 transition-opacity bg-black/30 backdrop-blur-[2px]">
                   <div className="px-4 py-2 rounded-xl bg-amber-800 text-white text-xs font-bold shadow-lg flex items-center gap-2 transform translate-y-2 group-hover/card:translate-y-0 transition-transform">
                     <Compass className="w-4 h-4 animate-spin-slow" />
-                    <span>Launch 3D WebGL Orbit</span>
+                    <span>View Heritage Dossier</span>
                   </div>
                 </div>
 
@@ -585,7 +585,7 @@ export const CinematicHero: React.FC<CinematicHeroProps> = ({
               <Landmark className="w-4 h-4" />
             </div>
             <span className="text-[10px] font-bold text-amber-800 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200/60">
-              3D Orbit
+              Verified ASI
             </span>
           </div>
           <div className="font-serif text-lg font-bold text-stone-900 leading-tight">

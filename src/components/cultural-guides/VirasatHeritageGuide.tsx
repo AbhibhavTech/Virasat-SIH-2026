@@ -1,14 +1,13 @@
 import React from 'react';
 import { GuideIllustration } from './GuideIllustrations';
 import { GUIDE_CHARACTERS } from './CulturalGuideTypes';
-import { Landmark, Box, Sparkles, BookOpen, ArrowRight } from 'lucide-react';
+import { Landmark, Sparkles, BookOpen, ArrowRight } from 'lucide-react';
 
 interface VirasatHeritageGuideProps {
   monumentName?: string;
   location?: string;
   heritageStatus?: string;
   onAskHeritageAI?: (prompt: string) => void;
-  onView3DModel?: () => void;
   onExploreUNESCO?: () => void;
   className?: string;
 }
@@ -18,7 +17,6 @@ export const VirasatHeritageGuide: React.FC<VirasatHeritageGuideProps> = ({
   location,
   heritageStatus,
   onAskHeritageAI,
-  onView3DModel,
   onExploreUNESCO,
   className = '',
 }) => {
@@ -75,16 +73,6 @@ export const VirasatHeritageGuide: React.FC<VirasatHeritageGuideProps> = ({
                 <BookOpen className="w-3.5 h-3.5" />
                 <span>Ask Virasat About This Site</span>
                 <ArrowRight className="w-3.5 h-3.5" />
-              </button>
-            )}
-
-            {onView3DModel && (
-              <button
-                onClick={onView3DModel}
-                className="inline-flex items-center gap-1.5 text-xs font-semibold px-3.5 py-2 rounded-xl border border-blue-200 bg-white text-blue-900 hover:bg-blue-50 transition active:scale-95"
-              >
-                <Box className="w-3.5 h-3.5 text-blue-600" />
-                <span>3D Architectural View</span>
               </button>
             )}
 

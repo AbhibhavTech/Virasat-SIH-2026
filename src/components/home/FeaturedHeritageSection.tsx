@@ -1,5 +1,5 @@
 import React from 'react';
-import { Landmark, ArrowRight, ShieldCheck, Clock, MapPin, Box } from 'lucide-react';
+import { Landmark, ArrowRight, ShieldCheck, Clock, MapPin } from 'lucide-react';
 import { NavTab } from '../layout/Sidebar';
 import { GuideIllustration } from '../cultural-guides/GuideIllustrations';
 
@@ -23,7 +23,6 @@ export const FeaturedHeritageSection: React.FC<FeaturedHeritageSectionProps> = (
       status: 'UNESCO World Heritage Site',
       summary: 'A masterpiece of symmetrical Makrana white marble and floral pietra dura inlay, commissioned by Mughal Emperor Shah Jahan.',
       imageUrl: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=800&auto=format&fit=crop&q=80',
-      has3D: true,
     },
     {
       id: 'qutub-minar',
@@ -35,7 +34,6 @@ export const FeaturedHeritageSection: React.FC<FeaturedHeritageSectionProps> = (
       status: 'UNESCO World Heritage Site',
       summary: 'The tallest brick minaret in the world, carved with fine Arabic calligraphy, flanked by the 4th-century rust-resistant Iron Pillar.',
       imageUrl: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&auto=format&fit=crop&q=80',
-      has3D: false,
     },
     {
       id: 'gateway-of-india',
@@ -47,7 +45,6 @@ export const FeaturedHeritageSection: React.FC<FeaturedHeritageSectionProps> = (
       status: 'National Monument & UNESCO Enclave',
       summary: 'Mumbai’s monumental basalt arch overlooking the Arabian Sea, serving as the launch point for the ancient 6th-century Trimurti rock sculptures.',
       imageUrl: 'https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&auto=format&fit=crop&q=80',
-      has3D: true,
     },
     {
       id: 'amber-palace',
@@ -59,7 +56,6 @@ export const FeaturedHeritageSection: React.FC<FeaturedHeritageSectionProps> = (
       status: 'UNESCO Hill Forts of Rajasthan',
       summary: 'Opulent red sandstone and marble fortress overlooking Maota Lake, famous for the glittering Sheesh Mahal mirror mosaics.',
       imageUrl: 'https://images.unsplash.com/photo-1603262110263-fb010d6e59d4?w=800&auto=format&fit=crop&q=80',
-      has3D: false,
     },
   ];
 
@@ -129,13 +125,6 @@ export const FeaturedHeritageSection: React.FC<FeaturedHeritageSectionProps> = (
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t sm:bg-gradient-to-r from-stone-900/40 via-transparent to-transparent" />
-
-              {site.has3D && (
-                <div className="absolute top-3 left-3 px-2 py-0.5 rounded-md bg-stone-900/85 text-amber-300 backdrop-blur-md text-[10px] font-bold tracking-wide flex items-center gap-1 shadow-xs">
-                  <Box className="w-3 h-3" />
-                  <span>3D Model</span>
-                </div>
-              )}
             </div>
 
             {/* Editorial Content */}

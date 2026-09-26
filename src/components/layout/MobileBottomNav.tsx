@@ -33,7 +33,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
       id: 'india',
       label: 'Bharat',
       icon: Layers,
-      matches: ['india', 'heritage', '3d', 'map'],
+      matches: ['india', 'heritage', 'map'],
     },
     {
       id: 'itinerary',

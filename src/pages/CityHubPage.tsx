@@ -616,42 +616,36 @@ export const CityHubPage: React.FC<CityHubPageProps> = ({
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5 sm:gap-6">
-                {places.map((p) => {
-                  const has3d = p.features?.['3d'] || (p as any).model_3d?.available;
-                  return (
-                    <ThreeDDestinationCard
-                      key={p.id}
-                      id={p.id}
-                      title={p.name}
-                      subtitle={`${p.city}, ${p.state}`}
-                      badge={has3d ? '3D Available' : p.category || 'Famous Place'}
-                      confidence={p.data_confidence}
-                      imageUrl={getMonumentRealImage(p.id, p.thumbnail_url)}
-                      tagline={p.summary}
-                      onClick={() => onSelectPlace(p.id)}
-                    />
-                  );
-                })}
-              </div>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5 sm:gap-6">
-              {filteredPlaces.map((p) => {
-                const has3d = p.features?.['3d'] || (p as any).model_3d?.available;
-                return (
+                {places.map((p) => (
                   <ThreeDDestinationCard
                     key={p.id}
                     id={p.id}
                     title={p.name}
                     subtitle={`${p.city}, ${p.state}`}
-                    badge={has3d ? '3D Available' : p.category || 'Famous Place'}
+                    badge={p.category || 'Famous Place'}
                     confidence={p.data_confidence}
                     imageUrl={getMonumentRealImage(p.id, p.thumbnail_url)}
                     tagline={p.summary}
                     onClick={() => onSelectPlace(p.id)}
                   />
-                );
-              })}
+                ))}
+              </div>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5 sm:gap-6">
+              {filteredPlaces.map((p) => (
+                <ThreeDDestinationCard
+                  key={p.id}
+                  id={p.id}
+                  title={p.name}
+                  subtitle={`${p.city}, ${p.state}`}
+                  badge={p.category || 'Famous Place'}
+                  confidence={p.data_confidence}
+                  imageUrl={getMonumentRealImage(p.id, p.thumbnail_url)}
+                  tagline={p.summary}
+                  onClick={() => onSelectPlace(p.id)}
+                />
+              ))}
             </div>
           )}
         </div>
