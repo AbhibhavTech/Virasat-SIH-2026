@@ -154,7 +154,13 @@ export async function signOutFirebase() {
 function canAccessFirestoreUser(userId: string): boolean {
   if (!auth.currentUser) return false;
   if (auth.currentUser.uid === userId) return true;
-  if (auth.currentUser.email === 'abhibhavsinha82@gmail.com' && auth.currentUser.emailVerified) return true;
+  if (
+    (auth.currentUser.email === 'abhibhavsinha82@gmail.com' ||
+      auth.currentUser.email === 'alazelersinha111@gmail.com') &&
+    auth.currentUser.emailVerified
+  ) {
+    return true;
+  }
   return false;
 }
 
