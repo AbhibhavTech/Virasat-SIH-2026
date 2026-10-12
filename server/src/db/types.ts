@@ -455,7 +455,17 @@ export interface FestivalRecord {
   source_name: string;
   license?: string;
   attribution_text?: string;
-  verification_status: 'verified' | 'unverified' | 'needs_review';
+  verification_status: 'verified' | 'unverified' | 'needs_review' | 'FROM_DATABASE' | 'LIVE_FETCHED';
+  date_info?: any;
+  scope?: string;
+  religion_or_category?: string;
+  states?: string[];
+  region?: string;
+  source_section?: string;
+  source_row_no?: number;
+  source_rows?: number[];
+  tradition_notes?: string;
+  related_festivals?: string[];
   created_at: string;
   updated_at: string;
 }

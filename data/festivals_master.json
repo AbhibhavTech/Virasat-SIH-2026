@@ -1,0 +1,4988 @@
+[
+  {
+    "id": "guru-purnima",
+    "name": "Guru Purnima",
+    "aliases": [
+      "Guru Purnima (Vyasa Puja)"
+    ],
+    "description": "Spiritual full moon day dedicated to expressing reverence and gratitude to academic, spiritual, and artistic teachers, marking the birth anniversary of sage Veda Vyasa.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 18,
+    "source_rows": [
+      18,
+      63
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "chhath-puja",
+    "name": "Chhath Puja",
+    "aliases": [
+      "Chhath Parv (Surya Shashthi)",
+      "Chhath Puja (Bihar)"
+    ],
+    "description": "Four-day Vedic solar festival of rigorous discipline and purity dedicated to Sun God Surya and Chhathi Maiya, celebrated without priestly mediation along sacred river ghats.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Bihar",
+      "Jharkhand",
+      "Uttar Pradesh"
+    ],
+    "region": "East",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 45,
+    "source_rows": [
+      45,
+      76,
+      201
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "durga-puja",
+    "name": "Durga Puja",
+    "aliases": [
+      "Durga Puja (Kolkata)"
+    ],
+    "description": "UNESCO Intangible Cultural Heritage autumn festival commemorating Goddess Durgas victory over Mahishasura, featuring magnificent artistic pandals, dhunuchi naach, and immersion ceremonies.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "West Bengal",
+      "Assam",
+      "Tripura",
+      "Odisha",
+      "Bihar",
+      "Jharkhand"
+    ],
+    "region": "East",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 30,
+    "source_rows": [
+      30,
+      205
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "govardhan-puja-annakut",
+    "name": "Govardhan Puja / Annakut",
+    "aliases": [
+      "Govardhan Puja (Annakut)",
+      "Annakut Mahotsav",
+      "Govardhan Puja"
+    ],
+    "description": "Day following Diwali honouring Lord Krishnas lifting of Mount Govardhan to shield the inhabitants of Braj from catastrophic deluges, celebrated with massive mountain of food offerings.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Uttar Pradesh",
+      "Rajasthan",
+      "Gujarat",
+      "Haryana",
+      "Madhya Pradesh"
+    ],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 39,
+    "source_rows": [
+      39,
+      71,
+      81
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "datta-jayanti",
+    "name": "Datta / Dattatreya Jayanti",
+    "aliases": [
+      "Datta Jayanti",
+      "Dattatreya Jayanti"
+    ],
+    "description": "Birth celebration of Lord Dattatreya, the divine incarnation embodying Brahma, Vishnu and Shiva as one guru, observed with devotional singing and temple congregations.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Maharashtra",
+      "Karnataka",
+      "Andhra Pradesh",
+      "Gujarat"
+    ],
+    "region": "West",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 50,
+    "source_rows": [
+      50,
+      51
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "wangala-festival",
+    "name": "Wangala (100 Drums Festival)",
+    "aliases": [
+      "Wangala Festival (Meghalaya)"
+    ],
+    "description": "Post-harvest thanksgiving festival of the Garo tribe in Meghalaya paying homage to Sun God Saljong with rhythmic beating of 100 long oval Nagra drums.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Tribal/Regional",
+    "states": [
+      "Meghalaya"
+    ],
+    "region": "Northeast",
+    "source_section": "2. Harvest and New Year festivals",
+    "source_row_no": 99,
+    "source_rows": [
+      99,
+      220
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "nuakhai",
+    "name": "Nuakhai",
+    "aliases": [
+      "Nuakhai Juhar"
+    ],
+    "description": "Agrarian harvest festival of Western Odisha where the first harvested grain of the season is offered to patron deity Samaleswari and shared among families.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Odisha"
+    ],
+    "region": "East",
+    "source_section": "2. Harvest and New Year festivals",
+    "source_row_no": 98,
+    "source_rows": [
+      98,
+      208
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "hornbill-festival",
+    "name": "Hornbill Festival",
+    "aliases": [
+      "Hornbill Festival (Nagaland)",
+      "Hornbill Festival Cultural Gala"
+    ],
+    "description": "The Festival of Festivals celebrated annually at Kisama Heritage Village in Nagaland showcasing the traditional dances, crafts, cuisines, and music of all Naga tribes.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Nagaland"
+    ],
+    "region": "Northeast",
+    "source_section": "2. Harvest and New Year festivals",
+    "source_row_no": 100,
+    "source_rows": [
+      100,
+      213,
+      269,
+      286
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "losar",
+    "name": "Losar",
+    "aliases": [
+      "Losar (Buddhist New Year)",
+      "Losar (Ladakh)"
+    ],
+    "description": "Tibetan and Himalayan Buddhist New Year celebrated with masked dance rituals, butter lamps, prayer flags, and metho torch parades across mountain monasteries.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Buddhist",
+    "states": [
+      "Ladakh",
+      "Arunachal Pradesh",
+      "Himachal Pradesh",
+      "Sikkim"
+    ],
+    "region": "Himalayan",
+    "source_section": "2. Harvest and New Year festivals",
+    "source_row_no": 106,
+    "source_rows": [
+      106,
+      156,
+      230
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "losoong",
+    "name": "Losoong",
+    "aliases": [
+      "Losoong (Namsoong)",
+      "Losoong Festival"
+    ],
+    "description": "Sikkimese agricultural New Year of the Bhutia and Lepcha tribes celebrated at Phodong and Rumtek monasteries with Cham sacred masked dances and archery.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Buddhist",
+    "states": [
+      "Sikkim"
+    ],
+    "region": "Himalayan",
+    "source_section": "2. Harvest and New Year festivals",
+    "source_row_no": 104,
+    "source_rows": [
+      104,
+      158
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "hemis-festival",
+    "name": "Hemis Festival",
+    "aliases": [
+      "Hemis Tsechu (Ladakh)"
+    ],
+    "description": "Vibrant two-day annual celebration at Hemis Monastery in Ladakh commemorating Guru Padmasambhavas birth anniversary with masked mystic dances and exhibition of giant silk thangkas.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Buddhist",
+    "states": [
+      "Ladakh"
+    ],
+    "region": "Himalayan",
+    "source_section": "6. Buddhist festivals",
+    "source_row_no": 157,
+    "source_rows": [
+      157,
+      231
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "ambubachi-mela",
+    "name": "Ambubachi Mela",
+    "aliases": [
+      "Ambubachi Mela (Assam)"
+    ],
+    "description": "Annual monsoon fair at Kamakhya Temple in Guwahati celebrating the annual menstrual course of mother Earth and Goddess Kamakhya, attracting tantric sadhus.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Assam"
+    ],
+    "region": "Northeast",
+    "source_section": "3. Tribal and Folk festivals",
+    "source_row_no": 114,
+    "source_rows": [
+      114,
+      211
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "karam-karma",
+    "name": "Karam / Karma Festival",
+    "aliases": [
+      "Karam (Karma Festival)",
+      "Karma Puja",
+      "Karam Mahotsav (Jharkhand)"
+    ],
+    "description": "Major tribal festival celebrating the worship of the sacred Karam tree (Nauclea parvifolia) for fertility, prosperity, and youth among Oraon, Munda and Santhal tribes.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Tribal/Regional",
+    "states": [
+      "Jharkhand",
+      "West Bengal",
+      "Odisha",
+      "Chhattisgarh",
+      "Bihar"
+    ],
+    "region": "East",
+    "source_section": "3. Tribal and Folk festivals",
+    "source_row_no": 115,
+    "source_rows": [
+      115,
+      117,
+      243
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "sarhul",
+    "name": "Sarhul",
+    "aliases": [
+      "Sarhul (Jharkhand)"
+    ],
+    "description": "Indigenous spring nature festival celebrated when Sal trees bloom in Jharkhand, worshiping Mother Earth and village ancestors with Sal blossoms.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Tribal/Regional",
+    "states": [
+      "Jharkhand",
+      "Odisha",
+      "West Bengal"
+    ],
+    "region": "East",
+    "source_section": "3. Tribal and Folk festivals",
+    "source_row_no": 116,
+    "source_rows": [
+      116,
+      244
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "tusu",
+    "name": "Tusu Festival",
+    "aliases": [
+      "Tusu Parab",
+      "Tusu Mela"
+    ],
+    "description": "Folk harvest festival celebrated by tribal and rural communities on Makar Sankranti with young girls carrying decorated paper and bamboo towers (Chaudal).",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Tribal/Regional",
+    "states": [
+      "Jharkhand",
+      "West Bengal",
+      "Odisha"
+    ],
+    "region": "East",
+    "source_section": "3. Tribal and Folk festivals",
+    "source_row_no": 118,
+    "source_rows": [
+      118,
+      245
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "poush-mela",
+    "name": "Poush Mela",
+    "aliases": [
+      "Poush Mela (Shantiniketan)"
+    ],
+    "description": "Cultural carnival in Santiniketan, West Bengal, marking the foundation day of the Brahma Mandir with Baul songs, tribal dances, and Dokra crafts.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "West Bengal"
+    ],
+    "region": "East",
+    "source_section": "3. Tribal and Folk festivals",
+    "source_row_no": 119,
+    "source_rows": [
+      119,
+      246
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "gangasagar-mela",
+    "name": "Gangasagar Mela",
+    "aliases": [
+      "Gangasagar Mela (West Bengal)"
+    ],
+    "description": "Massive annual pilgrimage at Sagar Island where the Ganges meets the Bay of Bengal, drawing millions for a sacred dip on Makar Sankranti.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "West Bengal"
+    ],
+    "region": "East",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 88,
+    "source_rows": [
+      88,
+      247
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "madai-festival",
+    "name": "Madai Festival",
+    "aliases": [
+      "Madai Fair (Bastar)"
+    ],
+    "description": "Vibrant tribal gathering celebrated across Bastar, Chhattisgarh, honouring local tribal deities with animal worship, goat processions, and weekly rural haats.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Tribal/Regional",
+    "states": [
+      "Chhattisgarh"
+    ],
+    "region": "Central",
+    "source_section": "3. Tribal and Folk festivals",
+    "source_row_no": 120,
+    "source_rows": [
+      120,
+      240
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "chapchar-kut",
+    "name": "Chapchar Kut",
+    "aliases": [
+      "Chapchar Kut (Mizoram)"
+    ],
+    "description": "Spring harvest and cultural festival of the Mizo people celebrated after clearing jhum bamboo forests, featuring the energetic Cheraw bamboo dance and folk songs.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Tribal/Regional",
+    "states": [
+      "Mizoram"
+    ],
+    "region": "Northeast",
+    "source_section": "2. Harvest and New Year festivals",
+    "source_row_no": 101,
+    "source_rows": [
+      101,
+      221
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "mim-kut",
+    "name": "Mim Kut",
+    "aliases": [
+      "Mim Kut (Mizoram)"
+    ],
+    "description": "Maize harvest festival celebrated by the Mizo people to honour ancestors with offerings of first maize harvest, bread, and rice beer.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Tribal/Regional",
+    "states": [
+      "Mizoram"
+    ],
+    "region": "Northeast",
+    "source_section": "2. Harvest and New Year festivals",
+    "source_row_no": 102,
+    "source_rows": [
+      102,
+      222
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "vishu",
+    "name": "Vishu",
+    "aliases": [
+      "Vishu Festival (Kerala)"
+    ],
+    "description": "Traditional Malayalam astronomical New Year in Kerala celebrated by viewing the auspicious Vishukani arrangement, gifting Vishukkaineetam coins, and bursting fireworks.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Kerala"
+    ],
+    "region": "South",
+    "source_section": "2. Harvest and New Year festivals",
+    "source_row_no": 93,
+    "source_rows": [
+      93,
+      249
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "onam",
+    "name": "Onam",
+    "aliases": [
+      "Onam Festival (Kerala)"
+    ],
+    "description": "Keralas principal harvest and cultural festival commemorating the mythical homecoming of righteous King Mahabali, featuring floral carpets (Pookalam), feasts (Sadya), and Vallam Kali snake boat races.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Kerala"
+    ],
+    "region": "South",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 26,
+    "source_rows": [
+      26,
+      250
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "pola",
+    "name": "Pola",
+    "aliases": [
+      "Pola (Maharashtra)",
+      "Bail Pola"
+    ],
+    "description": "Thanksgiving festival celebrated by farmers across Maharashtra and Vidarbha honouring bulls and bullocks with body adornments, paint, and no agricultural work.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Maharashtra",
+      "Chhattisgarh"
+    ],
+    "region": "West",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 183,
+    "source_rows": [
+      183,
+      242
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "ganesh-chaturthi",
+    "name": "Ganesh Chaturthi",
+    "aliases": [
+      "Ganesh Visarjan",
+      "Ganesh Utsav"
+    ],
+    "description": "Vibrant multi-day festival honouring the birth of Lord Ganesha, featuring the installation of elaborate clay idols in public pandals and homes, cultural music, and grand immersion processions.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Maharashtra",
+      "Goa",
+      "Karnataka",
+      "Telangana",
+      "Andhra Pradesh",
+      "Tamil Nadu"
+    ],
+    "region": "West",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 25,
+    "source_rows": [
+      25,
+      74,
+      181
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "gudi-padwa",
+    "name": "Gudi Padwa",
+    "aliases": [
+      "Gudi Padwa (Maharashtra)"
+    ],
+    "description": "Traditional Marathi and Konkani New Year marking the first day of Chaitra, celebrated by raising auspicious decorated Gudi flags outside homes and feasting on shrikhand-puri.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Maharashtra",
+      "Goa"
+    ],
+    "region": "West",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 9,
+    "source_rows": [
+      9,
+      182
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "vaisakhi-baisakhi",
+    "name": "Vaisakhi / Baisakhi",
+    "aliases": [
+      "Vaisakhi (Baisakhi)",
+      "Vaisakhi (Khalsa Sirjana Divas)"
+    ],
+    "description": "Spring harvest festival of Punjab marking the ripening of the rabi crop and celebrated with lively Bhangra and Gidda folk dances across rural Punjab and Haryana.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Punjab",
+      "Haryana",
+      "Delhi"
+    ],
+    "region": "North",
+    "source_section": "2. Harvest and New Year festivals",
+    "source_row_no": 92,
+    "source_rows": [
+      92,
+      137
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "rann-utsav",
+    "name": "Rann Utsav",
+    "aliases": [
+      "Rann Utsav (Kutch)",
+      "Rann Utsav Cultural Showcase",
+      "Rann Utsav Tent City Celebrations"
+    ],
+    "description": "Four-month cultural carnival celebrating the stark white salt desert of the Great Rann of Kutch under moonlit skies with luxury tent cities, Kutchi embroidery, and folk music.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Gujarat"
+    ],
+    "region": "West",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 187,
+    "source_rows": [
+      187,
+      267,
+      288
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "tarnetar-fair",
+    "name": "Tarnetar Fair",
+    "aliases": [
+      "Tarnetar Fair (Surendranagar)"
+    ],
+    "description": "Vibrant folk matchmaking fair in Surendranagar, Gujarat, centered around the historic Trinetreshwar temple and traditional embroidered umbrellas crafted by Koli youth.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Gujarat"
+    ],
+    "region": "West",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 189,
+    "source_rows": [
+      189,
+      235
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "surajkund-crafts-mela",
+    "name": "Surajkund Crafts Mela",
+    "aliases": [
+      "Surajkund International Crafts Mela"
+    ],
+    "description": "World's largest crafts fair held in Faridabad, Haryana, featuring rural artisans from all Indian states and partner nations demonstrating traditional textiles and handicrafts.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Haryana"
+    ],
+    "region": "North",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 200,
+    "source_rows": [
+      200,
+      266,
+      289
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "sonepur-mela",
+    "name": "Sonepur Mela",
+    "aliases": [
+      "Sonepur Cattle Fair"
+    ],
+    "description": "Asia's largest historic cattle and animal fair held on Kartik Purnima at the confluence of the Ganges and Gandak rivers at Harihar Kshetra in Sonepur, Bihar.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Bihar"
+    ],
+    "region": "East",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 202,
+    "source_rows": [
+      202,
+      290
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "khajuraho-dance-festival",
+    "name": "Khajuraho Dance Festival",
+    "aliases": [],
+    "description": "Week-long celebration of classical Indian dance styles—Kathak, Bharatanatyam, Odissi, Kuchipudi, Manipuri, Mohiniyattam—set against the Chitragupta and Vishwanatha temples.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Madhya Pradesh"
+    ],
+    "region": "Central",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 237,
+    "source_rows": [
+      237,
+      273
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "ziro-festival-of-music",
+    "name": "Ziro Festival of Music",
+    "aliases": [],
+    "description": "India's most celebrated outdoor independent music festival hosted amidst pine-clad paddy fields of the Apatani tribe in Ziro Valley, Arunachal Pradesh.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Arunachal Pradesh"
+    ],
+    "region": "Northeast",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 227,
+    "source_rows": [
+      227,
+      262
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "konark-dance-festival",
+    "name": "Konark Dance Festival",
+    "aliases": [
+      "Konark Dance & Sand Art Festival"
+    ],
+    "description": "Five-day classical dance festival held annually against the majestic backdrop of the 13th-century Sun Temple at Konark, accompanied by the International Sand Art Festival on Chandrabhaga beach.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Odisha"
+    ],
+    "region": "East",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 210,
+    "source_rows": [
+      210,
+      274
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "puri-rath-yatra",
+    "name": "Puri Rath Yatra",
+    "aliases": [
+      "Rath Yatra (Puri)"
+    ],
+    "description": "Colossal sacred chariot procession where Lord Jagannath, Lord Balabhadra and Devi Subhadra journey from their sanctum to Gundicha Temple atop monumental wooden chariots pulled by millions of devotees.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Odisha"
+    ],
+    "region": "East",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 17,
+    "source_rows": [
+      17,
+      206
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "diwali",
+    "name": "Diwali (Deepavali)",
+    "aliases": [
+      "Diwali (Mahavira Nirvana Divas)"
+    ],
+    "description": "India's foremost festival of lights symbolizing the victory of light over darkness and good over evil, celebrated with lighting earthen diyas, Lakshmi Puja, sweets, and fireworks.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Bihar",
+      "Gujarat",
+      "Rajasthan",
+      "Maharashtra"
+    ],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 38,
+    "source_rows": [
+      38,
+      168
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE",
+    "tradition_notes": "Jain: On Diwali, Jains celebrate Lord Mahavira Nirvana Divas (attainment of liberation). | Sikh: Concurrently celebrated as Bandi Chhor Divas (Release of the 52 Kings by Guru Hargobind Ji).",
+    "related_festivals": [
+      "bandi-chhor-divas",
+      "mahavir-nirvana-divas"
+    ]
+  },
+  {
+    "id": "makar-sankranti",
+    "name": "Makar Sankranti",
+    "aliases": [],
+    "description": "Ancient solar festival celebrating the suns transition into Makara (Capricorn) marking the end of winter and longer days, celebrated with holy dips in rivers, kite flying, and sesame-jaggery sweets.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Gujarat",
+      "Maharashtra",
+      "Karnataka",
+      "Andhra Pradesh",
+      "Tamil Nadu",
+      "Uttar Pradesh",
+      "Bihar",
+      "Punjab",
+      "Rajasthan"
+    ],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 1,
+    "source_rows": [
+      1
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "pongal",
+    "name": "Pongal",
+    "aliases": [],
+    "description": "Four-day Tamil harvest thanksgiving festival dedicated to the Sun God Surya, celebrated by boiling fresh milk and rice in earthen pots until it overflows, thanking nature and farm cattle.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Tamil Nadu",
+      "Puducherry"
+    ],
+    "region": "South",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 2,
+    "source_rows": [
+      2
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "vasant-panchami",
+    "name": "Vasant Panchami",
+    "aliases": [],
+    "description": "Spring festival dedicated to Goddess Saraswati, the patron deity of learning, arts and music, where devotees wear yellow garments and worship books and musical instruments.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [
+      "West Bengal",
+      "Bihar",
+      "Uttar Pradesh",
+      "Punjab",
+      "Odisha",
+      "Assam"
+    ],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 3,
+    "source_rows": [
+      3
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "maha-shivratri",
+    "name": "Maha Shivratri",
+    "aliases": [],
+    "description": "Great night of Lord Shiva celebrated across India with nocturnal vigils, continuous meditation, offerings of bael leaves and milk to Shiva Lingams across Jyotirlingas and temples.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 4,
+    "source_rows": [
+      4
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "holika-dahan",
+    "name": "Holika Dahan",
+    "aliases": [],
+    "description": "Sacred eve of Holi commemorating the triumph of young devotee Prahlada over demoness Holika, celebrated with community bonfires symbolizing the destruction of evil.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Uttar Pradesh",
+      "Rajasthan",
+      "Bihar",
+      "Madhya Pradesh",
+      "Gujarat"
+    ],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 5,
+    "source_rows": [
+      5
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "holi",
+    "name": "Holi",
+    "aliases": [],
+    "description": "Pan-Indian festival of colours and joy marking the arrival of spring, where people playfully smear natural gulal and water colours, forgive past grievances, and share festive sweets like gujiya.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Uttar Pradesh",
+      "Rajasthan",
+      "Madhya Pradesh",
+      "Bihar",
+      "Delhi",
+      "Haryana",
+      "Punjab",
+      "Maharashtra",
+      "West Bengal"
+    ],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 6,
+    "source_rows": [
+      6
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "chaitra-navratri",
+    "name": "Chaitra Navratri",
+    "aliases": [],
+    "description": "Nine-day spring festival worshiping the nine manifestations of Goddess Shakti, observed with ritual fasting, chanting, and culminations on Rama Navami.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 7,
+    "source_rows": [
+      7
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "rama-navami",
+    "name": "Rama Navami",
+    "aliases": [],
+    "description": "Spring celebration commemorating the auspicious birth of Lord Rama, the seventh avatar of Vishnu, observed with temple processions, recital of the Ramayana, and kirtans.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Uttar Pradesh",
+      "Bihar",
+      "Madhya Pradesh",
+      "Andhra Pradesh",
+      "Telangana"
+    ],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 8,
+    "source_rows": [
+      8
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "ugadi",
+    "name": "Ugadi",
+    "aliases": [],
+    "description": "Deccan New Year celebrated by Telugu and Kannada communities on the first day of Chaitra, famous for the ritual consumption of Ugadi Pachadi combining six tastes of life.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Andhra Pradesh",
+      "Telangana",
+      "Karnataka"
+    ],
+    "region": "South",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 10,
+    "source_rows": [
+      10
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "hanuman-jayanti",
+    "name": "Hanuman Jayanti",
+    "aliases": [],
+    "description": "Commemoration of the birth of Lord Hanuman, the devoted servant of Rama, observed with early morning prayers, temple circumambulation, and recitation of the Hanuman Chalisa.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 11,
+    "source_rows": [
+      11
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "akshaya-tritiya",
+    "name": "Akshaya Tritiya",
+    "aliases": [],
+    "description": "Highly auspicious day signifying eternal prosperity and success, associated with Lord Parashurama and the onset of the Treta Yuga, celebrated by purchasing gold and initiating ventures.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [],
+    "region": "West",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 12,
+    "source_rows": [
+      12
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "ganga-dussehra",
+    "name": "Ganga Dussehra",
+    "aliases": [],
+    "description": "Ten-day Vedic festival commemorating the divine descent of river goddess Ganga from the heavens to the earthly realm through Lord Shivas matted locks.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Uttarakhand",
+      "Uttar Pradesh",
+      "Bihar",
+      "West Bengal"
+    ],
+    "region": "Himalayan",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 13,
+    "source_rows": [
+      13
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "snana-yatra",
+    "name": "Snana Yatra",
+    "aliases": [],
+    "description": "Bathing festival of Jagannath, Balabhadra and Subhadra at Puri where sacred deities receive 108 pots of purified herbal water prior to their annual convalescence (Anavasara).",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Odisha"
+    ],
+    "region": "East",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 14,
+    "source_rows": [
+      14
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "nirjala-ekadashi",
+    "name": "Nirjala Ekadashi",
+    "aliases": [],
+    "description": "Most austere of the twenty-four Ekadashi fasts in the Hindu lunar calendar, observed without consuming water for twenty-four hours to gain the spiritual merit of all Ekadashis.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 15,
+    "source_rows": [
+      15
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "vat-purnima",
+    "name": "Vat Purnima",
+    "aliases": [],
+    "description": "Observance by married Hindu women praying for their husbands longevity by tying sacred protective threads around the auspicious banyan (vat) tree in honour of Savitris devotion.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Maharashtra",
+      "Gujarat",
+      "Karnataka"
+    ],
+    "region": "West",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 16,
+    "source_rows": [
+      16
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "hariyali-teej",
+    "name": "Hariyali Teej",
+    "aliases": [],
+    "description": "Monsoon festival celebrated by women in Northern and Western India celebrating the reunion of Lord Shiva and Goddess Parvati, marked by green attire, henna, and swings.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Rajasthan",
+      "Haryana",
+      "Uttar Pradesh",
+      "Madhya Pradesh"
+    ],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 19,
+    "source_rows": [
+      19
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "nag-panchami",
+    "name": "Nag Panchami",
+    "aliases": [],
+    "description": "Traditional worship of serpents and snake deities across India on the fifth day of the bright half of Shravana, invoking divine protection against venom and natural hazards.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Maharashtra",
+      "Karnataka",
+      "Uttar Pradesh",
+      "West Bengal"
+    ],
+    "region": "West",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 20,
+    "source_rows": [
+      20
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "raksha-bandhan",
+    "name": "Raksha Bandhan",
+    "aliases": [],
+    "description": "Centuries-old celebration of familial love and protection, wherein sisters tie sacred talisman threads (rakhi) around their brothers wrists in exchange for lifelong blessings and gifts.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 21,
+    "source_rows": [
+      21
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "krishna-janmashtami",
+    "name": "Krishna Janmashtami",
+    "aliases": [],
+    "description": "Grand pan-Indian celebration of the midnight birth of Lord Krishna in Mathura, observed with midnight vigil pujas, fasting, fasting feasts, and vibrant Dahi Handi human pyramids.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Uttar Pradesh",
+      "Maharashtra",
+      "Gujarat",
+      "Rajasthan",
+      "Odisha",
+      "Tamil Nadu"
+    ],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 22,
+    "source_rows": [
+      22
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "radhashtami",
+    "name": "Radhashtami",
+    "aliases": [],
+    "description": "Festive commemoration of the auspicious appearance of Radha Rani in Barsana, celebrated fifteen days after Janmashtami with devotional songs and temple abhishekam.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Uttar Pradesh"
+    ],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 23,
+    "source_rows": [
+      23
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "hartalika-teej",
+    "name": "Hartalika Teej",
+    "aliases": [],
+    "description": "Rigorous fast observed by married women and maidens worshiping clay idols of Shiva and Parvati for matrimonial harmony and righteous spouses.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Bihar",
+      "Uttar Pradesh",
+      "Madhya Pradesh",
+      "Rajasthan",
+      "Maharashtra"
+    ],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 24,
+    "source_rows": [
+      24
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "anant-chaturdashi",
+    "name": "Anant Chaturdashi",
+    "aliases": [],
+    "description": "Final climactic day of the Ganeshotsav festival marked by massive, spirited public immersion processions of Lord Ganesha idols into rivers and the ocean with dhol-tasha beats.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Maharashtra",
+      "Goa",
+      "Gujarat",
+      "Karnataka"
+    ],
+    "region": "West",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 27,
+    "source_rows": [
+      27
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "pitru-paksha-mahalaya",
+    "name": "Pitru Paksha / Mahalaya",
+    "aliases": [],
+    "description": "Sixteen-lunar-day period when Hindus pay homage to their ancestors through tarpan and shraddha rituals, culminating in Mahalaya announcing Goddess Durgas descent.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [
+      "West Bengal",
+      "Bihar",
+      "Uttar Pradesh",
+      "Tamil Nadu",
+      "Kerala"
+    ],
+    "region": "East",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 28,
+    "source_rows": [
+      28
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "sharad-navratri",
+    "name": "Sharad Navratri",
+    "aliases": [],
+    "description": "Grand nine-night autumn festival venerating Goddess Durga in her nine sacred avatars, celebrated with energetic Garba and Dandiya Raas in Gujarat and fasting across northern states.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Gujarat",
+      "Maharashtra",
+      "Uttar Pradesh",
+      "Madhya Pradesh",
+      "Rajasthan",
+      "Delhi"
+    ],
+    "region": "West",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 29,
+    "source_rows": [
+      29
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "dussehra-vijayadashami",
+    "name": "Dussehra (Vijayadashami)",
+    "aliases": [],
+    "description": "Pan-Indian celebration of the victory of good over evil, marking Lord Ramas defeat of demon king Ravana with burning of towering effigies and weapon worship (Shastra Puja).",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 31,
+    "source_rows": [
+      31
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "mysore-dasara",
+    "name": "Mysore Dasara",
+    "aliases": [],
+    "description": "Ten-day royal celebration in Mysuru featuring the illumination of Mysore Palace with 100,000 bulbs, Jumboo Savari elephant procession carrying the idol of Goddess Chamundeshwari.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Karnataka"
+    ],
+    "region": "South",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 32,
+    "source_rows": [
+      32
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "kullu-dussehra",
+    "name": "Kullu Dussehra",
+    "aliases": [],
+    "description": "Week-long historic congregation of over 200 mountain deities at Dhalpur Maidan in Himachal Pradesh, commencing on Vijayadashami day when rest of India concludes festivals.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Himachal Pradesh"
+    ],
+    "region": "Himalayan",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 33,
+    "source_rows": [
+      33
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "karwa-chauth",
+    "name": "Karwa Chauth",
+    "aliases": [],
+    "description": "Traditional dawn-to-moonrise waterless fast observed by married women in Northern India praying for the safety, health, and long life of their husbands.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Punjab",
+      "Haryana",
+      "Uttar Pradesh",
+      "Rajasthan",
+      "Delhi",
+      "Himachal Pradesh"
+    ],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 34,
+    "source_rows": [
+      34
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "ahoi-ashtami",
+    "name": "Ahoi Ashtami",
+    "aliases": [],
+    "description": "Vrat observed by mothers for the welfare and longevity of their children, celebrated eight days before Diwali with fasting and night prayers upon sighting the stars.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Uttar Pradesh",
+      "Haryana",
+      "Punjab",
+      "Rajasthan"
+    ],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 35,
+    "source_rows": [
+      35
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "dhanteras",
+    "name": "Dhanteras",
+    "aliases": [],
+    "description": "First day of the five-day Diwali festival dedicated to Dhanvantari, the physician of the gods, and Goddess Lakshmi, traditionally observed by buying precious metals and kitchenware.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 36,
+    "source_rows": [
+      36
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "naraka-chaturdashi-chhoti-diwali",
+    "name": "Naraka Chaturdashi (Chhoti Diwali)",
+    "aliases": [],
+    "description": "Second day of Diwali festivities commemorating Lord Krishnas vanquishing of the demon Narakasura, observed with early morning ritual oil baths (Abhyanga Snan) and lighting lamps.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Maharashtra",
+      "Goa",
+      "Tamil Nadu",
+      "Karnataka",
+      "Gujarat"
+    ],
+    "region": "West",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 37,
+    "source_rows": [
+      37
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "bhai-dooj",
+    "name": "Bhai Dooj",
+    "aliases": [],
+    "description": "Celebration of sibling bonds concluding Diwali celebrations, where sisters apply vermilion tilak to brothers foreheads and pray for their protection while receiving gifts.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Uttar Pradesh",
+      "Bihar",
+      "Maharashtra",
+      "West Bengal",
+      "Punjab",
+      "Gujarat"
+    ],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 40,
+    "source_rows": [
+      40
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "chhath-puja-nahay-khay",
+    "name": "Chhath Puja (Nahay Khay)",
+    "aliases": [],
+    "description": "Initial purificatory phase of Chhath Parv where vratis take holy bath in water bodies and partake in sanctified meal of bottle gourd and rice.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Bihar",
+      "Jharkhand",
+      "Uttar Pradesh"
+    ],
+    "region": "East",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 41,
+    "source_rows": [
+      41
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "chhath-puja-kharna",
+    "name": "Chhath Puja (Kharna)",
+    "aliases": [],
+    "description": "Second day of Chhath involving full-day dry fast concluded after sunset by offering kheer and roti cooked on earthen chulha with mango wood.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Bihar",
+      "Jharkhand",
+      "Uttar Pradesh"
+    ],
+    "region": "East",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 42,
+    "source_rows": [
+      42
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "chhath-puja-sandhya-arghya",
+    "name": "Chhath Puja (Sandhya Arghya)",
+    "aliases": [],
+    "description": "Third evening of Chhath where thousands of devotees stand in river waters to present offerings (arghya) to the setting Sun God and Chhathi Maiya.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Bihar",
+      "Jharkhand",
+      "Uttar Pradesh",
+      "West Bengal",
+      "Delhi"
+    ],
+    "region": "East",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 43,
+    "source_rows": [
+      43
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "chhath-puja-usha-arghya",
+    "name": "Chhath Puja (Usha Arghya)",
+    "aliases": [],
+    "description": "Concluding sunrise ritual of Chhath Parv offering morning arghya to the rising sun, followed by breaking the 36-hour waterless fast with prasad.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Bihar",
+      "Jharkhand",
+      "Uttar Pradesh",
+      "West Bengal",
+      "Delhi"
+    ],
+    "region": "East",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 44,
+    "source_rows": [
+      44
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "tulsi-vivah",
+    "name": "Tulsi Vivah",
+    "aliases": [],
+    "description": "Ceremonial wedding of the sacred Tulsi plant (holy basil) to Lord Shaligram (aniconic representation of Vishnu), inaugurating the annual Hindu wedding season.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Maharashtra",
+      "Gujarat",
+      "Uttar Pradesh",
+      "Karnataka",
+      "Rajasthan"
+    ],
+    "region": "West",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 46,
+    "source_rows": [
+      46
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "devutthana-ekadashi",
+    "name": "Devutthana Ekadashi",
+    "aliases": [],
+    "description": "Auspicious Ekadashi marking the end of Chaturmas when Lord Vishnu awakens from his cosmic slumber (Yoga Nidra), reopening auspicious life milestones and ceremonies.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Uttar Pradesh",
+      "Rajasthan",
+      "Madhya Pradesh",
+      "Gujarat"
+    ],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 47,
+    "source_rows": [
+      47
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "dev-deepawali",
+    "name": "Dev Deepawali",
+    "aliases": [],
+    "description": "Festival of the Gods at Varanasi on Kartik Purnima when all eighty-four ghats along the sacred Ganga are illuminated with more than a million glowing earthen oil lamps.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Uttar Pradesh"
+    ],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 48,
+    "source_rows": [
+      48
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "kartik-purnima",
+    "name": "Kartik Purnima",
+    "aliases": [],
+    "description": "Holy full moon day commemorating Lord Shivas slaying of the demon Tripurasura, celebrated with holy river baths and lighting diyas at sacred shrines.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Odisha",
+      "Uttar Pradesh",
+      "Bihar",
+      "Rajasthan",
+      "Gujarat"
+    ],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 49,
+    "source_rows": [
+      49
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "gita-jayanti",
+    "name": "Gita Jayanti",
+    "aliases": [],
+    "description": "Celebration of the day Lord Krishna delivered the timeless spiritual message of the Bhagavad Gita to Pandava warrior Arjuna on the battlefield of Kurukshetra.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Haryana",
+      "Uttar Pradesh"
+    ],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 52,
+    "source_rows": [
+      52
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "vaikuntha-ekadashi",
+    "name": "Vaikuntha Ekadashi",
+    "aliases": [],
+    "description": "Major Vaishnava festival celebrated especially in South Indian temples such as Srirangam and Tirupati where the sacred Vaikuntha Dwaram (gateway to heaven) opens for devotees.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Tamil Nadu",
+      "Andhra Pradesh",
+      "Karnataka",
+      "Kerala"
+    ],
+    "region": "South",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 53,
+    "source_rows": [
+      53
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "skanda-sashti",
+    "name": "Skanda Sashti",
+    "aliases": [],
+    "description": "Six-day festival celebrating Lord Murugans victory over demon Surapadman (Soorasamharam), widely observed in Tamil Nadu temples with fasting and devotion.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Tamil Nadu",
+      "Kerala"
+    ],
+    "region": "South",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 54,
+    "source_rows": [
+      54
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "thaipusam",
+    "name": "Thaipusam",
+    "aliases": [],
+    "description": "Tamil festival dedicated to Lord Murugan where devotees carry elaborate physical offerings such as Kavadi and pierce their skin with vels as acts of penance and gratitude.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Tamil Nadu",
+      "Kerala"
+    ],
+    "region": "South",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 55,
+    "source_rows": [
+      55
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "panguni-uthiram",
+    "name": "Panguni Uthiram",
+    "aliases": [],
+    "description": "Auspicious Tamil festival commemorating the celestial weddings of divine couples including Shiva-Parvati, Rama-Sita, and Murugan-Deivanai on the day of the Uthiram star.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Tamil Nadu"
+    ],
+    "region": "South",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 56,
+    "source_rows": [
+      56
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "meenakshi-thirukalyanam",
+    "name": "Meenakshi Thirukalyanam",
+    "aliases": [],
+    "description": "Ten-day Chithirai festival in Madurai enacting the celestial wedding of Goddess Meenakshi with Lord Sundareswarar (Shiva), drawing hundreds of thousands of pilgrims.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Tamil Nadu"
+    ],
+    "region": "South",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 57,
+    "source_rows": [
+      57
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "mahamaham",
+    "name": "Mahamaham",
+    "aliases": [],
+    "description": "Sacred gathering held once every twelve years at the Mahamaham tank in Kumbakonam, Tamil Nadu, considered equivalent to the southern Kumbh Mela.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Tamil Nadu"
+    ],
+    "region": "South",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 58,
+    "source_rows": [
+      58
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "attukal-pongala",
+    "name": "Attukal Pongala",
+    "aliases": [],
+    "description": "Record-setting congregation of millions of women in Thiruvananthapuram, Kerala, preparing sweet rice porridge in earthen pots as an offering to Attukal Bhagavathy.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Kerala"
+    ],
+    "region": "South",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 59,
+    "source_rows": [
+      59
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "thrissur-pooram",
+    "name": "Thrissur Pooram",
+    "aliases": [],
+    "description": "The mother of all temple poorams in Kerala featuring majestic caparisoned elephant parades, Ilanjithara Melam percussion orchestras, and the Kudamattam umbrella exchange.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Kerala"
+    ],
+    "region": "South",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 60,
+    "source_rows": [
+      60
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "vishu-kani",
+    "name": "Vishu Kani",
+    "aliases": [],
+    "description": "Traditional morning ritual in Kerala viewing auspicious items arranged the previous night in an uruli—including golden cassia flowers, grains, coins, and mirror—to ensure a prosperous year.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Kerala"
+    ],
+    "region": "South",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 61,
+    "source_rows": [
+      61
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "hanuman-jayanti-south-india",
+    "name": "Hanuman Jayanti (South India)",
+    "aliases": [],
+    "description": "Celebration of Hanuman Jayanti according to the Margazhi Moola Nakshatra in Tamil Nadu and during Vaisakha in Andhra Pradesh and Telangana.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Tamil Nadu",
+      "Andhra Pradesh",
+      "Telangana"
+    ],
+    "region": "South",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 62,
+    "source_rows": [
+      62
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "balarama-jayanti",
+    "name": "Balarama Jayanti",
+    "aliases": [],
+    "description": "Appearance day of Lord Balarama, Krishnas elder brother and embodiment of strength, honoured with agricultural worship and plough reverence.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Uttar Pradesh",
+      "Gujarat"
+    ],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 64,
+    "source_rows": [
+      64
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "varalakshmi-vratam",
+    "name": "Varalakshmi Vratam",
+    "aliases": [],
+    "description": "Vow observed by women in South India on the Friday before the full moon of Shravana seeking the blessings of Goddess Lakshmi for domestic harmony and abundance.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Andhra Pradesh",
+      "Telangana",
+      "Karnataka",
+      "Tamil Nadu"
+    ],
+    "region": "South",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 65,
+    "source_rows": [
+      65
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "mangala-gauri-vrat",
+    "name": "Mangala Gauri Vrat",
+    "aliases": [],
+    "description": "Vow undertaken on Tuesdays during the month of Shravana by newlyweds praying to Goddess Gauri for lasting matrimonial happiness and family well-being.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Maharashtra",
+      "Gujarat",
+      "Bihar",
+      "Uttar Pradesh"
+    ],
+    "region": "West",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 66,
+    "source_rows": [
+      66
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "kajari-teej",
+    "name": "Kajari Teej",
+    "aliases": [],
+    "description": "Monsoon Teej festival widely celebrated in Bundelkhand, Rajasthan, and Eastern UP with folk Kajari songs, neem tree reverence, and fasts.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Rajasthan",
+      "Uttar Pradesh",
+      "Madhya Pradesh"
+    ],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 67,
+    "source_rows": [
+      67
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "jivitputrika-jitiya-vrat",
+    "name": "Jivitputrika (Jitiya) Vrat",
+    "aliases": [],
+    "description": "Three-day waterless fast observed by mothers in Bihar, Jharkhand, and UP for the long life, vitality, and protection of their offspring.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Bihar",
+      "Jharkhand",
+      "Uttar Pradesh"
+    ],
+    "region": "East",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 68,
+    "source_rows": [
+      68
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "kojagari-lakshmi-puja",
+    "name": "Kojagari Lakshmi Puja",
+    "aliases": [],
+    "description": "Full moon night festival in Bengal, Odisha, and Assam worshiping Goddess Lakshmi where devotees stay awake all night to receive the visiting goddess of wealth.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "West Bengal",
+      "Odisha",
+      "Assam",
+      "Tripura"
+    ],
+    "region": "East",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 69,
+    "source_rows": [
+      69
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "karwa-chauth-vrat",
+    "name": "Karwa Chauth Vrat",
+    "aliases": [],
+    "description": "Traditional fast observed on Krishna Paksha Chaturthi in the month of Kartik by women in North and Northwestern India for their partners longevity.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Punjab",
+      "Haryana",
+      "Uttar Pradesh",
+      "Rajasthan",
+      "Delhi"
+    ],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 70,
+    "source_rows": [
+      70
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "gopashtami",
+    "name": "Gopashtami",
+    "aliases": [],
+    "description": "Vedic festival honouring cows and calves, marking the day when Lord Krishna was entrusted with grazing the mature cows in the pastures of Vrindavan.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Uttar Pradesh",
+      "Haryana",
+      "Rajasthan",
+      "Madhya Pradesh"
+    ],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 72,
+    "source_rows": [
+      72
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "vaikuntha-chaturdashi",
+    "name": "Vaikuntha Chaturdashi",
+    "aliases": [],
+    "description": "Sacred day commemorating the divine union and mutual worship between Lord Shiva and Lord Vishnu at Kashi and Ujjain with lotus petal offerings.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Uttar Pradesh",
+      "Madhya Pradesh",
+      "Maharashtra"
+    ],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 73,
+    "source_rows": [
+      73
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "kalabhairav-jayanti",
+    "name": "Kalabhairav Jayanti",
+    "aliases": [],
+    "description": "Appearance day of Kalabhairava, the fierce manifestation of Lord Shiva associated with time, destruction, and spiritual guardianship of sacred cities like Varanasi.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Uttar Pradesh",
+      "Madhya Pradesh",
+      "Karnataka"
+    ],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 75,
+    "source_rows": [
+      75
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "shakambhari-navratri",
+    "name": "Shakambhari Navratri",
+    "aliases": [],
+    "description": "Eight-day festival concluding on Paush Purnima honouring Goddess Shakambhari, the divine provider of vegetation, food, and life during historic droughts.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Rajasthan",
+      "Uttar Pradesh",
+      "Karnataka",
+      "Maharashtra"
+    ],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 77,
+    "source_rows": [
+      77
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "paush-purnima",
+    "name": "Paush Purnima",
+    "aliases": [],
+    "description": "Full moon day of Pausha month marking the start of the holy Magh Mela month-long austerities and snan at the Triveni Sangam in Prayagraj.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Uttar Pradesh",
+      "Bihar",
+      "West Bengal"
+    ],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 78,
+    "source_rows": [
+      78
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "magh-mela",
+    "name": "Magh Mela",
+    "aliases": [],
+    "description": "Annual forty-five day pilgrimage gathering on the banks of the Triveni Sangam in Prayagraj where Kalpavasis practice austerity, prayer, and holy bathing.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Uttar Pradesh"
+    ],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 79,
+    "source_rows": [
+      79
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "ratha-saptami",
+    "name": "Ratha Saptami",
+    "aliases": [],
+    "description": "Solar festival celebrating the turning of the Sun Gods seven-horse chariot toward the northern hemisphere, observed with early morning sun worship.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Andhra Pradesh",
+      "Karnataka",
+      "Tamil Nadu",
+      "Maharashtra"
+    ],
+    "region": "South",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 80,
+    "source_rows": [
+      80
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "somvati-amavasya",
+    "name": "Somvati Amavasya",
+    "aliases": [],
+    "description": "New moon falling on a Monday considered uniquely sacred for performing holy dips at Haridwar and Prayagraj and circumambulating the sacred Peepal tree.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Uttarakhand",
+      "Uttar Pradesh",
+      "Madhya Pradesh"
+    ],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 82,
+    "source_rows": [
+      82
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "shani-jayanti",
+    "name": "Shani Jayanti",
+    "aliases": [],
+    "description": "Birth anniversary of Lord Shani (planet Saturn), deity of karma and justice, observed with oil baths and charity at pilgrimage shrines like Shani Shingnapur.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Maharashtra",
+      "Madhya Pradesh",
+      "Uttar Pradesh"
+    ],
+    "region": "West",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 83,
+    "source_rows": [
+      83
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "bada-osha",
+    "name": "Bada Osha",
+    "aliases": [],
+    "description": "Traditional fasting festival in Odisha dedicated to Lord Dhabaleswar (Shiva) on the island temple in Cuttack, observed with the preparation of Gaja bhog.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Odisha"
+    ],
+    "region": "East",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 84,
+    "source_rows": [
+      84
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "pradosh-vrat",
+    "name": "Pradosh Vrat",
+    "aliases": [],
+    "description": "Bi-monthly twilight fast dedicated to Lord Shiva observed on the thirteenth day (Trayodashi) of both waxing and waning lunar fortnights.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 85,
+    "source_rows": [
+      85
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "masik-shivratri",
+    "name": "Masik Shivratri",
+    "aliases": [],
+    "description": "Monthly fast and vigil observed on the fourteenth night of every waning lunar phase in remembrance of Lord Shiva.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 86,
+    "source_rows": [
+      86
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "shravan-somwar",
+    "name": "Shravan Somwar",
+    "aliases": [],
+    "description": "Mondays in the auspicious holy month of Shravana dedicated to worshiping Shiva with Ganga jal, bilva leaves, and Kanwar Yatra pilgrimages.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Uttar Pradesh",
+      "Bihar",
+      "Uttarakhand",
+      "Madhya Pradesh",
+      "Maharashtra",
+      "Jharkhand"
+    ],
+    "region": "North",
+    "source_section": "1. Major Hindu festivals",
+    "source_row_no": 87,
+    "source_rows": [
+      87
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "bohag-bihu-rongali-bihu",
+    "name": "Bohag Bihu (Rongali Bihu)",
+    "aliases": [],
+    "description": "Most celebrated Assamese spring festival marking the agricultural new year, filled with energetic Bihu dance, dhol drumming, and community feasting.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Assam"
+    ],
+    "region": "Northeast",
+    "source_section": "2. Harvest and New Year festivals",
+    "source_row_no": 89,
+    "source_rows": [
+      89
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "magh-bihu-bhogali-bihu",
+    "name": "Magh Bihu (Bhogali Bihu)",
+    "aliases": [],
+    "description": "Assamese winter harvest festival celebrating agrarian bounty with the building and burning of makeshift bamboo Meji huts and community feasts.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Assam"
+    ],
+    "region": "Northeast",
+    "source_section": "2. Harvest and New Year festivals",
+    "source_row_no": 90,
+    "source_rows": [
+      90
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "kati-bihu-kongali-bihu",
+    "name": "Kati Bihu (Kongali Bihu)",
+    "aliases": [],
+    "description": "Somber agricultural observance in Assam where earthen lamps (saki) are lit under sacred Tulsi plants and in newly planted paddy fields praying for pest-free harvests.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Assam"
+    ],
+    "region": "Northeast",
+    "source_section": "2. Harvest and New Year festivals",
+    "source_row_no": 91,
+    "source_rows": [
+      91
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "pohela-boishakh",
+    "name": "Pohela Boishakh",
+    "aliases": [],
+    "description": "Bengali New Year celebrated across West Bengal and Tripura with cultural processions (Mangal Shobhajatra), new account books (Haal Khata), and traditional sweets.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "West Bengal",
+      "Tripura"
+    ],
+    "region": "East",
+    "source_section": "2. Harvest and New Year festivals",
+    "source_row_no": 94,
+    "source_rows": [
+      94
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "puthandu",
+    "name": "Puthandu",
+    "aliases": [],
+    "description": "Tamil New Year celebrated on the first day of Chithirai, marked by creating colorful kolams, reading the new Panchangam, and preparing sweet-sour-bitter Pachadi.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Tamil Nadu",
+      "Puducherry"
+    ],
+    "region": "South",
+    "source_section": "2. Harvest and New Year festivals",
+    "source_row_no": 95,
+    "source_rows": [
+      95
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "pana-sankranti",
+    "name": "Pana Sankranti",
+    "aliases": [],
+    "description": "Traditional Odia New Year celebrated by hanging small perforated pots over Tulsi plants to drip cooling sweet water (Bela Pana) in the onset of summer.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Odisha"
+    ],
+    "region": "East",
+    "source_section": "2. Harvest and New Year festivals",
+    "source_row_no": 96,
+    "source_rows": [
+      96
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "jur-sital",
+    "name": "Jur Sital",
+    "aliases": [],
+    "description": "Maithili New Year festival celebrated in Mithila region of Bihar by sprinkling cool water on family elders heads, cleaning water bodies, and eating sattu.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Bihar"
+    ],
+    "region": "East",
+    "source_section": "2. Harvest and New Year festivals",
+    "source_row_no": 97,
+    "source_rows": [
+      97
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "pawl-kut",
+    "name": "Pawl Kut",
+    "aliases": [],
+    "description": "Two-day post-harvest thanksgiving celebration in Mizoram celebrated in December marking the conclusion of the total agricultural year.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Tribal/Regional",
+    "states": [
+      "Mizoram"
+    ],
+    "region": "Northeast",
+    "source_section": "2. Harvest and New Year festivals",
+    "source_row_no": 103,
+    "source_rows": [
+      103
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "saga-dawa",
+    "name": "Saga Dawa",
+    "aliases": [],
+    "description": "Triple-blessed Buddhist festival in Sikkim and Ladakh commemorating the birth, enlightenment, and Parinirvana of Gautama Buddha with procession of sacred scriptures.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Buddhist",
+    "states": [
+      "Sikkim",
+      "Ladakh"
+    ],
+    "region": "Himalayan",
+    "source_section": "2. Harvest and New Year festivals",
+    "source_row_no": 105,
+    "source_rows": [
+      105
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "torgya-festival",
+    "name": "Torgya Festival",
+    "aliases": [],
+    "description": "Monastic monastic festival at Tawang Monastery in Arunachal Pradesh featuring masked monastic dances to chase away negative energies and welcome peace.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Buddhist",
+    "states": [
+      "Arunachal Pradesh"
+    ],
+    "region": "Northeast",
+    "source_section": "2. Harvest and New Year festivals",
+    "source_row_no": 107,
+    "source_rows": [
+      107
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "nyokum-yullo",
+    "name": "Nyokum Yullo",
+    "aliases": [],
+    "description": "Agricultural festival of the Nyishi tribe of Arunachal Pradesh seeking prosperity, bumper harvests, and communal protection against natural disasters.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Tribal/Regional",
+    "states": [
+      "Arunachal Pradesh"
+    ],
+    "region": "Northeast",
+    "source_section": "2. Harvest and New Year festivals",
+    "source_row_no": 108,
+    "source_rows": [
+      108
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "mopin-festival",
+    "name": "Mopin Festival",
+    "aliases": [],
+    "description": "Spring agricultural festival of the Galo tribe in Arunachal Pradesh invoking Goddess Mopin for wealth and health, marked by applying white rice powder on faces.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Tribal/Regional",
+    "states": [
+      "Arunachal Pradesh"
+    ],
+    "region": "Northeast",
+    "source_section": "2. Harvest and New Year festivals",
+    "source_row_no": 109,
+    "source_rows": [
+      109
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "solung-festival",
+    "name": "Solung Festival",
+    "aliases": [],
+    "description": "Socio-religious festival of the Adi tribe of Arunachal Pradesh celebrated in September for agricultural prosperity, cattle fertility, and protection of crops.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Tribal/Regional",
+    "states": [
+      "Arunachal Pradesh"
+    ],
+    "region": "Northeast",
+    "source_section": "2. Harvest and New Year festivals",
+    "source_row_no": 110,
+    "source_rows": [
+      110
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "dree-festival",
+    "name": "Dree Festival",
+    "aliases": [],
+    "description": "Agricultural festival of the Apatani tribe in Ziro Valley, Arunachal Pradesh, praying to celestial deities for seasonal rains and protection from pests.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Tribal/Regional",
+    "states": [
+      "Arunachal Pradesh"
+    ],
+    "region": "Northeast",
+    "source_section": "2. Harvest and New Year festivals",
+    "source_row_no": 111,
+    "source_rows": [
+      111
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "sekrenyi-festival",
+    "name": "Sekrenyi Festival",
+    "aliases": [],
+    "description": "Ten-day annual purification and sanctification festival of the Angami Naga tribe in Nagaland, celebrated with sacred water rituals and village feasts.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Tribal/Regional",
+    "states": [
+      "Nagaland"
+    ],
+    "region": "Northeast",
+    "source_section": "2. Harvest and New Year festivals",
+    "source_row_no": 112,
+    "source_rows": [
+      112
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "moatsu-mong",
+    "name": "Moatsu Mong",
+    "aliases": [],
+    "description": "Community post-sowing festival of the Ao Naga tribe celebrated in Mokokchung with singing, traditional dancing, and building bonds of friendship.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Tribal/Regional",
+    "states": [
+      "Nagaland"
+    ],
+    "region": "Northeast",
+    "source_section": "2. Harvest and New Year festivals",
+    "source_row_no": 113,
+    "source_rows": [
+      113
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "bastar-dussehra",
+    "name": "Bastar Dussehra",
+    "aliases": [],
+    "description": "Unique seventy-five day festival in Chhattisgarh honouring Goddess Danteshwari, celebrated without Ramayana motifs by tribal groups crafting mammoth wooden chariots.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Tribal/Regional",
+    "states": [
+      "Chhattisgarh"
+    ],
+    "region": "Central",
+    "source_section": "3. Tribal and Folk festivals",
+    "source_row_no": 121,
+    "source_rows": [
+      121
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "bhagoria-haat-festival",
+    "name": "Bhagoria Haat Festival",
+    "aliases": [],
+    "description": "Joyous pre-Holi tribal festival celebrated by the Bhil and Bhilala tribes in Jhabua and Alirajpur, famous as a match-making fair with colourful traditional attire.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Tribal/Regional",
+    "states": [
+      "Madhya Pradesh"
+    ],
+    "region": "Central",
+    "source_section": "3. Tribal and Folk festivals",
+    "source_row_no": 122,
+    "source_rows": [
+      122
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "tarpa-dance-festival",
+    "name": "Tarpa Dance Festival",
+    "aliases": [],
+    "description": "Tribal cultural festival of the Warli, Kokna, and Dhodia tribes in Dadra and Nagar Haveli and Daman and Diu centered around the haunting winds of the Tarpa horn.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Tribal/Regional",
+    "states": [
+      "Dadra and Nagar Haveli and Daman and Diu",
+      "Maharashtra"
+    ],
+    "region": "West",
+    "source_section": "3. Tribal and Folk festivals",
+    "source_row_no": 123,
+    "source_rows": [
+      123
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "bonalu",
+    "name": "Bonalu",
+    "aliases": [],
+    "description": "Historic folk festival of Telangana honouring Goddess Mahakali in Hyderabad and Secunderabad with women carrying brass pots decorated with neem and turmeric.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Telangana"
+    ],
+    "region": "South",
+    "source_section": "3. Tribal and Folk festivals",
+    "source_row_no": 124,
+    "source_rows": [
+      124
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "bathukamma",
+    "name": "Bathukamma",
+    "aliases": [],
+    "description": "Nine-day floral festival of Telangana celebrated during Navratri by women arranging seasonal wild medicinal flowers in concentric conical towers and singing folk songs.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Telangana"
+    ],
+    "region": "South",
+    "source_section": "3. Tribal and Folk festivals",
+    "source_row_no": 125,
+    "source_rows": [
+      125
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "medaram-jatara",
+    "name": "Medaram Jatara",
+    "aliases": [],
+    "description": "Biennial tribal festival honouring legendary Koya goddesses Sammakka and Saralamma in Mulugu district, Telangana, considered the largest tribal congregation in Asia.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Tribal/Regional",
+    "states": [
+      "Telangana"
+    ],
+    "region": "South",
+    "source_section": "3. Tribal and Folk festivals",
+    "source_row_no": 126,
+    "source_rows": [
+      126
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "nagoba-jatara",
+    "name": "Nagoba Jatara",
+    "aliases": [],
+    "description": "Ancient tribal festival celebrated by the Mesram clan of the Raj Gond and Pardhan tribes in Adilabad, Telangana, paying homage to the serpent deity Nagoba.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Tribal/Regional",
+    "states": [
+      "Telangana"
+    ],
+    "region": "South",
+    "source_section": "3. Tribal and Folk festivals",
+    "source_row_no": 127,
+    "source_rows": [
+      127
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "theyyam-season",
+    "name": "Theyyam Season",
+    "aliases": [],
+    "description": "Spectacular ritual dance worship in Northern Kerala where performers invoke living deities with towering headdresses, intricate facial paints, and fire leaping.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Kerala"
+    ],
+    "region": "South",
+    "source_section": "3. Tribal and Folk festivals",
+    "source_row_no": 128,
+    "source_rows": [
+      128
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "kambala",
+    "name": "Kambala",
+    "aliases": [],
+    "description": "Traditional annual buffalo race held in coastal Karnataka paddy mud tracks by agrarian Tuluva communities celebrating agricultural prowess.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Tribal/Regional",
+    "states": [
+      "Karnataka"
+    ],
+    "region": "South",
+    "source_section": "3. Tribal and Folk festivals",
+    "source_row_no": 129,
+    "source_rows": [
+      129
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "jallikattu",
+    "name": "Jallikattu",
+    "aliases": [],
+    "description": "Traditional bull-embracing sport celebrated during Mattu Pongal in Tamil Nadu showcasing bravery and honouring indigenous native cattle breeds.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Tribal/Regional",
+    "states": [
+      "Tamil Nadu"
+    ],
+    "region": "South",
+    "source_section": "3. Tribal and Folk festivals",
+    "source_row_no": 130,
+    "source_rows": [
+      130
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "guru-nanak-gurpurab",
+    "name": "Guru Nanak Gurpurab",
+    "aliases": [],
+    "description": "Birth anniversary of Guru Nanak Dev Ji, founder of Sikhism, celebrated with Prabhat Pheris, Akhand Path, Nagar Kirtan processions, and community Langar.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Sikh",
+    "states": [
+      "Punjab",
+      "Haryana",
+      "Delhi"
+    ],
+    "region": "North",
+    "source_section": "4. Sikh festivals",
+    "source_row_no": 131,
+    "source_rows": [
+      131
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "guru-gobind-singh-jayanti",
+    "name": "Guru Gobind Singh Jayanti",
+    "aliases": [],
+    "description": "Birth anniversary of the tenth Sikh Guru, Guru Gobind Singh Ji, celebrated with recitation of devotional hymns and demonstrations of Gatka martial arts.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Sikh",
+    "states": [
+      "Punjab",
+      "Bihar",
+      "Delhi"
+    ],
+    "region": "North",
+    "source_section": "4. Sikh festivals",
+    "source_row_no": 132,
+    "source_rows": [
+      132
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "guru-granth-sahib-prakash-utsav",
+    "name": "Guru Granth Sahib Prakash Utsav",
+    "aliases": [],
+    "description": "Commemoration of the first installation of the Adi Granth in the Golden Temple (Harmandir Sahib) in Amritsar by Guru Arjan Dev Ji in 1604.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Sikh",
+    "states": [
+      "Punjab"
+    ],
+    "region": "North",
+    "source_section": "4. Sikh festivals",
+    "source_row_no": 133,
+    "source_rows": [
+      133
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "hola-mohalla",
+    "name": "Hola Mohalla",
+    "aliases": [],
+    "description": "Three-day Sikh festival established by Guru Gobind Singh Ji at Anandpur Sahib featuring martial arts displays, horse riding, mock battles, and poetry.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Sikh",
+    "states": [
+      "Punjab"
+    ],
+    "region": "North",
+    "source_section": "4. Sikh festivals",
+    "source_row_no": 134,
+    "source_rows": [
+      134
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "bandi-chhor-divas",
+    "name": "Bandi Chhor Divas",
+    "aliases": [],
+    "description": "Sikh festival coinciding with Diwali celebrating the release of the sixth Guru, Guru Hargobind Ji, and 52 Hindu kings from Gwalior Fort by Mughal Emperor Jahangir.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Sikh",
+    "states": [
+      "Punjab",
+      "Delhi",
+      "Haryana"
+    ],
+    "region": "North",
+    "source_section": "4. Sikh festivals",
+    "source_row_no": 135,
+    "source_rows": [
+      135
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "maghi-mela",
+    "name": "Maghi Mela",
+    "aliases": [],
+    "description": "Annual fair at Sri Muktsar Sahib commemorating the forty liberated Sikhs (Chali Mukte) who fought valiantly for Guru Gobind Singh Ji in 1705.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Sikh",
+    "states": [
+      "Punjab"
+    ],
+    "region": "North",
+    "source_section": "4. Sikh festivals",
+    "source_row_no": 136,
+    "source_rows": [
+      136
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "martyrdom-of-guru-arjan-dev-ji",
+    "name": "Martyrdom of Guru Arjan Dev Ji",
+    "aliases": [],
+    "description": "Solemn observance commemorating the supreme sacrifice of the fifth Sikh Guru in 1606, marked by serving sweet chilled water (Chabeel) and singing Gurbani.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Sikh",
+    "states": [
+      "Punjab",
+      "Delhi"
+    ],
+    "region": "North",
+    "source_section": "4. Sikh festivals",
+    "source_row_no": 138,
+    "source_rows": [
+      138
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "martyrdom-of-guru-tegh-bahadur-ji",
+    "name": "Martyrdom of Guru Tegh Bahadur Ji",
+    "aliases": [],
+    "description": "Shaheedi Diwas honouring the supreme martyrdom of the ninth Sikh Guru at Chandni Chowk, Delhi, in defense of religious freedom and human rights.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Sikh",
+    "states": [
+      "Delhi",
+      "Punjab"
+    ],
+    "region": "North",
+    "source_section": "4. Sikh festivals",
+    "source_row_no": 139,
+    "source_rows": [
+      139
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "shaheedi-jor-mela",
+    "name": "Shaheedi Jor Mela",
+    "aliases": [],
+    "description": "Three-day congregation at Fatehgarh Sahib commemorating the martyrdom of Sahibzada Zorawar Singh and Sahibzada Fateh Singh, the young sons of Guru Gobind Singh.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Sikh",
+    "states": [
+      "Punjab"
+    ],
+    "region": "North",
+    "source_section": "4. Sikh festivals",
+    "source_row_no": 140,
+    "source_rows": [
+      140
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "guru-angad-dev-ji-gurpurab",
+    "name": "Guru Angad Dev Ji Gurpurab",
+    "aliases": [],
+    "description": "Commemoration of the birth and spiritual elevation of the second Sikh Guru, who formalized the Gurmukhi script and expanded the community langar system.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Sikh",
+    "states": [
+      "Punjab"
+    ],
+    "region": "North",
+    "source_section": "4. Sikh festivals",
+    "source_row_no": 141,
+    "source_rows": [
+      141
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "guru-amar-das-ji-gurpurab",
+    "name": "Guru Amar Das Ji Gurpurab",
+    "aliases": [],
+    "description": "Celebration of the third Sikh Guru, renowned for championing equality, establishing the Manji system, and building the historic Baoli Sahib at Goindval.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Sikh",
+    "states": [
+      "Punjab"
+    ],
+    "region": "North",
+    "source_section": "4. Sikh festivals",
+    "source_row_no": 142,
+    "source_rows": [
+      142
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "guru-ram-das-ji-gurpurab",
+    "name": "Guru Ram Das Ji Gurpurab",
+    "aliases": [],
+    "description": "Celebration of the fourth Sikh Guru, founder of the sacred city of Amritsar and author of the wedding hymn Laavan recited in Anand Karaj ceremonies.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Sikh",
+    "states": [
+      "Punjab"
+    ],
+    "region": "North",
+    "source_section": "4. Sikh festivals",
+    "source_row_no": 143,
+    "source_rows": [
+      143
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "guru-har-gobind-ji-gurpurab",
+    "name": "Guru Har Gobind Ji Gurpurab",
+    "aliases": [],
+    "description": "Commemoration of the sixth Sikh Guru, who introduced the concept of Miri and Piri (temporal and spiritual authority) and erected the Akal Takht in Amritsar.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Sikh",
+    "states": [
+      "Punjab"
+    ],
+    "region": "North",
+    "source_section": "4. Sikh festivals",
+    "source_row_no": 144,
+    "source_rows": [
+      144
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "guru-har-rai-guru-har-krishan-ji-gurpurab",
+    "name": "Guru Har Rai & Guru Har Krishan Ji Gurpurab",
+    "aliases": [],
+    "description": "Commemoration of the seventh and eighth Sikh Gurus, revered for their compassion, medical healing dispensaries, and selfless service during epidemics.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Sikh",
+    "states": [
+      "Punjab",
+      "Delhi"
+    ],
+    "region": "North",
+    "source_section": "4. Sikh festivals",
+    "source_row_no": 145,
+    "source_rows": [
+      145
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "eid-ul-fitr",
+    "name": "Eid-ul-Fitr",
+    "aliases": [],
+    "description": "Major Islamic festival marking the end of the dawn-to-sunset fasting month of Ramadan, celebrated with communal morning prayers (Salat al-Eid), charity (Zakat al-Fitr), and sweet sheer khurma.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Muslim",
+    "states": [],
+    "region": "North",
+    "source_section": "5. Muslim / Islamic festivals",
+    "source_row_no": 146,
+    "source_rows": [
+      146
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "eid-ul-adha-bakrid",
+    "name": "Eid-ul-Adha (Bakrid)",
+    "aliases": [],
+    "description": "Festival of the Sacrifice honouring the willingness of Prophet Ibrahim to sacrifice his son in obedience to God, observed with prayers, animal sacrifice (Qurbani), and meat distribution to the needy.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Muslim",
+    "states": [],
+    "region": "North",
+    "source_section": "5. Muslim / Islamic festivals",
+    "source_row_no": 147,
+    "source_rows": [
+      147
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "muharram-ashura",
+    "name": "Muharram (Ashura)",
+    "aliases": [],
+    "description": "Tenth day of Muharram observed especially by Shia Muslims in solemn remembrance of the martyrdom of Imam Hussain at the Battle of Karbala, marked by Tazia processions.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Muslim",
+    "states": [
+      "Uttar Pradesh",
+      "Telangana",
+      "Bihar",
+      "Delhi",
+      "Jammu & Kashmir"
+    ],
+    "region": "North",
+    "source_section": "5. Muslim / Islamic festivals",
+    "source_row_no": 148,
+    "source_rows": [
+      148
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "milad-un-nabi-mawlid",
+    "name": "Milad-un-Nabi (Mawlid)",
+    "aliases": [],
+    "description": "Observance of the birth anniversary of Prophet Muhammad, marked with sermons in mosques, Quranic recitations, illuminated minarets, and peaceful street processions.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Muslim",
+    "states": [],
+    "region": "North",
+    "source_section": "5. Muslim / Islamic festivals",
+    "source_row_no": 149,
+    "source_rows": [
+      149
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "shab-e-barat",
+    "name": "Shab-e-Barat",
+    "aliases": [],
+    "description": "The Night of Records and Forgiveness in the Islamic calendar, spent in prayer and seeking pardon from Allah, offering halwa, and visiting ancestors graves.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Muslim",
+    "states": [],
+    "region": "North",
+    "source_section": "5. Muslim / Islamic festivals",
+    "source_row_no": 150,
+    "source_rows": [
+      150
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "shab-e-miraj",
+    "name": "Shab-e-Miraj",
+    "aliases": [],
+    "description": "Commemoration of Prophet Muhammads miraculous night journey from Mecca to Jerusalem and ascension through the seven heavens into the divine presence.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Muslim",
+    "states": [],
+    "region": "North",
+    "source_section": "5. Muslim / Islamic festivals",
+    "source_row_no": 151,
+    "source_rows": [
+      151
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "chaand-raat",
+    "name": "Chaand Raat",
+    "aliases": [],
+    "description": "Eve of Eid-ul-Fitr celebrated with festive night markets, applying intricate henna (mehndi) designs, shopping for celebratory clothes, and sweet preparation.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Muslim",
+    "states": [
+      "Delhi",
+      "Uttar Pradesh",
+      "Telangana",
+      "Maharashtra",
+      "West Bengal"
+    ],
+    "region": "North",
+    "source_section": "5. Muslim / Islamic festivals",
+    "source_row_no": 152,
+    "source_rows": [
+      152
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "urs-ajmer-sharif",
+    "name": "Urs Ajmer Sharif",
+    "aliases": [],
+    "description": "Annual death anniversary commemoration of Sufi saint Khwaja Moinuddin Chishti at the Dargah Sharif in Ajmer, Rajasthan, drawing pilgrims of all faiths for Qawwalis and Chadar offerings.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Muslim",
+    "states": [
+      "Rajasthan"
+    ],
+    "region": "North",
+    "source_section": "5. Muslim / Islamic festivals",
+    "source_row_no": 153,
+    "source_rows": [
+      153
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "urs-nizamuddin-auliya",
+    "name": "Urs Nizamuddin Auliya",
+    "aliases": [],
+    "description": "Annual Sufi celebration at the dargah of Hazrat Nizamuddin Auliya in Delhi, renowned for soul-stirring live Qawwali sessions by Sabri brothers disciples and public langar.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Muslim",
+    "states": [
+      "Delhi"
+    ],
+    "region": "North",
+    "source_section": "5. Muslim / Islamic festivals",
+    "source_row_no": 154,
+    "source_rows": [
+      154
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "urs-haji-ali",
+    "name": "Urs Haji Ali",
+    "aliases": [],
+    "description": "Annual commemoration of Sufi saint Pir Haji Ali Shah Bukhari at the iconic islet mosque off the coast of Worli in Mumbai, visited by thousands walking the sea causeway.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Muslim",
+    "states": [
+      "Maharashtra"
+    ],
+    "region": "West",
+    "source_section": "5. Muslim / Islamic festivals",
+    "source_row_no": 155,
+    "source_rows": [
+      155
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "buddha-purnima-vesak",
+    "name": "Buddha Purnima (Vesak)",
+    "aliases": [],
+    "description": "Holiest day for Buddhists commemorating the birth, supreme enlightenment, and Parinirvana of Gautama Buddha, observed with prayer at Bodh Gaya, Sarnath, and Kushinagar.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Buddhist",
+    "states": [
+      "Bihar",
+      "Uttar Pradesh",
+      "Maharashtra",
+      "Sikkim",
+      "Ladakh",
+      "Arunachal Pradesh"
+    ],
+    "region": "East",
+    "source_section": "6. Buddhist festivals",
+    "source_row_no": 159,
+    "source_rows": [
+      159
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "kalachakra-festival",
+    "name": "Kalachakra Festival",
+    "aliases": [],
+    "description": "Sacred Buddhist initiation teaching and sand mandala ceremony conducted at Bodh Gaya, promoting world peace and spiritual awakening.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Buddhist",
+    "states": [
+      "Bihar",
+      "Ladakh"
+    ],
+    "region": "East",
+    "source_section": "6. Buddhist festivals",
+    "source_row_no": 160,
+    "source_rows": [
+      160
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "monlam-chenmo",
+    "name": "Monlam Chenmo",
+    "aliases": [],
+    "description": "Great Prayer Festival established by Tsongkhapa in 1409, observed in Dharamshala, Leh, and Tawang with public prayers for world harmony and compassion.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Buddhist",
+    "states": [
+      "Himachal Pradesh",
+      "Ladakh"
+    ],
+    "region": "Himalayan",
+    "source_section": "6. Buddhist festivals",
+    "source_row_no": 161,
+    "source_rows": [
+      161
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "pavarana-kathina-ceremony",
+    "name": "Pavarana & Kathina Ceremony",
+    "aliases": [],
+    "description": "Concluding ceremonies of the three-month Rains Retreat (Vassa) where lay devotees present new robes (Kathina civara) and requisites to Buddhist monks.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Buddhist",
+    "states": [
+      "Maharashtra",
+      "Bihar",
+      "Tripura"
+    ],
+    "region": "West",
+    "source_section": "6. Buddhist festivals",
+    "source_row_no": 162,
+    "source_rows": [
+      162
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "asalha-puja-dharma-day",
+    "name": "Asalha Puja (Dharma Day)",
+    "aliases": [],
+    "description": "Theravada Buddhist festival commemorating the Buddha's first sermon—the Dhammacakkappavattana Sutta—delivered to his first five disciples at Sarnath.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Buddhist",
+    "states": [
+      "Uttar Pradesh",
+      "Maharashtra"
+    ],
+    "region": "North",
+    "source_section": "6. Buddhist festivals",
+    "source_row_no": 163,
+    "source_rows": [
+      163
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "tawang-festival",
+    "name": "Tawang Festival",
+    "aliases": [],
+    "description": "Annual cultural festival in Arunachal Pradesh celebrating Monpa tribal culture, monastic music, street carnivals, and sacred dances at Tawang.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Buddhist",
+    "states": [
+      "Arunachal Pradesh"
+    ],
+    "region": "Northeast",
+    "source_section": "6. Buddhist festivals",
+    "source_row_no": 164,
+    "source_rows": [
+      164
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "rumtek-chaam-dance-festival",
+    "name": "Rumtek Chaam Dance Festival",
+    "aliases": [],
+    "description": "Monastic masked sacred dance performance at Rumtek Dharma Chakra Centre in Sikkim enacting the triumph of wisdom over ignorance.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Buddhist",
+    "states": [
+      "Sikkim"
+    ],
+    "region": "Himalayan",
+    "source_section": "6. Buddhist festivals",
+    "source_row_no": 165,
+    "source_rows": [
+      165
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "mahavir-jayanti",
+    "name": "Mahavir Jayanti",
+    "aliases": [],
+    "description": "Birth anniversary of Bhagwan Mahavira, the twenty-fourth Tirthankara of Jainism, celebrated with ceremonial bathing (abhisheka) of Mahavira idols, processions, and lectures on Ahimsa.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Jain",
+    "states": [
+      "Bihar",
+      "Rajasthan",
+      "Gujarat",
+      "Maharashtra",
+      "Karnataka",
+      "Delhi"
+    ],
+    "region": "North",
+    "source_section": "7. Jain festivals",
+    "source_row_no": 166,
+    "source_rows": [
+      166
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "paryushan-parva-das-lakshana",
+    "name": "Paryushan Parva / Das Lakshana",
+    "aliases": [],
+    "description": "Most important spiritual period for Jains (lasting 8 to 10 days) dedicated to self-purification, intense fasting, meditation, study of sacred Agamas, and introspection.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Jain",
+    "states": [
+      "Gujarat",
+      "Rajasthan",
+      "Maharashtra",
+      "Madhya Pradesh",
+      "Karnataka"
+    ],
+    "region": "West",
+    "source_section": "7. Jain festivals",
+    "source_row_no": 167,
+    "source_rows": [
+      167
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "kshamavani-michhami-dukkadam",
+    "name": "Kshamavani (Michhami Dukkadam)",
+    "aliases": [],
+    "description": "Universal day of forgiveness celebrated at the conclusion of Paryushan where Jains ask for forgiveness from all living beings for any intentional or unintentional hurt.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Jain",
+    "states": [],
+    "region": "West",
+    "source_section": "7. Jain festivals",
+    "source_row_no": 169,
+    "source_rows": [
+      169
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "mahamastakabhisheka",
+    "name": "Mahamastakabhisheka",
+    "aliases": [],
+    "description": "Spectacular ceremony held once every 12 years at Shravanabelagola in Karnataka, where the colossal 57-foot monolithic statue of Gommateshwara Bahubali is anointed with milk, saffron, and sandalwood.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Jain",
+    "states": [
+      "Karnataka"
+    ],
+    "region": "South",
+    "source_section": "7. Jain festivals",
+    "source_row_no": 170,
+    "source_rows": [
+      170
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "rohini-vrat",
+    "name": "Rohini Vrat",
+    "aliases": [],
+    "description": "Monthly fasting observance by Jain women when the Rohini nakshatra ascends, dedicated to cultivating equanimity, patience, and family tranquility.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Jain",
+    "states": [],
+    "region": "West",
+    "source_section": "7. Jain festivals",
+    "source_row_no": 171,
+    "source_rows": [
+      171
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "kartik-poornima-chaumasi",
+    "name": "Kartik Poornima Chaumasi",
+    "aliases": [],
+    "description": "Auspicious full moon day marking the conclusion of the four-month rainy retreat (Chaturmas) when Jain pilgrims undertake the sacred Shatrunjaya hills pilgrimage in Palitana.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Jain",
+    "states": [
+      "Gujarat"
+    ],
+    "region": "West",
+    "source_section": "7. Jain festivals",
+    "source_row_no": 172,
+    "source_rows": [
+      172
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "christmas",
+    "name": "Christmas",
+    "aliases": [],
+    "description": "Celebration of the birth of Jesus Christ, observed with midnight mass services, decorated Christmas trees, singing carols, cribs, and sharing fruit cakes across churches.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Christian",
+    "states": [
+      "Goa",
+      "Kerala",
+      "Meghalaya",
+      "Nagaland",
+      "Mizoram",
+      "Tamil Nadu",
+      "Maharashtra"
+    ],
+    "region": "South",
+    "source_section": "8. Christian festivals",
+    "source_row_no": 173,
+    "source_rows": [
+      173
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "good-friday",
+    "name": "Good Friday",
+    "aliases": [],
+    "description": "Solemn Christian holy day commemorating the crucifixion and death of Jesus Christ at Calvary, observed with afternoon church services, fasting, and reading of the Passion.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Christian",
+    "states": [],
+    "region": "South",
+    "source_section": "8. Christian festivals",
+    "source_row_no": 174,
+    "source_rows": [
+      174
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "easter-sunday",
+    "name": "Easter Sunday",
+    "aliases": [],
+    "description": "Joyful celebration of the resurrection of Jesus Christ on the third day after his crucifixion, marked by sunrise church services, special feasts, and community fellowship.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Christian",
+    "states": [],
+    "region": "South",
+    "source_section": "8. Christian festivals",
+    "source_row_no": 175,
+    "source_rows": [
+      175
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "feast-of-st-francis-xavier",
+    "name": "Feast of St. Francis Xavier",
+    "aliases": [],
+    "description": "Annual feast on December 3rd honouring the patron saint of Goa at the Basilica of Bom Jesus in Old Goa, drawing international pilgrims to venerate the sacred relics.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Christian",
+    "states": [
+      "Goa"
+    ],
+    "region": "West",
+    "source_section": "8. Christian festivals",
+    "source_row_no": 176,
+    "source_rows": [
+      176
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "feast-of-our-lady-of-vailankanni",
+    "name": "Feast of Our Lady of Vailankanni",
+    "aliases": [],
+    "description": "Nine-day feast and chariot procession from late August to September 8th at the Basilica of Our Lady of Good Health in Nagapattinam, Tamil Nadu (the Lourdes of the East).",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Christian",
+    "states": [
+      "Tamil Nadu"
+    ],
+    "region": "South",
+    "source_section": "8. Christian festivals",
+    "source_row_no": 177,
+    "source_rows": [
+      177
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "feast-of-st-thomas",
+    "name": "Feast of St. Thomas",
+    "aliases": [],
+    "description": "Commemoration of the martyrdom and spiritual heritage of Apostle Thomas, who landed on the Malabar coast in 52 CE, celebrated at Malayattoor and Chennai.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Christian",
+    "states": [
+      "Kerala",
+      "Tamil Nadu"
+    ],
+    "region": "South",
+    "source_section": "8. Christian festivals",
+    "source_row_no": 178,
+    "source_rows": [
+      178
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "palm-sunday",
+    "name": "Palm Sunday",
+    "aliases": [],
+    "description": "First day of Holy Week commemorating Jesus triumphal entry into Jerusalem, observed by congregations carrying blessed palm fronds in church processions.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Christian",
+    "states": [
+      "Kerala",
+      "Goa",
+      "Tamil Nadu",
+      "Meghalaya"
+    ],
+    "region": "South",
+    "source_section": "8. Christian festivals",
+    "source_row_no": 179,
+    "source_rows": [
+      179
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "new-year-eve-watchnight-celebrations",
+    "name": "New Year Eve Watchnight Celebrations",
+    "aliases": [],
+    "description": "Midnight prayer gatherings and thanksgivings held in churches across Christian communities across India welcoming the civil new year with fellowship.",
+    "scope": "ALL_INDIA",
+    "religion_or_category": "Christian",
+    "states": [],
+    "region": "South",
+    "source_section": "8. Christian festivals",
+    "source_row_no": 180,
+    "source_rows": [
+      180
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "banganga-festival",
+    "name": "Banganga Festival",
+    "aliases": [],
+    "description": "Two-day classical music festival held by Maharashtra Tourism at the historic 12th-century Banganga water tank in Malabar Hill, Mumbai.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Maharashtra"
+    ],
+    "region": "West",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 184,
+    "source_rows": [
+      184
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "elephanta-festival",
+    "name": "Elephanta Festival",
+    "aliases": [],
+    "description": "Cultural dance and music festival celebrated at the UNESCO World Heritage Elephanta Island rock-cut cave temples in Mumbai harbour.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Maharashtra"
+    ],
+    "region": "West",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 185,
+    "source_rows": [
+      185
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "ellora-ajanta-festival",
+    "name": "Ellora-Ajanta Festival",
+    "aliases": [],
+    "description": "Classical dance and musical celebration set against the dramatic backdrop of the ancient rock-cut caves of Ellora and Ajanta in Chhatrapati Sambhajinagar.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Maharashtra"
+    ],
+    "region": "West",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 186,
+    "source_rows": [
+      186
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "international-kite-festival-uttarayan",
+    "name": "International Kite Festival (Uttarayan)",
+    "aliases": [],
+    "description": "World-renowned aerial festival in Ahmedabad along the Sabarmati Riverfront where millions of colourful kites take flight from rooftops amidst shouts of Kai Po Che.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Gujarat"
+    ],
+    "region": "West",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 188,
+    "source_rows": [
+      188
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "shamlaji-fair",
+    "name": "Shamlaji Fair",
+    "aliases": [],
+    "description": "Historic tribal and folk pilgrimage fair held on Kartik Purnima at the Shamlaji Vishnu shrine along the Meshwo river in Aravalli district, Gujarat.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Gujarat"
+    ],
+    "region": "West",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 190,
+    "source_rows": [
+      190
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "madhavpur-ghed-fair",
+    "name": "Madhavpur Ghed Fair",
+    "aliases": [],
+    "description": "Annual cultural fair in coastal Gujarat celebrating the sacred marriage of Lord Krishna of Dwarka with princess Rukmini from the Northeast (Arunachal Pradesh).",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Gujarat",
+      "Arunachal Pradesh"
+    ],
+    "region": "West",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 191,
+    "source_rows": [
+      191
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "modhera-dance-festival",
+    "name": "Modhera Dance Festival",
+    "aliases": [],
+    "description": "Three-day Indian classical dance festival held annually at the 11th-century Sun Temple in Modhera, Gujarat, illuminated by night lights.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Gujarat"
+    ],
+    "region": "West",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 192,
+    "source_rows": [
+      192
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "pushkar-camel-fair",
+    "name": "Pushkar Camel Fair",
+    "aliases": [],
+    "description": "One of the worlds largest livestock fairs held on the banks of Pushkar Lake in Rajasthan, where thousands of adorned camels, horses, and cattle are traded beside holy dips.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Rajasthan"
+    ],
+    "region": "North",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 193,
+    "source_rows": [
+      193
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "desert-festival-jaisalmer",
+    "name": "Desert Festival (Jaisalmer)",
+    "aliases": [],
+    "description": "Three-day desert extravaganza in the golden dunes of Sam, Jaisalmer, featuring camel races, turban tying contests, longest moustache competitions, and Gair dancers.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Rajasthan"
+    ],
+    "region": "North",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 194,
+    "source_rows": [
+      194
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "gangaur-festival",
+    "name": "Gangaur Festival",
+    "aliases": [],
+    "description": "Charming Rajasthani festival worshiping Gauri (Parvati) and Isar (Shiva), marked by processions of colourful clay idols through the streets of Jaipur and Udaipur.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Rajasthan",
+      "Madhya Pradesh"
+    ],
+    "region": "North",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 195,
+    "source_rows": [
+      195
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "marwar-festival-jodhpur",
+    "name": "Marwar Festival (Jodhpur)",
+    "aliases": [],
+    "description": "Two-day festival in Jodhpur dedicated to the music, dance, and chivalry of the historic heroes of Rajasthan, set at the imposing Mehrangarh Fort.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Rajasthan"
+    ],
+    "region": "North",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 196,
+    "source_rows": [
+      196
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "mewar-festival-udaipur",
+    "name": "Mewar Festival (Udaipur)",
+    "aliases": [],
+    "description": "Spring celebration in Udaipur welcoming the onset of spring with processions of Gangaur idols to Lake Pichola and traditional Rajasthani fireworks.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Rajasthan"
+    ],
+    "region": "North",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 197,
+    "source_rows": [
+      197
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "lathmar-holi-barsana-nandgaon",
+    "name": "Lathmar Holi (Barsana & Nandgaon)",
+    "aliases": [],
+    "description": "Legendary festival in Braj where women of Barsana beat the men of Nandgaon with bamboo sticks (lathis) as men defend themselves with shields, reenacting Krishnas visits.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Uttar Pradesh"
+    ],
+    "region": "North",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 198,
+    "source_rows": [
+      198
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "dev-deepawali-varanasi",
+    "name": "Dev Deepawali (Varanasi)",
+    "aliases": [],
+    "description": "Grand celebration on Kartik Purnima when the crescent ghats of Varanasi glitter with over a million oil lamps, synchronized Ganga aarti, and classical music.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Uttar Pradesh"
+    ],
+    "region": "North",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 199,
+    "source_rows": [
+      199
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "rajgir-mahotsav",
+    "name": "Rajgir Mahotsav",
+    "aliases": [],
+    "description": "Three-day cultural festival in ancient Rajgir, Bihar, celebrating classical dance, vocal concerts, and martial arts in the historic Magadha capital.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Bihar"
+    ],
+    "region": "East",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 203,
+    "source_rows": [
+      203
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "shravani-mela-deoghar",
+    "name": "Shravani Mela (Deoghar)",
+    "aliases": [],
+    "description": "Month-long Kanwar pilgrimage in the month of Shravana where millions of saffron-clad pilgrims walk 108 km carrying holy Ganga water from Sultanganj to Baba Baidyanath Jyotirlinga.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Jharkhand",
+      "Bihar"
+    ],
+    "region": "East",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 204,
+    "source_rows": [
+      204
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "bali-yatra-cuttack",
+    "name": "Bali Yatra (Cuttack)",
+    "aliases": [],
+    "description": "Historic maritime trade fair on the Mahanadi riverbank in Cuttack celebrating ancient Odia sailors (Sadhabas) voyaging to Bali, Java, and Sumatra in Boita boats.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Odisha"
+    ],
+    "region": "East",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 207,
+    "source_rows": [
+      207
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "raja-parba",
+    "name": "Raja Parba",
+    "aliases": [],
+    "description": "Three-day festival in Odisha celebrating womanhood and the regeneration of Mother Earth, during which no agricultural tilling occurs and girls enjoy decorated rope swings (doli).",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Odisha"
+    ],
+    "region": "East",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 209,
+    "source_rows": [
+      209
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "majuli-festival",
+    "name": "Majuli Festival",
+    "aliases": [],
+    "description": "Cultural festival on the worlds largest inhabited river island in the Brahmaputra, showcasing the neo-Vaishnavite Satriya dance, mask-making, and pottery of Majuli.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Assam"
+    ],
+    "region": "Northeast",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 212,
+    "source_rows": [
+      212
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "moatsu-festival-nagaland",
+    "name": "Moatsu Festival (Nagaland)",
+    "aliases": [],
+    "description": "Traditional festival celebrated in May by the Ao tribe in Nagaland after seed sowing, fostering love, reconciliation, and songs of bravery around fire pits.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Tribal/Regional",
+    "states": [
+      "Nagaland"
+    ],
+    "region": "Northeast",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 214,
+    "source_rows": [
+      214
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "sekrenyi-nagaland",
+    "name": "Sekrenyi (Nagaland)",
+    "aliases": [],
+    "description": "Angami Naga festival of body and spirit purification celebrated in February with community sanctification of village water springs and feasts.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Tribal/Regional",
+    "states": [
+      "Nagaland"
+    ],
+    "region": "Northeast",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 215,
+    "source_rows": [
+      215
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "aoleng-festival-mon",
+    "name": "Aoleng Festival (Mon)",
+    "aliases": [],
+    "description": "Spring festival of the Konyak Naga tribe celebrated in Mon district, marking the arrival of spring and praying for a bountiful harvest with traditional warrior songs.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Tribal/Regional",
+    "states": [
+      "Nagaland"
+    ],
+    "region": "Northeast",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 216,
+    "source_rows": [
+      216
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "yaoshang-festival",
+    "name": "Yaoshang Festival",
+    "aliases": [],
+    "description": "Five-day festival celebrated in Manipur on the full moon of Lamta (Holi), combining the traditional Thabal Chongba moonlit folk dance with vibrant youth sports competitions.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Manipur"
+    ],
+    "region": "Northeast",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 217,
+    "source_rows": [
+      217
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "sangai-festival",
+    "name": "Sangai Festival",
+    "aliases": [],
+    "description": "Manipur Tourism annual grand festival named after the rare brow-antlered Sangai deer, promoting the states classical Manipuri dance, polo, and indigenous handlooms.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Manipur"
+    ],
+    "region": "Northeast",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 218,
+    "source_rows": [
+      218
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "kang-rath-yatra-manipur",
+    "name": "Kang Rath Yatra (Manipur)",
+    "aliases": [],
+    "description": "Ten-day Manipuri Rath Yatra of Lord Jagannath celebrated with great devotion at Shri Govindaji Temple in Imphal with specialized Jayadev hymns and brass cymbals.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Manipur"
+    ],
+    "region": "Northeast",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 219,
+    "source_rows": [
+      219
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "anthurium-festival",
+    "name": "Anthurium Festival",
+    "aliases": [],
+    "description": "Tourism and floral festival held at Reiek tourist village at the foothills of the scenic Reiek Mountain in Mizoram celebrating anthurium cultivation and Mizo heritage.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Mizoram"
+    ],
+    "region": "Northeast",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 223,
+    "source_rows": [
+      223
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "kharchi-puja",
+    "name": "Kharchi Puja",
+    "aliases": [],
+    "description": "Century-old festival in Agartala, Tripura, worshiping the Chaturdasha Devata (fourteen royal deities) with sacred bathing rituals at the Howrah river.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Tripura"
+    ],
+    "region": "Northeast",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 224,
+    "source_rows": [
+      224
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "garia-puja",
+    "name": "Garia Puja",
+    "aliases": [],
+    "description": "Seven-day tribal festival in Tripura honouring Lord Garia, the deity of livestock, peace, and wealth, celebrated with traditional Garia dance holding bamboo poles.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Tribal/Regional",
+    "states": [
+      "Tripura"
+    ],
+    "region": "Northeast",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 225,
+    "source_rows": [
+      225
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "neermahal-water-festival",
+    "name": "Neermahal Water Festival",
+    "aliases": [],
+    "description": "Three-day cultural festival organized at the historic water palace Neermahal situated in the middle of Rudrasagar Lake in Melaghar, Tripura, featuring boat races.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Tripura"
+    ],
+    "region": "Northeast",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 226,
+    "source_rows": [
+      226
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "siang-river-festival",
+    "name": "Siang River Festival",
+    "aliases": [],
+    "description": "Annual eco-tourism and cultural festival in Pasighat, Arunachal Pradesh, celebrating the mighty Siang river with river rafting, angling, and indigenous Adi performances.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Arunachal Pradesh"
+    ],
+    "region": "Northeast",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 228,
+    "source_rows": [
+      228
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "mopin-festival-arunachal-pradesh",
+    "name": "Mopin Festival (Arunachal Pradesh)",
+    "aliases": [],
+    "description": "Galo community spring festival in Along, Arunachal Pradesh, celebrating fertility, purity, and driving away spirits by smearing Ette (rice paste) on faces.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Tribal/Regional",
+    "states": [
+      "Arunachal Pradesh"
+    ],
+    "region": "Northeast",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 229,
+    "source_rows": [
+      229
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "sindhu-darshan-festival",
+    "name": "Sindhu Darshan Festival",
+    "aliases": [],
+    "description": "Cultural festival in Shey, Leh, on Guru Purnima honouring the Indus (Sindhu) River as a symbol of India's ancient civilisation, unity, and communal harmony.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Ladakh"
+    ],
+    "region": "Himalayan",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 232,
+    "source_rows": [
+      232
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "ladakh-festival",
+    "name": "Ladakh Festival",
+    "aliases": [],
+    "description": "Grand cultural showcase in Leh organized by the tourism department featuring polo tournaments, archery contests, mask dances, and traditional Ladakhi wedding music.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Ladakh"
+    ],
+    "region": "Himalayan",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 233,
+    "source_rows": [
+      233
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "tulip-festival-srinagar",
+    "name": "Tulip Festival (Srinagar)",
+    "aliases": [],
+    "description": "Spring festival at the Indira Gandhi Memorial Tulip Garden at the foothills of the Zabarwan range overlooking Dal Lake in Srinagar, holding over 1.5 million blooming tulips.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Jammu & Kashmir"
+    ],
+    "region": "Himalayan",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 234,
+    "source_rows": [
+      234
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "kullu-dussehra-himachal",
+    "name": "Kullu Dussehra (Himachal)",
+    "aliases": [],
+    "description": "Century-old congregation where the presiding deity Lord Raghunath leads hundreds of village deities carried in decorated wooden palanquins across the Kullu valley.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Himachal Pradesh"
+    ],
+    "region": "Himalayan",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 236,
+    "source_rows": [
+      236
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "tansen-music-samaroh",
+    "name": "Tansen Music Samaroh",
+    "aliases": [],
+    "description": "One of India's oldest and most prestigious Indian classical music festivals, held at the tomb of musical legend Mian Tansen in Gwalior, Madhya Pradesh.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Madhya Pradesh"
+    ],
+    "region": "Central",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 238,
+    "source_rows": [
+      238
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "lokrang-festival-bhopal",
+    "name": "Lokrang Festival (Bhopal)",
+    "aliases": [],
+    "description": "Five-day festival beginning on Republic Day in Bhopal organized by the Adivasi Lok Kala Academy, showcasing indigenous tribal dances, crafts, and heritage of central India.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Madhya Pradesh"
+    ],
+    "region": "Central",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 239,
+    "source_rows": [
+      239
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "bhoramdeo-mahotsav",
+    "name": "Bhoramdeo Mahotsav",
+    "aliases": [],
+    "description": "Cultural festival held at the historic 11th-century Nagara-style Bhoramdeo temple complex in Kawardha, Chhattisgarh, often called the Khajuraho of Chhattisgarh.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Chhattisgarh"
+    ],
+    "region": "Central",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 241,
+    "source_rows": [
+      241
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "goa-carnival",
+    "name": "Goa Carnival",
+    "aliases": [],
+    "description": "Four-day vibrant pre-Lent street carnival introduced by Portuguese traditions in the 18th century, led by King Momo with colourful float parades, music, and masquerade balls.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Goa"
+    ],
+    "region": "West",
+    "source_section": "9. State / Regional specific festivals",
+    "source_row_no": 248,
+    "source_rows": [
+      248
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "republic-day",
+    "name": "Republic Day",
+    "aliases": [],
+    "description": "National observance commemorating the coming into effect of the Constitution of India on January 26, 1950, marked by the grand military and cultural parade on Kartavya Path in New Delhi.",
+    "scope": "NATIONAL_OBSERVANCE",
+    "religion_or_category": "National",
+    "states": [],
+    "region": "North",
+    "source_section": "10. National Days & Observances",
+    "source_row_no": 251,
+    "source_rows": [
+      251
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "independence-day",
+    "name": "Independence Day",
+    "aliases": [],
+    "description": "National observance on August 15th commemorating India's freedom from colonial British rule in 1947, celebrated with the Prime Ministers address from the ramparts of the Red Fort and flag-hoisting across every school and district.",
+    "scope": "NATIONAL_OBSERVANCE",
+    "religion_or_category": "National",
+    "states": [],
+    "region": "North",
+    "source_section": "10. National Days & Observances",
+    "source_row_no": 252,
+    "source_rows": [
+      252
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "gandhi-jayanti",
+    "name": "Gandhi Jayanti",
+    "aliases": [],
+    "description": "National observance on October 2nd marking the birth anniversary of Mahatma Gandhi, Father of the Nation, observed globally as the International Day of Non-Violence with prayer services at Raj Ghat.",
+    "scope": "NATIONAL_OBSERVANCE",
+    "religion_or_category": "National",
+    "states": [],
+    "region": "North",
+    "source_section": "10. National Days & Observances",
+    "source_row_no": 253,
+    "source_rows": [
+      253
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "national-youth-day-swami-vivekananda-jayanti",
+    "name": "National Youth Day (Swami Vivekananda Jayanti)",
+    "aliases": [],
+    "description": "National day on January 12th commemorating the birth of Swami Vivekananda, celebrating youthful ideals, philosophical teachings, and nation-building.",
+    "scope": "NATIONAL_OBSERVANCE",
+    "religion_or_category": "National",
+    "states": [],
+    "region": "East",
+    "source_section": "10. National Days & Observances",
+    "source_row_no": 254,
+    "source_rows": [
+      254
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "netaji-subhas-chandra-bose-jayanti-parakram-diwas",
+    "name": "Netaji Subhas Chandra Bose Jayanti (Parakram Diwas)",
+    "aliases": [],
+    "description": "National observance on January 23rd honouring the monumental courage and legacy of Netaji Subhas Chandra Bose, supreme commander of the Indian National Army (Azad Hind Fauj).",
+    "scope": "NATIONAL_OBSERVANCE",
+    "religion_or_category": "National",
+    "states": [],
+    "region": "East",
+    "source_section": "10. National Days & Observances",
+    "source_row_no": 255,
+    "source_rows": [
+      255
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "national-science-day",
+    "name": "National Science Day",
+    "aliases": [],
+    "description": "National observance on February 28th commemorating the discovery of the Raman Effect by Nobel laureate Sir C.V. Raman in 1928, marked by scientific exhibitions across institutions.",
+    "scope": "NATIONAL_OBSERVANCE",
+    "religion_or_category": "National",
+    "states": [],
+    "region": "South",
+    "source_section": "10. National Days & Observances",
+    "source_row_no": 256,
+    "source_rows": [
+      256
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "ambedkar-jayanti-equality-day",
+    "name": "Ambedkar Jayanti (Equality Day)",
+    "aliases": [],
+    "description": "National observance on April 14th celebrating the birth of Dr. B.R. Ambedkar, chief architect of the Indian Constitution, social reformer, and champion of human dignity and equality.",
+    "scope": "NATIONAL_OBSERVANCE",
+    "religion_or_category": "National",
+    "states": [],
+    "region": "West",
+    "source_section": "10. National Days & Observances",
+    "source_row_no": 257,
+    "source_rows": [
+      257
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "national-unity-day-rashtriya-ekta-diwas",
+    "name": "National Unity Day (Rashtriya Ekta Diwas)",
+    "aliases": [],
+    "description": "National observance on October 31st celebrating the birth anniversary of Sardar Vallabhbhai Patel, the Iron Man of India who integrated over 565 princely states into the Indian Union.",
+    "scope": "NATIONAL_OBSERVANCE",
+    "religion_or_category": "National",
+    "states": [],
+    "region": "West",
+    "source_section": "10. National Days & Observances",
+    "source_row_no": 258,
+    "source_rows": [
+      258
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "constitution-day-samvidhan-diwas",
+    "name": "Constitution Day (Samvidhan Diwas)",
+    "aliases": [],
+    "description": "National day on November 26th commemorating the formal adoption of the Constitution of India by the Constituent Assembly in 1949, promoting constitutional values and preamble recitation.",
+    "scope": "NATIONAL_OBSERVANCE",
+    "religion_or_category": "National",
+    "states": [],
+    "region": "North",
+    "source_section": "10. National Days & Observances",
+    "source_row_no": 259,
+    "source_rows": [
+      259
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "kisan-diwas-national-farmers-day",
+    "name": "Kisan Diwas (National Farmers Day)",
+    "aliases": [],
+    "description": "National day on December 23rd honouring the vital contribution of India's agriculturalists and farmers, marking the birth anniversary of former Prime Minister Chaudhary Charan Singh.",
+    "scope": "NATIONAL_OBSERVANCE",
+    "religion_or_category": "National",
+    "states": [],
+    "region": "North",
+    "source_section": "10. National Days & Observances",
+    "source_row_no": 260,
+    "source_rows": [
+      260
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "jaipur-literature-festival-jlf",
+    "name": "Jaipur Literature Festival (JLF)",
+    "aliases": [],
+    "description": "The greatest literary show on Earth held annually at Diggi Palace / Hotel Clarks Amer in Jaipur, bringing together Nobel laureates, Booker Prize winners, and global thinkers.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Rajasthan"
+    ],
+    "region": "North",
+    "source_section": "11. Fairs, Arts & Cultural Festivals",
+    "source_row_no": 261,
+    "source_rows": [
+      261
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "hampi-utsav-vijaya-utsav",
+    "name": "Hampi Utsav (Vijaya Utsav)",
+    "aliases": [],
+    "description": "Grand three-day state festival celebrating the glory of the 14th-century Vijayanagara Empire among the ruins of Hampi, with illuminated monuments, classical music, and Janapada folk art.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Karnataka"
+    ],
+    "region": "South",
+    "source_section": "11. Fairs, Arts & Cultural Festivals",
+    "source_row_no": 263,
+    "source_rows": [
+      263
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "international-jazz-festival-delhi",
+    "name": "International Jazz Festival (Delhi)",
+    "aliases": [],
+    "description": "Premier musical gathering organized by the Indian Council for Cultural Relations (ICCR) at Nehru Park in Chanakyapuri, Delhi, bringing international jazz bands to open lawns.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Delhi"
+    ],
+    "region": "North",
+    "source_section": "11. Fairs, Arts & Cultural Festivals",
+    "source_row_no": 264,
+    "source_rows": [
+      264
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "international-film-festival-of-india-iffi",
+    "name": "International Film Festival of India (IFFI)",
+    "aliases": [],
+    "description": "Asia's oldest and most prestigious international film festival held annually in Panaji, Goa, celebrating cinematic brilliance from across the globe.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Goa"
+    ],
+    "region": "West",
+    "source_section": "11. Fairs, Arts & Cultural Festivals",
+    "source_row_no": 265,
+    "source_rows": [
+      265
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "hornbill-rock-cultural-fair",
+    "name": "Hornbill Rock & Cultural Fair",
+    "aliases": [],
+    "description": "National rock contest and tribal music arena held alongside the Hornbill Festival in Kohima, drawing bands and music lovers from across India.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Nagaland"
+    ],
+    "region": "Northeast",
+    "source_section": "11. Fairs, Arts & Cultural Festivals",
+    "source_row_no": 268,
+    "source_rows": [
+      268
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "taj-mahotsav",
+    "name": "Taj Mahotsav",
+    "aliases": [],
+    "description": "Ten-day arts, crafts, and culinary festival held at Shilpgram near the Eastern Gate of the Taj Mahal in Agra, celebrating the Mughal artistic legacy of Uttar Pradesh.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Uttar Pradesh"
+    ],
+    "region": "North",
+    "source_section": "11. Fairs, Arts & Cultural Festivals",
+    "source_row_no": 270,
+    "source_rows": [
+      270
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "shilpgram-crafts-mela",
+    "name": "Shilpgram Crafts Mela",
+    "aliases": [],
+    "description": "Ten-day festival held at the rural arts complex of Shilpgram near Udaipur, Rajasthan, showcasing traditional pottery, weaving, mirror work, and puppet shows.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Rajasthan"
+    ],
+    "region": "North",
+    "source_section": "11. Fairs, Arts & Cultural Festivals",
+    "source_row_no": 271,
+    "source_rows": [
+      271
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "alwar-festival",
+    "name": "Alwar Festival",
+    "aliases": [],
+    "description": "Three-day cultural festival organized by Rajasthan Tourism promoting the historic arts, folk dances, handicrafts, and historic forts of the Matsya kingdom in Alwar.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Rajasthan"
+    ],
+    "region": "North",
+    "source_section": "11. Fairs, Arts & Cultural Festivals",
+    "source_row_no": 272,
+    "source_rows": [
+      272
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "mukteshwar-dance-festival",
+    "name": "Mukteshwar Dance Festival",
+    "aliases": [],
+    "description": "Three-day Odissi dance festival organized in January against the gem-like 10th-century Mukteshwar Temple complex in Bhubaneswar, Odisha.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Odisha"
+    ],
+    "region": "East",
+    "source_section": "11. Fairs, Arts & Cultural Festivals",
+    "source_row_no": 275,
+    "source_rows": [
+      275
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "mamallapuram-dance-festival",
+    "name": "Mamallapuram Dance Festival",
+    "aliases": [],
+    "description": "Four-week festival of classical Indian dance held against the rock relief of Arjunas Penance and the Shore Temple in Mahabalipuram, Tamil Nadu.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Tamil Nadu"
+    ],
+    "region": "South",
+    "source_section": "11. Fairs, Arts & Cultural Festivals",
+    "source_row_no": 276,
+    "source_rows": [
+      276
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "natyanjali-dance-festival",
+    "name": "Natyanjali Dance Festival",
+    "aliases": [],
+    "description": "Five-day annual tribute to Lord Nataraja (the cosmic dancer) at the historic Chidambaram Thillai Nataraja Temple during Maha Shivratri.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Tamil Nadu"
+    ],
+    "region": "South",
+    "source_section": "11. Fairs, Arts & Cultural Festivals",
+    "source_row_no": 277,
+    "source_rows": [
+      277
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "nishagandhi-dance-festival",
+    "name": "Nishagandhi Dance Festival",
+    "aliases": [],
+    "description": "One-week cultural dance celebration in January at the open-air Nishagandhi Theatre in the Kanakakkunnu Palace grounds in Thiruvananthapuram, Kerala.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Kerala"
+    ],
+    "region": "South",
+    "source_section": "11. Fairs, Arts & Cultural Festivals",
+    "source_row_no": 278,
+    "source_rows": [
+      278
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "cochin-carnival",
+    "name": "Cochin Carnival",
+    "aliases": [],
+    "description": "Lively ten-day New Year festival in Fort Kochi, Kerala, culminating on New Year Eve with the burning of the giant Pappanji effigy and vibrant street parades.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Kerala"
+    ],
+    "region": "South",
+    "source_section": "11. Fairs, Arts & Cultural Festivals",
+    "source_row_no": 279,
+    "source_rows": [
+      279
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "bengaluru-karaga",
+    "name": "Bengaluru Karaga",
+    "aliases": [],
+    "description": "Centuries-old night procession in old Bengaluru honouring Draupadi, where the Karaga bearer balances a tall floral pyramid on his head without touching it.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Hindu",
+    "states": [
+      "Karnataka"
+    ],
+    "region": "South",
+    "source_section": "11. Fairs, Arts & Cultural Festivals",
+    "source_row_no": 280,
+    "source_rows": [
+      280
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "pattadakal-dance-festival",
+    "name": "Pattadakal Dance Festival",
+    "aliases": [],
+    "description": "Classical dance festival organized by the Karnataka government celebrating the 7th and 8th-century Chalukyan temple complex at UNESCO site Pattadakal.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Karnataka"
+    ],
+    "region": "South",
+    "source_section": "11. Fairs, Arts & Cultural Festivals",
+    "source_row_no": 281,
+    "source_rows": [
+      281
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "kankaria-carnival",
+    "name": "Kankaria Carnival",
+    "aliases": [],
+    "description": "Seven-day cultural festival held in late December around the circular 15th-century Kankaria Lake in Ahmedabad, featuring laser light shows and performances.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Gujarat"
+    ],
+    "region": "West",
+    "source_section": "11. Fairs, Arts & Cultural Festivals",
+    "source_row_no": 282,
+    "source_rows": [
+      282
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "chembai-sangeetholsavam",
+    "name": "Chembai Sangeetholsavam",
+    "aliases": [],
+    "description": "Prestigious fourteen-day Carnatic music festival held at the Guruvayur Sri Krishna Temple in Kerala in memory of legendary classical vocalist Chembai Vaidyanatha Bhagavatar.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Kerala"
+    ],
+    "region": "South",
+    "source_section": "11. Fairs, Arts & Cultural Festivals",
+    "source_row_no": 283,
+    "source_rows": [
+      283
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "dover-lane-music-conference",
+    "name": "Dover Lane Music Conference",
+    "aliases": [],
+    "description": "Renowned annual Indian classical music festival held in Kolkata since 1952, featuring all-night vocal and instrumental ragas by India's finest maestros.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "West Bengal"
+    ],
+    "region": "East",
+    "source_section": "11. Fairs, Arts & Cultural Festivals",
+    "source_row_no": 284,
+    "source_rows": [
+      284
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "sawai-gandharva-bhimsen-mahotsav",
+    "name": "Sawai Gandharva Bhimsen Mahotsav",
+    "aliases": [],
+    "description": "Prestigious classical music festival founded in Pune by Bharat Ratna Pandit Bhimsen Joshi in honour of his guru, drawing classical connoisseurs from across the globe.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Maharashtra"
+    ],
+    "region": "West",
+    "source_section": "11. Fairs, Arts & Cultural Festivals",
+    "source_row_no": 285,
+    "source_rows": [
+      285
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  },
+  {
+    "id": "jodhpur-riff",
+    "name": "Jodhpur RIFF",
+    "aliases": [],
+    "description": "Rajasthan International Folk Festival held annually at Mehrangarh Fort in Jodhpur, bringing together Rajasthani Langa and Manganiyar musicians with world music artists under the full moon.",
+    "scope": "STATE_REGIONAL",
+    "religion_or_category": "Arts & Culture",
+    "states": [
+      "Rajasthan"
+    ],
+    "region": "North",
+    "source_section": "11. Fairs, Arts & Cultural Festivals",
+    "source_row_no": 287,
+    "source_rows": [
+      287
+    ],
+    "date_info": null,
+    "verification_status": "FROM_DATABASE"
+  }
+]

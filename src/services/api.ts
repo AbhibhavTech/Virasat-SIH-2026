@@ -42,6 +42,8 @@ import {
   GoogleMapsPlaceInfo,
   HeritageRouteAnalysisResult,
   FestivalItem,
+  FestivalLiveInfoResponse,
+  FestivalLiveSearchResponse,
 } from '../types';
 import { safeLocalStorage } from '../utils/storage';
 
@@ -1072,6 +1074,49 @@ export const api = {
       return res.festival || res.data || null;
     } catch {
       return null;
+    }
+  },
+
+  async getFestivalLiveInfo(id: string, refresh = false): Promise<FestivalLiveInfoResponse> {
+    try {
+      const res = await request<FestivalLiveInfoResponse>(
+        `/v1/festivals/${encodeURIComponent(id)}/live-info${refresh ? '?refresh=true' : ''}`,
+        {
+          method: 'POST',
+          body: JSON.stringify({ refresh }),
+        }
+      );
+      return res;
+    } catch (err: any) {
+      return {
+        success: false,
+        has_sources: false,
+        error_message: err?.message || 'Failed to connect to Google Search live info service',
+        sources: [],
+        last_fetched: new Date().toISOString(),
+      };
+    }
+  },
+
+  async searchFestivalsLive(query: string): Promise<FestivalLiveSearchResponse> {
+    try {
+      const res = await request<FestivalLiveSearchResponse>(
+        '/v1/festivals/live-search',
+        {
+          method: 'POST',
+          body: JSON.stringify({ query }),
+        }
+      );
+      return res;
+    } catch (err: any) {
+      return {
+        success: false,
+        has_sources: false,
+        query,
+        error_message: err?.message || 'Live Search service unavailable',
+        sources: [],
+        last_fetched: new Date().toISOString(),
+      };
     }
   },
 

@@ -8,10 +8,10 @@ const festivals = JSON.parse(festivalsRaw);
 
 // Test 0: Existing dataset preservation
 console.log('\n[TEST 0] Preserving Festival Dataset Integrity');
-assert.strictEqual(festivals.length, 83, `Dataset must have exactly 83 festivals, found ${festivals.length}`);
+assert(festivals.length >= 83, `Dataset must preserve all original festivals, found ${festivals.length}`);
 const ids = new Set(festivals.map((f) => f.id));
-assert.strictEqual(ids.size, 83, 'All 83 festival IDs must be unique');
-console.log('✓ Exactly 83 unique festival records preserved in data/festivals.json');
+assert.strictEqual(ids.size, festivals.length, `All ${festivals.length} festival IDs must be unique`);
+console.log(`✓ All ${festivals.length} unique festival records preserved in data/festivals.json`);
 
 // Canonical alias dictionary (shared across frontend, backend, and AI tools)
 const FESTIVAL_SEARCH_ALIASES = {
@@ -163,11 +163,11 @@ const mathuraHoli = filterFestivals(festivals, { search: 'Holi', city: 'Mathura'
 assert.strictEqual(mathuraHoli.length, 1, 'Only Lathmar Holi should match Holi + Mathura');
 console.log(`✓ Holi in Mathura: ${mathuraHoli[0].name}`);
 
-// Test 6: Resetting filters restores full 83 list
+// Test 6: Resetting filters restores full list
 console.log('\n[TEST 6] Reset Filters Restores Complete List');
 const resetList = filterFestivals(festivals, { search: '', state: 'All', city: 'All', month: 'All' });
-assert.strictEqual(resetList.length, 83, `Reset must restore all 83 records, got ${resetList.length}`);
-console.log('✓ Resetting filters restores all 83 records');
+assert.strictEqual(resetList.length, festivals.length, `Reset must restore all ${festivals.length} records, got ${resetList.length}`);
+console.log(`✓ Resetting filters restores all ${festivals.length} records`);
 
 // Test 7: Image mapping authenticity verification
 console.log('\n[TEST 7] Verifying Festival Image Mappings');
