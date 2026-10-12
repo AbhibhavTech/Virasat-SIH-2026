@@ -1,4 +1,5 @@
-import { EntityImageMetadata, ImageRecordMeta } from './database';
+import { EntityImageMetadata, ImageRecordMeta, ImageMatchStatus, PlaceImageItem, PlaceImageBundle } from './database';
+export type { ImageMatchStatus, PlaceImageItem, PlaceImageBundle };
 
 export type TransportMode = 'DRIVE' | 'TRANSIT' | 'WALK' | 'AUTO' | 'BICYCLE';
 
@@ -154,6 +155,9 @@ export interface PlaceDetail extends PlaceSummary {
   facts?: PlaceFactDetail[];
   sources?: any[];
   image_license?: any;
+  image_bundle?: PlaceImageBundle;
+  hero_image?: PlaceImageItem;
+  gallery_images?: PlaceImageItem[];
 }
 
 export interface PlaceListResponse {

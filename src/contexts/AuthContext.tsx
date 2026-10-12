@@ -9,6 +9,7 @@ import {
   signOutFirebase,
   syncUserProfileToFirestore,
   getUserProfileFromFirestore,
+  isAdminEmail,
 } from '../services/firebase';
 
 interface AuthContextType {
@@ -62,12 +63,14 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
               name: fbUser.displayName || fbUser.email?.split('@')[0] || 'Virasat Traveller',
               email: fbUser.email || '',
               avatar_url: fbUser.photoURL || undefined,
-              role: fbUser.email === 'abhibhavsinha82@gmail.com' ? 'admin' : 'traveller',
+              role: isAdminEmail(fbUser.email) ? 'admin' : 'traveller',
               home_city: 'Mumbai',
               created_at: new Date().toISOString(),
             };
-            await syncUserProfileToFirestore(newProfile);
             setUser(newProfile);
+            await syncUserProfileToFirestore(newProfile).catch((e) => {
+              console.warn('Initial Firestore sync warning:', e);
+            });
           }
         } catch (err) {
           console.warn('Firestore profile sync error:', err);
@@ -145,11 +148,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           name: fbUser.displayName || fbUser.email?.split('@')[0] || 'Virasat Traveller',
           email: fbUser.email || '',
           avatar_url: fbUser.photoURL || undefined,
-          role: fbUser.email === 'abhibhavsinha82@gmail.com' ? 'admin' : 'traveller',
+          role: isAdminEmail(fbUser.email) ? 'admin' : 'traveller',
           home_city: 'Mumbai',
           created_at: new Date().toISOString(),
         };
-        await syncUserProfileToFirestore(profile);
+        await syncUserProfileToFirestore(profile).catch((e) => {
+          console.warn('Initial Google login Firestore sync warning:', e);
+        });
       }
       setUser(profile);
 

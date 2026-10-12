@@ -153,8 +153,8 @@
     "id": "ziro",
     "state_id": "arunachal-pradesh",
     "state": "Arunachal Pradesh",
-    "name": "Ziro",
-    "slug": "ziro",
+    "name": "Ziro Valley",
+    "slug": "ziro-valley",
     "district": "Lower Subansiri",
     "lat": 27.6324,
     "lng": 93.834,
@@ -162,7 +162,8 @@
     "description": "UNESCO-tentative valley renowned for unique sustainable paddy-cum-fish agro-systems, sacred Tarin groves, and annual outdoor Ziro Music Festival.",
     "hero_image_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
     "places_count": 1,
-    "tagline": "Cultural destination in arunachal-pradesh"
+    "tagline": "Cultural destination in arunachal-pradesh",
+    "entity_type": "valley"
   },
   {
     "id": "dibrugarh",
@@ -612,7 +613,8 @@
     "description": "Spiti Valley is an expansive high-altitude cold desert valley located at an average altitude of 3,800 meters in Lahaul and Spiti district. It is famous for thousand-year-old Tibetan Buddhist monasteries including Tabo and Key, fossil villages, and Chandratal wetland.",
     "hero_image_url": "https://images.unsplash.com/photo-1605649487212-47bdab064df8?w=1200&q=80",
     "places_count": 2,
-    "tagline": "Cultural destination in himachal-pradesh"
+    "tagline": "Cultural destination in himachal-pradesh",
+    "entity_type": "valley"
   },
   {
     "id": "dharamshala",

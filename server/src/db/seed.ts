@@ -221,7 +221,7 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
       if (Array.isArray(monuments)) {
         for (const m of monuments) {
           const stateId = (m.state || '').toLowerCase().replace(/[^a-z0-9]+/g, '-');
-          const cityId = (m.city || '').toLowerCase().replace(/[^a-z0-9]+/g, '-');
+          const cityId = resolveCanonicalCityId(m.city || '');
           const isOfficial = Boolean(m.source && (m.source.includes('ASI') || m.source.includes('Archaeological') || m.source.includes('Government') || m.source.includes('Tourism')));
           const confidence = isOfficial ? 'official' : (m.unesco_site ? 'trusted_third_party' : 'official');
           const deepLink = VERIFIED_UNESCO_DEEP_LINKS[m.id];
@@ -324,9 +324,9 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
         if (Array.isArray(regionalPlaces)) {
           for (const rp of regionalPlaces) {
             const stateId = (rp.state || reg).toLowerCase().replace(/[^a-z0-9]+/g, '-');
-            const cityId = (rp.city || reg).toLowerCase().replace(/[^a-z0-9]+/g, '-');
+            const cityId = resolveCanonicalCityId(rp.city || reg);
             const normalizedName = rp.name.trim().toLowerCase();
-            const existing = places[rp.id] || Object.values(places).find(p => p.city_id === cityId && p.name.trim().toLowerCase() === normalizedName);
+            const existing = places[rp.id] || Object.values(places).find(p => (p.city_id === cityId || p.city_id === (rp.city || reg).toLowerCase().replace(/[^a-z0-9]+/g, '-')) && p.name.trim().toLowerCase() === normalizedName);
             if (existing) continue; // Already ingested via curated monuments
             const sourceUrl = rp.source_url && rp.source_url.startsWith('http') ? rp.source_url : 'https://asi.nic.in';
             const quality = computeSourceQuality(sourceUrl);
@@ -423,7 +423,8 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
                     const placeId = attr.id || `${city.id}-${attr.name.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
 
                     const normalizedName = attr.name.trim().toLowerCase();
-                    const existingPlace = places[placeId] || Object.values(places).find(p => p.city_id === city.id && (p.name.trim().toLowerCase() === normalizedName || p.name.trim().toLowerCase().includes(normalizedName) || normalizedName.includes(p.name.trim().toLowerCase())));
+                    const canonicalCityId = resolveCanonicalCityId(city.id || '');
+                    const existingPlace = places[placeId] || Object.values(places).find(p => (p.city_id === city.id || p.city_id === canonicalCityId) && (p.name.trim().toLowerCase() === normalizedName || p.name.trim().toLowerCase().includes(normalizedName) || normalizedName.includes(p.name.trim().toLowerCase())));
 
                     if (existingPlace) {
                       // Enrich existing place with verified pilot fields
@@ -511,7 +512,7 @@ export async function runDatabaseSeed(): Promise<SeedPayload> {
 
                     places[placeId] = {
                       id: placeId,
-                      city_id: city.id,
+                      city_id: resolveCanonicalCityId(city.id || ''),
                       state_id: state.id,
                       name: attr.name,
                       slug: attr.slug || placeId,

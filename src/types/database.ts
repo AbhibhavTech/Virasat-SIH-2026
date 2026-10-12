@@ -108,3 +108,41 @@ export interface ImageRecordMeta {
   attribution?: string;
   credit_attribution?: string;
 }
+
+/**
+ * Virasat Mumbai & Maharashtra Heritage Explorer Image Data Model (Phase 9 Image Pipeline Add-on)
+ */
+export type ImageMatchStatus = 'VERIFIED' | 'NEEDS_REVIEW' | 'PLACEHOLDER';
+
+export interface PlaceImageItem {
+  image_url: string | null;
+  thumbnail_url: string | null;
+  source_page_url: string | null;
+  source_name: string | null;
+  author: string | null;
+  license: string | null;
+  attribution_text: string | null;
+  alt_text: string | null;
+  caption: string | null;
+  width: number | null;
+  height: number | null;
+  content_hash: string | null;
+  depicts_place_id: string;
+  match_status: ImageMatchStatus;
+  verified_at: string | null;
+  is_hero?: boolean;
+  order_index?: number;
+}
+
+export interface PlaceImageBundle {
+  place_id: string;
+  place_name: string;
+  city: string;
+  state: string;
+  category?: string;
+  is_sensitive?: boolean;
+  sensitivity_note?: string | null;
+  hero_image: PlaceImageItem | null;
+  gallery_images: PlaceImageItem[];
+}
+

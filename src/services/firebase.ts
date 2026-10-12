@@ -4,8 +4,6 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   signOut as firebaseSignOut,
-  onAuthStateChanged,
-  User as FirebaseUser,
 } from 'firebase/auth';
 import {
   getFirestore,
@@ -16,11 +14,8 @@ import {
   deleteDoc,
   collection,
   getDocs,
-  query,
-  where,
-  serverTimestamp,
 } from 'firebase/firestore';
-import { UserProfile, TripItem, FavoriteItem } from '../types';
+import { UserProfile, TripItem } from '../types';
 import appletConfig from '../../firebase-applet-config.json';
 
 export const firebaseConfig = {
@@ -35,6 +30,17 @@ export const firebaseConfig = {
   oAuthClientId: import.meta.env.VITE_FIREBASE_OAUTH_CLIENT_ID || appletConfig.oAuthClientId,
   recaptchaSiteKey: import.meta.env.VITE_FIREBASE_RECAPTCHA_SITE_KEY || appletConfig.recaptchaSiteKey || '',
 };
+
+export const ADMIN_EMAILS = [
+  'abhibhavsinha82@gmail.com',
+  'alazelersinha111@gmail.com',
+  'sahilacharekar2461968@gmail.com',
+];
+
+export function isAdminEmail(email?: string | null): boolean {
+  if (!email) return false;
+  return ADMIN_EMAILS.includes(email.toLowerCase().trim());
+}
 
 export function isUnauthorizedDomainError(error: unknown): boolean {
   if (!error) return false;
@@ -64,8 +70,10 @@ export function isPopupBlockedError(error: unknown): boolean {
 // Initialize Firebase App
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 
-// CRITICAL: The app will break without specifying firestoreDatabaseId
-export const db = getFirestore(app, firebaseConfig.firestoreDatabaseId);
+// Safe firestore initialization with fallback to default database if database ID is empty
+export const db = firebaseConfig.firestoreDatabaseId
+  ? getFirestore(app, firebaseConfig.firestoreDatabaseId)
+  : getFirestore(app);
 export const auth = getAuth(app);
 
 export const googleProvider = new GoogleAuthProvider();
@@ -123,7 +131,7 @@ export function handleFirestoreError(error: unknown, operationType: OperationTyp
 export async function testFirestoreConnection(): Promise<boolean> {
   try {
     await getDocFromServer(doc(db, 'test', 'connection'));
-    console.log('Firestore connected successfully to database:', firebaseConfig.firestoreDatabaseId);
+    console.log('Firestore connected successfully to database:', firebaseConfig.firestoreDatabaseId || '(default)');
     return true;
   } catch (error) {
     if (error instanceof Error && error.message.includes('the client is offline')) {
@@ -134,8 +142,8 @@ export async function testFirestoreConnection(): Promise<boolean> {
   }
 }
 
-// Run connection check
-testFirestoreConnection();
+// Run connection check non-blocking without unhandled rejections
+testFirestoreConnection().catch(() => {});
 
 /**
  * Sign in using Google Popup (recommended for AI Studio sandbox)
@@ -154,15 +162,8 @@ export async function signOutFirebase() {
 function canAccessFirestoreUser(userId: string): boolean {
   if (!auth.currentUser) return false;
   if (auth.currentUser.uid === userId) return true;
-  if (
-    (auth.currentUser.email === 'abhibhavsinha82@gmail.com' ||
-      auth.currentUser.email === 'alazelersinha111@gmail.com' ||
-      auth.currentUser.email === 'sahilacharekar2461968@gmail.com') &&
-    auth.currentUser.emailVerified
-  ) {
-    return true;
-  }
-  return false;
+  const email = (auth.currentUser.email || '').toLowerCase().trim();
+  return isAdminEmail(email) && Boolean(auth.currentUser.emailVerified);
 }
 
 /**
@@ -180,11 +181,15 @@ export async function syncUserProfileToFirestore(profile: UserProfile): Promise<
     const existingSnap = await getDoc(userRef);
     const now = new Date().toISOString();
 
+    const userEmail = (auth.currentUser?.email || profile.email || '').toLowerCase().trim();
+    const isUserAdmin = isAdminEmail(userEmail) && Boolean(auth.currentUser?.emailVerified);
+    const safeRole = isUserAdmin ? (profile.role || 'admin') : 'traveller';
+
     const data: Record<string, any> = {
       id: profile.id,
       email: profile.email,
       name: profile.name,
-      role: profile.role || 'traveller',
+      role: safeRole,
       avatar_url: profile.avatar_url || '',
       home_city: profile.home_city || 'Mumbai',
       travel_style: profile.travel_style || '',
@@ -195,8 +200,8 @@ export async function syncUserProfileToFirestore(profile: UserProfile): Promise<
       data.created_at = profile.created_at || now;
     } else {
       const existingData = existingSnap.data();
-      data.created_at = existingData?.created_at || now;
-      if (existingData?.role === 'admin') {
+      data.created_at = existingData?.created_at || profile.created_at || now;
+      if (existingData?.role === 'admin' || isUserAdmin) {
         data.role = 'admin';
       }
     }
@@ -224,7 +229,11 @@ export async function getUserProfileFromFirestore(userId: string): Promise<UserP
     }
     return null;
   } catch (error) {
-    handleFirestoreError(error, OperationType.GET, path);
+    try {
+      handleFirestoreError(error, OperationType.GET, path);
+    } catch {
+      // Graceful fallback on read failure
+    }
     return null;
   }
 }
@@ -237,18 +246,26 @@ export async function saveTripToFirestore(userId: string, trip: TripItem): Promi
     return;
   }
 
-  const path = `users/${userId}/trips/${trip.id}`;
+  const cleanTripId = (trip.id || '').trim().replace(/[^a-zA-Z0-9_-]/g, '-').slice(0, 128);
+  if (!cleanTripId) return;
+
+  const path = `users/${userId}/trips/${cleanTripId}`;
   try {
-    const tripRef = doc(db, 'users', userId, 'trips', trip.id);
+    const tripRef = doc(db, 'users', userId, 'trips', cleanTripId);
+    const existingSnap = await getDoc(tripRef);
+    const createdAt = existingSnap.exists()
+      ? (existingSnap.data()?.created_at || trip.created_at || new Date().toISOString())
+      : (trip.created_at || new Date().toISOString());
+
     const payload = {
-      id: trip.id,
+      id: cleanTripId,
       userId,
-      title: trip.title,
-      city: trip.city,
-      duration_hours: Number(trip.duration_hours) || 0,
-      total_places: Number(trip.total_places || trip.stops?.length) || 0,
-      estimated_cost: Number(trip.estimated_cost) || 0,
-      created_at: trip.created_at || new Date().toISOString(),
+      title: (trip.title || 'My Virasat Trip').slice(0, 160),
+      city: (trip.city || 'India').slice(0, 128),
+      duration_hours: Math.max(0, Math.min(720, Number(trip.duration_hours) || 0)),
+      total_places: Math.max(0, Math.min(100, Number(trip.total_places || trip.stops?.length) || 0)),
+      estimated_cost: Math.max(0, Math.min(10000000, Number(trip.estimated_cost) || 0)),
+      created_at: String(createdAt).slice(0, 64),
     };
     await setDoc(tripRef, payload);
   } catch (error) {
@@ -274,7 +291,11 @@ export async function getTripsFromFirestore(userId: string): Promise<TripItem[]>
     });
     return trips;
   } catch (error) {
-    handleFirestoreError(error, OperationType.LIST, path);
+    try {
+      handleFirestoreError(error, OperationType.LIST, path);
+    } catch {
+      // Graceful fallback on list failure
+    }
     return [];
   }
 }
@@ -287,9 +308,12 @@ export async function deleteTripFromFirestore(userId: string, tripId: string): P
     return;
   }
 
-  const path = `users/${userId}/trips/${tripId}`;
+  const cleanTripId = (tripId || '').trim().replace(/[^a-zA-Z0-9_-]/g, '-').slice(0, 128);
+  if (!cleanTripId) return;
+
+  const path = `users/${userId}/trips/${cleanTripId}`;
   try {
-    await deleteDoc(doc(db, 'users', userId, 'trips', tripId));
+    await deleteDoc(doc(db, 'users', userId, 'trips', cleanTripId));
   } catch (error) {
     handleFirestoreError(error, OperationType.DELETE, path);
   }
@@ -303,13 +327,16 @@ export async function addFavoriteToFirestore(userId: string, placeId: string): P
     return;
   }
 
-  const path = `users/${userId}/favorites/${placeId}`;
+  const cleanPlaceId = placeId.trim().replace(/[^a-zA-Z0-9_-]/g, '-').slice(0, 128);
+  if (!cleanPlaceId) return;
+
+  const path = `users/${userId}/favorites/${cleanPlaceId}`;
   try {
-    const favRef = doc(db, 'users', userId, 'favorites', placeId);
+    const favRef = doc(db, 'users', userId, 'favorites', cleanPlaceId);
     await setDoc(favRef, {
-      id: placeId,
+      id: cleanPlaceId,
       userId,
-      place_id: placeId,
+      place_id: cleanPlaceId,
       created_at: new Date().toISOString(),
     });
   } catch (error) {
@@ -325,9 +352,12 @@ export async function removeFavoriteFromFirestore(userId: string, placeId: strin
     return;
   }
 
-  const path = `users/${userId}/favorites/${placeId}`;
+  const cleanPlaceId = placeId.trim().replace(/[^a-zA-Z0-9_-]/g, '-').slice(0, 128);
+  if (!cleanPlaceId) return;
+
+  const path = `users/${userId}/favorites/${cleanPlaceId}`;
   try {
-    await deleteDoc(doc(db, 'users', userId, 'favorites', placeId));
+    await deleteDoc(doc(db, 'users', userId, 'favorites', cleanPlaceId));
   } catch (error) {
     handleFirestoreError(error, OperationType.DELETE, path);
   }
@@ -354,7 +384,11 @@ export async function getFavoritesFromFirestore(userId: string): Promise<string[
     });
     return favorites;
   } catch (error) {
-    handleFirestoreError(error, OperationType.LIST, path);
+    try {
+      handleFirestoreError(error, OperationType.LIST, path);
+    } catch {
+      // Graceful fallback on list failure
+    }
     return [];
   }
 }

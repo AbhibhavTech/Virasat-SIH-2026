@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Virasat Place Image Pipeline Item",
+  "description": "Per-place image record adhering to Phase 9 Virasat Mumbai & Maharashtra Heritage Explorer Image Pipeline",
+  "type": "object",
+  "required": [
+    "depicts_place_id",
+    "match_status",
+    "image_url",
+    "thumbnail_url",
+    "source_page_url",
+    "source_name",
+    "author",
+    "license",
+    "attribution_text",
+    "alt_text",
+    "caption",
+    "width",
+    "height",
+    "content_hash",
+    "verified_at"
+  ],
+  "properties": {
+    "image_url": {
+      "type": ["string", "null"]
+    },
+    "thumbnail_url": {
+      "type": ["string", "null"]
+    },
+    "source_page_url": {
+      "type": ["string", "null"]
+    },
+    "source_name": {
+      "type": ["string", "null"]
+    },
+    "author": {
+      "type": ["string", "null"]
+    },
+    "license": {
+      "type": ["string", "null"]
+    },
+    "attribution_text": {
+      "type": ["string", "null"]
+    },
+    "alt_text": {
+      "type": ["string", "null"]
+    },
+    "caption": {
+      "type": ["string", "null"]
+    },
+    "width": {
+      "type": ["number", "null"]
+    },
+    "height": {
+      "type": ["number", "null"]
+    },
+    "content_hash": {
+      "type": ["string", "null"]
+    },
+    "depicts_place_id": {
+      "type": "string"
+    },
+    "match_status": {
+      "type": "string",
+      "enum": [
+        "VERIFIED",
+        "NEEDS_REVIEW",
+        "PLACEHOLDER"
+      ]
+    },
+    "verified_at": {
+      "type": ["string", "null"]
+    },
+    "is_hero": {
+      "type": "boolean"
+    },
+    "order_index": {
+      "type": "number"
+    }
+  }
+}

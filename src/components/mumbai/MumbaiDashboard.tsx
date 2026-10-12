@@ -23,6 +23,7 @@ import {
   Compass
 } from 'lucide-react';
 import { InteractiveMap } from '../map/InteractiveMap';
+import { HeritagePlaceCardImage } from '../common/HeritagePlaceCardImage';
 
 interface MumbaiDashboardProps {
   places: PlaceSummary[];
@@ -336,24 +337,22 @@ export const MumbaiDashboard: React.FC<MumbaiDashboardProps> = ({
                   className="heritage-border heritage-shadow bg-parchment-50 hover:shadow-md transition-shadow rounded-2xl overflow-hidden border border-parchment-300 bg-parchment-50/90 flex flex-col justify-between group"
                 >
                   <div className="relative h-40 w-full overflow-hidden bg-parchment-100">
-                    <img
-                      src={place.thumbnail_url || 'https://images.unsplash.com/photo-1570168007204-dfb528c6958f'}
-                      alt={place.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    <HeritagePlaceCardImage
+                      placeId={place.id}
+                      placeName={place.name}
+                      category={place.category}
+                      thumbnailUrl={place.thumbnail_url}
+                      imageUrl={place.thumbnail_url}
+                      aspectRatioClass="h-40 w-full"
+                      isVerified={Boolean((place as any).image_verified || (place as any).match_status === 'VERIFIED')}
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#080d19] via-[#080d19]/20 to-transparent" />
-
-                    {/* Category & 3D Badges */}
-                    <div className="absolute top-2.5 left-2.5 right-2.5 flex items-center justify-between pointer-events-none">
-                      <span className="px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider bg-slate-950/80 text-terracotta border border-emerald-500/30 backdrop-blur-md">
-                        {place.category}
-                      </span>
-                      {place.features && place.features['3d'] && (
+                    {place.features && place.features['3d'] && (
+                      <div className="absolute top-2.5 right-2.5 pointer-events-none z-10">
                         <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-terracotta text-slate-950 shadow-md">
                           3D Ready
                         </span>
-                      )}
-                    </div>
+                      </div>
+                    )}
                   </div>
 
                   <div className="p-4 space-y-3 flex-1 flex flex-col justify-between">

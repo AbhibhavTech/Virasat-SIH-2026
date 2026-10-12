@@ -21,8 +21,10 @@ import {
   Info,
   ExternalLink,
   AlertTriangle,
+  Camera,
 } from 'lucide-react';
 import { ProvenanceBadge } from '../components/common/ProvenanceBadge';
+import { HeritageImageViewer } from '../components/common/HeritageImageViewer';
 import { CitizenReportModal } from '../components/common/CitizenReportModal';
 import { VisitingInfoCard } from '../components/destination/VisitingInfoCard';
 import { RailwayStationsCard } from '../components/destination/RailwayStationsCard';
@@ -170,12 +172,12 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
       {/* 1. Hero image & Top Navigation */}
       <div className="relative h-64 sm:h-[420px] w-full overflow-hidden rounded-2xl sm:rounded-3xl border border-[#EFE8DF] shadow-warm bg-stone-100">
         <img
-          src={
-            place.thumbnail_url ||
-            (place.images && place.images[0]) ||
-            'https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80'
-          }
+          src={place.thumbnail_url || (place.images && place.images[0]) || ''}
           alt={place.name}
+          onError={(e) => {
+            console.warn(`[ImagePipeline] DestinationDetail hero image failed for: ${place.id} (${place.name})`);
+            e.currentTarget.style.display = 'none';
+          }}
           className="w-full h-full object-cover object-center"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-stone-950/80 via-stone-950/30 to-stone-900/10" />
@@ -343,6 +345,45 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
               onAskHeritageAI={(prompt) => onOpenAIChat?.(place.id, prompt)}
             />
           </div>
+        </section>
+
+        {/* 6B. Photographic Heritage Dossier & Gallery (Step 6) */}
+        <section className="space-y-3 sm:space-y-4 pt-4 sm:pt-6 border-t border-[#EFE8DF]">
+          <div className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#FF671F] flex items-center gap-1.5">
+            <Camera className="w-3.5 h-3.5" />
+            <span>Photographic Dossier</span>
+          </div>
+          <h2 className="font-serif text-lg sm:text-2xl font-bold text-stone-900">
+            Visual Archive & Architectural Details
+          </h2>
+          <HeritageImageViewer
+            placeId={place.id}
+            placeName={place.name}
+            category={place.category}
+            imageBundle={place.image_bundle}
+            heroImage={
+              place.hero_image || (place.thumbnail_url ? {
+                image_url: place.thumbnail_url,
+                thumbnail_url: place.thumbnail_url,
+                source_page_url: place.source_url || null,
+                source_name: 'Wikimedia Commons / Archives',
+                author: (place as any).photographer || 'Open Heritage Contributor',
+                license: (place as any).license || 'Permitted Open License',
+                attribution_text: `Photo: ${(place as any).photographer || 'Open Heritage Contributor'}`,
+                alt_text: `${place.name} heritage view`,
+                caption: place.name,
+                width: 1200,
+                height: 800,
+                content_hash: place.id,
+                depicts_place_id: place.id,
+                match_status: (place as any).match_status || 'NEEDS_REVIEW',
+                verified_at: place.last_verified_at || null,
+                is_hero: true
+              } : null)
+            }
+            galleryImages={place.gallery_images || []}
+            aspectRatioClass="aspect-[16/10] sm:aspect-[21/9]"
+          />
         </section>
 
         {/* 7. Visitor Information */}
