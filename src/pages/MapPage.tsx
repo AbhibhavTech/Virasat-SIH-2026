@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import { Map as MapIcon, Landmark, Sparkles, Train } from 'lucide-react';
 import { InteractiveMap } from '../components/map/InteractiveMap';
 import { MapErrorBoundary } from '../components/map/MapErrorBoundary';
+import { getMumbaiDestinationById } from '../data/mumbaiDestinations';
 
 interface MapPageProps {
   onSelectPlace: (id: string) => void;
@@ -69,7 +70,7 @@ export const MapPage: React.FC<MapPageProps> = ({
           selectedCity={activeCity}
           onSelectCity={onSelectCity}
           initialOrigin={originParam || undefined}
-          initialDestination={destParam || queryParam || undefined}
+          initialDestination={getMumbaiDestinationById(destParam || '')?.name || destParam || queryParam || undefined}
           height="clamp(480px, 72vh, 660px)"
         />
       </MapErrorBoundary>

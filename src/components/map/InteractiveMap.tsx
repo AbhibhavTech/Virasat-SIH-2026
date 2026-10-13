@@ -5,6 +5,13 @@ import { api } from '../../services/api';
 import { findNearestCity, calculateHaversineKm } from '../../data/citiesData';
 import { VERIFIED_HIDDEN_GEMS, HiddenGemItem } from '../../data/hiddenGemsData';
 import {
+  getMumbaiDestinationById,
+  getMumbaiDestinationByName,
+  getMumbaiVerifiedAttractions,
+  isMumbaiCity,
+  searchMumbaiPlaces,
+} from '../../data/mumbaiDestinations';
+import {
   INDIAN_AIRPORTS,
   STATE_COORDINATES,
   IndianAirport,
@@ -76,6 +83,8 @@ export interface MapPointItem {
   state?: string;
   raw: any;
 }
+
+const MUMBAI_VERIFIED_MAP_PLACES = getMumbaiVerifiedAttractions();
 
 interface InteractiveMapProps {
   onSelectPlace: (id: string) => void;
@@ -177,6 +186,8 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
   const [destHighlightedIndex, setDestHighlightedIndex] = useState<number>(-1);
   const originContainerRef = useRef<HTMLDivElement>(null);
   const destContainerRef = useRef<HTMLDivElement>(null);
+  const initialMumbaiDestination = getMumbaiDestinationById(initialDestination || '')
+    || getMumbaiDestinationByName(initialDestination || '');
 
   // Close dropdowns on outside click
   useEffect(() => {
@@ -212,9 +223,11 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
   const [routeOrigin, setRouteOrigin] = useState<string>(initialOrigin || '');
   const [routeOriginName, setRouteOriginName] = useState<string>(initialOrigin ? 'Origin Location' : '');
   const [routeOriginCoords, setRouteOriginCoords] = useState<{ lat: number; lng: number } | null>(null);
-  const [routeDestination, setRouteDestination] = useState<string>(initialDestination || '');
-  const [routeDestName, setRouteDestName] = useState<string>(initialDestination ? 'Destination' : '');
-  const [routeDestCoords, setRouteDestCoords] = useState<{ lat: number; lng: number } | null>(null);
+  const [routeDestination, setRouteDestination] = useState<string>(initialMumbaiDestination?.id || initialDestination || '');
+  const [routeDestName, setRouteDestName] = useState<string>(initialMumbaiDestination?.name || initialDestination || '');
+  const [routeDestCoords, setRouteDestCoords] = useState<{ lat: number; lng: number } | null>(() =>
+    initialMumbaiDestination?.coordinates_verified ? initialMumbaiDestination.coordinates : null
+  );
   const [selectedMode, setSelectedMode] = useState<MapTransportMode>('DRIVE');
   const [activeRoute, setActiveRoute] = useState<RouteResponse | null>(null);
   const [isCalculatingRoute, setIsCalculatingRoute] = useState(false);
@@ -654,10 +667,17 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
     const activePoints: MapPointItem[] = [];
 
     const q = searchQuery.toLowerCase().trim();
+    const selectedCityKey = (selectedCity || '').trim().toLowerCase();
+    const filterToCity = Boolean(selectedCityKey && selectedCityKey !== 'all india');
+    const belongsToSelectedCity = (city?: string) =>
+      !filterToCity || Boolean(city && city.toLowerCase().includes(selectedCityKey));
+    const localMumbaiNames = new Set(MUMBAI_VERIFIED_MAP_PLACES.map((place) => place.name.toLowerCase()));
 
     // Heritage
     if (showHeritage) {
       heritageSites.forEach((site) => {
+        if (!belongsToSelectedCity(site.city)) return;
+        if (isMumbaiCity(selectedCity) && localMumbaiNames.has((site.name || '').toLowerCase())) return;
         const coords = extractValidCoordinates(site);
         if (!coords) return;
         if (
@@ -679,11 +699,35 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
           raw: site,
         });
       });
+
+      if (isMumbaiCity(selectedCity)) {
+        MUMBAI_VERIFIED_MAP_PLACES.forEach((place) => {
+          if (!place.coordinates_verified) return;
+          if (
+            q &&
+            !place.name.toLowerCase().includes(q) &&
+            !place.city.toLowerCase().includes(q) &&
+            !place.state.toLowerCase().includes(q) &&
+            !place.category.toLowerCase().includes(q)
+          ) return;
+          activePoints.push({
+            id: place.id,
+            name: place.name,
+            type: 'heritage',
+            lat: place.coordinates.lat,
+            lng: place.coordinates.lng,
+            city: place.city,
+            state: place.state,
+            raw: place,
+          });
+        });
+      }
     }
 
     // Hidden Gems
     if (showHiddenGems) {
       hiddenGemsList.forEach((gem) => {
+        if (!belongsToSelectedCity(gem.city)) return;
         const coords = parseLatLng(gem.lat, gem.lng);
         if (!coords) return;
         if (
@@ -712,6 +756,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
     // Stations (Only if enabled, default OFF)
     if (showStations) {
       stations.forEach((st) => {
+        if (!belongsToSelectedCity(st.city)) return;
         const coords = extractValidCoordinates(st);
         if (!coords) return;
         if (
@@ -888,7 +933,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
         cLayer.addLayer(marker);
       }
     });
-  }, [heritageSites, hiddenGemsList, stations, showHeritage, showHiddenGems, showStations, searchQuery, onView3DPlace]);
+  }, [heritageSites, hiddenGemsList, stations, showHeritage, showHiddenGems, showStations, searchQuery, selectedCity, onView3DPlace]);
 
   // Hook map zoom/move events to clustering
   useEffect(() => {
@@ -1301,7 +1346,42 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
     const timer = setTimeout(async () => {
       try {
         const results = await api.suggestLocations(trimmed, 12);
-        setSearchSuggestions(results);
+        const localPlaces: LocationSuggestion[] = searchMumbaiPlaces(trimmed)
+          .filter((place) => place.coordinates_verified)
+          .map((place) => ({
+            id: place.id,
+            name: place.name,
+            type: place.is_hidden_gem_candidate ? 'hidden_gem' : 'heritage',
+            categoryType: place.is_hidden_gem_candidate ? 'hidden_gem' : 'heritage',
+            city: place.city,
+            state: place.state,
+            lat: place.coordinates.lat,
+            lng: place.coordinates.lng,
+            subtitle: place.summary,
+            badge: place.is_hidden_gem_candidate ? 'Hidden Gem Candidate' : place.category,
+          }));
+        const localCity: LocationSuggestion[] = /mumbai|bombay/i.test(trimmed)
+          ? [{
+              id: 'city-mumbai',
+              name: 'Mumbai',
+              type: 'city',
+              categoryType: 'city',
+              city: 'Mumbai',
+              state: 'Maharashtra',
+              lat: 18.9431,
+              lng: 72.833,
+              subtitle: 'Explore Mumbai destinations and hidden gem candidates',
+              badge: 'City',
+            }]
+          : [];
+        const seen = new Set<string>();
+        const merged = [...localCity, ...localPlaces, ...results].filter((item) => {
+          const key = `${item.categoryType}:${item.name.trim().toLowerCase()}`;
+          if (seen.has(key)) return false;
+          seen.add(key);
+          return true;
+        });
+        setSearchSuggestions(merged.slice(0, 12));
         setIsSearchDropdownOpen(true);
         setSearchHighlightedIndex(-1);
       } catch (err) {
@@ -1362,7 +1442,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
       });
 
       const marker = L.marker(coords, { icon: markerIcon });
-      const cleanId = item.id.replace(/^(heritage|gem|station|airport|city|state|place|hotel|festival|market)-/, '');
+      const cleanId = item.categoryType === 'city' ? '' : item.id.replace(/^(heritage|gem|station|airport|city|state|place|hotel|festival|market)-/, '');
 
       const popupContent = `
         <div style="padding: 10px; min-width: 230px; font-family: system-ui, -apple-system, sans-serif;">

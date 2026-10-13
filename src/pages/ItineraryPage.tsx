@@ -48,6 +48,7 @@ interface ItineraryPageProps {
   onSelectPlace: (id: string) => void;
   onNavigateTab: (tab: NavTab) => void;
   selectedCity: string;
+  onSelectCity: (city: string) => void;
 }
 
 interface PreferencePill {
@@ -74,6 +75,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
   onSelectPlace,
   onNavigateTab,
   selectedCity = 'Mumbai',
+  onSelectCity,
 }) => {
   const { user } = useAuth();
   // Destination state
@@ -83,6 +85,13 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
     );
     return found || ALL_INDIAN_TOURISM_CITIES[0]; // Default to Mumbai
   });
+
+  useEffect(() => {
+    const found = ALL_INDIAN_TOURISM_CITIES.find(
+      (city) => city.name.toLowerCase() === selectedCity.toLowerCase() || city.id.toLowerCase() === selectedCity.toLowerCase()
+    );
+    if (found) setSelectedCityObj(found);
+  }, [selectedCity]);
 
   const [citySearchQuery, setCitySearchQuery] = useState('');
   const [isCityDropdownOpen, setIsCityDropdownOpen] = useState(false);
@@ -126,6 +135,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
 
     if (foundCity) {
       setSelectedCityObj(foundCity);
+      onSelectCity(foundCity.name);
       handleGeneratePlan(foundCity.name, daysCount);
     } else {
       handleGeneratePlan(cityName, daysCount);
@@ -172,6 +182,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
 
   const handleSelectCity = (c: CityOption) => {
     setSelectedCityObj(c);
+    onSelectCity(c.name);
     setCitySearchQuery('');
     setIsCityDropdownOpen(false);
   };
@@ -243,6 +254,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                 c.id.toLowerCase() === cityName.toLowerCase()
             );
             if (found) setSelectedCityObj(found);
+            if (found) onSelectCity(found.name);
           }
 
           const resolvedDays =
@@ -285,6 +297,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
         );
         if (found) {
           setSelectedCityObj(found);
+          onSelectCity(found.name);
           targetCity = found.name;
         } else {
           targetCity = cityParam;
@@ -635,7 +648,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
               value={selectedCityObj.id}
               onChange={(e) => {
                 const found = ALL_INDIAN_TOURISM_CITIES.find((c) => c.id === e.target.value);
-                if (found) setSelectedCityObj(found);
+                if (found) handleSelectCity(found);
               }}
               className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-xs text-stone-900 font-semibold focus:bg-white focus:outline-hidden focus:border-[#FF671F] focus:ring-2 focus:ring-[#FF671F]/20 transition cursor-pointer"
             >

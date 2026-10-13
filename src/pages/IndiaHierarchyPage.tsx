@@ -665,6 +665,16 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                     </button>
                   )}
 
+                  {onNavigateTab && (
+                    <button
+                      onClick={() => onNavigateTab('festivals')}
+                      className="px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-white hover:bg-stone-50 text-stone-800 border border-[#EFE8DF] hover:border-stone-400 text-xs sm:text-sm font-bold transition-all flex items-center gap-2 shadow-2xs hover:shadow-xs cursor-pointer active:scale-95"
+                    >
+                      <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#046A38]" />
+                      <span>🎉 State Festivals</span>
+                    </button>
+                  )}
+
                   <button
                     onClick={() => {
                       const el = document.getElementById('state-destinations-section');

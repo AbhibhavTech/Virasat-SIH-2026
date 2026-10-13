@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { BrowserRouter, useNavigate, useLocation } from 'react-router-dom';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { queryClient } from './app/queryClient';
@@ -21,13 +21,19 @@ import { api } from './services/api';
 import { useAuth } from './contexts/AuthContext';
 import { updatePageSEO, generateWebSiteSchema } from './utils/seo';
 import { analytics } from './services/analytics';
+import { getMumbaiDestinationById } from './data/mumbaiDestinations';
+import { safeLocalStorage } from './utils/storage';
+
+const SELECTED_CITY_STORAGE_KEY = 'virasat_selected_city';
 
 const AppContent: React.FC = () => {
   const { setIsAuthModalOpen } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
-  const [selectedCity, setSelectedCity] = useState<string>('All India');
+  const [selectedCity, setSelectedCity] = useState<string>(() =>
+    safeLocalStorage.getItem(SELECTED_CITY_STORAGE_KEY) || 'All India'
+  );
   const [places, setPlaces] = useState<PlaceSummary[]>([]);
   const [isDatabaseModalOpen, setIsDatabaseModalOpen] = useState<boolean>(false);
   const [isAnalyticsModalOpen, setIsAnalyticsModalOpen] = useState<boolean>(false);
@@ -35,6 +41,10 @@ const AppContent: React.FC = () => {
   const [isAppInitializing, setIsAppInitializing] = useState<boolean>(true);
 
   const activeTab: NavTab = getActiveTabFromPath(location.pathname);
+
+  useEffect(() => {
+    safeLocalStorage.setItem(SELECTED_CITY_STORAGE_KEY, selectedCity);
+  }, [selectedCity]);
 
   useEffect(() => {
     analytics.trackPageView(location.pathname);
@@ -101,6 +111,11 @@ const AppContent: React.FC = () => {
   }, []);
 
   const handleSelectPlace = (id: string) => {
+    const localDestination = getMumbaiDestinationById(id);
+    const selectedPlace = localDestination || places.find((place) => place.id === id);
+    if (selectedPlace?.city) {
+      setSelectedCity(selectedPlace.city);
+    }
     navigate(`/place/${encodeURIComponent(id)}`);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -110,18 +125,18 @@ const AppContent: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleNavigateTab = (tab: NavTab) => {
-    const targetPath = getPathForTab(tab, selectedCity);
+  const handleNavigateTab = (tab: NavTab, cityOverride?: string) => {
+    const targetPath = getPathForTab(tab, cityOverride || selectedCity);
     navigate(targetPath);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const handleSelectCity = (city: string) => {
+  const handleSelectCity = useCallback((city: string) => {
     setSelectedCity(city);
     if (location.pathname.startsWith('/city')) {
       navigate(`/city/${city.toLowerCase().replace(/\s+/g, '-')}`);
     }
-  };
+  }, [location.pathname, navigate]);
 
   return (
     <div className="flex flex-col min-h-screen bg-[#FAF8F5] text-stone-900 selection:bg-amber-800 selection:text-white font-sans">

@@ -40,7 +40,7 @@ export const VisitingInfoCard: React.FC<VisitingInfoCardProps> = ({ place }) => 
             <span>Visiting Hours</span>
           </div>
           <p className="font-bold text-sm text-stone-900 font-serif">
-            {place.visiting_hours || (info?.opening_time ? `${info.opening_time} - ${info.closing_time}` : '09:00 AM - 06:00 PM')}
+            {place.visiting_hours || (info?.opening_time ? `${info.opening_time} - ${info.closing_time}` : 'Hours not listed; check before visiting')}
           </p>
           {info?.weekly_closed_day ? (
             <p className="text-[11px] text-rose-600 font-medium">Closed on {info.weekly_closed_day}</p>
@@ -56,9 +56,9 @@ export const VisitingInfoCard: React.FC<VisitingInfoCardProps> = ({ place }) => 
             <span>Entry Tickets</span>
           </div>
           <p className="font-bold text-sm text-stone-900 font-serif">
-            {entry ? (entry.domestic === 0 ? 'Free Public Entry' : `Domestic: ₹${entry.domestic} | Foreign: ₹${entry.international}`) : 'Free Public Entry'}
+            {entry ? (entry.domestic === 0 ? 'Free Public Entry' : `Domestic: ₹${entry.domestic} | Foreign: ₹${entry.international}`) : (place as any).entry_fee_label || 'Rates not listed; check with the venue'}
           </p>
-          <p className="text-[11px] text-stone-500">Online &amp; counter booking available</p>
+          <p className="text-[11px] text-stone-500">Confirm current admission details with the venue.</p>
         </div>
 
         {/* Best Time */}
@@ -68,9 +68,9 @@ export const VisitingInfoCard: React.FC<VisitingInfoCardProps> = ({ place }) => 
             <span>Best Season / Time</span>
           </div>
           <p className="font-bold text-sm text-stone-900 font-serif">
-            {place.best_time_to_visit || 'October to March (Pleasant weather)'}
+            {place.best_time_to_visit || 'Check local seasonal guidance'}
           </p>
-          <p className="text-[11px] text-stone-500">Recommended duration: 1–2 hours visit</p>
+          <p className="text-[11px] text-stone-500">Recommended duration: {(place as any).suggested_duration || (info?.ideal_duration_hours ? `${info.ideal_duration_hours} hours` : 'check with the venue')}</p>
         </div>
 
         {/* Photography & Access */}
@@ -87,7 +87,7 @@ export const VisitingInfoCard: React.FC<VisitingInfoCardProps> = ({ place }) => 
               <Accessibility className="w-3 h-3 text-blue-600" /> Accessible
             </span>
           </div>
-          <p className="text-[11px] text-stone-500 pt-0.5">Subject to ASI architectural preservation rules</p>
+          <p className="text-[11px] text-stone-500 pt-0.5">{(place as any).visitor_notes || 'Follow posted visitor guidance and current site rules.'}</p>
         </div>
       </div>
 

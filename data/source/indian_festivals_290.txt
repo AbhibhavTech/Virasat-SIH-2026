@@ -1,0 +1,320 @@
+Indian Festivals List with Descriptions
+1. Major Hindu festivals
+No.	Festival name	Description
+1	Makar Sankranti	Celebrates the Sun's transition into Capricorn and the harvest season.
+2	Pongal	A Tamil harvest festival thanking the Sun, nature, and cattle.
+3	Vasant Panchami	Celebrates spring and is associated with Goddess Saraswati and learning.
+4	Maha Shivratri	A sacred festival dedicated to Lord Shiva, observed through prayers and fasting.
+5	Holika Dahan	Bonfires symbolize the victory of good over evil before Holi.
+6	Holi	The festival of colours celebrates spring, joy, and the triumph of good over evil.
+7	Rang Panchami	A colour festival celebrated particularly in parts of Maharashtra and central India.
+8	Chaitra Navratri	Nine days of devotion to Goddess Durga, beginning in the Hindu month of Chaitra.
+9	Gudi Padwa	The Marathi New Year, celebrated with decorated Gudi flags and festive meals.
+10	Ugadi	The traditional New Year celebrated in Andhra Pradesh, Telangana, and Karnataka.
+11	Ram Navami	Celebrates the birth of Lord Rama.
+12	Hanuman Jayanti	Celebrates the birth of Lord Hanuman.
+13	Akshaya Tritiya	Considered an auspicious occasion for new beginnings, charity, and purchases.
+14	Vat Savitri Vrat	A traditional observance associated with the story of Savitri and Satyavan.
+15	Ganga Dussehra	Celebrates the descent of the River Ganga to Earth.
+16	Nirjala Ekadashi	A Hindu fasting observance dedicated to Lord Vishnu.
+17	Rath Yatra	A major chariot festival associated with Lord Jagannath, especially in Puri.
+18	Guru Purnima	Honours spiritual teachers, gurus, and mentors.
+19	Nag Panchami	Worships snakes as sacred beings in Hindu tradition.
+20	Shravan Somvar	Mondays in the Hindu month of Shravan are dedicated to Lord Shiva.
+21	Hariyali Teej	Celebrates the monsoon season and is associated with Goddess Parvati and marital traditions.
+22	Kajari Teej	A Teej festival associated with monsoon songs, fasting, and regional customs.
+23	Hartalika Teej	Observed in devotion to Goddess Parvati and Lord Shiva.
+24	Janmashtami	Celebrates the birth of Lord Krishna.
+25	Ganesh Chaturthi / Ganesh Puja	Celebrates the birth of Lord Ganesha with worship, decorations, and community festivities.
+26	Onam	Kerala's harvest festival, associated with King Mahabali and celebrated with feasts and flower designs.
+27	Radha Ashtami	Celebrates the appearance of Radha, associated with Lord Krishna.
+28	Vishwakarma Puja	Honours Vishwakarma and is observed by many workers, artisans, and industrial establishments.
+29	Pitru Paksha	A period for remembering and performing rituals for deceased ancestors.
+30	Sharad Navratri	Nine nights of devotion to Goddess Durga, celebrated with regional traditions including Garba and Dandiya.
+31	Durga Ashtami	An important day of Navratri dedicated to Goddess Durga.
+32	Maha Navami	The ninth day of Navratri, marked by worship and regional rituals.
+33	Dussehra / Vijayadashami	Symbolizes the victory of good over evil, associated with Rama's victory over Ravana and Durga's victory over Mahishasura.
+34	Karwa Chauth	A traditional fasting observance followed by many married Hindu women.
+35	Ahoi Ashtami	A traditional observance associated with the wellbeing of children.
+36	Dhanteras / Dhantrayodashi	Associated with prosperity, health, and purchasing precious metals or household items.
+37	Naraka Chaturdashi / Chhoti Diwali	Celebrates the defeat of Narakasura in traditions associated with Diwali.
+38	Diwali / Deepavali	The festival of lights, celebrated through lamps, prayers, sweets, and family gatherings.
+39	Govardhan Puja / Annakut	Celebrates Krishna's protection of the people of Braj and includes offerings of food.
+40	Bhai Dooj	Celebrates the bond between brothers and sisters.
+41	Devutthana Ekadashi / Prabodhini Ekadashi	Marks the ceremonial awakening of Lord Vishnu in many Hindu traditions.
+42	Tulsi Vivah	Symbolically celebrates the marriage of the Tulsi plant with Lord Vishnu or Krishna.
+43	Kartik Purnima	A sacred full-moon day associated with worship, bathing rituals, and regional fairs.
+44	Dev Deepawali	A spectacular celebration of lights in Varanasi, observed on Kartik Purnima.
+45	Chhath Puja	Worships the Sun God and Chhathi Maiya through fasting and offerings at rivers and water bodies.
+46	Amla Navami	A regional Hindu observance involving the worship of the amla tree.
+47	Karthigai Deepam	A Tamil festival of lamps associated with Lord Shiva and the sacred hill of Tiruvannamalai.
+48	Vaikuntha Ekadashi	An important Vishnu-focused fasting and temple observance.
+49	Gita Jayanti	Commemorates the teachings of the Bhagavad Gita.
+50	Datta Jayanti	Celebrates the birth of Lord Dattatreya.
+51	Dattatreya Jayanti	Another commonly used name for the observance dedicated to Dattatreya.
+52	Paush Purnima	A sacred full-moon day associated with ritual bathing and religious observances.
+53	Magha Purnima	A holy full-moon day associated with bathing, charity, and pilgrimage.
+54	Phalguna Purnima	The full-moon observance associated with Holika Dahan and the Holi season.
+55	Pradosh Vrat	A recurring observance dedicated to Lord Shiva.
+56	Vat Purnima	A regional observance associated with Savitri and Satyavan, particularly in western India.
+57	Bada Mangal	Tuesdays dedicated to Hanuman, especially prominent in Lucknow.
+58	Sheetala Ashtami	A regional observance dedicated to Goddess Sheetala.
+59	Basoda	A food-related religious observance associated with Sheetala Mata in parts of India.
+60	Govatsa Dwadashi	A traditional observance involving the worship of cows and calves.
+2. Other Hindu festivals and important observances
+No.	Festival name	Description
+61	Chaitra Amavasya	New-moon observance associated with prayers and ancestral rituals.
+62	Ashadhi Ekadashi	A major Vishnu festival associated with the Pandharpur Wari pilgrimage in Maharashtra.
+63	Guru Purnima	A day for expressing gratitude to teachers and spiritual guides.
+64	Balarama Jayanti	Celebrates the birth of Lord Balarama, Krishna's elder brother.
+65	Parivartini Ekadashi	A Vishnu-focused fasting observance during the monsoon season.
+66	Anant Chaturdashi	Marks the conclusion of many Ganesh Chaturthi celebrations and includes worship of Lord Vishnu.
+67	Kojagari Lakshmi Puja	Worships Goddess Lakshmi on the autumn full-moon night.
+68	Kali Puja	Dedicated to Goddess Kali, especially prominent in Bengal and eastern India.
+69	Bhai Phonta	The Bengali celebration of the bond between brothers and sisters.
+70	Chitragupta Puja	Worships Chitragupta, traditionally associated with record-keeping and justice.
+71	Govardhan Puja	Celebrates Krishna lifting Govardhan Hill to protect the people of Braj.
+72	Sakat Chauth	A fasting observance associated with Lord Ganesha and children's wellbeing.
+73	Sankashti Chaturthi	A recurring monthly observance dedicated to Lord Ganesha.
+74	Vinayaka Chaturthi	Monthly worship of Lord Ganesha; also the name commonly used for Ganesh Chaturthi.
+75	Jivitputrika / Jitiya	A traditional fasting observance for children's wellbeing, especially in Bihar, Jharkhand, and eastern Uttar Pradesh.
+76	Chhath Mahaparv	A major Sun-worship festival involving fasting and offerings at sunrise and sunset, especially in Bihar and eastern Uttar Pradesh.
+77	Sita Navami	Celebrates the appearance or birth of Goddess Sita.
+78	Parashurama Jayanti	Commemorates the birth of Lord Parashurama.
+79	Narasimha Jayanti	Celebrates the appearance of Lord Vishnu as Narasimha.
+80	Vamana Jayanti	Commemorates the Vamana incarnation of Lord Vishnu.
+81	Govardhan Annakut	A ritual offering of a variety of foods to Krishna.
+82	Shani Jayanti	Commemorates Shani Dev and is associated with prayers for justice and protection.
+83	Bhishma Ashtami	An observance associated with Bhishma from the Mahabharata.
+84	Rishi Panchami	A traditional observance honouring sages and spiritual traditions.
+85	Rama Ekadashi	A fasting day dedicated to Lord Vishnu before Diwali.
+86	Kumbh Mela	A major pilgrimage gathering involving sacred bathing, religious ceremonies, and spiritual assemblies.
+87	Simhastha Kumbh	The Kumbh Mela held in Ujjain, Madhya Pradesh.
+88	Gangasagar Mela	A pilgrimage gathering at the Ganges' meeting point with the Bay of Bengal.
+89	Pandharpur Wari	A major pilgrimage in Maharashtra dedicated to Lord Vitthal.
+90	Jagannath Snana Yatra	A ceremonial bathing festival of Lord Jagannath in Puri.
+3. Indian harvest and regional New Year festivals
+No.	Festival name	Description
+91	Lohri	A Punjabi winter festival celebrated around a bonfire, with songs, dancing, and traditional foods.
+92	Baisakhi / Vaisakhi	A harvest festival in Punjab that also commemorates the formation of the Khalsa in Sikhism.
+93	Vishu	The traditional Malayalam New Year celebration in Kerala, marked by Vishukkani and festive meals.
+94	Bihu	Assam's major festival tradition, comprising seasonal celebrations including Rongali, Kongali, and Bhogali Bihu.
+95	Bohag Bihu	Assamese New Year and spring festival celebrated with music, dance, and community gatherings.
+96	Magh Bihu / Bhogali Bihu	Assamese harvest festival featuring community feasts and traditional bonfires.
+97	Kati Bihu	An Assamese agricultural observance associated with prayers for healthy crops.
+98	Nuakhai	A harvest festival in western Odisha celebrating the first grains of the new crop.
+99	Wangala	A Garo harvest festival in Meghalaya celebrating a successful harvest with traditional music and drums.
+100	Hornbill Festival	A Nagaland cultural festival showcasing Naga communities' traditions, crafts, food, music, and dance.
+101	Chapchar Kut	A spring festival in Mizoram celebrated with traditional dance, music, and community festivities.
+102	Mim Kut	A traditional harvest-related festival celebrated by Mizo communities.
+103	Pawl Kut	A Mizo harvest festival expressing gratitude for a successful agricultural season.
+104	Losoong / Namsoong	A Sikkimese and Lepcha winter harvest and New Year celebration.
+105	Galdan Namchot	A Ladakhi and Tibetan Buddhist festival marking the birth anniversary of Tsongkhapa and the start of New Year celebrations in some traditions.
+106	Losar	Tibetan Buddhist New Year celebrated in Ladakh, Arunachal Pradesh, Sikkim, and Himalayan communities.
+107	Saga Dawa	A major Buddhist festival commemorating important events in the life of Buddha.
+108	Solung	An agricultural festival of the Adi community in Arunachal Pradesh.
+109	Nyokum Yullo	A festival of the Nyishi community in Arunachal Pradesh, associated with prayers for prosperity and harmony.
+110	Dree Festival	An agricultural festival of the Apatani community in Arunachal Pradesh.
+111	Mopin	A Galo community festival associated with prosperity, wellbeing, and agricultural abundance.
+112	Reh Festival	A traditional festival of the Idu Mishmi community in Arunachal Pradesh.
+113	Ali-Aye-Ligang	A Mising community spring and agricultural festival in Assam.
+114	Ambubachi Mela	A major religious gathering at Kamakhya Temple in Assam associated with the annual menstruation of Goddess Kamakhya.
+115	Karam Festival	A tribal festival in eastern and central India associated with the Karam tree, agriculture, and prosperity.
+116	Sarhul	A spring festival of tribal communities in Jharkhand, celebrating nature and the sal tree.
+117	Karma Puja	A traditional festival centred on the Karam tree, community dancing, and prayers for wellbeing.
+118	Tusu Parab	A harvest-related folk festival celebrated in parts of Jharkhand, West Bengal, and Odisha.
+119	Poush Mela	A cultural fair in Santiniketan, West Bengal, featuring folk music, handicrafts, and regional traditions.
+120	Madai Festival	A series of traditional tribal fairs and religious celebrations in Chhattisgarh.
+India's official tourism portal also documents harvest celebrations such as Lohri, Makar Sankranti, and Bhogali Bihu, alongside regional cultural festivals. 
+
+A Ministry of Tourism Initiative
++1
+
+
+
+4. Muslim festivals
+No.	Festival name	Description
+121	Ramadan	The sacred Islamic month of fasting, prayer, charity, and spiritual reflection.
+122	Eid-ul-Fitr	Celebrates the conclusion of Ramadan with communal prayers, charity, and festive meals.
+123	Eid-ul-Adha / Bakrid	Commemorates Ibrahim's devotion to God and is observed with prayers, charity, and sacrifice traditions.
+124	Muharram	The first month of the Islamic calendar, especially significant for remembrance of Imam Husayn and Karbala.
+125	Ashura	The tenth day of Muharram, observed with particular importance in Shia Islam.
+126	Milad-un-Nabi / Eid-e-Milad	Commemorates the birth of Prophet Muhammad.
+127	Shab-e-Barat	A night of prayer and reflection observed by many Muslim communities.
+128	Shab-e-Miraj	Commemorates the Prophet Muhammad's night journey and ascension in Islamic tradition.
+129	Jumu'at-ul-Wida	The final Friday of Ramadan, observed by many Muslims with special prayers.
+130	Urs	A Sufi commemorative gathering marking the death anniversary of a revered spiritual figure.
+131	Ajmer Sharif Urs	A major annual Sufi gathering at the shrine of Khwaja Moinuddin Chishti in Ajmer.
+132	Chehlum / Arbaeen	The fortieth-day commemoration after Ashura, especially significant in Shia communities.
+5. Sikh festivals
+No.	Festival name	Description
+133	Guru Nanak Gurpurab	Celebrates the birth anniversary of Guru Nanak Dev Ji, founder of Sikhism.
+134	Guru Gobind Singh Jayanti	Commemorates the birth anniversary of the tenth Sikh Guru.
+135	Bandi Chhor Divas	Celebrates Guru Hargobind Ji's release from imprisonment and is often observed alongside Diwali.
+136	Hola Mohalla	A Sikh festival featuring martial arts demonstrations, processions, and community gatherings.
+137	Vaisakhi	Commemorates the formation of the Khalsa in 1699 and also marks the spring harvest in Punjab.
+138	Shaheedi Jor Mela	A Sikh commemorative gathering honouring the martyrdom of the younger Sahibzadas and Mata Gujri.
+139	Maghi	A Sikh observance commemorating the Forty Liberated Ones, associated with Muktsar.
+140	Parkash Purab of Guru Granth Sahib	Celebrates the installation or ceremonial recognition of Guru Granth Sahib in Sikh tradition.
+6. Christian festivals
+No.	Festival name	Description
+141	Christmas	Celebrates the birth of Jesus Christ on 25 December in most Christian traditions.
+142	Good Friday	Commemorates the crucifixion of Jesus Christ.
+143	Easter	Celebrates the resurrection of Jesus Christ.
+144	Palm Sunday	Commemorates Jesus' entry into Jerusalem before his crucifixion.
+145	Maundy Thursday	Remembers the Last Supper of Jesus with his disciples.
+146	Ash Wednesday	Marks the beginning of Lent in many Western Christian traditions.
+147	Pentecost	Celebrates the descent of the Holy Spirit upon the disciples of Jesus.
+148	Feast of the Epiphany	Commemorates the manifestation of Jesus Christ, particularly the visit of the Magi in Western traditions.
+149	Feast of the Assumption	Celebrates the belief in Mary's assumption into heaven in Catholic tradition.
+150	Feast of St. Thomas	Honours Saint Thomas, traditionally associated with the early Christian community in India.
+151	Feast of St. Francis Xavier	A major Christian celebration, especially in Goa, honouring St. Francis Xavier.
+152	Bandra Fair	A popular annual fair in Mumbai associated with the Feast of the Nativity of Mary at Mount Mary Church.
+153	Feast of the Nativity of Mary	Celebrates the birth of the Virgin Mary.
+154	Feast of Our Lady of Velankanni	A major pilgrimage and religious celebration at Velankanni in Tamil Nadu.
+7. Buddhist festivals
+No.	Festival name	Description
+155	Buddha Purnima / Vesak	Commemorates the birth, enlightenment, and passing of Gautama Buddha in many Buddhist traditions.
+156	Losar	Buddhist New Year celebrated in Himalayan regions.
+157	Hemis Festival	A Ladakhi monastery festival honouring Guru Padmasambhava through masked dances and rituals.
+158	Losoong	A winter and New Year festival celebrated in Sikkim, including Buddhist monastic traditions.
+159	Asalha Puja	Commemorates Buddha's first sermon and the beginning of his teaching ministry.
+160	Magha Puja	Commemorates an important gathering of Buddha's disciples.
+161	Kathina Ceremony	A Buddhist observance in which laypeople offer robes and other necessities to monks after the rainy-season retreat.
+162	Ullambana / Ghost Festival	A Buddhist observance associated with offerings for deceased ancestors and beings in suffering realms.
+8. Jain festivals
+No.	Festival name	Description
+163	Mahavir Jayanti	Celebrates the birth of Lord Mahavira, the 24th Tirthankara of Jainism.
+164	Paryushana	A major Jain period of spiritual reflection, fasting, prayer, and forgiveness.
+165	Das Lakshana Parva	A ten-day Jain festival focused on ten virtues, especially in the Digambara tradition.
+166	Samvatsari	The concluding day of Shvetambara Paryushana, associated with seeking and granting forgiveness.
+167	Kshamavani	A Jain observance of forgiveness, particularly associated with the conclusion of Das Lakshana Parva.
+168	Diwali in Jainism	Commemorates the nirvana of Lord Mahavira.
+169	Akshaya Tritiya in Jainism	Associated with the completion of a significant period of fasting by Rishabhanatha in Jain tradition.
+170	Maun Agiyaras	A Jain observance involving silence, meditation, and spiritual discipline.
+171	Ayambil Oli	A period of Jain fasting and devotion observed twice a year.
+172	Rohini Vrat	A Jain fasting observance traditionally followed for spiritual wellbeing and discipline.
+9. Famous state and regional festivals
+No.	Festival name	State / region	Description
+173	Durga Puja	West Bengal	Celebrates Goddess Durga with elaborate pandals, artistic idols, rituals, and cultural events.
+174	Mysuru Dasara	Karnataka	A royal heritage celebration featuring processions, decorated elephants, and cultural programmes.
+175	Thrissur Pooram	Kerala	A spectacular temple festival known for percussion ensembles and decorated elephants.
+176	Attukal Pongala	Kerala	A major women's religious gathering involving the preparation of ritual offerings.
+177	Theyyam season festivals	Kerala	Ritual performances combining worship, elaborate costumes, dance, and local traditions.
+178	Bonalu	Telangana	A festival honouring Goddess Mahakali with offerings and processions.
+179	Bathukamma	Telangana	A floral festival celebrated with flower arrangements, songs, and dances.
+180	Sammakka Saralamma Jatara	Telangana	A major tribal pilgrimage honouring Sammakka and Saralamma.
+181	Ganesh Chaturthi	Maharashtra	A major public and household celebration of Lord Ganesha.
+182	Gudi Padwa	Maharashtra	Marks the Marathi New Year.
+183	Pola	Maharashtra and Chhattisgarh	Honours working cattle and their role in farming.
+184	Narali Purnima	Maharashtra and coastal western India	A coastal festival involving offerings of coconuts to the sea, particularly among fishing communities.
+185	Shigmo	Goa	A spring folk festival featuring traditional dances, performances, and processions.
+186	Sao Joao	Goa	A monsoon celebration associated with St. John the Baptist.
+187	Rann Utsav	Gujarat	A cultural festival in the Rann of Kutch featuring regional crafts, music, dance, and local cuisine.
+188	Uttarayan Kite Festival	Gujarat	Celebrates the seasonal transition with large-scale kite flying.
+189	Tarnetar Fair	Gujarat	A traditional fair known for folk culture, handicrafts, and community matchmaking traditions.
+190	Gangaur	Rajasthan	Honours Goddess Gauri and celebrates marital devotion, fertility, and spring.
+191	Teej	Rajasthan and northern India	A group of monsoon festivals associated with Goddess Parvati, traditional songs, and women's celebrations.
+192	Pushkar Fair	Rajasthan	A famous livestock and cultural fair with markets, competitions, and traditional performances.
+193	Marwar Festival	Rajasthan	Celebrates the music, dance, and folk traditions of the Marwar region.
+194	Kullu Dussehra	Himachal Pradesh	A week-long religious and cultural gathering involving local deities and processions.
+195	Minjar Fair	Himachal Pradesh	A traditional fair associated with agriculture, local culture, and regional festivities.
+196	Lavi Fair	Himachal Pradesh	A historic trade and cultural fair held in Rampur Bushahr.
+197	Nanda Devi Raj Jat	Uttarakhand	A major pilgrimage procession dedicated to Goddess Nanda Devi.
+198	Harela	Uttarakhand	Celebrates the monsoon and agricultural renewal by planting seeds.
+199	Phool Dei	Uttarakhand	A spring folk festival involving flowers and blessings for homes.
+200	Surajkund International Crafts Mela	Haryana	Showcases Indian handicrafts, folk arts, traditional foods, and performances.
+201	Chhath Puja	Bihar and eastern India	Honours the Sun God through fasting and offerings at water bodies.
+202	Sonepur Cattle Fair	Bihar	A historic fair combining livestock trading, pilgrimage, and local cultural activities.
+203	Sama-Chakeva	Bihar and Mithila region	A folk festival celebrating sibling bonds through songs and traditional clay figures.
+204	Madhushravani	Mithila region	A traditional festival involving rituals, storytelling, and celebrations among newly married women.
+205	Durga Puja	West Bengal and eastern India	A major annual celebration of Goddess Durga, particularly prominent in Kolkata.
+206	Puri Rath Yatra	Odisha	Celebrates Lord Jagannath's ceremonial journey in a grand chariot procession.
+207	Bali Jatra	Odisha	Commemorates Odisha's historic maritime trade connections through a major fair.
+208	Nuakhai	Odisha	Celebrates the first consumption of the new harvest.
+209	Raja Parba	Odisha	Celebrates womanhood, the earth, and the arrival of the monsoon.
+210	Konark Dance Festival	Odisha	A classical dance festival held near the Sun Temple at Konark.
+211	Ambubachi Mela	Assam	A major gathering at Kamakhya Temple associated with the fertility of the divine feminine.
+212	Majuli Raas Mahotsav	Assam	Celebrates Krishna's life through devotional theatre and performances.
+213	Hornbill Festival	Nagaland	Showcases the traditional cultures of Naga communities.
+214	Moatsu Festival	Nagaland	An Ao Naga festival celebrated after agricultural sowing activities.
+215	Tokhü Emong	Nagaland	A post-harvest festival of the Lotha Naga community.
+216	Sekrenyi	Nagaland	An Angami Naga purification and cultural festival.
+217	Aoling Festival	Nagaland	A Konyak Naga spring festival marking the traditional New Year.
+218	Nongkrem Dance Festival	Meghalaya	A Khasi festival featuring traditional dances and religious ceremonies.
+219	Behdienkhlam	Meghalaya	A major Jaintia festival associated with protection from disease and community wellbeing.
+220	Wangala	Meghalaya	A Garo harvest celebration featuring drums and traditional dancing.
+221	Chapchar Kut	Mizoram	A spring festival celebrated with traditional music and the Cheraw bamboo dance.
+222	Mim Kut	Mizoram	A traditional festival associated with harvest and remembrance of the departed.
+223	Lai Haraoba	Manipur	A traditional Meitei festival featuring ritual dances and performances.
+224	Yaoshang	Manipur	A spring festival coinciding with Holi, celebrated with sports, dance, and community events.
+225	Ningol Chakouba	Manipur	Celebrates the bond between married daughters and their parental families.
+226	Cheiraoba	Manipur	The traditional Meitei New Year celebration.
+227	Kharchi Puja	Tripura	A major religious festival involving worship of fourteen deities.
+228	Garia Puja	Tripura	A festival associated with prosperity, agriculture, and the deity Garia.
+229	Biju Festival	Tripura	A Chakma New Year celebration featuring food, dance, and community customs.
+230	Losar	Ladakh and Himalayan regions	Marks the Tibetan Buddhist New Year.
+231	Hemis Festival	Ladakh	A colourful monastery celebration featuring masked dances and Buddhist rituals.
+232	Tulip Festival	Jammu and Kashmir	A seasonal flower festival showcasing the region's tulip gardens.
+233	Bahu Mela	Jammu	A religious fair associated with the Bahu Fort and Bawe Wali Mata Temple.
+234	Ladakh Festival	Ladakh	Showcases Ladakhi traditional attire, music, dance, crafts, and regional culture.
+235	Tarnetar Mela	Gujarat	A traditional folk fair with dance, embroidery, and rural customs.
+236	Puri Beach Festival	Odisha	Celebrates coastal culture through music, dance, crafts, and food.
+237	Khajuraho Dance Festival	Madhya Pradesh	A classical dance festival held near the historic Khajuraho temples.
+238	Bhagoria Haat Festival	Madhya Pradesh	A tribal fair associated with the Bhil and Bhilala communities.
+239	Bastar Dussehra	Chhattisgarh	A long-running tribal and religious celebration centred on Goddess Danteshwari.
+240	Madai Festival	Chhattisgarh	A travelling series of tribal fairs involving deities, markets, and folk performances.
+241	Goncha Festival	Chhattisgarh	A regional Jagdalpur celebration featuring traditional rituals and symbolic mock weapon play.
+242	Pola	Chhattisgarh	Celebrates cattle and their contribution to agriculture.
+243	Karam Festival	Jharkhand	A tribal agricultural festival associated with prosperity and community wellbeing.
+244	Sarhul	Jharkhand	Celebrates spring and nature, particularly the sal tree.
+245	Tusu Parab	Jharkhand and adjoining regions	A folk harvest celebration with songs and traditional processions.
+246	Poush Mela	West Bengal	A cultural fair featuring Baul music, handicrafts, and Bengali traditions.
+247	Gangasagar Mela	West Bengal	A pilgrimage gathering at Sagar Island during Makar Sankranti.
+248	Kenduli Mela	West Bengal	A fair associated with Baul musicians and Bengal's folk music heritage.
+249	Vishu	Kerala	Celebrates the traditional Malayalam New Year.
+250	Onam	Kerala	A harvest festival celebrated with Pookalam, Onam Sadya, boat races, and cultural performances.
+10. National and other major public celebrations
+No.	Festival / occasion	Description
+251	Republic Day	Celebrates the adoption of the Constitution of India on 26 January 1950.
+252	Independence Day	Celebrates India's independence from British rule on 15 August 1947.
+253	Gandhi Jayanti	Commemorates Mahatma Gandhi's birth anniversary on 2 October.
+254	Children's Day	Celebrated on 14 November in India to mark Jawaharlal Nehru's birth anniversary.
+255	Teachers' Day	Celebrated on 5 September in honour of Dr. Sarvepalli Radhakrishnan.
+256	National Youth Day	Observed on 12 January to commemorate Swami Vivekananda's birth anniversary.
+257	International Yoga Day	Observed on 21 June to promote yoga and wellbeing.
+258	National Science Day	Observed on 28 February to commemorate C. V. Raman's discovery of the Raman effect.
+259	Constitution Day	Observed on 26 November to commemorate the adoption of the Indian Constitution.
+260	Army Day	Observed on 15 January to honour the Indian Army.
+261	Navy Day	Observed on 4 December to honour the Indian Navy.
+262	Air Force Day	Observed on 8 October to commemorate the Indian Air Force.
+263	Kargil Vijay Diwas	Observed on 26 July to commemorate India's victory in the Kargil War.
+264	National Voters' Day	Observed on 25 January to promote electoral participation.
+265	World Environment Day	Observed on 5 June to promote environmental awareness.
+11. More fairs, arts, and cultural festivals
+No.	Festival name	Description
+266	Surajkund Crafts Mela	A major showcase of traditional crafts, textiles, and folk performances.
+267	Rann Utsav	A seasonal cultural celebration of Kutch's desert landscape and heritage.
+268	Ziro Music Festival	An outdoor music festival in Arunachal Pradesh featuring independent and regional artists.
+269	Hornbill Music Festival	Music performances held as part of Nagaland's Hornbill celebrations.
+270	Jaipur Literature Festival	A major literary gathering featuring authors, discussions, and cultural events.
+271	Jaisalmer Desert Festival	Showcases Rajasthan's desert culture, folk music, camel events, and traditional attire.
+272	Taj Mahotsav	An arts and crafts festival in Agra celebrating Indian cultural heritage.
+273	Khajuraho Dance Festival	Celebrates Indian classical dance traditions against a historic temple backdrop.
+274	Konark Dance Festival	Features classical dance performances near Odisha's Sun Temple.
+275	Goa Carnival	A pre-Lenten celebration with colourful parades, music, and street festivities.
+276	International Kite Festival	A kite-flying celebration, particularly famous in Gujarat during Uttarayan.
+277	Mango Festival	Celebrates mango varieties, food products, and agricultural heritage.
+278	National Cherry Blossom Festival, Shillong	A seasonal festival showcasing flowering trees, music, and cultural events.
+279	Tansen Music Festival	A classical music festival held in Gwalior, Madhya Pradesh.
+280	Sawai Gandharva Bhimsen Mahotsav	A major Indian classical music festival held in Pune.
+281	Elephanta Festival	A cultural programme featuring music and dance near Mumbai's Elephanta Caves.
+282	Ellora Festival	A cultural event showcasing classical music and dance near the Ellora heritage site.
+283	Mamallapuram Dance Festival	A classical dance festival held near the historic monuments of Mahabalipuram.
+284	Nishagandhi Dance Festival	A dance festival held in Kerala showcasing classical and traditional performances.
+285	SulaFest	A music and lifestyle festival in Maharashtra.
+286	Hornbill Winter Festival	A cultural celebration of Naga heritage during the winter season.
+287	Hampi Utsav	A cultural festival celebrating the history, architecture, music, and traditions of Hampi.
+288	Kutch Rann Utsav	A celebration of Gujarati folk art, handicrafts, music, and regional cuisine.
+289	Surajkund International Crafts Mela	An annual gathering of craftspeople, artisans, performers, and visitors.
+290	Sonepur Mela	A historic Bihar fair combining religious traditions, commerce, and folk culture.

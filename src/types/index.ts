@@ -915,6 +915,29 @@ export interface FestivalItem {
   name: string;
   slug?: string;
   aliases?: string[];
+  alternative_names?: string[];
+  scope?: 'ALL_INDIA' | 'PAN_INDIA_RELIGIOUS' | 'STATE_REGIONAL' | 'NATIONAL_OBSERVANCE';
+  religious_or_cultural_category?: 'Hindu' | 'Muslim' | 'Sikh' | 'Christian' | 'Buddhist' | 'Jain' | 'Tribal/Regional' | 'Arts & Culture' | 'National' | string;
+  religion_or_category?: 'Hindu' | 'Muslim' | 'Sikh' | 'Christian' | 'Buddhist' | 'Jain' | 'Tribal/Regional' | 'Arts & Culture' | 'National' | string;
+  category?: string;
+  states?: string[];
+  state_or_region?: string;
+  region?: 'North' | 'South' | 'East' | 'West' | 'Central' | 'Northeast' | 'Himalayan' | string;
+  district?: string | null;
+  city_or_venue?: string | null;
+  recurrence_type?: string;
+  date_rule?: string | null;
+  start_date?: string | null;
+  end_date?: string | null;
+  event_year?: number | null;
+  official_source_url?: string | null;
+  source_section?: string;
+  source_row_no?: number;
+  source_rows?: number[];
+  source_entry_numbers?: number[];
+  date_info?: any;
+  tradition_notes?: string;
+  related_festivals?: string[];
   state: string;
   state_id: string;
   primary_city: string;
@@ -937,39 +960,50 @@ export interface FestivalItem {
   license?: string;
   attribution_text?: string;
   verification_status: 'verified' | 'unverified' | 'needs_review' | 'FROM_DATABASE' | 'LIVE_FETCHED';
+  last_verified_at?: string | null;
   created_at?: string;
   updated_at?: string;
-
-  // Upgraded Schema Fields (290 Festivals Master Database)
-  scope?: 'ALL_INDIA' | 'PAN_INDIA_RELIGIOUS' | 'STATE_REGIONAL' | 'NATIONAL_OBSERVANCE';
-  religion_or_category?: 'Hindu' | 'Muslim' | 'Sikh' | 'Christian' | 'Buddhist' | 'Jain' | 'Tribal/Regional' | 'Arts & Culture' | 'National';
-  states?: string[];
-  region?: 'North' | 'South' | 'East' | 'West' | 'Central' | 'Northeast' | 'Himalayan';
-  source_section?: string;
-  source_row_no?: number;
-  source_rows?: number[];
-  date_info?: any;
-  tradition_notes?: string;
-  related_festivals?: string[];
 }
 
 export interface FestivalLiveInfoResponse {
   success: boolean;
   has_sources: boolean;
   cached?: boolean;
+  from_cache?: boolean;
+  festival_id?: string;
+  festival_name?: string;
+  query?: string;
   error_message?: string;
+  message?: string;
+  verification_status?: string;
+  verification_notice?: string;
   data?: {
     festival_name: string;
     upcoming_dates?: string;
     date_variation_notes?: string;
     best_experienced_places?: string[];
+    best_locations?: string;
+    locations?: string;
     duration?: string;
     key_rituals?: string[];
     travel_tips?: string[];
     official_notices?: string;
     summary?: string;
   } | null;
-  sources: Array<{ title: string; uri: string }>;
+  live_info?: {
+    upcoming_dates?: string;
+    date_variation_note?: string;
+    best_locations?: string;
+    locations?: string;
+    duration?: string;
+    summary?: string;
+    key_rituals?: string[];
+    key_highlights?: string[];
+    travel_tips?: string[];
+    travel_advice?: string[];
+    official_notices?: string;
+  } | null;
+  sources: Array<{ title: string; uri?: string; url?: string }>;
   last_fetched: string;
   disclaimer?: string;
 }
@@ -980,7 +1014,7 @@ export interface FestivalLiveSearchResponse {
   error_message?: string;
   query: string;
   answer?: string | null;
-  sources: Array<{ title: string; uri: string }>;
+  sources: Array<{ title: string; uri?: string; url?: string }>;
   last_fetched: string;
   disclaimer?: string;
 }

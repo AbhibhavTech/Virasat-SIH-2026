@@ -18,6 +18,7 @@ import { api } from '../services/api';
 import { analytics } from '../services/analytics';
 import { PlaceSummary } from '../types';
 import { VoiceInputButton } from '../components/common/VoiceInputButton';
+import { searchMumbaiPlaces } from '../data/mumbaiDestinations';
 
 export interface RecentSearchItem {
   id: string;
@@ -177,7 +178,13 @@ export const SearchPage: React.FC<SearchPageProps> = ({
 
       setLoading(true);
       try {
-        const data = await api.searchPlaces(trimmed);
+        const localResults = searchMumbaiPlaces(trimmed);
+        const localNames = new Set(localResults.map((place) => place.name.trim().toLowerCase()));
+        const remoteResults = await api.searchPlaces(trimmed);
+        const data = [
+          ...localResults,
+          ...remoteResults.filter((place) => !localNames.has(place.name.trim().toLowerCase())),
+        ];
         setResults(data);
         analytics.trackSearch(trimmed, data.length);
         recordRecentSearch(trimmed, data.length);

@@ -1,245 +1,364 @@
 import { Router, Request, Response } from 'express';
 import { GoogleGenAI } from '@google/genai';
+import path from 'path';
+import dotenv from 'dotenv';
 import { db } from '../../db/client';
 import { sendError } from '../../middleware/validate';
 
+// Load environment variables across possible locations
+dotenv.config();
+dotenv.config({ path: path.resolve(process.cwd(), 'server/.env') });
+dotenv.config({ path: path.resolve(process.cwd(), '.env') });
+
 export const festivalsRouter = Router();
 
+// Lazy Gemini AI Client initialization with circuit breaker
 let aiClient: GoogleGenAI | null = null;
+let circuitCooldownUntil = 0;
+
 function getAIClient(): GoogleGenAI | null {
-  if (!process.env.GEMINI_API_KEY) return null;
+  const apiKey = process.env.GEMINI_API_KEY;
+  if (!apiKey) {
+    return null;
+  }
   if (!aiClient) {
-    aiClient = new GoogleGenAI({
-      apiKey: process.env.GEMINI_API_KEY,
-      httpOptions: { headers: { 'User-Agent': 'aistudio-build' } },
-    });
+    try {
+      aiClient = new GoogleGenAI({
+        apiKey,
+        httpOptions: {
+          headers: {
+            'User-Agent': 'aistudio-build',
+          },
+        },
+      });
+    } catch (err: any) {
+      console.error('[Festivals Live Info] Failed to initialize GoogleGenAI client:', err?.message || err);
+      return null;
+    }
   }
   return aiClient;
 }
 
-// 24-hour cache for live festival info: festivalId -> { data, sources, timestamp }
+// 24-hour Cache for Google Live Search Grounding Results
 interface CachedLiveInfo {
   data: any;
-  sources: Array<{ title: string; uri: string }>;
-  timestamp: number;
-  last_fetched: string;
+  cachedAt: number;
 }
-const festivalLiveCache = new Map<string, CachedLiveInfo>();
+const liveInfoCache = new Map<string, CachedLiveInfo>();
 const CACHE_TTL_MS = 24 * 60 * 60 * 1000; // 24 hours
 
-/**
- * POST /:id/live-info
- * Fetches real-time search-grounded information about a festival using Gemini + Google Search.
- */
-festivalsRouter.post('/:id/live-info', async (req: Request, res: Response): Promise<void> => {
-  try {
-    const festivalId = req.params.id.toLowerCase();
-    const refresh = req.query.refresh === 'true' || req.body?.refresh === true;
+// Model resolution cache
+let resolvedModel: string | null = null;
 
-    // Check test flag for regression testing "no sources" path
-    if (req.query.simulate_no_sources === 'true' || req.body?.simulate_no_sources === true) {
+async function resolveGroundedModel(ai: GoogleGenAI): Promise<string> {
+  const configured = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
+  if (resolvedModel) return resolvedModel;
+
+  try {
+    const listRes = await ai.models.list();
+    const availableModelNames: string[] = [];
+    for await (const m of listRes) {
+      if (m?.name) {
+        const cleanName = m.name.replace(/^models\//, '');
+        availableModelNames.push(cleanName);
+      }
+    }
+
+    const exists = availableModelNames.some((name) => name.toLowerCase() === configured.toLowerCase());
+    console.log(`[Festivals Live Info] Configured model: "${configured}", Exists in API: ${exists}`);
+
+    if (exists) {
+      resolvedModel = configured;
+      return resolvedModel;
+    }
+
+    console.warn(`[Festivals Live Info] Configured model "${configured}" not found in available models:`, availableModelNames);
+    const flashModels = availableModelNames.filter((name) => name.includes('flash'));
+    resolvedModel = flashModels.find((m) => m.includes('2.0')) || flashModels[0] || 'gemini-2.0-flash';
+    console.log(`[Festivals Live Info] Using closest valid flash model: "${resolvedModel}"`);
+    return resolvedModel;
+  } catch (err: any) {
+    console.warn(`[Festivals Live Info] Could not verify models via ai.models.list():`, err?.message || err);
+    resolvedModel = configured;
+    return resolvedModel;
+  }
+}
+
+/**
+ * Helper to call Gemini with Google Search Grounding with robust model fallback & diagnostics
+ */
+async function callGeminiSearchGrounding(
+  prompt: string,
+  contextLabel: string
+): Promise<{
+  success: boolean;
+  modelUsed: string;
+  candidate: any;
+  sources: { title: string; url: string; uri: string }[];
+  error?: string;
+  quotaError?: boolean;
+}> {
+  const ai = getAIClient();
+  if (!ai) {
+    console.warn(`[Festivals Live Info] [${contextLabel}] Call skipped: No GEMINI_API_KEY configured.`);
+    return { success: false, modelUsed: 'none', candidate: null, sources: [], error: 'GEMINI_API_KEY missing' };
+  }
+
+  const primaryModel = await resolveGroundedModel(ai);
+  const modelsToTry = [primaryModel];
+  if (primaryModel !== 'gemini-2.0-flash') modelsToTry.push('gemini-2.0-flash');
+  if (primaryModel !== 'gemini-1.5-flash') modelsToTry.push('gemini-1.5-flash');
+
+  for (const model of modelsToTry) {
+    try {
+      console.log(`[Festivals Live Info] [${contextLabel}] Calling model: ${model} with googleSearch tool...`);
+      const response = await ai.models.generateContent({
+        model,
+        contents: prompt,
+        config: {
+          tools: [{ googleSearch: {} }],
+        },
+      });
+
+      const candidate = response?.candidates?.[0];
+      const groundingMetadata = candidate?.groundingMetadata || (response as any)?.groundingMetadata;
+      const gChunks = groundingMetadata?.groundingChunks || [];
+      const sources: { title: string; url: string; uri: string }[] = [];
+
+      for (const ch of gChunks) {
+        if (ch.web && ch.web.uri) {
+          sources.push({
+            title: ch.web.title || new URL(ch.web.uri).hostname,
+            url: ch.web.uri,
+            uri: ch.web.uri,
+          });
+        }
+      }
+
+      return { success: true, modelUsed: model, candidate, sources };
+    } catch (err: any) {
+      console.error(`[Festivals Live Info] [${contextLabel}] Model ${model} failed:`, err?.message || err);
+      const isQuota = err?.status === 429 || (err?.message && err.message.toLowerCase().includes('quota'));
+      if (isQuota) {
+        circuitCooldownUntil = Date.now() + 60 * 1000;
+        return { success: false, modelUsed: model, candidate: null, sources: [], quotaError: true, error: err?.message };
+      }
+    }
+  }
+
+  return { success: false, modelUsed: 'all_failed', candidate: null, sources: [], error: 'All models failed' };
+}
+
+/**
+ * Common handler for festival live info (supports both GET and POST)
+ */
+async function processFestivalLiveInfo(festivalId: string, refresh: boolean, simulateNoSources: boolean, req: Request, res: Response) {
+  try {
+    const festival = await db.festivals.findById(festivalId.toLowerCase());
+    if (!festival) {
+      sendError(res, 404, 'FESTIVAL_NOT_FOUND', `Festival with ID '${festivalId}' not found`, req.requestId);
+      return;
+    }
+
+    if (simulateNoSources) {
       res.json({
         success: true,
+        festival_id: festival.id,
+        festival_name: festival.name,
         has_sources: false,
         error_message: 'No reliable sources found',
         data: null,
+        live_info: null,
         sources: [],
         last_fetched: new Date().toISOString(),
         disclaimer: 'Fetched from Google Search via Gemini – verify with official sources before travel.',
+        verification_notice: 'Fetched from Google Search via Gemini – verify with official sources before travel.',
       });
       return;
     }
 
-    const festival = await db.festivals.findById(festivalId);
-    if (!festival) {
-      sendError(res, 404, 'FESTIVAL_NOT_FOUND', `Festival '${festivalId}' not found in registry`, req.requestId);
-      return;
+    const cacheKey = `festival_${festival.id.toLowerCase()}`;
+    if (!refresh && liveInfoCache.has(cacheKey)) {
+      const cached = liveInfoCache.get(cacheKey)!;
+      if (Date.now() - cached.cachedAt < CACHE_TTL_MS) {
+        res.json({
+          ...cached.data,
+          from_cache: true,
+          cached: true,
+        });
+        return;
+      }
     }
 
-    // Check 24-hour cache unless refresh requested
-    const cached = festivalLiveCache.get(festivalId);
-    const now = Date.now();
-    if (cached && !refresh && now - cached.timestamp < CACHE_TTL_MS) {
+    if (Date.now() < circuitCooldownUntil) {
       res.json({
         success: true,
-        has_sources: true,
-        cached: true,
-        data: cached.data,
-        sources: cached.sources,
-        last_fetched: cached.last_fetched,
-        disclaimer: 'Fetched from Google Search via Gemini – verify with official sources before travel.',
-      });
-      return;
-    }
-
-    const ai = getAIClient();
-    if (!ai) {
-      // Graceful offline/no-key handling
-      res.status(503).json({
-        success: false,
-        code: 'GEMINI_API_KEY_UNAVAILABLE',
-        error: 'Google Search live info service is currently offline (API key required).',
+        festival_id: festival.id,
+        festival_name: festival.name,
         has_sources: false,
-        data: null,
         sources: [],
+        data: null,
+        live_info: null,
+        message: 'No reliable sources found (circuit cooling down due to rate limit)',
+        verification_notice: 'Fetched from Google Search via Gemini – verify with official sources before travel.',
+        disclaimer: 'Fetched from Google Search via Gemini – verify with official sources before travel.',
         last_fetched: new Date().toISOString(),
       });
       return;
     }
 
-    const prompt = `Using Google Search grounding, find authoritative up-to-date information for the Indian festival "${festival.name}" (${festival.state || 'India'}).
-Strictly base your answers ONLY on live Google Search results:
-1. Exact upcoming or current-year celebration date(s) in India (explicitly state if the date varies by region, solar calendar, or Hindu lunar tithi).
-2. Best places to experience it (cities, sacred river ghats, temple complexes, or key grounds).
-3. Typical duration of celebrations (number of days/hours).
-4. Key rituals, ceremonies, and cultural highlights.
-5. Practical travel advice (transit access, peak crowd warnings, booking advisories).
-6. Official advisory or notices from state tourism or administration if available.
+    const prompt = `Search Google for live and verified tourism information about the festival "${festival.name}" (${festival.primary_city ? festival.primary_city + ', ' : ''}${festival.state}, India).
+Strictly extract only information verified by search grounding sources. Do not guess dates.
+Request:
+1. Upcoming or current-year date(s) in India (explicitly state if dates change every year due to lunar/traditional calendar, or vary by region).
+2. Where it is best experienced (specific cities, ghats, temples, or grounds).
+3. How long the celebration lasts (duration in days/weeks).
+4. Key rituals and cultural events.
+5. Travel and visitor advice (crowd management, booking advice, best time of day to visit).
+6. Any official notices or tourism guidelines.
 
-Return your answer strictly as a JSON object matching this schema:
+Format your response strictly as JSON with this schema:
 {
   "festival_name": "${festival.name}",
-  "upcoming_dates": "e.g. October 20-24, 2026 (exact search dates)",
-  "date_variation_notes": "explanation of lunar/regional variance",
-  "best_experienced_places": ["Place 1", "Place 2"],
-  "duration": "e.g. 5 Days",
+  "upcoming_dates": "Verified date(s) in India or lunar calendar schedule note",
+  "date_variation_notes": "Lunar calendar / tithi note if variable, otherwise null",
+  "best_experienced_places": ["City 1", "Temple/Ghat 2"],
+  "best_locations": "Cities, venues, ghats, or temple grounds",
+  "duration": "Duration in days or weeks",
   "key_rituals": ["Ritual 1", "Ritual 2"],
-  "travel_tips": ["Tip 1", "Tip 2"],
-  "official_notices": "Notices from government or temple trust",
+  "travel_tips": ["Travel tip 1", "Travel tip 2"],
+  "official_notices": "Official notice if announced, otherwise null",
   "summary": "Concise verified overview"
 }`;
 
-    const response = await ai.models.generateContent({
-      model: 'gemini-3.8-flash',
-      contents: prompt,
-      config: {
-        tools: [{ googleSearch: {} }],
-      },
-    });
+    const { success, candidate, sources } = await callGeminiSearchGrounding(prompt, `Festival:${festival.name}`);
 
-    const chunks = (response.candidates?.[0]?.groundingMetadata?.groundingChunks || []) as any[];
-    const sources = chunks
-      .map((c) => c.web)
-      .filter((w) => w && w.uri)
-      .map((w) => ({
-        title: w.title || w.uri,
-        uri: w.uri,
-      }));
-
-    // If grounding returns no sources, show "No reliable sources found" instead of model-written guesses
-    if (!sources || sources.length === 0) {
-      res.json({
+    if (!success || sources.length === 0) {
+      const payload = {
         success: true,
+        festival_id: festival.id,
+        festival_name: festival.name,
         has_sources: false,
         error_message: 'No reliable sources found',
-        data: null,
+        message: 'No reliable sources found',
         sources: [],
-        last_fetched: new Date().toISOString(),
+        data: null,
+        live_info: null,
+        verification_notice: 'Fetched from Google Search via Gemini – verify with official sources before travel.',
         disclaimer: 'Fetched from Google Search via Gemini – verify with official sources before travel.',
-      });
+        last_fetched: new Date().toISOString(),
+      };
+      res.json(payload);
       return;
     }
 
-    // Parse JSON safely from model response text
-    let parsedData: any = null;
-    const rawText = response.text || '';
+    const text = candidate?.content?.parts?.[0]?.text || '';
+    let parsedInfo: any = null;
     try {
-      const cleaned = rawText
-        .replace(/```json/gi, '')
-        .replace(/```/g, '')
-        .trim();
-      parsedData = JSON.parse(cleaned);
+      const jsonMatch = text.match(/\{[\s\S]*\}/);
+      if (jsonMatch) {
+        parsedInfo = JSON.parse(jsonMatch[0]);
+      }
     } catch {
-      // Fallback structured packaging if response was markdown text
-      parsedData = {
+      parsedInfo = {
         festival_name: festival.name,
         upcoming_dates: 'Refer to source citations below',
-        date_variation_notes: 'Calculated according to regional astronomical panchanga.',
+        best_locations: `${festival.primary_city}, ${festival.state}`,
         best_experienced_places: [festival.primary_city, festival.state].filter(Boolean),
-        duration: festival.typical_season || 'Multi-day celebration',
-        key_rituals: [festival.cultural_vibe || 'Traditional cultural observances'],
-        travel_tips: ['Check local transit schedules and book in advance'],
-        official_notices: 'Please verify with official district administration before travel.',
-        summary: rawText.slice(0, 500),
+        key_rituals: [festival.cultural_vibe || 'Cultural celebrations'],
+        travel_tips: ['Verify local trust and state tourism guidelines before travel.'],
+        summary: text.slice(0, 500),
       };
     }
 
-    const fetchTimestamp = new Date().toISOString();
+    if (parsedInfo && parsedInfo.upcoming_dates) {
+      const groundingMetadata = candidate?.groundingMetadata;
+      const hasSupports = (groundingMetadata?.groundingSupports?.length ?? 0) > 0;
+      if (!hasSupports && sources.length === 0) {
+        parsedInfo.upcoming_dates = null;
+      }
+    }
 
-    // Cache result for 24h
-    festivalLiveCache.set(festivalId, {
-      data: parsedData,
-      sources,
-      timestamp: now,
-      last_fetched: fetchTimestamp,
-    });
-
-    // Update in-memory record date_info & verification_status
-    festival.date_info = {
-      upcoming_dates: parsedData.upcoming_dates,
-      fetched_at: fetchTimestamp,
-      sources_count: sources.length,
-    };
-    festival.verification_status = 'LIVE_FETCHED';
-
-    res.json({
+    const payload = {
       success: true,
+      festival_id: festival.id,
+      festival_name: festival.name,
       has_sources: true,
-      cached: false,
-      data: parsedData,
       sources,
-      last_fetched: fetchTimestamp,
+      data: parsedInfo,
+      live_info: parsedInfo,
+      verification_status: 'LIVE_FETCHED',
+      verification_notice: 'Fetched from Google Search via Gemini – verify with official sources before travel.',
       disclaimer: 'Fetched from Google Search via Gemini – verify with official sources before travel.',
-    });
+      last_fetched: new Date().toISOString(),
+    };
+
+    liveInfoCache.set(cacheKey, { data: payload, cachedAt: Date.now() });
+    res.json(payload);
   } catch (err: any) {
-    sendError(res, 500, 'LIVE_INFO_FETCH_ERROR', err?.message || 'Failed to fetch live festival info', req.requestId);
+    sendError(res, 500, 'LIVE_INFO_ERROR', err?.message || 'Failed to fetch live festival info', req.requestId);
   }
-});
+}
 
 /**
- * POST /live-search
- * Global live info search with Google Search grounding (e.g. "festivals in Odisha this month").
+ * Common handler for global search (supports both GET and POST)
  */
-festivalsRouter.post('/live-search', async (req: Request, res: Response): Promise<void> => {
+async function processGlobalLiveSearch(query: string, refresh: boolean, simulateNoSources: boolean, req: Request, res: Response) {
   try {
-    const queryText = (req.body?.query || req.query.q || '').toString().trim();
-    if (!queryText) {
+    if (!query) {
       sendError(res, 400, 'QUERY_REQUIRED', 'Please provide a festival or location query to search.', req.requestId);
       return;
     }
 
-    // Check test flag for regression testing "no sources" path
-    if (req.query.simulate_no_sources === 'true' || req.body?.simulate_no_sources === true) {
+    if (simulateNoSources) {
       res.json({
         success: true,
+        query,
         has_sources: false,
         error_message: 'No reliable sources found',
-        query: queryText,
+        message: 'No reliable sources found',
         answer: null,
+        data: null,
+        live_info: null,
         sources: [],
         last_fetched: new Date().toISOString(),
         disclaimer: 'Fetched from Google Search via Gemini – verify with official sources before travel.',
+        verification_notice: 'Fetched from Google Search via Gemini – verify with official sources before travel.',
       });
       return;
     }
 
-    const ai = getAIClient();
-    if (!ai) {
-      res.status(503).json({
-        success: false,
-        code: 'GEMINI_API_KEY_UNAVAILABLE',
-        error: 'Live Google Search grounding requires server GEMINI_API_KEY.',
+    const cacheKey = `global_${query.toLowerCase()}`;
+    if (!refresh && liveInfoCache.has(cacheKey)) {
+      const cached = liveInfoCache.get(cacheKey)!;
+      if (Date.now() - cached.cachedAt < CACHE_TTL_MS) {
+        res.json({
+          ...cached.data,
+          from_cache: true,
+          cached: true,
+        });
+        return;
+      }
+    }
+
+    if (Date.now() < circuitCooldownUntil) {
+      res.json({
+        success: true,
+        query,
         has_sources: false,
-        query: queryText,
-        answer: null,
         sources: [],
+        data: null,
+        live_info: null,
+        message: 'No reliable sources found (circuit cooling down due to rate limit)',
+        verification_notice: 'Fetched from Google Search via Gemini – verify with official sources before travel.',
+        disclaimer: 'Fetched from Google Search via Gemini – verify with official sources before travel.',
         last_fetched: new Date().toISOString(),
       });
       return;
     }
 
     const prompt = `Using Google Search grounding, answer the user query regarding Indian cultural festivals and heritage celebrations:
-"${queryText}"
+"${query}"
 
 Provide:
 1. Exact upcoming date(s) or festival schedule in India.
@@ -247,51 +366,114 @@ Provide:
 3. Cultural significance, key ceremonies, and rituals.
 4. Practical traveler advisory (crowds, transit access).
 
-Be factual, objective, and only state dates found in trusted search results.`;
+Be factual, objective, and only state dates found in trusted search results. Format JSON with:
+{
+  "summary": "2-3 sentence overview",
+  "upcoming_dates": "Verified upcoming date(s)",
+  "locations": "Best cities, venues, or regions",
+  "key_highlights": ["Key ritual 1", "Key ritual 2"],
+  "travel_advice": ["Advice 1", "Advice 2"],
+  "official_notices": "Advisory or booking guidelines"
+}`;
 
-    const response = await ai.models.generateContent({
-      model: 'gemini-3.8-flash',
-      contents: prompt,
-      config: {
-        tools: [{ googleSearch: {} }],
-      },
-    });
+    const { success, candidate, sources } = await callGeminiSearchGrounding(prompt, `GlobalQuery:${query}`);
 
-    const chunks = (response.candidates?.[0]?.groundingMetadata?.groundingChunks || []) as any[];
-    const sources = chunks
-      .map((c) => c.web)
-      .filter((w) => w && w.uri)
-      .map((w) => ({
-        title: w.title || w.uri,
-        uri: w.uri,
-      }));
-
-    if (!sources || sources.length === 0) {
-      res.json({
+    if (!success || sources.length === 0) {
+      const payload = {
         success: true,
+        query,
         has_sources: false,
         error_message: 'No reliable sources found',
-        query: queryText,
+        message: 'No reliable sources found',
         answer: null,
+        data: null,
+        live_info: null,
         sources: [],
-        last_fetched: new Date().toISOString(),
+        verification_notice: 'Fetched from Google Search via Gemini – verify with official sources before travel.',
         disclaimer: 'Fetched from Google Search via Gemini – verify with official sources before travel.',
-      });
+        last_fetched: new Date().toISOString(),
+      };
+      res.json(payload);
       return;
     }
 
-    res.json({
+    const text = candidate?.content?.parts?.[0]?.text || '';
+    let parsedInfo: any = null;
+    try {
+      const jsonMatch = text.match(/\{[\s\S]*\}/);
+      if (jsonMatch) {
+        parsedInfo = JSON.parse(jsonMatch[0]);
+      }
+    } catch {
+      parsedInfo = { summary: text };
+    }
+
+    if (parsedInfo && parsedInfo.upcoming_dates) {
+      const groundingMetadata = candidate?.groundingMetadata;
+      const hasSupports = (groundingMetadata?.groundingSupports?.length ?? 0) > 0;
+      if (!hasSupports && sources.length === 0) {
+        parsedInfo.upcoming_dates = null;
+      }
+    }
+
+    const payload = {
       success: true,
+      query,
       has_sources: true,
-      query: queryText,
-      answer: response.text || '',
+      answer: text,
       sources,
-      last_fetched: new Date().toISOString(),
+      data: parsedInfo,
+      live_info: parsedInfo,
+      verification_notice: 'Fetched from Google Search via Gemini – verify with official sources before travel.',
       disclaimer: 'Fetched from Google Search via Gemini – verify with official sources before travel.',
-    });
+      last_fetched: new Date().toISOString(),
+    };
+
+    liveInfoCache.set(cacheKey, { data: payload, cachedAt: Date.now() });
+    res.json(payload);
   } catch (err: any) {
     sendError(res, 500, 'LIVE_SEARCH_ERROR', err?.message || 'Failed to perform live festival search', req.requestId);
   }
+}
+
+/**
+ * POST /:id/live-info
+ */
+festivalsRouter.post('/:id/live-info', async (req: Request, res: Response): Promise<void> => {
+  const festivalId = req.params.id;
+  const refresh = req.query.refresh === 'true' || req.body?.refresh === true;
+  const simulateNoSources = req.query.simulate_no_sources === 'true' || req.body?.simulate_no_sources === true;
+  await processFestivalLiveInfo(festivalId, refresh, simulateNoSources, req, res);
+});
+
+/**
+ * GET /:id/live-info
+ */
+festivalsRouter.get('/:id/live-info', async (req: Request, res: Response): Promise<void> => {
+  const festivalId = req.params.id;
+  const refresh = req.query.refresh === 'true';
+  const simulateNoSources = req.query.simulate_no_sources === 'true';
+  await processFestivalLiveInfo(festivalId, refresh, simulateNoSources, req, res);
+});
+
+/**
+ * POST /live-search
+ */
+festivalsRouter.post('/live-search', async (req: Request, res: Response): Promise<void> => {
+  const query = (req.body?.query || req.query.q || '').toString().trim();
+  const refresh = req.query.refresh === 'true' || req.body?.refresh === true;
+  const simulateNoSources = req.query.simulate_no_sources === 'true' || req.body?.simulate_no_sources === true;
+  await processGlobalLiveSearch(query, refresh, simulateNoSources, req, res);
+});
+
+/**
+ * GET /live-info
+ */
+festivalsRouter.get('/live-info', async (req: Request, res: Response): Promise<void> => {
+  const query = (req.query.q || req.query.query || '').toString().trim();
+  const refresh = req.query.refresh === 'true';
+  const simulateNoSources = req.query.simulate_no_sources === 'true';
+  await processGlobalLiveSearch(query, refresh, simulateNoSources, req, res);
 });
 
 /**
@@ -325,7 +507,7 @@ festivalsRouter.get('/current-upcoming', async (req: Request, res: Response): Pr
 festivalsRouter.get('/', async (req: Request, res: Response): Promise<void> => {
   try {
     const { state, state_id, city, city_id, month, search, q, limit, offset } = req.query;
-    const parsedLimit = limit ? parseInt(limit as string, 10) : 100;
+    const parsedLimit = limit ? parseInt(limit as string, 10) : 250;
     const parsedOffset = offset ? parseInt(offset as string, 10) : 0;
     const searchTerm = (search || q) as string | undefined;
 

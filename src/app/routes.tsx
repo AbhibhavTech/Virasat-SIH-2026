@@ -102,7 +102,7 @@ interface AppRoutesProps {
   selectedCity: string;
   onSelectCity: (city: string) => void;
   onSelectPlace: (placeId: string) => void;
-  onNavigateTab: (tab: NavTab) => void;
+  onNavigateTab: (tab: NavTab, city?: string) => void;
   onSearch: (query: string) => void;
 }
 
@@ -140,7 +140,8 @@ const CityHubRoute: React.FC<{
 
 const DestinationDetailRoute: React.FC<{
   onSelectPlace: (id: string) => void;
-}> = ({ onSelectPlace }) => {
+  onSelectCity: (city: string) => void;
+}> = ({ onSelectPlace, onSelectCity }) => {
   const { placeId } = useParams<{ placeId: string }>();
   const navigate = useNavigate();
 
@@ -153,6 +154,11 @@ const DestinationDetailRoute: React.FC<{
       placeId={placeId}
       onBack={() => navigate(-1)}
       onSelectPlace={onSelectPlace}
+      onSelectCity={onSelectCity}
+      onOpenMap={(destinationId, city) => {
+        onSelectCity(city);
+        navigate(`/map?city=${encodeURIComponent(city)}&destination=${encodeURIComponent(destinationId)}`);
+      }}
       onOpenAIChat={(_pId, pName) => {
         navigate(`/ai?prompt=${encodeURIComponent(`Tell me about ${pName}`)}`);
       }}
@@ -182,7 +188,7 @@ const AIAssistantRoute: React.FC<{
   selectedCity: string;
 }> = ({ onSelectPlace, onNavigateTab, selectedCity }) => {
   const [searchParams] = useSearchParams();
-  const initialPrompt = searchParams.get('prompt') || undefined;
+  const initialPrompt = searchParams.get('prompt') || searchParams.get('q') || undefined;
 
   return (
     <AIAssistantPage
@@ -277,7 +283,7 @@ export const AppRoutes: React.FC<AppRoutesProps> = ({
 
       <Route
         path="/place/:placeId"
-        element={<DestinationDetailRoute onSelectPlace={onSelectPlace} />}
+        element={<DestinationDetailRoute onSelectPlace={onSelectPlace} onSelectCity={onSelectCity} />}
       />
 
       <Route
@@ -297,6 +303,7 @@ export const AppRoutes: React.FC<AppRoutesProps> = ({
             onSelectPlace={onSelectPlace}
             onNavigateTab={onNavigateTab}
             selectedCity={selectedCity}
+            onSelectCity={onSelectCity}
           />
         }
       />

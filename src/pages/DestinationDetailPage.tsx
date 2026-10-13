@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { PlaceDetail } from '../types';
+import { Link } from 'react-router-dom';
+import { PlaceDetail, FestivalItem } from '../types';
 import { api } from '../services/api';
 import {
   ArrowLeft,
@@ -34,12 +35,15 @@ import { VirasatHeritageGuide } from '../components/cultural-guides/VirasatHerit
 import { SafarRouteGuide } from '../components/cultural-guides/SafarRouteGuide';
 import { updatePageSEO, generateTouristAttractionSchema } from '../utils/seo';
 import { analytics } from '../services/analytics';
+import { getMumbaiDestinationById } from '../data/mumbaiDestinations';
 
 interface DestinationDetailPageProps {
   placeId: string;
   onBack: () => void;
   onSelectPlace: (placeId: string) => void;
   onOpenAIChat?: (placeId: string, placeName: string) => void;
+  onOpenMap?: (placeId: string, city: string) => void;
+  onSelectCity?: (city: string) => void;
   isFavorite?: (placeId: string) => boolean;
   toggleFavorite?: (placeId: string) => void;
 }
@@ -49,6 +53,8 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
   onBack,
   onSelectPlace,
   onOpenAIChat,
+  onOpenMap,
+  onSelectCity,
   isFavorite = () => false,
   toggleFavorite = () => {},
 }) => {
@@ -58,6 +64,7 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
   const [isReportModalOpen, setIsReportModalOpen] = useState(false);
   const [healthScore, setHealthScore] = useState<number | null>(null);
   const [healthStatus, setHealthStatus] = useState<string>('Excellent / Well Maintained');
+  const [festivalsHere, setFestivalsHere] = useState<FestivalItem[]>([]);
 
   // Monument 3D archetype resolver preserved for architectural modeling & test contract
   const resolve3DMonumentType = (pId: string): string | null => {
@@ -78,10 +85,11 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
       setLoading(true);
       setError(null);
       try {
-        const data = await api.getPlaceById(placeId);
+        const data = getMumbaiDestinationById(placeId) || await api.getPlaceById(placeId);
         if (isMounted) {
           setPlace(data);
           if (data) {
+            if (data.city) onSelectCity?.(data.city);
             updatePageSEO({
               title: data.name,
               description: data.summary || data.description,
@@ -101,6 +109,17 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
         } catch {
           // fallback to default health score
         }
+
+        if (data?.state) {
+          try {
+            const fData = await api.getFestivals({ state: data.state, limit: 4 });
+            if (isMounted && Array.isArray(fData)) {
+              setFestivalsHere(fData.slice(0, 4));
+            }
+          } catch {
+            // optional festivals strip
+          }
+        }
       } catch (err) {
         if (isMounted) {
           setError('Unable to load destination details.');
@@ -116,7 +135,7 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
     return () => {
       isMounted = false;
     };
-  }, [placeId]);
+  }, [placeId, onSelectCity]);
 
   if (loading) {
     return (
@@ -193,6 +212,16 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
           </button>
 
           <div className="flex items-center gap-1.5 sm:gap-2">
+            {onOpenMap && (
+              <button
+                onClick={() => onOpenMap(place.id, place.city)}
+                className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-white/90 hover:bg-white text-emerald-800 text-[11px] sm:text-xs font-semibold shadow-xs transition backdrop-blur-sm"
+                title={`Explore ${place.name} on the map`}
+              >
+                <Navigation className="w-3.5 h-3.5" />
+                <span className="hidden sm:inline">Map</span>
+              </button>
+            )}
             <button
               onClick={() => setIsReportModalOpen(true)}
               className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1.5 sm:py-2 rounded-full bg-white/90 hover:bg-white text-stone-700 hover:text-[#FF671F] text-[11px] sm:text-xs font-semibold shadow-xs transition backdrop-blur-sm focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:outline-none"
@@ -476,6 +505,60 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
               currentPlaceName={place.name}
               onSelectPlace={onSelectPlace}
             />
+          </section>
+        )}
+
+        {/* Living Culture & Regional Festivals */}
+        {festivalsHere && festivalsHere.length > 0 && place.state && (
+          <section className="space-y-4 pt-6 border-t border-[#EFE8DF]">
+            <div className="flex items-center justify-between">
+              <div className="text-xs font-bold uppercase tracking-wider text-[#046A38] flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>Living Culture & Celebrations</span>
+              </div>
+              <Link
+                to={`/festivals?state=${encodeURIComponent(place.state)}`}
+                className="text-xs font-bold text-[#FF671F] hover:underline flex items-center gap-1"
+              >
+                <span>View all in {place.state}</span>
+                <ExternalLink className="w-3 h-3" />
+              </Link>
+            </div>
+            <h2 className="font-serif text-2xl font-bold text-stone-900">
+              Festivals & Living Traditions of {place.state}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3.5">
+              {festivalsHere.map((fest) => (
+                <Link
+                  key={fest.id}
+                  to={`/festivals?q=${encodeURIComponent(fest.name)}`}
+                  className="group bg-white rounded-2xl border border-[#EFE8DF] p-4 hover:border-[#FF671F] hover:shadow-warm transition-all flex flex-col justify-between"
+                >
+                  <div>
+                    <div className="flex items-center justify-between gap-1 mb-2">
+                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
+                        {fest.region || 'Regional'}
+                      </span>
+                      {fest.typical_season && (
+                        <span className="text-[10px] text-stone-500 font-medium">
+                          {fest.typical_season}
+                        </span>
+                      )}
+                    </div>
+                    <h3 className="font-serif text-base font-bold text-stone-900 group-hover:text-[#FF671F] transition-colors line-clamp-1">
+                      {fest.name}
+                    </h3>
+                    <p className="text-xs text-stone-600 mt-1 line-clamp-2 leading-relaxed">
+                      {fest.description}
+                    </p>
+                  </div>
+                  <div className="mt-3 pt-2.5 border-t border-stone-100 flex items-center justify-between text-[11px] font-semibold text-[#FF671F]">
+                    <span>Explore Celebration</span>
+                    <span className="group-hover:translate-x-0.5 transition-transform">→</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </section>
         )}
 

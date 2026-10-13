@@ -48,10 +48,11 @@ import {
 import { IndiaHeritageMapPreview } from './IndiaHeritageMapPreview';
 import { ScrollReveal } from '../common/ScrollReveal';
 import { getMonumentRealImage } from '../../data/monumentRealImages';
+import { searchMumbaiPlaces } from '../../data/mumbaiDestinations';
 
 interface VirasatDashboardProps {
   onSearch: (query: string) => void;
-  onNavigateTab: (tab: NavTab) => void;
+  onNavigateTab: (tab: NavTab, city?: string) => void;
   onSelectPlace?: (placeId: string) => void;
   onSelectCity?: (city: string) => void;
   onOpenAIChat?: (prompt?: string) => void;
@@ -374,9 +375,15 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
     const timer = setTimeout(async () => {
       setIsSearching(true);
       try {
+        const localResults = searchMumbaiPlaces(searchQuery.trim()).slice(0, 5);
         const results = await api.searchPlaces(searchQuery.trim());
-        setSearchSuggestions(results.slice(0, 5));
-        setShowSuggestions(true);
+        const localNames = new Set(localResults.map((place) => place.name.trim().toLowerCase()));
+        const mergedResults = [
+          ...localResults,
+          ...results.filter((place) => !localNames.has(place.name.trim().toLowerCase())),
+        ];
+        setSearchSuggestions(mergedResults.slice(0, 5));
+        setShowSuggestions(mergedResults.length > 0 || /mumbai|bombay/i.test(searchQuery));
       } catch {
         setSearchSuggestions([]);
       } finally {
@@ -857,11 +864,39 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
               )}
 
               {/* Live Suggestions Dropdown */}
-              {showSuggestions && searchSuggestions.length > 0 && (
+              {showSuggestions && (searchSuggestions.length > 0 || /mumbai|bombay/i.test(searchQuery)) && (
                 <div className="absolute top-full left-0 right-0 mt-2 bg-white rounded-2xl shadow-xl border border-stone-200 overflow-hidden z-30 animate-fadeIn">
+                  {/mumbai|bombay/i.test(searchQuery) && (
+                    <button
+                      type="button"
+                      onMouseDown={(e) => e.preventDefault()}
+                      onClick={() => {
+                        recordRecentSearch('Mumbai');
+                        setSearchQuery('Mumbai');
+                        setShowSuggestions(false);
+                        setIsSearchFocused(false);
+                        onSelectCity?.('Mumbai');
+                        onNavigateTab('dashboard', 'Mumbai');
+                      }}
+                      className="w-full p-3 bg-orange-50/80 hover:bg-orange-100/80 border-b border-orange-100 cursor-pointer transition flex items-center justify-between gap-3 text-left"
+                    >
+                      <div className="flex items-center gap-3">
+                        <div className="w-10 h-10 rounded-xl bg-white border border-orange-200 text-[#FF671F] flex items-center justify-center shrink-0">
+                          <MapPin className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <h4 className="font-serif text-xs font-bold text-stone-900">Mumbai</h4>
+                          <p className="text-[11px] text-stone-500">Maharashtra · City destination</p>
+                        </div>
+                      </div>
+                      <span className="text-[10px] font-bold text-[#FF671F] bg-white border border-orange-200 px-2 py-1 rounded-lg shrink-0">Explore city</span>
+                    </button>
+                  )}
+                  {searchSuggestions.length > 0 && (
                   <div className="p-2 border-b border-stone-100 text-[11px] font-bold text-stone-400 px-3 uppercase tracking-wider">
-                    Verified Heritage Results
+                    Mumbai attractions and hidden gem candidates
                   </div>
+                  )}
                   <div className="divide-y divide-stone-100 max-h-64 overflow-y-auto">
                     {searchSuggestions.map((item) => (
                       <div

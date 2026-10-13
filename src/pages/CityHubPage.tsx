@@ -28,6 +28,7 @@ import { CityImmersionHeader } from '../components/destination/CityImmersionHead
 import { ThreeDDestinationCard } from '../components/common/ThreeDDestinationCard';
 import { updatePageSEO, generateCitySchema } from '../utils/seo';
 import { getMonumentRealImage } from '../data/monumentRealImages';
+import { getMumbaiPlaceSummaries, isMumbaiCity } from '../data/mumbaiDestinations';
 
 interface CityHubPageProps {
   onSelectPlace: (id: string) => void;
@@ -45,6 +46,7 @@ interface CategoryFilter {
 const CATEGORIES: CategoryFilter[] = [
   { id: 'all', label: 'All Famous Places', icon: Sparkles },
   { id: 'monuments', label: 'Monuments & Heritage', icon: Landmark },
+  { id: 'hidden-gems', label: 'Hidden Gem Candidates', icon: Sparkles },
   { id: 'markets', label: 'Markets & Bazaars', icon: ShoppingBag },
   { id: 'festivals', label: 'City Festivals', icon: PartyPopper },
   { id: 'hotels', label: 'Verified Hotels', icon: Hotel },
@@ -83,6 +85,12 @@ function matchesCategory(place: PlaceSummary, catId: string): boolean {
       name.includes('palace') ||
       name.includes('gateway')
     );
+  }
+
+  if (catId === 'hidden-gems') {
+    return Boolean((place as any).is_hidden_gem_candidate)
+      || tags.includes('hidden gem candidate')
+      || cat.includes('hidden gem');
   }
 
   if (catId === 'markets') {
@@ -235,9 +243,18 @@ export const CityHubPage: React.FC<CityHubPageProps> = ({
         }
 
         // If city places is empty (e.g. edge-case), load fallback places
-        if (loadedPlaces.length === 0) {
+        if (loadedPlaces.length === 0 && !isMumbaiCity(selectedCity)) {
           const fallbackRes = await api.getPlaces({ limit: 40 });
           loadedPlaces = fallbackRes.data || [];
+        }
+
+        if (isMumbaiCity(selectedCity)) {
+          const mumbaiPlaces = getMumbaiPlaceSummaries();
+          const localNames = new Set(mumbaiPlaces.map((place) => place.name.trim().toLowerCase()));
+          loadedPlaces = [
+            ...mumbaiPlaces,
+            ...loadedPlaces.filter((place) => !localNames.has(place.name.trim().toLowerCase())),
+          ];
         }
 
         setPlaces(loadedPlaces);
@@ -632,21 +649,68 @@ export const CityHubPage: React.FC<CityHubPageProps> = ({
               </div>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5 sm:gap-6">
-              {filteredPlaces.map((p) => (
-                <ThreeDDestinationCard
-                  key={p.id}
-                  id={p.id}
-                  title={p.name}
-                  subtitle={`${p.city}, ${p.state}`}
-                  badge={p.category || 'Famous Place'}
-                  confidence={p.data_confidence}
-                  imageUrl={getMonumentRealImage(p.id, p.thumbnail_url)}
-                  tagline={p.summary}
-                  onClick={() => onSelectPlace(p.id)}
-                />
-              ))}
-            </div>
+            isMumbaiCity(selectedCity) ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5 sm:gap-6">
+                {filteredPlaces.map((p) => {
+                  const localDetails = p as any;
+                  const isHiddenGem = Boolean(localDetails.is_hidden_gem_candidate);
+                  return (
+                    <article key={p.id} className="group overflow-hidden rounded-2xl bg-white border border-stone-200 shadow-xs hover:shadow-md hover:border-orange-300 transition flex flex-col">
+                      <div className="relative h-44 bg-stone-100 overflow-hidden">
+                        <img
+                          src={getMonumentRealImage(p.id, p.thumbnail_url || p.image_url)}
+                          alt={p.name}
+                          loading="lazy"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <span className={`absolute top-3 left-3 rounded-full px-2.5 py-1 text-[10px] font-bold border shadow-xs ${isHiddenGem ? 'bg-purple-50/95 text-purple-800 border-purple-200' : 'bg-white/95 text-amber-900 border-amber-200'}`}>
+                          {isHiddenGem ? 'Hidden Gem Candidate' : (p.heritage_status || p.category)}
+                        </span>
+                        {p.rating && (
+                          <span className="absolute bottom-3 right-3 rounded-full bg-white/95 px-2 py-1 text-[10px] font-bold text-stone-800 shadow-xs">★ {p.rating.toFixed(1)}</span>
+                        )}
+                      </div>
+                      <div className="p-4 flex flex-1 flex-col gap-2.5">
+                        <div>
+                          <div className="text-[10px] font-bold uppercase tracking-wide text-[#FF671F]">{p.category} · {localDetails.area || p.area_neighborhood || 'Mumbai'}</div>
+                          <h3 className="mt-1 font-serif text-lg font-bold leading-tight text-stone-900">{p.name}</h3>
+                          <p className="mt-2 text-xs leading-relaxed text-stone-600 line-clamp-3">{p.summary}</p>
+                        </div>
+                        <div className="mt-auto rounded-xl bg-stone-50 border border-stone-100 p-2.5 text-[11px] text-stone-600 space-y-1">
+                          {localDetails.best_time_to_visit && <div><strong className="text-stone-800">Best time:</strong> {localDetails.best_time_to_visit}</div>}
+                          {localDetails.suggested_duration && <div><strong className="text-stone-800">Suggested visit:</strong> {localDetails.suggested_duration}</div>}
+                          {isHiddenGem && localDetails.visitor_notes && <div><strong className="text-stone-800">Access note:</strong> {localDetails.visitor_notes}</div>}
+                          {!isHiddenGem && localDetails.coordinates_verified && <div className="text-emerald-700 font-semibold">Map coordinates verified in the Mumbai destination catalog</div>}
+                        </div>
+                        <button
+                          type="button"
+                          onClick={() => onSelectPlace(p.id)}
+                          className="w-full rounded-xl bg-[#FF671F] hover:bg-[#E65100] text-white text-xs font-bold py-2.5 transition"
+                        >
+                          Open full destination guide →
+                        </button>
+                      </div>
+                    </article>
+                  );
+                })}
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5 sm:gap-6">
+                {filteredPlaces.map((p) => (
+                  <ThreeDDestinationCard
+                    key={p.id}
+                    id={p.id}
+                    title={p.name}
+                    subtitle={`${p.city}, ${p.state}`}
+                    badge={p.category || 'Famous Place'}
+                    confidence={p.data_confidence}
+                    imageUrl={getMonumentRealImage(p.id, p.thumbnail_url)}
+                    tagline={p.summary}
+                    onClick={() => onSelectPlace(p.id)}
+                  />
+                ))}
+              </div>
+            )
           )}
         </div>
       )}

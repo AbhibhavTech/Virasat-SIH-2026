@@ -5,7 +5,7 @@ import { VirasatDashboard } from '../components/home/VirasatDashboard';
 
 interface HomePageProps {
   onSearch: (query: string) => void;
-  onNavigateTab: (tab: NavTab) => void;
+  onNavigateTab: (tab: NavTab, city?: string) => void;
   onSelectPlace: (placeId: string) => void;
   onSelectState?: (stateId: string) => void;
   selectedCity?: string;

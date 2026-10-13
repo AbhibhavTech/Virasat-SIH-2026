@@ -1092,7 +1092,10 @@ export const api = {
         success: false,
         has_sources: false,
         error_message: err?.message || 'Failed to connect to Google Search live info service',
+        message: err?.message || 'Failed to connect to Google Search live info service',
         sources: [],
+        data: null,
+        live_info: null,
         last_fetched: new Date().toISOString(),
       };
     }
@@ -1116,6 +1119,22 @@ export const api = {
         error_message: err?.message || 'Live Search service unavailable',
         sources: [],
         last_fetched: new Date().toISOString(),
+      };
+    }
+  },
+
+  async searchGlobalFestivalLiveInfo(query: string, refresh = false): Promise<any> {
+    try {
+      const params = new URLSearchParams({ q: query });
+      if (refresh) params.set('refresh', 'true');
+      return await request<any>(`/v1/festivals/live-info?${params.toString()}`);
+    } catch (err: any) {
+      return {
+        success: false,
+        has_sources: false,
+        sources: [],
+        live_info: null,
+        message: err?.message || 'Failed to search live festival info',
       };
     }
   },

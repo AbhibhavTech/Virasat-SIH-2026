@@ -400,22 +400,21 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
     setMessages([
       userLocation
         ? {
-            role: 'assistant',
-            content: `Namaste! Based on your general area (**${
-              userLocation.locality ? `${userLocation.locality}, ` : ''
+          role: 'assistant',
+          content: `Namaste! Based on your general area (**${userLocation.locality ? `${userLocation.locality}, ` : ''
             }${userLocation.city || userLocation.state || 'your area'}**), I can help you discover nearby heritage monuments or plan journeys across India.\n\nWhere would you like to go today?`,
-            timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-            suggested_actions: [
-              'Explore Near Me',
-              'I want to visit Darjeeling',
-              'Plan a Trip to Jaipur',
-              'How does Virasat work?',
-            ],
-          }
+          timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+          suggested_actions: [
+            'Explore Near Me',
+            'I want to visit Darjeeling',
+            'Plan a Trip to Jaipur',
+            'How does Virasat work?',
+          ],
+        }
         : {
-            ...initialGreeting,
-            timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-          },
+          ...initialGreeting,
+          timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
+        },
     ]);
     lastProcessedPrompt.current = null;
   };
@@ -756,22 +755,20 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
               >
                 {/* Avatar */}
                 <div
-                  className={`rounded-2xl flex items-center justify-center shrink-0 shadow-xs ${
-                    isUser
-                      ? 'w-7 h-7 sm:w-8 sm:h-8 bg-[#FF671F] text-white font-bold'
-                      : 'w-7 h-7 sm:w-8 sm:h-8 bg-white border border-stone-200 text-[#FF671F]'
-                  }`}
+                  className={`rounded-2xl flex items-center justify-center shrink-0 shadow-xs ${isUser
+                    ? 'w-7 h-7 sm:w-8 sm:h-8 bg-[#FF671F] text-white font-bold'
+                    : 'w-7 h-7 sm:w-8 sm:h-8 bg-white border border-stone-200 text-[#FF671F]'
+                    }`}
                 >
                   {isUser ? <User className="w-3.5 h-3.5 sm:w-4 sm:h-4" /> : <Bot className="w-3.5 h-3.5 sm:w-4 sm:h-4" />}
                 </div>
 
                 {/* Bubble - Full extent */}
                 <div
-                  className={`w-full max-w-[96%] sm:max-w-[92%] lg:max-w-[88%] rounded-2xl sm:rounded-3xl p-3 sm:p-6 text-xs sm:text-sm leading-relaxed shadow-xs relative group ${
-                    isUser
-                      ? 'bg-[#FF671F] text-white font-medium rounded-tr-sm ml-auto'
-                      : 'bg-white border border-[#EFE8DF] text-stone-800 rounded-tl-sm mr-auto'
-                  }`}
+                  className={`w-full max-w-[96%] sm:max-w-[92%] lg:max-w-[88%] rounded-2xl sm:rounded-3xl p-3 sm:p-6 text-xs sm:text-sm leading-relaxed shadow-xs relative group ${isUser
+                    ? 'bg-[#FF671F] text-white font-medium rounded-tr-sm ml-auto'
+                    : 'bg-white border border-[#EFE8DF] text-stone-800 rounded-tl-sm mr-auto'
+                    }`}
                 >
                   {/* Message Body */}
                   {renderMessageContent(m.content)}
@@ -955,9 +952,8 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
 
                   {/* Metadata & Actions Footer */}
                   <div
-                    className={`mt-3 pt-2 flex items-center justify-between text-[10px] ${
-                      isUser ? 'border-t border-white/20 text-white/80' : 'border-t border-stone-100 text-stone-400'
-                    }`}
+                    className={`mt-3 pt-2 flex items-center justify-between text-[10px] ${isUser ? 'border-t border-white/20 text-white/80' : 'border-t border-stone-100 text-stone-400'
+                      }`}
                   >
                     <span className="flex items-center gap-1.5 flex-wrap">
                       <span>{m.timestamp || 'Just now'}</span>
