@@ -72,6 +72,7 @@ function toHiddenGemDestination(gem: HiddenGemItem): MumbaiDestination {
     category: gem.category,
     summary: gem.whyInteresting,
     description: gem.whyInteresting,
+    history: `${gem.century}: ${gem.whyInteresting}`,
     coordinates: { lat: gem.lat, lng: gem.lng },
     thumbnail_url: gem.thumbnailUrl,
     image_url: gem.thumbnailUrl,

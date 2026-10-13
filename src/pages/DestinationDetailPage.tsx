@@ -472,15 +472,19 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
           <div className="flex items-center justify-between flex-wrap gap-2 sm:gap-3 pt-3 sm:pt-4 border-t border-stone-100 text-[11px] sm:text-xs text-stone-500">
             <div className="flex items-center gap-1.5 sm:gap-2">
               <span className="font-semibold text-stone-700">Source Authority:</span>
-              <a
-                href={place.source_url || 'https://asi.nic.in'}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 text-[#FF671F] font-semibold hover:underline"
-              >
-                <span>{place.source_url || 'asi.nic.in'}</span>
-                <ExternalLink className="w-3 h-3" />
-              </a>
+              {place.source_url ? (
+                <a
+                  href={place.source_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-[#FF671F] font-semibold hover:underline"
+                >
+                  <span>{(place as any).source_name || place.source_url}</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              ) : (
+                <span className="text-stone-500">No source link is listed for this candidate</span>
+              )}
             </div>
             {place.last_verified_at && (
               <div className="text-stone-400">
