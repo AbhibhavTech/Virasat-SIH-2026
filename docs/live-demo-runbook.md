@@ -56,7 +56,7 @@
   - Ask a question: *"Plan a 2-day cultural heritage itinerary for Jaipur focusing on Rajput architecture and local handicrafts."*
   - Show the response generated with:
     - **Grounding Compliance Badge: 100% Grounded**.
-    - Model fallback telemetry badge (`gemini-2.5-flash` / deterministic engine).
+    - Local engine name and latency.
     - Response latency (ms).
     - Real structured destinations with direct clickable deep-links into the itinerary planner.
 

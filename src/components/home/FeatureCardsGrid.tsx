@@ -32,7 +32,7 @@ export const FeatureCardsGrid: React.FC<FeatureCardsGridProps> = ({ onNavigateTa
       desc: 'Conversational heritage assistant answering monument histories, architectural eras, and local customs.',
       icon: Bot,
       color: 'text-emerald-600',
-      badge: 'Gemini Verified',
+      badge: 'Local Data Engine',
       badgeClass: 'bg-emerald-50 text-emerald-800 border-emerald-200',
     },
     {

@@ -16,7 +16,7 @@ Virasat connects travelers to India's living heritage through interactive geospa
 - **Frontend**: Single-Page Application built with **React 18**, **TypeScript**, **Vite**, and styled with **Tailwind CSS**. Includes interactive map exploration (**Leaflet**) and 3D heritage previews (**Three.js**).
 - **Backend / API**: Single Express server (`server.ts`) providing ~55 REST endpoints with in-memory JavaScript data structures seeded at boot from static JSON files in `data/`.
 - **Data Layer**: Static JSON files in `data/` covering 28 states, 174 cities, and 172 curated attractions. (Verification and database migration planned in Phases 1 & 2).
-- **AI Assistant**: Conversational heritage concierge powered by Google Gemini (`@google/genai`) running server-side with strict grounding guidelines against inventing railway stations or transit routes.
+- **AI Assistant**: Virasat AI Astra, a provider-free local intent, conversation, and tool engine grounded in the app's tourism data.
 - **Persistence & Auth**: Currently in-memory mock authentication and session tokens (`virasat-token-*`). Migration to persistent PostgreSQL database and authenticated sessions is scheduled for **Phase 1**.
 
 ---
@@ -26,7 +26,7 @@ Virasat connects travelers to India's living heritage through interactive geospa
 1. **Heritage & Destination Discovery**: Explore states, cities, and monuments with historical summaries, entry fees, and cultural facts.
 2. **Interactive Geospatial Map**: Leaflet-based interactive map of India with regional destination markers, state boundaries, and spatial filters.
 3. **Multimodal Transit Engine**: Track-aligned railway corridors, suburban local rail, intercity bus, and metered transit fare estimations (`transportResolver.ts`, `railwayRoutingEngine.ts`).
-4. **AI Tourism Concierge**: Conversational assistant powered by Gemini for custom heritage queries, route assistance, and cultural context.
+4. **AI Tourism Concierge**: Local assistant for Virasat's tourism records, routes, stays, festivals, and itinerary tools. It does not provide open-domain generative answers or photo recognition.
 5. **3D Heritage Monuments**: Interactive Three.js 3D monument visualizations (Gateway of India, CSMT, Hawa Mahal) with orbital camera controls and lighting modes.
 6. **Cultural Guides**: Visual guide personas providing regional cultural insights, traditional crafts, and heritage context.
 
@@ -82,7 +82,7 @@ virasat/
 | **Frontend UI** | React 18, TypeScript, Tailwind CSS, Lucide Icons, clsx, tailwind-merge |
 | **Mapping & 3D** | Leaflet, Three.js |
 | **Backend** | Node.js, Express 4, TypeScript, tsx, esbuild |
-| **AI Integration** | Google Gemini API via `@google/genai` (server-side orchestration) |
+| **AI Integration** | Virasat AI Astra local intent and data engine; no hosted model dependency |
 | **Bundling** | Vite 6 |
 
 ---
@@ -92,7 +92,6 @@ virasat/
 ### Prerequisites
 - Node.js (v18 or higher recommended)
 - npm (v9 or higher)
-- Google Gemini API Key (optional, for AI Assistant features)
 
 ### 1. Installation
 ```bash
@@ -103,8 +102,25 @@ npm install
 Create a `.env` file in the root directory:
 ```env
 PORT=3000
-GEMINI_API_KEY=your_gemini_api_key_here
 ```
+
+### Google Sign-In
+
+Virasat uses Firebase Authentication for the standard Google account picker. In Firebase Console, enable **Authentication → Sign-in method → Google**, then add every local or deployed website address under **Authentication → Settings → Authorized domains**.
+
+For a separate Firebase project, place its public web-app configuration in `.env`:
+
+```env
+VITE_FIREBASE_PROJECT_ID=your-project-id
+VITE_FIREBASE_APP_ID=your-web-app-id
+VITE_FIREBASE_API_KEY=your-public-web-api-key
+VITE_FIREBASE_AUTH_DOMAIN=your-project-id.firebaseapp.com
+VITE_FIREBASE_FIRESTORE_DATABASE_ID=(default)
+VITE_FIREBASE_STORAGE_BUCKET=your-project-id.firebasestorage.app
+VITE_FIREBASE_MESSAGING_SENDER_ID=your-sender-id
+```
+
+The browser Google flow lets users select any account available in their Google account picker. The backend `/api/auth/google` endpoint remains disabled until server-side Firebase Admin token verification is configured; it never accepts a claimed email address as proof of Google identity.
 
 ### 3. Running Development Server
 Starts the Express API server and Vite frontend concurrently:

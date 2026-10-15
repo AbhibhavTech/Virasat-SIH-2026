@@ -39,7 +39,6 @@ Configure in Cloud Run / hosting runtime environment:
 | `PORT` | Optional | `3000` | HTTP ingress port. |
 | `NODE_ENV` | Optional | `development` | Set to `production` in live environments. |
 | `JWT_SECRET` | Recommended | Built-in | HMAC-SHA256 secret key for signing user session tokens. |
-| `GEMINI_API_KEY`| Optional | None | Google Gemini API key for live AI Concierge generation. (Fallback grounded engine active if unset). |
 | `ALLOWED_ORIGINS` | Optional | `http://localhost:3000` | Comma-separated CORS origin whitelist. |
 
 ---
@@ -62,8 +61,7 @@ gcloud run deploy virasat \
   --port 3000 \
   --memory 512Mi \
   --cpu 1 \
-  --set-env-vars NODE_ENV=production \
-  --set-secrets GEMINI_API_KEY=virasat-gemini-key:latest
+  --set-env-vars NODE_ENV=production
 ```
 
 ---

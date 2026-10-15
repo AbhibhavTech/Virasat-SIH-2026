@@ -192,9 +192,9 @@ export const STATE_CURATED_IMAGES: Record<string, CuratedStateImage> = {
 
   // Western Region
   'dadra-and-nagar-haveli-and-daman-and-diu': {
-    imageUrl: 'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=80',
-    creator: 'Daman Tourism / Diu Fort',
-    landmark: 'Diu Portuguese Fort & Nagoa Beach',
+    imageUrl: 'https://cdnbbsr.s3waas.gov.in/s371e09b16e21f7b6919bbfc43f6a5b2f0/uploads/2020/10/2020100332-scaled.jpg',
+    creator: 'UT Administration of Dadra and Nagar Haveli and Daman and Diu',
+    landmark: 'Diu Fort overlooking the Arabian Sea',
     bestSeason: 'Oct - Mar',
     tags: ['Portuguese Fortresses', 'St. Paul Church', 'Nagoa Beach'],
   },

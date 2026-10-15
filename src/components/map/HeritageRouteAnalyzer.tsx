@@ -386,7 +386,7 @@ export const HeritageRouteAnalyzer: React.FC<HeritageRouteAnalyzerProps> = ({
     onReorderMonuments(next);
   };
 
-  // Run Route Analyzer via Gemini API
+  // Calculate a route estimate from saved coordinates
   const handleRunAnalysis = async () => {
     if (selectedMonuments.length < 2) {
       setErrorMessage('Please select at least 2 monuments to analyze a heritage route.');
@@ -747,7 +747,7 @@ export const HeritageRouteAnalyzer: React.FC<HeritageRouteAnalyzerProps> = ({
                 {isAnalyzing ? (
                   <>
                     <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                    <span>Gemini API Analyzing Transit & Heritage Segments...</span>
+                    <span>Calculating local route estimate...</span>
                   </>
                 ) : (
                   <>
@@ -819,7 +819,7 @@ export const HeritageRouteAnalyzer: React.FC<HeritageRouteAnalyzerProps> = ({
             <div className="p-3.5 rounded-2xl bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100/60 border border-amber-200/80 space-y-1.5">
               <div className="flex items-center justify-between">
                 <span className="text-[9px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-600 text-white">
-                  Gemini Optimized Route
+                  Local Route Estimate
                 </span>
                 <span className="text-[10px] font-bold text-amber-800">
                   {analysisResult.ordered_stops.length} Stops • {analysisResult.segments.length} Segments

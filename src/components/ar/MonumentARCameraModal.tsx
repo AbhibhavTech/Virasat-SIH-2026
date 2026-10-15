@@ -393,14 +393,11 @@ export const MonumentARCameraModal: React.FC<MonumentARCameraModalProps> = ({
       }
     } catch (err: any) {
       console.warn('AR analysis error:', err);
-      const isUnavailable = err?.message?.includes('503') || err?.message?.includes('high demand') || err?.message?.includes('UNAVAILABLE');
       const isFetch = err?.message?.includes('Failed to fetch') || err?.name === 'TypeError';
       setErrorMessage(
-        isUnavailable
-          ? 'AI Vision model is experiencing brief high demand. Please tap the shutter to retry in a few seconds.'
-          : isFetch
-          ? 'Network interrupted during frame analysis. Please tap the shutter to try again.'
-          : 'Could not identify monument from this camera frame. Try adjusting the angle or lighting.'
+        isFetch
+          ? 'Network interrupted while checking the local place catalogue. Please try again.'
+          : 'Photo recognition is unavailable in this local build. Search the monument name in Discover Bharat.'
       );
     } finally {
       setIsAnalyzing(false);
@@ -467,68 +464,10 @@ export const MonumentARCameraModal: React.FC<MonumentARCameraModalProps> = ({
         return;
       }
 
-      const isUnavailable = err?.message?.includes('503') || err?.message?.includes('high demand') || err?.message?.includes('UNAVAILABLE');
       const isFetch = err?.message?.includes('Failed to fetch') || err?.name === 'TypeError';
-
-      if (isFetch) {
-        // Fallback gracefully so user can continue exploring
-        const defaultSample = SAMPLE_MONUMENTS[0];
-        setAnalysisResult({
-          success: true,
-          identified_name: 'Historic Indian Monument (Offline Archive)',
-          confidence: 0.88,
-          city: 'Agra',
-          state: 'Uttar Pradesh',
-          country: 'India',
-          era: 'Classical Architectural Era',
-          year_built: '17th Century',
-          architectural_style: 'Indo-Islamic / Mughal Classical',
-          short_summary: 'Image processed using local heritage knowledge base. Connect online for live AI vision telemetry.',
-          historical_facts: [
-            'Preserved under the Archaeological Survey of India (ASI) heritage protection act.',
-            'Exhibits monumental symmetry and intricate carved stone masonry.',
-            'Protected national heritage site of cultural and architectural significance.',
-          ],
-          architectural_highlights: ['Monumental Gateway', 'Symmetrical Archways', 'Historic Stone Plinth'],
-          best_time_to_visit: 'October to March during morning golden hour.',
-          unesco_status: true,
-          matched_place: {
-            id: defaultSample.placeId,
-            name: defaultSample.name,
-            city: defaultSample.city,
-            state: defaultSample.state,
-            category: 'UNESCO World Heritage',
-            thumbnail_url: defaultSample.imageUrl,
-            summary: 'Protected historical monument in India.',
-            rating: 4.9,
-            heritage_status: 'UNESCO World Heritage',
-            is_in_database: true,
-          },
-          ar_overlays: [
-            {
-              id: 'dynasty',
-              label: 'Imperial Era',
-              detail: 'Masterwork of historic geometry and royal masonry.',
-              type: 'dynasty',
-              position: { x: 30, y: 35 },
-            },
-            {
-              id: 'architecture',
-              label: 'Stone Architecture',
-              detail: 'Built with optical symmetry and ornamental stone inlays.',
-              type: 'architecture',
-              position: { x: 70, y: 40 },
-            },
-          ],
-        });
-        setErrorMessage('Network was briefly interrupted. Loaded verified heritage archive facts for this monument.');
-      } else {
-        setErrorMessage(
-          isUnavailable
-            ? 'AI Vision model is currently experiencing high demand. Please retry in a moment.'
-            : 'Could not analyze monument image. Please try another photo or angle.'
-        );
-      }
+      setErrorMessage(isFetch
+        ? 'Network interrupted while checking the local place catalogue. Please try again.'
+        : 'Photo recognition is unavailable in this local build. Search the monument name in Discover Bharat.');
     } finally {
       setIsAnalyzing(false);
     }
@@ -1250,8 +1189,8 @@ export const MonumentARCameraModal: React.FC<MonumentARCameraModalProps> = ({
                   {isAnalyzing && (
                     <div className="absolute inset-0 bg-black/60 backdrop-blur-xs flex flex-col items-center justify-center text-white">
                       <Loader2 className="w-8 h-8 text-[#FF671F] animate-spin mb-2" />
-                      <div className="text-xs font-bold">Scanning with Gemini Vision AI...</div>
-                      <div className="text-[10px] text-stone-400">Comparing architectural features with Virasat database</div>
+                      <div className="text-xs font-bold">Preparing local place lookup...</div>
+                      <div className="text-[10px] text-stone-400">Photo recognition is not available in this build</div>
                     </div>
                   )}
                 </div>

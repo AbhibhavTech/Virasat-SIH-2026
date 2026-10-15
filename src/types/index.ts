@@ -51,6 +51,23 @@ export interface RouteResponse {
   google_maps_url?: string;
   traffic_level?: string;
   polyline?: [number, number][];
+  airport_access?: {
+    origin: AirportAccess;
+    destination: AirportAccess;
+  };
+}
+
+export interface AirportAccess {
+  airport: {
+    iata: string;
+    name: string;
+    city: string;
+    state: string;
+    lat: number;
+    lng: number;
+  };
+  ground_transfer_km: number;
+  ground_transfer_note: string;
 }
 
 export interface StateItem {
@@ -408,11 +425,15 @@ export interface TransitComparison {
   train?: TransitOption;
   air?: TransitOption;
   road?: TransitOption;
+  walk?: TransitOption;
 }
 
 export interface AIChatRequest {
   message: string;
+  conversation_id?: string;
   city?: string;
+  selectedCity?: string;
+  currentRoute?: string;
   place_id?: string;
   place_name?: string;
   history?: AIChatMessage[];
@@ -981,6 +1002,7 @@ export interface FestivalLiveInfoResponse {
     festival_name: string;
     upcoming_dates?: string;
     date_variation_notes?: string;
+    typical_season?: string;
     best_experienced_places?: string[];
     best_locations?: string;
     locations?: string;
@@ -1006,6 +1028,7 @@ export interface FestivalLiveInfoResponse {
   sources: Array<{ title: string; uri?: string; url?: string }>;
   last_fetched: string;
   disclaimer?: string;
+  is_live?: boolean;
 }
 
 export interface FestivalLiveSearchResponse {

@@ -32,7 +32,7 @@ import { getMumbaiPlaceSummaries, isMumbaiCity } from '../data/mumbaiDestination
 
 interface CityHubPageProps {
   onSelectPlace: (id: string) => void;
-  onNavigateTab: (tab: NavTab) => void;
+  onNavigateTab: (tab: NavTab, city?: string) => void;
   selectedCity: string;
   onSelectCity: (city: string) => void;
 }
@@ -405,7 +405,7 @@ export const CityHubPage: React.FC<CityHubPageProps> = ({
             className="px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-xl bg-stone-50 hover:bg-stone-100 border border-stone-200 text-[11px] sm:text-xs font-bold text-stone-800 flex items-center gap-1.5 transition cursor-pointer"
           >
             <Layers className="w-3.5 h-3.5 text-stone-700" />
-            <span>28 States DB</span>
+            <span>Discover Bharat</span>
           </button>
           <button
             onClick={() => onNavigateTab('map')}

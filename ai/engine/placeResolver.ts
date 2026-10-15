@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { TripMemoryState } from './conversationMemory';
+import { VERIFIED_HIDDEN_GEMS } from '../../src/data/hiddenGemsData';
 
 export interface ResolvedPlace {
   id: string;
@@ -26,6 +27,7 @@ export interface ResolvedPlace {
   source_url: string;
   image_url: string;
   aliases: string[];
+  verification_status?: string;
 }
 
 export type QueryFocus =
@@ -420,4 +422,39 @@ export function getNearbyPlacesInCity(cityName: string, excludePlaceId?: string)
   const { list } = loadPlacesRegistry();
   const cKey = normalizeKey(cityName);
   return list.filter((p) => normalizeKey(p.city) === cKey && p.id !== excludePlaceId).slice(0, 6);
+}
+
+export function getResolvedPlaceById(placeId: string): ResolvedPlace | undefined {
+  const { list } = loadPlacesRegistry();
+  const verifiedRecord = list.find((place) => place.id === placeId);
+  if (verifiedRecord) return verifiedRecord;
+
+  const candidate = VERIFIED_HIDDEN_GEMS.find((place) => place.id === placeId);
+  if (!candidate) return undefined;
+  return {
+    id: candidate.id,
+    name: candidate.name,
+    canonical_name: candidate.name,
+    city: candidate.city,
+    state: candidate.state,
+    country: 'India',
+    category: candidate.category,
+    summary: candidate.whyInteresting,
+    detailed_description: candidate.whyInteresting,
+    historical_significance: `${candidate.century}: ${candidate.whyInteresting}`,
+    architecture: candidate.category,
+    culture: candidate.whyInteresting,
+    why_visit: candidate.whyInteresting,
+    visiting_hours: 'Not verified in the candidate record; confirm locally.',
+    entry_fee: 'Not verified in the candidate record; confirm locally.',
+    recommended_duration: 'Not provided in the candidate record.',
+    how_to_reach: candidate.accessTips || 'Access details are not verified in the candidate record.',
+    nearby_places: [],
+    coordinates: { lat: candidate.lat, lng: candidate.lng },
+    tags: candidate.tags,
+    source_url: '',
+    image_url: candidate.thumbnailUrl,
+    aliases: [],
+    verification_status: 'curated_candidate_unverified',
+  };
 }

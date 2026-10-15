@@ -1,6 +1,7 @@
 import { PlaceDetail, PlaceSummary } from '../types';
 import { MUMBAI_ATTRACTIONS, MumbaiAttraction } from './mumbaiMasterData';
 import { HiddenGemItem, VERIFIED_HIDDEN_GEMS } from './hiddenGemsData';
+import type { AccuracyStatus, AttractionEntity } from '../types/indiaHierarchy';
 
 export interface MumbaiDestination extends PlaceDetail {
   area?: string;
@@ -115,6 +116,104 @@ export function getMumbaiPlaceSummaries(): MumbaiDestination[] {
     ...MUMBAI_ATTRACTIONS.map(toAttractionDestination),
     ...MUMBAI_GEMS.map(toHiddenGemDestination),
   ];
+}
+
+function toHierarchyCategory(destination: MumbaiDestination): string {
+  const category = `${destination.category} ${destination.heritage_status || ''}`.toLowerCase();
+  if (/museum|gallery|art collection/.test(category)) return 'museums';
+  if (/religious|temple|mosque|church|dargah|spiritual|sacred/.test(category)) return 'religious_cultural';
+  if (/unesco|heritage|historic|colonial|cultural/.test(category)) return 'heritage';
+  if (/fort|monument|memorial|gateway|tower|palace|architecture/.test(category)) return 'monuments';
+  if (/nature|park|garden|wildlife|zoo|beach|hill|lake|forest/.test(category)) return 'nature_parks_zoo';
+  return 'tourist_places';
+}
+
+function durationMinutes(label?: string): number {
+  if (!label) return 0;
+  const value = Number.parseFloat(label);
+  if (!Number.isFinite(value)) return 0;
+  return /minute|min/i.test(label) ? Math.round(value) : Math.round(value * 60);
+}
+
+/** Convert the Mumbai destination catalog into Discover Bharat's flashcard shape. */
+export function getMumbaiHierarchyAttractions(): AttractionEntity[] {
+  return getMumbaiPlaceSummaries().map((destination) => {
+    const verified = !destination.is_hidden_gem_candidate
+      && destination.verification_status?.toLowerCase() === 'verified';
+    const status: AccuracyStatus = verified ? 'VERIFIED' : 'UNVERIFIED';
+    const category = toHierarchyCategory(destination);
+    const categoryLabel = destination.is_hidden_gem_candidate
+      ? 'Hidden Gem Candidate'
+      : destination.category;
+    const isUnesco = /unesco/i.test(`${destination.category} ${destination.heritage_status || ''}`);
+    const source = destination.source_url
+      ? [{
+          source_name: destination.source_name || 'Mumbai destination catalog',
+          source_url: destination.source_url,
+          source_type: 'official_tourism',
+          evidence_note: 'Source recorded in the Mumbai destination catalog.',
+          verification_status: status,
+        }]
+      : undefined;
+
+    const summary = destination.summary || destination.description || `${destination.name} is listed in the Virasat Mumbai destination catalog.`;
+    return {
+      id: destination.id,
+      name: destination.name,
+      city_id: 'mumbai',
+      state_id: 'maharashtra',
+      district: destination.area || 'Mumbai',
+      category,
+      category_label: categoryLabel,
+      topic: isUnesco ? 'Heritage' : undefined,
+      subtopic: isUnesco ? 'UNESCO World Heritage' : undefined,
+      importance_level: destination.is_hidden_gem_candidate ? 'hidden_gem' : 'major',
+      summary,
+      short_description: summary,
+      detailed_description: destination.description,
+      historical_significance: destination.history,
+      address: destination.area || 'Mumbai, Maharashtra',
+      entry_fee: destination.entry_fee_label || 'Not listed; check locally before visiting',
+      fees: {
+        domestic: 0,
+        international: 0,
+        currency: 'INR',
+        status,
+        note: destination.entry_fee_label || 'Entry fee not listed; check locally before visiting.',
+      },
+      opening_hours: destination.visiting_hours || 'Not listed; check locally before visiting',
+      timings: {
+        opening_time: destination.visiting_hours || 'Not listed',
+        closing_time: destination.visiting_hours || 'Not listed',
+        closed_days: [],
+        status,
+        note: destination.visiting_hours,
+      },
+      best_time_to_visit: destination.best_time_to_visit || 'Not listed; check locally before visiting',
+      visit_duration: {
+        recommended_mins: durationMinutes(destination.suggested_duration),
+        label: destination.suggested_duration || 'Not listed',
+        status,
+      },
+      coordinates: destination.coordinates,
+      image_url: destination.image_url || '',
+      thumbnail_url: destination.thumbnail_url || destination.image_url || '',
+      attribution: destination.source_name || 'Virasat Mumbai destination catalog',
+      source_url: destination.source_url,
+      source_name: destination.source_name,
+      source_type: destination.is_hidden_gem_candidate ? 'curated_candidate' : 'official_tourism',
+      provenance_type: destination.is_hidden_gem_candidate ? 'hidden_gem_candidate' : 'verified_catalog',
+      status,
+      verification_status: verified ? 'verified' : 'pending',
+      verification_note: destination.is_hidden_gem_candidate
+        ? 'Candidate listing; independently verify visitor information before travel.'
+        : undefined,
+      source_quality: destination.source_url ? 'official_site' : 'missing',
+      sources: source,
+      features: destination.features,
+      tags: destination.tags,
+    };
+  });
 }
 
 export function getMumbaiDestinationById(id: string): MumbaiDestination | undefined {

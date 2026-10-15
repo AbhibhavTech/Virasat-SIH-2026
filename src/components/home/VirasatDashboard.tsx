@@ -635,7 +635,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
       {/* 1. HERO SECTION: UNIVERSAL SEARCH & 7-SECOND HERITAGE SLIDESHOW           */}
       {/* ========================================================================= */}
       <section
-        className="relative w-full rounded-2xl sm:rounded-[36px] overflow-hidden border border-[#EFE8DF] shadow-md min-h-[470px] sm:min-h-[550px] lg:min-h-[580px] flex flex-col justify-between p-4 sm:p-8 lg:p-10 select-none bg-stone-900/5"
+        className="relative w-full rounded-2xl sm:rounded-[36px] overflow-hidden border border-[#EFE8DF] shadow-lg min-h-[480px] sm:min-h-[560px] lg:min-h-[600px] flex flex-col justify-between p-4 sm:p-8 lg:p-10 select-none bg-stone-900/5"
         aria-label="Incredible India Living Heritage Slideshow"
       >
         {/* ========================================================================= */}
@@ -997,12 +997,61 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
           </div>
         </div>
 
+        <div className="absolute bottom-4 left-4 right-4 z-20 hidden items-end justify-between gap-4 lg:flex">
+          <button
+            type="button"
+            onClick={() => onSelectPlace?.(HERO_HERITAGE_SLIDES[activeSlideIdx].id)}
+            className="group flex max-w-sm items-center gap-3 rounded-2xl border border-white/70 bg-white/90 px-3 py-2.5 text-left shadow-lg backdrop-blur-md transition hover:bg-white"
+          >
+            <img
+              src={HERO_HERITAGE_SLIDES[activeSlideIdx].imageUrl}
+              alt=""
+              className="h-12 w-14 rounded-xl object-cover"
+            />
+            <span className="min-w-0">
+              <span className="block text-[10px] font-bold uppercase tracking-[0.14em] text-[#FF671F]">Featured today</span>
+              <span className="block truncate font-serif text-sm font-bold text-stone-900">{HERO_HERITAGE_SLIDES[activeSlideIdx].name}</span>
+              <span className="block truncate text-[11px] text-stone-500">{HERO_HERITAGE_SLIDES[activeSlideIdx].location}</span>
+            </span>
+            <ArrowRight className="h-4 w-4 shrink-0 text-[#FF671F] transition group-hover:translate-x-0.5" />
+          </button>
+          <div className="flex items-center gap-2 rounded-full border border-white/70 bg-white/90 px-2 py-2 shadow-lg backdrop-blur-md">
+            <button
+              type="button"
+              aria-label="Previous featured destination"
+              onClick={() => setActiveSlideIdx((index) => (index - 1 + HERO_HERITAGE_SLIDES.length) % HERO_HERITAGE_SLIDES.length)}
+              className="flex h-8 w-8 items-center justify-center rounded-full text-stone-700 transition hover:bg-stone-100"
+            >
+              <ChevronLeft className="h-4 w-4" />
+            </button>
+            <div className="flex items-center gap-1.5 px-1" aria-label="Featured destination slideshow">
+              {HERO_HERITAGE_SLIDES.map((slide, index) => (
+                <button
+                  key={slide.id}
+                  type="button"
+                  aria-label={`Show ${slide.name}`}
+                  onClick={() => setActiveSlideIdx(index)}
+                  className={`h-2 rounded-full transition-all ${index === activeSlideIdx ? 'w-6 bg-[#FF671F]' : 'w-2 bg-stone-300 hover:bg-stone-400'}`}
+                />
+              ))}
+            </div>
+            <button
+              type="button"
+              aria-label="Next featured destination"
+              onClick={() => setActiveSlideIdx((index) => (index + 1) % HERO_HERITAGE_SLIDES.length)}
+              className="flex h-8 w-8 items-center justify-center rounded-full text-stone-700 transition hover:bg-stone-100"
+            >
+              <ChevronRight className="h-4 w-4" />
+            </button>
+          </div>
+        </div>
+
         {/* Bottom Right Floating AI Assistant Quick Trigger */}
         <button
           type="button"
           onClick={() => onNavigateTab('ai')}
           className="hidden sm:flex absolute bottom-4 right-4 sm:bottom-6 sm:right-6 lg:bottom-8 lg:right-8 bg-white/95 hover:bg-white backdrop-blur-md px-3.5 py-2.5 rounded-2xl border border-white/90 hover:border-orange-300 shadow-md hover:shadow-lg transition-all duration-200 items-center gap-3 text-stone-800 z-20 cursor-pointer group active:scale-95 text-left"
-          title="Open Virasat AI Assistant"
+          title="Open Virasat AI Astra"
         >
           {/* AI Logo Icon */}
           <div className="relative">
@@ -1018,7 +1067,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
           <div className="leading-tight pr-1">
             <div className="flex items-center gap-1.5">
               <span className="text-[11px] font-bold text-[#0B192C] tracking-tight group-hover:text-[#FF671F] transition-colors flex items-center gap-1">
-                Virasat AI <Sparkles className="w-3 h-3 text-[#FF671F]" />
+                Virasat AI Astra <Sparkles className="w-3 h-3 text-[#FF671F]" />
               </span>
               <span className="text-[9px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.2 rounded-full border border-emerald-200">
                 Online
@@ -1035,23 +1084,25 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
       {/* ========================================================================= */}
       {/* 2. EXPLORE NEAR YOU (REAL GEOLOCATION WITH PERMISSION)                     */}
       {/* ========================================================================= */}
-      <section id="explore-near-you" className="rounded-2xl sm:rounded-3xl bg-white border border-[#EFE8DF] p-3.5 sm:p-8 shadow-xs space-y-4 sm:space-y-6">
+      <section id="explore-near-you" className="rounded-2xl sm:rounded-3xl bg-gradient-to-br from-white via-[#FBFFFC] to-[#FFF7EF] border border-[#E8E2D8] p-4 sm:p-7 shadow-sm space-y-4 sm:space-y-5 relative overflow-hidden">
+        <div className="absolute -top-24 -right-20 w-72 h-72 rounded-full bg-emerald-100/45 blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-28 -left-16 w-64 h-64 rounded-full bg-orange-100/50 blur-3xl pointer-events-none" />
         <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-3 sm:gap-4">
-          <div>
+          <div className="relative z-10">
             <div className="inline-flex items-center gap-1 text-[11px] sm:text-xs font-bold text-[#046A38] uppercase tracking-wider mb-1">
               <Navigation className="w-3.5 h-3.5 text-[#046A38]" />
-              <span>Real-Time Proximity</span>
+              <span>Nearby discovery</span>
             </div>
             <h2 className="font-serif text-xl sm:text-3xl font-bold text-stone-900 tracking-tight">
               Explore Near You
             </h2>
             <p className="text-xs sm:text-sm text-stone-500 mt-1 font-normal">
-              Find verified monuments, fortresses, and heritage temples nearest to your current location
+              Find remarkable places around you or start from a popular Indian city.
             </p>
           </div>
 
           {/* Action to trigger or re-trigger location */}
-          <div className="flex flex-wrap items-center gap-2">
+          {locationStatus !== 'idle' && <div className="flex flex-wrap items-center gap-2 relative z-10">
             {locationStatus === 'ready' && (
               <select
                 value={nearbyRadius}
@@ -1088,43 +1139,65 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
                 </>
               )}
             </button>
-          </div>
+          </div>}
         </div>
 
         {/* State 1: Idle Prompt */}
         {locationStatus === 'idle' && (
-          <div className="rounded-2xl bg-[#F8FBF9] border border-[#DCEDE2] p-6 text-center space-y-3">
-            <div className="w-12 h-12 rounded-2xl bg-[#EBF5EE] text-[#046A38] flex items-center justify-center mx-auto shadow-2xs">
-              <Compass className="w-6 h-6" />
-            </div>
-            <div className="max-w-md mx-auto">
-              <h3 className="font-serif text-lg font-bold text-stone-900">
-                Discover Heritage Around Your City
-              </h3>
-              <p className="text-xs text-stone-600 mt-1 leading-relaxed">
-                Allow browser location permission to compute authentic geodesic distances to monuments, or choose from major historic centers below:
-              </p>
+          <div className="relative z-10 rounded-2xl bg-white/85 backdrop-blur-xs border border-[#DCEDE2] shadow-xs overflow-hidden grid md:grid-cols-[0.9fr_1.25fr]">
+            <div className="p-5 sm:p-6 bg-gradient-to-br from-[#075D36] to-[#043F27] text-white flex flex-col justify-between gap-5">
+              <div className="space-y-3">
+                <div className="w-11 h-11 rounded-2xl bg-white/12 border border-white/15 flex items-center justify-center shadow-sm">
+                  <Navigation className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold">See what&apos;s nearby</h3>
+                  <p className="text-xs sm:text-sm text-emerald-50/85 mt-1.5 leading-relaxed max-w-sm">
+                    Use your device location to discover verified heritage places and real travel distances around you.
+                  </p>
+                </div>
+              </div>
+              <div>
+                <button
+                  onClick={handleDetectLocation}
+                  className="w-full sm:w-auto px-5 py-2.5 rounded-xl bg-[#FF671F] hover:bg-[#E45716] text-white text-xs sm:text-sm font-bold flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all active:scale-[0.98] cursor-pointer"
+                >
+                  <Navigation className="w-4 h-4" />
+                  <span>Use my location</span>
+                  <ArrowRight className="w-4 h-4" />
+                </button>
+                <p className="text-[10px] text-emerald-100/70 mt-2">Location is used only to calculate nearby results.</p>
+              </div>
             </div>
 
-            <div className="pt-2 flex flex-wrap items-center justify-center gap-2">
-              <span className="text-xs font-bold text-stone-500">Popular hubs:</span>
+            <div className="p-5 sm:p-6">
+              <div className="mb-4">
+                <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#FF671F]">Choose a starting point</span>
+                <h3 className="font-serif text-lg sm:text-xl font-bold text-stone-900 mt-1">Popular heritage gateways</h3>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
               {[
-                { name: 'Delhi', lat: 28.6139, lng: 77.209 },
-                { name: 'Mumbai', lat: 18.922, lng: 72.8347 },
-                { name: 'Jaipur', lat: 26.9124, lng: 75.7873 },
-                { name: 'Agra', lat: 27.1767, lng: 78.0081 },
-                { name: 'Varanasi', lat: 25.3176, lng: 82.9739 },
-                { name: 'Bengaluru', lat: 12.9716, lng: 77.5946 },
-                { name: 'Kolkata', lat: 22.5726, lng: 88.3639 },
+                { name: 'Delhi', region: 'Capital heritage', lat: 28.6139, lng: 77.209 },
+                { name: 'Mumbai', region: 'Coastal icons', lat: 18.922, lng: 72.8347 },
+                { name: 'Jaipur', region: 'Royal Rajasthan', lat: 26.9124, lng: 75.7873 },
+                { name: 'Agra', region: 'Mughal heritage', lat: 27.1767, lng: 78.0081 },
+                { name: 'Varanasi', region: 'Sacred ghats', lat: 25.3176, lng: 82.9739 },
+                { name: 'Bengaluru', region: 'Southern gateway', lat: 12.9716, lng: 77.5946 },
               ].map((c) => (
                 <button
                   key={c.name}
                   onClick={() => handleSelectFallbackCity(c)}
-                  className="px-3 py-1 rounded-full bg-white border border-stone-200 hover:border-emerald-500 text-xs font-semibold text-stone-700 shadow-2xs transition"
+                  className="group p-3 rounded-xl bg-[#FAF8F5] hover:bg-white border border-[#E8E2D8] hover:border-[#FF9D68] text-left shadow-2xs hover:shadow-sm transition-all active:scale-[0.98] cursor-pointer"
                 >
-                  {c.name}
+                  <div className="flex items-center justify-between gap-2">
+                    <MapPin className="w-4 h-4 text-[#FF671F] shrink-0" />
+                    <ChevronRight className="w-3.5 h-3.5 text-stone-300 group-hover:text-[#FF671F] group-hover:translate-x-0.5 transition-all" />
+                  </div>
+                  <div className="text-xs sm:text-sm font-bold text-stone-900 mt-2">{c.name}</div>
+                  <div className="text-[10px] text-stone-500 mt-0.5">{c.region}</div>
                 </button>
               ))}
+              </div>
             </div>
           </div>
         )}
@@ -1241,7 +1314,23 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
               </p>
             </div>
 
-            <div className="flex items-center justify-between sm:justify-end gap-3 w-full sm:w-auto">
+            <div className="flex flex-wrap items-center justify-between sm:justify-end gap-2.5 w-full sm:w-auto">
+              <div className="flex items-center rounded-full border border-stone-200 bg-white p-1 shadow-2xs">
+                {(['All', 'Forts', 'Temples', 'UNESCO'] as const).map((category) => (
+                  <button
+                    key={category}
+                    type="button"
+                    onClick={() => setActivePopularCategory(category)}
+                    className={`rounded-full px-2.5 py-1 text-[10px] font-bold transition sm:px-3 sm:text-[11px] ${
+                      activePopularCategory === category
+                        ? 'bg-[#FF671F] text-white shadow-sm'
+                        : 'text-stone-500 hover:bg-orange-50 hover:text-[#C64F16]'
+                    }`}
+                  >
+                    {category}
+                  </button>
+                ))}
+              </div>
               <button
                 onClick={() => onNavigateTab('dashboard')}
                 className="text-xs font-bold text-[#FF671F] hover:text-[#E65100] px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full hover:bg-orange-50/60 transition flex items-center gap-1 cursor-pointer"
@@ -1284,7 +1373,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
           id="popular-destinations-grid"
           className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-4 overflow-x-auto pb-1 scrollbar-none"
         >
-          {popularDestinationsList.map((place, pIdx) => (
+          {filteredPopular.map((place, pIdx) => (
             <ScrollReveal
               key={place.id}
               animation="fade-up"
@@ -1301,7 +1390,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
                 }}
                 className="group cursor-pointer rounded-2xl bg-white border border-[#EFE8DF] overflow-hidden shadow-2xs hover:shadow-md hover:border-[#FF671F]/50 transition-all duration-200 flex flex-col justify-between h-full"
               >
-                <div className="h-28 sm:h-40 w-full overflow-hidden bg-stone-100 relative">
+                <div className="h-32 sm:h-44 w-full overflow-hidden bg-stone-100 relative">
                   <img
                     src={getMonumentRealImage(place.id, place.imageUrl)}
                     alt={place.name}
@@ -1315,6 +1404,13 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
                       }
                     }}
                   />
+                  <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/60 to-transparent" />
+                  <span className="absolute left-2.5 top-2.5 rounded-full border border-white/30 bg-black/45 px-2 py-1 text-[9px] font-bold uppercase tracking-wide text-white backdrop-blur-sm">
+                    {place.badge}
+                  </span>
+                  <span className="absolute bottom-2.5 left-2.5 inline-flex items-center gap-1 rounded-full bg-white/92 px-2 py-1 text-[10px] font-bold text-stone-800 shadow-sm">
+                    <Star className="h-3 w-3 fill-amber-400 text-amber-400" /> {place.rating}
+                  </span>
                 </div>
 
                 <div className="p-2.5 sm:p-3.5 flex items-center justify-between gap-1.5 sm:gap-2">
@@ -1334,6 +1430,33 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
             </ScrollReveal>
           ))}
         </div>
+      </section>
+
+      <section className="grid gap-3 sm:grid-cols-3 sm:gap-4" aria-label="Plan your next discovery">
+        {[
+          { title: 'Build a trip', text: 'Choose a city, pace and interests for a practical itinerary.', action: 'Plan a journey', icon: Compass, onClick: () => onNavigateTab('itinerary'), tone: 'from-[#FFF2E8] to-white', accent: 'text-[#D7581B]' },
+          { title: 'Find a festival', text: 'Browse celebrations by date, region and tradition.', action: 'Open calendar', icon: Landmark, onClick: () => onNavigateTab('festivals'), tone: 'from-[#F5F0FF] to-white', accent: 'text-[#7049A5]' },
+          { title: 'Ask Virasat AI', text: 'Get a personal India travel answer with route-aware context.', action: 'Start a conversation', icon: Bot, onClick: () => onNavigateTab('ai'), tone: 'from-[#EAF9F1] to-white', accent: 'text-[#047044]' },
+        ].map((item) => {
+          const Icon = item.icon;
+          return (
+            <button
+              key={item.title}
+              type="button"
+              onClick={item.onClick}
+              className={`group rounded-2xl border border-stone-200/80 bg-gradient-to-br ${item.tone} p-5 text-left shadow-2xs transition-all hover:-translate-y-0.5 hover:shadow-md`}
+            >
+              <div className={`mb-4 flex h-10 w-10 items-center justify-center rounded-xl bg-white shadow-sm ${item.accent}`}>
+                <Icon className="h-5 w-5" />
+              </div>
+              <h3 className="font-serif text-lg font-bold text-stone-900">{item.title}</h3>
+              <p className="mt-1.5 min-h-10 text-xs leading-relaxed text-stone-600">{item.text}</p>
+              <span className={`mt-4 inline-flex items-center gap-1 text-xs font-bold ${item.accent}`}>
+                {item.action} <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+              </span>
+            </button>
+          );
+        })}
       </section>
 
       {/* ========================================================================= */}

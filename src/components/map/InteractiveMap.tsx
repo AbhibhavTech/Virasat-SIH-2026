@@ -116,6 +116,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
   const clusterLayerRef = useRef<L.LayerGroup | null>(null);
   const routePolylineRef = useRef<L.LayerGroup | L.Polyline | null>(null);
   const routeMarkersRef = useRef<L.LayerGroup | null>(null);
+  const railwayNetworkLayerRef = useRef<L.TileLayer | null>(null);
   const searchHighlightRef = useRef<L.LayerGroup | null>(null);
   const userLocationMarkerRef = useRef<L.Marker | null>(null);
   const userAccuracyCircleRef = useRef<L.Circle | null>(null);
@@ -247,6 +248,13 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
     if (isNaN(lat) || isNaN(lng) || !Number.isFinite(lat) || !Number.isFinite(lng)) return null;
     if (lat < -90 || lat > 90 || lng < -180 || lng > 180) return null;
     return [lat, lng];
+  };
+
+  // Route geometry must stay on the India map. A bad geocoder/provider response
+  // should never be rendered as a straight line across a border or the ocean.
+  const isIndiaRoutePolyline = (points: [number, number][]) => {
+    if (points.length < 2) return false;
+    return points.every(([lat, lng]) => lat >= 6 && lat <= 37.5 && lng >= 68 && lng <= 98);
   };
 
   const extractValidCoordinates = (item: any): [number, number] | null => {
@@ -400,6 +408,18 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
         maxZoom: 18,
       }).addTo(map);
 
+      // Detailed OpenStreetMap railway infrastructure overlay. It is enabled
+      // only for Rail mode so users can compare the highlighted corridor with
+      // the underlying station and track network at closer zoom levels.
+      railwayNetworkLayerRef.current = L.tileLayer(
+        'https://{s}.tiles.openrailwaymap.org/standard/{z}/{x}/{y}.png',
+        {
+          attribution: '&copy; OpenRailwayMap contributors',
+          maxZoom: 19,
+          opacity: 0.58,
+        }
+      );
+
       // Layer groups
       clusterLayerRef.current = L.layerGroup().addTo(map);
       routeMarkersRef.current = L.layerGroup().addTo(map);
@@ -425,6 +445,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
           clusterLayerRef.current.clearLayers();
         } catch {}
       }
+      railwayNetworkLayerRef.current = null;
       if (userAccuracyCircleRef.current) {
         try {
           userAccuracyCircleRef.current.remove();
@@ -456,6 +477,22 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
       }
     }
   }, [selectedCity]);
+
+  useEffect(() => {
+    const map = mapInstanceRef.current;
+    const railLayer = railwayNetworkLayerRef.current;
+    if (!map || !railLayer) return;
+
+    if (selectedMode === 'TRANSIT' && isRoutingOpen) {
+      if (!map.hasLayer(railLayer)) railLayer.addTo(map);
+      railLayer.bringToFront();
+      if (routePolylineRef.current && 'bringToFront' in routePolylineRef.current) {
+        (routePolylineRef.current as L.Polyline).bringToFront();
+      }
+    } else if (map.hasLayer(railLayer)) {
+      map.removeLayer(railLayer);
+    }
+  }, [selectedMode, isRoutingOpen]);
 
   // Create popup HTML for single markers
   const createSinglePopupContent = (item: MapPointItem): HTMLElement => {
@@ -1181,13 +1218,13 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
               mode: 'FLIGHT' as any,
               distance_km: distKm,
               duration_minutes: estMins,
-              duration_formatted: `${Math.floor(estMins / 60)}h ${estMins % 60}m direct flight`,
+              duration_formatted: `${Math.floor(estMins / 60)}h ${estMins % 60}m air-time estimate`,
               fare: 0,
               polyline: polyCoords,
               steps_summary: [
-                `Board flight at ${origAirport.name} (${origAirport.iata}), ${origAirport.city}`,
-                `Direct flight corridor (${distKm} km geodesic distance)`,
-                `Arrive at ${destAirport.name} (${destAirport.iata}), ${destAirport.city}`,
+                `${originName || originId} → ${origAirport.name} (${origAirport.iata})${origLat !== undefined && origLng !== undefined ? `: about ${findNearestAirport(origLat, origLng).distanceKm} km ground transfer` : ''}`,
+                `Airport-to-airport corridor: ${origAirport.iata} → ${destAirport.iata} (${distKm} km geodesic distance; schedule not verified)`,
+                `${destAirport.name} (${destAirport.iata}) → ${destName || destId}${destLat !== undefined && destLng !== undefined ? `: about ${findNearestAirport(destLat, destLng).distanceKm} km onward transfer` : ''}`,
               ],
             } as any,
           ],
@@ -1208,8 +1245,11 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
     // GROUND / TRANSIT / WALK MODES
     try {
       const res = await api.getRoutes({
-        origin: originId,
-        destination: destId,
+        // Send the readable selected labels with their exact coordinates. IDs
+        // such as "city-mumbai" are UI identifiers and should never leak into
+        // route guidance or station labels.
+        origin: originName || originId,
+        destination: destName || destId,
         mode: mode as TransportMode,
         city: selectedCity,
         orig_lat: origLat,
@@ -1243,14 +1283,30 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
       const opt: any = res.options?.find((o: any) => o.mode === mode) || res.options?.[0];
 
       let polyCoords: [number, number][] = [];
-      if (opt && opt.polyline && Array.isArray(opt.polyline) && opt.polyline.length > 0) {
-        polyCoords = opt.polyline
+      const geometryCandidates = [
+        opt?.polyline,
+        mode === 'TRANSIT' ? (res as any).rail_route?.polyline : undefined,
+        mode === 'DRIVE' || mode === 'WALK' ? (res as any).road_route?.polyline : undefined,
+        (res as any).polyline,
+      ];
+      const geometry = geometryCandidates.find((candidate) => Array.isArray(candidate) && candidate.length > 1);
+      if (geometry) {
+        polyCoords = geometry
           .map((pt: any) => (Array.isArray(pt) ? parseLatLng(pt[0], pt[1]) : parseLatLng(pt?.lat, pt?.lng)))
           .filter((pt: [number, number] | null): pt is [number, number] => pt !== null);
-      } else if (res.origin?.latitude && res.destination?.latitude) {
-        const p1 = parseLatLng(res.origin.latitude, res.origin.longitude);
-        const p2 = parseLatLng(res.destination.latitude, res.destination.longitude);
-        if (p1 && p2) polyCoords = [p1, p2];
+      }
+
+      // Do not fall back to [origin, destination]. That creates the misleading
+      // straight line the Route Studio used to show when a provider response was
+      // missing. Keep the route panel usable and explain what needs attention.
+      if (!isIndiaRoutePolyline(polyCoords)) {
+        setRouteError(
+          mode === 'TRANSIT'
+            ? 'No verified Indian railway corridor was returned for these points.'
+            : 'No verified road corridor was returned for these points.'
+        );
+        setIsCalculatingRoute(false);
+        return;
       }
 
       if (polyCoords.length > 0) {
@@ -1917,7 +1973,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
     activeRoute?.options?.find((o: any) => o.mode === selectedMode) || activeRoute?.options?.[0];
 
   return (
-    <div className="space-y-3 font-sans">
+    <div className="flex h-full min-h-0 flex-col gap-3 font-sans" style={{ height }}>
       {/* Clean, Minimal Map Toolbar */}
       <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-3 p-3.5 rounded-2xl bg-white border border-stone-200/80 shadow-xs">
         {/* Rapid Regional Jumps */}
@@ -2017,7 +2073,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
             <span>Route Studio</span>
           </button>
 
-          {/* Heritage Route Analyzer (Gemini AI Powered) */}
+          {/* Local Heritage Route Analyzer */}
           <button
             onClick={() => {
               setIsHeritageAnalyzerOpen(!isHeritageAnalyzerOpen);
@@ -2030,7 +2086,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
                 ? 'bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 text-white border-amber-800 shadow-sm'
                 : 'bg-amber-50 text-amber-900 border-amber-300 hover:bg-amber-100 shadow-2xs'
             }`}
-            title="Analyze multi-monument transit routes and historical significance with Gemini API"
+            title="Estimate a multi-monument route from saved place coordinates"
           >
             <Sparkles className={`w-3.5 h-3.5 ${isHeritageAnalyzerOpen ? 'text-amber-200' : 'text-amber-600'}`} />
             <span>Heritage Route Analyzer</span>
@@ -2046,7 +2102,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
       </div>
 
       {/* Main Map Container */}
-      <div className="relative rounded-3xl overflow-hidden border border-stone-200/80 bg-stone-100 shadow-md" style={{ height }}>
+      <div className="relative min-h-0 flex-1 rounded-3xl overflow-hidden border border-stone-200/80 bg-stone-100 shadow-md">
         {/* Leaflet Canvas */}
         <div ref={mapContainerRef} className="w-full h-full z-0" />
 
@@ -2212,7 +2268,11 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
                 <div className="min-w-0">
                   <h4 className="text-xs sm:text-sm font-bold text-stone-900 truncate">Virasat Route Studio</h4>
                   <p className="text-[10px] text-stone-500 truncate">
-                    {activeOption ? `${activeOption.duration_formatted || `${activeOption.duration_minutes}m`} • ${activeOption.distance_km} km` : 'Multi-modal transit engine'}
+                    {activeOption
+                      ? `${activeOption.duration_formatted || `${activeOption.duration_minutes}m`} • ${activeOption.distance_km} km${
+                          selectedMode === 'TRANSIT' ? ' • Track-aligned rail corridor' : ''
+                        }`
+                      : 'Multi-modal transit engine'}
                   </p>
                 </div>
               </div>
@@ -2521,6 +2581,25 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
                     );
                   })}
                 </div>
+
+                {resolvedFlightInfo.origAirport && resolvedFlightInfo.destAirport && (
+                  <div className="rounded-xl border border-sky-100 bg-sky-50/70 px-2.5 py-2 text-[10px] text-sky-950">
+                    <div className="mb-1 flex items-center gap-1 font-bold uppercase tracking-wide text-sky-800">
+                      <Plane className="h-3 w-3" /> Airport gateways
+                    </div>
+                    <div className="grid grid-cols-2 gap-2 leading-snug">
+                      <div>
+                        <span className="font-semibold">Start:</span> {resolvedFlightInfo.origAirport.city} ({resolvedFlightInfo.origAirport.iata})
+                        {resolvedFlightInfo.origDistToAirport > 0 && ` · ${resolvedFlightInfo.origDistToAirport} km ground transfer`}
+                      </div>
+                      <div>
+                        <span className="font-semibold">Arrival:</span> {resolvedFlightInfo.destAirport.city} ({resolvedFlightInfo.destAirport.iata})
+                        {resolvedFlightInfo.destDistToAirport > 0 && ` · ${resolvedFlightInfo.destDistToAirport} km onward transfer`}
+                      </div>
+                    </div>
+                    <p className="mt-1 text-sky-700">Airport access is mapped; use Flight search to check a live schedule and fare.</p>
+                  </div>
+                )}
 
                 {/* Validation message if endpoints incomplete */}
                 {!isRouteValid && (

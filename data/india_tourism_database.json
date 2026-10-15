@@ -2,8 +2,8 @@
   "title": "Discover Bharat - Consolidated India Tourism Database",
   "version": "2026.3.0",
   "states_count": 36,
-  "cities_count": 169,
-  "attractions_count": 561,
+  "cities_count": 171,
+  "attractions_count": 530,
   "accuracy_disclaimer": "Official and curated heritage dataset of India across 28 States and 8 Union Territories.",
   "states": [
     {
@@ -13328,7 +13328,7 @@
           },
           "lat": 25.5941,
           "lng": 85.1376,
-          "places_count": 8,
+          "places_count": 6,
           "heritage": [
             {
               "id": "bihar_014",
@@ -13555,178 +13555,6 @@
                     "Convenient base for sightseeing"
                   ],
                   "image_url": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Generic hotel image fallback (hotel-specific direct image not verified)",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                }
-              ],
-              "features": {
-                "map": true,
-                "navigation": true,
-                "ai": true,
-                "3d": false
-              }
-            },
-            {
-              "id": "bihar_019",
-              "name": "Vaishali",
-              "canonical_name": "Vaishali",
-              "aliases": [],
-              "city_id": "patna",
-              "state_id": "bihar",
-              "district": "Vaishali district",
-              "area": "Vaishali district",
-              "locality": "Vaishali district",
-              "source_city": "Vaishali district",
-              "category": "heritage",
-              "category_label": "Archaeological Heritage",
-              "topic": "Heritage",
-              "subtopic": "Heritage",
-              "importance_level": "major",
-              "summary": "An ancient city associated with Buddhism, Jainism, and early republican history.",
-              "short_description": "An ancient city associated with Buddhism, Jainism, and early republican history.",
-              "detailed_description": "An ancient city associated with Buddhism, Jainism, and early republican history.",
-              "historical_significance": "An ancient city associated with Buddhism, Jainism, and early republican history.",
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED",
-                "free_entry": true
-              },
-              "entry_fee": "Free or paid depending on attraction; verify current rates",
-              "timings": {
-                "opening_time": "09:00 AM",
-                "closing_time": "06:00 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "opening_hours": "Usually daytime; timings vary by attraction",
-              "best_time_to_visit": "October to March",
-              "visit_duration": {
-                "recommended_mins": 120,
-                "label": "2–4 hours",
-                "status": "VERIFIED"
-              },
-              "suggested_duration": "2–4 hours",
-              "coordinates": {
-                "lat": 20.5937,
-                "lng": 78.9629
-              },
-              "lat": 20.5937,
-              "lng": 78.9629,
-              "image_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85",
-              "thumbnail_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85",
-              "attribution": "Bihar Tourism Development Corporation",
-              "source_page": "https://www.tourism.gov.in",
-              "source_url": "https://www.tourism.gov.in",
-              "source_name": "Bihar Tourism",
-              "status": "VERIFIED",
-              "verification_status": "verified",
-              "visitor_notes": [
-                "Dress respectfully at religious sites",
-                "Check local timings and access rules before visiting"
-              ],
-              "map_search": "Vaishali Bihar",
-              "tags": [
-                "archaeological_heritage",
-                "Bihar"
-              ],
-              "hotels": [
-                {
-                  "id": "bihar_019_hotel_01",
-                  "name": "Hotel Royal Vaishali",
-                  "category": "Budget",
-                  "price_range": "₹1,500–₹2,500",
-                  "rating": 4,
-                  "area": "Hajipur / Vaishali",
-                  "highlights": [
-                    "Hajipur / Vaishali accommodation base",
-                    "Near local market and transport",
-                    "Convenient base for sightseeing"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Generic hotel image fallback (hotel-specific direct image not verified)",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                },
-                {
-                  "id": "bihar_019_hotel_02",
-                  "name": "Hotel Gautam International",
-                  "category": "Mid-Range",
-                  "price_range": "₹3,000–₹5,000",
-                  "rating": 4.1,
-                  "area": "Hajipur / Vaishali",
-                  "highlights": [
-                    "Hajipur / Vaishali accommodation base",
-                    "Near local market and transport",
-                    "Convenient base for sightseeing"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Generic hotel image fallback (hotel-specific direct image not verified)",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                },
-                {
-                  "id": "bihar_019_hotel_03",
-                  "name": "Vaishali Tourist Lodge",
-                  "category": "Luxury",
-                  "price_range": "₹5,000–₹8,000",
-                  "rating": 4.2,
-                  "area": "Hajipur / Vaishali",
-                  "highlights": [
-                    "Hajipur / Vaishali accommodation base",
-                    "Near local market and transport",
-                    "Convenient base for sightseeing"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1601918774946-25832a4e37d0?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Generic hotel image fallback (hotel-specific direct image not verified)",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                }
-              ],
-              "recommended_hotels": [
-                {
-                  "id": "bihar_019_hotel_01",
-                  "name": "Hotel Royal Vaishali",
-                  "category": "Budget",
-                  "price_range": "₹1,500–₹2,500",
-                  "rating": 4,
-                  "area": "Hajipur / Vaishali",
-                  "highlights": [
-                    "Hajipur / Vaishali accommodation base",
-                    "Near local market and transport",
-                    "Convenient base for sightseeing"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Generic hotel image fallback (hotel-specific direct image not verified)",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                },
-                {
-                  "id": "bihar_019_hotel_02",
-                  "name": "Hotel Gautam International",
-                  "category": "Mid-Range",
-                  "price_range": "₹3,000–₹5,000",
-                  "rating": 4.1,
-                  "area": "Hajipur / Vaishali",
-                  "highlights": [
-                    "Hajipur / Vaishali accommodation base",
-                    "Near local market and transport",
-                    "Convenient base for sightseeing"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Generic hotel image fallback (hotel-specific direct image not verified)",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                },
-                {
-                  "id": "bihar_019_hotel_03",
-                  "name": "Vaishali Tourist Lodge",
-                  "category": "Luxury",
-                  "price_range": "₹5,000–₹8,000",
-                  "rating": 4.2,
-                  "area": "Hajipur / Vaishali",
-                  "highlights": [
-                    "Hajipur / Vaishali accommodation base",
-                    "Near local market and transport",
-                    "Convenient base for sightseeing"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1601918774946-25832a4e37d0?auto=format&fit=crop&w=1200&q=85",
                   "image_source": "Generic hotel image fallback (hotel-specific direct image not verified)",
                   "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
                 }
@@ -13965,178 +13793,6 @@
                     "Convenient base for sightseeing"
                   ],
                   "image_url": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Generic hotel image fallback (hotel-specific direct image not verified)",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                }
-              ],
-              "features": {
-                "map": true,
-                "navigation": true,
-                "ai": true,
-                "3d": false
-              }
-            },
-            {
-              "id": "bihar_018",
-              "name": "Kesaria Stupa",
-              "canonical_name": "Kesaria Stupa",
-              "aliases": [],
-              "city_id": "patna",
-              "state_id": "bihar",
-              "district": "East Champaran district",
-              "area": "East Champaran district",
-              "locality": "East Champaran district",
-              "source_city": "East Champaran district",
-              "category": "monuments",
-              "category_label": "Buddhist Heritage",
-              "topic": "Heritage",
-              "subtopic": "Monuments",
-              "importance_level": "major",
-              "summary": "A massive ancient Buddhist stupa and important archaeological monument.",
-              "short_description": "A massive ancient Buddhist stupa and important archaeological monument.",
-              "detailed_description": "A massive ancient Buddhist stupa and important archaeological monument.",
-              "historical_significance": "A massive ancient Buddhist stupa and important archaeological monument.",
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED",
-                "free_entry": true
-              },
-              "entry_fee": "Free or paid depending on attraction; verify current rates",
-              "timings": {
-                "opening_time": "09:00 AM",
-                "closing_time": "06:00 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "opening_hours": "Usually daytime; timings vary by attraction",
-              "best_time_to_visit": "October to March",
-              "visit_duration": {
-                "recommended_mins": 120,
-                "label": "2–4 hours",
-                "status": "VERIFIED"
-              },
-              "suggested_duration": "2–4 hours",
-              "coordinates": {
-                "lat": 20.5937,
-                "lng": 78.9629
-              },
-              "lat": 20.5937,
-              "lng": 78.9629,
-              "image_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85",
-              "thumbnail_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85",
-              "attribution": "Bihar Tourism Development Corporation",
-              "source_page": "https://www.tourism.gov.in",
-              "source_url": "https://www.tourism.gov.in",
-              "source_name": "Bihar Tourism",
-              "status": "VERIFIED",
-              "verification_status": "verified",
-              "visitor_notes": [
-                "Dress respectfully at religious sites",
-                "Check local timings and access rules before visiting"
-              ],
-              "map_search": "Kesaria Stupa Bihar",
-              "tags": [
-                "Buddhist_heritage",
-                "Bihar"
-              ],
-              "hotels": [
-                {
-                  "id": "bihar_018_hotel_01",
-                  "name": "Hotel White House Motihari",
-                  "category": "Budget",
-                  "price_range": "₹1,500–₹2,500",
-                  "rating": 4,
-                  "area": "Motihari / Kesaria",
-                  "highlights": [
-                    "Motihari / Kesaria accommodation base",
-                    "Near local market and transport",
-                    "Convenient base for sightseeing"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Generic hotel image fallback (hotel-specific direct image not verified)",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                },
-                {
-                  "id": "bihar_018_hotel_02",
-                  "name": "Hotel R K Palace",
-                  "category": "Mid-Range",
-                  "price_range": "₹3,000–₹5,000",
-                  "rating": 4.1,
-                  "area": "Motihari / Kesaria",
-                  "highlights": [
-                    "Motihari / Kesaria accommodation base",
-                    "Near local market and transport",
-                    "Convenient base for sightseeing"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Generic hotel image fallback (hotel-specific direct image not verified)",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                },
-                {
-                  "id": "bihar_018_hotel_03",
-                  "name": "Kesaria Tourist Lodge",
-                  "category": "Luxury",
-                  "price_range": "₹5,000–₹8,000",
-                  "rating": 4.2,
-                  "area": "Motihari / Kesaria",
-                  "highlights": [
-                    "Motihari / Kesaria accommodation base",
-                    "Near local market and transport",
-                    "Convenient base for sightseeing"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1601918774946-25832a4e37d0?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Generic hotel image fallback (hotel-specific direct image not verified)",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                }
-              ],
-              "recommended_hotels": [
-                {
-                  "id": "bihar_018_hotel_01",
-                  "name": "Hotel White House Motihari",
-                  "category": "Budget",
-                  "price_range": "₹1,500–₹2,500",
-                  "rating": 4,
-                  "area": "Motihari / Kesaria",
-                  "highlights": [
-                    "Motihari / Kesaria accommodation base",
-                    "Near local market and transport",
-                    "Convenient base for sightseeing"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Generic hotel image fallback (hotel-specific direct image not verified)",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                },
-                {
-                  "id": "bihar_018_hotel_02",
-                  "name": "Hotel R K Palace",
-                  "category": "Mid-Range",
-                  "price_range": "₹3,000–₹5,000",
-                  "rating": 4.1,
-                  "area": "Motihari / Kesaria",
-                  "highlights": [
-                    "Motihari / Kesaria accommodation base",
-                    "Near local market and transport",
-                    "Convenient base for sightseeing"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Generic hotel image fallback (hotel-specific direct image not verified)",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                },
-                {
-                  "id": "bihar_018_hotel_03",
-                  "name": "Kesaria Tourist Lodge",
-                  "category": "Luxury",
-                  "price_range": "₹5,000–₹8,000",
-                  "rating": 4.2,
-                  "area": "Motihari / Kesaria",
-                  "highlights": [
-                    "Motihari / Kesaria accommodation base",
-                    "Near local market and transport",
-                    "Convenient base for sightseeing"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1601918774946-25832a4e37d0?auto=format&fit=crop&w=1200&q=85",
                   "image_source": "Generic hotel image fallback (hotel-specific direct image not verified)",
                   "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
                 }
@@ -15204,6 +14860,357 @@
             "weather_summary": "Pleasant during winter; warm in summer",
             "status": "VERIFIED"
           }
+        },
+        {
+          "id": "vaishali",
+          "name": "Vaishali",
+          "state": "Bihar",
+          "state_id": "bihar",
+          "region": "Eastern India",
+          "places_count": 1,
+          "heritage": [
+            {
+              "id": "bihar_019",
+              "name": "Vaishali",
+              "canonical_name": "Vaishali",
+              "aliases": [],
+              "city_id": "vaishali",
+              "state_id": "bihar",
+              "source_city": "Vaishali",
+              "category": "heritage",
+              "category_label": "Archaeological Heritage",
+              "topic": "Heritage",
+              "subtopic": "Heritage",
+              "importance_level": "major",
+              "summary": "An ancient city associated with Buddhism, Jainism, and early republican history.",
+              "short_description": "An ancient city associated with Buddhism, Jainism, and early republican history.",
+              "detailed_description": "An ancient city associated with Buddhism, Jainism, and early republican history.",
+              "historical_significance": "An ancient city associated with Buddhism, Jainism, and early republican history.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED",
+                "free_entry": true
+              },
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "best_time_to_visit": "October to March",
+              "visit_duration": {
+                "recommended_mins": 120,
+                "label": "2–4 hours",
+                "status": "VERIFIED"
+              },
+              "suggested_duration": "2–4 hours",
+              "image_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85",
+              "attribution": "Bihar Tourism Development Corporation",
+              "source_page": "https://www.tourism.gov.in",
+              "source_url": "https://www.tourism.gov.in",
+              "source_name": "Bihar Tourism",
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "visitor_notes": [
+                "Dress respectfully at religious sites",
+                "Check local timings and access rules before visiting"
+              ],
+              "map_search": "Vaishali Bihar",
+              "tags": [
+                "archaeological_heritage",
+                "Bihar"
+              ],
+              "hotels": [
+                {
+                  "id": "bihar_019_hotel_01",
+                  "name": "Hotel Royal Vaishali",
+                  "category": "Budget",
+                  "price_range": "₹1,500–₹2,500",
+                  "rating": 4,
+                  "area": "Hajipur / Vaishali",
+                  "highlights": [
+                    "Hajipur / Vaishali accommodation base",
+                    "Near local market and transport",
+                    "Convenient base for sightseeing"
+                  ],
+                  "image_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85",
+                  "image_source": "Generic hotel image fallback (hotel-specific direct image not verified)",
+                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
+                },
+                {
+                  "id": "bihar_019_hotel_02",
+                  "name": "Hotel Gautam International",
+                  "category": "Mid-Range",
+                  "price_range": "₹3,000–₹5,000",
+                  "rating": 4.1,
+                  "area": "Hajipur / Vaishali",
+                  "highlights": [
+                    "Hajipur / Vaishali accommodation base",
+                    "Near local market and transport",
+                    "Convenient base for sightseeing"
+                  ],
+                  "image_url": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=85",
+                  "image_source": "Generic hotel image fallback (hotel-specific direct image not verified)",
+                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
+                },
+                {
+                  "id": "bihar_019_hotel_03",
+                  "name": "Vaishali Tourist Lodge",
+                  "category": "Luxury",
+                  "price_range": "₹5,000–₹8,000",
+                  "rating": 4.2,
+                  "area": "Hajipur / Vaishali",
+                  "highlights": [
+                    "Hajipur / Vaishali accommodation base",
+                    "Near local market and transport",
+                    "Convenient base for sightseeing"
+                  ],
+                  "image_url": "https://images.unsplash.com/photo-1601918774946-25832a4e37d0?auto=format&fit=crop&w=1200&q=85",
+                  "image_source": "Generic hotel image fallback (hotel-specific direct image not verified)",
+                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
+                }
+              ],
+              "recommended_hotels": [
+                {
+                  "id": "bihar_019_hotel_01",
+                  "name": "Hotel Royal Vaishali",
+                  "category": "Budget",
+                  "price_range": "₹1,500–₹2,500",
+                  "rating": 4,
+                  "area": "Hajipur / Vaishali",
+                  "highlights": [
+                    "Hajipur / Vaishali accommodation base",
+                    "Near local market and transport",
+                    "Convenient base for sightseeing"
+                  ],
+                  "image_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85",
+                  "image_source": "Generic hotel image fallback (hotel-specific direct image not verified)",
+                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
+                },
+                {
+                  "id": "bihar_019_hotel_02",
+                  "name": "Hotel Gautam International",
+                  "category": "Mid-Range",
+                  "price_range": "₹3,000–₹5,000",
+                  "rating": 4.1,
+                  "area": "Hajipur / Vaishali",
+                  "highlights": [
+                    "Hajipur / Vaishali accommodation base",
+                    "Near local market and transport",
+                    "Convenient base for sightseeing"
+                  ],
+                  "image_url": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=85",
+                  "image_source": "Generic hotel image fallback (hotel-specific direct image not verified)",
+                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
+                },
+                {
+                  "id": "bihar_019_hotel_03",
+                  "name": "Vaishali Tourist Lodge",
+                  "category": "Luxury",
+                  "price_range": "₹5,000–₹8,000",
+                  "rating": 4.2,
+                  "area": "Hajipur / Vaishali",
+                  "highlights": [
+                    "Hajipur / Vaishali accommodation base",
+                    "Near local market and transport",
+                    "Convenient base for sightseeing"
+                  ],
+                  "image_url": "https://images.unsplash.com/photo-1601918774946-25832a4e37d0?auto=format&fit=crop&w=1200&q=85",
+                  "image_source": "Generic hotel image fallback (hotel-specific direct image not verified)",
+                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
+                }
+              ],
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            }
+          ],
+          "monuments": []
+        },
+        {
+          "id": "kesaria",
+          "name": "Kesaria",
+          "state": "Bihar",
+          "state_id": "bihar",
+          "region": "Eastern India",
+          "places_count": 1,
+          "heritage": [],
+          "monuments": [
+            {
+              "id": "bihar_018",
+              "name": "Kesaria Stupa",
+              "canonical_name": "Kesaria Stupa",
+              "aliases": [],
+              "city_id": "kesaria",
+              "state_id": "bihar",
+              "source_city": "Kesaria Stupa",
+              "category": "monuments",
+              "category_label": "Buddhist Heritage",
+              "topic": "Heritage",
+              "subtopic": "Monuments",
+              "importance_level": "major",
+              "summary": "A massive ancient Buddhist stupa and important archaeological monument.",
+              "short_description": "A massive ancient Buddhist stupa and important archaeological monument.",
+              "detailed_description": "A massive ancient Buddhist stupa and important archaeological monument.",
+              "historical_significance": "A massive ancient Buddhist stupa and important archaeological monument.",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "status": "VERIFIED",
+                "free_entry": true
+              },
+              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "06:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED"
+              },
+              "opening_hours": "Usually daytime; timings vary by attraction",
+              "best_time_to_visit": "October to March",
+              "visit_duration": {
+                "recommended_mins": 120,
+                "label": "2–4 hours",
+                "status": "VERIFIED"
+              },
+              "suggested_duration": "2–4 hours",
+              "image_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85",
+              "attribution": "Bihar Tourism Development Corporation",
+              "source_page": "https://www.tourism.gov.in",
+              "source_url": "https://www.tourism.gov.in",
+              "source_name": "Bihar Tourism",
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "visitor_notes": [
+                "Dress respectfully at religious sites",
+                "Check local timings and access rules before visiting"
+              ],
+              "map_search": "Kesaria Stupa Bihar",
+              "tags": [
+                "Buddhist_heritage",
+                "Bihar"
+              ],
+              "hotels": [
+                {
+                  "id": "bihar_018_hotel_01",
+                  "name": "Hotel White House Motihari",
+                  "category": "Budget",
+                  "price_range": "₹1,500–₹2,500",
+                  "rating": 4,
+                  "area": "Motihari / Kesaria",
+                  "highlights": [
+                    "Motihari / Kesaria accommodation base",
+                    "Near local market and transport",
+                    "Convenient base for sightseeing"
+                  ],
+                  "image_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85",
+                  "image_source": "Generic hotel image fallback (hotel-specific direct image not verified)",
+                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
+                },
+                {
+                  "id": "bihar_018_hotel_02",
+                  "name": "Hotel R K Palace",
+                  "category": "Mid-Range",
+                  "price_range": "₹3,000–₹5,000",
+                  "rating": 4.1,
+                  "area": "Motihari / Kesaria",
+                  "highlights": [
+                    "Motihari / Kesaria accommodation base",
+                    "Near local market and transport",
+                    "Convenient base for sightseeing"
+                  ],
+                  "image_url": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=85",
+                  "image_source": "Generic hotel image fallback (hotel-specific direct image not verified)",
+                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
+                },
+                {
+                  "id": "bihar_018_hotel_03",
+                  "name": "Kesaria Tourist Lodge",
+                  "category": "Luxury",
+                  "price_range": "₹5,000–₹8,000",
+                  "rating": 4.2,
+                  "area": "Motihari / Kesaria",
+                  "highlights": [
+                    "Motihari / Kesaria accommodation base",
+                    "Near local market and transport",
+                    "Convenient base for sightseeing"
+                  ],
+                  "image_url": "https://images.unsplash.com/photo-1601918774946-25832a4e37d0?auto=format&fit=crop&w=1200&q=85",
+                  "image_source": "Generic hotel image fallback (hotel-specific direct image not verified)",
+                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
+                }
+              ],
+              "recommended_hotels": [
+                {
+                  "id": "bihar_018_hotel_01",
+                  "name": "Hotel White House Motihari",
+                  "category": "Budget",
+                  "price_range": "₹1,500–₹2,500",
+                  "rating": 4,
+                  "area": "Motihari / Kesaria",
+                  "highlights": [
+                    "Motihari / Kesaria accommodation base",
+                    "Near local market and transport",
+                    "Convenient base for sightseeing"
+                  ],
+                  "image_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85",
+                  "image_source": "Generic hotel image fallback (hotel-specific direct image not verified)",
+                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
+                },
+                {
+                  "id": "bihar_018_hotel_02",
+                  "name": "Hotel R K Palace",
+                  "category": "Mid-Range",
+                  "price_range": "₹3,000–₹5,000",
+                  "rating": 4.1,
+                  "area": "Motihari / Kesaria",
+                  "highlights": [
+                    "Motihari / Kesaria accommodation base",
+                    "Near local market and transport",
+                    "Convenient base for sightseeing"
+                  ],
+                  "image_url": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=85",
+                  "image_source": "Generic hotel image fallback (hotel-specific direct image not verified)",
+                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
+                },
+                {
+                  "id": "bihar_018_hotel_03",
+                  "name": "Kesaria Tourist Lodge",
+                  "category": "Luxury",
+                  "price_range": "₹5,000–₹8,000",
+                  "rating": 4.2,
+                  "area": "Motihari / Kesaria",
+                  "highlights": [
+                    "Motihari / Kesaria accommodation base",
+                    "Near local market and transport",
+                    "Convenient base for sightseeing"
+                  ],
+                  "image_url": "https://images.unsplash.com/photo-1601918774946-25832a4e37d0?auto=format&fit=crop&w=1200&q=85",
+                  "image_source": "Generic hotel image fallback (hotel-specific direct image not verified)",
+                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
+                }
+              ],
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            }
+          ],
+          "slug": "kesaria",
+          "tagline": "Buddhist heritage destination",
+          "description": "Home of the ancient Kesaria Stupa in Bihar."
         }
       ]
     },
@@ -108825,7 +108832,7 @@
       "official_tourism_url": "https://unsplash.com/photos/portuguese-fort-coastal-bastion-D_7m2q9Z1v4",
       "description": "Coastal Portuguese heritage territory featuring sea-facing fortress walls, baroque churches, and pristine beaches of Diu.",
       "status": "active",
-      "hero_image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=1200&auto=format&fit=crop&q=80",
+      "hero_image_url": "https://cdnbbsr.s3waas.gov.in/s371e09b16e21f7b6919bbfc43f6a5b2f0/uploads/2020/10/2020100332-scaled.jpg",
       "total_cities": 3,
       "total_attractions": 6,
       "heritage_overview": "Dadra and Nagar Haveli and Daman and Diu features rich heritage architecture, cultural sanctuaries, and scenic landscapes.",

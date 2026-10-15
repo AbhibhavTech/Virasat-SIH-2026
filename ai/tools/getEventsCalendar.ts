@@ -61,6 +61,7 @@ export async function execute(args: {
   limit?: number;
 }): Promise<any> {
   const q = (args.query || '').trim().toLowerCase();
+  const requestedYear = q.match(/\b(20\d{2})\b/)?.[1];
   const cityFilter = (args.city || '').trim().toLowerCase();
   const stateFilter = (args.state || '').trim().toLowerCase();
   const monthFilter = (args.month || '').trim().toLowerCase();
@@ -224,13 +225,18 @@ export async function execute(args: {
   }
 
   const results = matches.slice(0, limit).map((f) => {
-    let dateStr = f.date_rule || f.typical_season || f.typical_month || 'Annual regional observance';
-    if (f.exact_date_start && f.exact_date_end && f.is_date_verified) {
-      dateStr = `${f.exact_date_start} to ${f.exact_date_end} (Verified 2026)`;
+    const exactDateText = [f.exact_date_start, f.exact_date_end].filter(Boolean).join(' to ');
+    const exactDateMatchesRequestedYear = !requestedYear || exactDateText.includes(requestedYear);
+    const verifiedForRequestedYear = Boolean(f.is_date_verified && f.exact_date_start && exactDateMatchesRequestedYear);
+    const typicalTiming = [f.typical_month, f.typical_season].filter(Boolean).join(' · ') || 'Annual regional observance';
+    let dateStr = f.date_rule || typicalTiming;
+    if (verifiedForRequestedYear) {
+      const yearLabel = requestedYear || new Date().getFullYear().toString();
+      dateStr = `${f.exact_date_start}${f.exact_date_end ? ` to ${f.exact_date_end}` : ''} (verified for ${yearLabel})`;
+    } else if (requestedYear) {
+      dateStr = `No verified date for ${requestedYear}. Usual timing in Virasat records: ${typicalTiming}.`;
     } else if (f.date_rule) {
-      dateStr = `${f.date_rule} (Dates unconfirmed / unannounced for current year)`;
-    } else if (f.typical_month) {
-      dateStr = `${f.typical_month} (${f.typical_season || 'Seasonal'}) - Dates unannounced`;
+      dateStr = `${f.date_rule} (specific date not verified for the current year)`;
     }
 
     return {
@@ -241,7 +247,8 @@ export async function execute(args: {
       state_or_region: f.state_or_region || f.state,
       location: `${f.primary_city || f.city_or_venue || f.state}, ${f.state}`,
       season_timing: dateStr,
-      is_date_verified: Boolean(f.is_date_verified),
+      is_date_verified: verifiedForRequestedYear,
+      requested_year: requestedYear || null,
       date_rule: f.date_rule || null,
       cultural_significance: f.description,
       cultural_vibe: f.cultural_vibe || 'Cultural celebration and living heritage',

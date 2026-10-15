@@ -18,7 +18,7 @@ export const CompactAIAssistantCard: React.FC<CompactAIAssistantCardProps> = ({
   const handleOpen = (promptText?: string) => {
     const finalPrompt = (promptText || query).trim();
     if (onOpenAIChat) {
-      onOpenAIChat(finalPrompt || 'Namaste! What would you like to explore?');
+      onOpenAIChat(finalPrompt || 'Namaste! What can Virasat AI Astra help me with?');
     } else if (onNavigateTab) {
       onNavigateTab('ai');
     }
@@ -48,14 +48,14 @@ export const CompactAIAssistantCard: React.FC<CompactAIAssistantCardProps> = ({
             <div>
               <div className="flex items-center gap-1.5">
                 <span className="text-sm font-bold text-stone-900 font-serif tracking-tight">
-                  🤖 Virasat Assistant
+                  ✨ Virasat AI Astra
                 </span>
                 <span className="inline-flex items-center px-1.5 py-0.5 rounded-full text-[9px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
                   Active
                 </span>
               </div>
               <p className="text-xs text-stone-500 font-medium">
-                AI Cultural Concierge
+                Heritage &amp; Travel Copilot
               </p>
             </div>
           </div>
@@ -64,8 +64,8 @@ export const CompactAIAssistantCard: React.FC<CompactAIAssistantCardProps> = ({
             onClick={() => handleOpen()}
             type="button"
             className="w-8 h-8 rounded-full bg-stone-50 border border-stone-200 text-stone-600 hover:bg-[#4F46E5] hover:text-white hover:border-[#4F46E5] flex items-center justify-center transition shadow-2xs"
-            aria-label="Open Virasat AI Assistant"
-            title="Open Dedicated AI Assistant"
+            aria-label="Open Virasat AI Astra"
+            title="Open Virasat AI Astra"
           >
             <ArrowRight className="w-4 h-4" />
           </button>
@@ -123,7 +123,7 @@ export const CompactAIAssistantCard: React.FC<CompactAIAssistantCardProps> = ({
             <div className="absolute right-1 top-1/2 -translate-y-1/2 flex items-center">
               <VoiceInputButton
                 variant="minimal"
-                title="Speak to Virasat AI"
+                title="Speak to Virasat AI Astra"
                 placeholderPrompt="Listening... Speak your prompt"
                 onTranscript={(text) => setQuery(text)}
                 onFinalTranscript={(text) => {
@@ -137,7 +137,7 @@ export const CompactAIAssistantCard: React.FC<CompactAIAssistantCardProps> = ({
             type="submit"
             className="px-3.5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold transition shadow-xs flex items-center gap-1 whitespace-nowrap shrink-0 group-hover:bg-indigo-700 cursor-pointer"
           >
-            <span>Ask Virasat</span>
+            <span>Ask Astra</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </button>
         </form>

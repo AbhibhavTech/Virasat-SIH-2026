@@ -111,7 +111,7 @@ interface AppRoutesProps {
 // -------------------------------------------------------------
 const CityHubRoute: React.FC<{
   onSelectPlace: (id: string) => void;
-  onNavigateTab: (tab: NavTab) => void;
+  onNavigateTab: (tab: NavTab, city?: string) => void;
   selectedCity: string;
   onSelectCity: (city: string) => void;
 }> = ({ onSelectPlace, onNavigateTab, selectedCity, onSelectCity }) => {

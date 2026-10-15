@@ -1,4 +1,5 @@
 import * as searchTouristPlaces from '../tools/searchTouristPlaces';
+import * as searchHiddenGems from '../tools/searchHiddenGems';
 import * as searchHotels from '../tools/searchHotels';
 import * as searchRestaurants from '../tools/searchRestaurants';
 import * as getTransportOptions from '../tools/getTransportOptions';
@@ -28,6 +29,7 @@ export interface ToolModule {
 
 export const toolRegistry: Record<string, ToolModule> = {
   searchTouristPlaces,
+  searchHiddenGems,
   searchHotels,
   searchRestaurants,
   getTransportOptions,
@@ -48,9 +50,9 @@ export const toolRegistry: Record<string, ToolModule> = {
 };
 
 /**
- * Returns function declarations array formatted for Gemini API tools config
+ * Returns all function declarations registered with the local Virasat engine
  */
-export function getGeminiToolDeclarations() {
+export function getToolDeclarations() {
   return [
     {
       functionDeclarations: Object.values(toolRegistry).map((t) => t.declaration),

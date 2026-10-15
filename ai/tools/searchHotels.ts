@@ -19,6 +19,10 @@ export const declaration = {
         type: 'STRING',
         description: 'Hotel category: Heritage Palace, Luxury Resort, Boutique Hotel, Mid-range, Budget.',
       },
+      max_price_per_night: {
+        type: 'NUMBER',
+        description: 'Optional upper limit in INR for stored indicative per-night rates. This is not a live availability or booking check.',
+      },
       limit: {
         type: 'NUMBER',
         description: 'Max hotels to return (default 5).',
@@ -99,16 +103,27 @@ function matchesCity(targetCityName: string, targetCityIdOrSlug: string | undefi
   return false;
 }
 
+function getStartingPrice(rate: unknown): number | undefined {
+  if (typeof rate === 'number' && Number.isFinite(rate)) return rate;
+  if (typeof rate !== 'string') return undefined;
+  const match = rate.replace(/,/g, '').match(/\d+(?:\.\d+)?/);
+  return match ? Number(match[0]) : undefined;
+}
+
 export async function execute(args: {
   city?: string;
   place_id?: string;
   category?: string;
   limit?: number;
+  max_price_per_night?: number;
 }): Promise<any> {
   const rawCity = (args.city || '').trim();
   const cityFilter = rawCity.toLowerCase();
   const placeIdFilter = (args.place_id || '').trim().toLowerCase();
   const catFilter = (args.category || '').trim().toLowerCase();
+  const maxPricePerNight = Number.isFinite(args.max_price_per_night) && (args.max_price_per_night as number) > 0
+    ? args.max_price_per_night as number
+    : undefined;
   const limit = Math.min(Math.max(args.limit || 5, 1), 15);
 
   const matched: any[] = [];
@@ -116,8 +131,11 @@ export async function execute(args: {
 
   for (const h of baseHotels) {
     if (cityFilter && !matchesCity(h.city, h.city_id || h.id, cityFilter)) continue;
-    if (catFilter && !h.category.toLowerCase().includes(catFilter)) continue;
+    if (catFilter && !(h.category || '').toLowerCase().includes(catFilter)) continue;
     if (placeIdFilter && h.nearby_heritage && !h.nearby_heritage.includes(placeIdFilter)) continue;
+    const listedRate = h.price_indication || null;
+    const startingPrice = getStartingPrice(listedRate);
+    if (maxPricePerNight !== undefined && (startingPrice === undefined || startingPrice > maxPricePerNight)) continue;
 
     matched.push({
       id: h.id,
@@ -126,9 +144,12 @@ export async function execute(args: {
       state: h.state,
       category: h.category,
       rating: h.rating,
-      price: h.price_indication || '₹3,500 - ₹7,000 / night',
+      price: listedRate,
+      starting_price_inr: startingPrice,
+      rate_type: listedRate ? 'stored indicative rate; not live' : 'not provided',
+      availability: 'not checked',
       location: h.location,
-      amenities: h.amenities || ['Free Wi-Fi', 'Breakfast Included'],
+      amenities: h.amenities || [],
     });
 
     if (matched.length >= limit) break;
@@ -138,8 +159,11 @@ export async function execute(args: {
   if (matched.length < limit && cityFilter) {
     for (const h of baseHotels) {
       if (!matchesCity(h.city, h.city_id || h.id, cityFilter)) continue;
-      if (catFilter && !h.category.toLowerCase().includes(catFilter)) continue;
+      if (catFilter && !(h.category || '').toLowerCase().includes(catFilter)) continue;
       if (matched.some((m) => m.id === h.id)) continue;
+      const listedRate = h.price_indication || null;
+      const startingPrice = getStartingPrice(listedRate);
+      if (maxPricePerNight !== undefined && (startingPrice === undefined || startingPrice > maxPricePerNight)) continue;
 
       matched.push({
         id: h.id,
@@ -148,9 +172,12 @@ export async function execute(args: {
         state: h.state,
         category: h.category,
         rating: h.rating,
-        price: h.price_indication || '₹3,500 - ₹7,000 / night',
+        price: listedRate,
+        starting_price_inr: startingPrice,
+        rate_type: listedRate ? 'stored indicative rate; not live' : 'not provided',
+        availability: 'not checked',
         location: h.location,
-        amenities: h.amenities || ['Free Wi-Fi', 'Breakfast Included'],
+        amenities: h.amenities || [],
       });
       if (matched.length >= limit) break;
     }
@@ -177,6 +204,9 @@ export async function execute(args: {
               if (placeIdFilter && p.id.toLowerCase() !== placeIdFilter) continue;
               if (p.hotels && Array.isArray(p.hotels)) {
                 for (const ph of p.hotels) {
+                  const listedRate = ph.price_range || null;
+                  const startingPrice = getStartingPrice(listedRate);
+                  if (maxPricePerNight !== undefined && (startingPrice === undefined || startingPrice > maxPricePerNight)) continue;
                   if (matched.some(m => m.name.toLowerCase() === ph.name.toLowerCase())) continue;
                   matched.push({
                     id: ph.id || ph.name,
@@ -184,10 +214,13 @@ export async function execute(args: {
                     city: c.name,
                     state: s.name,
                     category: ph.category || 'Hotel',
-                    rating: ph.rating || 4.5,
-                    price: ph.price_range || 'Indicative Rate: ₹4,000 / night',
+                    rating: ph.rating,
+                    price: listedRate,
+                    starting_price_inr: startingPrice,
+                    rate_type: listedRate ? 'stored indicative rate; not live' : 'not provided',
+                    availability: 'not checked',
                     location: ph.area || c.name,
-                    amenities: ph.amenities || ['Heritage Hospitality'],
+                    amenities: ph.amenities || [],
                   });
                   if (matched.length >= limit) break;
                 }

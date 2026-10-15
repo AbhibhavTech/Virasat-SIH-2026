@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import dotenv from 'dotenv';
+import '../config/environment';
 import { Pool, PoolClient } from 'pg';
 import {
   UserRecord,
@@ -99,12 +99,6 @@ class DatabaseManager {
   public async init(): Promise<void> {
     if (this.isInitialized) return;
 
-    if (!process.env.DATABASE_URL) {
-      dotenv.config({ path: path.resolve(process.cwd(), 'server/.env') });
-      if (!process.env.DATABASE_URL) {
-        dotenv.config({ path: path.resolve(process.cwd(), '.env') });
-      }
-    }
 
     const rawDbUrl = process.env.DATABASE_URL?.trim();
 

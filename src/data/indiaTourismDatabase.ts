@@ -26718,7 +26718,7 @@ export const INDIA_TOURISM_DATABASE: any = {
       "code": "DA",
       "capital": "Daman",
       "region": "Western India",
-      "hero_image_url": "https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1200&auto=format&fit=crop&q=80",
+      "hero_image_url": "https://cdnbbsr.s3waas.gov.in/s371e09b16e21f7b6919bbfc43f6a5b2f0/uploads/2020/10/2020100332-scaled.jpg",
       "total_cities": 3,
       "total_attractions": 3,
       "heritage_overview": "Coastal Portuguese heritage territory featuring sea-facing fortress walls, baroque churches, and pristine beaches of Diu.",

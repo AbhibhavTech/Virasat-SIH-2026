@@ -35,6 +35,7 @@ export interface DayItinerary {
   evening_cluster: {
     title: string;
     places: any[];
+    duration: string;
     sunset_or_aarti: string;
     dinner_vibe: string;
   };
@@ -44,6 +45,8 @@ export interface GeneratedTripPlan {
   destination: string;
   origin?: string;
   duration_days: number;
+  party_size: number;
+  travel_dates?: string;
   travel_style: string;
   hotel_recommendation: {
     tier: string;
@@ -71,9 +74,10 @@ export interface GeneratedTripPlan {
  * using the real 36-region Virasat tourism database.
  */
 export function generateSmartItinerary(state: TripMemoryState): GeneratedTripPlan {
-  const destName = state.destination || 'Jaipur';
-  const cleanDest = destName.toLowerCase();
+  const destName = state.destination || '';
+  const cleanDest = destName.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
   const daysCount = Math.min(Math.max(state.duration_days || 3, 1), 7);
+  const travelers = Math.min(Math.max(state.party_size_count || 1, 1), 20);
   const style = state.travel_style || 'moderate';
   const hotelTier = state.hotel_tier || (style === 'luxury' ? 'luxury' : style === 'budget' ? 'budget' : 'moderate');
 
@@ -85,7 +89,8 @@ export function generateSmartItinerary(state: TripMemoryState): GeneratedTripPla
   if (db && db.states) {
     for (const s of db.states) {
       for (const c of s.cities || []) {
-        if (c.name.toLowerCase().includes(cleanDest) || cleanDest.includes(c.name.toLowerCase()) || s.name.toLowerCase().includes(cleanDest)) {
+        const cityKey = c.name.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+        if (cityKey === cleanDest || c.id?.toLowerCase() === cleanDest || c.slug?.toLowerCase() === cleanDest) {
           foundCityName = c.name;
           foundStateName = s.name;
           const allCityPlaces = [
@@ -97,13 +102,17 @@ export function generateSmartItinerary(state: TripMemoryState): GeneratedTripPla
             ...(c.tourist_places || []),
           ];
           for (const p of allCityPlaces) {
+            if ((p.name || '').trim().toLowerCase() === c.name.trim().toLowerCase()) continue;
             availablePlaces.push({
               id: p.id,
               name: p.name,
               category: p.category,
               summary: p.summary,
-              timings: p.visiting_hours || p.timings || '9:00 AM - 5:30 PM',
-              entry_fee: p.entry_fee || 'Standard Entry',
+              timings: p.visiting_hours || p.timings,
+              entry_fee: p.entry_fee,
+              recommended_duration: p.recommended_duration || p.suggested_duration,
+              coordinates: p.coordinates || (p.lat && p.lng ? { lat: p.lat, lng: p.lng } : undefined),
+              source_url: p.source_url || p.source_page,
             });
           }
           break;
@@ -114,7 +123,11 @@ export function generateSmartItinerary(state: TripMemoryState): GeneratedTripPla
   }
 
   // If a specific monument was discussed in active conversation, start Day 1 with it
-  if (state.lastPlace && state.lastPlace.city.toLowerCase().includes(cleanDest)) {
+  if (
+    state.lastPlace &&
+    state.lastPlace.city.toLowerCase() === foundCityName.toLowerCase() &&
+    state.lastPlace.name.toLowerCase() !== foundCityName.toLowerCase()
+  ) {
     const existingIdx = availablePlaces.findIndex(
       (p) => p.id === state.lastPlace?.id || p.name.toLowerCase() === state.lastPlace?.name.toLowerCase()
     );
@@ -129,6 +142,7 @@ export function generateSmartItinerary(state: TripMemoryState): GeneratedTripPla
         summary: state.lastPlace.summary,
         timings: state.lastPlace.visiting_hours,
         entry_fee: state.lastPlace.entry_fee,
+        recommended_duration: state.lastPlace.recommended_duration,
       });
     }
   }
@@ -146,38 +160,36 @@ export function generateSmartItinerary(state: TripMemoryState): GeneratedTripPla
   let placeIdx = 0;
 
   for (let d = 1; d <= daysCount; d++) {
-    const morningPlace = availablePlaces[placeIdx % Math.max(availablePlaces.length, 1)];
+    const morningPlace = availablePlaces[placeIdx];
     placeIdx++;
-    const afternoonPlace = availablePlaces[placeIdx % Math.max(availablePlaces.length, 1)];
+    const afternoonPlace = availablePlaces[placeIdx];
     placeIdx++;
-    const eveningPlace = availablePlaces[placeIdx % Math.max(availablePlaces.length, 1)];
+    const eveningPlace = availablePlaces[placeIdx];
     placeIdx++;
 
-    let dayTheme = `Day ${d}: Royal Heritage & Architecture`;
-    if (d === 2) dayTheme = `Day ${d}: Living Culture, Bazaars & Local Flavors`;
-    if (d === 3) dayTheme = `Day ${d}: Spiritual Sanctuaries & Sunset Vistas`;
-    if (d > 3) dayTheme = `Day ${d}: Hidden Gems & Scenic Environs`;
+    const dayTheme = `${foundCityName} exploration`;
 
     days.push({
       day_number: d,
       theme: dayTheme,
       morning_cluster: {
-        title: `Morning Heritage Cluster (~8:30 AM - 12:30 PM)`,
+        title: `Morning visit (confirm opening hours)`,
         places: morningPlace ? [morningPlace] : [],
-        duration: '2.5 to 3 hours exploration',
-        tips: 'Visit early to enjoy peaceful courtyards and optimal photography light.',
+        duration: morningPlace?.recommended_duration || 'Visit duration not available in local records',
+        tips: 'Check the venue’s current opening hours before setting out.',
       },
       afternoon_cluster: {
-        title: `Afternoon Cultural Walk (~1:30 PM - 4:30 PM)`,
+        title: `Afternoon visit (confirm opening hours)`,
         places: afternoonPlace ? [afternoonPlace] : [],
-        duration: '2 hours',
-        lunch_spot: `Local heritage eatery in ${foundCityName} central market precinct`,
+        duration: afternoonPlace?.recommended_duration || 'Visit duration not available in local records',
+        lunch_spot: `Meal break in ${foundCityName}; choose and verify a venue separately`,
       },
       evening_cluster: {
-        title: `Evening Sunset & Promenade (~5:30 PM - 8:30 PM)`,
+        title: `Evening visit (confirm seasonal access)`,
         places: eveningPlace ? [eveningPlace] : [],
-        sunset_or_aarti: 'Sunset viewpoint / evening heritage illumination',
-        dinner_vibe: `Authentic regional thali or garden restaurant dinner in ${foundCityName}`,
+        duration: eveningPlace?.recommended_duration || 'Visit duration not available in local records',
+        sunset_or_aarti: 'Optional evening visit; verify venue access and timings',
+        dinner_vibe: `Dinner break in ${foundCityName}; verify restaurant details separately`,
       },
     });
   }
@@ -195,17 +207,17 @@ export function generateSmartItinerary(state: TripMemoryState): GeneratedTripPla
   if (style === 'budget') transitDaily = 400;
   if (style === 'luxury') transitDaily = 2800;
 
-  let totalHotel = hotelRate * Math.max(daysCount - 1, 1);
-  let totalFood = foodRate * daysCount;
+  let totalHotel = hotelRate * Math.max(daysCount - 1, 1) * Math.ceil(travelers / 2);
+  let totalFood = foodRate * daysCount * travelers;
   let totalTransit = transitDaily * daysCount;
-  let totalTickets = 350 * daysCount;
+  let totalTickets = 350 * daysCount * travelers;
 
   // If user requested a 1-day local day plan with low budget (e.g. ₹2000)
   if (daysCount === 1 && state.budget && state.budget <= 3000) {
     totalHotel = 0; // Day trip without overnight stay
     totalTransit = 250;
-    totalFood = 650;
-    totalTickets = 300;
+    totalFood = 650 * travelers;
+    totalTickets = 300 * travelers;
   } else if (daysCount === 1) {
     totalHotel = 0; // Day trip
   }
@@ -214,20 +226,24 @@ export function generateSmartItinerary(state: TripMemoryState): GeneratedTripPla
 
   return {
     destination: foundCityName,
-    origin: state.origin || 'Mumbai / Delhi',
+    origin: state.origin,
     duration_days: daysCount,
+    party_size: travelers,
+    travel_dates: state.start_date && state.end_date
+      ? `${state.start_date} to ${state.end_date}`
+      : state.travel_date || undefined,
     travel_style: style.toUpperCase(),
     hotel_recommendation: {
       tier: hotelTier.toUpperCase(),
-      rate_indication: `₹${hotelRate.toLocaleString('en-IN')} / night`,
+      rate_indication: `planning allowance ₹${hotelRate.toLocaleString('en-IN')} / night (not a hotel quote)`,
       suggested_areas: [`Central ${foundCityName} Heritage Corridor`, 'Near Main Station / City Center'],
     },
     transport_recommendation: {
-      mode: state.transport_mode === 'flight' ? 'Flight' : 'Train (Indian Railways IRCTC)',
+      mode: state.transport_mode === 'flight' ? 'Flight (check live route options)' : state.transport_mode === 'train' ? 'Train (check live route options)' : 'Choose after route lookup',
       summary: state.origin
-        ? `Direct connection between ${state.origin} and ${foundCityName}`
-        : `Intercity rail or highway route connecting to ${foundCityName}`,
-      approx_duration: state.transport_mode === 'flight' ? '1.5 - 2 hrs' : '5 - 8 hrs',
+        ? `Route options from ${state.origin} to ${foundCityName} need a separate transport lookup.`
+        : 'Add an origin to compare intercity transport options.',
+      approx_duration: 'Not estimated by the itinerary planner',
     },
     days,
     budget_breakdown: {

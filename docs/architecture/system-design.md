@@ -25,12 +25,12 @@ Virasat adopts a modular full-stack architecture tailored for high performance, 
 ┌──────────────┐    ┌──────────────┐    ┌──────────────┐
 │  AI Concierge│    │  PostgreSQL  │    │   Multimodal │
 │ Orchestrator │    │  (Supabase)  │    │   Transit    │
-│ (Gemini API) │    │  Persistence │    │   Routing    │
+│ Local Astra  │    │  Persistence │    │   Routing    │
 └──────────────┘    └──────────────┘    └──────────────┘
 ```
 
 ## Key Architectural Principles
 1. **Separation of Concerns**: Clean separation between frontend components, modular backend services (`/server/src/modules/*`), and the PostgreSQL data layer.
 2. **Deterministic Routing**: Track-aligned railway algorithms, suburban local networks, and regulated meter fare estimators backed by verified transit nodes.
-3. **Strict AI Grounding**: Gemini acts as a reasoning and synthesis layer, never as the authoritative system of record. Every factual claim is sourced via verified tool calls.
+3. **Strict AI Grounding**: Virasat AI Astra resolves supported questions against local records and registered tools. It does not claim open-domain model coverage or live web access.
 4. **Lightweight 3D Rendering**: Parametric and GLTF heritage models rendered via Three.js with lazy-loading and mobile performance optimization.

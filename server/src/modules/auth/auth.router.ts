@@ -5,7 +5,6 @@ import { z } from 'zod';
 import { db } from '../../db/client';
 import { requireAuth, JWT_SECRET } from '../../middleware/auth';
 import { validateBody, sendError } from '../../middleware/validate';
-import { UserRecord } from '../../db/types';
 
 export const authRouter = Router();
 
@@ -49,27 +48,6 @@ const updateProfileSchema = z.object({
   survey: z.any().optional(),
   preferences: z.any().optional(),
 });
-
-/**
- * Helper to decode Google ID token / JWT without external dependency
- */
-function decodeGoogleIdToken(token: string): {
-  email?: string;
-  name?: string;
-  picture?: string;
-  sub?: string;
-} | null {
-  try {
-    const parts = token.split('.');
-    if (parts.length < 2) return null;
-    const base64Url = parts[1];
-    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-    const jsonPayload = Buffer.from(base64, 'base64').toString('utf8');
-    return JSON.parse(jsonPayload);
-  } catch {
-    return null;
-  }
-}
 
 /**
  * POST /api/v1/auth/register
@@ -169,81 +147,16 @@ authRouter.post('/login', validateBody(loginSchema), async (req: Request, res: R
  * Google OAuth 2.0 & ID Token Verification with Account Merging (Phase 4)
  */
 authRouter.post('/google', validateBody(googleAuthSchema), async (req: Request, res: Response): Promise<void> => {
-  const rawToken = req.body.credential || req.body.id_token;
-  let email = req.body.email || req.body.user_info?.email;
-  let name = req.body.name || req.body.user_info?.name;
-  let avatarUrl = req.body.picture || req.body.avatar_url || req.body.user_info?.picture || req.body.user_info?.avatar_url;
-  let googleId = req.body.sub || req.body.user_info?.sub;
-
-  // If token is provided, extract verified claims
-  if (rawToken) {
-    const decoded = decodeGoogleIdToken(rawToken);
-    if (decoded) {
-      email = decoded.email || email;
-      name = decoded.name || name;
-      avatarUrl = decoded.picture || avatarUrl;
-      googleId = decoded.sub || googleId;
-    }
-  }
-
-  if (!email) {
-    sendError(res, 400, 'INVALID_GOOGLE_TOKEN', 'Google authentication payload missing valid email claim', req.requestId);
-    return;
-  }
-
-  const targetEmail = email.toLowerCase().trim();
-  let user = await db.users.findByEmail(targetEmail);
-
-  if (user) {
-    // Existing Account: Merge Google OAuth credentials and preserve existing user data (trips, favorites, role)
-    const updates: Partial<UserRecord> = {};
-    if (googleId && !user.google_id) updates.google_id = googleId;
-    if (avatarUrl && !user.avatar_url) updates.avatar_url = avatarUrl;
-    if (user.auth_provider === 'local') updates.auth_provider = 'google_linked';
-
-    if (Object.keys(updates).length > 0) {
-      user = (await db.users.update(user.id, updates)) || user;
-    }
-  } else {
-    // New Account: Create user from Google profile
-    const id = `user-google-${Date.now()}-${Math.random().toString(36).substring(2, 7)}`;
-    user = await db.users.create({
-      id,
-      email: targetEmail,
-      password_hash: '', // OAuth accounts do not use a password hash
-      name: name || targetEmail.split('@')[0],
-      avatar_url: avatarUrl || undefined,
-      google_id: googleId || undefined,
-      home_city: 'Mumbai',
-      auth_provider: 'google',
-      role: 'traveller',
-      created_at: new Date().toISOString(),
-      updated_at: new Date().toISOString(),
-    });
-  }
-
-  const token = jwt.sign(
-    {
-      id: user.id,
-      email: user.email,
-      name: user.name,
-      role: user.role,
-      home_city: user.home_city,
-      avatar_url: user.avatar_url,
-    },
-    JWT_SECRET,
-    { expiresIn: '7d' }
+  // Google authentication is completed by Firebase Auth in the browser. This
+  // route must never accept a claimed email/profile or an unverified decoded
+  // JWT, since that would let a caller impersonate any Google account.
+  sendError(
+    res,
+    501,
+    'GOOGLE_BACKEND_TOKEN_VERIFICATION_REQUIRED',
+    'Google browser sign-in is available. Configure server-side Firebase Admin token verification before enabling backend Google-session mirroring.',
+    req.requestId
   );
-
-  const { password_hash: _, ...safeUser } = user;
-
-  res.json({
-    success: true,
-    token,
-    profile: safeUser,
-    user: safeUser,
-    message: 'Authenticated successfully with Google.',
-  });
 });
 
 /**

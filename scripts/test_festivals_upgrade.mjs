@@ -145,14 +145,14 @@ async function runAsyncTests() {
     }
   });
 
-  // Test Live Info Google Search endpoint logic & "no sources" path
-  test('Live Info endpoint "no sources" fallback path returns clean message without uncited dates', () => {
+  // Test local festival-record response path
+  test('Festival info uses saved Virasat records and marks the response as non-live', () => {
     const routerPath = path.resolve('server/src/modules/festivals/festivals.router.ts');
     assert(fs.existsSync(routerPath), 'festivals.router.ts must exist');
     const content = fs.readFileSync(routerPath, 'utf-8');
-    assert(content.includes('callGeminiSearchGrounding'), 'Grounding logic must exist');
-    assert(content.includes("message: 'No reliable sources found'"), 'Must contain no reliable sources fallback');
-    assert(content.includes('resolveGroundedModel'), 'Must contain model resolution');
+    assert(content.includes('buildStoredFestivalInfo'), 'Saved festival records must be the data source');
+    assert(content.includes('is_live: false'), 'The response must not claim live search');
+    assert(content.includes('official organizer'), 'The response must direct travelers to current official notices');
   });
 
   console.log('\n----------------------------------------------------');

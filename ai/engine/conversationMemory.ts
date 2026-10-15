@@ -3,6 +3,7 @@ import { ResolvedPlace } from './placeResolver';
 
 export interface TripMemoryState {
   sessionId: string;
+  messages?: import('./modelGateway').ChatTurn[];
   origin?: string;
   destination?: string;
   multiCities?: string[];
@@ -14,23 +15,43 @@ export interface TripMemoryState {
   transport_mode?: 'train' | 'flight' | 'road' | 'bus' | 'all';
   interests: string[];
   party_size?: string;
+  party_size_count?: number;
+  travel_date?: string;
+  start_date?: string;
+  end_date?: string;
   lastPlace?: ResolvedPlace;
   lastPlaceId?: string;
   lastItinerary?: any;
   lastPlaces?: any[];
   lastHotels?: any[];
+  lastFestival?: any;
+  lastSearch?: {
+    query?: string;
+    city?: string;
+    state?: string;
+    category?: string;
+    kind?: 'places' | 'hidden_gems';
+    offset: number;
+    limit: number;
+  };
   lastIntent?: string;
   turnCount: number;
   updatedAt: number;
 }
 
 const memoryStore = new Map<string, TripMemoryState>();
+const MEMORY_TTL_MS = 6 * 60 * 60 * 1000;
+const MAX_MEMORY_SESSIONS = 5000;
 
 /**
  * Retrieves or creates a structured conversation state for a session
  */
 export function getConversationState(sessionId: string): TripMemoryState {
   let state = memoryStore.get(sessionId);
+  if (state && Date.now() - state.updatedAt > MEMORY_TTL_MS) {
+    memoryStore.delete(sessionId);
+    state = undefined;
+  }
   if (!state) {
     state = {
       sessionId,
@@ -40,6 +61,10 @@ export function getConversationState(sessionId: string): TripMemoryState {
       updatedAt: Date.now(),
     };
     memoryStore.set(sessionId, state);
+    if (memoryStore.size > MAX_MEMORY_SESSIONS) {
+      const oldest = [...memoryStore.values()].reduce((a, b) => a.updatedAt <= b.updatedAt ? a : b);
+      memoryStore.delete(oldest.sessionId);
+    }
   }
   return state;
 }
@@ -57,8 +82,16 @@ export function updateConversationState(
   // If user explicitly rejects a location ("no panvel nahi", "panvel nahi", etc.)
   if (newEntities.rejected_city) {
     const rejLower = newEntities.rejected_city.toLowerCase();
-    if (state.destination && state.destination.toLowerCase().includes(rejLower)) {
+    const destinationRejected = Boolean(
+      state.destination && state.destination.toLowerCase().includes(rejLower)
+    );
+    if (destinationRejected) {
       delete state.destination;
+      delete state.lastPlaces;
+      delete state.lastHotels;
+      delete state.lastFestival;
+      delete state.lastSearch;
+      delete state.lastItinerary;
     }
     if (state.lastPlace && (state.lastPlace.city.toLowerCase().includes(rejLower) || state.lastPlace.name.toLowerCase().includes(rejLower))) {
       delete state.lastPlace;
@@ -73,6 +106,13 @@ export function updateConversationState(
   if (newEntities.destination) {
     // If state already had destination and user adds another, handle multi-city
     if (state.destination && state.destination.toLowerCase() !== newEntities.destination.toLowerCase()) {
+      delete state.lastPlace;
+      delete state.lastPlaceId;
+      delete state.lastPlaces;
+      delete state.lastHotels;
+      delete state.lastFestival;
+      delete state.lastSearch;
+      delete state.lastItinerary;
       if (!state.multiCities) state.multiCities = [state.destination];
       if (!state.multiCities.includes(newEntities.destination)) {
         state.multiCities.push(newEntities.destination);
@@ -86,6 +126,10 @@ export function updateConversationState(
   if (newEntities.hotel_tier) state.hotel_tier = newEntities.hotel_tier;
   if (newEntities.transport_mode) state.transport_mode = newEntities.transport_mode;
   if (newEntities.party_size) state.party_size = newEntities.party_size;
+  if (newEntities.party_size_count !== undefined) state.party_size_count = newEntities.party_size_count;
+  if (newEntities.travel_date) state.travel_date = newEntities.travel_date;
+  if (newEntities.start_date) state.start_date = newEntities.start_date;
+  if (newEntities.end_date) state.end_date = newEntities.end_date;
 
   if (newEntities.resolvedPlace) {
     state.lastPlace = newEntities.resolvedPlace;
@@ -130,6 +174,21 @@ export function updateConversationState(
     }
   } else if (/remove shopping|shopping hatao|market mat dikhao/i.test(queryLower)) {
     state.interests = state.interests.filter((i) => i !== 'shopping');
+  }
+
+  if (/\b(?:only|sirf|bas)\s+(?:heritage|history|historical)\b/i.test(queryLower)) {
+    state.interests = ['heritage'];
+  } else {
+    const removals: Array<[RegExp, string[]]> = [
+      [/\b(?:remove|without|exclude|skip|no|hatao|mat dikhao)\s+(?:religious|spiritual|temple|mandir)\b/i, ['spiritual']],
+      [/\b(?:remove|without|exclude|skip|no|hatao|mat dikhao)\s+(?:food|restaurant|culinary|khana)\b/i, ['food']],
+      [/\b(?:remove|without|exclude|skip|no|hatao|mat dikhao)\s+(?:nature|wildlife|jungle)\b/i, ['nature']],
+      [/\b(?:remove|without|exclude|skip|no|hatao|mat dikhao)\s+(?:shopping|market|bazaar)\b/i, ['shopping']],
+      [/\b(?:remove|without|exclude|skip|no|hatao|mat dikhao)\s+(?:heritage|history|historical)\b/i, ['heritage']],
+    ];
+    for (const [pattern, interests] of removals) {
+      if (pattern.test(queryLower)) state.interests = state.interests.filter((i) => !interests.includes(i));
+    }
   }
 
   if (intent) state.lastIntent = intent;

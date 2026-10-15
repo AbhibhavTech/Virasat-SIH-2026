@@ -48,6 +48,20 @@ export const INDIAN_AIRPORTS: IndianAirport[] = [
   { iata: 'RPR', name: 'Swami Vivekananda Airport', city: 'Raipur', state: 'Chhattisgarh', lat: 21.1804, lng: 81.7388, aliases: ['mana'] },
   { iata: 'IDR', name: 'Devi Ahilya Bai Holkar Airport', city: 'Indore', state: 'Madhya Pradesh', lat: 22.7217, lng: 75.8011, aliases: ['ujjain gateway', 'indore'] },
   { iata: 'BHO', name: 'Raja Bhoj Airport', city: 'Bhopal', state: 'Madhya Pradesh', lat: 23.2875, lng: 77.3378, aliases: ['sanchi gateway', 'bhopal'] },
+  { iata: 'VTZ', name: 'Visakhapatnam Airport', city: 'Visakhapatnam', state: 'Andhra Pradesh', lat: 17.7212, lng: 83.2245, aliases: ['vizag', 'visakhapatnam'] },
+  { iata: 'VGA', name: 'Vijayawada International Airport', city: 'Vijayawada', state: 'Andhra Pradesh', lat: 16.5304, lng: 80.7968, aliases: ['gannavaram', 'amaravati'] },
+  { iata: 'HGI', name: 'Donyi Polo Airport', city: 'Itanagar', state: 'Arunachal Pradesh', lat: 27.1466, lng: 93.8342, aliases: ['hollongi', 'itanagar'] },
+  { iata: 'DHM', name: 'Kangra Airport', city: 'Dharamshala', state: 'Himachal Pradesh', lat: 32.1651, lng: 76.2634, aliases: ['gaggal', 'kangra', 'dharamshala'] },
+  { iata: 'IMF', name: 'Imphal International Airport', city: 'Imphal', state: 'Manipur', lat: 24.7600, lng: 93.8967, aliases: ['imphal', 'manipur'] },
+  { iata: 'SHL', name: 'Shillong Airport', city: 'Shillong', state: 'Meghalaya', lat: 25.7036, lng: 91.9787, aliases: ['umroi', 'shillong'] },
+  { iata: 'AJL', name: 'Lengpui Airport', city: 'Aizawl', state: 'Mizoram', lat: 23.8400, lng: 92.6197, aliases: ['aizawl', 'lengpui'] },
+  { iata: 'DMU', name: 'Dimapur Airport', city: 'Dimapur', state: 'Nagaland', lat: 25.8839, lng: 93.7711, aliases: ['dimapur', 'kohima'] },
+  { iata: 'IXA', name: 'Maharaja Bir Bikram Airport', city: 'Agartala', state: 'Tripura', lat: 23.8869, lng: 91.2404, aliases: ['agartala', 'tripura'] },
+  { iata: 'PYG', name: 'Pakyong Airport', city: 'Gangtok', state: 'Sikkim', lat: 27.2272, lng: 88.5870, aliases: ['pakyong', 'gangtok', 'sikkim'] },
+  { iata: 'IXZ', name: 'Veer Savarkar International Airport', city: 'Port Blair', state: 'Andaman and Nicobar Islands', lat: 11.6412, lng: 92.7297, aliases: ['port blair', 'andaman'] },
+  { iata: 'DIU', name: 'Diu Airport', city: 'Diu', state: 'Dadra and Nagar Haveli and Daman and Diu', lat: 20.7131, lng: 70.9211, aliases: ['diu', 'daman'] },
+  { iata: 'AGX', name: 'Agatti Airport', city: 'Agatti', state: 'Lakshadweep', lat: 10.8237, lng: 72.1760, aliases: ['agatti', 'kavaratti', 'lakshadweep'] },
+  { iata: 'PNY', name: 'Puducherry Airport', city: 'Puducherry', state: 'Puducherry', lat: 11.9689, lng: 79.8106, aliases: ['pondicherry', 'puducherry'] },
 ];
 
 export const STATE_COORDINATES: Record<string, { lat: number; lng: number; zoom: number; capital: string }> = {
@@ -111,6 +125,29 @@ export function findNearestAirport(lat: number, lng: number): { airport: IndianA
     }
   }
   return { airport: nearest, distanceKm: minDistance };
+}
+
+/**
+ * Airport access is deliberately separate from flight availability. A nearby
+ * airport can be identified from our map data, while timetable, fares and
+ * seats still have to be checked with an airline or flight search provider.
+ */
+export function describeAirportAccess(lat: number, lng: number) {
+  const { airport, distanceKm } = findNearestAirport(lat, lng);
+  return {
+    airport: {
+      iata: airport.iata,
+      name: airport.name,
+      city: airport.city,
+      state: airport.state,
+      lat: airport.lat,
+      lng: airport.lng,
+    },
+    ground_transfer_km: distanceKm,
+    ground_transfer_note: distanceKm <= 10
+      ? `Airport is within about ${distanceKm} km of this point.`
+      : `Allow a ground transfer of about ${distanceKm} km to ${airport.city}.`,
+  };
 }
 
 export function searchAirports(query: string): IndianAirport[] {

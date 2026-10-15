@@ -14,6 +14,9 @@ export interface ExtractedEntities {
   interests: string[];
   party_size?: string;
   party_size_count?: number;
+  travel_date?: string;
+  start_date?: string;
+  end_date?: string;
   query_focus?: string;
   resolvedPlace?: ResolvedPlace;
   place_id?: string;
@@ -129,6 +132,8 @@ export const INDIAN_DESTINATION_ALIASES: Record<string, string> = {
   kaziranga: 'Kaziranga',
   tawang: 'Tawang',
   patna: 'Patna',
+  vaishali: 'Vaishali',
+  kesaria: 'Kesaria',
   gaya: 'Gaya',
   nalanda: 'Nalanda',
   bhubaneswar: 'Bhubaneswar',
@@ -219,6 +224,14 @@ export function extractEntities(rawText: string, existingContext?: any): Extract
     }
   }
 
+  for (const [alias, canonicalName] of Object.entries(INDIAN_DESTINATION_ALIASES)) {
+    const escapedAlias = alias.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    if (new RegExp(`\\b${escapedAlias}\\s+(?:nahi|nahin|not)\\b|\\b(?:no|not|nahi|nahin)\\s+${escapedAlias}\\b`, 'i').test(text)) {
+      entities.rejected_city = canonicalName;
+      break;
+    }
+  }
+
   // 1. Duration Extraction (e.g., "3 din", "3 days", "5 day", "weekend", "1 din", "ek din")
   const dayMatch = text.match(/(\d+)\s*(?:day|days|din|raat|nights)/i);
   if (dayMatch) {
@@ -229,9 +242,32 @@ export function extractEntities(rawText: string, existingContext?: any): Extract
     entities.duration_days = 1;
   }
 
+  // Preserve only unambiguous, year-qualified dates; do not infer a year for
+  // "next Friday" or turn a changing calendar expression into a fixed date.
+  const isoDates = [...text.matchAll(/\b(20\d{2})-(\d{2})-(\d{2})\b/g)]
+    .map((match) => `${match[1]}-${match[2]}-${match[3]}`)
+    .filter((date) => {
+      const parsed = new Date(`${date}T00:00:00Z`);
+      return Number.isFinite(parsed.getTime()) && parsed.toISOString().slice(0, 10) === date;
+    });
+  if (isoDates.length >= 2) {
+    entities.start_date = isoDates[0];
+    entities.end_date = isoDates[1];
+  } else if (isoDates.length === 1) {
+    entities.travel_date = isoDates[0];
+  }
+
   // 2. Budget Extraction (e.g., "15k", "15000", "₹15000", "15000 rs", "15 hazaar", "2000")
   const kBudgetMatch = text.match(/(\d+)\s*k\b/i);
-  const numberBudgetMatch = text.match(/(?:₹|rs\.?|inr|budget)?\s*(\d{4,6})\b/i);
+  const numberBudgetMatches = [...text.matchAll(/(?:₹|rs\.?|inr|budget)?\s*(\d{4,6})\b/gi)];
+  const numberBudgetMatch = numberBudgetMatches.find((match) => {
+    const numberStart = (match.index || 0) + match[0].lastIndexOf(match[1]);
+    const number = Number(match[1]);
+    const hasBudgetMarker = /(?:budget|₹|rs\.?|inr)\s*$/i.test(text.slice(Math.max(0, numberStart - 12), numberStart));
+    const isIsoDate = /^20\d{2}-\d{2}-\d{2}\b/.test(text.slice(numberStart));
+    const looksLikeYear = number >= 1900 && number <= 2100;
+    return hasBudgetMarker || (!isIsoDate && !looksLikeYear);
+  });
   const hazarBudgetMatch = text.match(/(\d+)\s*(?:hazar|hazaar)\b/i);
 
   if (kBudgetMatch) {
@@ -384,6 +420,20 @@ export function extractEntities(rawText: string, existingContext?: any): Extract
   } else if (/friends|dost|group/i.test(text)) {
     entities.party_size = 'Friends Group';
     entities.party_size_count = 3;
+  }
+
+  if (entities.rejected_city) {
+    const rejected = entities.rejected_city.toLowerCase();
+    if (entities.destination?.toLowerCase() === rejected) {
+      delete entities.destination;
+      delete entities.city;
+      delete entities.state;
+    }
+    if (entities.resolvedPlace?.city.toLowerCase() === rejected) {
+      delete entities.resolvedPlace;
+      delete entities.place_id;
+      delete entities.place_name;
+    }
   }
 
   return entities;

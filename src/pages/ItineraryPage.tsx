@@ -640,8 +640,8 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5 sm:gap-4 items-end">
           {/* Destination Selector */}
           <div className="space-y-1.5">
-            <label className="text-xs font-bold uppercase tracking-wider text-stone-700 flex items-center gap-1">
-              <MapPin className="w-3.5 h-3.5 text-[#FF671F]" />
+            <label className="text-sm font-bold text-stone-800 flex items-center gap-1.5">
+              <MapPin className="w-4 h-4 text-[#FF671F]" />
               <span>Destination / City</span>
             </label>
             <select
@@ -650,7 +650,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                 const found = ALL_INDIAN_TOURISM_CITIES.find((c) => c.id === e.target.value);
                 if (found) handleSelectCity(found);
               }}
-              className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-xs text-stone-900 font-semibold focus:bg-white focus:outline-hidden focus:border-[#FF671F] focus:ring-2 focus:ring-[#FF671F]/20 transition cursor-pointer"
+              className="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-sm text-stone-900 font-semibold focus:bg-white focus:outline-hidden focus:border-[#FF671F] focus:ring-2 focus:ring-[#FF671F]/20 transition cursor-pointer"
             >
               <optgroup label="Major Popular Hubs">
                 {ALL_INDIAN_TOURISM_CITIES.filter((c) => c.popular).map((c) => (
@@ -671,14 +671,14 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
 
           {/* Number of Days */}
           <div className="space-y-1.5">
-            <label className="text-xs font-bold uppercase tracking-wider text-stone-700 flex items-center gap-1">
-              <Calendar className="w-3.5 h-3.5 text-[#FF671F]" />
+            <label className="text-sm font-bold text-stone-800 flex items-center gap-1.5">
+              <Calendar className="w-4 h-4 text-[#FF671F]" />
               <span>Number of Days</span>
             </label>
             <select
               value={daysCount}
               onChange={(e) => setDaysCount(Number(e.target.value))}
-              className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-xs text-stone-900 font-semibold focus:bg-white focus:outline-hidden focus:border-[#FF671F] focus:ring-2 focus:ring-[#FF671F]/20 transition cursor-pointer"
+              className="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-sm text-stone-900 font-semibold focus:bg-white focus:outline-hidden focus:border-[#FF671F] focus:ring-2 focus:ring-[#FF671F]/20 transition cursor-pointer"
             >
               <option value={1}>1 Day (Express Tour)</option>
               <option value={2}>2 Days (Weekend Getaway)</option>
@@ -692,14 +692,14 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
 
           {/* Travel Pace */}
           <div className="space-y-1.5">
-            <label className="text-xs font-bold uppercase tracking-wider text-stone-700 flex items-center gap-1">
-              <Clock className="w-3.5 h-3.5 text-[#FF671F]" />
+            <label className="text-sm font-bold text-stone-800 flex items-center gap-1.5">
+              <Clock className="w-4 h-4 text-[#FF671F]" />
               <span>Travel Pace</span>
             </label>
             <select
               value={pace}
               onChange={(e) => setPace(e.target.value as any)}
-              className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-xs text-stone-900 font-semibold focus:bg-white focus:outline-hidden focus:border-[#FF671F] focus:ring-2 focus:ring-[#FF671F]/20 transition cursor-pointer"
+              className="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-sm text-stone-900 font-semibold focus:bg-white focus:outline-hidden focus:border-[#FF671F] focus:ring-2 focus:ring-[#FF671F]/20 transition cursor-pointer"
             >
               <option value="relaxed">Relaxed (1-2 major stops/day)</option>
               <option value="moderate">Moderate (3-4 balanced stops/day)</option>
@@ -709,14 +709,14 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
 
           {/* Budget Range */}
           <div className="space-y-1.5">
-            <label className="text-xs font-bold uppercase tracking-wider text-stone-700 flex items-center gap-1">
-              <IndianRupee className="w-3.5 h-3.5 text-[#FF671F]" />
+            <label className="text-sm font-bold text-stone-800 flex items-center gap-1.5">
+              <IndianRupee className="w-4 h-4 text-[#FF671F]" />
               <span>Budget Range</span>
             </label>
             <select
               value={budget}
               onChange={(e) => setBudget(e.target.value as any)}
-              className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50 border border-stone-200 text-xs text-stone-900 font-semibold focus:bg-white focus:outline-hidden focus:border-[#FF671F] focus:ring-2 focus:ring-[#FF671F]/20 transition cursor-pointer"
+              className="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-sm text-stone-900 font-semibold focus:bg-white focus:outline-hidden focus:border-[#FF671F] focus:ring-2 focus:ring-[#FF671F]/20 transition cursor-pointer"
             >
               <option value="budget">₹ Budget (Hostels & Local transit)</option>
               <option value="moderate">₹₹ Mid-range (Boutique & Cabs)</option>
@@ -729,7 +729,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
             <button
               onClick={() => handleGeneratePlan()}
               disabled={loading}
-              className="w-full py-2.5 px-4 rounded-xl bg-[#FF671F] hover:bg-[#E65100] text-white font-bold text-xs sm:text-sm transition flex items-center justify-center gap-2 shadow-md shadow-orange-500/20 cursor-pointer disabled:opacity-50"
+              className="w-full py-3 px-4 rounded-xl bg-[#FF671F] hover:bg-[#E65100] text-white font-bold text-sm transition flex items-center justify-center gap-2 shadow-md shadow-orange-500/20 cursor-pointer disabled:opacity-50"
             >
               {loading ? (
                 <>
@@ -748,7 +748,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
 
         {/* Row 2: Trip Preferences Pills */}
         <div className="space-y-2 pt-2 border-t border-stone-100">
-          <div className="text-xs font-bold text-stone-700">
+          <div className="text-sm font-bold text-stone-800">
             Trip Preferences (Optional)
           </div>
           <div className="flex flex-wrap gap-2.5">
@@ -759,7 +759,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                   key={pref.id}
                   type="button"
                   onClick={() => handleTogglePreference(pref.id)}
-                  className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-xs transition cursor-pointer ${
+                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm transition cursor-pointer ${
                     isSelected
                       ? 'bg-orange-50 text-stone-900 border-2 border-[#FF671F] font-semibold shadow-xs'
                       : 'bg-white text-stone-700 hover:bg-stone-50 border border-stone-200 font-medium'

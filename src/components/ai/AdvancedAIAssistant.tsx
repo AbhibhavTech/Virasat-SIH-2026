@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import {
   Send,
   User,
@@ -20,6 +20,7 @@ import {
   Train,
   Plane,
   Car,
+  Footprints,
   Navigation,
   Crosshair,
   MapPinOff,
@@ -68,6 +69,16 @@ interface AdvancedAIAssistantProps {
   initialPrompt?: string;
 }
 
+const AI_CONVERSATION_SESSION_KEY = 'virasat_ai_conversation_id';
+
+function getStoredConversationId(): string | undefined {
+  try {
+    return typeof window === 'undefined' ? undefined : window.sessionStorage.getItem(AI_CONVERSATION_SESSION_KEY) || undefined;
+  } catch {
+    return undefined;
+  }
+}
+
 export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
   initialPlaceId,
   initialPlaceName,
@@ -77,14 +88,15 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
   initialPrompt,
 }) => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [userLocation, setUserLocation] = useState<UserLocationContext | null>(null);
   const [locationStatus, setLocationStatus] = useState<'idle' | 'detecting' | 'granted' | 'denied' | 'error'>('idle');
 
   const initialGreeting: ExtendedChatMessage = {
     role: 'assistant',
-    content: `Namaste! 🙏 Main Virasat hoon — aapka AI Travel & Heritage Concierge.\n\nMain verified monuments, royal itineraries, train routes, Indian festivals aur hidden gems ke sath assist kar sakta hoon. Aap kahan ghumna chahte hain?`,
+    content: `Namaste! 🙏 Main **Virasat AI Astra** hoon — destinations, heritage, festivals, routes, stays aur trips explore karne mein aapki madad ke liye.\n\nHindi, Hinglish ya English mein apna sawal naturally poochhiye.`,
     timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-    suggested_actions: ['Jaipur 2-Day Plan', 'Udaipur Hidden Gems', 'Mumbai to Goa Rail', 'Mysore Dasara Info'],
+    suggested_actions: ['Jaipur ka 2-day itinerary banao', 'Maharashtra ke heritage places', 'Mumbai se Goa ka route', 'Virasat AI Astra kya kar sakta hai?'],
     actions: [
       { type: 'plan_itinerary', label: 'Plan Itinerary', url: '/itinerary' },
       { type: 'explore_heritage', label: 'UNESCO Monuments', url: '/heritage' },
@@ -153,6 +165,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
   };
 
   const [messages, setMessages] = useState<ExtendedChatMessage[]>([initialGreeting]);
+  const [conversationId, setConversationId] = useState<string | undefined>(getStoredConversationId);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
@@ -168,6 +181,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
   }>({});
 
   const messagesContainerRef = useRef<HTMLDivElement>(null);
+  const composerRef = useRef<HTMLTextAreaElement>(null);
   const lastProcessedPrompt = useRef<string | null>(null);
   const hasRequestedInitialGeo = useRef<boolean>(false);
 
@@ -175,6 +189,17 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
   useEffect(() => {
     if (selectedCity) setActiveCity(selectedCity);
   }, [selectedCity]);
+
+  // Preserve only the opaque conversation key in this browser tab. Messages and
+  // personal conversation content stay in React memory and are not written to storage.
+  useEffect(() => {
+    try {
+      if (conversationId) window.sessionStorage.setItem(AI_CONVERSATION_SESSION_KEY, conversationId);
+      else window.sessionStorage.removeItem(AI_CONVERSATION_SESSION_KEY);
+    } catch {
+      // Private browsing may disable session storage; the live chat still works.
+    }
+  }, [conversationId]);
 
   // Request browser geolocation on component mount
   useEffect(() => {
@@ -230,13 +255,13 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
                   return [
                     {
                       role: 'assistant',
-                      content: `Namaste! Based on your general area (**${areaName}**), I can help you discover nearby heritage monuments or plan journeys across India.\n\nWhere would you like to go today?`,
+                      content: `Namaste! Based on your general area (**${areaName}**), Virasat AI Astra can help you explore nearby places, plan journeys across India, or answer your questions.\n\nAap kahan se shuru karna chahenge?`,
                       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
                       suggested_actions: [
                         'Explore Near Me',
-                        'I want to visit Darjeeling',
-                        'Plan a Trip to Jaipur',
-                        'How does Virasat work?',
+                        'Darjeeling ka 3-day trip plan karo',
+                        'Jaipur ke best heritage places batao',
+                        'Virasat AI Astra kya kar sakta hai?',
                       ],
                     },
                   ];
@@ -268,13 +293,13 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
   // Neutral, context-driven core suggestions
   const coreSuggestions = [
     { label: 'Explore Near Me', prompt: 'Explore heritage and tourism places near my current location' },
-    { label: 'Jaipur 2-Day Plan', prompt: 'Mujhe Jaipur ghumna hai 2 din mein' },
-    { label: 'Udaipur Hidden Gems', prompt: 'What are the hidden gems near Udaipur?' },
-    { label: 'Mumbai to Goa Rail', prompt: 'Mumbai se Goa train se kaise jaun?' },
+    { label: 'Plan a Trip', prompt: 'Mujhe Jaipur ka 2-day itinerary banao, heritage aur local food ke saath' },
+    { label: 'Hidden Gems', prompt: 'What are a few lesser-known heritage places to explore in Udaipur?' },
+    { label: 'Compare Routes', prompt: 'Mumbai se Goa train, flight aur road options compare karo' },
     { label: 'UNESCO Sites', prompt: 'India ke UNESCO World Heritage Sites ke examples batao' },
-    { label: 'Mysore Dasara', prompt: 'Mysore Dasara kab hota hai aur kyun famous hai?' },
-    { label: 'Kaziranga Park', prompt: 'Kaziranga National Park kis state mein hai?' },
-    { label: 'Durga Puja Kolkata', prompt: 'Kolkata mein Durga Puja ka cultural significance kya hai?' },
+    { label: 'Festival Guide', prompt: 'Mysore Dasara ka cultural significance samjhao' },
+    { label: 'Explain a Topic', prompt: 'Indian stepwells kya hote hain? Simple examples ke saath samjhao' },
+    { label: 'Translate', prompt: 'Translate this travel phrase into Hindi: Where is the nearest railway station?' },
   ];
 
   const scrollToBottom = (behavior: ScrollBehavior = 'smooth') => {
@@ -322,6 +347,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
 
     setMessages((prev) => [...prev, userMsg]);
     setInput('');
+    if (composerRef.current) composerRef.current.style.height = 'auto';
     setLoading(true);
 
     if (typeof window !== 'undefined' && window.scrollY !== originalScrollY) {
@@ -339,13 +365,18 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
 
       const res = await api.chatAI({
         message: trimmed,
+        conversation_id: conversationId,
         city: activeCity === 'All India' ? undefined : activeCity,
+        selectedCity: activeCity === 'All India' ? undefined : activeCity,
+        currentRoute: `${location.pathname}${location.search}`,
         place_id: initialPlaceId,
         place_name: initialPlaceName,
         history: historyPayload,
         location: activeLoc || undefined,
         travel_context: travelContext,
       });
+
+      if (res.conversation_id) setConversationId(res.conversation_id);
 
       // Reset destination memory if user asks to change destination or explore somewhere else without naming a new one
       if (/(change destination|kisi aur jagah|somewhere else|kahi aur|dusri jagah|new destination)/i.test(trimmed) && !res.transit_comparison?.destination) {
@@ -380,9 +411,17 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
       const isRateLimit = err?.message?.includes('429') || err?.message?.includes('RATE_LIMIT');
       const errorMsg: ExtendedChatMessage = {
         role: 'assistant',
-        content: isRateLimit
+        content: err?.hostedMessage || (err?.message?.includes('MODEL_HTTP_429')
+          ? 'The hosted AI provider returned HTTP 429. Its error details are needed to distinguish temporary rate limits from quota or billing restrictions.'
+          : isRateLimit
           ? '⏱️ Rate limit reached (30 queries/min). Please wait a few moments before submitting your next cultural inquiry.'
-          : 'I had trouble connecting to the cultural archives. Please check your connection or tap Retry to resend.',
+          : err?.message?.includes('MODEL_NOT_CONFIGURED')
+            ? 'Hosted AI abhi configure nahi hai. Server par model aur API key set karke restart karna zaroori hai.'
+            : /MODEL_HTTP_401|MODEL_HTTP_403/.test(err?.message || '')
+              ? 'AI provider authentication or model access failed. Check the server-side configuration.'
+              : err?.message?.includes('MODEL_QUOTA_EXHAUSTED')
+                ? 'AI provider quota is exhausted. Check the API project billing and limits.'
+                : 'The AI model could not generate a reply. Please retry shortly or check the server configuration.'),
         error: true,
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
       };
@@ -396,19 +435,22 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
   };
 
   const handleResetConversation = () => {
+    setConversationId(undefined);
     setTravelContext({});
+    setInput('');
+    if (composerRef.current) composerRef.current.style.height = 'auto';
     setMessages([
       userLocation
         ? {
           role: 'assistant',
           content: `Namaste! Based on your general area (**${userLocation.locality ? `${userLocation.locality}, ` : ''
-            }${userLocation.city || userLocation.state || 'your area'}**), I can help you discover nearby heritage monuments or plan journeys across India.\n\nWhere would you like to go today?`,
+            }${userLocation.city || userLocation.state || 'your area'}**), Virasat AI Astra can help you explore nearby places, plan journeys across India, or answer your questions.\n\nAap kahan se shuru karna chahenge?`,
           timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
           suggested_actions: [
             'Explore Near Me',
-            'I want to visit Darjeeling',
-            'Plan a Trip to Jaipur',
-            'How does Virasat work?',
+            'Darjeeling ka 3-day trip plan karo',
+            'Jaipur ke best heritage places batao',
+            'Virasat AI Astra kya kar sakta hai?',
           ],
         }
         : {
@@ -427,54 +469,120 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
     }
   };
 
-  // Helper to render formatted assistant response (handles bold, bullets, headers)
+  const renderInlineMarkdown = (text: string, keyPrefix: string) => {
+    const tokenPattern = /(\[[^\]]+\]\(https?:\/\/[^)\s]+\)|\*\*.+?\*\*|`[^`]+`|\*.+?\*)/g;
+    return text.split(tokenPattern).map((part, index) => {
+      const linkMatch = part.match(/^\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)$/);
+      if (linkMatch) {
+        return (
+          <a key={`${keyPrefix}-${index}`} href={linkMatch[2]} target="_blank" rel="noopener noreferrer" className="text-[#B84A11] underline underline-offset-2 hover:text-[#8F370B]">
+            {linkMatch[1]}
+          </a>
+        );
+      }
+      if (part.startsWith('**') && part.endsWith('**')) {
+        return <strong key={`${keyPrefix}-${index}`} className="font-semibold text-stone-900">{part.slice(2, -2)}</strong>;
+      }
+      if (part.startsWith('`') && part.endsWith('`')) {
+        return <code key={`${keyPrefix}-${index}`} className="rounded bg-stone-100 px-1 py-0.5 font-mono text-[0.92em]">{part.slice(1, -1)}</code>;
+      }
+      if (part.startsWith('*') && part.endsWith('*')) {
+        return <em key={`${keyPrefix}-${index}`}>{part.slice(1, -1)}</em>;
+      }
+      return part;
+    });
+  };
+
+  // Render the useful Markdown subset returned by the assistant without injecting HTML.
   const renderMessageContent = (content: string) => {
     const lines = content.split('\n');
+    const blocks: Array<{ type: 'paragraph' | 'heading' | 'unordered' | 'ordered' | 'code'; text: string; level?: number }> = [];
+
+    for (let index = 0; index < lines.length;) {
+      const line = lines[index].trim();
+      if (!line) {
+        index += 1;
+        continue;
+      }
+
+      if (line.startsWith('```')) {
+        const codeLines: string[] = [];
+        index += 1;
+        while (index < lines.length && !lines[index].trim().startsWith('```')) {
+          codeLines.push(lines[index]);
+          index += 1;
+        }
+        index += 1;
+        blocks.push({ type: 'code', text: codeLines.join('\n') });
+        continue;
+      }
+
+      const heading = line.match(/^(#{1,3})\s+(.+)$/);
+      if (heading) {
+        blocks.push({ type: 'heading', text: heading[2], level: heading[1].length });
+        index += 1;
+        continue;
+      }
+
+      if (/^[-*•]\s+/.test(line)) {
+        const items: string[] = [];
+        while (index < lines.length && /^\s*[-*•]\s+/.test(lines[index])) {
+          items.push(lines[index].trim().replace(/^[-*•]\s+/, ''));
+          index += 1;
+        }
+        blocks.push({ type: 'unordered', text: items.join('\n') });
+        continue;
+      }
+
+      if (/^\d+[.)]\s+/.test(line)) {
+        const items: string[] = [];
+        while (index < lines.length && /^\s*\d+[.)]\s+/.test(lines[index])) {
+          items.push(lines[index].trim().replace(/^\d+[.)]\s+/, ''));
+          index += 1;
+        }
+        blocks.push({ type: 'ordered', text: items.join('\n') });
+        continue;
+      }
+
+      const paragraphLines = [line];
+      index += 1;
+      while (index < lines.length && lines[index].trim() && !/^(#{1,3})\s+|^[-*•]\s+|^\d+[.)]\s+|^```/.test(lines[index].trim())) {
+        paragraphLines.push(lines[index].trim());
+        index += 1;
+      }
+      blocks.push({ type: 'paragraph', text: paragraphLines.join(' ') });
+    }
+
     return (
-      <div className="space-y-1.5">
-        {lines.map((line, idx) => {
-          const trimmedLine = line.trim();
-          if (!trimmedLine) {
-            return <div key={idx} className="h-1.5" />;
+      <div className="space-y-2">
+        {blocks.map((block, index) => {
+          if (block.type === 'code') {
+            return <pre key={index} className="overflow-x-auto rounded-xl bg-stone-900 p-3 text-xs text-stone-100"><code>{block.text}</code></pre>;
           }
-
-          // Format bold markers **text**
-          const parts = line.split(/(\*\*.*?\*\*)/g);
-          const renderedLine = parts.map((part, pIdx) => {
-            if (part.startsWith('**') && part.endsWith('**')) {
-              return (
-                <strong key={pIdx} className="font-semibold text-stone-900">
-                  {part.slice(2, -2)}
-                </strong>
-              );
-            }
-            return part;
-          });
-
-          if (trimmedLine.startsWith('•') || trimmedLine.startsWith('-')) {
+          if (block.type === 'heading') {
+            const headingClass = 'font-serif font-bold text-[#0B192C]';
+            return block.level === 1
+              ? <h3 key={index} className={`${headingClass} text-base`}>{renderInlineMarkdown(block.text, `h-${index}`)}</h3>
+              : <h4 key={index} className={`${headingClass} text-sm pt-1`}>{renderInlineMarkdown(block.text, `h-${index}`)}</h4>;
+          }
+          if (block.type === 'unordered' || block.type === 'ordered') {
+            const List = block.type === 'unordered' ? 'ul' : 'ol';
+            const listStyle = block.type === 'unordered' ? 'list-disc marker:text-[#FF671F]' : 'list-decimal marker:text-[#FF671F]';
             return (
-              <div key={idx} className="flex items-start gap-2 pl-1">
-                <span className="text-[#FF671F] font-bold text-xs mt-0.5">•</span>
-                <span className="flex-1">{renderedLine}</span>
-              </div>
+              <List key={index} className={`space-y-1 pl-5 ${listStyle}`}>
+                {block.text.split('\n').map((item, itemIndex) => (
+                  <li key={itemIndex} className="pl-0.5">{renderInlineMarkdown(item, `l-${index}-${itemIndex}`)}</li>
+                ))}
+              </List>
             );
           }
-
-          if (trimmedLine.startsWith('###')) {
-            return (
-              <h4 key={idx} className="font-serif font-bold text-sm text-[#0B192C] mt-2 pt-1 border-t border-stone-100">
-                {trimmedLine.replace(/^###\s*/, '')}
-              </h4>
-            );
-          }
-
-          return <p key={idx}>{renderedLine}</p>;
+          return <p key={index}>{renderInlineMarkdown(block.text, `p-${index}`)}</p>;
         })}
       </div>
     );
   };
 
-  // Render transit comparison card (Train, Flight, Road)
+  // Render transit comparison card (Train, Flight, Road, Walk)
   const renderTransitComparison = (tc: TransitComparison) => {
     return (
       <div className="mt-4 p-4 rounded-2xl bg-[#FAF8F5] border border-[#EFE8DF] space-y-3">
@@ -494,7 +602,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
           )}
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-2.5">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2.5">
           {/* Train Option */}
           {tc.train && (
             <div className="p-3 rounded-xl bg-white border border-blue-100 shadow-2xs hover:border-blue-300 transition space-y-1.5 flex flex-col justify-between">
@@ -590,6 +698,35 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
               </button>
             </div>
           )}
+
+          {tc.walk && (
+            <div className="p-3 rounded-xl bg-white border border-emerald-100 shadow-2xs hover:border-emerald-300 transition space-y-1.5 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center justify-between">
+                  <span className="inline-flex items-center gap-1 text-xs font-bold text-emerald-900">
+                    <Footprints className="w-3.5 h-3.5 text-emerald-600" /> Walking option
+                  </span>
+                  {tc.walk.approx_duration && (
+                    <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded">
+                      {tc.walk.approx_duration}
+                    </span>
+                  )}
+                </div>
+                <p className="text-xs text-stone-800 font-medium mt-1 leading-snug">{tc.walk.summary}</p>
+                {tc.walk.notes && (
+                  <p className="text-[11px] text-stone-500 mt-1 leading-normal italic">ℹ️ {tc.walk.notes}</p>
+                )}
+              </div>
+              <button
+                type="button"
+                onClick={() => handleSend(`Is it safe and practical to walk from ${tc.origin} to ${tc.destination}?`)}
+                className="text-[11px] font-semibold text-emerald-700 hover:text-emerald-900 pt-1.5 flex items-center gap-1 border-t border-emerald-50 mt-1"
+              >
+                <span>Walking guidance</span>
+                <ArrowRight className="w-3 h-3" />
+              </button>
+            </div>
+          )}
         </div>
       </div>
     );
@@ -608,15 +745,15 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
           <div>
             <div className="flex items-center gap-2 flex-wrap">
               <h2 className="font-serif text-sm sm:text-lg font-bold text-[#0B192C] tracking-tight">
-                Virasat AI Concierge
+                Virasat AI Astra
               </h2>
               <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                Grounded
+                Travel &amp; Culture Copilot
               </span>
             </div>
             <p className="text-[11px] sm:text-xs text-stone-500">
-              Location-aware guidance • Multimodal routing • Verified ASI & UNESCO
+              Heritage, travel, culture &amp; everyday questions • Hindi, Hinglish &amp; English
             </p>
           </div>
         </div>
@@ -689,7 +826,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
         <div className="flex items-center justify-between text-xs font-semibold text-stone-500 px-1">
           <span className="flex items-center gap-1.5">
             <Sparkles className="w-3.5 h-3.5 text-[#FF671F]" />
-            Quick Prompts & Actions
+            Start with a prompt
           </span>
           <span className="text-[11px] text-stone-400">Tap to start</span>
         </div>
@@ -721,7 +858,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
           <div className="flex items-center gap-2">
             <Bot className="w-4 h-4 text-[#FF671F]" />
             <span className="text-xs font-bold text-stone-800">
-              Active Dialogue Stream
+              Virasat AI Astra conversation
             </span>
             <span className="text-[10px] sm:text-[11px] text-stone-400">
               ({messages.length})
@@ -736,7 +873,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
           <div className="flex items-center gap-2 text-[10px] text-stone-500">
             <span className="flex items-center gap-1 font-medium text-stone-700 bg-stone-100 px-2 py-0.5 rounded-full border border-stone-200 text-[10px] sm:text-[11px]">
               <Compass className="w-3 h-3 text-[#FF671F]" />
-              Verified Transit Hubs
+              {activeCity === 'All India' ? 'India-wide context' : `${activeCity} context`}
             </span>
           </div>
         </div>
@@ -774,7 +911,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
                   {renderMessageContent(m.content)}
 
                   {/* Multimodal Transit Comparison Cards */}
-                  {!isUser && m.transit_comparison && (m.transit_comparison.train || m.transit_comparison.air || m.transit_comparison.road) && renderTransitComparison(m.transit_comparison)}
+                  {!isUser && m.transit_comparison && (m.transit_comparison.train || m.transit_comparison.air || m.transit_comparison.road || m.transit_comparison.walk) && renderTransitComparison(m.transit_comparison)}
 
                   {/* Suggested Places Cards with Real Distance in Km */}
                   {!isUser && m.suggested_places && m.suggested_places.length > 0 && (
@@ -960,12 +1097,12 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
                       {!isUser && m.sources && m.sources.length > 0 && (
                         <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-semibold border border-emerald-200">
                           <ShieldCheck className="w-3 h-3 text-emerald-600" />
-                          <span>ASI & Official Tourism Verified</span>
+                          <span>Sources available</span>
                         </span>
                       )}
                       {!isUser && m.latency_ms !== undefined && (
                         <span className="text-stone-400">
-                          • {m.latency_ms}ms (Virasat AI Neural Concierge)
+                          • {m.latency_ms}ms · {m.model_used || 'Virasat AI Astra'}
                         </span>
                       )}
                     </span>
@@ -1020,7 +1157,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
               </div>
               <div className="p-4 sm:p-5 rounded-3xl bg-white border border-[#EFE8DF] text-xs sm:text-sm text-stone-600 shadow-xs flex items-center gap-3">
                 <span className="inline-block w-2.5 h-2.5 rounded-full bg-[#FF671F] animate-ping" />
-                <span>Virasat AI is analyzing location coordinates, transit corridors, and heritage archives...</span>
+                <span>Virasat AI Astra is checking the conversation and preparing an answer…</span>
               </div>
             </div>
           )}
@@ -1034,21 +1171,33 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
               e.preventDefault();
               handleSend(input);
             }}
-            className="flex items-center gap-2"
+            className="flex items-end gap-2"
           >
             <div className="relative flex-1">
-              <input
-                type="text"
+              <textarea
+                ref={composerRef}
+                rows={1}
                 value={input}
-                onChange={(e) => setInput(e.target.value)}
-                placeholder="Ask Virasat about any destination, explore near me, compare transit, or plan an itinerary..."
-                className="w-full pl-4 pr-12 py-3 sm:py-3.5 rounded-2xl bg-[#FAF8F5] border border-[#EFE8DF] text-xs sm:text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#FF671F] focus:bg-white focus:ring-1 focus:ring-[#FF671F] transition"
+                onChange={(e) => {
+                  setInput(e.target.value);
+                  e.currentTarget.style.height = 'auto';
+                  e.currentTarget.style.height = `${Math.min(e.currentTarget.scrollHeight, 144)}px`;
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault();
+                    handleSend(input);
+                  }
+                }}
+                placeholder="Message Virasat AI Astra… (Enter to send, Shift + Enter for a new line)"
+                aria-label="Message Virasat AI Astra"
+                className="w-full min-h-[48px] max-h-36 resize-none overflow-y-auto pl-4 pr-12 py-3 sm:py-3.5 rounded-2xl bg-[#FAF8F5] border border-[#EFE8DF] text-xs sm:text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#FF671F] focus:bg-white focus:ring-1 focus:ring-[#FF671F] transition"
               />
               <div className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center">
                 <VoiceInputButton
                   variant="ai"
-                  title="Speak to Virasat AI"
-                  placeholderPrompt="Listening... (e.g. 'Plan a 3-day trip to Jaipur')"
+                  title="Speak to Virasat AI Astra"
+                  placeholderPrompt="Listening… (e.g. 'Plan a 3-day trip to Jaipur')"
                   onTranscript={(text) => setInput(text)}
                   onFinalTranscript={(text) => {
                     setInput(text);
@@ -1062,14 +1211,14 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
               className="px-5 sm:px-6 py-3 sm:py-3.5 rounded-2xl bg-[#FF671F] hover:bg-[#E65100] disabled:opacity-40 disabled:cursor-not-allowed text-white text-xs sm:text-sm font-bold transition shadow-xs flex items-center gap-2 shrink-0 cursor-pointer"
               aria-label="Send message"
             >
-              <span>Ask</span>
+              <span>Send</span>
               <Send className="w-4 h-4" />
             </button>
           </form>
 
           {/* Quick Virasat shortcuts footer */}
           <div className="mt-3 flex items-center justify-between text-[11px] text-stone-400 flex-wrap gap-2 pt-2 border-t border-stone-50">
-            <span className="font-medium">Direct Virasat Tools:</span>
+            <span className="font-medium">Explore with Virasat:</span>
             <div className="flex items-center gap-4">
               {onNavigateTab && (
                 <>

@@ -28,7 +28,6 @@ flowchart TD
         PlacesMod --> DB
         RoutingMod --> DB
         ReportsMod --> DB
-        AIMod --> Gemini[Google Gemini API]
         AIMod --> PlacesMod
         AIMod --> RoutingMod
     end
@@ -59,8 +58,8 @@ flowchart TD
   - Row Level Security (RLS) for multi-tenant data isolation.
 
 ### 4. AI Grounding & Orchestration Subsystem
-- **Technology**: Google Gemini (`@google/genai`) with server-side tool calling.
+- **Technology**: Virasat AI Astra local intent engine, app-data tools, and route logic; no hosted model dependency.
 - **Role**:
-  - Grounded conversational travel concierge.
+  - Grounded travel assistant for the app's supported tourism domain.
   - Strict grounding against verified database records (tool calls to `searchPlaces`, `getTransport`, etc.).
-  - Output structured JSON schemas for direct rendering into the itinerary timeline.
+  - Route supported requests through local data tools and return structured actions for app navigation.

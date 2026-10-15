@@ -89,15 +89,18 @@ function _classifyIntent(
   const isHinglish = hinglishMarkers.some((m) => new RegExp(`\\b${m}\\b`, 'i').test(text));
   const language = isHinglish ? 'hi_hinglish' : 'en';
 
-  // 1. Casual Greetings & Social
-  if (/\b(hello|hi|hey|heya|namaste|namaskar|pranam|adaab|vanakkam|sasriakal)\b/i.test(text)) {
-    if (/(kaise ho|how are you|kya haal|whats up|sup|sab badhiya|kya chal raha hai)/i.test(text)) {
+  // 1. Casual Greetings & Social (include common chat spellings and typos)
+  if (/\b(hello|helo|helllo|hi+|hey+|heya|yo|namaste|namaskar|pranam|adaab|vanakkam|sasriakal|good morning|good afternoon|good evening)\b/i.test(text)) {
+    if (/(kaise ho|how are you|how are u|how r u|how're you|hru|kya haal|what'?s up|whats up|sup|sab badhiya|kya chal raha hai)/i.test(text)) {
       return { intent: 'CASUAL_CONVERSATION', confidence: 0.98, language, isHinglish };
     }
     return { intent: 'GREETING', confidence: 0.99, language, isHinglish };
   }
-  if (/(kaise ho|how are you|kya haal|whats up|sup|sab badhiya|kya chal raha hai)/i.test(text)) {
+  if (/(kaise ho|how are you|how are u|how r u|how're you|hru|kya haal|what'?s up|whats up|sup|sab badhiya|kya chal raha hai)/i.test(text)) {
     return { intent: 'CASUAL_CONVERSATION', confidence: 0.98, language, isHinglish };
+  }
+  if (/(tell me (?:a )?joke|make me laugh|koi joke|joke sunao|mazaak sunao|i love you|love you|are you human|are you real|do you have feelings)/i.test(text)) {
+    return { intent: 'CASUAL_CONVERSATION', confidence: 0.95, language, isHinglish };
   }
   if (/\b(bye|alvida|goodbye|see you|tata|baad me baat karte|chalta hu)\b/i.test(text)) {
     return { intent: 'FAREWELL', confidence: 0.98, language, isHinglish };
@@ -105,7 +108,7 @@ function _classifyIntent(
   if (/\b(thank you|thanks|shukriya|dhanyawad|dhanyavaad|thx)\b/i.test(text)) {
     return { intent: 'THANKS', confidence: 0.98, language, isHinglish };
   }
-  if (/(what is this|who are you|tum kaun ho|ye kya hai|what is virasat|virasat kya hai|about virasat|introduce yourself)/i.test(text)) {
+  if (/(what is this|what are you|who are you|who made you|who created you|are you a bot|are you ai|tum kaun ho|ye kya hai|what is virasat|virasat kya hai|about virasat|introduce yourself)/i.test(text)) {
     return { intent: 'ABOUT_VIRASAT', confidence: 0.95, language, isHinglish };
   }
   if (/^(help|madad|what can you do|tum kya kar sakte ho|features batao|options batao)[\s!.]*$/i.test(text)) {
@@ -157,7 +160,15 @@ function _classifyIntent(
     return { intent: 'YOU_DECIDE', confidence: 0.95, language, isHinglish, resolvedPlace, queryFocus };
   }
 
-  // 9. Comparison (e.g. Jaipur vs Udaipur, Train vs Flight)
+  // 9. Distance questions and comparisons (keep them out of city tourism search)
+  if (
+    /(closer|closest|nearer|nearest|distance|how far|farther|farthest|kitni door|kitna door|paas hai|nazdeek)/i.test(text) &&
+    /(which|what|where|between|from|to|or|versus|vs|se|kaun|kaunsi|kaunsa|konsa|konsi)/i.test(text)
+  ) {
+    return { intent: 'COMPARISON', confidence: 0.96, language, isHinglish, resolvedPlace, queryFocus };
+  }
+
+  // 10. Comparison (e.g. Jaipur vs Udaipur, Train vs Flight)
   if (/\bvs\b|\bversus\b|compare|which is better|kisme jau|kaun sa accha hai/i.test(text)) {
     if (/hotel/i.test(text)) return { intent: 'HOTEL_COMPARISON', confidence: 0.95, language, isHinglish, resolvedPlace, queryFocus };
     return { intent: 'COMPARISON', confidence: 0.95, language, isHinglish, resolvedPlace, queryFocus };
@@ -180,7 +191,7 @@ function _classifyIntent(
 
   // 12. Festivals & Cultural Fairs ("Mysore Dasara kab hota hai", "Durga Puja ka cultural significance", "Is festival ka origin kya hai?")
   if (
-    /(festival|festivals|mela|events|fair|utsav|aarti|celebration|timing|dasara|durga puja|diwali|holi|bihu|onam|chhath|pushkar|hornbill|hemis|kumbh|navaratri|eid|christmas|losar|baisakhi|pongal|origin kya hai|is festival ka origin|cultural significance|kyun famous hai|kab hota hai)/i.test(text)
+    /(festival|festivals|mela|events|fair|utsav|aarti|celebration|timing|dasara|durga puja|diwali|holi|bihu|onam|chhath|pushkar|hornbill|hemis|kumbh|navaratri|eid|christmas|losar|baisakhi|pongal|origin kya hai|is festival ka origin|cultural significance|kyun famous hai|kab hota hai|when is it|when does it happen|when is this festival|when is that festival|festival date|when will it be|kab hai|iska date|uska date)/i.test(text)
   ) {
     return { intent: 'FESTIVAL_QUERY', confidence: 0.96, language, isHinglish };
   }
@@ -211,7 +222,7 @@ function _classifyIntent(
   // 17. Transport / Train / Flight / Distance / How to reach ("Mumbai se Goa train se kaise jaun?", "Mumbai se Pune train se kaise jaun?", "Wahan kaise pahuchenge?")
   if (
     queryFocus === 'how_to_reach' ||
-    /(train|railway|irctc|flight|airport|flight ticket|bus|cab|taxi|kaise jaun|kaise jaaun|how to reach|kaise jaye|kaise pahunche|wahan kaise pahuchenge|route|safar|distance between|kitni door|train se)/i.test(text)
+    /(train|railway|irctc|flight|airport|flight ticket|bus|cab|taxi|kaise jaun|kaise jaaun|how to reach|how (?:do i|can i|to) (?:go|get|travel)|kaise jaye|kaise pahunche|wahan kaise pahuchenge|route|safar|distance between|kitni door|train se)/i.test(text)
   ) {
     if (/train|railway|train se/i.test(text)) return { intent: 'TRAIN_SEARCH', confidence: 0.95, language, isHinglish, resolvedPlace, queryFocus };
     if (/flight|airport/i.test(text)) return { intent: 'FLIGHT_SEARCH', confidence: 0.95, language, isHinglish, resolvedPlace, queryFocus };
@@ -238,12 +249,23 @@ function _classifyIntent(
     return { intent: 'EMERGENCY_QUERY', confidence: 0.98, language, isHinglish };
   }
 
-  // 22. Direct Monument / Heritage query (A specific place was resolved!)
+  // 22. Broad heritage lists should stay searches even when the city itself
+  // happens to be present as a record in the local places registry.
+  const asksForHeritageList =
+    /(top|best|list|all|show|find|recommend|places to visit|what to see|attractions|sights|worth visiting|ghumne layak|dikhao)/i.test(text) &&
+    /(fort|palace|temple|monument|mandir|masjid|church|gurudwara|caves|stupa|tomb|history|itihaas|architecture|heritage|attraction|sights)/i.test(text);
+  const resolvedPlaceIsCityRecord = resolvedPlace &&
+    resolvedPlace.name.trim().toLowerCase() === resolvedPlace.city.trim().toLowerCase();
+  if (asksForHeritageList || (resolvedPlaceIsCityRecord && /(fort|palace|temple|monument|heritage|attraction|sights)/i.test(text))) {
+    return { intent: 'HERITAGE_QUERY', confidence: 0.92, language, isHinglish, resolvedPlace, queryFocus };
+  }
+
+  // 23. Direct Monument / Heritage query (A specific place was resolved!)
   if (resolvedPlace) {
     return { intent: 'MONUMENT_INFO', confidence: 0.99, language, isHinglish, resolvedPlace, queryFocus };
   }
 
-  // 23. Rejection of a location (e.g. "no panvel nahi bhai", "panvel nahi", "not panvel")
+  // 24. Rejection of a location (e.g. "no panvel nahi bhai", "panvel nahi", "not panvel")
   if (/(?:no|nahi|not)\s+[a-zA-Z\s]+?(?:nahi|bhai|yaar)?$/i.test(text) || /^[a-zA-Z\s]+?\s+nahi\b/i.test(text)) {
     return { intent: 'CASUAL_CONVERSATION', confidence: 0.98, language, isHinglish };
   }

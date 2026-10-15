@@ -832,7 +832,7 @@
       "verified_at": null,
       "is_hero": true,
       "order_index": 0,
-      "review_reason": "Rejected by Gemini Vision: The image clearly shows the amphitheater at Bandra Fort (Castell de Aguada), recognizable by the terraced stone seating, lawns, and the fort walls in the background, rather than the coastal walkway of Bandstand Promenade."
+      "review_reason": "Rejected by model-assisted image review: The image clearly shows the amphitheater at Bandra Fort (Castell de Aguada), recognizable by the terraced stone seating, lawns, and the fort walls in the background, rather than the coastal walkway of Bandstand Promenade."
     },
     "gallery_images": [
       {
@@ -965,7 +965,7 @@
       "verified_at": null,
       "is_hero": true,
       "order_index": 0,
-      "review_reason": "Rejected by Gemini Vision: The image depicts a small outdoor gym setup with exercise equipment, potted plants, and a white plastic chair rather than the historic stone architecture and coastal views of Worli Fort."
+      "review_reason": "Rejected by model-assisted image review: The image depicts a small outdoor gym setup with exercise equipment, potted plants, and a white plastic chair rather than the historic stone architecture and coastal views of Worli Fort."
     },
     "gallery_images": [
       {
@@ -1206,7 +1206,7 @@
       "verified_at": null,
       "is_hero": true,
       "order_index": 0,
-      "review_reason": "Rejected by Gemini Vision: The image is an old historical map showing multiple locations including Riwa Fort, Sion, Mahim Fort, and Worlee Hill rather than a photograph depicting Riwa Fort itself."
+      "review_reason": "Rejected by model-assisted image review: The image is an old historical map showing multiple locations including Riwa Fort, Sion, Mahim Fort, and Worlee Hill rather than a photograph depicting Riwa Fort itself."
     },
     "gallery_images": [
       {
@@ -1786,7 +1786,7 @@
       "verified_at": null,
       "is_hero": true,
       "order_index": 0,
-      "review_reason": "Rejected by Gemini Vision: The image features a celebrity photoshoot in front of a generic building exterior and plants, with a Bollywood Hungama watermark, rather than depicting the heritage architecture or specific landmarks of Pali Village in Bandra West."
+      "review_reason": "Rejected by model-assisted image review: The image features a celebrity photoshoot in front of a generic building exterior and plants, with a Bollywood Hungama watermark, rather than depicting the heritage architecture or specific landmarks of Pali Village in Bandra West."
     },
     "gallery_images": [
       {
@@ -3303,7 +3303,7 @@
       "verified_at": null,
       "is_hero": true,
       "order_index": 0,
-      "review_reason": "Rejected by Gemini Vision: The image shows the prominent stone pillars characteristic of the Bandstand Promenade in Bandra, not the open seawall and Art Deco backdrop of the Marine Drive Promenade in South Mumbai."
+      "review_reason": "Rejected by model-assisted image review: The image shows the prominent stone pillars characteristic of the Bandstand Promenade in Bandra, not the open seawall and Art Deco backdrop of the Marine Drive Promenade in South Mumbai."
     },
     "gallery_images": [
       {

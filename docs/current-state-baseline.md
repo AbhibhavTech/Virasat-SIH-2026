@@ -84,7 +84,7 @@ The frontend is a single-page application (SPA) lacking URL-based routing (`reac
 | 5 | `itinerary` | `<ItineraryPage />` | `src/pages/ItineraryPage.tsx` | Day circuit planner, topological stops, time/cost estimates |
 | 6 | `map` | `<MapPage />` | `src/pages/MapPage.tsx` | Fullscreen Leaflet map with state bounds & attraction markers |
 | 7 | `3d` | `<Heritage3DPage />` | `src/pages/Heritage3DPage.tsx` | Three.js 3D monument viewer (Gateway of India, CSMT, Hawa Mahal) |
-| 8 | `ai` | `<AIAssistantPage />` | `src/pages/AIAssistantPage.tsx` | Conversational travel assistant with Gemini chat interface |
+| 8 | `ai` | `<AIAssistantPage />` | `src/pages/AIAssistantPage.tsx` | Virasat AI Astra local tourism-data assistant |
 | 9 | `trips` | `<MyTripsPage />` | `src/pages/MyTripsPage.tsx` | Saved user itineraries (stored in memory/localStorage) |
 | 10 | `favorites` | `<FavoritesPage />` | `src/pages/FavoritesPage.tsx` | Bookmarked heritage attractions |
 | 11 | `profile` | `<ProfilePage />` | `src/pages/ProfilePage.tsx` | User profile details, travel style, and preferences |
@@ -148,7 +148,7 @@ The backend is a single file (`server.ts`, ~3,834 lines) mounting ~60 Express ro
 | 40 | `GET` | `/api/maps/directions` | L2422 | Turn-by-turn directions wrapper |
 | 41 | `GET` | `/api/weather` | L2444 | Weather retrieval endpoint |
 | 42 | `POST` | `/api/geo/reverse-geocode` | L2476 | Reverse geocoding via public Nominatim |
-| 43 | `POST` | `/api/ai/chat`, `/api/assistant/chat` | L2809 | Gemini AI assistant conversational endpoint |
+| 43 | `POST` | `/api/ai/chat`, `/api/assistant/chat` | Local Virasat AI Astra chat endpoint |
 | 44 | `GET` | `/api/itinerary/cities` | L3504 | Pre-baked itinerary cities |
 | 45 | `POST` | `/api/itinerary`, `/api/itineraries/generate` | L3511 | Generate day circuit itinerary |
 | 46 | `GET` | `/api/india-hierarchy` | L3595 | Complete 28 states / 174 cities tree |
@@ -214,7 +214,6 @@ The backend is a single file (`server.ts`, ~3,834 lines) mounting ~60 Express ro
 
 | Variable Name | Defined / Read In | Purpose | Current Handling |
 |---|---|---|---|
-| `GEMINI_API_KEY` | `server.ts:499, 502` | Authentication for Google Gemini generative AI API | Read server-side from `process.env`. If missing, `getAIClient()` returns `null` |
 | `NODE_ENV` | `server.ts:3813` | Determines runtime mode (`production` vs `development`) | If not `'production'`, initializes Vite dev middleware; else serves `dist/` |
 | `PORT` | `server.ts:24` | Express server port | Hardcoded as `const PORT = 3000;` (does not currently read `process.env.PORT`) |
 

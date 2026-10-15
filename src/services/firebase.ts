@@ -3,6 +3,7 @@ import {
   getAuth,
   GoogleAuthProvider,
   signInWithPopup,
+  signInWithRedirect,
   signOut as firebaseSignOut,
 } from 'firebase/auth';
 import {
@@ -150,6 +151,12 @@ testFirestoreConnection().catch(() => {});
  */
 export async function signInWithGooglePopup() {
   return await signInWithPopup(auth, googleProvider);
+}
+
+/** Use the same Google account picker through a full-page redirect when a
+ * browser or embedded webview prevents popups. */
+export async function signInWithGoogleRedirect() {
+  await signInWithRedirect(auth, googleProvider);
 }
 
 /**

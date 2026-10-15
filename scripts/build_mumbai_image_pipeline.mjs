@@ -1,6 +1,6 @@
 /**
  * Virasat Mumbai & Maharashtra Heritage Explorer — Image Pipeline
- * Sourcing, Match Verification (Gemini Vision), Deduplication & Manifest Generator
+ * Sourcing, Manual Image Review, Deduplication & Manifest Generator
  */
 
 import fs from 'fs';
@@ -8,24 +8,6 @@ import path from 'path';
 import crypto from 'crypto';
 
 const USER_AGENT = 'VirasatImagePipeline/1.0 (https://virasat.heritage; contact: admin@virasat.org)';
-
-// Extract Gemini API Key
-let geminiApiKey = '';
-for (const envFile of ['.env', 'server/.env']) {
-  if (fs.existsSync(envFile)) {
-    const lines = fs.readFileSync(envFile, 'utf8').split(/\r?\n/);
-    for (const l of lines) {
-      const idx = l.indexOf('=');
-      if (idx !== -1) {
-        const k = l.substring(0, idx).trim();
-        const v = l.substring(idx + 1).trim().replace(/^['"]|['"]$/g, '');
-        if (k === 'GEMINI_API_KEY' || k === 'VITE_GEMINI_API_KEY') {
-          geminiApiKey = v;
-        }
-      }
-    }
-  }
-}
 
 // 50 Places of Virasat Mumbai & Maharashtra Heritage Explorer
 export const PLACES_50 = [
@@ -669,143 +651,12 @@ export const CONFUSION_HINTS = {
   'mh-sinhagad-fort': 'Must not be confused with Torna Fort, Rajgad Fort, or Raigad Fort.'
 };
 
-// Match Verification using Gemini Vision with strict JSON contract & exponential backoff
-export async function verifyImageWithGeminiVision(placeName, locality, confusionHint, imageUrlOrThumb) {
-  if (!geminiApiKey || !imageUrlOrThumb) {
-    return {
-      matches: 'unsure',
-      reason: 'No Gemini API key or image URL available',
-      visible_subject: null
-    };
-  }
-
-  let b64 = null;
-  let mimeType = 'image/jpeg';
-
-  try {
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 12000);
-
-    const imgRes = await fetch(imageUrlOrThumb, {
-      headers: { 'User-Agent': USER_AGENT },
-      signal: controller.signal
-    });
-    clearTimeout(timeoutId);
-
-    if (!imgRes.ok) {
-      return { matches: 'unsure', reason: `Image download failed (HTTP ${imgRes.status})`, visible_subject: null };
-    }
-
-    const cType = imgRes.headers.get('content-type') || '';
-    if (cType.includes('png')) mimeType = 'image/png';
-    else if (cType.includes('webp')) mimeType = 'image/webp';
-    else mimeType = 'image/jpeg';
-
-    const buf = Buffer.from(await imgRes.arrayBuffer());
-    b64 = buf.toString('base64');
-  } catch (err) {
-    return { matches: 'unsure', reason: `Image download error: ${err.message}`, visible_subject: null };
-  }
-
-  const prompt = `You are an expert architectural historian, heritage cartographer, and image auditor.
-Verify whether this image clearly and authentically depicts the specified heritage location.
-
-Location:
-- Place Name: ${placeName}
-- Locality: ${locality}
-- Crucial Distinction Hint: ${confusionHint || 'Verify authentic architectural identity.'}
-
-Strict Rules:
-1. If the photo clearly depicts ${placeName}, answer matches: true.
-2. If this is a completely different place, an incorrect landmark, a generic urban skyline/road, or confused per the distinction hint, answer matches: false.
-3. If the photo is ambiguous, heavily obscured, or cannot be positively confirmed from the visible features, answer matches: "unsure".
-
-Respond ONLY in valid raw JSON with this exact contract:
-{
-  "matches": true, false, or "unsure",
-  "reason": "concise explanation of whether the visual features match",
-  "visible_subject": "what landmark or subject is actually visible in the photo"
-}`;
-
-  // Multi-model tier with exponential backoff on HTTP 429
-  const models = ['gemini-3.5-flash', 'gemini-3.6-flash', 'gemini-3.5-flash-lite', 'gemini-flash-lite-latest'];
-  let lastError = null;
-
-  for (const model of models) {
-    let attempt = 0;
-    const maxAttempts = 3;
-
-    while (attempt < maxAttempts) {
-      try {
-        const controller = new AbortController();
-        const timeoutId = setTimeout(() => controller.abort(), 20000);
-        const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${geminiApiKey}`;
-
-        const geminiRes = await fetch(url, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            contents: [
-              {
-                parts: [
-                  { text: prompt },
-                  { inlineData: { mimeType, data: b64 } }
-                ]
-              }
-            ],
-            generationConfig: {
-              responseMimeType: 'application/json'
-            }
-          }),
-          signal: controller.signal
-        });
-        clearTimeout(timeoutId);
-
-        if (geminiRes.status === 429) {
-          attempt++;
-          const waitTime = Math.pow(2, attempt) * 2000;
-          console.log(`    ⚠️ HTTP 429 rate limit on ${model}. Exponential backoff ${waitTime}ms (retry ${attempt}/${maxAttempts})...`);
-          await sleep(waitTime);
-          continue;
-        }
-
-        if (geminiRes.ok) {
-          const geminiData = await geminiRes.json();
-          const rawText = geminiData.candidates?.[0]?.content?.parts?.[0]?.text;
-          if (rawText) {
-            try {
-              const parsed = JSON.parse(rawText.trim());
-              let cleanMatch = parsed.matches;
-              if (cleanMatch === 'true' || cleanMatch === true) cleanMatch = true;
-              else if (cleanMatch === 'false' || cleanMatch === false) cleanMatch = false;
-              else cleanMatch = 'unsure';
-
-              return {
-                matches: cleanMatch,
-                reason: String(parsed.reason || ''),
-                visible_subject: String(parsed.visible_subject || '')
-              };
-            } catch (jsonErr) {
-              return { matches: 'unsure', reason: `JSON parse error: ${jsonErr.message}`, visible_subject: null };
-            }
-          }
-        } else {
-          const errText = await geminiRes.text();
-          lastError = `HTTP ${geminiRes.status}: ${errText.slice(0, 100)}`;
-          break; // Switch to next model
-        }
-      } catch (reqErr) {
-        lastError = reqErr.message;
-        attempt++;
-        await sleep(1500);
-      }
-    }
-  }
-
+// Automated image recognition is disabled; candidates stay pending until a person checks them.
+export async function reviewImageMatch(_placeName, _locality, _confusionHint, imageUrlOrThumb) {
   return {
     matches: 'unsure',
-    reason: `Vision capacity limitation: ${lastError || 'exhausted'}`,
-    visible_subject: null
+    reason: imageUrlOrThumb ? 'Source metadata is available, but the image needs manual visual review.' : 'No image URL is available for manual visual review.',
+    visible_subject: null,
   };
 }
 
@@ -843,13 +694,13 @@ async function runImagePipeline() {
         continue;
       }
 
-      // Verification check (Gemini Vision for hero candidate)
+      // Verification check (manual review for hero candidate)
       let matchStatus = 'NEEDS_REVIEW';
       let visionResult = { matches: false, reason: 'Pending review', visible_subject: null };
 
       if (!heroFound) {
-        visionResult = await verifyImageWithGemini(place, cand);
-        console.log(`  Vision check: matches=${visionResult.matches} | reason=${visionResult.reason}`);
+        visionResult = await reviewImageMatch(place.name, place.locality, CONFUSION_HINTS[place.id], cand.image_url || cand.thumbnail_url);
+        console.log(`  Manual review status: matches=${visionResult.matches} | reason=${visionResult.reason}`);
 
         if (visionResult.matches === true) {
           matchStatus = 'VERIFIED';
@@ -950,7 +801,7 @@ async function runImagePipeline() {
     if (place.is_sensitive) {
       noteText = `Sensitive site: ${place.sensitivity_note}`;
     } else if (heroImage.match_status === 'VERIFIED') {
-      noteText = 'Verified via Wikimedia Commons & Gemini 3.8 Flash Vision';
+      noteText = 'Image source and license recorded; previous verification retained';
     } else if (heroImage.match_status === 'NEEDS_REVIEW') {
       noteText = 'Fetched from Wikimedia Commons; manual review / vision quota retry needed';
     } else {
@@ -999,7 +850,7 @@ export function savePipelineProgress(placeImageBundles) {
     if (bundle.is_sensitive) {
       noteText = `Sensitive site: ${bundle.sensitivity_note}`;
     } else if (heroImage.match_status === 'VERIFIED') {
-      noteText = `Verified via Gemini Vision (${heroImage.verified_at || 'ISO'})`;
+      noteText = `Previously verified image record (${heroImage.verified_at || 'ISO'})`;
     } else if (heroImage.match_status === 'NEEDS_REVIEW') {
       noteText = heroImage.review_reason || 'Candidate image under review';
     } else {
@@ -1072,13 +923,13 @@ export function savePipelineProgress(placeImageBundles) {
   }
 }
 
-// VERIFY-ONLY MODE: Runs only Gemini Vision match check on existing NEEDS_REVIEW images
+// MANUAL REVIEW MODE: Reports images that need human confirmation
 export async function runVerifyOnlyPipeline() {
   console.log(`\n======================================================`);
-  console.log(`🔍 RUNNING VERIFY-ONLY PIPELINE (GEMINI VISION AUDIT)`);
+  console.log(`🔍 RUNNING VERIFY-ONLY PIPELINE (MANUAL IMAGE REVIEW)`);
   console.log(`   - Preserves all existing images without re-sourcing`);
   console.log(`   - Sequential processing with 1500ms delay`);
-  console.log(`   - Exponential backoff on HTTP 429`);
+  console.log(`   - No automatic image-recognition retries`);
   console.log(`   - Resume support (skip checked images; saves after each)`);
   console.log(`======================================================\n`);
 
@@ -1119,7 +970,7 @@ export async function runVerifyOnlyPipeline() {
       continue;
     }
 
-    if (hero.match_status === 'NEEDS_REVIEW' && hero.vision_checked && hero.verified_at) {
+    if (hero.match_status === 'NEEDS_REVIEW' && hero.manual_review_required) {
       console.log(`[${i + 1}/50] ⏭️ Already audited in current session: ${place.name}`);
       skippedCount++;
       continue;
@@ -1131,15 +982,14 @@ export async function runVerifyOnlyPipeline() {
       continue;
     }
 
-    console.log(`\n[${i + 1}/50] 🔬 Vision Match Check: ${place.name} (${place.locality})`);
+    console.log(`\n[${i + 1}/50] 🔬 Manual Review Needed: ${place.name} (${place.locality})`);
     const hint = CONFUSION_HINTS[place.id] || `Ensure authentic identification of ${place.name}.`;
     console.log(`    Confusion Hint: "${hint}"`);
     console.log(`    Image Target: ${hero.thumbnail_url || hero.image_url}`);
 
-    // Sequential delay between vision checks to respect rate limits
-    await sleep(1500);
+    // No automated vision request is made.
 
-    const result = await verifyImageWithGeminiVision(
+    const result = await reviewImageMatch(
       place.name,
       place.locality,
       hint,
@@ -1206,12 +1056,12 @@ export async function runVerifyOnlyPipeline() {
         verified_at: null,
         is_hero: true,
         order_index: 0,
-        review_reason: `Rejected by Gemini Vision: ${result.reason}`
+        review_reason: `Rejected after manual review: ${result.reason}`
       };
     } else {
       // unsure -> stay NEEDS_REVIEW
       hero.match_status = 'NEEDS_REVIEW';
-      hero.vision_checked = true;
+      hero.manual_review_required = true;
       hero.review_reason = result.reason;
       console.log(`    ⚠️ UNSURE: Remaining NEEDS_REVIEW`);
     }

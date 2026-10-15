@@ -59,12 +59,6 @@ export function buildContextPayload(req: Request): LiveContextPayload {
         home_city: reqUser.home_city,
         preferences: reqUser.travel_preferences,
       }
-    : body.user
-    ? {
-        id: body.user.id,
-        name: body.user.name,
-        home_city: body.user.home_city,
-      }
     : undefined;
 
   const userAgent = String(req.headers['user-agent'] || '');

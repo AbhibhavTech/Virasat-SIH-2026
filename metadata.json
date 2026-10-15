@@ -6,6 +6,6 @@
     "geolocation"
   ],
   "majorCapabilities": [
-    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+    "MAJOR_CAPABILITY_LOCAL_VIRASAT_AI_ASTRA_ENGINE"
   ]
 }

@@ -4,6 +4,8 @@ import { getConversationState, updateConversationState } from '../ai/engine/conv
 import { buildResponseForIntent } from '../ai/engine/responseGenerator';
 import { generateSmartItinerary } from '../ai/engine/itineraryPlanner';
 import { execute as executeEventsCalendar } from '../ai/tools/getEventsCalendar';
+import { execute as executeHiddenGemSearch } from '../ai/tools/searchHiddenGems';
+import { VERIFIED_HIDDEN_GEMS } from '../src/data/hiddenGemsData';
 
 console.log('====================================================');
 console.log('VIRASAT AI ASSISTANT — MULTILINGUAL & INTEL TEST SUITE');
@@ -42,16 +44,19 @@ async function runTests() {
     assert(resp.actions?.some(a => a.type === 'plan_itinerary' && a.url?.includes('Jaipur')), 'Query 1: Action links to /itinerary with Jaipur');
   }
 
-  // 2. “What are the hidden gems near Udaipur?”
+  // 2. Use a location present in the candidate dataset rather than asserting a canned city answer.
   {
-    const q = 'What are the hidden gems near Udaipur?';
+    const candidateCity = VERIFIED_HIDDEN_GEMS[0]?.city || 'Mumbai';
+    const q = `What are the hidden gems near ${candidateCity}?`;
     const intent = detectIntent(q);
     const entities = extractEntities(q);
     const state = updateConversationState(sessionId, entities, intent.intent);
     const resp = buildResponseForIntent(intent, state);
+    const candidateResults = await executeHiddenGemSearch({ city: candidateCity });
 
     assert(intent.intent === 'HIDDEN_GEMS_QUERY', 'Query 2: Intent is HIDDEN_GEMS_QUERY');
-    assert(resp.reply.includes('Sajjangarh') && resp.reply.includes('Bahubali Hills'), 'Query 2: Recommends verified Udaipur hidden gems');
+    assert(candidateResults.total_found > 0 && candidateResults.candidates.every((candidate: any) => candidate.city === candidateCity), 'Query 2: Retrieves only actual candidate records for the requested city');
+    assert(/popularity|confirmed|candidate/i.test(resp.reply), 'Query 2: Discloses the candidate popularity limitation');
     assert(resp.actions?.some(a => a.type === 'open_map'), 'Query 2: Has Open Map action');
   }
 

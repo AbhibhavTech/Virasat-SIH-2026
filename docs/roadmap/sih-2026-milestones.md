@@ -19,7 +19,7 @@ This document tracks the engineering and product progress of **Virasat**, aligne
 - [x] Regulated meter fare estimators and distance benchmarks
 
 ### Milestone 3: AI Tourism Assistant & Personalization
-- [x] Gemini LLM integration with custom heritage and grounding prompts
+- [x] Local intent engine with custom heritage data tools and grounding
 - [x] Contextual conversational memory and suggestions
 - [x] Onboarding survey modal for user travel style, pace, and interests
 - [x] Structured JSON tool-calling and verified itinerary generation *(Completed — Phase 3)*
@@ -47,7 +47,7 @@ This document tracks the engineering and product progress of **Virasat**, aligne
 | **Phase 3** | **Core Features** | Persistent itineraries, multimodal routing on DB, grounded AI with structured output | **COMPLETED** |
 | **Phase 3B**| **Stewardship & Roles** | Citizen heritage reporting, role-based access control, audit logging, destination health | **COMPLETED** |
 | **Phase 4** | **Google Login** | Google OAuth integration, account merging, persistent profile state | **COMPLETED** |
-| **Phase 5** | **AI Hardening** | Verify live Gemini models against current docs, grounding audit logging, hallucination checks | **COMPLETED** |
+| **Phase 5** | **AI Hardening** | Grounding audit logging, hallucination checks, and local fallback behavior | **COMPLETED** |
 | **Phase 6** | **Design System & A11y** | Shared UI primitives, WCAG AA compliance, responsive mobile audit, 3D accuracy | **COMPLETED** |
 | **Phase 7** | **Automated & Security Tests**| Unit tests, integration tests, E2E journey tests (Playwright), security/injection tests | **COMPLETED** |
 | **Phase 8** | **Observability & Deployment** | Containerization, CI/CD pipeline, Sentry error logging, CORS/rate limit hardening | **COMPLETED** |

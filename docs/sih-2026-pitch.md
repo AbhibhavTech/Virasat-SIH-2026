@@ -55,7 +55,7 @@ graph TD
         AuthMod["Auth & Google OAuth Router"]
         PlacesMod["Places & Provenance Router"]
         RoutingMod["Multimodal Routing Engine"]
-        AIMod["Grounded AI Concierge (Gemini 2.5/2.0 + Fallback)"]
+        AIMod["Virasat AI Astra (local tourism data engine)"]
         ReportsMod["Citizen Stewardship & Health Scoring"]
         SEOMod["Dynamic Sitemap & Robots Router"]
         AnalyticsMod["Privacy-First Telemetry Router"]

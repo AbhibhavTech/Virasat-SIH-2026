@@ -67,7 +67,12 @@ async function request<T>(endpoint: string, options: RequestInit = {}): Promise<
 
   if (!res.ok) {
     const errorBody = await res.text().catch(() => '');
-    throw new Error(`API Error ${res.status}: ${errorBody || res.statusText}`);
+    const error = new Error(`API Error ${res.status}: ${errorBody || res.statusText}`);
+    try {
+      const parsed = JSON.parse(errorBody);
+      if (parsed.generation_mode === 'unavailable' && typeof parsed.reply === 'string') Object.assign(error, { hostedMessage: parsed.reply });
+    } catch { /* Non-JSON errors keep the existing error handling. */ }
+    throw error;
   }
 
   return res.json();
@@ -356,7 +361,10 @@ export const api = {
         method: 'POST',
         body: JSON.stringify(req),
       });
-    } catch {
+    } catch (error) {
+      // Retrying another route after provider/rate-limit failures can duplicate
+      // paid model requests. Only fall back when the endpoint does not exist.
+      if (!(error instanceof Error) || !/API Error (404|405):/.test(error.message)) throw error;
       return await request<AIChatResponse>('/v1/ai/chat', {
         method: 'POST',
         body: JSON.stringify(req),
@@ -389,8 +397,8 @@ export const api = {
         city: params.city,
         maps_url: `https://www.google.com/maps/search/?api=1&query=${q}`,
         directions_url: `https://www.google.com/maps/dir/?api=1&destination=${q}`,
-        summary: `${params.place_name} is a renowned cultural destination in ${params.city || 'India'}. Verified through cultural records and cartography.`,
-        review_snippets: ['Authentic heritage landmark', 'Popular cultural destination in India'],
+        summary: 'No Virasat place record is available for this location. Check its details with an official source.',
+        review_snippets: [],
         coordinates: params.lat && params.lng ? { lat: params.lat, lng: params.lng } : undefined,
       };
     }

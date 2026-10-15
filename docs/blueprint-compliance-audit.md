@@ -49,7 +49,7 @@
 ### B. Grounded AI & Zero Hallucination (Blueprint Section VIII)
 - **Claim**: AI Concierge never fabricates monuments and provides verifiable grounding scores.
 - **Verification**: `server/src/modules/ai/ai.router.ts` executes an entity verification pipeline against `db.places.findAll()`. Grounding scores are computed mathematically (0.0 to 1.0) based on verified token intersection.
-- **Automated Check**: `scripts/test_phase5_ai_hardening.mjs` asserts multi-tier fallback (`gemini-2.5-flash` → `gemini-2.0-flash` → deterministic engine), sliding-window rate limiting, and immutable audit logging. 24/24 tests pass.
+- **Automated Check**: `scripts/test_phase5_ai_hardening.mjs` covers deterministic data grounding, sliding-window rate limiting, and audit logging. The current assistant runs locally without a hosted model.
 
 ### C. Multimodal Transit & Regulated Fares (Blueprint Section VI)
 - **Claim**: Transit routes incorporate public rail/metro networks and calculate official meter fares.

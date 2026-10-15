@@ -143,12 +143,14 @@ async function main() {
 
       // Turn 8: Nearby hidden gems dikhao
       if (i === 7) {
-        const hasGems = /hidden gem|offbeat|sajjangarh|chand baori|abhaneri|galta/i.test(reply);
-        if (!hasGems) {
-          console.error('❌ FAIL Turn 8: Expected verified offbeat hidden gems');
+        const candidatePlaces = Array.isArray(body.suggested_places) ? body.suggested_places : [];
+        const scopedCandidates = candidatePlaces.length > 0 && candidatePlaces.every((place: any) => place.city === 'Jaipur');
+        const transparentStatus = /candidate|popularity.*not|not a measured popularity/i.test(reply);
+        if (!scopedCandidates || !transparentStatus) {
+          console.error('❌ FAIL Turn 8: Expected Jaipur candidate retrieval with an honest popularity/access limitation.');
           testPassed = false;
         } else {
-          console.log('✅ PASS Turn 8: Verified offbeat heritage places returned.');
+          console.log('✅ PASS Turn 8: Jaipur candidate records retrieved with popularity/access limits disclosed.');
         }
       }
     }

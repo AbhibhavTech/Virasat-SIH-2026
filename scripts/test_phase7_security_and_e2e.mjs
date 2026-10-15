@@ -370,7 +370,7 @@ async function runPhase7Tests() {
 
   // Step 4: AI Concierge Query & Grounding Audit
   const aiReply = `In Jaipur, you can visit the magnificent Amber Fort and the historic Hawa Mahal. Both monuments are maintained under the Archaeological Survey of India.`;
-  const aiAudit = auditHallucinations(aiReply, jaipurPlaces.places, jaipurPlaces.places, 4, 38, 'Gemini 2.5 Flash');
+  const aiAudit = auditHallucinations(aiReply, jaipurPlaces.places, jaipurPlaces.places, 4, 38, 'Virasat AI Astra Local Data Engine');
   assert(aiAudit.grounding_score >= 0.95, `E2E Step 4: AI Concierge response achieves high grounding score (${aiAudit.grounding_score})`);
   assert(aiAudit.unverified_entities_count === 0, 'E2E Step 4: Zero hallucinated entities in verified concierge reply');
 

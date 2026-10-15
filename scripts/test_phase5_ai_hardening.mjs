@@ -48,7 +48,7 @@ async function runPhase5Tests() {
     allPlaces,
     4,
     45,
-    'Gemini 2.5 Flash'
+    'Virasat AI Astra Local Data Engine'
   );
 
   assert(cleanAudit.grounding_score >= 0.95, `Grounded response achieves high score (got ${cleanAudit.grounding_score})`);
@@ -56,7 +56,7 @@ async function runPhase5Tests() {
   assert(cleanAudit.flagged_unverified_claims.length === 0, 'Flagged unverified list is empty');
   assert(cleanAudit.citations_count === 4, 'Citations count preserved in audit metadata');
   assert(cleanAudit.latency_ms === 45, 'Latency accurately captured');
-  assert(cleanAudit.model_used === 'Gemini 2.5 Flash', 'Model identifier accurately captured');
+  assert(cleanAudit.model_used === 'Virasat AI Astra Local Data Engine', 'Engine identifier accurately captured');
 
   // -------------------------------------------------------------
   // Test Suite 2: Hallucination Detection Guardrail
@@ -165,7 +165,7 @@ async function runPhase5Tests() {
     entity_id: auditSessionId,
     to_value: {
       query: 'Tell me about Hawa Mahal architecture',
-      model: 'Gemini 2.5 Flash',
+      model: 'Virasat AI Astra Local Data Engine',
       grounding_score: 1.0,
       citations_count: 5,
       latency_ms: 112,

@@ -6,6 +6,7 @@ import { safeLocalStorage } from '../utils/storage';
 import {
   auth,
   signInWithGooglePopup,
+  signInWithGoogleRedirect,
   signOutFirebase,
   syncUserProfileToFirestore,
   getUserProfileFromFirestore,
@@ -17,16 +18,8 @@ interface AuthContextType {
   firebaseUser: FirebaseUser | null;
   loading: boolean;
   login: (email: string, password: string) => Promise<void>;
-  loginWithGoogle: (payload?: {
-    credential?: string;
-    id_token?: string;
-    client_id?: string;
-    user_info?: any;
-    email?: string;
-    name?: string;
-    picture?: string;
-    sub?: string;
-  }) => Promise<void>;
+  loginWithGoogle: () => Promise<void>;
+  loginWithGoogleRedirect: () => Promise<void>;
   register: (name: string, email: string, password: string, home_city?: string) => Promise<void>;
   logout: () => Promise<void>;
   updateProfile: (profile: UserProfile) => Promise<void>;
@@ -108,37 +101,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setIsAuthModalOpen(false);
   };
 
-  const loginWithGoogle = async (payload?: {
-    credential?: string;
-    id_token?: string;
-    client_id?: string;
-    user_info?: any;
-    email?: string;
-    name?: string;
-    picture?: string;
-    sub?: string;
-  }) => {
-    // If a direct Google credential/profile payload is provided, authenticate directly via backend
-    if (payload && (payload.email || payload.credential || payload.id_token)) {
-      const res = await api.loginWithGoogle(payload);
-      if (res?.profile) {
-        setUser(res.profile);
-        syncUserProfileToFirestore(res.profile).catch(() => {});
-        setIsAuthModalOpen(false);
-        if (!res.profile.survey || Object.keys(res.profile.survey).length === 0) {
-          setIsOnboardingModalOpen(true);
-        }
-      }
-      return;
-    }
-
+  const loginWithGoogle = async () => {
     try {
       // 1. Firebase Google Auth Popup
       const userCredential = await signInWithGooglePopup();
       const fbUser = userCredential.user;
       setFirebaseUser(fbUser);
-
-      const idToken = await fbUser.getIdToken();
 
       // 2. Synchronize with Firestore
       let profile: UserProfile | null = await getUserProfileFromFirestore(fbUser.uid);
@@ -158,22 +126,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       }
       setUser(profile);
 
-      // 3. Mirror session to backend API if available
-      try {
-        const res = await api.loginWithGoogle({
-          id_token: idToken,
-          email: fbUser.email || undefined,
-          name: fbUser.displayName || undefined,
-          picture: fbUser.photoURL || undefined,
-          sub: fbUser.uid,
-        });
-        if (res?.profile) {
-          setUser(res.profile);
-        }
-      } catch (e) {
-        console.info('Backend google mirror optional fallback:', e);
-      }
-
       setIsAuthModalOpen(false);
       if (!profile.survey || Object.keys(profile.survey).length === 0) {
         setIsOnboardingModalOpen(true);
@@ -182,6 +134,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       // If popup was cancelled or domain unauthorized, rethrow for UI handler with context
       throw firebaseErr;
     }
+  };
+
+  const loginWithGoogleRedirect = async () => {
+    await signInWithGoogleRedirect();
   };
 
   const register = async (name: string, email: string, password: string, home_city?: string) => {
@@ -243,6 +199,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         loading,
         login,
         loginWithGoogle,
+        loginWithGoogleRedirect,
         register,
         logout,
         updateProfile,

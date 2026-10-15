@@ -11,10 +11,17 @@
     "test": "node scripts/check_images_uniqueness.mjs && node scripts/check_duplicate_stations.mjs && tsx scripts/check_data_quality.mjs && tsx scripts/test_phase1_backend.mjs && tsx scripts/test_phase3_ai_itinerary.mjs && tsx scripts/test_phase3b_stewardship.mjs && tsx scripts/test_phase4_auth_google.mjs && tsx scripts/test_phase5_ai_hardening.mjs && node scripts/test_phase6_design_a11y.mjs && tsx scripts/test_phase6_design_system.mjs && tsx scripts/test_phase7_security_and_e2e.mjs && tsx scripts/test_phase8_observability_deploy.mjs && tsx scripts/test_phase9_seo_analytics.mjs && node scripts/test_phase10_sih_packaging.mjs && tsx scripts/test_ai_assistant_multilingual.ts && tsx scripts/verify_chatbot_behavior.ts",
     "check:data": "node scripts/check_images_uniqueness.mjs && tsx scripts/check_data_quality.mjs",
     "check:images": "node scripts/check_images_uniqueness.mjs",
-    "check:stations": "node scripts/check_duplicate_stations.mjs"
+    "check:stations": "node scripts/check_duplicate_stations.mjs",
+    "report:tourism-coverage": "node scripts/report_tourism_coverage.mjs",
+    "import:ai-corpus": "node scripts/import_ai_evaluation_corpus.mjs",
+    "evaluate:ai": "tsx scripts/evaluate_ai_corpus.ts",
+    "test:ai-hosted": "tsx scripts/test_hosted_ai_gateway.ts",
+    "test:ai-provider": "tsx scripts/test_ai_configuration.ts && tsx scripts/test_provider_errors.ts && tsx scripts/test_groq_setup.ts && tsx scripts/test_hosted_ai_gateway.ts",
+    "setup:ai-groq": "tsx scripts/configure_groq.ts && npm run check:ai-connection",
+    "setup:ai-groq:secure": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/setup_groq_secure.ps1",
+    "check:ai-connection": "tsx scripts/check_ai_connection.ts"
   },
   "dependencies": {
-    "@google/genai": "^2.21.0",
     "@tanstack/react-query": "^5.102.8",
     "bcryptjs": "^3.0.3",
     "clsx": "^2.1.1",
@@ -28,6 +35,7 @@
     "leaflet": "^1.9.4",
     "lucide-react": "^1.16.0",
     "motion": "^13.4.0",
+    "openai": "^7.33.0",
     "pg": "^8.23.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",

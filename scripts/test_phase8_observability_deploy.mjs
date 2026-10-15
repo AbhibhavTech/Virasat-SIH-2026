@@ -177,7 +177,7 @@ async function runPhase8Tests() {
   } else {
     console.log('  ⚠️ dist/assets not yet compiled. Running bundle check against src/ config files.');
     const clientEnv = fs.existsSync('.env') ? fs.readFileSync('.env', 'utf-8') : '';
-    assert(!clientEnv.includes('VITE_GEMINI_API_KEY'), 'Raw Gemini API key is never exposed via VITE_ public prefix');
+    assert(!clientEnv.includes('_API_KEY='), 'Hosted service credentials are not included in client environment files');
   }
 
   // Summary

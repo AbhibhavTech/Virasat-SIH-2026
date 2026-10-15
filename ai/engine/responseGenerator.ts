@@ -61,6 +61,32 @@ export function buildResponseForIntent(
 
   // 2. CASUAL_CONVERSATION ("kaise ho", "how are you")
   if (intent === 'CASUAL_CONVERSATION') {
+    if (/(tell me (?:a )?joke|make me laugh|koi joke|joke sunao|mazaak sunao|mazaak suna)/i.test(rawQuery)) {
+      return {
+        reply: isHinglish
+          ? 'Ek travel joke 😄: Tourist ne guide se poocha, “Yahan ka sabse purana monument kaunsa hai?” Guide bola, “Aapka patience — ticket line mein subah se khada hai!”'
+          : 'A travel joke 😄: A tourist asked the guide, “What is the oldest monument here?” The guide said, “Your patience—it has been standing in the ticket line since morning!”',
+        suggested_actions: ['Plan a trip', 'Explore heritage', 'Tell me something fun'],
+        actions: [{ type: 'explore_heritage', label: 'Explore Heritage', url: '/heritage' }],
+      };
+    }
+    if (/(i love you|love you)/i.test(rawQuery)) {
+      return {
+        reply: isHinglish
+          ? 'Aww, shukriya! 😊 Main AI assistant hoon, par aapki trip planning aur India explore karne mein hamesha madad kar sakta hoon.'
+          : 'That’s sweet of you 😊 I’m an AI assistant, and I’m always here to help with trip planning and exploring India.',
+        suggested_actions: ['Plan a trip', 'Explore nearby places'],
+      };
+    }
+    if (/(are you human|are you real|do you have feelings)/i.test(rawQuery)) {
+      return {
+        reply: isHinglish
+          ? 'Main Virasat AI Astra ka software assistant hoon, insaan nahi. Main local tourism data aur app tools se madad karta hoon; mere paas insaanon jaise feelings nahi hain.'
+          : 'I’m Virasat AI Astra, a software assistant rather than a person. I use local tourism data and app tools; I don’t have human feelings.',
+        suggested_actions: ['What can you do?', 'Explore destinations'],
+        actions: [{ type: 'explore_states', label: 'Discover Bharat', url: '/explore' }],
+      };
+    }
     return {
       reply: isHinglish
         ? 'Main bilkul badhiya hoon! 😄 Bharat ke 28 States aur 8 Union Territories ke travel insights ke saath ready hoon. Aap batao, aaj kahan ghumne ka plan hai?'
@@ -78,8 +104,8 @@ export function buildResponseForIntent(
   if (intent === 'ABOUT_VIRASAT') {
     return {
       reply: isHinglish
-        ? "Aap Virasat ke saath baat kar rahe hain — ek AI Travel & Heritage Concierge jo Archaeological Survey of India (ASI) aur State Tourism data par grounded hai. Main travel circuits plan karta hoon, hotels aur train routes compare karta hoon, aur India ke har monument ki authentic history batata hoon."
-        : "You're chatting with Virasat — an intelligent AI Travel & Heritage Concierge grounded in official Archaeological Survey of India (ASI) and Ministry of Tourism records. I help you craft personalized circuits, compare multimodal transit, find heritage stays, and discover India's profound history.",
+        ? "Aap Virasat AI Astra ke local travel assistant se baat kar rahe hain. Main app ke tourism records aur tools se heritage, destinations, festivals, trips aur routes dhoondhne mein madad karta hoon."
+        : "You’re chatting with Virasat AI Astra, a local travel assistant. I use the app’s tourism records and tools to help with heritage, destinations, festivals, trips, and routes.",
       suggested_actions: ['Plan a Trip', 'Explore 28 States & 8 UTs', 'Top Monuments', 'How does Virasat work?'],
       actions: [
         { type: 'explore_heritage', label: 'Verified Monuments', url: '/heritage' },
@@ -93,27 +119,26 @@ export function buildResponseForIntent(
   if (intent === 'HELP') {
     return {
       reply: isHinglish
-        ? "Virasat par aap natural bhasha mein kuch bhi pooch sakte hain:\n\n" +
-          "• **Heritage & Monuments**: *'Gateway of India ke baare mein batao'*, *'Hawa Mahal ka history'*\n" +
-          "• **Trip Planning**: *'Mujhe Jaipur ghumna hai 2 din mein'*, *'Budget 5000 hai, 3 friends hain, itinerary bana'*\n" +
-          "• **Itinerary Customization**: *'budget 5000 kar do'*, *'ab sirf heritage places include karo'*\n" +
-          "• **Website Actions**: *'Map kholo'*, *'Iska map dikhao'*\n" +
-          "• **Festivals & Culture**: *'Mysore Dasara kab hota hai aur kyun famous hai?'*, *'Durga Puja ka significance'*\n" +
-          "• **Transport & Trains**: *'Mumbai se Pune train se kaise jaun?'*, *'Ticket kahan book karna hai?'*\n" +
-          "• **National Parks & Nature**: *'Kaziranga National Park kis state mein hai?'*, *'Udaipur ke hidden gems'*"
-        : "Here is what you can ask Virasat naturally:\n\n" +
-          "• **Heritage & Monuments**: *'Tell me about Gateway of India'*, *'History of Hawa Mahal'*\n" +
-          "• **Trip Planning**: *'Plan a 3-day Jaipur trip under ₹15,000'*, *'Budget 5000, 3 friends, build itinerary'*\n" +
-          "• **Dynamic Modification**: *'Make it cheaper'*, *'Set budget to ₹5,000'*, *'Only heritage places'*\n" +
-          "• **Website Navigation**: *'Open map'*, *'Show on map'*\n" +
-          "• **Festivals & Culture**: *'When is Mysore Dasara and why is it celebrated?'*, *'Durga Puja significance'*\n" +
-          "• **Multimodal Transit**: *'How to reach Pune from Mumbai by train?'*, *'Where to book train tickets?'*\n" +
-          "• **Nature & Reserves**: *'Which state is Kaziranga National Park in?'*, *'Hidden gems in Udaipur'*",
+        ? "Main Virasat ke local tourism data par based requests handle karta hoon:\n\n" +
+          "• **Heritage**: *'Gateway of India ka history batao'*\n" +
+          "• **Trip planning**: *'Jaipur ka 2-day itinerary banao'*\n" +
+          "• **Transport**: *'Mumbai se Pune train kaise jaun?'*\n" +
+          "• **Festivals, stays, food aur markets**: *'Maharashtra ke festivals dikhao'*\n" +
+          "• **App tabs**: *'Discover Bharat kholo'*, *'Mere saved trips dikhao'*\n\n" +
+          "Live fares, hotel availability aur current weather ke liye active provider ki zaroorat hai. Private account data ke liye sign in karein."
+        : "I can handle questions grounded in Virasat's local tourism data:\n\n" +
+          "• **Heritage**: *'Tell me the history of Gateway of India'*\n" +
+          "• **Trip planning**: *'Build a 2-day Jaipur itinerary'*\n" +
+          "• **Transport**: *'How do I travel from Mumbai to Pune by train?'*\n" +
+          "• **Festivals, stays, food, and markets**: *'Show Maharashtra festivals'*\n" +
+          "• **App tabs**: *'Open Discover Bharat'*, *'Show my saved trips'*\n\n" +
+          "Live fares, hotel availability, and current weather need an active provider connection. Sign in to access private account data.",
       suggested_actions: ['Plan a 3-Day Trip', 'Explore Near Me', 'Top UNESCO Sites', 'Mysore Dasara Info'],
       actions: [
         { type: 'plan_itinerary', label: 'Plan Itinerary', url: '/itinerary' },
         { type: 'explore_heritage', label: 'UNESCO Sites', url: '/heritage' },
         { type: 'open_map', label: 'Open Map', url: '/map' },
+        { type: 'explore_festival', label: 'Festivals', url: '/festivals' },
       ],
     };
   }
@@ -138,8 +163,12 @@ export function buildResponseForIntent(
 
   // 6. MAP_ACTION ("Map kholo", "Iska map dikhao", "Show map")
   if (intent === 'MAP_ACTION') {
-    const targetCity = state.destination || state.lastPlace?.city || 'India';
-    const mapUrl = state.destination ? `/map?city=${encodeURIComponent(state.destination)}` : '/map';
+    const targetCity = state.lastPlace?.city || state.destination || 'India';
+    const mapUrl = state.lastPlace
+      ? `/map?city=${encodeURIComponent(state.lastPlace.city)}&q=${encodeURIComponent(state.lastPlace.name)}`
+      : state.destination
+        ? `/map?city=${encodeURIComponent(state.destination)}`
+        : '/map';
 
     return {
       reply: isHinglish
@@ -148,12 +177,14 @@ export function buildResponseForIntent(
       suggested_actions: ['Explore Near Me', 'Show Nearby Places', `Plan ${targetCity} Trip`, 'Calculate Transit'],
       actions: [
         { type: 'open_map', label: `Open Map (${targetCity})`, url: mapUrl },
-        ...(state.destination
+        ...(state.lastPlace || state.destination
           ? [
               {
                 type: 'view_destination' as const,
-                label: `Explore ${state.destination}`,
-                url: `/city/${encodeURIComponent(state.destination.toLowerCase().replace(/\s+/g, '-'))}`,
+                label: `Explore ${state.lastPlace?.name || state.destination}`,
+                url: state.lastPlace
+                  ? `/place/${encodeURIComponent(state.lastPlace.id)}`
+                  : `/city/${encodeURIComponent((state.destination || '').toLowerCase().replace(/\s+/g, '-'))}`,
               },
             ]
           : []),
@@ -268,30 +299,21 @@ export function buildResponseForIntent(
 
   // 10. HIDDEN_GEMS_QUERY ("Udaipur ke hidden gems batao")
   if (intent === 'HIDDEN_GEMS_QUERY') {
-    const city = state.destination || 'Udaipur';
+    const city = state.destination;
     return {
-      reply: isHinglish
-        ? `💎 **${city} ke Verified Hidden Gems (Offbeat & Authentic Experiences)**:\n\n` +
-          `1. 🏰 **Sajjangarh (Monsoon Palace)**: Aravalli ki Bansdara pahadi par sthit 19th-century royal retreat, jahan se Fateh Sagar aur City Palace ka dramatic sunset view milta hai.\n\n` +
-          `2. 🏞️ **Bahubali Hills & Badi Lake**: Main city se 12 km door shaant jheel jahan se green Aravalli hills ka panoramic 360-degree viewpoint milta hai (early morning photography ke liye ideal).\n\n` +
-          `3. 🏛️ **Ahar Royal Cenotaphs (Mahasatyaji)**: Mewar ke 19 maharanon ke 250 se zyada intricate white marble aur sandstone chhatriyan. Mainstream bheed se alag shanti aur architectural photography spot.\n\n` +
-          `4. 🌿 **Rayta Hills & Pipliya Village**: Udaipur ka offbeat monsoon hill corridor, winding ghat roads aur lush cloud-covered viewpoints.\n\n` +
-          `5. 🦩 **Menar Bird Village**: Udaipur-Chittorgarh highway par ek community-protected wetland sanctuary jahan thousands of migratory birds (Pelicans, Flamingos) aate hain.\n\n` +
-          `📌 *Authenticity Note*: Yeh verified offbeat places hain jo mainstream crowded monuments se alag shanti aur natural soundscape provide karte hain.`
-        : `💎 **Verified Hidden Gems & Offbeat Attractions in ${city}**:\n\n` +
-          `1. 🏰 **Sajjangarh Monsoon Palace**: Perched on Bansdara peak in the Aravalli hills, offering sweeping sunset vistas over Lake Fateh Sagar and royal palace silhouettes.\n\n` +
-          `2. 🏞️ **Bahubali Hills at Badi Lake**: Located ~12 km from the city center, offering a tranquil panoramic viewpoint over the turquoise waters of Lake Badi.\n\n` +
-          `3. 🏛️ **Ahar Royal Cenotaphs**: Over 250 exquisitely carved domed chhatris commemorating 19 Mewar Maharanas across four centuries. Serene and uncrowded.\n\n` +
-          `4. 🌿 **Rayta Hills Corridor**: A scenic winding ghat route through the rural Aravalli landscape, especially breathtaking during post-monsoon months.\n\n` +
-          `5. 🦩 **Menar Wetland Bird Sanctuary**: A vibrant community-conserved wetland lake hosting migratory birds including greater flamingos and pelicans in winter.\n\n` +
-          `📌 *Distinction*: These offbeat spots are distinctly categorized from officially protected ASI monuments to give you quiet, authentic cultural immersion.`,
-      suggested_actions: [`Plan ${city} Trip`, `Open ${city} Map`, `Find Hotels in ${city}`, 'Top Heritage Monuments'],
-      actions: [
-        { type: 'open_map', label: `Open ${city} Map`, url: `/map?city=${encodeURIComponent(city)}` },
-        { type: 'plan_itinerary', label: `Plan ${city} Itinerary`, url: `/itinerary?city=${encodeURIComponent(city)}&days=3` },
-        { type: 'view_destination', label: `View ${city} Hub`, url: `/city/${encodeURIComponent(city.toLowerCase().replace(/\s+/g, '-'))}` },
-      ],
-      sources: ['Virasat Verified Hidden Gems Archive', 'Rajasthan State Tourism'],
+      reply: city
+        ? (isHinglish
+            ? `Main ${city} ke tourism records se lesser-known candidates dhoondhunga. Virasat dataset mein popularity score nahi hai, isliye kisi jagah ko verified “hidden gem” nahi kahunga.`
+            : `I can search Virasat's ${city} records for candidates. The dataset has no verified popularity measure, so I won't label a place a confirmed “hidden gem.”`)
+        : (isHinglish ? 'Kis city ya region mein lesser-known places dhoondhun?' : 'Which city or region should I search for lesser-known places in?'),
+      suggested_actions: city ? [`Plan ${city} Trip`, `Open ${city} Map`] : ['Explore all states', 'Explore Heritage'],
+      actions: city
+        ? [
+            { type: 'open_map', label: `Open ${city} Map`, url: `/map?city=${encodeURIComponent(city)}` },
+            { type: 'plan_itinerary', label: `Plan ${city} Itinerary`, url: `/itinerary?city=${encodeURIComponent(city)}&days=3` },
+          ]
+        : [{ type: 'explore_states', label: 'Discover Bharat', url: '/explore' }],
+      sources: ['Virasat Master Tourism Registry'],
     };
   }
 
@@ -455,6 +477,7 @@ export function buildResponseForIntent(
 
   // 14. TRIP_PLANNING (Multi-day or 1-day plans)
   if (intent === 'TRIP_PLANNING' && plan) {
+    const dateNote = plan.travel_dates ? `📅 **Travel dates**: ${plan.travel_dates}\n\n` : '';
     const daySummaries = plan.days
       .map(
         (d) =>
@@ -467,17 +490,21 @@ export function buildResponseForIntent(
 
     return {
       reply: isHinglish
-        ? `Bilkul! Aapke liye **${plan.destination}** ka **${plan.duration_days}-Day Smart Itinerary** tayyar hai:\n\n` +
+        ? `Bilkul! Virasat ke available place records se **${plan.destination}** ke liye **${plan.duration_days}-day draft** (${plan.party_size} traveler${plan.party_size === 1 ? '' : 's'}) bana diya:\n\n` +
+          dateNote +
           `${daySummaries}\n\n` +
           (plan.duration_days > 1 ? `🏨 **Accommodation**: ${plan.hotel_recommendation.tier} (~${plan.hotel_recommendation.rate_indication})\n` : '') +
-          `🚆 **Transport**: ${plan.transport_recommendation.mode} (${plan.transport_recommendation.approx_duration})\n` +
-          `💰 **Estimated Budget**: ${plan.budget_breakdown.total_estimated} (includes transit, food & tickets)\n\n` +
+          `🚆 **Transport**: ${plan.transport_recommendation.summary}\n` +
+          `💰 **Illustrative local-trip budget**: ${plan.budget_breakdown.total_estimated}\n` +
+          `Timings, hotel allowances, tickets and local costs are planning estimates; they are not live prices or confirmed schedules. Intercity fares are not included.\n\n` +
           `Aap is plan ko customize kar sakte hain — jaise *"budget 5000 kar do"*, *"ab sirf heritage places include karo"*, ya *"is itinerary ka map kholo"*!`
-        : `Here is your cluster-optimized **${plan.duration_days}-Day Itinerary for ${plan.destination}**:\n\n` +
+        : `Here is a **${plan.duration_days}-day draft for ${plan.destination}** for ${plan.party_size} traveler${plan.party_size === 1 ? '' : 's'}, using Virasat's available place records:\n\n` +
+          dateNote +
           `${daySummaries}\n\n` +
           (plan.duration_days > 1 ? `🏨 **Stays**: ${plan.hotel_recommendation.tier} tier (~${plan.hotel_recommendation.rate_indication})\n` : '') +
-          `🚆 **Transit**: ${plan.transport_recommendation.mode} (~${plan.transport_recommendation.approx_duration})\n` +
-          `💰 **Estimated Budget**: ${plan.budget_breakdown.total_estimated} total breakdown.\n\n` +
+          `🚆 **Transport**: ${plan.transport_recommendation.summary}\n` +
+          `💰 **Illustrative local-trip budget**: ${plan.budget_breakdown.total_estimated}\n` +
+          `Timings, hotel allowances, tickets, and local costs are planning estimates, not live prices or confirmed schedules. Intercity fares are not included.\n\n` +
           `You can modify this naturally — say *"set budget to 5000"*, *"only heritage places"*, or *"open map"*!`,
       suggested_actions: ['Budget 5000 Kar Do', 'Ab Sirf Heritage Places', 'Is Itinerary Ka Map Kholo', 'Train Options'],
       actions: [
@@ -485,7 +512,7 @@ export function buildResponseForIntent(
         { type: 'plan_itinerary', label: 'Open in Itinerary Planner', url: `/itinerary?city=${encodeURIComponent(plan.destination)}&days=${plan.duration_days}` },
         { type: 'view_destination', label: `Explore ${plan.destination}`, url: `/city/${encodeURIComponent(plan.destination.toLowerCase().replace(/\s+/g, '-'))}` },
       ],
-      sources: ['Archaeological Survey of India', 'Indian Railways IRCTC', 'Virasat Tourism Database'],
+      sources: ['Virasat Master Tourism Registry', 'Virasat planning estimate assumptions'],
     };
   }
 
@@ -562,19 +589,11 @@ export function buildResponseForIntent(
   if (intent === 'COMPARISON') {
     return {
       reply: isHinglish
-        ? `**Jaipur vs Udaipur — Ek Nazar Mein**:\n\n` +
-          `• 🏰 **Jaipur (The Pink City)**: Grand massive hill forts (Amber, Nahargarh, Jaigarh), bustling vibrant bazaars (Johari, Bapu), world-famous street food (Pyaaz Kachori), aur royal palace museums. Travel time Delhi/Mumbai se thoda kam hai.\n\n` +
-          `• 🌅 **Udaipur (City of Lakes)**: Romantically tranquil, Lake Pichola boat rides, intricate white marble City Palace, rooftop sunset cafes, aur relaxed lake breeze. Couples aur leisure travelers ke liye ideal.\n\n` +
-          `👉 **Virasat Recommendation**: Agar aapko grand military architecture aur vibrant shopping pasand hai toh **Jaipur** chuniye; agar scenic lakes aur peaceful evening vibes chahiye toh **Udaipur** perfect hai!`
-        : `**Jaipur vs Udaipur Comparison**:\n\n` +
-          `• 🏰 **Jaipur (The Pink City)**: Imposing military hill forts (Amber, Jaigarh, Nahargarh), vibrant heritage bazaars, iconic culinary spots (Ghewar, Kachori). Best for high-energy exploration.\n\n` +
-          `• 🌅 **Udaipur (City of Lakes)**: Peaceful Lake Pichola, island palaces (Jag Mandir, Taj Lake Palace), scenic sunsets. Best for leisurely cultural immersion.\n\n` +
-          `👉 **Recommendation**: Pick **Jaipur** for grand fort architecture & shopping; pick **Udaipur** for tranquil romantic lakeside evenings.`,
-      suggested_actions: ['Plan Jaipur Trip', 'Plan Udaipur Trip', 'Jaipur Hotels', 'Udaipur Hotels'],
+        ? 'Kaun se do shehron ya options ko compare karna hai? Naam batao, aur agar chaho toh distance, budget, heritage ya travel time ke basis par compare karunga.'
+        : 'Which two cities or options should I compare? Tell me the names and I can compare them by distance, budget, heritage, or travel time.',
+      suggested_actions: ['Compare Mumbai and Delhi', 'Compare Jaipur and Udaipur', 'Distance between cities'],
       actions: [
-        { type: 'plan_itinerary', label: 'Plan Jaipur Trip', url: '/itinerary?city=Jaipur&days=3' },
-        { type: 'plan_itinerary', label: 'Plan Udaipur Trip', url: '/itinerary?city=Udaipur&days=3' },
-        { type: 'open_map', label: 'Compare on Map', url: '/map' },
+        { type: 'explore_states', label: 'Discover Bharat', url: '/explore' },
       ],
     };
   }

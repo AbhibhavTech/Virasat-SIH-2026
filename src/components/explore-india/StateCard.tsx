@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import {
   ArrowRight,
+  Eye,
   Heart,
-  MapPin,
 } from 'lucide-react';
 import { StateHierarchyEntity } from '../../types/indiaHierarchy';
 import { getCuratedStateImage } from '../../data/stateCuratedImages';
@@ -25,6 +25,7 @@ export const StateCard: React.FC<StateCardProps> = ({
   onToggleFavorite,
   onSelectState,
   onSelectTown,
+  onQuickLook,
 }) => {
   const curated = getCuratedStateImage(state.id, state.hero_image_url);
   const [imageSrc, setImageSrc] = useState(curated.url);
@@ -54,7 +55,16 @@ export const StateCard: React.FC<StateCardProps> = ({
       id={`state-card-${state.id}`}
     >
       {/* Hero Photo Header */}
-      <div className="relative h-44 sm:h-48 w-full overflow-hidden bg-stone-900 shrink-0">
+      <div
+        className="relative h-44 sm:h-48 w-full overflow-hidden bg-stone-900 shrink-0 cursor-pointer"
+        onClick={() => onSelectState(state.id)}
+        onKeyDown={(event) => {
+          if (event.key === 'Enter' || event.key === ' ') onSelectState(state.id);
+        }}
+        role="button"
+        tabIndex={0}
+        aria-label={`Explore ${state.name}`}
+      >
         <img
           src={imageSrc}
           alt={state.name}
@@ -75,7 +85,20 @@ export const StateCard: React.FC<StateCardProps> = ({
         </div>
 
         {/* Top Right: Wishlist Heart */}
-        <div className="absolute top-3 right-3 z-10">
+        <div className="absolute top-3 right-3 z-10 flex items-center gap-1.5">
+          {onQuickLook && (
+            <button
+              onClick={(event) => {
+                event.stopPropagation();
+                onQuickLook(state);
+              }}
+              className="w-8 h-8 rounded-full flex items-center justify-center bg-black/40 hover:bg-white text-white hover:text-[#FF671F] backdrop-blur-xs transition cursor-pointer shadow-xs"
+              title={`Quick look at ${state.name}`}
+              aria-label={`Quick look at ${state.name}`}
+            >
+              <Eye className="w-4 h-4" />
+            </button>
+          )}
           <button
             onClick={(e) => {
               e.stopPropagation();
@@ -101,20 +124,17 @@ export const StateCard: React.FC<StateCardProps> = ({
         </div>
       </div>
 
-      {/* Card Content Body: Clean, 50% less clutter */}
-      <div className="p-4 sm:p-5 flex flex-col justify-between grow space-y-3">
-        {/* Short 1-line description */}
-        <p className="text-xs text-stone-600 leading-relaxed line-clamp-1 font-normal">
-          {state.description || state.heritage_overview}
+      {/* Compact interactive body */}
+      <div className="p-3.5 sm:p-4 flex flex-col justify-between grow gap-3">
+        <p className="text-xs text-stone-600 leading-relaxed line-clamp-2 min-h-10">
+          {state.description || state.heritage_overview || `Explore the culture and heritage of ${state.name}.`}
         </p>
 
-        {/* Popular Destinations: Max 3 */}
         {topTowns.length > 0 && (
-          <div className="space-y-1.5 pt-1">
-            <div className="text-[10px] uppercase font-bold tracking-wider text-amber-800 flex items-center gap-1">
-              <MapPin className="w-3 h-3" />
-              <span>Popular Destinations</span>
-            </div>
+          <div className="space-y-1.5">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400">
+              {towns.length} {towns.length === 1 ? 'destination' : 'destinations'}
+            </span>
             <div className="flex flex-wrap items-center gap-1.5">
               {topTowns.map((city) => (
                 <button
@@ -130,14 +150,13 @@ export const StateCard: React.FC<StateCardProps> = ({
           </div>
         )}
 
-        {/* Single Explore Action Button with Orange Font */}
-        <div className="pt-2">
+        <div>
           <button
             onClick={() => onSelectState(state.id)}
-            className="w-full py-2.5 px-4 rounded-xl bg-orange-50/80 hover:bg-orange-100/90 text-[#FF671F] hover:text-[#e05615] border border-orange-200 hover:border-orange-300 text-xs font-extrabold transition-all flex items-center justify-center gap-2 cursor-pointer shadow-2xs hover:shadow-xs active:scale-[0.99] group/btn"
+            className="w-full py-2.5 px-4 rounded-xl bg-[#D94F04] hover:bg-[#B83F00] text-white border border-[#C94700] hover:border-[#A93800] text-xs font-extrabold transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm hover:shadow-md active:scale-[0.99] group/btn"
           >
-            <span className="text-[#FF671F] font-extrabold">Explore {state.name}</span>
-            <ArrowRight className="w-3.5 h-3.5 text-[#FF671F] transition-transform group-hover/btn:translate-x-0.5" />
+            <span className="text-white font-extrabold">Explore</span>
+            <ArrowRight className="w-3.5 h-3.5 text-white transition-transform group-hover/btn:translate-x-0.5" />
           </button>
         </div>
       </div>

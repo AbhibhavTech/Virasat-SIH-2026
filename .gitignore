@@ -12,6 +12,7 @@ env/
 # Environment variables & API credentials
 .env
 .env.*
+!.env.ai.example
 *.env
 *.key
 *.pem

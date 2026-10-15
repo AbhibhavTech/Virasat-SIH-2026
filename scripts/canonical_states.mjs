@@ -345,7 +345,7 @@ export const CANONICAL_STATES = [
     region_full: 'Western India',
     type: 'Union Territory',
     coordinates: { lat: 20.3974, lng: 72.8328 },
-    hero_image_url: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1200&auto=format&fit=crop&q=80',
+    hero_image_url: 'https://cdnbbsr.s3waas.gov.in/s371e09b16e21f7b6919bbfc43f6a5b2f0/uploads/2020/10/2020100332-scaled.jpg',
     description: 'Coastal Portuguese heritage territory featuring sea-facing fortress walls, baroque churches, and pristine beaches of Diu.',
     heritage_overview: '16th-century Portuguese Moti Daman Fort, Diu Fort overlooking the Arabian Sea, St. Paul Church, and tribal art in Silvassa.'
   },

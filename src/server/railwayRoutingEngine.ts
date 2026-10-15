@@ -271,6 +271,61 @@ export const MUMBAI_PUNE_HYDERABAD_LINE: TrackStation[] = [
   { id: 'hyb', name: 'Hyderabad Deccan', code: 'HYB', lat: 17.3924, lng: 78.4682, isJunction: true },
 ];
 
+// Central India trunk used by long-distance Mumbai–Nagpur–Kolkata services.
+// Keeping the intermediate junctions is essential: a Mumbai-to-Northeast route
+// must travel east across India instead of being joined to Delhi by a diagonal.
+export const MUMBAI_NAGPUR_HOWRAH_LINE: TrackStation[] = [
+  { id: 'csmt', name: 'Mumbai CSMT', code: 'CSMT', lat: 18.9400, lng: 72.8353, isJunction: true },
+  { id: 'dr', name: 'Dadar Central', code: 'DR', lat: 19.0178, lng: 72.8478, isJunction: true },
+  { id: 'tna', name: 'Thane', code: 'TNA', lat: 19.1860, lng: 72.9759, isJunction: true },
+  { id: 'kyn', name: 'Kalyan Junction', code: 'KYN', lat: 19.2354, lng: 73.1306, isJunction: true },
+  { id: 'ksra', name: 'Kasara', code: 'KSRA', lat: 19.6464, lng: 73.4839 },
+  { id: 'igp', name: 'Igatpuri', code: 'IGP', lat: 19.6975, lng: 73.5653 },
+  { id: 'nk', name: 'Nashik Road', code: 'NK', lat: 19.9575, lng: 73.8344 },
+  { id: 'mmr', name: 'Manmad Junction', code: 'MMR', lat: 20.2522, lng: 74.4411, isJunction: true },
+  { id: 'jl', name: 'Jalgaon Junction', code: 'JL', lat: 21.0077, lng: 75.5626, isJunction: true },
+  { id: 'bsl', name: 'Bhusawal Junction', code: 'BSL', lat: 21.0455, lng: 75.7885, isJunction: true },
+  { id: 'ak', name: 'Akola Junction', code: 'AK', lat: 20.7069, lng: 77.0081, isJunction: true },
+  { id: 'bd', name: 'Badnera Junction', code: 'BD', lat: 20.8549, lng: 77.7333, isJunction: true },
+  { id: 'wr', name: 'Wardha Junction', code: 'WR', lat: 20.7417, lng: 78.5967, isJunction: true },
+  { id: 'ngp', name: 'Nagpur Junction', code: 'NGP', lat: 21.1528, lng: 79.0882, isJunction: true },
+  { id: 'g', name: 'Gondia Junction', code: 'G', lat: 21.4600, lng: 80.1900, isJunction: true },
+  { id: 'durg', name: 'Durg Junction', code: 'DURG', lat: 21.1900, lng: 81.2800, isJunction: true },
+  { id: 'r', name: 'Raipur Junction', code: 'R', lat: 21.2568, lng: 81.6337, isJunction: true },
+  { id: 'bsp', name: 'Bilaspur Junction', code: 'BSP', lat: 22.0797, lng: 82.1409, isJunction: true },
+  { id: 'jsg', name: 'Jharsuguda Junction', code: 'JSG', lat: 21.8554, lng: 84.0062, isJunction: true },
+  { id: 'rou', name: 'Rourkela Junction', code: 'ROU', lat: 22.2300, lng: 84.8500, isJunction: true },
+  { id: 'ckp', name: 'Chakradharpur', code: 'CKP', lat: 22.6763, lng: 85.6286, isJunction: true },
+  { id: 'tata', name: 'Tatanagar Junction', code: 'TATA', lat: 22.7680, lng: 86.2029, isJunction: true },
+  { id: 'kgp', name: 'Kharagpur Junction', code: 'KGP', lat: 22.3390, lng: 87.3250, isJunction: true },
+  { id: 'src', name: 'Santragachi Junction', code: 'SRC', lat: 22.5830, lng: 88.2830, isJunction: true },
+  { id: 'hwh', name: 'Howrah Junction (Kolkata)', code: 'HWH', lat: 22.5833, lng: 88.3425, isJunction: true },
+];
+
+// India-only Northeast railway approach. The line deliberately follows the
+// northern West Bengal / Siliguri corridor around Bangladesh before entering
+// Assam, preventing the old Howrah–Guwahati straight-line shortcut.
+export const HOWRAH_GUWAHATI_LINE: TrackStation[] = [
+  { id: 'hwh', name: 'Howrah Junction (Kolkata)', code: 'HWH', lat: 22.5833, lng: 88.3425, isJunction: true },
+  { id: 'bwn', name: 'Barddhaman Junction', code: 'BWN', lat: 23.2325, lng: 87.8631, isJunction: true },
+  { id: 'bhp', name: 'Bolpur Shantiniketan', code: 'BHP', lat: 23.6686, lng: 87.6828 },
+  { id: 'rph', name: 'Rampurhat Junction', code: 'RPH', lat: 24.1770, lng: 87.7810, isJunction: true },
+  { id: 'pkr', name: 'Pakur', code: 'PKR', lat: 24.6330, lng: 87.8490 },
+  { id: 'nfk', name: 'New Farakka Junction', code: 'NFK', lat: 24.8001, lng: 87.9102, isJunction: true },
+  { id: 'mldt', name: 'Malda Town', code: 'MLDT', lat: 25.0110, lng: 88.1410, isJunction: true },
+  { id: 'sm', name: 'Samsi', code: 'SM', lat: 25.2850, lng: 87.9940 },
+  { id: 'boe', name: 'Barsoi Junction', code: 'BOE', lat: 25.6470, lng: 87.8120, isJunction: true },
+  { id: 'dlk', name: 'Dalkhola', code: 'DLK', lat: 25.8750, lng: 87.8400 },
+  { id: 'knee', name: 'Kishanganj', code: 'KNE', lat: 26.1020, lng: 87.9560, isJunction: true },
+  { id: 'njp', name: 'New Jalpaiguri Junction', code: 'NJP', lat: 26.6830, lng: 88.4430, isJunction: true },
+  { id: 'ncb', name: 'New Cooch Behar', code: 'NCB', lat: 26.3240, lng: 89.4450, isJunction: true },
+  { id: 'noq', name: 'New Alipurduar', code: 'NOQ', lat: 26.4890, lng: 89.5260, isJunction: true },
+  { id: 'nbq', name: 'New Bongaigaon Junction', code: 'NBQ', lat: 26.4700, lng: 90.5650, isJunction: true },
+  { id: 'glpt', name: 'Goalpara Town', code: 'GLPT', lat: 26.1670, lng: 90.6260 },
+  { id: 'kyq', name: 'Kamakhya Junction', code: 'KYQ', lat: 26.1580, lng: 91.6960, isJunction: true },
+  { id: 'ghy', name: 'Guwahati Railway Station', code: 'GHY', lat: 26.1824, lng: 91.7516, isJunction: true },
+];
+
 export const ALL_MAIN_CORRIDORS = [
   { id: 'kashmir_delhi', name: 'Northern Kashmir - Jammu - Punjab - Delhi Corridor', stations: KASHMIR_PUNJAB_DELHI_LINE },
   { id: 'western_trunk', name: 'Western Railway Trunk (Golden Quadrilateral)', stations: WESTERN_RAILWAY_TRUNK },
@@ -281,6 +336,8 @@ export const ALL_MAIN_CORRIDORS = [
   { id: 'grand_chord', name: 'Howrah - Gaya - Pt DDU - Delhi Grand Chord', stations: HOWRAH_DELHI_GRAND_CHORD },
   { id: 'konkan_railway', name: 'Konkan Railway Coastal Corridor', stations: KONKAN_RAILWAY_CORRIDOR },
   { id: 'mumbai_pune_hyderabad', name: 'Mumbai - Pune - Solapur - Hyderabad Line', stations: MUMBAI_PUNE_HYDERABAD_LINE },
+  { id: 'mumbai_nagpur_howrah', name: 'Mumbai - Nagpur - Raipur - Howrah Main Line', stations: MUMBAI_NAGPUR_HOWRAH_LINE },
+  { id: 'howrah_guwahati', name: 'Howrah - Siliguri - Guwahati Northeast Frontier Line', stations: HOWRAH_GUWAHATI_LINE },
   { id: 'bengaluru_chennai', name: 'Bengaluru - Katpadi - Chennai Corridor', stations: BENGALURU_CHENNAI_LINE },
   { id: 'bengaluru_hyderabad', name: 'Bengaluru - Anantapur - Hyderabad Line', stations: BENGALURU_HYDERABAD_LINE },
 ];
@@ -746,6 +803,95 @@ export const NH48_HIGHWAY_WAYPOINTS: [number, number][] = [
   [18.9400, 72.8353], // Mumbai CSMT
 ];
 
+// India-only highway spine for journeys between western/central India and the
+// Northeast. These junctions keep the route north of Bangladesh via the
+// Siliguri corridor and the Assam approach.
+export const NORTHEAST_INDIA_HIGHWAY_WAYPOINTS: [number, number][] = [
+  [18.9431, 72.8230], // Mumbai
+  [19.9975, 73.7898], // Nashik
+  [20.9042, 74.7749], // Dhule
+  [21.0077, 75.5626], // Jalgaon
+  [20.7096, 77.0021], // Akola
+  [20.9374, 77.7796], // Amravati
+  [21.1458, 79.0882], // Nagpur
+  [21.1690, 79.6510], // Bhandara
+  [21.1900, 81.2800], // Durg
+  [21.2568, 81.6337], // Raipur
+  [22.0797, 82.1409], // Bilaspur
+  [21.4669, 83.9812], // Sambalpur
+  [21.8554, 84.0062], // Jharsuguda
+  [22.2300, 84.8500], // Rourkela
+  [22.8046, 86.2029], // Jamshedpur
+  [22.3390, 87.3250], // Kharagpur
+  [22.5726, 88.3639], // Kolkata
+  [23.2325, 87.8631], // Barddhaman
+  [24.1770, 87.7810], // Rampurhat
+  [25.0110, 88.1410], // Malda
+  [25.6470, 87.8120], // Barsoi
+  [26.7271, 88.3953], // Siliguri
+  [26.4910, 89.5260], // Alipurduar
+  [26.4700, 90.5650], // New Bongaigaon
+  [26.4690, 91.5800], // Rangia
+  [26.1445, 91.7362], // Guwahati
+];
+
+function routeTouchesBangladeshShortcut(points: [number, number][]): boolean {
+  // Core Bangladesh envelope. It intentionally excludes Kolkata, Malda,
+  // Siliguri and the Assam approach, while catching the country-crossing
+  // shortcuts returned by a global road router.
+  return points.some(([lat, lng]) =>
+    (lat > 21.0 && lat < 25.5 && lng > 89.0 && lng < 91.8) ||
+    (lat >= 25.5 && lat < 26.15 && lng > 89.25 && lng < 90.9) ||
+    (lat >= 26.15 && lat < 26.62 && lng > 88.7 && lng < 90.0)
+  );
+}
+
+function buildIndiaOnlyNortheastRoadRoute(
+  lat1: number,
+  lon1: number,
+  lat2: number,
+  lon2: number,
+  mode: 'DRIVE' | 'WALK' | 'BICYCLE'
+): RoadRouteResult {
+  const nearestIndex = (lat: number, lng: number) => {
+    let bestIndex = 0;
+    let bestDistance = Infinity;
+    NORTHEAST_INDIA_HIGHWAY_WAYPOINTS.forEach(([waypointLat, waypointLng], index) => {
+      const distance = haversineKm(lat, lng, waypointLat, waypointLng);
+      if (distance < bestDistance) {
+        bestDistance = distance;
+        bestIndex = index;
+      }
+    });
+    return bestIndex;
+  };
+
+  const startIndex = nearestIndex(lat1, lon1);
+  const endIndex = nearestIndex(lat2, lon2);
+  const corridor = startIndex <= endIndex
+    ? NORTHEAST_INDIA_HIGHWAY_WAYPOINTS.slice(startIndex, endIndex + 1)
+    : [...NORTHEAST_INDIA_HIGHWAY_WAYPOINTS.slice(endIndex, startIndex + 1)].reverse();
+  const polyline: [number, number][] = [[lat1, lon1], ...corridor, [lat2, lon2]];
+
+  let distanceKm = 0;
+  for (let index = 1; index < polyline.length; index++) {
+    distanceKm += haversineKm(
+      polyline[index - 1][0], polyline[index - 1][1], polyline[index][0], polyline[index][1]
+    );
+  }
+  distanceKm = Math.round(distanceKm * 1.13);
+  const speedKmh = mode === 'WALK' ? 4.8 : mode === 'BICYCLE' ? 15 : 58;
+  const durationMinutes = Math.round((distanceKm / speedKmh) * 60);
+
+  return {
+    polyline,
+    distanceKm,
+    durationMinutes,
+    durationFormatted: formatTransitDuration(durationMinutes),
+    source: 'national_highway_network',
+  };
+}
+
 /**
  * Fetch real driving road geometry from OSRM with timeout
  */
@@ -800,6 +946,10 @@ export async function getRealRoadRoute(
         } else {
           // BICYCLE: ~15 km/h
           durationMinutes = Math.round((distKm / 15) * 60);
+        }
+
+        if (routeTouchesBangladeshShortcut(polyline)) {
+          return buildIndiaOnlyNortheastRoadRoute(lat1, lon1, lat2, lon2, mode);
         }
 
         return {
