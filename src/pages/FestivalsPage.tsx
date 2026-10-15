@@ -43,24 +43,54 @@ const parseFestivalDate = (value?: string | null) => {
 
 const FESTIVAL_HERO_SLIDES = [
   {
-    src: 'https://commons.wikimedia.org/wiki/Special:Redirect/file/HOLI_THE_FESTIVAL_OF_COLORS_INDIA.jpg?width=1600',
-    alt: 'Holi colours in the air',
+    src: '/images/independence-day-red-fort.jpg',
+    alt: 'Independence Day flag hoisting ceremony at Red Fort, New Delhi',
+    sourceHref: 'https://commons.wikimedia.org/wiki/File:A_still_of_Red_Fort,_during_the_62nd_Independence_Day_celebrations,_in_Delhi_on_August_15,_2008.jpg',
+  },
+  {
+    src: '/images/braj-holi-celebration.jpg',
+    alt: 'Vibrant Holi celebration with ecstatic crowd and clouds of gulal in Braj Mathura',
     sourceHref: 'https://commons.wikimedia.org/wiki/File:HOLI_THE_FESTIVAL_OF_COLORS_INDIA.jpg',
   },
   {
-    src: 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Diwali_lamps_in_India_12.jpg?width=1600',
-    alt: 'Diwali lamps and festive lights',
+    src: '/images/diwali-lamps-diyas.jpg',
+    alt: 'Illuminated earthen diyas and traditional rangoli for Diwali festival of lights',
     sourceHref: 'https://commons.wikimedia.org/wiki/File:Diwali_lamps_in_India_12.jpg',
   },
   {
-    src: 'https://upload.wikimedia.org/wikipedia/commons/0/0e/The_61_Cavalry_contingent_passes_through_the_Rajpath_during_the_62nd_Republic_Day_Parade-2011%2C_in_New_Delhi_on_January_26%2C_2011.jpg',
-    alt: 'Republic Day celebration in India',
-    sourceHref: 'https://commons.wikimedia.org/wiki/File:The_61_Cavalry_contingent_passes_through_the_Rajpath_during_the_62nd_Republic_Day_Parade-2011,_in_New_Delhi_on_January_26,_2011.jpg',
+    src: '/images/republic-day-parade.jpg',
+    alt: 'Republic Day Parade with BSF Camel Contingent and India Gate on Kartavya Path, New Delhi',
+    sourceHref: 'https://commons.wikimedia.org/wiki/File:The_BSF_Camel_Contingent_passes_through_the_Rajpath,_on_the_occasion_of_the_69th_Republic_Day_Parade_2018,_in_New_Delhi_on_January_26,_2018.jpg',
   },
   {
     src: 'https://commons.wikimedia.org/wiki/Special:Redirect/file/Navrathri_Garba_Dance_at_Vadodara%2C_India.jpg?width=1600',
     alt: 'Navratri celebration and traditional dance',
     sourceHref: 'https://commons.wikimedia.org/wiki/File:Navrathri_Garba_Dance_at_Vadodara,_India.jpg',
+  },
+  {
+    src: '/images/makar-sankranti-kites.jpg',
+    alt: 'Makar Sankranti & International Kite Festival, Gujarat',
+    sourceHref: 'https://commons.wikimedia.org/wiki/File:International_Kite_Festival,India.JPG',
+  },
+  {
+    src: '/images/tamil-nadu-pongal.jpg',
+    alt: 'Traditional Thai Pongal celebration with boiling pot, sugarcane and kolam in Tamil Nadu',
+    sourceHref: 'https://commons.wikimedia.org/wiki/File:Pongal_Festival.jpg',
+  },
+  {
+    src: '/images/kerala-onam-boatrace.jpg',
+    alt: 'Grand Onam harvest festival with Vallamkali snake boat race, Onapookkalam, and King Mahabali homecoming in Kerala',
+    sourceHref: 'https://commons.wikimedia.org/wiki/File:Aranmula_boat_race.jpg',
+  },
+  {
+    src: '/images/punjab-lohri.jpg',
+    alt: 'Joyful Punjabi Lohri celebration with sacred bonfire, dhol drumming, and folk bhangra in Punjab',
+    sourceHref: 'https://www.alamy.com/family-celebrating-lohri-festival-punjab-india-image334543764.html',
+  },
+  {
+    src: '/images/bihar-chhath-puja.jpg',
+    alt: 'Sacred Chhath Puja Usha Arghya offering to the rising sun with bamboo soop at Ganga river ghats in Bihar',
+    sourceHref: 'https://commons.wikimedia.org/wiki/File:Chhath_Puja_India.jpg',
   },
 ];
 
@@ -474,18 +504,39 @@ export const FestivalsPage: React.FC<FestivalsPageProps> = ({
   // Partition festivals into 3 distinct sections per brief:
   // 1. National Days & Observances (Republic Day, Independence Day, Gandhi Jayanti, etc.)
   const nationalObservances = useMemo(() => {
-    return [] as FestivalItem[];
-  }, []);
+    return sortedFestivalDirectory.filter(
+      (f) =>
+        f.scope === 'NATIONAL_OBSERVANCE' ||
+        f.category?.toLowerCase() === 'national' ||
+        f.religion_or_category?.toLowerCase() === 'national' ||
+        f.id === 'independence-day' ||
+        f.id === 'republic-day' ||
+        f.id === 'gandhi-jayanti'
+    );
+  }, [sortedFestivalDirectory]);
 
   // 2. All-India & Pan-India Festivals (appear at the very top of festival listings)
   const allIndiaFestivals = useMemo(() => {
-    return sortedFestivalDirectory;
+    return sortedFestivalDirectory.filter(
+      (f) =>
+        f.scope !== 'NATIONAL_OBSERVANCE' &&
+        f.category?.toLowerCase() !== 'national' &&
+        f.id !== 'independence-day' &&
+        f.id !== 'republic-day'
+    );
   }, [sortedFestivalDirectory]);
 
   // 3. State & Regional Festivals (listed below All-India, clearly showing State/Region)
   const stateRegionalFestivals = useMemo(() => {
-    return [] as FestivalItem[];
-  }, []);
+    return sortedFestivalDirectory.filter(
+      (f) =>
+        f.scope !== 'NATIONAL_OBSERVANCE' &&
+        f.category?.toLowerCase() !== 'national' &&
+        (f.state && f.state.toLowerCase() !== 'all india') &&
+        f.id !== 'independence-day' &&
+        f.id !== 'republic-day'
+    );
+  }, [sortedFestivalDirectory]);
 
   // Actions
   const handleShowOnMap = (festival: FestivalItem) => {
@@ -1324,40 +1375,7 @@ export const FestivalsPage: React.FC<FestivalsPageProps> = ({
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {nationalObservances.map((fest) => (
-                    <article
-                      key={fest.id}
-                      onClick={() => setSelectedFestival(fest)}
-                      className="bg-white rounded-2xl p-5 border border-neutral-200 hover:border-[#E06D24] shadow-sm hover:shadow-md transition-all cursor-pointer flex flex-col justify-between group"
-                    >
-                      <div>
-                        <div className="flex items-center justify-between gap-2 mb-3">
-                          <span className="px-2.5 py-0.5 rounded-full bg-gradient-to-r from-orange-100 to-green-100 text-neutral-800 text-[11px] font-bold border border-neutral-200 flex items-center gap-1">
-                            <Flag className="w-3 h-3 text-[#E06D24]" />
-                            National Observance
-                          </span>
-                          <span className="text-xs text-neutral-500 font-medium">
-                            Pan-India
-                          </span>
-                        </div>
-                        <h4 className="font-serif font-bold text-lg text-neutral-900 group-hover:text-[#E06D24] transition-colors mb-2">
-                          {fest.name}
-                        </h4>
-                        <p className="text-xs text-neutral-600 line-clamp-3 leading-relaxed mb-4">
-                          {fest.description}
-                        </p>
-                      </div>
-
-                      <div className="pt-3 border-t border-neutral-100 flex items-center justify-between text-xs">
-                        <span className="text-[#E06D24] font-semibold flex items-center gap-1">
-                          View Protocol &amp; Details <ChevronRight className="w-3.5 h-3.5" />
-                        </span>
-                        <span className="text-neutral-400 font-medium">
-                          Official Observance
-                        </span>
-                      </div>
-                    </article>
-                  ))}
+                  {nationalObservances.map((fest) => renderFestivalCard(fest, true))}
                 </div>
               </section>
             )}
