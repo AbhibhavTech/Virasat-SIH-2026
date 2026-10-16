@@ -747,7 +747,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
       {/* 1. HERO SECTION: UNIVERSAL SEARCH & 7-SECOND HERITAGE SLIDESHOW           */}
       {/* ========================================================================= */}
       <section
-        className="relative w-full rounded-2xl sm:rounded-[36px] overflow-hidden border border-[#EFE8DF] shadow-lg min-h-[480px] sm:min-h-[560px] lg:min-h-[600px] flex flex-col justify-between p-4 sm:p-8 lg:p-10 select-none bg-stone-900/5"
+        className="relative w-full rounded-2xl sm:rounded-[36px] overflow-hidden border border-[#EFE8DF] shadow-xl min-h-[580px] sm:min-h-[680px] lg:min-h-[760px] xl:min-h-[820px] 2xl:min-h-[860px] flex flex-col justify-between p-5 sm:p-10 lg:p-14 xl:p-16 select-none bg-stone-900/10"
         aria-label="Incredible India Living Heritage Slideshow"
       >
         {/* ========================================================================= */}
@@ -761,7 +761,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
                 key={slide.id}
                 className={`absolute inset-0 w-full h-full transition-all duration-1000 ease-in-out ${
                   isActive
-                    ? 'opacity-100 scale-100 z-[1]'
+                    ? 'opacity-95 scale-100 z-[1]'
                     : 'opacity-0 scale-105 pointer-events-none z-0'
                 }`}
               >
@@ -774,40 +774,40 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
                       (e.target as HTMLImageElement).src = slide.fallbackUrl;
                     }
                   }}
-                  className="w-full h-full object-cover object-[center_35%] select-none filter contrast-[1.05] brightness-[1.02] saturate-[1.05]"
+                  className="w-full h-full object-cover object-[center_35%] select-none filter contrast-[1.05] brightness-[1.0] saturate-[1.05]"
+                  style={{ opacity: 0.95 }}
                 />
               </div>
             );
           })}
 
-          {/* SUBTLE TRANSPARENT OVERLAY (REDUCED WHITE AREA):
-              Allows real heritage photograph to remain clearly visible across almost the entire hero,
-              while ensuring crisp text readability for headings, search bar and destination chips.
+          {/* 95% REAL PHOTO VISIBILITY TINT:
+              Keeps 95% true photo visibility without milky white washout
           */}
-          {/* Desktop/Tablet Horizontal Gradient Overlay */}
+          {/* Desktop/Tablet Horizontal Subtle Gradient Overlay */}
           <div
             className="absolute inset-0 hidden sm:block pointer-events-none z-[2]"
             style={{
               background:
-                'linear-gradient(to right, rgba(255, 255, 255, 0.78) 0%, rgba(255, 255, 255, 0.58) 32%, rgba(255, 255, 255, 0.22) 60%, rgba(255, 255, 255, 0.05) 78%, rgba(255, 255, 255, 0) 100%)',
+                'linear-gradient(to right, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.16) 32%, rgba(255, 255, 255, 0.03) 55%, transparent 75%)',
             }}
           />
 
-          {/* Mobile Vertical Gradient Overlay */}
+          {/* Mobile Vertical Subtle Gradient Overlay */}
           <div
             className="absolute inset-0 sm:hidden pointer-events-none z-[2]"
             style={{
               background:
-                'linear-gradient(to bottom, rgba(255, 255, 255, 0.84) 0%, rgba(255, 255, 255, 0.60) 45%, rgba(255, 255, 255, 0.20) 80%, rgba(255, 255, 255, 0.05) 100%)',
+                'linear-gradient(to bottom, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.18) 40%, transparent 75%)',
             }}
           />
 
-          {/* Very subtle bottom-right vignette for place badge and navigation controls */}
+          {/* Very subtle bottom-right vignette for navigation controls */}
           <div
-            className="absolute bottom-0 right-0 w-full sm:w-2/3 h-48 pointer-events-none z-[2]"
+            className="absolute bottom-0 inset-x-0 h-36 pointer-events-none z-[2]"
             style={{
               background:
-                'radial-gradient(ellipse at bottom right, rgba(0, 0, 0, 0.28) 0%, rgba(0, 0, 0, 0.10) 45%, rgba(0, 0, 0, 0) 75%)',
+                'linear-gradient(to top, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.08) 55%, transparent 100%)',
             }}
           />
         </div>
@@ -832,28 +832,28 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
         </div>
 
         {/* Main Content Area */}
-        <div className="relative z-10 w-full max-w-2xl sm:max-w-3xl lg:max-w-4xl pt-2 sm:pt-4">
+        <div className="relative z-10 w-full max-w-2xl sm:max-w-3xl lg:max-w-4xl pt-3 sm:pt-6">
           {/* Heading, Search, Chips & Verified Tourism Trust Strip */}
           <div>
-            <IncredibleIndiaBadge className="mb-3" />
+            <IncredibleIndiaBadge className="mb-4 sm:mb-6" />
 
-            <h1 className="font-serif text-2xl sm:text-4xl lg:text-[42px] xl:text-[46px] font-bold tracking-tight text-[#0B192C] leading-[1.12]">
+            <h1 className="font-serif text-3xl sm:text-5xl lg:text-[46px] xl:text-[52px] font-bold tracking-tight text-[#0B192C] leading-[1.15] drop-shadow-[0_1px_2px_rgba(255,255,255,0.8)]">
               <span>Discover India&apos;s</span>
-              <span className="block mt-1">
+              <span className="block mt-1 sm:mt-2">
                 <span className="text-[#FF671F]">Living</span>{' '}
                 <span className="text-[#046A38]">Heritage</span>
               </span>
             </h1>
 
-            <p className="text-xs sm:text-sm md:text-base text-stone-700 max-w-lg mt-2.5 sm:mt-3.5 leading-relaxed font-medium">
+            <p className="text-xs sm:text-sm md:text-base text-stone-700 max-w-xl mt-3 sm:mt-5 leading-relaxed font-medium drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">
               Explore monuments, cultures, natural wonders and hidden gems across every region of India.
             </p>
 
             {/* Universal Search Input Bar with Live Suggestions Dropdown */}
-            <div ref={searchContainerRef} className="relative mt-3.5 sm:mt-6 max-w-xl xl:max-w-2xl">
+            <div ref={searchContainerRef} className="relative mt-6 sm:mt-8 max-w-xl xl:max-w-2xl">
               <form onSubmit={handleSearchSubmit}>
-                <div className="bg-white/95 backdrop-blur-md rounded-full p-1 sm:p-1.5 pl-3 sm:pl-5 shadow-md border border-stone-200/90 flex items-center gap-1.5 sm:gap-3 transition-all focus-within:ring-2 focus-within:ring-[#FF671F]/30 focus-within:border-[#FF671F]">
-                  <Search className="w-3.5 h-3.5 sm:w-5 sm:h-5 text-stone-400 shrink-0" />
+                <div className="bg-white/95 backdrop-blur-md rounded-full p-2 sm:p-2.5 pl-4 sm:pl-6 shadow-md hover:shadow-lg border border-stone-200/90 flex items-center gap-2 sm:gap-3 transition-all focus-within:ring-2 focus-within:ring-[#FF671F]/30 focus-within:border-[#FF671F]">
+                  <Search className="w-4 h-4 sm:w-5 sm:h-5 text-stone-400 shrink-0" />
                   <input
                     type="text"
                     value={searchQuery}
@@ -863,7 +863,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
                       if (searchSuggestions.length > 0) setShowSuggestions(true);
                     }}
                     placeholder="Search monuments, cities, or trails..."
-                    className="w-full bg-transparent text-xs sm:text-sm text-stone-800 placeholder-stone-400 focus:outline-none"
+                    className="w-full bg-transparent text-xs sm:text-sm md:text-base text-stone-800 placeholder-stone-400 focus:outline-none"
                   />
                   {searchQuery && (
                     <button
@@ -878,23 +878,23 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
                       <X className="w-3.5 h-3.5" />
                     </button>
                   )}
-                  {isSearching && <Loader2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-amber-600 animate-spin mr-1 shrink-0" />}
+                  {isSearching && <Loader2 className="w-4 h-4 text-amber-600 animate-spin mr-1 shrink-0" />}
                   {/* Camera Button Small for AR Monument Explorer */}
                   <button
                     type="button"
                     onClick={() => setIsARModalOpen(true)}
                     title="Scan Monument with AR Camera or Upload Photo"
-                    className="p-1.5 sm:p-2 rounded-full bg-orange-50 hover:bg-orange-100 text-[#FF671F] border border-orange-200/80 transition-all hover:scale-105 active:scale-95 shrink-0 flex items-center justify-center cursor-pointer shadow-2xs"
+                    className="p-2 sm:p-2.5 rounded-full bg-orange-50 hover:bg-orange-100 text-[#FF671F] border border-orange-200/80 transition-all hover:scale-105 active:scale-95 shrink-0 flex items-center justify-center cursor-pointer shadow-2xs"
                     aria-label="Open AR Camera & Visual Identification"
                   >
-                    <Camera className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FF671F]" />
+                    <Camera className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#FF671F]" />
                   </button>
                   <button
                     type="submit"
-                    className="bg-[#FF671F] hover:bg-[#E65100] text-white px-3 sm:px-6 py-1.5 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold flex items-center gap-1 transition active:scale-95 shrink-0 shadow-xs cursor-pointer"
+                    className="bg-[#FF671F] hover:bg-[#E65100] text-white px-4 sm:px-7 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold flex items-center gap-1.5 transition active:scale-95 shrink-0 shadow-xs cursor-pointer"
                   >
                     <span>Search</span>
-                    <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                    <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </button>
                 </div>
               </form>
@@ -1047,7 +1047,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
             </div>
 
             {/* Destination Quick Chips */}
-            <div className="flex overflow-x-auto sm:flex-wrap items-center gap-1.5 sm:gap-2.5 mt-3.5 sm:mt-5 pb-1 scrollbar-none mobile-scroll-row">
+            <div className="flex overflow-x-auto sm:flex-wrap items-center gap-2 sm:gap-3 mt-6 sm:mt-8 pb-1 scrollbar-none mobile-scroll-row">
               {quickChips.map((chip) => (
                 <button
                   key={chip.name}
@@ -1062,47 +1062,43 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
                       onSearch(chip.name);
                     }
                   }}
-                  className="px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-white/95 backdrop-blur-sm border border-stone-200/90 hover:border-[#FF671F] hover:bg-white text-[11px] sm:text-xs font-semibold text-stone-800 shadow-2xs hover:shadow-xs transition flex items-center gap-1 sm:gap-1.5 cursor-pointer active:scale-95 whitespace-nowrap"
+                  className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/95 backdrop-blur-sm border border-stone-200/90 hover:border-[#FF671F] hover:bg-white text-xs sm:text-sm font-semibold text-stone-800 shadow-2xs hover:shadow-xs transition flex items-center gap-1.5 sm:gap-2 cursor-pointer active:scale-95 whitespace-nowrap"
                 >
-                  <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#FF671F] shrink-0" />
+                  <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FF671F] shrink-0" />
                   <span>{chip.name}</span>
                 </button>
               ))}
             </div>
 
             {/* Verified Heritage Highlights & Tourism Trust Strip */}
-            <div className="flex flex-wrap items-center gap-2.5 sm:gap-4 mt-4 sm:mt-6 pt-3.5 sm:pt-5 border-t border-stone-300/40">
-              <div className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-lg bg-orange-50 border border-orange-200/80 flex items-center justify-center text-[#FF671F] shrink-0">
-                  <Landmark className="w-3.5 h-3.5" />
+            <div className="flex flex-wrap items-center gap-3 sm:gap-6 mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-stone-300/40">
+              <div className="flex items-center gap-2.5 bg-white/80 backdrop-blur-sm px-3.5 py-2 rounded-xl border border-white/70 shadow-2xs">
+                <div className="w-8 h-8 rounded-lg bg-orange-50 border border-orange-200/80 flex items-center justify-center text-[#FF671F] shrink-0">
+                  <Landmark className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-stone-900 leading-none">42 UNESCO</div>
-                  <div className="text-[10px] text-stone-500 mt-0.5">Heritage Sites</div>
+                  <div className="text-xs sm:text-sm font-bold text-stone-900 leading-none">42 UNESCO</div>
+                  <div className="text-[10px] sm:text-[11px] text-stone-500 mt-0.5">Heritage Sites</div>
                 </div>
               </div>
 
-              <div className="hidden sm:block h-5 w-px bg-stone-300/60" />
-
-              <div className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-lg bg-emerald-50 border border-emerald-200/80 flex items-center justify-center text-[#046A38] shrink-0">
-                  <ShieldCheck className="w-3.5 h-3.5" />
+              <div className="flex items-center gap-2.5 bg-white/80 backdrop-blur-sm px-3.5 py-2 rounded-xl border border-white/70 shadow-2xs">
+                <div className="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-200/80 flex items-center justify-center text-[#046A38] shrink-0">
+                  <ShieldCheck className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-stone-900 leading-none">3,600+ ASI</div>
-                  <div className="text-[10px] text-stone-500 mt-0.5">Protected Shrines</div>
+                  <div className="text-xs sm:text-sm font-bold text-stone-900 leading-none">3,600+ ASI</div>
+                  <div className="text-[10px] sm:text-[11px] text-stone-500 mt-0.5">Protected Shrines</div>
                 </div>
               </div>
 
-              <div className="hidden sm:block h-5 w-px bg-stone-300/60" />
-
-              <div className="flex items-center gap-2">
-                <div className="w-7 h-7 rounded-lg bg-sky-50 border border-sky-200/80 flex items-center justify-center text-[#0284C7] shrink-0">
-                  <Compass className="w-3.5 h-3.5" />
+              <div className="flex items-center gap-2.5 bg-white/80 backdrop-blur-sm px-3.5 py-2 rounded-xl border border-white/70 shadow-2xs">
+                <div className="w-8 h-8 rounded-lg bg-sky-50 border border-sky-200/80 flex items-center justify-center text-[#0284C7] shrink-0">
+                  <Compass className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="text-xs font-bold text-stone-900 leading-none">28 States & UTs</div>
-                  <div className="text-[10px] text-stone-500 mt-0.5">Curated Trails</div>
+                  <div className="text-xs sm:text-sm font-bold text-stone-900 leading-none">28 States & UTs</div>
+                  <div className="text-[10px] sm:text-[11px] text-stone-500 mt-0.5">Curated Trails</div>
                 </div>
               </div>
             </div>
@@ -1110,16 +1106,16 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
         </div>
 
         {/* Centered Slideshow Navigation Bar (Free of any overlap with Virasat AI) */}
-        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 rounded-full border border-white/80 bg-white/90 px-3 py-1.5 shadow-md backdrop-blur-md">
+        <div className="absolute bottom-5 sm:bottom-7 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 rounded-full border border-white/90 bg-white/95 px-4 py-2 shadow-lg backdrop-blur-md">
           <button
             type="button"
             aria-label="Previous destination slide"
             onClick={() => setActiveSlideIdx((index) => (index - 1 + HERO_HERITAGE_SLIDES.length) % HERO_HERITAGE_SLIDES.length)}
-            className="flex h-7 w-7 items-center justify-center rounded-full text-stone-700 transition hover:bg-stone-100 cursor-pointer"
+            className="flex h-8 w-8 items-center justify-center rounded-full text-stone-700 transition hover:bg-stone-100 cursor-pointer"
           >
-            <ChevronLeft className="h-4 w-4" />
+            <ChevronLeft className="h-4.5 w-4.5" />
           </button>
-          <div className="flex items-center gap-1.5 px-1" aria-label="Featured destination slideshow">
+          <div className="flex items-center gap-1.5 px-1.5" aria-label="Featured destination slideshow">
             {HERO_HERITAGE_SLIDES.map((slide, index) => (
               <button
                 key={slide.id}
@@ -1127,8 +1123,8 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
                 aria-label={`Show ${slide.name}`}
                 onClick={() => setActiveSlideIdx(index)}
                 title={slide.name}
-                className={`h-2 rounded-full transition-all cursor-pointer ${
-                  index === activeSlideIdx ? 'w-6 bg-[#FF671F]' : 'w-2 bg-stone-300 hover:bg-stone-400'
+                className={`h-2.5 rounded-full transition-all cursor-pointer ${
+                  index === activeSlideIdx ? 'w-7 bg-[#FF671F]' : 'w-2.5 bg-stone-300 hover:bg-stone-400'
                 }`}
               />
             ))}
@@ -1137,11 +1133,11 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
             type="button"
             aria-label="Next destination slide"
             onClick={() => setActiveSlideIdx((index) => (index + 1) % HERO_HERITAGE_SLIDES.length)}
-            className="flex h-7 w-7 items-center justify-center rounded-full text-stone-700 transition hover:bg-stone-100 cursor-pointer"
+            className="flex h-8 w-8 items-center justify-center rounded-full text-stone-700 transition hover:bg-stone-100 cursor-pointer"
           >
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRight className="h-4.5 w-4.5" />
           </button>
-          <span className="hidden md:inline-block pl-1 text-[11px] font-bold text-stone-800 border-l border-stone-200 ml-1">
+          <span className="hidden md:inline-block pl-2 text-xs font-bold text-stone-800 border-l border-stone-200 ml-1.5">
             {HERO_HERITAGE_SLIDES[activeSlideIdx].name}
           </span>
         </div>
@@ -1150,14 +1146,14 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
         <button
           type="button"
           onClick={() => onNavigateTab('ai')}
-          className="hidden sm:flex absolute bottom-4 right-4 sm:bottom-6 sm:right-6 lg:bottom-8 lg:right-8 bg-white/95 hover:bg-white backdrop-blur-md px-3.5 py-2.5 rounded-2xl border border-white/90 hover:border-orange-300 shadow-md hover:shadow-lg transition-all duration-200 items-center gap-3 text-stone-800 z-20 cursor-pointer group active:scale-95 text-left"
+          className="hidden sm:flex absolute bottom-5 right-5 sm:bottom-7 sm:right-7 lg:bottom-8 lg:right-8 bg-white/95 hover:bg-white backdrop-blur-md px-4 py-3 rounded-2xl border border-white/90 hover:border-orange-300 shadow-md hover:shadow-lg transition-all duration-200 items-center gap-3.5 text-stone-800 z-20 cursor-pointer group active:scale-95 text-left"
           title="Open Virasat AI"
         >
           {/* AI Logo Icon */}
           <div className="relative">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-[#FF671F] to-[#046A38] p-0.5 shadow-xs flex items-center justify-center text-white shrink-0 group-hover:scale-105 transition-transform">
+            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#FF671F] to-[#046A38] p-0.5 shadow-xs flex items-center justify-center text-white shrink-0 group-hover:scale-105 transition-transform">
               <div className="w-full h-full bg-white rounded-[10px] flex items-center justify-center">
-                <Bot className="w-4 h-4 text-[#FF671F]" />
+                <Bot className="w-4.5 h-4.5 text-[#FF671F]" />
               </div>
             </div>
             <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-emerald-500 ring-2 ring-white animate-pulse" />
@@ -1166,8 +1162,8 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
           {/* AI Assistant Label & Action */}
           <div className="leading-tight pr-1">
             <div className="flex items-center gap-1.5">
-              <span className="text-[11px] font-bold text-[#0B192C] tracking-tight group-hover:text-[#FF671F] transition-colors flex items-center gap-1">
-                Virasat AI <Sparkles className="w-3 h-3 text-[#FF671F]" />
+              <span className="text-xs font-bold text-[#0B192C] tracking-tight group-hover:text-[#FF671F] transition-colors flex items-center gap-1">
+                Virasat AI <Sparkles className="w-3.5 h-3.5 text-[#FF671F]" />
               </span>
               <span className="text-[9px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.2 rounded-full border border-emerald-200">
                 Online
