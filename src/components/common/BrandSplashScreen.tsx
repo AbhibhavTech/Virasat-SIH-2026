@@ -68,8 +68,8 @@ export const BrandSplashScreen: React.FC<BrandSplashScreenProps> = ({
       {/* Main Centered Brand Content */}
       <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-sm w-full">
         {/* Centered Virasat Logo */}
-        <div className="w-16 h-16 sm:w-18 sm:h-18 rounded-2xl bg-white border border-[#EFE8DF] shadow-[0_4px_20px_-2px_rgba(180,83,9,0.06)] flex items-center justify-center p-2 mb-4 transition-transform duration-300">
-          <VirasatLogoMark size={48} className="drop-shadow-xs" />
+        <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-white shadow-md ring-1 ring-stone-200/80 flex items-center justify-center p-1 mb-4 transition-transform duration-300 overflow-hidden">
+          <VirasatLogoMark className="w-full h-full object-contain" />
         </div>
 
         {/* "VIRASAT" below logo */}

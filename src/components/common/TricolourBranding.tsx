@@ -5,68 +5,23 @@ import React from 'react';
  * Handcrafted vector honoring traditional Indian architectural arches (Torana / Jharokha)
  * with a luminous tricolour gradient (Saffron #FF671F to India Green #046A38) and subtle gold highlight.
  */
-export const VirasatLogoMark: React.FC<{ className?: string; size?: number }> = ({ className = 'w-9 h-9', size }) => (
-  <svg
-    viewBox="0 0 48 48"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
+export const VirasatLogoMark: React.FC<{ className?: string; size?: number; alt?: string }> = ({
+  className = 'w-9 h-9',
+  size,
+  alt = "Virasat Official Emblem"
+}) => (
+  <img
+    src="/images/virasat-logo.png"
+    alt={alt}
     style={size ? { width: size, height: size } : undefined}
-    className={`${className} shrink-0 select-none`}
-    aria-hidden="true"
-  >
-    <defs>
-      <linearGradient id="virasatArchGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#FF671F" />
-        <stop offset="50%" stopColor="#D97706" />
-        <stop offset="100%" stopColor="#046A38" />
-      </linearGradient>
-      <linearGradient id="goldKalash" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#FDE68A" />
-        <stop offset="100%" stopColor="#D97706" />
-      </linearGradient>
-      <filter id="softGlow" x="-10%" y="-10%" width="120%" height="120%">
-        <feDropShadow dx="0" dy="1" stdDeviation="1.5" floodColor="#FF671F" floodOpacity="0.25" />
-      </filter>
-    </defs>
-
-    {/* Outer Temple Shikhara / Torana Arch */}
-    <path
-      d="M24 4 L28 10 L38 15 L38 42 L10 42 L10 15 L20 10 Z"
-      fill="url(#virasatArchGrad)"
-      filter="url(#softGlow)"
-    />
-
-    {/* Crown Kalash Finial */}
-    <circle cx="24" cy="5" r="2.2" fill="url(#goldKalash)" />
-    <path d="M24 2 L24 4.5" stroke="#FFFFFF" strokeWidth="1.2" strokeLinecap="round" />
-
-    {/* Stepped Architectural Details */}
-    <rect x="13" y="14" width="22" height="2.5" rx="1" fill="#FFFFFF" opacity="0.9" />
-    <rect x="15" y="18" width="18" height="1.8" rx="0.8" fill="#FDE68A" opacity="0.95" />
-
-    {/* Inner Traditional Arch Doorway (Cusped Arch) */}
-    <path
-      d="M17 42 L17 28 C17 23, 21 21, 24 21 C27 21, 31 23, 31 28 L31 42 Z"
-      fill="#FFFFFF"
-    />
-    <path
-      d="M19 42 L19 29 C19 25, 21.5 23.5, 24 23.5 C26.5 23.5, 29 25, 29 29 L29 42 Z"
-      fill="#FAF8F5"
-    />
-
-    {/* Micro Ashoka Chakra in Center Doorway */}
-    <circle cx="24" cy="30" r="3.2" stroke="#000080" strokeWidth="0.8" fill="none" opacity="0.85" />
-    <circle cx="24" cy="30" r="0.8" fill="#000080" />
-    {/* 8 representative spokes */}
-    <path d="M24 27 L24 33 M21 30 L27 30 M22 28 L26 32 M22 32 L26 28" stroke="#000080" strokeWidth="0.5" opacity="0.75" />
-
-    {/* Stepped Base Pedestal */}
-    <rect x="7" y="42" width="34" height="2.5" rx="1.2" fill="#046A38" />
-  </svg>
+    className={`${className} shrink-0 select-none object-contain rounded-full`}
+    loading="eager"
+    decoding="async"
+  />
 );
 
 /**
- * Complete Virasat Brand Component (Logo Mark + Serif Typography + Subtitle)
+ * Complete Virasat Brand Component (Official Circular Emblem + Serif Typography + Subtitle)
  */
 export const VirasatBrand: React.FC<{
   onClick?: () => void;
@@ -81,16 +36,16 @@ export const VirasatBrand: React.FC<{
   return (
     <div
       onClick={onClick}
-      className={`flex items-center gap-1.5 sm:gap-2.5 text-left group select-none shrink-0 ${
+      className={`flex items-center gap-2 sm:gap-2.5 text-left group select-none shrink-0 ${
         onClick ? 'cursor-pointer focus:outline-none' : ''
       } ${className}`}
     >
       <div
         className={`${
-          isSm ? 'w-7 h-7 sm:w-8 sm:h-8 p-0.5 sm:p-1' : isLg ? 'w-11 h-11 p-1' : 'w-10 h-10 p-1'
-        } rounded-lg sm:rounded-xl bg-white border border-[#EFE8DF] shadow-xs flex items-center justify-center group-hover:scale-105 transition-transform duration-200 shrink-0`}
+          isSm ? 'w-8 h-8 sm:w-9 sm:h-9' : isLg ? 'w-14 h-14' : 'w-11 h-11 sm:w-12 sm:h-12'
+        } rounded-full bg-white shadow-xs ring-1 ring-black/10 dark:ring-white/10 flex items-center justify-center group-hover:scale-105 transition-transform duration-200 shrink-0 overflow-hidden`}
       >
-        <VirasatLogoMark className={isSm ? 'w-5.5 h-5.5 sm:w-7 sm:h-7' : isLg ? 'w-9 h-9' : 'w-8 h-8'} />
+        <VirasatLogoMark className="w-full h-full object-contain" />
       </div>
 
       <div className="flex flex-col min-w-0 justify-center">
