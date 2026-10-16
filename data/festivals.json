@@ -2217,5 +2217,152 @@
       "Leh Harvest Festival",
       "Ladakh Polo Archery Festival"
     ]
+  },
+  {
+    "id": "garia-puja",
+    "name": "Garia Puja",
+    "slug": "garia-puja",
+    "category": "Notable State-Specific & Tribal Festivals",
+    "religious_or_cultural_category": "Notable State-Specific & Tribal Festivals",
+    "scope": "STATE_REGIONAL",
+    "state": "Tripura",
+    "state_id": "tripura",
+    "states": [
+      "Tripura"
+    ],
+    "region": "North-East",
+    "primary_city": "Agartala",
+    "primary_city_id": "agartala",
+    "alternate_locations": [
+      "Tripura Tribal Villages",
+      "Reang & Tripuri Settlements"
+    ],
+    "lat": 23.8315,
+    "lng": 91.2868,
+    "description": "Grand harvest festival of Tripura celebrated in mid-April (seventh day of the month of Vaishakha) primarily by the indigenous Tripuri and Reang tribes. Lord Garia—the deity of agriculture, livestock, and domestic prosperity—is worshipped using a sacred bamboo pole adorned with flowers, wild cotton, and offerings, accompanied by traditional Garia dance.",
+    "cultural_vibe": "Sacred Bamboo Deity Worship, Rhythmic Garia Dance, Folk Drums, Traditional Feast",
+    "typical_season": "Spring (Mid-April / Baishakh)",
+    "typical_month": "April",
+    "exact_date_start": "2026-04-20",
+    "exact_date_end": "2026-04-21",
+    "start_date": "2026-04-20",
+    "end_date": "2026-04-21",
+    "event_year": 2026,
+    "is_date_verified": true,
+    "is_recurring": true,
+    "associated_places": [
+      "Heritage Park Agartala",
+      "Ujjayanta Palace Grounds",
+      "Tribal Cultural Centers"
+    ],
+    "image_url": "/images/garia-puja.png",
+    "source_url": "https://tripuratourism.gov.in/",
+    "official_source_url": "https://tripuratourism.gov.in/",
+    "source_name": "Tripura Tourism Development Corporation",
+    "attribution_text": "Tripura Tourism Official Registry",
+    "license": "Official State Archive",
+    "verification_status": "verified",
+    "aliases": [
+      "Baba Garia Puja",
+      "Garia Festival",
+      "Tripura Harvest Festival"
+    ]
+  },
+  {
+    "id": "ker-puja",
+    "name": "Ker Puja",
+    "slug": "ker-puja",
+    "category": "Notable State-Specific & Tribal Festivals",
+    "religious_or_cultural_category": "Notable State-Specific & Tribal Festivals",
+    "scope": "STATE_REGIONAL",
+    "state": "Tripura",
+    "state_id": "tripura",
+    "states": [
+      "Tripura"
+    ],
+    "region": "North-East",
+    "primary_city": "Agartala",
+    "primary_city_id": "agartala",
+    "alternate_locations": [
+      "Ujjayanta Palace",
+      "Royal Capital Precinct"
+    ],
+    "lat": 23.8358,
+    "lng": 91.2868,
+    "description": "Sacred guardian ritual observed two weeks following Kharchi Puja to protect the kingdom and citizens from natural calamities, epidemics, and external perils. Under centuries-old royal tradition, strict boundaries (Ker) are demarcated around the sacred precinct, during which speaking loudly, lighting fires, and crossing borders are strictly prohibited.",
+    "cultural_vibe": "Royal Guardian Austerities, Sacred Boundary Rites, Nocturnal Chants, Pristine Silence",
+    "typical_season": "Monsoon (August)",
+    "typical_month": "August",
+    "exact_date_start": "2026-08-04",
+    "exact_date_end": "2026-08-05",
+    "start_date": "2026-08-04",
+    "end_date": "2026-08-05",
+    "event_year": 2026,
+    "is_date_verified": true,
+    "is_recurring": true,
+    "associated_places": [
+      "Ujjayanta Palace Agartala",
+      "Royal Enclosure"
+    ],
+    "image_url": "/images/ker-puja.png",
+    "source_url": "https://tripuratourism.gov.in/",
+    "official_source_url": "https://tripuratourism.gov.in/",
+    "source_name": "Tripura Tourism Development Corporation",
+    "attribution_text": "Tripura Tourism Official Registry",
+    "license": "Official State Archive",
+    "verification_status": "verified",
+    "aliases": [
+      "Vastu Ker Puja",
+      "Tripura Royal Guardian Ritual"
+    ]
+  },
+  {
+    "id": "neermahal-water-festival",
+    "name": "Neermahal Water Festival",
+    "slug": "neermahal-water-festival",
+    "category": "Notable State-Specific & Tribal Festivals",
+    "religious_or_cultural_category": "Notable State-Specific & Tribal Festivals",
+    "scope": "STATE_REGIONAL",
+    "state": "Tripura",
+    "state_id": "tripura",
+    "states": [
+      "Tripura"
+    ],
+    "region": "North-East",
+    "primary_city": "Melaghar (Rudrasagar Lake)",
+    "primary_city_id": "melaghar",
+    "alternate_locations": [
+      "Neermahal Palace",
+      "Rudrasagar Lake"
+    ],
+    "lat": 23.4998,
+    "lng": 91.3197,
+    "description": "Vibrant three-day annual festival celebrated at Neermahal—Eastern India's iconic red-and-white water palace floating in the middle of Rudrasagar Lake. Organized by the Department of Tourism, the festival features spirited traditional boat races, swimming competitions, and folk music performances.",
+    "cultural_vibe": "Rudrasagar Lake Boat Races, Floating Palace Illuminations, Folk Cultural Stages",
+    "typical_season": "Late Monsoon / Autumn (September)",
+    "typical_month": "September",
+    "exact_date_start": "2026-09-18",
+    "exact_date_end": "2026-09-20",
+    "start_date": "2026-09-18",
+    "end_date": "2026-09-20",
+    "event_year": 2026,
+    "is_date_verified": true,
+    "is_recurring": true,
+    "associated_places": [
+      "Neermahal Water Palace",
+      "Rudrasagar Lake",
+      "Melaghar Town"
+    ],
+    "image_url": "/images/neermahal-water-festival.png",
+    "source_url": "https://tripuratourism.gov.in/",
+    "official_source_url": "https://tripuratourism.gov.in/",
+    "source_name": "Tripura Tourism Development Corporation",
+    "attribution_text": "Tripura Tourism Official Registry",
+    "license": "Official State Archive",
+    "verification_status": "verified",
+    "aliases": [
+      "Neermahal Festival",
+      "Rudrasagar Boat Race Festival"
+    ]
   }
 ]

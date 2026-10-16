@@ -54,9 +54,14 @@ export const INDIAN_DESTINATION_ALIASES: Record<string, string> = {
   kanyakumari: 'Kanniyakumari',
   kodaikanal: 'Kodaikanal',
 
-  // Maharashtra
+  // Maharashtra & MMR
   mumbai: 'Mumbai',
   bombay: 'Mumbai',
+  kharghar: 'Navi Mumbai',
+  panvel: 'Panvel',
+  'navi mumbai': 'Navi Mumbai',
+  thane: 'Thane',
+  kalyan: 'Kalyan',
   pune: 'Pune',
   nagpur: 'Nagpur',
   nashik: 'Nashik',
@@ -294,58 +299,83 @@ export function extractEntities(rawText: string, existingContext?: any): Extract
   }
 
   // 4. Origin & Destination Extraction
-  // Pattern A: "from X to Y", "starting from X to Y"
-  const fromToMatch = text.match(/(?:from|starting from)\s+([a-zA-Z\s]+?)\s+(?:to|tak|jana hai|travel to)\s+([a-zA-Z\s]+)/i);
-  if (fromToMatch) {
-    const rawOrig = fromToMatch[1].trim().toLowerCase();
-    const rawDest = fromToMatch[2].trim().toLowerCase();
-    entities.origin = INDIAN_DESTINATION_ALIASES[rawOrig] || (rawOrig.charAt(0).toUpperCase() + rawOrig.slice(1));
-    entities.destination = INDIAN_DESTINATION_ALIASES[rawDest] || (rawDest.charAt(0).toUpperCase() + rawDest.slice(1));
-    entities.city = entities.destination;
-  } else {
-    // Pattern B: "X se Y" (e.g. "Mumbai se Goa train se kaise jaun", "Delhi se Jaipur")
-    const sePattern = text.match(/\b([a-zA-Z\s]{2,25}?)\s+se\s+([a-zA-Z\s]{2,25}?)(?:\s+(?:train|railway|flight|bus|cab|taxi|road|kaise|jaun|jaaun|jaye|pahunche|travel|jana|tak|options|ticket|$))/i);
-    if (sePattern) {
-      const origCand = sePattern[1].trim().toLowerCase();
-      const destCand = sePattern[2].trim().toLowerCase();
-      if (INDIAN_DESTINATION_ALIASES[origCand] && INDIAN_DESTINATION_ALIASES[destCand]) {
-        entities.origin = INDIAN_DESTINATION_ALIASES[origCand];
-        entities.destination = INDIAN_DESTINATION_ALIASES[destCand];
-        entities.city = entities.destination;
+  if (!entities.origin || !entities.destination) {
+    // Find all mentioned city aliases with character indices
+    const mentioned: Array<{ alias: string; canonical: string; index: number }> = [];
+    for (const [alias, canonical] of Object.entries(INDIAN_DESTINATION_ALIASES)) {
+      const match = text.match(new RegExp(`\\b${alias}\\b`, 'i'));
+      if (match && match.index !== undefined) {
+        mentioned.push({ alias, canonical, index: match.index });
       }
     }
-
-    // Check for origin indicators ("Mumbai se", "from Delhi", "Jaipur se")
-    if (!entities.origin) {
-      for (const [alias, canonicalName] of Object.entries(INDIAN_DESTINATION_ALIASES)) {
-        if (new RegExp(`(?:from|starting from)\\s+${alias}\\b|\\b${alias}\\s+se\\b`, 'i').test(text)) {
-          entities.origin = canonicalName;
-          break;
-        }
-      }
+    // Prefer longer aliases to prevent "new delhi" getting split with "delhi"
+    mentioned.sort((a, b) => b.alias.length - a.alias.length);
+    const nonOverlapping: Array<{ alias: string; canonical: string; index: number }> = [];
+    for (const item of mentioned) {
+      const overlaps = nonOverlapping.some(
+        (prev) => (item.index >= prev.index && item.index < prev.index + prev.alias.length) ||
+                  (prev.index >= item.index && prev.index < item.index + item.alias.length)
+      );
+      if (!overlaps) nonOverlapping.push(item);
     }
+    nonOverlapping.sort((a, b) => a.index - b.index);
 
-    // Check for known destination mentions or phonetic aliases if not already set by place resolution
-    if (!entities.destination) {
-      for (const [alias, canonicalName] of Object.entries(INDIAN_DESTINATION_ALIASES)) {
-        if (new RegExp(`\\b${alias}\\b`, 'i').test(text)) {
-          if (!entities.origin || entities.origin.toLowerCase() !== alias) {
-            entities.destination = canonicalName;
-            entities.city = canonicalName;
-            break;
+    if (nonOverlapping.length >= 2) {
+      const first = nonOverlapping[0];
+      const second = nonOverlapping[1];
+      const between = text.slice(first.index + first.alias.length, second.index);
+      const beforeFirst = text.slice(0, first.index);
+
+      // Check if second was preceded by "from" or "se"
+      if (/\b(?:from|se)\b/i.test(between) && !/\b(?:from|living in|staying in|currently in|based in)\b/i.test(beforeFirst)) {
+        if (/\bfrom\b/i.test(between)) {
+          if (!entities.origin) entities.origin = second.canonical;
+          if (!entities.destination) {
+            entities.destination = first.canonical;
+            entities.city = first.canonical;
+          }
+        } else {
+          if (!entities.origin) entities.origin = first.canonical;
+          if (!entities.destination) {
+            entities.destination = second.canonical;
+            entities.city = second.canonical;
           }
         }
+      } else {
+        if (!entities.origin) entities.origin = first.canonical;
+        if (!entities.destination) {
+          entities.destination = second.canonical;
+          entities.city = second.canonical;
+        }
+      }
+    } else if (nonOverlapping.length === 1) {
+      const item = nonOverlapping[0];
+      const before = text.slice(0, item.index);
+      const after = text.slice(item.index + item.alias.length);
+
+      if (
+        /\b(?:from|starting from|living in|staying in|currently in|based in|i am in|i'm in)\s*$/i.test(before) ||
+        /^\s*(?:se)\b/i.test(after)
+      ) {
+        if (!entities.origin) entities.origin = item.canonical;
+      } else {
+        if (!entities.destination) {
+          entities.destination = item.canonical;
+          entities.city = item.canonical;
+        }
       }
     }
 
-    // Travel query patterns like "chennai ghumna hain", "ke Channi ghoom sakta hun", "visit jaipur"
-    if (!entities.destination) {
-      const travelPattern = text.match(/(?:ke|kya|main|hum)?\s*([a-zA-Z\s]{3,20}?)\s*(?:ghoom sakta|ghoom sakte|ghumna|ghumo|visit|explore|travel|trip|jana|ja sakta)/i);
-      if (travelPattern) {
-        const potentialCity = travelPattern[1].trim().toLowerCase();
-        if (INDIAN_DESTINATION_ALIASES[potentialCity]) {
-          entities.destination = INDIAN_DESTINATION_ALIASES[potentialCity];
-          entities.city = entities.destination;
+    // Direct living/staying match fallback
+    if (!entities.origin) {
+      const livingMatch = text.match(/(?:living in|staying in|currently in|i am in|i'm in|located in|based in)\s+([a-zA-Z]+(?:\s+[a-zA-Z]+)?)/i);
+      if (livingMatch) {
+        const phrase = livingMatch[1].trim().toLowerCase();
+        const firstWord = phrase.split(/\s+/)[0];
+        if (INDIAN_DESTINATION_ALIASES[phrase]) {
+          entities.origin = INDIAN_DESTINATION_ALIASES[phrase];
+        } else if (INDIAN_DESTINATION_ALIASES[firstWord]) {
+          entities.origin = INDIAN_DESTINATION_ALIASES[firstWord];
         }
       }
     }

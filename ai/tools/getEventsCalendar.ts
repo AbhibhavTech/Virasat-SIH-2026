@@ -111,7 +111,11 @@ export async function execute(args: {
 
   if (q) {
     const qNorm = q.replace(/\bmysore\b/g, 'mysuru').replace(/\bcalcutta\b/g, 'kolkata');
-    const aliasTerms = FESTIVAL_SEARCH_ALIASES[q] || FESTIVAL_SEARCH_ALIASES[qNorm] || [];
+    const cleanQ = q
+      .replace(/\b(what|kind|of|which|festivals?|celebrated|cleeberated|happening|in|at|tell|me|about|list|show|famous|popular|regional|cultural)\b/gi, '')
+      .replace(/[?!.,;]/g, '')
+      .trim();
+    const aliasTerms = FESTIVAL_SEARCH_ALIASES[q] || FESTIVAL_SEARCH_ALIASES[qNorm] || (cleanQ ? FESTIVAL_SEARCH_ALIASES[cleanQ] : null) || [];
     const isMajorTerm = ['holi', 'diwali', 'navratri', 'dasara', 'dussehra'].includes(q);
 
     matches = matches.filter((f) => {
@@ -131,6 +135,7 @@ export async function execute(args: {
 
       // Direct match
       if (name.includes(q) || q.includes(name) || name.includes(qNorm) || qNorm.includes(name)) return true;
+      if (cleanQ && (name.includes(cleanQ) || cleanQ.includes(name))) return true;
       if (idLower.includes(q) || (slugLower && slugLower.includes(q))) return true;
 
       // Alias dictionary check
@@ -143,20 +148,27 @@ export async function execute(args: {
         Array.isArray(f.aliases) &&
         f.aliases.some((al: string) => {
           const aLower = al.toLowerCase();
-          return q.includes(aLower) || qNorm.includes(aLower) || aLower.includes(q);
+          return q.includes(aLower) || qNorm.includes(aLower) || aLower.includes(q) || (cleanQ && (cleanQ.includes(aLower) || aLower.includes(cleanQ)));
         });
 
       const nameWords = name
         .replace(/[^a-z0-9]/g, ' ')
         .split(/\s+/)
         .filter((w: string) => w.length >= 3);
-      const nameWordsInQuery = nameWords.length >= 2 && nameWords.every((w: string) => q.includes(w) || qNorm.includes(w));
+      const nameWordsInQuery = nameWords.length >= 2 && nameWords.every((w: string) => q.includes(w) || qNorm.includes(w) || (cleanQ && cleanQ.includes(w)));
 
       if (aliasInQuery || nameWordsInQuery) return true;
-      if (city.includes(q) || venue.includes(q) || state.includes(q) || stateOrRegion.includes(q) || alts.includes(q) || aliases.includes(q)) return true;
-      if (vibe.includes(q)) return true;
 
-      if (!isMajorTerm && desc.includes(q)) return true;
+      // Bidirectional state and city matching
+      if (state && (q.includes(state) || state.includes(q) || (cleanQ && (cleanQ.includes(state) || state.includes(cleanQ))))) return true;
+      if (stateOrRegion && (q.includes(stateOrRegion) || stateOrRegion.includes(q) || (cleanQ && (cleanQ.includes(stateOrRegion) || stateOrRegion.includes(cleanQ))))) return true;
+      if (city && (q.includes(city) || city.includes(q) || (cleanQ && (cleanQ.includes(city) || city.includes(cleanQ))))) return true;
+      if (venue && (q.includes(venue) || venue.includes(q) || (cleanQ && (cleanQ.includes(venue) || venue.includes(cleanQ))))) return true;
+      if (alts && (q.includes(alts) || alts.includes(q) || (cleanQ && (cleanQ.includes(alts) || alts.includes(cleanQ))))) return true;
+      if (aliases && (q.includes(aliases) || aliases.includes(q) || (cleanQ && (cleanQ.includes(aliases) || aliases.includes(cleanQ))))) return true;
+      if (vibe.includes(q) || (cleanQ && vibe.includes(cleanQ))) return true;
+
+      if (!isMajorTerm && (desc.includes(q) || (cleanQ && desc.includes(cleanQ)))) return true;
 
       return false;
     });

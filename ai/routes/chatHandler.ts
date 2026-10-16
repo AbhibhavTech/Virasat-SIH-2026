@@ -563,7 +563,9 @@ aiChatRouter.post(
         intent === 'MAP_ACTION' ||
         intent === 'TICKET_BOOKING' ||
         intent === 'UNESCO_QUERY' ||
-        intent === 'NATIONAL_PARK_QUERY'
+        intent === 'NATIONAL_PARK_QUERY' ||
+        intent === 'SAFETY_QUERY' ||
+        intent === 'LOCATION_FOLLOWUP'
       ) {
         const formatted = buildResponseForIntent(intentResult, tripState);
         replyText = formatted.reply;
@@ -1626,6 +1628,7 @@ aiChatRouter.post(
           tripState.destination ||
           liveContext.selectedCity ||
           null;
+        const state = entityData.state || null;
         const refersToPreviousFestival = Boolean(tripState.lastFestival) && /\b(?:this festival|that festival|it|iska|uska|kab hai|when is it|when does it happen)\b/i.test(rawQuery);
         const requestedYear = rawQuery.match(/\b20\d{2}\b/)?.[0];
         const festivalQuery = refersToPreviousFestival
@@ -1638,13 +1641,14 @@ aiChatRouter.post(
             {
               query: festivalQuery,
               city: city || undefined,
+              state: state || undefined,
             },
             liveContext
           );
 
         executedToolCalls.push({
           tool: 'getEventsCalendar',
-          args: { query: rawQuery, city },
+          args: { query: rawQuery, city, state },
           result: eventsRes,
         });
 

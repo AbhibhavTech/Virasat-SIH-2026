@@ -136,9 +136,9 @@ function _classifyIntent(
     return { intent: 'UNESCO_QUERY', confidence: 0.97, language, isHinglish };
   }
 
-  // 5. National Parks & Wildlife Sanctuaries ("Kaziranga National Park kis state mein hai?")
+  // 5. National Parks, Wildlife Sanctuaries & Zoos ("sunderban national park", "patna zoo", "what national parks it has")
   if (
-    /(national park|wildlife sanctuary|tiger reserve|bird sanctuary|kaziranga|jim corbett|ranthambore|gir national park|periyar|kanha|bandhavgarh|sundarbans national)/i.test(text)
+    /(national park|national parks|wildlife sanctuary|wildlife sanctuaries|tiger reserve|bird sanctuary|zoo\b|zoological|biological park|jaivik udyan|kaziranga|jim corbett|corbett|ranthambore|gir national park|gir forest|periyar|kanha|bandhavgarh|sundarbans|sunderban|mollem|bhagwan mahavir|patna zoo)/i.test(text)
   ) {
     return { intent: 'NATIONAL_PARK_QUERY', confidence: 0.97, language, isHinglish };
   }
@@ -219,10 +219,10 @@ function _classifyIntent(
     return { intent: 'SHOPPING_SEARCH', confidence: 0.92, language, isHinglish, resolvedPlace, queryFocus };
   }
 
-  // 17. Transport / Train / Flight / Distance / How to reach ("Mumbai se Goa train se kaise jaun?", "Mumbai se Pune train se kaise jaun?", "Wahan kaise pahuchenge?")
+  // 17. Transport / Train / Flight / Distance / How to reach ("ho to travel mumbai to chennai", "how would i come there", "kaise pahunche")
   if (
     queryFocus === 'how_to_reach' ||
-    /(train|railway|irctc|flight|airport|flight ticket|bus|cab|taxi|kaise jaun|kaise jaaun|how to reach|how (?:do i|can i|to) (?:go|get|travel)|kaise jaye|kaise pahunche|wahan kaise pahuchenge|route|safar|distance between|kitni door|train se)/i.test(text)
+    /(train|railway|irctc|flight|airport|flight ticket|bus|cab|taxi|kaise jaun|kaise jaaun|how to reach|how (?:do i|can i|to|would i) (?:go|get|travel|come)|ho to travel|how would i|how to come|how can i come|how to reach|kaise jaye|kaise pahunche|wahan kaise|kaise ja sakte|route|safar|distance between|kitni door|train se|\bto\s+[a-zA-Z\s]+\s+kaise|\bhow (?:to|do|can)\b)/i.test(text)
   ) {
     if (/train|railway|train se/i.test(text)) return { intent: 'TRAIN_SEARCH', confidence: 0.95, language, isHinglish, resolvedPlace, queryFocus };
     if (/flight|airport/i.test(text)) return { intent: 'FLIGHT_SEARCH', confidence: 0.95, language, isHinglish, resolvedPlace, queryFocus };
@@ -244,9 +244,17 @@ function _classifyIntent(
     return { intent: 'TIME_QUERY', confidence: 0.92, language, isHinglish, resolvedPlace, queryFocus };
   }
 
-  // 21. Emergency & Helplines
-  if (/(emergency|police|hospital|doctor|helpline|tourist police|safety|madad|112|1363)/i.test(text)) {
-    return { intent: 'EMERGENCY_QUERY', confidence: 0.98, language, isHinglish };
+  // 21. Safety & Emergency Helplines ("is goa safe?", "safety in mumbai", "safe for women")
+  if (/(safe|safety|suraksha|surakshit|is it safe|is\s+[a-zA-Z\s]+\s+safe|safe hai|crime|emergency|police|hospital|doctor|helpline|tourist police|madad|112|1363)/i.test(text)) {
+    if (/(emergency|police|hospital|doctor|112|1363|sos)/i.test(text)) {
+      return { intent: 'EMERGENCY_QUERY', confidence: 0.98, language, isHinglish };
+    }
+    return { intent: 'SAFETY_QUERY', confidence: 0.98, language, isHinglish };
+  }
+
+  // 21b. Location Follow-ups ("location?", "where is it?", "kahan hai?")
+  if (/^(?:location|where|kahan hai|kidhar hai|exact location|address)[\s?!.]*$/i.test(text)) {
+    return { intent: 'LOCATION_FOLLOWUP', confidence: 0.98, language, isHinglish, resolvedPlace, queryFocus: 'location' };
   }
 
   // 22. Broad heritage lists should stay searches even when the city itself

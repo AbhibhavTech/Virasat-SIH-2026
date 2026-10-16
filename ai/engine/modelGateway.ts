@@ -111,9 +111,25 @@ export async function generateModelReply(message: string, state: TripMemoryState
   const navigationSchema = { type: 'object', properties: {
     feature: { type: 'string', enum: Object.keys(FEATURE_REGISTRY) }, city: { type: 'string' }, query: { type: 'string' }, origin: { type: 'string' }, days: { type: 'integer' },
   }, required: ['feature'] };
-  const schemas: Record<string, any> = Object.fromEntries(READ_TOOLS.map(name => [name, jsonSchema(toolRegistry[name].declaration.parameters)]));
+
+  // Select intent-relevant tools dynamically to keep prompt token footprint minimal and prevent Groq 8,000 TPM limit breach
+  const lowerMsg = message.toLowerCase();
+  const selectedReadTools: string[] = ['searchTouristPlaces'];
+  if (/(hotel|stay|resort|lodge|room|accommodation)/i.test(lowerMsg)) selectedReadTools.push('searchHotels');
+  if (/(food|restaurant|dish|cuisine|eat|dining|thali)/i.test(lowerMsg)) selectedReadTools.push('searchRestaurants');
+  if (/(train|flight|airport|bus|travel|kaise|route|distance|how to (?:go|get|travel|reach|come)|ho to travel)/i.test(lowerMsg)) selectedReadTools.push('getTransportOptions');
+  if (/(weather|climate|temperature|mausam|rain|season)/i.test(lowerMsg)) selectedReadTools.push('getWeather');
+  if (/(festival|mela|utsav|fair|event|celebrat)/i.test(lowerMsg)) selectedReadTools.push('getEventsCalendar');
+  if (/(market|shopping|bazaar|buy)/i.test(lowerMsg)) selectedReadTools.push('searchMarkets');
+  if (/(hidden|lesser|offbeat|secret)/i.test(lowerMsg)) selectedReadTools.push('searchHiddenGems');
+  if (selectedReadTools.length === 1) {
+    selectedReadTools.push('searchHiddenGems', 'getWeather');
+  }
+
+  const activeReadTools = READ_TOOLS.filter(name => selectedReadTools.includes(name));
+  const schemas: Record<string, any> = Object.fromEntries(activeReadTools.map(name => [name, jsonSchema(toolRegistry[name].declaration.parameters)]));
   schemas.getAppNavigation = navigationSchema;
-  const tools = [...READ_TOOLS.map(name => ({ type: 'function', function: { name, description: toolRegistry[name].declaration.description, parameters: schemas[name] } })),
+  const tools = [...activeReadTools.map(name => ({ type: 'function', function: { name, description: toolRegistry[name].declaration.description, parameters: schemas[name] } })),
     { type: 'function', function: { name: 'getAppNavigation', description: 'Create a working navigation button for an existing Virasat feature. Does not perform the navigation.', parameters: navigationSchema } }];
   const { messages: history = [], sessionId: _sessionId, ...trip } = state;
   const messages: any[] = [
@@ -147,7 +163,8 @@ export async function generateModelReply(message: string, state: TripMemoryState
         const diagnostic = classifyProviderError(response.status, response.headers, body, config.key, Date.now(), config.provider);
         if (diagnostic.retry_after_seconds) {
           for (const [key, value] of cooldowns) if (value.until <= Date.now()) cooldowns.delete(key);
-          cooldowns.set(cooldownKey, { until: Date.now() + diagnostic.retry_after_seconds * 1000, diagnostic });
+          const effectiveDelay = Math.min(diagnostic.retry_after_seconds, 3);
+          cooldowns.set(cooldownKey, { until: Date.now() + effectiveDelay * 1000, diagnostic: { ...diagnostic, retry_after_seconds: effectiveDelay } });
         }
         throw new ProviderFailure(diagnostic);
       }

@@ -258,6 +258,15 @@ export function resolveOriginTransportNode(
         lat = matchedCity.coordinates.lat;
         lng = matchedCity.coordinates.lng;
         hasCoords = true;
+        if (Math.abs(lat - 20.5937) < 0.01 && Math.abs(lng - 78.9629) < 0.01) {
+          const stn = MASTER_VERIFIED_STATIONS.find(
+            (s) => s.city.toLowerCase() === cleanLower || s.name.toLowerCase().includes(cleanLower) || cleanLower.includes(s.city.toLowerCase())
+          );
+          if (stn && (Math.abs(stn.lat - 20.5937) > 0.1 || Math.abs(stn.lng - 78.9629) > 0.1)) {
+            lat = stn.lat;
+            lng = stn.lng;
+          }
+        }
       }
     } else {
       // Try matching verified station
@@ -768,8 +777,8 @@ export function resolveDestinationTransportNode(
         q.includes(city.name.toLowerCase()) ||
         city.name.toLowerCase().includes(q)
       ) {
-        const cLat = city.coordinates?.lat || 20.0;
-        const cLng = city.coordinates?.lng || 78.0;
+        let cLat = city.coordinates?.lat || 20.0;
+        let cLng = city.coordinates?.lng || 78.0;
 
         const transport: any = city.transport;
         const cityStn: any =
@@ -779,6 +788,16 @@ export function resolveDestinationTransportNode(
         const cityApt: any =
           transport?.airport ||
           MASTER_VERIFIED_AIRPORTS.find((a) => a.city.toLowerCase() === city.name.toLowerCase());
+
+        if (Math.abs(cLat - 20.5937) < 0.01 && Math.abs(cLng - 78.9629) < 0.01) {
+          if (cityStn && cityStn.lat && cityStn.lng && (Math.abs(cityStn.lat - 20.5937) > 0.1 || Math.abs(cityStn.lng - 78.9629) > 0.1)) {
+            cLat = cityStn.lat;
+            cLng = cityStn.lng;
+          } else if (cityApt && cityApt.lat && cityApt.lng && (Math.abs(cityApt.lat - 20.5937) > 0.1 || Math.abs(cityApt.lng - 78.9629) > 0.1)) {
+            cLat = cityApt.lat;
+            cLng = cityApt.lng;
+          }
+        }
 
         return {
           is_poi: false,

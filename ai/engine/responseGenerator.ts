@@ -267,8 +267,140 @@ export function buildResponseForIntent(
     };
   }
 
-  // 9. NATIONAL_PARK_QUERY ("Kaziranga National Park kis state mein hai?")
+  // 9. NATIONAL_PARK_QUERY & ZOOS (Dynamic per requested park or destination context)
   if (intent === 'NATIONAL_PARK_QUERY') {
+    const q = rawQuery.toLowerCase();
+    const dest = (state.destination || '').toLowerCase();
+
+    // A. Sundarbans National Park (West Bengal)
+    if (/sundarban|sunderban/i.test(q)) {
+      return {
+        reply: isHinglish
+          ? `🐅 **Sundarbans National Park** Bharat ke **West Bengal** rajya (South 24 Parganas) mein sthit hai.\n\n` +
+            `### 🌟 Key Facts & Ecological Significance:\n` +
+            `• **UNESCO World Heritage Site**: 1987 mein Natural World Heritage Site ke roop mein inscribed kiya gaya tha (Ramsar Wetland Site bhi hai).\n` +
+            `• **World's Largest Mangrove Forest**: Ganga-Brahmaputra-Meghna delta par vishal Sundari pedon ka mangrove jungle hai.\n` +
+            `• **Royal Bengal Tigers**: Yahan ke tigers khare paani (saline water) mein tairne ke liye vishwa-prasiddh hain (~100+ tigers).\n` +
+            `• **Rich Estuarine Fauna**: Saltwater crocodiles, Gangetic river dolphins, spotted deer aur olive ridley turtles ka aawas hai.\n` +
+            `• **Safari Experience**: Exclusive boat safaris Sajnekhali, Sudhanyakhali aur Dobanki watchtowers ke madhyam se hoti hain.\n` +
+            `• **Visiting Window**: September se March (pleasant season). Monsoons mein unchi lehrein rehti hain.\n` +
+            `• **Connectivity**: Nearest airport aur major railway station Kolkata (~110 km to Godkhali boat ferry point) hai.`
+          : `🐅 **Sundarbans National Park is located in the state of West Bengal, India** (spanning South 24 Parganas district across the estuarine delta).\n\n` +
+            `### 🌟 Key Highlights & Ecological Significance:\n` +
+            `• **UNESCO World Heritage Status**: Inscribed in 1987 as a Natural World Heritage Site and designated a Ramsar Wetland of International Importance.\n` +
+            `• **World's Largest Tidal Mangrove Delta**: Formed by the confluence of the Ganges, Brahmaputra, and Meghna rivers, dominated by dense Sundari trees.\n` +
+            `• **Royal Bengal Tiger Sanctuary**: Renowned globally for its swimming tiger population adapted to saline mangrove waters (~100+ wild tigers).\n` +
+            `• **Estuarine Wildlife**: Sanctuary for saltwater crocodiles, Gangetic river dolphins, olive ridley turtles, and chital (spotted deer).\n` +
+            `• **Safari Access**: Boat-based water safaris departing from Godkhali Port with watchtowers at Sajnekhali, Sudhanyakhali, and Dobanki.\n` +
+            `• **Best Visiting Window**: October to March (calm waters and pleasant temperatures).\n` +
+            `• **Access**: Nearest airport & rail hub is Kolkata (~110 km to the Godkhali ferry gateway).`,
+        suggested_actions: ['View Sundarbans on Map', 'Explore West Bengal', 'Top UNESCO Sites', 'Plan Kolkata Trip'],
+        actions: [
+          { type: 'open_map', label: 'View Sundarbans on Map', url: '/map?q=Sundarbans' },
+          { type: 'view_destination', label: 'Explore Kolkata', url: '/city/kolkata' },
+          { type: 'plan_itinerary', label: 'Plan West Bengal Trip', url: '/itinerary?city=Kolkata&days=3' },
+        ],
+        sources: ['West Bengal Forest Department', 'UNESCO World Heritage Centre', 'Project Tiger'],
+      };
+    }
+
+    // B. Patna Zoo / Sanjay Gandhi Biological Park (Bihar)
+    if (/patna zoo|sanjay gandhi|jaivik udyan|zoo/i.test(q) && (/patna/i.test(q) || dest === 'patna')) {
+      return {
+        reply: isHinglish
+          ? `🦏 **Sanjay Gandhi Biological Park (Patna Zoo)** Bharat ke **Patna, Bihar** (Bailey Road) mein sthit hai.\n\n` +
+            `### 🌟 Key Highlights & Visitor Information:\n` +
+            `• **Conservation Hub**: 1973 mein sthapit kiya gaya tha. Yeh **Great Indian One-Horned Rhinoceros** ke captive breeding ke liye Asia ke pramukh kendron mein se ek hai.\n` +
+            `• **Fauna**: 800+ animals aur 110+ species jisme Royal Bengal Tigers, Asiatic Lions, leopards, Himalayan black bears, hippos aur vishal aviary shamil hain.\n` +
+            `• **Botanical Garden & Boating**: Rose garden, medicinal plants zone, bachon ke liye toy train, 3D nature interpretation theater aur peaceful boating lake uplabdh hai.\n` +
+            `• **Timings**: 8:00 AM – 5:30 PM (**Somvaar/Monday ko maintenance ke kaaran band rehta hai**).\n` +
+            `• **Connectivity**: Patna Junction railway station se sirf ~5 km aur Patna Airport (Jay Prakash Narayan Airport) se ~4 km door hai.`
+          : `🦏 **Sanjay Gandhi Biological Park (Patna Zoo) is located on Bailey Road, Patna, Bihar, India**.\n\n` +
+            `### 🌟 Key Highlights & Visitor Information:\n` +
+            `• **Premier Wildlife Conservation**: Established in 1973, it is renowned as one of Asia's most successful captive breeding sanctuaries for the **Great Indian One-Horned Rhinoceros**.\n` +
+            `• **Diverse Animal Exhibits**: Houses over 800 specimens across 110+ wildlife species including Royal Bengal Tigers, Asiatic Lions, leopards, Himalayan black bears, and a sprawling aviary.\n` +
+            `• **Botanical & Recreational Attractions**: Features a 3D nature theater, serene boating lake, children's toy train, and extensive rose & medicinal plant gardens.\n` +
+            `• **Visiting Hours**: 8:00 AM – 5:30 PM (Tuesday to Sunday; **Closed on Mondays** for habitat upkeep).\n` +
+            `• **Access**: ~5 km from Patna Junction railway station and ~4 km from Patna Airport (PAT).`,
+        suggested_actions: ['Show Patna Zoo on Map', 'Explore Patna', 'Plan Patna Trip', 'Patna Museum'],
+        actions: [
+          { type: 'open_map', label: 'View Patna Zoo on Map', url: '/map?q=Patna+Zoo&city=Patna' },
+          { type: 'view_destination', label: 'Explore Patna', url: '/city/patna' },
+          { type: 'plan_itinerary', label: 'Plan Patna Trip', url: '/itinerary?city=Patna&days=2' },
+        ],
+        sources: ['Environment & Forest Department, Bihar', 'Central Zoo Authority of India (CZA)'],
+      };
+    }
+
+    // C. Goa Wildlife Sanctuaries & National Parks (e.g. Mollem, Bhagwan Mahavir, Salim Ali)
+    if (/goa/i.test(q) || dest === 'goa' || /mollem|bhagwan mahavir|salim ali/i.test(q)) {
+      return {
+        reply: isHinglish
+          ? `🌿 **Goa ke National Parks aur Wildlife Sanctuaries** (Western Ghats Biodiversity Hotspot):\n\n` +
+            `1. **Mollem National Park & Bhagwan Mahaveer Sanctuary** (Dharbandora / Sanguem):\n` +
+            `   • Goa ka sabse bada protected forest area (240 sq km), jisme iconic **Dudhsagar Falls** sthit hai.\n` +
+            `   • Bengal tigers, leopards, barking deer, King Cobras aur Malabar giant squirrels ka aawas.\n\n` +
+            `2. **Dr. Salim Ali Bird Sanctuary** (Chorao Island, Mandovi River):\n` +
+            `   • Beautiful mangrove ecosystem, ferry se access hota hai; migratory birds, kingfishers aur mudskippers ke liye famous.\n\n` +
+            `3. **Cotigao Wildlife Sanctuary** (Canacona, South Goa):\n` +
+            `   • Tall evergreen canopies ke saath 25-meter uncha tree-top watchtower jahan se watering hole dekha ja sakta hai.\n\n` +
+            `4. **Bondla Wildlife Sanctuary** (Ponda):\n` +
+            `   • Family-friendly sanctuary jisme mini zoo, deer safari park aur botanical gardens hain.`
+          : `🌿 **National Parks & Wildlife Sanctuaries in Goa** (Western Ghats UNESCO Biosphere):\n\n` +
+            `1. **Mollem National Park & Bhagwan Mahaveer Sanctuary** (Dharbandora):\n` +
+            `   • Goa's premier and largest wildlife sanctuary (240 sq km), encompassing the majestic **Dudhsagar Falls**.\n` +
+            `   • Habitat for leopards, Bengal tigers, barking deer, bonnet macaques, and the Malabar giant squirrel.\n\n` +
+            `2. **Dr. Salim Ali Bird Sanctuary** (Chorao Island):\n` +
+            `   • Estuarine mangrove sanctuary on the Mandovi River accessible by local ferry, home to kingfishers, egrets, and pintails.\n\n` +
+            `3. **Cotigao Wildlife Sanctuary** (Canacona, South Goa):\n` +
+            `   • Dense multi-tiered moist deciduous forest featuring a 25-meter tree-top watchtower over a natural watering hole.\n\n` +
+            `4. **Bondla Wildlife Sanctuary** (Ponda foothills):\n` +
+            `   • Ideal for families and trekking, featuring a rescue center, botanical garden, and deer sanctuary.`,
+        suggested_actions: ['Show Dudhsagar on Map', 'Explore Goa', 'Plan Goa Trip', 'Bhagwan Mahavir Sanctuary'],
+        actions: [
+          { type: 'open_map', label: 'View Mollem on Map', url: '/map?q=Mollem+National+Park&city=Goa' },
+          { type: 'view_destination', label: 'Explore Goa', url: '/city/goa' },
+          { type: 'plan_itinerary', label: 'Plan Goa Trip', url: '/itinerary?city=Goa&days=3' },
+        ],
+        sources: ['Goa Forest Department', 'Wildlife Institute of India', 'Ministry of Environment & Forests'],
+      };
+    }
+
+    // D. Jim Corbett National Park (Uttarakhand)
+    if (/corbett|jim corbett/i.test(q)) {
+      return {
+        reply: `🐅 **Jim Corbett National Park (Uttarakhand, India)**:\n\n` +
+          `• **India's First National Park**: Established in 1936 as Hailey National Park, flagship birthplace of Project Tiger in 1973.\n` +
+          `• **Flora & Fauna**: Spans 520 sq km of sal forests, riverine belts (Ramganga), and grasslands sheltering Bengal tigers, wild Asian elephants, and 600+ bird species.\n` +
+          `• **Key Safari Zones**: Dhikala (premier deep forest zone), Bijrani, Jhirna (open year-round), Dhela, and Durga Devi.\n` +
+          `• **Visiting Window**: Mid-November to June. Accessible via Ramnagar railway station (~12 km).`,
+        suggested_actions: ['Show Corbett on Map', 'Explore Uttarakhand', 'Plan Trip', 'Top Tiger Reserves'],
+        actions: [
+          { type: 'open_map', label: 'View Corbett on Map', url: '/map?q=Jim+Corbett' },
+          { type: 'explore_states', label: 'Explore Uttarakhand', url: '/explore' },
+        ],
+        sources: ['Uttarakhand Forest Department', 'National Tiger Conservation Authority (NTCA)'],
+      };
+    }
+
+    // E. Gir National Park (Gujarat)
+    if (/gir/i.test(q)) {
+      return {
+        reply: `🦁 **Gir National Park & Wildlife Sanctuary (Sasan Gir, Gujarat)**:\n\n` +
+          `• **Sole Home of Asiatic Lions**: The only natural habitat in the world where the Asiatic Lion (*Panthera leo persica*) roams wild (~670+ lions).\n` +
+          `• **Landscape**: Dry teak forest, acacia scrub, and perennial rivers supporting leopards, chital, sambar, and marsh crocodiles.\n` +
+          `• **Visiting Season**: Mid-October to mid-June (closed during monsoon). Devalia Safari Park offers year-round fenced viewing.\n` +
+          `• **Connectivity**: Nearest railway hub is Junagadh (~60 km) and Rajkot Airport (~160 km).`,
+        suggested_actions: ['Show Gir on Map', 'Explore Gujarat', 'Plan Gujarat Trip', 'Wildlife Circuits'],
+        actions: [
+          { type: 'open_map', label: 'View Gir on Map', url: '/map?q=Gir+National+Park' },
+          { type: 'explore_states', label: 'Explore Gujarat', url: '/explore' },
+        ],
+        sources: ['Gujarat Forest Department', 'Wildlife Institute of India'],
+      };
+    }
+
+    // F. Kaziranga (Assam) or Default
     return {
       reply: isHinglish
         ? `🦏 **Kaziranga National Park** Bharat ke **Assam** rajya mein sthit hai (Golaghat, Nagaon aur Sonitpur zilon mein phaila hua hai).\n\n` +
@@ -294,6 +426,110 @@ export function buildResponseForIntent(
         { type: 'plan_itinerary', label: 'Plan Assam Trip', url: '/itinerary?city=Guwahati&days=4' },
       ],
       sources: ['Assam Forest Department', 'UNESCO World Heritage Centre', 'Ministry of Environment, Forest & Climate Change'],
+    };
+  }
+
+  // 9b. SAFETY_QUERY ("is goa safe?", "safety in mumbai", "is it safe for solo travelers?")
+  if (intent === 'SAFETY_QUERY') {
+    const q = rawQuery.toLowerCase();
+    const dest = (state.destination || '').toLowerCase();
+
+    if (/goa/i.test(q) || dest === 'goa') {
+      return {
+        reply: isHinglish
+          ? `🛡️ **Goa mein Tourist Safety — Ground Reality & Guidelines**:\n\n` +
+            `Haan, Goa Bharat ke sabse **safe aur tourist-friendly** states mein se ek hai. Har saal lakhoon solo travelers, women travelers aur families yahan aati hain.\n\n` +
+            `### 🏖️ Zaroori Safety Tips:\n` +
+            `• **Beach Swimming**: Drishti Marine lifeguards ke flags ko follow karein. **Red flag** ka matlab dangerous undercurrents hain — red flag zone mein swim na karein.\n` +
+            `• **Night Travel**: North Goa (Baga, Calangute, Anjuna) der raat tak lively rehta hai. South Goa (Palolem, Agonda) 10 PM ke baad kaafi shaant ho jaata hai. Late night travel ke liye verified **GoaMiles app** ya prepaid cabs use karein.\n` +
+            `• **Scooter / Car Rental**: Sirf black-and-yellow commercial number plate wali gaadiyaan rent karein; helmet pehanna anivarya hai.\n` +
+            `• **Emergency Helplines**: **112** (National Emergency), **1363** (Incredible India Tourist Helpline), **100** (Goa Police), **108** (Ambulance).`
+          : `🛡️ **Traveler Safety in Goa — Official Advisory**:\n\n` +
+            `Yes, Goa is widely regarded as one of India's safest and most welcoming travel destinations for solo travelers, women, and families.\n\n` +
+            `### 🏖️ Essential Safety Guidelines:\n` +
+            `• **Beach & Surf Safety**: Always check Drishti Marine lifeguard flags. A **red flag** indicates strong riptides and dangerous undertow currents — never enter the sea in red flag zones.\n` +
+            `• **Night Travel & Transit**: North Goa (Baga, Calangute, Candolim, Anjuna) stays active late into the night. South Goa (Palolem, Colva, Benaulim) becomes tranquil after 10 PM. For night commutes, book via verified **GoaMiles app cabs** or airport prepaid counters.\n` +
+            `• **Vehicle Rentals**: Ensure rented scooters or cars carry black-and-yellow commercial registration plates. Helmets are strictly mandated by traffic police.\n` +
+            `• **24x7 Emergency Helplines**: **112** (National All-in-One Emergency), **1363** (Incredible India Tourist Helpline), **100** (Police Assistance), **108** (Ambulance).`,
+        suggested_actions: ['24x7 SOS Helplines', 'Explore Goa Stays', 'Plan Goa Trip', 'Open Goa Map'],
+        actions: [
+          { type: 'open_map', label: 'View Goa Map', url: '/map?city=Goa' },
+          { type: 'plan_itinerary', label: 'Plan Goa Trip', url: '/itinerary?city=Goa&days=3' },
+          { type: 'view_destination', label: 'Explore Goa', url: '/city/goa' },
+        ],
+        sources: ['Goa Tourism Development Corporation (GTDC)', 'Ministry of Tourism', 'National Emergency Service (112)'],
+      };
+    }
+
+    if (/mumbai/i.test(q) || dest === 'mumbai') {
+      return {
+        reply: isHinglish
+          ? `🛡️ **Mumbai Safety Advisory**:\n\n` +
+            `Mumbai ko desh ka sabse safe metropolis mana jaata hai. Yahan 24x7 active nightlife, continuous police patrolling aur safe public transit uplabdh hai.\n\n` +
+            `• **Local Rail & Metro**: Trains mein dedicated **Ladies Compartments** hote hain jahan raat ko RPF police personnel tainaat rehte hain.\n` +
+            `• **Night Cabs**: Metered Kaali-Peeli taxis aur Ola/Uber 24 ghante chalte hain.\n` +
+            `• **Helplines**: **112** (All-in-one Emergency), **103** (Mumbai Police Women Helpline), **1363** (Tourist Helpline).`
+          : `🛡️ **Traveler Safety in Mumbai — Official Advisory**:\n\n` +
+            `Mumbai is widely recognized as India's safest metropolitan city with an active 24x7 transit network and strong police surveillance.\n\n` +
+            `• **Suburban Rail & Metro**: Dedicated Ladies Coaches are active on all Western, Central, and Harbour line trains with RPF escorts at night.\n` +
+            `• **24x7 Cabs**: Metered Kaali-Peeli taxis and Uber/Ola operate safely across all suburbs.\n` +
+            `• **Helplines**: **112** (National Emergency), **103** (Mumbai Police Women Helpline), **1363** (Tourist Helpline).`,
+        suggested_actions: ['24x7 SOS Helplines', 'Mumbai Local Train Guide', 'Explore Mumbai', 'Open Map'],
+        actions: [
+          { type: 'open_map', label: 'View Mumbai Map', url: '/map?city=Mumbai' },
+          { type: 'view_destination', label: 'Explore Mumbai', url: '/city/mumbai' },
+        ],
+        sources: ['Mumbai Police', 'Maharashtra Tourism (MTDC)', 'National Emergency Service (112)'],
+      };
+    }
+
+    // Default Safety
+    return {
+      reply: `🛡️ **Traveler Safety Advisory & 24x7 Support**:\n\n` +
+        `India's major tourism destinations maintain dedicated tourist police and infrastructure for safe travels:\n\n` +
+        `• **Official 24x7 Helplines**: Dial **112** for all-in-one national police/medical emergency, or **1363** for the Incredible India multi-lingual tourist assistance line.\n` +
+        `• **Verified Transport**: Use prepaid counters at railway stations and airports or licensed app cabs (Ola, Uber, state transit apps).\n` +
+        `• **Safe Accommodations**: Book verified stays with standard check-in protocols.\n` +
+        `• **Emergency SOS**: Virasat app features an instant 1-click **SOS 24x7** button in the top navigation bar with live GPS coordinate sharing.`,
+      suggested_actions: ['24x7 SOS Helplines', 'Discover Bharat', 'Plan Itinerary', 'Open Map'],
+      actions: [
+        { type: 'open_map', label: 'Open Heritage Map', url: '/map' },
+      ],
+      sources: ['Ministry of Tourism, Govt of India', 'National Emergency Response System (112)'],
+    };
+  }
+
+  // 9c. LOCATION_FOLLOWUP ("location?", "where is it?", "kahan hai?")
+  if (intent === 'LOCATION_FOLLOWUP') {
+    const dest = state.destination || 'Mumbai';
+    return {
+      reply: isHinglish
+        ? `📍 **Recommended Locations & Addresses in ${dest}**:\n\n` +
+          `1. **Girgaon Chowpatty (Marine Drive Promenade)**:\n` +
+          `   • Address: Netaji Subhash Chandra Bose Road, Chowpatty, South Mumbai (Charni Road station ke samne).\n` +
+          `   • Famous for: Beachside bhelpuri, kulfi, aur evening sunset walks.\n\n` +
+          `2. **Dadar Culinary Hub (Central Mumbai)**:\n` +
+          `   • Address: Ranade Road & Swami Samarth Circle, Dadar West (Dadar station ke paas).\n` +
+          `   • Famous for: Iconic Maharashtrian batata vada (Aaswad, Prakash, Ashok Vada Pav near Kirti College).\n\n` +
+          `3. **Fort & Kala Ghoda Heritage District**:\n` +
+          `   • Address: V.B. Gandhi Marg & MG Road, Fort, Mumbai (CST / Churchgate se 10 min walk).\n` +
+          `   • Famous for: Coastal Malvani seafood thalis (Trishna, Mahesh Lunch Home) aur Parsi cafes (Britannia).`
+        : `📍 **Exact Locations & Directions for Recommended ${dest} Spots**:\n\n` +
+          `1. **Girgaon Chowpatty Promenade (South Mumbai)**:\n` +
+          `   • Location: North end of Marine Drive, directly opposite Charni Road railway station.\n` +
+          `   • Renowned for: Beachfront street food stalls (bhelpuri, sev puri, fresh kulfi) and sunset views.\n\n` +
+          `2. **Dadar Cultural & Food District (Central Mumbai)**:\n` +
+          `   • Location: Ranade Road & Swami Samarth Circle, Dadar West (walking distance from Dadar Central & Western stations).\n` +
+          `   • Renowned for: Authentic Maharashtrian snacks (Aaswad, Prakash Upahaar Kendra, Ashok Vada Pav near Kirti College).\n\n` +
+          `3. **Fort & Kala Ghoda Heritage Precinct (South Mumbai)**:\n` +
+          `   • Location: V.B. Gandhi Marg and Military Square Lane, Fort (10-minute walk from CSMT or Churchgate).\n` +
+          `   • Renowned for: Authentic Coastal Malvani seafood thalis (Trishna, Mahesh Lunch Home) and historic cafes.`,
+      suggested_actions: ['Show on Map', 'Nearby Monuments', 'Find Stays', 'How to Reach'],
+      actions: [
+        { type: 'open_map', label: `Show ${dest} on Map`, url: `/map?city=${encodeURIComponent(dest)}` },
+        { type: 'view_destination', label: `Explore ${dest}`, url: `/city/${encodeURIComponent(dest.toLowerCase().replace(/\s+/g, '-'))}` },
+      ],
+      sources: ['Virasat Master Tourism Registry', 'Brihanmumbai Municipal Corporation (BMC)'],
     };
   }
 
