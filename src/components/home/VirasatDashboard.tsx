@@ -391,7 +391,6 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
 }) => {
   // Automatic Background Hero Slideshow State
   const [activeSlideIdx, setActiveSlideIdx] = useState(0);
-  const [reducedMotion, setReducedMotion] = useState(false);
 
   // Search state
   const [searchQuery, setSearchQuery] = useState('');
@@ -562,25 +561,22 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
     fetchNearbyPlaces(city.lat, city.lng, nearbyRadius, city.name);
   };
 
-  // Check prefers-reduced-motion for slideshow accessibility
+  // Preload all 11 heritage slideshow images immediately on mount for zero-latency instant transitions
   useEffect(() => {
-    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
-    setReducedMotion(mq.matches);
-    const handler = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
-    mq.addEventListener('change', handler);
-    return () => mq.removeEventListener('change', handler);
+    HERO_HERITAGE_SLIDES.forEach((slide) => {
+      const img = new Image();
+      img.src = slide.imageUrl;
+    });
   }, []);
 
-  // Simple automatic heritage slideshow working in the background (3-second intervals)
+  // 100% Unconditional Continuous Automatic Heritage Slideshow (Always advances every 3 seconds)
   useEffect(() => {
-    if (reducedMotion) return;
-
     const timer = setInterval(() => {
       setActiveSlideIdx((curr) => (curr + 1) % HERO_HERITAGE_SLIDES.length);
     }, 3000);
 
     return () => clearInterval(timer);
-  }, [reducedMotion, activeSlideIdx]);
+  }, []);
 
   // Quick Chips matching template
   const quickChips = [
@@ -1137,8 +1133,12 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
           >
             <ChevronRight className="h-4 w-4 sm:h-4.5 sm:w-4.5" />
           </button>
-          <span className="hidden md:inline-block pl-2 text-xs font-bold text-stone-800 border-l border-stone-200 ml-1.5">
-            {HERO_HERITAGE_SLIDES[activeSlideIdx].name}
+          <span className="hidden md:flex items-center gap-1.5 pl-2 text-xs font-bold text-stone-800 border-l border-stone-200 ml-1.5">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+            </span>
+            <span>{HERO_HERITAGE_SLIDES[activeSlideIdx].name}</span>
           </span>
         </div>
 
