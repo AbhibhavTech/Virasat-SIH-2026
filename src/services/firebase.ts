@@ -55,6 +55,24 @@ export function isUnauthorizedDomainError(error: unknown): boolean {
   );
 }
 
+export function isFirebaseConfigOrDomainError(error: unknown): boolean {
+  if (!error) return false;
+  const err = error as Record<string, any>;
+  const code = String(err?.code || '');
+  const msg = String(err?.message || '');
+  return (
+    code === 'auth/unauthorized-domain' ||
+    code === 'auth/operation-not-allowed' ||
+    code === 'auth/configuration-not-found' ||
+    code === 'auth/invalid-api-key' ||
+    code === 'auth/internal-error' ||
+    msg.includes('auth/unauthorized-domain') ||
+    msg.includes('unauthorized-domain') ||
+    msg.includes('operation-not-allowed') ||
+    msg.includes('configuration-not-found')
+  );
+}
+
 export function isPopupBlockedError(error: unknown): boolean {
   if (!error) return false;
   const err = error as Record<string, any>;

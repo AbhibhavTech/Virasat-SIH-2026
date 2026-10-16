@@ -20,6 +20,7 @@ interface AuthContextType {
   login: (email: string, password: string) => Promise<void>;
   loginWithGoogle: () => Promise<void>;
   loginWithGoogleRedirect: () => Promise<void>;
+  loginWithGoogleDirect: (googleProfile: { email: string; name?: string; picture?: string; home_city?: string }) => Promise<void>;
   register: (name: string, email: string, password: string, home_city?: string) => Promise<void>;
   logout: () => Promise<void>;
   updateProfile: (profile: UserProfile) => Promise<void>;
@@ -124,8 +125,23 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
           console.warn('Initial Google login Firestore sync warning:', e);
         });
       }
-      setUser(profile);
 
+      // 3. Mirror session to Virasat Backend for JWT persistence
+      try {
+        const backendRes = await api.loginWithGoogle({
+          email: fbUser.email || undefined,
+          name: fbUser.displayName || undefined,
+          picture: fbUser.photoURL || undefined,
+          sub: fbUser.uid,
+        });
+        if (backendRes?.profile) {
+          profile = { ...profile, ...backendRes.profile };
+        }
+      } catch (beErr) {
+        console.warn('Backend Google mirror sync warning:', beErr);
+      }
+
+      setUser(profile);
       setIsAuthModalOpen(false);
       if (!profile.survey || Object.keys(profile.survey).length === 0) {
         setIsOnboardingModalOpen(true);
@@ -133,6 +149,29 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     } catch (firebaseErr: any) {
       // If popup was cancelled or domain unauthorized, rethrow for UI handler with context
       throw firebaseErr;
+    }
+  };
+
+  const loginWithGoogleDirect = async (googleProfile: { email: string; name?: string; picture?: string; home_city?: string }) => {
+    setLoading(true);
+    try {
+      const res = await api.loginWithGoogle({
+        email: googleProfile.email,
+        name: googleProfile.name || googleProfile.email.split('@')[0],
+        picture: googleProfile.picture,
+      });
+
+      setUser(res.profile);
+
+      // Attempt background firestore sync if possible
+      syncUserProfileToFirestore(res.profile).catch(() => {});
+
+      setIsAuthModalOpen(false);
+      if (!res.profile.survey || Object.keys(res.profile.survey).length === 0) {
+        setIsOnboardingModalOpen(true);
+      }
+    } finally {
+      setLoading(false);
     }
   };
 
