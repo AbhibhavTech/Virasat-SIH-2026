@@ -26,7 +26,6 @@ import {
   X,
   Share2,
   Heart,
-  CameraOff,
   Shield,
   ShieldCheck,
   Globe,
@@ -1644,108 +1643,128 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5 sm:gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
                 {stateValidCities.map((city, cIdx) => {
                   const places = getCityPlaceCatalog(city).filter(isPlaceVerified);
-                  const isBroken = brokenImages[city.id] || !city.hero_image_url;
+
+                  // Rotating artistic cultural gradient accent for visual variety across state destinations
+                  const accentGradients = [
+                    'from-[#FF671F] via-[#FF9933] to-[#E06D24]', // Sacred Saffron
+                    'from-[#046A38] via-[#058244] to-[#03542C]', // Heritage Emerald
+                    'from-[#C85A32] via-[#E28743] to-[#B44C28]', // Terracotta & Sandstone
+                    'from-[#1B2A4A] via-[#2D4577] to-[#0E1A33]', // Royal Indigo
+                  ];
+                  const accentBar = accentGradients[cIdx % accentGradients.length];
 
                   return (
                     <ScrollReveal
                       key={city.id}
                       animation="fade-up"
-                      delay={cIdx * 50}
+                      delay={cIdx * 40}
                       className="h-full"
                     >
                       <div
-                        className="bg-white rounded-2xl sm:rounded-3xl border border-[#EFE8DF] overflow-hidden shadow-xs hover:shadow-md transition-all duration-300 flex flex-col group h-full"
+                        className="relative bg-[#FCFBF9] hover:bg-white rounded-2xl sm:rounded-3xl border border-[#EFE8DF] hover:border-[#FF671F]/60 overflow-hidden shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col justify-between group h-full hover:-translate-y-1"
                       >
-                      {/* Town Hero Photo with honest fallback */}
-                      <div className="relative h-32 sm:h-44 w-full overflow-hidden bg-stone-100 shrink-0">
-                        {isBroken ? (
-                          <div className="w-full h-full flex flex-col items-center justify-center bg-stone-100 text-stone-600 p-4 text-center">
-                            <CameraOff className="w-6 h-6 sm:w-7 sm:h-7 text-stone-400 mb-1" />
-                            <span className="text-[11px] sm:text-xs font-semibold text-stone-700">Photograph unavailable</span>
-                            <span className="text-[9px] sm:text-[10px] text-stone-500">Field verification pending</span>
+                        {/* 1. TOP CREATIVE CULTURAL ACCENT BAR */}
+                        <div className={`h-2.5 w-full bg-gradient-to-r ${accentBar}`} />
+
+                        {/* 2. CARD CONTENT CONTAINER WITH RICH CULTURAL STYLING */}
+                        <div className="p-4 sm:p-6 flex flex-col justify-between grow space-y-3.5 sm:space-y-4">
+                          <div>
+                            {/* District & Capital / Status Badges */}
+                            <div className="flex items-center justify-between gap-2 flex-wrap mb-2.5">
+                              <span className="inline-flex items-center gap-1 text-[10px] sm:text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-orange-50 text-[#FF671F] border border-orange-200/80 shadow-2xs">
+                                <MapPin className="w-3 h-3 text-[#FF671F] shrink-0" />
+                                <span>{city.district} District</span>
+                              </span>
+
+                              {city.is_capital ? (
+                                <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 border border-amber-300 shadow-2xs">
+                                  <Sparkles className="w-3 h-3 text-amber-600" />
+                                  <span>State Capital</span>
+                                </span>
+                              ) : (
+                                <span className="inline-flex items-center gap-1 text-[10px] sm:text-[11px] font-semibold text-stone-600 bg-stone-100 px-2 py-0.5 rounded-full border border-stone-200">
+                                  <Landmark className="w-3 h-3 text-stone-500" />
+                                  <span>{places.length > 0 ? `${places.length} Sites` : 'Heritage Hub'}</span>
+                                </span>
+                              )}
+                            </div>
+
+                            {/* City Title & Poetic Tagline */}
+                            <div className="space-y-1">
+                              <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#0B192C] group-hover:text-[#FF671F] transition-colors leading-tight">
+                                {city.name}
+                              </h3>
+                              {city.tagline && (
+                                <p className="text-xs sm:text-[13px] text-amber-900/90 font-serif italic line-clamp-1 leading-snug">
+                                  &ldquo;{city.tagline}&rdquo;
+                                </p>
+                              )}
+                            </div>
+
+                            {/* City Description */}
+                            <p className="text-xs sm:text-[13px] text-[#5A4E46] leading-relaxed line-clamp-3 mt-2.5 font-normal">
+                              {city.description}
+                            </p>
+
+                            {/* Top Verified Heritage Sights Preview Chips */}
+                            {places.length > 0 && (
+                              <div className="pt-3">
+                                <div className="text-[10px] font-bold uppercase tracking-wider text-stone-500 mb-1.5 flex items-center gap-1">
+                                  <Sparkles className="w-2.5 h-2.5 text-[#FF671F]" />
+                                  <span>Key Heritage Landmarks:</span>
+                                </div>
+                                <div className="flex flex-wrap gap-1.5">
+                                  {places.slice(0, 3).map((p) => (
+                                    <span
+                                      key={p.id}
+                                      className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-stone-50 border border-stone-200/80 text-[10px] sm:text-[11px] font-medium text-stone-700 truncate max-w-full"
+                                    >
+                                      <span className="w-1.5 h-1.5 rounded-full bg-[#FF671F] shrink-0" />
+                                      <span className="truncate">{p.name}</span>
+                                    </span>
+                                  ))}
+                                  {places.length > 3 && (
+                                    <span className="inline-flex items-center px-2 py-1 rounded-lg bg-orange-50 border border-orange-200 text-[10px] font-bold text-[#FF671F]">
+                                      +{places.length - 3} more
+                                    </span>
+                                  )}
+                                </div>
+                              </div>
+                            )}
                           </div>
-                        ) : (
-                          <img
-                            src={city.hero_image_url}
-                            alt={city.name}
-                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                            onError={() => handleImageError(city.id)}
-                          />
-                        )}
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-transparent pointer-events-none" />
 
-                        <div className="absolute top-2.5 sm:top-3 left-2.5 sm:left-3 pointer-events-none flex items-center gap-1.5">
-                          <span className="text-[9px] sm:text-[10px] font-bold uppercase tracking-wider px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-full bg-white/90 text-[#FF671F]">
-                            {city.district} District
-                          </span>
-                          {city.entity_type && city.entity_type !== 'city' && (
-                            <span className="text-[9px] sm:text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded-full bg-black/60 text-amber-200">
-                              {city.entity_type}
-                            </span>
-                          )}
-                        </div>
+                          {/* Bottom Snapshot & CTA */}
+                          <div className="space-y-3 pt-3 border-t border-[#EFE8DF]/80">
+                            {/* Best Season & Travel Info */}
+                            <div className="flex items-center justify-between text-[11px] text-stone-600">
+                              <span className="flex items-center gap-1.5">
+                                <Calendar className="w-3.5 h-3.5 text-[#FF671F]" />
+                                <span>Season:</span>
+                                <strong className="text-stone-800">
+                                  {city.live_travel_info?.best_season || 'October to March'}
+                                </strong>
+                              </span>
+                              <span className="font-semibold text-[#046A38] bg-emerald-50 border border-emerald-200/80 px-2 py-0.5 rounded-md text-[10px]">
+                                {places.length > 0 ? `${places.length} Verified` : 'Verified'}
+                              </span>
+                            </div>
 
-                        {/* City Photographic Provenance Credit */}
-                        {city.creator && !isBroken && (
-                          <div
-                            className="absolute top-2.5 sm:top-3 right-2.5 sm:right-3 text-[8px] sm:text-[9px] px-2 py-0.5 rounded-full bg-black/50 text-white/90 backdrop-blur-xs font-mono truncate max-w-[120px] sm:max-w-[140px]"
-                            title={`Photo: ${city.creator} (${city.license || 'Verified'})`}
-                          >
-                            📷 {city.creator}
-                          </div>
-                        )}
-
-                        <div className="absolute bottom-2.5 sm:bottom-3 left-3 sm:left-4 right-3 sm:right-4 text-white pointer-events-none">
-                          <h3 className="font-serif text-base sm:text-xl font-bold">{city.name}</h3>
-                          <div className="text-[10px] sm:text-[11px] text-amber-200 line-clamp-1 italic mt-0.5">
-                            &quot;{city.tagline}&quot;
+                            {/* Action CTA Button */}
+                            <button
+                              onClick={() => currentState && handleSelectTown(currentState.id, city.id)}
+                              className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-[#FF671F] to-[#E65100] hover:from-[#E65100] hover:to-[#FF671F] text-white text-xs sm:text-sm font-bold transition-all flex items-center justify-center gap-2 cursor-pointer shadow-xs hover:shadow-md active:scale-98"
+                            >
+                              <span>Explore {city.name} Heritage</span>
+                              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                            </button>
                           </div>
                         </div>
                       </div>
-
-                      {/* Town Body */}
-                      <div className="p-3.5 sm:p-5 flex flex-col justify-between grow space-y-2.5 sm:space-y-4">
-                        <p className="text-[11px] sm:text-xs text-[#5A4E46] leading-relaxed line-clamp-3">
-                          {city.description}
-                        </p>
-
-                        {/* Quick Tourism Snapshot */}
-                        <div className="grid grid-cols-2 gap-2 text-[11px] sm:text-xs pt-0.5 sm:pt-1">
-                          <div className="p-2 sm:p-2.5 rounded-lg sm:rounded-xl bg-[#FAF8F5] border border-[#EFE8DF]">
-                            <div className="text-[9px] sm:text-[10px] font-bold text-[#FF671F] uppercase tracking-wider">
-                              Verified Places
-                            </div>
-                            <div className="font-bold text-stone-900 mt-0.5 text-[11px] sm:text-xs truncate">
-                              {places.length > 0 ? `${places.length} places` : 'Verifying'}
-                            </div>
-                          </div>
-                          <div className="p-2 sm:p-2.5 rounded-lg sm:rounded-xl bg-[#FAF8F5] border border-[#EFE8DF]">
-                            <div className="text-[9px] sm:text-[10px] font-bold text-[#FF671F] uppercase tracking-wider">
-                              Season
-                            </div>
-                            <div className="font-bold text-stone-900 mt-0.5 truncate text-[11px] sm:text-xs">
-                              {city.live_travel_info?.best_season || 'Verifying'}
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Actions */}
-                        <div className="pt-1 sm:pt-2 flex items-center gap-2">
-                          <button
-                            onClick={() => currentState && handleSelectTown(currentState.id, city.id)}
-                            className="w-full py-2 sm:py-2.5 px-3 sm:px-4 rounded-xl bg-[#FF671F] hover:bg-[#E65100] text-white text-[11px] sm:text-xs font-bold transition flex items-center justify-center gap-1.5 sm:gap-2 cursor-pointer shadow-xs active:scale-98"
-                          >
-                            <span>Explore Places ({places.length > 0 ? places.length : 0})</span>
-                            <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </ScrollReveal>
-                );
+                    </ScrollReveal>
+                  );
                 })}
               </div>
             </div>
@@ -1842,11 +1861,21 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                 <div className="grid grid-cols-1 lg:grid-cols-12">
                   <div className="lg:col-span-5 relative h-64 lg:h-auto min-h-[220px] bg-stone-100">
                     {brokenImages[currentCity.id] || !currentCity.hero_image_url ? (
-                      <OfficialImagePending
-                        heightClass="h-full"
-                        label="Official image pending"
-                        showBadge={false}
-                      />
+                      <div className="w-full h-full min-h-[220px] bg-gradient-to-br from-[#FFF9F2] via-[#FAF4ED] to-[#F5ECE1] border-r border-[#EFE8DF] flex flex-col items-center justify-center p-6 text-center relative overflow-hidden select-none">
+                        <div className="absolute inset-0 opacity-[0.05] bg-[radial-gradient(#884a20_1px,transparent_1px)] [background-size:14px_14px]" />
+                        <div className="relative z-10 space-y-2">
+                          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-100 to-orange-100 border border-amber-300/80 flex items-center justify-center mx-auto text-[#FF671F] shadow-xs">
+                            <Landmark className="w-7 h-7" />
+                          </div>
+                          <h4 className="font-serif text-lg sm:text-xl font-bold text-[#0B192C]">
+                            {currentCity.name}
+                          </h4>
+                          <span className="inline-flex items-center gap-1 px-3 py-0.5 rounded-full bg-white/90 border border-stone-200 text-stone-700 text-xs font-semibold">
+                            <MapPin className="w-3 h-3 text-[#FF671F]" />
+                            {currentCity.district} District • {currentState?.name}
+                          </span>
+                        </div>
+                      </div>
                     ) : (
                       <img
                         src={currentCity.hero_image_url}
