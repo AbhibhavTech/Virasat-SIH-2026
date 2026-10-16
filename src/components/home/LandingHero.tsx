@@ -45,7 +45,7 @@ export const LandingHero: React.FC<LandingHeroProps> = ({
             <span className="text-emerald-700">Navigate Smarter.</span>
           </h1>
           <p className="text-sm sm:text-base text-slate-600 max-w-2xl leading-relaxed">
-            Pan-India geospatial tourism system featuring UNESCO heritage monuments across all 28 States & 8 UTs, multimodal routing with railway intelligence, and Virasat AI Astra planning with local tourism data.
+            Pan-India geospatial tourism system featuring UNESCO heritage monuments across all 28 States & 8 UTs, multimodal routing with railway intelligence, and Virasat AI planning with local tourism data.
           </p>
         </div>
 

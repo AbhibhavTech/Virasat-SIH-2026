@@ -84,7 +84,7 @@ aiChatRouter.get('/health', (_req: Request, res: Response) => {
     status: 'ok',
     service: 'Virasat AI Travel & Heritage Concierge',
     tools_registered: getAllToolNames().length,
-    engine: 'Virasat AI Astra Local Data Engine',
+    engine: 'Virasat AI · Local Data Engine',
     generation: getModelStatus(),
   });
 });
@@ -108,7 +108,7 @@ aiChatRouter.get('/health', (_req: Request, res: Response) => {
  *   ↓
  * RESPONSE GENERATION
  *
- * The local Virasat AI Astra engine resolves intents against
+ * The local Virasat AI engine resolves intents against
  * verified app data and registered in-app tools.
  */
 aiChatRouter.post(
@@ -214,18 +214,22 @@ aiChatRouter.post(
         existingState.updatedAt = Date.now();
         existingState.turnCount++;
         res.json({ success: true, reply: `${generated.reply}${airportGatewayNote}`, conversation_id: sessionId, session_id: sessionId,
-          engine: 'Virasat AI Astra · Hosted Model', provider_used: generated.provider, model_used: generated.model, generation_mode: 'hosted_generative',
+          engine: 'Virasat AI · Hosted Model', provider_used: generated.provider, model_used: generated.model, generation_mode: 'hosted_generative',
           actions: generated.actions, tool_calls: generated.calls, transit_comparison: transitComparison, suggested_actions: [], latency_ms: Date.now() - startTime });
+        return;
       } catch (error) {
         const code = error instanceof Error && /^MODEL_[A-Z_0-9]+$/.test(error.message) ? error.message : 'MODEL_UNAVAILABLE';
-        console.warn(`[AI Gateway] ${code}`);
+        console.warn(`[AI Gateway] Hosted model unavailable (${code}). Seamlessly serving response via Virasat AI local intelligence engine.`);
         const diagnostic = error instanceof ProviderFailure ? error.diagnostic : undefined;
         if (diagnostic?.retry_after_seconds !== null && diagnostic?.retry_after_seconds !== undefined) res.setHeader('Retry-After', String(diagnostic.retry_after_seconds));
-        res.status(503).json({ success: false, error: code, reply: diagnostic?.explanation || explainModelFailure(code),
-          provider_error: diagnostic, provider_request_sent: error instanceof ProviderFailure ? !error.deferred : undefined,
-          generation_mode: 'unavailable', conversation_id: sessionId });
+        if (modelConfiguration.requireHosted && code === 'MODEL_NOT_CONFIGURED') {
+          res.status(503).json({ success: false, error: code, reply: diagnostic?.explanation || explainModelFailure(code),
+            provider_error: diagnostic, provider_request_sent: error instanceof ProviderFailure ? !error.deferred : undefined,
+            generation_mode: 'unavailable', conversation_id: sessionId });
+          return;
+        }
+        // Graceful automatic fallback: proceed to local database & response engine below
       }
-      return;
     }
 
     /**
@@ -364,7 +368,7 @@ aiChatRouter.post(
     }> = [];
 
     let replyText = '';
-    let usedEngine = 'Virasat AI Astra · Local Data Engine';
+    let usedEngine = 'Virasat AI · Local Data Engine';
     let generatedPlan: any = null;
     let dynamicQuickActions: string[] = [];
     let actionList: AIAction[] = [];
@@ -420,11 +424,11 @@ aiChatRouter.post(
      *
      * Structured tourism answers are read from local data tools.
      */
-    usedEngine = 'Virasat AI Astra · Local Data Engine';
+    usedEngine = 'Virasat AI · Local Data Engine';
 
     /**
      * ============================================================
-     * 5. VIRASAT AI ASTRA LOCAL ENGINE
+     * 5. VIRASAT AI LOCAL ENGINE
      * ============================================================
      *
        * Route supported requests to local data or return a clear capability answer.
@@ -504,7 +508,7 @@ aiChatRouter.post(
           { type: 'plan_itinerary', label: 'Itinerary', url: '/itinerary' },
           { type: 'explore_festival', label: 'Festivals', url: '/festivals' },
         );
-        sourceList = ['Virasat AI Astra Local Data Engine'];
+        sourceList = ['Virasat AI Local Data Engine'];
       } else if (
         intent === 'GREETING' ||
         intent === 'CASUAL_CONVERSATION' ||
@@ -2217,8 +2221,8 @@ aiChatRouter.post(
         conversation_id: sessionId,
         session_id: sessionId,
         reply: 'Namaste! Main Virasat AI Heritage Assistant hoon. Main aapko verified monuments, itineraries, trains, flights, aur hotels plan karne mein madad kar sakta hoon. Aap kahan ghoomna chahte hain?',
-        engine: 'Virasat AI Astra · Local Data Engine',
-        model_used: 'Virasat AI Astra · Local Data Engine',
+        engine: 'Virasat AI · Local Data Engine',
+        model_used: 'Virasat AI · Local Data Engine',
         suggested_actions: ['Explore Popular Monuments', 'Plan a 3-Day Trip', 'Find Heritage Hotels'],
         actions: [
           { type: 'explore_heritage', label: 'Explore Heritage', url: '/heritage' },

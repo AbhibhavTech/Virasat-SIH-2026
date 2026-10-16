@@ -94,9 +94,9 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
 
   const initialGreeting: ExtendedChatMessage = {
     role: 'assistant',
-    content: `Namaste! 🙏 Main **Virasat AI Astra** hoon — destinations, heritage, festivals, routes, stays aur trips explore karne mein aapki madad ke liye.\n\nHindi, Hinglish ya English mein apna sawal naturally poochhiye.`,
+    content: `Namaste! 🙏 Main **Virasat AI** hoon — destinations, heritage, festivals, routes, stays aur trips explore karne mein aapki madad ke liye.\n\nHindi, Hinglish ya English mein apna sawal naturally poochhiye.`,
     timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
-    suggested_actions: ['Jaipur ka 2-day itinerary banao', 'Maharashtra ke heritage places', 'Mumbai se Goa ka route', 'Virasat AI Astra kya kar sakta hai?'],
+    suggested_actions: ['Jaipur ka 2-day itinerary banao', 'Maharashtra ke heritage places', 'Mumbai se Goa ka route', 'Virasat AI kya kar sakta hai?'],
     actions: [
       { type: 'plan_itinerary', label: 'Plan Itinerary', url: '/itinerary' },
       { type: 'explore_heritage', label: 'UNESCO Monuments', url: '/heritage' },
@@ -255,13 +255,13 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
                   return [
                     {
                       role: 'assistant',
-                      content: `Namaste! Based on your general area (**${areaName}**), Virasat AI Astra can help you explore nearby places, plan journeys across India, or answer your questions.\n\nAap kahan se shuru karna chahenge?`,
+                      content: `Namaste! Based on your general area (**${areaName}**), Virasat AI can help you explore nearby places, plan journeys across India, or answer your questions.\n\nAap kahan se shuru karna chahenge?`,
                       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
                       suggested_actions: [
                         'Explore Near Me',
                         'Darjeeling ka 3-day trip plan karo',
                         'Jaipur ke best heritage places batao',
-                        'Virasat AI Astra kya kar sakta hai?',
+                        'Virasat AI kya kar sakta hai?',
                       ],
                     },
                   ];
@@ -444,13 +444,13 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
         ? {
           role: 'assistant',
           content: `Namaste! Based on your general area (**${userLocation.locality ? `${userLocation.locality}, ` : ''
-            }${userLocation.city || userLocation.state || 'your area'}**), Virasat AI Astra can help you explore nearby places, plan journeys across India, or answer your questions.\n\nAap kahan se shuru karna chahenge?`,
+            }${userLocation.city || userLocation.state || 'your area'}**), Virasat AI can help you explore nearby places, plan journeys across India, or answer your questions.\n\nAap kahan se shuru karna chahenge?`,
           timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
           suggested_actions: [
             'Explore Near Me',
             'Darjeeling ka 3-day trip plan karo',
             'Jaipur ke best heritage places batao',
-            'Virasat AI Astra kya kar sakta hai?',
+            'Virasat AI kya kar sakta hai?',
           ],
         }
         : {
@@ -745,7 +745,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
           <div>
             <div className="flex items-center gap-2 flex-wrap">
               <h2 className="font-serif text-sm sm:text-lg font-bold text-[#0B192C] tracking-tight">
-                Virasat AI Astra
+                Virasat AI
               </h2>
               <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
@@ -858,7 +858,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
           <div className="flex items-center gap-2">
             <Bot className="w-4 h-4 text-[#FF671F]" />
             <span className="text-xs font-bold text-stone-800">
-              Virasat AI Astra conversation
+              Virasat AI conversation
             </span>
             <span className="text-[10px] sm:text-[11px] text-stone-400">
               ({messages.length})
@@ -1102,7 +1102,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
                       )}
                       {!isUser && m.latency_ms !== undefined && (
                         <span className="text-stone-400">
-                          • {m.latency_ms}ms · {m.model_used || 'Virasat AI Astra'}
+                          • {m.latency_ms}ms · {m.model_used || 'Virasat AI'}
                         </span>
                       )}
                     </span>
@@ -1157,7 +1157,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
               </div>
               <div className="p-4 sm:p-5 rounded-3xl bg-white border border-[#EFE8DF] text-xs sm:text-sm text-stone-600 shadow-xs flex items-center gap-3">
                 <span className="inline-block w-2.5 h-2.5 rounded-full bg-[#FF671F] animate-ping" />
-                <span>Virasat AI Astra is checking the conversation and preparing an answer…</span>
+                <span>Virasat AI is checking the conversation and preparing an answer…</span>
               </div>
             </div>
           )}
@@ -1189,14 +1189,14 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
                     handleSend(input);
                   }
                 }}
-                placeholder="Message Virasat AI Astra… (Enter to send, Shift + Enter for a new line)"
-                aria-label="Message Virasat AI Astra"
+                placeholder="Message Virasat AI… (Enter to send, Shift + Enter for a new line)"
+                aria-label="Message Virasat AI"
                 className="w-full min-h-[56px] max-h-40 resize-none overflow-y-auto pl-5 pr-14 py-3.5 sm:py-4 rounded-2xl bg-[#FAF8F5] border border-[#EFE8DF] text-sm sm:text-base text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#FF671F] focus:bg-white focus:ring-1 focus:ring-[#FF671F] transition"
               />
               <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center">
                 <VoiceInputButton
                   variant="ai"
-                  title="Speak to Virasat AI Astra"
+                  title="Speak to Virasat AI"
                   placeholderPrompt="Listening… (e.g. 'Plan a 3-day trip to Jaipur')"
                   onTranscript={(text) => setInput(text)}
                   onFinalTranscript={(text) => {

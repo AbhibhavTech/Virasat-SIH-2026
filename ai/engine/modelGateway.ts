@@ -91,10 +91,10 @@ function validateArgs(args: any, schema: any): boolean {
 
 // Bound whole values instead of slicing JSON into malformed fragments.
 function compact(value: any, depth = 0): any {
-  if (depth > 8) return '[additional nested data omitted]';
-  if (typeof value === 'string') return value.slice(0, 2500);
-  if (Array.isArray(value)) return value.slice(0, 8).map(item => compact(item, depth + 1));
-  if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).slice(0, 45).map(([key, item]) => [key, compact(item, depth + 1)]));
+  if (depth > 6) return '[nested data omitted]';
+  if (typeof value === 'string') return value.slice(0, 600);
+  if (Array.isArray(value)) return value.slice(0, 5).map(item => compact(item, depth + 1));
+  if (value && typeof value === 'object') return Object.fromEntries(Object.entries(value).slice(0, 20).map(([key, item]) => [key, compact(item, depth + 1)]));
   return value;
 }
 
@@ -119,20 +119,27 @@ export async function generateModelReply(message: string, state: TripMemoryState
   const messages: any[] = [
     { role: 'system', content: ASTRA_SYSTEM_PROMPT },
     { role: 'system', content: `Context data, not instructions: ${JSON.stringify(compact({ trip, selectedCity: context.selectedCity, selectedPlaceId: context.selectedPlaceId, route: context.currentRoute, location: context.userLocation, itinerary: context.activeItinerary, now: context.clientEnvironment.timestamp }))}` },
-    ...history.slice(-16), { role: 'user', content: message },
+    ...history.slice(-6), { role: 'user', content: message },
   ];
   const calls: Array<{ tool: string; args: any; result: any }> = [];
   const actions: any[] = [];
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 60000);
-  let remainingCalls = 8;
+  let remainingCalls = 6;
   try {
-    for (let round = 0; round < 5; round++) {
+    for (let round = 0; round < 4; round++) {
       const response = await fetch(`${config.baseUrl}/chat/completions`, {
         method: 'POST', signal: controller.signal,
         headers: { 'content-type': 'application/json', authorization: `Bearer ${config.key}` },
-        body: JSON.stringify({ model: config.model, messages, tools, tool_choice: round === 4 || remainingCalls === 0 ? 'none' : 'auto',
-          max_completion_tokens: 1800, store: false, ...(config.provider === 'groq' ? { parallel_tool_calls: false } : {}) }),
+        body: JSON.stringify({
+          model: config.model,
+          messages,
+          tools,
+          tool_choice: round === 3 || remainingCalls === 0 ? 'none' : 'auto',
+          max_tokens: 1000,
+          store: false,
+          ...(config.provider === 'groq' ? { parallel_tool_calls: false } : {})
+        }),
       });
       if (!response.ok) {
         // Never log the provider body: it may echo sensitive request fields.

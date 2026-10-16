@@ -81,8 +81,8 @@ export function buildResponseForIntent(
     if (/(are you human|are you real|do you have feelings)/i.test(rawQuery)) {
       return {
         reply: isHinglish
-          ? 'Main Virasat AI Astra ka software assistant hoon, insaan nahi. Main local tourism data aur app tools se madad karta hoon; mere paas insaanon jaise feelings nahi hain.'
-          : 'I’m Virasat AI Astra, a software assistant rather than a person. I use local tourism data and app tools; I don’t have human feelings.',
+          ? 'Main Virasat AI ka software assistant hoon, insaan nahi. Main local tourism data aur app tools se madad karta hoon; mere paas insaanon jaise feelings nahi hain.'
+          : 'I’m Virasat AI, a software assistant rather than a person. I use local tourism data and app tools; I don’t have human feelings.',
         suggested_actions: ['What can you do?', 'Explore destinations'],
         actions: [{ type: 'explore_states', label: 'Discover Bharat', url: '/explore' }],
       };
@@ -104,8 +104,8 @@ export function buildResponseForIntent(
   if (intent === 'ABOUT_VIRASAT') {
     return {
       reply: isHinglish
-        ? "Aap Virasat AI Astra ke local travel assistant se baat kar rahe hain. Main app ke tourism records aur tools se heritage, destinations, festivals, trips aur routes dhoondhne mein madad karta hoon."
-        : "You’re chatting with Virasat AI Astra, a local travel assistant. I use the app’s tourism records and tools to help with heritage, destinations, festivals, trips, and routes.",
+        ? "Aap Virasat AI ke local travel assistant se baat kar rahe hain. Main app ke tourism records aur tools se heritage, destinations, festivals, trips aur routes dhoondhne mein madad karta hoon."
+        : "You’re chatting with Virasat AI, an intelligent travel assistant. I use the app’s tourism records and tools to help with heritage, destinations, festivals, trips, and routes.",
       suggested_actions: ['Plan a Trip', 'Explore 28 States & 8 UTs', 'Top Monuments', 'How does Virasat work?'],
       actions: [
         { type: 'explore_heritage', label: 'Verified Monuments', url: '/heritage' },

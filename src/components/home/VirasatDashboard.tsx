@@ -1051,7 +1051,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
           type="button"
           onClick={() => onNavigateTab('ai')}
           className="hidden sm:flex absolute bottom-4 right-4 sm:bottom-6 sm:right-6 lg:bottom-8 lg:right-8 bg-white/95 hover:bg-white backdrop-blur-md px-3.5 py-2.5 rounded-2xl border border-white/90 hover:border-orange-300 shadow-md hover:shadow-lg transition-all duration-200 items-center gap-3 text-stone-800 z-20 cursor-pointer group active:scale-95 text-left"
-          title="Open Virasat AI Astra"
+          title="Open Virasat AI"
         >
           {/* AI Logo Icon */}
           <div className="relative">
@@ -1067,7 +1067,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
           <div className="leading-tight pr-1">
             <div className="flex items-center gap-1.5">
               <span className="text-[11px] font-bold text-[#0B192C] tracking-tight group-hover:text-[#FF671F] transition-colors flex items-center gap-1">
-                Virasat AI Astra <Sparkles className="w-3 h-3 text-[#FF671F]" />
+                Virasat AI <Sparkles className="w-3 h-3 text-[#FF671F]" />
               </span>
               <span className="text-[9px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.2 rounded-full border border-emerald-200">
                 Online

@@ -66,7 +66,7 @@ const AppContent: React.FC = () => {
     } else if (location.pathname.startsWith('/map')) {
       title = "Interactive Heritage Map & Transport Geometry";
     } else if (location.pathname.startsWith('/ai')) {
-      title = "Virasat AI Astra • Heritage, Culture & Travel Assistant";
+      title = "Virasat AI • Heritage, Culture & Travel Assistant";
     } else if (location.pathname.startsWith('/trips')) {
       title = "My Saved Heritage Itineraries";
     } else if (location.pathname.startsWith('/favorites')) {
