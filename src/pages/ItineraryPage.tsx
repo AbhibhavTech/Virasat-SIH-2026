@@ -483,6 +483,29 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
     }
   };
 
+  const handleShareWhatsApp = () => {
+    if (!itinerary) return;
+    const cityVal = itinerary.city || selectedCityObj.name;
+    const origin = window.location.origin;
+    const deepLink = `${origin}/itinerary?city=${encodeURIComponent(cityVal)}&days=${daysCount}`;
+
+    const daysSummary = (itinerary.days || [])
+      .map((d, i) => `• Day ${d.day_number || i + 1} (${d.area_title}): ${(d.places || []).map((p: any) => p.name).join(' ➔ ')}`)
+      .join('\n');
+
+    const msg =
+      `🇮🇳 *Virasat Heritage Itinerary - ${cityVal}*\n` +
+      `📅 Duration: ${daysCount} Days | 💰 Est. Budget: ₹${itinerary.estimated_total_cost || 3500}\n\n` +
+      `*Curated Heritage Stops:*\n${daysSummary}\n\n` +
+      `🔗 Open full interactive route & ASI monument tickets:\n${deepLink}`;
+
+    window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(msg)}`, '_blank');
+  };
+
+  const handleDownloadPDF = () => {
+    window.print();
+  };
+
   const handleDownloadPlan = () => {
     if (!itinerary) return;
     const content = [
@@ -809,10 +832,32 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                 <span>Map Route</span>
               </button>
 
-              {/* Secondary: Export */}
+              {/* WhatsApp Share */}
+              <button
+                type="button"
+                onClick={handleShareWhatsApp}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold shadow-xs transition cursor-pointer active:scale-95"
+                title="Share this curated itinerary on WhatsApp"
+              >
+                <Share2 className="w-3.5 h-3.5 text-white" />
+                <span>WhatsApp</span>
+              </button>
+
+              {/* Download PDF / Print */}
+              <button
+                type="button"
+                onClick={handleDownloadPDF}
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:py-2 rounded-xl bg-white hover:bg-stone-50 border border-stone-200 text-xs font-semibold text-stone-700 shadow-xs transition cursor-pointer"
+                title="Download full itinerary as PDF or print"
+              >
+                <Printer className="w-3.5 h-3.5 text-[#FF671F]" />
+                <span>Download PDF</span>
+              </button>
+
+              {/* Secondary: Export TXT */}
               <button
                 onClick={handleDownloadPlan}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:py-2 rounded-xl bg-white hover:bg-stone-50 border border-stone-200 text-xs font-semibold text-stone-700 shadow-xs transition cursor-pointer"
+                className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 sm:py-2 rounded-xl bg-white hover:bg-stone-50 border border-stone-200 text-xs font-semibold text-stone-700 shadow-xs transition cursor-pointer"
               >
                 <Download className="w-3.5 h-3.5 text-stone-600" />
                 <span>Export TXT</span>
@@ -855,7 +900,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                 ) : (
                   <>
                     <Share2 className="w-3.5 h-3.5 text-white" />
-                    <span>Share Journey</span>
+                    <span>Copy Link</span>
                   </>
                 )}
               </button>

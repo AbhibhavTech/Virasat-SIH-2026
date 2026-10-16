@@ -37,6 +37,8 @@ import { updatePageSEO, generateTouristAttractionSchema } from '../utils/seo';
 import { analytics } from '../services/analytics';
 import { getMumbaiDestinationById } from '../data/mumbaiDestinations';
 import { getNearbyDiscoveryPlaceById } from '../data/nearbyPlacesMMR';
+import { MonumentAudioGuidePlayer } from '../components/destination/MonumentAudioGuidePlayer';
+import { LocalArtisansGICraftsCard } from '../components/destination/LocalArtisansGICraftsCard';
 
 interface DestinationDetailPageProps {
   placeId: string;
@@ -307,6 +309,9 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
 
       {/* Main Editorial Content Column */}
       <div className="w-full max-w-5xl xl:max-w-6xl mx-auto space-y-8 sm:space-y-14 px-2 sm:px-4 pb-16">
+        {/* Museum Audio Tour Guide */}
+        <MonumentAudioGuidePlayer place={place} />
+
         {/* 4. Short Introduction */}
         <section className="space-y-2.5 sm:space-y-4">
           <div className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-[#FF671F] flex items-center gap-1.5">
@@ -426,6 +431,11 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
             Visitor Guidelines & Timings
           </h2>
           <VisitingInfoCard place={place} />
+
+          {/* Vocal for Local GI Crafts & Local Artisans */}
+          <div className="pt-2">
+            <LocalArtisansGICraftsCard place={place} />
+          </div>
         </section>
 
         {/* 7B. Data Provenance & Official Source Citations (Section XI.1 & XV.2) */}

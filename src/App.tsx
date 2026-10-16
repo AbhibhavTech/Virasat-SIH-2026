@@ -17,6 +17,7 @@ import { BrandSplashScreen } from './components/common/BrandSplashScreen';
 import { DatabaseStatusModal } from './components/database/DatabaseStatusModal';
 import { AnalyticsDashboardModal } from './components/analytics/AnalyticsDashboardModal';
 import { MonumentARCameraModal } from './components/ar/MonumentARCameraModal';
+import { TouristSafetySOSModal } from './components/common/TouristSafetySOSModal';
 import { PlaceSummary } from './types';
 import { api } from './services/api';
 import { useAuth } from './contexts/AuthContext';
@@ -40,6 +41,7 @@ const AppContent: React.FC = () => {
   const [isDatabaseModalOpen, setIsDatabaseModalOpen] = useState<boolean>(false);
   const [isAnalyticsModalOpen, setIsAnalyticsModalOpen] = useState<boolean>(false);
   const [isGlobalARModalOpen, setIsGlobalARModalOpen] = useState<boolean>(false);
+  const [isSOSModalOpen, setIsSOSModalOpen] = useState<boolean>(false);
   const [isAppInitializing, setIsAppInitializing] = useState<boolean>(true);
 
   // Initialize official Google One Tap for frictionless 1-click Google Sign-In
@@ -177,6 +179,7 @@ const AppContent: React.FC = () => {
         onOpenDatabaseStatus={() => setIsDatabaseModalOpen(true)}
         onOpenAnalytics={() => setIsAnalyticsModalOpen(true)}
         onOpenARCamera={() => setIsGlobalARModalOpen(true)}
+        onOpenSOS={() => setIsSOSModalOpen(true)}
       />
 
       {/* Contextual Sub-Nav Bar */}
@@ -233,6 +236,11 @@ const AppContent: React.FC = () => {
         onClose={() => setIsGlobalARModalOpen(false)}
         onSelectPlace={handleSelectPlace}
         onNavigateTab={handleNavigateTab}
+      />
+      <TouristSafetySOSModal
+        isOpen={isSOSModalOpen}
+        onClose={() => setIsSOSModalOpen(false)}
+        selectedCity={selectedCity}
       />
     </div>
   );

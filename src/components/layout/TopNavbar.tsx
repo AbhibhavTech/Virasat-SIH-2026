@@ -80,6 +80,7 @@ interface TopNavbarProps {
   onOpenDatabaseStatus?: () => void;
   onOpenAnalytics?: () => void;
   onOpenARCamera?: () => void;
+  onOpenSOS?: () => void;
 }
 
 export const TopNavbar: React.FC<TopNavbarProps> = ({
@@ -92,6 +93,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
   onOpenDatabaseStatus,
   onOpenAnalytics,
   onOpenARCamera,
+  onOpenSOS,
 }) => {
   const navigate = useNavigate();
   const { user, logout, loginWithGoogle } = useAuth();
@@ -675,6 +677,24 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
               )}
             </div>
 
+            {/* 24x7 Tourist Emergency SOS Helpline */}
+            {onOpenSOS && (
+              <button
+                type="button"
+                onClick={onOpenSOS}
+                className="flex items-center gap-1.5 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-rose-50 hover:bg-rose-100 border border-rose-200 hover:border-rose-300 text-rose-700 hover:text-rose-900 transition shadow-2xs active:scale-95 cursor-pointer shrink-0"
+                title="24x7 Tourist Emergency SOS Helpline (112 / 1363)"
+                aria-label="24x7 Tourist Emergency SOS Helpline"
+              >
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-rose-600"></span>
+                </span>
+                <span className="text-[11px] sm:text-xs font-black tracking-tight text-rose-700">SOS</span>
+                <span className="text-[10px] font-bold text-rose-500 hidden xl:inline">24x7</span>
+              </button>
+            )}
+
             {/* Notifications & Updates Bell */}
             <button
               onClick={() => handleNav('favorites')}
@@ -880,6 +900,29 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
                 ))}
               </select>
             </div>
+
+            {/* Emergency SOS on Mobile */}
+            {onOpenSOS && (
+              <button
+                type="button"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenSOS();
+                }}
+                className="w-full flex items-center justify-between px-3 py-2 rounded-xl text-xs font-bold text-rose-800 bg-rose-50 hover:bg-rose-100 border border-rose-200 transition min-h-[38px] active:scale-98"
+              >
+                <div className="flex items-center gap-2">
+                  <span className="relative flex h-2 w-2">
+                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-rose-600"></span>
+                  </span>
+                  <span>24x7 Tourist Emergency Helpline</span>
+                </div>
+                <span className="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-rose-600 text-white">
+                  112 / 1363
+                </span>
+              </button>
+            )}
 
             {/* Primary Navigation on Mobile */}
             <div className="space-y-0.5">

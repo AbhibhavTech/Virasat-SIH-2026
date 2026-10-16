@@ -649,4 +649,35 @@
   display: none;
 }
 
+/* ===================================================
+   Print & PDF Dossier Styles for Itineraries
+   =================================================== */
+@media print {
+  header, nav, footer, #skip-link, .no-print, [role="navigation"], button, input, .mobile-bottom-nav {
+    display: none !important;
+  }
+  
+  body, #root, main {
+    background: #ffffff !important;
+    color: #111827 !important;
+    font-size: 11pt !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  .shadow-xs, .shadow-warm, .shadow-2xl, .shadow-xl, .shadow-sm {
+    box-shadow: none !important;
+    border: 1px solid #e5e7eb !important;
+  }
+
+  a {
+    text-decoration: underline !important;
+    color: #111827 !important;
+  }
+}
+
 
