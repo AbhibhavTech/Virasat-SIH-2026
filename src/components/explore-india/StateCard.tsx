@@ -56,7 +56,7 @@ export const StateCard: React.FC<StateCardProps> = ({
     >
       {/* Hero Photo Header */}
       <div
-        className="relative h-44 sm:h-48 w-full overflow-hidden bg-stone-900 shrink-0 cursor-pointer"
+        className="relative h-56 sm:h-64 lg:h-72 w-full overflow-hidden bg-stone-900 shrink-0 cursor-pointer"
         onClick={() => onSelectState(state.id)}
         onKeyDown={(event) => {
           if (event.key === 'Enter' || event.key === ' ') onSelectState(state.id);
@@ -118,21 +118,21 @@ export const StateCard: React.FC<StateCardProps> = ({
 
         {/* Title: State Name */}
         <div className="absolute bottom-3 left-3.5 right-3.5 text-white pointer-events-none">
-          <h3 className="font-serif text-lg sm:text-xl font-bold text-white tracking-tight drop-shadow-xs">
+          <h3 className="font-serif text-xl sm:text-2xl font-black text-white tracking-tight drop-shadow-md">
             {state.name}
           </h3>
         </div>
       </div>
 
       {/* Compact interactive body */}
-      <div className="p-3.5 sm:p-4 flex flex-col justify-between grow gap-3">
-        <p className="text-xs text-stone-600 leading-relaxed line-clamp-2 min-h-10">
+      <div className="p-4 sm:p-5 flex flex-col justify-between grow gap-3.5">
+        <p className="text-sm text-stone-700 leading-relaxed line-clamp-2 min-h-11">
           {state.description || state.heritage_overview || `Explore the culture and heritage of ${state.name}.`}
         </p>
 
         {topTowns.length > 0 && (
           <div className="space-y-1.5">
-            <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400">
+            <span className="text-[11px] font-bold uppercase tracking-wider text-stone-500">
               {towns.length} {towns.length === 1 ? 'destination' : 'destinations'}
             </span>
             <div className="flex flex-wrap items-center gap-1.5">
@@ -140,7 +140,7 @@ export const StateCard: React.FC<StateCardProps> = ({
                 <button
                   key={city.id}
                   onClick={() => onSelectTown(state.id, city.id)}
-                  className="px-2.5 py-1 rounded-lg bg-stone-50 hover:bg-amber-50 text-stone-700 hover:text-amber-900 border border-stone-200/80 hover:border-amber-300 text-[11px] font-medium transition cursor-pointer flex items-center gap-1 shadow-2xs"
+                  className="px-3 py-1.5 rounded-lg bg-stone-50 hover:bg-amber-50 text-stone-700 hover:text-amber-900 border border-stone-200/80 hover:border-amber-300 text-xs font-semibold transition cursor-pointer flex items-center gap-1 shadow-2xs"
                   title={`Explore ${city.name}`}
                 >
                   <span>{city.name}</span>
@@ -153,10 +153,10 @@ export const StateCard: React.FC<StateCardProps> = ({
         <div>
           <button
             onClick={() => onSelectState(state.id)}
-            className="w-full py-2.5 px-4 rounded-xl bg-[#D94F04] hover:bg-[#B83F00] text-white border border-[#C94700] hover:border-[#A93800] text-xs font-extrabold transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm hover:shadow-md active:scale-[0.99] group/btn"
+            className="w-full py-3 px-5 rounded-xl bg-[#D94F04] hover:bg-[#B83F00] text-white border border-[#C94700] hover:border-[#A93800] text-sm font-black transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm hover:shadow-md active:scale-[0.99] group/btn"
           >
-            <span className="text-white font-extrabold">Explore</span>
-            <ArrowRight className="w-3.5 h-3.5 text-white transition-transform group-hover/btn:translate-x-0.5" />
+            <span className="text-white font-black">Explore</span>
+            <ArrowRight className="w-4 h-4 text-white transition-transform group-hover/btn:translate-x-0.5" />
           </button>
         </div>
       </div>

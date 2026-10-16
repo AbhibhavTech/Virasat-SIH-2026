@@ -1371,7 +1371,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
         {/* 6 Destination Cards Grid */}
         <div
           id="popular-destinations-grid"
-          className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-4 overflow-x-auto pb-1 scrollbar-none"
+          className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-5 overflow-x-auto pb-1 scrollbar-none"
         >
           {filteredPopular.map((place, pIdx) => (
             <ScrollReveal
@@ -1390,7 +1390,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
                 }}
                 className="group cursor-pointer rounded-2xl bg-white border border-[#EFE8DF] overflow-hidden shadow-2xs hover:shadow-md hover:border-[#FF671F]/50 transition-all duration-200 flex flex-col justify-between h-full"
               >
-                <div className="h-32 sm:h-44 w-full overflow-hidden bg-stone-100 relative">
+                <div className="h-44 sm:h-56 lg:h-64 w-full overflow-hidden bg-stone-100 relative">
                   <img
                     src={getMonumentRealImage(place.id, place.imageUrl)}
                     alt={place.name}
@@ -1405,25 +1405,25 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
                     }}
                   />
                   <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/60 to-transparent" />
-                  <span className="absolute left-2.5 top-2.5 rounded-full border border-white/30 bg-black/45 px-2 py-1 text-[9px] font-bold uppercase tracking-wide text-white backdrop-blur-sm">
+                  <span className="absolute left-2.5 top-2.5 rounded-full border border-white/30 bg-black/45 px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white backdrop-blur-sm">
                     {place.badge}
                   </span>
-                  <span className="absolute bottom-2.5 left-2.5 inline-flex items-center gap-1 rounded-full bg-white/92 px-2 py-1 text-[10px] font-bold text-stone-800 shadow-sm">
-                    <Star className="h-3 w-3 fill-amber-400 text-amber-400" /> {place.rating}
+                  <span className="absolute bottom-2.5 left-2.5 inline-flex items-center gap-1 rounded-full bg-white/92 px-2.5 py-1 text-[11px] font-bold text-stone-800 shadow-sm">
+                    <Star className="h-3.5 w-3.5 fill-amber-400 text-amber-400" /> {place.rating}
                   </span>
                 </div>
 
-                <div className="p-2.5 sm:p-3.5 flex items-center justify-between gap-1.5 sm:gap-2">
+                <div className="p-3 sm:p-4 flex items-center justify-between gap-2">
                   <div className="min-w-0 flex-1">
-                    <h4 className="font-serif text-xs sm:text-sm font-bold text-stone-900 group-hover:text-[#FF671F] transition truncate">
+                    <h4 className="font-serif text-sm sm:text-base font-bold text-stone-900 group-hover:text-[#FF671F] transition truncate">
                       {place.name}
                     </h4>
-                    <p className="text-[10px] sm:text-xs text-stone-500 truncate mt-0.5 font-medium">
+                    <p className="text-xs sm:text-[13px] text-stone-500 truncate mt-0.5 font-medium">
                       {place.location}
                     </p>
                   </div>
-                  <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-stone-100 group-hover:bg-[#FF671F] group-hover:text-white text-stone-600 flex items-center justify-center shrink-0 transition-colors shadow-2xs">
-                    <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-stone-100 group-hover:bg-[#FF671F] group-hover:text-white text-stone-600 flex items-center justify-center shrink-0 transition-colors shadow-2xs">
+                    <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                   </div>
                 </div>
               </div>

@@ -179,16 +179,14 @@ class DatabaseManager {
       for (const p of candidates) {
         if (fs.existsSync(p)) {
           const raw = JSON.parse(fs.readFileSync(p, 'utf-8'));
-          if (Array.isArray(raw)) {
-            if (!this.data.festivals) this.data.festivals = {};
-            if (Object.keys(this.data.festivals).length < raw.length) {
-              for (const f of raw) {
-                if (f && f.id) {
-                  this.data.festivals[f.id] = f;
-                }
+          if (Array.isArray(raw) && raw.length > 0) {
+            const nextFestivals: Record<string, FestivalRecord> = {};
+            for (const f of raw) {
+              if (f && f.id) {
+                nextFestivals[f.id] = f;
               }
-              console.log(`[DB] Synchronized ${Object.keys(this.data.festivals).length} verified festivals into memory fallback.`);
             }
+            this.data.festivals = nextFestivals;
             return;
           }
         }

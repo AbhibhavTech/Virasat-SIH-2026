@@ -3,8 +3,41 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    font-size: 16px;
+  }
+  @media (min-width: 1024px) {
+    html {
+      font-size: 16.5px;
+    }
+  }
+  @media (min-width: 1440px) {
+    html {
+      font-size: 17.5px;
+    }
+  }
+  @media (min-width: 1920px) {
+    html {
+      font-size: 18.5px;
+    }
+  }
+
   body {
-    @apply bg-[#FAF8F5] text-[#0B192C] font-sans antialiased selection:bg-[#FF671F] selection:text-white;
+    @apply bg-[#FAF8F5] text-[#0B192C] font-sans antialiased selection:bg-[#FF671F] selection:text-white relative min-h-screen;
+  }
+
+  /* Cultural Indian Heritage Watermark Pattern across the entire website */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url('/patterns/indian-cultural-pattern.png');
+    background-repeat: repeat;
+    background-size: 340px 340px;
+    opacity: 0.22;
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    z-index: 0;
   }
 }
 

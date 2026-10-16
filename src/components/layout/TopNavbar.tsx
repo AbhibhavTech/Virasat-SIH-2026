@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import {
   Compass,
   Landmark,
@@ -20,12 +20,55 @@ import {
   Database,
   Home,
   BarChart3,
+  Navigation,
+  Loader2,
+  Check,
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { NavTab } from './Sidebar';
 import { useAuth } from '../../contexts/AuthContext';
 import { useFavorites } from '../../contexts/FavoritesContext';
 import { VirasatBrand, TricolourTopBar } from '../common/TricolourBranding';
+import { findNearestCity, ALL_CITIES_LIST } from '../../data/citiesData';
+import { ALL_INDIAN_TOURISM_CITIES } from '../../data/cityItineraryData';
+
+interface CityItemInfo {
+  name: string;
+  state: string;
+  popular?: boolean;
+}
+
+export const POPULAR_CITIES: CityItemInfo[] = [
+  { name: 'Mumbai', state: 'Maharashtra', popular: true },
+  { name: 'Delhi', state: 'National Capital Territory', popular: true },
+  { name: 'Varanasi', state: 'Uttar Pradesh', popular: true },
+  { name: 'Jaipur', state: 'Rajasthan', popular: true },
+  { name: 'Agra', state: 'Uttar Pradesh', popular: true },
+  { name: 'Kochi', state: 'Kerala', popular: true },
+  { name: 'Goa', state: 'West Coast', popular: true },
+  { name: 'Bengaluru', state: 'Karnataka', popular: true },
+  { name: 'Amritsar', state: 'Punjab', popular: true },
+  { name: 'Kolkata', state: 'West Bengal', popular: true },
+  { name: 'Hyderabad', state: 'Telangana', popular: true },
+  { name: 'Udaipur', state: 'Rajasthan', popular: true },
+  { name: 'Lucknow', state: 'Uttar Pradesh', popular: true },
+  { name: 'Srinagar', state: 'Jammu & Kashmir', popular: true },
+  { name: 'Ahmedabad', state: 'Gujarat', popular: true },
+  { name: 'Bhopal', state: 'Madhya Pradesh', popular: true },
+  { name: 'Chennai', state: 'Tamil Nadu', popular: true },
+  { name: 'Guwahati', state: 'Assam', popular: true },
+  { name: 'Bhubaneswar', state: 'Odisha', popular: true },
+  { name: 'Patna', state: 'Bihar', popular: true },
+  { name: 'Chandigarh', state: 'Punjab / Haryana', popular: true },
+  { name: 'Shimla', state: 'Himachal Pradesh', popular: true },
+  { name: 'Rishikesh', state: 'Uttarakhand', popular: true },
+  { name: 'Mysuru', state: 'Karnataka', popular: true },
+  { name: 'Hampi', state: 'Karnataka', popular: true },
+  { name: 'Madurai', state: 'Tamil Nadu', popular: true },
+  { name: 'Jodhpur', state: 'Rajasthan', popular: true },
+  { name: 'Khajuraho', state: 'Madhya Pradesh', popular: true },
+  { name: 'Pune', state: 'Maharashtra', popular: true },
+];
 
 interface TopNavbarProps {
   activeTab: NavTab;
@@ -59,14 +102,147 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
   const [cityDropdownOpen, setCityDropdownOpen] = useState(false);
   const [profileDropdownOpen, setProfileDropdownOpen] = useState(false);
 
+  // Exact City Location Finder States
+  const [citySearchQuery, setCitySearchQuery] = useState('');
+  const [isLocating, setIsLocating] = useState(false);
+  const [locationNotice, setLocationNotice] = useState<string | null>(null);
+  const [locationError, setLocationError] = useState<string | null>(null);
+
   const moreDropdownRef = useRef<HTMLDivElement>(null);
   const cityDropdownRef = useRef<HTMLDivElement>(null);
   const profileDropdownRef = useRef<HTMLDivElement>(null);
 
-  // Curated cities list for instant regional switching
-  const cities = ['All India', 'Mumbai', 'Delhi', 'Jaipur', 'Agra', 'Varanasi', 'Kochi', 'Goa', 'Bengaluru'];
+  // Resolve state of current selected city for exact location display
+  const currentState = useMemo(() => {
+    if (!selectedCity || selectedCity === 'All India') return null;
+    const match =
+      ALL_INDIAN_TOURISM_CITIES.find(
+        (c) => c.name.toLowerCase() === selectedCity.toLowerCase()
+      ) ||
+      ALL_CITIES_LIST.find(
+        (c) => c.name.toLowerCase() === selectedCity.toLowerCase()
+      );
+    return match?.state || null;
+  }, [selectedCity]);
 
-  // Close dropdowns on outside click
+  // Search filter across India's master tourism database
+  const filteredCities = useMemo(() => {
+    const q = citySearchQuery.trim().toLowerCase();
+    if (!q) {
+      return POPULAR_CITIES;
+    }
+    const matches = ALL_INDIAN_TOURISM_CITIES.filter(
+      (c) => c.name.toLowerCase().includes(q) || c.state.toLowerCase().includes(q)
+    );
+    return matches.slice(0, 30).map((c) => ({
+      name: c.name,
+      state: c.state,
+    }));
+  }, [citySearchQuery]);
+
+  // Detect exact GPS location and reverse-geocode to exact Indian city
+  const handleDetectCurrentLocation = () => {
+    if (typeof navigator === 'undefined' || !navigator.geolocation) {
+      setLocationError('Browser me geolocation support uplabdh nahi hai.');
+      setTimeout(() => setLocationError(null), 4000);
+      return;
+    }
+
+    setIsLocating(true);
+    setLocationError(null);
+    setLocationNotice(null);
+
+    navigator.geolocation.getCurrentPosition(
+      async (pos) => {
+        try {
+          const { latitude, longitude } = pos.coords;
+          let detectedCity = '';
+          let detectedState = '';
+
+          // 1. Try reverse geocoding via OpenStreetMap Nominatim for exact city & state
+          try {
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 4500);
+            const res = await fetch(
+              `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`,
+              { signal: controller.signal }
+            );
+            clearTimeout(timeoutId);
+
+            if (res.ok) {
+              const data = await res.json();
+              const addr = data.address || {};
+              const rawCity =
+                addr.city ||
+                addr.town ||
+                addr.village ||
+                addr.county ||
+                addr.state_district ||
+                '';
+              const rawState = addr.state || '';
+
+              if (rawCity) {
+                detectedCity = rawCity;
+                detectedState = rawState;
+              }
+            }
+          } catch (e) {
+            console.warn('Reverse geocode failed or timed out:', e);
+          }
+
+          // 2. Nearest city fallback or canonical match
+          const { city: nearest } = findNearestCity(latitude, longitude);
+
+          if (detectedCity) {
+            // Check if detected city matches a known canonical Indian city
+            const foundCanonical = ALL_INDIAN_TOURISM_CITIES.find(
+              (c) =>
+                c.name.toLowerCase() === detectedCity.toLowerCase() ||
+                detectedCity.toLowerCase().includes(c.name.toLowerCase()) ||
+                c.name.toLowerCase().includes(detectedCity.toLowerCase())
+            );
+            if (foundCanonical) {
+              detectedCity = foundCanonical.name;
+              detectedState = foundCanonical.state;
+            }
+          } else if (nearest) {
+            detectedCity = nearest.name;
+            detectedState = nearest.state;
+          }
+
+          const finalCity = detectedCity || nearest?.name || 'Mumbai';
+          const finalState = detectedState || nearest?.state || '';
+
+          onSelectCity(finalCity);
+          setLocationNotice(`Detected: ${finalCity}${finalState ? `, ${finalState}` : ''}`);
+          setTimeout(() => {
+            setLocationNotice(null);
+            setCityDropdownOpen(false);
+          }, 1800);
+        } catch (err) {
+          console.error('Error determining location:', err);
+          const { city: nearest } = findNearestCity(pos.coords.latitude, pos.coords.longitude);
+          if (nearest) {
+            onSelectCity(nearest.name);
+            setLocationNotice(`Detected: ${nearest.name}, ${nearest.state}`);
+            setTimeout(() => {
+              setLocationNotice(null);
+              setCityDropdownOpen(false);
+            }, 1800);
+          }
+        } finally {
+          setIsLocating(false);
+        }
+      },
+      (err) => {
+        console.warn('Geolocation access denied or error:', err);
+        setIsLocating(false);
+        setLocationError('Location permission denied. Please select from the list below.');
+        setTimeout(() => setLocationError(null), 5000);
+      },
+      { timeout: 9000, enableHighAccuracy: true }
+    );
+  };
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as Node;
@@ -142,24 +318,24 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
   return (
     <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[#EFE8DF] transition-all duration-200">
       <TricolourTopBar />
-      <div className="w-full max-w-[98%] sm:max-w-[96%] lg:max-w-[94%] xl:max-w-[92%] 2xl:max-w-[1760px] mx-auto px-1.5 sm:px-6 lg:px-8 xl:px-10">
-        <div className="flex items-center justify-between h-13 sm:h-16 md:h-18 gap-1 sm:gap-4">
+      <div className="w-full max-w-[98%] xl:max-w-[96%] 2xl:max-w-[1880px] mx-auto px-2 sm:px-6 lg:px-8 xl:px-10">
+        <div className="flex items-center justify-between h-14 sm:h-16 md:h-20 gap-1.5 sm:gap-4">
           {/* Brand Logo */}
-          <VirasatBrand onClick={() => handleNav('home')} size="sm" />
+          <VirasatBrand onClick={() => handleNav('home')} size="md" />
 
           {/* Desktop Primary Navigation */}
-          <nav className="hidden md:flex items-center space-x-1 lg:space-x-1.5">
+          <nav className="hidden md:flex items-center space-x-1 lg:space-x-2">
             {mainNavLinks.map((link) => (
               <button
                 key={link.id}
                 onClick={() => handleNav(link.id)}
-                className={`px-3.5 py-1.5 rounded-full text-xs lg:text-sm font-semibold transition-all duration-150 flex items-center gap-1.5 ${
+                className={`px-3.5 lg:px-4 py-2 rounded-full text-xs md:text-sm lg:text-[15px] transition-all duration-150 flex items-center gap-1.5 ${
                   link.isActive
                     ? 'text-[#FF671F] bg-orange-50/90 border border-orange-200/80 shadow-2xs font-bold'
-                    : 'text-stone-700 hover:text-[#0B192C] hover:bg-stone-100/60'
+                    : 'text-stone-700 hover:text-[#0B192C] hover:bg-stone-100/60 font-semibold'
                 }`}
               >
-                {link.id === 'home' && <Home className="w-3.5 h-3.5 text-[#FF671F]" />}
+                {link.id === 'home' && <Home className="w-4 h-4 text-[#FF671F]" />}
                 <span>{link.label}</span>
               </button>
             ))}
@@ -168,9 +344,9 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
             <div className="relative" ref={moreDropdownRef}>
               <button
                 onClick={() => setMoreDropdownOpen(!moreDropdownOpen)}
-                className={`px-3.5 py-1.5 rounded-full text-xs lg:text-sm font-semibold transition-all duration-150 flex items-center gap-1 ${
+                className={`px-3.5 lg:px-4 py-2 rounded-full text-xs md:text-sm lg:text-[15px] font-semibold transition-all duration-150 flex items-center gap-1 ${
                   moreDropdownOpen || activeTab === 'map'
-                    ? 'text-[#0B192C] bg-stone-100 border border-stone-200 shadow-2xs'
+                    ? 'text-[#0B192C] bg-stone-100 border border-stone-200 shadow-2xs font-bold'
                     : 'text-stone-700 hover:text-[#0B192C] hover:bg-stone-100/60'
                 }`}
                 aria-expanded={moreDropdownOpen}
@@ -297,13 +473,13 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
                   <button
                     type="button"
                     onClick={onOpenSearch}
-                    className="flex items-center gap-2 pl-3 pr-3.5 py-1.5 rounded-full bg-stone-100 hover:bg-stone-200/80 border border-stone-200 text-stone-600 hover:text-stone-900 text-xs transition cursor-pointer shadow-2xs focus-visible:ring-2 focus-visible:ring-amber-600 focus:outline-none w-36 lg:w-48"
+                    className="flex items-center gap-2.5 pl-3.5 pr-4 py-2 rounded-full bg-stone-100 hover:bg-stone-200/80 border border-stone-200 text-stone-600 hover:text-stone-900 text-xs sm:text-sm font-medium transition cursor-pointer shadow-2xs focus-visible:ring-2 focus-visible:ring-amber-600 focus:outline-none w-44 lg:w-56"
                     title="Search destinations & monuments"
                     aria-label="Search destinations & monuments"
                   >
-                    <Search className="w-3.5 h-3.5 text-stone-500 shrink-0" aria-hidden="true" />
-                    <span className="truncate text-[11px] text-stone-500 font-medium">Search heritage...</span>
-                    <span className="ml-auto text-[9px] font-mono text-stone-400 bg-white px-1.5 py-0.5 rounded border border-stone-200 hidden lg:inline">⌘K</span>
+                    <Search className="w-4 h-4 text-stone-500 shrink-0" aria-hidden="true" />
+                    <span className="truncate text-xs sm:text-[13px] text-stone-500 font-medium">Search heritage...</span>
+                    <span className="ml-auto text-[10px] font-mono text-stone-400 bg-white px-2 py-0.5 rounded border border-stone-200 hidden lg:inline">⌘K</span>
                   </button>
                 </div>
 
@@ -311,51 +487,190 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
                 <button
                   type="button"
                   onClick={onOpenSearch}
-                  className="md:hidden p-1.5 sm:p-2 rounded-full text-stone-700 hover:text-stone-900 hover:bg-stone-100 transition min-h-[32px] min-w-[32px] sm:min-h-[40px] sm:min-w-[40px] flex items-center justify-center shrink-0 focus-visible:ring-2 focus-visible:ring-amber-600 focus:outline-none cursor-pointer"
+                  className="md:hidden p-2 sm:p-2.5 rounded-full text-stone-700 hover:text-stone-900 hover:bg-stone-100 transition min-h-[36px] min-w-[36px] sm:min-h-[44px] sm:min-w-[44px] flex items-center justify-center shrink-0 focus-visible:ring-2 focus-visible:ring-amber-600 focus:outline-none cursor-pointer"
                   title="Search destinations & monuments"
                   aria-label="Search"
                 >
-                  <Search className="w-4 h-4 text-stone-700" aria-hidden="true" />
+                  <Search className="w-4 h-4 sm:w-5 sm:h-5 text-stone-700" aria-hidden="true" />
                 </button>
               </>
             )}
 
-            {/* City Selector Pill */}
+            {/* City Selector Pill with Exact Location Finder */}
             <div className="relative shrink-0" ref={cityDropdownRef}>
               <button
-                onClick={() => setCityDropdownOpen(!cityDropdownOpen)}
-                className="flex items-center gap-1 px-1.5 sm:px-3 py-1 sm:py-1.5 rounded-full bg-white border border-stone-200 hover:border-[#FF671F]/50 text-xs font-semibold text-[#0B192C] shadow-2xs transition cursor-pointer max-w-[70px] xs:max-w-[85px] sm:max-w-none shrink-0"
-                title="Filter regional content"
+                type="button"
+                onClick={() => {
+                  setCityDropdownOpen(!cityDropdownOpen);
+                  setCitySearchQuery('');
+                  setLocationError(null);
+                }}
+                className="flex items-center gap-1.5 px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-full bg-white border border-stone-200 hover:border-[#FF671F]/60 text-xs sm:text-sm font-bold text-[#0B192C] shadow-2xs transition cursor-pointer shrink-0"
+                title={currentState ? `${selectedCity}, ${currentState}` : selectedCity}
               >
-                <MapPin className="w-2.5 h-2.5 sm:w-3.5 sm:h-3.5 text-[#FF671F] shrink-0" />
-                <span className="truncate text-[10px] sm:text-xs font-bold">{selectedCity}</span>
-                <ChevronDown className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-stone-400 shrink-0" />
+                <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FF671F] shrink-0" />
+                <div className="text-left flex flex-col justify-center min-w-0">
+                  <span className="truncate text-xs sm:text-sm font-bold text-stone-900 leading-tight">
+                    {selectedCity}
+                  </span>
+                  {currentState && selectedCity !== 'All India' && (
+                    <span className="text-[9px] text-stone-500 font-medium leading-none hidden lg:block truncate mt-0.5">
+                      {currentState}
+                    </span>
+                  )}
+                </div>
+                <ChevronDown className={`w-3 h-3 sm:w-3.5 sm:h-3.5 text-stone-400 shrink-0 transition-transform ${cityDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
 
               {cityDropdownOpen && (
-                <div className="absolute top-full right-0 mt-2 w-48 bg-white rounded-2xl shadow-xl border border-[#EFE8DF] p-2 space-y-0.5 z-50 animate-fadeIn">
-                  <div className="px-2.5 py-1 text-[10px] font-bold text-stone-400 uppercase tracking-wider">
-                    Select Region / City
+                <div className="absolute top-full right-0 mt-2 w-72 sm:w-80 bg-white rounded-2xl shadow-2xl border border-stone-200 p-2.5 z-50 animate-fadeIn flex flex-col max-h-[460px]">
+                  {/* Dropdown Header */}
+                  <div className="px-2 pb-2 border-b border-stone-100 flex items-center justify-between">
+                    <div>
+                      <div className="text-[11px] font-bold text-stone-800 uppercase tracking-wider flex items-center gap-1">
+                        <MapPin className="w-3 h-3 text-[#FF671F]" />
+                        <span>Select Exact Location</span>
+                      </div>
+                      <div className="text-[10px] text-stone-500">
+                        Exact city &amp; state pata karein
+                      </div>
+                    </div>
+                    {selectedCity && (
+                      <span className="px-2 py-0.5 rounded-full bg-orange-50 text-[#D45B10] text-[10px] font-bold border border-orange-200/60 truncate max-w-[110px]">
+                        {selectedCity}
+                      </span>
+                    )}
                   </div>
-                  {cities.map((city) => (
+
+                  {/* 1. Detect My Exact Location Action Button */}
+                  <div className="pt-2 pb-1.5">
                     <button
-                      key={city}
-                      onClick={() => {
-                        onSelectCity(city);
-                        setCityDropdownOpen(false);
-                      }}
-                      className={`w-full text-left px-2.5 py-1.5 rounded-lg text-xs font-semibold flex items-center justify-between transition ${
-                        selectedCity === city
-                          ? 'bg-amber-50 text-amber-800 font-bold'
-                          : 'text-stone-700 hover:bg-stone-50'
-                      }`}
+                      type="button"
+                      onClick={handleDetectCurrentLocation}
+                      disabled={isLocating}
+                      className="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl bg-gradient-to-r from-orange-50 to-amber-50 hover:from-orange-100 hover:to-amber-100 border border-orange-200 text-stone-800 transition cursor-pointer text-left shadow-2xs group disabled:opacity-60"
                     >
-                      <span>{city}</span>
-                      {selectedCity === city && (
-                        <span className="w-1.5 h-1.5 rounded-full bg-amber-600" />
-                      )}
+                      <div className="w-7 h-7 rounded-lg bg-[#FF671F] text-white flex items-center justify-center shrink-0 shadow-2xs group-hover:scale-105 transition-transform">
+                        {isLocating ? (
+                          <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                        ) : (
+                          <Navigation className="w-3.5 h-3.5" />
+                        )}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="text-xs font-bold text-[#B24508] flex items-center gap-1">
+                          <span>{isLocating ? 'Detecting your GPS position...' : 'Detect My Exact Location'}</span>
+                        </div>
+                        <div className="text-[10px] text-stone-600 truncate">
+                          {isLocating ? 'Finding exact city & state...' : 'GPS se current city & state pata karein'}
+                        </div>
+                      </div>
                     </button>
-                  ))}
+
+                    {/* Feedback notices */}
+                    {locationNotice && (
+                      <div className="mt-1.5 px-2.5 py-1.5 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-800 text-[11px] font-semibold flex items-center gap-1.5 animate-fadeIn">
+                        <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                        <span className="truncate">{locationNotice}</span>
+                      </div>
+                    )}
+
+                    {locationError && (
+                      <div className="mt-1.5 px-2.5 py-1.5 rounded-lg bg-amber-50 border border-amber-200 text-amber-900 text-[10px] font-medium leading-tight">
+                        {locationError}
+                      </div>
+                    )}
+                  </div>
+
+                  {/* 2. Search Any City Input */}
+                  <div className="py-1">
+                    <div className="flex items-center gap-2 px-2.5 py-1.5 rounded-xl bg-stone-50 border border-stone-200 focus-within:border-[#FF671F] focus-within:bg-white transition">
+                      <Search className="w-3.5 h-3.5 text-stone-400 shrink-0" />
+                      <input
+                        type="text"
+                        placeholder="Search city or state in India..."
+                        value={citySearchQuery}
+                        onChange={(e) => setCitySearchQuery(e.target.value)}
+                        className="w-full text-xs bg-transparent focus:outline-hidden text-stone-800 placeholder-stone-400 font-medium"
+                      />
+                      {citySearchQuery && (
+                        <button
+                          type="button"
+                          onClick={() => setCitySearchQuery('')}
+                          className="text-stone-400 hover:text-stone-600 p-0.5 cursor-pointer"
+                        >
+                          <X className="w-3 h-3" />
+                        </button>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* 3. Cities List (with exact state and highlight) */}
+                  <div className="overflow-y-auto flex-1 divide-y divide-stone-50 pt-1 -mx-1 px-1">
+                    {/* All India option (when no search query or matches "all") */}
+                    {(!citySearchQuery || 'all india'.includes(citySearchQuery.toLowerCase())) && (
+                      <button
+                        type="button"
+                        onClick={() => {
+                          onSelectCity('All India');
+                          setCityDropdownOpen(false);
+                        }}
+                        className={`w-full text-left px-3 py-2 rounded-xl text-xs font-semibold flex items-center justify-between transition cursor-pointer mb-1 ${
+                          selectedCity === 'All India'
+                            ? 'bg-stone-900 text-white font-bold'
+                            : 'text-stone-800 hover:bg-stone-100'
+                        }`}
+                      >
+                        <div>
+                          <div className="font-bold text-xs">All India</div>
+                          <div className={`text-[10px] ${selectedCity === 'All India' ? 'text-stone-300' : 'text-stone-500'}`}>
+                            Pan-India Living Heritage &amp; Monuments
+                          </div>
+                        </div>
+                        {selectedCity === 'All India' && (
+                          <Check className="w-3.5 h-3.5 text-white" />
+                        )}
+                      </button>
+                    )}
+
+                    {/* Filtered Cities */}
+                    {filteredCities.map((c) => {
+                      const isSelected = selectedCity.toLowerCase() === c.name.toLowerCase();
+                      return (
+                        <button
+                          key={c.name}
+                          type="button"
+                          onClick={() => {
+                            onSelectCity(c.name);
+                            setCityDropdownOpen(false);
+                          }}
+                          className={`w-full text-left px-3 py-2 rounded-xl text-xs font-semibold flex items-center justify-between transition cursor-pointer ${
+                            isSelected
+                              ? 'bg-amber-50 text-amber-950 font-bold border border-amber-200/80'
+                              : 'text-stone-800 hover:bg-stone-50'
+                          }`}
+                        >
+                          <div className="min-w-0 pr-2">
+                            <div className="font-bold text-xs text-stone-900 truncate">
+                              {c.name}
+                            </div>
+                            <div className="text-[10px] text-stone-500 font-medium truncate">
+                              {c.state}
+                            </div>
+                          </div>
+                          {isSelected && (
+                            <span className="w-2 h-2 rounded-full bg-[#FF671F] shrink-0" />
+                          )}
+                        </button>
+                      );
+                    })}
+
+                    {filteredCities.length === 0 && (
+                      <div className="py-6 text-center text-xs text-stone-400">
+                        No matching city found. Try another city name.
+                      </div>
+                    )}
+                  </div>
                 </div>
               )}
             </div>
@@ -539,9 +854,10 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
                 className="bg-transparent text-[11px] font-bold text-stone-900 border-0 focus:ring-0 cursor-pointer max-w-[170px] truncate"
                 aria-label="Select region or city"
               >
-                {cities.map((c) => (
-                  <option key={c} value={c}>
-                    {c}
+                <option value="All India">All India</option>
+                {POPULAR_CITIES.map((c) => (
+                  <option key={c.name} value={c.name}>
+                    {c.name} ({c.state})
                   </option>
                 ))}
               </select>

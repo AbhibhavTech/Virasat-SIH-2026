@@ -557,26 +557,26 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
       <div className="space-y-2">
         {blocks.map((block, index) => {
           if (block.type === 'code') {
-            return <pre key={index} className="overflow-x-auto rounded-xl bg-stone-900 p-3 text-xs text-stone-100"><code>{block.text}</code></pre>;
+            return <pre key={index} className="overflow-x-auto rounded-xl bg-stone-900 p-3 sm:p-4 text-xs sm:text-sm text-stone-100"><code>{block.text}</code></pre>;
           }
           if (block.type === 'heading') {
             const headingClass = 'font-serif font-bold text-[#0B192C]';
             return block.level === 1
-              ? <h3 key={index} className={`${headingClass} text-base`}>{renderInlineMarkdown(block.text, `h-${index}`)}</h3>
-              : <h4 key={index} className={`${headingClass} text-sm pt-1`}>{renderInlineMarkdown(block.text, `h-${index}`)}</h4>;
+              ? <h3 key={index} className={`${headingClass} text-lg sm:text-xl`}>{renderInlineMarkdown(block.text, `h-${index}`)}</h3>
+              : <h4 key={index} className={`${headingClass} text-base sm:text-lg pt-1.5`}>{renderInlineMarkdown(block.text, `h-${index}`)}</h4>;
           }
           if (block.type === 'unordered' || block.type === 'ordered') {
             const List = block.type === 'unordered' ? 'ul' : 'ol';
             const listStyle = block.type === 'unordered' ? 'list-disc marker:text-[#FF671F]' : 'list-decimal marker:text-[#FF671F]';
             return (
-              <List key={index} className={`space-y-1 pl-5 ${listStyle}`}>
+              <List key={index} className={`space-y-1.5 pl-5 sm:pl-6 text-sm sm:text-base ${listStyle}`}>
                 {block.text.split('\n').map((item, itemIndex) => (
-                  <li key={itemIndex} className="pl-0.5">{renderInlineMarkdown(item, `l-${index}-${itemIndex}`)}</li>
+                  <li key={itemIndex} className="pl-0.5 leading-relaxed">{renderInlineMarkdown(item, `l-${index}-${itemIndex}`)}</li>
                 ))}
               </List>
             );
           }
-          return <p key={index}>{renderInlineMarkdown(block.text, `p-${index}`)}</p>;
+          return <p key={index} className="text-sm sm:text-base leading-relaxed">{renderInlineMarkdown(block.text, `p-${index}`)}</p>;
         })}
       </div>
     );
@@ -830,7 +830,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
           </span>
           <span className="text-[11px] text-stone-400">Tap to start</span>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-1.5 sm:gap-2">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-2.5">
           {coreSuggestions.map((item, idx) => (
             <button
               key={idx}
@@ -842,17 +842,17 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
                   handleSend(item.prompt);
                 }
               }}
-              className="text-left p-2 sm:p-2.5 rounded-xl sm:rounded-2xl bg-white hover:bg-orange-50/50 border border-[#EFE8DF] hover:border-orange-300 text-xs text-stone-800 hover:text-[#FF671F] transition shadow-2xs group flex items-center justify-between gap-1.5"
+              className="text-left p-3 sm:p-3.5 rounded-2xl bg-white hover:bg-orange-50/50 border border-[#EFE8DF] hover:border-orange-300 text-xs sm:text-sm text-stone-800 hover:text-[#FF671F] transition shadow-2xs group flex items-center justify-between gap-2"
             >
-              <span className="font-semibold text-[11px] sm:text-xs leading-tight truncate">{item.label}</span>
-              <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-stone-400 group-hover:text-[#FF671F] group-hover:translate-x-0.5 transition shrink-0" />
+              <span className="font-semibold text-xs sm:text-sm leading-tight truncate">{item.label}</span>
+              <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-stone-400 group-hover:text-[#FF671F] group-hover:translate-x-0.5 transition shrink-0" />
             </button>
           ))}
         </div>
       </div>
 
       {/* Active Dialogue Box */}
-      <div className="w-full flex flex-col h-[500px] sm:h-[640px] lg:h-[680px] rounded-2xl sm:rounded-3xl bg-white border border-[#EFE8DF] shadow-warm overflow-hidden">
+      <div className="w-full flex flex-col h-[620px] sm:h-[720px] lg:h-[800px] xl:h-[840px] rounded-2xl sm:rounded-3xl bg-white border border-[#EFE8DF] shadow-warm overflow-hidden">
         {/* Chat Stream Header */}
         <div className="p-2.5 sm:p-3.5 px-3.5 sm:px-6 bg-[#FAF8F5] border-b border-[#EFE8DF] flex items-center justify-between flex-wrap gap-2">
           <div className="flex items-center gap-2">
@@ -902,7 +902,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
 
                 {/* Bubble - Full extent */}
                 <div
-                  className={`w-full max-w-[96%] sm:max-w-[92%] lg:max-w-[88%] rounded-2xl sm:rounded-3xl p-3 sm:p-6 text-xs sm:text-sm leading-relaxed shadow-xs relative group ${isUser
+                  className={`w-full max-w-[96%] sm:max-w-[94%] lg:max-w-[90%] rounded-2xl sm:rounded-3xl p-4 sm:p-6 lg:p-7 text-sm sm:text-base leading-relaxed shadow-xs relative group ${isUser
                     ? 'bg-[#FF671F] text-white font-medium rounded-tr-sm ml-auto'
                     : 'bg-white border border-[#EFE8DF] text-stone-800 rounded-tl-sm mr-auto'
                     }`}
@@ -1191,9 +1191,9 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
                 }}
                 placeholder="Message Virasat AI Astra… (Enter to send, Shift + Enter for a new line)"
                 aria-label="Message Virasat AI Astra"
-                className="w-full min-h-[48px] max-h-36 resize-none overflow-y-auto pl-4 pr-12 py-3 sm:py-3.5 rounded-2xl bg-[#FAF8F5] border border-[#EFE8DF] text-xs sm:text-sm text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#FF671F] focus:bg-white focus:ring-1 focus:ring-[#FF671F] transition"
+                className="w-full min-h-[56px] max-h-40 resize-none overflow-y-auto pl-5 pr-14 py-3.5 sm:py-4 rounded-2xl bg-[#FAF8F5] border border-[#EFE8DF] text-sm sm:text-base text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#FF671F] focus:bg-white focus:ring-1 focus:ring-[#FF671F] transition"
               />
-              <div className="absolute right-2 top-1/2 -translate-y-1/2 flex items-center">
+              <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center">
                 <VoiceInputButton
                   variant="ai"
                   title="Speak to Virasat AI Astra"
@@ -1208,11 +1208,11 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
             <button
               type="submit"
               disabled={loading || !input.trim()}
-              className="px-5 sm:px-6 py-3 sm:py-3.5 rounded-2xl bg-[#FF671F] hover:bg-[#E65100] disabled:opacity-40 disabled:cursor-not-allowed text-white text-xs sm:text-sm font-bold transition shadow-xs flex items-center gap-2 shrink-0 cursor-pointer"
+              className="px-6 sm:px-7 py-3.5 sm:py-4 rounded-2xl bg-[#FF671F] hover:bg-[#E65100] disabled:opacity-40 disabled:cursor-not-allowed text-white text-sm sm:text-base font-bold transition shadow-xs flex items-center gap-2 shrink-0 cursor-pointer"
               aria-label="Send message"
             >
               <span>Send</span>
-              <Send className="w-4 h-4" />
+              <Send className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
           </form>
 

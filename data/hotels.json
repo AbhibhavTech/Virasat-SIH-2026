@@ -381,5 +381,90 @@
       "jallianwala-bagh"
     ],
     "city_id": "amritsar"
+  },
+  {
+    "id": "radisson-red-mohali",
+    "name": "Radisson RED Chandigarh Mohali",
+    "city": "SAS Nagar",
+    "city_id": "sas-nagar",
+    "state": "Punjab",
+    "lat": 30.6865,
+    "lng": 76.7325,
+    "category": "Luxury Resort",
+    "rating": 4.8,
+    "reviews_count": "2,450+",
+    "distance_km": 1.5,
+    "price_indication": "₹6,500 - ₹11,500 / night",
+    "night_tariff": "₹6,500 - ₹11,500 / night",
+    "day_tariff": "₹2,800 - ₹4,200 / day",
+    "location": "Plot No. 1, Phase 9, Industrial Area, Sector 66, SAS Nagar, Punjab",
+    "thumbnail_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&auto=format&fit=crop&q=80",
+    "amenities": [
+      "High-Speed Wi-Fi",
+      "Rooftop Swimming Pool",
+      "Artisan Punjabi Dining",
+      "Luxury Spa",
+      "Free Valet Parking"
+    ],
+    "nearby_heritage": [
+      "gurdwara-amb-sahib",
+      "pca-stadium",
+      "fateh-burj"
+    ]
+  },
+  {
+    "id": "glades-hotel-mohali",
+    "name": "Glades Hotel Mohali",
+    "city": "SAS Nagar",
+    "city_id": "sas-nagar",
+    "state": "Punjab",
+    "lat": 30.7012,
+    "lng": 76.7128,
+    "category": "Boutique Hotel",
+    "rating": 4.6,
+    "reviews_count": "1,820+",
+    "distance_km": 0.8,
+    "price_indication": "₹3,400 - ₹5,800 / night",
+    "night_tariff": "₹3,400 - ₹5,800 / night",
+    "day_tariff": "₹1,600 - ₹2,400 / day",
+    "location": "SCO 12-14, Phase 9, SAS Nagar, Punjab",
+    "thumbnail_url": "https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&auto=format&fit=crop&q=80",
+    "amenities": [
+      "Complimentary Wi-Fi",
+      "Multi-cuisine Punjabi Restaurant",
+      "24/7 Room Service"
+    ],
+    "nearby_heritage": [
+      "silvi-park",
+      "gurdwara-amb-sahib"
+    ]
+  },
+  {
+    "id": "forest-hill-resort-mohali",
+    "name": "Forest Hill Golf & Country Club Resort",
+    "city": "SAS Nagar",
+    "city_id": "sas-nagar",
+    "state": "Punjab",
+    "lat": 30.7725,
+    "lng": 76.8122,
+    "category": "Eco Resort",
+    "rating": 4.9,
+    "reviews_count": "3,100+",
+    "distance_km": 6.5,
+    "price_indication": "₹8,500 - ₹16,500 / night",
+    "night_tariff": "₹8,500 - ₹16,500 / night",
+    "day_tariff": "₹3,800 - ₹5,500 / day",
+    "location": "Village Nayagaon, Shivalik Foothills, SAS Nagar, Punjab",
+    "thumbnail_url": "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800&auto=format&fit=crop&q=80",
+    "amenities": [
+      "9-Hole Golf Course",
+      "Lakeside Eco Cabins",
+      "Organic Farm Dining",
+      "Forest Trails"
+    ],
+    "nearby_heritage": [
+      "siswan-dam",
+      "jayanti-devi-temple"
+    ]
   }
 ]

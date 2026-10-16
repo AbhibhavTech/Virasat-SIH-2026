@@ -54,6 +54,7 @@ import { CitizenReportModal } from '../components/common/CitizenReportModal';
 import { ScrollReveal } from '../components/common/ScrollReveal';
 import { HeritageDivider } from '../components/common/HeritageDivider';
 import { getMumbaiHierarchyAttractions, isMumbaiCity } from '../data/mumbaiDestinations';
+import { getAmaravatiHierarchyAttractions, isAmaravatiCity } from '../data/amaravatiDestinations';
 
 interface IndiaHierarchyPageProps {
   onSelectPlace?: (placeId: string) => void;
@@ -66,13 +67,23 @@ type TerritoryTab = 'states' | 'uts' | 'all' | 'saved';
 type SortOption = 'default' | 'alpha' | 'destinations' | 'region';
 
 const MUMBAI_HIERARCHY_PLACES = getMumbaiHierarchyAttractions();
+const AMARAVATI_HIERARCHY_PLACES = getAmaravatiHierarchyAttractions();
 
 function isMumbaiHierarchyCity(city: CityHierarchyEntity): boolean {
   return isMumbaiCity(city.name) && city.state_id?.toLowerCase() === 'maharashtra';
 }
 
+function isAmaravatiHierarchyCity(city: CityHierarchyEntity): boolean {
+  return (
+    isAmaravatiCity(city.name) ||
+    isAmaravatiCity(city.id) ||
+    (city.id?.toLowerCase() === 'amaravati' && city.state_id?.toLowerCase() === 'andhra-pradesh')
+  );
+}
+
 function getCityPlaceCatalog(city: CityHierarchyEntity): AttractionEntity[] {
   if (isMumbaiHierarchyCity(city)) return MUMBAI_HIERARCHY_PLACES;
+  if (isAmaravatiHierarchyCity(city)) return AMARAVATI_HIERARCHY_PLACES;
   return [
     ...(city.heritage || []),
     ...(city.monuments || []),
@@ -343,6 +354,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
   const filteredCityPlaces = useMemo(() => {
     return cityAllPlaces.filter((attr) => {
       if (activeCategoryFilter === 'all') return true;
+      if (activeCategoryFilter === 'hidden_gems') return false;
       if (attr.category === activeCategoryFilter) return true;
       if (attr.topic && attr.topic.toLowerCase() === activeCategoryFilter.toLowerCase()) return true;
       return false;
@@ -352,6 +364,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
   const filteredCityCandidates = useMemo(() => {
     return cityHiddenGemCandidates.filter((attr) => {
       if (activeCategoryFilter === 'all') return true;
+      if (activeCategoryFilter === 'hidden_gems') return true;
       if (attr.category === activeCategoryFilter) return true;
       if (attr.topic && attr.topic.toLowerCase() === activeCategoryFilter.toLowerCase()) return true;
       return false;
@@ -1370,7 +1383,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                         </button>
                       </div>
                     ) : (
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 sm:gap-7">
                         {filteredStates.map((state) => (
                           <StateCard
                             key={state.id}
@@ -1405,7 +1418,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                         No states found matching your search or filter.
                       </div>
                     ) : (
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 sm:gap-7">
                         {displayedStates.map((state) => (
                           <StateCard
                             key={state.id}
@@ -1441,7 +1454,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                         No union territories found matching your filters.
                       </div>
                     ) : (
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4 gap-6 sm:gap-7">
                         {utsList.map((state) => (
                           <StateCard
                             key={state.id}
@@ -1964,13 +1977,18 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
               <div className="space-y-4">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                   <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#0B192C]">
-                    Verified Heritage Sites &amp; Places in {currentCity.name} ({filteredCityPlaces.length})
+                    {activeCategoryFilter === 'hidden_gems'
+                      ? `Hidden Gems & Experiences in ${currentCity.name} (${filteredCityCandidates.length})`
+                      : `Verified Heritage Sites & Places in ${currentCity.name} (${filteredCityPlaces.length})`}
                   </h3>
 
                   {/* Category Filter Pills */}
                   <div className="flex items-center gap-1.5 overflow-x-auto pb-1">
                     {[
                       { id: 'all', label: 'All Places' },
+                      ...(cityHiddenGemCandidates.length > 0
+                        ? [{ id: 'hidden_gems', label: `✨ Hidden Gems (${cityHiddenGemCandidates.length})` }]
+                        : []),
                       { id: 'heritage', label: 'Heritage & UNESCO' },
                       { id: 'monuments', label: 'Monuments' },
                       { id: 'museums', label: 'Museums' },
@@ -1994,7 +2012,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                 </div>
 
                 {/* Places Grid with neutral official placeholder fallback cards */}
-                {filteredCityPlaces.length === 0 ? (
+                {filteredCityPlaces.length === 0 && activeCategoryFilter !== 'hidden_gems' ? (
                   <div className="p-12 text-center bg-white rounded-3xl border border-dashed border-[#EFE8DF]">
                     <div className="mb-4">
                       <Shield className="w-12 h-12 text-amber-700 mx-auto opacity-50" />
@@ -2248,43 +2266,110 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                       </p>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5 sm:gap-6">
-                      {filteredCityCandidates.map((place) => (
-                        <article key={place.id} className="overflow-hidden rounded-2xl sm:rounded-3xl border border-amber-200 bg-white shadow-xs flex flex-col">
-                          <div className="relative h-36 sm:h-44 bg-stone-100 overflow-hidden">
-                            {brokenImages[place.id] || !place.image_url ? (
-                              <OfficialImagePending heightClass="h-full" label="Official image pending" showBadge={false} />
-                            ) : (
-                              <img
-                                src={place.image_url}
-                                alt={place.name}
-                                loading="lazy"
-                                onError={() => handleImageError(place.id)}
-                                className="w-full h-full object-cover"
-                              />
-                            )}
-                            <span className="absolute top-3 left-3 rounded-full bg-amber-50/95 border border-amber-300 px-2.5 py-1 text-[10px] font-bold text-amber-900">
-                              Hidden Gem Candidate · Under verification
-                            </span>
-                          </div>
-                          <div className="p-4 flex flex-1 flex-col gap-3">
-                            <div>
-                              <h4 className="font-serif text-lg font-bold text-stone-900">{place.name}</h4>
-                              <p className="mt-1 text-xs leading-relaxed text-stone-600 line-clamp-3">{place.summary}</p>
+                      {filteredCityCandidates.map((place) => {
+                        const tripAdvisorTag = place.tags?.find((t) => t.includes('TripAdvisor'));
+                        const areaTag = place.address && place.address !== 'Mumbai, Maharashtra' ? place.address : place.district;
+
+                        return (
+                          <article
+                            key={place.id}
+                            className="overflow-hidden rounded-2xl sm:rounded-3xl border border-amber-200/90 bg-white shadow-xs hover:shadow-md transition-all duration-300 flex flex-col group"
+                          >
+                            <div className="relative h-40 sm:h-48 bg-stone-100 overflow-hidden">
+                              {brokenImages[place.id] || !place.image_url ? (
+                                <OfficialImagePending heightClass="h-full" label="Official image pending" showBadge={false} />
+                              ) : (
+                                <img
+                                  src={place.image_url}
+                                  alt={place.name}
+                                  loading="lazy"
+                                  onError={() => handleImageError(place.id)}
+                                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                />
+                              )}
+                              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
+
+                              {/* Badges */}
+                              <div className="absolute top-2.5 left-2.5 flex flex-wrap gap-1 items-center max-w-[80%]">
+                                <span className="rounded-full bg-amber-900/90 text-amber-200 backdrop-blur-xs px-2.5 py-0.5 text-[9px] sm:text-[10px] font-bold">
+                                  Hidden Gem Candidate
+                                </span>
+                                {place.subtopic && (
+                                  <span className="rounded-full bg-black/60 text-white backdrop-blur-xs px-2 py-0.5 text-[8px] sm:text-[9px] font-medium truncate max-w-[150px]">
+                                    {place.subtopic}
+                                  </span>
+                                )}
+                              </div>
+
+                              {/* TripAdvisor Bubble Rating Badge */}
+                              {tripAdvisorTag && (
+                                <div className="absolute top-2.5 right-2.5 rounded-full bg-emerald-600/95 text-white backdrop-blur-xs px-2 py-0.5 text-[10px] font-bold flex items-center gap-1 shadow-sm">
+                                  <span>★</span>
+                                  <span>{tripAdvisorTag.replace('TripAdvisor', '').replace('★', '').trim()}</span>
+                                </div>
+                              )}
+
+                              {/* Area Pill Bottom Left Overlay */}
+                              {areaTag && (
+                                <div className="absolute bottom-2.5 left-3 right-3 text-white pointer-events-none flex items-center justify-between">
+                                  <span className="text-[10px] sm:text-[11px] font-semibold text-amber-200 flex items-center gap-1 drop-shadow-xs truncate">
+                                    <MapPin className="w-3 h-3 text-amber-400 shrink-0" />
+                                    <span>{areaTag}</span>
+                                  </span>
+                                </div>
+                              )}
                             </div>
-                            <div className="mt-auto rounded-xl bg-amber-50/70 border border-amber-100 p-3 text-[11px] text-stone-700 space-y-1">
-                              {place.best_time_to_visit && <p><strong>Best time:</strong> {place.best_time_to_visit}</p>}
-                              {place.verification_note && <p>{place.verification_note}</p>}
+
+                            <div className="p-4 sm:p-5 flex flex-1 flex-col justify-between gap-3">
+                              <div className="space-y-1.5">
+                                <h4 className="font-serif text-base sm:text-lg font-bold text-stone-900 leading-snug group-hover:text-[#FF671F] transition-colors">
+                                  {place.name}
+                                </h4>
+                                <p className="text-xs leading-relaxed text-stone-600 line-clamp-3">
+                                  {place.summary}
+                                </p>
+                              </div>
+
+                              <div className="rounded-xl bg-amber-50/70 border border-amber-100 p-3 text-[11px] text-stone-700 space-y-1">
+                                {place.best_time_to_visit && (
+                                  <p>
+                                    <strong className="text-amber-900">Timing &amp; Season:</strong> {place.best_time_to_visit}
+                                  </p>
+                                )}
+                                {place.verification_note && (
+                                  <p className="text-stone-600">
+                                    {place.verification_note}
+                                  </p>
+                                )}
+                              </div>
+
+                              <div className="flex items-center gap-2 pt-1">
+                                <button
+                                  type="button"
+                                  onClick={() => setPreviewPlace(place)}
+                                  className="flex-1 rounded-xl bg-[#FF671F] hover:bg-[#E65100] py-2 px-3 text-xs font-bold text-white transition flex items-center justify-center gap-1.5 shadow-2xs cursor-pointer active:scale-98"
+                                >
+                                  <Eye className="w-3.5 h-3.5" />
+                                  <span>Explore Details</span>
+                                </button>
+
+                                {place.source_url && (
+                                  <a
+                                    href={place.source_url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="py-2 px-3 rounded-xl border border-stone-200 bg-stone-50 hover:bg-stone-100 text-stone-700 text-xs font-semibold flex items-center gap-1 transition shrink-0"
+                                    title="View community reviews & tours on TripAdvisor"
+                                  >
+                                    <span>Reviews</span>
+                                    <ExternalLink className="w-3.5 h-3.5 text-stone-500" />
+                                  </a>
+                                )}
+                              </div>
                             </div>
-                            <button
-                              type="button"
-                              onClick={() => setPreviewPlace(place)}
-                              className="w-full rounded-xl bg-[#FF671F] hover:bg-[#E65100] py-2.5 px-3 text-xs font-bold text-white transition"
-                            >
-                              Quick Look
-                            </button>
-                          </div>
-                        </article>
-                      ))}
+                          </article>
+                        );
+                      })}
                     </div>
                   </section>
                 )}

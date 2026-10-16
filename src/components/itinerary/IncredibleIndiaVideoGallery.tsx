@@ -1,19 +1,16 @@
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import {
   MapPin,
-  Compass,
   ArrowRight,
   ChevronLeft,
   ChevronRight,
+  Hotel,
+  Palmtree,
+  Car,
+  Train,
+  UtensilsCrossed,
+  Landmark,
   Sparkles,
-  Maximize2,
-  Minimize2,
-  Play,
-  Pause,
-  Film,
-  Camera,
-  Calendar,
-  Layers,
 } from 'lucide-react';
 
 export interface HeritageCircuitDestination {
@@ -24,191 +21,106 @@ export interface HeritageCircuitDestination {
   cityId: string;
   state: string;
   region: string;
-  category: 'royal' | 'spiritual' | 'coastal' | 'unesco' | 'himalayan';
+  category: 'hotels' | 'resorts' | 'taxis' | 'trains' | 'restaurants' | 'monuments';
   imageUrl: string;
-  videoUrl?: string;
   badge: string;
-  unescoNumber?: string;
-  bestSeason: string;
+  featureLabel: string;
+  iconName: 'hotel' | 'palmtree' | 'car' | 'train' | 'utensils' | 'landmark';
   highlights: string[];
+  imagePosition?: string;
 }
 
 export const HERITAGE_CIRCUIT_DESTINATIONS: HeritageCircuitDestination[] = [
   {
-    id: 'taj-mahal',
-    title: 'Taj Mahal & Imperial Agra',
-    tagline: 'Mughal Architectural Zenith & Timeless Monument of Eternal Love',
-    city: 'Agra',
-    cityId: 'agra',
-    state: 'Uttar Pradesh',
-    region: 'Golden Triangle',
-    category: 'unesco',
-    imageUrl: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1600&auto=format&fit=crop&q=85',
-    badge: 'UNESCO World Heritage Site',
-    unescoNumber: 'UNESCO #252',
-    bestSeason: 'Oct - Mar',
-    highlights: ['Taj Mahal at Sunrise', 'Agra Fort Palaces', 'Fatehpur Sikri', 'Mehtab Bagh View'],
+    id: 'lotus-temple',
+    title: 'Lotus Temple (Baháʼí House of Worship)',
+    tagline: 'Iconic pure white marble petals, tranquil reflecting pools, and universal sanctuary of peace in the heart of Delhi.',
+    city: 'New Delhi',
+    cityId: 'delhi',
+    state: 'Delhi NCR',
+    region: 'National Capital Region',
+    category: 'monuments',
+    imageUrl: '/images/lotus-temple-delhi.png',
+    badge: 'Architectural Wonder & Sacred Landmark',
+    featureLabel: 'Lotus Temple',
+    iconName: 'landmark',
+    highlights: ['27 Pure Marble Petals', '9 Tranquil Ponds & Gardens', 'Universal Silent Sanctuary'],
   },
   {
-    id: 'gateway-mumbai',
-    title: 'Gateway of India & Mumbai Harbor',
-    tagline: 'Colonial Splendor along the Arabian Sea & Historic Queen\'s Necklace',
+    id: 'indian-railways',
+    title: 'Vande Bharat Express & High-Speed Rail',
+    tagline: 'Experience world-class semi-high speed transit, aerodynamic executive comfort, and scenic Indian rail corridors.',
+    city: 'Pan-India',
+    cityId: 'delhi',
+    state: 'Indian Railways',
+    region: 'National High-Speed Corridors',
+    category: 'trains',
+    imageUrl: '/images/vande-bharat-express.jpg',
+    badge: 'Indian Railways & Vande Bharat',
+    featureLabel: 'Trains',
+    iconName: 'train',
+    highlights: ['Vande Bharat Express', 'Vistadome Glass Cars', 'IRCTC Executive Connectivity'],
+    imagePosition: 'object-right lg:object-center',
+  },
+  {
+    id: 'nature-resorts',
+    title: 'Mountain Eco-Resorts & Plantation Stays',
+    tagline: 'Unwind under majestic misty peaks in authentic thatched cottages, spice plantation bungalows, and forest retreats.',
+    city: 'Wayanad & Munnar',
+    cityId: 'kochi',
+    state: 'Kerala',
+    region: 'Western Ghats Eco-Circuits',
+    category: 'resorts',
+    imageUrl: '/images/mountain-eco-resort.jpg',
+    badge: 'Hillside Eco-Resorts & Nature Villas',
+    featureLabel: 'Resorts',
+    iconName: 'palmtree',
+    highlights: ['Traditional Thatched Cottages', 'Misty Mountain Panoramas', 'Ayurveda Wellness Retreats'],
+  },
+  {
+    id: 'heritage-hotels',
+    title: 'Royal Palace Hotels & Heritage Stays',
+    tagline: 'Experience timeless Indian hospitality in restored royal havelis, lake palaces, and luxury heritage suites.',
+    city: 'Udaipur',
+    cityId: 'udaipur',
+    state: 'Rajasthan',
+    region: 'Royal Rajasthan',
+    category: 'hotels',
+    imageUrl: 'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=1600&auto=format&fit=crop&q=85',
+    badge: 'Heritage Hotels & Palaces',
+    featureLabel: 'Hotels',
+    iconName: 'hotel',
+    highlights: ['Royal Palace Suites', 'Verified Heritage Tariffs', 'Courtyard Dining'],
+  },
+  {
+    id: 'tourist-taxis',
+    title: 'Prepaid Sightseeing Cabs & Outstation Taxis',
+    tagline: 'Fixed tourism rate cards, sanitized AC tourist cabs, and reliable local chauffeurs for seamless point-to-point travel.',
     city: 'Mumbai',
     cityId: 'mumbai',
     state: 'Maharashtra',
-    region: 'Konkan Gateway',
-    category: 'coastal',
-    imageUrl: 'https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1600&auto=format&fit=crop&q=85',
-    videoUrl: '/videos/mumbai.mp4',
-    badge: 'Arabian Sea Landmark',
-    bestSeason: 'Nov - Feb',
-    highlights: ['Gateway Harbor Plaza', 'Elephanta Caves', 'Marine Drive Promenade', 'Colaba Causeway Art'],
+    region: 'Konkan Coast',
+    category: 'taxis',
+    imageUrl: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1600&auto=format&fit=crop&q=85',
+    badge: 'Verified Cabs & Outstation Taxis',
+    featureLabel: 'Taxis',
+    iconName: 'car',
+    highlights: ['Airport Prepaid Counters', 'AC Outstation Cabs', 'Fixed Tourist Tariffs'],
   },
   {
-    id: 'amber-fort',
-    title: 'Amber Fort & Pink City Citadels',
-    tagline: 'Majestic Hilltop Citadels, Honeycomb Facades & Royal Rajputana',
-    city: 'Jaipur',
-    cityId: 'jaipur',
-    state: 'Rajasthan',
-    region: 'Royal Rajputana Circuit',
-    category: 'royal',
-    imageUrl: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?w=1600&auto=format&fit=crop&q=85',
-    videoUrl: '/videos/jaipur-amber-fort.webm',
-    badge: 'Hill Forts of Rajasthan',
-    unescoNumber: 'UNESCO #247',
-    bestSeason: 'Oct - Mar',
-    highlights: ['Sheesh Mahal Mirror Hall', 'Hawa Mahal Breezes', 'City Palace Museum', 'Nahargarh Sunset'],
-  },
-  {
-    id: 'sacred-varanasi',
-    title: 'Sacred Ghats & Ganga Aarti',
-    tagline: 'Evening Brass Lamp Offerings, Timeless Chants & The Spiritual Soul of Bharat',
-    city: 'Varanasi',
-    cityId: 'varanasi',
-    state: 'Uttar Pradesh',
-    region: 'Sacred Heart of Bharat',
-    category: 'spiritual',
-    imageUrl: '/images/varanasi-ganga-aarti.jpg',
-    badge: 'Oldest Living City on Earth',
-    bestSeason: 'Oct - Mar',
-    highlights: ['Dashashwamedh Maha Aarti', 'Sunrise Subah-e-Banaras Boat', 'Assi Ghat Walks', 'Sarnath Deer Park'],
-  },
-  {
-    id: 'kerala-backwaters',
-    title: 'Emerald Backwaters & Coastal Lagoons',
-    tagline: 'Serene Palm Canals, Traditional Houseboats & God\'s Own Country',
-    city: 'Kochi',
-    cityId: 'kochi',
-    state: 'Kerala',
-    region: 'Malabar & Palm Coast',
-    category: 'coastal',
-    imageUrl: 'https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=1600&auto=format&fit=crop&q=85',
-    videoUrl: '/videos/kerala.mp4',
-    badge: 'God\'s Own Country',
-    bestSeason: 'Sep - Mar',
-    highlights: ['Alleppey Houseboat Canals', 'Fort Kochi Chinese Nets', 'Mattancherry Murals', 'Kathakali Centers'],
-  },
-  {
-    id: 'golden-temple',
-    title: 'Harmandir Sahib (The Golden Temple)',
-    tagline: 'Gleaming Gold Sanctuary of Universal Peace, Sacred Sarovar & Langar',
+    id: 'heritage-dining',
+    title: 'Royal Thalis & Historic Dining Enclaves',
+    tagline: 'Relish 24-dish traditional thalis, royal Awadhi dum-pukht curries, South Indian filter coffee, and iconic street food.',
     city: 'Amritsar',
     cityId: 'amritsar',
     state: 'Punjab',
     region: 'Heart of Punjab',
-    category: 'spiritual',
-    imageUrl: 'https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=1600&auto=format&fit=crop&q=85',
-    badge: 'Universal Spiritual Sanctuary',
-    bestSeason: 'Oct - Mar',
-    highlights: ['Amrit Sarovar Parikrama', 'World\'s Largest Community Langar', 'Jallianwala Bagh', 'Wagah Border Ceremony'],
-  },
-  {
-    id: 'udaipur-palaces',
-    title: 'City Palace & Lake Pichola',
-    tagline: 'Venice of the East, Floating Marble Palaces & Aravalli Mountain Vistas',
-    city: 'Udaipur',
-    cityId: 'udaipur',
-    state: 'Rajasthan',
-    region: 'Mewar Heritage Circuit',
-    category: 'royal',
-    imageUrl: 'https://images.unsplash.com/photo-1589182373726-e4f658ab50f0?w=1600&auto=format&fit=crop&q=85',
-    badge: 'Royal Mewar Capital',
-    bestSeason: 'Sep - Mar',
-    highlights: ['City Palace Complex', 'Jag Mandir Island Boat', 'Saheliyon Ki Bari', 'Bagore Ki Haveli Dance'],
-  },
-  {
-    id: 'hampi-ruins',
-    title: 'Vijayanagara Empire & Stone Chariot',
-    tagline: 'Surreal Boulder Landscapes, 14th-Century Megaliths & Ancient Temples',
-    city: 'Hampi',
-    cityId: 'hampi',
-    state: 'Karnataka',
-    region: 'Deccan Plateau',
-    category: 'unesco',
-    imageUrl: 'https://images.unsplash.com/photo-1600100397608-f010f443b749?w=1600&auto=format&fit=crop&q=85',
-    badge: 'UNESCO World Heritage Site',
-    unescoNumber: 'UNESCO #241',
-    bestSeason: 'Nov - Feb',
-    highlights: ['Vittala Temple Stone Chariot', 'Virupaksha Temple', 'Lotus Mahal Pavilions', 'Hemakuta Hill Sunset'],
-  },
-  {
-    id: 'goa-coastal',
-    title: 'Old Goa Basilicas & Coastal Heritage',
-    tagline: '16th-Century Baroque Cathedrals, Latin Quarter & Arabian Palm Shores',
-    city: 'Goa',
-    cityId: 'goa',
-    state: 'Goa',
-    region: 'Konkan Coast',
-    category: 'coastal',
-    imageUrl: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=1600&auto=format&fit=crop&q=85',
-    badge: 'UNESCO World Heritage Site',
-    unescoNumber: 'UNESCO #234',
-    bestSeason: 'Nov - Feb',
-    highlights: ['Basilica of Bom Jesus', 'Se Cathedral Chimes', 'Fontainhas Heritage Walk', 'Aguada Lighthouse'],
-  },
-  {
-    id: 'ladakh-monasteries',
-    title: 'High Himalayan Monasteries & Azure Lakes',
-    tagline: 'Tibetan Buddhist Monasteries, Pangong Tso & Highest Motorable Passes',
-    city: 'Leh Ladakh',
-    cityId: 'ladakh',
-    state: 'Ladakh',
-    region: 'Trans-Himalayan Frontier',
-    category: 'himalayan',
-    imageUrl: 'https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?w=1600&auto=format&fit=crop&q=85',
-    badge: 'Roof of the World',
-    bestSeason: 'May - Sep',
-    highlights: ['Thiksey Monastery Chants', 'Pangong Tso Blue Waters', 'Nubra Valley Dunes', 'Khardung La Pass (17,982 ft)'],
-  },
-  {
-    id: 'khajuraho-temples',
-    title: 'Chandela Temples & Sculptural Marvels',
-    tagline: 'Medieval Nagara Architecture, Intricate Carvings & Artistic Heritage',
-    city: 'Khajuraho',
-    cityId: 'khajuraho',
-    state: 'Madhya Pradesh',
-    region: 'Central Bundelkhand',
-    category: 'unesco',
-    imageUrl: 'https://images.unsplash.com/photo-1606293926075-69a00dbfde81?w=1600&auto=format&fit=crop&q=85',
-    badge: 'UNESCO World Heritage Site',
-    unescoNumber: 'UNESCO #240',
-    bestSeason: 'Oct - Mar',
-    highlights: ['Kandariya Mahadeva Temple', 'Western Group of Temples', 'Sound & Light Show', 'Raneh Waterfalls'],
-  },
-  {
-    id: 'rishikesh-himalayas',
-    title: 'Rishikesh & Sacred Ganga Foothills',
-    tagline: 'Yoga Capital of the World, Ram Jhula Suspensions & Himalayan Waters',
-    city: 'Rishikesh',
-    cityId: 'rishikesh',
-    state: 'Uttarakhand',
-    region: 'Garhwal Himalayas',
-    category: 'spiritual',
-    imageUrl: 'https://images.unsplash.com/photo-1600100397608-f010f443b749?w=1600&auto=format&fit=crop&q=85',
-    badge: 'Yoga Capital of the World',
-    bestSeason: 'Sep - Nov & Mar - May',
-    highlights: ['Triveni Ghat Evening Aarti', 'Lakshman Jhula Footbridge', 'Beatles Ashram Murals', 'Neelkanth Mahadev'],
+    category: 'restaurants',
+    imageUrl: 'https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=1600&auto=format&fit=crop&q=85',
+    badge: 'Authentic Regional Restaurants',
+    featureLabel: 'Restaurants',
+    iconName: 'utensils',
+    highlights: ['24-Dish Heritage Thalis', 'Legendary Food Bazaars', 'Pure Vegetarian Stalls'],
   },
 ];
 
@@ -224,45 +136,30 @@ export const IncredibleIndiaVideoGallery: React.FC<IncredibleIndiaVideoGalleryPr
   selectedCityId,
 }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-  const [isExpandedMode, setIsExpandedMode] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState<'all' | 'unesco' | 'royal' | 'spiritual' | 'coastal' | 'himalayan'>('all');
-  const [mediaMode, setMediaMode] = useState<'photo' | 'video'>('photo');
 
-  // Filter destinations based on category
-  const filteredDestinations = HERITAGE_CIRCUIT_DESTINATIONS.filter((d) =>
-    selectedCategory === 'all' ? true : d.category === selectedCategory
-  );
+  const destinations = HERITAGE_CIRCUIT_DESTINATIONS;
+  const total = destinations.length;
+  const current = destinations[currentIndex] || destinations[0];
 
-  const total = filteredDestinations.length;
-  const current = filteredDestinations[currentIndex] || filteredDestinations[0] || HERITAGE_CIRCUIT_DESTINATIONS[0];
-
-  // Keep index within bounds if category changes
-  useEffect(() => {
-    setCurrentIndex(0);
-  }, [selectedCategory]);
-
-  // If a city was selected externally, jump to its slide if matched
+  // Jump to slide if a matching city was selected externally
   useEffect(() => {
     if (!selectedCityId) return;
-    const matchIndex = filteredDestinations.findIndex(
+    const matchIndex = destinations.findIndex(
       (d) => d.cityId.toLowerCase() === selectedCityId.toLowerCase()
     );
     if (matchIndex !== -1) {
       setCurrentIndex(matchIndex);
     }
-  }, [selectedCityId, filteredDestinations]);
+  }, [selectedCityId, destinations]);
 
-  // Auto-move rotation timer: smoothly advances every 5 seconds
+  // Auto-move rotation timer: advances smoothly every 6 seconds
   useEffect(() => {
-    if (isPaused) return;
-
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % total);
-    }, 5000);
+    }, 6000);
 
     return () => clearInterval(interval);
-  }, [isPaused, total]);
+  }, [total]);
 
   const handleNext = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % total);
@@ -272,210 +169,132 @@ export const IncredibleIndiaVideoGallery: React.FC<IncredibleIndiaVideoGalleryPr
     setCurrentIndex((prev) => (prev - 1 + total) % total);
   }, [total]);
 
-  const hasVideo = Boolean(current.videoUrl);
+  const renderIcon = (name: HeritageCircuitDestination['iconName']) => {
+    switch (name) {
+      case 'hotel':
+        return <Hotel className="w-3.5 h-3.5 text-[#FF671F]" />;
+      case 'palmtree':
+        return <Palmtree className="w-3.5 h-3.5 text-emerald-600" />;
+      case 'car':
+        return <Car className="w-3.5 h-3.5 text-amber-600" />;
+      case 'train':
+        return <Train className="w-3.5 h-3.5 text-blue-600" />;
+      case 'utensils':
+        return <UtensilsCrossed className="w-3.5 h-3.5 text-rose-600" />;
+      case 'landmark':
+        return <Landmark className="w-3.5 h-3.5 text-indigo-600" />;
+      default:
+        return <Sparkles className="w-3.5 h-3.5 text-[#FF671F]" />;
+    }
+  };
 
   return (
     <div
-      className={`relative w-full rounded-3xl overflow-hidden shadow-xs border border-stone-200/90 bg-stone-50 text-stone-800 transition-all duration-300 group select-none ${
-        isExpandedMode
-          ? 'h-[440px] sm:h-[500px]'
-          : 'h-[340px] sm:h-[390px] lg:h-[420px]'
-      }`}
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
+      className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-xs hover:shadow-sm border border-[#EFE8DF] bg-white transition-all duration-300 group select-none h-[460px] sm:h-[520px] lg:h-[580px]"
       id="incredible-india-living-gallery"
     >
-      {/* 1. BACKGROUND MEDIA: HIGH-RES PHOTOGRAPH OR MOTION VIDEO */}
+      {/* 1. VIBRANT FULL-VIEW PHOTOGRAPH WITH ZERO DARK SCRIMS */}
       <div className="absolute inset-0 z-0 overflow-hidden bg-stone-100">
-        {mediaMode === 'video' && hasVideo ? (
-          <video
-            key={current.videoUrl}
-            src={current.videoUrl}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover animate-fadeIn"
-          />
-        ) : (
-          <img
-            key={current.imageUrl}
-            src={current.imageUrl}
-            alt={current.title}
-            className="w-full h-full object-cover object-center transform scale-100 group-hover:scale-102 transition-transform duration-700 ease-out"
-            loading="eager"
-          />
-        )}
+        <img
+          key={current.imageUrl}
+          src={current.imageUrl}
+          alt={current.title}
+          onError={(e) => {
+            const target = e.currentTarget;
+            if (target.src !== '/images/lotus-temple-delhi.png') {
+              target.src = '/images/lotus-temple-delhi.png';
+            }
+          }}
+          className={`w-full h-full object-cover ${current.imagePosition || 'object-center'} transform scale-100 group-hover:scale-101 transition-transform duration-700 ease-out`}
+          loading="eager"
+        />
 
-        {/* Luminous Light Sunlit Vignette Gradients for Crisp Readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-white via-white/75 to-white/20 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/50 to-transparent pointer-events-none" />
+        {/* Soft, ultra-subtle directional wash on the left to ensure floating card contrast without dimming the image */}
+        <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-white/30 to-transparent sm:hidden pointer-events-none" />
+        <div className="absolute inset-0 hidden sm:block bg-gradient-to-r from-white/80 via-white/15 via-45% to-transparent pointer-events-none" />
       </div>
 
-      {/* 2. TOP HEADER BAR: TITLE, EXPAND TOGGLE & CIRCUIT FILTERS */}
-      <div className="relative z-20 px-4 py-3 sm:px-6 sm:py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-stone-200/80 bg-white/92 backdrop-blur-md">
-        <div className="flex items-center gap-2.5">
-          <div className="w-9 h-9 rounded-xl bg-[#FF671F] text-white flex items-center justify-center font-bold shadow-xs shrink-0">
-            <Compass className="w-4 h-4" />
-          </div>
-          <div>
-            <div className="flex items-center gap-2">
-              <h2 className="text-sm sm:text-base font-bold tracking-tight text-stone-900 flex items-center gap-2">
-                <span>Heritage Journey Slideshow</span>
-                <span className="px-2.5 py-1 rounded-full bg-stone-100 text-stone-700 border border-stone-200 text-xs font-mono font-bold">
-                  {currentIndex + 1}/{total}
-                </span>
-              </h2>
-            </div>
-          </div>
-        </div>
-
-        {/* Controls: Category Filter Tabs, Media Mode & Expand Toggle */}
-        <div className="flex items-center gap-1.5 flex-wrap">
-          {/* Category Filter Pills */}
-          <div className="hidden md:inline-flex p-1 rounded-xl bg-stone-100/90 border border-stone-200 text-xs">
-            {[
-              { id: 'all', label: 'All' },
-              { id: 'unesco', label: 'UNESCO' },
-              { id: 'royal', label: 'Royal' },
-              { id: 'spiritual', label: 'Spiritual' },
-              { id: 'coastal', label: 'Coastal' },
-              { id: 'himalayan', label: 'Himalayan' },
-            ].map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => setSelectedCategory(cat.id as any)}
-                className={`px-3 py-1.5 rounded-lg transition-all cursor-pointer ${
-                  selectedCategory === cat.id
-                    ? 'bg-[#FF671F] text-white font-bold shadow-2xs'
-                    : 'text-stone-600 hover:text-stone-900 hover:bg-white/60'
-                }`}
-              >
-                {cat.label}
-              </button>
-            ))}
-          </div>
-
-          {/* Media Mode Toggle (Photo vs Video) */}
-          {hasVideo && (
-            <button
-              onClick={() => setMediaMode((prev) => (prev === 'photo' ? 'video' : 'photo'))}
-              className={`inline-flex items-center gap-1 px-2 py-1 rounded-xl border text-[11px] font-semibold backdrop-blur-md transition cursor-pointer ${
-                mediaMode === 'video'
-                  ? 'bg-emerald-50 text-emerald-800 border-emerald-300 font-bold'
-                  : 'bg-white/90 text-stone-700 border-stone-200 hover:bg-white shadow-2xs'
-              }`}
-              title={mediaMode === 'video' ? 'Switch to High-Res Photo' : 'Switch to Motion Video Tour'}
-            >
-              {mediaMode === 'video' ? (
-                <>
-                  <Camera className="w-3 h-3 text-emerald-700" />
-                  <span className="hidden sm:inline">Photo</span>
-                </>
-              ) : (
-                <>
-                  <Film className="w-3 h-3 text-[#FF671F]" />
-                  <span className="hidden sm:inline">Motion</span>
-                </>
-              )}
-            </button>
-          )}
-
-          {/* Play / Pause Toggle */}
-          <button
-            onClick={() => setIsPaused((prev) => !prev)}
-            className="p-2 rounded-xl bg-white/90 hover:bg-white border border-stone-200 text-stone-700 hover:text-stone-900 transition cursor-pointer shadow-2xs"
-            title={isPaused ? 'Resume Auto-Advance' : 'Pause Auto-Advance'}
-          >
-            {isPaused ? <Play className="w-4 h-4 text-stone-800" /> : <Pause className="w-4 h-4 text-stone-800" />}
-          </button>
-        </div>
-      </div>
-
-      {/* 3. MAIN CENTER CONTENT: COMPACT DESTINATION SPOTLIGHT */}
-      <div className="relative z-10 px-7 sm:px-16 lg:px-20 pt-5 pb-14 flex flex-col justify-center h-[calc(100%-70px)]">
-        <div className="max-w-2xl space-y-4 animate-fadeIn">
-          {/* Badges: Location & UNESCO Status */}
-          <div className="flex items-center gap-1.5 flex-wrap">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white/95 border border-stone-200 text-stone-800 text-xs sm:text-sm font-bold shadow-2xs">
-              <MapPin className="w-3.5 h-3.5 text-[#FF671F]" />
-              {current.city}, {current.state}
+      {/* 2. FLOATING WHITE THEME CONTENT CARD */}
+      <div className="relative z-10 px-4 sm:px-8 lg:px-12 py-6 sm:py-10 flex items-center h-full max-w-xl sm:max-w-2xl pointer-events-none">
+        <div className="pointer-events-auto bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-3xl border border-stone-200/80 shadow-md p-5 sm:p-7 space-y-3 sm:space-y-4 animate-fadeIn">
+          {/* Badge & Location Row */}
+          <div className="flex items-center gap-2 flex-wrap">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200/90 text-amber-950 text-xs font-bold shadow-2xs">
+              {renderIcon(current.iconName)}
+              <span>{current.badge}</span>
             </span>
 
-            <span className="inline-flex items-center gap-1 px-3 py-1.5 rounded-full bg-amber-50/95 border border-amber-200 text-amber-900 text-xs font-bold shadow-2xs">
-              {current.badge}
+            <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-stone-100 text-stone-700 text-[11px] font-semibold border border-stone-200">
+              <MapPin className="w-3 h-3 text-[#FF671F]" />
+              <span>{current.city}, {current.state}</span>
             </span>
           </div>
 
           {/* Title & Tagline */}
-          <div className="space-y-0.5">
-            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-stone-900 tracking-tight leading-tight">
+          <div className="space-y-1.5">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-serif font-bold text-stone-900 tracking-tight leading-tight">
               {current.title}
-            </h1>
-            <p className="text-sm sm:text-base text-stone-700 max-w-xl font-medium leading-relaxed line-clamp-2">
+            </h2>
+            <p className="text-xs sm:text-sm text-stone-600 font-normal leading-relaxed line-clamp-2">
               {current.tagline}
             </p>
           </div>
 
-          <div className="flex items-center gap-2 text-xs sm:text-sm text-stone-700 font-semibold">
-            <Calendar className="w-4 h-4 text-[#FF671F]" />
-            <span>Best time: {current.bestSeason}</span>
+          {/* Feature Highlights Pills */}
+          <div className="flex flex-wrap gap-1.5 pt-0.5">
+            {current.highlights.map((highlight) => (
+              <span
+                key={highlight}
+                className="px-2.5 py-1 rounded-lg bg-stone-50 border border-stone-200 text-stone-700 text-[10px] sm:text-[11px] font-medium"
+              >
+                ✓ {highlight}
+              </span>
+            ))}
           </div>
 
-          {/* Action Callout */}
-          <div className="pt-1">
+          {/* Action CTA Button */}
+          <div className="pt-2">
             <button
               onClick={() => onSelectDestination(current.cityId, current.city)}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#FF671F] hover:bg-[#E65100] text-white font-bold text-sm shadow-md transition-all cursor-pointer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#FF671F] hover:bg-[#E65100] text-white font-bold text-xs sm:text-sm shadow-sm hover:shadow transition-all cursor-pointer active:scale-98"
             >
-              <span>Plan this trip</span>
+              <span>Explore {current.city} Itinerary</span>
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>
         </div>
       </div>
 
-      {/* 4. PREV / NEXT CHEVRON BUTTONS */}
+      {/* 3. PREV / NEXT NAVIGATION BUTTONS (CLEAN WHITE THEME) */}
       <button
         onClick={handlePrev}
-        aria-label="Previous destination"
-        className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/95 hover:bg-white backdrop-blur-md border border-stone-200 text-stone-800 flex items-center justify-center transition cursor-pointer shadow-md"
+        aria-label="Previous slide"
+        className="absolute left-3 sm:left-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/95 hover:bg-white text-stone-800 border border-stone-200 shadow-md flex items-center justify-center transition cursor-pointer hover:scale-105 active:scale-95"
       >
-        <ChevronLeft className="w-5 h-5" />
+        <ChevronLeft className="w-5 h-5 text-stone-700" />
       </button>
 
       <button
         onClick={handleNext}
-        aria-label="Next destination"
-        className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/95 hover:bg-white backdrop-blur-md border border-stone-200 text-stone-800 flex items-center justify-center transition cursor-pointer shadow-md"
+        aria-label="Next slide"
+        className="absolute right-3 sm:right-4 top-1/2 -translate-y-1/2 z-20 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/95 hover:bg-white text-stone-800 border border-stone-200 shadow-md flex items-center justify-center transition cursor-pointer hover:scale-105 active:scale-95"
       >
-        <ChevronRight className="w-5 h-5" />
+        <ChevronRight className="w-5 h-5 text-stone-700" />
       </button>
 
-      {/* 5. BOTTOM CAROUSEL THUMBNAIL RIBBON & TIMER PROGRESS */}
-      <div className="absolute bottom-0 inset-x-0 z-20 p-3 sm:px-5 sm:py-4 bg-gradient-to-t from-white via-white/90 to-transparent flex flex-col gap-3">
-        {/* Progress Bar for Auto-rotation */}
-        <div className="w-full bg-stone-200/80 h-1 rounded-full overflow-hidden">
-          <div
-            key={currentIndex}
-            className={`h-full bg-[#FF671F] transition-all ${
-              isPaused ? 'w-full opacity-40' : 'w-full animate-[shrink_5s_linear]'
-            }`}
-          />
-        </div>
-
-        {/* Simple, readable slideshow navigation */}
-        <div className="flex items-center justify-center gap-2 overflow-x-auto pb-1 scrollbar-none" aria-label="Choose heritage journey">
-          {filteredDestinations.map((dest, idx) => (
+      {/* 4. BOTTOM CAROUSEL PROGRESS INDICATORS (CLEAN WHITE THEME) */}
+      <div className="absolute bottom-4 right-4 sm:right-8 z-20 flex justify-center pointer-events-none">
+        <div className="pointer-events-auto px-3.5 py-1.5 rounded-full bg-white/95 backdrop-blur-md border border-stone-200 shadow-xs flex items-center gap-1.5">
+          {destinations.map((dest, idx) => (
             <button
               key={dest.id}
               onClick={() => setCurrentIndex(idx)}
-              aria-label={`Show ${dest.city}`}
-              title={dest.city}
-              className={`h-2.5 rounded-full shrink-0 transition-all cursor-pointer ${
+              aria-label={`Slide ${idx + 1}: ${dest.featureLabel}`}
+              title={`${dest.featureLabel}: ${dest.city}`}
+              className={`rounded-full transition-all cursor-pointer ${
                 currentIndex === idx
-                  ? 'w-8 bg-[#FF671F]'
-                  : 'w-2.5 bg-stone-300 hover:bg-stone-500'
+                  ? 'w-6 h-1.5 bg-[#FF671F]'
+                  : 'w-1.5 h-1.5 bg-stone-300 hover:bg-stone-500'
               }`}
             />
           ))}

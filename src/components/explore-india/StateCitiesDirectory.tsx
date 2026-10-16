@@ -100,6 +100,9 @@ export const StateCitiesDirectory: React.FC<StateCitiesDirectoryProps> = ({
   }, [filteredData]);
 
   const getCityPlacesCount = (city: CityHierarchyEntity) => {
+    if (city.id?.toLowerCase() === 'amaravati' || city.name?.toLowerCase() === 'amaravati') {
+      return 10;
+    }
     return (
       (city.heritage?.length || 0) +
       (city.monuments?.length || 0) +

@@ -139,7 +139,7 @@ const AppContent: React.FC = () => {
   }, [location.pathname, navigate]);
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#FAF8F5] text-stone-900 selection:bg-amber-800 selection:text-white font-sans">
+    <div className="flex flex-col min-h-screen bg-transparent relative z-10 text-stone-900 selection:bg-amber-800 selection:text-white font-sans">
       {/* WCAG AA Accessible Skip Link */}
       <a
         href="#main-content"
@@ -176,8 +176,8 @@ const AppContent: React.FC = () => {
         tabIndex={-1}
         className={`flex-1 w-full mx-auto min-w-0 focus:outline-none ${
         activeTab === 'ai'
-          ? 'max-w-full px-2 sm:px-4 lg:px-6 pt-2 sm:pt-3 pb-20 md:pb-4'
-          : 'max-w-[96%] lg:max-w-[94%] xl:max-w-[92%] 2xl:max-w-[1760px] px-2.5 sm:px-6 lg:px-8 xl:px-10 pt-3 sm:pt-6 pb-20 md:pb-6'
+          ? 'max-w-full px-2 sm:px-4 lg:px-8 pt-2 sm:pt-4 pb-20 md:pb-6'
+          : 'max-w-[98%] xl:max-w-[96%] 2xl:max-w-[1880px] px-3 sm:px-6 lg:px-8 xl:px-10 pt-3 sm:pt-6 pb-20 md:pb-6'
       }`}>
         <AppRoutes
           places={places}

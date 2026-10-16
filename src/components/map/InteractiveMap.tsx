@@ -107,7 +107,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
   onView3DPlace,
   initialOrigin,
   initialDestination,
-  height = '620px',
+  height = '720px',
 }) => {
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<L.Map | null>(null);
@@ -2044,14 +2044,14 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
           <button
             onClick={handleUseMyLocation}
             disabled={isLocating}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold border transition ${
+            className={`flex items-center gap-1.5 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold border transition ${
               userLocation
                 ? 'bg-sky-700 text-white border-sky-800'
                 : 'bg-white text-sky-800 border-sky-200 hover:bg-sky-50'
             }`}
             title="Locate my position on map"
           >
-            <Crosshair className={`w-3.5 h-3.5 ${isLocating ? 'animate-spin' : ''}`} />
+            <Crosshair className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${isLocating ? 'animate-spin' : ''}`} />
             <span>{isLocating ? 'Locating...' : 'Locate Me'}</span>
           </button>
 
@@ -2063,13 +2063,13 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
                 setIsHeritageAnalyzerOpen(false);
               }
             }}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold border transition ${
+            className={`flex items-center gap-1.5 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold border transition ${
               isRoutingOpen
                 ? 'bg-emerald-700 text-white border-emerald-800 shadow-2xs'
                 : 'bg-white text-stone-700 border-stone-200 hover:bg-stone-50'
             }`}
           >
-            <Navigation className="w-3.5 h-3.5" />
+            <Navigation className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             <span>Route Studio</span>
           </button>
 
@@ -2081,17 +2081,17 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
                 setIsRoutingOpen(false);
               }
             }}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold border transition ${
+            className={`flex items-center gap-1.5 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs sm:text-sm font-bold border transition ${
               isHeritageAnalyzerOpen
                 ? 'bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 text-white border-amber-800 shadow-sm'
                 : 'bg-amber-50 text-amber-900 border-amber-300 hover:bg-amber-100 shadow-2xs'
             }`}
             title="Estimate a multi-monument route from saved place coordinates"
           >
-            <Sparkles className={`w-3.5 h-3.5 ${isHeritageAnalyzerOpen ? 'text-amber-200' : 'text-amber-600'}`} />
+            <Sparkles className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${isHeritageAnalyzerOpen ? 'text-amber-200' : 'text-amber-600'}`} />
             <span>Heritage Route Analyzer</span>
             {selectedHeritageMonuments.length > 0 && (
-              <span className={`text-[10px] font-black px-1.5 py-0.2 rounded-full ${
+              <span className={`text-[10px] sm:text-xs font-black px-2 py-0.5 rounded-full ${
                 isHeritageAnalyzerOpen ? 'bg-white/20 text-white' : 'bg-amber-200 text-amber-900'
               }`}>
                 {selectedHeritageMonuments.length}
@@ -2109,10 +2109,10 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
         {/* Unified Global Map Search Bar Overlay (Top Left) */}
         <div
           ref={searchContainerRef}
-          className="absolute top-3 left-3 right-3 sm:right-auto sm:left-4 sm:top-4 z-[500] sm:w-84 md:w-96"
+          className="absolute top-3 left-3 right-3 sm:right-auto sm:left-4 sm:top-4 z-[500] sm:w-96 md:w-[420px]"
         >
           <div className="relative shadow-lg rounded-2xl bg-white/98 backdrop-blur-md border border-stone-200/90 transition-all focus-within:border-amber-500 focus-within:ring-2 focus-within:ring-amber-500/20">
-            <Search className="absolute left-3.5 top-3 w-4 h-4 text-amber-700/70" />
+            <Search className="absolute left-3.5 top-3.5 w-4 h-4 sm:w-4.5 sm:h-4.5 text-amber-700/70" />
             <input
               type="text"
               value={searchQuery}
@@ -2124,7 +2124,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
               }}
               onKeyDown={handleSearchKeyDown}
               placeholder="Search states, cities, monuments, hotels, markets..."
-              className="w-full pl-10 pr-14 py-2.5 rounded-2xl bg-transparent text-xs text-slate-900 font-medium placeholder-slate-400 focus:outline-none"
+              className="w-full pl-11 pr-14 py-3 sm:py-3.5 rounded-2xl bg-transparent text-xs sm:text-sm text-slate-900 font-medium placeholder-slate-400 focus:outline-none"
               aria-label="Unified map location search"
               aria-autocomplete="list"
             />

@@ -50,48 +50,20 @@ export const BrandSplashScreen: React.FC<BrandSplashScreenProps> = ({
         isFadingOut ? 'opacity-0 pointer-events-none' : 'opacity-100'
       }`}
     >
-      {/* Very subtle Indian heritage pattern background (Traditional Jali Lattice) */}
-      <svg
-        className="absolute inset-0 w-full h-full pointer-events-none"
-        xmlns="http://www.w3.org/2000/svg"
+      {/* Indian Cultural Heritage Pattern Background */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: `url('/patterns/indian-cultural-pattern.png')`,
+          backgroundRepeat: 'repeat',
+          backgroundSize: '360px 360px',
+          opacity: 0.35,
+          mixBlendMode: 'multiply',
+        }}
         aria-hidden="true"
-      >
-        <defs>
-          <pattern
-            id="virasat-subtle-jali"
-            x="0"
-            y="0"
-            width="56"
-            height="56"
-            patternUnits="userSpaceOnUse"
-          >
-            {/* Mughal / Rajput Ashtakon Star & Diamond Jali Lattice */}
-            <path
-              d="M28 0 L35 21 L56 28 L35 35 L28 56 L21 35 L0 28 L21 21 Z"
-              fill="none"
-              stroke="#B45309"
-              strokeWidth="0.75"
-              strokeOpacity="0.045"
-            />
-            <circle
-              cx="28"
-              cy="28"
-              r="4.5"
-              fill="none"
-              stroke="#0B192C"
-              strokeWidth="0.5"
-              strokeOpacity="0.035"
-            />
-            <path
-              d="M0 0 L14 14 M56 0 L42 14 M0 56 L14 42 M56 56 L42 42"
-              stroke="#B45309"
-              strokeWidth="0.5"
-              strokeOpacity="0.03"
-            />
-          </pattern>
-        </defs>
-        <rect width="100%" height="100%" fill="url(#virasat-subtle-jali)" />
-      </svg>
+      />
+      {/* Soft radial vignette to keep brand emblem prominent */}
+      <div className="absolute inset-0 bg-radial from-transparent via-[#FAF8F5]/30 to-[#FAF8F5]/85 pointer-events-none" />
 
       {/* Main Centered Brand Content */}
       <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-sm w-full">

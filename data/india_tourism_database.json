@@ -32,17 +32,17 @@
           "state": "Andhra Pradesh",
           "state_id": "andhra-pradesh",
           "region": "Southern India",
-          "tagline": "Cultural destination in andhra-pradesh",
-          "description": "Ancient riverbank Buddhist site boasting the Great Mahachaitya stupa ruins, museums, and seat of Andhra Pradesh administration.",
+          "tagline": "Seat of Buddhist Heritage & Sacred Capital on the Krishna",
+          "description": "Historic riverfront capital renowned for the 2nd-century BCE Amaravati Mahachaitya stupa, the 125-foot Dhyana Buddha, the ancient Amareswara Shiva temple, rock-cut Undavalli caves, and majestic Krishna river vistas.",
           "official_url": "https://incredibleindia.org",
-          "hero_image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b2?w=1200&auto=format&fit=crop&q=80",
+          "hero_image_url": "/images/amaravati/dhyana-buddha-statue.png",
           "coordinates": {
-            "lat": 20.5937,
-            "lng": 78.9629
+            "lat": 16.5746,
+            "lng": 80.3582
           },
-          "lat": 16.5735,
-          "lng": 80.3575,
-          "places_count": 5,
+          "lat": 16.5746,
+          "lng": 80.3582,
+          "places_count": 10,
           "heritage": [
             {
               "id": "andhra_pradesh_015",
@@ -213,788 +213,253 @@
           ],
           "monuments": [
             {
-              "id": "andhra_pradesh_009",
-              "name": "Amaravati Stupa",
-              "canonical_name": "Amaravati Stupa",
-              "aliases": [],
+              "id": "amaravati_mahachaitya_stupa",
+              "name": "Amaravati Mahachaitya (Amaravati Stupa)",
+              "canonical_name": "Amaravati Mahachaitya",
+              "aliases": [
+                "Amaravati Stupa",
+                "Deepaladinne",
+                "Great Stupa of Amaravati"
+              ],
               "city_id": "amaravati",
               "state_id": "andhra-pradesh",
-              "district": "Palnadu district",
-              "area": "Palnadu district",
-              "locality": "Palnadu district",
-              "source_city": "Palnadu district",
+              "district": "Guntur",
               "category": "monuments",
-              "category_label": "Buddhist Heritage",
+              "category_label": "Buddhist Monument & Heritage Site",
               "topic": "Heritage",
               "subtopic": "Monuments",
-              "importance_level": "major",
-              "summary": "An important Buddhist archaeological site associated with the ancient Amaravati school of art.",
-              "short_description": "An important Buddhist archaeological site associated with the ancient Amaravati school of art.",
-              "detailed_description": "An important Buddhist archaeological site associated with the ancient Amaravati school of art.",
-              "historical_significance": "An important Buddhist archaeological site associated with the ancient Amaravati school of art.",
+              "importance_level": "iconic",
+              "summary": "A historic 2nd-century BCE Buddhist monument famous for its intricate marble relief carvings and deep Satavahana dynasty heritage.",
+              "short_description": "Sacred 2nd-century BCE Buddhist stupa site famed for its iconic limestone marble carvings and Satavahana royal patronage.",
+              "historical_significance": "Originally founded during the Mauryan emperor Ashoka’s reign and expanded into a magnificent monument under the Satavahana dynasty (2nd century BCE to 2nd century CE). Renowned as one of ancient India’s largest Buddhist stupas, giving birth to the world-famous Amaravati School of Art with its distinctive white limestone reliefs depicting Jataka tales and Buddha’s life.",
+              "address": "Amaravati Stupa Archaeological Complex, Amaravati, Andhra Pradesh 522020",
               "fees": {
-                "domestic": 0,
-                "international": 0,
+                "domestic": 25,
+                "international": 300,
                 "currency": "INR",
+                "student_discount": true,
+                "free_entry": false,
                 "status": "VERIFIED",
-                "free_entry": true
+                "note": "Free admission for children under 15 years. ASI digital ticketing available."
               },
-              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "entry_fee": "₹25 (Indians), ₹300 (Foreigners)",
               "timings": {
                 "opening_time": "09:00 AM",
-                "closing_time": "06:00 PM",
+                "closing_time": "05:30 PM",
                 "closed_days": [],
-                "status": "VERIFIED"
+                "status": "VERIFIED",
+                "note": "Open daily from sunrise to sunset under ASI protection."
               },
-              "opening_hours": "Usually daytime; timings vary by attraction",
+              "opening_hours": "09:00 AM - 05:30 PM Daily",
               "best_time_to_visit": "October to March",
               "visit_duration": {
-                "recommended_mins": 120,
-                "label": "2–4 hours",
+                "recommended_mins": 90,
+                "label": "1.5 - 2 Hours",
                 "status": "VERIFIED"
               },
-              "suggested_duration": "2–4 hours",
               "coordinates": {
-                "lat": 20.5937,
-                "lng": 78.9629
+                "lat": 16.5746,
+                "lng": 80.3582
               },
-              "lat": 20.5937,
-              "lng": 78.9629,
-              "image_url": "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=85",
-              "thumbnail_url": "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=85",
-              "attribution": "Andhra Pradesh Tourism Development Corporation",
-              "source_page": "https://www.tourism.gov.in",
-              "source_url": "https://www.tourism.gov.in",
-              "source_name": "Andhra Pradesh Tourism",
+              "lat": 16.5746,
+              "lng": 80.3582,
+              "image_url": "/images/amaravati/amaravati-stupa.png",
+              "thumbnail_url": "/images/amaravati/amaravati-stupa.png",
+              "attribution": "User Provided & Archaeological Survey of India (ASI)",
+              "source_name": "Archaeological Survey of India (ASI) & AP Tourism",
+              "source_url": "https://asi.nic.in",
               "status": "VERIFIED",
               "verification_status": "verified",
-              "visitor_notes": [
-                "Check local access rules and timings before visiting",
-                "Carry water and comfortable footwear"
-              ],
-              "map_search": "Amaravati Stupa Andhra Pradesh",
-              "tags": [
-                "buddhist_heritage",
-                "Andhra Pradesh"
-              ],
-              "hotels": [
-                {
-                  "name": "Hotel Amaravati",
-                  "category": "Budget",
-                  "price_range": "₹1,800–₹3,000",
-                  "rating": 4,
-                  "area": "Amaravati",
-                  "highlights": [
-                    "Good access to nearby attractions",
-                    "Convenient local stay",
-                    "Suitable for tourists"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Andhra Pradesh-specific rotating generic travel/hotel image; not a verified photo of this specific hotel.",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                },
-                {
-                  "name": "Vijayawada Gateway Hotel",
-                  "category": "Mid-Range",
-                  "price_range": "₹3,500–₹5,500",
-                  "rating": 4.2,
-                  "area": "Vijayawada",
-                  "highlights": [
-                    "Good access to nearby attractions",
-                    "Convenient local stay",
-                    "Suitable for tourists"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Andhra Pradesh-specific rotating generic travel/hotel image; not a verified photo of this specific hotel.",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                },
-                {
-                  "name": "Amaravati Heritage Resort",
-                  "category": "Luxury",
-                  "price_range": "₹5,000–₹8,000",
-                  "rating": 4.3,
-                  "area": "Amaravati",
-                  "highlights": [
-                    "Good access to nearby attractions",
-                    "Convenient local stay",
-                    "Suitable for tourists"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Andhra Pradesh-specific rotating generic travel/hotel image; not a verified photo of this specific hotel.",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                }
-              ],
-              "recommended_hotels": [
-                {
-                  "name": "Hotel Amaravati",
-                  "category": "Budget",
-                  "price_range": "₹1,800–₹3,000",
-                  "rating": 4,
-                  "area": "Amaravati",
-                  "highlights": [
-                    "Good access to nearby attractions",
-                    "Convenient local stay",
-                    "Suitable for tourists"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Andhra Pradesh-specific rotating generic travel/hotel image; not a verified photo of this specific hotel.",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                },
-                {
-                  "name": "Vijayawada Gateway Hotel",
-                  "category": "Mid-Range",
-                  "price_range": "₹3,500–₹5,500",
-                  "rating": 4.2,
-                  "area": "Vijayawada",
-                  "highlights": [
-                    "Good access to nearby attractions",
-                    "Convenient local stay",
-                    "Suitable for tourists"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Andhra Pradesh-specific rotating generic travel/hotel image; not a verified photo of this specific hotel.",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                },
-                {
-                  "name": "Amaravati Heritage Resort",
-                  "category": "Luxury",
-                  "price_range": "₹5,000–₹8,000",
-                  "rating": 4.3,
-                  "area": "Amaravati",
-                  "highlights": [
-                    "Good access to nearby attractions",
-                    "Convenient local stay",
-                    "Suitable for tourists"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Andhra Pradesh-specific rotating generic travel/hotel image; not a verified photo of this specific hotel.",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                }
-              ],
               "features": {
                 "map": true,
                 "navigation": true,
                 "ai": true,
-                "3d": false
-              }
-            }
-          ],
-          "museums": [],
-          "tourist_places": [],
-          "religious_cultural": [
-            {
-              "id": "andhra_pradesh_011",
-              "name": "Vijayawada Kanaka Durga Temple",
-              "canonical_name": "Vijayawada Kanaka Durga Temple",
-              "aliases": [],
-              "city_id": "amaravati",
-              "state_id": "andhra-pradesh",
-              "district": "Vijayawada",
-              "area": "Vijayawada",
-              "locality": "Vijayawada",
-              "source_city": "Vijayawada",
-              "category": "religious_cultural",
-              "category_label": "Religious Heritage",
-              "topic": "Spiritual",
-              "subtopic": "Religious Cultural",
-              "importance_level": "major",
-              "summary": "A major temple dedicated to Goddess Durga on Indrakeeladri Hill.",
-              "short_description": "A major temple dedicated to Goddess Durga on Indrakeeladri Hill.",
-              "detailed_description": "A major temple dedicated to Goddess Durga on Indrakeeladri Hill.",
-              "historical_significance": "A major temple dedicated to Goddess Durga on Indrakeeladri Hill.",
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED",
-                "free_entry": true
-              },
-              "entry_fee": "Free or paid depending on attraction; verify current rates",
-              "timings": {
-                "opening_time": "09:00 AM",
-                "closing_time": "06:00 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "opening_hours": "Usually daytime; timings vary by attraction",
-              "best_time_to_visit": "October to March",
-              "visit_duration": {
-                "recommended_mins": 120,
-                "label": "2–4 hours",
-                "status": "VERIFIED"
-              },
-              "suggested_duration": "2–4 hours",
-              "coordinates": {
-                "lat": 20.5937,
-                "lng": 78.9629
-              },
-              "lat": 20.5937,
-              "lng": 78.9629,
-              "image_url": "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1200&q=85",
-              "thumbnail_url": "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1200&q=85",
-              "attribution": "Andhra Pradesh Tourism Development Corporation",
-              "source_page": "https://www.tourism.gov.in",
-              "source_url": "https://www.tourism.gov.in",
-              "source_name": "Andhra Pradesh Tourism",
-              "status": "VERIFIED",
-              "verification_status": "verified",
-              "visitor_notes": [
-                "Check local access rules and timings before visiting",
-                "Carry water and comfortable footwear"
-              ],
-              "map_search": "Vijayawada Kanaka Durga Temple Andhra Pradesh",
-              "tags": [
-                "religious_heritage",
-                "Andhra Pradesh"
-              ],
-              "hotels": [
-                {
-                  "name": "Hotel Ilapuram",
-                  "category": "Budget",
-                  "price_range": "₹2,000–₹3,500",
-                  "rating": 4,
-                  "area": "Vijayawada",
-                  "highlights": [
-                    "Good access to nearby attractions",
-                    "Convenient local stay",
-                    "Suitable for tourists"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Andhra Pradesh-specific rotating generic travel/hotel image; not a verified photo of this specific hotel.",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                },
-                {
-                  "name": "Hotel Marg Krishnaaya",
-                  "category": "Budget",
-                  "price_range": "₹2,500–₹4,000",
-                  "rating": 4.1,
-                  "area": "Vijayawada",
-                  "highlights": [
-                    "Good access to nearby attractions",
-                    "Convenient local stay",
-                    "Suitable for tourists"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1549294413-26f195200c16?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Andhra Pradesh-specific rotating generic travel/hotel image; not a verified photo of this specific hotel.",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                },
-                {
-                  "name": "Novotel Vijayawada Varun",
-                  "category": "Mid-Range",
-                  "price_range": "₹5,000–₹8,000",
-                  "rating": 4.4,
-                  "area": "Vijayawada",
-                  "highlights": [
-                    "Good access to nearby attractions",
-                    "Convenient local stay",
-                    "Suitable for tourists"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Andhra Pradesh-specific rotating generic travel/hotel image; not a verified photo of this specific hotel.",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                },
-                {
-                  "name": "Lemon Tree Premier Vijayawada",
-                  "category": "Luxury",
-                  "price_range": "₹6,000–₹10,000",
-                  "rating": 4.3,
-                  "area": "Vijayawada",
-                  "highlights": [
-                    "Good access to nearby attractions",
-                    "Convenient local stay",
-                    "Suitable for tourists"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Andhra Pradesh-specific rotating generic travel/hotel image; not a verified photo of this specific hotel.",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                },
-                {
-                  "name": "Vivanta Vijayawada",
-                  "category": "Luxury",
-                  "price_range": "₹7,000–₹12,000",
-                  "rating": 4.4,
-                  "area": "Vijayawada",
-                  "highlights": [
-                    "Good access to nearby attractions",
-                    "Convenient local stay",
-                    "Suitable for tourists"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Andhra Pradesh-specific rotating generic travel/hotel image; not a verified photo of this specific hotel.",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                }
-              ],
-              "recommended_hotels": [
-                {
-                  "name": "Hotel Ilapuram",
-                  "category": "Budget",
-                  "price_range": "₹2,000–₹3,500",
-                  "rating": 4,
-                  "area": "Vijayawada",
-                  "highlights": [
-                    "Good access to nearby attractions",
-                    "Convenient local stay",
-                    "Suitable for tourists"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Andhra Pradesh-specific rotating generic travel/hotel image; not a verified photo of this specific hotel.",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                },
-                {
-                  "name": "Hotel Marg Krishnaaya",
-                  "category": "Budget",
-                  "price_range": "₹2,500–₹4,000",
-                  "rating": 4.1,
-                  "area": "Vijayawada",
-                  "highlights": [
-                    "Good access to nearby attractions",
-                    "Convenient local stay",
-                    "Suitable for tourists"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1549294413-26f195200c16?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Andhra Pradesh-specific rotating generic travel/hotel image; not a verified photo of this specific hotel.",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                },
-                {
-                  "name": "Novotel Vijayawada Varun",
-                  "category": "Mid-Range",
-                  "price_range": "₹5,000–₹8,000",
-                  "rating": 4.4,
-                  "area": "Vijayawada",
-                  "highlights": [
-                    "Good access to nearby attractions",
-                    "Convenient local stay",
-                    "Suitable for tourists"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Andhra Pradesh-specific rotating generic travel/hotel image; not a verified photo of this specific hotel.",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                },
-                {
-                  "name": "Lemon Tree Premier Vijayawada",
-                  "category": "Luxury",
-                  "price_range": "₹6,000–₹10,000",
-                  "rating": 4.3,
-                  "area": "Vijayawada",
-                  "highlights": [
-                    "Good access to nearby attractions",
-                    "Convenient local stay",
-                    "Suitable for tourists"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Andhra Pradesh-specific rotating generic travel/hotel image; not a verified photo of this specific hotel.",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                },
-                {
-                  "name": "Vivanta Vijayawada",
-                  "category": "Luxury",
-                  "price_range": "₹7,000–₹12,000",
-                  "rating": 4.4,
-                  "area": "Vijayawada",
-                  "highlights": [
-                    "Good access to nearby attractions",
-                    "Convenient local stay",
-                    "Suitable for tourists"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Andhra Pradesh-specific rotating generic travel/hotel image; not a verified photo of this specific hotel.",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                }
-              ],
-              "features": {
-                "map": true,
-                "navigation": true,
-                "ai": true,
-                "3d": false
-              }
-            }
-          ],
-          "nature_parks_zoo": [
-            {
-              "id": "andhra_pradesh_010",
-              "name": "Undavalli Caves",
-              "canonical_name": "Undavalli Caves",
-              "aliases": [],
-              "city_id": "amaravati",
-              "state_id": "andhra-pradesh",
-              "district": "Near Vijayawada",
-              "area": "Near Vijayawada",
-              "locality": "Near Vijayawada",
-              "source_city": "Near Vijayawada",
-              "category": "nature_parks_zoo",
-              "category_label": "Archaeological Heritage",
-              "topic": "Nature",
-              "subtopic": "Nature Parks Zoo",
-              "importance_level": "major",
-              "summary": "Rock-cut caves featuring a large reclining Vishnu sculpture and historic architecture.",
-              "short_description": "Rock-cut caves featuring a large reclining Vishnu sculpture and historic architecture.",
-              "detailed_description": "Rock-cut caves featuring a large reclining Vishnu sculpture and historic architecture.",
-              "historical_significance": "Rock-cut caves featuring a large reclining Vishnu sculpture and historic architecture.",
-              "fees": {
-                "domestic": 0,
-                "international": 0,
-                "currency": "INR",
-                "status": "VERIFIED",
-                "free_entry": true
-              },
-              "entry_fee": "Free or paid depending on attraction; verify current rates",
-              "timings": {
-                "opening_time": "09:00 AM",
-                "closing_time": "06:00 PM",
-                "closed_days": [],
-                "status": "VERIFIED"
-              },
-              "opening_hours": "Usually daytime; timings vary by attraction",
-              "best_time_to_visit": "October to March",
-              "visit_duration": {
-                "recommended_mins": 120,
-                "label": "2–4 hours",
-                "status": "VERIFIED"
-              },
-              "suggested_duration": "2–4 hours",
-              "coordinates": {
-                "lat": 20.5937,
-                "lng": 78.9629
-              },
-              "lat": 20.5937,
-              "lng": 78.9629,
-              "image_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85",
-              "thumbnail_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85",
-              "attribution": "Andhra Pradesh Tourism Development Corporation",
-              "source_page": "https://www.tourism.gov.in",
-              "source_url": "https://www.tourism.gov.in",
-              "source_name": "Andhra Pradesh Tourism",
-              "status": "VERIFIED",
-              "verification_status": "verified",
-              "visitor_notes": [
-                "Check local access rules and timings before visiting",
-                "Carry water and comfortable footwear"
-              ],
-              "map_search": "Undavalli Caves Andhra Pradesh",
-              "tags": [
-                "archaeological_heritage",
-                "Andhra Pradesh"
-              ],
-              "hotels": [
-                {
-                  "name": "Hotel Ilapuram",
-                  "category": "Budget",
-                  "price_range": "₹2,000–₹3,500",
-                  "rating": 4,
-                  "area": "Vijayawada",
-                  "highlights": [
-                    "Good access to nearby attractions",
-                    "Convenient local stay",
-                    "Suitable for tourists"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Andhra Pradesh-specific rotating generic travel/hotel image; not a verified photo of this specific hotel.",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                },
-                {
-                  "name": "Hotel Marg Krishnaaya",
-                  "category": "Budget",
-                  "price_range": "₹2,500–₹4,000",
-                  "rating": 4.1,
-                  "area": "Vijayawada",
-                  "highlights": [
-                    "Good access to nearby attractions",
-                    "Convenient local stay",
-                    "Suitable for tourists"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Andhra Pradesh-specific rotating generic travel/hotel image; not a verified photo of this specific hotel.",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                },
-                {
-                  "name": "Novotel Vijayawada Varun",
-                  "category": "Mid-Range",
-                  "price_range": "₹5,000–₹8,000",
-                  "rating": 4.4,
-                  "area": "Vijayawada",
-                  "highlights": [
-                    "Good access to nearby attractions",
-                    "Convenient local stay",
-                    "Suitable for tourists"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Andhra Pradesh-specific rotating generic travel/hotel image; not a verified photo of this specific hotel.",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                },
-                {
-                  "name": "Lemon Tree Premier Vijayawada",
-                  "category": "Luxury",
-                  "price_range": "₹6,000–₹10,000",
-                  "rating": 4.3,
-                  "area": "Vijayawada",
-                  "highlights": [
-                    "Good access to nearby attractions",
-                    "Convenient local stay",
-                    "Suitable for tourists"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Andhra Pradesh-specific rotating generic travel/hotel image; not a verified photo of this specific hotel.",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                },
-                {
-                  "name": "Vivanta Vijayawada",
-                  "category": "Luxury",
-                  "price_range": "₹7,000–₹12,000",
-                  "rating": 4.4,
-                  "area": "Vijayawada",
-                  "highlights": [
-                    "Good access to nearby attractions",
-                    "Convenient local stay",
-                    "Suitable for tourists"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Andhra Pradesh-specific rotating generic travel/hotel image; not a verified photo of this specific hotel.",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                }
-              ],
-              "recommended_hotels": [
-                {
-                  "name": "Hotel Ilapuram",
-                  "category": "Budget",
-                  "price_range": "₹2,000–₹3,500",
-                  "rating": 4,
-                  "area": "Vijayawada",
-                  "highlights": [
-                    "Good access to nearby attractions",
-                    "Convenient local stay",
-                    "Suitable for tourists"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Andhra Pradesh-specific rotating generic travel/hotel image; not a verified photo of this specific hotel.",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                },
-                {
-                  "name": "Hotel Marg Krishnaaya",
-                  "category": "Budget",
-                  "price_range": "₹2,500–₹4,000",
-                  "rating": 4.1,
-                  "area": "Vijayawada",
-                  "highlights": [
-                    "Good access to nearby attractions",
-                    "Convenient local stay",
-                    "Suitable for tourists"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Andhra Pradesh-specific rotating generic travel/hotel image; not a verified photo of this specific hotel.",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                },
-                {
-                  "name": "Novotel Vijayawada Varun",
-                  "category": "Mid-Range",
-                  "price_range": "₹5,000–₹8,000",
-                  "rating": 4.4,
-                  "area": "Vijayawada",
-                  "highlights": [
-                    "Good access to nearby attractions",
-                    "Convenient local stay",
-                    "Suitable for tourists"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Andhra Pradesh-specific rotating generic travel/hotel image; not a verified photo of this specific hotel.",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                },
-                {
-                  "name": "Lemon Tree Premier Vijayawada",
-                  "category": "Luxury",
-                  "price_range": "₹6,000–₹10,000",
-                  "rating": 4.3,
-                  "area": "Vijayawada",
-                  "highlights": [
-                    "Good access to nearby attractions",
-                    "Convenient local stay",
-                    "Suitable for tourists"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Andhra Pradesh-specific rotating generic travel/hotel image; not a verified photo of this specific hotel.",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                },
-                {
-                  "name": "Vivanta Vijayawada",
-                  "category": "Luxury",
-                  "price_range": "₹7,000–₹12,000",
-                  "rating": 4.4,
-                  "area": "Vijayawada",
-                  "highlights": [
-                    "Good access to nearby attractions",
-                    "Convenient local stay",
-                    "Suitable for tourists"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Andhra Pradesh-specific rotating generic travel/hotel image; not a verified photo of this specific hotel.",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                }
-              ],
-              "features": {
-                "map": true,
-                "navigation": true,
-                "ai": true,
-                "3d": false
+                "3d": true
               }
             },
             {
-              "id": "andhra_pradesh_013",
-              "name": "Papikondalu",
-              "canonical_name": "Papikondalu",
-              "aliases": [],
+              "id": "amaravati_undavalli_caves",
+              "name": "Undavalli Caves",
+              "canonical_name": "Undavalli Rock-Cut Cave Temples",
+              "aliases": [
+                "Undavalli Guhalu",
+                "Vishnukundina Caves"
+              ],
               "city_id": "amaravati",
               "state_id": "andhra-pradesh",
-              "district": "Godavari region",
-              "area": "Godavari region",
-              "locality": "Godavari region",
-              "source_city": "Godavari region",
-              "category": "nature_parks_zoo",
-              "category_label": "River Hills Nature",
-              "topic": "Nature",
-              "subtopic": "Nature Parks Zoo",
-              "importance_level": "major",
-              "summary": "A scenic river-and-hills landscape explored through boat journeys on the Godavari.",
-              "short_description": "A scenic river-and-hills landscape explored through boat journeys on the Godavari.",
-              "detailed_description": "A scenic river-and-hills landscape explored through boat journeys on the Godavari.",
-              "historical_significance": "A scenic river-and-hills landscape explored through boat journeys on the Godavari.",
+              "district": "Guntur",
+              "category": "monuments",
+              "category_label": "Ancient Rock-cut Monolithic Cave Complex",
+              "topic": "Heritage",
+              "subtopic": "Monuments",
+              "importance_level": "iconic",
+              "summary": "A 4th-to-5th-century rock-cut cave temple complex featuring multi-story architecture and a massive monolithic sculpture of Lord Vishnu in a reclining posture (Ananta Padmanabha Swamy).",
+              "short_description": "Remarkable 4-story rock-cut sandstone cave sanctuary from the 4th–5th century CE featuring a monumental monolithic reclining Vishnu.",
+              "historical_significance": "Carved out of a sandstone hill in the 4th to 5th centuries CE during the Vishnukundina dynasty. The caves exhibit a harmonious synthesis of Buddhist vihara origins and classical Hindu rock-cut shrines. The crowning feature is the magnificent 5-meter-long monolith of Lord Ananta Padmanabha Swamy reclining on the Adisesha serpent.",
+              "address": "Undavalli Village, Tadepalle Mandal, Amaravati Capital Region, Andhra Pradesh 522501",
               "fees": {
-                "domestic": 0,
-                "international": 0,
+                "domestic": 25,
+                "international": 300,
                 "currency": "INR",
+                "student_discount": true,
+                "free_entry": false,
                 "status": "VERIFIED",
-                "free_entry": true
+                "note": "ASI protected monument ticket."
               },
-              "entry_fee": "Free or paid depending on attraction; verify current rates",
+              "entry_fee": "₹25 (Indians), ₹300 (Foreigners)",
               "timings": {
                 "opening_time": "09:00 AM",
                 "closing_time": "06:00 PM",
                 "closed_days": [],
-                "status": "VERIFIED"
+                "status": "VERIFIED",
+                "note": "Open daily under ASI surveillance."
               },
-              "opening_hours": "Usually daytime; timings vary by attraction",
-              "best_time_to_visit": "October to March",
+              "opening_hours": "09:00 AM - 06:00 PM Daily",
+              "best_time_to_visit": "Morning hours from 09:00 AM to 12:00 PM",
               "visit_duration": {
-                "recommended_mins": 120,
-                "label": "2–4 hours",
+                "recommended_mins": 90,
+                "label": "1.5 - 2 Hours",
                 "status": "VERIFIED"
               },
-              "suggested_duration": "2–4 hours",
               "coordinates": {
-                "lat": 20.5937,
-                "lng": 78.9629
+                "lat": 16.4965,
+                "lng": 80.5804
               },
-              "lat": 20.5937,
-              "lng": 78.9629,
+              "lat": 16.4965,
+              "lng": 80.5804,
               "image_url": "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=85",
               "thumbnail_url": "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=85",
-              "attribution": "Andhra Pradesh Tourism Development Corporation",
-              "source_page": "https://www.tourism.gov.in",
-              "source_url": "https://www.tourism.gov.in",
-              "source_name": "Andhra Pradesh Tourism",
+              "attribution": "Archaeological Survey of India (ASI)",
+              "source_name": "Archaeological Survey of India (ASI)",
+              "source_url": "https://asi.nic.in",
               "status": "VERIFIED",
               "verification_status": "verified",
-              "visitor_notes": [
-                "Check local access rules and timings before visiting",
-                "Carry water and comfortable footwear"
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": true
+              }
+            },
+            {
+              "id": "amaravati_kondapalli_fort",
+              "name": "Kondapalli Fort",
+              "canonical_name": "Kondapalli Killa Fort",
+              "aliases": [
+                "Kondapalli Killa",
+                "Kondapalli Kota"
               ],
-              "map_search": "Papikondalu Andhra Pradesh",
-              "tags": [
-                "river_hills_nature",
-                "Andhra Pradesh"
+              "city_id": "amaravati",
+              "state_id": "andhra-pradesh",
+              "district": "Krishna",
+              "category": "monuments",
+              "category_label": "Historic Hill Fortress & Artisan Enclave",
+              "topic": "Heritage",
+              "subtopic": "Monuments",
+              "importance_level": "major",
+              "summary": "A historic 14th-century hilltop fortress built by the Reddys, known for its strategic architecture, scenic valley views, and traditional handcrafted Kondapalli wooden toys.",
+              "short_description": "14th-century Reddy dynasty hilltop citadel featuring stone watchtowers, Gajashala, and famous GI-tagged Kondapalli toy craft villages.",
+              "historical_significance": "Constructed around 1360 CE by Prolaya Vema Reddy of Kondaveedu as an impregnable military stronghold. It passed through the hands of the Vijayanagara empire, Gajapatis, and Qutb Shahis. The fortress features the Dargah Darwaza, Queen’s Palace, and ancient water reservoirs. At the base lies the artisan community renowned for GI-tagged handcrafted Kondapalli wooden toys.",
+              "address": "Ghat Road, Kondapalli, Ibrahimpatnam Mandal, Andhra Pradesh 521228",
+              "fees": {
+                "domestic": 10,
+                "international": 50,
+                "currency": "INR",
+                "free_entry": false,
+                "status": "VERIFIED",
+                "note": "State archaeology department entrance fee."
+              },
+              "entry_fee": "₹10 (Adults), ₹5 (Children)",
+              "timings": {
+                "opening_time": "10:00 AM",
+                "closing_time": "05:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED",
+                "note": "Open daily with road access up to the main gate."
+              },
+              "opening_hours": "10:00 AM - 05:00 PM Daily",
+              "best_time_to_visit": "October to February during breezy afternoon hours",
+              "visit_duration": {
+                "recommended_mins": 120,
+                "label": "2 Hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 16.6231,
+                "lng": 80.5367
+              },
+              "lat": 16.6231,
+              "lng": 80.5367,
+              "image_url": "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1584132967334-10e028bd69f7?auto=format&fit=crop&w=1200&q=85",
+              "attribution": "Department of Archaeology & Museums, Govt of AP",
+              "source_name": "Department of Archaeology & Museums, AP",
+              "source_url": "https://tourism.ap.gov.in",
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": true
+              }
+            },
+            {
+              "id": "amaravati_bhattiprolu_stupa",
+              "name": "Bhattiprolu Buddhist Stupa Site",
+              "canonical_name": "Bhattiprolu Mahachaitya Site",
+              "aliases": [
+                "Chinna Lanja Dibba",
+                "Vikramarka Kota Dibba"
               ],
-              "hotels": [
-                {
-                  "name": "Haritha Papikondalu",
-                  "category": "Budget",
-                  "price_range": "₹1,500–₹2,500",
-                  "rating": 4,
-                  "area": "Papikondalu",
-                  "highlights": [
-                    "Good access to nearby attractions",
-                    "Convenient local stay",
-                    "Suitable for tourists"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Andhra Pradesh-specific rotating generic travel/hotel image; not a verified photo of this specific hotel.",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                },
-                {
-                  "name": "Godavari Riverside Resort",
-                  "category": "Mid-Range",
-                  "price_range": "₹3,000–₹5,000",
-                  "rating": 4.1,
-                  "area": "Godavari",
-                  "highlights": [
-                    "Good access to nearby attractions",
-                    "Convenient local stay",
-                    "Suitable for tourists"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Andhra Pradesh-specific rotating generic travel/hotel image; not a verified photo of this specific hotel.",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                },
-                {
-                  "name": "Papikondalu Nature Resort",
-                  "category": "Luxury",
-                  "price_range": "₹5,000–₹8,000",
-                  "rating": 4.3,
-                  "area": "Godavari",
-                  "highlights": [
-                    "Good access to nearby attractions",
-                    "Convenient local stay",
-                    "Suitable for tourists"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Andhra Pradesh-specific rotating generic travel/hotel image; not a verified photo of this specific hotel.",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                }
-              ],
-              "recommended_hotels": [
-                {
-                  "name": "Haritha Papikondalu",
-                  "category": "Budget",
-                  "price_range": "₹1,500–₹2,500",
-                  "rating": 4,
-                  "area": "Papikondalu",
-                  "highlights": [
-                    "Good access to nearby attractions",
-                    "Convenient local stay",
-                    "Suitable for tourists"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Andhra Pradesh-specific rotating generic travel/hotel image; not a verified photo of this specific hotel.",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                },
-                {
-                  "name": "Godavari Riverside Resort",
-                  "category": "Mid-Range",
-                  "price_range": "₹3,000–₹5,000",
-                  "rating": 4.1,
-                  "area": "Godavari",
-                  "highlights": [
-                    "Good access to nearby attractions",
-                    "Convenient local stay",
-                    "Suitable for tourists"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Andhra Pradesh-specific rotating generic travel/hotel image; not a verified photo of this specific hotel.",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                },
-                {
-                  "name": "Papikondalu Nature Resort",
-                  "category": "Luxury",
-                  "price_range": "₹5,000–₹8,000",
-                  "rating": 4.3,
-                  "area": "Godavari",
-                  "highlights": [
-                    "Good access to nearby attractions",
-                    "Convenient local stay",
-                    "Suitable for tourists"
-                  ],
-                  "image_url": "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1200&q=85",
-                  "image_source": "Andhra Pradesh-specific rotating generic travel/hotel image; not a verified photo of this specific hotel.",
-                  "price_note": "Approximate typical nightly range in INR; not live booking prices and may vary by date, season, room type and availability."
-                }
-              ],
+              "city_id": "amaravati",
+              "state_id": "andhra-pradesh",
+              "district": "Guntur",
+              "category": "monuments",
+              "category_label": "Ancient Buddhist Archaeological Stupa",
+              "topic": "Heritage",
+              "subtopic": "Monuments",
+              "importance_level": "notable",
+              "summary": "An ancient and important archaeological Buddhist site that yields early Brahmi inscriptions and historic relic caskets.",
+              "short_description": "Cradle of the southern Brahmi script (Bhattiprolu alphabet) dating back to 3rd–2nd century BCE, famous for excavated crystal relic caskets.",
+              "historical_significance": "Dating back to the 3rd to 2nd century BCE, Bhattiprolu is of immense epigraphical importance as the birthplace of the Bhattiprolu script — an early southern variant of Brahmi that served as the precursor to modern Telugu and Kannada writing. Excavations by Alexander Rea in 1892 revealed stone relic caskets containing sacred bone relics of the Buddha enclosed in gold leaves and crystal reliquaries.",
+              "address": "Bhattiprolu Village, Guntur District, Andhra Pradesh 522256",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "free_entry": true,
+                "status": "VERIFIED",
+                "note": "Free admission for visitors and researchers."
+              },
+              "entry_fee": "Free Entry",
+              "timings": {
+                "opening_time": "09:00 AM",
+                "closing_time": "05:30 PM",
+                "closed_days": [],
+                "status": "VERIFIED",
+                "note": "Open daily under ASI protected monument status."
+              },
+              "opening_hours": "09:00 AM - 05:30 PM Daily",
+              "best_time_to_visit": "November to February during pleasant winter months",
+              "visit_duration": {
+                "recommended_mins": 60,
+                "label": "1 Hour",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 16.1017,
+                "lng": 80.785
+              },
+              "lat": 16.1017,
+              "lng": 80.785,
+              "image_url": "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=85",
+              "attribution": "Archaeological Survey of India (ASI)",
+              "source_name": "Archaeological Survey of India (ASI)",
+              "source_url": "https://asi.nic.in",
+              "status": "VERIFIED",
+              "verification_status": "verified",
               "features": {
                 "map": true,
                 "navigation": true,
@@ -1003,6 +468,396 @@
               }
             }
           ],
+          "museums": [
+            {
+              "id": "amaravati_archaeological_museum",
+              "name": "Amaravati Archaeological Museum",
+              "canonical_name": "ASI Archaeological Museum Amaravati",
+              "aliases": [
+                "Amaravati Museum",
+                "ASI Museum Amaravati"
+              ],
+              "city_id": "amaravati",
+              "state_id": "andhra-pradesh",
+              "district": "Guntur",
+              "category": "museums",
+              "category_label": "Archaeological Museum (ASI)",
+              "topic": "Heritage",
+              "subtopic": "Museums",
+              "importance_level": "major",
+              "summary": "Maintained by the Archaeological Survey of India (ASI), this museum exhibits ancient sculptures, coins, and relics dating from the 3rd century BCE to the 12th century CE.",
+              "short_description": "Renowned ASI museum housing prized 3rd-century BCE to 12th-century CE Satavahana and Ikshvaku limestone sculptures, relic urns, and coins.",
+              "historical_significance": "Maintained by the Archaeological Survey of India, the museum features three distinct galleries displaying masterpieces from the Amaravati Stupa excavations. Highlights include intricately sculpted limestone coping stones, cross-bars with lotus rosettes, Yakshi statues, and ancient gold, silver, and lead punch-marked coins.",
+              "address": "Near Amaravati Stupa Complex, Amaravati, Andhra Pradesh 522020",
+              "fees": {
+                "domestic": 5,
+                "international": 100,
+                "currency": "INR",
+                "free_entry": false,
+                "status": "VERIFIED",
+                "note": "Free for children under 15 years."
+              },
+              "entry_fee": "₹5 (Indians), ₹100 (Foreigners)",
+              "timings": {
+                "opening_time": "10:00 AM",
+                "closing_time": "05:00 PM",
+                "closed_days": [
+                  "Friday"
+                ],
+                "status": "VERIFIED",
+                "note": "Closed on Fridays and national gazetted holidays."
+              },
+              "opening_hours": "10:00 AM - 05:00 PM (Closed Fridays)",
+              "best_time_to_visit": "Morning hours from 10:30 AM to 01:00 PM",
+              "visit_duration": {
+                "recommended_mins": 60,
+                "label": "1 - 1.5 Hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 16.575,
+                "lng": 80.3595
+              },
+              "lat": 16.575,
+              "lng": 80.3595,
+              "image_url": "/images/amaravati/amaravati-archaeological-museum.png",
+              "thumbnail_url": "/images/amaravati/amaravati-archaeological-museum.png",
+              "attribution": "User Provided & Archaeological Survey of India (ASI)",
+              "source_name": "Archaeological Survey of India (ASI)",
+              "source_url": "https://asi.nic.in/archaeological-museum-amaravati/",
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": false
+              }
+            }
+          ],
+          "tourist_places": [
+            {
+              "id": "amaravati_prakasam_barrage",
+              "name": "Prakasam Barrage",
+              "canonical_name": "Prakasam Barrage Krishna River",
+              "aliases": [
+                "Krishna Barrage",
+                "Vijayawada Barrage"
+              ],
+              "city_id": "amaravati",
+              "state_id": "andhra-pradesh",
+              "district": "Krishna & Guntur",
+              "category": "tourist_places",
+              "category_label": "Scenic Landmark & River Barrage",
+              "topic": "Tourist Spots",
+              "subtopic": "Scenic River Corridors",
+              "importance_level": "iconic",
+              "summary": "A 1,223.5-meter-long structure stretching across the Krishna River that connects Guntur and Krishna districts, offering panoramic water views, especially illuminated at night.",
+              "short_description": "Majestic 1.2-kilometer bridge and barrage over the mighty Krishna River, connecting Guntur and Krishna districts with stunning panoramic views.",
+              "historical_significance": "Originally conceived in 1855 by celebrated British engineer Sir Arthur Cotton and reconstructed in 1957, named in honour of Tanguturi Prakasam Pantulu, the first Chief Minister of Andhra State. It irrigates over 1.2 million acres of fertile agricultural land while providing a picturesque promenade overlooking Indrakeeladri hill.",
+              "address": "Prakasam Barrage Road, Krishna River, Vijayawada-Tadepalle 520001",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "free_entry": true,
+                "status": "VERIFIED",
+                "note": "Free public scenic overlook and pedestrian promenade."
+              },
+              "entry_fee": "Free Entry",
+              "timings": {
+                "opening_time": "12:00 AM",
+                "closing_time": "11:59 PM",
+                "closed_days": [],
+                "status": "VERIFIED",
+                "note": "Accessible 24 hours daily. Evening decorative lighting from 06:30 PM to 09:30 PM."
+              },
+              "opening_hours": "Open 24 Hours Daily (Best at Sunset)",
+              "best_time_to_visit": "Evening hours (05:30 PM to 08:30 PM) for cool breezes and night illuminations",
+              "visit_duration": {
+                "recommended_mins": 45,
+                "label": "45 - 60 Mins",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 16.5073,
+                "lng": 80.6053
+              },
+              "lat": 16.5073,
+              "lng": 80.6053,
+              "image_url": "/images/amaravati/prakasam-barrage.png",
+              "thumbnail_url": "/images/amaravati/prakasam-barrage.png",
+              "attribution": "User Provided & Andhra Pradesh Tourism Authority (APTA)",
+              "source_name": "Water Resources Dept & Andhra Pradesh Tourism",
+              "source_url": "https://tourism.ap.gov.in",
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": true
+              }
+            }
+          ],
+          "religious_cultural": [
+            {
+              "id": "amaravati_dhyana_buddha",
+              "name": "Dhyana Buddha Statue",
+              "canonical_name": "Dhyana Buddha Dharanikota",
+              "aliases": [
+                "Amaravati Dhyana Buddha",
+                "Dharanikota Buddha",
+                "Giant Buddha Amaravati"
+              ],
+              "city_id": "amaravati",
+              "state_id": "andhra-pradesh",
+              "district": "Guntur",
+              "category": "religious_cultural",
+              "category_label": "Monumental Sacred Buddha Statue",
+              "topic": "Spiritual",
+              "subtopic": "Religious Cultural",
+              "importance_level": "iconic",
+              "summary": "A towering 125-foot meditating Buddha statue set on a 4.5-acre site near the Krishna River, featuring an 8-pillar lotus base and four zones representing the Four Noble Truths.",
+              "short_description": "125-foot colossal statue of Gautama Buddha in Dhyana mudra resting upon an octagonal lotus pedestal along the sacred Krishna River.",
+              "historical_significance": "Conceived to revive the ancient Buddhist heritage of Amaravati, this monumental 125-foot (38-meter) seated Buddha statue in deep meditation mudra rests on a two-storey octagonal structure supported by 8 pillars, symbolizing the Noble Eightfold Path. The museum within houses Amaravati-style Buddhist sculptures and historical depictions.",
+              "address": "Dharanikota Road, Amaravati, Andhra Pradesh 522020",
+              "fees": {
+                "domestic": 10,
+                "international": 10,
+                "currency": "INR",
+                "student_discount": false,
+                "free_entry": false,
+                "status": "VERIFIED",
+                "note": "Nominal precinct maintenance and park entry charge."
+              },
+              "entry_fee": "₹10 per person",
+              "timings": {
+                "opening_time": "08:00 AM",
+                "closing_time": "08:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED",
+                "note": "Open daily. Illuminated evening viewing between 06:30 PM and 08:00 PM."
+              },
+              "opening_hours": "08:00 AM - 08:00 PM Daily",
+              "best_time_to_visit": "Early morning or sunset hours along the Krishna river",
+              "visit_duration": {
+                "recommended_mins": 60,
+                "label": "1 - 1.5 Hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 16.5794,
+                "lng": 80.3547
+              },
+              "lat": 16.5794,
+              "lng": 80.3547,
+              "image_url": "/images/amaravati/dhyana-buddha-statue.png",
+              "thumbnail_url": "/images/amaravati/dhyana-buddha-statue.png",
+              "attribution": "User Provided & Andhra Pradesh Tourism Authority (APTA)",
+              "source_name": "Andhra Pradesh Tourism Authority",
+              "source_url": "https://tourism.ap.gov.in",
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": true
+              }
+            },
+            {
+              "id": "amaravati_amareswara_temple",
+              "name": "Amareswara Temple (Amararama)",
+              "canonical_name": "Sri Amaralingeswara Swamy Temple",
+              "aliases": [
+                "Amararama",
+                "Amareswara Swamy Temple",
+                "Amaravati Shiva Temple"
+              ],
+              "city_id": "amaravati",
+              "state_id": "andhra-pradesh",
+              "district": "Guntur",
+              "category": "religious_cultural",
+              "category_label": "Sacred Hindu Temple (Pancharama)",
+              "topic": "Spiritual",
+              "subtopic": "Religious Cultural",
+              "importance_level": "iconic",
+              "summary": "One of the sacred Pancharama Kshetras, this prominent Shiva temple houses a massive 15-foot marble Shiva Lingam and draws pilgrims from across India.",
+              "short_description": "Celebrated Pancharama Kshetra dedicated to Lord Shiva, enshrining a towering 15-foot white marble Lingam on the Krishna river banks.",
+              "historical_significance": "Amararama is the foremost of the five sacred Pancharama Kshetras of Lord Shiva in Andhra Pradesh. According to mythology, when Kumara Swamy struck the demon Tarakasura, the holy Linga broke into five pieces and fell here. The temple boasts four grand gopurams built in Dravidian style, patronized by the Cholas, Kota kings, and Vijayanagara monarchs.",
+              "address": "Koil Street, Amaravati, Guntur District, Andhra Pradesh 522020",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "free_entry": true,
+                "status": "VERIFIED",
+                "note": "General Dharma Darshan is completely free."
+              },
+              "entry_fee": "Free (Special Sevas ₹50–₹200)",
+              "timings": {
+                "opening_time": "06:00 AM",
+                "closing_time": "08:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED",
+                "note": "Morning Darshan: 06:00 AM - 01:00 PM; Evening Darshan: 04:00 PM - 08:00 PM."
+              },
+              "opening_hours": "06:00 AM - 01:00 PM & 04:00 PM - 08:00 PM Daily",
+              "best_time_to_visit": "Maha Shivaratri, Karthika Masam, and early morning river ghat hours",
+              "visit_duration": {
+                "recommended_mins": 60,
+                "label": "1 Hour",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 16.5828,
+                "lng": 80.3601
+              },
+              "lat": 16.5828,
+              "lng": 80.3601,
+              "image_url": "/images/amaravati/amareswara-temple.png",
+              "thumbnail_url": "/images/amaravati/amareswara-temple.png",
+              "attribution": "User Provided & Endowments Department, Govt of AP",
+              "source_name": "Endowments Department, Government of Andhra Pradesh",
+              "source_url": "https://tourism.ap.gov.in",
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": true
+              }
+            },
+            {
+              "id": "amaravati_kanaka_durga_temple",
+              "name": "Kanaka Durga Temple",
+              "canonical_name": "Sri Durga Malleswara Swamy Varla Devasthanam",
+              "aliases": [
+                "Indrakeeladri Kanaka Durga",
+                "Vijayawada Kanaka Durga"
+              ],
+              "city_id": "amaravati",
+              "state_id": "andhra-pradesh",
+              "district": "Krishna",
+              "category": "religious_cultural",
+              "category_label": "Sacred Hilltop Shakti Temple",
+              "topic": "Spiritual",
+              "subtopic": "Religious Cultural",
+              "importance_level": "iconic",
+              "summary": "Located on the Indrakeeladri hill along the banks of the Krishna River nearby, dedicated to Goddess Kanaka Durga with sweeping views of the river.",
+              "short_description": "Celebrated hilltop temple dedicated to Swayambhu Goddess Kanaka Durga atop Indrakeeladri hill overlooking the scenic Krishna river.",
+              "historical_significance": "Ancient pilgrimage epicenter mentioned in the Kalika Purana where Goddess Durga took the form of Mahishasuramardini to vanquish the demon. Arjuna is said to have performed penance here to obtain the Pasupatastra from Lord Shiva. The golden temple spire and hill ghat road offer dramatic panoramic views across the river basin.",
+              "address": "Indrakeeladri Hill, Mallikarjunapeta, Vijayawada, Andhra Pradesh 520001",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "free_entry": true,
+                "status": "VERIFIED",
+                "note": "Free Dharma Darshan; Mukha Mandapam ₹100; VIP Darshan ₹300."
+              },
+              "entry_fee": "Free (Special Darshan ₹100 / ₹300)",
+              "timings": {
+                "opening_time": "04:00 AM",
+                "closing_time": "09:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED",
+                "note": "Open daily with continuous temple services except brief Naivedyam timings."
+              },
+              "opening_hours": "04:00 AM - 09:00 PM Daily",
+              "best_time_to_visit": "Navaratri Dasara festival and morning hours from 05:00 AM to 08:00 AM",
+              "visit_duration": {
+                "recommended_mins": 75,
+                "label": "1 - 2 Hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 16.5165,
+                "lng": 80.6074
+              },
+              "lat": 16.5165,
+              "lng": 80.6074,
+              "image_url": "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1200&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1200&q=85",
+              "attribution": "Sri Durga Malleswara Swamy Varla Devasthanam",
+              "source_name": "Sri Durga Malleswara Swamy Varla Devasthanam",
+              "source_url": "https://kanakadurgamma.org",
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": true
+              }
+            },
+            {
+              "id": "amaravati_mangalagiri_narasimha_temple",
+              "name": "Sri Panakala Narasimha Swamy Temple (Mangalagiri)",
+              "canonical_name": "Sri Lakshmi Narasimha Swamy Temple Mangalagiri",
+              "aliases": [
+                "Mangalagiri Panakala Swamy",
+                "Mangalagiri Temple"
+              ],
+              "city_id": "amaravati",
+              "state_id": "andhra-pradesh",
+              "district": "Guntur",
+              "category": "religious_cultural",
+              "category_label": "Ancient Hilltop Vaishnavite Temple",
+              "topic": "Spiritual",
+              "subtopic": "Religious Cultural",
+              "importance_level": "major",
+              "summary": "Perched atop a hill in nearby Mangalagiri, dedicated to Lord Narasimha where devotees offer jaggery water (panakam) to the deity.",
+              "short_description": "Celebrated hilltop temple where devotees offer sweet panakam into the deity’s mouth, situated on an extinct volcanic hill.",
+              "historical_significance": "One of the eight sacred Mahakshetras of Lord Vishnu in India. Located on an auspicious elephant-shaped hill, the temple is renowned for the divine ritual where conch-loads of sweet jaggery water (panakam) are poured into the mouth of Lord Panakala Lakshmi Narasimha Swamy, with the Lord miraculously drinking exactly half of it. The base temple also boasts a magnificent 153-foot gopuram built by Thimmarusu.",
+              "address": "Kothapet, Mangalagiri, Guntur District, Andhra Pradesh 522503",
+              "fees": {
+                "domestic": 0,
+                "international": 0,
+                "currency": "INR",
+                "free_entry": true,
+                "status": "VERIFIED",
+                "note": "Free entry. Panakam offering prasadam tokens available at temple counter."
+              },
+              "entry_fee": "Free Entry",
+              "timings": {
+                "opening_time": "07:00 AM",
+                "closing_time": "03:00 PM",
+                "closed_days": [],
+                "status": "VERIFIED",
+                "note": "Hilltop temple opens 07:00 AM to 03:00 PM for Panakam offerings."
+              },
+              "opening_hours": "07:00 AM - 03:00 PM Daily",
+              "best_time_to_visit": "Morning hours from 07:30 AM to 11:30 AM",
+              "visit_duration": {
+                "recommended_mins": 90,
+                "label": "1.5 Hours",
+                "status": "VERIFIED"
+              },
+              "coordinates": {
+                "lat": 16.4385,
+                "lng": 80.5694
+              },
+              "lat": 16.4385,
+              "lng": 80.5694,
+              "image_url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=85",
+              "thumbnail_url": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1200&q=85",
+              "attribution": "Endowments Department, Government of Andhra Pradesh",
+              "source_name": "Endowments Dept, Andhra Pradesh",
+              "source_url": "https://tourism.ap.gov.in",
+              "status": "VERIFIED",
+              "verification_status": "verified",
+              "features": {
+                "map": true,
+                "navigation": true,
+                "ai": true,
+                "3d": true
+              }
+            }
+          ],
+          "nature_parks_zoo": [],
           "transport": {
             "railway_stations": [],
             "local_transit": {

@@ -29,7 +29,7 @@ export const MapPage: React.FC<MapPageProps> = ({
 
   const activeCity = cityParam || selectedCity;
   return (
-    <main className="h-[calc(100vh-5rem)] min-h-[560px] w-full overflow-hidden bg-stone-100">
+    <main className="h-[calc(100vh-5.5rem)] min-h-[720px] w-full overflow-hidden bg-stone-100">
       <h1 className="sr-only">Interactive heritage map</h1>
       <MapErrorBoundary height="100%">
         <InteractiveMap

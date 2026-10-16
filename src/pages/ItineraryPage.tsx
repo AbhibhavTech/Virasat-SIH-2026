@@ -33,6 +33,7 @@ import {
   Ticket,
   Printer,
   Compass,
+  Landmark,
 } from 'lucide-react';
 import { api } from '../services/api';
 import { ItineraryResponse, ItineraryDay } from '../types';
@@ -43,6 +44,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { saveTripToFirestore } from '../services/firebase';
 import { ItineraryCostDonutChart } from '../components/itinerary/ItineraryCostDonutChart';
 import { findVerifiedPlace } from '../data/masterTourismDatabase';
+import { HotelRecommendationsSection } from '../components/itinerary/HotelRecommendationsSection';
 
 interface ItineraryPageProps {
   onSelectPlace: (id: string) => void;
@@ -520,7 +522,9 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
     URL.revokeObjectURL(url);
   };
 
-  const currentDay = itinerary?.days?.[activeDayIndex] || itinerary?.days?.[0];
+  const totalDays = itinerary?.days?.length || daysCount || 1;
+  const safeDayIndex = Math.max(0, Math.min(activeDayIndex, totalDays - 1));
+  const currentDay = itinerary?.days?.[safeDayIndex] || itinerary?.days?.[0];
 
   return (
     <div
@@ -529,16 +533,16 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
       }`}
     >
       {/* 1. TOP BAR: TITLE, DESTINATION SELECTOR & FULL-WIDTH TOGGLE */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-stone-200/90">
-        <div className="flex items-center gap-2 flex-wrap text-xs">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange-50 text-[#FF671F] border border-orange-200 text-xs font-bold">
-            <Calendar className="w-3.5 h-3.5 text-[#FF671F]" />
-            <span>Smart Heritage Planner & Circuits</span>
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-stone-200">
+        <div className="flex items-center gap-2.5 flex-wrap">
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-stone-900 text-white text-xs font-semibold shadow-2xs">
+            <Landmark className="w-3.5 h-3.5 text-amber-400" />
+            <span>National Heritage Circuits & Itinerary</span>
           </div>
 
-          <span className="hidden sm:inline text-stone-400">•</span>
-          <span className="text-stone-500 hidden sm:inline">
-            Government of India & ASI Tariffs Aligned
+          <span className="hidden sm:inline text-stone-300">•</span>
+          <span className="text-stone-500 hidden sm:inline text-xs font-medium">
+            Ministry of Tourism & ASI Tariffs Aligned
           </span>
         </div>
 
@@ -635,13 +639,13 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
       />
 
       {/* 3. INPUT CARD: DESTINATION, DAYS, PACE, BUDGET & PREFERENCES */}
-      <div id="trip-planner-form" className="rounded-2xl sm:rounded-3xl bg-white border border-stone-200/90 shadow-sm p-4 sm:p-7 space-y-4 sm:space-y-6 scroll-mt-6">
+      <div id="trip-planner-form" className="rounded-2xl sm:rounded-3xl bg-white border border-stone-200 shadow-sm p-4 sm:p-6 space-y-4 sm:space-y-5 scroll-mt-6">
         {/* Row 1: 4 Selectors + Plan Button */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5 sm:gap-4 items-end">
           {/* Destination Selector */}
           <div className="space-y-1.5">
-            <label className="text-sm font-bold text-stone-800 flex items-center gap-1.5">
-              <MapPin className="w-4 h-4 text-[#FF671F]" />
+            <label className="text-xs font-bold text-stone-700 uppercase tracking-wider flex items-center gap-1.5">
+              <MapPin className="w-3.5 h-3.5 text-stone-500" />
               <span>Destination / City</span>
             </label>
             <select
@@ -650,7 +654,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                 const found = ALL_INDIAN_TOURISM_CITIES.find((c) => c.id === e.target.value);
                 if (found) handleSelectCity(found);
               }}
-              className="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-sm text-stone-900 font-semibold focus:bg-white focus:outline-hidden focus:border-[#FF671F] focus:ring-2 focus:ring-[#FF671F]/20 transition cursor-pointer"
+              className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50/80 hover:bg-stone-50 border border-stone-200 text-sm text-stone-900 font-medium focus:bg-white focus:outline-hidden focus:border-[#E06D24] focus:ring-1 focus:ring-[#E06D24]/20 transition cursor-pointer"
             >
               <optgroup label="Major Popular Hubs">
                 {ALL_INDIAN_TOURISM_CITIES.filter((c) => c.popular).map((c) => (
@@ -671,14 +675,14 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
 
           {/* Number of Days */}
           <div className="space-y-1.5">
-            <label className="text-sm font-bold text-stone-800 flex items-center gap-1.5">
-              <Calendar className="w-4 h-4 text-[#FF671F]" />
+            <label className="text-xs font-bold text-stone-700 uppercase tracking-wider flex items-center gap-1.5">
+              <Calendar className="w-3.5 h-3.5 text-stone-500" />
               <span>Number of Days</span>
             </label>
             <select
               value={daysCount}
               onChange={(e) => setDaysCount(Number(e.target.value))}
-              className="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-sm text-stone-900 font-semibold focus:bg-white focus:outline-hidden focus:border-[#FF671F] focus:ring-2 focus:ring-[#FF671F]/20 transition cursor-pointer"
+              className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50/80 hover:bg-stone-50 border border-stone-200 text-sm text-stone-900 font-medium focus:bg-white focus:outline-hidden focus:border-[#E06D24] focus:ring-1 focus:ring-[#E06D24]/20 transition cursor-pointer"
             >
               <option value={1}>1 Day (Express Tour)</option>
               <option value={2}>2 Days (Weekend Getaway)</option>
@@ -692,14 +696,14 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
 
           {/* Travel Pace */}
           <div className="space-y-1.5">
-            <label className="text-sm font-bold text-stone-800 flex items-center gap-1.5">
-              <Clock className="w-4 h-4 text-[#FF671F]" />
+            <label className="text-xs font-bold text-stone-700 uppercase tracking-wider flex items-center gap-1.5">
+              <Clock className="w-3.5 h-3.5 text-stone-500" />
               <span>Travel Pace</span>
             </label>
             <select
               value={pace}
               onChange={(e) => setPace(e.target.value as any)}
-              className="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-sm text-stone-900 font-semibold focus:bg-white focus:outline-hidden focus:border-[#FF671F] focus:ring-2 focus:ring-[#FF671F]/20 transition cursor-pointer"
+              className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50/80 hover:bg-stone-50 border border-stone-200 text-sm text-stone-900 font-medium focus:bg-white focus:outline-hidden focus:border-[#E06D24] focus:ring-1 focus:ring-[#E06D24]/20 transition cursor-pointer"
             >
               <option value="relaxed">Relaxed (1-2 major stops/day)</option>
               <option value="moderate">Moderate (3-4 balanced stops/day)</option>
@@ -709,14 +713,14 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
 
           {/* Budget Range */}
           <div className="space-y-1.5">
-            <label className="text-sm font-bold text-stone-800 flex items-center gap-1.5">
-              <IndianRupee className="w-4 h-4 text-[#FF671F]" />
+            <label className="text-xs font-bold text-stone-700 uppercase tracking-wider flex items-center gap-1.5">
+              <IndianRupee className="w-3.5 h-3.5 text-stone-500" />
               <span>Budget Range</span>
             </label>
             <select
               value={budget}
               onChange={(e) => setBudget(e.target.value as any)}
-              className="w-full px-4 py-3 rounded-xl bg-stone-50 border border-stone-200 text-sm text-stone-900 font-semibold focus:bg-white focus:outline-hidden focus:border-[#FF671F] focus:ring-2 focus:ring-[#FF671F]/20 transition cursor-pointer"
+              className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50/80 hover:bg-stone-50 border border-stone-200 text-sm text-stone-900 font-medium focus:bg-white focus:outline-hidden focus:border-[#E06D24] focus:ring-1 focus:ring-[#E06D24]/20 transition cursor-pointer"
             >
               <option value="budget">₹ Budget (Hostels & Local transit)</option>
               <option value="moderate">₹₹ Mid-range (Boutique & Cabs)</option>
@@ -729,7 +733,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
             <button
               onClick={() => handleGeneratePlan()}
               disabled={loading}
-              className="w-full py-3 px-4 rounded-xl bg-[#FF671F] hover:bg-[#E65100] text-white font-bold text-sm transition flex items-center justify-center gap-2 shadow-md shadow-orange-500/20 cursor-pointer disabled:opacity-50"
+              className="w-full py-2.5 px-4 rounded-xl bg-[#E06D24] hover:bg-[#C95A14] text-white font-semibold text-sm transition flex items-center justify-center gap-2 shadow-sm cursor-pointer disabled:opacity-50"
             >
               {loading ? (
                 <>
@@ -747,11 +751,11 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
         </div>
 
         {/* Row 2: Trip Preferences Pills */}
-        <div className="space-y-2 pt-2 border-t border-stone-100">
-          <div className="text-sm font-bold text-stone-800">
+        <div className="space-y-2 pt-3 border-t border-stone-100">
+          <div className="text-xs font-bold text-stone-700 uppercase tracking-wider">
             Trip Preferences (Optional)
           </div>
-          <div className="flex flex-wrap gap-2.5">
+          <div className="flex flex-wrap gap-2">
             {PREFERENCE_PILLS.map((pref) => {
               const isSelected = selectedPreferences.includes(pref.id);
               return (
@@ -759,13 +763,13 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                   key={pref.id}
                   type="button"
                   onClick={() => handleTogglePreference(pref.id)}
-                  className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm transition cursor-pointer ${
+                  className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs transition cursor-pointer ${
                     isSelected
-                      ? 'bg-orange-50 text-stone-900 border-2 border-[#FF671F] font-semibold shadow-xs'
-                      : 'bg-white text-stone-700 hover:bg-stone-50 border border-stone-200 font-medium'
+                      ? 'bg-stone-900 text-white border border-stone-900 font-semibold shadow-2xs'
+                      : 'bg-stone-50 hover:bg-stone-100 text-stone-700 border border-stone-200 font-medium'
                   }`}
                 >
-                  <span>{pref.icon}</span>
+                  <span className="text-xs">{pref.icon}</span>
                   <span>{pref.label}</span>
                 </button>
               );
@@ -905,7 +909,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                       setActiveDayIndex(idx);
                     }}
                     className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold shrink-0 transition cursor-pointer ${
-                      plannerViewMode === 'pages' && activeDayIndex === idx
+                      plannerViewMode === 'pages' && safeDayIndex === idx
                         ? 'bg-[#FF671F] text-white shadow-xs'
                         : 'bg-stone-100 text-stone-700 hover:bg-stone-200'
                     }`}
@@ -920,7 +924,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
               {plannerViewMode === 'pages' && (
                 <div className="flex items-center gap-2 self-end sm:self-auto shrink-0 text-xs">
                   <button
-                    disabled={activeDayIndex <= 0}
+                    disabled={safeDayIndex <= 0}
                     onClick={() => setActiveDayIndex((prev) => Math.max(0, prev - 1))}
                     className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-stone-50 hover:bg-stone-100 border border-stone-200 disabled:opacity-30 cursor-pointer text-stone-700 font-semibold"
                   >
@@ -929,14 +933,14 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                   </button>
 
                   <span className="font-mono text-stone-500 font-bold px-1">
-                    {activeDayIndex + 1} / {itinerary.days?.length || daysCount}
+                    {safeDayIndex + 1} / {totalDays}
                   </span>
 
                   <button
-                    disabled={activeDayIndex >= (itinerary.days?.length || daysCount) - 1}
+                    disabled={safeDayIndex >= totalDays - 1}
                     onClick={() =>
                       setActiveDayIndex((prev) =>
-                        Math.min((itinerary.days?.length || daysCount) - 1, prev + 1)
+                        Math.min(totalDays - 1, prev + 1)
                       )
                     }
                     className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-stone-50 hover:bg-stone-100 border border-stone-200 disabled:opacity-30 cursor-pointer text-stone-700 font-semibold"
@@ -1006,9 +1010,9 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                      {currentDay.places
-                        .filter((place) => {
-                          // Validation: exclude ungrounded synthetic placeholders if not in database
+                      {(() => {
+                        const rawPlaces = currentDay.places || [];
+                        const filtered = rawPlaces.filter((place) => {
                           const isGenericFake = place.name.includes('Central Heritage Complex') ||
                             place.name.includes('Cultural Sanctuary') ||
                             place.name.includes('Historic Monument');
@@ -1017,8 +1021,10 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                             if (!verifiedDb) return false;
                           }
                           return true;
-                        })
-                        .map((place, pIdx) => {
+                        });
+                        const placesToRender = filtered.length > 0 ? filtered : rawPlaces;
+
+                        return placesToRender.map((place, pIdx) => {
                         const verifiedDb = findVerifiedPlace(place.id || place.name, selectedCityObj.id);
 
                         // Contextual time slots
@@ -1164,7 +1170,8 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                             </div>
                           </div>
                         );
-                      })}
+                      });
+                    })()}
                     </div>
                   </div>
 
@@ -1177,7 +1184,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                         <span>Recommended Day Shopping & Artisan Markets</span>
                       </div>
                       <div className="text-xs text-stone-700 space-y-1 pl-2">
-                        {currentDay.shopping.map((shop, sIdx) => (
+                        {(currentDay.shopping || []).map((shop, sIdx) => (
                           <div key={sIdx} className="flex items-start gap-1.5 leading-snug">
                             <span className="text-[#FF671F]">•</span>
                             <span>{shop}</span>
@@ -1295,6 +1302,17 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
               </div>
             )}
           </div>
+
+          {/* 5B. WHERE TO STAY & HOSPITALITY: DAY & NIGHT STAY AFFAIR */}
+          <HotelRecommendationsSection
+            selectedCity={itinerary.city || selectedCityObj.name}
+            selectedState={itinerary.state || selectedCityObj.state}
+            cityLat={(selectedCityObj as any)?.lat}
+            cityLng={(selectedCityObj as any)?.lng}
+            currentDayTitle={currentDay?.area_title}
+            currentDayPlaces={currentDay?.places}
+            onNavigateTab={onNavigateTab}
+          />
 
           {/* 6. TRAVEL RESPONSIBLY GREEN BANNER */}
           <div className="rounded-3xl bg-emerald-50/80 border border-emerald-200 p-5 sm:p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
