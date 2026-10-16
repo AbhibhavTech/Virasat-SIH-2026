@@ -11,6 +11,8 @@ import { ContextualSubNav } from './components/layout/ContextualSubNav';
 import { SimpleFooter } from './components/layout/SimpleFooter';
 import { MobileBottomNav } from './components/layout/MobileBottomNav';
 import { AuthModal } from './components/auth/AuthModal';
+import { GoogleAccountChooserModal } from './components/auth/GoogleAccountChooserModal';
+import { GoogleOneTapPrompt } from './components/auth/GoogleOneTapPrompt';
 import { OnboardingSurveyModal } from './components/auth/OnboardingSurveyModal';
 import { BrandSplashScreen } from './components/common/BrandSplashScreen';
 import { DatabaseStatusModal } from './components/database/DatabaseStatusModal';
@@ -205,6 +207,8 @@ const AppContent: React.FC = () => {
 
       {/* Global Modals */}
       <AuthModal />
+      <GoogleAccountChooserModal />
+      <GoogleOneTapPrompt />
       <OnboardingSurveyModal />
       <DatabaseStatusModal
         isOpen={isDatabaseModalOpen}

@@ -14,22 +14,14 @@ import {
   CheckCircle2,
 } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
-import {
-  isUnauthorizedDomainError,
-  isPopupBlockedError,
-  isFirebaseConfigOrDomainError,
-  firebaseConfig,
-} from '../../services/firebase';
 
 export const AuthModal: React.FC = () => {
   const {
     isAuthModalOpen,
     setIsAuthModalOpen,
     login,
-    loginWithGoogle,
-    loginWithGoogleRedirect,
-    loginWithGoogleDirect,
     register,
+    openGoogleChooser,
   } = useAuth();
   const [isRegister, setIsRegister] = useState(false);
   const [name, setName] = useState('');
@@ -38,11 +30,7 @@ export const AuthModal: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [homeCity, setHomeCity] = useState('Mumbai');
   const [loading, setLoading] = useState(false);
-  const [googleLoading, setGoogleLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [googleRedirectAvailable, setGoogleRedirectAvailable] = useState(false);
-  const [domainErrorDetails, setDomainErrorDetails] = useState<{ domain: string; projectId: string } | null>(null);
-  const [directGoogleEmail, setDirectGoogleEmail] = useState('');
 
   // Lock background body scroll when AuthModal is active so search bars/background elements don't shift or bleed
   useEffect(() => {
@@ -57,71 +45,9 @@ export const AuthModal: React.FC = () => {
 
   if (!isAuthModalOpen) return null;
 
-  const handleGoogleSignIn = async () => {
+  const handleGoogleSignIn = () => {
     setError(null);
-    setGoogleRedirectAvailable(false);
-    setDomainErrorDetails(null);
-    setGoogleLoading(true);
-
-    try {
-      await loginWithGoogle();
-    } catch (err: any) {
-      console.warn('Firebase Google Auth encountered:', err);
-      if (isPopupBlockedError(err)) {
-        setGoogleRedirectAvailable(true);
-        setError('Your browser blocked the Google popup window. Click below to continue with Google Redirect.');
-      } else if (isFirebaseConfigOrDomainError(err) || isUnauthorizedDomainError(err)) {
-        const currentHost = typeof window !== 'undefined' ? window.location.hostname : 'localhost';
-        setDomainErrorDetails({
-          domain: currentHost,
-          projectId: firebaseConfig.projectId || 'gen-lang-client-0058309080',
-        });
-        setDirectGoogleEmail(email || '');
-      } else if (err?.code === 'auth/popup-closed-by-user') {
-        setError('Google sign-in popup was closed before completing.');
-      } else {
-        const currentHost = typeof window !== 'undefined' ? window.location.hostname : 'localhost';
-        setDomainErrorDetails({
-          domain: currentHost,
-          projectId: firebaseConfig.projectId || 'gen-lang-client-0058309080',
-        });
-        setDirectGoogleEmail(email || '');
-      }
-    } finally {
-      setGoogleLoading(false);
-    }
-  };
-
-  const handleDirectGoogleLogin = async (targetEmail: string) => {
-    const trimmed = targetEmail.trim();
-    if (!trimmed || !trimmed.includes('@')) {
-      setError('Please provide a valid Google email address.');
-      return;
-    }
-    setError(null);
-    setGoogleLoading(true);
-    try {
-      await loginWithGoogleDirect({
-        email: trimmed,
-        name: name.trim() || trimmed.split('@')[0],
-        home_city: homeCity,
-      });
-    } catch (directErr: any) {
-      setError(directErr?.message || 'Google account authentication failed. Please try again.');
-    } finally {
-      setGoogleLoading(false);
-    }
-  };
-
-  const handleGoogleRedirect = async () => {
-    setError(null);
-    setGoogleLoading(true);
-    try {
-      await loginWithGoogleRedirect();
-    } catch (err: any) {
-      setError(err?.message || 'Google redirect sign-in could not start.');
-      setGoogleLoading(false);
-    }
+    openGoogleChooser(isRegister ? 'signup' : 'signin');
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -196,8 +122,6 @@ export const AuthModal: React.FC = () => {
             onClick={() => {
               setIsRegister(false);
               setError(null);
-              setDomainErrorDetails(null);
-              setGoogleRedirectAvailable(false);
             }}
             className={`flex-1 py-2 text-xs font-bold rounded-xl transition-all cursor-pointer ${
               !isRegister
@@ -213,8 +137,6 @@ export const AuthModal: React.FC = () => {
             onClick={() => {
               setIsRegister(true);
               setError(null);
-              setDomainErrorDetails(null);
-              setGoogleRedirectAvailable(false);
             }}
             className={`flex-1 py-2 text-xs font-bold rounded-xl transition-all cursor-pointer ${
               isRegister
@@ -231,101 +153,24 @@ export const AuthModal: React.FC = () => {
           id="google-signin-btn"
           type="button"
           onClick={handleGoogleSignIn}
-          disabled={googleLoading || loading}
+          disabled={loading}
           className="w-full rounded-2xl border border-stone-300 bg-white hover:bg-stone-50 active:scale-[0.99] px-4 py-3 text-xs sm:text-sm font-semibold text-stone-800 shadow-2xs transition flex items-center justify-center gap-2.5 disabled:opacity-60 cursor-pointer"
         >
-          {googleLoading ? (
-            <>
-              <Loader2 className="h-4 w-4 animate-spin text-orange-600" />
-              <span>Connecting to Google…</span>
-            </>
-          ) : (
-            <>
-              <svg className="h-4 w-4 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
-                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
-                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
-              </svg>
-              <span>{isRegister ? 'Create Account with Google' : 'Sign In with Google'}</span>
-            </>
-          )}
+          <svg className="h-4 w-4 shrink-0" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+          </svg>
+          <span>{isRegister ? 'Create Account with Google' : 'Sign In with Google'}</span>
         </button>
 
-        {/* Domain Authorization Diagnostic & Direct Google Sign-In Card */}
-        {domainErrorDetails && (
-          <div className="p-3.5 sm:p-4 rounded-2xl bg-amber-50/95 border border-amber-300 text-amber-950 space-y-3 animate-fadeIn shadow-2xs">
-            <div className="flex items-start gap-2.5">
-              <AlertCircle className="w-4 h-4 text-amber-600 shrink-0 mt-0.5" />
-              <div className="space-y-1">
-                <div className="text-xs font-bold text-amber-900">
-                  Firebase Domain Authorization Required
-                </div>
-                <p className="text-[11px] text-amber-800 leading-relaxed">
-                  Firebase requires domain <code className="px-1.5 py-0.5 rounded bg-amber-100 font-mono text-[10.5px] text-amber-900 border border-amber-300">{domainErrorDetails.domain}</code> to be whitelisted under Authorized Domains.
-                </p>
-              </div>
-            </div>
-
-            {/* Instant Google Sign-In & Create Account */}
-            <div className="p-3 rounded-xl bg-white border border-amber-200/90 space-y-2">
-              <span className="text-[11px] font-bold text-stone-800 flex items-center gap-1.5">
-                <Sparkles className="w-3.5 h-3.5 text-orange-500" />
-                <span>Instant Google Account {isRegister ? 'Registration' : 'Login'}:</span>
-              </span>
-              <div className="flex flex-col sm:flex-row gap-2">
-                <input
-                  type="email"
-                  value={directGoogleEmail}
-                  onChange={(e) => setDirectGoogleEmail(e.target.value)}
-                  placeholder="Enter your Google email (e.g. yourname@gmail.com)"
-                  className="flex-1 px-3 py-2 rounded-xl bg-stone-50 border border-stone-300 text-xs text-stone-900 placeholder:text-stone-400 focus:outline-none focus:border-orange-500 focus:bg-white transition"
-                />
-                <button
-                  type="button"
-                  onClick={() => handleDirectGoogleLogin(directGoogleEmail)}
-                  disabled={googleLoading || !directGoogleEmail.trim() || !directGoogleEmail.includes('@')}
-                  className="px-4 py-2 rounded-xl bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-sm active:scale-95 disabled:opacity-50 cursor-pointer whitespace-nowrap"
-                >
-                  {googleLoading ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : null}
-                  <span>{isRegister ? 'Register Account' : 'Sign In Now'}</span>
-                </button>
-              </div>
-            </div>
-
-            {/* Firebase Console Direct Action Link */}
-            <div className="pt-1 flex items-center justify-between text-[10.5px] text-amber-800/80">
-              <span>To whitelist in Firebase Console:</span>
-              <a
-                href={`https://console.firebase.google.com/project/${domainErrorDetails.projectId}/authentication/settings`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-bold text-orange-700 hover:text-orange-800 underline flex items-center gap-1"
-              >
-                <span>Open Firebase Console</span>
-                <ExternalLink className="w-2.5 h-2.5" />
-              </a>
-            </div>
-          </div>
-        )}
-
         {/* Error Alert */}
-        {error && !domainErrorDetails && (
+        {error && (
           <div className="p-3 rounded-xl bg-red-50 border border-red-200 text-xs text-red-700 flex items-start gap-2">
             <AlertCircle className="w-4 h-4 text-red-600 flex-shrink-0 mt-0.5" />
             <span>{error}</span>
           </div>
-        )}
-
-        {googleRedirectAvailable && (
-          <button
-            type="button"
-            onClick={handleGoogleRedirect}
-            disabled={googleLoading}
-            className="w-full rounded-xl border border-blue-200 bg-blue-50 px-3 py-2.5 text-xs font-bold text-blue-800 transition hover:bg-blue-100 disabled:opacity-60 cursor-pointer"
-          >
-            Continue with Google Redirect
-          </button>
         )}
 
         {/* Divider */}

@@ -29,6 +29,11 @@ interface AuthContextType {
   setIsAuthModalOpen: (open: boolean) => void;
   isOnboardingModalOpen: boolean;
   setIsOnboardingModalOpen: (open: boolean) => void;
+  isGoogleChooserOpen: boolean;
+  setIsGoogleChooserOpen: (open: boolean) => void;
+  googleChooserMode: 'signin' | 'signup';
+  setGoogleChooserMode: (mode: 'signin' | 'signup') => void;
+  openGoogleChooser: (mode?: 'signin' | 'signup') => void;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -39,6 +44,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [loading, setLoading] = useState(true);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [isOnboardingModalOpen, setIsOnboardingModalOpen] = useState(false);
+  const [isGoogleChooserOpen, setIsGoogleChooserOpen] = useState(false);
+  const [googleChooserMode, setGoogleChooserMode] = useState<'signin' | 'signup'>('signin');
+
+  const openGoogleChooser = (mode: 'signin' | 'signup' = 'signin') => {
+    setGoogleChooserMode(mode);
+    setIsGoogleChooserOpen(true);
+  };
 
   useEffect(() => {
     // Listen to Firebase Auth state
@@ -163,10 +175,27 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
       setUser(res.profile);
 
+      // Save remembered Google account locally for instant 1-tap fast switching
+      try {
+        const stored = safeLocalStorage.getItem('virasat_remembered_google_accounts');
+        const existing: Array<{ email: string; name: string; picture?: string; lastUsed: number }> = stored ? JSON.parse(stored) : [];
+        const filtered = existing.filter((a) => a.email.toLowerCase() !== res.profile.email.toLowerCase());
+        filtered.unshift({
+          email: res.profile.email,
+          name: res.profile.name,
+          picture: res.profile.avatar_url,
+          lastUsed: Date.now(),
+        });
+        safeLocalStorage.setItem('virasat_remembered_google_accounts', JSON.stringify(filtered.slice(0, 5)));
+      } catch (e) {
+        // safe ignore storage parse
+      }
+
       // Attempt background firestore sync if possible
       syncUserProfileToFirestore(res.profile).catch(() => {});
 
       setIsAuthModalOpen(false);
+      setIsGoogleChooserOpen(false);
       if (!res.profile.survey || Object.keys(res.profile.survey).length === 0) {
         setIsOnboardingModalOpen(true);
       }
@@ -239,6 +268,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         login,
         loginWithGoogle,
         loginWithGoogleRedirect,
+        loginWithGoogleDirect,
         register,
         logout,
         updateProfile,
@@ -247,6 +277,11 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setIsAuthModalOpen,
         isOnboardingModalOpen,
         setIsOnboardingModalOpen,
+        isGoogleChooserOpen,
+        setIsGoogleChooserOpen,
+        googleChooserMode,
+        setGoogleChooserMode,
+        openGoogleChooser,
       }}
     >
       {children}
