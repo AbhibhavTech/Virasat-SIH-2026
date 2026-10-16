@@ -227,13 +227,27 @@ interface HeroHeritageSlide {
 
 const HERO_HERITAGE_SLIDES: HeroHeritageSlide[] = [
   {
+    id: 'taj-mahal',
+    name: 'Taj Mahal',
+    location: 'Agra',
+    state: 'Uttar Pradesh',
+    category: 'UNESCO World Heritage',
+    tag: 'Mughal Marble Wonder & Symbol of Eternal Love',
+    builtEra: '1632–1653 CE • Emperor Shah Jahan',
+    bestTime: 'Sunrise 06:00 AM – 08:30 AM',
+    rating: '4.9',
+    reviewsCount: '68.9k',
+    imageUrl: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1600&auto=format&fit=crop&q=85',
+    fallbackUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Taj_Mahal_%28Edited%29.jpeg/1280px-Taj_Mahal_%28Edited%29.jpeg',
+  },
+  {
     id: 'india-gate',
     name: 'India Gate',
     location: 'New Delhi',
     state: 'Delhi (NCT)',
-    category: 'National War Memorial',
-    tag: 'Kartavya Path Imperial Arch',
-    builtEra: '1921–1931 CE • Edwin Lutyens',
+    category: 'National Memorial',
+    tag: 'Kartavya Path Imperial Arch & Amar Jawan Jyoti',
+    builtEra: '1921–1931 CE • Sir Edwin Lutyens',
     bestTime: 'Evening 6:00 – 9:00 PM',
     rating: '4.8',
     reviewsCount: '38.4k',
@@ -241,32 +255,130 @@ const HERO_HERITAGE_SLIDES: HeroHeritageSlide[] = [
     fallbackUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/India_Gate_in_New_Delhi_03-2016.jpg/1280px-India_Gate_in_New_Delhi_03-2016.jpg',
   },
   {
+    id: 'gateway-of-india',
+    name: 'Gateway of India',
+    location: 'Mumbai',
+    state: 'Maharashtra',
+    category: 'Historic Seafront Gateway',
+    tag: 'Indo-Saracenic Harbor Arch Overlooking Arabian Sea',
+    builtEra: '1911–1924 CE • George Wittet',
+    bestTime: 'Sunrise & Sunset by Mumbai Harbor',
+    rating: '4.7',
+    reviewsCount: '52.1k',
+    imageUrl: 'https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1600&auto=format&fit=crop&q=85',
+    fallbackUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Mumbai_03-2016_30_Gateway_of_India.jpg/1280px-Mumbai_03-2016_30_Gateway_of_India.jpg',
+  },
+  {
+    id: 'dal-lake',
+    name: 'Dal Lake & Shikara',
+    location: 'Srinagar',
+    state: 'Jammu and Kashmir',
+    category: 'Himalayan Water Heritage',
+    tag: 'Jewel of Srinagar • Floating Gardens & Char Chinar',
+    builtEra: 'Mughal Royal Era • Emperor Jahangir',
+    bestTime: 'Apr – Oct (Golden Morning Shikara)',
+    rating: '4.8',
+    reviewsCount: '29.7k',
+    imageUrl: 'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=1600&auto=format&fit=crop&q=85',
+    fallbackUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Dal_Lake_Srinagar_Kashmir.jpg/1280px-Dal_Lake_Srinagar_Kashmir.jpg',
+  },
+  {
+    id: 'tirumala-venkateswara-temple',
+    name: 'Sri Venkateswara Swamy Temple',
+    location: 'Tirumala, Tirupati',
+    state: 'Andhra Pradesh',
+    category: 'Sacred Vaishnavite Epicenter',
+    tag: 'Golden Ananda Nilayam & Srivari Brahmotsavam',
+    builtEra: '300 CE onwards • Chola, Pallava & Vijayanagara Dynasties',
+    bestTime: 'Year-round (Early Morning Suprabhatam)',
+    rating: '4.9',
+    reviewsCount: '74.2k',
+    imageUrl: '/images/andhra-pradesh-tirumala-4k.jpg',
+    fallbackUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Tirumala_090615.jpg/1280px-Tirumala_090615.jpg',
+  },
+  {
+    id: 'victoria-memorial',
+    name: 'Victoria Memorial',
+    location: 'Kolkata',
+    state: 'West Bengal',
+    category: 'Architectural Marvel & Museum',
+    tag: 'Pristine White Makrana Marble Monument on the Maidan',
+    builtEra: '1906–1921 CE • Sir William Emerson',
+    bestTime: 'Oct – Mar 10:00 AM – 5:00 PM',
+    rating: '4.8',
+    reviewsCount: '41.8k',
+    imageUrl: 'https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&auto=format&fit=crop&q=85',
+    fallbackUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Victoria_Memorial_situated_in_Kolkata.jpg/1280px-Victoria_Memorial_situated_in_Kolkata.jpg',
+  },
+  {
     id: 'red-fort',
     name: 'Red Fort (Lal Qila)',
     location: 'Old Delhi',
     state: 'Delhi (NCT)',
     category: 'UNESCO World Heritage',
-    tag: 'Mughal Imperial Citadel',
+    tag: 'Historic Red Sandstone Citadel & Lahori Gate',
     builtEra: '1638–1648 CE • Shah Jahan',
-    bestTime: 'Morning 9:30 AM – 1:00 PM',
+    bestTime: 'Morning 9:00 AM – 1:00 PM',
     rating: '4.7',
     reviewsCount: '45.2k',
-    imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Red_Fort_in_Delhi_03-2016_img1.jpg/1280px-Red_Fort_in_Delhi_03-2016_img1.jpg',
-    fallbackUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Delhi_fort.jpg/1280px-Delhi_fort.jpg',
+    imageUrl: '/images/delhi-red-fort-4k.jpg',
+    fallbackUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Red_Fort_in_Delhi_03-2016_img1.jpg/1280px-Red_Fort_in_Delhi_03-2016_img1.jpg',
   },
   {
-    id: 'taj-mahal',
-    name: 'Taj Mahal',
-    location: 'Agra',
-    state: 'Uttar Pradesh',
-    category: 'UNESCO World Heritage',
-    tag: 'Mughal Marble Wonder',
-    builtEra: '1632–1653 CE • Shah Jahan',
-    bestTime: 'Sunrise 06:00 AM – 08:30 AM',
+    id: 'mahakaleshwar-temple-ujjain',
+    name: 'Shri Mahakaleshwar Jyotirlinga',
+    location: 'Ujjain',
+    state: 'Madhya Pradesh',
+    category: 'Sacred Jyotirlinga & Mahakal Lok',
+    tag: 'Dakshinmukhi Swayambhu Jyotirlinga & Sacred Bhasma Aarti',
+    builtEra: 'Ancient Epoch • Rebuilt by Maratha Scindias 1734 CE',
+    bestTime: 'Early Morning Bhasma Aarti & Shravan Month',
     rating: '4.9',
-    reviewsCount: '68.9k',
-    imageUrl: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1600&auto=format&fit=crop&q=85',
-    fallbackUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Taj_Mahal_%28Edited%29.jpeg/1280px-Taj_Mahal_%28Edited%29.jpeg',
+    reviewsCount: '63.5k',
+    imageUrl: '/images/madhya-pradesh-mahakaleshwar-ujjain-4k.jpg',
+    fallbackUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Mahakaleshwar_temple_in_Ujjain.jpg/1280px-Mahakaleshwar_temple_in_Ujjain.jpg',
+  },
+  {
+    id: 'jagannath-temple-puri',
+    name: 'Shree Jagannath Temple & Rath Yatra',
+    location: 'Puri',
+    state: 'Odisha',
+    category: 'Char Dham Sacred Pilgrimage',
+    tag: 'World-Famous Chariot Festival (Rath Yatra) & Nilachakra',
+    builtEra: '1161 CE • King Anantavarman Chodaganga',
+    bestTime: 'Rath Yatra Festival (Ashadha) & Oct – Mar',
+    rating: '4.9',
+    reviewsCount: '58.3k',
+    imageUrl: '/images/odisha-puri-jagannath-4k.jpg',
+    fallbackUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Puri_Jagannatha_Temple.jpg/1280px-Puri_Jagannatha_Temple.jpg',
+  },
+  {
+    id: 'varanasi-ganga-ghats',
+    name: 'Varanasi Ganga Ghats (Dashashwamedh)',
+    location: 'Varanasi',
+    state: 'Uttar Pradesh',
+    category: 'Spiritual Heart of India',
+    tag: 'Eternal Riverfront Ghats & Evening Maha Ganga Aarti',
+    builtEra: 'Ancient Living Heritage • Reconstructed by Ahilyabai Holkar',
+    bestTime: 'Sunset Ganga Aarti & Dawn Boat Ride',
+    rating: '4.9',
+    reviewsCount: '82.6k',
+    imageUrl: '/images/varanasi-ganga-aarti.jpg',
+    fallbackUrl: 'https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=1600&auto=format&fit=crop&q=85',
+  },
+  {
+    id: 'kaziranga-national-park',
+    name: 'Kaziranga National Park (One-Horned Rhino)',
+    location: 'Golaghat & Nagaon',
+    state: 'Assam',
+    category: 'UNESCO World Natural Heritage',
+    tag: 'Sanctuary of the Great Indian One-Horned Rhinoceros',
+    builtEra: 'Established 1905 CE • UNESCO Declared 1985',
+    bestTime: 'Nov – Apr (Morning Wildlife Safari)',
+    rating: '4.8',
+    reviewsCount: '34.9k',
+    imageUrl: '/images/kaziranga-rhino-4k.jpg',
+    fallbackUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/02/Kaziranga_Rhinoceros.jpg',
   },
 ];
 
@@ -997,53 +1109,41 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
           </div>
         </div>
 
-        <div className="absolute bottom-4 left-4 right-4 z-20 hidden items-end justify-between gap-4 lg:flex">
+        {/* Centered Slideshow Navigation Bar (Free of any overlap with Virasat AI) */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 rounded-full border border-white/80 bg-white/90 px-3 py-1.5 shadow-md backdrop-blur-md">
           <button
             type="button"
-            onClick={() => onSelectPlace?.(HERO_HERITAGE_SLIDES[activeSlideIdx].id)}
-            className="group flex max-w-sm items-center gap-3 rounded-2xl border border-white/70 bg-white/90 px-3 py-2.5 text-left shadow-lg backdrop-blur-md transition hover:bg-white"
+            aria-label="Previous destination slide"
+            onClick={() => setActiveSlideIdx((index) => (index - 1 + HERO_HERITAGE_SLIDES.length) % HERO_HERITAGE_SLIDES.length)}
+            className="flex h-7 w-7 items-center justify-center rounded-full text-stone-700 transition hover:bg-stone-100 cursor-pointer"
           >
-            <img
-              src={HERO_HERITAGE_SLIDES[activeSlideIdx].imageUrl}
-              alt=""
-              className="h-12 w-14 rounded-xl object-cover"
-            />
-            <span className="min-w-0">
-              <span className="block text-[10px] font-bold uppercase tracking-[0.14em] text-[#FF671F]">Featured today</span>
-              <span className="block truncate font-serif text-sm font-bold text-stone-900">{HERO_HERITAGE_SLIDES[activeSlideIdx].name}</span>
-              <span className="block truncate text-[11px] text-stone-500">{HERO_HERITAGE_SLIDES[activeSlideIdx].location}</span>
-            </span>
-            <ArrowRight className="h-4 w-4 shrink-0 text-[#FF671F] transition group-hover:translate-x-0.5" />
+            <ChevronLeft className="h-4 w-4" />
           </button>
-          <div className="flex items-center gap-2 rounded-full border border-white/70 bg-white/90 px-2 py-2 shadow-lg backdrop-blur-md">
-            <button
-              type="button"
-              aria-label="Previous featured destination"
-              onClick={() => setActiveSlideIdx((index) => (index - 1 + HERO_HERITAGE_SLIDES.length) % HERO_HERITAGE_SLIDES.length)}
-              className="flex h-8 w-8 items-center justify-center rounded-full text-stone-700 transition hover:bg-stone-100"
-            >
-              <ChevronLeft className="h-4 w-4" />
-            </button>
-            <div className="flex items-center gap-1.5 px-1" aria-label="Featured destination slideshow">
-              {HERO_HERITAGE_SLIDES.map((slide, index) => (
-                <button
-                  key={slide.id}
-                  type="button"
-                  aria-label={`Show ${slide.name}`}
-                  onClick={() => setActiveSlideIdx(index)}
-                  className={`h-2 rounded-full transition-all ${index === activeSlideIdx ? 'w-6 bg-[#FF671F]' : 'w-2 bg-stone-300 hover:bg-stone-400'}`}
-                />
-              ))}
-            </div>
-            <button
-              type="button"
-              aria-label="Next featured destination"
-              onClick={() => setActiveSlideIdx((index) => (index + 1) % HERO_HERITAGE_SLIDES.length)}
-              className="flex h-8 w-8 items-center justify-center rounded-full text-stone-700 transition hover:bg-stone-100"
-            >
-              <ChevronRight className="h-4 w-4" />
-            </button>
+          <div className="flex items-center gap-1.5 px-1" aria-label="Featured destination slideshow">
+            {HERO_HERITAGE_SLIDES.map((slide, index) => (
+              <button
+                key={slide.id}
+                type="button"
+                aria-label={`Show ${slide.name}`}
+                onClick={() => setActiveSlideIdx(index)}
+                title={slide.name}
+                className={`h-2 rounded-full transition-all cursor-pointer ${
+                  index === activeSlideIdx ? 'w-6 bg-[#FF671F]' : 'w-2 bg-stone-300 hover:bg-stone-400'
+                }`}
+              />
+            ))}
           </div>
+          <button
+            type="button"
+            aria-label="Next destination slide"
+            onClick={() => setActiveSlideIdx((index) => (index + 1) % HERO_HERITAGE_SLIDES.length)}
+            className="flex h-7 w-7 items-center justify-center rounded-full text-stone-700 transition hover:bg-stone-100 cursor-pointer"
+          >
+            <ChevronRight className="h-4 w-4" />
+          </button>
+          <span className="hidden md:inline-block pl-1 text-[11px] font-bold text-stone-800 border-l border-stone-200 ml-1">
+            {HERO_HERITAGE_SLIDES[activeSlideIdx].name}
+          </span>
         </div>
 
         {/* Bottom Right Floating AI Assistant Quick Trigger */}
