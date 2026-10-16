@@ -22,6 +22,7 @@ import { useAuth } from './contexts/AuthContext';
 import { updatePageSEO, generateWebSiteSchema } from './utils/seo';
 import { analytics } from './services/analytics';
 import { getMumbaiDestinationById } from './data/mumbaiDestinations';
+import { getNearbyDiscoveryPlaceById } from './data/nearbyPlacesMMR';
 import { safeLocalStorage } from './utils/storage';
 
 const SELECTED_CITY_STORAGE_KEY = 'virasat_selected_city';
@@ -111,7 +112,7 @@ const AppContent: React.FC = () => {
   }, []);
 
   const handleSelectPlace = (id: string) => {
-    const localDestination = getMumbaiDestinationById(id);
+    const localDestination = getNearbyDiscoveryPlaceById(id) || getMumbaiDestinationById(id);
     const selectedPlace = localDestination || places.find((place) => place.id === id);
     if (selectedPlace?.city) {
       setSelectedCity(selectedPlace.city);

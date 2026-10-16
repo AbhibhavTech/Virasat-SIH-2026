@@ -36,6 +36,7 @@ import { SafarRouteGuide } from '../components/cultural-guides/SafarRouteGuide';
 import { updatePageSEO, generateTouristAttractionSchema } from '../utils/seo';
 import { analytics } from '../services/analytics';
 import { getMumbaiDestinationById } from '../data/mumbaiDestinations';
+import { getNearbyDiscoveryPlaceById } from '../data/nearbyPlacesMMR';
 
 interface DestinationDetailPageProps {
   placeId: string;
@@ -85,7 +86,7 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
       setLoading(true);
       setError(null);
       try {
-        const data = getMumbaiDestinationById(placeId) || await api.getPlaceById(placeId);
+        const data = getNearbyDiscoveryPlaceById(placeId) || getMumbaiDestinationById(placeId) || await api.getPlaceById(placeId);
         if (isMounted) {
           setPlace(data);
           if (data) {

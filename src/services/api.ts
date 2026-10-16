@@ -160,7 +160,7 @@ export const api = {
     return { total: results.length, results };
   },
 
-  async getNearbyPlaces(latOrParams: any, lng?: number, radiusKm: number = 10, limit: number = 6): Promise<any> {
+  async getNearbyPlaces(latOrParams: any, lng?: number, radiusKm: number = 50, limit: number = 50): Promise<any> {
     let lat: number;
     let long: number;
     let rad = radiusKm;
@@ -169,8 +169,8 @@ export const api = {
     if (typeof latOrParams === 'object' && latOrParams !== null) {
       lat = latOrParams.lat;
       long = latOrParams.lng;
-      rad = latOrParams.radius_km || 10;
-      lim = latOrParams.limit || 6;
+      rad = latOrParams.radius_km || latOrParams.radius || 50;
+      lim = latOrParams.limit || 50;
     } else {
       lat = latOrParams;
       long = lng || 72.8347;
@@ -180,6 +180,7 @@ export const api = {
       lat: String(lat),
       lng: String(long),
       radius_km: String(rad),
+      radius: String(rad),
       limit: String(lim),
     });
 
@@ -194,7 +195,7 @@ export const api = {
     }
   },
 
-  async getNearby(lat: number, lng: number, radiusKm: number = 10, limit: number = 6): Promise<any> {
+  async getNearby(lat: number, lng: number, radiusKm: number = 50, limit: number = 50): Promise<any> {
     return this.getNearbyPlaces(lat, lng, radiusKm, limit);
   },
 

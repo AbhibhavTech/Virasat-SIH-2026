@@ -1567,7 +1567,10 @@ class DatabaseManager {
         .filter((item) => item.distance <= radiusKm)
         .sort((a, b) => a.distance - b.distance)
         .slice(0, limit)
-        .map((item) => item.place);
+        .map((item) => ({
+          ...item.place,
+          distance_km: Math.round(item.distance * 10) / 10,
+        }));
     },
 
     search: async (query: string, limit = 20): Promise<PlaceRecord[]> => {

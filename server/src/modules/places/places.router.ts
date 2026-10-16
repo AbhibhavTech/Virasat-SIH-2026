@@ -55,7 +55,7 @@ placesRouter.get('/', async (req: Request, res: Response): Promise<void> => {
  * GET /api/v1/places/nearby
  */
 placesRouter.get('/nearby', async (req: Request, res: Response): Promise<void> => {
-  const { lat, lng, radius, limit } = req.query;
+  const { lat, lng, radius, radius_km, limit } = req.query;
 
   const parsedLat = Number(lat);
   const parsedLng = Number(lng);
@@ -65,8 +65,8 @@ placesRouter.get('/nearby', async (req: Request, res: Response): Promise<void> =
     return;
   }
 
-  const radiusKm = Math.min(Math.max(Number(radius) || 50, 1), 200);
-  const parsedLimit = Math.min(Math.max(Number(limit) || 20, 1), 50);
+  const radiusKm = Math.min(Math.max(Number(radius || radius_km) || 50, 1), 200);
+  const parsedLimit = Math.min(Math.max(Number(limit) || 50, 1), 100);
 
   const nearbyPlaces = await db.places.findNearby(parsedLat, parsedLng, radiusKm, parsedLimit);
 

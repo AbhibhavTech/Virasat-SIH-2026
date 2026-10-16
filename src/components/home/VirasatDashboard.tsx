@@ -25,6 +25,10 @@ import {
   History,
   Trash2,
   X,
+  Store,
+  Building2,
+  BookOpen,
+  Train,
 } from 'lucide-react';
 import { NavTab } from '../layout/Sidebar';
 import { PlaceSummary } from '../../types';
@@ -49,6 +53,7 @@ import { IndiaHeritageMapPreview } from './IndiaHeritageMapPreview';
 import { ScrollReveal } from '../common/ScrollReveal';
 import { getMonumentRealImage } from '../../data/monumentRealImages';
 import { searchMumbaiPlaces } from '../../data/mumbaiDestinations';
+import { getNearbyDiscoveryPlaces, calculateHaversineKm } from '../../data/nearbyPlacesMMR';
 
 interface VirasatDashboardProps {
   onSearch: (query: string) => void;
@@ -464,6 +469,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
   const [nearbyPlaces, setNearbyPlaces] = useState<any[]>([]);
   const [nearbyRadius, setNearbyRadius] = useState<number>(50);
   const [detectedCityName, setDetectedCityName] = useState<string>('');
+  const [nearbyCategoryTab, setNearbyCategoryTab] = useState<'all' | 'tourist' | 'market' | 'hotel' | 'library' | 'station'>('all');
 
   // Close search suggestions on click outside
   useEffect(() => {
@@ -544,12 +550,99 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
   const fetchNearbyPlaces = async (lat: number, lng: number, radius: number, cityName?: string) => {
     setLocationStatus('detecting');
     try {
-      const resp = await api.getNearbyPlaces(lat, lng, radius, 6);
-      const list = resp?.results || resp?.data || (Array.isArray(resp) ? resp : []);
-      setNearbyPlaces(list);
+      // 1. Curated verified MMR & India discovery places (tourist places, markets, hotels, libraries, stations)
+      const localMMR = getNearbyDiscoveryPlaces(lat, lng, radius, 'all');
+
+      // 2. Query backend API for indexed places
+      let apiItems: any[] = [];
+      try {
+        const resp = await api.getNearbyPlaces(lat, lng, radius, 50);
+        apiItems = resp?.results || resp?.data || resp?.places || (Array.isArray(resp) ? resp : []);
+      } catch (apiErr) {
+        console.warn('API getNearbyPlaces error (falling back to discovery DB):', apiErr);
+      }
+
+      // 3. Merge datasets avoiding duplicates
+      const seenNames = new Set<string>();
+      const seenIds = new Set<string>();
+      const mergedList: any[] = [];
+
+      // Add local MMR discovery items first (with exact category, real photo, accurate distance)
+      for (const item of localMMR) {
+        const normKey = item.name.toLowerCase().trim();
+        const normId = item.id.toLowerCase().trim();
+        seenNames.add(normKey);
+        seenIds.add(normId);
+        mergedList.push({
+          id: item.id,
+          name: item.name,
+          category: item.category,
+          categoryLabel: item.categoryLabel,
+          area: item.area,
+          city: item.city,
+          state: item.state,
+          lat: item.lat,
+          lng: item.lng,
+          distance_km: item.distance_km,
+          rating: item.rating ?? 4.7,
+          thumbnail_url: item.thumbnail_url,
+          image_url: item.image_url,
+          summary: item.summary,
+        });
+      }
+
+      // Add backend items if not already added
+      for (const p of apiItems) {
+        const normKey = (p.name || '').toLowerCase().trim();
+        const normId = (p.id || '').toLowerCase().trim();
+        if (!seenNames.has(normKey) && !seenIds.has(normId)) {
+          seenNames.add(normKey);
+          seenIds.add(normId);
+
+          const pLat = p.lat ?? p.latitude ?? lat;
+          const pLng = p.lng ?? p.longitude ?? lng;
+          const dist = p.distance_km !== undefined ? p.distance_km : calculateHaversineKm(lat, lng, pLat, pLng);
+
+          // Infer category type for filtering
+          let catType: 'tourist' | 'market' | 'hotel' | 'library' | 'station' = 'tourist';
+          const pCatLower = ((p.category || '') + ' ' + (p.name || '')).toLowerCase();
+          if (pCatLower.includes('market') || pCatLower.includes('bazaar') || pCatLower.includes('mandai') || pCatLower.includes('mall')) {
+            catType = 'market';
+          } else if (pCatLower.includes('hotel') || pCatLower.includes('palace hotel') || pCatLower.includes('resort')) {
+            catType = 'hotel';
+          } else if (pCatLower.includes('library') || pCatLower.includes('reading room') || pCatLower.includes('archives')) {
+            catType = 'library';
+          } else if (pCatLower.includes('station') || pCatLower.includes('terminus') || pCatLower.includes('junction') || pCatLower.includes('metro')) {
+            catType = 'station';
+          }
+
+          mergedList.push({
+            id: p.id,
+            name: p.name,
+            category: catType,
+            categoryLabel: p.category || 'Heritage Landmark',
+            area: p.area || p.district || p.city,
+            city: p.city || 'Navi Mumbai',
+            state: p.state || 'Maharashtra',
+            lat: pLat,
+            lng: pLng,
+            distance_km: typeof dist === 'number' ? Math.round(dist * 10) / 10 : dist,
+            rating: p.rating || 4.7,
+            thumbnail_url: p.thumbnail_url || p.image_url,
+            image_url: p.image_url || p.thumbnail_url,
+            summary: p.summary || p.description || '',
+          });
+        }
+      }
+
+      // Sort by distance ascending
+      mergedList.sort((a, b) => (Number(a.distance_km) || 0) - (Number(b.distance_km) || 0));
+
+      setNearbyPlaces(mergedList);
       setDetectedCityName(cityName || `${lat.toFixed(2)}°N, ${lng.toFixed(2)}°E`);
       setLocationStatus('ready');
-    } catch {
+    } catch (err) {
+      console.error('fetchNearbyPlaces failure:', err);
       setNearbyPlaces([]);
       setLocationStatus('error');
     }
@@ -1273,12 +1366,12 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
               {[
-                { name: 'Delhi', region: 'Capital heritage', lat: 28.6139, lng: 77.209 },
-                { name: 'Mumbai', region: 'Coastal icons', lat: 18.922, lng: 72.8347 },
+                { name: 'Kharghar / Panvel', region: 'Navi Mumbai & Raigad', lat: 19.033, lng: 73.064 },
+                { name: 'Mumbai Coast', region: 'Colaba, Fort & Marine Drive', lat: 18.922, lng: 72.8347 },
+                { name: 'Delhi NCR', region: 'Capital heritage', lat: 28.6139, lng: 77.209 },
                 { name: 'Jaipur', region: 'Royal Rajasthan', lat: 26.9124, lng: 75.7873 },
                 { name: 'Agra', region: 'Mughal heritage', lat: 27.1767, lng: 78.0081 },
                 { name: 'Varanasi', region: 'Sacred ghats', lat: 25.3176, lng: 82.9739 },
-                { name: 'Bengaluru', region: 'Southern gateway', lat: 12.9716, lng: 77.5946 },
               ].map((c) => (
                 <button
                   key={c.name}
@@ -1314,12 +1407,12 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
             </p>
             <div className="flex flex-wrap items-center gap-2 pt-1">
               {[
-                { name: 'Delhi NCR', lat: 28.6139, lng: 77.209 },
+                { name: 'Kharghar / Panvel (Navi Mumbai)', lat: 19.033, lng: 73.064 },
                 { name: 'Mumbai Coast', lat: 18.922, lng: 72.8347 },
+                { name: 'Delhi NCR', lat: 28.6139, lng: 77.209 },
                 { name: 'Jaipur / Amer', lat: 26.9124, lng: 75.7873 },
                 { name: 'Agra Heritage', lat: 27.1767, lng: 78.0081 },
                 { name: 'Varanasi Ghats', lat: 25.3176, lng: 82.9739 },
-                { name: 'Karnataka (Hampi)', lat: 15.335, lng: 76.46 },
               ].map((c) => (
                 <button
                   key={c.name}
@@ -1334,61 +1427,169 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
         )}
 
         {/* State 3: Ready with nearby cards */}
-        {locationStatus === 'ready' && (
-          <div className="space-y-4">
-            <div className="flex items-center justify-between text-xs text-stone-600 font-medium px-1">
-              <span>Showing monuments near <strong className="text-stone-900">{detectedCityName}</strong>:</span>
-              <span className="text-emerald-700 font-bold">{nearbyPlaces.length} locations found</span>
-            </div>
+        {locationStatus === 'ready' && (() => {
+          const counts = {
+            all: nearbyPlaces.length,
+            tourist: nearbyPlaces.filter((p) => p.category === 'tourist' || (!['market', 'hotel', 'library', 'station'].includes(p.category))).length,
+            market: nearbyPlaces.filter((p) => p.category === 'market').length,
+            hotel: nearbyPlaces.filter((p) => p.category === 'hotel').length,
+            library: nearbyPlaces.filter((p) => p.category === 'library').length,
+            station: nearbyPlaces.filter((p) => p.category === 'station').length,
+          };
 
-            {nearbyPlaces.length === 0 ? (
-              <div className="p-8 text-center text-xs text-stone-500 bg-stone-50 rounded-2xl">
-                No verified monuments indexed within {nearbyRadius} km. Try expanding the search radius above.
-              </div>
-            ) : (
-              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4">
-                {nearbyPlaces.map((p) => (
-                  <div
-                    key={p.id}
-                    onClick={() => onSelectPlace && onSelectPlace(p.id)}
-                    className="group cursor-pointer rounded-2xl bg-white border border-stone-200/90 overflow-hidden shadow-2xs hover:shadow-md hover:border-emerald-500 transition-all duration-200 flex flex-col justify-between"
-                  >
-                    <div className="h-28 w-full overflow-hidden bg-stone-100 relative">
-                      <img
-                        src={getMonumentRealImage(p.id, p.thumbnail_url || p.image_url)}
-                        alt={p.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-400"
-                        loading="lazy"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          const fallback = getMonumentRealImage(p.id);
-                          if (target.src !== fallback) {
-                            target.src = fallback;
-                          }
-                        }}
-                      />
-                      {p.distance_km !== undefined && (
-                        <span className="absolute bottom-2 left-2 px-2 py-0.5 rounded-md bg-[#046A38] text-white text-[10px] font-bold shadow-xs">
-                          {p.distance_km} km away
+          const filteredNearbyPlaces = nearbyPlaces.filter((p) => {
+            if (nearbyCategoryTab === 'all') return true;
+            if (nearbyCategoryTab === 'tourist') {
+              return p.category === 'tourist' || (!['market', 'hotel', 'library', 'station'].includes(p.category));
+            }
+            return p.category === nearbyCategoryTab;
+          });
+
+          const categoryPills: Record<string, { label: string; bg: string; text: string }> = {
+            tourist: { label: 'Tourist Place', bg: 'bg-emerald-600', text: 'text-white' },
+            market: { label: 'Market', bg: 'bg-amber-600', text: 'text-white' },
+            hotel: { label: 'Hotel', bg: 'bg-blue-600', text: 'text-white' },
+            library: { label: 'Library', bg: 'bg-teal-600', text: 'text-white' },
+            station: { label: 'Station', bg: 'bg-rose-600', text: 'text-white' },
+          };
+
+          return (
+            <div className="space-y-4">
+              {/* Category Filter Tabs Bar */}
+              <div className="flex items-center justify-between gap-3 flex-wrap">
+                <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 scrollbar-none max-w-full">
+                  {[
+                    { id: 'all', label: 'All', icon: Compass, count: counts.all },
+                    { id: 'tourist', label: 'Tourist Places', icon: Landmark, count: counts.tourist },
+                    { id: 'market', label: 'Markets', icon: Store, count: counts.market },
+                    { id: 'hotel', label: 'Hotels', icon: Building2, count: counts.hotel },
+                    { id: 'library', label: 'Libraries', icon: BookOpen, count: counts.library },
+                    { id: 'station', label: 'Stations', icon: Train, count: counts.station },
+                  ].map((tab) => {
+                    const Icon = tab.icon;
+                    const isActive = nearbyCategoryTab === tab.id;
+                    return (
+                      <button
+                        key={tab.id}
+                        type="button"
+                        onClick={() => setNearbyCategoryTab(tab.id as any)}
+                        className={`px-3 py-1.5 sm:py-2 rounded-xl text-xs font-semibold flex items-center gap-1.5 sm:gap-2 whitespace-nowrap transition-all duration-200 cursor-pointer ${
+                          isActive
+                            ? 'bg-[#046A38] text-white shadow-sm shadow-emerald-900/20'
+                            : 'bg-white hover:bg-stone-100 text-stone-700 border border-stone-200 shadow-2xs'
+                        }`}
+                      >
+                        <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-white' : 'text-stone-500'}`} />
+                        <span>{tab.label}</span>
+                        <span
+                          className={`px-1.5 py-0.5 rounded-full text-[10px] font-bold ${
+                            isActive ? 'bg-white/20 text-white' : 'bg-stone-100 text-stone-600'
+                          }`}
+                        >
+                          {tab.count}
                         </span>
-                      )}
-                    </div>
+                      </button>
+                    );
+                  })}
+                </div>
 
-                    <div className="p-3 space-y-1">
-                      <h4 className="font-serif text-xs font-bold text-stone-900 group-hover:text-emerald-700 transition truncate">
-                        {p.name}
-                      </h4>
-                      <div className="flex items-center gap-1 text-[11px] text-stone-500 truncate">
-                        <MapPin className="w-3 h-3 text-emerald-600 shrink-0" />
-                        <span className="truncate">{p.city}, {p.state}</span>
-                      </div>
-                    </div>
-                  </div>
-                ))}
+                <div className="text-xs text-stone-600 font-medium ml-auto flex items-center gap-2">
+                  <span>Near <strong className="text-stone-900">{detectedCityName}</strong></span>
+                  <span className="px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 font-bold text-[11px]">
+                    {filteredNearbyPlaces.length} places
+                  </span>
+                </div>
               </div>
-            )}
-          </div>
-        )}
+
+              {filteredNearbyPlaces.length === 0 ? (
+                <div className="p-8 text-center text-xs text-stone-500 bg-stone-50 rounded-2xl border border-stone-200">
+                  No places found in this category within {nearbyRadius} km. Try choosing &quot;All&quot; or expanding the radius above.
+                </div>
+              ) : (
+                <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 sm:gap-4">
+                  {filteredNearbyPlaces.map((p) => {
+                    const pill = categoryPills[p.category] || categoryPills.tourist;
+                    return (
+                      <div
+                        key={p.id}
+                        onClick={() => onSelectPlace && onSelectPlace(p.id)}
+                        className="group cursor-pointer rounded-2xl bg-white border border-stone-200 hover:border-emerald-500 overflow-hidden shadow-2xs hover:shadow-md transition-all duration-200 flex flex-col justify-between"
+                      >
+                        {/* Image banner with category badge & distance */}
+                        <div className="h-32 w-full overflow-hidden bg-stone-100 relative">
+                          <img
+                            src={getMonumentRealImage(p.id, p.thumbnail_url || p.image_url)}
+                            alt={p.name}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-400"
+                            loading="lazy"
+                            onError={(e) => {
+                              const target = e.target as HTMLImageElement;
+                              const fallback = getMonumentRealImage(p.id, p.image_url);
+                              if (target.src !== fallback) {
+                                target.src = fallback;
+                              }
+                            }}
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-black/25 pointer-events-none" />
+
+                          {/* Category Badge top-left */}
+                          <span className={`absolute top-2 left-2 px-2 py-0.5 rounded-md ${pill.bg} ${pill.text} text-[10px] font-bold shadow-xs flex items-center gap-1`}>
+                            {p.category === 'market' && <Store className="w-2.5 h-2.5" />}
+                            {p.category === 'hotel' && <Building2 className="w-2.5 h-2.5" />}
+                            {p.category === 'library' && <BookOpen className="w-2.5 h-2.5" />}
+                            {p.category === 'station' && <Train className="w-2.5 h-2.5" />}
+                            {p.category === 'tourist' && <Landmark className="w-2.5 h-2.5" />}
+                            <span>{pill.label}</span>
+                          </span>
+
+                          {/* Rating badge top-right */}
+                          {p.rating && (
+                            <span className="absolute top-2 right-2 px-1.5 py-0.5 rounded-md bg-white/90 text-stone-900 text-[10px] font-bold shadow-xs flex items-center gap-0.5 backdrop-blur-xs">
+                              <Star className="w-2.5 h-2.5 text-amber-500 fill-amber-500" />
+                              <span>{p.rating}</span>
+                            </span>
+                          )}
+
+                          {/* Distance badge bottom-left */}
+                          {p.distance_km !== undefined && (
+                            <span className="absolute bottom-2 left-2 px-2 py-0.5 rounded-md bg-[#046A38] text-white text-[10px] font-bold shadow-xs flex items-center gap-1">
+                              <Navigation className="w-2.5 h-2.5" />
+                              <span>{p.distance_km} km away</span>
+                            </span>
+                          )}
+                        </div>
+
+                        {/* Details */}
+                        <div className="p-3 space-y-1.5 flex-1 flex flex-col justify-between">
+                          <div>
+                            <div className="text-[10px] uppercase tracking-wider font-semibold text-emerald-800 line-clamp-1">
+                              {p.categoryLabel || p.category}
+                            </div>
+                            <h4 className="font-serif text-xs sm:text-sm font-bold text-stone-900 group-hover:text-emerald-700 transition line-clamp-1 mt-0.5">
+                              {p.name}
+                            </h4>
+                          </div>
+
+                          <div className="space-y-1">
+                            <div className="flex items-center gap-1 text-[11px] text-stone-500 line-clamp-1">
+                              <MapPin className="w-3 h-3 text-emerald-600 shrink-0" />
+                              <span className="truncate">{p.area || p.city}, {p.state}</span>
+                            </div>
+                            {p.summary && (
+                              <p className="text-[10px] text-stone-500 line-clamp-2 leading-relaxed">
+                                {p.summary}
+                              </p>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              )}
+            </div>
+          );
+        })()}
       </section>
 
       {/* ========================================================================= */}
