@@ -11,9 +11,8 @@ import { ContextualSubNav } from './components/layout/ContextualSubNav';
 import { SimpleFooter } from './components/layout/SimpleFooter';
 import { MobileBottomNav } from './components/layout/MobileBottomNav';
 import { AuthModal } from './components/auth/AuthModal';
-import { GoogleAccountChooserModal } from './components/auth/GoogleAccountChooserModal';
-import { GoogleOneTapPrompt } from './components/auth/GoogleOneTapPrompt';
 import { OnboardingSurveyModal } from './components/auth/OnboardingSurveyModal';
+import { initOfficialGoogleOneTap } from './services/googleAuth';
 import { BrandSplashScreen } from './components/common/BrandSplashScreen';
 import { DatabaseStatusModal } from './components/database/DatabaseStatusModal';
 import { AnalyticsDashboardModal } from './components/analytics/AnalyticsDashboardModal';
@@ -30,7 +29,7 @@ import { safeLocalStorage } from './utils/storage';
 const SELECTED_CITY_STORAGE_KEY = 'virasat_selected_city';
 
 const AppContent: React.FC = () => {
-  const { setIsAuthModalOpen } = useAuth();
+  const { setIsAuthModalOpen, user, loginWithGoogleDirect } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -42,6 +41,19 @@ const AppContent: React.FC = () => {
   const [isAnalyticsModalOpen, setIsAnalyticsModalOpen] = useState<boolean>(false);
   const [isGlobalARModalOpen, setIsGlobalARModalOpen] = useState<boolean>(false);
   const [isAppInitializing, setIsAppInitializing] = useState<boolean>(true);
+
+  // Initialize official Google One Tap for frictionless 1-click Google Sign-In
+  useEffect(() => {
+    if (!user) {
+      initOfficialGoogleOneTap((profile) => {
+        loginWithGoogleDirect({
+          email: profile.email,
+          name: profile.name,
+          picture: profile.picture,
+        }).catch((e) => console.warn('Google One Tap sign-in error:', e));
+      });
+    }
+  }, [user, loginWithGoogleDirect]);
 
   const activeTab: NavTab = getActiveTabFromPath(location.pathname);
 
@@ -207,8 +219,6 @@ const AppContent: React.FC = () => {
 
       {/* Global Modals */}
       <AuthModal />
-      <GoogleAccountChooserModal />
-      <GoogleOneTapPrompt />
       <OnboardingSurveyModal />
       <DatabaseStatusModal
         isOpen={isDatabaseModalOpen}

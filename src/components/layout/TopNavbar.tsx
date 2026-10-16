@@ -94,7 +94,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
   onOpenARCamera,
 }) => {
   const navigate = useNavigate();
-  const { user, logout, openGoogleChooser } = useAuth();
+  const { user, logout, loginWithGoogle } = useAuth();
   const isAuthenticated = Boolean(user);
   const { favorites } = useFavorites();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -692,7 +692,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
             {!isAuthenticated && (
               <button
                 type="button"
-                onClick={() => openGoogleChooser('signin')}
+                onClick={() => loginWithGoogle()}
                 className="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white hover:bg-stone-50 border border-stone-300 text-stone-700 hover:text-stone-900 shadow-2xs text-[11px] font-semibold transition active:scale-95 cursor-pointer"
                 title="Sign in with Google"
               >

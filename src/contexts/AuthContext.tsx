@@ -12,6 +12,7 @@ import {
   getUserProfileFromFirestore,
   isAdminEmail,
 } from '../services/firebase';
+import { signInWithRealGoogle } from '../services/googleAuth';
 
 interface AuthContextType {
   user: UserProfile | null;
@@ -29,11 +30,6 @@ interface AuthContextType {
   setIsAuthModalOpen: (open: boolean) => void;
   isOnboardingModalOpen: boolean;
   setIsOnboardingModalOpen: (open: boolean) => void;
-  isGoogleChooserOpen: boolean;
-  setIsGoogleChooserOpen: (open: boolean) => void;
-  googleChooserMode: 'signin' | 'signup';
-  setGoogleChooserMode: (mode: 'signin' | 'signup') => void;
-  openGoogleChooser: (mode?: 'signin' | 'signup') => void;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -44,13 +40,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [loading, setLoading] = useState(true);
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [isOnboardingModalOpen, setIsOnboardingModalOpen] = useState(false);
-  const [isGoogleChooserOpen, setIsGoogleChooserOpen] = useState(false);
-  const [googleChooserMode, setGoogleChooserMode] = useState<'signin' | 'signup'>('signin');
-
-  const openGoogleChooser = (mode: 'signin' | 'signup' = 'signin') => {
-    setGoogleChooserMode(mode);
-    setIsGoogleChooserOpen(true);
-  };
 
   useEffect(() => {
     // Listen to Firebase Auth state
@@ -115,52 +104,60 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const loginWithGoogle = async () => {
+    setLoading(true);
     try {
-      // 1. Firebase Google Auth Popup
-      const userCredential = await signInWithGooglePopup();
-      const fbUser = userCredential.user;
-      setFirebaseUser(fbUser);
+      // 1. Launch Real Google Identity Services OAuth 2.0 Popup (accounts.google.com)
+      const googleProfile = await signInWithRealGoogle();
 
-      // 2. Synchronize with Firestore
-      let profile: UserProfile | null = await getUserProfileFromFirestore(fbUser.uid);
-      if (!profile) {
-        profile = {
-          id: fbUser.uid,
-          name: fbUser.displayName || fbUser.email?.split('@')[0] || 'Virasat Traveller',
-          email: fbUser.email || '',
-          avatar_url: fbUser.photoURL || undefined,
-          role: isAdminEmail(fbUser.email) ? 'admin' : 'traveller',
-          home_city: 'Mumbai',
-          created_at: new Date().toISOString(),
-        };
-        await syncUserProfileToFirestore(profile).catch((e) => {
-          console.warn('Initial Google login Firestore sync warning:', e);
-        });
-      }
+      // 2. Synchronize with Virasat Backend for JWT persistence
+      const backendRes = await api.loginWithGoogle({
+        email: googleProfile.email,
+        name: googleProfile.name,
+        picture: googleProfile.picture,
+        sub: googleProfile.sub,
+      });
 
-      // 3. Mirror session to Virasat Backend for JWT persistence
-      try {
-        const backendRes = await api.loginWithGoogle({
-          email: fbUser.email || undefined,
-          name: fbUser.displayName || undefined,
-          picture: fbUser.photoURL || undefined,
-          sub: fbUser.uid,
-        });
-        if (backendRes?.profile) {
-          profile = { ...profile, ...backendRes.profile };
-        }
-      } catch (beErr) {
-        console.warn('Backend Google mirror sync warning:', beErr);
-      }
+      const profile: UserProfile = backendRes?.profile || {
+        id: googleProfile.sub,
+        name: googleProfile.name || googleProfile.email.split('@')[0],
+        email: googleProfile.email,
+        avatar_url: googleProfile.picture,
+        role: isAdminEmail(googleProfile.email) ? 'admin' : 'traveller',
+        home_city: 'Mumbai',
+        created_at: new Date().toISOString(),
+      };
 
       setUser(profile);
+
+      // Save remembered Google account locally
+      try {
+        const stored = safeLocalStorage.getItem('virasat_remembered_google_accounts');
+        const existing: Array<{ email: string; name: string; picture?: string; lastUsed: number }> = stored ? JSON.parse(stored) : [];
+        const filtered = existing.filter((a) => a.email.toLowerCase() !== profile.email.toLowerCase());
+        filtered.unshift({
+          email: profile.email,
+          name: profile.name,
+          picture: profile.avatar_url,
+          lastUsed: Date.now(),
+        });
+        safeLocalStorage.setItem('virasat_remembered_google_accounts', JSON.stringify(filtered.slice(0, 5)));
+      } catch (e) {
+        // safe ignore
+      }
+
+      // Background Firestore profile mirror
+      syncUserProfileToFirestore(profile).catch(() => {});
+
       setIsAuthModalOpen(false);
+      setIsGoogleChooserOpen(false);
       if (!profile.survey || Object.keys(profile.survey).length === 0) {
         setIsOnboardingModalOpen(true);
       }
-    } catch (firebaseErr: any) {
-      // If popup was cancelled or domain unauthorized, rethrow for UI handler with context
-      throw firebaseErr;
+    } catch (err: any) {
+      console.warn('Google Identity Sign-In error:', err);
+      throw err;
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -277,11 +274,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setIsAuthModalOpen,
         isOnboardingModalOpen,
         setIsOnboardingModalOpen,
-        isGoogleChooserOpen,
-        setIsGoogleChooserOpen,
-        googleChooserMode,
-        setGoogleChooserMode,
-        openGoogleChooser,
       }}
     >
       {children}
