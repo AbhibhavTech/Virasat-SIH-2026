@@ -21,7 +21,7 @@ import { generateSmartItinerary } from '../engine/itineraryPlanner';
 import { buildResponseForIntent, AIAction } from '../engine/responseGenerator';
 import { buildCityComparisonAnswer } from '../engine/cityComparison';
 import { getResolvedPlaceById } from '../engine/placeResolver';
-import { randomUUID } from 'node:crypto';
+import { randomUUID, createHash } from 'node:crypto';
 import { generateModelReply, getModelStatus, getModelConfiguration, explainModelFailure } from '../engine/modelGateway';
 import { ProviderFailure } from '../engine/providerErrors';
 
@@ -160,7 +160,8 @@ aiChatRouter.post(
     /**
      * Existing conversation memory.
      */
-    const existingState = getConversationState(sessionId);
+    const memorySessionId = createHash('sha256').update(JSON.stringify([req.user?.id || null, sessionId])).digest('hex');
+    const existingState = getConversationState(memorySessionId);
 
     const modelConfiguration = getModelConfiguration();
     if (modelConfiguration.requireHosted && !modelConfiguration.configured) {
@@ -334,7 +335,7 @@ aiChatRouter.post(
      */
 
     const tripState = updateConversationState(
-      sessionId,
+      memorySessionId,
       entities,
       intentResult.intent
     );
@@ -419,6 +420,7 @@ aiChatRouter.post(
         offset: (previousSearch.offset || 0) + (previousSearch.limit || 4),
       };
       const searchTool = previousSearch.kind === 'hidden_gems' ? 'searchHiddenGems' : 'searchTouristPlaces';
+      if (searchTool === 'searchHiddenGems') { delete args.query; delete args.category; }
       const placesRes = await executeTool(searchTool, args, liveContext);
       executedToolCalls.push({ tool: searchTool, args, result: placesRes });
       const results = searchTool === 'searchHiddenGems' ? placesRes.candidates || [] : placesRes.results || [];

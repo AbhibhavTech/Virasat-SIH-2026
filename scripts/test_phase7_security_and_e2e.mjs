@@ -10,7 +10,7 @@
 import jwt from 'jsonwebtoken';
 import { db } from '../server/src/db/client.ts';
 import { JWT_SECRET } from '../server/src/middleware/auth.ts';
-import { auditHallucinations } from '../server/src/modules/ai/ai.router.ts';
+import { auditEntityCoverage } from '../ai/evaluation/entityCoverage.ts';
 import { resolveOriginTransportNode, resolveDestinationTransportNode, buildVerifiedTransitComparison } from '../src/server/transportResolver.ts';
 
 async function runPhase7Tests() {
@@ -370,9 +370,9 @@ async function runPhase7Tests() {
 
   // Step 4: AI Concierge Query & Grounding Audit
   const aiReply = `In Jaipur, you can visit the magnificent Amber Fort and the historic Hawa Mahal. Both monuments are maintained under the Archaeological Survey of India.`;
-  const aiAudit = auditHallucinations(aiReply, jaipurPlaces.places, jaipurPlaces.places, 4, 38, 'Virasat AI Astra Local Data Engine');
-  assert(aiAudit.grounding_score >= 0.95, `E2E Step 4: AI Concierge response achieves high grounding score (${aiAudit.grounding_score})`);
-  assert(aiAudit.unverified_entities_count === 0, 'E2E Step 4: Zero hallucinated entities in verified concierge reply');
+  const aiAudit = auditEntityCoverage(aiReply, jaipurPlaces.places, jaipurPlaces.places, 4, 38, 'Virasat AI Astra Local Data Engine');
+  assert(aiAudit.entity_coverage >= 0.95, `E2E Step 4: Fixture achieves expected entity-name coverage (${aiAudit.entity_coverage})`);
+  assert(aiAudit.unsupported_entities.length === 0, 'E2E Step 4: All recognized fixture monument names are retrieved');
 
   // Step 5: Save Favorite Place
   const favPlaceId = jaipurPlaces.places[0].id;

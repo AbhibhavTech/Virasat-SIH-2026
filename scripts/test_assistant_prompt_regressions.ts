@@ -2,19 +2,26 @@ import assert from 'node:assert/strict';
 import express from 'express';
 import { aiChatRouter } from '../ai/routes/chatHandler';
 
+// Explicit deterministic regression mode: never spend provider quota in this suite.
+for (const name of ['VIRASAT_AI_API_KEY', 'OPENAI_API_KEY', 'GROQ_API_KEY', 'VIRASAT_AI_MODEL', 'OPENAI_MODEL', 'GROQ_MODEL']) process.env[name] = '';
+process.env.VIRASAT_AI_PROVIDER = 'openai';
+process.env.VIRASAT_AI_REQUIRE_HOSTED = 'false';
+
 async function main() {
   const app = express();
   app.use(express.json());
+  // Trusted authentication fixture; production uses verified JWT middleware.
+  app.use((req, _res, next) => { if (req.headers['x-test-user']) req.user = { id: String(req.headers['x-test-user']), email: 'fixture@example.com', name: 'Fixture', role: 'traveller' }; next(); });
   app.use('/api/ai', aiChatRouter);
   const server = app.listen(0);
   const address = server.address();
   if (!address || typeof address === 'string') throw new Error('Test server did not start.');
   const endpoint = `http://127.0.0.1:${address.port}/api/ai/chat`;
 
-  async function ask(message: string, id: string) {
+  async function ask(message: string, id: string, user = '') {
     const response = await fetch(endpoint, {
       method: 'POST',
-      headers: { 'content-type': 'application/json' },
+      headers: { 'content-type': 'application/json', 'x-test-user': user },
       body: JSON.stringify({ message, session_id: `prompt-regression-${id}` }),
     });
     assert.equal(response.status, 200, `${message} should return HTTP 200`);
@@ -22,11 +29,16 @@ async function main() {
       reply: string;
       actions: Array<{ url?: string; label: string }>;
       suggested_places?: Array<{ id: string; name: string; city: string; state?: string }>;
-      context?: { memory?: { budget?: number; party_size_count?: number; start_date?: string; end_date?: string } };
+      context?: { memory?: { destination?: string; budget?: number; party_size_count?: number; start_date?: string; end_date?: string } };
     }>;
   }
 
   try {
+    await ask('Plan a Jaipur trip for 2 days', 'shared-id', 'alice');
+    const otherUser = await ask('helo', 'shared-id', 'bob');
+    assert.equal(otherUser.context?.memory?.destination, undefined, 'Users must not share memory even with the same conversation ID.');
+    const anonymous = await ask('helo', 'shared-id');
+    assert.equal(anonymous.context?.memory?.destination, undefined, 'Anonymous callers must not read authenticated history.');
     const greeting = await ask('helo', 'greeting');
     assert.match(greeting.reply, /Namaste|Hello/i);
     assert.doesNotMatch(greeting.reply, /no hosted generative model/i);

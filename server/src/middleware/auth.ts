@@ -1,8 +1,14 @@
 import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
+import { randomBytes } from 'node:crypto';
+import '../config/environment';
 import { UserRole } from '../db/types';
 
-export const JWT_SECRET = process.env.JWT_SECRET || 'virasat-secret-key-change-in-production-2026';
+if (process.env.NODE_ENV === 'production' && (!process.env.JWT_SECRET || process.env.JWT_SECRET.length < 32 || process.env.JWT_SECRET === 'virasat-secret-key-change-in-production-2026')) {
+  throw new Error('Production requires a JWT_SECRET of at least 32 characters.');
+}
+// Development sessions expire on server restart unless a private secret is configured.
+export const JWT_SECRET = process.env.JWT_SECRET || randomBytes(48).toString('hex');
 
 export interface AuthenticatedUser {
   id: string;

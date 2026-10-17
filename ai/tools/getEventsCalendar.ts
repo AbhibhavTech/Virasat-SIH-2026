@@ -101,7 +101,7 @@ export async function execute(args: {
     const { db } = await import('../../server/src/db/client.js').catch(() => import('../../server/src/db/client'));
     const dbRes = await db.festivals.findAll({ limit: 500 });
     if (dbRes && dbRes.festivals && dbRes.festivals.length > 0) {
-      allFestivals = dbRes.festivals;
+      allFestivals = [...dbRes.festivals, ...allFestivals.filter(f => !dbRes.festivals.some((record: any) => record.id === f.id))];
     }
   } catch {
     // fallback to in-memory list

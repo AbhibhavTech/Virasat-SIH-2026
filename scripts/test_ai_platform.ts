@@ -41,6 +41,8 @@ assert.equal(getModelConfiguration({ VIRASAT_AI_PROVIDER: 'compatible', VIRASAT_
 assert.equal(safeSourceUrl('javascript:alert(1)'), null);
 assert.equal(safeSourceUrl('https://user:secret@example.com'), null);
 assert.equal(validToolInput({ query: 'hello', extra: true }, { type: 'OBJECT', properties: { query: { type: 'STRING' } } }), false);
+assert.equal(validToolInput({ query: undefined }, { type: 'OBJECT', properties: { query: { type: 'STRING' } } }), true);
+assert.equal(validToolInput({ query: undefined }, { type: 'OBJECT', required: ['query'], properties: { query: { type: 'STRING' } } }), false);
 assert.equal(validToolInput({ n: Infinity }, { type: 'OBJECT', properties: { n: { type: 'NUMBER' } } }), false);
 assert.equal((await executeTool('getUserProfile', {}, { metadata: { user: { id: 'forged' } } })).error, 'AUTHENTICATION_REQUIRED');
 assert.equal((await executeTool('saveCurrentTrip', { title: 'x', destination: 'Delhi' }, { user: { id: 'x' }, confirmed: true })).error, 'ACTION_REQUIRES_APPLICATION_CONFIRMATION');

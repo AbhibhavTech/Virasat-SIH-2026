@@ -8,7 +8,7 @@
  */
 
 import { db } from '../server/src/db/client.ts';
-import { auditHallucinations } from '../server/src/modules/ai/ai.router.ts';
+import { auditEntityCoverage } from '../ai/evaluation/entityCoverage.ts';
 import { rateLimiter, resetRateLimitStore } from '../server/src/middleware/rateLimiter.ts';
 
 async function runPhase5Tests() {
@@ -42,7 +42,7 @@ async function runPhase5Tests() {
   const verifiedText = `In Jaipur, you can visit the magnificent Amber Fort and the iconic Hawa Mahal. Both are verified monuments maintained by the Archaeological Survey of India.`;
   const verifiedPlaces = allPlaces.filter((p) => p.name.includes('Amber') || p.name.includes('Hawa'));
 
-  const cleanAudit = auditHallucinations(
+  const cleanAudit = auditEntityCoverage(
     verifiedText,
     verifiedPlaces,
     allPlaces,
@@ -51,9 +51,9 @@ async function runPhase5Tests() {
     'Virasat AI Astra Local Data Engine'
   );
 
-  assert(cleanAudit.grounding_score >= 0.95, `Grounded response achieves high score (got ${cleanAudit.grounding_score})`);
-  assert(cleanAudit.unverified_entities_count === 0, 'No ungrounded claims flagged in verified text');
-  assert(cleanAudit.flagged_unverified_claims.length === 0, 'Flagged unverified list is empty');
+  assert(cleanAudit.entity_coverage >= 0.95, `Retrieved entity-name coverage (got ${cleanAudit.entity_coverage})`);
+  assert(cleanAudit.unsupported_entities.length === 0, 'No unsupported monument names in fixture');
+  assert(cleanAudit.unsupported_entities.length === 0, 'Flagged unverified list is empty');
   assert(cleanAudit.citations_count === 4, 'Citations count preserved in audit metadata');
   assert(cleanAudit.latency_ms === 45, 'Latency accurately captured');
   assert(cleanAudit.model_used === 'Virasat AI Astra Local Data Engine', 'Engine identifier accurately captured');
@@ -64,7 +64,7 @@ async function runPhase5Tests() {
   console.log('\n--- Test Suite 2: Hallucination Detection Guardrail ---');
   const hallucinatedText = `You should definitely visit the Mystic Crystal Palace and the ancient Skyline Lotus Temple, followed by a tour of the Fictitious Cloud Fort in Jaipur!`;
 
-  const hallucinatedAudit = auditHallucinations(
+  const hallucinatedAudit = auditEntityCoverage(
     hallucinatedText,
     [],
     allPlaces,
@@ -74,16 +74,16 @@ async function runPhase5Tests() {
   );
 
   assert(
-    hallucinatedAudit.flagged_unverified_claims.length >= 2,
-    `Guardrail successfully flagged ungrounded entities (${hallucinatedAudit.flagged_unverified_claims.join(', ')})`
+    hallucinatedAudit.unsupported_entities.length >= 2,
+    `Guardrail successfully flagged ungrounded entities (${hallucinatedAudit.unsupported_entities.join(', ')})`
   );
   assert(
-    hallucinatedAudit.unverified_entities_count >= 2,
-    `Unverified entity count reflects detected hallucinations (got ${hallucinatedAudit.unverified_entities_count})`
+    hallucinatedAudit.unsupported_entities.length >= 2,
+    `Unverified entity count reflects detected hallucinations (got ${hallucinatedAudit.unsupported_entities.length})`
   );
   assert(
-    hallucinatedAudit.grounding_score < 0.5,
-    `Grounding score heavily penalizes hallucinated claims (got ${hallucinatedAudit.grounding_score})`
+    hallucinatedAudit.entity_coverage < 0.5,
+    `Grounding score heavily penalizes hallucinated claims (got ${hallucinatedAudit.entity_coverage})`
   );
 
   // -------------------------------------------------------------
@@ -166,7 +166,7 @@ async function runPhase5Tests() {
     to_value: {
       query: 'Tell me about Hawa Mahal architecture',
       model: 'Virasat AI Astra Local Data Engine',
-      grounding_score: 1.0,
+      entity_coverage: 1.0,
       citations_count: 5,
       latency_ms: 112,
     },
@@ -178,7 +178,7 @@ async function runPhase5Tests() {
 
   assert(matchedAudit !== undefined, 'AI query logged successfully to audit_logs');
   assert(matchedAudit.actor_id === auditUserId, 'Actor ID preserved in audit trail');
-  assert(matchedAudit.to_value?.grounding_score === 1.0, 'Grounding score persisted in audit log entry');
+  assert(matchedAudit.to_value?.entity_coverage === 1.0, 'Grounding score persisted in audit log entry');
   assert(matchedAudit.to_value?.citations_count === 5, 'Citations count persisted in audit log entry');
   assert(matchedAudit.to_value?.latency_ms === 112, 'Latency metrics persisted in audit log entry');
 

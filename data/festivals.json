@@ -2364,5 +2364,25 @@
       "Neermahal Festival",
       "Rudrasagar Boat Race Festival"
     ]
+  },
+  {
+    "id": "mysuru-dasara",
+    "name": "Mysuru Dasara",
+    "slug": "mysuru-dasara",
+    "aliases": [
+      "Mysore Dasara"
+    ],
+    "primary_city": "Mysuru",
+    "state": "Karnataka",
+    "state_id": "karnataka",
+    "scope": "STATE_REGIONAL",
+    "category": "Cultural",
+    "typical_month": "October",
+    "typical_season": "September / October",
+    "description": "Mysuru celebrates Dasara with palace illumination, cultural programmes and the Jumboo Savari procession. Dates vary by year.",
+    "source_url": "https://karnatakatourism.org/en/experiences/experience-the-mysuru-dasara-festivities-in-karnataka/",
+    "source_name": "Karnataka Tourism",
+    "verification_status": "verified",
+    "is_date_verified": false
   }
 ]

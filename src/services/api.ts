@@ -559,6 +559,7 @@ export const api = {
   },
 
   async loginWithGoogle(payload: {
+    token_type?: 'google' | 'firebase';
     credential?: string;
     id_token?: string;
     client_id?: string;

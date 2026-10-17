@@ -24,8 +24,8 @@
   verification is not implemented. Conflicting source records still require review.
 - Shared page launcher and streaming display verified by one real browser query; full browser/mobile/accessibility
   test coverage remains incomplete. Sessions share backend history, not all frontend state.
-- English/Hindi/Hinglish: existing deterministic cases partly pass; old festival regression
-  fails. Fluent language quality is not certified by the small retrieval test.
+- English/Hindi/Hinglish: 45 deterministic checks pass. Fluent model language quality
+  still requires human evaluation.
 - Itinerary calculation exists; persistent AI modifications are blocked pending a trusted
   confirmation/ownership flow. Models cannot bypass this with a confirmed=true argument.
 - PostgreSQL structured retrieval implemented through existing parameterized repository;
@@ -36,8 +36,9 @@
 ## Missing
 
 - Full held-out base/RAG/fine-tuned comparative benchmark and human language/fact grading.
-- Complete frontend automated interaction suite, distributed session storage, user-managed
-  data retention and comprehensive per-user conversation isolation.
+- Complete frontend automated interaction suite, distributed session storage and user-managed
+  data retention. Authenticated users now have separate memory namespaces; anonymous
+  conversation IDs remain bearer capabilities and must be kept private.
 - QLoRA hardware validation and adapter serving verification.
 
 ## Blocked by credentials, external services, or infrastructure
@@ -45,22 +46,32 @@
 - Local model generation: requires a locally installed tool-capable model/server.
 - Semantic indexing: requires VIRASAT_EMBEDDING_URL and VIRASAT_EMBEDDING_MODEL;
   credential if the endpoint requires one. No automatic embedding job is run.
-- Google backend account bridge accepts no unverified profile login; currently returns
-  GOOGLE_TOKEN_VERIFICATION_REQUIRED. Firebase UI configuration alone does not prove
-  an authenticated backend session. Server token verification remains required.
+- Google bridge now verifies Firebase Google ID tokens and Google One Tap ID tokens
+  using official server SDKs. Seven mocked HTTP scenarios pass; real interactive
+  Google login and project authorized-domain settings are not verified.
 - Live hotel/transport inventory and current pricing require authorized service integrations.
 - Fine-tuning requires permitted reviewed data, selected licensed weights and suitable hardware.
 
-## Existing failing checks
+## Latest verification and remaining release constraints
 
-- npm test: data quality stops on bihar_018 and bihar_019 missing coordinates encoded as (0,0).
-  No replacement coordinates were fabricated.
-- test_ai_assistant_multilingual.ts: Mysore Dasara fixture returns no event and test then
-  dereferences the missing event. Earlier cases in that run passed.
-- test_assistant_prompt_regressions.ts was coupled to canned text while a hosted provider
-  was configured; it made live requests and failed the exact Patna wording assertion.
-  Do not use it as a provider-independent CI test until its environment is isolated.
-- test_phase7_security_and_e2e.mjs imports a removed auditHallucinations export.
-  This is an existing suite compatibility problem, not evidence of safety verification.
+- Full `npm test` passes, including all Phase 1–10 suites and 45 multilingual checks.
+- TypeScript, production build, provider mocks, platform tests, seven Google auth
+  scenarios and conversational regressions pass. Build still warns about bundle size.
+- Deterministic chatbot tests now explicitly disable hosted configuration, so normal
+  CI does not consume provider quota. Separate live connection/benchmark commands remain.
+- An initial legacy behavior run reached Groq, generated two responses, then hit HTTP
+  429. Its keyword checks do not certify factual accuracy; one generated date was
+  unsupported. A subsequent single connection checker request succeeded with actual
+  Groq generation and exact sentinel match. This confirms access at test time, not
+  unlimited quota or factual accuracy.
+- Deprecated hallucination tests now exercise explicitly labelled lexical entity
+  coverage. Entity overlap is NOT factual claim verification.
+- Bihar missing coordinates corrected using source-documented approximate locations;
+  see coordinate_source_url and coordinate_note in the datasets.
+- Non-breaking dependency fixes applied. npm audit still reports 12 advisories
+  (9 high, 3 moderate); automatic suggestions require breaking dependency changes.
+  A dependency migration and regression review remains before production release.
+- Google login must be completed interactively on an authorized domain. Production
+  requires a private JWT_SECRET of at least 32 characters. See google-auth-setup.md.
 
 This delivery is not a claim that the entire master production specification is complete.

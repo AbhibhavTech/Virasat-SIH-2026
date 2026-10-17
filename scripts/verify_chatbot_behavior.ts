@@ -1,6 +1,11 @@
 import express from 'express';
 import { aiChatRouter } from '../ai/routes/chatHandler';
 
+// Deterministic route regressions must not consume hosted API quota.
+for (const key of ['VIRASAT_AI_API_KEY', 'OPENAI_API_KEY', 'GROQ_API_KEY', 'VIRASAT_AI_MODEL', 'OPENAI_MODEL', 'GROQ_MODEL']) process.env[key] = '';
+process.env.VIRASAT_AI_PROVIDER = 'openai';
+process.env.VIRASAT_AI_REQUIRE_HOSTED = 'false';
+
 async function main() {
   console.log('=== VERIFYING ACTUAL /api/ai/chat PIPELINE ON 8 USER QUERIES ===\n');
 

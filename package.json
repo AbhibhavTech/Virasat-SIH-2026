@@ -24,7 +24,8 @@
     "test:ai-provider": "tsx scripts/test_ai_configuration.ts && tsx scripts/test_provider_errors.ts && tsx scripts/test_groq_setup.ts && tsx scripts/test_hosted_ai_gateway.ts",
     "setup:ai-groq": "tsx scripts/configure_groq.ts && npm run check:ai-connection",
     "setup:ai-groq:secure": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/setup_groq_secure.ps1",
-    "check:ai-connection": "tsx scripts/check_ai_connection.ts"
+    "check:ai-connection": "tsx scripts/check_ai_connection.ts",
+    "test:auth": "tsx scripts/test_google_auth.ts"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.102.8",
@@ -36,6 +37,8 @@
     "dotenv": "^17.4.2",
     "express": "^4.21.2",
     "firebase": "^12.19.0",
+    "firebase-admin": "^14.5.0",
+    "google-auth-library": "^11.3.1",
     "jsonwebtoken": "^9.0.3",
     "leaflet": "^1.9.4",
     "lucide-react": "^1.16.0",

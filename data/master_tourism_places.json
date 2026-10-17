@@ -3199,14 +3199,14 @@
   {
     "id": "bihar_019",
     "name": "Vaishali",
-    "city_id": "patna",
-    "city_name": "Patna",
+    "city_id": "vaishali",
+    "city_name": "Vaishali",
     "state_id": "bihar",
     "state_name": "Bihar",
     "category": "heritage",
     "heritage_status": "Local Administration",
-    "lat": 25.6001,
-    "lng": 85.148,
+    "lat": 25.983333,
+    "lng": 85.1,
     "opening_hours": "09:00 AM - 06:00 PM",
     "entry_fee_domestic": 0,
     "entry_fee_intl": 0,
@@ -3217,7 +3217,16 @@
     "verification_status": "verified",
     "last_verified": "September 2026",
     "summary": "An ancient city associated with Buddhism, Jainism, and early republican history.",
-    "thumbnail_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85"
+    "thumbnail_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85",
+    "latitude": 25.983333,
+    "longitude": 85.1,
+    "coordinates": {
+      "lat": 25.983333,
+      "lng": 85.1
+    },
+    "coordinate_source_url": "https://whc.unesco.org/en/tentativelists/5492",
+    "coordinate_note": "Approximate site centre published by ASI on UNESCO tentative list; not an entrance.",
+    "source_city": "Vaishali"
   },
   {
     "id": "bihar_011",
@@ -3245,14 +3254,14 @@
   {
     "id": "bihar_018",
     "name": "Kesaria Stupa",
-    "city_id": "patna",
-    "city_name": "Patna",
+    "city_id": "kesaria",
+    "city_name": "Kesaria",
     "state_id": "bihar",
     "state_name": "Bihar",
     "category": "monuments",
     "heritage_status": "Local Administration",
-    "lat": 25.5581,
-    "lng": 85.1376,
+    "lat": 26.33418,
+    "lng": 84.854816,
     "opening_hours": "09:00 AM - 06:00 PM",
     "entry_fee_domestic": 0,
     "entry_fee_intl": 0,
@@ -3263,7 +3272,16 @@
     "verification_status": "verified",
     "last_verified": "September 2026",
     "summary": "A massive ancient Buddhist stupa and important archaeological monument.",
-    "thumbnail_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85"
+    "thumbnail_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=85",
+    "latitude": 26.33418,
+    "longitude": 84.854816,
+    "coordinates": {
+      "lat": 26.33418,
+      "lng": 84.854816
+    },
+    "coordinate_source_url": "https://www.wikidata.org/wiki/Q30587895",
+    "coordinate_note": "Community mapped point; not a verified visitor entrance.",
+    "source_city": "Kesaria"
   },
   {
     "id": "bihar_009",

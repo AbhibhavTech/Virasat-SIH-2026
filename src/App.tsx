@@ -50,6 +50,7 @@ const AppContent: React.FC = () => {
     if (!user) {
       initOfficialGoogleOneTap((profile) => {
         loginWithGoogleDirect({
+          id_token: profile.id_token,
           email: profile.email,
           name: profile.name,
           picture: profile.picture,

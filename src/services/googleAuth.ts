@@ -5,6 +5,7 @@ export interface GoogleUserProfile {
   name: string;
   picture?: string;
   sub: string;
+  id_token?: string;
 }
 
 export const GOOGLE_CLIENT_ID =
@@ -99,75 +100,6 @@ export function parseGoogleJwt(token: string): GoogleUserProfile {
 }
 
 /**
- * Trigger Real Google OAuth 2.0 Popup from accounts.google.com
- * Opens Google's authentic account chooser window
- */
-export async function signInWithRealGoogle(): Promise<GoogleUserProfile> {
-  await loadGoogleIdentityScript();
-
-  if (!window.google?.accounts?.oauth2) {
-    throw new Error('Google Identity Services library is not ready. Please try again.');
-  }
-
-  return new Promise<GoogleUserProfile>((resolve, reject) => {
-    try {
-      const client = window.google!.accounts.oauth2.initTokenClient({
-        client_id: GOOGLE_CLIENT_ID,
-        scope: 'openid email profile',
-        prompt: 'select_account',
-        callback: async (tokenResponse) => {
-          if (!tokenResponse) {
-            return reject(new Error('Google sign-in was cancelled.'));
-          }
-          if (tokenResponse.error) {
-            return reject(new Error(tokenResponse.error_description || tokenResponse.error));
-          }
-          if (!tokenResponse.access_token) {
-            return reject(new Error('No access token received from Google.'));
-          }
-
-          try {
-            // Fetch verified user profile directly from Google
-            const userinfoRes = await fetch('https://www.googleapis.com/oauth2/v3/userinfo', {
-              headers: {
-                Authorization: `Bearer ${tokenResponse.access_token}`,
-              },
-            });
-
-            if (!userinfoRes.ok) {
-              throw new Error(`Google profile fetch failed with status ${userinfoRes.status}`);
-            }
-
-            const profile = await userinfoRes.json();
-            resolve({
-              email: profile.email,
-              name: profile.name || profile.email.split('@')[0],
-              picture: profile.picture,
-              sub: profile.sub,
-            });
-          } catch (err: any) {
-            reject(new Error(err?.message || 'Could not retrieve user info from Google.'));
-          }
-        },
-        error_callback: (error) => {
-          console.warn('Google Identity error callback:', error);
-          if (error?.type === 'popup_closed') {
-            reject(new Error('Google popup was closed before completing sign-in.'));
-          } else {
-            reject(new Error(error?.message || 'Google authentication error.'));
-          }
-        },
-      });
-
-      // Launch the real Google account chooser popup window
-      client.requestAccessToken();
-    } catch (err: any) {
-      reject(err);
-    }
-  });
-}
-
-/**
  * Initialize Google One Tap with official Google Identity Services
  */
 export async function initOfficialGoogleOneTap(
@@ -184,7 +116,7 @@ export async function initOfficialGoogleOneTap(
         if (res?.credential) {
           try {
             const profile = parseGoogleJwt(res.credential);
-            onSuccess(profile);
+            onSuccess({ ...profile, id_token: res.credential });
           } catch (e) {
             onError?.(e);
           }

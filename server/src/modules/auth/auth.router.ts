@@ -1,4 +1,6 @@
 import { Router, Request, Response } from 'express';
+import { randomUUID } from 'node:crypto';
+import { verifyGoogleIdentity } from './googleIdentity';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { z } from 'zod';
@@ -22,24 +24,9 @@ const loginSchema = z.object({
 });
 
 const googleAuthSchema = z.object({
-  id_token: z.string().optional(),
-  credential: z.string().optional(),
-  client_id: z.string().optional(),
-  user_info: z
-    .object({
-      email: z.string().email(),
-      name: z.string().optional(),
-      picture: z.string().optional(),
-      avatar_url: z.string().optional(),
-      sub: z.string().optional(),
-    })
-    .optional(),
-  email: z.string().email().optional(),
-  name: z.string().optional(),
-  picture: z.string().optional(),
-  avatar_url: z.string().optional(),
-  sub: z.string().optional(),
-});
+  id_token: z.string().min(20).max(16000),
+  token_type: z.enum(['google', 'firebase']).default('google'),
+}).strict();
 
 const updateProfileSchema = z.object({
   name: z.string().min(2).optional(),
@@ -147,10 +134,33 @@ authRouter.post('/login', validateBody(loginSchema), async (req: Request, res: R
  * Google OAuth 2.0 & Firebase Account Authentication with Account Merging
  */
 authRouter.post('/google', validateBody(googleAuthSchema), async (req: Request, res: Response): Promise<void> => {
-  // Profile fields are not proof of identity. Keep this bridge closed until
-  // server-side Google/Firebase token verification is configured.
-  sendError(res, 501, 'GOOGLE_TOKEN_VERIFICATION_REQUIRED', 'Use Firebase Google sign-in. The server account bridge requires verified ID tokens.', req.requestId);
-  return;
+  let identity;
+  try {
+    identity = await verifyGoogleIdentity(req.body.id_token, req.body.token_type);
+  } catch {
+    sendError(res, 401, 'INVALID_GOOGLE_TOKEN', 'Google sign-in could not be verified. Please sign in again.', req.requestId);
+    return;
+  }
+  try {
+    let user = await db.users.findByGoogleId(identity.subject);
+    if (!user) {
+      if (await db.users.findByEmail(identity.email)) {
+        sendError(res, 409, 'ACCOUNT_LINK_REQUIRED', 'An account already uses this email. Sign in with its existing method; automatic account linking is disabled.', req.requestId);
+        return;
+      }
+      user = await db.users.create({
+        id: randomUUID(), google_id: identity.subject, email: identity.email,
+        password_hash: await bcrypt.hash(randomUUID(), 10), name: identity.name,
+        avatar_url: identity.picture, home_city: '', role: 'traveller', auth_provider: 'google',
+        created_at: new Date().toISOString(), updated_at: new Date().toISOString(),
+      });
+    }
+    const { password_hash: _, ...profile } = user;
+    const token = jwt.sign({ id: user.id, email: user.email, name: user.name, role: user.role }, JWT_SECRET, { expiresIn: '7d' });
+    res.json({ success: true, token, profile, user: profile });
+  } catch {
+    sendError(res, 503, 'AUTH_STORAGE_UNAVAILABLE', 'Sign-in could not be saved. Please try again later.', req.requestId);
+  }
 });
 
 /**

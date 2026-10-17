@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useRef } from 'react';
 import { onAuthStateChanged, User as FirebaseUser } from 'firebase/auth';
 import { UserProfile, OnboardingSurvey } from '../types';
 import { api } from '../services/api';
@@ -9,10 +9,8 @@ import {
   signInWithGoogleRedirect,
   signOutFirebase,
   syncUserProfileToFirestore,
-  getUserProfileFromFirestore,
-  isAdminEmail,
 } from '../services/firebase';
-import { signInWithRealGoogle } from '../services/googleAuth';
+
 
 interface AuthContextType {
   user: UserProfile | null;
@@ -21,7 +19,7 @@ interface AuthContextType {
   login: (email: string, password: string) => Promise<void>;
   loginWithGoogle: () => Promise<void>;
   loginWithGoogleRedirect: () => Promise<void>;
-  loginWithGoogleDirect: (googleProfile: { email: string; name?: string; picture?: string; home_city?: string }) => Promise<void>;
+  loginWithGoogleDirect: (googleProfile: { id_token?: string; email: string; name?: string; picture?: string; home_city?: string }) => Promise<void>;
   register: (name: string, email: string, password: string, home_city?: string) => Promise<void>;
   logout: () => Promise<void>;
   updateProfile: (profile: UserProfile) => Promise<void>;
@@ -35,6 +33,7 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const popupInProgress = useRef(false);
   const [user, setUser] = useState<UserProfile | null>(null);
   const [firebaseUser, setFirebaseUser] = useState<FirebaseUser | null>(null);
   const [loading, setLoading] = useState(true);
@@ -45,28 +44,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     // Listen to Firebase Auth state
     const unsubscribe = onAuthStateChanged(auth, async (fbUser) => {
       setFirebaseUser(fbUser);
-      if (fbUser) {
+      if (fbUser && !popupInProgress.current) {
         try {
-          // Attempt restoring profile from Firestore
-          const firestoreProfile = await getUserProfileFromFirestore(fbUser.uid);
-          if (firestoreProfile) {
-            setUser(firestoreProfile);
-          } else {
-            // Build and sync initial profile
-            const newProfile: UserProfile = {
-              id: fbUser.uid,
-              name: fbUser.displayName || fbUser.email?.split('@')[0] || 'Virasat Traveller',
-              email: fbUser.email || '',
-              avatar_url: fbUser.photoURL || undefined,
-              role: isAdminEmail(fbUser.email) ? 'admin' : 'traveller',
-              home_city: 'Mumbai',
-              created_at: new Date().toISOString(),
-            };
-            setUser(newProfile);
-            await syncUserProfileToFirestore(newProfile).catch((e) => {
-              console.warn('Initial Firestore sync warning:', e);
-            });
-          }
+          const result = await api.loginWithGoogle({ id_token: await fbUser.getIdToken(), token_type: 'firebase' });
+          setUser(result.profile);
         } catch (err) {
           console.warn('Firestore profile sync error:', err);
         }
@@ -104,29 +85,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   };
 
   const loginWithGoogle = async () => {
+    popupInProgress.current = true;
     setLoading(true);
     try {
-      // 1. Launch Real Google Identity Services OAuth 2.0 Popup (accounts.google.com)
-      const googleProfile = await signInWithRealGoogle();
-
-      // 2. Synchronize with Virasat Backend for JWT persistence
-      const backendRes = await api.loginWithGoogle({
-        email: googleProfile.email,
-        name: googleProfile.name,
-        picture: googleProfile.picture,
-        sub: googleProfile.sub,
-      });
-
-      const profile: UserProfile = backendRes?.profile || {
-        id: googleProfile.sub,
-        name: googleProfile.name || googleProfile.email.split('@')[0],
-        email: googleProfile.email,
-        avatar_url: googleProfile.picture,
-        role: isAdminEmail(googleProfile.email) ? 'admin' : 'traveller',
-        home_city: 'Mumbai',
-        created_at: new Date().toISOString(),
-      };
-
+      const result = await signInWithGooglePopup();
+      const backendRes = await api.loginWithGoogle({ id_token: await result.user.getIdToken(), token_type: 'firebase' });
+      const profile = backendRes.profile;
       setUser(profile);
 
       // Save remembered Google account locally
@@ -153,21 +117,19 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
         setIsOnboardingModalOpen(true);
       }
     } catch (err: any) {
-      console.warn('Google Identity Sign-In error:', err);
+      console.warn('Google sign-in failed.');
       throw err;
     } finally {
+      popupInProgress.current = false;
       setLoading(false);
     }
   };
 
-  const loginWithGoogleDirect = async (googleProfile: { email: string; name?: string; picture?: string; home_city?: string }) => {
+  const loginWithGoogleDirect = async (googleProfile: { id_token?: string; email: string; name?: string; picture?: string; home_city?: string }) => {
     setLoading(true);
     try {
-      const res = await api.loginWithGoogle({
-        email: googleProfile.email,
-        name: googleProfile.name || googleProfile.email.split('@')[0],
-        picture: googleProfile.picture,
-      });
+      if (!googleProfile.id_token) { await loginWithGoogle(); return; }
+      const res = await api.loginWithGoogle({ id_token: googleProfile.id_token, token_type: 'google' });
 
       setUser(res.profile);
 

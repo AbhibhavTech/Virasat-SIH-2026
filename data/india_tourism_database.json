@@ -14885,7 +14885,17 @@
                 "navigation": true,
                 "ai": true,
                 "3d": false
-              }
+              },
+              "lat": 25.983333,
+              "lng": 85.1,
+              "latitude": 25.983333,
+              "longitude": 85.1,
+              "coordinates": {
+                "lat": 25.983333,
+                "lng": 85.1
+              },
+              "coordinate_source_url": "https://whc.unesco.org/en/tentativelists/5492",
+              "coordinate_note": "Approximate site centre published by ASI on UNESCO tentative list; not an entrance."
             }
           ],
           "monuments": []
@@ -14906,7 +14916,7 @@
               "aliases": [],
               "city_id": "kesaria",
               "state_id": "bihar",
-              "source_city": "Kesaria Stupa",
+              "source_city": "Kesaria",
               "category": "monuments",
               "category_label": "Buddhist Heritage",
               "topic": "Heritage",
@@ -15060,7 +15070,17 @@
                 "navigation": true,
                 "ai": true,
                 "3d": false
-              }
+              },
+              "lat": 26.33418,
+              "lng": 84.854816,
+              "latitude": 26.33418,
+              "longitude": 84.854816,
+              "coordinates": {
+                "lat": 26.33418,
+                "lng": 84.854816
+              },
+              "coordinate_source_url": "https://www.wikidata.org/wiki/Q30587895",
+              "coordinate_note": "Community mapped point; not a verified visitor entrance."
             }
           ],
           "slug": "kesaria",
