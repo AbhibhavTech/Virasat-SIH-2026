@@ -2,6 +2,8 @@ import { resolvePlaceEntity, ResolvedPlace, QueryFocus } from './placeResolver';
 import { INDIAN_DESTINATION_ALIASES } from './entityExtractor';
 
 export type UserIntent =
+  | 'SAFETY_QUERY'
+  | 'LOCATION_FOLLOWUP'
   | 'GREETING'
   | 'CASUAL_CONVERSATION'
   | 'FAREWELL'

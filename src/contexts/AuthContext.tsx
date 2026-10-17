@@ -149,7 +149,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       syncUserProfileToFirestore(profile).catch(() => {});
 
       setIsAuthModalOpen(false);
-      setIsGoogleChooserOpen(false);
       if (!profile.survey || Object.keys(profile.survey).length === 0) {
         setIsOnboardingModalOpen(true);
       }
@@ -192,7 +191,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       syncUserProfileToFirestore(res.profile).catch(() => {});
 
       setIsAuthModalOpen(false);
-      setIsGoogleChooserOpen(false);
       if (!res.profile.survey || Object.keys(res.profile.survey).length === 0) {
         setIsOnboardingModalOpen(true);
       }

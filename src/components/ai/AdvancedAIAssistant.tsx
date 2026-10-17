@@ -89,6 +89,9 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
 }) => {
   const navigate = useNavigate();
   const location = useLocation();
+  const [streamText, setStreamText] = useState('');
+  const activeRequest = useRef<AbortController | null>(null);
+  useEffect(() => () => activeRequest.current?.abort(), []);
   const [userLocation, setUserLocation] = useState<UserLocationContext | null>(null);
   const [locationStatus, setLocationStatus] = useState<'idle' | 'detecting' | 'granted' | 'denied' | 'error'>('idle');
 
@@ -201,13 +204,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
     }
   }, [conversationId]);
 
-  // Request browser geolocation on component mount
-  useEffect(() => {
-    if (!hasRequestedInitialGeo.current) {
-      hasRequestedInitialGeo.current = true;
-      requestLocation(false);
-    }
-  }, []);
+  // Location is requested only after the traveler chooses a location action.
 
   // Location detection and reverse geocoding
   const requestLocation = (triggerNearMeOnSuccess: boolean = false) => {
@@ -349,6 +346,8 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
     setInput('');
     if (composerRef.current) composerRef.current.style.height = 'auto';
     setLoading(true);
+    setStreamText('');
+    activeRequest.current = new AbortController();
 
     if (typeof window !== 'undefined' && window.scrollY !== originalScrollY) {
       window.scrollTo({ top: originalScrollY, behavior: 'instant' as ScrollBehavior });
@@ -363,7 +362,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
           content: m.content,
         }));
 
-      const res = await api.chatAI({
+      const res = await api.streamAIChat({
         message: trimmed,
         conversation_id: conversationId,
         city: activeCity === 'All India' ? undefined : activeCity,
@@ -374,7 +373,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
         history: historyPayload,
         location: activeLoc || undefined,
         travel_context: travelContext,
-      });
+      }, text => setStreamText(previous => previous + text), activeRequest.current.signal);
 
       if (res.conversation_id) setConversationId(res.conversation_id);
 
@@ -1097,7 +1096,10 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
                       {!isUser && m.sources && m.sources.length > 0 && (
                         <span className="inline-flex items-center gap-1 px-1.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 font-semibold border border-emerald-200">
                           <ShieldCheck className="w-3 h-3 text-emerald-600" />
-                          <span>Sources available</span>
+                          <span>Retrieved sources</span>
+                          {m.sources.filter(source => /^https?:\/\//i.test(source)).slice(0, 5).map((source, index) => (
+                            <a key={source} href={source} target="_blank" rel="noopener noreferrer" className="underline px-1" aria-label={`Open retrieved source ${index + 1}`}>[{index + 1}]</a>
+                          ))}
                         </span>
                       )}
                       {!isUser && m.latency_ms !== undefined && (
@@ -1150,6 +1152,8 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
           })}
 
           {/* Loading Indicator */}
+          {loading && streamText && <div className="rounded-xl border bg-white p-4 whitespace-pre-wrap text-sm" aria-live="polite">{streamText}</div>}
+          {loading && <button type="button" className="px-3 py-2 rounded-lg border" onClick={() => activeRequest.current?.abort()}>Stop response</button>}
           {loading && (
             <div className="flex items-start gap-3.5">
               <div className="w-8 h-8 rounded-2xl bg-white border border-stone-200 text-[#FF671F] flex items-center justify-center shrink-0 shadow-xs">

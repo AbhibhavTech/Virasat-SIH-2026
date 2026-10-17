@@ -1,5 +1,5 @@
 export interface ProviderDiagnostic {
-  provider: 'openai' | 'groq';
+  provider: 'openai' | 'groq' | 'local' | 'compatible';
   http_status: number;
   category: 'rate_limit' | 'quota' | 'billing' | 'authentication' | 'access' | 'invalid_request' | 'unknown';
   provider_type: string | null;
@@ -17,7 +17,7 @@ const billing: Record<string, string> = {
   billing_hard_limit_reached: 'The provider reports a billing hard limit. Review API billing and spending limits before retrying.',
 };
 
-export function classifyProviderError(status: number, headers: Headers, body: unknown, secret: string, now = Date.now(), provider: 'openai' | 'groq' = 'openai'): ProviderDiagnostic {
+export function classifyProviderError(status: number, headers: Headers, body: unknown, secret: string, now = Date.now(), provider: ProviderDiagnostic['provider'] = 'openai'): ProviderDiagnostic {
   // Only constrained metadata is exposed. Provider message/body is never returned:
   // it may contain request text, account identifiers or echoed credentials.
   const safe = (value: unknown, pattern: RegExp, max = 128): string | null =>

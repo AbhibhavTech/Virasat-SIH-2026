@@ -179,7 +179,24 @@ aiChatRouter.post(
         const hostedEntities = isTransportRequest
           ? extractEntities(rawQuery, { ...liveContext, destination: existingState.destination })
           : null;
-        const generated = await generateModelReply(rawQuery, existingState, liveContext);
+        const streaming = req.body.stream === true;
+        const disconnected = new AbortController();
+        const onClose = () => { if (!res.writableEnded) disconnected.abort(); };
+        res.once('close', onClose);
+        const emit = (event: string, data: unknown) => {
+          if (res.destroyed) return;
+          if (!res.headersSent) {
+            res.setHeader('Content-Type', 'text/event-stream');
+            res.setHeader('Cache-Control', 'no-cache, no-transform');
+            res.setHeader('X-Accel-Buffering', 'no');
+          }
+          res.write(`event: ${event}\ndata: ${JSON.stringify(data)}\n\n`);
+          (res as any).flush?.();
+        };
+        let generated;
+        try { generated = await generateModelReply(rawQuery, existingState, liveContext,
+          { signal: disconnected.signal, ...(streaming ? { onText: (text: string) => emit('delta', { text }) } : {}) }); }
+        finally { res.removeListener('close', onClose); }
         let transportResult = generated.calls.find((call: any) => call.tool === 'getTransportOptions')?.result;
         const transportOrigin = hostedEntities?.origin || existingState.origin;
         const transportDestination = hostedEntities?.destination || hostedEntities?.city || existingState.destination;
@@ -213,22 +230,28 @@ aiChatRouter.post(
           : '';
         existingState.updatedAt = Date.now();
         existingState.turnCount++;
-        res.json({ success: true, reply: `${generated.reply}${airportGatewayNote}`, conversation_id: sessionId, session_id: sessionId,
-          engine: 'Virasat AI · Hosted Model', provider_used: generated.provider, model_used: generated.model, generation_mode: 'hosted_generative',
-          actions: generated.actions, tool_calls: generated.calls, transit_comparison: transitComparison, suggested_actions: [], latency_ms: Date.now() - startTime });
+        const payload = { success: true, reply: `${generated.reply}${airportGatewayNote}`, conversation_id: sessionId, session_id: sessionId,
+          engine: generated.provider === 'local' ? 'Virasat AI · Local Model' : 'Virasat AI · Hosted Model', provider_used: generated.provider, model_used: generated.model, generation_mode: generated.provider === 'local' ? 'local_generative' : 'hosted_generative',
+          actions: generated.actions, sources: generated.sources, usage: generated.usage, task_profile: generated.task_profile, tool_calls: generated.calls, transit_comparison: transitComparison, suggested_actions: [], latency_ms: Date.now() - startTime };
+        if (streaming) { emit('done', payload); res.end(); } else res.json(payload);
         return;
       } catch (error) {
         const code = error instanceof Error && /^MODEL_[A-Z_0-9]+$/.test(error.message) ? error.message : 'MODEL_UNAVAILABLE';
-        console.warn(`[AI Gateway] Hosted model unavailable (${code}). Seamlessly serving response via Virasat AI local intelligence engine.`);
+        console.warn(`[AI Gateway] Model unavailable (${code}).`);
         const diagnostic = error instanceof ProviderFailure ? error.diagnostic : undefined;
+        if (code === 'MODEL_CAPACITY_BUSY' && !res.headersSent) res.setHeader('Retry-After', '2');
+        if (res.headersSent) {
+          if (!res.destroyed) res.end(`event: error\ndata: ${JSON.stringify({ error: code, reply: diagnostic?.explanation || explainModelFailure(code), generation_mode: 'unavailable' })}\n\n`);
+          return;
+        }
         if (diagnostic?.retry_after_seconds !== null && diagnostic?.retry_after_seconds !== undefined) res.setHeader('Retry-After', String(diagnostic.retry_after_seconds));
-        if (modelConfiguration.requireHosted && code === 'MODEL_NOT_CONFIGURED') {
+        // A configured model outage must never become a canned general answer.
+        {
           res.status(503).json({ success: false, error: code, reply: diagnostic?.explanation || explainModelFailure(code),
             provider_error: diagnostic, provider_request_sent: error instanceof ProviderFailure ? !error.deferred : undefined,
             generation_mode: 'unavailable', conversation_id: sessionId });
           return;
         }
-        // Graceful automatic fallback: proceed to local database & response engine below
       }
     }
 

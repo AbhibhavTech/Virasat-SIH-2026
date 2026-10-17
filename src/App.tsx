@@ -26,6 +26,7 @@ import { analytics } from './services/analytics';
 import { getMumbaiDestinationById } from './data/mumbaiDestinations';
 import { getNearbyDiscoveryPlaceById } from './data/nearbyPlacesMMR';
 import { safeLocalStorage } from './utils/storage';
+import { AssistantLauncher } from './components/ai/AssistantLauncher';
 
 const SELECTED_CITY_STORAGE_KEY = 'virasat_selected_city';
 
@@ -221,6 +222,7 @@ const AppContent: React.FC = () => {
       />
 
       {/* Global Modals */}
+      <AssistantLauncher selectedCity={selectedCity} />
       <AuthModal />
       <OnboardingSurveyModal />
       <DatabaseStatusModal

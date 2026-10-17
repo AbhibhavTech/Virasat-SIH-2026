@@ -1,4 +1,22 @@
-# Virasat (SIH 2026) — Target System Architecture
+# Virasat architecture — current implementation and historical target
+
+## Current audit: 2026-10-17
+
+React/Vite calls /api/ai/chat (also mounted under /api/v1/ai/chat). The shared
+TypeScript chat handler builds a minimal page context and bounded session history,
+then calls modelGateway for Groq, OpenAI, local or compatible inference. Provider
+tool requests pass through registry validation and authorization. Structured tourism
+queries use the existing database repository (PostgreSQL when configured, JSON otherwise).
+Narrative retrieval uses a source-traceable incremental index, lexical matching with
+language term expansion, and optional cached embeddings with rank fusion.
+Model output returns JSON or actual SSE deltas plus final structured data and sources.
+AdvancedAIAssistant is reused by the AI page and global page launcher.
+
+No FastAPI/SQLAlchemy service was present, and no duplicate inference backend was added.
+Python is isolated to future training preparation/experiments. No model was trained.
+See implementation-plan.md, feature-status.md and ai-platform-setup.md for actual
+verification and remaining limitations. The sections below are historical target design,
+not proof of deployed features; their old provider-free wording is superseded here.
 
 > [!IMPORTANT]
 > **TARGET ARCHITECTURE — NOT YET IMPLEMENTED**  

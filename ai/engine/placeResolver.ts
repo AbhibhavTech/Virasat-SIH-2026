@@ -31,6 +31,7 @@ export interface ResolvedPlace {
 }
 
 export type QueryFocus =
+  | 'location'
   | 'general'
   | 'history'
   | 'architecture'

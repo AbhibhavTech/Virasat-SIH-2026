@@ -47,4 +47,5 @@ data/*.backup-*
 
 # Local logs
 *.log
+training/artifacts/
 

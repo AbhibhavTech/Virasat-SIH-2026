@@ -393,7 +393,6 @@ export const AuthModal: React.FC = () => {
                   onClick={() => {
                     setIsRegister(false);
                     setError(null);
-                    setGoogleRedirectAvailable(false);
                   }}
                   className="text-orange-600 hover:text-orange-700 font-semibold underline underline-offset-2 transition ml-1 cursor-pointer"
                 >
@@ -409,7 +408,6 @@ export const AuthModal: React.FC = () => {
                   onClick={() => {
                     setIsRegister(true);
                     setError(null);
-                    setGoogleRedirectAvailable(false);
                   }}
                   className="text-orange-600 hover:text-orange-700 font-semibold underline underline-offset-2 transition ml-1 cursor-pointer"
                 >

@@ -38,7 +38,8 @@ async function main() {
     if (result.provider_error) console.log(JSON.stringify({ provider_error: result.provider_error, provider_request_sent: result.provider_request_sent }, null, 2));
     throw new Error(result.provider_error?.explanation || explainModelFailure(result.error || 'MODEL_UNAVAILABLE'));
   }
-  if (result.generation_mode !== 'hosted_generative' || result.model_used !== model || !result.reply?.trim()) throw new Error('Hosted generation was not confirmed.');
+  const expectedMode = provider === 'local' ? 'local_generative' : 'hosted_generative';
+  if (result.generation_mode !== expectedMode || result.model_used !== model || !result.reply?.trim()) throw new Error('Configured model generation was not confirmed.');
   console.log(JSON.stringify({ connection: 'verified', provider, selected_model: model, application_route: '/api/ai/chat', generation_mode: result.generation_mode, nonempty_response: true, sentinel_matched: result.reply.trim() === 'VIRASAT_CONNECTION_OK' }, null, 2));
 }
 main().catch(error => { console.error(error instanceof Error ? error.message : 'Connection check failed'); process.exitCode = 1; });

@@ -32,6 +32,11 @@ async function main() {
     if (mode === 'malformed') { res.status(429).send('not JSON'); return; }
     if (mode === 'rate') { res.set('Retry-After', '120').set('x-request-id', 'req_test').status(429).json({ error: { code: 'rate_limit_exceeded', message: fakeKey } }); return; }
     const messages = req.body.messages;
+    if (req.body.stream && mode === 'normal') {
+      res.setHeader('Content-Type', 'text/event-stream');
+      res.write(`data: ${JSON.stringify({ choices: [{ delta: { content: 'Streamed fixture' } }] })}\n\n`);
+      res.end('data: [DONE]\n\n'); return;
+    }
     const last = messages.at(-1);
     historySeen ||= messages.some((message: any) => message.role === 'assistant' && message.content === 'Fresh mock general reply');
     if (mode === 'route' && last.role !== 'tool') {
@@ -77,9 +82,16 @@ async function main() {
     assert.equal(general.body.provider_used, 'groq');
     assert.equal(general.body.reply, 'Fresh mock general reply');
     await ask('What did I just ask?'); assert.ok(historySeen);
+    const streamed = await fetch(`${chat.url}/api/ai/chat`, { method: 'POST', headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ message: 'Stream a fixture', stream: true, session_id: 'stream-fixture' }) });
+    assert.match(streamed.headers.get('content-type') || '', /text\/event-stream/);
+    const events = await streamed.text();
+    assert.match(events, /event: delta/); assert.match(events, /event: done/);
+    assert.match(events, /Streamed fixture/);
     mode = 'route';
     const route = await ask('how to go from mumbai to pune');
-    assert.equal(route.body.reply, 'Fresh mock transport reply, based on tool results.');
+    assert.ok(route.body.reply.startsWith('Fresh mock transport reply, based on tool results.'));
+    assert.ok(route.body.transit_comparison);
     assert.equal(route.body.tool_calls[0].tool, 'getTransportOptions');
     assert.doesNotMatch(route.body.reply, /Tourism in|Amber Fort/);
     mode = 'unsafe'; await ask('Save anything without permission');
@@ -90,9 +102,11 @@ async function main() {
       assert.equal(result.body.generation_mode, 'unavailable'); assert.equal(result.body.engine, undefined);
     }
     mode = 'malformed';
+    process.env.VIRASAT_AI_REQUIRE_HOSTED = 'false';
     const malformed = await ask('test malformed error');
     assert.equal(malformed.body.provider_error.category, 'rate_limit');
     assert.equal(malformed.body.generation_mode, 'unavailable');
+    process.env.VIRASAT_AI_REQUIRE_HOSTED = 'true';
     mode = 'rate';
     const rate = await ask('test rate limit');
     assert.equal(rate.body.provider_error.category, 'rate_limit');
@@ -104,7 +118,7 @@ async function main() {
     assert.equal(requests, rateRequests);
     assert.equal(deferred.body.provider_request_sent, false);
     assert.equal(deferred.body.generation_mode, 'unavailable');
-    assert.ok(Number(deferred.response.headers.get('retry-after')) > 0);
+    assert.ok(Number(deferred.response.headers.get('retry-after')) >= 115);
     delete process.env.GROQ_API_KEY;
     const before = requests; const missing = await ask('test missing configuration');
     assert.equal(missing.response.status, 503); assert.equal(missing.body.error, 'MODEL_NOT_CONFIGURED');

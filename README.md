@@ -1,5 +1,11 @@
 # Virasat (SIH 2026)
 
+> Current AI implementation and verification (2026-10-17): see
+> [AI platform setup](docs/ai-platform-setup.md), [feature status](docs/feature-status.md)
+> and [implementation log](docs/implementation-plan.md). The historical Phase 0 descriptions
+> below do not describe the current hosted/local model gateway. Groq generation is verified;
+> production readiness and the full legacy test suite are not yet verified.
+
 > **Virasat** is an intelligent, map-driven Indian heritage and cultural discovery platform built for the **Smart India Hackathon (SIH) 2026** (Theme: *Tourism / Heritage & Culture*).
 
 Virasat connects travelers to India's living heritage through interactive geospatial maps, multimodal transit guidance (railway, metro, bus), curated cultural archives, 3D monument experiences, and an AI-powered travel concierge.

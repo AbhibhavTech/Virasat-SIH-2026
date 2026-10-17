@@ -79,6 +79,38 @@ async function request<T>(endpoint: string, options: RequestInit = {}): Promise<
 }
 
 export const api = {
+  async streamAIChat(req: AIChatRequest, onText: (text: string) => void, signal?: AbortSignal): Promise<AIChatResponse> {
+    const response = await fetch(`${API_BASE_URL}/ai/chat`, { method: 'POST', signal,
+      headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...req, stream: true }) });
+    if (!response.headers.get('content-type')?.includes('text/event-stream')) {
+      const body = await response.json();
+      if (!response.ok) throw Object.assign(new Error(body.error || 'AI_UNAVAILABLE'), { hostedMessage: body.reply });
+      return body;
+    }
+    if (!response.body) throw new Error('AI_STREAM_UNAVAILABLE');
+    const reader = response.body.getReader();
+    const decoder = new TextDecoder();
+    let pending = '', event = '';
+    try {
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+        pending += decoder.decode(value, { stream: true });
+        if (pending.length > 2_000_000) throw new Error('AI_STREAM_TOO_LARGE');
+        let newline: number;
+        while ((newline = pending.indexOf('\n')) >= 0) {
+          const line = pending.slice(0, newline).trim(); pending = pending.slice(newline + 1);
+          if (line.startsWith('event:')) event = line.slice(6).trim();
+          if (!line.startsWith('data:')) continue;
+          const data = JSON.parse(line.slice(5));
+          if (event === 'delta' && typeof data.text === 'string') onText(data.text);
+          if (event === 'done') return data;
+          if (event === 'error') throw Object.assign(new Error(data.error || 'AI_UNAVAILABLE'), { hostedMessage: data.reply });
+        }
+      }
+      throw new Error('AI_STREAM_INTERRUPTED');
+    } finally { await reader.cancel().catch(() => {}); reader.releaseLock(); }
+  },
   // -------------------------------------------------------------
   // States & Cities
   // -------------------------------------------------------------

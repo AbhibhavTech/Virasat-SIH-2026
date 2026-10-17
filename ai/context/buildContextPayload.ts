@@ -32,6 +32,8 @@ export interface LiveContextPayload {
  * headers, session parameters, and current browser navigation state.
  */
 export function buildContextPayload(req: Request): LiveContextPayload {
+  const shortText = (value: unknown, max = 120) => typeof value === 'string' ? value.slice(0, max) : undefined;
+  const coordinate = (value: unknown, bound: number) => typeof value === 'number' && Number.isFinite(value) && Math.abs(value) <= bound ? value : undefined;
   const body = req.body || {};
   const query = req.query || {};
 
@@ -66,23 +68,27 @@ export function buildContextPayload(req: Request): LiveContextPayload {
 
   return {
     userLocation: {
-      lat,
-      lng,
-      city,
-      state,
+      lat: coordinate(lat, 90),
+      lng: coordinate(lng, 180),
+      city: shortText(city),
+      state: shortText(state),
       source: lat && lng ? 'GPS Coordinate Stream' : city ? 'City Parameter' : 'Default National Anchor',
     },
-    currentRoute,
-    selectedCity,
-    selectedPlaceId,
-    activeItinerary,
+    currentRoute: typeof currentRoute === 'string' && /^\/(?!\/)[a-zA-Z0-9/_-]*([?#].*)?$/.test(currentRoute) ? currentRoute.split(/[?#]/)[0].slice(0, 200) : '/',
+    selectedCity: shortText(selectedCity),
+    selectedPlaceId: shortText(selectedPlaceId),
+    activeItinerary: activeItinerary && typeof activeItinerary === 'object' ? {
+      id: shortText(activeItinerary.id), title: shortText(activeItinerary.title),
+      destination: shortText(activeItinerary.destination),
+      days_count: Number.isInteger(activeItinerary.days_count) ? Math.min(30, Math.max(1, activeItinerary.days_count)) : undefined,
+    } : null,
     user,
     clientEnvironment: {
       timestamp: new Date().toISOString(),
       isMobile,
       timezone: 'Asia/Kolkata',
     },
-    metadata: body.metadata || {},
+    metadata: {},
   };
 }
 

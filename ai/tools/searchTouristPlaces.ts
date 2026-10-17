@@ -74,6 +74,19 @@ export async function execute(args: {
   const stateKey = normalizeFilter(stateFilter);
 
   const database = getTourismDatabase();
+  await db.init();
+  if (db.getMode() === 'postgresql') {
+    const states = database?.states || [];
+    const region = stateFilter ? states.find((entry: any) => [normalizeFilter(entry.name), normalizeFilter(entry.id)].includes(stateKey)) : undefined;
+    const city = cityFilter ? states.flatMap((entry: any) => entry.cities || []).find((entry: any) => [normalizeFilter(entry.name), normalizeFilter(entry.id)].includes(cityKey)) : undefined;
+    if ((stateFilter && !region) || (cityFilter && !city)) return { total_found: 0, results: [], data_origin: 'postgresql' };
+    const result = await db.places.findAll({ stateId: region?.id, cityId: city?.id, search: q || undefined,
+      category: catFilter || undefined, limit, offset });
+    return { total_found: result.total, offset, data_origin: 'postgresql', results: result.places.map(place => ({
+      id: place.id, name: place.name, city: place.city_id, state: place.state_id, summary: place.summary,
+      official_source: place.source_url, category: place.category,
+    })) };
+  }
   const matchedPlaces: Array<{ place: any; score: number }> = [];
 
   // Ignore conversational framing and location words so natural prompts
@@ -181,6 +194,8 @@ export async function execute(args: {
     await db.init();
     const dbRes = await db.places.findAll();
     for (const p of dbRes.places) {
+      if (stateFilter && normalizeFilter(p.state_id || '') !== stateKey) continue;
+      if (catFilter && (catFilter === 'heritage' ? !heritageCategories.has(p.category || '') : p.category !== catFilter)) continue;
       const text = `${p.name} ${p.city_id || ''} ${p.summary || ''}`.toLowerCase();
       if (shouldFilterQuery && !queryTerms.some((term) => text.includes(term))) continue;
       if (cityFilter) {

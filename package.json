@@ -4,6 +4,11 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "benchmark:general": "tsx scripts/benchmark_general.ts",
+    "knowledge:ingest": "tsx scripts/knowledge.ts ingest",
+    "knowledge:reindex": "tsx scripts/knowledge.ts reindex",
+    "knowledge:search": "tsx scripts/knowledge.ts search",
+    "test:ai-platform": "tsx scripts/test_ai_platform.ts",
     "dev": "tsx server.ts",
     "build": "vite build && esbuild server.ts --bundle --platform=node --format=cjs --packages=external --sourcemap --outfile=dist/server.cjs && node scripts/prepare_netlify_redirects.mjs",
     "start": "node dist/server.cjs",

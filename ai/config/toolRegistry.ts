@@ -1,4 +1,6 @@
 import * as searchTouristPlaces from '../tools/searchTouristPlaces';
+import { validToolInput, consequentialTools, privateTools } from './toolSafety';
+import * as searchHeritageKnowledge from '../tools/searchHeritageKnowledge';
 import * as searchHiddenGems from '../tools/searchHiddenGems';
 import * as searchHotels from '../tools/searchHotels';
 import * as searchRestaurants from '../tools/searchRestaurants';
@@ -28,6 +30,7 @@ export interface ToolModule {
 }
 
 export const toolRegistry: Record<string, ToolModule> = {
+  searchHeritageKnowledge,
   searchTouristPlaces,
   searchHiddenGems,
   searchHotels,
@@ -64,7 +67,7 @@ export function getToolDeclarations() {
  * Executes a registered tool by name with arguments and live context
  */
 export async function executeTool(name: string, args: any, context?: any): Promise<any> {
-  const tool = toolRegistry[name];
+  const tool = Object.prototype.hasOwnProperty.call(toolRegistry, name) ? toolRegistry[name] : undefined;
   if (!tool) {
     return {
       error: `Tool "${name}" is not registered in Virasat AI Tool Registry.`,
@@ -72,14 +75,20 @@ export async function executeTool(name: string, args: any, context?: any): Promi
     };
   }
 
+  if (!validToolInput(args || {}, tool.declaration.parameters || { type: 'object', properties: {} })) return { error: 'INVALID_TOOL_INPUT' };
+  // AI cannot grant itself confirmation or authorize writes through page metadata.
+  // Persistent changes remain owned by authenticated application endpoints.
+  if (consequentialTools.has(name)) return { error: 'ACTION_REQUIRES_APPLICATION_CONFIRMATION' };
+  if (privateTools.has(name) && !context?.user?.id) return { error: 'AUTHENTICATION_REQUIRED' };
+  let timer: ReturnType<typeof setTimeout> | undefined;
   try {
-    return await tool.execute(args || {}, context);
-  } catch (err: any) {
-    console.error(`[AI ToolRegistry] Error executing tool "${name}":`, err);
-    return {
-      error: `Execution failure in tool "${name}": ${err?.message || 'Unknown error'}`,
-    };
-  }
+    return await Promise.race([
+      tool.execute(args || {}, context),
+      new Promise((_, reject) => { timer = setTimeout(() => reject(new Error('TOOL_TIMEOUT')), 10000); }),
+    ]);
+  } catch {
+    return { error: 'TOOL_UNAVAILABLE', tool: name };
+  } finally { if (timer) clearTimeout(timer); }
 }
 
 export function getAllToolNames(): string[] {
