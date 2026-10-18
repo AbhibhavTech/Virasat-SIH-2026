@@ -171,6 +171,14 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'nalanda': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Temple_No.-_3%2C_Nalanda_Archaeological_Site.jpg/1280px-Temple_No.-_3%2C_Nalanda_Archaeological_Site.jpg',
   'victoria-memorial': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Victoria_Memorial_situated_in_Kolkata.jpg/1280px-Victoria_Memorial_situated_in_Kolkata.jpg',
   'kaziranga': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Beauty_of_Kaziranga_National_Park.jpg/1280px-Beauty_of_Kaziranga_National_Park.jpg',
+  'ramappa-temple': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/6/69/Ramappa_Temple_2021.jpg/1280px-Ramappa_Temple_2021.jpg',
+  'brihadisvara-temple': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b8/Brihadisvara_Temple_Thanjavur.jpg/1280px-Brihadisvara_Temple_Thanjavur.jpg',
+  'kedarnath': '/images/uttarakhand-kedarnath-4k.jpg',
+  'champaner-pavagadh': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Jami_Masjid%2C_Champaner-Pavagadh_Archaeological_Park.jpg/1280px-Jami_Masjid%2C_Champaner-Pavagadh_Archaeological_Park.jpg',
+  'sanchi-stupa': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Great_Stupa_at_Sanchi.jpg/1280px-Great_Stupa_at_Sanchi.jpg',
+  'mahabodhi-temple': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Mahabodhi_Temple_2010.jpg/1280px-Mahabodhi_Temple_2010.jpg',
+  'living-root-bridges': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Double_decker_living_root_bridge.jpg/1280px-Double_decker_living_root_bridge.jpg',
+  'rumtek-monastery': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Rumtek_Monastery%2C_Sikkim.jpg/1280px-Rumtek_Monastery%2C_Sikkim.jpg',
   'uttra-shanglen': '/images/manipur-kangla-fort-kangla-sha-4k.jpg',
   'imphal': '/images/manipur-kangla-fort-kangla-sha-4k.jpg'
 };
