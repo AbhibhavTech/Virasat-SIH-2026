@@ -3,6 +3,7 @@ import { ResolvedPlace } from './placeResolver';
 
 export interface TripMemoryState {
   currentCity?: string;
+  lastHeritageSlug?: string;
   sessionId: string;
   messages?: import('./modelGateway').ChatTurn[];
   origin?: string;

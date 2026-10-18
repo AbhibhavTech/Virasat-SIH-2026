@@ -429,6 +429,7 @@ export interface TransitComparison {
 }
 
 export interface AIChatRequest {
+  language?: string;
   message: string;
   conversation_id?: string;
   city?: string;

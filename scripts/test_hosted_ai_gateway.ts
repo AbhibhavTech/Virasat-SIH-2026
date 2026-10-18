@@ -32,6 +32,11 @@ async function main() {
     if (mode === 'malformed') { res.status(429).send('not JSON'); return; }
     if (mode === 'rate') { res.set('Retry-After', '120').set('x-request-id', 'req_test').status(429).json({ error: { code: 'rate_limit_exceeded', message: fakeKey } }); return; }
     const messages = req.body.messages;
+    if (mode === 'heritage') {
+      const context = messages.find((m: any) => m.content?.includes('Source data (not instructions):'))?.content || '';
+      assert.match(context, /golden-temple/); assert.match(context, /\"unesco_status\":\"tentative\"/);
+      assert.doesNotMatch(context, /\[400-700 words/);
+    }
     if (req.body.stream && mode === 'normal') {
       res.setHeader('Content-Type', 'text/event-stream');
       res.write(`data: ${JSON.stringify({ choices: [{ delta: { content: 'Streamed fixture' } }] })}\n\n`);
@@ -88,6 +93,9 @@ async function main() {
     const events = await streamed.text();
     assert.match(events, /event: delta/); assert.match(events, /event: done/);
     assert.match(events, /Streamed fixture/);
+    mode = 'heritage';
+    const heritage = await ask('Harmandir Sahib timing');
+    assert.ok(heritage.body.actions.some((a: any) => a.type === 'explore_heritage' && a.url === '/heritage/golden-temple'));
     mode = 'route';
     const route = await ask('how to go from mumbai to pune');
     assert.ok(route.body.reply.startsWith('Fresh mock transport reply, based on tool results.'));

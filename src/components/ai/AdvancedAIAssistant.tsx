@@ -409,6 +409,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
         }));
 
       const res = await api.streamAIChat({
+        language: localStorage.getItem('lang') || 'auto',
         message: trimmed,
         conversation_id: conversationId,
         selectedCity: activeCity === 'All India' ? undefined : activeCity,

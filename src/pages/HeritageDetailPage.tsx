@@ -410,7 +410,7 @@ export const HeritageDetailPage: React.FC<HeritageDetailPageProps> = ({
           <div className="absolute top-4 left-4 right-4 flex items-center justify-between gap-2 z-10 pointer-events-none">
             <UnescoBadge
               status={heritage.unesco_status}
-              inscribedYear={heritage.unesco_inscribed_year}
+              year={heritage.unesco_inscribed_year}
               siteName={heritage.unesco_site_name}
               className="pointer-events-auto shadow-md"
             />
@@ -764,7 +764,7 @@ export const HeritageDetailPage: React.FC<HeritageDetailPageProps> = ({
                 <span className="text-stone-500">UNESCO Listing</span>
                 <UnescoBadge
                   status={heritage.unesco_status}
-                  inscribedYear={heritage.unesco_inscribed_year}
+                  year={heritage.unesco_inscribed_year}
                 />
               </div>
 

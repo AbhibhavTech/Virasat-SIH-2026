@@ -88,7 +88,7 @@ export function buildContextPayload(req: Request): LiveContextPayload {
       isMobile,
       timezone: 'Asia/Kolkata',
     },
-    metadata: {},
+    metadata: { language: ['en','as','bn','brx','doi','gu','hi','kn','ks','kok','mai','ml','mni','mr','ne','or','pa','sa','sat','sd','ta','te','ur'].includes(body.language) ? body.language : 'auto' },
   };
 }
 
