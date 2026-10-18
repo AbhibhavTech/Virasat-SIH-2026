@@ -89,8 +89,8 @@ export function getContextualSpeech(
 
   const city = selectedCity && selectedCity !== 'All India' ? selectedCity : null;
 
-  // 1. Heritage & 3D Architectural Sanctuary Tab
-  if (activeTab === 'heritage' || activeTab === '3d' || contextMode === 'heritage') {
+  // 1. Heritage Tab
+  if (activeTab === 'heritage' || contextMode === 'heritage') {
     if (city === 'Jaipur') {
       return {
         greeting: defaultGreeting,

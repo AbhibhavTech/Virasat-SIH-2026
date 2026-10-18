@@ -84,7 +84,7 @@ export const GUIDE_CHARACTERS: Record<GuideCharacterId, GuideCharacterInfo> = {
     defaultSpeech: 'Every carved stone and vaulted arch tells a chapter of India’s five-millennia civilization.',
     quickActions: [
       { label: '45 UNESCO Sites', actionType: 'navigate', payload: 'heritage' },
-      { label: '3D Heritage Museum', actionType: 'navigate', payload: '3d' },
+      { label: 'Interactive Map', actionType: 'navigate', payload: 'map' },
       { label: 'Ask Virasat', actionType: 'ai', payload: 'Tell me the architectural secrets and historical chronicles of this site.' },
     ],
   },

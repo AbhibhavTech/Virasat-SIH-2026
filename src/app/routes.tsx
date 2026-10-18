@@ -91,8 +91,6 @@ export function getPathForTab(tab: NavTab, city?: string): string {
       return '/itinerary';
     case 'map':
       return '/map';
-    case '3d':
-      return '/heritage';
     case 'ai':
       return '/ai';
     case 'trips':
