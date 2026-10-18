@@ -803,6 +803,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
       </div>
 
       <PackageReferences
+        key={(itinerary?.city || selectedCityObj.name).toLowerCase()}
         city={itinerary?.city || selectedCityObj.name}
         days={itinerary?.days_count || daysCount}
         places={(itinerary?.days || []).flatMap(day => day.places.map(place => place.name))}
