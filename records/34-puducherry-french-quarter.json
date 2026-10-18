@@ -1,0 +1,105 @@
+{
+  "slug": "puducherry-french-quarter",
+  "list_no": 34,
+  "name": "French Quarter (White Town) Heritage Precinct",
+  "alt_names": [],
+  "category": "heritage precinct",
+  "state_ut": "Puducherry",
+  "district_city": "Puducherry",
+  "coordinates": {
+    "lat": 11.934,
+    "lng": 79.83,
+    "precision": "approximate - verify"
+  },
+  "era": "French colonial, from 1674",
+  "builder": "French East India Company",
+  "authenticity": {
+    "unesco_status": "unverified",
+    "unesco_ref_id": null,
+    "unesco_inscribed_year": null,
+    "unesco_site_name": null,
+    "unesco_url": null,
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "outline",
+  "overview": "Grid-planned colonial quarter on the Coromandel coast.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "White Town grid",
+      "description": "French-planned streets"
+    },
+    {
+      "title": "Promenade",
+      "description": "Seafront"
+    },
+    {
+      "title": "Immaculate Conception Cathedral",
+      "description": "Colonial church"
+    },
+    {
+      "title": "Sri Aurobindo Ashram",
+      "description": "Spiritual centre"
+    },
+    {
+      "title": "French-era villas",
+      "description": "Yellow-walled buildings"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "1674",
+      "event": "French settlement established"
+    },
+    {
+      "year": "1954",
+      "event": "De facto transfer to India"
+    },
+    {
+      "year": "1962",
+      "event": "De jure transfer"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Auroville",
+      "related_slug": null
+    },
+    {
+      "name": "Paradise Beach",
+      "related_slug": null
+    },
+    {
+      "name": "Chunnambar",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ]
+}

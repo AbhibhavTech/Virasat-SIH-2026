@@ -1,0 +1,105 @@
+{
+  "slug": "golconda-fort",
+  "list_no": 33,
+  "name": "Golconda Fort & Citadel",
+  "alt_names": [],
+  "category": "fort",
+  "state_ut": "Telangana",
+  "district_city": "Hyderabad",
+  "coordinates": {
+    "lat": 17.3833,
+    "lng": 78.4011,
+    "precision": "approximate - verify"
+  },
+  "era": "Kakatiya origin; Qutb Shahi, 1518-1687",
+  "builder": "Qutb Shahi dynasty",
+  "authenticity": {
+    "unesco_status": "tentative",
+    "unesco_ref_id": null,
+    "unesco_inscribed_year": null,
+    "unesco_site_name": null,
+    "unesco_url": null,
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "outline",
+  "overview": "Citadel famed for its acoustics and as a diamond-trading centre.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Fateh Darwaza",
+      "description": "Acoustic gateway"
+    },
+    {
+      "title": "Bala Hisar",
+      "description": "Highest citadel point"
+    },
+    {
+      "title": "Naya Qila",
+      "description": "Outer wall extension"
+    },
+    {
+      "title": "Rani Mahal",
+      "description": "Queen's palace"
+    },
+    {
+      "title": "Qutb Shahi Tombs",
+      "description": "Nearby royal tombs"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "1518",
+      "event": "Qutb Shahi dynasty rule begins"
+    },
+    {
+      "year": "1591",
+      "event": "Hyderabad founded"
+    },
+    {
+      "year": "1687",
+      "event": "Aurangzeb conquers Golconda"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Qutb Shahi Tombs",
+      "related_slug": null
+    },
+    {
+      "name": "Charminar",
+      "related_slug": null
+    },
+    {
+      "name": "Hussain Sagar",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ]
+}

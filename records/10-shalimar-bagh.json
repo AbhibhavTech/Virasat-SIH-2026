@@ -1,0 +1,101 @@
+{
+  "slug": "shalimar-bagh",
+  "list_no": 10,
+  "name": "Shalimar Bagh Mughal Garden",
+  "alt_names": [],
+  "category": "garden",
+  "state_ut": "Jammu and Kashmir",
+  "district_city": "Srinagar",
+  "coordinates": {
+    "lat": 34.1486,
+    "lng": 74.8756,
+    "precision": "approximate - verify"
+  },
+  "era": "Mughal, 1619",
+  "builder": "Jahangir for Nur Jahan",
+  "authenticity": {
+    "unesco_status": "tentative",
+    "unesco_ref_id": null,
+    "unesco_inscribed_year": null,
+    "unesco_site_name": null,
+    "unesco_url": null,
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "outline",
+  "overview": "Terraced Mughal garden on Dal Lake with chinar trees and water channels.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Terraced layout",
+      "description": "Three terraces rising from the lake"
+    },
+    {
+      "title": "Central water channel",
+      "description": "Axis of fountains and cascades"
+    },
+    {
+      "title": "Black marble pavilion",
+      "description": "Pavilion on the upper terrace"
+    },
+    {
+      "title": "Diwan-i-Aam",
+      "description": "Public audience hall in the garden"
+    },
+    {
+      "title": "Chinar trees",
+      "description": "Shade trees characteristic of Kashmir"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "1619",
+      "event": "Garden laid out"
+    },
+    {
+      "year": "1630",
+      "event": "Extended under Zafar Khan, governor of Kashmir"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Nishat Bagh",
+      "related_slug": null
+    },
+    {
+      "name": "Dal Lake",
+      "related_slug": null
+    },
+    {
+      "name": "Hazratbal Shrine",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ]
+}

@@ -1,0 +1,118 @@
+{
+  "slug": "fatehpur-sikri",
+  "list_no": 2,
+  "name": "Fatehpur Sikri City of Victory",
+  "alt_names": [],
+  "category": "city",
+  "state_ut": "Uttar Pradesh",
+  "district_city": "Agra",
+  "coordinates": {
+    "lat": 27.094,
+    "lng": 77.661,
+    "precision": "approximate - verify"
+  },
+  "era": "Mughal, 1571-1585",
+  "builder": "Akbar",
+  "authenticity": {
+    "unesco_status": "inscribed",
+    "unesco_ref_id": "255",
+    "unesco_inscribed_year": 1986,
+    "unesco_site_name": null,
+    "unesco_url": "https://whc.unesco.org/en/list/255",
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "outline",
+  "overview": "Akbar's planned capital in red sandstone, abandoned within about 15 years.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Buland Darwaza",
+      "description": "Monumental southern gateway of the Jama Masjid"
+    },
+    {
+      "title": "Jama Masjid",
+      "description": "Congregational mosque at the heart of the city"
+    },
+    {
+      "title": "Tomb of Salim Chishti",
+      "description": "White marble tomb of the Sufi saint with latticework"
+    },
+    {
+      "title": "Panch Mahal",
+      "description": "Five-tiered open pavilion"
+    },
+    {
+      "title": "Diwan-i-Khas",
+      "description": "Hall of private audience with a central carved pillar"
+    },
+    {
+      "title": "Jodha Bai's Palace",
+      "description": "Large royal residence blending Gujarati and Rajput styles"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "1571",
+      "event": "Akbar begins building the new capital"
+    },
+    {
+      "year": "c.1573-75",
+      "event": "Buland Darwaza built after the Gujarat campaign"
+    },
+    {
+      "year": "c.1585",
+      "event": "Court leaves the city"
+    },
+    {
+      "year": "1986",
+      "event": "UNESCO World Heritage inscription"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Taj Mahal",
+      "related_slug": null
+    },
+    {
+      "name": "Agra Fort",
+      "related_slug": null
+    },
+    {
+      "name": "Keoladeo National Park, Bharatpur",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "Fatehpur Sikri City of Victory - World Heritage List",
+      "publisher": "UNESCO",
+      "url": "https://whc.unesco.org/en/list/255"
+    },
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ]
+}

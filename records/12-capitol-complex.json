@@ -1,0 +1,110 @@
+{
+  "slug": "capitol-complex",
+  "list_no": 12,
+  "name": "The Capitol Complex (Le Corbusier)",
+  "alt_names": [],
+  "category": "complex",
+  "state_ut": "Chandigarh",
+  "district_city": "Chandigarh",
+  "coordinates": {
+    "lat": 30.7589,
+    "lng": 76.801,
+    "precision": "approximate - verify"
+  },
+  "era": "Modernist, 1950s-1960s",
+  "builder": "Le Corbusier",
+  "authenticity": {
+    "unesco_status": "part_of_inscribed",
+    "unesco_ref_id": "1321",
+    "unesco_inscribed_year": 2016,
+    "unesco_site_name": "The Architectural Work of Le Corbusier",
+    "unesco_url": "https://whc.unesco.org/en/list/1321",
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "outline",
+  "overview": "Government buildings of Chandigarh and part of Le Corbusier's UNESCO-listed work.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Palace of Assembly",
+      "description": "Legislature building"
+    },
+    {
+      "title": "Secretariat",
+      "description": "Long administrative building"
+    },
+    {
+      "title": "High Court",
+      "description": "Building with a parasol roof"
+    },
+    {
+      "title": "Open Hand Monument",
+      "description": "Symbol of the city"
+    },
+    {
+      "title": "Tower of Shadows",
+      "description": "Sun-path study structure"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "1950",
+      "event": "Le Corbusier appointed for the city plan"
+    },
+    {
+      "year": "1955",
+      "event": "High Court inaugurated"
+    },
+    {
+      "year": "2016",
+      "event": "Inscribed as part of The Architectural Work of Le Corbusier"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Rock Garden",
+      "related_slug": null
+    },
+    {
+      "name": "Sukhna Lake",
+      "related_slug": null
+    },
+    {
+      "name": "Le Corbusier Centre",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "The Architectural Work of Le Corbusier - World Heritage List",
+      "publisher": "UNESCO",
+      "url": "https://whc.unesco.org/en/list/1321"
+    },
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ]
+}

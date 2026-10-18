@@ -1,0 +1,170 @@
+{
+  "slug": "taj-mahal",
+  "list_no": 1,
+  "name": "Taj Mahal",
+  "alt_names": [
+    "Taj",
+    "Crown of the Palace"
+  ],
+  "category": "monument",
+  "state_ut": "Uttar Pradesh",
+  "district_city": "Agra",
+  "coordinates": {
+    "lat": 27.1751,
+    "lng": 78.0421
+  },
+  "era": "Mughal, 1632-1653",
+  "builder": "Shah Jahan",
+  "authenticity": {
+    "unesco_status": "inscribed",
+    "unesco_ref_id": "252",
+    "unesco_inscribed_year": 1983,
+    "unesco_url": "https://whc.unesco.org/en/list/252",
+    "asi_protected": true,
+    "last_verified_on": "2026-10-18",
+    "verified_by": "TO BE CONFIRMED BY TEAM"
+  },
+  "overview": "The Taj Mahal is a white-marble mausoleum on the south bank of the Yamuna River in Agra. Commissioned by the Mughal emperor Shah Jahan after the death of his wife Mumtaz Mahal in 1631, it is widely regarded as the finest expression of Mughal architecture, which fuses Persian, Islamic and Indian traditions. The complex is more than the tomb: it includes a monumental gateway, a formal charbagh garden, a mosque and a matching guest house, all arranged on a strict axis. It was inscribed as a UNESCO World Heritage Site in 1983 under criterion (i) as a masterpiece of human creative genius. Its symmetry, proportions and the way the marble shifts colour from dawn to dusk draw millions of visitors every year.",
+  "history": "[400-700 words: Mumtaz Mahal's death at Burhanpur in 1631 -> site selection and land exchange -> construction start 1632 -> Ustad Ahmad Lahori and the workforce of ~20,000 -> marble from Makrana, materials from across Asia -> mausoleum substantially complete c.1648, complex c.1653 -> Shah Jahan's deposition by Aurangzeb and burial beside Mumtaz -> colonial-era neglect, Lord Curzon's restoration (1900s) -> ASI protection, pollution control zone (Taj Trapezium) -> UNESCO 1983.]",
+  "architecture": "[300-500 words: raised plinth, central onion dome ~35 m, four minarets (slightly tilted outward), pishtaq arches, double-dome construction, charbagh quadrants, pietra dura, calligraphy with perspective scaling, red sandstone mosque & jawab, Yamuna riverfront terrace.]",
+  "cultural_significance": "[200-350 words: symbol of love and of India; Mughal court culture; Parchin Kari craft survival in Agra; role in tourism and national identity; living craft community.]",
+  "features": [
+    {
+      "title": "The main dome",
+      "description": "Double-shell marble dome crowned by a finial; sets the silhouette and visual hierarchy."
+    },
+    {
+      "title": "The four minarets",
+      "description": "Frame the tomb at the platform corners and reinforce the complex's symmetry."
+    },
+    {
+      "title": "Pietra dura inlay",
+      "description": "Coloured semi-precious stones set in marble to form floral and geometric patterns."
+    },
+    {
+      "title": "The Charbagh garden",
+      "description": "Four-part garden divided by water channels; builds the approach and reflection."
+    },
+    {
+      "title": "Mosque and guest house",
+      "description": "Flanking red sandstone buildings that contrast with and balance the white mausoleum."
+    }
+  ],
+  "timeline": [
+    {
+      "year": "1631",
+      "event": "Death of Mumtaz Mahal"
+    },
+    {
+      "year": "1632",
+      "event": "Construction of the main mausoleum begins"
+    },
+    {
+      "year": "1648",
+      "event": "Mausoleum substantially completed"
+    },
+    {
+      "year": "1653",
+      "event": "Wider complex and outer sections completed"
+    },
+    {
+      "year": "1983",
+      "event": "Inscribed as UNESCO World Heritage Site"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": "3-4 hours",
+    "stops": [
+      {
+        "title": "Great Gate (Darwaza-i Rauza)",
+        "minutes": 15,
+        "photo_tip": "Frame the first view of the tomb through the central arch."
+      },
+      {
+        "title": "Central water channel",
+        "minutes": 20,
+        "photo_tip": "Early morning gives the calmest reflections."
+      },
+      {
+        "title": "Mausoleum platform",
+        "minutes": 45,
+        "photo_tip": "Check current photography rules inside the main tomb."
+      },
+      {
+        "title": "Mosque and Mehman Khana",
+        "minutes": 20,
+        "photo_tip": "Red sandstone contrasts well with white marble."
+      },
+      {
+        "title": "Riverfront terrace / Mehtab Bagh view",
+        "minutes": 30,
+        "photo_tip": "Mehtab Bagh across the river is good for sunset."
+      }
+    ]
+  },
+  "practical": {
+    "opening_hours": "Generally sunrise to sunset; closed Fridays for general visitors (verify)",
+    "ticket_prices": {
+      "status": "VERIFY ON OFFICIAL ASI / tajmahal.gov.in BEFORE PUBLISHING",
+      "as_of": null
+    },
+    "accessibility": "Verify current ramps and wheelchair provisions with ASI",
+    "rules": [
+      "No drones",
+      "Do not touch surfaces",
+      "Security screening applies"
+    ]
+  },
+  "travel": [
+    {
+      "mode": "rail",
+      "hub": "Agra Cantt",
+      "note": "Verify distance and local transport options"
+    },
+    {
+      "mode": "air",
+      "hub": "Agra (Kheria) / Delhi IGI",
+      "note": "Delhi is the main international gateway"
+    }
+  ],
+  "nearby": [
+    {
+      "name": "Agra Fort",
+      "related_slug": null
+    },
+    {
+      "name": "Fatehpur Sikri",
+      "related_slug": "fatehpur-sikri"
+    },
+    {
+      "name": "Mehtab Bagh",
+      "related_slug": null
+    }
+  ],
+  "facts": [
+    "[5-10 verified facts, each with a source id]"
+  ],
+  "media": {
+    "hero": {
+      "url": "",
+      "alt": "Taj Mahal seen across the central reflecting pool",
+      "credit": "",
+      "licence": ""
+    },
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "Taj Mahal - World Heritage List",
+      "publisher": "UNESCO",
+      "url": "https://whc.unesco.org/en/list/252"
+    },
+    {
+      "title": "Taj Mahal official website",
+      "publisher": "Government of India",
+      "url": "https://tajmahal.gov.in"
+    }
+  ],
+  "content_status": "outline"
+}

@@ -13,6 +13,7 @@ import { ProfilePage } from '../pages/ProfilePage';
 import { DestinationDetailPage } from '../pages/DestinationDetailPage';
 import { SearchPage } from '../pages/SearchPage';
 import { HeritageSitesPage } from '../pages/HeritageSitesPage';
+import { HeritageDetailPage } from '../pages/HeritageDetailPage';
 import { IndiaHierarchyPage } from '../pages/IndiaHierarchyPage';
 import { AdminDashboardPage } from '../pages/AdminDashboardPage';
 import { FestivalsPage } from '../pages/FestivalsPage';
@@ -292,6 +293,16 @@ export const AppRoutes: React.FC<AppRoutesProps> = ({
           <HeritageSitesPage
             onSelectPlace={onSelectPlace}
             onNavigateTab={onNavigateTab}
+          />
+        }
+      />
+
+      <Route
+        path="/heritage/:slug"
+        element={
+          <HeritageDetailPage
+            onNavigateTab={onNavigateTab}
+            onSelectPlace={onSelectPlace}
           />
         }
       />

@@ -41,8 +41,8 @@ export function buildContextPayload(req: Request): LiveContextPayload {
   const loc = body.location || body.userLocation || {};
   const lat = loc.latitude ?? loc.lat ?? (query.lat ? parseFloat(String(query.lat)) : undefined);
   const lng = loc.longitude ?? loc.lng ?? (query.lng ? parseFloat(String(query.lng)) : undefined);
-  const city = loc.city || body.city || (query.city ? String(query.city) : undefined);
-  const state = loc.state || body.state || (query.state ? String(query.state) : undefined);
+  const city = loc.city;
+  const state = loc.state;
 
   // Extract route / page navigation state
   const currentRoute = body.currentRoute || body.path || (req.headers['x-virasat-route'] as string) || '/';

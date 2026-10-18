@@ -1,0 +1,97 @@
+{
+  "slug": "leh-palace",
+  "list_no": 11,
+  "name": "Leh Palace & Tsemo Fort",
+  "alt_names": [],
+  "category": "palace",
+  "state_ut": "Ladakh",
+  "district_city": "Leh",
+  "coordinates": {
+    "lat": 34.1649,
+    "lng": 77.5846,
+    "precision": "approximate - verify"
+  },
+  "era": "Namgyal dynasty, 17th c.",
+  "builder": "Sengge Namgyal",
+  "authenticity": {
+    "unesco_status": "unverified",
+    "unesco_ref_id": null,
+    "unesco_inscribed_year": null,
+    "unesco_site_name": null,
+    "unesco_url": null,
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "outline",
+  "overview": "Nine-storey Tibetan-style royal palace overlooking Leh, with Tsemo hilltop fort above.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Nine-storey palace",
+      "description": "Mud brick and timber construction"
+    },
+    {
+      "title": "Tsemo Fort",
+      "description": "Hilltop fort above the town"
+    },
+    {
+      "title": "Namgyal Tsemo Gompa",
+      "description": "Monastery founded in the 15th century"
+    },
+    {
+      "title": "Prayer flags",
+      "description": "Flags along the ridge"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "17th c.",
+      "event": "Palace built under the Namgyals"
+    },
+    {
+      "year": "1834",
+      "event": "Dogra conquest; royal family moves to Stok"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Shanti Stupa",
+      "related_slug": null
+    },
+    {
+      "name": "Leh Market",
+      "related_slug": null
+    },
+    {
+      "name": "Thiksey Monastery",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ]
+}

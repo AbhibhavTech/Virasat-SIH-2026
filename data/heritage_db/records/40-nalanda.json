@@ -1,0 +1,110 @@
+{
+  "slug": "nalanda",
+  "list_no": 40,
+  "name": "Archaeological Site of Nalanda Mahavihara",
+  "alt_names": [],
+  "category": "monastic university",
+  "state_ut": "Bihar",
+  "district_city": "Nalanda",
+  "coordinates": {
+    "lat": 25.1366,
+    "lng": 85.444,
+    "precision": "approximate - verify"
+  },
+  "era": "5th-13th c. CE",
+  "builder": "Kumaragupta I and later patrons",
+  "authenticity": {
+    "unesco_status": "inscribed",
+    "unesco_ref_id": "1502",
+    "unesco_inscribed_year": 2016,
+    "unesco_site_name": null,
+    "unesco_url": "https://whc.unesco.org/en/list/1502",
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "outline",
+  "overview": "Ancient Buddhist monastic university.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Monasteries",
+      "description": "Rows of brick cells"
+    },
+    {
+      "title": "Temple No. 3",
+      "description": "Large stupa"
+    },
+    {
+      "title": "Stupas",
+      "description": "Votive stupas"
+    },
+    {
+      "title": "Archaeological Museum",
+      "description": "Local finds"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "5th c.",
+      "event": "Founded"
+    },
+    {
+      "year": "c.7th c.",
+      "event": "Visited by Xuanzang"
+    },
+    {
+      "year": "c.1193",
+      "event": "Sacked"
+    },
+    {
+      "year": "2016",
+      "event": "UNESCO inscription"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Rajgir",
+      "related_slug": null
+    },
+    {
+      "name": "Pawapuri",
+      "related_slug": null
+    },
+    {
+      "name": "Bodh Gaya",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "Archaeological Site of Nalanda Mahavihara - World Heritage List",
+      "publisher": "UNESCO",
+      "url": "https://whc.unesco.org/en/list/1502"
+    },
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ]
+}

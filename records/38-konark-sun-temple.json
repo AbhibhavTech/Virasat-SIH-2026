@@ -1,0 +1,106 @@
+{
+  "slug": "konark-sun-temple",
+  "list_no": 38,
+  "name": "Sun Temple Konark",
+  "alt_names": [],
+  "category": "temple",
+  "state_ut": "Odisha",
+  "district_city": "Puri",
+  "coordinates": {
+    "lat": 19.8876,
+    "lng": 86.0945,
+    "precision": "approximate - verify"
+  },
+  "era": "Eastern Ganga, c.1250",
+  "builder": "Narasimhadeva I",
+  "authenticity": {
+    "unesco_status": "inscribed",
+    "unesco_ref_id": "246",
+    "unesco_inscribed_year": 1984,
+    "unesco_site_name": null,
+    "unesco_url": "https://whc.unesco.org/en/list/246",
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "outline",
+  "overview": "Sun temple designed as a stone chariot with 24 wheels.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Chariot design",
+      "description": "Seven horses and 24 wheels"
+    },
+    {
+      "title": "Jagamohana",
+      "description": "Assembly hall"
+    },
+    {
+      "title": "Natya Mandapa",
+      "description": "Dance hall"
+    },
+    {
+      "title": "Sun sculptures",
+      "description": "Surya figures"
+    },
+    {
+      "title": "Erotic panels",
+      "description": "Decorative reliefs"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "c.1250",
+      "event": "Temple completed"
+    },
+    {
+      "year": "1984",
+      "event": "UNESCO inscription"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Puri",
+      "related_slug": null
+    },
+    {
+      "name": "Chandrabhaga Beach",
+      "related_slug": null
+    },
+    {
+      "name": "Bhubaneswar",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "Sun Temple Konark - World Heritage List",
+      "publisher": "UNESCO",
+      "url": "https://whc.unesco.org/en/list/246"
+    },
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ]
+}

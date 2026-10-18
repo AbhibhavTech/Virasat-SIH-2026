@@ -1,0 +1,101 @@
+{
+  "slug": "gateway-of-india",
+  "list_no": 20,
+  "name": "Gateway of India",
+  "alt_names": [],
+  "category": "monument",
+  "state_ut": "Maharashtra",
+  "district_city": "Mumbai",
+  "coordinates": {
+    "lat": 18.922,
+    "lng": 72.8347,
+    "precision": "approximate - verify"
+  },
+  "era": "British India, 1911-1924",
+  "builder": "George Wittet",
+  "authenticity": {
+    "unesco_status": "not_listed",
+    "unesco_ref_id": null,
+    "unesco_inscribed_year": null,
+    "unesco_site_name": null,
+    "unesco_url": null,
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "outline",
+  "overview": "Indo-Saracenic basalt arch on Mumbai's waterfront.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Central dome",
+      "description": "Dome on the arch"
+    },
+    {
+      "title": "Basalt arch",
+      "description": "About 26 m tall"
+    },
+    {
+      "title": "Indo-Saracenic style",
+      "description": "Blend of Gujarati and European forms"
+    },
+    {
+      "title": "Harbour steps",
+      "description": "Ferry access to Elephanta"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "1911",
+      "event": "Foundation stone laid"
+    },
+    {
+      "year": "1924",
+      "event": "Inaugurated"
+    },
+    {
+      "year": "1948",
+      "event": "Last British troops leave India through the arch"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Taj Mahal Palace",
+      "related_slug": null
+    },
+    {
+      "name": "Elephanta Caves",
+      "related_slug": null
+    },
+    {
+      "name": "Colaba Causeway",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "slug": "red-fort",
+  "list_no": 4,
+  "name": "Red Fort (Lal Qila)",
+  "alt_names": [],
+  "category": "fort",
+  "state_ut": "Delhi",
+  "district_city": "Old Delhi",
+  "coordinates": {
+    "lat": 28.6562,
+    "lng": 77.241,
+    "precision": "approximate - verify"
+  },
+  "era": "Mughal, 1639-1648",
+  "builder": "Shah Jahan",
+  "authenticity": {
+    "unesco_status": "inscribed",
+    "unesco_ref_id": "231",
+    "unesco_inscribed_year": 2007,
+    "unesco_site_name": "Red Fort Complex",
+    "unesco_url": "https://whc.unesco.org/en/list/231",
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "outline",
+  "overview": "The Mughal imperial residence of Shahjahanabad and venue of India's Independence Day address.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Lahori Gate",
+      "description": "Main entrance and national flag-hoisting site"
+    },
+    {
+      "title": "Chhatta Chowk",
+      "description": "Vaulted covered bazaar"
+    },
+    {
+      "title": "Diwan-i-Aam",
+      "description": "Hall of public audience"
+    },
+    {
+      "title": "Diwan-i-Khas",
+      "description": "Hall of private audience"
+    },
+    {
+      "title": "Rang Mahal",
+      "description": "Palace of the royal women"
+    },
+    {
+      "title": "Moti Masjid",
+      "description": "Marble mosque added under Aurangzeb"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "1638-39",
+      "event": "Foundation and start of construction"
+    },
+    {
+      "year": "1648",
+      "event": "Fort completed"
+    },
+    {
+      "year": "1857",
+      "event": "Taken over by the British after the uprising"
+    },
+    {
+      "year": "1947",
+      "event": "National flag hoisted after Independence"
+    },
+    {
+      "year": "2007",
+      "event": "UNESCO inscription"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Jama Masjid",
+      "related_slug": null
+    },
+    {
+      "name": "Chandni Chowk",
+      "related_slug": null
+    },
+    {
+      "name": "Raj Ghat",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "Red Fort Complex - World Heritage List",
+      "publisher": "UNESCO",
+      "url": "https://whc.unesco.org/en/list/231"
+    },
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ]
+}

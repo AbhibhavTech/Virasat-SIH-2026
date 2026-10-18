@@ -24,8 +24,12 @@ import {
   AIMessageRecord,
   AIGroundingRecord,
   FestivalRecord,
+  HeritageRecord,
+  LanguageRecord,
+  TranslationRecord,
 } from './types';
 import { runDatabaseSeed } from './seed';
+import { loadAllHeritagesFromDisk, STATIC_LANGUAGES } from './seedHeritages';
 import { resolveCanonicalCityId, isCityExactMatch } from './canonicalLocationResolver';
 
 interface DatabaseData {
@@ -47,6 +51,9 @@ interface DatabaseData {
   ai_messages: Record<string, AIMessageRecord>;
   ai_groundings: Record<string, AIGroundingRecord>;
   festivals: Record<string, FestivalRecord>;
+  heritages: Record<string, HeritageRecord>;
+  languages: Record<string, LanguageRecord>;
+  translations: Record<string, TranslationRecord>;
 }
 
 export type DatabaseMode = 'postgresql' | 'json';
@@ -90,6 +97,9 @@ class DatabaseManager {
       ai_messages: {},
       ai_groundings: {},
       festivals: {},
+      heritages: {},
+      languages: {},
+      translations: {},
     };
   }
 
@@ -144,6 +154,7 @@ class DatabaseManager {
 
       if (isConnected) {
         this.loadStaticFestivalsFallback();
+        this.loadStaticHeritagesFallback();
         try {
           const res = await this.query<{ count: string | number }>('SELECT COUNT(*) AS count FROM places');
           const count = parseInt(String(res[0]?.count || '0'), 10);
@@ -166,7 +177,29 @@ class DatabaseManager {
     console.log('[DB] Database mode: JSON fallback');
     await this.initJsonStore();
     this.loadStaticFestivalsFallback();
+    this.loadStaticHeritagesFallback();
     this.isInitialized = true;
+  }
+
+  public loadStaticHeritagesFallback(): void {
+    try {
+      this.data.languages = this.data.languages || {};
+      for (const lang of STATIC_LANGUAGES) {
+        this.data.languages[lang.code.toLowerCase()] = lang;
+      }
+
+      this.data.heritages = this.data.heritages || {};
+      if (Object.keys(this.data.heritages).length < 45) {
+        const items = loadAllHeritagesFromDisk();
+        if (items.length > 0) {
+          for (const h of items) {
+            this.data.heritages[h.slug] = h;
+          }
+        }
+      }
+    } catch (e) {
+      console.error('[DB] Failed to load static heritages fallback:', e);
+    }
   }
 
   public loadStaticFestivalsFallback(): void {
@@ -224,14 +257,18 @@ class DatabaseManager {
           ai_messages: parsed.ai_messages || {},
           ai_groundings: parsed.ai_groundings || {},
           festivals: parsed.festivals || {},
+          heritages: parsed.heritages || {},
+          languages: parsed.languages || {},
+          translations: parsed.translations || {},
         };
       } catch (err) {
         console.error('[DB] Failed to load local database, initializing fresh store:', err);
       }
     }
 
-    // Ingest latest festivals if festivals.json has more records than local store
+    // Ingest latest festivals and heritages
     this.loadStaticFestivalsFallback();
+    this.loadStaticHeritagesFallback();
 
     // If fresh / empty or missing place_facts, festivals, or flagship markets, auto-seed
     if (
@@ -3813,6 +3850,182 @@ class DatabaseManager {
       this.data.festivals[record.id] = { ...record };
       this.persist();
       return record;
+    },
+  };
+
+  private mapHeritage(row: any): HeritageRecord {
+    if (!row) return row;
+    return {
+      id: Number(row.id || row.list_no),
+      slug: row.slug,
+      list_no: Number(row.list_no),
+      name: row.name,
+      alt_names: Array.isArray(row.alt_names) ? row.alt_names : [],
+      category: row.category,
+      state_ut: row.state_ut,
+      district_city: row.district_city,
+      lat: row.lat !== null && row.lat !== undefined ? Number(row.lat) : undefined,
+      lng: row.lng !== null && row.lng !== undefined ? Number(row.lng) : undefined,
+      era: row.era,
+      built_year_from: row.built_year_from,
+      built_year_to: row.built_year_to,
+      builder: row.builder,
+      unesco_status: row.unesco_status,
+      unesco_ref_id: row.unesco_ref_id,
+      unesco_inscribed_year: row.unesco_inscribed_year,
+      unesco_site_name: row.unesco_site_name,
+      unesco_url: row.unesco_url,
+      asi_protected: row.asi_protected,
+      last_verified_on: row.last_verified_on,
+      verified_by: row.verified_by,
+      review_status: row.review_status,
+      overview: row.overview,
+      history: row.history,
+      architecture: row.architecture,
+      cultural_significance: row.cultural_significance,
+      opening_hours: typeof row.opening_hours === 'string' ? JSON.parse(row.opening_hours) : row.opening_hours,
+      ticket_prices: typeof row.ticket_prices === 'string' ? JSON.parse(row.ticket_prices) : row.ticket_prices,
+      accessibility: typeof row.accessibility === 'string' ? JSON.parse(row.accessibility) : row.accessibility,
+      visitor_rules: Array.isArray(row.visitor_rules) ? row.visitor_rules : [],
+      best_season: row.best_season,
+      recommended_duration: row.recommended_duration,
+      created_at: row.created_at,
+      updated_at: row.updated_at,
+    };
+  }
+
+  private applyHeritageTranslation(h: HeritageRecord, lang: string): HeritageRecord {
+    if (!lang || lang === 'en') return h;
+    const cleanLang = lang.toLowerCase();
+    const trans = Object.values(this.data.translations).filter(
+      (t) => t.entity === 'heritage' && (t.entity_id === h.id || t.entity_id === h.slug) && t.lang.toLowerCase() === cleanLang
+    );
+    if (!trans || trans.length === 0) return h;
+    const copy = { ...h };
+    for (const item of trans) {
+      if (item.field && item.text && item.text.trim()) {
+        (copy as any)[item.field] = item.text;
+      }
+    }
+    return copy;
+  }
+
+  public readonly heritages = {
+    findAll: async (params?: {
+      state?: string;
+      category?: string;
+      unesco_status?: string;
+      search?: string;
+      limit?: number;
+      offset?: number;
+      lang?: string;
+    }): Promise<{ heritages: HeritageRecord[]; total: number }> => {
+      this.loadStaticHeritagesFallback();
+      let list = Object.values(this.data.heritages).sort((a, b) => a.list_no - b.list_no);
+
+      if (params?.state && params.state !== 'All') {
+        const qState = params.state.toLowerCase();
+        list = list.filter((h) => h.state_ut?.toLowerCase() === qState || h.state_ut?.toLowerCase().includes(qState));
+      }
+
+      if (params?.category && params.category !== 'All') {
+        const qCat = params.category.toLowerCase();
+        list = list.filter((h) => (h.category || '').toLowerCase().includes(qCat));
+      }
+
+      if (params?.unesco_status && params.unesco_status !== 'All') {
+        const qStatus = params.unesco_status.toLowerCase();
+        list = list.filter((h) => h.unesco_status?.toLowerCase() === qStatus);
+      }
+
+      if (params?.search) {
+        const q = params.search.toLowerCase().trim();
+        list = list.filter(
+          (h) =>
+            h.name.toLowerCase().includes(q) ||
+            h.district_city.toLowerCase().includes(q) ||
+            h.state_ut.toLowerCase().includes(q) ||
+            (h.overview && h.overview.toLowerCase().includes(q)) ||
+            (h.alt_names && h.alt_names.some((a) => a.toLowerCase().includes(q)))
+        );
+      }
+
+      const total = list.length;
+      const offset = params?.offset || 0;
+      const limit = params?.limit || 100;
+      const paginated = list.slice(offset, offset + limit);
+
+      if (params?.lang && params.lang !== 'en') {
+        return {
+          total,
+          heritages: paginated.map((h) => this.applyHeritageTranslation(h, params.lang!)),
+        };
+      }
+
+      return { total, heritages: paginated };
+    },
+
+    findBySlug: async (slug: string, lang?: string): Promise<HeritageRecord | null> => {
+      this.loadStaticHeritagesFallback();
+      const cleanSlug = slug.toLowerCase().trim();
+      const found = Object.values(this.data.heritages).find((h) => h.slug.toLowerCase() === cleanSlug) || null;
+      if (!found) return null;
+      if (lang && lang !== 'en') {
+        return this.applyHeritageTranslation(found, lang);
+      }
+      return found;
+    },
+
+    findById: async (id: number | string, lang?: string): Promise<HeritageRecord | null> => {
+      this.loadStaticHeritagesFallback();
+      const numId = Number(id);
+      const found = Object.values(this.data.heritages).find((h) => h.id === numId || h.list_no === numId || h.slug === String(id)) || null;
+      if (!found) return null;
+      if (lang && lang !== 'en') {
+        return this.applyHeritageTranslation(found, lang);
+      }
+      return found;
+    },
+
+    createOrUpdate: async (record: HeritageRecord): Promise<HeritageRecord> => {
+      this.data.heritages[record.slug] = { ...record };
+      this.persist();
+      return record;
+    },
+  };
+
+  public readonly languages = {
+    findAll: async (): Promise<LanguageRecord[]> => {
+      this.loadStaticHeritagesFallback();
+      return Object.values(this.data.languages);
+    },
+    findByCode: async (code: string): Promise<LanguageRecord | null> => {
+      this.loadStaticHeritagesFallback();
+      return this.data.languages[code.toLowerCase()] || null;
+    },
+    createOrUpdate: async (record: LanguageRecord): Promise<LanguageRecord> => {
+      this.data.languages[record.code.toLowerCase()] = { ...record };
+      this.persist();
+      return record;
+    },
+  };
+
+  public readonly translations = {
+    getForEntity: async (entity: string, entityId: number | string, lang: string): Promise<Record<string, string>> => {
+      const res: Record<string, string> = {};
+      const qLang = lang.toLowerCase();
+      for (const t of Object.values(this.data.translations)) {
+        if (t.entity === entity && String(t.entity_id) === String(entityId) && t.lang.toLowerCase() === qLang) {
+          res[t.field] = t.text;
+        }
+      }
+      return res;
+    },
+    set: async (t: TranslationRecord): Promise<TranslationRecord> => {
+      const key = `${t.entity}:${t.entity_id}:${t.field}:${t.lang.toLowerCase()}`;
+      this.data.translations[key] = { ...t };
+      this.persist();
+      return t;
     },
   };
 }

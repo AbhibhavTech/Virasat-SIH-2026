@@ -1,0 +1,118 @@
+{
+  "slug": "amber-fort",
+  "list_no": 13,
+  "name": "Amber Fort & Palace (Amer)",
+  "alt_names": [],
+  "category": "fort",
+  "state_ut": "Rajasthan",
+  "district_city": "Jaipur",
+  "coordinates": {
+    "lat": 26.9855,
+    "lng": 75.8513,
+    "precision": "approximate - verify"
+  },
+  "era": "Kachwaha Rajput, from 1592",
+  "builder": "Man Singh I; expanded by Jai Singh I",
+  "authenticity": {
+    "unesco_status": "part_of_inscribed",
+    "unesco_ref_id": "247",
+    "unesco_inscribed_year": 2013,
+    "unesco_site_name": "Hill Forts of Rajasthan",
+    "unesco_url": "https://whc.unesco.org/en/list/247",
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "outline",
+  "overview": "Hilltop fort-palace overlooking Maota Lake, once the Kachwaha capital.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Sheesh Mahal",
+      "description": "Mirror-work hall"
+    },
+    {
+      "title": "Ganesh Pol",
+      "description": "Painted gateway"
+    },
+    {
+      "title": "Sukh Niwas",
+      "description": "Cooled pavilion"
+    },
+    {
+      "title": "Diwan-i-Aam",
+      "description": "Hall of public audience"
+    },
+    {
+      "title": "Maota Lake",
+      "description": "Lake in front of the fort"
+    },
+    {
+      "title": "Sila Devi Temple",
+      "description": "Temple within the palace"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "1592",
+      "event": "Construction begun by Man Singh I"
+    },
+    {
+      "year": "17th c.",
+      "event": "Expansion under Jai Singh I"
+    },
+    {
+      "year": "1727",
+      "event": "Capital moves to Jaipur"
+    },
+    {
+      "year": "2013",
+      "event": "Inscribed in Hill Forts of Rajasthan"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Jaigarh Fort",
+      "related_slug": null
+    },
+    {
+      "name": "Nahargarh Fort",
+      "related_slug": null
+    },
+    {
+      "name": "Jal Mahal",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "Hill Forts of Rajasthan - World Heritage List",
+      "publisher": "UNESCO",
+      "url": "https://whc.unesco.org/en/list/247"
+    },
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ]
+}

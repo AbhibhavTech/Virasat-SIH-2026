@@ -1,0 +1,97 @@
+{
+  "slug": "lepakshi",
+  "list_no": 30,
+  "name": "Lepakshi Veerabhadra Temple & Nandi",
+  "alt_names": [],
+  "category": "temple",
+  "state_ut": "Andhra Pradesh",
+  "district_city": "Sri Sathya Sai",
+  "coordinates": {
+    "lat": 13.803,
+    "lng": 77.608,
+    "precision": "approximate - verify"
+  },
+  "era": "Vijayanagara, c.1530s",
+  "builder": "Brothers Virupanna and Viranna",
+  "authenticity": {
+    "unesco_status": "tentative",
+    "unesco_ref_id": null,
+    "unesco_inscribed_year": null,
+    "unesco_site_name": null,
+    "unesco_url": null,
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "outline",
+  "overview": "Temple known for its ceiling frescoes, hanging pillar and large monolithic Nandi.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Hanging pillar",
+      "description": "Pillar not fully touching the floor"
+    },
+    {
+      "title": "Monolithic Nandi",
+      "description": "Among India's largest"
+    },
+    {
+      "title": "Ceiling frescoes",
+      "description": "Vijayanagara paintings"
+    },
+    {
+      "title": "Naga Linga",
+      "description": "Serpent-canopied linga"
+    },
+    {
+      "title": "Kalyana Mandapa",
+      "description": "Unfinished hall"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "c.1530s",
+      "event": "Temple built during the reign of Achyuta Deva Raya"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Hindupur",
+      "related_slug": null
+    },
+    {
+      "name": "Penukonda",
+      "related_slug": null
+    },
+    {
+      "name": "Puttaparthi",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ]
+}

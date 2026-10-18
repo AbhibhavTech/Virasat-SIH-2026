@@ -1,7 +1,11 @@
 import React, { useState, useEffect, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { api } from '../services/api';
 import { PlaceSummary } from '../types';
 import { useFavorites } from '../contexts/FavoritesContext';
+import { useLanguage } from '../contexts/LanguageContext';
+import { LanguageSelector } from '../components/common/LanguageSelector';
+import { UnescoBadge } from '../components/common/UnescoBadge';
 import {
   Landmark,
   Search,
@@ -43,13 +47,16 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
   onNavigateTab,
   onSelectPlaceForRoute,
 }) => {
+  const navigate = useNavigate();
   const { isFavorite, toggleFavorite } = useFavorites();
+  const { currentLanguage } = useLanguage();
   const [heritageSites, setHeritageSites] = useState<any[]>([]);
   const [allStates, setAllStates] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedState, setSelectedState] = useState('All');
+  const [selectedUnescoStatus, setSelectedUnescoStatus] = useState('All');
   const [isARModalOpen, setIsARModalOpen] = useState(false);
 
   useEffect(() => {
@@ -57,7 +64,7 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
       setLoading(true);
       try {
         const [res, statesRes] = await Promise.allSettled([
-          api.getHeritage({ limit: 100 }),
+          api.getHeritage({ limit: 100, lang: currentLanguage }),
           api.getStates(),
         ]);
 
@@ -79,7 +86,7 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
       }
     };
     fetchHeritage();
-  }, []);
+  }, [currentLanguage]);
 
   const categoryCounts = useMemo(() => {
     const counts: Record<string, number> = {
@@ -97,13 +104,13 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
 
       if (siteCat.includes('fort') || siteCat.includes('palace') || siteTags.includes('fort') || siteTags.includes('palace')) {
         counts['Forts & Palaces']++;
-      } else if (siteCat.includes('temple') || siteCat.includes('sacred') || siteTags.includes('temple') || siteTags.includes('religious')) {
+      } else if (siteCat.includes('temple') || siteCat.includes('sacred') || siteCat.includes('church') || siteTags.includes('temple') || siteTags.includes('religious')) {
         counts['Temples & Sacred']++;
       } else if (siteCat.includes('cave') || siteTags.includes('cave') || siteTags.includes('rock-cut')) {
         counts['Caves & Rock-Cut']++;
-      } else if (siteCat.includes('colonial') || siteCat.includes('monument') || siteCat.includes('architecture') || siteTags.includes('colonial')) {
+      } else if (siteCat.includes('colonial') || siteCat.includes('monument') || siteCat.includes('architecture') || siteCat.includes('city') || siteCat.includes('complex') || siteCat.includes('railway') || siteTags.includes('colonial')) {
         counts['Architectural & Colonial']++;
-      } else if (siteCat.includes('ghat') || siteCat.includes('nature') || siteTags.includes('ghat') || siteTags.includes('lake')) {
+      } else if (siteCat.includes('ghat') || siteCat.includes('nature') || siteCat.includes('natural') || siteTags.includes('ghat') || siteTags.includes('lake') || siteTags.includes('park')) {
         counts['Natural & Ghats']++;
       } else {
         counts['Architectural & Colonial']++;
@@ -155,7 +162,8 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
   const statesList = useMemo(() => {
     const set = new Set<string>();
     heritageSites.forEach((s) => {
-      if (s.state) set.add(s.state);
+      const st = s.state_ut || s.state;
+      if (st) set.add(st);
     });
     allStates.forEach((st) => {
       if (st) set.add(st);
@@ -169,17 +177,24 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
       const matchesSearch =
         !q ||
         site.name?.toLowerCase().includes(q) ||
-        site.city?.toLowerCase().includes(q) ||
-        site.state?.toLowerCase().includes(q) ||
-        site.summary?.toLowerCase().includes(q) ||
-        site.historical_significance?.toLowerCase().includes(q) ||
-        site.architectural_style?.toLowerCase().includes(q);
+        (site.district_city && site.district_city.toLowerCase().includes(q)) ||
+        (site.city && site.city.toLowerCase().includes(q)) ||
+        (site.state_ut && site.state_ut.toLowerCase().includes(q)) ||
+        (site.state && site.state.toLowerCase().includes(q)) ||
+        (site.overview && site.overview.toLowerCase().includes(q)) ||
+        (site.summary && site.summary.toLowerCase().includes(q)) ||
+        (site.historical_significance && site.historical_significance.toLowerCase().includes(q)) ||
+        (site.alt_names && site.alt_names.some((a: string) => a.toLowerCase().includes(q)));
 
       const matchesState =
         selectedState === 'All' ||
+        site.state_ut === selectedState ||
         site.state === selectedState ||
-        site.state_id === selectedState ||
-        (site.state || '').toLowerCase().includes(selectedState.toLowerCase());
+        (site.state_ut || site.state || '').toLowerCase().includes(selectedState.toLowerCase());
+
+      const matchesUnesco =
+        selectedUnescoStatus === 'All' ||
+        site.unesco_status === selectedUnescoStatus;
 
       let matchesCategory = true;
       if (selectedCategory !== 'All') {
@@ -189,26 +204,31 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
         if (selectedCategory === 'Forts & Palaces') {
           matchesCategory = siteCat.includes('fort') || siteCat.includes('palace') || siteTags.includes('fort') || siteTags.includes('palace');
         } else if (selectedCategory === 'Temples & Sacred') {
-          matchesCategory = siteCat.includes('temple') || siteCat.includes('sacred') || siteTags.includes('temple') || siteTags.includes('religious');
+          matchesCategory = siteCat.includes('temple') || siteCat.includes('sacred') || siteCat.includes('church') || siteTags.includes('temple') || siteTags.includes('religious');
         } else if (selectedCategory === 'Caves & Rock-Cut') {
           matchesCategory = siteCat.includes('cave') || siteTags.includes('cave') || siteTags.includes('rock-cut');
         } else if (selectedCategory === 'Architectural & Colonial') {
-          matchesCategory = siteCat.includes('colonial') || siteCat.includes('monument') || siteCat.includes('architecture') || siteTags.includes('colonial');
+          matchesCategory = siteCat.includes('colonial') || siteCat.includes('monument') || siteCat.includes('architecture') || siteCat.includes('city') || siteCat.includes('complex') || siteCat.includes('railway') || siteTags.includes('colonial');
         } else if (selectedCategory === 'Natural & Ghats') {
-          matchesCategory = siteCat.includes('ghat') || siteCat.includes('nature') || siteTags.includes('ghat') || siteTags.includes('lake');
+          matchesCategory = siteCat.includes('ghat') || siteCat.includes('nature') || siteCat.includes('natural') || siteTags.includes('ghat') || siteTags.includes('lake') || siteTags.includes('park');
         }
       }
 
-      return matchesSearch && matchesState && matchesCategory;
+      return matchesSearch && matchesState && matchesCategory && matchesUnesco;
     });
-  }, [heritageSites, searchQuery, selectedCategory, selectedState]);
+  }, [heritageSites, searchQuery, selectedCategory, selectedState, selectedUnescoStatus]);
 
-  const isAnyFilterActive = searchQuery !== '' || selectedCategory !== 'All' || selectedState !== 'All';
+  const isAnyFilterActive =
+    searchQuery !== '' ||
+    selectedCategory !== 'All' ||
+    selectedState !== 'All' ||
+    selectedUnescoStatus !== 'All';
 
   const resetAllFilters = () => {
     setSearchQuery('');
     setSelectedCategory('All');
     setSelectedState('All');
+    setSelectedUnescoStatus('All');
   };
 
   return (
@@ -490,7 +510,35 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
               </select>
               <SlidersHorizontal className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400 pointer-events-none" />
             </div>
+
+            {/* Language Selector (Requirement 4: Heritage Tab) */}
+            <LanguageSelector id="heritage-tab-lang-selector" className="h-[48px] sm:h-[54px]" />
           </div>
+        </div>
+
+        {/* UNESCO Status Filter Pills (Requirement 3) */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none text-xs mobile-scroll-row">
+          <span className="text-stone-500 font-semibold text-xs shrink-0">UNESCO Status:</span>
+          {[
+            { id: 'All', label: 'All Heritage Records' },
+            { id: 'inscribed', label: 'UNESCO Inscribed Site' },
+            { id: 'part_of_inscribed', label: 'Part of UNESCO Site' },
+            { id: 'tentative', label: 'Tentative List' },
+            { id: 'not_listed', label: 'National Heritage (Not Listed)' },
+          ].map((st) => (
+            <button
+              key={st.id}
+              type="button"
+              onClick={() => setSelectedUnescoStatus(st.id)}
+              className={`px-3 py-1.5 rounded-full font-bold transition text-xs shrink-0 cursor-pointer ${
+                selectedUnescoStatus === st.id
+                  ? 'bg-[#0B192C] text-white shadow-xs'
+                  : 'bg-[#F8F5F0] hover:bg-[#EFE8DF] text-stone-700 border border-stone-200/80'
+              }`}
+            >
+              {st.label}
+            </button>
+          ))}
         </div>
 
         {/* Category Pills (Enlarged with Icons & Live Counters) */}
@@ -584,23 +632,28 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-6 sm:gap-8">
           {filteredSites.map((site) => {
-            const fav = isFavorite(site.id);
+            const siteKey = site.slug || String(site.id);
+            const fav = isFavorite(siteKey);
+            const siteImage = site.media?.hero?.url || getMonumentRealImage(site.slug || site.id, site.thumbnail_url);
+            const locationText = [site.district_city || site.city, site.state_ut || site.state].filter(Boolean).join(', ');
+            const summaryText = site.overview || site.summary || site.historical_significance;
 
             return (
               <div
-                key={site.id}
-                className="group bg-white rounded-3xl border border-[#E8DEC8] hover:border-orange-300 shadow-[0_8px_30px_rgba(57,39,26,0.06)] hover:shadow-[0_20px_50px_rgba(57,39,26,0.14)] transition-all duration-300 flex flex-col overflow-hidden"
+                key={siteKey}
+                onClick={() => navigate(`/heritage/${site.slug || site.id}`)}
+                className="group bg-white rounded-3xl border border-[#E8DEC8] hover:border-orange-300 shadow-[0_8px_30px_rgba(57,39,26,0.06)] hover:shadow-[0_20px_50px_rgba(57,39,26,0.14)] transition-all duration-300 flex flex-col overflow-hidden cursor-pointer"
               >
                 {/* Large Thumbnail Image Container */}
                 <div className="relative h-56 sm:h-64 lg:h-72 w-full bg-stone-100 overflow-hidden">
                   <img
-                    src={getMonumentRealImage(site.id, site.thumbnail_url)}
+                    src={siteImage}
                     alt={site.name}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
-                      const fallback = getMonumentRealImage(site.id);
+                      const fallback = getMonumentRealImage(site.slug || site.id);
                       if (target.src !== fallback) {
                         target.src = fallback;
                       }
@@ -608,19 +661,28 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
 
-                  {/* Badges on Image */}
-                  <div className="absolute top-3.5 left-3.5 flex flex-wrap gap-2">
-                    <span className={`px-3 py-1 rounded-full text-xs font-bold text-white shadow-md backdrop-blur-md ${
-                      site.unesco_site ? 'bg-[#FF671F]' : 'bg-[#046A38]'
-                    }`}>
-                      {site.heritage_status || (site.unesco_site ? 'UNESCO World Heritage' : 'National Monument')}
-                    </span>
+                  {/* Badges on Image (Requirement 3: Strict UNESCO badge) */}
+                  <div className="absolute top-3.5 left-3.5 flex flex-wrap gap-1.5 items-center">
+                    <UnescoBadge
+                      status={site.unesco_status}
+                      year={site.unesco_inscribed_year}
+                      siteName={site.unesco_site_name}
+                      size="sm"
+                    />
+                    {site.asi_protected && (
+                      <span className="px-2.5 py-0.5 rounded-full text-[10.5px] font-bold bg-[#046A38] text-white shadow-xs">
+                        ASI Protected
+                      </span>
+                    )}
                   </div>
 
                   {/* Favorite Button */}
                   <button
                     type="button"
-                    onClick={() => toggleFavorite(site.id)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      toggleFavorite(siteKey);
+                    }}
                     className={`absolute top-3.5 right-3.5 p-2.5 rounded-full backdrop-blur-md transition-all cursor-pointer ${
                       fav
                         ? 'bg-rose-500 text-white shadow-md scale-105'
@@ -633,10 +695,12 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
 
                   {/* Location & Star Rating Overlay */}
                   <div className="absolute bottom-3.5 left-3.5 right-3.5 flex items-center justify-between text-white text-xs sm:text-sm">
-                    <div className="flex items-center gap-1.5 font-semibold truncate drop-shadow-md">
-                      <MapPin className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                      <span className="truncate">{site.city}, {site.state}</span>
-                    </div>
+                    {locationText ? (
+                      <div className="flex items-center gap-1.5 font-semibold truncate drop-shadow-md">
+                        <MapPin className="w-4 h-4 text-emerald-400 shrink-0" />
+                        <span className="truncate">{locationText}</span>
+                      </div>
+                    ) : <div />}
                     {site.rating && (
                       <span className="text-xs font-bold bg-black/70 px-2.5 py-1 rounded-full text-amber-300 backdrop-blur-md border border-amber-300/30">
                         ★ {site.rating}
@@ -651,31 +715,37 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
                     <h3 className="font-serif font-black text-stone-900 text-lg sm:text-xl lg:text-2xl leading-snug group-hover:text-[#FF671F] transition-colors">
                       {site.name}
                     </h3>
-                    <p className="text-xs sm:text-sm text-stone-600 line-clamp-2 sm:line-clamp-3 leading-relaxed font-sans">
-                      {site.summary || site.historical_significance}
-                    </p>
+                    {summaryText && (
+                      <p className="text-xs sm:text-sm text-stone-600 line-clamp-2 sm:line-clamp-3 leading-relaxed font-sans">
+                        {summaryText}
+                      </p>
+                    )}
                   </div>
 
-                  {/* Visiting Details Grid */}
-                  <div className="pt-3 border-t border-[#F0EAE1] grid grid-cols-2 gap-2 text-xs text-stone-700 font-sans font-medium">
-                    <div className="flex items-center gap-1.5 truncate">
-                      <Clock className="w-3.5 h-3.5 text-stone-400 flex-shrink-0" />
-                      <span className="truncate">{site.visiting_hours || site.timings || '9:00 AM - 5:30 PM'}</span>
+                  {/* Visiting Details Grid (Hide if not available) */}
+                  {(site.visiting_hours || site.timings || site.practical?.opening_hours) && (
+                    <div className="pt-3 border-t border-[#F0EAE1] grid grid-cols-2 gap-2 text-xs text-stone-700 font-sans font-medium">
+                      <div className="flex items-center gap-1.5 truncate">
+                        <Clock className="w-3.5 h-3.5 text-stone-400 shrink-0" />
+                        <span className="truncate">
+                          {site.visiting_hours || site.timings || (typeof site.practical?.opening_hours === 'string' ? site.practical.opening_hours : 'Open')}
+                        </span>
+                      </div>
+                      {site.entry_fee?.domestic !== undefined && (
+                        <div className="flex items-center gap-1.5 truncate">
+                          <Ticket className="w-3.5 h-3.5 text-stone-400 shrink-0" />
+                          <span className="truncate">
+                            ₹{site.entry_fee.domestic} (INR)
+                          </span>
+                        </div>
+                      )}
                     </div>
-                    <div className="flex items-center gap-1.5 truncate">
-                      <Ticket className="w-3.5 h-3.5 text-stone-400 flex-shrink-0" />
-                      <span className="truncate">
-                        {site.entry_fee?.domestic !== undefined
-                          ? `₹${site.entry_fee.domestic} (INR)`
-                          : '₹50 standard'}
-                      </span>
-                    </div>
-                  </div>
+                  )}
 
                   {/* Nearest Transit Info */}
                   {(site.nearest_transport?.railway_station || site.visiting_info?.railway_station) && (
                     <div className="flex items-center gap-2 text-xs text-stone-700 bg-orange-50/60 px-3 py-1.5 rounded-xl border border-orange-100 font-sans font-medium">
-                      <Train className="w-3.5 h-3.5 text-[#000080] flex-shrink-0" />
+                      <Train className="w-3.5 h-3.5 text-[#000080] shrink-0" />
                       <span className="truncate">
                         Station: {site.nearest_transport?.railway_station || site.visiting_info?.railway_station}
                       </span>
@@ -686,7 +756,10 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
                   <div className="pt-2 flex items-center gap-2.5">
                     <button
                       type="button"
-                      onClick={() => onSelectPlace(site.id)}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        navigate(`/heritage/${site.slug || site.id}`);
+                      }}
                       className="flex-1 flex items-center justify-center gap-1.5 py-3 px-4 rounded-xl sm:rounded-2xl bg-gradient-to-r from-[#FF671F] to-[#E06D24] hover:from-[#E06D24] hover:to-[#C9510C] text-white text-xs sm:text-sm font-bold shadow-xs hover:shadow-md transition-all cursor-pointer active:scale-95"
                     >
                       <span>Explore Monument</span>
@@ -695,7 +768,8 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
 
                     <button
                       type="button"
-                      onClick={() => {
+                      onClick={(e) => {
+                        e.stopPropagation();
                         onNavigateTab('itinerary');
                       }}
                       className="py-3 px-4 rounded-xl sm:rounded-2xl bg-stone-100 hover:bg-stone-200 text-stone-800 text-xs sm:text-sm font-bold flex items-center gap-1.5 transition-colors cursor-pointer"

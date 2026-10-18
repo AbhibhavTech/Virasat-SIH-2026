@@ -1,0 +1,110 @@
+{
+  "slug": "jaisalmer-fort",
+  "list_no": 15,
+  "name": "Jaisalmer Fort (Sonar Qila)",
+  "alt_names": [],
+  "category": "fort",
+  "state_ut": "Rajasthan",
+  "district_city": "Jaisalmer",
+  "coordinates": {
+    "lat": 26.9124,
+    "lng": 70.9129,
+    "precision": "approximate - verify"
+  },
+  "era": "Bhati Rajput, 1156",
+  "builder": "Rawal Jaisal",
+  "authenticity": {
+    "unesco_status": "part_of_inscribed",
+    "unesco_ref_id": "247",
+    "unesco_inscribed_year": 2013,
+    "unesco_site_name": "Hill Forts of Rajasthan",
+    "unesco_url": "https://whc.unesco.org/en/list/247",
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "outline",
+  "overview": "Living fort in yellow sandstone rising from the Thar Desert.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Yellow sandstone walls",
+      "description": "Golden colour at sunset"
+    },
+    {
+      "title": "Jain temples",
+      "description": "Medieval temple cluster"
+    },
+    {
+      "title": "Raj Mahal",
+      "description": "Royal palace"
+    },
+    {
+      "title": "Bastions",
+      "description": "Wall defences around the hill"
+    },
+    {
+      "title": "Laxminath Temple",
+      "description": "Active temple in the fort"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "1156",
+      "event": "Fort founded by Rawal Jaisal"
+    },
+    {
+      "year": "1818",
+      "event": "Treaty with the East India Company"
+    },
+    {
+      "year": "2013",
+      "event": "Inscribed in Hill Forts of Rajasthan"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Patwon ki Haveli",
+      "related_slug": null
+    },
+    {
+      "name": "Gadisar Lake",
+      "related_slug": null
+    },
+    {
+      "name": "Sam Sand Dunes",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "Hill Forts of Rajasthan - World Heritage List",
+      "publisher": "UNESCO",
+      "url": "https://whc.unesco.org/en/list/247"
+    },
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ]
+}

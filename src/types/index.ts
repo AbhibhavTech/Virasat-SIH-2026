@@ -466,6 +466,8 @@ export interface AIAction {
 }
 
 export interface AIChatResponse {
+  itinerary_draft?: any;
+  current_location?: { city?: string; lat?: number; lng?: number };
   conversation_id?: string;
   reply: string;
   suggested_places?: Array<{
@@ -624,6 +626,80 @@ export interface HeritageSite extends PlaceSummary {
     metro_station?: string;
     airport?: string;
   };
+}
+
+export type UnescoStatus = 'inscribed' | 'part_of_inscribed' | 'tentative' | 'not_listed' | 'unverified';
+
+export interface LanguageItem {
+  code: string;
+  name_en: string;
+  name_native: string;
+  script?: string;
+  rtl: boolean;
+  scheduled_8th?: boolean;
+}
+
+export interface HeritageDetail {
+  id: number;
+  slug: string;
+  list_no: number;
+  name: string;
+  alt_names?: string[];
+  category?: string;
+  state_ut: string;
+  district_city: string;
+  lat?: number;
+  lng?: number;
+  era?: string;
+  built_year_from?: number;
+  built_year_to?: number;
+  builder?: string;
+  unesco_status: UnescoStatus;
+  unesco_ref_id?: string | null;
+  unesco_inscribed_year?: number | null;
+  unesco_site_name?: string | null;
+  unesco_url?: string | null;
+  asi_protected?: boolean | null;
+  last_verified_on?: string | null;
+  verified_by?: string | null;
+  review_status?: string;
+  overview?: string | null;
+  history?: string | null;
+  architecture?: string | null;
+  cultural_significance?: string | null;
+  opening_hours?: any;
+  ticket_prices?: any;
+  accessibility?: any;
+  visitor_rules?: string[];
+  best_season?: string;
+  recommended_duration?: string | null;
+  content_status?: string;
+  features?: Array<{ sort: number; title: string; description: string }>;
+  timeline?: Array<{ sort: number; year_label: string; event: string; source_id?: number }>;
+  visitor_guide?: {
+    recommended_duration?: string | null;
+    stops?: Array<{ sort: number; title: string; minutes?: number; photo_tip?: string }>;
+  };
+  practical?: {
+    opening_hours?: any;
+    ticket_prices?: any;
+    accessibility?: any;
+    rules?: string[];
+  };
+  travel?: Array<{ mode: string; hub_name?: string; hub?: string; distance_km?: number; note?: string }>;
+  nearby?: Array<{ sort?: number; name: string; distance_km?: number; note?: string; related_slug?: string | null }>;
+  facts?: Array<string | { sort: number; fact: string; source_id?: number }>;
+  media?: {
+    hero?: {
+      url?: string;
+      alt?: string;
+      credit?: string;
+      licence?: string;
+    };
+    gallery?: any[];
+    audio_guide?: any[];
+  };
+  sources?: Array<{ title: string; publisher?: string; url?: string; source_type?: string; accessed_on?: string }>;
 }
 
 export type ProvenanceBadge =

@@ -125,6 +125,7 @@ export async function execute(args: {
         ];
 
         for (const p of places) {
+          if (/^Celebrated highlight of /i.test(p.summary || '') || /Heritage Fort Complex$/i.test(p.name || '')) continue;
           const placeCategory = (p.category || '').toLowerCase();
           const matchesCategory = catFilter === 'heritage'
             ? heritageCategories.has(placeCategory) || (p.topic || '').toLowerCase() === catFilter

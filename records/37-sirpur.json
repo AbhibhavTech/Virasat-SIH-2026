@@ -1,0 +1,97 @@
+{
+  "slug": "sirpur",
+  "list_no": 37,
+  "name": "Laxman Brick Temple & Sirpur Monuments",
+  "alt_names": [],
+  "category": "archaeological site",
+  "state_ut": "Chhattisgarh",
+  "district_city": "Mahasamund",
+  "coordinates": {
+    "lat": 21.36,
+    "lng": 82.18,
+    "precision": "approximate - verify"
+  },
+  "era": "c.6th-8th c.",
+  "builder": "Panduvamsi rulers",
+  "authenticity": {
+    "unesco_status": "tentative",
+    "unesco_ref_id": null,
+    "unesco_inscribed_year": null,
+    "unesco_site_name": null,
+    "unesco_url": null,
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "outline",
+  "overview": "Ancient brick temple and Buddhist site excavated in the Mahanadi valley.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Laxman Temple",
+      "description": "Brick temple"
+    },
+    {
+      "title": "Tivaradeva Vihara",
+      "description": "Buddhist monastery"
+    },
+    {
+      "title": "Surang Tila",
+      "description": "Large temple platform"
+    },
+    {
+      "title": "Gandheshwar Temple",
+      "description": "Active Shiva temple"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "6th-8th c.",
+      "event": "Temple and monastery construction"
+    },
+    {
+      "year": "2000s",
+      "event": "Major excavation by ASI"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Mahasamund",
+      "related_slug": null
+    },
+    {
+      "name": "Rajim",
+      "related_slug": null
+    },
+    {
+      "name": "Raipur",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ]
+}

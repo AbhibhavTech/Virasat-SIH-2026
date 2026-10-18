@@ -1,0 +1,105 @@
+{
+  "slug": "india-gate",
+  "list_no": 6,
+  "name": "India Gate & National War Memorial",
+  "alt_names": [],
+  "category": "memorial",
+  "state_ut": "Delhi",
+  "district_city": "New Delhi",
+  "coordinates": {
+    "lat": 28.6129,
+    "lng": 77.2295,
+    "precision": "approximate - verify"
+  },
+  "era": "British India, 1921-1931",
+  "builder": "Edwin Lutyens",
+  "authenticity": {
+    "unesco_status": "not_listed",
+    "unesco_ref_id": null,
+    "unesco_inscribed_year": null,
+    "unesco_site_name": null,
+    "unesco_url": null,
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "outline",
+  "overview": "War memorial arch for Indian soldiers lost in the First World War and Third Anglo-Afghan War.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "The arch",
+      "description": "About 42 m high memorial arch"
+    },
+    {
+      "title": "National War Memorial",
+      "description": "Memorial for post-independence armed forces, inaugurated 2019"
+    },
+    {
+      "title": "Canopy",
+      "description": "Canopy housing a statue of Netaji Subhas Chandra Bose (2022)"
+    },
+    {
+      "title": "Kartavya Path",
+      "description": "Ceremonial axis leading to the memorial"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "1921",
+      "event": "Foundation stone laid"
+    },
+    {
+      "year": "1931",
+      "event": "Memorial inaugurated"
+    },
+    {
+      "year": "1971",
+      "event": "Amar Jawan Jyoti established"
+    },
+    {
+      "year": "2019",
+      "event": "National War Memorial inaugurated"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "National War Memorial",
+      "related_slug": null
+    },
+    {
+      "name": "Purana Qila",
+      "related_slug": null
+    },
+    {
+      "name": "Rashtrapati Bhavan",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ]
+}

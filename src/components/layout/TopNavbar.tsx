@@ -29,6 +29,7 @@ import { NavTab } from './Sidebar';
 import { useAuth } from '../../contexts/AuthContext';
 import { useFavorites } from '../../contexts/FavoritesContext';
 import { VirasatBrand, TricolourTopBar } from '../common/TricolourBranding';
+import { LanguageSelector } from '../common/LanguageSelector';
 import { findNearestCity, ALL_CITIES_LIST } from '../../data/citiesData';
 import { ALL_INDIAN_TOURISM_CITIES } from '../../data/cityItineraryData';
 
@@ -677,6 +678,9 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
               )}
             </div>
 
+            {/* Language Selector (23 Scheduled Languages + English) */}
+            <LanguageSelector className="hidden sm:inline-flex" />
+
             {/* 24x7 Tourist Emergency SOS Helpline (Compact & Reduced) */}
             {onOpenSOS && (
               <button
@@ -896,6 +900,12 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
                   </option>
                 ))}
               </select>
+            </div>
+
+            {/* Mobile Language Selector */}
+            <div className="flex items-center justify-between px-3 py-2 rounded-xl bg-stone-50 border border-stone-200">
+              <span className="text-xs font-semibold text-stone-700">Language / भाषा:</span>
+              <LanguageSelector compact={false} />
             </div>
 
             {/* Emergency SOS on Mobile */}

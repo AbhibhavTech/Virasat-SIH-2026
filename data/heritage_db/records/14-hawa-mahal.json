@@ -1,0 +1,106 @@
+{
+  "slug": "hawa-mahal",
+  "list_no": 14,
+  "name": "Hawa Mahal (Palace of Winds)",
+  "alt_names": [],
+  "category": "palace",
+  "state_ut": "Rajasthan",
+  "district_city": "Jaipur",
+  "coordinates": {
+    "lat": 26.9239,
+    "lng": 75.8267,
+    "precision": "approximate - verify"
+  },
+  "era": "Rajput, 1799",
+  "builder": "Sawai Pratap Singh; architect Lal Chand Ustad",
+  "authenticity": {
+    "unesco_status": "part_of_inscribed",
+    "unesco_ref_id": "1605",
+    "unesco_inscribed_year": 2019,
+    "unesco_site_name": "Jaipur City, Rajasthan",
+    "unesco_url": "https://whc.unesco.org/en/list/1605",
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "outline",
+  "overview": "Five-storey sandstone facade with 953 small windows for royal women to observe street life.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "953 jharokhas",
+      "description": "Latticed windows"
+    },
+    {
+      "title": "Pink sandstone facade",
+      "description": "Honeycomb-like outer wall"
+    },
+    {
+      "title": "Five-storey front",
+      "description": "Building is mostly a screen"
+    },
+    {
+      "title": "Pratap Mandir",
+      "description": "Temple within the structure"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "1727",
+      "event": "Jaipur founded"
+    },
+    {
+      "year": "1799",
+      "event": "Hawa Mahal built"
+    },
+    {
+      "year": "2019",
+      "event": "Jaipur City inscribed"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "City Palace, Jaipur",
+      "related_slug": null
+    },
+    {
+      "name": "Jantar Mantar",
+      "related_slug": null
+    },
+    {
+      "name": "Johari Bazaar",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "Jaipur City, Rajasthan - World Heritage List",
+      "publisher": "UNESCO",
+      "url": "https://whc.unesco.org/en/list/1605"
+    },
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ]
+}

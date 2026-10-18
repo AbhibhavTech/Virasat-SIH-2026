@@ -1,0 +1,109 @@
+{
+  "slug": "fort-kochi",
+  "list_no": 29,
+  "name": "Fort Kochi & Mattancherry Palace",
+  "alt_names": [],
+  "category": "heritage precinct",
+  "state_ut": "Kerala",
+  "district_city": "Kochi",
+  "coordinates": {
+    "lat": 9.9658,
+    "lng": 76.242,
+    "precision": "approximate - verify"
+  },
+  "era": "Portuguese, Dutch, British, 16th-19th c.",
+  "builder": "Colonial powers and the Raja of Cochin",
+  "authenticity": {
+    "unesco_status": "unverified",
+    "unesco_ref_id": null,
+    "unesco_inscribed_year": null,
+    "unesco_site_name": null,
+    "unesco_url": null,
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "outline",
+  "overview": "Colonial-era waterfront quarter with palaces, churches and a synagogue.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Chinese fishing nets",
+      "description": "Shore-operated cantilever nets"
+    },
+    {
+      "title": "St Francis Church",
+      "description": "One of the oldest European churches in India"
+    },
+    {
+      "title": "Mattancherry Palace",
+      "description": "Palace with murals"
+    },
+    {
+      "title": "Paradesi Synagogue",
+      "description": "Synagogue built in 1568"
+    },
+    {
+      "title": "Jew Town",
+      "description": "Antique market"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "1503",
+      "event": "Portuguese fort built"
+    },
+    {
+      "year": "1555",
+      "event": "Mattancherry Palace built"
+    },
+    {
+      "year": "1568",
+      "event": "Paradesi Synagogue built"
+    },
+    {
+      "year": "1663",
+      "event": "Dutch capture Cochin"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Jew Town",
+      "related_slug": null
+    },
+    {
+      "name": "Santa Cruz Basilica",
+      "related_slug": null
+    },
+    {
+      "name": "Vypin Island",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ]
+}

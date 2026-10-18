@@ -1,0 +1,97 @@
+{
+  "slug": "charminar",
+  "list_no": 32,
+  "name": "Charminar Monument & Mosque",
+  "alt_names": [],
+  "category": "monument",
+  "state_ut": "Telangana",
+  "district_city": "Hyderabad",
+  "coordinates": {
+    "lat": 17.3616,
+    "lng": 78.4747,
+    "precision": "approximate - verify"
+  },
+  "era": "Qutb Shahi, 1591",
+  "builder": "Muhammad Quli Qutb Shah",
+  "authenticity": {
+    "unesco_status": "tentative",
+    "unesco_ref_id": null,
+    "unesco_inscribed_year": null,
+    "unesco_site_name": null,
+    "unesco_url": null,
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "outline",
+  "overview": "Four-arched monument and mosque at the centre of old Hyderabad.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Four minarets",
+      "description": "About 56 m high"
+    },
+    {
+      "title": "Mosque on the roof",
+      "description": "Roof-level prayer hall"
+    },
+    {
+      "title": "Four arches",
+      "description": "Face the four main roads"
+    },
+    {
+      "title": "Laad Bazaar",
+      "description": "Bangle bazaar nearby"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "1591",
+      "event": "Built"
+    },
+    {
+      "year": "1687",
+      "event": "Qutb Shahi kingdom falls to Aurangzeb"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Mecca Masjid",
+      "related_slug": null
+    },
+    {
+      "name": "Chowmahalla Palace",
+      "related_slug": null
+    },
+    {
+      "name": "Laad Bazaar",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ]
+}

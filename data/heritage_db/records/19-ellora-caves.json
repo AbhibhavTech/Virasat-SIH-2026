@@ -1,0 +1,114 @@
+{
+  "slug": "ellora-caves",
+  "list_no": 19,
+  "name": "Ellora Caves & Kailasa Temple",
+  "alt_names": [],
+  "category": "caves",
+  "state_ut": "Maharashtra",
+  "district_city": "Chhatrapati Sambhajinagar",
+  "coordinates": {
+    "lat": 20.0258,
+    "lng": 75.178,
+    "precision": "approximate - verify"
+  },
+  "era": "c.600-1000 CE",
+  "builder": "Buddhist, Hindu and Jain patrons; Kailasa under the Rashtrakutas",
+  "authenticity": {
+    "unesco_status": "inscribed",
+    "unesco_ref_id": "243",
+    "unesco_inscribed_year": 1983,
+    "unesco_site_name": null,
+    "unesco_url": "https://whc.unesco.org/en/list/243",
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "outline",
+  "overview": "34 rock-cut monasteries and temples, including the monolithic Kailasa Temple.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Kailasa Temple",
+      "description": "Cave 16 carved from a single rock"
+    },
+    {
+      "title": "Cave 10 Vishvakarma",
+      "description": "Buddhist chaitya hall"
+    },
+    {
+      "title": "Cave 12 Teen Tal",
+      "description": "Three-storey Buddhist cave"
+    },
+    {
+      "title": "Cave 32 Indra Sabha",
+      "description": "Jain cave complex"
+    },
+    {
+      "title": "Ravana ki Khai",
+      "description": "Hindu cave 14"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "c.600-730",
+      "event": "Buddhist caves"
+    },
+    {
+      "year": "8th c.",
+      "event": "Kailasa Temple begun (Rashtrakuta period)"
+    },
+    {
+      "year": "9th-10th c.",
+      "event": "Jain caves"
+    },
+    {
+      "year": "1983",
+      "event": "UNESCO inscription"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Grishneshwar Jyotirlinga",
+      "related_slug": null
+    },
+    {
+      "name": "Daulatabad Fort",
+      "related_slug": null
+    },
+    {
+      "name": "Khuldabad",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "Ellora Caves & Kailasa Temple - World Heritage List",
+      "publisher": "UNESCO",
+      "url": "https://whc.unesco.org/en/list/243"
+    },
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ]
+}

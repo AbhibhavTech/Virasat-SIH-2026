@@ -1,0 +1,105 @@
+{
+  "slug": "golden-temple",
+  "list_no": 7,
+  "name": "Sri Harmandir Sahib (The Golden Temple)",
+  "alt_names": [],
+  "category": "temple",
+  "state_ut": "Punjab",
+  "district_city": "Amritsar",
+  "coordinates": {
+    "lat": 31.62,
+    "lng": 74.8765,
+    "precision": "approximate - verify"
+  },
+  "era": "Sikh, late 16th-early 17th c.",
+  "builder": "Guru Arjan Dev (Harmandir Sahib)",
+  "authenticity": {
+    "unesco_status": "tentative",
+    "unesco_ref_id": null,
+    "unesco_inscribed_year": null,
+    "unesco_site_name": null,
+    "unesco_url": null,
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "outline",
+  "overview": "The holiest Gurdwara of Sikhism, set in the Amrit Sarovar and open to all.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Harmandir Sahib",
+      "description": "Gold-covered sanctum reached by a causeway"
+    },
+    {
+      "title": "Amrit Sarovar",
+      "description": "Sacred pool surrounding the sanctum"
+    },
+    {
+      "title": "Akal Takht",
+      "description": "Seat of temporal authority in Sikhism"
+    },
+    {
+      "title": "Guru Ka Langar",
+      "description": "Free community kitchen serving visitors of all backgrounds"
+    },
+    {
+      "title": "Darshani Deori",
+      "description": "Gateway at the start of the causeway"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "1604",
+      "event": "Adi Granth installed in Harmandir Sahib"
+    },
+    {
+      "year": "1764",
+      "event": "Complex rebuilt by Sikh leaders"
+    },
+    {
+      "year": "early 19th c.",
+      "event": "Gold plating under Maharaja Ranjit Singh"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Jallianwala Bagh",
+      "related_slug": null
+    },
+    {
+      "name": "Partition Museum",
+      "related_slug": null
+    },
+    {
+      "name": "Wagah Border",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ]
+}

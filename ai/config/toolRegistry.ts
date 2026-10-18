@@ -79,6 +79,7 @@ export async function executeTool(name: string, args: any, context?: any): Promi
   // AI cannot grant itself confirmation or authorize writes through page metadata.
   // Persistent changes remain owned by authenticated application endpoints.
   if (consequentialTools.has(name)) return { error: 'ACTION_REQUIRES_APPLICATION_CONFIRMATION' };
+  if (name === 'getTransportOptions' && context?.metadata?.origin_missing) return { error: 'ORIGIN_REQUIRED', message: 'Ask for the current city or permission to use Location. Do not use a default origin.' };
   if (privateTools.has(name) && !context?.user?.id) return { error: 'AUTHENTICATION_REQUIRED' };
   let timer: ReturnType<typeof setTimeout> | undefined;
   try {

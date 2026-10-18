@@ -1,0 +1,114 @@
+{
+  "slug": "brihadisvara-temple",
+  "list_no": 26,
+  "name": "Brihadisvara Temple",
+  "alt_names": [],
+  "category": "temple",
+  "state_ut": "Tamil Nadu",
+  "district_city": "Thanjavur",
+  "coordinates": {
+    "lat": 10.7828,
+    "lng": 79.1318,
+    "precision": "approximate - verify"
+  },
+  "era": "Chola, 1003-1010",
+  "builder": "Rajaraja I",
+  "authenticity": {
+    "unesco_status": "part_of_inscribed",
+    "unesco_ref_id": "250",
+    "unesco_inscribed_year": 1987,
+    "unesco_site_name": "Great Living Chola Temples",
+    "unesco_url": "https://whc.unesco.org/en/list/250",
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "outline",
+  "overview": "Granite Chola temple with a 66 m vimana.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Vimana",
+      "description": "66 m tower"
+    },
+    {
+      "title": "Granite capstone",
+      "description": "Crown of the tower"
+    },
+    {
+      "title": "Nandi",
+      "description": "Large monolithic bull"
+    },
+    {
+      "title": "Frescoes",
+      "description": "Chola wall paintings"
+    },
+    {
+      "title": "Inscriptions",
+      "description": "Temple records on walls"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "c.1003",
+      "event": "Construction begun"
+    },
+    {
+      "year": "1010",
+      "event": "Consecrated"
+    },
+    {
+      "year": "1987",
+      "event": "UNESCO inscription"
+    },
+    {
+      "year": "2004",
+      "event": "Extended to Great Living Chola Temples"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Thanjavur Maratha Palace",
+      "related_slug": null
+    },
+    {
+      "name": "Gangaikonda Cholapuram",
+      "related_slug": null
+    },
+    {
+      "name": "Airavatesvara Temple",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "Great Living Chola Temples - World Heritage List",
+      "publisher": "UNESCO",
+      "url": "https://whc.unesco.org/en/list/250"
+    },
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ]
+}

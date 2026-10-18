@@ -1,3 +1,6 @@
+import { TripDraft } from './TripDraft';
+import { useAuth } from '../../contexts/AuthContext';
+import { AssistantMessage } from './AssistantMessage';
 import React, { useState, useRef, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import {
@@ -88,6 +91,16 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
   initialPrompt,
 }) => {
   const navigate = useNavigate();
+  const { user: signedInUser } = useAuth();
+  const [draft, setDraft] = useState<any>(null);
+  const [chatHistory, setChatHistory] = useState<Array<{id:string;title:string}>>([]);
+  const [historyOpen, setHistoryOpen] = useState(false);
+  const [privacyNotice, setPrivacyNotice] = useState('');
+  const [retryUntil, setRetryUntil] = useState(0);
+  const [clock, setClock] = useState(Date.now());
+  const [failedPrompt, setFailedPrompt] = useState('');
+  const retrySeconds = Math.max(0, Math.ceil((retryUntil-clock)/1000));
+  useEffect(() => { if (!retryUntil) return; const timer = setInterval(()=>setClock(Date.now()),1000); return ()=>clearInterval(timer); },[retryUntil]);
   const location = useLocation();
   const [streamText, setStreamText] = useState('');
   const activeRequest = useRef<AbortController | null>(null);
@@ -186,7 +199,6 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
   const messagesContainerRef = useRef<HTMLDivElement>(null);
   const composerRef = useRef<HTMLTextAreaElement>(null);
   const lastProcessedPrompt = useRef<string | null>(null);
-  const hasRequestedInitialGeo = useRef<boolean>(false);
 
   // Sync active city if changed from props
   useEffect(() => {
@@ -203,6 +215,45 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
       // Private browsing may disable session storage; the live chat still works.
     }
   }, [conversationId]);
+
+  useEffect(() => {
+    activeRequest.current?.abort();
+    setMessages([initialGreeting]); setDraft(null); setUserLocation(null); setLocationStatus('idle');
+    const id = getStoredConversationId();
+    let cancelled = false;
+    const restore = async () => {
+      try { return await api.getAIConversation(id!); }
+      catch (error) { if (!signedInUser) throw error; await api.claimAIConversation(id!); return api.getAIConversation(id!); }
+    };
+    if (id) restore().then(result => {
+      if (cancelled) return;
+      setMessages(result.messages.length ? result.messages : [initialGreeting]); setDraft(result.draft || null); setConversationId(id);
+    }).catch(() => { if (!cancelled) setConversationId(undefined); });
+    return () => { cancelled = true; };
+  }, [signedInUser?.id]);
+
+  async function showHistory() {
+    try { const result = await api.listAIConversations(); setChatHistory(result.conversations); setHistoryOpen(true); setPrivacyNotice('History stays on this server for up to 6 hours and is lost on restart.'); }
+    catch { setPrivacyNotice('Could not load chat history.'); }
+  }
+  async function openHistory(id: string) {
+    if (loading) return;
+    try { const result = await api.getAIConversation(id); setConversationId(id); setMessages(result.messages); setDraft(result.draft || null); setTravelContext({}); setHistoryOpen(false); }
+    catch { setPrivacyNotice('This chat expired or is unavailable.'); }
+  }
+  async function deleteHistory(id?: string) {
+    activeRequest.current?.abort();
+    try { await api.deleteAIConversation(id); if (!id || id === conversationId) handleResetConversation(); await showHistory(); }
+    catch { setPrivacyNotice('History could not be deleted. Please try again.'); }
+  }
+  async function clearLocation() {
+    activeRequest.current?.abort();
+    try {
+      if (conversationId) await api.clearAILocation(conversationId);
+      setUserLocation(null); setLocationStatus('idle'); setTravelContext({}); setMessages([initialGreeting]);
+      setPrivacyNotice('Current location and model dialogue context cleared. Browser permission can be revoked in site settings.');
+    } catch { setPrivacyNotice('Could not clear server location. Please try again.'); }
+  }
 
   // Location is requested only after the traveler chooses a location action.
 
@@ -323,16 +374,10 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
 
   const handleSend = async (userText: string, locationOverride?: UserLocationContext) => {
     const trimmed = userText.trim();
-    if (!trimmed || loading) return;
+    if (!trimmed || loading || Date.now() < retryUntil) return;
 
     // Check if user is asking for nearby places and location is not yet detected
-    const isNearbyQuery = /near\s*me|aas\s*paas|nearby|around\s*me|current\s*location/i.test(trimmed);
     const activeLoc = locationOverride || userLocation;
-
-    if (isNearbyQuery && !activeLoc && locationStatus !== 'detecting') {
-      requestLocation(true);
-      return;
-    }
 
     const originalScrollY = typeof window !== 'undefined' ? window.scrollY : 0;
 
@@ -347,6 +392,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
     if (composerRef.current) composerRef.current.style.height = 'auto';
     setLoading(true);
     setStreamText('');
+    setFailedPrompt('');
     activeRequest.current = new AbortController();
 
     if (typeof window !== 'undefined' && window.scrollY !== originalScrollY) {
@@ -365,7 +411,6 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
       const res = await api.streamAIChat({
         message: trimmed,
         conversation_id: conversationId,
-        city: activeCity === 'All India' ? undefined : activeCity,
         selectedCity: activeCity === 'All India' ? undefined : activeCity,
         currentRoute: `${location.pathname}${location.search}`,
         place_id: initialPlaceId,
@@ -376,6 +421,10 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
       }, text => setStreamText(previous => previous + text), activeRequest.current.signal);
 
       if (res.conversation_id) setConversationId(res.conversation_id);
+      if (res.itinerary_draft) setDraft(res.itinerary_draft);
+      if (res.current_location?.city && res.current_location.city !== userLocation?.city) {
+        setUserLocation({ city: res.current_location.city } as UserLocationContext); setLocationStatus('granted');
+      }
 
       // Reset destination memory if user asks to change destination or explore somewhere else without naming a new one
       if (/(change destination|kisi aur jagah|somewhere else|kahi aur|dusri jagah|new destination)/i.test(trimmed) && !res.transit_comparison?.destination) {
@@ -407,6 +456,12 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
 
       setMessages((prev) => [...prev, assistantMsg]);
     } catch (err: any) {
+      if (err?.name === 'AbortError') { setInput(trimmed); return; }
+      setInput(trimmed);
+      setFailedPrompt(trimmed);
+      if (Number.isFinite(err.retryAfterSeconds)) setRetryUntil(Date.now() + err.retryAfterSeconds * 1000);
+      else if (/429|RATE_LIMIT/.test(err.message || '') && !/billing|quota/.test(err.category || '')) setRetryUntil(Date.now() + 30000);
+      setClock(Date.now());
       const isRateLimit = err?.message?.includes('429') || err?.message?.includes('RATE_LIMIT');
       const errorMsg: ExtendedChatMessage = {
         role: 'assistant',
@@ -434,6 +489,10 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
   };
 
   const handleResetConversation = () => {
+    activeRequest.current?.abort();
+    setDraft(null);
+    setFailedPrompt('');
+    setStreamText('');
     setConversationId(undefined);
     setTravelContext({});
     setInput('');
@@ -468,118 +527,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
     }
   };
 
-  const renderInlineMarkdown = (text: string, keyPrefix: string) => {
-    const tokenPattern = /(\[[^\]]+\]\(https?:\/\/[^)\s]+\)|\*\*.+?\*\*|`[^`]+`|\*.+?\*)/g;
-    return text.split(tokenPattern).map((part, index) => {
-      const linkMatch = part.match(/^\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)$/);
-      if (linkMatch) {
-        return (
-          <a key={`${keyPrefix}-${index}`} href={linkMatch[2]} target="_blank" rel="noopener noreferrer" className="text-[#B84A11] underline underline-offset-2 hover:text-[#8F370B]">
-            {linkMatch[1]}
-          </a>
-        );
-      }
-      if (part.startsWith('**') && part.endsWith('**')) {
-        return <strong key={`${keyPrefix}-${index}`} className="font-semibold text-stone-900">{part.slice(2, -2)}</strong>;
-      }
-      if (part.startsWith('`') && part.endsWith('`')) {
-        return <code key={`${keyPrefix}-${index}`} className="rounded bg-stone-100 px-1 py-0.5 font-mono text-[0.92em]">{part.slice(1, -1)}</code>;
-      }
-      if (part.startsWith('*') && part.endsWith('*')) {
-        return <em key={`${keyPrefix}-${index}`}>{part.slice(1, -1)}</em>;
-      }
-      return part;
-    });
-  };
-
-  // Render the useful Markdown subset returned by the assistant without injecting HTML.
-  const renderMessageContent = (content: string) => {
-    const lines = content.split('\n');
-    const blocks: Array<{ type: 'paragraph' | 'heading' | 'unordered' | 'ordered' | 'code'; text: string; level?: number }> = [];
-
-    for (let index = 0; index < lines.length;) {
-      const line = lines[index].trim();
-      if (!line) {
-        index += 1;
-        continue;
-      }
-
-      if (line.startsWith('```')) {
-        const codeLines: string[] = [];
-        index += 1;
-        while (index < lines.length && !lines[index].trim().startsWith('```')) {
-          codeLines.push(lines[index]);
-          index += 1;
-        }
-        index += 1;
-        blocks.push({ type: 'code', text: codeLines.join('\n') });
-        continue;
-      }
-
-      const heading = line.match(/^(#{1,3})\s+(.+)$/);
-      if (heading) {
-        blocks.push({ type: 'heading', text: heading[2], level: heading[1].length });
-        index += 1;
-        continue;
-      }
-
-      if (/^[-*•]\s+/.test(line)) {
-        const items: string[] = [];
-        while (index < lines.length && /^\s*[-*•]\s+/.test(lines[index])) {
-          items.push(lines[index].trim().replace(/^[-*•]\s+/, ''));
-          index += 1;
-        }
-        blocks.push({ type: 'unordered', text: items.join('\n') });
-        continue;
-      }
-
-      if (/^\d+[.)]\s+/.test(line)) {
-        const items: string[] = [];
-        while (index < lines.length && /^\s*\d+[.)]\s+/.test(lines[index])) {
-          items.push(lines[index].trim().replace(/^\d+[.)]\s+/, ''));
-          index += 1;
-        }
-        blocks.push({ type: 'ordered', text: items.join('\n') });
-        continue;
-      }
-
-      const paragraphLines = [line];
-      index += 1;
-      while (index < lines.length && lines[index].trim() && !/^(#{1,3})\s+|^[-*•]\s+|^\d+[.)]\s+|^```/.test(lines[index].trim())) {
-        paragraphLines.push(lines[index].trim());
-        index += 1;
-      }
-      blocks.push({ type: 'paragraph', text: paragraphLines.join(' ') });
-    }
-
-    return (
-      <div className="space-y-2">
-        {blocks.map((block, index) => {
-          if (block.type === 'code') {
-            return <pre key={index} className="overflow-x-auto rounded-xl bg-stone-900 p-3 sm:p-4 text-xs sm:text-sm text-stone-100"><code>{block.text}</code></pre>;
-          }
-          if (block.type === 'heading') {
-            const headingClass = 'font-serif font-bold text-[#0B192C]';
-            return block.level === 1
-              ? <h3 key={index} className={`${headingClass} text-lg sm:text-xl`}>{renderInlineMarkdown(block.text, `h-${index}`)}</h3>
-              : <h4 key={index} className={`${headingClass} text-base sm:text-lg pt-1.5`}>{renderInlineMarkdown(block.text, `h-${index}`)}</h4>;
-          }
-          if (block.type === 'unordered' || block.type === 'ordered') {
-            const List = block.type === 'unordered' ? 'ul' : 'ol';
-            const listStyle = block.type === 'unordered' ? 'list-disc marker:text-[#FF671F]' : 'list-decimal marker:text-[#FF671F]';
-            return (
-              <List key={index} className={`space-y-1.5 pl-5 sm:pl-6 text-sm sm:text-base ${listStyle}`}>
-                {block.text.split('\n').map((item, itemIndex) => (
-                  <li key={itemIndex} className="pl-0.5 leading-relaxed">{renderInlineMarkdown(item, `l-${index}-${itemIndex}`)}</li>
-                ))}
-              </List>
-            );
-          }
-          return <p key={index} className="text-sm sm:text-base leading-relaxed">{renderInlineMarkdown(block.text, `p-${index}`)}</p>;
-        })}
-      </div>
-    );
-  };
+  const renderMessageContent = (content: string) => <AssistantMessage content={content} />;
 
   // Render transit comparison card (Train, Flight, Road, Walk)
   const renderTransitComparison = (tc: TransitComparison) => {
@@ -785,6 +733,8 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
             </button>
           )}
 
+          <button type="button" disabled={loading} onClick={showHistory} className="rounded-xl border bg-white px-3 py-2 text-sm">History</button>
+          <button type="button" disabled={loading} onClick={clearLocation} className="rounded-xl border bg-white px-3 py-2 text-sm">Clear location</button>
           {/* City selector */}
           <div className="flex items-center gap-1 px-2.5 sm:px-3 py-1 sm:py-1.5 bg-[#FAF8F5] border border-[#EFE8DF] rounded-xl text-[11px] sm:text-xs text-stone-700">
             <select
@@ -815,11 +765,18 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
             title="Start New Conversation"
           >
             <RotateCcw className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
-            <span>Reset</span>
+            <span>New chat</span>
           </button>
         </div>
       </div>
 
+      {privacyNotice && <p role="status" className="text-sm text-stone-600">{privacyNotice}</p>}
+      {historyOpen && <section aria-label="Chat history" className="rounded-xl border bg-white p-4 space-y-2">
+        <div className="flex justify-between"><strong>Recent chats</strong><button onClick={()=>setHistoryOpen(false)}>Close</button></div>
+        {chatHistory.length === 0 && <p>No saved conversations yet.</p>}
+        {chatHistory.map(chat=><div key={chat.id} className="flex gap-3"><button disabled={loading} className="flex-1 text-left truncate underline" onClick={()=>openHistory(chat.id)}>{chat.title}</button><button disabled={loading} onClick={()=>deleteHistory(chat.id)}>Delete</button></div>)}
+        <button disabled={loading} onClick={()=>deleteHistory()} className="text-red-700 underline">Delete all chat history</button>
+      </section>}
       {/* Suggested Questions Grid (Full width) */}
       <div className="w-full space-y-1.5">
         <div className="flex items-center justify-between text-xs font-semibold text-stone-500 px-1">
@@ -1152,6 +1109,11 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
           })}
 
           {/* Loading Indicator */}
+          {draft && conversationId && <TripDraft key={`${conversationId}-${draft.revision}`} draft={draft} conversationId={conversationId} onChange={setDraft} />}
+          {failedPrompt && <div role="status" className="rounded-xl border border-amber-200 bg-amber-50 p-3 text-sm">
+            <p>{retrySeconds > 0 ? `Please wait ${retrySeconds}s before trying again. Your message is preserved.` : 'Your message is preserved. You can edit it or try again.'}</p>
+            <button type="button" disabled={loading || retrySeconds > 0} onClick={()=>handleSend(input.trim() || failedPrompt)} className="mt-2 rounded-lg bg-orange-700 px-3 py-2 text-white disabled:opacity-50">{retrySeconds > 0 ? `Try again in ${retrySeconds}s` : 'Try again'}</button>
+          </div>}
           {loading && streamText && <div className="rounded-xl border bg-white p-4 whitespace-pre-wrap text-sm" aria-live="polite">{streamText}</div>}
           {loading && <button type="button" className="px-3 py-2 rounded-lg border" onClick={() => activeRequest.current?.abort()}>Stop response</button>}
           {loading && (
