@@ -351,6 +351,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
     { label: 'Explain a Topic', prompt: 'Indian stepwells kya hote hain? Simple examples ke saath samjhao' },
     { label: 'Translate', prompt: 'Translate this travel phrase into Hindi: Where is the nearest railway station?' },
   ];
+  const showCompactWelcome = compact && messages.length === 1 && messages[0]?.content === initialGreeting.content;
 
   const scrollToBottom = (behavior: ScrollBehavior = 'smooth') => {
     if (messagesContainerRef.current) {
@@ -685,7 +686,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
   return (
     <div className={compact ? 'flex flex-1 min-h-0 w-full flex-col gap-2 overflow-hidden' : 'w-full space-y-3'}>
       {/* Top Controls Bar: Location State & Quick Status */}
-      <div className={`w-full bg-white border border-[#EFE8DF] shadow-2xs ${compact ? 'shrink-0 p-3' : 'p-3 sm:p-4 rounded-2xl sm:rounded-3xl flex flex-col md:flex-row items-start md:items-center justify-between gap-3'}`}>
+      {!compact && <div className="w-full bg-white border border-[#EFE8DF] shadow-2xs p-3 sm:p-4 rounded-2xl sm:rounded-3xl flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
         <div className={`flex items-center gap-2.5 sm:gap-3 ${compact ? 'hidden' : ''}`}>
           <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-gradient-to-br from-[#FF671F] to-[#046A38] p-0.5 shadow-warm flex items-center justify-center text-white shrink-0">
             <div className="w-full h-full bg-white rounded-[14px] flex items-center justify-center">
@@ -771,17 +772,17 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
             <span>New chat</span>
           </button>
         </div>
-      </div>
+      </div>}
 
-      {privacyNotice && <p role="status" className="text-sm text-stone-600">{privacyNotice}</p>}
-      {historyOpen && <section aria-label="Chat history" className={`rounded-xl border bg-white p-4 space-y-2 ${compact ? 'shrink-0 max-h-40 overflow-y-auto' : ''}`}>
+      {!compact && privacyNotice && <p role="status" className="text-sm text-stone-600">{privacyNotice}</p>}
+      {!compact && historyOpen && <section aria-label="Chat history" className="rounded-xl border bg-white p-4 space-y-2">
         <div className="flex justify-between"><strong>Recent chats</strong><button onClick={()=>setHistoryOpen(false)}>Close</button></div>
         {chatHistory.length === 0 && <p>No saved conversations yet.</p>}
         {chatHistory.map(chat=><div key={chat.id} className="flex gap-3"><button disabled={loading} className="flex-1 text-left truncate underline" onClick={()=>openHistory(chat.id)}>{chat.title}</button><button disabled={loading} onClick={()=>deleteHistory(chat.id)}>Delete</button></div>)}
         <button disabled={loading} onClick={()=>deleteHistory()} className="text-red-700 underline">Delete all chat history</button>
       </section>}
       {/* Suggested Questions Grid (Full width) */}
-      <div className={compact ? 'w-full shrink-0 space-y-1.5' : 'w-full space-y-1.5'}>
+      {!compact && <div className="w-full space-y-1.5">
         <div className="flex items-center justify-between text-xs font-semibold text-stone-500 px-1">
           <span className="flex items-center gap-1.5">
             <Sparkles className="w-3.5 h-3.5 text-[#FF671F]" />
@@ -808,12 +809,15 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
             </button>
           ))}
         </div>
-      </div>
+      </div>}
 
       {/* Active Dialogue Box */}
       <div className={`w-full flex flex-col bg-white border border-[#EFE8DF] shadow-warm overflow-hidden ${compact ? 'flex-1 min-h-0' : 'h-[620px] sm:h-[720px] lg:h-[800px] xl:h-[840px] rounded-2xl sm:rounded-3xl'}`}>
         {/* Chat Stream Header */}
-        <div className="p-2.5 sm:p-3.5 px-3.5 sm:px-6 bg-[#FAF8F5] border-b border-[#EFE8DF] flex items-center justify-between flex-wrap gap-2">
+        {compact && <div className="flex h-12 shrink-0 items-center gap-2 border-b border-[#EFE8DF] bg-white px-4 pr-12 text-sm font-semibold text-stone-800">
+          <Bot className="h-4 w-4 text-[#FF671F]" /> Virasat AI conversation
+        </div>}
+        {!compact && <div className="p-2.5 sm:p-3.5 px-3.5 sm:px-6 bg-[#FAF8F5] border-b border-[#EFE8DF] flex items-center justify-between flex-wrap gap-2">
           <div className="flex items-center gap-2">
             <Bot className="w-4 h-4 text-[#FF671F]" />
             <span className="text-xs font-bold text-stone-800">
@@ -835,14 +839,22 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
               {activeCity === 'All India' ? 'India-wide context' : `${activeCity} context`}
             </span>
           </div>
-        </div>
+        </div>}
 
         {/* Messages Stream */}
         <div
           ref={messagesContainerRef}
           className={`flex-1 min-h-0 overflow-y-auto space-y-4 bg-[#FAF8F5]/30 ${compact ? 'p-3' : 'p-3 sm:p-6 lg:p-8 sm:space-y-6'}`}
         >
-          {messages.map((m, idx) => {
+          {showCompactWelcome && (
+            <div className="mx-auto flex min-h-full max-w-sm flex-col items-center justify-center px-3 py-8 text-center">
+              <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-2xl bg-orange-50 text-[#FF671F]"><Bot className="h-5 w-5" /></div>
+              <h2 className="font-serif text-xl font-semibold text-[#0B192C]">Ask Virasat AI</h2>
+              <p className="mt-2 text-sm leading-6 text-stone-500">Ask anything in English, Hindi or Hinglish.</p>
+            </div>
+          )}
+          {!showCompactWelcome && messages.map((m, idx) => {
+            if (compact && idx === 0 && m.content === initialGreeting.content) return null;
             const isUser = m.role === 'user';
             return (
               <div
@@ -925,7 +937,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
                   )}
 
                   {/* Interactive Website Action Buttons (Open Map, Plan Itinerary, View Destination, IRCTC Booking Link, etc.) */}
-                  {!isUser && m.actions && m.actions.length > 0 && (
+                  {!compact && !isUser && m.actions && m.actions.length > 0 && (
                     <div className="mt-3.5 pt-2.5 border-t border-stone-100 space-y-2">
                       <div className="flex items-center gap-1.5 text-[11px] font-bold text-stone-700">
                         <Sparkles className="w-3.5 h-3.5 text-[#FF671F]" />
@@ -953,7 +965,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
                   )}
 
                   {/* Contextual Action Chips */}
-                  {!isUser && m.suggested_actions && m.suggested_actions.length > 0 && (
+                  {!compact && !isUser && m.suggested_actions && m.suggested_actions.length > 0 && (
                     <div className="mt-3.5 pt-2.5 border-t border-stone-100 flex flex-wrap gap-1.5">
                       {m.suggested_actions.map((act, aIdx) => (
                         <button
@@ -1070,7 +1082,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
                     </span>
 
                     <div className="flex items-center gap-2">
-                      {!isUser && (
+                      {!compact && !isUser && (
                         <button
                           type="button"
                           onClick={() => copyToClipboard(m.content, idx)}
@@ -1158,11 +1170,11 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
                     handleSend(input);
                   }
                 }}
-                placeholder="Message Virasat AI… (Enter to send, Shift + Enter for a new line)"
+                placeholder={compact ? "Message Virasat AI…" : "Message Virasat AI… (Enter to send, Shift + Enter for a new line)"}
                 aria-label="Message Virasat AI"
-                className="w-full min-h-[56px] max-h-40 resize-none overflow-y-auto pl-5 pr-14 py-3.5 sm:py-4 rounded-2xl bg-[#FAF8F5] border border-[#EFE8DF] text-sm sm:text-base text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#FF671F] focus:bg-white focus:ring-1 focus:ring-[#FF671F] transition"
+                className={`w-full min-h-[56px] max-h-40 resize-none overflow-y-auto pl-5 ${compact ? 'pr-5' : 'pr-14'} py-3.5 sm:py-4 rounded-2xl bg-[#FAF8F5] border border-[#EFE8DF] text-sm sm:text-base text-stone-900 placeholder-stone-400 focus:outline-none focus:border-[#FF671F] focus:bg-white focus:ring-1 focus:ring-[#FF671F] transition`}
               />
-              <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center">
+              {!compact && <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center">
                 <VoiceInputButton
                   variant="ai"
                   title="Speak to Virasat AI"
@@ -1172,7 +1184,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
                     setInput(text);
                   }}
                 />
-              </div>
+              </div>}
             </div>
             <button
               type="submit"
@@ -1186,7 +1198,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
           </form>
 
           {/* Quick Virasat shortcuts footer */}
-          <div className="mt-3 flex items-center justify-between text-[11px] text-stone-400 flex-wrap gap-2 pt-2 border-t border-stone-50">
+          {!compact && <div className="mt-3 flex items-center justify-between text-[11px] text-stone-400 flex-wrap gap-2 pt-2 border-t border-stone-50">
             <span className="font-medium">Explore with Virasat:</span>
             <div className="flex items-center gap-4">
               {onNavigateTab && (
@@ -1222,7 +1234,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
                 </>
               )}
             </div>
-          </div>
+          </div>}
         </div>
       </div>
     </div>
