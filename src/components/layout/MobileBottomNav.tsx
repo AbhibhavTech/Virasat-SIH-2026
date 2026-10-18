@@ -2,6 +2,7 @@ import React from 'react';
 import { Compass, Landmark, Sparkles, Calendar, Bot, Heart } from 'lucide-react';
 import { NavTab } from './Sidebar';
 import { useFavorites } from '../../contexts/FavoritesContext';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 interface MobileBottomNavProps {
   activeTab: NavTab;
@@ -12,6 +13,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
   activeTab,
   onNavigateTab,
 }) => {
+  const { t } = useLanguage();
   const { favorites } = useFavorites();
   const favCount = favorites ? favorites.length : 0;
 
@@ -25,38 +27,38 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
   }> = [
     {
       id: 'home',
-      label: 'Explore',
+      label: t('explore'),
       icon: Compass,
       matches: ['home', 'dashboard'],
     },
     {
       id: 'heritage',
-      label: 'Heritage',
+      label: t('heritage'),
       icon: Landmark,
       matches: ['heritage'],
     },
     {
       id: 'festivals',
-      label: 'Festivals',
+      label: t('festivals'),
       icon: Sparkles,
       matches: ['festivals'],
     },
     {
       id: 'itinerary',
-      label: 'Plan Trip',
+      label: t('planTrip'),
       icon: Calendar,
       matches: ['itinerary', 'trips'],
     },
     {
       id: 'ai',
-      label: 'AI Guide',
+      label: t('aiConcierge'),
       icon: Bot,
       isSpecial: true,
       matches: ['ai'],
     },
     {
       id: 'favorites',
-      label: 'Saved',
+      label: t('saved'),
       icon: Heart,
       badgeCount: favCount,
       matches: ['favorites', 'profile'],

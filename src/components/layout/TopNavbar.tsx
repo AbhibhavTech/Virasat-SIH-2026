@@ -28,6 +28,7 @@ import { useNavigate } from 'react-router-dom';
 import { NavTab } from './Sidebar';
 import { useAuth } from '../../contexts/AuthContext';
 import { useFavorites } from '../../contexts/FavoritesContext';
+import { useLanguage } from '../../contexts/LanguageContext';
 import { VirasatBrand, TricolourTopBar } from '../common/TricolourBranding';
 import { LanguageSelector } from '../common/LanguageSelector';
 import { findNearestCity, ALL_CITIES_LIST } from '../../data/citiesData';
@@ -98,6 +99,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
 }) => {
   const navigate = useNavigate();
   const { user, logout, loginWithGoogle } = useAuth();
+  const { t } = useLanguage();
   const isAuthenticated = Boolean(user);
   const { favorites } = useFavorites();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -278,32 +280,32 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
   }> = [
     {
       id: 'home',
-      label: 'Explore',
+      label: t('explore'),
       isActive: activeTab === 'home',
     },
     {
       id: 'festivals',
-      label: 'Festivals',
+      label: t('festivals'),
       isActive: activeTab === 'festivals',
     },
     {
       id: 'india',
-      label: 'Discover Bharat',
+      label: t('bharat'),
       isActive: activeTab === 'india',
     },
     {
       id: 'heritage',
-      label: 'Heritage',
+      label: t('heritage'),
       isActive: activeTab === 'heritage',
     },
     {
       id: 'itinerary',
-      label: 'Plan Trip',
+      label: t('planTrip'),
       isActive: activeTab === 'itinerary',
     },
     {
       id: 'ai',
-      label: 'AI Assistant',
+      label: t('aiConcierge'),
       isActive: activeTab === 'ai',
     },
   ];
@@ -315,8 +317,8 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
     description: string;
     icon: React.ComponentType<{ className?: string }>;
   }> = [
-    { id: 'map', label: 'Interactive Map', description: 'GIS markers across all Indian regions', icon: Layers },
-    { id: 'trips', label: 'My Saved Trips', description: 'View and manage customized trip plans', icon: Bookmark },
+    { id: 'map', label: t('map'), description: 'GIS markers across all Indian regions', icon: Layers },
+    { id: 'trips', label: t('trips'), description: 'View and manage customized trip plans', icon: Bookmark },
   ];
 
   return (
@@ -478,11 +480,11 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
                     type="button"
                     onClick={onOpenSearch}
                     className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-stone-100 hover:bg-stone-200/80 border border-stone-200 text-stone-600 hover:text-stone-900 text-xs font-medium transition cursor-pointer shadow-2xs focus-visible:ring-2 focus-visible:ring-amber-600 focus:outline-none w-28 sm:w-32 lg:w-36"
-                    title="Search destinations & monuments"
-                    aria-label="Search destinations & monuments"
+                    title={t('searchPlaceholder')}
+                    aria-label={t('search')}
                   >
                     <Search className="w-3.5 h-3.5 text-stone-500 shrink-0" aria-hidden="true" />
-                    <span className="truncate text-xs text-stone-500 font-medium">Search...</span>
+                    <span className="truncate text-xs text-stone-500 font-medium">{t('search')}...</span>
                     <span className="ml-auto text-[9px] font-mono text-stone-400 bg-white px-1.5 py-0.2 rounded border border-stone-200 hidden lg:inline">⌘K</span>
                   </button>
                 </div>
@@ -492,8 +494,8 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
                   type="button"
                   onClick={onOpenSearch}
                   className="md:hidden p-2 sm:p-2.5 rounded-full text-stone-700 hover:text-stone-900 hover:bg-stone-100 transition min-h-[36px] min-w-[36px] sm:min-h-[44px] sm:min-w-[44px] flex items-center justify-center shrink-0 focus-visible:ring-2 focus-visible:ring-amber-600 focus:outline-none cursor-pointer"
-                  title="Search destinations & monuments"
-                  aria-label="Search"
+                  title={t('searchPlaceholder')}
+                  aria-label={t('search')}
                 >
                   <Search className="w-4 h-4 sm:w-5 sm:h-5 text-stone-700" aria-hidden="true" />
                 </button>
@@ -741,7 +743,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
                   <>
                     <User className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
                     <span className="text-xs font-bold whitespace-nowrap">
-                      {user?.name?.split(' ')[0] || 'Profile'}
+                      {user?.name?.split(' ')[0] || t('profile')}
                     </span>
                   </>
                 ) : (
@@ -754,7 +756,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
                         <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
                       </svg>
                     </span>
-                    <span className="text-xs font-bold whitespace-nowrap">Sign In</span>
+                    <span className="text-xs font-bold whitespace-nowrap">{t('signIn')}</span>
                   </>
                 )}
               </button>
@@ -770,21 +772,21 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
                     className="w-full text-left px-3 py-2.5 rounded-lg text-xs font-semibold text-stone-800 hover:bg-stone-50 flex items-center gap-2 min-h-[44px]"
                   >
                     <User className="w-4 h-4 text-stone-600" aria-hidden="true" />
-                    <span>My Profile</span>
+                    <span>{t('profile')}</span>
                   </button>
                   <button
                     onClick={() => handleNav('trips')}
                     className="w-full text-left px-3 py-2.5 rounded-lg text-xs font-semibold text-stone-800 hover:bg-stone-50 flex items-center gap-2 min-h-[44px]"
                   >
                     <Bookmark className="w-4 h-4 text-stone-600" aria-hidden="true" />
-                    <span>Saved Trips & Circuits</span>
+                    <span>{t('trips')}</span>
                   </button>
                   <button
                     onClick={() => handleNav('favorites')}
                     className="w-full text-left px-3 py-2.5 rounded-lg text-xs font-semibold text-stone-800 hover:bg-stone-50 flex items-center gap-2 min-h-[44px]"
                   >
                     <Heart className="w-4 h-4 text-stone-600" aria-hidden="true" />
-                    <span>Favorite Places</span>
+                    <span>{t('saved')}</span>
                   </button>
                   <div className="border-t border-stone-100 my-1" />
                   <button
@@ -794,7 +796,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
                     }}
                     className="w-full text-left px-3 py-2 rounded-lg text-xs font-semibold text-rose-700 hover:bg-rose-50 min-h-[44px] flex items-center"
                   >
-                    Sign Out
+                    {t('signOut')}
                   </button>
                 </div>
               )}
@@ -844,7 +846,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
                   className="px-3.5 py-1.5 rounded-full bg-[#046A38] hover:bg-[#03542C] text-white text-xs font-bold shadow-xs active:scale-95 shrink-0 cursor-pointer transition flex items-center gap-1"
                 >
                   <User className="w-3.5 h-3.5" />
-                  <span>Sign In</span>
+                  <span>{t('signIn')}</span>
                 </button>
               </div>
             ) : (
@@ -869,14 +871,14 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
                     className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-stone-50 hover:bg-stone-100 text-stone-800 text-[11px] font-semibold"
                   >
                     <User className="w-3.5 h-3.5 text-stone-500" />
-                    <span>My Profile</span>
+                    <span>{t('profile')}</span>
                   </button>
                   <button
                     onClick={() => handleNav('favorites')}
                     className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-stone-50 hover:bg-stone-100 text-stone-800 text-[11px] font-semibold"
                   >
                     <Heart className="w-3.5 h-3.5 text-rose-500" />
-                    <span>Saved ({favorites?.length || 0})</span>
+                    <span>{t('saved')} ({favorites?.length || 0})</span>
                   </button>
                 </div>
               </div>
@@ -886,7 +888,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
             <div className="flex items-center justify-between p-2 rounded-xl bg-white border border-[#EFE8DF] text-xs min-h-[38px]">
               <div className="flex items-center gap-1.5 shrink-0">
                 <MapPin className="w-3.5 h-3.5 text-amber-700" aria-hidden="true" />
-                <span className="font-semibold text-stone-800 text-[11px]">Region:</span>
+                <span className="font-semibold text-stone-800 text-[11px]">{t('region')}:</span>
               </div>
               <select
                 value={selectedCity}
@@ -894,7 +896,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
                 className="bg-transparent text-[11px] font-bold text-stone-900 border-0 focus:ring-0 cursor-pointer max-w-[170px] truncate"
                 aria-label="Select region or city"
               >
-                <option value="All India">All India</option>
+                <option value="All India">{t('allIndia')}</option>
                 {POPULAR_CITIES.map((c) => (
                   <option key={c.name} value={c.name}>
                     {c.name} ({c.state})
@@ -905,7 +907,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
 
             {/* Mobile Language Selector */}
             <div className="flex items-center justify-between px-3 py-2 rounded-xl bg-stone-50 border border-stone-200">
-              <span className="text-xs font-semibold text-stone-700">Language / भाषा:</span>
+              <span className="text-xs font-semibold text-stone-700">{t('language')}:</span>
               <LanguageSelector compact={false} />
             </div>
 
@@ -924,7 +926,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
                     <span className="relative inline-flex rounded-full h-2 w-2 bg-rose-600"></span>
                   </span>
-                  <span>24x7 Tourist Emergency Helpline</span>
+                  <span>{t('sosEmergency')}</span>
                 </div>
                 <span className="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-rose-600 text-white">
                   112 / 1363

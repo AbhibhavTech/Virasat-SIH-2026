@@ -1,5 +1,8 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { safeLocalStorage } from '../utils/storage';
+import { getTranslation, TranslationDictionary, TRANSLATIONS } from '../i18n/translations';
+
+export type { TranslationDictionary } from '../i18n/translations';
 
 export interface LanguageOption {
   code: string;
@@ -34,11 +37,13 @@ export const SUPPORTED_LANGUAGES: LanguageOption[] = [
 
 export const RTL_LANGUAGES = new Set(['ks', 'sd', 'ur']);
 
-interface LanguageContextType {
+export interface LanguageContextType {
   currentLanguage: string;
   isRTL: boolean;
   setLanguage: (lang: string) => void;
   languages: LanguageOption[];
+  t: (key: keyof TranslationDictionary, fallback?: string) => string;
+  translations: TranslationDictionary;
 }
 
 const LanguageContext = createContext<LanguageContextType>({
@@ -46,6 +51,8 @@ const LanguageContext = createContext<LanguageContextType>({
   isRTL: false,
   setLanguage: () => {},
   languages: SUPPORTED_LANGUAGES,
+  t: (key: keyof TranslationDictionary, fallback?: string) => fallback || TRANSLATIONS.en[key] || String(key),
+  translations: TRANSLATIONS.en,
 });
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -93,6 +100,15 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     };
   }, [currentLanguage, isRTL]);
 
+  const t = useCallback(
+    (key: keyof TranslationDictionary, fallback?: string): string => {
+      return getTranslation(currentLanguage, key) || fallback || TRANSLATIONS.en?.[key] || String(key);
+    },
+    [currentLanguage]
+  );
+
+  const translations = TRANSLATIONS[currentLanguage.toLowerCase()] || TRANSLATIONS.en;
+
   return (
     <LanguageContext.Provider
       value={{
@@ -100,6 +116,8 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
         isRTL,
         setLanguage,
         languages: SUPPORTED_LANGUAGES,
+        t,
+        translations,
       }}
     >
       {children}

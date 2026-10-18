@@ -19,6 +19,7 @@ import {
   X
 } from 'lucide-react';
 import { useAuth } from '../../contexts/AuthContext';
+import { useLanguage } from '../../contexts/LanguageContext';
 import { VirasatBrand } from '../common/TricolourBranding';
 
 export type NavTab = 
@@ -48,6 +49,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   setIsOpen,
 }) => {
   const { user, logout, setIsAuthModalOpen } = useAuth();
+  const { t } = useLanguage();
 
   const navItems: Array<{
     id: NavTab;
@@ -56,17 +58,17 @@ export const Sidebar: React.FC<SidebarProps> = ({
     badge?: string;
     badgeColor?: string;
   }> = [
-    { id: 'home', label: 'Explore & Overview', icon: Compass },
-    { id: 'festivals', label: 'Festivals of India', icon: Sparkles, badge: 'Live Calendar', badgeColor: 'bg-amber-100 text-amber-900 border-amber-200' },
-    { id: 'india', label: 'Explore India', icon: Compass, badge: 'States & Gems', badgeColor: 'bg-orange-100 text-orange-900 border-orange-200' },
-    { id: 'heritage', label: 'Major Monuments & Heritage', icon: Landmark, badge: 'UNESCO & ASI', badgeColor: 'bg-emerald-100 text-emerald-900 border-emerald-200' },
-    { id: 'dashboard', label: 'States & Hubs', icon: Layers, badge: '36 States/UTs', badgeColor: 'bg-emerald-100 text-emerald-900 border-emerald-200' },
-    { id: 'map', label: 'Interactive Map', icon: MapIcon },
-    { id: 'itinerary', label: 'Plan Trip (AI Planner)', icon: Calendar, badge: 'Cozy', badgeColor: 'bg-orange-100 text-orange-900 border-orange-200' },
-    { id: 'ai', label: 'Virasat AI Assistant', icon: Bot, badge: 'AI', badgeColor: 'bg-indigo-100 text-indigo-900 border-indigo-200' },
-    { id: 'trips', label: 'My Saved Trips', icon: Bookmark },
-    { id: 'favorites', label: 'Saved Places', icon: Heart },
-    { id: 'profile', label: 'My Profile', icon: User },
+    { id: 'home', label: t('explore'), icon: Compass },
+    { id: 'festivals', label: t('festivals'), icon: Sparkles, badge: 'Live Calendar', badgeColor: 'bg-amber-100 text-amber-900 border-amber-200' },
+    { id: 'india', label: t('bharat'), icon: Compass, badge: 'States & Gems', badgeColor: 'bg-orange-100 text-orange-900 border-orange-200' },
+    { id: 'heritage', label: t('heritage'), icon: Landmark, badge: 'UNESCO & ASI', badgeColor: 'bg-emerald-100 text-emerald-900 border-emerald-200' },
+    { id: 'dashboard', label: t('bharat'), icon: Layers, badge: '36 States/UTs', badgeColor: 'bg-emerald-100 text-emerald-900 border-emerald-200' },
+    { id: 'map', label: t('map'), icon: MapIcon },
+    { id: 'itinerary', label: t('planTrip'), icon: Calendar, badge: 'Cozy', badgeColor: 'bg-orange-100 text-orange-900 border-orange-200' },
+    { id: 'ai', label: t('aiConcierge'), icon: Bot, badge: 'AI', badgeColor: 'bg-indigo-100 text-indigo-900 border-indigo-200' },
+    { id: 'trips', label: t('trips'), icon: Bookmark },
+    { id: 'favorites', label: t('saved'), icon: Heart },
+    { id: 'profile', label: t('profile'), icon: User },
   ];
 
   const handleNav = (tab: NavTab) => {
@@ -179,7 +181,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
                   className="text-rose-600 hover:text-rose-700 flex items-center gap-1 font-medium cursor-pointer"
                 >
                   <LogOut className="w-3 h-3" />
-                  <span>Sign Out</span>
+                  <span>{t('signOut')}</span>
                 </button>
               </div>
             </div>
@@ -189,7 +191,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               className="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl bg-[#FF671F] hover:bg-[#E65100] text-white text-xs font-bold transition-all shadow-xs cursor-pointer active:scale-95"
             >
               <LogIn className="w-4 h-4" />
-              <span>Sign In / Profile</span>
+              <span>{t('signIn')} / {t('profile')}</span>
             </button>
           )}
         </div>

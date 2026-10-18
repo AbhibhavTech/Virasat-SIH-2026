@@ -122,7 +122,7 @@ export const HeritageDetailPage: React.FC<HeritageDetailPageProps> = ({
 }) => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
-  const { currentLanguage, isRTL } = useLanguage();
+  const { currentLanguage, isRTL, t } = useLanguage();
   const { isFavorite, toggleFavorite } = useFavorites();
 
   const [heritage, setHeritage] = useState<HeritageDetail | null>(null);
@@ -350,7 +350,7 @@ export const HeritageDetailPage: React.FC<HeritageDetailPageProps> = ({
             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-stone-700 bg-stone-100 hover:bg-stone-200 text-xs font-semibold transition cursor-pointer"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
-            <span>Heritage Catalog</span>
+            <span>{t('heritage')}</span>
           </button>
           {isValidText(heritage.category) && (
             <span className="text-xs px-2.5 py-1 rounded-full bg-orange-50 text-[#FF671F] font-semibold border border-orange-200 uppercase tracking-wider">
@@ -501,7 +501,7 @@ export const HeritageDetailPage: React.FC<HeritageDetailPageProps> = ({
               <div className="flex items-center gap-2">
                 <BookOpen className="w-5 h-5 text-[#FF671F]" />
                 <h2 className="text-lg sm:text-xl font-serif font-bold text-stone-900">
-                  Monument Highlights & Context
+                  {t('features')}
                 </h2>
               </div>
 
@@ -544,7 +544,7 @@ export const HeritageDetailPage: React.FC<HeritageDetailPageProps> = ({
                             onClick={() => toggleSection(sec.key)}
                             className="text-xs font-bold text-[#FF671F] hover:text-orange-700 inline-flex items-center gap-1 cursor-pointer transition"
                           >
-                            <span>{isExpanded ? 'Show less' : 'Read more'}</span>
+                            <span>{isExpanded ? t('readLess') : t('readMore')}</span>
                             <ChevronDown
                               className={`w-3.5 h-3.5 transition-transform duration-200 ${
                                 isExpanded ? 'rotate-180' : ''
@@ -572,7 +572,7 @@ export const HeritageDetailPage: React.FC<HeritageDetailPageProps> = ({
                   </div>
                   <div>
                     <h3 className="font-serif font-bold text-base sm:text-lg text-stone-900">
-                      Visitor Tips & Guidelines
+                      {t('visitorTips')}
                     </h3>
                     <p className="text-xs text-stone-500">
                       Essential advice for travellers visiting this heritage site
@@ -607,7 +607,7 @@ export const HeritageDetailPage: React.FC<HeritageDetailPageProps> = ({
               <div className="flex items-center gap-2">
                 <Sparkles className="w-5 h-5 text-[#FF671F]" />
                 <h3 className="text-lg font-serif font-bold text-stone-900">
-                  Architectural Features & Complex Highlights
+                  {t('features')}
                 </h3>
               </div>
 
@@ -637,7 +637,7 @@ export const HeritageDetailPage: React.FC<HeritageDetailPageProps> = ({
               <div className="flex items-center gap-2">
                 <History className="w-5 h-5 text-[#FF671F]" />
                 <h3 className="text-lg font-serif font-bold text-stone-900">
-                  Chronological Timeline
+                  {t('timeline')}
                 </h3>
               </div>
 
@@ -755,7 +755,7 @@ export const HeritageDetailPage: React.FC<HeritageDetailPageProps> = ({
             <div className="flex items-center gap-2 pb-2 border-b border-stone-100">
               <ShieldCheck className="w-5 h-5 text-emerald-600" />
               <h3 className="font-serif font-bold text-base text-stone-900">
-                Authenticity & Status
+                {t('authenticity')}
               </h3>
             </div>
 
@@ -826,7 +826,7 @@ export const HeritageDetailPage: React.FC<HeritageDetailPageProps> = ({
               <div className="flex items-center gap-2 pb-2 border-b border-stone-100">
                 <MapPin className="w-5 h-5 text-[#FF671F]" />
                 <h3 className="font-serif font-bold text-base text-stone-900">
-                  Nearby Sights & Monuments
+                  {t('nearby')}
                 </h3>
               </div>
 

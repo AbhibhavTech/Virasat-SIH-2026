@@ -2,6 +2,7 @@ import React from 'react';
 import { Compass, Landmark, Navigation, Heart, ShieldCheck, ExternalLink, Sparkles, Database } from 'lucide-react';
 import { NavTab } from './Sidebar';
 import { VirasatBrand, FlowingTricolourRibbon, HeritageSkylineSilhouette } from '../common/TricolourBranding';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 interface SimpleFooterProps {
   onNavigateTab: (tab: NavTab) => void;
@@ -14,6 +15,7 @@ export const SimpleFooter: React.FC<SimpleFooterProps> = ({
   onSelectCity,
   onOpenDatabaseStatus,
 }) => {
+  const { t } = useLanguage();
   return (
     <footer className="mt-10 sm:mt-20 border-t border-[#EFE8DF] bg-white text-[#0B192C] relative overflow-hidden pb-24 md:pb-8">
       {/* Subtle Flowing Tricolour Accent in Background */}
@@ -47,7 +49,7 @@ export const SimpleFooter: React.FC<SimpleFooterProps> = ({
                   onClick={() => onNavigateTab('home')}
                   className="text-stone-600 hover:text-amber-800 transition"
                 >
-                  Explore India
+                  {t('explore')}
                 </button>
               </li>
               <li>
@@ -55,7 +57,7 @@ export const SimpleFooter: React.FC<SimpleFooterProps> = ({
                   onClick={() => onNavigateTab('india')}
                   className="text-stone-600 hover:text-amber-800 transition"
                 >
-                  Discover Bharat (36 States & UTs)
+                  {t('bharat')}
                 </button>
               </li>
               <li>
@@ -63,7 +65,7 @@ export const SimpleFooter: React.FC<SimpleFooterProps> = ({
                   onClick={() => onNavigateTab('heritage')}
                   className="text-stone-600 hover:text-amber-800 transition"
                 >
-                  Major Monuments & Famous Heritage
+                  {t('heritage')}
                 </button>
               </li>
               <li>
@@ -71,7 +73,7 @@ export const SimpleFooter: React.FC<SimpleFooterProps> = ({
                   onClick={() => onNavigateTab('map')}
                   className="text-stone-600 hover:text-amber-800 transition"
                 >
-                  Interactive GIS Heritage Map
+                  {t('map')}
                 </button>
               </li>
             </ul>
@@ -80,7 +82,7 @@ export const SimpleFooter: React.FC<SimpleFooterProps> = ({
           {/* Planning & Transit Links */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold text-stone-900 uppercase tracking-wider">
-              Journey Planning
+              {t('planTrip')}
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
@@ -88,7 +90,7 @@ export const SimpleFooter: React.FC<SimpleFooterProps> = ({
                   onClick={() => onNavigateTab('itinerary')}
                   className="text-stone-600 hover:text-amber-800 transition"
                 >
-                  Day Circuit Planner
+                  {t('planTrip')}
                 </button>
               </li>
               <li>
@@ -96,7 +98,7 @@ export const SimpleFooter: React.FC<SimpleFooterProps> = ({
                   onClick={() => onNavigateTab('india')}
                   className="text-stone-600 hover:text-amber-800 transition"
                 >
-                  All India States & Cities
+                  {t('allIndia')}
                 </button>
               </li>
               <li>
@@ -104,7 +106,7 @@ export const SimpleFooter: React.FC<SimpleFooterProps> = ({
                   onClick={() => onNavigateTab('map')}
                   className="text-stone-600 hover:text-amber-800 transition"
                 >
-                  Interactive GIS Map
+                  {t('map')}
                 </button>
               </li>
               <li>
@@ -112,7 +114,7 @@ export const SimpleFooter: React.FC<SimpleFooterProps> = ({
                   onClick={() => onNavigateTab('ai')}
                   className="text-stone-600 hover:text-amber-800 transition"
                 >
-                  Ask Virasat AI Guide
+                  {t('askVirasat')}
                 </button>
               </li>
             </ul>
@@ -121,7 +123,7 @@ export const SimpleFooter: React.FC<SimpleFooterProps> = ({
           {/* Planning & Saved Links */}
           <div className="space-y-3">
             <h4 className="text-xs font-bold text-stone-900 uppercase tracking-wider">
-              Planning & Trips
+              {t('trips')}
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
@@ -129,7 +131,7 @@ export const SimpleFooter: React.FC<SimpleFooterProps> = ({
                   onClick={() => onNavigateTab('itinerary')}
                   className="text-stone-600 hover:text-amber-800 transition"
                 >
-                  AI City Trip Planner
+                  {t('planTrip')}
                 </button>
               </li>
               <li>
@@ -137,7 +139,7 @@ export const SimpleFooter: React.FC<SimpleFooterProps> = ({
                   onClick={() => onNavigateTab('trips')}
                   className="text-stone-600 hover:text-amber-800 transition"
                 >
-                  Saved Trips & Circuits
+                  {t('trips')}
                 </button>
               </li>
               <li>
@@ -145,7 +147,7 @@ export const SimpleFooter: React.FC<SimpleFooterProps> = ({
                   onClick={() => onNavigateTab('profile')}
                   className="text-stone-600 hover:text-amber-800 transition"
                 >
-                  My Travel Profile
+                  {t('profile')}
                 </button>
               </li>
               <li>

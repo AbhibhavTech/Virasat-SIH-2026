@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import { NavTab } from './Sidebar';
 import { useFavorites } from '../../contexts/FavoritesContext';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 interface ContextualSubNavProps {
   activeTab: NavTab;
@@ -25,6 +26,7 @@ export const ContextualSubNav: React.FC<ContextualSubNavProps> = ({
   onNavigateTab,
   setActiveTab,
 }) => {
+  const { t } = useLanguage();
   const { favorites } = useFavorites();
   const favCount = favorites ? favorites.length : 0;
   const navContainerRef = useRef<HTMLDivElement>(null);
@@ -62,56 +64,56 @@ export const ContextualSubNav: React.FC<ContextualSubNavProps> = ({
   }> = [
     {
       id: 'heritage',
-      label: 'Heritage',
+      label: t('heritage'),
       icon: Landmark,
       badge: 'UNESCO',
     },
     {
       id: 'festivals',
-      label: 'Festivals',
+      label: t('festivals'),
       icon: Sparkles,
       badge: 'Live',
     },
     {
       id: 'home',
-      label: 'Explore',
+      label: t('explore'),
       icon: Compass,
     },
     {
       id: 'map',
-      label: 'Map',
+      label: t('map'),
       icon: MapIcon,
     },
     {
       id: 'india',
-      label: 'Bharat 36',
+      label: t('bharat'),
       icon: Layers,
     },
     {
       id: 'itinerary',
-      label: 'Plan Trip',
+      label: t('planTrip'),
       icon: Calendar,
     },
     {
       id: 'ai',
-      label: 'AI Concierge',
+      label: t('aiConcierge'),
       icon: Bot,
       highlight: true,
     },
     {
       id: 'trips',
-      label: 'Trips',
+      label: t('trips'),
       icon: Bookmark,
     },
     {
       id: 'favorites',
-      label: 'Saved',
+      label: t('saved'),
       icon: Heart,
       badgeCount: favCount,
     },
     {
       id: 'profile',
-      label: 'Profile',
+      label: t('profile'),
       icon: User,
     },
   ];

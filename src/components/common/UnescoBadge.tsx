@@ -1,6 +1,7 @@
 import React from 'react';
 import { Award, Clock, ShieldCheck, HelpCircle } from 'lucide-react';
 import { UnescoStatus } from '../../types';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 interface UnescoBadgeProps {
   status?: UnescoStatus | string;
@@ -17,6 +18,7 @@ export const UnescoBadge: React.FC<UnescoBadgeProps> = ({
   className = '',
   size = 'md',
 }) => {
+  const { t } = useLanguage();
   const normStatus = (status || 'unverified').toLowerCase();
 
   // ONLY unesco_status == "inscribed" OR "part_of_inscribed" get the UNESCO badge
@@ -29,7 +31,7 @@ export const UnescoBadge: React.FC<UnescoBadgeProps> = ({
         title="UNESCO Inscribed World Heritage Site"
       >
         <Award className={size === 'sm' ? 'w-3 h-3' : size === 'lg' ? 'w-4 h-4' : 'w-3.5 h-3.5'} />
-        <span>UNESCO World Heritage Site{year ? ` (${year})` : ''}</span>
+        <span>{t('unescoWorldHeritage')}{year ? ` (${year})` : ''}</span>
       </div>
     );
   }
@@ -44,7 +46,7 @@ export const UnescoBadge: React.FC<UnescoBadgeProps> = ({
       >
         <Award className={size === 'sm' ? 'w-3 h-3' : size === 'lg' ? 'w-4 h-4' : 'w-3.5 h-3.5'} />
         <span>
-          Part of UNESCO Site{year ? ` (${year})` : ''}
+          {t('unescoWorldHeritage')}{year ? ` (${year})` : ''}
           {siteName ? `: ${siteName}` : ''}
         </span>
       </div>
@@ -61,7 +63,7 @@ export const UnescoBadge: React.FC<UnescoBadgeProps> = ({
         title="On UNESCO Tentative List (Nominated for future inscription)"
       >
         <Clock className={size === 'sm' ? 'w-3 h-3 text-sky-600' : 'w-3.5 h-3.5 text-sky-600'} />
-        <span>UNESCO Tentative List</span>
+        <span>{t('unescoTentative')}</span>
       </div>
     );
   }

@@ -49,7 +49,7 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
 }) => {
   const navigate = useNavigate();
   const { isFavorite, toggleFavorite } = useFavorites();
-  const { currentLanguage } = useLanguage();
+  const { currentLanguage, t } = useLanguage();
   const [heritageSites, setHeritageSites] = useState<any[]>([]);
   const [allStates, setAllStates] = useState<string[]>([]);
   const [loading, setLoading] = useState(true);
@@ -467,7 +467,7 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search monuments, dynasties, architectural styles, or cities..."
+              placeholder={t('searchPlaceholder')}
               className="w-full pl-12 pr-12 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl border-2 border-stone-200 bg-[#FAF8F5]/80 text-sm sm:text-base text-stone-900 placeholder-stone-400 focus:outline-none focus:ring-4 focus:ring-orange-500/10 focus:border-[#FF671F] transition-all font-sans font-medium"
             />
             {searchQuery && (
