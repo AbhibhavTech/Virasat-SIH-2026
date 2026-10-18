@@ -204,7 +204,7 @@ export const AuthModal: React.FC = () => {
               <span>Google Cloud Authorization (Quick 30-Sec Fix)</span>
             </div>
             <p className="text-[11px] text-blue-800 leading-relaxed">
-              Google OAuth policy requires <code className="px-1.5 py-0.5 rounded bg-blue-100 font-mono text-[10.5px] border border-blue-300">http://localhost:3000</code> to be added under <strong>Authorized JavaScript origins</strong> in your Google Cloud Console.
+              Google OAuth policy requires <code className="px-1.5 py-0.5 rounded bg-blue-100 font-mono text-[10.5px] border border-blue-300">{typeof window !== 'undefined' ? window.location.origin : 'your domain'}</code> to be added under <strong>Authorized JavaScript origins</strong> in your Google Cloud Console.
             </p>
             <div className="flex flex-col sm:flex-row gap-2 pt-0.5">
               <a
@@ -213,7 +213,7 @@ export const AuthModal: React.FC = () => {
                 rel="noopener noreferrer"
                 className="flex-1 px-3 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-semibold text-xs flex items-center justify-center gap-1.5 shadow-xs transition"
               >
-                <span>Add http://localhost:3000 in Console</span>
+                <span>Add Domain in Google Console</span>
                 <ExternalLink className="w-3 h-3" />
               </a>
               <button
