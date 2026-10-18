@@ -44,6 +44,8 @@ import {
   FestivalItem,
   FestivalLiveInfoResponse,
   FestivalLiveSearchResponse,
+  MaharashtraDestination,
+  DestinationsResponse,
 } from '../types';
 import { safeLocalStorage } from '../utils/storage';
 
@@ -176,6 +178,40 @@ export const api = {
       return await request<PlaceListResponse>(`/v1/places?${q.toString()}`);
     } catch {
       return { total: 0, limit: 20, offset: 0, data: [] };
+    }
+  },
+
+  async getDestinations(params?: {
+    state?: string;
+    city?: string;
+    type?: 'famous' | 'hidden';
+    category?: string;
+    limit?: number;
+    offset?: number;
+  }): Promise<DestinationsResponse> {
+    const q = new URLSearchParams();
+    if (params?.state) q.set('state', params.state);
+    if (params?.city) q.set('city', params.city);
+    if (params?.type) q.set('type', params.type);
+    if (params?.category) q.set('category', params.category);
+    if (params?.limit) q.set('limit', String(params.limit));
+    if (params?.offset) q.set('offset', String(params.offset));
+
+    try {
+      return await request<DestinationsResponse>(`/destinations?${q.toString()}`);
+    } catch {
+      return {
+        success: false,
+        total: 0,
+        limit: 20,
+        offset: 0,
+        city_counts: {
+          Mumbai: { famous: 0, hidden: 0, total: 0 },
+          Pune: { famous: 0, hidden: 0, total: 0 },
+        },
+        data: [],
+        destinations: [],
+      };
     }
   },
 

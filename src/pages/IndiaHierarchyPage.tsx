@@ -54,6 +54,7 @@ import { ScrollReveal } from '../components/common/ScrollReveal';
 import { HeritageDivider } from '../components/common/HeritageDivider';
 import { getMumbaiHierarchyAttractions, isMumbaiCity } from '../data/mumbaiDestinations';
 import { getAmaravatiHierarchyAttractions, isAmaravatiCity } from '../data/amaravatiDestinations';
+import { MaharashtraDestinationsSection } from '../components/explore-india/MaharashtraDestinationsSection';
 
 interface IndiaHierarchyPageProps {
   onSelectPlace?: (placeId: string) => void;
@@ -1400,6 +1401,29 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                   </div>
                 )}
 
+                {/* Featured Showcase Banner: Maharashtra (Mumbai & Pune) */}
+                <div className="bg-gradient-to-br from-[#0B192C] via-[#1A2E44] to-[#0B192C] text-white rounded-3xl p-6 sm:p-7 border border-[#FF671F]/30 shadow-lg relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6">
+                  <div className="space-y-2 z-10 max-w-xl">
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FF671F]/20 text-[#FF671F] border border-[#FF671F]/30 text-xs font-bold uppercase tracking-wider">
+                      <Sparkles className="w-3.5 h-3.5" />
+                      <span>Special Showcase • Maharashtra</span>
+                    </div>
+                    <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">
+                      Mumbai &amp; Pune: Famous Places &amp; Hidden Gems
+                    </h3>
+                    <p className="text-xs sm:text-sm text-stone-300 leading-relaxed">
+                      Discover 40 dual-verified destinations across Mumbai &amp; Pune. Explore 20 world-famous monuments and 20 community-curated hidden gems with authentic 50-word overviews, interactive maps, and complete travel coordinates.
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => handleSelectState('maharashtra')}
+                    className="z-10 px-6 py-3 rounded-2xl bg-gradient-to-r from-[#FF671F] to-[#E65100] hover:from-[#E65100] hover:to-[#FF671F] text-white text-xs sm:text-sm font-bold shadow-md hover:shadow-xl transition-all cursor-pointer whitespace-nowrap flex items-center gap-2"
+                  >
+                    <span>Explore Maharashtra Showcase (40)</span>
+                    <ArrowRight className="w-4 h-4" />
+                  </button>
+                </div>
+
                 {/* Section: 28 States of Bharat */}
                 {(territoryTab === 'states' || territoryTab === 'all') && (
                   <div className="space-y-4">
@@ -1630,6 +1654,18 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
               label="Towns & Cultural Sanctuaries"
               subtitle={`Explore verified historic centers and destinations across ${currentState.name}`}
             />
+
+            {/* Dedicated Maharashtra City Section (Mumbai & Pune: Famous Places + Hidden Gems) */}
+            {(currentState?.id?.toLowerCase() === 'maharashtra' ||
+              currentState?.name?.toLowerCase() === 'maharashtra') && (
+              <div className="pt-2">
+                <MaharashtraDestinationsSection
+                  initialCity="Mumbai"
+                  onSelectPlace={onSelectPlace}
+                  onSelectCity={onSelectCity}
+                />
+              </div>
+            )}
 
             <div id="state-destinations-section" className="space-y-6 scroll-mt-24">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
@@ -1993,6 +2029,24 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                   </div>
                 </div>
               </div>
+
+              {/* Dedicated Maharashtra City Showcase (Mumbai & Pune: Famous Places + Hidden Gems) */}
+              {(currentCity.name?.toLowerCase() === 'mumbai' ||
+                currentCity.name?.toLowerCase() === 'pune' ||
+                currentCity.id?.toLowerCase() === 'mumbai' ||
+                currentCity.id?.toLowerCase() === 'pune') && (
+                <div className="pt-2">
+                  <MaharashtraDestinationsSection
+                    initialCity={
+                      currentCity.name?.toLowerCase() === 'pune' || currentCity.id?.toLowerCase() === 'pune'
+                        ? 'Pune'
+                        : 'Mumbai'
+                    }
+                    onSelectPlace={onSelectPlace}
+                    onSelectCity={onSelectCity}
+                  />
+                </div>
+              )}
 
               {/* Heritage Separation Rule */}
               <HeritageDivider

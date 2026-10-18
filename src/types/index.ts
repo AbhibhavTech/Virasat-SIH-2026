@@ -1124,3 +1124,58 @@ export interface FestivalLiveSearchResponse {
 }
 
 export * from './database';
+
+export interface MaharashtraDestination {
+  id: string;
+  name: string;
+  city: 'Mumbai' | 'Pune' | string;
+  state: string;
+  area: string;
+  category: string;
+  type: 'famous' | 'hidden';
+  community_listed: boolean;
+  overview: string;
+  overview_word_count: number;
+  visit_info: {
+    best_time: string;
+    entry: string;
+    closed_days: string;
+    how_to_reach: string;
+    local_tip: string;
+  };
+  history_or_significance: string;
+  latitude: number | null;
+  longitude: number | null;
+  coordinates: {
+    lat: number;
+    lng: number;
+  };
+  image: {
+    url: string;
+    attribution: string;
+    license: string;
+    source_url: string;
+  };
+  thumbnail_url: string;
+  verification_status: 'VERIFIED' | 'PARTIALLY_VERIFIED' | 'NEEDS_REVIEW';
+  sources: Array<{
+    url: string;
+    title: string;
+    page_fetched: boolean;
+  }>;
+  last_checked: string;
+  safety_notes: string;
+}
+
+export interface DestinationsResponse {
+  success: boolean;
+  total: number;
+  limit: number;
+  offset: number;
+  city_counts: {
+    Mumbai: { famous: number; hidden: number; total: number };
+    Pune: { famous: number; hidden: number; total: number };
+  };
+  data: MaharashtraDestination[];
+  destinations: MaharashtraDestination[];
+}

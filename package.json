@@ -27,6 +27,7 @@
     "check:ai-connection": "tsx scripts/check_ai_connection.ts",
     "test:auth": "tsx scripts/test_google_auth.ts",
     "seed:heritages": "tsx scripts/seed_heritages.ts",
+    "seed:destinations": "tsx scripts/seed_maharashtra_destinations.ts",
     "test:assistant-upgrades": "tsx scripts/test_assistant_upgrades.ts && tsx scripts/test_assistant_rendering.tsx",
     "test:heritage-ai": "tsx scripts/test_heritage_ai.ts"
   },
