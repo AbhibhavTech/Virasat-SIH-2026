@@ -58,7 +58,6 @@ export const ContextualSubNav: React.FC<ContextualSubNavProps> = ({
     id: NavTab;
     label: string;
     icon: React.ComponentType<{ className?: string }>;
-    badge?: string;
     badgeCount?: number;
     highlight?: boolean;
   }> = [
@@ -66,13 +65,11 @@ export const ContextualSubNav: React.FC<ContextualSubNavProps> = ({
       id: 'heritage',
       label: t('heritage'),
       icon: Landmark,
-      badge: 'UNESCO',
     },
     {
       id: 'festivals',
       label: t('festivals'),
       icon: Sparkles,
-      badge: 'Live',
     },
     {
       id: 'home',
@@ -127,7 +124,7 @@ export const ContextualSubNav: React.FC<ContextualSubNavProps> = ({
         ref={navContainerRef}
         role="tablist"
         aria-orientation="horizontal"
-        className="flex items-center gap-1.5 px-2.5 py-2 overflow-x-auto scrollbar-none no-scrollbar scroll-smooth"
+        className="flex items-center gap-2 sm:gap-2.5 px-3 py-2 overflow-x-auto scrollbar-none no-scrollbar scroll-smooth"
         style={{
           WebkitOverflowScrolling: 'touch',
         }}
@@ -143,7 +140,7 @@ export const ContextualSubNav: React.FC<ContextualSubNavProps> = ({
               role="tab"
               aria-selected={isActive}
               onClick={() => handleNav(tab.id)}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold whitespace-nowrap shrink-0 transition-all duration-150 active:scale-95 focus:outline-none ${
+              className={`flex items-center gap-1.5 px-2.5 py-1 sm:px-3 sm:py-1.5 rounded-full text-[11px] sm:text-xs font-semibold whitespace-nowrap shrink-0 transition-all duration-150 active:scale-95 focus:outline-none ${
                 isActive
                   ? 'bg-gradient-to-r from-orange-600 via-amber-600 to-amber-700 text-white shadow-xs font-bold'
                   : tab.highlight
@@ -152,7 +149,7 @@ export const ContextualSubNav: React.FC<ContextualSubNavProps> = ({
               }`}
             >
               <Icon
-                className={`w-3.5 h-3.5 shrink-0 ${
+                className={`w-3 h-3 shrink-0 ${
                   isActive
                     ? 'text-white'
                     : tab.highlight
@@ -161,13 +158,6 @@ export const ContextualSubNav: React.FC<ContextualSubNavProps> = ({
                 }`}
               />
               <span>{tab.label}</span>
-
-              {/* Text Badge */}
-              {tab.badge && !isActive && (
-                <span className="text-[9px] font-extrabold px-1.5 py-0.2 rounded-full bg-amber-100 text-amber-900 border border-amber-200/60 leading-tight">
-                  {tab.badge}
-                </span>
-              )}
 
               {/* Numeric Badge (e.g. Saved count) */}
               {tab.badgeCount !== undefined && tab.badgeCount > 0 && (
