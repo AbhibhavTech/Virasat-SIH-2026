@@ -1,0 +1,118 @@
+{
+  "slug": "living-root-bridges",
+  "list_no": 44,
+  "name": "Living Root Bridges of Cherrapunji (Nongriat)",
+  "alt_names": [],
+  "category": "living heritage",
+  "state_ut": "Meghalaya",
+  "district_city": "Meghalaya",
+  "coordinates": {
+    "lat": 25.26,
+    "lng": 91.71,
+    "precision": "approximate - verify"
+  },
+  "era": "Khasi tradition",
+  "builder": "Khasi communities",
+  "authenticity": {
+    "unesco_status": "tentative",
+    "unesco_ref_id": null,
+    "unesco_inscribed_year": null,
+    "unesco_site_name": null,
+    "unesco_url": null,
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "outline",
+  "overview": "Bridges grown from Ficus elastica roots over generations.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Double Decker Root Bridge",
+      "description": "Two bridges one above the other"
+    },
+    {
+      "title": "Ficus elastica",
+      "description": "Rubber fig"
+    },
+    {
+      "title": "Rainbow Falls",
+      "description": "Waterfall"
+    },
+    {
+      "title": "Trail steps",
+      "description": "Several thousand steps"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "Undated",
+      "event": "Living tradition; exact dates not documented"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Mawsmai Cave",
+      "related_slug": null
+    },
+    {
+      "name": "Nohkalikai Falls",
+      "related_slug": null
+    },
+    {
+      "name": "Mawlynnong",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ],
+  "tagline": "Bridges grown from Ficus elastica roots over generations.",
+  "sections": [],
+  "visitor_tips": [],
+  "quick_facts": [
+    {
+      "label": "Location",
+      "value": "Meghalaya, Meghalaya"
+    },
+    {
+      "label": "Era",
+      "value": "Khasi tradition"
+    },
+    {
+      "label": "Built by",
+      "value": "Khasi communities"
+    },
+    {
+      "label": "Type",
+      "value": "living heritage"
+    },
+    {
+      "label": "UNESCO",
+      "value": "On UNESCO Tentative List"
+    }
+  ]
+}

@@ -40,6 +40,7 @@ import { seoRouter } from './server/src/modules/seo/seo.router';
 import { analyticsRouter } from './server/src/modules/analytics/analytics.router';
 import { adminRouter } from './server/src/modules/admin/admin.router';
 import { festivalsRouter } from './server/src/modules/festivals/festivals.router';
+import { heritagesRouter } from './server/src/modules/heritages/heritages.router';
 import { resolveCanonicalCityId, isCityExactMatch, normalizeTransliteration } from './server/src/db/canonicalLocationResolver';
 import { getVerifiedTrainSchedules, getVerifiedFlightSchedules } from './src/server/transitDataService';
 import { requestLogger, securityHeaders, errorHandler } from './server/src/middleware/observability';
@@ -91,6 +92,14 @@ app.use('/api/analytics', analyticsRouter);
 app.use('/api/v1/admin', adminRouter);
 app.use('/api/v1/festivals', festivalsRouter);
 app.use('/api/festivals', festivalsRouter);
+app.use('/api/v1/heritages', heritagesRouter);
+app.use('/api/heritages', heritagesRouter);
+app.use('/api/v1/heritage', heritagesRouter);
+app.use('/api/heritage', heritagesRouter);
+app.use('/api/languages', (req, res, next) => {
+  req.url = '/languages' + (req.url === '/' ? '' : req.url);
+  heritagesRouter(req, res, next);
+});
 
 // -------------------------------------------------------------
 // Data Repositories & In-Memory Store

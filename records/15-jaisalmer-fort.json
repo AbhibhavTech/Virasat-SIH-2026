@@ -1,0 +1,161 @@
+{
+  "slug": "jaisalmer-fort",
+  "list_no": 15,
+  "name": "Jaisalmer Fort (Sonar Qila)",
+  "alt_names": [],
+  "category": "fort",
+  "state_ut": "Rajasthan",
+  "district_city": "Jaisalmer",
+  "coordinates": {
+    "lat": 26.9124,
+    "lng": 70.9129,
+    "precision": "approximate - verify"
+  },
+  "era": "Bhati Rajput, 1156",
+  "builder": "Rawal Jaisal",
+  "authenticity": {
+    "unesco_status": "part_of_inscribed",
+    "unesco_ref_id": "247",
+    "unesco_inscribed_year": 2013,
+    "unesco_site_name": "Hill Forts of Rajasthan",
+    "unesco_url": "https://whc.unesco.org/en/list/247",
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "overview_sectioned",
+  "overview": "Living fort in yellow sandstone rising from the Thar Desert.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Yellow sandstone walls",
+      "description": "Golden colour at sunset"
+    },
+    {
+      "title": "Jain temples",
+      "description": "Medieval temple cluster"
+    },
+    {
+      "title": "Raj Mahal",
+      "description": "Royal palace"
+    },
+    {
+      "title": "Bastions",
+      "description": "Wall defences around the hill"
+    },
+    {
+      "title": "Laxminath Temple",
+      "description": "Active temple in the fort"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "1156",
+      "event": "Fort founded by Rawal Jaisal"
+    },
+    {
+      "year": "1818",
+      "event": "Treaty with the East India Company"
+    },
+    {
+      "year": "2013",
+      "event": "Inscribed in Hill Forts of Rajasthan"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Patwon ki Haveli",
+      "related_slug": null
+    },
+    {
+      "name": "Gadisar Lake",
+      "related_slug": null
+    },
+    {
+      "name": "Sam Sand Dunes",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "Hill Forts of Rajasthan - World Heritage List",
+      "publisher": "UNESCO",
+      "url": "https://whc.unesco.org/en/list/247"
+    },
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ],
+  "tagline": "Living fort in yellow sandstone rising from the Thar Desert.",
+  "sections": [
+    {
+      "key": "history",
+      "title": "Origins & History",
+      "text": "Jaisalmer Fort, known as Sonar Qila or the Golden Fort, rises from the Thar Desert in western Rajasthan, glowing honey-gold in the sun. It was founded in 1156 by the Bhati Rajput ruler Rawal Jaisal on Trikuta Hill, and over centuries became a key stop on trade routes linking India with Central Asia and the Middle East. It is one of the few forts in India that is still lived in, with a community of residents, shops, guesthouses and temples within its walls."
+    },
+    {
+      "key": "beauty",
+      "title": "Beauty & Atmosphere",
+      "text": "The fort is built of local yellow sandstone, laid without mortar in many places. Thick double walls and around 99 bastions defend the hilltop, and the main approach is a stepped road through a series of massive gates. At dusk the stone turns a deep golden shade, which is the origin of its name, and the satirical image of a golden fortress in the middle of the sand has inspired writers, photographers and filmmakers, including Satyajit Ray's 1974 film Sonar Kella."
+    },
+    {
+      "key": "architecture",
+      "title": "Architecture & Highlights",
+      "text": "Inside, narrow lanes lead past carved stone havelis, the Raj Mahal palace, and a group of beautiful Jain temples dating from the 12th to the 15th centuries, with fine carved ceilings and sculptures. The Laxminath Temple is an active Hindu temple at the heart of the fort. From the ramparts, there are open views over the town, the havelis such as Patwon ki Haveli, and the desert."
+    },
+    {
+      "key": "famous_for",
+      "title": "Famous For",
+      "text": "Jaisalmer Fort is famous for its living heritage and its dramatic setting. It was inscribed in 2013 as part of the Hill Forts of Rajasthan UNESCO World Heritage Site. The old stone structure faces pressure from water use and drainage, and conservation efforts encourage responsible tourism."
+    }
+  ],
+  "visitor_tips": [
+    "Visitors should wear comfortable shoes, explore on foot, and consider staying within the old town for sunrise and sunset views.",
+    "Winter months, from roughly October to March, are most comfortable for travel.",
+    "Nearby attractions include Gadisar Lake, Patwon ki Haveli and the Sam Sand Dunes.",
+    "Check current rules with official sources."
+  ],
+  "quick_facts": [
+    {
+      "label": "Location",
+      "value": "Jaisalmer, Rajasthan"
+    },
+    {
+      "label": "Era",
+      "value": "Bhati Rajput, 1156"
+    },
+    {
+      "label": "Built by",
+      "value": "Rawal Jaisal"
+    },
+    {
+      "label": "Type",
+      "value": "fort"
+    },
+    {
+      "label": "UNESCO",
+      "value": "Part of a UNESCO World Heritage Site (2013)"
+    }
+  ]
+}

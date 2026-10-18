@@ -1,0 +1,165 @@
+{
+  "slug": "khajuraho",
+  "list_no": 35,
+  "name": "Khajuraho Group of Monuments",
+  "alt_names": [],
+  "category": "temples",
+  "state_ut": "Madhya Pradesh",
+  "district_city": "Chhatarpur",
+  "coordinates": {
+    "lat": 24.8318,
+    "lng": 79.9199,
+    "precision": "approximate - verify"
+  },
+  "era": "Chandela, c.950-1050",
+  "builder": "Chandela rulers",
+  "authenticity": {
+    "unesco_status": "inscribed",
+    "unesco_ref_id": "240",
+    "unesco_inscribed_year": 1986,
+    "unesco_site_name": null,
+    "unesco_url": "https://whc.unesco.org/en/list/240",
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "overview_sectioned",
+  "overview": "Group of Hindu and Jain temples famed for fine sculpture.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Kandariya Mahadeva",
+      "description": "Largest temple of the group"
+    },
+    {
+      "title": "Lakshmana Temple",
+      "description": "Early Chandela temple"
+    },
+    {
+      "title": "Vishvanatha Temple",
+      "description": "Shiva temple"
+    },
+    {
+      "title": "Chitragupta Temple",
+      "description": "Sun temple"
+    },
+    {
+      "title": "Eastern Group",
+      "description": "Jain temples"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "c.954",
+      "event": "Lakshmana Temple"
+    },
+    {
+      "year": "c.1030",
+      "event": "Kandariya Mahadeva"
+    },
+    {
+      "year": "1838",
+      "event": "Rediscovered by a British officer"
+    },
+    {
+      "year": "1986",
+      "event": "UNESCO inscription"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Panna National Park",
+      "related_slug": null
+    },
+    {
+      "name": "Raneh Falls",
+      "related_slug": null
+    },
+    {
+      "name": "Ajaygarh Fort",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "Khajuraho Group of Monuments - World Heritage List",
+      "publisher": "UNESCO",
+      "url": "https://whc.unesco.org/en/list/240"
+    },
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ],
+  "tagline": "Group of Hindu and Jain temples famed for fine sculpture.",
+  "sections": [
+    {
+      "key": "history",
+      "title": "Origins & History",
+      "text": "The Khajuraho Group of Monuments, in the Chhatarpur district of Madhya Pradesh, is a collection of Hindu and Jain temples built by the Chandela dynasty between about 950 and 1050 CE. There were once around eighty-five temples, of which about twenty-five survive. The Chandelas ruled the Bundelkhand region and used the site as a religious and cultural centre. After the dynasty declined, the temples were hidden by forest and were brought to wider attention in 1838 by a British officer, T. S. Burt."
+    },
+    {
+      "key": "beauty",
+      "title": "Beauty & Atmosphere",
+      "text": "The beauty of Khajuraho lies in its sculpture. Built of fine-grained sandstone, the temples are covered in detailed carvings showing gods, goddesses, musicians, dancers, warriors, animals and scenes of everyday life. They are famous for erotic sculptures, which form only a small part of the carvings and are placed on outer walls. Scholars interpret them in several ways, linking them to tantric ideas, fertility, auspiciousness and the celebration of life. The sculpture is renowned for its graceful poses, expressive faces and sense of movement."
+    },
+    {
+      "key": "architecture",
+      "title": "Architecture & Highlights",
+      "text": "The temples are built in the northern Nagara style, with a tall curved tower, a high platform and a chain of halls that rise toward the sanctum like a mountain range. The Kandariya Mahadeva Temple, built around 1030 and dedicated to Shiva, is the largest and most elaborate, with towering shikharas and hundreds of sculptures. The Lakshmana Temple, from about 954, and the Vishvanatha Temple are also outstanding, while the Chitragupta Temple is dedicated to the sun god. The Eastern Group includes Jain temples, such as the Parshvanath Temple, showing the same artistic quality."
+    },
+    {
+      "key": "famous_for",
+      "title": "Famous For",
+      "text": "Khajuraho was inscribed as a UNESCO World Heritage Site in 1986. It is famous as one of the great achievements of medieval Indian art. Each February, the Khajuraho Dance Festival presents classical dance in front of the temples."
+    }
+  ],
+  "visitor_tips": [
+    "Visitors should allow a day for the Western Group and nearby groups, and visit in the cool morning or at sunset, when the stone glows.",
+    "An evening sound and light show is held.",
+    "Panna National Park and Raneh Falls are within reach.",
+    "Check timings and ticket rules with official sources."
+  ],
+  "quick_facts": [
+    {
+      "label": "Location",
+      "value": "Chhatarpur, Madhya Pradesh"
+    },
+    {
+      "label": "Era",
+      "value": "Chandela, c.950-1050"
+    },
+    {
+      "label": "Built by",
+      "value": "Chandela rulers"
+    },
+    {
+      "label": "Type",
+      "value": "temples"
+    },
+    {
+      "label": "UNESCO",
+      "value": "UNESCO World Heritage Site (1986)"
+    }
+  ]
+}

@@ -2,6 +2,8 @@ import { ExtractedEntities } from './entityExtractor';
 import { ResolvedPlace } from './placeResolver';
 
 export interface TripMemoryState {
+  currentCity?: string;
+  lastHeritageSlug?: string;
   sessionId: string;
   messages?: import('./modelGateway').ChatTurn[];
   origin?: string;
@@ -40,6 +42,7 @@ export interface TripMemoryState {
 }
 
 const memoryStore = new Map<string, TripMemoryState>();
+export function deleteConversationState(sessionId: string) { memoryStore.delete(sessionId); }
 const MEMORY_TTL_MS = 6 * 60 * 60 * 1000;
 const MAX_MEMORY_SESSIONS = 5000;
 

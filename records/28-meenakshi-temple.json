@@ -1,0 +1,152 @@
+{
+  "slug": "meenakshi-temple",
+  "list_no": 28,
+  "name": "Arulmigu Meenakshi Amman Temple",
+  "alt_names": [],
+  "category": "temple",
+  "state_ut": "Tamil Nadu",
+  "district_city": "Madurai",
+  "coordinates": {
+    "lat": 9.9195,
+    "lng": 78.1193,
+    "precision": "approximate - verify"
+  },
+  "era": "Nayak, 16th-17th c.",
+  "builder": "Madurai Nayaks incl. Tirumala Nayak",
+  "authenticity": {
+    "unesco_status": "tentative",
+    "unesco_ref_id": null,
+    "unesco_inscribed_year": null,
+    "unesco_site_name": null,
+    "unesco_url": null,
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "overview_sectioned",
+  "overview": "Major Dravidian temple with towering gopurams in the old city of Madurai.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Gopurams",
+      "description": "Colourful gateway towers"
+    },
+    {
+      "title": "Hall of Thousand Pillars",
+      "description": "Sculpted pillared hall"
+    },
+    {
+      "title": "Golden Lotus Tank",
+      "description": "Sacred pool"
+    },
+    {
+      "title": "Meenakshi Shrine",
+      "description": "Goddess sanctum"
+    },
+    {
+      "title": "Sundareswarar Shrine",
+      "description": "Shiva shrine"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "1311",
+      "event": "Damaged during Delhi Sultanate invasion"
+    },
+    {
+      "year": "c.1623-1655",
+      "event": "Major expansion under Tirumala Nayak"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Thirumalai Nayak Palace",
+      "related_slug": null
+    },
+    {
+      "name": "Vandiyur Teppakulam",
+      "related_slug": null
+    },
+    {
+      "name": "Alagar Koil",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ],
+  "tagline": "Major Dravidian temple with towering gopurams in the old city of Madurai.",
+  "sections": [
+    {
+      "key": "history",
+      "title": "Origins & History",
+      "text": "The Arulmigu Meenakshi Amman Temple, in the heart of the ancient city of Madurai, Tamil Nadu, is one of the great temples of South India. It is dedicated to the goddess Meenakshi, a form of Parvati, and her consort Sundareshwarar, a form of Shiva. The temple's origins go back many centuries, and the city itself is among the oldest continuously inhabited places in India. The temple was damaged during invasions in the early 14th century, and the present complex was largely rebuilt and enlarged under the Madurai Nayak rulers in the 16th and 17th centuries, notably Tirumala Nayak."
+    },
+    {
+      "key": "beauty",
+      "title": "Beauty & Atmosphere",
+      "text": "The beauty of the temple lies in its colour and its towers. Fourteen gopurams, or gateway towers, rise above the walls, each covered with thousands of brightly painted stucco figures of gods, goddesses, animals and mythical beings. The tallest, the southern gopuram, rises to about 50 metres. Inside, long pillared corridors, shrines and courtyards create a sense of procession and mystery, and the ceilings are painted with floral and geometric patterns."
+    },
+    {
+      "key": "architecture",
+      "title": "Architecture & Highlights",
+      "text": "Highlights include the Hall of Thousand Pillars, an elegant hall with beautifully sculpted pillars that now houses a temple art museum. The Potramarai Kulam, or Golden Lotus Tank, is a sacred pool surrounded by pillared walkways, where devotees gather. Some pillars in the complex are carved with lively figures, and musical pillars are said to produce notes when tapped. The shrines of Meenakshi and Sundareshwarar sit at the heart of the complex and are the focus of daily rituals."
+    },
+    {
+      "key": "famous_for",
+      "title": "Famous For",
+      "text": "Meenakshi Temple is famous for the annual Chithirai Festival, in April or May, which re-enacts the celestial wedding of Meenakshi and Sundareshwarar and draws huge crowds. The temple is a living centre of worship and of Tamil culture. It has been proposed for UNESCO's tentative list but is not currently an inscribed World Heritage Site."
+    }
+  ],
+  "visitor_tips": [
+    "Visitors should dress modestly, remove footwear and expect security checks.",
+    "Cameras and mobile phones are restricted inside, so check the current rules.",
+    "Early morning or evening is best.",
+    "Nearby are the Thirumalai Nayak Palace and the Gandhi Memorial Museum."
+  ],
+  "quick_facts": [
+    {
+      "label": "Location",
+      "value": "Madurai, Tamil Nadu"
+    },
+    {
+      "label": "Era",
+      "value": "Nayak, 16th-17th c."
+    },
+    {
+      "label": "Built by",
+      "value": "Madurai Nayaks incl. Tirumala Nayak"
+    },
+    {
+      "label": "Type",
+      "value": "temple"
+    },
+    {
+      "label": "UNESCO",
+      "value": "On UNESCO Tentative List"
+    }
+  ]
+}

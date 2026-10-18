@@ -1,0 +1,156 @@
+{
+  "slug": "kedarnath",
+  "list_no": 9,
+  "name": "Kedarnath Temple",
+  "alt_names": [],
+  "category": "temple",
+  "state_ut": "Uttarakhand",
+  "district_city": "Rudraprayag",
+  "coordinates": {
+    "lat": 30.7352,
+    "lng": 79.0669,
+    "precision": "approximate - verify"
+  },
+  "era": "Traditionally attributed to 8th c. CE",
+  "builder": "Traditionally attributed to Adi Shankaracharya",
+  "authenticity": {
+    "unesco_status": "not_listed",
+    "unesco_ref_id": null,
+    "unesco_inscribed_year": null,
+    "unesco_site_name": null,
+    "unesco_url": null,
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "overview_sectioned",
+  "overview": "A Himalayan Jyotirlinga shrine on the Mandakini at about 3,583 m.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Stone temple",
+      "description": "Large grey stone slabs"
+    },
+    {
+      "title": "Garbhagriha",
+      "description": "Sanctum with a conical rock worshipped as the Jyotirlinga"
+    },
+    {
+      "title": "Nandi",
+      "description": "Bull statue facing the sanctum"
+    },
+    {
+      "title": "Adi Shankaracharya Samadhi",
+      "description": "Memorial site behind the temple"
+    },
+    {
+      "title": "Mandakini River",
+      "description": "River valley setting"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "8th c.",
+      "event": "Temple traditionally attributed to Adi Shankaracharya"
+    },
+    {
+      "year": "2013",
+      "event": "Flash floods devastate the valley"
+    },
+    {
+      "year": "2021",
+      "event": "Restored Samadhi and statue unveiled"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Gaurikund",
+      "related_slug": null
+    },
+    {
+      "name": "Chorabari Tal",
+      "related_slug": null
+    },
+    {
+      "name": "Bhairavnath Temple",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ],
+  "tagline": "A Himalayan Jyotirlinga shrine on the Mandakini at about 3,583 m.",
+  "sections": [
+    {
+      "key": "history",
+      "title": "Origins & History",
+      "text": "Kedarnath Temple stands at about 3,583 metres in the Garhwal Himalaya of Uttarakhand, in the Rudraprayag district, beside the Mandakini River and beneath snow-covered peaks. It is one of the twelve Jyotirlingas, the most sacred shrines of Lord Shiva, and a key stop on the Chota Char Dham pilgrimage of Uttarakhand. Tradition links its origins to the Pandavas, who are said to have sought Shiva's forgiveness here after the war of the Mahabharata, and credits the great philosopher Adi Shankaracharya with reviving the shrine in the 8th century."
+    },
+    {
+      "key": "beauty",
+      "title": "Beauty & Atmosphere",
+      "text": "The temple is built of large, heavy grey stone slabs fitted together without cement, forming a sturdy structure that has endured harsh Himalayan weather. Inside the sanctum, Shiva is worshipped not as a carved image but as a conical rock formation, a form that is believed to represent the hump of a bull. A large stone Nandi, Shiva's bull, faces the temple from the front. Behind it stands the memorial to Adi Shankaracharya, restored after the 2013 floods."
+    },
+    {
+      "key": "architecture",
+      "title": "Architecture & Highlights",
+      "text": "The beauty of Kedarnath lies in its setting. The temple sits on a wide plateau ringed by snow peaks, with the Mandakini flowing nearby. In June 2013, devastating floods hit the valley and destroyed much of the town, yet the temple's main structure largely survived, with a large boulder known as the Bhim Shila shielding it from the debris. The event is widely remembered by pilgrims and locals."
+    },
+    {
+      "key": "famous_for",
+      "title": "Famous For",
+      "text": "Kedarnath is famous for its spiritual weight, its extreme location and its seasonal opening, normally from around late April or May until around Diwali, after which the deity is moved to Ukhimath for the winter. Kedarnath is not a UNESCO World Heritage Site, but remains one of India's most visited Himalayan pilgrimages."
+    }
+  ],
+  "visitor_tips": [
+    "Pilgrims reach it by a trek of about 16 km from Gaurikund, or by helicopter services from nearby towns.",
+    "Weather can change quickly and altitude affects some people, so plan fitness, warm clothing and flexibility.",
+    "Registration is generally required for the pilgrimage.",
+    "Check current travel advisories and rules with official sources before planning a visit."
+  ],
+  "quick_facts": [
+    {
+      "label": "Location",
+      "value": "Rudraprayag, Uttarakhand"
+    },
+    {
+      "label": "Era",
+      "value": "Traditionally attributed to 8th c. CE"
+    },
+    {
+      "label": "Built by",
+      "value": "Traditionally attributed to Adi Shankaracharya"
+    },
+    {
+      "label": "Type",
+      "value": "temple"
+    },
+    {
+      "label": "UNESCO",
+      "value": "Not a UNESCO site"
+    }
+  ]
+}

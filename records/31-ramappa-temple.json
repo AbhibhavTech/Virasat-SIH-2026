@@ -1,0 +1,156 @@
+{
+  "slug": "ramappa-temple",
+  "list_no": 31,
+  "name": "Kakatiya Rudreshwara (Ramappa) Temple",
+  "alt_names": [],
+  "category": "temple",
+  "state_ut": "Telangana",
+  "district_city": "Palampet",
+  "coordinates": {
+    "lat": 18.2594,
+    "lng": 79.9437,
+    "precision": "approximate - verify"
+  },
+  "era": "Kakatiya, 1213",
+  "builder": "Recherla Rudra under Ganapati Deva",
+  "authenticity": {
+    "unesco_status": "inscribed",
+    "unesco_ref_id": "1570",
+    "unesco_inscribed_year": 2021,
+    "unesco_site_name": null,
+    "unesco_url": "https://whc.unesco.org/en/list/1570",
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "overview_sectioned",
+  "overview": "Kakatiya temple famed for floating bricks and finely carved dolerite.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Floating bricks",
+      "description": "Light bricks in the vimana"
+    },
+    {
+      "title": "Nandi",
+      "description": "Large Nandi mandapa"
+    },
+    {
+      "title": "Madanika figures",
+      "description": "Dancing sculptures"
+    },
+    {
+      "title": "Sandbox foundation",
+      "description": "Earthquake-absorbing base"
+    },
+    {
+      "title": "Dolerite pillars",
+      "description": "Polished carvings"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "1213",
+      "event": "Construction begun"
+    },
+    {
+      "year": "2021",
+      "event": "UNESCO inscription"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Ramappa Lake",
+      "related_slug": null
+    },
+    {
+      "name": "Laknavaram Lake",
+      "related_slug": null
+    },
+    {
+      "name": "Warangal Fort",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "Kakatiya Rudreshwara (Ramappa) Temple - World Heritage List",
+      "publisher": "UNESCO",
+      "url": "https://whc.unesco.org/en/list/1570"
+    },
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ],
+  "tagline": "Kakatiya temple famed for floating bricks and finely carved dolerite.",
+  "sections": [
+    {
+      "key": "history",
+      "title": "Origins & History",
+      "text": "The Ramappa Temple, also called the Rudreshwara Temple, in Palampet in Telangana's Mulugu district, is a 13th century Kakatiya masterpiece dedicated to Shiva. It was built in 1213 under the Kakatiya ruler Ganapati Deva by his general Recherla Rudra, and is unusual because it is named after its chief sculptor, Ramappa, a recognition rarely given to craftsmen. The Kakatiyas ruled much of the Deccan from Warangal, and their temples are known for elegant proportions and fine stone carving."
+    },
+    {
+      "key": "beauty",
+      "title": "Beauty & Atmosphere",
+      "text": "The beauty of the temple lies in the sculpture. Set on a star-shaped raised platform, it is built of red sandstone, but the pillars, brackets and decorative sculptures are carved from hard dark dolerite, polished until they shine. The bracket figures, known as madanikas, are slender and graceful, depicting dancers and musicians in lifelike poses with finely detailed jewellery and hairstyles. The outer walls and ceilings carry scenes from the epics and intricate patterns, and a large Nandi mandapa stands in front."
+    },
+    {
+      "key": "architecture",
+      "title": "Architecture & Highlights",
+      "text": "The temple also reveals the engineering genius of the period. The tower above the sanctum is said to be built of very light porous bricks that can float on water, reducing weight on the structure. The foundation uses the sandbox technique, in which sand is laid beneath the temple to absorb earthquake shocks, which is thought to be why the temple has survived centuries, including earthquakes, in good condition."
+    },
+    {
+      "key": "famous_for",
+      "title": "Famous For",
+      "text": "Ramappa Temple was inscribed as a UNESCO World Heritage Site in 2021, and is famous for its sculpture, its engineering features and its link to the Kakatiya dynasty. Next to the temple lies the Ramappa Lake, a large reservoir created in the same period, which adds to the scenery of the site."
+    }
+  ],
+  "visitor_tips": [
+    "Visitors should plan about two hours at the temple and may add the Laknavaram Lake and the Warangal region, where the Warangal Fort and the Thousand Pillar Temple are also Kakatiya monuments.",
+    "The temple is a few hours by road from Hyderabad.",
+    "Check opening times and rules with official sources, and dress modestly."
+  ],
+  "quick_facts": [
+    {
+      "label": "Location",
+      "value": "Palampet, Telangana"
+    },
+    {
+      "label": "Era",
+      "value": "Kakatiya, 1213"
+    },
+    {
+      "label": "Built by",
+      "value": "Recherla Rudra under Ganapati Deva"
+    },
+    {
+      "label": "Type",
+      "value": "temple"
+    },
+    {
+      "label": "UNESCO",
+      "value": "UNESCO World Heritage Site (2021)"
+    }
+  ]
+}

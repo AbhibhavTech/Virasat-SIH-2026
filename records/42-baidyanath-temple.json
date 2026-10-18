@@ -1,0 +1,114 @@
+{
+  "slug": "baidyanath-temple",
+  "list_no": 42,
+  "name": "Baidyanath Jyotirlinga Temple Complex",
+  "alt_names": [],
+  "category": "temple",
+  "state_ut": "Jharkhand",
+  "district_city": "Deoghar",
+  "coordinates": {
+    "lat": 24.4925,
+    "lng": 86.6997,
+    "precision": "approximate - verify"
+  },
+  "era": "Ancient origin; present structure date to be verified",
+  "builder": "To be verified",
+  "authenticity": {
+    "unesco_status": "not_listed",
+    "unesco_ref_id": null,
+    "unesco_inscribed_year": null,
+    "unesco_site_name": null,
+    "unesco_url": null,
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "outline",
+  "overview": "Jyotirlinga temple complex at Deoghar and a major pilgrimage site.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Main shrine",
+      "description": "Baba Baidyanath temple"
+    },
+    {
+      "title": "Temple complex",
+      "description": "Group of 21 temples"
+    },
+    {
+      "title": "Shravani Mela",
+      "description": "Annual pilgrimage"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "TBD",
+      "event": "Timeline to be verified"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Naulakha Mandir",
+      "related_slug": null
+    },
+    {
+      "name": "Tapovan Hills",
+      "related_slug": null
+    },
+    {
+      "name": "Basukinath",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ],
+  "tagline": "Jyotirlinga temple complex at Deoghar and a major pilgrimage site.",
+  "sections": [],
+  "visitor_tips": [],
+  "quick_facts": [
+    {
+      "label": "Location",
+      "value": "Deoghar, Jharkhand"
+    },
+    {
+      "label": "Era",
+      "value": "Ancient origin; present structure date to be verified"
+    },
+    {
+      "label": "Built by",
+      "value": "To be verified"
+    },
+    {
+      "label": "Type",
+      "value": "temple"
+    },
+    {
+      "label": "UNESCO",
+      "value": "Not a UNESCO site"
+    }
+  ]
+}

@@ -102,6 +102,8 @@ export function generateSmartItinerary(state: TripMemoryState): GeneratedTripPla
             ...(c.tourist_places || []),
           ];
           for (const p of allCityPlaces) {
+            // Legacy generated placeholders are not named visitor attractions.
+            if (/^Celebrated highlight of /i.test(p.summary || '') || /Heritage Fort Complex$/i.test(p.name || '')) continue;
             if ((p.name || '').trim().toLowerCase() === c.name.trim().toLowerCase()) continue;
             availablePlaces.push({
               id: p.id,

@@ -1,0 +1,169 @@
+{
+  "slug": "fatehpur-sikri",
+  "list_no": 2,
+  "name": "Fatehpur Sikri City of Victory",
+  "alt_names": [],
+  "category": "city",
+  "state_ut": "Uttar Pradesh",
+  "district_city": "Agra",
+  "coordinates": {
+    "lat": 27.094,
+    "lng": 77.661,
+    "precision": "approximate - verify"
+  },
+  "era": "Mughal, 1571-1585",
+  "builder": "Akbar",
+  "authenticity": {
+    "unesco_status": "inscribed",
+    "unesco_ref_id": "255",
+    "unesco_inscribed_year": 1986,
+    "unesco_site_name": null,
+    "unesco_url": "https://whc.unesco.org/en/list/255",
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "overview_sectioned",
+  "overview": "Akbar's planned capital in red sandstone, abandoned within about 15 years.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Buland Darwaza",
+      "description": "Monumental southern gateway of the Jama Masjid"
+    },
+    {
+      "title": "Jama Masjid",
+      "description": "Congregational mosque at the heart of the city"
+    },
+    {
+      "title": "Tomb of Salim Chishti",
+      "description": "White marble tomb of the Sufi saint with latticework"
+    },
+    {
+      "title": "Panch Mahal",
+      "description": "Five-tiered open pavilion"
+    },
+    {
+      "title": "Diwan-i-Khas",
+      "description": "Hall of private audience with a central carved pillar"
+    },
+    {
+      "title": "Jodha Bai's Palace",
+      "description": "Large royal residence blending Gujarati and Rajput styles"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "1571",
+      "event": "Akbar begins building the new capital"
+    },
+    {
+      "year": "c.1573-75",
+      "event": "Buland Darwaza built after the Gujarat campaign"
+    },
+    {
+      "year": "c.1585",
+      "event": "Court leaves the city"
+    },
+    {
+      "year": "1986",
+      "event": "UNESCO World Heritage inscription"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Taj Mahal",
+      "related_slug": null
+    },
+    {
+      "name": "Agra Fort",
+      "related_slug": null
+    },
+    {
+      "name": "Keoladeo National Park, Bharatpur",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "Fatehpur Sikri City of Victory - World Heritage List",
+      "publisher": "UNESCO",
+      "url": "https://whc.unesco.org/en/list/255"
+    },
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ],
+  "tagline": "Akbar's planned capital in red sandstone, abandoned within about 15 years.",
+  "sections": [
+    {
+      "key": "history",
+      "title": "Origins & History",
+      "text": "Fatehpur Sikri, about 40 km from Agra in Uttar Pradesh, is a planned Mughal capital built almost entirely in red sandstone. Emperor Akbar founded it from 1571 near the village of Sikri, home to the Sufi saint Salim Chishti, who had foretold the birth of Akbar's long-awaited son, the future emperor Jahangir. Named Fatehpur, the City of Victory, after the conquest of Gujarat, it served as the imperial capital for only about fifteen years before the court moved away around 1585, which is why it survives so intact."
+    },
+    {
+      "key": "beauty",
+      "title": "Beauty & Atmosphere",
+      "text": "The beauty of the city lies in its warm red stone, finely carved screens and open courtyards. Akbar's architects drew on Persian, Indian and Islamic traditions, and the buildings borrow from Gujarati, Rajput and Timurid styles. The result reflects Akbar's policy of bringing different cultures together at court, in a city that also hosted debates among scholars of many faiths at the Ibadat Khana."
+    },
+    {
+      "key": "architecture",
+      "title": "Architecture & Highlights",
+      "text": "The Jama Masjid is the great congregational mosque, entered through the Buland Darwaza, the Gate of Magnificence, about 54 metres high and among the tallest gateways in the world. In the mosque courtyard stands the white marble tomb of Salim Chishti, famous for its delicate jali lattice screens, which pilgrims of many faiths still visit to tie threads and make wishes. In the palace area, the Panch Mahal is a five-storey pavilion of open columned levels, the Diwan-i-Khas has a remarkable carved central pillar, and Jodha Bai's Palace is the largest residence, blending Gujarati and Rajput motifs. Other highlights include Birbal's House, the Hiran Minar and the Anup Talao pool."
+    },
+    {
+      "key": "famous_for",
+      "title": "Famous For",
+      "text": "Fatehpur Sikri was inscribed as a UNESCO World Heritage Site in 1986 and is celebrated as one of the best preserved examples of Mughal city planning. Its abandonment is often linked to water shortage and political shifts, though the exact causes are still discussed by historians."
+    }
+  ],
+  "visitor_tips": [
+    "Visitors should plan two to three hours, wear comfortable shoes, and be wary of unofficial guides at the gates.",
+    "The mosque requires modest dress and removal of shoes.",
+    "Check current timings and ticket rules with official sources before visiting.",
+    "It combines easily with a trip to Agra."
+  ],
+  "quick_facts": [
+    {
+      "label": "Location",
+      "value": "Agra, Uttar Pradesh"
+    },
+    {
+      "label": "Era",
+      "value": "Mughal, 1571-1585"
+    },
+    {
+      "label": "Built by",
+      "value": "Akbar"
+    },
+    {
+      "label": "Type",
+      "value": "city"
+    },
+    {
+      "label": "UNESCO",
+      "value": "UNESCO World Heritage Site (1986)"
+    }
+  ]
+}

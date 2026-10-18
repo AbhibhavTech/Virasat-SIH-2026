@@ -1,0 +1,151 @@
+{
+  "slug": "shalimar-bagh",
+  "list_no": 10,
+  "name": "Shalimar Bagh Mughal Garden",
+  "alt_names": [],
+  "category": "garden",
+  "state_ut": "Jammu and Kashmir",
+  "district_city": "Srinagar",
+  "coordinates": {
+    "lat": 34.1486,
+    "lng": 74.8756,
+    "precision": "approximate - verify"
+  },
+  "era": "Mughal, 1619",
+  "builder": "Jahangir for Nur Jahan",
+  "authenticity": {
+    "unesco_status": "tentative",
+    "unesco_ref_id": null,
+    "unesco_inscribed_year": null,
+    "unesco_site_name": null,
+    "unesco_url": null,
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "overview_sectioned",
+  "overview": "Terraced Mughal garden on Dal Lake with chinar trees and water channels.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Terraced layout",
+      "description": "Three terraces rising from the lake"
+    },
+    {
+      "title": "Central water channel",
+      "description": "Axis of fountains and cascades"
+    },
+    {
+      "title": "Black marble pavilion",
+      "description": "Pavilion on the upper terrace"
+    },
+    {
+      "title": "Diwan-i-Aam",
+      "description": "Public audience hall in the garden"
+    },
+    {
+      "title": "Chinar trees",
+      "description": "Shade trees characteristic of Kashmir"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "1619",
+      "event": "Garden laid out"
+    },
+    {
+      "year": "1630",
+      "event": "Extended under Zafar Khan, governor of Kashmir"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Nishat Bagh",
+      "related_slug": null
+    },
+    {
+      "name": "Dal Lake",
+      "related_slug": null
+    },
+    {
+      "name": "Hazratbal Shrine",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ],
+  "tagline": "Terraced Mughal garden on Dal Lake with chinar trees and water channels.",
+  "sections": [
+    {
+      "key": "history",
+      "title": "Origins & History",
+      "text": "Shalimar Bagh is a terraced Mughal garden on the northeastern shore of Dal Lake in Srinagar, Jammu and Kashmir, laid out in 1619 by the emperor Jahangir for his wife Nur Jahan. Its original name was Farah Baksh, the Delight Giver. The garden was extended in 1630 by Zafar Khan, the governor of Kashmir under Shah Jahan, and it remains among the grandest examples of the gardens that the Mughals loved to build in the cool Kashmir valley."
+    },
+    {
+      "key": "beauty",
+      "title": "Beauty & Atmosphere",
+      "text": "The beauty of the garden lies in its simple, powerful design. A central water channel runs down the garden's length through three terraces, fed by a stream from the mountains, with fountains, stone chutes known as chadars and shallow pools along its course. Rows of tall chinar trees and flowerbeds frame the water, and the view opens toward Dal Lake and the mountains beyond. In autumn the chinar leaves turn red and gold, making the garden especially photogenic, and spring brings fresh blossoms."
+    },
+    {
+      "key": "architecture",
+      "title": "Architecture & Highlights",
+      "text": "Each terrace had a specific purpose in keeping with Mughal court life. The lowest was the public garden, with the Diwan-i-Aam, a hall of public audience. The middle terrace held the Diwan-i-Khas, for private audiences with the emperor. The uppermost terrace was reserved for the royal women and contains a pavilion of black marble, set above water channels and surrounded by fountains. Together the terraces create a sense of rising privacy and splendour."
+    },
+    {
+      "key": "famous_for",
+      "title": "Famous For",
+      "text": "Shalimar Bagh illustrates the Mughal ideal of the charbagh garden as a vision of paradise on earth, adapted to the sloping mountain landscape. It is not currently an inscribed UNESCO World Heritage Site, but India has put forward the Mughal Gardens of Kashmir for UNESCO's tentative list. It is a protected and carefully maintained site."
+    }
+  ],
+  "visitor_tips": [
+    "Visitors can easily spend an hour or two here, ideally in the morning or late afternoon.",
+    "Nishat Bagh, Chashme Shahi and the Dal Lake boat rides are nearby and make a good half-day circuit.",
+    "Check opening hours and ticket rules with official sources before visiting, and confirm local travel conditions in the valley."
+  ],
+  "quick_facts": [
+    {
+      "label": "Location",
+      "value": "Srinagar, Jammu and Kashmir"
+    },
+    {
+      "label": "Era",
+      "value": "Mughal, 1619"
+    },
+    {
+      "label": "Built by",
+      "value": "Jahangir for Nur Jahan"
+    },
+    {
+      "label": "Type",
+      "value": "garden"
+    },
+    {
+      "label": "UNESCO",
+      "value": "On UNESCO Tentative List"
+    }
+  ]
+}

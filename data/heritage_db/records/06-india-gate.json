@@ -1,0 +1,155 @@
+{
+  "slug": "india-gate",
+  "list_no": 6,
+  "name": "India Gate & National War Memorial",
+  "alt_names": [],
+  "category": "memorial",
+  "state_ut": "Delhi",
+  "district_city": "New Delhi",
+  "coordinates": {
+    "lat": 28.6129,
+    "lng": 77.2295,
+    "precision": "approximate - verify"
+  },
+  "era": "British India, 1921-1931",
+  "builder": "Edwin Lutyens",
+  "authenticity": {
+    "unesco_status": "not_listed",
+    "unesco_ref_id": null,
+    "unesco_inscribed_year": null,
+    "unesco_site_name": null,
+    "unesco_url": null,
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "overview_sectioned",
+  "overview": "War memorial arch for Indian soldiers lost in the First World War and Third Anglo-Afghan War.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "The arch",
+      "description": "About 42 m high memorial arch"
+    },
+    {
+      "title": "National War Memorial",
+      "description": "Memorial for post-independence armed forces, inaugurated 2019"
+    },
+    {
+      "title": "Canopy",
+      "description": "Canopy housing a statue of Netaji Subhas Chandra Bose (2022)"
+    },
+    {
+      "title": "Kartavya Path",
+      "description": "Ceremonial axis leading to the memorial"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "1921",
+      "event": "Foundation stone laid"
+    },
+    {
+      "year": "1931",
+      "event": "Memorial inaugurated"
+    },
+    {
+      "year": "1971",
+      "event": "Amar Jawan Jyoti established"
+    },
+    {
+      "year": "2019",
+      "event": "National War Memorial inaugurated"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "National War Memorial",
+      "related_slug": null
+    },
+    {
+      "name": "Purana Qila",
+      "related_slug": null
+    },
+    {
+      "name": "Rashtrapati Bhavan",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ],
+  "tagline": "War memorial arch for Indian soldiers lost in the First World War and Third Anglo-Afghan War.",
+  "sections": [
+    {
+      "key": "history",
+      "title": "Origins & History",
+      "text": "India Gate, standing at the heart of New Delhi's ceremonial axis, is a 42 metre high war memorial arch designed by the British architect Edwin Lutyens. It commemorates the Indian soldiers of the British Indian Army who died in the First World War and the Third Anglo-Afghan War, with the names of over thirteen thousand of them inscribed on its walls. Its foundation stone was laid in 1921 and it was inaugurated in 1931 as part of the new imperial capital."
+    },
+    {
+      "key": "beauty",
+      "title": "Beauty & Atmosphere",
+      "text": "The monument is built mainly of red and pale sandstone and granite, and its design draws on classical Roman triumphal arches, adapted to Indian materials and proportions. The arch stands at the eastern end of the broad avenue now called Kartavya Path, with long lawns, fountains and reflecting canals on either side that make it one of the city's favourite public spaces, especially in the evening when it is lit up."
+    },
+    {
+      "key": "architecture",
+      "title": "Architecture & Highlights",
+      "text": "The area around the arch has gained new meaning in independent India. The Amar Jawan Jyoti, an eternal flame set up in 1971 to honour soldiers killed in the war with Pakistan, was merged in 2022 with the flame at the National War Memorial, opened in 2019 nearby. The memorial is arranged in concentric circles, with walls carrying the names of the armed forces' fallen. A canopy behind the arch, once home to a statue of King George V, now holds a large statue of Subhas Chandra Bose, unveiled in 2022. The Republic Day parade passes along Kartavya Path each January."
+    },
+    {
+      "key": "famous_for",
+      "title": "Famous For",
+      "text": "India Gate is not a UNESCO World Heritage Site, but it is among the best known national landmarks of India and a symbol of remembrance, and also a lively place for families and visitors."
+    }
+  ],
+  "visitor_tips": [
+    "Plan for early evening, when lighting, cool air and local snack vendors make for a pleasant visit.",
+    "Nearby attractions include the National War Memorial, the Purana Qila, the National Museum and Rashtrapati Bhavan.",
+    "Security checks and event closures can apply, so check current access with official sources before travelling."
+  ],
+  "quick_facts": [
+    {
+      "label": "Location",
+      "value": "New Delhi, Delhi"
+    },
+    {
+      "label": "Era",
+      "value": "British India, 1921-1931"
+    },
+    {
+      "label": "Built by",
+      "value": "Edwin Lutyens"
+    },
+    {
+      "label": "Type",
+      "value": "memorial"
+    },
+    {
+      "label": "UNESCO",
+      "value": "Not a UNESCO site"
+    }
+  ]
+}

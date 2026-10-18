@@ -1,0 +1,126 @@
+{
+  "slug": "rumtek-monastery",
+  "list_no": 45,
+  "name": "Rumtek Monastery (Dharma Chakra Centre)",
+  "alt_names": [],
+  "category": "monastery",
+  "state_ut": "Sikkim",
+  "district_city": "Gangtok",
+  "coordinates": {
+    "lat": 27.2879,
+    "lng": 88.5622,
+    "precision": "approximate - verify"
+  },
+  "era": "20th c. (1960s)",
+  "builder": "16th Karmapa Rangjung Rigpe Dorje",
+  "authenticity": {
+    "unesco_status": "not_listed",
+    "unesco_ref_id": null,
+    "unesco_inscribed_year": null,
+    "unesco_site_name": null,
+    "unesco_url": null,
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "outline",
+  "overview": "Seat of the Karma Kagyu lineage in exile, near Gangtok.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Main shrine",
+      "description": "Prayer hall"
+    },
+    {
+      "title": "Golden Stupa",
+      "description": "Holds relics of the 16th Karmapa"
+    },
+    {
+      "title": "Karma Shri Nalanda Institute",
+      "description": "Monastic school"
+    },
+    {
+      "title": "Thangkas",
+      "description": "Painted scrolls"
+    },
+    {
+      "title": "Cham dance",
+      "description": "Annual festival"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "1959",
+      "event": "Karmapa leaves Tibet"
+    },
+    {
+      "year": "1962-1966",
+      "event": "Present monastery built"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Gangtok",
+      "related_slug": null
+    },
+    {
+      "name": "Enchey Monastery",
+      "related_slug": null
+    },
+    {
+      "name": "Tsomgo Lake",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ],
+  "tagline": "Seat of the Karma Kagyu lineage in exile, near Gangtok.",
+  "sections": [],
+  "visitor_tips": [],
+  "quick_facts": [
+    {
+      "label": "Location",
+      "value": "Gangtok, Sikkim"
+    },
+    {
+      "label": "Era",
+      "value": "20th c. (1960s)"
+    },
+    {
+      "label": "Built by",
+      "value": "16th Karmapa Rangjung Rigpe Dorje"
+    },
+    {
+      "label": "Type",
+      "value": "monastery"
+    },
+    {
+      "label": "UNESCO",
+      "value": "Not a UNESCO site"
+    }
+  ]
+}

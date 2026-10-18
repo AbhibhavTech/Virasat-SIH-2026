@@ -1,0 +1,76 @@
+import assert from 'node:assert/strict';
+import express from 'express';
+import jwt from 'jsonwebtoken';
+import { optionalAuth, JWT_SECRET } from '../server/src/middleware/auth';
+import { workspaceRouter, registerConversation, buildDraft, sessionKey } from '../ai/routes/workspace';
+import { getConversationState } from '../ai/engine/conversationMemory';
+import { understandTravel } from '../ai/engine/travelUnderstanding';
+import { buildContextPayload } from '../ai/context/buildContextPayload';
+import { executeTool } from '../ai/config/toolRegistry';
+import { execute as hotels } from '../ai/tools/searchHotels';
+import { aiError } from '../src/services/api';
+import { db } from '../server/src/db/client';
+
+assert.equal(aiError({ error:'MODEL_HTTP_429', provider_error:{retry_after_seconds:16,category:'rate_limit'} }).retryAfterSeconds,16);
+assert.equal(aiError({ error:'RATE_LIMIT' },new Response('',{headers:{'Retry-After':'21'}})).retryAfterSeconds,21);
+assert.equal(aiError({ error:'MODEL_QUOTA_EXHAUSTED',provider_error:{category:'billing'} }).category,'billing');
+const context = buildContextPayload({ body: { city: 'Mumbai', selectedCity: 'Mumbai' }, query: {}, headers: {} } as any);
+assert.equal(context.userLocation.city, undefined);
+const state = getConversationState('upgrade-fixture');
+understandTravel('i am in jaipur right now which hotel is the best?', state, context);
+assert.equal(state.currentCity, 'Jaipur'); assert.equal(context.userLocation.city, 'Jaipur');
+understandTravel('can u plan my trip for mumbai about 5 days luxury packet', state, context);
+assert.equal(state.destination, 'Mumbai'); assert.equal(state.duration_days, 5); assert.equal(state.travel_style, 'luxury');
+const unknown = buildContextPayload({ body: { selectedCity: 'Mumbai' }, query: {}, headers: {} } as any);
+understandTravel('travel to Srinagar from my location', getConversationState('unknown-location'), unknown);
+assert.equal((await executeTool('getTransportOptions', { origin: 'Mumbai', destination: 'Srinagar' }, unknown)).error, 'ORIGIN_REQUIRED');
+const hotelResult = await hotels({ city: 'Jaipur', limit: 3 });
+assert.equal(hotelResult.live_inventory_connected, false);
+assert.ok(hotelResult.hotels.every((hotel: any) => hotel.rating === undefined && hotel.availability === 'not checked' && hotel.verification_status));
+
+const app = express(); app.use(express.json()); app.use(optionalAuth);
+app.post('/fixture/:id', (req,res) => { const key = registerConversation(req,String(req.params.id),'Fixture trip'); const memory = getConversationState(key); Object.assign(memory, { destination:'Mumbai',duration_days:5,travel_style:'luxury' }); memory.messages=[{role:'user',content:'Plan Mumbai'}]; res.json({ draft: buildDraft(key,memory,'Plan Mumbai for 5 days') }); });
+app.use(workspaceRouter);
+const server = app.listen(0); await new Promise<void>(resolve=>server.once('listening',resolve));
+const url = `http://127.0.0.1:${(server.address() as any).port}`;
+const alice = jwt.sign({id:'alice',role:'traveller'},JWT_SECRET);
+const bob = jwt.sign({id:'bob',role:'traveller'},JWT_SECRET);
+async function call(path: string, token: string, method='GET', body?: any, owner='') {
+  const result = await fetch(url+path,{method,headers:{'content-type':'application/json',...(token?{authorization:`Bearer ${token}`} : {}), ...(owner?{'x-virasat-chat-owner':owner}:{})},body:body?JSON.stringify(body):undefined});
+  return {status:result.status,body:await result.json()};
+}
+const create = db.itineraries.create; const init = db.init;
+let savedCount = 0; let savedOwner = ''; let savedDays: any;
+db.init = async () => {};
+db.itineraries.create = async (record,days) => { savedCount++; savedOwner=record.user_id; savedDays=days; return record; };
+try {
+  const fixture = await call('/fixture/same',alice,'POST'); const draft = fixture.body.draft;
+  assert.equal(draft.days.length,5);
+  assert.equal((await call('/conversations/same',bob)).status,404);
+  assert.equal((await call('/conversations/same','')).status,404);
+  assert.equal((await call('/conversations',alice)).body.conversations.length,1);
+  assert.equal((await call('/conversations/same/draft/confirm','', 'POST',{confirmed:true,revision:1})).status,401);
+  assert.equal((await call('/conversations/same/draft/confirm',alice,'POST',{confirmed:false,revision:1})).status,409);
+  assert.equal((await call('/conversations/same/draft',alice,'PATCH',{revision:1,day:2,period:'morning_cluster',place_id:'invented'})).status,400);
+  const edited = await call('/conversations/same/draft',alice,'PATCH',{revision:1,day:2,period:'morning_cluster',place_id:null});
+  assert.equal(edited.status,200); assert.equal(edited.body.draft.revision,2);
+  assert.equal((await call('/conversations/same/draft/confirm',alice,'POST',{confirmed:true,revision:1})).status,409);
+  assert.equal((await call('/conversations/same/draft/confirm',alice,'POST',{confirmed:true,revision:2})).status,200);
+  await call('/conversations/same/draft/confirm',alice,'POST',{confirmed:true,revision:2});
+  assert.equal(savedCount,1); assert.equal(savedOwner,'alice'); assert.equal(savedDays.length,5);
+  await call('/conversations/same/clear-location',alice,'POST');
+  assert.deepEqual((await call('/conversations/same',alice)).body.messages,[]);
+  await call('/conversations/same',alice,'DELETE');
+  assert.equal((await call('/conversations/same',alice)).status,404);
+  const ownerA='a'.repeat(36), ownerB='b'.repeat(36);
+  await call('/fixture/guest','', 'POST',{},ownerA);
+  assert.equal((await call('/conversations/guest','','GET',undefined,ownerB)).status,404);
+  assert.equal((await call('/conversations/guest','','GET',undefined,ownerA)).status,200);
+  assert.equal((await call('/conversations/guest/claim',alice,'POST',{},ownerB)).status,409);
+  assert.equal((await call('/conversations/guest/claim',alice,'POST',{},ownerA)).status,200);
+  assert.equal((await call('/conversations/guest',alice)).status,200);
+  assert.equal((await call('/conversations/guest','','GET',undefined,ownerA)).status,404);
+  await call('/conversations','','DELETE',undefined,ownerA);
+  assert.equal((await call('/conversations','','GET',undefined,ownerA)).body.conversations.length,0);
+  console.log('PASS: location/destination separation, luxury trip extraction, no assumed origin, hotel provenance, scoped history, deletion, editable draft, ownership, confirmation, stale revision and idempotent save. No live model calls.');
+} finally { db.itineraries.create=create; db.init=init; await new Promise<void>(resolve=>server.close(()=>resolve())); }

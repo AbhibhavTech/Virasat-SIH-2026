@@ -97,9 +97,11 @@ export async function execute(args: {
     transit_options: {
       train: {
         available: railRoute.polyline.length >= 2,
-        summary: `Track-aligned rail corridor via ${railRoute.corridorName || 'the available Indian rail network'}.`,
-        approx_duration: railRoute.durationFormatted,
-        stations: railRoute.stops,
+        schedule_verified: false, direct_service_verified: false,
+        summary: 'Mapped rail corridor only. Direct trains, interchange stations and service availability have not been verified.',
+        approx_duration: 'Check an actual train timetable',
+        mapped_stops: railRoute.stops,
+        verification_url: 'https://www.irctc.co.in/',
         notes: 'This is route geometry and a planning estimate. Confirm the train, station, timetable and seat availability on IRCTC.',
       },
       air: {

@@ -1,0 +1,172 @@
+{
+  "slug": "red-fort",
+  "list_no": 4,
+  "name": "Red Fort (Lal Qila)",
+  "alt_names": [],
+  "category": "fort",
+  "state_ut": "Delhi",
+  "district_city": "Old Delhi",
+  "coordinates": {
+    "lat": 28.6562,
+    "lng": 77.241,
+    "precision": "approximate - verify"
+  },
+  "era": "Mughal, 1639-1648",
+  "builder": "Shah Jahan",
+  "authenticity": {
+    "unesco_status": "inscribed",
+    "unesco_ref_id": "231",
+    "unesco_inscribed_year": 2007,
+    "unesco_site_name": "Red Fort Complex",
+    "unesco_url": "https://whc.unesco.org/en/list/231",
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "overview_sectioned",
+  "overview": "The Mughal imperial residence of Shahjahanabad and venue of India's Independence Day address.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Lahori Gate",
+      "description": "Main entrance and national flag-hoisting site"
+    },
+    {
+      "title": "Chhatta Chowk",
+      "description": "Vaulted covered bazaar"
+    },
+    {
+      "title": "Diwan-i-Aam",
+      "description": "Hall of public audience"
+    },
+    {
+      "title": "Diwan-i-Khas",
+      "description": "Hall of private audience"
+    },
+    {
+      "title": "Rang Mahal",
+      "description": "Palace of the royal women"
+    },
+    {
+      "title": "Moti Masjid",
+      "description": "Marble mosque added under Aurangzeb"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "1638-39",
+      "event": "Foundation and start of construction"
+    },
+    {
+      "year": "1648",
+      "event": "Fort completed"
+    },
+    {
+      "year": "1857",
+      "event": "Taken over by the British after the uprising"
+    },
+    {
+      "year": "1947",
+      "event": "National flag hoisted after Independence"
+    },
+    {
+      "year": "2007",
+      "event": "UNESCO inscription"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Jama Masjid",
+      "related_slug": null
+    },
+    {
+      "name": "Chandni Chowk",
+      "related_slug": null
+    },
+    {
+      "name": "Raj Ghat",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "Red Fort Complex - World Heritage List",
+      "publisher": "UNESCO",
+      "url": "https://whc.unesco.org/en/list/231"
+    },
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ],
+  "tagline": "The Mughal imperial residence of Shahjahanabad and venue of India's Independence Day address.",
+  "sections": [
+    {
+      "key": "history",
+      "title": "Origins & History",
+      "text": "The Red Fort, known in Delhi as the Lal Qila, is the great fortress-palace built by the Mughal emperor Shah Jahan when he shifted his capital from Agra to a new city, Shahjahanabad, in the 1630s. Construction began around 1638 to 1639 and the fort, originally called Qila-i-Mubarak, the Blessed Fort, was completed in 1648. For about two centuries it was the seat of Mughal power and the setting for imperial ceremonies, durbars and festivals."
+    },
+    {
+      "key": "beauty",
+      "title": "Beauty & Atmosphere",
+      "text": "Its beauty lies in the scale of its red sandstone walls, which run for about 2.5 km and rise to around 33 metres on the city side, enclosing an irregular octagonal plan. Inside, white marble pavilions, carved arches, inlaid floral work and channels of water, once fed by a canal called the Nahr-i-Bihisht, the Stream of Paradise, recreated the idea of a garden paradise. The architecture is a high point of Mughal design, combining Persian, Timurid and Indian elements."
+    },
+    {
+      "key": "architecture",
+      "title": "Architecture & Highlights",
+      "text": "The main entrance is the Lahori Gate, leading to the vaulted bazaar of Chhatta Chowk and then the Naubat Khana, where drums were played. The Diwan-i-Aam was the hall of public audience, while the Diwan-i-Khas, the hall of private audience, was the most opulent chamber, once home to the Peacock Throne before it was carried off by Nader Shah in 1739. Other highlights include the Rang Mahal, the Khas Mahal, the Hammam, the Moti Masjid added under Aurangzeb, and the Hayat Baksh Bagh garden."
+    },
+    {
+      "key": "famous_for",
+      "title": "Famous For",
+      "text": "The fort also marks turning points in modern history. It was taken over by the British after the 1857 uprising, saw the trials of Indian National Army officers after the Second World War, and on 15 August 1947 the Indian flag was raised here. Every Independence Day the Prime Minister addresses the nation from its ramparts. It was inscribed as part of the Red Fort Complex as a UNESCO World Heritage Site in 2007."
+    }
+  ],
+  "visitor_tips": [
+    "Visitors should allow two to three hours.",
+    "Museums inside cover Indian history, and an evening sound and light show narrates the fort's story.",
+    "Check opening days, ticket rules and security restrictions with official sources before visiting."
+  ],
+  "quick_facts": [
+    {
+      "label": "Location",
+      "value": "Old Delhi, Delhi"
+    },
+    {
+      "label": "Era",
+      "value": "Mughal, 1639-1648"
+    },
+    {
+      "label": "Built by",
+      "value": "Shah Jahan"
+    },
+    {
+      "label": "Type",
+      "value": "fort"
+    },
+    {
+      "label": "UNESCO",
+      "value": "UNESCO World Heritage Site (2007)"
+    }
+  ]
+}

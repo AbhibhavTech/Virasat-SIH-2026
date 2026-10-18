@@ -1,0 +1,164 @@
+{
+  "slug": "hoysala-temples",
+  "list_no": 25,
+  "name": "Sacred Ensembles of the Hoysalas",
+  "alt_names": [],
+  "category": "temples",
+  "state_ut": "Karnataka",
+  "district_city": "Hassan",
+  "coordinates": {
+    "lat": 13.1658,
+    "lng": 75.865,
+    "precision": "approximate - verify"
+  },
+  "era": "Hoysala, 12th-13th c.",
+  "builder": "Hoysala kings, including Vishnuvardhana",
+  "authenticity": {
+    "unesco_status": "inscribed",
+    "unesco_ref_id": "1670",
+    "unesco_inscribed_year": 2023,
+    "unesco_site_name": null,
+    "unesco_url": "https://whc.unesco.org/en/list/1670",
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "overview_sectioned",
+  "overview": "Belur, Halebidu and Somanathapura temples with highly detailed soapstone carving.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Chennakeshava Temple, Belur",
+      "description": "Vishnu temple"
+    },
+    {
+      "title": "Hoysaleswara Temple, Halebidu",
+      "description": "Twin-shrine temple"
+    },
+    {
+      "title": "Keshava Temple, Somanathapura",
+      "description": "Star-shaped plan"
+    },
+    {
+      "title": "Madanika figures",
+      "description": "Carved bracket figures"
+    },
+    {
+      "title": "Soapstone friezes",
+      "description": "Dense wall carving"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "1117",
+      "event": "Belur temple consecrated"
+    },
+    {
+      "year": "c.1121",
+      "event": "Halebidu temple begun"
+    },
+    {
+      "year": "1258",
+      "event": "Somanathapura temple built"
+    },
+    {
+      "year": "2023",
+      "event": "UNESCO inscription"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Shravanabelagola",
+      "related_slug": null
+    },
+    {
+      "name": "Hassan",
+      "related_slug": null
+    },
+    {
+      "name": "Chikmagalur",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "Sacred Ensembles of the Hoysalas - World Heritage List",
+      "publisher": "UNESCO",
+      "url": "https://whc.unesco.org/en/list/1670"
+    },
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ],
+  "tagline": "Belur, Halebidu and Somanathapura temples with highly detailed soapstone carving.",
+  "sections": [
+    {
+      "key": "history",
+      "title": "Origins & History",
+      "text": "The Sacred Ensembles of the Hoysalas in Karnataka are a group of temples, principally at Belur, Halebidu and Somanathapura, that show the finest of Hoysala temple art in the 12th and 13th centuries. The Hoysala dynasty ruled much of southern Karnataka from around the 11th century to the 14th century, and its kings, such as Vishnuvardhana, were great patrons of architecture. The Chennakeshava Temple at Belur was consecrated in 1117, the Hoysaleswara Temple at Halebidu was begun around 1121, and the Keshava Temple at Somanathapura was built in 1258."
+    },
+    {
+      "key": "beauty",
+      "title": "Beauty & Atmosphere",
+      "text": "The beauty of these temples lies in the intricate carving. They are made of soapstone, a fine-grained stone that is soft when quarried and hardens with time, allowing sculptors to carve extraordinarily fine detail. Entire walls are covered in horizontal bands showing rows of elephants, horses, lions, scrolls and scenes from the Ramayana, Mahabharata and Puranas. Graceful bracket figures, known as madanikas, show women in elegant poses, and the pillars of the halls at Belur were turned on lathes to give them a polished look."
+    },
+    {
+      "key": "architecture",
+      "title": "Architecture & Highlights",
+      "text": "Architecturally, Hoysala temples are known for their star-shaped plans on high platforms, which create many corners and surfaces for carving, and their elaborate towers. The Chennakeshava Temple is still a living place of worship. The Hoysaleswara Temple has two large shrines dedicated to Shiva, with a pair of Nandi pavilions, and was never fully completed. The Keshava Temple at Somanathapura is a near-perfect example of a three-shrine design with a complete outer wall of sculpture."
+    },
+    {
+      "key": "famous_for",
+      "title": "Famous For",
+      "text": "The ensembles were inscribed as a UNESCO World Heritage Site in 2023. They are famous for the exceptional skill of Hoysala sculptors, who sometimes signed their work, and for their distinctive architecture."
+    }
+  ],
+  "visitor_tips": [
+    "Visitors should allow a full day for Belur and Halebidu, which are about 16 km apart near Hassan, and a separate half day for Somanathapura.",
+    "Nearby are Shravanabelagola and Chikmagalur.",
+    "Dress modestly in the temples, and check timings and rules with official sources."
+  ],
+  "quick_facts": [
+    {
+      "label": "Location",
+      "value": "Hassan, Karnataka"
+    },
+    {
+      "label": "Era",
+      "value": "Hoysala, 12th-13th c."
+    },
+    {
+      "label": "Built by",
+      "value": "Hoysala kings, including Vishnuvardhana"
+    },
+    {
+      "label": "Type",
+      "value": "temples"
+    },
+    {
+      "label": "UNESCO",
+      "value": "UNESCO World Heritage Site (2023)"
+    }
+  ]
+}

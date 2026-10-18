@@ -1,0 +1,130 @@
+{
+  "slug": "victoria-memorial",
+  "list_no": 41,
+  "name": "Victoria Memorial Hall",
+  "alt_names": [],
+  "category": "memorial",
+  "state_ut": "West Bengal",
+  "district_city": "Kolkata",
+  "coordinates": {
+    "lat": 22.5448,
+    "lng": 88.3426,
+    "precision": "approximate - verify"
+  },
+  "era": "British India, 1906-1921",
+  "builder": "William Emerson",
+  "authenticity": {
+    "unesco_status": "not_listed",
+    "unesco_ref_id": null,
+    "unesco_inscribed_year": null,
+    "unesco_site_name": null,
+    "unesco_url": null,
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "outline",
+  "overview": "White marble memorial to Queen Victoria.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Central dome",
+      "description": "With the Angel of Victory"
+    },
+    {
+      "title": "Makrana marble",
+      "description": "White marble construction"
+    },
+    {
+      "title": "Queen's Way",
+      "description": "Approach"
+    },
+    {
+      "title": "Museum galleries",
+      "description": "Colonial history"
+    },
+    {
+      "title": "Gardens",
+      "description": "Surrounding park"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "1901",
+      "event": "Queen Victoria dies"
+    },
+    {
+      "year": "1906",
+      "event": "Foundation stone laid"
+    },
+    {
+      "year": "1921",
+      "event": "Opened"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "St Paul's Cathedral, Kolkata",
+      "related_slug": null
+    },
+    {
+      "name": "Maidan",
+      "related_slug": null
+    },
+    {
+      "name": "Indian Museum",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ],
+  "tagline": "White marble memorial to Queen Victoria.",
+  "sections": [],
+  "visitor_tips": [],
+  "quick_facts": [
+    {
+      "label": "Location",
+      "value": "Kolkata, West Bengal"
+    },
+    {
+      "label": "Era",
+      "value": "British India, 1906-1921"
+    },
+    {
+      "label": "Built by",
+      "value": "William Emerson"
+    },
+    {
+      "label": "Type",
+      "value": "memorial"
+    },
+    {
+      "label": "UNESCO",
+      "value": "Not a UNESCO site"
+    }
+  ]
+}

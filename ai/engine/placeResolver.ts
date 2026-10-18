@@ -1,3 +1,4 @@
+import { loadHeritages, heritageStamp, cleanHeritage, heritageContext, matchHeritage } from '../retrieval/heritage';
 import fs from 'fs';
 import path from 'path';
 import { TripMemoryState } from './conversationMemory';
@@ -42,6 +43,7 @@ export type QueryFocus =
   | 'family'
   | 'how_to_reach';
 
+let cachedHeritageStamp = 0;
 let cachedPlacesIndex: Map<string, ResolvedPlace> | null = null;
 let cachedPlacesList: ResolvedPlace[] | null = null;
 let cityPlacesMap: Map<string, ResolvedPlace[]> = new Map();
@@ -73,7 +75,7 @@ function findFile(filename: string): string | null {
 function normalizeKey(str: string): string {
   return (str || '')
     .toLowerCase()
-    .replace(/[^\w\s]/g, ' ')
+    .replace(/[^\p{L}\p{M}\p{N}\s]/gu, ' ')
     .replace(/\s+/g, ' ')
     .trim();
 }
@@ -82,7 +84,7 @@ function normalizeKey(str: string): string {
  * Loads and indexes all verified tourist places from the 36-region Virasat database
  */
 export function loadPlacesRegistry(): { list: ResolvedPlace[]; index: Map<string, ResolvedPlace> } {
-  if (cachedPlacesList && cachedPlacesIndex) {
+  if (cachedPlacesList && cachedPlacesIndex && cachedHeritageStamp === heritageStamp()) {
     return { list: cachedPlacesList, index: cachedPlacesIndex };
   }
 
@@ -295,6 +297,22 @@ export function loadPlacesRegistry(): { list: ResolvedPlace[]; index: Map<string
       }
     }
 
+    for (const site of loadHeritages()) {
+      const h = heritageContext(site);
+      const section = (key: string) => h.sections.find((s: any) => s.key === key)?.text || '';
+      const place: ResolvedPlace = {id:site.slug, name:site.name, canonical_name:site.name, city:h.city || '', state:h.state || '', country:'India', category:site.category,
+        summary:h.tagline, detailed_description:h.sections.map((s: any) => s.text).join('\n'), historical_significance:section('history'), architecture:section('architecture'),
+        culture:section('famous_for'), why_visit:section('beauty'), visiting_hours:cleanHeritage(site.practical?.opening_hours), entry_fee:cleanHeritage(site.practical?.ticket_prices),
+        recommended_duration:h.duration, how_to_reach:cleanHeritage(site.travel), nearby_places:[], coordinates:site.coordinates || {lat:0,lng:0},
+        tags:[h.unesco_status, site.category], source_url:h.sources[0]?.url || '', image_url:site.image_url || '', aliases:h.aliases};
+      for (let i=list.length-1;i>=0;i--) if (list[i].id === site.slug || normalizeKey(list[i].name) === normalizeKey(site.name)) {
+        const old = list.splice(i,1)[0]; for (const [key,value] of index) if (value === old) index.set(key,place);
+      }
+      list.unshift(place);
+      for (const alias of [site.slug, site.name, ...h.aliases]) index.set(normalizeKey(alias),place);
+      index.set(site.slug,place);
+    }
+    cachedHeritageStamp = heritageStamp();
     cachedPlacesList = list;
     cachedPlacesIndex = index;
     return { list, index };
@@ -346,9 +364,12 @@ export function resolvePlaceEntity(
     .replace(/(?:ke baare mein batao|k baare main batao|ke baare me batao|k bare me|ke bare mein|k baare me|ke baare|k bare)/gi, ' ')
     .replace(/(?:ka itihaas batao|ki history batao|ka history batao|ka itihas batao|ki history|ka itihaas|ka history)/gi, ' ')
     .replace(/(?:ke paas|k paas|ke aas paas|nearby|around|paas me|kahan hai|kidhar hai|batao|bataiye|dikhao)/gi, ' ')
-    .replace(/[^\w\s]/g, ' ')
+    .replace(/[^\p{L}\p{M}\p{N}\s]/gu, ' ')
     .replace(/\s+/g, ' ')
     .trim();
+
+  const heritage = matchHeritage(rawQuery);
+  if (heritage && index.has(heritage.slug)) return {place:index.get(heritage.slug)!, matchType:'alias', queryFocus};
 
   // 1. Direct index check for cleaned text
   const direct = index.get(cleanedText);

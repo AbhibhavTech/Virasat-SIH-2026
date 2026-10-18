@@ -45,6 +45,7 @@ import { saveTripToFirestore } from '../services/firebase';
 import { ItineraryCostDonutChart } from '../components/itinerary/ItineraryCostDonutChart';
 import { findVerifiedPlace } from '../data/masterTourismDatabase';
 import { HotelRecommendationsSection } from '../components/itinerary/HotelRecommendationsSection';
+import { PackageReferences } from '../components/itinerary/PackageReferences';
 
 interface ItineraryPageProps {
   onSelectPlace: (id: string) => void;
@@ -800,6 +801,13 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
           </div>
         </div>
       </div>
+
+      <PackageReferences
+        key={(itinerary?.city || selectedCityObj.name).toLowerCase()}
+        city={itinerary?.city || selectedCityObj.name}
+        days={itinerary?.days_count || daysCount}
+        places={(itinerary?.days || []).flatMap(day => day.places.map(place => place.name))}
+      />
 
       {/* 4. ITINERARY RESULTS SECTION */}
       {itinerary && (

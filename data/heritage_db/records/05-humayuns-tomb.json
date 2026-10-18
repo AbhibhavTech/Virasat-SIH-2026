@@ -1,0 +1,172 @@
+{
+  "slug": "humayuns-tomb",
+  "list_no": 5,
+  "name": "Humayun's Tomb",
+  "alt_names": [],
+  "category": "tomb",
+  "state_ut": "Delhi",
+  "district_city": "New Delhi",
+  "coordinates": {
+    "lat": 28.5933,
+    "lng": 77.2507,
+    "precision": "approximate - verify"
+  },
+  "era": "Mughal, 1565-1572",
+  "builder": "Hamida Banu Begum; architect Mirak Mirza Ghiyas",
+  "authenticity": {
+    "unesco_status": "inscribed",
+    "unesco_ref_id": "232",
+    "unesco_inscribed_year": 1993,
+    "unesco_site_name": null,
+    "unesco_url": "https://whc.unesco.org/en/list/232",
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "overview_sectioned",
+  "overview": "The first garden-tomb on the Indian subcontinent and a precursor of the Taj Mahal.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Charbagh layout",
+      "description": "Four-part garden with water channels"
+    },
+    {
+      "title": "Double dome",
+      "description": "Marble dome over a red sandstone body"
+    },
+    {
+      "title": "Red sandstone and marble",
+      "description": "Contrast that defines Mughal tomb design"
+    },
+    {
+      "title": "Isa Khan's Tomb",
+      "description": "Earlier Sur-period tomb in the precinct"
+    },
+    {
+      "title": "Nai ka Gumbad",
+      "description": "Tomb known as the Barber's Tomb"
+    },
+    {
+      "title": "Arab Serai",
+      "description": "Rest house for craftsmen and travellers"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "1556",
+      "event": "Death of Humayun"
+    },
+    {
+      "year": "1565",
+      "event": "Construction begins"
+    },
+    {
+      "year": "1572",
+      "event": "Tomb completed"
+    },
+    {
+      "year": "1993",
+      "event": "UNESCO inscription"
+    },
+    {
+      "year": "2013",
+      "event": "Conservation completed with the Aga Khan Trust for Culture"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Nizamuddin Dargah",
+      "related_slug": null
+    },
+    {
+      "name": "Sunder Nursery",
+      "related_slug": null
+    },
+    {
+      "name": "Purana Qila",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "Humayun's Tomb - World Heritage List",
+      "publisher": "UNESCO",
+      "url": "https://whc.unesco.org/en/list/232"
+    },
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ],
+  "tagline": "The first garden-tomb on the Indian subcontinent and a precursor of the Taj Mahal.",
+  "sections": [
+    {
+      "key": "history",
+      "title": "Origins & History",
+      "text": "Humayun's Tomb in Delhi's Nizamuddin area is the first monumental garden-tomb of the Mughal dynasty and a direct precursor to the Taj Mahal. It was commissioned by Humayun's senior widow, Hamida Banu Begum, after his death in 1556. Construction began in 1565 and the tomb was completed around 1572, designed by the Persian architect Mirak Mirza Ghiyas, who worked with Indian craftsmen."
+    },
+    {
+      "key": "beauty",
+      "title": "Beauty & Atmosphere",
+      "text": "Its beauty lies in the clear geometry and the contrast of materials. The tomb is built mainly of red sandstone, with white marble used for the dome, borders and inlay, giving a crisp, elegant outline. A high raised platform carries the building, and the large double dome with its small decorative pavilions known as chhatris dominates the skyline. The building draws on Persian architectural ideas but adapts them to Indian conditions, a combination that influenced later Mughal monuments."
+    },
+    {
+      "key": "architecture",
+      "title": "Architecture & Highlights",
+      "text": "The setting is just as important. The tomb sits at the centre of a charbagh, a four-part garden divided by water channels and pathways, a design that symbolises the Islamic idea of paradise. Within the precinct are several other significant buildings, including the tomb of Isa Khan, which predates Humayun's tomb, the Nai ka Gumbad known as the Barber's Tomb, and the Arab Serai, thought to have housed the craftsmen who built the monument. The tomb also holds the graves of many later Mughal family members."
+    },
+    {
+      "key": "famous_for",
+      "title": "Famous For",
+      "text": "It is historically notable as the place where the last Mughal emperor, Bahadur Shah Zafar, took refuge during the 1857 uprising before being captured by British forces. Humayun's Tomb was inscribed as a UNESCO World Heritage Site in 1993. Between about 2007 and 2013, the Aga Khan Trust for Culture, with the Archaeological Survey of India, carried out an extensive restoration of the garden and monuments, and the adjoining Sunder Nursery has since been revived as a public park."
+    }
+  ],
+  "visitor_tips": [
+    "Visitors should plan around two hours, and the golden hour before sunset is especially beautiful for photographs.",
+    "Nearby are the Nizamuddin Dargah and Purana Qila.",
+    "Check current timings and ticket rules with official sources before visiting."
+  ],
+  "quick_facts": [
+    {
+      "label": "Location",
+      "value": "New Delhi, Delhi"
+    },
+    {
+      "label": "Era",
+      "value": "Mughal, 1565-1572"
+    },
+    {
+      "label": "Built by",
+      "value": "Hamida Banu Begum; architect Mirak Mirza Ghiyas"
+    },
+    {
+      "label": "Type",
+      "value": "tomb"
+    },
+    {
+      "label": "UNESCO",
+      "value": "UNESCO World Heritage Site (1993)"
+    }
+  ]
+}

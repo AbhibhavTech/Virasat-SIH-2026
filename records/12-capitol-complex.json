@@ -1,0 +1,160 @@
+{
+  "slug": "capitol-complex",
+  "list_no": 12,
+  "name": "The Capitol Complex (Le Corbusier)",
+  "alt_names": [],
+  "category": "complex",
+  "state_ut": "Chandigarh",
+  "district_city": "Chandigarh",
+  "coordinates": {
+    "lat": 30.7589,
+    "lng": 76.801,
+    "precision": "approximate - verify"
+  },
+  "era": "Modernist, 1950s-1960s",
+  "builder": "Le Corbusier",
+  "authenticity": {
+    "unesco_status": "part_of_inscribed",
+    "unesco_ref_id": "1321",
+    "unesco_inscribed_year": 2016,
+    "unesco_site_name": "The Architectural Work of Le Corbusier",
+    "unesco_url": "https://whc.unesco.org/en/list/1321",
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "overview_sectioned",
+  "overview": "Government buildings of Chandigarh and part of Le Corbusier's UNESCO-listed work.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Palace of Assembly",
+      "description": "Legislature building"
+    },
+    {
+      "title": "Secretariat",
+      "description": "Long administrative building"
+    },
+    {
+      "title": "High Court",
+      "description": "Building with a parasol roof"
+    },
+    {
+      "title": "Open Hand Monument",
+      "description": "Symbol of the city"
+    },
+    {
+      "title": "Tower of Shadows",
+      "description": "Sun-path study structure"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "1950",
+      "event": "Le Corbusier appointed for the city plan"
+    },
+    {
+      "year": "1955",
+      "event": "High Court inaugurated"
+    },
+    {
+      "year": "2016",
+      "event": "Inscribed as part of The Architectural Work of Le Corbusier"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Rock Garden",
+      "related_slug": null
+    },
+    {
+      "name": "Sukhna Lake",
+      "related_slug": null
+    },
+    {
+      "name": "Le Corbusier Centre",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "The Architectural Work of Le Corbusier - World Heritage List",
+      "publisher": "UNESCO",
+      "url": "https://whc.unesco.org/en/list/1321"
+    },
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ],
+  "tagline": "Government buildings of Chandigarh and part of Le Corbusier's UNESCO-listed work.",
+  "sections": [
+    {
+      "key": "history",
+      "title": "Origins & History",
+      "text": "The Capitol Complex in Chandigarh is the administrative heart of the planned city that the Swiss-French architect Le Corbusier designed after the Partition of India in 1947. When Punjab lost Lahore, a new capital was needed. Le Corbusier was appointed in 1950 to 1951 to lead the architectural design with his cousin Pierre Jeanneret and the British architects Maxwell Fry and Jane Drew. The Capitol Complex was his major creative statement within the city, built mostly in the 1950s and early 1960s."
+    },
+    {
+      "key": "beauty",
+      "title": "Beauty & Atmosphere",
+      "text": "It consists of three principal buildings set across a vast open plaza. The High Court, completed in the mid-1950s, is crowned by a huge parasol-like roof. The Secretariat, finished by the late 1950s, is a long, tall slab housing government offices. The Palace of Assembly, completed in the early 1960s, features a dramatic sloping portico and a hyperboloid tower. Between and around them stand symbolic elements such as the Open Hand Monument, a giant metal hand turning in the wind as a symbol of peace and reconciliation, the Tower of Shadows, which studies the sun's path, and the Geometric Hill."
+    },
+    {
+      "key": "architecture",
+      "title": "Architecture & Highlights",
+      "text": "Its beauty is the beauty of modernism: bold concrete forms left raw, strong geometry, deep shade and light, and a monumental scale set against the Himalayan foothills. The style is often called brutalist, and the concrete surfaces are texture-rich and sculptural. Colourful doors and panels add contrast. Le Corbusier also adapted modern design to the Indian climate, using deep verandas, sunshades and thick walls."
+    },
+    {
+      "key": "famous_for",
+      "title": "Famous For",
+      "text": "The Capitol Complex is famous as one of the finest examples of 20th century modern architecture and a symbol of independent India's optimism. In 2016 it was inscribed, as part of The Architectural Work of Le Corbusier, a serial UNESCO World Heritage Site spread over seven countries."
+    }
+  ],
+  "visitor_tips": [
+    "Because it is an active government area, access is limited and generally organised through guided visits that may need advance registration.",
+    "Check current rules with the Chandigarh authorities.",
+    "Nearby attractions include the Le Corbusier Centre, Rock Garden, Sukhna Lake and Rose Garden."
+  ],
+  "quick_facts": [
+    {
+      "label": "Location",
+      "value": "Chandigarh, Chandigarh"
+    },
+    {
+      "label": "Era",
+      "value": "Modernist, 1950s-1960s"
+    },
+    {
+      "label": "Built by",
+      "value": "Le Corbusier"
+    },
+    {
+      "label": "Type",
+      "value": "complex"
+    },
+    {
+      "label": "UNESCO",
+      "value": "Part of a UNESCO World Heritage Site (2016)"
+    }
+  ]
+}

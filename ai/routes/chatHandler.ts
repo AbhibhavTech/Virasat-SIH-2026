@@ -21,11 +21,14 @@ import { generateSmartItinerary } from '../engine/itineraryPlanner';
 import { buildResponseForIntent, AIAction } from '../engine/responseGenerator';
 import { buildCityComparisonAnswer } from '../engine/cityComparison';
 import { getResolvedPlaceById } from '../engine/placeResolver';
-import { randomUUID, createHash } from 'node:crypto';
+import { randomUUID } from 'node:crypto';
+import { registerConversation, workspaceRouter, buildDraft } from './workspace';
+import { understandTravel } from '../engine/travelUnderstanding';
 import { generateModelReply, getModelStatus, getModelConfiguration, explainModelFailure } from '../engine/modelGateway';
 import { ProviderFailure } from '../engine/providerErrors';
 
 export const aiChatRouter = Router();
+aiChatRouter.use(workspaceRouter);
 
 function resolveFollowUpPlace(query: string, places: any[] | undefined) {
   if (!Array.isArray(places) || places.length === 0) return undefined;
@@ -160,9 +163,12 @@ aiChatRouter.post(
     /**
      * Existing conversation memory.
      */
-    const memorySessionId = createHash('sha256').update(JSON.stringify([req.user?.id || null, sessionId])).digest('hex');
+    const memorySessionId = registerConversation(req, sessionId, rawQuery);
     const existingState = getConversationState(memorySessionId);
 
+    const understanding = understandTravel(rawQuery, existingState, liveContext);
+    const draft = understanding.planning ? buildDraft(memorySessionId, existingState, rawQuery) : undefined;
+    if (draft) liveContext.metadata = { ...liveContext.metadata, itinerary_preview: draft };
     const modelConfiguration = getModelConfiguration();
     if (modelConfiguration.requireHosted && !modelConfiguration.configured) {
       console.warn('[AI Configuration]', modelConfiguration.issues.join(', '));
@@ -233,7 +239,7 @@ aiChatRouter.post(
         existingState.turnCount++;
         const payload = { success: true, reply: `${generated.reply}${airportGatewayNote}`, conversation_id: sessionId, session_id: sessionId,
           engine: generated.provider === 'local' ? 'Virasat AI · Local Model' : 'Virasat AI · Hosted Model', provider_used: generated.provider, model_used: generated.model, generation_mode: generated.provider === 'local' ? 'local_generative' : 'hosted_generative',
-          actions: generated.actions, sources: generated.sources, usage: generated.usage, task_profile: generated.task_profile, tool_calls: generated.calls, transit_comparison: transitComparison, suggested_actions: [], latency_ms: Date.now() - startTime };
+          itinerary_draft: draft, current_location: liveContext.userLocation, actions: generated.actions, sources: generated.sources, usage: generated.usage, task_profile: generated.task_profile, tool_calls: generated.calls, transit_comparison: transitComparison, suggested_actions: [], latency_ms: Date.now() - startTime };
         if (streaming) { emit('done', payload); res.end(); } else res.json(payload);
         return;
       } catch (error) {
@@ -242,7 +248,7 @@ aiChatRouter.post(
         const diagnostic = error instanceof ProviderFailure ? error.diagnostic : undefined;
         if (code === 'MODEL_CAPACITY_BUSY' && !res.headersSent) res.setHeader('Retry-After', '2');
         if (res.headersSent) {
-          if (!res.destroyed) res.end(`event: error\ndata: ${JSON.stringify({ error: code, reply: diagnostic?.explanation || explainModelFailure(code), generation_mode: 'unavailable' })}\n\n`);
+          if (!res.destroyed) res.end(`event: error\ndata: ${JSON.stringify({ error: code, reply: diagnostic?.explanation || explainModelFailure(code), generation_mode: 'unavailable', provider_error: diagnostic, retry_after_seconds: diagnostic?.retry_after_seconds ?? (code === 'MODEL_CAPACITY_BUSY' ? 2 : null) })}\n\n`);
           return;
         }
         if (diagnostic?.retry_after_seconds !== null && diagnostic?.retry_after_seconds !== undefined) res.setHeader('Retry-After', String(diagnostic.retry_after_seconds));
@@ -2162,6 +2168,7 @@ aiChatRouter.post(
       engine: usedEngine,
       model_used: usedEngine,
       generation_mode: 'local_data_only',
+      itinerary_draft: draft,
 
       suggested_places:
         suggestedPlaces.length > 0

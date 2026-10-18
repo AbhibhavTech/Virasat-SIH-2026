@@ -143,7 +143,9 @@ export async function execute(args: {
       city: h.city,
       state: h.state,
       category: h.category,
-      rating: h.rating,
+      rating: undefined,
+      source_url: /^https:\/\//.test(h.source_url || '') ? h.source_url : undefined,
+      verification_status: 'stored listing; independently verify details',
       price: listedRate,
       starting_price_inr: startingPrice,
       rate_type: listedRate ? 'stored indicative rate; not live' : 'not provided',
@@ -171,7 +173,9 @@ export async function execute(args: {
         city: h.city,
         state: h.state,
         category: h.category,
-        rating: h.rating,
+        rating: undefined,
+      source_url: /^https:\/\//.test(h.source_url || '') ? h.source_url : undefined,
+      verification_status: 'stored listing; independently verify details',
         price: listedRate,
         starting_price_inr: startingPrice,
         rate_type: listedRate ? 'stored indicative rate; not live' : 'not provided',
@@ -207,6 +211,7 @@ export async function execute(args: {
                   const listedRate = ph.price_range || null;
                   const startingPrice = getStartingPrice(listedRate);
                   if (maxPricePerNight !== undefined && (startingPrice === undefined || startingPrice > maxPricePerNight)) continue;
+                  if (catFilter && !(ph.category || '').toLowerCase().includes(catFilter)) continue;
                   if (matched.some(m => m.name.toLowerCase() === ph.name.toLowerCase())) continue;
                   matched.push({
                     id: ph.id || ph.name,
@@ -214,7 +219,9 @@ export async function execute(args: {
                     city: c.name,
                     state: s.name,
                     category: ph.category || 'Hotel',
-                    rating: ph.rating,
+                    rating: undefined,
+                    source_url: /^https:\/\//.test(ph.source_url || '') ? ph.source_url : undefined,
+                    verification_status: 'stored listing; independently verify details',
                     price: listedRate,
                     starting_price_inr: startingPrice,
                     rate_type: listedRate ? 'stored indicative rate; not live' : 'not provided',
@@ -238,6 +245,8 @@ export async function execute(args: {
   }
 
   return {
+    live_inventory_connected: false,
+    ranking: 'Database order, not a verified best-hotel ranking. Ratings withheld because review provenance is unavailable.',
     total_found: matched.length,
     hotels: matched.slice(0, limit),
   };

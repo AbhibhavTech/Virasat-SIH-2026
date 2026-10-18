@@ -1,0 +1,151 @@
+{
+  "slug": "gateway-of-india",
+  "list_no": 20,
+  "name": "Gateway of India",
+  "alt_names": [],
+  "category": "monument",
+  "state_ut": "Maharashtra",
+  "district_city": "Mumbai",
+  "coordinates": {
+    "lat": 18.922,
+    "lng": 72.8347,
+    "precision": "approximate - verify"
+  },
+  "era": "British India, 1911-1924",
+  "builder": "George Wittet",
+  "authenticity": {
+    "unesco_status": "not_listed",
+    "unesco_ref_id": null,
+    "unesco_inscribed_year": null,
+    "unesco_site_name": null,
+    "unesco_url": null,
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "overview_sectioned",
+  "overview": "Indo-Saracenic basalt arch on Mumbai's waterfront.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Central dome",
+      "description": "Dome on the arch"
+    },
+    {
+      "title": "Basalt arch",
+      "description": "About 26 m tall"
+    },
+    {
+      "title": "Indo-Saracenic style",
+      "description": "Blend of Gujarati and European forms"
+    },
+    {
+      "title": "Harbour steps",
+      "description": "Ferry access to Elephanta"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "1911",
+      "event": "Foundation stone laid"
+    },
+    {
+      "year": "1924",
+      "event": "Inaugurated"
+    },
+    {
+      "year": "1948",
+      "event": "Last British troops leave India through the arch"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Taj Mahal Palace",
+      "related_slug": null
+    },
+    {
+      "name": "Elephanta Caves",
+      "related_slug": null
+    },
+    {
+      "name": "Colaba Causeway",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ],
+  "tagline": "Indo-Saracenic basalt arch on Mumbai's waterfront.",
+  "sections": [
+    {
+      "key": "history",
+      "title": "Origins & History",
+      "text": "The Gateway of India is a basalt arch overlooking the Arabian Sea at Apollo Bunder in south Mumbai, and has long been the city's best-known landmark. It was conceived to welcome King George V and Queen Mary on their visit to India in 1911, and the foundation stone was laid then. The design was by the architect George Wittet, and construction took place in the following years until the monument was opened in 1924."
+    },
+    {
+      "key": "beauty",
+      "title": "Beauty & Atmosphere",
+      "text": "The arch rises to about 26 metres and is built of yellow basalt and reinforced concrete. Its style is Indo-Saracenic, a blend of European and Indian elements, and the architect was inspired especially by the architecture of 16th century Gujarat, with a large central dome, four turrets and intricate lattice work in the stone. Its proportions are simple but imposing, and its setting by the harbour, with ships and boats moving past, adds to its dramatic effect."
+    },
+    {
+      "key": "architecture",
+      "title": "Architecture & Highlights",
+      "text": "The Gateway has a poignant historical connection. Many British governors and officials arrived here, and in 1948, soon after independence, the last British troops left India through the arch in a ceremonial departure. It therefore marks both the colonial arrival and the end of colonial rule, which gives it a special place in the story of the nation."
+    },
+    {
+      "key": "famous_for",
+      "title": "Famous For",
+      "text": "The monument is also a living public space. Visitors gather on the promenade for sea breezes, street food and photography, and ferries from the jetty beside it carry passengers to Elephanta Island and its ancient cave temples. Right across the road stands the Taj Mahal Palace hotel, itself a historic landmark opened in 1903, forming a famous skyline view. The Gateway is not a UNESCO World Heritage Site, though nearby Victorian and Art Deco buildings in south Mumbai are."
+    }
+  ],
+  "visitor_tips": [
+    "Plan to visit in the early morning or evening, when it is cooler and the light is best, and expect crowds on weekends and holidays.",
+    "Nearby attractions include Colaba Causeway, the Kala Ghoda art district and the Chhatrapati Shivaji Maharaj Vastu Sangrahalaya museum.",
+    "Check current access and security arrangements before visiting."
+  ],
+  "quick_facts": [
+    {
+      "label": "Location",
+      "value": "Mumbai, Maharashtra"
+    },
+    {
+      "label": "Era",
+      "value": "British India, 1911-1924"
+    },
+    {
+      "label": "Built by",
+      "value": "George Wittet"
+    },
+    {
+      "label": "Type",
+      "value": "monument"
+    },
+    {
+      "label": "UNESCO",
+      "value": "Not a UNESCO site"
+    }
+  ]
+}

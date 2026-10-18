@@ -1,0 +1,161 @@
+{
+  "slug": "rani-ki-vav",
+  "list_no": 16,
+  "name": "Rani ki Vav (The Queen's Stepwell)",
+  "alt_names": [],
+  "category": "stepwell",
+  "state_ut": "Gujarat",
+  "district_city": "Patan",
+  "coordinates": {
+    "lat": 23.8588,
+    "lng": 72.1018,
+    "precision": "approximate - verify"
+  },
+  "era": "Solanki, c.1063",
+  "builder": "Queen Udayamati",
+  "authenticity": {
+    "unesco_status": "inscribed",
+    "unesco_ref_id": "922",
+    "unesco_inscribed_year": 2014,
+    "unesco_site_name": null,
+    "unesco_url": "https://whc.unesco.org/en/list/922",
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "overview_sectioned",
+  "overview": "Intricately carved stepwell built as a memorial to King Bhimdev I.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Seven levels",
+      "description": "Descending galleries"
+    },
+    {
+      "title": "Sculpture panels",
+      "description": "Hundreds of principal carvings"
+    },
+    {
+      "title": "Dashavatara",
+      "description": "Avatars of Vishnu"
+    },
+    {
+      "title": "Apsara figures",
+      "description": "Female figures in relief"
+    },
+    {
+      "title": "Well shaft",
+      "description": "Deep circular well at the end"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "c.1063",
+      "event": "Built under the Solankis"
+    },
+    {
+      "year": "1980s",
+      "event": "Excavation by ASI"
+    },
+    {
+      "year": "2014",
+      "event": "UNESCO inscription"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Modhera Sun Temple",
+      "related_slug": null
+    },
+    {
+      "name": "Sahastralinga Talav",
+      "related_slug": null
+    },
+    {
+      "name": "Patan Patola workshops",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "Rani ki Vav (The Queen's Stepwell) - World Heritage List",
+      "publisher": "UNESCO",
+      "url": "https://whc.unesco.org/en/list/922"
+    },
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ],
+  "tagline": "Intricately carved stepwell built as a memorial to King Bhimdev I.",
+  "sections": [
+    {
+      "key": "history",
+      "title": "Origins & History",
+      "text": "Rani ki Vav, the Queen's Stepwell, in Patan, Gujarat, is one of the finest stepwells in India and a masterpiece of Solanki-period art. It was built around 1063 by Queen Udayamati in memory of her husband, King Bhimdev I. Stepwells, or vavs, were built across Gujarat and Rajasthan to provide reliable water in a dry climate, but this one is also a monument and a work of sacred art, designed like an inverted temple that descends into the earth."
+    },
+    {
+      "key": "beauty",
+      "title": "Beauty & Atmosphere",
+      "text": "Its beauty is in its sculpture. The stepwell descends through seven levels of stairways, pavilions and galleries toward a deep circular well, with a length of about 64 metres and a depth of about 27 metres. The walls are covered with more than five hundred principal sculptures and over a thousand smaller ones, which show deities, sages, and graceful female figures, including apsaras in elegant poses. Many panels depict Vishnu in his incarnations, including the ten avatars known as the Dashavatara. The carvings are exceptionally fine and, because the stepwell was buried for centuries, many remain crisp."
+    },
+    {
+      "key": "architecture",
+      "title": "Architecture & Highlights",
+      "text": "The monument was silted over and hidden, probably after floods of the nearby Saraswati river, and was uncovered in excavations by the Archaeological Survey of India in the 1960s to 1980s, followed by restoration. Its design shows the Maru-Gurjara architectural style at its height, with pillars, brackets and cornices that echo temple construction."
+    },
+    {
+      "key": "famous_for",
+      "title": "Famous For",
+      "text": "Rani ki Vav was inscribed as a UNESCO World Heritage Site in 2014 for its outstanding design and sculpture. It is also depicted on the Indian 100 rupee banknote of the newer series, which has raised its public profile."
+    }
+  ],
+  "visitor_tips": [
+    "Visitors should plan an hour or two, walk down the steps slowly and watch their footing.",
+    "Early morning light brings out the carvings.",
+    "Patan is also known for Patola silk weaving, and the Sahastralinga Talav and the Sun Temple at Modhera are within reach.",
+    "Check opening times and ticket rules with official sources."
+  ],
+  "quick_facts": [
+    {
+      "label": "Location",
+      "value": "Patan, Gujarat"
+    },
+    {
+      "label": "Era",
+      "value": "Solanki, c.1063"
+    },
+    {
+      "label": "Built by",
+      "value": "Queen Udayamati"
+    },
+    {
+      "label": "Type",
+      "value": "stepwell"
+    },
+    {
+      "label": "UNESCO",
+      "value": "UNESCO World Heritage Site (2014)"
+    }
+  ]
+}

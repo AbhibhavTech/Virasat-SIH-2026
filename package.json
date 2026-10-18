@@ -13,7 +13,7 @@
     "build": "vite build && esbuild server.ts --bundle --platform=node --format=cjs --packages=external --sourcemap --outfile=dist/server.cjs && node scripts/prepare_netlify_redirects.mjs",
     "start": "node dist/server.cjs",
     "lint": "node --max-old-space-size=4096 ./node_modules/typescript/bin/tsc --noEmit",
-    "test": "node scripts/check_images_uniqueness.mjs && node scripts/check_duplicate_stations.mjs && tsx scripts/check_data_quality.mjs && tsx scripts/test_phase1_backend.mjs && tsx scripts/test_phase3_ai_itinerary.mjs && tsx scripts/test_phase3b_stewardship.mjs && tsx scripts/test_phase4_auth_google.mjs && tsx scripts/test_phase5_ai_hardening.mjs && node scripts/test_phase6_design_a11y.mjs && tsx scripts/test_phase6_design_system.mjs && tsx scripts/test_phase7_security_and_e2e.mjs && tsx scripts/test_phase8_observability_deploy.mjs && tsx scripts/test_phase9_seo_analytics.mjs && node scripts/test_phase10_sih_packaging.mjs && tsx scripts/test_ai_assistant_multilingual.ts && tsx scripts/verify_chatbot_behavior.ts",
+    "test": "node scripts/check_images_uniqueness.mjs && node scripts/check_duplicate_stations.mjs && tsx scripts/check_data_quality.mjs && tsx scripts/test_phase1_backend.mjs && tsx scripts/test_phase3_ai_itinerary.mjs && tsx scripts/test_phase3b_stewardship.mjs && tsx scripts/test_phase4_auth_google.mjs && tsx scripts/test_phase5_ai_hardening.mjs && node scripts/test_phase6_design_a11y.mjs && tsx scripts/test_phase6_design_system.mjs && tsx scripts/test_phase7_security_and_e2e.mjs && tsx scripts/test_phase8_observability_deploy.mjs && tsx scripts/test_phase9_seo_analytics.mjs && node scripts/test_phase10_sih_packaging.mjs && tsx scripts/test_ai_assistant_multilingual.ts && tsx scripts/verify_chatbot_behavior.ts && npm run test:assistant-upgrades && npm run test:heritage-ai",
     "check:data": "node scripts/check_images_uniqueness.mjs && tsx scripts/check_data_quality.mjs",
     "check:images": "node scripts/check_images_uniqueness.mjs",
     "check:stations": "node scripts/check_duplicate_stations.mjs",
@@ -25,7 +25,10 @@
     "setup:ai-groq": "tsx scripts/configure_groq.ts && npm run check:ai-connection",
     "setup:ai-groq:secure": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/setup_groq_secure.ps1",
     "check:ai-connection": "tsx scripts/check_ai_connection.ts",
-    "test:auth": "tsx scripts/test_google_auth.ts"
+    "test:auth": "tsx scripts/test_google_auth.ts",
+    "seed:heritages": "tsx scripts/seed_heritages.ts",
+    "test:assistant-upgrades": "tsx scripts/test_assistant_upgrades.ts && tsx scripts/test_assistant_rendering.tsx",
+    "test:heritage-ai": "tsx scripts/test_heritage_ai.ts"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.102.8",
@@ -47,7 +50,9 @@
     "pg": "^8.23.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-markdown": "^10.1.0",
     "react-router-dom": "^7.18.3",
+    "remark-gfm": "^4.0.1",
     "tailwind-merge": "^2.6.0",
     "three": "^0.170.0",
     "zod": "^4.5.4"

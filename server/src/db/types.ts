@@ -469,3 +469,175 @@ export interface FestivalRecord {
   created_at: string;
   updated_at: string;
 }
+
+export type UnescoStatus = 'inscribed' | 'part_of_inscribed' | 'tentative' | 'not_listed' | 'unverified';
+
+export interface LanguageRecord {
+  code: string;
+  name_en: string;
+  name_native: string;
+  script?: string;
+  rtl: boolean;
+  scheduled_8th?: boolean;
+}
+
+export interface HeritageFeatureRecord {
+  id?: number;
+  heritage_id?: number;
+  sort: number;
+  title: string;
+  description: string;
+}
+
+export interface HeritageTimelineRecord {
+  id?: number;
+  heritage_id?: number;
+  sort: number;
+  year_label: string;
+  year_sort?: number;
+  event: string;
+  source_id?: number;
+}
+
+export interface HeritageStopRecord {
+  id?: number;
+  heritage_id?: number;
+  sort: number;
+  title: string;
+  description?: string;
+  photo_tip?: string;
+  minutes?: number;
+}
+
+export interface HeritageFactRecord {
+  id?: number;
+  heritage_id?: number;
+  sort: number;
+  fact: string;
+  source_id?: number;
+}
+
+export interface HeritageNearbyRecord {
+  id?: number;
+  heritage_id?: number;
+  sort: number;
+  name: string;
+  distance_km?: number;
+  note?: string;
+  related_slug?: string | null;
+}
+
+export interface HeritageTravelRecord {
+  id?: number;
+  heritage_id?: number;
+  mode: string;
+  hub_name: string;
+  distance_km?: number;
+  note?: string;
+}
+
+export interface HeritageMediaRecord {
+  id?: number;
+  heritage_id?: number;
+  kind: 'hero' | 'gallery' | 'audio' | 'video';
+  url: string;
+  alt_text?: string;
+  caption?: string;
+  credit?: string;
+  licence?: string;
+  source_url?: string;
+  sort?: number;
+}
+
+export interface HeritageSourceRecord {
+  id?: number;
+  heritage_id?: number;
+  title: string;
+  publisher?: string;
+  url?: string;
+  source_type?: string;
+  accessed_on?: string;
+}
+
+export interface TranslationRecord {
+  id?: number;
+  entity: string; // 'heritage' | 'feature' | 'timeline' | 'stop' | 'fact' | 'nearby'
+  entity_id: number | string;
+  field: string;
+  lang: string;
+  text: string;
+  method?: 'machine' | 'human_reviewed';
+  reviewed_by?: string;
+  source_hash?: string;
+  updated_at?: string;
+}
+
+export interface HeritageRecord {
+  id: number;
+  slug: string;
+  list_no: number;
+  name: string;
+  alt_names?: string[];
+  category?: string;
+  state_ut: string;
+  district_city: string;
+  lat?: number;
+  lng?: number;
+  era?: string;
+  built_year_from?: number;
+  built_year_to?: number;
+  builder?: string;
+  unesco_status: UnescoStatus;
+  unesco_ref_id?: string | null;
+  unesco_inscribed_year?: number | null;
+  unesco_site_name?: string | null;
+  unesco_url?: string | null;
+  asi_protected?: boolean | null;
+  last_verified_on?: string | null;
+  verified_by?: string | null;
+  review_status?: string;
+  overview?: string | null;
+  history?: string | null;
+  architecture?: string | null;
+  cultural_significance?: string | null;
+  opening_hours?: any;
+  ticket_prices?: any;
+  accessibility?: any;
+  visitor_rules?: string[];
+  best_season?: string;
+  recommended_duration?: string | null;
+  content_status?: string;
+  tagline?: string | null;
+  sections?: Array<{ key: string; title: string; text: string }> | null;
+  visitor_tips?: string[] | null;
+  quick_facts?: Array<{ label: string; value: string }> | null;
+  features?: HeritageFeatureRecord[];
+  timeline?: HeritageTimelineRecord[];
+  visitor_guide?: {
+    recommended_duration?: string | null;
+    stops?: HeritageStopRecord[];
+  };
+  practical?: {
+    opening_hours?: any;
+    ticket_prices?: any;
+    accessibility?: any;
+    rules?: string[];
+  };
+  travel?: HeritageTravelRecord[];
+  nearby?: HeritageNearbyRecord[];
+  facts?: Array<string | HeritageFactRecord>;
+  media?: {
+    hero?: {
+      url?: string;
+      alt?: string;
+      credit?: string;
+      licence?: string;
+    };
+    gallery?: any[];
+    audio_guide?: any[];
+  };
+  sources?: HeritageSourceRecord[];
+  created_at?: string;
+  updated_at?: string;
+}
+

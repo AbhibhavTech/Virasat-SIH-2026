@@ -1,3 +1,4 @@
+import { heritageStamp, loadHeritages, heritageContext, cleanHeritage, matchHeritage } from './heritage';
 import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
@@ -11,7 +12,7 @@ export interface KnowledgeDocument {
 const sourceFile = 'data/india_tourism_database.json';
 const indexFile = 'data/.database/knowledge-index.json';
 const categories = ['heritage', 'monuments', 'museums', 'tourist_places', 'religious_cultural', 'nature_parks_zoo'];
-let cache: { stamp: number; documents: KnowledgeDocument[] } | undefined;
+let cache: { stamp: string; documents: KnowledgeDocument[] } | undefined;
 
 export function safeSourceUrl(value: unknown): string | null {
   if (typeof value !== 'string' || value.length > 2048) return null;
@@ -22,7 +23,7 @@ export function safeSourceUrl(value: unknown): string | null {
 }
 
 export function ingestKnowledge(force = false): { documents: KnowledgeDocument[]; changed: number } {
-  const stamp = fs.statSync(path.resolve(sourceFile)).mtimeMs;
+  const stamp = `${fs.statSync(path.resolve(sourceFile)).mtimeMs}:${heritageStamp()}`;
   if (!force && cache?.stamp === stamp) return { documents: cache.documents, changed: 0 };
   let previous: KnowledgeDocument[] = [];
   try { previous = JSON.parse(fs.readFileSync(indexFile, 'utf8')); } catch { /* First ingestion. */ }
@@ -50,6 +51,22 @@ export function ingestKnowledge(force = false): { documents: KnowledgeDocument[]
         ingested_at: existing?.content_hash === content_hash ? existing.ingested_at : new Date().toISOString() });
     }
   }
+  for (const site of loadHeritages()) {
+    const context = heritageContext(site);
+    for (const [key, doc] of documents) if (doc.entity_id === site.slug || doc.name.toLowerCase() === site.name.toLowerCase()) documents.delete(key);
+    const chunks = [...context.sections.map((section: any) => ({key:section.key, text:section.text})),
+      {key:'visitor', text:cleanHeritage({quick_facts:context.quick_facts, visitor_tips:context.visitor_tips, practical:context.practical, duration:context.duration})}];
+    for (const chunk of chunks) {
+      const record = { id:`heritage/${site.slug}/${chunk.key}`, entity_id:site.slug, name:site.name, city:context.city || '', state:context.state || '',
+        category:site.category || 'heritage', language:'en', text:`${site.name} (${context.aliases.join(', ')})\nUNESCO status: ${context.unesco_status}\n${context.tagline}\n${chunk.key}: ${chunk.text}`,
+        source_url:safeSourceUrl(context.sources[0]?.url), source_identifier:`all_heritages.json#${site.slug}/${chunk.key}`, verified_at:site.authenticity?.last_verified_on || null,
+        review_status:'heritage_source_record', url:context.url };
+      const content_hash = createHash('sha256').update(JSON.stringify(record)).digest('hex');
+      const existing = old.get(record.id);
+      if (existing?.content_hash !== content_hash) changed++;
+      documents.set(record.id, {...record, content_hash, ingested_at:existing?.content_hash === content_hash ? existing.ingested_at : new Date().toISOString()});
+    }
+  }
   const result = [...documents.values()];
   fs.mkdirSync(path.dirname(indexFile), { recursive: true });
   const temporary = `${indexFile}.tmp`;
@@ -65,6 +82,7 @@ const expansions: Record<string, string> = {
   samudra: 'beach', समुद्र: 'beach', संग्रहालय: 'museum', palace: 'palace royal',
 };
 export function retrieveKnowledge(query: string, filters: { city?: string; state?: string; entity_id?: string; limit?: number } = {}, documents = ingestKnowledge().documents) {
+  const matched = matchHeritage(query);
   const terms = normalize(query).split(/[^\p{L}\p{M}\p{N}]+/u).filter(term => term.length > 1);
   const expanded = [...new Set(terms.flatMap(term => [term, ...(expansions[term]?.split(' ') || [])]))];
   return documents.filter(document => (!filters.city || normalize(document.city) === normalize(filters.city)) &&
@@ -73,7 +91,7 @@ export function retrieveKnowledge(query: string, filters: { city?: string; state
     .map(document => {
       const name = normalize(document.name);
       const content = normalize(`${document.text} ${document.city} ${document.state} ${document.category}`);
-      const score = expanded.reduce((total, term) => total + (name.includes(term) ? 5 : content.includes(term) ? 1 : 0), 0);
+      const score = (matched?.slug === document.entity_id && document.source_identifier.startsWith('all_heritages.json') ? 100 : 0) + expanded.reduce((total, term) => total + (name.includes(term) ? 5 : content.includes(term) ? 1 : 0), 0);
       return { ...document, text: document.text.slice(0, 1800), score };
     }).filter(document => document.score > 0 || Boolean(filters.entity_id))
     .sort((a, b) => b.score - a.score || a.id.localeCompare(b.id)).slice(0, Math.min(Math.max(filters.limit || 5, 1), 10));

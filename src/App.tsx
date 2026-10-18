@@ -5,6 +5,7 @@ import { queryClient } from './app/queryClient';
 import { AppRoutes, getActiveTabFromPath, getPathForTab } from './app/routes';
 import { AuthProvider } from './contexts/AuthContext';
 import { FavoritesProvider } from './contexts/FavoritesContext';
+import { LanguageProvider } from './contexts/LanguageContext';
 import { NavTab } from './components/layout/Sidebar';
 import { TopNavbar } from './components/layout/TopNavbar';
 import { ContextualSubNav } from './components/layout/ContextualSubNav';
@@ -254,9 +255,11 @@ export default function App() {
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <AuthProvider>
-          <FavoritesProvider>
-            <AppContent />
-          </FavoritesProvider>
+          <LanguageProvider>
+            <FavoritesProvider>
+              <AppContent />
+            </FavoritesProvider>
+          </LanguageProvider>
         </AuthProvider>
       </BrowserRouter>
     </QueryClientProvider>

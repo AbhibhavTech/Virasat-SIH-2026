@@ -49,10 +49,26 @@ import { safeLocalStorage } from '../utils/storage';
 
 const API_BASE_URL = '/api';
 
+export function chatHeaders(): Record<string, string> {
+  let owner = safeLocalStorage.getItem('virasat_chat_owner');
+  if (!owner) { owner = crypto.randomUUID(); safeLocalStorage.setItem('virasat_chat_owner', owner); }
+  const token = safeLocalStorage.getItem('virasat_token');
+  return { 'Content-Type': 'application/json', 'X-Virasat-Chat-Owner': owner, ...(token ? { Authorization: `Bearer ${token}` } : {}) };
+}
+export function aiError(body: any, response?: Response) {
+  const header = response?.headers.get('retry-after');
+  const seconds = body.retry_after_seconds ?? body.provider_error?.retry_after_seconds ?? (header ? (/^\d+$/.test(header) ? Number(header) : Math.max(0, (Date.parse(header)-Date.now())/1000)) : undefined);
+  return Object.assign(new Error(typeof body.error === 'string' ? body.error : body.error?.code || 'AI_UNAVAILABLE'), {
+    hostedMessage: body.reply || body.error?.message,
+    retryAfterSeconds: Number.isFinite(seconds) ? Math.max(0, Math.ceil(seconds)) : undefined,
+    category: body.provider_error?.category,
+  });
+}
+
 async function request<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
   const token = safeLocalStorage.getItem('virasat_token');
   const headers: Record<string, string> = {
-    'Content-Type': 'application/json',
+    ...chatHeaders(),
     ...(options.headers as Record<string, string> || {}),
   };
 
@@ -79,12 +95,19 @@ async function request<T>(endpoint: string, options: RequestInit = {}): Promise<
 }
 
 export const api = {
+  claimAIConversation: (id: string) => request<any>(`/ai/conversations/${encodeURIComponent(id)}/claim`, { method: 'POST' }),
+  listAIConversations: () => request<any>('/ai/conversations'),
+  getAIConversation: (id: string) => request<any>(`/ai/conversations/${encodeURIComponent(id)}`),
+  deleteAIConversation: (id?: string) => request<any>(`/ai/conversations${id ? '/' + encodeURIComponent(id) : ''}`, { method: 'DELETE' }),
+  clearAILocation: (id: string) => request<any>(`/ai/conversations/${encodeURIComponent(id)}/clear-location`, { method: 'POST' }),
+  editAIDraft: (id: string, edit: any) => request<any>(`/ai/conversations/${encodeURIComponent(id)}/draft`, { method: 'PATCH', body: JSON.stringify(edit) }),
+  confirmAIDraft: (id: string, revision: number) => request<any>(`/ai/conversations/${encodeURIComponent(id)}/draft/confirm`, { method: 'POST', body: JSON.stringify({ revision, confirmed: true }) }),
   async streamAIChat(req: AIChatRequest, onText: (text: string) => void, signal?: AbortSignal): Promise<AIChatResponse> {
     const response = await fetch(`${API_BASE_URL}/ai/chat`, { method: 'POST', signal,
-      headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...req, stream: true }) });
+      headers: chatHeaders(), body: JSON.stringify({ ...req, stream: true }) });
     if (!response.headers.get('content-type')?.includes('text/event-stream')) {
       const body = await response.json();
-      if (!response.ok) throw Object.assign(new Error(body.error || 'AI_UNAVAILABLE'), { hostedMessage: body.reply });
+      if (!response.ok) throw aiError(body, response);
       return body;
     }
     if (!response.body) throw new Error('AI_STREAM_UNAVAILABLE');
@@ -105,7 +128,7 @@ export const api = {
           const data = JSON.parse(line.slice(5));
           if (event === 'delta' && typeof data.text === 'string') onText(data.text);
           if (event === 'done') return data;
-          if (event === 'error') throw Object.assign(new Error(data.error || 'AI_UNAVAILABLE'), { hostedMessage: data.reply });
+          if (event === 'error') throw aiError(data);
         }
       }
       throw new Error('AI_STREAM_INTERRUPTED');
@@ -677,26 +700,44 @@ export const api = {
   async getHeritage(params?: {
     category?: string;
     state?: string;
+    unesco_status?: string;
     search?: string;
+    lang?: string;
     limit?: number;
     offset?: number;
-  }): Promise<{ total: number; limit: number; offset: number; data: any[] }> {
+  }): Promise<{ total: number; limit?: number; offset?: number; count?: number; data: any[] }> {
     const q = new URLSearchParams();
     if (params?.category) q.set('category', params.category);
     if (params?.state) q.set('state', params.state);
+    if (params?.unesco_status) q.set('unesco_status', params.unesco_status);
     if (params?.search) q.set('search', params.search);
+    if (params?.lang) q.set('lang', params.lang);
     if (params?.limit) q.set('limit', String(params.limit));
     if (params?.offset) q.set('offset', String(params.offset));
 
     try {
-      return await request<{ total: number; limit: number; offset: number; data: any[] }>(`/heritage?${q.toString()}`);
+      return await request<{ total: number; limit?: number; offset?: number; count?: number; data: any[] }>(`/heritages?${q.toString()}`);
     } catch {
-      return { total: 0, limit: 50, offset: 0, data: [] };
+      return { total: 0, count: 0, data: [] };
     }
   },
 
-  async getHeritageById(id: string): Promise<any> {
-    return await request<any>(`/heritage/${id}`);
+  async getHeritageById(id: string, lang?: string): Promise<any> {
+    const q = lang ? `?lang=${encodeURIComponent(lang)}` : '';
+    return await request<any>(`/heritages/${encodeURIComponent(id)}${q}`);
+  },
+
+  async getHeritageBySlug(slug: string, lang?: string): Promise<any> {
+    const q = lang ? `?lang=${encodeURIComponent(lang)}` : '';
+    return await request<any>(`/heritages/${encodeURIComponent(slug)}${q}`);
+  },
+
+  async getLanguages(): Promise<any> {
+    try {
+      return await request<any>('/languages');
+    } catch {
+      return { success: true, count: 0, data: [] };
+    }
   },
 
   // -------------------------------------------------------------

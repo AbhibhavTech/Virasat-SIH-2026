@@ -1,0 +1,156 @@
+{
+  "slug": "golden-temple",
+  "list_no": 7,
+  "name": "Sri Harmandir Sahib (The Golden Temple)",
+  "alt_names": [],
+  "category": "temple",
+  "state_ut": "Punjab",
+  "district_city": "Amritsar",
+  "coordinates": {
+    "lat": 31.62,
+    "lng": 74.8765,
+    "precision": "approximate - verify"
+  },
+  "era": "Sikh, late 16th-early 17th c.",
+  "builder": "Guru Arjan Dev (Harmandir Sahib)",
+  "authenticity": {
+    "unesco_status": "tentative",
+    "unesco_ref_id": null,
+    "unesco_inscribed_year": null,
+    "unesco_site_name": null,
+    "unesco_url": null,
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "overview_sectioned",
+  "overview": "The holiest Gurdwara of Sikhism, set in the Amrit Sarovar and open to all.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Harmandir Sahib",
+      "description": "Gold-covered sanctum reached by a causeway"
+    },
+    {
+      "title": "Amrit Sarovar",
+      "description": "Sacred pool surrounding the sanctum"
+    },
+    {
+      "title": "Akal Takht",
+      "description": "Seat of temporal authority in Sikhism"
+    },
+    {
+      "title": "Guru Ka Langar",
+      "description": "Free community kitchen serving visitors of all backgrounds"
+    },
+    {
+      "title": "Darshani Deori",
+      "description": "Gateway at the start of the causeway"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "1604",
+      "event": "Adi Granth installed in Harmandir Sahib"
+    },
+    {
+      "year": "1764",
+      "event": "Complex rebuilt by Sikh leaders"
+    },
+    {
+      "year": "early 19th c.",
+      "event": "Gold plating under Maharaja Ranjit Singh"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Jallianwala Bagh",
+      "related_slug": null
+    },
+    {
+      "name": "Partition Museum",
+      "related_slug": null
+    },
+    {
+      "name": "Wagah Border",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ],
+  "tagline": "The holiest Gurdwara of Sikhism, set in the Amrit Sarovar and open to all.",
+  "sections": [
+    {
+      "key": "history",
+      "title": "Origins & History",
+      "text": "Sri Harmandir Sahib, popularly called the Golden Temple, in Amritsar, Punjab, is the holiest shrine of Sikhism and one of the most welcoming sacred places in the world. The city of Amritsar grew around the Amrit Sarovar, the sacred pool dug under Guru Ram Das, and the temple within it was built under the fifth Guru, Guru Arjan Dev, in the late 16th and early 17th centuries. In 1604 the Adi Granth, the Sikh scripture, was installed in the sanctum, which later became the Guru Granth Sahib."
+    },
+    {
+      "key": "beauty",
+      "title": "Beauty & Atmosphere",
+      "text": "The beauty of the Golden Temple lies in its quiet reflection. The gilded sanctum seems to float on the still waters of the sarovar, reached by a marble causeway, and the white marble complex around the pool glows at dawn and dusk. The gold covering of the upper levels was added in the early 19th century under Maharaja Ranjit Singh, and the interior is decorated with intricate inlay work, mirror work and painted floral patterns that blend Mughal and Rajput influences with Sikh tradition."
+    },
+    {
+      "key": "architecture",
+      "title": "Architecture & Highlights",
+      "text": "A distinctive design idea is that the temple has four doors, open on all sides to people of every background and faith, expressing the Sikh values of equality and inclusion. Other key sites in the complex include the Akal Takht, the seat of Sikh temporal authority, and the Guru Ka Langar, the community kitchen that serves a free vegetarian meal to a very large number of visitors every day, run mostly by volunteers. The continuous recitation of kirtan, sacred hymns, creates a peaceful atmosphere around the clock."
+    },
+    {
+      "key": "famous_for",
+      "title": "Famous For",
+      "text": "The Golden Temple is not currently an inscribed UNESCO World Heritage Site, though it has been proposed for the tentative list. It is nevertheless world famous as a place of devotion, service and architecture."
+    }
+  ],
+  "visitor_tips": [
+    "Visitors must cover their heads, remove shoes, wash their feet at the entrance and avoid tobacco and alcohol.",
+    "Photography rules apply inside the sanctum.",
+    "Allow at least two to three hours, and visit at dawn or at night for the most atmospheric experience.",
+    "Nearby sights include Jallianwala Bagh, the Partition Museum and the Wagah border ceremony."
+  ],
+  "quick_facts": [
+    {
+      "label": "Location",
+      "value": "Amritsar, Punjab"
+    },
+    {
+      "label": "Era",
+      "value": "Sikh, late 16th-early 17th c."
+    },
+    {
+      "label": "Built by",
+      "value": "Guru Arjan Dev (Harmandir Sahib)"
+    },
+    {
+      "label": "Type",
+      "value": "temple"
+    },
+    {
+      "label": "UNESCO",
+      "value": "On UNESCO Tentative List"
+    }
+  ]
+}

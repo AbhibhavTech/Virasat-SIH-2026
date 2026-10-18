@@ -1,0 +1,169 @@
+{
+  "slug": "amber-fort",
+  "list_no": 13,
+  "name": "Amber Fort & Palace (Amer)",
+  "alt_names": [],
+  "category": "fort",
+  "state_ut": "Rajasthan",
+  "district_city": "Jaipur",
+  "coordinates": {
+    "lat": 26.9855,
+    "lng": 75.8513,
+    "precision": "approximate - verify"
+  },
+  "era": "Kachwaha Rajput, from 1592",
+  "builder": "Man Singh I; expanded by Jai Singh I",
+  "authenticity": {
+    "unesco_status": "part_of_inscribed",
+    "unesco_ref_id": "247",
+    "unesco_inscribed_year": 2013,
+    "unesco_site_name": "Hill Forts of Rajasthan",
+    "unesco_url": "https://whc.unesco.org/en/list/247",
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "overview_sectioned",
+  "overview": "Hilltop fort-palace overlooking Maota Lake, once the Kachwaha capital.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Sheesh Mahal",
+      "description": "Mirror-work hall"
+    },
+    {
+      "title": "Ganesh Pol",
+      "description": "Painted gateway"
+    },
+    {
+      "title": "Sukh Niwas",
+      "description": "Cooled pavilion"
+    },
+    {
+      "title": "Diwan-i-Aam",
+      "description": "Hall of public audience"
+    },
+    {
+      "title": "Maota Lake",
+      "description": "Lake in front of the fort"
+    },
+    {
+      "title": "Sila Devi Temple",
+      "description": "Temple within the palace"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "1592",
+      "event": "Construction begun by Man Singh I"
+    },
+    {
+      "year": "17th c.",
+      "event": "Expansion under Jai Singh I"
+    },
+    {
+      "year": "1727",
+      "event": "Capital moves to Jaipur"
+    },
+    {
+      "year": "2013",
+      "event": "Inscribed in Hill Forts of Rajasthan"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Jaigarh Fort",
+      "related_slug": null
+    },
+    {
+      "name": "Nahargarh Fort",
+      "related_slug": null
+    },
+    {
+      "name": "Jal Mahal",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "Hill Forts of Rajasthan - World Heritage List",
+      "publisher": "UNESCO",
+      "url": "https://whc.unesco.org/en/list/247"
+    },
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ],
+  "tagline": "Hilltop fort-palace overlooking Maota Lake, once the Kachwaha capital.",
+  "sections": [
+    {
+      "key": "history",
+      "title": "Origins & History",
+      "text": "Amber Fort, also written Amer, stands on a hill above Maota Lake about 11 km from Jaipur in Rajasthan and was the capital of the Kachwaha Rajputs before Jaipur was founded. Raja Man Singh I began the present fort in 1592 on the site of an earlier settlement, and later rulers, especially Mirza Raja Jai Singh I in the 17th century, expanded it. In 1727, Sawai Jai Singh II moved the capital to the new city of Jaipur, and Amber became a ceremonial and historic site."
+    },
+    {
+      "key": "beauty",
+      "title": "Beauty & Atmosphere",
+      "text": "The fort is built of red sandstone and white marble, and its beauty comes from the way the blend of Rajput and Mughal styles sits against the Aravalli hills. Great fortified walls climb the slope, while the interiors open into courtyards, gardens, pavilions and terraces. Visitors approach through the Suraj Pol, the Sun Gate, and move up through a series of courtyards, each more private than the last."
+    },
+    {
+      "key": "architecture",
+      "title": "Architecture & Highlights",
+      "text": "Highlights include the Diwan-i-Aam, the hall of public audience supported by rows of columns, and the beautifully painted Ganesh Pol, the grand gateway to the private palace. The Sheesh Mahal, or Jai Mandir, is covered with intricate mirror work and inlaid mosaics that glitter even with a little light. The Sukh Niwas was cooled by channels of water, and the Sila Devi Temple within the fort is an important place of worship. Below, the Kesar Kyari Bagh garden sits in the lake, and the reflections of the fort in Maota Lake make a favourite photograph."
+    },
+    {
+      "key": "famous_for",
+      "title": "Famous For",
+      "text": "Amber Fort is famous for its architecture, history and its dramatic setting. It was inscribed as part of the Hill Forts of Rajasthan UNESCO World Heritage Site in 2013, along with five other major forts of the region."
+    }
+  ],
+  "visitor_tips": [
+    "Visitors should wear comfortable shoes, as the paths are uneven and uphill, and go early to avoid crowds and midday heat.",
+    "An evening sound and light show tells the story of the fort.",
+    "Jaigarh Fort, Nahargarh Fort and Jal Mahal are nearby.",
+    "Check current timings and ticket rules with official sources."
+  ],
+  "quick_facts": [
+    {
+      "label": "Location",
+      "value": "Jaipur, Rajasthan"
+    },
+    {
+      "label": "Era",
+      "value": "Kachwaha Rajput, from 1592"
+    },
+    {
+      "label": "Built by",
+      "value": "Man Singh I; expanded by Jai Singh I"
+    },
+    {
+      "label": "Type",
+      "value": "fort"
+    },
+    {
+      "label": "UNESCO",
+      "value": "Part of a UNESCO World Heritage Site (2013)"
+    }
+  ]
+}

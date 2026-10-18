@@ -1,0 +1,155 @@
+{
+  "slug": "puducherry-french-quarter",
+  "list_no": 34,
+  "name": "French Quarter (White Town) Heritage Precinct",
+  "alt_names": [],
+  "category": "heritage precinct",
+  "state_ut": "Puducherry",
+  "district_city": "Puducherry",
+  "coordinates": {
+    "lat": 11.934,
+    "lng": 79.83,
+    "precision": "approximate - verify"
+  },
+  "era": "French colonial, from 1674",
+  "builder": "French East India Company",
+  "authenticity": {
+    "unesco_status": "unverified",
+    "unesco_ref_id": null,
+    "unesco_inscribed_year": null,
+    "unesco_site_name": null,
+    "unesco_url": null,
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "overview_sectioned",
+  "overview": "Grid-planned colonial quarter on the Coromandel coast.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "White Town grid",
+      "description": "French-planned streets"
+    },
+    {
+      "title": "Promenade",
+      "description": "Seafront"
+    },
+    {
+      "title": "Immaculate Conception Cathedral",
+      "description": "Colonial church"
+    },
+    {
+      "title": "Sri Aurobindo Ashram",
+      "description": "Spiritual centre"
+    },
+    {
+      "title": "French-era villas",
+      "description": "Yellow-walled buildings"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "1674",
+      "event": "French settlement established"
+    },
+    {
+      "year": "1954",
+      "event": "De facto transfer to India"
+    },
+    {
+      "year": "1962",
+      "event": "De jure transfer"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Auroville",
+      "related_slug": null
+    },
+    {
+      "name": "Paradise Beach",
+      "related_slug": null
+    },
+    {
+      "name": "Chunnambar",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ],
+  "tagline": "Grid-planned colonial quarter on the Coromandel coast.",
+  "sections": [
+    {
+      "key": "history",
+      "title": "Origins & History",
+      "text": "Puducherry's French Quarter, known as White Town, is a historic colonial district on the Coromandel Coast, with the feel of a small French town in India. The French East India Company established a settlement here in 1674, and the town became the capital of French India. It was later contested by the Dutch and the British, and eventually returned to France. Puducherry was handed over to India in stages, in 1954 de facto and in 1962 formally. This long French presence shaped the town's layout, architecture, language and cuisine."
+    },
+    {
+      "key": "beauty",
+      "title": "Beauty & Atmosphere",
+      "text": "The beauty of the quarter is in its streets. Laid out on a neat grid, with a canal that once separated the French town from the Indian town, it has quiet tree-lined lanes, heritage villas painted in yellow, ochre and pastel shades, shuttered windows, bougainvillaea and courtyards. French street names appear on blue and white signs, and cafes, bakeries, boutiques and art galleries occupy many old buildings. A long seafront promenade along the Bay of Bengal, with a Gandhi statue and a war memorial, is a favourite for early morning and evening walks."
+    },
+    {
+      "key": "architecture",
+      "title": "Architecture & Highlights",
+      "text": "Architecturally, the quarter mixes French colonial villas with Tamil houses, which have verandas and carved doors. Notable buildings include the Immaculate Conception Cathedral, the Raj Nivas, the Governor's residence, and the old lighthouse. Spiritually, the town is known for the Sri Aurobindo Ashram, founded in 1926 and associated with Sri Aurobindo and the Mother, and for nearby Auroville, an experimental township founded in 1968."
+    },
+    {
+      "key": "famous_for",
+      "title": "Famous For",
+      "text": "White Town is famous for its French-Tamil culture, its food, including Creole and French cuisine, and its relaxed atmosphere. Its UNESCO status has not been confirmed in this dataset and must be verified before it is described as a World Heritage Site."
+    }
+  ],
+  "visitor_tips": [
+    "Visitors can explore on foot or by bicycle, ideally in the early morning or evening, and the cooler months from October to March are the most comfortable.",
+    "Nearby are Auroville, Paradise Beach and the temples of Mahabalipuram, which is a few hours away by road.",
+    "Check local rules for ashram visits."
+  ],
+  "quick_facts": [
+    {
+      "label": "Location",
+      "value": "Puducherry, Puducherry"
+    },
+    {
+      "label": "Era",
+      "value": "French colonial, from 1674"
+    },
+    {
+      "label": "Built by",
+      "value": "French East India Company"
+    },
+    {
+      "label": "Type",
+      "value": "heritage precinct"
+    },
+    {
+      "label": "UNESCO",
+      "value": "Status to be verified"
+    }
+  ]
+}

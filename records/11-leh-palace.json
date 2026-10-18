@@ -1,0 +1,148 @@
+{
+  "slug": "leh-palace",
+  "list_no": 11,
+  "name": "Leh Palace & Tsemo Fort",
+  "alt_names": [],
+  "category": "palace",
+  "state_ut": "Ladakh",
+  "district_city": "Leh",
+  "coordinates": {
+    "lat": 34.1649,
+    "lng": 77.5846,
+    "precision": "approximate - verify"
+  },
+  "era": "Namgyal dynasty, 17th c.",
+  "builder": "Sengge Namgyal",
+  "authenticity": {
+    "unesco_status": "unverified",
+    "unesco_ref_id": null,
+    "unesco_inscribed_year": null,
+    "unesco_site_name": null,
+    "unesco_url": null,
+    "asi_protected": null,
+    "last_verified_on": null,
+    "verified_by": null
+  },
+  "content_status": "overview_sectioned",
+  "overview": "Nine-storey Tibetan-style royal palace overlooking Leh, with Tsemo hilltop fort above.",
+  "history": null,
+  "architecture": null,
+  "cultural_significance": null,
+  "features": [
+    {
+      "title": "Nine-storey palace",
+      "description": "Mud brick and timber construction"
+    },
+    {
+      "title": "Tsemo Fort",
+      "description": "Hilltop fort above the town"
+    },
+    {
+      "title": "Namgyal Tsemo Gompa",
+      "description": "Monastery founded in the 15th century"
+    },
+    {
+      "title": "Prayer flags",
+      "description": "Flags along the ridge"
+    }
+  ],
+  "timeline": [
+    {
+      "year": "17th c.",
+      "event": "Palace built under the Namgyals"
+    },
+    {
+      "year": "1834",
+      "event": "Dogra conquest; royal family moves to Stok"
+    }
+  ],
+  "visitor_guide": {
+    "recommended_duration": null,
+    "stops": []
+  },
+  "practical": {
+    "opening_hours": null,
+    "ticket_prices": null,
+    "accessibility": null,
+    "rules": []
+  },
+  "travel": [],
+  "nearby": [
+    {
+      "name": "Shanti Stupa",
+      "related_slug": null
+    },
+    {
+      "name": "Leh Market",
+      "related_slug": null
+    },
+    {
+      "name": "Thiksey Monastery",
+      "related_slug": null
+    }
+  ],
+  "facts": [],
+  "media": {
+    "hero": null,
+    "gallery": [],
+    "audio_guide": []
+  },
+  "sources": [
+    {
+      "title": "TO ADD: ASI / state tourism / academic source",
+      "publisher": "",
+      "url": ""
+    }
+  ],
+  "tagline": "Nine-storey Tibetan-style royal palace overlooking Leh, with Tsemo hilltop fort above.",
+  "sections": [
+    {
+      "key": "history",
+      "title": "Origins & History",
+      "text": "Leh Palace rises above the old town of Leh in Ladakh, high on a ridge at about 3,500 metres, and is the most visible sign of the region's royal Namgyal dynasty. It was built in the 17th century by King Sengge Namgyal and is widely said to take inspiration from the Potala Palace in Lhasa. Nine storeys tall, it was once the home of the royal family and a statement of Ladakh's power along the trade routes between India and Central Asia.\n\nIts history changed in 1834, when the Dogra general Zorawar Singh conquered Ladakh, and the royal family moved to nearby Stok Palace. The palace gradually fell into disrepair, and the Archaeological Survey of India has carried out major conservation work in recent decades."
+    },
+    {
+      "key": "beauty",
+      "title": "Beauty & Atmosphere",
+      "text": "The palace is made of stone, mud brick, wood and clay, in the Tibetan architectural tradition. Its massive tapering walls, flat roofs, wooden balconies and window frames give it a strong, sculptural presence against the dry mountain landscape. Inside, much is now in ruins or under restoration, but the rooms still hold old thangka paintings, ceremonial objects and carved woodwork that hint at its former life, and the rooftop looks out over the whole of Leh, the Indus Valley and the snow-capped Zanskar range."
+    },
+    {
+      "key": "architecture",
+      "title": "Architecture & Highlights",
+      "text": "Above the palace, on a rocky peak, sit the Tsemo Fort and the Namgyal Tsemo Gompa, a monastery traditionally dated to the 15th century, with a large statue of Maitreya Buddha inside. The short climb is rewarded by a panoramic view, especially at sunrise, which also makes it a favourite for photographers. Colourful prayer flags flutter along the ridge."
+    },
+    {
+      "key": "famous_for",
+      "title": "Famous For",
+      "text": "Leh Palace and Tsemo Fort are not UNESCO World Heritage Sites, but they are among the best known historic landmarks in the Himalayas and a symbol of Ladakhi identity."
+    }
+  ],
+  "visitor_tips": [
+    "Visitors should acclimatise to altitude for a day or two before exploring, drink plenty of water and walk slowly on the steep paths.",
+    "The best seasons are summer months, when roads and flights are open.",
+    "Nearby attractions include Shanti Stupa, the old Leh market, Thiksey Monastery and Hemis Monastery.",
+    "Check current opening times and entry rules with official sources."
+  ],
+  "quick_facts": [
+    {
+      "label": "Location",
+      "value": "Leh, Ladakh"
+    },
+    {
+      "label": "Era",
+      "value": "Namgyal dynasty, 17th c."
+    },
+    {
+      "label": "Built by",
+      "value": "Sengge Namgyal"
+    },
+    {
+      "label": "Type",
+      "value": "palace"
+    },
+    {
+      "label": "UNESCO",
+      "value": "Status to be verified"
+    }
+  ]
+}
