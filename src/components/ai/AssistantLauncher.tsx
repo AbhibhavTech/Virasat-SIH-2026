@@ -19,11 +19,11 @@ export function AssistantLauncher({ selectedCity }: { selectedCity: string }) {
     </button>
     {mounted && <section id="virasat-page-assistant" aria-label="Virasat page assistant" hidden={!open}
       onKeyDown={event => { if (event.key === 'Escape') close(); }}
-      className="fixed z-50 right-2 sm:right-6 bottom-20 md:bottom-6 w-[calc(100%-1rem)] sm:w-[480px] max-h-[80dvh] overflow-auto rounded-2xl bg-white border border-stone-200 shadow-2xl">
-      <header className="sticky top-0 z-10 bg-white px-4 py-3 border-b flex justify-between items-center">
+      className="fixed z-50 right-2 sm:right-6 bottom-20 md:bottom-6 w-[calc(100%-1rem)] sm:w-[480px] h-[80dvh] max-h-[80dvh] overflow-hidden flex flex-col rounded-2xl bg-white border border-stone-200 shadow-2xl">
+      <header className="shrink-0 bg-white px-4 py-3 border-b flex justify-between items-center">
         <strong>Virasat AI</strong><button ref={closeButton} onClick={close} className="px-3 py-2 rounded-lg border" aria-label="Close assistant">Close</button>
       </header>
-      <AdvancedAIAssistant selectedCity={selectedCity} initialPlaceId={place} />
+      <AdvancedAIAssistant selectedCity={selectedCity} initialPlaceId={place} compact />
     </section>}
   </>;
 }
