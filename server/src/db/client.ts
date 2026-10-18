@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import os from 'os';
 import '../config/environment';
 import { Pool, PoolClient } from 'pg';
 import {
@@ -231,10 +232,28 @@ class DatabaseManager {
     }
   }
 
-  private async initJsonStore(): Promise<void> {
-    if (!fs.existsSync(this.dataDir)) {
-      fs.mkdirSync(this.dataDir, { recursive: true });
+  private ensureDataDir(): void {
+    try {
+      if (!fs.existsSync(this.dataDir)) {
+        fs.mkdirSync(this.dataDir, { recursive: true });
+      }
+    } catch (err: any) {
+      console.warn(`[DB] Cannot write to directory ${this.dataDir} (${err?.code || err?.message}). Falling back to temp directory.`);
+      const tmpDir = path.join(os.tmpdir(), '.database');
+      this.dataDir = tmpDir;
+      this.dbFilePath = path.join(this.dataDir, 'virasat_store.json');
+      try {
+        if (!fs.existsSync(this.dataDir)) {
+          fs.mkdirSync(this.dataDir, { recursive: true });
+        }
+      } catch (tmpErr) {
+        console.warn('[DB] Fallback to in-memory JSON store.');
+      }
     }
+  }
+
+  private async initJsonStore(): Promise<void> {
+    this.ensureDataDir();
 
     if (fs.existsSync(this.dbFilePath)) {
       try {
@@ -289,9 +308,7 @@ class DatabaseManager {
   private persist(): void {
     if (this.mode === 'postgresql') return;
     try {
-      if (!fs.existsSync(this.dataDir)) {
-        fs.mkdirSync(this.dataDir, { recursive: true });
-      }
+      this.ensureDataDir();
       const tmpPath = `${this.dbFilePath}.tmp`;
       fs.writeFileSync(tmpPath, JSON.stringify(this.data, null, 2), 'utf-8');
       try {

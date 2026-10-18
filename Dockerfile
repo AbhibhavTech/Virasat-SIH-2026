@@ -43,10 +43,13 @@ COPY package*.json ./
 RUN npm install --omit=dev && npm cache clean --force
 
 # Copy compiled assets from builder
-COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/data ./data
-COPY --from=builder /app/all_heritages.json ./all_heritages.json
-COPY --from=builder /app/package.json ./package.json
+COPY --chown=node:node --from=builder /app/dist ./dist
+COPY --chown=node:node --from=builder /app/data ./data
+COPY --chown=node:node --from=builder /app/all_heritages.json ./all_heritages.json
+COPY --chown=node:node --from=builder /app/package.json ./package.json
+
+# Ensure data directory is writable by node user
+RUN mkdir -p /app/data/.database && chown -R node:node /app
 
 # Use non-root unprivileged node user for container security
 USER node
