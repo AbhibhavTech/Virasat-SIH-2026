@@ -13,6 +13,7 @@ healthRouter.get('/health', (req: Request, res: Response): void => {
     status: 'ok',
     service: 'virasat-api',
     version: '1.0.0',
+    revision: process.env.RENDER_GIT_COMMIT || null,
     uptime_seconds: Math.floor(process.uptime()),
     timestamp: new Date().toISOString(),
     environment: process.env.NODE_ENV || 'development',

@@ -637,7 +637,7 @@ function haversineDistanceKm(lat1: number, lon1: number, lat2: number, lon2: num
 // System Endpoints
 // -------------------------------------------------------------
 app.get(['/api/health', '/health'], (req, res) => {
-  res.json({ status: 'ok', app: 'Virasat', timestamp: new Date().toISOString() });
+  res.json({ status: 'ok', app: 'Virasat', revision: process.env.RENDER_GIT_COMMIT || null, timestamp: new Date().toISOString() });
 });
 
 // -------------------------------------------------------------

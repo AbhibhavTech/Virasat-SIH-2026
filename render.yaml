@@ -15,6 +15,6 @@ services:
       - key: GROQ_MODEL
         value: openai/gpt-oss-20b
       - key: VIRASAT_AI_REQUIRE_HOSTED
-        value: "false"
+        value: "true"
       - key: JWT_SECRET
         generateValue: true

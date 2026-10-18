@@ -26,6 +26,7 @@ import {
   HeartHandshake
 } from 'lucide-react';
 import { VerifiedStay, getHotelsForCity } from '../../data/hotelsData';
+import cultureRecords from '../../../data/culture.json';
 import { NavTab } from '../layout/Sidebar';
 
 interface HotelRecommendationsSectionProps {
@@ -57,6 +58,11 @@ export const HotelRecommendationsSection: React.FC<HotelRecommendationsSectionPr
 
   // Load hotels for the selected city
   const hotels = getHotelsForCity(selectedCity, selectedState, cityLat, cityLng);
+
+  const culinaryRecords = cultureRecords.filter(item =>
+    item.city?.trim().toLowerCase() === selectedCity.trim().toLowerCase() &&
+    /food|culinary/i.test(item.category || '')
+  );
 
   const filteredHotels = hotels.filter((h) => {
     if (activeTier === 'all') return true;
@@ -277,63 +283,13 @@ export const HotelRecommendationsSection: React.FC<HotelRecommendationsSectionPr
           </span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="p-4 rounded-2xl bg-amber-50/60 border border-amber-200/80 space-y-2">
-            <div className="text-xs font-bold text-stone-900 flex items-center justify-between">
-              <span>Haveli Heritage Punjabi Dhaba</span>
-              <span className="text-[10px] text-amber-800 font-semibold">₹350/person</span>
-            </div>
-            <p className="text-xs text-stone-600 leading-snug">
-              Famous for wood-fired Sarson da Saag, Makki di Roti with white butter, and slow-simmered Dal Makhani.
-            </p>
-            <div className="text-[10px] text-stone-500 flex items-center gap-1 pt-1 border-t border-amber-200/50">
-              <Clock className="w-3 h-3 text-stone-400" />
-              <span>11:00 AM – 11:30 PM (Daily)</span>
-            </div>
-          </div>
-
-          <div className="p-4 rounded-2xl bg-orange-50/60 border border-orange-200/80 space-y-2">
-            <div className="text-xs font-bold text-stone-900 flex items-center justify-between">
-              <span>Katani Dhaba Phase 3B2</span>
-              <span className="text-[10px] text-orange-800 font-semibold">₹220/person</span>
-            </div>
-            <p className="text-xs text-stone-600 leading-snug">
-              Legendary local eatery known for creamy Paneer Butter Masala, crisp tandoori parathas, and Malai Kofta.
-            </p>
-            <div className="text-[10px] text-stone-500 flex items-center gap-1 pt-1 border-t border-orange-200/50">
-              <Clock className="w-3 h-3 text-stone-400" />
-              <span>08:00 AM – 11:00 PM (Daily)</span>
-            </div>
-          </div>
-
-          <div className="p-4 rounded-2xl bg-emerald-50/60 border border-emerald-200/80 space-y-2">
-            <div className="text-xs font-bold text-stone-900 flex items-center justify-between">
-              <span>Amritsari Kulcha Hub</span>
-              <span className="text-[10px] text-emerald-800 font-semibold">₹150/person</span>
-            </div>
-            <p className="text-xs text-stone-600 leading-snug">
-              Authentic clay oven Chur-Chur Kulchas stuffed with spiced potatoes and onions, served with tangy imli chutney.
-            </p>
-            <div className="text-[10px] text-stone-500 flex items-center gap-1 pt-1 border-t border-emerald-200/50">
-              <Clock className="w-3 h-3 text-stone-400" />
-              <span>08:30 AM – 04:30 PM (Breakfast & Lunch)</span>
-            </div>
-          </div>
-
-          <div className="p-4 rounded-2xl bg-blue-50/60 border border-blue-200/80 space-y-2">
-            <div className="text-xs font-bold text-stone-900 flex items-center justify-between">
-              <span>Sindhi Sweets & Lassi Corner</span>
-              <span className="text-[10px] text-blue-800 font-semibold">₹180/person</span>
-            </div>
-            <p className="text-xs text-stone-600 leading-snug">
-              Renowned sweet shop for hot crispy Desi Ghee Jalebis, rich Malai Lassi in earthen kulhads, and Pinni.
-            </p>
-            <div className="text-[10px] text-stone-500 flex items-center gap-1 pt-1 border-t border-blue-200/50">
-              <Clock className="w-3 h-3 text-stone-400" />
-              <span>09:00 AM – 10:30 PM</span>
-            </div>
-          </div>
-        </div>
+        {culinaryRecords.length ? <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {culinaryRecords.map(item => <article key={item.id} className="rounded-2xl border border-amber-200 bg-amber-50/60 p-4 space-y-2">
+            <h5 className="text-sm font-semibold text-stone-900">{item.name}</h5>
+            <p className="text-sm leading-relaxed text-stone-600">{item.description}</p>
+            <p className="text-xs text-stone-500">Stored cultural guide · Confirm current venues, hours and prices locally.</p>
+          </article>)}
+        </div> : <p className="text-sm text-stone-600">We do not yet have city-specific food records for {selectedCity}. Ask your accommodation for local dining recommendations and confirm opening hours directly.</p>}
       </div>
 
       {/* 1. INTERACTIVE HOTEL MAP MODAL */}
