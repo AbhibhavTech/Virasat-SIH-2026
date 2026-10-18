@@ -1,8 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
-const rootFile = path.resolve(process.cwd(), 'all_heritages.json');
-const file = fs.existsSync(rootFile) ? rootFile : path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../all_heritages.json');
+const file = path.resolve(process.cwd(), 'all_heritages.json');
 export const heritageStamp = () => fs.statSync(file).mtimeMs;
 export function cleanHeritage(value: unknown): string {
   if (typeof value === 'string') return /\[.*words|TO BE CONFIRMED|^null$|^undefined$/i.test(value) ? '' : value.trim();
