@@ -28,11 +28,15 @@ import {
   Camera,
   Share2,
   Check,
+  ChevronDown,
   ChevronRight,
   History,
   Building,
   Volume2,
   Image as ImageIcon,
+  CheckCircle2,
+  Award,
+  Lightbulb,
 } from 'lucide-react';
 
 interface HeritageDetailPageProps {
@@ -49,7 +53,7 @@ function isValidText(text?: string | null): boolean {
   if (!trimmed) return false;
   const lower = trimmed.toLowerCase();
   if (lower === 'null' || lower === 'undefined' || lower === 'none' || lower === 'n/a') return false;
-  // Outline draft placeholders (e.g. [400-700 words: ...], [5-10 verified facts...], [verify...])
+  // Suppress draft / outline placeholders
   if (/^\[\d+-\d+\s+words/i.test(trimmed)) return false;
   if (/^\[\d+-\d+\s+verified\s+facts/i.test(trimmed)) return false;
   if (/^\[verify/i.test(trimmed)) return false;
@@ -69,12 +73,47 @@ function isValidArray<T>(arr?: T[] | null): boolean {
   });
 }
 
-function formatCoordinates(lat?: number, lng?: number): string | null {
-  if (lat === undefined || lng === undefined || lat === null || lng === null) return null;
-  const numLat = Number(lat);
-  const numLng = Number(lng);
-  if (isNaN(numLat) || isNaN(numLng)) return null;
-  return `${numLat.toFixed(4)}° N, ${numLng.toFixed(4)}° E`;
+function getQuickFactIcon(label: string) {
+  const l = label.toLowerCase();
+  if (l.includes('location') || l.includes('city') || l.includes('state')) return MapPin;
+  if (l.includes('era') || l.includes('year') || l.includes('century') || l.includes('time')) return Calendar;
+  if (l.includes('built') || l.includes('builder') || l.includes('patron')) return User;
+  if (l.includes('unesco') || l.includes('status') || l.includes('protect')) return ShieldCheck;
+  return Landmark;
+}
+
+function getSectionVisuals(key: string) {
+  switch (key) {
+    case 'history':
+      return {
+        icon: History,
+        bgLight: 'bg-amber-50',
+        badgeBg: 'bg-amber-100 text-amber-900 border-amber-200',
+        iconColor: 'text-[#FF671F]',
+      };
+    case 'beauty':
+      return {
+        icon: Sparkles,
+        bgLight: 'bg-rose-50/70',
+        badgeBg: 'bg-rose-100 text-rose-900 border-rose-200',
+        iconColor: 'text-rose-600',
+      };
+    case 'architecture':
+      return {
+        icon: Building,
+        bgLight: 'bg-sky-50/70',
+        badgeBg: 'bg-sky-100 text-sky-900 border-sky-200',
+        iconColor: 'text-sky-700',
+      };
+    case 'famous_for':
+    default:
+      return {
+        icon: Award,
+        bgLight: 'bg-emerald-50/70',
+        badgeBg: 'bg-emerald-100 text-emerald-900 border-emerald-200',
+        iconColor: 'text-emerald-700',
+      };
+  }
 }
 
 export const HeritageDetailPage: React.FC<HeritageDetailPageProps> = ({
@@ -90,6 +129,14 @@ export const HeritageDetailPage: React.FC<HeritageDetailPageProps> = ({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [copiedLink, setCopiedLink] = useState(false);
+  const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({});
+
+  const toggleSection = (key: string) => {
+    setExpandedSections((prev) => ({
+      ...prev,
+      [key]: !prev[key],
+    }));
+  };
 
   useEffect(() => {
     if (!slug) return;
@@ -126,18 +173,16 @@ export const HeritageDetailPage: React.FC<HeritageDetailPageProps> = ({
   if (loading) {
     return (
       <div className="max-w-6xl mx-auto px-4 py-12 space-y-8 animate-pulse">
-        <div className="h-8 w-40 bg-stone-200 rounded-xl" />
-        <div className="h-[420px] bg-stone-200 rounded-3xl" />
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="md:col-span-2 space-y-4">
-            <div className="h-6 w-3/4 bg-stone-200 rounded-lg" />
-            <div className="h-28 bg-stone-200 rounded-2xl" />
-            <div className="h-44 bg-stone-200 rounded-2xl" />
-          </div>
-          <div className="space-y-4">
-            <div className="h-48 bg-stone-200 rounded-2xl" />
-            <div className="h-32 bg-stone-200 rounded-2xl" />
-          </div>
+        <div className="h-8 w-48 bg-stone-200 rounded-xl" />
+        <div className="h-[380px] bg-stone-200 rounded-3xl" />
+        <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+          {[1, 2, 3, 4, 5].map((i) => (
+            <div key={i} className="h-16 bg-stone-200 rounded-xl" />
+          ))}
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="h-56 bg-stone-200 rounded-2xl" />
+          <div className="h-56 bg-stone-200 rounded-2xl" />
         </div>
       </div>
     );
@@ -173,33 +218,59 @@ export const HeritageDetailPage: React.FC<HeritageDetailPageProps> = ({
       ? heritage.media!.hero!.url!
       : getMonumentRealImage(heritage.slug || String(heritage.id));
 
-  const coordinatesStr = formatCoordinates(heritage.lat, heritage.lng);
+  // 1-line overview (tagline or fallback overview)
+  const oneLineOverview =
+    isValidText(heritage.tagline)
+      ? heritage.tagline
+      : isValidText(heritage.overview)
+      ? heritage.overview
+      : null;
 
-  // Field validation checks
-  const showOverview = isValidText(heritage.overview);
-  const showHistory = isValidText(heritage.history);
-  const showArchitecture = isValidText(heritage.architecture);
-  const showCultural = isValidText(heritage.cultural_significance);
+  // Quick facts
+  const validQuickFacts = (heritage.quick_facts || []).filter(
+    (q) => isValidText(q.label) && isValidText(q.value)
+  );
+  const showQuickFacts = validQuickFacts.length > 0;
 
+  // Sections (history, beauty, architecture, famous_for)
+  let displaySections: Array<{ key: string; title: string; text: string }> = [];
+  if (Array.isArray(heritage.sections) && heritage.sections.length > 0) {
+    displaySections = heritage.sections.filter(
+      (s) => isValidText(s.text) && isValidText(s.title)
+    );
+  } else {
+    // Fallback to individual fields if sections array is empty
+    if (isValidText(heritage.history)) {
+      displaySections.push({ key: 'history', title: 'Origins & History', text: heritage.history! });
+    }
+    if (isValidText(heritage.architecture)) {
+      displaySections.push({ key: 'architecture', title: 'Architecture & Highlights', text: heritage.architecture! });
+    }
+    if (isValidText(heritage.cultural_significance)) {
+      displaySections.push({ key: 'famous_for', title: 'Cultural Significance', text: heritage.cultural_significance! });
+    }
+  }
+  const showInfoCards = displaySections.length > 0;
+
+  // Visitor tips
+  const validVisitorTips = (heritage.visitor_tips || []).filter(isValidText);
+  const showVisitorTips = validVisitorTips.length > 0;
+
+  // Features
   const validFeatures = (heritage.features || []).filter(
     (f) => isValidText(f.title) || isValidText(f.description)
   );
   const showFeatures = validFeatures.length > 0;
 
-  const validTimeline = (heritage.timeline || []).filter(
-    (t: any) => isValidText(t.event)
-  );
+  // Timeline
+  const validTimeline = (heritage.timeline || []).filter((t: any) => isValidText(t.event));
   const showTimeline = validTimeline.length > 0;
 
-  const validStops = (heritage.visitor_guide?.stops || []).filter(
-    (s: any) => isValidText(s.title) || isValidText(s.description)
-  );
-  const hasDuration = isValidText(
-    heritage.visitor_guide?.recommended_duration || heritage.recommended_duration
-  );
-  const showVisitorGuide = hasDuration || validStops.length > 0;
+  // Nearby
+  const validNearby = (heritage.nearby || []).filter((n: any) => isValidText(n.name));
+  const showNearby = validNearby.length > 0;
 
-  // Practical info validation
+  // Practical info
   const practicalOpening =
     typeof heritage.practical?.opening_hours === 'string' && isValidText(heritage.practical.opening_hours)
       ? heritage.practical.opening_hours
@@ -215,23 +286,11 @@ export const HeritageDetailPage: React.FC<HeritageDetailPageProps> = ({
     practicalPrices = rawPrices;
   } else if (rawPrices && typeof rawPrices === 'object') {
     const parts: string[] = [];
-    if (rawPrices.indian !== undefined && rawPrices.indian !== null) {
-      parts.push(`Indian Citizens: ₹${rawPrices.indian}`);
-    }
-    if (rawPrices.foreign !== undefined && rawPrices.foreign !== null) {
-      parts.push(`Foreign Tourists: ₹${rawPrices.foreign}`);
-    }
-    if (rawPrices.saarc !== undefined && rawPrices.saarc !== null) {
-      parts.push(`SAARC / BIMSTEC: ₹${rawPrices.saarc}`);
-    }
-    if (rawPrices.child_free_under) {
-      parts.push(`Children under ${rawPrices.child_free_under} free`);
-    }
-    if (parts.length > 0) {
-      practicalPrices = parts.join(' | ');
-    } else if (isValidText(rawPrices.status) && !rawPrices.status.toLowerCase().includes('verify')) {
-      practicalPrices = rawPrices.status;
-    }
+    if (rawPrices.indian !== undefined && rawPrices.indian !== null) parts.push(`Indian: ₹${rawPrices.indian}`);
+    if (rawPrices.foreign !== undefined && rawPrices.foreign !== null) parts.push(`Foreign: ₹${rawPrices.foreign}`);
+    if (rawPrices.saarc !== undefined && rawPrices.saarc !== null) parts.push(`SAARC: ₹${rawPrices.saarc}`);
+    if (rawPrices.child_free_under) parts.push(`Under ${rawPrices.child_free_under} free`);
+    if (parts.length > 0) practicalPrices = parts.join(' • ');
   }
 
   const practicalAccessibility =
@@ -250,28 +309,6 @@ export const HeritageDetailPage: React.FC<HeritageDetailPageProps> = ({
   );
   const showTravel = validTravel.length > 0;
 
-  const validNearby = (heritage.nearby || []).filter((n: any) => isValidText(n.name));
-  const showNearby = validNearby.length > 0;
-
-  const validFacts = (heritage.facts || [])
-    .map((f: any) => (typeof f === 'string' ? f : f?.fact))
-    .filter(isValidText);
-  const showFacts = validFacts.length > 0;
-
-  const galleryMedia = (heritage.media?.gallery || []).filter((item: any) => {
-    if (typeof item === 'string') return isValidText(item);
-    return item && isValidText(item.url);
-  });
-  const audioGuideMedia = (heritage.media?.audio_guide || []).filter((item: any) => {
-    if (typeof item === 'string') return isValidText(item);
-    return item && (isValidText(item.url) || isValidText(item.title));
-  });
-  const showMedia =
-    galleryMedia.length > 0 ||
-    audioGuideMedia.length > 0 ||
-    isValidText(heritage.media?.hero?.credit) ||
-    isValidText(heritage.media?.hero?.licence);
-
   const validSources = (heritage.sources || []).filter(
     (s: any) => isValidText(s.title) || isValidText(s.publisher) || isValidText(s.url)
   );
@@ -282,7 +319,7 @@ export const HeritageDetailPage: React.FC<HeritageDetailPageProps> = ({
       if (navigator.share) {
         await navigator.share({
           title: `${heritage.name} | Virasat Heritage`,
-          text: `Explore ${heritage.name} on Virasat AI`,
+          text: `${heritage.name}: ${oneLineOverview || 'Explore on Virasat AI'}`,
           url: window.location.href,
         });
       } else {
@@ -296,243 +333,296 @@ export const HeritageDetailPage: React.FC<HeritageDetailPageProps> = ({
   };
 
   return (
-    <div className={`max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10 space-y-8 sm:space-y-12 animate-fadeIn ${isRTL ? 'text-right' : 'text-left'}`}>
-      {/* Top Navigation & Action Toolbar */}
-      <div className="flex flex-wrap items-center justify-between gap-3 pb-4 border-b border-[#E8DEC8]">
-        <button
-          type="button"
-          onClick={() => navigate('/heritage')}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-stone-700 hover:text-stone-900 bg-stone-100 hover:bg-stone-200 text-xs sm:text-sm font-bold transition-all cursor-pointer"
-        >
-          <ArrowLeft className={`w-4 h-4 ${isRTL ? 'rotate-180' : ''}`} />
-          <span>All Heritage Monuments</span>
-        </button>
+    <div
+      dir={isRTL ? 'rtl' : 'ltr'}
+      className={`max-w-6xl mx-auto px-4 sm:px-6 py-6 sm:py-10 space-y-8 animate-fadeIn ${
+        isRTL ? 'text-right' : 'text-left'
+      }`}
+    >
+      {/* ------------------------------------------------------------------- */}
+      {/* Top Action & Navigation Bar                                         */}
+      {/* ------------------------------------------------------------------- */}
+      <div className="flex flex-wrap items-center justify-between gap-4 pb-2 border-b border-stone-200">
+        <div className="flex items-center gap-3">
+          <button
+            type="button"
+            onClick={() => navigate('/heritage')}
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-stone-700 bg-stone-100 hover:bg-stone-200 text-xs font-semibold transition cursor-pointer"
+          >
+            <ArrowLeft className="w-3.5 h-3.5" />
+            <span>Heritage Catalog</span>
+          </button>
+          {isValidText(heritage.category) && (
+            <span className="text-xs px-2.5 py-1 rounded-full bg-orange-50 text-[#FF671F] font-semibold border border-orange-200 uppercase tracking-wider">
+              {heritage.category}
+            </span>
+          )}
+        </div>
 
-        <div className="flex items-center gap-2.5 sm:gap-3">
-          {/* Drop-in Language Selector (Requirement 4) */}
-          <LanguageSelector id="detail-lang-selector" />
+        <div className="flex items-center gap-2.5">
+          {/* Language Selector Pill */}
+          <LanguageSelector />
 
           {/* Share Button */}
           <button
             type="button"
             onClick={handleShare}
-            className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl border border-stone-200 bg-white hover:bg-stone-50 text-stone-700 text-xs sm:text-sm font-semibold shadow-xs transition cursor-pointer"
-            title="Share or Copy Link"
+            className="p-2 rounded-xl border border-stone-200 bg-white text-stone-700 hover:bg-stone-50 transition cursor-pointer shadow-xs"
+            title="Share heritage page"
           >
             {copiedLink ? <Check className="w-4 h-4 text-emerald-600" /> : <Share2 className="w-4 h-4" />}
-            <span className="hidden sm:inline">{copiedLink ? 'Copied' : 'Share'}</span>
           </button>
 
-          {/* Favorite Button */}
+          {/* Favorites Button */}
           <button
             type="button"
             onClick={() => toggleFavorite(heritage.slug || String(heritage.id))}
-            className={`p-2 sm:px-3 sm:py-2 rounded-xl border text-xs sm:text-sm font-semibold shadow-xs transition cursor-pointer inline-flex items-center gap-1.5 ${
+            className={`p-2 rounded-xl border transition cursor-pointer shadow-xs ${
               isFav
-                ? 'bg-rose-50 border-rose-200 text-rose-600'
-                : 'bg-white border-stone-200 text-stone-700 hover:bg-stone-50'
+                ? 'border-rose-200 bg-rose-50 text-rose-600'
+                : 'border-stone-200 bg-white text-stone-500 hover:text-stone-700'
             }`}
-            title={isFav ? 'Remove from favorites' : 'Save to favorites'}
+            title={isFav ? 'Saved to Favorites' : 'Add to Favorites'}
           >
-            <Heart className={`w-4 h-4 ${isFav ? 'fill-current text-rose-500' : ''}`} />
-            <span className="hidden sm:inline">{isFav ? 'Saved' : 'Save'}</span>
+            <Heart className={`w-4 h-4 ${isFav ? 'fill-current' : ''}`} />
           </button>
         </div>
       </div>
 
-      {/* Hero Monument Banner */}
-      <section className="relative overflow-hidden rounded-3xl sm:rounded-[36px] bg-stone-900 shadow-[0_20px_60px_rgba(57,39,26,0.18)] border border-[#E8DEC8]">
-        <div className="relative h-72 sm:h-96 md:h-[460px] w-full overflow-hidden">
+      {/* ------------------------------------------------------------------- */}
+      {/* 1. Upar: Hero + Name + UNESCO Badge + Overview (1 line)             */}
+      {/* ------------------------------------------------------------------- */}
+      <section className="relative rounded-3xl overflow-hidden border border-stone-200 bg-stone-900 shadow-xl">
+        {/* Hero Background Image */}
+        <div className="relative h-72 sm:h-96 w-full overflow-hidden">
           <img
             src={heroImage}
-            alt={heritage.media?.hero?.alt || heritage.name}
-            className="w-full h-full object-cover object-center"
+            alt={heritage.name}
+            className="w-full h-full object-cover brightness-90 hover:scale-105 transition-transform duration-700"
             loading="eager"
             onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              const fallback = getMonumentRealImage(heritage.slug || String(heritage.id));
-              if (target.src !== fallback) {
-                target.src = fallback;
-              }
+              (e.currentTarget as HTMLImageElement).src = getMonumentRealImage(heritage.slug || 'taj-mahal');
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
 
-          {/* Badges Overlay */}
-          <div className="absolute top-4 sm:top-6 left-4 sm:left-6 right-4 sm:right-6 flex flex-wrap items-center justify-between gap-2.5">
-            <div className="flex flex-wrap items-center gap-2">
-              {/* Requirement 3: UNESCO Badge only on inscribed / part_of_inscribed */}
-              <UnescoBadge
-                status={heritage.unesco_status}
-                year={heritage.unesco_inscribed_year}
-                siteName={heritage.unesco_site_name}
-                size="md"
-              />
-
-              {heritage.asi_protected && (
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#046A38] text-white shadow-xs">
-                  <ShieldCheck className="w-3.5 h-3.5" />
-                  <span>ASI Protected</span>
-                </span>
-              )}
-
-              {isValidText(heritage.category) && (
-                <span className="px-3 py-1 rounded-full text-xs font-semibold bg-white/20 text-white backdrop-blur-md capitalize">
-                  {heritage.category}
-                </span>
-              )}
-            </div>
-
-            {heritage.list_no && (
-              <span className="px-3 py-1 rounded-full text-xs font-mono font-bold bg-black/50 text-white/90 backdrop-blur-md border border-white/20">
-                Catalog #{heritage.list_no}
+          {/* Floating Badges */}
+          <div className="absolute top-4 left-4 right-4 flex items-center justify-between gap-2 z-10 pointer-events-none">
+            <UnescoBadge
+              status={heritage.unesco_status}
+              inscribedYear={heritage.unesco_inscribed_year}
+              siteName={heritage.unesco_site_name}
+              className="pointer-events-auto shadow-md"
+            />
+            {isValidText(heritage.era) && (
+              <span className="pointer-events-auto text-[11px] font-semibold px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-amber-200 border border-amber-500/30 shadow-xs">
+                {heritage.era}
               </span>
             )}
           </div>
 
-          {/* Bottom Title & Key Metadata Overlay */}
-          <div className="absolute bottom-4 sm:bottom-8 left-4 sm:left-8 right-4 sm:right-8 text-white space-y-2 sm:space-y-3">
-            <h1 className="text-2xl sm:text-4xl md:text-5xl font-serif font-black tracking-tight drop-shadow-md">
+          {/* Title & Location Banner */}
+          <div className="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 right-4 sm:right-6 text-white space-y-2 z-10">
+            <h1 className="text-2xl sm:text-4xl font-serif font-black tracking-tight drop-shadow-md">
               {heritage.name}
             </h1>
-
-            {isValidArray(heritage.alt_names) && (
-              <p className="text-xs sm:text-sm text-stone-200 font-sans italic drop-shadow-xs">
-                Also known as: {heritage.alt_names!.filter(isValidText).join(' • ')}
-              </p>
-            )}
-
-            <div className="flex flex-wrap items-center gap-3 sm:gap-6 text-xs sm:text-sm text-stone-200 pt-1 font-sans font-medium">
-              {(isValidText(heritage.district_city) || isValidText(heritage.state_ut)) && (
-                <div className="flex items-center gap-1.5 drop-shadow-xs">
-                  <MapPin className="w-4 h-4 text-emerald-400 shrink-0" />
-                  <span>
-                    {[heritage.district_city, heritage.state_ut].filter(isValidText).join(', ')}
-                  </span>
-                </div>
-              )}
-
-              {isValidText(heritage.era) && (
-                <div className="flex items-center gap-1.5 drop-shadow-xs">
-                  <Calendar className="w-4 h-4 text-amber-400 shrink-0" />
-                  <span>{heritage.era}</span>
-                </div>
-              )}
-
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 text-xs sm:text-sm text-stone-200">
+              <span className="inline-flex items-center gap-1 font-medium">
+                <MapPin className="w-3.5 h-3.5 text-[#FF671F]" />
+                <span>
+                  {heritage.district_city}, {heritage.state_ut}
+                </span>
+              </span>
               {isValidText(heritage.builder) && (
-                <div className="flex items-center gap-1.5 drop-shadow-xs">
-                  <User className="w-4 h-4 text-orange-400 shrink-0" />
-                  <span>Built by {heritage.builder}</span>
-                </div>
-              )}
-
-              {coordinatesStr && (
-                <div className="flex items-center gap-1.5 drop-shadow-xs hidden md:flex">
-                  <Compass className="w-4 h-4 text-sky-400 shrink-0" />
-                  <span>{coordinatesStr}</span>
-                </div>
+                <>
+                  <span className="opacity-40">•</span>
+                  <span className="inline-flex items-center gap-1">
+                    <User className="w-3.5 h-3.5 text-amber-300" />
+                    <span>{heritage.builder}</span>
+                  </span>
+                </>
               )}
             </div>
           </div>
         </div>
 
-        {/* Hero Image Attribution Strip */}
-        {isValidText(heritage.media?.hero?.credit) && (
-          <div className="px-6 py-2 bg-stone-950/80 text-[11px] text-stone-400 flex items-center justify-between border-t border-stone-800">
-            <span>Photo credit: {heritage.media!.hero!.credit}</span>
-            {isValidText(heritage.media?.hero?.licence) && (
-              <span>License: {heritage.media!.hero!.licence}</span>
-            )}
+        {/* 1-Line Overview (Clean, prominent, no long wall of text) */}
+        {oneLineOverview && (
+          <div className="p-4 sm:p-5 bg-gradient-to-r from-amber-50/95 to-orange-50/95 border-t border-amber-200/60 backdrop-blur-sm">
+            <p className="text-sm sm:text-base font-serif italic text-stone-800 leading-relaxed text-center sm:text-left">
+              "{oneLineOverview}"
+            </p>
           </div>
         )}
       </section>
 
-      {/* Main Content Sections Layout */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
-        {/* Left Column: Narrative Content & In-Depth Details */}
-        <div className="lg:col-span-8 space-y-8 sm:space-y-10">
-          {/* Overview */}
-          {showOverview && (
-            <section className="bg-white p-6 sm:p-8 rounded-3xl border border-[#E8DEC8] shadow-xs space-y-3">
-              <div className="flex items-center gap-2.5 text-[#FF671F]">
-                <Sparkles className="w-5 h-5" />
-                <h2 className="text-lg sm:text-xl font-serif font-black text-stone-900">
-                  Overview
+      {/* ------------------------------------------------------------------- */}
+      {/* 2. Quick Facts Strip (5 items chhote chips/cards me, ek row me)     */}
+      {/* ------------------------------------------------------------------- */}
+      {showQuickFacts && (
+        <section>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+            {validQuickFacts.map((fact, idx) => {
+              const IconComponent = getQuickFactIcon(fact.label);
+              return (
+                <div
+                  key={idx}
+                  className="bg-white border border-stone-200 rounded-2xl p-3 sm:p-3.5 shadow-xs hover:border-amber-300 hover:bg-amber-50/30 transition flex items-center gap-2.5"
+                >
+                  <div className="w-8 h-8 rounded-xl bg-orange-100 text-[#FF671F] flex items-center justify-center shrink-0">
+                    <IconComponent className="w-4 h-4" />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <div className="text-[10px] font-bold text-stone-400 uppercase tracking-wider truncate">
+                      {fact.label}
+                    </div>
+                    <div className="text-xs sm:text-sm font-bold text-stone-900 truncate" title={fact.value}>
+                      {fact.value}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      )}
+
+      {/* ------------------------------------------------------------------- */}
+      {/* Main Grid: Left (Cards, Tips, Features, Timeline) + Right Sidebar   */}
+      {/* ------------------------------------------------------------------- */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* Left Column (2/3 width) */}
+        <div className="lg:col-span-2 space-y-8">
+          {/* ----------------------------------------------------------------- */}
+          {/* 3. 4 Info Cards (Desktop 2x2, Mobile 1 col; max 4 lines + expand) */}
+          {/* ----------------------------------------------------------------- */}
+          {showInfoCards && (
+            <section className="space-y-4">
+              <div className="flex items-center gap-2">
+                <BookOpen className="w-5 h-5 text-[#FF671F]" />
+                <h2 className="text-lg sm:text-xl font-serif font-bold text-stone-900">
+                  Monument Highlights & Context
                 </h2>
               </div>
-              <p className="text-sm sm:text-base text-stone-700 leading-relaxed font-sans">
-                {heritage.overview}
-              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {displaySections.map((sec) => {
+                  const visuals = getSectionVisuals(sec.key);
+                  const Icon = visuals.icon;
+                  const isExpanded = !!expandedSections[sec.key];
+
+                  return (
+                    <div
+                      key={sec.key}
+                      className={`p-4 sm:p-5 rounded-2xl border border-stone-200 bg-white shadow-xs hover:shadow-md transition flex flex-col justify-between`}
+                    >
+                      <div className="space-y-3">
+                        <div className="flex items-center gap-2.5">
+                          <div
+                            className={`w-8 h-8 rounded-xl ${visuals.bgLight} ${visuals.iconColor} flex items-center justify-center shrink-0`}
+                          >
+                            <Icon className="w-4 h-4" />
+                          </div>
+                          <h3 className="font-serif font-bold text-base text-stone-900">
+                            {sec.title}
+                          </h3>
+                        </div>
+
+                        <p
+                          className={`text-sm text-stone-700 leading-relaxed ${
+                            isExpanded ? '' : 'line-clamp-4'
+                          }`}
+                        >
+                          {sec.text}
+                        </p>
+                      </div>
+
+                      {sec.text.length > 200 && (
+                        <div className="pt-3 mt-1 border-t border-stone-100 flex justify-end">
+                          <button
+                            type="button"
+                            onClick={() => toggleSection(sec.key)}
+                            className="text-xs font-bold text-[#FF671F] hover:text-orange-700 inline-flex items-center gap-1 cursor-pointer transition"
+                          >
+                            <span>{isExpanded ? 'Show less' : 'Read more'}</span>
+                            <ChevronDown
+                              className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                                isExpanded ? 'rotate-180' : ''
+                              }`}
+                            />
+                          </button>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
+              </div>
             </section>
           )}
 
-          {/* History */}
-          {showHistory && (
-            <section className="bg-white p-6 sm:p-8 rounded-3xl border border-[#E8DEC8] shadow-xs space-y-3">
-              <div className="flex items-center gap-2.5 text-[#046A38]">
-                <History className="w-5 h-5" />
-                <h2 className="text-lg sm:text-xl font-serif font-black text-stone-900">
-                  Historical Chronicle
-                </h2>
+          {/* ----------------------------------------------------------------- */}
+          {/* 4. "Visitor Tips" Card (Bullet list)                             */}
+          {/* ----------------------------------------------------------------- */}
+          {showVisitorTips && (
+            <section className="bg-gradient-to-br from-amber-50/80 via-white to-orange-50/50 border border-amber-200 rounded-3xl p-5 sm:p-6 shadow-sm space-y-4">
+              <div className="flex items-center justify-between gap-3 pb-3 border-b border-amber-100">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-8 h-8 rounded-xl bg-orange-100 text-[#FF671F] flex items-center justify-center shrink-0">
+                    <Compass className="w-4 h-4" />
+                  </div>
+                  <div>
+                    <h3 className="font-serif font-bold text-base sm:text-lg text-stone-900">
+                      Visitor Tips & Guidelines
+                    </h3>
+                    <p className="text-xs text-stone-500">
+                      Essential advice for travellers visiting this heritage site
+                    </p>
+                  </div>
+                </div>
+
+                {isValidText(heritage.visitor_guide?.recommended_duration) && (
+                  <span className="hidden sm:inline-flex items-center gap-1 text-xs font-semibold px-3 py-1 rounded-full bg-white text-stone-700 border border-stone-200 shadow-xs shrink-0">
+                    <Clock className="w-3.5 h-3.5 text-[#FF671F]" />
+                    <span>{heritage.visitor_guide!.recommended_duration}</span>
+                  </span>
+                )}
               </div>
-              <p className="text-sm sm:text-base text-stone-700 leading-relaxed font-sans whitespace-pre-line">
-                {heritage.history}
-              </p>
+
+              <ul className="space-y-2.5">
+                {validVisitorTips.map((tip, idx) => (
+                  <li key={idx} className="flex items-start gap-3 text-sm text-stone-700 leading-relaxed">
+                    <span className="w-2 h-2 rounded-full bg-[#FF671F] mt-2 shrink-0 ring-4 ring-orange-100" />
+                    <span>{tip}</span>
+                  </li>
+                ))}
+              </ul>
             </section>
           )}
 
-          {/* Architecture */}
-          {showArchitecture && (
-            <section className="bg-white p-6 sm:p-8 rounded-3xl border border-[#E8DEC8] shadow-xs space-y-3">
-              <div className="flex items-center gap-2.5 text-[#000080]">
-                <Building className="w-5 h-5" />
-                <h2 className="text-lg sm:text-xl font-serif font-black text-stone-900">
-                  Architectural Grandeur
-                </h2>
-              </div>
-              <p className="text-sm sm:text-base text-stone-700 leading-relaxed font-sans whitespace-pre-line">
-                {heritage.architecture}
-              </p>
-            </section>
-          )}
-
-          {/* Cultural Significance */}
-          {showCultural && (
-            <section className="bg-white p-6 sm:p-8 rounded-3xl border border-[#E8DEC8] shadow-xs space-y-3">
-              <div className="flex items-center gap-2.5 text-amber-600">
-                <BookOpen className="w-5 h-5" />
-                <h2 className="text-lg sm:text-xl font-serif font-black text-stone-900">
-                  Cultural Significance
-                </h2>
-              </div>
-              <p className="text-sm sm:text-base text-stone-700 leading-relaxed font-sans whitespace-pre-line">
-                {heritage.cultural_significance}
-              </p>
-            </section>
-          )}
-
-          {/* Key Features */}
+          {/* ----------------------------------------------------------------- */}
+          {/* 5. Features (Chhote cards/chips) & Timeline (Vertical timeline)  */}
+          {/* ----------------------------------------------------------------- */}
           {showFeatures && (
-            <section className="bg-white p-6 sm:p-8 rounded-3xl border border-[#E8DEC8] shadow-xs space-y-4">
-              <div className="flex items-center gap-2.5 text-[#FF671F]">
-                <Landmark className="w-5 h-5" />
-                <h2 className="text-lg sm:text-xl font-serif font-black text-stone-900">
-                  Key Architectural & Cultural Features
-                </h2>
+            <section className="space-y-4">
+              <div className="flex items-center gap-2">
+                <Sparkles className="w-5 h-5 text-[#FF671F]" />
+                <h3 className="text-lg font-serif font-bold text-stone-900">
+                  Architectural Features & Complex Highlights
+                </h3>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {validFeatures.map((feat, idx) => (
                   <div
                     key={idx}
-                    className="p-4 rounded-2xl bg-[#FAF8F5] border border-stone-200/70 hover:border-orange-300 transition-all space-y-1.5"
+                    className="p-3.5 rounded-2xl border border-stone-200 bg-white hover:border-orange-200 hover:bg-orange-50/20 transition shadow-xs space-y-1"
                   >
-                    {isValidText(feat.title) && (
-                      <h3 className="font-serif font-bold text-stone-900 text-sm sm:text-base">
-                        {feat.title}
-                      </h3>
-                    )}
+                    <div className="text-xs sm:text-sm font-bold text-stone-900 flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#FF671F]" />
+                      <span>{feat.title}</span>
+                    </div>
                     {isValidText(feat.description) && (
-                      <p className="text-xs sm:text-sm text-stone-600 leading-relaxed font-sans">
+                      <p className="text-xs text-stone-600 leading-relaxed pl-3.5">
                         {feat.description}
                       </p>
                     )}
@@ -542,187 +632,111 @@ export const HeritageDetailPage: React.FC<HeritageDetailPageProps> = ({
             </section>
           )}
 
-          {/* Historical Timeline */}
           {showTimeline && (
-            <section className="bg-white p-6 sm:p-8 rounded-3xl border border-[#E8DEC8] shadow-xs space-y-6">
-              <div className="flex items-center gap-2.5 text-[#046A38]">
-                <Clock className="w-5 h-5" />
-                <h2 className="text-lg sm:text-xl font-serif font-black text-stone-900">
+            <section className="space-y-4">
+              <div className="flex items-center gap-2">
+                <History className="w-5 h-5 text-[#FF671F]" />
+                <h3 className="text-lg font-serif font-bold text-stone-900">
                   Chronological Timeline
-                </h2>
+                </h3>
               </div>
-              <div className="relative border-l-2 border-stone-200 ml-3 sm:ml-4 space-y-6">
-                {validTimeline.map((item: any, idx) => {
-                  const year = item.year || item.year_label;
-                  return (
-                    <div key={idx} className="relative pl-6 sm:pl-8">
-                      {/* Timeline Dot */}
-                      <div className="absolute -left-[9px] top-1.5 w-4 h-4 rounded-full bg-emerald-600 border-4 border-white shadow-xs" />
+
+              <div className="bg-white border border-stone-200 rounded-3xl p-5 sm:p-6 shadow-xs">
+                <div className="relative pl-6 sm:pl-8 space-y-6 before:content-[''] before:absolute before:left-2 sm:before:left-3 before:top-2 before:bottom-2 before:w-0.5 before:bg-orange-200">
+                  {validTimeline.map((item: any, idx: number) => (
+                    <div key={idx} className="relative group">
+                      {/* Node dot */}
+                      <span className="absolute -left-6 sm:-left-8 top-1 w-3 h-3 rounded-full bg-[#FF671F] ring-4 ring-orange-50 group-hover:scale-125 transition-transform" />
+
                       <div className="space-y-1">
-                        {isValidText(year) && (
-                          <span className="inline-block px-2.5 py-0.5 rounded-md text-xs font-bold font-mono bg-emerald-50 text-emerald-800 border border-emerald-200">
-                            {year}
-                          </span>
-                        )}
-                        <p className="text-xs sm:text-sm text-stone-700 leading-relaxed font-sans font-medium">
+                        <span className="inline-block px-2.5 py-0.5 rounded-md text-xs font-bold bg-amber-100 text-amber-900 border border-amber-200">
+                          {item.year_label || item.year || `Phase ${idx + 1}`}
+                        </span>
+                        <p className="text-sm font-medium text-stone-800 leading-relaxed">
                           {item.event}
                         </p>
                       </div>
                     </div>
-                  );
-                })}
-              </div>
-            </section>
-          )}
-
-          {/* Visitor Guide & Curated Stops */}
-          {showVisitorGuide && (
-            <section className="bg-white p-6 sm:p-8 rounded-3xl border border-[#E8DEC8] shadow-xs space-y-5">
-              <div className="flex items-center justify-between flex-wrap gap-2">
-                <div className="flex items-center gap-2.5 text-[#000080]">
-                  <Compass className="w-5 h-5" />
-                  <h2 className="text-lg sm:text-xl font-serif font-black text-stone-900">
-                    Visitor Guide & Curated Route
-                  </h2>
-                </div>
-                {hasDuration && (
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-xl bg-blue-50 text-[#000080] font-bold text-xs border border-blue-200">
-                    <Clock className="w-3.5 h-3.5" />
-                    <span>Duration: {heritage.visitor_guide?.recommended_duration || heritage.recommended_duration}</span>
-                  </span>
-                )}
-              </div>
-
-              {validStops.length > 0 && (
-                <div className="space-y-3 pt-2">
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-stone-500">
-                    Recommended Route Stops ({validStops.length})
-                  </h4>
-                  <div className="space-y-3">
-                    {validStops.map((stop: any, idx) => (
-                      <div
-                        key={idx}
-                        className="p-4 rounded-2xl bg-[#FAF8F5] border border-stone-200/80 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3"
-                      >
-                        <div className="space-y-1">
-                          <div className="flex items-center gap-2">
-                            <span className="w-6 h-6 rounded-full bg-stone-200 text-stone-800 text-xs font-bold flex items-center justify-center shrink-0">
-                              {idx + 1}
-                            </span>
-                            <h5 className="font-serif font-bold text-stone-900 text-sm sm:text-base">
-                              {stop.title}
-                            </h5>
-                          </div>
-                          {isValidText(stop.description) && (
-                            <p className="text-xs sm:text-sm text-stone-600 font-sans pl-8">
-                              {stop.description}
-                            </p>
-                          )}
-                          {isValidText(stop.photo_tip) && (
-                            <div className="flex items-center gap-1.5 text-xs text-amber-700 pl-8 pt-0.5">
-                              <Camera className="w-3.5 h-3.5 shrink-0" />
-                              <span>Photo tip: {stop.photo_tip}</span>
-                            </div>
-                          )}
-                        </div>
-
-                        {stop.minutes && Number(stop.minutes) > 0 && (
-                          <span className="px-2.5 py-1 rounded-lg bg-stone-200 text-stone-700 text-xs font-mono font-semibold shrink-0">
-                            ~{stop.minutes} mins
-                          </span>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-            </section>
-          )}
-
-          {/* Media Section: Gallery & Audio Guide */}
-          {showMedia && (
-            <section className="bg-white p-6 sm:p-8 rounded-3xl border border-[#E8DEC8] shadow-xs space-y-4">
-              <div className="flex items-center gap-2.5 text-[#FF671F]">
-                <ImageIcon className="w-5 h-5" />
-                <h2 className="text-lg sm:text-xl font-serif font-black text-stone-900">
-                  Visuals & Media Archive
-                </h2>
-              </div>
-
-              {galleryMedia.length > 0 && (
-                <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                  {galleryMedia.map((m: any, idx) => {
-                    const url = typeof m === 'string' ? m : m.url;
-                    const alt = typeof m === 'object' ? m.alt_text || m.caption || heritage.name : heritage.name;
-                    return (
-                      <div key={idx} className="h-36 sm:h-44 rounded-2xl overflow-hidden bg-stone-100 border border-stone-200">
-                        <img src={url} alt={alt} className="w-full h-full object-cover hover:scale-105 transition-transform" />
-                      </div>
-                    );
-                  })}
-                </div>
-              )}
-
-              {audioGuideMedia.length > 0 && (
-                <div className="space-y-2 pt-2">
-                  <h4 className="text-xs font-bold uppercase tracking-wider text-stone-500">
-                    Audio Guides & Narratives
-                  </h4>
-                  {audioGuideMedia.map((audio: any, idx) => (
-                    <div key={idx} className="p-3.5 rounded-xl bg-orange-50/60 border border-orange-200 flex items-center justify-between gap-3">
-                      <div className="flex items-center gap-2.5">
-                        <Volume2 className="w-4 h-4 text-[#FF671F]" />
-                        <span className="text-xs sm:text-sm font-semibold text-stone-800">
-                          {audio.title || `Audio Narrative #${idx + 1}`}
-                        </span>
-                      </div>
-                      {isValidText(audio.url) && (
-                        <a
-                          href={audio.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-xs font-bold text-[#FF671F] hover:underline"
-                        >
-                          Play Guide
-                        </a>
-                      )}
-                    </div>
                   ))}
                 </div>
-              )}
+              </div>
             </section>
           )}
 
-          {/* Verified Sources & References */}
-          {showSources && (
-            <section className="bg-white p-6 sm:p-8 rounded-3xl border border-[#E8DEC8] shadow-xs space-y-3">
-              <div className="flex items-center gap-2.5 text-stone-700">
-                <BookOpen className="w-5 h-5 text-stone-500" />
-                <h2 className="text-lg sm:text-xl font-serif font-black text-stone-900">
-                  Verified Records & Scholarly Sources
-                </h2>
+          {/* Practical Info (Opening hours, rules, ticketing) if available */}
+          {showPractical && (
+            <section className="bg-white border border-stone-200 rounded-3xl p-5 sm:p-6 shadow-xs space-y-4">
+              <div className="flex items-center gap-2 pb-2 border-b border-stone-100">
+                <Info className="w-5 h-5 text-[#FF671F]" />
+                <h3 className="font-serif font-bold text-base sm:text-lg text-stone-900">
+                  Practical Information
+                </h3>
               </div>
-              <ul className="space-y-2 pt-1">
-                {validSources.map((source: any, idx) => (
-                  <li
-                    key={idx}
-                    className="p-3 rounded-xl bg-[#FAF8F5] border border-stone-200 text-xs sm:text-sm flex items-center justify-between gap-3"
-                  >
-                    <div className="space-y-0.5">
-                      <p className="font-semibold text-stone-900">{source.title}</p>
-                      {isValidText(source.publisher) && (
-                        <p className="text-[11px] text-stone-500">Publisher: {source.publisher}</p>
-                      )}
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm">
+                {practicalOpening && (
+                  <div className="space-y-1">
+                    <div className="font-semibold text-stone-400 uppercase tracking-wider text-[10px]">
+                      Opening Timings
                     </div>
-                    {isValidText(source.url) && (
+                    <div className="text-stone-800 font-medium">{practicalOpening}</div>
+                  </div>
+                )}
+                {practicalPrices && (
+                  <div className="space-y-1">
+                    <div className="font-semibold text-stone-400 uppercase tracking-wider text-[10px]">
+                      Ticket Rates
+                    </div>
+                    <div className="text-stone-800 font-medium">{practicalPrices}</div>
+                  </div>
+                )}
+                {practicalAccessibility && (
+                  <div className="space-y-1">
+                    <div className="font-semibold text-stone-400 uppercase tracking-wider text-[10px]">
+                      Accessibility
+                    </div>
+                    <div className="text-stone-800">{practicalAccessibility}</div>
+                  </div>
+                )}
+                {practicalRules.length > 0 && (
+                  <div className="space-y-1 sm:col-span-2">
+                    <div className="font-semibold text-stone-400 uppercase tracking-wider text-[10px]">
+                      Visitor Rules
+                    </div>
+                    <div className="flex flex-wrap gap-1.5 pt-1">
+                      {practicalRules.map((rule: string, i: number) => (
+                        <span
+                          key={i}
+                          className="px-2.5 py-1 rounded-lg bg-stone-100 text-stone-700 text-xs border border-stone-200"
+                        >
+                          {rule}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
+            </section>
+          )}
+
+          {/* Sources and References */}
+          {showSources && (
+            <section className="text-xs text-stone-500 space-y-2 pt-2 border-t border-stone-200">
+              <span className="font-bold text-stone-600 uppercase tracking-wider text-[10px]">
+                Sources & Citations:
+              </span>
+              <ul className="space-y-1">
+                {validSources.map((src: any, i: number) => (
+                  <li key={i} className="flex items-center gap-1.5 truncate">
+                    <span>• {src.title || src.publisher || 'Reference document'}</span>
+                    {src.url && (
                       <a
-                        href={source.url}
+                        href={src.url}
                         target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1 text-xs font-bold text-[#FF671F] hover:underline shrink-0"
+                        rel="noreferrer"
+                        className="text-[#FF671F] hover:underline inline-flex items-center gap-0.5 shrink-0"
                       >
-                        <span>View Source</span>
-                        <ExternalLink className="w-3.5 h-3.5" />
+                        <ExternalLink className="w-3 h-3" />
                       </a>
                     )}
                   </li>
@@ -732,115 +746,113 @@ export const HeritageDetailPage: React.FC<HeritageDetailPageProps> = ({
           )}
         </div>
 
-        {/* Right Column: Practical Logistics, Travel, Nearby & Facts */}
-        <div className="lg:col-span-4 space-y-6 sm:space-y-8">
-          {/* Practical Info Card */}
-          {showPractical && (
-            <div className="bg-white p-5 sm:p-6 rounded-3xl border border-[#E8DEC8] shadow-xs space-y-4">
-              <div className="flex items-center gap-2 text-stone-900 font-serif font-bold text-base sm:text-lg pb-2 border-b border-stone-200/80">
-                <Info className="w-4 h-4 text-[#FF671F]" />
-                <span>Visitor Information</span>
+        {/* ------------------------------------------------------------------- */}
+        {/* 6. Right Sidebar: Nearby aur Authenticity & Status                  */}
+        {/* ------------------------------------------------------------------- */}
+        <aside className="lg:col-span-1 space-y-6">
+          {/* Authenticity & Status Card */}
+          <div className="bg-white border border-stone-200 rounded-3xl p-5 shadow-xs space-y-4">
+            <div className="flex items-center gap-2 pb-2 border-b border-stone-100">
+              <ShieldCheck className="w-5 h-5 text-emerald-600" />
+              <h3 className="font-serif font-bold text-base text-stone-900">
+                Authenticity & Status
+              </h3>
+            </div>
+
+            <div className="space-y-3.5 text-xs sm:text-sm">
+              <div className="flex items-center justify-between gap-2">
+                <span className="text-stone-500">UNESCO Listing</span>
+                <UnescoBadge
+                  status={heritage.unesco_status}
+                  inscribedYear={heritage.unesco_inscribed_year}
+                />
               </div>
 
-              {practicalOpening && (
-                <div className="space-y-1">
-                  <div className="flex items-center gap-1.5 text-xs font-bold text-stone-500 uppercase tracking-wider">
-                    <Clock className="w-3.5 h-3.5" />
-                    <span>Visiting Hours</span>
-                  </div>
-                  <p className="text-xs sm:text-sm text-stone-800 font-medium font-sans">
-                    {practicalOpening}
-                  </p>
+              {isValidText(heritage.unesco_ref_id) && (
+                <div className="flex items-center justify-between gap-2 text-stone-700">
+                  <span className="text-stone-500">WHC Reference</span>
+                  <span className="font-mono font-bold">#{heritage.unesco_ref_id}</span>
                 </div>
               )}
 
-              {practicalPrices && (
-                <div className="space-y-1">
-                  <div className="flex items-center gap-1.5 text-xs font-bold text-stone-500 uppercase tracking-wider">
-                    <Ticket className="w-3.5 h-3.5" />
-                    <span>Ticket Tariff</span>
-                  </div>
-                  <p className="text-xs sm:text-sm text-stone-800 font-medium font-sans">
-                    {practicalPrices}
-                  </p>
+              {isValidText(heritage.unesco_url) && (
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-stone-500">Official Dossier</span>
+                  <a
+                    href={heritage.unesco_url!}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-1 text-[#FF671F] hover:underline font-semibold"
+                  >
+                    <span>UNESCO Portal</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
                 </div>
               )}
 
-              {practicalAccessibility && (
-                <div className="space-y-1">
-                  <div className="flex items-center gap-1.5 text-xs font-bold text-stone-500 uppercase tracking-wider">
-                    <ShieldCheck className="w-3.5 h-3.5" />
-                    <span>Accessibility</span>
-                  </div>
-                  <p className="text-xs sm:text-sm text-stone-800 font-medium font-sans">
-                    {practicalAccessibility}
-                  </p>
-                </div>
-              )}
-
-              {practicalRules.length > 0 && (
-                <div className="space-y-1.5 pt-1">
-                  <span className="text-xs font-bold text-stone-500 uppercase tracking-wider">
-                    Visitor Rules
+              <div className="flex items-center justify-between gap-2">
+                <span className="text-stone-500">ASI Protection</span>
+                {heritage.asi_protected ? (
+                  <span className="inline-flex items-center gap-1 font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200 text-xs">
+                    <CheckCircle2 className="w-3.5 h-3.5" />
+                    <span>Protected</span>
                   </span>
-                  <ul className="space-y-1">
-                    {practicalRules.map((rule, idx) => (
-                      <li key={idx} className="text-xs text-stone-700 flex items-start gap-1.5">
-                        <span className="text-orange-500 font-bold">•</span>
-                        <span>{rule}</span>
-                      </li>
-                    ))}
-                  </ul>
+                ) : (
+                  <span className="text-stone-500">Not indicated</span>
+                )}
+              </div>
+
+              {isValidText(heritage.last_verified_on) && (
+                <div className="flex items-center justify-between gap-2 pt-2 border-t border-stone-100">
+                  <span className="text-stone-500">Last Verified</span>
+                  <span className="font-medium text-stone-800">{heritage.last_verified_on}</span>
+                </div>
+              )}
+
+              {isValidText(heritage.review_status) && (
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-stone-500">Review Status</span>
+                  <span className="capitalize font-semibold text-stone-700">
+                    {heritage.review_status}
+                  </span>
                 </div>
               )}
             </div>
-          )}
+          </div>
 
-          {/* Travel & Transit Links */}
-          {showTravel && (
-            <div className="bg-white p-5 sm:p-6 rounded-3xl border border-[#E8DEC8] shadow-xs space-y-4">
-              <div className="flex items-center gap-2 text-stone-900 font-serif font-bold text-base sm:text-lg pb-2 border-b border-stone-200/80">
-                <Compass className="w-4 h-4 text-[#046A38]" />
-                <span>How to Reach</span>
+          {/* Nearby Sites Card */}
+          {showNearby && (
+            <div className="bg-white border border-stone-200 rounded-3xl p-5 shadow-xs space-y-4">
+              <div className="flex items-center gap-2 pb-2 border-b border-stone-100">
+                <MapPin className="w-5 h-5 text-[#FF671F]" />
+                <h3 className="font-serif font-bold text-base text-stone-900">
+                  Nearby Sights & Monuments
+                </h3>
               </div>
-              <div className="space-y-3">
-                {validTravel.map((item: any, idx) => {
-                  const mode = (item.mode || '').toLowerCase();
-                  const hub = item.hub || item.hub_name;
+
+              <div className="space-y-2">
+                {validNearby.map((near: any, idx: number) => {
+                  const isLink = isValidText(near.related_slug);
+
                   return (
                     <div
                       key={idx}
-                      className="p-3.5 rounded-2xl bg-[#FAF8F5] border border-stone-200/80 space-y-1"
+                      className="p-3 rounded-2xl border border-stone-100 bg-stone-50/60 hover:bg-orange-50/40 hover:border-orange-200 transition"
                     >
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2">
-                          {mode.includes('rail') || mode.includes('train') ? (
-                            <Train className="w-4 h-4 text-[#000080]" />
-                          ) : mode.includes('air') || mode.includes('flight') ? (
-                            <Plane className="w-4 h-4 text-sky-600" />
-                          ) : (
-                            <Car className="w-4 h-4 text-[#046A38]" />
-                          )}
-                          <span className="font-bold text-xs uppercase text-stone-800 font-sans">
-                            {item.mode || 'Transit'}
-                          </span>
-                        </div>
-                        {item.distance_km && (
-                          <span className="text-xs font-mono font-semibold text-stone-500">
-                            {item.distance_km} km
-                          </span>
-                        )}
-                      </div>
-
-                      {isValidText(hub) && (
-                        <p className="text-xs sm:text-sm font-semibold text-stone-900 pl-6">
-                          {hub}
-                        </p>
+                      {isLink ? (
+                        <Link
+                          to={`/heritage/${near.related_slug}`}
+                          className="flex items-center justify-between gap-2 text-stone-900 hover:text-[#FF671F] font-semibold text-sm group"
+                        >
+                          <span className="group-hover:underline">{near.name}</span>
+                          <ChevronRight className="w-4 h-4 text-stone-400 group-hover:text-[#FF671F] transition-transform group-hover:translate-x-0.5" />
+                        </Link>
+                      ) : (
+                        <div className="text-stone-900 font-semibold text-sm">{near.name}</div>
                       )}
-                      {isValidText(item.note) && (
-                        <p className="text-xs text-stone-600 pl-6 font-sans">
-                          {item.note}
-                        </p>
+
+                      {isValidText(near.note) && (
+                        <p className="text-xs text-stone-500 mt-1">{near.note}</p>
                       )}
                     </div>
                   );
@@ -849,105 +861,44 @@ export const HeritageDetailPage: React.FC<HeritageDetailPageProps> = ({
             </div>
           )}
 
-          {/* Nearby Sites */}
-          {showNearby && (
-            <div className="bg-white p-5 sm:p-6 rounded-3xl border border-[#E8DEC8] shadow-xs space-y-4">
-              <div className="flex items-center gap-2 text-stone-900 font-serif font-bold text-base sm:text-lg pb-2 border-b border-stone-200/80">
-                <MapPin className="w-4 h-4 text-[#FF671F]" />
-                <span>Nearby Attractions</span>
+          {/* Travel Gateways Card */}
+          {showTravel && (
+            <div className="bg-white border border-stone-200 rounded-3xl p-5 shadow-xs space-y-4">
+              <div className="flex items-center gap-2 pb-2 border-b border-stone-100">
+                <Train className="w-5 h-5 text-[#FF671F]" />
+                <h3 className="font-serif font-bold text-base text-stone-900">
+                  Travel & Access
+                </h3>
               </div>
+
               <div className="space-y-2.5">
-                {validNearby.map((near: any, idx) => (
-                  <div
-                    key={idx}
-                    className="p-3 rounded-2xl bg-[#FAF8F5] border border-stone-200/80 flex items-center justify-between gap-2"
-                  >
-                    <div>
-                      <h5 className="font-semibold text-xs sm:text-sm text-stone-900">
-                        {near.name}
-                      </h5>
-                      {isValidText(near.note) && (
-                        <p className="text-[11px] text-stone-500 line-clamp-1">{near.note}</p>
-                      )}
+                {validTravel.map((tr: any, idx: number) => {
+                  const mode = (tr.mode || '').toLowerCase();
+                  const IconMode = mode === 'air' ? Plane : mode === 'rail' ? Train : Car;
+
+                  return (
+                    <div key={idx} className="flex items-start gap-2.5 text-xs text-stone-700">
+                      <div className="w-7 h-7 rounded-lg bg-stone-100 text-stone-600 flex items-center justify-center shrink-0 mt-0.5">
+                        <IconMode className="w-3.5 h-3.5" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="font-bold text-stone-900">
+                          {tr.hub || tr.hub_name || 'Transport hub'}
+                        </div>
+                        {isValidText(tr.note) && (
+                          <div className="text-stone-500">{tr.note}</div>
+                        )}
+                      </div>
                     </div>
-
-                    {isValidText(near.related_slug) ? (
-                      <Link
-                        to={`/heritage/${near.related_slug}`}
-                        className="px-2.5 py-1 rounded-lg bg-orange-100 hover:bg-orange-200 text-[#FF671F] font-bold text-xs flex items-center gap-1 shrink-0 transition"
-                      >
-                        <span>View</span>
-                        <ChevronRight className="w-3.5 h-3.5" />
-                      </Link>
-                    ) : near.distance_km ? (
-                      <span className="text-xs font-mono text-stone-500 shrink-0">
-                        {near.distance_km} km
-                      </span>
-                    ) : null}
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           )}
-
-          {/* Curated Facts */}
-          {showFacts && (
-            <div className="bg-white p-5 sm:p-6 rounded-3xl border border-[#E8DEC8] shadow-xs space-y-3">
-              <div className="flex items-center gap-2 text-stone-900 font-serif font-bold text-base sm:text-lg pb-2 border-b border-stone-200/80">
-                <Sparkles className="w-4 h-4 text-amber-500" />
-                <span>Did You Know?</span>
-              </div>
-              <ul className="space-y-2">
-                {validFacts.map((fact, idx) => (
-                  <li
-                    key={idx}
-                    className="p-3 rounded-2xl bg-amber-50/60 border border-amber-200/70 text-xs sm:text-sm text-stone-800 leading-relaxed font-sans"
-                  >
-                    {fact}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          {/* UNESCO Verification & Authenticity Card */}
-          <div className="bg-gradient-to-br from-[#FAF8F5] to-orange-50/50 p-5 sm:p-6 rounded-3xl border border-[#E8DEC8] space-y-3 text-xs text-stone-600">
-            <div className="flex items-center gap-2 font-bold text-stone-900 text-sm">
-              <ShieldCheck className="w-4 h-4 text-[#FF671F]" />
-              <span>Authenticity & Status</span>
-            </div>
-            <div className="space-y-1.5 font-sans">
-              <p>
-                <strong>UNESCO Status:</strong>{' '}
-                <span className="capitalize">{heritage.unesco_status.replace(/_/g, ' ')}</span>
-              </p>
-              {heritage.unesco_ref_id && (
-                <p>
-                  <strong>UNESCO Ref ID:</strong> #{heritage.unesco_ref_id}
-                </p>
-              )}
-              {heritage.unesco_url && (
-                <p>
-                  <a
-                    href={heritage.unesco_url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#FF671F] font-bold inline-flex items-center gap-1 hover:underline"
-                  >
-                    <span>View on UNESCO World Heritage Centre</span>
-                    <ExternalLink className="w-3 h-3" />
-                  </a>
-                </p>
-              )}
-              {heritage.last_verified_on && (
-                <p className="text-[11px] text-stone-500 pt-1">
-                  Verified date: {heritage.last_verified_on}
-                </p>
-              )}
-            </div>
-          </div>
-        </div>
+        </aside>
       </div>
     </div>
   );
 };
+
+export default HeritageDetailPage;

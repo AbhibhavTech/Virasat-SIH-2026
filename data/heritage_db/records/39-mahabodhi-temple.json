@@ -23,8 +23,8 @@
     "last_verified_on": null,
     "verified_by": null
   },
-  "content_status": "overview_done",
-  "overview": "The Mahabodhi Temple Complex in Bodh Gaya, Bihar, marks the place where Siddhartha Gautama is believed to have attained enlightenment under the Bodhi tree and become the Buddha, about 2,500 years ago. It is the holiest site in Buddhism and a major pilgrimage destination. The emperor Ashoka is said to have built the first shrine here around the 3rd century BCE, and the present brick temple dates largely to the 5th or 6th century CE, in the late Gupta period, making it one of the oldest brick temples in India still standing.\n\nThe beauty of the complex lies in the combination of architecture, trees and devotion. The main temple, with its tall pyramidal tower rising to about 50 metres, has a slender, graceful shape, with four smaller towers at the corners and many niches that hold images of the Buddha. The surrounding stone railings, some dating back to the 2nd century BCE, are carved with scenes and symbols. The peaceful gardens and the sound of chanting create a deeply spiritual atmosphere, especially at dawn and at night when oil lamps are lit.\n\nKey features include the Bodhi tree itself, a descendant of the original tree, and the Vajrasana, the Diamond Throne, a stone slab said to mark the Buddha's seat. Other places in the complex commemorate the weeks the Buddha spent after enlightenment, such as the Animesh Lochana Chaitya, where he is said to have gazed at the tree without blinking, the Ratnachankrama, the jewel walk, and the lotus pond. Monasteries built by Buddhist communities from different countries, such as Tibet, Japan, Thailand and Bhutan, surround the site, and the large Great Buddha Statue is nearby.\n\nThe temple complex was restored in the 19th century, including work by Alexander Cunningham, and was inscribed as a UNESCO World Heritage Site in 2002. It is famous as the centre of Buddhist pilgrimage and as an example of early Indian brick architecture.\n\nVisitors should dress modestly, remove shoes, and observe silence in meditation areas. Winter, from about November to February, is the main pilgrimage season. Gaya airport is close, and Rajgir and Nalanda are within reach. Check opening times and rules with official sources.",
+  "content_status": "overview_sectioned",
+  "overview": "Site of the Buddha's enlightenment.",
   "history": null,
   "architecture": null,
   "cultural_significance": null,
@@ -109,6 +109,57 @@
       "title": "TO ADD: ASI / state tourism / academic source",
       "publisher": "",
       "url": ""
+    }
+  ],
+  "tagline": "Site of the Buddha's enlightenment.",
+  "sections": [
+    {
+      "key": "history",
+      "title": "Origins & History",
+      "text": "The Mahabodhi Temple Complex in Bodh Gaya, Bihar, marks the place where Siddhartha Gautama is believed to have attained enlightenment under the Bodhi tree and become the Buddha, about 2,500 years ago. It is the holiest site in Buddhism and a major pilgrimage destination. The emperor Ashoka is said to have built the first shrine here around the 3rd century BCE, and the present brick temple dates largely to the 5th or 6th century CE, in the late Gupta period, making it one of the oldest brick temples in India still standing."
+    },
+    {
+      "key": "beauty",
+      "title": "Beauty & Atmosphere",
+      "text": "The beauty of the complex lies in the combination of architecture, trees and devotion. The main temple, with its tall pyramidal tower rising to about 50 metres, has a slender, graceful shape, with four smaller towers at the corners and many niches that hold images of the Buddha. The surrounding stone railings, some dating back to the 2nd century BCE, are carved with scenes and symbols. The peaceful gardens and the sound of chanting create a deeply spiritual atmosphere, especially at dawn and at night when oil lamps are lit."
+    },
+    {
+      "key": "architecture",
+      "title": "Architecture & Highlights",
+      "text": "Key features include the Bodhi tree itself, a descendant of the original tree, and the Vajrasana, the Diamond Throne, a stone slab said to mark the Buddha's seat. Other places in the complex commemorate the weeks the Buddha spent after enlightenment, such as the Animesh Lochana Chaitya, where he is said to have gazed at the tree without blinking, the Ratnachankrama, the jewel walk, and the lotus pond. Monasteries built by Buddhist communities from different countries, such as Tibet, Japan, Thailand and Bhutan, surround the site, and the large Great Buddha Statue is nearby."
+    },
+    {
+      "key": "famous_for",
+      "title": "Famous For",
+      "text": "The temple complex was restored in the 19th century, including work by Alexander Cunningham, and was inscribed as a UNESCO World Heritage Site in 2002. It is famous as the centre of Buddhist pilgrimage and as an example of early Indian brick architecture."
+    }
+  ],
+  "visitor_tips": [
+    "Visitors should dress modestly, remove shoes, and observe silence in meditation areas.",
+    "Winter, from about November to February, is the main pilgrimage season.",
+    "Gaya airport is close, and Rajgir and Nalanda are within reach.",
+    "Check opening times and rules with official sources."
+  ],
+  "quick_facts": [
+    {
+      "label": "Location",
+      "value": "Bodh Gaya, Bihar"
+    },
+    {
+      "label": "Era",
+      "value": "Mauryan; present structure 5th-6th c. CE"
+    },
+    {
+      "label": "Built by",
+      "value": "Ashoka; later Gupta-period rebuilding"
+    },
+    {
+      "label": "Type",
+      "value": "temple"
+    },
+    {
+      "label": "UNESCO",
+      "value": "UNESCO World Heritage Site (2002)"
     }
   ]
 }

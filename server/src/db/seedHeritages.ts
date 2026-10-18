@@ -88,6 +88,10 @@ export function loadAllHeritagesFromDisk(): HeritageRecord[] {
       best_season: item.best_season ?? null,
       recommended_duration: item.visitor_guide?.recommended_duration ?? item.recommended_duration ?? null,
       content_status: item.content_status ?? 'outline',
+      tagline: item.tagline ?? null,
+      sections: Array.isArray(item.sections) ? item.sections : [],
+      visitor_tips: Array.isArray(item.visitor_tips) ? item.visitor_tips : [],
+      quick_facts: Array.isArray(item.quick_facts) ? item.quick_facts : [],
       features: (item.features || []).map((f: any, i: number) => ({
         sort: i + 1,
         title: f.title || '',

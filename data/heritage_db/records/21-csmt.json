@@ -23,8 +23,8 @@
     "last_verified_on": null,
     "verified_by": null
   },
-  "content_status": "overview_done",
-  "overview": "Chhatrapati Shivaji Maharaj Terminus, known to generations as Victoria Terminus, is a grand railway station in Mumbai and one of the finest examples of Victorian Gothic Revival architecture in the world, blended with Indian elements. It was designed by the British architect Frederick William Stevens, and built between 1878 and 1888, during the period when Mumbai was becoming a major port and commercial city. It was renamed Chhatrapati Shivaji Terminus in 1996 and Chhatrapati Shivaji Maharaj Terminus in 2017.\n\nThe beauty of the building lies in the richness of its decoration. A tall central dome, topped with a statue symbolising progress, rises above pointed arches, turrets, buttresses and a long, symmetrical facade. The surfaces are covered with carved stone, ornamental ironwork, stained glass and sculpted figures of animals, flowers and people, much of it created by students and craftsmen from Mumbai's art school, which gives the building a strong local character. Inside, the grand booking hall features Italian marble, carved wood and decorative tiles.\n\nThe design merges the Victorian Gothic style, popular in Britain at the time, with Mughal domes, Indian motifs and traditional craftsmanship. The mixture shows how European ideas were adapted to local materials, climate and taste. It also reflects the confidence of the city and the railway age, and the structure was one of the most ambitious buildings in India when it opened.\n\nCSMT is famous as both an architectural landmark and a working station. It is the headquarters of Central Railway and handles huge numbers of commuters and long distance passengers every day, so the building is part of daily life as well as heritage. It was inscribed as a UNESCO World Heritage Site in 2004, and a wider area of Victorian Gothic and Art Deco buildings in Mumbai was later added.\n\nVisitors can admire the exterior from across the road, and heritage walks are sometimes available. Since it is an active station, respect passenger movement and security rules. Nearby attractions include Crawford Market, Azad Maidan and Flora Fountain.",
+  "content_status": "overview_sectioned",
+  "overview": "Victorian Gothic railway station with Indian architectural elements.",
   "history": null,
   "architecture": null,
   "cultural_significance": null,
@@ -109,6 +109,56 @@
       "title": "TO ADD: ASI / state tourism / academic source",
       "publisher": "",
       "url": ""
+    }
+  ],
+  "tagline": "Victorian Gothic railway station with Indian architectural elements.",
+  "sections": [
+    {
+      "key": "history",
+      "title": "Origins & History",
+      "text": "Chhatrapati Shivaji Maharaj Terminus, known to generations as Victoria Terminus, is a grand railway station in Mumbai and one of the finest examples of Victorian Gothic Revival architecture in the world, blended with Indian elements. It was designed by the British architect Frederick William Stevens, and built between 1878 and 1888, during the period when Mumbai was becoming a major port and commercial city. It was renamed Chhatrapati Shivaji Terminus in 1996 and Chhatrapati Shivaji Maharaj Terminus in 2017."
+    },
+    {
+      "key": "beauty",
+      "title": "Beauty & Atmosphere",
+      "text": "The beauty of the building lies in the richness of its decoration. A tall central dome, topped with a statue symbolising progress, rises above pointed arches, turrets, buttresses and a long, symmetrical facade. The surfaces are covered with carved stone, ornamental ironwork, stained glass and sculpted figures of animals, flowers and people, much of it created by students and craftsmen from Mumbai's art school, which gives the building a strong local character. Inside, the grand booking hall features Italian marble, carved wood and decorative tiles."
+    },
+    {
+      "key": "architecture",
+      "title": "Architecture & Highlights",
+      "text": "The design merges the Victorian Gothic style, popular in Britain at the time, with Mughal domes, Indian motifs and traditional craftsmanship. The mixture shows how European ideas were adapted to local materials, climate and taste. It also reflects the confidence of the city and the railway age, and the structure was one of the most ambitious buildings in India when it opened."
+    },
+    {
+      "key": "famous_for",
+      "title": "Famous For",
+      "text": "CSMT is famous as both an architectural landmark and a working station. It is the headquarters of Central Railway and handles huge numbers of commuters and long distance passengers every day, so the building is part of daily life as well as heritage. It was inscribed as a UNESCO World Heritage Site in 2004, and a wider area of Victorian Gothic and Art Deco buildings in Mumbai was later added."
+    }
+  ],
+  "visitor_tips": [
+    "Visitors can admire the exterior from across the road, and heritage walks are sometimes available.",
+    "Since it is an active station, respect passenger movement and security rules.",
+    "Nearby attractions include Crawford Market, Azad Maidan and Flora Fountain."
+  ],
+  "quick_facts": [
+    {
+      "label": "Location",
+      "value": "Mumbai, Maharashtra"
+    },
+    {
+      "label": "Era",
+      "value": "Victorian Gothic, 1878-1888"
+    },
+    {
+      "label": "Built by",
+      "value": "F. W. Stevens"
+    },
+    {
+      "label": "Type",
+      "value": "railway station"
+    },
+    {
+      "label": "UNESCO",
+      "value": "UNESCO World Heritage Site (2004)"
     }
   ]
 }

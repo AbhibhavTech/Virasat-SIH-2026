@@ -23,8 +23,8 @@
     "last_verified_on": null,
     "verified_by": null
   },
-  "content_status": "overview_done",
-  "overview": "The Kalka-Shimla Railway is a 96 km narrow-gauge line in Himachal Pradesh that winds from Kalka, at the foot of the Shivalik hills, up to Shimla, the former summer capital of British India. Construction began in 1898, under the Delhi-Umbala-Kalka Railway Company, and the line opened in 1903. It climbs from roughly 650 metres to over 2,000 metres, gaining height through tight curves and steep gradients with little room for error.\n\nWhat makes this railway extraordinary is how much engineering fits in a small space. The route passes through over a hundred tunnels, the longest being the Barog Tunnel at about 1,143 metres, and across hundreds of bridges, including tall multi-arch masonry viaducts built of local stone that resemble Roman aqueducts. The 2 ft 6 in narrow gauge allowed the track to follow the hills with tight turns, making the line a masterpiece of early mountain railway design that has changed little in over a century.\n\nThe journey itself is the attraction. The small train, often called the toy train, travels slowly through pine forests, deodar woods, terraced slopes and small hill stations such as Barog, Solan, Kandaghat and Taradevi. Views open out over deep valleys and, on clear days, towards snow-capped peaks. Several services run, including heritage-style rail motor cars and trains with large windows, and the stations along the way keep a colonial-era character.\n\nThe railway was added in 2008 as an extension of the Mountain Railways of India World Heritage Site, joining the Darjeeling Himalayan Railway and the Nilgiri Mountain Railway. It is celebrated as an outstanding example of a mountain railway that helped open the Himalayan region to travel and trade, and it remains a practical route for local people.\n\nPlan for a journey of several hours because the train moves slowly. Book tickets in advance, especially in the summer and holiday seasons, and carry layers as it gets cooler as you rise. Weather and landslides can cause delays, so check current services with the railway. In Shimla, the Ridge, the Mall Road and Christ Church are within easy reach of the station.",
+  "content_status": "overview_sectioned",
+  "overview": "A 96 km narrow-gauge mountain line climbing from Kalka to Shimla.",
   "history": null,
   "architecture": null,
   "cultural_significance": null,
@@ -105,6 +105,57 @@
       "title": "TO ADD: ASI / state tourism / academic source",
       "publisher": "",
       "url": ""
+    }
+  ],
+  "tagline": "A 96 km narrow-gauge mountain line climbing from Kalka to Shimla.",
+  "sections": [
+    {
+      "key": "history",
+      "title": "Origins & History",
+      "text": "The Kalka-Shimla Railway is a 96 km narrow-gauge line in Himachal Pradesh that winds from Kalka, at the foot of the Shivalik hills, up to Shimla, the former summer capital of British India. Construction began in 1898, under the Delhi-Umbala-Kalka Railway Company, and the line opened in 1903. It climbs from roughly 650 metres to over 2,000 metres, gaining height through tight curves and steep gradients with little room for error."
+    },
+    {
+      "key": "beauty",
+      "title": "Beauty & Atmosphere",
+      "text": "What makes this railway extraordinary is how much engineering fits in a small space. The route passes through over a hundred tunnels, the longest being the Barog Tunnel at about 1,143 metres, and across hundreds of bridges, including tall multi-arch masonry viaducts built of local stone that resemble Roman aqueducts. The 2 ft 6 in narrow gauge allowed the track to follow the hills with tight turns, making the line a masterpiece of early mountain railway design that has changed little in over a century."
+    },
+    {
+      "key": "architecture",
+      "title": "Architecture & Highlights",
+      "text": "The journey itself is the attraction. The small train, often called the toy train, travels slowly through pine forests, deodar woods, terraced slopes and small hill stations such as Barog, Solan, Kandaghat and Taradevi. Views open out over deep valleys and, on clear days, towards snow-capped peaks. Several services run, including heritage-style rail motor cars and trains with large windows, and the stations along the way keep a colonial-era character."
+    },
+    {
+      "key": "famous_for",
+      "title": "Famous For",
+      "text": "The railway was added in 2008 as an extension of the Mountain Railways of India World Heritage Site, joining the Darjeeling Himalayan Railway and the Nilgiri Mountain Railway. It is celebrated as an outstanding example of a mountain railway that helped open the Himalayan region to travel and trade, and it remains a practical route for local people."
+    }
+  ],
+  "visitor_tips": [
+    "Plan for a journey of several hours because the train moves slowly.",
+    "Book tickets in advance, especially in the summer and holiday seasons, and carry layers as it gets cooler as you rise.",
+    "Weather and landslides can cause delays, so check current services with the railway.",
+    "In Shimla, the Ridge, the Mall Road and Christ Church are within easy reach of the station."
+  ],
+  "quick_facts": [
+    {
+      "label": "Location",
+      "value": "Shimla, Himachal Pradesh"
+    },
+    {
+      "label": "Era",
+      "value": "British India, 1898-1903"
+    },
+    {
+      "label": "Built by",
+      "value": "Delhi-Umbala-Kalka Railway Company; engineer H. S. Harington"
+    },
+    {
+      "label": "Type",
+      "value": "railway"
+    },
+    {
+      "label": "UNESCO",
+      "value": "Part of a UNESCO World Heritage Site (2008)"
     }
   ]
 }

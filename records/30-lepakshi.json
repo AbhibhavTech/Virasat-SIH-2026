@@ -23,8 +23,8 @@
     "last_verified_on": null,
     "verified_by": null
   },
-  "content_status": "overview_done",
-  "overview": "The Veerabhadra Temple at Lepakshi, in the Sri Sathya Sai district of Andhra Pradesh, is a masterpiece of Vijayanagara art, built in the 1530s during the reign of Achyuta Deva Raya. It is traditionally credited to two brothers, Virupanna and Viranna, who served as royal officials. The temple is dedicated to Veerabhadra, a fierce form of Shiva, and stands on a low, tortoise-shaped rocky hill. Local tradition links the name Lepakshi to the epic Ramayana, when the wounded vulture Jatayu is said to have fallen here and Rama told him, Le Pakshi, rise, bird.\n\nThe beauty of Lepakshi lies in its paintings and sculpture. The temple's ceilings carry some of the best preserved Vijayanagara murals, painted in natural pigments in bold lines and colours, with scenes from the Ramayana, Mahabharata and Puranas and elaborate floral patterns. The main hall, the Natya Mandapa, has about seventy carved pillars, with sculpted dancers, musicians and divine figures, and the carving shows an energy that sets it apart from many temples of the period.\n\nSeveral features have made Lepakshi famous. One is the hanging pillar, a pillar in the hall that stands slightly above the ground, so that a thin cloth can be passed beneath it, a puzzle that has long intrigued visitors. Another is the giant monolithic Nandi, the bull of Shiva, outside the temple, carved from a single stone and one of the largest in India, over eight metres long. Nearby, a massive seven-hooded serpent shelters a Shiva linga, carved from one rock. The unfinished Kalyana Mandapa shows the carvers' ambitions.\n\nLepakshi is not currently inscribed as a UNESCO World Heritage Site, although it has been put forward for wider recognition. It is celebrated for its murals, its engineering curiosities and its quiet setting.\n\nVisitors should plan two to three hours and visit in the morning, since the paintings are best seen in natural light. Dress modestly and respect restrictions on photography and touching the carvings. Hindupur, Penukonda and Puttaparthi are nearby. Check rules with official sources.",
+  "content_status": "overview_sectioned",
+  "overview": "Temple known for its ceiling frescoes, hanging pillar and large monolithic Nandi.",
   "history": null,
   "architecture": null,
   "cultural_significance": null,
@@ -92,6 +92,57 @@
       "title": "TO ADD: ASI / state tourism / academic source",
       "publisher": "",
       "url": ""
+    }
+  ],
+  "tagline": "Temple known for its ceiling frescoes, hanging pillar and large monolithic Nandi.",
+  "sections": [
+    {
+      "key": "history",
+      "title": "Origins & History",
+      "text": "The Veerabhadra Temple at Lepakshi, in the Sri Sathya Sai district of Andhra Pradesh, is a masterpiece of Vijayanagara art, built in the 1530s during the reign of Achyuta Deva Raya. It is traditionally credited to two brothers, Virupanna and Viranna, who served as royal officials. The temple is dedicated to Veerabhadra, a fierce form of Shiva, and stands on a low, tortoise-shaped rocky hill. Local tradition links the name Lepakshi to the epic Ramayana, when the wounded vulture Jatayu is said to have fallen here and Rama told him, Le Pakshi, rise, bird."
+    },
+    {
+      "key": "beauty",
+      "title": "Beauty & Atmosphere",
+      "text": "The beauty of Lepakshi lies in its paintings and sculpture. The temple's ceilings carry some of the best preserved Vijayanagara murals, painted in natural pigments in bold lines and colours, with scenes from the Ramayana, Mahabharata and Puranas and elaborate floral patterns. The main hall, the Natya Mandapa, has about seventy carved pillars, with sculpted dancers, musicians and divine figures, and the carving shows an energy that sets it apart from many temples of the period."
+    },
+    {
+      "key": "architecture",
+      "title": "Architecture & Highlights",
+      "text": "Several features have made Lepakshi famous. One is the hanging pillar, a pillar in the hall that stands slightly above the ground, so that a thin cloth can be passed beneath it, a puzzle that has long intrigued visitors. Another is the giant monolithic Nandi, the bull of Shiva, outside the temple, carved from a single stone and one of the largest in India, over eight metres long. Nearby, a massive seven-hooded serpent shelters a Shiva linga, carved from one rock. The unfinished Kalyana Mandapa shows the carvers' ambitions."
+    },
+    {
+      "key": "famous_for",
+      "title": "Famous For",
+      "text": "Lepakshi is not currently inscribed as a UNESCO World Heritage Site, although it has been put forward for wider recognition. It is celebrated for its murals, its engineering curiosities and its quiet setting."
+    }
+  ],
+  "visitor_tips": [
+    "Visitors should plan two to three hours and visit in the morning, since the paintings are best seen in natural light.",
+    "Dress modestly and respect restrictions on photography and touching the carvings.",
+    "Hindupur, Penukonda and Puttaparthi are nearby.",
+    "Check rules with official sources."
+  ],
+  "quick_facts": [
+    {
+      "label": "Location",
+      "value": "Sri Sathya Sai, Andhra Pradesh"
+    },
+    {
+      "label": "Era",
+      "value": "Vijayanagara, c.1530s"
+    },
+    {
+      "label": "Built by",
+      "value": "Brothers Virupanna and Viranna"
+    },
+    {
+      "label": "Type",
+      "value": "temple"
+    },
+    {
+      "label": "UNESCO",
+      "value": "On UNESCO Tentative List"
     }
   ]
 }

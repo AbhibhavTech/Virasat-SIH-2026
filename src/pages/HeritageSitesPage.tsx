@@ -636,7 +636,7 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
             const fav = isFavorite(siteKey);
             const siteImage = site.media?.hero?.url || getMonumentRealImage(site.slug || site.id, site.thumbnail_url);
             const locationText = [site.district_city || site.city, site.state_ut || site.state].filter(Boolean).join(', ');
-            const summaryText = site.overview || site.summary || site.historical_significance;
+            const summaryText = site.tagline || site.overview || site.summary || site.historical_significance;
 
             return (
               <div

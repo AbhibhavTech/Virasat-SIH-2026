@@ -23,8 +23,8 @@
     "last_verified_on": null,
     "verified_by": null
   },
-  "content_status": "overview_done",
-  "overview": "Mahabalipuram, also called Mamallapuram, on the Coromandel Coast of Tamil Nadu, was an important port of the Pallava dynasty in the 7th and 8th centuries. Its monuments, carved by master sculptors, are among the earliest and finest examples of South Indian stone architecture. They are linked to the Pallava kings, particularly Narasimhavarman I, known as Mamalla, and later Rajasimha, who built the Shore Temple in the early 8th century.\n\nThe beauty of the site is in the way the monuments, sculpted from granite, sit between sea, sand and sky. The Shore Temple, set on the edge of the Bay of Bengal, is a structural temple of carved granite blocks with two main shrines to Shiva and one to Vishnu, and its tapering towers have been worn by sea winds yet remain graceful. The Pancha Rathas, five rock-cut monuments carved from single boulders and named after the Pandavas and Draupadi, imitate the shapes of wooden chariots and early temples, and are a key to understanding the origins of Dravidian architecture.\n\nThe great relief known as Arjuna's Penance, or the Descent of the Ganga, is carved on a giant rock face and is about 27 metres long and 9 metres high. It shows gods, humans, animals and mythical beings, including a lifelike group of elephants, in a lively scene. Nearby are carved cave temples such as the Varaha and Mahishasuramardini caves, and the huge balanced boulder called Krishna's Butter Ball.\n\nMahabalipuram was inscribed as a UNESCO World Heritage Site in 1984. It is famous for its rock-cut architecture, its sculpture and for its living stone-carving tradition, since local workshops still produce statues today. The Mamallapuram Dance Festival is held in the winter months.\n\nVisitors should allow a full day, wear sun protection and carry water. The site is about 55 km south of Chennai and easily reached by road. Nearby are Kanchipuram and Puducherry. Check opening times and ticket rules with official sources.",
+  "content_status": "overview_sectioned",
+  "overview": "Shore Temple, rock-cut caves and monolithic rathas on the Coromandel coast.",
   "history": null,
   "architecture": null,
   "cultural_significance": null,
@@ -105,6 +105,57 @@
       "title": "TO ADD: ASI / state tourism / academic source",
       "publisher": "",
       "url": ""
+    }
+  ],
+  "tagline": "Shore Temple, rock-cut caves and monolithic rathas on the Coromandel coast.",
+  "sections": [
+    {
+      "key": "history",
+      "title": "Origins & History",
+      "text": "Mahabalipuram, also called Mamallapuram, on the Coromandel Coast of Tamil Nadu, was an important port of the Pallava dynasty in the 7th and 8th centuries. Its monuments, carved by master sculptors, are among the earliest and finest examples of South Indian stone architecture. They are linked to the Pallava kings, particularly Narasimhavarman I, known as Mamalla, and later Rajasimha, who built the Shore Temple in the early 8th century."
+    },
+    {
+      "key": "beauty",
+      "title": "Beauty & Atmosphere",
+      "text": "The beauty of the site is in the way the monuments, sculpted from granite, sit between sea, sand and sky. The Shore Temple, set on the edge of the Bay of Bengal, is a structural temple of carved granite blocks with two main shrines to Shiva and one to Vishnu, and its tapering towers have been worn by sea winds yet remain graceful. The Pancha Rathas, five rock-cut monuments carved from single boulders and named after the Pandavas and Draupadi, imitate the shapes of wooden chariots and early temples, and are a key to understanding the origins of Dravidian architecture."
+    },
+    {
+      "key": "architecture",
+      "title": "Architecture & Highlights",
+      "text": "The great relief known as Arjuna's Penance, or the Descent of the Ganga, is carved on a giant rock face and is about 27 metres long and 9 metres high. It shows gods, humans, animals and mythical beings, including a lifelike group of elephants, in a lively scene. Nearby are carved cave temples such as the Varaha and Mahishasuramardini caves, and the huge balanced boulder called Krishna's Butter Ball."
+    },
+    {
+      "key": "famous_for",
+      "title": "Famous For",
+      "text": "Mahabalipuram was inscribed as a UNESCO World Heritage Site in 1984. It is famous for its rock-cut architecture, its sculpture and for its living stone-carving tradition, since local workshops still produce statues today. The Mamallapuram Dance Festival is held in the winter months."
+    }
+  ],
+  "visitor_tips": [
+    "Visitors should allow a full day, wear sun protection and carry water.",
+    "The site is about 55 km south of Chennai and easily reached by road.",
+    "Nearby are Kanchipuram and Puducherry.",
+    "Check opening times and ticket rules with official sources."
+  ],
+  "quick_facts": [
+    {
+      "label": "Location",
+      "value": "Chengalpattu, Tamil Nadu"
+    },
+    {
+      "label": "Era",
+      "value": "Pallava, 7th-8th c."
+    },
+    {
+      "label": "Built by",
+      "value": "Narasimhavarman I; Rajasimha"
+    },
+    {
+      "label": "Type",
+      "value": "monuments"
+    },
+    {
+      "label": "UNESCO",
+      "value": "UNESCO World Heritage Site (1984)"
     }
   ]
 }

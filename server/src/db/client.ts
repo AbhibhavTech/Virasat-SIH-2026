@@ -189,12 +189,14 @@ class DatabaseManager {
       }
 
       this.data.heritages = this.data.heritages || {};
-      if (Object.keys(this.data.heritages).length < 45) {
+      const sample = Object.values(this.data.heritages)[0];
+      if (Object.keys(this.data.heritages).length < 45 || !sample?.tagline || !sample?.sections) {
         const items = loadAllHeritagesFromDisk();
         if (items.length > 0) {
           for (const h of items) {
             this.data.heritages[h.slug] = h;
           }
+          this.persist();
         }
       }
     } catch (e) {
@@ -3894,6 +3896,11 @@ class DatabaseManager {
       visitor_rules: Array.isArray(row.visitor_rules) ? row.visitor_rules : [],
       best_season: row.best_season,
       recommended_duration: row.recommended_duration,
+      content_status: row.content_status,
+      tagline: row.tagline,
+      sections: typeof row.sections === 'string' ? JSON.parse(row.sections) : row.sections,
+      visitor_tips: Array.isArray(row.visitor_tips) ? row.visitor_tips : (typeof row.visitor_tips === 'string' ? JSON.parse(row.visitor_tips) : []),
+      quick_facts: typeof row.quick_facts === 'string' ? JSON.parse(row.quick_facts) : row.quick_facts,
       created_at: row.created_at,
       updated_at: row.updated_at,
     };
@@ -3907,9 +3914,21 @@ class DatabaseManager {
     );
     if (!trans || trans.length === 0) return h;
     const copy = { ...h };
+    if (copy.sections) {
+      copy.sections = copy.sections.map((s) => ({ ...s }));
+    }
     for (const item of trans) {
       if (item.field && item.text && item.text.trim()) {
-        (copy as any)[item.field] = item.text;
+        if (item.field.startsWith('sections.') && copy.sections) {
+          const secKey = item.field.slice('sections.'.length);
+          copy.sections = copy.sections.map((s) => (s.key === secKey ? { ...s, text: item.text } : s));
+        } else if (item.field === 'sections' && typeof item.text === 'string') {
+          try {
+            copy.sections = JSON.parse(item.text);
+          } catch {}
+        } else {
+          (copy as any)[item.field] = item.text;
+        }
       }
     }
     return copy;

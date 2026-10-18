@@ -607,6 +607,10 @@ export interface HeritageRecord {
   best_season?: string;
   recommended_duration?: string | null;
   content_status?: string;
+  tagline?: string | null;
+  sections?: Array<{ key: string; title: string; text: string }> | null;
+  visitor_tips?: string[] | null;
+  quick_facts?: Array<{ label: string; value: string }> | null;
   features?: HeritageFeatureRecord[];
   timeline?: HeritageTimelineRecord[];
   visitor_guide?: {

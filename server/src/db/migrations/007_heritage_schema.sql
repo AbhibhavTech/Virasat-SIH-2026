@@ -111,3 +111,10 @@ INSERT INTO languages (code,name_en,name_native,script,rtl) VALUES
 ('te','Telugu','తెలుగు','Telugu',false),
 ('ur','Urdu','اردو','Perso-Arabic',true)
 ON CONFLICT (code) DO NOTHING;
+
+-- Schema update: sectioned layout, quick facts, visitor tips
+ALTER TABLE heritages ADD COLUMN IF NOT EXISTS tagline TEXT;
+ALTER TABLE heritages ADD COLUMN IF NOT EXISTS sections JSONB;
+ALTER TABLE heritages ADD COLUMN IF NOT EXISTS visitor_tips TEXT[];
+ALTER TABLE heritages ADD COLUMN IF NOT EXISTS quick_facts JSONB;
+

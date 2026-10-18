@@ -23,8 +23,8 @@
     "last_verified_on": null,
     "verified_by": null
   },
-  "content_status": "overview_done",
-  "overview": "Golconda Fort, on the western edge of Hyderabad in Telangana, is a massive granite citadel that was once the capital of the Qutb Shahi dynasty and one of the most famous diamond-trading centres in the world. A mud fort stood here from the Kakatiya period, and it was strengthened under the Bahmani and then the Qutb Shahi rulers. From 1518 until the move to Hyderabad around 1590, Golconda was the Qutb Shahi capital. The fort fell in 1687, after an eight-month siege by the Mughal emperor Aurangzeb.\n\nThe beauty of Golconda is its scale and setting. The fort stands on a granite hill, within three rings of walls, with a complex of gates, bastions, royal pavilions, mosques, temples and water systems. It is often described as having eight gates and dozens of bastions, and many of its gateways are studded with large iron spikes to stop elephants from ramming them. From the top of the Bala Hisar, the highest point, there is a panoramic view over the surrounding city and plains.\n\nThe fort is also famous for its remarkable acoustics. A hand clap made beneath the dome at the Fateh Darwaza entrance can be heard clearly at the top of the hill, which served as an early alert system. Other highlights include the Rani Mahal, the Ibrahim Mosque, the Taramati Mosque, the royal baths and the sophisticated system of channels and pipes that brought water uphill. Golconda's markets once traded in diamonds mined in the region, and famous gems such as the Koh-i-Noor and the Hope Diamond are associated with it.\n\nGolconda is famous as a symbol of Deccan power and wealth. It is not currently inscribed as a UNESCO World Heritage Site, but it is part of a group of Qutb Shahi monuments that India has put forward for UNESCO's tentative list.\n\nVisitors should wear comfortable shoes, as there are many steps, and go early in the day. An evening sound and light show tells the fort's story. Nearby are the Qutb Shahi Tombs, Charminar and the Chowmahalla Palace. Check current timings and ticket rules with official sources.",
+  "content_status": "overview_sectioned",
+  "overview": "Citadel famed for its acoustics and as a diamond-trading centre.",
   "history": null,
   "architecture": null,
   "cultural_significance": null,
@@ -100,6 +100,57 @@
       "title": "TO ADD: ASI / state tourism / academic source",
       "publisher": "",
       "url": ""
+    }
+  ],
+  "tagline": "Citadel famed for its acoustics and as a diamond-trading centre.",
+  "sections": [
+    {
+      "key": "history",
+      "title": "Origins & History",
+      "text": "Golconda Fort, on the western edge of Hyderabad in Telangana, is a massive granite citadel that was once the capital of the Qutb Shahi dynasty and one of the most famous diamond-trading centres in the world. A mud fort stood here from the Kakatiya period, and it was strengthened under the Bahmani and then the Qutb Shahi rulers. From 1518 until the move to Hyderabad around 1590, Golconda was the Qutb Shahi capital. The fort fell in 1687, after an eight-month siege by the Mughal emperor Aurangzeb."
+    },
+    {
+      "key": "beauty",
+      "title": "Beauty & Atmosphere",
+      "text": "The beauty of Golconda is its scale and setting. The fort stands on a granite hill, within three rings of walls, with a complex of gates, bastions, royal pavilions, mosques, temples and water systems. It is often described as having eight gates and dozens of bastions, and many of its gateways are studded with large iron spikes to stop elephants from ramming them. From the top of the Bala Hisar, the highest point, there is a panoramic view over the surrounding city and plains."
+    },
+    {
+      "key": "architecture",
+      "title": "Architecture & Highlights",
+      "text": "The fort is also famous for its remarkable acoustics. A hand clap made beneath the dome at the Fateh Darwaza entrance can be heard clearly at the top of the hill, which served as an early alert system. Other highlights include the Rani Mahal, the Ibrahim Mosque, the Taramati Mosque, the royal baths and the sophisticated system of channels and pipes that brought water uphill. Golconda's markets once traded in diamonds mined in the region, and famous gems such as the Koh-i-Noor and the Hope Diamond are associated with it."
+    },
+    {
+      "key": "famous_for",
+      "title": "Famous For",
+      "text": "Golconda is famous as a symbol of Deccan power and wealth. It is not currently inscribed as a UNESCO World Heritage Site, but it is part of a group of Qutb Shahi monuments that India has put forward for UNESCO's tentative list."
+    }
+  ],
+  "visitor_tips": [
+    "Visitors should wear comfortable shoes, as there are many steps, and go early in the day.",
+    "An evening sound and light show tells the fort's story.",
+    "Nearby are the Qutb Shahi Tombs, Charminar and the Chowmahalla Palace.",
+    "Check current timings and ticket rules with official sources."
+  ],
+  "quick_facts": [
+    {
+      "label": "Location",
+      "value": "Hyderabad, Telangana"
+    },
+    {
+      "label": "Era",
+      "value": "Kakatiya origin; Qutb Shahi, 1518-1687"
+    },
+    {
+      "label": "Built by",
+      "value": "Qutb Shahi dynasty"
+    },
+    {
+      "label": "Type",
+      "value": "fort"
+    },
+    {
+      "label": "UNESCO",
+      "value": "On UNESCO Tentative List"
     }
   ]
 }

@@ -23,8 +23,8 @@
     "last_verified_on": null,
     "verified_by": null
   },
-  "content_status": "overview_done",
-  "overview": "Fort Kochi and Mattancherry, on the Malabar Coast of Kerala, form one of India's most layered historic quarters, where Portuguese, Dutch, British, Jewish, Arab, Chinese and local cultures left their marks over five centuries. Kochi was a major spice port, and in 1503 the Portuguese built a fort here, the first European fort in India. The Dutch took over in 1663 and the British followed in 1795, and each power added churches, homes and warehouses that give the old town its distinctive character.\n\nThe beauty of Fort Kochi comes from its atmosphere: tree-shaded lanes, colonial bungalows, heritage hotels, cafes, art galleries and a seafront promenade. The Chinese fishing nets along the shore, large cantilevered nets operated by teams of fishermen, are one of the most photographed sights, especially at sunset. St Francis Church, first built in 1503, is among the oldest European churches in India and was the original burial place of the explorer Vasco da Gama. Santa Cruz Basilica, nearby, has a colourful Gothic interior.\n\nIn Mattancherry, the Mattancherry Palace, often called the Dutch Palace, was built by the Portuguese around 1555 and presented to the Raja of Kochi. Its rooms hold some of Kerala's finest murals, depicting scenes from the Ramayana and Puranas in rich colours. Close by, in Jew Town, the Paradesi Synagogue, built in 1568, is considered the oldest active synagogue in the Commonwealth, with hand-painted blue and white Chinese tiles. The surrounding lanes are lined with spice warehouses and antique shops.\n\nThe area is famous for its cultural blend, its heritage architecture and its arts scene, including Kathakali and Kalaripayattu performances and the Kochi-Muziris Biennale, an international art exhibition held every two years. The precinct is not currently listed as a UNESCO World Heritage Site, although it has been discussed for heritage recognition.\n\nVisitors should plan at least one full day, preferably two, and explore on foot or by bicycle. The cooler months from October to March are best. Dress modestly in churches and the synagogue. Check opening times with each site before visiting.",
+  "content_status": "overview_sectioned",
+  "overview": "Colonial-era waterfront quarter with palaces, churches and a synagogue.",
   "history": null,
   "architecture": null,
   "cultural_significance": null,
@@ -104,6 +104,57 @@
       "title": "TO ADD: ASI / state tourism / academic source",
       "publisher": "",
       "url": ""
+    }
+  ],
+  "tagline": "Colonial-era waterfront quarter with palaces, churches and a synagogue.",
+  "sections": [
+    {
+      "key": "history",
+      "title": "Origins & History",
+      "text": "Fort Kochi and Mattancherry, on the Malabar Coast of Kerala, form one of India's most layered historic quarters, where Portuguese, Dutch, British, Jewish, Arab, Chinese and local cultures left their marks over five centuries. Kochi was a major spice port, and in 1503 the Portuguese built a fort here, the first European fort in India. The Dutch took over in 1663 and the British followed in 1795, and each power added churches, homes and warehouses that give the old town its distinctive character."
+    },
+    {
+      "key": "beauty",
+      "title": "Beauty & Atmosphere",
+      "text": "The beauty of Fort Kochi comes from its atmosphere: tree-shaded lanes, colonial bungalows, heritage hotels, cafes, art galleries and a seafront promenade. The Chinese fishing nets along the shore, large cantilevered nets operated by teams of fishermen, are one of the most photographed sights, especially at sunset. St Francis Church, first built in 1503, is among the oldest European churches in India and was the original burial place of the explorer Vasco da Gama. Santa Cruz Basilica, nearby, has a colourful Gothic interior."
+    },
+    {
+      "key": "architecture",
+      "title": "Architecture & Highlights",
+      "text": "In Mattancherry, the Mattancherry Palace, often called the Dutch Palace, was built by the Portuguese around 1555 and presented to the Raja of Kochi. Its rooms hold some of Kerala's finest murals, depicting scenes from the Ramayana and Puranas in rich colours. Close by, in Jew Town, the Paradesi Synagogue, built in 1568, is considered the oldest active synagogue in the Commonwealth, with hand-painted blue and white Chinese tiles. The surrounding lanes are lined with spice warehouses and antique shops."
+    },
+    {
+      "key": "famous_for",
+      "title": "Famous For",
+      "text": "The area is famous for its cultural blend, its heritage architecture and its arts scene, including Kathakali and Kalaripayattu performances and the Kochi-Muziris Biennale, an international art exhibition held every two years. The precinct is not currently listed as a UNESCO World Heritage Site, although it has been discussed for heritage recognition."
+    }
+  ],
+  "visitor_tips": [
+    "Visitors should plan at least one full day, preferably two, and explore on foot or by bicycle.",
+    "The cooler months from October to March are best.",
+    "Dress modestly in churches and the synagogue.",
+    "Check opening times with each site before visiting."
+  ],
+  "quick_facts": [
+    {
+      "label": "Location",
+      "value": "Kochi, Kerala"
+    },
+    {
+      "label": "Era",
+      "value": "Portuguese, Dutch, British, 16th-19th c."
+    },
+    {
+      "label": "Built by",
+      "value": "Colonial powers and the Raja of Cochin"
+    },
+    {
+      "label": "Type",
+      "value": "heritage precinct"
+    },
+    {
+      "label": "UNESCO",
+      "value": "Status to be verified"
     }
   ]
 }
