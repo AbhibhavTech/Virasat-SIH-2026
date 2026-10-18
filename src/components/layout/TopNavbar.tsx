@@ -316,6 +316,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
     icon: React.ComponentType<{ className?: string }>;
   }> = [
     { id: 'map', label: 'Interactive Map', description: 'GIS markers across all Indian regions', icon: Layers },
+    { id: 'trips', label: 'My Saved Trips', description: 'View and manage customized trip plans', icon: Bookmark },
   ];
 
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Compass, Layers, Calendar, Bot, Heart } from 'lucide-react';
+import { Compass, Landmark, Sparkles, Calendar, Bot, Heart } from 'lucide-react';
 import { NavTab } from './Sidebar';
 import { useFavorites } from '../../contexts/FavoritesContext';
 
@@ -30,10 +30,16 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
       matches: ['home', 'dashboard'],
     },
     {
-      id: 'india',
-      label: 'Bharat',
-      icon: Layers,
-      matches: ['india', 'heritage', 'map'],
+      id: 'heritage',
+      label: 'Heritage',
+      icon: Landmark,
+      matches: ['heritage'],
+    },
+    {
+      id: 'festivals',
+      label: 'Festivals',
+      icon: Sparkles,
+      matches: ['festivals'],
     },
     {
       id: 'itinerary',
@@ -66,7 +72,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
         paddingBottom: 'max(env(safe-area-inset-bottom, 0px), 6px)',
       }}
     >
-      <div className="grid grid-cols-5 items-center h-14 max-w-lg mx-auto px-1">
+      <div className="grid grid-cols-6 items-center h-14 max-w-lg mx-auto px-0.5">
         {tabs.map((tab) => {
           const Icon = tab.icon;
           const isActive = tab.matches.includes(activeTab);
@@ -75,7 +81,6 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
             <button
               key={tab.id}
               onClick={() => {
-                // Micro vibration if supported by mobile device
                 if (typeof navigator !== 'undefined' && 'vibrate' in navigator) {
                   try {
                     navigator.vibrate(10);
@@ -93,12 +98,12 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
             >
               {/* Active top pill indicator */}
               {isActive && (
-                <span className="absolute -top-[1px] w-8 h-[2.5px] rounded-full bg-[#FF671F] shadow-xs animate-fadeIn" />
+                <span className="absolute -top-[1px] w-7 h-[2.5px] rounded-full bg-[#FF671F] shadow-xs animate-fadeIn" />
               )}
 
               {/* Icon Container */}
               <div
-                className={`relative flex items-center justify-center w-8 h-8 rounded-full transition-colors ${
+                className={`relative flex items-center justify-center w-7 h-7 rounded-full transition-colors ${
                   tab.isSpecial
                     ? isActive
                       ? 'bg-gradient-to-tr from-[#FF671F] to-[#FFA040] text-white shadow-xs'
@@ -109,14 +114,14 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
                 }`}
               >
                 <Icon
-                  className={`w-4 h-4 transition-transform ${
+                  className={`w-3.5 h-3.5 transition-transform ${
                     isActive ? 'scale-110' : 'scale-100'
                   }`}
                 />
 
-                {/* Badge Count for Favorites or Alerts */}
+                {/* Badge Count for Favorites */}
                 {tab.badgeCount !== undefined && tab.badgeCount > 0 && (
-                  <span className="absolute -top-0.5 -right-1 min-w-[15px] h-[15px] px-1 rounded-full bg-[#FF671F] text-white text-[9px] font-bold flex items-center justify-center shadow-2xs border border-white">
+                  <span className="absolute -top-0.5 -right-1 min-w-[14px] h-[14px] px-0.5 rounded-full bg-[#FF671F] text-white text-[8px] font-bold flex items-center justify-center shadow-2xs border border-white">
                     {tab.badgeCount > 9 ? '9+' : tab.badgeCount}
                   </span>
                 )}
@@ -124,7 +129,7 @@ export const MobileBottomNav: React.FC<MobileBottomNavProps> = ({
 
               {/* Label */}
               <span
-                className={`text-[10px] tracking-tight mt-0.5 leading-none transition-all ${
+                className={`text-[9.5px] tracking-tight mt-0.5 leading-none transition-all ${
                   isActive ? 'font-bold text-[#FF671F]' : 'font-medium text-stone-500'
                 }`}
               >
