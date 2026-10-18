@@ -2,21 +2,29 @@ import React, { useEffect } from 'react';
 import { Routes, Route, Navigate, useParams, useNavigate, useSearchParams } from 'react-router-dom';
 import { NavTab } from '../components/layout/Sidebar';
 import { PlaceSummary } from '../types';
-import { HomePage } from '../pages/HomePage';
-import { CityHubPage } from '../pages/CityHubPage';
-import { ItineraryPage } from '../pages/ItineraryPage';
-import { MapPage } from '../pages/MapPage';
-import { AIAssistantPage } from '../pages/AIAssistantPage';
-import { MyTripsPage } from '../pages/MyTripsPage';
-import { FavoritesPage } from '../pages/FavoritesPage';
-import { ProfilePage } from '../pages/ProfilePage';
-import { DestinationDetailPage } from '../pages/DestinationDetailPage';
-import { SearchPage } from '../pages/SearchPage';
-import { HeritageSitesPage } from '../pages/HeritageSitesPage';
-import { HeritageDetailPage } from '../pages/HeritageDetailPage';
-import { IndiaHierarchyPage } from '../pages/IndiaHierarchyPage';
-import { AdminDashboardPage } from '../pages/AdminDashboardPage';
-import { FestivalsPage } from '../pages/FestivalsPage';
+// Lazy-loaded route pages for optimized bundle splitting & faster initial load
+const HomePage = React.lazy(() => import('../pages/HomePage').then((m) => ({ default: m.HomePage })));
+const CityHubPage = React.lazy(() => import('../pages/CityHubPage').then((m) => ({ default: m.CityHubPage })));
+const ItineraryPage = React.lazy(() => import('../pages/ItineraryPage').then((m) => ({ default: m.ItineraryPage })));
+const MapPage = React.lazy(() => import('../pages/MapPage').then((m) => ({ default: m.MapPage })));
+const AIAssistantPage = React.lazy(() => import('../pages/AIAssistantPage').then((m) => ({ default: m.AIAssistantPage })));
+const MyTripsPage = React.lazy(() => import('../pages/MyTripsPage').then((m) => ({ default: m.MyTripsPage })));
+const FavoritesPage = React.lazy(() => import('../pages/FavoritesPage').then((m) => ({ default: m.FavoritesPage })));
+const ProfilePage = React.lazy(() => import('../pages/ProfilePage').then((m) => ({ default: m.ProfilePage })));
+const DestinationDetailPage = React.lazy(() => import('../pages/DestinationDetailPage').then((m) => ({ default: m.DestinationDetailPage })));
+const SearchPage = React.lazy(() => import('../pages/SearchPage').then((m) => ({ default: m.SearchPage })));
+const HeritageSitesPage = React.lazy(() => import('../pages/HeritageSitesPage').then((m) => ({ default: m.HeritageSitesPage })));
+const HeritageDetailPage = React.lazy(() => import('../pages/HeritageDetailPage').then((m) => ({ default: m.HeritageDetailPage })));
+const IndiaHierarchyPage = React.lazy(() => import('../pages/IndiaHierarchyPage').then((m) => ({ default: m.IndiaHierarchyPage })));
+const AdminDashboardPage = React.lazy(() => import('../pages/AdminDashboardPage').then((m) => ({ default: m.AdminDashboardPage })));
+const FestivalsPage = React.lazy(() => import('../pages/FestivalsPage').then((m) => ({ default: m.FestivalsPage })));
+
+const RouteLoadingSpinner: React.FC = () => (
+  <div className="flex flex-col items-center justify-center min-h-[50vh] space-y-3 py-16 animate-fadeIn">
+    <div className="w-9 h-9 border-3 border-amber-200 border-t-[#FF671F] rounded-full animate-spin" />
+    <span className="text-xs font-semibold text-stone-500 uppercase tracking-widest">Loading Virasat...</span>
+  </div>
+);
 
 export function formatCityName(cityId: string): string {
   if (!cityId) return 'Mumbai';
@@ -225,7 +233,8 @@ export const AppRoutes: React.FC<AppRoutesProps> = ({
   };
 
   return (
-    <Routes>
+    <React.Suspense fallback={<RouteLoadingSpinner />}>
+      <Routes>
       <Route
         path="/"
         element={
@@ -377,5 +386,6 @@ export const AppRoutes: React.FC<AppRoutesProps> = ({
 
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
+    </React.Suspense>
   );
 };

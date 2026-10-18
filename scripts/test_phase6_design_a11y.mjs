@@ -61,29 +61,31 @@ async function runPhase6Tests() {
   // Test Suite 2: Codebase Modularity & Line Limits (<350 lines)
   // -------------------------------------------------------------
   console.log('\n--- Test Suite 2: Codebase Modularity & Clean Architecture ---');
-  const monument3DPath = path.join(rootDir, 'src', 'components', 'threed', 'InteractiveHeritageMonument3D.tsx');
-  const geometriesPath = path.join(rootDir, 'src', 'components', 'threed', 'monumentGeometries.ts');
+  const languageSelectorPath = path.join(rootDir, 'src', 'components', 'common', 'LanguageSelector.tsx');
+  const unescoBadgePath = path.join(rootDir, 'src', 'components', 'common', 'UnescoBadge.tsx');
 
-  assert(fs.existsSync(monument3DPath), 'InteractiveHeritageMonument3D.tsx exists');
-  assert(fs.existsSync(geometriesPath), 'monumentGeometries.ts exists');
+  assert(fs.existsSync(languageSelectorPath), 'LanguageSelector.tsx exists');
+  assert(fs.existsSync(unescoBadgePath), 'UnescoBadge.tsx exists');
 
-  const monument3DLines = fs.readFileSync(monument3DPath, 'utf-8').split('\n').length;
-  const geometriesLines = fs.readFileSync(geometriesPath, 'utf-8').split('\n').length;
+  const languageSelectorLines = fs.readFileSync(languageSelectorPath, 'utf-8').split('\n').length;
+  const unescoBadgeLines = fs.readFileSync(unescoBadgePath, 'utf-8').split('\n').length;
 
-  assert(monument3DLines < 350, `InteractiveHeritageMonument3D.tsx is modular (<350 lines, actual: ${monument3DLines})`);
-  assert(geometriesLines < 350, `monumentGeometries.ts is modular (<350 lines, actual: ${geometriesLines})`);
+  assert(languageSelectorLines < 350, `LanguageSelector.tsx is modular (<350 lines, actual: ${languageSelectorLines})`);
+  assert(unescoBadgeLines < 350, `UnescoBadge.tsx is modular (<350 lines, actual: ${unescoBadgeLines})`);
 
   // -------------------------------------------------------------
-  // Test Suite 3: Architectural Honesty & 3D Viewer Integrity
+  // Test Suite 3: Authentic Monument Photography Registry & Fallbacks
   // -------------------------------------------------------------
-  console.log('\n--- Test Suite 3: 3D Monument Viewer Honesty & Fallbacks ---');
-  const viewerContent = fs.readFileSync(monument3DPath, 'utf-8');
+  console.log('\n--- Test Suite 3: Authentic Monument Photography Registry & Fallbacks ---');
+  const realImagesPath = path.join(rootDir, 'src', 'data', 'monumentRealImages.ts');
+  assert(fs.existsSync(realImagesPath), 'monumentRealImages.ts exists');
 
-  assert(viewerContent.includes('Procedural Geometry') || viewerContent.includes('Architectural Honesty Disclosure'), '3D viewer contains explicit procedural honesty disclosure badge (Blueprint Section XI)');
-  assert(viewerContent.includes('webglcontextlost'), '3D viewer registers WebGL context loss listener');
-  assert((viewerContent.includes('FALLBACK_IMAGES') || viewerContent.includes('fallbackImages')) && viewerContent.includes('img'), '3D viewer includes high-definition photograph fallback when WebGL fails');
-  assert(viewerContent.includes('ArrowLeft') && viewerContent.includes('ArrowRight'), '3D viewer supports keyboard arrow turn controls');
-  assert(viewerContent.includes('toggleWireframe'), '3D viewer supports wireframe toggle for architectural polyhedra');
+  const realImagesContent = fs.readFileSync(realImagesPath, 'utf-8');
+  assert(realImagesContent.includes('MONUMENT_REAL_IMAGES'), 'Monument real images dictionary defined');
+  assert(realImagesContent.includes('getMonumentRealImage'), 'getMonumentRealImage fallback resolver exported');
+  assert(realImagesContent.includes('taj-mahal'), 'Taj Mahal verified photography defined');
+  assert(realImagesContent.includes('golden-temple'), 'Golden Temple verified photography defined');
+  assert(realImagesContent.includes('qutb-minar'), 'Qutb Minar verified photography defined');
 
   // -------------------------------------------------------------
   // Test Suite 4: WCAG AA Accessibility & Landmarks

@@ -9,7 +9,7 @@
 import fs from 'fs';
 import path from 'path';
 import * as UI from '../src/components/ui/index.ts';
-import { MONUMENT_REGISTRY, buildHawaMahalGeometry, FALLBACK_IMAGES } from '../src/components/threed/monumentGeometries.ts';
+import { MONUMENT_REAL_IMAGES } from '../src/data/monumentRealImages.ts';
 
 async function runPhase6Tests() {
   console.log('🚀 [Test] Starting Phase 6: Design System, Accessibility & 3D Accuracy Verification...\n');
@@ -68,30 +68,29 @@ async function runPhase6Tests() {
   assert(inputTsx.includes('aria-describedby'), 'Input primitive links errors/helpers via aria-describedby');
 
   // -------------------------------------------------------------
-  // Test Suite 3: 3D Monument Registry & Flagship Accuracy
+  // Test Suite 3: Authentic Monument Photography Registry & Flagship Accuracy
   // -------------------------------------------------------------
-  console.log('\n--- Test Suite 3: 3D Monument Registry & Flagship Accuracy ---');
+  console.log('\n--- Test Suite 3: Authentic Monument Photography Registry & Flagship Accuracy ---');
   const requiredMonuments = [
-    'gateway-of-india',
     'taj-mahal',
-    'qutub-minar',
+    'qutb-minar',
     'konark-sun-temple',
-    'hampi-stone-temple',
-    'amber-palace',
+    'hampi',
+    'amber-fort',
     'hawa-mahal',
+    'golden-temple',
   ];
 
   for (const mId of requiredMonuments) {
-    const entry = MONUMENT_REGISTRY[mId];
-    assert(entry !== undefined, `Monument registry contains flagship landmark: ${mId}`);
-    assert(typeof entry?.builder === 'function', `Monument ${mId} provides executable 3D geometry builder`);
+    const entry = MONUMENT_REAL_IMAGES[mId];
+    assert(entry !== undefined && typeof entry === 'string', `Monument registry contains authentic photo for: ${mId}`);
+    assert(entry.startsWith('http') || entry.startsWith('/images/'), `Monument ${mId} provides valid photographic URI`);
   }
 
-  assert(typeof buildHawaMahalGeometry === 'function', 'buildHawaMahalGeometry builder is exported');
-  assert(FALLBACK_IMAGES['hawa-mahal'] !== undefined, 'Hawa Mahal fallback photograph is defined');
+  assert(MONUMENT_REAL_IMAGES['hawa-mahal'] !== undefined, 'Hawa Mahal authentic photograph is defined');
 
   const destDetailTsx = fs.readFileSync(path.resolve('src/pages/DestinationDetailPage.tsx'), 'utf-8');
-  assert(destDetailTsx.includes("'hawa-mahal'"), 'DestinationDetailPage resolves Hawa Mahal to 3D monument type');
+  assert(destDetailTsx.includes('getNearbyDiscoveryPlaceById'), 'DestinationDetailPage resolves verified destination records');
 
   // -------------------------------------------------------------
   // Test Suite 4: Responsive & Mobile Viewport Safety

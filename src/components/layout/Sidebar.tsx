@@ -29,7 +29,6 @@ export type NavTab =
   | 'dashboard'
   | 'map'
   | 'itinerary'
-  | '3d'
   | 'ai'
   | 'trips'
   | 'favorites'

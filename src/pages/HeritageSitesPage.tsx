@@ -266,7 +266,7 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
                 </span>
               </h1>
               <p className="text-sm sm:text-base lg:text-lg text-stone-600 leading-relaxed font-sans max-w-2xl">
-                India’s officially verified national heritage repository. Discover world-renowned monuments, architectural dynasties, verified visiting hours, direct rail corridors, and 3D AR camera lenses.
+                India’s officially verified national heritage repository. Discover world-renowned monuments, architectural dynasties, verified visiting hours, direct rail corridors, and AR camera lenses.
               </p>
             </div>
 

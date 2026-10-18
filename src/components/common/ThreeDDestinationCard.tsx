@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { ArrowRight, MapPin, Sparkles, Compass } from 'lucide-react';
 import { ProvenanceBadge } from './ProvenanceBadge';
 
-interface ThreeDDestinationCardProps {
+export interface DestinationCardProps {
   id: string;
   title: string;
   subtitle: string;
@@ -16,7 +16,9 @@ interface ThreeDDestinationCardProps {
   culturalMotif?: 'lotus' | 'mandala' | 'arch' | 'fort';
 }
 
-export const ThreeDDestinationCard: React.FC<ThreeDDestinationCardProps> = ({
+export type ThreeDDestinationCardProps = DestinationCardProps;
+
+export const DestinationCard: React.FC<DestinationCardProps> = ({
   id,
   title,
   subtitle,
@@ -172,7 +174,7 @@ export const ThreeDDestinationCard: React.FC<ThreeDDestinationCardProps> = ({
               </span>
             </span>
             <span className="text-[10px] font-semibold text-stone-500 bg-white/80 backdrop-blur-sm px-2.5 py-1 rounded-lg border border-[#EFE8DF]">
-              3D & Audio Tour
+              Verified Heritage Tour
             </span>
           </div>
         </div>
@@ -180,3 +182,5 @@ export const ThreeDDestinationCard: React.FC<ThreeDDestinationCardProps> = ({
     </div>
   );
 };
+
+export const ThreeDDestinationCard = DestinationCard;

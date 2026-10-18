@@ -346,10 +346,10 @@ export const MumbaiDashboard: React.FC<MumbaiDashboardProps> = ({
                       aspectRatioClass="h-40 w-full"
                       isVerified={Boolean((place as any).image_verified || (place as any).match_status === 'VERIFIED')}
                     />
-                    {place.features && place.features['3d'] && (
+                    {place.features && (place.features as any)['verified'] && (
                       <div className="absolute top-2.5 right-2.5 pointer-events-none z-10">
-                        <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-terracotta text-slate-950 shadow-md">
-                          3D Ready
+                        <span className="px-2 py-0.5 rounded-md text-[10px] font-bold bg-emerald-600 text-white shadow-md">
+                          Verified Site
                         </span>
                       </div>
                     )}
