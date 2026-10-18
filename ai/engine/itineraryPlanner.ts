@@ -110,10 +110,12 @@ export function generateSmartItinerary(state: TripMemoryState): GeneratedTripPla
               name: p.name,
               category: p.category,
               summary: p.summary,
-              timings: p.visiting_hours || p.timings,
-              entry_fee: p.entry_fee,
-              recommended_duration: p.recommended_duration || p.suggested_duration,
-              coordinates: p.coordinates || (p.lat && p.lng ? { lat: p.lat, lng: p.lng } : undefined),
+              // Legacy rows often contain template hours, fees and India-centre coordinates.
+              // Do not present these operational values as confirmed visitor guidance.
+              timings: undefined,
+              entry_fee: undefined,
+              recommended_duration: undefined,
+              coordinates: undefined,
               source_url: p.source_url || p.source_page,
             });
           }
@@ -142,9 +144,9 @@ export function generateSmartItinerary(state: TripMemoryState): GeneratedTripPla
         name: state.lastPlace.name,
         category: state.lastPlace.category,
         summary: state.lastPlace.summary,
-        timings: state.lastPlace.visiting_hours,
-        entry_fee: state.lastPlace.entry_fee,
-        recommended_duration: state.lastPlace.recommended_duration,
+        timings: undefined,
+        entry_fee: undefined,
+        recommended_duration: undefined,
       });
     }
   }
