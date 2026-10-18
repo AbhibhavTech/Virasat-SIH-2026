@@ -292,7 +292,12 @@ class DatabaseManager {
       }
       const tmpPath = `${this.dbFilePath}.tmp`;
       fs.writeFileSync(tmpPath, JSON.stringify(this.data, null, 2), 'utf-8');
-      fs.renameSync(tmpPath, this.dbFilePath);
+      try {
+        fs.renameSync(tmpPath, this.dbFilePath);
+      } catch {
+        fs.copyFileSync(tmpPath, this.dbFilePath);
+        try { fs.unlinkSync(tmpPath); } catch {}
+      }
     } catch (err) {
       console.error('[DB] Error writing to persistent storage:', err);
     }
