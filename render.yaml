@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: virasat-heritage
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: VIRASAT_AI_PROVIDER
+        value: groq
+      - key: GROQ_MODEL
+        value: openai/gpt-oss-20b
+      - key: VIRASAT_AI_REQUIRE_HOSTED
+        value: "false"

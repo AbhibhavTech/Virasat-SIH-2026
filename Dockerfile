@@ -21,6 +21,7 @@ COPY server.ts ./
 COPY server/ ./server/
 COPY ai/ ./ai/
 COPY data/ ./data/
+COPY all_heritages.json ./
 COPY scripts/ ./scripts/
 COPY firebase-applet-config.json ./
 
@@ -44,6 +45,7 @@ RUN npm install --omit=dev && npm cache clean --force
 # Copy compiled assets from builder
 COPY --from=builder /app/dist ./dist
 COPY --from=builder /app/data ./data
+COPY --from=builder /app/all_heritages.json ./all_heritages.json
 COPY --from=builder /app/package.json ./package.json
 
 # Use non-root unprivileged node user for container security
