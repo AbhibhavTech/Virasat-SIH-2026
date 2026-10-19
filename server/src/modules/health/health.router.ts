@@ -31,6 +31,7 @@ healthRouter.get('/health', (req: Request, res: Response): void => {
  */
 healthRouter.get('/ready', async (req: Request, res: Response): Promise<void> => {
   try {
+    const databaseHealth = await db.checkHealth();
     const places = await db.places.findAll({ limit: 1 });
     const states = await db.states.findAll();
 
@@ -43,10 +44,15 @@ healthRouter.get('/ready', async (req: Request, res: Response): Promise<void> =>
       return;
     }
 
-    res.json({
-      status: 'ready',
+    const durableStoreMissing = process.env.NODE_ENV === 'production' && databaseHealth.mode !== 'postgresql';
+    res.status(durableStoreMissing ? 503 : 200).json({
+      status: durableStoreMissing ? 'degraded' : 'ready',
+      error: durableStoreMissing ? 'DURABLE_DATABASE_NOT_CONFIGURED' : undefined,
+      message: durableStoreMissing ? 'Production is using the local JSON store. Configure PostgreSQL before relying on durable or multi-instance data.' : undefined,
       database: {
-        status: 'healthy',
+        status: databaseHealth.status === 'ok' ? 'healthy' : 'unhealthy',
+        mode: databaseHealth.mode,
+        storage: databaseHealth.database,
         total_places: places.total,
         total_states: states.length,
       },

@@ -23,6 +23,12 @@ import {
 import { PlaceEditModal, PlaceFormData } from '../components/admin/PlaceEditModal';
 import { OfficialImagePending } from '../components/common/OfficialImagePending';
 import { TOPICS_AND_SUBTOPICS, TopicName, SourceQualityTier, computeSourceQuality } from '../types/taxonomy';
+import { chatHeaders } from '../services/api';
+
+const adminFetch = (input: RequestInfo | URL, init: RequestInit = {}) => fetch(input, {
+  ...init,
+  headers: { ...chatHeaders(), ...(init.headers as Record<string, string> || {}) },
+});
 
 interface AdminMetrics {
   total_states: number;
@@ -74,7 +80,9 @@ export const AdminDashboardPage: React.FC = () => {
   const [tierFilter, setTierFilter] = useState<'all' | SourceQualityTier>('all');
 
   // Active Tab: 'places' | 'cities' | 'states'
-  const [activeTab, setActiveTab] = useState<'places' | 'cities' | 'states'>('places');
+  const [activeTab, setActiveTab] = useState<'places' | 'cities' | 'states' | 'quality'>('places');
+  const [qualityIssues, setQualityIssues] = useState<any[]>([]);
+  const [qualityScanning, setQualityScanning] = useState(false);
 
   // Edit Modal State
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -93,11 +101,11 @@ export const AdminDashboardPage: React.FC = () => {
     try {
       setLoading(true);
       const [mRes, pRes, cRes, sRes, aRes] = await Promise.all([
-        fetch('/api/v1/admin/metrics'),
-        fetch('/api/v1/admin/places?limit=200'),
-        fetch('/api/v1/admin/cities'),
-        fetch('/api/v1/admin/states'),
-        fetch('/api/v1/admin/audit/summary'),
+        adminFetch('/api/v1/admin/metrics'),
+        adminFetch('/api/v1/admin/places?limit=200'),
+        adminFetch('/api/v1/admin/cities'),
+        adminFetch('/api/v1/admin/states'),
+        adminFetch('/api/v1/admin/audit/summary'),
       ]);
 
       if (mRes.ok) {
@@ -134,7 +142,7 @@ export const AdminDashboardPage: React.FC = () => {
     try {
       setIsAuditing(true);
       showToast('Running live HTTP source validation audit...', 'success');
-      const res = await fetch('/api/v1/admin/audit/run', { method: 'POST' });
+      const res = await adminFetch('/api/v1/admin/audit/run', { method: 'POST' });
       const data = await res.json();
       if (!res.ok) {
         throw new Error(data.error?.message || data.message || 'Live source audit failed');
@@ -147,6 +155,25 @@ export const AdminDashboardPage: React.FC = () => {
     } finally {
       setIsAuditing(false);
     }
+  };
+
+  const runQualityScan = async () => {
+    try {
+      setQualityScanning(true);
+      const res=await adminFetch('/api/v1/admin/data-quality/scan',{method:'POST'});
+      const data=await res.json();
+      if(!res.ok) throw new Error(data.error?.message||data.message||'Data quality scan failed');
+      setQualityIssues(data.data.issues||[]);
+      showToast(`Scanned ${data.data.records_scanned} places; found ${data.data.total_issues} issues.`);
+    }catch(err:any){showToast(err.message,'error');}
+    finally{setQualityScanning(false);}
+  };
+  const updateQualityIssue = async (id:number,status:'resolved'|'ignored') => {
+    try {
+      const res=await adminFetch(`/api/v1/admin/data-quality/issues/${id}`,{method:'PATCH',headers:{'Content-Type':'application/json'},body:JSON.stringify({status})});
+      const data=await res.json(); if(!res.ok) throw new Error(data.error?.message||'Could not update issue');
+      setQualityIssues(items=>items.filter(item=>item.id!==id)); showToast(`Issue marked ${status}.`);
+    }catch(err:any){showToast(err.message,'error');}
   };
 
   useEffect(() => {
@@ -251,7 +278,7 @@ export const AdminDashboardPage: React.FC = () => {
         }
       }
 
-      const res = await fetch(`/api/v1/admin/places/${placeId}/status`, {
+      const res = await adminFetch(`/api/v1/admin/places/${placeId}/status`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: newStatus }),
@@ -271,7 +298,7 @@ export const AdminDashboardPage: React.FC = () => {
   const handleDeletePlace = async (placeId: string, placeName: string) => {
     if (!window.confirm(`Are you sure you want to delete "${placeName}"?`)) return;
     try {
-      const res = await fetch(`/api/v1/admin/places/${placeId}`, {
+      const res = await adminFetch(`/api/v1/admin/places/${placeId}`, {
         method: 'DELETE',
       });
       if (!res.ok) {
@@ -291,7 +318,7 @@ export const AdminDashboardPage: React.FC = () => {
     const url = isEdit ? `/api/v1/admin/places/${formData.id}` : '/api/v1/admin/places';
     const method = isEdit ? 'PUT' : 'POST';
 
-    const res = await fetch(url, {
+    const res = await adminFetch(url, {
       method,
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(formData),
@@ -528,7 +555,7 @@ export const AdminDashboardPage: React.FC = () => {
       {/* Main Admin Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-6">
         {/* Navigation Tabs */}
-        <div className="flex items-center gap-2 border-b border-stone-300 pb-2 mb-6">
+        <div className="flex flex-wrap items-center gap-2 border-b border-stone-300 pb-2 mb-6">
           <button
             onClick={() => setActiveTab('places')}
             className={`px-4 py-2 rounded-xl text-sm font-semibold transition-colors flex items-center gap-2 ${
@@ -539,6 +566,12 @@ export const AdminDashboardPage: React.FC = () => {
           >
             <Landmark className="w-4 h-4" />
             Tourist Places & Verification ({filteredPlaces.length})
+          </button>
+          <button
+            onClick={() => setActiveTab('quality')}
+            className={`px-4 py-2 rounded-xl text-sm font-semibold transition-colors flex items-center gap-2 ${activeTab === 'quality' ? 'bg-amber-700 text-white shadow-sm' : 'text-stone-600 hover:bg-stone-200'}`}
+          >
+            <AlertTriangle className="w-4 h-4" /> Data Quality
           </button>
           <button
             onClick={() => setActiveTab('cities')}
@@ -1111,6 +1144,24 @@ export const AdminDashboardPage: React.FC = () => {
               ))}
             </div>
           </div>
+        )}
+
+        {activeTab === 'quality' && (
+          <section className="bg-white rounded-2xl border border-stone-200 shadow-sm p-5 space-y-4" aria-labelledby="quality-heading">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+              <div><h3 id="quality-heading" className="text-lg font-bold text-stone-900">Tourism data quality</h3>
+                <p className="text-sm text-stone-600">Check coordinates, source links, images and possible duplicate records.</p></div>
+              <button onClick={runQualityScan} disabled={qualityScanning} className="inline-flex items-center justify-center gap-2 rounded-xl bg-amber-700 px-4 py-2.5 font-semibold text-white disabled:opacity-60">
+                <RefreshCw className={`h-4 w-4 ${qualityScanning?'animate-spin':''}`} /> {qualityScanning?'Scanning…':'Run data scan'}
+              </button>
+            </div>
+            {qualityIssues.length===0 ? <div className="rounded-xl border border-dashed border-stone-300 p-8 text-center text-sm text-stone-600">Run a scan to see records that need review.</div> :
+              <ul className="space-y-2" aria-live="polite">{qualityIssues.map((issue,index)=><li key={`${issue.entity_id}-${issue.code}-${index}`} className="flex flex-col gap-3 rounded-xl border border-stone-200 p-4 sm:flex-row sm:items-center sm:justify-between">
+                <div className="min-w-0"><div className="flex flex-wrap items-center gap-2"><strong className="text-stone-900">{issue.name}</strong><span className={`rounded-full px-2 py-0.5 text-xs font-semibold ${issue.severity==='error'?'bg-rose-100 text-rose-800':'bg-amber-100 text-amber-800'}`}>{issue.code.replaceAll('_',' ')}</span></div>
+                  <p className="mt-1 text-sm text-stone-600">{issue.detail}</p><code className="mt-1 block truncate text-xs text-stone-400">{issue.entity_id}</code></div>
+                {issue.id && <div className="flex shrink-0 gap-2"><button onClick={()=>updateQualityIssue(issue.id,'resolved')} className="rounded-lg border border-emerald-300 px-3 py-1.5 text-sm font-medium text-emerald-800 hover:bg-emerald-50">Resolve</button><button onClick={()=>updateQualityIssue(issue.id,'ignored')} className="rounded-lg border border-stone-300 px-3 py-1.5 text-sm font-medium text-stone-600 hover:bg-stone-50">Ignore</button></div>}
+              </li>)}</ul>}
+          </section>
         )}
       </div>
 

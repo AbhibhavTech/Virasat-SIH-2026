@@ -7,7 +7,7 @@ Virasat supports PostgreSQL for production and keeps the JSON store for local de
 1. Provision PostgreSQL 15+ with the `vector` extension. On Render, create PostgreSQL in the same region as the web service.
 2. Set `DATABASE_URL` only in the server environment. Never use a `VITE_` prefix or expose it to the browser.
 3. Set the embedding provider variables `VIRASAT_EMBEDDING_URL`, `VIRASAT_EMBEDDING_MODEL`, and server-only `VIRASAT_EMBEDDING_API_KEY` when semantic retrieval is wanted.
-4. Run `npm run db:migrate`, then `npm run db:verify`, `npm run knowledge:reindex`, and `npm run check:data`.
+4. Run `npm run db:migrate`, then `npm run db:verify`, `npm run knowledge:reindex`, `npm run knowledge:embed`, and `npm run check:data`.
 5. Restart the service and confirm `/api/ready` reports PostgreSQL.
 
 The migration runner uses a PostgreSQL advisory lock, a transaction per file, and SHA-256 checksums. It refuses to reapply a migration whose contents changed.
@@ -19,7 +19,9 @@ The migration runner uses a PostgreSQL advisory lock, a transaction per file, an
 - Trips: itinerary, days and stops are saved in one transaction. An owner-scoped idempotency key prevents duplicate AI trip saves.
 - Data-quality issues: reviewable provenance, coordinate, duplicate and media findings.
 
-Admin endpoints require both a valid login token and the `admin` role. `GET /api/v1/admin/data-quality` performs a current scan without changing records.
+Admin endpoints require both a valid login token and the `admin` role. `POST /api/v1/admin/data-quality/scan` finds current issues, persists the review queue in PostgreSQL, and `GET /api/v1/admin/data-quality/issues` lists it. Resolve or ignore an item with `PATCH /api/v1/admin/data-quality/issues/:id`. The `/api/ready` probe reports when production is serving from the non-durable JSON store.
+
+With PostgreSQL active, AI request limits use shared fixed-window counters. When PostgreSQL is unavailable or not configured, the app keeps a per-process limiter for availability; this fallback does not coordinate across multiple instances.
 
 ## Backup and recovery
 

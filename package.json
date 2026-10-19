@@ -7,6 +7,7 @@
     "benchmark:general": "tsx scripts/benchmark_general.ts",
     "knowledge:ingest": "tsx scripts/knowledge.ts ingest",
     "knowledge:reindex": "tsx scripts/knowledge.ts reindex",
+    "knowledge:embed": "tsx scripts/knowledge.ts embed",
     "knowledge:search": "tsx scripts/knowledge.ts search",
     "test:ai-platform": "tsx scripts/test_ai_platform.ts",
     "dev": "tsx server.ts",
@@ -32,7 +33,7 @@
     "test:heritage-ai": "tsx scripts/test_heritage_ai.ts",
     "db:migrate": "tsx scripts/migrate_database.ts",
     "db:verify": "tsx scripts/verify_database.ts",
-    "test:database-platform": "tsx scripts/test_database_platform.ts"
+    "test:database-platform": "node scripts/test_database_platform.mjs"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.102.8",

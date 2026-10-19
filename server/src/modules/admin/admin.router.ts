@@ -12,7 +12,7 @@ const execFileAsync = promisify(execFile);
 export const adminRouter = Router();
 adminRouter.use(requireAuth, requireRole('admin'));
 
-adminRouter.get('/data-quality', async (req: Request, res: Response): Promise<void> => {
+adminRouter.post('/data-quality/scan', async (req: Request, res: Response): Promise<void> => {
   try {
     const { places } = await db.places.findAll({ includeAllStatuses: true, limit: 100000 });
     const issues: Array<{ entity_id:string; name:string; code:string; severity:'warning'|'error'; detail:string }> = [];
@@ -28,9 +28,34 @@ adminRouter.get('/data-quality', async (req: Request, res: Response): Promise<vo
       const key = `${place.city_id||''}/${place.name.trim().toLowerCase()}`;
       if (seen.has(key)) issues.push({entity_id:place.id,name:place.name,code:'DUPLICATE_CANONICAL_NAME',severity:'error',detail:`Possible duplicate of ${seen.get(key)}.`}); else seen.set(key,place.id);
     }
+    const persisted = await db.dataQuality.replaceOpenIssues(issues.map(issue => ({ entity_type:'place',entity_id:issue.entity_id,
+      issue_code:issue.code,severity:issue.severity,details:{name:issue.name,detail:issue.detail} })));
+    const queue = persisted.durable ? await db.dataQuality.list('open',1000) : [];
+    const visibleIssues = persisted.durable ? queue.map((issue:any)=>({id:Number(issue.id),entity_id:issue.entity_id,name:issue.details?.name||issue.entity_id,
+      code:issue.issue_code,severity:issue.severity,detail:issue.details?.detail||''})) : issues;
     const byCode = issues.reduce<Record<string,number>>((acc,item)=>(acc[item.code]=(acc[item.code]||0)+1,acc),{});
-    res.json({success:true,data:{generated_at:new Date().toISOString(),records_scanned:places.length,total_issues:issues.length,by_code:byCode,issues}});
+    res.json({success:true,data:{generated_at:new Date().toISOString(),records_scanned:places.length,total_issues:issues.length,by_code:byCode,
+      issue_queue:persisted.durable?'saved_to_postgresql':'computed_only_json_mode',issues:visibleIssues}});
   } catch (err:any) { sendError(res,500,'DATA_QUALITY_ERROR',err.message,req.requestId); }
+});
+
+adminRouter.get('/data-quality/issues', async (req: Request, res: Response): Promise<void> => {
+  try {
+    const status=String(req.query.status||'open');
+    if(!['open','resolved','ignored'].includes(status)){res.status(400).json({success:false,error:{code:'INVALID_ISSUE_STATUS'}});return;}
+    const issues=await db.dataQuality.list(status,Math.min(1000,Math.max(1,Number(req.query.limit)||500)));
+    res.json({success:true,data:{issues,storage:db.getMode()}});
+  }catch(err:any){sendError(res,500,'DATA_QUALITY_ISSUES_ERROR',err.message,req.requestId);}
+});
+
+adminRouter.patch('/data-quality/issues/:id', async (req: Request, res: Response): Promise<void> => {
+  const id=Number(req.params.id),status=req.body?.status;
+  if(!Number.isSafeInteger(id)||id<1||!['open','resolved','ignored'].includes(status)){res.status(400).json({success:false,error:{code:'INVALID_ISSUE_UPDATE'}});return;}
+  try {
+    const updated=await db.dataQuality.updateStatus(id,status,req.user?.id||'admin');
+    if(!updated){res.status(404).json({success:false,error:{code:'ISSUE_NOT_FOUND_OR_NOT_PERSISTED'}});return;}
+    res.json({success:true,data:{id,status}});
+  }catch(err:any){sendError(res,500,'DATA_QUALITY_UPDATE_ERROR',err.message,req.requestId);}
 });
 
 /**

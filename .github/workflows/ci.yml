@@ -33,6 +33,9 @@ jobs:
       - name: TypeScript Type Checking (Lint)
         run: npm run lint
 
+      - name: Database platform regression checks
+        run: npm run test:database-platform
+
       - name: Data Quality & Station Hygiene Audit
         run: |
           npm run check:data

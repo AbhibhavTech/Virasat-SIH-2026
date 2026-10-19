@@ -55,3 +55,12 @@ CREATE TABLE IF NOT EXISTS data_quality_issues (
   UNIQUE(entity_type, entity_id, issue_code, status)
 );
 CREATE INDEX IF NOT EXISTS idx_quality_status ON data_quality_issues(status, severity, detected_at DESC);
+
+CREATE TABLE IF NOT EXISTS request_rate_limits (
+  bucket_key TEXT NOT NULL,
+  window_start TIMESTAMPTZ NOT NULL,
+  request_count INTEGER NOT NULL CHECK (request_count > 0),
+  updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+  PRIMARY KEY(bucket_key, window_start)
+);
+CREATE INDEX IF NOT EXISTS idx_request_rate_limits_expiry ON request_rate_limits(window_start);

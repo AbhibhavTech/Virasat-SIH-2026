@@ -41,7 +41,10 @@ export async function indexEmbeddings() {
   const index = loadIndex(config);
   let updated = 0;
   for (const document of documents) {
-    if (index.vectors[document.id]?.hash === document.content_hash) continue;
+    if (index.vectors[document.id]?.hash === document.content_hash) {
+      await persistKnowledgeVector(document, index.vectors[document.id].values, config.model);
+      continue;
+    }
     const [values] = await embed([document.text], config);
     await persistKnowledgeVector(document, values, config.model);
     index.vectors[document.id] = { hash: document.content_hash, values };
@@ -56,15 +59,15 @@ export async function hybridKnowledge(query: string, filters: { city?: string; s
   try {
     const config = configuration();
     if (!config) return { retrieval_mode: 'lexical_with_term_expansion', documents: lexical };
-    const index = loadIndex(config);
-    if (!Object.keys(index.vectors).length) return { retrieval_mode: 'lexical_with_term_expansion', semantic_status: 'index_missing', documents: lexical };
     const [queryVector] = await embed([query.slice(0, 2000)], config);
     const postgresResults = await searchKnowledgeVectors(queryVector, config.model, filters);
+    const index = loadIndex(config);
+    if (!postgresResults?.length && !Object.keys(index.vectors).length) return { retrieval_mode: 'lexical_with_term_expansion', semantic_status: 'index_missing', documents: lexical };
     const candidates = ingestKnowledge().documents.filter(document =>
       (!filters.city || document.city.toLowerCase() === filters.city.toLowerCase()) &&
       (!filters.state || document.state.toLowerCase() === filters.state.toLowerCase()) &&
       (!filters.entity_id || document.entity_id === filters.entity_id));
-    const semantic = postgresResults || candidates.filter(document => index.vectors[document.id]?.hash === document.content_hash)
+    const semantic = postgresResults?.length ? postgresResults : candidates.filter(document => index.vectors[document.id]?.hash === document.content_hash)
       .map(document => ({ ...document, text: document.text.slice(0, 1800), score: cosine(queryVector, index.vectors[document.id].values) }))
       .filter(document => document.score > 0.25).sort((a, b) => b.score - a.score).slice(0, 10);
     const fused = new Map<string, { document: any; score: number }>();

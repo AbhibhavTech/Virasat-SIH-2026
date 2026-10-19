@@ -1,4 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
+import { db } from '../db/client';
 
 interface RateLimitRecord {
   count: number;
@@ -36,38 +37,29 @@ export function rateLimiter(options: RateLimiterOptions = {}) {
     const clientKey = req.user?.id || req.ip || req.headers['x-forwarded-for']?.toString() || 'anonymous-client';
     const now = Date.now();
 
-    let record = rateLimitStore.get(clientKey);
-
-    if (!record || now > record.resetTime) {
-      record = {
-        count: 1,
-        resetTime: now + windowMs,
-      };
-      rateLimitStore.set(clientKey, record);
-    } else {
-      record.count++;
-    }
-
-    const remaining = Math.max(0, max - record.count);
-    const resetSeconds = Math.ceil((record.resetTime - now) / 1000);
-
-    // Set standard rate limit headers
-    res.setHeader('X-RateLimit-Limit', max);
-    res.setHeader('X-RateLimit-Remaining', remaining);
-    res.setHeader('X-RateLimit-Reset', resetSeconds);
-
-    if (record.count > max) {
-      res.setHeader('Retry-After', resetSeconds);
-      res.status(429).json({
-        success: false,
-        error: 'RATE_LIMIT_EXCEEDED',
-        message: customMessage,
-        retry_after_seconds: resetSeconds,
-      });
-      return;
-    }
-
-    next();
+    const windowStart = Math.floor(now / windowMs) * windowMs;
+    const resetTime = windowStart + windowMs;
+    const resetSeconds = Math.max(1, Math.ceil((resetTime - now) / 1000));
+    const finish = (count: number) => {
+      res.setHeader('X-RateLimit-Limit', max);
+      res.setHeader('X-RateLimit-Remaining', Math.max(0, max - count));
+      res.setHeader('X-RateLimit-Reset', resetSeconds);
+      if (count > max) {
+        res.setHeader('Retry-After', resetSeconds);
+        res.status(429).json({ success: false, error: 'RATE_LIMIT_EXCEEDED', message: customMessage, retry_after_seconds: resetSeconds });
+        return;
+      }
+      next();
+    };
+    const localCount = () => {
+      let record = rateLimitStore.get(clientKey);
+      if (!record || now >= record.resetTime) { record = { count: 0, resetTime }; rateLimitStore.set(clientKey, record); }
+      return ++record.count;
+    };
+    if (db.getMode() !== 'postgresql') { finish(localCount()); return; }
+    void db.rateLimits.consume(clientKey, new Date(windowStart))
+      .then(sharedCount => finish(sharedCount ?? localCount()))
+      .catch(() => finish(localCount()));
   };
 }
 

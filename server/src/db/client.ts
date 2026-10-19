@@ -143,13 +143,16 @@ class DatabaseManager {
         console.log('[DB] Database mode: PostgreSQL');
         isConnected = true;
       } catch (err: any) {
-        console.error('[DB] PostgreSQL connection check failed:', err?.message || 'Unknown error');
+        console.error('[DB] PostgreSQL connection check failed:', String(err?.code || 'CONNECTION_ERROR'));
         console.warn('[DB] Reverting to local JSON store fallback.');
         if (this.pool) {
           try {
             await this.pool.end();
           } catch {}
           this.pool = null;
+        }
+        if (process.env.NODE_ENV === 'production') {
+          throw new Error('[DB] Configured PostgreSQL is unavailable. Refusing to fall back to non-durable JSON storage.');
         }
       }
 
@@ -831,6 +834,51 @@ class DatabaseManager {
       total_places: Object.keys(this.data.places).length,
     };
   }
+
+  public rateLimits = {
+    consume: async (key: string, windowStart: Date): Promise<number | null> => {
+      if (this.mode !== 'postgresql') return null;
+      const rows = await this.query<{ request_count: number }>(`INSERT INTO request_rate_limits(bucket_key,window_start,request_count)
+        VALUES($1,$2,1) ON CONFLICT(bucket_key,window_start) DO UPDATE SET request_count=request_rate_limits.request_count+1,updated_at=NOW()
+        RETURNING request_count`, [key, windowStart]);
+      if (Number(rows[0]?.request_count) % 128 === 0) {
+        void this.query('DELETE FROM request_rate_limits WHERE window_start < NOW() - INTERVAL \'2 days\'').catch(() => {});
+      }
+      return Number(rows[0]?.request_count || 0);
+    },
+  };
+
+  public dataQuality = {
+    replaceOpenIssues: async (issues: Array<{ entity_type: string; entity_id: string; issue_code: string; severity: 'info'|'warning'|'error'; details: Record<string, unknown> }>) => {
+      if (this.mode !== 'postgresql') return { durable: false, stored: 0 };
+      const json = JSON.stringify(issues);
+      await this.query(`WITH incoming AS (
+        SELECT * FROM jsonb_to_recordset($1::jsonb) AS x(entity_type text,entity_id text,issue_code text,severity text,details jsonb)
+      ) UPDATE data_quality_issues q SET status='resolved',resolved_at=NOW()
+        WHERE q.status='open' AND NOT EXISTS(SELECT 1 FROM incoming i WHERE i.entity_type=q.entity_type AND i.entity_id=q.entity_id AND i.issue_code=q.issue_code)`, [json]);
+      const rows = await this.query<{ count: string }>(`WITH incoming AS (
+        SELECT * FROM jsonb_to_recordset($1::jsonb) AS x(entity_type text,entity_id text,issue_code text,severity text,details jsonb)
+      ), saved AS (
+        INSERT INTO data_quality_issues(entity_type,entity_id,issue_code,severity,details,status)
+        SELECT entity_type,entity_id,issue_code,severity,details,'open' FROM incoming
+        ON CONFLICT(entity_type,entity_id,issue_code,status) DO UPDATE SET severity=EXCLUDED.severity,details=EXCLUDED.details,detected_at=NOW()
+        RETURNING 1
+      ) SELECT COUNT(*)::text count FROM saved`, [json]);
+      return { durable: true, stored: Number(rows[0]?.count || 0) };
+    },
+    list: async (status = 'open', limit = 500) => {
+      if (this.mode !== 'postgresql') return [];
+      return this.query(`SELECT id,entity_type,entity_id,issue_code,severity,details,status,detected_at,resolved_at
+        FROM data_quality_issues WHERE status=$1 ORDER BY CASE severity WHEN 'error' THEN 0 WHEN 'warning' THEN 1 ELSE 2 END,detected_at DESC LIMIT $2`, [status,limit]);
+    },
+    updateStatus: async (id: number, status: 'open'|'resolved'|'ignored', actor: string) => {
+      if (this.mode !== 'postgresql') return false;
+      const rows=await this.query(`UPDATE data_quality_issues SET status=$2,
+        resolved_at=CASE WHEN $2='open' THEN NULL ELSE NOW() END,
+        resolved_by=CASE WHEN $2='open' THEN NULL ELSE $3 END WHERE id=$1 RETURNING id`,[id,status,actor]);
+      return rows.length>0;
+    },
+  };
 
   // -------------------------------------------------------------
   // SQL QUERY EXECUTION HELPER
