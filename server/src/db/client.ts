@@ -2701,16 +2701,21 @@ class DatabaseManager {
       >
     ): Promise<ItineraryRecord> => {
       if (this.mode === 'postgresql') {
+        if (!this.pool) throw new Error('[DB] PostgreSQL pool is not initialized');
+        const tx = await this.pool.connect();
+        try {
+          await tx.query('BEGIN');
         const sql = `
           INSERT INTO itineraries (
             id, user_id, title, destination, city, state, days_count, pace, budget_level,
             summary, total_cost, start_date, end_date, city_ids, is_public, places_count,
-            total_distance_km, estimated_budget, created_at, updated_at
+            total_distance_km, estimated_budget, created_at, updated_at, idempotency_key
           ) VALUES (
             $1, $2, $3, $4, $5, $6, $7, $8, $9,
             $10, $11, $12, $13, $14, $15, $16,
-            $17, $18, $19, $20
-          ) RETURNING *;
+            $17, $18, $19, $20, $21
+          ) ON CONFLICT (user_id, idempotency_key) WHERE idempotency_key IS NOT NULL
+            DO UPDATE SET updated_at=itineraries.updated_at RETURNING *;
         `;
         const params = [
           record.id,
@@ -2733,15 +2738,20 @@ class DatabaseManager {
           record.estimated_budget || 0,
           record.created_at || new Date().toISOString(),
           record.updated_at || new Date().toISOString(),
+          record.idempotency_key || null,
         ];
-        const rows = await this.query(sql, params);
-        const createdItinerary = this.mapItinerary(rows[0]);
+        const result = await tx.query(sql, params);
+        const createdItinerary = this.mapItinerary(result.rows[0]);
+        if (createdItinerary.id !== record.id) {
+          await tx.query('COMMIT');
+          return createdItinerary;
+        }
 
         if (days && Array.isArray(days)) {
           for (let dIdx = 0; dIdx < days.length; dIdx++) {
             const d = days[dIdx];
             const dayId = `day-${record.id}-${d.day_number || dIdx + 1}`;
-            await this.query(
+            await tx.query(
               `INSERT INTO itinerary_days (id, itinerary_id, day_number, area_title, theme, notes, created_at)
                VALUES ($1, $2, $3, $4, $5, $6, $7);`,
               [dayId, record.id, d.day_number || dIdx + 1, d.area_title || `Day ${dIdx + 1}`, d.theme || null, d.notes || null, new Date().toISOString()]
@@ -2751,7 +2761,7 @@ class DatabaseManager {
               for (let sIdx = 0; sIdx < d.stops.length; sIdx++) {
                 const s = d.stops[sIdx];
                 const stopId = `stop-${dayId}-${s.stop_order || sIdx + 1}`;
-                await this.query(
+                await tx.query(
                   `INSERT INTO itinerary_stops (
                     id, day_id, itinerary_id, place_id, place_name, stop_order, arrival_time,
                     duration_minutes, travel_mode, travel_duration_minutes, travel_distance_km,
@@ -2779,10 +2789,19 @@ class DatabaseManager {
           }
         }
 
-        return createdItinerary;
+          await tx.query('COMMIT');
+          return createdItinerary;
+        } catch (error) {
+          await tx.query('ROLLBACK');
+          throw error;
+        } finally { tx.release(); }
       }
 
       // JSON Mode
+      if (record.idempotency_key) {
+        const existing = Object.values(this.data.itineraries).find(item => item.user_id === record.user_id && item.idempotency_key === record.idempotency_key);
+        if (existing) return existing;
+      }
       this.data.itineraries[record.id] = { ...record };
 
       if (days && Array.isArray(days)) {

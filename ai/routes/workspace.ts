@@ -6,6 +6,7 @@ import { db } from '../../server/src/db/client';
 import { getConversationState, deleteConversationState, restoreConversationState, peekConversationState, TripMemoryState } from '../engine/conversationMemory';
 import { generateSmartItinerary } from '../engine/itineraryPlanner';
 import { ConversationPersistence, CONVERSATION_RETENTION_MS } from '../engine/conversationPersistence';
+import { deletePostgresConversation, hasPostgresConversationStore, loadPostgresConversations, syncPostgresConversations } from '../engine/postgresConversationPersistence';
 
 const sessions = new Map<string, { owner: string; id: string; title: string; updated: number; draft?: any; saving?: boolean; saved?: string }>();
 const TTL = CONVERSATION_RETENTION_MS;
@@ -21,15 +22,20 @@ try {
   persistenceHealthy = false;
   console.error('[AI history] Stored history could not be loaded; persistence disabled.');
 }
+if (hasPostgresConversationStore()) void loadPostgresConversations().then(items => {
+  for (const {key,entry,state} of items) if (!sessions.has(key)) { sessions.set(key,{...entry,saving:false}); restoreConversationState(state); }
+}).catch(()=>console.error('[AI history] PostgreSQL history could not be loaded.'));
+function snapshots() {
+  return [...sessions.entries()].filter(([,entry])=>entry.owner!=='legacy-anonymous').flatMap(([key,entry])=>{
+    const state=peekConversationState(key); if(!state)return[]; const {saving:_saving,...savedEntry}=entry;
+    return [{key,entry:savedEntry,state}];
+  });
+}
 function persistWorkspace() {
   if (!persistenceHealthy) return false;
   try {
-    persistence.save([...sessions.entries()].filter(([, entry]) => entry.owner !== 'legacy-anonymous').flatMap(([key, entry]) => {
-      const state = peekConversationState(key);
-      if (!state) return [];
-      const { saving: _saving, ...savedEntry } = entry;
-      return [{ key, entry: savedEntry, state }];
-    }));
+    const current=snapshots(); persistence.save(current);
+    if(hasPostgresConversationStore()) void syncPostgresConversations(current,TTL).catch(()=>console.error('[AI history] PostgreSQL history sync failed.'));
     return true;
   } catch {
     persistenceHealthy = false;
@@ -86,7 +92,7 @@ workspaceRouter.use((_req, res, next) => {
 });
 workspaceRouter.get('/conversations', (req, res) => {
   if (ownerKey(req) === 'legacy-anonymous') { res.json({ conversations: [] }); return; }
-  res.json({ conversations: [...sessions.values()].filter(e => e.owner === ownerKey(req)).sort((a,b)=>b.updated-a.updated).slice(0,30).map(e => ({ id: e.id, title: e.title, updated: e.updated })), retention_hours: 6, storage: persistenceHealthy ? 'file' : 'memory', deployment_durability: 'Requires a persistent disk; single server only.' });
+  res.json({ conversations: [...sessions.values()].filter(e => e.owner === ownerKey(req)).sort((a,b)=>b.updated-a.updated).slice(0,30).map(e => ({ id: e.id, title: e.title, updated: e.updated })), retention_hours: 6, storage: hasPostgresConversationStore()?'postgresql':persistenceHealthy?'file':'memory', deployment_durability: hasPostgresConversationStore()?'Shared across server instances.':'Requires a persistent disk; single server only.' });
 });
 workspaceRouter.get('/conversations/:id', (req, res) => {
   const key = sessionKey(req, String(req.params.id)); const entry = sessions.get(key);
@@ -108,6 +114,7 @@ workspaceRouter.delete('/conversations/:id', (req, res) => {
   const key = sessionKey(req, String(req.params.id));
   if (sessions.get(key)?.saving) { res.status(409).json({ error: 'SAVE_IN_PROGRESS' }); return; }
   sessions.delete(key); deleteConversationState(key);
+  void deletePostgresConversation(key).catch(()=>{});
   if (!persistWorkspace()) { res.status(503).json({ error: 'HISTORY_DELETE_NOT_PERSISTED' }); return; }
   res.json({ success: true });
 });
@@ -151,7 +158,8 @@ workspaceRouter.post('/conversations/:id/draft/confirm', requireAuth, async (req
   try {
     await db.init(); const draft = entry.draft;
     await db.itineraries.create({ id, user_id: req.user!.id, title: `${draft.duration_days}-day ${draft.destination} trip`, destination: draft.destination, days_count: draft.duration_days,
-      budget_level: draft.travel_style.toLowerCase(), summary: draft.note, is_public: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString() },
+      budget_level: draft.travel_style.toLowerCase(), summary: draft.note, is_public: false, created_at: new Date().toISOString(), updated_at: new Date().toISOString(),
+      idempotency_key: `ai:${sessionKey(req,String(req.params.id))}:${draft.revision}`, revision: draft.revision },
       draft.days.map((day: any) => ({ day_number: day.day_number, area_title: draft.destination, theme: day.theme, notes: draft.note,
         stops: ['morning_cluster','afternoon_cluster','evening_cluster'].flatMap(period => day[period].places).map((place: any,index: number) => ({ place_name: place.name, stop_order: index+1, duration_minutes: 90, notes: '90-minute planning allowance; verify venue hours and journey time.' })) })));
     entry.saved = id; res.json({ trip_id: id });

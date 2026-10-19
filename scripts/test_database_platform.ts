@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+const migration=fs.readFileSync('server/src/db/migrations/008_ai_database_platform.sql','utf8');
+const admin=fs.readFileSync('server/src/modules/admin/admin.router.ts','utf8');
+const client=fs.readFileSync('server/src/db/client.ts','utf8');
+const semantic=fs.readFileSync('ai/retrieval/semantic.ts','utf8');
+assert.match(migration,/CREATE EXTENSION IF NOT EXISTS vector/i);
+assert.match(migration,/knowledge_documents/);
+assert.match(migration,/data_quality_issues/);
+assert.match(admin,/adminRouter\.use\(requireAuth, requireRole\('admin'\)\)/);
+assert.match(client,/await tx\.query\('BEGIN'\)/);
+assert.match(client,/idempotency_key/);
+assert.match(semantic,/searchKnowledgeVectors/);
+console.log('Database platform structural checks passed.');

@@ -5,10 +5,33 @@ import { execFile } from 'child_process';
 import { promisify } from 'util';
 import { db } from '../../db/client';
 import { sendError } from '../../middleware/validate';
+import { requireAuth, requireRole } from '../../middleware/auth';
 
 const execFileAsync = promisify(execFile);
 
 export const adminRouter = Router();
+adminRouter.use(requireAuth, requireRole('admin'));
+
+adminRouter.get('/data-quality', async (req: Request, res: Response): Promise<void> => {
+  try {
+    const { places } = await db.places.findAll({ includeAllStatuses: true, limit: 100000 });
+    const issues: Array<{ entity_id:string; name:string; code:string; severity:'warning'|'error'; detail:string }> = [];
+    const seen = new Map<string,string>();
+    for (const place of places) {
+      const lat = Number(place.lat ?? place.latitude), lng = Number(place.lng ?? place.longitude);
+      if (!Number.isFinite(lat) || !Number.isFinite(lng) || Math.abs(lat) > 90 || Math.abs(lng) > 180)
+        issues.push({entity_id:place.id,name:place.name,code:'INVALID_COORDINATES',severity:'error',detail:'Coordinates are missing or outside valid bounds.'});
+      else if (Math.abs(lat-20.5937)<0.0001 && Math.abs(lng-78.9629)<0.0001)
+        issues.push({entity_id:place.id,name:place.name,code:'GENERIC_COUNTRY_CENTER',severity:'error',detail:'Generic India-centre coordinates must not be published.'});
+      if (!place.source_url && !(place.sources?.length)) issues.push({entity_id:place.id,name:place.name,code:'MISSING_SOURCE',severity:'warning',detail:'No provenance URL is attached.'});
+      if (!place.thumbnail_url) issues.push({entity_id:place.id,name:place.name,code:'MISSING_IMAGE',severity:'warning',detail:'No primary image is attached.'});
+      const key = `${place.city_id||''}/${place.name.trim().toLowerCase()}`;
+      if (seen.has(key)) issues.push({entity_id:place.id,name:place.name,code:'DUPLICATE_CANONICAL_NAME',severity:'error',detail:`Possible duplicate of ${seen.get(key)}.`}); else seen.set(key,place.id);
+    }
+    const byCode = issues.reduce<Record<string,number>>((acc,item)=>(acc[item.code]=(acc[item.code]||0)+1,acc),{});
+    res.json({success:true,data:{generated_at:new Date().toISOString(),records_scanned:places.length,total_issues:issues.length,by_code:byCode,issues}});
+  } catch (err:any) { sendError(res,500,'DATA_QUALITY_ERROR',err.message,req.requestId); }
+});
 
 /**
  * GET /api/v1/admin/metrics

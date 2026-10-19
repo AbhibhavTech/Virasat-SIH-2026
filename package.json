@@ -29,7 +29,10 @@
     "seed:heritages": "tsx scripts/seed_heritages.ts",
     "seed:destinations": "tsx scripts/seed_maharashtra_destinations.ts",
     "test:assistant-upgrades": "tsx scripts/test_assistant_upgrades.ts && tsx scripts/test_assistant_rendering.tsx",
-    "test:heritage-ai": "tsx scripts/test_heritage_ai.ts"
+    "test:heritage-ai": "tsx scripts/test_heritage_ai.ts",
+    "db:migrate": "tsx scripts/migrate_database.ts",
+    "db:verify": "tsx scripts/verify_database.ts",
+    "test:database-platform": "tsx scripts/test_database_platform.ts"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.102.8",
