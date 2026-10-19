@@ -42,6 +42,8 @@ export interface TripMemoryState {
 }
 
 const memoryStore = new Map<string, TripMemoryState>();
+export function restoreConversationState(state: TripMemoryState) { memoryStore.set(state.sessionId, state); }
+export function peekConversationState(sessionId: string) { return memoryStore.get(sessionId); }
 export function deleteConversationState(sessionId: string) { memoryStore.delete(sessionId); }
 const MEMORY_TTL_MS = 6 * 60 * 60 * 1000;
 const MAX_MEMORY_SESSIONS = 5000;

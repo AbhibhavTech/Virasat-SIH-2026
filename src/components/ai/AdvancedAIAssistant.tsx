@@ -235,7 +235,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
   }, [signedInUser?.id]);
 
   async function showHistory() {
-    try { const result = await api.listAIConversations(); setChatHistory(result.conversations); setHistoryOpen(true); setPrivacyNotice('History stays on this server for up to 6 hours and is lost on restart.'); }
+    try { const result = await api.listAIConversations(); setChatHistory(result.conversations); setHistoryOpen(true); setPrivacyNotice('Recent chats are kept for up to 6 hours. Availability after deployment depends on server storage.'); }
     catch { setPrivacyNotice('Could not load chat history.'); }
   }
   async function openHistory(id: string) {

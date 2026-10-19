@@ -3,11 +3,40 @@ import { createHash, randomUUID } from 'node:crypto';
 import { z } from 'zod';
 import { requireAuth } from '../../server/src/middleware/auth';
 import { db } from '../../server/src/db/client';
-import { getConversationState, deleteConversationState, TripMemoryState } from '../engine/conversationMemory';
+import { getConversationState, deleteConversationState, restoreConversationState, peekConversationState, TripMemoryState } from '../engine/conversationMemory';
 import { generateSmartItinerary } from '../engine/itineraryPlanner';
+import { ConversationPersistence, CONVERSATION_RETENTION_MS } from '../engine/conversationPersistence';
 
 const sessions = new Map<string, { owner: string; id: string; title: string; updated: number; draft?: any; saving?: boolean; saved?: string }>();
-const TTL = 6 * 60 * 60 * 1000;
+const TTL = CONVERSATION_RETENTION_MS;
+const persistence = new ConversationPersistence();
+let persistenceHealthy = true;
+try {
+  for (const { key, entry, state } of persistence.load()) {
+    sessions.set(key, { ...entry, saving: false });
+    restoreConversationState(state);
+  }
+} catch {
+  // Do not log file content or overwrite a corrupt store with an empty snapshot.
+  persistenceHealthy = false;
+  console.error('[AI history] Stored history could not be loaded; persistence disabled.');
+}
+function persistWorkspace() {
+  if (!persistenceHealthy) return false;
+  try {
+    persistence.save([...sessions.entries()].filter(([, entry]) => entry.owner !== 'legacy-anonymous').flatMap(([key, entry]) => {
+      const state = peekConversationState(key);
+      if (!state) return [];
+      const { saving: _saving, ...savedEntry } = entry;
+      return [{ key, entry: savedEntry, state }];
+    }));
+    return true;
+  } catch {
+    persistenceHealthy = false;
+    console.error('[AI history] History save failed; current conversation remains in memory.');
+    return false;
+  }
+}
 export function ownerKey(req: Request) {
   const browser = String(req.headers['x-virasat-chat-owner'] || '');
   return req.user?.id ? `user:${req.user.id}` : /^[a-zA-Z0-9-]{32,80}$/.test(browser) ? `browser:${browser}` : 'legacy-anonymous';
@@ -49,10 +78,15 @@ export function buildDraft(key: string, state: TripMemoryState, message: string)
   return entry.draft;
 }
 export const workspaceRouter = Router();
-workspaceRouter.use((_req, res, next) => { prune(); res.setHeader('Cache-Control', 'no-store'); next(); });
+workspaceRouter.use((_req, res, next) => {
+  prune(); res.setHeader('Cache-Control', 'no-store');
+  // Includes /chat responses because this router is mounted before the chat handler.
+  res.once('finish', persistWorkspace);
+  next();
+});
 workspaceRouter.get('/conversations', (req, res) => {
   if (ownerKey(req) === 'legacy-anonymous') { res.json({ conversations: [] }); return; }
-  res.json({ conversations: [...sessions.values()].filter(e => e.owner === ownerKey(req)).sort((a,b)=>b.updated-a.updated).slice(0,30).map(e => ({ id: e.id, title: e.title, updated: e.updated })), retention_hours: 6 });
+  res.json({ conversations: [...sessions.values()].filter(e => e.owner === ownerKey(req)).sort((a,b)=>b.updated-a.updated).slice(0,30).map(e => ({ id: e.id, title: e.title, updated: e.updated })), retention_hours: 6, storage: persistenceHealthy ? 'file' : 'memory', deployment_durability: 'Requires a persistent disk; single server only.' });
 });
 workspaceRouter.get('/conversations/:id', (req, res) => {
   const key = sessionKey(req, String(req.params.id)); const entry = sessions.get(key);
@@ -73,11 +107,14 @@ workspaceRouter.post('/conversations/:id/claim', requireAuth, (req, res) => {
 workspaceRouter.delete('/conversations/:id', (req, res) => {
   const key = sessionKey(req, String(req.params.id));
   if (sessions.get(key)?.saving) { res.status(409).json({ error: 'SAVE_IN_PROGRESS' }); return; }
-  sessions.delete(key); deleteConversationState(key); res.json({ success: true });
+  sessions.delete(key); deleteConversationState(key);
+  if (!persistWorkspace()) { res.status(503).json({ error: 'HISTORY_DELETE_NOT_PERSISTED' }); return; }
+  res.json({ success: true });
 });
 workspaceRouter.delete('/conversations', (req, res) => {
   if ([...sessions.values()].some(entry => entry.owner === ownerKey(req) && entry.saving)) { res.status(409).json({ error: 'SAVE_IN_PROGRESS' }); return; }
   for (const [key, entry] of sessions) if (entry.owner === ownerKey(req)) { sessions.delete(key); deleteConversationState(key); }
+  if (!persistWorkspace()) { res.status(503).json({ error: 'HISTORY_DELETE_NOT_PERSISTED' }); return; }
   res.json({ success: true });
 });
 workspaceRouter.post('/conversations/:id/clear-location', (req, res) => {
@@ -88,6 +125,7 @@ workspaceRouter.post('/conversations/:id/clear-location', (req, res) => {
     state.messages = [];
     const draft = sessions.get(key)?.draft; if (draft) delete draft.origin;
   }
+  if (!persistWorkspace()) { res.status(503).json({ error: 'LOCATION_CLEAR_NOT_PERSISTED' }); return; }
   res.json({ success: true });
 });
 const editSchema = z.object({ revision: z.number().int(), day: z.number().int().min(1).max(7), period: z.enum(['morning_cluster','afternoon_cluster','evening_cluster']), place_id: z.string().max(150).nullable() }).strict();

@@ -58,10 +58,10 @@ export async function execute(args: {
                    (item.tags || []).some((t: string) => t.toLowerCase().includes('food') || t.toLowerCase().includes('cuisine'));
     if (!isFood) continue;
 
-    if (cityFilter && !item.city.toLowerCase().includes(cityFilter)) continue;
+    if (cityFilter && String(item.city || '').trim().toLowerCase() !== cityFilter) continue;
     if (cuisineFilter) {
-      const match = item.name.toLowerCase().includes(cuisineFilter) ||
-                    item.description.toLowerCase().includes(cuisineFilter) ||
+      const match = String(item.name || '').toLowerCase().includes(cuisineFilter) ||
+                    String(item.description || '').toLowerCase().includes(cuisineFilter) ||
                     (item.tags || []).some((t: string) => t.toLowerCase().includes(cuisineFilter));
       if (!match) continue;
     }
@@ -73,9 +73,9 @@ export async function execute(args: {
       state: item.state,
       description: item.description,
       cultural_significance: item.cultural_significance,
-      popular_locations: item.best_locations || ['Local heritage lanes and market streets'],
-      specialty_tags: item.tags || ['Authentic Heritage Dining'],
-      average_price_per_person: '₹200 - ₹800',
+      popular_locations: item.best_locations || [],
+      specialty_tags: item.tags || [],
+      verification_status: 'stored cultural record; current venue details not checked',
     });
 
     if (results.length >= limit) break;
@@ -104,7 +104,9 @@ export async function execute(args: {
       ],
     };
 
-    const foundDefaults = defaultCityFoods[cityFilter] || [];
+    const foundDefaults = (defaultCityFoods[cityFilter] || []).filter(item =>
+      !cuisineFilter || `${item.name} ${item.specialty} ${item.type}`.toLowerCase().includes(cuisineFilter)
+    );
     for (const d of foundDefaults) {
       results.push({
         id: `food-${cityFilter}-${results.length + 1}`,
@@ -113,13 +115,15 @@ export async function execute(args: {
         description: `Renowned culinary stop in ${d.area} celebrated for authentic ${d.specialty}.`,
         popular_locations: [d.area],
         specialty_tags: [d.specialty, d.type],
-        average_price_per_person: '₹250 - ₹650',
+        verification_status: 'unverified curated candidate',
       });
     }
   }
 
   return {
-    total_found: results.length,
-    recommendations: results,
+    total_found: Math.min(results.length, limit),
+    recommendations: results.slice(0, limit),
+    live_inventory_connected: false,
+    notice: "Current prices, hours and availability are not verified. Curated candidates are not a quality ranking.",
   };
 }

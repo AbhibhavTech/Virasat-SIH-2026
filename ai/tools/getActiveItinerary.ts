@@ -15,6 +15,7 @@ export const declaration = {
 };
 
 export async function execute(args: { itinerary_id?: string }, context?: any): Promise<any> {
+  const userId = context?.userId || context?.user?.id;
   // 1. Check if an active itinerary is in the current frontend context
   if (context?.activeItinerary) {
     return {
@@ -25,8 +26,9 @@ export async function execute(args: { itinerary_id?: string }, context?: any): P
 
   // 2. Check by ID if provided
   if (args.itinerary_id) {
+    if (!userId) return { error: 'SIGN_IN_REQUIRED' };
     const it = await db.itineraries.findById(args.itinerary_id);
-    if (it) {
+    if (it && it.user_id === userId) {
       const days = await db.itineraryDays.findByItinerary(it.id);
       const daysWithStops = [];
       for (const d of days) {
@@ -38,10 +40,10 @@ export async function execute(args: { itinerary_id?: string }, context?: any): P
         itinerary: { ...it, days: daysWithStops },
       };
     }
+    return { error: 'ITINERARY_NOT_FOUND' };
   }
 
   // 3. Check for authenticated user's latest itinerary
-  const userId = context?.userId || context?.user?.id;
   if (userId) {
     const userItineraries = await db.itineraries.findByUser(userId);
     if (userItineraries.length > 0) {
