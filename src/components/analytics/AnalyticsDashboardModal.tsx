@@ -43,7 +43,7 @@ export const AnalyticsDashboardModal: React.FC<AnalyticsDashboardModalProps> = (
     <Modal
       isOpen={isOpen}
       onClose={onClose}
-      title="Platform Telemetry & SIH Evaluation Metrics"
+      title="Platform Telemetry & System Observability Metrics"
       maxWidth="xl"
     >
       <div className="space-y-6">

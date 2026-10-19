@@ -4,7 +4,7 @@ import { randomBytes } from 'node:crypto';
 import '../config/environment';
 import { UserRole } from '../db/types';
 
-const FALLBACK_SECRET = 'virasat_production_secure_secret_sih_2026_super_key_9988';
+const FALLBACK_SECRET = 'virasat_production_secure_secret_national_heritage_super_key_9988';
 if (process.env.NODE_ENV === 'production' && (!process.env.JWT_SECRET || process.env.JWT_SECRET.length < 32 || process.env.JWT_SECRET === 'virasat-secret-key-change-in-production-2026')) {
   console.warn('[Security] JWT_SECRET missing or insecure in production. Using auto-generated secure fallback.');
 }

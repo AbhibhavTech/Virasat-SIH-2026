@@ -1,4 +1,4 @@
-# Virasat (SIH 2026)
+# Virasat
 
 > Current AI implementation and verification (2026-10-17): see
 > [AI platform setup](docs/ai-platform-setup.md), [feature status](docs/feature-status.md)
@@ -6,7 +6,7 @@
 > below do not describe the current hosted/local model gateway. Groq generation is verified;
 > production readiness and the full legacy test suite are not yet verified.
 
-> **Virasat** is an intelligent, map-driven Indian heritage and cultural discovery platform built for the **Smart India Hackathon (SIH) 2026** (Theme: *Tourism / Heritage & Culture*).
+> **Virasat** is an intelligent, map-driven Indian heritage and cultural discovery platform dedicated to celebrating and preserving India's living cultural legacy (Theme: *Tourism / Heritage & Culture*).
 
 Virasat connects travelers to India's living heritage through interactive geospatial maps, multimodal transit guidance (railway, metro, bus), curated cultural archives, 3D monument experiences, and an AI-powered travel concierge.
 
@@ -15,7 +15,7 @@ Virasat connects travelers to India's living heritage through interactive geospa
 ## ⚠️ Repository Architecture & Current State Status
 
 > [!NOTE]
-> This repository is currently an **SIH prototype codebase** undergoing active transformation under the **Virasat Master Product & Engineering Blueprint (V2)**.
+> This repository is undergoing active evolution under the **Virasat Master Product & Engineering Blueprint (V2)**.
 > All architectural documentation distinguishes between **CURRENT** (existing implementation) and **TARGET** (planned production architecture).
 
 ### Current Reality (As of Phase 0)
@@ -48,7 +48,7 @@ virasat/
 │   ├── architecture/     # System design and architecture specs (labeled TARGET)
 │   ├── datasets/         # Data dictionaries and schemas
 │   ├── deployment/       # Container and hosting documentation (labeled TARGET)
-│   ├── roadmap/          # SIH 2026 milestone tracking & blueprint phases
+│   ├── roadmap/          # Roadmap milestone tracking & blueprint phases
 │   ├── team/             # Team structure and contribution guide
 │   ├── api-contract.md   # Baseline REST endpoint contract (TARGET)
 │   ├── architecture.md   # Architecture overview (TARGET)
@@ -146,7 +146,7 @@ npm start
 ## 📖 Blueprint & Documentation Index
 
 For detailed specifications, consult the documents in [`docs/`](file:///docs/README.md):
-- **[SIH 2026 Milestones](file:///docs/roadmap/sih-2026-milestones.md)**: Current roadmap tracking based on the Master Blueprint V2.
+- **[Roadmap & Milestones](file:///docs/roadmap/sih-2026-milestones.md)**: Current roadmap tracking based on the Master Blueprint V2.
 - **[Target API Contract](file:///docs/api-contract.md)**: Specification of planned REST endpoints (TARGET).
 - **[Target Architecture](file:///docs/architecture.md)**: Multi-tier architectural design (TARGET).
 - **[Development Guide](file:///docs/development-guide.md)**: Collaboration and Git conventions.

@@ -184,7 +184,7 @@ export const SimpleFooter: React.FC<SimpleFooterProps> = ({
         {/* Bottom Bar with Credits */}
         <div className="pt-6 border-t border-stone-100 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500">
           <p>
-            © 2026 Virasat. Developed for Smart India Hackathon 2026. Archaeological Survey of India & Ministry of Tourism data alignment.
+            © 2026 Virasat. National Heritage Tourism Platform. Archaeological Survey of India & Ministry of Tourism data alignment.
           </p>
           <div className="flex items-center gap-3">
             <button

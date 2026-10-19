@@ -1,4 +1,4 @@
-// Virasat Smart PWA Service Worker (SIH 2026 Edition)
+// Virasat Smart PWA Service Worker (National Heritage Edition)
 // Intelligent offline fallback, stale-while-revalidate for static assets, network-first for navigation
 
 const CACHE_NAME = 'virasat-pwa-v2.1';

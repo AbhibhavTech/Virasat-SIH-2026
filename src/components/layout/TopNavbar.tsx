@@ -430,9 +430,9 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
                       </div>
                       <div>
                         <div className="text-xs font-bold text-stone-900 flex items-center gap-1.5">
-                          Evaluation Telemetry
+                          Platform Telemetry
                           <span className="text-[9px] font-semibold px-1.5 py-0.2 rounded bg-purple-50 text-purple-800 border border-purple-200">
-                            SIH 2026
+                            Live
                           </span>
                         </div>
                         <div className="text-[11px] text-stone-500 line-clamp-1">

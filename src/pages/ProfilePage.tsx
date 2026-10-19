@@ -231,7 +231,7 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({ onNavigateTab }) => {
       </div>
 
       {/* ============================================================== */}
-      {/* VIRASAT OFFICIAL DIGITAL BHARAT YATRI PASSPORT (SIH 2026 FEATURE) */}
+      {/* VIRASAT OFFICIAL DIGITAL BHARAT YATRI PASSPORT */}
       {/* ============================================================== */}
       <div className="relative rounded-3xl bg-gradient-to-br from-stone-900 via-[#0B192C] to-stone-950 text-white border-2 border-amber-500/30 p-5 sm:p-8 shadow-2xl overflow-hidden print:border-stone-800 print:text-black print:bg-white">
         {/* Tricolour Accent Line at the Top */}
@@ -249,7 +249,7 @@ export const ProfilePage: React.FC<ProfilePageProps> = ({ onNavigateTab }) => {
                 Official Digital Credential
               </span>
               <span className="text-stone-400 text-xs">•</span>
-              <span className="text-[11px] text-stone-300 font-mono">SIH 2026 Grand Finalist Edition</span>
+              <span className="text-[11px] text-stone-300 font-mono">National Heritage Edition</span>
             </div>
             <h2 className="font-serif text-2xl sm:text-3xl font-extrabold tracking-tight text-white flex items-center gap-2.5">
               <span>BHARAT HERITAGE PASSPORT</span>

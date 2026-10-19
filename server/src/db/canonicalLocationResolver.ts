@@ -1,5 +1,5 @@
 /**
- * Virasat SIH 2026 - Unified Canonical Location Resolver
+ * Virasat - Unified Canonical Location Resolver
  *
  * Single source of truth for:
  * - Normalizing transliterations and diacritics (e.g., Kolkāta -> Kolkata, Hyderābād -> Hyderabad)

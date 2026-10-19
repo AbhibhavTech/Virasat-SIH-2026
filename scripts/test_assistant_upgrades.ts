@@ -44,6 +44,7 @@ let savedCount = 0; let savedOwner = ''; let savedDays: any;
 db.init = async () => {};
 db.itineraries.create = async (record,days) => { savedCount++; savedOwner=record.user_id; savedDays=days; return record; };
 try {
+  await call('/conversations',alice,'DELETE');
   const fixture = await call('/fixture/same',alice,'POST'); const draft = fixture.body.draft;
   assert.equal(draft.days.length,5);
   assert.equal((await call('/conversations/same',bob)).status,404);
@@ -71,6 +72,7 @@ try {
   assert.equal((await call('/conversations/guest',alice)).status,200);
   assert.equal((await call('/conversations/guest','','GET',undefined,ownerA)).status,404);
   await call('/conversations','','DELETE',undefined,ownerA);
+  await call('/conversations',alice,'DELETE');
   assert.equal((await call('/conversations','','GET',undefined,ownerA)).body.conversations.length,0);
   console.log('PASS: location/destination separation, luxury trip extraction, no assumed origin, hotel provenance, scoped history, deletion, editable draft, ownership, confirmation, stale revision and idempotent save. No live model calls.');
 } finally { db.itineraries.create=create; db.init=init; await new Promise<void>(resolve=>server.close(()=>resolve())); }

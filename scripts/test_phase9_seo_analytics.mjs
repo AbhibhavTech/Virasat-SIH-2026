@@ -274,7 +274,7 @@ async function runPhase9Tests() {
   const modalPath = path.join(process.cwd(), 'src', 'components', 'analytics', 'AnalyticsDashboardModal.tsx');
   assert(fs.existsSync(modalPath), 'AnalyticsDashboardModal component exists');
   const modalContent = fs.readFileSync(modalPath, 'utf8');
-  assert(modalContent.includes('SIH Evaluation Metrics'), 'Modal displays SIH Evaluation Metrics');
+  assert(modalContent.includes('System Observability Metrics'), 'Modal displays System Observability Metrics');
   assert(modalContent.includes('Trending Heritage Searches'), 'Modal renders trending heritage searches');
   assert(modalContent.includes('Most Explored Monuments'), 'Modal renders most explored monuments');
 

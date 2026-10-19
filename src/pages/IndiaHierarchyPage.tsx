@@ -218,7 +218,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
     []
   );
 
-  // Simple 6 Geographic Region filters per SIH prototype guidelines
+  // Simple 6 Geographic Region filters
   const regions = [
     'All',
     'North',

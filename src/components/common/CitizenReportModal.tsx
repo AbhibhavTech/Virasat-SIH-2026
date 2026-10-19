@@ -276,7 +276,7 @@ export const CitizenReportModal: React.FC<CitizenReportModalProps> = ({
               <div className="p-3 rounded-2xl bg-[#FAF8F5] border border-[#EFE8DF] text-[11px] text-stone-600 flex items-start gap-2">
                 <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                 <span>
-                  Reports are logged with immutable audit timestamps and reviewed by designated heritage officers and conservation moderators under SIH 2026 Guidelines.
+                  Reports are logged with immutable audit timestamps and reviewed by designated heritage officers and conservation moderators under National Heritage Stewardship Guidelines.
                 </span>
               </div>
 
