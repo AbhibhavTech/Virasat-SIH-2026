@@ -28,6 +28,7 @@ import { getMumbaiDestinationById } from './data/mumbaiDestinations';
 import { getNearbyDiscoveryPlaceById } from './data/nearbyPlacesMMR';
 import { safeLocalStorage } from './utils/storage';
 import { AssistantLauncher } from './components/ai/AssistantLauncher';
+import { DocumentTranslation } from './i18n/DocumentTranslation';
 
 const SELECTED_CITY_STORAGE_KEY = 'virasat_selected_city';
 
@@ -258,6 +259,7 @@ export default function App() {
           <LanguageProvider>
             <FavoritesProvider>
               <AppContent />
+              <DocumentTranslation />
             </FavoritesProvider>
           </LanguageProvider>
         </AuthProvider>

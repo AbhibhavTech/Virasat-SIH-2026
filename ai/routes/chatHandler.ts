@@ -24,11 +24,30 @@ import { getResolvedPlaceById } from '../engine/placeResolver';
 import { randomUUID } from 'node:crypto';
 import { registerConversation, workspaceRouter, buildDraft } from './workspace';
 import { understandTravel } from '../engine/travelUnderstanding';
-import { generateModelReply, getModelStatus, getModelConfiguration, explainModelFailure } from '../engine/modelGateway';
+import { generateModelReply, getModelStatus, getModelConfiguration, explainModelFailure, translatePageStrings } from '../engine/modelGateway';
 import { ProviderFailure } from '../engine/providerErrors';
 
 export const aiChatRouter = Router();
 aiChatRouter.use(workspaceRouter);
+
+// Page-wide translation uses the already-configured server-side model. Inputs are
+// strictly bounded and provider errors are intentionally returned as safe codes.
+aiChatRouter.post('/translate', rateLimiter({ windowMs: 60000, max: 30 }), async (req: Request, res: Response) => {
+  const language = typeof req.body?.language === 'string' ? req.body.language : '';
+  const texts = req.body?.texts;
+  if (!Array.isArray(texts) || texts.length < 1 || texts.length > 20 || texts.some((text: unknown) => typeof text !== 'string' || text.length > 2000) || texts.reduce((sum: number, text: string) => sum + text.length, 0) > 8000) {
+    res.status(400).json({ success: false, error: 'TRANSLATION_INPUT_INVALID' });
+    return;
+  }
+  try {
+    const translations = await translatePageStrings(language, texts as string[]);
+    res.json({ success: true, language, translations });
+  } catch (error) {
+    const code = error instanceof ProviderFailure ? error.diagnostic.category === 'rate_limit' ? 'TRANSLATION_RATE_LIMITED' : error.diagnostic.category === 'billing' ? 'TRANSLATION_QUOTA_EXHAUSTED' : 'TRANSLATION_PROVIDER_UNAVAILABLE'
+      : error instanceof Error && /^TRANSLATION_[A-Z_]+$/.test(error.message) ? error.message : 'TRANSLATION_PROVIDER_UNAVAILABLE';
+    res.status(code === 'TRANSLATION_RATE_LIMITED' ? 429 : 503).json({ success: false, error: code });
+  }
+});
 
 function resolveFollowUpPlace(query: string, places: any[] | undefined) {
   if (!Array.isArray(places) || places.length === 0) return undefined;

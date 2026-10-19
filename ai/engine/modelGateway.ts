@@ -19,6 +19,58 @@ export const GROQ_DEFAULT_MODEL = 'openai/gpt-oss-20b';
 export type ChatTurn = { role: 'user' | 'assistant'; content: string };
 const READ_TOOLS = ['searchTouristPlaces', 'searchHeritageKnowledge', 'searchHiddenGems', 'searchHotels', 'searchRestaurants', 'searchMarkets', 'getEventsCalendar', 'getWeather', 'getTransportOptions', 'getCurrentDatetime', 'getSiteContent'] as const;
 
+const translationCache = new Map<string, string>();
+const TRANSLATION_LANGUAGES: Record<string, string> = {
+  en:'English',as:'Assamese',bn:'Bengali',brx:'Bodo',doi:'Dogri',gu:'Gujarati',hi:'Hindi',kn:'Kannada',ks:'Kashmiri',kok:'Konkani',mai:'Maithili',ml:'Malayalam',mni:'Manipuri',mr:'Marathi',ne:'Nepali',or:'Odia',pa:'Punjabi',sa:'Sanskrit',sat:'Santali',sd:'Sindhi',ta:'Tamil',te:'Telugu',ur:'Urdu'
+};
+
+/** Translate bounded batches through the configured server-side model; never expose provider credentials. */
+export async function translatePageStrings(language: string, texts: string[]): Promise<string[]> {
+  const target = TRANSLATION_LANGUAGES[language];
+  if (!target || language === 'en') throw new Error('TRANSLATION_LANGUAGE_UNSUPPORTED');
+  const keys = texts.map(text => createHash('sha256').update(`${language}\0${text}`).digest('hex'));
+  const translated = new Array<string | undefined>(texts.length);
+  const missing: number[] = [];
+  keys.forEach((key, index) => {
+    const value = translationCache.get(key);
+    if (value !== undefined) translated[index] = value;
+    else missing.push(index);
+  });
+  if (missing.length) {
+    const config = getModelConfiguration();
+    if (!config.configured || config.provider === 'local') throw new Error('TRANSLATION_MODEL_UNAVAILABLE');
+    const response = await fetch(`${config.baseUrl}/chat/completions`, {
+      method: 'POST', signal: AbortSignal.timeout(20000),
+      headers: { 'content-type': 'application/json', authorization: `Bearer ${config.key}` },
+      body: JSON.stringify({
+        model: config.model, temperature: 0, max_tokens: Math.min(4096, Math.max(256, missing.reduce((n, i) => n + texts[i].length, 0) * 2)), store: false,
+        messages: [
+          { role: 'system', content: `Translate each input string into ${target}. Return only a JSON array of strings with exactly the same length and order. Preserve meaning, tone, names of people/places, official organization names, numbers, dates, URLs, punctuation intent and formatting. Do not add explanations or omit content. Keep proper nouns as written when translating them would make them unrecognizable.` },
+          { role: 'user', content: JSON.stringify(missing.map(index => texts[index])) },
+        ],
+      }),
+    });
+    if (!response.ok) {
+      const body = await response.json().catch(() => null);
+      throw new ProviderFailure(classifyProviderError(response.status, response.headers, body, config.key, Date.now(), config.provider));
+    }
+    const data = await response.json();
+    const content = data?.choices?.[0]?.message?.content;
+    let values: unknown;
+    try { values = JSON.parse(typeof content === 'string' ? content : ''); } catch { throw new Error('TRANSLATION_INVALID_RESPONSE'); }
+    if (!Array.isArray(values) || values.length !== missing.length || values.some(value => typeof value !== 'string' || value.length > 4000)) {
+      throw new Error('TRANSLATION_INVALID_RESPONSE');
+    }
+    missing.forEach((index, position) => {
+      const value = (values as string[])[position];
+      translated[index] = value;
+      translationCache.set(keys[index], value);
+    });
+    while (translationCache.size > 5000) translationCache.delete(translationCache.keys().next().value!);
+  }
+  return translated as string[];
+}
+
 export function getModelConfiguration(values = readEnvironmentValues(['VIRASAT_AI_PROVIDER', 'VIRASAT_AI_MODEL', 'OPENAI_MODEL', 'GROQ_MODEL', 'VIRASAT_AI_API_KEY', 'OPENAI_API_KEY', 'GROQ_API_KEY', 'VIRASAT_AI_BASE_URL', 'OPENAI_BASE_URL', 'GROQ_BASE_URL', 'VIRASAT_AI_REQUIRE_HOSTED'])) {
   const rawProvider = (values.VIRASAT_AI_PROVIDER || 'openai').trim().toLowerCase();
   const validProvider = ['openai', 'groq', 'local', 'compatible'].includes(rawProvider);

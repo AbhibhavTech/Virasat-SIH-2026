@@ -40,6 +40,7 @@ import {
 } from '../../types';
 import { VoiceInputButton } from '../common/VoiceInputButton';
 import { InsecureContextAlert } from '../common/InsecureContextAlert';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 interface ExtendedChatMessage extends AIChatMessage {
   suggested_places?: Array<{
@@ -93,6 +94,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
   initialPrompt,
 }) => {
   const navigate = useNavigate();
+  const { currentLanguage } = useLanguage();
   const { user: signedInUser } = useAuth();
   const [draft, setDraft] = useState<any>(null);
   const [chatHistory, setChatHistory] = useState<Array<{id:string;title:string}>>([]);
@@ -412,7 +414,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
         }));
 
       const res = await api.streamAIChat({
-        language: localStorage.getItem('lang') || 'auto',
+        language: currentLanguage || 'auto',
         message: trimmed,
         conversation_id: conversationId,
         selectedCity: activeCity === 'All India' ? undefined : activeCity,
