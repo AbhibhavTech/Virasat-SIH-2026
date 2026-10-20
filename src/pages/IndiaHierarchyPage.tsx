@@ -71,6 +71,7 @@ import { UttarPradeshDirectorySection } from '../components/explore-india/UttarP
 import { WestBengalDirectorySection } from '../components/explore-india/WestBengalDirectorySection';
 import { OdishaDirectorySection } from '../components/explore-india/OdishaDirectorySection';
 import { AssamDirectorySection } from '../components/explore-india/AssamDirectorySection';
+import { PunjabDirectorySection } from '../components/explore-india/PunjabDirectorySection';
 import { VERIFIED_HIDDEN_GEMS } from '../data/hiddenGemsData';
 
 interface IndiaHierarchyPageProps {
@@ -325,6 +326,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
   const isWestBengalState = currentState?.id?.toLowerCase() === 'west-bengal' || currentState?.name?.toLowerCase() === 'west bengal';
   const isOdishaState = currentState?.id?.toLowerCase() === 'odisha' || currentState?.name?.toLowerCase() === 'odisha' || currentState?.id?.toLowerCase() === 'orissa' || currentState?.name?.toLowerCase() === 'orissa';
   const isAssamState = currentState?.id?.toLowerCase() === 'assam' || currentState?.name?.toLowerCase() === 'assam';
+  const isPunjabState = currentState?.id?.toLowerCase() === 'punjab' || currentState?.name?.toLowerCase() === 'punjab';
 
   // All Valid Destinations, Cities & Towns in current state
   const stateValidCities: CityHierarchyEntity[] = useMemo(() => {
@@ -719,6 +721,29 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <AssamDirectorySection
+            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
+          />
+        </main>
+      );
+    }
+
+    if (isPunjabState) {
+      return (
+        <main className="w-full min-h-[65vh] text-[#0B192C] pb-16 space-y-6">
+          <div className="h-1.5 w-full bg-gradient-to-r from-[#FF671F] via-white to-[#046A38] rounded-full mb-4" />
+          <div className="flex items-center justify-between">
+            <button
+              type="button"
+              onClick={handleReturnToIndia}
+              className="inline-flex items-center gap-2 text-sm font-semibold text-amber-800 hover:underline cursor-pointer"
+            >
+              <ChevronLeft className="h-4 w-4" /> Discover Bharat · All States &amp; Territories
+            </button>
+            <span className="text-xs font-bold text-amber-950 bg-amber-100/90 border border-amber-300 px-3 py-1 rounded-full shadow-2xs">
+              Punjab Complete Directory (IN-PB)
+            </span>
+          </div>
+          <PunjabDirectorySection
             onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
@@ -1836,7 +1861,8 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             {isWestBengalState && <WestBengalDirectorySection />}
             {isOdishaState && <OdishaDirectorySection />}
             {isAssamState && <AssamDirectorySection />}
-            {!isAndhraPradeshState && !isArunachalPradeshState && !isRajasthanState && !isKeralaState && !isGoaState && !isTamilNaduState && !isHimachalPradeshState && !isKarnatakaState && !isUttarakhandState && !isGujaratState && !isMadhyaPradeshState && !isUttarPradeshState && !isWestBengalState && !isOdishaState && !isAssamState && <>
+            {isPunjabState && <PunjabDirectorySection />}
+            {!isAndhraPradeshState && !isArunachalPradeshState && !isRajasthanState && !isKeralaState && !isGoaState && !isTamilNaduState && !isHimachalPradeshState && !isKarnatakaState && !isUttarakhandState && !isGujaratState && !isMadhyaPradeshState && !isUttarPradeshState && !isWestBengalState && !isOdishaState && !isAssamState && !isPunjabState && <>
             {/* Heritage Separation Rule */}
             <HeritageDivider
               variant="chakra"
