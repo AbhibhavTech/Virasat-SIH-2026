@@ -47,7 +47,6 @@ import { StateCard } from '../components/explore-india/StateCard';
 import { StateQuickLookModal } from '../components/explore-india/StateQuickLookModal';
 import { StateCitiesDirectory } from '../components/explore-india/StateCitiesDirectory';
 import { StateAttractionsSlideshow } from '../components/explore-india/StateAttractionsSlideshow';
-import { DiscoverBharatDraftPreview } from '../components/explore-india/DiscoverBharatDraftPreview';
 import { STATE_CURATED_IMAGES, getCuratedStateImage } from '../data/stateCuratedImages';
 import { INDIA_TOURISM_DATABASE } from '../data/indiaTourismDatabase';
 import { OfficialImagePending } from '../components/common/OfficialImagePending';
@@ -648,6 +647,22 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
           </button>
         </div>
       </div>
+    );
+  }
+
+  // Keep the state landing page empty while its replacement database is prepared.
+  // The underlying city and attraction records remain untouched for other app features.
+  if (activeLevel === 'state' && currentState) {
+    return (
+      <main className="w-full min-h-[65vh] text-[#0B192C] pb-16">
+        <div className="h-1.5 w-full bg-gradient-to-r from-[#FF671F] via-white to-[#046A38] rounded-full mb-6" />
+        <div className="rounded-3xl border border-[#EFE8DF] bg-white p-5 sm:p-8">
+          <button type="button" onClick={handleReturnToIndia} className="inline-flex items-center gap-2 text-sm font-semibold text-[#C94D0A] hover:underline">
+            <ChevronLeft className="h-4 w-4" /> Discover Bharat
+          </button>
+          <h1 className="mt-5 font-serif text-3xl sm:text-4xl font-bold">{currentState.name}</h1>
+        </div>
+      </main>
     );
   }
 
@@ -1444,7 +1459,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
         ========================================================================= */}
         {activeLevel === 'state' && currentState && (
           <div className="space-y-8">
-            <DiscoverBharatDraftPreview stateName={currentState.name} />
             <StateAttractionsSlideshow
               stateName={currentState.name}
               places={stateFeaturedPlaces}
