@@ -32,12 +32,13 @@ The dataset also has two candidates each for Jaipur, Agra and Varanasi. Other re
 
 The hidden-gem records do not consistently include place-specific source URLs, image provenance, or verification evidence. Several city attraction records also point to a tourism department homepage rather than a page documenting that particular attraction. The existing `verified` flag alone is therefore not sufficient evidence to describe all current records as independently source-verified.
 
-## Local Discover Bharat behavior
+## Discover Bharat behavior
 
-- Discover Bharat now presents state and Union Territory cards only. City directories, city search suggestions, and place cards are not part of this page.
-- The underlying city, place, UNESCO, and festival datasets are unchanged; dedicated features continue to own their data.
-- State cards show the territory name, region, capital, and state overview. Saved-state behavior remains available.
+- The landing view presents all 36 state and Union Territory cards.
+- Exploring a state opens its state guide, featured attraction highlights, and city/destination cards. Exploring a city opens its overview and place-card guide.
+- See [Discover Bharat state and city experience](discover-bharat-state-city-experience.md) for the persistent requirements and data-trust rules.
+- The hierarchy and hidden-gem coverage remain incomplete; UI coverage does not mean every destination has a verified place/image/practical record.
 
 ## Remaining content work before a complete 10 + 10 catalog
 
-When city discovery is reintroduced, each target city needs ten source-backed well-known attractions and ten distinct locally recommended lesser-known places, with provenance, city/state mapping, coordinate review, image attribution, and clear verification status. The existing database does not yet meet that content target. This UI update does not modify the underlying database, create synthetic records, or upgrade candidates to verified status.
+To reach the target, each major city still needs ten source-backed well-known attractions and ten distinct locally recommended lesser-known places, with provenance, city/state mapping, coordinate review, image attribution, and clear verification status. The existing database does not yet meet that content target. The slideshow and browse-flow implementation does not create synthetic records or upgrade candidates to verified status.

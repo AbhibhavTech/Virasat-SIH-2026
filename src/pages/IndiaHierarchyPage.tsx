@@ -46,6 +46,7 @@ import { PlaceDetailDrawer } from '../components/explore-india/PlaceDetailDrawer
 import { StateCard } from '../components/explore-india/StateCard';
 import { StateQuickLookModal } from '../components/explore-india/StateQuickLookModal';
 import { StateCitiesDirectory } from '../components/explore-india/StateCitiesDirectory';
+import { StateAttractionsSlideshow } from '../components/explore-india/StateAttractionsSlideshow';
 import { STATE_CURATED_IMAGES, getCuratedStateImage } from '../data/stateCuratedImages';
 import { INDIA_TOURISM_DATABASE } from '../data/indiaTourismDatabase';
 import { OfficialImagePending } from '../components/common/OfficialImagePending';
@@ -425,7 +426,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
           seen.add(key);
           return true;
         })
-        .map((place) => ({ place, cityName: city.name }))
+        .map((place) => ({ place, cityId: city.id, cityName: city.name }))
     );
   }, [currentState]);
 
@@ -1442,6 +1443,12 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
         ========================================================================= */}
         {activeLevel === 'state' && currentState && (
           <div className="space-y-8">
+            <StateAttractionsSlideshow
+              stateName={currentState.name}
+              places={stateFeaturedPlaces}
+              onPreview={setPreviewPlace}
+              onExploreCity={(cityId) => handleSelectTown(currentState.id, cityId)}
+            />
             {isAndhraPradeshState && <AndhraPradeshCityGuide />}
             {isArunachalPradeshState && <ArunachalPradeshGuide />}
             {!isAndhraPradeshState && !isArunachalPradeshState && <>
@@ -1746,72 +1753,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
               </div>
             </div>
 
-            {stateFeaturedPlaces.length > 0 && (
-              <section className="space-y-5 pt-2">
-                <HeritageDivider
-                  variant="landmark"
-                  accent="gold"
-                  label={`Featured Places in ${currentState.name}`}
-                  subtitle={`${stateFeaturedPlaces.length} verified destination flashcards across this state`}
-                />
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5 sm:gap-6">
-                  {stateFeaturedPlaces.slice(0, 8).map(({ place, cityName }) => (
-                    <article key={place.id} className="overflow-hidden rounded-2xl sm:rounded-3xl border border-[#EFE8DF] bg-white shadow-xs flex flex-col">
-                      <div className="relative h-36 sm:h-44 bg-stone-100 overflow-hidden">
-                        {brokenImages[place.id] || !place.image_url ? (
-                          <OfficialImagePending heightClass="h-full" label="Official image pending" showBadge={false} />
-                        ) : (
-                          <img
-                            src={place.image_url}
-                            alt={place.name}
-                            loading="lazy"
-                            onError={() => handleImageError(place.id)}
-                            className="w-full h-full object-cover"
-                          />
-                        )}
-                        <span className="absolute top-3 left-3 rounded-full bg-emerald-50/95 border border-emerald-300 px-2.5 py-1 text-[10px] font-bold text-emerald-900">
-                          Verified · {place.category_label || place.category}
-                        </span>
-                      </div>
-                      <div className="p-4 flex flex-1 flex-col gap-3">
-                        <div>
-                          <p className="text-[10px] font-bold uppercase tracking-wide text-[#FF671F]">{cityName}, {currentState.name}</p>
-                          <h3 className="mt-1 font-serif text-lg font-bold text-stone-900">{place.name}</h3>
-                          <p className="mt-1 text-xs leading-relaxed text-stone-600 line-clamp-3">{place.summary}</p>
-                        </div>
-                        <div className="rounded-xl bg-stone-50 border border-stone-100 p-3 text-[11px] text-stone-600 space-y-1">
-                          {place.best_time_to_visit && <p><strong className="text-stone-800">Best time:</strong> {place.best_time_to_visit}</p>}
-                          {place.visit_duration?.label && <p><strong className="text-stone-800">Suggested visit:</strong> {place.visit_duration.label}</p>}
-                        </div>
-                        <div className="mt-auto flex gap-2">
-                          <button
-                            type="button"
-                            onClick={() => setPreviewPlace(place)}
-                            className="flex-1 rounded-xl border border-stone-200 bg-stone-50 hover:bg-stone-100 py-2.5 px-3 text-xs font-bold text-stone-800 transition"
-                          >
-                            Quick Look
-                          </button>
-                          {onSelectPlace && (
-                            <button
-                              type="button"
-                              onClick={() => onSelectPlace(place.id)}
-                              className="flex-1 rounded-xl bg-[#FF671F] hover:bg-[#E65100] py-2.5 px-3 text-xs font-bold text-white transition"
-                            >
-                              Full Guide
-                            </button>
-                          )}
-                        </div>
-                      </div>
-                    </article>
-                  ))}
-                </div>
-                {stateFeaturedPlaces.length > 8 && (
-                  <p className="text-center text-xs text-stone-500">
-                    Showing 8 featured cards. Open a city above to see its complete destination collection.
-                  </p>
-                )}
-              </section>
-            )}
             </>}
           </div>
         )}
