@@ -1268,6 +1268,18 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
         </button>
       </section>
 
+      <section className="flex flex-col gap-4 rounded-2xl border border-sky-100 bg-gradient-to-r from-sky-50 via-white to-orange-50 p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between sm:p-5" aria-label="Arunachal Pradesh permit guide">
+        <div className="flex items-start gap-3">
+          <span className="rounded-xl bg-sky-100 p-2.5 text-sky-800"><ShieldCheck className="h-5 w-5" /></span>
+          <div>
+            <p className="text-xs font-bold uppercase tracking-wider text-sky-800">Before you travel</p>
+            <h2 className="mt-0.5 font-serif text-lg font-bold text-slate-900">Visiting Arunachal Pradesh?</h2>
+            <p className="mt-1 max-w-2xl text-sm leading-relaxed text-slate-600">Indian visitors need an ILP; foreign visitors need a PAP. Check the current rules and official application links.</p>
+          </div>
+        </div>
+        <a href="/explore?state=arunachal-pradesh" className="inline-flex shrink-0 items-center justify-center gap-2 rounded-xl bg-slate-900 px-4 py-3 text-sm font-bold text-white transition hover:bg-slate-700">Open permit guide <ArrowRight className="h-4 w-4" /></a>
+      </section>
+
       {/* ========================================================================= */}
       {/* 2. EXPLORE NEAR YOU (REAL GEOLOCATION WITH PERMISSION)                     */}
       {/* ========================================================================= */}

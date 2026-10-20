@@ -1,31 +1,101 @@
 import React, { useMemo, useState } from 'react';
 import { ArrowUpRight, CalendarDays, Compass, MapPin, MessageCircle, Mountain, ShieldCheck, Sparkles, Trees } from 'lucide-react';
 
-type ArunachalPlace = { name: string; region: string; kind: string; summary: string; highlight: string; season: string; mapQuery: string; offbeat?: boolean };
+type Attraction = { name: string; note: string; map: string };
+type Region = { name: string; district: string; overview: string; core: Attraction[]; hidden: Attraction[]; source: string; sourceLabel: string };
+type Filter = 'all' | 'core' | 'offbeat';
 
-const PLACES: ArunachalPlace[] = [
-  { name: 'Tawang', region: 'Tawang district', kind: 'Monastery · High Himalaya', summary: 'A high mountain destination shaped by Monpa culture, Buddhist heritage and glacial lakes.', highlight: 'Tawang Monastery was founded in 1680–81. The wider circuit includes Sela Pass and Sangetsar Tso, also called Madhuri Lake.', season: 'Choose a clear-weather window; winter snow and road conditions can disrupt access.', mapQuery: 'Tawang Monastery, Sela Pass, Madhuri Lake, Arunachal Pradesh' },
-  { name: 'Ziro Valley', region: 'Lower Subansiri', kind: 'Apatani cultural landscape', summary: 'Pine-covered ridges frame villages and carefully managed rice fields in the Apatani homeland.', highlight: 'Apatani paddy-cum-fish cultivation is a distinctive living agricultural system. Visit respectfully and ask before photographing people or private farms.', season: 'October–April is generally more comfortable; monsoon brings heavy rain.', mapQuery: 'Ziro Valley, Arunachal Pradesh' },
-  { name: 'Itanagar', region: 'Papum Pare', kind: 'Capital · History & culture', summary: 'Explore the capital’s brick fort, state museum and forest-ringed Ganga Lake.', highlight: 'Ita Fort means “fort of bricks” and is associated with the medieval history of the capital.', season: 'October–April; allow flexibility for changing weather.', mapQuery: 'Ita Fort, Jawaharlal Nehru State Museum, Itanagar' },
-  { name: 'Bomdila & Dirang', region: 'West Kameng', kind: 'Monastery · Mountain circuit', summary: 'A mountain route of monasteries, orchards and valleys on the way to Tawang.', highlight: 'Nearby Sangti Valley is known as a wintering area for black-necked cranes; wildlife sightings are seasonal and never guaranteed.', season: 'October–April; check pass and road conditions before setting out.', mapQuery: 'Bomdila Monastery, Dirang, Sangti Valley, Arunachal Pradesh' },
-  { name: 'Mechuka', region: 'Shi-Yomi', kind: 'Remote valley · Memba culture', summary: 'A remote mountain valley with river scenery, village walks and community homestays.', highlight: 'Samten Yongcha Monastery sits on a hill overlooking the valley. Ask locally before visiting villages or photographing residents.', season: 'Confirm road and weather conditions with local operators; leave buffer days.', mapQuery: 'Mechuka Valley, Samten Yongcha Monastery, Arunachal Pradesh', offbeat: true },
-  { name: 'Anini', region: 'Dibang Valley', kind: 'Remote highland · Nature', summary: 'A quiet district headquarters and gateway to the dramatic Dibang Valley landscape.', highlight: 'Arunachal Tourism lists the Roing–Mayudia–Anini route as an official tourism circuit. Long, weather-sensitive road journeys need careful planning.', season: 'Check road status and local access before travel; plan generous buffers.', mapQuery: 'Anini, Dibang Valley, Arunachal Pradesh', offbeat: true },
-  { name: 'Dong & Kibithoo', region: 'Anjaw', kind: 'Eastern frontier · Sunrise', summary: 'A far-eastern mountain journey through remote settlements and steep Himalayan terrain.', highlight: 'The state is known as the first Indian region to greet the sunrise. Sunrise time changes with date and location; it is not a fixed 4:00 AM event.', season: 'Plan with local authorities and guides; access and weather can change.', mapQuery: 'Dong Valley, Kibithoo, Anjaw, Arunachal Pradesh', offbeat: true },
-  { name: 'Sangti Valley', region: 'Near Dirang · West Kameng', kind: 'River valley · Birding', summary: 'A broad, peaceful valley near Dirang with river views, orchards and seasonal birdlife.', highlight: 'Black-necked cranes are seasonal visitors. Keep distance from wildlife and follow local conservation guidance.', season: 'Winter for the crane season; verify current sightings locally.', mapQuery: 'Sangti Valley, Dirang, Arunachal Pradesh', offbeat: true },
-  { name: 'Eaglenest Wildlife Sanctuary', region: 'West Kameng', kind: 'Protected forest · Birding', summary: 'A richly varied Himalayan forest landscape popular with birdwatchers and nature researchers.', highlight: 'The Bugun Liocichla is strongly associated with the Eaglenest area. Sightings are not guaranteed; use authorised local guides and follow sanctuary rules.', season: 'Access is seasonal and trail-dependent; check current forest permissions.', mapQuery: 'Eaglenest Wildlife Sanctuary, Arunachal Pradesh', offbeat: true },
+const REGIONS: Region[] = [
+  {
+    name: 'Tawang', district: 'Tawang district · The Crown Jewel',
+    overview: 'A high Himalayan region of Monpa culture, deep valleys, historic monasteries and glacial lakes.',
+    core: [
+      { name: 'Tawang Monastery', note: 'Founded in 1680–81; Arunachal Tourism describes it as India’s largest monastery. Its assembly hall and library are major highlights.', map: 'Tawang Monastery, Arunachal Pradesh' },
+      { name: 'Sela Pass & Sela Lake', note: 'High-altitude mountain pass and lake on the Bomdila–Tawang route. Weather and road conditions can change quickly.', map: 'Sela Pass and Sela Lake, Arunachal Pradesh' },
+      { name: 'Sangetsar Tso · Madhuri Lake', note: 'A high-altitude lake known for its mountain setting and submerged tree trunks. Local access permissions may apply.', map: 'Sangetsar Tso Madhuri Lake, Tawang' },
+      { name: 'Bum La Pass', note: 'A sensitive border-area visit with specific access requirements. Arrange permissions through authorised local channels before travelling.', map: 'Bum La Pass, Tawang' },
+    ],
+    hidden: [
+      { name: 'Urgelling Monastery', note: 'A modest monastery associated with the birth of the Sixth Dalai Lama; a quieter heritage stop near Tawang.', map: 'Urgelling Monastery, Tawang' },
+      { name: 'P.T. Tso Lake', note: 'A scenic high-altitude lake. Do not assume informal trails are open; confirm route and access locally.', map: 'P.T. Tso Lake, Tawang' },
+    ],
+    source: 'https://arunachaltourism.com/tawang-2/', sourceLabel: 'Arunachal Tourism · Tawang',
+  },
+  {
+    name: 'Ziro Valley', district: 'Lower Subansiri · The Cultural Haven',
+    overview: 'Pine-covered ridges, villages and carefully managed rice fields in the Apatani cultural landscape.',
+    core: [
+      { name: 'Apatani villages & fields', note: 'The Apatani practice paddy-cum-fish cultivation. Ask residents before entering private farms or photographing people and homes.', map: 'Apatani villages, Ziro Valley, Arunachal Pradesh' },
+      { name: 'Ziro Puto', note: 'A hillock overlooking the Ziro valley and its agricultural landscape.', map: 'Ziro Puto, Ziro, Arunachal Pradesh' },
+      { name: 'Tarin Fish Farm', note: 'A high-altitude farm in Bulla village associated with the local rice-and-fish cultivation system.', map: 'Tarin Fish Farm, Ziro, Arunachal Pradesh' },
+    ],
+    hidden: [
+      { name: 'Talley Valley Wildlife Sanctuary', note: 'A biodiversity-rich sanctuary with subtropical and alpine forest. Arunachal Tourism notes clouded leopard habitat; sightings are not guaranteed.', map: 'Talley Valley Wildlife Sanctuary, Arunachal Pradesh' },
+      { name: 'Menga Cave', note: 'A cave site listed in the official Itanagar–Ziro tourism circuit. Confirm local access before setting out.', map: 'Menga Cave, Ziro, Arunachal Pradesh' },
+    ],
+    source: 'https://arunachaltourism.com/itanagar-ziro-daporijo-aalo-pasighat/', sourceLabel: 'Arunachal Tourism · Itanagar–Ziro circuit',
+  },
+  {
+    name: 'Itanagar', district: 'Papum Pare · Capital & heritage',
+    overview: 'The state capital pairs a medieval brick fort with a museum of regional textiles and handicrafts.',
+    core: [
+      { name: 'Ita Fort', note: 'The “fort of bricks” from which Itanagar takes its name; a key historic site in the capital.', map: 'Ita Fort, Itanagar' },
+      { name: 'Jawaharlal Nehru State Museum', note: 'Explore regional material culture, including textiles and handicrafts; check current opening details locally.', map: 'Jawaharlal Nehru State Museum, Itanagar' },
+      { name: 'Geker Sinying · Ganga Lake', note: 'A forest-fringed natural lake near the city, known locally as Geker Sinying.', map: 'Geker Sinying Ganga Lake, Itanagar' },
+    ], hidden: [], source: 'https://arunachaltourism.com/itanagar/', sourceLabel: 'Arunachal Tourism · Itanagar',
+  },
+  {
+    name: 'Dirang & Bomdila', district: 'West Kameng · Scenic alpine retreats',
+    overview: 'A mountain corridor of monasteries, orchards, hot springs and traditional settlements on the route toward Tawang.',
+    core: [
+      { name: 'Bomdila Monastery', note: 'A Buddhist monastery and cultural centre in Bomdila.', map: 'Bomdila Monastery, Arunachal Pradesh' },
+      { name: 'Dirang Dzong', note: 'A fortified Monpa settlement with stone walls and historic gates; visit with respect for community spaces.', map: 'Dirang Dzong, Arunachal Pradesh' },
+      { name: 'Dirang hot springs', note: 'A local natural hot-spring stop. Confirm public access and conditions before visiting.', map: 'Dirang Hot Spring, Arunachal Pradesh' },
+    ],
+    hidden: [
+      { name: 'Sangti Valley', note: 'A quiet river valley where black-necked cranes are reported in winter. Wildlife is seasonal; keep a respectful distance.', map: 'Sangti Valley, Dirang, Arunachal Pradesh' },
+      { name: 'Mandala Top', note: 'A high viewpoint with a circle of stupas and broad mountain views. Check road and weather status before going.', map: 'Mandala Top, Arunachal Pradesh' },
+    ],
+    source: 'https://arunachaltourism.com/dirang/', sourceLabel: 'Arunachal Tourism · Dirang',
+  },
+  {
+    name: 'Mechuka Valley', district: 'Shi-Yomi · The remote frontier',
+    overview: 'A remote mountain valley along the Siyom (Yargyap Chu) river, with Memba cultural heritage and community stays.',
+    core: [
+      { name: 'Samten Yongcha Monastery', note: 'A hilltop Mahayana monastery overlooking the valley, described by Arunachal Tourism as one of the region’s oldest.', map: 'Samten Yongcha Monastery, Mechuka' },
+      { name: 'Traditional river bridges', note: 'Local bridges and river crossings are part of the valley landscape. Use designated crossings and follow local guidance.', map: 'Mechuka Valley river bridge, Arunachal Pradesh' },
+    ],
+    hidden: [
+      { name: 'Village homestays & valley walks', note: 'Choose locally operated stays and ask hosts which village walks are appropriate. Yarlung and Lamang camp availability is not verified in Virasat.', map: 'Mechuka Valley, Shi-Yomi, Arunachal Pradesh' },
+    ],
+    source: 'https://arunachaltourism.com/aalo-mechuka-package/', sourceLabel: 'Arunachal Tourism · Aalo–Mechuka',
+  },
+  {
+    name: 'Roing & Anini', district: 'Lower Dibang Valley & Dibang Valley · The Untamed East',
+    overview: 'A long, rugged circuit of forest, high passes, lakes and Idu Mishmi cultural landscapes. Allow extra days for road conditions.',
+    core: [
+      { name: 'Mayudia Pass', note: 'A mountain resort area about 56 km from Roing at roughly 8,000 ft; snow and road access vary by season.', map: 'Mayudia Pass, Arunachal Pradesh' },
+      { name: 'Mehao Lake & Wildlife Sanctuary', note: 'The lake lies within a large protected landscape near Roing. Follow forest rules and confirm access before travelling.', map: 'Mehao Lake Wildlife Sanctuary, Arunachal Pradesh' },
+      { name: 'Anini', note: 'A remote district headquarters on an official Roing–Mayudia–Anini tourism circuit. Travel conditions and services are limited.', map: 'Anini, Dibang Valley, Arunachal Pradesh' },
+    ],
+    hidden: [
+      { name: 'Dong Valley · sunrise country', note: 'A far-eastern extension in Anjaw district, not a nearby Roing stop. Sunrise time changes by date and location; no fixed 4:00 AM claim is made.', map: 'Dong Valley, Anjaw, Arunachal Pradesh' },
+    ],
+    source: 'https://arunachaltourism.com/roing-mayudia-anini/', sourceLabel: 'Arunachal Tourism · Roing–Mayudia–Anini',
+  },
 ];
 
-const FILTERS = [
-  { id: 'all', label: 'All destinations' },
-  { id: 'core', label: 'Mainstream circuit' },
-  { id: 'offbeat', label: 'Deep North · Offbeat' },
-] as const;
-
-type Filter = typeof FILTERS[number]['id'];
+const FILTERS: { id: Filter; label: string }[] = [
+  { id: 'all', label: 'All places' },
+  { id: 'core', label: 'Core attractions' },
+  { id: 'offbeat', label: 'Hidden gems' },
+];
 
 export const ArunachalPradeshGuide: React.FC = () => {
   const [filter, setFilter] = useState<Filter>('all');
-  const visiblePlaces = useMemo(() => PLACES.filter((place) => filter === 'all' || (filter === 'offbeat' ? place.offbeat : !place.offbeat)), [filter]);
+  const visibleRegions = useMemo(() => REGIONS.filter((region) => filter === 'all' || (filter === 'core' ? region.core.length > 0 : region.hidden.length > 0)), [filter]);
+  const showCore = filter !== 'offbeat';
+  const showHidden = filter !== 'core';
 
   return <section className="space-y-8" aria-labelledby="arunachal-guide-title">
     <header className="relative isolate overflow-hidden rounded-3xl border border-orange-100 bg-[#10271f] shadow-lg">
@@ -33,8 +103,8 @@ export const ArunachalPradeshGuide: React.FC = () => {
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#071b19]/95 via-[#10271f]/70 to-[#10271f]/10" />
       <div className="max-w-3xl space-y-4 px-6 py-10 text-white sm:px-10 sm:py-14">
         <p className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-3 py-1 text-xs font-bold uppercase tracking-[0.15em]"><Sparkles className="h-4 w-4 text-amber-300" />Discover Bharat · Arunachal Pradesh</p>
-        <h2 id="arunachal-guide-title" className="font-serif text-3xl font-bold sm:text-5xl">Beyond the familiar</h2>
-        <p className="max-w-2xl text-sm leading-relaxed text-white/90 sm:text-base">Plan from iconic monasteries and valleys to quieter frontier landscapes. Travel times, access and weather can change quickly in the mountains.</p>
+        <h2 id="arunachal-guide-title" className="font-serif text-3xl font-bold sm:text-5xl">Mountain circuits, local stories</h2>
+        <p className="max-w-2xl text-sm leading-relaxed text-white/90 sm:text-base">Start with the best-known heritage, then find quieter valleys, wildlife and community-led experiences. Distances are long and conditions change, so plan by circuit.</p>
         <a href="#arunachal-places" className="inline-flex items-center gap-2 rounded-xl bg-[#E65100] px-5 py-3 text-sm font-bold text-white shadow transition hover:bg-[#C74600]">Explore destinations <ArrowUpRight className="h-4 w-4" /></a>
       </div>
     </header>
@@ -43,7 +113,7 @@ export const ArunachalPradeshGuide: React.FC = () => {
       <article className="rounded-3xl border border-sky-100 bg-gradient-to-br from-sky-50 to-white p-5 sm:p-6">
         <div className="flex items-start gap-3"><span className="rounded-xl bg-sky-100 p-2.5 text-sky-800"><ShieldCheck className="h-5 w-5" /></span><div><p className="text-xs font-bold uppercase tracking-wider text-sky-800">Before you travel</p><h3 className="mt-1 font-serif text-xl font-bold text-slate-900">Permit planner</h3></div></div>
         <p className="mt-3 text-sm leading-relaxed text-slate-700">Indian citizens need an Inner Line Permit (ILP). Foreign nationals need a Protected Area Permit (PAP); eligibility and rules can vary by itinerary.</p>
-        <p className="mt-2 text-xs leading-relaxed text-slate-500">This is a preparation guide, not an application tracker. Check current rules and apply through the official state portal.</p>
+        <p className="mt-2 text-xs leading-relaxed text-slate-500">This is an official-link guide, not a permit tracker. The app cannot check application status or store permit documents.</p>
         <div className="mt-4 flex flex-wrap gap-2"><a href="https://eilp.arunachal.gov.in/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl bg-slate-900 px-4 py-2.5 text-sm font-semibold text-white hover:bg-slate-700">Apply for ILP <ArrowUpRight className="h-4 w-4" /></a><a href="https://arunachaltourism.com/protected-area-permit/" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-xl border border-slate-300 bg-white px-4 py-2.5 text-sm font-semibold text-slate-800 hover:bg-slate-50">Foreign visitor PAP guidance <ArrowUpRight className="h-4 w-4" /></a></div>
       </article>
       <article className="rounded-3xl border border-amber-100 bg-gradient-to-br from-amber-50 to-white p-5 sm:p-6">
@@ -56,14 +126,18 @@ export const ArunachalPradeshGuide: React.FC = () => {
       </article>
     </section>
 
+    <section className="grid gap-4 rounded-3xl border border-orange-100 bg-gradient-to-r from-orange-50 to-white p-5 sm:grid-cols-[1fr_auto] sm:items-center sm:p-6" aria-label="Trip planning guidance">
+      <div><p className="text-xs font-bold uppercase tracking-wider text-[#A83E05]">Plan by circuit</p><h3 className="mt-1 font-serif text-xl font-bold text-slate-900">Allow 7–10 days for a selected route</h3><p className="mt-1 max-w-3xl text-sm leading-relaxed text-slate-600">October–April is a common starting window for clearer travel conditions. July–September is monsoon season and can bring heavy rain and closures. Seven to ten days fits one or two circuits; combining distant regions may take longer.</p></div>
+      <a href="/itinerary?destination=Arunachal%20Pradesh" className="inline-flex items-center justify-center gap-2 rounded-xl bg-[#C94D0A] px-4 py-3 text-sm font-bold text-white hover:bg-[#A83E05]">Plan a trip <ArrowUpRight className="h-4 w-4" /></a>
+    </section>
+
     <section id="arunachal-places" className="space-y-5">
-      <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end"><div><p className="text-xs font-bold uppercase tracking-[0.16em] text-[#C94D0A]">Choose your pace</p><h3 className="mt-1 font-serif text-2xl font-bold text-slate-900 sm:text-3xl">Places to explore</h3><p className="mt-1 text-sm text-slate-600">Offbeat is an editorial label, not a live crowd measurement.</p></div><div className="flex flex-wrap gap-2" aria-label="Filter destinations">{FILTERS.map((item) => <button key={item.id} type="button" aria-pressed={filter === item.id} onClick={() => setFilter(item.id)} className={`rounded-full px-4 py-2 text-sm font-semibold transition ${filter === item.id ? 'bg-[#C94D0A] text-white' : 'border border-stone-200 bg-white text-stone-700 hover:bg-orange-50'}`}>{item.label}</button>)}</div></div>
-      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">{visiblePlaces.map((place) => <article key={place.name} className={`flex h-full flex-col rounded-2xl border bg-white p-5 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md ${place.offbeat ? 'border-emerald-100' : 'border-stone-200'}`}>
-        <div className="flex items-start justify-between gap-3"><span className={`rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-wide ${place.offbeat ? 'bg-emerald-50 text-emerald-800' : 'bg-orange-50 text-orange-800'}`}>{place.offbeat ? 'Deep North · Offbeat' : 'Mainstream circuit'}</span>{place.offbeat ? <Trees className="h-5 w-5 text-emerald-700" /> : <Mountain className="h-5 w-5 text-orange-700" />}</div>
-        <p className="mt-4 text-xs font-semibold uppercase tracking-wide text-slate-500">{place.region} · {place.kind}</p><h4 className="mt-1 font-serif text-xl font-bold text-slate-950">{place.name}</h4><p className="mt-2 text-sm leading-relaxed text-slate-700">{place.summary}</p>
-        <div className="mt-3 rounded-xl bg-stone-50 p-3"><p className="text-xs font-bold uppercase tracking-wide text-slate-600">A detail to know</p><p className="mt-1 text-sm leading-relaxed text-slate-700">{place.highlight}</p></div>
-        <p className="mt-3 text-xs leading-relaxed text-slate-600"><strong>When to go:</strong> {place.season}</p>
-        <div className="mt-auto flex flex-wrap gap-2 pt-4"><a href={`/map?q=${encodeURIComponent(place.mapQuery)}`} className="inline-flex items-center gap-1.5 rounded-full border border-orange-200 bg-orange-50 px-3 py-2 text-xs font-bold text-[#A83E05] hover:bg-orange-100"><MapPin className="h-3.5 w-3.5" />View on map</a><a href={`/ai?prompt=${encodeURIComponent(`Help me plan a respectful, safe visit to ${place.name}, Arunachal Pradesh. Explain current access and permit checks, route planning, and what Virasat can verify.`)}`} className="inline-flex items-center gap-1.5 rounded-full bg-[#C94D0A] px-3 py-2 text-xs font-bold text-white hover:bg-[#A83E05]"><MessageCircle className="h-3.5 w-3.5" />Ask Virasat AI</a></div>
+      <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end"><div><p className="text-xs font-bold uppercase tracking-[0.16em] text-[#C94D0A]">Choose your pace</p><h3 className="mt-1 font-serif text-2xl font-bold text-slate-900 sm:text-3xl">Core attractions &amp; hidden gems</h3><p className="mt-1 text-sm text-slate-600">“Hidden gem” is Virasat’s editorial category, not a live crowd measurement.</p></div><div className="flex flex-wrap gap-2" aria-label="Filter destinations">{FILTERS.map((item) => <button key={item.id} type="button" aria-pressed={filter === item.id} onClick={() => setFilter(item.id)} className={`rounded-full px-4 py-2 text-sm font-semibold transition ${filter === item.id ? 'bg-[#C94D0A] text-white' : 'border border-stone-200 bg-white text-stone-700 hover:bg-orange-50'}`}>{item.label}</button>)}</div></div>
+      <div className="grid gap-4 xl:grid-cols-2">{visibleRegions.map((region) => <article key={region.name} className="flex h-full flex-col rounded-2xl border border-stone-200 bg-white p-5 shadow-sm">
+        <p className="text-xs font-semibold uppercase tracking-wide text-slate-500">{region.district}</p><h4 className="mt-1 font-serif text-2xl font-bold text-slate-950">{region.name}</h4><p className="mt-2 text-sm leading-relaxed text-slate-700">{region.overview}</p>
+        {showCore && region.core.length > 0 && <div className="mt-4"><h5 className="flex items-center gap-2 text-sm font-bold text-[#A83E05]"><Mountain className="h-4 w-4" />Core attractions</h5><ul className="mt-2 space-y-2">{region.core.map((attraction) => <li key={attraction.name} className="rounded-xl bg-orange-50/70 p-3"><p className="font-semibold text-slate-900">{attraction.name}</p><p className="mt-1 text-xs leading-relaxed text-slate-700">{attraction.note}</p><a href={`/map?q=${encodeURIComponent(attraction.map)}`} className="mt-1 inline-flex items-center gap-1 text-xs font-bold text-[#A83E05]"><MapPin className="h-3 w-3" />Map</a></li>)}</ul></div>}
+        {showHidden && region.hidden.length > 0 && <div className="mt-4"><h5 className="flex items-center gap-2 text-sm font-bold text-emerald-800"><Trees className="h-4 w-4" />Hidden gems &amp; quieter stops</h5><ul className="mt-2 space-y-2">{region.hidden.map((attraction) => <li key={attraction.name} className="rounded-xl bg-emerald-50/70 p-3"><p className="font-semibold text-slate-900">{attraction.name}</p><p className="mt-1 text-xs leading-relaxed text-slate-700">{attraction.note}</p><a href={`/map?q=${encodeURIComponent(attraction.map)}`} className="mt-1 inline-flex items-center gap-1 text-xs font-bold text-emerald-800"><MapPin className="h-3 w-3" />Map</a></li>)}</ul></div>}
+        <div className="mt-auto flex flex-wrap items-center gap-2 pt-4"><a href={region.source} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 rounded-full border border-stone-200 px-3 py-2 text-xs font-semibold text-slate-700 hover:bg-stone-50">Official tourism details <ArrowUpRight className="h-3.5 w-3.5" /></a><a href={`/ai?prompt=${encodeURIComponent(`Help plan a respectful, safe visit to ${region.name}, Arunachal Pradesh. Explain current access and permit checks, route planning, and clearly distinguish verified details from estimates.`)}`} className="inline-flex items-center gap-1.5 rounded-full bg-[#C94D0A] px-3 py-2 text-xs font-bold text-white hover:bg-[#A83E05]"><MessageCircle className="h-3.5 w-3.5" />Ask Virasat AI</a></div>
       </article>)}</div>
     </section>
     <p className="rounded-2xl border border-amber-200 bg-amber-50 p-4 text-xs leading-relaxed text-amber-950"><Compass className="mr-1 inline h-4 w-4" />Mountain roads, border-area permissions, forest access and opening schedules can change. Virasat does not currently receive live permit status, official opening times, fees or trail conditions; confirm locally before travelling. Respect community protocols and do not enter restricted areas.</p>
