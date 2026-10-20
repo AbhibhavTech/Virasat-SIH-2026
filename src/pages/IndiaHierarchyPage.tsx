@@ -61,6 +61,7 @@ import { ArunachalPradeshGuide } from '../components/explore-india/ArunachalPrad
 import { RajasthanDirectorySection } from '../components/explore-india/RajasthanDirectorySection';
 import { KeralaDirectorySection } from '../components/explore-india/KeralaDirectorySection';
 import { GoaDirectorySection } from '../components/explore-india/GoaDirectorySection';
+import { TamilNaduDirectorySection } from '../components/explore-india/TamilNaduDirectorySection';
 import { VERIFIED_HIDDEN_GEMS } from '../data/hiddenGemsData';
 
 interface IndiaHierarchyPageProps {
@@ -305,6 +306,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
   const isRajasthanState = currentState?.id?.toLowerCase() === 'rajasthan' || currentState?.name?.toLowerCase() === 'rajasthan';
   const isKeralaState = currentState?.id?.toLowerCase() === 'kerala' || currentState?.name?.toLowerCase() === 'kerala';
   const isGoaState = currentState?.id?.toLowerCase() === 'goa' || currentState?.name?.toLowerCase() === 'goa';
+  const isTamilNaduState = currentState?.id?.toLowerCase() === 'tamil-nadu' || currentState?.name?.toLowerCase() === 'tamil nadu';
 
   // All Valid Destinations, Cities & Towns in current state
   const stateValidCities: CityHierarchyEntity[] = useMemo(() => {
@@ -700,6 +702,29 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
           </div>
           <GoaDirectorySection
             onSelectDistrict={(districtId) => handleSelectTown(currentState.id, districtId)}
+          />
+        </main>
+      );
+    }
+
+    if (isTamilNaduState) {
+      return (
+        <main className="w-full min-h-[65vh] text-[#0B192C] pb-16 space-y-6">
+          <div className="h-1.5 w-full bg-gradient-to-r from-[#FF671F] via-white to-[#046A38] rounded-full mb-4" />
+          <div className="flex items-center justify-between">
+            <button
+              type="button"
+              onClick={handleReturnToIndia}
+              className="inline-flex items-center gap-2 text-sm font-semibold text-amber-800 hover:underline cursor-pointer"
+            >
+              <ChevronLeft className="h-4 w-4" /> Discover Bharat · All States &amp; Territories
+            </button>
+            <span className="text-xs font-bold text-amber-950 bg-amber-100/90 border border-amber-300 px-3 py-1 rounded-full shadow-2xs">
+              Tamil Nadu Complete Directory (IN-TN)
+            </span>
+          </div>
+          <TamilNaduDirectorySection
+            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
       );
@@ -1576,7 +1601,8 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             {isRajasthanState && <RajasthanDirectorySection />}
             {isKeralaState && <KeralaDirectorySection />}
             {isGoaState && <GoaDirectorySection />}
-            {!isAndhraPradeshState && !isArunachalPradeshState && !isRajasthanState && !isKeralaState && !isGoaState && <>
+            {isTamilNaduState && <TamilNaduDirectorySection />}
+            {!isAndhraPradeshState && !isArunachalPradeshState && !isRajasthanState && !isKeralaState && !isGoaState && !isTamilNaduState && <>
             {/* Heritage Separation Rule */}
             <HeritageDivider
               variant="chakra"
