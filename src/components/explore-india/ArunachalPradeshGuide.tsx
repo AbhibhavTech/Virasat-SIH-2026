@@ -6,7 +6,7 @@ type Attraction = { name: string; note: string; map: string; type: 'core' | 'hid
 type Region = { id: string; name: string; district: string; overview: string; photo: Photo; attractions: Attraction[]; source: string };
 type Filter = 'all' | 'core' | 'hidden';
 
-const commonsPhoto = (file: string, imagePath: string, alt: string, credit: string, license: string): Photo => ({
+const commonsPhoto = (file: string, alt: string, imagePath: string, credit: string, license: string): Photo => ({
   src: `https://thumb.wikimedia.org/wikipedia/commons/thumb/${imagePath}/960px-${file.replaceAll(' ', '_')}`,
   alt, credit, license,
   source: `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(file).replaceAll('%2F', '/')}`,
@@ -104,9 +104,9 @@ const FILTERS: { id: Filter; label: string }[] = [
 
 export const ArunachalPradeshGuide: React.FC = () => {
   const [filter, setFilter] = useState<Filter>('all');
-  const [selectedId, setSelectedId] = useState(REGIONS[0].id);
-  const selectedRegion = REGIONS.find((region) => region.id === selectedId) ?? REGIONS[0];
-  const visibleAttractions = useMemo(() => selectedRegion.attractions.filter((item) => filter === 'all' || item.type === filter), [filter, selectedRegion]);
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+  const selectedRegion = selectedId ? REGIONS.find((region) => region.id === selectedId) ?? null : null;
+  const visibleAttractions = useMemo(() => selectedRegion?.attractions.filter((item) => filter === 'all' || item.type === filter) ?? [], [filter, selectedRegion]);
 
   const selectRegion = (id: string) => {
     setSelectedId(id);
@@ -159,8 +159,9 @@ export const ArunachalPradeshGuide: React.FC = () => {
       })}</div>
     </section>
 
-    <section id="arunachal-attractions" className="scroll-mt-24 space-y-5">
+    {selectedRegion && <section id="arunachal-attractions" className="scroll-mt-24 space-y-5">
       <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end"><div><p className="text-xs font-bold uppercase tracking-[0.16em] text-[#C94D0A]">Selected destination</p><h3 className="mt-1 font-serif text-2xl font-bold text-slate-900 sm:text-3xl">{selectedRegion.name}</h3><p className="mt-1 max-w-3xl text-sm text-slate-600">{selectedRegion.overview}</p></div><div className="flex flex-wrap gap-2" aria-label="Filter place cards">{FILTERS.map((item) => <button key={item.id} type="button" aria-pressed={filter === item.id} onClick={() => setFilter(item.id)} className={`rounded-full px-4 py-2 text-sm font-semibold transition ${filter === item.id ? 'bg-[#C94D0A] text-white' : 'border border-stone-200 bg-white text-stone-700 hover:bg-orange-50'}`}>{item.label}</button>)}</div></div>
+      <button type="button" onClick={() => { setSelectedId(null); setFilter('all'); document.getElementById('arunachal-destinations')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }} className="rounded-full border border-stone-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-orange-50">← All Arunachal destinations</button>
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">{visibleAttractions.map((attraction) => {
         const photo = attraction.photo ?? { ...selectedRegion.photo, alt: `Regional landscape for ${selectedRegion.name}; exact view of ${attraction.name} not verified` };
         const regionalImage = /not verified/i.test(photo.alt);
@@ -173,7 +174,7 @@ export const ArunachalPradeshGuide: React.FC = () => {
         </article>;
       })}</div>
       <a href={selectedRegion.source} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-600 hover:text-[#A83E05]">Official tourism details for {selectedRegion.name} <ArrowUpRight className="h-3.5 w-3.5" /></a>
-    </section>
+    </section>}
     <p className="rounded-2xl border border-amber-200 bg-amber-50 p-4 text-xs leading-relaxed text-amber-950"><Compass className="mr-1 inline h-4 w-4" />Some cards use a regional landscape when an exact site photo could not be verified; the image caption says so. Mountain roads, border-area permissions, forest access and schedules can change. Virasat has no live permit status, official opening times, fees or trail conditions; confirm locally before travelling.</p>
   </section>;
 };
