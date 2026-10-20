@@ -7,9 +7,9 @@ type Region = { id: string; name: string; district: string; overview: string; ph
 type Filter = 'all' | 'core' | 'hidden';
 
 const commonsPhoto = (file: string, alt: string, imagePath: string, credit: string, license: string): Photo => ({
-  src: `https://thumb.wikimedia.org/wikipedia/commons/thumb/${imagePath}/960px-${file.replaceAll(' ', '_')}`,
+  src: `https://thumb.wikimedia.org/wikipedia/commons/thumb/${imagePath}/960px-${file.split(' ').join('_')}`,
   alt, credit, license,
-  source: `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(file).replaceAll('%2F', '/')}`,
+  source: `https://commons.wikimedia.org/wiki/File:${encodeURIComponent(file).replace(/%2F/g, '/')}`,
 });
 const officialPhoto = (src: string, alt: string, source: string, credit = 'Arunachal Tourism'): Photo => ({ src, alt, credit, source });
 
@@ -105,8 +105,8 @@ const FILTERS: { id: Filter; label: string }[] = [
 export const ArunachalPradeshGuide: React.FC = () => {
   const [filter, setFilter] = useState<Filter>('all');
   const [selectedId, setSelectedId] = useState<string | null>(null);
-  const selectedRegion = selectedId ? REGIONS.find((region) => region.id === selectedId) ?? null : null;
-  const visibleAttractions = useMemo(() => selectedRegion?.attractions.filter((item) => filter === 'all' || item.type === filter) ?? [], [filter, selectedRegion]);
+  const selectedRegion = REGIONS.find((region) => region.id === selectedId) ?? REGIONS[0];
+  const visibleAttractions = useMemo(() => selectedId ? selectedRegion.attractions.filter((item) => filter === 'all' || item.type === filter) : [], [filter, selectedId, selectedRegion]);
 
   const selectRegion = (id: string) => {
     setSelectedId(id);
@@ -148,7 +148,7 @@ export const ArunachalPradeshGuide: React.FC = () => {
     <section id="arunachal-destinations" className="scroll-mt-24 space-y-5">
       <div><p className="text-xs font-bold uppercase tracking-[0.16em] text-[#C94D0A]">Discover destinations</p><h3 className="mt-1 font-serif text-2xl font-bold text-slate-900 sm:text-3xl">Choose a city or region</h3><p className="mt-1 text-sm text-slate-600">Select a card to open its attractions and hidden places below.</p></div>
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">{REGIONS.map((region) => {
-        const active = selectedRegion.id === region.id;
+        const active = selectedId === region.id;
         const regionalPhoto = /not verified/i.test(region.photo.alt);
         return <article key={region.id} className={`overflow-hidden rounded-2xl border bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-lg ${active ? 'border-orange-400 ring-2 ring-orange-100' : 'border-stone-200'}`}>
           <button type="button" onClick={() => selectRegion(region.id)} aria-pressed={active} className="block w-full text-left">
@@ -159,7 +159,7 @@ export const ArunachalPradeshGuide: React.FC = () => {
       })}</div>
     </section>
 
-    {selectedRegion && <section id="arunachal-attractions" className="scroll-mt-24 space-y-5">
+    {selectedId && <section id="arunachal-attractions" className="scroll-mt-24 space-y-5">
       <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end"><div><p className="text-xs font-bold uppercase tracking-[0.16em] text-[#C94D0A]">Selected destination</p><h3 className="mt-1 font-serif text-2xl font-bold text-slate-900 sm:text-3xl">{selectedRegion.name}</h3><p className="mt-1 max-w-3xl text-sm text-slate-600">{selectedRegion.overview}</p></div><div className="flex flex-wrap gap-2" aria-label="Filter place cards">{FILTERS.map((item) => <button key={item.id} type="button" aria-pressed={filter === item.id} onClick={() => setFilter(item.id)} className={`rounded-full px-4 py-2 text-sm font-semibold transition ${filter === item.id ? 'bg-[#C94D0A] text-white' : 'border border-stone-200 bg-white text-stone-700 hover:bg-orange-50'}`}>{item.label}</button>)}</div></div>
       <button type="button" onClick={() => { setSelectedId(null); setFilter('all'); document.getElementById('arunachal-destinations')?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }} className="rounded-full border border-stone-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-orange-50">← All Arunachal destinations</button>
       <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">{visibleAttractions.map((attraction) => {
