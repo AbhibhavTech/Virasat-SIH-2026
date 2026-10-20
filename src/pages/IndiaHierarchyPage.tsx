@@ -268,6 +268,27 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
     'Northeast',
   ];
 
+  const regionCounts = useMemo(() => {
+    const regionTerms: Record<string, string> = {
+      North: 'northern',
+      South: 'southern',
+      East: 'eastern',
+      West: 'western',
+      Central: 'central',
+      Northeast: 'northeastern',
+    };
+    return Object.fromEntries(regions.slice(1).map((region) => {
+      const members = (db?.states || []).filter((state) =>
+        (state.region || '').toLowerCase().includes(regionTerms[region])
+      );
+      return [region, {
+        total: members.length,
+        states: members.filter((state) => state.region_type !== 'union_territory' && !CANONICAL_UTS.has(state.id)).length,
+        uts: members.filter((state) => state.region_type === 'union_territory' || CANONICAL_UTS.has(state.id)).length,
+      }];
+    }));
+  }, [db, CANONICAL_UTS]);
+
   // Currently Selected State
   const currentState = useMemo(() => {
     if (!db?.states?.length) return null;
@@ -962,26 +983,85 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             <div className="absolute -bottom-32 left-1/3 w-72 h-72 rounded-full bg-emerald-200/25 blur-3xl pointer-events-none" />
             <div className="absolute inset-0 opacity-[0.035] pointer-events-none bg-[radial-gradient(#FF671F_1px,transparent_1px)] [background-size:16px_16px]" />
 
-            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4 sm:gap-6 relative z-10">
-              <div className="space-y-3 sm:space-y-4">
-                <div className="flex items-start gap-3 sm:gap-4">
+            <div className="grid grid-cols-1 xl:grid-cols-[minmax(0,0.95fr)_minmax(520px,1.05fr)] gap-6 lg:gap-10 relative z-10">
+              <div className="flex flex-col justify-center">
+                <div className="flex items-center gap-4">
                   <img
                     src="/images/india-flag-map.png"
-                    alt="Bharat Map"
-                    className="w-14 h-14 sm:w-20 sm:h-20 object-contain drop-shadow-md shrink-0 hidden sm:block"
+                    alt=""
+                    aria-hidden="true"
+                    className="w-14 h-14 sm:w-20 sm:h-20 object-contain drop-shadow-md shrink-0"
                     referrerPolicy="no-referrer"
                   />
                   <div>
-                    <h1 className="font-serif text-2xl sm:text-4xl lg:text-5xl font-bold text-[#0B192C] tracking-tight leading-tight">
+                    <span className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-[0.16em] text-emerald-800">
+                      <Compass className="w-3.5 h-3.5" /> A country of many journeys
+                    </span>
+                    <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0B192C] tracking-tight leading-tight mt-1">
                       Discover Bharat
                     </h1>
-                    <p className="text-xs sm:text-sm text-[#6B5E55] max-w-xl leading-relaxed mt-1.5">
-                      Browse India’s 28 states and 8 Union Territories.
+                    <p className="text-sm text-[#6B5E55] max-w-lg leading-relaxed mt-2">
+                      Choose a region, then explore its states and Union Territories.
                     </p>
                   </div>
                 </div>
+                <div className="grid grid-cols-3 gap-2.5 mt-6 max-w-xl">
+                  {[
+                    { value: db?.states.filter((state) => state.region_type !== 'union_territory' && !CANONICAL_UTS.has(state.id)).length || 28, label: 'States', action: () => setTerritoryTab('states'), color: 'text-[#C94D0A]' },
+                    { value: db?.states.filter((state) => state.region_type === 'union_territory' || CANONICAL_UTS.has(state.id)).length || 8, label: 'Union Territories', action: () => setTerritoryTab('uts'), color: 'text-emerald-800' },
+                    { value: regions.length - 1, label: 'Regions', action: () => { setSelectedRegion('All'); setTerritoryTab('all'); }, color: 'text-sky-800' },
+                  ].map((stat) => (
+                    <button
+                      key={stat.label}
+                      onClick={stat.action}
+                      className="text-left rounded-2xl border border-white/80 bg-white/75 hover:bg-white hover:-translate-y-0.5 shadow-xs px-3.5 py-3 transition-all"
+                    >
+                      <span className={`block text-2xl font-black leading-none ${stat.color}`}>{stat.value}</span>
+                      <span className="block text-[10px] sm:text-xs text-stone-600 mt-1.5">{stat.label}</span>
+                    </button>
+                  ))}
+                </div>
               </div>
 
+              <div className="rounded-3xl border border-white/90 bg-white/75 shadow-sm p-4 sm:p-5">
+                <div className="flex items-center justify-between gap-3 mb-3">
+                  <div>
+                    <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#C94D0A]">Explore by region</span>
+                    <p className="text-xs text-stone-600 mt-0.5">A quick way to find your next part of India</p>
+                  </div>
+                  <span className="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-3 py-1.5 text-[10px] font-semibold text-emerald-800 border border-emerald-100">
+                    <MapPin className="w-3 h-3" /> 6 regions
+                  </span>
+                </div>
+                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+                  {regions.slice(1).map((region) => {
+                    const counts = regionCounts[region] || { total: 0, states: 0, uts: 0 };
+                    const selected = selectedRegion === region;
+                    return (
+                      <button
+                        key={region}
+                        onClick={() => {
+                          setSelectedRegion(selected ? 'All' : region);
+                          setTerritoryTab('all');
+                        }}
+                        aria-pressed={selected}
+                        className={`group text-left rounded-2xl px-3.5 py-3 transition-all border ${selected
+                          ? 'bg-[#173D34] border-[#173D34] text-white shadow-md'
+                          : 'bg-white border-[#EFE8DF] text-[#172B3A] hover:border-orange-300 hover:bg-orange-50/60 hover:-translate-y-0.5'
+                        }`}
+                      >
+                        <span className="flex items-center justify-between gap-2">
+                          <span className="font-bold text-xs sm:text-sm">{region}</span>
+                          <span className={`text-[10px] font-bold rounded-full px-2 py-0.5 ${selected ? 'bg-white/15 text-white' : 'bg-orange-100 text-[#A9430A]'}`}>{counts.total}</span>
+                        </span>
+                        <span className={`block text-[10px] mt-1 ${selected ? 'text-white/75' : 'text-stone-500'}`}>
+                          {counts.states} states · {counts.uts} UTs
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
 
           {/* Unified Controls: Territory Tabs, Search & Filter Bar (Zero dead space) */}
@@ -1146,34 +1226,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
               )}
             </div>
 
-            {/* Region Filter Pills (Applicable on Level 1) */}
-            {activeLevel === 'india' && (viewMode === 'grid' || viewMode === 'cities') && (
-              <div className="pt-1">
-                <div className="flex items-center gap-1 sm:gap-1.5 overflow-x-auto pb-1 scrollbar-none no-scrollbar">
-                  <span className="text-[10px] font-bold text-stone-400 uppercase tracking-wider mr-1 hidden md:inline shrink-0">
-                    Region:
-                  </span>
-                  {regions.map((reg) => (
-                    <button
-                      key={reg}
-                      onClick={() => {
-                        setSelectedRegion(reg);
-                        if (reg === 'Union Territories') {
-                          setTerritoryTab('uts');
-                        }
-                      }}
-                      className={`px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-semibold whitespace-nowrap transition cursor-pointer shrink-0 ${
-                        selectedRegion === reg
-                          ? 'bg-[#FF671F] text-white shadow-xs'
-                          : 'bg-white hover:bg-[#F5EFEB] text-[#6B5E55] border border-[#EFE8DF]'
-                      }`}
-                    >
-                      {reg}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
           </div>
         </div>
         )}
