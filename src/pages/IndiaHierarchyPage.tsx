@@ -55,6 +55,7 @@ import { HeritageDivider } from '../components/common/HeritageDivider';
 import { getMumbaiHierarchyAttractions, isMumbaiCity } from '../data/mumbaiDestinations';
 import { getAmaravatiHierarchyAttractions, isAmaravatiCity } from '../data/amaravatiDestinations';
 import { MaharashtraDestinationsSection } from '../components/explore-india/MaharashtraDestinationsSection';
+import { AndhraPradeshCityGuide } from '../components/explore-india/AndhraPradeshCityGuide';
 import { VERIFIED_HIDDEN_GEMS } from '../data/hiddenGemsData';
 
 interface IndiaHierarchyPageProps {
@@ -1575,6 +1576,11 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                   onSelectCity={onSelectCity}
                 />
               </div>
+            )}
+
+            {(currentState?.id?.toLowerCase() === 'andhra-pradesh' ||
+              currentState?.name?.toLowerCase() === 'andhra pradesh') && (
+              <AndhraPradeshCityGuide />
             )}
 
             <div id="state-destinations-section" className="space-y-6 scroll-mt-24">
