@@ -309,10 +309,34 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
   }, [stateValidCities, selectedCityId]);
 
   useEffect(() => {
-    if (!searchParams.has('state') && !searchParams.has('city')) return;
-    setActiveLevel('india');
+    const stateParam = searchParams.get('state');
+    const cityParam = searchParams.get('city');
+    if (!stateParam && !cityParam) return;
+
+    const normalizedStateParam = (stateParam || '').toLowerCase().replace(/\s+/g, '-');
+    const matchedState = db.states.find((state) =>
+      state.id.toLowerCase() === normalizedStateParam ||
+      state.slug?.toLowerCase() === normalizedStateParam ||
+      state.name.toLowerCase() === (stateParam || '').toLowerCase()
+    );
+    if (!matchedState) return;
+
+    setSelectedStateId(matchedState.id);
+    const normalizedCityParam = (cityParam || '').toLowerCase().replace(/\s+/g, '-');
+    const matchedCity = cityParam ? matchedState.cities.find((city) =>
+      city.id.toLowerCase() === normalizedCityParam ||
+      city.slug?.toLowerCase() === normalizedCityParam ||
+      city.name.toLowerCase() === cityParam.toLowerCase()
+    ) : undefined;
+    if (matchedCity) {
+      setSelectedCityId(matchedCity.id);
+      setActiveLevel('city');
+    } else {
+      if (matchedState.cities.length > 0) setSelectedCityId(matchedState.cities[0].id);
+      setActiveLevel('state');
+    }
     setSearchParams({}, { replace: true });
-  }, [searchParams, setSearchParams]);
+  }, [searchParams, setSearchParams, db]);
 
   useEffect(() => {
     if (activeLevel === 'city' && currentCity) onSelectCity?.(currentCity.name);
