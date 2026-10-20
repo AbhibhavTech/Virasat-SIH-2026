@@ -55,6 +55,7 @@ import { HeritageDivider } from '../components/common/HeritageDivider';
 import { getMumbaiHierarchyAttractions, isMumbaiCity } from '../data/mumbaiDestinations';
 import { getAmaravatiHierarchyAttractions, isAmaravatiCity } from '../data/amaravatiDestinations';
 import { MaharashtraDestinationsSection } from '../components/explore-india/MaharashtraDestinationsSection';
+import { VERIFIED_HIDDEN_GEMS } from '../data/hiddenGemsData';
 
 interface IndiaHierarchyPageProps {
   onSelectPlace?: (placeId: string) => void;
@@ -92,6 +93,44 @@ function getCityPlaceCatalog(city: CityHierarchyEntity): AttractionEntity[] {
     ...(city.religious_cultural || []),
     ...(city.nature_parks_zoo || []),
   ];
+}
+
+function normalizedPlaceName(value: string): string {
+  return value.normalize('NFKD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();
+}
+
+function hiddenGemCandidateToPlace(gem: (typeof VERIFIED_HIDDEN_GEMS)[number], city: CityHierarchyEntity): AttractionEntity {
+  return {
+    id: gem.id,
+    name: gem.name,
+    canonical_name: gem.name,
+    city_id: city.id,
+    state_id: city.state_id,
+    district: gem.area || city.district,
+    place_type: 'hidden_gem_candidate',
+    category: 'tourist_places',
+    category_label: 'Hidden-gem candidate',
+    topic: 'Hidden Gem',
+    importance_level: 'hidden_gem',
+    summary: gem.whyInteresting,
+    short_description: gem.whyInteresting,
+    address: gem.area || city.name,
+    fees: { domestic: 0, international: 0, currency: 'INR', status: 'UNVERIFIED', note: 'Confirm locally before visiting.' },
+    entry_fee: 'Unverified',
+    timings: { opening_time: 'Not verified', closing_time: 'Not verified', closed_days: [], status: 'UNVERIFIED', note: 'Confirm access locally.' },
+    opening_hours: undefined,
+    best_time_to_visit: gem.bestTimeToVisit,
+    visit_duration: { recommended_mins: 60, label: 'Not verified', status: 'UNVERIFIED' },
+    coordinates: { lat: gem.lat, lng: gem.lng },
+    image_url: '',
+    thumbnail_url: '',
+    attribution: 'Image/source review pending',
+    status: 'UNVERIFIED',
+    verification_status: 'needs_review',
+    verification_note: 'Candidate record has no place-specific source attached. Verify the location, image and visitor information before publishing as verified.',
+    provenance_type: 'hidden_gem_candidate',
+    tags: gem.tags,
+  };
 }
 
 export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
@@ -316,6 +355,15 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
     return getCityPlaceCatalog(currentCity).filter(isPlaceVerified);
   }, [currentCity]);
 
+  const cityPopularPlaces = useMemo(() => {
+    const rank: Record<string, number> = { iconic: 5, major: 4, notable: 3, local: 2, hidden_gem: 1 };
+    return cityAllPlaces
+      .map((place, index) => ({ place, index }))
+      .sort((a, b) => (rank[b.place.importance_level || ''] || 0) - (rank[a.place.importance_level || ''] || 0) || a.index - b.index)
+      .slice(0, 10)
+      .map(({ place }) => place);
+  }, [cityAllPlaces]);
+
   const stateFeaturedPlaces = useMemo(() => {
     if (!currentState?.cities) return [];
     const seen = new Set<string>();
@@ -333,10 +381,21 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
   }, [currentState]);
 
   const cityHiddenGemCandidates = useMemo(() => {
-    if (!currentCity || !isMumbaiHierarchyCity(currentCity)) return [];
-    return getCityPlaceCatalog(currentCity).filter(
-      (place) => place.provenance_type === 'hidden_gem_candidate'
-    );
+    if (!currentCity) return [];
+    const existingCandidates = getCityPlaceCatalog(currentCity)
+      .filter(place => place.provenance_type === 'hidden_gem_candidate')
+      .map(place => ({ ...place, image_url: '', thumbnail_url: '', attribution: 'Image/source review pending' }));
+    const cityNames = new Set([currentCity.name, currentCity.canonical_name, ...(currentCity.aliases || [])]
+      .filter((value): value is string => Boolean(value)).map(normalizedPlaceName));
+    const datasetCandidates = VERIFIED_HIDDEN_GEMS
+      .filter(gem => cityNames.has(normalizedPlaceName(gem.city)))
+      .map(gem => hiddenGemCandidateToPlace(gem, currentCity));
+    const unique = new Map<string, AttractionEntity>();
+    for (const place of [...existingCandidates, ...datasetCandidates]) {
+      const key = normalizedPlaceName(place.name);
+      if (!unique.has(key)) unique.set(key, place);
+    }
+    return [...unique.values()].slice(0, 10);
   }, [currentCity]);
 
   // Available topics/categories in this city
@@ -353,13 +412,14 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
   // Filtered places within current city
   const filteredCityPlaces = useMemo(() => {
     return cityAllPlaces.filter((attr) => {
-      if (activeCategoryFilter === 'all') return true;
+      if (activeCategoryFilter === 'all') return cityPopularPlaces.some(place => place.id === attr.id);
+      if (activeCategoryFilter === 'all_places') return true;
       if (activeCategoryFilter === 'hidden_gems') return false;
       if (attr.category === activeCategoryFilter) return true;
       if (attr.topic && attr.topic.toLowerCase() === activeCategoryFilter.toLowerCase()) return true;
       return false;
     });
-  }, [cityAllPlaces, activeCategoryFilter]);
+  }, [cityAllPlaces, cityPopularPlaces, activeCategoryFilter]);
 
   const filteredCityCandidates = useMemo(() => {
     return cityHiddenGemCandidates.filter((attr) => {
@@ -430,14 +490,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
         const q = searchQuery.toLowerCase().trim();
         const inStateName = state.name?.toLowerCase().includes(q);
         const inCapital = state.capital?.toLowerCase().includes(q);
-        const inCities = state.cities?.some(
-          (c) =>
-            c.name?.toLowerCase().includes(q) ||
-            c.district?.toLowerCase().includes(q) ||
-            c.tagline?.toLowerCase().includes(q) ||
-            c.aliases?.some((a: string) => a.toLowerCase().includes(q))
-        );
-        if (!inStateName && !inCapital && !inCities) return false;
+        if (!inStateName && !inCapital) return false;
       }
 
       return true;
@@ -477,72 +530,13 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
     if (!q || !db || !db.states) return null;
 
     const matchedStates: Array<{ id: string; name: string; region: string; region_type?: string }> = [];
-    const matchedTowns: Array<{
-      stateId: string;
-      stateName: string;
-      townId: string;
-      townName: string;
-      district: string;
-    }> = [];
-    const matchedPlaces: Array<{
-      stateId: string;
-      townId: string;
-      townName: string;
-      place: AttractionEntity;
-    }> = [];
-
     for (const state of db.states) {
       if (state.name?.toLowerCase().includes(q) || state.capital?.toLowerCase().includes(q)) {
         matchedStates.push({ id: state.id, name: state.name, region: state.region, region_type: state.region_type });
       }
-
-      for (const city of state.cities || []) {
-        if (
-          city.name?.toLowerCase().includes(q) ||
-          city.district?.toLowerCase().includes(q) ||
-          city.tagline?.toLowerCase().includes(q) ||
-          city.aliases?.some((a: string) => a.toLowerCase().includes(q))
-        ) {
-          matchedTowns.push({
-            stateId: state.id,
-            stateName: state.name,
-            townId: city.id,
-            townName: city.name,
-            district: city.district || city.name,
-          });
-        }
-
-        const places = [
-          ...(city.heritage || []),
-          ...(city.monuments || []),
-          ...(city.museums || []),
-          ...(city.tourist_places || []),
-          ...(city.religious_cultural || []),
-          ...(city.nature_parks_zoo || []),
-        ].filter(isPlaceVerified);
-
-        for (const p of places) {
-          if (
-            p.name?.toLowerCase().includes(q) ||
-            (p.summary && p.summary.toLowerCase().includes(q)) ||
-            (p.category_label && p.category_label.toLowerCase().includes(q))
-          ) {
-            matchedPlaces.push({
-              stateId: state.id,
-              townId: city.id,
-              townName: city.name,
-              place: p,
-            });
-          }
-        }
-      }
     }
 
-    return {
-      states: matchedStates.slice(0, 4),
-      towns: matchedTowns.slice(0, 6),
-      places: matchedPlaces.slice(0, 8),
-    };
+    return { states: matchedStates.slice(0, 8) };
   }, [searchQuery, db]);
 
   // Navigation handlers
@@ -982,66 +976,12 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                       Discover Bharat
                     </h1>
                     <p className="text-xs sm:text-sm text-[#6B5E55] max-w-xl leading-relaxed mt-1.5">
-                      Pick a region, explore the map, or let Virasat choose your next story.
+                      Browse India’s 28 states and 8 Union Territories.
                     </p>
-                    <div className="flex flex-wrap items-center gap-2 mt-3">
-                      <button
-                        onClick={handleSurpriseMe}
-                        className="group px-3.5 py-2 rounded-xl bg-[#FF671F] hover:bg-[#E65100] text-white text-xs font-bold transition-all shadow-sm hover:shadow-md flex items-center gap-2 cursor-pointer active:scale-95"
-                      >
-                        <Dice5 className="w-4 h-4 group-hover:rotate-12 transition-transform" />
-                        <span>Surprise me</span>
-                      </button>
-                      <button
-                        onClick={() => setViewMode('map')}
-                        className="px-3.5 py-2 rounded-xl bg-white/90 hover:bg-white text-[#0B192C] border border-[#E7DFD5] text-xs font-bold transition-all shadow-xs flex items-center gap-2 cursor-pointer active:scale-95"
-                      >
-                        <MapIcon className="w-4 h-4 text-[#046A38]" />
-                        <span>Explore map</span>
-                      </button>
-                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* Right Controls: View Switcher (Grid vs Map) */}
-              <div className="flex items-center gap-2 shrink-0 self-start lg:self-auto">
-                <div className="flex items-center p-0.5 sm:p-1 rounded-xl sm:rounded-2xl bg-[#F5EFEB] border border-[#E7DFD5]">
-                  <button
-                    onClick={() => setViewMode('grid')}
-                    className={`px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-bold transition flex items-center gap-1.5 cursor-pointer ${
-                      viewMode === 'grid'
-                        ? 'bg-white text-amber-800 shadow-xs'
-                        : 'text-[#7A6E65] hover:text-[#0B192C]'
-                    }`}
-                  >
-                    <Layers className="w-3.5 h-3.5" />
-                    <span>Cards</span>
-                  </button>
-                  <button
-                    onClick={() => setViewMode('cities')}
-                    className={`px-3.5 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 cursor-pointer ${
-                      viewMode === 'cities'
-                        ? 'bg-white text-[#FF671F] shadow-xs'
-                        : 'text-[#7A6E65] hover:text-[#0B192C]'
-                    }`}
-                  >
-                    <Building2 className="w-3.5 h-3.5" />
-                    <span className="hidden sm:inline">Cities</span>
-                  </button>
-                  <button
-                    onClick={() => setViewMode('map')}
-                    className={`px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-lg sm:rounded-xl text-[11px] sm:text-xs font-bold transition flex items-center gap-1.5 cursor-pointer ${
-                      viewMode === 'map'
-                        ? 'bg-white text-amber-800 shadow-xs'
-                        : 'text-[#7A6E65] hover:text-[#0B192C]'
-                    }`}
-                  >
-                    <MapIcon className="w-3.5 h-3.5" />
-                    <span>Map</span>
-                  </button>
-                </div>
-              </div>
             </div>
 
           {/* Unified Controls: Territory Tabs, Search & Filter Bar (Zero dead space) */}
@@ -1054,7 +994,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search a state, city or monument..."
+                  placeholder="Search a state or Union Territory..."
                   className="w-full pl-10 pr-20 py-2 sm:py-2.5 bg-white border border-[#D5C7B8] rounded-xl text-xs text-[#0B192C] placeholder:text-[#A09388] focus:outline-none focus:border-[#FF671F] focus:ring-1 focus:ring-[#FF671F] transition shadow-xs"
                 />
 
@@ -1093,8 +1033,9 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                             <button
                               key={s.id}
                               onClick={() => {
-                                handleSelectState(s.id);
-                                setSearchQuery('');
+                                setTerritoryTab('all');
+                                setSelectedRegion('All');
+                                setSearchQuery(s.name);
                               }}
                               className="w-full text-left px-3 py-2 rounded-xl text-xs hover:bg-[#FAF8F5] flex items-center justify-between transition cursor-pointer"
                             >
@@ -1108,72 +1049,9 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                       </div>
                     )}
 
-                    {/* Towns / Localities matched */}
-                    {searchResults.towns.length > 0 && (
-                      <div className="border-t border-stone-100 pt-2">
-                        <span className="text-[10px] font-bold uppercase tracking-wider text-[#FF671F] px-2 block mb-1">
-                          Cities, Towns &amp; Localities
-                        </span>
-                        <div className="space-y-1">
-                          {searchResults.towns.map((t) => (
-                            <button
-                              key={`${t.stateId}-${t.townId}`}
-                              onClick={() => {
-                                handleSelectTown(t.stateId, t.townId);
-                                setSearchQuery('');
-                              }}
-                              className="w-full text-left px-3 py-2 rounded-xl text-xs hover:bg-[#FAF8F5] flex items-center justify-between transition cursor-pointer"
-                            >
-                              <div>
-                                <span className="font-bold text-stone-900">{t.townName}</span>
-                                <span className="text-[11px] text-[#7A6E65] ml-2">
-                                  ({t.district} Dist, {t.stateName})
-                                </span>
-                              </div>
-                              <ChevronRight className="w-3.5 h-3.5 text-[#FF671F]" />
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    {/* Places matched */}
-                    {searchResults.places.length > 0 && (
-                      <div className="border-t border-stone-100 pt-2">
-                        <span className="text-[10px] font-bold uppercase tracking-wider text-[#FF671F] px-2 block mb-1">
-                          Monuments &amp; Tourist Places
-                        </span>
-                        <div className="space-y-1">
-                          {searchResults.places.map((item) => (
-                            <button
-                              key={item.place.id}
-                              onClick={() => {
-                                handleSelectTown(item.stateId, item.townId);
-                                setPreviewPlace(item.place);
-                                setSearchQuery('');
-                              }}
-                              className="w-full text-left px-3 py-2 rounded-xl text-xs hover:bg-[#FAF8F5] flex items-center justify-between transition cursor-pointer"
-                            >
-                              <div>
-                                <div className="font-bold text-stone-900">{item.place.name}</div>
-                                <div className="text-[10px] text-[#7A6E65]">
-                                  {item.townName} • {item.place.category_label || item.place.category}
-                                </div>
-                              </div>
-                              <span className="text-[10px] font-semibold text-[#FF671F] bg-amber-50 px-2 py-0.5 rounded">
-                                View Place
-                              </span>
-                            </button>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-
-                    {searchResults.states.length === 0 &&
-                      searchResults.towns.length === 0 &&
-                      searchResults.places.length === 0 && (
+                    {searchResults.states.length === 0 && (
                         <div className="p-4 text-center text-xs text-stone-500">
-                          No entities matched &quot;{searchQuery}&quot;.
+                          No state or Union Territory matched &quot;{searchQuery}&quot;.
                         </div>
                       )}
                   </div>
@@ -1309,8 +1187,8 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
               <Compass className="w-7 h-7 animate-spin" />
             </div>
             <div className="space-y-1">
-              <h3 className="text-sm font-bold text-[#0B192C]">Loading Discover Bharat Hierarchy...</h3>
-              <p className="text-xs text-[#7A6E65]">Connecting 36 States &amp; UTs, 257 canonical destinations and verified monuments</p>
+              <h3 className="text-sm font-bold text-[#0B192C]">Loading Discover Bharat...</h3>
+              <p className="text-xs text-[#7A6E65]">Loading state and Union Territory cards</p>
             </div>
           </div>
         ) : loadError ? (
@@ -1394,35 +1272,13 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                             onSelectState={handleSelectState}
                             onSelectTown={handleSelectTown}
                             onQuickLook={(s) => setQuickLookState(s)}
+                            territoryOnly
                           />
                         ))}
                       </div>
                     )}
                   </div>
                 )}
-
-                {/* Featured Showcase Banner: Maharashtra (Mumbai & Pune) */}
-                <div className="bg-gradient-to-br from-[#0B192C] via-[#1A2E44] to-[#0B192C] text-white rounded-3xl p-6 sm:p-7 border border-[#FF671F]/30 shadow-lg relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6">
-                  <div className="space-y-2 z-10 max-w-xl">
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#FF671F]/20 text-[#FF671F] border border-[#FF671F]/30 text-xs font-bold uppercase tracking-wider">
-                      <Sparkles className="w-3.5 h-3.5" />
-                      <span>Special Showcase • Maharashtra</span>
-                    </div>
-                    <h3 className="font-serif text-xl sm:text-2xl font-bold text-white">
-                      Mumbai &amp; Pune: Famous Places &amp; Hidden Gems
-                    </h3>
-                    <p className="text-xs sm:text-sm text-stone-300 leading-relaxed">
-                      Discover 40 dual-verified destinations across Mumbai &amp; Pune. Explore 20 world-famous monuments and 20 community-curated hidden gems with authentic 50-word overviews, interactive maps, and complete travel coordinates.
-                    </p>
-                  </div>
-                  <button
-                    onClick={() => handleSelectState('maharashtra')}
-                    className="z-10 px-6 py-3 rounded-2xl bg-gradient-to-r from-[#FF671F] to-[#E65100] hover:from-[#E65100] hover:to-[#FF671F] text-white text-xs sm:text-sm font-bold shadow-md hover:shadow-xl transition-all cursor-pointer whitespace-nowrap flex items-center gap-2"
-                  >
-                    <span>Explore Maharashtra Showcase (40)</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                </div>
 
                 {/* Section: 28 States of Bharat */}
                 {(territoryTab === 'states' || territoryTab === 'all') && (
@@ -1452,6 +1308,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                             onSelectState={handleSelectState}
                             onSelectTown={handleSelectTown}
                             onQuickLook={(s) => setQuickLookState(s)}
+                            territoryOnly
                           />
                         ))}
                       </div>
@@ -1488,6 +1345,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                             onSelectState={handleSelectState}
                             onSelectTown={handleSelectTown}
                             onQuickLook={(s) => setQuickLookState(s)}
+                            territoryOnly
                           />
                         ))}
                       </div>
@@ -2061,17 +1919,18 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                   <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#0B192C]">
                     {activeCategoryFilter === 'hidden_gems'
-                      ? `Hidden Gems & Experiences in ${currentCity.name} (${filteredCityCandidates.length})`
-                      : `Verified Heritage Sites & Places in ${currentCity.name} (${filteredCityPlaces.length})`}
+                      ? `Hidden-gem candidates in ${currentCity.name} (${filteredCityCandidates.length}/10)`
+                      : activeCategoryFilter === 'all'
+                        ? `Popular places in ${currentCity.name} (${filteredCityPlaces.length}/10)`
+                        : `Verified Heritage Sites & Places in ${currentCity.name} (${filteredCityPlaces.length})`}
                   </h3>
 
                   {/* Category Filter Pills */}
                   <div className="flex items-center gap-1.5 overflow-x-auto pb-1">
                     {[
-                      { id: 'all', label: 'All Places' },
-                      ...(cityHiddenGemCandidates.length > 0
-                        ? [{ id: 'hidden_gems', label: `✨ Hidden Gems (${cityHiddenGemCandidates.length})` }]
-                        : []),
+                      { id: 'all', label: `Popular (${cityPopularPlaces.length}/10)` },
+                      { id: 'all_places', label: `All verified (${cityAllPlaces.length})` },
+                      { id: 'hidden_gems', label: `✨ Hidden gems (${cityHiddenGemCandidates.length}/10)` },
                       { id: 'heritage', label: 'Heritage & UNESCO' },
                       { id: 'monuments', label: 'Monuments' },
                       { id: 'museums', label: 'Museums' },
@@ -2093,6 +1952,12 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                     ))}
                   </div>
                 </div>
+
+                {activeCategoryFilter === 'all' && cityPopularPlaces.length < 10 && (
+                  <p className="text-xs text-amber-800 rounded-xl border border-amber-200 bg-amber-50 px-3 py-2">
+                    {cityPopularPlaces.length} of 10 popular places currently have verified city records. More places will appear after their city and source details are checked.
+                  </p>
+                )}
 
                 {/* Places Grid with neutral official placeholder fallback cards */}
                 {filteredCityPlaces.length === 0 && activeCategoryFilter !== 'hidden_gems' ? (
@@ -2342,11 +2207,16 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                   <section className="space-y-4 pt-5 border-t border-dashed border-amber-300">
                     <div>
                       <h3 className="font-serif text-xl sm:text-2xl font-bold text-[#0B192C]">
-                        Hidden Gem Candidates in {currentCity.name} ({filteredCityCandidates.length})
+                        Hidden-gem candidates in {currentCity.name} ({filteredCityCandidates.length}/10)
                       </h3>
                       <p className="text-xs text-stone-600 mt-1">
-                        These local suggestions are still under verification. Confirm access and visitor details locally before travelling.
+                        These local suggestions are candidates, not verified recommendations. Their place-specific sources, images and visitor details still need review.
                       </p>
+                      {filteredCityCandidates.length < 10 && (
+                        <p className="text-xs text-amber-800 mt-2">
+                          {10 - filteredCityCandidates.length} more candidates are needed to reach the 10-place goal. We are leaving those slots empty until the places are sourced and checked.
+                        </p>
+                      )}
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5 sm:gap-6">
                       {filteredCityCandidates.map((place) => {
@@ -2455,6 +2325,12 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                       })}
                     </div>
                   </section>
+                )}
+                {activeCategoryFilter === 'hidden_gems' && filteredCityCandidates.length === 0 && (
+                  <div className="rounded-2xl border border-dashed border-amber-300 bg-amber-50/60 p-8 text-center">
+                    <p className="font-semibold text-stone-800">No hidden-gem candidates are sourced for {currentCity.name} yet.</p>
+                    <p className="mt-2 text-sm text-stone-600">We will publish recommendations here after location and source checks; no places are being guessed to fill the list.</p>
+                  </div>
                 )}
               </div>
             </div>

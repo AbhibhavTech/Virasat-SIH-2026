@@ -16,6 +16,7 @@ interface StateCardProps {
   onSelectState: (stateId: string) => void;
   onSelectTown: (stateId: string, townId: string) => void;
   onQuickLook?: (state: StateHierarchyEntity) => void;
+  territoryOnly?: boolean;
 }
 
 export const StateCard: React.FC<StateCardProps> = ({
@@ -26,6 +27,7 @@ export const StateCard: React.FC<StateCardProps> = ({
   onSelectState,
   onSelectTown,
   onQuickLook,
+  territoryOnly = false,
 }) => {
   const curated = getCuratedStateImage(state.id, state.hero_image_url);
   const [imageSrc, setImageSrc] = useState(curated.url);
@@ -39,7 +41,7 @@ export const StateCard: React.FC<StateCardProps> = ({
   };
 
   // Maximum 3 destinations per requirement
-  const towns = state.cities || [];
+  const towns = territoryOnly ? [] : (state.cities || []);
   const topTowns = towns.slice(0, 3);
 
   const { ref, className: revealClass, style: revealStyle } = useScrollReveal<HTMLDivElement>({
@@ -56,13 +58,13 @@ export const StateCard: React.FC<StateCardProps> = ({
     >
       {/* Hero Photo Header */}
       <div
-        className="relative h-56 sm:h-64 lg:h-72 w-full overflow-hidden bg-stone-900 shrink-0 cursor-pointer"
-        onClick={() => onSelectState(state.id)}
-        onKeyDown={(event) => {
+        className={`relative h-56 sm:h-64 lg:h-72 w-full overflow-hidden bg-stone-900 shrink-0 ${territoryOnly ? '' : 'cursor-pointer'}`}
+        onClick={territoryOnly ? undefined : () => onSelectState(state.id)}
+        onKeyDown={territoryOnly ? undefined : (event) => {
           if (event.key === 'Enter' || event.key === ' ') onSelectState(state.id);
         }}
-        role="button"
-        tabIndex={0}
+        role={territoryOnly ? undefined : 'button'}
+        tabIndex={territoryOnly ? undefined : 0}
         aria-label={`Explore ${state.name}`}
       >
         <img
@@ -86,7 +88,7 @@ export const StateCard: React.FC<StateCardProps> = ({
 
         {/* Top Right: Wishlist Heart */}
         <div className="absolute top-3 right-3 z-10 flex items-center gap-1.5">
-          {onQuickLook && (
+          {!territoryOnly && onQuickLook && (
             <button
               onClick={(event) => {
                 event.stopPropagation();
@@ -130,7 +132,11 @@ export const StateCard: React.FC<StateCardProps> = ({
           {state.description || state.heritage_overview || `Explore the culture and heritage of ${state.name}.`}
         </p>
 
-        {topTowns.length > 0 && (
+        {territoryOnly ? (
+          <div className="text-xs text-stone-600">
+            <span className="font-semibold text-stone-800">Capital:</span> {state.capital || 'Not listed'}
+          </div>
+        ) : topTowns.length > 0 && (
           <div className="space-y-1.5">
             <span className="text-[11px] font-bold uppercase tracking-wider text-stone-500">
               {towns.length} {towns.length === 1 ? 'destination' : 'destinations'}
@@ -150,7 +156,7 @@ export const StateCard: React.FC<StateCardProps> = ({
           </div>
         )}
 
-        <div>
+        {!territoryOnly && <div>
           <button
             onClick={() => onSelectState(state.id)}
             className="w-full py-3 px-5 rounded-xl bg-[#D94F04] hover:bg-[#B83F00] text-white border border-[#C94700] hover:border-[#A93800] text-sm font-black transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm hover:shadow-md active:scale-[0.99] group/btn"
@@ -158,7 +164,7 @@ export const StateCard: React.FC<StateCardProps> = ({
             <span className="text-white font-black">Explore</span>
             <ArrowRight className="w-4 h-4 text-white transition-transform group-hover/btn:translate-x-0.5" />
           </button>
-        </div>
+        </div>}
       </div>
     </div>
   );
