@@ -1,0 +1,1520 @@
+{
+  "region": {
+    "id": "gj",
+    "name": "Gujarat",
+    "type": "state",
+    "tagline": "Lions, salt deserts and stepwells.",
+    "overview": "Gujarat is a land of contrasts: Asiatic lions in Gir, a white salt desert in Kutch, carved stepwells in Patan and Ahmedabad, and the world's tallest statue at Kevadia. Add the Dandiya nights of Navratri, the kite skies of Uttarayan and a rich vegetarian food culture.",
+    "image": {
+      "url": null,
+      "status": "needed",
+      "brief": "Original or licensed wide photo of the White Rann of Kutch at dusk"
+    },
+    "top_attractions": [
+      "gj-sabarmati-ashram",
+      "gj-adalaj-stepwell",
+      "gj-rani-ki-vav",
+      "gj-modhera-sun-temple",
+      "gj-laxmi-vilas-palace",
+      "gj-champaner-pavagadh",
+      "gj-white-rann-of-kutch",
+      "gj-dholavira",
+      "gj-gir-national-park",
+      "gj-somnath-temple",
+      "gj-dwarkadhish-temple",
+      "gj-statue-of-unity"
+    ],
+    "cities": [
+      "gj-ahmedabad",
+      "gj-vadodara",
+      "gj-kutch",
+      "gj-junagadh",
+      "gj-somnath",
+      "gj-dwarka",
+      "gj-kevadia",
+      "gj-patan"
+    ],
+    "live_updates": [
+      {
+        "title": "Gir safari season",
+        "description": "Gir reopens after the monsoon in mid-October, with the safari season running through the cooler months.",
+        "start_date": null,
+        "end_date": null,
+        "date_status": "needs_verification"
+      },
+      {
+        "title": "Navratri Garba",
+        "description": "Gujarat's most famous festival is nine nights of garba and dandiya in autumn.",
+        "start_date": null,
+        "end_date": null,
+        "date_status": "needs_verification"
+      },
+      {
+        "title": "Diwali and Gujarati New Year",
+        "description": "Bright lights and fireworks mark Diwali, followed by Bestu Varas, the Gujarati New Year.",
+        "start_date": null,
+        "end_date": null,
+        "date_status": "needs_verification"
+      },
+      {
+        "title": "Rann Utsav",
+        "description": "A long winter festival at the White Rann with tents, craft stalls and music.",
+        "start_date": null,
+        "end_date": null,
+        "date_status": "needs_verification"
+      },
+      {
+        "title": "International Kite Festival",
+        "description": "Uttarayan in January fills Gujarat skies with kites; the main festival is held in Ahmedabad.",
+        "start_date": null,
+        "end_date": null,
+        "date_status": "needs_verification"
+      },
+      {
+        "title": "Nal Sarovar migratory birds",
+        "description": "Winter brings flocks of migratory birds to Nal Sarovar.",
+        "start_date": null,
+        "end_date": null,
+        "date_status": "needs_verification"
+      }
+    ]
+  },
+  "cities": [
+    {
+      "id": "gj-ahmedabad",
+      "name": "Ahmedabad",
+      "tagline": "Old walled city and Gandhi's ashram.",
+      "blurb": "A heritage city of stepwells, mosques and food streets.",
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide photo capturing Ahmedabad"
+      },
+      "attractions": [
+        "gj-sabarmati-ashram",
+        "gj-adalaj-stepwell",
+        "gj-sidi-saiyyed-mosque",
+        "gj-hutheesing-jain-temple",
+        "gj-manek-chowk",
+        "gj-calico-museum-of-textiles"
+      ],
+      "hidden_gems": [
+        "gj-gem-lothal",
+        "gj-gem-nal-sarovar",
+        "gj-gem-polo-forest"
+      ]
+    },
+    {
+      "id": "gj-vadodara",
+      "name": "Vadodara",
+      "tagline": "Royal palaces and cultural capital.",
+      "blurb": "A city of the Gaekwad rulers and the ruins of Champaner.",
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide photo capturing Vadodara"
+      },
+      "attractions": [
+        "gj-laxmi-vilas-palace",
+        "gj-champaner-pavagadh"
+      ],
+      "hidden_gems": []
+    },
+    {
+      "id": "gj-kutch",
+      "name": "Kutch (Bhuj)",
+      "tagline": "Salt desert and craft villages.",
+      "blurb": "Bhuj is the base for the white Rann, craft villages and Harappan sites.",
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide photo capturing Kutch (Bhuj)"
+      },
+      "attractions": [
+        "gj-white-rann-of-kutch",
+        "gj-dholavira",
+        "gj-aina-mahal-bhuj",
+        "gj-bhujodi-village"
+      ],
+      "hidden_gems": [
+        "gj-gem-vijay-vilas-palace",
+        "gj-gem-little-rann-wild-ass-sanctuary"
+      ]
+    },
+    {
+      "id": "gj-junagadh",
+      "name": "Junagadh",
+      "tagline": "Ancient fort and lion country.",
+      "blurb": "A city of an old fort, a holy hill and the gateway to Gir.",
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide photo capturing Junagadh"
+      },
+      "attractions": [
+        "gj-gir-national-park",
+        "gj-uparkot-fort",
+        "gj-girnar-hill"
+      ],
+      "hidden_gems": []
+    },
+    {
+      "id": "gj-somnath",
+      "name": "Somnath",
+      "tagline": "Seaside pilgrimage.",
+      "blurb": "A small coastal town home to a major Jyotirlinga.",
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide photo capturing Somnath"
+      },
+      "attractions": [
+        "gj-somnath-temple"
+      ],
+      "hidden_gems": []
+    },
+    {
+      "id": "gj-dwarka",
+      "name": "Dwarka",
+      "tagline": "Krishna's city by the sea.",
+      "blurb": "A coastal pilgrimage town of Char Dham fame.",
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide photo capturing Dwarka"
+      },
+      "attractions": [
+        "gj-dwarkadhish-temple"
+      ],
+      "hidden_gems": []
+    },
+    {
+      "id": "gj-kevadia",
+      "name": "Kevadia",
+      "tagline": "Home of the Statue of Unity.",
+      "blurb": "A new visitor hub near the Narmada dam.",
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide photo capturing Kevadia"
+      },
+      "attractions": [
+        "gj-statue-of-unity"
+      ],
+      "hidden_gems": []
+    },
+    {
+      "id": "gj-patan",
+      "name": "Patan",
+      "tagline": "Stepwell and sun temple country.",
+      "blurb": "A heritage town of stepwells, silk patola and the Solanki legacy.",
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide photo capturing Patan"
+      },
+      "attractions": [
+        "gj-rani-ki-vav",
+        "gj-modhera-sun-temple"
+      ],
+      "hidden_gems": []
+    }
+  ],
+  "attractions": [
+    {
+      "id": "gj-sabarmati-ashram",
+      "name": "Sabarmati Ashram",
+      "city_id": "gj-ahmedabad",
+      "category": "Heritage",
+      "sub_categories": [
+        "Historical Sites",
+        "Museums"
+      ],
+      "summary": "The riverside home from which Gandhi began the Dandi March.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Sabarmati Ashram, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A peaceful riverside ashram where Mahatma Gandhi lived and worked for years. Simple rooms, a spinning wheel and a small museum tell the story of his daily life.",
+        "important_facts": [
+          "Gandhi lived here from 1917 to 1930",
+          "The Dandi March began from here in 1930"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Visit in the morning and spend time by the river."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "gj-adalaj-stepwell",
+      "name": "Adalaj Stepwell",
+      "city_id": "gj-ahmedabad",
+      "category": "Heritage",
+      "sub_categories": [
+        "Monuments",
+        "Historical Buildings"
+      ],
+      "summary": "A five-storey carved stepwell that stays cool even in summer.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Adalaj Stepwell, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A beautifully carved stepwell near Gandhinagar with pillars, balconies and detailed stone panels. It was both a water source and a place for gatherings.",
+        "important_facts": [
+          "Built in 1498"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Go at midday on a sunny day to see light beams slice through the well."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "gj-sidi-saiyyed-mosque",
+      "name": "Sidi Saiyyed Mosque",
+      "city_id": "gj-ahmedabad",
+      "category": "Heritage",
+      "sub_categories": [
+        "Monuments",
+        "Historical Buildings"
+      ],
+      "summary": "A mosque famous for its stone-lattice tree-of-life windows.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Sidi Saiyyed Mosque, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A small 16th-century mosque in Ahmedabad known for its fine stone jali windows with tree patterns.",
+        "important_facts": [
+          "Built in the 1570s"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Visit in the morning for the best light on the jalis."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "gj-hutheesing-jain-temple",
+      "name": "Hutheesing Jain Temple",
+      "city_id": "gj-ahmedabad",
+      "category": "Spiritual",
+      "sub_categories": [
+        "Jainism"
+      ],
+      "summary": "A white marble temple with delicate carving.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Hutheesing Jain Temple, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A well-known Jain temple in Ahmedabad with a carved marble courtyard, built in the 19th century.",
+        "important_facts": [
+          "Built in 1848"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Dress modestly and ask about camera rules."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "gj-manek-chowk",
+      "name": "Manek Chowk",
+      "city_id": "gj-ahmedabad",
+      "category": "Gastronomy",
+      "sub_categories": [
+        "Street Food"
+      ],
+      "summary": "A square that turns from jewellery market to street-food hub at night.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Manek Chowk, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A busy old-city square where jewellers' stalls give way to a lively night food market after dark.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Go after 9 pm and try the local snacks."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "gj-calico-museum-of-textiles",
+      "name": "Calico Museum of Textiles",
+      "city_id": "gj-ahmedabad",
+      "category": "Heritage",
+      "sub_categories": [
+        "Museums"
+      ],
+      "summary": "A famous textile museum in a historic mansion.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Calico Museum of Textiles, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A museum known for a rich collection of Indian textiles and handloom traditions.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Check visit rules and booking before you go."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "gj-laxmi-vilas-palace",
+      "name": "Laxmi Vilas Palace",
+      "city_id": "gj-vadodara",
+      "category": "Heritage",
+      "sub_categories": [
+        "Palaces & Forts",
+        "Historical Buildings"
+      ],
+      "summary": "The Gaekwad royal palace in Indo-Saracenic splendour.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Laxmi Vilas Palace, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A huge royal palace in Vadodara with grand halls, towers and manicured gardens, built for Maharaja Sayajirao Gaekwad III.",
+        "important_facts": [
+          "Built in the 1890s for Maharaja Sayajirao Gaekwad III"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Take the audio tour to hear the family's stories."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "gj-champaner-pavagadh",
+      "name": "Champaner-Pavagadh Archaeological Park",
+      "city_id": "gj-vadodara",
+      "category": "Heritage",
+      "sub_categories": [
+        "UNESCO World Heritage Sites",
+        "Archeological Sites"
+      ],
+      "summary": "An old Sultanate city at the foot of Pavagadh hill.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Champaner-Pavagadh Archaeological Park, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A large archaeological park with mosques, gates and old walls around Pavagadh hill, plus a hilltop Kalika Mata temple.",
+        "important_facts": [
+          "Declared a UNESCO World Heritage Site in 2004"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Start early; the site is large."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "gj-white-rann-of-kutch",
+      "name": "White Rann of Kutch",
+      "city_id": "gj-kutch",
+      "category": "Nature",
+      "sub_categories": [
+        "Deserts"
+      ],
+      "summary": "A vast white salt desert glowing under moonlight.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of White Rann of Kutch, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A giant flat salt marsh that turns into a glittering white plain in the dry season. A winter festival camp is held beside it each year.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": "Winter months (needs verification)",
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Visit around full moon and carry warm layers for evenings."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "gj-dholavira",
+      "name": "Dholavira",
+      "city_id": "gj-kutch",
+      "category": "Heritage",
+      "sub_categories": [
+        "UNESCO World Heritage Sites",
+        "Archeological Sites"
+      ],
+      "summary": "A Harappan city with water channels and stone gates.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Dholavira, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "The remains of a Harappan-era city on Khadir island, with a planned layout, reservoirs and a famous signboard.",
+        "important_facts": [
+          "Declared a UNESCO World Heritage Site in 2021"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Hire a guide; the layout is easier to grasp with commentary."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "gj-aina-mahal-bhuj",
+      "name": "Aina Mahal",
+      "city_id": "gj-kutch",
+      "category": "Heritage",
+      "sub_categories": [
+        "Palaces & Forts",
+        "Museums"
+      ],
+      "summary": "A mirrored royal palace in old Bhuj.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Aina Mahal, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "An 18th-century palace of the Kutch rulers, with mirror halls, tiled rooms and a museum.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Pair it with Prag Mahal next door."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "gj-bhujodi-village",
+      "name": "Bhujodi Weaving Village",
+      "city_id": "gj-kutch",
+      "category": "Rural",
+      "sub_categories": [
+        "Crafts-Tourism"
+      ],
+      "summary": "A weaving village where you can watch Kutchi textile craft.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Bhujodi Weaving Village, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A village famous for hand-woven shawls and textiles, with workshops and showrooms.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Ask artisans about natural dyes and weaving time."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "gj-gir-national-park",
+      "name": "Gir National Park",
+      "city_id": "gj-junagadh",
+      "category": "Wildlife",
+      "sub_categories": [
+        "National Parks",
+        "Wildlife Sanctuaries"
+      ],
+      "summary": "The only place in the wild where Asiatic lions live.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Gir National Park, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A dry deciduous forest in Saurashtra, the home of the Asiatic lion, with leopards, deer and many birds.",
+        "important_facts": [
+          "The only natural home of the Asiatic lion"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Book safari slots online early; mornings are best for sightings."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "gj-uparkot-fort",
+      "name": "Uparkot Fort",
+      "city_id": "gj-junagadh",
+      "category": "Heritage",
+      "sub_categories": [
+        "Palaces & Forts"
+      ],
+      "summary": "An ancient fort with step-wells and caves in Junagadh.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Uparkot Fort, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "An old fort in Junagadh with deep stepwells, Buddhist caves and strong walls.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Wear sturdy shoes and carry water."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "gj-girnar-hill",
+      "name": "Girnar Hill",
+      "city_id": "gj-junagadh",
+      "category": "Spiritual",
+      "sub_categories": [
+        "Jainism",
+        "Hinduism"
+      ],
+      "summary": "A sacred hill climbed by thousands of steps to Jain and Hindu shrines.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Girnar Hill, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A holy hill near Junagadh with a long stairway to Jain temples and Hindu shrines at the top.",
+        "important_facts": [
+          "Reached by thousands of stone steps"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Start before dawn and carry water."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "gj-somnath-temple",
+      "name": "Somnath Temple",
+      "city_id": "gj-somnath",
+      "category": "Spiritual",
+      "sub_categories": [
+        "Hinduism"
+      ],
+      "summary": "The first Jyotirlinga, on the shore of the Arabian Sea.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Somnath Temple, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A grand seaside temple regarded as the first of the twelve Jyotirlingas. The current temple was built after earlier ones were destroyed and rebuilt.",
+        "important_facts": [
+          "Regarded as the first of the twelve Jyotirlingas",
+          "Present temple completed in 1951"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Stay for the evening aarti by the sea."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "gj-dwarkadhish-temple",
+      "name": "Dwarkadhish Temple",
+      "city_id": "gj-dwarka",
+      "category": "Spiritual",
+      "sub_categories": [
+        "Hinduism"
+      ],
+      "summary": "A Char Dham temple dedicated to Lord Krishna.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Dwarkadhish Temple, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A tall carved temple on the Gomti creek in Dwarka, one of the Char Dham pilgrimage sites.",
+        "important_facts": [
+          "One of the Char Dham sites"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Visit at dawn for aarti and a quiet darshan."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "gj-statue-of-unity",
+      "name": "Statue of Unity",
+      "city_id": "gj-kevadia",
+      "category": "Heritage",
+      "sub_categories": [
+        "Monuments"
+      ],
+      "summary": "The world's tallest statue, honouring Sardar Vallabhbhai Patel.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Statue of Unity, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A giant statue on the Narmada river near Kevadia, with a viewing gallery and a visitor complex.",
+        "important_facts": [
+          "182 metres tall",
+          "Inaugurated on 31 October 2018"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Book tickets online and give yourself a full day."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "gj-rani-ki-vav",
+      "name": "Rani ki Vav",
+      "city_id": "gj-patan",
+      "category": "Heritage",
+      "sub_categories": [
+        "UNESCO World Heritage Sites",
+        "Monuments"
+      ],
+      "summary": "A stepwell shaped like an inverted temple, carved with gods.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Rani ki Vav, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A grand 11th-century stepwell in Patan with thousands of sculptures, many of Vishnu's avatars.",
+        "important_facts": [
+          "Declared a UNESCO World Heritage Site in 2014",
+          "Built in the 11th century"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Visit in the morning for gentle light on the carvings."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "gj-modhera-sun-temple",
+      "name": "Modhera Sun Temple",
+      "city_id": "gj-patan",
+      "category": "Heritage",
+      "sub_categories": [
+        "Monuments",
+        "Historical Buildings"
+      ],
+      "summary": "A Solanki-era sun temple with a stepped water tank.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Modhera Sun Temple, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A temple dedicated to the sun god, with intricate carvings and a large stepped kund in front.",
+        "important_facts": [
+          "Built around 1026-27 under the Solanki king Bhimdev I"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Visit in the evening to see the carvings glow."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "gj-gem-lothal",
+      "name": "Lothal",
+      "city_id": "gj-ahmedabad",
+      "category": "Heritage",
+      "sub_categories": [
+        "Archeological Sites"
+      ],
+      "summary": "A Harappan port-town with brick docks.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Lothal, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "The remains of an ancient trading town of the Harappan civilisation, with brick-lined structures believed to be a dock.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Visit the small museum first to understand the layout."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "gj-gem-nal-sarovar",
+      "name": "Nal Sarovar Bird Sanctuary",
+      "city_id": "gj-ahmedabad",
+      "category": "Wildlife",
+      "sub_categories": [
+        "Bird Watching"
+      ],
+      "summary": "A big wetland full of migratory birds in winter.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Nal Sarovar Bird Sanctuary, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A shallow lake and wetland near Ahmedabad, famous for winter migratory birds and boat rides.",
+        "important_facts": [
+          "Designated a Ramsar wetland in 2012"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Go early in the morning in winter."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "gj-gem-polo-forest",
+      "name": "Polo Forest",
+      "city_id": "gj-ahmedabad",
+      "category": "Nature",
+      "sub_categories": [
+        "Forests & Gardens"
+      ],
+      "summary": "A forest with ruined temples beside a quiet river.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Polo Forest, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A forest in the Sabarkantha region with old Jain and Hindu temple ruins among trees, loved by locals for monsoon trips.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Visit just after the monsoon for greenery."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "gj-gem-vijay-vilas-palace",
+      "name": "Vijay Vilas Palace, Mandvi",
+      "city_id": "gj-kutch",
+      "category": "Heritage",
+      "sub_categories": [
+        "Palaces & Forts"
+      ],
+      "summary": "A coastal royal palace by a quiet beach.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Vijay Vilas Palace, Mandvi, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A sandstone palace built in the 1920s for the Kutch rulers, near a long, quiet beach.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Check opening days, then walk down to the beach."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "gj-gem-little-rann-wild-ass-sanctuary",
+      "name": "Little Rann of Kutch Wild Ass Sanctuary",
+      "city_id": "gj-kutch",
+      "category": "Wildlife",
+      "sub_categories": [
+        "Wildlife Sanctuaries"
+      ],
+      "summary": "The last stronghold of the Indian wild ass.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Little Rann of Kutch Wild Ass Sanctuary, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A wide salty desert sanctuary, known for the Indian wild ass, flamingos and desert birds.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Book a jeep safari for morning or late afternoon."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    }
+  ]
+}

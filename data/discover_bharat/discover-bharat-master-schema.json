@@ -1,0 +1,589 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Virasat - Discover Bharat region file",
+  "description": "One file per state/UT. Region -> cities -> attractions. Operational data is null + needs_verification unless confirmed.",
+  "type": "object",
+  "required": [
+    "region",
+    "cities",
+    "attractions"
+  ],
+  "taxonomy": {
+    "Wildlife": [
+      "Wildlife Sanctuaries",
+      "Zoological Parks",
+      "Bird Watching",
+      "Marine Life",
+      "National Parks"
+    ],
+    "Heritage": [
+      "Monuments",
+      "Museums",
+      "Historical Buildings",
+      "UNESCO World Heritage Sites",
+      "Archeological Sites",
+      "Historical Sites",
+      "Palaces & Forts"
+    ],
+    "Spiritual": [
+      "Hinduism",
+      "Islam",
+      "Buddhism",
+      "Sikhism",
+      "Jainism",
+      "Christianity",
+      "Jewish"
+    ],
+    "Adventure": [
+      "Rafting",
+      "Paragliding",
+      "Parasailing",
+      "Skiing",
+      "Sky Diving",
+      "Bungee Jumping",
+      "Mountain Biking",
+      "Hiking & Trekking",
+      "Scuba Diving & Snorkeling",
+      "Mountaineering & Rock Climbing"
+    ],
+    "Gastronomy": [
+      "Street Food",
+      "Authentically Local",
+      "Beverages",
+      "Farm to Table",
+      "Spices"
+    ],
+    "Weddings": [
+      "Palace Weddings",
+      "Beach Weddings",
+      "Mountain Wedding",
+      "Island Wedding",
+      "Vineyard Wedding",
+      "Sustainable Weddings",
+      "Cruise Weddings",
+      "Adventure Weddings"
+    ],
+    "Wellness": [
+      "Yoga",
+      "Ayurveda",
+      "Meditation",
+      "Naturopathy"
+    ],
+    "Arts": [
+      "Dance",
+      "Music",
+      "Painting",
+      "Literature",
+      "Theatre",
+      "Textiles"
+    ],
+    "Rural": [
+      "Agro-Tourism",
+      "Crafts-Tourism",
+      "Tribal-Tourism",
+      "Eco-Tourism",
+      "Wildlife-Tourism",
+      "Live Like a Local"
+    ],
+    "Nature": [
+      "Deserts",
+      "Sustainable Tourism",
+      "Beaches & Cruises",
+      "Hills & Mountains",
+      "Forests & Gardens",
+      "Rivers & Lakes"
+    ],
+    "Recreation": [
+      "Cinema",
+      "Night Life",
+      "Sports",
+      "Amusement & Theme Parks"
+    ]
+  },
+  "properties": {
+    "region": {
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "type",
+        "tagline",
+        "overview",
+        "image",
+        "top_attractions",
+        "cities",
+        "live_updates"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+        },
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "state",
+            "union_territory"
+          ]
+        },
+        "tagline": {
+          "type": "string"
+        },
+        "overview": {
+          "type": "string"
+        },
+        "image": {
+          "type": "object",
+          "required": [
+            "url",
+            "status",
+            "brief"
+          ],
+          "properties": {
+            "url": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "status": {
+              "enum": [
+                "needed",
+                "licensed",
+                "original"
+              ]
+            },
+            "brief": {
+              "type": "string"
+            }
+          }
+        },
+        "top_attractions": {
+          "type": "array",
+          "minItems": 8,
+          "maxItems": 12,
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          }
+        },
+        "cities": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          }
+        },
+        "live_updates": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "title",
+              "description",
+              "start_date",
+              "end_date",
+              "date_status"
+            ],
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "description": {
+                "type": "string"
+              },
+              "start_date": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "end_date": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "date_status": {
+                "enum": [
+                  "verified",
+                  "needs_verification"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "cities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "tagline",
+          "blurb",
+          "image",
+          "attractions",
+          "hidden_gems"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "tagline": {
+            "type": "string"
+          },
+          "blurb": {
+            "type": "string"
+          },
+          "image": {
+            "type": "object",
+            "required": [
+              "url",
+              "status",
+              "brief"
+            ],
+            "properties": {
+              "url": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "status": {
+                "enum": [
+                  "needed",
+                  "licensed",
+                  "original"
+                ]
+              },
+              "brief": {
+                "type": "string"
+              }
+            }
+          },
+          "attractions": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+            }
+          },
+          "hidden_gems": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+            }
+          }
+        }
+      }
+    },
+    "attractions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "city_id",
+          "category",
+          "sub_categories",
+          "summary",
+          "is_hidden_gem",
+          "image",
+          "detail_page",
+          "verification_status",
+          "last_verified"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+          },
+          "name": {
+            "type": "string"
+          },
+          "city_id": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "category": {
+            "enum": [
+              "Wildlife",
+              "Heritage",
+              "Spiritual",
+              "Adventure",
+              "Gastronomy",
+              "Weddings",
+              "Wellness",
+              "Arts",
+              "Rural",
+              "Nature",
+              "Recreation"
+            ]
+          },
+          "sub_categories": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "summary": {
+            "type": "string"
+          },
+          "is_hidden_gem": {
+            "type": "boolean"
+          },
+          "image": {
+            "type": "object",
+            "required": [
+              "url",
+              "status",
+              "brief"
+            ],
+            "properties": {
+              "url": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "status": {
+                "enum": [
+                  "needed",
+                  "licensed",
+                  "original"
+                ]
+              },
+              "brief": {
+                "type": "string"
+              }
+            }
+          },
+          "detail_page": {
+            "type": "object",
+            "required": [
+              "overview",
+              "important_facts",
+              "fascinating_facts",
+              "opening_hours",
+              "closing_day",
+              "entry_fee",
+              "best_time_to_visit",
+              "time_needed",
+              "nearby_hotels",
+              "nearby_restaurants",
+              "how_to_reach",
+              "local_tip"
+            ],
+            "properties": {
+              "overview": {
+                "type": "string"
+              },
+              "important_facts": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "fascinating_facts": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "opening_hours": {
+                "type": "object",
+                "required": [
+                  "value",
+                  "status"
+                ],
+                "properties": {
+                  "value": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "status": {
+                    "enum": [
+                      "verified",
+                      "needs_verification"
+                    ]
+                  }
+                }
+              },
+              "closing_day": {
+                "type": "object",
+                "required": [
+                  "value",
+                  "status"
+                ],
+                "properties": {
+                  "value": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "status": {
+                    "enum": [
+                      "verified",
+                      "needs_verification"
+                    ]
+                  }
+                }
+              },
+              "entry_fee": {
+                "type": "object",
+                "required": [
+                  "value",
+                  "status"
+                ],
+                "properties": {
+                  "value": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "status": {
+                    "enum": [
+                      "verified",
+                      "needs_verification"
+                    ]
+                  }
+                }
+              },
+              "best_time_to_visit": {
+                "type": "object",
+                "required": [
+                  "value",
+                  "status"
+                ],
+                "properties": {
+                  "value": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "status": {
+                    "enum": [
+                      "verified",
+                      "needs_verification"
+                    ]
+                  }
+                }
+              },
+              "time_needed": {
+                "type": "object",
+                "required": [
+                  "value",
+                  "status"
+                ],
+                "properties": {
+                  "value": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "status": {
+                    "enum": [
+                      "verified",
+                      "needs_verification"
+                    ]
+                  }
+                }
+              },
+              "how_to_reach": {
+                "type": "object",
+                "required": [
+                  "value",
+                  "status"
+                ],
+                "properties": {
+                  "value": {
+                    "type": [
+                      "string",
+                      "null"
+                    ]
+                  },
+                  "status": {
+                    "enum": [
+                      "verified",
+                      "needs_verification"
+                    ]
+                  }
+                }
+              },
+              "nearby_hotels": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "name",
+                    "area"
+                  ],
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "area": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "nearby_restaurants": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "name",
+                    "area"
+                  ],
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    },
+                    "area": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "local_tip": {
+                "type": "string"
+              }
+            }
+          },
+          "verification_status": {
+            "enum": [
+              "pending",
+              "verified"
+            ]
+          },
+          "last_verified": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

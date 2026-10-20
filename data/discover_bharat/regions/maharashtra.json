@@ -1,0 +1,4416 @@
+{
+  "region": {
+    "id": "mh",
+    "name": "Maharashtra",
+    "type": "state",
+    "tagline": "Forts, caves and a coastline that never sleeps.",
+    "overview": "Maharashtra is a state of contrasts. Mumbai's skyline and colonial landmarks sit beside the quiet Sahyadri forts, ancient Buddhist caves and Maratha history. Travellers can pray at Jyotirlingas, trek monsoon-green hills, and eat their way from vada pav to Kolhapuri misal.",
+    "image": {
+      "url": null,
+      "status": "needed",
+      "brief": "Original or licensed wide photo showing Maharashtra's mix of coast and fort-topped hills"
+    },
+    "top_attractions": [
+      "mh-gateway-of-india",
+      "mh-csmt",
+      "mh-elephanta-caves",
+      "mh-ajanta-caves",
+      "mh-ellora-caves",
+      "mh-shaniwar-wada",
+      "mh-trimbakeshwar-temple",
+      "mh-mahalakshmi-temple-kolhapur",
+      "mh-deekshabhoomi",
+      "mh-raigad-fort",
+      "mh-shirdi-sai-baba-temple",
+      "mh-bibi-ka-maqbara"
+    ],
+    "cities": [
+      "mh-mumbai",
+      "mh-pune",
+      "mh-nashik",
+      "mh-chhatrapati-sambhajinagar",
+      "mh-nagpur",
+      "mh-kolhapur"
+    ],
+    "live_updates": [
+      {
+        "title": "Ganesh Chaturthi",
+        "description": "Mumbai and Pune light up with huge community Ganesh pandals, processions and immersions.",
+        "start_date": null,
+        "end_date": null,
+        "date_status": "needs_verification"
+      },
+      {
+        "title": "Navratri and Dussehra",
+        "description": "Garba, Ramlila and temple festivals mark the nine nights and the Dussehra celebrations in October.",
+        "start_date": null,
+        "end_date": null,
+        "date_status": "needs_verification"
+      },
+      {
+        "title": "Diwali",
+        "description": "Cities fill with lanterns, lights and sweets as Diwali approaches in early November.",
+        "start_date": null,
+        "end_date": null,
+        "date_status": "needs_verification"
+      },
+      {
+        "title": "Sewri flamingo season",
+        "description": "Flamingos gather on the Sewri mudflats through winter.",
+        "start_date": null,
+        "end_date": null,
+        "date_status": "needs_verification"
+      },
+      {
+        "title": "Monsoon fort treks",
+        "description": "Sahyadri forts and waterfalls turn green; trekking around Pune and Lonavala peaks.",
+        "start_date": null,
+        "end_date": null,
+        "date_status": "needs_verification"
+      },
+      {
+        "title": "Pandharpur Kartiki Ekadashi yatra",
+        "description": "Pilgrims walk to Pandharpur for the Kartiki Ekadashi celebrations.",
+        "start_date": null,
+        "end_date": null,
+        "date_status": "needs_verification"
+      },
+      {
+        "title": "Kala Ghoda Arts Festival",
+        "description": "Mumbai's arts festival fills Kala Ghoda with exhibitions and performances, usually in early year.",
+        "start_date": null,
+        "end_date": null,
+        "date_status": "needs_verification"
+      }
+    ]
+  },
+  "cities": [
+    {
+      "id": "mh-mumbai",
+      "name": "Mumbai",
+      "tagline": "City of dreams, sea and street food.",
+      "blurb": "India's fast, busy coastal city, with grand colonial buildings, sea-facing walks and forgotten forts waiting just off the main roads.",
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide photo that captures the spirit of Mumbai"
+      },
+      "attractions": [
+        "mh-gateway-of-india",
+        "mh-csmt",
+        "mh-elephanta-caves",
+        "mh-marine-drive",
+        "mh-siddhivinayak-temple",
+        "mh-haji-ali-dargah",
+        "mh-sanjay-gandhi-national-park",
+        "mh-chhatrapati-shivaji-maharaj-vastu-sangrahalaya",
+        "mh-juhu-beach"
+      ],
+      "hidden_gems": [
+        "mh-gem-banganga-tank",
+        "mh-gem-gilbert-hill",
+        "mh-gem-mahim-fort",
+        "mh-gem-bandra-fort",
+        "mh-gem-worli-fort",
+        "mh-gem-sewri-fort",
+        "mh-gem-sewri-flamingo-mudflats",
+        "mh-gem-global-vipassana-pagoda",
+        "mh-gem-mahakali-caves",
+        "mh-gem-jogeshwari-caves",
+        "mh-gem-mandapeshwar-caves",
+        "mh-gem-madh-fort",
+        "mh-gem-afghan-church",
+        "mh-gem-gorai-beach",
+        "mh-gem-worli-koliwada"
+      ]
+    },
+    {
+      "id": "mh-pune",
+      "name": "Pune",
+      "tagline": "Peshwa history, hills and forts.",
+      "blurb": "A cultural hub with Peshwa-era landmarks, museums and a ring of forts and caves within easy reach.",
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide photo that captures the spirit of Pune"
+      },
+      "attractions": [
+        "mh-shaniwar-wada",
+        "mh-aga-khan-palace",
+        "mh-dagdusheth-ganpati-temple",
+        "mh-sinhagad-fort",
+        "mh-raja-dinkar-kelkar-museum"
+      ],
+      "hidden_gems": [
+        "mh-gem-pataleshwar-cave-temple",
+        "mh-gem-vetal-tekdi",
+        "mh-gem-bhaja-caves",
+        "mh-gem-karla-caves",
+        "mh-gem-bedse-caves",
+        "mh-gem-lohagad-fort",
+        "mh-gem-visapur-fort",
+        "mh-gem-rajmachi-fort",
+        "mh-gem-purandar-fort",
+        "mh-gem-torna-fort",
+        "mh-gem-rajgad-fort",
+        "mh-gem-tamhini-ghat",
+        "mh-gem-mulshi-lake",
+        "mh-gem-pawna-lake",
+        "mh-gem-bhuleshwar-temple-yawat"
+      ]
+    },
+    {
+      "id": "mh-nashik",
+      "name": "Nashik",
+      "tagline": "Sacred river, caves and vineyards.",
+      "blurb": "A holy city on the Godavari that also hosts a growing wine scene and ancient caves.",
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide photo that captures the spirit of Nashik"
+      },
+      "attractions": [
+        "mh-trimbakeshwar-temple",
+        "mh-ramkund-panchavati",
+        "mh-kalaram-temple",
+        "mh-sula-vineyards"
+      ],
+      "hidden_gems": [
+        "mh-gem-pandavleni-caves",
+        "mh-gem-anjaneri-hill",
+        "mh-gem-someshwar-waterfall",
+        "mh-gem-harihar-fort",
+        "mh-gem-gangapur-dam"
+      ]
+    },
+    {
+      "id": "mh-chhatrapati-sambhajinagar",
+      "name": "Chhatrapati Sambhajinagar",
+      "tagline": "Gateway to Ajanta and Ellora.",
+      "blurb": "A city of historic gates and tombs, and the base for two of India's great cave complexes.",
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide photo that captures the spirit of Chhatrapati Sambhajinagar"
+      },
+      "attractions": [
+        "mh-ajanta-caves",
+        "mh-ellora-caves",
+        "mh-bibi-ka-maqbara",
+        "mh-daulatabad-fort",
+        "mh-panchakki"
+      ],
+      "hidden_gems": [
+        "mh-gem-pitalkhora-caves",
+        "mh-gem-khuldabad",
+        "mh-gem-himayat-bagh",
+        "mh-gem-soneri-mahal",
+        "mh-gem-mhaismal"
+      ]
+    },
+    {
+      "id": "mh-nagpur",
+      "name": "Nagpur",
+      "tagline": "Orange city at the heart of India.",
+      "blurb": "A central Indian city known for its oranges, Deekshabhoomi and nearby forests.",
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide photo that captures the spirit of Nagpur"
+      },
+      "attractions": [
+        "mh-deekshabhoomi",
+        "mh-zero-mile-stone",
+        "mh-sitabuldi-fort"
+      ],
+      "hidden_gems": [
+        "mh-gem-ramtek-fort",
+        "mh-gem-futala-lake",
+        "mh-gem-seminary-hills",
+        "mh-gem-dragon-palace-temple",
+        "mh-gem-ambazari-lake"
+      ]
+    },
+    {
+      "id": "mh-kolhapur",
+      "name": "Kolhapur",
+      "tagline": "Royal city of spicy food and wrestling.",
+      "blurb": "A palace town with a powerful Devi temple, a spicy food culture and old Maratha forts in the hills.",
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide photo that captures the spirit of Kolhapur"
+      },
+      "attractions": [
+        "mh-mahalakshmi-temple-kolhapur",
+        "mh-new-palace-kolhapur",
+        "mh-rankala-lake"
+      ],
+      "hidden_gems": [
+        "mh-gem-panhala-fort",
+        "mh-gem-pavankhind",
+        "mh-gem-bhudargad-fort",
+        "mh-gem-kopeshwar-temple-khidrapur",
+        "mh-gem-dajipur-wildlife-sanctuary"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "id": "mh-gateway-of-india",
+      "name": "Gateway of India",
+      "city_id": "mh-mumbai",
+      "category": "Heritage",
+      "sub_categories": [
+        "Monuments",
+        "Historical Buildings"
+      ],
+      "summary": "Mumbai's seafront arch, where the city first meets the sea.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Gateway of India, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A grand basalt arch on the Colaba waterfront, facing the Arabian Sea. It was built to mark the 1911 visit of King George V and Queen Mary and later became the symbol of Mumbai. Boats to Elephanta Island leave from the jetty right beside it.",
+        "important_facts": [
+          "Built in the Indo-Saracenic style using yellow basalt",
+          "Completed in 1924",
+          "Ferries to Elephanta Caves depart from the nearby jetty"
+        ],
+        "fascinating_facts": [
+          "The arch was built to welcome a royal visit in 1911, yet the last British troops left India through it in 1948."
+        ],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [
+          {
+            "name": "The Taj Mahal Palace",
+            "area": "Colaba"
+          }
+        ],
+        "nearby_restaurants": [
+          {
+            "name": "Leopold Cafe",
+            "area": "Colaba"
+          },
+          {
+            "name": "Cafe Mondegar",
+            "area": "Colaba"
+          }
+        ],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Come at sunrise for calm views; evenings get very crowded."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-csmt",
+      "name": "Chhatrapati Shivaji Maharaj Terminus (CSMT)",
+      "city_id": "mh-mumbai",
+      "category": "Heritage",
+      "sub_categories": [
+        "UNESCO World Heritage Sites",
+        "Historical Buildings"
+      ],
+      "summary": "A railway station that looks like a Gothic cathedral.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Chhatrapati Shivaji Maharaj Terminus (CSMT), showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "Formerly Victoria Terminus, this working railway station mixes Victorian Gothic with Indian palace styles. Carved stone, domes and turrets make it one of the most photographed buildings in Mumbai.",
+        "important_facts": [
+          "Designed by architect F. W. Stevens",
+          "Declared a UNESCO World Heritage Site in 2004",
+          "Completed in 1888"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Photograph the facade from across the road in the evening when it is lit up."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-elephanta-caves",
+      "name": "Elephanta Caves",
+      "city_id": "mh-mumbai",
+      "category": "Heritage",
+      "sub_categories": [
+        "UNESCO World Heritage Sites",
+        "Archeological Sites"
+      ],
+      "summary": "Rock-cut Shiva caves on an island in Mumbai harbour.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Elephanta Caves, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A short boat ride from Mumbai takes you to Gharapuri island, where ancient rock-cut caves hold powerful sculptures of Shiva. The giant three-faced Maheshamurti is the highlight.",
+        "important_facts": [
+          "Declared a UNESCO World Heritage Site in 1987",
+          "The main cave holds the Maheshamurti, a huge three-faced Shiva",
+          "Reached by ferry from the Gateway of India area"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": "October to March (needs verification)",
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Carry water and snacks; options on the island are limited."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-marine-drive",
+      "name": "Marine Drive",
+      "city_id": "mh-mumbai",
+      "category": "Nature",
+      "sub_categories": [
+        "Beaches & Cruises"
+      ],
+      "summary": "Mumbai's curved sea-front promenade, loved at sunset.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Marine Drive, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A long curve of road and sea wall along the Arabian Sea. When lit at night, the street lights look like a necklace, which is why it is called the Queen's Necklace. Locals come here to walk, sit on the wall and watch the sunset.",
+        "important_facts": [
+          "Called the Queen's Necklace for its night-time lights",
+          "Lined with Art Deco buildings"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Walk from Nariman Point towards Girgaum Chowpatty at dusk."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-siddhivinayak-temple",
+      "name": "Siddhivinayak Temple",
+      "city_id": "mh-mumbai",
+      "category": "Spiritual",
+      "sub_categories": [
+        "Hinduism"
+      ],
+      "summary": "One of Mumbai's most visited Ganesha temples.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Siddhivinayak Temple, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A busy and beloved Ganesha temple in Prabhadevi. Devotees from across the city queue here, especially on Tuesdays and during Ganesh Chaturthi.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Weekdays other than Tuesday are usually calmer."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-haji-ali-dargah",
+      "name": "Haji Ali Dargah",
+      "city_id": "mh-mumbai",
+      "category": "Spiritual",
+      "sub_categories": [
+        "Islam"
+      ],
+      "summary": "A white mosque and tomb out in the sea, reached by a walkway.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Haji Ali Dargah, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "The dargah of Pir Haji Ali Shah Bukhari sits on an islet off Worli, joined to the shore by a narrow causeway. At high tide the path goes under water, so timing matters.",
+        "important_facts": [
+          "Stands on an islet linked by a causeway to the shore",
+          "The causeway is cut off at high tide"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Check the tide before you go, as the causeway can be closed at high tide."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-sanjay-gandhi-national-park",
+      "name": "Sanjay Gandhi National Park",
+      "city_id": "mh-mumbai",
+      "category": "Wildlife",
+      "sub_categories": [
+        "National Parks"
+      ],
+      "summary": "A forest with leopards inside the city limits.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Sanjay Gandhi National Park, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A large green patch in northern Mumbai with forest trails, lakes and wildlife. It is also home to the Kanheri Caves, an ancient Buddhist site.",
+        "important_facts": [
+          "Home to the Kanheri Caves",
+          "Leopards are found in and around the park"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Wear sturdy shoes; trails are long and uneven."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-chhatrapati-shivaji-maharaj-vastu-sangrahalaya",
+      "name": "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya",
+      "city_id": "mh-mumbai",
+      "category": "Heritage",
+      "sub_categories": [
+        "Museums",
+        "Historical Buildings"
+      ],
+      "summary": "Mumbai's grand museum, in a landmark Indo-Saracenic building.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Chhatrapati Shivaji Maharaj Vastu Sangrahalaya, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "Formerly the Prince of Wales Museum, this museum in Kala Ghoda holds art, sculpture and historical objects inside a striking domed building with a garden.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Pair it with a walk through nearby Kala Ghoda's galleries and cafes."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-juhu-beach",
+      "name": "Juhu Beach",
+      "city_id": "mh-mumbai",
+      "category": "Nature",
+      "sub_categories": [
+        "Beaches & Cruises"
+      ],
+      "summary": "A busy city beach with street food and sunsets.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Juhu Beach, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "One of Mumbai's best-known beaches, popular for evening walks, sunsets and chaat and pav bhaji stalls.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Visit for the food and the people-watching; swimming is not recommended."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-banganga-tank",
+      "name": "Banganga Tank",
+      "city_id": "mh-mumbai",
+      "category": "Spiritual",
+      "sub_categories": [
+        "Hinduism"
+      ],
+      "summary": "A quiet ancient water tank hidden among Malabar Hill's tall buildings.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Banganga Tank, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "Stone steps, small temples and old houses surround this tank near Walkeshwar Temple. It feels like a small village in the middle of the city, and locals still come to bathe and pray.",
+        "important_facts": [],
+        "fascinating_facts": [
+          "Locals link the tank to a legend about Lord Ram, who is said to have created it."
+        ],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Go on a weekday morning for peace and soft light."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-gilbert-hill",
+      "name": "Gilbert Hill",
+      "city_id": "mh-mumbai",
+      "category": "Nature",
+      "sub_categories": [
+        "Hills & Mountains"
+      ],
+      "summary": "A giant black rock column rising in the middle of Andheri.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Gilbert Hill, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A rare natural basalt column formed from volcanic lava, standing near Andheri West. Steps lead to a small temple at the top.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Keep your visit short and respectful; it is a local worship spot."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-mahim-fort",
+      "name": "Mahim Fort",
+      "city_id": "mh-mumbai",
+      "category": "Heritage",
+      "sub_categories": [
+        "Palaces & Forts"
+      ],
+      "summary": "A colonial-era fort ruin at the Mahim sea edge.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Mahim Fort, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "An old coastal fort at Mahim, long known to local residents. Its walls look over the bay and the nearby fishing community.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Go in daylight and keep to the open, safe areas."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-bandra-fort",
+      "name": "Bandra Fort (Castella de Aguada)",
+      "city_id": "mh-mumbai",
+      "category": "Heritage",
+      "sub_categories": [
+        "Palaces & Forts"
+      ],
+      "summary": "A Portuguese sea fort with a view of the Bandra-Worli Sea Link.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Bandra Fort (Castella de Aguada), showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A small hill-top fort at Land's End, Bandra, built by the Portuguese in the 17th century. Locals come for the sunset and the sea breeze.",
+        "important_facts": [
+          "Built by the Portuguese in the 17th century"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Late afternoon gives the best light over the sea link."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-worli-fort",
+      "name": "Worli Fort",
+      "city_id": "mh-mumbai",
+      "category": "Heritage",
+      "sub_categories": [
+        "Palaces & Forts"
+      ],
+      "summary": "A small old fort guarding Worli's seaside.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Worli Fort, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A compact fort built in the late 17th century to watch over the sea channel. It sits near Worli's fishing village and offers wide sea views.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Combine it with a walk around Worli Koliwada."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-sewri-fort",
+      "name": "Sewri Fort",
+      "city_id": "mh-mumbai",
+      "category": "Heritage",
+      "sub_categories": [
+        "Palaces & Forts"
+      ],
+      "summary": "A quiet fort beside the mudflats where flamingos gather.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Sewri Fort, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A British-era fort at Sewri overlooking the Thane creek mudflats. From its walls you can see the sea and, in season, flamingos.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Carry binoculars during flamingo season."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-sewri-flamingo-mudflats",
+      "name": "Sewri Flamingo Mudflats",
+      "city_id": "mh-mumbai",
+      "category": "Wildlife",
+      "sub_categories": [
+        "Bird Watching"
+      ],
+      "summary": "Thousands of flamingos turn the mudflats pink every winter.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Sewri Flamingo Mudflats, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "Each year, flocks of flamingos arrive at Sewri's mudflats on the Thane creek. Local bird lovers know it as one of the city's best free wildlife sights.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": "Winter months, roughly November to March (needs verification)",
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Visit in the winter months and check the tide for best views."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-global-vipassana-pagoda",
+      "name": "Global Vipassana Pagoda",
+      "city_id": "mh-mumbai",
+      "category": "Spiritual",
+      "sub_categories": [
+        "Buddhism"
+      ],
+      "summary": "A huge golden pagoda with a calm meditation hall, away from the city rush.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Global Vipassana Pagoda, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "Located at Gorai, this pagoda was inspired by Myanmar's Shwedagon Pagoda. Its large dome holds a meditation hall and is a quiet escape for those who want stillness.",
+        "important_facts": [
+          "Inspired by the Shwedagon Pagoda of Myanmar"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Keep your voice low and phones silent; it is a meditation space."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-mahakali-caves",
+      "name": "Mahakali Caves (Kondivita Caves)",
+      "city_id": "mh-mumbai",
+      "category": "Heritage",
+      "sub_categories": [
+        "Archeological Sites"
+      ],
+      "summary": "Ancient Buddhist rock-cut caves hidden in an Andheri neighbourhood.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Mahakali Caves (Kondivita Caves), showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A group of old Buddhist caves cut into a hillside in Andheri East. Many Mumbaikars drive past without knowing they are there.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Wear good shoes; the climb has uneven steps."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-jogeshwari-caves",
+      "name": "Jogeshwari Caves",
+      "city_id": "mh-mumbai",
+      "category": "Heritage",
+      "sub_categories": [
+        "Archeological Sites"
+      ],
+      "summary": "A huge rock-cut cave temple among homes and shops.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Jogeshwari Caves, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "One of the larger rock-cut cave temples near Mumbai, with carved pillars and shrines. It is a living site, still used for worship.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Go on a weekday morning and respect worshippers."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-mandapeshwar-caves",
+      "name": "Mandapeshwar Caves",
+      "city_id": "mh-mumbai",
+      "category": "Heritage",
+      "sub_categories": [
+        "Archeological Sites"
+      ],
+      "summary": "Old cave temples beside a Portuguese-era church in Borivali.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Mandapeshwar Caves, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "Rock-cut caves with Hindu carvings, later reused by the Portuguese as part of a church. The mix of two eras on one hill is unusual.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Visit in daylight, ideally outside the hot afternoon."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-madh-fort",
+      "name": "Madh Fort",
+      "city_id": "mh-mumbai",
+      "category": "Heritage",
+      "sub_categories": [
+        "Palaces & Forts"
+      ],
+      "summary": "A sea fort near the Koli village of Madh, known mostly to locals.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Madh Fort, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "An old Portuguese-era fort on the Madh coast, seen from the sea and the lanes nearby. Local fishing communities live just beside it.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Be respectful of residents and avoid high tide."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-afghan-church",
+      "name": "Afghan Church (Church of St John the Evangelist)",
+      "city_id": "mh-mumbai",
+      "category": "Spiritual",
+      "sub_categories": [
+        "Christianity"
+      ],
+      "summary": "A tall-spired church in Colaba built to remember soldiers.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Afghan Church (Church of St John the Evangelist), showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "Built in memory of British soldiers who died in the First Afghan War, it stands in a quiet corner of Colaba. Stained glass and a high spire make it stand out.",
+        "important_facts": [
+          "Completed in 1858",
+          "Built in memory of soldiers who died in the First Afghan War"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Ask for visiting permission at the gate before entering."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-gorai-beach",
+      "name": "Gorai Beach",
+      "city_id": "mh-mumbai",
+      "category": "Nature",
+      "sub_categories": [
+        "Beaches & Cruises"
+      ],
+      "summary": "A calm, uncrowded beach reached by a short ferry.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Gorai Beach, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "Across the creek from Borivali, Gorai offers a quieter beach, small village lanes and easy access to the Global Pagoda.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Check ferry timings both ways before you cross."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-worli-koliwada",
+      "name": "Worli Koliwada",
+      "city_id": "mh-mumbai",
+      "category": "Rural",
+      "sub_categories": [
+        "Live Like a Local"
+      ],
+      "summary": "A working Koli fishing village beside Worli Fort.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Worli Koliwada, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "One of Mumbai's original fishing communities. Colourful boats, drying fish and old lanes show a city older than its skyline.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Ask before taking photographs of people or their homes."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-shaniwar-wada",
+      "name": "Shaniwar Wada",
+      "city_id": "mh-pune",
+      "category": "Heritage",
+      "sub_categories": [
+        "Palaces & Forts",
+        "Historical Buildings"
+      ],
+      "summary": "The Peshwa palace-fortress at the heart of old Pune.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Shaniwar Wada, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A huge fortified palace of the Peshwas with massive gates and open courtyards. Today it stands mostly as ruins, but the big gates and walls still show its power.",
+        "important_facts": [
+          "Built in 1732 under Peshwa Bajirao I",
+          "A major fire in 1828 destroyed much of the palace"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Visit in the evening for the light, or the sound-and-light show if running."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-aga-khan-palace",
+      "name": "Aga Khan Palace",
+      "city_id": "mh-pune",
+      "category": "Heritage",
+      "sub_categories": [
+        "Historical Buildings",
+        "Museums"
+      ],
+      "summary": "A graceful palace tied to Gandhi's years of detention.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Aga Khan Palace, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "Built in 1892 by Sultan Muhammed Shah Aga Khan III, the palace is known as a place where Mahatma Gandhi, Kasturba Gandhi and others were held in the 1940s. It now holds a memorial and small museum.",
+        "important_facts": [
+          "Built in 1892",
+          "Kasturba Gandhi and Mahadev Desai died here during detention"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Spend time in the gardens and the memorial rooms; it is quiet and moving."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-dagdusheth-ganpati-temple",
+      "name": "Shrimant Dagdusheth Halwai Ganpati Temple",
+      "city_id": "mh-pune",
+      "category": "Spiritual",
+      "sub_categories": [
+        "Hinduism"
+      ],
+      "summary": "Pune's best-known Ganesha temple, loved by locals.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Shrimant Dagdusheth Halwai Ganpati Temple, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A famous Ganesha temple in central Pune, bright with flowers and lights, especially during Ganesh Chaturthi.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Visit early morning for shorter queues."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-sinhagad-fort",
+      "name": "Sinhagad Fort",
+      "city_id": "mh-pune",
+      "category": "Heritage",
+      "sub_categories": [
+        "Palaces & Forts"
+      ],
+      "summary": "A hill fort with big views and a famous battle story.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Sinhagad Fort, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "Also known as Kondhana, this hill fort rises above Pune. It is known for the 1670 battle in which Tanaji Malusare died while capturing it for Shivaji Maharaj.",
+        "important_facts": [
+          "Also called Kondhana",
+          "Linked to Tanaji Malusare and the 1670 battle"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Go early on a weekend morning; the road and fort get busy later."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-raja-dinkar-kelkar-museum",
+      "name": "Raja Dinkar Kelkar Museum",
+      "city_id": "mh-pune",
+      "category": "Heritage",
+      "sub_categories": [
+        "Museums"
+      ],
+      "summary": "A wonderfully quirky private collection of everyday Indian objects.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Raja Dinkar Kelkar Museum, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A museum of lamps, musical instruments, utensils, carved doors and much more, collected by Dr. Dinkar Gangadhar Kelkar and named after his late son Raja.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Allow time; the collection is large and detailed."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-pataleshwar-cave-temple",
+      "name": "Pataleshwar Cave Temple",
+      "city_id": "mh-pune",
+      "category": "Heritage",
+      "sub_categories": [
+        "Archeological Sites"
+      ],
+      "summary": "A rock-cut Shiva temple tucked among city streets.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Pataleshwar Cave Temple, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "An 8th-century monolithic cave temple in Shivajinagar, carved from a single rock. It sits in the middle of a busy city, but inside it is calm.",
+        "important_facts": [
+          "Carved from a single rock in the 8th century"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Go on a weekday morning for quiet."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-vetal-tekdi",
+      "name": "Vetal Tekdi",
+      "city_id": "mh-pune",
+      "category": "Nature",
+      "sub_categories": [
+        "Forests & Gardens",
+        "Hills & Mountains"
+      ],
+      "summary": "A forested hill used by locals for morning walks.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Vetal Tekdi, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A green hill right inside Pune, loved by walkers and runners. Short trails lead to viewpoints over the city.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Go at sunrise; bring water."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-bhaja-caves",
+      "name": "Bhaja Caves",
+      "city_id": "mh-pune",
+      "category": "Heritage",
+      "sub_categories": [
+        "Archeological Sites"
+      ],
+      "summary": "Old Buddhist caves above a quiet village near Lonavala.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Bhaja Caves, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A group of Buddhist rock-cut caves dating to around the 2nd century BCE, with a short climb through green hills.",
+        "important_facts": [
+          "Dates to roughly the 2nd century BCE"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Best after the monsoon when waterfalls and greenery are at their peak."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-karla-caves",
+      "name": "Karla Caves",
+      "city_id": "mh-pune",
+      "category": "Heritage",
+      "sub_categories": [
+        "Archeological Sites"
+      ],
+      "summary": "A grand Buddhist prayer hall carved into a hillside.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Karla Caves, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "Known for a large, well-preserved chaitya hall with tall pillars. Visitors climb steps past a local temple to reach the caves.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Wear comfortable shoes for the climb."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-bedse-caves",
+      "name": "Bedse Caves",
+      "city_id": "mh-pune",
+      "category": "Heritage",
+      "sub_categories": [
+        "Archeological Sites"
+      ],
+      "summary": "Lesser-known Buddhist caves with a sweeping view of the Pavana valley.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Bedse Caves, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "Ancient caves cut into a hillside near Kamshet, often visited by trekkers rather than tour groups.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Carry water and avoid the midday sun."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-lohagad-fort",
+      "name": "Lohagad Fort",
+      "city_id": "mh-pune",
+      "category": "Adventure",
+      "sub_categories": [
+        "Hiking & Trekking"
+      ],
+      "summary": "An easy monsoon trek to a fort with a scorpion-tail wall.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Lohagad Fort, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A hill fort near Lonavala known for its Vinchu Kata, a long narrow spur shaped like a scorpion's tail. The climb is short and well loved by beginners.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Go on a weekday in monsoon to avoid crowds."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-visapur-fort",
+      "name": "Visapur Fort",
+      "city_id": "mh-pune",
+      "category": "Adventure",
+      "sub_categories": [
+        "Hiking & Trekking"
+      ],
+      "summary": "A bigger, quieter fort next to Lohagad.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Visapur Fort, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A sprawling hill fort near Lohagad with a large plateau and ruined structures. Many trekkers combine the two forts.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Start early; the climb is steeper than it looks."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-rajmachi-fort",
+      "name": "Rajmachi Fort",
+      "city_id": "mh-pune",
+      "category": "Adventure",
+      "sub_categories": [
+        "Hiking & Trekking"
+      ],
+      "summary": "A twin-fort trek through forest and village trails.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Rajmachi Fort, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A trek route with two fort peaks, Shrivardhan and Manoranjan, near Lonavala. It is often done as an overnight trek in the cooler months.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Carry torches and water if you plan to stay overnight."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-purandar-fort",
+      "name": "Purandar Fort",
+      "city_id": "mh-pune",
+      "category": "Heritage",
+      "sub_categories": [
+        "Palaces & Forts"
+      ],
+      "summary": "A hill fort tied to the birth of Chhatrapati Sambhaji Maharaj.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Purandar Fort, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A strong hill fort south-east of Pune, known for the Treaty of Purandar signed in 1665 and as the birthplace of Chhatrapati Sambhaji Maharaj.",
+        "important_facts": [
+          "The Treaty of Purandar was signed in 1665"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Check entry rules; parts may be under military control."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-torna-fort",
+      "name": "Torna Fort",
+      "city_id": "mh-pune",
+      "category": "Adventure",
+      "sub_categories": [
+        "Hiking & Trekking"
+      ],
+      "summary": "The first fort Shivaji Maharaj captured, now a favourite trek.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Torna Fort, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A high, windy fort in the Velhe region, also called Prachandagad. It is known as the first fort taken by Shivaji Maharaj as a teenager.",
+        "important_facts": [
+          "Also called Prachandagad"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Start before dawn; the climb is long."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-rajgad-fort",
+      "name": "Rajgad Fort",
+      "city_id": "mh-pune",
+      "category": "Heritage",
+      "sub_categories": [
+        "Palaces & Forts"
+      ],
+      "summary": "The long-time capital of Shivaji Maharaj before Raigad.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Rajgad Fort, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A vast fort with three machis (terraces) and a high Balekilla, used as a capital by Shivaji Maharaj for many years before Raigad.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Plan a full day; the fort is huge."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-tamhini-ghat",
+      "name": "Tamhini Ghat",
+      "city_id": "mh-pune",
+      "category": "Nature",
+      "sub_categories": [
+        "Hills & Mountains",
+        "Forests & Gardens"
+      ],
+      "summary": "A misty mountain road with waterfalls in monsoon.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Tamhini Ghat, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A scenic ghat section near Mulshi, known to locals for rain-soaked drives, waterfalls and green slopes.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Drive carefully and avoid weekends in peak monsoon."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-mulshi-lake",
+      "name": "Mulshi Lake",
+      "city_id": "mh-pune",
+      "category": "Nature",
+      "sub_categories": [
+        "Rivers & Lakes"
+      ],
+      "summary": "A calm reservoir ringed by hills, loved for quiet weekends.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Mulshi Lake, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A lake formed by the Mulshi dam on the Mula river. Villages and hill roads around it make a relaxed day trip.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Visit on a weekday for peace."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-pawna-lake",
+      "name": "Pawna Lake",
+      "city_id": "mh-pune",
+      "category": "Nature",
+      "sub_categories": [
+        "Rivers & Lakes"
+      ],
+      "summary": "A lakeside spot popular for camping near Lonavala.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Pawna Lake, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A large lake near Lonavala with views of Tung and Tikona forts, popular for camping and sunsets.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Book camps early on weekends."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-bhuleshwar-temple-yawat",
+      "name": "Bhuleshwar Temple, Yawat",
+      "city_id": "mh-pune",
+      "category": "Spiritual",
+      "sub_categories": [
+        "Hinduism"
+      ],
+      "summary": "A stone Shiva temple that looks like a small fort.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Bhuleshwar Temple, Yawat, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A Yadava-era temple at Yawat with carved stone and a fortified look, set against a hill. Few visitors know about it.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Check the temple's current visiting rules before you go."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-trimbakeshwar-temple",
+      "name": "Trimbakeshwar Temple",
+      "city_id": "mh-nashik",
+      "category": "Spiritual",
+      "sub_categories": [
+        "Hinduism"
+      ],
+      "summary": "A sacred Jyotirlinga temple near the origin of the Godavari.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Trimbakeshwar Temple, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "One of the twelve Jyotirlingas, set at the foot of Brahmagiri hill, near the source of the Godavari river.",
+        "important_facts": [
+          "One of the twelve Jyotirlingas"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Arrive early; queues grow through the morning."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-ramkund-panchavati",
+      "name": "Ramkund and Panchavati",
+      "city_id": "mh-nashik",
+      "category": "Spiritual",
+      "sub_categories": [
+        "Hinduism"
+      ],
+      "summary": "The sacred riverfront heart of Nashik.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Ramkund and Panchavati, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "Ramkund is a bathing tank on the Godavari where pilgrims gather. The surrounding Panchavati area has old temples and is linked to episodes of the Ramayana.",
+        "important_facts": [
+          "Nashik hosts the Kumbh Mela"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Come at dawn or at evening aarti."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-kalaram-temple",
+      "name": "Kalaram Temple",
+      "city_id": "mh-nashik",
+      "category": "Spiritual",
+      "sub_categories": [
+        "Hinduism"
+      ],
+      "summary": "A black stone Ram temple, a landmark of Panchavati.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Kalaram Temple, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "An 18th-century temple in Panchavati, known for its dark stone idol and carved stone walls.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Try to avoid peak festival days if you prefer a quiet visit."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-sula-vineyards",
+      "name": "Sula Vineyards",
+      "city_id": "mh-nashik",
+      "category": "Gastronomy",
+      "sub_categories": [
+        "Farm to Table",
+        "Beverages"
+      ],
+      "summary": "Nashik's best-known winery and vineyard setting.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Sula Vineyards, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A well-known vineyard and tasting destination that has helped Nashik become known for wine.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Book tastings in advance on weekends."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-pandavleni-caves",
+      "name": "Pandavleni Caves",
+      "city_id": "mh-nashik",
+      "category": "Heritage",
+      "sub_categories": [
+        "Archeological Sites"
+      ],
+      "summary": "Buddhist rock caves on a hill above the city.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Pandavleni Caves, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A group of ancient Buddhist caves, also called Trirashmi, carved into a hill south of Nashik.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Climb early; the steps can be tiring in heat."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-anjaneri-hill",
+      "name": "Anjaneri Hill",
+      "city_id": "mh-nashik",
+      "category": "Adventure",
+      "sub_categories": [
+        "Hiking & Trekking"
+      ],
+      "summary": "A trek to a hill believed to be Hanuman's birthplace.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Anjaneri Hill, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A hill near Trimbak, with a temple dedicated to Anjani Mata and wide valley views.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Go in the cooler months and carry water."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-someshwar-waterfall",
+      "name": "Someshwar Waterfall",
+      "city_id": "mh-nashik",
+      "category": "Nature",
+      "sub_categories": [
+        "Rivers & Lakes"
+      ],
+      "summary": "A popular local waterfall on the Godavari.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Someshwar Waterfall, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A pretty waterfall near Gangapur, close to Nashik. It is liveliest during and after the monsoon.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Be careful on wet rocks and keep away from deep water."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-harihar-fort",
+      "name": "Harihar Fort",
+      "city_id": "mh-nashik",
+      "category": "Adventure",
+      "sub_categories": [
+        "Hiking & Trekking"
+      ],
+      "summary": "A fort with a dramatic carved rock staircase.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Harihar Fort, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A thrilling trek to a fort reached by a near-vertical rock-cut staircase.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Not for those afraid of heights; go with an experienced guide."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-gangapur-dam",
+      "name": "Gangapur Dam",
+      "city_id": "mh-nashik",
+      "category": "Nature",
+      "sub_categories": [
+        "Rivers & Lakes"
+      ],
+      "summary": "A calm lake spot loved by Nashik locals.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Gangapur Dam, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A dam on the Godavari with a reservoir and green banks, good for an easy evening outing.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Visit at sunset for the best light."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-ajanta-caves",
+      "name": "Ajanta Caves",
+      "city_id": "mh-chhatrapati-sambhajinagar",
+      "category": "Heritage",
+      "sub_categories": [
+        "UNESCO World Heritage Sites",
+        "Archeological Sites"
+      ],
+      "summary": "Buddhist rock-cut caves with ancient wall paintings.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Ajanta Caves, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A series of Buddhist caves cut into a horseshoe-shaped gorge, known for beautiful murals and sculptures.",
+        "important_facts": [
+          "Declared a UNESCO World Heritage Site in 1983",
+          "Rediscovered by a British officer in 1819"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": "Monday",
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Carry a torch for dark corners and bring water."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-ellora-caves",
+      "name": "Ellora Caves",
+      "city_id": "mh-chhatrapati-sambhajinagar",
+      "category": "Heritage",
+      "sub_categories": [
+        "UNESCO World Heritage Sites",
+        "Archeological Sites"
+      ],
+      "summary": "Buddhist, Hindu and Jain caves, including the huge Kailasa temple.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Ellora Caves, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A cave complex with Buddhist, Hindu and Jain monuments. Cave 16, the Kailasa temple, is carved from one rock.",
+        "important_facts": [
+          "Declared a UNESCO World Heritage Site in 1983",
+          "Cave 16 is the monolithic Kailasa temple"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": "Tuesday",
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Start at the Kailasa temple before the crowds."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-bibi-ka-maqbara",
+      "name": "Bibi Ka Maqbara",
+      "city_id": "mh-chhatrapati-sambhajinagar",
+      "category": "Heritage",
+      "sub_categories": [
+        "Monuments"
+      ],
+      "summary": "A white-domed tomb often called the Taj of the Deccan.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Bibi Ka Maqbara, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "Built in the 17th century in memory of Dilras Banu Begum, wife of Aurangzeb, by her son Prince Azam Shah.",
+        "important_facts": [
+          "Often called the 'Taj of the Deccan'"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Visit near sunset for softer light."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-daulatabad-fort",
+      "name": "Daulatabad Fort",
+      "city_id": "mh-chhatrapati-sambhajinagar",
+      "category": "Heritage",
+      "sub_categories": [
+        "Palaces & Forts"
+      ],
+      "summary": "A hilltop fort with a dark, winding underground passage.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Daulatabad Fort, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "Once called Devagiri, this fort was briefly made capital by Muhammad bin Tughlaq in the 14th century.",
+        "important_facts": [
+          "Muhammad bin Tughlaq shifted his capital here in 1327"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Carry a torch and wear sturdy shoes."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-panchakki",
+      "name": "Panchakki",
+      "city_id": "mh-chhatrapati-sambhajinagar",
+      "category": "Heritage",
+      "sub_categories": [
+        "Historical Buildings"
+      ],
+      "summary": "A 17th-century water-powered flour mill with a dargah.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Panchakki, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A historic water mill linked to the dargah of Baba Shah Musafir, known for its clever water channels.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Combine it with a visit to Bibi Ka Maqbara."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-pitalkhora-caves",
+      "name": "Pitalkhora Caves",
+      "city_id": "mh-chhatrapati-sambhajinagar",
+      "category": "Heritage",
+      "sub_categories": [
+        "Archeological Sites"
+      ],
+      "summary": "Some of India's earliest Buddhist rock-cut caves.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Pitalkhora Caves, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A quiet cave group near Kannad, much older than Ajanta and rarely visited.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Check road and access conditions before you go."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-khuldabad",
+      "name": "Khuldabad",
+      "city_id": "mh-chhatrapati-sambhajinagar",
+      "category": "Heritage",
+      "sub_categories": [
+        "Historical Sites"
+      ],
+      "summary": "A quiet town with the simple tomb of Aurangzeb.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Khuldabad, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A small walled town near Ellora, with dargahs and the plain tomb of Emperor Aurangzeb.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Dress modestly and cover your head at dargahs."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-himayat-bagh",
+      "name": "Himayat Bagh",
+      "city_id": "mh-chhatrapati-sambhajinagar",
+      "category": "Nature",
+      "sub_categories": [
+        "Forests & Gardens"
+      ],
+      "summary": "A mango-orchard garden used by locals for walks.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Himayat Bagh, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A leafy garden-orchard in the city, with old trees and calm paths.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Go at morning or evening for cooler air."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-soneri-mahal",
+      "name": "Soneri Mahal",
+      "city_id": "mh-chhatrapati-sambhajinagar",
+      "category": "Heritage",
+      "sub_categories": [
+        "Historical Buildings"
+      ],
+      "summary": "A small old palace with painted rooms.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Soneri Mahal, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A historic palace building now used as a small museum, with decorated walls and peaceful courtyards.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Check current visiting hours before travelling."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-mhaismal",
+      "name": "Mhaismal",
+      "city_id": "mh-chhatrapati-sambhajinagar",
+      "category": "Nature",
+      "sub_categories": [
+        "Hills & Mountains"
+      ],
+      "summary": "A small hill station on the Deccan plateau.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Mhaismal, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A cool-weather hill spot known for sunsets, viewpoints and a calm, rural pace.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Visit in the monsoon or winter for the best weather."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-deekshabhoomi",
+      "name": "Deekshabhoomi",
+      "city_id": "mh-nagpur",
+      "category": "Spiritual",
+      "sub_categories": [
+        "Buddhism"
+      ],
+      "summary": "The great white stupa where Dr. Ambedkar embraced Buddhism.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Deekshabhoomi, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A sacred Buddhist site where Dr. B. R. Ambedkar took Buddhism with a large number of followers in 1956. A huge stupa now stands here.",
+        "important_facts": [
+          "Dr. B. R. Ambedkar embraced Buddhism here in 1956"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Visit around Dhamma Chakra Pravartan Din for a big gathering."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-zero-mile-stone",
+      "name": "Zero Mile Stone",
+      "city_id": "mh-nagpur",
+      "category": "Heritage",
+      "sub_categories": [
+        "Monuments"
+      ],
+      "summary": "A marker for the geographic centre of India.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Zero Mile Stone, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "Set up in 1907 during the Great Trigonometrical Survey as a reference point. A small monument stands at the spot.",
+        "important_facts": [
+          "Set up in 1907"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "A short stop; combine with other city sights."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-sitabuldi-fort",
+      "name": "Sitabuldi Fort",
+      "city_id": "mh-nagpur",
+      "category": "Heritage",
+      "sub_categories": [
+        "Palaces & Forts"
+      ],
+      "summary": "A small hill fort tied to the 1817 battle.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Sitabuldi Fort, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A fort on a hill in central Nagpur, known for the Battle of Sitabuldi in 1817.",
+        "important_facts": [
+          "Battle of Sitabuldi fought in 1817"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Check access rules, as parts may be restricted."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-ramtek-fort",
+      "name": "Ramtek Fort",
+      "city_id": "mh-nagpur",
+      "category": "Spiritual",
+      "sub_categories": [
+        "Hinduism"
+      ],
+      "summary": "A hill-top temple complex linked to the Ramayana.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Ramtek Fort, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A temple complex on a hill near Nagpur, linked to Lord Ram in local tradition, with wide views.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Climb early and carry water."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-futala-lake",
+      "name": "Futala Lake",
+      "city_id": "mh-nagpur",
+      "category": "Nature",
+      "sub_categories": [
+        "Rivers & Lakes"
+      ],
+      "summary": "Nagpur's favourite lakeside evening spot.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Futala Lake, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A city lake with a food street and sunset crowd, known to every local.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Come for the evening snacks."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-seminary-hills",
+      "name": "Seminary Hills",
+      "city_id": "mh-nagpur",
+      "category": "Nature",
+      "sub_categories": [
+        "Forests & Gardens",
+        "Hills & Mountains"
+      ],
+      "summary": "A green hill for morning walks and city views.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Seminary Hills, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A hill with forest cover and viewpoints, loved by walkers.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Go in the morning for cooler air."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-dragon-palace-temple",
+      "name": "Dragon Palace Temple, Kamptee",
+      "city_id": "mh-nagpur",
+      "category": "Spiritual",
+      "sub_categories": [
+        "Buddhism"
+      ],
+      "summary": "A peaceful Buddhist temple with a garden and a reclining Buddha.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Dragon Palace Temple, Kamptee, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A well-kept Buddhist temple at Kamptee, built with Japanese support, known for its calm gardens.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Keep your voice low and respect shoes-off rules."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-ambazari-lake",
+      "name": "Ambazari Lake",
+      "city_id": "mh-nagpur",
+      "category": "Nature",
+      "sub_categories": [
+        "Rivers & Lakes"
+      ],
+      "summary": "A calm lake with a garden, popular with families.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Ambazari Lake, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "One of Nagpur's old lakes, with a garden alongside and sunset walks.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Evenings are lively; mornings are peaceful."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-mahalakshmi-temple-kolhapur",
+      "name": "Mahalakshmi (Ambabai) Temple",
+      "city_id": "mh-kolhapur",
+      "category": "Spiritual",
+      "sub_categories": [
+        "Hinduism"
+      ],
+      "summary": "A powerful Shakti Peetha at the heart of Kolhapur.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Mahalakshmi (Ambabai) Temple, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A famous Devi temple in Kolhapur, regarded as a Shakti Peetha, drawing devotees from across India.",
+        "important_facts": [
+          "Regarded as a Shakti Peetha"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Avoid festival days if you want a quieter visit."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-new-palace-kolhapur",
+      "name": "New Palace Kolhapur",
+      "city_id": "mh-kolhapur",
+      "category": "Heritage",
+      "sub_categories": [
+        "Palaces & Forts",
+        "Museums"
+      ],
+      "summary": "A grand palace of the Kolhapur royal family, now partly a museum.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of New Palace Kolhapur, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A stone palace in Indo-Saracenic style, built in the late 19th century and designed by Major Charles Mant.",
+        "important_facts": [
+          "Built between 1877 and 1884",
+          "Designed by Major Charles Mant"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Allow time for the museum rooms."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-rankala-lake",
+      "name": "Rankala Lake",
+      "city_id": "mh-kolhapur",
+      "category": "Nature",
+      "sub_categories": [
+        "Rivers & Lakes"
+      ],
+      "summary": "A beloved lake where Kolhapur gathers in the evening.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Rankala Lake, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A city lake with a walkway and snack stalls, known for sunset gatherings.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Try local snacks from the stalls."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-panhala-fort",
+      "name": "Panhala Fort",
+      "city_id": "mh-kolhapur",
+      "category": "Heritage",
+      "sub_categories": [
+        "Palaces & Forts"
+      ],
+      "summary": "A huge hill fort with strong Maratha history.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Panhala Fort, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A large fort on a hill above Kolhapur, with old walls, gates and wide views.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Go early and wear good shoes."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-pavankhind",
+      "name": "Pavankhind",
+      "city_id": "mh-kolhapur",
+      "category": "Heritage",
+      "sub_categories": [
+        "Historical Sites"
+      ],
+      "summary": "A mountain pass remembered for Baji Prabhu Deshpande's stand.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Pavankhind, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A historic pass near Vishalgad, linked to Baji Prabhu Deshpande's last stand in 1660.",
+        "important_facts": [
+          "Linked to the stand of Baji Prabhu Deshpande in 1660"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Read the memorial information to understand the story."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-bhudargad-fort",
+      "name": "Bhudargad Fort",
+      "city_id": "mh-kolhapur",
+      "category": "Adventure",
+      "sub_categories": [
+        "Hiking & Trekking"
+      ],
+      "summary": "A large hill fort tucked into the Sahyadri foothills.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Bhudargad Fort, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A big hill fort with old walls and a quiet setting, away from tour routes.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Wear sturdy shoes and carry water."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-kopeshwar-temple-khidrapur",
+      "name": "Kopeshwar Temple, Khidrapur",
+      "city_id": "mh-kolhapur",
+      "category": "Spiritual",
+      "sub_categories": [
+        "Hinduism"
+      ],
+      "summary": "A beautifully carved stone temple on the Krishna riverbank.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Kopeshwar Temple, Khidrapur, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A medieval Shiva temple with finely carved stone pillars and a round open hall.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Ask locals for the best spots to see the carvings."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-gem-dajipur-wildlife-sanctuary",
+      "name": "Radhanagari Wildlife Sanctuary (Dajipur)",
+      "city_id": "mh-kolhapur",
+      "category": "Wildlife",
+      "sub_categories": [
+        "Wildlife Sanctuaries"
+      ],
+      "summary": "A forest sanctuary known for Indian gaur (bison).",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Radhanagari Wildlife Sanctuary (Dajipur), showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A wildlife sanctuary with dense forest, known for gaur and rich birdlife.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Check permits and seasonal access before going."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-raigad-fort",
+      "name": "Raigad Fort",
+      "city_id": null,
+      "category": "Heritage",
+      "sub_categories": [
+        "Palaces & Forts"
+      ],
+      "summary": "The hill fort where Shivaji Maharaj was crowned.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Raigad Fort, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A mountain fort that served as Shivaji Maharaj's capital, where he was crowned in 1674.",
+        "important_facts": [
+          "Coronation of Shivaji Maharaj held here in 1674"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "A ropeway exists; check its current operation."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "mh-shirdi-sai-baba-temple",
+      "name": "Shirdi Sai Baba Temple",
+      "city_id": null,
+      "category": "Spiritual",
+      "sub_categories": [
+        "Hinduism",
+        "Islam"
+      ],
+      "summary": "One of India's most-visited pilgrim towns.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Shirdi Sai Baba Temple, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "The temple complex of Sai Baba in Shirdi draws devotees of many faiths across the year.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Book darshan online where possible, as queues can be long."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    }
+  ]
+}

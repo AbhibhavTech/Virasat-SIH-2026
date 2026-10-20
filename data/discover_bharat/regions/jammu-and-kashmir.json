@@ -1,0 +1,1167 @@
+{
+  "region": {
+    "id": "jk",
+    "name": "Jammu and Kashmir",
+    "type": "union_territory",
+    "tagline": "Lakes, snow peaks and old shrines.",
+    "overview": "Jammu and Kashmir blends alpine meadows, Dal Lake's houseboats, Mughal gardens and sacred shrines like Vaishno Devi and Hazratbal. Visit in spring for tulips, summer for meadows, autumn for chinar colour and winter for snow.",
+    "image": {
+      "url": null,
+      "status": "needed",
+      "brief": "Original or licensed wide photo of Dal Lake at sunrise with shikaras"
+    },
+    "top_attractions": [
+      "jk-dal-lake",
+      "jk-shalimar-bagh",
+      "jk-tulip-garden",
+      "jk-shankaracharya-temple",
+      "jk-hazratbal-shrine",
+      "jk-gulmarg-gondola",
+      "jk-pahalgam-valley",
+      "jk-sonamarg",
+      "jk-vaishno-devi",
+      "jk-raghunath-temple",
+      "jk-amar-mahal-museum",
+      "jk-bahu-fort"
+    ],
+    "cities": [
+      "jk-srinagar",
+      "jk-jammu",
+      "jk-gulmarg",
+      "jk-pahalgam",
+      "jk-sonamarg",
+      "jk-katra"
+    ],
+    "live_updates": [
+      {
+        "title": "Autumn chinar colours",
+        "description": "Chinar trees across Srinagar's gardens turn gold and red in October and November.",
+        "start_date": null,
+        "end_date": null,
+        "date_status": "needs_verification"
+      },
+      {
+        "title": "Saffron harvest, Pampore",
+        "description": "Saffron fields near Pampore flower and are harvested in autumn.",
+        "start_date": null,
+        "end_date": null,
+        "date_status": "needs_verification"
+      },
+      {
+        "title": "Gulmarg ski season",
+        "description": "Snow arrives in winter and the gondola becomes the gateway to skiing.",
+        "start_date": null,
+        "end_date": null,
+        "date_status": "needs_verification"
+      },
+      {
+        "title": "Tulip Garden season",
+        "description": "The Tulip Garden opens in spring for a short bloom season.",
+        "start_date": null,
+        "end_date": null,
+        "date_status": "needs_verification"
+      },
+      {
+        "title": "Amarnath Yatra",
+        "description": "A major annual pilgrimage in summer; Pahalgam and Baltal are the main base points.",
+        "start_date": null,
+        "end_date": null,
+        "date_status": "needs_verification"
+      },
+      {
+        "title": "Winter road closures",
+        "description": "Roads to Zoji La and Gurez can close in winter; check current road status before travel.",
+        "start_date": null,
+        "end_date": null,
+        "date_status": "needs_verification"
+      }
+    ]
+  },
+  "cities": [
+    {
+      "id": "jk-srinagar",
+      "name": "Srinagar",
+      "tagline": "Lakes, gardens and houseboats.",
+      "blurb": "Kashmir's capital with Dal Lake, Mughal gardens and old shrines.",
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide photo capturing Srinagar"
+      },
+      "attractions": [
+        "jk-dal-lake",
+        "jk-shalimar-bagh",
+        "jk-nishat-bagh",
+        "jk-tulip-garden",
+        "jk-shankaracharya-temple",
+        "jk-hazratbal-shrine",
+        "jk-jamia-masjid-srinagar"
+      ],
+      "hidden_gems": [
+        "jk-gem-gurez-valley",
+        "jk-gem-lolab-valley",
+        "jk-gem-manasbal-lake"
+      ]
+    },
+    {
+      "id": "jk-jammu",
+      "name": "Jammu",
+      "tagline": "City of temples.",
+      "blurb": "Winter capital with temples, forts and royal palaces.",
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide photo capturing Jammu"
+      },
+      "attractions": [
+        "jk-raghunath-temple",
+        "jk-amar-mahal-museum",
+        "jk-bahu-fort"
+      ],
+      "hidden_gems": []
+    },
+    {
+      "id": "jk-gulmarg",
+      "name": "Gulmarg",
+      "tagline": "Skiing and meadows.",
+      "blurb": "A high meadow town known for snow sports and mountain views.",
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide photo capturing Gulmarg"
+      },
+      "attractions": [
+        "jk-gulmarg-gondola"
+      ],
+      "hidden_gems": []
+    },
+    {
+      "id": "jk-pahalgam",
+      "name": "Pahalgam",
+      "tagline": "Valley of shepherds.",
+      "blurb": "A river valley resort with meadows, pines and trails.",
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide photo capturing Pahalgam"
+      },
+      "attractions": [
+        "jk-pahalgam-valley"
+      ],
+      "hidden_gems": [
+        "jk-gem-aharbal-waterfall",
+        "jk-gem-verinag-spring"
+      ]
+    },
+    {
+      "id": "jk-sonamarg",
+      "name": "Sonamarg",
+      "tagline": "Meadow of gold.",
+      "blurb": "A glacier-side meadow on the road to Zoji La.",
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide photo capturing Sonamarg"
+      },
+      "attractions": [
+        "jk-sonamarg"
+      ],
+      "hidden_gems": []
+    },
+    {
+      "id": "jk-katra",
+      "name": "Katra",
+      "tagline": "Gateway to Vaishno Devi.",
+      "blurb": "The pilgrim base for the Vaishno Devi shrine.",
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide photo capturing Katra"
+      },
+      "attractions": [
+        "jk-vaishno-devi"
+      ],
+      "hidden_gems": []
+    }
+  ],
+  "attractions": [
+    {
+      "id": "jk-dal-lake",
+      "name": "Dal Lake",
+      "city_id": "jk-srinagar",
+      "category": "Nature",
+      "sub_categories": [
+        "Rivers & Lakes"
+      ],
+      "summary": "Shikara rides, floating gardens and houseboats against the Zabarwan hills.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Dal Lake, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "The heart of Srinagar's visitor life. Wooden shikaras glide past houseboats, lotus beds and floating vegetable gardens, with mountains rising behind.",
+        "important_facts": [
+          "Famous for houseboats and shikaras",
+          "Has floating gardens locally called raad"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": "Spring to autumn (needs verification)",
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Take a sunrise shikara ride to see the floating vegetable market."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "jk-shalimar-bagh",
+      "name": "Shalimar Bagh",
+      "city_id": "jk-srinagar",
+      "category": "Heritage",
+      "sub_categories": [
+        "Monuments",
+        "Historical Sites"
+      ],
+      "summary": "A terraced Mughal garden with chinar trees and fountains.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Shalimar Bagh, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A formal garden laid out in terraces along a central water channel, with tall chinar trees and flower beds against the mountains.",
+        "important_facts": [
+          "Built in 1619 by Emperor Jahangir for Nur Jahan"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Visit in autumn when chinar leaves turn gold and red."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "jk-nishat-bagh",
+      "name": "Nishat Bagh",
+      "city_id": "jk-srinagar",
+      "category": "Heritage",
+      "sub_categories": [
+        "Monuments",
+        "Historical Sites"
+      ],
+      "summary": "The 'Garden of Pleasure' with twelve terraces facing Dal Lake.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Nishat Bagh, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A broad Mughal garden rising in terraces from the lake edge, with cascades and views across Dal Lake.",
+        "important_facts": [
+          "Built in 1633 by Asaf Khan, Nur Jahan's brother"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Pair it with Shalimar Bagh and Chashme Shahi in one afternoon."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "jk-tulip-garden",
+      "name": "Indira Gandhi Memorial Tulip Garden",
+      "city_id": "jk-srinagar",
+      "category": "Nature",
+      "sub_categories": [
+        "Forests & Gardens"
+      ],
+      "summary": "Asia's largest tulip garden, ablaze every spring.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Indira Gandhi Memorial Tulip Garden, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A garden on the Zabarwan slope that bursts with tulips in many colours each spring. It opens only for a short season.",
+        "important_facts": [
+          "Opened in 2007",
+          "Described as Asia's largest tulip garden"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": "Spring, roughly late March to April (needs verification)",
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Visit early in the morning on weekdays."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "jk-shankaracharya-temple",
+      "name": "Shankaracharya Temple",
+      "city_id": "jk-srinagar",
+      "category": "Spiritual",
+      "sub_categories": [
+        "Hinduism"
+      ],
+      "summary": "An old hilltop Shiva temple with the best view over Srinagar.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Shankaracharya Temple, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A stone temple on Shankaracharya Hill, reached by a flight of steps, with wide views over Srinagar, Dal Lake and the valley.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Carry ID, as security checks are common on the road up."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "jk-hazratbal-shrine",
+      "name": "Hazratbal Shrine",
+      "city_id": "jk-srinagar",
+      "category": "Spiritual",
+      "sub_categories": [
+        "Islam"
+      ],
+      "summary": "A white marble shrine on the shore of Dal Lake.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Hazratbal Shrine, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "One of Kashmir's most important Muslim shrines, set in a calm, open compound beside the lake.",
+        "important_facts": [
+          "Houses a relic revered by devotees"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Dress modestly and be quiet; women may have limited access areas."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "jk-jamia-masjid-srinagar",
+      "name": "Jamia Masjid, Srinagar",
+      "city_id": "jk-srinagar",
+      "category": "Spiritual",
+      "sub_categories": [
+        "Islam"
+      ],
+      "summary": "A big wooden-pillared mosque in old Srinagar.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Jamia Masjid, Srinagar, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A large Indo-Saracenic mosque with tall deodar wooden pillars and a quiet central courtyard.",
+        "important_facts": [
+          "Originally built in 1394 by Sultan Sikandar"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Ask about visiting times before you go."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "jk-gulmarg-gondola",
+      "name": "Gulmarg Gondola",
+      "city_id": "jk-gulmarg",
+      "category": "Adventure",
+      "sub_categories": [
+        "Skiing",
+        "Mountaineering & Rock Climbing"
+      ],
+      "summary": "A cable-car ride up to snow slopes with huge views.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Gulmarg Gondola, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A cable car lifts you above Gulmarg's meadow to high snowfields. In winter it is the gateway to skiing and snowboarding; in summer it offers wide views.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": "Winter for skiing, spring to autumn for meadows (needs verification)",
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Book tickets early in peak season; wind can stop the ride."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "jk-pahalgam-valley",
+      "name": "Pahalgam Valley",
+      "city_id": "jk-pahalgam",
+      "category": "Nature",
+      "sub_categories": [
+        "Rivers & Lakes",
+        "Forests & Gardens"
+      ],
+      "summary": "Green meadows and the Lidder river in the Himalayan foothills.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Pahalgam Valley, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A valley town on the Lidder river with pine forests, meadows and day walks. It is also a starting base for the Amarnath Yatra.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Take a pony or walk to nearby meadows rather than driving everywhere."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "jk-sonamarg",
+      "name": "Sonamarg",
+      "city_id": "jk-sonamarg",
+      "category": "Nature",
+      "sub_categories": [
+        "Hills & Mountains"
+      ],
+      "summary": "The 'Meadow of Gold' under glaciers and snow peaks.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Sonamarg, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A mountain meadow on the road to Zoji La, with the Sindh river and glaciers like Thajiwas close by.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Roads to Zoji La can close in winter; check conditions before travelling."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "jk-vaishno-devi",
+      "name": "Vaishno Devi Shrine",
+      "city_id": "jk-katra",
+      "category": "Spiritual",
+      "sub_categories": [
+        "Hinduism"
+      ],
+      "summary": "A cave shrine in the Trikuta hills reached by a long pilgrim trek.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Vaishno Devi Shrine, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "One of India's most visited pilgrimages. The yatra starts at Katra and climbs to a cave shrine on the Trikuta hills; options include walking, ponies and a helicopter shuttle.",
+        "important_facts": [
+          "The pilgrim trek from Katra is about 12 km long"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Register for the yatra before you start and take a rest at stops on the way."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "jk-raghunath-temple",
+      "name": "Raghunath Temple",
+      "city_id": "jk-jammu",
+      "category": "Spiritual",
+      "sub_categories": [
+        "Hinduism"
+      ],
+      "summary": "Jammu's grand complex of temples dedicated to Lord Rama.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Raghunath Temple, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A large temple complex in the heart of old Jammu, with many shrines around a central courtyard and carved stone domes.",
+        "important_facts": [
+          "Built in 1835 by Maharaja Gulab Singh, completed by Maharaja Ranbir Singh"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Evening aarti is the best time to visit."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "jk-amar-mahal-museum",
+      "name": "Amar Mahal Palace Museum",
+      "city_id": "jk-jammu",
+      "category": "Heritage",
+      "sub_categories": [
+        "Palaces & Forts",
+        "Museums"
+      ],
+      "summary": "A red French-chateau-style palace turned museum.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Amar Mahal Palace Museum, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A red sandstone palace built for the Dogra royal family in a French chateau style, now holding art and royal collections.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Plan a slow visit; there is much to see."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "jk-bahu-fort",
+      "name": "Bahu Fort",
+      "city_id": "jk-jammu",
+      "category": "Heritage",
+      "sub_categories": [
+        "Palaces & Forts"
+      ],
+      "summary": "A hilltop fort above the Tawi river with a popular Kali temple.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Bahu Fort, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A fort on the banks of the Tawi river, believed to be among the oldest in Jammu, with a garden and a Kali temple inside.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Visit at sunset for the best light over the river."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "jk-gem-gurez-valley",
+      "name": "Gurez Valley",
+      "city_id": "jk-srinagar",
+      "category": "Nature",
+      "sub_categories": [
+        "Hills & Mountains",
+        "Rivers & Lakes"
+      ],
+      "summary": "A remote Himalayan valley beside the Kishanganga river.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Gurez Valley, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A far-flung valley in Bandipora district, with meadows, peaks and Dard villages. It is quiet and rarely visited.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Check travel rules and road conditions, as access closes in winter."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "jk-gem-lolab-valley",
+      "name": "Lolab Valley",
+      "city_id": "jk-srinagar",
+      "category": "Nature",
+      "sub_categories": [
+        "Forests & Gardens"
+      ],
+      "summary": "A green valley of orchards and forest in Kupwara.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Lolab Valley, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A lush valley known for apple and walnut orchards, forests and small villages.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Check the latest travel advice before heading out."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "jk-gem-manasbal-lake",
+      "name": "Manasbal Lake",
+      "city_id": "jk-srinagar",
+      "category": "Nature",
+      "sub_categories": [
+        "Rivers & Lakes"
+      ],
+      "summary": "A calm lake north of Srinagar with lotus blooms in summer.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Manasbal Lake, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A quiet lake with lotus flowers and old Mughal-era garden remains on its shore.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Visit early morning for stillness."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "jk-gem-aharbal-waterfall",
+      "name": "Aharbal Waterfall",
+      "city_id": "jk-pahalgam",
+      "category": "Nature",
+      "sub_categories": [
+        "Rivers & Lakes",
+        "Forests & Gardens"
+      ],
+      "summary": "A thundering waterfall in a forested gorge in Kulgam.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Aharbal Waterfall, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A strong waterfall on the Veshaw river, in forest and meadows, loved by local families.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Visit in summer or autumn; the road may close in winter."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "jk-gem-verinag-spring",
+      "name": "Verinag Spring",
+      "city_id": "jk-pahalgam",
+      "category": "Heritage",
+      "sub_categories": [
+        "Historical Sites",
+        "Monuments"
+      ],
+      "summary": "A Mughal-era octagonal spring at the source of the Jhelum.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Verinag Spring, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A clear spring enclosed by a stone octagonal tank and arcades, believed to be the source of the Jhelum river.",
+        "important_facts": [
+          "Mughal-era garden built under Jahangir in 1620"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Walk the garden slowly; it is a calm spot."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    }
+  ]
+}

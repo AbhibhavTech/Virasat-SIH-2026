@@ -1,0 +1,1347 @@
+{
+  "region": {
+    "id": "wb",
+    "name": "West Bengal",
+    "type": "state",
+    "tagline": "From mangrove tigers to Himalayan tea.",
+    "overview": "West Bengal stretches from the Himalayas to the Bay of Bengal. Kolkata offers colonial buildings, theatre and street food. Darjeeling and the Dooars bring tea hills and rhinos, while the Sundarbans hide tigers in mangrove creeks and Santiniketan keeps Tagore's art alive.",
+    "image": {
+      "url": null,
+      "status": "needed",
+      "brief": "Original or licensed wide photo of Victoria Memorial at sunset"
+    },
+    "top_attractions": [
+      "wb-victoria-memorial",
+      "wb-howrah-bridge",
+      "wb-dakshineswar-kali-temple",
+      "wb-indian-museum",
+      "wb-belur-math",
+      "wb-darjeeling-himalayan-railway",
+      "wb-tiger-hill",
+      "wb-sundarbans-national-park",
+      "wb-santiniketan",
+      "wb-bishnupur-terracotta-temples",
+      "wb-hazarduari-palace",
+      "wb-jaldapara-national-park"
+    ],
+    "cities": [
+      "wb-kolkata",
+      "wb-darjeeling",
+      "wb-kalimpong",
+      "wb-siliguri",
+      "wb-santiniketan",
+      "wb-murshidabad",
+      "wb-bishnupur"
+    ],
+    "live_updates": [
+      {
+        "title": "Durga Puja",
+        "description": "Kolkata's biggest festival fills the city with themed pandals, idol art and street food; it takes place in autumn.",
+        "start_date": null,
+        "end_date": null,
+        "date_status": "needs_verification"
+      },
+      {
+        "title": "Kali Puja and Diwali",
+        "description": "Late autumn sees Kali Puja across Bengal with lamps and late-night processions.",
+        "start_date": null,
+        "end_date": null,
+        "date_status": "needs_verification"
+      },
+      {
+        "title": "Poush Mela, Santiniketan",
+        "description": "A winter fair of folk music, crafts and bazaars held at Santiniketan.",
+        "start_date": null,
+        "end_date": null,
+        "date_status": "needs_verification"
+      },
+      {
+        "title": "Darjeeling autumn flush",
+        "description": "Autumn is a tea-harvest season and gives some of the clearest mountain views.",
+        "start_date": null,
+        "end_date": null,
+        "date_status": "needs_verification"
+      },
+      {
+        "title": "Kolkata Book Fair",
+        "description": "A huge book fair held in winter, usually around January and February.",
+        "start_date": null,
+        "end_date": null,
+        "date_status": "needs_verification"
+      },
+      {
+        "title": "Kolkata International Film Festival",
+        "description": "A big film festival held in the cooler months.",
+        "start_date": null,
+        "end_date": null,
+        "date_status": "needs_verification"
+      }
+    ]
+  },
+  "cities": [
+    {
+      "id": "wb-kolkata",
+      "name": "Kolkata",
+      "tagline": "City of joy, books and sweets.",
+      "blurb": "Bengal's old capital, rich in colonial buildings, book stalls, tram lines and street food.",
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide photo capturing Kolkata"
+      },
+      "attractions": [
+        "wb-victoria-memorial",
+        "wb-howrah-bridge",
+        "wb-dakshineswar-kali-temple",
+        "wb-indian-museum",
+        "wb-belur-math",
+        "wb-eden-gardens",
+        "wb-college-street",
+        "wb-sundarbans-national-park"
+      ],
+      "hidden_gems": []
+    },
+    {
+      "id": "wb-darjeeling",
+      "name": "Darjeeling",
+      "tagline": "Tea hills and Kanchenjunga views.",
+      "blurb": "A hill town of tea gardens, a toy train and snow-peak views.",
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide photo capturing Darjeeling"
+      },
+      "attractions": [
+        "wb-darjeeling-himalayan-railway",
+        "wb-tiger-hill",
+        "wb-himalayan-zoological-park",
+        "wb-happy-valley-tea-estate"
+      ],
+      "hidden_gems": []
+    },
+    {
+      "id": "wb-kalimpong",
+      "name": "Kalimpong",
+      "tagline": "Quiet hill town of monasteries.",
+      "blurb": "A calm hill town with gardens, monasteries and forest edges.",
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide photo capturing Kalimpong"
+      },
+      "attractions": [
+        "wb-durpin-monastery"
+      ],
+      "hidden_gems": [
+        "wb-gem-neora-valley-national-park"
+      ]
+    },
+    {
+      "id": "wb-siliguri",
+      "name": "Siliguri",
+      "tagline": "Gateway to the hills and the Dooars.",
+      "blurb": "A busy gateway to Darjeeling, Sikkim and the northern forests.",
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide photo capturing Siliguri"
+      },
+      "attractions": [
+        "wb-jaldapara-national-park"
+      ],
+      "hidden_gems": [
+        "wb-gem-gorumara-national-park"
+      ]
+    },
+    {
+      "id": "wb-santiniketan",
+      "name": "Santiniketan",
+      "tagline": "Tagore's open-air school town.",
+      "blurb": "A creative village-town of art, songs and red earth.",
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide photo capturing Santiniketan"
+      },
+      "attractions": [
+        "wb-santiniketan"
+      ],
+      "hidden_gems": [
+        "wb-gem-joydev-kenduli"
+      ]
+    },
+    {
+      "id": "wb-murshidabad",
+      "name": "Murshidabad",
+      "tagline": "Capital of the Nawabs.",
+      "blurb": "A riverside town of palaces, mosques and old Nawabi history.",
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide photo capturing Murshidabad"
+      },
+      "attractions": [
+        "wb-hazarduari-palace"
+      ],
+      "hidden_gems": [
+        "wb-gem-katra-masjid"
+      ]
+    },
+    {
+      "id": "wb-bishnupur",
+      "name": "Bishnupur",
+      "tagline": "Terracotta temple town.",
+      "blurb": "A craft town of terracotta temples and Baluchari silk.",
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide photo capturing Bishnupur"
+      },
+      "attractions": [
+        "wb-bishnupur-terracotta-temples"
+      ],
+      "hidden_gems": [
+        "wb-gem-mukutmanipur-dam"
+      ]
+    }
+  ],
+  "attractions": [
+    {
+      "id": "wb-victoria-memorial",
+      "name": "Victoria Memorial",
+      "city_id": "wb-kolkata",
+      "category": "Heritage",
+      "sub_categories": [
+        "Museums",
+        "Monuments"
+      ],
+      "summary": "A white marble palace of history set in green gardens.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Victoria Memorial, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A grand marble building and museum in the centre of Kolkata, surrounded by wide lawns and ponds. It was built to honour Queen Victoria and now holds paintings, maps and colonial-era objects.",
+        "important_facts": [
+          "Foundation stone laid in 1906",
+          "Opened to the public in 1921",
+          "Built with white marble"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Walk the gardens at evening, then see the building lit up."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "wb-howrah-bridge",
+      "name": "Howrah Bridge",
+      "city_id": "wb-kolkata",
+      "category": "Heritage",
+      "sub_categories": [
+        "Monuments"
+      ],
+      "summary": "The steel bridge that is Kolkata's postcard icon.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Howrah Bridge, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A giant cantilever bridge over the Hooghly river that links Howrah to Kolkata, busy day and night with traffic and pedestrians. Its official name is Rabindra Setu.",
+        "important_facts": [
+          "Opened in 1943",
+          "Official name is Rabindra Setu"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "See it at dawn from the ghats near the flower market."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "wb-dakshineswar-kali-temple",
+      "name": "Dakshineswar Kali Temple",
+      "city_id": "wb-kolkata",
+      "category": "Spiritual",
+      "sub_categories": [
+        "Hinduism"
+      ],
+      "summary": "A riverside temple of Goddess Kali tied to Sri Ramakrishna.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Dakshineswar Kali Temple, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A large temple complex on the Hooghly with twelve Shiva shrines. Sri Ramakrishna was a priest here, and the place is dear to devotees across Bengal.",
+        "important_facts": [
+          "Built in 1855 by Rani Rashmoni"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Go on a weekday morning to avoid weekend queues."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "wb-indian-museum",
+      "name": "Indian Museum",
+      "city_id": "wb-kolkata",
+      "category": "Heritage",
+      "sub_categories": [
+        "Museums"
+      ],
+      "summary": "India's oldest museum, packed with art, fossils and ancient objects.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Indian Museum, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A big museum in Kolkata with galleries of archaeology, natural history and art, in an old colonnaded building on Chowringhee.",
+        "important_facts": [
+          "Founded in 1814"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Plan for a couple of hours; there are many wings."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "wb-belur-math",
+      "name": "Belur Math",
+      "city_id": "wb-kolkata",
+      "category": "Spiritual",
+      "sub_categories": [
+        "Hinduism"
+      ],
+      "summary": "The headquarters of the Ramakrishna Mission on the Hooghly.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Belur Math, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A calm campus of temples, gardens and ghats on the Hooghly, founded by Swami Vivekananda. The main temple blends Hindu, Islamic and Christian design touches.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Come by evening for aarti and a quiet river view."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "wb-eden-gardens",
+      "name": "Eden Gardens",
+      "city_id": "wb-kolkata",
+      "category": "Recreation",
+      "sub_categories": [
+        "Sports"
+      ],
+      "summary": "One of cricket's most famous grounds.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Eden Gardens, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A historic cricket stadium in the heart of the city, known for its crowd atmosphere during big matches.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Check the match calendar if you want to see a game."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "wb-college-street",
+      "name": "College Street",
+      "city_id": "wb-kolkata",
+      "category": "Arts",
+      "sub_categories": [
+        "Literature"
+      ],
+      "summary": "A long lane of second-hand book stalls and old coffee houses.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of College Street, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "Kolkata's famous book street beside the University of Calcutta, with thousands of used and new books and the Indian Coffee House nearby.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Go slowly and bargain for old books."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "wb-darjeeling-himalayan-railway",
+      "name": "Darjeeling Himalayan Railway",
+      "city_id": "wb-darjeeling",
+      "category": "Heritage",
+      "sub_categories": [
+        "UNESCO World Heritage Sites",
+        "Historical Sites"
+      ],
+      "summary": "The famous toy train climbing through tea hills.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Darjeeling Himalayan Railway, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A narrow-gauge railway line that climbs through hills from the plains to Darjeeling, with steam locomotives on some runs.",
+        "important_facts": [
+          "Declared a UNESCO World Heritage Site in 1999",
+          "Runs on a two-foot narrow gauge"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Book the joyride from Darjeeling to Ghum and the Batasia Loop in advance."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "wb-tiger-hill",
+      "name": "Tiger Hill",
+      "city_id": "wb-darjeeling",
+      "category": "Nature",
+      "sub_categories": [
+        "Hills & Mountains"
+      ],
+      "summary": "The sunrise view point facing Kanchenjunga.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Tiger Hill, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A viewpoint above Darjeeling where visitors gather before dawn to watch sunrise light up Kanchenjunga on clear mornings.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Dress warmly and leave very early; views depend on weather."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "wb-himalayan-zoological-park",
+      "name": "Padmaja Naidu Himalayan Zoological Park",
+      "city_id": "wb-darjeeling",
+      "category": "Wildlife",
+      "sub_categories": [
+        "Zoological Parks"
+      ],
+      "summary": "A high-altitude zoo with red pandas and snow leopards.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Padmaja Naidu Himalayan Zoological Park, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A zoo in Darjeeling that houses Himalayan species and runs breeding programmes for rare animals. It sits next to the Himalayan Mountaineering Institute.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Combine it with the mountaineering museum next door."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "wb-happy-valley-tea-estate",
+      "name": "Happy Valley Tea Estate",
+      "city_id": "wb-darjeeling",
+      "category": "Rural",
+      "sub_categories": [
+        "Agro-Tourism"
+      ],
+      "summary": "A famous tea garden you can walk through and taste at.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Happy Valley Tea Estate, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "One of the oldest tea gardens in Darjeeling. Visitors can see leaf plucking, factory processing and taste fresh teas.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Ask about factory tours and best tasting times."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "wb-durpin-monastery",
+      "name": "Zong Dog Palri Fo-Brang Monastery",
+      "city_id": "wb-kalimpong",
+      "category": "Spiritual",
+      "sub_categories": [
+        "Buddhism"
+      ],
+      "summary": "A colourful monastery on Durpin Hill above Kalimpong.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Zong Dog Palri Fo-Brang Monastery, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A Buddhist monastery on a hill above Kalimpong, with prayer flags and wide valley views.",
+        "important_facts": [
+          "Consecrated in 1976"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Remove shoes and dress modestly."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "wb-jaldapara-national-park",
+      "name": "Jaldapara National Park",
+      "city_id": "wb-siliguri",
+      "category": "Wildlife",
+      "sub_categories": [
+        "National Parks"
+      ],
+      "summary": "Grasslands where one-horned rhinos roam.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Jaldapara National Park, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A national park in the Dooars with grassland, forest and a famous population of Indian one-horned rhinos, plus elephants and many birds.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Book elephant or jeep safaris well in advance."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "wb-sundarbans-national-park",
+      "name": "Sundarbans National Park",
+      "city_id": "wb-kolkata",
+      "category": "Wildlife",
+      "sub_categories": [
+        "National Parks",
+        "Marine Life"
+      ],
+      "summary": "The world's largest mangrove forest and Royal Bengal tiger country.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Sundarbans National Park, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A tidal delta forest of mangroves, creeks and mudbanks. It is home to Royal Bengal tigers, crocodiles and many birds, explored by boat.",
+        "important_facts": [
+          "Declared a UNESCO World Heritage Site in 1987",
+          "Famous for Royal Bengal tigers"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Choose an authorised guided boat trip and carry sun protection."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "wb-santiniketan",
+      "name": "Santiniketan",
+      "city_id": "wb-santiniketan",
+      "category": "Heritage",
+      "sub_categories": [
+        "UNESCO World Heritage Sites",
+        "Historical Sites"
+      ],
+      "summary": "Rabindranath Tagore's school-town of art and open-air classes.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Santiniketan, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A small town built around Visva-Bharati, the university founded by Rabindranath Tagore, with mango groves, red-soil paths and artists' studios.",
+        "important_facts": [
+          "Inscribed as a UNESCO World Heritage Site in 2023",
+          "Visva-Bharati was founded in 1921"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Walk or cycle; weekend haat (market) is a fine local stop."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "wb-bishnupur-terracotta-temples",
+      "name": "Bishnupur Terracotta Temples",
+      "city_id": "wb-bishnupur",
+      "category": "Heritage",
+      "sub_categories": [
+        "Monuments",
+        "Historical Buildings"
+      ],
+      "summary": "Brick temples covered in carved clay panels.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Bishnupur Terracotta Temples, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A group of temples built under the Malla kings, with intricate terracotta carvings of epics and daily life.",
+        "important_facts": [
+          "Built by the Malla rulers in the 17th and 18th centuries"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Also try Bishnupur's Baluchari sarees and dokra craft."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "wb-hazarduari-palace",
+      "name": "Hazarduari Palace",
+      "city_id": "wb-murshidabad",
+      "category": "Heritage",
+      "sub_categories": [
+        "Palaces & Forts",
+        "Museums"
+      ],
+      "summary": "A grand palace of the Nawabs of Bengal with a thousand doors.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Hazarduari Palace, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A big white palace on the Bhagirathi river in Murshidabad, now a museum of old weapons, paintings and royal objects.",
+        "important_facts": [
+          "Built in the 1830s"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Pair it with the nearby Katra Masjid."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "wb-gem-neora-valley-national-park",
+      "name": "Neora Valley National Park",
+      "city_id": "wb-kalimpong",
+      "category": "Wildlife",
+      "sub_categories": [
+        "National Parks"
+      ],
+      "summary": "A rainforest park hiding red pandas near Kalimpong.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Neora Valley National Park, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A thick forest park in the hills near Kalimpong, with a rich mix of birds, orchids and rare mammals.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Permits are needed, so arrange them in advance."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "wb-gem-gorumara-national-park",
+      "name": "Gorumara National Park",
+      "city_id": "wb-siliguri",
+      "category": "Wildlife",
+      "sub_categories": [
+        "National Parks",
+        "Bird Watching"
+      ],
+      "summary": "A small forest park with rhinos, elephants and many birds.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Gorumara National Park, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A small national park in the Dooars with grassland, river and forest, known to bird lovers.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Go early morning for birds and sightings."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "wb-gem-joydev-kenduli",
+      "name": "Joydev Kenduli",
+      "city_id": "wb-santiniketan",
+      "category": "Arts",
+      "sub_categories": [
+        "Music",
+        "Literature"
+      ],
+      "summary": "A Bengal village known for its Baul music gathering.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Joydev Kenduli, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A village on the Ajay river linked with the poet Joydev, where Baul singers gather for an annual fair in winter.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Visit during the fair to hear Baul songs live."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "wb-gem-katra-masjid",
+      "name": "Katra Masjid, Murshidabad",
+      "city_id": "wb-murshidabad",
+      "category": "Heritage",
+      "sub_categories": [
+        "Monuments",
+        "Historical Buildings"
+      ],
+      "summary": "A grand brick mosque from the Nawabi era.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Katra Masjid, Murshidabad, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A large brick mosque built in the early 18th century, with big courtyards and arches. Locals know it well, but few travellers come.",
+        "important_facts": [
+          "Built in the early 18th century by Murshid Quli Khan"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Dress modestly and be quiet."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "wb-gem-mukutmanipur-dam",
+      "name": "Mukutmanipur (Kangsabati Reservoir)",
+      "city_id": "wb-bishnupur",
+      "category": "Nature",
+      "sub_categories": [
+        "Rivers & Lakes"
+      ],
+      "summary": "A vast reservoir with forests and a boat-ride sunset.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Mukutmanipur (Kangsabati Reservoir), showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A big lake formed by the Kangsabati dam in Bankura, surrounded by low hills and forests.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Visit in winter for a clear, cool day."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    }
+  ]
+}

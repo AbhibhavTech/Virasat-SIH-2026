@@ -1,0 +1,1150 @@
+{
+  "region": {
+    "id": "br",
+    "name": "Bihar",
+    "type": "state",
+    "tagline": "Where the Buddha woke up and empires began.",
+    "overview": "Bihar is the land of Buddha, Mahavira, Nalanda and Pataliputra. Pilgrims come to Bodh Gaya and Gaya, history lovers explore ancient universities and Mauryan caves, and villages keep alive Mithila painting, litti-chokha and the grand Chhath festival.",
+    "image": {
+      "url": null,
+      "status": "needed",
+      "brief": "Original or licensed wide photo of Mahabodhi Temple at dawn"
+    },
+    "top_attractions": [
+      "br-mahabodhi-temple",
+      "br-nalanda-mahavihara",
+      "br-vishnupad-temple",
+      "br-golghar",
+      "br-takht-sri-patna-sahib",
+      "br-bihar-museum",
+      "br-vishwa-shanti-stupa-rajgir",
+      "br-vaishali-ashokan-pillar",
+      "br-sher-shah-suri-tomb",
+      "br-vikramshila-mahavihara",
+      "br-griddhakuta-hill",
+      "br-valmiki-tiger-reserve"
+    ],
+    "cities": [
+      "br-patna",
+      "br-gaya",
+      "br-bodh-gaya",
+      "br-rajgir",
+      "br-nalanda",
+      "br-vaishali",
+      "br-sasaram",
+      "br-bhagalpur"
+    ],
+    "live_updates": [
+      {
+        "title": "Chhath Puja",
+        "description": "Families gather at the Ganga ghats at sunrise and sunset to offer prayers to the Sun; this is Bihar's biggest festival, held a few days after Diwali.",
+        "start_date": null,
+        "end_date": null,
+        "date_status": "needs_verification"
+      },
+      {
+        "title": "Sonepur Mela",
+        "description": "A famed fair at the Ganga-Gandak confluence, linked with Kartik Purnima, with livestock and folk performances.",
+        "start_date": null,
+        "end_date": null,
+        "date_status": "needs_verification"
+      },
+      {
+        "title": "Pitru Paksha Mela, Gaya",
+        "description": "Pilgrims come to Gaya for rites to honour ancestors, usually in the autumn fortnight.",
+        "start_date": null,
+        "end_date": null,
+        "date_status": "needs_verification"
+      },
+      {
+        "title": "Buddha Purnima, Bodh Gaya",
+        "description": "Monks and pilgrims gather at Mahabodhi for prayers on the Buddha's birth anniversary, usually in April-May.",
+        "start_date": null,
+        "end_date": null,
+        "date_status": "needs_verification"
+      },
+      {
+        "title": "Madhubani painting and craft",
+        "description": "Villages around Madhubani keep the Mithila painting tradition alive; check local craft fairs for dates.",
+        "start_date": null,
+        "end_date": null,
+        "date_status": "needs_verification"
+      }
+    ]
+  },
+  "cities": [
+    {
+      "id": "br-patna",
+      "name": "Patna",
+      "tagline": "Ancient Pataliputra on the Ganga.",
+      "blurb": "Bihar's capital, one of the world's oldest continuously inhabited cities, with a Sikh holy site, a granary and a modern museum.",
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide photo capturing Patna"
+      },
+      "attractions": [
+        "br-golghar",
+        "br-takht-sri-patna-sahib",
+        "br-bihar-museum"
+      ],
+      "hidden_gems": []
+    },
+    {
+      "id": "br-gaya",
+      "name": "Gaya",
+      "tagline": "Sacred to Hindus and Buddhists.",
+      "blurb": "A pilgrimage city on the Phalgu river, known for ancestral rites and close to Bodh Gaya.",
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide photo capturing Gaya"
+      },
+      "attractions": [
+        "br-vishnupad-temple"
+      ],
+      "hidden_gems": [
+        "br-gem-barabar-caves"
+      ]
+    },
+    {
+      "id": "br-bodh-gaya",
+      "name": "Bodh Gaya",
+      "tagline": "Where the Buddha found enlightenment.",
+      "blurb": "A quiet town of monasteries, prayer flags and the Mahabodhi Temple.",
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide photo capturing Bodh Gaya"
+      },
+      "attractions": [
+        "br-mahabodhi-temple",
+        "br-great-buddha-statue-bodh-gaya"
+      ],
+      "hidden_gems": []
+    },
+    {
+      "id": "br-rajgir",
+      "name": "Rajgir",
+      "tagline": "Hills, hot springs and Buddha's footsteps.",
+      "blurb": "A hill-ringed town of ancient history, hot springs and mountain stupas.",
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide photo capturing Rajgir"
+      },
+      "attractions": [
+        "br-vishwa-shanti-stupa-rajgir",
+        "br-griddhakuta-hill"
+      ],
+      "hidden_gems": [
+        "br-gem-kakolat-waterfall"
+      ]
+    },
+    {
+      "id": "br-nalanda",
+      "name": "Nalanda",
+      "tagline": "The ancient university town.",
+      "blurb": "Home to the ruins of the old Nalanda monastic university.",
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide photo capturing Nalanda"
+      },
+      "attractions": [
+        "br-nalanda-mahavihara"
+      ],
+      "hidden_gems": []
+    },
+    {
+      "id": "br-vaishali",
+      "name": "Vaishali",
+      "tagline": "Early republic, last sermon.",
+      "blurb": "A quiet town with Ashokan pillar and Buddhist relics.",
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide photo capturing Vaishali"
+      },
+      "attractions": [
+        "br-vaishali-ashokan-pillar"
+      ],
+      "hidden_gems": [
+        "br-gem-kesaria-stupa"
+      ]
+    },
+    {
+      "id": "br-sasaram",
+      "name": "Sasaram",
+      "tagline": "Sher Shah's hometown.",
+      "blurb": "A town with a lake-set royal tomb and access to the Kaimur hills and Rohtas plateau.",
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide photo capturing Sasaram"
+      },
+      "attractions": [
+        "br-sher-shah-suri-tomb"
+      ],
+      "hidden_gems": [
+        "br-gem-mundeshwari-temple",
+        "br-gem-rohtasgarh-fort"
+      ]
+    },
+    {
+      "id": "br-bhagalpur",
+      "name": "Bhagalpur",
+      "tagline": "Silk city on the Ganga.",
+      "blurb": "Known for Tussar silk and the nearby Vikramshila ruins.",
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide photo capturing Bhagalpur"
+      },
+      "attractions": [
+        "br-vikramshila-mahavihara"
+      ],
+      "hidden_gems": []
+    }
+  ],
+  "attractions": [
+    {
+      "id": "br-golghar",
+      "name": "Golghar",
+      "city_id": "br-patna",
+      "category": "Heritage",
+      "sub_categories": [
+        "Monuments",
+        "Historical Buildings"
+      ],
+      "summary": "A beehive-shaped grain store with a spiral stair and a view of the Ganga.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Golghar, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A large dome-shaped granary on the edge of Gandhi Maidan, built after a severe famine. Two stairways spiral around the outside to the top, where you can look over Patna and the Ganga.",
+        "important_facts": [
+          "Built in 1786",
+          "Designed by Captain John Garstin",
+          "Built as a grain store after the great famine of 1770"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Climb in the late afternoon for softer light and a river breeze."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "br-takht-sri-patna-sahib",
+      "name": "Takht Sri Patna Sahib",
+      "city_id": "br-patna",
+      "category": "Spiritual",
+      "sub_categories": [
+        "Sikhism"
+      ],
+      "summary": "One of the five Takhts of Sikhism, birthplace of Guru Gobind Singh.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Takht Sri Patna Sahib, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A major Sikh shrine in old Patna marking the birthplace of the tenth Guru, Guru Gobind Singh. Pilgrims arrive from across India and abroad.",
+        "important_facts": [
+          "One of the five Takhts of Sikhism",
+          "Marks the birthplace of Guru Gobind Singh"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Cover your head and remove shoes; the langar (community meal) is open to all."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "br-bihar-museum",
+      "name": "Bihar Museum",
+      "city_id": "br-patna",
+      "category": "Heritage",
+      "sub_categories": [
+        "Museums"
+      ],
+      "summary": "A modern museum telling the story of Bihar's art and history.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Bihar Museum, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A large museum in Patna that tells Bihar's story through sculpture, art and history galleries, with a children's section too.",
+        "important_facts": [
+          "Opened in 2017"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Give yourself a few hours; the galleries are spread over several floors."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "br-mahabodhi-temple",
+      "name": "Mahabodhi Temple",
+      "city_id": "br-bodh-gaya",
+      "category": "Spiritual",
+      "sub_categories": [
+        "Buddhism",
+        "Hinduism"
+      ],
+      "summary": "The site where the Buddha attained enlightenment.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Mahabodhi Temple, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A tall, carved brick temple in Bodh Gaya beside the Bodhi Tree. It is the holiest place in the Buddhist world, visited by monks and pilgrims from many countries.",
+        "important_facts": [
+          "Declared a UNESCO World Heritage Site in 2002",
+          "The Bodhi Tree beside the temple marks the spot of the Buddha's enlightenment"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": "Winter months, roughly November to February (needs verification)",
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Sit quietly under the Bodhi Tree at dawn when the chanting begins."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "br-great-buddha-statue-bodh-gaya",
+      "name": "Great Buddha Statue",
+      "city_id": "br-bodh-gaya",
+      "category": "Spiritual",
+      "sub_categories": [
+        "Buddhism"
+      ],
+      "summary": "A huge seated Buddha in a garden near Mahabodhi.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Great Buddha Statue, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A tall seated Buddha statue set in a peaceful garden in Bodh Gaya, with monasteries from different countries nearby.",
+        "important_facts": [
+          "About 80 feet tall",
+          "Consecrated by the Dalai Lama in 1989"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Pair it with a walk to nearby international monasteries."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "br-vishnupad-temple",
+      "name": "Vishnupad Temple",
+      "city_id": "br-gaya",
+      "category": "Spiritual",
+      "sub_categories": [
+        "Hinduism"
+      ],
+      "summary": "A temple built around a footprint of Lord Vishnu.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Vishnupad Temple, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A major Hindu shrine in Gaya on the banks of the Phalgu river. A footprint of Vishnu on rock is worshipped, and the temple is central to ancestral rites (pind daan).",
+        "important_facts": [
+          "Centre of pind daan rites for ancestors"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Hire a registered local guide for the rites, and confirm fees upfront."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "br-vishwa-shanti-stupa-rajgir",
+      "name": "Vishwa Shanti Stupa, Rajgir",
+      "city_id": "br-rajgir",
+      "category": "Spiritual",
+      "sub_categories": [
+        "Buddhism"
+      ],
+      "summary": "A gleaming white peace pagoda on a hilltop.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Vishwa Shanti Stupa, Rajgir, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A white stupa on Ratnagiri hill above Rajgir, built by a Japanese Buddhist order. A chairlift ride or a walk leads up through the hills.",
+        "important_facts": [
+          "Built by the Japanese Buddhist order Nipponzan Myohoji",
+          "Inaugurated in 1969"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Go early; hill views are clearest in the morning."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "br-griddhakuta-hill",
+      "name": "Griddhakuta (Vulture Peak)",
+      "city_id": "br-rajgir",
+      "category": "Spiritual",
+      "sub_categories": [
+        "Buddhism"
+      ],
+      "summary": "A rocky hill where the Buddha is said to have taught.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Griddhakuta (Vulture Peak), showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A short climb leads to a ridge where the Buddha is said to have given many teachings. Monks often chant here at sunset.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Wear good shoes; the path is rocky."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "br-nalanda-mahavihara",
+      "name": "Nalanda Mahavihara",
+      "city_id": "br-nalanda",
+      "category": "Heritage",
+      "sub_categories": [
+        "UNESCO World Heritage Sites",
+        "Archeological Sites"
+      ],
+      "summary": "The ruins of one of the world's oldest universities.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Nalanda Mahavihara, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "Red brick halls, courtyards and stupas mark the remains of a great Buddhist monastic university that drew students from distant lands.",
+        "important_facts": [
+          "Declared a UNESCO World Heritage Site in 2016",
+          "Flourished from about the 5th to the 12th century"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": "Friday",
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Hire a guide to understand the layout; the ruins are spread out."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "br-vaishali-ashokan-pillar",
+      "name": "Vaishali Ashokan Pillar",
+      "city_id": "br-vaishali",
+      "category": "Heritage",
+      "sub_categories": [
+        "Monuments",
+        "Archeological Sites"
+      ],
+      "summary": "A single lion on a polished stone pillar from Mauryan times.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Vaishali Ashokan Pillar, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A tall stone pillar topped by a lion, standing beside an old relic stupa and a sacred tank. Vaishali is linked to the Lichchhavi republic and to the Buddha's last sermon.",
+        "important_facts": [
+          "Topped by a single lion",
+          "Vaishali was home to the Lichchhavi republic"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Visit with the nearby relic stupa and Kolhua in one trip."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "br-sher-shah-suri-tomb",
+      "name": "Sher Shah Suri Tomb",
+      "city_id": "br-sasaram",
+      "category": "Heritage",
+      "sub_categories": [
+        "Monuments"
+      ],
+      "summary": "A grand red sandstone tomb that rises from the middle of a lake.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Sher Shah Suri Tomb, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "The tomb of Sher Shah Suri at Sasaram is built on a platform in the middle of a large artificial lake, with a high dome and reflective water all round.",
+        "important_facts": [
+          "Built in the mid-16th century"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Visit in late afternoon when the sandstone glows."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "br-vikramshila-mahavihara",
+      "name": "Vikramshila Mahavihara",
+      "city_id": "br-bhagalpur",
+      "category": "Heritage",
+      "sub_categories": [
+        "Archeological Sites"
+      ],
+      "summary": "Ruins of a great Pala-era Buddhist university.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Vikramshila Mahavihara, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "The remains of a major centre of Buddhist learning near Bhagalpur, with a large cruciform central stupa and monastic cells.",
+        "important_facts": [
+          "Founded under the Pala king Dharmapala around the 8th-9th century"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Check road conditions in monsoon."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "br-valmiki-tiger-reserve",
+      "name": "Valmiki Tiger Reserve",
+      "city_id": null,
+      "category": "Wildlife",
+      "sub_categories": [
+        "National Parks",
+        "Wildlife Sanctuaries"
+      ],
+      "summary": "Forest, rivers and tigers in Bihar's far north-west.",
+      "is_hidden_gem": false,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Valmiki Tiger Reserve, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "Bihar's tiger reserve in West Champaran, with forests, grasslands and the Gandak river on the Nepal border.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Book through the forest department and travel in the cooler months."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "br-gem-barabar-caves",
+      "name": "Barabar Caves",
+      "city_id": "br-gaya",
+      "category": "Heritage",
+      "sub_categories": [
+        "Archeological Sites"
+      ],
+      "summary": "Polished rock-cut caves from Mauryan times, hidden in granite hills.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Barabar Caves, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "The oldest surviving rock-cut caves in India, cut into hard granite and polished to a mirror-like shine inside. Locals visit mostly for the nearby Baba Siddhnath temple.",
+        "important_facts": [
+          "Carved in the Mauryan period, around the 3rd century BCE"
+        ],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Go early; a steep climb and little shade."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "br-gem-kesaria-stupa",
+      "name": "Kesaria Stupa",
+      "city_id": "br-vaishali",
+      "category": "Heritage",
+      "sub_categories": [
+        "Archeological Sites",
+        "Historical Sites"
+      ],
+      "summary": "A huge brick Buddhist stupa rising from open farmland.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Kesaria Stupa, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A vast layered brick stupa in East Champaran, among the largest in the Buddhist world. It sits in quiet fields, far from tourist routes.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Combine it with a Vaishali day trip; check the route first."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "br-gem-mundeshwari-temple",
+      "name": "Mundeshwari Temple",
+      "city_id": "br-sasaram",
+      "category": "Spiritual",
+      "sub_categories": [
+        "Hinduism"
+      ],
+      "summary": "A hill-top temple believed to be among India's oldest.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Mundeshwari Temple, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "An octagonal stone temple on a hill in Kaimur, considered one of the oldest surviving temples in the country, still in use for worship.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Allow time for the climb; local families walk up in the morning."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "br-gem-rohtasgarh-fort",
+      "name": "Rohtasgarh Fort",
+      "city_id": "br-sasaram",
+      "category": "Heritage",
+      "sub_categories": [
+        "Palaces & Forts"
+      ],
+      "summary": "A huge hill fort on a plateau, with palaces and gateways.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Rohtasgarh Fort, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A massive hill fort on the Kaimur plateau, with gates, a palace complex and ruined buildings spread over a large area.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Plan a full day; the fort is large and the climb is long."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    },
+    {
+      "id": "br-gem-kakolat-waterfall",
+      "name": "Kakolat Waterfall",
+      "city_id": "br-rajgir",
+      "category": "Nature",
+      "sub_categories": [
+        "Rivers & Lakes"
+      ],
+      "summary": "A rain-fed waterfall dropping from a rocky hill near Nawada.",
+      "is_hidden_gem": true,
+      "image": {
+        "url": null,
+        "status": "needed",
+        "brief": "Original or licensed wide daytime photo of Kakolat Waterfall, showing its most recognisable view"
+      },
+      "detail_page": {
+        "overview": "A beautiful waterfall in Nawada district, loved by locals after the monsoon for picnics and swimming in the pool below.",
+        "important_facts": [],
+        "fascinating_facts": [],
+        "opening_hours": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "closing_day": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "entry_fee": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "best_time_to_visit": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "time_needed": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "nearby_hotels": [],
+        "nearby_restaurants": [],
+        "how_to_reach": {
+          "value": null,
+          "status": "needs_verification"
+        },
+        "local_tip": "Go during or just after the monsoon for the best flow."
+      },
+      "verification_status": "pending",
+      "last_verified": null
+    }
+  ]
+}
