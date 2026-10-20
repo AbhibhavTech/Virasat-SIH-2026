@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   ArrowRight,
   Eye,
   Heart,
 } from 'lucide-react';
 import { StateHierarchyEntity } from '../../types/indiaHierarchy';
-import { getCuratedStateImage } from '../../data/stateCuratedImages';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
 
 interface StateCardProps {
@@ -29,17 +28,6 @@ export const StateCard: React.FC<StateCardProps> = ({
   onQuickLook,
   territoryOnly = false,
 }) => {
-  const curated = getCuratedStateImage(state.id, state.hero_image_url);
-  const [imageSrc, setImageSrc] = useState(curated.url);
-  const [hasFailedOnce, setHasFailedOnce] = useState(false);
-
-  const handleImgError = () => {
-    if (!hasFailedOnce && imageSrc !== curated.url) {
-      setHasFailedOnce(true);
-      setImageSrc(curated.url);
-    }
-  };
-
   // Maximum 3 destinations per requirement
   const towns = territoryOnly ? [] : (state.cities || []);
   const topTowns = towns.slice(0, 3);
@@ -56,9 +44,9 @@ export const StateCard: React.FC<StateCardProps> = ({
       className={`bg-white rounded-2xl border border-stone-200/80 overflow-hidden shadow-xs hover:shadow-lg transition-all duration-300 flex flex-col group hover:-translate-y-1 ${revealClass}`}
       id={`state-card-${state.id}`}
     >
-      {/* Hero Photo Header */}
+      {/* Image-free header until new region imagery is supplied. */}
       <div
-        className={`relative h-56 sm:h-64 lg:h-72 w-full overflow-hidden bg-stone-900 shrink-0 ${territoryOnly ? '' : 'cursor-pointer'}`}
+        className={`relative min-h-36 sm:min-h-40 w-full overflow-hidden bg-[#FAF9F7] border-b border-stone-200 shrink-0 ${territoryOnly ? '' : 'cursor-pointer'}`}
         onClick={territoryOnly ? undefined : () => onSelectState(state.id)}
         onKeyDown={territoryOnly ? undefined : (event) => {
           if (event.key === 'Enter' || event.key === ' ') onSelectState(state.id);
@@ -67,21 +55,12 @@ export const StateCard: React.FC<StateCardProps> = ({
         tabIndex={territoryOnly ? undefined : 0}
         aria-label={`Explore ${state.name}`}
       >
-        <img
-          src={imageSrc}
-          alt={state.name}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          onError={handleImgError}
-          loading="lazy"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-black/10 pointer-events-none" />
-
         {/* Top Badges: Clean minimal tags */}
         <div className="absolute top-3 left-3 flex items-center gap-1.5 z-10">
           <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-white/95 text-amber-800 font-mono shadow-xs">
             {state.code}
           </span>
-          <span className="text-[10px] font-medium px-2.5 py-0.5 rounded-full bg-black/50 text-white/90 backdrop-blur-xs">
+          <span className="text-[10px] font-medium px-2.5 py-0.5 rounded-full bg-white text-stone-700 border border-stone-200">
             {isUT ? 'Union Territory' : state.region}
           </span>
         </div>
@@ -94,7 +73,7 @@ export const StateCard: React.FC<StateCardProps> = ({
                 event.stopPropagation();
                 onQuickLook(state);
               }}
-              className="w-8 h-8 rounded-full flex items-center justify-center bg-black/40 hover:bg-white text-white hover:text-[#FF671F] backdrop-blur-xs transition cursor-pointer shadow-xs"
+              className="w-8 h-8 rounded-full flex items-center justify-center bg-white hover:bg-orange-50 text-stone-700 hover:text-[#FF671F] border border-stone-200 transition cursor-pointer shadow-xs"
               title={`Quick look at ${state.name}`}
               aria-label={`Quick look at ${state.name}`}
             >
@@ -109,7 +88,7 @@ export const StateCard: React.FC<StateCardProps> = ({
             className={`w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-xs transition cursor-pointer shadow-xs ${
               isFavorite
                 ? 'bg-rose-500 text-white'
-                : 'bg-black/40 hover:bg-black/60 text-white/90 hover:text-white'
+                : 'bg-white hover:bg-orange-50 text-stone-700 hover:text-[#FF671F] border border-stone-200'
             }`}
             title={isFavorite ? 'Remove from Saved Wishlist' : 'Save to Wishlist'}
             aria-label={`Save ${state.name} to wishlist`}
@@ -119,8 +98,8 @@ export const StateCard: React.FC<StateCardProps> = ({
         </div>
 
         {/* Title: State Name */}
-        <div className="absolute bottom-3 left-3.5 right-3.5 text-white pointer-events-none">
-          <h3 className="font-serif text-xl sm:text-2xl font-black text-white tracking-tight drop-shadow-md">
+        <div className="absolute bottom-4 left-4 right-4 pointer-events-none">
+          <h3 className="font-serif text-xl sm:text-2xl font-black text-[#0B192C] tracking-tight">
             {state.name}
           </h3>
         </div>
