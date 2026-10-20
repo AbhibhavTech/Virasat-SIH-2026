@@ -47,6 +47,7 @@ import { StateCard } from '../components/explore-india/StateCard';
 import { StateQuickLookModal } from '../components/explore-india/StateQuickLookModal';
 import { StateCitiesDirectory } from '../components/explore-india/StateCitiesDirectory';
 import { StateAttractionsSlideshow } from '../components/explore-india/StateAttractionsSlideshow';
+import { DiscoverBharatDraftPreview } from '../components/explore-india/DiscoverBharatDraftPreview';
 import { STATE_CURATED_IMAGES, getCuratedStateImage } from '../data/stateCuratedImages';
 import { INDIA_TOURISM_DATABASE } from '../data/indiaTourismDatabase';
 import { OfficialImagePending } from '../components/common/OfficialImagePending';
@@ -1443,6 +1444,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
         ========================================================================= */}
         {activeLevel === 'state' && currentState && (
           <div className="space-y-8">
+            <DiscoverBharatDraftPreview stateName={currentState.name} />
             <StateAttractionsSlideshow
               stateName={currentState.name}
               places={stateFeaturedPlaces}
