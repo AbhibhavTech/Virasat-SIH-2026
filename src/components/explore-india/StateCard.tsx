@@ -156,7 +156,7 @@ export const StateCard: React.FC<StateCardProps> = ({
           </div>
         )}
 
-        {!territoryOnly && <div>
+        <div>
           <button
             onClick={() => onSelectState(state.id)}
             className="w-full py-3 px-5 rounded-xl bg-[#FF671F] hover:bg-[#E65100] text-white border border-[#E65100] hover:border-[#C94D0A] text-sm font-black transition-all flex items-center justify-center gap-2 cursor-pointer shadow-sm hover:shadow-md active:scale-[0.99] group/btn"
@@ -164,7 +164,7 @@ export const StateCard: React.FC<StateCardProps> = ({
             <span className="text-white font-black">Explore</span>
             <ArrowRight className="w-4 h-4 text-white transition-transform group-hover/btn:translate-x-0.5" />
           </button>
-        </div>}
+        </div>
       </div>
     </div>
   );
