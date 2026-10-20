@@ -58,6 +58,7 @@ import { getAmaravatiHierarchyAttractions, isAmaravatiCity } from '../data/amara
 import { MaharashtraDestinationsSection } from '../components/explore-india/MaharashtraDestinationsSection';
 import { AndhraPradeshCityGuide } from '../components/explore-india/AndhraPradeshCityGuide';
 import { ArunachalPradeshGuide } from '../components/explore-india/ArunachalPradeshGuide';
+import { RajasthanDirectorySection } from '../components/explore-india/RajasthanDirectorySection';
 import { VERIFIED_HIDDEN_GEMS } from '../data/hiddenGemsData';
 
 interface IndiaHierarchyPageProps {
@@ -299,6 +300,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
   }, [db, selectedStateId]);
   const isAndhraPradeshState = currentState?.id?.toLowerCase() === 'andhra-pradesh' || currentState?.name?.toLowerCase() === 'andhra pradesh';
   const isArunachalPradeshState = currentState?.id?.toLowerCase() === 'arunachal-pradesh' || currentState?.name?.toLowerCase() === 'arunachal pradesh';
+  const isRajasthanState = currentState?.id?.toLowerCase() === 'rajasthan' || currentState?.name?.toLowerCase() === 'rajasthan';
 
   // All Valid Destinations, Cities & Towns in current state
   const stateValidCities: CityHierarchyEntity[] = useMemo(() => {
@@ -653,6 +655,60 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
   // Keep the state landing page empty while its replacement database is prepared.
   // The underlying city and attraction records remain untouched for other app features.
   if (activeLevel === 'state' && currentState) {
+    if (isRajasthanState) {
+      return (
+        <main className="w-full min-h-[65vh] text-[#0B192C] pb-16 space-y-6">
+          <div className="h-1.5 w-full bg-gradient-to-r from-[#FF671F] via-white to-[#046A38] rounded-full mb-4" />
+          <div className="flex items-center justify-between">
+            <button
+              type="button"
+              onClick={handleReturnToIndia}
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[#C94D0A] hover:underline cursor-pointer"
+            >
+              <ChevronLeft className="h-4 w-4" /> Discover Bharat · All States &amp; Territories
+            </button>
+            <span className="text-xs font-bold text-amber-900 bg-amber-100/90 border border-amber-300 px-3 py-1 rounded-full shadow-2xs">
+              Rajasthan Complete Directory (IN-RJ)
+            </span>
+          </div>
+          <RajasthanDirectorySection
+            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
+          />
+        </main>
+      );
+    }
+
+    if (isAndhraPradeshState) {
+      return (
+        <main className="w-full min-h-[65vh] text-[#0B192C] pb-16 space-y-6">
+          <div className="h-1.5 w-full bg-gradient-to-r from-[#FF671F] via-white to-[#046A38] rounded-full mb-4" />
+          <button
+            type="button"
+            onClick={handleReturnToIndia}
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[#C94D0A] hover:underline cursor-pointer"
+          >
+            <ChevronLeft className="h-4 w-4" /> Discover Bharat · All States &amp; Territories
+          </button>
+          <AndhraPradeshCityGuide />
+        </main>
+      );
+    }
+
+    if (isArunachalPradeshState) {
+      return (
+        <main className="w-full min-h-[65vh] text-[#0B192C] pb-16 space-y-6">
+          <div className="h-1.5 w-full bg-gradient-to-r from-[#FF671F] via-white to-[#046A38] rounded-full mb-4" />
+          <button
+            type="button"
+            onClick={handleReturnToIndia}
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[#C94D0A] hover:underline cursor-pointer"
+          >
+            <ChevronLeft className="h-4 w-4" /> Discover Bharat · All States &amp; Territories
+          </button>
+          <ArunachalPradeshGuide />
+        </main>
+      );
+    }
     return (
       <main className="w-full min-h-[65vh] text-[#0B192C] pb-16">
         <div className="h-1.5 w-full bg-gradient-to-r from-[#FF671F] via-white to-[#046A38] rounded-full mb-6" />
@@ -1467,7 +1523,8 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             />
             {isAndhraPradeshState && <AndhraPradeshCityGuide />}
             {isArunachalPradeshState && <ArunachalPradeshGuide />}
-            {!isAndhraPradeshState && !isArunachalPradeshState && <>
+            {isRajasthanState && <RajasthanDirectorySection />}
+            {!isAndhraPradeshState && !isArunachalPradeshState && !isRajasthanState && <>
             {/* Heritage Separation Rule */}
             <HeritageDivider
               variant="chakra"
