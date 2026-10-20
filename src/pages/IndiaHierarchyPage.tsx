@@ -295,6 +295,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
     if (!db?.states?.length) return null;
     return db.states.find((s) => s.id === selectedStateId) ?? db.states[0];
   }, [db, selectedStateId]);
+  const isAndhraPradeshState = currentState?.id?.toLowerCase() === 'andhra-pradesh' || currentState?.name?.toLowerCase() === 'andhra pradesh';
 
   // All Valid Destinations, Cities & Towns in current state
   const stateValidCities: CityHierarchyEntity[] = useMemo(() => {
@@ -1439,6 +1440,8 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
         ========================================================================= */}
         {activeLevel === 'state' && currentState && (
           <div className="space-y-8">
+            {isAndhraPradeshState && <AndhraPradeshCityGuide />}
+            {!isAndhraPradeshState && <>
             {/* Heritage Separation Rule */}
             <HeritageDivider
               variant="chakra"
@@ -1600,11 +1603,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                   onSelectCity={onSelectCity}
                 />
               </div>
-            )}
-
-            {(currentState?.id?.toLowerCase() === 'andhra-pradesh' ||
-              currentState?.name?.toLowerCase() === 'andhra pradesh') && (
-              <AndhraPradeshCityGuide />
             )}
 
             <div id="state-destinations-section" className="space-y-6 scroll-mt-24">
@@ -1811,6 +1809,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                 )}
               </section>
             )}
+            </>}
           </div>
         )}
 
