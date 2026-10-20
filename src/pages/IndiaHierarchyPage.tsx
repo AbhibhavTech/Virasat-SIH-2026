@@ -56,6 +56,7 @@ import { getMumbaiHierarchyAttractions, isMumbaiCity } from '../data/mumbaiDesti
 import { getAmaravatiHierarchyAttractions, isAmaravatiCity } from '../data/amaravatiDestinations';
 import { MaharashtraDestinationsSection } from '../components/explore-india/MaharashtraDestinationsSection';
 import { AndhraPradeshCityGuide } from '../components/explore-india/AndhraPradeshCityGuide';
+import { ArunachalPradeshGuide } from '../components/explore-india/ArunachalPradeshGuide';
 import { VERIFIED_HIDDEN_GEMS } from '../data/hiddenGemsData';
 
 interface IndiaHierarchyPageProps {
@@ -296,6 +297,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
     return db.states.find((s) => s.id === selectedStateId) ?? db.states[0];
   }, [db, selectedStateId]);
   const isAndhraPradeshState = currentState?.id?.toLowerCase() === 'andhra-pradesh' || currentState?.name?.toLowerCase() === 'andhra pradesh';
+  const isArunachalPradeshState = currentState?.id?.toLowerCase() === 'arunachal-pradesh' || currentState?.name?.toLowerCase() === 'arunachal pradesh';
 
   // All Valid Destinations, Cities & Towns in current state
   const stateValidCities: CityHierarchyEntity[] = useMemo(() => {
@@ -1441,7 +1443,8 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
         {activeLevel === 'state' && currentState && (
           <div className="space-y-8">
             {isAndhraPradeshState && <AndhraPradeshCityGuide />}
-            {!isAndhraPradeshState && <>
+            {isArunachalPradeshState && <ArunachalPradeshGuide />}
+            {!isAndhraPradeshState && !isArunachalPradeshState && <>
             {/* Heritage Separation Rule */}
             <HeritageDivider
               variant="chakra"
