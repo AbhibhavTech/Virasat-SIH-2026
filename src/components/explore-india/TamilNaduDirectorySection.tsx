@@ -220,20 +220,39 @@ export const TamilNaduDirectorySection: React.FC<TamilNaduDirectorySectionProps>
             </p>
           </div>
 
-          {/* Quick Heritage Stays Badges Preview */}
-          <div className="shrink-0 bg-white/95 backdrop-blur-xs p-4 rounded-2xl border border-amber-200/70 shadow-2xs space-y-2 lg:max-w-xs w-full">
-            <p className="text-[11px] font-bold text-amber-900 uppercase tracking-wider flex items-center gap-1.5">
-              <Hotel className="w-3.5 h-3.5 text-amber-700" /> Top Heritage Stays
-            </p>
-            <div className="space-y-1.5">
-              {currentCity.topStays.map((stay, idx) => (
-                <div key={idx} className="flex items-center justify-between text-xs">
-                  <span className="font-bold text-stone-800 line-clamp-1">{stay.name}</span>
-                  <span className="text-[10px] px-2 py-0.5 rounded-md bg-amber-50 text-amber-900 font-medium shrink-0 ml-2 border border-amber-200/60">
-                    {stay.category.split('—')[0].trim()}
-                  </span>
-                </div>
-              ))}
+          {/* Cover Photo & Heritage Stays Badges Preview */}
+          <div className="flex flex-col sm:flex-row lg:flex-col gap-3 lg:max-w-xs w-full shrink-0">
+            {currentCity.coverImage && (
+              <div className="relative h-28 w-full rounded-2xl overflow-hidden shadow-2xs border border-white/60">
+                <img
+                  src={currentCity.coverImage}
+                  alt={currentCity.name}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src =
+                      'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80';
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <span className="absolute bottom-1.5 left-2.5 text-[10px] text-white/90 font-medium truncate max-w-[90%]">
+                  {currentCity.photoCredit}
+                </span>
+              </div>
+            )}
+            <div className="bg-white/95 backdrop-blur-xs p-4 rounded-2xl border border-amber-200/70 shadow-2xs space-y-2 w-full">
+              <p className="text-[11px] font-bold text-amber-900 uppercase tracking-wider flex items-center gap-1.5">
+                <Hotel className="w-3.5 h-3.5 text-amber-700" /> Top Heritage Stays
+              </p>
+              <div className="space-y-1.5">
+                {currentCity.topStays.map((stay, idx) => (
+                  <div key={idx} className="flex items-center justify-between text-xs">
+                    <span className="font-bold text-stone-800 line-clamp-1">{stay.name}</span>
+                    <span className="text-[10px] px-2 py-0.5 rounded-md bg-amber-50 text-amber-900 font-medium shrink-0 ml-2 border border-amber-200/60">
+                      {stay.category.split('—')[0].trim()}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
