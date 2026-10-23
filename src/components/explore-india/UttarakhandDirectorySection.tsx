@@ -112,23 +112,23 @@ export const UttarakhandDirectorySection: React.FC<UttarakhandDirectorySectionPr
               Uttarakhand · <span className="text-emerald-300">Land of the Gods</span>
             </h2>
             <p className="text-emerald-100/90 text-sm sm:text-base leading-relaxed max-w-2xl pt-1">
-              From the evening Ganga Aarti and white-water rapids of Rishikesh to colonial pear-shaped lake promenades in Nainital, oak-canopied Landour ridges, and the UNESCO glacial wild flower carpets of Bhyundar.
+              From the evening Ganga Aarti and white-water rapids of Rishikesh to colonial pear-shaped lake promenades in Nainital, oak-canopied Landour ridges, the UNESCO floral carpets of Bhyundar, and the venerated high-Himalayan Char Dham shrines of Badrinath and Kedarnath.
             </p>
           </div>
 
           {/* Quick Metrics Bar */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
             <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-xs border border-white/15">
-              <div className="text-xl sm:text-2xl font-black text-emerald-300">4</div>
+              <div className="text-xl sm:text-2xl font-black text-emerald-300">6</div>
               <div className="text-[11px] text-emerald-100/80 font-medium uppercase tracking-wider">Sacred &amp; Alpine Hubs</div>
             </div>
             <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-xs border border-white/15">
-              <div className="text-xl sm:text-2xl font-black text-teal-300">21+</div>
+              <div className="text-xl sm:text-2xl font-black text-teal-300">28+</div>
               <div className="text-[11px] text-teal-100/80 font-medium uppercase tracking-wider">Curated Sights &amp; High-Altitude Gems</div>
             </div>
             <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-xs border border-white/15">
-              <div className="text-xl sm:text-2xl font-black text-amber-300">12+</div>
-              <div className="text-[11px] text-amber-100/80 font-medium uppercase tracking-wider">Wellness &amp; Castle Stays</div>
+              <div className="text-xl sm:text-2xl font-black text-amber-300">18+</div>
+              <div className="text-[11px] text-amber-100/80 font-medium uppercase tracking-wider">Wellness &amp; Pilgrim Stays</div>
             </div>
             <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-xs border border-white/15">
               <div className="text-xl sm:text-2xl font-black text-lime-300">100%</div>
@@ -139,7 +139,7 @@ export const UttarakhandDirectorySection: React.FC<UttarakhandDirectorySectionPr
       </div>
 
       {/* =========================================================================
-          4-DESTINATION NAVIGATION TABS (RSK, NNT, DED, VOF)
+          6-DESTINATION NAVIGATION TABS (RIS, NTL, MSS, VOF, BAD, KED)
       ========================================================================= */}
       <div className="space-y-3">
         <div className="flex items-center justify-between">
@@ -154,7 +154,7 @@ export const UttarakhandDirectorySection: React.FC<UttarakhandDirectorySectionPr
           </span>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
           {UTTARAKHAND_DIRECTORY.map((city) => {
             const isSelected = city.id === selectedCityId;
             return (
@@ -221,20 +221,39 @@ export const UttarakhandDirectorySection: React.FC<UttarakhandDirectorySectionPr
             </p>
           </div>
 
-          {/* Quick Heritage Stays Badges Preview */}
-          <div className="shrink-0 bg-white/95 backdrop-blur-xs p-4 rounded-2xl border border-emerald-200/70 shadow-2xs space-y-2 lg:max-w-xs w-full">
-            <p className="text-[11px] font-bold text-emerald-900 uppercase tracking-wider flex items-center gap-1.5">
-              <Hotel className="w-3.5 h-3.5 text-emerald-700" /> Top Curated Stays
-            </p>
-            <div className="space-y-1.5">
-              {currentCity.topStays.map((stay, idx) => (
-                <div key={idx} className="flex items-center justify-between text-xs">
-                  <span className="font-bold text-stone-800 line-clamp-1">{stay.name}</span>
-                  <span className="text-[10px] px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-900 font-medium shrink-0 ml-2 border border-emerald-200/60">
-                    {stay.category.split('—')[0].trim()}
-                  </span>
-                </div>
-              ))}
+          {/* Cover Photo & Heritage Stays Badges Preview */}
+          <div className="flex flex-col sm:flex-row lg:flex-col gap-3 lg:max-w-xs w-full shrink-0">
+            {currentCity.coverImage && (
+              <div className="relative h-28 w-full rounded-2xl overflow-hidden shadow-2xs border border-white/60">
+                <img
+                  src={currentCity.coverImage}
+                  alt={currentCity.name}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src =
+                      'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80';
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <span className="absolute bottom-1.5 left-2.5 text-[10px] text-white/90 font-medium truncate max-w-[90%]">
+                  {currentCity.photoCredit}
+                </span>
+              </div>
+            )}
+            <div className="bg-white/95 backdrop-blur-xs p-4 rounded-2xl border border-emerald-200/70 shadow-2xs space-y-2 w-full">
+              <p className="text-[11px] font-bold text-emerald-900 uppercase tracking-wider flex items-center gap-1.5">
+                <Hotel className="w-3.5 h-3.5 text-emerald-700" /> Top Curated Stays
+              </p>
+              <div className="space-y-1.5">
+                {currentCity.topStays.map((stay, idx) => (
+                  <div key={idx} className="flex items-center justify-between text-xs">
+                    <span className="font-bold text-stone-800 line-clamp-1">{stay.name}</span>
+                    <span className="text-[10px] px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-900 font-medium shrink-0 ml-2 border border-emerald-200/60">
+                      {stay.category.split('—')[0].trim()}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
