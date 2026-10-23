@@ -75,6 +75,7 @@ import { PunjabDirectorySection } from '../components/explore-india/PunjabDirect
 import { JammuKashmirDirectorySection } from '../components/explore-india/JammuKashmirDirectorySection';
 import { LadakhDirectorySection } from '../components/explore-india/LadakhDirectorySection';
 import { SikkimDirectorySection } from '../components/explore-india/SikkimDirectorySection';
+import { MeghalayaDirectorySection } from '../components/explore-india/MeghalayaDirectorySection';
 import { VERIFIED_HIDDEN_GEMS } from '../data/hiddenGemsData';
 
 interface IndiaHierarchyPageProps {
@@ -333,6 +334,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
   const isJammuKashmirState = currentState?.id?.toLowerCase() === 'jammu-and-kashmir' || currentState?.id?.toLowerCase() === 'jammu-kashmir' || currentState?.name?.toLowerCase() === 'jammu and kashmir' || currentState?.name?.toLowerCase() === 'jammu & kashmir';
   const isLadakhState = currentState?.id?.toLowerCase() === 'ladakh' || currentState?.name?.toLowerCase() === 'ladakh';
   const isSikkimState = currentState?.id?.toLowerCase() === 'sikkim' || currentState?.name?.toLowerCase() === 'sikkim';
+  const isMeghalayaState = currentState?.id?.toLowerCase() === 'meghalaya' || currentState?.name?.toLowerCase() === 'meghalaya';
 
   // All Valid Destinations, Cities & Towns in current state
   const stateValidCities: CityHierarchyEntity[] = useMemo(() => {
@@ -819,6 +821,29 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <SikkimDirectorySection
+            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
+          />
+        </main>
+      );
+    }
+
+    if (isMeghalayaState) {
+      return (
+        <main className="w-full min-h-[65vh] text-[#0B192C] pb-16 space-y-6">
+          <div className="h-1.5 w-full bg-gradient-to-r from-[#FF671F] via-white to-[#046A38] rounded-full mb-4" />
+          <div className="flex items-center justify-between">
+            <button
+              type="button"
+              onClick={handleReturnToIndia}
+              className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-800 hover:underline cursor-pointer"
+            >
+              <ChevronLeft className="h-4 w-4" /> Discover Bharat · All States &amp; Territories
+            </button>
+            <span className="text-xs font-bold text-emerald-950 bg-emerald-100/90 border border-emerald-300 px-3 py-1 rounded-full shadow-2xs">
+              Meghalaya Complete Directory (IN-ML)
+            </span>
+          </div>
+          <MeghalayaDirectorySection
             onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
@@ -1940,7 +1965,8 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             {isJammuKashmirState && <JammuKashmirDirectorySection />}
             {isLadakhState && <LadakhDirectorySection />}
             {isSikkimState && <SikkimDirectorySection />}
-            {!isAndhraPradeshState && !isArunachalPradeshState && !isRajasthanState && !isKeralaState && !isGoaState && !isTamilNaduState && !isHimachalPradeshState && !isKarnatakaState && !isUttarakhandState && !isGujaratState && !isMadhyaPradeshState && !isUttarPradeshState && !isWestBengalState && !isOdishaState && !isAssamState && !isPunjabState && !isJammuKashmirState && !isLadakhState && !isSikkimState && <>
+            {isMeghalayaState && <MeghalayaDirectorySection />}
+            {!isAndhraPradeshState && !isArunachalPradeshState && !isRajasthanState && !isKeralaState && !isGoaState && !isTamilNaduState && !isHimachalPradeshState && !isKarnatakaState && !isUttarakhandState && !isGujaratState && !isMadhyaPradeshState && !isUttarPradeshState && !isWestBengalState && !isOdishaState && !isAssamState && !isPunjabState && !isJammuKashmirState && !isLadakhState && !isSikkimState && !isMeghalayaState && <>
             {/* Heritage Separation Rule */}
             <HeritageDivider
               variant="chakra"
