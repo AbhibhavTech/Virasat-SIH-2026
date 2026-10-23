@@ -56,7 +56,7 @@ import { HeritageDivider } from '../components/common/HeritageDivider';
 import { getMumbaiHierarchyAttractions, isMumbaiCity } from '../data/mumbaiDestinations';
 import { getAmaravatiHierarchyAttractions, isAmaravatiCity } from '../data/amaravatiDestinations';
 import { MaharashtraDestinationsSection } from '../components/explore-india/MaharashtraDestinationsSection';
-import { AndhraPradeshCityGuide } from '../components/explore-india/AndhraPradeshCityGuide';
+import { AndhraPradeshDirectorySection } from '../components/explore-india/AndhraPradeshDirectorySection';
 import { ArunachalPradeshDirectorySection } from '../components/explore-india/ArunachalPradeshDirectorySection';
 import { RajasthanDirectorySection } from '../components/explore-india/RajasthanDirectorySection';
 import { KeralaDirectorySection } from '../components/explore-india/KeralaDirectorySection';
@@ -1132,14 +1132,21 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
       return (
         <main className="w-full min-h-[65vh] text-[#0B192C] pb-16 space-y-6">
           <div className="h-1.5 w-full bg-gradient-to-r from-[#FF671F] via-white to-[#046A38] rounded-full mb-4" />
-          <button
-            type="button"
-            onClick={handleReturnToIndia}
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#C94D0A] hover:underline cursor-pointer"
-          >
-            <ChevronLeft className="h-4 w-4" /> Discover Bharat · All States &amp; Territories
-          </button>
-          <AndhraPradeshCityGuide />
+          <div className="flex items-center justify-between">
+            <button
+              type="button"
+              onClick={handleReturnToIndia}
+              className="inline-flex items-center gap-2 text-sm font-semibold text-amber-800 hover:underline cursor-pointer"
+            >
+              <ChevronLeft className="h-4 w-4" /> Discover Bharat · All States &amp; Territories
+            </button>
+            <span className="text-xs font-bold text-amber-950 bg-amber-100/90 border border-amber-300 px-3 py-1 rounded-full shadow-2xs">
+              Andhra Pradesh Complete Directory (IN-AP)
+            </span>
+          </div>
+          <AndhraPradeshDirectorySection
+            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
+          />
         </main>
       );
     }
@@ -1978,7 +1985,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
               onPreview={setPreviewPlace}
               onExploreCity={(cityId) => handleSelectTown(currentState.id, cityId)}
             />
-            {isAndhraPradeshState && <AndhraPradeshCityGuide />}
+            {isAndhraPradeshState && <AndhraPradeshDirectorySection />}
             {isArunachalPradeshState && <ArunachalPradeshDirectorySection />}
             {isRajasthanState && <RajasthanDirectorySection />}
             {isKeralaState && <KeralaDirectorySection />}
