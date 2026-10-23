@@ -72,6 +72,7 @@ import { WestBengalDirectorySection } from '../components/explore-india/WestBeng
 import { OdishaDirectorySection } from '../components/explore-india/OdishaDirectorySection';
 import { AssamDirectorySection } from '../components/explore-india/AssamDirectorySection';
 import { PunjabDirectorySection } from '../components/explore-india/PunjabDirectorySection';
+import { JammuKashmirDirectorySection } from '../components/explore-india/JammuKashmirDirectorySection';
 import { VERIFIED_HIDDEN_GEMS } from '../data/hiddenGemsData';
 
 interface IndiaHierarchyPageProps {
@@ -327,6 +328,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
   const isOdishaState = currentState?.id?.toLowerCase() === 'odisha' || currentState?.name?.toLowerCase() === 'odisha' || currentState?.id?.toLowerCase() === 'orissa' || currentState?.name?.toLowerCase() === 'orissa';
   const isAssamState = currentState?.id?.toLowerCase() === 'assam' || currentState?.name?.toLowerCase() === 'assam';
   const isPunjabState = currentState?.id?.toLowerCase() === 'punjab' || currentState?.name?.toLowerCase() === 'punjab';
+  const isJammuKashmirState = currentState?.id?.toLowerCase() === 'jammu-and-kashmir' || currentState?.id?.toLowerCase() === 'jammu-kashmir' || currentState?.name?.toLowerCase() === 'jammu and kashmir' || currentState?.name?.toLowerCase() === 'jammu & kashmir';
 
   // All Valid Destinations, Cities & Towns in current state
   const stateValidCities: CityHierarchyEntity[] = useMemo(() => {
@@ -744,6 +746,29 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <PunjabDirectorySection
+            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
+          />
+        </main>
+      );
+    }
+
+    if (isJammuKashmirState) {
+      return (
+        <main className="w-full min-h-[65vh] text-[#0B192C] pb-16 space-y-6">
+          <div className="h-1.5 w-full bg-gradient-to-r from-[#FF671F] via-white to-[#046A38] rounded-full mb-4" />
+          <div className="flex items-center justify-between">
+            <button
+              type="button"
+              onClick={handleReturnToIndia}
+              className="inline-flex items-center gap-2 text-sm font-semibold text-sky-800 hover:underline cursor-pointer"
+            >
+              <ChevronLeft className="h-4 w-4" /> Discover Bharat · All States &amp; Territories
+            </button>
+            <span className="text-xs font-bold text-sky-950 bg-sky-100/90 border border-sky-300 px-3 py-1 rounded-full shadow-2xs">
+              Jammu &amp; Kashmir Complete Directory (IN-JK)
+            </span>
+          </div>
+          <JammuKashmirDirectorySection
             onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
@@ -1862,7 +1887,8 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             {isOdishaState && <OdishaDirectorySection />}
             {isAssamState && <AssamDirectorySection />}
             {isPunjabState && <PunjabDirectorySection />}
-            {!isAndhraPradeshState && !isArunachalPradeshState && !isRajasthanState && !isKeralaState && !isGoaState && !isTamilNaduState && !isHimachalPradeshState && !isKarnatakaState && !isUttarakhandState && !isGujaratState && !isMadhyaPradeshState && !isUttarPradeshState && !isWestBengalState && !isOdishaState && !isAssamState && !isPunjabState && <>
+            {isJammuKashmirState && <JammuKashmirDirectorySection />}
+            {!isAndhraPradeshState && !isArunachalPradeshState && !isRajasthanState && !isKeralaState && !isGoaState && !isTamilNaduState && !isHimachalPradeshState && !isKarnatakaState && !isUttarakhandState && !isGujaratState && !isMadhyaPradeshState && !isUttarPradeshState && !isWestBengalState && !isOdishaState && !isAssamState && !isPunjabState && !isJammuKashmirState && <>
             {/* Heritage Separation Rule */}
             <HeritageDivider
               variant="chakra"
