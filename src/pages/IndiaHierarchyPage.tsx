@@ -86,6 +86,7 @@ import { ManipurDirectorySection } from '../components/explore-india/ManipurDire
 import { NagalandDirectorySection } from '../components/explore-india/NagalandDirectorySection';
 import { MizoramDirectorySection } from '../components/explore-india/MizoramDirectorySection';
 import { AndamanNicobarDirectorySection } from '../components/explore-india/AndamanNicobarDirectorySection';
+import { LakshadweepDirectorySection } from '../components/explore-india/LakshadweepDirectorySection';
 import { VERIFIED_HIDDEN_GEMS } from '../data/hiddenGemsData';
 
 interface IndiaHierarchyPageProps {
@@ -355,6 +356,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
   const isNagalandState = currentState?.id?.toLowerCase() === 'nagaland' || currentState?.name?.toLowerCase() === 'nagaland';
   const isMizoramState = currentState?.id?.toLowerCase() === 'mizoram' || currentState?.name?.toLowerCase() === 'mizoram';
   const isAndamanNicobarState = currentState?.id?.toLowerCase() === 'andaman-and-nicobar-islands' || currentState?.id?.toLowerCase().includes('andaman') || currentState?.name?.toLowerCase().includes('andaman');
+  const isLakshadweepState = currentState?.id?.toLowerCase() === 'lakshadweep' || currentState?.name?.toLowerCase().includes('lakshadweep');
 
   // All Valid Destinations, Cities & Towns in current state
   const stateValidCities: CityHierarchyEntity[] = useMemo(() => {
@@ -1094,6 +1096,29 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <AndamanNicobarDirectorySection
+            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
+          />
+        </main>
+      );
+    }
+
+    if (isLakshadweepState) {
+      return (
+        <main className="w-full min-h-[65vh] text-[#0B192C] pb-16 space-y-6">
+          <div className="h-1.5 w-full bg-gradient-to-r from-[#FF671F] via-white to-[#046A38] rounded-full mb-4" />
+          <div className="flex items-center justify-between">
+            <button
+              type="button"
+              onClick={handleReturnToIndia}
+              className="inline-flex items-center gap-2 text-sm font-semibold text-teal-800 hover:underline cursor-pointer"
+            >
+              <ChevronLeft className="h-4 w-4" /> Discover Bharat · All States &amp; Territories
+            </button>
+            <span className="text-xs font-bold text-teal-950 bg-teal-100/90 border border-teal-300 px-3 py-1 rounded-full shadow-2xs">
+              Lakshadweep Complete Directory (IN-LD)
+            </span>
+          </div>
+          <LakshadweepDirectorySection
             onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
@@ -2240,7 +2265,8 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             {isNagalandState && <NagalandDirectorySection />}
             {isMizoramState && <MizoramDirectorySection />}
             {isAndamanNicobarState && <AndamanNicobarDirectorySection />}
-            {!isAndhraPradeshState && !isArunachalPradeshState && !isRajasthanState && !isKeralaState && !isGoaState && !isTamilNaduState && !isHimachalPradeshState && !isKarnatakaState && !isUttarakhandState && !isGujaratState && !isMadhyaPradeshState && !isUttarPradeshState && !isWestBengalState && !isOdishaState && !isAssamState && !isPunjabState && !isJammuKashmirState && !isLadakhState && !isSikkimState && !isMeghalayaState && !isTelanganaState && !isChhattisgarhState && !isBiharState && !isJharkhandState && !isHaryanaState && !isTripuraState && !isManipurState && !isNagalandState && !isMizoramState && !isAndamanNicobarState && <>
+            {isLakshadweepState && <LakshadweepDirectorySection />}
+            {!isAndhraPradeshState && !isArunachalPradeshState && !isRajasthanState && !isKeralaState && !isGoaState && !isTamilNaduState && !isHimachalPradeshState && !isKarnatakaState && !isUttarakhandState && !isGujaratState && !isMadhyaPradeshState && !isUttarPradeshState && !isWestBengalState && !isOdishaState && !isAssamState && !isPunjabState && !isJammuKashmirState && !isLadakhState && !isSikkimState && !isMeghalayaState && !isTelanganaState && !isChhattisgarhState && !isBiharState && !isJharkhandState && !isHaryanaState && !isTripuraState && !isManipurState && !isNagalandState && !isMizoramState && !isAndamanNicobarState && !isLakshadweepState && <>
             {/* Heritage Separation Rule */}
             <HeritageDivider
               variant="chakra"
