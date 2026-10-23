@@ -9,6 +9,7 @@ export default defineConfig({
     allowedHosts: true,
   },
   build: {
+    sourcemap: false,
     chunkSizeWarningLimit: 1200,
     rollupOptions: {
       output: {
@@ -19,6 +20,16 @@ export default defineConfig({
             if (id.includes('@tanstack')) return 'vendor-query';
             if (id.includes('motion')) return 'vendor-motion';
             if (id.includes('react-markdown') || id.includes('remark-gfm')) return 'vendor-markdown';
+          }
+          if (id.includes('src/data/') && id.includes('Directory')) {
+            const match = id.match(/([a-zA-Z]+Directory)/);
+            if (match) return `data-${match[1].toLowerCase()}`;
+            return 'state-directories-data';
+          }
+          if (id.includes('src/components/explore-india/')) {
+            const match = id.match(/([a-zA-Z]+DirectorySection)/);
+            if (match) return `ui-${match[1].toLowerCase()}`;
+            return 'explore-india-components';
           }
         },
       },

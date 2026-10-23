@@ -17,7 +17,8 @@ import {
   Share2,
   AlertTriangle,
   Sun,
-  Camera
+  Camera,
+  ShieldAlert
 } from 'lucide-react';
 import { GUJARAT_DIRECTORY, GujaratCity, GujaratAttraction } from '../../data/gujaratDirectory';
 
@@ -103,25 +104,25 @@ export const GujaratDirectorySection: React.FC<GujaratDirectorySectionProps> = (
 
           <div className="space-y-1">
             <h2 className="font-serif text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight">
-              Gujarat · <span className="text-amber-300">Legends, Lions & Salt Horizons</span>
+              Gujarat · <span className="text-amber-300">Legends, Lions &amp; Salt Horizons</span>
             </h2>
             <p className="text-amber-100/90 text-sm sm:text-base leading-relaxed max-w-2xl pt-1">
-              From India’s first UNESCO World Heritage City in Ahmedabad and the shimmering crystalline salt plains of Kutch to the majestic Asiatic lions of Gir and Lord Krishna’s sacred ocean citadel at Dwarka.
+              From India’s first UNESCO World Heritage City in Ahmedabad and the shimmering crystalline salt plains of Kutch to the majestic Asiatic lions of Sasan Gir, the ancient shore sanctuary of Somnath, and Lord Krishna’s sacred Char Dham kingdom at Dwarka.
             </p>
           </div>
 
           {/* Quick Metrics Bar */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
             <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-xs border border-white/15">
-              <div className="text-xl sm:text-2xl font-black text-amber-300">4</div>
+              <div className="text-xl sm:text-2xl font-black text-amber-300">5</div>
               <div className="text-[11px] text-amber-100/80 font-medium uppercase tracking-wider">Premier Hubs</div>
             </div>
             <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-xs border border-white/15">
-              <div className="text-xl sm:text-2xl font-black text-orange-300">19+</div>
+              <div className="text-xl sm:text-2xl font-black text-orange-300">26</div>
               <div className="text-[11px] text-orange-100/80 font-medium uppercase tracking-wider">Curated Sights &amp; Hidden Gems</div>
             </div>
             <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-xs border border-white/15">
-              <div className="text-xl sm:text-2xl font-black text-sky-300">12+</div>
+              <div className="text-xl sm:text-2xl font-black text-sky-300">15+</div>
               <div className="text-[11px] text-sky-100/80 font-medium uppercase tracking-wider">Havelis, Glamping &amp; Safari Lodges</div>
             </div>
             <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-xs border border-white/15">
@@ -133,7 +134,7 @@ export const GujaratDirectorySection: React.FC<GujaratDirectorySectionProps> = (
       </div>
 
       {/* =========================================================================
-          4-DESTINATION NAVIGATION TABS (AMD, KUT, GIR, DWK)
+          5-DESTINATION NAVIGATION TABS (AMD, GIR, SMT, DWK, KCH)
       ========================================================================= */}
       <div className="space-y-3">
         <div className="flex items-center justify-between">
@@ -148,7 +149,7 @@ export const GujaratDirectorySection: React.FC<GujaratDirectorySectionProps> = (
           </span>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3">
           {GUJARAT_DIRECTORY.map((city) => {
             const isSelected = city.id === selectedCityId;
             return (
@@ -215,20 +216,39 @@ export const GujaratDirectorySection: React.FC<GujaratDirectorySectionProps> = (
             </p>
           </div>
 
-          {/* Quick Heritage Stays Badges Preview */}
-          <div className="shrink-0 bg-white/95 backdrop-blur-xs p-4 rounded-2xl border border-amber-200/70 shadow-2xs space-y-2 lg:max-w-xs w-full">
-            <p className="text-[11px] font-bold text-amber-900 uppercase tracking-wider flex items-center gap-1.5">
-              <Hotel className="w-3.5 h-3.5 text-amber-700" /> Top Curated Stays
-            </p>
-            <div className="space-y-1.5">
-              {currentCity.topStays.map((stay, idx) => (
-                <div key={idx} className="flex items-center justify-between text-xs">
-                  <span className="font-bold text-stone-800 line-clamp-1">{stay.name}</span>
-                  <span className="text-[10px] px-2 py-0.5 rounded-md bg-amber-50 text-amber-900 font-medium shrink-0 ml-2 border border-amber-200/60">
-                    {stay.category.split('—')[0].trim()}
-                  </span>
-                </div>
-              ))}
+          {/* Cover Photo & Quick Heritage Stays Badges Preview */}
+          <div className="flex flex-col sm:flex-row lg:flex-col gap-3 lg:max-w-xs w-full shrink-0">
+            {currentCity.coverImage && (
+              <div className="relative h-28 w-full rounded-2xl overflow-hidden shadow-2xs border border-white/60">
+                <img
+                  src={currentCity.coverImage}
+                  alt={currentCity.name}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src =
+                      'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80';
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <span className="absolute bottom-1.5 left-2.5 text-[10px] text-white/90 font-medium truncate max-w-[90%]">
+                  {currentCity.photoCredit}
+                </span>
+              </div>
+            )}
+            <div className="bg-white/95 backdrop-blur-xs p-4 rounded-2xl border border-amber-200/70 shadow-2xs space-y-2 w-full">
+              <p className="text-[11px] font-bold text-amber-900 uppercase tracking-wider flex items-center gap-1.5">
+                <Hotel className="w-3.5 h-3.5 text-amber-700" /> Top Curated Stays
+              </p>
+              <div className="space-y-1.5">
+                {currentCity.topStays.map((stay, idx) => (
+                  <div key={idx} className="flex items-center justify-between text-xs">
+                    <span className="font-bold text-stone-800 line-clamp-1">{stay.name}</span>
+                    <span className="text-[10px] px-2 py-0.5 rounded-md bg-amber-50 text-amber-900 font-medium shrink-0 ml-2 border border-amber-200/60">
+                      {stay.category.split('—')[0].trim()}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -568,13 +588,23 @@ export const GujaratDirectorySection: React.FC<GujaratDirectorySectionProps> = (
         ========================================================================= */}
         {activeTab === 'dining' && (
           <div className="space-y-6">
-            {/* Pilgrimage Warning Notice if applicable (e.g. Dwarka) */}
+            {/* Pilgrimage Warning Notice if applicable (e.g. Somnath, Dwarka) */}
             {currentCity.dining.pilgrimageNotice && (
               <div className="p-4 rounded-2xl bg-amber-50/90 border border-amber-300 text-amber-950 text-xs sm:text-sm flex items-start gap-3 shadow-2xs">
                 <AlertTriangle className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
                 <p className="leading-relaxed">
                   <span className="font-bold">Sacred Pilgrimage Rule: </span>
                   {currentCity.dining.pilgrimageNotice}
+                </p>
+              </div>
+            )}
+
+            {currentCity.dining.permitNotice && (
+              <div className="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/30 text-amber-950 text-xs sm:text-sm flex items-start gap-3 shadow-2xs">
+                <ShieldAlert className="w-4 h-4 text-amber-800 shrink-0 mt-0.5" />
+                <p className="leading-relaxed">
+                  <span className="font-bold">Permit &amp; Conservation Notice: </span>
+                  {currentCity.dining.permitNotice}
                 </p>
               </div>
             )}
@@ -633,7 +663,7 @@ export const GujaratDirectorySection: React.FC<GujaratDirectorySectionProps> = (
                     </h4>
                   </div>
                   <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-rose-50 text-rose-700 border border-rose-200">
-                    {currentCity.dining.nonVeg.length > 0 ? 'Historic Culinary Lanes' : 'Pilgrimage Precinct'}
+                    {currentCity.dining.nonVeg.length > 0 ? 'Resort Dining & Historic Stalls' : 'Pilgrimage Precinct'}
                   </span>
                 </div>
 
@@ -659,7 +689,7 @@ export const GujaratDirectorySection: React.FC<GujaratDirectorySectionProps> = (
                   <div className="p-4 rounded-xl bg-stone-50 border border-stone-200 text-stone-600 text-xs leading-relaxed">
                     <p className="font-semibold text-stone-800 mb-1">Strict Prohibition Zone</p>
                     <p>
-                      By sacred municipal regulations and ancient tradition, serving non-vegetarian food and alcohol is strictly prohibited throughout the holy town and temple precincts of Dwarka. Visitors can enjoy an abundance of fresh, pure vegetarian Kathiyawadi and Gujarati thalis.
+                      By sacred municipal regulations and ancient tradition, serving non-vegetarian food and alcohol is strictly prohibited throughout the holy town and temple precincts of {currentCity.name}. Visitors can enjoy an abundance of fresh, pure vegetarian Kathiyawadi and Gujarati thalis.
                     </p>
                   </div>
                 )}
