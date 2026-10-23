@@ -110,22 +110,22 @@ export const KeralaDirectorySection: React.FC<KeralaDirectorySectionProps> = ({
               Kerala · <span className="text-emerald-300">God’s Own Country</span>
             </h2>
             <p className="text-emerald-100/90 text-sm sm:text-base leading-relaxed max-w-2xl pt-1">
-              From colonial spice-trade coastlines and cantilevered fishing nets to emerald shola-grassland tea highlands, quiet backwater lagoons, and the subterranean vaults of Travancore.
+              From the cantilevered fishing nets and colonial spice alleys of Fort Kochi to the rolling emerald tea carpets of Munnar, Vembanad backwater houseboats of Alleppey, and prehistoric Edakkal rock caves of Wayanad.
             </p>
           </div>
 
           {/* Quick Metrics Bar */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
             <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-xs border border-white/15">
-              <div className="text-xl sm:text-2xl font-black text-emerald-300">5</div>
-              <div className="text-[11px] text-emerald-100/80 font-medium uppercase tracking-wider">Premier Cities</div>
+              <div className="text-xl sm:text-2xl font-black text-emerald-300">4</div>
+              <div className="text-[11px] text-emerald-100/80 font-medium uppercase tracking-wider">Premier Destinations</div>
             </div>
             <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-xs border border-white/15">
-              <div className="text-xl sm:text-2xl font-black text-teal-300">24+</div>
+              <div className="text-xl sm:text-2xl font-black text-teal-300">20+</div>
               <div className="text-[11px] text-teal-100/80 font-medium uppercase tracking-wider">Curated Sights &amp; Gems</div>
             </div>
             <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-xs border border-white/15">
-              <div className="text-xl sm:text-2xl font-black text-amber-300">15+</div>
+              <div className="text-xl sm:text-2xl font-black text-amber-300">12+</div>
               <div className="text-[11px] text-amber-100/80 font-medium uppercase tracking-wider">Eco-Resorts &amp; Stays</div>
             </div>
             <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-xs border border-white/15">
@@ -137,7 +137,7 @@ export const KeralaDirectorySection: React.FC<KeralaDirectorySectionProps> = ({
       </div>
 
       {/* =========================================================================
-          5-CITY NAVIGATION SLIDER (PEACEFUL TABS)
+          4-DESTINATION NAVIGATION TABS (COK, MUN, ALP, WAY)
       ========================================================================= */}
       <div className="space-y-3">
         <div className="flex items-center justify-between">
@@ -148,11 +148,11 @@ export const KeralaDirectorySection: React.FC<KeralaDirectorySectionProps> = ({
             </h3>
           </div>
           <span className="text-xs text-stone-500 font-medium">
-            Select a city to explore its dossier
+            Select a destination to explore its complete verified travel dossier
           </span>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           {KERALA_DIRECTORY.map((city) => {
             const isSelected = city.id === selectedCityId;
             return (
