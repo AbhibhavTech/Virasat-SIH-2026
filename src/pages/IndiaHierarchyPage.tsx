@@ -81,6 +81,7 @@ import { ChhattisgarhDirectorySection } from '../components/explore-india/Chhatt
 import { BiharDirectorySection } from '../components/explore-india/BiharDirectorySection';
 import { JharkhandDirectorySection } from '../components/explore-india/JharkhandDirectorySection';
 import { HaryanaDirectorySection } from '../components/explore-india/HaryanaDirectorySection';
+import { TripuraDirectorySection } from '../components/explore-india/TripuraDirectorySection';
 import { VERIFIED_HIDDEN_GEMS } from '../data/hiddenGemsData';
 
 interface IndiaHierarchyPageProps {
@@ -345,6 +346,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
   const isBiharState = currentState?.id?.toLowerCase() === 'bihar' || currentState?.name?.toLowerCase() === 'bihar';
   const isJharkhandState = currentState?.id?.toLowerCase() === 'jharkhand' || currentState?.name?.toLowerCase() === 'jharkhand';
   const isHaryanaState = currentState?.id?.toLowerCase() === 'haryana' || currentState?.name?.toLowerCase() === 'haryana';
+  const isTripuraState = currentState?.id?.toLowerCase() === 'tripura' || currentState?.name?.toLowerCase() === 'tripura';
 
   // All Valid Destinations, Cities & Towns in current state
   const stateValidCities: CityHierarchyEntity[] = useMemo(() => {
@@ -969,6 +971,29 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <HaryanaDirectorySection
+            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
+          />
+        </main>
+      );
+    }
+
+    if (isTripuraState) {
+      return (
+        <main className="w-full min-h-[65vh] text-[#0B192C] pb-16 space-y-6">
+          <div className="h-1.5 w-full bg-gradient-to-r from-[#FF671F] via-white to-[#046A38] rounded-full mb-4" />
+          <div className="flex items-center justify-between">
+            <button
+              type="button"
+              onClick={handleReturnToIndia}
+              className="inline-flex items-center gap-2 text-sm font-semibold text-rose-800 hover:underline cursor-pointer"
+            >
+              <ChevronLeft className="h-4 w-4" /> Discover Bharat · All States &amp; Territories
+            </button>
+            <span className="text-xs font-bold text-rose-950 bg-rose-100/90 border border-rose-300 px-3 py-1 rounded-full shadow-2xs">
+              Tripura Complete Directory (IN-TR)
+            </span>
+          </div>
+          <TripuraDirectorySection
             onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
@@ -2110,7 +2135,8 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             {isBiharState && <BiharDirectorySection />}
             {isJharkhandState && <JharkhandDirectorySection />}
             {isHaryanaState && <HaryanaDirectorySection />}
-            {!isAndhraPradeshState && !isArunachalPradeshState && !isRajasthanState && !isKeralaState && !isGoaState && !isTamilNaduState && !isHimachalPradeshState && !isKarnatakaState && !isUttarakhandState && !isGujaratState && !isMadhyaPradeshState && !isUttarPradeshState && !isWestBengalState && !isOdishaState && !isAssamState && !isPunjabState && !isJammuKashmirState && !isLadakhState && !isSikkimState && !isMeghalayaState && !isTelanganaState && !isChhattisgarhState && !isBiharState && !isJharkhandState && !isHaryanaState && <>
+            {isTripuraState && <TripuraDirectorySection />}
+            {!isAndhraPradeshState && !isArunachalPradeshState && !isRajasthanState && !isKeralaState && !isGoaState && !isTamilNaduState && !isHimachalPradeshState && !isKarnatakaState && !isUttarakhandState && !isGujaratState && !isMadhyaPradeshState && !isUttarPradeshState && !isWestBengalState && !isOdishaState && !isAssamState && !isPunjabState && !isJammuKashmirState && !isLadakhState && !isSikkimState && !isMeghalayaState && !isTelanganaState && !isChhattisgarhState && !isBiharState && !isJharkhandState && !isHaryanaState && !isTripuraState && <>
             {/* Heritage Separation Rule */}
             <HeritageDivider
               variant="chakra"
