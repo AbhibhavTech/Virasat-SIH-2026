@@ -197,20 +197,39 @@ export const RajasthanDirectorySection: React.FC<RajasthanDirectorySectionProps>
             </p>
           </div>
 
-          {/* Quick Heritage Stays Badges Preview */}
-          <div className="shrink-0 bg-white/90 backdrop-blur-xs p-4 rounded-2xl border border-stone-200/80 shadow-2xs space-y-2 lg:max-w-xs w-full">
-            <p className="text-[11px] font-bold text-stone-500 uppercase tracking-wider flex items-center gap-1.5">
-              <Hotel className="w-3.5 h-3.5 text-[#FF671F]" /> Top Heritage Stays
-            </p>
-            <div className="space-y-1.5">
-              {currentCity.topStays.map((stay, idx) => (
-                <div key={idx} className="flex items-center justify-between text-xs">
-                  <span className="font-bold text-stone-800 line-clamp-1">{stay.name}</span>
-                  <span className="text-[10px] px-2 py-0.5 rounded-md bg-stone-100 text-stone-600 font-medium shrink-0 ml-2">
-                    {stay.category}
-                  </span>
-                </div>
-              ))}
+          {/* Cover Photo & Heritage Stays Badges Preview */}
+          <div className="flex flex-col sm:flex-row lg:flex-col gap-3 lg:max-w-xs w-full shrink-0">
+            {currentCity.coverImage && (
+              <div className="relative h-28 w-full rounded-2xl overflow-hidden shadow-2xs border border-white/60">
+                <img
+                  src={currentCity.coverImage}
+                  alt={currentCity.name}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src =
+                      'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&auto=format&fit=crop&q=80';
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <span className="absolute bottom-1.5 left-2.5 text-[10px] text-white/90 font-medium truncate max-w-[90%]">
+                  {currentCity.photoCredit}
+                </span>
+              </div>
+            )}
+            <div className="bg-white/90 backdrop-blur-xs p-4 rounded-2xl border border-stone-200/80 shadow-2xs space-y-2 w-full">
+              <p className="text-[11px] font-bold text-stone-500 uppercase tracking-wider flex items-center gap-1.5">
+                <Hotel className="w-3.5 h-3.5 text-[#FF671F]" /> Top Heritage Stays
+              </p>
+              <div className="space-y-1.5">
+                {currentCity.topStays.map((stay, idx) => (
+                  <div key={idx} className="flex items-center justify-between text-xs">
+                    <span className="font-bold text-stone-800 line-clamp-1">{stay.name}</span>
+                    <span className="text-[10px] px-2 py-0.5 rounded-md bg-stone-100 text-stone-600 font-medium shrink-0 ml-2">
+                      {stay.category}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
@@ -325,23 +344,45 @@ export const RajasthanDirectorySection: React.FC<RajasthanDirectorySectionProps>
                   key={attraction.id}
                   className="rounded-2xl border border-stone-200/90 bg-white shadow-2xs hover:shadow-md transition-all duration-200 flex flex-col justify-between overflow-hidden group"
                 >
-                  <div className="p-4 sm:p-5 space-y-3">
-                    {/* Header Badges */}
-                    <div className="flex items-start justify-between gap-2">
-                      <span className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-stone-100 text-stone-600 border border-stone-200/70">
+                  {/* Photo Preview Banner */}
+                  <div className="relative h-44 sm:h-48 w-full overflow-hidden bg-stone-100">
+                    <img
+                      src={attraction.image}
+                      alt={attraction.name}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).src =
+                          'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&auto=format&fit=crop&q=80';
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+                    {/* Top Badges over image */}
+                    <div className="absolute top-2.5 left-2.5 right-2.5 flex items-center justify-between gap-2">
+                      <span className="text-[10px] font-mono font-bold px-2 py-0.5 rounded-md bg-black/60 text-white backdrop-blur-xs border border-white/20">
                         {attraction.id}
                       </span>
                       {attraction.isHiddenGem ? (
-                        <span className="inline-flex items-center gap-1 text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-amber-50 text-amber-900 border border-amber-300">
-                          <Sparkles className="w-3 h-3 text-amber-600" /> Hidden Gem
+                        <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-amber-500 text-white shadow-xs">
+                          <Sparkles className="w-2.5 h-2.5" /> Hidden Gem
                         </span>
                       ) : (
-                        <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200">
+                        <span className="text-[10px] font-semibold px-2 py-0.5 rounded-full bg-emerald-600 text-white shadow-xs">
                           Featured
                         </span>
                       )}
                     </div>
 
+                    {/* Bottom image overlay */}
+                    <div className="absolute bottom-2 left-2.5 right-2.5">
+                      <p className="text-[10px] text-white/80 line-clamp-1 italic">
+                        {attraction.photoCredit}
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="p-4 sm:p-5 space-y-3">
                     {/* Title & Category */}
                     <div>
                       <h4 className="font-serif text-lg font-bold text-[#0B192C] group-hover:text-[#C74B0A] transition">
