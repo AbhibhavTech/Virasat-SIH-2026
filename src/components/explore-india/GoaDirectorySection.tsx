@@ -225,20 +225,39 @@ export const GoaDirectorySection: React.FC<GoaDirectorySectionProps> = ({
             </p>
           </div>
 
-          {/* Quick Heritage Stays Badges Preview */}
-          <div className="shrink-0 bg-white/95 backdrop-blur-xs p-4 rounded-2xl border border-sky-100/80 shadow-2xs space-y-2 lg:max-w-xs w-full">
-            <p className="text-[11px] font-bold text-sky-800 uppercase tracking-wider flex items-center gap-1.5">
-              <Hotel className="w-3.5 h-3.5 text-sky-600" /> Top Curated Stays
-            </p>
-            <div className="space-y-1.5">
-              {currentDistrict.topStays.map((stay, idx) => (
-                <div key={idx} className="flex items-center justify-between text-xs">
-                  <span className="font-bold text-stone-800 line-clamp-1">{stay.name}</span>
-                  <span className="text-[10px] px-2 py-0.5 rounded-md bg-sky-50 text-sky-700 font-medium shrink-0 ml-2 border border-sky-200/60">
-                    {stay.category.split('—')[0].trim()}
-                  </span>
-                </div>
-              ))}
+          {/* Cover Photo & Curated Stays Badges Preview */}
+          <div className="flex flex-col sm:flex-row lg:flex-col gap-3 lg:max-w-xs w-full shrink-0">
+            {currentDistrict.coverImage && (
+              <div className="relative h-28 w-full rounded-2xl overflow-hidden shadow-2xs border border-white/60">
+                <img
+                  src={currentDistrict.coverImage}
+                  alt={currentDistrict.name}
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src =
+                      'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80';
+                  }}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                <span className="absolute bottom-1.5 left-2.5 text-[10px] text-white/90 font-medium truncate max-w-[90%]">
+                  {currentDistrict.photoCredit}
+                </span>
+              </div>
+            )}
+            <div className="bg-white/95 backdrop-blur-xs p-4 rounded-2xl border border-sky-100/80 shadow-2xs space-y-2 w-full">
+              <p className="text-[11px] font-bold text-sky-800 uppercase tracking-wider flex items-center gap-1.5">
+                <Hotel className="w-3.5 h-3.5 text-sky-600" /> Top Curated Stays
+              </p>
+              <div className="space-y-1.5">
+                {currentDistrict.topStays.map((stay, idx) => (
+                  <div key={idx} className="flex items-center justify-between text-xs">
+                    <span className="font-bold text-stone-800 line-clamp-1">{stay.name}</span>
+                    <span className="text-[10px] px-2 py-0.5 rounded-md bg-sky-50 text-sky-700 font-medium shrink-0 ml-2 border border-sky-200/60">
+                      {stay.category.split('—')[0].trim()}
+                    </span>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
