@@ -36,9 +36,7 @@ import { api } from '../../services/api';
 import { MonumentARCameraModal } from '../ar/MonumentARCameraModal';
 import {
   AshokaChakra,
-  FlowingTricolourRibbon,
   IncredibleIndiaBadge,
-  HeritageSkylineSilhouette,
   VirasatLogoMark,
   NorthIndiaIcon,
   SouthIndiaIcon,
@@ -47,7 +45,6 @@ import {
   CentralIndiaIcon,
   NortheastIndiaIcon,
   IndiaIllustratedMapGraphic,
-  RoyalBengalTigerEmblem,
 } from '../common/TricolourBranding';
 import { IndiaHeritageMapPreview } from './IndiaHeritageMapPreview';
 import { ScrollReveal } from '../common/ScrollReveal';
@@ -1853,7 +1850,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
             })}
           </div>
 
-          {/* Right: Stacked 2 Cards ("Explore on Map" & "Hidden Gems") */}
+          {/* Right: Map and festivals */}
           <div className="lg:col-span-5 flex flex-col justify-between gap-3 sm:gap-4">
             {/* Card 1: Explore on Map */}
             <ScrollReveal animation="fade-left" delay={100} className="flex-1 flex">
@@ -1882,30 +1879,36 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
               </div>
             </ScrollReveal>
 
-            {/* Card 2: Hidden Gems */}
+            {/* Card 2: Festivals */}
             <ScrollReveal animation="fade-left" delay={200} className="flex-1 flex">
               <div
-                onClick={() => onNavigateTab('heritage')}
-                className="rounded-2xl overflow-hidden relative p-4 sm:p-5 shadow-2xs hover:shadow-md transition flex flex-col justify-end min-h-[135px] sm:min-h-[145px] text-white cursor-pointer group flex-1 w-full"
+                onClick={() => onNavigateTab('festivals')}
+                className="rounded-2xl overflow-hidden relative p-5 sm:p-6 shadow-2xs hover:shadow-md transition flex flex-col justify-center min-h-[170px] text-white cursor-pointer group flex-1 w-full"
               >
                 <img
-                  src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=800&auto=format&fit=crop&q=80"
-                  alt="Majestic Mountain Ridge"
-                  className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  src="/images/diwali-lamps-diyas.jpg"
+                  alt="Diyas lit during Diwali"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/45 to-transparent" />
-                <div className="relative z-10 space-y-1">
-                  <h3 className="font-serif text-base sm:text-lg font-bold text-white leading-tight">
-                    Hidden Gems
+                <img
+                  src="/images/braj-holi-celebration.jpg"
+                  alt="Colours of Holi"
+                  className="absolute inset-y-0 right-0 w-[30%] h-full object-cover hidden sm:block border-l-2 border-white/50 transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#13283D]/95 via-[#13283D]/80 to-[#13283D]/25 pointer-events-none" />
+                <div className="relative z-10 space-y-1.5 max-w-[75%]">
+                  <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-amber-200">Celebrate the seasons</span>
+                  <h3 className="font-serif text-xl sm:text-2xl font-bold text-white leading-tight">
+                    Festivals of India
                   </h3>
-                  <p className="text-xs text-stone-200 leading-relaxed">
-                    Offbeat destinations beyond the ordinary.
+                  <p className="text-xs sm:text-sm text-white/90 leading-relaxed">
+                    Discover traditions, stories and celebrations across every region.
                   </p>
                   <button
                     type="button"
-                    className="bg-[#FF671F] hover:bg-[#E65100] text-white px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-semibold inline-flex items-center gap-1.5 shadow-2xs transition active:scale-95 self-start mt-2 cursor-pointer"
+                    className="bg-[#FF671F] hover:bg-[#E65100] text-white px-4 py-2 rounded-full text-xs font-semibold inline-flex items-center gap-1.5 shadow-2xs transition active:scale-95 self-start mt-2 cursor-pointer"
                   >
-                    <span>Explore Hidden India</span>
+                    <span>Explore Festivals</span>
                     <ArrowRight className="w-3 h-3" />
                   </button>
                 </div>
@@ -1916,33 +1919,23 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
       </section>
 
       {/* ========================================================================= */}
-      {/* 5. TRICOLOUR HERITAGE BANNER / FOOTER EMBLEM (MATCHING TEMPLATE)           */}
+      {/* 5. INDIA FLAG & HERITAGE MESSAGE */}
       {/* ========================================================================= */}
       <ScrollReveal animation="fade-up">
-        <section className="rounded-2xl sm:rounded-3xl bg-white border border-[#EFE8DF] overflow-hidden shadow-2xs p-4 sm:p-8 relative">
-          <FlowingTricolourRibbon variant="footer" className="opacity-90 z-1" />
-
-          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
-            {/* Heritage Skyline Silhouette */}
-            <div className="w-full md:w-1/3 opacity-80">
-              <HeritageSkylineSilhouette className="w-full h-12 text-stone-400" />
-            </div>
-
-            {/* Center Slogan */}
-            <div className="text-center space-y-1 flex-1">
-              <div className="flex items-center justify-center gap-2 text-xs font-bold text-stone-500 uppercase tracking-widest">
-                <span className="w-4 h-0.5 bg-[#FF671F] rounded-full" />
-                <span>Explore • Respect • Preserve</span>
-                <span className="w-4 h-0.5 bg-[#046A38] rounded-full" />
+        <section className="rounded-2xl sm:rounded-3xl border border-[#E8DCCB] overflow-hidden shadow-sm p-5 sm:p-8 bg-gradient-to-br from-[#FFF8EE] via-white to-[#F1F9F3]">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10">
+            <div role="img" aria-label="Flag of India with saffron, white and green bands and a 24-spoke Ashoka Chakra" className="relative w-52 sm:w-60 aspect-[3/2] shrink-0 overflow-hidden rounded-lg border border-stone-200 shadow-md">
+              <div className="h-1/3 bg-[#FF671F]" />
+              <div className="h-1/3 bg-white" />
+              <div className="h-1/3 bg-[#046A38]" />
+              <div className="absolute inset-0 flex items-center justify-center">
+                <AshokaChakra size={50} color="#000080" opacity={1} />
               </div>
-              <p className="font-serif text-sm sm:text-base font-bold text-stone-800">
-                Incredible India. For Generations.
-              </p>
             </div>
-
-            {/* Right Bengal Tiger Emblem */}
-            <div className="shrink-0 flex items-center justify-end">
-              <RoyalBengalTigerEmblem className="w-48 h-auto" />
+            <div className="text-center sm:text-left space-y-2">
+              <div className="text-[11px] font-bold text-[#8D4B18] uppercase tracking-[0.18em]">Explore · Respect · Preserve</div>
+              <p className="font-serif text-2xl sm:text-3xl font-bold text-[#0B192C] leading-tight">Incredible India.<br />For Generations.</p>
+              <p className="text-sm text-stone-600 max-w-sm">A journey through the places, cultures and celebrations that bring us together.</p>
             </div>
           </div>
         </section>
