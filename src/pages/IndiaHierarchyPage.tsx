@@ -728,7 +728,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <RajasthanDirectorySection
-            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
       );
@@ -751,7 +750,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <AssamDirectorySection
-            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
       );
@@ -774,7 +772,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <PunjabDirectorySection
-            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
       );
@@ -797,7 +794,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <JammuKashmirDirectorySection
-            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
       );
@@ -820,7 +816,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <LadakhDirectorySection
-            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
       );
@@ -843,7 +838,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <SikkimDirectorySection
-            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
       );
@@ -866,7 +860,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <MeghalayaDirectorySection
-            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
       );
@@ -889,7 +882,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <TelanganaDirectorySection
-            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
       );
@@ -912,7 +904,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <ChhattisgarhDirectorySection
-            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
       );
@@ -935,7 +926,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <BiharDirectorySection
-            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
       );
@@ -958,7 +948,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <JharkhandDirectorySection
-            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
       );
@@ -981,7 +970,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <HaryanaDirectorySection
-            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
       );
@@ -1004,7 +992,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <TripuraDirectorySection
-            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
       );
@@ -1027,7 +1014,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <ManipurDirectorySection
-            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
       );
@@ -1050,7 +1036,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <NagalandDirectorySection
-            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
       );
@@ -1073,7 +1058,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <MizoramDirectorySection
-            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
       );
@@ -1096,7 +1080,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <AndamanNicobarDirectorySection
-            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
       );
@@ -1119,7 +1102,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <LakshadweepDirectorySection
-            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
       );
@@ -1142,7 +1124,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <OdishaDirectorySection
-            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
       );
@@ -1165,7 +1146,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <WestBengalDirectorySection
-            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
       );
@@ -1188,7 +1168,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <UttarPradeshDirectorySection
-            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
       );
@@ -1211,7 +1190,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <MadhyaPradeshDirectorySection
-            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
       );
@@ -1234,7 +1212,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <GujaratDirectorySection
-            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
       );
@@ -1257,7 +1234,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <UttarakhandDirectorySection
-            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
       );
@@ -1280,7 +1256,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <KarnatakaDirectorySection
-            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
       );
@@ -1303,7 +1278,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <HimachalPradeshDirectorySection
-            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
       );
@@ -1326,7 +1300,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <GoaDirectorySection
-            onSelectDistrict={(districtId) => handleSelectTown(currentState.id, districtId)}
           />
         </main>
       );
@@ -1349,7 +1322,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <TamilNaduDirectorySection
-            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
       );
@@ -1372,7 +1344,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <KeralaDirectorySection
-            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
       );
@@ -1395,7 +1366,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <AndhraPradeshDirectorySection
-            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
       );
@@ -1418,7 +1388,6 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <ArunachalPradeshDirectorySection
-            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
       );
