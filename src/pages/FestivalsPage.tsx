@@ -43,26 +43,41 @@ const parseFestivalDate = (value?: string | null) => {
 const FESTIVAL_HERO_SLIDES = [
   {
     src: '/images/durga-puja.jpg',
+    label: 'Durga Puja',
     alt: 'Durga Puja pandal celebration and Dhunuchi dance in Kolkata',
     sourceHref: 'https://ich.unesco.org/en/RL/durga-puja-in-kolkata-00703',
   },
   {
     src: '/images/mahashivaratri.jpg',
+    label: 'Mahashivaratri',
     alt: 'Mahashivaratri sacred celebration with Mahakaleshwar Jyotirlinga, Varanasi Ganga Aarti, Somnath, and temple gopuram',
     sourceHref: 'https://himachaltourism.gov.in/',
   },
   {
     src: '/images/holi.jpg',
+    label: 'Holi',
     alt: 'Holi festival of colors with rainbow gulal in the air',
     sourceHref: 'https://uptourism.gov.in/',
   },
   {
     src: '/images/diwali.png',
+    label: 'Diwali',
     alt: 'Diwali festival of lights with earthen diyas and floral rangoli',
     sourceHref: 'https://uptourism.gov.in/',
   },
   {
+    src: '/images/bihar-chhath-puja.jpg',
+    label: 'Chhath Puja',
+    alt: 'Devotees offering prayers and traditional offerings during Chhath Puja',
+  },
+  {
+    src: '/images/tamil-nadu-pongal.jpg',
+    label: 'Pongal',
+    alt: 'Pongal harvest celebration with decorated pots and a colourful kolam',
+  },
+  {
     src: 'https://upload.wikimedia.org/wikipedia/commons/0/0e/The_61_Cavalry_contingent_passes_through_the_Rajpath_during_the_62nd_Republic_Day_Parade-2011%2C_in_New_Delhi_on_January_26%2C_2011.jpg',
+    label: 'Republic Day',
     alt: 'Republic Day celebration in India',
     sourceHref: 'https://commons.wikimedia.org/wiki/File:The_61_Cavalry_contingent_passes_through_the_Rajpath_during_the_62nd_Republic_Day_Parade-2011,_in_New_Delhi_on_January_26,_2011.jpg',
   },
@@ -808,7 +823,7 @@ export const FestivalsPage: React.FC<FestivalsPageProps> = ({
                     key={slide.alt}
                     type="button"
                     onClick={() => setHeroSlideIndex(index)}
-                    aria-label={`Show slide ${index + 1}`}
+                    aria-label={`Show ${slide.label} slide`}
                     className={`h-2 rounded-full transition-all ${index === heroSlideIndex ? 'w-7 bg-white' : 'w-2 bg-white/65 hover:bg-white'}`}
                   />
                 ))}
