@@ -380,6 +380,7 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
   const handleSend = async (userText: string, locationOverride?: UserLocationContext) => {
     const trimmed = userText.trim();
     if (!trimmed || loading || Date.now() < retryUntil) return;
+    const retryingFailedPrompt = trimmed === failedPrompt;
 
     // Check if user is asking for nearby places and location is not yet detected
     const activeLoc = locationOverride || userLocation;
@@ -392,7 +393,12 @@ export const AdvancedAIAssistant: React.FC<AdvancedAIAssistantProps> = ({
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
     };
 
-    setMessages((prev) => [...prev, userMsg]);
+    setMessages((prev) => {
+      if (retryingFailedPrompt && prev.at(-1)?.error && prev.at(-2)?.role === 'user' && prev.at(-2)?.content === trimmed) {
+        return prev.slice(0, -1);
+      }
+      return [...prev, userMsg];
+    });
     setInput('');
     if (composerRef.current) composerRef.current.style.height = 'auto';
     setLoading(true);
