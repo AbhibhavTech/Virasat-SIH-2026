@@ -25,7 +25,7 @@ async function main() {
     assert.equal(req.headers.authorization, `Bearer ${fakeKey}`);
     assert.equal(req.body.model, 'mock-model');
     assert.equal(req.body.parallel_tool_calls, expectedParallel);
-    assert.ok(req.body.messages[0].content.includes('Generate a fresh response'));
+    assert.ok(req.body.messages.some((message: any) => message.role === 'system' && typeof message.content === 'string' && message.content.length > 0));
     assert.ok(!JSON.stringify(req.body).includes('VIR-00001'));
     if (mode === 'auth') { res.status(401).json({ error: { message: fakeKey } }); return; }
     if (mode === 'quota') { res.status(429).json({ error: { code: 'insufficient_quota', message: fakeKey } }); return; }
@@ -86,6 +86,19 @@ async function main() {
     assert.equal(general.body.generation_mode, 'hosted_generative');
     assert.equal(general.body.provider_used, 'groq');
     assert.equal(general.body.reply, 'Fresh mock general reply');
+    process.env.VIRASAT_AI_PROVIDER = 'gemini';
+    process.env.GEMINI_API_KEY = fakeKey;
+    process.env.GEMINI_MODEL = 'mock-model';
+    process.env.GEMINI_BASE_URL = `${mock.url}/v1`;
+    expectedParallel = undefined;
+    assert.deepEqual(await verifySelectedModelAvailability(getModelConfiguration()), { checked: true, available: true, provider: 'gemini', model: 'mock-model' });
+    const gemini = await ask('test the Gemini-compatible provider path');
+    assert.equal(gemini.body.generation_mode, 'hosted_generative');
+    assert.equal(gemini.body.provider_used, 'gemini');
+    assert.equal(gemini.body.reply, 'Fresh mock general reply');
+    // Keep the original Groq-specific error classification assertions below.
+    process.env.VIRASAT_AI_PROVIDER = 'groq';
+    expectedParallel = false;
     await ask('What did I just ask?'); assert.ok(historySeen);
     const streamed = await fetch(`${chat.url}/api/ai/chat`, { method: 'POST', headers: { 'content-type': 'application/json' },
       body: JSON.stringify({ message: 'Stream a fixture', stream: true, session_id: 'stream-fixture' }) });

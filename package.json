@@ -23,7 +23,7 @@
     "import:ai-corpus": "node scripts/import_ai_evaluation_corpus.mjs",
     "evaluate:ai": "tsx scripts/evaluate_ai_corpus.ts",
     "test:ai-hosted": "tsx scripts/test_hosted_ai_gateway.ts",
-    "test:ai-provider": "tsx scripts/test_ai_configuration.ts && tsx scripts/test_provider_errors.ts && tsx scripts/test_groq_setup.ts && tsx scripts/test_hosted_ai_gateway.ts",
+    "test:ai-provider": "tsx scripts/test_ai_configuration.ts && tsx scripts/test_provider_errors.ts && tsx scripts/test_groq_setup.ts && tsx scripts/test_gemini_setup.ts && tsx scripts/test_hosted_ai_gateway.ts",
     "setup:ai-groq": "tsx scripts/configure_groq.ts && npm run check:ai-connection",
     "setup:ai-groq:secure": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/setup_groq_secure.ps1",
     "setup:ai-gemini": "tsx scripts/configure_gemini.ts",

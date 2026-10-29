@@ -16,7 +16,8 @@ export type AIProvider = 'openai' | 'groq' | 'gemini' | 'local' | 'compatible';
 export const GROQ_BASE_URL = 'https://api.groq.com/openai/v1';
 export const GROQ_DEFAULT_MODEL = 'openai/gpt-oss-20b';
 export const GEMINI_BASE_URL = 'https://generativelanguage.googleapis.com/v1beta/openai';
-export const GEMINI_DEFAULT_MODEL = 'gemini-3.8-flash';
+// Gemini 3.1 Flash-Lite is listed by Google as a stable, high-frequency model.
+export const GEMINI_DEFAULT_MODEL = 'gemini-3.1-flash-lite';
 
 export type ChatTurn = { role: 'user' | 'assistant'; content: string };
 const READ_TOOLS = ['searchTouristPlaces', 'searchHeritageKnowledge', 'searchHiddenGems', 'searchHotels', 'searchRestaurants', 'searchMarkets', 'getEventsCalendar', 'getWeather', 'getTransportOptions', 'getCurrentDatetime', 'getSiteContent'] as const;

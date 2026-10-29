@@ -29,7 +29,7 @@ export function buildGeminiEnvironment(content: string, key: string, requestedMo
   lines = replaceSetting(lines, 'VIRASAT_AI_PROVIDER', 'gemini');
   lines = replaceSetting(lines, 'GEMINI_API_KEY', key);
   lines = replaceSetting(lines, 'GEMINI_MODEL', model);
-  // Set Gemini 3.8 Flash's documented output ceiling. The model still decides
+  // Set Gemini 3.1 Flash-Lite's documented output ceiling. The model still decides
   // how much to generate; usage, latency and account quota continue to apply.
   if (!existing.VIRASAT_AI_MAX_TOKENS || Number(existing.VIRASAT_AI_MAX_TOKENS) < 65536) {
     lines = replaceSetting(lines, 'VIRASAT_AI_MAX_TOKENS', '65536');
