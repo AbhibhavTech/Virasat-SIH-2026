@@ -95,14 +95,16 @@ export async function execute(args: { feature?: keyof typeof FEATURE_REGISTRY; q
       summary: matchedPlace.summary || matchedPlace.description || null,
       detailed_description: matchedPlace.detailed_description || matchedPlace.description || null,
       coordinates: matchedPlace.coordinates,
-      visiting_hours: matchedPlace.visiting_hours || matchedPlace.timings || null,
-      visiting_hours_status: matchedPlace.visiting_hours || matchedPlace.timings ? 'recorded_not_live_confirmed' : 'needs_verification',
-      entry_fee: matchedPlace.entry_fee ?? null,
-      entry_fee_status: matchedPlace.entry_fee !== undefined && matchedPlace.entry_fee !== null ? 'recorded_not_live_confirmed' : 'needs_verification',
+      // These values are not field-level, current confirmations. Keep them out
+      // of model context so an old record cannot be repeated as today's fact.
+      visiting_hours: null,
+      visiting_hours_status: 'needs_verification',
+      entry_fee: null,
+      entry_fee_status: 'needs_verification',
       best_time_to_visit: matchedPlace.best_time_to_visit || null,
       best_time_status: matchedPlace.best_time_to_visit ? 'recorded' : 'needs_verification',
       nearby_hotels: (matchedPlace.hotels || []).slice(0, 3),
-      verified_facts: facts.map((f) => ({
+      verified_facts: facts.filter((f) => !/(hour|timing|opening|closing|entry.?fee|ticket.?price|admission)/i.test(f.fact_key)).map((f) => ({
         key: f.fact_key,
         value: f.fact_value,
         source: f.source_url,

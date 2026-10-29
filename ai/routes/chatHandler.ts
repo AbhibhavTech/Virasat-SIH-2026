@@ -25,6 +25,7 @@ import { randomUUID } from 'node:crypto';
 import { registerConversation, workspaceRouter, buildDraft } from './workspace';
 import { understandTravel } from '../engine/travelUnderstanding';
 import { generateModelReply, getModelStatus, getModelConfiguration, explainModelFailure, translatePageStrings } from '../engine/modelGateway';
+import { requestedTravelModes, scopeTransportOptions } from '../engine/responsePolicy';
 import { ProviderFailure } from '../engine/providerErrors';
 
 export const aiChatRouter = Router();
@@ -204,6 +205,7 @@ aiChatRouter.post(
     if (getModelStatus().configured) {
       try {
         const isTransportRequest = /\b(train|rail|railway|flight|airport|drive|driving|road|walk|walking|route|how to reach|travel)\b|kaise\s+(jau|jaye|pahunch|pahunche)|train se|flight se|car se|chal ke/i.test(rawQuery);
+        const requestedModes = requestedTravelModes(rawQuery);
         const hostedEntities = isTransportRequest
           ? extractEntities(rawQuery, { ...liveContext, destination: existingState.destination })
           : null;
@@ -238,6 +240,7 @@ aiChatRouter.post(
             { origin: transportOrigin, destination: transportDestination },
             liveContext
           );
+          transportResult = scopeTransportOptions(transportResult, requestedModes);
         }
 
         const options = transportResult?.transit_options || {};
@@ -252,7 +255,7 @@ aiChatRouter.post(
               walk: options.walk ? { summary: options.walk.summary, approx_duration: options.walk.approx_duration, notes: options.walk.notes } : undefined,
             }
           : undefined;
-        const airportAccess = transportResult?.airport_access;
+        const airportAccess = (!requestedModes || requestedModes.includes('air')) ? transportResult?.airport_access : undefined;
         const airportGatewayNote = airportAccess
           ? `\n\n**Mapped airport gateways:** ${airportAccess.origin.airport.city} (${airportAccess.origin.airport.iata}) is about ${airportAccess.origin.ground_transfer_km} km from the start; ${airportAccess.destination.airport.city} (${airportAccess.destination.airport.iata}) is about ${airportAccess.destination.ground_transfer_km} km from the destination. Flight schedule and fare are not live-checked.`
           : '';
