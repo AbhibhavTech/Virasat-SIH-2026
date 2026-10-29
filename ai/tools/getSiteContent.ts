@@ -1,13 +1,16 @@
 import { db } from '../../server/src/db/client';
 import fs from 'fs';
 import path from 'path';
+import { FEATURE_HELP, FEATURE_REGISTRY } from '../config/featureRegistry';
 
 export const declaration = {
   name: 'getSiteContent',
-  description: 'Retrieve verified in-depth architectural history, mythological origin, UNESCO citation, entry fees, visiting rules, and audio-visual details for a specific tourist place or monument.',
+  description: 'Retrieve Virasat page guidance or stored details for a specific tourist place. Use feature for a page, query for a page/how-to question, or place_name/place_id for a place. Missing operating details stay unknown.',
   parameters: {
     type: 'OBJECT',
     properties: {
+      feature: { type: 'STRING', enum: Object.keys(FEATURE_REGISTRY), description: 'Virasat page key, such as discover, map, itinerary, festivals, or heritage.' },
+      query: { type: 'STRING', description: 'Question about using Virasat or its pages.' },
       place_id: {
         type: 'STRING',
         description: 'ID of the place (e.g., "DEL001", "andhra_pradesh_001", "taj-mahal").',
@@ -20,9 +23,22 @@ export const declaration = {
   },
 };
 
-export async function execute(args: { place_id?: string; place_name?: string }): Promise<any> {
+export async function execute(args: { feature?: keyof typeof FEATURE_REGISTRY; query?: string; place_id?: string; place_name?: string }): Promise<any> {
+  if (args.feature && Object.prototype.hasOwnProperty.call(FEATURE_HELP, args.feature)) {
+    return { type: 'website_guide', feature: args.feature, label: FEATURE_REGISTRY[args.feature].label,
+      path: FEATURE_REGISTRY[args.feature].path, ...FEATURE_HELP[args.feature] };
+  }
+  if (args.query && !args.place_id && !args.place_name) {
+    const terms = args.query.toLowerCase().split(/[^a-z0-9]+/).filter(term => term.length > 2);
+    const matches = Object.entries(FEATURE_HELP).map(([feature, help]) => {
+      const searchable = `${feature} ${FEATURE_REGISTRY[feature as keyof typeof FEATURE_REGISTRY].label} ${help.overview} ${help.actions.join(' ')}`.toLowerCase();
+      return { feature: feature as keyof typeof FEATURE_REGISTRY, score: terms.filter(term => searchable.includes(term)).length };
+    }).filter(item => item.score > 0).sort((a, b) => b.score - a.score).slice(0, 3);
+    if (matches.length) return { type: 'website_guide', results: matches.map(({ feature }) => ({ feature,
+      label: FEATURE_REGISTRY[feature].label, path: FEATURE_REGISTRY[feature].path, ...FEATURE_HELP[feature] })) };
+  }
   const pid = (args.place_id || '').toLowerCase().trim();
-  const pname = (args.place_name || '').toLowerCase().trim();
+  const pname = (args.place_name || args.query || '').toLowerCase().trim();
 
   // 1. Check place facts in db
   let placeRecord: any = null;
@@ -72,24 +88,27 @@ export async function execute(args: { place_id?: string; place_name?: string }):
     return {
       place_id: matchedPlace.id,
       name: matchedPlace.name,
-      city: cityName,
-      state: stateName,
+      city: cityName || null,
+      state: stateName || null,
       category: matchedPlace.category || 'National Heritage Monument',
       topic: matchedPlace.topic || 'Heritage',
-      summary: matchedPlace.summary || matchedPlace.description,
-      detailed_description: matchedPlace.detailed_description || matchedPlace.description,
+      summary: matchedPlace.summary || matchedPlace.description || null,
+      detailed_description: matchedPlace.detailed_description || matchedPlace.description || null,
       coordinates: matchedPlace.coordinates,
-      visiting_hours: matchedPlace.visiting_hours || matchedPlace.timings || 'Sunrise to Sunset',
-      entry_fee: matchedPlace.entry_fee || 'Standard ASI ticketing',
-      best_time_to_visit: matchedPlace.best_time_to_visit || 'October to March',
+      visiting_hours: matchedPlace.visiting_hours || matchedPlace.timings || null,
+      visiting_hours_status: matchedPlace.visiting_hours || matchedPlace.timings ? 'recorded_not_live_confirmed' : 'needs_verification',
+      entry_fee: matchedPlace.entry_fee ?? null,
+      entry_fee_status: matchedPlace.entry_fee !== undefined && matchedPlace.entry_fee !== null ? 'recorded_not_live_confirmed' : 'needs_verification',
+      best_time_to_visit: matchedPlace.best_time_to_visit || null,
+      best_time_status: matchedPlace.best_time_to_visit ? 'recorded' : 'needs_verification',
       nearby_hotels: (matchedPlace.hotels || []).slice(0, 3),
       verified_facts: facts.map((f) => ({
         key: f.fact_key,
         value: f.fact_value,
         source: f.source_url,
       })),
-      official_registry_url: matchedPlace.source_url || 'https://asi.nic.in',
-      verification_status: matchedPlace.verification_status || 'verified',
+      official_registry_url: matchedPlace.source_url || matchedPlace.source_page || null,
+      verification_status: matchedPlace.verification_status || 'unreviewed',
     };
   }
 
@@ -102,11 +121,12 @@ export async function execute(args: { place_id?: string; place_name?: string }):
       rating: placeRecord.rating,
       verified_facts: facts,
       official_source: placeRecord.source_url,
+      verification_status: placeRecord.verification_status || 'unreviewed',
     };
   }
 
   return {
     found: false,
-    message: `Details not found for query "${args.place_id || args.place_name}". Please verify monument spelling.`,
+    message: `No matching stored details for query "${args.place_id || args.place_name || args.query || ''}". This does not mean the place does not exist.`,
   };
 }

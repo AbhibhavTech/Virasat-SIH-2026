@@ -27,7 +27,7 @@ Ollama reference: https://docs.ollama.com/api/openai-compatibility
 VIRASAT_AI_REQUIRE_HOSTED=true means require actual model generation even for local
 inference; failures are explicit. Optional VIRASAT_AI_TIMEOUT_MS (1000–120000; default
 60000) and VIRASAT_AI_MAX_TOKENS. Gemini allows 64–65536 (default 65536); other
-providers remain capped at 4096 (default 1000). The maximum is a response ceiling,
+providers remain capped at 4096 (default 2048). The maximum is a response ceiling,
 not a quota increase. No automatic provider retries.
 Existing non-streaming JSON contract remains; stream=true emits delta/done/error SSE events.
 

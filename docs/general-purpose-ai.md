@@ -19,10 +19,11 @@ There is no unrestricted code execution or current general web-search tool.
   No unbounded queue. Multiple replicas need a shared limiter before public scaling.
 - Existing chat limiter is a fixed window: 30 requests/minute per user/IP. Provider limits
   may be lower. Provider Retry-After is respected; no automatic provider retry occurs.
-- Input: 2,000 characters. History: last 6 messages, each at most 4,000 characters;
+- Input: 2,000 characters. The model receives up to the last 4 conversation turns,
+  each capped at 900 characters; memory retains at most 16 turns,
   memory retains at most 16 turns, expires after 6 hours, capped at 5,000 sessions.
   Character limits are not tokenizer-exact context limits. Model context overflow may still fail.
-- Default output 1,000 tokens, configurable 64–4,096. Default model deadline 60 seconds,
+- Default output 2,048 tokens, configurable 64–4,096. This is a response-length ceiling, not additional provider quota; longer answers consume more of the provider's token allowance. Default model deadline 60 seconds,
   configurable 1–120 seconds. Tools have 10-second result deadlines. Read-only in-flight tool
   work may continue after its deadline; provider fetch cancels on disconnect.
 - Four model rounds and six tool calls maximum. No provider response caching across users.

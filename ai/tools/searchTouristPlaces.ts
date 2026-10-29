@@ -4,7 +4,7 @@ import { db } from '../../server/src/db/client';
 
 export const declaration = {
   name: 'searchTouristPlaces',
-  description: 'Search and discover verified tourist places and heritage monuments across all 28 states and 8 union territories of India. Supports filtering by keyword, city, state, category (heritage, monuments, museums, religious_cultural, nature_parks_zoo), and tags.',
+  description: 'Search Virasat stored tourist-place records across Indian states and union territories. Records may have different verification levels; use returned verification and source fields rather than assuming every listing is officially verified. Supports keyword, city, state, and category filters.',
   parameters: {
     type: 'OBJECT',
     properties: {
@@ -85,6 +85,7 @@ export async function execute(args: {
     return { total_found: result.total, offset, data_origin: 'postgresql', results: result.places.map(place => ({
       id: place.id, name: place.name, city: place.city_id, state: place.state_id, summary: place.summary,
       official_source: place.source_url, category: place.category,
+      verification_status: place.verification_status || 'unreviewed',
     })) };
   }
   const matchedPlaces: Array<{ place: any; score: number }> = [];
@@ -177,6 +178,7 @@ export async function execute(args: {
             entry_fee: cleanFee,
             hotels_count: (p.hotels || []).length,
             official_source: p.source_url || p.source_page,
+            verification_status: p.verification_status || 'unreviewed',
           };
           const nameText = p.name.toLowerCase();
           const score = shouldFilterQuery
@@ -209,7 +211,8 @@ export async function execute(args: {
         city: p.city_id || 'India',
         summary: p.summary,
         rating: p.rating,
-        official_source: p.source_url || 'Virasat Tourism Registry',
+        official_source: p.source_url || null,
+        verification_status: p.verification_status || 'unreviewed',
       }, score: 0 });
     }
   }

@@ -230,7 +230,7 @@ async function runModelReply(message: string, state: TripMemoryState, context: L
   const usage = { prompt_tokens: 0, completion_tokens: 0, total_tokens: 0 };
   const generationSettings = readEnvironmentValues(['VIRASAT_AI_TIMEOUT_MS', 'VIRASAT_AI_MAX_TOKENS']);
   const maxOutputTokens = config.provider === 'gemini' ? 65536 : 4096;
-  const defaultOutputTokens = config.provider === 'gemini' ? 8192 : 1000;
+  const defaultOutputTokens = config.provider === 'gemini' ? 8192 : 2048;
   const boundedNumber = (value: string | undefined, fallback: number, min: number, max: number) => {
     const number = Number(value);
     return Number.isFinite(number) && number >= min && number <= max ? Math.floor(number) : fallback;
