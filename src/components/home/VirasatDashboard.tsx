@@ -29,6 +29,10 @@ import {
   Building2,
   BookOpen,
   Train,
+  Mountain,
+  Trees,
+  Bus,
+  Plane,
 } from 'lucide-react';
 import { NavTab } from '../layout/Sidebar';
 import { PlaceSummary } from '../../types';
@@ -60,6 +64,20 @@ interface VirasatDashboardProps {
   onOpenAIChat?: (prompt?: string) => void;
   places?: PlaceSummary[];
 }
+
+type NearbyCategory = 'attraction' | 'heritage' | 'hill' | 'park' | 'spiritual' | 'transport' | 'market' | 'hotel' | 'library';
+const classifyNearbyCategory = (value: unknown): NearbyCategory => {
+  const text = String(value || '').toLowerCase();
+  if (/bus (stand|station|terminal|depot)|bus depot|bus terminus|railway|rail station|train station|terminus|junction|airport|metro|transit/.test(text)) return 'transport';
+  if (/market|bazaar|mandai|mall/.test(text)) return 'market';
+  if (/hotel|resort|lodge|accommodation/.test(text)) return 'hotel';
+  if (/library|reading room|archive/.test(text)) return 'library';
+  if (/fort|palace|monument|heritage|museum|archaeolog|historic|cave|stupa|unesco/.test(text)) return 'heritage';
+  if (/temple|mosque|masjid|gurudwara|gurdwara|church|monastery|shrine|pilgrim|spiritual/.test(text)) return 'spiritual';
+  if (/amusement|theme park|water park|zoo|zoological|national park|wildlife|sanctuary|bird park/.test(text)) return 'park';
+  if (/hill|mountain|valley|peak|pass|ghat|waterfall|lake|forest|viewpoint|nature/.test(text)) return 'hill';
+  return 'attraction';
+};
 
 // -------------------------------------------------------------
 // Vector Icons & Silhouettes
@@ -466,7 +484,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
   const [nearbyPlaces, setNearbyPlaces] = useState<any[]>([]);
   const [nearbyRadius, setNearbyRadius] = useState<number>(50);
   const [detectedCityName, setDetectedCityName] = useState<string>('');
-  const [nearbyCategoryTab, setNearbyCategoryTab] = useState<'all' | 'tourist' | 'market' | 'hotel' | 'library' | 'station'>('all');
+  const [nearbyCategoryTab, setNearbyCategoryTab] = useState<'all' | NearbyCategory>('all');
 
   // Close search suggestions on click outside
   useEffect(() => {
@@ -573,7 +591,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
         mergedList.push({
           id: item.id,
           name: item.name,
-          category: item.category,
+          category: classifyNearbyCategory(`${item.category} ${item.categoryLabel} ${item.name} ${(item.tags || []).join(' ')}`),
           categoryLabel: item.categoryLabel,
           area: item.area,
           city: item.city,
@@ -600,23 +618,13 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
           const dist = p.distance_km !== undefined ? p.distance_km : calculateHaversineKm(lat, lng, pLat, pLng);
 
           // Infer category type for filtering
-          let catType: 'tourist' | 'market' | 'hotel' | 'library' | 'station' = 'tourist';
-          const pCatLower = ((p.category || '') + ' ' + (p.name || '')).toLowerCase();
-          if (pCatLower.includes('market') || pCatLower.includes('bazaar') || pCatLower.includes('mandai') || pCatLower.includes('mall')) {
-            catType = 'market';
-          } else if (pCatLower.includes('hotel') || pCatLower.includes('palace hotel') || pCatLower.includes('resort')) {
-            catType = 'hotel';
-          } else if (pCatLower.includes('library') || pCatLower.includes('reading room') || pCatLower.includes('archives')) {
-            catType = 'library';
-          } else if (pCatLower.includes('station') || pCatLower.includes('terminus') || pCatLower.includes('junction') || pCatLower.includes('metro')) {
-            catType = 'station';
-          }
+          const catType = classifyNearbyCategory(`${p.category || ''} ${p.categoryLabel || ''} ${p.name || ''} ${(p.tags || []).join(' ')}`);
 
           mergedList.push({
             id: p.id,
             name: p.name,
             category: catType,
-            categoryLabel: p.category || 'Heritage Landmark',
+            categoryLabel: p.categoryLabel || p.category || 'Place to visit',
             area: p.area || p.district || p.city,
             city: p.city || 'Navi Mumbai',
             state: p.state || 'Maharashtra',
@@ -1349,7 +1357,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
                 <div>
                   <h3 className="font-serif text-xl sm:text-2xl font-bold">See what&apos;s nearby</h3>
                   <p className="text-xs sm:text-sm text-emerald-50/85 mt-1.5 leading-relaxed max-w-sm">
-                    Use your device location to discover verified heritage places and real travel distances around you.
+                    Find nearby attractions, heritage sites, hills, parks, wildlife areas and transport hubs with approximate distances.
                   </p>
                 </div>
               </div>
@@ -1435,29 +1443,30 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
 
         {/* State 3: Ready with nearby cards */}
         {locationStatus === 'ready' && (() => {
-          const counts = {
-            all: nearbyPlaces.length,
-            tourist: nearbyPlaces.filter((p) => p.category === 'tourist' || (!['market', 'hotel', 'library', 'station'].includes(p.category))).length,
-            market: nearbyPlaces.filter((p) => p.category === 'market').length,
-            hotel: nearbyPlaces.filter((p) => p.category === 'hotel').length,
-            library: nearbyPlaces.filter((p) => p.category === 'library').length,
-            station: nearbyPlaces.filter((p) => p.category === 'station').length,
-          };
-
-          const filteredNearbyPlaces = nearbyPlaces.filter((p) => {
-            if (nearbyCategoryTab === 'all') return true;
-            if (nearbyCategoryTab === 'tourist') {
-              return p.category === 'tourist' || (!['market', 'hotel', 'library', 'station'].includes(p.category));
-            }
-            return p.category === nearbyCategoryTab;
-          });
+          const nearbyTabs: Array<{ id: 'all' | NearbyCategory; label: string; icon: any }> = [
+            { id: 'all', label: 'All nearby', icon: Compass },
+            { id: 'attraction', label: 'Places to visit', icon: Landmark },
+            { id: 'heritage', label: 'Heritage & forts', icon: History },
+            { id: 'spiritual', label: 'Spiritual', icon: Landmark },
+            { id: 'hill', label: 'Hills & nature', icon: Mountain },
+            { id: 'park', label: 'Parks & wildlife', icon: Trees },
+            { id: 'transport', label: 'Transport', icon: Bus },
+            { id: 'library', label: 'Libraries', icon: BookOpen },
+            { id: 'market', label: 'Markets', icon: Store },
+            { id: 'hotel', label: 'Hotels', icon: Building2 },
+          ];
+          const filteredNearbyPlaces = nearbyPlaces.filter((p) => nearbyCategoryTab === 'all' || p.category === nearbyCategoryTab);
 
           const categoryPills: Record<string, { label: string; badge: string; text: string; bgSoft: string; border: string }> = {
-            tourist: { label: 'Tourist Place', badge: 'bg-emerald-700 text-white', text: 'text-emerald-700', bgSoft: 'bg-emerald-50/70', border: 'border-emerald-200' },
+            attraction: { label: 'Place to visit', badge: 'bg-emerald-700 text-white', text: 'text-emerald-700', bgSoft: 'bg-emerald-50/70', border: 'border-emerald-200' },
+            heritage: { label: 'Heritage & history', badge: 'bg-orange-700 text-white', text: 'text-orange-700', bgSoft: 'bg-orange-50/70', border: 'border-orange-200' },
+            spiritual: { label: 'Spiritual place', badge: 'bg-violet-700 text-white', text: 'text-violet-700', bgSoft: 'bg-violet-50/70', border: 'border-violet-200' },
+            hill: { label: 'Hills & nature', badge: 'bg-teal-700 text-white', text: 'text-teal-700', bgSoft: 'bg-teal-50/70', border: 'border-teal-200' },
+            park: { label: 'Parks & wildlife', badge: 'bg-green-700 text-white', text: 'text-green-700', bgSoft: 'bg-green-50/70', border: 'border-green-200' },
+            transport: { label: 'Transport hub', badge: 'bg-sky-700 text-white', text: 'text-sky-700', bgSoft: 'bg-sky-50/70', border: 'border-sky-200' },
             market: { label: 'Market', badge: 'bg-amber-700 text-white', text: 'text-amber-700', bgSoft: 'bg-amber-50/70', border: 'border-amber-200' },
             hotel: { label: 'Hotel', badge: 'bg-blue-700 text-white', text: 'text-blue-700', bgSoft: 'bg-blue-50/70', border: 'border-blue-200' },
             library: { label: 'Library', badge: 'bg-teal-700 text-white', text: 'text-teal-700', bgSoft: 'bg-teal-50/70', border: 'border-teal-200' },
-            station: { label: 'Station', badge: 'bg-rose-700 text-white', text: 'text-rose-700', bgSoft: 'bg-rose-50/70', border: 'border-rose-200' },
           };
 
           return (
@@ -1465,16 +1474,10 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
               {/* Category Filter Tabs Bar */}
               <div className="flex items-center justify-between gap-3 flex-wrap">
                 <div className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 scrollbar-none max-w-full">
-                  {[
-                    { id: 'all', label: 'All', icon: Compass, count: counts.all },
-                    { id: 'tourist', label: 'Tourist Places', icon: Landmark, count: counts.tourist },
-                    { id: 'market', label: 'Markets', icon: Store, count: counts.market },
-                    { id: 'hotel', label: 'Hotels', icon: Building2, count: counts.hotel },
-                    { id: 'library', label: 'Libraries', icon: BookOpen, count: counts.library },
-                    { id: 'station', label: 'Stations', icon: Train, count: counts.station },
-                  ].map((tab) => {
+                  {nearbyTabs.map((tab) => {
                     const Icon = tab.icon;
                     const isActive = nearbyCategoryTab === tab.id;
+                    const count = tab.id === 'all' ? nearbyPlaces.length : nearbyPlaces.filter((place) => place.category === tab.id).length;
                     return (
                       <button
                         key={tab.id}
@@ -1493,7 +1496,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
                             isActive ? 'bg-white/20 text-white' : 'bg-stone-100 text-stone-600'
                           }`}
                         >
-                          {tab.count}
+                          {count}
                         </span>
                       </button>
                     );
@@ -1510,12 +1513,12 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
 
               {filteredNearbyPlaces.length === 0 ? (
                 <div className="p-8 text-center text-xs text-stone-500 bg-stone-50 rounded-2xl border border-stone-200">
-                  No places found in this category within {nearbyRadius} km. Try choosing &quot;All&quot; or expanding the radius above.
+                  No places found in this category within {nearbyRadius} km. Try choosing &quot;All nearby&quot; or expanding the radius above.
                 </div>
               ) : (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5 sm:gap-4">
                   {filteredNearbyPlaces.map((p) => {
-                    const pill = categoryPills[p.category] || categoryPills.tourist;
+                    const pill = categoryPills[p.category] || categoryPills.attraction;
                     return (
                       <div
                         key={p.id}
@@ -1531,8 +1534,10 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
                             {p.category === 'market' && <Store className="w-3 h-3" />}
                             {p.category === 'hotel' && <Building2 className="w-3 h-3" />}
                             {p.category === 'library' && <BookOpen className="w-3 h-3" />}
-                            {p.category === 'station' && <Train className="w-3 h-3" />}
-                            {p.category === 'tourist' && <Landmark className="w-3 h-3" />}
+                            {p.category === 'transport' && (/airport/i.test(p.categoryLabel || p.name) ? <Plane className="w-3 h-3" /> : /rail|train/i.test(p.categoryLabel || p.name) ? <Train className="w-3 h-3" /> : <Bus className="w-3 h-3" />)}
+                            {['attraction', 'heritage', 'spiritual'].includes(p.category) && <Landmark className="w-3 h-3" />}
+                            {p.category === 'hill' && <Mountain className="w-3 h-3" />}
+                            {p.category === 'park' && <Trees className="w-3 h-3" />}
                             <span>{pill.label}</span>
                           </span>
 

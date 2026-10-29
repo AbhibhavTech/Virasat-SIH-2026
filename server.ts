@@ -1092,35 +1092,59 @@ app.get(['/api/destinations', '/api/places'], (req, res) => {
 });
 
 app.get('/api/places/nearby', (req, res) => {
-  const lat = parseFloat(req.query.lat as string) || 18.922;
-  const lng = parseFloat(req.query.lng as string) || 72.8347;
-  const radiusKm = parseFloat(req.query.radius_km as string) || 50;
-  const limit = parseInt(req.query.limit as string, 10) || 6;
-
-  const allWithDistance = Array.from(placesData.values())
-    .map((p) => {
-      const pLat = p.coordinates?.lat || (p as any).latitude || 0;
-      const pLng = p.coordinates?.lng || (p as any).longitude || 0;
-      const dist = haversineDistanceKm(lat, lng, pLat, pLng);
-      return { ...p, distance_km: Math.round(dist * 10) / 10 };
-    })
-    .sort((a, b) => a.distance_km - b.distance_km);
-
-  let resultsWithDistance = allWithDistance
-    .filter((p) => p.distance_km <= radiusKm)
-    .slice(0, limit);
-
-  let expandedSearch = false;
-  if (resultsWithDistance.length === 0) {
-    // If no places within strict radius, provide closest available heritage sites
-    resultsWithDistance = allWithDistance.slice(0, limit);
-    expandedSearch = true;
+  const lat = Number(req.query.lat);
+  const lng = Number(req.query.lng);
+  const requestedRadius = Number(req.query.radius_km ?? req.query.radius ?? 50);
+  const requestedLimit = Number(req.query.limit ?? 50);
+  if (!Number.isFinite(lat) || lat < -90 || lat > 90 || !Number.isFinite(lng) || lng < -180 || lng > 180) {
+    return res.status(400).json({ success: false, error: 'VALID_COORDINATES_REQUIRED' });
   }
+  const radiusKm = Number.isFinite(requestedRadius) ? Math.min(500, Math.max(1, requestedRadius)) : 50;
+  const limit = Number.isFinite(requestedLimit) ? Math.min(100, Math.max(1, Math.floor(requestedLimit))) : 50;
+  const withDistance = (item: any, itemLat: number, itemLng: number, category: string, categoryLabel: string) => {
+    if (!Number.isFinite(itemLat) || itemLat < -90 || itemLat > 90 || !Number.isFinite(itemLng) || itemLng < -180 || itemLng > 180) return null;
+    const distance = haversineDistanceKm(lat, lng, itemLat, itemLng);
+    if (distance > radiusKm) return null;
+    return { ...item, category, categoryLabel, lat: itemLat, lng: itemLng, distance_km: Math.round(distance * 10) / 10 };
+  };
+
+  const placeResults = Array.from(placesData.values()).flatMap((place) => {
+    const itemLat = Number(place.coordinates?.lat ?? (place as any).latitude);
+    const itemLng = Number(place.coordinates?.lng ?? (place as any).longitude);
+    const searchText = `${place.name} ${place.category} ${(place.tags || []).join(' ')} ${place.summary || ''}`.toLowerCase();
+    const kind = /bus (stand|station|terminal|depot)|bus depot|bus terminus/.test(searchText) ? ['transport', 'Bus terminal']
+      : /railway|rail station|train station|terminus|junction/.test(searchText) ? ['transport', 'Railway station']
+      : /airport|air terminal/.test(searchText) ? ['transport', 'Airport']
+      : /amusement|theme park|water park|zoo|zoological|national park|wildlife|sanctuary|bird park/.test(searchText) ? ['park', 'Parks & wildlife']
+      : /hill|mountain|valley|peak|pass|ghat|waterfall|lake|forest|viewpoint|nature/.test(searchText) ? ['hill', 'Hills & nature']
+      : /temple|mosque|masjid|gurudwara|gurdwara|church|monastery|shrine|pilgrim|spiritual/.test(searchText) ? ['spiritual', 'Spiritual places']
+      : /fort|palace|monument|heritage|museum|archaeolog|historic|cave|stupa|unesco/.test(searchText) ? ['heritage', 'Heritage & history']
+      : ['attraction', 'Places to visit'];
+    const result = withDistance(place, itemLat, itemLng, kind[0], kind[1]);
+    return result ? [result] : [];
+  });
+  const stationResults = railwayStationsData.flatMap((station) => {
+    const result = withDistance({ id: station.id, name: station.name, city: station.city, state: station.state, code: station.code,
+      summary: station.lines?.length ? `Rail connections: ${station.lines.join(', ')}.` : 'Railway station nearby.' }, station.lat, station.lng, 'transport', 'Railway station');
+    return result ? [result] : [];
+  });
+  const airportResults = INDIAN_AIRPORTS.flatMap((airport) => {
+    const result = withDistance({ id: `airport-${airport.iata.toLowerCase()}`, name: airport.name, city: airport.city, state: airport.state,
+      code: airport.iata, summary: `Airport serving ${airport.city}; confirm current flight and ground-transport details with the operator.` }, airport.lat, airport.lng, 'transport', 'Airport');
+    return result ? [result] : [];
+  });
+  const deduped = new Map<string, any>();
+  for (const item of [...placeResults, ...stationResults, ...airportResults]) {
+    const key = String(item.id || item.name).toLowerCase();
+    const prior = deduped.get(key);
+    if (!prior || item.distance_km < prior.distance_km) deduped.set(key, item);
+  }
+  const resultsWithDistance = [...deduped.values()].sort((a, b) => a.distance_km - b.distance_km).slice(0, limit);
 
   res.json({
     origin: { latitude: lat, longitude: lng },
     radius_km: radiusKm,
-    expanded_search: expandedSearch,
+    expanded_search: false,
     total: resultsWithDistance.length,
     results: resultsWithDistance,
   });
