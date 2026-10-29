@@ -89,6 +89,7 @@ import { AndamanNicobarDirectorySection } from '../components/explore-india/Anda
 import { LakshadweepDirectorySection } from '../components/explore-india/LakshadweepDirectorySection';
 import { ChandigarhDirectorySection } from '../components/explore-india/ChandigarhDirectorySection';
 import { MaharashtraDirectorySection } from '../components/explore-india/MaharashtraDirectorySection';
+import { DamanDiuDirectorySection } from '../components/explore-india/DamanDiuDirectorySection';
 import { VERIFIED_HIDDEN_GEMS } from '../data/hiddenGemsData';
 
 interface IndiaHierarchyPageProps {
@@ -361,6 +362,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
   const isLakshadweepState = currentState?.id?.toLowerCase() === 'lakshadweep' || currentState?.name?.toLowerCase().includes('lakshadweep');
   const isChandigarhState = currentState?.id?.toLowerCase() === 'chandigarh' || currentState?.name?.toLowerCase().includes('chandigarh');
   const isMaharashtraState = currentState?.id?.toLowerCase() === 'maharashtra' || currentState?.name?.toLowerCase() === 'maharashtra';
+  const isDadraDamanDiuState = currentState?.id?.toLowerCase() === 'dadra-and-nagar-haveli-and-daman-and-diu' || currentState?.id?.toLowerCase().includes('daman') || currentState?.id?.toLowerCase().includes('dadra') || currentState?.name?.toLowerCase().includes('daman') || currentState?.name?.toLowerCase().includes('dadra');
 
   // All Valid Destinations, Cities & Towns in current state
   const stateValidCities: CityHierarchyEntity[] = useMemo(() => {
@@ -1151,6 +1153,29 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             </span>
           </div>
           <MaharashtraDirectorySection
+            onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
+          />
+        </main>
+      );
+    }
+
+    if (isDadraDamanDiuState) {
+      return (
+        <main className="w-full min-h-[65vh] text-[#0B192C] pb-16 space-y-6">
+          <div className="h-1.5 w-full bg-gradient-to-r from-[#FF671F] via-white to-[#046A38] rounded-full mb-4" />
+          <div className="flex items-center justify-between">
+            <button
+              type="button"
+              onClick={handleReturnToIndia}
+              className="inline-flex items-center gap-2 text-sm font-semibold text-teal-800 hover:underline cursor-pointer"
+            >
+              <ChevronLeft className="h-4 w-4" /> Discover Bharat · All States &amp; Territories
+            </button>
+            <span className="text-xs font-bold text-teal-950 bg-teal-100/90 border border-teal-300 px-3 py-1 rounded-full shadow-2xs">
+              Dadra &amp; Nagar Haveli and Daman &amp; Diu Directory (IN-DN)
+            </span>
+          </div>
+          <DamanDiuDirectorySection
             onSelectCity={(cityId) => handleSelectTown(currentState.id, cityId)}
           />
         </main>
@@ -2287,7 +2312,8 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             {isLakshadweepState && <LakshadweepDirectorySection />}
             {isChandigarhState && <ChandigarhDirectorySection />}
             {isMaharashtraState && <MaharashtraDirectorySection />}
-            {!isAndhraPradeshState && !isArunachalPradeshState && !isRajasthanState && !isKeralaState && !isGoaState && !isTamilNaduState && !isHimachalPradeshState && !isKarnatakaState && !isUttarakhandState && !isGujaratState && !isMadhyaPradeshState && !isUttarPradeshState && !isWestBengalState && !isOdishaState && !isAssamState && !isPunjabState && !isJammuKashmirState && !isLadakhState && !isSikkimState && !isMeghalayaState && !isTelanganaState && !isChhattisgarhState && !isBiharState && !isJharkhandState && !isHaryanaState && !isTripuraState && !isManipurState && !isNagalandState && !isMizoramState && !isAndamanNicobarState && !isLakshadweepState && !isChandigarhState && !isMaharashtraState && <>
+            {isDadraDamanDiuState && <DamanDiuDirectorySection />}
+            {!isAndhraPradeshState && !isArunachalPradeshState && !isRajasthanState && !isKeralaState && !isGoaState && !isTamilNaduState && !isHimachalPradeshState && !isKarnatakaState && !isUttarakhandState && !isGujaratState && !isMadhyaPradeshState && !isUttarPradeshState && !isWestBengalState && !isOdishaState && !isAssamState && !isPunjabState && !isJammuKashmirState && !isLadakhState && !isSikkimState && !isMeghalayaState && !isTelanganaState && !isChhattisgarhState && !isBiharState && !isJharkhandState && !isHaryanaState && !isTripuraState && !isManipurState && !isNagalandState && !isMizoramState && !isAndamanNicobarState && !isLakshadweepState && !isChandigarhState && !isMaharashtraState && !isDadraDamanDiuState && <>
             {/* Heritage Separation Rule */}
             <HeritageDivider
               variant="chakra"
