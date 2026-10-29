@@ -48,18 +48,18 @@ export const HERITAGE_CIRCUIT_DESTINATIONS: HeritageCircuitDestination[] = [
   },
   {
     id: 'indian-railways',
-    title: 'Vande Bharat Express & High-Speed Rail',
-    tagline: 'Experience world-class semi-high speed transit, aerodynamic executive comfort, and scenic Indian rail corridors.',
+    title: 'Scenic Rail Journeys',
+    tagline: 'Plan a rail-based journey through India’s varied landscapes. Check current routes, dates and seat availability with the rail operator.',
     city: 'Pan-India',
     cityId: 'delhi',
     state: 'Indian Railways',
     region: 'National High-Speed Corridors',
     category: 'trains',
     imageUrl: '/images/vande-bharat-express.jpg',
-    badge: 'Indian Railways & Vande Bharat',
+    badge: 'Rail travel idea',
     featureLabel: 'Trains',
     iconName: 'train',
-    highlights: ['Vande Bharat Express', 'Vistadome Glass Cars', 'IRCTC Executive Connectivity'],
+    highlights: ['Route ideas', 'Scenic corridors', 'Check live schedules'],
     imagePosition: 'object-right lg:object-center',
   },
   {
@@ -75,7 +75,7 @@ export const HERITAGE_CIRCUIT_DESTINATIONS: HeritageCircuitDestination[] = [
     badge: 'Hillside Eco-Resorts & Nature Villas',
     featureLabel: 'Resorts',
     iconName: 'palmtree',
-    highlights: ['Traditional Thatched Cottages', 'Misty Mountain Panoramas', 'Ayurveda Wellness Retreats'],
+    highlights: ['Mountain stays', 'Plantation landscapes', 'Wellness experiences'],
   },
   {
     id: 'heritage-hotels',
@@ -90,27 +90,27 @@ export const HERITAGE_CIRCUIT_DESTINATIONS: HeritageCircuitDestination[] = [
     badge: 'Heritage Hotels & Palaces',
     featureLabel: 'Hotels',
     iconName: 'hotel',
-    highlights: ['Royal Palace Suites', 'Verified Heritage Tariffs', 'Courtyard Dining'],
+    highlights: ['Heritage properties', 'Restored havelis', 'Courtyard dining'],
   },
   {
     id: 'tourist-taxis',
     title: 'Prepaid Sightseeing Cabs & Outstation Taxis',
-    tagline: 'Fixed tourism rate cards, sanitized AC tourist cabs, and reliable local chauffeurs for seamless point-to-point travel.',
+    tagline: 'Compare local transport options for city sightseeing and outstation journeys; fares and availability vary by operator.',
     city: 'Mumbai',
     cityId: 'mumbai',
     state: 'Maharashtra',
     region: 'Konkan Coast',
     category: 'taxis',
     imageUrl: 'https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1600&auto=format&fit=crop&q=85',
-    badge: 'Verified Cabs & Outstation Taxis',
+    badge: 'Local transport idea',
     featureLabel: 'Taxis',
     iconName: 'car',
-    highlights: ['Airport Prepaid Counters', 'AC Outstation Cabs', 'Fixed Tourist Tariffs'],
+    highlights: ['Compare operators', 'Check current fare', 'Confirm pickup details'],
   },
   {
     id: 'heritage-dining',
     title: 'Royal Thalis & Historic Dining Enclaves',
-    tagline: 'Relish 24-dish traditional thalis, royal Awadhi dum-pukht curries, South Indian filter coffee, and iconic street food.',
+    tagline: 'Explore regional dishes, local eateries and food streets. Menus, prices and opening status can change.',
     city: 'Amritsar',
     cityId: 'amritsar',
     state: 'Punjab',
@@ -120,18 +120,18 @@ export const HERITAGE_CIRCUIT_DESTINATIONS: HeritageCircuitDestination[] = [
     badge: 'Authentic Regional Restaurants',
     featureLabel: 'Restaurants',
     iconName: 'utensils',
-    highlights: ['24-Dish Heritage Thalis', 'Legendary Food Bazaars', 'Pure Vegetarian Stalls'],
+    highlights: ['Regional dishes', 'Food streets', 'Local dining'],
   },
 ];
 
-export const INCREDIBLE_INDIA_VIDEO_THEMES = HERITAGE_CIRCUIT_DESTINATIONS;
+export const FEATURED_TRIP_IDEAS = HERITAGE_CIRCUIT_DESTINATIONS;
 
-interface IncredibleIndiaVideoGalleryProps {
+interface FeaturedTripIdeasCarouselProps {
   onSelectDestination: (cityId: string, cityName: string) => void;
   selectedCityId?: string;
 }
 
-export const IncredibleIndiaVideoGallery: React.FC<IncredibleIndiaVideoGalleryProps> = ({
+export const FeaturedTripIdeasCarousel: React.FC<FeaturedTripIdeasCarouselProps> = ({
   onSelectDestination,
   selectedCityId,
 }) => {
@@ -190,8 +190,11 @@ export const IncredibleIndiaVideoGallery: React.FC<IncredibleIndiaVideoGalleryPr
 
   return (
     <div
-      className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-xs hover:shadow-sm border border-[#EFE8DF] bg-white transition-all duration-300 group select-none h-[460px] sm:h-[520px] lg:h-[580px]"
-      id="incredible-india-living-gallery"
+      className="relative w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-xs hover:shadow-sm border border-[#EFE8DF] bg-white transition-all duration-300 group select-none h-[400px] sm:h-[430px] lg:h-[460px]"
+      id="featured-trip-ideas"
+      role="region"
+      aria-roledescription="carousel"
+      aria-label="Featured trip ideas"
     >
       {/* 1. VIBRANT FULL-VIEW PHOTOGRAPH WITH ZERO DARK SCRIMS */}
       <div className="absolute inset-0 z-0 overflow-hidden bg-stone-100">
@@ -200,10 +203,7 @@ export const IncredibleIndiaVideoGallery: React.FC<IncredibleIndiaVideoGalleryPr
           src={current.imageUrl}
           alt={current.title}
           onError={(e) => {
-            const target = e.currentTarget;
-            if (target.src !== '/images/lotus-temple-delhi.png') {
-              target.src = '/images/lotus-temple-delhi.png';
-            }
+            e.currentTarget.style.display = 'none';
           }}
           className={`w-full h-full object-cover ${current.imagePosition || 'object-center'} transform scale-100 group-hover:scale-101 transition-transform duration-700 ease-out`}
           loading="eager"

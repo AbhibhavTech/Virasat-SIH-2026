@@ -1,5 +1,3 @@
-import fs from 'fs';
-import path from 'path';
 import { Router, Request, Response } from 'express';
 import { db } from '../../db/client';
 import { requireAuth } from '../../middleware/auth';
@@ -108,12 +106,15 @@ itineraryRouter.post('/', requireAuth, async (req: Request, res: Response): Prom
     title,
     destination,
     city,
+    origin,
     state,
     days_count = 1,
     pace = 'moderate',
     budget_level = 'moderate',
     summary,
-    total_cost = 0,
+    total_cost = null,
+    start_date,
+    end_date,
     is_public = false,
     days,
   } = req.body;
@@ -132,12 +133,15 @@ itineraryRouter.post('/', requireAuth, async (req: Request, res: Response): Prom
     title,
     destination,
     city: resolvedCity,
+    origin: typeof origin === 'string' && origin.trim() ? origin.trim().slice(0, 100) : undefined,
     state: state || undefined,
     days_count: Number(days_count) || 1,
     pace: pace === 'relaxed' || pace === 'fast' ? pace : 'moderate',
     budget_level: budget_level === 'budget' || budget_level === 'luxury' ? budget_level : 'moderate',
     summary: summary || `Curated ${days_count}-day journey in ${resolvedCity}.`,
-    total_cost: Number(total_cost) || 0,
+    total_cost: total_cost == null ? null : Number(total_cost),
+    start_date: typeof start_date === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(start_date) ? start_date : undefined,
+    end_date: typeof end_date === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(end_date) ? end_date : undefined,
     is_public: Boolean(is_public),
     created_at: new Date().toISOString(),
     updated_at: new Date().toISOString(),
@@ -172,19 +176,22 @@ itineraryRouter.put('/:id', requireAuth, async (req: Request, res: Response): Pr
     return;
   }
 
-  const { title, destination, city, state, days_count, pace, budget_level, summary, total_cost, is_public, days } =
+  const { title, destination, city, origin, state, days_count, pace, budget_level, summary, total_cost, start_date, end_date, is_public, days } =
     req.body;
 
   const updates: Partial<ItineraryRecord> = {};
   if (title !== undefined) updates.title = title;
   if (destination !== undefined) updates.destination = destination;
   if (city !== undefined) updates.city = city;
+  if (origin !== undefined) updates.origin = origin || undefined;
   if (state !== undefined) updates.state = state;
   if (days_count !== undefined) updates.days_count = Number(days_count);
   if (pace !== undefined) updates.pace = pace;
   if (budget_level !== undefined) updates.budget_level = budget_level;
   if (summary !== undefined) updates.summary = summary;
   if (total_cost !== undefined) updates.total_cost = Number(total_cost);
+  if (start_date !== undefined) updates.start_date = start_date || undefined;
+  if (end_date !== undefined) updates.end_date = end_date || undefined;
   if (is_public !== undefined) updates.is_public = Boolean(is_public);
 
   const updated = await db.itineraries.update(id, existing.user_id, updates, days);
@@ -230,14 +237,17 @@ itineraryRouter.delete('/:id', requireAuth, async (req: Request, res: Response):
 
 /**
  * POST /api/v1/itineraries/generate
- * Algorithmic generator producing verified multi-day itineraries from database places,
- * supporting multi-city state circuits, festival integration, verified hotels, and transparent budgets.
+ * Itinerary suggestion generator. Destination records are stored data; current
+ * schedules, fees, availability and prices require a live provider confirmation.
  */
 itineraryRouter.post('/generate', async (req: Request, res: Response): Promise<void> => {
   const {
     city,
     destination,
+    origin: requestedOrigin,
     festival: festivalQuery,
+    start_date: requestedStartDate,
+    travellers: requestedTravellers,
     days,
     days_count,
     duration_hours = 40,
@@ -248,22 +258,19 @@ itineraryRouter.post('/generate', async (req: Request, res: Response): Promise<v
   } = req.body;
 
   const rawDest = ((destination || city || '').toString()).trim();
+  const origin = typeof requestedOrigin === 'string' ? requestedOrigin.trim().slice(0, 100) || null : null;
   const destNorm = normalizeTransliteration(rawDest.toLowerCase());
-  const requestedDays = Number(days || days_count || Math.max(1, Math.min(7, Math.round(duration_hours / 8))) || 5);
+  const requestedDaysRaw = Number(days || days_count || Math.max(1, Math.min(7, Math.round(duration_hours / 8))) || 5);
+  const requestedDays = Number.isFinite(requestedDaysRaw) ? Math.min(7, Math.max(1, Math.round(requestedDaysRaw))) : 5;
   const effectiveBudget = budget_level || budget || 'moderate';
+  const parsedStartDate = typeof requestedStartDate === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(requestedStartDate)
+    ? new Date(`${requestedStartDate}T00:00:00.000Z`)
+    : null;
+  const startDate = parsedStartDate && Number.isFinite(parsedStartDate.getTime()) && parsedStartDate.toISOString().slice(0, 10) === requestedStartDate ? requestedStartDate : null;
+  const requestedGuestCount = Number(requestedTravellers);
+  const travellers = Number.isInteger(requestedGuestCount) ? Math.min(50, Math.max(1, requestedGuestCount)) : 1;
 
-  // 1. Load verified hotels
-  let verifiedHotels: any[] = [];
-  try {
-    const hotelsPath = path.join(process.cwd(), 'data', 'hotels.json');
-    if (fs.existsSync(hotelsPath)) {
-      verifiedHotels = JSON.parse(fs.readFileSync(hotelsPath, 'utf-8'));
-    }
-  } catch (e) {
-    console.error('[Itinerary Router] Failed to load hotels.json:', e);
-  }
-
-  // 2. Identify State / Multi-city Circuit or Single City
+  // 1. Identify State / Multi-city Circuit or Single City
   let plansToCombine: Array<{ city: string; days: number }> = [];
 
   if (destNorm.includes('maharashtra')) {
@@ -295,7 +302,7 @@ itineraryRouter.post('/generate', async (req: Request, res: Response): Promise<v
     plansToCombine = [{ city: resolvedCity, days: requestedDays }];
   }
 
-  // 3. Check for Festival Integration
+  // 2. Check for Festival Integration
   let matchedFestival: any = null;
   if (festivalQuery || destNorm.includes('festival') || destNorm.includes('ganesh') || destNorm.includes('durga')) {
     const fSearch = festivalQuery || (destNorm.includes('ganesh') ? 'Ganeshotsav' : destNorm.includes('durga') ? 'Durga Puja' : destNorm);
@@ -308,7 +315,7 @@ itineraryRouter.post('/generate', async (req: Request, res: Response): Promise<v
     }
   }
 
-  // 4. Generate & Stitch Day Blueprints
+  // 3. Generate & Stitch Curated Day Suggestions
   const allDbPlaces = (await db.places.findAll()).places;
   const placeMap = new Map(allDbPlaces.map((p: any) => [p.id.toLowerCase(), p]));
 
@@ -323,25 +330,9 @@ itineraryRouter.post('/generate', async (req: Request, res: Response): Promise<v
     for (const d of cityPlan.days) {
       if (currentDayNumber > requestedDays) break;
 
-      // Find hotels for this city
-      const cityCanon = resolveCanonicalCityId(cityPlan.city_name);
-      const cityHotels = verifiedHotels.filter((h) => {
-        const hCity = h.city || '';
-        const hCityId = h.city_id || resolveCanonicalCityId(hCity);
-        if (cityCanon && hCityId && hCityId.toLowerCase() === cityCanon.toLowerCase()) return true;
-        return isCityExactMatch(hCity, cityPlan.city_name);
-      });
-
       const dayStops = d.places.map((p: any) => {
         const match = placeMap.get(p.id?.toLowerCase() || '') ||
           allDbPlaces.find((dp: any) => dp.name.toLowerCase() === p.name.toLowerCase());
-
-        const domesticFee = p.entry_fee !== undefined && p.entry_fee !== null
-          ? p.entry_fee
-          : (match?.entry_fee_domestic !== undefined ? match.entry_fee_domestic : null);
-
-        const feeLabel = p.entry_fee_label ||
-          (domesticFee === 0 ? 'Free entry, verified' : domesticFee !== null ? `₹${domesticFee}, verified` : 'Fee not available');
 
         const stopObj = {
           order: orderCounter++,
@@ -351,29 +342,31 @@ itineraryRouter.post('/generate', async (req: Request, res: Response): Promise<v
           state: p.state || match?.state || cityPlan.state_name || 'India',
           location: p.location || `${cityPlan.city_name}, ${cityPlan.state_name || 'India'}`,
           category: p.category || match?.category || 'heritage',
-          heritage_status: p.heritage_status || match?.heritage_status || (p.name.includes('UNESCO') ? 'UNESCO World Heritage Site' : 'ASI Protected Monument'),
+          heritage_status: p.heritage_status || match?.heritage_status || null,
           coordinates: p.coordinates || (match ? { lat: match.lat, lng: match.lng } : undefined),
           thumbnail_url: p.thumbnail_url || match?.thumbnail_url || d.hero_image_url,
-          time_slot: p.time_slot || '10:00–12:00',
-          period: p.period || 'Morning',
-          opening_hours: p.opening_hours || match?.visiting_hours || match?.opening_hours || '09:00 AM - 05:30 PM',
-          is_hours_verified: p.is_hours_verified ?? Boolean(match?.visiting_hours),
-          visit_duration: p.visit_duration || '1.5–2 hours',
-          recommended_duration_minutes: p.visit_duration_minutes || 75,
-          travel_time_from_previous_minutes: p.travel_time_from_previous_minutes ?? 20,
-          travel_mode_from_previous: p.travel_mode || 'Auto-Rickshaw / Local Transit',
-          distance_from_previous_km: p.distance_from_previous_km ?? 2.5,
-          distance_info: p.distance_info || (p.distance_from_previous_km ? `${p.distance_from_previous_km} km` : 'Local stop'),
-          entry_fee: domesticFee,
-          entry_fee_label: feeLabel,
-          is_fee_verified: domesticFee !== null,
-          estimated_cost: domesticFee || 0,
+          // Templates and general record verification do not prove today's
+          // opening hours, ticket price, traffic, transit duration or fare.
+          time_slot: undefined,
+          period: 'Suggested stop order',
+          opening_hours: null,
+          is_hours_verified: false,
+          visit_duration: p.visit_duration || null,
+          recommended_duration_minutes: p.visit_duration_minutes || null,
+          travel_time_from_previous_minutes: null,
+          travel_mode_from_previous: null,
+          distance_from_previous_km: null,
+          distance_info: null,
+          entry_fee: null,
+          entry_fee_label: 'Check current ticket price with the venue',
+          is_fee_verified: false,
+          estimated_cost: null,
           visit_tips: p.description || match?.summary || `Part of Day ${currentDayNumber} (${d.area_title}) circuit.`,
-          data_confidence: match?.data_confidence || 'OFFICIAL',
-          source: p.source || match?.source_name || 'Archaeological Survey of India (ASI)',
-          source_url: match?.source_url || 'https://asi.nic.in',
-          verification_status: 'verified',
-          last_verified: 'September 2026',
+          data_confidence: match?.data_confidence || 'CURATED_RECORD',
+          source: match?.source_name || null,
+          source_url: match?.source_url || null,
+          verification_status: match?.verification_status || 'unverified_operational_details',
+          last_verified: match?.last_verified_at || null,
         };
 
         flatStops.push(stopObj);
@@ -396,26 +389,26 @@ itineraryRouter.post('/generate', async (req: Request, res: Response): Promise<v
           heritage_status: 'National Cultural Festival',
           coordinates: matchedFestival.lat && matchedFestival.lng ? { lat: matchedFestival.lat, lng: matchedFestival.lng } : undefined,
           thumbnail_url: matchedFestival.image_url,
-          time_slot: '17:00–19:30',
-          period: 'Evening',
-          opening_hours: 'All Day / Evening Procession',
-          is_hours_verified: true,
-          visit_duration: '2 hours',
-          recommended_duration_minutes: 120,
-          travel_time_from_previous_minutes: 25,
-          travel_mode_from_previous: 'Festival Walk / Special Transit',
-          distance_from_previous_km: 3.0,
-          distance_info: '3.0 km special route',
-          entry_fee: 0,
-          entry_fee_label: 'Free entry, public celebration',
-          is_fee_verified: true,
-          estimated_cost: 0,
+          time_slot: undefined,
+          period: 'Suggested cultural stop',
+          opening_hours: null,
+          is_hours_verified: false,
+          visit_duration: null,
+          recommended_duration_minutes: null,
+          travel_time_from_previous_minutes: null,
+          travel_mode_from_previous: null,
+          distance_from_previous_km: null,
+          distance_info: null,
+          entry_fee: null,
+          entry_fee_label: 'Confirm current access and event arrangements locally',
+          is_fee_verified: false,
+          estimated_cost: null,
           visit_tips: `Experience the cultural vibe: ${matchedFestival.cultural_vibe || 'Traditional procession'}. ${matchedFestival.description}`,
-          data_confidence: 'OFFICIAL',
-          source: 'Ministry of Culture, Government of India',
-          source_url: matchedFestival.source_url || 'https://indiaculture.gov.in',
-          verification_status: 'verified',
-          last_verified: 'September 2026',
+          data_confidence: matchedFestival.verification_status || 'CURATED_RECORD',
+          source: matchedFestival.source_name || null,
+          source_url: matchedFestival.source_url || null,
+          verification_status: matchedFestival.verification_status || 'unverified_operational_details',
+          last_verified: matchedFestival.last_verified_at || null,
         };
         dayStops.push(festStop);
         flatStops.push(festStop);
@@ -427,24 +420,13 @@ itineraryRouter.post('/generate', async (req: Request, res: Response): Promise<v
         city_name: cityPlan.city_name,
         state_name: cityPlan.state_name || 'India',
         places: dayStops,
-        recommended_hotel: cityHotels.length > 0 ? cityHotels[0].name : 'Verified hotel listings unavailable',
-        hotel_options: cityHotels.slice(0, 3),
-        intercity_transit_fare: 'Fare unavailable',
+        recommended_hotel: null,
+        intercity_transit_fare: null,
       });
     }
   }
 
-  // 5. Explicit Transparent Budget Calculations
-  const perDayAccom = effectiveBudget === 'budget' ? 1200 : effectiveBudget === 'luxury' ? 8500 : 2800;
-  const perDayFood = effectiveBudget === 'budget' ? 450 : effectiveBudget === 'luxury' ? 2000 : 800;
-  const perDayLocalTransit = 350;
   const totalDaysCount = combinedDays.length;
-
-  const totalAccomEst = totalDaysCount * perDayAccom;
-  const totalFoodEst = totalDaysCount * perDayFood;
-  const totalLocalTransitEst = totalDaysCount * perDayLocalTransit;
-  const totalEntryFees = flatStops.reduce((sum, s) => sum + (Number(s.estimated_cost) || 0), 0);
-  const totalTripEstimate = totalAccomEst + totalFoodEst + totalLocalTransitEst + totalEntryFees;
 
   const titlePrefix = matchedFestival ? `${matchedFestival.name} & ` : '';
   const circuitTitle = plansToCombine.length > 1
@@ -456,35 +438,45 @@ itineraryRouter.post('/generate', async (req: Request, res: Response): Promise<v
     title: circuitTitle,
     destination: rawDest,
     city: combinedDays[0]?.city_name || rawDest,
+    origin,
     city_id: resolveCanonicalCityId(combinedDays[0]?.city_name || rawDest),
     state: combinedDays[0]?.state_name || 'India',
     days_count: totalDaysCount,
     requested_days: requestedDays,
-    duration_hours: totalDaysCount * 8,
     pace,
     budget_level: effectiveBudget,
     festival_included: matchedFestival ? matchedFestival.name : null,
     total_places: flatStops.length,
-    estimated_total_visiting_minutes: flatStops.reduce((acc: number, s: any) => acc + (s.recommended_duration_minutes || 75), 0),
-    estimated_total_travel_minutes: flatStops.reduce((acc: number, s: any) => acc + (s.travel_time_from_previous_minutes || 20), 0),
-    subtitle: 'Verified attractions organized by location, opening hours and travel efficiency.',
-    summary: `Curated multi-day itinerary across ${combinedDays.map((d) => d.city_name).filter((v, i, a) => a.indexOf(v) === i).join(', ')} with verified heritage sites, historic bazaars, and authentic cultural celebrations.`,
+    estimated_total_visiting_minutes: flatStops.every((s: any) => Number.isFinite(s.recommended_duration_minutes))
+      ? flatStops.reduce((acc: number, s: any) => acc + s.recommended_duration_minutes, 0) : null,
+    estimated_total_travel_minutes: null,
+    start_date: startDate,
+    travellers,
+    subtitle: 'Suggested stops grouped by area. Opening status, entry fees, schedules, hotel availability and prices are not live-checked.',
+    summary: `A suggested ${totalDaysCount}-day route through ${combinedDays.map((d) => d.city_name).filter((v, i, a) => a.indexOf(v) === i).join(', ')} using Virasat destination records. Timings, fees, transport schedules and booking prices require a current check.`,
     budget_breakdown: {
-      is_estimate: true,
+      status: 'live_quotes_not_connected',
       currency: 'INR',
-      accommodation_estimate: totalAccomEst,
-      food_estimate: totalFoodEst,
-      local_transit_estimate: totalLocalTransitEst,
-      entry_fees_exact: totalEntryFees,
-      intercity_transit_fare: 'Fare unavailable',
-      total_estimated_budget: totalTripEstimate,
-      budget_note: 'Total trip budget is an estimate based on average regional tariffs. Intercity railway and airfares should be verified on official IRCTC and airline portals.',
+      accommodation_estimate: null,
+      food_estimate: null,
+      local_transit_estimate: null,
+      entry_fees_exact: null,
+      intercity_transit_fare: null,
+      total_estimated_budget: null,
+      budget_note: 'Live hotel, restaurant, attraction-ticket, road-fare, rail and flight quotes are not connected. No total price is presented as current.',
     },
     days: combinedDays,
     stops: flatStops,
     timeline: flatStops,
-    estimated_total_cost: totalTripEstimate,
-    sources: ['Archaeological Survey of India (ASI)', 'Ministry of Culture', 'State Tourism Development Corporation Archives'],
-    last_verified: 'September 2026',
+    estimated_total_cost: null,
+    sources: [],
+    live_data_status: {
+      attraction_hours_and_ticket_prices: 'not_live_checked',
+      hotels_and_room_availability: 'not_live_checked',
+      restaurants_and_opening_status: 'not_live_checked',
+      rail_and_flight_schedules_and_fares: 'not_live_checked',
+      market_prices_and_local_transport_fares: 'not_live_checked',
+      road_routing: 'planning_route_only_traffic_not_live',
+    },
   });
 });

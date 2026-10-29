@@ -698,9 +698,17 @@ export const api = {
   async createTrip(trip: Omit<TripItem, 'id' | 'created_at'>): Promise<TripItem> {
     const data = await request<any>('/v1/trips', {
       method: 'POST',
-      body: JSON.stringify(trip),
+      body: JSON.stringify({
+        title: trip.title,
+        destination: trip.city,
+        start_date: trip.start_date || undefined,
+        estimated_budget: trip.estimated_cost,
+        places_count: trip.total_places ?? trip.stops.length,
+        is_public: false,
+      }),
     });
-    return data.trip || data;
+    const saved = data.trip || data;
+    return { ...saved, city: saved.city || saved.destination, estimated_cost: saved.estimated_cost ?? saved.estimated_budget ?? null };
   },
 
   async saveTrip(trip: Omit<TripItem, 'id' | 'created_at'>): Promise<TripItem> {

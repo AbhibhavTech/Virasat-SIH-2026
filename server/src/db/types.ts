@@ -266,19 +266,20 @@ export interface ItineraryRecord {
   title: string;
   destination: string;
   city?: string;
+  origin?: string;
   state?: string;
   days_count?: number;
   pace?: 'relaxed' | 'moderate' | 'fast';
   budget_level?: 'budget' | 'moderate' | 'luxury';
   summary?: string;
-  total_cost?: number;
+  total_cost?: number | null;
   start_date?: string;
   end_date?: string;
   city_ids?: string[];
   is_public: boolean;
   places_count?: number;
   total_distance_km?: number;
-  estimated_budget?: number;
+  estimated_budget?: number | null;
   created_at: string;
   updated_at: string;
   idempotency_key?: string;
@@ -303,11 +304,11 @@ export interface ItineraryStopRecord {
   place_name: string;
   stop_order: number;
   arrival_time?: string;
-  duration_minutes: number;
+  duration_minutes?: number | null;
   travel_mode?: string;
-  travel_duration_minutes?: number;
-  travel_distance_km?: number;
-  estimated_cost?: number;
+  travel_duration_minutes?: number | null;
+  travel_distance_km?: number | null;
+  estimated_cost?: number | null;
   notes?: string;
   created_at: string;
 }

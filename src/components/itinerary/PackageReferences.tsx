@@ -22,7 +22,7 @@ type Quote = {
   cancellation: string;
 };
 
-export function PackageReferences({ city, days, places = [] }: { city: string; days: number; places?: string[] }) {
+export function PackageReferences({ city, days, startDate, travellers = 1, places = [] }: { city: string; days: number; startDate?: string; travellers?: number; places?: string[] }) {
   const destination = city.trim() || 'India';
   const highlights = [...new Set(places.map(place => place.trim()).filter(Boolean))].slice(0, 8);
   const [quotes, setQuotes] = useState<Quote[]>([]);
@@ -31,7 +31,7 @@ export function PackageReferences({ city, days, places = [] }: { city: string; d
   const [name, setName] = useState('');
   const [packageDays, setPackageDays] = useState(days);
   const [totalPrice, setTotalPrice] = useState('');
-  const [travellers, setTravellers] = useState(1);
+  const [quoteTravellers, setQuoteTravellers] = useState(1);
   const [includedPlaces, setIncludedPlaces] = useState<string[]>([]);
   const [hotel, setHotel] = useState(false);
   const [transfers, setTransfers] = useState(false);
@@ -41,13 +41,13 @@ export function PackageReferences({ city, days, places = [] }: { city: string; d
   function addQuote(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const price = Number(totalPrice);
-    if (!Number.isFinite(price) || price <= 0 || price > 100000000 || !Number.isInteger(packageDays) || packageDays < 1 || packageDays > 60 || !Number.isInteger(travellers) || travellers < 1 || travellers > 50) {
+    if (!Number.isFinite(price) || price <= 0 || price > 100000000 || !Number.isInteger(packageDays) || packageDays < 1 || packageDays > 60 || !Number.isInteger(quoteTravellers) || quoteTravellers < 1 || quoteTravellers > 50) {
       setError('Enter a valid total price, trip duration and traveller count.');
       return;
     }
     setQuotes(current => [...current, {
       id: crypto.randomUUID(), provider, name: name.trim() || `${destination} package`, packageDays,
-      totalPrice: price, travellers, includedPlaces: includedPlaces.filter(place => highlights.includes(place)), hotel, transfers, cancellation: cancellation.trim(),
+      totalPrice: price, travellers: quoteTravellers, includedPlaces: includedPlaces.filter(place => highlights.includes(place)), hotel, transfers, cancellation: cancellation.trim(),
     }]);
     setName(''); setTotalPrice(''); setIncludedPlaces([]); setHotel(false); setTransfers(false); setCancellation(''); setError(''); setShowForm(false);
   }
@@ -58,7 +58,7 @@ export function PackageReferences({ city, days, places = [] }: { city: string; d
         <span className="rounded-xl bg-orange-100 p-2.5 text-orange-700"><Luggage className="h-5 w-5" /></span>
         <div>
           <h2 id="package-references-title" className="text-xl sm:text-2xl font-bold text-stone-900">Explore travel packages</h2>
-          <p className="mt-1 text-sm sm:text-base text-stone-600">Planning {days} {days === 1 ? 'day' : 'days'} in <strong>{destination}</strong>? Compare packages from these providers.</p>
+          <p className="mt-1 text-sm sm:text-base text-stone-600">Planning {days} {days === 1 ? 'day' : 'days'} in <strong>{destination}</strong>{startDate ? ` from ${startDate}` : ''} for {travellers} {travellers === 1 ? 'traveller' : 'travellers'}? Open a provider to check live package details.</p>
         </div>
       </div>
 
@@ -74,7 +74,7 @@ export function PackageReferences({ city, days, places = [] }: { city: string; d
           <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-orange-700 group-hover:underline">Browse packages <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" /></span>
         </a>)}
       </div>
-      <p className="mt-4 text-sm leading-relaxed text-stone-600">On the provider site, search <strong>{destination}</strong> and compare the route, {days}-day duration, included heritage stops, hotel, transport, dates, full price and cancellation terms. Package listings and availability are provided by those sites and may differ from this Virasat plan.</p>
+      <p className="mt-4 text-sm leading-relaxed text-stone-600">These are provider search links, not an API feed: Virasat does not import their live inventory or prices. On the provider site, check the route, {days}-day duration, dates, traveller count, inclusions, taxes and cancellation terms. Packages may differ from this suggested plan.</p>
 
       <div className="mt-6 border-t border-orange-100 pt-5">
         <div className="flex flex-wrap items-center justify-between gap-3">
@@ -102,7 +102,7 @@ export function PackageReferences({ city, days, places = [] }: { city: string; d
               <input type="number" min="1" max="100000000" step="1" required value={totalPrice} onChange={event => setTotalPrice(event.target.value)} placeholder="Full price, not deposit" className="mt-1 block w-full rounded-lg border border-stone-300 p-2.5 font-normal" />
             </label>
             <label className="text-sm font-semibold text-stone-800">Travellers covered
-              <input type="number" min="1" max="50" required value={travellers} onChange={event => setTravellers(Number(event.target.value))} className="mt-1 block w-full rounded-lg border border-stone-300 p-2.5 font-normal" />
+              <input type="number" min="1" max="50" required value={quoteTravellers} onChange={event => setQuoteTravellers(Number(event.target.value))} className="mt-1 block w-full rounded-lg border border-stone-300 p-2.5 font-normal" />
             </label>
             <label className="text-sm font-semibold text-stone-800">Cancellation terms
               <input value={cancellation} onChange={event => setCancellation(event.target.value)} maxLength={180} placeholder="Copy the key condition, if stated" className="mt-1 block w-full rounded-lg border border-stone-300 p-2.5 font-normal" />

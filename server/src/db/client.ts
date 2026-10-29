@@ -1103,19 +1103,20 @@ class DatabaseManager {
       title: row.title,
       destination: row.destination,
       city: row.city || row.destination,
+      origin: row.origin || undefined,
       state: row.state || undefined,
       days_count: Number(row.days_count) || 1,
       pace: row.pace || 'moderate',
       budget_level: row.budget_level || 'moderate',
       summary: row.summary || undefined,
-      total_cost: Number(row.total_cost) || 0,
+      total_cost: row.total_cost == null ? null : Number(row.total_cost),
       start_date: row.start_date ? String(row.start_date) : undefined,
       end_date: row.end_date ? String(row.end_date) : undefined,
       city_ids: typeof row.city_ids === 'string' ? JSON.parse(row.city_ids) : row.city_ids || [],
       is_public: Boolean(row.is_public),
       places_count: Number(row.places_count) || 0,
       total_distance_km: Number(row.total_distance_km) || 0,
-      estimated_budget: Number(row.estimated_budget) || 0,
+      estimated_budget: row.estimated_budget == null ? null : Number(row.estimated_budget),
       created_at: row.created_at instanceof Date ? row.created_at.toISOString() : String(row.created_at),
       updated_at: row.updated_at instanceof Date ? row.updated_at.toISOString() : String(row.updated_at),
     };
@@ -1142,11 +1143,11 @@ class DatabaseManager {
       place_name: row.place_name,
       stop_order: Number(row.stop_order),
       arrival_time: row.arrival_time || undefined,
-      duration_minutes: Number(row.duration_minutes) || 60,
+      duration_minutes: row.duration_minutes == null ? null : Number(row.duration_minutes),
       travel_mode: row.travel_mode || undefined,
-      travel_duration_minutes: Number(row.travel_duration_minutes) || 15,
-      travel_distance_km: Number(row.travel_distance_km) || 2.0,
-      estimated_cost: Number(row.estimated_cost) || 50,
+      travel_duration_minutes: row.travel_duration_minutes == null ? null : Number(row.travel_duration_minutes),
+      travel_distance_km: row.travel_distance_km == null ? null : Number(row.travel_distance_km),
+      estimated_cost: row.estimated_cost == null ? null : Number(row.estimated_cost),
       notes: row.notes || undefined,
       created_at: row.created_at instanceof Date ? row.created_at.toISOString() : String(row.created_at),
     };
@@ -2755,13 +2756,13 @@ class DatabaseManager {
           await tx.query('BEGIN');
         const sql = `
           INSERT INTO itineraries (
-            id, user_id, title, destination, city, state, days_count, pace, budget_level,
+            id, user_id, title, destination, city, origin, state, days_count, pace, budget_level,
             summary, total_cost, start_date, end_date, city_ids, is_public, places_count,
             total_distance_km, estimated_budget, created_at, updated_at, idempotency_key
           ) VALUES (
-            $1, $2, $3, $4, $5, $6, $7, $8, $9,
-            $10, $11, $12, $13, $14, $15, $16,
-            $17, $18, $19, $20, $21
+            $1, $2, $3, $4, $5, $6, $7, $8, $9, $10,
+            $11, $12, $13, $14, $15, $16, $17, $18,
+            $19, $20, $21, $22
           ) ON CONFLICT (user_id, idempotency_key) WHERE idempotency_key IS NOT NULL
             DO UPDATE SET updated_at=itineraries.updated_at RETURNING *;
         `;
@@ -2771,19 +2772,20 @@ class DatabaseManager {
           record.title,
           record.destination,
           record.city || record.destination,
+          record.origin || null,
           record.state || null,
           record.days_count || 1,
           record.pace || 'moderate',
           record.budget_level || 'moderate',
           record.summary || null,
-          record.total_cost || 0,
+          record.total_cost ?? null,
           record.start_date || null,
           record.end_date || null,
           JSON.stringify(record.city_ids || []),
           Boolean(record.is_public),
           record.places_count || 0,
           record.total_distance_km || 0,
-          record.estimated_budget || 0,
+          record.estimated_budget ?? null,
           record.created_at || new Date().toISOString(),
           record.updated_at || new Date().toISOString(),
           record.idempotency_key || null,
@@ -2823,11 +2825,11 @@ class DatabaseManager {
                     s.place_name,
                     s.stop_order || sIdx + 1,
                     s.arrival_time || null,
-                    s.duration_minutes || 60,
-                    s.travel_mode || 'Auto-Rickshaw / Local Transit',
-                    s.travel_duration_minutes || 15,
-                    s.travel_distance_km || 2.0,
-                    s.estimated_cost || 50,
+                    s.duration_minutes ?? null,
+                    s.travel_mode ?? null,
+                    s.travel_duration_minutes ?? null,
+                    s.travel_distance_km ?? null,
+                    s.estimated_cost ?? null,
                     s.notes || null,
                     new Date().toISOString(),
                   ]
@@ -2877,11 +2879,11 @@ class DatabaseManager {
                 place_name: s.place_name,
                 stop_order: s.stop_order || sIdx + 1,
                 arrival_time: s.arrival_time,
-                duration_minutes: s.duration_minutes || 60,
-                travel_mode: s.travel_mode || 'Auto-Rickshaw / Local Transit',
-                travel_duration_minutes: s.travel_duration_minutes || 15,
-                travel_distance_km: s.travel_distance_km || 2.0,
-                estimated_cost: s.estimated_cost || 50,
+                duration_minutes: s.duration_minutes ?? null,
+                travel_mode: s.travel_mode || undefined,
+                travel_duration_minutes: s.travel_duration_minutes ?? null,
+                travel_distance_km: s.travel_distance_km ?? null,
+                estimated_cost: s.estimated_cost ?? null,
                 notes: s.notes,
                 created_at: new Date().toISOString(),
               };
@@ -2912,10 +2914,10 @@ class DatabaseManager {
         const merged = { ...existing, ...updates, updated_at: new Date().toISOString() };
         const sql = `
           UPDATE itineraries SET
-            title = $2, destination = $3, city = $4, state = $5, days_count = $6,
-            pace = $7, budget_level = $8, summary = $9, total_cost = $10,
-            start_date = $11, end_date = $12, city_ids = $13, is_public = $14,
-            places_count = $15, total_distance_km = $16, estimated_budget = $17, updated_at = $18
+            title = $2, destination = $3, city = $4, origin = $5, state = $6, days_count = $7,
+            pace = $8, budget_level = $9, summary = $10, total_cost = $11,
+            start_date = $12, end_date = $13, city_ids = $14, is_public = $15,
+            places_count = $16, total_distance_km = $17, estimated_budget = $18, updated_at = $19
           WHERE id = $1
           RETURNING *;
         `;
@@ -2924,6 +2926,7 @@ class DatabaseManager {
           merged.title,
           merged.destination,
           merged.city,
+          merged.origin || null,
           merged.state || null,
           merged.days_count,
           merged.pace,
@@ -2936,7 +2939,7 @@ class DatabaseManager {
           merged.is_public,
           merged.places_count || 0,
           merged.total_distance_km || 0,
-          merged.estimated_budget || 0,
+          merged.estimated_budget ?? null,
           merged.updated_at,
         ];
         const rows = await this.query(sql, params);
@@ -2973,11 +2976,11 @@ class DatabaseManager {
                     s.place_name,
                     s.stop_order || sIdx + 1,
                     s.arrival_time || null,
-                    s.duration_minutes || 60,
-                    s.travel_mode || 'Auto-Rickshaw / Local Transit',
-                    s.travel_duration_minutes || 15,
-                    s.travel_distance_km || 2.0,
-                    s.estimated_cost || 50,
+                    s.duration_minutes ?? null,
+                    s.travel_mode ?? null,
+                    s.travel_duration_minutes ?? null,
+                    s.travel_distance_km ?? null,
+                    s.estimated_cost ?? null,
                     s.notes || null,
                     new Date().toISOString(),
                   ]
@@ -3035,11 +3038,11 @@ class DatabaseManager {
                 place_name: s.place_name,
                 stop_order: s.stop_order || sIdx + 1,
                 arrival_time: s.arrival_time,
-                duration_minutes: s.duration_minutes || 60,
-                travel_mode: s.travel_mode || 'Auto-Rickshaw / Local Transit',
-                travel_duration_minutes: s.travel_duration_minutes || 15,
-                travel_distance_km: s.travel_distance_km || 2.0,
-                estimated_cost: s.estimated_cost || 50,
+                duration_minutes: s.duration_minutes ?? null,
+                travel_mode: s.travel_mode || undefined,
+                travel_duration_minutes: s.travel_duration_minutes ?? null,
+                travel_distance_km: s.travel_distance_km ?? null,
+                estimated_cost: s.estimated_cost ?? null,
                 notes: s.notes,
                 created_at: new Date().toISOString(),
               };
@@ -3164,7 +3167,7 @@ class DatabaseManager {
           record.travel_mode || 'Auto-Rickshaw / Local Transit',
           record.travel_duration_minutes || 15,
           record.travel_distance_km || 2.0,
-          record.estimated_cost || 50,
+          record.estimated_cost ?? null,
           record.notes || null,
           record.created_at || new Date().toISOString(),
         ];

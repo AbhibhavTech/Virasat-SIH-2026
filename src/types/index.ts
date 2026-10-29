@@ -291,6 +291,8 @@ export interface ItineraryRequest {
   days?: number;
   days_count?: number;
   duration_hours?: number;
+  start_date?: string;
+  travellers?: number;
   origin?: string;
   origin_place_id?: string;
   interests?: string[];
@@ -302,13 +304,17 @@ export interface ItineraryRequest {
 export interface ItineraryResponse {
   title?: string;
   city: string;
+  origin?: string | null;
   city_id?: string;
   state?: string;
   days_count?: number;
   duration_hours?: number;
   total_places?: number;
   total_travel_time_minutes?: number;
-  estimated_total_cost?: number;
+  estimated_total_cost?: number | null;
+  start_date?: string | null;
+  travellers?: number;
+  live_data_status?: Record<string, string>;
   total_cost_estimate?: {
     budget: number;
     moderate: number;
@@ -383,9 +389,10 @@ export interface TripItem {
   id: string;
   title: string;
   city: string;
-  duration_hours: number;
+  duration_hours?: number | null;
+  start_date?: string | null;
   total_places?: number;
-  estimated_cost: number;
+  estimated_cost: number | null;
   created_at: string;
   stops: TripStop[];
 }

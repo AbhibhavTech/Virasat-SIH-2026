@@ -14,7 +14,7 @@ const createTripSchema = z.object({
   city_ids: z.array(z.string()).optional().default([]),
   places_count: z.number().optional().default(0),
   total_distance_km: z.number().optional().default(0),
-  estimated_budget: z.number().optional().default(0),
+  estimated_budget: z.number().nullable().optional(),
   is_public: z.boolean().optional().default(false),
 });
 

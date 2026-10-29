@@ -39,7 +39,7 @@ import { api } from '../services/api';
 import { ItineraryResponse, ItineraryDay } from '../types';
 import { NavTab } from '../components/layout/Sidebar';
 import { ALL_INDIAN_TOURISM_CITIES, CityOption } from '../data/cityItineraryData';
-import { IncredibleIndiaVideoGallery } from '../components/itinerary/IncredibleIndiaVideoGallery';
+import { FeaturedTripIdeasCarousel } from '../components/itinerary/IncredibleIndiaVideoGallery';
 import { useAuth } from '../contexts/AuthContext';
 import { saveTripToFirestore } from '../services/firebase';
 import { ItineraryCostDonutChart } from '../components/itinerary/ItineraryCostDonutChart';
@@ -59,6 +59,12 @@ interface PreferencePill {
   label: string;
   icon: string;
 }
+
+const localDateInputValue = () => {
+  const date = new Date();
+  date.setMinutes(date.getMinutes() - date.getTimezoneOffset());
+  return date.toISOString().slice(0, 10);
+};
 
 const PREFERENCE_PILLS: PreferencePill[] = [
   { id: 'heritage', label: 'Heritage & Monuments', icon: '🏛️' },
@@ -104,6 +110,9 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
   const [daysCount, setDaysCount] = useState<number>(5);
   const [pace, setPace] = useState<'relaxed' | 'moderate' | 'fast'>('moderate');
   const [budget, setBudget] = useState<'budget' | 'moderate' | 'luxury'>('moderate');
+  const [originCity, setOriginCity] = useState('');
+  const [travelStartDate, setTravelStartDate] = useState('');
+  const [travellersCount, setTravellersCount] = useState(1);
   const [selectedPreferences, setSelectedPreferences] = useState<string[]>([
     'heritage',
     'beaches_nature',
@@ -195,7 +204,10 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
     targetDays?: number,
     targetPace?: 'relaxed' | 'moderate' | 'fast',
     targetBudget?: 'budget' | 'moderate' | 'luxury',
-    targetPrefs?: string[]
+    targetPrefs?: string[],
+    targetStartDate?: string,
+    targetTravellers?: number,
+    targetOrigin?: string
   ) => {
     const cityToQuery = targetCityName || selectedCityObj.name;
     const daysToQuery = targetDays || daysCount;
@@ -211,12 +223,14 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
     try {
       const plan = await api.generateItinerary({
         city: cityToQuery,
+        origin: targetOrigin || originCity || undefined,
         days: daysToQuery,
         days_count: daysToQuery,
-        duration_hours: daysToQuery * 8,
         pace: paceToQuery,
         budget_level: budgetToQuery,
         interests: prefsToQuery,
+        start_date: targetStartDate || travelStartDate || undefined,
+        travellers: targetTravellers ?? travellersCount,
       });
       setItinerary(plan);
     } catch (err) {
@@ -234,6 +248,14 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
     const paceParam = searchParams.get('pace');
     const budgetParam = searchParams.get('budget');
     const prefsParam = searchParams.get('prefs');
+    const originParam = searchParams.get('from') || '';
+    const dateParam = searchParams.get('date') || '';
+    const travellersParam = Number(searchParams.get('travellers'));
+    const targetStartDate = /^\d{4}-\d{2}-\d{2}$/.test(dateParam) && dateParam >= localDateInputValue() ? dateParam : '';
+    const targetTravellers = Number.isInteger(travellersParam) && travellersParam >= 1 && travellersParam <= 50 ? travellersParam : 1;
+    setTravelStartDate(targetStartDate);
+    setTravellersCount(targetTravellers);
+    setOriginCity(originParam);
 
     let restoredFromEncodedData = false;
 
@@ -264,6 +286,8 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
             parsedItinerary.days_count ||
             (parsedItinerary.days ? parsedItinerary.days.length : daysParam ? Number(daysParam) : 5);
           setDaysCount(Math.min(7, Math.max(1, resolvedDays)));
+          setTravelStartDate(parsedItinerary.start_date || targetStartDate);
+          setTravellersCount(parsedItinerary.travellers || targetTravellers);
 
           if (paceParam && ['relaxed', 'moderate', 'fast'].includes(paceParam)) {
             setPace(paceParam as any);
@@ -333,7 +357,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
         setTimeout(() => setRestoredNotice(null), 5000);
       }
 
-      handleGeneratePlan(targetCity, targetDays, targetPace, targetBudget, targetPrefs);
+      handleGeneratePlan(targetCity, targetDays, targetPace, targetBudget, targetPrefs, targetStartDate, targetTravellers, originParam);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -346,12 +370,21 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
         title: itinerary.title || `${selectedCityObj.name} ${daysCount}-Day Tour`,
         destination: selectedCityObj.name,
         city: itinerary.city || selectedCityObj.name,
+        origin: originCity.trim() || undefined,
         state: selectedCityObj.state,
         days_count: daysCount,
         pace,
         budget_level: budget,
         summary: itinerary.summary,
-        total_cost: itinerary.estimated_total_cost || 3500,
+        ...(travelStartDate ? {
+          start_date: travelStartDate,
+          end_date: (() => {
+            const end = new Date(`${travelStartDate}T12:00:00`);
+            end.setDate(end.getDate() + Math.max(0, daysCount - 1));
+            return end.toISOString().slice(0, 10);
+          })(),
+        } : {}),
+        ...(itinerary.estimated_total_cost != null ? { total_cost: itinerary.estimated_total_cost } : {}),
         is_public: true,
         days: itinerary.days?.map((d: any, dIdx: number) => ({
           day_number: d.day_number || dIdx + 1,
@@ -362,11 +395,11 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
             place_id: p.id || p.place_id,
             place_name: p.name,
             stop_order: pIdx + 1,
-            duration_minutes: p.recommended_duration_minutes || 75,
-            travel_mode: p.travel_mode_from_previous || 'Auto-Rickshaw / Local Transit',
-            travel_duration_minutes: p.travel_time_from_previous_minutes || 20,
-            travel_distance_km: p.distance_from_previous_km || 2.5,
-            estimated_cost: p.estimated_cost || 60,
+            ...(p.recommended_duration_minutes != null ? { duration_minutes: p.recommended_duration_minutes } : {}),
+            ...(p.travel_mode_from_previous ? { travel_mode: p.travel_mode_from_previous } : {}),
+            ...(p.travel_time_from_previous_minutes != null ? { travel_duration_minutes: p.travel_time_from_previous_minutes } : {}),
+            ...(p.distance_from_previous_km != null ? { travel_distance_km: p.distance_from_previous_km } : {}),
+            ...(p.estimated_cost != null ? { estimated_cost: p.estimated_cost } : {}),
           })),
         })),
       });
@@ -374,13 +407,13 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
       const savedTrip = await api.saveTrip({
         title: itinerary.title || `${selectedCityObj.name} ${daysCount}-Day Tour`,
         city: itinerary.city || selectedCityObj.name,
-        duration_hours: daysCount * 8,
-        estimated_cost: itinerary.estimated_total_cost || 3500,
+        ...(travelStartDate ? { start_date: travelStartDate } : {}),
+        estimated_cost: itinerary.estimated_total_cost ?? null,
         stops: stopsList.map((item, idx) => ({
           place_id: item.place_id,
           place_name: item.name || item.place_name || `Stop ${idx + 1}`,
           order: idx + 1,
-          visit_minutes: item.recommended_duration_minutes || 60,
+          ...(item.recommended_duration_minutes != null ? { visit_minutes: item.recommended_duration_minutes } : {}),
         })),
       });
 
@@ -408,9 +441,12 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
 
       const cityVal = itinerary.city || selectedCityObj.name;
       params.set('city', cityVal);
+      if (originCity.trim()) params.set('from', originCity.trim());
       params.set('days', String(itinerary.days_count || daysCount));
       params.set('pace', pace);
       params.set('budget', budget);
+      if (travelStartDate) params.set('date', travelStartDate);
+      params.set('travellers', String(travellersCount));
       if (selectedPreferences && selectedPreferences.length > 0) {
         params.set('prefs', selectedPreferences.join(','));
       }
@@ -488,7 +524,10 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
     if (!itinerary) return;
     const cityVal = itinerary.city || selectedCityObj.name;
     const origin = window.location.origin;
-    const deepLink = `${origin}/itinerary?city=${encodeURIComponent(cityVal)}&days=${daysCount}`;
+    const shareParams = new URLSearchParams({ city: cityVal, days: String(daysCount), travellers: String(travellersCount) });
+    if (originCity.trim()) shareParams.set('from', originCity.trim());
+    if (travelStartDate) shareParams.set('date', travelStartDate);
+    const deepLink = `${origin}/itinerary?${shareParams.toString()}`;
 
     const daysSummary = (itinerary.days || [])
       .map((d, i) => `• Day ${d.day_number || i + 1} (${d.area_title}): ${(d.places || []).map((p: any) => p.name).join(' ➔ ')}`)
@@ -496,9 +535,9 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
 
     const msg =
       `🇮🇳 *Virasat Heritage Itinerary - ${cityVal}*\n` +
-      `📅 Duration: ${daysCount} Days | 💰 Est. Budget: ₹${itinerary.estimated_total_cost || 3500}\n\n` +
+          `📅 Duration: ${daysCount} Days | 💰 Budget: ${itinerary.estimated_total_cost != null ? `₹${itinerary.estimated_total_cost.toLocaleString('en-IN')}` : 'live prices not connected'}\n\n` +
       `*Curated Heritage Stops:*\n${daysSummary}\n\n` +
-      `🔗 Open full interactive route & ASI monument tickets:\n${deepLink}`;
+      `🔗 Open your suggested itinerary:\n${deepLink}\n\nCurrent opening hours, ticket prices and availability need a live check.`;
 
     window.open(`https://api.whatsapp.com/send?text=${encodeURIComponent(msg)}`, '_blank');
   };
@@ -514,7 +553,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
       `VIRASAT SMART TRIP PLANNER & HERITAGE CIRCUIT`,
       `${itinerary.title || `${selectedCityObj.name} ${daysCount}-Day Itinerary`}`,
       `City: ${selectedCityObj.name}, ${selectedCityObj.state}`,
-      `Duration: ${daysCount} Days`,
+      `Duration: ${daysCount} Days${travelStartDate ? ` | Start: ${travelStartDate}` : ''} | Travellers: ${travellersCount}`,
       `Pace: ${pace.toUpperCase()} | Budget: ${budget.toUpperCase()}`,
       `=============================================================`,
       ``,
@@ -525,15 +564,15 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
         `DAY ${d.day_number}: ${d.area_title.toUpperCase()}`,
         `${d.subtitle || ''}`,
         `-------------------------------------------------------------`,
-        `SCHEDULED ATTRACTIONS:`,
+        `SUGGESTED STOPS (sequence only; not timed appointments):`,
         ...d.places.map((p, i) => `  ${i + 1}. ${p.name} (${p.distance_info || 'Local stop'})`),
         ``,
-        `RECOMMENDED LOCAL SHOPPING & MARKETS:`,
+        `LOCAL MARKETS TO EXPLORE (check current opening status locally):`,
         ...d.shopping.map((s) => `  • ${s}`),
         ``,
       ].join('\n')),
       `=============================================================`,
-      `Verified Heritage Data - Government of India Tourism Standards`,
+      `Suggested route from Virasat destination records. Current opening hours, entry fees, transport schedules, hotel availability and prices were not live-checked.`,
       `VIRASAT | Smart Tourism for Bharat`,
     ].join('\n');
 
@@ -566,7 +605,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
 
           <span className="hidden sm:inline text-stone-300">•</span>
           <span className="text-stone-500 hidden sm:inline text-xs font-medium">
-            Ministry of Tourism & ASI Tariffs Aligned
+            Virasat destination records · live prices clearly marked
           </span>
         </div>
 
@@ -656,8 +695,8 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
         </div>
       </div>
 
-      {/* 2. EXPANDED LIVING HERITAGE SHOWCASE GALLERY */}
-      <IncredibleIndiaVideoGallery
+      {/* 2. Featured trip ideas */}
+      <FeaturedTripIdeasCarousel
         onSelectDestination={handleSelectCarouselDestination}
         selectedCityId={selectedCityObj.id}
       />
@@ -665,7 +704,11 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
       {/* 3. INPUT CARD: DESTINATION, DAYS, PACE, BUDGET & PREFERENCES */}
       <div id="trip-planner-form" className="rounded-2xl sm:rounded-3xl bg-white border border-stone-200 shadow-sm p-4 sm:p-6 space-y-4 sm:space-y-5 scroll-mt-6">
         {/* Row 1: 4 Selectors + Plan Button */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3.5 sm:gap-4 items-end">
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3.5 sm:gap-4 items-end">
+          <div className="space-y-1.5">
+            <label htmlFor="trip-origin" className="text-xs font-bold text-stone-700 uppercase tracking-wider">Starting from (optional)</label>
+            <input id="trip-origin" value={originCity} onChange={e => setOriginCity(e.target.value)} maxLength={100} placeholder="City, airport or station" className="w-full rounded-xl border border-stone-200 bg-stone-50/80 px-3.5 py-2.5 text-sm text-stone-900 focus:border-[#E06D24] focus:bg-white focus:outline-hidden" />
+          </div>
           {/* Destination Selector */}
           <div className="space-y-1.5">
             <label className="text-xs font-bold text-stone-700 uppercase tracking-wider flex items-center gap-1.5">
@@ -718,6 +761,18 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
             </select>
           </div>
 
+          <div className="space-y-1.5">
+            <label htmlFor="trip-start-date" className="text-xs font-bold text-stone-700 uppercase tracking-wider">Travel start date</label>
+            <input id="trip-start-date" type="date" min={localDateInputValue()} value={travelStartDate} onChange={e => setTravelStartDate(e.target.value)} className="w-full rounded-xl border border-stone-200 bg-stone-50/80 px-3.5 py-2.5 text-sm text-stone-900 focus:border-[#E06D24] focus:bg-white focus:outline-hidden" />
+          </div>
+
+          <div className="space-y-1.5">
+            <label htmlFor="trip-travellers" className="text-xs font-bold text-stone-700 uppercase tracking-wider">Travellers</label>
+            <select id="trip-travellers" value={travellersCount} onChange={e => setTravellersCount(Number(e.target.value))} className="w-full rounded-xl border border-stone-200 bg-stone-50/80 px-3.5 py-2.5 text-sm text-stone-900 focus:border-[#E06D24] focus:bg-white focus:outline-hidden">
+              {[1, 2, 3, 4, 5, 6].map(n => <option key={n} value={n}>{n} {n === 1 ? 'traveller' : 'travellers'}</option>)}
+            </select>
+          </div>
+
           {/* Travel Pace */}
           <div className="space-y-1.5">
             <label className="text-xs font-bold text-stone-700 uppercase tracking-wider flex items-center gap-1.5">
@@ -746,9 +801,9 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
               onChange={(e) => setBudget(e.target.value as any)}
               className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50/80 hover:bg-stone-50 border border-stone-200 text-sm text-stone-900 font-medium focus:bg-white focus:outline-hidden focus:border-[#E06D24] focus:ring-1 focus:ring-[#E06D24]/20 transition cursor-pointer"
             >
-              <option value="budget">₹ Budget (Hostels & Local transit)</option>
-              <option value="moderate">₹₹ Mid-range (Boutique & Cabs)</option>
-              <option value="luxury">₹₹₹ Luxury (Palaces & Chauffeur)</option>
+              <option value="budget">Budget preference</option>
+              <option value="moderate">Mid-range preference</option>
+              <option value="luxury">Luxury preference</option>
             </select>
           </div>
 
@@ -806,6 +861,8 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
         key={(itinerary?.city || selectedCityObj.name).toLowerCase()}
         city={itinerary?.city || selectedCityObj.name}
         days={itinerary?.days_count || daysCount}
+        startDate={travelStartDate}
+        travellers={travellersCount}
         places={(itinerary?.days || []).flatMap(day => day.places.map(place => place.name))}
       />
 
@@ -820,12 +877,16 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                 <span>{itinerary.city || selectedCityObj.name} Immersion</span>
                 <span>•</span>
                 <span>{itinerary.days_count || daysCount} Days</span>
+                {travelStartDate && <><span>•</span><span>{travelStartDate}</span></>}
+                <span>•</span>
+                <span>{travellersCount} {travellersCount === 1 ? 'traveller' : 'travellers'}</span>
+                {originCity.trim() && <><span>•</span><span>From {originCity.trim()}</span></>}
               </div>
               <h2 className="text-xl sm:text-2xl font-bold font-serif text-stone-900">
                 {`${itinerary.days_count || daysCount}-Day Itinerary: ${itinerary.city || selectedCityObj.name}`}
               </h2>
               <p className="text-xs sm:text-sm text-stone-600 max-w-3xl leading-relaxed">
-                Verified attractions organized by location, opening hours and travel efficiency.
+                Suggested stops grouped by area. Opening status, ticket prices, schedules, hotel availability and costs are not live-checked.
               </p>
             </div>
 
@@ -922,7 +983,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                 <ShieldCheck className="w-3.5 h-3.5" />
               </div>
               <div className="space-y-0.5">
-                <div className="font-bold text-stone-900">Master Tourism Database Scope</div>
+              <div className="font-bold text-stone-900">What this plan can confirm</div>
                 <div className="text-stone-700 leading-relaxed">{itinerary.warning_message}</div>
               </div>
             </div>
@@ -934,6 +995,9 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
             selectedCityName={selectedCityObj.name}
             initialBudgetTier={budget}
             daysCount={daysCount}
+            startDate={travelStartDate}
+            guests={travellersCount}
+            originCity={originCity}
           />
 
           {/* 5. EXPANDED PAGES & DAY DOSSIER SECTION */}
@@ -1050,12 +1114,12 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
 
                 {/* Day Content Body */}
                 <div className="p-6 sm:p-8 space-y-6">
-                  {/* Detailed Hourly Schedule Timeline */}
+                  {/* Suggested stops; opening and travel times are not live-checked */}
                   <div className="space-y-4">
                     <div className="flex items-center justify-between border-b border-stone-100 pb-2">
                       <h4 className="text-sm font-bold text-stone-900 uppercase tracking-wider flex items-center gap-1.5">
                         <Clock className="w-4 h-4 text-[#FF671F]" />
-                        <span>Curated Day Timeline & Heritage Stops</span>
+                        <span>Suggested stop order</span>
                       </h4>
                       <span className="text-xs text-stone-500">
                         Click any place to inspect full monument details
@@ -1081,60 +1145,50 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                         const verifiedDb = findVerifiedPlace(place.id || place.name, selectedCityObj.id);
 
                         // Contextual time slots
-                        const timeSlots = [
-                          { time: '08:30–10:30', period: 'Morning', icon: <Sun className="w-3.5 h-3.5 text-amber-500" /> },
-                          { time: '11:00–13:00', period: 'Midday', icon: <Compass className="w-3.5 h-3.5 text-blue-500" /> },
-                          { time: '14:30–16:30', period: 'Afternoon', icon: <Utensils className="w-3.5 h-3.5 text-emerald-500" /> },
-                          { time: '17:00–19:00', period: 'Sunset & Evening', icon: <Sunset className="w-3.5 h-3.5 text-orange-500" /> },
-                          { time: '19:30–21:00', period: 'Evening Promenade', icon: <Compass className="w-3.5 h-3.5 text-indigo-500" /> },
-                        ];
-                        const slot = timeSlots[pIdx % timeSlots.length];
-                        const displayTime = place.time_slot || slot.time;
-                        const displayPeriod = place.period || slot.period;
+                        const displayPeriod = place.period || 'Suggested stop order';
 
                         // Heritage & Category label
                         const heritageLabel = place.heritage_status ||
                           verifiedDb?.heritage_status ||
-                          (place.category === 'heritage' ? 'ASI Protected Heritage' :
-                           place.category === 'spiritual' ? 'Historic Sacred Site' :
-                           place.category === 'nature' ? 'Scenic Landscape & Nature' :
-                           place.category === 'museum' ? 'State Cultural Museum' : 'Heritage Destination');
+                          (place.category === 'heritage' ? 'Heritage place' :
+                           place.category === 'spiritual' ? 'Spiritual place' :
+                           place.category === 'nature' ? 'Nature & outdoors' :
+                           place.category === 'museum' ? 'Museum' : 'Destination record');
 
                         // Location
                         const locationLabel = place.location ||
                           (verifiedDb?.city_name ? `${verifiedDb.city_name}, ${verifiedDb.state_name || 'India'}` : `${selectedCityObj.name}, ${selectedCityObj.state}`);
 
                         // Visit duration
-                        const visitDurationLabel = place.visit_duration ||
-                          (verifiedDb?.visit_duration_minutes ? (verifiedDb.visit_duration_minutes >= 120 ? '~2 hours' : verifiedDb.visit_duration_minutes >= 90 ? '~1.5 hours' : '~1 hour') : '~1.5–2 hours');
+                        const visitDurationLabel = place.visit_duration || 'Choose based on interest';
 
                         // Opening hours
-                        const openingHoursLabel = (place.opening_hours && place.opening_hours !== 'Information not verified')
+                        const openingHoursLabel = place.is_hours_verified && place.opening_hours
                           ? place.opening_hours
-                          : (verifiedDb?.opening_hours || 'Information not verified');
+                          : 'Confirm with venue';
 
                         // Entry fee
-                        const domesticFee = place.entry_fee !== undefined && place.entry_fee !== null
-                          ? place.entry_fee
-                          : (verifiedDb?.entry_fee_domestic ?? null);
+                        const domesticFee = place.is_fee_verified && place.entry_fee != null ? place.entry_fee : null;
 
-                        let entryFeeDisplay = 'Fee not available';
+                        let entryFeeDisplay = 'Not live-confirmed';
                         if (place.entry_fee_label) {
                           entryFeeDisplay = place.entry_fee_label;
-                        } else if (place.entry_fee === 0 || verifiedDb?.is_free || domesticFee === 0) {
+                        } else if (place.is_fee_verified && domesticFee === 0) {
                           entryFeeDisplay = 'Free entry, verified';
                         } else if (domesticFee !== null) {
                           entryFeeDisplay = `₹${domesticFee}, verified`;
+                        } else {
+                          entryFeeDisplay = 'Not live-confirmed';
                         }
 
                         // Transit from previous stop
-                        const transitMins = place.travel_time_from_previous_minutes ?? (pIdx === 0 ? 0 : 15);
+                        const transitMins = place.travel_time_from_previous_minutes;
                         const transitDist = place.distance_info || (place.distance_from_previous_km ? `${place.distance_from_previous_km} km` : 'Local stop');
 
                         // Verification Source & Status
-                        const sourceName = place.source || verifiedDb?.source_name || 'Archaeological Survey of India (ASI)';
-                        const verificationStatus = place.verification_status || (verifiedDb ? 'Verified' : 'Not independently verified');
-                        const lastVerified = place.last_verified || verifiedDb?.last_verified || 'September 2026';
+                        const sourceName = place.source || verifiedDb?.source_name || 'Virasat destination record';
+                        const verificationStatus = place.verification_status || 'Operational details not verified';
+                        const lastVerified = place.last_verified || verifiedDb?.last_verified || null;
 
                         return (
                           <div
@@ -1143,11 +1197,11 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                             className="p-4 rounded-2xl border border-stone-200 bg-white hover:shadow-md hover:border-[#FF671F]/50 transition cursor-pointer flex flex-col justify-between group space-y-3"
                           >
                             <div className="space-y-2.5">
-                              {/* Top Meta: Time & Order Badge */}
+                                {/* Suggested order, not a visit appointment */}
                               <div className="flex items-center justify-between text-[11px] font-semibold">
-                                <div className="flex items-center gap-1.5 text-stone-600 font-mono">
-                                  {slot.icon}
-                                  <span>{displayTime}</span>
+                                <div className="flex items-center gap-1.5 text-stone-600">
+                                  <MapPin className="w-3.5 h-3.5 text-[#FF671F]" />
+                                  <span>Stop {pIdx + 1}</span>
                                   <span className="text-stone-300">•</span>
                                   <span className="text-stone-500 text-[10px]">{displayPeriod}</span>
                                 </div>
@@ -1170,15 +1224,15 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                                 </div>
                               </div>
 
-                              {/* Factual Verified Spec Grid */}
+                              {/* Operational information stays unknown until confirmed */}
                               <div className="bg-stone-50 rounded-xl p-2.5 space-y-1.5 text-[11px] text-stone-600 border border-stone-100">
                                 <div className="flex items-center justify-between gap-2">
-                                  <span className="text-stone-500">Visit duration:</span>
+                                  <span className="text-stone-500">Suggested time on site:</span>
                                   <span className="font-semibold text-stone-800">{visitDurationLabel}</span>
                                 </div>
                                 <div className="flex items-center justify-between gap-2">
                                   <span className="text-stone-500">Opening hours:</span>
-                                  <span className={`font-semibold ${openingHoursLabel === 'Information not verified' ? 'text-stone-400 italic' : 'text-stone-800'}`}>
+                                  <span className={`font-semibold ${openingHoursLabel === 'Confirm with venue' ? 'text-stone-500 italic' : 'text-stone-800'}`}>
                                     {openingHoursLabel}
                                   </span>
                                 </div>
@@ -1188,7 +1242,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                                     {entryFeeDisplay}
                                   </span>
                                 </div>
-                                {pIdx > 0 && (
+                                {pIdx > 0 && transitMins != null && (
                                   <div className="flex items-center justify-between gap-2 pt-1 border-t border-stone-200/60 text-stone-500">
                                     <span>From previous stop:</span>
                                     <span className="font-medium text-stone-700">~{transitMins} min ({transitDist})</span>
@@ -1197,22 +1251,21 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                               </div>
                             </div>
 
-                            {/* Footer: Verified data badge & View Details */}
+                              {/* Record context & View Details */}
                             <div className="pt-2.5 border-t border-stone-100 flex items-center justify-between text-[11px]">
-                              {/* Subtle Verified Data with Tooltip */}
                               <div
-                                className="group/tooltip relative inline-flex items-center gap-1 text-[10px] font-semibold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200"
+                                className="group/tooltip relative inline-flex items-center gap-1 text-[10px] font-semibold text-stone-700 bg-stone-100 px-2 py-0.5 rounded-full border border-stone-200"
                                 onClick={(e) => e.stopPropagation()}
                               >
-                                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                                <span>Verified data</span>
+                                <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
+                                <span>Venue details need confirmation</span>
 
                                 {/* Tooltip Popover */}
                                 <div className="absolute bottom-full left-0 mb-1.5 hidden group-hover/tooltip:block w-56 p-2.5 rounded-xl bg-stone-900 text-white text-[10px] shadow-xl z-50 pointer-events-none leading-relaxed">
-                                  <div className="font-bold text-emerald-400">Verified Information</div>
+                                  <div className="font-bold text-amber-300">Record information</div>
                                   <div className="text-stone-300">Source: {sourceName}</div>
-                                  <div className="text-stone-300">Status: {verificationStatus}</div>
-                                  <div className="text-stone-400 text-[9px] mt-0.5">Last verified: {lastVerified}</div>
+                                  <div className="text-stone-300">Record status: {verificationStatus}; today's hours and access were not checked.</div>
+                                  {lastVerified && <div className="text-stone-400 text-[9px] mt-0.5">Record last reviewed: {lastVerified}</div>}
                                 </div>
                               </div>
 
@@ -1234,7 +1287,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                     <div className="p-4 rounded-2xl bg-amber-50/60 border border-amber-200/80 space-y-2">
                       <div className="flex items-center gap-1.5 text-xs font-bold text-stone-900">
                         <ShoppingBag className="w-4 h-4 text-[#FF671F]" />
-                        <span>Recommended Day Shopping & Artisan Markets</span>
+                        <span>Markets & local crafts to explore</span>
                       </div>
                       <div className="text-xs text-stone-700 space-y-1 pl-2">
                         {(currentDay.shopping || []).map((shop, sIdx) => (
@@ -1253,7 +1306,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                         <span>Day {currentDay.day_number} Transit & Local Guidance</span>
                       </div>
                       <p className="text-xs text-stone-700 leading-relaxed pl-2">
-                        Pre-book your tickets through official government portals. For inter-monument transit, local metered auto-rickshaws and metro corridors are the quickest way to beat peak traffic.
+                        Check current entry arrangements with each venue. Choose transport using a live map or local operator, since this plan does not calculate real-time traffic, transit schedules or fares.
                       </p>
                     </div>
                   </div>
@@ -1360,11 +1413,9 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
           <HotelRecommendationsSection
             selectedCity={itinerary.city || selectedCityObj.name}
             selectedState={itinerary.state || selectedCityObj.state}
-            cityLat={(selectedCityObj as any)?.lat}
-            cityLng={(selectedCityObj as any)?.lng}
-            currentDayTitle={currentDay?.area_title}
-            currentDayPlaces={currentDay?.places}
-            onNavigateTab={onNavigateTab}
+            checkInDate={travelStartDate}
+            nights={Math.max(0, (itinerary.days_count || daysCount) - 1)}
+            guests={travellersCount}
           />
 
           {/* 6. TRAVEL RESPONSIBLY GREEN BANNER */}
@@ -1395,9 +1446,9 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                 <ShieldCheck className="w-4 h-4" />
               </div>
               <div>
-                <div className="text-xs font-bold text-stone-900">Verified Information</div>
+                <div className="text-xs font-bold text-stone-900">Clear data status</div>
                 <div className="text-[11px] text-stone-500 leading-snug">
-                  From official ASI tariffs & Ministry of Tourism databases
+                  Live hours, fares and availability are not claimed unless checked
                 </div>
               </div>
             </div>
@@ -1409,7 +1460,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
               <div>
                 <div className="text-xs font-bold text-stone-900">Nearby Routing</div>
                 <div className="text-[11px] text-stone-500 leading-snug">
-                  Smart geographical grouping to minimize commute times
+                  Stops grouped for planning; live traffic and transit times are not included
                 </div>
               </div>
             </div>
