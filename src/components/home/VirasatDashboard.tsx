@@ -757,18 +757,18 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
     return true;
   });
 
-  // Editorial discovery picks. The label describes popularity, not a verification or ranking claim.
-  const popularHeritageList = [
-    { id: 'qutub-minar', name: 'Qutub Minar', location: 'Mehrauli, Delhi', type: 'Historic monument', image: getMonumentRealImage('qutb-minar') },
-    { id: 'golden-temple-amritsar', name: 'Golden Temple', location: 'Amritsar, Punjab', type: 'Living heritage', image: getMonumentRealImage('golden-temple') },
-    { id: 'hawa-mahal', name: 'Hawa Mahal', location: 'Jaipur, Rajasthan', type: 'Historic palace', image: getMonumentRealImage('hawa-mahal') },
-    { id: 'jaisalmer-fort', name: 'Jaisalmer Fort', location: 'Jaisalmer, Rajasthan', type: 'Fort & old city', image: getMonumentRealImage('jaisalmer-fort') },
-    { id: 'ajanta-caves', name: 'Ajanta Caves', location: 'Chhatrapati Sambhajinagar, Maharashtra', type: 'Cave monuments', image: getMonumentRealImage('ajanta-caves') },
-    { id: 'ellora-caves', name: 'Ellora Caves', location: 'Chhatrapati Sambhajinagar, Maharashtra', type: 'Cave monuments', image: getMonumentRealImage('ellora-caves') },
-    { id: 'golconda-fort', name: 'Golconda Fort', location: 'Hyderabad, Telangana', type: 'Historic fort', image: getMonumentRealImage('golconda-fort') },
-    { id: 'karnataka_002', name: 'Mysore Palace', location: 'Mysuru, Karnataka', type: 'Royal palace', image: '/images/karnataka/mysore-palace-illuminated.png' },
-    { id: 'charminar', name: 'Charminar', location: 'Hyderabad, Telangana', type: 'Historic landmark', image: '/images/telangana-charminar-4k.jpg' },
-    { id: 'fatehpur-sikri', name: 'Fatehpur Sikri', location: 'Agra district, Uttar Pradesh', type: 'Historic city', image: getMonumentRealImage('fatehpur-sikri') },
+  // Offbeat discoveries use specifically named local photos. “Popular” is editorial,
+  // not a visitor-count claim; official status and operational details need confirmation.
+  const popularHiddenPlaces = [
+    { id: 'meghalaya_010', name: 'Mawlynnong Village', location: 'East Khasi Hills, Meghalaya', type: 'Village & local life', image: '/images/meghalaya/mawlynnong-village.jpg' },
+    { id: 'living-root-bridges', name: 'Living Root Bridges', location: 'Nongriat, Meghalaya', type: 'Living-root trail', image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/5/51/Living_root_bridges%2C_Nongriat_village%2C_Meghalaya2.jpg/1280px-Living_root_bridges%2C_Nongriat_village%2C_Meghalaya2.jpg' },
+    { id: 'meghalaya_009', name: 'Umngot River', location: 'Dawki, Meghalaya', type: 'River & landscapes', image: '/images/meghalaya/umngot-river-dawki.png' },
+    { id: 'meghalaya_006', name: 'Nohkalikai Falls', location: 'Sohra, Meghalaya', type: 'Waterfall', image: '/images/meghalaya/nohkalikai-falls.jpg' },
+    { id: 'meghalaya_002', name: 'Umiam Lake', location: 'Ri-Bhoi, Meghalaya', type: 'Lake & viewpoints', image: '/images/meghalaya/umiam-lake.png' },
+    { id: 'arunachal_pradesh_008', name: 'Ziro Valley', location: 'Lower Subansiri, Arunachal Pradesh', type: 'Valley & culture', image: '/images/arunachal/ziro-valley.jpg' },
+    { id: 'manipur_002', name: 'Loktak Lake', location: 'Bishnupur, Manipur', type: 'Lake & phumdis', image: '/images/manipur/loktak-lake-floating-phumdis.jpg' },
+    { id: 'andhra_pradesh_004', name: 'Borra Caves', location: 'Ananthagiri, Andhra Pradesh', type: 'Caves & geology', image: '/images/andhra/borra-caves.jpg' },
+    { id: 'lepakshi-veerabhadra-temple', name: 'Lepakshi', location: 'Sri Sathya Sai, Andhra Pradesh', type: 'Temple art & Nandi', image: '/images/andhra/lepakshi-nandi.jpg' },
   ];
 
   // 6 Regional Hubs with authentic heritage photography, bespoke architectural vector icons, and iconic highlights
@@ -1756,30 +1756,30 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
         </div>
       </section>
 
-      {/* Popular heritage picks: editorial discovery list, not a live-verified ranking. */}
-      <section className="space-y-4 sm:space-y-5" aria-labelledby="popular-heritage-title">
+      {/* Popular offbeat picks: discovery suggestions, not an official popularity ranking. */}
+      <section className="space-y-4 sm:space-y-5" aria-labelledby="popular-hidden-title">
         <ScrollReveal animation="fade-up">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2.5 sm:gap-3">
             <div>
               <div className="inline-flex items-center gap-1 text-[11px] sm:text-xs font-bold text-[#A84B13] uppercase tracking-wider mb-1">
-                <Landmark className="w-3.5 h-3.5" />
-                <span>India&apos;s stories in stone</span>
+                <Compass className="w-3.5 h-3.5" />
+                <span>Local favourites &amp; offbeat finds</span>
               </div>
-              <h2 id="popular-heritage-title" className="font-serif text-xl sm:text-3xl font-bold text-stone-900 tracking-tight">
-                Popular Heritage &amp; Historic Places
+              <h2 id="popular-hidden-title" className="font-serif text-xl sm:text-3xl font-bold text-stone-900 tracking-tight">
+                Popular Hidden Places
               </h2>
               <p className="text-xs sm:text-sm text-stone-600 mt-1 font-normal">
-                Visitor favourites, from living sacred sites to forts, palaces and cave monuments.
+                Less-obvious places travellers discover through local recommendations.
               </p>
             </div>
-            <span className="inline-flex w-fit items-center rounded-full border border-amber-200 bg-amber-50 px-3 py-1.5 text-[10px] sm:text-xs font-semibold text-amber-900">
-              Editorial popular picks · heritage status and visitor details are not independently verified
+            <span className="inline-flex w-fit items-center rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-[10px] sm:text-xs font-semibold text-emerald-900">
+              Discovery picks · popularity, official status &amp; visit details need local confirmation
             </span>
           </div>
         </ScrollReveal>
 
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-          {popularHeritageList.map((place, index) => (
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+          {popularHiddenPlaces.map((place, index) => (
             <ScrollReveal key={place.id} animation="fade-up" delay={(index % 4) * 45} className="h-full">
               <button
                 type="button"
@@ -1787,25 +1787,19 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
                 className="group w-full h-full overflow-hidden rounded-2xl border border-[#EFE8DF] bg-white text-left shadow-2xs transition-all hover:-translate-y-0.5 hover:border-[#D86620]/60 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
                 aria-label={`Explore ${place.name}, ${place.location}`}
               >
-                <div className="relative h-36 sm:h-44 overflow-hidden bg-stone-200">
+                <div className="relative h-36 sm:h-44 overflow-hidden bg-emerald-50">
                   <img
                     src={place.image}
                     alt={`${place.name} in ${place.location}`}
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
-                    referrerPolicy="no-referrer"
                     onError={(event) => {
-                      const target = event.currentTarget;
-                      const fallback = getMonumentRealImage('red-fort');
-                      if (target.dataset.fallbackApplied !== 'true') {
-                        target.dataset.fallbackApplied = 'true';
-                        target.src = fallback;
-                      }
+                      event.currentTarget.style.display = 'none';
                     }}
                   />
                   <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-stone-950/70 to-transparent" />
                   <span className="absolute left-2.5 top-2.5 rounded-full border border-white/35 bg-stone-950/60 px-2.5 py-1 text-[9px] font-bold uppercase tracking-wide text-white backdrop-blur-sm">
-                    Popular pick
+                    Offbeat pick
                   </span>
                   <span className="absolute bottom-2.5 left-2.5 rounded-full bg-white/95 px-2.5 py-1 text-[10px] font-semibold text-stone-800 shadow-sm">
                     {place.type}
