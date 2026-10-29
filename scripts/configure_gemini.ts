@@ -29,10 +29,10 @@ export function buildGeminiEnvironment(content: string, key: string, requestedMo
   lines = replaceSetting(lines, 'VIRASAT_AI_PROVIDER', 'gemini');
   lines = replaceSetting(lines, 'GEMINI_API_KEY', key);
   lines = replaceSetting(lines, 'GEMINI_MODEL', model);
-  // Increase the default response ceiling from the gateway's 1,000 tokens.
-  // Actual generation is still bounded by the chosen model and provider quota.
-  if (!existing.VIRASAT_AI_MAX_TOKENS || Number(existing.VIRASAT_AI_MAX_TOKENS) < 8192) {
-    lines = replaceSetting(lines, 'VIRASAT_AI_MAX_TOKENS', '8192');
+  // Set Gemini 3.8 Flash's documented output ceiling. The model still decides
+  // how much to generate; usage, latency and account quota continue to apply.
+  if (!existing.VIRASAT_AI_MAX_TOKENS || Number(existing.VIRASAT_AI_MAX_TOKENS) < 65536) {
+    lines = replaceSetting(lines, 'VIRASAT_AI_MAX_TOKENS', '65536');
   }
   lines = replaceSetting(lines, 'VIRASAT_AI_REQUIRE_HOSTED', 'true');
   return lines.join('\n').replace(/\n{3,}/g, '\n\n').trim() + '\n';

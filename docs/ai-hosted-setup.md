@@ -96,18 +96,16 @@ real chat request. Never paste the key into chat or commit it.
 The setup uses Google's documented OpenAI-compatible endpoint and the current
 `gemini-3.8-flash` model ID. It preserves existing OpenAI and Groq credentials,
 sets Gemini as the active provider, and raises the default output ceiling from
-1,000 to 8,192 tokens. To allow longer outputs, set
-`VIRASAT_AI_MAX_TOKENS=65536` in `.env`; this is the documented output ceiling
-for Gemini 3.8 Flash, while the actual account, request context, API quota and
-provider limits still apply. Higher output ceilings can allow longer and more
-expensive responses. A maximum is only a cap, not a request to generate that
-many tokens.
+1,000 to 65,536 tokens, Gemini 3.8 Flash's documented maximum. The actual
+account, request context, API quota and provider limits still apply. Higher
+ceilings allow longer and potentially more expensive responses. A maximum is
+only a cap, not a request to generate that many tokens.
 
 ```dotenv
 VIRASAT_AI_PROVIDER=gemini
 GEMINI_API_KEY=<secret-server-side-gemini-key>
 GEMINI_MODEL=gemini-3.8-flash
-VIRASAT_AI_MAX_TOKENS=8192
+VIRASAT_AI_MAX_TOKENS=65536
 VIRASAT_AI_REQUIRE_HOSTED=true
 ```
 
