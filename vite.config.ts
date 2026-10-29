@@ -22,13 +22,25 @@ export default defineConfig({
             if (id.includes('react-markdown') || id.includes('remark-gfm')) return 'vendor-markdown';
           }
           if (id.includes('src/data/') && id.includes('Directory')) {
-            const match = id.match(/([a-zA-Z]+Directory)/);
-            if (match) return `data-${match[1].toLowerCase()}`;
-            return 'state-directories-data';
+            const match = id.match(/([a-zA-Z]+)Directory/);
+            if (match) {
+              const firstChar = match[1][0].toUpperCase();
+              if (firstChar <= 'G') return 'data-states-ag';
+              if (firstChar <= 'M') return 'data-states-hm';
+              if (firstChar <= 'R') return 'data-states-nr';
+              return 'data-states-sz';
+            }
+            return 'data-states-other';
           }
           if (id.includes('src/components/explore-india/')) {
-            const match = id.match(/([a-zA-Z]+DirectorySection)/);
-            if (match) return `ui-${match[1].toLowerCase()}`;
+            const match = id.match(/([a-zA-Z]+)DirectorySection/);
+            if (match) {
+              const firstChar = match[1][0].toUpperCase();
+              if (firstChar <= 'G') return 'ui-states-ag';
+              if (firstChar <= 'M') return 'ui-states-hm';
+              if (firstChar <= 'R') return 'ui-states-nr';
+              return 'ui-states-sz';
+            }
             return 'explore-india-components';
           }
         },
