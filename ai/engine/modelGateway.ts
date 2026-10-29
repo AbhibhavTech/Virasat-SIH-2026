@@ -12,9 +12,11 @@ import { readStreamCompletion } from './streamCompletion';
 import { taskProfile, generationCapacity, generationMetrics } from './taskPolicy';
 
 const cooldowns = new Map<string, { until: number; diagnostic: ProviderDiagnostic }>();
-export type AIProvider = 'openai' | 'groq' | 'local' | 'compatible';
+export type AIProvider = 'openai' | 'groq' | 'gemini' | 'local' | 'compatible';
 export const GROQ_BASE_URL = 'https://api.groq.com/openai/v1';
 export const GROQ_DEFAULT_MODEL = 'openai/gpt-oss-20b';
+export const GEMINI_BASE_URL = 'https://generativelanguage.googleapis.com/v1beta/openai';
+export const GEMINI_DEFAULT_MODEL = 'gemini-3.8-flash';
 
 export type ChatTurn = { role: 'user' | 'assistant'; content: string };
 const READ_TOOLS = ['searchTouristPlaces', 'searchHeritageKnowledge', 'searchHiddenGems', 'searchHotels', 'searchRestaurants', 'searchMarkets', 'getEventsCalendar', 'getWeather', 'getTransportOptions', 'getCurrentDatetime', 'getSiteContent'] as const;
@@ -71,16 +73,16 @@ export async function translatePageStrings(language: string, texts: string[]): P
   return translated as string[];
 }
 
-export function getModelConfiguration(values = readEnvironmentValues(['VIRASAT_AI_PROVIDER', 'VIRASAT_AI_MODEL', 'OPENAI_MODEL', 'GROQ_MODEL', 'VIRASAT_AI_API_KEY', 'OPENAI_API_KEY', 'GROQ_API_KEY', 'VIRASAT_AI_BASE_URL', 'OPENAI_BASE_URL', 'GROQ_BASE_URL', 'VIRASAT_AI_REQUIRE_HOSTED'])) {
+export function getModelConfiguration(values = readEnvironmentValues(['VIRASAT_AI_PROVIDER', 'VIRASAT_AI_MODEL', 'OPENAI_MODEL', 'GROQ_MODEL', 'GEMINI_MODEL', 'VIRASAT_AI_API_KEY', 'OPENAI_API_KEY', 'GROQ_API_KEY', 'GEMINI_API_KEY', 'VIRASAT_AI_BASE_URL', 'OPENAI_BASE_URL', 'GROQ_BASE_URL', 'GEMINI_BASE_URL', 'VIRASAT_AI_REQUIRE_HOSTED'])) {
   const rawProvider = (values.VIRASAT_AI_PROVIDER || 'openai').trim().toLowerCase();
-  const validProvider = ['openai', 'groq', 'local', 'compatible'].includes(rawProvider);
+  const validProvider = ['openai', 'groq', 'gemini', 'local', 'compatible'].includes(rawProvider);
   const provider = (validProvider ? rawProvider : 'openai') as AIProvider;
-  const model = (values.VIRASAT_AI_MODEL || (provider === 'groq' ? values.GROQ_MODEL || GROQ_DEFAULT_MODEL : provider === 'openai' ? values.OPENAI_MODEL : undefined) || '').trim();
+  const model = (values.VIRASAT_AI_MODEL || (provider === 'groq' ? values.GROQ_MODEL || GROQ_DEFAULT_MODEL : provider === 'gemini' ? values.GEMINI_MODEL || GEMINI_DEFAULT_MODEL : provider === 'openai' ? values.OPENAI_MODEL : undefined) || '').trim();
   // Never send one provider's credential to the other provider.
-  const selectedKey = provider === 'groq' ? values.GROQ_API_KEY : provider === 'openai' ? values.VIRASAT_AI_API_KEY || values.OPENAI_API_KEY : values.VIRASAT_AI_API_KEY;
+  const selectedKey = provider === 'groq' ? values.GROQ_API_KEY : provider === 'gemini' ? values.GEMINI_API_KEY : provider === 'openai' ? values.VIRASAT_AI_API_KEY || values.OPENAI_API_KEY : values.VIRASAT_AI_API_KEY;
   const key = (selectedKey ?? '').trim();
-  const defaultBaseUrl = provider === 'groq' ? GROQ_BASE_URL : provider === 'local' ? 'http://127.0.0.1:11434/v1' : provider === 'compatible' ? '' : 'https://api.openai.com/v1';
-  const providerBaseUrl = provider === 'groq' ? values.GROQ_BASE_URL : provider === 'openai' ? values.OPENAI_BASE_URL : undefined;
+  const defaultBaseUrl = provider === 'groq' ? GROQ_BASE_URL : provider === 'gemini' ? GEMINI_BASE_URL : provider === 'local' ? 'http://127.0.0.1:11434/v1' : provider === 'compatible' ? '' : 'https://api.openai.com/v1';
+  const providerBaseUrl = provider === 'groq' ? values.GROQ_BASE_URL : provider === 'gemini' ? values.GEMINI_BASE_URL : provider === 'openai' ? values.OPENAI_BASE_URL : undefined;
   const baseUrl = (values.VIRASAT_AI_BASE_URL || providerBaseUrl || defaultBaseUrl).trim().replace(/\/+$/, '');
   const validModel = /^[a-zA-Z0-9][a-zA-Z0-9._:/-]{0,127}$/.test(model) && !/^sk-/i.test(model) && model !== key;
   let validUrl = false;
@@ -90,7 +92,7 @@ export function getModelConfiguration(values = readEnvironmentValues(['VIRASAT_A
       (parsed.protocol === 'https:' || (parsed.protocol === 'http:' && ['localhost', '127.0.0.1', '[::1]'].includes(parsed.hostname)));
     if (provider === 'local') validUrl = validUrl && ['localhost', '127.0.0.1', '[::1]'].includes(parsed.hostname);
   } catch { /* Invalid server configuration remains unavailable. */ }
-  const issues = [!validProvider && 'PROVIDER_INVALID', !validModel && 'MODEL_ID_MISSING_OR_INVALID', !key && provider !== 'local' && (provider === 'groq' ? 'GROQ_API_KEY_MISSING' : 'API_KEY_MISSING'), !validUrl && 'BASE_URL_INVALID'].filter(Boolean) as string[];
+  const issues = [!validProvider && 'PROVIDER_INVALID', !validModel && 'MODEL_ID_MISSING_OR_INVALID', !key && provider !== 'local' && (provider === 'groq' ? 'GROQ_API_KEY_MISSING' : provider === 'gemini' ? 'GEMINI_API_KEY_MISSING' : 'API_KEY_MISSING'), !validUrl && 'BASE_URL_INVALID'].filter(Boolean) as string[];
   return { provider, model, key, baseUrl, configured: issues.length === 0, safeModel: validModel ? model : null, issues, requireHosted: values.VIRASAT_AI_REQUIRE_HOSTED === 'true' };
 }
 
@@ -115,7 +117,7 @@ export function explainModelFailure(code: string): string {
 
 export async function verifySelectedModelAvailability(config = getModelConfiguration()) {
   if (!config.configured) throw new Error('MODEL_NOT_CONFIGURED');
-  if (config.provider !== 'groq') return { checked: false, available: null, provider: config.provider, model: config.model };
+  if (!['groq', 'gemini'].includes(config.provider)) return { checked: false, available: null, provider: config.provider, model: config.model };
   const response = await fetch(`${config.baseUrl}/models`, {
     headers: { authorization: `Bearer ${config.key}` }, signal: AbortSignal.timeout(10000),
   });
@@ -227,6 +229,8 @@ async function runModelReply(message: string, state: TripMemoryState, context: L
   const sources = new Set<string>();
   const usage = { prompt_tokens: 0, completion_tokens: 0, total_tokens: 0 };
   const generationSettings = readEnvironmentValues(['VIRASAT_AI_TIMEOUT_MS', 'VIRASAT_AI_MAX_TOKENS']);
+  const maxOutputTokens = config.provider === 'gemini' ? 65536 : 4096;
+  const defaultOutputTokens = config.provider === 'gemini' ? 8192 : 1000;
   const boundedNumber = (value: string | undefined, fallback: number, min: number, max: number) => {
     const number = Number(value);
     return Number.isFinite(number) && number >= min && number <= max ? Math.floor(number) : fallback;
@@ -249,7 +253,7 @@ async function runModelReply(message: string, state: TripMemoryState, context: L
           ...(options.onText ? { stream: true, stream_options: { include_usage: true } } : {}),
           messages,
           ...(profile.domain === 'general' ? {} : { tools, tool_choice: round === 3 || remainingCalls === 0 ? 'none' : 'auto' }),
-          max_tokens: boundedNumber(generationSettings.VIRASAT_AI_MAX_TOKENS, 1000, 64, 4096),
+          max_tokens: boundedNumber(generationSettings.VIRASAT_AI_MAX_TOKENS, defaultOutputTokens, 64, maxOutputTokens),
           store: false,
           ...(config.provider === 'groq' ? { parallel_tool_calls: false } : {})
         }),

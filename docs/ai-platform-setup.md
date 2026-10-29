@@ -14,6 +14,8 @@ Keep credentials only in ignored .env. Existing process variables override serve
 which overrides root .env. AI file settings refresh; source changes require server restart.
 
 Groq: VIRASAT_AI_PROVIDER=groq, GROQ_API_KEY, GROQ_MODEL.
+Gemini: VIRASAT_AI_PROVIDER=gemini, GEMINI_API_KEY, GEMINI_MODEL. On Windows,
+`npm run setup:ai-gemini:secure` enters and stores the API key with hidden input.
 OpenAI: VIRASAT_AI_PROVIDER=openai, OPENAI_API_KEY (or VIRASAT_AI_API_KEY), OPENAI_MODEL.
 Local: VIRASAT_AI_PROVIDER=local, VIRASAT_AI_MODEL and a loopback
 VIRASAT_AI_BASE_URL such as http://127.0.0.1:11434/v1. No hosted provider key is inherited.
@@ -24,7 +26,9 @@ Ollama reference: https://docs.ollama.com/api/openai-compatibility
 
 VIRASAT_AI_REQUIRE_HOSTED=true means require actual model generation even for local
 inference; failures are explicit. Optional VIRASAT_AI_TIMEOUT_MS (1000–120000; default
-60000) and VIRASAT_AI_MAX_TOKENS (64–4096; default 1000). No automatic provider retries.
+60000) and VIRASAT_AI_MAX_TOKENS. Gemini allows 64–65536 (default 8192); other
+providers remain capped at 4096 (default 1000). The maximum is a response ceiling,
+not a quota increase. No automatic provider retries.
 Existing non-streaming JSON contract remains; stream=true emits delta/done/error SSE events.
 
 Knowledge commands:

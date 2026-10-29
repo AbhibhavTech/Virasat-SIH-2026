@@ -1,11 +1,10 @@
 # Virasat AI Astra hosted generation
 
-The runtime uses native Node `fetch`, not an AI SDK. Select `openai` or `groq`
-with `VIRASAT_AI_PROVIDER`. OpenAI remains the default for backwards compatibility.
-Groq uses its OpenAI-compatible endpoint
-`https://api.groq.com/openai/v1/chat/completions`. Both providers preserve the
-same Virasat system prompt, conversation memory, local tourism tools and response
-contract. A custom `VIRASAT_AI_BASE_URL` is intended for development/testing.
+The runtime uses native Node `fetch`, not an AI SDK. Select `openai`, `groq`, or
+`gemini` with `VIRASAT_AI_PROVIDER`. OpenAI remains the default for backwards
+compatibility. All three providers preserve the same Virasat system prompt,
+conversation memory, local tourism tools and response contract. A custom
+`VIRASAT_AI_BASE_URL` is intended for development/testing.
 
 There is no hardcoded model name. Supply the exact API model ID accessible to
 your provider project; a product display name or subscription name is insufficient.
@@ -77,20 +76,54 @@ VIRASAT_AI_REQUIRE_HOSTED=true
 `OPENAI_MODEL` and `OPENAI_API_KEY` remain fallback aliases for OpenAI. Groq
 reads only `GROQ_API_KEY`; this prevents accidentally sending an OpenAI credential
 to Groq. `GROQ_MODEL` is an optional fallback when `VIRASAT_AI_MODEL` is unset.
-`OPENAI_BASE_URL` and `GROQ_BASE_URL` are provider-specific optional overrides.
-`VIRASAT_AI_MODEL` and `VIRASAT_AI_BASE_URL` override both providers, so leave
+`OPENAI_BASE_URL`, `GROQ_BASE_URL`, and `GEMINI_BASE_URL` are provider-specific
+optional overrides. `VIRASAT_AI_MODEL` and `VIRASAT_AI_BASE_URL` override all
+providers, so leave
 them unset for one-line provider switching. Avoid mixing credentials and URLs.
 No VITE-prefixed credential, project ID or organization ID is required by this
 gateway. The key needs access to the selected model and sufficient API quota.
 The process requires outbound HTTPS connectivity to the configured provider.
+
+### Gemini
+
+Create an API key in [Google AI Studio](https://aistudio.google.com/apikey). To
+switch securely on Windows, run `npm run setup:ai-gemini:secure` from
+`D:\virasat`. The key is entered with hidden input and saved only to the ignored
+root `.env`. Restart the app so the running server loads the Gemini provider, then
+run `npm run check:ai-connection` to check the account's model list and make one
+real chat request. Never paste the key into chat or commit it.
+
+The setup uses Google's documented OpenAI-compatible endpoint and the current
+`gemini-3.8-flash` model ID. It preserves existing OpenAI and Groq credentials,
+sets Gemini as the active provider, and raises the default output ceiling from
+1,000 to 8,192 tokens. To allow longer outputs, set
+`VIRASAT_AI_MAX_TOKENS=65536` in `.env`; this is the documented output ceiling
+for Gemini 3.8 Flash, while the actual account, request context, API quota and
+provider limits still apply. Higher output ceilings can allow longer and more
+expensive responses. A maximum is only a cap, not a request to generate that
+many tokens.
+
+```dotenv
+VIRASAT_AI_PROVIDER=gemini
+GEMINI_API_KEY=<secret-server-side-gemini-key>
+GEMINI_MODEL=gemini-3.8-flash
+VIRASAT_AI_MAX_TOKENS=8192
+VIRASAT_AI_REQUIRE_HOSTED=true
+```
+
+Google documents a 65,536-token output limit for Gemini 3.8 Flash, but provider
+rate limits and quotas are separate from this per-response model limit. Check
+the actual project's current tier and limits in Google AI Studio. The application
+does not claim unlimited API quota.
 
 `VIRASAT_AI_REQUIRE_HOSTED=true` prevents local canned responses while configuration
 is missing. A configured provider failure always returns an explicit error;
 it never silently changes to the local data engine. Without this flag or provider
 configuration, the existing local-data mode remains available for offline use.
 
-Start `npm run dev`, then run `npm run check:ai-connection`. For Groq, the checker
-first verifies the selected model through the authenticated `/models` listing.
+Start or restart `npm run dev`, then run `npm run check:ai-connection`. For Groq
+and Gemini, the checker first verifies the selected model through the authenticated
+`/models` listing.
 It then sends one short non-sensitive prompt through `/api/ai/chat`, verifies
 hosted generation and the selected model, and displays no API keys or provider
 bodies. A successful health

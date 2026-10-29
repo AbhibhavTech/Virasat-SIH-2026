@@ -13,7 +13,7 @@ async function main() {
     return;
   }
   console.log(JSON.stringify({ provider, provider_host: new URL(baseUrl).host, endpoint_path: `${new URL(baseUrl).pathname}/chat/completions`.replace(/\/\//g, '/') }));
-  if (provider === 'groq') {
+  if (provider === 'groq' || provider === 'gemini') {
     try { await verifySelectedModelAvailability(config); }
     catch (error) {
       if (error instanceof ProviderFailure) console.log(JSON.stringify({ provider_error: error.diagnostic, provider_request_sent: true }, null, 2));

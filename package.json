@@ -26,6 +26,8 @@
     "test:ai-provider": "tsx scripts/test_ai_configuration.ts && tsx scripts/test_provider_errors.ts && tsx scripts/test_groq_setup.ts && tsx scripts/test_hosted_ai_gateway.ts",
     "setup:ai-groq": "tsx scripts/configure_groq.ts && npm run check:ai-connection",
     "setup:ai-groq:secure": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/setup_groq_secure.ps1",
+    "setup:ai-gemini": "tsx scripts/configure_gemini.ts",
+    "setup:ai-gemini:secure": "powershell -NoProfile -ExecutionPolicy Bypass -File scripts/setup_gemini_secure.ps1",
     "check:ai-connection": "tsx scripts/check_ai_connection.ts",
     "test:auth": "tsx scripts/test_google_auth.ts",
     "seed:heritages": "tsx scripts/seed_heritages.ts",

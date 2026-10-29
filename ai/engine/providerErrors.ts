@@ -1,5 +1,5 @@
 export interface ProviderDiagnostic {
-  provider: 'openai' | 'groq' | 'local' | 'compatible';
+  provider: 'openai' | 'groq' | 'gemini' | 'local' | 'compatible';
   http_status: number;
   category: 'rate_limit' | 'quota' | 'billing' | 'authentication' | 'access' | 'invalid_request' | 'unknown';
   provider_type: string | null;
