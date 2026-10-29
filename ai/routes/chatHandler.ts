@@ -102,9 +102,11 @@ aiChatRouter.get('/tools', (_req: Request, res: Response) => {
  * GET /api/ai/health
  */
 aiChatRouter.get('/health', (_req: Request, res: Response) => {
+  const renderCommit = process.env.RENDER_GIT_COMMIT;
   res.json({
     status: 'ok',
     service: 'Virasat AI Travel & Heritage Concierge',
+    deployment_revision: renderCommit && /^[a-f0-9]{7,40}$/i.test(renderCommit) ? renderCommit.slice(0, 12) : null,
     tools_registered: getAllToolNames().length,
     engine: 'Virasat AI · Local Data Engine',
     generation: getModelStatus(),
