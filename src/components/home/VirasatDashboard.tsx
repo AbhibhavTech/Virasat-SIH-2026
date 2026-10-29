@@ -757,6 +757,20 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
     return true;
   });
 
+  // Editorial discovery picks. The label describes popularity, not a verification or ranking claim.
+  const popularHeritageList = [
+    { id: 'qutub-minar', name: 'Qutub Minar', location: 'Mehrauli, Delhi', type: 'Historic monument', image: getMonumentRealImage('qutb-minar') },
+    { id: 'golden-temple-amritsar', name: 'Golden Temple', location: 'Amritsar, Punjab', type: 'Living heritage', image: getMonumentRealImage('golden-temple') },
+    { id: 'hawa-mahal', name: 'Hawa Mahal', location: 'Jaipur, Rajasthan', type: 'Historic palace', image: getMonumentRealImage('hawa-mahal') },
+    { id: 'jaisalmer-fort', name: 'Jaisalmer Fort', location: 'Jaisalmer, Rajasthan', type: 'Fort & old city', image: getMonumentRealImage('jaisalmer-fort') },
+    { id: 'ajanta-caves', name: 'Ajanta Caves', location: 'Chhatrapati Sambhajinagar, Maharashtra', type: 'Cave monuments', image: getMonumentRealImage('ajanta-caves') },
+    { id: 'ellora-caves', name: 'Ellora Caves', location: 'Chhatrapati Sambhajinagar, Maharashtra', type: 'Cave monuments', image: getMonumentRealImage('ellora-caves') },
+    { id: 'golconda-fort', name: 'Golconda Fort', location: 'Hyderabad, Telangana', type: 'Historic fort', image: getMonumentRealImage('golconda-fort') },
+    { id: 'karnataka_002', name: 'Mysore Palace', location: 'Mysuru, Karnataka', type: 'Royal palace', image: '/images/karnataka/mysore-palace-illuminated.png' },
+    { id: 'charminar', name: 'Charminar', location: 'Hyderabad, Telangana', type: 'Historic landmark', image: '/images/telangana-charminar-4k.jpg' },
+    { id: 'fatehpur-sikri', name: 'Fatehpur Sikri', location: 'Agra district, Uttar Pradesh', type: 'Historic city', image: getMonumentRealImage('fatehpur-sikri') },
+  ];
+
   // 6 Regional Hubs with authentic heritage photography, bespoke architectural vector icons, and iconic highlights
   const regionalHubs = [
     {
@@ -1737,6 +1751,78 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
                   </div>
                 </div>
               </div>
+            </ScrollReveal>
+          ))}
+        </div>
+      </section>
+
+      {/* Popular heritage picks: editorial discovery list, not a live-verified ranking. */}
+      <section className="space-y-4 sm:space-y-5" aria-labelledby="popular-heritage-title">
+        <ScrollReveal animation="fade-up">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2.5 sm:gap-3">
+            <div>
+              <div className="inline-flex items-center gap-1 text-[11px] sm:text-xs font-bold text-[#A84B13] uppercase tracking-wider mb-1">
+                <Landmark className="w-3.5 h-3.5" />
+                <span>India&apos;s stories in stone</span>
+              </div>
+              <h2 id="popular-heritage-title" className="font-serif text-xl sm:text-3xl font-bold text-stone-900 tracking-tight">
+                Popular Heritage &amp; Historic Places
+              </h2>
+              <p className="text-xs sm:text-sm text-stone-600 mt-1 font-normal">
+                Visitor favourites, from living sacred sites to forts, palaces and cave monuments.
+              </p>
+            </div>
+            <span className="inline-flex w-fit items-center rounded-full border border-amber-200 bg-amber-50 px-3 py-1.5 text-[10px] sm:text-xs font-semibold text-amber-900">
+              Editorial popular picks · heritage status and visitor details are not independently verified
+            </span>
+          </div>
+        </ScrollReveal>
+
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+          {popularHeritageList.map((place, index) => (
+            <ScrollReveal key={place.id} animation="fade-up" delay={(index % 4) * 45} className="h-full">
+              <button
+                type="button"
+                onClick={() => onSelectPlace ? onSelectPlace(place.id) : onNavigateTab('heritage')}
+                className="group w-full h-full overflow-hidden rounded-2xl border border-[#EFE8DF] bg-white text-left shadow-2xs transition-all hover:-translate-y-0.5 hover:border-[#D86620]/60 hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500"
+                aria-label={`Explore ${place.name}, ${place.location}`}
+              >
+                <div className="relative h-36 sm:h-44 overflow-hidden bg-stone-200">
+                  <img
+                    src={place.image}
+                    alt={`${place.name} in ${place.location}`}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                    referrerPolicy="no-referrer"
+                    onError={(event) => {
+                      const target = event.currentTarget;
+                      const fallback = getMonumentRealImage('red-fort');
+                      if (target.dataset.fallbackApplied !== 'true') {
+                        target.dataset.fallbackApplied = 'true';
+                        target.src = fallback;
+                      }
+                    }}
+                  />
+                  <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-stone-950/70 to-transparent" />
+                  <span className="absolute left-2.5 top-2.5 rounded-full border border-white/35 bg-stone-950/60 px-2.5 py-1 text-[9px] font-bold uppercase tracking-wide text-white backdrop-blur-sm">
+                    Popular pick
+                  </span>
+                  <span className="absolute bottom-2.5 left-2.5 rounded-full bg-white/95 px-2.5 py-1 text-[10px] font-semibold text-stone-800 shadow-sm">
+                    {place.type}
+                  </span>
+                </div>
+                <div className="flex items-center justify-between gap-2 p-3 sm:p-4">
+                  <div className="min-w-0">
+                    <h3 className="truncate font-serif text-sm sm:text-base font-bold text-stone-900 group-hover:text-[#B64C0D]">
+                      {place.name}
+                    </h3>
+                    <p className="mt-0.5 truncate text-[11px] sm:text-xs text-stone-600">{place.location}</p>
+                  </div>
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-orange-50 text-[#B64C0D] transition-colors group-hover:bg-[#C8510B] group-hover:text-white">
+                    <ArrowRight className="h-4 w-4" />
+                  </span>
+                </div>
+              </button>
             </ScrollReveal>
           ))}
         </div>
