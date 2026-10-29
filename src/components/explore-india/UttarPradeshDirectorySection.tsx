@@ -126,15 +126,15 @@ export const UttarPradeshDirectorySection: React.FC<UttarPradeshDirectorySection
           {/* Quick Metrics Bar */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
             <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-xs border border-white/15">
-              <div className="text-xl sm:text-2xl font-black text-amber-300">4</div>
+              <div className="text-xl sm:text-2xl font-black text-amber-300">{UTTAR_PRADESH_DIRECTORY.length}</div>
               <div className="text-[11px] text-amber-100/80 font-medium uppercase tracking-wider">Legendary Cities</div>
             </div>
             <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-xs border border-white/15">
-              <div className="text-xl sm:text-2xl font-black text-orange-300">24+</div>
+              <div className="text-xl sm:text-2xl font-black text-orange-300">28+</div>
               <div className="text-[11px] text-orange-100/80 font-medium uppercase tracking-wider">Curated Sights &amp; Hidden Gems</div>
             </div>
             <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-xs border border-white/15">
-              <div className="text-xl sm:text-2xl font-black text-sky-300">12+</div>
+              <div className="text-xl sm:text-2xl font-black text-sky-300">18+</div>
               <div className="text-[11px] text-sky-100/80 font-medium uppercase tracking-wider">Heritage Palaces &amp; Luxury Resorts</div>
             </div>
             <div className="p-3 rounded-2xl bg-white/10 backdrop-blur-xs border border-white/15">
@@ -146,7 +146,7 @@ export const UttarPradeshDirectorySection: React.FC<UttarPradeshDirectorySection
       </div>
 
       {/* =========================================================================
-          4-DESTINATION NAVIGATION TABS (VNS, AGR, LKO, AYD)
+          DESTINATION NAVIGATION TABS (6 CITIES)
       ========================================================================= */}
       <div className="space-y-3">
         <div className="flex items-center justify-between">
@@ -161,7 +161,7 @@ export const UttarPradeshDirectorySection: React.FC<UttarPradeshDirectorySection
           </span>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
           {UTTAR_PRADESH_DIRECTORY.map((city) => {
             const isSelected = city.id === selectedCityId;
             return (
