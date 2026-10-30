@@ -52,6 +52,21 @@ export function formatCityName(cityId: string): string {
     jodhpur: 'Jodhpur',
     jaisalmer: 'Jaisalmer',
     gangtok: 'Gangtok',
+    kolkata: 'Kolkata',
+    amritsar: 'Amritsar',
+    khajuraho: 'Khajuraho',
+    leh: 'Leh',
+    chennai: 'Chennai',
+    patna: 'Patna',
+    visakhapatnam: 'Visakhapatnam',
+    haridwar: 'Haridwar',
+    rishikesh: 'Rishikesh',
+    ayodhya: 'Ayodhya',
+    ujjain: 'Ujjain',
+    dwarka: 'Dwarka',
+    puri: 'Puri',
+    deoghar: 'Deoghar',
+    rameswaram: 'Rameswaram',
   };
   if (knownCities[clean]) return knownCities[clean];
   return clean.split(' ').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');

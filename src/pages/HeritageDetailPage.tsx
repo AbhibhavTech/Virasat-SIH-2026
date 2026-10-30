@@ -6,6 +6,10 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { useFavorites } from '../contexts/FavoritesContext';
 import { LanguageSelector } from '../components/common/LanguageSelector';
 import { UnescoBadge } from '../components/common/UnescoBadge';
+import { ASIHeritagePassModal } from '../components/tickets/ASIHeritagePassModal';
+import { MonumentAudioGuidePlayer } from '../components/destination/MonumentAudioGuidePlayer';
+import { PlaceDetail } from '../types';
+import { Headphones } from 'lucide-react';
 import { getMonumentRealImage } from '../data/monumentRealImages';
 import {
   Landmark,
@@ -130,6 +134,8 @@ export const HeritageDetailPage: React.FC<HeritageDetailPageProps> = ({
   const [error, setError] = useState<string | null>(null);
   const [copiedLink, setCopiedLink] = useState(false);
   const [expandedSections, setExpandedSections] = useState<Record<string, boolean>>({});
+  const [isTicketModalOpen, setIsTicketModalOpen] = useState(false);
+  const [showAudioGuide, setShowAudioGuide] = useState(false);
 
   const toggleSection = (key: string) => {
     setExpandedSections((prev) => ({
@@ -456,6 +462,58 @@ export const HeritageDetailPage: React.FC<HeritageDetailPageProps> = ({
         )}
       </section>
 
+      {/* Interactive Visitor Action Center: ASI E-Ticket & Spoken Audio Guide */}
+      <section className="flex flex-wrap items-center justify-between gap-3 p-4 rounded-2xl bg-white border border-stone-200 shadow-sm">
+        <div className="flex flex-wrap items-center gap-2.5">
+          <button
+            type="button"
+            onClick={() => setIsTicketModalOpen(true)}
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#FF671F] hover:bg-orange-700 text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition cursor-pointer"
+          >
+            <Ticket className="w-4 h-4 text-amber-200" />
+            <span>Book Official ASI E-Ticket / Entry Pass</span>
+          </button>
+          <button
+            type="button"
+            onClick={() => setShowAudioGuide((prev) => !prev)}
+            className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border text-xs sm:text-sm font-bold transition cursor-pointer ${
+              showAudioGuide
+                ? 'bg-amber-100 text-amber-900 border-amber-300'
+                : 'bg-stone-50 hover:bg-stone-100 text-stone-800 border-stone-200'
+            }`}
+          >
+            <Headphones className="w-4 h-4 text-[#FF671F]" />
+            <span>{showAudioGuide ? 'Close Audio Guide' : 'Spoken Audio Tour (Hindi / English)'}</span>
+          </button>
+        </div>
+        <div className="text-[11px] text-stone-500 font-semibold flex items-center gap-1.5">
+          <ShieldCheck className="w-4 h-4 text-emerald-600" />
+          <span>Turnstile QR Access • Free Entry for Children &lt; 15</span>
+        </div>
+      </section>
+
+      {/* Audio Guide Player Drawer */}
+      {showAudioGuide && (
+        <section className="animate-fadeIn">
+          <MonumentAudioGuidePlayer
+            place={{
+              id: heritage.slug || String(heritage.id),
+              name: heritage.name,
+              city: heritage.district_city || 'India',
+              state: heritage.state_ut || 'India',
+              category: heritage.category || 'Heritage Monument',
+              summary: oneLineOverview || heritage.cultural_significance || '',
+              description: heritage.overview || heritage.architecture || '',
+              coordinates: {
+                lat: heritage.lat || 28.6139,
+                lng: heritage.lng || 77.209,
+              },
+              visiting_hours: practicalOpening,
+            } as PlaceDetail}
+          />
+        </section>
+      )}
+
       {/* ------------------------------------------------------------------- */}
       {/* 2. Quick Facts Strip (5 items chhote chips/cards me, ek row me)     */}
       {/* ------------------------------------------------------------------- */}
@@ -688,6 +746,13 @@ export const HeritageDetailPage: React.FC<HeritageDetailPageProps> = ({
                       Ticket Rates
                     </div>
                     <div className="text-stone-800 font-medium">{practicalPrices}</div>
+                    <button
+                      type="button"
+                      onClick={() => setIsTicketModalOpen(true)}
+                      className="mt-2 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#FF671F] text-white text-xs font-bold hover:bg-orange-600 transition cursor-pointer"
+                    >
+                      <Ticket className="w-3.5 h-3.5" /> Book Online Pass (₹50 Ind / ₹500 Foreign)
+                    </button>
                   </div>
                 )}
                 {practicalAccessibility && (
@@ -720,7 +785,19 @@ export const HeritageDetailPage: React.FC<HeritageDetailPageProps> = ({
           )}
 
           {/* Sources and References */}
-          {showSources && (
+          {/* ASI Official Heritage Pass Simulator Modal */}
+      <ASIHeritagePassModal
+        isOpen={isTicketModalOpen}
+        onClose={() => setIsTicketModalOpen(false)}
+        monumentName={heritage.name}
+        cityName={heritage.district_city || 'India'}
+        stateName={heritage.state_ut || ''}
+        standardFeeDomestic={50}
+        standardFeeForeign={500}
+        visitingHours={practicalOpening || '06:00 AM - 06:00 PM'}
+      />
+
+      {showSources && (
             <section className="text-xs text-stone-500 space-y-2 pt-2 border-t border-stone-200">
               <span className="font-bold text-stone-600 uppercase tracking-wider text-[10px]">
                 Sources & Citations:

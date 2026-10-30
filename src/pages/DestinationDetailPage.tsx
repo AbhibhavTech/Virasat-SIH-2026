@@ -4,6 +4,7 @@ import { PlaceDetail, FestivalItem } from '../types';
 import { api } from '../services/api';
 import {
   ArrowLeft,
+  Ticket,
   MapPin,
   Compass,
   Sparkles,
@@ -38,6 +39,7 @@ import { analytics } from '../services/analytics';
 import { getMumbaiDestinationById } from '../data/mumbaiDestinations';
 import { getNearbyDiscoveryPlaceById } from '../data/nearbyPlacesMMR';
 import { MonumentAudioGuidePlayer } from '../components/destination/MonumentAudioGuidePlayer';
+import { ASIHeritagePassModal } from '../components/tickets/ASIHeritagePassModal';
 import { LocalArtisansGICraftsCard } from '../components/destination/LocalArtisansGICraftsCard';
 import { getMonumentRealImage } from '../data/monumentRealImages';
 import { resolveUniversalPlace } from '../utils/universalPlaceResolver';
@@ -67,6 +69,7 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [isReportModalOpen, setIsReportModalOpen] = useState(false);
+  const [isTicketModalOpen, setIsTicketModalOpen] = useState(false);
   const [healthScore, setHealthScore] = useState<number | null>(null);
   const [healthStatus, setHealthStatus] = useState<string>('Excellent / Well Maintained');
   const [festivalsHere, setFestivalsHere] = useState<FestivalItem[]>([]);
@@ -311,6 +314,30 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
       <div className="w-full max-w-5xl xl:max-w-6xl mx-auto space-y-8 sm:space-y-14 px-2 sm:px-4 pb-16">
         {/* Museum Audio Tour Guide */}
         <MonumentAudioGuidePlayer place={place} />
+
+        {/* Instant ASI E-Ticket Booking Banner */}
+        <div className="flex flex-wrap items-center justify-between gap-3 p-4 rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200/80 shadow-xs">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-[#FF671F] text-white flex items-center justify-center shadow-sm">
+              <Ticket className="w-5 h-5" />
+            </div>
+            <div>
+              <div className="text-xs sm:text-sm font-bold text-stone-900">
+                Official ASI Heritage Entry E-Pass Available
+              </div>
+              <div className="text-[11px] text-stone-600">
+                Instant digital booking with QR code turnstile verification • Domestic: ₹50 / Foreign: ₹500
+              </div>
+            </div>
+          </div>
+          <button
+            type="button"
+            onClick={() => setIsTicketModalOpen(true)}
+            className="px-4 py-2 rounded-xl bg-[#FF671F] hover:bg-orange-700 text-white font-bold text-xs sm:text-sm shadow-md transition cursor-pointer flex items-center gap-1.5"
+          >
+            <span>Book Official E-Pass</span>
+          </button>
+        </div>
 
         {/* 4. Short Introduction */}
         <section className="space-y-2.5 sm:space-y-4">
