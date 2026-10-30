@@ -20,8 +20,8 @@ const AdminDashboardPage = React.lazy(() => import('../pages/AdminDashboardPage'
 const FestivalsPage = React.lazy(() => import('../pages/FestivalsPage').then((m) => ({ default: m.FestivalsPage })));
 
 const RouteLoadingSpinner: React.FC = () => (
-  <div className="flex flex-col items-center justify-center min-h-[50vh] space-y-3 py-16 animate-fadeIn">
-    <div className="w-9 h-9 border-3 border-amber-200 border-t-[#FF671F] rounded-full animate-spin" />
+  <div role="status" aria-live="polite" className="flex flex-col items-center justify-center min-h-[50vh] space-y-3 py-16 animate-fadeIn">
+    <div aria-hidden="true" className="w-9 h-9 border-3 border-amber-200 border-t-[#FF671F] rounded-full animate-spin" />
     <span className="text-xs font-semibold text-stone-500 uppercase tracking-widest">Loading Virasat...</span>
   </div>
 );

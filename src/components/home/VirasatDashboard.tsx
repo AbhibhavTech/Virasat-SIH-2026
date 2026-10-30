@@ -227,7 +227,7 @@ const CuteAiRobot: React.FC<{ className?: string }> = ({ className = 'w-24 h-24'
 );
 
 // -------------------------------------------------------------
-// Verified Heritage Slides for 7-Second Automatic Slideshow
+// High-resolution, locally optimized images for the automatic slideshow
 // -------------------------------------------------------------
 interface HeroHeritageSlide {
   id: string;
@@ -242,6 +242,7 @@ interface HeroHeritageSlide {
   reviewsCount: string;
   imageUrl: string;
   fallbackUrl: string;
+  photoCredit?: { name: string; sourceUrl: string };
 }
 
 const HERO_HERITAGE_SLIDES: HeroHeritageSlide[] = [
@@ -256,7 +257,7 @@ const HERO_HERITAGE_SLIDES: HeroHeritageSlide[] = [
     bestTime: 'Sunrise 06:00 AM – 08:30 AM',
     rating: '4.9',
     reviewsCount: '68.9k',
-    imageUrl: 'https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1600&auto=format&fit=crop&q=85',
+    imageUrl: '/images/home-hero/taj-mahal.webp',
     fallbackUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Taj_Mahal_%28Edited%29.jpeg/1280px-Taj_Mahal_%28Edited%29.jpeg',
   },
   {
@@ -270,7 +271,7 @@ const HERO_HERITAGE_SLIDES: HeroHeritageSlide[] = [
     bestTime: 'Evening 6:00 – 9:00 PM',
     rating: '4.8',
     reviewsCount: '38.4k',
-    imageUrl: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=1600&auto=format&fit=crop&q=85',
+    imageUrl: '/images/home-hero/india-gate.webp',
     fallbackUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/09/India_Gate_in_New_Delhi_03-2016.jpg/1280px-India_Gate_in_New_Delhi_03-2016.jpg',
   },
   {
@@ -284,7 +285,7 @@ const HERO_HERITAGE_SLIDES: HeroHeritageSlide[] = [
     bestTime: 'Sunrise & Sunset by Mumbai Harbor',
     rating: '4.7',
     reviewsCount: '52.1k',
-    imageUrl: 'https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1600&auto=format&fit=crop&q=85',
+    imageUrl: '/images/home-hero/gateway-of-india.webp',
     fallbackUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Mumbai_03-2016_30_Gateway_of_India.jpg/1280px-Mumbai_03-2016_30_Gateway_of_India.jpg',
   },
   {
@@ -298,7 +299,7 @@ const HERO_HERITAGE_SLIDES: HeroHeritageSlide[] = [
     bestTime: 'Apr – Oct (Golden Morning Shikara)',
     rating: '4.8',
     reviewsCount: '29.7k',
-    imageUrl: 'https://images.unsplash.com/photo-1595815771614-ade9d652a65d?w=1600&auto=format&fit=crop&q=85',
+    imageUrl: '/images/home-hero/dal-lake.webp',
     fallbackUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Dal_Lake_Srinagar_Kashmir.jpg/1280px-Dal_Lake_Srinagar_Kashmir.jpg',
   },
   {
@@ -312,7 +313,7 @@ const HERO_HERITAGE_SLIDES: HeroHeritageSlide[] = [
     bestTime: 'Year-round (Early Morning Suprabhatam)',
     rating: '4.9',
     reviewsCount: '74.2k',
-    imageUrl: '/images/andhra-pradesh-tirumala-4k.jpg',
+    imageUrl: '/images/home-hero/tirumala.webp',
     fallbackUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Tirumala_090615.jpg/1280px-Tirumala_090615.jpg',
   },
   {
@@ -326,7 +327,7 @@ const HERO_HERITAGE_SLIDES: HeroHeritageSlide[] = [
     bestTime: 'Oct – Mar 10:00 AM – 5:00 PM',
     rating: '4.8',
     reviewsCount: '41.8k',
-    imageUrl: 'https://images.unsplash.com/photo-1558431382-27e303142255?w=1600&auto=format&fit=crop&q=85',
+    imageUrl: '/images/home-hero/victoria-memorial.webp',
     fallbackUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Victoria_Memorial_situated_in_Kolkata.jpg/1280px-Victoria_Memorial_situated_in_Kolkata.jpg',
   },
   {
@@ -340,36 +341,40 @@ const HERO_HERITAGE_SLIDES: HeroHeritageSlide[] = [
     bestTime: 'Morning 9:00 AM – 1:00 PM',
     rating: '4.7',
     reviewsCount: '45.2k',
-    imageUrl: '/images/delhi-red-fort-4k.jpg',
+    imageUrl: '/images/home-hero/red-fort.webp',
     fallbackUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Red_Fort_in_Delhi_03-2016_img1.jpg/1280px-Red_Fort_in_Delhi_03-2016_img1.jpg',
   },
   {
-    id: 'mahakaleshwar-temple-ujjain',
-    name: 'Shri Mahakaleshwar Jyotirlinga',
-    location: 'Ujjain',
-    state: 'Madhya Pradesh',
-    category: 'Sacred Jyotirlinga & Mahakal Lok',
-    tag: 'Dakshinmukhi Swayambhu Jyotirlinga & Sacred Bhasma Aarti',
-    builtEra: 'Ancient Epoch • Rebuilt by Maratha Scindias 1734 CE',
-    bestTime: 'Early Morning Bhasma Aarti & Shravan Month',
+    id: 'kedarnath-temple',
+    name: 'Kedarnath Temple',
+    location: 'Kedarnath',
+    state: 'Uttarakhand',
+    category: 'Himalayan Jyotirlinga',
+    tag: 'Ancient stone shrine beneath the Garhwal Himalayas',
+    builtEra: 'Traditional stone temple • Garhwal Himalayas',
+    bestTime: 'During the annual temple season; check current access conditions',
     rating: '4.9',
     reviewsCount: '63.5k',
-    imageUrl: '/images/madhya-pradesh-mahakaleshwar-ujjain-4k.jpg',
-    fallbackUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Mahakaleshwar_temple_in_Ujjain.jpg/1280px-Mahakaleshwar_temple_in_Ujjain.jpg',
+    imageUrl: '/images/home-hero/kedarnath.webp',
+    fallbackUrl: '/images/uttarakhand/kedarnath-temple.png',
   },
   {
-    id: 'jagannath-temple-puri',
-    name: 'Shree Jagannath Temple & Rath Yatra',
-    location: 'Puri',
-    state: 'Odisha',
-    category: 'Char Dham Sacred Pilgrimage',
-    tag: 'World-Famous Chariot Festival (Rath Yatra) & Nilachakra',
-    builtEra: '1161 CE • King Anantavarman Chodaganga',
-    bestTime: 'Rath Yatra Festival (Ashadha) & Oct – Mar',
+    id: 'diwali-festival',
+    name: 'Diwali — Festival of Lights',
+    location: 'Across India',
+    state: 'Pan-India',
+    category: 'Festival of Lights',
+    tag: 'Diyas, shared celebrations and the triumph of light',
+    builtEra: 'Five-day festival • dates follow the Hindu lunisolar calendar',
+    bestTime: 'Diwali evening • exact dates vary each year',
     rating: '4.9',
     reviewsCount: '58.3k',
-    imageUrl: '/images/odisha-puri-jagannath-4k.jpg',
-    fallbackUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Puri_Jagannatha_Temple.jpg/1280px-Puri_Jagannatha_Temple.jpg',
+    imageUrl: '/images/home-hero/diwali.webp',
+    fallbackUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f1/2018_Diwali_Diya.jpg',
+    photoCredit: {
+      name: 'Sangram Keshari Senapati',
+      sourceUrl: 'https://commons.wikimedia.org/wiki/File:2018_Diwali_Diya.jpg',
+    },
   },
   {
     id: 'varanasi-ganga-ghats',
@@ -382,7 +387,7 @@ const HERO_HERITAGE_SLIDES: HeroHeritageSlide[] = [
     bestTime: 'Sunset Ganga Aarti & Dawn Boat Ride',
     rating: '4.9',
     reviewsCount: '82.6k',
-    imageUrl: '/images/varanasi-ganga-aarti.jpg',
+    imageUrl: '/images/home-hero/varanasi-ghats.webp',
     fallbackUrl: 'https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=1600&auto=format&fit=crop&q=85',
   },
   {
@@ -396,7 +401,7 @@ const HERO_HERITAGE_SLIDES: HeroHeritageSlide[] = [
     bestTime: 'Nov – Apr (Morning Wildlife Safari)',
     rating: '4.8',
     reviewsCount: '34.9k',
-    imageUrl: '/images/kaziranga-rhino-4k.jpg',
+    imageUrl: '/images/home-hero/kaziranga-rhino.webp',
     fallbackUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/02/Kaziranga_Rhinoceros.jpg',
   },
 ];
@@ -656,19 +661,11 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
     fetchNearbyPlaces(city.lat, city.lng, nearbyRadius, city.name);
   };
 
-  // Preload all 11 heritage slideshow images immediately on mount for zero-latency instant transitions
-  useEffect(() => {
-    HERO_HERITAGE_SLIDES.forEach((slide) => {
-      const img = new Image();
-      img.src = slide.imageUrl;
-    });
-  }, []);
-
-  // 100% Unconditional Continuous Automatic Heritage Slideshow (Always advances every 3 seconds)
+  // Keep only the active and next high-resolution slide loaded to avoid a heavy first paint.
   useEffect(() => {
     const timer = setInterval(() => {
       setActiveSlideIdx((curr) => (curr + 1) % HERO_HERITAGE_SLIDES.length);
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(timer);
   }, []);
@@ -849,18 +846,20 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
   return (
     <div className="w-full space-y-10 sm:space-y-14 animate-fadeIn pb-16 font-sans text-stone-800">
       {/* ========================================================================= */}
-      {/* 1. HERO SECTION: UNIVERSAL SEARCH & 3-SECOND HERITAGE SLIDESHOW           */}
+      {/* 1. HERO SECTION: UNIVERSAL SEARCH & HIGH-RESOLUTION HERITAGE SLIDESHOW    */}
       {/* ========================================================================= */}
       <section
         className="relative w-full rounded-2xl sm:rounded-[36px] overflow-hidden border border-[#EFE8DF] shadow-xl min-h-[520px] sm:min-h-[600px] lg:min-h-[680px] xl:min-h-[720px] 2xl:min-h-[760px] flex flex-col justify-between p-4 sm:p-7 lg:p-10 xl:p-12 select-none bg-stone-900/10"
         aria-label="Incredible India Living Heritage Slideshow"
       >
         {/* ========================================================================= */}
-        {/* 3-SECOND AUTOMATIC HERITAGE SLIDESHOW BACKGROUND                          */}
+        {/* AUTOMATIC HERITAGE SLIDESHOW BACKGROUND                                  */}
         {/* ========================================================================= */}
         <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none z-0">
           {HERO_HERITAGE_SLIDES.map((slide, idx) => {
             const isActive = idx === activeSlideIdx;
+            const isNext = idx === (activeSlideIdx + 1) % HERO_HERITAGE_SLIDES.length;
+            if (!isActive && !isNext) return null;
             return (
               <div
                 key={slide.id}
@@ -880,6 +879,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
                     }
                   }}
                   className="w-full h-full object-cover object-[center_35%] select-none filter contrast-[1.05] brightness-[1.0] saturate-[1.05]"
+                  loading="eager"
                   style={{ opacity: 0.95 }}
                 />
               </div>
@@ -1211,6 +1211,30 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
             </div>
           </div>
         </div>
+
+        {HERO_HERITAGE_SLIDES[activeSlideIdx].photoCredit && (
+          <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 z-20 max-w-[42%] rounded-lg bg-stone-950/65 px-2 py-1 text-[9px] leading-tight text-white/90 backdrop-blur-sm sm:text-[10px]">
+            Photo:{' '}
+            <a
+              className="underline underline-offset-2 hover:text-white"
+              href={HERO_HERITAGE_SLIDES[activeSlideIdx].photoCredit!.sourceUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              {HERO_HERITAGE_SLIDES[activeSlideIdx].photoCredit!.name}
+            </a>
+            {' · '}
+            <a
+              className="underline underline-offset-2 hover:text-white"
+              href="https://creativecommons.org/licenses/by-sa/4.0/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              CC BY-SA 4.0
+            </a>
+            {' · cropped & WebP'}
+          </div>
+        )}
 
         {/* Small caption identifies the current slideshow image without covering it. */}
         <div
