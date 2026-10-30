@@ -29,7 +29,9 @@ const areaAliases: Record<string, string[]> = {
   oldgoa: ['goa', 'velhagoa', 'panaji'],
   velhagoa: ['oldgoa', 'goa', 'panaji'],
   panjim: ['panaji', 'goa'],
+  panaji: ['goa', 'oldgoa'],
   goa: ['oldgoa', 'panaji'],
+  bangalore: ['bengaluru'],
 };
 const foodImage = 'https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=900&auto=format&fit=crop&q=82';
 const bookingSearchUrl = (city: string, checkInDate?: string, nights = 1, guests = 1) => {
@@ -67,7 +69,10 @@ export const HotelRecommendationsSection: React.FC<{
   const foodSpots = [...(cityRecord?.dining?.veg || []), ...(cityRecord?.dining?.nonVeg || [])]
     .filter((spot, index, all) => spot.restaurant && all.findIndex((candidate) => candidate.restaurant === spot.restaurant) === index)
     .slice(0, 8);
-  const areaDining = LOCAL_DINING_DATABASE[normalize(selectedCity)] || LOCAL_DINING_DATABASE[(areaAliases[normalize(selectedCity)] || []).map((alias) => normalize(alias)).find((alias) => LOCAL_DINING_DATABASE[alias]) || ''];
+  const selectedKey = normalize(selectedCity);
+  const areaDining = [selectedKey, ...(areaAliases[selectedKey] || []).map(normalize)]
+    .map((key) => LOCAL_DINING_DATABASE[key])
+    .find((records) => records?.length);
   const destination = `${selectedCity}, ${selectedState}`;
   const bookingUrl = bookingSearchUrl(destination, checkInDate, nights, guests);
 
@@ -76,8 +81,8 @@ export const HotelRecommendationsSection: React.FC<{
       <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-orange-700"><BedDouble className="h-4 w-4" /> Stay, food & local discovery</div>
-          <h3 id="stay-search-title" className="mt-1 font-serif text-xl font-bold text-stone-900">Make your {selectedCity} stay part of the plan</h3>
-          <p className="mt-1 max-w-3xl text-sm leading-relaxed text-stone-600">Virasat shows names, place details, images and saved price guidance here. The links are only for checking current availability, menus and final prices.</p>
+          <h3 id="stay-search-title" className="mt-1 font-serif text-xl font-bold text-stone-900">{activeTab === 'food' ? `Restaurants around ${selectedCity}` : `Stays in ${selectedCity}`}</h3>
+          <p className="mt-1 max-w-3xl text-sm leading-relaxed text-stone-600">{activeTab === 'food' ? 'Browse named local restaurants, cuisine, area, food photos and an indicative spend for two where a listing provides it.' : 'Browse stays and their saved price guidance. Check current availability and final prices with the provider.'}</p>
         </div>
         <div className="flex shrink-0 flex-wrap gap-2 text-xs">
           <span className="inline-flex items-center gap-1 rounded-full border border-orange-200 bg-orange-50 px-3 py-1.5 font-semibold text-orange-900"><CalendarDays className="h-3.5 w-3.5" />{nights} {nights === 1 ? 'night' : 'nights'}</span>
@@ -111,8 +116,8 @@ export const HotelRecommendationsSection: React.FC<{
       </> : <>
         {areaDining?.length ? <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {areaDining.map((spot) => <article key={spot.id} className="overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm">
-            <div className="relative"><img src={spot.image} alt={spot.imageNote} loading="lazy" className="h-36 w-full bg-stone-100 object-cover" /><span className="absolute bottom-2 left-2 rounded-full bg-black/65 px-2.5 py-1 text-[11px] font-semibold text-white">{spot.imageNote}</span></div>
-            <div className="space-y-2 p-4"><div className="flex items-start justify-between gap-2"><h4 className="font-bold text-stone-900">{spot.restaurant}</h4><Utensils className="h-4 w-4 shrink-0 text-orange-700" /></div><p className="flex items-center gap-1 text-xs text-stone-600"><MapPin className="h-3.5 w-3.5" />{spot.locality}</p><p className="text-sm text-stone-700">{spot.cuisine}</p><p className="text-sm leading-relaxed text-stone-700">{spot.specialties}</p><p className="text-sm font-bold text-stone-900">{spot.spendForTwo || 'Spend estimate not available'} <span className="text-xs font-normal text-stone-500">for two{spot.spendForTwo ? ' · listing estimate' : ''}</span></p><p className="text-xs text-stone-500">Price checked {spot.checkedOn}; menu and final bill may differ.</p><a href={spot.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs font-semibold text-stone-600 underline">Reference: {spot.sourceName} <ExternalLink className="h-3.5 w-3.5" /></a><a href={mapsSearch(`${spot.restaurant}, ${spot.locality}, Goa`)} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-sm font-bold text-orange-800 underline">Check current status & directions <ExternalLink className="h-3.5 w-3.5" /></a></div>
+            <div className="relative"><img src={spot.image} alt={`${spot.restaurant} in ${spot.locality}`} loading="lazy" onError={(event) => { event.currentTarget.src = foodImage; event.currentTarget.alt = `Illustrative local food photo for ${spot.restaurant}`; }} className="h-36 w-full bg-stone-100 object-cover" /><span className="absolute bottom-2 left-2 rounded-full bg-black/65 px-2.5 py-1 text-[11px] font-semibold text-white">{spot.imageNote}</span></div>
+            <div className="space-y-2 p-4"><div className="flex items-start justify-between gap-2"><h4 className="font-bold text-stone-900">{spot.restaurant}</h4><Utensils className="h-4 w-4 shrink-0 text-orange-700" /></div><p className="flex items-center gap-1 text-xs text-stone-600"><MapPin className="h-3.5 w-3.5" />{spot.locality}</p><p className="text-sm text-stone-700">{spot.cuisine}</p><p className="text-sm leading-relaxed text-stone-700">{spot.specialties}</p><p className="text-sm font-bold text-stone-900">{spot.spendForTwo || 'Spend estimate not available'} <span className="text-xs font-normal text-stone-500">for two{spot.spendForTwo ? ' · listing estimate' : ''}</span></p><p className="text-xs text-stone-500">Listing checked {spot.checkedOn}; menu and final bill may differ.</p><a href={spot.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs font-semibold text-stone-600 underline">Reference: {spot.sourceName} <ExternalLink className="h-3.5 w-3.5" /></a><a href={mapsSearch(`${spot.restaurant}, ${spot.locality}, ${selectedState}`)} target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 text-sm font-bold text-orange-800 underline">Check current status & directions <ExternalLink className="h-3.5 w-3.5" /></a></div>
           </article>)}
         </div> : foodSpots.length > 0 ? <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {foodSpots.map((spot, index) => <article key={`${spot.restaurant}-${index}`} className="overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm">

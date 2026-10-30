@@ -15,6 +15,99 @@ export interface LocalDiningRecord {
 // Area-level recommendations that are missing from the city/state guides.
 // Price figures are directory estimates for two, not menu quotes or live prices.
 export const LOCAL_DINING_DATABASE: Record<string, LocalDiningRecord[]> = {
+  mumbai: [
+    {
+      id: 'mumbai-aaswad-dadar', restaurant: 'Aaswad', locality: 'Dadar West, Mumbai',
+      cuisine: 'Maharashtrian, South Indian', specialties: 'Long-running Dadar dining room known for Maharashtrian snacks and meals.',
+      spendForTwo: 'About ₹300–₹400', image: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2f/19/ca/83/caption.jpg?h=1400&s=1&w=1400',
+      imageNote: 'Photo: Aaswad, Dadar West', sourceName: 'Swiggy Dineout',
+      sourceUrl: 'https://www.swiggy.com/restaurants/mumbai/dadar-west/aaswad-74193/dineout', checkedOn: '2026-10-30',
+    },
+    {
+      id: 'mumbai-britannia-ballard-estate', restaurant: 'Britannia & Co.', locality: 'Ballard Estate, Fort',
+      cuisine: 'Parsi, Irani, Indian', specialties: 'Historic Ballard Estate dining house; berry pulao and dhansak are signature dishes.',
+      spendForTwo: null, image: 'https://images.indianexpress.com/2023/08/13267416_1730579430514056_958241867_n.jpg',
+      imageNote: 'Photo: The Indian Express', sourceName: 'The Indian Express (photo)',
+      sourceUrl: 'https://www.iranichaimumbai.com/britannia', checkedOn: '2026-10-30',
+    },
+  ],
+  delhi: [
+    {
+      id: 'delhi-karims-jama-masjid', restaurant: "Karim's", locality: 'Matia Mahal, Jama Masjid, Old Delhi',
+      cuisine: 'Mughlai, North Indian, kebab', specialties: 'Long-running Old Delhi kitchen known for Mughlai curries, kebabs and roomali roti.',
+      spendForTwo: 'About ₹800–₹1,500', image: 'https://www.themuslimtraveler.net/wp-content/uploads/2024/04/restaurant_683499_restaurant120220510112018-e1711947988634.jpeg',
+      imageNote: 'Photo: The Muslim Traveler', sourceName: 'The Delih Guide',
+      sourceUrl: 'https://www.thedelihguide.com/city/delhi/articles/dining-in-the-shadow-of-emperors-in-delhi', checkedOn: '2026-10-30',
+    },
+    {
+      id: 'delhi-al-jawahar-jama-masjid', restaurant: 'Al Jawahar', locality: 'Matia Mahal, Jama Masjid, Old Delhi',
+      cuisine: 'Mughlai, North Indian', specialties: 'Old Delhi sit-down restaurant known for nihari and korma.',
+      spendForTwo: 'About ₹600–₹1,200', image: 'https://img.magicpin.com/4861_cover_0.webp',
+      imageNote: 'Photo: Al Jawahar listing', sourceName: 'The Delih Guide',
+      sourceUrl: 'https://www.thedelihguide.com/city/delhi/articles/chandni-chowk-on-an-empty-stomach-delhi-s-old-city-food-walk-one-lane-at-a-time', checkedOn: '2026-10-30',
+    },
+  ],
+  jaipur: [
+    {
+      id: 'jaipur-niros-mi-road', restaurant: 'Niros', locality: 'MI Road, Jaipur',
+      cuisine: 'Rajasthani, North Indian, Mughlai, continental', specialties: 'Established central Jaipur restaurant with regional and multi-cuisine dishes.',
+      spendForTwo: 'About ₹2,000', image: 'https://cdn.enprimeurclub.com/storage/v1/object/public/images/restaurants/55f0c0c0-cffd-4f2b-81d2-7e010633d801/hero1.jpg?aspect_ratio=1.91%3A1&crop_gravity=center&quality=85&width=1200',
+      imageNote: 'Photo: En Primeur Club', sourceName: 'Zomato',
+      sourceUrl: 'https://www.zomato.com/jaipur/niros-mi-road', checkedOn: '2026-10-30',
+    },
+  ],
+  agra: [
+    {
+      id: 'agra-peshawri-itc-mughal', restaurant: 'Peshawri · ITC Mughal', locality: 'Tajganj, Agra',
+      cuisine: 'North-West Frontier, Mughlai', specialties: 'Hotel restaurant known for tandoor and frontier-style dishes.',
+      spendForTwo: 'About ₹6,000', image: 'https://cache.marriott.com/is/image/marriotts7prod/lc-agrlc-peshawri-19805-12246%3AWide-Hor?fit=constrain&wid=1336',
+      imageNote: 'Photo: ITC Mughal / Marriott', sourceName: 'Swiggy Dineout',
+      sourceUrl: 'https://www.swiggy.com/restaurants/agra/tajganj/peshawri-itc-mughal-1052112/dineout', checkedOn: '2026-10-30',
+    },
+    {
+      id: 'agra-capri-restaurant', restaurant: 'Capri Restaurant', locality: 'Delhi Gate Road, Hariparwat, Agra',
+      cuisine: 'Mughlai, North Indian, Chinese', specialties: 'Long-running Agra restaurant with North Indian and Mughlai dishes.',
+      spendForTwo: 'About ₹900', image: 'https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=900&auto=format&fit=crop&q=82',
+      imageNote: 'Illustrative Mughlai meal photo', sourceName: 'Capri Restaurant',
+      sourceUrl: 'https://caprirestaurant.in/menu/capri-restaurant-agra/', checkedOn: '2026-10-30',
+    },
+  ],
+  kolkata: [
+    {
+      id: 'kolkata-peter-cat-park-street', restaurant: 'Peter Cat', locality: 'Stephen Court, Park Street Area, Kolkata',
+      cuisine: 'North Indian, Mughlai, Continental', specialties: 'Park Street dining room known for Chelo Kebab and classic continental dishes.',
+      spendForTwo: 'About ₹1,000–₹1,400', image: 'https://th-i.thgim.com/public/incoming/8mdwxb/article67019023.ece/alternates/FREE_1200/Petercat2.jpg',
+      imageNote: 'Photo: The Hindu', sourceName: 'Swiggy Dineout; photo: The Hindu',
+      sourceUrl: 'https://www.swiggy.com/restaurants/kolkata/park-street/peter-cat-4483/dineout/menu', checkedOn: '2026-10-30',
+    },
+  ],
+  bengaluru: [
+    {
+      id: 'bengaluru-mtr-st-marks-road', restaurant: 'Mavalli Tiffin Room (MTR)', locality: 'St. Marks Road, Bengaluru',
+      cuisine: 'South Indian, vegetarian', specialties: 'Traditional tiffin and South Indian breakfast dishes, including idli and dosa.',
+      spendForTwo: 'About ₹400', image: 'https://foodiesonly.in/_next/image?q=75&url=https%3A%2F%2Fs7ap1.scene7.com%2Fis%2Fimage%2Fitcportalprod%2FMavalli%2BTiffin%2BRoom%2B-%2Binset%2Bimage%2B2&w=3840',
+      imageNote: 'Photo: Mavalli Tiffin Room', sourceName: 'Swiggy Dineout',
+      sourceUrl: 'https://www.swiggy.com/restaurants/bangalore/st-marks-road/mavalli-tiffin-room-mtr-49096/dineout', checkedOn: '2026-10-30',
+    },
+  ],
+  chennai: [
+    {
+      id: 'chennai-murugan-idli-t-nagar', restaurant: 'Murugan Idli Shop', locality: 'T. Nagar, Chennai',
+      cuisine: 'South Indian, vegetarian', specialties: 'Idli, sweet pongal, chutneys, sambar and filter coffee.',
+      spendForTwo: 'About ₹200–₹300', image: 'https://imgmediagumlet.lbb.in/media/2018/12/5c232c879f3bc60efdd78cea_1545809031242.jpg',
+      imageNote: 'Photo: LBB Chennai', sourceName: 'Swiggy / LBB Chennai',
+      sourceUrl: 'https://www.swiggy.com/city/chennai/murugan-idli-shop-100-feet-bypass-road-velachery-rest14724', checkedOn: '2026-10-30',
+    },
+  ],
+  hyderabad: [
+    {
+      id: 'hyderabad-paradise-hitech-city', restaurant: 'Paradise', locality: 'HITEC City, Madhapur, Hyderabad',
+      cuisine: 'Biryani, Indian', specialties: 'A biryani-focused restaurant; check the selected outlet’s current menu before visiting.',
+      spendForTwo: 'About ₹800', image: 'https://b.zmtcdn.com/data/pictures/chains/2/91662/5c6f76bd1844f3814073926aadcb49ec.jpg',
+      imageNote: 'Photo: Paradise Biryani listing', sourceName: 'Magicpin',
+      sourceUrl: 'https://magicpin.in/Hyderabad/Hitech-City/Restaurant/Paradise/store/854cb/menu', checkedOn: '2026-10-30',
+    },
+  ],
   'old-goa': [
     {
       id: 'old-goa-adlem-goi', restaurant: 'Adlem Goi', locality: 'Dauji Road, Old Goa',
