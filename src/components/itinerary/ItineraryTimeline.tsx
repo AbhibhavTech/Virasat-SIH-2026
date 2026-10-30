@@ -12,7 +12,8 @@ import {
   Compass,
   Sparkles,
   Bookmark,
-  Check
+  Check,
+  Ticket
 } from 'lucide-react';
 
 interface ItineraryTimelineProps {
@@ -202,9 +203,18 @@ export const ItineraryTimeline: React.FC<ItineraryTimelineProps> = ({
                       >
                         {stop.name}
                       </h4>
-                      <div className="flex items-center gap-1.5 text-xs text-stone-600 mt-1">
-                        <Clock className="w-3.5 h-3.5 text-amber-700" />
-                        <span>Recommended Visit: <strong>{stop.recommended_duration_minutes} minutes</strong></span>
+                      <div className="flex flex-wrap items-center gap-3 text-xs text-stone-600 mt-1.5">
+                        <div className="flex items-center gap-1">
+                          <Clock className="w-3.5 h-3.5 text-amber-700" />
+                          <span>{stop.opening_hours || '06:00 AM – 06:00 PM'}</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <Ticket className="w-3.5 h-3.5 text-orange-700" />
+                          <span>{stop.entry_fee_label || (stop.entry_fee === 0 ? 'Free Entry' : stop.entry_fee ? `₹${stop.entry_fee}` : '₹50 entry')}</span>
+                        </div>
+                      </div>
+                      <div className="text-[11px] text-stone-500 mt-0.5">
+                        Recommended Duration: <strong>{stop.recommended_duration_minutes || 90} mins</strong>
                       </div>
                     </div>
                   </div>
