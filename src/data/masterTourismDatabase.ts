@@ -141,6 +141,27 @@ export function calculateVerifiedTransitMetrics(
 const placeByIdMap = new Map<string, MasterTourismPlace>();
 const placeByNameMap = new Map<string, MasterTourismPlace>();
 
+// Exclude placeholder rows that were written as city/category descriptions,
+// even if they carry a database ID. They are not real named destinations.
+const PLACEHOLDER_SUMMARY = /^Celebrated highlight of .+ representing .+ traditions\.?$/i;
+const PLACEHOLDER_NAME_PATTERNS = [
+  /Historic Monument & Gateway$/i,
+  /Scenic Promenade & Viewpoint$/i,
+  /State Museum & Heritage Gallery$/i,
+  /National Wildlife & Botanical Park$/i,
+  /Sacred Temple & Cultural Center$/i,
+  /Heritage Fort Complex$/i,
+];
+
+function isUsableDestinationRecord(place: MasterTourismPlace): boolean {
+  return Boolean(
+    place.name?.trim() &&
+    place.summary?.trim() &&
+    !PLACEHOLDER_SUMMARY.test(place.summary) &&
+    !PLACEHOLDER_NAME_PATTERNS.some((pattern) => pattern.test(place.name))
+  );
+}
+
 for (const p of MASTER_TOURISM_PLACES) {
   placeByIdMap.set(p.id.toLowerCase().trim(), p);
   placeByNameMap.set(p.name.toLowerCase().trim(), p);
@@ -178,6 +199,7 @@ export function getVerifiedPlacesForCity(cityQuery: string, preferences: string[
   const q = cityQuery.toLowerCase().trim();
 
   const results = MASTER_TOURISM_PLACES.filter((p) => {
+    if (!isUsableDestinationRecord(p)) return false;
     const cId = p.city_id.toLowerCase();
     const cName = p.city_name.toLowerCase();
     return cId === q || cName === q || cId.includes(q) || q.includes(cId) || cName.includes(q) || q.includes(cName);
