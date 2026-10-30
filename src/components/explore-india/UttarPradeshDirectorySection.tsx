@@ -185,7 +185,7 @@ export const UttarPradeshDirectorySection: React.FC<UttarPradeshDirectorySection
                       isSelected ? 'bg-orange-400/25 text-orange-200' : 'bg-stone-100 text-stone-600'
                     }`}
                   >
-                    {city.code.replace('IN-UP-CITY-', '')}
+                    {city.code.replace('IN-UP-CITY-', '').replace('IN-UP-', '')}
                   </span>
                 </div>
                 <div

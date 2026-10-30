@@ -154,7 +154,7 @@ export const RajasthanDirectorySection: React.FC<RajasthanDirectorySectionProps>
                       isSelected ? 'bg-amber-400/20 text-amber-300' : 'bg-stone-100 text-stone-600'
                     }`}
                   >
-                    {city.code.replace('IN-RJ-CITY-', '')}
+                    {city.code.replace('IN-RJ-CITY-', '').replace('IN-RJ-', '')}
                   </span>
                 </div>
                 <div
