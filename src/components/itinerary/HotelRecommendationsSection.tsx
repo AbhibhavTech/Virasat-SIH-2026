@@ -67,8 +67,8 @@ export const HotelRecommendationsSection: React.FC<{ selectedCity: string; selec
       {item.openingHours && <p className="flex gap-1.5 text-sm text-stone-700"><Clock3 className="mt-0.5 h-4 w-4 shrink-0 text-orange-700" />Hours listed: {item.openingHours}</p>}
       {item.fee && <p className="flex gap-1.5 text-sm text-stone-700"><IndianRupee className="h-4 w-4 shrink-0 text-orange-700" />Listed entry/charge: {item.fee}</p>}
       {item.website && <a href={item.website} target="_blank" rel="noopener noreferrer" className="block break-all text-xs font-semibold text-orange-800 underline">Venue website <ExternalLink className="inline h-3 w-3" /></a>}
-      <p className="text-[11px] text-stone-500">Community-mapped listing · confirm with the venue</p>
-      <div className="flex flex-wrap gap-3 border-t border-stone-100 pt-2"><a href={item.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs font-bold text-stone-700 underline">OpenStreetMap record <ExternalLink className="h-3 w-3" /></a><a href={mapSearch(`${item.lat},${item.lng}`)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs font-bold text-orange-800 underline">Directions <MapPin className="h-3 w-3" /></a></div>
+      <p className="text-[11px] text-stone-500">{item.verification}</p>
+      <div className="flex flex-wrap gap-3 border-t border-stone-100 pt-2"><a href={item.sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs font-bold text-stone-700 underline">{item.source === 'OpenStreetMap' ? 'OpenStreetMap record' : 'Restaurant reference'} <ExternalLink className="h-3 w-3" /></a>{item.lat !== 0 && item.lng !== 0 && <a href={mapSearch(`${item.lat},${item.lng}`)} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-xs font-bold text-orange-800 underline">Directions <MapPin className="h-3 w-3" /></a>}</div>
     </div>
   </article>;
 

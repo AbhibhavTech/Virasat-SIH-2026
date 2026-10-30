@@ -2,6 +2,7 @@ import { Router, Request, Response } from 'express';
 import { ALL_INDIAN_TOURISM_CITIES } from '../../../../src/data/cityItineraryData';
 import { INDIA_TOURISM_DATABASE } from '../../../../src/data/indiaTourismDatabase';
 import { MASTER_TOURISM_PLACES } from '../../../../src/data/masterTourismPlacesData';
+import { LOCAL_DINING_DATABASE } from '../../../../src/data/localDiningDatabase';
 
 export const localGuideRouter = Router();
 
@@ -19,8 +20,8 @@ type OSMItem = {
   website: string | null;
   image: string | null;
   sourceUrl: string;
-  source: 'OpenStreetMap';
-  verification: 'crowd-mapped listing';
+  source: 'OpenStreetMap' | 'Virasat Database';
+  verification: string;
 }
 
 type GuideResponse = {
@@ -140,7 +141,7 @@ function asItem(element: any): OSMItem | null {
     image,
     sourceUrl: `https://www.openstreetmap.org/${elementType}/${element.id}`,
     source: 'OpenStreetMap',
-    verification: 'crowd-mapped listing',
+    verification: 'Community-mapped listing · confirm with the venue',
   };
 }
 
@@ -192,20 +193,22 @@ localGuideRouter.get('/', async (req: Request, res: Response): Promise<void> => 
     return;
   }
 
+  let center = getKnownCityCenter(city.id, city.name);
   try {
-    const center = getKnownCityCenter(city.id, city.name) || await geocodeCity(city.name, city.state, cacheKey);
+    center = center || await geocodeCity(city.name, city.state, cacheKey);
     if (!center) {
       res.status(404).json({ success: false, error: `Could not locate ${city.name} in the local places index.` });
       return;
     }
-    const items = await fetchOSMItems(center);
+    const locatedCenter = center;
+    const items = await fetchOSMItems(locatedCenter);
     const take = (kind: OSMItem['kind'], max: number) => items.filter((item) => item.kind === kind)
-      .sort((a, b) => (a.lat - center.lat) ** 2 + (a.lng - center.lng) ** 2 - ((b.lat - center.lat) ** 2 + (b.lng - center.lng) ** 2))
+      .sort((a, b) => (a.lat - locatedCenter.lat) ** 2 + (a.lng - locatedCenter.lng) ** 2 - ((b.lat - locatedCenter.lat) ** 2 + (b.lng - locatedCenter.lng) ** 2))
       .slice(0, max);
     const guide: GuideResponse = {
       city: city.name,
       state: city.state,
-      center,
+      center: locatedCenter,
       restaurants: take('restaurant', 30),
       hotels: items.filter((item) => item.kind === 'hotel' && item.stars !== null && item.stars >= 3 && item.stars <= 5).slice(0, 18),
       temples: take('temple', 20),
@@ -219,6 +222,43 @@ localGuideRouter.get('/', async (req: Request, res: Response): Promise<void> => 
     res.setHeader('Cache-Control', 'public, max-age=900');
     res.json({ success: true, data: guide, cached: false });
   } catch {
-    res.status(503).json({ success: false, error: 'Local place listings are temporarily unavailable. Your saved Virasat city guide is still available.' });
+    // Keep the trip planner useful during public map-data outages. These are
+    // saved editorial listings, not live business status, rates or hours.
+    const diningKeys = [normalize(city.name), ...(cityAliases[normalize(city.name)] || [])];
+    const dining = diningKeys.flatMap((key) => LOCAL_DINING_DATABASE[key] || [])
+      .filter((item, index, all) => all.findIndex((candidate) => candidate.id === item.id) === index)
+      .map((item): OSMItem => ({
+        id: item.id,
+        name: item.restaurant,
+        kind: 'restaurant',
+        lat: center?.lat || 0,
+        lng: center?.lng || 0,
+        locality: item.locality,
+        cuisine: item.cuisine,
+        openingHours: null,
+        fee: item.spendForTwo ? `${item.spendForTwo} for two (saved estimate, not live)` : null,
+        stars: null,
+        website: null,
+        image: item.image,
+        sourceUrl: item.sourceUrl,
+        source: 'Virasat Database',
+        verification: `${item.sourceName} · checked ${item.checkedOn}; confirm current details`,
+      }));
+    if (!center) center = { lat: 0, lng: 0 };
+    const fallback: GuideResponse = {
+      city: city.name,
+      state: city.state,
+      center,
+      restaurants: dining,
+      hotels: [],
+      temples: [],
+      attractions: [],
+      sourceUrl: 'https://www.openstreetmap.org/copyright',
+      attribution: 'Live community place listings are temporarily unavailable. Saved Virasat records are shown where available.',
+      retrievedAt: new Date().toISOString(),
+      note: 'Saved restaurant estimates are not current menu prices. Opening hours, hotel ratings and booking availability are not inferred.',
+    };
+    res.setHeader('Cache-Control', 'public, max-age=300');
+    res.json({ success: true, data: fallback, cached: false, liveListingsUnavailable: true });
   }
 });
