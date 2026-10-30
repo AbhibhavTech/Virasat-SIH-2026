@@ -1,3 +1,5 @@
+// Ensure native esbuild Go worker processes operate smoothly within OS memory boundaries
+process.env.GOMAXPROCS = process.env.GOMAXPROCS || '1';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 

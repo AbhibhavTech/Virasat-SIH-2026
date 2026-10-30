@@ -146,7 +146,7 @@ npm start
 ## 📖 Blueprint & Documentation Index
 
 For detailed specifications, consult the documents in [`docs/`](file:///docs/README.md):
-- **[Roadmap & Milestones](file:///docs/roadmap/sih-2026-milestones.md)**: Current roadmap tracking based on the Master Blueprint V2.
+- **[Roadmap & Milestones](file:///docs/roadmap/milestones.md)**: Current roadmap tracking based on the Master Blueprint V2.
 - **[Target API Contract](file:///docs/api-contract.md)**: Specification of planned REST endpoints (TARGET).
 - **[Target Architecture](file:///docs/architecture.md)**: Multi-tier architectural design (TARGET).
 - **[Development Guide](file:///docs/development-guide.md)**: Collaboration and Git conventions.

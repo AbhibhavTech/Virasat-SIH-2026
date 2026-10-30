@@ -28,7 +28,7 @@ are not automatically linked or granted admin privileges.
 
 ### Production verification reported by the user — 18 October 2026
 
-- On https://virasat-sih-2026-1.onrender.com/, the user confirmed successful real Google sign-in.
+- On https://virasat.in/, the user confirmed successful real Google sign-in.
 - The user also confirmed that the deployed website opens on mobile and Google sign-in works there.
 - This is user-reported production verification, not an additional automated or agent-run account test. It does not establish full mobile layout coverage or the authenticated save-and-reopen trip flow.
 

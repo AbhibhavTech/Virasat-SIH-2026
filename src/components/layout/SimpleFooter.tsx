@@ -151,13 +151,13 @@ export const SimpleFooter: React.FC<SimpleFooterProps> = ({
                 </button>
               </li>
               <li>
-                <button
-                  onClick={onOpenDatabaseStatus}
+                <a
+                  href="tel:1363"
                   className="text-stone-600 hover:text-amber-800 transition flex items-center gap-1.5"
                 >
-                  <Database className="w-3.5 h-3.5 text-amber-700" />
-                  <span>Master Database Status</span>
-                </button>
+                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+                  <span>Tourist Helpline (1363 / 112)</span>
+                </a>
               </li>
             </ul>
           </div>
@@ -187,15 +187,10 @@ export const SimpleFooter: React.FC<SimpleFooterProps> = ({
             © 2026 Virasat. National Heritage Tourism Platform. Archaeological Survey of India & Ministry of Tourism data alignment.
           </p>
           <div className="flex items-center gap-3">
-            <button
-              onClick={onOpenDatabaseStatus}
-              className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-stone-700 bg-stone-100 hover:bg-amber-50 hover:text-amber-900 px-3 py-1 rounded-full border border-stone-200 hover:border-amber-300 transition"
-              title="Inspect Master Tourism Database Layer"
-            >
-              <Database className="w-3.5 h-3.5 text-[#FF671F]" />
-              <span>Master Database Architecture</span>
+            <div className="inline-flex items-center gap-1.5 text-[11px] font-semibold text-stone-700 bg-stone-100 px-3 py-1 rounded-full border border-stone-200">
               <span className="w-1.5 h-1.5 rounded-full bg-[#046A38]"></span>
-            </button>
+              <span>100% Verified Heritage Records</span>
+            </div>
             <span className="text-[11px] font-semibold text-[#046A38] bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
               National Heritage Repository
             </span>

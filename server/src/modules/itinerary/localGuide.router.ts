@@ -87,7 +87,7 @@ async function geocodeCity(cityName: string, stateName: string, cacheKey: string
     const query = new URLSearchParams({ q: `${cityName}, ${stateName}, India`, format: 'jsonv2', limit: '1', countrycodes: 'in' });
     const response = await fetch(`https://nominatim.openstreetmap.org/search?${query.toString()}`, {
       headers: {
-        'User-Agent': 'Virasat-Travel-Guide/1.0 (https://virasat-sih-2026-1.onrender.com; city discovery)',
+        'User-Agent': 'Virasat-Travel-Guide/1.0 (https://virasat.in; city discovery)',
         Accept: 'application/json',
       },
       signal: AbortSignal.timeout(9000),
@@ -157,8 +157,8 @@ async function fetchOSMItems(center: { lat: number; lng: number }): Promise<OSMI
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8',
       Accept: 'application/json',
-      'User-Agent': 'Virasat-Travel-Guide/1.0 (https://virasat-sih-2026-1.onrender.com; city discovery)',
-      Referer: 'https://virasat-sih-2026-1.onrender.com/',
+      'User-Agent': 'Virasat-Travel-Guide/1.0 (https://virasat.in; city discovery)',
+      Referer: 'https://virasat.in/',
     },
     body: `data=${encodeURIComponent(query)}`,
     signal: AbortSignal.timeout(24000),

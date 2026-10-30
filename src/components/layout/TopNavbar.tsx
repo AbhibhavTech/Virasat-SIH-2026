@@ -81,7 +81,6 @@ interface TopNavbarProps {
   onOpenSearch?: () => void;
   onOpenDatabaseStatus?: () => void;
   onOpenAnalytics?: () => void;
-  onOpenARCamera?: () => void;
   onOpenSOS?: () => void;
 }
 
@@ -94,7 +93,6 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
   onOpenSearch,
   onOpenDatabaseStatus,
   onOpenAnalytics,
-  onOpenARCamera,
   onOpenSOS,
 }) => {
   const navigate = useNavigate();
@@ -395,52 +393,6 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
                   })}
 
                   <div className="pt-1 mt-1 border-t border-stone-100">
-                    <button
-                      onClick={() => {
-                        setMoreDropdownOpen(false);
-                        onOpenDatabaseStatus?.();
-                      }}
-                      className="w-full flex items-start gap-3 p-2.5 rounded-xl text-left hover:bg-amber-50/70 text-stone-700 transition group"
-                    >
-                      <div className="p-2 rounded-lg bg-amber-50 text-amber-800 border border-amber-200 shrink-0 mt-0.5 group-hover:bg-amber-100 transition">
-                        <Database className="w-4 h-4" />
-                      </div>
-                      <div>
-                        <div className="text-xs font-bold text-stone-900 flex items-center gap-1.5">
-                          Database Architecture
-                          <span className="text-[9px] font-semibold px-1.5 py-0.2 rounded bg-emerald-50 text-emerald-800 border border-emerald-200">
-                            Live
-                          </span>
-                        </div>
-                        <div className="text-[11px] text-stone-500 line-clamp-1">
-                          11 Master categories & storage status
-                        </div>
-                      </div>
-                    </button>
-
-                    <button
-                      onClick={() => {
-                        setMoreDropdownOpen(false);
-                        onOpenAnalytics?.();
-                      }}
-                      className="w-full flex items-start gap-3 p-2.5 rounded-xl text-left hover:bg-purple-50/70 text-stone-700 transition group"
-                    >
-                      <div className="p-2 rounded-lg bg-purple-50 text-purple-800 border border-purple-200 shrink-0 mt-0.5 group-hover:bg-purple-100 transition">
-                        <BarChart3 className="w-4 h-4" />
-                      </div>
-                      <div>
-                        <div className="text-xs font-bold text-stone-900 flex items-center gap-1.5">
-                          Platform Telemetry
-                          <span className="text-[9px] font-semibold px-1.5 py-0.2 rounded bg-purple-50 text-purple-800 border border-purple-200">
-                            Live
-                          </span>
-                        </div>
-                        <div className="text-[11px] text-stone-500 line-clamp-1">
-                          Live metrics, routes & AI grounding rate
-                        </div>
-                      </div>
-                    </button>
-
                     <button
                       onClick={() => {
                         setMoreDropdownOpen(false);
@@ -979,16 +931,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
                 );
               })}
 
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenDatabaseStatus?.();
-                }}
-                className="w-full flex items-center gap-2.5 px-3 py-2 rounded-xl text-xs text-amber-950 bg-amber-50/80 border border-amber-300 font-semibold mt-1 min-h-[38px]"
-              >
-                <Database className="w-3.5 h-3.5 text-amber-800 shrink-0" aria-hidden="true" />
-                <span className="truncate">Master Database Architecture</span>
-              </button>
+              
 
               <button
                 onClick={() => {

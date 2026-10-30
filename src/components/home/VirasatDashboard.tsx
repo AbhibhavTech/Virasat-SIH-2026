@@ -36,7 +36,6 @@ import {
 import { NavTab } from '../layout/Sidebar';
 import { PlaceSummary } from '../../types';
 import { api } from '../../services/api';
-import { MonumentARCameraModal } from '../ar/MonumentARCameraModal';
 import {
   AshokaChakra,
   IncredibleIndiaBadge,
@@ -475,9 +474,6 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
     if (e) e.stopPropagation();
     saveRecentSearches([]);
   };
-
-  // AR Camera Scanner Modal State
-  const [isARModalOpen, setIsARModalOpen] = useState(false);
 
   // Popular destinations category filter
   const [activePopularCategory, setActivePopularCategory] = useState<'All' | 'Forts' | 'Temples' | 'UNESCO'>('All');
@@ -975,16 +971,6 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
                     </button>
                   )}
                   {isSearching && <Loader2 className="w-4 h-4 text-amber-600 animate-spin mr-1 shrink-0" />}
-                  {/* Camera Button Small for AR Monument Explorer */}
-                  <button
-                    type="button"
-                    onClick={() => setIsARModalOpen(true)}
-                    title="Scan Monument with AR Camera or Upload Photo"
-                    className="p-2 sm:p-2.5 rounded-full bg-orange-50 hover:bg-orange-100 text-[#FF671F] border border-orange-200/80 transition-all hover:scale-105 active:scale-95 shrink-0 flex items-center justify-center cursor-pointer shadow-2xs"
-                    aria-label="Open AR Camera & Visual Identification"
-                  >
-                    <Camera className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#FF671F]" />
-                  </button>
                   <button
                     type="submit"
                     className="bg-[#FF671F] hover:bg-[#E65100] text-white px-4 sm:px-7 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-semibold flex items-center gap-1.5 transition active:scale-95 shrink-0 shadow-xs cursor-pointer"
@@ -1979,14 +1965,6 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
       {/* 6. INDIA MAP PREVIEW (ACCURATE REAL WORLD GIS MAP & INTERACTIVE MONUMENT PINS) */}
       {/* ========================================================================= */}
       <IndiaHeritageMapPreview
-        onSelectPlace={onSelectPlace}
-        onNavigateTab={onNavigateTab}
-      />
-
-      {/* AR Camera & Visual Monument Identification Modal */}
-      <MonumentARCameraModal
-        isOpen={isARModalOpen}
-        onClose={() => setIsARModalOpen(false)}
         onSelectPlace={onSelectPlace}
         onNavigateTab={onNavigateTab}
       />

@@ -48,7 +48,7 @@ export const AuthModal: React.FC = () => {
 
   if (!isAuthModalOpen) return null;
 
-  const currentDomain = typeof window !== 'undefined' ? window.location.hostname : 'virasat-sih-2026-1.onrender.com';
+  const currentDomain = typeof window !== 'undefined' ? window.location.hostname : 'virasat.in';
 
   const handleGoogleSignIn = async () => {
     setError(null);

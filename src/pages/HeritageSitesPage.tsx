@@ -34,7 +34,6 @@ import {
 import { GuideIllustration } from '../components/cultural-guides/GuideIllustrations';
 import { GuideSpeechBubble } from '../components/cultural-guides/GuideSpeechBubble';
 import { getMonumentRealImage } from '../data/monumentRealImages';
-import { MonumentARCameraModal } from '../components/ar/MonumentARCameraModal';
 
 interface HeritageSitesPageProps {
   onSelectPlace: (placeId: string) => void;
@@ -57,7 +56,6 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedState, setSelectedState] = useState('All');
   const [selectedUnescoStatus, setSelectedUnescoStatus] = useState('All');
-  const [isARModalOpen, setIsARModalOpen] = useState(false);
 
   useEffect(() => {
     const fetchHeritage = async () => {
@@ -266,7 +264,7 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
                 </span>
               </h1>
               <p className="text-sm sm:text-base lg:text-lg text-stone-600 leading-relaxed font-sans max-w-2xl">
-                India’s officially verified national heritage repository. Discover world-renowned monuments, architectural dynasties, verified visiting hours, direct rail corridors, and AR camera lenses.
+                India’s officially verified national heritage repository. Discover world-renowned monuments, architectural dynasties, verified visiting hours, direct rail corridors, and sacred pilgrimage circuits.
               </p>
             </div>
 
@@ -286,11 +284,11 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
               </div>
               <button
                 type="button"
-                onClick={() => setIsARModalOpen(true)}
+                onClick={() => setSelectedCategory('Spiritual & Pilgrimage')}
                 className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-[#FF671F] to-[#E65100] text-white shadow-xs hover:shadow-md text-xs sm:text-sm font-bold transition-all active:scale-95 cursor-pointer"
               >
-                <Camera className="w-4 h-4" />
-                <span>AR Scanner Ready</span>
+                <Compass className="w-4 h-4" />
+                <span>8 Pilgrimage Circuits</span>
               </button>
             </div>
           </div>
@@ -382,24 +380,26 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
                   </p>
                 </button>
 
-                {/* Tile 4: AR Camera Scan */}
+                {/* Tile 4: Sacred Pilgrimages */}
                 <button
                   type="button"
-                  onClick={() => setIsARModalOpen(true)}
-                  className="group/tile p-3.5 sm:p-4 rounded-xl sm:rounded-2xl bg-gradient-to-br from-blue-50/70 to-indigo-50/40 border border-blue-200/70 hover:border-blue-400 hover:shadow-md transition-all text-left cursor-pointer"
+                  onClick={() => setSelectedCategory('Spiritual & Pilgrimage')}
+                  className="rounded-2xl p-4 sm:p-5 border text-left transition-all relative overflow-hidden group bg-gradient-to-br from-amber-950/20 via-orange-950/10 to-stone-900/60 border-amber-500/30 hover:border-amber-400/60 shadow-lg hover:shadow-amber-500/10"
                 >
-                  <div className="flex items-center justify-between mb-2">
-                    <div className="w-8 h-8 rounded-lg bg-blue-500/10 flex items-center justify-center text-[#000080] group-hover/tile:scale-110 transition-transform">
-                      <Camera className="w-4 h-4" />
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="w-10 h-10 rounded-xl bg-amber-500/20 border border-amber-500/40 flex items-center justify-center text-amber-300 group-hover:scale-110 group-hover:bg-amber-500/30 transition-all">
+                      <Compass className="w-5 h-5 text-amber-400" />
                     </div>
-                    <ArrowUpRight className="w-4 h-4 text-stone-400 group-hover/tile:text-[#000080] transition-colors" />
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 rounded-full">
+                      8 Circuits
+                    </span>
                   </div>
-                  <h4 className="text-xs sm:text-sm font-bold text-stone-900 group-hover/tile:text-[#000080] transition-colors">
-                    AR Camera Lens
-                  </h4>
-                  <p className="text-[10px] sm:text-xs text-stone-500 mt-0.5 line-clamp-1">
-                    Scan & View Monuments
-                  </p>
+                  <div className="text-xl sm:text-2xl font-serif font-bold text-amber-300 mb-0.5">
+                    46 Sacred Shrines
+                  </div>
+                  <div className="text-xs text-stone-400 leading-relaxed">
+                    Jyotirlingas, Char Dham, Shakti Peethas & Holy Gurdwaras
+                  </div>
                 </button>
               </div>
             </div>
@@ -414,14 +414,13 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
           <GuideSpeechBubble
             characterId="virasat"
             contextMode="heritage"
-            speechText="Pranam! India's grand architectural timeline spans 3,500+ years—from the corbelled stone vimanas of Thanjavur to the marble domes of Agra and the basalt rock-cut sanctums of Ajanta. Use the curated filters below or the AR Camera Scanner to explore every historic bastion."
+            speechText="Pranam! India's grand architectural timeline spans 3,500+ years—from the corbelled stone vimanas of Thanjavur to the marble domes of Agra and the basalt rock-cut sanctums of Ajanta. Use the curated filters below to explore every historic bastion and sacred pilgrimage circuit."
             contextTag="Archaeological & Heritage Curator"
             orientation="right"
             nonBlocking={true}
-            quickActions={[
-              {
-                label: 'AR Camera Lens 📸',
-                onClick: () => setIsARModalOpen(true),
+            quickActions={[              {
+                label: 'Sacred Pilgrimages 🕉️',
+                onClick: () => setSelectedCategory('Spiritual & Pilgrimage'),
                 primary: true,
               },
               {
@@ -481,17 +480,6 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
               </button>
             )}
           </div>
-
-          {/* AR Camera Lens Trigger Button */}
-          <button
-            type="button"
-            onClick={() => setIsARModalOpen(true)}
-            title="Scan Monument with AR Camera or Upload Photo"
-            className="flex items-center justify-center gap-2 px-5 sm:px-6 py-3.5 sm:py-4 rounded-xl sm:rounded-2xl bg-gradient-to-r from-[#FF671F] via-[#E06D24] to-[#C9510C] hover:from-[#E06D24] hover:to-[#B84000] text-white text-xs sm:text-sm font-bold shadow-md hover:shadow-lg hover:scale-[1.02] active:scale-95 transition-all cursor-pointer whitespace-nowrap shrink-0"
-          >
-            <Camera className="w-4 h-4 sm:w-5 sm:h-5" />
-            <span>AR Camera Lens 📸</span>
-          </button>
 
           {/* State Filter Dropdown */}
           <div className="flex items-center gap-2 shrink-0">
@@ -785,14 +773,6 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
           })}
         </div>
       )}
-
-      {/* AR Camera & Visual Monument Identification Modal */}
-      <MonumentARCameraModal
-        isOpen={isARModalOpen}
-        onClose={() => setIsARModalOpen(false)}
-        onSelectPlace={onSelectPlace}
-        onNavigateTab={onNavigateTab}
-      />
     </div>
   );
 };

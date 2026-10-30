@@ -17,7 +17,6 @@ import { initOfficialGoogleOneTap } from './services/googleAuth';
 import { BrandSplashScreen } from './components/common/BrandSplashScreen';
 import { DatabaseStatusModal } from './components/database/DatabaseStatusModal';
 import { AnalyticsDashboardModal } from './components/analytics/AnalyticsDashboardModal';
-import { MonumentARCameraModal } from './components/ar/MonumentARCameraModal';
 import { TouristSafetySOSModal } from './components/common/TouristSafetySOSModal';
 import { PlaceSummary } from './types';
 import { api } from './services/api';
@@ -43,7 +42,6 @@ const AppContent: React.FC = () => {
   const [places, setPlaces] = useState<PlaceSummary[]>([]);
   const [isDatabaseModalOpen, setIsDatabaseModalOpen] = useState<boolean>(false);
   const [isAnalyticsModalOpen, setIsAnalyticsModalOpen] = useState<boolean>(false);
-  const [isGlobalARModalOpen, setIsGlobalARModalOpen] = useState<boolean>(false);
   const [isSOSModalOpen, setIsSOSModalOpen] = useState<boolean>(false);
   const [isAppInitializing, setIsAppInitializing] = useState<boolean>(true);
 
@@ -194,7 +192,6 @@ const AppContent: React.FC = () => {
         onOpenAuthModal={() => setIsAuthModalOpen(true)}
         onOpenDatabaseStatus={() => setIsDatabaseModalOpen(true)}
         onOpenAnalytics={() => setIsAnalyticsModalOpen(true)}
-        onOpenARCamera={() => setIsGlobalARModalOpen(true)}
         onOpenSOS={() => setIsSOSModalOpen(true)}
       />
 
@@ -249,12 +246,6 @@ const AppContent: React.FC = () => {
       <AnalyticsDashboardModal
         isOpen={isAnalyticsModalOpen}
         onClose={() => setIsAnalyticsModalOpen(false)}
-      />
-      <MonumentARCameraModal
-        isOpen={isGlobalARModalOpen}
-        onClose={() => setIsGlobalARModalOpen(false)}
-        onSelectPlace={handleSelectPlace}
-        onNavigateTab={handleNavigateTab}
       />
       <TouristSafetySOSModal
         isOpen={isSOSModalOpen}
