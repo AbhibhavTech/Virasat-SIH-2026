@@ -184,7 +184,7 @@ export const JammuKashmirDirectorySection: React.FC<JammuKashmirDirectorySection
                       isSelected ? 'bg-sky-400/25 text-sky-100' : 'bg-stone-100 text-stone-600'
                     }`}
                   >
-                    {city.code.replace('IN-JK-CITY-', '')}
+                    {city.code.replace('IN-JK-CITY-', '').replace('IN-JK-', '')}
                   </span>
                 </div>
                 <div

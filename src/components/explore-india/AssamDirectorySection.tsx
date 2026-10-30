@@ -186,7 +186,7 @@ export const AssamDirectorySection: React.FC<AssamDirectorySectionProps> = ({
                       isSelected ? 'bg-emerald-400/25 text-emerald-200' : 'bg-stone-100 text-stone-600'
                     }`}
                   >
-                    {city.code.replace('IN-AS-CITY-', '')}
+                    {city.code.replace('IN-AS-CITY-', '').replace('IN-AS-', '')}
                   </span>
                 </div>
                 <div

@@ -185,7 +185,7 @@ export const LadakhDirectorySection: React.FC<LadakhDirectorySectionProps> = ({
                       isSelected ? 'bg-amber-400/25 text-amber-100' : 'bg-stone-100 text-stone-600'
                     }`}
                   >
-                    {city.code.replace('IN-LA-CITY-', '')}
+                    {city.code.replace('IN-LA-CITY-', '').replace('IN-LA-', '')}
                   </span>
                 </div>
                 <div
