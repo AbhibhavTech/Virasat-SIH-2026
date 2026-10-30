@@ -865,7 +865,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
                 key={slide.id}
                 className={`absolute inset-0 w-full h-full transition-all duration-700 ease-in-out ${
                   isActive
-                    ? 'opacity-95 scale-100 z-[1]'
+                  ? 'opacity-100 scale-100 z-[1]'
                     : 'opacity-0 scale-105 pointer-events-none z-0'
                 }`}
               >
@@ -880,30 +880,19 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
                   }}
                   className="w-full h-full object-cover object-[center_35%] select-none filter contrast-[1.05] brightness-[1.0] saturate-[1.05]"
                   loading="eager"
-                  style={{ opacity: 0.95 }}
+                  style={{ opacity: 1 }}
                 />
               </div>
             );
           })}
 
-          {/* 95% REAL PHOTO VISIBILITY TINT:
-              Keeps 95% true photo visibility without milky white washout
-          */}
-          {/* Desktop/Tablet Horizontal Subtle Gradient Overlay */}
+          {/* A non-blurred dark gradient keeps the photograph crisp while making
+              the white headline readable across both bright and dark slides. */}
           <div
-            className="absolute inset-0 hidden sm:block pointer-events-none z-[2]"
+            className="absolute inset-0 pointer-events-none z-[2]"
             style={{
               background:
-                'linear-gradient(to right, rgba(255, 255, 255, 0.68) 0%, rgba(255, 255, 255, 0.40) 38%, rgba(255, 255, 255, 0.08) 65%, transparent 80%)',
-            }}
-          />
-
-          {/* Mobile Vertical Subtle Gradient Overlay */}
-          <div
-            className="absolute inset-0 sm:hidden pointer-events-none z-[2]"
-            style={{
-              background:
-                'linear-gradient(to bottom, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.40) 46%, transparent 78%)',
+                'linear-gradient(90deg, rgba(13, 24, 30, 0.82) 0%, rgba(13, 24, 30, 0.66) 34%, rgba(13, 24, 30, 0.22) 65%, rgba(13, 24, 30, 0.04) 100%)',
             }}
           />
 
@@ -923,7 +912,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
         </div>
 
         {/* Top Right "From Our Heritage To A Brighter Tomorrow" Banner */}
-        <div className="hidden sm:flex absolute top-5 right-5 sm:top-8 sm:right-8 bg-white/90 backdrop-blur-md px-4 py-2 rounded-2xl border border-white/90 shadow-sm items-center gap-3 text-stone-800 z-10 select-none">
+        <div className="hidden sm:flex absolute top-5 right-5 sm:top-8 sm:right-8 bg-white px-4 py-2 rounded-2xl border border-white shadow-sm items-center gap-3 text-stone-800 z-10 select-none">
           <div className="w-8 h-8 rounded-xl bg-orange-50 border border-orange-200/80 flex items-center justify-center text-[#FF671F] shrink-0">
             <Landmark className="w-4 h-4 text-[#FF671F]" />
           </div>
@@ -940,18 +929,18 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
         <div className="relative z-10 w-full max-w-2xl sm:max-w-3xl lg:max-w-4xl pt-2 sm:pt-4">
           {/* Heading, Search, Chips & Verified Tourism Trust Strip */}
           <div>
-            <div className="mb-4 sm:mb-5 w-fit max-w-full rounded-2xl border border-white/90 bg-[#FFFCF7]/92 p-3 shadow-md backdrop-blur-md sm:p-4">
+            <div className="mb-4 sm:mb-5 w-fit max-w-full p-1 sm:p-2">
               <IncredibleIndiaBadge className="mb-3 sm:mb-4" />
 
-              <h1 className="font-serif text-3xl sm:text-4xl lg:text-[40px] xl:text-[46px] font-bold tracking-tight text-[#0B192C] leading-[1.15]">
+              <h1 className="font-serif text-3xl sm:text-4xl lg:text-[40px] xl:text-[46px] font-bold tracking-tight text-white leading-[1.15] [text-shadow:0_2px_8px_rgba(0,0,0,0.55)]">
                 <span>Discover India&apos;s</span>
                 <span className="block mt-1 sm:mt-1.5">
-                  <span className="text-[#FF671F]">Living</span>{' '}
-                  <span className="text-[#046A38]">Heritage</span>
+                  <span className="text-[#FF8A45]">Living</span>{' '}
+                  <span className="text-[#77D49A]">Heritage</span>
                 </span>
               </h1>
 
-              <p className="text-sm sm:text-base text-[#303846] max-w-xl mt-2.5 sm:mt-3.5 leading-relaxed font-semibold">
+              <p className="text-sm sm:text-base text-white max-w-xl mt-2.5 sm:mt-3.5 leading-relaxed font-semibold [text-shadow:0_1px_5px_rgba(0,0,0,0.7)]">
                 Explore monuments, cultures, natural wonders and hidden gems across every region of India.
               </p>
             </div>
@@ -959,7 +948,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
             {/* Universal Search Input Bar with Live Suggestions Dropdown */}
             <div ref={searchContainerRef} className="relative mt-5 sm:mt-6 max-w-xl xl:max-w-2xl">
               <form onSubmit={handleSearchSubmit}>
-                <div className="bg-white/95 backdrop-blur-md rounded-full p-2 sm:p-2.5 pl-4 sm:pl-6 shadow-md hover:shadow-lg border border-stone-200/90 flex items-center gap-2 sm:gap-3 transition-all focus-within:ring-2 focus-within:ring-[#FF671F]/30 focus-within:border-[#FF671F]">
+                <div className="bg-white rounded-full p-2 sm:p-2.5 pl-4 sm:pl-6 shadow-md hover:shadow-lg border border-stone-200 flex items-center gap-2 sm:gap-3 transition-all focus-within:ring-2 focus-within:ring-[#FF671F]/30 focus-within:border-[#FF671F]">
                   <Search className="w-4 h-4 sm:w-5 sm:h-5 text-stone-400 shrink-0" />
                   <input
                     type="text"
@@ -1169,7 +1158,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
                       onSearch(chip.name);
                     }
                   }}
-                  className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/95 backdrop-blur-sm border border-stone-200/90 hover:border-[#FF671F] hover:bg-white text-xs sm:text-sm font-semibold text-stone-800 shadow-2xs hover:shadow-xs transition flex items-center gap-1.5 sm:gap-2 cursor-pointer active:scale-95 whitespace-nowrap"
+                  className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white border border-stone-200 hover:border-[#FF671F] hover:bg-white text-xs sm:text-sm font-semibold text-stone-800 shadow-2xs hover:shadow-xs transition flex items-center gap-1.5 sm:gap-2 cursor-pointer active:scale-95 whitespace-nowrap"
                 >
                   <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FF671F] shrink-0" />
                   <span>{chip.name}</span>
@@ -1179,7 +1168,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
 
             {/* Verified Heritage Highlights & Tourism Trust Strip */}
             <div className="flex flex-wrap items-center gap-2.5 sm:gap-5 mt-6 sm:mt-8 pt-5 sm:pt-6 border-t border-stone-300/40">
-              <div className="flex items-center gap-2.5 bg-white/80 backdrop-blur-sm px-3.5 py-2 rounded-xl border border-white/70 shadow-2xs">
+              <div className="flex items-center gap-2.5 bg-white px-3.5 py-2 rounded-xl border border-white shadow-2xs">
                 <div className="w-8 h-8 rounded-lg bg-orange-50 border border-orange-200/80 flex items-center justify-center text-[#FF671F] shrink-0">
                   <Landmark className="w-4 h-4" />
                 </div>
@@ -1189,7 +1178,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
                 </div>
               </div>
 
-              <div className="flex items-center gap-2.5 bg-white/80 backdrop-blur-sm px-3.5 py-2 rounded-xl border border-white/70 shadow-2xs">
+              <div className="flex items-center gap-2.5 bg-white px-3.5 py-2 rounded-xl border border-white shadow-2xs">
                 <div className="w-8 h-8 rounded-lg bg-emerald-50 border border-emerald-200/80 flex items-center justify-center text-[#046A38] shrink-0">
                   <ShieldCheck className="w-4 h-4" />
                 </div>
@@ -1199,7 +1188,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
                 </div>
               </div>
 
-              <div className="flex items-center gap-2.5 bg-white/80 backdrop-blur-sm px-3.5 py-2 rounded-xl border border-white/70 shadow-2xs">
+              <div className="flex items-center gap-2.5 bg-white px-3.5 py-2 rounded-xl border border-white shadow-2xs">
                 <div className="w-8 h-8 rounded-lg bg-sky-50 border border-sky-200/80 flex items-center justify-center text-[#0284C7] shrink-0">
                   <Compass className="w-4 h-4" />
                 </div>
@@ -1213,7 +1202,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
         </div>
 
         {HERO_HERITAGE_SLIDES[activeSlideIdx].photoCredit && (
-          <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 z-20 max-w-[42%] rounded-lg bg-stone-950/65 px-2 py-1 text-[9px] leading-tight text-white/90 backdrop-blur-sm sm:text-[10px]">
+          <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 z-20 max-w-[42%] rounded-lg bg-stone-950 px-2 py-1 text-[9px] leading-tight text-white sm:text-[10px]">
             Photo:{' '}
             <a
               className="underline underline-offset-2 hover:text-white"
@@ -1238,7 +1227,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
 
         {/* Small caption identifies the current slideshow image without covering it. */}
         <div
-          className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 z-20 max-w-[calc(100%_-_1.5rem)] truncate rounded-full border border-white/30 bg-stone-950/65 px-3 py-1 text-[10px] font-semibold text-white shadow-sm backdrop-blur-sm sm:px-3.5 sm:py-1.5 sm:text-xs"
+          className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 z-20 max-w-[calc(100%_-_1.5rem)] truncate rounded-full border border-white bg-stone-950 px-3 py-1 text-[10px] font-semibold text-white shadow-sm sm:px-3.5 sm:py-1.5 sm:text-xs"
           aria-live="polite"
           title={HERO_HERITAGE_SLIDES[activeSlideIdx].name}
         >

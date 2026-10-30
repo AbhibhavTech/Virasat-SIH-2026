@@ -34,7 +34,7 @@ export interface VerifiedItineraryPlaceStop {
   travel_mode: string;
   source: string;
   source_url: string;
-  verification_status: 'verified' | 'Not independently verified';
+  verification_status: string;
   last_verified: string;
   description: string;
   thumbnail_url: string;
@@ -287,10 +287,10 @@ export function formatVerifiedStop(
     distance_from_previous_km: distanceKm,
     distance_info: distanceKm > 0 ? `${distanceKm} km` : 'Initial stop',
     travel_mode: travelMode,
-    source: rawPlace.source_name || 'Archaeological Survey of India (ASI)',
-    source_url: rawPlace.source_url || 'https://asi.nic.in',
-    verification_status: 'verified',
-    last_verified: rawPlace.last_verified || 'September 2026',
+    source: rawPlace.source_name || 'Virasat destination database',
+    source_url: rawPlace.source_url || '',
+    verification_status: rawPlace.verification_status || 'recorded in Virasat destination database',
+    last_verified: rawPlace.last_verified || '',
     description: rawPlace.summary || '',
     thumbnail_url: rawPlace.thumbnail_url || 'https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=800&auto=format&fit=crop&q=80',
   };
@@ -333,13 +333,13 @@ export function generateVerifiedProximalItinerary(
       requested_days: requestedDays,
       title: `${requestedDays}-Day Itinerary: ${targetCityName}`,
       subtitle: 'Verified attractions organized by location, opening hours and travel efficiency.',
-      summary: `No independently verified heritage attractions currently documented in the Master Tourism Database for ${targetCityName}.`,
+      summary: `No destination records are currently available in Virasat's place database for ${targetCityName}.`,
       days: [],
       stops: [],
       total_places: 0,
-      warning_message: `Notice: No independently verified monuments are registered for "${targetCityName}" in the official Master Tourism Database. In accordance with tourism data accuracy standards, fictional stops are prohibited.`,
-      sources: ['Archaeological Survey of India (ASI)', 'State Tourism Archives'],
-      last_verified: 'September 2026',
+      warning_message: `No destination records are available for ${targetCityName}, so Virasat cannot generate a grounded itinerary for this city yet.`,
+      sources: [],
+      last_verified: '',
     };
   }
 
@@ -350,7 +350,7 @@ export function generateVerifiedProximalItinerary(
   // Check if requested days exceeds available verified places
   let warningMessage: string | null = null;
   if (requestedDays > effectiveDays) {
-    warningMessage = `Verified heritage attractions for ${targetCityName} are currently curated for ${effectiveDays} day(s) based on official Master Tourism Database records. Route restricted to verified sites.`;
+    warningMessage = `Virasat currently has enough destination records for about ${effectiveDays} day(s) in ${targetCityName}. This plan uses those recorded places and does not add filler stops.`;
   }
 
   // Spatial Clustering: Group proximal places together for each day
@@ -429,10 +429,9 @@ export function generateVerifiedProximalItinerary(
       subtitle: `Verified itinerary organized around ${primaryName} with proximal route optimization.`,
       hero_image_url: cluster[0]?.thumbnail_url || 'https://images.unsplash.com/photo-1596176530529-78163a4f7af2?w=800&auto=format&fit=crop&q=80',
       places: dayStops,
-      shopping: [
-        `${targetCityName} Traditional Artisan Market`,
-        `${targetStateName} Government Handicrafts Emporium`,
-      ],
+      // Don't invent nearby markets. Only show these when a sourced market
+      // record is added to the place database.
+      shopping: [],
     });
   }
 
@@ -443,13 +442,13 @@ export function generateVerifiedProximalItinerary(
     days_count: formattedDays.length,
     requested_days: requestedDays,
     title: `${formattedDays.length}-Day Itinerary: ${targetCityName}`,
-    subtitle: 'Verified attractions organized by location, opening hours and travel efficiency.',
-    summary: `Curated ${formattedDays.length}-day journey through verified attractions in ${targetCityName}, ${targetStateName}. All route segments are strictly grouped by geographical proximity to eliminate backtracking.`,
+    subtitle: 'Database places grouped by proximity. Confirm current hours, tickets and transport before setting out.',
+    summary: `Suggested ${formattedDays.length}-day journey through places recorded for ${targetCityName}, ${targetStateName}. Stops are grouped by approximate geographic proximity; current travel times and venue schedules are not included.`,
     days: formattedDays,
     stops: flatStops,
     total_places: flatStops.length,
     warning_message: warningMessage,
-    sources: ['Archaeological Survey of India (ASI)', 'UNESCO World Heritage Centre', 'State Tourism Department'],
-    last_verified: 'September 2026',
+    sources: [...new Set(flatStops.map((stop) => stop.source).filter(Boolean))],
+    last_verified: flatStops.map((stop) => stop.last_verified).filter(Boolean).sort().at(-1) || '',
   };
 }

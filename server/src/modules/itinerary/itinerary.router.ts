@@ -323,9 +323,19 @@ itineraryRouter.post('/generate', async (req: Request, res: Response): Promise<v
   let orderCounter = 1;
   const flatStops: any[] = [];
   const combinedDays: any[] = [];
+  const planWarnings: string[] = [];
 
   for (const item of plansToCombine) {
     const cityPlan = getVerifiedCityPlan(item.city, item.days, pace, effectiveBudget);
+
+    if (!cityPlan.days.length) {
+      res.status(422).json({
+        success: false,
+        error: cityPlan.warning_message || `No destination records are available for ${item.city}.`,
+      });
+      return;
+    }
+    if (cityPlan.warning_message) planWarnings.push(cityPlan.warning_message);
 
     for (const d of cityPlan.days) {
       if (currentDayNumber > requestedDays) break;
@@ -362,6 +372,7 @@ itineraryRouter.post('/generate', async (req: Request, res: Response): Promise<v
           is_fee_verified: false,
           estimated_cost: null,
           visit_tips: p.description || match?.summary || `Part of Day ${currentDayNumber} (${d.area_title}) circuit.`,
+          description: p.description || match?.summary || '',
           data_confidence: match?.data_confidence || 'CURATED_RECORD',
           source: match?.source_name || null,
           source_url: match?.source_url || null,
@@ -403,6 +414,7 @@ itineraryRouter.post('/generate', async (req: Request, res: Response): Promise<v
           entry_fee_label: 'Confirm current access and event arrangements locally',
           is_fee_verified: false,
           estimated_cost: null,
+          description: matchedFestival.description || '',
           visit_tips: `Experience the cultural vibe: ${matchedFestival.cultural_vibe || 'Traditional procession'}. ${matchedFestival.description}`,
           data_confidence: matchedFestival.verification_status || 'CURATED_RECORD',
           source: matchedFestival.source_name || null,
@@ -417,6 +429,13 @@ itineraryRouter.post('/generate', async (req: Request, res: Response): Promise<v
       combinedDays.push({
         ...d,
         day_number: currentDayNumber++,
+        date: startDate
+          ? new Date(Date.UTC(
+              Number(startDate.slice(0, 4)),
+              Number(startDate.slice(5, 7)) - 1,
+              Number(startDate.slice(8, 10)) + currentDayNumber - 2
+            )).toISOString().slice(0, 10)
+          : null,
         city_name: cityPlan.city_name,
         state_name: cityPlan.state_name || 'India',
         places: dayStops,
@@ -454,6 +473,7 @@ itineraryRouter.post('/generate', async (req: Request, res: Response): Promise<v
     travellers,
     subtitle: 'Suggested stops grouped by area. Opening status, entry fees, schedules, hotel availability and prices are not live-checked.',
     summary: `A suggested ${totalDaysCount}-day route through ${combinedDays.map((d) => d.city_name).filter((v, i, a) => a.indexOf(v) === i).join(', ')} using Virasat destination records. Timings, fees, transport schedules and booking prices require a current check.`,
+    warning_message: planWarnings.length ? planWarnings.join(' ') : null,
     budget_breakdown: {
       status: 'live_quotes_not_connected',
       currency: 'INR',

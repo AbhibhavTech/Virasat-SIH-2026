@@ -3241,7 +3241,7 @@ import {
  * Validates every destination stop against the Master Tourism Database.
  * Prohibits synthetic monument names, fictional tariffs, and ungrounded travel times.
  */
-export function getVerifiedCityPlan(
+function getLegacyCityBlueprintPlan(
   cityNameOrId: string,
   requestedDays: number = 5,
   pace: string = 'moderate',
@@ -3750,5 +3750,38 @@ export function getVerifiedCityPlan(
     stops: result.stops,
     sources: result.sources,
     last_verified: result.last_verified,
+  };
+}
+
+/**
+ * Build the itinerary only from the shared master place registry. Older city
+ * blueprints included generic filler stops and placeholder operating details;
+ * they are intentionally excluded from generated plans. Cities with no
+ * registry records return an empty plan and an explicit explanation.
+ */
+export function getVerifiedCityPlan(
+  cityNameOrId: string,
+  requestedDays: number = 5,
+  pace: string = 'moderate',
+  budget: string = 'moderate',
+  preferences: string[] = []
+) {
+  const normalized = (cityNameOrId || '').trim().toLowerCase();
+  const cityOption = ALL_INDIAN_TOURISM_CITIES.find((city) =>
+    city.id.toLowerCase() === normalized ||
+    city.name.toLowerCase() === normalized ||
+    city.displayName.toLowerCase() === normalized
+  );
+  const result = generateVerifiedProximalItinerary(
+    cityOption?.name || cityNameOrId,
+    Math.max(1, Math.min(7, Math.round(requestedDays) || 1)),
+    pace === 'relaxed' || pace === 'fast' ? pace : 'moderate',
+    budget,
+    preferences
+  );
+
+  return {
+    ...result,
+    warning_message: result.warning_message || null,
   };
 }

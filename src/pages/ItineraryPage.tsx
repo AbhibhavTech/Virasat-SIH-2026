@@ -36,14 +36,14 @@ import {
   Landmark,
 } from 'lucide-react';
 import { api } from '../services/api';
-import { ItineraryResponse, ItineraryDay } from '../types';
+import { ItineraryResponse, ItineraryDay, ItineraryDayPlace } from '../types';
 import { NavTab } from '../components/layout/Sidebar';
 import { ALL_INDIAN_TOURISM_CITIES, CityOption } from '../data/cityItineraryData';
 import { FeaturedTripIdeasCarousel } from '../components/itinerary/IncredibleIndiaVideoGallery';
 import { useAuth } from '../contexts/AuthContext';
 import { saveTripToFirestore } from '../services/firebase';
 import { ItineraryCostDonutChart } from '../components/itinerary/ItineraryCostDonutChart';
-import { findVerifiedPlace } from '../data/masterTourismDatabase';
+import { findVerifiedPlace, getVerifiedPlacesForCity } from '../data/masterTourismDatabase';
 import { HotelRecommendationsSection } from '../components/itinerary/HotelRecommendationsSection';
 import { PackageReferences } from '../components/itinerary/PackageReferences';
 
@@ -65,6 +65,18 @@ const localDateInputValue = () => {
   date.setMinutes(date.getMinutes() - date.getTimezoneOffset());
   return date.toISOString().slice(0, 10);
 };
+
+const formatTripDate = (value?: string | null) => {
+  if (!value || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return '';
+  return new Intl.DateTimeFormat(undefined, { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' })
+    .format(new Date(`${value}T12:00:00`));
+};
+
+// Destination choices are limited to cities that have at least one real place
+// record, so the planner never offers a city that can only produce filler.
+const ITINERARY_CITIES = ALL_INDIAN_TOURISM_CITIES.filter((city) =>
+  getVerifiedPlacesForCity(city.name).length > 0
+);
 
 const PREFERENCE_PILLS: PreferencePill[] = [
   { id: 'heritage', label: 'Heritage & Monuments', icon: '🏛️' },
@@ -89,14 +101,14 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
   const { user } = useAuth();
   // Destination state
   const [selectedCityObj, setSelectedCityObj] = useState<CityOption>(() => {
-    const found = ALL_INDIAN_TOURISM_CITIES.find(
+    const found = ITINERARY_CITIES.find(
       (c) => c.name.toLowerCase() === selectedCity.toLowerCase() || c.id.toLowerCase() === selectedCity.toLowerCase()
     );
-    return found || ALL_INDIAN_TOURISM_CITIES[0]; // Default to Mumbai
+    return found || ITINERARY_CITIES.find((city) => city.id === 'mumbai') || ITINERARY_CITIES[0] || ALL_INDIAN_TOURISM_CITIES[0];
   });
 
   useEffect(() => {
-    const found = ALL_INDIAN_TOURISM_CITIES.find(
+    const found = ITINERARY_CITIES.find(
       (city) => city.name.toLowerCase() === selectedCity.toLowerCase() || city.id.toLowerCase() === selectedCity.toLowerCase()
     );
     if (found) setSelectedCityObj(found);
@@ -111,7 +123,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
   const [pace, setPace] = useState<'relaxed' | 'moderate' | 'fast'>('moderate');
   const [budget, setBudget] = useState<'budget' | 'moderate' | 'luxury'>('moderate');
   const [originCity, setOriginCity] = useState('');
-  const [travelStartDate, setTravelStartDate] = useState('');
+  const [travelStartDate, setTravelStartDate] = useState(localDateInputValue());
   const [travellersCount, setTravellersCount] = useState(1);
   const [selectedPreferences, setSelectedPreferences] = useState<string[]>([
     'heritage',
@@ -123,6 +135,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
   const [plannerViewMode, setPlannerViewMode] = useState<'pages' | 'grid'>('pages');
   const [activeDayIndex, setActiveDayIndex] = useState<number>(0);
   const [selectedModalDay, setSelectedModalDay] = useState<ItineraryDay | null>(null);
+  const [selectedStopDetails, setSelectedStopDetails] = useState<ItineraryDayPlace | null>(null);
 
   const [searchParams] = useSearchParams();
 
@@ -133,11 +146,12 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
   const [shareSuccess, setShareSuccess] = useState(false);
   const [shareMessage, setShareMessage] = useState('');
   const [restoredNotice, setRestoredNotice] = useState<string | null>(null);
+  const [planError, setPlanError] = useState<string | null>(null);
 
   const handleSelectCarouselDestination = (cityId: string, cityName: string) => {
     const targetCityLower = cityName.toLowerCase();
     const targetIdLower = cityId.toLowerCase();
-    const foundCity = ALL_INDIAN_TOURISM_CITIES.find(
+    const foundCity = ITINERARY_CITIES.find(
       (c) =>
         c.id.toLowerCase() === targetIdLower ||
         c.name.toLowerCase() === targetCityLower ||
@@ -164,10 +178,10 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
   // Filter cities for search
   const filteredCities = useMemo(() => {
     if (!citySearchQuery.trim()) {
-      return ALL_INDIAN_TOURISM_CITIES;
+      return ITINERARY_CITIES;
     }
     const q = citySearchQuery.toLowerCase();
-    return ALL_INDIAN_TOURISM_CITIES.filter(
+    return ITINERARY_CITIES.filter(
       (c) =>
         c.name.toLowerCase().includes(q) ||
         c.state.toLowerCase().includes(q) ||
@@ -216,6 +230,8 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
     const prefsToQuery = targetPrefs || selectedPreferences;
 
     setLoading(true);
+    setItinerary(null);
+    setPlanError(null);
     setSaveSuccess(false);
     setShareSuccess(false);
     setActiveDayIndex(0);
@@ -235,6 +251,17 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
       setItinerary(plan);
     } catch (err) {
       console.error('Failed to generate city trip itinerary:', err);
+      let message = 'We could not generate the plan. Check your connection and try again.';
+      if (err instanceof Error) {
+        const body = err.message.match(/API Error \d+:\s*(\{.*\})/s)?.[1];
+        if (body) {
+          try {
+            const parsed = JSON.parse(body);
+            if (typeof parsed.error === 'string') message = parsed.error;
+          } catch { /* Keep the human-readable fallback instead of showing raw JSON. */ }
+        }
+      }
+      setPlanError(message);
     } finally {
       setLoading(false);
     }
@@ -253,7 +280,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
     const travellersParam = Number(searchParams.get('travellers'));
     const targetStartDate = /^\d{4}-\d{2}-\d{2}$/.test(dateParam) && dateParam >= localDateInputValue() ? dateParam : '';
     const targetTravellers = Number.isInteger(travellersParam) && travellersParam >= 1 && travellersParam <= 50 ? travellersParam : 1;
-    setTravelStartDate(targetStartDate);
+    setTravelStartDate(targetStartDate || localDateInputValue());
     setTravellersCount(targetTravellers);
     setOriginCity(originParam);
 
@@ -273,7 +300,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
 
           const cityName = parsedItinerary.city || cityParam;
           if (cityName) {
-            const found = ALL_INDIAN_TOURISM_CITIES.find(
+            const found = ITINERARY_CITIES.find(
               (c) =>
                 c.name.toLowerCase() === cityName.toLowerCase() ||
                 c.id.toLowerCase() === cityName.toLowerCase()
@@ -317,7 +344,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
       let targetPrefs = selectedPreferences;
 
       if (cityParam) {
-        const found = ALL_INDIAN_TOURISM_CITIES.find(
+        const found = ITINERARY_CITIES.find(
           (c) =>
             c.name.toLowerCase() === cityParam.toLowerCase() ||
             c.id.toLowerCase() === cityParam.toLowerCase()
@@ -588,6 +615,14 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
   const totalDays = itinerary?.days?.length || daysCount || 1;
   const safeDayIndex = Math.max(0, Math.min(activeDayIndex, totalDays - 1));
   const currentDay = itinerary?.days?.[safeDayIndex] || itinerary?.days?.[0];
+  const currentDayVisitMinutes = currentDay?.places.reduce((minutes, place) =>
+    minutes + (Number.isFinite(place.visit_duration_minutes) ? Number(place.visit_duration_minutes) : 0), 0) || 0;
+  const selectedStopRecord = selectedStopDetails
+    ? findVerifiedPlace(selectedStopDetails.id || selectedStopDetails.name, selectedCityObj.id)
+    : null;
+  const selectedStopCoordinates = selectedStopDetails?.coordinates || (selectedStopRecord
+    ? { lat: selectedStopRecord.lat, lng: selectedStopRecord.lng }
+    : undefined);
 
   return (
     <div
@@ -715,23 +750,24 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
               <MapPin className="w-3.5 h-3.5 text-stone-500" />
               <span>Destination / City</span>
             </label>
+            <span className="block text-[11px] text-stone-500">{ITINERARY_CITIES.length} cities with destination records</span>
             <select
               value={selectedCityObj.id}
               onChange={(e) => {
-                const found = ALL_INDIAN_TOURISM_CITIES.find((c) => c.id === e.target.value);
+                const found = ITINERARY_CITIES.find((c) => c.id === e.target.value);
                 if (found) handleSelectCity(found);
               }}
               className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50/80 hover:bg-stone-50 border border-stone-200 text-sm text-stone-900 font-medium focus:bg-white focus:outline-hidden focus:border-[#E06D24] focus:ring-1 focus:ring-[#E06D24]/20 transition cursor-pointer"
             >
               <optgroup label="Major Popular Hubs">
-                {ALL_INDIAN_TOURISM_CITIES.filter((c) => c.popular).map((c) => (
+                {ITINERARY_CITIES.filter((c) => c.popular).map((c) => (
                   <option key={c.id} value={c.id}>
                     {c.displayName}
                   </option>
                 ))}
               </optgroup>
               <optgroup label="All Indian States & UTs">
-                {ALL_INDIAN_TOURISM_CITIES.filter((c) => !c.popular).map((c) => (
+                {ITINERARY_CITIES.filter((c) => !c.popular).map((c) => (
                   <option key={c.id} value={c.id}>
                     {c.displayName}
                   </option>
@@ -856,6 +892,14 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
           </div>
         </div>
       </div>
+
+      {planError && (
+        <div role="alert" className="rounded-2xl border border-amber-300 bg-amber-50 p-4 text-sm text-amber-950">
+          <strong className="block">We couldn’t build this itinerary.</strong>
+          <span className="mt-1 block">{planError}</span>
+          <span className="mt-1 block text-amber-900">The planner only uses places in Virasat’s destination database. If the city has no matching records, choose another listed city.</span>
+        </div>
+      )}
 
       <PackageReferences
         key={(itinerary?.city || selectedCityObj.name).toLowerCase()}
@@ -989,6 +1033,22 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
             </div>
           )}
 
+          <section aria-labelledby="trip-travel-options" className="rounded-2xl border border-stone-200 bg-white p-4 sm:p-5">
+            <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
+              <div>
+                <h3 id="trip-travel-options" className="font-serif text-lg font-bold text-stone-950">Getting to {itinerary.city || selectedCityObj.name}</h3>
+                <p className="text-sm text-stone-600">Open current train, flight or road options for your route.</p>
+              </div>
+              {!originCity.trim() && <p className="text-xs font-medium text-orange-800">Add your starting city above for route-specific searches.</p>}
+            </div>
+            <div className="mt-3 grid gap-2 sm:grid-cols-3">
+              <a href="https://www.irctc.co.in/nget/train-search" target="_blank" rel="noreferrer" className="rounded-xl border border-stone-200 bg-stone-50 p-3 text-sm font-bold text-stone-900 hover:border-orange-400 hover:bg-orange-50">Train options <span className="block text-xs font-normal text-stone-600">Check current trains and seat availability on IRCTC</span></a>
+              <a href={`https://www.google.com/travel/flights?q=${encodeURIComponent(`Flights from ${originCity.trim() || 'your city'} to ${itinerary.city || selectedCityObj.name}`)}`} target="_blank" rel="noreferrer" className="rounded-xl border border-stone-200 bg-stone-50 p-3 text-sm font-bold text-stone-900 hover:border-orange-400 hover:bg-orange-50">Flight options <span className="block text-xs font-normal text-stone-600">Compare live schedules and fares</span></a>
+              <a href={`https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(originCity.trim() || selectedCityObj.name)}&destination=${encodeURIComponent(selectedCityObj.name)}`} target="_blank" rel="noreferrer" className="rounded-xl border border-stone-200 bg-stone-50 p-3 text-sm font-bold text-stone-900 hover:border-orange-400 hover:bg-orange-50">Road route <span className="block text-xs font-normal text-stone-600">Open current driving directions</span></a>
+            </div>
+            <p className="mt-2 text-xs text-stone-500">These searches open external services. Virasat does not have live train/flight inventory, fares or booking availability.</p>
+          </section>
+
           {/* D3-BASED ESTIMATED COST BREAKDOWN DONUT CHART */}
           <ItineraryCostDonutChart
             itinerary={itinerary}
@@ -1032,7 +1092,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                     }`}
                   >
                     <BookOpen className="w-3 h-3" />
-                    <span>Day {d.day_number} · {d.area_title}</span>
+                  <span>Day {d.day_number}{d.date ? ` · ${formatTripDate(d.date)}` : ''} · {d.area_title}</span>
                   </button>
                 ))}
               </div>
@@ -1088,10 +1148,10 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                     <div className="space-y-0.5 sm:space-y-1">
                       <div className="flex items-center gap-2">
                         <span className="px-2.5 sm:px-3 py-0.5 rounded-full bg-[#FF671F] text-white font-bold text-[11px] sm:text-xs shadow-xs">
-                          Day {currentDay.day_number} Dossier
+                          Day {currentDay.day_number}{currentDay.date ? ` · ${formatTripDate(currentDay.date)}` : ''}
                         </span>
                         <span className="text-[11px] sm:text-xs text-stone-600 font-mono font-semibold">
-                          {currentDay.places.length} Stops
+                          {currentDay.places.length} Stops{currentDayVisitMinutes > 0 ? ` · ~${(currentDayVisitMinutes / 60).toFixed(1)}h on site` : ''}
                         </span>
                       </div>
                       <h3 className="text-lg sm:text-3xl font-bold font-serif text-stone-900">
@@ -1100,6 +1160,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                       <p className="text-[11px] sm:text-sm text-stone-700 max-w-2xl font-medium line-clamp-2 sm:line-clamp-none">
                         {currentDay.subtitle || 'Immersive cultural journey and architectural highlights.'}
                       </p>
+                      <p className="text-[10px] sm:text-[11px] text-stone-600">Visit-time estimate excludes travel, queues and current venue hours. Day ends at the last listed stop.</p>
                     </div>
 
                     <button
@@ -1191,10 +1252,11 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                         const lastVerified = place.last_verified || verifiedDb?.last_verified || null;
 
                         return (
-                          <div
+                          <button
                             key={pIdx}
-                            onClick={() => (place.id || verifiedDb?.id) && onSelectPlace(place.id || verifiedDb!.id)}
-                            className="p-4 rounded-2xl border border-stone-200 bg-white hover:shadow-md hover:border-[#FF671F]/50 transition cursor-pointer flex flex-col justify-between group space-y-3"
+                            type="button"
+                            onClick={() => setSelectedStopDetails({ ...place, id: place.id || verifiedDb?.id })}
+                            className="text-left p-4 rounded-2xl border border-stone-200 bg-white hover:shadow-md hover:border-[#FF671F]/50 transition cursor-pointer flex flex-col justify-between group space-y-3"
                           >
                             <div className="space-y-2.5">
                                 {/* Suggested order, not a visit appointment */}
@@ -1274,7 +1336,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                                 <ChevronRight className="w-3.5 h-3.5" />
                               </div>
                             </div>
-                          </div>
+                          </button>
                         );
                       });
                     })()}
@@ -1284,7 +1346,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                   {/* Two-Column Footer: Nearby Shopping & Practical Transit Advice */}
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
                     {/* Nearby Shopping & Crafts Box */}
-                    <div className="p-4 rounded-2xl bg-amber-50/60 border border-amber-200/80 space-y-2">
+                    {currentDay.shopping.length > 0 && <div className="p-4 rounded-2xl bg-amber-50/60 border border-amber-200/80 space-y-2">
                       <div className="flex items-center gap-1.5 text-xs font-bold text-stone-900">
                         <ShoppingBag className="w-4 h-4 text-[#FF671F]" />
                         <span>Markets & local crafts to explore</span>
@@ -1297,7 +1359,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                           </div>
                         ))}
                       </div>
-                    </div>
+                    </div>}
 
                     {/* Transit & Living Tip Box */}
                     <div className="p-4 rounded-2xl bg-blue-50/60 border border-blue-200/80 space-y-2">
@@ -1327,7 +1389,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                       <div className="p-4 space-y-2 border-b border-stone-100">
                         <div className="flex items-center justify-between">
                           <span className="inline-block px-2.5 py-0.5 rounded-md bg-amber-100 text-[#0B192C] text-[11px] font-bold">
-                            Day {day.day_number}
+                            Day {day.day_number}{day.date ? ` · ${formatTripDate(day.date)}` : ''}
                           </span>
                           <button
                             onClick={() => {
@@ -1367,7 +1429,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                         {day.places.map((place, pIdx) => (
                           <div
                             key={pIdx}
-                            onClick={() => place.id && onSelectPlace(place.id)}
+                            onClick={() => setSelectedStopDetails(place)}
                             className="flex items-start gap-2 text-xs cursor-pointer group/place"
                           >
                             <span className="w-4 h-4 rounded-full bg-emerald-100 text-emerald-900 font-bold text-[9px] flex items-center justify-center shrink-0 mt-0.5">
@@ -1387,7 +1449,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                     </div>
 
                     {/* Nearby Shopping Box */}
-                    <div className="p-3 m-3 mt-0 rounded-xl bg-stone-50 border border-stone-200/80 space-y-1">
+                    {day.shopping.length > 0 && <div className="p-3 m-3 mt-0 rounded-xl bg-stone-50 border border-stone-200/80 space-y-1">
                       <div className="flex items-center justify-between text-[11px] font-bold text-stone-800">
                         <div className="flex items-center gap-1 text-stone-700">
                           <ShoppingBag className="w-3.5 h-3.5 text-[#FF671F]" />
@@ -1402,7 +1464,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                           </div>
                         ))}
                       </div>
-                    </div>
+                    </div>}
                   </div>
                 ))}
               </div>
@@ -1499,7 +1561,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
             <div className="flex items-center justify-between border-b border-stone-100 pb-3">
               <div className="flex items-center gap-2">
                 <span className="px-2.5 py-0.5 rounded-md bg-[#FF671F] text-white text-xs font-bold">
-                  Day {selectedModalDay.day_number}
+                  Day {selectedModalDay.day_number}{selectedModalDay.date ? ` · ${formatTripDate(selectedModalDay.date)}` : ''}
                 </span>
                 <h3 className="font-serif font-bold text-stone-900 text-lg">
                   {selectedModalDay.area_title}
@@ -1522,7 +1584,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                   <div
                     key={idx}
                     onClick={() => {
-                      if (place.id) onSelectPlace(place.id);
+                      setSelectedStopDetails(place);
                       setSelectedModalDay(null);
                     }}
                     className="p-3 rounded-xl border border-stone-200 hover:border-[#FF671F] hover:bg-orange-50/50 cursor-pointer transition flex items-center justify-between"
@@ -1546,7 +1608,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
               </div>
             </div>
 
-            <div className="space-y-2 pt-2 border-t border-stone-100">
+            {selectedModalDay.shopping.length > 0 && <div className="space-y-2 pt-2 border-t border-stone-100">
               <h4 className="text-xs font-bold uppercase tracking-wider text-stone-500 flex items-center gap-1.5">
                 <ShoppingBag className="w-3.5 h-3.5 text-[#FF671F]" />
                 <span>Nearby Shopping & Artisan Markets</span>
@@ -1558,7 +1620,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                   </div>
                 ))}
               </div>
-            </div>
+            </div>}
 
             <div className="pt-2 flex justify-end">
               <button
@@ -1569,6 +1631,44 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
               </button>
             </div>
           </div>
+        </div>
+      )}
+
+      {/* Place detail sheet: always opens from the stop card, even when an
+          application route for that record has not been published yet. */}
+      {selectedStopDetails && (
+        <div className="fixed inset-0 z-[60] bg-stone-950/55 flex items-center justify-center p-4" onMouseDown={(event) => { if (event.target === event.currentTarget) setSelectedStopDetails(null); }}>
+          <section role="dialog" aria-modal="true" aria-labelledby="itinerary-stop-title" className="w-full max-w-xl max-h-[88vh] overflow-y-auto rounded-3xl border border-stone-200 bg-white shadow-2xl">
+            <div className="flex items-start justify-between gap-4 border-b border-stone-100 p-5 sm:p-6">
+              <div>
+                <div className="text-xs font-bold uppercase tracking-wide text-orange-700">Place in your itinerary</div>
+                <h2 id="itinerary-stop-title" className="mt-1 font-serif text-2xl font-bold text-stone-950">{selectedStopDetails.name}</h2>
+                <p className="mt-1 text-sm text-stone-600">{selectedStopDetails.location || `${selectedCityObj.name}, ${selectedCityObj.state}`}</p>
+              </div>
+              <button type="button" onClick={() => setSelectedStopDetails(null)} className="rounded-xl border border-stone-200 p-2 text-stone-600 hover:bg-stone-50" aria-label="Close place details"><X className="h-5 w-5" /></button>
+            </div>
+            <div className="space-y-4 p-5 sm:p-6">
+              {(selectedStopDetails.thumbnail_url || selectedStopRecord?.thumbnail_url) && (
+                <img src={selectedStopDetails.thumbnail_url || selectedStopRecord?.thumbnail_url || ''} alt={selectedStopDetails.name} className="h-48 w-full rounded-2xl object-cover" loading="lazy" />
+              )}
+              <div>
+                <h3 className="font-bold text-stone-900">About this place</h3>
+                <p className="mt-1 text-sm leading-relaxed text-stone-700">{selectedStopDetails.description || selectedStopRecord?.summary || 'Virasat has a destination record for this stop, but a detailed overview has not been added yet.'}</p>
+              </div>
+              <dl className="grid gap-3 rounded-2xl bg-stone-50 p-4 text-sm sm:grid-cols-2">
+                <div><dt className="text-xs font-semibold uppercase text-stone-500">Category</dt><dd className="mt-1 font-medium text-stone-900">{selectedStopDetails.heritage_status || selectedStopDetails.category || selectedStopRecord?.category || 'Destination'}</dd></div>
+                <div><dt className="text-xs font-semibold uppercase text-stone-500">Suggested time to visit</dt><dd className="mt-1 font-medium text-stone-900">{selectedStopDetails.visit_duration || (selectedStopRecord?.visit_duration_minutes ? `About ${Math.round(selectedStopRecord.visit_duration_minutes / 30) / 2} hours` : 'Choose based on your pace')}</dd></div>
+                <div><dt className="text-xs font-semibold uppercase text-stone-500">Opening hours</dt><dd className="mt-1 font-medium text-stone-900">{selectedStopDetails.is_hours_verified && selectedStopDetails.opening_hours ? selectedStopDetails.opening_hours : 'Confirm with the venue before visiting'}</dd></div>
+                <div><dt className="text-xs font-semibold uppercase text-stone-500">Entry fee</dt><dd className="mt-1 font-medium text-stone-900">{selectedStopDetails.is_fee_verified && selectedStopDetails.entry_fee != null ? (selectedStopDetails.entry_fee === 0 ? 'Free entry (recorded)' : `₹${selectedStopDetails.entry_fee} (recorded)`) : 'Check the current price with the venue'}</dd></div>
+              </dl>
+              <p className="text-xs leading-relaxed text-stone-600">Opening hours, access and ticket prices can change. This planner does not have live venue confirmation.</p>
+              {selectedStopRecord?.source_url && <a href={selectedStopRecord.source_url} target="_blank" rel="noreferrer" className="inline-flex text-sm font-semibold text-orange-800 underline">Open the record source</a>}
+              <div className="flex flex-wrap gap-2 border-t border-stone-100 pt-4">
+                {selectedStopCoordinates && <a href={`https://www.google.com/maps/search/?api=1&query=${selectedStopCoordinates.lat},${selectedStopCoordinates.lng}`} target="_blank" rel="noreferrer" className="rounded-xl bg-stone-900 px-4 py-2.5 text-sm font-bold text-white">Open map</a>}
+                {selectedStopDetails.id && <button type="button" onClick={() => onSelectPlace(selectedStopDetails.id!)} className="rounded-xl bg-[#C94D0A] px-4 py-2.5 text-sm font-bold text-white">Open place page</button>}
+              </div>
+            </div>
+          </section>
         </div>
       )}
 

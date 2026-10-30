@@ -241,6 +241,7 @@ export interface ItineraryDayPlace {
 
 export interface ItineraryDay {
   day_number: number;
+  date?: string | null;
   area_title: string;
   area_name?: string;
   subtitle?: string;
