@@ -29,6 +29,7 @@ import { ThreeDDestinationCard } from '../components/common/ThreeDDestinationCar
 import { updatePageSEO, generateCitySchema } from '../utils/seo';
 import { getMonumentRealImage } from '../data/monumentRealImages';
 import { getMumbaiPlaceSummaries, isMumbaiCity } from '../data/mumbaiDestinations';
+import { resolveCityPlacesFromDirectory } from '../utils/universalPlaceResolver';
 
 interface CityHubPageProps {
   onSelectPlace: (id: string) => void;
@@ -242,10 +243,12 @@ export const CityHubPage: React.FC<CityHubPageProps> = ({
           }
         }
 
-        // If city places is empty (e.g. edge-case), load fallback places
+        // If city places is empty from API, resolve directly from comprehensive state directory
         if (loadedPlaces.length === 0 && !isMumbaiCity(selectedCity)) {
-          const fallbackRes = await api.getPlaces({ limit: 40 });
-          loadedPlaces = fallbackRes.data || [];
+          const dirPlaces = resolveCityPlacesFromDirectory(selectedCity);
+          if (dirPlaces.length > 0) {
+            loadedPlaces = dirPlaces;
+          }
         }
 
         if (isMumbaiCity(selectedCity)) {

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { PlaceImageItem, PlaceImageBundle } from '../../types';
 import { HeritageCategoryIllustration } from './HeritageCategoryIllustrations';
+import { getMonumentRealImage } from '../../data/monumentRealImages';
 import { 
   Camera, 
   ExternalLink, 
@@ -65,6 +66,7 @@ export const HeritageImageViewer: React.FC<HeritageImageViewerProps> = ({
   showGalleryThumbnails = true,
 }) => {
   const [hasError, setHasError] = useState(false);
+  const [fallbackSrc, setFallbackSrc] = useState<string | null>(null);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   // Combine images into clean list: hero first, followed by up to 6 gallery images
@@ -99,6 +101,15 @@ export const HeritageImageViewer: React.FC<HeritageImageViewerProps> = ({
 
   const handleImageError = () => {
     console.warn(`[ImagePipeline] Broken image detected for place: ${placeId} (${placeName})`);
+    if (!fallbackSrc) {
+      const backup = getMonumentRealImage(placeId, '') ||
+        'https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=80';
+      const currentUrl = activeHero?.image_url || activeHero?.thumbnail_url;
+      if (backup && backup !== currentUrl) {
+        setFallbackSrc(backup);
+        return;
+      }
+    }
     setHasError(true);
   };
 
@@ -169,9 +180,9 @@ export const HeritageImageViewer: React.FC<HeritageImageViewerProps> = ({
         ) : (
           <>
             <img
-              src={activeHero.image_url || activeHero.thumbnail_url || ''}
+              src={fallbackSrc || activeHero.image_url || activeHero.thumbnail_url || ''}
               srcSet={
-                activeHero.thumbnail_url && activeHero.image_url && activeHero.thumbnail_url !== activeHero.image_url
+                !fallbackSrc && activeHero.thumbnail_url && activeHero.image_url && activeHero.thumbnail_url !== activeHero.image_url
                   ? `${activeHero.thumbnail_url} 400w, ${activeHero.image_url} 1200w`
                   : undefined
               }

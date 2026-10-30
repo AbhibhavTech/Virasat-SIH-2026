@@ -19,6 +19,7 @@ import { analytics } from '../services/analytics';
 import { PlaceSummary } from '../types';
 import { VoiceInputButton } from '../components/common/VoiceInputButton';
 import { searchMumbaiPlaces } from '../data/mumbaiDestinations';
+import { searchAllUniversalPlaces } from '../utils/universalPlaceResolver';
 
 export interface RecentSearchItem {
   id: string;
@@ -178,12 +179,25 @@ export const SearchPage: React.FC<SearchPageProps> = ({
 
       setLoading(true);
       try {
-        const localResults = searchMumbaiPlaces(trimmed);
-        const localNames = new Set(localResults.map((place) => place.name.trim().toLowerCase()));
-        const remoteResults = await api.searchPlaces(trimmed);
+        const localMumbai = searchMumbaiPlaces(trimmed);
+        const universalLocal = searchAllUniversalPlaces(trimmed);
+        const combinedLocal: PlaceSummary[] = [...(localMumbai as unknown as PlaceSummary[])];
+        const seenLocal = new Set(localMumbai.map((p) => p.name.trim().toLowerCase()));
+        for (const p of universalLocal) {
+          if (!seenLocal.has(p.name.trim().toLowerCase())) {
+            combinedLocal.push(p);
+            seenLocal.add(p.name.trim().toLowerCase());
+          }
+        }
+        let remoteResults: PlaceSummary[] = [];
+        try {
+          remoteResults = await api.searchPlaces(trimmed);
+        } catch {
+          // Graceful fallback to rich local results
+        }
         const data = [
-          ...localResults,
-          ...remoteResults.filter((place) => !localNames.has(place.name.trim().toLowerCase())),
+          ...combinedLocal,
+          ...remoteResults.filter((place) => !seenLocal.has(place.name.trim().toLowerCase())),
         ];
         setResults(data);
         analytics.trackSearch(trimmed, data.length);

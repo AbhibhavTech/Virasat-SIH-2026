@@ -1246,6 +1246,9 @@ export const MonumentARCameraModal: React.FC<MonumentARCameraModalProps> = ({
                         alt={sample.name}
                         className="w-full h-16 sm:h-20 object-cover rounded-lg group-hover:scale-105 transition-transform duration-300"
                         referrerPolicy="no-referrer"
+                        onError={(e) => {
+                          e.currentTarget.src = 'https://images.unsplash.com/photo-1548013146-72479768bada?w=400&auto=format&fit=crop&q=80';
+                        }}
                       />
                       <div className="mt-1 px-1">
                         <div className="text-[11px] font-bold text-white truncate w-full">{sample.name}</div>

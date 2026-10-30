@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState, useMemo, useCallback } from 'react';
 import L from 'leaflet';
+import rawMonumentsFallback from '../../../data/heritage/monuments.json';
+import rawStationsFallback from '../../../data/railway_stations.json';
 import { PlaceSummary, RouteResponse, TransportMode, LocationSuggestion, GoogleMapsPlaceInfo, HeritageRouteAnalysisResult } from '../../types';
 import { api } from '../../services/api';
 import { findNearestCity, calculateHaversineKm } from '../../data/citiesData';
@@ -347,22 +349,37 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
     setRouteDestCoords(tempOriginCoords);
   };
 
-  // 1. Fetch datasets: Heritage & Stations
+  // 1. Fetch datasets: Heritage & Stations (with bundled offline fallbacks)
   useEffect(() => {
     let isMounted = true;
     const loadData = async () => {
       setLoading(true);
       try {
-        const [heritageRes, stationsRes] = await Promise.all([
+        const [heritageRes, stationsRes] = await Promise.allSettled([
           api.getHeritage({ limit: 100 }),
           api.getRailwayStations(),
         ]);
         if (isMounted) {
-          setHeritageSites(heritageRes.data || []);
-          setStations(stationsRes || []);
+          let hSites = heritageRes.status === 'fulfilled' && heritageRes.value?.data ? heritageRes.value.data : [];
+          let stns = stationsRes.status === 'fulfilled' && Array.isArray(stationsRes.value) ? stationsRes.value : [];
+
+          // Resilient fallback to repo-bundled UNESCO monuments & stations if API is unreachable
+          if (hSites.length === 0) {
+            hSites = rawMonumentsFallback as any[];
+          }
+          if (stns.length === 0) {
+            stns = rawStationsFallback as any[];
+          }
+
+          setHeritageSites(hSites);
+          setStations(stns);
         }
       } catch (err) {
-        console.error('[Map] Error fetching map datasets:', err);
+        console.error('[Map] Error fetching map datasets, using verified bundled fallbacks:', err);
+        if (isMounted) {
+          setHeritageSites(rawMonumentsFallback as any[]);
+          setStations(rawStationsFallback as any[]);
+        }
       } finally {
         if (isMounted) setLoading(false);
       }

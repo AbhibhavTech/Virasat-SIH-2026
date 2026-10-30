@@ -40,6 +40,7 @@ import { getNearbyDiscoveryPlaceById } from '../data/nearbyPlacesMMR';
 import { MonumentAudioGuidePlayer } from '../components/destination/MonumentAudioGuidePlayer';
 import { LocalArtisansGICraftsCard } from '../components/destination/LocalArtisansGICraftsCard';
 import { getMonumentRealImage } from '../data/monumentRealImages';
+import { resolveUniversalPlace } from '../utils/universalPlaceResolver';
 
 interface DestinationDetailPageProps {
   placeId: string;
@@ -76,7 +77,14 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
       setLoading(true);
       setError(null);
       try {
-        const data = getNearbyDiscoveryPlaceById(placeId) || getMumbaiDestinationById(placeId) || await api.getPlaceById(placeId);
+        let data = getNearbyDiscoveryPlaceById(placeId) || getMumbaiDestinationById(placeId) || resolveUniversalPlace(placeId);
+        if (!data) {
+          try {
+            data = await api.getPlaceById(placeId);
+          } catch (e) {
+            console.warn('[DestinationDetail] Remote lookup failed:', e);
+          }
+        }
         if (isMounted) {
           setPlace(data);
           if (data) {
@@ -155,8 +163,12 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
     );
   }
 
-  const lat = place.coordinates?.lat ?? (place.coordinates as any)?.latitude ?? 18.922;
-  const lng = place.coordinates?.lng ?? (place.coordinates as any)?.longitude ?? 72.8347;
+  const lat = place.coordinates?.lat ?? (place as any).lat ?? (place.coordinates as any)?.latitude ?? (place as any)?.latitude ?? 18.922;
+  const lng = place.coordinates?.lng ?? (place as any).lng ?? (place.coordinates as any)?.longitude ?? (place as any)?.longitude ?? 72.8347;
+
+  if (!place.coordinates || typeof place.coordinates.lat !== 'number') {
+    place.coordinates = { lat, lng };
+  }
 
   const serverStations = (place as any).nearby_stations;
   const railwayStations = Array.isArray(serverStations) && serverStations.length > 0

@@ -213,6 +213,9 @@ export const StateCitiesDirectory: React.FC<StateCitiesDirectoryProps> = ({
                         alt={state.name}
                         className="w-full h-full object-cover"
                         loading="lazy"
+                        onError={(e) => {
+                          e.currentTarget.src = 'https://images.unsplash.com/photo-1548013146-72479768bada?w=400&auto=format&fit=crop&q=80';
+                        }}
                       />
                       <div className="absolute inset-0 bg-black/20" />
                       <span className="absolute inset-0 flex items-center justify-center font-mono font-bold text-white text-[11px] drop-shadow-xs">
