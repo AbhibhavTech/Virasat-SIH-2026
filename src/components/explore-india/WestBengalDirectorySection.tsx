@@ -186,7 +186,7 @@ export const WestBengalDirectorySection: React.FC<WestBengalDirectorySectionProp
                       isSelected ? 'bg-rose-400/25 text-rose-200' : 'bg-stone-100 text-stone-600'
                     }`}
                   >
-                    {city.code.replace('IN-WB-CITY-', '')}
+                    {city.code.replace('IN-WB-CITY-', '').replace('IN-WB-', '')}
                   </span>
                 </div>
                 <div

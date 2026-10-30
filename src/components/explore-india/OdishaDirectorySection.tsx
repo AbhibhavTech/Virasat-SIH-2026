@@ -185,7 +185,7 @@ export const OdishaDirectorySection: React.FC<OdishaDirectorySectionProps> = ({
                       isSelected ? 'bg-amber-400/25 text-amber-200' : 'bg-stone-100 text-stone-600'
                     }`}
                   >
-                    {city.code.replace('IN-OR-CITY-', '')}
+                    {city.code.replace('IN-OD-CITY-', '').replace('IN-OR-CITY-', '').replace('IN-OD-', '').replace('IN-OR-', '')}
                   </span>
                 </div>
                 <div

@@ -186,7 +186,7 @@ export const MadhyaPradeshDirectorySection: React.FC<MadhyaPradeshDirectorySecti
                       isSelected ? 'bg-amber-400/25 text-amber-200' : 'bg-stone-100 text-stone-600'
                     }`}
                   >
-                    {city.code.replace('IN-MP-CITY-', '')}
+                    {city.code.replace('IN-MP-CITY-', '').replace('IN-MP-', '')}
                   </span>
                 </div>
                 <div
