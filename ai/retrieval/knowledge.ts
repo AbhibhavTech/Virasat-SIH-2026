@@ -2,6 +2,7 @@ import { heritageStamp, loadHeritages, heritageContext, cleanHeritage, matchHeri
 import fs from 'node:fs';
 import path from 'node:path';
 import { createHash } from 'node:crypto';
+import { discoverBharatDocuments, discoverBharatStamp } from './discoverBharat';
 
 export interface KnowledgeDocument {
   id: string; entity_id: string; name: string; city: string; state: string;
@@ -23,7 +24,12 @@ export function safeSourceUrl(value: unknown): string | null {
 }
 
 export function ingestKnowledge(force = false): { documents: KnowledgeDocument[]; changed: number } {
-  const stamp = `${fs.statSync(path.resolve(sourceFile)).mtimeMs}:${heritageStamp()}`;
+  const festivalFiles = ['data/festivals.json', 'data/festivals_master.json'];
+  const festivalStamp = festivalFiles.map(file => {
+    const full = path.resolve(file);
+    return fs.existsSync(full) ? `${file}:${fs.statSync(full).mtimeMs}` : `${file}:missing`;
+  }).join('|');
+  const stamp = `${fs.statSync(path.resolve(sourceFile)).mtimeMs}:${heritageStamp()}:${discoverBharatStamp()}:${festivalStamp}`;
   if (!force && cache?.stamp === stamp) return { documents: cache.documents, changed: 0 };
   let previous: KnowledgeDocument[] = [];
   try { previous = JSON.parse(fs.readFileSync(indexFile, 'utf8')); } catch { /* First ingestion. */ }
@@ -66,6 +72,32 @@ export function ingestKnowledge(force = false): { documents: KnowledgeDocument[]
       if (existing?.content_hash !== content_hash) changed++;
       documents.set(record.id, {...record, content_hash, ingested_at:existing?.content_hash === content_hash ? existing.ingested_at : new Date().toISOString()});
     }
+  }
+  for (const document of discoverBharatDocuments()) {
+    const record = { id: document.id, entity_id: document.entity_id, name: document.name, city: document.city, state: document.state,
+      category: `discover_bharat_${document.category}`, language: 'en', text: document.text.slice(0, 12000), source_url: null,
+      source_identifier: `data/discover_bharat/regions#${document.id}`, verified_at: null, review_status: document.review_status };
+    const content_hash = createHash('sha256').update(JSON.stringify(record)).digest('hex');
+    const existing = old.get(record.id);
+    if (existing?.content_hash !== content_hash) changed++;
+    documents.set(record.id, { ...record, content_hash, ingested_at: existing?.content_hash === content_hash ? existing.ingested_at : new Date().toISOString() });
+  }
+  const festivalPath = path.resolve('data/festivals_master.json');
+  if (fs.existsSync(festivalPath)) {
+    try {
+      const festivals = JSON.parse(fs.readFileSync(festivalPath, 'utf8'));
+      for (const festival of Array.isArray(festivals) ? festivals : []) {
+        if (!festival?.id || !festival?.name) continue;
+        const record = { id: `festival/${festival.id}`, entity_id: String(festival.id), name: String(festival.name), city: String(festival.primary_city || festival.city_or_venue || ''), state: String(festival.state || festival.state_or_region || ''),
+          category: 'festival', language: 'en', text: [festival.name, festival.description, festival.cultural_vibe, festival.typical_month, festival.typical_season, festival.date_rule, festival.primary_city, festival.state].filter(Boolean).join('\n').slice(0, 12000),
+          source_url: null, source_identifier: 'data/festivals_master.json', verified_at: typeof festival.last_verified === 'string' ? festival.last_verified : null,
+          review_status: String(festival.verification_status || (festival.is_date_verified ? 'date_verified_record' : 'needs_date_verification')) };
+        const content_hash = createHash('sha256').update(JSON.stringify(record)).digest('hex');
+        const existing = old.get(record.id);
+        if (existing?.content_hash !== content_hash) changed++;
+        documents.set(record.id, { ...record, content_hash, ingested_at: existing?.content_hash === content_hash ? existing.ingested_at : new Date().toISOString() });
+      }
+    } catch { /* A malformed optional source must not interrupt the rest of the tourism index. */ }
   }
   const result = [...documents.values()];
   fs.mkdirSync(path.dirname(indexFile), { recursive: true });

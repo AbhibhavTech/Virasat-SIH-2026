@@ -2,6 +2,7 @@ import { db } from '../../server/src/db/client';
 import fs from 'fs';
 import path from 'path';
 import { FEATURE_HELP, FEATURE_REGISTRY } from '../config/featureRegistry';
+import { loadDiscoverBharat } from '../retrieval/discoverBharat';
 
 export const declaration = {
   name: 'getSiteContent',
@@ -39,6 +40,17 @@ export async function execute(args: { feature?: keyof typeof FEATURE_REGISTRY; q
   }
   const pid = (args.place_id || '').toLowerCase().trim();
   const pname = (args.place_name || args.query || '').toLowerCase().trim();
+
+  const discoverMatch = loadDiscoverBharat().attractions.find(place =>
+    (pid && place.id.toLowerCase() === pid) || (pname && place.name.toLowerCase() === pname));
+  if (discoverMatch) return {
+    place_id: discoverMatch.id, name: discoverMatch.name, city: discoverMatch.city, state: discoverMatch.state,
+    category: discoverMatch.category, sub_categories: discoverMatch.sub_categories, summary: discoverMatch.summary,
+    details: discoverMatch.detail_page, is_hidden_gem: discoverMatch.is_hidden_gem,
+    verification_status: discoverMatch.verification_status, source: `Discover Bharat imported record (${discoverMatch.source_dataset})`,
+    operational_data_status: 'pending_verification', app_path: discoverMatch.url,
+    advisory: 'Use descriptions and facts as draft discovery content. Opening hours, fees, dates, transport details, and named nearby businesses are not confirmed as current.'
+  };
 
   // 1. Check place facts in db
   let placeRecord: any = null;

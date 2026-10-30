@@ -2,7 +2,7 @@ export type TaskProfile = { domain: 'general' | 'tourism' | 'auto'; complexity: 
 /** A routing hint, never a gate on which questions the model may answer. */
 export function taskProfile(message: string): TaskProfile {
   const general = /```|\b(debug|javascript|typescript|python|algorithm|equation|calculate|multiplied|algebra|photosynthesis|translate|summariz\w*|essay|poem|write|explain|science|programming|binary search)\b|समझाओ|गणित|अनुवाद/i.test(message);
-  const tourism = /\b(trip|itinerary|tourism|heritage|monument|hotel|flight|train|festival|visit|travel|temple|fort)\b|यात्रा|मंदिर|घूम|ghum|ghoom/i.test(message);
+  const tourism = /\b(trip|itinerary|tourism|heritage|monument|hotel|flight|train|festival|visit|travel|temple|fort|discover bharat|attraction|destination|nearby|hidden gems?|offbeat|wildlife|sanctuary|museum|restaurant|route|stay|beach|waterfall|city guide)\b|यात्रा|मंदिर|घूम|ghum|ghoom|छुपे|पर्यटन/i.test(message);
   return { domain: tourism ? 'tourism' : general ? 'general' : 'auto',
     complexity: message.length > 700 || /\b(prove|debug|optimi[sz]e|trade.?offs|step.by.step|multi.step|constraints)\b/i.test(message) ? 'complex' : 'standard' };
 }

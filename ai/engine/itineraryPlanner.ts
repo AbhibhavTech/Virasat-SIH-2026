@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { TripMemoryState } from './conversationMemory';
+import { loadDiscoverBharat } from '../retrieval/discoverBharat';
 
 let cachedTourismDb: any = null;
 function getTourismDatabase() {
@@ -124,6 +125,28 @@ export function generateSmartItinerary(state: TripMemoryState): GeneratedTripPla
       }
       if (availablePlaces.length > 0) break;
     }
+  }
+
+  // Use newly imported Discover Bharat attraction records when the selected
+  // destination matches one of their city cards. Keep draft review status and
+  // null operational fields visible in the planner output.
+  const discover = loadDiscoverBharat();
+  const discoverCity = discover.cities.find(city => {
+    const cityKey = city.name.toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+    return cityKey === cleanDest || city.id.toLowerCase() === cleanDest || city.id.split('-').slice(1).join('-') === cleanDest;
+  });
+  if (discoverCity) {
+    foundCityName = discoverCity.name;
+    foundStateName = discoverCity.state;
+    const discoverPlaces = discover.attractions.filter(place => place.city_id === discoverCity.id).map(place => ({
+      id: place.id, name: place.name, category: place.category, summary: place.summary,
+      is_hidden_gem: place.is_hidden_gem, verification_status: place.verification_status,
+      source: 'Discover Bharat editorial draft', timings: undefined, entry_fee: undefined,
+      recommended_duration: undefined, coordinates: undefined,
+    }));
+    const discoverNames = new Set(discoverPlaces.map(place => place.name.toLowerCase()));
+    const existingPlaces = availablePlaces.filter(place => !discoverNames.has(place.name.toLowerCase()));
+    availablePlaces.splice(0, availablePlaces.length, ...discoverPlaces, ...existingPlaces);
   }
 
   // If a specific monument was discussed in active conversation, start Day 1 with it

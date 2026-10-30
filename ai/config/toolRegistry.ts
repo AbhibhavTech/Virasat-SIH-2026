@@ -1,4 +1,5 @@
 import * as searchTouristPlaces from '../tools/searchTouristPlaces';
+import * as searchDiscoverBharat from '../tools/searchDiscoverBharat';
 import { validToolInput, consequentialTools, privateTools } from './toolSafety';
 import * as searchHeritageKnowledge from '../tools/searchHeritageKnowledge';
 import * as searchHiddenGems from '../tools/searchHiddenGems';
@@ -32,6 +33,7 @@ export interface ToolModule {
 export const toolRegistry: Record<string, ToolModule> = {
   searchHeritageKnowledge,
   searchTouristPlaces,
+  searchDiscoverBharat,
   searchHiddenGems,
   searchHotels,
   searchRestaurants,

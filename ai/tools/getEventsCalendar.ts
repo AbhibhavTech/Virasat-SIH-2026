@@ -3,7 +3,7 @@ import path from 'path';
 
 export const declaration = {
   name: 'getEventsCalendar',
-  description: 'Discover verified cultural festivals, temple celebrations, heritage fairs, and seasonal arts events across all 36 Indian states and union territories.',
+  description: 'Search Virasat festival records from the catalogue and database. These records are not all live schedules; distinguish a usual season from a date verified for the requested year.',
   parameters: {
     type: 'OBJECT',
     properties: {
@@ -32,24 +32,31 @@ export const declaration = {
 };
 
 let cachedFestivals: any[] | null = null;
+let cachedStamp = '';
 function getVerifiedFestivalsList(): any[] {
-  if (!cachedFestivals) {
-    const candidates = [
-      path.resolve(process.cwd(), 'data/festivals.json'),
-      path.resolve(process.cwd(), 'dist/data/festivals.json'),
-    ];
-    for (const p of candidates) {
-      if (fs.existsSync(p)) {
-        try {
-          cachedFestivals = JSON.parse(fs.readFileSync(p, 'utf-8'));
-          break;
-        } catch (err) {
-          console.error('[AI Tool] Failed to read festivals.json:', err);
-        }
+  const sourceCandidates = [
+    path.resolve(process.cwd(), 'data/festivals.json'),
+    path.resolve(process.cwd(), 'data/festivals_master.json'),
+  ].filter(file => fs.existsSync(file));
+  const candidates = sourceCandidates.length ? sourceCandidates : [
+    path.resolve(process.cwd(), 'dist/data/festivals.json'),
+    path.resolve(process.cwd(), 'dist/data/festivals_master.json'),
+  ].filter(file => fs.existsSync(file));
+  const stamp = candidates.map(file => `${file}:${fs.statSync(file).mtimeMs}`).join('|');
+  if (cachedFestivals && cachedStamp === stamp) return cachedFestivals;
+  const byId = new Map<string, any>();
+  for (const file of candidates) {
+    try {
+      const source = JSON.parse(fs.readFileSync(file, 'utf-8'));
+      if (Array.isArray(source)) for (const record of source) {
+        if (!record?.id || !record?.name) continue;
+        const prior = byId.get(String(record.id)) || {};
+        byId.set(String(record.id), { ...prior, ...record });
       }
-    }
-    if (!cachedFestivals) cachedFestivals = [];
+    } catch { /* Skip a bad optional file and keep other catalogue sources available. */ }
   }
+  cachedFestivals = [...byId.values()];
+  cachedStamp = stamp;
   return cachedFestivals;
 }
 
@@ -265,7 +272,7 @@ export async function execute(args: {
       cultural_significance: f.description,
       cultural_vibe: f.cultural_vibe || 'Cultural celebration and living heritage',
       associated_places: f.associated_places || [],
-      official_source: f.official_source_url || f.source_url || 'Ministry of Culture / State Tourism',
+      official_source: f.official_source_url || f.source_url || null,
       verification_status: f.verification_status || (f.is_date_verified ? 'verified' : 'unverified'),
     };
   });
