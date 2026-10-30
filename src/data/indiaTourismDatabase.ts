@@ -14723,6 +14723,7 @@ export const INDIA_TOURISM_DATABASE: any = {
           "state": "Bihar",
           "state_id": "bihar",
           "region": "Eastern India",
+          "hero_image_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b2?w=1200&auto=format&fit=crop&q=80",
           "places_count": 1,
           "heritage": [
             {
@@ -14907,6 +14908,7 @@ export const INDIA_TOURISM_DATABASE: any = {
           "state": "Bihar",
           "state_id": "bihar",
           "region": "Eastern India",
+          "hero_image_url": "https://images.unsplash.com/photo-1548013146-72479768bada?w=1200&auto=format&fit=crop&q=80",
           "places_count": 1,
           "heritage": [],
           "monuments": [
