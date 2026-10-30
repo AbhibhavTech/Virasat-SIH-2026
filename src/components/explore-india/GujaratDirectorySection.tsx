@@ -173,7 +173,7 @@ export const GujaratDirectorySection: React.FC<GujaratDirectorySectionProps> = (
                       isSelected ? 'bg-amber-400/25 text-amber-200' : 'bg-stone-100 text-stone-600'
                     }`}
                   >
-                    {city.code.replace('IN-GJ-CITY-', '')}
+                    {city.code.replace('IN-GJ-CITY-', '').replace('IN-GJ-', '')}
                   </span>
                 </div>
                 <div

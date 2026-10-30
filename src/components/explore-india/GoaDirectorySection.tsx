@@ -35,7 +35,7 @@ export const GoaDirectorySection: React.FC<GoaDirectorySectionProps> = ({
   onSelectDistrict,
   onOpenAIChat,
 }) => {
-  const [selectedDistrictId, setSelectedDistrictId] = useState<string>('north-goa');
+  const [selectedDistrictId, setSelectedDistrictId] = useState<string>('goa');
   const [activeTab, setActiveTab] = useState<'attractions' | 'stays' | 'dining'>('attractions');
   const [attractionFilter, setAttractionFilter] = useState<'all' | 'core' | 'hidden'>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');

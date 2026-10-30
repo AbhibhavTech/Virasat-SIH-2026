@@ -48,6 +48,114 @@ export interface GoaDistrict {
 
 export const GOA_DIRECTORY: GoaDistrict[] = [
   {
+    id: 'goa',
+    code: 'IN-GA-GOA-ULTIMATE',
+    name: 'Goa (Panaji & Coastal Hubs)',
+    nickname: "India's Coastal Paradise & Latin Quarter",
+    tagline: 'Baroque UNESCO churches, sunlit sands, Latin quarter alleys & Indo-Portuguese gastronomy',
+    accentColor: '#0284C7',
+    bgGradient: 'from-amber-50 via-sky-50/40 to-teal-50/30',
+    coverImage: '/images/goa/bom-jesus.png',
+    photoCredit: 'Discover Bharat Contributor / Basilica of Bom Jesus & Fontainhas',
+    flashcardBlurb:
+      "India's coastal paradise, celebrated for its golden sand beaches, Portuguese colonial Baroque architecture, vibrant nightlife, and distinct Indo-Latin culinary heritage.",
+    topStays: [
+      { name: 'Taj Exotica Resort & Spa', category: 'Benaulim — Mediterranean-style Luxury Beach Resort' },
+      { name: 'The Leela Goa', category: 'Cavelossim — 5-Star Beachfront Luxury Estate' },
+      { name: 'Ahilya by the Sea', category: 'Dolceman - Candolim — Boutique Heritage Coastal Stay' },
+    ],
+    dining: {
+      veg: [
+        {
+          restaurant: 'Gunpowder',
+          location: 'Assagao',
+          specialties: 'South Indian coastal fusion in a jungle garden setting',
+        },
+        {
+          restaurant: 'Cafe Bhonsle',
+          location: 'Panaji',
+          specialties: 'Local Goan vegetarian breakfast like Samosa misal and puri bhaji',
+        },
+      ],
+      nonVeg: [
+        {
+          restaurant: "Fisherman's Wharf",
+          location: 'Cavelossim',
+          specialties: 'Riverside Goan prawn curry and bebinca',
+        },
+        {
+          restaurant: "Mum's Kitchen",
+          location: 'Panaji',
+          specialties: 'Authentic traditional Goan Catholic house recipes like Xacuti and Sorpotel',
+        },
+      ],
+      peacefulNote:
+        'Goan cuisine marries Portuguese colonial zest with coastal Konkani spices, featuring fiery vindaloo, coconut-infused fish curries, and multi-layered sweet bebinca.',
+    },
+    attractions: [
+      {
+        id: 'IN-GA-GOA-ATT-001',
+        name: 'Basilica of Bom Jesus & Old Goa Churches',
+        category: 'Heritage: UNESCO World Heritage, Christianity',
+        timings: '09:00–18:30',
+        fee: { domestic: 'Free', foreign: 'Free' },
+        isHiddenGem: false,
+        image: '/images/goa/bom-jesus.png',
+        photoCredit: 'User Photo / Basilica of Bom Jesus',
+        summary:
+          '16th-century Baroque church holding the mortal remains of St. Francis Xavier.',
+      },
+      {
+        id: 'IN-GA-GOA-ATT-002',
+        name: 'Fort Aguada',
+        category: 'Heritage: Palaces & Forts',
+        timings: '09:30–18:00',
+        fee: { domestic: 'INR 25', foreign: 'INR 25' },
+        isHiddenGem: false,
+        image: '/images/goa/fort-aguada.png',
+        photoCredit: 'User Photo / Fort Aguada Coastal Ramparts',
+        summary:
+          '17th-century Portuguese fort and lighthouse overlooking the confluence of the Mandovi River and Arabian Sea.',
+      },
+      {
+        id: 'IN-GA-GOA-ATT-003',
+        name: 'Palolem & Anjuna Beaches',
+        category: 'Nature / Adventure: Beaches',
+        timings: 'Open 24 hours',
+        fee: { domestic: 'Free', foreign: 'Free' },
+        isHiddenGem: false,
+        image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9c/Palolem_Beach%2C_South_Goa.jpg/1280px-Palolem_Beach%2C_South_Goa.jpg',
+        photoCredit: 'Wikimedia Commons / Palolem Beach Crescent',
+        summary:
+          'Iconic contrasting coastal stretches ranging from the serene southern crescent of Palolem to the rocky northern bohemian vibe of Anjuna.',
+      },
+      {
+        id: 'IN-GA-GOA-GEM-001',
+        name: 'Chorla Ghat',
+        category: 'Nature / Adventure: Hills & Mountains',
+        timings: 'Daylight hours',
+        fee: { domestic: 'Free', foreign: 'Free' },
+        isHiddenGem: true,
+        image: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&auto=format&fit=crop&q=80',
+        photoCredit: 'Unsplash / Chorla Ghat Rainforest',
+        summary:
+          'A misty rainforest plateau at the tri-junction of Goa, Maharashtra, and Karnataka featuring hidden waterfalls and rare wildlife.',
+      },
+      {
+        id: 'IN-GA-GOA-GEM-002',
+        name: 'Fontainhas Latin Quarter',
+        category: 'Heritage: Architecture',
+        timings: 'Walking tours anytime',
+        fee: { domestic: 'Free', foreign: 'Free' },
+        isHiddenGem: true,
+        image: 'https://images.unsplash.com/photo-1587974928442-77dc3e0dba72?w=800&auto=format&fit=crop&q=80',
+        photoCredit: 'Unsplash / Fontainhas Latin Quarter',
+        summary:
+          'Panaji\'s oldest heritage ward filled with narrow winding lanes, bright pastel-colored colonial houses with shell-window panes.',
+      },
+    ],
+  },
+  {
     id: 'north-goa',
     code: 'IN-GA-DIST-NGA',
     name: 'North Goa',

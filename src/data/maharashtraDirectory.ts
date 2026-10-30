@@ -61,7 +61,7 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
     coverImage: "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80",
     photoCredit: "Discover Bharat Contributor / Gateway of India Basalt Arch",
     flashcardBlurb:
-      "India's vibrant megacity and commercial powerhouse, featuring colonial Victorian architecture, art deco streetscapes, thriving coastal biodiversity, and deep-rooted heritage enclaves.",
+      "India's financial powerhouse, entertainment capital, and coastal megacity, blending Victorian Gothic architecture, art deco streetscapes, thriving coastal biodiversity, and deep-rooted heritage enclaves.",
     topStays: [
       {
         name: "The Taj Mahal Palace",
