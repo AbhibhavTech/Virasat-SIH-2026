@@ -211,7 +211,7 @@ export const MASTER_TOURISM_PLACES: MasterTourismPlace[] = [
     "verification_status": "verified",
     "last_verified": "September 2026",
     "summary": "Historic 96-km narrow-gauge railway climbing through 102 tunnels and over 800 stone arch bridges from the Himalayan foothills to Shimla.",
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/KSR_Steam_special_at_Taradevi_05-02-13_56.jpeg"
+    "thumbnail_url": "/images/kalka-shimla-railway-4k.jpg"
   },
   {
     "id": "kedarnath-temple",

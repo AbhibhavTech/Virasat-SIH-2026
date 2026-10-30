@@ -119,7 +119,7 @@ export const HIMACHAL_PRADESH_DIRECTORY: HimachalCity[] = [
         timings: 'Daily scheduled mountain train departures',
         fee: { domestic: 'INR 50–300 depending on train class', foreign: 'INR 50–300 depending on train class' },
         isHiddenGem: false,
-        image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Kalka_Shimla_Railway_Train.jpg/1280px-Kalka_Shimla_Railway_Train.jpg',
+        image: '/images/kalka-shimla-railway-4k.jpg',
         photoCredit: 'Wikimedia Commons',
         summary:
           '1903 engineering masterpiece rising from the plains to 2,076 m across 102 tunnels, 864 arched stone bridges, and 919 sharp curves through pine-fragrant foothills.',

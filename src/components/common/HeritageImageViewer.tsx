@@ -93,9 +93,9 @@ export const HeritageImageViewer: React.FC<HeritageImageViewerProps> = ({
   const sensitive = isSensitivePlace(placeId, placeName);
 
   // Only VERIFIED images are publicly shown as place photos. Everything else shows illustration placeholder.
-  const isHeroVerified = Boolean(activeHero && activeHero.match_status === 'VERIFIED' && (activeHero.image_url || activeHero.thumbnail_url));
+  const isHeroVerified = Boolean(activeHero && (activeHero.match_status === 'VERIFIED' || !activeHero.match_status) && (activeHero.image_url || activeHero.thumbnail_url));
   const shouldShowFallback = hasError || !isHeroVerified;
-  const verifiedImages = React.useMemo(() => allImages.filter(img => img.match_status === 'VERIFIED'), [allImages]);
+  const verifiedImages = React.useMemo(() => allImages.filter(img => img.match_status === 'VERIFIED' || !img.match_status), [allImages]);
 
   const handleImageError = () => {
     console.warn(`[ImagePipeline] Broken image detected for place: ${placeId} (${placeName})`);

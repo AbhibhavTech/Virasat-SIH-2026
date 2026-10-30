@@ -567,10 +567,9 @@
     "nearest_transport": {
       "railway_station": "Shimla (SML) / Kalka (KLK)"
     },
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/d/d9/KSR_Steam_special_at_Taradevi_05-02-13_56.jpeg",
+    "thumbnail_url": "/images/kalka-shimla-railway-4k.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/d/d9/KSR_Steam_special_at_Taradevi_05-02-13_56.jpeg",
-      "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&auto=format&fit=crop&q=80"
+      "/images/kalka-shimla-railway-4k.jpg"
     ],
     "model_3d": {
       "available": true,
