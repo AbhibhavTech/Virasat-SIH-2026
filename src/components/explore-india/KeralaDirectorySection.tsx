@@ -176,7 +176,7 @@ export const KeralaDirectorySection: React.FC<KeralaDirectorySectionProps> = ({
                       isSelected ? 'bg-emerald-400/25 text-emerald-200' : 'bg-stone-100 text-stone-600'
                     }`}
                   >
-                    {city.code.replace('IN-KL-CITY-', '')}
+                    {city.code.replace('IN-KL-CITY-', '').replace('IN-KL-', '')}
                   </span>
                 </div>
                 <div

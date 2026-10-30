@@ -177,7 +177,7 @@ export const KarnatakaDirectorySection: React.FC<KarnatakaDirectorySectionProps>
                       isSelected ? 'bg-amber-400/25 text-amber-200' : 'bg-stone-100 text-stone-600'
                     }`}
                   >
-                    {city.code.replace('IN-KA-CITY-', '')}
+                    {city.code.replace('IN-KA-CITY-', '').replace('IN-KA-', '')}
                   </span>
                 </div>
                 <div

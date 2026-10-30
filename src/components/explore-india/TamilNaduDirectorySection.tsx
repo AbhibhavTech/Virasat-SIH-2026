@@ -177,7 +177,7 @@ export const TamilNaduDirectorySection: React.FC<TamilNaduDirectorySectionProps>
                       isSelected ? 'bg-amber-400/25 text-amber-200' : 'bg-stone-100 text-stone-600'
                     }`}
                   >
-                    {city.code.replace('IN-TN-CITY-', '')}
+                    {city.code.replace('IN-TN-CITY-', '').replace('IN-TN-', '')}
                   </span>
                 </div>
                 <div

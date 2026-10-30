@@ -184,7 +184,7 @@ export const TelanganaDirectorySection: React.FC<TelanganaDirectorySectionProps>
                       isSelected ? 'bg-amber-400/25 text-amber-100' : 'bg-stone-100 text-stone-600'
                     }`}
                   >
-                    {city.code.replace('IN-TG-CITY-', '')}
+                    {city.code.replace('IN-TG-CITY-', '').replace('IN-TG-', '')}
                   </span>
                 </div>
                 <div
