@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useLayoutEffect } from 'react';
 import { BrowserRouter, useNavigate, useLocation } from 'react-router-dom';
 import { QueryClientProvider } from '@tanstack/react-query';
 import { queryClient } from './app/queryClient';
@@ -62,6 +62,18 @@ const AppContent: React.FC = () => {
   }, [user, loginWithGoogleDirect]);
 
   const activeTab: NavTab = getActiveTabFromPath(location.pathname);
+
+  // Do not restore the previous page's scroll offset when users change tabs,
+  // open a route directly, or reload the application.
+  useEffect(() => {
+    window.history.scrollRestoration = 'manual';
+  }, []);
+
+  useLayoutEffect(() => {
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' as ScrollBehavior });
+  }, [location.pathname]);
 
   useEffect(() => {
     safeLocalStorage.setItem(SELECTED_CITY_STORAGE_KEY, selectedCity);
