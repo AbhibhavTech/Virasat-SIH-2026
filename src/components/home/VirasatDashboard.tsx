@@ -1395,7 +1395,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
               {[
-                { name: 'Kharghar / Panvel', region: 'Navi Mumbai & Raigad', lat: 19.033, lng: 73.064 },
+                { name: 'Hyderabad', region: 'Deccan forts & old city', lat: 17.385, lng: 78.4867 },
                 { name: 'Mumbai Coast', region: 'Colaba, Fort & Marine Drive', lat: 18.922, lng: 72.8347 },
                 { name: 'Delhi NCR', region: 'Capital heritage', lat: 28.6139, lng: 77.209 },
                 { name: 'Jaipur', region: 'Royal Rajasthan', lat: 26.9124, lng: 75.7873 },
@@ -1436,7 +1436,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
             </p>
             <div className="flex flex-wrap items-center gap-2 pt-1">
               {[
-                { name: 'Kharghar / Panvel (Navi Mumbai)', lat: 19.033, lng: 73.064 },
+                { name: 'Hyderabad Heritage', lat: 17.385, lng: 78.4867 },
                 { name: 'Mumbai Coast', lat: 18.922, lng: 72.8347 },
                 { name: 'Delhi NCR', lat: 28.6139, lng: 77.209 },
                 { name: 'Jaipur / Amer', lat: 26.9124, lng: 75.7873 },
