@@ -7,7 +7,6 @@ import {
   Compass,
   Map,
   MessageSquare,
-  Sparkles,
   Star,
   Clock,
   ChevronLeft,
@@ -895,7 +894,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
             className="absolute inset-0 hidden sm:block pointer-events-none z-[2]"
             style={{
               background:
-                'linear-gradient(to right, rgba(255, 255, 255, 0.40) 0%, rgba(255, 255, 255, 0.16) 32%, rgba(255, 255, 255, 0.03) 55%, transparent 75%)',
+                'linear-gradient(to right, rgba(255, 255, 255, 0.68) 0%, rgba(255, 255, 255, 0.40) 38%, rgba(255, 255, 255, 0.08) 65%, transparent 80%)',
             }}
           />
 
@@ -904,7 +903,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
             className="absolute inset-0 sm:hidden pointer-events-none z-[2]"
             style={{
               background:
-                'linear-gradient(to bottom, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.18) 40%, transparent 75%)',
+                'linear-gradient(to bottom, rgba(255, 255, 255, 0.72) 0%, rgba(255, 255, 255, 0.40) 46%, transparent 78%)',
             }}
           />
 
@@ -941,19 +940,21 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
         <div className="relative z-10 w-full max-w-2xl sm:max-w-3xl lg:max-w-4xl pt-2 sm:pt-4">
           {/* Heading, Search, Chips & Verified Tourism Trust Strip */}
           <div>
-            <IncredibleIndiaBadge className="mb-3 sm:mb-4" />
+            <div className="mb-4 sm:mb-5 w-fit max-w-full rounded-2xl border border-white/90 bg-[#FFFCF7]/92 p-3 shadow-md backdrop-blur-md sm:p-4">
+              <IncredibleIndiaBadge className="mb-3 sm:mb-4" />
 
-            <h1 className="font-serif text-2xl sm:text-4xl lg:text-[40px] xl:text-[46px] font-bold tracking-tight text-[#0B192C] leading-[1.15] drop-shadow-[0_1px_2px_rgba(255,255,255,0.8)]">
-              <span>Discover India&apos;s</span>
-              <span className="block mt-1 sm:mt-1.5">
-                <span className="text-[#FF671F]">Living</span>{' '}
-                <span className="text-[#046A38]">Heritage</span>
-              </span>
-            </h1>
+              <h1 className="font-serif text-3xl sm:text-4xl lg:text-[40px] xl:text-[46px] font-bold tracking-tight text-[#0B192C] leading-[1.15]">
+                <span>Discover India&apos;s</span>
+                <span className="block mt-1 sm:mt-1.5">
+                  <span className="text-[#FF671F]">Living</span>{' '}
+                  <span className="text-[#046A38]">Heritage</span>
+                </span>
+              </h1>
 
-            <p className="text-xs sm:text-sm md:text-base text-stone-700 max-w-xl mt-2.5 sm:mt-3.5 leading-relaxed font-medium drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]">
-              Explore monuments, cultures, natural wonders and hidden gems across every region of India.
-            </p>
+              <p className="text-sm sm:text-base text-[#303846] max-w-xl mt-2.5 sm:mt-3.5 leading-relaxed font-semibold">
+                Explore monuments, cultures, natural wonders and hidden gems across every region of India.
+              </p>
+            </div>
 
             {/* Universal Search Input Bar with Live Suggestions Dropdown */}
             <div ref={searchContainerRef} className="relative mt-5 sm:mt-6 max-w-xl xl:max-w-2xl">
@@ -1211,80 +1212,15 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
           </div>
         </div>
 
-        {/* Centered Slideshow Navigation Bar (Free of any overlap with Virasat AI) */}
-        <div className="absolute bottom-4 sm:bottom-5 left-1/2 -translate-x-1/2 z-20 flex items-center gap-2 rounded-full border border-white/90 bg-white/95 px-3.5 py-1.5 sm:px-4 sm:py-2 shadow-lg backdrop-blur-md">
-          <button
-            type="button"
-            aria-label="Previous destination slide"
-            onClick={() => setActiveSlideIdx((index) => (index - 1 + HERO_HERITAGE_SLIDES.length) % HERO_HERITAGE_SLIDES.length)}
-            className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full text-stone-700 transition hover:bg-stone-100 cursor-pointer"
-          >
-            <ChevronLeft className="h-4 w-4 sm:h-4.5 sm:w-4.5" />
-          </button>
-          <div className="flex items-center gap-1.5 px-1 sm:px-1.5" aria-label="Featured destination slideshow">
-            {HERO_HERITAGE_SLIDES.map((slide, index) => (
-              <button
-                key={slide.id}
-                type="button"
-                aria-label={`Show ${slide.name}`}
-                onClick={() => setActiveSlideIdx(index)}
-                title={slide.name}
-                className={`h-2 sm:h-2.5 rounded-full transition-all cursor-pointer ${
-                  index === activeSlideIdx ? 'w-6 sm:w-7 bg-[#FF671F]' : 'w-2 sm:w-2.5 bg-stone-300 hover:bg-stone-400'
-                }`}
-              />
-            ))}
-          </div>
-          <button
-            type="button"
-            aria-label="Next destination slide"
-            onClick={() => setActiveSlideIdx((index) => (index + 1) % HERO_HERITAGE_SLIDES.length)}
-            className="flex h-7 w-7 sm:h-8 sm:w-8 items-center justify-center rounded-full text-stone-700 transition hover:bg-stone-100 cursor-pointer"
-          >
-            <ChevronRight className="h-4 w-4 sm:h-4.5 sm:w-4.5" />
-          </button>
-          <span className="hidden md:flex items-center gap-1.5 pl-2 text-xs font-bold text-stone-800 border-l border-stone-200 ml-1.5">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-            </span>
-            <span>{HERO_HERITAGE_SLIDES[activeSlideIdx].name}</span>
-          </span>
+        {/* Small caption identifies the current slideshow image without covering it. */}
+        <div
+          className="absolute bottom-3 sm:bottom-4 left-1/2 -translate-x-1/2 z-20 max-w-[calc(100%_-_1.5rem)] truncate rounded-full border border-white/30 bg-stone-950/65 px-3 py-1 text-[10px] font-semibold text-white shadow-sm backdrop-blur-sm sm:px-3.5 sm:py-1.5 sm:text-xs"
+          aria-live="polite"
+          title={HERO_HERITAGE_SLIDES[activeSlideIdx].name}
+        >
+            {HERO_HERITAGE_SLIDES[activeSlideIdx].name}
         </div>
 
-        {/* Bottom Right Floating AI Assistant Quick Trigger */}
-        <button
-          type="button"
-          onClick={() => onNavigateTab('ai')}
-          className="hidden sm:flex absolute bottom-4 right-4 sm:bottom-5 sm:right-5 lg:bottom-6 lg:right-6 bg-white/95 hover:bg-white backdrop-blur-md px-3.5 py-2.5 sm:px-4 sm:py-3 rounded-2xl border border-white/90 hover:border-orange-300 shadow-md hover:shadow-lg transition-all duration-200 items-center gap-3 text-stone-800 z-20 cursor-pointer group active:scale-95 text-left"
-          title="Open Virasat AI"
-        >
-          {/* AI Logo Icon */}
-          <div className="relative">
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-[#FF671F] to-[#046A38] p-0.5 shadow-xs flex items-center justify-center text-white shrink-0 group-hover:scale-105 transition-transform">
-              <div className="w-full h-full bg-white rounded-[10px] flex items-center justify-center">
-                <Bot className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-[#FF671F]" />
-              </div>
-            </div>
-            <span className="absolute -top-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-emerald-500 ring-2 ring-white animate-pulse" />
-          </div>
-
-          {/* AI Assistant Label & Action */}
-          <div className="leading-tight pr-1">
-            <div className="flex items-center gap-1.5">
-              <span className="text-xs font-bold text-[#0B192C] tracking-tight group-hover:text-[#FF671F] transition-colors flex items-center gap-1">
-                Virasat AI <Sparkles className="w-3.5 h-3.5 text-[#FF671F]" />
-              </span>
-              <span className="text-[9px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.2 rounded-full border border-emerald-200">
-                Online
-              </span>
-            </div>
-            <div className="text-[11px] text-stone-500 font-medium mt-0.5 flex items-center gap-1">
-              <span>Ask Heritage AI</span>
-              <ArrowRight className="w-3 h-3 text-stone-400 group-hover:text-[#FF671F] group-hover:translate-x-0.5 transition-all" />
-            </div>
-          </div>
-        </button>
       </section>
 
       <section className="flex flex-col gap-4 rounded-2xl border border-sky-100 bg-gradient-to-r from-sky-50 via-white to-orange-50 p-4 shadow-sm sm:flex-row sm:items-center sm:justify-between sm:p-5" aria-label="Arunachal Pradesh permit guide">
