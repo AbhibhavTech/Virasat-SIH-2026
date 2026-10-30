@@ -24,6 +24,7 @@ import {
 } from 'lucide-react';
 import { HeritageRouteAnalysisResult, HeritageRouteStop, HeritageRouteSegment } from '../../types';
 import { api } from '../../services/api';
+import { SACRED_PILGRIMAGE_CIRCUITS } from '../../data/sacredPilgrimageCircuits';
 
 export interface SelectedMonumentItem {
   id: string;
@@ -312,6 +313,23 @@ export const CURATED_HERITAGE_CIRCUITS: Array<{
       },
     ],
   },
+  // 8 Sacred Pilgrimage Circuits of India
+  ...SACRED_PILGRIMAGE_CIRCUITS.map((sc) => ({
+    id: sc.id,
+    title: `${sc.emoji} ${sc.title}`,
+    region: sc.traditionBadge,
+    city: sc.sites[0]?.city || 'India',
+    badge: sc.traditionBadge,
+    description: sc.description,
+    monuments: sc.sites.map((s) => ({
+      id: s.id,
+      name: s.name,
+      city: s.city,
+      lat: s.coordinates.lat,
+      lng: s.coordinates.lng,
+      summary: `${s.spiritualSignificance} Hours: ${s.visitingHours}. Entry: ${s.entryFee}.`,
+    })),
+  })),
 ];
 
 export const HeritageRouteAnalyzer: React.FC<HeritageRouteAnalyzerProps> = ({

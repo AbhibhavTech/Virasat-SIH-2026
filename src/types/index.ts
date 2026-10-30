@@ -945,8 +945,8 @@ export interface LocationSuggestion {
   id: string;
   name: string;
   code?: string;
-  type?: 'station' | 'heritage' | 'place' | 'city' | 'hidden_gem' | 'current_location' | 'hotel' | 'festival' | 'state' | 'airport' | 'market';
-  categoryType: 'station' | 'heritage' | 'place' | 'city' | 'hidden_gem' | 'current_location' | 'hotel' | 'festival' | 'state' | 'airport' | 'market';
+  type?: 'station' | 'heritage' | 'place' | 'city' | 'hidden_gem' | 'current_location' | 'hotel' | 'festival' | 'state' | 'airport' | 'market' | 'sacred_site';
+  categoryType: 'station' | 'heritage' | 'place' | 'city' | 'hidden_gem' | 'current_location' | 'hotel' | 'festival' | 'state' | 'airport' | 'market' | 'sacred_site';
   city?: string;
   state?: string;
   lat: number;

@@ -29,6 +29,10 @@ import {
   CURATED_HERITAGE_CIRCUITS,
 } from './HeritageRouteAnalyzer';
 import {
+  getAllSacredSites,
+  SacredSite,
+} from '../../data/sacredPilgrimageCircuits';
+import {
   MapPin,
   Search,
   Layers,
@@ -78,7 +82,7 @@ function parseDualPointsQuery(query: string): { originQuery: string; destQuery: 
 export interface MapPointItem {
   id: string;
   name: string;
-  type: 'heritage' | 'hidden_gem' | 'station' | 'hotel' | 'dining';
+  type: 'heritage' | 'hidden_gem' | 'station' | 'hotel' | 'dining' | 'sacred_site';
   lat: number;
   lng: number;
   city?: string;
@@ -147,6 +151,8 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
   const [showStations, setShowStations] = useState(false); // Default HIDDEN
   const [showHotels, setShowHotels] = useState(true);
   const [showDining, setShowDining] = useState(true);
+  const [showSacredCircuits, setShowSacredCircuits] = useState(true);
+  const sacredSitesList = useMemo(() => getAllSacredSites(), []);
 
   // Google Maps Live Place Intel Drawer State
   const [mapsIntelPoint, setMapsIntelPoint] = useState<MapPointItem | null>(null);
@@ -581,6 +587,60 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
           </button>
         </div>
       `;
+    } else if (item.type === 'sacred_site') {
+      const shrine: SacredSite = item.raw;
+      card.innerHTML = `
+        <div style="position: relative; margin: -12px -12px 10px -12px; border-top-left-radius: 12px; border-top-right-radius: 12px; overflow: hidden; height: 115px; background: #1e293b;">
+          <img src="${shrine.imageUrl}" alt="${shrine.name}" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1544816155-12df9643f363?w=800&auto=format&fit=crop&q=80'" />
+          <span style="position: absolute; bottom: 8px; left: 8px; font-size: 10px; font-weight: 800; background: ${shrine.badgeColor || '#d97706'}; color: #fff; padding: 2px 7px; border-radius: 6px; text-transform: uppercase;">
+            ${shrine.emoji} ${shrine.traditionLabel}
+          </span>
+        </div>
+        <h4 style="font-weight: 800; font-size: 14px; margin: 0 0 2px 0; color: #0f172a; line-height: 1.25;">${shrine.name}</h4>
+        <div style="font-size: 10px; color: #64748b; font-weight: 600; margin-bottom: 2px;">${shrine.vernacularName || ''}</div>
+        <div style="font-size: 11px; color: #64748b; margin-bottom: 6px;">${shrine.city}, ${shrine.state} • <span style="color:#d97706; font-weight:700;">${shrine.circuitName}</span></div>
+
+        <div style="background: #fffbeb; border: 1px solid #fef3c7; border-radius: 8px; padding: 6px 8px; margin-bottom: 8px; font-size: 11px; color: #92400e; line-height: 1.35;">
+          ${shrine.spiritualSignificance}
+        </div>
+
+        <div style="display: flex; gap: 8px; margin-bottom: 8px; font-size: 10px; background: #f8fafc; padding: 5px 8px; border-radius: 6px; border: 1px solid #e2e8f0;">
+          <div style="flex: 1;">
+            <div style="font-size: 8px; text-transform: uppercase; color: #94a3b8; font-weight: 700;">Timings</div>
+            <div style="font-weight: 600; color: #334155; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${shrine.visitingHours}</div>
+          </div>
+          <div style="border-left: 1px solid #cbd5e1; padding-left: 8px;">
+            <div style="font-size: 8px; text-transform: uppercase; color: #94a3b8; font-weight: 700;">Entry</div>
+            <div style="font-weight: 700; color: #059669;">${shrine.entryFee.includes('Free') ? 'Free' : shrine.entryFee}</div>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 6px;">
+          <button id="btn-orig-${shrine.id}" style="background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; border-radius: 6px; padding: 5px; font-size: 10px; font-weight: 700; cursor: pointer;">
+            🚩 Start Route
+          </button>
+          <button id="btn-dest-${shrine.id}" style="background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; border-radius: 6px; padding: 5px; font-size: 10px; font-weight: 700; cursor: pointer;">
+            🎯 Route Here
+          </button>
+        </div>
+
+        <div style="display: flex; gap: 4px; margin-bottom: 6px;">
+          <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(shrine.googleMapsQuery || shrine.name + ' ' + shrine.city)}" target="_blank" rel="noopener noreferrer" style="flex: 1; text-decoration: none; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; border-radius: 6px; padding: 4px 6px; font-size: 10px; font-weight: 700; text-align: center; display: flex; align-items: center; justify-content: center; gap: 4px;">
+            <span>🗺️ Google Maps</span>
+          </a>
+          <button id="btn-maps-intel-${shrine.id}" style="flex: 1; background: #ecfdf5; color: #047857; border: 1px solid #a7f3d0; border-radius: 6px; padding: 4px 6px; font-size: 10px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px;">
+            <span>📍 Maps Intel</span>
+          </button>
+        </div>
+
+        <button id="btn-add-analyzer-${shrine.id}" style="width: 100%; background: #fff7ed; color: #c2410c; border: 1px solid #fed7aa; border-radius: 6px; padding: 4px 6px; font-size: 10px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px; margin-bottom: 6px;">
+          <span>🕉️ Add to Pilgrimage Route</span>
+        </button>
+
+        <button id="btn-dossier-${shrine.id}" style="width: 100%; background: #d97706; color: #fff; border: none; border-radius: 6px; padding: 6px 0; font-size: 11px; font-weight: 700; cursor: pointer;">
+          View Sacred Dossier
+        </button>
+      `;
     } else if (item.type === 'hidden_gem') {
       const gem = item.raw;
       card.innerHTML = `
@@ -835,6 +895,34 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
       });
     }
 
+    // Sacred Pilgrimage Circuits
+    if (showSacredCircuits) {
+      sacredSitesList.forEach((shrine) => {
+        if (!belongsToSelectedCity(shrine.city)) return;
+        if (
+          q &&
+          !shrine.name?.toLowerCase().includes(q) &&
+          !shrine.city?.toLowerCase().includes(q) &&
+          !shrine.state?.toLowerCase().includes(q) &&
+          !shrine.circuitName?.toLowerCase().includes(q) &&
+          !shrine.traditionLabel?.toLowerCase().includes(q) &&
+          !(shrine.vernacularName && shrine.vernacularName.toLowerCase().includes(q))
+        ) {
+          return;
+        }
+        activePoints.push({
+          id: shrine.id,
+          name: shrine.name,
+          type: 'sacred_site',
+          lat: shrine.coordinates.lat,
+          lng: shrine.coordinates.lng,
+          city: shrine.city,
+          state: shrine.state,
+          raw: shrine,
+        });
+      });
+    }
+
     const zoom = map.getZoom();
     // In high zoom levels (street/city >= 13), show individual pins without clustering
     const clusterPixelRadius = zoom >= 13 ? 0 : 50;
@@ -893,6 +981,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
         const heritageCount = cluster.items.filter((i) => i.type === 'heritage').length;
         const gemCount = cluster.items.filter((i) => i.type === 'hidden_gem').length;
         const stationCount = cluster.items.filter((i) => i.type === 'station').length;
+        const sacredCount = cluster.items.filter((i) => i.type === 'sacred_site').length;
 
         // Gradient styling depending on cluster composition
         let bgStyle = 'background: linear-gradient(135deg, #ea580c, #c2410c);';
@@ -924,6 +1013,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
         const tooltipBreakdown = [
           heritageCount > 0 ? `🏛️ ${heritageCount} Heritage` : '',
           gemCount > 0 ? `💎 ${gemCount} Hidden Gems` : '',
+          sacredCount > 0 ? `🕉️ ${sacredCount} Sacred` : '',
           stationCount > 0 ? `🚆 ${stationCount} Stations` : '',
         ]
           .filter(Boolean)
@@ -962,6 +1052,15 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
               <span style="font-size: 15px;">💎</span>
             </div>
           `;
+        } else if (item.type === 'sacred_site') {
+          const shrine = item.raw;
+          const emoji = shrine?.emoji || '🕉️';
+          const bgGrad = shrine?.badgeColor || 'linear-gradient(135deg, #f59e0b, #d97706)';
+          iconHtml = `
+            <div class="sacred-pin" style="background: ${bgGrad}; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2.5px solid #ffffff; box-shadow: 0 4px 14px rgba(217, 119, 6, 0.55); cursor: pointer; transition: transform 0.2s;" title="${item.name} (${shrine?.traditionLabel || 'Sacred Site'})">
+              <span style="font-size: 16px;">${emoji}</span>
+            </div>
+          `;
         } else {
           iconHtml = `
             <div class="station-pin" style="background-color: #0284c7; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid #ffffff; box-shadow: 0 3px 10px rgba(2, 132, 199, 0.4); cursor: pointer;" title="🚆 ${item.name}">
@@ -989,7 +1088,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
         cLayer.addLayer(marker);
       }
     });
-  }, [heritageSites, hiddenGemsList, stations, showHeritage, showHiddenGems, showStations, showHotels, showDining, searchQuery, selectedCity, onView3DPlace]);
+  }, [heritageSites, hiddenGemsList, stations, showHeritage, showHiddenGems, showStations, showHotels, showDining, showSacredCircuits, searchQuery, selectedCity, onView3DPlace]);
 
   // Hook map zoom/move events to clustering
   useEffect(() => {
@@ -1391,6 +1490,8 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
         return { icon: '🏛️', color: '#d97706', badgeBg: 'bg-amber-50 text-amber-800 border-amber-200' };
       case 'hidden_gem':
         return { icon: '💎', color: '#9333ea', badgeBg: 'bg-purple-50 text-purple-700 border-purple-200' };
+      case 'sacred_site':
+        return { icon: '🕉️', color: '#d97706', badgeBg: 'bg-amber-50 text-amber-800 border-amber-300' };
       case 'station':
         return { icon: '🚆', color: '#0284c7', badgeBg: 'bg-sky-50 text-sky-700 border-sky-200' };
       case 'airport':
@@ -1435,6 +1536,29 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
             subtitle: place.summary,
             badge: place.is_hidden_gem_candidate ? 'Hidden Gem Candidate' : place.category,
           }));
+        const sacredMatches: LocationSuggestion[] = sacredSitesList
+          .filter((shrine) =>
+            shrine.name.toLowerCase().includes(trimmed.toLowerCase()) ||
+            shrine.city.toLowerCase().includes(trimmed.toLowerCase()) ||
+            shrine.state.toLowerCase().includes(trimmed.toLowerCase()) ||
+            shrine.circuitName.toLowerCase().includes(trimmed.toLowerCase()) ||
+            shrine.traditionLabel.toLowerCase().includes(trimmed.toLowerCase()) ||
+            (shrine.vernacularName && shrine.vernacularName.toLowerCase().includes(trimmed.toLowerCase()))
+          )
+          .slice(0, 5)
+          .map((shrine) => ({
+            id: shrine.id,
+            name: shrine.name,
+            type: 'sacred_site' as any,
+            categoryType: 'sacred_site' as any,
+            city: shrine.city,
+            state: shrine.state,
+            lat: shrine.coordinates.lat,
+            lng: shrine.coordinates.lng,
+            subtitle: `${shrine.circuitName} • ${shrine.spiritualSignificance.substring(0, 75)}...`,
+            badge: shrine.traditionLabel,
+          }));
+
         const localCity: LocationSuggestion[] = /mumbai|bombay/i.test(trimmed)
           ? [{
               id: 'city-mumbai',
@@ -1450,7 +1574,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
             }]
           : [];
         const seen = new Set<string>();
-        const merged = [...localCity, ...localPlaces, ...results].filter((item) => {
+        const merged = [...sacredMatches, ...localCity, ...localPlaces, ...results].filter((item) => {
           const key = `${item.categoryType}:${item.name.trim().toLowerCase()}`;
           if (seen.has(key)) return false;
           seen.add(key);
@@ -2042,6 +2166,19 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
             }`}
           >
             <span>💎 Hidden Gems ({hiddenGemsList.length})</span>
+          </button>
+
+          {/* Sacred Pilgrimage Circuits Toggle */}
+          <button
+            onClick={() => setShowSacredCircuits(!showSacredCircuits)}
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold border transition ${
+              showSacredCircuits
+                ? 'bg-amber-700 text-white border-amber-800 shadow-2xs'
+                : 'bg-stone-50 text-stone-500 border-stone-200 hover:bg-stone-100'
+            }`}
+            title="Toggle 8 Sacred Pilgrimage Circuits across 46 Shrines"
+          >
+            <span>🕉️ Pilgrimage ({sacredSitesList.length})</span>
           </button>
 
           {/* Stations (Default HIDE, optional) */}

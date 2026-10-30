@@ -5,6 +5,7 @@ import monumentsData from '../../data/heritage/monuments.json';
 import { getMumbaiDestinationById } from '../data/mumbaiDestinations';
 import { getNearbyDiscoveryPlaceById } from '../data/nearbyPlacesMMR';
 import { ULTIMATE_CITY_DATABASE_15 } from '../data/ultimateCityDatabase';
+import { getAllSacredSites } from '../data/sacredPilgrimageCircuits';
 
 // Eagerly glob all 36 regional directory modules for zero-network universal resolution
 const directoryModules = import.meta.glob('../data/*Directory.ts', { eager: true }) as Record<
@@ -339,6 +340,49 @@ for (const city of ULTIMATE_CITY_DATABASE_15) {
       if (!placeByIdMap.has(normName)) placeByIdMap.set(normName, restDetail);
       allIndexedPlacesList.push(restDetail);
     }
+  }
+}
+
+// 5. Index All 46 Sacred Pilgrimage Circuit Sites
+for (const shrine of getAllSacredSites()) {
+  const shrineKey = shrine.id.toLowerCase().trim();
+  const normName = normalizeStr(shrine.name);
+  const cKey = normalizeStr(shrine.city);
+
+  const placeDetail: PlaceDetail = {
+    id: shrine.id,
+    name: shrine.name,
+    city: shrine.city,
+    state: shrine.state,
+    category: shrine.traditionLabel || 'Sacred Pilgrimage Site',
+    summary: shrine.spiritualSignificance,
+    description: `${shrine.spiritualSignificance} Architectural Style: ${shrine.architecturalStyle}. Visiting Hours: ${shrine.visitingHours}. ${shrine.entryFee}. Pilgrimage Circuit: ${shrine.circuitName}. Key Festivals: ${shrine.festivals.join(', ')}. Nearest Transit: Rail (${shrine.nearestTransit.railway}), Air (${shrine.nearestTransit.airport}).`,
+    coordinates: { lat: shrine.coordinates.lat, lng: shrine.coordinates.lng },
+    visiting_hours: shrine.visitingHours,
+    entry_fee: {
+      domestic: shrine.entryFee.includes('Free') ? 0 : 50,
+      international: shrine.entryFee.includes('Free') ? 0 : 300,
+      currency: 'INR',
+    },
+    heritage_status: `Sacred Pilgrimage Sanctuary (${shrine.circuitName})`,
+    hero_image: shrine.imageUrl
+      ? createPlaceImageItem(shrine.id, shrine.imageUrl, `${shrine.name} holy sanctum`, 'Virasat Sacred Archives', true)
+      : undefined,
+    gallery_images: shrine.imageUrl
+      ? [createPlaceImageItem(shrine.id, shrine.imageUrl, `${shrine.name} holy sanctum`, 'Virasat Sacred Archives')]
+      : [],
+  };
+
+  placeByIdMap.set(shrineKey, placeDetail);
+  if (!placeByIdMap.has(normName)) placeByIdMap.set(normName, placeDetail);
+  if (shrine.vernacularName) {
+    const normVernacular = normalizeStr(shrine.vernacularName);
+    if (!placeByIdMap.has(normVernacular)) placeByIdMap.set(normVernacular, placeDetail);
+  }
+  allIndexedPlacesList.push(placeDetail);
+  if (!placesByCityMap.has(cKey)) placesByCityMap.set(cKey, []);
+  if (!placesByCityMap.get(cKey)!.some((p) => p.id === shrine.id)) {
+    placesByCityMap.get(cKey)!.push(placeDetail);
   }
 }
 
