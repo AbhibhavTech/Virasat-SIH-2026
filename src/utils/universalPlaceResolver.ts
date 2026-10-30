@@ -4,6 +4,7 @@ import { MASTER_TOURISM_PLACES } from '../data/masterTourismPlacesData';
 import monumentsData from '../../data/heritage/monuments.json';
 import { getMumbaiDestinationById } from '../data/mumbaiDestinations';
 import { getNearbyDiscoveryPlaceById } from '../data/nearbyPlacesMMR';
+import { ULTIMATE_CITY_DATABASE_15 } from '../data/ultimateCityDatabase';
 
 // Eagerly glob all 36 regional directory modules for zero-network universal resolution
 const directoryModules = import.meta.glob('../data/*Directory.ts', { eager: true }) as Record<
@@ -255,6 +256,88 @@ for (const [filePath, moduleExports] of Object.entries(directoryModules)) {
           placesByCityMap.get(cKey)!.push(placeDetail);
         }
       }
+    }
+  }
+}
+
+// 4. Index Ultimate 24-City Database (360 Top Hotels, Famous Dining & Curated Attractions)
+for (const city of ULTIMATE_CITY_DATABASE_15) {
+  const cKey = normalizeStr(city.name);
+
+  // Attractions
+  for (const attr of city.attractions) {
+    if (!attr || !attr.id) continue;
+    const attrKey = attr.id.toLowerCase().trim();
+    const normName = normalizeStr(attr.name);
+    if (!placeByIdMap.has(attrKey)) {
+      const placeDetail: PlaceDetail = {
+        id: attr.id,
+        name: attr.name,
+        city: city.name,
+        state: city.state,
+        category: attr.category || (attr.isHiddenGem ? 'Hidden Gem' : 'Heritage & Culture'),
+        summary: attr.description,
+        description: `${attr.description} Located in ${city.name}, ${city.state}. ${city.flashcardBlurb}`,
+        coordinates: { lat: attr.lat, lng: attr.lng },
+        visiting_hours: '09:00 AM - 06:00 PM',
+        entry_fee: { domestic: 50, international: 500, currency: 'INR' },
+        heritage_status: attr.isHiddenGem ? 'Verified Local Hidden Gem' : 'Cultural Heritage Asset',
+      };
+      placeByIdMap.set(attrKey, placeDetail);
+      if (!placeByIdMap.has(normName)) placeByIdMap.set(normName, placeDetail);
+      allIndexedPlacesList.push(placeDetail);
+      if (!placesByCityMap.has(cKey)) placesByCityMap.set(cKey, []);
+      if (!placesByCityMap.get(cKey)!.some(p => p.id === attr.id)) {
+        placesByCityMap.get(cKey)!.push(placeDetail);
+      }
+    }
+  }
+
+  // Top 15 Hotels
+  for (const hotel of city.hotels) {
+    const hotelKey = hotel.id.toLowerCase().trim();
+    const normName = normalizeStr(hotel.name);
+    if (!placeByIdMap.has(hotelKey)) {
+      const hotelDetail: PlaceDetail = {
+        id: hotel.id,
+        name: hotel.name,
+        city: city.name,
+        state: city.state,
+        category: 'Heritage & Luxury Hotel',
+        summary: `${hotel.name} (${hotel.locality}) — ${hotel.description} (${hotel.stars}★ ${hotel.tier.replace('-', ' ')})`,
+        description: `${hotel.description}. Situated in the prime enclave of ${hotel.locality}, ${city.name}. Rated ${hotel.stars} stars. Part of the Virasat curated top stays collection.`,
+        coordinates: { lat: hotel.lat, lng: hotel.lng },
+        visiting_hours: 'Check-in: 14:00 | Check-out: 12:00 (24h Concierge)',
+        entry_fee: { domestic: 0, international: 0, currency: 'INR' },
+        heritage_status: `${hotel.stars}★ ${hotel.tier.toUpperCase().replace('-', ' ')}`,
+      };
+      placeByIdMap.set(hotelKey, hotelDetail);
+      if (!placeByIdMap.has(normName)) placeByIdMap.set(normName, hotelDetail);
+      allIndexedPlacesList.push(hotelDetail);
+    }
+  }
+
+  // Famous Dining
+  for (const rest of [...city.restaurants.veg, ...city.restaurants.nonVeg]) {
+    const restKey = rest.id.toLowerCase().trim();
+    const normName = normalizeStr(rest.name);
+    if (!placeByIdMap.has(restKey)) {
+      const restDetail: PlaceDetail = {
+        id: rest.id,
+        name: rest.name,
+        city: city.name,
+        state: city.state,
+        category: 'Culinary Heritage & Dining',
+        summary: `${rest.name} (${rest.locality}) — Famous for ${rest.specialties}. ${rest.cuisine} cuisine (${rest.type.toUpperCase()}).`,
+        description: `Iconic food heritage establishment in ${rest.locality}, ${city.name}. Celebrated for signature specialties: ${rest.specialties}. Authentic ${rest.cuisine} tradition.`,
+        coordinates: { lat: rest.lat, lng: rest.lng },
+        visiting_hours: '11:00 AM - 11:00 PM (Daily Dining)',
+        entry_fee: { domestic: 0, international: 0, currency: 'INR' },
+        heritage_status: `Iconic ${rest.type === 'veg' ? 'Pure Vegetarian' : 'Non-Vegetarian'} Culinary Landmark`,
+      };
+      placeByIdMap.set(restKey, restDetail);
+      if (!placeByIdMap.has(normName)) placeByIdMap.set(normName, restDetail);
+      allIndexedPlacesList.push(restDetail);
     }
   }
 }

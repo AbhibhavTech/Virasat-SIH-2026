@@ -12,8 +12,15 @@ import {
   Star,
   Sparkles,
   ShieldCheck,
+  Check,
 } from 'lucide-react';
 import { MASTER_TOURISM_PLACES } from '../../data/masterTourismPlacesData';
+import {
+  getUltimateCityRecord,
+  UltimateHotel,
+  UltimateRestaurant,
+  UltimateAttraction,
+} from '../../data/ultimateCityDatabase';
 
 type GuideItem = {
   id: string;
@@ -61,12 +68,16 @@ type DirectoryFoodSpot = {
 
 type DirectoryStayItem = {
   name: string;
+  locality?: string;
   category?: string;
+  description?: string;
+  stars?: number;
+  tier?: string;
 };
 
 type DirectoryCityRecord = {
   name?: string;
-  topStays?: DirectoryStayItem[];
+  topStays?: Array<{ name: string; category?: string }>;
   dining?: {
     veg?: DirectoryFoodSpot[];
     nonVeg?: DirectoryFoodSpot[];
@@ -134,6 +145,7 @@ export const HotelRecommendationsSection: React.FC<{
   const [guide, setGuide] = useState<LocalGuide | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [diningFilter, setDiningFilter] = useState<'all' | 'veg' | 'non-veg'>('all');
   const normalizedCity = norm(selectedCity);
   const destination = `${selectedCity}, ${selectedState}`;
 
@@ -162,6 +174,11 @@ export const HotelRecommendationsSection: React.FC<{
     return () => controller.abort();
   }, [selectedCity]);
 
+  // Check Ultimate 24-City Master Database first
+  const ultimateCity = useMemo(() => {
+    return getUltimateCityRecord(selectedCity);
+  }, [selectedCity]);
+
   // Master curated places (Temples and Attractions)
   const curatedPlaces = useMemo(() => {
     const names = new Set([normalizedCity, ...(aliases[normalizedCity] || []).map(norm)]);
@@ -187,21 +204,66 @@ export const HotelRecommendationsSection: React.FC<{
     );
   }, [normalizedCity]);
 
-  // Curated Dining from Directories
-  const directoryFood = useMemo(() => {
+  // Curated Dining (Merging Ultimate 15 Database + Directory Food)
+  const allDiningSpots = useMemo(() => {
+    if (ultimateCity?.restaurants) {
+      const veg = ultimateCity.restaurants.veg.map((r) => ({
+        restaurant: r.name,
+        locality: r.locality,
+        cuisine: r.cuisine,
+        specialties: r.specialties,
+        type: 'veg' as const,
+      }));
+      const nonVeg = ultimateCity.restaurants.nonVeg.map((r) => ({
+        restaurant: r.name,
+        locality: r.locality,
+        cuisine: r.cuisine,
+        specialties: r.specialties,
+        type: 'non-veg' as const,
+      }));
+      return [...veg, ...nonVeg];
+    }
     if (!matchedDirectoryCity?.dining) return [];
-    const vegList = matchedDirectoryCity.dining.veg || [];
-    const nonVegList = matchedDirectoryCity.dining.nonVeg || [];
+    const vegList = (matchedDirectoryCity.dining.veg || []).map((r) => ({ ...r, type: 'veg' as const }));
+    const nonVegList = (matchedDirectoryCity.dining.nonVeg || []).map((r) => ({ ...r, type: 'non-veg' as const }));
     return [...vegList, ...nonVegList].filter(
       (item, index, all) =>
         item.restaurant && all.findIndex((other) => other.restaurant === item.restaurant) === index
     );
-  }, [matchedDirectoryCity]);
+  }, [ultimateCity, matchedDirectoryCity]);
 
-  // Curated Stays from Directories
-  const directoryStays = useMemo(() => {
-    return matchedDirectoryCity?.topStays || [];
-  }, [matchedDirectoryCity]);
+  // Filtered dining spots
+  const filteredDining = useMemo(() => {
+    if (diningFilter === 'all') return allDiningSpots;
+    return allDiningSpots.filter((d) => d.type === diningFilter);
+  }, [allDiningSpots, diningFilter]);
+
+  // Curated Stays: prioritize the Top 15 hotels from Ultimate City Database
+  const curatedStays: DirectoryStayItem[] = useMemo(() => {
+    if (ultimateCity?.hotels && ultimateCity.hotels.length > 0) {
+      return ultimateCity.hotels.map((h) => ({
+        name: h.name,
+        locality: h.locality,
+        category: `${h.tier.toUpperCase().replace(/-/g, ' ')} — ${h.description}`,
+        description: h.description,
+        stars: h.stars,
+        tier: h.tier,
+      }));
+    }
+    return (matchedDirectoryCity?.topStays || []).map((s) => ({
+      name: s.name,
+      locality: selectedCity,
+      category: s.category || 'Curated Stay',
+      description: s.category || 'Hand-curated stay in Virasat directory.',
+      stars: 5,
+      tier: 'luxury',
+    }));
+  }, [ultimateCity, matchedDirectoryCity, selectedCity]);
+
+  // Curated Attractions from Ultimate Database
+  const ultimateAttractions = useMemo(() => {
+    return ultimateCity?.attractions || [];
+  }, [ultimateCity]);
 
   const osmRestaurants = guide?.restaurants || [];
   const osmHotels = guide?.hotels || [];
@@ -213,13 +275,13 @@ export const HotelRecommendationsSection: React.FC<{
       id: 'restaurants',
       label: 'Restaurants & Dining',
       icon: Utensils,
-      count: osmRestaurants.length || directoryFood.length,
+      count: osmRestaurants.length || allDiningSpots.length,
     },
     {
       id: 'stays',
       label: '3–5 Star & Heritage Stays',
       icon: BedDouble,
-      count: osmHotels.length + directoryStays.length,
+      count: osmHotels.length + curatedStays.length,
     },
     {
       id: 'temples',
@@ -233,7 +295,7 @@ export const HotelRecommendationsSection: React.FC<{
       id: 'attractions',
       label: 'Heritage & Sightseeing',
       icon: Compass,
-      count: osmAttractions.length + curatedPlaces.length,
+      count: osmAttractions.length + curatedPlaces.length + ultimateAttractions.length,
     },
   ];
 
@@ -318,8 +380,8 @@ export const HotelRecommendationsSection: React.FC<{
   );
 
   const renderCuratedStayCard = (stay: DirectoryStayItem, index: number) => {
-    const isHeritage = /taj|palace|oberoi|haveli|fort|heritage|resort|leela/i.test(
-      `${stay.name} ${stay.category || ''}`
+    const isHeritage = /taj|palace|oberoi|haveli|fort|heritage|resort|leela|brij/i.test(
+      `${stay.name} ${stay.category || ''} ${stay.tier || ''}`
     );
     return (
       <article
@@ -336,11 +398,11 @@ export const HotelRecommendationsSection: React.FC<{
               }`}
             >
               <Sparkles className="w-3 h-3 text-amber-600" />
-              <span>{isHeritage ? 'Heritage & Luxury Stay' : 'Recommended Stay'}</span>
+              <span>{stay.tier ? stay.tier.replace('-', ' ').toUpperCase() : isHeritage ? 'Heritage & Luxury' : 'Top 15 Stay'}</span>
             </span>
             <span className="inline-flex items-center gap-0.5 text-xs font-black text-amber-900 bg-amber-50 px-2 py-0.5 rounded-full border border-amber-200">
               <Star className="w-3 h-3 fill-amber-500 text-amber-500" />
-              <span>5★ Curated</span>
+              <span>{stay.stars || 5}★ Curated</span>
             </span>
           </div>
 
@@ -348,19 +410,19 @@ export const HotelRecommendationsSection: React.FC<{
             <h4 className="font-serif font-bold text-stone-900 text-lg leading-snug">{stay.name}</h4>
             <p className="flex items-center gap-1 text-xs text-stone-500 mt-0.5">
               <MapPin className="h-3.5 w-3.5 shrink-0 text-stone-400" />
-              {selectedCity}, {selectedState}
+              {stay.locality ? `${stay.locality}, ${selectedCity}` : `${selectedCity}, ${selectedState}`}
             </p>
           </div>
 
-          {stay.category && (
+          {stay.description && (
             <p className="text-xs text-stone-700 font-medium leading-relaxed bg-stone-50 p-2.5 rounded-xl border border-stone-100">
-              {stay.category}
+              {stay.description}
             </p>
           )}
 
           <div className="flex items-center gap-2 text-[11px] text-stone-500 pt-1">
             <ShieldCheck className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-            <span>Verified in Virasat's {selectedState} Master Directory</span>
+            <span>Verified in Virasat's Top 15 Master Directory</span>
           </div>
         </div>
 
@@ -369,7 +431,7 @@ export const HotelRecommendationsSection: React.FC<{
             href={bookingSearch(destination, stay.name, checkInDate, nights, guests)}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold shadow-xs transition"
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-orange-600 hover:bg-orange-700 text-white text-xs font-bold shadow-xs transition"
           >
             <BedDouble className="w-3.5 h-3.5" />
             <span>Check Rates</span>
@@ -377,13 +439,13 @@ export const HotelRecommendationsSection: React.FC<{
           </a>
 
           <a
-            href={mapSearch(`${stay.name}, ${selectedCity}, ${selectedState}`)}
+            href={mapSearch(`${stay.name}, ${stay.locality || ''}, ${selectedCity}, ${selectedState}`)}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1 text-xs font-semibold text-stone-600 hover:text-stone-900"
           >
-            <span>Map</span>
-            <MapPin className="w-3 h-3 text-orange-600" />
+            <span>Directions</span>
+            <MapPin className="h-3 w-3 text-orange-600" />
           </a>
         </div>
       </article>
@@ -400,15 +462,21 @@ export const HotelRecommendationsSection: React.FC<{
         <div>
           <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wide text-orange-700">
             <MapPin className="h-4 w-4" />
-            <span>Comprehensive Destination Directory</span>
+            <span>Top 15 Hub Database & Verified Local Guide</span>
           </div>
           <h3 id="stay-search-title" className="mt-1 font-serif text-2xl font-bold text-stone-900">
             {title} in and around {selectedCity}
           </h3>
-          <p className="mt-1 max-w-3xl text-sm leading-relaxed text-stone-600">
-            Curated heritage stays, authentic local eateries, and landmark temples handpicked from
-            Virasat's 36-state cultural knowledge base and live local maps.
-          </p>
+          {ultimateCity?.flashcardBlurb ? (
+            <p className="mt-1.5 max-w-3xl text-sm leading-relaxed text-stone-700 border-l-2 border-orange-500 pl-3 py-1 bg-orange-50/50 rounded-r-xl font-medium">
+              "{ultimateCity.flashcardBlurb}"
+            </p>
+          ) : (
+            <p className="mt-1 max-w-3xl text-sm leading-relaxed text-stone-600">
+              Curated heritage stays, authentic local eateries, and landmark temples handpicked from
+              Virasat's 36-state cultural knowledge base and live local maps.
+            </p>
+          )}
         </div>
 
         <div className="flex flex-wrap gap-2 text-xs self-start sm:self-auto">
@@ -468,64 +536,105 @@ export const HotelRecommendationsSection: React.FC<{
           {/* TAB 1: RESTAURANTS */}
           {tab === 'restaurants' && (
             <div className="space-y-4">
-              {directoryFood.length > 0 && (
-                <div>
-                  <div className="text-xs font-bold uppercase tracking-wider text-stone-500 mb-3 flex items-center gap-1.5">
+              {/* Veg / Non-Veg Filter Chips */}
+              {allDiningSpots.length > 0 && (
+                <div className="flex items-center justify-between flex-wrap gap-2 pt-1 pb-2">
+                  <div className="text-xs font-bold uppercase tracking-wider text-stone-500 flex items-center gap-1.5">
                     <Sparkles className="w-3.5 h-3.5 text-orange-600" />
-                    <span>Curated Iconic Eateries & Regional Specialties</span>
+                    <span>Curated Iconic Eateries & Regional Specialties ({filteredDining.length})</span>
                   </div>
-                  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                    {directoryFood.map((spot, index) => (
-                      <article
-                        key={`${spot.restaurant}-${index}`}
-                        className="rounded-2xl border border-stone-200 bg-white p-4 shadow-2xs hover:border-orange-300 transition flex flex-col justify-between"
-                      >
-                        <div className="space-y-1.5">
-                          <div className="flex items-start justify-between gap-2">
-                            <h4 className="font-bold text-stone-900 text-sm sm:text-base leading-snug">
-                              {spot.restaurant}
-                            </h4>
-                            <span className="text-[10px] font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200 shrink-0">
-                              Verified
-                            </span>
-                          </div>
-                          <p className="text-xs text-stone-500">
-                            {spot.locality || spot.location || selectedCity}
-                            {spot.cuisine ? ` · ${spot.cuisine}` : ''}
-                          </p>
-                          {spot.specialties && (
-                            <p className="text-xs text-stone-700 font-medium bg-amber-50/60 p-2 rounded-xl border border-amber-100 mt-2">
-                              ⭐ Must try: {spot.specialties}
-                            </p>
-                          )}
-                        </div>
+                  <div className="inline-flex p-1 rounded-xl bg-stone-100 border border-stone-200 text-xs font-bold">
+                    <button
+                      type="button"
+                      onClick={() => setDiningFilter('all')}
+                      className={`px-3 py-1 rounded-lg transition ${
+                        diningFilter === 'all' ? 'bg-white text-stone-900 shadow-xs' : 'text-stone-600 hover:text-stone-900'
+                      }`}
+                    >
+                      All Dining
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setDiningFilter('veg')}
+                      className={`px-3 py-1 rounded-lg transition flex items-center gap-1 ${
+                        diningFilter === 'veg' ? 'bg-emerald-600 text-white shadow-xs' : 'text-emerald-700 hover:text-emerald-800'
+                      }`}
+                    >
+                      <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                      <span>Pure Veg</span>
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => setDiningFilter('non-veg')}
+                      className={`px-3 py-1 rounded-lg transition flex items-center gap-1 ${
+                        diningFilter === 'non-veg' ? 'bg-orange-600 text-white shadow-xs' : 'text-orange-700 hover:text-orange-800'
+                      }`}
+                    >
+                      <span className="w-2 h-2 rounded-full bg-orange-400" />
+                      <span>Non-Veg</span>
+                    </button>
+                  </div>
+                </div>
+              )}
 
-                        <div className="mt-3 pt-2.5 border-t border-stone-100 flex items-center justify-between">
-                          <span className="text-[11px] text-stone-500 font-medium">
-                            {spot.spendForTwo ? `${spot.spendForTwo} for two` : 'Iconic spot'}
-                          </span>
-                          <a
-                            href={
-                              spot.sourceUrl ||
-                              mapSearch(`${spot.restaurant}, ${selectedCity}, ${selectedState}`)
-                            }
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-1 text-xs font-bold text-orange-800 hover:text-orange-950 underline"
+              {filteredDining.length > 0 && (
+                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                  {filteredDining.map((spot, index) => (
+                    <article
+                      key={`${spot.restaurant}-${index}`}
+                      className="rounded-2xl border border-stone-200 bg-white p-4 shadow-2xs hover:border-orange-300 transition flex flex-col justify-between"
+                    >
+                      <div className="space-y-1.5">
+                        <div className="flex items-start justify-between gap-2">
+                          <h4 className="font-bold text-stone-900 text-sm sm:text-base leading-snug">
+                            {spot.restaurant}
+                          </h4>
+                          <span
+                            className={`text-[10px] font-bold px-2 py-0.5 rounded-full border shrink-0 ${
+                              spot.type === 'veg'
+                                ? 'text-emerald-800 bg-emerald-50 border-emerald-200'
+                                : 'text-orange-800 bg-orange-50 border-orange-200'
+                            }`}
                           >
-                            <span>Map & Menu</span>
-                            <ExternalLink className="h-3 w-3" />
-                          </a>
+                            {spot.type === 'veg' ? 'Pure Veg' : 'Non-Veg'}
+                          </span>
                         </div>
-                      </article>
-                    ))}
-                  </div>
+                        <p className="text-xs text-stone-500">
+                          {spot.locality || (spot as any).location || selectedCity}
+                          {spot.cuisine ? ` · ${spot.cuisine}` : ''}
+                        </p>
+                        {spot.specialties && (
+                          <p className="text-xs text-stone-700 font-medium bg-amber-50/60 p-2.5 rounded-xl border border-amber-100 mt-2">
+                            ⭐ <strong className="text-stone-900">Must Try:</strong> {spot.specialties}
+                          </p>
+                        )}
+                      </div>
+
+                      <div className="mt-3 pt-2.5 border-t border-stone-100 flex items-center justify-between">
+                        <span className="text-[11px] text-stone-500 font-medium">
+                          {(spot as any).spendForTwo ? `${(spot as any).spendForTwo} for two` : 'Iconic landmark spot'}
+                        </span>
+                        <a
+                          href={
+                            (spot as any).sourceUrl ||
+                            mapSearch(`${spot.restaurant}, ${spot.locality || ''}, ${selectedCity}, ${selectedState}`)
+                          }
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-xs font-bold text-orange-800 hover:text-orange-950 underline"
+                        >
+                          <span>Directions & Menu</span>
+                          <ExternalLink className="h-3 w-3" />
+                        </a>
+                      </div>
+                    </article>
+                  ))}
                 </div>
               )}
 
               {osmRestaurants.length > 0 && (
                 <div>
-                  <div className="text-xs font-bold uppercase tracking-wider text-stone-500 mb-3 pt-2">
+                  <div className="text-xs font-bold uppercase tracking-wider text-stone-500 mb-3 pt-4 border-t border-stone-100">
                     OpenStreetMap Nearby Dining ({osmRestaurants.length})
                   </div>
                   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -534,7 +643,7 @@ export const HotelRecommendationsSection: React.FC<{
                 </div>
               )}
 
-              {directoryFood.length === 0 && osmRestaurants.length === 0 && (
+              {filteredDining.length === 0 && osmRestaurants.length === 0 && (
                 <div className="rounded-2xl border border-dashed border-stone-300 bg-stone-50 p-6 text-center">
                   <h4 className="font-bold text-stone-900">Explore Restaurants in {selectedCity}</h4>
                   <p className="text-xs text-stone-600 mt-1">
@@ -554,18 +663,22 @@ export const HotelRecommendationsSection: React.FC<{
             </div>
           )}
 
-          {/* TAB 2: STAYS (3–5 Star & Heritage Hotels) */}
+          {/* TAB 2: STAYS (Top 15 Hotels & Stays) */}
           {tab === 'stays' && (
             <div className="space-y-6">
-              {/* Directory Top Stays (Always present for major Indian destinations) */}
-              {directoryStays.length > 0 && (
+              {curatedStays.length > 0 && (
                 <div>
-                  <div className="text-xs font-bold uppercase tracking-wider text-stone-500 mb-3 flex items-center gap-1.5">
-                    <Sparkles className="w-3.5 h-3.5 text-orange-600" />
-                    <span>Curated Heritage Stays & Luxury Haveli Resorts ({directoryStays.length})</span>
+                  <div className="text-xs font-bold uppercase tracking-wider text-stone-500 mb-3 flex items-center justify-between">
+                    <span className="flex items-center gap-1.5">
+                      <Sparkles className="w-3.5 h-3.5 text-orange-600" />
+                      <span>
+                        Top {curatedStays.length} Hotels & Palace Stays in {selectedCity}
+                      </span>
+                    </span>
+                    <span className="text-[11px] text-stone-400">Ultra-Luxury • Heritage • Boutique</span>
                   </div>
                   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                    {directoryStays.map((stay, idx) => renderCuratedStayCard(stay, idx))}
+                    {curatedStays.map((stay, idx) => renderCuratedStayCard(stay, idx))}
                   </div>
                 </div>
               )}
@@ -573,8 +686,8 @@ export const HotelRecommendationsSection: React.FC<{
               {/* OSM Hotels */}
               {osmHotels.length > 0 && (
                 <div>
-                  <div className="text-xs font-bold uppercase tracking-wider text-stone-500 mb-3 pt-2">
-                    Local Verified Hotel Listings ({osmHotels.length})
+                  <div className="text-xs font-bold uppercase tracking-wider text-stone-500 mb-3 pt-4 border-t border-stone-100">
+                    Additional Verified Hotel Listings ({osmHotels.length})
                   </div>
                   <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
                     {osmHotels.map(renderOSMCard)}
@@ -672,9 +785,59 @@ export const HotelRecommendationsSection: React.FC<{
           {/* TAB 4: HERITAGE ATTRACTIONS */}
           {tab === 'attractions' && (
             <div className="space-y-4">
+              {/* Ultimate Master Attractions & Hidden Gems */}
+              {ultimateAttractions.length > 0 && (
+                <div>
+                  <div className="text-xs font-bold uppercase tracking-wider text-stone-500 mb-3 flex items-center gap-1.5">
+                    <Sparkles className="w-3.5 h-3.5 text-orange-600" />
+                    <span>Curated Sights & Hidden Gems ({ultimateAttractions.length})</span>
+                  </div>
+                  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {ultimateAttractions.map((att) => (
+                      <article
+                        key={att.id}
+                        className="rounded-2xl border border-stone-200 bg-white p-5 shadow-xs hover:border-orange-300 transition flex flex-col justify-between"
+                      >
+                        <div className="space-y-2">
+                          <div className="flex items-start justify-between gap-2">
+                            <span
+                              className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border ${
+                                att.isHiddenGem
+                                  ? 'bg-purple-50 text-purple-900 border-purple-200'
+                                  : 'bg-orange-50 text-orange-900 border-orange-200'
+                              }`}
+                            >
+                              {att.isHiddenGem ? '💎 Hidden Gem' : att.category}
+                            </span>
+                          </div>
+                          <h4 className="font-serif font-bold text-stone-900 text-base">{att.name}</h4>
+                          <p className="text-xs text-stone-600 leading-relaxed">{att.description}</p>
+                        </div>
+                        <div className="mt-4 pt-3 border-t border-stone-100 flex items-center justify-between">
+                          <a
+                            href={mapSearch(`${att.name}, ${selectedCity}, ${selectedState}`)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-1 text-xs font-bold text-orange-800 underline"
+                          >
+                            <span>Map & Directions</span>
+                            <MapPin className="h-3 w-3" />
+                          </a>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+                </div>
+              )}
+
               {osmAttractions.length > 0 && (
-                <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                  {osmAttractions.map(renderOSMCard)}
+                <div>
+                  <div className="text-xs font-bold uppercase tracking-wider text-stone-500 mb-3 pt-4 border-t border-stone-100">
+                    OpenStreetMap Heritage Places ({osmAttractions.length})
+                  </div>
+                  <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {osmAttractions.map(renderOSMCard)}
+                  </div>
                 </div>
               )}
 
@@ -739,7 +902,7 @@ export const HotelRecommendationsSection: React.FC<{
                 nights === 1 ? '' : 's'
               }.`
             : 'Add departure dates to check real-time availability.'}{' '}
-          Always verify tariffs and season charges directly before booking.
+          Always verify tariffs and seasonal charges directly before booking.
         </span>
         <a
           href={mapSearch(`heritage places and markets in ${destination}`)}

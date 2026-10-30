@@ -78,7 +78,7 @@ function parseDualPointsQuery(query: string): { originQuery: string; destQuery: 
 export interface MapPointItem {
   id: string;
   name: string;
-  type: 'heritage' | 'hidden_gem' | 'station';
+  type: 'heritage' | 'hidden_gem' | 'station' | 'hotel' | 'dining';
   lat: number;
   lng: number;
   city?: string;
@@ -145,6 +145,8 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
   const [showHeritage, setShowHeritage] = useState(true);
   const [showHiddenGems, setShowHiddenGems] = useState(true);
   const [showStations, setShowStations] = useState(false); // Default HIDDEN
+  const [showHotels, setShowHotels] = useState(true);
+  const [showDining, setShowDining] = useState(true);
 
   // Google Maps Live Place Intel Drawer State
   const [mapsIntelPoint, setMapsIntelPoint] = useState<MapPointItem | null>(null);
@@ -987,7 +989,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
         cLayer.addLayer(marker);
       }
     });
-  }, [heritageSites, hiddenGemsList, stations, showHeritage, showHiddenGems, showStations, searchQuery, selectedCity, onView3DPlace]);
+  }, [heritageSites, hiddenGemsList, stations, showHeritage, showHiddenGems, showStations, showHotels, showDining, searchQuery, selectedCity, onView3DPlace]);
 
   // Hook map zoom/move events to clustering
   useEffect(() => {

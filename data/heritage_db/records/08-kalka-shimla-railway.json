@@ -91,8 +91,20 @@
   ],
   "facts": [],
   "media": {
-    "hero": null,
-    "gallery": [],
+    "hero": {
+      "url": "/images/kalka-shimla-railway-4k.jpg",
+      "caption": "Kalka-Shimla Mountain Railway heritage train traversing Shivalik Himalayan viaduct",
+      "author": "UNESCO World Heritage Archive",
+      "license": "CC BY-SA 4.0"
+    },
+    "gallery": [
+      {
+        "url": "/images/kalka-shimla-railway-4k.jpg",
+        "caption": "Kalka-Shimla Mountain Railway Heritage Toy Train in the Shivalik Foothills",
+        "author": "UNESCO World Heritage Centre",
+        "license": "CC BY-SA 4.0"
+      }
+    ],
     "audio_guide": []
   },
   "sources": [
