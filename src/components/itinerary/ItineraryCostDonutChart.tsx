@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ExternalLink, Info, IndianRupee, Plane, TrainFront, Utensils, BedDouble, Ticket, MapPin } from 'lucide-react';
 import { ItineraryResponse } from '../../types';
 
@@ -19,20 +19,26 @@ const tiers = {
 } as const;
 const categoryNames = ['Stay', 'Food', 'Local travel', 'Tickets & extras'];
 const categoryColors = ['#0f766e', '#f97316', '#2563eb', '#a855f7'];
+const categoryDescriptions = [
+  'A planning share for accommodation during your stay. This is an estimate, not a hotel quote or availability check.',
+  'A planning share for meals, snacks, and trying local food during the trip.',
+  'A planning share for getting around within the destination by local transport.',
+  'A planning share for entry tickets and small activities. Check each venue for current fees.',
+];
 const money = (amount: number) => `₹${Math.round(amount).toLocaleString('en-IN')}`;
 
 export const ItineraryCostDonutChart: React.FC<Props> = ({ itinerary, selectedCityName, initialBudgetTier = 'moderate', daysCount, startDate, guests = 1, originCity = '' }) => {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const city = itinerary.city || selectedCityName;
   const tier = tiers[initialBudgetTier] || tiers.moderate;
   const days = Math.max(1, daysCount || itinerary.days_count || 1);
   const party = Math.max(1, guests);
   const totalMin = tier.min * days * party;
   const totalMax = tier.max * days * party;
-  const gradient = `conic-gradient(${categoryColors.map((color, i) => {
-    const start = tier.shares.slice(0, i).reduce((sum, share) => sum + share, 0);
-    const end = start + tier.shares[i];
-    return `${color} ${start}% ${end}%`;
-  }).join(', ')})`;
+  const activeIndex = hoveredIndex ?? selectedIndex;
+  const radius = 55;
+  const circumference = 2 * Math.PI * radius;
   const stayParams = new URLSearchParams({
     ss: `${city}, India`, group_adults: String(party), no_rooms: String(Math.max(1, Math.ceil(party / 2))),
     nflt: 'class=3;class=4;class=5',
@@ -67,23 +73,47 @@ export const ItineraryCostDonutChart: React.FC<Props> = ({ itinerary, selectedCi
             <span className="rounded-full border border-orange-200 bg-orange-50 px-3 py-1.5 font-semibold text-orange-900">{tier.label} assumptions</span>
           </div>
         </div>
-        <div className="flex items-center gap-5 self-center lg:mr-5">
-          <div className="relative grid h-40 w-40 shrink-0 place-items-center rounded-full" style={{ background: gradient }} role="img" aria-label={`${tier.label} trip expense breakdown chart`}>
-            <div className="grid h-24 w-24 place-content-center rounded-full bg-white text-center shadow-inner">
-              <span className="text-[10px] font-semibold uppercase tracking-wide text-stone-500">Per person</span>
+        <div className="flex w-full flex-col items-center gap-5 self-center lg:w-[min(100%,460px)] lg:flex-row lg:items-start">
+          <div className="relative grid h-40 w-40 shrink-0 place-items-center" role="group" aria-label="Interactive trip expense chart. Hover, focus, or select a colour for details.">
+            <svg viewBox="0 0 140 140" className="h-40 w-40 -rotate-90 overflow-visible" aria-hidden="true">
+              <circle cx="70" cy="70" r={radius} fill="none" stroke="#f1f5f9" strokeWidth="25" />
+              {categoryNames.map((name, index) => {
+                const preceding = tier.shares.slice(0, index).reduce((sum, share) => sum + share, 0);
+                const segmentLength = (tier.shares[index] / 100) * circumference;
+                const gap = 2.5;
+                const isActive = activeIndex === index;
+                return <circle key={name} cx="70" cy="70" r={radius} fill="none" stroke={categoryColors[index]} strokeWidth={isActive ? 30 : 25}
+                  strokeDasharray={`${Math.max(0, segmentLength - gap)} ${circumference - Math.max(0, segmentLength - gap)}`}
+                  strokeDashoffset={-(preceding / 100) * circumference} strokeLinecap="butt"
+                  className="cursor-pointer transition-all duration-200 ease-out hover:brightness-110 focus-visible:outline-none"
+                  style={{ opacity: activeIndex === null || isActive ? 1 : 0.55, filter: isActive ? `drop-shadow(0 2px 5px ${categoryColors[index]}66)` : undefined, pointerEvents: 'stroke' }}
+                  role="button" tabIndex={0} aria-label={`${name}: ${tier.shares[index]} percent, ${money(Math.round(tier.min * tier.shares[index] / 100))} to ${money(Math.round(tier.max * tier.shares[index] / 100))} per person per day`}
+                  aria-pressed={selectedIndex === index}
+                  onMouseEnter={() => setHoveredIndex(index)} onMouseLeave={() => setHoveredIndex(null)}
+                  onFocus={() => setHoveredIndex(index)} onBlur={() => setHoveredIndex(null)}
+                  onClick={() => setSelectedIndex((current) => current === index ? null : index)}
+                  onKeyDown={(event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); setSelectedIndex((current) => current === index ? null : index); } }} />;
+              })}
+            </svg>
+            <div className="pointer-events-none absolute grid h-[5.8rem] w-[5.8rem] content-center rounded-full bg-white text-center shadow-inner">
+              <span className="text-[9px] font-semibold uppercase tracking-wide text-stone-500">Per person · day</span>
               <strong className="text-sm text-stone-900">{money(tier.min)}</strong>
-              <span className="text-[10px] text-stone-500">to {money(tier.max)} / day</span>
+              <span className="text-[9px] text-stone-500">to {money(tier.max)}</span>
             </div>
           </div>
-          <div className="space-y-2.5 text-xs">
+          <div className="min-w-0 flex-1 space-y-2.5 text-xs">
             {categoryNames.map((name, index) => {
               const share = tier.shares[index];
               const low = Math.round((tier.min * share) / 100);
               const high = Math.round((tier.max * share) / 100);
-              return <div key={name} className="min-w-36">
-                <div className="flex items-center gap-2 font-semibold text-stone-700"><span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: categoryColors[index] }} />{name}</div>
-                <div className="pl-[18px] text-stone-500">{money(low)}–{money(high)} / person / day</div>
-              </div>;
+              const segmentTripLow = low * days * party;
+              const segmentTripHigh = high * days * party;
+              return <button key={name} type="button" onMouseEnter={() => setHoveredIndex(index)} onMouseLeave={() => setHoveredIndex(null)} onFocus={() => setHoveredIndex(index)} onBlur={() => setHoveredIndex(null)} onClick={() => setSelectedIndex((current) => current === index ? null : index)} aria-pressed={selectedIndex === index}
+                className={`w-full rounded-xl px-2.5 py-2 text-left transition duration-200 ${activeIndex === index ? 'bg-white shadow-sm ring-1' : 'hover:bg-white/70'}`} style={{ ['--tw-ring-color' as string]: activeIndex === index ? `${categoryColors[index]}55` : undefined }}>
+                <span className="flex items-center justify-between gap-2"><span className="flex items-center gap-2 font-bold text-stone-800"><span className="h-3 w-3 rounded-full ring-2 ring-white shadow-sm" style={{ backgroundColor: categoryColors[index] }} />{name}</span><span className="font-bold" style={{ color: categoryColors[index] }}>{share}%</span></span>
+                <span className="mt-0.5 block pl-5 text-stone-500">{money(low)}–{money(high)} / person / day</span>
+                {activeIndex === index && <span className="mt-2 block border-t border-stone-100 pt-2 leading-relaxed text-stone-600">{categoryDescriptions[index]}<span className="mt-1 block font-semibold" style={{ color: categoryColors[index] }}>About {money(segmentTripLow)}–{money(segmentTripHigh)} across this trip</span></span>}
+              </button>;
             })}
           </div>
         </div>
