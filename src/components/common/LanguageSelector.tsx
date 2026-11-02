@@ -1,6 +1,6 @@
 import React from 'react';
-import { useLanguage } from '../../contexts/LanguageContext';
-import { Globe } from 'lucide-react';
+import { useLanguage, SUPPORTED_LANGUAGES } from '../../contexts/LanguageContext';
+import { Globe, ChevronDown } from 'lucide-react';
 
 interface LanguageSelectorProps {
   id?: string;
@@ -19,40 +19,23 @@ export const LanguageSelector: React.FC<LanguageSelectorProps> = ({
 
   return (
     <div
-      id={id}
-      role="group"
-      aria-label="Language selection"
-      className={`inline-flex items-center gap-1.5 p-1 rounded-xl border border-stone-200 bg-white/95 shadow-2xs transition hover:border-amber-300 ${className}`}
+      className={`relative inline-flex items-center gap-1.5 rounded-xl border border-stone-200 bg-white px-2.5 py-1.5 shadow-2xs transition hover:border-amber-300 ${className}`}
     >
-      {showIcon && <Globe className="h-3.5 w-3.5 text-amber-700 ml-1 shrink-0" aria-hidden="true" />}
-      <div className="inline-flex items-center rounded-lg bg-stone-100 p-0.5 border border-stone-200/80">
-        <button
-          type="button"
-          onClick={() => setLanguage('en')}
-          className={`px-2.5 py-1 rounded-md text-xs font-bold transition-all cursor-pointer ${
-            currentLanguage === 'en'
-              ? 'bg-white text-stone-900 shadow-xs ring-1 ring-stone-900/5'
-              : 'text-stone-500 hover:text-stone-900'
-          }`}
-          aria-pressed={currentLanguage === 'en'}
-          title="Switch to English"
-        >
-          {compact ? 'EN' : 'English'}
-        </button>
-        <button
-          type="button"
-          onClick={() => setLanguage('hi')}
-          className={`px-2.5 py-1 rounded-md text-xs font-bold transition-all cursor-pointer ${
-            currentLanguage === 'hi'
-              ? 'bg-[#FF671F] text-white shadow-xs'
-              : 'text-stone-500 hover:text-stone-900'
-          }`}
-          aria-pressed={currentLanguage === 'hi'}
-          title="हिन्दी में बदलें (Switch to Hindi)"
-        >
-          हिन्दी
-        </button>
-      </div>
+      {showIcon && <Globe className="h-4 w-4 text-amber-700 shrink-0" aria-hidden="true" />}
+      <select
+        id={id}
+        aria-label="Language selection"
+        value={currentLanguage}
+        onChange={(e) => setLanguage(e.target.value)}
+        className="bg-transparent text-xs sm:text-sm font-semibold text-stone-800 outline-none cursor-pointer pr-4 appearance-none"
+      >
+        {SUPPORTED_LANGUAGES.map(({ code, name }) => (
+          <option key={code} value={code} className="text-stone-900 bg-white font-medium">
+            {compact ? code.toUpperCase() : name}
+          </option>
+        ))}
+      </select>
+      <ChevronDown className="h-3.5 w-3.5 text-stone-500 pointer-events-none absolute right-2 top-1/2 -translate-y-1/2" aria-hidden="true" />
     </div>
   );
 };

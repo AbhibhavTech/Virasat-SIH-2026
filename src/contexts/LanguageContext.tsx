@@ -11,7 +11,7 @@ export interface LanguageOption {
 
 export const SUPPORTED_LANGUAGES: LanguageOption[] = [
   { code: 'en', name: 'English' },
-  { code: 'hi', name: 'हिन्दी' },
+  { code: 'hi', name: 'हिन्दी (Hindi)' },
 ];
 
 export const RTL_LANGUAGES = new Set<string>();
