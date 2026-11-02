@@ -3,6 +3,7 @@ import { Train, Car, Footprints, Layers, ArrowRight, MapPin, Navigation, Sparkle
 import { NavTab } from '../layout/Sidebar';
 import { GuideIllustration } from '../cultural-guides/GuideIllustrations';
 import { api } from '../../services/api';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 interface SimpleJourneyPlannerSectionProps {
   onNavigateTab: (tab: NavTab) => void;
@@ -15,6 +16,7 @@ export const SimpleJourneyPlannerSection: React.FC<SimpleJourneyPlannerSectionPr
   onNavigateTab,
   selectedCity = 'All India',
 }) => {
+  const { currentLanguage } = useLanguage();
   // Preset origins and destinations based on active city context
   const getCityTransitPresets = () => {
     const city = selectedCity.toLowerCase();
@@ -63,10 +65,30 @@ export const SimpleJourneyPlannerSection: React.FC<SimpleJourneyPlannerSectionPr
   const [routeResult, setRouteResult] = useState<any | null>(null);
 
   const travelModes: { id: TravelMode; label: string; icon: any; note: string }[] = [
-    { id: 'Railway', label: 'Railway', icon: Train, note: 'Suburban trains, metro & mainline express' },
-    { id: 'Road', label: 'Road', icon: Car, note: 'Prepaid auto-rickshaws, cabs & state buses' },
-    { id: 'Walk', label: 'Walk', icon: Footprints, note: 'Heritage walking paths & pedestrian lanes' },
-    { id: 'Multimodal', label: 'Multimodal', icon: Layers, note: 'Fastest combination with zero surge' },
+    {
+      id: 'Railway',
+      label: currentLanguage === 'hi' ? 'रेलवे' : 'Railway',
+      icon: Train,
+      note: currentLanguage === 'hi' ? 'उपनगरीय ट्रेन, मेट्रो व एक्सप्रेस' : 'Suburban trains, metro & mainline express',
+    },
+    {
+      id: 'Road',
+      label: currentLanguage === 'hi' ? 'सड़क मार्ग' : 'Road',
+      icon: Car,
+      note: currentLanguage === 'hi' ? 'ऑटो-रिक्शा, टैक्सी व बसें' : 'Prepaid auto-rickshaws, cabs & state buses',
+    },
+    {
+      id: 'Walk',
+      label: currentLanguage === 'hi' ? 'पैदल मार्ग' : 'Walk',
+      icon: Footprints,
+      note: currentLanguage === 'hi' ? 'पैदल धरोहर मार्ग व गलियां' : 'Heritage walking paths & pedestrian lanes',
+    },
+    {
+      id: 'Multimodal',
+      label: currentLanguage === 'hi' ? 'संयुक्त साधन' : 'Multimodal',
+      icon: Layers,
+      note: currentLanguage === 'hi' ? 'तीव्रतम व सुगम संयोजन' : 'Fastest combination with zero surge',
+    },
   ];
 
   const handleFindRoute = async (e: React.FormEvent) => {
@@ -102,13 +124,13 @@ export const SimpleJourneyPlannerSection: React.FC<SimpleJourneyPlannerSectionPr
         <div>
           <div className="inline-flex items-center gap-1.5 text-xs font-semibold text-amber-800 tracking-wider uppercase mb-1">
             <Navigation className="w-3.5 h-3.5" />
-            <span>Indigenous Transit Engine</span>
+            <span>{currentLanguage === 'hi' ? 'स्वदेशी पारगमन एवं रेलवे इंजन' : 'Indigenous Transit Engine'}</span>
           </div>
           <h2 className="font-serif text-2xl sm:text-3xl font-bold text-stone-900 tracking-tight">
-            Plan Your Way Around India
+            {currentLanguage === 'hi' ? 'भारत दर्शन: यात्रा एवं मार्ग योजना' : 'Plan Your Way Around India'}
           </h2>
           <p className="text-xs sm:text-sm text-stone-600 max-w-xl mt-1">
-            Seamless multimodal routing across suburban railway networks, highways, and historic pedestrian corridors.
+            {currentLanguage === 'hi' ? 'उपनगरीय रेलवे नेटवर्क, राजमार्गों एवं ऐतिहासिक पैदल मार्गों पर निर्बाध यात्रा योजना।' : 'Seamless multimodal routing across suburban railway networks, highways, and historic pedestrian corridors.'}
           </p>
         </div>
 
@@ -116,7 +138,7 @@ export const SimpleJourneyPlannerSection: React.FC<SimpleJourneyPlannerSectionPr
           onClick={() => onNavigateTab('itinerary')}
           className="text-xs font-bold text-amber-900 hover:text-amber-950 flex items-center gap-1.5 self-start sm:self-auto bg-amber-50 hover:bg-amber-100 px-4 py-2 rounded-xl border border-amber-200 transition"
         >
-          <span>Open Day Planner</span>
+          <span>{currentLanguage === 'hi' ? 'दैनिक योजना खोलें' : 'Open Day Planner'}</span>
           <ArrowRight className="w-4 h-4 text-amber-700" />
         </button>
       </div>
@@ -149,7 +171,7 @@ export const SimpleJourneyPlannerSection: React.FC<SimpleJourneyPlannerSectionPr
             <div className="space-y-1.5">
               <label className="text-xs font-bold text-stone-700 uppercase tracking-wider flex items-center gap-1.5">
                 <MapPin className="w-3.5 h-3.5 text-amber-700" />
-                <span>FROM (Boarding Point / Station)</span>
+                <span>{currentLanguage === 'hi' ? 'से (आरंभिक स्टेशन / स्थान)' : 'FROM (Boarding Point / Station)'}</span>
               </label>
               <div className="relative">
                 <input
@@ -180,7 +202,7 @@ export const SimpleJourneyPlannerSection: React.FC<SimpleJourneyPlannerSectionPr
             <div className="space-y-1.5">
               <label className="text-xs font-bold text-stone-700 uppercase tracking-wider flex items-center gap-1.5">
                 <MapPin className="w-3.5 h-3.5 text-emerald-700" />
-                <span>TO (Monument / Destination)</span>
+                <span>{currentLanguage === 'hi' ? 'तक (गंतव्य स्मारक / स्थल)' : 'TO (Monument / Destination)'}</span>
               </label>
               <div className="relative">
                 <input
@@ -211,7 +233,7 @@ export const SimpleJourneyPlannerSection: React.FC<SimpleJourneyPlannerSectionPr
           {/* Travel Options: Railway, Road, Walk, Multimodal */}
           <div className="space-y-2">
             <span className="text-xs font-bold text-stone-700 uppercase tracking-wider">
-              Travel Options
+              {currentLanguage === 'hi' ? 'यात्रा के साधन' : 'Travel Options'}
             </span>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {travelModes.map((mode) => {
@@ -258,10 +280,10 @@ export const SimpleJourneyPlannerSection: React.FC<SimpleJourneyPlannerSectionPr
               className="w-full sm:w-auto px-8 py-3 rounded-xl bg-amber-800 hover:bg-amber-900 disabled:bg-amber-400 text-white text-xs sm:text-sm font-semibold shadow-xs transition active:scale-98 flex items-center justify-center gap-2"
             >
               {calculating ? (
-                <span>Calculating Route...</span>
+                <span>{currentLanguage === 'hi' ? 'मार्ग खोजा जा रहा है...' : 'Calculating Route...'}</span>
               ) : (
                 <>
-                  <span>Find Route</span>
+                  <span>{currentLanguage === 'hi' ? 'मार्ग खोजें' : 'Find Route'}</span>
                   <ArrowRight className="w-4 h-4" />
                 </>
               )}
@@ -275,20 +297,20 @@ export const SimpleJourneyPlannerSection: React.FC<SimpleJourneyPlannerSectionPr
             <div className="flex items-center justify-between flex-wrap gap-2">
               <div className="flex items-center gap-2 text-xs font-bold text-amber-950">
                 <Sparkles className="w-4 h-4 text-amber-700" />
-                <span>Verified Route Suggestion</span>
+                <span>{currentLanguage === 'hi' ? 'सत्यापित मार्ग सुझाव' : 'Verified Route Suggestion'}</span>
               </div>
               <button
                 onClick={() => onNavigateTab('itinerary')}
                 className="text-xs font-semibold text-amber-800 hover:underline flex items-center gap-1"
               >
-                <span>Open Full Day Itinerary</span>
+                <span>{currentLanguage === 'hi' ? 'पूर्ण यात्रा विवरण देखें' : 'Open Full Day Itinerary'}</span>
                 <ArrowRight className="w-3 h-3" />
               </button>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1 text-xs">
               <div className="p-2.5 rounded-xl bg-white border border-stone-200/80">
-                <span className="text-stone-400 block text-[10px] uppercase font-bold">Estimated Time</span>
+                <span className="text-stone-400 block text-[10px] uppercase font-bold">{currentLanguage === 'hi' ? 'अनुमानित समय' : 'Estimated Time'}</span>
                 <span className="text-stone-900 font-extrabold text-sm sm:text-base flex items-center gap-1 mt-0.5">
                   <Clock className="w-3.5 h-3.5 text-amber-700" />
                   <span>{routeResult.duration_mins || 25} mins</span>
@@ -296,7 +318,7 @@ export const SimpleJourneyPlannerSection: React.FC<SimpleJourneyPlannerSectionPr
               </div>
 
               <div className="p-2.5 rounded-xl bg-white border border-stone-200/80">
-                <span className="text-stone-400 block text-[10px] uppercase font-bold">Total Distance</span>
+                <span className="text-stone-400 block text-[10px] uppercase font-bold">{currentLanguage === 'hi' ? 'कुल दूरी' : 'Total Distance'}</span>
                 <span className="text-stone-900 font-extrabold text-sm sm:text-base flex items-center gap-1 mt-0.5">
                   <MapPin className="w-3.5 h-3.5 text-amber-700" />
                   <span>{routeResult.distance_km || 4.2} km</span>
@@ -304,7 +326,7 @@ export const SimpleJourneyPlannerSection: React.FC<SimpleJourneyPlannerSectionPr
               </div>
 
               <div className="p-2.5 rounded-xl bg-white border border-stone-200/80">
-                <span className="text-stone-400 block text-[10px] uppercase font-bold">Verified Fare</span>
+                <span className="text-stone-400 block text-[10px] uppercase font-bold">{currentLanguage === 'hi' ? 'सत्यापित किराया' : 'Verified Fare'}</span>
                 <span className="text-emerald-800 font-extrabold text-sm sm:text-base flex items-center gap-1 mt-0.5">
                   <span>{routeResult.fare_estimate || '₹10 - ₹20'}</span>
                 </span>

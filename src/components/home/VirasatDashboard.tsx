@@ -36,6 +36,7 @@ import {
 import { NavTab } from '../layout/Sidebar';
 import { PlaceSummary } from '../../types';
 import { api } from '../../services/api';
+import { useLanguage } from '../../contexts/LanguageContext';
 import {
   AshokaChakra,
   IncredibleIndiaBadge,
@@ -412,6 +413,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
   onSelectCity,
   onOpenAIChat,
 }) => {
+  const { currentLanguage } = useLanguage();
   // Automatic Background Hero Slideshow State
   const [activeSlideIdx, setActiveSlideIdx] = useState(0);
 
@@ -929,15 +931,27 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
               <IncredibleIndiaBadge className="mb-3 sm:mb-4" />
 
               <h1 className="font-serif text-3xl sm:text-4xl lg:text-[40px] xl:text-[46px] font-bold tracking-tight text-white leading-[1.15] [text-shadow:0_2px_8px_rgba(0,0,0,0.55)]">
-                <span>Discover India&apos;s</span>
-                <span className="block mt-1 sm:mt-1.5">
-                  <span className="text-[#FF8A45]">Living</span>{' '}
-                  <span className="text-[#77D49A]">Heritage</span>
-                </span>
+                {currentLanguage === 'hi' ? (
+                  <span>
+                    भारत की{' '}
+                    <span className="text-[#FF8A45]">जीवंत</span>{' '}
+                    <span className="text-[#77D49A]">धरोहर</span>
+                  </span>
+                ) : (
+                  <>
+                    <span>Discover India&apos;s</span>
+                    <span className="block mt-1 sm:mt-1.5">
+                      <span className="text-[#FF8A45]">Living</span>{' '}
+                      <span className="text-[#77D49A]">Heritage</span>
+                    </span>
+                  </>
+                )}
               </h1>
 
               <p className="text-sm sm:text-base text-white max-w-xl mt-2.5 sm:mt-3.5 leading-relaxed font-semibold [text-shadow:0_1px_5px_rgba(0,0,0,0.7)]">
-                Explore monuments, cultures, natural wonders and hidden gems across every region of India.
+                {currentLanguage === 'hi'
+                  ? 'भारत के प्रत्येक क्षेत्र में स्मारकों, संस्कृति, प्राकृतिक चमत्कारों और अप्रतिम धरोहरों का अन्वेषण करें।'
+                  : 'Explore monuments, cultures, natural wonders and hidden gems across every region of India.'}
               </p>
             </div>
 
@@ -954,7 +968,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
                       setIsSearchFocused(true);
                       if (searchSuggestions.length > 0) setShowSuggestions(true);
                     }}
-                    placeholder="Search monuments, cities, or trails..."
+                    placeholder={currentLanguage === 'hi' ? 'स्मारक, शहर, तीर्थ या पर्यटन स्थल खोजें...' : 'Search monuments, cities, or trails...'}
                     className="w-full bg-transparent text-xs sm:text-sm md:text-base text-stone-800 placeholder-stone-400 focus:outline-none"
                   />
                   {searchQuery && (
@@ -1244,13 +1258,13 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
           <div className="relative z-10">
             <div className="inline-flex items-center gap-1 text-[11px] sm:text-xs font-bold text-[#046A38] uppercase tracking-wider mb-1">
               <Navigation className="w-3.5 h-3.5 text-[#046A38]" />
-              <span>Nearby discovery</span>
+              <span>{currentLanguage === 'hi' ? 'निकटतम खोज' : 'Nearby discovery'}</span>
             </div>
             <h2 className="font-serif text-xl sm:text-3xl font-bold text-stone-900 tracking-tight">
-              Explore Near You
+              {currentLanguage === 'hi' ? 'अपने निकटतम दर्शनीय स्थल' : 'Explore Near You'}
             </h2>
             <p className="text-xs sm:text-sm text-stone-500 mt-1 font-normal">
-              Find remarkable places around you or start from a popular Indian city.
+              {currentLanguage === 'hi' ? 'अपने आस-पास के दर्शनीय स्थलों की खोज करें या किसी प्रमुख शहर से शुरुआत करें।' : 'Find remarkable places around you or start from a popular Indian city.'}
             </p>
           </div>
 
@@ -1563,13 +1577,13 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
             <div>
               <div className="inline-flex items-center gap-1 text-[11px] sm:text-xs font-bold text-[#FF671F] uppercase tracking-wider mb-1">
                 <Star className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
-                <span>Curated Highlights</span>
+                <span>{currentLanguage === 'hi' ? 'विशेष संकलित स्थल' : 'Curated Highlights'}</span>
               </div>
               <h2 className="font-serif text-xl sm:text-3xl font-bold text-stone-900 tracking-tight">
-                Popular Destinations
+                {currentLanguage === 'hi' ? 'लोकप्रिय गंतव्य' : 'Popular Destinations'}
               </h2>
               <p className="text-xs sm:text-sm text-stone-500 mt-1 font-normal">
-                Iconic places that inspire every journey
+                {currentLanguage === 'hi' ? 'भारत के प्रतिष्ठित स्थल जो प्रत्येक यात्रा को अविस्मरणीय बनाते हैं' : 'Iconic places that inspire every journey'}
               </p>
             </div>
 
@@ -1586,7 +1600,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
                         : 'text-stone-500 hover:bg-orange-50 hover:text-[#C64F16]'
                     }`}
                   >
-                    {category}
+                    {currentLanguage === 'hi' ? (category === 'All' ? 'सभी' : category === 'Forts' ? 'किले' : category === 'Temples' ? 'मंदिर' : 'यूनेस्को') : category}
                   </button>
                 ))}
               </div>
@@ -1698,10 +1712,10 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
             <div>
               <div className="inline-flex items-center gap-1 text-[11px] sm:text-xs font-bold text-[#A84B13] uppercase tracking-wider mb-1">
                 <Compass className="w-3.5 h-3.5" />
-                <span>Local favourites &amp; offbeat finds</span>
+                <span>{currentLanguage === 'hi' ? 'स्थानीय पसंदीदा एवं अनोखी खोजें' : 'Local favourites & offbeat finds'}</span>
               </div>
               <h2 id="popular-hidden-title" className="font-serif text-xl sm:text-3xl font-bold text-stone-900 tracking-tight">
-                Popular Hidden Places
+                {currentLanguage === 'hi' ? 'अन्वेषित गुप्त धरोहर' : 'Popular Hidden Places'}
               </h2>
               <p className="text-xs sm:text-sm text-stone-600 mt-1 font-normal">
                 Less-obvious places travellers discover through local recommendations.
@@ -1793,10 +1807,10 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
             <div>
               <div className="inline-flex items-center gap-1 text-[11px] sm:text-xs font-bold text-[#FF671F] uppercase tracking-wider mb-1">
                 <Layers className="w-3.5 h-3.5 text-[#FF671F]" />
-                <span>Pan-India Cultural Geographies</span>
+                <span>{currentLanguage === 'hi' ? 'अखिल भारतीय सांस्कृतिक भूगोल' : 'Pan-India Cultural Geographies'}</span>
               </div>
               <h2 className="font-serif text-xl sm:text-3xl font-bold text-stone-900 tracking-tight">
-                Explore India by Region
+                {currentLanguage === 'hi' ? 'क्षेत्र अनुसार भारत दर्शन' : 'Explore India by Region'}
               </h2>
               <p className="text-xs sm:text-sm text-stone-500 mt-1 font-normal">
                 Discover the diverse beauty of every region
@@ -1807,7 +1821,7 @@ export const VirasatDashboard: React.FC<VirasatDashboardProps> = ({
               onClick={() => onNavigateTab('india')}
               className="text-xs font-bold text-[#FF671F] hover:text-[#E65100] flex items-center gap-1 self-start sm:self-auto cursor-pointer"
             >
-              <span>View All Regions</span>
+              <span>{currentLanguage === 'hi' ? 'सभी क्षेत्र देखें' : 'View All Regions'}</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>

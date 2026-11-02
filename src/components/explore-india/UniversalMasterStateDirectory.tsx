@@ -25,6 +25,11 @@ import {
   StateDirectoryAttraction,
 } from '../../types/masterStateDirectory';
 import { useLanguage } from '../../contexts/LanguageContext';
+import {
+  translateTextToHindi,
+  CITIES_HINDI_MAP,
+  WILDLIFE_HINDI_MAP,
+} from '../../i18n/hindiDictionary';
 
 interface UniversalMasterStateDirectoryProps {
   config: StateDirectoryConfig;
@@ -164,18 +169,18 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
           <div className="space-y-3 max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold tracking-wide bg-gradient-to-r from-amber-500/20 to-orange-500/20 border border-amber-400/40 text-amber-300">
               <Shield className="w-3.5 h-3.5 text-amber-400" />
-              <span>Consolidated {config.stateName} Master Directory · {config.stateCode}</span>
+              <span>{currentLanguage === 'hi' ? `एकीकृत ${config.stateName} मास्टर डायरेक्टरी · ${config.stateCode}` : `Consolidated ${config.stateName} Master Directory · ${config.stateCode}`}</span>
             </div>
 
             <h1 className="text-2xl sm:text-4xl font-serif font-bold tracking-tight text-white flex flex-wrap items-center gap-3">
-              <span>{currentCity.name}</span>
+              <span>{currentLanguage === 'hi' ? (CITIES_HINDI_MAP[currentCity.name] || currentCity.name) : currentCity.name}</span>
               <span className="text-xs sm:text-sm font-sans font-normal px-2.5 py-0.5 rounded-md bg-white/10 text-amber-200 border border-white/15">
                 {currentCity.code}
               </span>
             </h1>
 
             <p className="text-sm sm:text-base text-stone-300 leading-relaxed">
-              {currentCity.flashcardBlurb}
+              {currentLanguage === 'hi' ? translateTextToHindi(currentCity.flashcardBlurb) : currentCity.flashcardBlurb}
             </p>
 
             {/* Quick Metrics */}
@@ -186,7 +191,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
               </span>
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white/10 border border-white/10 text-stone-200">
                 <Award className="w-3.5 h-3.5 text-orange-400" />
-                <span>{config.unescoCount}</span>
+                <span>{currentLanguage === 'hi' ? translateTextToHindi(config.unescoCount) : config.unescoCount}</span>
               </span>
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white/10 border border-white/10 text-stone-200">
                 <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
@@ -200,7 +205,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
               )}
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white/10 border border-white/10 text-stone-200">
                 <UtensilsCrossed className="w-3.5 h-3.5 text-rose-400" />
-                <span>{config.cuisineLabel}</span>
+                <span>{currentLanguage === 'hi' ? translateTextToHindi(config.cuisineLabel) : config.cuisineLabel}</span>
               </span>
             </div>
           </div>
@@ -217,10 +222,10 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
               className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-stone-950 font-semibold text-xs sm:text-sm shadow-lg hover:shadow-amber-500/25 transition-all cursor-pointer"
             >
               <Sparkles className="w-4 h-4 text-stone-950" />
-              <span>{currentLanguage === 'hi' ? `एआई गाइड से पूछें (${currentCity.name})` : `Ask AI Guide about ${currentCity.name}`}</span>
+              <span>{currentLanguage === 'hi' ? `एआई गाइड से पूछें (${CITIES_HINDI_MAP[currentCity.name] || currentCity.name})` : `Ask AI Guide about ${currentCity.name}`}</span>
             </button>
             <div className="text-[11px] text-stone-400 text-center">
-              State Directory · Verified Field Dossier
+              {currentLanguage === 'hi' ? 'राज्य डायरेक्टरी · सत्यापित फील्ड संचिका' : 'State Directory · Verified Field Dossier'}
             </div>
           </div>
         </div>
@@ -232,7 +237,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
           <span>
             {currentLanguage === 'hi' ? `${config.stateName} गंतव्य चुनें (${config.cities.length} केंद्र)` : `Select ${config.stateName} Destination (${config.cities.length} Hubs)`}
           </span>
-          <span className="text-amber-700 font-medium">{config.regionalSubtitle}</span>
+          <span className="text-amber-700 font-medium">{currentLanguage === 'hi' ? translateTextToHindi(config.regionalSubtitle) : config.regionalSubtitle}</span>
         </div>
         <div className="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-stone-300">
           {config.cities.map((city) => {
@@ -257,7 +262,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
                     isSelected ? 'text-amber-300' : 'text-stone-400 group-hover:text-amber-600'
                   }`}
                 />
-                <span>{city.name}</span>
+                <span>{currentLanguage === 'hi' ? (CITIES_HINDI_MAP[city.name] || city.name) : city.name}</span>
                 <span
                   className={`text-[10px] px-1.5 py-0.5 rounded ${
                     isSelected
@@ -353,9 +358,9 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder={
-                activeTab === 'wildlife'
-                  ? 'Search tiger reserves, fauna...'
-                  : 'Search sights, forts & caves...'
+                currentLanguage === 'hi'
+                  ? (activeTab === 'wildlife' ? 'बाघ अभयारण्य, वन्यजीव खोजें...' : 'दर्शनीय स्थल, किले, गुफाएं खोजें...')
+                  : (activeTab === 'wildlife' ? 'Search tiger reserves, fauna...' : 'Search sights, forts & caves...')
               }
               className="w-full pl-8 pr-3 py-1.5 text-xs rounded-lg border border-stone-200 bg-stone-50 focus:bg-white focus:outline-none focus:ring-1 focus:ring-amber-500 text-stone-800"
             />
@@ -378,7 +383,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
                   : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
               }`}
             >
-              All ({currentCity.attractions?.length || 0})
+              {currentLanguage === 'hi' ? `सभी (${currentCity.attractions?.length || 0})` : `All (${currentCity.attractions?.length || 0})`}
             </button>
             <button
               type="button"
@@ -389,8 +394,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
                   : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
               }`}
             >
-              Core Heritage (
-              {currentCity.attractions?.filter((a) => !a.isHiddenGem).length || 0})
+              {currentLanguage === 'hi' ? `मुख्य धरोहर (${currentCity.attractions?.filter((a) => !a.isHiddenGem).length || 0})` : `Core Heritage (${currentCity.attractions?.filter((a) => !a.isHiddenGem).length || 0})`}
             </button>
             <button
               type="button"
@@ -401,8 +405,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
                   : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
               }`}
             >
-              Hidden Gems (
-              {currentCity.attractions?.filter((a) => a.isHiddenGem).length || 0})
+              {currentLanguage === 'hi' ? `अन्वेषित धरोहर (${currentCity.attractions?.filter((a) => a.isHiddenGem).length || 0})` : `Hidden Gems (${currentCity.attractions?.filter((a) => a.isHiddenGem).length || 0})`}
             </button>
             {wildlifeReserves.length > 0 && (
               <button
@@ -411,7 +414,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
                 className="px-3 py-1 rounded-full cursor-pointer transition-colors bg-emerald-50 text-emerald-800 border border-emerald-300 font-medium hover:bg-emerald-100 flex items-center gap-1"
               >
                 <Trees className="w-3 h-3 text-emerald-600" />
-                <span>View State Wildlife &amp; Parks ({wildlifeReserves.length})</span>
+                <span>{currentLanguage === 'hi' ? `राज्य के वन्यजीव एवं पार्क देखें (${wildlifeReserves.length})` : `View State Wildlife & Parks (${wildlifeReserves.length})`}</span>
               </button>
             )}
           </div>
@@ -445,7 +448,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
                         </span>
                         {attraction.isHiddenGem && (
                           <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-purple-600/90 text-white backdrop-blur-xs flex items-center gap-1 shadow-xs">
-                            <Sparkles className="w-3 h-3" /> Hidden Gem
+                            <Sparkles className="w-3 h-3" /> {currentLanguage === 'hi' ? 'अन्वेषित धरोहर' : 'Hidden Gem'}
                           </span>
                         )}
                         {attraction.category?.includes('UNESCO') && (
@@ -483,7 +486,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
                         <div className="flex items-start gap-1.5 text-stone-600">
                           <Clock className="w-3.5 h-3.5 text-stone-400 mt-0.5 shrink-0" />
                           <div>
-                            <div className="text-[10px] text-stone-600 font-semibold uppercase">Timings</div>
+                            <div className="text-[10px] text-stone-600 font-semibold uppercase">{currentLanguage === 'hi' ? 'दर्शन समय' : 'Timings'}</div>
                             <div className="font-medium text-stone-800">{attraction.timings || 'Sunrise – Sunset'}</div>
                           </div>
                         </div>
@@ -491,7 +494,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
                         <div className="flex items-start gap-1.5 text-stone-600">
                           <IndianRupee className="w-3.5 h-3.5 text-stone-400 mt-0.5 shrink-0" />
                           <div>
-                            <div className="text-[10px] text-stone-600 font-semibold uppercase">Fee</div>
+                            <div className="text-[10px] text-stone-600 font-semibold uppercase">{currentLanguage === 'hi' ? 'प्रवेश शुल्क' : 'Fee'}</div>
                             <div className="font-medium text-stone-800">
                               {attraction.fee?.domestic || 'Free'}
                               {attraction.fee?.foreign &&
@@ -517,12 +520,12 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
                       {isCopied ? (
                         <>
                           <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                          <span className="text-emerald-700 font-semibold">Copied!</span>
+                          <span className="text-emerald-700 font-semibold">{currentLanguage === 'hi' ? 'कॉपी किया गया!' : 'Copied!'}</span>
                         </>
                       ) : (
                         <>
                           <Share2 className="w-3.5 h-3.5" />
-                          <span>Share Details</span>
+                          <span>{currentLanguage === 'hi' ? 'साझा करें' : 'Share Details'}</span>
                         </>
                       )}
                     </button>
@@ -536,7 +539,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
                       }
                       className="inline-flex items-center gap-1 text-amber-700 hover:text-amber-800 font-semibold transition-colors cursor-pointer"
                     >
-                      <span>Explore</span>
+                      <span>{currentLanguage === 'hi' ? 'अन्वेषण करें' : 'Explore'}</span>
                       <ChevronRight className="w-3.5 h-3.5" />
                     </button>
                   </div>
@@ -577,10 +580,10 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
                   <span>State Wildlife Protected Areas · {config.stateName}</span>
                 </div>
                 <h3 className="text-xl sm:text-2xl font-serif font-bold text-white">
-                  National Parks, Tiger Reserves &amp; Sanctuaries
+                  {currentLanguage === 'hi' ? 'राष्ट्रीय उद्यान, बाघ अभयारण्य एवं वन्यजीव शरणगाह' : 'National Parks, Tiger Reserves & Sanctuaries'}
                 </h3>
                 <p className="text-xs sm:text-sm text-emerald-100/80 leading-relaxed">
-                  Ecological corridors, Project Tiger sanctuaries, and UNESCO Biosphere Reserves sheltering endangered apex predators and unique biodiversity in {config.stateName}.
+                  {currentLanguage === 'hi' ? `${config.stateName} के पारिस्थितिक गलियारे, प्रोजेक्ट टाइगर अभयारण्य एवं यूनेस्को बायोस्फीयर रिजर्व जो संकटग्रस्त वन्यजीवों को सुरक्षित प्राकृतिक आवास प्रदान करते हैं।` : `Ecological corridors, Project Tiger sanctuaries, and UNESCO Biosphere Reserves sheltering endangered apex predators and unique biodiversity in ${config.stateName}.`}
                 </p>
               </div>
 
@@ -595,7 +598,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
                   className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-300 hover:to-teal-400 text-stone-950 text-xs sm:text-sm font-bold shadow-md transition-all cursor-pointer inline-flex items-center gap-1.5"
                 >
                   <Binoculars className="w-4 h-4 text-stone-950" />
-                  <span>Ask AI Safari Expert</span>
+                  <span>{currentLanguage === 'hi' ? 'एआई सफारी विशेषज्ञ से पूछें' : 'Ask AI Safari Expert'}</span>
                 </button>
               </div>
             </div>
@@ -603,7 +606,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
 
           {/* Subfilter Pills for Wildlife */}
           <div className="flex items-center gap-2 text-xs flex-wrap">
-            <span className="text-stone-500 font-medium">Filter Protected Areas:</span>
+            <span className="text-stone-500 font-medium">{currentLanguage === 'hi' ? 'संरक्षित क्षेत्र फ़िल्टर:' : 'Filter Protected Areas:'}</span>
             <button
               type="button"
               onClick={() => setWildlifeFilter('all')}
@@ -613,7 +616,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
                   : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
               }`}
             >
-              All ({wildlifeReserves.length})
+              {currentLanguage === 'hi' ? `सभी (${wildlifeReserves.length})` : `All (${wildlifeReserves.length})`}
             </button>
             <button
               type="button"
@@ -624,7 +627,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
                   : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
               }`}
             >
-              Tiger Reserves ({wildlifeReserves.filter((r) => r.category === 'Tiger Reserve').length})
+              {currentLanguage === 'hi' ? `बाघ अभयारण्य (${wildlifeReserves.filter((r) => r.category === 'Tiger Reserve').length})` : `Tiger Reserves (${wildlifeReserves.filter((r) => r.category === 'Tiger Reserve').length})`}
             </button>
             <button
               type="button"
@@ -635,7 +638,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
                   : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
               }`}
             >
-              National Parks ({wildlifeReserves.filter((r) => r.category === 'National Park' || r.category === 'Marine National Park').length})
+              {currentLanguage === 'hi' ? `राष्ट्रीय उद्यान (${wildlifeReserves.filter((r) => r.category === 'National Park' || r.category === 'Marine National Park').length})` : `National Parks (${wildlifeReserves.filter((r) => r.category === 'National Park' || r.category === 'Marine National Park').length})`}
             </button>
             <button
               type="button"
@@ -646,7 +649,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
                   : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
               }`}
             >
-              Sanctuaries &amp; Bird Reserves ({wildlifeReserves.filter((r) => r.category === 'Wildlife Sanctuary' || r.category === 'Bird Sanctuary' || r.category === 'Biosphere Reserve').length})
+              {currentLanguage === 'hi' ? `अभयारण्य व पक्षी रिजर्व (${wildlifeReserves.filter((r) => r.category === 'Wildlife Sanctuary' || r.category === 'Bird Sanctuary' || r.category === 'Biosphere Reserve').length})` : `Sanctuaries & Bird Reserves (${wildlifeReserves.filter((r) => r.category === 'Wildlife Sanctuary' || r.category === 'Bird Sanctuary' || r.category === 'Biosphere Reserve').length})`}
             </button>
           </div>
 
@@ -705,11 +708,11 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
                       <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-white text-xs">
                         <span className="inline-flex items-center gap-1 font-semibold truncate">
                           <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0" />
-                          <span>{reserve.district} District</span>
+                          <span>{currentLanguage === 'hi' ? `${reserve.district} ज़िला` : `${reserve.district} District`}</span>
                         </span>
                         {reserve.nearestCity && (
                           <span className="text-[10px] text-stone-300 truncate">
-                            via {reserve.nearestCity}
+                            {currentLanguage === 'hi' ? `मार्ग: ${CITIES_HINDI_MAP[reserve.nearestCity] || reserve.nearestCity}` : `via ${reserve.nearestCity}`}
                           </span>
                         )}
                       </div>
@@ -772,12 +775,12 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
                       {isCopied ? (
                         <>
                           <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                          <span className="text-emerald-700 font-semibold">Copied!</span>
+                          <span className="text-emerald-700 font-semibold">{currentLanguage === 'hi' ? 'कॉपी किया गया!' : 'Copied!'}</span>
                         </>
                       ) : (
                         <>
                           <Share2 className="w-3.5 h-3.5" />
-                          <span>Share Details</span>
+                          <span>{currentLanguage === 'hi' ? 'साझा करें' : 'Share Details'}</span>
                         </>
                       )}
                     </button>
@@ -792,7 +795,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
                       className="inline-flex items-center gap-1 text-emerald-700 hover:text-emerald-900 font-semibold transition-colors cursor-pointer"
                     >
                       <Binoculars className="w-3.5 h-3.5" />
-                      <span>Plan Safari</span>
+                      <span>{currentLanguage === 'hi' ? 'सफारी योजना बनाएं' : 'Plan Safari'}</span>
                       <ChevronRight className="w-3.5 h-3.5" />
                     </button>
                   </div>
@@ -826,7 +829,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
           <div className="p-4 rounded-xl bg-amber-50 border border-amber-200 text-xs text-amber-900 flex items-start gap-3">
             <Hotel className="w-4 h-4 text-amber-700 mt-0.5 shrink-0" />
             <div>
-              <div className="font-bold text-amber-950">Curated Accommodations in {currentCity.name}</div>
+              <div className="font-bold text-amber-950">{currentLanguage === 'hi' ? `${CITIES_HINDI_MAP[currentCity.name] || currentCity.name} में प्रमाणित आवास व होटल` : `Curated Accommodations in ${currentCity.name}`}</div>
               <div>
                 Hand-picked luxury, heritage havelis, eco-resorts, and boutique stays verified for comfort, safety, and cultural hospitality in {config.stateName}.
               </div>
@@ -842,7 +845,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
                 <div className="space-y-2">
                   <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-900 border border-amber-300">
                     <ShieldCheck className="w-3 h-3 text-amber-700" />
-                    <span>Top Recommendation #{idx + 1}</span>
+                    <span>{currentLanguage === 'hi' ? `सर्वश्रेष्ठ अनुशंसा #${idx + 1}` : `Top Recommendation #${idx + 1}`}</span>
                   </div>
                   <h4 className="text-base font-serif font-bold text-stone-900">{stay.name}</h4>
                   <p className="text-xs text-stone-600 leading-relaxed">{stay.category}</p>
@@ -859,7 +862,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
                     }
                     className="text-amber-700 font-semibold hover:underline inline-flex items-center gap-1 cursor-pointer"
                   >
-                    <span>Check Amenities</span>
+                    <span>{currentLanguage === 'hi' ? 'सुविधाएं देखें' : 'Check Amenities'}</span>
                     <ChevronRight className="w-3 h-3" />
                   </button>
                 </div>
@@ -881,7 +884,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
             <div className="p-4 rounded-xl bg-stone-900 text-stone-200 border border-stone-800 text-xs flex items-start gap-3">
               <UtensilsCrossed className="w-4 h-4 text-amber-400 mt-0.5 shrink-0" />
               <div>
-                <div className="font-bold text-amber-300">Gastronomic Dossier · {currentCity.name}</div>
+                <div className="font-bold text-amber-300">{currentLanguage === 'hi' ? `स्वादिष्ट खानपान संचिका · ${CITIES_HINDI_MAP[currentCity.name] || currentCity.name}` : `Gastronomic Dossier · ${currentCity.name}`}</div>
                 <div className="text-stone-300 mt-0.5">
                   {currentCity.dining.culinaryNote ||
                     currentCity.dining.coastalNote ||
@@ -899,7 +902,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
               <div className="flex items-center gap-2">
                 <span className="w-3 h-3 rounded-full bg-emerald-600" />
                 <h3 className="text-sm font-bold text-stone-900 uppercase tracking-wider">
-                  Where to Eat (Vegetarian)
+                  {currentLanguage === 'hi' ? 'प्रसिद्ध शाकाहारी भोजनालय' : 'Where to Eat (Vegetarian)'}
                 </h3>
               </div>
 
@@ -917,7 +920,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
                         </div>
                       </div>
                       <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-50 text-emerald-800 border border-emerald-200">
-                        Pure Veg
+                        {currentLanguage === 'hi' ? 'शुद्ध शाकाहारी' : 'Pure Veg'}
                       </span>
                     </div>
                     <p className="text-xs text-stone-600 mt-2 leading-relaxed">{spot.specialties}</p>
@@ -933,7 +936,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
               <div className="flex items-center gap-2">
                 <span className="w-3 h-3 rounded-full bg-rose-600" />
                 <h3 className="text-sm font-bold text-stone-900 uppercase tracking-wider">
-                  Where to Eat (Non-Vegetarian &amp; Regional Specialties)
+                  {currentLanguage === 'hi' ? 'मांसाहारी एवं क्षेत्रीय लजीज व्यंजन' : 'Where to Eat (Non-Vegetarian & Regional Specialties)'}
                 </h3>
               </div>
 
@@ -951,7 +954,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
                         </div>
                       </div>
                       <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-rose-50 text-rose-800 border border-rose-200">
-                        Non-Veg
+                        {currentLanguage === 'hi' ? 'मांसाहारी' : 'Non-Veg'}
                       </span>
                     </div>
                     <p className="text-xs text-stone-600 mt-2 leading-relaxed">{spot.specialties}</p>

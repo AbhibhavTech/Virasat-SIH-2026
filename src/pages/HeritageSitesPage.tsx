@@ -290,18 +290,31 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-600"></span>
               </span>
               <ShieldCheck className="w-4 h-4 text-[#FF671F]" />
-              <span>Catalogued ASI & UNESCO Heritage Records</span>
+              <span>{currentLanguage === 'hi' ? 'भारतीय पुरातत्व सर्वेक्षण (ASI) एवं यूनेस्को प्रमाणित धरोहर' : 'Catalogued ASI & UNESCO Heritage Records'}</span>
             </div>
 
             <div className="space-y-2 sm:space-y-3">
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-serif font-black tracking-tight text-[#0B192C] leading-[1.12]">
-                Major Monuments, Tourist Places &{' '}
-                <span className="bg-gradient-to-r from-[#FF671F] via-[#E06D24] to-[#046A38] bg-clip-text text-transparent">
-                  Iconic Heritage
-                </span>
+                {currentLanguage === 'hi' ? (
+                  <span>
+                    प्रमुख स्मारक, दर्शनीय स्थल एवं{' '}
+                    <span className="bg-gradient-to-r from-[#FF671F] via-[#E06D24] to-[#046A38] bg-clip-text text-transparent">
+                      ऐतिहासिक धरोहर
+                    </span>
+                  </span>
+                ) : (
+                  <>
+                    Major Monuments, Tourist Places &{' '}
+                    <span className="bg-gradient-to-r from-[#FF671F] via-[#E06D24] to-[#046A38] bg-clip-text text-transparent">
+                      Iconic Heritage
+                    </span>
+                  </>
+                )}
               </h1>
               <p className="text-sm sm:text-base lg:text-lg text-stone-600 leading-relaxed font-sans max-w-2xl">
-                India’s officially verified national heritage repository. Discover world-renowned monuments, architectural dynasties, verified visiting hours, direct rail corridors, and sacred pilgrimage circuits.
+                {currentLanguage === 'hi'
+                  ? 'भारत का आधिकारिक सत्यापित राष्ट्रीय धरोहर भंडार। विश्वप्रसिद्ध स्मारकों, स्थापत्य शैलियों, प्रमाणित दर्शन समय, सीधी रेल कनेक्टिविटी और पावन तीर्थ परिक्रमाओं का अन्वेषण करें।'
+                  : 'India’s officially verified national heritage repository. Discover world-renowned monuments, architectural dynasties, verified visiting hours, direct rail corridors, and sacred pilgrimage circuits.'}
               </p>
             </div>
 
@@ -309,15 +322,15 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
             <div className="flex flex-wrap items-center gap-2.5 sm:gap-4 pt-2">
               <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white/90 border border-stone-200/80 shadow-2xs text-xs sm:text-sm font-semibold text-stone-800">
                 <span className="w-2.5 h-2.5 rounded-full bg-[#046A38]" />
-                <span>{loading ? '...' : heritageSites.length} Monuments Catalogued</span>
+                <span>{loading ? '...' : heritageSites.length} {currentLanguage === 'hi' ? 'स्मारक सूचीबद्ध' : 'Monuments Catalogued'}</span>
               </div>
               <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white/90 border border-stone-200/80 shadow-2xs text-xs sm:text-sm font-semibold text-stone-800">
                 <Award className="w-4 h-4 text-[#FF671F]" />
-                <span>UNESCO World Heritage</span>
+                <span>{currentLanguage === 'hi' ? 'यूनेस्को विश्व धरोहर' : 'UNESCO World Heritage'}</span>
               </div>
               <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-white/90 border border-stone-200/80 shadow-2xs text-xs sm:text-sm font-semibold text-stone-800">
                 <History className="w-4 h-4 text-[#000080]" />
-                <span>3,500+ Years Architecture</span>
+                <span>{currentLanguage === 'hi' ? '3,500+ वर्षों की वास्तुकला' : '3,500+ Years Architecture'}</span>
               </div>
               <button
                 type="button"
@@ -325,7 +338,7 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
                 className="flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-[#FF671F] to-[#E65100] text-white shadow-xs hover:shadow-md text-xs sm:text-sm font-bold transition-all active:scale-95 cursor-pointer"
               >
                 <Compass className="w-4 h-4" />
-                <span>8 Pilgrimage Circuits</span>
+                <span>{currentLanguage === 'hi' ? '8 पावन तीर्थ परिपथ' : '8 Pilgrimage Circuits'}</span>
               </button>
             </div>
           </div>
@@ -337,10 +350,10 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
                 <div className="flex items-center gap-2">
                   <Sparkles className="w-4 h-4 text-[#FF671F]" />
                   <span className="text-xs sm:text-sm font-serif font-bold text-stone-900 uppercase tracking-wider">
-                    Interactive Heritage Explorer
+                    {currentLanguage === 'hi' ? 'इंटरैक्टिव धरोहर अन्वेषक' : 'Interactive Heritage Explorer'}
                   </span>
                 </div>
-                <span className="text-[11px] font-semibold text-stone-500">Quick Filters</span>
+                <span className="text-[11px] font-semibold text-stone-500">{currentLanguage === 'hi' ? 'त्वरित फ़िल्टर' : 'Quick Filters'}</span>
               </div>
 
               {/* 4 Interactive Feature Tiles */}

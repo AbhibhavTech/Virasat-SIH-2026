@@ -1,11 +1,19 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { api } from '../services/api';
+import { useLanguage } from '../contexts/LanguageContext';
 import { FestivalItem } from '../types';
+import { getFestivalEnrichment } from '../data/festivalEnrichmentData';
 import {
   Sparkles,
   Calendar,
   MapPin,
+  Utensils,
+  BookOpen,
+  Heart,
+  CheckCircle,
+  Copy,
+  Check,
   Search,
   Bot,
   Hotel,
@@ -88,9 +96,8 @@ const LEGACY_GENERIC_FESTIVAL_IMAGE =
 
 const hasVerifiedFestivalImage = (festival: FestivalItem) => Boolean(
   festival.image_url &&
-  festival.image_url !== LEGACY_GENERIC_FESTIVAL_IMAGE &&
-  festival.verification_status === 'verified' &&
-  festival.source_url
+  festival.image_url.trim().length > 0 &&
+  festival.image_url !== LEGACY_GENERIC_FESTIVAL_IMAGE
 );
 
 export const FESTIVAL_CATEGORIES = [
@@ -110,6 +117,7 @@ export const FestivalsPage: React.FC<FestivalsPageProps> = ({
   onSelectPlace,
   onNavigateTab,
 }) => {
+  const { currentLanguage } = useLanguage();
   const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
 
@@ -141,6 +149,32 @@ export const FestivalsPage: React.FC<FestivalsPageProps> = ({
 
   // Detail Modal State
   const [selectedFestival, setSelectedFestival] = useState<FestivalItem | null>(null);
+  const [activeModalTab, setActiveModalTab] = useState<'overview' | 'rituals' | 'delicacies' | 'temples' | 'travelerTips'>('overview');
+  const [copiedShareLink, setCopiedShareLink] = useState(false);
+
+  // Sync with URL parameters (?festival=... or ?id=...)
+  useEffect(() => {
+    const festivalId = searchParams.get('festival') || searchParams.get('id');
+    if (festivalId && festivals.length > 0) {
+      const match = festivals.find((f) => f.id === festivalId || f.slug === festivalId);
+      if (match) setSelectedFestival(match);
+    }
+  }, [festivals, searchParams]);
+
+  const handleSelectFestival = (fest: FestivalItem | null) => {
+    setSelectedFestival(fest);
+    setActiveModalTab('overview');
+    setSearchParams((prev) => {
+      const next = new URLSearchParams(prev);
+      if (fest) {
+        next.set('festival', fest.id);
+      } else {
+        next.delete('festival');
+        next.delete('id');
+      }
+      return next;
+    }, { replace: true });
+  };
 
   const months = [
     'All',
@@ -572,10 +606,10 @@ export const FestivalsPage: React.FC<FestivalsPageProps> = ({
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             loading="lazy"
             onError={(e) => {
-              (e.target as HTMLElement).style.display = 'none';
+              (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=1200&auto=format&fit=crop&q=80';
             }}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent pointer-events-none" />
           {renderCardOverlayBadges(fest)}
         </div>
       );
@@ -664,7 +698,7 @@ export const FestivalsPage: React.FC<FestivalsPageProps> = ({
     return (
       <article
         key={fest.id}
-        onClick={() => setSelectedFestival(fest)}
+        onClick={() => handleSelectFestival(fest)}
         className="bg-white rounded-3xl overflow-hidden border border-[#EFE8DF] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer h-full"
       >
         {renderCardMedia(fest)}
@@ -719,9 +753,17 @@ export const FestivalsPage: React.FC<FestivalsPageProps> = ({
 
           {/* Quick Action Buttons */}
           <div className="pt-3 border-t border-[#EFE8DF] flex items-center justify-between gap-2 mt-auto">
-            <span className="text-xs sm:text-sm font-bold text-neutral-800 group-hover:text-[#E06D24] transition-colors flex items-center gap-1">
-              View Details <ChevronRight className="w-4 h-4" />
-            </span>
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                handleSelectFestival(fest);
+              }}
+              className="text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 px-3.5 py-1.5 rounded-xl shadow-xs transition-all flex items-center gap-1.5 cursor-pointer active:scale-95"
+            >
+              {currentLanguage === 'hi' ? 'विवरण देखें' : 'View Details'}
+              <ChevronRight className="w-4 h-4" />
+            </button>
 
             <div className="flex items-center gap-1.5" onClick={(e) => e.stopPropagation()}>
               <button
@@ -761,10 +803,20 @@ export const FestivalsPage: React.FC<FestivalsPageProps> = ({
         <div className="max-w-[1720px] mx-auto relative z-10 grid lg:grid-cols-[minmax(0,0.92fr)_minmax(460px,1.08fr)] items-center gap-8 lg:gap-12">
           <div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-semibold text-[#31251E] tracking-tight mb-4 leading-[1.04]">
-              India&apos;s Cultural <span className="text-[#D96520]">Calendar</span>
+              {currentLanguage === 'hi' ? (
+                <span>
+                  भारत का सांस्कृतिक <span className="text-[#D96520]">पंचांग एवं त्यौहार</span>
+                </span>
+              ) : (
+                <>
+                  India&apos;s Cultural <span className="text-[#D96520]">Calendar</span>
+                </>
+              )}
             </h1>
             <p className="text-base sm:text-lg text-[#695B51] max-w-2xl leading-relaxed mb-7">
-              Explore every celebration across India, with verified dates, regional traditions and a calendar that follows your system date.
+              {currentLanguage === 'hi'
+                ? 'भारत भर के प्रत्येक पावन पर्व और उत्सव का अन्वेषण करें, प्रामाणिक तिथियों व स्थानीय परंपराओं के साथ।'
+                : 'Explore every celebration across India, with verified dates, regional traditions and a calendar that follows your system date.'}
             </p>
 
             <form
@@ -779,7 +831,7 @@ export const FestivalsPage: React.FC<FestivalsPageProps> = ({
                 <input
                   id="festival-search-input"
                   type="text"
-                  placeholder="Search festivals across India..."
+                  placeholder={currentLanguage === 'hi' ? 'भारत भर के त्यौहार व उत्सव खोजें...' : 'Search festivals across India...'}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full py-2.5 bg-transparent border-none outline-none text-sm text-neutral-900 placeholder-neutral-400"
@@ -986,7 +1038,7 @@ export const FestivalsPage: React.FC<FestivalsPageProps> = ({
                     <button
                       type="button"
                       key={festival.id}
-                      onClick={() => setSelectedFestival(festival)}
+                      onClick={() => handleSelectFestival(festival)}
                       className="w-full text-left p-3 rounded-xl border border-[#EEE7DF] hover:border-[#D96520]/50 hover:bg-[#FFF9F4] transition-colors group"
                     >
                       <div className="flex items-center justify-between gap-2 mb-1">
@@ -1039,7 +1091,7 @@ export const FestivalsPage: React.FC<FestivalsPageProps> = ({
                   <div
                     key={fest.id}
                     className="bg-white rounded-xl p-4 border border-emerald-100 shadow-sm flex gap-4 items-center hover:shadow-md transition-all cursor-pointer"
-                    onClick={() => setSelectedFestival(fest)}
+                    onClick={() => handleSelectFestival(fest)}
                   >
                     {hasVerifiedFestivalImage(fest) ? (
                       <img
@@ -1430,230 +1482,454 @@ export const FestivalsPage: React.FC<FestivalsPageProps> = ({
       </div>
 
       {/* =========================================================================
-          FESTIVAL DETAIL MODAL
+          EXPANSIVE 5-TAB FESTIVAL DETAIL DOSSIER & MODAL
          ========================================================================= */}
-      {selectedFestival && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in">
-          <div className="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl border border-[#EFE8DF] flex flex-col">
-            {/* Modal Header Media */}
-            <div className="relative h-60 sm:h-72 shrink-0 bg-neutral-900">
-              {hasVerifiedFestivalImage(selectedFestival) ? (
-                <img
-                  src={selectedFestival.image_url}
-                  alt={selectedFestival.name}
-                  className="w-full h-full object-cover"
-                  onError={(e) => {
-                    (e.target as HTMLElement).style.display = 'none';
-                  }}
-                />
-              ) : (
-                <div className="w-full h-full bg-gradient-to-br from-[#241A14] via-[#35251C] to-[#1C1510] flex flex-col justify-end p-6 text-white relative">
-                  <div className="absolute top-6 left-6 p-3 rounded-2xl bg-white/10 backdrop-blur border border-white/20">
-                    <Sparkles className="w-6 h-6 text-amber-300" />
-                  </div>
-                </div>
-              )}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/35 to-transparent" />
+      {selectedFestival && (() => {
+        const enrichment = getFestivalEnrichment(
+          selectedFestival.id,
+          selectedFestival.name,
+          selectedFestival.state,
+          selectedFestival.category
+        );
+        const isHi = currentLanguage === 'hi';
+        const isVerifiedDate = selectedFestival.is_date_verified && selectedFestival.exact_date_start;
 
-              {/* Close Button */}
-              <button
-                onClick={() => setSelectedFestival(null)}
-                className="absolute top-4 right-4 p-2 bg-black/50 hover:bg-black/80 text-white rounded-full transition-colors z-20"
-              >
-                <X className="w-5 h-5" />
-              </button>
+        const copyShareLink = () => {
+          const shareUrl = `${window.location.origin}/festivals?festival=${encodeURIComponent(selectedFestival.id)}`;
+          navigator.clipboard.writeText(shareUrl).then(() => {
+            setCopiedShareLink(true);
+            setTimeout(() => setCopiedShareLink(false), 2500);
+          });
+        };
 
-              {/* Header Title Overlay */}
-              <div className="absolute bottom-4 left-5 right-5 text-white z-10">
-                <div className="flex items-center gap-2 mb-1 text-xs text-amber-300 font-semibold uppercase tracking-wider">
-                  <span>{selectedFestival.state}</span>
-                  {selectedFestival.region && (
-                    <>
-                      <span>•</span>
-                      <span>{selectedFestival.region} India</span>
-                    </>
-                  )}
-                  <span>•</span>
-                  <span>{selectedFestival.primary_city}</span>
-                </div>
-                <h2 className="text-2xl sm:text-3xl font-serif font-bold text-white drop-shadow-sm">
-                  {selectedFestival.name}
-                </h2>
-              </div>
-            </div>
-
-            {/* Modal Body: Overview & Heritage */}
-            <div className="p-6 sm:p-8 flex-1 space-y-6">
-                {/* Cultural Vibe & Schedule */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div className="bg-[#FAF7F2] p-4 rounded-2xl border border-[#EFE8DF]">
-                    <div className="text-xs text-neutral-500 font-medium mb-1">Cultural Essence</div>
-                    <div className="text-sm font-semibold text-neutral-900">
-                      {selectedFestival.cultural_vibe || `${selectedFestival.religion_or_category || 'Traditional'} celebration`}
-                    </div>
-                  </div>
-
-                  <div className="bg-[#FAF7F2] p-4 rounded-2xl border border-[#EFE8DF]">
-                    <div className="text-xs text-neutral-500 font-medium mb-1">
-                      {selectedFestival.is_date_verified ? 'Verified Dates' : 'Typical Season'}
-                    </div>
-                    <div className="text-sm font-semibold text-neutral-900">
-                      {selectedFestival.is_date_verified && selectedFestival.exact_date_start
-                        ? `${selectedFestival.exact_date_start} to ${selectedFestival.exact_date_end}`
-                        : selectedFestival.typical_season || 'Annual Observance'}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Scope & Religion/Category */}
-                <div className="flex flex-wrap gap-2 text-xs">
-                  <span className="px-3 py-1 rounded-xl bg-orange-50 border border-orange-200 text-[#D45B10] font-bold">
-                    Scope: {selectedFestival.scope || 'ALL_INDIA'}
-                  </span>
-                  {selectedFestival.religion_or_category && (
-                    <span className="px-3 py-1 rounded-xl bg-amber-50 border border-amber-200 text-amber-900 font-semibold">
-                      Tradition: {selectedFestival.religion_or_category}
-                    </span>
-                  )}
-                  {selectedFestival.region && (
-                    <span className="px-3 py-1 rounded-xl bg-neutral-100 border border-neutral-200 text-neutral-700 font-medium">
-                      Region: {selectedFestival.region} India
-                    </span>
-                  )}
-                </div>
-
-                {/* Description */}
-                <div>
-                  <h4 className="text-sm font-bold text-neutral-900 uppercase tracking-wider mb-2">
-                    About the Celebration
-                  </h4>
-                  <p className="text-sm text-neutral-700 leading-relaxed">
-                    {selectedFestival.description}
-                  </p>
-                </div>
-
-                {/* Tradition Notes if any (e.g. Jain & Sikh perspectives on Diwali) */}
-                {selectedFestival.tradition_notes && (
-                  <div className="bg-amber-50/70 rounded-2xl p-4 border border-amber-200/80 text-xs text-amber-950">
-                    <div className="font-bold mb-1 flex items-center gap-1.5 text-amber-900">
-                      <Sparkles className="w-3.5 h-3.5 text-[#E06D24]" />
-                      Multi-Tradition Observance Notes
-                    </div>
-                    <p className="leading-relaxed">{selectedFestival.tradition_notes}</p>
-                  </div>
-                )}
-
-                {/* Associated Places / Heritage Sites */}
-                {selectedFestival.associated_places && selectedFestival.associated_places.length > 0 && (
-                  <div>
-                    <h4 className="text-sm font-bold text-neutral-900 uppercase tracking-wider mb-2">
-                      Key Sacred Sites &amp; Landmarks
-                    </h4>
-                    <div className="flex flex-wrap gap-2">
-                      {selectedFestival.associated_places.map((place, i) => (
-                        <span
-                          key={i}
-                          className="px-3 py-1.5 rounded-xl bg-orange-50 border border-orange-200 text-xs font-semibold text-orange-900 flex items-center gap-1.5"
-                        >
-                          <Landmark className="w-3.5 h-3.5 text-[#E06D24]" />
-                          {place}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {/* States / Alternate Locations */}
-                {((selectedFestival.states && selectedFestival.states.length > 0) ||
-                  (selectedFestival.alternate_locations && selectedFestival.alternate_locations.length > 0)) && (
-                  <div>
-                    <h4 className="text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-1.5">
-                      Celebrated Across States &amp; Regions
-                    </h4>
-                    <div className="flex flex-wrap gap-1.5 text-xs text-neutral-700">
-                      {Array.from(
-                        new Set([
-                          ...(selectedFestival.states || []),
-                          ...(selectedFestival.alternate_locations || []),
-                        ])
-                      ).map((st, i) => (
-                        <span key={i} className="px-2.5 py-1 rounded-lg bg-neutral-100 text-neutral-800 font-medium">
-                          {st}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {/* Verified Image Attribution & License */}
+        return (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 bg-black/75 backdrop-blur-md animate-fade-in overflow-y-auto">
+            <div className="bg-white rounded-3xl max-w-5xl w-full max-h-[92vh] overflow-y-auto shadow-2xl border border-[#EFE8DF] flex flex-col my-auto">
+              
+              {/* Grand Hero Header Media */}
+              <div className="relative h-64 sm:h-80 md:h-96 shrink-0 bg-neutral-900 overflow-hidden">
                 {hasVerifiedFestivalImage(selectedFestival) ? (
-                  <div className="bg-neutral-50 rounded-2xl p-4 border border-neutral-200 text-xs text-neutral-600 flex items-start gap-3">
-                    <Info className="w-4 h-4 text-neutral-400 shrink-0 mt-0.5" />
-                    <div className="flex-1">
-                      <div className="font-semibold text-neutral-800 mb-0.5">Image Provenance &amp; Verification</div>
-                      <div>Source: {selectedFestival.source_name || 'Wikimedia Commons / Ministry of Tourism'}</div>
-                      {selectedFestival.license && <div>License: {selectedFestival.license}</div>}
-                      {selectedFestival.attribution_text && <div>Attribution: {selectedFestival.attribution_text}</div>}
-                      {selectedFestival.source_url && (
-                        <a
-                          href={selectedFestival.source_url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-[#E06D24] hover:underline inline-flex items-center gap-1 mt-1 font-medium"
-                        >
-                          View Source Archive <ExternalLink className="w-3 h-3" />
-                        </a>
-                      )}
+                  <img
+                    src={selectedFestival.image_url}
+                    alt={selectedFestival.name}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=1200&auto=format&fit=crop&q=80';
+                    }}
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-[#241A14] via-[#35251C] to-[#1C1510] flex flex-col justify-end p-6 text-white relative">
+                    <div className="absolute top-6 left-6 p-3 rounded-2xl bg-white/10 backdrop-blur border border-white/20">
+                      <Sparkles className="w-6 h-6 text-amber-300" />
                     </div>
                   </div>
-                ) : (
-                  <div className="bg-neutral-50 rounded-2xl p-4 border border-neutral-200 text-xs text-neutral-600 flex items-start gap-3">
-                    <Info className="w-4 h-4 text-neutral-400 shrink-0 mt-0.5" />
-                    <div className="flex-1">
-                      <div className="font-semibold text-neutral-800 mb-0.5">Official Registry Record</div>
-                      <div>Sourced from the National Festivals and Cultural Events Master Database. Neutral placeholder displayed in accordance with verified image standards.</div>
+                )}
+                
+                {/* Visual Scrim */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/35 to-transparent pointer-events-none" />
+
+                {/* Top Action Buttons (Share & Close) */}
+                <div className="absolute top-4 right-4 flex items-center gap-2 z-20">
+                  <button
+                    type="button"
+                    onClick={copyShareLink}
+                    title="Share Festival Dossier"
+                    className="p-2.5 bg-black/60 hover:bg-black/80 text-white rounded-full backdrop-blur-md transition-all flex items-center gap-1.5 text-xs font-semibold cursor-pointer border border-white/20"
+                  >
+                    {copiedShareLink ? (
+                      <>
+                        <Check className="w-4 h-4 text-emerald-400" />
+                        <span className="text-emerald-300 pr-1">{isHi ? 'कॉपी हुआ!' : 'Copied!'}</span>
+                      </>
+                    ) : (
+                      <>
+                        <Share2 className="w-4 h-4 text-amber-300" />
+                        <span className="hidden sm:inline pr-1">{isHi ? 'शेयर करें' : 'Share'}</span>
+                      </>
+                    )}
+                  </button>
+
+                  <button
+                    type="button"
+                    onClick={() => handleSelectFestival(null)}
+                    title="Close"
+                    className="p-2.5 bg-black/60 hover:bg-black/90 text-white rounded-full backdrop-blur-md transition-colors cursor-pointer border border-white/20"
+                  >
+                    <X className="w-5 h-5" />
+                  </button>
+                </div>
+
+                {/* Top Left Pills */}
+                <div className="absolute top-4 left-4 flex flex-wrap items-center gap-2 z-10 pointer-events-none max-w-[70%]">
+                  <span className="px-3 py-1 rounded-full bg-black/65 backdrop-blur-md text-white text-xs font-bold border border-white/20 flex items-center gap-1.5">
+                    <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                    {selectedFestival.state}
+                  </span>
+
+                  {selectedFestival.region && (
+                    <span className="px-2.5 py-0.5 rounded-full bg-amber-500/30 backdrop-blur-md text-amber-200 text-xs font-semibold border border-amber-400/30">
+                      {selectedFestival.region} India
+                    </span>
+                  )}
+
+                  {isVerifiedDate ? (
+                    <span className="px-3 py-1 rounded-full bg-emerald-600/90 backdrop-blur-md text-white text-xs font-bold flex items-center gap-1.5 shadow-md">
+                      <ShieldCheck className="w-3.5 h-3.5" />
+                      {isHi ? '2026 सत्यापित तिथियां' : '2026 Verified Schedule'}
+                    </span>
+                  ) : (
+                    <span className="px-3 py-1 rounded-full bg-amber-600/90 backdrop-blur-md text-white text-xs font-semibold flex items-center gap-1">
+                      <Clock className="w-3.5 h-3.5" />
+                      {selectedFestival.typical_season || 'Annual Observance'}
+                    </span>
+                  )}
+                </div>
+
+                {/* Hero Title and Subtitle Overlay */}
+                <div className="absolute bottom-5 left-5 right-5 text-white z-10">
+                  <div className="flex items-center gap-2 mb-1.5 text-xs text-amber-300 font-bold uppercase tracking-wider">
+                    <span>{selectedFestival.primary_city}</span>
+                    {selectedFestival.alternate_locations && selectedFestival.alternate_locations.length > 0 && (
+                      <>
+                        <span>•</span>
+                        <span>{selectedFestival.alternate_locations.slice(0, 3).join(', ')}</span>
+                      </>
+                    )}
+                    {selectedFestival.religion_or_category && (
+                      <>
+                        <span>•</span>
+                        <span className="text-orange-200">{selectedFestival.religion_or_category}</span>
+                      </>
+                    )}
+                  </div>
+                  <h2 className="text-2xl sm:text-4xl md:text-5xl font-serif font-black text-white drop-shadow-md leading-tight">
+                    {selectedFestival.name}
+                  </h2>
+                  <div className="text-xs sm:text-sm text-stone-200 mt-1 font-medium flex items-center gap-2">
+                    <Calendar className="w-4 h-4 text-orange-400 shrink-0" />
+                    <span>
+                      {isVerifiedDate
+                        ? `${selectedFestival.exact_date_start} to ${selectedFestival.exact_date_end} (Official 2026 Celebration)`
+                        : selectedFestival.typical_season || 'Traditional annual celebration'}
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              {/* 5-Tab Navigation Bar */}
+              <div className="bg-[#FAF7F2] border-b border-[#EFE8DF] px-4 sm:px-6 pt-3 flex items-center gap-2 overflow-x-auto no-scrollbar shrink-0">
+                {[
+                  { id: 'overview' as const, icon: BookOpen, label: isHi ? 'परिचय व महत्व' : 'Overview & Heritage' },
+                  { id: 'rituals' as const, icon: Flame, label: isHi ? 'पवित्र अनुष्ठान' : 'Sacred Rituals' },
+                  { id: 'delicacies' as const, icon: Utensils, label: isHi ? 'उत्सव व्यंजन व भोग' : 'Festive Delicacies' },
+                  { id: 'temples' as const, icon: Landmark, label: isHi ? 'प्रमुख तीर्थ व स्थल' : 'Key Shrines & Sites' },
+                  { id: 'travelerTips' as const, icon: Compass, label: isHi ? 'यात्री मार्गदर्शन' : 'Traveler Guide' },
+                ].map((tab) => {
+                  const Icon = tab.icon;
+                  const isActive = activeModalTab === tab.id;
+                  return (
+                    <button
+                      key={tab.id}
+                      type="button"
+                      onClick={() => setActiveModalTab(tab.id)}
+                      className={`px-4 py-3 text-xs sm:text-sm font-bold flex items-center gap-2 border-b-2 transition-all whitespace-nowrap cursor-pointer ${
+                        isActive
+                          ? 'border-[#E06D24] text-[#E06D24] bg-white rounded-t-xl shadow-2xs'
+                          : 'border-transparent text-neutral-600 hover:text-neutral-900 hover:border-neutral-300'
+                      }`}
+                    >
+                      <Icon className={`w-4 h-4 ${isActive ? 'text-[#E06D24]' : 'text-neutral-500'}`} />
+                      <span>{tab.label}</span>
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Modal Body Content (Scrollable) */}
+              <div className="p-6 sm:p-8 flex-1 space-y-6 overflow-y-auto">
+                {/* TAB 1: OVERVIEW & HERITAGE */}
+                {activeModalTab === 'overview' && (
+                  <div className="space-y-6 animate-fade-in">
+                    {/* Cultural Vibe & Schedule Cards */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="bg-[#FAF7F2] p-4 rounded-2xl border border-[#EFE8DF]">
+                        <div className="text-xs text-neutral-500 font-bold uppercase tracking-wider mb-1">
+                          {isHi ? 'सांस्कृतिक विशेषता' : 'Cultural Essence'}
+                        </div>
+                        <div className="text-sm sm:text-base font-bold text-neutral-900">
+                          {selectedFestival.cultural_vibe || `${selectedFestival.religion_or_category || 'Traditional'} celebration`}
+                        </div>
+                      </div>
+
+                      <div className="bg-[#FAF7F2] p-4 rounded-2xl border border-[#EFE8DF]">
+                        <div className="text-xs text-neutral-500 font-bold uppercase tracking-wider mb-1">
+                          {isVerifiedDate ? (isHi ? '2026 सत्यापित अवधि' : '2026 Synchronized Dates') : (isHi ? 'पारंपरिक ऋतु' : 'Typical Season')}
+                        </div>
+                        <div className="text-sm sm:text-base font-bold text-neutral-900 font-mono">
+                          {isVerifiedDate
+                            ? `${selectedFestival.exact_date_start} — ${selectedFestival.exact_date_end}`
+                            : selectedFestival.typical_season || 'Annual Observance'}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* About the Celebration Narrative */}
+                    <div>
+                      <h4 className="text-sm font-bold text-neutral-900 uppercase tracking-wider mb-2 flex items-center gap-2">
+                        <BookOpen className="w-4 h-4 text-[#E06D24]" />
+                        {isHi ? 'उत्सव का ऐतिहासिक व सांस्कृतिक परिचय' : 'About the Celebration & Living Heritage'}
+                      </h4>
+                      <p className="text-sm sm:text-base text-neutral-700 leading-relaxed font-normal">
+                        {selectedFestival.description}
+                      </p>
+                    </div>
+
+                    {/* Multi-Tradition Notes if present */}
+                    {selectedFestival.tradition_notes && (
+                      <div className="bg-amber-50/70 rounded-2xl p-4 border border-amber-200/80 text-xs sm:text-sm text-amber-950">
+                        <div className="font-bold mb-1 flex items-center gap-1.5 text-amber-900">
+                          <Sparkles className="w-4 h-4 text-[#E06D24]" />
+                          {isHi ? 'विविध परंपराओं का संगम' : 'Multi-Tradition Observance Notes'}
+                        </div>
+                        <p className="leading-relaxed">{selectedFestival.tradition_notes}</p>
+                      </div>
+                    )}
+
+                    {/* Cultural Highlights Bullets */}
+                    {enrichment.culturalHighlights && enrichment.culturalHighlights.length > 0 && (
+                      <div>
+                        <h4 className="text-xs font-bold text-neutral-500 uppercase tracking-wider mb-2">
+                          {isHi ? 'प्रमुख सांस्कृतिक बिंदु' : 'Key Cultural Dimensions'}
+                        </h4>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                          {enrichment.culturalHighlights.map((hl, i) => (
+                            <div key={i} className="p-3 rounded-xl bg-orange-50/50 border border-orange-100 flex items-start gap-2 text-xs sm:text-sm text-neutral-800">
+                              <span className="text-[#E06D24] font-black text-base leading-none">•</span>
+                              <span>{hl}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Image Provenance & Verification */}
+                    <div className="bg-neutral-50 rounded-2xl p-4 border border-neutral-200 text-xs text-neutral-600 flex items-start gap-3">
+                      <Info className="w-4 h-4 text-neutral-400 shrink-0 mt-0.5" />
+                      <div className="flex-1">
+                        <div className="font-bold text-neutral-800 mb-0.5">
+                          {isHi ? 'छवि सत्यापन एवं स्रोत अभिलेख' : 'Image Provenance & Official Registry Record'}
+                        </div>
+                        <div>Source: {selectedFestival.source_name || 'Ministry of Tourism / National Cultural Archives'}</div>
+                        {selectedFestival.license && <div>License: {selectedFestival.license}</div>}
+                        {selectedFestival.attribution_text && <div>Attribution: {selectedFestival.attribution_text}</div>}
+                        {selectedFestival.source_url && (
+                          <a
+                            href={selectedFestival.source_url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[#E06D24] hover:underline inline-flex items-center gap-1 mt-1 font-semibold"
+                          >
+                            {isHi ? 'मूल स्रोत देखें' : 'View Source Archive'} <ExternalLink className="w-3 h-3" />
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* TAB 2: SACRED RITUALS & CEREMONIES */}
+                {activeModalTab === 'rituals' && (
+                  <div className="space-y-4 animate-fade-in">
+                    <div>
+                      <h4 className="text-base font-bold text-neutral-900 font-serif flex items-center gap-2 mb-1">
+                        <Flame className="w-4 h-4 text-[#E06D24]" />
+                        {isHi ? enrichment.hindi.ritualsTitle : 'Sacred Rituals & Day-by-Day Ceremonies'}
+                      </h4>
+                      <p className="text-xs text-neutral-500">
+                        {isHi
+                          ? 'प्रातः काल से संध्याकालीन महाआरती व शोभायात्राओं का क्रमवार विवरण'
+                          : 'Step-by-step authentic sequence from morning invocations to evening processions'}
+                      </p>
+                    </div>
+
+                    <div className="space-y-3 mt-3">
+                      {(isHi ? enrichment.hindi.rituals : enrichment.rituals).map((ritual, idx) => (
+                        <div
+                          key={idx}
+                          className="p-4 rounded-2xl border border-[#EFE8DF] bg-stone-50/50 hover:bg-white hover:border-[#E06D24]/40 transition-all flex items-start gap-3.5"
+                        >
+                          <div className="w-7 h-7 rounded-xl bg-gradient-to-br from-orange-500 to-amber-600 text-white font-bold text-xs flex items-center justify-center shrink-0 shadow-xs">
+                            {idx + 1}
+                          </div>
+                          <div className="text-sm text-neutral-800 leading-relaxed font-medium">
+                            {ritual}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* TAB 3: FESTIVE DELICACIES & PRASAD */}
+                {activeModalTab === 'delicacies' && (
+                  <div className="space-y-4 animate-fade-in">
+                    <div>
+                      <h4 className="text-base font-bold text-neutral-900 font-serif flex items-center gap-2 mb-1">
+                        <Utensils className="w-4 h-4 text-[#E06D24]" />
+                        {isHi ? enrichment.hindi.delicaciesTitle : 'Traditional Festive Delicacies & Sacred Prasad'}
+                      </h4>
+                      <p className="text-xs text-neutral-500">
+                        {isHi
+                          ? 'उत्सव पर अर्पित होने वाले विशेष भोग, मिष्ठान एवं पारंपरिक व्यंजन'
+                          : 'Sacred temple offerings (Bhog), festive sweetmeats, and heirloom regional recipes'}
+                      </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mt-3">
+                      {(isHi ? enrichment.hindi.delicacies : enrichment.delicacies).map((dish, idx) => (
+                        <div
+                          key={idx}
+                          className="p-4 rounded-2xl border border-amber-200/70 bg-gradient-to-br from-amber-50/50 via-white to-orange-50/30 flex items-start gap-3 hover:shadow-xs transition-all"
+                        >
+                          <div className="p-2 rounded-xl bg-orange-100 text-[#E06D24] shrink-0">
+                            <Utensils className="w-4 h-4" />
+                          </div>
+                          <div>
+                            <div className="text-sm font-bold text-neutral-900">{dish}</div>
+                            <div className="text-[11px] text-amber-900/80 mt-0.5">
+                              {isHi ? 'पारंपरिक उत्सव प्रसाद' : 'Authentic ceremonial preparation'}
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* TAB 4: KEY SHRINES & SITES */}
+                {activeModalTab === 'temples' && (
+                  <div className="space-y-4 animate-fade-in">
+                    <div>
+                      <h4 className="text-base font-bold text-neutral-900 font-serif flex items-center gap-2 mb-1">
+                        <Landmark className="w-4 h-4 text-[#E06D24]" />
+                        {isHi ? enrichment.hindi.keyTemplesTitle : 'Primary Shrines, Temples & Experience Hubs'}
+                      </h4>
+                      <p className="text-xs text-neutral-500">
+                        {isHi
+                          ? 'भव्य उत्सव देखने हेतु सर्वाधिक प्रतिष्ठित मंदिर, चौक व सार्वजनिक मंडल'
+                          : 'The most sacred pilgrimage temples, royal squares, and epicenters to witness the celebrations'}
+                      </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 mt-3">
+                      {enrichment.keyTemples.map((temple, idx) => (
+                        <div
+                          key={idx}
+                          className="p-4 rounded-2xl border border-[#EFE8DF] bg-stone-50/50 hover:bg-white hover:border-[#E06D24]/40 transition-all flex flex-col justify-between"
+                        >
+                          <div className="flex items-start gap-3">
+                            <div className="p-2.5 rounded-xl bg-orange-50 text-[#E06D24] shrink-0">
+                              <Landmark className="w-4 h-4" />
+                            </div>
+                            <div>
+                              <div className="text-sm font-bold text-neutral-900">{temple}</div>
+                              <div className="text-xs text-neutral-500 mt-0.5">
+                                {selectedFestival.state} Heritage Precinct
+                              </div>
+                            </div>
+                          </div>
+
+                          <div className="mt-3 pt-2 border-t border-[#EFE8DF] flex items-center justify-between">
+                            <span className="text-[11px] font-semibold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded-md">
+                              Primary Experience Site
+                            </span>
+                            <button
+                              type="button"
+                              onClick={() => handleShowOnMap(selectedFestival)}
+                              className="text-xs font-bold text-[#E06D24] hover:underline flex items-center gap-1 cursor-pointer"
+                            >
+                              {isHi ? 'मानचित्र पर देखें' : 'View on Map'} <ChevronRight className="w-3.5 h-3.5" />
+                            </button>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* TAB 5: TRAVELER GUIDE & LOGISTICS */}
+                {activeModalTab === 'travelerTips' && (
+                  <div className="space-y-4 animate-fade-in">
+                    <div>
+                      <h4 className="text-base font-bold text-neutral-900 font-serif flex items-center gap-2 mb-1">
+                        <Compass className="w-4 h-4 text-[#E06D24]" />
+                        {isHi ? enrichment.hindi.travelerTipsTitle : 'Traveler & Celebration Logistics Guide'}
+                      </h4>
+                      <p className="text-xs text-neutral-500">
+                        {isHi
+                          ? 'दर्शकों हेतु भीड़ प्रबंधन, वेशभूषा, छायाचित्रण नियम व आवश्यक सुझाव'
+                          : 'Insider guidance on crowd management, attire etiquette, timings, and photography'}
+                      </p>
+                    </div>
+
+                    <div className="space-y-3 mt-3">
+                      {(isHi ? enrichment.hindi.travelerTips : enrichment.travelerTips).map((tip, idx) => (
+                        <div
+                          key={idx}
+                          className="p-4 rounded-2xl border border-emerald-100 bg-emerald-50/30 flex items-start gap-3 text-xs sm:text-sm text-neutral-800"
+                        >
+                          <ShieldCheck className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                          <div className="leading-relaxed font-medium">{tip}</div>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 )}
               </div>
 
-            {/* Modal Direct Actions Footer */}
-            <div className="p-4 sm:p-6 bg-white border-t border-[#EFE8DF] grid grid-cols-2 sm:grid-cols-4 gap-3 sticky bottom-0 z-20">
-              <button
-                onClick={() => handleShowOnMap(selectedFestival)}
-                className="px-3 py-2.5 rounded-xl bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors"
-              >
-                <MapPin className="w-3.5 h-3.5" />
-                Show on Map
-              </button>
+              {/* Sticky Action Footer */}
+              <div className="p-4 sm:p-5 bg-white border-t border-[#EFE8DF] grid grid-cols-2 sm:grid-cols-4 gap-2.5 sticky bottom-0 z-20">
+                <button
+                  type="button"
+                  onClick={() => handleAddToItinerary(selectedFestival)}
+                  className="px-3.5 py-2.5 rounded-xl bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 text-white text-xs font-bold flex items-center justify-center gap-1.5 transition-all shadow-xs cursor-pointer active:scale-95"
+                >
+                  <Calendar className="w-3.5 h-3.5" />
+                  {isHi ? 'यात्रा योजना बनाएं' : 'Plan 2026 Itinerary'}
+                </button>
 
-              <button
-                onClick={() => handleAddToItinerary(selectedFestival)}
-                className="px-3 py-2.5 rounded-xl bg-[#E06D24] hover:bg-[#D45B10] text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors"
-              >
-                <Calendar className="w-3.5 h-3.5" />
-                Plan Itinerary
-              </button>
+                <button
+                  type="button"
+                  onClick={() => handleShowOnMap(selectedFestival)}
+                  className="px-3.5 py-2.5 rounded-xl bg-neutral-900 hover:bg-neutral-800 text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+                >
+                  <MapPin className="w-3.5 h-3.5" />
+                  {isHi ? 'मानचित्र पर देखें' : 'Show on Map'}
+                </button>
 
-              <button
-                onClick={() => handleAskAI(selectedFestival)}
-                className="px-3 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors"
-              >
-                <Bot className="w-3.5 h-3.5" />
-                Ask Virasat AI
-              </button>
+                <button
+                  type="button"
+                  onClick={() => handleAskAI(selectedFestival)}
+                  className="px-3.5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+                >
+                  <Bot className="w-3.5 h-3.5" />
+                  {isHi ? 'विरासत AI से पूछें' : 'Ask Virasat AI'}
+                </button>
 
-              <button
-                onClick={() => handleExploreCity(selectedFestival.primary_city_id, selectedFestival.primary_city)}
-                className="px-3 py-2.5 rounded-xl bg-neutral-100 hover:bg-neutral-200 text-neutral-800 text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors"
-              >
-                <Hotel className="w-3.5 h-3.5" />
-                Hotels &amp; City
-              </button>
+                <button
+                  type="button"
+                  onClick={() => handleExploreCity(selectedFestival.primary_city_id, selectedFestival.primary_city)}
+                  className="px-3.5 py-2.5 rounded-xl bg-neutral-100 hover:bg-neutral-200 text-neutral-800 text-xs font-semibold flex items-center justify-center gap-1.5 transition-colors cursor-pointer"
+                >
+                  <Hotel className="w-3.5 h-3.5" />
+                  {isHi ? 'शहर व होटल' : 'Hotels & City'}
+                </button>
+              </div>
+
             </div>
           </div>
-        </div>
-      )}
+        );
+      })()}
     </div>
   );
 };

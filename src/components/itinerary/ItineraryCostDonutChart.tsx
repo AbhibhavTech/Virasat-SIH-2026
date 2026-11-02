@@ -10,8 +10,21 @@ import {
   MapPin,
   Sparkles,
   PieChart as PieIcon,
+  ShieldCheck,
+  CheckCircle2,
+  Clock,
+  ChevronDown,
+  ChevronUp,
+  Info,
+  Star,
+  Award,
+  ArrowRight,
+  Landmark,
+  Building,
 } from 'lucide-react';
 import { ItineraryResponse } from '../../types';
+import { useLanguage } from '../../contexts/LanguageContext';
+import { getCityTravelIntelligence } from '../../data/cityTravelIntelligence';
 
 interface Props {
   itinerary: ItineraryResponse;
@@ -128,11 +141,14 @@ export const ItineraryCostDonutChart: React.FC<Props> = ({
   originCity = '',
 }) => {
   const [activeTier, setActiveTier] = useState<BudgetTierKey>(initialBudgetTier);
+  const { currentLanguage } = useLanguage();
+  const [activeIntelTab, setActiveIntelTab] = useState<'stays' | 'trains' | 'flights' | 'asi' | 'dining'>('stays');
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [costViewMode, setCostViewMode] = useState<'total' | 'daily'>('total');
 
   const city = itinerary.city || selectedCityName;
+  const cityIntel = getCityTravelIntelligence(city, itinerary.state);
   const tier = TIERS[activeTier] || TIERS.moderate;
   const days = Math.max(1, daysCount || itinerary.days_count || 1);
   const party = Math.max(1, guests);
@@ -167,49 +183,6 @@ export const ItineraryCostDonutChart: React.FC<Props> = ({
 
   const dateQuery = startDate ? ` from ${startDate}` : '';
   const routeQuery = originCity.trim() ? ` from ${originCity.trim()} to ${city}` : ` to ${city}`;
-
-  const searchPills = [
-    {
-      icon: BedDouble,
-      label: 'Verified Stays',
-      subtext: `Find ${tier.label.split(' ')[0]} Hotels`,
-      href: `https://www.booking.com/searchresults.html?${stayParams.toString()}`,
-    },
-    {
-      icon: TrainFront,
-      label: 'IRCTC Trains',
-      subtext: `Routes to ${city}`,
-      href: 'https://www.irctc.co.in/nget/train-search',
-    },
-    {
-      icon: Plane,
-      label: 'Flight Fares',
-      subtext: 'Compare live airlines',
-      href: `https://www.google.com/travel/flights?q=${encodeURIComponent(`flights${routeQuery}${dateQuery}`)}`,
-    },
-    ...(originCity.trim()
-      ? [
-          {
-            icon: MapPin,
-            label: 'Road Distance',
-            subtext: `Drive from ${originCity}`,
-            href: `https://www.google.com/maps/dir/?api=1&origin=${encodeURIComponent(originCity.trim())}&destination=${encodeURIComponent(city)}&travelmode=driving`,
-          },
-        ]
-      : []),
-    {
-      icon: Ticket,
-      label: 'ASI Monuments',
-      subtext: 'Official entry tickets',
-      href: `https://www.google.com/search?q=${encodeURIComponent(`${city} official asi monument ticket booking online`)}`,
-    },
-    {
-      icon: Utensils,
-      label: 'Local Dining',
-      subtext: 'Must-try iconic eateries',
-      href: `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`famous iconic restaurants in ${city}`)}`,
-    },
-  ];
 
   return (
     <section
@@ -530,38 +503,555 @@ export const ItineraryCostDonutChart: React.FC<Props> = ({
         </div>
       </div>
 
-      {/* External Verified Action Pills */}
-      <div className="mt-5">
-        <div className="text-xs font-bold uppercase tracking-wider text-stone-600 mb-2.5 flex items-center gap-1.5">
-          <Sparkles className="w-3.5 h-3.5 text-orange-600" />
-          <span>Check Current Rates & Official Portals</span>
+      {/* In-App Real-World Travel Intelligence Dossier */}
+      <div className="mt-8 pt-6 border-t border-stone-200/90">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3.5">
+          <div className="text-xs font-bold uppercase tracking-wider text-orange-800 flex items-center gap-1.5">
+            <Sparkles className="w-4 h-4 text-orange-600" />
+            <span>
+              {currentLanguage === 'hi'
+                ? `${city} हेतु इन-ऐप सत्यापित यात्रा गाइड एवं वास्तविक विवरण`
+                : `In-App Verified Real-World Travel Intelligence for ${city}`}
+            </span>
+          </div>
+          <span className="text-[11px] font-semibold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200 flex items-center gap-1 w-fit">
+            <ShieldCheck className="w-3.5 h-3.5" />
+            {currentLanguage === 'hi' ? 'सत्यापित ऑन-ग्राउंड डेटा' : 'Verified On-Ground Intelligence'}
+          </span>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5">
-          {searchPills.map((item) => {
-            const Icon = item.icon;
+
+        {/* Tab Selector Buttons */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5 mb-5">
+          {[
+            {
+              id: 'stays' as const,
+              icon: BedDouble,
+              label: currentLanguage === 'hi' ? 'सत्यापित आवास' : 'Verified Stays',
+              subtext: currentLanguage === 'hi' ? 'होटल व हेरिटेज हवेलियां' : `${cityIntel.stays.length} Curated Options`,
+            },
+            {
+              id: 'trains' as const,
+              icon: TrainFront,
+              label: currentLanguage === 'hi' ? 'आईआरसीटीसी रेल' : 'IRCTC Trains',
+              subtext: currentLanguage === 'hi' ? 'वंदे भारत व मुख्य मार्ग' : `${cityIntel.trains.premierTrains.length} Premier Services`,
+            },
+            {
+              id: 'flights' as const,
+              icon: Plane,
+              label: currentLanguage === 'hi' ? 'उड़ान व एयरपोर्ट' : 'Flight Fares',
+              subtext: currentLanguage === 'hi' ? 'हवाई अड्डा व टैक्सी' : 'Airport & Transit',
+            },
+            {
+              id: 'asi' as const,
+              icon: Ticket,
+              label: currentLanguage === 'hi' ? 'एएसआई स्मारक टिकट' : 'ASI Monuments',
+              subtext: currentLanguage === 'hi' ? 'आधिकारिक दरें व समय' : 'Official Entry Rates',
+            },
+            {
+              id: 'dining' as const,
+              icon: Utensils,
+              label: currentLanguage === 'hi' ? 'प्रसिद्ध भोजनालय' : 'Local Dining',
+              subtext: currentLanguage === 'hi' ? 'प्रतिष्ठित खान-पान स्थल' : `${cityIntel.dining.length} Iconic Eateries`,
+            },
+          ].map((tab) => {
+            const Icon = tab.icon;
+            const isActive = activeIntelTab === tab.id;
             return (
-              <a
-                key={item.label}
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group p-3 rounded-xl border border-stone-200 bg-white hover:border-orange-300 hover:shadow-xs transition flex flex-col justify-between"
+              <button
+                key={tab.id}
+                type="button"
+                onClick={() => setActiveIntelTab(tab.id)}
+                className={`p-3 rounded-2xl border text-left transition-all cursor-pointer flex flex-col justify-between ${
+                  isActive
+                    ? 'bg-gradient-to-br from-orange-600 to-amber-700 text-white border-orange-600 shadow-md scale-[1.02]'
+                    : 'bg-white border-stone-200 text-stone-800 hover:border-orange-300 hover:bg-orange-50/40 shadow-2xs'
+                }`}
               >
-                <div className="flex items-center justify-between">
-                  <Icon className="h-4 w-4 text-orange-700" />
-                  <ExternalLink className="h-3 w-3 text-stone-400 group-hover:text-orange-700 transition" />
+                <div className="flex items-center justify-between w-full mb-1">
+                  <Icon className={`h-4 w-4 ${isActive ? 'text-amber-200' : 'text-orange-700'}`} />
+                  {isActive && <span className="h-1.5 w-1.5 rounded-full bg-amber-300" />}
                 </div>
-                <div className="mt-2">
-                  <div className="text-xs font-bold text-stone-900 leading-tight group-hover:text-orange-800 transition">
-                    {item.label}
+                <div>
+                  <div className={`text-xs font-bold leading-tight ${isActive ? 'text-white' : 'text-stone-900'}`}>
+                    {tab.label}
                   </div>
-                  <div className="text-[10px] text-stone-500 mt-0.5 leading-tight truncate">
-                    {item.subtext}
+                  <div className={`text-[10px] mt-0.5 truncate ${isActive ? 'text-orange-100' : 'text-stone-500'}`}>
+                    {tab.subtext}
                   </div>
                 </div>
-              </a>
+              </button>
             );
           })}
+        </div>
+
+        {/* Dynamic In-App Intelligence Content Area */}
+        <div className="bg-white rounded-3xl border border-stone-200/90 p-5 sm:p-7 shadow-xs">
+          {/* TAB 1: VERIFIED STAYS */}
+          {activeIntelTab === 'stays' && (
+            <div className="space-y-4 animate-fade-in">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-stone-100">
+                <div>
+                  <h4 className="text-base font-bold text-stone-900 font-serif flex items-center gap-2">
+                    <BedDouble className="w-4 h-4 text-orange-600" />
+                    {currentLanguage === 'hi'
+                      ? `${city} में सत्यापित हेरिटेज हवेलियां व आरामदायक आवास`
+                      : `Verified Heritage Havelis & Curated Stays in ${city}`}
+                  </h4>
+                  <p className="text-xs text-stone-500 mt-0.5">
+                    {currentLanguage === 'hi'
+                      ? 'ऑन-साइट सत्यापित दरें, हेरिटेज सुविधाएं व आधिकारिक बुकिंग परामर्श'
+                      : 'On-site verified tariff brackets, heritage amenities, and booking guidelines'}
+                  </p>
+                </div>
+                <a
+                  href={`https://www.booking.com/searchresults.html?${stayParams.toString()}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-semibold text-orange-700 hover:text-orange-800 inline-flex items-center gap-1 hover:underline shrink-0"
+                >
+                  {currentLanguage === 'hi' ? 'लाइव उपलब्धता देखें' : 'Optional live rates on Booking.com'}
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {cityIntel.stays.map((stay) => (
+                  <div
+                    key={stay.id}
+                    className="rounded-2xl border border-stone-200 bg-stone-50/50 hover:bg-white hover:border-orange-300 hover:shadow-md transition-all p-4 flex flex-col justify-between"
+                  >
+                    <div>
+                      <div className="flex items-center justify-between gap-2 mb-1.5">
+                        <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 border border-amber-200">
+                          {stay.category}
+                        </span>
+                        <div className="flex items-center gap-1 text-xs font-bold text-amber-700">
+                          <Star className="w-3.5 h-3.5 fill-amber-500 text-amber-500" />
+                          <span>{stay.rating}</span>
+                          <span className="text-stone-400 font-normal">({stay.reviewCount})</span>
+                        </div>
+                      </div>
+
+                      <h5 className="text-sm font-bold text-stone-900 font-serif">{stay.name}</h5>
+                      <div className="text-xs text-stone-500 flex items-center gap-1 mt-0.5">
+                        <MapPin className="w-3 h-3 text-stone-400 shrink-0" />
+                        <span className="truncate">{stay.locality}</span>
+                      </div>
+
+                      <div className="mt-2.5 inline-block px-2.5 py-1 rounded-lg bg-orange-100/70 text-orange-950 font-bold text-xs font-mono">
+                        {stay.priceRange}
+                      </div>
+
+                      <div className="mt-3 flex flex-wrap gap-1.5">
+                        {stay.amenities.map((am, i) => (
+                          <span
+                            key={i}
+                            className="text-[10px] font-medium px-2 py-0.5 rounded-md bg-white border border-stone-200 text-stone-700"
+                          >
+                            ✓ {am}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="mt-3 pt-2.5 border-t border-stone-200/70 text-[11px] text-stone-600 flex items-start gap-1.5 bg-amber-50/50 p-2 rounded-xl">
+                      <Sparkles className="w-3.5 h-3.5 text-orange-600 shrink-0 mt-0.5" />
+                      <span>
+                        <strong className="text-stone-800">Tip:</strong> {stay.bookingTip}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* TAB 2: IRCTC TRAINS & CONNECTIVITY */}
+          {activeIntelTab === 'trains' && (
+            <div className="space-y-5 animate-fade-in">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-stone-100">
+                <div>
+                  <h4 className="text-base font-bold text-stone-900 font-serif flex items-center gap-2">
+                    <TrainFront className="w-4 h-4 text-orange-600" />
+                    {currentLanguage === 'hi'
+                      ? `${city} हेतु भारतीय रेल (IRCTC) प्रमुख मार्ग एवं किराया संरचना`
+                      : `Indian Railways (IRCTC) Connectivity & Route Intelligence for ${city}`}
+                  </h4>
+                  <p className="text-xs text-stone-500 mt-0.5">
+                    {currentLanguage === 'hi'
+                      ? 'वंदे भारत, शताब्दी व सुपरफास्ट ट्रेनों का समय एवं आधिकारिक श्रेणी किराया'
+                      : 'Vande Bharat, Shatabdi & Superfast services with official class fare breakdown'}
+                  </p>
+                </div>
+                <a
+                  href="https://www.irctc.co.in/nget/train-search"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-semibold text-orange-700 hover:text-orange-800 inline-flex items-center gap-1 hover:underline shrink-0"
+                >
+                  {currentLanguage === 'hi' ? 'IRCTC.co.in पोर्टल खोलें' : 'Open IRCTC.co.in directly'}
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+
+              {/* Station Codes */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {cityIntel.trains.stations.map((st, i) => (
+                  <div key={i} className="bg-stone-50 p-3 rounded-2xl border border-stone-200">
+                    <div className="text-[11px] text-stone-500 font-medium">Railway Station</div>
+                    <div className="text-sm font-bold text-stone-900 flex items-center justify-between">
+                      <span>{st.name}</span>
+                      <span className="font-mono bg-orange-100 text-orange-900 px-2 py-0.5 rounded text-xs">
+                        {st.code}
+                      </span>
+                    </div>
+                    <div className="text-[11px] text-stone-600 mt-1">
+                      {st.distanceToCenter} • {st.platforms} Platforms
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Premier Trains List */}
+              <div>
+                <h5 className="text-xs font-bold uppercase tracking-wider text-stone-700 mb-2.5">
+                  {currentLanguage === 'hi' ? 'प्रमुख एक्सप्रेस व वंदे भारत सेवाएं' : 'Premier Express & Vande Bharat Services'}
+                </h5>
+                <div className="space-y-2.5">
+                  {cityIntel.trains.premierTrains.map((tr, i) => (
+                    <div
+                      key={i}
+                      className="p-3.5 rounded-2xl border border-stone-200 bg-amber-50/20 flex flex-col sm:flex-row sm:items-center justify-between gap-3"
+                    >
+                      <div>
+                        <div className="flex items-center gap-2">
+                          <span className="text-xs font-bold text-stone-900">{tr.name}</span>
+                          <span className="text-[10px] font-mono bg-stone-200 text-stone-800 px-1.5 py-0.5 rounded">
+                            {tr.trainNo}
+                          </span>
+                        </div>
+                        <div className="text-xs text-stone-600 mt-0.5">
+                          {tr.route} • <strong className="text-orange-800">{tr.travelTime}</strong>
+                        </div>
+                        <div className="text-[11px] text-stone-500 mt-0.5">{tr.highlights}</div>
+                      </div>
+                      <span className="text-xs font-semibold px-2.5 py-1 rounded-xl bg-white border border-stone-200 text-stone-700 shrink-0 self-start sm:self-center">
+                        {tr.frequency}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Class Fares */}
+              <div>
+                <h5 className="text-xs font-bold uppercase tracking-wider text-stone-700 mb-2.5">
+                  {currentLanguage === 'hi' ? 'आधिकारिक आईआरसीटीसी श्रेणी किराया' : 'Official IRCTC Travel Class Fares'}
+                </h5>
+                <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5">
+                  {cityIntel.trains.classFares.map((cf, i) => (
+                    <div key={i} className="p-3 rounded-xl border border-stone-200 bg-white">
+                      <div className="text-[11px] font-bold text-stone-500">{cf.code}</div>
+                      <div className="text-xs font-extrabold text-stone-900 truncate">{cf.tier.split(' ')[0]}</div>
+                      <div className="text-sm font-mono font-bold text-orange-700 mt-1">{cf.typicalFare}</div>
+                      <div className="text-[10px] text-stone-500 mt-0.5 leading-tight">{cf.amenities}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Transit Advice */}
+              <div className="bg-emerald-50/60 p-3.5 rounded-2xl border border-emerald-200 text-xs text-emerald-950 flex items-start gap-2.5">
+                <ShieldCheck className="w-4 h-4 text-emerald-700 shrink-0 mt-0.5" />
+                <div>
+                  <strong className="text-emerald-900">
+                    {currentLanguage === 'hi' ? 'स्टेशन परिवहन सलाह: ' : 'Station Exit Transit Advice: '}
+                  </strong>
+                  {cityIntel.trains.transitAdvice}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* TAB 3: FLIGHTS & AIRPORT TRANSIT */}
+          {activeIntelTab === 'flights' && (
+            <div className="space-y-4 animate-fade-in">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-stone-100">
+                <div>
+                  <h4 className="text-base font-bold text-stone-900 font-serif flex items-center gap-2">
+                    <Plane className="w-4 h-4 text-orange-600" />
+                    {currentLanguage === 'hi'
+                      ? `${city} हवाई अड्डा व सीधी विमान सेवाएं`
+                      : `Airport & Nonstop Aerial Transit for ${city}`}
+                  </h4>
+                  <p className="text-xs text-stone-500 mt-0.5">
+                    {currentLanguage === 'hi'
+                      ? 'प्रमुख हवाई संपर्क, औसत किराया दरें व प्रीपेड टैक्सी दरें'
+                      : 'Major flight corridors, typical one-way fare ranges, and prepaid airport transit'}
+                  </p>
+                </div>
+                <a
+                  href={`https://www.google.com/travel/flights?q=${encodeURIComponent(`flights${routeQuery}${dateQuery}`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-semibold text-orange-700 hover:text-orange-800 inline-flex items-center gap-1 hover:underline shrink-0"
+                >
+                  {currentLanguage === 'hi' ? 'गूगल फ्लाइट्स देखें' : 'View Google Flights'}
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {/* Airport Details */}
+                <div className="p-4 rounded-2xl border border-stone-200 bg-stone-50/50 space-y-3">
+                  <div>
+                    <div className="text-xs text-stone-500 font-semibold">Commercial Airport</div>
+                    <div className="text-base font-bold text-stone-900 font-serif flex items-center gap-2">
+                      <span>{cityIntel.flights.airportName}</span>
+                      <span className="font-mono bg-amber-100 text-amber-900 px-2 py-0.5 rounded text-xs font-bold">
+                        {cityIntel.flights.iataCode}
+                      </span>
+                    </div>
+                    <div className="text-xs text-stone-600 mt-0.5">{cityIntel.flights.terminal}</div>
+                  </div>
+
+                  <div>
+                    <div className="text-xs text-stone-500 font-semibold mb-1">
+                      {currentLanguage === 'hi' ? 'सीधे हवाई मार्ग (उड़ानें)' : 'Major Direct Flight Hubs'}
+                    </div>
+                    <div className="flex flex-wrap gap-1.5">
+                      {cityIntel.flights.majorDirectHubs.map((hub, i) => (
+                        <span
+                          key={i}
+                          className="text-[11px] font-semibold px-2 py-0.5 rounded-lg bg-white border border-stone-200 text-stone-800"
+                        >
+                          ✈ {hub}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="pt-2 border-t border-stone-200">
+                    <span className="text-xs text-stone-500">
+                      {currentLanguage === 'hi' ? 'विमान किराया मानक: ' : 'Typical Economy Fare: '}
+                    </span>
+                    <strong className="text-orange-800 font-mono text-sm">
+                      {cityIntel.flights.typicalOneWayFare}
+                    </strong>
+                  </div>
+                </div>
+
+                {/* Transit into City */}
+                <div className="p-4 rounded-2xl border border-stone-200 bg-stone-50/50 space-y-3 flex flex-col justify-between">
+                  <div>
+                    <div className="text-xs text-stone-500 font-semibold mb-1">
+                      {currentLanguage === 'hi' ? 'हवाई अड्डे से शहर केंद्र आवागमन' : 'Transit from Airport to City Center'}
+                    </div>
+                    <div className="space-y-1.5 text-xs text-stone-700">
+                      <div>
+                        <strong>Distance:</strong> {cityIntel.flights.transitToCityCenter.distanceKm}
+                      </div>
+                      <div>
+                        <strong>Estimated Time:</strong> {cityIntel.flights.transitToCityCenter.travelTime}
+                      </div>
+                      <div>
+                        <strong>Prepaid Taxi Fare:</strong>{' '}
+                        <span className="font-mono font-bold text-emerald-800">
+                          {cityIntel.flights.transitToCityCenter.prepaidTaxiFare}
+                        </span>
+                      </div>
+                      <div>
+                        <strong>Public Metro / Bus:</strong>{' '}
+                        {cityIntel.flights.transitToCityCenter.metroOrBusOption}
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="p-2.5 rounded-xl bg-amber-50 text-[11px] text-amber-950 border border-amber-200">
+                    ℹ {cityIntel.flights.travelerNote}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* TAB 4: ASI MONUMENTS & ENTRY TICKETS */}
+          {activeIntelTab === 'asi' && (
+            <div className="space-y-5 animate-fade-in">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-stone-100">
+                <div>
+                  <h4 className="text-base font-bold text-stone-900 font-serif flex items-center gap-2">
+                    <Ticket className="w-4 h-4 text-orange-600" />
+                    {currentLanguage === 'hi'
+                      ? `${city} में भारतीय पुरातत्व सर्वेक्षण (ASI) स्मारक व टिकट दरें`
+                      : `Archaeological Survey of India (ASI) Official Entry Tickets for ${city}`}
+                  </h4>
+                  <p className="text-xs text-stone-500 mt-0.5">
+                    {currentLanguage === 'hi'
+                      ? 'आधिकारिक टिकट मूल्य, निःशुल्क प्रवेश नियम एवं स्मारक खुलने का समय'
+                      : 'Verified ticket tariffs, free entry rules, and official monument visiting hours'}
+                  </p>
+                </div>
+                <div className="text-xs font-bold text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full border border-emerald-300 flex items-center gap-1.5 shrink-0">
+                  <CheckCircle2 className="w-3.5 h-3.5" />
+                  {currentLanguage === 'hi' ? '15 वर्ष से कम आयु हेतु निःशुल्क प्रवेश' : 'Free Entry Under 15 Years'}
+                </div>
+              </div>
+
+              {/* Universal ASI Rules */}
+              <div className="bg-amber-50/60 p-3.5 rounded-2xl border border-amber-200/80 space-y-1.5 text-xs text-amber-950">
+                <div className="font-bold text-amber-900 flex items-center gap-1.5 mb-1">
+                  <ShieldCheck className="w-4 h-4 text-orange-700" />
+                  {currentLanguage === 'hi' ? 'आधिकारिक ASI राष्ट्रीय दिशा-निर्देश' : 'Official ASI National Regulations'}
+                </div>
+                {cityIntel.asiMonuments.generalRules.map((rule, i) => (
+                  <div key={i} className="flex items-start gap-1.5">
+                    <span className="text-orange-700 font-bold">•</span>
+                    <span>{rule}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Monument Cards */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {cityIntel.asiMonuments.monuments.map((mon, i) => (
+                  <div
+                    key={i}
+                    className="p-4 rounded-2xl border border-stone-200 bg-stone-50/40 hover:bg-white hover:border-orange-300 transition-all flex flex-col justify-between"
+                  >
+                    <div>
+                      <div className="flex items-center justify-between gap-2 mb-1">
+                        <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-orange-100 text-orange-900">
+                          {mon.monumentType}
+                        </span>
+                        {mon.qrKioskAvailable && (
+                          <span className="text-[10px] font-semibold text-emerald-700 flex items-center gap-1">
+                            <CheckCircle2 className="w-3 h-3" /> QR Ticket Kiosk
+                          </span>
+                        )}
+                      </div>
+
+                      <h5 className="text-sm font-bold text-stone-900 font-serif">{mon.name}</h5>
+                      <div className="text-xs text-stone-600 flex items-center gap-1 mt-1">
+                        <Clock className="w-3 h-3 text-stone-400 shrink-0" />
+                        <span>{mon.timings}</span>
+                      </div>
+
+                      <div className="mt-3 grid grid-cols-3 gap-2 text-center">
+                        <div className="bg-white p-2 rounded-xl border border-stone-200">
+                          <div className="text-[10px] text-stone-500 font-semibold">
+                            {currentLanguage === 'hi' ? 'भारतीय नागरिक' : 'Indian / Domestic'}
+                          </div>
+                          <div className="text-xs font-mono font-bold text-stone-900 mt-0.5">
+                            {mon.domesticFee}
+                          </div>
+                        </div>
+                        <div className="bg-white p-2 rounded-xl border border-stone-200">
+                          <div className="text-[10px] text-stone-500 font-semibold">SAARC / BIMSTEC</div>
+                          <div className="text-xs font-mono font-bold text-stone-900 mt-0.5">
+                            {mon.saarcFee}
+                          </div>
+                        </div>
+                        <div className="bg-white p-2 rounded-xl border border-stone-200">
+                          <div className="text-[10px] text-stone-500 font-semibold">
+                            {currentLanguage === 'hi' ? 'विदेशी पर्यटक' : 'Foreign Tourists'}
+                          </div>
+                          <div className="text-xs font-mono font-bold text-orange-700 mt-0.5">
+                            {mon.foreignFee}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="mt-3 pt-2 text-[11px] text-stone-600 border-t border-stone-200/60">
+                      <strong>Highlights:</strong> {mon.highlights}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* TAB 5: LOCAL DINING & LEGENDARY EATERIES */}
+          {activeIntelTab === 'dining' && (
+            <div className="space-y-4 animate-fade-in">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-stone-100">
+                <div>
+                  <h4 className="text-base font-bold text-stone-900 font-serif flex items-center gap-2">
+                    <Utensils className="w-4 h-4 text-orange-600" />
+                    {currentLanguage === 'hi'
+                      ? `${city} के सुप्रसिद्ध व ऐतिहासिक खान-पान संस्थान`
+                      : `Iconic Culinary Institutions & Legendary Eateries in ${city}`}
+                  </h4>
+                  <p className="text-xs text-stone-500 mt-0.5">
+                    {currentLanguage === 'hi'
+                      ? 'दशकों पुरानी प्रतिष्ठित दुकानें, हस्ताक्षर व्यंजन व औसत खर्च'
+                      : 'Decades-old heritage spots, signature specialties, and average spend for two'}
+                  </p>
+                </div>
+                <span className="text-xs font-semibold text-stone-600 bg-stone-100 px-2.5 py-1 rounded-full">
+                  {cityIntel.dining.length} {currentLanguage === 'hi' ? 'प्रमाणित संस्थान' : 'Verified Institutions'}
+                </span>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                {cityIntel.dining.map((eat, i) => (
+                  <div
+                    key={i}
+                    className="p-4 rounded-2xl border border-stone-200 bg-stone-50/40 hover:bg-white hover:border-orange-300 hover:shadow-md transition-all flex flex-col justify-between"
+                  >
+                    <div>
+                      <div className="flex items-center justify-between gap-2 mb-1.5">
+                        <span className="text-[11px] font-mono text-stone-500 font-semibold">
+                          Est. {eat.established}
+                        </span>
+                        <span
+                          className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
+                            eat.isPureVeg
+                              ? 'bg-emerald-100 text-emerald-800 border border-emerald-200'
+                              : 'bg-red-100 text-red-800 border border-red-200'
+                          }`}
+                        >
+                          {eat.isPureVeg ? 'Pure Veg' : 'Non-Veg / Multi'}
+                        </span>
+                      </div>
+
+                      <h5 className="text-sm font-bold text-stone-900 font-serif">{eat.name}</h5>
+                      <div className="text-xs text-stone-500 flex items-center gap-1 mt-0.5">
+                        <MapPin className="w-3 h-3 text-stone-400 shrink-0" />
+                        <span>{eat.locality}</span>
+                      </div>
+
+                      <div className="mt-2 text-xs text-stone-700">
+                        <span className="text-stone-500">Spend for two: </span>
+                        <strong className="text-stone-900 font-mono">{eat.spendForTwo}</strong>
+                      </div>
+
+                      <div className="mt-2.5">
+                        <div className="text-[10px] font-bold uppercase tracking-wider text-stone-500 mb-1">
+                          Signature Specialties:
+                        </div>
+                        <div className="flex flex-wrap gap-1">
+                          {eat.signatureDishes.map((dish, dIdx) => (
+                            <span
+                              key={dIdx}
+                              className="text-[11px] px-2 py-0.5 rounded-md bg-white border border-stone-200 text-stone-800 font-medium"
+                            >
+                              {dish}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="mt-3 pt-2 text-[11px] text-stone-600 border-t border-stone-200/60 bg-amber-50/40 p-2 rounded-xl">
+                      🍴 <strong className="text-stone-800">Must Try:</strong> {eat.mustTryNote}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </section>

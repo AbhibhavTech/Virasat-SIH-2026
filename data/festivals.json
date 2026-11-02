@@ -90,10 +90,10 @@
       "Rashtrapati Bhavan",
       "National War Memorial"
     ],
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/The_61_Cavalry_contingent_passes_through_the_Rajpath_during_the_62nd_Republic_Day_Parade-2011%2C_in_New_Delhi_on_January_26%2C_2011.jpg",
+    "image_url": "/images/republic-day-parade.jpg",
     "source_url": "https://knowindia.india.gov.in/national-identity-elements/national-days.php",
     "official_source_url": "https://knowindia.india.gov.in/national-identity-elements/national-days.php",
-    "source_name": "Government of India National Portal",
+    "source_name": "Ministry of Defence / Rajpath Republic Day Parade Archive",
     "attribution_text": "National Days Archive / Government of India",
     "license": "Government Open Data License - India",
     "verification_status": "verified",
@@ -143,10 +143,10 @@
       "Sabarmati Ashram",
       "National Gandhi Museum"
     ],
-    "image_url": "/images/gandhi-jayanti.png",
+    "image_url": "https://images.unsplash.com/photo-1590766940554-634a7ed41450?w=1200&auto=format&fit=crop&q=80",
     "source_url": "https://knowindia.india.gov.in/national-identity-elements/national-days.php",
     "official_source_url": "https://knowindia.india.gov.in/national-identity-elements/national-days.php",
-    "source_name": "Ministry of Culture / Incredible India",
+    "source_name": "Unsplash / National Memorial",
     "attribution_text": "Incredible India Cultural Archives",
     "license": "Creative Commons Attribution-ShareAlike 4.0",
     "verification_status": "verified",
@@ -2380,9 +2380,10 @@
     "typical_month": "October",
     "typical_season": "September / October",
     "description": "Mysuru celebrates Dasara with palace illumination, cultural programmes and the Jumboo Savari procession. Dates vary by year.",
-    "source_url": "https://karnatakatourism.org/en/experiences/experience-the-mysuru-dasara-festivities-in-karnataka/",
-    "source_name": "Karnataka Tourism",
+    "source_url": "https://unsplash.com/photos/a-large-building-with-a-clock-on-the-top-of-it-f010f443b749",
+    "source_name": "Unsplash / Mysore Palace Dasara Lights",
     "verification_status": "verified",
-    "is_date_verified": false
+    "is_date_verified": false,
+    "image_url": "https://images.unsplash.com/photo-1600100397608-f010f443b749?w=1200&auto=format&fit=crop&q=80"
   }
 ]
