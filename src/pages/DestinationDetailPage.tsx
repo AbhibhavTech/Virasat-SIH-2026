@@ -1,3 +1,4 @@
+import { RouteLoadingExperience } from '../components/common/RouteLoadingExperience';
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { PlaceDetail, FestivalItem } from '../types';
@@ -141,12 +142,10 @@ export const DestinationDetailPage: React.FC<DestinationDetailPageProps> = ({
 
   if (loading) {
     return (
-      <div className="min-h-[500px] flex flex-col items-center justify-center space-y-4">
-        <div className="w-10 h-10 border-4 border-[#FF671F] border-t-transparent rounded-full animate-spin" />
-        <span className="text-xs font-semibold text-stone-500 uppercase tracking-wider">
-          Loading Heritage Dossier...
-        </span>
-      </div>
+      <RouteLoadingExperience
+        title="स्मारक संचिका लोड हो रही है... · Loading Heritage Dossier"
+        subtext="ऐतिहासिक विवरण, समय सारिणी एवं टिकट दरें संकलित की जा रही हैं..."
+      />
     );
   }
 

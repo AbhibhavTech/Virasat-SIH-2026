@@ -5,6 +5,7 @@
 @layer base {
   html {
     font-size: 16px;
+    scroll-behavior: smooth;
   }
   @media (min-width: 1024px) {
     html {
@@ -599,20 +600,246 @@
   transform: none;
 }
 
-/* Subtle route-to-route entrance; keeps navigation feeling continuous. */
+/* =========================================================================
+   CINEMATIC PAGE ENTRANCE & VIEW TRANSITIONS
+   Ultra-smooth 60fps entrance curve (Apple / Vercel grade)
+   ========================================================================= */
 @keyframes virasatPageEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.995);
+    filter: blur(1.5px);
+  }
+  70% {
+    filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+.virasat-page-transition {
+  animation: virasatPageEnter 320ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: opacity, transform, filter;
+}
+
+/* =========================================================================
+   UNIVERSAL INTERACTIVE SMOOTHNESS, ANIMATIONS & MICRO-INTERACTIONS
+   ========================================================================= */
+
+/* Fade-in */
+@keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+  }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Fade-in with scale */
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+.animate-fadeInScale {
+  animation: fadeInScale 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Scale-up for modals & dialogs */
+@keyframes scaleUp {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+.animate-scaleUp {
+  animation: scaleUp 0.26s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Slide up */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
+.animate-slideUp,
+.animate-slide-up {
+  animation: slideUp 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
 
-.virasat-page-transition {
-  animation: virasatPageEnter 240ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+/* Slide down */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-slideDown {
+  animation: slideDown 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Dropdown silky reveal */
+@keyframes dropdownReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.animate-dropdown,
+.animate-dropdown-fast {
+  animation: dropdownReveal 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transform-origin: top;
+}
+
+/* Luxury Skeleton Shimmer */
+@keyframes virasatSkeletonShimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+.virasat-skeleton {
+  position: relative;
+  overflow: hidden;
+  background-color: #f3efe9;
+  border-radius: 0.75rem;
+}
+.virasat-skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.65) 50%,
+    transparent 100%
+  );
+  animation: virasatSkeletonShimmer 1.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+/* Tactile Spring Buttons */
+.btn-tactile,
+.btn-spring {
+  transition: transform 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.18s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.15s ease,
+              border-color 0.15s ease;
+  will-change: transform;
+}
+.btn-tactile:hover,
+.btn-spring:hover {
+  transform: translateY(-1.5px);
+}
+.btn-tactile:active,
+.btn-spring:active {
+  transform: translateY(0.5px) scale(0.965);
+}
+
+/* Silky Card Interactive Elevation */
+.card-interactive,
+.card-smooth {
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.25s ease,
+              background-color 0.25s ease;
+  will-change: transform, box-shadow;
+}
+.card-interactive:hover,
+.card-smooth:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -8px rgba(180, 83, 9, 0.12), 0 6px 12px -3px rgba(0, 0, 0, 0.05);
+  border-color: rgba(245, 158, 11, 0.45);
+}
+.card-interactive:active,
+.card-smooth:active {
+  transform: translateY(-1px) scale(0.992);
+  box-shadow: 0 8px 16px -4px rgba(180, 83, 9, 0.1);
+}
+
+/* Image Zoom on Card Hover */
+.img-zoom-parent {
+  overflow: hidden;
+}
+.img-zoom-parent img,
+.img-zoom-child,
+.img-zoom-parent .img-zoom-target {
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+  will-change: transform;
+}
+.img-zoom-parent:hover img,
+.img-zoom-parent:hover .img-zoom-child,
+.img-zoom-parent:hover .img-zoom-target {
+  transform: scale(1.06);
+}
+
+/* Aura Glow & Subtle Pulse */
+@keyframes auraPulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 103, 31, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 0 12px rgba(255, 103, 31, 0);
+  }
+}
+.animate-aura-pulse {
+  animation: auraPulse 2.6s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+
+@keyframes goldenAuraSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.animate-golden-spin {
+  animation: goldenAuraSpin 24s linear infinite;
+}
+
+@keyframes logoPulseBreath {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 20px -3px rgba(255, 103, 31, 0.25);
+  }
+  50% {
+    transform: scale(1.035);
+    box-shadow: 0 0 32px 2px rgba(255, 103, 31, 0.42);
+  }
+}
+.animate-logo-breath {
+  animation: logoPulseBreath 3s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {

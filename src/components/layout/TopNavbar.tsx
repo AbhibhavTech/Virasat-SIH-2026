@@ -333,10 +333,10 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
               <button
                 key={link.id}
                 onClick={() => handleNav(link.id)}
-                className={`px-3.5 lg:px-4 py-2 rounded-full text-xs md:text-sm lg:text-[15px] transition-all duration-150 flex items-center gap-1.5 ${
+                className={`btn-spring px-3.5 lg:px-4 py-2 rounded-full text-xs md:text-sm lg:text-[15px] transition-all duration-200 ease-out flex items-center gap-1.5 cursor-pointer ${
                   link.isActive
-                    ? 'text-[#FF671F] bg-orange-50/90 border border-orange-200/80 shadow-2xs font-bold'
-                    : 'text-stone-700 hover:text-[#0B192C] hover:bg-stone-100/60 font-semibold'
+                    ? 'text-[#FF671F] bg-orange-50/95 border border-orange-200/90 shadow-2xs font-bold ring-1 ring-orange-400/20'
+                    : 'text-stone-700 hover:text-[#0B192C] hover:bg-stone-100/80 font-semibold'
                 }`}
               >
                 {link.id === 'home' && <Home className="w-4 h-4 text-[#FF671F]" />}
@@ -348,10 +348,10 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
             <div className="relative" ref={moreDropdownRef}>
               <button
                 onClick={() => setMoreDropdownOpen(!moreDropdownOpen)}
-                className={`px-3.5 lg:px-4 py-2 rounded-full text-xs md:text-sm lg:text-[15px] font-semibold transition-all duration-150 flex items-center gap-1 ${
+                className={`btn-spring px-3.5 lg:px-4 py-2 rounded-full text-xs md:text-sm lg:text-[15px] font-semibold transition-all duration-200 ease-out flex items-center gap-1 cursor-pointer ${
                   moreDropdownOpen || activeTab === 'map'
                     ? 'text-[#0B192C] bg-stone-100 border border-stone-200 shadow-2xs font-bold'
-                    : 'text-stone-700 hover:text-[#0B192C] hover:bg-stone-100/60'
+                    : 'text-stone-700 hover:text-[#0B192C] hover:bg-stone-100/80'
                 }`}
                 aria-expanded={moreDropdownOpen}
               >
@@ -364,7 +364,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
               </button>
 
               {moreDropdownOpen && (
-                <div className="absolute top-full right-0 mt-2 w-72 bg-white rounded-2xl shadow-xl border border-[#EFE8DF] p-2 space-y-1 z-50 animate-fadeIn">
+                <div className="absolute top-full right-0 mt-2 w-72 bg-white rounded-2xl shadow-xl border border-[#EFE8DF] p-2 space-y-1 z-50 animate-dropdown">
                   <div className="px-3 py-1.5 text-[10px] font-bold text-stone-400 uppercase tracking-wider">
                     {currentLanguage === 'hi' ? 'विस्तृत पर्यटन साधन' : 'Extended Tourism Tools'}
                   </div>
@@ -463,7 +463,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
                   setCitySearchQuery('');
                   setLocationError(null);
                 }}
-                className="flex items-center gap-1.5 px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-full bg-white border border-stone-200 hover:border-[#FF671F]/60 text-xs sm:text-sm font-bold text-[#0B192C] shadow-2xs transition cursor-pointer shrink-0"
+                className="btn-spring flex items-center gap-1.5 px-2.5 sm:px-3.5 py-1.5 sm:py-2 rounded-full bg-white border border-stone-200 hover:border-[#FF671F]/60 text-xs sm:text-sm font-bold text-[#0B192C] shadow-2xs transition-all duration-200 cursor-pointer shrink-0"
                 title={currentState ? `${selectedCity}, ${currentState}` : selectedCity}
               >
                 <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#FF671F] shrink-0" />
@@ -481,7 +481,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
               </button>
 
               {cityDropdownOpen && (
-                <div className="absolute top-full right-0 mt-2 w-72 sm:w-80 bg-white rounded-2xl shadow-2xl border border-stone-200 p-2.5 z-50 animate-fadeIn flex flex-col max-h-[460px]">
+                <div className="absolute top-full right-0 mt-2 w-72 sm:w-80 bg-white rounded-2xl shadow-2xl border border-stone-200 p-2.5 z-50 animate-dropdown flex flex-col max-h-[460px]">
                   {/* Dropdown Header */}
                   <div className="px-2 pb-2 border-b border-stone-100 flex items-center justify-between">
                     <div>
@@ -714,7 +714,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
               </button>
 
               {profileDropdownOpen && isAuthenticated && (
-                <div className="absolute top-full right-0 mt-2 w-52 bg-white rounded-2xl shadow-xl border border-[#EFE8DF] p-2 space-y-1 z-50 animate-fadeIn">
+                <div className="absolute top-full right-0 mt-2 w-52 bg-white rounded-2xl shadow-xl border border-[#EFE8DF] p-2 space-y-1 z-50 animate-dropdown">
                   <div className="px-3 py-2 border-b border-stone-100">
                     <p className="text-xs font-bold text-stone-900">{user?.name || 'Explorer'}</p>
                     <p className="text-[11px] text-stone-600 truncate">{user?.email}</p>

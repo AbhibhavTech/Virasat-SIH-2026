@@ -652,7 +652,7 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
       {loading ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-4 gap-6 sm:gap-8">
           {[1, 2, 3, 4, 5, 6].map((i) => (
-            <div key={i} className="h-96 rounded-3xl bg-stone-100 animate-pulse border border-[#E8DEC8]" />
+            <div key={i} className="h-96 rounded-3xl virasat-skeleton border border-[#E8DEC8]" />
           ))}
         </div>
       ) : filteredSites.length === 0 ? (
@@ -683,14 +683,14 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
               <div
                 key={siteKey}
                 onClick={() => navigate(`/heritage/${site.slug || site.id}`)}
-                className="group bg-white rounded-3xl border border-[#E8DEC8] hover:border-orange-300 shadow-[0_8px_30px_rgba(57,39,26,0.06)] hover:shadow-[0_20px_50px_rgba(57,39,26,0.14)] transition-all duration-300 flex flex-col overflow-hidden cursor-pointer"
+                className="card-smooth group bg-white rounded-3xl border border-[#E8DEC8] flex flex-col overflow-hidden cursor-pointer"
               >
                 {/* Large Thumbnail Image Container */}
                 <div className="relative h-56 sm:h-64 lg:h-72 w-full bg-stone-100 overflow-hidden">
                   <img
                     src={siteImage}
                     alt={site.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
                     loading="lazy"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;

@@ -20,12 +20,7 @@ const AdminDashboardPage = React.lazy(() => import('../pages/AdminDashboardPage'
 const FestivalsPage = React.lazy(() => import('../pages/FestivalsPage').then((m) => ({ default: m.FestivalsPage })));
 const FestivalDetailPage = React.lazy(() => import('../pages/FestivalDetailPage').then((m) => ({ default: m.FestivalDetailPage })));
 
-const RouteLoadingSpinner: React.FC = () => (
-  <div role="status" aria-live="polite" className="flex flex-col items-center justify-center min-h-[50vh] space-y-3 py-16 animate-fadeIn">
-    <div aria-hidden="true" className="w-9 h-9 border-3 border-amber-200 border-t-[#FF671F] rounded-full animate-spin" />
-    <span className="text-xs font-semibold text-stone-500 uppercase tracking-widest">Loading Virasat...</span>
-  </div>
-);
+import { RouteLoadingExperience } from '../components/common/RouteLoadingExperience';
 
 export function formatCityName(cityId: string): string {
   if (!cityId) return 'Mumbai';
@@ -247,7 +242,7 @@ export const AppRoutes: React.FC<AppRoutesProps> = ({
   };
 
   return (
-    <React.Suspense fallback={<RouteLoadingSpinner />}>
+    <React.Suspense fallback={<RouteLoadingExperience />}>
       <Routes>
       <Route
         path="/"

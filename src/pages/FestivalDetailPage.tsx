@@ -1,3 +1,4 @@
+import { RouteLoadingExperience } from '../components/common/RouteLoadingExperience';
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import {
@@ -103,12 +104,10 @@ export const FestivalDetailPage: React.FC<FestivalDetailPageProps> = ({
 
   if (loading && !festival) {
     return (
-      <div className="max-w-6xl mx-auto px-4 py-20 flex flex-col items-center justify-center space-y-4 animate-fadeIn">
-        <div className="w-10 h-10 border-4 border-amber-200 border-t-[#FF671F] rounded-full animate-spin" />
-        <p className="text-sm font-semibold text-stone-500">
-          {isHi ? 'उत्सव संचिका लोड हो रही है...' : 'Loading Festival Dossier...'}
-        </p>
-      </div>
+      <RouteLoadingExperience
+        title={isHi ? 'उत्सव संचिका लोड हो रही है...' : 'Loading Festival Dossier...'}
+        subtext={isHi ? 'परंपराओं, अनुष्ठानों एवं दर्शन स्थलों की जानकारी संकलित की जा रही है...' : 'Gathering rituals, heritage shrines, and festive traditions...'}
+      />
     );
   }
 

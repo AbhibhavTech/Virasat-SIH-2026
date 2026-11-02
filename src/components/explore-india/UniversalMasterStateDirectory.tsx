@@ -426,7 +426,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
               return (
                 <div
                   key={attraction.id}
-                  className="group bg-white rounded-2xl overflow-hidden border border-stone-200 shadow-xs hover:shadow-lg transition-all flex flex-col justify-between"
+                  className="card-smooth group bg-white rounded-2xl overflow-hidden border border-stone-200 flex flex-col justify-between"
                 >
                   <div>
                     {/* Image Header with Badge Overlay */}
@@ -434,7 +434,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
                       <img
                         src={attraction.image || defaultCityFallback}
                         alt={attraction.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
                         onError={(e) => {
                           e.currentTarget.src = defaultCityFallback;
                         }}
@@ -660,7 +660,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
               return (
                 <div
                   key={reserve.id}
-                  className="group bg-white rounded-2xl overflow-hidden border border-emerald-900/10 shadow-xs hover:shadow-xl transition-all flex flex-col justify-between"
+                  className="card-smooth group bg-white rounded-2xl overflow-hidden border border-emerald-900/10 flex flex-col justify-between"
                 >
                   <div>
                     {/* Header Image */}
@@ -668,7 +668,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
                       <img
                         src={reserve.image}
                         alt={reserve.name}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
                         onError={(e) => {
                           e.currentTarget.src =
                             'https://images.unsplash.com/photo-1561731216-c3a4d99437d5?w=1200&auto=format&fit=crop&q=80';

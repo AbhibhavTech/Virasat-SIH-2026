@@ -1,3 +1,4 @@
+import { RouteLoadingExperience } from '../components/common/RouteLoadingExperience';
 import React, { useState, useMemo, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import {
@@ -801,12 +802,10 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-[#FFF7E6] to-white flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-amber-700 mx-auto mb-4"></div>
-          <p className="text-sm text-stone-600">Loading India hierarchy...</p>
-        </div>
-      </div>
+      <RouteLoadingExperience
+        title={currentLanguage === 'hi' ? 'भारत दर्शन संचिका लोड हो रही है...' : 'Discover Bharat · Living Heritage'}
+        subtext={currentLanguage === 'hi' ? '36 राज्यों व केंद्र शासित प्रदेशों का डेटा संकलित किया जा रहा है...' : 'Loading 36 States & Union Territories of India...'}
+      />
     );
   }
 

@@ -590,7 +590,7 @@ export const FestivalsPage: React.FC<FestivalsPageProps> = ({
           <img
             src={fest.image_url}
             alt={fest.name}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
             loading="lazy"
             onError={(e) => {
               (e.target as HTMLImageElement).src = 'https://images.unsplash.com/photo-1609137144813-7d9921338f24?w=1200&auto=format&fit=crop&q=80';
@@ -686,7 +686,7 @@ export const FestivalsPage: React.FC<FestivalsPageProps> = ({
       <article
         key={fest.id}
         onClick={() => handleSelectFestival(fest)}
-        className="bg-white rounded-3xl overflow-hidden border border-[#EFE8DF] shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group cursor-pointer h-full"
+        className="card-smooth bg-white rounded-3xl overflow-hidden border border-[#EFE8DF] flex flex-col group cursor-pointer h-full"
       >
         {renderCardMedia(fest)}
 
@@ -746,7 +746,7 @@ export const FestivalsPage: React.FC<FestivalsPageProps> = ({
                 e.stopPropagation();
                 handleSelectFestival(fest);
               }}
-              className="text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 px-3.5 py-1.5 rounded-xl shadow-xs transition-all flex items-center gap-1.5 cursor-pointer active:scale-95"
+              className="btn-spring text-xs sm:text-sm font-bold text-white bg-gradient-to-r from-orange-600 to-amber-600 hover:from-orange-700 hover:to-amber-700 px-3.5 py-1.5 rounded-xl shadow-xs transition-all flex items-center gap-1.5 cursor-pointer"
             >
               {currentLanguage === 'hi' ? 'विवरण देखें' : 'View Details'}
               <ChevronRight className="w-4 h-4" />

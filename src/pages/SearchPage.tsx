@@ -1,3 +1,4 @@
+import { RouteLoadingExperience } from '../components/common/RouteLoadingExperience';
 import React, { useState, useEffect, useCallback } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import {
@@ -501,11 +502,11 @@ export const SearchPage: React.FC<SearchPageProps> = ({
           </div>
 
           {loading ? (
-            <div className="text-center py-16 rounded-2xl bg-white border border-stone-200/80 p-8 space-y-3 shadow-xs">
-              <div className="w-10 h-10 border-3 border-orange-200 border-t-[#FF671F] rounded-full animate-spin mx-auto" />
-              <div className="text-xs text-[#FF671F] font-bold">
-                Scanning architectural and heritage catalog...
-              </div>
+            <div className="py-8">
+              <RouteLoadingExperience
+                compact={true}
+                title="धरोहर सूची में खोज जारी है... · Searching Heritage Catalog"
+              />
             </div>
           ) : filteredResults.length === 0 ? (
             <div className="text-center py-16 rounded-3xl bg-white border border-stone-200/80 p-8 space-y-4 shadow-xs">

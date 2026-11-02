@@ -1077,7 +1077,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
               <div className="flex items-center gap-1.5 overflow-x-auto pb-1 sm:pb-0 scrollbar-none">
                 <button
                   onClick={() => setPlannerViewMode('grid')}
-                  className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold shrink-0 transition cursor-pointer ${
+                  className={`btn-spring inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold shrink-0 transition-all duration-200 cursor-pointer ${
                     plannerViewMode === 'grid'
                       ? 'bg-[#FF671F] text-white shadow-xs'
                       : 'bg-stone-100 text-stone-600 hover:text-stone-900 hover:bg-stone-200'
@@ -1094,7 +1094,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                       setPlannerViewMode('pages');
                       setActiveDayIndex(idx);
                     }}
-                    className={`inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold shrink-0 transition cursor-pointer ${
+                    className={`btn-spring inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl text-xs font-semibold shrink-0 transition-all duration-200 cursor-pointer ${
                       plannerViewMode === 'pages' && safeDayIndex === idx
                         ? 'bg-[#FF671F] text-white shadow-xs'
                         : 'bg-stone-100 text-stone-700 hover:bg-stone-200'
