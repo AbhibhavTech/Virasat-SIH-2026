@@ -25,6 +25,7 @@ import {
   Castle,
   Building2,
   Waves,
+  Trees,
   Award,
   History,
   ArrowUpRight,
@@ -34,12 +35,36 @@ import {
 import { GuideIllustration } from '../components/cultural-guides/GuideIllustrations';
 import { GuideSpeechBubble } from '../components/cultural-guides/GuideSpeechBubble';
 import { getMonumentRealImage } from '../data/monumentRealImages';
+import { getAllWildlifeReserves } from '../data/allIndiaWildlifeData';
 
 interface HeritageSitesPageProps {
   onSelectPlace: (placeId: string) => void;
   onNavigateTab: (tab: any) => void;
   onSelectPlaceForRoute?: (placeId: string) => void;
 }
+
+
+const getWildlifeHeritageSites = () => {
+  return getAllWildlifeReserves().map((r) => ({
+    id: r.id,
+    name: r.name,
+    category: `${r.category} · Protected Area`,
+    district_city: r.district,
+    state_ut: r.stateName,
+    state: r.stateName,
+    city: r.nearestCity,
+    overview: `${r.keyHighlight} Prominent fauna: ${r.prominentFauna.join(', ')}. Safari: ${r.safariTimings}.`,
+    summary: `${r.keyHighlight} Covering ${r.areaSqKm.toLocaleString()} sq km in ${r.district}.`,
+    historical_significance: `One of India's premier protected wildlife habitats. Best visited during ${r.bestSeason}.`,
+    unesco_status: r.isUnesco ? 'Inscribed' : 'None',
+    is_unesco: r.isUnesco,
+    thumbnail_url: r.image,
+    images: [r.image],
+    entry_fee_inr: 250,
+    visiting_hours: r.safariTimings,
+    tags: ['wildlife', 'safari', 'national park', r.category.toLowerCase(), ...r.prominentFauna.map((f) => f.toLowerCase())],
+  }));
+};
 
 export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
   onSelectPlace,
@@ -66,12 +91,13 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
           api.getStates(),
         ]);
 
+        const wildlifeList = getWildlifeHeritageSites();
         if (res.status === 'fulfilled' && res.value?.data && res.value.data.length > 0) {
-          setHeritageSites(res.value.data);
+          setHeritageSites([...res.value.data, ...wildlifeList]);
         } else {
           // Fallback to places with heritage category
           const placesRes = await api.getPlaces({ limit: 100 });
-          setHeritageSites(placesRes.data || []);
+          setHeritageSites([...(placesRes.data || []), ...wildlifeList]);
         }
 
         if (statesRes.status === 'fulfilled' && Array.isArray(statesRes.value)) {
@@ -94,6 +120,7 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
       'Caves & Rock-Cut': 0,
       'Architectural & Colonial': 0,
       'Natural & Ghats': 0,
+      'Wildlife & Reserves': 0,
     };
 
     heritageSites.forEach((site) => {
@@ -108,6 +135,8 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
         counts['Caves & Rock-Cut']++;
       } else if (siteCat.includes('colonial') || siteCat.includes('monument') || siteCat.includes('architecture') || siteCat.includes('city') || siteCat.includes('complex') || siteCat.includes('railway') || siteTags.includes('colonial')) {
         counts['Architectural & Colonial']++;
+      } else if (siteCat.includes('wildlife') || siteCat.includes('tiger') || siteCat.includes('sanctuary') || siteTags.includes('wildlife') || siteTags.includes('tiger') || siteTags.includes('safari')) {
+        counts['Wildlife & Reserves']++;
       } else if (siteCat.includes('ghat') || siteCat.includes('nature') || siteCat.includes('natural') || siteTags.includes('ghat') || siteTags.includes('lake') || siteTags.includes('park')) {
         counts['Natural & Ghats']++;
       } else {
@@ -148,6 +177,12 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
       label: 'Colonial & Monuments',
       icon: Building2,
       count: categoryCounts['Architectural & Colonial'] || 0,
+    },
+    {
+      id: 'Wildlife & Reserves',
+      label: '🐾 Wildlife & Sanctuaries',
+      icon: Trees,
+      count: categoryCounts['Wildlife & Reserves'] || 0,
     },
     {
       id: 'Natural & Ghats',
@@ -207,6 +242,8 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
           matchesCategory = siteCat.includes('cave') || siteTags.includes('cave') || siteTags.includes('rock-cut');
         } else if (selectedCategory === 'Architectural & Colonial') {
           matchesCategory = siteCat.includes('colonial') || siteCat.includes('monument') || siteCat.includes('architecture') || siteCat.includes('city') || siteCat.includes('complex') || siteCat.includes('railway') || siteTags.includes('colonial');
+        } else if (selectedCategory === 'Wildlife & Reserves') {
+          matchesCategory = siteCat.includes('wildlife') || siteCat.includes('tiger') || siteCat.includes('sanctuary') || siteTags.includes('wildlife') || siteTags.includes('tiger') || siteTags.includes('safari');
         } else if (selectedCategory === 'Natural & Ghats') {
           matchesCategory = siteCat.includes('ghat') || siteCat.includes('nature') || siteCat.includes('natural') || siteTags.includes('ghat') || siteTags.includes('lake') || siteTags.includes('park');
         }

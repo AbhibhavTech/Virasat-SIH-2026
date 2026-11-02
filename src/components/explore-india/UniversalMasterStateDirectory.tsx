@@ -16,6 +16,9 @@ import {
   Landmark,
   Shield,
   Share2,
+  Trees,
+  Binoculars,
+  Footprints,
 } from 'lucide-react';
 import {
   StateDirectoryConfig,
@@ -40,8 +43,9 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
       ? initialCityId
       : config.cities[0]?.id || ''
   );
-  const [activeTab, setActiveTab] = useState<'attractions' | 'stays' | 'dining'>('attractions');
-  const [attractionFilter, setAttractionFilter] = useState<'all' | 'core' | 'hidden'>('all');
+  const [activeTab, setActiveTab] = useState<'attractions' | 'stays' | 'dining' | 'wildlife'>('attractions');
+  const [attractionFilter, setAttractionFilter] = useState<'all' | 'core' | 'hidden' | 'wildlife'>('all');
+  const [wildlifeFilter, setWildlifeFilter] = useState<'all' | 'tiger' | 'np' | 'sanctuary'>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [copiedId, setCopiedId] = useState<string | null>(null);
 
@@ -65,6 +69,35 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
     return config.cities.reduce((sum, c) => sum + (c.attractions?.length || 0), 0);
   }, [config.cities]);
 
+  // Wildlife reserves for this state
+  const wildlifeReserves = useMemo(() => {
+    return config.wildlifeReserves || [];
+  }, [config.wildlifeReserves]);
+
+  // Filtered wildlife list based on category & search
+  const filteredWildlifeList = useMemo(() => {
+    let list = wildlifeReserves;
+    if (wildlifeFilter === 'tiger') {
+      list = list.filter((r) => r.category === 'Tiger Reserve');
+    } else if (wildlifeFilter === 'np') {
+      list = list.filter((r) => r.category === 'National Park' || r.category === 'Marine National Park');
+    } else if (wildlifeFilter === 'sanctuary') {
+      list = list.filter((r) => r.category === 'Wildlife Sanctuary' || r.category === 'Bird Sanctuary' || r.category === 'Biosphere Reserve');
+    }
+
+    if (searchQuery.trim() && activeTab === 'wildlife') {
+      const q = searchQuery.toLowerCase();
+      list = list.filter(
+        (r) =>
+          r.name.toLowerCase().includes(q) ||
+          r.district.toLowerCase().includes(q) ||
+          r.keyHighlight.toLowerCase().includes(q) ||
+          r.prominentFauna.some((f) => f.toLowerCase().includes(q))
+      );
+    }
+    return list;
+  }, [wildlifeReserves, wildlifeFilter, searchQuery, activeTab]);
+
   // Filtered attractions based on search query and category filter
   const displayedAttractions = useMemo(() => {
     if (!currentCity || !currentCity.attractions) return [];
@@ -73,9 +106,20 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
       list = list.filter((a) => !a.isHiddenGem);
     } else if (attractionFilter === 'hidden') {
       list = list.filter((a) => a.isHiddenGem);
+    } else if (attractionFilter === 'wildlife') {
+      list = list.filter(
+        (a) =>
+          a.category.toLowerCase().includes('wildlife') ||
+          a.category.toLowerCase().includes('park') ||
+          a.category.toLowerCase().includes('sanctuary') ||
+          a.category.toLowerCase().includes('nature') ||
+          a.summary.toLowerCase().includes('wildlife') ||
+          a.summary.toLowerCase().includes('tiger') ||
+          a.summary.toLowerCase().includes('bird')
+      );
     }
 
-    if (searchQuery.trim()) {
+    if (searchQuery.trim() && activeTab === 'attractions') {
       const q = searchQuery.toLowerCase();
       list = list.filter(
         (a) =>
@@ -85,7 +129,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
       );
     }
     return list;
-  }, [currentCity, attractionFilter, searchQuery]);
+  }, [currentCity, attractionFilter, searchQuery, activeTab]);
 
   const handleCopyDetails = (attraction: StateDirectoryAttraction) => {
     const text = `${attraction.name} (${currentCity.name}, ${config.stateName})\nCategory: ${attraction.category}\nTimings: ${attraction.timings}\nEntry: Dom: ${attraction.fee.domestic} | Foreign: ${attraction.fee.foreign}\n${attraction.summary}`;
@@ -146,6 +190,12 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
                 <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
                 <span>{totalAttractionsCount} Curated Attractions &amp; Forts</span>
               </span>
+              {wildlifeReserves.length > 0 && (
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-emerald-500/20 border border-emerald-400/30 text-emerald-200">
+                  <Trees className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>{wildlifeReserves.length} National Parks &amp; Reserves</span>
+                </span>
+              )}
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white/10 border border-white/10 text-stone-200">
                 <UtensilsCrossed className="w-3.5 h-3.5 text-rose-400" />
                 <span>{config.cuisineLabel}</span>
@@ -159,7 +209,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
               type="button"
               onClick={() =>
                 onOpenAIChat?.(
-                  `Plan a comprehensive historical and cultural itinerary for ${currentCity.name}, ${config.stateName} covering its top monuments, stays, and authentic regional cuisine.`
+                  `Plan a comprehensive historical, wildlife safari and cultural itinerary for ${currentCity.name}, ${config.stateName} covering its top monuments, national parks, stays, and authentic regional cuisine.`
                 )
               }
               className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-stone-950 font-semibold text-xs sm:text-sm shadow-lg hover:shadow-amber-500/25 transition-all cursor-pointer"
@@ -221,9 +271,9 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
         </div>
       </div>
 
-      {/* 3. Navigation Tabs (Attractions / Stays / Dining) */}
+      {/* 3. Navigation Tabs (Attractions / Wildlife / Stays / Dining) */}
       <div className="bg-white rounded-xl shadow-xs border border-stone-200 p-2 flex flex-wrap items-center justify-between gap-3">
-        <div className="flex items-center gap-1.5">
+        <div className="flex items-center gap-1.5 flex-wrap">
           <button
             type="button"
             onClick={() => setActiveTab('attractions')}
@@ -239,6 +289,25 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
               {currentCity.attractions?.length || 0}
             </span>
           </button>
+
+          {/* Dedicated Wildlife & Reserves Tab */}
+          {wildlifeReserves.length > 0 && (
+            <button
+              type="button"
+              onClick={() => setActiveTab('wildlife')}
+              className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-colors cursor-pointer ${
+                activeTab === 'wildlife'
+                  ? 'bg-emerald-100 text-emerald-950 border border-emerald-300'
+                  : 'text-stone-600 hover:bg-stone-100 border border-transparent'
+              }`}
+            >
+              <Trees className="w-4 h-4 text-emerald-700" />
+              <span>Wildlife &amp; Reserves</span>
+              <span className="ml-1 text-[11px] px-1.5 py-0.2 rounded-full bg-emerald-200 text-emerald-900 font-bold">
+                {wildlifeReserves.length}
+              </span>
+            </button>
+          )}
 
           <button
             type="button"
@@ -274,14 +343,18 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
         </div>
 
         {/* Search bar inside tab strip */}
-        {activeTab === 'attractions' && (
+        {(activeTab === 'attractions' || activeTab === 'wildlife') && (
           <div className="relative w-full sm:w-64">
             <Search className="w-3.5 h-3.5 text-stone-400 absolute left-3 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search sights, forts &amp; caves..."
+              placeholder={
+                activeTab === 'wildlife'
+                  ? 'Search tiger reserves, fauna...'
+                  : 'Search sights, forts & caves...'
+              }
               className="w-full pl-8 pr-3 py-1.5 text-xs rounded-lg border border-stone-200 bg-stone-50 focus:bg-white focus:outline-none focus:ring-1 focus:ring-amber-500 text-stone-800"
             />
           </div>
@@ -292,7 +365,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
       {activeTab === 'attractions' && (
         <div className="space-y-4">
           {/* Subfilter Pills */}
-          <div className="flex items-center gap-2 text-xs">
+          <div className="flex items-center gap-2 text-xs flex-wrap">
             <span className="text-stone-500 font-medium">Filter Sights:</span>
             <button
               type="button"
@@ -329,6 +402,16 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
               Hidden Gems (
               {currentCity.attractions?.filter((a) => a.isHiddenGem).length || 0})
             </button>
+            {wildlifeReserves.length > 0 && (
+              <button
+                type="button"
+                onClick={() => setActiveTab('wildlife')}
+                className="px-3 py-1 rounded-full cursor-pointer transition-colors bg-emerald-50 text-emerald-800 border border-emerald-300 font-medium hover:bg-emerald-100 flex items-center gap-1"
+              >
+                <Trees className="w-3 h-3 text-emerald-600" />
+                <span>View State Wildlife &amp; Parks ({wildlifeReserves.length})</span>
+              </button>
+            )}
           </div>
 
           {/* Attraction Cards Grid */}
@@ -479,7 +562,263 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
         </div>
       )}
 
-      {/* 5. Tab Content: TOP STAYS */}
+      {/* 5. Tab Content: WILDLIFE & NATIONAL PARKS */}
+      {activeTab === 'wildlife' && (
+        <div className="space-y-6 animate-fadeIn">
+          {/* Wildlife Hero Banner */}
+          <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-emerald-950 via-[#064E3B] to-[#042F2E] text-white border border-emerald-500/30 shadow-lg relative overflow-hidden">
+            <div className="absolute right-0 top-0 w-80 h-80 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div className="space-y-1.5 max-w-2xl">
+                <div className="inline-flex items-center gap-2 px-3 py-0.5 rounded-full text-[11px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-400/30">
+                  <Trees className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>State Wildlife Protected Areas · {config.stateName}</span>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-serif font-bold text-white">
+                  National Parks, Tiger Reserves &amp; Sanctuaries
+                </h3>
+                <p className="text-xs sm:text-sm text-emerald-100/80 leading-relaxed">
+                  Ecological corridors, Project Tiger sanctuaries, and UNESCO Biosphere Reserves sheltering endangered apex predators and unique biodiversity in {config.stateName}.
+                </p>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() =>
+                    onOpenAIChat?.(
+                      `Provide comprehensive wildlife safari booking rules, gate zones, best photography seasons, and eco-stay advice for national parks and tiger reserves in ${config.stateName}.`
+                    )
+                  }
+                  className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-emerald-400 to-teal-500 hover:from-emerald-300 hover:to-teal-400 text-stone-950 text-xs sm:text-sm font-bold shadow-md transition-all cursor-pointer inline-flex items-center gap-1.5"
+                >
+                  <Binoculars className="w-4 h-4 text-stone-950" />
+                  <span>Ask AI Safari Expert</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Subfilter Pills for Wildlife */}
+          <div className="flex items-center gap-2 text-xs flex-wrap">
+            <span className="text-stone-500 font-medium">Filter Protected Areas:</span>
+            <button
+              type="button"
+              onClick={() => setWildlifeFilter('all')}
+              className={`px-3 py-1 rounded-full cursor-pointer transition-colors ${
+                wildlifeFilter === 'all'
+                  ? 'bg-emerald-800 text-white font-semibold'
+                  : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
+              }`}
+            >
+              All ({wildlifeReserves.length})
+            </button>
+            <button
+              type="button"
+              onClick={() => setWildlifeFilter('tiger')}
+              className={`px-3 py-1 rounded-full cursor-pointer transition-colors ${
+                wildlifeFilter === 'tiger'
+                  ? 'bg-amber-700 text-white font-semibold'
+                  : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
+              }`}
+            >
+              Tiger Reserves ({wildlifeReserves.filter((r) => r.category === 'Tiger Reserve').length})
+            </button>
+            <button
+              type="button"
+              onClick={() => setWildlifeFilter('np')}
+              className={`px-3 py-1 rounded-full cursor-pointer transition-colors ${
+                wildlifeFilter === 'np'
+                  ? 'bg-teal-700 text-white font-semibold'
+                  : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
+              }`}
+            >
+              National Parks ({wildlifeReserves.filter((r) => r.category === 'National Park' || r.category === 'Marine National Park').length})
+            </button>
+            <button
+              type="button"
+              onClick={() => setWildlifeFilter('sanctuary')}
+              className={`px-3 py-1 rounded-full cursor-pointer transition-colors ${
+                wildlifeFilter === 'sanctuary'
+                  ? 'bg-blue-700 text-white font-semibold'
+                  : 'bg-stone-100 text-stone-600 hover:bg-stone-200'
+              }`}
+            >
+              Sanctuaries &amp; Bird Reserves ({wildlifeReserves.filter((r) => r.category === 'Wildlife Sanctuary' || r.category === 'Bird Sanctuary' || r.category === 'Biosphere Reserve').length})
+            </button>
+          </div>
+
+          {/* Wildlife Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {filteredWildlifeList.map((reserve) => {
+              const isCopied = copiedId === reserve.id;
+              return (
+                <div
+                  key={reserve.id}
+                  className="group bg-white rounded-2xl overflow-hidden border border-emerald-900/10 shadow-xs hover:shadow-xl transition-all flex flex-col justify-between"
+                >
+                  <div>
+                    {/* Header Image */}
+                    <div className="relative h-52 w-full overflow-hidden bg-stone-900">
+                      <img
+                        src={reserve.image}
+                        alt={reserve.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        onError={(e) => {
+                          e.currentTarget.src =
+                            'https://images.unsplash.com/photo-1561731216-c3a4d99437d5?w=1200&auto=format&fit=crop&q=80';
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+
+                      {/* Badges Overlay */}
+                      <div className="absolute top-3 left-3 flex flex-wrap gap-1.5">
+                        <span
+                          className={`text-[11px] font-bold px-2.5 py-0.5 rounded-md shadow-xs backdrop-blur-xs border ${
+                            reserve.category === 'Tiger Reserve'
+                              ? 'bg-amber-600/95 text-white border-amber-400/40'
+                              : reserve.category === 'Marine National Park'
+                              ? 'bg-sky-600/95 text-white border-sky-400/40'
+                              : reserve.category === 'Bird Sanctuary'
+                              ? 'bg-teal-600/95 text-white border-teal-400/40'
+                              : 'bg-emerald-700/95 text-white border-emerald-400/40'
+                          }`}
+                        >
+                          {reserve.category}
+                        </span>
+                        {reserve.isUnesco && (
+                          <span className="text-[10px] font-bold px-2 py-0.5 rounded-md bg-blue-600/90 text-white backdrop-blur-xs flex items-center gap-1 shadow-xs">
+                            <Award className="w-3 h-3" /> UNESCO
+                          </span>
+                        )}
+                      </div>
+
+                      {reserve.areaSqKm && (
+                        <div className="absolute top-3 right-3 text-[10px] font-mono font-bold px-2 py-0.5 rounded bg-black/60 text-emerald-300 backdrop-blur-xs border border-emerald-400/20">
+                          {reserve.areaSqKm}
+                        </div>
+                      )}
+
+                      {/* District & Location Pill at bottom of image */}
+                      <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-white text-xs">
+                        <span className="inline-flex items-center gap-1 font-semibold truncate">
+                          <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                          <span>{reserve.district} District</span>
+                        </span>
+                        {reserve.nearestCity && (
+                          <span className="text-[10px] text-stone-300 truncate">
+                            via {reserve.nearestCity}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Body Details */}
+                    <div className="p-4 sm:p-5 space-y-3.5">
+                      <h4 className="text-base sm:text-lg font-serif font-bold text-stone-900 group-hover:text-emerald-800 transition-colors">
+                        {reserve.name}
+                      </h4>
+
+                      <p className="text-xs text-stone-600 leading-relaxed line-clamp-3">
+                        {reserve.keyHighlight}
+                      </p>
+
+                      {/* Prominent Fauna Tags */}
+                      <div className="space-y-1.5">
+                        <div className="text-[10px] font-bold uppercase tracking-wider text-emerald-800 flex items-center gap-1">
+                          <Footprints className="w-3 h-3 text-emerald-600" />
+                          <span>Key Wildlife &amp; Species:</span>
+                        </div>
+                        <div className="flex flex-wrap gap-1">
+                          {reserve.prominentFauna.map((fauna, i) => (
+                            <span
+                              key={i}
+                              className="text-[10px] px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-900 border border-emerald-200 font-medium"
+                            >
+                              {fauna}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Safari Timings & Best Season */}
+                      <div className="pt-2.5 border-t border-stone-100 grid grid-cols-2 gap-2 text-[11px]">
+                        <div className="space-y-0.5">
+                          <span className="text-[10px] text-stone-400 font-semibold uppercase block">Best Season</span>
+                          <span className="font-medium text-stone-800 line-clamp-1">{reserve.bestSeason}</span>
+                        </div>
+                        <div className="space-y-0.5">
+                          <span className="text-[10px] text-stone-400 font-semibold uppercase block">Safaris</span>
+                          <span className="font-medium text-stone-800 line-clamp-1">{reserve.safariTimings}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Card Action Footer */}
+                  <div className="px-4 py-3 bg-stone-50 border-t border-stone-100 flex items-center justify-between text-xs">
+                    <button
+                      type="button"
+                      onClick={() => {
+                        const text = `${reserve.name} (${config.stateName})\nCategory: ${reserve.category} (${reserve.district})\nFauna: ${reserve.prominentFauna.join(', ')}\nBest Season: ${reserve.bestSeason}\nSafaris: ${reserve.safariTimings}\n${reserve.keyHighlight}`;
+                        navigator.clipboard?.writeText(text);
+                        setCopiedId(reserve.id);
+                        setTimeout(() => setCopiedId(null), 2000);
+                      }}
+                      className="inline-flex items-center gap-1.5 text-stone-600 hover:text-emerald-700 font-medium transition-colors cursor-pointer"
+                    >
+                      {isCopied ? (
+                        <>
+                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
+                          <span className="text-emerald-700 font-semibold">Copied!</span>
+                        </>
+                      ) : (
+                        <>
+                          <Share2 className="w-3.5 h-3.5" />
+                          <span>Share Details</span>
+                        </>
+                      )}
+                    </button>
+
+                    <button
+                      type="button"
+                      onClick={() =>
+                        onOpenAIChat?.(
+                          `Plan a comprehensive wildlife safari itinerary for ${reserve.name} in ${config.stateName} including best zones, safari gate permits, timings, and recommended jungle lodges.`
+                        )
+                      }
+                      className="inline-flex items-center gap-1 text-emerald-700 hover:text-emerald-900 font-semibold transition-colors cursor-pointer"
+                    >
+                      <Binoculars className="w-3.5 h-3.5" />
+                      <span>Plan Safari</span>
+                      <ChevronRight className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {filteredWildlifeList.length === 0 && (
+            <div className="p-8 text-center bg-white rounded-xl border border-stone-200 space-y-2">
+              <Info className="w-8 h-8 text-stone-400 mx-auto" />
+              <div className="text-sm font-semibold text-stone-700">No wildlife reserves matched your search filter.</div>
+              <button
+                type="button"
+                onClick={() => {
+                  setSearchQuery('');
+                  setWildlifeFilter('all');
+                }}
+                className="text-xs text-emerald-700 underline font-semibold cursor-pointer"
+              >
+                Reset filters
+              </button>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* 6. Tab Content: TOP STAYS */}
       {activeTab === 'stays' && (
         <div className="space-y-4">
           <div className="p-4 rounded-xl bg-amber-50 border border-amber-200 text-xs text-amber-900 flex items-start gap-3">
@@ -528,7 +867,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
         </div>
       )}
 
-      {/* 6. Tab Content: WHERE TO EAT */}
+      {/* 7. Tab Content: WHERE TO EAT */}
       {activeTab === 'dining' && (
         <div className="space-y-6">
           {/* Notes Banner */}

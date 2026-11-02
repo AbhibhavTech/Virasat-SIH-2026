@@ -82,7 +82,7 @@ function parseDualPointsQuery(query: string): { originQuery: string; destQuery: 
 export interface MapPointItem {
   id: string;
   name: string;
-  type: 'heritage' | 'hidden_gem' | 'station' | 'hotel' | 'dining' | 'sacred_site';
+  type: 'heritage' | 'hidden_gem' | 'station' | 'hotel' | 'dining' | 'sacred_site' | 'wildlife';
   lat: number;
   lng: number;
   city?: string;
@@ -153,6 +153,8 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
   const [showDining, setShowDining] = useState(true);
   const [showSacredCircuits, setShowSacredCircuits] = useState(true);
   const sacredSitesList = useMemo(() => getAllSacredSites(), []);
+  const [showWildlife, setShowWildlife] = useState(true);
+  const wildlifeReservesList = useMemo(() => getAllWildlifeReserves(), []);
 
   // Google Maps Live Place Intel Drawer State
   const [mapsIntelPoint, setMapsIntelPoint] = useState<MapPointItem | null>(null);
@@ -641,6 +643,66 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
           View Sacred Dossier
         </button>
       `;
+    } else if (item.type === 'wildlife') {
+      const reserve: StateWildlifeReserve = item.raw;
+      card.innerHTML = `
+        <div style="position: relative; margin: -12px -12px 10px -12px; border-top-left-radius: 12px; border-top-right-radius: 12px; overflow: hidden; height: 120px; background: #064e3b;">
+          <img src="${reserve.image}" alt="${reserve.name}" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1575550959106-5a7defe28b56?w=800&auto=format&fit=crop&q=80'" />
+          <span style="position: absolute; bottom: 8px; left: 8px; font-size: 10px; font-weight: 800; background: #059669; color: #fff; padding: 2px 7px; border-radius: 6px; text-transform: uppercase;">
+            🐾 ${reserve.category} ${reserve.isUnesco ? '· UNESCO' : ''}
+          </span>
+        </div>
+        <h4 style="font-weight: 800; font-size: 14px; margin: 0 0 2px 0; color: #0f172a; line-height: 1.25;">${reserve.name}</h4>
+        <div style="font-size: 11px; color: #64748b; margin-bottom: 6px;">${reserve.district}, ${reserve.stateName} • <span style="color:#059669; font-weight:700;">${reserve.areaSqKm.toLocaleString()} sq km</span></div>
+
+        <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 8px; padding: 6px 8px; margin-bottom: 8px; font-size: 11px; color: #065f46; line-height: 1.35;">
+          ${reserve.keyHighlight}
+        </div>
+
+        <div style="display: flex; gap: 8px; margin-bottom: 8px; font-size: 10px; background: #f8fafc; padding: 5px 8px; border-radius: 6px; border: 1px solid #e2e8f0;">
+          <div style="flex: 1;">
+            <div style="font-size: 8px; text-transform: uppercase; color: #94a3b8; font-weight: 700;">Safari Timings</div>
+            <div style="font-weight: 600; color: #334155; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${reserve.safariTimings}</div>
+          </div>
+          <div style="border-left: 1px solid #cbd5e1; padding-left: 8px;">
+            <div style="font-size: 8px; text-transform: uppercase; color: #94a3b8; font-weight: 700;">Best Season</div>
+            <div style="font-weight: 700; color: #059669;">${reserve.bestSeason}</div>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 8px;">
+          <div style="font-size: 9px; text-transform: uppercase; color: #64748b; font-weight: 700; margin-bottom: 3px;">Key Wildlife</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+            ${reserve.prominentFauna.slice(0, 3).map(f => `<span style="font-size: 9px; background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; padding: 1px 5px; border-radius: 4px; font-weight: 600;">${f}</span>`).join('')}
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 6px;">
+          <button id="btn-orig-${reserve.id}" style="background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; border-radius: 6px; padding: 5px; font-size: 10px; font-weight: 700; cursor: pointer;">
+            🚩 Start Route
+          </button>
+          <button id="btn-dest-${reserve.id}" style="background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; border-radius: 6px; padding: 5px; font-size: 10px; font-weight: 700; cursor: pointer;">
+            🎯 Route Here
+          </button>
+        </div>
+
+        <div style="display: flex; gap: 4px; margin-bottom: 6px;">
+          <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(reserve.name + ' ' + reserve.stateName)}" target="_blank" rel="noopener noreferrer" style="flex: 1; text-decoration: none; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; border-radius: 6px; padding: 4px 6px; font-size: 10px; font-weight: 700; text-align: center; display: flex; align-items: center; justify-content: center; gap: 4px;">
+            <span>🗺️ Google Maps</span>
+          </a>
+          <button id="btn-maps-intel-${reserve.id}" style="flex: 1; background: #ecfdf5; color: #047857; border: 1px solid #a7f3d0; border-radius: 6px; padding: 4px 6px; font-size: 10px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px;">
+            <span>📍 Maps Intel</span>
+          </button>
+        </div>
+
+        <button id="btn-add-analyzer-${reserve.id}" style="width: 100%; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; border-radius: 6px; padding: 4px 6px; font-size: 10px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px; margin-bottom: 6px;">
+          <span>🐾 Add to Safari Route</span>
+        </button>
+
+        <button id="btn-dossier-${reserve.id}" style="width: 100%; background: #059669; color: #fff; border: none; border-radius: 6px; padding: 6px 0; font-size: 11px; font-weight: 700; cursor: pointer;">
+          View Wildlife Dossier
+        </button>
+      `;
     } else if (item.type === 'hidden_gem') {
       const gem = item.raw;
       card.innerHTML = `
@@ -895,6 +957,35 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
       });
     }
 
+    // Wildlife Reserves, National Parks & Tiger Sanctuaries
+    if (showWildlife) {
+      wildlifeReservesList.forEach((reserve) => {
+        if (!belongsToSelectedCity(reserve.nearestCity) && !belongsToSelectedCity(reserve.district)) return;
+        if (
+          q &&
+          !reserve.name?.toLowerCase().includes(q) &&
+          !reserve.district?.toLowerCase().includes(q) &&
+          !reserve.nearestCity?.toLowerCase().includes(q) &&
+          !reserve.stateName?.toLowerCase().includes(q) &&
+          !reserve.category?.toLowerCase().includes(q) &&
+          !reserve.keyHighlight?.toLowerCase().includes(q) &&
+          !reserve.prominentFauna.some((f) => f.toLowerCase().includes(q))
+        ) {
+          return;
+        }
+        activePoints.push({
+          id: reserve.id,
+          name: reserve.name,
+          type: 'wildlife',
+          lat: reserve.lat,
+          lng: reserve.lng,
+          city: reserve.nearestCity,
+          state: reserve.stateName,
+          raw: reserve,
+        });
+      });
+    }
+
     // Sacred Pilgrimage Circuits
     if (showSacredCircuits) {
       sacredSitesList.forEach((shrine) => {
@@ -1046,10 +1137,77 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
               <span style="font-size: 15px;">🏛️</span>
             </div>
           `;
-        } else if (item.type === 'hidden_gem') {
+        } else if (item.type === 'wildlife') {
+      const reserve: StateWildlifeReserve = item.raw;
+      card.innerHTML = `
+        <div style="position: relative; margin: -12px -12px 10px -12px; border-top-left-radius: 12px; border-top-right-radius: 12px; overflow: hidden; height: 120px; background: #064e3b;">
+          <img src="${reserve.image}" alt="${reserve.name}" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1575550959106-5a7defe28b56?w=800&auto=format&fit=crop&q=80'" />
+          <span style="position: absolute; bottom: 8px; left: 8px; font-size: 10px; font-weight: 800; background: #059669; color: #fff; padding: 2px 7px; border-radius: 6px; text-transform: uppercase;">
+            🐾 ${reserve.category} ${reserve.isUnesco ? '· UNESCO' : ''}
+          </span>
+        </div>
+        <h4 style="font-weight: 800; font-size: 14px; margin: 0 0 2px 0; color: #0f172a; line-height: 1.25;">${reserve.name}</h4>
+        <div style="font-size: 11px; color: #64748b; margin-bottom: 6px;">${reserve.district}, ${reserve.stateName} • <span style="color:#059669; font-weight:700;">${reserve.areaSqKm.toLocaleString()} sq km</span></div>
+
+        <div style="background: #ecfdf5; border: 1px solid #a7f3d0; border-radius: 8px; padding: 6px 8px; margin-bottom: 8px; font-size: 11px; color: #065f46; line-height: 1.35;">
+          ${reserve.keyHighlight}
+        </div>
+
+        <div style="display: flex; gap: 8px; margin-bottom: 8px; font-size: 10px; background: #f8fafc; padding: 5px 8px; border-radius: 6px; border: 1px solid #e2e8f0;">
+          <div style="flex: 1;">
+            <div style="font-size: 8px; text-transform: uppercase; color: #94a3b8; font-weight: 700;">Safari Timings</div>
+            <div style="font-weight: 600; color: #334155; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${reserve.safariTimings}</div>
+          </div>
+          <div style="border-left: 1px solid #cbd5e1; padding-left: 8px;">
+            <div style="font-size: 8px; text-transform: uppercase; color: #94a3b8; font-weight: 700;">Best Season</div>
+            <div style="font-weight: 700; color: #059669;">${reserve.bestSeason}</div>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 8px;">
+          <div style="font-size: 9px; text-transform: uppercase; color: #64748b; font-weight: 700; margin-bottom: 3px;">Key Wildlife</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 4px;">
+            ${reserve.prominentFauna.slice(0, 3).map(f => `<span style="font-size: 9px; background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; padding: 1px 5px; border-radius: 4px; font-weight: 600;">${f}</span>`).join('')}
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 6px;">
+          <button id="btn-orig-${reserve.id}" style="background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; border-radius: 6px; padding: 5px; font-size: 10px; font-weight: 700; cursor: pointer;">
+            🚩 Start Route
+          </button>
+          <button id="btn-dest-${reserve.id}" style="background: #f1f5f9; color: #0f172a; border: 1px solid #cbd5e1; border-radius: 6px; padding: 5px; font-size: 10px; font-weight: 700; cursor: pointer;">
+            🎯 Route Here
+          </button>
+        </div>
+
+        <div style="display: flex; gap: 4px; margin-bottom: 6px;">
+          <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(reserve.name + ' ' + reserve.stateName)}" target="_blank" rel="noopener noreferrer" style="flex: 1; text-decoration: none; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; border-radius: 6px; padding: 4px 6px; font-size: 10px; font-weight: 700; text-align: center; display: flex; align-items: center; justify-content: center; gap: 4px;">
+            <span>🗺️ Google Maps</span>
+          </a>
+          <button id="btn-maps-intel-${reserve.id}" style="flex: 1; background: #ecfdf5; color: #047857; border: 1px solid #a7f3d0; border-radius: 6px; padding: 4px 6px; font-size: 10px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px;">
+            <span>📍 Maps Intel</span>
+          </button>
+        </div>
+
+        <button id="btn-add-analyzer-${reserve.id}" style="width: 100%; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; border-radius: 6px; padding: 4px 6px; font-size: 10px; font-weight: 700; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 4px; margin-bottom: 6px;">
+          <span>🐾 Add to Safari Route</span>
+        </button>
+
+        <button id="btn-dossier-${reserve.id}" style="width: 100%; background: #059669; color: #fff; border: none; border-radius: 6px; padding: 6px 0; font-size: 11px; font-weight: 700; cursor: pointer;">
+          View Wildlife Dossier
+        </button>
+      `;
+    } else if (item.type === 'hidden_gem') {
           iconHtml = `
             <div class="gem-pin" style="background: linear-gradient(135deg, #9333ea, #ec4899); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid #ffffff; box-shadow: 0 4px 12px rgba(147, 51, 234, 0.55); cursor: pointer; transition: transform 0.2s;" title="💎 ${item.name}">
               <span style="font-size: 15px;">💎</span>
+            </div>
+          `;
+        } else if (item.type === 'wildlife') {
+          const reserve = item.raw;
+          iconHtml = `
+            <div class="wildlife-pin" style="background: linear-gradient(135deg, #059669, #047857); width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2.5px solid #ffffff; box-shadow: 0 4px 14px rgba(5, 150, 105, 0.55); cursor: pointer; transition: transform 0.2s;" title="🐾 ${item.name} (${reserve?.category || 'Wildlife Reserve'})">
+              <span style="font-size: 16px;">🐾</span>
             </div>
           `;
         } else if (item.type === 'sacred_site') {
@@ -2169,6 +2327,16 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
           </button>
 
           {/* Sacred Pilgrimage Circuits Toggle */}
+          <button
+            onClick={() => setShowWildlife(!showWildlife)}
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold border transition ${
+              showWildlife
+                ? 'bg-emerald-700 text-white border-emerald-800 shadow-2xs'
+                : 'bg-white text-stone-700 border-stone-200 hover:bg-stone-50'
+            }`}
+          >
+            <span>🐾 Wildlife &amp; Parks ({wildlifeReservesList.length})</span>
+          </button>
           <button
             onClick={() => setShowSacredCircuits(!showSacredCircuits)}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-bold border transition ${

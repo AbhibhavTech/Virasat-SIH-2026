@@ -51,6 +51,24 @@ export interface StateDirectoryCity {
   bgGradient?: string;
 }
 
+export interface StateWildlifeReserve {
+  id: string;
+  name: string;
+  category: 'Tiger Reserve' | 'National Park' | 'Wildlife Sanctuary' | 'Biosphere Reserve' | 'Bird Sanctuary' | 'Marine National Park';
+  district: string;
+  nearestCity?: string;
+  areaSqKm?: string;
+  prominentFauna: string[];
+  keyHighlight: string;
+  bestSeason: string;
+  safariTimings: string;
+  image: string;
+  photoCredit?: string;
+  isUnesco?: boolean;
+  lat?: number;
+  lng?: number;
+}
+
 export interface StateDirectoryConfig {
   stateId: string;
   stateName: string;
@@ -60,4 +78,5 @@ export interface StateDirectoryConfig {
   cuisineLabel: string;     // e.g. "Malvani, Parsi & Kolhapuri Flavors"
   unescoCount: string;      // e.g. "5 UNESCO Heritage Sites"
   cities: StateDirectoryCity[];
+  wildlifeReserves?: StateWildlifeReserve[];
 }

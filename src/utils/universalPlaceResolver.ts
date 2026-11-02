@@ -6,6 +6,7 @@ import { getMumbaiDestinationById } from '../data/mumbaiDestinations';
 import { getNearbyDiscoveryPlaceById } from '../data/nearbyPlacesMMR';
 import { ULTIMATE_CITY_DATABASE_15 } from '../data/ultimateCityDatabase';
 import { getAllSacredSites } from '../data/sacredPilgrimageCircuits';
+import { getAllWildlifeReserves } from '../data/allIndiaWildlifeData';
 
 // Eagerly glob all 36 regional directory modules for zero-network universal resolution
 const directoryModules = import.meta.glob('../data/*Directory.ts', { eager: true }) as Record<
@@ -383,6 +384,58 @@ for (const shrine of getAllSacredSites()) {
   if (!placesByCityMap.has(cKey)) placesByCityMap.set(cKey, []);
   if (!placesByCityMap.get(cKey)!.some((p) => p.id === shrine.id)) {
     placesByCityMap.get(cKey)!.push(placeDetail);
+  }
+}
+
+// 6. Index All India Wildlife Reserves, Tiger Sanctuaries & National Parks
+for (const reserve of getAllWildlifeReserves()) {
+  const reserveKey = reserve.id.toLowerCase().trim();
+  const normName = normalizeStr(reserve.name);
+  const cityKey = normalizeStr(reserve.nearestCity);
+  const distKey = normalizeStr(reserve.district);
+
+  const placeDetail: PlaceDetail = {
+    id: reserve.id,
+    name: reserve.name,
+    city: reserve.nearestCity,
+    state: reserve.stateName,
+    category: `${reserve.category} · Protected Area`,
+    summary: `${reserve.name} in ${reserve.district}, ${reserve.stateName}. Area: ${reserve.areaSqKm.toLocaleString()} sq km. Prominent wildlife: ${reserve.prominentFauna.join(', ')}. Safari: ${reserve.safariTimings}. ${reserve.keyHighlight}`,
+    description: `${reserve.keyHighlight} Located in ${reserve.district} district of ${reserve.stateName} (nearest hub: ${reserve.nearestCity}). Covering ${reserve.areaSqKm.toLocaleString()} sq km of protected wilderness. Key fauna includes: ${reserve.prominentFauna.join(', ')}. Best season to visit: ${reserve.bestSeason}. Official safari timings: ${reserve.safariTimings}. ${reserve.isUnesco ? 'Recognized as a UNESCO World Heritage Site.' : ''}`,
+    coordinates: { lat: reserve.lat, lng: reserve.lng },
+    visiting_hours: reserve.safariTimings,
+    entry_fee: {
+      domestic: 250,
+      international: 1500,
+      currency: 'INR',
+    },
+    heritage_status: reserve.isUnesco
+      ? `UNESCO World Heritage Site · ${reserve.category}`
+      : `Protected Wilderness · ${reserve.category}`,
+    hero_image: reserve.image
+      ? createPlaceImageItem(reserve.id, reserve.image, reserve.name, reserve.photoCredit, true)
+      : undefined,
+    gallery_images: reserve.image
+      ? [createPlaceImageItem(reserve.id, reserve.image, reserve.name, reserve.photoCredit)]
+      : [],
+  };
+
+  placeByIdMap.set(reserveKey, placeDetail);
+  if (!placeByIdMap.has(normName)) placeByIdMap.set(normName, placeDetail);
+  allIndexedPlacesList.push(placeDetail);
+
+  if (cityKey) {
+    if (!placesByCityMap.has(cityKey)) placesByCityMap.set(cityKey, []);
+    if (!placesByCityMap.get(cityKey)!.some((p) => p.id === reserve.id)) {
+      placesByCityMap.get(cityKey)!.push(placeDetail);
+    }
+  }
+
+  if (distKey && distKey !== cityKey) {
+    if (!placesByCityMap.has(distKey)) placesByCityMap.set(distKey, []);
+    if (!placesByCityMap.get(distKey)!.some((p) => p.id === reserve.id)) {
+      placesByCityMap.get(distKey)!.push(placeDetail);
+    }
   }
 }
 

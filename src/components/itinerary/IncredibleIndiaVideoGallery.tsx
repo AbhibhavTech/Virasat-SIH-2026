@@ -32,6 +32,21 @@ export interface HeritageCircuitDestination {
 
 export const HERITAGE_CIRCUIT_DESTINATIONS: HeritageCircuitDestination[] = [
   {
+    id: 'tiger-safari',
+    title: 'Premier Tiger Reserves & National Park Safaris',
+    tagline: 'Track royal Bengal tigers in Ranthambore and Jim Corbett, Asiatic lions in Gir, and rhinos in Kaziranga with official forest department safari permits.',
+    city: 'Ranthambore & Corbett',
+    cityId: 'jaipur',
+    state: 'Pan-India',
+    region: 'Protected Wild Habitats',
+    category: 'monuments',
+    imageUrl: 'https://images.unsplash.com/photo-1561731216-c3a4d99437d5?w=1600&auto=format&fit=crop&q=85',
+    badge: 'National Parks & Wildlife Sanctuaries',
+    featureLabel: 'Wildlife Safari',
+    iconName: 'landmark',
+    highlights: ['55+ Project Tiger Reserves', 'Jeep & Canter Forest Safaris', 'UNESCO Natural World Heritage'],
+  },
+  {
     id: 'lotus-temple',
     title: 'Lotus Temple (Baháʼí House of Worship)',
     tagline: 'Iconic pure white marble petals, tranquil reflecting pools, and universal sanctuary of peace in the heart of Delhi.',

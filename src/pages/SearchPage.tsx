@@ -33,6 +33,10 @@ const MAX_RECENT_SEARCHES = 10;
 
 const POPULAR_SEARCHES = [
   'Taj Mahal',
+  'Jim Corbett National Park',
+  'Kaziranga National Park',
+  'Gir Lion Sanctuary',
+  'Ranthambore Tiger Reserve',
   'Ajanta Caves',
   'Hampi',
   'Gateway of India',

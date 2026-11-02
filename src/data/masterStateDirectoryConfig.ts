@@ -1,4 +1,5 @@
 import { StateDirectoryConfig } from '../types/masterStateDirectory';
+import { getWildlifeReservesByState } from './allIndiaWildlifeData';
 import { ANDAMAN_DIRECTORY } from './andamanNicobarDirectory';
 import { ANDHRA_PRADESH_DIRECTORY } from './andhraPradeshDirectory';
 import { ARUNACHAL_PRADESH_DIRECTORY } from './arunachalPradeshDirectory';
@@ -596,20 +597,29 @@ export function getStateDirectoryConfig(stateKey?: string | null): StateDirector
   if (!stateKey) return null;
   const normalized = stateKey.trim().toLowerCase().replace(/\s+/g, '-');
   
+  let result: StateDirectoryConfig | null = null;
   if (STATE_DIRECTORIES_MAP[normalized]) {
-    return STATE_DIRECTORIES_MAP[normalized];
-  }
-
-  const aliasTarget = ALIASES_MAP[normalized];
-  if (aliasTarget && STATE_DIRECTORIES_MAP[aliasTarget]) {
-    return STATE_DIRECTORIES_MAP[aliasTarget];
-  }
-
-  // Substring match
-  for (const [key, config] of Object.entries(STATE_DIRECTORIES_MAP)) {
-    if (normalized.includes(key) || key.includes(normalized)) {
-      return config;
+    result = STATE_DIRECTORIES_MAP[normalized];
+  } else {
+    const aliasTarget = ALIASES_MAP[normalized];
+    if (aliasTarget && STATE_DIRECTORIES_MAP[aliasTarget]) {
+      result = STATE_DIRECTORIES_MAP[aliasTarget];
+    } else {
+      for (const [key, config] of Object.entries(STATE_DIRECTORIES_MAP)) {
+        if (normalized.includes(key) || key.includes(normalized)) {
+          result = config;
+          break;
+        }
+      }
     }
+  }
+
+  if (result) {
+    const wildlife = getWildlifeReservesByState(result.stateId);
+    return {
+      ...result,
+      wildlifeReserves: result.wildlifeReserves && result.wildlifeReserves.length > 0 ? result.wildlifeReserves : wildlife,
+    };
   }
 
   return null;
