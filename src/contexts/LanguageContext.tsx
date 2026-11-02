@@ -11,31 +11,10 @@ export interface LanguageOption {
 
 export const SUPPORTED_LANGUAGES: LanguageOption[] = [
   { code: 'en', name: 'English' },
-  { code: 'as', name: 'অসমীয়া' },
-  { code: 'bn', name: 'বাংলা' },
-  { code: 'brx', name: 'बड़ो' },
-  { code: 'doi', name: 'डोगरी' },
-  { code: 'gu', name: 'ગુજરાતી' },
   { code: 'hi', name: 'हिन्दी' },
-  { code: 'kn', name: 'ಕನ್ನಡ' },
-  { code: 'ks', name: 'كٲشُر' },
-  { code: 'kok', name: 'कोंकणी' },
-  { code: 'mai', name: 'मैथिली' },
-  { code: 'ml', name: 'മലയാളം' },
-  { code: 'mni', name: 'ꯃꯤꯇꯩꯂꯣꯟ' },
-  { code: 'mr', name: 'मराठी' },
-  { code: 'ne', name: 'नेपाली' },
-  { code: 'or', name: 'ଓଡ଼ିଆ' },
-  { code: 'pa', name: 'ਪੰਜਾਬੀ' },
-  { code: 'sa', name: 'संस्कृतम्' },
-  { code: 'sat', name: 'ᱥᱟᱱᱛᱟᱲᱤ' },
-  { code: 'sd', name: 'سنڌي' },
-  { code: 'ta', name: 'தமிழ்' },
-  { code: 'te', name: 'తెలుగు' },
-  { code: 'ur', name: 'اردو' },
 ];
 
-export const RTL_LANGUAGES = new Set(['ks', 'sd', 'ur']);
+export const RTL_LANGUAGES = new Set<string>();
 
 export interface LanguageContextType {
   currentLanguage: string;
@@ -58,7 +37,8 @@ const LanguageContext = createContext<LanguageContextType>({
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [currentLanguage, setCurrentLanguageState] = useState<string>(() => {
     try {
-      return safeLocalStorage.getItem('lang') || 'en';
+      const stored = safeLocalStorage.getItem('lang');
+      return stored === 'hi' ? 'hi' : 'en';
     } catch {
       return 'en';
     }

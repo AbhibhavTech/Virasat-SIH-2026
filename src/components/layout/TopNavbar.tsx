@@ -633,7 +633,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
               )}
             </div>
 
-            {/* Language Selector (23 Scheduled Languages + English) */}
+            {/* Language Selector (English & Hindi Tabs) */}
             <LanguageSelector className="hidden sm:inline-flex" />
 
             {/* 24x7 Tourist Emergency SOS Helpline (Compact & Reduced) */}
