@@ -1,3 +1,4 @@
+import { FESTIVALS_HINDI_MAP } from '../i18n/hindiDictionary';
 import React, { useState, useEffect, useMemo } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { api } from '../services/api';

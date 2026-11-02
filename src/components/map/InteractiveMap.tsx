@@ -33,6 +33,12 @@ import {
   SacredSite,
 } from '../../data/sacredPilgrimageCircuits';
 import {
+  getAllWildlifeReserves,
+  WildlifeReserveEntity,
+} from '../../data/allIndiaWildlifeData';
+import { StateWildlifeReserve } from '../../types/masterStateDirectory';
+import { useLanguage } from '../../contexts/LanguageContext';
+import {
   MapPin,
   Search,
   Layers,
@@ -115,6 +121,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
   initialDestination,
   height = '720px',
 }) => {
+  const { currentLanguage } = useLanguage();
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const mapInstanceRef = useRef<L.Map | null>(null);
 
@@ -644,7 +651,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
         </button>
       `;
     } else if (item.type === 'wildlife') {
-      const reserve: StateWildlifeReserve = item.raw;
+      const reserve: WildlifeReserveEntity = item.raw;
       card.innerHTML = `
         <div style="position: relative; margin: -12px -12px 10px -12px; border-top-left-radius: 12px; border-top-right-radius: 12px; overflow: hidden; height: 120px; background: #064e3b;">
           <img src="${reserve.image}" alt="${reserve.name}" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='https://images.unsplash.com/photo-1575550959106-5a7defe28b56?w=800&auto=format&fit=crop&q=80'" />
@@ -673,7 +680,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
         <div style="margin-bottom: 8px;">
           <div style="font-size: 9px; text-transform: uppercase; color: #64748b; font-weight: 700; margin-bottom: 3px;">Key Wildlife</div>
           <div style="display: flex; flex-wrap: wrap; gap: 4px;">
-            ${(reserve.prominentFauna || []).slice(0, 3).map(f => `<span style="font-size: 9px; background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; padding: 1px 5px; border-radius: 4px; font-weight: 600;">${f}</span>`).join('')}
+            ${(reserve.prominentFauna || []).slice(0, 3).map((f: string) => `<span style="font-size: 9px; background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; padding: 1px 5px; border-radius: 4px; font-weight: 600;">${f}</span>`).join('')}
           </div>
         </div>
 
@@ -959,7 +966,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
 
     // Wildlife Reserves, National Parks & Tiger Sanctuaries
     if (showWildlife) {
-      wildlifeReservesList.forEach((reserve) => {
+      wildlifeReservesList.forEach((reserve: WildlifeReserveEntity) => {
         if (!belongsToSelectedCity(reserve.nearestCity) && !belongsToSelectedCity(reserve.district)) return;
         if (
           q &&
@@ -969,7 +976,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
           !reserve.stateName?.toLowerCase().includes(q) &&
           !reserve.category?.toLowerCase().includes(q) &&
           !reserve.keyHighlight?.toLowerCase().includes(q) &&
-          !reserve.prominentFauna.some((f) => f.toLowerCase().includes(q))
+          !reserve.prominentFauna?.some((f: string) => f.toLowerCase().includes(q))
         ) {
           return;
         }
@@ -977,8 +984,8 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
           id: reserve.id,
           name: reserve.name,
           type: 'wildlife',
-          lat: reserve.lat,
-          lng: reserve.lng,
+          lat: reserve.lat || 0,
+          lng: reserve.lng || 0,
           city: reserve.nearestCity,
           state: reserve.stateName,
           raw: reserve,

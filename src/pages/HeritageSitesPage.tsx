@@ -54,7 +54,7 @@ const getWildlifeHeritageSites = () => {
     state: r.stateName,
     city: r.nearestCity,
     overview: `${r.keyHighlight} Prominent fauna: ${r.prominentFauna.join(', ')}. Safari: ${r.safariTimings}.`,
-    summary: `${r.keyHighlight} Covering ${r.areaSqKm.toLocaleString()} sq km in ${r.district}.`,
+    summary: `${r.keyHighlight} Covering ${r.areaSqKm ? r.areaSqKm.toLocaleString() : ""} sq km in ${r.district}.`,
     historical_significance: `One of India's premier protected wildlife habitats. Best visited during ${r.bestSeason}.`,
     unesco_status: r.isUnesco ? 'Inscribed' : 'None',
     is_unesco: r.isUnesco,

@@ -397,12 +397,12 @@ for (const reserve of getAllWildlifeReserves()) {
   const placeDetail: PlaceDetail = {
     id: reserve.id,
     name: reserve.name,
-    city: reserve.nearestCity,
+    city: reserve.nearestCity || reserve.district,
     state: reserve.stateName,
     category: `${reserve.category} · Protected Area`,
-    summary: `${reserve.name} in ${reserve.district}, ${reserve.stateName}. Area: ${reserve.areaSqKm.toLocaleString()} sq km. Prominent wildlife: ${reserve.prominentFauna.join(', ')}. Safari: ${reserve.safariTimings}. ${reserve.keyHighlight}`,
-    description: `${reserve.keyHighlight} Located in ${reserve.district} district of ${reserve.stateName} (nearest hub: ${reserve.nearestCity}). Covering ${reserve.areaSqKm.toLocaleString()} sq km of protected wilderness. Key fauna includes: ${reserve.prominentFauna.join(', ')}. Best season to visit: ${reserve.bestSeason}. Official safari timings: ${reserve.safariTimings}. ${reserve.isUnesco ? 'Recognized as a UNESCO World Heritage Site.' : ''}`,
-    coordinates: { lat: reserve.lat, lng: reserve.lng },
+    summary: `${reserve.name} in ${reserve.district}, ${reserve.stateName}. Area: ${reserve.areaSqKm ? reserve.areaSqKm.toLocaleString() : ""} sq km. Prominent wildlife: ${reserve.prominentFauna.join(', ')}. Safari: ${reserve.safariTimings}. ${reserve.keyHighlight}`,
+    description: `${reserve.keyHighlight} Located in ${reserve.district} district of ${reserve.stateName} (nearest hub: ${reserve.nearestCity}). Covering ${reserve.areaSqKm ? reserve.areaSqKm.toLocaleString() : ""} sq km of protected wilderness. Key fauna includes: ${reserve.prominentFauna.join(', ')}. Best season to visit: ${reserve.bestSeason}. Official safari timings: ${reserve.safariTimings}. ${reserve.isUnesco ? 'Recognized as a UNESCO World Heritage Site.' : ''}`,
+    coordinates: { lat: reserve.lat || 0, lng: reserve.lng || 0 },
     visiting_hours: reserve.safariTimings,
     entry_fee: {
       domestic: 250,

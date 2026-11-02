@@ -145,7 +145,7 @@ export const FestivalDetailPage: React.FC<FestivalDetailPageProps> = ({
     festival.id,
     festival.name,
     festival.state,
-    festival.category
+    festival.category || ""
   );
 
   const heroImage =
