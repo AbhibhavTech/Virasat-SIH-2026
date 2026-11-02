@@ -18,6 +18,7 @@ const HeritageDetailPage = React.lazy(() => import('../pages/HeritageDetailPage'
 const IndiaHierarchyPage = React.lazy(() => import('../pages/IndiaHierarchyPage').then((m) => ({ default: m.IndiaHierarchyPage })));
 const AdminDashboardPage = React.lazy(() => import('../pages/AdminDashboardPage').then((m) => ({ default: m.AdminDashboardPage })));
 const FestivalsPage = React.lazy(() => import('../pages/FestivalsPage').then((m) => ({ default: m.FestivalsPage })));
+const FestivalDetailPage = React.lazy(() => import('../pages/FestivalDetailPage').then((m) => ({ default: m.FestivalDetailPage })));
 
 const RouteLoadingSpinner: React.FC = () => (
   <div role="status" aria-live="polite" className="flex flex-col items-center justify-center min-h-[50vh] space-y-3 py-16 animate-fadeIn">
@@ -283,6 +284,16 @@ export const AppRoutes: React.FC<AppRoutesProps> = ({
           <FestivalsPage
             onSelectPlace={onSelectPlace}
             onNavigateTab={onNavigateTab}
+          />
+        }
+      />
+
+      <Route
+        path="/festivals/:festivalId"
+        element={
+          <FestivalDetailPage
+            onNavigateTab={onNavigateTab}
+            onSelectPlace={onSelectPlace}
           />
         }
       />
