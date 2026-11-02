@@ -6,6 +6,131 @@
 
 // 1. Exact Multi-Word Phrases (Checked first with highest priority)
 export const EXACT_PHRASES_MAP: Record<string, string> = {
+  "CHECK CURRENT RATES & OFFICIAL PORTALS": "लाइव दरें एवं आधिकारिक पोर्टल देखें",
+  "Check Current Rates & Official Portals": "लाइव दरें एवं आधिकारिक पोर्टल देखें",
+  "Verified Stays": "सत्यापित होटल व आवास",
+  "Find Comfort Hotels": "विश्वसनीय होटल एवं रिसॉर्ट खोजें",
+  "IRCTC Trains": "आईआरसीटीसी रेलगाड़ियां",
+  "Routes to Jaipur": "जयपुर के रेल मार्ग व टिकट दरें",
+  "Flight Fares": "हवाई यात्रा किराया",
+  "Compare live airlines": "सीधी उड़ानों एवं किरायों की तुलना करें",
+  "ASI Monuments": "एएसआई स्मारक टिकट",
+  "Official entry tickets": "आधिकारिक प्रवेश दरें व समय",
+  "Local Dining": "प्रसिद्ध स्थानीय व्यंजन",
+  "Must-try iconic eateries": "अवश्य चखने योग्य पारंपरिक स्वाद",
+  "All Days Grid": "समस्त दिन ग्रिड",
+  "Prev Day": "पिछला दिन",
+  "Next Day": "अगला दिन",
+  "Explore travel packages": "सत्यापित यात्रा पैकेज देखें",
+  "Places in your plan:": "आपकी योजना में शामिल दर्शनीय स्थल:",
+  "Places in your plan": "आपकी योजना में शामिल दर्शनीय स्थल",
+  "IRCTC Tourism": "आईआरसीटीसी पर्यटन",
+  "Rail and land tours": "रेल एवं सड़क यात्रा टूर",
+  "Browse packages": "पैकेज देखें",
+  "MakeMyTrip": "मेकमाईट्रिप",
+  "Holiday packages": "हॉलिडे पैकेज",
+  "Yatra": "यात्रा डॉट कॉम",
+  "Curated Holidays": "विशिष्ट अवकाश यात्राएं",
+  "SOTC": "एसओटीसी ट्रेवल्स",
+  "Guided sightseeing": "मार्गदर्शित भ्रमण",
+  "Thomas Cook": "थॉमस कुक",
+  "Thomas Cook India": "थॉमस कुक इंडिया",
+  "Pan-India Tours": "अखिल भारतीय टूर",
+  "Major Harvest Festivals": "प्रमुख कृषि एवं कटाई उत्सव",
+  "Major Harvest Festivals (State-Wise)": "प्रमुख कृषि एवं कटाई उत्सव (राज्य-वार)",
+  "State-Wise Harvest Heritage": "राज्य-वार कृषि धरोहर",
+  "Agrarian thanksgiving festivals, solar equinox milestones, and regional New Year celebrations across Indian states.": "भारतीय राज्यों के कृषि आभार उत्सव, सौर संक्रांति पर्व एवं पारंपरिक नववर्ष समारोह।",
+  "National Festivals": "राष्ट्रीय पर्व",
+  "National Days & Observances": "राष्ट्रीय दिवस एवं समारोह",
+  "Sovereign national commemorations, constitutional celebrations, and historic remembrance days observed across India.": "संपूर्ण भारत में मनाए जाने वाले संप्रभु राष्ट्रीय स्मरणोत्सव, संवैधानिक पर्व एवं ऐतिहासिक दिवस।",
+  "Major Cultural & Religious Festivals": "प्रमुख सांस्कृतिक एवं धार्मिक उत्सव",
+  "Notable State-Specific & Tribal Festivals": "विशिष्ट राज्य-स्तरीय एवं जनजातीय उत्सव",
+  "Prominent spiritual, mythological, and community celebrations celebrated with deep devotion and grandeur.": "अगाध भक्ति, आस्था और भव्यता के साथ मनाए जाने वाले प्रमुख आध्यात्मिक एवं सांस्कृतिक पर्व।",
+  "Unique folk dances, musical traditions, ethnic heritage, and regional rituals of India’s indigenous communities.": "भारत के स्वदेशी समुदायों के अनूठे लोक नृत्य, संगीत, जातीय परंपराएं एवं स्थानीय अनुष्ठान।",
+  "Select Maharashtra Destination (8 Hubs)": "महाराष्ट्र गंतव्य चुनें (8 केंद्र)",
+  "SELECT MAHARASHTRA DESTINATION (8 HUBS)": "महाराष्ट्र गंतव्य चुनें (8 केंद्र)",
+  "Ask AI Guide about Mumbai": "विरासत एआई से मुंबई के बारे में पूछें",
+  "Ask AI Guide about Jaipur": "विरासत एआई से जयपुर के बारे में पूछें",
+  "Ask AI Guide about Delhi": "विरासत एआई से दिल्ली के बारे में पूछें",
+  "Ask AI Guide about Varanasi": "विरासत एआई से वाराणसी के बारे में पूछें",
+  "Ask AI Guide about Agra": "विरासत एआई से आगरा के बारे में पूछें",
+  "Ask AI Guide about Kolkata": "विरासत एआई से कोलकाता के बारे में पूछें",
+  "Ask AI Guide about Chennai": "विरासत एआई से चेन्नई के बारे में पूछें",
+  "Ask AI Guide about Bengaluru": "विरासत एआई से बेंगलुरु के बारे में पूछें",
+  "8 Master Regional Hubs": "8 प्रमुख क्षेत्रीय केंद्र",
+  "37 Curated Attractions & Forts": "37 प्रमाणित आकर्षण एवं किले",
+  "All (8)": "सभी (8)",
+  "Core Heritage (4)": "मुख्य धरोहर (4)",
+  "Hidden Gems (4)": "अन्वेषित धरोहर (4)",
+  "100% On-Ground Guarantee": "100% ऑन-ग्राउंड गारंटी",
+  "Virasat Verified Travel Packages": "विरासत सत्यापित यात्रा पैकेज",
+  "Verified On-Ground Intelligence": "सत्यापित ऑन-ग्राउंड यात्रा संचिका",
+  "Turnstile QR Access • Free Entry for Children < 15": "टर्नस्टाइल क्यूआर प्रवेश • 15 वर्ष से कम आयु के बच्चों का निःशुल्क प्रवेश",
+  "Book Official ASI E-Ticket / Entry Pass": "आधिकारिक एएसआई ई-टिकट / प्रवेश पास बुक करें",
+  "Spoken Audio Tour (Hindi / English)": "ऑडियो गाइड प्रारंभ करें (हिन्दी / अंग्रेज़ी)",
+  "Close Audio Guide": "ऑडियो गाइड बंद करें",
+  "Origins & History": "उत्पत्ति एवं इतिहास",
+  "Architecture & Highlights": "वास्तुकला एवं मुख्य विशेषताएं",
+  "Cultural Significance": "सांस्कृतिक महत्व",
+  "Visitor Tips": "पर्यटकों के लिए उपयोगी सुझाव",
+  "Essential advice for travellers visiting this heritage site": "इस धरोहर स्थल के भ्रमण हेतु आवश्यक सुझाव",
+  "Practical Information": "व्यावहारिक यात्रा जानकारी",
+  "Opening Timings": "खुलने का समय",
+  "Ticket Rates": "प्रवेश टिकट शुल्क",
+  "Book Online Pass (₹50 Ind / ₹500 Foreign)": "ऑनलाइन पास बुक करें (₹50 भारतीय / ₹500 विदेशी)",
+  "Accessibility": "दिव्यांगजन सुगमता",
+  "Visitor Rules": "आगंतुक नियम",
+  "Sources & Citations:": "संदर्भ एवं आधिकारिक स्रोत:",
+  "Authenticity & Status": "प्रामाणिकता एवं आधिकारिक स्थिति",
+  "UNESCO Listing": "यूनेस्को सूची",
+  "WHC Reference": "विश्व धरोहर संदर्भ",
+  "Official Dossier": "आधिकारिक संचिका",
+  "UNESCO Portal": "यूनेस्को पोर्टल",
+  "ASI Protection": "भारतीय पुरातत्व सर्वेक्षण संरक्षण",
+  "Protected": "संरक्षित",
+  "Not indicated": "उल्लेख नहीं",
+  "Last Verified": "अंतिम सत्यापन",
+  "Review Status": "समीक्षा स्थिति",
+  "Nearby Sites": "निकटवर्ती दर्शनीय स्थल",
+  "Travel & Access": "परिवहन एवं आवागमन मार्ग",
+  "Suggested stop order": "सुझाया गया भ्रमण क्रम",
+  "Click any place to inspect full monument details": "सम्पूर्ण स्मारक विवरण देखने हेतु किसी भी स्थान पर क्लिक करें",
+  "Free entry, verified": "निःशुल्क प्रवेश, सत्यापित",
+  "₹50 standard ASI entry": "₹50 मानक एएसआई प्रवेश टिकट",
+  "Print / Expand": "प्रिंट / विस्तार",
+  "Trip Preferences (Optional)": "यात्रा प्राथमिकताएं (वैकल्पिक)",
+  "Budget preference": "बजट अनुकूल",
+  "Mid-range preference": "संतुलित / मध्यम श्रेणी",
+  "Luxury preference": "राजसी एवं विलासिता",
+  "Generate Itinerary": "यात्रा योजना बनाएं",
+  "Generating Route...": "मार्ग की गणना की जा रही है...",
+  "Travel Pace": "यात्रा गति",
+  "Budget Range": "बजट प्राथमिकता",
+  "Starting from (optional)": "प्रस्थान स्थल (वैकल्पिक)",
+  "City, airport or station": "शहर, हवाई अड्डा या रेलवे स्टेशन",
+  "Destination / City": "गंतव्य / शहर",
+  "Number of Days": "दिनों की संख्या",
+  "Travel start date": "प्रस्थान तिथि",
+  "Travellers": "यात्री",
+  "Explore Festivals": "उत्सव खोजें",
+  "All Festivals Across India": "भारत के समस्त त्यौहार एवं उत्सव",
+  "The calendar is a daily guide. It does not limit the complete festival collection shown below.": "पंचांग एक दैनिक मार्गदर्शिका है। नीचे दी गई समस्त उत्सव सूची को यह सीमित नहीं करता।",
+  "Calendar preview": "पंचांग पूर्वावलोकन",
+  "Monthly calendar": "मासिक पंचांग",
+  "Default view": "डिफ़ॉल्ट दृश्य",
+  "Live Now": "वर्तमान में सक्रिय",
+  "Upcoming": "आगामी",
+  "Today": "आज",
+  "Explore India": "भारत दर्शन",
+  "Specialized Tools": "विशेष पर्यटन साधन",
+  "Jump:": "गंतव्य:",
+  "Pilgrimage": "तीर्थ परिक्रमा",
+  "Stations On": "रेलवे स्टेशन चालू",
+  "Stations Off": "रेलवे स्टेशन बंद",
+  "Locate Me": "मेरा स्थान",
+  "Locating...": "खोज रहा है...",
+  "Route Studio": "मार्ग स्टूडियो",
+  "Heritage Route Analyzer": "धरोहर मार्ग विश्लेषक",
   "1 UNESCO Architectural Work (Capitol Complex)": "1 यूनेस्को वास्तुशिल्प धरोहर (कैपिटल कॉम्प्लेक्स)",
   "2 UNESCO World Heritage Sites": "2 यूनेस्को विश्व धरोहर स्थल",
   "2 UNESCO World Heritage Sites (Kaziranga & Manas)": "2 यूनेस्को विश्व धरोहर स्थल (काजीरंगा एवं मानस)",
@@ -451,6 +576,72 @@ export const STATES_HINDI_MAP: Record<string, string> = {
   "Puducherry": "पुदुचेरी",
 };
 
+
+// 4. Indian Festivals English to Hindi Names (All 46 Master Records)
+export const FESTIVALS_HINDI_MAP: Record<string, string> = {
+  "Independence Day": "स्वतंत्रता दिवस",
+  "Republic Day": "गणतंत्र दिवस",
+  "Gandhi Jayanti": "गांधी जयंती",
+  "Makar Sankranti / Uttarayan": "मकर संक्रांति / उत्तरायण",
+  "Makar Sankranti": "मकर संक्रांति",
+  "Uttarayan": "उत्तरायण",
+  "Pongal": "पोंगल",
+  "Onam": "ओणम",
+  "Baisakhi / Vaisakhi": "बैसाखी / वैशाखी",
+  "Baisakhi": "बैसाखी",
+  "Vaisakhi": "वैशाखी",
+  "Bhogali Bihu (Magh Bihu)": "भोगाली बिहू (माघ बिहू)",
+  "Bhogali Bihu": "भोगाली बिहू",
+  "Magh Bihu": "माघ बिहू",
+  "Bihu": "बिहू",
+  "Lohri": "लोहड़ी",
+  "Nuakhai": "नुआखाई",
+  "Nabanna": "नबन्ना",
+  "Gudi Padwa": "गुड़ी पड़वा",
+  "Ugadi": "उगादी",
+  "Wangala (100 Drums Festival)": "वांगला (100 ढोल महोत्सव)",
+  "Wangala": "वांगला",
+  "Vishu": "विषु",
+  "Diwali (Deepavali)": "दीपावली (दिवाली)",
+  "Diwali": "दीपावली",
+  "Deepavali": "दीपावली",
+  "Holi": "होली",
+  "Navratri": "नवरात्रि",
+  "Durga Puja": "दुर्गा पूजा",
+  "Ganesh Chaturthi": "गणेश चतुर्थी",
+  "Eid-ul-Fitr": "ईद-उल-फ़ितर",
+  "Eid-ul-Adha (Bakrid)": "ईद-उल-अज़हा (बकरीद)",
+  "Bakrid": "बकरीद",
+  "Christmas": "क्रिसमस",
+  "Mahashivaratri": "महाशिवरात्रि",
+  "Chhath Puja": "छठ पूजा",
+  "Brahmotsavam": "ब्रह्मोत्सवम",
+  "Losar": "लोसार",
+  "Dree Festival": "द्री महोत्सव",
+  "Bastar Dussehra": "बस्तर दशहरा",
+  "Dussehra": "दशहरा",
+  "Shigmo Mela": "शिग्मो मेला",
+  "Bahu Mela": "बाहू मेला",
+  "Karam": "करम पर्व",
+  "Sarhul": "सरहुल",
+  "Yaoshang": "याओशांग",
+  "Chapchar Kut": "चापचार कुट",
+  "Hornbill Festival": "हॉर्नबिल महोत्सव",
+  "Rath Yatra": "रथ यात्रा",
+  "Gangaur": "गणगौर",
+  "Bonalu": "बोनालु",
+  "Kharchi Puja": "खारची पूजा",
+  "Hemis Festival": "हेमिस महोत्सव",
+  "Ladakh Harvest Festival": "लद्दाख फसल कटाई महोत्सव",
+  "Garia Puja": "गरिया पूजा",
+  "Ker Puja": "केर पूजा",
+  "Neermahal Water Festival": "नीरमहल जल महोत्सव",
+  "Mysuru Dasara": "मैसूरु दशहरा",
+  "Pushkar Camel Fair": "पुष्कर ऊंट मेला",
+  "Rann Utsav": "रण उत्सव",
+  "Kumbh Mela": "कुंभ मेला",
+};
+
 // 3. Indian Cities English to Hindi Names
 export const CITIES_HINDI_MAP: Record<string, string> = {
   "Mumbai": "मुंबई",
@@ -728,8 +919,13 @@ export const VOCAB_REPLACEMENTS: Array<[RegExp, string]> = [
   [/\bDays\b/gi, "दिन"],
 ];
 
+function escapeRegex(str: string): string {
+  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
+
 // Pre-sorted entries by descending length (Longest matches checked first)
 const SORTED_PHRASES = Object.entries(EXACT_PHRASES_MAP).sort((a, b) => b[0].length - a[0].length);
+const SORTED_FESTIVALS = Object.entries(FESTIVALS_HINDI_MAP).sort((a, b) => b[0].length - a[0].length);
 const SORTED_STATES = Object.entries(STATES_HINDI_MAP).sort((a, b) => b[0].length - a[0].length);
 const SORTED_CITIES = Object.entries(CITIES_HINDI_MAP).sort((a, b) => b[0].length - a[0].length);
 const SORTED_WILDLIFE = Object.entries(WILDLIFE_HINDI_MAP).sort((a, b) => b[0].length - a[0].length);
@@ -748,22 +944,27 @@ export function translateTextToHindi(input: string): string {
     return input.replace(trimmed, EXACT_PHRASES_MAP[trimmed]);
   }
 
-  // 2. Direct exact match in states map
+  // 2. Direct exact match in festivals map
+  if (FESTIVALS_HINDI_MAP[trimmed]) {
+    return input.replace(trimmed, FESTIVALS_HINDI_MAP[trimmed]);
+  }
+
+  // 3. Direct exact match in states map
   if (STATES_HINDI_MAP[trimmed]) {
     return input.replace(trimmed, STATES_HINDI_MAP[trimmed]);
   }
 
-  // 3. Direct exact match in cities map
+  // 4. Direct exact match in cities map
   if (CITIES_HINDI_MAP[trimmed]) {
     return input.replace(trimmed, CITIES_HINDI_MAP[trimmed]);
   }
 
-  // 4. Direct exact match in wildlife map
+  // 5. Direct exact match in wildlife map
   if (WILDLIFE_HINDI_MAP[trimmed]) {
     return input.replace(trimmed, WILDLIFE_HINDI_MAP[trimmed]);
   }
 
-  // 5. Dynamic Count & Bracketed Pill Regex Patterns
+  // 6. Dynamic Count & Bracketed Pill Regex Patterns
   let output = input;
   output = output.replace(/\bAll\s*\(\s*(\d+)\s*\)/gi, 'सभी ($1)');
   output = output.replace(/\bCore Heritage\s*\(\s*(\d+)\s*\)/gi, 'मुख्य धरोहर ($1)');
@@ -783,36 +984,91 @@ export function translateTextToHindi(input: string): string {
   output = output.replace(/\b(\d+)\s+mins?\b/gi, '$1 मिनट');
   output = output.replace(/\b(\d+)\s+hours?\b/gi, '$1 घंटे');
   output = output.replace(/\b(\d+)\s+days?\b/gi, '$1 दिन');
+  output = output.replace(/\bDay\s*(\d+)\b/gi, 'दिन $1');
 
-  // 6. Pre-sorted multi-word phrase replacement (Longest matches first)
+  // Dynamic context regexes
+  output = output.replace(/\bAsk AI Guide about\s+([A-Za-z\s]+)\b/gi, (m, city) => {
+    const cTrim = city.trim();
+    const cHi = CITIES_HINDI_MAP[cTrim] || cTrim;
+    return `विरासत एआई से ${cHi} के बारे में पूछें`;
+  });
+  output = output.replace(/\b(Select|SELECT)\s+([A-Za-z\s]+)\s+(Destination|DESTINATION)\s*\(\s*(\d+)\s+(Hubs|HUBS)\s*\)/gi, (m, p1, state, p2, count) => {
+    const sTrim = state.trim();
+    const sHi = STATES_HINDI_MAP[sTrim] || sTrim;
+    return `${sHi} गंतव्य चुनें (${count} केंद्र)`;
+  });
+  output = output.replace(/\bRoutes to\s+([A-Za-z\s]+)\b/gi, (m, city) => {
+    const cTrim = city.trim();
+    const cHi = CITIES_HINDI_MAP[cTrim] || cTrim;
+    return `${cHi} के रेल मार्ग व टिकट दरें`;
+  });
+  output = output.replace(/\bPlanning\s+(\d+)\s+days?\s+in\s+([A-Za-z\s]+)\s+from\s+([^\s]+)\s+for\s+(\d+)\s+travellers?\?\s*Open a provider to check live package details\.?/gi, (m, days, city, date, trav) => {
+    const cTrim = city.trim();
+    const cHi = CITIES_HINDI_MAP[cTrim] || cTrim;
+    return `${cHi} में ${days} दिवसीय यात्रा (${date} से, ${trav} यात्री)? सत्यापित पैकेज एवं दैनिक दरें देखें।`;
+  });
+
+  // 7. Pre-sorted multi-word phrase replacement (Longest matches first)
   for (const [enPhrase, hiPhrase] of SORTED_PHRASES) {
     if (enPhrase.length >= 2 && output.includes(enPhrase)) {
       output = output.split(enPhrase).join(hiPhrase);
     }
   }
 
-  // 7. Pre-sorted State names
+  // 8. Pre-sorted Festivals
+  for (const [enFest, hiFest] of SORTED_FESTIVALS) {
+    if (output.includes(enFest)) {
+      const regex = new RegExp(`\\b${escapeRegex(enFest)}\\b`, 'gi');
+      output = output.replace(regex, hiFest);
+    }
+  }
+
+  // 9. Pre-sorted State names (word-boundary aware)
   for (const [enState, hiState] of SORTED_STATES) {
     if (output.includes(enState)) {
-      output = output.split(enState).join(hiState);
+      const regex = new RegExp(`\\b${escapeRegex(enState)}\\b`, 'gi');
+      output = output.replace(regex, hiState);
     }
   }
 
-  // 8. Pre-sorted City names
+  // 10. Pre-sorted City names (word-boundary aware to prevent substring corruption)
   for (const [enCity, hiCity] of SORTED_CITIES) {
     if (output.includes(enCity)) {
-      output = output.split(enCity).join(hiCity);
+      const regex = new RegExp(`\\b${escapeRegex(enCity)}\\b`, 'gi');
+      output = output.replace(regex, hiCity);
     }
   }
 
-  // 9. Pre-sorted Wildlife species
+  // 11. Pre-sorted Wildlife species (word-boundary aware)
   for (const [enFauna, hiFauna] of SORTED_WILDLIFE) {
     if (output.includes(enFauna)) {
-      output = output.split(enFauna).join(hiFauna);
+      const regex = new RegExp(`\\b${escapeRegex(enFauna)}\\b`, 'gi');
+      output = output.replace(regex, hiFauna);
     }
   }
 
-  // 10. Apply vocabulary regex replacements with word boundaries
+  // 12. Month & Day Abbreviations with word boundaries
+  output = output.replace(/\bMon\b/g, 'सोमवार');
+  output = output.replace(/\bTue\b/g, 'मंगलवार');
+  output = output.replace(/\bWed\b/g, 'बुधवार');
+  output = output.replace(/\bThu\b/g, 'गुरुवार');
+  output = output.replace(/\bFri\b/g, 'शुक्रवार');
+  output = output.replace(/\bSat\b/g, 'शनिवार');
+  output = output.replace(/\bSun\b/g, 'रविवार');
+  output = output.replace(/\b(Nov|November)\b/g, 'नवंबर');
+  output = output.replace(/\b(Dec|December)\b/g, 'दिसंबर');
+  output = output.replace(/\b(Jan|January)\b/g, 'जनवरी');
+  output = output.replace(/\b(Feb|February)\b/g, 'फ़रवरी');
+  output = output.replace(/\b(Mar|March)\b/g, 'मार्च');
+  output = output.replace(/\b(Apr|April)\b/g, 'अप्रैल');
+  output = output.replace(/\bMay\b/g, 'मई');
+  output = output.replace(/\b(Jun|June)\b/g, 'जून');
+  output = output.replace(/\b(Jul|July)\b/g, 'जुलाई');
+  output = output.replace(/\b(Aug|August)\b/g, 'अगस्त');
+  output = output.replace(/\b(Sep|September)\b/g, 'सितंबर');
+  output = output.replace(/\b(Oct|October)\b/g, 'अक्टूबर');
+
+  // 13. Apply vocabulary regex replacements with word boundaries
   for (const [regex, replacement] of VOCAB_REPLACEMENTS) {
     output = output.replace(regex, replacement);
   }

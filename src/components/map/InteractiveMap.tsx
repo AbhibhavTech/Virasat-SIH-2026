@@ -2280,7 +2280,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
         {/* Rapid Regional Jumps */}
         <div className="flex items-center gap-1.5 overflow-x-auto pb-1 lg:pb-0 scrollbar-none">
           <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 mr-1 flex items-center gap-1">
-            <Compass className="w-3.5 h-3.5" /> Jump:
+            <Compass className="w-3.5 h-3.5" /> {currentLanguage === 'hi' ? 'गंतव्य:' : 'Jump:'}
           </span>
           {[
             { id: 'all-india', label: 'All India' },
@@ -2311,7 +2311,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
                 : 'bg-stone-50 text-stone-500 border-stone-200 hover:bg-stone-100'
             }`}
           >
-            <span>🏛️ Heritage ({heritageSites.length})</span>
+            <span>🏛️ {currentLanguage === 'hi' ? 'धरोहर' : 'Heritage'} ({heritageSites.length})</span>
           </button>
 
           {/* Hidden Gems Toggle */}
@@ -2323,7 +2323,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
                 : 'bg-stone-50 text-stone-500 border-stone-200 hover:bg-stone-100'
             }`}
           >
-            <span>💎 Hidden Gems ({hiddenGemsList.length})</span>
+            <span>💎 {currentLanguage === 'hi' ? 'अन्वेषित धरोहर' : 'Hidden Gems'} ({hiddenGemsList.length})</span>
           </button>
 
           {/* Sacred Pilgrimage Circuits Toggle */}
@@ -2346,7 +2346,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
             }`}
             title="Toggle 8 Sacred Pilgrimage Circuits across 46 Shrines"
           >
-            <span>🕉️ Pilgrimage ({sacredSitesList.length})</span>
+            <span>🕉️ {currentLanguage === 'hi' ? 'तीर्थ परिक्रमा' : 'Pilgrimage'} ({sacredSitesList.length})</span>
           </button>
 
           {/* Stations (Default HIDE, optional) */}
@@ -2359,7 +2359,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
             }`}
             title="Toggle railway transit hubs"
           >
-            <span>🚆 Stations {showStations ? 'On' : 'Off'}</span>
+            <span>🚆 {currentLanguage === 'hi' ? 'रेलवे स्टेशन' : 'Stations'} {showStations ? (currentLanguage === 'hi' ? 'चालू' : 'On') : (currentLanguage === 'hi' ? 'बंद' : 'Off')}</span>
           </button>
 
           <div className="h-4 w-px bg-stone-200 mx-0.5 hidden sm:block" />
@@ -2376,7 +2376,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
             title="Locate my position on map"
           >
             <Crosshair className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${isLocating ? 'animate-spin' : ''}`} />
-            <span>{isLocating ? 'Locating...' : 'Locate Me'}</span>
+            <span>{isLocating ? (currentLanguage === 'hi' ? 'खोज रहा है...' : 'Locating...') : (currentLanguage === 'hi' ? 'मेरा स्थान' : 'Locate Me')}</span>
           </button>
 
           {/* Route Studio */}
@@ -2394,7 +2394,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
             }`}
           >
             <Navigation className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-            <span>Route Studio</span>
+            <span>{currentLanguage === 'hi' ? 'मार्ग स्टूडियो' : 'Route Studio'}</span>
           </button>
 
           {/* Local Heritage Route Analyzer */}
@@ -2413,7 +2413,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
             title="Estimate a multi-monument route from saved place coordinates"
           >
             <Sparkles className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${isHeritageAnalyzerOpen ? 'text-amber-200' : 'text-amber-600'}`} />
-            <span>Heritage Route Analyzer</span>
+            <span>{currentLanguage === 'hi' ? 'धरोहर मार्ग विश्लेषक' : 'Heritage Route Analyzer'}</span>
             {selectedHeritageMonuments.length > 0 && (
               <span className={`text-[10px] sm:text-xs font-black px-2 py-0.5 rounded-full ${
                 isHeritageAnalyzerOpen ? 'bg-white/20 text-white' : 'bg-amber-200 text-amber-900'
@@ -2447,7 +2447,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
                 }
               }}
               onKeyDown={handleSearchKeyDown}
-              placeholder="Search states, cities, monuments, hotels, markets..."
+              placeholder={currentLanguage === 'hi' ? 'राज्य, शहर, स्मारक, होटल, बाजार खोजें...' : 'Search states, cities, monuments, hotels, markets...'}
               className="w-full pl-11 pr-14 py-3 sm:py-3.5 rounded-2xl bg-transparent text-xs sm:text-sm text-slate-900 font-medium placeholder-slate-400 focus:outline-none"
               aria-label="Unified map location search"
               aria-autocomplete="list"

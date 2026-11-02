@@ -405,13 +405,13 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
                       </div>
                       <div>
                         <div className="text-xs font-bold text-stone-900 flex items-center gap-1.5">
-                          Admin & Verification
+                          {currentLanguage === 'hi' ? 'प्रशासन एवं सत्यापन' : 'Admin & Verification'}
                           <span className="text-[9px] font-semibold px-1.5 py-0.2 rounded bg-emerald-100 text-emerald-800 border border-emerald-300">
                             Portal
                           </span>
                         </div>
                         <div className="text-[11px] text-stone-500 line-clamp-1">
-                          Audit, review places & official sources
+                          {currentLanguage === 'hi' ? 'स्थानों एवं आधिकारिक स्रोतों का सत्यापन' : 'Audit, review places & official sources'}
                         </div>
                       </div>
                     </button>
@@ -490,7 +490,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
                         <span>{currentLanguage === 'hi' ? 'सटीक स्थान चुनें' : 'Select Exact Location'}</span>
                       </div>
                       <div className="text-[10px] text-stone-500">
-                        Exact city &amp; state pata karein
+                        {currentLanguage === 'hi' ? 'सटीक शहर व राज्य चुनें' : 'Exact city & state selector'}
                       </div>
                     </div>
                     {selectedCity && (
@@ -546,7 +546,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
                       <Search className="w-3.5 h-3.5 text-stone-400 shrink-0" />
                       <input
                         type="text"
-                        placeholder="Search city or state in India..."
+                        placeholder={currentLanguage === 'hi' ? 'भारत में शहर या राज्य खोजें...' : 'Search city or state in India...'}
                         value={citySearchQuery}
                         onChange={(e) => setCitySearchQuery(e.target.value)}
                         className="w-full text-xs bg-transparent focus:outline-hidden text-stone-800 placeholder-stone-400 font-medium"
@@ -580,9 +580,9 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
                         }`}
                       >
                         <div>
-                          <div className="font-bold text-xs">All India</div>
+                          <div className="font-bold text-xs">{currentLanguage === 'hi' ? 'संपूर्ण भारत' : 'All India'}</div>
                           <div className={`text-[10px] ${selectedCity === 'All India' ? 'text-stone-300' : 'text-stone-500'}`}>
-                            Pan-India Living Heritage &amp; Monuments
+                            {currentLanguage === 'hi' ? 'अखिल भारतीय जीवंत धरोहर व स्मारक' : 'Pan-India Living Heritage & Monuments'}
                           </div>
                         </div>
                         {selectedCity === 'All India' && (
@@ -625,7 +625,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
 
                     {filteredCities.length === 0 && (
                       <div className="py-6 text-center text-xs text-stone-400">
-                        No matching city found. Try another city name.
+                        {currentLanguage === 'hi' ? 'कोई शहर नहीं मिला। कृपया पुनः प्रयास करें।' : 'No matching city found. Try another city name.'}
                       </div>
                     )}
                   </div>
@@ -889,7 +889,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
             {/* Primary Navigation on Mobile */}
             <div className="space-y-0.5">
               <div className="px-2 text-[9px] font-bold text-stone-500 uppercase tracking-wider">
-                Explore India
+                {currentLanguage === 'hi' ? 'भारत दर्शन' : 'Explore India'}
               </div>
               {mainNavLinks.map((link) => (
                 <button
@@ -910,7 +910,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
             {/* Secondary Tools on Mobile */}
             <div className="space-y-0.5 pt-2 border-t border-[#EFE8DF]">
               <div className="px-2 text-[9px] font-bold text-stone-500 uppercase tracking-wider">
-                Specialized Tools
+                {currentLanguage === 'hi' ? 'विशेष पर्यटन साधन' : 'Specialized Tools'}
               </div>
               {secondaryItems.map((item) => {
                 const Icon = item.icon;

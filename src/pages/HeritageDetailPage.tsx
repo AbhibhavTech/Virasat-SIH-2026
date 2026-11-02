@@ -471,7 +471,7 @@ export const HeritageDetailPage: React.FC<HeritageDetailPageProps> = ({
             className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#FF671F] hover:bg-orange-700 text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition cursor-pointer"
           >
             <Ticket className="w-4 h-4 text-amber-200" />
-            <span>Book Official ASI E-Ticket / Entry Pass</span>
+            <span>{currentLanguage === 'hi' ? 'आधिकारिक एएसआई ई-टिकट / प्रवेश पास' : 'Book Official ASI E-Ticket / Entry Pass'}</span>
           </button>
           <button
             type="button"
@@ -483,12 +483,12 @@ export const HeritageDetailPage: React.FC<HeritageDetailPageProps> = ({
             }`}
           >
             <Headphones className="w-4 h-4 text-[#FF671F]" />
-            <span>{showAudioGuide ? 'Close Audio Guide' : 'Spoken Audio Tour (Hindi / English)'}</span>
+            <span>{showAudioGuide ? (currentLanguage === 'hi' ? 'ऑडियो गाइड बंद करें' : 'Close Audio Guide') : (currentLanguage === 'hi' ? 'ऑडियो गाइड प्रारंभ करें (हिन्दी / अंग्रेज़ी)' : 'Spoken Audio Tour (Hindi / English)')}</span>
           </button>
         </div>
         <div className="text-[11px] text-stone-500 font-semibold flex items-center gap-1.5">
           <ShieldCheck className="w-4 h-4 text-emerald-600" />
-          <span>Turnstile QR Access • Free Entry for Children &lt; 15</span>
+          <span>{currentLanguage === 'hi' ? 'टर्नस्टाइल क्यूआर प्रवेश • 15 वर्ष से कम आयु के बच्चों का निःशुल्क प्रवेश' : 'Turnstile QR Access • Free Entry for Children < 15'}</span>
         </div>
       </section>
 
@@ -727,7 +727,7 @@ export const HeritageDetailPage: React.FC<HeritageDetailPageProps> = ({
               <div className="flex items-center gap-2 pb-2 border-b border-stone-100">
                 <Info className="w-5 h-5 text-[#FF671F]" />
                 <h3 className="font-serif font-bold text-base sm:text-lg text-stone-900">
-                  Practical Information
+                  {currentLanguage === 'hi' ? 'व्यावहारिक यात्रा जानकारी' : 'Practical Information'}
                 </h3>
               </div>
 
@@ -735,7 +735,7 @@ export const HeritageDetailPage: React.FC<HeritageDetailPageProps> = ({
                 {practicalOpening && (
                   <div className="space-y-1">
                     <div className="font-semibold text-stone-400 uppercase tracking-wider text-[10px]">
-                      Opening Timings
+                      {currentLanguage === 'hi' ? 'खुलने का समय' : 'Opening Timings'}
                     </div>
                     <div className="text-stone-800 font-medium">{practicalOpening}</div>
                   </div>
@@ -743,7 +743,7 @@ export const HeritageDetailPage: React.FC<HeritageDetailPageProps> = ({
                 {practicalPrices && (
                   <div className="space-y-1">
                     <div className="font-semibold text-stone-400 uppercase tracking-wider text-[10px]">
-                      Ticket Rates
+                      {currentLanguage === 'hi' ? 'प्रवेश शुल्क' : 'Ticket Rates'}
                     </div>
                     <div className="text-stone-800 font-medium">{practicalPrices}</div>
                     <button
@@ -751,14 +751,14 @@ export const HeritageDetailPage: React.FC<HeritageDetailPageProps> = ({
                       onClick={() => setIsTicketModalOpen(true)}
                       className="mt-2 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#FF671F] text-white text-xs font-bold hover:bg-orange-600 transition cursor-pointer"
                     >
-                      <Ticket className="w-3.5 h-3.5" /> Book Online Pass (₹50 Ind / ₹500 Foreign)
+                      <Ticket className="w-3.5 h-3.5" /> {currentLanguage === 'hi' ? 'ऑनलाइन पास बुक करें (₹50 भारतीय / ₹500 विदेशी)' : 'Book Online Pass (₹50 Ind / ₹500 Foreign)'}
                     </button>
                   </div>
                 )}
                 {practicalAccessibility && (
                   <div className="space-y-1">
                     <div className="font-semibold text-stone-400 uppercase tracking-wider text-[10px]">
-                      Accessibility
+                      {currentLanguage === 'hi' ? 'दिव्यांगजन सुगमता' : 'Accessibility'}
                     </div>
                     <div className="text-stone-800">{practicalAccessibility}</div>
                   </div>
@@ -766,7 +766,7 @@ export const HeritageDetailPage: React.FC<HeritageDetailPageProps> = ({
                 {practicalRules.length > 0 && (
                   <div className="space-y-1 sm:col-span-2">
                     <div className="font-semibold text-stone-400 uppercase tracking-wider text-[10px]">
-                      Visitor Rules
+                      {currentLanguage === 'hi' ? 'आगंतुक नियम' : 'Visitor Rules'}
                     </div>
                     <div className="flex flex-wrap gap-1.5 pt-1">
                       {practicalRules.map((rule: string, i: number) => (
@@ -800,7 +800,7 @@ export const HeritageDetailPage: React.FC<HeritageDetailPageProps> = ({
       {showSources && (
             <section className="text-xs text-stone-500 space-y-2 pt-2 border-t border-stone-200">
               <span className="font-bold text-stone-600 uppercase tracking-wider text-[10px]">
-                Sources & Citations:
+                {currentLanguage === 'hi' ? 'संदर्भ एवं आधिकारिक स्रोत:' : 'Sources & Citations:'}
               </span>
               <ul className="space-y-1">
                 {validSources.map((src: any, i: number) => (
@@ -944,7 +944,7 @@ export const HeritageDetailPage: React.FC<HeritageDetailPageProps> = ({
               <div className="flex items-center gap-2 pb-2 border-b border-stone-100">
                 <Train className="w-5 h-5 text-[#FF671F]" />
                 <h3 className="font-serif font-bold text-base text-stone-900">
-                  Travel & Access
+                  {currentLanguage === 'hi' ? 'परिवहन एवं आवागमन मार्ग' : 'Travel & Access'}
                 </h3>
               </div>
 

@@ -37,6 +37,7 @@ import {
 } from 'lucide-react';
 import { api } from '../services/api';
 import { ItineraryResponse, ItineraryDay, ItineraryDayPlace } from '../types';
+import { useLanguage } from '../contexts/LanguageContext';
 import { NavTab } from '../components/layout/Sidebar';
 import { ALL_INDIAN_TOURISM_CITIES, CityOption } from '../data/cityItineraryData';
 import { FeaturedTripIdeasCarousel } from '../components/itinerary/IncredibleIndiaVideoGallery';
@@ -66,10 +67,16 @@ const localDateInputValue = () => {
   return date.toISOString().slice(0, 10);
 };
 
-const formatTripDate = (value?: string | null) => {
+const formatTripDate = (value?: string | null, isHi: boolean = false) => {
   if (!value || !/^\d{4}-\d{2}-\d{2}$/.test(value)) return '';
+  const dateObj = new Date(`${value}T12:00:00`);
+  if (isHi) {
+    const daysHi = ['रवि', 'सोम', 'मंगल', 'बुध', 'गुरु', 'शुक्र', 'शनि'];
+    const monthsHi = ['जनवरी', 'फ़रवरी', 'मार्च', 'अप्रैल', 'मई', 'जून', 'जुलाई', 'अगस्त', 'सितंबर', 'अक्टूबर', 'नवंबर', 'दिसंबर'];
+    return `${daysHi[dateObj.getDay()]}, ${dateObj.getDate()} ${monthsHi[dateObj.getMonth()]} ${dateObj.getFullYear()}`;
+  }
   return new Intl.DateTimeFormat(undefined, { weekday: 'short', day: 'numeric', month: 'short', year: 'numeric' })
-    .format(new Date(`${value}T12:00:00`));
+    .format(dateObj);
 };
 
 // Destination choices are limited to cities that have at least one real place
@@ -99,6 +106,8 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
   onSelectCity,
 }) => {
   const { user } = useAuth();
+  const { currentLanguage } = useLanguage();
+  const isHi = currentLanguage === 'hi';
   // Destination state
   const [selectedCityObj, setSelectedCityObj] = useState<CityOption>(() => {
     const found = ITINERARY_CITIES.find(
@@ -635,12 +644,12 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
         <div className="flex items-center gap-2.5 flex-wrap">
           <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-stone-900 text-white text-xs font-semibold shadow-2xs">
             <Landmark className="w-3.5 h-3.5 text-amber-400" />
-            <span>National Heritage Circuits & Itinerary</span>
+            <span>{isHi ? 'राष्ट्रीय धरोहर परिक्रमा एवं यात्रा योजना' : 'National Heritage Circuits & Itinerary'}</span>
           </div>
 
           <span className="hidden sm:inline text-stone-300">•</span>
           <span className="text-stone-500 hidden sm:inline text-xs font-medium">
-            Virasat destination records · live prices clearly marked
+            {isHi ? 'विरासत प्रमाणित स्थल • सत्यापित दरें' : 'Virasat destination records · live prices clearly marked'}
           </span>
         </div>
 
@@ -680,7 +689,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                 </div>
               </div>
               <span className="text-[11px] text-[#FF671F] font-semibold ml-1">
-                Change ▾
+                {isHi ? 'बदलें ▾' : 'Change ▾'}
               </span>
             </button>
 
@@ -691,7 +700,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                   <Search className="w-3.5 h-3.5 text-stone-400 shrink-0" />
                   <input
                     type="text"
-                    placeholder="Search Indian cities..."
+                    placeholder={isHi ? 'भारतीय शहर खोजें...' : 'Search Indian cities...'}
                     value={citySearchQuery}
                     onChange={(e) => setCitySearchQuery(e.target.value)}
                     className="w-full text-xs bg-transparent focus:outline-hidden text-stone-800 placeholder-stone-400"
@@ -741,16 +750,16 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
         {/* Row 1: 4 Selectors + Plan Button */}
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-3.5 sm:gap-4 items-end">
           <div className="space-y-1.5">
-            <label htmlFor="trip-origin" className="text-xs font-bold text-stone-700 uppercase tracking-wider">Starting from (optional)</label>
-            <input id="trip-origin" value={originCity} onChange={e => setOriginCity(e.target.value)} maxLength={100} placeholder="City, airport or station" className="w-full rounded-xl border border-stone-200 bg-stone-50/80 px-3.5 py-2.5 text-sm text-stone-900 focus:border-[#E06D24] focus:bg-white focus:outline-hidden" />
+            <label htmlFor="trip-origin" className="text-xs font-bold text-stone-700 uppercase tracking-wider">{isHi ? 'प्रस्थान स्थल (वैकल्पिक)' : 'Starting from (optional)'}</label>
+            <input id="trip-origin" value={originCity} onChange={e => setOriginCity(e.target.value)} maxLength={100} placeholder={isHi ? 'शहर, हवाई अड्डा या रेलवे स्टेशन' : 'City, airport or station'} className="w-full rounded-xl border border-stone-200 bg-stone-50/80 px-3.5 py-2.5 text-sm text-stone-900 focus:border-[#E06D24] focus:bg-white focus:outline-hidden" />
           </div>
           {/* Destination Selector */}
           <div className="space-y-1.5">
             <label className="text-xs font-bold text-stone-700 uppercase tracking-wider flex items-center gap-1.5">
               <MapPin className="w-3.5 h-3.5 text-stone-500" />
-              <span>Destination / City</span>
+              <span>{isHi ? 'गंतव्य / शहर' : 'Destination / City'}</span>
             </label>
-            <span className="block text-[11px] text-stone-500">{ITINERARY_CITIES.length} cities with destination records</span>
+            <span className="block text-[11px] text-stone-500">{ITINERARY_CITIES.length} {isHi ? 'प्रमाणित पर्यटन शहर' : 'cities with destination records'}</span>
             <select
               value={selectedCityObj.id}
               onChange={(e) => {
@@ -759,14 +768,14 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
               }}
               className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50/80 hover:bg-stone-50 border border-stone-200 text-sm text-stone-900 font-medium focus:bg-white focus:outline-hidden focus:border-[#E06D24] focus:ring-1 focus:ring-[#E06D24]/20 transition cursor-pointer"
             >
-              <optgroup label="Major Popular Hubs">
+              <optgroup label={isHi ? "प्रमुख लोकप्रिय शहर" : "Major Popular Hubs"}>
                 {ITINERARY_CITIES.filter((c) => c.popular).map((c) => (
                   <option key={c.id} value={c.id}>
                     {c.displayName}
                   </option>
                 ))}
               </optgroup>
-              <optgroup label="All Indian States & UTs">
+              <optgroup label={isHi ? "समस्त भारतीय राज्य एवं केंद्र शासित प्रदेश" : "All Indian States & UTs"}>
                 {ITINERARY_CITIES.filter((c) => !c.popular).map((c) => (
                   <option key={c.id} value={c.id}>
                     {c.displayName}
@@ -780,32 +789,32 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
           <div className="space-y-1.5">
             <label className="text-xs font-bold text-stone-700 uppercase tracking-wider flex items-center gap-1.5">
               <Calendar className="w-3.5 h-3.5 text-stone-500" />
-              <span>Number of Days</span>
+              <span>{isHi ? 'दिनों की संख्या' : 'Number of Days'}</span>
             </label>
             <select
               value={daysCount}
               onChange={(e) => setDaysCount(Number(e.target.value))}
               className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50/80 hover:bg-stone-50 border border-stone-200 text-sm text-stone-900 font-medium focus:bg-white focus:outline-hidden focus:border-[#E06D24] focus:ring-1 focus:ring-[#E06D24]/20 transition cursor-pointer"
             >
-              <option value={1}>1 Day (Express Tour)</option>
-              <option value={2}>2 Days (Weekend Getaway)</option>
-              <option value={3}>3 Days (Long Weekend)</option>
-              <option value={4}>4 Days (Deep Immersion)</option>
-              <option value={5}>5 Days (Complete Circuit)</option>
-              <option value={6}>6 Days (Extended Heritage)</option>
-              <option value={7}>7 Days (Grand Bharat Journey)</option>
+              <option value={1}>{isHi ? "1 दिन (एक्सप्रेस टूर)" : "1 Day (Express Tour)"}</option>
+              <option value={2}>{isHi ? "2 दिन (सप्ताहांत यात्रा)" : "2 Days (Weekend Getaway)"}</option>
+              <option value={3}>{isHi ? "3 दिन (मानक धरोहर यात्रा)" : "3 Days (Long Weekend)"}</option>
+              <option value={4}>{isHi ? "4 दिन (गहन सांस्कृतिक परिपथ)" : "4 Days (Deep Immersion)"}</option>
+              <option value={5}>{isHi ? "5 दिन (समग्र क्षेत्रीय यात्रा)" : "5 Days (Complete Circuit)"}</option>
+              <option value={6}>{isHi ? "6 दिन (विस्तृत धरोहर परिपथ)" : "6 Days (Extended Heritage)"}</option>
+              <option value={7}>{isHi ? "7 दिन (भव्य भारत महायात्रा)" : "7 Days (Grand Bharat Journey)"}</option>
             </select>
           </div>
 
           <div className="space-y-1.5">
-            <label htmlFor="trip-start-date" className="text-xs font-bold text-stone-700 uppercase tracking-wider">Travel start date</label>
+            <label htmlFor="trip-start-date" className="text-xs font-bold text-stone-700 uppercase tracking-wider">{isHi ? "प्रस्थान तिथि" : "Travel start date"}</label>
             <input id="trip-start-date" type="date" min={localDateInputValue()} value={travelStartDate} onChange={e => setTravelStartDate(e.target.value)} className="w-full rounded-xl border border-stone-200 bg-stone-50/80 px-3.5 py-2.5 text-sm text-stone-900 focus:border-[#E06D24] focus:bg-white focus:outline-hidden" />
           </div>
 
           <div className="space-y-1.5">
-            <label htmlFor="trip-travellers" className="text-xs font-bold text-stone-700 uppercase tracking-wider">Travellers</label>
+            <label htmlFor="trip-travellers" className="text-xs font-bold text-stone-700 uppercase tracking-wider">{isHi ? "यात्री संख्या" : "Travellers"}</label>
             <select id="trip-travellers" value={travellersCount} onChange={e => setTravellersCount(Number(e.target.value))} className="w-full rounded-xl border border-stone-200 bg-stone-50/80 px-3.5 py-2.5 text-sm text-stone-900 focus:border-[#E06D24] focus:bg-white focus:outline-hidden">
-              {[1, 2, 3, 4, 5, 6].map(n => <option key={n} value={n}>{n} {n === 1 ? 'traveller' : 'travellers'}</option>)}
+              {[1, 2, 3, 4, 5, 6].map(n => <option key={n} value={n}>{n} {isHi ? 'यात्री' : (n === 1 ? 'traveller' : 'travellers')}</option>)}
             </select>
           </div>
 
@@ -813,16 +822,16 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
           <div className="space-y-1.5">
             <label className="text-xs font-bold text-stone-700 uppercase tracking-wider flex items-center gap-1.5">
               <Clock className="w-3.5 h-3.5 text-stone-500" />
-              <span>Travel Pace</span>
+              <span>{isHi ? "यात्रा गति" : "Travel Pace"}</span>
             </label>
             <select
               value={pace}
               onChange={(e) => setPace(e.target.value as any)}
               className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50/80 hover:bg-stone-50 border border-stone-200 text-sm text-stone-900 font-medium focus:bg-white focus:outline-hidden focus:border-[#E06D24] focus:ring-1 focus:ring-[#E06D24]/20 transition cursor-pointer"
             >
-              <option value="relaxed">Relaxed (1-2 major stops/day)</option>
-              <option value="moderate">Moderate (3-4 balanced stops/day)</option>
-              <option value="fast">Fast-paced (5+ stops & highlights)</option>
+              <option value="relaxed">{isHi ? "सहज व आरामदेह (1-2 प्रमुख पड़ाव/दिन)" : "Relaxed (1-2 major stops/day)"}</option>
+              <option value="moderate">{isHi ? "संतुलित (3-4 संतुलित पड़ाव/दिन)" : "Moderate (3-4 balanced stops/day)"}</option>
+              <option value="fast">{isHi ? "त्वरित एवं सक्रिय (5+ पड़ाव व दर्शनीय स्थल)" : "Fast-paced (5+ stops & highlights)"}</option>
             </select>
           </div>
 
@@ -830,16 +839,16 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
           <div className="space-y-1.5">
             <label className="text-xs font-bold text-stone-700 uppercase tracking-wider flex items-center gap-1.5">
               <IndianRupee className="w-3.5 h-3.5 text-stone-500" />
-              <span>Budget Range</span>
+              <span>{isHi ? "बजट प्राथमिकता" : "Budget Range"}</span>
             </label>
             <select
               value={budget}
               onChange={(e) => setBudget(e.target.value as any)}
               className="w-full px-3.5 py-2.5 rounded-xl bg-stone-50/80 hover:bg-stone-50 border border-stone-200 text-sm text-stone-900 font-medium focus:bg-white focus:outline-hidden focus:border-[#E06D24] focus:ring-1 focus:ring-[#E06D24]/20 transition cursor-pointer"
             >
-              <option value="budget">Budget preference</option>
-              <option value="moderate">Mid-range preference</option>
-              <option value="luxury">Luxury preference</option>
+              <option value="budget">{isHi ? "बजट अनुकूल" : "Budget preference"}</option>
+              <option value="moderate">{isHi ? "संतुलित / मध्यम श्रेणी" : "Mid-range preference"}</option>
+              <option value="luxury">{isHi ? "राजसी एवं विलासिता" : "Luxury preference"}</option>
             </select>
           </div>
 
@@ -853,12 +862,12 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
               {loading ? (
                 <>
                   <Loader2 className="w-4 h-4 animate-spin" />
-                  <span>Generating Route...</span>
+                  <span>{isHi ? "मार्ग की गणना की जा रही है..." : "Generating Route..."}</span>
                 </>
               ) : (
                 <>
                   <Sparkles className="w-4 h-4" />
-                  <span>Generate Itinerary</span>
+                  <span>{isHi ? "एआई यात्रा योजना बनाएं" : "Generate Itinerary"}</span>
                 </>
               )}
             </button>
@@ -868,7 +877,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
         {/* Row 2: Trip Preferences Pills */}
         <div className="space-y-2 pt-3 border-t border-stone-100">
           <div className="text-xs font-bold text-stone-700 uppercase tracking-wider">
-            Trip Preferences (Optional)
+            {isHi ? "यात्रा प्राथमिकताएं (वैकल्पिक)" : "Trip Preferences (Optional)"}
           </div>
           <div className="flex flex-wrap gap-2">
             {PREFERENCE_PILLS.map((pref) => {
@@ -953,7 +962,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                 title="Share this curated itinerary on WhatsApp"
               >
                 <Share2 className="w-3.5 h-3.5 text-white" />
-                <span>WhatsApp</span>
+                <span>{isHi ? 'व्हाट्सएप' : 'WhatsApp'}</span>
               </button>
 
               {/* Download PDF / Print */}
@@ -964,7 +973,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                 title="Download full itinerary as PDF or print"
               >
                 <Printer className="w-3.5 h-3.5 text-[#FF671F]" />
-                <span>Download PDF</span>
+                <span>{isHi ? 'पीडीएफ प्रिंट' : 'Download PDF'}</span>
               </button>
 
               {/* Secondary: Export TXT */}
@@ -990,7 +999,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                 ) : (
                   <>
                     <Bookmark className="w-3.5 h-3.5 text-stone-600" />
-                    <span>Save Trip</span>
+                    <span>{isHi ? 'यात्रा सहेजें' : 'Save Trip'}</span>
                   </>
                 )}
               </button>
@@ -1075,7 +1084,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                   }`}
                 >
                   <LayoutGrid className="w-3.5 h-3.5" />
-                  <span>All Days Grid</span>
+                  <span>{isHi ? 'समस्त दिन ग्रिड' : 'All Days Grid'}</span>
                 </button>
 
                 {(itinerary.days || []).map((d: ItineraryDay, idx: number) => (
@@ -1092,7 +1101,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                     }`}
                   >
                     <BookOpen className="w-3 h-3" />
-                  <span>Day {d.day_number}{d.date ? ` · ${formatTripDate(d.date)}` : ''} · {d.area_title}</span>
+                  <span>{isHi ? `दिन ${d.day_number}` : `Day ${d.day_number}`}{d.date ? ` · ${formatTripDate(d.date, isHi)}` : ''} · {d.area_title}</span>
                   </button>
                 ))}
               </div>
@@ -1106,7 +1115,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                     className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-stone-50 hover:bg-stone-100 border border-stone-200 disabled:opacity-30 cursor-pointer text-stone-700 font-semibold"
                   >
                     <ChevronLeft className="w-3.5 h-3.5" />
-                    <span>Prev Day</span>
+                    <span>{isHi ? 'पिछला दिन' : 'Prev Day'}</span>
                   </button>
 
                   <span className="font-mono text-stone-500 font-bold px-1">
@@ -1122,7 +1131,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                     }
                     className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl bg-stone-50 hover:bg-stone-100 border border-stone-200 disabled:opacity-30 cursor-pointer text-stone-700 font-semibold"
                   >
-                    <span>Next Day</span>
+                    <span>{isHi ? 'अगला दिन' : 'Next Day'}</span>
                     <ChevronRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
@@ -1148,10 +1157,10 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                     <div className="space-y-0.5 sm:space-y-1">
                       <div className="flex items-center gap-2">
                         <span className="px-2.5 sm:px-3 py-0.5 rounded-full bg-[#FF671F] text-white font-bold text-[11px] sm:text-xs shadow-xs">
-                          Day {currentDay.day_number}{currentDay.date ? ` · ${formatTripDate(currentDay.date)}` : ''}
+                          {isHi ? `दिन ${currentDay.day_number}` : `Day ${currentDay.day_number}`}{currentDay.date ? ` · ${formatTripDate(currentDay.date, isHi)}` : ''}
                         </span>
                         <span className="text-[11px] sm:text-xs text-stone-600 font-mono font-semibold">
-                          {currentDay.places.length} Stops{currentDayVisitMinutes > 0 ? ` · ~${(currentDayVisitMinutes / 60).toFixed(1)}h on site` : ''}
+                          {currentDay.places.length} {isHi ? 'स्थान' : 'Stops'}{currentDayVisitMinutes > 0 ? ` · ~${(currentDayVisitMinutes / 60).toFixed(1)}h ${isHi ? 'स्थल पर' : 'on site'}` : ''}
                         </span>
                       </div>
                       <h3 className="text-lg sm:text-3xl font-bold font-serif text-stone-900">
@@ -1168,7 +1177,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                       className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:py-2 rounded-xl bg-white hover:bg-stone-50 text-stone-800 border border-stone-200 text-xs font-semibold shadow-xs transition cursor-pointer self-start sm:self-end"
                     >
                       <Printer className="w-3.5 h-3.5 text-[#FF671F]" />
-                      <span>Print / Expand</span>
+                      <span>{isHi ? 'प्रिंट / विस्तार' : 'Print / Expand'}</span>
                     </button>
                   </div>
                 </div>
@@ -1180,10 +1189,10 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
                     <div className="flex items-center justify-between border-b border-stone-100 pb-2">
                       <h4 className="text-sm font-bold text-stone-900 uppercase tracking-wider flex items-center gap-1.5">
                         <Clock className="w-4 h-4 text-[#FF671F]" />
-                        <span>Suggested stop order</span>
+                        <span>{isHi ? 'सुझाया गया भ्रमण क्रम' : 'Suggested stop order'}</span>
                       </h4>
                       <span className="text-xs text-stone-500">
-                        Click any place to inspect full monument details
+                        {isHi ? 'सम्पूर्ण स्मारक विवरण देखने हेतु किसी भी स्थान पर क्लिक करें' : 'Click any place to inspect full monument details'}
                       </span>
                     </div>
 

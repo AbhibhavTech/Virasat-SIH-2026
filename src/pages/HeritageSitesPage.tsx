@@ -375,10 +375,10 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
                     <ArrowUpRight className="w-4 h-4 text-stone-400 group-hover/tile:text-[#FF671F] transition-colors" />
                   </div>
                   <h4 className="text-xs sm:text-sm font-bold text-stone-900 group-hover/tile:text-[#FF671F] transition-colors">
-                    Forts & Palaces
+                    {currentLanguage === 'hi' ? 'किले एवं राजमहल' : 'Forts & Palaces'}
                   </h4>
                   <p className="text-[10px] sm:text-xs text-stone-500 mt-0.5 line-clamp-1">
-                    Rajput & Mughal Bastions
+                    {currentLanguage === 'hi' ? 'राजपूत एवं मुगल दुर्ग' : 'Rajput & Mughal Bastions'}
                   </p>
                 </button>
 
@@ -399,10 +399,10 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
                     <ArrowUpRight className="w-4 h-4 text-stone-400 group-hover/tile:text-amber-600 transition-colors" />
                   </div>
                   <h4 className="text-xs sm:text-sm font-bold text-stone-900 group-hover/tile:text-amber-600 transition-colors">
-                    Temples & Sacred
+                    {currentLanguage === 'hi' ? 'मंदिर एवं पावन तीर्थ' : 'Temples & Sacred'}
                   </h4>
                   <p className="text-[10px] sm:text-xs text-stone-500 mt-0.5 line-clamp-1">
-                    Dravidian & Nagara Vimana
+                    {currentLanguage === 'hi' ? 'द्रविड़ एवं नागर शैली विमान' : 'Dravidian & Nagara Vimana'}
                   </p>
                 </button>
 
@@ -423,10 +423,10 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
                     <ArrowUpRight className="w-4 h-4 text-stone-400 group-hover/tile:text-[#046A38] transition-colors" />
                   </div>
                   <h4 className="text-xs sm:text-sm font-bold text-stone-900 group-hover/tile:text-[#046A38] transition-colors">
-                    Rock-Cut Caves
+                    {currentLanguage === 'hi' ? 'शैलकर्तित गुफाएं' : 'Rock-Cut Caves'}
                   </h4>
                   <p className="text-[10px] sm:text-xs text-stone-500 mt-0.5 line-clamp-1">
-                    Ajanta, Ellora & Elephanta
+                    {currentLanguage === 'hi' ? 'अजंता, एलोरा एवं एलीफेंटा' : 'Ajanta, Ellora & Elephanta'}
                   </p>
                 </button>
 
@@ -441,14 +441,14 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
                       <Compass className="w-5 h-5 text-amber-400" />
                     </div>
                     <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400 bg-amber-500/10 border border-amber-500/20 px-2 py-0.5 rounded-full">
-                      8 Circuits
+                      {currentLanguage === 'hi' ? '8 पावन परिक्रमा' : '8 Circuits'}
                     </span>
                   </div>
                   <div className="text-xl sm:text-2xl font-serif font-bold text-amber-300 mb-0.5">
-                    46 Sacred Shrines
+                    {currentLanguage === 'hi' ? '46 पवित्र धाम व तीर्थ' : '46 Sacred Shrines'}
                   </div>
                   <div className="text-xs text-stone-400 leading-relaxed">
-                    Jyotirlingas, Char Dham, Shakti Peethas & Holy Gurdwaras
+                    {currentLanguage === 'hi' ? 'द्वादश ज्योतिर्लिंग, चार धाम, शक्तिपीठ व पावन गुरुद्वारे' : 'Jyotirlingas, Char Dham, Shakti Peethas & Holy Gurdwaras'}
                   </div>
                 </button>
               </div>
@@ -556,13 +556,13 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
 
         {/* UNESCO Status Filter Pills (Requirement 3) */}
         <div className="flex items-center gap-2 overflow-x-auto pb-1 scrollbar-none text-xs mobile-scroll-row">
-          <span className="text-stone-500 font-semibold text-xs shrink-0">UNESCO Status:</span>
+          <span className="text-stone-500 font-semibold text-xs shrink-0">{currentLanguage === 'hi' ? 'यूनेस्को स्थिति:' : 'UNESCO Status:'}</span>
           {[
-            { id: 'All', label: 'All Heritage Records' },
-            { id: 'inscribed', label: 'UNESCO Inscribed Site' },
-            { id: 'part_of_inscribed', label: 'Part of UNESCO Site' },
-            { id: 'tentative', label: 'Tentative List' },
-            { id: 'not_listed', label: 'National Heritage (Not Listed)' },
+            { id: 'All', label: currentLanguage === 'hi' ? 'सभी धरोहर रिकॉर्ड' : 'All Heritage Records' },
+            { id: 'inscribed', label: currentLanguage === 'hi' ? 'यूनेस्को प्रमाणित विश्व धरोहर' : 'UNESCO Inscribed Site' },
+            { id: 'part_of_inscribed', label: currentLanguage === 'hi' ? 'यूनेस्को धरोहर का हिस्सा' : 'Part of UNESCO Site' },
+            { id: 'tentative', label: currentLanguage === 'hi' ? 'संभावित सूची' : 'Tentative List' },
+            { id: 'not_listed', label: currentLanguage === 'hi' ? 'राष्ट्रीय धरोहर' : 'National Heritage (Not Listed)' },
           ].map((st) => (
             <button
               key={st.id}
@@ -616,8 +616,11 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
               <span className="text-stone-400">Loading catalogued heritage destinations...</span>
             ) : (
               <>
-                Showing <strong className="text-stone-900 font-bold">{filteredSites.length}</strong> of{' '}
-                <strong className="text-stone-900 font-bold">{heritageSites.length}</strong> heritage destinations
+                {currentLanguage === 'hi' ? (
+                  <>प्रदर्शित <strong className="text-stone-900 font-bold">{filteredSites.length}</strong> / <strong className="text-stone-900 font-bold">{heritageSites.length}</strong> ऐतिहासिक धरोहर</>
+                ) : (
+                  <>Showing <strong className="text-stone-900 font-bold">{filteredSites.length}</strong> of <strong className="text-stone-900 font-bold">{heritageSites.length}</strong> heritage destinations</>
+                )}
               </>
             )}
           </span>
@@ -640,7 +643,7 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
             className="inline-flex items-center gap-1.5 text-xs font-bold text-[#FF671F] hover:text-[#C9510C] hover:underline cursor-pointer"
           >
             <RotateCcw className="w-3.5 h-3.5" />
-            <span>Reset All Filters</span>
+            <span>{currentLanguage === 'hi' ? 'सभी फ़िल्टर हटाएं' : 'Reset All Filters'}</span>
           </button>
         )}
       </div>
@@ -785,7 +788,7 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
                     <div className="flex items-center gap-2 text-xs text-stone-700 bg-orange-50/60 px-3 py-1.5 rounded-xl border border-orange-100 font-sans font-medium">
                       <Train className="w-3.5 h-3.5 text-[#000080] shrink-0" />
                       <span className="truncate">
-                        Station: {site.nearest_transport?.railway_station || site.visiting_info?.railway_station}
+                        {currentLanguage === 'hi' ? 'रेलवे स्टेशन: ' : 'Station: '}{site.nearest_transport?.railway_station || site.visiting_info?.railway_station}
                       </span>
                     </div>
                   )}
@@ -800,7 +803,7 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
                       }}
                       className="flex-1 flex items-center justify-center gap-1.5 py-3 px-4 rounded-xl sm:rounded-2xl bg-gradient-to-r from-[#FF671F] to-[#E06D24] hover:from-[#E06D24] hover:to-[#C9510C] text-white text-xs sm:text-sm font-bold shadow-xs hover:shadow-md transition-all cursor-pointer active:scale-95"
                     >
-                      <span>Explore Monument</span>
+                      <span>{currentLanguage === 'hi' ? 'स्मारक का अन्वेषण करें' : 'Explore Monument'}</span>
                       <ChevronRight className="w-4 h-4" />
                     </button>
 
@@ -814,7 +817,7 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
                       title="Plan visit to this site"
                     >
                       <Compass className="w-4 h-4 text-stone-600" />
-                      <span>Plan Trip</span>
+                      <span>{currentLanguage === 'hi' ? 'यात्रा योजना' : 'Plan Trip'}</span>
                     </button>
                   </div>
                 </div>
