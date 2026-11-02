@@ -1021,6 +1021,244 @@ export const ALL_INDIA_WILDLIFE_RESERVES: WildlifeReserveEntity[] = [
     lat: 15.3667,
     lng: 74.2333,
   },
+  // ==========================================
+  // 21. HARYANA
+  // ==========================================
+  {
+    id: 'sultanpur-np-haryana',
+    name: 'Sultanpur National Park & Bird Sanctuary',
+    category: 'National Park',
+    stateId: 'haryana',
+    stateName: 'Haryana',
+    district: 'Gurugram',
+    nearestCity: 'Gurugram / Delhi',
+    areaSqKm: '1.43 sq km',
+    prominentFauna: ['Siberian Crane (winter)', 'Greater Flamingo', 'Black Francolin (State Bird)', 'Common Teal', 'Eurasian Wigeon', 'Nilgai'],
+    keyHighlight: 'Ramsar wetland sanctuary famous as a migratory avian paradise hosting over 250 bird species including winter visitors from Siberia and Central Asia.',
+    bestSeason: 'October to March (Peak migratory bird arrivals in Dec–Feb)',
+    safariTimings: '07:00 AM – 04:30 PM (Closed on Tuesdays; walking trails and observation watchtowers)',
+    image: 'https://images.unsplash.com/photo-1544816155-12df9643f363?w=1200&auto=format&fit=crop&q=80',
+    photoCredit: 'Unsplash / Sultanpur Wetland',
+    lat: 28.4611,
+    lng: 76.8917,
+  },
+  {
+    id: 'kalesar-np-haryana',
+    name: 'Kalesar National Park & Wildlife Sanctuary',
+    category: 'National Park',
+    stateId: 'haryana',
+    stateName: 'Haryana',
+    district: 'Yamunanagar',
+    nearestCity: 'Yamunanagar / Chandigarh',
+    areaSqKm: '46.8 sq km',
+    prominentFauna: ['Indian Leopard', 'Sambar', 'Barking Deer', 'Chital', 'Red Junglefowl', 'King Cobra'],
+    keyHighlight: 'Dense Shivalik foothill sal forest habitat bordering Rajaji NP and Simbalbara NP, creating a vital wildlife corridor for elephants and leopards.',
+    bestSeason: 'October to April',
+    safariTimings: '06:00 AM – 10:00 AM, 03:00 PM – 06:00 PM',
+    image: 'https://images.unsplash.com/photo-1448375240586-882707db888b?w=1200&auto=format&fit=crop&q=80',
+    photoCredit: 'Unsplash / Kalesar Sal Forest',
+    lat: 30.3444,
+    lng: 77.5806,
+  },
+
+  // ==========================================
+  // 22. PUNJAB
+  // ==========================================
+  {
+    id: 'harike-wetland-punjab',
+    name: 'Harike Wetland & Bird Sanctuary',
+    category: 'Wildlife Sanctuary',
+    stateId: 'punjab',
+    stateName: 'Punjab',
+    district: 'Tarn Taran & Ferozepur',
+    nearestCity: 'Amritsar / Ferozepur',
+    areaSqKm: '86 sq km',
+    prominentFauna: ['Indus River Dolphin (State Animal)', 'Smooth-coated Otter', 'Bar-headed Goose', 'Painted Stork', 'Cotton Pygmy Goose'],
+    keyHighlight: 'Largest freshwater wetland in Northern India at the confluence of the Beas and Sutlej rivers, designated as a Ramsar site and home to the endangered Indus River dolphin.',
+    bestSeason: 'November to March',
+    safariTimings: '08:00 AM – 05:00 PM (Boat & watchtower viewing points)',
+    image: 'https://images.unsplash.com/photo-1544816155-12df9643f363?w=1200&auto=format&fit=crop&q=80',
+    photoCredit: 'Unsplash / Harike Pattan Lake',
+    lat: 31.15,
+    lng: 74.95,
+  },
+
+  // ==========================================
+  // 23. DELHI (NCT)
+  // ==========================================
+  {
+    id: 'asola-bhatti-ws-delhi',
+    name: 'Asola Bhatti Wildlife Sanctuary',
+    category: 'Wildlife Sanctuary',
+    stateId: 'delhi',
+    stateName: 'Delhi',
+    district: 'South Delhi',
+    nearestCity: 'New Delhi',
+    areaSqKm: '32.7 sq km',
+    prominentFauna: ['Indian Leopard', 'Striped Hyena', 'Golden Jackal', 'Blackbuck', 'Nilgai', 'Egyptian Vulture'],
+    keyHighlight: 'Southern Ridge biodiversity haven featuring 8 restored turquoise lake quarries, butterfly park, and native Aravalli thorn forest ecosystems.',
+    bestSeason: 'October to March',
+    safariTimings: '09:00 AM – 05:00 PM (Conservation education centre & nature trails)',
+    image: 'https://images.unsplash.com/photo-1575550959106-5a7defe28b56?w=1200&auto=format&fit=crop&q=80',
+    photoCredit: 'Unsplash / Delhi Ridge Forest',
+    lat: 28.4947,
+    lng: 77.2472,
+  },
+
+  // ==========================================
+  // 24. TRIPURA
+  // ==========================================
+  {
+    id: 'clouded-leopard-np-tripura',
+    name: 'Clouded Leopard National Park (Sepahijala)',
+    category: 'National Park',
+    stateId: 'tripura',
+    stateName: 'Tripura',
+    district: 'Sepahijala',
+    nearestCity: 'Agartala',
+    areaSqKm: '5.08 sq km',
+    prominentFauna: ['Clouded Leopard', "Phayre's Leaf Monkey (Spectacled Monkey)", 'Slow Loris', 'Binturong', 'Barking Deer'],
+    keyHighlight: 'Dedicated habitat for the secretive Clouded Leopard and the critically endangered Phayre’s langur, nestled inside the Sepahijala Wildlife Sanctuary.',
+    bestSeason: 'November to April',
+    safariTimings: '09:00 AM – 04:30 PM (Closed on Fridays)',
+    image: 'https://images.unsplash.com/photo-1561731216-c3a4d99437d5?w=1200&auto=format&fit=crop&q=80',
+    photoCredit: 'Unsplash / Tripura Evergreen Canopy',
+    lat: 23.6833,
+    lng: 91.3167,
+  },
+
+  // ==========================================
+  // 25. MIZORAM
+  // ==========================================
+  {
+    id: 'dampa-tr-mizoram',
+    name: 'Dampa Tiger Reserve & Wildlife Sanctuary',
+    category: 'Tiger Reserve',
+    stateId: 'mizoram',
+    stateName: 'Mizoram',
+    district: 'Mamit',
+    nearestCity: 'Mamit / Aizawl',
+    areaSqKm: '500 sq km',
+    prominentFauna: ['Clouded Leopard', 'Bengal Tiger', 'Serow', 'Malayan Sun Bear', 'Great Indian Hornbill', 'Hoolock Gibbon'],
+    keyHighlight: 'Mizoram’s largest wildlife sanctuary in the rugged Mizo Hills along the international border with Bangladesh, with extraordinary tropical evergreen biodiversity.',
+    bestSeason: 'November to March',
+    safariTimings: '07:00 AM – 04:00 PM (Forest permit required from DFO Mamit)',
+    image: 'https://images.unsplash.com/photo-1448375240586-882707db888b?w=1200&auto=format&fit=crop&q=80',
+    photoCredit: 'Unsplash / Mizo Hills Rainforest',
+    lat: 23.6833,
+    lng: 92.4333,
+  },
+
+  // ==========================================
+  // 26. NAGALAND
+  // ==========================================
+  {
+    id: 'ntangki-np-nagaland',
+    name: 'Ntangki National Park',
+    category: 'National Park',
+    stateId: 'nagaland',
+    stateName: 'Nagaland',
+    district: 'Peren',
+    nearestCity: 'Dimapur / Peren',
+    areaSqKm: '202 sq km',
+    prominentFauna: ['Hoolock Gibbon', 'Golden Langur', 'Clouded Leopard', 'Mithun (State Animal)', 'Hornbill', 'Palm Civet'],
+    keyHighlight: 'Virgin rainforest canopy sanctuary protecting the rare Hoolock Gibbon and diverse avian species in the Barail and Patkai mountain ranges.',
+    bestSeason: 'November to April',
+    safariTimings: '08:00 AM – 04:00 PM',
+    image: 'https://images.unsplash.com/photo-1544816155-12df9643f363?w=1200&auto=format&fit=crop&q=80',
+    photoCredit: 'Unsplash / Nagaland Forest Hills',
+    lat: 25.55,
+    lng: 93.5,
+  },
+
+  // ==========================================
+  // 27. CHANDIGARH
+  // ==========================================
+  {
+    id: 'sukhna-ws-chandigarh',
+    name: 'Sukhna Wildlife Sanctuary',
+    category: 'Wildlife Sanctuary',
+    stateId: 'chandigarh',
+    stateName: 'Chandigarh',
+    district: 'Chandigarh',
+    nearestCity: 'Chandigarh',
+    areaSqKm: '26 sq km',
+    prominentFauna: ['Sambar', 'Indian Pangolin', 'Golden Jackal', 'Spotted Deer', 'Peafowl', 'Grey Partridge'],
+    keyHighlight: 'Sprawls across the Shivalik hills catchment area behind Sukhna Lake, serving as an urban wilderness and water recharge sanctuary.',
+    bestSeason: 'October to March',
+    safariTimings: '06:00 AM – 05:00 PM (Nature trails with forest department pass)',
+    image: 'https://images.unsplash.com/photo-1544816155-12df9643f363?w=1200&auto=format&fit=crop&q=80',
+    photoCredit: 'Unsplash / Shivalik Catchment Sanctuary',
+    lat: 30.75,
+    lng: 76.83,
+  },
+
+  // ==========================================
+  // 28. LAKSHADWEEP
+  // ==========================================
+  {
+    id: 'pitti-bird-sanctuary-lakshadweep',
+    name: 'Pitti Bird Sanctuary (Pakshipitti Island)',
+    category: 'Bird Sanctuary',
+    stateId: 'lakshadweep',
+    stateName: 'Lakshadweep',
+    district: 'Kavaratti Island Division',
+    nearestCity: 'Kavaratti / Agatti',
+    areaSqKm: '0.01 sq km (sandbank reef atoll)',
+    prominentFauna: ['Sooty Tern', 'Greater Crested Tern', 'Brown Noddy', 'Green Sea Turtle', 'Hawksbill Turtle'],
+    keyHighlight: 'Uninhabited coral atoll sandbank serving as the most significant pelagic bird nesting ground in the Arabian Sea.',
+    bestSeason: 'October to April (Calm seas)',
+    safariTimings: 'Regulated boat expeditions from Agatti or Kavaratti (Permits mandatory)',
+    image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&auto=format&fit=crop&q=80',
+    photoCredit: 'Unsplash / Lakshadweep Atoll Waters',
+    lat: 10.83,
+    lng: 72.63,
+  },
+
+  // ==========================================
+  // 29. DADRA & NAGAR HAVELI & DAMAN & DIU
+  // ==========================================
+  {
+    id: 'fudam-bird-sanctuary-diu',
+    name: 'Fudam Bird Sanctuary & Wetland',
+    category: 'Bird Sanctuary',
+    stateId: 'dadra-and-nagar-haveli-and-daman-and-diu',
+    stateName: 'Dadra and Nagar Haveli and Daman and Diu',
+    district: 'Diu',
+    nearestCity: 'Diu',
+    areaSqKm: '2.1 sq km',
+    prominentFauna: ['Greater Flamingo', 'Western Reef Heron', 'Black-winged Stilt', 'Eurasian Curlew', 'Spoonbill'],
+    keyHighlight: 'Coastal wetland sanctuary near Fudam village famous for mangrove tidal creeks, flamingos, and an elevated observation tower overlooking tidal marshlands.',
+    bestSeason: 'November to March',
+    safariTimings: '06:00 AM – 06:00 PM',
+    image: 'https://images.unsplash.com/photo-1544816155-12df9643f363?w=1200&auto=format&fit=crop&q=80',
+    photoCredit: 'Unsplash / Diu Coastal Lagoon',
+    lat: 20.71,
+    lng: 70.92,
+  },
+
+  // ==========================================
+  // 30. PUDUCHERRY
+  // ==========================================
+  {
+    id: 'ousteri-wetland-puducherry',
+    name: 'Ousteri Wetland & National Bird Sanctuary',
+    category: 'Bird Sanctuary',
+    stateId: 'puducherry',
+    stateName: 'Puducherry',
+    district: 'Puducherry',
+    nearestCity: 'Puducherry',
+    areaSqKm: '3.9 sq km',
+    prominentFauna: ['Spot-billed Pelican', 'Eurasian Spoonbill', 'Oriental White Ibis', 'Darter (Snakebird)', 'Painted Stork'],
+    keyHighlight: 'Puducherry’s largest freshwater wetland designated by IUCN as one of Asia’s significant wetlands, featuring eco-friendly electric boating and bird observation points.',
+    bestSeason: 'October to March',
+    safariTimings: '09:00 AM – 05:00 PM (Boat club operations by PTDC)',
+    image: 'https://images.unsplash.com/photo-1544816155-12df9643f363?w=1200&auto=format&fit=crop&q=80',
+    photoCredit: 'Unsplash / Osudu Lake',
+    lat: 11.95,
+    lng: 79.75,
+  },
+
 ];
 
 // Lookup helpers

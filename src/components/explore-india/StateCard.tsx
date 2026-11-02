@@ -3,10 +3,12 @@ import {
   ArrowRight,
   Eye,
   Heart,
+  Trees,
 } from 'lucide-react';
 import { StateHierarchyEntity } from '../../types/indiaHierarchy';
 import { getCuratedStateImage } from '../../data/stateCuratedImages';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
+import { getWildlifeReservesByState } from '../../data/allIndiaWildlifeData';
 
 interface StateCardProps {
   state: StateHierarchyEntity;
@@ -43,6 +45,7 @@ export const StateCard: React.FC<StateCardProps> = ({
   // Maximum 3 destinations per requirement
   const towns = territoryOnly ? [] : (state.cities || []);
   const topTowns = towns.slice(0, 3);
+  const stateWildlife = getWildlifeReservesByState(state.id);
 
   const { ref, className: revealClass, style: revealStyle } = useScrollReveal<HTMLDivElement>({
     animation: 'fade-up',
@@ -153,6 +156,15 @@ export const StateCard: React.FC<StateCardProps> = ({
                 </button>
               ))}
             </div>
+          </div>
+        )}
+
+        {stateWildlife.length > 0 && (
+          <div className="flex items-center gap-1.5 text-[11px] font-semibold text-emerald-800 bg-emerald-50 border border-emerald-200/80 px-2.5 py-1 rounded-lg">
+            <Trees className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+            <span className="truncate">
+              {stateWildlife.length} {stateWildlife.length === 1 ? 'Protected Sanctuary / Park' : 'Protected Sanctuaries & Reserves'}
+            </span>
           </div>
         )}
 
