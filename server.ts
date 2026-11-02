@@ -21,6 +21,7 @@ import {
   buildVerifiedTransitComparison,
 } from './src/server/transportResolver';
 import { INDIAN_AIRPORTS, STATE_COORDINATES, HISTORIC_INDIAN_MARKETS, describeAirportAccess } from './src/data/indianAirports';
+import { translateTextToHindi } from './src/i18n/hindiDictionary';
 
 import { db } from './server/src/db/client';
 import { requestIdMiddleware } from './server/src/middleware/validate';
@@ -3070,6 +3071,23 @@ app.get('/api/weather', (req, res) => {
 // AI Tourism Assistant Chat Endpoint
 // -------------------------------------------------------------
 // -------------------------------------------------------------
+// -------------------------------------------------------------
+// Universal AI Translation Endpoint (Client & DOM Auto-Translation)
+// -------------------------------------------------------------
+app.post('/api/ai/translate', (req, res) => {
+  const { language = 'hi', texts = [] } = req.body;
+  if (!Array.isArray(texts)) {
+    return res.status(400).json({ success: false, error: 'Texts array required' });
+  }
+
+  const translations = texts.map((text: string) => {
+    if (!text || typeof text !== 'string') return text;
+    return translateTextToHindi(text);
+  });
+
+  return res.json({ success: true, language, translations });
+});
+
 // Reverse Geocoding Endpoint (Coordinates to Locality / City / State)
 // -------------------------------------------------------------
 app.post('/api/geo/reverse-geocode', async (req, res) => {

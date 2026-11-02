@@ -2335,7 +2335,7 @@ export const InteractiveMap: React.FC<InteractiveMapProps> = ({
                 : 'bg-white text-stone-700 border-stone-200 hover:bg-stone-50'
             }`}
           >
-            <span>🐾 Wildlife &amp; Parks ({wildlifeReservesList.length})</span>
+            <span>{currentLanguage === 'hi' ? `🐾 वन्यजीव एवं पार्क (${wildlifeReservesList.length})` : `🐾 Wildlife &amp; Parks (${wildlifeReservesList.length})`}</span>
           </button>
           <button
             onClick={() => setShowSacredCircuits(!showSacredCircuits)}

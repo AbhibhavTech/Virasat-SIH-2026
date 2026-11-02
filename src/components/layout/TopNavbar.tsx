@@ -97,7 +97,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
 }) => {
   const navigate = useNavigate();
   const { user, logout, loginWithGoogle } = useAuth();
-  const { t } = useLanguage();
+  const { t, currentLanguage } = useLanguage();
   const isAuthenticated = Boolean(user);
   const { favorites } = useFavorites();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -355,7 +355,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
                 }`}
                 aria-expanded={moreDropdownOpen}
               >
-                <span>More</span>
+                <span>{currentLanguage === 'hi' ? 'अन्य' : 'More'}</span>
                 <ChevronDown
                   className={`w-3.5 h-3.5 transition-transform duration-200 text-stone-500 ${
                     moreDropdownOpen ? 'rotate-180' : ''
@@ -366,7 +366,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
               {moreDropdownOpen && (
                 <div className="absolute top-full right-0 mt-2 w-72 bg-white rounded-2xl shadow-xl border border-[#EFE8DF] p-2 space-y-1 z-50 animate-fadeIn">
                   <div className="px-3 py-1.5 text-[10px] font-bold text-stone-400 uppercase tracking-wider">
-                    Extended Tourism Tools
+                    {currentLanguage === 'hi' ? 'विस्तृत पर्यटन साधन' : 'Extended Tourism Tools'}
                   </div>
                   {secondaryItems.map((item) => {
                     const Icon = item.icon;
@@ -487,7 +487,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
                     <div>
                       <div className="text-[11px] font-bold text-stone-800 uppercase tracking-wider flex items-center gap-1">
                         <MapPin className="w-3 h-3 text-[#FF671F]" />
-                        <span>Select Exact Location</span>
+                        <span>{currentLanguage === 'hi' ? 'सटीक स्थान चुनें' : 'Select Exact Location'}</span>
                       </div>
                       <div className="text-[10px] text-stone-500">
                         Exact city &amp; state pata karein
@@ -517,7 +517,7 @@ export const TopNavbar: React.FC<TopNavbarProps> = ({
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="text-xs font-bold text-[#B24508] flex items-center gap-1">
-                          <span>{isLocating ? 'Detecting your GPS position...' : 'Detect My Exact Location'}</span>
+                          <span>{isLocating ? (currentLanguage === 'hi' ? 'जीपीएस द्वारा स्थान खोजा जा रहा है...' : 'Detecting your GPS position...') : (currentLanguage === 'hi' ? 'मेरा सटीक स्थान खोजें' : 'Detect My Exact Location')}</span>
                         </div>
                         <div className="text-[10px] text-stone-600 truncate">
                           {isLocating ? 'Finding exact city & state...' : 'GPS se current city & state pata karein'}

@@ -24,6 +24,7 @@ import {
   StateDirectoryConfig,
   StateDirectoryAttraction,
 } from '../../types/masterStateDirectory';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 interface UniversalMasterStateDirectoryProps {
   config: StateDirectoryConfig;
@@ -38,6 +39,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
   onSelectCity,
   onOpenAIChat,
 }) => {
+  const { currentLanguage } = useLanguage();
   const [selectedCityId, setSelectedCityId] = useState<string>(
     initialCityId && config.cities.some((c) => c.id === initialCityId)
       ? initialCityId
@@ -180,7 +182,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
             <div className="flex flex-wrap gap-2 pt-2 text-xs">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white/10 border border-white/10 text-stone-200">
                 <Landmark className="w-3.5 h-3.5 text-amber-400" />
-                <span>{config.cities.length} Master Regional Hubs</span>
+                <span>{config.cities.length} {currentLanguage === 'hi' ? 'प्रमुख क्षेत्रीय केंद्र' : 'Master Regional Hubs'}</span>
               </span>
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white/10 border border-white/10 text-stone-200">
                 <Award className="w-3.5 h-3.5 text-orange-400" />
@@ -188,12 +190,12 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
               </span>
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white/10 border border-white/10 text-stone-200">
                 <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
-                <span>{totalAttractionsCount} Curated Attractions &amp; Forts</span>
+                <span>{totalAttractionsCount} {currentLanguage === 'hi' ? 'प्रमाणित आकर्षण एवं किले' : 'Curated Attractions & Forts'}</span>
               </span>
               {wildlifeReserves.length > 0 && (
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-emerald-500/20 border border-emerald-400/30 text-emerald-200">
                   <Trees className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>{wildlifeReserves.length} National Parks &amp; Reserves</span>
+                  <span>{wildlifeReserves.length} {currentLanguage === 'hi' ? 'राष्ट्रीय उद्यान एवं अभयारण्य' : 'National Parks & Reserves'}</span>
                 </span>
               )}
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white/10 border border-white/10 text-stone-200">
@@ -215,7 +217,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
               className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-400 hover:to-orange-500 text-stone-950 font-semibold text-xs sm:text-sm shadow-lg hover:shadow-amber-500/25 transition-all cursor-pointer"
             >
               <Sparkles className="w-4 h-4 text-stone-950" />
-              <span>Ask AI Guide about {currentCity.name}</span>
+              <span>{currentLanguage === 'hi' ? `एआई गाइड से पूछें (${currentCity.name})` : `Ask AI Guide about ${currentCity.name}`}</span>
             </button>
             <div className="text-[11px] text-stone-400 text-center">
               State Directory · Verified Field Dossier
@@ -228,7 +230,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
       <div className="space-y-2">
         <div className="flex items-center justify-between text-xs font-semibold text-stone-500 uppercase tracking-wider px-1">
           <span>
-            Select {config.stateName} Destination ({config.cities.length} Hubs)
+            {currentLanguage === 'hi' ? `${config.stateName} गंतव्य चुनें (${config.cities.length} केंद्र)` : `Select ${config.stateName} Destination (${config.cities.length} Hubs)`}
           </span>
           <span className="text-amber-700 font-medium">{config.regionalSubtitle}</span>
         </div>
@@ -284,7 +286,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
             }`}
           >
             <Compass className="w-4 h-4 text-amber-700" />
-            <span>Attractions &amp; Sights</span>
+            <span>{currentLanguage === 'hi' ? 'आकर्षण एवं स्थल' : 'Attractions & Sights'}</span>
             <span className="ml-1 text-[11px] px-1.5 py-0.2 rounded-full bg-amber-200 text-amber-900">
               {currentCity.attractions?.length || 0}
             </span>
@@ -302,7 +304,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
               }`}
             >
               <Trees className="w-4 h-4 text-emerald-700" />
-              <span>Wildlife &amp; Reserves</span>
+              <span>{currentLanguage === 'hi' ? 'वन्यजीव एवं अभयारण्य' : 'Wildlife & Reserves'}</span>
               <span className="ml-1 text-[11px] px-1.5 py-0.2 rounded-full bg-emerald-200 text-emerald-900 font-bold">
                 {wildlifeReserves.length}
               </span>
@@ -319,7 +321,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
             }`}
           >
             <Hotel className="w-4 h-4 text-amber-700" />
-            <span>Top Stays</span>
+            <span>{currentLanguage === 'hi' ? 'प्रमुख आवास' : 'Top Stays'}</span>
             <span className="ml-1 text-[11px] px-1.5 py-0.2 rounded-full bg-stone-200 text-stone-700">
               {currentCity.topStays?.length || 0}
             </span>
@@ -335,7 +337,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
             }`}
           >
             <UtensilsCrossed className="w-4 h-4 text-amber-700" />
-            <span>Where to Eat</span>
+            <span>{currentLanguage === 'hi' ? 'प्रसिद्ध व्यंजन' : 'Where to Eat'}</span>
             <span className="ml-1 text-[11px] px-1.5 py-0.2 rounded-full bg-stone-200 text-stone-700">
               {(currentCity.dining?.veg?.length || 0) + (currentCity.dining?.nonVeg?.length || 0)}
             </span>
@@ -366,7 +368,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
         <div className="space-y-4">
           {/* Subfilter Pills */}
           <div className="flex items-center gap-2 text-xs flex-wrap">
-            <span className="text-stone-500 font-medium">Filter Sights:</span>
+            <span className="text-stone-500 font-medium">{currentLanguage === 'hi' ? 'आकर्षण फ़िल्टर:' : 'Filter Sights:'}</span>
             <button
               type="button"
               onClick={() => setAttractionFilter('all')}

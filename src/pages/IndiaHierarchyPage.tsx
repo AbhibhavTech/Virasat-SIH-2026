@@ -44,6 +44,7 @@ import {
   IndiaHierarchyDatabase
 } from '../types/indiaHierarchy';
 import { NavTab } from '../components/layout/Sidebar';
+import { useLanguage } from '../contexts/LanguageContext';
 import { ExploreIndiaMap } from '../components/explore-india/ExploreIndiaMap';
 import { PlaceDetailDrawer } from '../components/explore-india/PlaceDetailDrawer';
 import { StateCard } from '../components/explore-india/StateCard';
@@ -280,6 +281,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
   onNavigateTab,
   onSelectCity,
 }) => {
+  const { currentLanguage } = useLanguage();
   // Live Database with robust bundled database initialization and fallback
   const [db, setDb] = useState<IndiaHierarchyDatabase>(
     () => (INDIA_TOURISM_DATABASE as unknown as IndiaHierarchyDatabase)
@@ -1284,8 +1286,8 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
               <div className="rounded-3xl border border-white/90 bg-white/75 shadow-sm p-4 sm:p-5">
                 <div className="flex items-center justify-between gap-3 mb-3">
                   <div>
-                    <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#C94D0A]">Explore by region</span>
-                    <p className="text-xs text-stone-600 mt-0.5">A quick way to find your next part of India</p>
+                    <span className="text-[10px] font-bold uppercase tracking-[0.16em] text-[#C94D0A]">{currentLanguage === 'hi' ? 'क्षेत्र अनुसार खोजें' : 'Explore by region'}</span>
+                    <p className="text-xs text-stone-600 mt-0.5">{currentLanguage === 'hi' ? 'भारत की अगली यात्रा खोजने का सरल व त्वरित माध्यम' : 'A quick way to find your next part of India'}</p>
                   </div>
                   <span className="hidden sm:inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-3 py-1.5 text-[10px] font-semibold text-emerald-800 border border-emerald-100">
                     <MapPin className="w-3 h-3" /> 6 regions
@@ -1332,7 +1334,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                   type="text"
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  placeholder="Search a state or Union Territory..."
+                  placeholder={currentLanguage === 'hi' ? "कोई राज्य या केंद्र शासित प्रदेश खोजें..." : "Search a state or Union Territory..."}
                   className="w-full pl-10 pr-20 py-2 sm:py-2.5 bg-white border border-[#D5C7B8] rounded-xl text-xs text-[#0B192C] placeholder:text-[#A09388] focus:outline-none focus:border-[#FF671F] focus:ring-1 focus:ring-[#FF671F] transition shadow-xs"
                 />
 
@@ -1408,7 +1410,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                           : 'text-[#7A6E65] hover:text-[#0B192C]'
                       }`}
                     >
-                      <span>States</span>
+                      <span>{currentLanguage === 'hi' ? 'राज्य' : 'States'}</span>
                       <span className={`px-1.5 py-0.2 rounded-full text-[9px] sm:text-[10px] ${
                         territoryTab === 'states' ? 'bg-white/25 text-white' : 'bg-orange-100 text-[#FF671F]'
                       }`}>
@@ -1424,7 +1426,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                           : 'text-[#7A6E65] hover:text-[#0B192C]'
                       }`}
                     >
-                      <span>UTs</span>
+                      <span>{currentLanguage === 'hi' ? 'केंद्र शासित' : 'UTs'}</span>
                       <span className={`px-1.5 py-0.2 rounded-full text-[9px] sm:text-[10px] ${
                         territoryTab === 'uts' ? 'bg-white/25 text-white' : 'bg-stone-200 text-stone-700'
                       }`}>
@@ -1440,7 +1442,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                           : 'text-[#7A6E65] hover:text-[#0B192C]'
                       }`}
                     >
-                      <span>All</span>
+                      <span>{currentLanguage === 'hi' ? 'सभी' : 'All'}</span>
                       <span className={`px-1.5 py-0.2 rounded-full text-[9px] sm:text-[10px] ${
                         territoryTab === 'all' ? 'bg-white/25 text-white' : 'bg-stone-200 text-stone-700'
                       }`}>
@@ -1457,7 +1459,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                       }`}
                     >
                       <Heart className={`w-3 h-3 sm:w-3.5 sm:h-3.5 ${territoryTab === 'saved' ? 'fill-rose-500 text-rose-500' : ''}`} />
-                      <span>Wishlist</span>
+                      <span>{currentLanguage === 'hi' ? 'पसंदीदा' : 'Wishlist'}</span>
                       <span className="px-1.5 py-0.2 rounded-full text-[9px] sm:text-[10px] bg-rose-100 text-rose-700 font-bold">
                         {savedStates.length}
                       </span>
@@ -1488,16 +1490,16 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
             {activeLevel === 'india' && (
               <div className="flex items-center gap-1.5 overflow-x-auto pb-1 scrollbar-none no-scrollbar pt-2 border-t border-[#F0EAE1]">
                 <span className="text-[11px] font-bold text-stone-500 uppercase tracking-wider shrink-0 mr-1">
-                  Theme:
+                  {currentLanguage === 'hi' ? 'श्रेणी:' : 'Theme:'}
                 </span>
                 {[
-                  { id: 'all', label: 'All Themes' },
-                  { id: 'wildlife', label: '🐾 Wildlife & Tiger Reserves' },
-                  { id: 'unesco', label: '🏛️ UNESCO Heritage' },
-                  { id: 'forts', label: '🏰 Forts & Palaces' },
-                  { id: 'spiritual', label: '🪷 Sacred & Temples' },
-                  { id: 'hills', label: '🏔️ Himalayas & Hills' },
-                  { id: 'coastal', label: '🌊 Coastal & Beaches' },
+                  { id: 'all', label: currentLanguage === 'hi' ? 'सभी श्रेणियां' : 'All Themes' },
+                  { id: 'wildlife', label: currentLanguage === 'hi' ? '🐾 वन्यजीव व बाघ अभयारण्य' : '🐾 Wildlife & Tiger Reserves' },
+                  { id: 'unesco', label: currentLanguage === 'hi' ? '🏛️ यूनेस्को धरोहर' : '🏛️ UNESCO Heritage' },
+                  { id: 'forts', label: currentLanguage === 'hi' ? '🏰 किले एवं महल' : '🏰 Forts & Palaces' },
+                  { id: 'spiritual', label: currentLanguage === 'hi' ? '🪷 तीर्थ एवं पावन मंदिर' : '🪷 Sacred & Temples' },
+                  { id: 'hills', label: currentLanguage === 'hi' ? '🏔️ हिमालय व पर्वतीय स्थल' : '🏔️ Himalayas & Hills' },
+                  { id: 'coastal', label: currentLanguage === 'hi' ? '🌊 समुद्र तट व बैकवाटर्स' : '🌊 Coastal & Beaches' },
                 ].map((th) => {
                   const isSelected = selectedTheme === th.id;
                   return (
@@ -1635,10 +1637,10 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                       <div className="space-y-1">
                         <div className="inline-flex items-center gap-2 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 uppercase tracking-wider">
                           <Trees className="w-3 h-3 text-emerald-400" />
-                          <span>Protected Sanctuaries of Bharat</span>
+                          <span>{currentLanguage === 'hi' ? 'भारत के संरक्षित अभयारण्य' : 'Protected Sanctuaries of Bharat'}</span>
                         </div>
                         <h2 className="font-serif text-xl sm:text-2xl font-bold text-white flex items-center gap-2">
-                          <span>India's Premier Wildlife &amp; Tiger Reserves</span>
+                          <span>{currentLanguage === 'hi' ? 'भारत के प्रमुख वन्यजीव व बाघ अभयारण्य' : "India's Premier Wildlife &amp; Tiger Reserves"}</span>
                           <span className="text-xs font-sans font-normal px-2 py-0.5 rounded bg-emerald-800/60 text-emerald-200">
                             {PREMIER_WILDLIFE_SHOWCASE.length}+ Flagship Hubs
                           </span>
@@ -1654,7 +1656,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
                           className="px-3.5 py-2 rounded-xl text-xs font-bold bg-emerald-600 hover:bg-emerald-500 text-white shadow-md transition cursor-pointer flex items-center gap-1.5"
                         >
                           <Binoculars className="w-3.5 h-3.5" />
-                          <span>Filter All Wildlife States</span>
+                          <span>{currentLanguage === 'hi' ? 'सभी वन्यजीव राज्य देखें' : 'Filter All Wildlife States'}</span>
                         </button>
                       </div>
                     </div>
@@ -1713,7 +1715,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
 
                             <div className="pt-2">
                               <span className="w-full inline-flex items-center justify-center gap-1.5 py-1.5 rounded-lg text-[11px] font-bold bg-white/10 hover:bg-emerald-600/40 text-emerald-200 group-hover:text-white transition-colors">
-                                <span>Explore State Directory</span>
+                                <span>{currentLanguage === 'hi' ? 'राज्य डायरेक्टरी देखें' : 'Explore State Directory'}</span>
                                 <ChevronRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
                               </span>
                             </div>

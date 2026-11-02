@@ -150,47 +150,47 @@ export const HeritageSitesPage: React.FC<HeritageSitesPageProps> = ({
   const categories = useMemo(() => [
     {
       id: 'All',
-      label: 'All Heritage',
+      label: currentLanguage === 'hi' ? 'समस्त धरोहर' : 'All Heritage',
       icon: Landmark,
       count: categoryCounts['All'] || heritageSites.length,
     },
     {
       id: 'Forts & Palaces',
-      label: 'Forts & Palaces',
+      label: currentLanguage === 'hi' ? 'किले एवं राजमहल' : 'Forts & Palaces',
       icon: Castle,
       count: categoryCounts['Forts & Palaces'] || 0,
     },
     {
       id: 'Temples & Sacred',
-      label: 'Temples & Sacred',
+      label: currentLanguage === 'hi' ? 'मंदिर एवं पावन तीर्थ' : 'Temples & Sacred',
       icon: Sparkles,
       count: categoryCounts['Temples & Sacred'] || 0,
     },
     {
       id: 'Caves & Rock-Cut',
-      label: 'Rock-Cut Caves',
+      label: currentLanguage === 'hi' ? 'शिलाकृत गुफाएं' : 'Rock-Cut Caves',
       icon: Compass,
       count: categoryCounts['Caves & Rock-Cut'] || 0,
     },
     {
       id: 'Architectural & Colonial',
-      label: 'Colonial & Monuments',
+      label: currentLanguage === 'hi' ? 'ऐतिहासिक स्मारक' : 'Colonial & Monuments',
       icon: Building2,
       count: categoryCounts['Architectural & Colonial'] || 0,
     },
     {
       id: 'Wildlife & Reserves',
-      label: '🐾 Wildlife & Sanctuaries',
+      label: currentLanguage === 'hi' ? '🐾 वन्यजीव एवं अभयारण्य' : '🐾 Wildlife & Sanctuaries',
       icon: Trees,
       count: categoryCounts['Wildlife & Reserves'] || 0,
     },
     {
       id: 'Natural & Ghats',
-      label: 'Ghats & Natural',
+      label: currentLanguage === 'hi' ? 'पवित्र घाट एवं प्राकृतिक स्थल' : 'Ghats & Natural',
       icon: Waves,
       count: categoryCounts['Natural & Ghats'] || 0,
     },
-  ], [categoryCounts, heritageSites.length]);
+  ], [categoryCounts, heritageSites.length, currentLanguage]);
 
   const statesList = useMemo(() => {
     const set = new Set<string>();
