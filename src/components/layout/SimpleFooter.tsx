@@ -71,6 +71,18 @@ export const SimpleFooter: React.FC<SimpleFooterProps> = ({
                 </button>
               </li>
               <li>
+                <a
+                  href="/poster.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-amber-800 font-semibold hover:underline transition flex items-center gap-1"
+                >
+                  <Sparkles className="w-3.5 h-3.5 text-amber-600" />
+                  <span>{currentLanguage === 'hi' ? 'SIH 2026 पोस्टर' : 'SIH 2026 Poster'}</span>
+                  <ExternalLink className="w-2.5 h-2.5 opacity-70" />
+                </a>
+              </li>
+              <li>
                 <button
                   onClick={() => onNavigateTab('map')}
                   className="text-stone-600 hover:text-amber-800 transition"
@@ -196,6 +208,16 @@ export const SimpleFooter: React.FC<SimpleFooterProps> = ({
             <span className="text-[11px] font-semibold text-[#046A38] bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
               {currentLanguage === 'hi' ? 'राष्ट्रीय धरोहर भंडार' : 'National Heritage Repository'}
             </span>
+            <a
+              href="/poster.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-[11px] font-bold text-amber-900 bg-amber-50 hover:bg-amber-100 px-3 py-1 rounded-full border border-amber-300 transition shadow-sm"
+            >
+              <span>🏆</span>
+              <span>{currentLanguage === 'hi' ? 'SIH 2026 पोस्टर' : 'SIH 2026 Poster'}</span>
+              <ExternalLink className="w-3 h-3 text-amber-700" />
+            </a>
           </div>
         </div>
       </div>
