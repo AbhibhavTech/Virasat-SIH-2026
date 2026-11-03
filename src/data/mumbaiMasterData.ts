@@ -2032,10 +2032,10 @@ export const MUMBAI_ATTRACTIONS: MumbaiAttraction[] = [
       "lat": 18.9827,
       "lng": 72.8252
     },
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Dhobi_Ghat_Mumbai.jpg/1280px-Dhobi_Ghat_Mumbai.jpg",
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Dhobi_Ghat_Mumbai.jpg/1280px-Dhobi_Ghat_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/dhobi-ghat.jpg",
+    "image_url": "/images/maharashtra/dhobi-ghat.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Dhobi_Ghat_Mumbai.jpg/1280px-Dhobi_Ghat_Mumbai.jpg"
+      "/images/maharashtra/dhobi-ghat.jpg"
     ],
     "section": "heritage",
     "source_url": "https://maharashtratourism.gov.in",

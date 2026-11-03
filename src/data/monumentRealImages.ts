@@ -230,6 +230,12 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'sassoon-docks-colaba': '/images/maharashtra/sassoon-dock.jpg',
   'sassoon-dock-mumbai': '/images/maharashtra/sassoon-dock.jpg',
   'sasson-dock': '/images/maharashtra/sassoon-dock.jpg',
+  'IN-MH-MUM-ATT-035': '/images/maharashtra/dhobi-ghat.jpg',
+  'mumbai-dhobi-ghat': '/images/maharashtra/dhobi-ghat.jpg',
+  'dhobi-ghat': '/images/maharashtra/dhobi-ghat.jpg',
+  'mahalaxmi-dhobi-ghat': '/images/maharashtra/dhobi-ghat.jpg',
+  'dhobi-ghat-mahalaxmi': '/images/maharashtra/dhobi-ghat.jpg',
+  'dhobi-ghat-mumbai': '/images/maharashtra/dhobi-ghat.jpg',
   'mh-csmt': '/images/maharashtra/csmt-mumbai.png',
   'basilica-of-bom-jesus': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/1280px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg',
 

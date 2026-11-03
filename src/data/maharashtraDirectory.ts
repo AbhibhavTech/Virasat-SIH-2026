@@ -534,8 +534,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "06:00–18:00 (Best viewed from Mahalaxmi flyover in morning hours)",
         fee: { domestic: "Free viewing from bridge", foreign: "Free viewing from bridge" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Dhobi_Ghat_Mumbai.jpg/1280px-Dhobi_Ghat_Mumbai.jpg",
-        photoCredit: "Wikimedia Commons / Dhobi Ghat Concrete Washing Pens",
+        image: "/images/maharashtra/dhobi-ghat.jpg",
+        photoCredit: "Virasat Verified Heritage Archive / Mahalaxmi Dhobi Ghat Open-Air Laundry Flogging Pens",
         summary:
           "The world's largest open-air human-powered laundry system. Over 7,000 washermen (dhobis) wash, beat, scrub, dry, and iron over 100,000 garments daily in concrete wash pens.",
       },
