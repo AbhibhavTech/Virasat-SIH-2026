@@ -1033,8 +1033,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "08:00–21:00",
         fee: { domestic: "Free", foreign: "Free" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Mapro_Garden_Panchgani.jpg/1280px-Mapro_Garden_Panchgani.jpg",
-        photoCredit: "Wikimedia Commons / Mapro Garden",
+        image: "/images/maharashtra/mapro-garden.jpg",
+        photoCredit: "Virasat Verified / Authentic Landscaped Floral Lawns at Mapro Garden, Mahabaleshwar",
         summary:
           "A sprawling agro-tourism destination nestled in the hills between Mahabaleshwar and Panchgani. Features lush strawberry fields, artisan chocolate-making units, gourmet wood-fired pizza counters, and the annual Strawberry Festival.",
       },
