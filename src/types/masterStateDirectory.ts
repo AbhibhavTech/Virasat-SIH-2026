@@ -1,3 +1,4 @@
+import { SacredSite } from '../data/sacredPilgrimageCircuits';
 export interface StateDirectoryStay {
   name: string;
   category: string;
@@ -79,4 +80,5 @@ export interface StateDirectoryConfig {
   unescoCount: string;      // e.g. "5 UNESCO Heritage Sites"
   cities: StateDirectoryCity[];
   wildlifeReserves?: StateWildlifeReserve[];
+  sacredSites?: SacredSite[];
 }

@@ -24,6 +24,7 @@ import {
   StateDirectoryConfig,
   StateDirectoryAttraction,
 } from '../../types/masterStateDirectory';
+import { SacredSite } from '../../data/sacredPilgrimageCircuits';
 import { useLanguage } from '../../contexts/LanguageContext';
 import {
   translateTextToHindi,
@@ -50,7 +51,8 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
       ? initialCityId
       : config.cities[0]?.id || ''
   );
-  const [activeTab, setActiveTab] = useState<'attractions' | 'stays' | 'dining' | 'wildlife'>('attractions');
+  const [activeTab, setActiveTab] = useState<'attractions' | 'stays' | 'dining' | 'wildlife' | 'sacred'>('attractions');
+  const [sacredFilter, setSacredFilter] = useState<'all' | 'city'>('all');
   const [attractionFilter, setAttractionFilter] = useState<'all' | 'core' | 'hidden' | 'wildlife'>('all');
   const [wildlifeFilter, setWildlifeFilter] = useState<'all' | 'tiger' | 'np' | 'sanctuary'>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -80,6 +82,44 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
   const wildlifeReserves = useMemo(() => {
     return config.wildlifeReserves || [];
   }, [config.wildlifeReserves]);
+
+  // Sacred shrines for this state
+  const sacredSites = useMemo(() => {
+    return config.sacredSites || [];
+  }, [config.sacredSites]);
+
+  // Shrines belonging to the currently selected city
+  const citySacredSites = useMemo(() => {
+    if (!currentCity) return [];
+    const cName = currentCity.name.toLowerCase();
+    return sacredSites.filter(
+      (s) => s.city.toLowerCase().includes(cName) || cName.includes(s.city.toLowerCase())
+    );
+  }, [sacredSites, currentCity]);
+
+  // Filtered sacred shrines based on city filter and search query
+  const filteredSacredList = useMemo(() => {
+    let list = sacredSites;
+    if (sacredFilter === 'city' && currentCity) {
+      const cName = currentCity.name.toLowerCase();
+      list = list.filter(
+        (s) => s.city.toLowerCase().includes(cName) || cName.includes(s.city.toLowerCase())
+      );
+    }
+    if (searchQuery.trim() && activeTab === 'sacred') {
+      const q = searchQuery.toLowerCase();
+      list = list.filter(
+        (s) =>
+          s.name.toLowerCase().includes(q) ||
+          (s.vernacularName && s.vernacularName.toLowerCase().includes(q)) ||
+          s.city.toLowerCase().includes(q) ||
+          s.circuitName.toLowerCase().includes(q) ||
+          s.spiritualSignificance.toLowerCase().includes(q) ||
+          s.traditionLabel.toLowerCase().includes(q)
+      );
+    }
+    return list;
+  }, [sacredSites, sacredFilter, currentCity, searchQuery, activeTab]);
 
   // Filtered wildlife list based on category & search
   const filteredWildlifeList = useMemo(() => {
@@ -316,6 +356,25 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
             </button>
           )}
 
+          {/* Dedicated Sacred Shrines & Divine Sanctuaries Tab */}
+          {sacredSites.length > 0 && (
+            <button
+              type="button"
+              onClick={() => setActiveTab('sacred')}
+              className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold transition-colors cursor-pointer ${
+                activeTab === 'sacred'
+                  ? 'bg-amber-100 text-amber-950 border border-amber-300'
+                  : 'text-stone-600 hover:bg-stone-100 border border-transparent'
+              }`}
+            >
+              <span className="text-sm">🕉️</span>
+              <span>{currentLanguage === 'hi' ? 'पवित्र तीर्थ एवं धाम' : 'Sacred Shrines & Pilgrimage'}</span>
+              <span className="ml-1 text-[11px] px-1.5 py-0.2 rounded-full bg-amber-200 text-amber-900 font-bold">
+                {sacredSites.length}
+              </span>
+            </button>
+          )}
+
           <button
             type="button"
             onClick={() => setActiveTab('stays')}
@@ -350,7 +409,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
         </div>
 
         {/* Search bar inside tab strip */}
-        {(activeTab === 'attractions' || activeTab === 'wildlife') && (
+        {(activeTab === 'attractions' || activeTab === 'wildlife' || activeTab === 'sacred') && (
           <div className="relative w-full sm:w-64">
             <Search className="w-3.5 h-3.5 text-stone-400 absolute left-3 top-1/2 -translate-y-1/2" />
             <input
@@ -360,7 +419,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
               placeholder={
                 currentLanguage === 'hi'
                   ? (activeTab === 'wildlife' ? 'बाघ अभयारण्य, वन्यजीव खोजें...' : 'दर्शनीय स्थल, किले, गुफाएं खोजें...')
-                  : (activeTab === 'wildlife' ? 'Search tiger reserves, fauna...' : 'Search sights, forts & caves...')
+                  : (activeTab === 'wildlife' ? 'Search tiger reserves, fauna...' : activeTab === 'sacred' ? 'Search sacred shrines, temples, ghats...' : 'Search sights, forts & caves...')
               }
               className="w-full pl-8 pr-3 py-1.5 text-xs rounded-lg border border-stone-200 bg-stone-50 focus:bg-white focus:outline-none focus:ring-1 focus:ring-amber-500 text-stone-800"
             />
@@ -371,6 +430,42 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
       {/* 4. Tab Content: ATTRACTIONS */}
       {activeTab === 'attractions' && (
         <div className="space-y-4">
+          {/* Sacred Shrines Spotlight Banner if current city has shrines */}
+          {citySacredSites.length > 0 && (
+            <div className="p-4 rounded-2xl bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200/90 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-2xs">
+              <div className="flex items-center gap-3">
+                <span className="w-10 h-10 rounded-xl bg-amber-100 border border-amber-300 text-amber-900 flex items-center justify-center text-lg shrink-0">
+                  🕉️
+                </span>
+                <div>
+                  <div className="text-xs font-bold text-amber-900 flex items-center gap-1.5">
+                    <span>
+                      {currentLanguage === 'hi'
+                        ? `${CITIES_HINDI_MAP[currentCity.name] || currentCity.name} में ${citySacredSites.length} प्रमुख पवित्र तीर्थ एवं आध्यात्मिक धाम`
+                        : `${citySacredSites.length} Sacred Pilgrimage Sanctuaries in ${currentCity.name}`}
+                    </span>
+                    <span className="text-[10px] px-2 py-0.2 rounded-full bg-amber-200 text-amber-950 font-semibold">
+                      IN-SACRED-MASTER
+                    </span>
+                  </div>
+                  <div className="text-[11px] text-stone-600 line-clamp-1 mt-0.5">
+                    {citySacredSites.map((s) => s.name).join(' • ')}
+                  </div>
+                </div>
+              </div>
+              <button
+                type="button"
+                onClick={() => {
+                  setSacredFilter('city');
+                  setActiveTab('sacred');
+                }}
+                className="px-3.5 py-1.5 rounded-xl bg-amber-700 hover:bg-amber-800 text-white text-xs font-bold shrink-0 transition flex items-center gap-1.5 cursor-pointer shadow-xs active:scale-95"
+              >
+                <span>{currentLanguage === 'hi' ? 'तीर्थ दर्शन विवरण' : 'View Sacred Dossiers'}</span>
+                <ChevronRight className="w-3.5 h-3.5" />
+              </button>
+            </div>
+          )}
           {/* Subfilter Pills */}
           <div className="flex items-center gap-2 text-xs flex-wrap">
             <span className="text-stone-500 font-medium">{currentLanguage === 'hi' ? 'आकर्षण फ़िल्टर:' : 'Filter Sights:'}</span>
@@ -815,6 +910,268 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
                   setWildlifeFilter('all');
                 }}
                 className="text-xs text-emerald-700 underline font-semibold cursor-pointer"
+              >
+                Reset filters
+              </button>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* 5B. Tab Content: SACRED SHRINES & DIVINE SANCTUARIES */}
+      {activeTab === 'sacred' && (
+        <div className="space-y-6 animate-fadeIn">
+          {/* Sacred Hero Banner */}
+          <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-br from-amber-950 via-[#78350F] to-[#451A03] text-white border border-amber-500/30 shadow-lg relative overflow-hidden">
+            <div className="absolute right-0 top-0 w-80 h-80 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-4">
+              <div className="space-y-1.5 max-w-2xl">
+                <div className="inline-flex items-center gap-2 px-3 py-0.5 rounded-full text-[11px] font-bold bg-amber-500/20 text-amber-300 border border-amber-400/30">
+                  <span>🕉️</span>
+                  <span>Sacred Pilgrimage Directory · {config.stateName}</span>
+                </div>
+                <h3 className="text-xl sm:text-2xl font-serif font-bold text-white">
+                  {currentLanguage === 'hi'
+                    ? 'पवित्र तीर्थ, शक्तिपीठ एवं आध्यात्मिक धाम'
+                    : 'Sacred Shrines, Shakti Peethas & Divine Sanctuaries'}
+                </h3>
+                <p className="text-xs sm:text-sm text-amber-100/80 leading-relaxed">
+                  {currentLanguage === 'hi'
+                    ? `${config.stateName} के सर्वोच्च पूज्य आध्यात्मिक केंद्र, शक्तिपीठ, राम-कृष्ण अवतार परिपथ एवं मोक्षदायिनी नदियां व घाट जो शताब्दियों से आस्था के महातीर्थ हैं।`
+                    : `Venerated spiritual landmarks, epic Ramayana & Krishna circuits, Shakti peethas, and sacred river ghats enshrined across ${config.stateName}.`}
+                </p>
+              </div>
+
+              <div className="flex items-center gap-2">
+                <button
+                  type="button"
+                  onClick={() =>
+                    onOpenAIChat?.(
+                      `Provide comprehensive spiritual guidance, darshan customs, aarti timings, sacred prasadam, and pilgrimage routes for shrines in ${config.stateName}.`
+                    )
+                  }
+                  className="px-4 py-2 rounded-xl bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold transition shadow-xs flex items-center gap-1.5 cursor-pointer"
+                >
+                  <Sparkles className="w-3.5 h-3.5 text-amber-200" />
+                  <span>{currentLanguage === 'hi' ? 'एआई तीर्थ मार्गदर्शक' : 'Ask AI Pilgrim Guide'}</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Filter Pills inside Sacred tab */}
+            <div className="relative z-10 mt-4 pt-3 border-t border-amber-700/50 flex flex-wrap items-center gap-2 text-xs">
+              <button
+                type="button"
+                onClick={() => setSacredFilter('all')}
+                className={`px-3 py-1 rounded-lg font-semibold transition cursor-pointer ${
+                  sacredFilter === 'all'
+                    ? 'bg-amber-500 text-stone-950 font-bold'
+                    : 'bg-white/10 hover:bg-white/20 text-amber-200'
+                }`}
+              >
+                {currentLanguage === 'hi'
+                  ? `समस्त ${config.stateName} के तीर्थ (${sacredSites.length})`
+                  : `All ${config.stateName} Shrines (${sacredSites.length})`}
+              </button>
+
+              {citySacredSites.length > 0 && (
+                <button
+                  type="button"
+                  onClick={() => setSacredFilter('city')}
+                  className={`px-3 py-1 rounded-lg font-semibold transition cursor-pointer ${
+                    sacredFilter === 'city'
+                      ? 'bg-amber-500 text-stone-950 font-bold'
+                      : 'bg-white/10 hover:bg-white/20 text-amber-200'
+                  }`}
+                >
+                  {currentLanguage === 'hi'
+                    ? `${currentCity.name} के धाम (${citySacredSites.length})`
+                    : `${currentCity.name} Shrines (${citySacredSites.length})`}
+                </button>
+              )}
+            </div>
+          </div>
+
+          {/* Grid of Sacred Sites */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {filteredSacredList.map((shrine) => {
+              const isCopied = copiedId === shrine.id;
+
+              return (
+                <div
+                  key={shrine.id}
+                  className="bg-white rounded-2xl border border-stone-200 shadow-xs hover:shadow-md transition-all duration-300 overflow-hidden flex flex-col justify-between group hover:border-amber-400"
+                >
+                  <div>
+                    {/* Hero Image Container */}
+                    <div className="relative h-48 w-full overflow-hidden bg-stone-900">
+                      <img
+                        src={shrine.imageUrl}
+                        alt={shrine.name}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).src =
+                            'https://images.unsplash.com/photo-1544816155-12df9643f363?w=800&auto=format&fit=crop&q=80';
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+                      {/* Tradition & Circuit Badge */}
+                      <div className="absolute top-3 left-3 flex items-center gap-1.5 flex-wrap">
+                        <span
+                          className="text-[10px] font-bold px-2.5 py-0.5 rounded-md text-white backdrop-blur-xs flex items-center gap-1 shadow-xs"
+                          style={{ background: shrine.badgeColor || '#d97706' }}
+                        >
+                          <span>{shrine.emoji}</span>
+                          <span>{shrine.traditionLabel}</span>
+                        </span>
+                      </div>
+
+                      {/* Circuit Name on Top Right */}
+                      <div className="absolute top-3 right-3 text-[10px] font-bold px-2 py-0.5 rounded bg-black/60 text-amber-300 backdrop-blur-xs border border-amber-400/20 max-w-[160px] truncate">
+                        {shrine.circuitName}
+                      </div>
+
+                      {/* City & State Location at Bottom of Image */}
+                      <div className="absolute bottom-2.5 left-3 right-3 flex items-center justify-between text-white text-xs">
+                        <span className="inline-flex items-center gap-1 font-semibold truncate">
+                          <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0" />
+                          <span>{shrine.city}, {shrine.state}</span>
+                        </span>
+                        {shrine.locality && (
+                          <span className="text-[10px] text-stone-300 truncate max-w-[130px]">
+                            {shrine.locality}
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Body Details */}
+                    <div className="p-4 sm:p-5 space-y-3.5">
+                      <div>
+                        <h4 className="text-base sm:text-lg font-serif font-bold text-stone-900 group-hover:text-amber-800 transition-colors leading-snug">
+                          {shrine.name}
+                        </h4>
+                        {shrine.vernacularName && (
+                          <div className="text-xs text-amber-800/90 font-medium mt-0.5">
+                            {shrine.vernacularName}
+                          </div>
+                        )}
+                      </div>
+
+                      <p className="text-xs text-stone-600 leading-relaxed line-clamp-3">
+                        {shrine.spiritualSignificance}
+                      </p>
+
+                      {/* Architectural Style & Visiting Hours */}
+                      <div className="bg-stone-50 rounded-xl p-3 border border-stone-200/80 space-y-1.5 text-xs text-stone-700">
+                        <div className="flex items-start gap-1.5">
+                          <Landmark className="w-3.5 h-3.5 text-amber-700 mt-0.5 shrink-0" />
+                          <span className="leading-snug">
+                            <strong className="text-stone-900">Architecture: </strong>
+                            <span className="line-clamp-2">{shrine.architecturalStyle}</span>
+                          </span>
+                        </div>
+                        <div className="flex items-start gap-1.5">
+                          <Clock className="w-3.5 h-3.5 text-amber-700 mt-0.5 shrink-0" />
+                          <span className="leading-snug">
+                            <strong className="text-stone-900">Timings: </strong>
+                            <span className="line-clamp-1">{shrine.visitingHours}</span>
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Key Festivals */}
+                      {shrine.festivals && shrine.festivals.length > 0 && (
+                        <div className="space-y-1.5">
+                          <div className="text-[10px] font-bold uppercase tracking-wider text-amber-800 flex items-center gap-1">
+                            <Sparkles className="w-3 h-3 text-amber-600" />
+                            <span>Venerated Festivals &amp; Celebrations:</span>
+                          </div>
+                          <div className="flex flex-wrap gap-1">
+                            {shrine.festivals.slice(0, 3).map((fest, fIdx) => (
+                              <span
+                                key={fIdx}
+                                className="px-2 py-0.5 rounded text-[10px] font-medium bg-amber-50 text-amber-900 border border-amber-200"
+                              >
+                                {fest}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Card Footer with Quick GIS Map Jump & Google Maps */}
+                  <div className="p-4 pt-0 space-y-2">
+                    <div className="grid grid-cols-2 gap-2 text-xs">
+                      <a
+                        href={`/map?q=${encodeURIComponent(shrine.name)}`}
+                        className="py-2 px-3 rounded-xl bg-amber-700 hover:bg-amber-800 text-white font-bold text-center transition flex items-center justify-center gap-1.5 shadow-2xs"
+                      >
+                        <Compass className="w-3.5 h-3.5" />
+                        <span>View on GIS Map</span>
+                      </a>
+                      <a
+                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(shrine.googleMapsQuery || (shrine.name + ' ' + shrine.city))}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="py-2 px-3 rounded-xl bg-stone-100 hover:bg-stone-200 text-stone-800 font-semibold text-center transition flex items-center justify-center gap-1.5 border border-stone-200"
+                      >
+                        <MapPin className="w-3.5 h-3.5 text-[#FF671F]" />
+                        <span>Google Maps</span>
+                      </a>
+                    </div>
+
+                    <div className="flex items-center justify-between text-xs pt-2 border-t border-stone-100 text-stone-500">
+                      <span className="text-[10px] truncate max-w-[180px]">
+                        Transit: {shrine.nearestTransit?.railway?.split('(')[0] || 'Rail link active'}
+                      </span>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          const text = `${shrine.name} (${shrine.vernacularName || ''})
+Location: ${shrine.city}, ${shrine.state}
+Circuit: ${shrine.circuitName}
+Timings: ${shrine.visitingHours}
+Significance: ${shrine.spiritualSignificance}`;
+                          navigator.clipboard?.writeText(text);
+                          setCopiedId(shrine.id);
+                          setTimeout(() => setCopiedId(null), 2000);
+                        }}
+                        className="text-stone-600 hover:text-amber-800 font-medium inline-flex items-center gap-1 text-[11px] cursor-pointer"
+                      >
+                        {isCopied ? (
+                          <>
+                            <CheckCircle2 className="w-3 h-3 text-emerald-600" />
+                            <span className="text-emerald-700 font-semibold">Copied!</span>
+                          </>
+                        ) : (
+                          <>
+                            <Share2 className="w-3 h-3" />
+                            <span>Share</span>
+                          </>
+                        )}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {filteredSacredList.length === 0 && (
+            <div className="p-8 text-center bg-white rounded-xl border border-stone-200 space-y-2">
+              <Info className="w-8 h-8 text-stone-400 mx-auto" />
+              <div className="text-sm font-semibold text-stone-700">No sacred shrines matched your search filter.</div>
+              <button
+                type="button"
+                onClick={() => {
+                  setSearchQuery('');
+                  setSacredFilter('all');
+                }}
+                className="text-xs text-amber-700 underline font-semibold cursor-pointer"
               >
                 Reset filters
               </button>

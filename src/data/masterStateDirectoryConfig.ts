@@ -1,5 +1,6 @@
 import { StateDirectoryConfig } from '../types/masterStateDirectory';
 import { getWildlifeReservesByState } from './allIndiaWildlifeData';
+import { getSacredSitesByState } from './sacredPilgrimageCircuits';
 import { ANDAMAN_DIRECTORY } from './andamanNicobarDirectory';
 import { ANDHRA_PRADESH_DIRECTORY } from './andhraPradeshDirectory';
 import { ARUNACHAL_PRADESH_DIRECTORY } from './arunachalPradeshDirectory';
@@ -616,9 +617,11 @@ export function getStateDirectoryConfig(stateKey?: string | null): StateDirector
 
   if (result) {
     const wildlife = getWildlifeReservesByState(result.stateId);
+    const sacred = getSacredSitesByState(result.stateId);
     return {
       ...result,
       wildlifeReserves: result.wildlifeReserves && result.wildlifeReserves.length > 0 ? result.wildlifeReserves : wildlife,
+      sacredSites: result.sacredSites && result.sacredSites.length > 0 ? result.sacredSites : sacred,
     };
   }
 
