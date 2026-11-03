@@ -1080,10 +1080,10 @@ export const MUMBAI_ATTRACTIONS: MumbaiAttraction[] = [
       "lat": 19.0468,
       "lng": 72.8227
     },
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Mount_Mary_Church_Bandra.jpg/1280px-Mount_Mary_Church_Bandra.jpg",
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Mount_Mary_Church_Bandra.jpg/1280px-Mount_Mary_Church_Bandra.jpg",
+    "thumbnail_url": "/images/maharashtra/mount-mary-church.jpg",
+    "image_url": "/images/maharashtra/mount-mary-church.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Mount_Mary_Church_Bandra.jpg/1280px-Mount_Mary_Church_Bandra.jpg"
+      "/images/maharashtra/mount-mary-church.jpg"
     ],
     "section": "religious_cultural",
     "source_url": "https://maharashtratourism.gov.in",

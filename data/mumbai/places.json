@@ -732,9 +732,9 @@
     "latitude": 19.0468,
     "longitude": 72.8227,
     "rating": 4.8,
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Mount_Mary_Church_Bandra.jpg/1280px-Mount_Mary_Church_Bandra.jpg",
+    "thumbnail_url": "/images/maharashtra/mount-mary-church.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Mount_Mary_Church_Bandra.jpg/1280px-Mount_Mary_Church_Bandra.jpg"
+      "/images/maharashtra/mount-mary-church.jpg"
     ],
     "tags": [
       "church",

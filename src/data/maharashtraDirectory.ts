@@ -330,8 +330,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "05:30–13:00, 15:00–20:30 (Sundays 05:30–21:00)",
         fee: { domestic: "Free", foreign: "Free" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Mount_Mary_Church_Bandra.jpg/1280px-Mount_Mary_Church_Bandra.jpg",
-        photoCredit: "Wikimedia Commons / Mount Mary Basilica Bandra",
+        image: "/images/maharashtra/mount-mary-church.jpg",
+        photoCredit: "Virasat Verified Heritage Archive / Mount Mary Basilica Bandra",
         summary:
           "A historic hilltop Roman Catholic basilica overlooking the Arabian Sea in Bandra, dating back to 1570. Host to the world-famous Bandra Fair celebrated annually in September.",
       },
