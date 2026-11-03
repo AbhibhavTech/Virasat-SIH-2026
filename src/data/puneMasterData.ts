@@ -191,10 +191,10 @@ export const PUNE_ATTRACTIONS: PuneAttraction[] = [
       "lat": 18.5186,
       "lng": 73.8566
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=1000&auto=format&fit=crop&q=80",
-    "image_url": "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=1000&auto=format&fit=crop&q=80",
+    "thumbnail_url": "/images/maharashtra/sinhagad-fort.jpg",
+    "image_url": "/images/maharashtra/sinhagad-fort.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=1000&auto=format&fit=crop&q=80"
+      "/images/maharashtra/sinhagad-fort.jpg"
     ],
     "section": "heritage",
     "source_url": "https://maharashtratourism.gov.in/pune/lal-mahal",
@@ -1195,10 +1195,10 @@ export const PUNE_ATTRACTIONS: PuneAttraction[] = [
       "lat": 18.3664,
       "lng": 73.7558
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=1000&auto=format&fit=crop&q=80",
-    "image_url": "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=1000&auto=format&fit=crop&q=80",
+    "thumbnail_url": "/images/maharashtra/sinhagad-fort.jpg",
+    "image_url": "/images/maharashtra/sinhagad-fort.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1599661046289-e31897846e41?w=1000&auto=format&fit=crop&q=80"
+      "/images/maharashtra/sinhagad-fort.jpg"
     ],
     "section": "fort",
     "source_url": "https://maharashtratourism.gov.in/pune/sinhagad-fort",

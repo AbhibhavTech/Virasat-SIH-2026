@@ -453,6 +453,8 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'sinhagad-fort': '/images/maharashtra/sinhagad-fort.jpg',
   'sinhagad': '/images/maharashtra/sinhagad-fort.jpg',
   'pune-sinhagad-fort': '/images/maharashtra/sinhagad-fort.jpg',
+  'sinhagad-fort-pune': '/images/maharashtra/sinhagad-fort.jpg',
+  'pune_022': '/images/maharashtra/sinhagad-fort.jpg',
 
   'mh-csmt': '/images/maharashtra/csmt-mumbai.png',
   'basilica-of-bom-jesus': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/1280px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg',
