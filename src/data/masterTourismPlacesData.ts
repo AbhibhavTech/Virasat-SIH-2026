@@ -4052,7 +4052,7 @@ export const MASTER_TOURISM_PLACES: MasterTourismPlace[] = [
     "verification_status": "verified",
     "last_verified": "September 2026",
     "summary": "A historic ashram associated with Mahatma Gandhi and India’s freedom movement.",
-    "thumbnail_url": "https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=1200&q=85"
+    "thumbnail_url": "/images/gujarat/sabarmati-ashram.jpg"
   },
   {
     "id": "gujarat_005",
@@ -4236,7 +4236,7 @@ export const MASTER_TOURISM_PLACES: MasterTourismPlace[] = [
     "verification_status": "verified",
     "last_verified": "September 2026",
     "summary": "A beautifully carved stepwell showcasing Indo-Islamic architectural elements.",
-    "thumbnail_url": "https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=1200&q=85"
+    "thumbnail_url": "/images/gujarat/adalaj-stepwell.jpg"
   },
   {
     "id": "gujarat_007",

@@ -58,8 +58,8 @@ export const GUJARAT_DIRECTORY: GujaratCity[] = [
     tagline: 'Carved wooden pols, Islamic sultanate filigree & Gandhi’s Sabarmati sanctuary',
     accentColor: '#B45309',
     bgGradient: 'from-amber-50 via-orange-50/40 to-stone-50/30',
-    coverImage: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Adalaj_Stepwell_Interior.jpg/1280px-Adalaj_Stepwell_Interior.jpg',
-    photoCredit: 'Wikimedia Commons / Adalaj Stepwell',
+    coverImage: '/images/gujarat/adalaj-stepwell.jpg',
+    photoCredit: 'Virasat High-Resolution Heritage Archive / Adalaj Stepwell',
     flashcardBlurb:
       "India's first UNESCO World Heritage City, seamlessly balancing a rich Sultanate textile heritage with modern architectural masterworks and Mahatma Gandhi's freedom footprints.",
     topStays: [
@@ -98,8 +98,8 @@ export const GUJARAT_DIRECTORY: GujaratCity[] = [
         timings: '08:30–18:30',
         fee: { domestic: 'Free', foreign: 'Free' },
         isHiddenGem: false,
-        image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Sabarmati_Ashram_Ahmedabad.jpg/1280px-Sabarmati_Ashram_Ahmedabad.jpg',
-        photoCredit: 'Wikimedia Commons / Sabarmati Ashram',
+        image: '/images/gujarat/sabarmati-ashram.jpg',
+        photoCredit: 'Virasat High-Resolution Heritage Archive / Sabarmati Ashram',
         summary:
           "Gandhi's peaceful riverside headquarters from where he led the historic Dandi Salt March.",
       },
@@ -123,7 +123,7 @@ export const GUJARAT_DIRECTORY: GujaratCity[] = [
         fee: { domestic: 'Free', foreign: 'Free' },
         isHiddenGem: false,
         image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/Adalaj_Stepwell_Interior.jpg/1280px-Adalaj_Stepwell_Interior.jpg',
-        photoCredit: 'Wikimedia Commons / Adalaj Stepwell',
+        photoCredit: 'Virasat High-Resolution Heritage Archive / Adalaj Stepwell',
         summary:
           'Stunning 15th-century five-story subterranean architectural stepwell adorned with intricate Solanki stone carvings.',
       },
