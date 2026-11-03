@@ -185,7 +185,7 @@ export const HotelDetailPage: React.FC<HotelDetailPageProps> = ({
             className="w-full h-full object-cover transition-transform duration-700 hover:scale-102"
             onError={(e) => {
               (e.currentTarget as HTMLImageElement).src =
-                'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&auto=format&fit=crop&q=80';
+                '/images/maharashtra/taj-mahal-palace.jpg';
             }}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-stone-950/95 via-stone-950/45 to-stone-950/20" />

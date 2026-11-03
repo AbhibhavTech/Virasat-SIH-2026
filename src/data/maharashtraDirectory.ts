@@ -1,6 +1,7 @@
 export interface MaharashtraStay {
   name: string;
   category: string;
+  image?: string;
 }
 
 export interface MaharashtraFoodSpot {
@@ -66,18 +67,22 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
       {
         name: "The Taj Mahal Palace",
         category: "Colaba — Iconic Luxury Heritage Facing Gateway of India & Arabian Sea",
+        image: "/images/maharashtra/taj-mahal-palace.jpg",
       },
       {
         name: "The Oberoi",
         category: "Nariman Point — Sea-Facing Ultra-Luxury on Marine Drive Queen's Necklace",
+        image: "/images/maharashtra/the-oberoi-mumbai.jpg",
       },
       {
         name: "The Leela",
         category: "Andheri East — Contemporary Luxury Oasis near International Airport",
+        image: "/images/maharashtra/the-leela-mumbai.jpg",
       },
       {
         name: "Abode Bombay",
         category: "Colaba — Boutique Heritage Hotel in South Mumbai's Historic Art Quarter",
+        image: "/images/maharashtra/abode-bombay.jpg",
       },
     ],
     dining: {

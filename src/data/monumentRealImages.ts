@@ -571,7 +571,13 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'leela-mumbai': '/images/maharashtra/the-leela-mumbai.jpg',
   'abode-bombay': '/images/maharashtra/abode-bombay.jpg',
   'abode-bombay-mumbai': '/images/maharashtra/abode-bombay.jpg',
-  'the-abode-bombay': '/images/maharashtra/abode-bombay.jpg'
+  'the-abode-bombay': '/images/maharashtra/abode-bombay.jpg',
+  // Maharashtra State Stays Aliases
+  'jw-marriott-pune': 'https://upload.wikimedia.org/wikipedia/commons/5/5e/Front_view_of_JW_Marriot%2C_Pune.jpg',
+  'the-corinthians-resort-club-pune': 'https://upload.wikimedia.org/wikipedia/commons/4/44/Corinthians_Club_%2819%29.jpg',
+  'lemon-tree-hotel-aurangabad': 'https://upload.wikimedia.org/wikipedia/commons/1/1f/At_Lemon_Tree_Hotel%2C_Aurangabad_%2850749479868%29.jpg',
+  'sula-vineyards-resort-the-source-nashik': 'https://upload.wikimedia.org/wikipedia/commons/4/43/Sula%2Cnashik.JPG',
+  'sayaji-hotel-kolhapur-kolhapur': 'https://upload.wikimedia.org/wikipedia/commons/f/f3/Hotel_Sayaji%2CKolhapur.jpg'
 };
 
 export function getMonumentRealImage(id?: string, fallback?: string): string {

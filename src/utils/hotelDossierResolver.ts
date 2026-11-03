@@ -87,7 +87,7 @@ const THEME_IMAGES: Record<string, { cover: string; gallery: string[] }> = {
     ],
   },
   palace: {
-    cover: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&auto=format&fit=crop&q=80',
+    cover: '/images/maharashtra/taj-mahal-palace.jpg',
     gallery: [
       'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&auto=format&fit=crop&q=80',
@@ -114,7 +114,7 @@ const THEME_IMAGES: Record<string, { cover: string; gallery: string[] }> = {
     ],
   },
   luxury: {
-    cover: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&auto=format&fit=crop&q=80',
+    cover: '/images/maharashtra/the-oberoi-mumbai.jpg',
     gallery: [
       'https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&auto=format&fit=crop&q=80',
       'https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&auto=format&fit=crop&q=80',
@@ -293,7 +293,7 @@ function buildCategorizedAmenities(theme: string, tier: string, cityName: string
 }
 
 export function resolveHotelDossier(
-  stay: { name: string; category?: string },
+  stay: { name: string; category?: string; image?: string },
   cityName: string,
   stateName: string,
   stateId?: string,
@@ -339,7 +339,7 @@ export function resolveHotelDossier(
     getMonumentRealImage(stayName.toLowerCase().replace(/[^a-z0-9]/g, '-')) ||
     getMonumentRealImage(stayName.toLowerCase().replace(/^(the|a)\s+/i, '').replace(/[^a-z0-9]/g, '-'));
 
-  const coverImage = directRealImage || verifiedMatch?.thumbnail_url || themeImages.cover;
+  const coverImage = stay.image || directRealImage || verifiedMatch?.thumbnail_url || themeImages.cover;
   const galleryImages = themeImages.gallery;
 
   const stars = verifiedMatch ? (verifiedMatch.tier === 'luxury' ? 5 : 4) : ultimateMatch?.stars || tierInfo.stars;
