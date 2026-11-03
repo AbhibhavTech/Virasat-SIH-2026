@@ -25,6 +25,7 @@ import {
   StateDirectoryAttraction,
 } from '../../types/masterStateDirectory';
 import { SacredSite } from '../../data/sacredPilgrimageCircuits';
+import { getMonumentRealImage } from '../../data/monumentRealImages';
 import { Link } from 'react-router-dom';
 import { HotelAmenitiesModal } from './HotelAmenitiesModal';
 import { resolveHotelDossier, HotelDossier } from '../../utils/hotelDossierResolver';
@@ -541,7 +542,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
                       title={`View verified details for ${attraction.name}`}
                     >
                       <img
-                        src={attraction.image || defaultCityFallback}
+                        src={getMonumentRealImage(attraction.id, attraction.image || defaultCityFallback)}
                         alt={attraction.name}
                         className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700 ease-out"
                         onError={(e) => {
@@ -1020,7 +1021,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
                     {/* Hero Image Container */}
                     <div className="relative h-48 w-full overflow-hidden bg-stone-900">
                       <img
-                        src={shrine.imageUrl}
+                        src={getMonumentRealImage(shrine.id, shrine.imageUrl) || shrine.imageUrl}
                         alt={shrine.name}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                         onError={(e) => {

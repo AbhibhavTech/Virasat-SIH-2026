@@ -125,7 +125,7 @@ export const SACRED_PILGRIMAGE_CIRCUITS: SacredPilgrimageCircuit[] = [
           airport: 'Diu Airport (DIU, 85 km) / Rajkot Airport (RAJ, 195 km)',
           roadAccess: 'Connected by State Highway 26 along the Saurashtra coast',
         },
-        imageUrl: 'https://images.unsplash.com/photo-1609137144822-4a0b22a61a6b?w=800&auto=format&fit=crop&q=80',
+        imageUrl: '/images/gujarat/somnath-shore-temple.png',
         googleMapsQuery: 'Somnath Temple Prabhas Patan Veraval Gujarat',
       },
       {
@@ -237,7 +237,7 @@ export const SACRED_PILGRIMAGE_CIRCUITS: SacredPilgrimageCircuit[] = [
           airport: 'Pune International Airport (PNQ, 105 km)',
           roadAccess: 'Direct State Transport buses from Pune and Mumbai via Manchar',
         },
-        imageUrl: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?w=800&auto=format&fit=crop&q=80',
+        imageUrl: '/images/maharashtra/bhimashankar-temple.jpg',
         googleMapsQuery: 'Bhimashankar Temple Khed Pune Maharashtra',
       },
       {
@@ -265,7 +265,7 @@ export const SACRED_PILGRIMAGE_CIRCUITS: SacredPilgrimageCircuit[] = [
           airport: 'Nashik Airport (OZAR, 55 km) / Mumbai Airport (BOM, 165 km)',
           roadAccess: 'NH-848 from Nashik city',
         },
-        imageUrl: 'https://images.unsplash.com/photo-1606293926075-69a00dbfde81?w=800&auto=format&fit=crop&q=80',
+        imageUrl: '/images/maharashtra/trimbakeshwar-temple.jpg',
         googleMapsQuery: 'Trimbakeshwar Shiva Temple Nashik Maharashtra',
       },
       {
@@ -293,7 +293,7 @@ export const SACRED_PILGRIMAGE_CIRCUITS: SacredPilgrimageCircuit[] = [
           airport: 'Chhatrapati Sambhajinagar Airport (IXU, 35 km)',
           roadAccess: 'State Highway 22 straight to Ellora Caves complex',
         },
-        imageUrl: 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80',
+        imageUrl: '/images/maharashtra/grishneshwar-temple.jpg',
         googleMapsQuery: 'Grishneshwar Temple Ellora Aurangabad Maharashtra',
       },
       {
@@ -848,7 +848,7 @@ export const SACRED_PILGRIMAGE_CIRCUITS: SacredPilgrimageCircuit[] = [
           airport: 'Shri Guru Gobind Singh Ji Airport Nanded (NDC, 4 km) / Hyderabad (270 km)',
           roadAccess: 'NH-161 connecting Nanded to Hyderabad and Aurangabad',
         },
-        imageUrl: 'https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=800&auto=format&fit=crop&q=80',
+        imageUrl: '/images/maharashtra/hazur-sahib.jpg',
         googleMapsQuery: 'Takht Sachkhand Sri Hazur Abchalnagar Sahib Nanded Maharashtra',
       },
       {
@@ -1319,7 +1319,7 @@ export const SACRED_PILGRIMAGE_CIRCUITS: SacredPilgrimageCircuit[] = [
           airport: 'Chhatrapati Shivaji Maharaj International Airport (BOM, 18 km)',
           roadAccess: 'Lala Lajpat Rai Marg causeway entrance in Worli',
         },
-        imageUrl: 'https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&auto=format&fit=crop&q=80',
+        imageUrl: '/images/maharashtra/haji-ali-dargah.jpg',
         googleMapsQuery: 'Haji Ali Dargah Worli Mumbai Maharashtra',
       },
       {
@@ -1476,7 +1476,7 @@ export const SACRED_PILGRIMAGE_CIRCUITS: SacredPilgrimageCircuit[] = [
           airport: 'Chhatrapati Shivaji Maharaj International Airport (BOM, 11 km)',
           roadAccess: 'Mount Mary Road / Bandstand promenade in Bandra West',
         },
-        imageUrl: 'https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=800&auto=format&fit=crop&q=80',
+        imageUrl: '/images/maharashtra/mount-mary-church.jpg',
         googleMapsQuery: 'Mount Mary Church Bandra West Mumbai Maharashtra',
       },
     ],
@@ -1706,7 +1706,7 @@ export const SACRED_PILGRIMAGE_CIRCUITS: SacredPilgrimageCircuit[] = [
           airport: 'Jamnagar Airport (JGA, 137 km)',
           roadAccess: 'GJ SH-6 / Dwarka Coastal Highway',
         },
-        imageUrl: 'https://images.unsplash.com/photo-1544816155-12df9643f363?w=800&auto=format&fit=crop&q=80',
+        imageUrl: '/images/gujarat/dwarkadhish-temple.jpg',
         googleMapsQuery: 'Dwarkadhish Temple Dwarka Gujarat',
       },
       {
@@ -1790,7 +1790,7 @@ export const SACRED_PILGRIMAGE_CIRCUITS: SacredPilgrimageCircuit[] = [
           airport: 'Chhatrapati Shivaji Maharaj International Airport (BOM, 6 km)',
           roadAccess: 'Juhu Tara Road / Hare Krishna Land',
         },
-        imageUrl: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80',
+        imageUrl: '/images/maharashtra/iskcon-juhu.jpg',
         googleMapsQuery: 'ISKCON Temple Juhu Mumbai Maharashtra',
       },
       {
@@ -2048,7 +2048,7 @@ export const SACRED_PILGRIMAGE_CIRCUITS: SacredPilgrimageCircuit[] = [
           airport: 'Mumbai Domestic & International Airport (BOM, 11 km)',
           roadAccess: 'SK Bole Marg / Prabhadevi Road',
         },
-        imageUrl: 'https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=800&auto=format&fit=crop&q=80',
+        imageUrl: '/images/maharashtra/siddhivinayak-temple.jpg',
         googleMapsQuery: 'Shree Siddhivinayak Temple Prabhadevi Mumbai Maharashtra',
       },
       {
@@ -2076,7 +2076,7 @@ export const SACRED_PILGRIMAGE_CIRCUITS: SacredPilgrimageCircuit[] = [
           airport: 'Mumbai International Airport (BOM, 18 km)',
           roadAccess: 'Bhulabhai Desai Marg (Warden Road)',
         },
-        imageUrl: 'https://images.unsplash.com/photo-1544816155-12df9643f363?w=800&auto=format&fit=crop&q=80',
+        imageUrl: '/images/maharashtra/mahalaxmi-temple.jpg',
         googleMapsQuery: 'Mahalaxmi Temple Bhulabhai Desai Road Mumbai Maharashtra',
       },
       {
@@ -2104,7 +2104,7 @@ export const SACRED_PILGRIMAGE_CIRCUITS: SacredPilgrimageCircuit[] = [
           airport: 'Kolhapur Airport (KLH, 9 km)',
           roadAccess: 'Mahadwar Road / Bhavani Mandap',
         },
-        imageUrl: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&auto=format&fit=crop&q=80',
+        imageUrl: '/images/maharashtra/mahalaxmi-temple-kolhapur.jpg',
         googleMapsQuery: 'Mahalaxmi Temple Kolhapur Maharashtra',
       },
     ],
@@ -2194,7 +2194,7 @@ export const SACRED_PILGRIMAGE_CIRCUITS: SacredPilgrimageCircuit[] = [
           airport: 'Shirdi International Airport (SAG, 14 km)',
           roadAccess: 'Ahmednagar-Manmad State Highway (SH-10)',
         },
-        imageUrl: 'https://images.unsplash.com/photo-1544816155-12df9643f363?w=800&auto=format&fit=crop&q=80',
+        imageUrl: '/images/maharashtra/shirdi-sai-baba-temple.jpg',
         googleMapsQuery: 'Shri Saibaba Sansthan Trust Shirdi Maharashtra',
       },
     ],

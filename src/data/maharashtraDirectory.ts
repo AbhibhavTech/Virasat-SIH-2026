@@ -749,8 +749,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "08:00–18:30",
         fee: { domestic: "INR 25", foreign: "INR 300" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Shaniwarwada_Pune.jpg/1280px-Shaniwarwada_Pune.jpg",
-        photoCredit: "Wikimedia Commons / Shaniwar Wada Delhi Gate",
+        image: "/images/maharashtra/shaniwar-wada.jpg",
+        photoCredit: "Virasat High-Resolution Heritage Archive / Shaniwar Wada Delhi Darwaza Bastions",
         summary:
           "18th-century historical fortification and majestic seat of the Peshwa rulers of the Maratha Empire, featuring imposing spiked Delhi Darwaza gates and royal fountain courtyards.",
       },
@@ -761,8 +761,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "09:00–17:30",
         fee: { domestic: "INR 25", foreign: "INR 100" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Aga_Khan_Palace_Pune.jpg/1280px-Aga_Khan_Palace_Pune.jpg",
-        photoCredit: "Wikimedia Commons / Aga Khan Palace",
+        image: "/images/maharashtra/aga-khan-palace.jpg",
+        photoCredit: "Virasat High-Resolution Heritage Archive / Aga Khan Palace Italian Arches & Lawns",
         summary:
           "Imposing Italian-arched monument holding profound national importance in India's freedom struggle and Gandhi's imprisonment; houses Kasturba Gandhi's memorial samadhi.",
       },
@@ -773,8 +773,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "05:00–18:00",
         fee: { domestic: "INR 50 per vehicle", foreign: "INR 50 per vehicle" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Sinhagad_Fort_Kalyan_Darwaza.jpg/1280px-Sinhagad_Fort_Kalyan_Darwaza.jpg",
-        photoCredit: "Wikimedia Commons / Sinhagad Fort",
+        image: "/images/maharashtra/sinhagad-fort.jpg",
+        photoCredit: "Virasat High-Resolution Heritage Archive / Sinhagad Fort Sahyadri Ridge Stone Bastion",
         summary:
           "Historic hilltop fortress perched on the Sahyadri edge, renowned for the heroics of Tanaji Malusare, panoramic mountain vistas, and hot pitla-bhakri served at the summit.",
       },

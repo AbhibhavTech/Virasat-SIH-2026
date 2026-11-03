@@ -415,6 +415,43 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'dwarkadhish-mandir': '/images/gujarat/dwarkadhish-temple.jpg',
   'jagat-mandir': '/images/gujarat/dwarkadhish-temple.jpg',
   'jagat-mandir-dwarka': '/images/gujarat/dwarkadhish-temple.jpg',
+  // Maharashtra Sacred Pilgrimage Shrines
+  'jyotirlinga-bhimashankar': '/images/maharashtra/bhimashankar-temple.jpg',
+  'bhimashankar-temple': '/images/maharashtra/bhimashankar-temple.jpg',
+  'bhimashankar': '/images/maharashtra/bhimashankar-temple.jpg',
+  'jyotirlinga-trimbakeshwar': '/images/maharashtra/trimbakeshwar-temple.jpg',
+  'trimbakeshwar-temple': '/images/maharashtra/trimbakeshwar-temple.jpg',
+  'trimbakeshwar': '/images/maharashtra/trimbakeshwar-temple.jpg',
+  'jyotirlinga-grishneshwar': '/images/maharashtra/grishneshwar-temple.jpg',
+  'grishneshwar-temple': '/images/maharashtra/grishneshwar-temple.jpg',
+  'grishneshwar': '/images/maharashtra/grishneshwar-temple.jpg',
+  'sikh-takht-hazur-sahib': '/images/maharashtra/hazur-sahib.jpg',
+  'hazur-sahib': '/images/maharashtra/hazur-sahib.jpg',
+  'takht-hazur-sahib': '/images/maharashtra/hazur-sahib.jpg',
+  'christian-mount-mary-bandra': '/images/maharashtra/mount-mary-church.jpg',
+  'devi-mahalaxmi-kolhapur': '/images/maharashtra/mahalaxmi-temple-kolhapur.jpg',
+  'saint-sai-baba-shirdi': '/images/maharashtra/shirdi-sai-baba-temple.jpg',
+  'jyotirlinga-somnath': '/images/gujarat/somnath-shore-temple.png',
+
+  // Pune Heritage Landmarks (User Photos)
+  'IN-MH-PUN-ATT-001': '/images/maharashtra/shaniwar-wada.jpg',
+  'in-mh-pun-att-001': '/images/maharashtra/shaniwar-wada.jpg',
+  'shaniwar-wada': '/images/maharashtra/shaniwar-wada.jpg',
+  'shaniwarwada': '/images/maharashtra/shaniwar-wada.jpg',
+  'pune-shaniwar-wada': '/images/maharashtra/shaniwar-wada.jpg',
+
+  'IN-MH-PUN-ATT-002': '/images/maharashtra/aga-khan-palace.jpg',
+  'in-mh-pun-att-002': '/images/maharashtra/aga-khan-palace.jpg',
+  'aga-khan-palace': '/images/maharashtra/aga-khan-palace.jpg',
+  'agakhan-palace': '/images/maharashtra/aga-khan-palace.jpg',
+  'pune-aga-khan-palace': '/images/maharashtra/aga-khan-palace.jpg',
+
+  'IN-MH-PUN-ATT-003': '/images/maharashtra/sinhagad-fort.jpg',
+  'in-mh-pun-att-003': '/images/maharashtra/sinhagad-fort.jpg',
+  'sinhagad-fort': '/images/maharashtra/sinhagad-fort.jpg',
+  'sinhagad': '/images/maharashtra/sinhagad-fort.jpg',
+  'pune-sinhagad-fort': '/images/maharashtra/sinhagad-fort.jpg',
+
   'mh-csmt': '/images/maharashtra/csmt-mumbai.png',
   'basilica-of-bom-jesus': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/1280px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg',
 
