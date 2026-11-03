@@ -1157,8 +1157,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "09:00–18:00",
         fee: { domestic: "Free", foreign: "Free" },
         isHiddenGem: true,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Lohagad_Fort_Vinchukata.jpg/1280px-Lohagad_Fort_Vinchukata.jpg",
-        photoCredit: "Wikimedia Commons / Lohagad Fort",
+        image: "/images/maharashtra/lohagad-fort.jpg",
+        photoCredit: "Virasat Verified / Authentic Grand Bastions & Arched Gateway at Lohagad Fort, Lonavala",
         summary:
           "Historic 'Iron Fort' celebrated for its four sequential fortified gates (Ganesh, Narayan, Hanuman, and Maha Darwaza) and its famous 'Vinchukata' (Scorpion's Tail) — a dramatic 1,500-meter narrow rock tongue projecting out into the clouds.",
       },

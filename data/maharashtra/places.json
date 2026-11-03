@@ -239,7 +239,7 @@
       "lng": 73.477
     },
     "rating": 4.8,
-    "thumbnail_url": "https://images.unsplash.com/photo-1609137144813-7d9921338f24?auto=format&fit=crop&w=1200&q=80",
+    "thumbnail_url": "/images/maharashtra/lohagad-fort.jpg",
     "best_time_to_visit": "July to February",
     "visiting_hours": "06:00 AM - 06:00 PM",
     "entry_fee": {
@@ -256,6 +256,11 @@
       "maratha",
       "monument",
       "famous"
+    ],
+    "image": "/images/maharashtra/lohagad-fort.jpg",
+    "gallery": [
+      "/images/maharashtra/lohagad-fort.jpg",
+      "/images/maharashtra/lonavala-lohagad-fort.jpg"
     ]
   },
   {
