@@ -498,8 +498,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "09:00–17:30 (Closed Mondays)",
         fee: { domestic: "INR 40 (Monument entry); Ferry: INR 200–260 roundtrip", foreign: "INR 600 (Monument entry); Ferry: INR 200–260 roundtrip" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Elephanta_Trimurti_01.jpg/1280px-Elephanta_Trimurti_01.jpg",
-        photoCredit: "Wikimedia Commons / Elephanta Trimurti Sadashiva Monolith",
+        image: "/images/maharashtra/elephanta-caves.jpg",
+        photoCredit: "Virasat Verified Heritage Archive / Elephanta Caves UNESCO Rock-Cut Portico",
         summary:
           "UNESCO World Heritage rock-cut cave temples dedicated to Lord Shiva, accessible via a 1-hour ferry ride from the Gateway of India. Famed for the monumental 20-foot three-headed Sadashiva Trimurti sculpture.",
       },

@@ -1864,10 +1864,10 @@ export const MUMBAI_ATTRACTIONS: MumbaiAttraction[] = [
       "lat": 18.9633,
       "lng": 72.9315
     },
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Elephanta_Trimurti_01.jpg/1280px-Elephanta_Trimurti_01.jpg",
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Elephanta_Trimurti_01.jpg/1280px-Elephanta_Trimurti_01.jpg",
+    "thumbnail_url": "/images/maharashtra/elephanta-caves.jpg",
+    "image_url": "/images/maharashtra/elephanta-caves.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Elephanta_Trimurti_01.jpg/1280px-Elephanta_Trimurti_01.jpg"
+      "/images/maharashtra/elephanta-caves.jpg"
     ],
     "section": "heritage",
     "source_url": "https://maharashtratourism.gov.in",

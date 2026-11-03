@@ -167,6 +167,12 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'powai': '/images/maharashtra/powai-lake.png',
   'powai-lake-mumbai': '/images/maharashtra/powai-lake.png',
   'powai-lake-iit-bombay': '/images/maharashtra/powai-lake.png',
+  'IN-MH-MUM-ATT-032': '/images/maharashtra/elephanta-caves.jpg',
+  'mumbai-elephanta-caves': '/images/maharashtra/elephanta-caves.jpg',
+  'elephanta-caves': '/images/maharashtra/elephanta-caves.jpg',
+  'elephanta': '/images/maharashtra/elephanta-caves.jpg',
+  'elephanta-caves-mumbai': '/images/maharashtra/elephanta-caves.jpg',
+  'gharapuri-caves': '/images/maharashtra/elephanta-caves.jpg',
   'mh-csmt': '/images/maharashtra/csmt-mumbai.png',
   'basilica-of-bom-jesus': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/1280px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg',
 
