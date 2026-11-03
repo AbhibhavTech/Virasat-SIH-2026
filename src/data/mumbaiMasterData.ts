@@ -464,10 +464,10 @@ export const MUMBAI_ATTRACTIONS: MumbaiAttraction[] = [
       "lat": 18.9405,
       "lng": 72.8378
     },
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/General_Post_Office_Mumbai.jpg/1280px-General_Post_Office_Mumbai.jpg",
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/General_Post_Office_Mumbai.jpg/1280px-General_Post_Office_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/mumbai-gpo.jpg",
+    "image_url": "/images/maharashtra/mumbai-gpo.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/General_Post_Office_Mumbai.jpg/1280px-General_Post_Office_Mumbai.jpg"
+      "/images/maharashtra/mumbai-gpo.jpg"
     ],
     "section": "monuments",
     "source_url": "https://maharashtratourism.gov.in",

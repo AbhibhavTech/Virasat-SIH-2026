@@ -198,8 +198,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "10:00–18:00 (Postal services operate Mon–Sat)",
         fee: { domestic: "Free", foreign: "Free" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/General_Post_Office_Mumbai.jpg/1280px-General_Post_Office_Mumbai.jpg",
-        photoCredit: "Wikimedia Commons / Mumbai GPO Indo-Saracenic Dome",
+        image: "/images/maharashtra/mumbai-gpo.jpg",
+        photoCredit: "Virasat Verified Heritage Archive / Mumbai GPO Indo-Saracenic Central Dome",
         summary:
           "A magnificent Indo-Saracenic architectural landmark with a massive central dome inspired by the Gol Gumbaz of Bijapur. Spanning 120,000 square feet, it is one of the largest working post offices in the world.",
       },

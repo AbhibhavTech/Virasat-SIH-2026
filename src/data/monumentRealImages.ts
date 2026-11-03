@@ -95,6 +95,11 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'flora-fountain': '/images/maharashtra/flora-fountain.jpg',
   'flora-fountain-mumbai': '/images/maharashtra/flora-fountain.jpg',
   'hutatma-chowk': '/images/maharashtra/flora-fountain.jpg',
+  'IN-MH-MUM-ATT-007': '/images/maharashtra/mumbai-gpo.jpg',
+  'mumbai-gpo': '/images/maharashtra/mumbai-gpo.jpg',
+  'mumbai-general-post-office': '/images/maharashtra/mumbai-gpo.jpg',
+  'general-post-office-mumbai': '/images/maharashtra/mumbai-gpo.jpg',
+  'bombay-gpo': '/images/maharashtra/mumbai-gpo.jpg',
   'mh-csmt': '/images/maharashtra/csmt-mumbai.png',
   'basilica-of-bom-jesus': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/1280px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg',
 
