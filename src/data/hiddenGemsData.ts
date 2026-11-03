@@ -136,7 +136,7 @@ export const VERIFIED_HIDDEN_GEMS: HiddenGemItem[] = [
     century: '8th Century AD',
     category: 'Ancient Rock-Cut Shiva Sanctuary',
     whyInteresting: "A lesser-known 8th-century rock-cut Shiva temple cave complex carved into a hillock, featuring weathered stone pillars and ancient mythological sculptures. Later fortified with Portuguese church crypts in the 16th century.",
-    thumbnailUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Mandapeshwar_Caves_Mumbai.jpg/1280px-Mandapeshwar_Caves_Mumbai.jpg',
+    thumbnailUrl: '/images/maharashtra/mandapeshwar-caves.png',
     tags: ["Rock-Cut Temple", "Shiva Sanctuary", "Silhara Era", "Borivali", "Ancient Caves"],
     bestTimeToVisit: '06:00–18:00 (Open all 7 days)',
     accessTips: '1.5 km from Borivali Railway Station (Western Line).',

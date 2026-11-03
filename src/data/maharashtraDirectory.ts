@@ -618,8 +618,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "06:00–18:00 (Open all 7 days)",
         fee: { domestic: "Free", foreign: "Free" },
         isHiddenGem: true,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Mandapeshwar_Caves_Mumbai.jpg/1280px-Mandapeshwar_Caves_Mumbai.jpg",
-        photoCredit: "Wikimedia Commons / Mandapeshwar Rock-Cut Pillared Mandapa",
+        image: "/images/maharashtra/mandapeshwar-caves.png",
+        photoCredit: "Virasat Verified Heritage Archive / Mandapeshwar Rock-Cut Shiva Pillared Mandapa",
         summary:
           "A lesser-known 8th-century rock-cut Shiva temple cave complex carved into a hillock, featuring weathered stone pillars and ancient mythological sculptures. Later fortified with Portuguese church crypts in the 16th century.",
       },

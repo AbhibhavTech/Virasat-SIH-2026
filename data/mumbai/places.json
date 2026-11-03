@@ -1911,9 +1911,9 @@
     "latitude": 19.2394,
     "longitude": 72.8524,
     "rating": 4.9,
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Mandapeshwar_Caves_Mumbai.jpg/1280px-Mandapeshwar_Caves_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/mandapeshwar-caves.png",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Mandapeshwar_Caves_Mumbai.jpg/1280px-Mandapeshwar_Caves_Mumbai.jpg"
+      "/images/maharashtra/mandapeshwar-caves.png"
     ],
     "tags": [
       "Rock-Cut Temple",
