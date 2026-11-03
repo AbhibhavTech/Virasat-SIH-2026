@@ -300,7 +300,8 @@ class DatabaseManager {
       Object.keys(this.data.place_facts).length === 0 ||
       !this.data.festivals ||
       Object.keys(this.data.festivals).length === 0 ||
-      !this.data.places['crawford-market']
+      !this.data.places['crawford-market'] ||
+      !this.data.places['IN-BR-PAT-ATT-001']
     ) {
       await this.seedFromStaticFiles();
     } else {

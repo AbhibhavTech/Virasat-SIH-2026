@@ -380,7 +380,9 @@
         "local_tip": "Photograph the facade from across the road in the evening when it is lit up."
       },
       "verification_status": "pending",
-      "last_verified": null
+      "last_verified": null,
+      "image_url": "/images/maharashtra/csmt-mumbai.png",
+      "thumbnail_url": "/images/maharashtra/csmt-mumbai.png"
     },
     {
       "id": "mh-elephanta-caves",

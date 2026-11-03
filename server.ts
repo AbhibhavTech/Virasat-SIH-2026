@@ -3810,7 +3810,7 @@ app.get(['/places/:place_id', '/api/places/:place_id'], (req, res) => {
 
 // GET /search and /api/search
 // Searches across region, city, tourist place and relevant metadata
-app.get(['/search', '/api/search'], (req, res) => {
+app.get(['/search', '/api/search'], async (req, res) => {
   const data = getIndiaHierarchyData();
   if (!data || !data.states) {
     return res.status(500).json({ error: 'Tourism database not loaded' });
@@ -3898,6 +3898,30 @@ app.get(['/search', '/api/search'], (req, res) => {
         }
       }
     }
+  }
+
+  try {
+    const dbPlacesResult = await db.places.findAll({ search: q, limit: 50, includeAllStatuses: true });
+    const seenPlaceIds = new Set(matchedPlaces.map((p) => p.id?.toLowerCase()));
+    for (const dp of dbPlacesResult.places) {
+      if (!seenPlaceIds.has(dp.id?.toLowerCase())) {
+        seenPlaceIds.add(dp.id?.toLowerCase());
+        matchedPlaces.push({
+          id: dp.id,
+          name: dp.name,
+          category: dp.category || 'Monuments & Heritage',
+          topic: dp.topic || 'Heritage',
+          city: dp.city_id,
+          state: dp.state_id,
+          summary: dp.summary,
+          image_url: dp.thumbnail_url,
+          thumbnail_url: dp.thumbnail_url,
+          hotels_count: 0,
+        });
+      }
+    }
+  } catch (err) {
+    console.warn('[Search] db.places search fallback error:', err);
   }
 
   const placesSlice = matchedPlaces.slice(0, 50);

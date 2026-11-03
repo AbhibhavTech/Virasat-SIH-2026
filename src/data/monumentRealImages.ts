@@ -72,7 +72,9 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'ajanta-caves': 'https://upload.wikimedia.org/wikipedia/commons/c/c3/Ajanta_%2863%29.jpg',
   'ellora-caves': 'https://images.unsplash.com/photo-1608958435020-e8a7109ba809?w=1200&auto=format&fit=crop&q=80',
   'gateway-of-india': 'https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80',
-  'csmt': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Chhatrapati_shivaji_terminus%2C_esterno_01.jpg/1280px-Chhatrapati_shivaji_terminus%2C_esterno_01.jpg',
+  'csmt': '/images/maharashtra/csmt-mumbai.png',
+  'IN-MH-MUM-ATT-002': '/images/maharashtra/csmt-mumbai.png',
+  'mh-csmt': '/images/maharashtra/csmt-mumbai.png',
   'basilica-of-bom-jesus': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/1280px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg',
 
   // Southern Region

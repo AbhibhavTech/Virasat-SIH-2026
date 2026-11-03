@@ -753,6 +753,7 @@ export const IndiaHierarchyPage: React.FC<IndiaHierarchyPageProps> = ({
           <UniversalMasterStateDirectory
             config={stateConfig}
             initialCityId={selectedCityId}
+            onSelectPlace={onSelectPlace}
             onSelectCity={(cityId) => {
               setSelectedCityId(cityId);
               if (onSelectCity) {

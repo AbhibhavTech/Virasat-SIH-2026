@@ -138,8 +138,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "Open 24 Hours (Heritage Museum 15:00–17:00 Mon–Fri)",
         fee: { domestic: "Free (Heritage Gallery entry INR 85)", foreign: "Free (Heritage Gallery entry INR 675)" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Chhatrapati_Shivaji_Maharaj_Terminus_Mumbai.jpg/1280px-Chhatrapati_Shivaji_Maharaj_Terminus_Mumbai.jpg",
-        photoCredit: "Wikimedia Commons / CSMT Victorian Gothic Façade",
+        image: "/images/maharashtra/csmt-mumbai.png",
+        photoCredit: "Discover Bharat / CSMT Illuminated Victorian Gothic Architecture",
         summary:
           "A UNESCO World Heritage railway masterpiece showcasing Victorian Gothic architecture fused with traditional Indian palace features. Anchored by a monumental stone dome, pointed arches, stained glass, and intricate stone carvings.",
       },

@@ -1542,9 +1542,9 @@
     "nearest_transport": {
       "railway_station": "CSMT Station"
     },
-    "thumbnail_url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Chhatrapati_shivaji_terminus%2C_esterno_01.jpg/1280px-Chhatrapati_shivaji_terminus%2C_esterno_01.jpg",
+    "thumbnail_url": "/images/maharashtra/csmt-mumbai.png",
     "images": [
-      "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4d/Chhatrapati_shivaji_terminus%2C_esterno_01.jpg/1280px-Chhatrapati_shivaji_terminus%2C_esterno_01.jpg",
+      "/images/maharashtra/csmt-mumbai.png",
       "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=800&auto=format&fit=crop&q=80"
     ],
     "model_3d": {

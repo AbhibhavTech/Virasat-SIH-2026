@@ -42,6 +42,7 @@ interface UniversalMasterStateDirectoryProps {
   initialCityId?: string;
   onSelectCity?: (cityId: string) => void;
   onOpenAIChat?: (prompt?: string) => void;
+  onSelectPlace?: (placeId: string) => void;
 }
 
 export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirectoryProps> = ({
@@ -49,6 +50,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
   initialCityId,
   onSelectCity,
   onOpenAIChat,
+  onSelectPlace,
 }) => {
   const { currentLanguage } = useLanguage();
   const [selectedCityId, setSelectedCityId] = useState<string>(
@@ -532,7 +534,12 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
                 >
                   <div>
                     {/* Image Header with Badge Overlay */}
-                    <div className="relative h-48 w-full overflow-hidden bg-stone-100">
+                    <Link
+                      to={`/place/${encodeURIComponent(attraction.id)}`}
+                      onClick={() => onSelectPlace?.(attraction.id)}
+                      className="relative block h-48 w-full overflow-hidden bg-stone-100 cursor-pointer"
+                      title={`View verified details for ${attraction.name}`}
+                    >
                       <img
                         src={attraction.image || defaultCityFallback}
                         alt={attraction.name}
@@ -566,7 +573,7 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
                           {attraction.photoCredit}
                         </span>
                       )}
-                    </div>
+                    </Link>
 
                     {/* Content Section */}
                     <div className="p-4 sm:p-5 space-y-3">
@@ -574,9 +581,16 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
                         <div className="text-[11px] font-semibold text-amber-700 tracking-wide uppercase">
                           {attraction.category}
                         </div>
-                        <h3 className="text-base sm:text-lg font-serif font-bold text-stone-900 group-hover:text-amber-700 transition-colors">
-                          {attraction.name}
-                        </h3>
+                        <Link
+                          to={`/place/${encodeURIComponent(attraction.id)}`}
+                          onClick={() => onSelectPlace?.(attraction.id)}
+                          className="hover:underline block"
+                          title={`View verified details for ${attraction.name}`}
+                        >
+                          <h3 className="text-base sm:text-lg font-serif font-bold text-stone-900 group-hover:text-amber-700 transition-colors">
+                            {attraction.name}
+                          </h3>
+                        </Link>
                       </div>
 
                       <p className="text-xs text-stone-600 leading-relaxed line-clamp-3">
@@ -632,18 +646,15 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
                       )}
                     </button>
 
-                    <button
-                      type="button"
-                      onClick={() =>
-                        onOpenAIChat?.(
-                          `Tell me historical secrets, travel tips, and best photography spots for ${attraction.name} in ${currentCity.name}, ${config.stateName}.`
-                        )
-                      }
-                      className="inline-flex items-center gap-1 text-amber-700 hover:text-amber-800 font-semibold transition-colors cursor-pointer"
+                    <Link
+                      to={`/place/${encodeURIComponent(attraction.id)}`}
+                      onClick={() => onSelectPlace?.(attraction.id)}
+                      className="inline-flex items-center gap-1 text-amber-700 hover:text-amber-800 font-bold transition-colors cursor-pointer group/btn"
+                      title={`Explore verified destination details for ${attraction.name}`}
                     >
                       <span>{currentLanguage === 'hi' ? 'अन्वेषण करें' : 'Explore'}</span>
-                      <ChevronRight className="w-3.5 h-3.5" />
-                    </button>
+                      <ChevronRight className="w-3.5 h-3.5 group-hover/btn:translate-x-0.5 transition-transform" />
+                    </Link>
                   </div>
                 </div>
               );
