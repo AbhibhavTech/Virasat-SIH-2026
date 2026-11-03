@@ -85,7 +85,7 @@ export const VERIFIED_HIDDEN_GEMS: HiddenGemItem[] = [
     century: '19th Century AD (1833)',
     category: 'Colonial Neoclassical Haven',
     whyInteresting: "While the building is famous, sitting on its massive neo-classical white pillared portico in the early morning offers a quiet slice of old Bombay, surrounded by Greek Doric columns, ancient trees, and peaceful cobblestone vistas.",
-    thumbnailUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Town_Hall_Mumbai.jpg/1280px-Town_Hall_Mumbai.jpg',
+    thumbnailUrl: '/images/maharashtra/asiatic-society-mumbai.jpg',
     tags: ["Neoclassical", "Town Hall", "Greek Doric", "Early Morning", "Fort"],
     bestTimeToVisit: 'Best in early morning (06:00–09:00 AM)',
     accessTips: '1 km from CSMT Station and 1.2 km from Churchgate Station, opposite Horniman Circle.',

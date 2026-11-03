@@ -352,10 +352,10 @@ export const MUMBAI_ATTRACTIONS: MumbaiAttraction[] = [
       "lat": 18.9318,
       "lng": 72.836
     },
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Town_Hall_Mumbai.jpg/1280px-Town_Hall_Mumbai.jpg",
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Town_Hall_Mumbai.jpg/1280px-Town_Hall_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/asiatic-society-mumbai.jpg",
+    "image_url": "/images/maharashtra/asiatic-society-mumbai.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Town_Hall_Mumbai.jpg/1280px-Town_Hall_Mumbai.jpg"
+      "/images/maharashtra/asiatic-society-mumbai.jpg"
     ],
     "section": "monuments",
     "source_url": "https://maharashtratourism.gov.in",

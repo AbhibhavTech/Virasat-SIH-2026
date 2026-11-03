@@ -174,8 +174,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "10:30–17:30 (Closed Sundays and public holidays)",
         fee: { domestic: "Free entry to Town Hall steps; Library access requires permit", foreign: "Free entry to Town Hall steps; Library access requires permit" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Town_Hall_Mumbai.jpg/1280px-Town_Hall_Mumbai.jpg",
-        photoCredit: "Wikimedia Commons / Asiatic Society Neoclassical Steps",
+        image: "/images/maharashtra/asiatic-society-mumbai.jpg",
+        photoCredit: "Virasat Verified Heritage Archive / Asiatic Society Town Hall Greek Doric Steps",
         summary:
           "A majestic 1833 neoclassical building housing rare literary manuscripts (including an original 14th-century Dante’s Divine Comedy) and ancient coins, fronted by iconic sweeping white Greek Doric colonnades.",
       },
@@ -594,8 +594,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "Best in early morning (06:00–09:00 AM)",
         fee: { domestic: "Free", foreign: "Free" },
         isHiddenGem: true,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Town_Hall_Mumbai.jpg/1280px-Town_Hall_Mumbai.jpg",
-        photoCredit: "Wikimedia Commons / Asiatic Society Neoclassical Steps",
+        image: "/images/maharashtra/asiatic-society-mumbai.jpg",
+        photoCredit: "Virasat Verified Heritage Archive / Asiatic Society Town Hall Greek Doric Steps",
         summary:
           "While the building is famous, sitting on its massive neo-classical white pillared portico in the early morning offers a quiet slice of old Bombay, surrounded by Greek Doric columns, ancient trees, and peaceful cobblestone vistas.",
       },

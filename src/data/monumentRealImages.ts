@@ -83,6 +83,13 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'bombay-high-court': '/images/maharashtra/bombay-high-court.png',
   'bombay-high-court-rajabai': '/images/maharashtra/bombay-high-court.png',
   'high-court-mumbai': '/images/maharashtra/bombay-high-court.png',
+  'IN-MH-MUM-ATT-005': '/images/maharashtra/asiatic-society-mumbai.jpg',
+  'IN-MH-MUM-GEM-004': '/images/maharashtra/asiatic-society-mumbai.jpg',
+  'mumbai-asiatic-society': '/images/maharashtra/asiatic-society-mumbai.jpg',
+  'mumbai-gem-asiatic-steps': '/images/maharashtra/asiatic-society-mumbai.jpg',
+  'asiatic-society-mumbai': '/images/maharashtra/asiatic-society-mumbai.jpg',
+  'asiatic-society': '/images/maharashtra/asiatic-society-mumbai.jpg',
+  'town-hall-mumbai': '/images/maharashtra/asiatic-society-mumbai.jpg',
   'mh-csmt': '/images/maharashtra/csmt-mumbai.png',
   'basilica-of-bom-jesus': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/1280px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg',
 
