@@ -19,6 +19,7 @@ const IndiaHierarchyPage = React.lazy(() => import('../pages/IndiaHierarchyPage'
 const AdminDashboardPage = React.lazy(() => import('../pages/AdminDashboardPage').then((m) => ({ default: m.AdminDashboardPage })));
 const FestivalsPage = React.lazy(() => import('../pages/FestivalsPage').then((m) => ({ default: m.FestivalsPage })));
 const FestivalDetailPage = React.lazy(() => import('../pages/FestivalDetailPage').then((m) => ({ default: m.FestivalDetailPage })));
+const HotelDetailPage = React.lazy(() => import('../pages/HotelDetailPage').then((m) => ({ default: m.HotelDetailPage })));
 
 import { RouteLoadingExperience } from '../components/common/RouteLoadingExperience';
 
@@ -70,7 +71,7 @@ export function formatCityName(cityId: string): string {
 
 export function getActiveTabFromPath(pathname: string): NavTab {
   if (pathname === '/' || pathname === '') return 'home';
-  if (pathname.startsWith('/explore')) return 'india';
+  if (pathname.startsWith('/explore') || pathname.startsWith('/hotel') || pathname.startsWith('/stay')) return 'india';
   if (pathname.startsWith('/festivals')) return 'festivals';
   if (pathname.startsWith('/city')) return 'dashboard';
   if (pathname.startsWith('/heritage')) return 'heritage';
@@ -287,6 +288,26 @@ export const AppRoutes: React.FC<AppRoutesProps> = ({
         path="/festivals/:festivalId"
         element={
           <FestivalDetailPage
+            onNavigateTab={onNavigateTab}
+            onSelectPlace={onSelectPlace}
+          />
+        }
+      />
+
+      <Route
+        path="/hotel/:hotelId"
+        element={
+          <HotelDetailPage
+            onNavigateTab={onNavigateTab}
+            onSelectPlace={onSelectPlace}
+          />
+        }
+      />
+
+      <Route
+        path="/stay/:hotelId"
+        element={
+          <HotelDetailPage
             onNavigateTab={onNavigateTab}
             onSelectPlace={onSelectPlace}
           />

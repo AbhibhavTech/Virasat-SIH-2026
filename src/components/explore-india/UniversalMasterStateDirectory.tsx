@@ -25,6 +25,10 @@ import {
   StateDirectoryAttraction,
 } from '../../types/masterStateDirectory';
 import { SacredSite } from '../../data/sacredPilgrimageCircuits';
+import { Link } from 'react-router-dom';
+import { HotelAmenitiesModal } from './HotelAmenitiesModal';
+import { resolveHotelDossier, HotelDossier } from '../../utils/hotelDossierResolver';
+import { Star, Wifi, Waves, BedDouble, ArrowRight, Eye } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import {
   translateTextToHindi,
@@ -57,6 +61,8 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
   const [wildlifeFilter, setWildlifeFilter] = useState<'all' | 'tiger' | 'np' | 'sanctuary'>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [copiedId, setCopiedId] = useState<string | null>(null);
+  const [selectedStayDossier, setSelectedStayDossier] = useState<HotelDossier | null>(null);
+  const [isStayModalOpen, setIsStayModalOpen] = useState(false);
 
   // Sync with initialCityId when prop updates
   useEffect(() => {
@@ -1182,49 +1188,145 @@ Significance: ${shrine.spiritualSignificance}`;
 
       {/* 6. Tab Content: TOP STAYS */}
       {activeTab === 'stays' && (
-        <div className="space-y-4">
-          <div className="p-4 rounded-xl bg-amber-50 border border-amber-200 text-xs text-amber-900 flex items-start gap-3">
-            <Hotel className="w-4 h-4 text-amber-700 mt-0.5 shrink-0" />
-            <div>
-              <div className="font-bold text-amber-950">{currentLanguage === 'hi' ? `${CITIES_HINDI_MAP[currentCity.name] || currentCity.name} में प्रमाणित आवास व होटल` : `Curated Accommodations in ${currentCity.name}`}</div>
-              <div>
-                Hand-picked luxury, heritage havelis, eco-resorts, and boutique stays verified for comfort, safety, and cultural hospitality in {config.stateName}.
+        <div className="space-y-5">
+          <div className="p-4 rounded-2xl bg-amber-50/80 border border-amber-200 text-xs text-amber-900 flex items-start justify-between gap-3 shadow-2xs">
+            <div className="flex items-start gap-3">
+              <div className="p-2 rounded-xl bg-amber-100 text-amber-800 border border-amber-300 shrink-0 mt-0.5">
+                <Hotel className="w-5 h-5" />
               </div>
+              <div>
+                <div className="font-bold text-sm text-amber-950 font-serif">
+                  {currentLanguage === 'hi'
+                    ? `${CITIES_HINDI_MAP[currentCity.name] || currentCity.name} में प्रमाणित आवास, हेरिटेज होटल व रिसॉर्ट्स`
+                    : `Verified Heritage Stays & Luxury Accommodations in ${currentCity.name}`}
+                </div>
+                <div className="text-stone-600 mt-0.5">
+                  Hand-picked 4-star &amp; 5-star heritage havelis, luxury beachfront retreats, and boutique eco-stays verified for safety, cultural hospitality, and authentic regional dining in {config.stateName}.
+                </div>
+              </div>
+            </div>
+            <div className="hidden sm:flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100/90 text-emerald-800 border border-emerald-300 text-[11px] font-bold shrink-0">
+              <ShieldCheck className="w-3.5 h-3.5" />
+              <span>Virasat Verified</span>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {currentCity.topStays?.map((stay, idx) => (
-              <div
-                key={idx}
-                className="bg-white rounded-xl p-5 border border-stone-200 shadow-xs hover:shadow-md transition-shadow flex flex-col justify-between"
-              >
-                <div className="space-y-2">
-                  <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-100 text-amber-900 border border-amber-300">
-                    <ShieldCheck className="w-3 h-3 text-amber-700" />
-                    <span>{currentLanguage === 'hi' ? `सर्वश्रेष्ठ अनुशंसा #${idx + 1}` : `Top Recommendation #${idx + 1}`}</span>
-                  </div>
-                  <h4 className="text-base font-serif font-bold text-stone-900">{stay.name}</h4>
-                  <p className="text-xs text-stone-600 leading-relaxed">{stay.category}</p>
-                </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            {currentCity.topStays?.map((stay, idx) => {
+              const dossier = resolveHotelDossier(
+                stay,
+                currentCity.name,
+                config.stateName,
+                config.stateId,
+                currentCity.attractions
+              );
 
-                <div className="pt-4 mt-3 border-t border-stone-100 flex items-center justify-between text-xs">
-                  <span className="text-stone-400 text-[11px]">{currentCity.name}</span>
-                  <button
-                    type="button"
-                    onClick={() =>
-                      onOpenAIChat?.(
-                        `Find tariffs, availability, room categories, and booking advice for stay at ${stay.name} in ${currentCity.name}, ${config.stateName}.`
-                      )
-                    }
-                    className="text-amber-700 font-semibold hover:underline inline-flex items-center gap-1 cursor-pointer"
-                  >
-                    <span>{currentLanguage === 'hi' ? 'सुविधाएं देखें' : 'Check Amenities'}</span>
-                    <ChevronRight className="w-3 h-3" />
-                  </button>
+              return (
+                <div
+                  key={idx}
+                  className="group bg-white rounded-2xl border border-stone-200/90 shadow-2xs hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden"
+                >
+                  {/* Card Cover Image with Quick Actions */}
+                  <div className="relative h-48 w-full bg-stone-900 overflow-hidden">
+                    <img
+                      src={dossier.coverImage}
+                      alt={dossier.name}
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 brightness-95"
+                      onError={(e) => {
+                        (e.currentTarget as HTMLImageElement).src =
+                          'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&auto=format&fit=crop&q=80';
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+
+                    {/* Top Badges */}
+                    <div className="absolute top-3 left-3 right-3 flex items-center justify-between gap-2 z-10">
+                      <div className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-amber-500/90 text-white backdrop-blur-xs shadow-sm">
+                        <ShieldCheck className="w-3 h-3" />
+                        <span>{currentLanguage === 'hi' ? `अनुशंसा #${idx + 1}` : `Top Pick #${idx + 1}`}</span>
+                      </div>
+
+                      <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-black/60 text-amber-300 backdrop-blur-xs border border-amber-400/30">
+                        <Star className="w-3 h-3 fill-amber-300" />
+                        <span>{dossier.stars}★ {dossier.tier.toUpperCase()}</span>
+                      </div>
+                    </div>
+
+                    {/* Bottom Locality on Image */}
+                    <div className="absolute bottom-2.5 left-3 right-3 text-white text-xs flex items-center justify-between">
+                      <span className="font-semibold text-amber-300 truncate text-[11px] flex items-center gap-1">
+                        <MapPin className="w-3 h-3" />
+                        <span>{dossier.locality}</span>
+                      </span>
+                      <span className="text-[10px] text-stone-300 bg-white/20 px-2 py-0.5 rounded backdrop-blur-xs">
+                        {currentCity.name}
+                      </span>
+                    </div>
+                  </div>
+
+                  {/* Body Content */}
+                  <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between space-y-3.5">
+                    <div className="space-y-2">
+                      <h4 className="text-base sm:text-lg font-serif font-bold text-stone-900 group-hover:text-amber-800 transition-colors leading-snug">
+                        {dossier.name}
+                      </h4>
+                      <p className="text-xs text-stone-600 line-clamp-2 leading-relaxed">
+                        {dossier.category}
+                      </p>
+
+                      {/* Top Curated Amenities Chips */}
+                      <div className="flex flex-wrap gap-1.5 pt-1">
+                        {dossier.amenities.slice(0, 3).map((amenity) => (
+                          <span
+                            key={amenity.id}
+                            className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-[10px] font-medium bg-stone-100 text-stone-700 border border-stone-200"
+                          >
+                            <Sparkles className="w-2.5 h-2.5 text-amber-600" />
+                            <span>{amenity.name}</span>
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Tariffs Breakdown */}
+                    <div className="p-3 rounded-xl bg-amber-50/60 border border-amber-200/70 space-y-1 text-xs">
+                      <div className="flex items-center justify-between text-stone-900 font-bold">
+                        <span className="text-[11px] text-stone-500 font-medium">Night Stay:</span>
+                        <span>{dossier.nightTariff}</span>
+                      </div>
+                      <div className="flex items-center justify-between text-emerald-800 text-[11px]">
+                        <span className="text-stone-500 font-medium">Day Transit Pass:</span>
+                        <span className="font-semibold">{dossier.dayTariff}</span>
+                      </div>
+                    </div>
+
+                    {/* Action Buttons: Check Amenities Modal & Dedicated Page */}
+                    <div className="pt-3 border-t border-stone-100 flex items-center justify-between gap-2 text-xs">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setSelectedStayDossier(dossier);
+                          setIsStayModalOpen(true);
+                        }}
+                        className="text-stone-600 hover:text-amber-800 font-semibold inline-flex items-center gap-1 cursor-pointer py-1.5 px-2 rounded-lg hover:bg-stone-50 transition"
+                      >
+                        <Eye className="w-3.5 h-3.5" />
+                        <span>{currentLanguage === 'hi' ? 'त्वरित पूर्वावलोकन' : 'Quick View'}</span>
+                      </button>
+
+                      <Link
+                        to={`/hotel/${dossier.slug}`}
+                        className="text-amber-800 hover:text-amber-900 font-bold inline-flex items-center gap-1 cursor-pointer py-1.5 px-3 rounded-xl bg-amber-100/70 hover:bg-amber-100 border border-amber-300/80 transition"
+                      >
+                        <span>{currentLanguage === 'hi' ? 'सुविधाएं व विवरण देखें' : 'Check Amenities & Details'}</span>
+                        <ChevronRight className="w-3.5 h-3.5" />
+                      </Link>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       )}
@@ -1322,6 +1424,14 @@ Significance: ${shrine.spiritualSignificance}`;
           )}
         </div>
       )}
+    
+      {/* Hotel Amenities & Stay Dossier Interactive Modal */}
+      <HotelAmenitiesModal
+        dossier={selectedStayDossier}
+        isOpen={isStayModalOpen}
+        onClose={() => setIsStayModalOpen(false)}
+        onOpenAIChat={onOpenAIChat}
+      />
     </section>
   );
 };
