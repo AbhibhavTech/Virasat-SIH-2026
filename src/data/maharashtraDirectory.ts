@@ -1109,8 +1109,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "06:00–18:00",
         fee: { domestic: "Free", foreign: "Free" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Tiger%27s_Leap_Lonavala.jpg/1280px-Tiger%27s_Leap_Lonavala.jpg",
-        photoCredit: "Wikimedia Commons / Tiger's Leap",
+        image: "/images/maharashtra/tigers-leap.jpg",
+        photoCredit: "Virasat Verified / Authentic Cliff Panorama from Tiger\'s Leap, Lonavala",
         summary:
           "A dramatic cliff edge with a sheer drop of over 650 meters, named for its striking resemblance to a leaping tiger plunging into the abyss. Offers breathtaking vistas of the surrounding Western Ghats valleys and sunset panoramas.",
       },

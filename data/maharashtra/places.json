@@ -99,7 +99,7 @@
       "lng": 73.3768
     },
     "rating": 4.8,
-    "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
+    "thumbnail_url": "/images/maharashtra/tigers-leap.jpg",
     "best_time_to_visit": "June to February (Monsoon peak)",
     "visiting_hours": "06:00 AM - 06:30 PM",
     "entry_fee": {
@@ -116,7 +116,8 @@
       "tourist_places",
       "famous",
       "sunset"
-    ]
+    ],
+    "image_url": "/images/maharashtra/tigers-leap.jpg"
   },
   {
     "id": "lonavala-bhushi-dam",
