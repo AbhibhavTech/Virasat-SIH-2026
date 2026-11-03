@@ -114,6 +114,12 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'siddhivinayak-temple': '/images/maharashtra/siddhivinayak-temple.jpg',
   'siddhivinayak': '/images/maharashtra/siddhivinayak-temple.jpg',
   'shree-siddhivinayak-temple': '/images/maharashtra/siddhivinayak-temple.jpg',
+  'IN-MH-MUM-ATT-016': '/images/maharashtra/haji-ali-dargah.jpg',
+  'mumbai-haji-ali-dargah': '/images/maharashtra/haji-ali-dargah.jpg',
+  'haji-ali-dargah': '/images/maharashtra/haji-ali-dargah.jpg',
+  'haji-ali': '/images/maharashtra/haji-ali-dargah.jpg',
+  'haji-ali-mumbai': '/images/maharashtra/haji-ali-dargah.jpg',
+  'sufi-haji-ali': '/images/maharashtra/haji-ali-dargah.jpg',
   'mh-csmt': '/images/maharashtra/csmt-mumbai.png',
   'basilica-of-bom-jesus': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/1280px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg',
 

@@ -306,8 +306,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "05:30–22:00 (Accessible during low tide hours)",
         fee: { domestic: "Free", foreign: "Free" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Haji_Ali_Dargah_Mumbai.jpg/1280px-Haji_Ali_Dargah_Mumbai.jpg",
-        photoCredit: "Wikimedia Commons / Haji Ali Dargah Arabian Sea Islet",
+        image: "/images/maharashtra/haji-ali-dargah.jpg",
+        photoCredit: "Virasat Verified Heritage Archive / Haji Ali Dargah Arabian Sea Islet",
         summary:
           "A 15th-century marble mausoleum perched on an islet in the Arabian Sea, connected by a dramatic sea causeway accessible only during low tide.",
       },

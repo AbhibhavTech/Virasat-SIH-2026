@@ -648,9 +648,9 @@
     "latitude": 18.9774,
     "longitude": 72.8089,
     "rating": 4.8,
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Haji_Ali_Dargah_Mumbai.jpg/1280px-Haji_Ali_Dargah_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/haji-ali-dargah.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Haji_Ali_Dargah_Mumbai.jpg/1280px-Haji_Ali_Dargah_Mumbai.jpg"
+      "/images/maharashtra/haji-ali-dargah.jpg"
     ],
     "tags": [
       "dargah",
