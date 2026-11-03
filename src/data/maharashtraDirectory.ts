@@ -1133,8 +1133,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "09:00–17:00",
         fee: { domestic: "INR 25", foreign: "INR 300" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Karla_Caves_Chaitya_Interior.jpg/1280px-Karla_Caves_Chaitya_Interior.jpg",
-        photoCredit: "Wikimedia Commons / Karla Caves Grand Chaitya",
+        image: "/images/maharashtra/karla-bhaja-caves.jpg",
+        photoCredit: "Virasat Verified / Authentic Rock-Cut Buddhist Chaitya at Bhaja Caves, Lonavala",
         summary:
           "Ancient rock-cut Buddhist complexes dating back to the 2nd century BCE. The Great Chaitya at Karla is India's largest rock-cut prayer hall, featuring a teak wood-ribbed vaulted ceiling, ornate carved elephant pillars, and monumental stupas.",
       },

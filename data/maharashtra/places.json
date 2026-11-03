@@ -164,7 +164,7 @@
       "lng": 73.4706
     },
     "rating": 4.9,
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?auto=format&fit=crop&w=1200&q=80",
+    "thumbnail_url": "/images/maharashtra/karla-bhaja-caves.jpg",
     "best_time_to_visit": "October to March",
     "visiting_hours": "09:00 AM - 06:00 PM",
     "entry_fee": {
@@ -182,6 +182,11 @@
       "asi",
       "ancient",
       "famous"
+    ],
+    "image": "/images/maharashtra/karla-bhaja-caves.jpg",
+    "gallery": [
+      "/images/maharashtra/karla-bhaja-caves.jpg",
+      "/images/maharashtra/karla-caves.jpg"
     ]
   },
   {
@@ -197,7 +202,7 @@
       "lng": 73.4819
     },
     "rating": 4.7,
-    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1200&q=80",
+    "thumbnail_url": "/images/maharashtra/karla-bhaja-caves.jpg",
     "best_time_to_visit": "July to March",
     "visiting_hours": "09:00 AM - 05:30 PM",
     "entry_fee": {
@@ -214,6 +219,11 @@
       "buddhist",
       "ancient",
       "famous"
+    ],
+    "image": "/images/maharashtra/karla-bhaja-caves.jpg",
+    "gallery": [
+      "/images/maharashtra/karla-bhaja-caves.jpg",
+      "/images/maharashtra/bhaja-caves.jpg"
     ]
   },
   {
@@ -223,7 +233,7 @@
     "city": "Lonavala",
     "category": "heritage",
     "summary": "Historic Maratha hilltop fortress at 1,033m elevation, fortified by Chhatrapati Shivaji Maharaj, featuring the famous Vinchukata spur.",
-    "description": "Lohagad (Iron Fort) divides the Indrayani and Pavana basins. It has four formidable gates\u2014Ganesh Darwaja, Narayan Darwaja, Hanuman Darwaja, and Maha Darwaja\u2014and the iconic 1,500m scorpion-tail fortified ridge.",
+    "description": "Lohagad (Iron Fort) divides the Indrayani and Pavana basins. It has four formidable gates—Ganesh Darwaja, Narayan Darwaja, Hanuman Darwaja, and Maha Darwaja—and the iconic 1,500m scorpion-tail fortified ridge.",
     "coordinates": {
       "lat": 18.6997,
       "lng": 73.477
