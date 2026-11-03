@@ -288,6 +288,12 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'babulnath': '/images/maharashtra/babulnath-temple.jpg',
   'babulnath-mandir': '/images/maharashtra/babulnath-temple.jpg',
   'babulnath-mumbai': '/images/maharashtra/babulnath-temple.jpg',
+  'IN-MH-MUM-ATT-014': '/images/maharashtra/mani-bhavan.jpg',
+  'mumbai-mani-bhavan': '/images/maharashtra/mani-bhavan.jpg',
+  'mani-bhavan': '/images/maharashtra/mani-bhavan.jpg',
+  'mani-bhavan-gamdevi': '/images/maharashtra/mani-bhavan.jpg',
+  'mani-bhavan-gandhi-museum': '/images/maharashtra/mani-bhavan.jpg',
+  'mani-bhavan-gandhi-sangrahalaya': '/images/maharashtra/mani-bhavan.jpg',
   'mh-csmt': '/images/maharashtra/csmt-mumbai.png',
   'basilica-of-bom-jesus': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/1280px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg',
 

@@ -282,8 +282,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "09:30–18:00 (Open all 7 days)",
         fee: { domestic: "Free (Voluntary donation)", foreign: "Free (Voluntary donation)" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Mani_Bhavan_Gandhi_Museum_Mumbai.jpg/1280px-Mani_Bhavan_Gandhi_Museum_Mumbai.jpg",
-        photoCredit: "Wikimedia Commons / Mani Bhavan Historic Facade",
+        image: "/images/maharashtra/mani-bhavan.jpg",
+        photoCredit: "Virasat Verified Heritage Archive / Mani Bhavan Gandhi Memorial Historic Façade",
         summary:
           "Mahatma Gandhi’s historic Mumbai residence during India's freedom struggle (1917–1934). The focal epicenter from which the Non-Cooperation, Satyagraha, Swadeshi, and Quit India movements took root in Bombay.",
       },

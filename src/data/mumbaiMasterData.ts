@@ -856,10 +856,10 @@ export const MUMBAI_ATTRACTIONS: MumbaiAttraction[] = [
       "lat": 18.9599,
       "lng": 72.8122
     },
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Mani_Bhavan_Gandhi_Museum_Mumbai.jpg/1280px-Mani_Bhavan_Gandhi_Museum_Mumbai.jpg",
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Mani_Bhavan_Gandhi_Museum_Mumbai.jpg/1280px-Mani_Bhavan_Gandhi_Museum_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/mani-bhavan.jpg",
+    "image_url": "/images/maharashtra/mani-bhavan.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Mani_Bhavan_Gandhi_Museum_Mumbai.jpg/1280px-Mani_Bhavan_Gandhi_Museum_Mumbai.jpg"
+      "/images/maharashtra/mani-bhavan.jpg"
     ],
     "section": "museums",
     "source_url": "https://maharashtratourism.gov.in",
