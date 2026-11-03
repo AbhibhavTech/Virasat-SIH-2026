@@ -606,9 +606,9 @@
     "latitude": 19.0169,
     "longitude": 72.8304,
     "rating": 4.8,
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Siddhivinayak_temple_mumbai.jpg/1280px-Siddhivinayak_temple_mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/siddhivinayak-temple.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Siddhivinayak_temple_mumbai.jpg/1280px-Siddhivinayak_temple_mumbai.jpg"
+      "/images/maharashtra/siddhivinayak-temple.jpg"
     ],
     "tags": [
       "temple",

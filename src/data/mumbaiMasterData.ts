@@ -912,10 +912,10 @@ export const MUMBAI_ATTRACTIONS: MumbaiAttraction[] = [
       "lat": 19.0169,
       "lng": 72.8304
     },
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Siddhivinayak_temple_mumbai.jpg/1280px-Siddhivinayak_temple_mumbai.jpg",
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Siddhivinayak_temple_mumbai.jpg/1280px-Siddhivinayak_temple_mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/siddhivinayak-temple.jpg",
+    "image_url": "/images/maharashtra/siddhivinayak-temple.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Siddhivinayak_temple_mumbai.jpg/1280px-Siddhivinayak_temple_mumbai.jpg"
+      "/images/maharashtra/siddhivinayak-temple.jpg"
     ],
     "section": "religious_cultural",
     "source_url": "https://maharashtratourism.gov.in",

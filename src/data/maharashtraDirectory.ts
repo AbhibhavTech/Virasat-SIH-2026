@@ -294,8 +294,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "05:30–22:00 (Tuesdays open 03:15–22:00)",
         fee: { domestic: "Free", foreign: "Free" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Siddhivinayak_temple_mumbai.jpg/1280px-Siddhivinayak_temple_mumbai.jpg",
-        photoCredit: "Wikimedia Commons / Siddhivinayak Temple Multi-Spired Sanctum",
+        image: "/images/maharashtra/siddhivinayak-temple.jpg",
+        photoCredit: "Virasat Verified Heritage Archive / Shree Siddhivinayak Temple Golden Garbhagriha Sanctum",
         summary:
           "One of India's most revered and heavily visited Ganesha temples. Famed for its two-and-a-half-foot monolithic black stone deity with the trunk turning to the right (Siddhi Vinayak).",
       },

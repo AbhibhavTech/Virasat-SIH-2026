@@ -109,6 +109,11 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'mumbai-jehangir-art-gallery': '/images/maharashtra/jehangir-art-gallery.png',
   'jehangir-art-gallery': '/images/maharashtra/jehangir-art-gallery.png',
   'jehangir-art-gallery-mumbai': '/images/maharashtra/jehangir-art-gallery.png',
+  'IN-MH-MUM-ATT-015': '/images/maharashtra/siddhivinayak-temple.jpg',
+  'mumbai-siddhivinayak-temple': '/images/maharashtra/siddhivinayak-temple.jpg',
+  'siddhivinayak-temple': '/images/maharashtra/siddhivinayak-temple.jpg',
+  'siddhivinayak': '/images/maharashtra/siddhivinayak-temple.jpg',
+  'shree-siddhivinayak-temple': '/images/maharashtra/siddhivinayak-temple.jpg',
   'mh-csmt': '/images/maharashtra/csmt-mumbai.png',
   'basilica-of-bom-jesus': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/1280px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg',
 
