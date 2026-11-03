@@ -2088,10 +2088,10 @@ export const MUMBAI_ATTRACTIONS: MumbaiAttraction[] = [
       "lat": 18.9592,
       "lng": 72.829
     },
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Chor_Bazaar_Mumbai.jpg/1280px-Chor_Bazaar_Mumbai.jpg",
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Chor_Bazaar_Mumbai.jpg/1280px-Chor_Bazaar_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/chor-bazaar.jpg",
+    "image_url": "/images/maharashtra/chor-bazaar.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Chor_Bazaar_Mumbai.jpg/1280px-Chor_Bazaar_Mumbai.jpg"
+      "/images/maharashtra/chor-bazaar.jpg"
     ],
     "section": "heritage",
     "source_url": "https://maharashtratourism.gov.in",

@@ -546,8 +546,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "11:00–19:30 (Open Saturday through Thursday; closed Fridays)",
         fee: { domestic: "Free to explore", foreign: "Free to explore" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Chor_Bazaar_Mumbai.jpg/1280px-Chor_Bazaar_Mumbai.jpg",
-        photoCredit: "Wikimedia Commons / Chor Bazaar Vintage Antique Alley",
+        image: "/images/maharashtra/chor-bazaar.jpg",
+        photoCredit: "Virasat Verified Heritage Archive / Chor Bazaar Mutton Street Antique Emporium",
         summary:
           "One of India's oldest and largest flea markets, famous for vintage antiques and collectibles, gramophones, Bollywood posters, bronze lamps, and colonial furniture.",
       },

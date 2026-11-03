@@ -1488,9 +1488,9 @@
     "latitude": 18.9592,
     "longitude": 72.829,
     "rating": 4.8,
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Chor_Bazaar_Mumbai.jpg/1280px-Chor_Bazaar_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/chor-bazaar.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Chor_Bazaar_Mumbai.jpg/1280px-Chor_Bazaar_Mumbai.jpg"
+      "/images/maharashtra/chor-bazaar.jpg"
     ],
     "tags": [
       "antiques",

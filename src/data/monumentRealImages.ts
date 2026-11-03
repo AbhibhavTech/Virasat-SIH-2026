@@ -173,6 +173,12 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'elephanta': '/images/maharashtra/elephanta-caves.jpg',
   'elephanta-caves-mumbai': '/images/maharashtra/elephanta-caves.jpg',
   'gharapuri-caves': '/images/maharashtra/elephanta-caves.jpg',
+  'IN-MH-MUM-ATT-036': '/images/maharashtra/chor-bazaar.jpg',
+  'mumbai-chor-bazaar': '/images/maharashtra/chor-bazaar.jpg',
+  'chor-bazaar': '/images/maharashtra/chor-bazaar.jpg',
+  'chor-bazar': '/images/maharashtra/chor-bazaar.jpg',
+  'chor-bazaar-mumbai': '/images/maharashtra/chor-bazaar.jpg',
+  'mutton-street-chor-bazaar': '/images/maharashtra/chor-bazaar.jpg',
   'mh-csmt': '/images/maharashtra/csmt-mumbai.png',
   'basilica-of-bom-jesus': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/1280px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg',
 
