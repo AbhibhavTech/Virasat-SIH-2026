@@ -2169,9 +2169,9 @@
     "latitude": 19.1558,
     "longitude": 72.8845,
     "rating": 4.9,
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Aarey_Forest_Canopy.jpg/1280px-Aarey_Forest_Canopy.jpg",
+    "thumbnail_url": "/images/maharashtra/aarey-colony.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Aarey_Forest_Canopy.jpg/1280px-Aarey_Forest_Canopy.jpg"
+      "/images/maharashtra/aarey-colony.jpg"
     ],
     "tags": [
       "Urban Green Lung",

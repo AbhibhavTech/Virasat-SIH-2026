@@ -654,8 +654,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "Open 24 Hours for transit roads; best daytime exploring 06:00–18:00",
         fee: { domestic: "Free (Toll may apply for private vehicles)", foreign: "Free" },
         isHiddenGem: true,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Aarey_Forest_Canopy.jpg/1280px-Aarey_Forest_Canopy.jpg",
-        photoCredit: "Wikimedia Commons / Aarey Forest Green Canopy & Rolling Hills",
+        image: "/images/maharashtra/aarey-colony.jpg",
+        photoCredit: "Virasat Verified Heritage Archive / Aarey Milk Colony Forest & Dairy Buffalo Pastures",
         summary:
           "A massive green lung filled with dense canopies, tribal hamlets, hidden streams, and plant nurseries, right next to the Sanjay Gandhi National Park. Home to wild leopards, spotted deer, and rare biodiversity.",
       },

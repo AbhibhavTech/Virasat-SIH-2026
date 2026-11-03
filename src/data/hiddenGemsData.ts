@@ -238,7 +238,7 @@ export const VERIFIED_HIDDEN_GEMS: HiddenGemItem[] = [
     century: 'Est. 1949',
     category: 'Urban Green Lung & Forest Canopy',
     whyInteresting: "A massive green lung filled with dense canopies, tribal hamlets, hidden streams, and plant nurseries, right next to the Sanjay Gandhi National Park. Home to wild leopards, spotted deer, and rare biodiversity.",
-    thumbnailUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Aarey_Forest_Canopy.jpg/1280px-Aarey_Forest_Canopy.jpg',
+    thumbnailUrl: '/images/maharashtra/aarey-colony.jpg',
     tags: ["Urban Green Lung", "Rainforest Canopy", "Tribal Hamlets", "Wildlife Corridor", "Goregaon"],
     bestTimeToVisit: 'Open 24 Hours for transit roads; best daytime exploring 06:00–18:00',
     accessTips: '3 km from Goregaon Railway Station (Western Line) or Western Express Highway.',

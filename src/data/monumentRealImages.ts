@@ -201,6 +201,13 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'madh-island-fort': '/images/maharashtra/madh-fort.jpg',
   'mh-gem-madh-fort': '/images/maharashtra/madh-fort.jpg',
   'madh-fort-mumbai': '/images/maharashtra/madh-fort.jpg',
+  'IN-MH-MUM-GEM-013': '/images/maharashtra/aarey-colony.jpg',
+  'mumbai-gem-aarey-colony': '/images/maharashtra/aarey-colony.jpg',
+  'aarey-colony': '/images/maharashtra/aarey-colony.jpg',
+  'aarey-milk-colony': '/images/maharashtra/aarey-colony.jpg',
+  'aarey-forest': '/images/maharashtra/aarey-colony.jpg',
+  'mumbai-aarey-forest': '/images/maharashtra/aarey-colony.jpg',
+  'aarey-milk-colony-mumbai': '/images/maharashtra/aarey-colony.jpg',
   'mh-csmt': '/images/maharashtra/csmt-mumbai.png',
   'basilica-of-bom-jesus': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/1280px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg',
 
