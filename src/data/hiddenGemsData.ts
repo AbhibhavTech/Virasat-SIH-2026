@@ -187,7 +187,7 @@ export const VERIFIED_HIDDEN_GEMS: HiddenGemItem[] = [
     century: '19th Century (1875 AD)',
     category: 'Historic Commercial Wet Dock',
     whyInteresting: "One of Mumbai's oldest historic wet docks; visiting at dawn offers an unfiltered, vibrant look at the city's commercial fishing industry, traditional auctions, colorful wooden trawlers, and vibrant St+art street art murals.",
-    thumbnailUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Sassoon_Docks_Mumbai.jpg/1280px-Sassoon_Docks_Mumbai.jpg',
+    thumbnailUrl: '/images/maharashtra/sassoon-dock.jpg',
     tags: ["Historic Dock", "Koli Fishery", "Early Morning Auction", "Street Art Murals", "Colaba"],
     bestTimeToVisit: '04:30–12:00 (Peak fish auctions 05:00–07:30 AM)',
     accessTips: '1.5 km south of Gateway of India on Colaba Causeway.',

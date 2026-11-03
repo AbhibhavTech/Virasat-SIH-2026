@@ -1614,9 +1614,9 @@
     "latitude": 18.915,
     "longitude": 72.826,
     "rating": 4.8,
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Sassoon_Docks_Mumbai.jpg/1280px-Sassoon_Docks_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/sassoon-dock.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Sassoon_Docks_Mumbai.jpg/1280px-Sassoon_Docks_Mumbai.jpg"
+      "/images/maharashtra/sassoon-dock.jpg"
     ],
     "tags": [
       "docks",
@@ -2040,9 +2040,9 @@
     "latitude": 18.915,
     "longitude": 72.826,
     "rating": 4.9,
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Sassoon_Docks_Mumbai.jpg/1280px-Sassoon_Docks_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/sassoon-dock.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Sassoon_Docks_Mumbai.jpg/1280px-Sassoon_Docks_Mumbai.jpg"
+      "/images/maharashtra/sassoon-dock.jpg"
     ],
     "tags": [
       "Historic Dock",

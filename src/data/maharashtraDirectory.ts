@@ -582,8 +582,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "04:30–12:00 (Peak fish auctions 05:00–07:30 AM)",
         fee: { domestic: "Free", foreign: "Free" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Sassoon_Docks_Mumbai.jpg/1280px-Sassoon_Docks_Mumbai.jpg",
-        photoCredit: "Wikimedia Commons / Sassoon Docks Fishing Trawlers at Sunrise",
+        image: "/images/maharashtra/sassoon-dock.jpg",
+        photoCredit: "Virasat Verified Heritage Archive / Sassoon Docks Wholesale Fish Market & Harbor",
         summary:
           "One of Mumbai's oldest historic wet docks, offering an intense look at the city's commercial fishing industry at dawn with colorful boats, fresh fish auctions, and vibrant street art murals.",
       },

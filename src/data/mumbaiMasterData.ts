@@ -2256,10 +2256,10 @@ export const MUMBAI_ATTRACTIONS: MumbaiAttraction[] = [
       "lat": 18.915,
       "lng": 72.826
     },
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Sassoon_Docks_Mumbai.jpg/1280px-Sassoon_Docks_Mumbai.jpg",
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Sassoon_Docks_Mumbai.jpg/1280px-Sassoon_Docks_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/sassoon-dock.jpg",
+    "image_url": "/images/maharashtra/sassoon-dock.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Sassoon_Docks_Mumbai.jpg/1280px-Sassoon_Docks_Mumbai.jpg"
+      "/images/maharashtra/sassoon-dock.jpg"
     ],
     "section": "heritage",
     "source_url": "https://maharashtratourism.gov.in",
