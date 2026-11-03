@@ -146,8 +146,8 @@ export const GUJARAT_DIRECTORY: GujaratCity[] = [
         timings: '09:00–18:00',
         fee: { domestic: 'Free', foreign: 'Free' },
         isHiddenGem: true,
-        image: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Sarkhej_Roza_Ahmedabad.jpg/1280px-Sarkhej_Roza_Ahmedabad.jpg',
-        photoCredit: 'Wikimedia Commons / Sarkhej Roza Ensemble',
+        image: '/images/gujarat/sarkhej-roza.jpg',
+        photoCredit: 'Virasat High-Resolution Heritage Archive / Sarkhej Roza',
         summary:
           'Elegant 15th-century Sufi mosque and royal tomb complex surrounding a serene artificial lake in Makba.',
       },
