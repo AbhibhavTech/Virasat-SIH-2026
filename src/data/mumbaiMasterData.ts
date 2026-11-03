@@ -1416,10 +1416,10 @@ export const MUMBAI_ATTRACTIONS: MumbaiAttraction[] = [
       "lat": 18.9287,
       "lng": 72.8315
     },
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Keneseth_Eliyahoo_Synagogue_Mumbai.jpg/1280px-Keneseth_Eliyahoo_Synagogue_Mumbai.jpg",
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Keneseth_Eliyahoo_Synagogue_Mumbai.jpg/1280px-Keneseth_Eliyahoo_Synagogue_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/keneseth-eliyahoo-synagogue.jpg",
+    "image_url": "/images/maharashtra/keneseth-eliyahoo-synagogue.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Keneseth_Eliyahoo_Synagogue_Mumbai.jpg/1280px-Keneseth_Eliyahoo_Synagogue_Mumbai.jpg"
+      "/images/maharashtra/keneseth-eliyahoo-synagogue.jpg"
     ],
     "section": "religious_cultural",
     "source_url": "https://maharashtratourism.gov.in",

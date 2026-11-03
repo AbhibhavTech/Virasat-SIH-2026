@@ -402,8 +402,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "09:30–18:00 (Visitors welcome; respectful dress required)",
         fee: { domestic: "Free", foreign: "Free" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Keneseth_Eliyahoo_Synagogue_Mumbai.jpg/1280px-Keneseth_Eliyahoo_Synagogue_Mumbai.jpg",
-        photoCredit: "Wikimedia Commons / Keneseth Eliyahoo Stained Glass & Blue Façade",
+        image: "/images/maharashtra/keneseth-eliyahoo-synagogue.jpg",
+        photoCredit: "Virasat Verified Heritage Archive / Keneseth Eliyahoo Classical Restored Façade",
         summary:
           "A stunning bright-blue historic 19th-century Jewish house of worship, founded in 1884. Famed for its Victorian stained glass windows, brass chandeliers, and authentic Baghdadi Jewish heritage.",
       },

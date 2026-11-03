@@ -68,7 +68,7 @@ export const VERIFIED_HIDDEN_GEMS: HiddenGemItem[] = [
     century: '19th Century AD (1884)',
     category: 'Historic Jewish Sanctuary',
     whyInteresting: "A stunning 19th-century bright blue Jewish house of worship featuring stained glass windows and Victorian woodwork, preserving the rich historical tapestry of Mumbai's Baghdadi Jewish community.",
-    thumbnailUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Keneseth_Eliyahoo_Synagogue_Mumbai.jpg/1280px-Keneseth_Eliyahoo_Synagogue_Mumbai.jpg',
+    thumbnailUrl: '/images/maharashtra/keneseth-eliyahoo-synagogue.jpg',
     tags: ["Synagogue", "Baghdadi Jewish", "Stained Glass", "Kala Ghoda"],
     bestTimeToVisit: '09:30–18:00 (Respectful attire required)',
     accessTips: 'Located at Kala Ghoda; 1 km from Churchgate Station.',
