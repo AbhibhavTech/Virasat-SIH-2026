@@ -59,7 +59,7 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
     tagline: "Colonial Victorian Gothic UNESCO wonders, bustling marine promenades & 24/7 street life",
     accentColor: "#C2410C",
     bgGradient: "from-amber-50 via-orange-50/40 to-stone-50/30",
-    coverImage: "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80",
+    coverImage: "/images/maharashtra/gateway-of-india.png",
     photoCredit: "Discover Bharat Contributor / Gateway of India Basalt Arch",
     flashcardBlurb:
       "India's financial powerhouse, entertainment capital, and coastal megacity, blending Victorian Gothic architecture, art deco streetscapes, thriving coastal biodiversity, and deep-rooted heritage enclaves.",
@@ -841,7 +841,7 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
     tagline: "UNESCO wonders of Ajanta & Ellora, monolithic Kailasa temple & medieval Daulatabad fortifications",
     accentColor: "#9333EA",
     bgGradient: "from-purple-50 via-indigo-50/40 to-stone-50/30",
-    coverImage: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Ajanta_%2863%29.jpg",
+    coverImage: "/images/maharashtra/ajanta-caves.jpg",
     photoCredit: "Wikimedia Commons / Ajanta Caves Panorama",
     flashcardBlurb:
       "The historic gateway to world-famous UNESCO rock-cut wonders, medieval fortresses, and architectural marvels like the Taj-inspired Bibi Ka Maqbara.",
@@ -1060,7 +1060,7 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
     tagline: "Dramatic monsoon waterfalls, mist-shrouded ghats, ancient Buddhist caves & crunchy walnut chikki",
     accentColor: "#0284C7",
     bgGradient: "from-sky-50 via-cyan-50/40 to-stone-50/30",
-    coverImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Karla_Caves_Chaitya_Interior.jpg/1280px-Karla_Caves_Chaitya_Interior.jpg",
+    coverImage: "/images/maharashtra/karla-bhaja-caves.jpg",
     photoCredit: "Wikimedia Commons / Karla Caves Chaitya",
     flashcardBlurb:
       "The ultimate twin hill stations of the Western Ghats, famous for dramatic mist-covered valleys, roaring monsoon waterfalls, ancient rock-cut caves, and crunchy chikki.",
@@ -1267,8 +1267,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
     tagline: "Ancient Kumbh Mela bathing ghats, sacred Trimbakeshwar Jyotirlinga & sun-drenched vineyards",
     accentColor: "#854D0E",
     bgGradient: "from-yellow-50 via-amber-50/40 to-stone-50/30",
-    coverImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Sula_Vineyards_Nashik.jpg/1280px-Sula_Vineyards_Nashik.jpg",
-    photoCredit: "Wikimedia Commons / Sula Vineyards Nashik",
+    coverImage: "/images/maharashtra/sula-vineyards.jpg",
+    photoCredit: "Virasat Verified / Authentic Sula Vineyards Estate & Hills, Nashik",
     flashcardBlurb:
       "The 'Wine Capital of India' set along the holy Godavari River, balancing ancient temple towns with expansive rolling vineyard estates.",
     topStays: [
@@ -1321,8 +1321,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "05:30–22:00",
         fee: { domestic: "Free", foreign: "Free" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Kalaram_Temple_Nashik.jpg/1280px-Kalaram_Temple_Nashik.jpg",
-        photoCredit: "Wikimedia Commons / Kalaram Temple",
+        image: "/images/maharashtra/kalaram-temple.jpg",
+        photoCredit: "Virasat Verified / Authentic Kalaram Black Stone Temple, Panchavati Nashik",
         summary:
           "An 18th-century temple built entirely of jet-black polished stone by Sardar Odhekar on the sacred spot where Lord Rama, Sita, and Lakshmana stayed during their Panchavati exile. Located near Ramkund, the epicenter of the Simhastha Kumbh Mela.",
       },
@@ -1333,8 +1333,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "11:30–22:00",
         fee: { domestic: "Tours start ~INR 500–1,000 per head", foreign: "Tours start ~INR 500–1,000 per head" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Sula_Vineyards_Nashik.jpg/1280px-Sula_Vineyards_Nashik.jpg",
-        photoCredit: "Wikimedia Commons / Sula Vineyards",
+        image: "/images/maharashtra/sula-vineyards.jpg",
+        photoCredit: "Virasat Verified / Authentic Sula Vineyards Viticulture Estate, Nashik",
         summary:
           "India's pioneering commercial winery established in 1999 along the Gangapur Dam backwaters. Offers guided estate walks through grape vineyards, barrel aging cellar tours, wine appreciation sessions, and alfresco vineyard bistros.",
       },
@@ -1345,8 +1345,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "05:30–21:00",
         fee: { domestic: "Free (Special VIP darshan queues optional)", foreign: "Free" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Trimbakeshwar_Temple.jpg/1280px-Trimbakeshwar_Temple.jpg",
-        photoCredit: "Wikimedia Commons / Trimbakeshwar Temple",
+        image: "/images/maharashtra/trimbakeshwar-temple.jpg",
+        photoCredit: "Virasat Verified / Authentic Trimbakeshwar Jyotirlinga, Brahmagiri Nashik",
         summary:
           "Ancient black basalt stone temple situated 28 km from Nashik at the foothills of Brahmagiri mountain, where the sacred Godavari River originates. Houses a unique three-faced lingam embodying Brahma, Vishnu, and Shiva.",
       },
@@ -1357,8 +1357,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "08:00–18:00",
         fee: { domestic: "INR 25", foreign: "INR 300" },
         isHiddenGem: true,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Pandavleni_Caves_Cave_3.jpg/1280px-Pandavleni_Caves_Cave_3.jpg",
-        photoCredit: "Wikimedia Commons / Pandavleni Caves",
+        image: "/images/maharashtra/pandavleni-caves.jpg",
+        photoCredit: "Virasat Verified / Authentic Rock-Cut Monasteries at Pandavleni Caves, Nashik",
         summary:
           "A group of 24 rock-cut Buddhist caves dating from the 1st century BCE to the 3rd century CE, carved into the Trirashmi hills. Features pristine Hinayana prayer halls, water cisterns, and rare Brahmi inscriptions chronicling ancient royal patrons.",
       },
@@ -1372,7 +1372,7 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
     tagline: "Shakti Peetha blessings, royal Chhatrapati Shahu palaces, leather chappals & fiery Tambaada Rassa",
     accentColor: "#DC2626",
     bgGradient: "from-red-50 via-rose-50/40 to-stone-50/30",
-    coverImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Mahalaxmi_Temple_Kolhapur.jpg/1280px-Mahalaxmi_Temple_Kolhapur.jpg",
+    coverImage: "/images/maharashtra/mahalaxmi-temple-kolhapur.jpg",
     photoCredit: "Wikimedia Commons / Mahalaxmi Ambabai Temple",
     flashcardBlurb:
       "A historic Maratha city known for its royal heritage, spicy culinary traditions (Kolhapuri Misal & Tambaada/Pandhra Rassa), intricate handicrafts, and the revered Mahalaxmi Temple.",
@@ -1421,8 +1421,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "04:00–22:00",
         fee: { domestic: "Free", foreign: "Free" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Mahalaxmi_Temple_Kolhapur.jpg/1280px-Mahalaxmi_Temple_Kolhapur.jpg",
-        photoCredit: "Wikimedia Commons / Mahalaxmi Temple Kolhapur",
+        image: "/images/maharashtra/mahalaxmi-temple-kolhapur.jpg",
+        photoCredit: "Virasat Verified / Authentic Shree Ambabai Mahalaxmi Temple, Kolhapur",
         summary:
           "One of the 51 sacred Shakti Peethas in India, constructed in the 7th century by the Chalukya dynasty. Houses a majestic 40-kg single-piece black stone idol of Goddess Ambabai. Celebrated for the biannual 'Kiranotsav' festival when rays of the setting sun fall directly on the deity's face.",
       },
@@ -1433,8 +1433,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "09:30–18:00",
         fee: { domestic: "INR 20", foreign: "INR 50" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/New_Palace_Kolhapur.jpg/1280px-New_Palace_Kolhapur.jpg",
-        photoCredit: "Wikimedia Commons / New Palace Kolhapur",
+        image: "/images/maharashtra/new-palace-kolhapur.jpg",
+        photoCredit: "Virasat Verified / Authentic Chhatrapati Shahu New Palace Museum, Kolhapur",
         summary:
           "Stately black-and-pink polished basalt palace completed in 1884, designed by British architect Charles Mant. The ground floor houses the Chhatrapati Shahu Museum, exhibiting personal royal armaments (including swords of Aurangzeb), silver thrones, hunting trophies, and Maratha historical documents.",
       },
@@ -1445,8 +1445,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "Open 24 hours",
         fee: { domestic: "Free", foreign: "Free" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Rankala_Lake_Kolhapur.jpg/1280px-Rankala_Lake_Kolhapur.jpg",
-        photoCredit: "Wikimedia Commons / Rankala Lake",
+        image: "/images/maharashtra/rankala-lake.jpg",
+        photoCredit: "Virasat Verified / Authentic Rankala Lake & Sandhya Mandap Promenade, Kolhapur",
         summary:
           "A picturesque lake dating back to 9th-century stone quarries, transformed into an urban oasis with the historic Sandhya Mandap temple and the Shalini Palace along its edge. Features paved evening promenades, boat rides, and street stalls serving spicy Bhel.",
       },
@@ -1457,8 +1457,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "08:00–18:00",
         fee: { domestic: "Free", foreign: "Free" },
         isHiddenGem: true,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Panhala_Fort_Teen_Darwaza.jpg/1280px-Panhala_Fort_Teen_Darwaza.jpg",
-        photoCredit: "Wikimedia Commons / Panhala Fort Teen Darwaza",
+        image: "/images/maharashtra/panhala-fort.jpg",
+        photoCredit: "Virasat Verified / Authentic Historic Ramparts at Panhala Fort, Kolhapur",
         summary:
           "Massive hill fortress situated 20 km from Kolhapur, with a perimeter of 14 km. Historically celebrated as the fortress where Chhatrapati Shivaji Maharaj was besieged by Siddi Jauhar, escaping in a daring midnight mist trek to Vishalgad through Pavankhind, valiantly defended by Baji Prabhu Deshpande.",
       },
