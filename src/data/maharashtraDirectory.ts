@@ -606,8 +606,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "09:00–17:30 (Open daily)",
         fee: { domestic: "Free (ASI Protected)", foreign: "Free (ASI Protected)" },
         isHiddenGem: true,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Mahakali_Caves_Mumbai.jpg/1280px-Mahakali_Caves_Mumbai.jpg",
-        photoCredit: "Wikimedia Commons / Mahakali Rock-Cut Buddhist Caves",
+        image: "/images/maharashtra/mahakali-caves.png",
+        photoCredit: "Virasat Verified Heritage Archive / Mahakali Rock-Cut Buddhist Cave Complex",
         summary:
           "Ancient rock-cut Buddhist and Hindu cave shrines tucked away amid modern apartment blocks, dating back to the 1st to 6th centuries BCE. Mahakali comprises 19 rock-cut Buddhist viharas, while Jogeshwari houses one of India's earliest Hindu cave temples with monumental Shiva sculptures.",
       },

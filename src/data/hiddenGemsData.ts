@@ -119,7 +119,7 @@ export const VERIFIED_HIDDEN_GEMS: HiddenGemItem[] = [
     century: '1st Century BCE – 6th Century CE',
     category: 'Ancient Rock-Cut Sanctuaries',
     whyInteresting: "Ancient rock-cut Buddhist and Hindu cave shrines tucked away amid modern apartment blocks, dating back to the 1st to 6th centuries BCE. Mahakali comprises 19 rock-cut Buddhist viharas, while Jogeshwari houses one of India's earliest Hindu cave temples with monumental Shiva sculptures.",
-    thumbnailUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Mahakali_Caves_Mumbai.jpg/1280px-Mahakali_Caves_Mumbai.jpg',
+    thumbnailUrl: '/images/maharashtra/mahakali-caves.png',
     tags: ["Ancient Caves", "Buddhist Vihara", "Rock-Cut", "Shiva Shrine", "Jogeshwari"],
     bestTimeToVisit: '09:00–17:30 (Open daily)',
     accessTips: '2 km from Western Express Highway Metro and Jogeshwari Railway Station.',

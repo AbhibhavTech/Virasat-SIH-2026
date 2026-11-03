@@ -1868,9 +1868,9 @@
     "latitude": 19.1302,
     "longitude": 72.8715,
     "rating": 4.9,
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Mahakali_Caves_Mumbai.jpg/1280px-Mahakali_Caves_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/mahakali-caves.png",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Mahakali_Caves_Mumbai.jpg/1280px-Mahakali_Caves_Mumbai.jpg"
+      "/images/maharashtra/mahakali-caves.png"
     ],
     "tags": [
       "Ancient Caves",
