@@ -1,631 +1,1640 @@
 [
   {
-    "id": "gateway-of-india",
-    "name": "Gateway of India",
-    "state": "Maharashtra",
+    "id": "mumbai-gateway-of-india",
+    "name": "Gateway of India (Colaba)",
     "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
     "country": "India",
-    "category": "heritage",
-    "summary": "Iconic 20th-century arch monument overlooking the Arabian Sea in Apollo Bunder.",
-    "description": "The Gateway of India is an arch-monument built in the early 20th century in Mumbai. Erected to commemorate the landing of King George V and Queen Mary at Apollo Bunder on their visit to India in 1911, the structure is an Indo-Saracenic triumphal arch crafted from yellow basalt and reinforced concrete.",
-    "history": "Designed by Scottish architect George Wittet, construction was completed in 1924. It later served as the ceremonial departure point for the last British troops leaving India following independence in 1948.",
-    "culture": "A bustling gathering point for locals and international travelers, flanked by the historic Taj Mahal Palace Hotel. It is also the principal embarkation point for ferries to Elephanta Island.",
+    "category": "monuments",
+    "summary": "Built in 1911 to commemorate the royal visit of King George V and Queen Mary. A 26-meter grand basalt triumphal arch overlooking Mumbai Harbour, serving as the ceremonial entrance to India and ferry launch point for Elephanta Caves.",
+    "description": "Built in 1911 to commemorate the royal visit of King George V and Queen Mary. A 26-meter grand basalt triumphal arch overlooking Mumbai Harbour, serving as the ceremonial entrance to India and ferry launch point for Elephanta Caves. Designed by Scottish architect George Wittet, combining Indo-Saracenic, 16th-century Gujarati architectural elements, and Roman triumphal arch motifs. Completed in 1924, it served as the ceremonial exit point for the last British troops departing independent India in 1948.",
     "coordinates": {
-      "lat": 18.9220,
+      "lat": 18.922,
       "lng": 72.8347
     },
-    "rating": 4.7,
-    "thumbnail_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f",
-    "best_time_to_visit": "October to March (early morning or sunset)",
-    "visiting_hours": "Open 24 Hours",
-    "entry_fee": {
-      "domestic": 0.0,
-      "international": 0.0,
-      "currency": "INR"
-    },
-    "visiting_info": {
-      "best_time_to_visit": "October to March (early morning or sunset)",
-      "visiting_hours": "Open 24 Hours",
-      "recommended_duration": "1 - 2 hours",
-      "tips": [
-        "Visit during early sunrise or sunset for ideal photography light.",
-        "Catch the Elephanta Caves ferry directly from Jetty No. 1.",
-        "Keep belongings secure in crowded waterfront zones."
-      ]
-    },
-    "images": [
-      "https://images.unsplash.com/photo-1570168007204-dfb528c6958f",
-      "https://images.unsplash.com/photo-1588714477688-cf28a50e94f7"
-    ],
-    "model_3d": {
-      "has_model": true,
-      "model_url": "/models/gateway-of-india.glb",
-      "available": true,
-      "type": "detailed_photogrammetry",
-      "asset": "/models/gateway-of-india.glb"
-    },
-    "tags": ["heritage", "monument", "coastal", "landmark", "mumbai", "british-era", "3d-available"],
-    "features": {
-      "map": true,
-      "navigation": true,
-      "ai": true,
-      "3d": true
-    }
-  },
-  {
-    "id": "marine-drive",
-    "name": "Marine Drive",
-    "state": "Maharashtra",
-    "city": "Mumbai",
-    "country": "India",
-    "category": "coastal",
-    "summary": "Famous 3.6-kilometer seaside promenade known as the Queen's Necklace.",
-    "description": "Marine Drive is a 3.6-kilometre-long boulevard in South Mumbai, curving along the natural Arabian Sea bay. Lined with palm trees and classic Art Deco buildings, it is one of the world's most celebrated urban waterfront promenades.",
-    "history": "Constructed as part of the Backbay Reclamation scheme in the late 1920s and 1930s. The Art Deco buildings facing the sea form part of the UNESCO World Heritage Victorian Gothic and Art Deco Ensembles of Mumbai.",
-    "culture": "The heartbeat of Mumbai evening life, where residents and visitors gather on the promenade tetrapods to enjoy cool sea breezes, sunset vistas, and street snacks.",
-    "coordinates": {
-      "lat": 18.9431,
-      "lng": 72.8230
-    },
+    "latitude": 18.922,
+    "longitude": 72.8347,
     "rating": 4.8,
-    "thumbnail_url": "https://images.unsplash.com/photo-1567157577867-05ccb1388e66",
-    "best_time_to_visit": "October to March (5:00 PM - 9:00 PM)",
-    "visiting_hours": "Open 24 Hours",
-    "entry_fee": {
-      "domestic": 0.0,
-      "international": 0.0,
-      "currency": "INR"
-    },
-    "visiting_info": {
-      "best_time_to_visit": "October to March (5:00 PM - 9:00 PM)",
-      "visiting_hours": "Open 24 Hours",
-      "recommended_duration": "2 - 3 hours",
-      "tips": [
-        "Take a walking stroll from Nariman Point to Girgaon Chowpatty.",
-        "Observe the streetlights illuminating the bay like the Queen's Necklace at night."
-      ]
-    },
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Mumbai_03-2016_30_Gateway_of_India.jpg/1280px-Mumbai_03-2016_30_Gateway_of_India.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1567157577867-05ccb1388e66"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3a/Mumbai_03-2016_30_Gateway_of_India.jpg/1280px-Mumbai_03-2016_30_Gateway_of_India.jpg"
     ],
-    "model_3d": {
-      "has_model": false,
-      "available": false
-    },
-    "tags": ["coastal", "promenade", "sunset", "queens-necklace", "mumbai", "art-deco", "walking"],
+    "tags": [
+      "heritage",
+      "colonial",
+      "monument",
+      "waterfront",
+      "colaba",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
     "features": {
       "map": true,
       "navigation": true,
       "ai": true,
       "3d": false
-    }
+    },
+    "opening_hours": "Open 24 Hours",
+    "entry_fee": "Free",
+    "verification_status": "VERIFIED"
   },
   {
-    "id": "csmt",
-    "name": "Chhatrapati Shivaji Maharaj Terminus",
-    "state": "Maharashtra",
+    "id": "mumbai-csmt",
+    "name": "Chhatrapati Shivaji Maharaj Terminus (CSMT)",
     "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
     "country": "India",
     "category": "heritage",
-    "summary": "UNESCO World Heritage railway terminus exhibiting High Victorian Gothic Revival architecture.",
-    "description": "Chhatrapati Shivaji Maharaj Terminus (CSMT), formerly Victoria Terminus, is an outstanding example of Victorian Gothic Revival architecture in India, blended with themes deriving from Indian traditional architecture.",
-    "history": "Designed by British architect F. W. Stevens and opened in 1887 to mark Queen Victoria's Golden Jubilee. It was declared a UNESCO World Heritage Site in 2004.",
-    "culture": "The bustling nerve center of Mumbai's Suburban Railway network, accommodating over 3 million daily commuters with its towering dome, stone carvings, and gargoyles.",
+    "summary": "A UNESCO World Heritage railway masterpiece showcasing Victorian Gothic architecture fused with traditional Indian palace features. Anchored by a monumental stone dome, pointed arches, stained glass, and intricate stone carvings.",
+    "description": "A UNESCO World Heritage railway masterpiece showcasing Victorian Gothic architecture fused with traditional Indian palace features. Anchored by a monumental stone dome, pointed arches, stained glass, and intricate stone carvings. Designed by British architect F.W. Stevens and completed in 1887 to mark Queen Victoria's Golden Jubilee. Originally Victoria Terminus, it was renamed in 1996 in honor of Chhatrapati Shivaji Maharaj and inscribed on the UNESCO World Heritage List in 2004.",
     "coordinates": {
-      "lat": 18.9400,
-      "lng": 72.8353
+      "lat": 18.9398,
+      "lng": 72.8355
     },
-    "rating": 4.7,
-    "thumbnail_url": "https://images.unsplash.com/photo-1566552881560-0be862a7c445",
-    "best_time_to_visit": "Year-round (illuminated beautifully after 7:00 PM)",
-    "visiting_hours": "Open 24 Hours (Heritage Gallery: 10:00 AM - 05:00 PM weekdays)",
-    "entry_fee": {
-      "domestic": 0.0,
-      "international": 0.0,
-      "currency": "INR"
-    },
-    "visiting_info": {
-      "best_time_to_visit": "Year-round (illuminated beautifully after 7:00 PM)",
-      "visiting_hours": "Open 24 Hours",
-      "recommended_duration": "1 hour",
-      "tips": [
-        "View the grand exterior facade illuminated in dynamic colors during evening hours.",
-        "Take a guided heritage tour of the central dome and station museum."
-      ]
-    },
+    "latitude": 18.9398,
+    "longitude": 72.8355,
+    "rating": 4.8,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Chhatrapati_Shivaji_Maharaj_Terminus_Mumbai.jpg/1280px-Chhatrapati_Shivaji_Maharaj_Terminus_Mumbai.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1566552881560-0be862a7c445"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Chhatrapati_Shivaji_Maharaj_Terminus_Mumbai.jpg/1280px-Chhatrapati_Shivaji_Maharaj_Terminus_Mumbai.jpg"
     ],
-    "model_3d": {
-      "has_model": false,
-      "available": false
-    },
-    "tags": ["heritage", "unesco", "railway", "architecture", "victorian-gothic", "mumbai"],
+    "tags": [
+      "unesco",
+      "heritage",
+      "victorian gothic",
+      "railway",
+      "architecture",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
     "features": {
       "map": true,
       "navigation": true,
       "ai": true,
       "3d": false
-    }
+    },
+    "opening_hours": "Open 24 Hours (Heritage Museum 15:00–17:00 Mon–Fri)",
+    "entry_fee": "Free (Heritage Gallery entry INR 85)",
+    "verification_status": "VERIFIED"
   },
   {
-    "id": "elephanta-caves",
-    "name": "Elephanta Caves",
-    "state": "Maharashtra",
+    "id": "mumbai-taj-mahal-palace",
+    "name": "The Taj Mahal Palace Hotel (Colaba)",
     "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
     "country": "India",
     "category": "heritage",
-    "summary": "UNESCO World Heritage rock-cut cave temples dedicated to Lord Shiva on Elephanta Island.",
-    "description": "The Elephanta Caves are a collection of cave temples predominantly dedicated to the Hindu god Shiva, situated on Elephanta Island in Mumbai Harbour. They consist of five Hindu caves and a few Buddhist stupa mounds dating back to the 5th to 6th century CE.",
-    "history": "Carved between the 5th and 8th centuries under the Kalachuri and Rashtrakuta dynasties. Designated a UNESCO World Heritage Site in 1987, featuring the renowned 20-foot high Trimurti sculpture.",
-    "culture": "A serene historical contrast to urban Mumbai, accessible via an enjoyable 1-hour ferry cruise across Mumbai Harbour.",
+    "summary": "The iconic 1903 luxury legacy hotel facing the harbor. Built by pioneering Indian industrialist Jamsetji Tata, it stands as a legendary symbol of Indian hospitality, architectural grandeur, and resilience.",
+    "description": "The iconic 1903 luxury legacy hotel facing the harbor. Built by pioneering Indian industrialist Jamsetji Tata, it stands as a legendary symbol of Indian hospitality, architectural grandeur, and resilience. Opened on December 16, 1903, designed by Indian architects Sitaram Khanderao Vaidya and D.N. Mirza with English engineer W.A. Chambers. Blending Moorish, Oriental, and Florentine styles, it was the first hotel in India to have electricity, American fans, and German elevators.",
     "coordinates": {
-      "lat": 18.9633,
-      "lng": 72.9315
+      "lat": 18.9217,
+      "lng": 72.8332
     },
-    "rating": 4.6,
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e42e5e8e",
-    "best_time_to_visit": "November to March",
-    "visiting_hours": "09:00 AM - 05:30 PM (Closed on Mondays)",
-    "entry_fee": {
-      "domestic": 40.0,
-      "international": 600.0,
-      "currency": "INR"
-    },
-    "visiting_info": {
-      "best_time_to_visit": "November to March",
-      "visiting_hours": "09:00 AM - 05:30 PM (Closed on Mondays)",
-      "recommended_duration": "4 - 5 hours (including ferry travel)",
-      "tips": [
-        "Ferries operate from Gateway of India between 9:00 AM and 2:00 PM.",
-        "Wear comfortable trekking shoes for the island stone stairway."
-      ]
-    },
+    "latitude": 18.9217,
+    "longitude": 72.8332,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1200&auto=format&fit=crop&q=80",
     "images": [
-      "https://images.unsplash.com/photo-1600100397608-f010e42e5e8e"
+      "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1200&auto=format&fit=crop&q=80"
     ],
-    "model_3d": {
-      "has_model": false,
-      "available": false
-    },
-    "tags": ["heritage", "unesco", "caves", "ancient", "sculptures", "ferry-trip"],
+    "tags": [
+      "heritage",
+      "hotel",
+      "architecture",
+      "colaba",
+      "luxury",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
     "features": {
       "map": true,
       "navigation": true,
       "ai": true,
       "3d": false
-    }
+    },
+    "opening_hours": "Open 24 Hours",
+    "entry_fee": "Free exterior viewing",
+    "verification_status": "VERIFIED"
   },
   {
-    "id": "kanheri-caves",
-    "name": "Kanheri Caves",
-    "state": "Maharashtra",
+    "id": "mumbai-high-court-rajabai",
+    "name": "Bombay High Court & Rajabai Clock Tower",
     "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "monuments",
+    "summary": "Stunning neo-Gothic structures modeled after London’s Big Ben, flanking the historic Oval Maidan. Part of the UNESCO-inscribed Victorian Gothic and Art Deco Ensembles of Mumbai.",
+    "description": "Stunning neo-Gothic structures modeled after London’s Big Ben, flanking the historic Oval Maidan. Part of the UNESCO-inscribed Victorian Gothic and Art Deco Ensembles of Mumbai. The High Court was designed by Col. J.A. Fuller in 1878 in early English Gothic style. Flanking it stands the 85-meter Rajabai Clock Tower, designed by Sir George Gilbert Scott and financed by cotton king Premchand Roychand in memory of his mother Rajabai.",
+    "coordinates": {
+      "lat": 18.9298,
+      "lng": 72.8301
+    },
+    "latitude": 18.9298,
+    "longitude": 72.8301,
+    "rating": 4.8,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Rajabai_Clock_Tower_2019.jpg/1280px-Rajabai_Clock_Tower_2019.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Rajabai_Clock_Tower_2019.jpg/1280px-Rajabai_Clock_Tower_2019.jpg"
+    ],
+    "tags": [
+      "unesco",
+      "gothic",
+      "clock tower",
+      "architecture",
+      "fort",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "Court: 10:00–17:00 (Mon–Fri); Tower exterior visible from Oval Maidan 06:00–21:00",
+    "entry_fee": "Free to view from Oval Maidan",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-asiatic-society",
+    "name": "Asiatic Society of Mumbai / Town Hall",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "monuments",
+    "summary": "A majestic 1833 neoclassical building housing rare literary manuscripts (including an original 14th-century Dante’s Divine Comedy) and ancient coins, fronted by iconic sweeping white Greek Doric colonnades.",
+    "description": "A majestic 1833 neoclassical building housing rare literary manuscripts (including an original 14th-century Dante’s Divine Comedy) and ancient coins, fronted by iconic sweeping white Greek Doric colonnades. Designed by Colonel Thomas Cowper of the Bombay Engineers and completed in 1833. Its sweeping flight of 30 steps and portico of eight Doric columns make it one of South Mumbai's most cinematic neoclassical architectural treasures.",
+    "coordinates": {
+      "lat": 18.9318,
+      "lng": 72.836
+    },
+    "latitude": 18.9318,
+    "longitude": 72.836,
+    "rating": 4.8,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Town_Hall_Mumbai.jpg/1280px-Town_Hall_Mumbai.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Town_Hall_Mumbai.jpg/1280px-Town_Hall_Mumbai.jpg"
+    ],
+    "tags": [
+      "neoclassical",
+      "library",
+      "heritage",
+      "colonial",
+      "town hall",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "10:30–17:30 (Closed Sundays and public holidays)",
+    "entry_fee": "Free entry to Town Hall steps; Library access requires permit",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-flora-fountain",
+    "name": "Flora Fountain & Hutatma Chowk",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "monuments",
+    "summary": "A historic 19th-century sculpted architectural water fountain in the commercial core, erected in 1864 in honor of Sir Bartle Frere. Adorned with a fine Portland stone statue of Flora, the Roman Goddess of flowers.",
+    "description": "A historic 19th-century sculpted architectural water fountain in the commercial core, erected in 1864 in honor of Sir Bartle Frere. Adorned with a fine Portland stone statue of Flora, the Roman Goddess of flowers. Carved from imported Portland stone by sculptor James Forsythe. In 1960, the square was renamed Hutatma Chowk (Martyrs' Square) to memorialize the 106 demonstrators who sacrificed their lives during the Samyukta Maharashtra movement.",
+    "coordinates": {
+      "lat": 18.9322,
+      "lng": 72.8315
+    },
+    "latitude": 18.9322,
+    "longitude": 72.8315,
+    "rating": 4.8,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Flora_Fountain%2C_Mumbai.jpg/1280px-Flora_Fountain%2C_Mumbai.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Flora_Fountain%2C_Mumbai.jpg/1280px-Flora_Fountain%2C_Mumbai.jpg"
+    ],
+    "tags": [
+      "monument",
+      "fountain",
+      "architecture",
+      "heritage",
+      "fort",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "Open 24 Hours (Best illuminated in evening)",
+    "entry_fee": "Free",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-gpo",
+    "name": "Mumbai General Post Office (GPO)",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "monuments",
+    "summary": "A magnificent Indo-Saracenic architectural landmark with a massive central dome inspired by the Gol Gumbaz of Bijapur. Spanning 120,000 square feet, it is one of the largest working post offices in the world.",
+    "description": "A magnificent Indo-Saracenic architectural landmark with a massive central dome inspired by the Gol Gumbaz of Bijapur. Spanning 120,000 square feet, it is one of the largest working post offices in the world. Designed by architect John Begg and built with yellow basalt stone from Kurla and white stone dressing from Dhrangadhra between 1904 and 1913. Its colossal central dome measures 65 feet in diameter.",
+    "coordinates": {
+      "lat": 18.9405,
+      "lng": 72.8378
+    },
+    "latitude": 18.9405,
+    "longitude": 72.8378,
+    "rating": 4.8,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/General_Post_Office_Mumbai.jpg/1280px-General_Post_Office_Mumbai.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/General_Post_Office_Mumbai.jpg/1280px-General_Post_Office_Mumbai.jpg"
+    ],
+    "tags": [
+      "indo-saracenic",
+      "dome",
+      "heritage",
+      "colonial",
+      "architecture",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "10:00–18:00 (Postal services operate Mon–Sat)",
+    "entry_fee": "Free",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-esplanade-mansion",
+    "name": "Esplanade Mansion (Watson’s Hotel)",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
     "country": "India",
     "category": "heritage",
-    "summary": "Ancient rock-cut Buddhist monasteries nestled within the forests of Sanjay Gandhi National Park.",
-    "description": "Kanheri Caves are a group of over 100 rock-cut caves located deep inside Sanjay Gandhi National Park in Borivali. They illustrate the Buddhist art and architecture of Western India from the 1st century BCE to the 10th century CE.",
-    "history": "Served as a major monastic settlement and university on ancient trade routes linking Sopara, Kalyan, and coastal ports.",
-    "culture": "Renowned for ancient water harvesting channels, prayer halls (Chaityas), and colossal Buddha statues surrounded by lush teak forests.",
+    "summary": "India's oldest surviving cast-iron building, where the Lumière brothers first screened cinema in India on July 7, 1896. Prefabricated in England and assembled in 1869 in the heart of South Mumbai.",
+    "description": "India's oldest surviving cast-iron building, where the Lumière brothers first screened cinema in India on July 7, 1896. Prefabricated in England and assembled in 1869 in the heart of South Mumbai. Originally Watson's Hotel, conceived by John Watson and designed by civil engineer Rowland Mason Ordish. All cast iron frames, pillars, and arches were cast in England and shipped to Mumbai. Renowned as the birthplace of Indian cinema exhibitions.",
     "coordinates": {
-      "lat": 19.2060,
-      "lng": 72.9064
+      "lat": 18.9295,
+      "lng": 72.8318
     },
-    "rating": 4.6,
-    "thumbnail_url": "https://images.unsplash.com/photo-1627894483216-2138af692e32",
-    "best_time_to_visit": "July to February (monsoon greenery is exceptional)",
-    "visiting_hours": "07:30 AM - 05:00 PM (Closed on Mondays)",
-    "entry_fee": {
-      "domestic": 25.0,
-      "international": 300.0,
-      "currency": "INR"
-    },
-    "visiting_info": {
-      "best_time_to_visit": "July to February",
-      "visiting_hours": "07:30 AM - 05:00 PM (Closed on Mondays)",
-      "recommended_duration": "3 hours",
-      "tips": [
-        "Rent a bicycle or take the internal electric bus from Sanjay Gandhi National Park gate.",
-        "Climb to the top ridge for panoramic forest and city views."
-      ]
-    },
+    "latitude": 18.9295,
+    "longitude": 72.8318,
+    "rating": 4.8,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Watson%27s_Hotel_Mumbai_2011.jpg/1280px-Watson%27s_Hotel_Mumbai_2011.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1627894483216-2138af692e32"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Watson%27s_Hotel_Mumbai_2011.jpg/1280px-Watson%27s_Hotel_Mumbai_2011.jpg"
     ],
-    "model_3d": {
-      "has_model": false,
-      "available": false
-    },
-    "tags": ["heritage", "buddhist", "caves", "nature", "trekking", "monastery"],
+    "tags": [
+      "cast-iron",
+      "cinema history",
+      "heritage",
+      "kala ghoda",
+      "historic hotel",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
     "features": {
       "map": true,
       "navigation": true,
       "ai": true,
       "3d": false
-    }
+    },
+    "opening_hours": "Daylight hours (Exterior architectural viewing)",
+    "entry_fee": "Free",
+    "verification_status": "VERIFIED"
   },
   {
-    "id": "worli-sea-face",
-    "name": "Worli Sea Face",
-    "state": "Maharashtra",
+    "id": "mumbai-csmvs-museum",
+    "name": "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya (CSMVS)",
     "city": "Mumbai",
-    "country": "India",
-    "category": "coastal",
-    "summary": "Scenic coastal promenade providing dramatic views of the Bandra-Worli Sea Link.",
-    "description": "Worli Sea Face is a prominent promenade in South-Central Mumbai overlooking the Arabian Sea, famous for spectacular crashing waves during the monsoon and uninterrupted vistas of the cable-stayed Bandra-Worli Sea Link.",
-    "history": "Developed along the western coast of the Worli island, near the 17th-century Worli Fort built by the British to guard Mahim Bay.",
-    "culture": "A peaceful walking spot favored by runners, photographers, and evening strollers looking for a tranquil sea view.",
-    "coordinates": {
-      "lat": 19.0118,
-      "lng": 72.8136
-    },
-    "rating": 4.6,
-    "thumbnail_url": "https://images.unsplash.com/photo-1595658658481-d53d3f999875",
-    "best_time_to_visit": "October to March (and monsoon for wave watching)",
-    "visiting_hours": "Open 24 Hours",
-    "entry_fee": {
-      "domestic": 0.0,
-      "international": 0.0,
-      "currency": "INR"
-    },
-    "visiting_info": {
-      "best_time_to_visit": "October to March",
-      "visiting_hours": "Open 24 Hours",
-      "recommended_duration": "1 - 2 hours",
-      "tips": [
-        "Great vantage point for photographing the Bandra-Worli Sea Link cable towers.",
-        "Take a short walk to explore historic Worli Koliwada fishing village."
-      ]
-    },
-    "images": [
-      "https://images.unsplash.com/photo-1595658658481-d53d3f999875"
-    ],
-    "model_3d": {
-      "has_model": false,
-      "available": false
-    },
-    "tags": ["coastal", "promenade", "sea-link", "viewpoint", "walking", "mumbai"],
-    "features": {
-      "map": true,
-      "navigation": true,
-      "ai": true,
-      "3d": false
-    }
-  },
-  {
-    "id": "juhu-beach",
-    "name": "Juhu Beach",
+    "city_id": "mumbai",
     "state": "Maharashtra",
-    "city": "Mumbai",
+    "state_id": "maharashtra",
     "country": "India",
-    "category": "coastal",
-    "summary": "Lively suburban Arabian Sea beach renowned for street food and sunset views.",
-    "description": "Juhu Beach is one of Mumbai's most popular beaches, stretching along the upscale western suburb of Juhu. It is celebrated for its bustling food stalls serving authentic Mumbai street cuisine such as pav bhaji, bhel puri, and kulfi.",
-    "history": "Historically a coastal coconut grove village, Juhu evolved into Mumbai's prime residential beachfront haven in the 20th century.",
-    "culture": "A cultural epicenter where locals, Bollywood celebrities, and tourists mingle, especially lively during weekends and Ganesh Visarjan festivals.",
+    "category": "museums",
+    "summary": "Mumbai’s premier Indo-Saracenic museum holding over 50,000 ancient artifacts and sculptures, Indus Valley relics, Tibetan art, and miniature paintings, nestled in heritage palm gardens with a grand Mughal dome.",
+    "description": "Mumbai’s premier Indo-Saracenic museum holding over 50,000 ancient artifacts and sculptures, Indus Valley relics, Tibetan art, and miniature paintings, nestled in heritage palm gardens with a grand Mughal dome. Founded in the early 20th century to commemorate the visit of the Prince of Wales, designed by George Wittet and opened to the public in 1922. Awarded the UNESCO Asia-Pacific Award for Cultural Heritage Conservation in 2022.",
     "coordinates": {
-      "lat": 19.0988,
-      "lng": 72.8264
-    },
-    "rating": 4.4,
-    "thumbnail_url": "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647",
-    "best_time_to_visit": "October to March (late afternoon)",
-    "visiting_hours": "Open 24 Hours",
-    "entry_fee": {
-      "domestic": 0.0,
-      "international": 0.0,
-      "currency": "INR"
-    },
-    "visiting_info": {
-      "best_time_to_visit": "October to March",
-      "visiting_hours": "Open 24 Hours",
-      "recommended_duration": "2 hours",
-      "tips": [
-        "Sample street food at the designated food court near the main entrance.",
-        "Check tides before walking along the northern sands towards Versova."
-      ]
-    },
-    "images": [
-      "https://images.unsplash.com/photo-1596401057633-54a8fe8ef647"
-    ],
-    "model_3d": {
-      "has_model": false,
-      "available": false
-    },
-    "tags": ["coastal", "beach", "street-food", "sunset", "mumbai", "family"],
-    "features": {
-      "map": true,
-      "navigation": true,
-      "ai": true,
-      "3d": false
-    }
-  },
-  {
-    "id": "sanjay-gandhi-national-park",
-    "name": "Sanjay Gandhi National Park",
-    "state": "Maharashtra",
-    "city": "Mumbai",
-    "country": "India",
-    "category": "nature",
-    "summary": "Vast protected wilderness oasis within city limits, home to leopards, deer, and ancient caves.",
-    "description": "Sanjay Gandhi National Park (SGNP) is a protected forest reserve covering over 100 square kilometers in northern Mumbai. It is one of the world's few national parks surrounded by a metropolitan boundary.",
-    "history": "Originally protected in the pre-independence era as Krishnagiri National Park, it was expanded in 1981 to conserve biodiversity and regional watersheds.",
-    "culture": "Known as the green lungs of Mumbai, offering cycling tracks, tiger safari, toy train rides, boating, and access to Kanheri Caves.",
-    "coordinates": {
-      "lat": 19.2288,
-      "lng": 72.9182
-    },
-    "rating": 4.6,
-    "thumbnail_url": "https://images.unsplash.com/photo-1544735716-392fe2489ffa",
-    "best_time_to_visit": "July to March",
-    "visiting_hours": "07:30 AM - 05:30 PM (Closed on Mondays)",
-    "entry_fee": {
-      "domestic": 85.0,
-      "international": 200.0,
-      "currency": "INR"
-    },
-    "visiting_info": {
-      "best_time_to_visit": "July to March",
-      "visiting_hours": "07:30 AM - 05:30 PM (Closed on Mondays)",
-      "recommended_duration": "4 - 6 hours",
-      "tips": [
-        "Rent bicycles at the entrance to cycle 7 km up to Kanheri Caves.",
-        "Arrive early in the morning for bird watching and tranquil forest walks."
-      ]
-    },
-    "images": [
-      "https://images.unsplash.com/photo-1544735716-392fe2489ffa"
-    ],
-    "model_3d": {
-      "has_model": false,
-      "available": false
-    },
-    "tags": ["nature", "national-park", "wildlife", "trekking", "forest", "cycling"],
-    "features": {
-      "map": true,
-      "navigation": true,
-      "ai": true,
-      "3d": false
-    }
-  },
-  {
-    "id": "csmvs-museum",
-    "name": "Chhatrapati Shivaji Maharaj Vastu Sangrahalaya",
-    "state": "Maharashtra",
-    "city": "Mumbai",
-    "country": "India",
-    "category": "heritage",
-    "summary": "Premier museum of art, archaeology, and natural history housed in an Indo-Saracenic mansion.",
-    "description": "CSMVS (formerly the Prince of Wales Museum of Western India) is one of India's foremost art and history museums, established to commemorate the visit of the Prince of Wales in 1905. It features over 50,000 artifacts across ancient Indian sculpture, Mughal miniature paintings, European art, and decorative arts.",
-    "history": "Designed by George Wittet in the Indo-Saracenic style and set in expansive heritage palm gardens in the Kala Ghoda Arts District.",
-    "culture": "A vibrant cultural and educational institution recognized with a UNESCO Asia-Pacific Award for Cultural Heritage Conservation in 2022.",
-    "coordinates": {
-      "lat": 18.9268,
+      "lat": 18.9269,
       "lng": 72.8327
     },
-    "rating": 4.7,
-    "thumbnail_url": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3",
-    "best_time_to_visit": "Year-round",
-    "visiting_hours": "10:15 AM - 06:00 PM (Everyday)",
-    "entry_fee": {
-      "domestic": 150.0,
-      "international": 650.0,
-      "currency": "INR"
-    },
-    "visiting_info": {
-      "best_time_to_visit": "Year-round",
-      "visiting_hours": "10:15 AM - 06:00 PM",
-      "recommended_duration": "2 - 3 hours",
-      "tips": [
-        "Audio guides are available at the entrance in multiple international and Indian languages.",
-        "Explore the tranquil garden cafe and museum gift shop."
-      ]
-    },
+    "latitude": 18.9269,
+    "longitude": 72.8327,
+    "rating": 4.8,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Chhatrapati_Shivaji_Maharaj_Vastu_Sangrahalaya.jpg/1280px-Chhatrapati_Shivaji_Maharaj_Vastu_Sangrahalaya.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Chhatrapati_Shivaji_Maharaj_Vastu_Sangrahalaya.jpg/1280px-Chhatrapati_Shivaji_Maharaj_Vastu_Sangrahalaya.jpg"
     ],
-    "model_3d": {
-      "has_model": false,
-      "available": false
-    },
-    "tags": ["heritage", "museum", "art", "sculpture", "history", "kala-ghoda"],
+    "tags": [
+      "museum",
+      "indo-saracenic",
+      "sculptures",
+      "artifacts",
+      "kala ghoda",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
     "features": {
       "map": true,
       "navigation": true,
       "ai": true,
       "3d": false
-    }
+    },
+    "opening_hours": "10:15–18:00 (Open all days except select national holidays)",
+    "entry_fee": "INR 150 (Adults), INR 50 (Children)",
+    "verification_status": "VERIFIED"
   },
   {
-    "id": "siddhivinayak-temple",
-    "name": "Siddhivinayak Temple",
-    "state": "Maharashtra",
+    "id": "mumbai-kala-ghoda",
+    "name": "Kala Ghoda Art District",
     "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
     "country": "India",
-    "category": "spiritual",
-    "summary": "Historic and revered Hindu temple dedicated to Lord Ganesha in Prabhadevi.",
-    "description": "Shree Siddhivinayak Ganapati Mandir is one of the most revered and affluent temples in Mumbai, dedicated to Lord Ganesha. The central sanctum features a small shrine with a gold-plated inner roof and a black stone deity of Ganesha with the trunk positioned to the right.",
-    "history": "Originally consecrated in 1801 by Laxman Vithu and Deubai Patil, the modern multi-storied temple complex was rebuilt in the late 20th century.",
-    "culture": "A primary spiritual landmark attracting thousands of devotees daily, especially on Tuesdays (Angarki Chaturthi).",
+    "category": "heritage",
+    "summary": "Mumbai’s cultural heart filled with art galleries, street installations, and heritage buildings. Host to the legendary annual Kala Ghoda Arts Festival every February, featuring dynamic open-air exhibitions.",
+    "description": "Mumbai’s cultural heart filled with art galleries, street installations, and heritage buildings. Host to the legendary annual Kala Ghoda Arts Festival every February, featuring dynamic open-air exhibitions. Named after the black stone equestrian statue of King Edward VII that originally stood at the central junction. It is now India's foremost designated cultural precinct and urban art quarter.",
+    "coordinates": {
+      "lat": 18.929,
+      "lng": 72.8322
+    },
+    "latitude": 18.929,
+    "longitude": 72.8322,
+    "rating": 4.8,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Kala_Ghoda_Art_District.jpg/1280px-Kala_Ghoda_Art_District.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Kala_Ghoda_Art_District.jpg/1280px-Kala_Ghoda_Art_District.jpg"
+    ],
+    "tags": [
+      "art district",
+      "galleries",
+      "culture",
+      "street art",
+      "fort",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "10:00–22:00 for galleries and cafes (Open Daily)",
+    "entry_fee": "Free to explore precinct",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-jehangir-art-gallery",
+    "name": "Jehangir Art Gallery",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "museums",
+    "summary": "India's premier contemporary art exhibition space, founded in 1952. Renowned for showcasing master painters, sculptors, and emerging avant-garde visual artists, featuring its beloved Cafe Samovar heritage legacy.",
+    "description": "India's premier contemporary art exhibition space, founded in 1952. Renowned for showcasing master painters, sculptors, and emerging avant-garde visual artists, featuring its beloved Cafe Samovar heritage legacy. Built through the philanthropy of Sir Cowasji Jehangir and designed by Durga Bajpai. Opened by Chief Minister B.G. Kher in 1952, it became the epicenter of the Bombay Progressive Artists' Group including M.F. Husain, F.N. Souza, and S.H. Raza.",
+    "coordinates": {
+      "lat": 18.9275,
+      "lng": 72.832
+    },
+    "latitude": 18.9275,
+    "longitude": 72.832,
+    "rating": 4.8,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Jehangir_Art_Gallery%2C_Mumbai.jpg/1280px-Jehangir_Art_Gallery%2C_Mumbai.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Jehangir_Art_Gallery%2C_Mumbai.jpg/1280px-Jehangir_Art_Gallery%2C_Mumbai.jpg"
+    ],
+    "tags": [
+      "art gallery",
+      "contemporary",
+      "paintings",
+      "sculptures",
+      "kala ghoda",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "11:00–19:00 (Open all 7 days)",
+    "entry_fee": "Free",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-ngma",
+    "name": "National Gallery of Modern Art (NGMA)",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "museums",
+    "summary": "Showcasing modern and contemporary Indian masterpieces across 5 dramatic curved gallery tiers. Housed inside the historic 1911 Sir Cowasji Jehangir Public Hall.",
+    "description": "Showcasing modern and contemporary Indian masterpieces across 5 dramatic curved gallery tiers. Housed inside the historic 1911 Sir Cowasji Jehangir Public Hall. Originally the Sir Cowasji Jehangir Public Hall, designed by George Wittet. Converted into the National Gallery of Modern Art and opened to the public in 1996, housing collections by Amrita Sher-Gil, Raja Ravi Varma, and Jamini Roy.",
+    "coordinates": {
+      "lat": 18.9255,
+      "lng": 72.8315
+    },
+    "latitude": 18.9255,
+    "longitude": 72.8315,
+    "rating": 4.8,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/National_Gallery_of_Modern_Art%2C_Mumbai.jpg/1280px-National_Gallery_of_Modern_Art%2C_Mumbai.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/National_Gallery_of_Modern_Art%2C_Mumbai.jpg/1280px-National_Gallery_of_Modern_Art%2C_Mumbai.jpg"
+    ],
+    "tags": [
+      "modern art",
+      "national gallery",
+      "paintings",
+      "colaba",
+      "culture",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "10:00–18:00 (Closed Mondays & national holidays)",
+    "entry_fee": "INR 20 (Adults), Free for students",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-dr-bhau-daji-lad",
+    "name": "Dr. Bhau Daji Lad Museum (Byculla)",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "museums",
+    "summary": "Mumbai’s oldest museum, beautifully chronicling the city's industrial and cultural history with exquisite High Victorian interiors and Palladian architecture.",
+    "description": "Mumbai’s oldest museum, beautifully chronicling the city's industrial and cultural history with exquisite High Victorian interiors and Palladian architecture. Established in 1872 as the Victoria and Albert Museum, renamed in 1975 in honor of Dr. Bhau Daji Lad, pioneering physician, scholar, and philanthropist. Won UNESCO's Top Award of Excellence in 2005.",
+    "coordinates": {
+      "lat": 18.9789,
+      "lng": 72.8344
+    },
+    "latitude": 18.9789,
+    "longitude": 72.8344,
+    "rating": 4.8,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Dr._Bhau_Daji_Lad_Museum%2C_Mumbai.jpg/1280px-Dr._Bhau_Daji_Lad_Museum%2C_Mumbai.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Dr._Bhau_Daji_Lad_Museum%2C_Mumbai.jpg/1280px-Dr._Bhau_Daji_Lad_Museum%2C_Mumbai.jpg"
+    ],
+    "tags": [
+      "museum",
+      "victorian",
+      "byculla",
+      "industrial history",
+      "decorative arts",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "10:00–18:00 (Closed Wednesdays)",
+    "entry_fee": "INR 20 (Adults), INR 10 (Children)",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-mani-bhavan",
+    "name": "Mani Bhavan Gandhi Sangrahalaya (Gamdevi)",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "museums",
+    "summary": "Mahatma Gandhi’s historic Mumbai residence during India's freedom struggle (1917–1934). The focal epicenter from which the Non-Cooperation, Satyagraha, Swadeshi, and Quit India movements took root in Bombay.",
+    "description": "Mahatma Gandhi’s historic Mumbai residence during India's freedom struggle (1917–1934). The focal epicenter from which the Non-Cooperation, Satyagraha, Swadeshi, and Quit India movements took root in Bombay. Belonging to Gandhi's close friend Revashankar Jagjeevan Jhaveri, Mani Bhavan served as Bapu's Mumbai headquarters. Preserved with his spinning wheel (Charkha), personal library of 50,000 volumes, and a diorama series depicting his life.",
+    "coordinates": {
+      "lat": 18.9599,
+      "lng": 72.8122
+    },
+    "latitude": 18.9599,
+    "longitude": 72.8122,
+    "rating": 4.8,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Mani_Bhavan_Gandhi_Museum_Mumbai.jpg/1280px-Mani_Bhavan_Gandhi_Museum_Mumbai.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Mani_Bhavan_Gandhi_Museum_Mumbai.jpg/1280px-Mani_Bhavan_Gandhi_Museum_Mumbai.jpg"
+    ],
+    "tags": [
+      "gandhi",
+      "memorial",
+      "freedom struggle",
+      "museum",
+      "gamdevi",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "09:30–18:00 (Open all 7 days)",
+    "entry_fee": "Free (Voluntary donation)",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-siddhivinayak-temple",
+    "name": "Shree Siddhivinayak Temple (Prabhadevi)",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "religious_cultural",
+    "summary": "One of India's most revered and heavily visited Ganesha temples. Famed for its two-and-a-half-foot monolithic black stone deity with the trunk turning to the right (Siddhi Vinayak).",
+    "description": "One of India's most revered and heavily visited Ganesha temples. Famed for its two-and-a-half-foot monolithic black stone deity with the trunk turning to the right (Siddhi Vinayak). Consecrated on November 19, 1801, funded by agri woman Deubai Patil. Rebuilt into a multi-tiered gold-crowned marble sanctum drawing millions of devotees, business leaders, and artists weekly.",
     "coordinates": {
       "lat": 19.0169,
       "lng": 72.8304
     },
+    "latitude": 19.0169,
+    "longitude": 72.8304,
     "rating": 4.8,
-    "thumbnail_url": "https://images.unsplash.com/photo-1567157577867-05ccb1388e66",
-    "best_time_to_visit": "Year-round (early mornings for shorter queues)",
-    "visiting_hours": "05:30 AM - 09:50 PM",
-    "entry_fee": {
-      "domestic": 0.0,
-      "international": 0.0,
-      "currency": "INR"
-    },
-    "visiting_info": {
-      "best_time_to_visit": "Year-round",
-      "visiting_hours": "05:30 AM - 09:50 PM",
-      "recommended_duration": "1 - 2 hours",
-      "tips": [
-        "Dress modestly covering shoulders and knees.",
-        "VIP/Special darshan queues can be booked in advance online."
-      ]
-    },
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Siddhivinayak_temple_mumbai.jpg/1280px-Siddhivinayak_temple_mumbai.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1567157577867-05ccb1388e66"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Siddhivinayak_temple_mumbai.jpg/1280px-Siddhivinayak_temple_mumbai.jpg"
     ],
-    "model_3d": {
-      "has_model": false,
-      "available": false
-    },
-    "tags": ["spiritual", "temple", "ganesha", "hindu", "culture", "mumbai"],
+    "tags": [
+      "temple",
+      "ganesha",
+      "spiritual",
+      "prabhadevi",
+      "sacred",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
     "features": {
       "map": true,
       "navigation": true,
       "ai": true,
       "3d": false
-    }
+    },
+    "opening_hours": "05:30–22:00 (Tuesdays open 03:15–22:00)",
+    "entry_fee": "Free",
+    "verification_status": "VERIFIED"
   },
   {
-    "id": "haji-ali-dargah",
+    "id": "mumbai-haji-ali-dargah",
     "name": "Haji Ali Dargah",
-    "state": "Maharashtra",
     "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
     "country": "India",
-    "category": "spiritual",
-    "summary": "15th-century Indo-Islamic mosque and tomb situated on an islet off the coast of Worli.",
-    "description": "Haji Ali Dargah is a revered mosque and tomb built in 1431 in memory of a wealthy Muslim merchant, Pir Haji Ali Shah Bukhari, who gave up all his worldly possessions before making a pilgrimage to Mecca. Located 500 meters into the Arabian Sea, it is linked to the mainland by a narrow causeway accessible only during low tide.",
-    "history": "Erected in the 15th century and constructed from white marble in the Indo-Islamic architectural style with slender minarets.",
-    "culture": "A symbol of Mumbai's secular ethos, visited by people of all religious faiths and backgrounds.",
+    "category": "religious_cultural",
+    "summary": "A 15th-century marble mausoleum perched on an islet in the Arabian Sea, connected by a dramatic sea causeway accessible only during low tide.",
+    "description": "A 15th-century marble mausoleum perched on an islet in the Arabian Sea, connected by a dramatic sea causeway accessible only during low tide. Erected in 1431 in memory of the wealthy Uzbek merchant and Sufi saint Pir Haji Ali Shah Bukhari, who gave up worldly possessions to spread divine love in Mumbai. Features Indo-Islamic domed architecture with pure Makrana marble.",
     "coordinates": {
-      "lat": 18.9827,
+      "lat": 18.9774,
       "lng": 72.8089
     },
-    "rating": 4.6,
-    "thumbnail_url": "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3",
-    "best_time_to_visit": "October to March (during low tide)",
-    "visiting_hours": "06:00 AM - 10:00 PM",
-    "entry_fee": {
-      "domestic": 0.0,
-      "international": 0.0,
-      "currency": "INR"
-    },
-    "visiting_info": {
-      "best_time_to_visit": "October to March",
-      "visiting_hours": "06:00 AM - 10:00 PM",
-      "recommended_duration": "1 - 2 hours",
-      "tips": [
-        "Check tide schedules before visiting, as high tide submerges the pathway.",
-        "Sample fresh fruit creams at the nearby historic Haji Ali Juice Centre."
-      ]
-    },
+    "latitude": 18.9774,
+    "longitude": 72.8089,
+    "rating": 4.8,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Haji_Ali_Dargah_Mumbai.jpg/1280px-Haji_Ali_Dargah_Mumbai.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Haji_Ali_Dargah_Mumbai.jpg/1280px-Haji_Ali_Dargah_Mumbai.jpg"
     ],
-    "model_3d": {
-      "has_model": false,
-      "available": false
-    },
-    "tags": ["spiritual", "mosque", "heritage", "islet", "islamic-architecture", "mumbai"],
+    "tags": [
+      "dargah",
+      "sufi",
+      "islamic",
+      "islet",
+      "worli",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
     "features": {
       "map": true,
       "navigation": true,
       "ai": true,
       "3d": false
-    }
+    },
+    "opening_hours": "05:30–22:00 (Accessible during low tide hours)",
+    "entry_fee": "Free",
+    "verification_status": "VERIFIED"
   },
   {
-    "id": "bandra-fort",
-    "name": "Bandra Fort",
-    "state": "Maharashtra",
+    "id": "mumbai-mahalaxmi-temple",
+    "name": "Mahalaxmi Temple",
     "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "religious_cultural",
+    "summary": "Historic sea-facing temple dedicated to the divine forms of Mahalakshmi, Mahakali, and Mahasaraswati. Consecrated on a scenic cliff overlooking the Arabian Sea.",
+    "description": "Historic sea-facing temple dedicated to the divine forms of Mahalakshmi, Mahakali, and Mahasaraswati. Consecrated on a scenic cliff overlooking the Arabian Sea. Built in 1785 by merchant Ramji Shivji Prabhu during the construction of the Hornby Vellard breach wall. According to legend, the seawall collapsed repeatedly until the recovered submerged tridevi idols were enshrined here.",
+    "coordinates": {
+      "lat": 18.9773,
+      "lng": 72.8058
+    },
+    "latitude": 18.9773,
+    "longitude": 72.8058,
+    "rating": 4.8,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Mahalaxmi_Temple_Mumbai.jpg/1280px-Mahalaxmi_Temple_Mumbai.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Mahalaxmi_Temple_Mumbai.jpg/1280px-Mahalaxmi_Temple_Mumbai.jpg"
+    ],
+    "tags": [
+      "temple",
+      "shakti",
+      "mahalaxmi",
+      "breach candy",
+      "spiritual",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "06:00–22:00 (Navratri brings grand devotional night aartis)",
+    "entry_fee": "Free",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-mount-mary-church",
+    "name": "Mount Mary Church (Bandra)",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "religious_cultural",
+    "summary": "A historic hilltop Roman Catholic basilica overlooking the Arabian Sea in Bandra, dating back to 1570. Host to the world-famous Bandra Fair celebrated annually in September.",
+    "description": "A historic hilltop Roman Catholic basilica overlooking the Arabian Sea in Bandra, dating back to 1570. Host to the world-famous Bandra Fair celebrated annually in September. The present semi-Gothic stone basilica was consecrated in 1904 to replace earlier 16th-century Jesuit Portuguese chapels. Its revered statue of Mother Mary holds a legendary history dating back to 16th-century Jesuit sea voyages.",
+    "coordinates": {
+      "lat": 19.0468,
+      "lng": 72.8227
+    },
+    "latitude": 19.0468,
+    "longitude": 72.8227,
+    "rating": 4.8,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Mount_Mary_Church_Bandra.jpg/1280px-Mount_Mary_Church_Bandra.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Mount_Mary_Church_Bandra.jpg/1280px-Mount_Mary_Church_Bandra.jpg"
+    ],
+    "tags": [
+      "church",
+      "basilica",
+      "catholic",
+      "bandra",
+      "historic",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "05:30–13:00, 15:00–20:30 (Sundays 05:30–21:00)",
+    "entry_fee": "Free",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-mumba-devi-temple",
+    "name": "Mumba Devi Temple (Zaveri Bazar)",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "religious_cultural",
+    "summary": "The ancient temple from which Mumbai derives its name. Revered for over six centuries as the supreme guardian deity of the indigenous Koli fishing community.",
+    "description": "The ancient temple from which Mumbai derives its name. Revered for over six centuries as the supreme guardian deity of the indigenous Koli fishing community. First built around 1675 at the original site of Victoria Terminus (CSMT), the temple was relocated to its current Bhuleshwar location in 1737. The deity is carved from unpolished orange-tinted stone adorned with silver jewelry.",
+    "coordinates": {
+      "lat": 18.9519,
+      "lng": 72.8306
+    },
+    "latitude": 18.9519,
+    "longitude": 72.8306,
+    "rating": 4.8,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Mumba_Devi_Temple_Mumbai.jpg/1280px-Mumba_Devi_Temple_Mumbai.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Mumba_Devi_Temple_Mumbai.jpg/1280px-Mumba_Devi_Temple_Mumbai.jpg"
+    ],
+    "tags": [
+      "temple",
+      "goddess",
+      "mumbai name",
+      "koli",
+      "bhuleshwar",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "06:00–12:00, 16:00–21:00 (Tuesdays open all day)",
+    "entry_fee": "Free",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-banganga-tank",
+    "name": "Banganga Tank & Walkeshwar Temple (Malabar Hill)",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "religious_cultural",
+    "summary": "An ancient mythological water reservoir dating back to 1120 AD surrounded by mini-temples. Believed to have sprung when Lord Rama pierced the earth with an arrow (Bana) to quench Sita's thirst.",
+    "description": "An ancient mythological water reservoir dating back to 1120 AD surrounded by mini-temples. Believed to have sprung when Lord Rama pierced the earth with an arrow (Bana) to quench Sita's thirst. Built during the Silhara dynasty in the 12th century, reconstructed in 1715 by philanthropist Rama Kamath. The rectangular tank retains natural freshwater springs despite being merely meters away from the saline Arabian Sea.",
+    "coordinates": {
+      "lat": 18.9455,
+      "lng": 72.7937
+    },
+    "latitude": 18.9455,
+    "longitude": 72.7937,
+    "rating": 4.8,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Banganga_Tank_Mumbai.jpg/1280px-Banganga_Tank_Mumbai.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Banganga_Tank_Mumbai.jpg/1280px-Banganga_Tank_Mumbai.jpg"
+    ],
+    "tags": [
+      "sacred water",
+      "temple",
+      "ramayana",
+      "malabar hill",
+      "ancient",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "06:00–20:00 (Open all 7 days)",
+    "entry_fee": "Free",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-babulnath-temple",
+    "name": "Babulnath Temple",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "religious_cultural",
+    "summary": "Perched on a hill near Marine Drive, dedicated to Lord Shiva. Features an ancient self-manifested (Swayambhu) Shivling consecrated in the 12th century.",
+    "description": "Perched on a hill near Marine Drive, dedicated to Lord Shiva. Features an ancient self-manifested (Swayambhu) Shivling consecrated in the 12th century. First consecrated by local ruler Raja Bhimdev in the 12th century, rediscovered buried underground in the 18th century, and expanded into the present grand stone temple in the late 19th century with a hill elevator and pillared mandapa.",
+    "coordinates": {
+      "lat": 18.9566,
+      "lng": 72.8094
+    },
+    "latitude": 18.9566,
+    "longitude": 72.8094,
+    "rating": 4.8,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Babulnath_temple_Mumbai.jpg/1280px-Babulnath_temple_Mumbai.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Babulnath_temple_Mumbai.jpg/1280px-Babulnath_temple_Mumbai.jpg"
+    ],
+    "tags": [
+      "shiva",
+      "temple",
+      "malabar hill",
+      "swayambhu",
+      "ancient",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "05:00–22:00 (Mondays open 04:30–23:00)",
+    "entry_fee": "Free (Elevator ride nominal INR 5–10)",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-iskcon-juhu",
+    "name": "ISKCON Temple (Juhu)",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "religious_cultural",
+    "summary": "A serene spiritual complex featuring marble architecture, spiritual libraries, and pure Vedic dining at Govinda's, steps from Juhu Beach.",
+    "description": "A serene spiritual complex featuring marble architecture, spiritual libraries, and pure Vedic dining at Govinda's, steps from Juhu Beach. Inaugurated by ISKCON founder-acharya A.C. Bhaktivedanta Swami Prabhupada in 1978. Built of Makrana marble with hand-carved pillars depicting Krishna's pastimes and hosting monumental Janmashtami celebrations.",
+    "coordinates": {
+      "lat": 19.1128,
+      "lng": 72.8267
+    },
+    "latitude": 19.1128,
+    "longitude": 72.8267,
+    "rating": 4.8,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/ISKCON_Juhu_Mumbai.jpg/1280px-ISKCON_Juhu_Mumbai.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/ISKCON_Juhu_Mumbai.jpg/1280px-ISKCON_Juhu_Mumbai.jpg"
+    ],
+    "tags": [
+      "iskcon",
+      "krishna",
+      "juhu",
+      "marble",
+      "spiritual",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "04:30–13:00, 16:30–21:00",
+    "entry_fee": "Free",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-global-vipassana-pagoda",
+    "name": "Global Vipassana Pagoda (Gorai)",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "religious_cultural",
+    "summary": "A massive golden stone meditation hall housing authentic relics of Buddha. Features the world's largest stone dome built without supporting pillars, seating 8,000 meditators in pure silence.",
+    "description": "A massive golden stone meditation hall housing authentic relics of Buddha. Features the world's largest stone dome built without supporting pillars, seating 8,000 meditators in pure silence. Inaugurated in February 2009 by President Pratibha Patil. Modeled after Myanmar's Shwedagon Pagoda to express India's gratitude to Burma for preserving the authentic ancient practice of Vipassana meditation.",
+    "coordinates": {
+      "lat": 19.2285,
+      "lng": 72.8058
+    },
+    "latitude": 19.2285,
+    "longitude": 72.8058,
+    "rating": 4.8,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Global_Vipassana_Pagoda.jpg/1280px-Global_Vipassana_Pagoda.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Global_Vipassana_Pagoda.jpg/1280px-Global_Vipassana_Pagoda.jpg"
+    ],
+    "tags": [
+      "meditation",
+      "vipassana",
+      "pagoda",
+      "buddha",
+      "gorai",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "09:00–19:00 (Last entry 17:30)",
+    "entry_fee": "Free (ID card mandatory for entry)",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-knesset-eliyahoo",
+    "name": "Keneseth Eliyahoo Synagogue (Kala Ghoda)",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "religious_cultural",
+    "summary": "A stunning bright-blue historic 19th-century Jewish house of worship, founded in 1884. Famed for its Victorian stained glass windows, brass chandeliers, and authentic Baghdadi Jewish heritage.",
+    "description": "A stunning bright-blue historic 19th-century Jewish house of worship, founded in 1884. Famed for its Victorian stained glass windows, brass chandeliers, and authentic Baghdadi Jewish heritage. Built in 1884 by Jacob Elias Sassoon in memory of his father Eliyahoo Sassoon. Restored in 2019 to its historic turquoise-blue glory, winning the UNESCO Asia-Pacific Award for Cultural Heritage Conservation.",
+    "coordinates": {
+      "lat": 18.9287,
+      "lng": 72.8315
+    },
+    "latitude": 18.9287,
+    "longitude": 72.8315,
+    "rating": 4.8,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Keneseth_Eliyahoo_Synagogue_Mumbai.jpg/1280px-Keneseth_Eliyahoo_Synagogue_Mumbai.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Keneseth_Eliyahoo_Synagogue_Mumbai.jpg/1280px-Keneseth_Eliyahoo_Synagogue_Mumbai.jpg"
+    ],
+    "tags": [
+      "synagogue",
+      "jewish",
+      "heritage",
+      "kala ghoda",
+      "stained glass",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "09:30–18:00 (Visitors welcome; respectful dress required)",
+    "entry_fee": "Free",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-marine-drive",
+    "name": "Marine Drive & Chowpatty",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "nature_parks_zoo",
+    "summary": "The 3.6-km arc-shaped coastal boulevard known as the Queen's Necklace. Lined with the world's second-largest collection of Art Deco buildings, terminating at vibrant Girgaum Chowpatty beach.",
+    "description": "The 3.6-km arc-shaped coastal boulevard known as the Queen's Necklace. Lined with the world's second-largest collection of Art Deco buildings, terminating at vibrant Girgaum Chowpatty beach. Constructed between 1915 and the 1930s on reclaimed land under the Back Bay Reclamation Scheme. Inscribed as a UNESCO World Heritage site in 2018 alongside Victorian Gothic structures.",
+    "coordinates": {
+      "lat": 18.9432,
+      "lng": 72.823
+    },
+    "latitude": 18.9432,
+    "longitude": 72.823,
+    "rating": 4.8,
+    "thumbnail_url": "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=1200&auto=format&fit=crop&q=80",
+    "images": [
+      "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=1200&auto=format&fit=crop&q=80"
+    ],
+    "tags": [
+      "marine drive",
+      "queens necklace",
+      "art deco",
+      "beach",
+      "promenade",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "Open 24 Hours",
+    "entry_fee": "Free",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-bandra-worli-sea-link",
+    "name": "Bandra-Worli Sea Link",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "monuments",
+    "summary": "An 8-lane cable-stayed bridge spanning 5.6 kilometers across Mahim Bay. Mumbai's iconic 21st-century architectural silhouette, dramatically cutting travel times between the Western Suburbs and South Mumbai.",
+    "description": "An 8-lane cable-stayed bridge spanning 5.6 kilometers across Mahim Bay. Mumbai's iconic 21st-century architectural silhouette, dramatically cutting travel times between the Western Suburbs and South Mumbai. Inaugurated in June 2009 by UPA Chairperson Sonia Gandhi. Engineered by Hindustan Construction Company with high-strength concrete pylons rising 128 meters above open waters.",
+    "coordinates": {
+      "lat": 19.033,
+      "lng": 72.816
+    },
+    "latitude": 19.033,
+    "longitude": 72.816,
+    "rating": 4.8,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Bandra_Worli_Sea_Link_Mumbai.jpg/1280px-Bandra_Worli_Sea_Link_Mumbai.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Bandra_Worli_Sea_Link_Mumbai.jpg/1280px-Bandra_Worli_Sea_Link_Mumbai.jpg"
+    ],
+    "tags": [
+      "sea link",
+      "bridge",
+      "engineering",
+      "bandra",
+      "worli",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "Open 24 Hours for motor vehicle transit; pedestrian viewing from Bandra Fort & Worli Sea Face",
+    "entry_fee": "Toll: Single trip INR 85 (Car); view from shore is Free",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-bandra-bandstand",
+    "name": "Bandra Bandstand & Carter Road Promenades",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "nature_parks_zoo",
+    "summary": "Coastal walkways famous for sunset views and celebrity homes (including Shah Rukh Khan's Mannat and Salman Khan's Galaxy Apartments), seaside joggers, and Portuguese Bandra Fort ruins.",
+    "description": "Coastal walkways famous for sunset views and celebrity homes (including Shah Rukh Khan's Mannat and Salman Khan's Galaxy Apartments), seaside joggers, and Portuguese Bandra Fort ruins. Historically a musical performance bandstand during the colonial era, now a world-renowned seaside jogging track and public amphitheater featuring the Bollywood Walk of the Stars.",
+    "coordinates": {
+      "lat": 19.0435,
+      "lng": 72.8193
+    },
+    "latitude": 19.0435,
+    "longitude": 72.8193,
+    "rating": 4.8,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Bandra_Fort_and_Sea_Link.jpg/1280px-Bandra_Fort_and_Sea_Link.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Bandra_Fort_and_Sea_Link.jpg/1280px-Bandra_Fort_and_Sea_Link.jpg"
+    ],
+    "tags": [
+      "bandstand",
+      "carter road",
+      "bandra",
+      "promenade",
+      "sunset",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "Open 24 Hours (Best visited 16:30–21:00)",
+    "entry_fee": "Free",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-juhu-beach",
+    "name": "Juhu Beach & Versova Beach",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "nature_parks_zoo",
+    "summary": "Sprawling sandy shores famous for local street food (pav bhaji, bhel puri, sev puri, and kulfi), evening carnival vibes, and spectacular sunsets across the Arabian Sea.",
+    "description": "Sprawling sandy shores famous for local street food (pav bhaji, bhel puri, sev puri, and kulfi), evening carnival vibes, and spectacular sunsets across the Arabian Sea. Historically an upscale coastal village, Juhu transformed into Mumbai's most beloved beach destination in the 20th century. Adjacent Versova Beach is famed for the world's largest community-led beach clean-up spearheaded by Afroz Shah.",
+    "coordinates": {
+      "lat": 19.0988,
+      "lng": 72.8264
+    },
+    "latitude": 19.0988,
+    "longitude": 72.8264,
+    "rating": 4.8,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Juhu_Beach_Mumbai.jpg/1280px-Juhu_Beach_Mumbai.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Juhu_Beach_Mumbai.jpg/1280px-Juhu_Beach_Mumbai.jpg"
+    ],
+    "tags": [
+      "beach",
+      "juhu",
+      "versova",
+      "street food",
+      "sunset",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "Open 24 Hours",
+    "entry_fee": "Free",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-sanjay-gandhi-national-park",
+    "name": "Sanjay Gandhi National Park & Kanheri Caves (Borivali)",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "nature_parks_zoo",
+    "summary": "A massive 104-sq-km protected forest housing 109 ancient 1st-century BCE Buddhist rock-cut caves, wild leopards, spotted deer, and lush deciduous jungle trails within city limits.",
+    "description": "A massive 104-sq-km protected forest housing 109 ancient 1st-century BCE Buddhist rock-cut caves, wild leopards, spotted deer, and lush deciduous jungle trails within city limits. One of the few national parks situated inside a metropolis. The Kanheri Caves served as a monumental Buddhist learning center and monastery along ancient caravan trade routes from the 1st century BCE to the 10th century CE.",
+    "coordinates": {
+      "lat": 19.2215,
+      "lng": 72.9135
+    },
+    "latitude": 19.2215,
+    "longitude": 72.9135,
+    "rating": 4.8,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Kanheri_Caves_prayer_hall.JPG/1280px-Kanheri_Caves_prayer_hall.JPG",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Kanheri_Caves_prayer_hall.JPG/1280px-Kanheri_Caves_prayer_hall.JPG"
+    ],
+    "tags": [
+      "national park",
+      "kanheri caves",
+      "buddhist",
+      "wildlife",
+      "borivali",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "07:30–17:30 (Park open daily; Kanheri Caves closed Mondays)",
+    "entry_fee": "Park entry INR 88; Kanheri Caves entry INR 25",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-hanging-gardens",
+    "name": "Hanging Gardens & Kamala Nehru Park (Malabar Hill)",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "nature_parks_zoo",
+    "summary": "Terraced gardens overlooking Marine Drive featuring the famous old-storybook boot house, animal topiary hedges, and panoramic vistas of the Queen's Necklace.",
+    "description": "Terraced gardens overlooking Marine Drive featuring the famous old-storybook boot house, animal topiary hedges, and panoramic vistas of the Queen's Necklace. Built in 1881 by Ulhas Ghapokar on top of South Mumbai's main water reservoir to protect water from purity contamination. Renamed Pherozeshah Mehta Gardens, with Kamala Nehru Park added opposite in 1952.",
+    "coordinates": {
+      "lat": 18.9567,
+      "lng": 72.8052
+    },
+    "latitude": 18.9567,
+    "longitude": 72.8052,
+    "rating": 4.8,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Hanging_Gardens_Mumbai.jpg/1280px-Hanging_Gardens_Mumbai.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Hanging_Gardens_Mumbai.jpg/1280px-Hanging_Gardens_Mumbai.jpg"
+    ],
+    "tags": [
+      "gardens",
+      "boot house",
+      "malabar hill",
+      "viewpoint",
+      "park",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "05:00–21:00 (Open all 7 days)",
+    "entry_fee": "Free",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-powai-lake",
+    "name": "Powai Lake & IIT Bombay Campus",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "nature_parks_zoo",
+    "summary": "A picturesque lake surrounded by lush green academic campus grounds, resident marsh crocodiles, migratory birds, and India's premier engineering institute IIT Bombay.",
+    "description": "A picturesque lake surrounded by lush green academic campus grounds, resident marsh crocodiles, migratory birds, and India's premier engineering institute IIT Bombay. Constructed in 1891 by the British administration for domestic water supply by damming the Mithi River streams. In 1958, Jawaharlal Nehru designated the scenic eastern banks to establish IIT Bombay.",
+    "coordinates": {
+      "lat": 19.1257,
+      "lng": 72.9064
+    },
+    "latitude": 19.1257,
+    "longitude": 72.9064,
+    "rating": 4.8,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Powai_Lake_Mumbai.jpg/1280px-Powai_Lake_Mumbai.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Powai_Lake_Mumbai.jpg/1280px-Powai_Lake_Mumbai.jpg"
+    ],
+    "tags": [
+      "lake",
+      "powai",
+      "iit bombay",
+      "nature",
+      "crocodiles",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "06:00–22:00 (Lake Promenade open daily)",
+    "entry_fee": "Free",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-elephanta-caves",
+    "name": "Elephanta Caves",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
     "country": "India",
     "category": "heritage",
-    "summary": "17th-century Portuguese watchtower fort overlooking Mahim Bay and the Bandra-Worli Sea Link.",
-    "description": "Bandra Fort, officially Castella de Aguada (Fort of the Waterpoint), is a historic Portuguese watchtower fortress erected in 1640 at Land's End in Bandra. It commands sweeping coastal views over Mahim Bay to the south and the Arabian Sea to the west.",
-    "history": "Built by the Portuguese as a strategic lookout point along the sea route, later held by the Marathas and the British East India Company.",
-    "culture": "A picturesque coastal park and heritage amphitheater frequented by photographers, couples, and walkers enjoying sunset breezes.",
+    "summary": "UNESCO World Heritage rock-cut cave temples dedicated to Lord Shiva, accessible via a 1-hour ferry ride from the Gateway of India. Famed for the monumental 20-foot three-headed Sadashiva Trimurti sculpture.",
+    "description": "UNESCO World Heritage rock-cut cave temples dedicated to Lord Shiva, accessible via a 1-hour ferry ride from the Gateway of India. Famed for the monumental 20-foot three-headed Sadashiva Trimurti sculpture. Carved between the mid-5th and 6th centuries CE during the reign of the Kalachuris. Named Elephanta by Portuguese explorers after finding a colossal rock-cut elephant statue near the island's southern shore.",
     "coordinates": {
-      "lat": 19.0416,
-      "lng": 72.8188
+      "lat": 18.9633,
+      "lng": 72.9315
     },
-    "rating": 4.5,
-    "thumbnail_url": "https://images.unsplash.com/photo-1595658658481-d53d3f999875",
-    "best_time_to_visit": "October to March (4:30 PM - 6:30 PM)",
-    "visiting_hours": "06:00 AM - 06:30 PM",
-    "entry_fee": {
-      "domestic": 0.0,
-      "international": 0.0,
-      "currency": "INR"
-    },
-    "visiting_info": {
-      "best_time_to_visit": "October to March",
-      "visiting_hours": "06:00 AM - 06:30 PM",
-      "recommended_duration": "1 - 2 hours",
-      "tips": [
-        "Stroll along Bandstand promenade nearby to see landmark residences and seaside gardens.",
-        "Superb sunset angle directly underneath the Bandra-Worli Sea Link."
-      ]
-    },
+    "latitude": 18.9633,
+    "longitude": 72.9315,
+    "rating": 4.8,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Elephanta_Trimurti_01.jpg/1280px-Elephanta_Trimurti_01.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1595658658481-d53d3f999875"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Elephanta_Trimurti_01.jpg/1280px-Elephanta_Trimurti_01.jpg"
     ],
-    "model_3d": {
-      "has_model": false,
-      "available": false
-    },
-    "tags": ["heritage", "fort", "portuguese", "sea-view", "bandra", "sunset"],
+    "tags": [
+      "unesco",
+      "caves",
+      "shiva",
+      "trimurti",
+      "island",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
     "features": {
       "map": true,
       "navigation": true,
       "ai": true,
       "3d": false
-    }
+    },
+    "opening_hours": "09:00–17:30 (Closed Mondays)",
+    "entry_fee": "INR 40 (Monument entry); Ferry: INR 200–260 roundtrip",
+    "verification_status": "VERIFIED"
   },
   {
-    "id": "colaba-causeway",
-    "name": "Colaba Causeway",
-    "state": "Maharashtra",
+    "id": "mumbai-khotachiwadi",
+    "name": "Khotachiwadi Village (Girgaon)",
     "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
     "country": "India",
-    "category": "cultural",
-    "summary": "Vibrant commercial and cultural boulevard famous for street markets, vintage cafes, and colonial charm.",
-    "description": "Colaba Causeway (officially Shahid Bhagat Singh Road) is a bustling commercial thoroughfare in South Mumbai connecting Colaba and the Old Woman's Island. It is renowned for its eclectic street shopping, handicraft stalls, heritage boutiques, and vintage establishments like Cafe Mondegar and Leopold Cafe.",
-    "history": "Constructed by the British East India Company in 1838 to bridge the tidal waters between the islands of Colaba and Bombay.",
-    "culture": "A sensory feast of street markets, antique curios, vintage brassware, and cosmopolitan dining just minutes from the Gateway of India.",
+    "category": "heritage",
+    "summary": "A quaint 19th-century heritage pocket featuring narrow winding lanes and Portuguese-style wooden bungalows preserved by the East Indian community.",
+    "description": "A quaint 19th-century heritage pocket featuring narrow winding lanes and Portuguese-style wooden bungalows preserved by the East Indian community. Founded in the early 1800s by Pathare Prabhu merchant Dadoba Waman Khot, who leased land to local families. Today it preserves historic community chapels, bakeries, and artist ateliers.",
     "coordinates": {
-      "lat": 18.9189,
-      "lng": 72.8298
+      "lat": 18.9536,
+      "lng": 72.8202
     },
-    "rating": 4.5,
-    "thumbnail_url": "https://images.unsplash.com/photo-1570168007204-dfb528c6958f",
-    "best_time_to_visit": "October to March (11:00 AM - 9:00 PM)",
-    "visiting_hours": "10:00 AM - 10:00 PM",
-    "entry_fee": {
-      "domestic": 0.0,
-      "international": 0.0,
-      "currency": "INR"
-    },
-    "visiting_info": {
-      "best_time_to_visit": "October to March",
-      "visiting_hours": "10:00 AM - 10:00 PM",
-      "recommended_duration": "2 - 3 hours",
-      "tips": [
-        "Polite bargaining is customary at street stalls.",
-        "Take a break at historic Leopold Cafe or Cafe Mondegar."
-      ]
-    },
+    "latitude": 18.9536,
+    "longitude": 72.8202,
+    "rating": 4.8,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Khotachiwadi_-_Street.jpg/1280px-Khotachiwadi_-_Street.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1570168007204-dfb528c6958f"
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Khotachiwadi_-_Street.jpg/1280px-Khotachiwadi_-_Street.jpg"
     ],
-    "model_3d": {
-      "has_model": false,
-      "available": false
-    },
-    "tags": ["cultural", "shopping", "street-market", "cafe", "colaba", "heritage"],
+    "tags": [
+      "living heritage",
+      "bungalows",
+      "portuguese",
+      "girgaon",
+      "east indian",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
     "features": {
       "map": true,
       "navigation": true,
       "ai": true,
       "3d": false
-    }
+    },
+    "opening_hours": "Daylight hours (08:00–19:00)",
+    "entry_fee": "Free",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-gilbert-hill",
+    "name": "Gilbert Hill (Andheri)",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "nature_parks_zoo",
+    "summary": "A rare 200-foot monolithic column of black basalt rock (one of only two such formations globally, matching Wyoming's Devils Tower), formed 66 million years ago during the Mesozoic Era.",
+    "description": "A rare 200-foot monolithic column of black basalt rock (one of only two such formations globally, matching Wyoming's Devils Tower), formed 66 million years ago during the Mesozoic Era. Declared a National Geological Monument in 1952. Two ancient temples (Gaondevi and Durgamata) sit atop the summit, reached by climbing a steep flight of carved stone steps offering panoramic 360-degree views of Mumbai.",
+    "coordinates": {
+      "lat": 19.1202,
+      "lng": 72.8394
+    },
+    "latitude": 19.1202,
+    "longitude": 72.8394,
+    "rating": 4.8,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Gilbert_Hill.jpg/1280px-Gilbert_Hill.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Gilbert_Hill.jpg/1280px-Gilbert_Hill.jpg"
+    ],
+    "tags": [
+      "geological",
+      "monolith",
+      "basalt",
+      "andheri",
+      "volcanic",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "06:00–20:00 (Open daily)",
+    "entry_fee": "Free",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-dhobi-ghat",
+    "name": "Dhobi Ghat (Mahalaxmi)",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "heritage",
+    "summary": "The world's largest open-air human-powered laundry system. Over 7,000 washermen (dhobis) wash, beat, scrub, dry, and iron over 100,000 garments daily in concrete wash pens.",
+    "description": "The world's largest open-air human-powered laundry system. Over 7,000 washermen (dhobis) wash, beat, scrub, dry, and iron over 100,000 garments daily in concrete wash pens. Established in 1890 and entered the Guinness Book of World Records in 2011 for 'most people hand-washing clothes simultaneously at a single location.' It remains a quintessential glimpse into Mumbai's working-class heartbeat.",
+    "coordinates": {
+      "lat": 18.9827,
+      "lng": 72.8252
+    },
+    "latitude": 18.9827,
+    "longitude": 72.8252,
+    "rating": 4.8,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Dhobi_Ghat_Mumbai.jpg/1280px-Dhobi_Ghat_Mumbai.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Dhobi_Ghat_Mumbai.jpg/1280px-Dhobi_Ghat_Mumbai.jpg"
+    ],
+    "tags": [
+      "dhobi ghat",
+      "laundry",
+      "guinness world record",
+      "mahalaxmi",
+      "culture",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "06:00–18:00 (Best viewed from Mahalaxmi flyover in morning hours)",
+    "entry_fee": "Free viewing from bridge",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-chor-bazaar",
+    "name": "Chor Bazaar",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "heritage",
+    "summary": "One of India's oldest and largest flea markets, famous for vintage antiques and collectibles, gramophones, Bollywood posters, bronze lamps, and colonial furniture.",
+    "description": "One of India's oldest and largest flea markets, famous for vintage antiques and collectibles, gramophones, Bollywood posters, bronze lamps, and colonial furniture. Originally called 'Shor Bazaar' (Noisy Market) due to the loud bargaining cries of traders, the name was corrupted by the British to 'Chor Bazaar'. Legend holds that Queen Victoria's missing violin ended up here for sale.",
+    "coordinates": {
+      "lat": 18.9592,
+      "lng": 72.829
+    },
+    "latitude": 18.9592,
+    "longitude": 72.829,
+    "rating": 4.8,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Chor_Bazaar_Mumbai.jpg/1280px-Chor_Bazaar_Mumbai.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Chor_Bazaar_Mumbai.jpg/1280px-Chor_Bazaar_Mumbai.jpg"
+    ],
+    "tags": [
+      "antiques",
+      "market",
+      "vintage",
+      "bhendi bazaar",
+      "collectibles",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "11:00–19:30 (Open Saturday through Thursday; closed Fridays)",
+    "entry_fee": "Free to explore",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-sewri-flamingo-point",
+    "name": "Sewri Flamingo Point",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "nature_parks_zoo",
+    "summary": "Mudflats along the eastern harbor where thousands of migratory lesser flamingos flock every winter (Nov–Mar), creating a stunning pink spectacle against the industrial harbor backdrop.",
+    "description": "Mudflats along the eastern harbor where thousands of migratory lesser flamingos flock every winter (Nov–Mar), creating a stunning pink spectacle against the industrial harbor backdrop. Identified as an Important Bird Area (IBA) by the Bombay Natural History Society (BNHS). The rich benthic algae and cyanobacteria in the tidal mudflats support a globally significant concentration of wintering flamingos.",
+    "coordinates": {
+      "lat": 18.9988,
+      "lng": 72.8601
+    },
+    "latitude": 18.9988,
+    "longitude": 72.8601,
+    "rating": 4.8,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Lesser_Flamingos_at_Sewri_harbour%28Mumbai%29.jpg/1280px-Lesser_Flamingos_at_Sewri_harbour%28Mumbai%29.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Lesser_Flamingos_at_Sewri_harbour%28Mumbai%29.jpg/1280px-Lesser_Flamingos_at_Sewri_harbour%28Mumbai%29.jpg"
+    ],
+    "tags": [
+      "flamingos",
+      "birds",
+      "wildlife",
+      "sewri",
+      "mudflats",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "Best visited during low tide (Nov–March)",
+    "entry_fee": "Free",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-worli-fort",
+    "name": "Worli Fort",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "monuments",
+    "summary": "A small 17th-century British fort nestled inside a quiet Koli (fisherman) hamlet offering panoramic views of the sea link and the Arabian Sea.",
+    "description": "A small 17th-century British fort nestled inside a quiet Koli (fisherman) hamlet offering panoramic views of the sea link and the Arabian Sea. Built by the British around 1675 atop a promontory overlooking Mahim Bay to defend Mumbai against pirate attacks and Portuguese incursions. Today it crowns an authentic indigenous Koli fishing village.",
+    "coordinates": {
+      "lat": 19.0227,
+      "lng": 72.8164
+    },
+    "latitude": 19.0227,
+    "longitude": 72.8164,
+    "rating": 4.8,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Worli_Fort_Mumbai.jpg/1280px-Worli_Fort_Mumbai.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Worli_Fort_Mumbai.jpg/1280px-Worli_Fort_Mumbai.jpg"
+    ],
+    "tags": [
+      "fort",
+      "british",
+      "sea view",
+      "koliwada",
+      "worli",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "06:00–19:00",
+    "entry_fee": "Free",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-sassoon-docks",
+    "name": "Sassoon Docks (Colaba)",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "heritage",
+    "summary": "One of Mumbai's oldest historic wet docks, offering an intense look at the city's commercial fishing industry at dawn with colorful boats, fresh fish auctions, and vibrant street art murals.",
+    "description": "One of Mumbai's oldest historic wet docks, offering an intense look at the city's commercial fishing industry at dawn with colorful boats, fresh fish auctions, and vibrant street art murals. Constructed in 1875 by Jewish merchant Albert Abdullah David Sassoon, it was the first commercial wet dock built in western India. Today it serves as Mumbai's primary wholesale fish harbor and a venue for the St+art Mumbai Art Urban Festival.",
+    "coordinates": {
+      "lat": 18.915,
+      "lng": 72.826
+    },
+    "latitude": 18.915,
+    "longitude": 72.826,
+    "rating": 4.8,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Sassoon_Docks_Mumbai.jpg/1280px-Sassoon_Docks_Mumbai.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Sassoon_Docks_Mumbai.jpg/1280px-Sassoon_Docks_Mumbai.jpg"
+    ],
+    "tags": [
+      "docks",
+      "fish market",
+      "colaba",
+      "jewish history",
+      "street art",
+      "mumbai",
+      "maharashtra",
+      "virasat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "04:30–12:00 (Peak fish auctions 05:00–07:30 AM)",
+    "entry_fee": "Free",
+    "verification_status": "VERIFIED"
   }
 ]
