@@ -365,8 +365,8 @@ export const GUJARAT_DIRECTORY: GujaratCity[] = [
           foreign: 'INR 50',
         },
         isHiddenGem: true,
-        image: 'https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?w=800&auto=format&fit=crop&q=80',
-        photoCredit: 'Discover Bharat Archive / Prabhas Patan Archaeological Gallery',
+        image: '/images/gujarat/prabhas-patan-museum.jpg',
+        photoCredit: 'Virasat High-Resolution Heritage Archive / Prabhas Patan Archaeological Courtyard Sculptures',
         summary:
           'An intriguing archaeological museum established near the temple complex housing sculpted fragments, inscriptions, ornate Torana pillars, and exquisite stone statues from the successive historical avatars of the Somnath temple.',
       },

@@ -394,6 +394,13 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'somnath-beach': '/images/gujarat/somnath-beach.jpg',
   'somnath-beach-promenade': '/images/gujarat/somnath-beach.jpg',
   'somnath-sea-beach': '/images/gujarat/somnath-beach.jpg',
+  'IN-GJ-SMT-GEM-001': '/images/gujarat/prabhas-patan-museum.jpg',
+  'in-gj-smt-gem-001': '/images/gujarat/prabhas-patan-museum.jpg',
+  'prabhas-patan-museum': '/images/gujarat/prabhas-patan-museum.jpg',
+  'prabhas-patan-museum-somnath': '/images/gujarat/prabhas-patan-museum.jpg',
+  'somnath-prabhas-patan-museum': '/images/gujarat/prabhas-patan-museum.jpg',
+  'somnath-museum': '/images/gujarat/prabhas-patan-museum.jpg',
+  'prabhas-patan': '/images/gujarat/prabhas-patan-museum.jpg',
   'mh-csmt': '/images/maharashtra/csmt-mumbai.png',
   'basilica-of-bom-jesus': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/1280px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg',
 
