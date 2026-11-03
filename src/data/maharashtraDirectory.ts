@@ -234,8 +234,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "10:00–22:00 for galleries and cafes (Open Daily)",
         fee: { domestic: "Free to explore precinct", foreign: "Free to explore precinct" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Kala_Ghoda_Art_District.jpg/1280px-Kala_Ghoda_Art_District.jpg",
-        photoCredit: "Wikimedia Commons / Kala Ghoda Historic Art Precinct",
+        image: "/images/maharashtra/kala-ghoda-mumbai.jpg",
+        photoCredit: "Virasat Verified Heritage Archive / Kala Ghoda Bronze Equestrian Statue",
         summary:
           "Mumbai’s cultural heart filled with art galleries, street installations, and heritage buildings. Host to the legendary annual Kala Ghoda Arts Festival every February, featuring dynamic open-air exhibitions.",
       },

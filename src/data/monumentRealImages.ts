@@ -100,6 +100,11 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'mumbai-general-post-office': '/images/maharashtra/mumbai-gpo.jpg',
   'general-post-office-mumbai': '/images/maharashtra/mumbai-gpo.jpg',
   'bombay-gpo': '/images/maharashtra/mumbai-gpo.jpg',
+  'IN-MH-MUM-ATT-010': '/images/maharashtra/kala-ghoda-mumbai.jpg',
+  'mumbai-kala-ghoda': '/images/maharashtra/kala-ghoda-mumbai.jpg',
+  'kala-ghoda': '/images/maharashtra/kala-ghoda-mumbai.jpg',
+  'kala-ghoda-art-district': '/images/maharashtra/kala-ghoda-mumbai.jpg',
+  'kala-ghoda-mumbai': '/images/maharashtra/kala-ghoda-mumbai.jpg',
   'mh-csmt': '/images/maharashtra/csmt-mumbai.png',
   'basilica-of-bom-jesus': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/1280px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg',
 

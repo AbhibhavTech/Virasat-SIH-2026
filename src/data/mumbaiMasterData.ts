@@ -632,10 +632,10 @@ export const MUMBAI_ATTRACTIONS: MumbaiAttraction[] = [
       "lat": 18.929,
       "lng": 72.8322
     },
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Kala_Ghoda_Art_District.jpg/1280px-Kala_Ghoda_Art_District.jpg",
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Kala_Ghoda_Art_District.jpg/1280px-Kala_Ghoda_Art_District.jpg",
+    "thumbnail_url": "/images/maharashtra/kala-ghoda-mumbai.jpg",
+    "image_url": "/images/maharashtra/kala-ghoda-mumbai.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Kala_Ghoda_Art_District.jpg/1280px-Kala_Ghoda_Art_District.jpg"
+      "/images/maharashtra/kala-ghoda-mumbai.jpg"
     ],
     "section": "heritage",
     "source_url": "https://maharashtratourism.gov.in",

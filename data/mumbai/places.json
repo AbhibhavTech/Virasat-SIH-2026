@@ -396,9 +396,9 @@
     "latitude": 18.929,
     "longitude": 72.8322,
     "rating": 4.8,
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Kala_Ghoda_Art_District.jpg/1280px-Kala_Ghoda_Art_District.jpg",
+    "thumbnail_url": "/images/maharashtra/kala-ghoda-mumbai.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Kala_Ghoda_Art_District.jpg/1280px-Kala_Ghoda_Art_District.jpg"
+      "/images/maharashtra/kala-ghoda-mumbai.jpg"
     ],
     "tags": [
       "art district",
