@@ -1145,8 +1145,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "Daylight hours",
         fee: { domestic: "Free", foreign: "Free" },
         isHiddenGem: true,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Rajmachi_Fort_Shrivardhan.jpg/1280px-Rajmachi_Fort_Shrivardhan.jpg",
-        photoCredit: "Wikimedia Commons / Rajmachi Fort",
+        image: "/images/maharashtra/rajmachi-fort.jpg",
+        photoCredit: "Virasat Verified / Authentic Monsoon Bastion & Waterfalls at Rajmachi Fort, Lonavala",
         summary:
           "A pair of strategic twin fortresses (Shrivardhan and Manaranjan) situated high on the Sahyadri mountains overlooking the historic Borghat trade route. A paradise for monsoon trekkers surrounded by seasonal fireflies, deep valleys, and cloud cover.",
       },
