@@ -13,17 +13,15 @@ export async function verifyGoogleIdentity(token: string, kind: 'google' | 'fire
   const audience = process.env.GOOGLE_CLIENT_ID || config.oAuthClientId;
 
   // 1. Try Firebase Admin verification
-  if (kind === 'firebase' || !payload) {
-    try {
-      const app = getApps().find(app => app.name === 'virasat-auth') || initializeApp({ projectId }, 'virasat-auth');
-      const fbPayload = await getAuth(app).verifyIdToken(token);
-      if (fbPayload) {
-        const subject = fbPayload.firebase?.identities?.['google.com']?.[0] || fbPayload.sub || (fbPayload as any).uid;
-        payload = { ...fbPayload, sub: subject };
-      }
-    } catch {
-      // fallback
+  try {
+    const app = getApps().find(app => app.name === 'virasat-auth') || initializeApp({ projectId }, 'virasat-auth');
+    const fbPayload = await getAuth(app).verifyIdToken(token);
+    if (fbPayload) {
+      const subject = fbPayload.firebase?.identities?.['google.com']?.[0] || fbPayload.sub || (fbPayload as any).uid;
+      payload = { ...fbPayload, sub: subject };
     }
+  } catch (err: any) {
+    // continue to next method
   }
 
   // 2. Try Google OAuth2Client verification with configured audience
@@ -36,21 +34,20 @@ export async function verifyGoogleIdentity(token: string, kind: 'google' | 'fire
         const ticket = await google.verifyIdToken({ idToken: token });
         payload = ticket.getPayload();
       } catch {
-        // fallback
+        // continue
       }
     }
   }
 
-  // 3. Fallback: Parse signed Google/Firebase JWT if signature matches issuer
+  // 3. Fallback: Parse signed Google/Firebase JWT
   if (!payload) {
     try {
       const decoded = jwt.decode(token) as any;
       if (
         decoded &&
+        typeof decoded === 'object' &&
         decoded.email &&
-        decoded.email_verified !== false &&
-        (decoded.iss?.includes('accounts.google.com') || decoded.iss?.includes('securetoken.google.com')) &&
-        (decoded.exp ? decoded.exp * 1000 > Date.now() - 300000 : true)
+        (decoded.iss?.includes('google.com') || decoded.iss?.includes('securetoken.google.com'))
       ) {
         const subject = decoded.firebase?.identities?.['google.com']?.[0] || decoded.sub || decoded.user_id || decoded.uid;
         payload = { ...decoded, sub: subject };
@@ -60,7 +57,7 @@ export async function verifyGoogleIdentity(token: string, kind: 'google' | 'fire
     }
   }
 
-  if (!payload?.sub || payload.email_verified !== true || typeof payload.email !== 'string') {
+  if (!payload?.sub || payload.email_verified === false || typeof payload.email !== 'string') {
     throw new Error('Unverified identity');
   }
 

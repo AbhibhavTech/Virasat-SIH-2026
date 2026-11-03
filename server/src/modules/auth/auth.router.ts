@@ -137,7 +137,8 @@ authRouter.post('/google', validateBody(googleAuthSchema), async (req: Request, 
   let identity;
   try {
     identity = await verifyGoogleIdentity(req.body.id_token, req.body.token_type);
-  } catch {
+  } catch (err: any) {
+    console.error('[GoogleAuth] verifyGoogleIdentity failed:', err?.message || err);
     sendError(res, 401, 'INVALID_GOOGLE_TOKEN', 'Google sign-in could not be verified. Please sign in again.', req.requestId);
     return;
   }

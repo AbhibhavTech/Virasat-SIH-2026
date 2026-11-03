@@ -89,7 +89,27 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setLoading(true);
     try {
       const result = await signInWithGooglePopup();
-      const backendRes = await api.loginWithGoogle({ id_token: await result.user.getIdToken(), token_type: 'firebase' });
+      const idToken = await result.user.getIdToken();
+      let backendRes;
+      try {
+        backendRes = await api.loginWithGoogle({
+          id_token: idToken,
+          token_type: 'firebase',
+          email: result.user.email || undefined,
+          name: result.user.displayName || undefined,
+          picture: result.user.photoURL || undefined,
+          sub: result.user.uid || undefined,
+        });
+      } catch {
+        backendRes = await api.loginWithGoogle({
+          id_token: idToken,
+          token_type: 'google',
+          email: result.user.email || undefined,
+          name: result.user.displayName || undefined,
+          picture: result.user.photoURL || undefined,
+          sub: result.user.uid || undefined,
+        });
+      }
       const profile = backendRes.profile;
       setUser(profile);
 
