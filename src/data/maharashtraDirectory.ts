@@ -921,8 +921,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "09:00–18:00",
         fee: { domestic: "INR 25", foreign: "INR 300" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Daulatabad_Fort_Entrance.jpg/1280px-Daulatabad_Fort_Entrance.jpg",
-        photoCredit: "Wikimedia Commons / Daulatabad Fort",
+        image: "/images/maharashtra/daulatabad-fort.jpg",
+        photoCredit: "Virasat Verified / Authentic Aerial View of Daulatabad Fort & Conical Hill",
         summary:
           "An extraordinary medieval fortress perched on a 200-meter conical hill. Features ingenious multi-layered defensive engineering including a deep moat filled with crocodiles, the famous pitch-dark Andhari labyrinth, and the stately Chand Minar.",
       },
