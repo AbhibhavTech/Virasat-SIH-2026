@@ -28,6 +28,7 @@ import { SacredSite } from '../../data/sacredPilgrimageCircuits';
 import { Link } from 'react-router-dom';
 import { HotelAmenitiesModal } from './HotelAmenitiesModal';
 import { resolveHotelDossier, HotelDossier } from '../../utils/hotelDossierResolver';
+import { getPlanSafariUrl } from '../../utils/safariItineraryResolver';
 import { Star, Wifi, Waves, BedDouble, ArrowRight, Eye } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 import {
@@ -886,19 +887,15 @@ export const UniversalMasterStateDirectory: React.FC<UniversalMasterStateDirecto
                       )}
                     </button>
 
-                    <button
-                      type="button"
-                      onClick={() =>
-                        onOpenAIChat?.(
-                          `Plan a comprehensive wildlife safari itinerary for ${reserve.name} in ${config.stateName} including best zones, safari gate permits, timings, and recommended jungle lodges.`
-                        )
-                      }
-                      className="inline-flex items-center gap-1 text-emerald-700 hover:text-emerald-900 font-semibold transition-colors cursor-pointer"
+                    <Link
+                      to={getPlanSafariUrl(reserve, config.stateName, currentCity.name)}
+                      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs shadow-xs transition-all duration-200 cursor-pointer"
+                      title={currentLanguage === 'hi' ? 'सफारी यात्रा योजना खोलें' : 'Plan trip for this safari'}
                     >
                       <Binoculars className="w-3.5 h-3.5" />
                       <span>{currentLanguage === 'hi' ? 'सफारी योजना बनाएं' : 'Plan Safari'}</span>
                       <ChevronRight className="w-3.5 h-3.5" />
-                    </button>
+                    </Link>
                   </div>
                 </div>
               );

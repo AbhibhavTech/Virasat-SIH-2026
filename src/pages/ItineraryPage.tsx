@@ -34,6 +34,7 @@ import {
   Printer,
   Compass,
   Landmark,
+  Binoculars,
 } from 'lucide-react';
 import { api } from '../services/api';
 import { ItineraryResponse, ItineraryDay, ItineraryDayPlace } from '../types';
@@ -47,6 +48,8 @@ import { ItineraryCostDonutChart } from '../components/itinerary/ItineraryCostDo
 import { findVerifiedPlace, getVerifiedPlacesForCity } from '../data/masterTourismDatabase';
 import { HotelRecommendationsSection } from '../components/itinerary/HotelRecommendationsSection';
 import { PackageReferences } from '../components/itinerary/PackageReferences';
+import { findWildlifeReserve } from '../utils/safariItineraryResolver';
+import { WildlifeReserveEntity } from '../data/allIndiaWildlifeData';
 
 interface ItineraryPageProps {
   onSelectPlace: (id: string) => void;
@@ -156,6 +159,7 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
   const [shareMessage, setShareMessage] = useState('');
   const [restoredNotice, setRestoredNotice] = useState<string | null>(null);
   const [planError, setPlanError] = useState<string | null>(null);
+  const [safariReserve, setSafariReserve] = useState<WildlifeReserveEntity | null>(null);
 
   const handleSelectCarouselDestination = (cityId: string, cityName: string) => {
     const targetCityLower = cityName.toLowerCase();
@@ -287,6 +291,8 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
     const originParam = searchParams.get('from') || '';
     const dateParam = searchParams.get('date') || '';
     const travellersParam = Number(searchParams.get('travellers'));
+    const safariParam = searchParams.get('safari');
+    const reserveIdParam = searchParams.get('reserveId');
     const targetStartDate = /^\d{4}-\d{2}-\d{2}$/.test(dateParam) && dateParam >= localDateInputValue() ? dateParam : '';
     const targetTravellers = Number.isInteger(travellersParam) && travellersParam >= 1 && travellersParam <= 50 ? travellersParam : 1;
     setTravelStartDate(targetStartDate || localDateInputValue());
@@ -388,7 +394,24 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
         }
       }
 
-      if (cityParam || daysParam) {
+      if (safariParam || reserveIdParam) {
+        const matched = findWildlifeReserve(reserveIdParam || safariParam || '');
+        if (matched) {
+          setSafariReserve(matched);
+        }
+        targetPrefs = ['wildlife', 'beaches_nature', 'adventure'];
+        setSelectedPreferences(targetPrefs);
+        if (!daysParam) {
+          targetDays = 3;
+          setDaysCount(3);
+        }
+        setRestoredNotice(
+          isHi
+            ? `${matched?.name || safariParam} सफारी यात्रा योजना सक्रिय — 3-दिवसीय सफारी अभियान!`
+            : `Plan Safari Active: Auto-configured 3-Day Wildlife Safari Expedition for ${matched?.name || safariParam}!`
+        );
+        setTimeout(() => setRestoredNotice(null), 8000);
+      } else if (cityParam || daysParam) {
         setRestoredNotice(`Restored journey route for ${targetCity}`);
         setTimeout(() => setRestoredNotice(null), 5000);
       }
@@ -744,6 +767,124 @@ export const ItineraryPage: React.FC<ItineraryPageProps> = ({
         onSelectDestination={handleSelectCarouselDestination}
         selectedCityId={selectedCityObj.id}
       />
+
+      {/* 2B. Dedicated Wildlife Safari Edition Banner */}
+      {safariReserve && (
+        <div className="rounded-2xl sm:rounded-3xl overflow-hidden border border-emerald-300/80 bg-gradient-to-br from-emerald-950 via-stone-900 to-emerald-900 text-white shadow-xl mb-6 relative animate-fadeIn">
+          <div className="relative h-64 sm:h-72 md:h-80 w-full overflow-hidden">
+            <img
+              src={safariReserve.image}
+              alt={safariReserve.name}
+              className="w-full h-full object-cover brightness-85 hover:scale-103 transition-transform duration-700"
+              onError={(e) => {
+                (e.currentTarget as HTMLImageElement).src =
+                  'https://images.unsplash.com/photo-1561731216-c3a4d99437d5?w=1200&auto=format&fit=crop&q=80';
+              }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/50 to-stone-950/20" />
+
+            {/* Floating Badges */}
+            <div className="absolute top-4 left-4 right-4 flex items-center justify-between gap-2 z-10">
+              <div className="flex items-center gap-2 flex-wrap">
+                <span className="px-3 py-1 rounded-full bg-emerald-600/90 backdrop-blur-md text-white text-xs font-bold border border-emerald-400/30 flex items-center gap-1.5 shadow-md">
+                  <Binoculars className="w-3.5 h-3.5" />
+                  <span>{safariReserve.category}</span>
+                </span>
+                {safariReserve.isUnesco && (
+                  <span className="px-3 py-1 rounded-full bg-amber-500/90 backdrop-blur-md text-amber-950 text-xs font-bold border border-amber-300 shadow-md">
+                    UNESCO Biosphere / World Heritage
+                  </span>
+                )}
+                <span className="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-emerald-200 text-xs font-semibold border border-white/20">
+                  {safariReserve.district}, {safariReserve.stateName}
+                </span>
+              </div>
+
+              <button
+                type="button"
+                onClick={() => setSafariReserve(null)}
+                className="p-1.5 rounded-full bg-black/50 hover:bg-black/80 text-stone-300 hover:text-white transition cursor-pointer"
+                title="Clear safari context"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            </div>
+
+            {/* Hero Title & Prominent Fauna */}
+            <div className="absolute bottom-5 left-5 right-5 text-white z-10 space-y-2">
+              <div className="text-xs text-emerald-300 font-bold uppercase tracking-wider flex items-center gap-1.5">
+                <Sparkles className="w-3.5 h-3.5 text-amber-400" />
+                <span>{isHi ? 'वन्यजीव सफारी अभियान योजना' : 'Wildlife Safari Expedition Mode Active'}</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-black tracking-tight text-white drop-shadow-md">
+                {safariReserve.name}
+              </h2>
+              <p className="text-xs sm:text-sm text-stone-200 max-w-3xl line-clamp-2 leading-relaxed">
+                {safariReserve.keyHighlight}
+              </p>
+
+              {/* Fauna Tags */}
+              <div className="flex flex-wrap items-center gap-1.5 pt-1">
+                <span className="text-[10px] uppercase font-bold text-emerald-300 mr-1">Fauna:</span>
+                {safariReserve.prominentFauna.map((fauna, idx) => (
+                  <span
+                    key={idx}
+                    className="px-2.5 py-0.5 rounded-full bg-white/20 text-white backdrop-blur-md text-[11px] font-semibold border border-white/25"
+                  >
+                    {fauna}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* 3-Column Safari Logistics Guidance */}
+          <div className="p-4 sm:p-5 bg-stone-900/90 border-t border-stone-800 grid grid-cols-1 sm:grid-cols-3 gap-3.5 text-xs">
+            <div className="space-y-1">
+              <div className="text-[10px] font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1">
+                <Clock className="w-3.5 h-3.5" />
+                <span>Safari Timings &amp; Permits</span>
+              </div>
+              <div className="text-stone-200 font-medium leading-relaxed">
+                {safariReserve.safariTimings}
+              </div>
+            </div>
+
+            <div className="space-y-1">
+              <div className="text-[10px] font-bold uppercase tracking-wider text-amber-400 flex items-center gap-1">
+                <Calendar className="w-3.5 h-3.5" />
+                <span>Best Visiting Season</span>
+              </div>
+              <div className="text-stone-200 font-medium leading-relaxed">
+                {safariReserve.bestSeason}
+              </div>
+            </div>
+
+            <div className="space-y-1 flex flex-col justify-between">
+              <div>
+                <div className="text-[10px] font-bold uppercase tracking-wider text-blue-400 flex items-center gap-1">
+                  <MapPin className="w-3.5 h-3.5" />
+                  <span>Protected Area &amp; Gateway</span>
+                </div>
+                <div className="text-stone-200 font-medium">
+                  {safariReserve.areaSqKm || 'Protected Sanctuary'} · Gateway: {safariReserve.nearestCity}
+                </div>
+              </div>
+              <div className="pt-2">
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${safariReserve.name}, ${safariReserve.stateName}`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-[11px] font-bold text-emerald-300 hover:text-emerald-200 transition underline"
+                >
+                  <Navigation className="w-3 h-3" />
+                  <span>Open Coordinates on Google Maps</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* 3. INPUT CARD: DESTINATION, DAYS, PACE, BUDGET & PREFERENCES */}
       <div id="trip-planner-form" className="rounded-2xl sm:rounded-3xl bg-white border border-stone-200 shadow-sm p-4 sm:p-6 space-y-4 sm:space-y-5 scroll-mt-6">
