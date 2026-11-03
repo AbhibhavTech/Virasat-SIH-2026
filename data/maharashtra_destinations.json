@@ -2137,12 +2137,12 @@
       "lng": 72.823
     },
     "image": {
-      "url": "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=1200&auto=format&fit=crop&q=80",
-      "attribution": "Unsplash / Marine Drive Coastal Curve at Twilight",
+      "url": "/images/maharashtra/marine-drive.png",
+      "attribution": "Virasat Verified Heritage Archive / Marine Drive Promenade & Queen's Necklace",
       "license": "Creative Commons / Unsplash / Public Domain",
-      "source_url": "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=1200&auto=format&fit=crop&q=80"
+      "source_url": "/images/maharashtra/marine-drive.png"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=1200&auto=format&fit=crop&q=80",
+    "thumbnail_url": "/images/maharashtra/marine-drive.png",
     "verification_status": "VERIFIED",
     "sources": [
       {

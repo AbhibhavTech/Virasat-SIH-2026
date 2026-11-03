@@ -1026,9 +1026,9 @@
     "latitude": 18.9432,
     "longitude": 72.823,
     "rating": 4.8,
-    "thumbnail_url": "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=1200&auto=format&fit=crop&q=80",
+    "thumbnail_url": "/images/maharashtra/marine-drive.png",
     "images": [
-      "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=1200&auto=format&fit=crop&q=80"
+      "/images/maharashtra/marine-drive.png"
     ],
     "tags": [
       "marine drive",

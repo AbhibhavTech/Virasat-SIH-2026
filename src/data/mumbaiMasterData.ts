@@ -1472,10 +1472,10 @@ export const MUMBAI_ATTRACTIONS: MumbaiAttraction[] = [
       "lat": 18.9432,
       "lng": 72.823
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=1200&auto=format&fit=crop&q=80",
-    "image_url": "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=1200&auto=format&fit=crop&q=80",
+    "thumbnail_url": "/images/maharashtra/marine-drive.png",
+    "image_url": "/images/maharashtra/marine-drive.png",
     "images": [
-      "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=1200&auto=format&fit=crop&q=80"
+      "/images/maharashtra/marine-drive.png"
     ],
     "section": "nature_parks_zoo",
     "source_url": "https://maharashtratourism.gov.in",

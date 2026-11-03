@@ -414,8 +414,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "Open 24 Hours",
         fee: { domestic: "Free", foreign: "Free" },
         isHiddenGem: false,
-        image: "https://images.unsplash.com/photo-1566552881560-0be862a7c445?w=1200&auto=format&fit=crop&q=80",
-        photoCredit: "Unsplash / Marine Drive Coastal Curve at Twilight",
+        image: "/images/maharashtra/marine-drive.png",
+        photoCredit: "Virasat Verified Heritage Archive / Marine Drive Promenade & Queen's Necklace",
         summary:
           "The 3.6-km arc-shaped coastal boulevard known as the Queen's Necklace. Lined with the world's second-largest collection of Art Deco buildings, terminating at vibrant Girgaum Chowpatty beach.",
       },
