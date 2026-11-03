@@ -2,6 +2,7 @@ import { STATE_DIRECTORIES_MAP } from '../data/masterStateDirectoryConfig';
 import { VERIFIED_HOTELS_DATABASE, VerifiedStay } from '../data/hotelsData';
 import { getUltimateCityRecord, UltimateHotel } from '../data/ultimateCityDatabase';
 import { MASTER_TOURISM_PLACES } from '../data/masterTourismPlacesData';
+import { getMonumentRealImage } from '../data/monumentRealImages';
 
 export interface AmenityDetail {
   id: string;
@@ -333,7 +334,12 @@ export function resolveHotelDossier(
   const themeImages = THEME_IMAGES[theme] || THEME_IMAGES.luxury;
   const tierInfo = detectTier(stayName, rawCategory);
 
-  const coverImage = verifiedMatch?.thumbnail_url || themeImages.cover;
+  const directRealImage =
+    getMonumentRealImage(slug) ||
+    getMonumentRealImage(stayName.toLowerCase().replace(/[^a-z0-9]/g, '-')) ||
+    getMonumentRealImage(stayName.toLowerCase().replace(/^(the|a)\s+/i, '').replace(/[^a-z0-9]/g, '-'));
+
+  const coverImage = directRealImage || verifiedMatch?.thumbnail_url || themeImages.cover;
   const galleryImages = themeImages.gallery;
 
   const stars = verifiedMatch ? (verifiedMatch.tier === 'luxury' ? 5 : 4) : ultimateMatch?.stars || tierInfo.stars;

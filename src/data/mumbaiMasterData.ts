@@ -2418,7 +2418,7 @@ export const MUMBAI_STAYS = {
         "Breakfast Included",
         "Safe & Clean"
       ],
-      "thumbnail_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&auto=format&fit=crop&q=80"
+      "thumbnail_url": "/images/maharashtra/taj-mahal-palace.jpg"
     },
     {
       "id": "residency-hotel-fort",
@@ -2448,7 +2448,7 @@ export const MUMBAI_STAYS = {
         "Outdoor Pool",
         "Fine Dining"
       ],
-      "thumbnail_url": "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&auto=format&fit=crop&q=80"
+      "thumbnail_url": "/images/maharashtra/the-oberoi-mumbai.jpg"
     },
     {
       "id": "fariyas-hotel-mumbai",
@@ -2493,7 +2493,7 @@ export const MUMBAI_STAYS = {
         "10 Historic Restaurants",
         "Royal Butler Service"
       ],
-      "thumbnail_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=600&auto=format&fit=crop&q=80"
+      "thumbnail_url": "/images/maharashtra/taj-mahal-palace.jpg"
     },
     {
       "id": "the-oberoi-mumbai",
@@ -2507,7 +2507,7 @@ export const MUMBAI_STAYS = {
         "Michelin-Caliber Cuisine",
         "24-Hour Butler Service"
       ],
-      "thumbnail_url": "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&auto=format&fit=crop&q=80"
+      "thumbnail_url": "/images/maharashtra/the-oberoi-mumbai.jpg"
     },
     {
       "id": "the-st-regis-mumbai",

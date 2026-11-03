@@ -76,8 +76,6 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'IN-MH-MUM-ATT-002': '/images/maharashtra/csmt-mumbai.png',
   'IN-MH-MUM-ATT-003': '/images/maharashtra/taj-mahal-palace.jpg',
   'mumbai-taj-mahal-palace': '/images/maharashtra/taj-mahal-palace.jpg',
-  'taj-mahal-palace': '/images/maharashtra/taj-mahal-palace.jpg',
-  'taj-mahal-palace-mumbai': '/images/maharashtra/taj-mahal-palace.jpg',
   'IN-MH-MUM-ATT-004': '/images/maharashtra/bombay-high-court.png',
   'mumbai-high-court-rajabai': '/images/maharashtra/bombay-high-court.png',
   'bombay-high-court': '/images/maharashtra/bombay-high-court.png',
@@ -561,7 +559,19 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'victoria-memorial': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/7/72/Victoria_Memorial_situated_in_Kolkata.jpg/1280px-Victoria_Memorial_situated_in_Kolkata.jpg',
   'kaziranga': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fe/Beauty_of_Kaziranga_National_Park.jpg/1280px-Beauty_of_Kaziranga_National_Park.jpg',
   'uttra-shanglen': '/images/manipur-kangla-fort-kangla-sha-4k.jpg',
-  'imphal': '/images/manipur-kangla-fort-kangla-sha-4k.jpg'
+  'imphal': '/images/manipur-kangla-fort-kangla-sha-4k.jpg',
+  // Mumbai Verified Luxury & Heritage Stays
+  'the-taj-mahal-palace': '/images/maharashtra/taj-mahal-palace.jpg',
+  'the-taj-mahal-palace-mumbai': '/images/maharashtra/taj-mahal-palace.jpg',
+  'the-oberoi': '/images/maharashtra/the-oberoi-mumbai.jpg',
+  'the-oberoi-mumbai': '/images/maharashtra/the-oberoi-mumbai.jpg',
+  'oberoi-mumbai': '/images/maharashtra/the-oberoi-mumbai.jpg',
+  'the-leela': '/images/maharashtra/the-leela-mumbai.jpg',
+  'the-leela-mumbai': '/images/maharashtra/the-leela-mumbai.jpg',
+  'leela-mumbai': '/images/maharashtra/the-leela-mumbai.jpg',
+  'abode-bombay': '/images/maharashtra/abode-bombay.jpg',
+  'abode-bombay-mumbai': '/images/maharashtra/abode-bombay.jpg',
+  'the-abode-bombay': '/images/maharashtra/abode-bombay.jpg'
 };
 
 export function getMonumentRealImage(id?: string, fallback?: string): string {
