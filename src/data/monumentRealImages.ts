@@ -355,6 +355,13 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'gir-kamleshwar-dam': '/images/gujarat/kamleshwar-dam.jpg',
   'kamleshwar-reservoir': '/images/gujarat/kamleshwar-dam.jpg',
   'kamleshwar': '/images/gujarat/kamleshwar-dam.jpg',
+  'IN-GJ-GIR-GEM-001': '/images/gujarat/jamjir-waterfall.jpg',
+  'in-gj-gir-gem-001': '/images/gujarat/jamjir-waterfall.jpg',
+  'jamjir-waterfall': '/images/gujarat/jamjir-waterfall.jpg',
+  'jamjir-falls': '/images/gujarat/jamjir-waterfall.jpg',
+  'jamjir-waterfall-gir': '/images/gujarat/jamjir-waterfall.jpg',
+  'gir-jamjir-waterfall': '/images/gujarat/jamjir-waterfall.jpg',
+  'jamjir': '/images/gujarat/jamjir-waterfall.jpg',
   'mh-csmt': '/images/maharashtra/csmt-mumbai.png',
   'basilica-of-bom-jesus': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/1280px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg',
 

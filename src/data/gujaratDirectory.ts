@@ -251,8 +251,8 @@ export const GUJARAT_DIRECTORY: GujaratCity[] = [
           foreign: 'Free',
         },
         isHiddenGem: true,
-        image: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=800&auto=format&fit=crop&q=80',
-        photoCredit: 'Discover Bharat Archive / Jamjir Cascades on Shingoda River',
+        image: '/images/gujarat/jamjir-waterfall.jpg',
+        photoCredit: 'Virasat High-Resolution Heritage Archive / Jamjir Cascades on Shingoda River',
         summary:
           'A dramatic two-tiered natural waterfall roaring over jagged basalt rock shelves on the Shingoda River near Jamwala. Surrounded by dense scrubland, it forms massive white froth pools (swimming is strictly prohibited due to dangerous undertows and crocodile presence).',
       },
@@ -380,7 +380,7 @@ export const GUJARAT_DIRECTORY: GujaratCity[] = [
           foreign: 'Free',
         },
         isHiddenGem: true,
-        image: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=800&auto=format&fit=crop&q=80',
+        image: '/images/gujarat/jamjir-waterfall.jpg',
         photoCredit: 'Discover Bharat Archive / Somnath Coastal Sunset Promenade',
         summary:
           'A breezy, non-swimming shoreline promenade adjacent to the temple offering sweeping sunset vistas over the Arabian Sea. Massive stone breakwaters and tetrapods hold back crashing tidal surges while pilgrims stroll along the illuminated sea walk.',
@@ -574,7 +574,7 @@ export const GUJARAT_DIRECTORY: GujaratCity[] = [
           foreign: 'Free',
         },
         isHiddenGem: false,
-        image: 'https://images.unsplash.com/photo-1518495973542-4542c06a5843?w=800&auto=format&fit=crop&q=80',
+        image: '/images/gujarat/jamjir-waterfall.jpg',
         photoCredit: 'Discover Bharat Archive / Kalo Dungar Peak & Panoramic Rann Horizon',
         summary:
           'The highest elevation in Kutch (462 m), offering unmatched 360-degree panoramic vistas where the white desert merges seamlessly into the sky. Home to the legendary 400-year-old Dattatreya Temple where wild jackals are fed consecrated prasad twice daily.',
