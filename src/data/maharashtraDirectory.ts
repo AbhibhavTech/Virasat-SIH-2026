@@ -246,8 +246,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "11:00–19:00 (Open all 7 days)",
         fee: { domestic: "Free", foreign: "Free" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Jehangir_Art_Gallery%2C_Mumbai.jpg/1280px-Jehangir_Art_Gallery%2C_Mumbai.jpg",
-        photoCredit: "Wikimedia Commons / Jehangir Art Gallery Entrance",
+        image: "/images/maharashtra/jehangir-art-gallery.png",
+        photoCredit: "Virasat Verified Heritage Archive / Jehangir Art Gallery Entrance Canopy",
         summary:
           "India's premier contemporary art exhibition space, founded in 1952. Renowned for showcasing master painters, sculptors, and emerging avant-garde visual artists, featuring its beloved Cafe Samovar heritage legacy.",
       },

@@ -688,10 +688,10 @@ export const MUMBAI_ATTRACTIONS: MumbaiAttraction[] = [
       "lat": 18.9275,
       "lng": 72.832
     },
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Jehangir_Art_Gallery%2C_Mumbai.jpg/1280px-Jehangir_Art_Gallery%2C_Mumbai.jpg",
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Jehangir_Art_Gallery%2C_Mumbai.jpg/1280px-Jehangir_Art_Gallery%2C_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/jehangir-art-gallery.png",
+    "image_url": "/images/maharashtra/jehangir-art-gallery.png",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Jehangir_Art_Gallery%2C_Mumbai.jpg/1280px-Jehangir_Art_Gallery%2C_Mumbai.jpg"
+      "/images/maharashtra/jehangir-art-gallery.png"
     ],
     "section": "museums",
     "source_url": "https://maharashtratourism.gov.in",

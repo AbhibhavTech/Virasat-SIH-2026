@@ -438,9 +438,9 @@
     "latitude": 18.9275,
     "longitude": 72.832,
     "rating": 4.8,
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Jehangir_Art_Gallery%2C_Mumbai.jpg/1280px-Jehangir_Art_Gallery%2C_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/jehangir-art-gallery.png",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Jehangir_Art_Gallery%2C_Mumbai.jpg/1280px-Jehangir_Art_Gallery%2C_Mumbai.jpg"
+      "/images/maharashtra/jehangir-art-gallery.png"
     ],
     "tags": [
       "art gallery",
