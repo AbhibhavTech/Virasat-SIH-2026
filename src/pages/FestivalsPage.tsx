@@ -27,7 +27,6 @@ import {
   Filter,
   Flame,
   Info,
-  Layers,
   AlertCircle,
   RefreshCw,
   Flag,
@@ -556,21 +555,6 @@ export const FestivalsPage: React.FC<FestivalsPageProps> = ({
   );
 
   // Actions
-  const handleShowOnMap = (festival: FestivalItem) => {
-    const lat = festival.lat;
-    const lng = festival.lng;
-    const query = festival.name;
-    if (lat && lng) {
-      navigate(`/map?q=${encodeURIComponent(query)}&lat=${lat}&lng=${lng}`);
-    } else {
-      navigate(`/map?q=${encodeURIComponent(query)}`);
-    }
-  };
-
-  const handleAddToItinerary = (festival: FestivalItem) => {
-    navigate(`/itinerary?destination=${encodeURIComponent(festival.primary_city)}&festival=${encodeURIComponent(festival.name)}`);
-  };
-
   const handleAskAI = (festival: FestivalItem) => {
     navigate(`/ai?q=${encodeURIComponent(`Tell me about ${festival.name} in ${festival.primary_city}, ${festival.state}. What are the key rituals, best places to see, and visitor advice?`)}`);
   };
@@ -719,6 +703,18 @@ export const FestivalsPage: React.FC<FestivalsPageProps> = ({
               {fest.description}
             </p>
 
+            {/* Where It Is Celebrated */}
+            <div className="flex items-center gap-1.5 text-xs text-neutral-600 mb-3 font-medium">
+              <MapPin className="w-3.5 h-3.5 text-[#D45B10] shrink-0" />
+              <span className="truncate">
+                <span className="text-neutral-500">{currentLanguage === 'hi' ? 'आयोजन: ' : 'Celebrated in: '}</span>
+                <strong className="text-neutral-800">{fest.primary_city}, {fest.state}</strong>
+                {fest.alternate_locations && fest.alternate_locations.length > 0 && (
+                  <span className="text-neutral-500"> • {fest.alternate_locations.slice(0, 2).join(', ')}</span>
+                )}
+              </span>
+            </div>
+
             {/* Date Indicator */}
             <div className="bg-[#FAF7F2] rounded-xl p-3.5 sm:p-4 border border-[#EFE8DF] mb-4 text-xs sm:text-sm">
               <div className="font-semibold text-neutral-800 flex items-center gap-1.5 mb-0.5">
@@ -755,25 +751,12 @@ export const FestivalsPage: React.FC<FestivalsPageProps> = ({
 
             <div className="flex items-center gap-1.5" onClick={(e) => e.stopPropagation()}>
               <button
-                title="Show festival location on Map"
-                onClick={() => handleShowOnMap(fest)}
-                className="p-2 rounded-xl bg-neutral-100 hover:bg-neutral-200 text-neutral-700 transition-colors"
-              >
-                <Layers className="w-4 h-4" />
-              </button>
-              <button
-                title="Add to Itinerary"
-                onClick={() => handleAddToItinerary(fest)}
-                className="p-2 rounded-xl bg-orange-100 hover:bg-orange-200 text-[#D45B10] transition-colors"
-              >
-                <Calendar className="w-4 h-4" />
-              </button>
-              <button
-                title="Ask AI Assistant about festival"
+                title={currentLanguage === 'hi' ? 'विरासत AI से इस उत्सव पर पूछें' : 'Ask AI Assistant about festival'}
                 onClick={() => handleAskAI(fest)}
-                className="p-2 rounded-xl bg-amber-100 hover:bg-amber-200 text-amber-800 transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200/80 transition-colors text-xs font-semibold cursor-pointer"
               >
-                <Bot className="w-4 h-4" />
+                <Bot className="w-4 h-4 text-amber-600" />
+                <span>{currentLanguage === 'hi' ? 'AI से पूछें' : 'Ask AI'}</span>
               </button>
             </div>
           </div>

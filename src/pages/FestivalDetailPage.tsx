@@ -18,7 +18,6 @@ import {
   ShieldCheck,
   Clock,
   Info,
-  Layers,
   Bot,
   Hotel,
 } from 'lucide-react';
@@ -308,49 +307,55 @@ export const FestivalDetailPage: React.FC<FestivalDetailPageProps> = ({
         </div>
       </section>
 
-      {/* 3. Interactive Visitor Action Strip */}
-      <section className="flex flex-wrap items-center justify-between gap-3 p-4 rounded-2xl bg-white border border-stone-200 shadow-xs">
-        <div className="flex flex-wrap items-center gap-2.5">
-          <button
-            type="button"
-            onClick={() => {
-              if (onNavigateTab) onNavigateTab('itinerary');
-              else navigate('/itinerary');
-            }}
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#FF671F] hover:bg-orange-700 text-white font-bold text-xs sm:text-sm shadow-md transition cursor-pointer"
-          >
-            <Compass className="w-4 h-4 text-amber-200" />
-            <span>{isHi ? 'यात्रा योजना में शामिल करें' : 'Add to Trip Itinerary'}</span>
-          </button>
+      {/* 3. Celebration Location & Cultural Heritage Hub Strip */}
+      <section className="flex flex-col md:flex-row md:items-center justify-between gap-4 p-4 sm:p-5 rounded-2xl bg-white border border-[#EFE8DF] shadow-xs">
+        <div className="flex items-start sm:items-center gap-3.5 min-w-0">
+          <div className="w-10 h-10 rounded-xl bg-orange-100 border border-orange-200 flex items-center justify-center text-[#FF671F] shrink-0">
+            <MapPin className="w-5 h-5 text-[#FF671F]" />
+          </div>
+          <div className="min-w-0">
+            <div className="flex items-center gap-2 flex-wrap">
+              <span className="text-[10px] font-bold uppercase tracking-wider text-[#D45B10] bg-orange-50 px-2 py-0.5 rounded-md border border-orange-200/60">
+                {isHi ? 'आयोजन स्थल एवं प्रमुख उत्सव केंद्र' : 'Celebrated In / Where It Takes Place'}
+              </span>
+              <span className="text-[11px] text-stone-500 font-medium hidden sm:inline">
+                {isHi ? 'सांस्कृतिक एवं धार्मिक परंपरा' : 'Living Cultural & Religious Tradition'}
+              </span>
+            </div>
+            <div className="text-sm sm:text-base font-bold text-stone-900 leading-snug mt-1">
+              <span>{festival.primary_city}, {isHi ? translateTextToHindi(festival.state) : festival.state}</span>
+              {festival.alternate_locations && festival.alternate_locations.length > 0 && (
+                <span className="text-stone-600 font-medium text-xs sm:text-sm block sm:inline sm:ml-2">
+                  <span className="hidden sm:inline">• </span>
+                  {festival.alternate_locations.join(' • ')}
+                </span>
+              )}
+            </div>
+            {festival.city_or_venue && festival.city_or_venue !== festival.primary_city && (
+              <div className="text-xs text-stone-500 font-medium mt-0.5">
+                {isHi ? 'प्रमुख आयोजन स्थल: ' : 'Key Venues / Shrines: '}{festival.city_or_venue}
+              </div>
+            )}
+          </div>
+        </div>
 
-          <button
-            type="button"
-            onClick={() => {
-              if (onNavigateTab) onNavigateTab('map');
-              else navigate('/map');
-            }}
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-stone-200 bg-stone-50 hover:bg-stone-100 text-stone-800 font-bold text-xs sm:text-sm transition cursor-pointer"
-          >
-            <Layers className="w-4 h-4 text-[#FF671F]" />
-            <span>{isHi ? 'मानचित्र पर देखें' : 'View on Interactive Map'}</span>
-          </button>
-
+        <div className="flex items-center gap-3 shrink-0 self-start md:self-auto flex-wrap">
           <button
             type="button"
             onClick={() => {
               if (onNavigateTab) onNavigateTab('ai');
-              else navigate('/ai');
+              else navigate('/ai?q=' + encodeURIComponent(`Tell me about ${festival.name} in ${festival.primary_city}, ${festival.state}. What are the key rituals, traditions, and significance?`));
             }}
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-amber-300 bg-amber-50 hover:bg-amber-100 text-amber-950 font-bold text-xs sm:text-sm transition cursor-pointer"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-amber-300 bg-amber-50 hover:bg-amber-100 text-amber-950 font-bold text-xs sm:text-sm transition cursor-pointer shadow-xs"
           >
             <Bot className="w-4 h-4 text-amber-600" />
             <span>{isHi ? 'विरासत AI से इस उत्सव पर चर्चा करें' : 'Ask Virasat AI about this Festival'}</span>
           </button>
-        </div>
 
-        <div className="text-[11px] text-stone-500 font-semibold flex items-center gap-1.5">
-          <ShieldCheck className="w-4 h-4 text-emerald-600" />
-          <span>{isHi ? 'राष्ट्रीय पंचांग एवं पर्यटन अभिलेख से सत्यापित' : 'Verified by National Cultural Archives'}</span>
+          <div className="text-[11px] text-stone-500 font-semibold flex items-center gap-1.5 hidden lg:flex">
+            <ShieldCheck className="w-4 h-4 text-emerald-600" />
+            <span>{isHi ? 'राष्ट्रीय पंचांग एवं पर्यटन अभिलेख से सत्यापित' : 'Verified by National Cultural Archives'}</span>
+          </div>
         </div>
       </section>
 
