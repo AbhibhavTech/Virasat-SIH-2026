@@ -435,6 +435,8 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'IN-MH-PUN-ATT-001': '/images/maharashtra/shaniwar-wada.jpg',
   'in-mh-pun-att-001': '/images/maharashtra/shaniwar-wada.jpg',
   'shaniwar-wada': '/images/maharashtra/shaniwar-wada.jpg',
+  'shaniwar-wada-fort': '/images/maharashtra/shaniwar-wada.jpg',
+  'pune_001': '/images/maharashtra/shaniwar-wada.jpg',
   'shaniwarwada': '/images/maharashtra/shaniwar-wada.jpg',
   'pune-shaniwar-wada': '/images/maharashtra/shaniwar-wada.jpg',
 

@@ -33,10 +33,10 @@
       "lat": 18.5196,
       "lng": 73.8553
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?w=1000&auto=format&fit=crop&q=80",
-    "image_url": "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?w=1000&auto=format&fit=crop&q=80",
+    "thumbnail_url": "/images/maharashtra/shaniwar-wada.jpg",
+    "image_url": "/images/maharashtra/shaniwar-wada.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?w=1000&auto=format&fit=crop&q=80"
+      "/images/maharashtra/shaniwar-wada.jpg"
     ],
     "section": "heritage",
     "source_url": "https://maharashtratourism.gov.in/pune/shaniwar-wada",

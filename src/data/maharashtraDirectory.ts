@@ -686,7 +686,7 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
     tagline: "Imperial Peshwa seat, Sinhagad hill fortresses, lush Osho ashrams & vibrant university vibe",
     accentColor: "#B45309",
     bgGradient: "from-amber-50 via-yellow-50/40 to-stone-50/30",
-    coverImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Shaniwarwada_Pune.jpg/1280px-Shaniwarwada_Pune.jpg",
+    coverImage: "/images/maharashtra/shaniwar-wada.jpg",
     photoCredit: "Wikimedia Commons / Shaniwar Wada Delhi Gate",
     flashcardBlurb:
       "Maharashtra's cultural and intellectual capital, blending Maratha imperial history, 8th-century rock-cut architecture, vibrant student districts, and serene hill sanctuaries.",
