@@ -266,6 +266,12 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'vipassana-pagoda': '/images/maharashtra/global-vipassana-pagoda.jpg',
   'global-pagoda': '/images/maharashtra/global-vipassana-pagoda.jpg',
   'mh-gem-global-vipassana-pagoda': '/images/maharashtra/global-vipassana-pagoda.jpg',
+  'IN-MH-MUM-ATT-022': '/images/maharashtra/iskcon-juhu.jpg',
+  'mumbai-iskcon-juhu': '/images/maharashtra/iskcon-juhu.jpg',
+  'iskcon-juhu': '/images/maharashtra/iskcon-juhu.jpg',
+  'iskcon-temple-juhu': '/images/maharashtra/iskcon-juhu.jpg',
+  'radha-rasabihari-juhu': '/images/maharashtra/iskcon-juhu.jpg',
+  'sri-sri-radha-rasabihari': '/images/maharashtra/iskcon-juhu.jpg',
   'mh-csmt': '/images/maharashtra/csmt-mumbai.png',
   'basilica-of-bom-jesus': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/1280px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg',
 

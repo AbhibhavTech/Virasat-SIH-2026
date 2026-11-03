@@ -900,9 +900,9 @@
     "latitude": 19.1128,
     "longitude": 72.8267,
     "rating": 4.8,
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/ISKCON_Juhu_Mumbai.jpg/1280px-ISKCON_Juhu_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/iskcon-juhu.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/ISKCON_Juhu_Mumbai.jpg/1280px-ISKCON_Juhu_Mumbai.jpg"
+      "/images/maharashtra/iskcon-juhu.jpg"
     ],
     "tags": [
       "iskcon",

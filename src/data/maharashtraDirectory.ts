@@ -378,8 +378,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "04:30–13:00, 16:30–21:00",
         fee: { domestic: "Free", foreign: "Free" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/ISKCON_Juhu_Mumbai.jpg/1280px-ISKCON_Juhu_Mumbai.jpg",
-        photoCredit: "Wikimedia Commons / ISKCON Temple Juhu Marble Sanctuary",
+        image: "/images/maharashtra/iskcon-juhu.jpg",
+        photoCredit: "Virasat Verified Heritage Archive / Sri Sri Radha Rasabihariji Deities ISKCON Juhu",
         summary:
           "A serene spiritual complex featuring marble architecture, spiritual libraries, and pure Vedic dining at Govinda's, steps from Juhu Beach.",
       },

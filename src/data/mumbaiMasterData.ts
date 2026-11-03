@@ -1304,10 +1304,10 @@ export const MUMBAI_ATTRACTIONS: MumbaiAttraction[] = [
       "lat": 19.1128,
       "lng": 72.8267
     },
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/ISKCON_Juhu_Mumbai.jpg/1280px-ISKCON_Juhu_Mumbai.jpg",
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/ISKCON_Juhu_Mumbai.jpg/1280px-ISKCON_Juhu_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/iskcon-juhu.jpg",
+    "image_url": "/images/maharashtra/iskcon-juhu.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/ISKCON_Juhu_Mumbai.jpg/1280px-ISKCON_Juhu_Mumbai.jpg"
+      "/images/maharashtra/iskcon-juhu.jpg"
     ],
     "section": "religious_cultural",
     "source_url": "https://maharashtratourism.gov.in",
