@@ -885,7 +885,7 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "09:00–17:00 (Closed on Mondays)",
         fee: { domestic: "INR 40", foreign: "INR 600" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/c/c3/Ajanta_%2863%29.jpg",
+        image: "/images/maharashtra/ajanta-caves.jpg",
         photoCredit: "Wikimedia Commons / Ajanta Caves",
         summary:
           "A dramatic horseshoe-shaped ravine housing 30 rock-cut Buddhist cave monuments dating from the 2nd century BCE to the 5th century CE. Renowned globally as the pinnacle of ancient Indian mural painting and expressive Buddhist iconography.",

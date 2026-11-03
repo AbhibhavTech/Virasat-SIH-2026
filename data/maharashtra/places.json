@@ -12,7 +12,7 @@
       "lng": 75.7033
     },
     "rating": 4.8,
-    "thumbnail_url": "https://images.unsplash.com/photo-1600100397608-f010e421e4a3?auto=format&fit=crop&w=1200&q=80",
+    "thumbnail_url": "/images/maharashtra/ajanta-caves.jpg",
     "best_time_to_visit": "November to March",
     "visiting_hours": "09:00 AM - 05:00 PM (Closed Mondays)",
     "entry_fee": {
@@ -20,7 +20,14 @@
       "international": 600,
       "currency": "INR"
     },
-    "tags": ["unesco", "buddhist", "caves", "fresco", "ancient"]
+    "tags": [
+      "unesco",
+      "buddhist",
+      "caves",
+      "fresco",
+      "ancient"
+    ],
+    "image_url": "/images/maharashtra/ajanta-caves.jpg"
   },
   {
     "id": "ellora-caves",
@@ -43,7 +50,13 @@
       "international": 600,
       "currency": "INR"
     },
-    "tags": ["unesco", "monolith", "kailasa", "rashtrakuta", "temple"]
+    "tags": [
+      "unesco",
+      "monolith",
+      "kailasa",
+      "rashtrakuta",
+      "temple"
+    ]
   },
   {
     "id": "gateway-of-india",
@@ -54,7 +67,7 @@
     "summary": "Iconic arch-monument overlooking the Arabian Sea, built in Indo-Saracenic style.",
     "description": "Erected to commemorate the landing of King George V and Queen Mary in 1911, completed in 1924.",
     "coordinates": {
-      "lat": 18.9220,
+      "lat": 18.922,
       "lng": 72.8347
     },
     "rating": 4.7,
@@ -66,7 +79,11 @@
       "international": 0,
       "currency": "INR"
     },
-    "tags": ["landmark", "indo-saracenic", "mumbai-harbour"]
+    "tags": [
+      "landmark",
+      "indo-saracenic",
+      "mumbai-harbour"
+    ]
   },
   {
     "id": "lonavala-tigers-point",
@@ -77,7 +94,7 @@
     "summary": "Dramatic 650-meter cliff-top viewpoint resembling a leaping tiger into the valley, famous for echo point and rolling Sahyadri clouds.",
     "description": "Perched high above the valley in Kurvande near Lonavala, Tiger's Leap offers stunning sheer drop views of the Western Ghats, waterfalls, and mist-covered mountain valleys.",
     "coordinates": {
-      "lat": 18.7180,
+      "lat": 18.718,
       "lng": 73.3768
     },
     "rating": 4.8,
@@ -89,7 +106,16 @@
       "international": 0,
       "currency": "INR"
     },
-    "tags": ["lonavala", "khandala", "viewpoint", "sahyadri", "nature", "tourist_places", "famous", "sunset"]
+    "tags": [
+      "lonavala",
+      "khandala",
+      "viewpoint",
+      "sahyadri",
+      "nature",
+      "tourist_places",
+      "famous",
+      "sunset"
+    ]
   },
   {
     "id": "lonavala-bhushi-dam",
@@ -112,7 +138,15 @@
       "international": 0,
       "currency": "INR"
     },
-    "tags": ["lonavala", "dam", "waterfall", "monsoon", "tourist_places", "nature", "famous"]
+    "tags": [
+      "lonavala",
+      "dam",
+      "waterfall",
+      "monsoon",
+      "tourist_places",
+      "nature",
+      "famous"
+    ]
   },
   {
     "id": "lonavala-karla-caves",
@@ -135,7 +169,17 @@
       "international": 300,
       "currency": "INR"
     },
-    "tags": ["lonavala", "karla", "buddhist", "caves", "heritage", "monument", "asi", "ancient", "famous"]
+    "tags": [
+      "lonavala",
+      "karla",
+      "buddhist",
+      "caves",
+      "heritage",
+      "monument",
+      "asi",
+      "ancient",
+      "famous"
+    ]
   },
   {
     "id": "lonavala-bhaja-caves",
@@ -158,7 +202,16 @@
       "international": 300,
       "currency": "INR"
     },
-    "tags": ["lonavala", "bhaja", "caves", "heritage", "monument", "buddhist", "ancient", "famous"]
+    "tags": [
+      "lonavala",
+      "bhaja",
+      "caves",
+      "heritage",
+      "monument",
+      "buddhist",
+      "ancient",
+      "famous"
+    ]
   },
   {
     "id": "lonavala-lohagad-fort",
@@ -170,7 +223,7 @@
     "description": "Lohagad (Iron Fort) divides the Indrayani and Pavana basins. It has four formidable gates—Ganesh Darwaja, Narayan Darwaja, Hanuman Darwaja, and Maha Darwaja—and the iconic 1,500m scorpion-tail fortified ridge.",
     "coordinates": {
       "lat": 18.6997,
-      "lng": 73.4770
+      "lng": 73.477
     },
     "rating": 4.8,
     "thumbnail_url": "https://images.unsplash.com/photo-1609137144813-7d9921338f24?auto=format&fit=crop&w=1200&q=80",
@@ -181,7 +234,16 @@
       "international": 0,
       "currency": "INR"
     },
-    "tags": ["lonavala", "lohagad", "fort", "heritage", "shivaji-maharaj", "maratha", "monument", "famous"]
+    "tags": [
+      "lonavala",
+      "lohagad",
+      "fort",
+      "heritage",
+      "shivaji-maharaj",
+      "maratha",
+      "monument",
+      "famous"
+    ]
   },
   {
     "id": "khandala-rajmachi-fort",
@@ -204,7 +266,15 @@
       "international": 0,
       "currency": "INR"
     },
-    "tags": ["khandala", "lonavala", "rajmachi", "fort", "trekking", "heritage", "famous"]
+    "tags": [
+      "khandala",
+      "lonavala",
+      "rajmachi",
+      "fort",
+      "trekking",
+      "heritage",
+      "famous"
+    ]
   },
   {
     "id": "khandala-dukes-nose",
@@ -215,7 +285,7 @@
     "summary": "Dramatic cliff peak shaped like a cobra's hood offering thrilling rock climbing, rappelling, and 360-degree Sahyadri valley views.",
     "description": "Also known as Nagphani due to its resemblance to a cobra's raised hood, the peak was nicknamed Duke's Nose by British surveyors. It is renowned for its sheer vertical drop and sweeping views of the Khandala ghats.",
     "coordinates": {
-      "lat": 18.7460,
+      "lat": 18.746,
       "lng": 73.3855
     },
     "rating": 4.7,
@@ -227,7 +297,15 @@
       "international": 0,
       "currency": "INR"
     },
-    "tags": ["khandala", "cliff", "trekking", "viewpoint", "nature", "famous", "adventure"]
+    "tags": [
+      "khandala",
+      "cliff",
+      "trekking",
+      "viewpoint",
+      "nature",
+      "famous",
+      "adventure"
+    ]
   },
   {
     "id": "khandala-sunset-point",
@@ -250,7 +328,14 @@
       "international": 0,
       "currency": "INR"
     },
-    "tags": ["khandala", "sunset", "viewpoint", "scenic", "tourist_places", "famous"]
+    "tags": [
+      "khandala",
+      "sunset",
+      "viewpoint",
+      "scenic",
+      "tourist_places",
+      "famous"
+    ]
   },
   {
     "id": "khandala-kune-waterfalls",
@@ -273,7 +358,15 @@
       "international": 0,
       "currency": "INR"
     },
-    "tags": ["khandala", "lonavala", "waterfall", "nature", "scenic", "famous", "tourist_places"]
+    "tags": [
+      "khandala",
+      "lonavala",
+      "waterfall",
+      "nature",
+      "scenic",
+      "famous",
+      "tourist_places"
+    ]
   },
   {
     "id": "lonavala-lions-point",
@@ -285,7 +378,7 @@
     "description": "Situated midway between Bhushi Dam and Aamby Valley, Lion's Point offers sharp cliff drops, winds that lift water droplets upwards, and incredible sunrise and sunset vistas across the Sahyadri range.",
     "coordinates": {
       "lat": 18.7214,
-      "lng": 73.3820
+      "lng": 73.382
     },
     "rating": 4.7,
     "thumbnail_url": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1200&q=80",
@@ -296,7 +389,14 @@
       "international": 0,
       "currency": "INR"
     },
-    "tags": ["lonavala", "viewpoint", "nature", "scenic", "famous", "tourist_places"]
+    "tags": [
+      "lonavala",
+      "viewpoint",
+      "nature",
+      "scenic",
+      "famous",
+      "tourist_places"
+    ]
   },
   {
     "id": "lonavala-pawna-lake",
@@ -308,7 +408,7 @@
     "description": "Surrounded by historic Maratha fortresses, Pawna Lake offers calm waters, picturesque lakeside campsites, bonfire evenings, and water sports just 20 km from central Lonavala.",
     "coordinates": {
       "lat": 18.6811,
-      "lng": 73.4900
+      "lng": 73.49
     },
     "rating": 4.8,
     "thumbnail_url": "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80",
@@ -319,7 +419,15 @@
       "international": 0,
       "currency": "INR"
     },
-    "tags": ["lonavala", "lake", "camping", "dam", "nature", "watersports", "famous"]
+    "tags": [
+      "lonavala",
+      "lake",
+      "camping",
+      "dam",
+      "nature",
+      "watersports",
+      "famous"
+    ]
   },
   {
     "id": "lonavala-celebrity-wax-museum",
@@ -330,7 +438,7 @@
     "summary": "Pioneering Indian wax museum housing lifelike statues of historic leaders, scientists, freedom fighters, and cricket icons.",
     "description": "Founded by wax sculptor Sunil Kandalloor, this popular indoor museum features detailed life-size figures of Chhatrapati Shivaji Maharaj, Dr. APJ Abdul Kalam, Mahatma Gandhi, and global figures.",
     "coordinates": {
-      "lat": 18.7610,
+      "lat": 18.761,
       "lng": 73.4245
     },
     "rating": 4.5,
@@ -342,6 +450,13 @@
       "international": 200,
       "currency": "INR"
     },
-    "tags": ["lonavala", "museum", "art", "family", "tourist_places", "famous"]
+    "tags": [
+      "lonavala",
+      "museum",
+      "art",
+      "family",
+      "tourist_places",
+      "famous"
+    ]
   }
 ]
