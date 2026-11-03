@@ -266,8 +266,8 @@ export const GUJARAT_DIRECTORY: GujaratCity[] = [
           foreign: 'Free',
         },
         isHiddenGem: true,
-        image: 'https://images.unsplash.com/photo-1511497584788-87676104235f?w=800&auto=format&fit=crop&q=80',
-        photoCredit: 'Discover Bharat Archive / Siddhi Cultural Heritage Settlement',
+        image: '/images/gujarat/siddhi-tribal-villages.jpg',
+        photoCredit: 'Virasat High-Resolution Heritage Archive / Siddhi Cultural Heritage Settlement (Sirvan)',
         summary:
           'Ancestral hamlets such as Sirvan inhabited by the Siddhis, an indigenous community of East African Bantu descent who migrated to Gujarat centuries ago. Known for preserving their unique African heritage, rhythmic Dhamal tribal dance, and ancient Sufi traditions honoring Baba Gor.',
       },
@@ -619,7 +619,7 @@ export const GUJARAT_DIRECTORY: GujaratCity[] = [
           foreign: 'Free',
         },
         isHiddenGem: true,
-        image: 'https://images.unsplash.com/photo-1511497584788-87676104235f?w=800&auto=format&fit=crop&q=80',
+        image: '/images/gujarat/siddhi-tribal-villages.jpg',
         photoCredit: 'Discover Bharat Archive / Nirona Artisan Studio',
         summary:
           'The only place on Earth where the ancient 300-year-old Persian Rogan art (fabric painting using boiled castor oil paste and iron styluses) is preserved by the Khatri family. Visitors also explore traditional copper bell making and lacquer-coated wooden kitchenware.',
