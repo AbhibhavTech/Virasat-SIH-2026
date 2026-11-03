@@ -1085,7 +1085,7 @@
       "license": "Creative Commons / Unsplash / Public Domain",
       "source_url": "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1200&auto=format&fit=crop&q=80"
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1200&auto=format&fit=crop&q=80",
+    "thumbnail_url": "/images/maharashtra/taj-mahal-palace.jpg",
     "verification_status": "VERIFIED",
     "sources": [
       {
@@ -1101,7 +1101,8 @@
     ],
     "last_checked": "2026-11-03",
     "safety_notes": "Wear comfortable walking shoes and stay hydrated while exploring Mumbai's heritage districts.",
-    "overview_word_count": 29
+    "overview_word_count": 29,
+    "image_url": "/images/maharashtra/taj-mahal-palace.jpg"
   },
   {
     "id": "mumbai-high-court-rajabai",

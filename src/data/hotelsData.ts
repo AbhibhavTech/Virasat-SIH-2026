@@ -51,7 +51,7 @@ export const VERIFIED_HOTELS_DATABASE: VerifiedStay[] = [
     reviews_count: '2,450+ verified reviews',
     distance_km: 1.5,
     location: 'Plot No. 1, Phase 9, Industrial Area, Sector 66, SAS Nagar (Mohali), Punjab',
-    thumbnail_url: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&auto=format&fit=crop&q=80',
+    thumbnail_url: '/images/maharashtra/taj-mahal-palace.jpg',
     night_tariff: '₹6,500 – ₹11,500 / night',
     night_tariff_num: 6500,
     day_tariff: '₹2,800 – ₹4,200 / day',

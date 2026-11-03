@@ -74,6 +74,10 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'gateway-of-india': 'https://images.unsplash.com/photo-1570168007204-dfb528c6958f?w=1200&auto=format&fit=crop&q=80',
   'csmt': '/images/maharashtra/csmt-mumbai.png',
   'IN-MH-MUM-ATT-002': '/images/maharashtra/csmt-mumbai.png',
+  'IN-MH-MUM-ATT-003': '/images/maharashtra/taj-mahal-palace.jpg',
+  'mumbai-taj-mahal-palace': '/images/maharashtra/taj-mahal-palace.jpg',
+  'taj-mahal-palace': '/images/maharashtra/taj-mahal-palace.jpg',
+  'taj-mahal-palace-mumbai': '/images/maharashtra/taj-mahal-palace.jpg',
   'mh-csmt': '/images/maharashtra/csmt-mumbai.png',
   'basilica-of-bom-jesus': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/1280px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg',
 

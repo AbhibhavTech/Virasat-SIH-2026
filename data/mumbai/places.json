@@ -101,9 +101,9 @@
     "latitude": 18.9217,
     "longitude": 72.8332,
     "rating": 4.8,
-    "thumbnail_url": "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1200&auto=format&fit=crop&q=80",
+    "thumbnail_url": "/images/maharashtra/taj-mahal-palace.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1200&auto=format&fit=crop&q=80"
+      "/images/maharashtra/taj-mahal-palace.jpg"
     ],
     "tags": [
       "heritage",
@@ -123,7 +123,8 @@
     },
     "opening_hours": "Open 24 Hours",
     "entry_fee": "Free exterior viewing",
-    "verification_status": "VERIFIED"
+    "verification_status": "VERIFIED",
+    "image_url": "/images/maharashtra/taj-mahal-palace.jpg"
   },
   {
     "id": "mumbai-high-court-rajabai",

@@ -12,7 +12,7 @@
     "distance_km": 0.2,
     "price_indication": "₹28,000 - ₹55,000 / night",
     "location": "Apollo Bunder, Colaba, Mumbai",
-    "thumbnail_url": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&auto=format&fit=crop&q=80",
+    "thumbnail_url": "/images/maharashtra/taj-mahal-palace.jpg",
     "amenities": [
       "Sea View",
       "Heritage Architecture",
@@ -24,7 +24,10 @@
       "gateway-of-india",
       "colaba-causeway"
     ],
-    "city_id": "mumbai"
+    "city_id": "mumbai",
+    "images": [
+      "/images/maharashtra/taj-mahal-palace.jpg"
+    ]
   },
   {
     "id": "the-oberoi-mumbai",

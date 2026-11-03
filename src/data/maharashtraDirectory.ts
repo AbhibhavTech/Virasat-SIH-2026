@@ -150,8 +150,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "Open 24 Hours",
         fee: { domestic: "Free exterior viewing", foreign: "Free exterior viewing" },
         isHiddenGem: false,
-        image: "https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=1200&auto=format&fit=crop&q=80",
-        photoCredit: "Unsplash / The Taj Mahal Palace Facing the Sea",
+        image: "/images/maharashtra/taj-mahal-palace.jpg",
+        photoCredit: "Discover Bharat / The Taj Mahal Palace Colaba Heritage Facade",
         summary:
           "The iconic 1903 luxury legacy hotel facing the harbor. Built by pioneering Indian industrialist Jamsetji Tata, it stands as a legendary symbol of Indian hospitality, architectural grandeur, and resilience.",
       },
