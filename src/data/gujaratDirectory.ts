@@ -221,8 +221,8 @@ export const GUJARAT_DIRECTORY: GujaratCity[] = [
           foreign: 'INR 2,800',
         },
         isHiddenGem: false,
-        image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&auto=format&fit=crop&q=80',
-        photoCredit: 'Discover Bharat Archive / Devalia Safari Interpretation Zone',
+        image: '/images/gujarat/gir-interpretation-zone.jpg',
+        photoCredit: 'Virasat High-Resolution Heritage Archive / Gir Interpretation Zone (Devalia)',
         summary:
           'A 412-hectare fenced "Gir in a nutshell" created to reduce tourist footprint in the core forest. Guided mini-bus safaris offer near-guaranteed sightings of Asiatic lions, leopards, nilgai, and blackbucks roaming in naturalized deciduous terrain.',
       },
@@ -449,7 +449,7 @@ export const GUJARAT_DIRECTORY: GujaratCity[] = [
           foreign: 'Ferry ride ~INR 20–30',
         },
         isHiddenGem: false,
-        image: 'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&auto=format&fit=crop&q=80',
+        image: '/images/gujarat/gir-interpretation-zone.jpg',
         photoCredit: 'Discover Bharat Archive / Bet Dwarka Island Sanctuary',
         summary:
           'An inhabited island located 30 km north of Dwarka, revered as the historic residence of Lord Krishna and Queen Rukmini. Now accessed via India\'s longest cable-stayed bridge Sudarshan Setu or traditional wooden ferries from Okha port.',
