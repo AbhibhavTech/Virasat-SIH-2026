@@ -426,8 +426,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "Open 24 Hours for motor vehicle transit; pedestrian viewing from Bandra Fort & Worli Sea Face",
         fee: { domestic: "Toll: Single trip INR 85 (Car); view from shore is Free", foreign: "Toll: Single trip INR 85 (Car); view from shore is Free" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Bandra_Worli_Sea_Link_Mumbai.jpg/1280px-Bandra_Worli_Sea_Link_Mumbai.jpg",
-        photoCredit: "Wikimedia Commons / Bandra-Worli Sea Link Cable-Stayed Pylons",
+        image: "/images/maharashtra/bandra-worli-sea-link.png",
+        photoCredit: "Virasat Verified Heritage Archive / Bandra-Worli Sea Link Cable-Stayed Pylons",
         summary:
           "An 8-lane cable-stayed bridge spanning 5.6 kilometers across Mahim Bay. Mumbai's iconic 21st-century architectural silhouette, dramatically cutting travel times between the Western Suburbs and South Mumbai.",
       },

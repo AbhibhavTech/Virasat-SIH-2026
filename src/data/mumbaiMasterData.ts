@@ -1528,10 +1528,10 @@ export const MUMBAI_ATTRACTIONS: MumbaiAttraction[] = [
       "lat": 19.033,
       "lng": 72.816
     },
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Bandra_Worli_Sea_Link_Mumbai.jpg/1280px-Bandra_Worli_Sea_Link_Mumbai.jpg",
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Bandra_Worli_Sea_Link_Mumbai.jpg/1280px-Bandra_Worli_Sea_Link_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/bandra-worli-sea-link.png",
+    "image_url": "/images/maharashtra/bandra-worli-sea-link.png",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Bandra_Worli_Sea_Link_Mumbai.jpg/1280px-Bandra_Worli_Sea_Link_Mumbai.jpg"
+      "/images/maharashtra/bandra-worli-sea-link.png"
     ],
     "section": "monuments",
     "source_url": "https://maharashtratourism.gov.in",

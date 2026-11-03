@@ -149,6 +149,12 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'girgaon-chowpatty': '/images/maharashtra/marine-drive.png',
   'girgaum-chowpatty': '/images/maharashtra/marine-drive.png',
   'queens-necklace': '/images/maharashtra/marine-drive.png',
+  'IN-MH-MUM-ATT-026': '/images/maharashtra/bandra-worli-sea-link.png',
+  'mumbai-bandra-worli-sea-link': '/images/maharashtra/bandra-worli-sea-link.png',
+  'bandra-worli-sea-link': '/images/maharashtra/bandra-worli-sea-link.png',
+  'sea-link': '/images/maharashtra/bandra-worli-sea-link.png',
+  'bandra-worli-sea-link-mumbai': '/images/maharashtra/bandra-worli-sea-link.png',
+  'rajiv-gandhi-sea-link': '/images/maharashtra/bandra-worli-sea-link.png',
   'mh-csmt': '/images/maharashtra/csmt-mumbai.png',
   'basilica-of-bom-jesus': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/1280px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg',
 
