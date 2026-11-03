@@ -408,10 +408,10 @@ export const MUMBAI_ATTRACTIONS: MumbaiAttraction[] = [
       "lat": 18.9322,
       "lng": 72.8315
     },
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Flora_Fountain%2C_Mumbai.jpg/1280px-Flora_Fountain%2C_Mumbai.jpg",
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Flora_Fountain%2C_Mumbai.jpg/1280px-Flora_Fountain%2C_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/flora-fountain.jpg",
+    "image_url": "/images/maharashtra/flora-fountain.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Flora_Fountain%2C_Mumbai.jpg/1280px-Flora_Fountain%2C_Mumbai.jpg"
+      "/images/maharashtra/flora-fountain.jpg"
     ],
     "section": "monuments",
     "source_url": "https://maharashtratourism.gov.in",

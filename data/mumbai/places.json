@@ -228,9 +228,9 @@
     "latitude": 18.9322,
     "longitude": 72.8315,
     "rating": 4.8,
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Flora_Fountain%2C_Mumbai.jpg/1280px-Flora_Fountain%2C_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/flora-fountain.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Flora_Fountain%2C_Mumbai.jpg/1280px-Flora_Fountain%2C_Mumbai.jpg"
+      "/images/maharashtra/flora-fountain.jpg"
     ],
     "tags": [
       "monument",

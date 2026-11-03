@@ -186,8 +186,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "Open 24 Hours (Best illuminated in evening)",
         fee: { domestic: "Free", foreign: "Free" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Flora_Fountain%2C_Mumbai.jpg/1280px-Flora_Fountain%2C_Mumbai.jpg",
-        photoCredit: "Wikimedia Commons / Restored Flora Fountain at Hutatma Chowk",
+        image: "/images/maharashtra/flora-fountain.jpg",
+        photoCredit: "Virasat Verified Heritage Archive / Flora Fountain at Hutatma Chowk",
         summary:
           "A historic 19th-century sculpted architectural water fountain in the commercial core, erected in 1864 in honor of Sir Bartle Frere. Adorned with a fine Portland stone statue of Flora, the Roman Goddess of flowers.",
       },

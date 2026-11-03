@@ -90,6 +90,11 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'asiatic-society-mumbai': '/images/maharashtra/asiatic-society-mumbai.jpg',
   'asiatic-society': '/images/maharashtra/asiatic-society-mumbai.jpg',
   'town-hall-mumbai': '/images/maharashtra/asiatic-society-mumbai.jpg',
+  'IN-MH-MUM-ATT-006': '/images/maharashtra/flora-fountain.jpg',
+  'mumbai-flora-fountain': '/images/maharashtra/flora-fountain.jpg',
+  'flora-fountain': '/images/maharashtra/flora-fountain.jpg',
+  'flora-fountain-mumbai': '/images/maharashtra/flora-fountain.jpg',
+  'hutatma-chowk': '/images/maharashtra/flora-fountain.jpg',
   'mh-csmt': '/images/maharashtra/csmt-mumbai.png',
   'basilica-of-bom-jesus': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/1280px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg',
 
