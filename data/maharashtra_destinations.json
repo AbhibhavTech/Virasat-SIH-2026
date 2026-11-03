@@ -2425,12 +2425,12 @@
       "lng": 72.9064
     },
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Powai_Lake_Mumbai.jpg/1280px-Powai_Lake_Mumbai.jpg",
-      "attribution": "Wikimedia Commons / Powai Lake Sunset & Hiranandani Skyline",
+      "url": "/images/maharashtra/powai-lake.png",
+      "attribution": "Virasat Verified Heritage Archive / Powai Lake & Hiranandani Skyline",
       "license": "Creative Commons / Unsplash / Public Domain",
-      "source_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Powai_Lake_Mumbai.jpg/1280px-Powai_Lake_Mumbai.jpg"
+      "source_url": "/images/maharashtra/powai-lake.png"
     },
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Powai_Lake_Mumbai.jpg/1280px-Powai_Lake_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/powai-lake.png",
     "verification_status": "VERIFIED",
     "sources": [
       {

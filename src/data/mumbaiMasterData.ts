@@ -1808,10 +1808,10 @@ export const MUMBAI_ATTRACTIONS: MumbaiAttraction[] = [
       "lat": 19.1257,
       "lng": 72.9064
     },
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Powai_Lake_Mumbai.jpg/1280px-Powai_Lake_Mumbai.jpg",
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Powai_Lake_Mumbai.jpg/1280px-Powai_Lake_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/powai-lake.png",
+    "image_url": "/images/maharashtra/powai-lake.png",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Powai_Lake_Mumbai.jpg/1280px-Powai_Lake_Mumbai.jpg"
+      "/images/maharashtra/powai-lake.png"
     ],
     "section": "nature_parks_zoo",
     "source_url": "https://maharashtratourism.gov.in",

@@ -161,6 +161,12 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'juhu': '/images/maharashtra/juhu-beach.png',
   'juhu-beach-mumbai': '/images/maharashtra/juhu-beach.png',
   'juhu-beach-versova': '/images/maharashtra/juhu-beach.png',
+  'IN-MH-MUM-ATT-031': '/images/maharashtra/powai-lake.png',
+  'mumbai-powai-lake': '/images/maharashtra/powai-lake.png',
+  'powai-lake': '/images/maharashtra/powai-lake.png',
+  'powai': '/images/maharashtra/powai-lake.png',
+  'powai-lake-mumbai': '/images/maharashtra/powai-lake.png',
+  'powai-lake-iit-bombay': '/images/maharashtra/powai-lake.png',
   'mh-csmt': '/images/maharashtra/csmt-mumbai.png',
   'basilica-of-bom-jesus': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/1280px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg',
 

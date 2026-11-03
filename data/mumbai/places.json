@@ -1278,9 +1278,9 @@
     "latitude": 19.1257,
     "longitude": 72.9064,
     "rating": 4.8,
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Powai_Lake_Mumbai.jpg/1280px-Powai_Lake_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/powai-lake.png",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Powai_Lake_Mumbai.jpg/1280px-Powai_Lake_Mumbai.jpg"
+      "/images/maharashtra/powai-lake.png"
     ],
     "tags": [
       "lake",

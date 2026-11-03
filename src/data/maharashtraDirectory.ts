@@ -486,8 +486,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "06:00–22:00 (Lake Promenade open daily)",
         fee: { domestic: "Free", foreign: "Free" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Powai_Lake_Mumbai.jpg/1280px-Powai_Lake_Mumbai.jpg",
-        photoCredit: "Wikimedia Commons / Powai Lake Sunset & Hiranandani Skyline",
+        image: "/images/maharashtra/powai-lake.png",
+        photoCredit: "Virasat Verified Heritage Archive / Powai Lake & Hiranandani Skyline",
         summary:
           "A picturesque lake surrounded by lush green academic campus grounds, resident marsh crocodiles, migratory birds, and India's premier engineering institute IIT Bombay.",
       },
