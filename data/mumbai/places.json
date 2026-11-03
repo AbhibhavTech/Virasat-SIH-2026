@@ -1236,9 +1236,9 @@
     "latitude": 18.9567,
     "longitude": 72.8052,
     "rating": 4.8,
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Hanging_Gardens_Mumbai.jpg/1280px-Hanging_Gardens_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/hanging-gardens.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Hanging_Gardens_Mumbai.jpg/1280px-Hanging_Gardens_Mumbai.jpg"
+      "/images/maharashtra/hanging-gardens.jpg"
     ],
     "tags": [
       "gardens",

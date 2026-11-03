@@ -1752,10 +1752,10 @@ export const MUMBAI_ATTRACTIONS: MumbaiAttraction[] = [
       "lat": 18.9567,
       "lng": 72.8052
     },
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Hanging_Gardens_Mumbai.jpg/1280px-Hanging_Gardens_Mumbai.jpg",
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Hanging_Gardens_Mumbai.jpg/1280px-Hanging_Gardens_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/hanging-gardens.jpg",
+    "image_url": "/images/maharashtra/hanging-gardens.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Hanging_Gardens_Mumbai.jpg/1280px-Hanging_Gardens_Mumbai.jpg"
+      "/images/maharashtra/hanging-gardens.jpg"
     ],
     "section": "nature_parks_zoo",
     "source_url": "https://maharashtratourism.gov.in",

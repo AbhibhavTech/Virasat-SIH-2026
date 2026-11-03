@@ -474,8 +474,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "05:00–21:00 (Open all 7 days)",
         fee: { domestic: "Free", foreign: "Free" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Hanging_Gardens_Mumbai.jpg/1280px-Hanging_Gardens_Mumbai.jpg",
-        photoCredit: "Wikimedia Commons / Hanging Gardens Malabar Hill Overlook",
+        image: "/images/maharashtra/hanging-gardens.jpg",
+        photoCredit: "Virasat Verified Heritage Archive / Hanging Gardens Animal Topiary & Malabar Hill",
         summary:
           "Terraced gardens overlooking Marine Drive featuring the famous old-storybook boot house, animal topiary hedges, and panoramic vistas of the Queen's Necklace.",
       },
