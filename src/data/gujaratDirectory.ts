@@ -134,8 +134,8 @@ export const GUJARAT_DIRECTORY: GujaratCity[] = [
         timings: 'Morning guided tours by advance booking',
         fee: { domestic: 'Free (Prior registration required)', foreign: 'Free (Prior registration required)' },
         isHiddenGem: true,
-        image: 'https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?w=800&auto=format&fit=crop&q=80',
-        photoCredit: 'Unsplash / Historic Indian Textiles',
+        image: '/images/gujarat/calico-museum-of-textiles.jpg',
+        photoCredit: 'Virasat High-Resolution Heritage Archive / Calico Museum of Textiles',
         summary:
           "India's premier textile museum showcasing antique fabrics, royal court costumes, and pashmina weaves spanning five centuries.",
       },
