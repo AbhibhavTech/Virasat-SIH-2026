@@ -933,8 +933,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "Open 24 hours",
         fee: { domestic: "Free", foreign: "Free" },
         isHiddenGem: true,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Lonar_Lake_Aerial_View.jpg/1280px-Lonar_Lake_Aerial_View.jpg",
-        photoCredit: "Wikimedia Commons / Lonar Crater",
+        image: "/images/maharashtra/lonar-crater-lake.jpg",
+        photoCredit: "Virasat Verified / Authentic Rim View of Lonar Crater Lake",
         summary:
           "Created over 50,000 years ago by a high-velocity hyper-velocity meteorite impact into basalt bedrock. Located ~140 km from the city, this unique ecological wonder hosts an alkaline, hyper-saline inland lake fringed with ancient stone temples.",
       },
