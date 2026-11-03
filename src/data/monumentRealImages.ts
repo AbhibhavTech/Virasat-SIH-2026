@@ -215,6 +215,12 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'chhota-kashmir': '/images/maharashtra/chota-kashmir.jpg',
   'chota-kashmir-mumbai': '/images/maharashtra/chota-kashmir.jpg',
   'chota-kashmir-lake': '/images/maharashtra/chota-kashmir.jpg',
+  'IN-MH-MUM-GEM-012': '/images/maharashtra/maharashtra-nature-park.png',
+  'mumbai-gem-maharashtra-nature-park': '/images/maharashtra/maharashtra-nature-park.png',
+  'maharashtra-nature-park': '/images/maharashtra/maharashtra-nature-park.png',
+  'mahim-nature-park': '/images/maharashtra/maharashtra-nature-park.png',
+  'maharashtra-nature-parks': '/images/maharashtra/maharashtra-nature-park.png',
+  'maharashtra-nature-park-mumbai': '/images/maharashtra/maharashtra-nature-park.png',
   'mh-csmt': '/images/maharashtra/csmt-mumbai.png',
   'basilica-of-bom-jesus': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/1280px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg',
 

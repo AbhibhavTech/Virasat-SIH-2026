@@ -2126,9 +2126,9 @@
     "latitude": 19.0494,
     "longitude": 72.8624,
     "rating": 4.9,
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Maharashtra_Nature_Park.jpg/1280px-Maharashtra_Nature_Park.jpg",
+    "thumbnail_url": "/images/maharashtra/maharashtra-nature-park.png",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Maharashtra_Nature_Park.jpg/1280px-Maharashtra_Nature_Park.jpg"
+      "/images/maharashtra/maharashtra-nature-park.png"
     ],
     "tags": [
       "Ecological Forest",

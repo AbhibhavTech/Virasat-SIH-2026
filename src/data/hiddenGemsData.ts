@@ -221,7 +221,7 @@ export const VERIFIED_HIDDEN_GEMS: HiddenGemItem[] = [
     century: 'Modern Ecological Marvel (Est. 1994)',
     category: 'Urban Forest & Ecological Sanctuary',
     whyInteresting: "A lush, forested sanctuary spanning over 37 acres right next to the Mithi River, packed with hundreds of species of trees, butterflies, and migrating birds. A miraculous transformation of a former city garbage dump into a thriving woodland ecosystem.",
-    thumbnailUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Maharashtra_Nature_Park.jpg/1280px-Maharashtra_Nature_Park.jpg',
+    thumbnailUrl: '/images/maharashtra/maharashtra-nature-park.png',
     tags: ["Ecological Forest", "Butterflies", "Bird Sanctuary", "Mithi River", "Green Oasis"],
     bestTimeToVisit: '09:30–17:00 (Open daily)',
     accessTips: '1 km from Sion Railway Station (Central Line) or Bandra (Western Line).',

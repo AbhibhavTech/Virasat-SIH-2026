@@ -642,8 +642,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "09:30–17:00 (Open daily)",
         fee: { domestic: "INR 20 (Adults), INR 10 (Children)", foreign: "INR 100" },
         isHiddenGem: true,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Maharashtra_Nature_Park.jpg/1280px-Maharashtra_Nature_Park.jpg",
-        photoCredit: "Wikimedia Commons / Maharashtra Nature Park Forest Canopy",
+        image: "/images/maharashtra/maharashtra-nature-park.png",
+        photoCredit: "Virasat Verified Heritage Archive / Maharashtra Nature Park Wetland Lake & Woodland Canopy",
         summary:
           "A lush, forested sanctuary spanning over 37 acres right next to the Mithi River, packed with hundreds of species of trees, butterflies, and migrating birds. A miraculous transformation of a former city garbage dump into a thriving woodland ecosystem.",
       },
