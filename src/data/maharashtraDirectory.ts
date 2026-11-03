@@ -897,8 +897,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "06:00–18:00 (Closed on Tuesdays)",
         fee: { domestic: "INR 40", foreign: "INR 600" },
         isHiddenGem: false,
-        image: "https://images.unsplash.com/photo-1608958435020-e8a7109ba809?w=1200&auto=format&fit=crop&q=80",
-        photoCredit: "Unsplash / Kailasa Temple Ellora",
+        image: "/images/maharashtra/ellora-caves.jpg",
+        photoCredit: "Virasat Verified / Authentic Aerial View of Kailasa Temple, Ellora",
         summary:
           "Sprawling complex of 34 monasteries and temples carved side-by-side into basalt cliffs, representing Hindu, Buddhist, and Jain traditions. Anchored by Cave 16 (Kailasa Temple), the largest monolithic rock excavation in the world, carved top-down from a single cliff face.",
       },
@@ -909,8 +909,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "06:00–22:00",
         fee: { domestic: "INR 25", foreign: "INR 300" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Bibi_Ka_Maqbara_Front.jpg/1280px-Bibi_Ka_Maqbara_Front.jpg",
-        photoCredit: "Wikimedia Commons / Bibi Ka Maqbara",
+        image: "/images/maharashtra/bibi-ka-maqbara.jpg",
+        photoCredit: "Virasat Verified / Authentic Frontal View of Bibi Ka Maqbara",
         summary:
           "Known as the 'Dakkhani Taj' (Taj of the Deccan), this striking 1660 mausoleum was commissioned by Prince Azam Shah in memory of his mother Dilras Banu Begum. Features intricate stucco plasterwork, marble domes, and Charbagh water gardens.",
       },

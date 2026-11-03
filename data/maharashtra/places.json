@@ -42,7 +42,7 @@
       "lng": 75.1792
     },
     "rating": 4.9,
-    "thumbnail_url": "https://images.unsplash.com/photo-1590050752117-238cb0fb12b1?auto=format&fit=crop&w=1200&q=80",
+    "thumbnail_url": "/images/maharashtra/ellora-caves.jpg",
     "best_time_to_visit": "October to March",
     "visiting_hours": "06:00 AM - 06:00 PM (Closed Tuesdays)",
     "entry_fee": {
@@ -56,7 +56,8 @@
       "kailasa",
       "rashtrakuta",
       "temple"
-    ]
+    ],
+    "image_url": "/images/maharashtra/ellora-caves.jpg"
   },
   {
     "id": "gateway-of-india",
@@ -220,7 +221,7 @@
     "city": "Lonavala",
     "category": "heritage",
     "summary": "Historic Maratha hilltop fortress at 1,033m elevation, fortified by Chhatrapati Shivaji Maharaj, featuring the famous Vinchukata spur.",
-    "description": "Lohagad (Iron Fort) divides the Indrayani and Pavana basins. It has four formidable gates—Ganesh Darwaja, Narayan Darwaja, Hanuman Darwaja, and Maha Darwaja—and the iconic 1,500m scorpion-tail fortified ridge.",
+    "description": "Lohagad (Iron Fort) divides the Indrayani and Pavana basins. It has four formidable gates\u2014Ganesh Darwaja, Narayan Darwaja, Hanuman Darwaja, and Maha Darwaja\u2014and the iconic 1,500m scorpion-tail fortified ridge.",
     "coordinates": {
       "lat": 18.6997,
       "lng": 73.477
