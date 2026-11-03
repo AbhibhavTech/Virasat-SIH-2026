@@ -138,10 +138,10 @@ export const PUNE_ATTRACTIONS: PuneAttraction[] = [
       "lat": 18.5524,
       "lng": 73.9015
     },
-    "thumbnail_url": "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=1000&auto=format&fit=crop&q=80",
-    "image_url": "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=1000&auto=format&fit=crop&q=80",
+    "thumbnail_url": "/images/maharashtra/aga-khan-palace.jpg",
+    "image_url": "/images/maharashtra/aga-khan-palace.jpg",
     "images": [
-      "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=1000&auto=format&fit=crop&q=80"
+      "/images/maharashtra/aga-khan-palace.jpg"
     ],
     "section": "heritage",
     "source_url": "https://maharashtratourism.gov.in/pune/aga-khan-palace",

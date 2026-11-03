@@ -443,6 +443,8 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'IN-MH-PUN-ATT-002': '/images/maharashtra/aga-khan-palace.jpg',
   'in-mh-pun-att-002': '/images/maharashtra/aga-khan-palace.jpg',
   'aga-khan-palace': '/images/maharashtra/aga-khan-palace.jpg',
+  'agar-khan-palace': '/images/maharashtra/aga-khan-palace.jpg',
+  'pune_002': '/images/maharashtra/aga-khan-palace.jpg',
   'agakhan-palace': '/images/maharashtra/aga-khan-palace.jpg',
   'pune-aga-khan-palace': '/images/maharashtra/aga-khan-palace.jpg',
 
