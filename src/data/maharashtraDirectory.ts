@@ -354,8 +354,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "06:00–20:00 (Open all 7 days)",
         fee: { domestic: "Free", foreign: "Free" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Banganga_Tank_Mumbai.jpg/1280px-Banganga_Tank_Mumbai.jpg",
-        photoCredit: "Wikimedia Commons / Banganga Tank Steps & Malabar Hill Shrines",
+        image: "/images/maharashtra/banganga-tank.jpg",
+        photoCredit: "Virasat Verified Heritage Archive / Banganga Sacred Stepwell & Walkeshwar Temples",
         summary:
           "An ancient mythological water reservoir dating back to 1120 AD surrounded by mini-temples. Believed to have sprung when Lord Rama pierced the earth with an arrow (Bana) to quench Sita's thirst.",
       },

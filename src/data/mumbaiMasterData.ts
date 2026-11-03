@@ -1192,10 +1192,10 @@ export const MUMBAI_ATTRACTIONS: MumbaiAttraction[] = [
       "lat": 18.9455,
       "lng": 72.7937
     },
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Banganga_Tank_Mumbai.jpg/1280px-Banganga_Tank_Mumbai.jpg",
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Banganga_Tank_Mumbai.jpg/1280px-Banganga_Tank_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/banganga-tank.jpg",
+    "image_url": "/images/maharashtra/banganga-tank.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Banganga_Tank_Mumbai.jpg/1280px-Banganga_Tank_Mumbai.jpg"
+      "/images/maharashtra/banganga-tank.jpg"
     ],
     "section": "religious_cultural",
     "source_url": "https://maharashtratourism.gov.in",

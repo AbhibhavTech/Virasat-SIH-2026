@@ -51,7 +51,7 @@ export const VERIFIED_HIDDEN_GEMS: HiddenGemItem[] = [
     century: '12th Century AD (1120 AD)',
     category: 'Ancient Mythological Tirtha',
     whyInteresting: "A serene, ancient mythological freshwater tank dating back to 1120 AD, surrounded by stepped temples and quiet shrines, offering a peaceful escape from the bustling city. Fed by an underground natural freshwater spring believed to have sprung from Lord Rama's arrow.",
-    thumbnailUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Banganga_Tank_Mumbai.jpg/1280px-Banganga_Tank_Mumbai.jpg',
+    thumbnailUrl: '/images/maharashtra/banganga-tank.jpg',
     tags: ["Silhara Heritage", "Freshwater Spring", "Temple Steps", "Sacred Tirtha"],
     bestTimeToVisit: '06:00–20:00 (Open all 7 days)',
     accessTips: '2.5 km from Grant Road or Charni Road Stations.',
