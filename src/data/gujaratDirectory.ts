@@ -395,8 +395,8 @@ export const GUJARAT_DIRECTORY: GujaratCity[] = [
     tagline: '5-storied Jagat Mandir, 52-yard Dhwaja flag, Bet Dwarka cable bridge & Blue Flag shores',
     accentColor: '#2563EB',
     bgGradient: 'from-blue-50 via-sky-50/40 to-stone-50/30',
-    coverImage: '/images/gujarat/dwarkadhish-jagat-mandir.jpg',
-    photoCredit: 'Discover Bharat Contributor / Dwarkadhish Jagat Mandir Shikhara & Dhwaja',
+    coverImage: '/images/gujarat/dwarkadhish-temple.jpg',
+    photoCredit: 'Virasat High-Resolution Heritage Archive / Dwarkadhish Temple Garbhagriha Sacred Darshan',
     flashcardBlurb:
       'The ancient kingdom of Lord Krishna and a pivotal Char Dham pilgrimage site, blending vibrant temple mythology with marine archaeological mysteries.',
     topStays: [
@@ -434,8 +434,8 @@ export const GUJARAT_DIRECTORY: GujaratCity[] = [
           foreign: 'Free',
         },
         isHiddenGem: false,
-        image: '/images/gujarat/dwarkadhish-jagat-mandir.jpg',
-        photoCredit: 'Discover Bharat Contributor / Dwarkadhish Temple 52-Yard Dhwaja',
+        image: '/images/gujarat/dwarkadhish-temple.jpg',
+        photoCredit: 'Virasat High-Resolution Heritage Archive / Dwarkadhish Temple Garbhagriha Sacred Darshan',
         summary:
           'A 5-storied limestone temple soaring 78 meters high supported by 72 exquisitely sculpted sandstone pillars, believed to be founded 2,500 years ago by Vajranabha. The temple shikhara flies the magnificent 52-yard five-color Dhwaja flag changed five times daily.',
       },
