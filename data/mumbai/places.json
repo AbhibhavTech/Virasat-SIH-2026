@@ -2083,9 +2083,9 @@
     "latitude": 19.1332,
     "longitude": 72.7938,
     "rating": 4.9,
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Madh_Fort_Mumbai.jpg/1280px-Madh_Fort_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/madh-fort.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Madh_Fort_Mumbai.jpg/1280px-Madh_Fort_Mumbai.jpg"
+      "/images/maharashtra/madh-fort.jpg"
     ],
     "tags": [
       "Portuguese Fortress",

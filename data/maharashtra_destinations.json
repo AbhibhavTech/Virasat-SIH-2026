@@ -3337,12 +3337,12 @@
       "lng": 72.7938
     },
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Madh_Fort_Mumbai.jpg/1280px-Madh_Fort_Mumbai.jpg",
-      "attribution": "Wikimedia Commons / Madh Fort Coastal Watchtower",
+      "url": "/images/maharashtra/madh-fort.jpg",
+      "attribution": "Virasat Verified Heritage Archive / Madh Fort Portuguese Bastions & Versova Harbor",
       "license": "Creative Commons / Public Domain",
-      "source_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Madh_Fort_Mumbai.jpg/1280px-Madh_Fort_Mumbai.jpg"
+      "source_url": "/images/maharashtra/madh-fort.jpg"
     },
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Madh_Fort_Mumbai.jpg/1280px-Madh_Fort_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/madh-fort.jpg",
     "verification_status": "VERIFIED",
     "sources": [
       {

@@ -204,7 +204,7 @@ export const VERIFIED_HIDDEN_GEMS: HiddenGemItem[] = [
     century: '17th Century AD',
     category: 'Coastal Portuguese Fortress',
     whyInteresting: "A picturesque 17th-century fort built by the Portuguese on the northern coast, often featured in Bollywood films but rarely crowded. Overlooks the mouth of Marve Creek and the open Arabian Sea.",
-    thumbnailUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Madh_Fort_Mumbai.jpg/1280px-Madh_Fort_Mumbai.jpg',
+    thumbnailUrl: '/images/maharashtra/madh-fort.jpg',
     tags: ["Portuguese Fortress", "Madh Island", "Bollywood Location", "Maratha Conquest", "Coastal Watch"],
     bestTimeToVisit: 'Daylight hours (09:00–18:00; exterior viewing from beach)',
     accessTips: 'Ferry from Versova Jetty to Madh Island (10 mins), then auto-rickshaw to fort.',

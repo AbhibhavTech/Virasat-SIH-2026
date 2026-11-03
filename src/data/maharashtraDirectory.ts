@@ -630,8 +630,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "Daylight hours (09:00–18:00; exterior viewing from beach)",
         fee: { domestic: "Free", foreign: "Free" },
         isHiddenGem: true,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Madh_Fort_Mumbai.jpg/1280px-Madh_Fort_Mumbai.jpg",
-        photoCredit: "Wikimedia Commons / Madh Fort Coastal Watchtower",
+        image: "/images/maharashtra/madh-fort.jpg",
+        photoCredit: "Virasat Verified Heritage Archive / Madh Fort Portuguese Bastions & Versova Harbor",
         summary:
           "A picturesque 17th-century fort built by the Portuguese on the northern coast, often featured in Bollywood films but rarely crowded. Overlooks the mouth of Marve Creek and the open Arabian Sea.",
       },
