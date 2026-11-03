@@ -1021,8 +1021,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "07:00–18:00",
         fee: { domestic: "Free", foreign: "Free" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Elephant%27s_Head_Point_Mahabaleshwar.jpg/1280px-Elephant%27s_Head_Point_Mahabaleshwar.jpg",
-        photoCredit: "Wikimedia Commons / Elephant's Head Point",
+        image: "/images/maharashtra/elephants-head-point.jpg",
+        photoCredit: "Virasat Verified / Authentic View of Elephant\'s Head Point & Needle Hole Arch",
         summary:
           "A stunning geological overhang that strikingly resembles the head and trunk of an elephant. The natural cavity between the rocks forms a needle hole through which the Sahyadri mountains can be viewed.",
       },
