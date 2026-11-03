@@ -342,8 +342,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "06:00–12:00, 16:00–21:00 (Tuesdays open all day)",
         fee: { domestic: "Free", foreign: "Free" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Mumba_Devi_Temple_Mumbai.jpg/1280px-Mumba_Devi_Temple_Mumbai.jpg",
-        photoCredit: "Wikimedia Commons / Mumba Devi Temple Entrance",
+        image: "/images/maharashtra/mumba-devi-temple.jpg",
+        photoCredit: "Virasat Verified Heritage Archive / Mumba Devi Historic Shikhara & Sanctum",
         summary:
           "The ancient temple from which Mumbai derives its name. Revered for over six centuries as the supreme guardian deity of the indigenous Koli fishing community.",
       },

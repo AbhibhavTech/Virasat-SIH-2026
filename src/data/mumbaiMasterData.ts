@@ -1136,10 +1136,10 @@ export const MUMBAI_ATTRACTIONS: MumbaiAttraction[] = [
       "lat": 18.9519,
       "lng": 72.8306
     },
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Mumba_Devi_Temple_Mumbai.jpg/1280px-Mumba_Devi_Temple_Mumbai.jpg",
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Mumba_Devi_Temple_Mumbai.jpg/1280px-Mumba_Devi_Temple_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/mumba-devi-temple.jpg",
+    "image_url": "/images/maharashtra/mumba-devi-temple.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Mumba_Devi_Temple_Mumbai.jpg/1280px-Mumba_Devi_Temple_Mumbai.jpg"
+      "/images/maharashtra/mumba-devi-temple.jpg"
     ],
     "section": "religious_cultural",
     "source_url": "https://maharashtratourism.gov.in",

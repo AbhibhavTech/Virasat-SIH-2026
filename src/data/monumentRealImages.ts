@@ -134,6 +134,13 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'mount-mary': '/images/maharashtra/mount-mary-church.jpg',
   'mount-mary-bandra': '/images/maharashtra/mount-mary-church.jpg',
   'basilica-of-our-lady-of-the-mount': '/images/maharashtra/mount-mary-church.jpg',
+  'IN-MH-MUM-ATT-019': '/images/maharashtra/mumba-devi-temple.jpg',
+  'mumbai-mumba-devi-temple': '/images/maharashtra/mumba-devi-temple.jpg',
+  'mumba-devi-temple': '/images/maharashtra/mumba-devi-temple.jpg',
+  'mumba-devi': '/images/maharashtra/mumba-devi-temple.jpg',
+  'mumbadevi': '/images/maharashtra/mumba-devi-temple.jpg',
+  'mumbadevi-temple': '/images/maharashtra/mumba-devi-temple.jpg',
+  'mumba-devi-mumbai': '/images/maharashtra/mumba-devi-temple.jpg',
   'mh-csmt': '/images/maharashtra/csmt-mumbai.png',
   'basilica-of-bom-jesus': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/1280px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg',
 

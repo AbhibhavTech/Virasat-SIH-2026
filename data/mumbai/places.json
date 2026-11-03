@@ -774,9 +774,9 @@
     "latitude": 18.9519,
     "longitude": 72.8306,
     "rating": 4.8,
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Mumba_Devi_Temple_Mumbai.jpg/1280px-Mumba_Devi_Temple_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/mumba-devi-temple.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Mumba_Devi_Temple_Mumbai.jpg/1280px-Mumba_Devi_Temple_Mumbai.jpg"
+      "/images/maharashtra/mumba-devi-temple.jpg"
     ],
     "tags": [
       "temple",
