@@ -348,6 +348,13 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'devalia-interpretation-zone': '/images/gujarat/gir-interpretation-zone.jpg',
   'gir-devalia': '/images/gujarat/gir-interpretation-zone.jpg',
   'gir-interpretation': '/images/gujarat/gir-interpretation-zone.jpg',
+  'IN-GJ-GIR-ATT-003': '/images/gujarat/kamleshwar-dam.jpg',
+  'in-gj-gir-att-003': '/images/gujarat/kamleshwar-dam.jpg',
+  'kamleshwar-dam': '/images/gujarat/kamleshwar-dam.jpg',
+  'kamleshwar-dam-gir': '/images/gujarat/kamleshwar-dam.jpg',
+  'gir-kamleshwar-dam': '/images/gujarat/kamleshwar-dam.jpg',
+  'kamleshwar-reservoir': '/images/gujarat/kamleshwar-dam.jpg',
+  'kamleshwar': '/images/gujarat/kamleshwar-dam.jpg',
   'mh-csmt': '/images/maharashtra/csmt-mumbai.png',
   'basilica-of-bom-jesus': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/1280px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg',
 

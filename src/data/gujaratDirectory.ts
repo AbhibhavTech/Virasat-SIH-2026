@@ -236,8 +236,8 @@ export const GUJARAT_DIRECTORY: GujaratCity[] = [
           foreign: 'Included in safari permit',
         },
         isHiddenGem: false,
-        image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80',
-        photoCredit: 'Discover Bharat Archive / Kamleshwar Dam Reservoir',
+        image: '/images/gujarat/kamleshwar-dam.jpg',
+        photoCredit: 'Virasat High-Resolution Heritage Archive / Kamleshwar Dam Reservoir',
         summary:
           'Constructed over the Hiran River right in the middle of Gir sanctuary, this picturesque water body serves as the vital lifeline for wildlife and is renowned as one of the world\'s premier breeding sites for wild marsh crocodiles (muggers).',
       },
@@ -350,7 +350,7 @@ export const GUJARAT_DIRECTORY: GujaratCity[] = [
           foreign: 'Free',
         },
         isHiddenGem: false,
-        image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80',
+        image: '/images/gujarat/kamleshwar-dam.jpg',
         photoCredit: 'Discover Bharat Archive / Triveni Sangam Ghats, Somnath',
         summary:
           'The holy confluence where three sacred rivers—Hiran, Kapila, and the subterranean Saraswati—merge into the churning waves of the Arabian Sea. Pilgrims undertake sacred river dips and perform ancestral Moksha rituals on the broad stone ghats.',
@@ -479,7 +479,7 @@ export const GUJARAT_DIRECTORY: GujaratCity[] = [
           foreign: 'INR 30',
         },
         isHiddenGem: true,
-        image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80',
+        image: '/images/gujarat/kamleshwar-dam.jpg',
         photoCredit: 'Discover Bharat Archive / Shivrajpur Blue Flag Beach Coastline',
         summary:
           'A world-renowned Blue Flag certified beach located 12 km north of Dwarka on the Arabian Sea. Celebrated for immaculate white sands, crystalline calm shallows, certified PADI scuba diving, and wild dolphin spotting.',
@@ -604,7 +604,7 @@ export const GUJARAT_DIRECTORY: GujaratCity[] = [
           foreign: 'Free',
         },
         isHiddenGem: true,
-        image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&auto=format&fit=crop&q=80',
+        image: '/images/gujarat/kamleshwar-dam.jpg',
         photoCredit: 'Discover Bharat Archive / Dholavira Ancient Harappan Reservoir',
         summary:
           'One of the five largest and most sophisticated Bronze Age Indus Valley Civilization settlements, situated on Khadir Bet island. Renowned for its monumental stone-cut water reservoirs, sophisticated underground storm-water drainage, and the world-famous 10-symbol Indus signboard.',
