@@ -318,8 +318,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "06:00–22:00 (Navratri brings grand devotional night aartis)",
         fee: { domestic: "Free", foreign: "Free" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Mahalaxmi_Temple_Mumbai.jpg/1280px-Mahalaxmi_Temple_Mumbai.jpg",
-        photoCredit: "Wikimedia Commons / Mahalaxmi Sea-Facing Shrine",
+        image: "/images/maharashtra/mahalaxmi-temple.jpg",
+        photoCredit: "Virasat Verified Heritage Archive / Mahalaxmi Tridevi Sanctum Sanctorum",
         summary:
           "Historic sea-facing temple dedicated to the divine forms of Mahalakshmi, Mahakali, and Mahasaraswati. Consecrated on a scenic cliff overlooking the Arabian Sea.",
       },

@@ -1024,10 +1024,10 @@ export const MUMBAI_ATTRACTIONS: MumbaiAttraction[] = [
       "lat": 18.9773,
       "lng": 72.8058
     },
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Mahalaxmi_Temple_Mumbai.jpg/1280px-Mahalaxmi_Temple_Mumbai.jpg",
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Mahalaxmi_Temple_Mumbai.jpg/1280px-Mahalaxmi_Temple_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/mahalaxmi-temple.jpg",
+    "image_url": "/images/maharashtra/mahalaxmi-temple.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Mahalaxmi_Temple_Mumbai.jpg/1280px-Mahalaxmi_Temple_Mumbai.jpg"
+      "/images/maharashtra/mahalaxmi-temple.jpg"
     ],
     "section": "religious_cultural",
     "source_url": "https://maharashtratourism.gov.in",

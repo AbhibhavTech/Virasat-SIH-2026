@@ -120,6 +120,13 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'haji-ali': '/images/maharashtra/haji-ali-dargah.jpg',
   'haji-ali-mumbai': '/images/maharashtra/haji-ali-dargah.jpg',
   'sufi-haji-ali': '/images/maharashtra/haji-ali-dargah.jpg',
+  'IN-MH-MUM-ATT-017': '/images/maharashtra/mahalaxmi-temple.jpg',
+  'mumbai-mahalaxmi-temple': '/images/maharashtra/mahalaxmi-temple.jpg',
+  'mahalaxmi-temple': '/images/maharashtra/mahalaxmi-temple.jpg',
+  'mahalaxmi-temple-mumbai': '/images/maharashtra/mahalaxmi-temple.jpg',
+  'mahalaxmi': '/images/maharashtra/mahalaxmi-temple.jpg',
+  'shree-mahalaxmi-temple': '/images/maharashtra/mahalaxmi-temple.jpg',
+  'mahalaxmi-mumbai': '/images/maharashtra/mahalaxmi-temple.jpg',
   'mh-csmt': '/images/maharashtra/csmt-mumbai.png',
   'basilica-of-bom-jesus': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/1280px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg',
 
