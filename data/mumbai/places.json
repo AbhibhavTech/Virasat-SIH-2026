@@ -1636,5 +1636,604 @@
     "opening_hours": "04:30–12:00 (Peak fish auctions 05:00–07:30 AM)",
     "entry_fee": "Free",
     "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-gem-khotachiwadi",
+    "name": "Khotachiwadi Village (Girgaon)",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "hidden_gem",
+    "summary": "A quiet, century-old residential hamlet tucked away behind busy streets, featuring narrow winding lanes and brightly painted 19th-century Portuguese-style wooden bungalows with verandahs, preserved by the East Indian Christian community.",
+    "description": "A quiet, century-old residential hamlet tucked away behind busy streets, featuring narrow winding lanes and brightly painted 19th-century Portuguese-style wooden bungalows with verandahs, preserved by the East Indian Christian community. Founded in the early 1800s by Pathare Prabhu merchant Dadoba Waman Khot, who leased plots to local families. It remains a tranquil, living architecture museum defying the surrounding skyscraper boom.",
+    "coordinates": {
+      "lat": 18.9536,
+      "lng": 72.8202
+    },
+    "latitude": 18.9536,
+    "longitude": 72.8202,
+    "rating": 4.9,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Khotachiwadi_-_Street.jpg/1280px-Khotachiwadi_-_Street.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Khotachiwadi_-_Street.jpg/1280px-Khotachiwadi_-_Street.jpg"
+    ],
+    "tags": [
+      "Portuguese Vernacular",
+      "Timber Architecture",
+      "Quiet Alleys",
+      "Living Heritage",
+      "hidden gem",
+      "mumbai",
+      "maharashtra",
+      "offbeat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "Daylight hours (08:00–19:00)",
+    "entry_fee": "Free",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-gem-banganga",
+    "name": "Banganga Tank & Walkeshwar (Malabar Hill)",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "hidden_gem",
+    "summary": "A serene, ancient mythological freshwater tank dating back to 1120 AD, surrounded by stepped temples and quiet shrines, offering a peaceful escape from the bustling city. Fed by an underground natural freshwater spring believed to have sprung from Lord Rama's arrow.",
+    "description": "A serene, ancient mythological freshwater tank dating back to 1120 AD, surrounded by stepped temples and quiet shrines, offering a peaceful escape from the bustling city. Fed by an underground natural freshwater spring believed to have sprung from Lord Rama's arrow. Built during the Silhara dynasty in 1120 AD and reconstructed in 1715 by philanthropist Rama Kamath. The rectangular tank retains natural freshwater despite being steps away from the saline Arabian Sea.",
+    "coordinates": {
+      "lat": 18.9455,
+      "lng": 72.7937
+    },
+    "latitude": 18.9455,
+    "longitude": 72.7937,
+    "rating": 4.9,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Banganga_Tank_Mumbai.jpg/1280px-Banganga_Tank_Mumbai.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Banganga_Tank_Mumbai.jpg/1280px-Banganga_Tank_Mumbai.jpg"
+    ],
+    "tags": [
+      "Silhara Heritage",
+      "Freshwater Spring",
+      "Temple Steps",
+      "Sacred Tirtha",
+      "hidden gem",
+      "mumbai",
+      "maharashtra",
+      "offbeat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "06:00–20:00 (Open all 7 days)",
+    "entry_fee": "Free",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-gem-knesset-eliyahoo",
+    "name": "Keneseth Eliyahoo Synagogue (Kala Ghoda)",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "hidden_gem",
+    "summary": "A stunning 19th-century bright blue Jewish house of worship featuring stained glass windows and Victorian woodwork, preserving the rich historical tapestry of Mumbai's Baghdadi Jewish community.",
+    "description": "A stunning 19th-century bright blue Jewish house of worship featuring stained glass windows and Victorian woodwork, preserving the rich historical tapestry of Mumbai's Baghdadi Jewish community. Built in 1884 by Jacob Elias Sassoon in memory of his father Eliyahoo Sassoon. Restored in 2019 to its historic turquoise-blue glory, winning the UNESCO Asia-Pacific Award for Cultural Heritage Conservation.",
+    "coordinates": {
+      "lat": 18.9287,
+      "lng": 72.8315
+    },
+    "latitude": 18.9287,
+    "longitude": 72.8315,
+    "rating": 4.9,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Keneseth_Eliyahoo_Synagogue_Mumbai.jpg/1280px-Keneseth_Eliyahoo_Synagogue_Mumbai.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Keneseth_Eliyahoo_Synagogue_Mumbai.jpg/1280px-Keneseth_Eliyahoo_Synagogue_Mumbai.jpg"
+    ],
+    "tags": [
+      "Synagogue",
+      "Baghdadi Jewish",
+      "Stained Glass",
+      "Kala Ghoda",
+      "hidden gem",
+      "mumbai",
+      "maharashtra",
+      "offbeat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "09:30–18:00 (Respectful attire required)",
+    "entry_fee": "Free (ID required at security)",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-gem-asiatic-steps",
+    "name": "The Asiatic Society Town Hall Library Steps (Fort)",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "hidden_gem",
+    "summary": "While the building is famous, sitting on its massive neo-classical white pillared portico in the early morning offers a quiet slice of old Bombay, surrounded by Greek Doric columns, ancient trees, and peaceful cobblestone vistas.",
+    "description": "While the building is famous, sitting on its massive neo-classical white pillared portico in the early morning offers a quiet slice of old Bombay, surrounded by Greek Doric columns, ancient trees, and peaceful cobblestone vistas. Designed by Colonel Thomas Cowper and completed in 1833. Its sweeping flight of 30 steps has hosted centuries of scholars, early-morning book readers, and quiet heritage contemplators.",
+    "coordinates": {
+      "lat": 18.9318,
+      "lng": 72.836
+    },
+    "latitude": 18.9318,
+    "longitude": 72.836,
+    "rating": 4.9,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Town_Hall_Mumbai.jpg/1280px-Town_Hall_Mumbai.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Town_Hall_Mumbai.jpg/1280px-Town_Hall_Mumbai.jpg"
+    ],
+    "tags": [
+      "Neoclassical",
+      "Town Hall",
+      "Greek Doric",
+      "Early Morning",
+      "Fort",
+      "hidden gem",
+      "mumbai",
+      "maharashtra",
+      "offbeat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "Best in early morning (06:00–09:00 AM)",
+    "entry_fee": "Free",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-gem-gilbert-hill",
+    "name": "Gilbert Hill (Andheri West)",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "hidden_gem",
+    "summary": "A massive, striking 200-foot monolithic column of black basalt rock standing right in the middle of a dense urban neighborhood. Geologists note it is one of only two such rare formations globally (the other being Devils Tower in Wyoming), formed during prehistoric volcanic activity over 66 million years ago.",
+    "description": "A massive, striking 200-foot monolithic column of black basalt rock standing right in the middle of a dense urban neighborhood. Geologists note it is one of only two such rare formations globally (the other being Devils Tower in Wyoming), formed during prehistoric volcanic activity over 66 million years ago. Declared a National Geological Monument in 1952. Two ancient temples (Gaondevi and Durgamata) sit atop the summit, reached by climbing a steep flight of carved stone steps offering panoramic 360-degree views of Mumbai.",
+    "coordinates": {
+      "lat": 19.1202,
+      "lng": 72.8394
+    },
+    "latitude": 19.1202,
+    "longitude": 72.8394,
+    "rating": 4.9,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Gilbert_Hill.jpg/1280px-Gilbert_Hill.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Gilbert_Hill.jpg/1280px-Gilbert_Hill.jpg"
+    ],
+    "tags": [
+      "Geological Wonder",
+      "Basalt Monolith",
+      "Mesozoic Era",
+      "Devils Tower Twin",
+      "Andheri",
+      "hidden gem",
+      "mumbai",
+      "maharashtra",
+      "offbeat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "06:00–20:00 (Open daily)",
+    "entry_fee": "Free",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-gem-mahakali-jogeshwari",
+    "name": "Mahakali & Jogeshwari Caves (Andheri / Jogeshwari)",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "hidden_gem",
+    "summary": "Ancient rock-cut Buddhist and Hindu cave shrines tucked away amid modern apartment blocks, dating back to the 1st to 6th centuries BCE. Mahakali comprises 19 rock-cut Buddhist viharas, while Jogeshwari houses one of India's earliest Hindu cave temples with monumental Shiva sculptures.",
+    "description": "Ancient rock-cut Buddhist and Hindu cave shrines tucked away amid modern apartment blocks, dating back to the 1st to 6th centuries BCE. Mahakali comprises 19 rock-cut Buddhist viharas, while Jogeshwari houses one of India's earliest Hindu cave temples with monumental Shiva sculptures. Carved between the 1st century BCE (Kondivite/Mahakali Buddhist cells) and the 6th century CE (Jogeshwari Hindu cave temple). They served as monastic dwellings and prayer halls along ancient commercial trade routes linking Kalyan to the Arabian Sea ports.",
+    "coordinates": {
+      "lat": 19.1302,
+      "lng": 72.8715
+    },
+    "latitude": 19.1302,
+    "longitude": 72.8715,
+    "rating": 4.9,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Mahakali_Caves_Mumbai.jpg/1280px-Mahakali_Caves_Mumbai.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Mahakali_Caves_Mumbai.jpg/1280px-Mahakali_Caves_Mumbai.jpg"
+    ],
+    "tags": [
+      "Ancient Caves",
+      "Buddhist Vihara",
+      "Rock-Cut",
+      "Shiva Shrine",
+      "Jogeshwari",
+      "hidden gem",
+      "mumbai",
+      "maharashtra",
+      "offbeat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "09:00–17:30 (Open daily)",
+    "entry_fee": "Free (ASI Protected)",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-gem-mandapeshwar-caves",
+    "name": "Mandapeshwar Caves (Borivali West)",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "hidden_gem",
+    "summary": "A lesser-known 8th-century rock-cut Shiva temple cave complex carved into a hillock, featuring weathered stone pillars and ancient mythological sculptures. Later fortified with Portuguese church crypts in the 16th century.",
+    "description": "A lesser-known 8th-century rock-cut Shiva temple cave complex carved into a hillock, featuring weathered stone pillars and ancient mythological sculptures. Later fortified with Portuguese church crypts in the 16th century. Carved by Buddhist monks and later converted into a vibrant Shiva shrine during the 8th century under the Silhara kings. In the 16th century, Portuguese Franciscans built a church over the rock-cut cave, leaving a fascinating dual architectural heritage.",
+    "coordinates": {
+      "lat": 19.2394,
+      "lng": 72.8524
+    },
+    "latitude": 19.2394,
+    "longitude": 72.8524,
+    "rating": 4.9,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Mandapeshwar_Caves_Mumbai.jpg/1280px-Mandapeshwar_Caves_Mumbai.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Mandapeshwar_Caves_Mumbai.jpg/1280px-Mandapeshwar_Caves_Mumbai.jpg"
+    ],
+    "tags": [
+      "Rock-Cut Temple",
+      "Shiva Sanctuary",
+      "Silhara Era",
+      "Borivali",
+      "Ancient Caves",
+      "hidden gem",
+      "mumbai",
+      "maharashtra",
+      "offbeat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "06:00–18:00 (Open all 7 days)",
+    "entry_fee": "Free",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-gem-sewri-flamingo",
+    "name": "Sewri Flamingo Point & Mudflats",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "hidden_gem",
+    "summary": "A coastal wetland along the eastern harbor where thousands of migratory lesser flamingos flock every winter (November to March) to feed. An extraordinary pink spectacle of avian life set against Mumbai's historic maritime docks.",
+    "description": "A coastal wetland along the eastern harbor where thousands of migratory lesser flamingos flock every winter (November to March) to feed. An extraordinary pink spectacle of avian life set against Mumbai's historic maritime docks. Designated an Important Bird Area (IBA) by the Bombay Natural History Society (BNHS). Every winter, over 150,000 flamingos migrate here from Kutch, Gujarat, feasting on algae in the rich intertidal mudflats.",
+    "coordinates": {
+      "lat": 18.9988,
+      "lng": 72.8601
+    },
+    "latitude": 18.9988,
+    "longitude": 72.8601,
+    "rating": 4.9,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Lesser_Flamingos_at_Sewri_harbour%28Mumbai%29.jpg/1280px-Lesser_Flamingos_at_Sewri_harbour%28Mumbai%29.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Lesser_Flamingos_at_Sewri_harbour%28Mumbai%29.jpg/1280px-Lesser_Flamingos_at_Sewri_harbour%28Mumbai%29.jpg"
+    ],
+    "tags": [
+      "Migratory Flamingos",
+      "Mudflats",
+      "Birdwatching",
+      "BNHS Sanctuary",
+      "Winter Haven",
+      "hidden gem",
+      "mumbai",
+      "maharashtra",
+      "offbeat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "Best visited at low tide between 06:00 and 18:00 (November to March)",
+    "entry_fee": "Free",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-gem-worli-fort",
+    "name": "Worli Fort",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "hidden_gem",
+    "summary": "A small, 17th-century British stronghold tucked inside a quiet, traditional Koli (fisherman) village, offering breathtaking panoramic views over the Bandra-Worli Sea Link and the open Arabian Sea.",
+    "description": "A small, 17th-century British stronghold tucked inside a quiet, traditional Koli (fisherman) village, offering breathtaking panoramic views over the Bandra-Worli Sea Link and the open Arabian Sea. Built by the British around 1675 atop a promontory overlooking Mahim Bay to watch for pirate attacks and Portuguese ships. The stone bastion overlooks a vibrant centuries-old Koli fishing community and temple shrines.",
+    "coordinates": {
+      "lat": 19.0227,
+      "lng": 72.8164
+    },
+    "latitude": 19.0227,
+    "longitude": 72.8164,
+    "rating": 4.9,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Worli_Fort_Mumbai.jpg/1280px-Worli_Fort_Mumbai.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Worli_Fort_Mumbai.jpg/1280px-Worli_Fort_Mumbai.jpg"
+    ],
+    "tags": [
+      "British Bastion",
+      "Koliwada Village",
+      "Sea Link View",
+      "Coastal Lookout",
+      "Historic Fort",
+      "hidden gem",
+      "mumbai",
+      "maharashtra",
+      "offbeat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "06:00–19:00 (Open daily)",
+    "entry_fee": "Free",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-gem-sassoon-docks",
+    "name": "Sassoon Docks (Colaba)",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "hidden_gem",
+    "summary": "One of Mumbai's oldest historic wet docks; visiting at dawn offers an unfiltered, vibrant look at the city's commercial fishing industry, traditional auctions, colorful wooden trawlers, and vibrant St+art street art murals.",
+    "description": "One of Mumbai's oldest historic wet docks; visiting at dawn offers an unfiltered, vibrant look at the city's commercial fishing industry, traditional auctions, colorful wooden trawlers, and vibrant St+art street art murals. Constructed in 1875 by David Sassoon & Co., it was the first commercial wet dock in western India. Today it is the pulsating heart of the Koli community's early-morning wholesale seafood trade.",
+    "coordinates": {
+      "lat": 18.915,
+      "lng": 72.826
+    },
+    "latitude": 18.915,
+    "longitude": 72.826,
+    "rating": 4.9,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Sassoon_Docks_Mumbai.jpg/1280px-Sassoon_Docks_Mumbai.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Sassoon_Docks_Mumbai.jpg/1280px-Sassoon_Docks_Mumbai.jpg"
+    ],
+    "tags": [
+      "Historic Dock",
+      "Koli Fishery",
+      "Early Morning Auction",
+      "Street Art Murals",
+      "Colaba",
+      "hidden gem",
+      "mumbai",
+      "maharashtra",
+      "offbeat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "04:30–12:00 (Peak fish auctions 05:00–07:30 AM)",
+    "entry_fee": "Free",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-gem-madh-fort",
+    "name": "Madh Fort (Versova / Madh Island)",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "hidden_gem",
+    "summary": "A picturesque 17th-century fort built by the Portuguese on the northern coast, often featured in Bollywood films but rarely crowded. Overlooks the mouth of Marve Creek and the open Arabian Sea.",
+    "description": "A picturesque 17th-century fort built by the Portuguese on the northern coast, often featured in Bollywood films but rarely crowded. Overlooks the mouth of Marve Creek and the open Arabian Sea. Built by the Portuguese in the 17th century as a coastal watchtower, captured by the Maratha army under Chimaji Appa in 1739. Surrounded by scenic beaches and quiet fishing hamlets on Madh Island.",
+    "coordinates": {
+      "lat": 19.1332,
+      "lng": 72.7938
+    },
+    "latitude": 19.1332,
+    "longitude": 72.7938,
+    "rating": 4.9,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Madh_Fort_Mumbai.jpg/1280px-Madh_Fort_Mumbai.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Madh_Fort_Mumbai.jpg/1280px-Madh_Fort_Mumbai.jpg"
+    ],
+    "tags": [
+      "Portuguese Fortress",
+      "Madh Island",
+      "Bollywood Location",
+      "Maratha Conquest",
+      "Coastal Watch",
+      "hidden gem",
+      "mumbai",
+      "maharashtra",
+      "offbeat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "Daylight hours (09:00–18:00; exterior viewing from beach)",
+    "entry_fee": "Free",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-gem-maharashtra-nature-park",
+    "name": "Maharashtra Nature Park (Dharavi / Bandra Sion Link)",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "hidden_gem",
+    "summary": "A lush, forested sanctuary spanning over 37 acres right next to the Mithi River, packed with hundreds of species of trees, butterflies, and migrating birds. A miraculous transformation of a former city garbage dump into a thriving woodland ecosystem.",
+    "description": "A lush, forested sanctuary spanning over 37 acres right next to the Mithi River, packed with hundreds of species of trees, butterflies, and migrating birds. A miraculous transformation of a former city garbage dump into a thriving woodland ecosystem. Spearheaded by the Bombay Natural History Society (BNHS) and the MMRDA between 1983 and 1994, transforming a municipal dumping ground into a lush forest with 14,000+ trees, 135+ bird species, and 40+ butterfly species.",
+    "coordinates": {
+      "lat": 19.0494,
+      "lng": 72.8624
+    },
+    "latitude": 19.0494,
+    "longitude": 72.8624,
+    "rating": 4.9,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Maharashtra_Nature_Park.jpg/1280px-Maharashtra_Nature_Park.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Maharashtra_Nature_Park.jpg/1280px-Maharashtra_Nature_Park.jpg"
+    ],
+    "tags": [
+      "Ecological Forest",
+      "Butterflies",
+      "Bird Sanctuary",
+      "Mithi River",
+      "Green Oasis",
+      "hidden gem",
+      "mumbai",
+      "maharashtra",
+      "offbeat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "09:30–17:00 (Open daily)",
+    "entry_fee": "INR 20 (Adults), INR 10 (Children)",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-gem-aarey-colony",
+    "name": "Aarey Milk Colony (Goregaon East)",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "hidden_gem",
+    "summary": "A massive green lung filled with dense canopies, tribal hamlets, hidden streams, and plant nurseries, right next to the Sanjay Gandhi National Park. Home to wild leopards, spotted deer, and rare biodiversity.",
+    "description": "A massive green lung filled with dense canopies, tribal hamlets, hidden streams, and plant nurseries, right next to the Sanjay Gandhi National Park. Home to wild leopards, spotted deer, and rare biodiversity. Established in 1949 by Prime Minister Jawaharlal Nehru to develop dairy farming, now recognized as Mumbai's vital urban rainforest buffer containing indigenous Warli tribal padas and over 3,000 acres of green cover.",
+    "coordinates": {
+      "lat": 19.1558,
+      "lng": 72.8845
+    },
+    "latitude": 19.1558,
+    "longitude": 72.8845,
+    "rating": 4.9,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Aarey_Forest_Canopy.jpg/1280px-Aarey_Forest_Canopy.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Aarey_Forest_Canopy.jpg/1280px-Aarey_Forest_Canopy.jpg"
+    ],
+    "tags": [
+      "Urban Green Lung",
+      "Rainforest Canopy",
+      "Tribal Hamlets",
+      "Wildlife Corridor",
+      "Goregaon",
+      "hidden gem",
+      "mumbai",
+      "maharashtra",
+      "offbeat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "Open 24 Hours for transit roads; best daytime exploring 06:00–18:00",
+    "entry_fee": "Free (Toll may apply for private vehicles)",
+    "verification_status": "VERIFIED"
+  },
+  {
+    "id": "mumbai-gem-chota-kashmir",
+    "name": "Chota Kashmir (Aarey Colony)",
+    "city": "Mumbai",
+    "city_id": "mumbai",
+    "state": "Maharashtra",
+    "state_id": "maharashtra",
+    "country": "India",
+    "category": "hidden_gem",
+    "summary": "A quiet, picturesque lake area surrounded by lush lawns and gardens, popular for peaceful boat rides away from city traffic. Features serene pedal boating on lotus-dotted waters and picnic meadows.",
+    "description": "A quiet, picturesque lake area surrounded by lush lawns and gardens, popular for peaceful boat rides away from city traffic. Features serene pedal boating on lotus-dotted waters and picnic meadows. Developed within Aarey Milk Colony as a tranquil recreational retreat modeled after the gardens of Kashmir, serving as a scenic shooting locale for classic Bollywood songs in the 1970s and 80s.",
+    "coordinates": {
+      "lat": 19.1487,
+      "lng": 72.8791
+    },
+    "latitude": 19.1487,
+    "longitude": 72.8791,
+    "rating": 4.9,
+    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Chota_Kashmir_Lake_Mumbai.jpg/1280px-Chota_Kashmir_Lake_Mumbai.jpg",
+    "images": [
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Chota_Kashmir_Lake_Mumbai.jpg/1280px-Chota_Kashmir_Lake_Mumbai.jpg"
+    ],
+    "tags": [
+      "Boating Lake",
+      "Peaceful Retreat",
+      "Picnic Garden",
+      "Lotus Waters",
+      "Aarey Colony",
+      "hidden gem",
+      "mumbai",
+      "maharashtra",
+      "offbeat"
+    ],
+    "features": {
+      "map": true,
+      "navigation": true,
+      "ai": true,
+      "3d": false
+    },
+    "opening_hours": "10:00–18:00 (Open all 7 days)",
+    "entry_fee": "Garden entry INR 20; Boating INR 40–80",
+    "verification_status": "VERIFIED"
   }
 ]
