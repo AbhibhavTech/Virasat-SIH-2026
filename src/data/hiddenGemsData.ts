@@ -255,7 +255,7 @@ export const VERIFIED_HIDDEN_GEMS: HiddenGemItem[] = [
     century: '20th Century AD',
     category: 'Peaceful Lake & Leisure Garden',
     whyInteresting: "A quiet, picturesque lake area surrounded by lush lawns and gardens, popular for peaceful boat rides away from city traffic. Features serene pedal boating on lotus-dotted waters and picnic meadows.",
-    thumbnailUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Chota_Kashmir_Lake_Mumbai.jpg/1280px-Chota_Kashmir_Lake_Mumbai.jpg',
+    thumbnailUrl: '/images/maharashtra/chota-kashmir.jpg',
     tags: ["Boating Lake", "Peaceful Retreat", "Picnic Garden", "Lotus Waters", "Aarey Colony"],
     bestTimeToVisit: '10:00–18:00 (Open all 7 days)',
     accessTips: 'Inside Aarey Colony; 3.5 km from Goregaon Railway Station.',

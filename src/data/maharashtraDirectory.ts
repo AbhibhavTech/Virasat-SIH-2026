@@ -666,8 +666,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "10:00–18:00 (Open all 7 days)",
         fee: { domestic: "Garden entry INR 20; Boating INR 40–80", foreign: "Garden entry INR 20; Boating INR 40–80" },
         isHiddenGem: true,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Chota_Kashmir_Lake_Mumbai.jpg/1280px-Chota_Kashmir_Lake_Mumbai.jpg",
-        photoCredit: "Wikimedia Commons / Chota Kashmir Lake & Boating Retreat",
+        image: "/images/maharashtra/chota-kashmir.jpg",
+        photoCredit: "Virasat Verified Heritage Archive / Chota Kashmir Lake Boating & Goregaon Skyline",
         summary:
           "A quiet, picturesque lake area surrounded by lush lawns and gardens, popular for peaceful boat rides away from city traffic. Features serene pedal boating on lotus-dotted waters and picnic meadows.",
       },

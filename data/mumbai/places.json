@@ -2212,9 +2212,9 @@
     "latitude": 19.1487,
     "longitude": 72.8791,
     "rating": 4.9,
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Chota_Kashmir_Lake_Mumbai.jpg/1280px-Chota_Kashmir_Lake_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/chota-kashmir.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Chota_Kashmir_Lake_Mumbai.jpg/1280px-Chota_Kashmir_Lake_Mumbai.jpg"
+      "/images/maharashtra/chota-kashmir.jpg"
     ],
     "tags": [
       "Boating Lake",

@@ -208,6 +208,13 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'aarey-forest': '/images/maharashtra/aarey-colony.jpg',
   'mumbai-aarey-forest': '/images/maharashtra/aarey-colony.jpg',
   'aarey-milk-colony-mumbai': '/images/maharashtra/aarey-colony.jpg',
+  'IN-MH-MUM-GEM-014': '/images/maharashtra/chota-kashmir.jpg',
+  'mumbai-gem-chota-kashmir': '/images/maharashtra/chota-kashmir.jpg',
+  'chota-kashmir': '/images/maharashtra/chota-kashmir.jpg',
+  'chota-kashmir-aarey': '/images/maharashtra/chota-kashmir.jpg',
+  'chhota-kashmir': '/images/maharashtra/chota-kashmir.jpg',
+  'chota-kashmir-mumbai': '/images/maharashtra/chota-kashmir.jpg',
+  'chota-kashmir-lake': '/images/maharashtra/chota-kashmir.jpg',
   'mh-csmt': '/images/maharashtra/csmt-mumbai.png',
   'basilica-of-bom-jesus': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/1280px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg',
 
