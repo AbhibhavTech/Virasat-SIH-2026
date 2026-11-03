@@ -1121,8 +1121,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "09:00–18:00",
         fee: { domestic: "Free", foreign: "Free" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Bhushi_Dam_Lonavala.jpg/1280px-Bhushi_Dam_Lonavala.jpg",
-        photoCredit: "Wikimedia Commons / Bhushi Dam",
+        image: "/images/maharashtra/bhushi-dam.jpg",
+        photoCredit: "Virasat Verified / Authentic Monsoon Overflow Cascades at Bhushi Dam, Lonavala",
         summary:
           "A masonry dam built on the Indrayani River. During peak monsoon months, water cascades over stepped rocky terraces, making it a wildly popular recreation spot for wading in foaming hill waters.",
       },
