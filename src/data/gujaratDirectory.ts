@@ -350,8 +350,8 @@ export const GUJARAT_DIRECTORY: GujaratCity[] = [
           foreign: 'Free',
         },
         isHiddenGem: false,
-        image: '/images/gujarat/kamleshwar-dam.jpg',
-        photoCredit: 'Discover Bharat Archive / Triveni Sangam Ghats, Somnath',
+        image: '/images/gujarat/triveni-sangam.jpg',
+        photoCredit: 'Virasat High-Resolution Heritage Archive / Triveni Sangam Ghats, Somnath',
         summary:
           'The holy confluence where three sacred rivers—Hiran, Kapila, and the subterranean Saraswati—merge into the churning waves of the Arabian Sea. Pilgrims undertake sacred river dips and perform ancestral Moksha rituals on the broad stone ghats.',
       },

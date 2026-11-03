@@ -382,6 +382,13 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'somnath-bhalka-tirth': '/images/gujarat/bhalka-tirth.jpg',
   'bhalka': '/images/gujarat/bhalka-tirth.jpg',
   'balka': '/images/gujarat/bhalka-tirth.jpg',
+  'IN-GJ-SMT-ATT-003': '/images/gujarat/triveni-sangam.jpg',
+  'in-gj-smt-att-003': '/images/gujarat/triveni-sangam.jpg',
+  'triveni-sangam-somnath': '/images/gujarat/triveni-sangam.jpg',
+  'somnath-triveni-sangam': '/images/gujarat/triveni-sangam.jpg',
+  'triveni-sangam-ghats': '/images/gujarat/triveni-sangam.jpg',
+  'triveni-sangam-gujarat': '/images/gujarat/triveni-sangam.jpg',
+  'triveni-sangam': '/images/gujarat/triveni-sangam.jpg',
   'mh-csmt': '/images/maharashtra/csmt-mumbai.png',
   'basilica-of-bom-jesus': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/1280px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg',
 
