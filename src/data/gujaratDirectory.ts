@@ -380,8 +380,8 @@ export const GUJARAT_DIRECTORY: GujaratCity[] = [
           foreign: 'Free',
         },
         isHiddenGem: true,
-        image: '/images/gujarat/jamjir-waterfall.jpg',
-        photoCredit: 'Discover Bharat Archive / Somnath Coastal Sunset Promenade',
+        image: '/images/gujarat/somnath-beach.jpg',
+        photoCredit: 'Virasat High-Resolution Heritage Archive / Somnath Coastal Sunset Promenade',
         summary:
           'A breezy, non-swimming shoreline promenade adjacent to the temple offering sweeping sunset vistas over the Arabian Sea. Massive stone breakwaters and tetrapods hold back crashing tidal surges while pilgrims stroll along the illuminated sea walk.',
       },
