@@ -1172,8 +1172,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
     tagline: "Arabian Sea fortresses, black & white sand coconut beaches & spicy Malvani surmai feasts",
     accentColor: "#0D9488",
     bgGradient: "from-teal-50 via-emerald-50/40 to-stone-50/30",
-    coverImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Murud_Janjira_Fort.jpg/1280px-Murud_Janjira_Fort.jpg",
-    photoCredit: "Wikimedia Commons / Murud-Janjira Marine Fortress",
+    coverImage: "/images/maharashtra/murud-janjira-fort.jpg",
+    photoCredit: "Virasat Verified / Authentic Murud-Janjira Marine Fortress, Alibaug",
     flashcardBlurb:
       "A scenic coastal paradise south of Mumbai known for sun-soaked black/white sand beaches, sea forts, and fresh Konkani seafood.",
     topStays: [
@@ -1216,8 +1216,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "09:00–18:00 (Tide dependent)",
         fee: { domestic: "INR 25", foreign: "INR 25" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Kolaba_Fort_Alibag.jpg/1280px-Kolaba_Fort_Alibag.jpg",
-        photoCredit: "Wikimedia Commons / Kolaba Fort",
+        image: "/images/maharashtra/kolaba-fort.jpg",
+        photoCredit: "Virasat Verified / Authentic Kolaba Marine Fort Citadel, Alibaug",
         summary:
           "A 17th-century naval station fortified by Chhatrapati Shivaji Maharaj, standing in the Arabian Sea roughly 1–2 km off Alibaug Beach. Remarkable because visitors can walk across the seabed during low tide or take horse-drawn carts through shallow water.",
       },
@@ -1228,8 +1228,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "Open 24 hours",
         fee: { domestic: "Free (Activities extra)", foreign: "Free (Activities extra)" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Kashid_Beach_Alibaug.jpg/1280px-Kashid_Beach_Alibaug.jpg",
-        photoCredit: "Wikimedia Commons / Kashid Beach",
+        image: "/images/maharashtra/kashid-beach.jpg",
+        photoCredit: "Virasat Verified / Authentic Kashid White Sand Beach, Alibaug",
         summary:
           "Pristine white and silver sand beaches framed by casuarina (suru) tree plantations. Renowned for clear surf, paragliding, jet-skiing, banana boat rides, and tranquil shoreline sunset walks away from urban commotion.",
       },
@@ -1240,8 +1240,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "07:00–18:00",
         fee: { domestic: "Boat ride ~INR 100–200; Fort entry Free", foreign: "Boat ride ~INR 100–200; Fort entry Free" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Murud_Janjira_Fort.jpg/1280px-Murud_Janjira_Fort.jpg",
-        photoCredit: "Wikimedia Commons / Murud-Janjira Fort",
+        image: "/images/maharashtra/murud-janjira-fort.jpg",
+        photoCredit: "Virasat Verified / Authentic Murud-Janjira Sea Island Fort, Alibaug",
         summary:
           "An awe-inspiring marine fortress situated on an oval rock off the coast of Murud. Built by the Siddis in the 15th century, it is famed as an impregnable stronghold that resisted repeated sieges by the British, Portuguese, and Marathas; houses 26 massive cannons including the famous Kalal Bangadi.",
       },
@@ -1252,8 +1252,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "09:00–17:00",
         fee: { domestic: "Free", foreign: "Free" },
         isHiddenGem: true,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Korlai_Fort_and_Lighthouse.jpg/1280px-Korlai_Fort_and_Lighthouse.jpg",
-        photoCredit: "Wikimedia Commons / Korlai Lighthouse",
+        image: "/images/maharashtra/korlai-fort.jpg",
+        photoCredit: "Virasat Verified / Authentic Portuguese Ruins at Korlai Fort & Lighthouse, Alibaug",
         summary:
           "A 1521 Portuguese fort built on Morro de Chaul, an island-like headland connected by a narrow sandbar. Features ancient battlements, church ruins, and a functioning active lighthouse commanding 360-degree ocean views where Portuguese Creole is still spoken locally.",
       },
