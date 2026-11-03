@@ -1045,8 +1045,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "10:00–18:00",
         fee: { domestic: "Free", foreign: "Free" },
         isHiddenGem: true,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Pratapgad_Fort_Bastion.jpg/1280px-Pratapgad_Fort_Bastion.jpg",
-        photoCredit: "Wikimedia Commons / Pratapgad Fort",
+        image: "/images/maharashtra/pratapgad-fort.jpg",
+        photoCredit: "Virasat Verified / Authentic Aerial View of Pratapgad Fort Bastion & Sahyadri Ridges",
         summary:
           "Commanding fortress built in 1656 by Chhatrapati Shivaji Maharaj, located 24 km from Mahabaleshwar. The site of the historic Battle of Pratapgad where Shivaji defeated Afzal Khan; features double-line fortifications, the Bhavani Temple, and commanding valley lookouts.",
       },
