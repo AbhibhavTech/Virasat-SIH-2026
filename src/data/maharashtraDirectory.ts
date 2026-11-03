@@ -366,8 +366,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "05:00–22:00 (Mondays open 04:30–23:00)",
         fee: { domestic: "Free (Elevator ride nominal INR 5–10)", foreign: "Free" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Babulnath_temple_Mumbai.jpg/1280px-Babulnath_temple_Mumbai.jpg",
-        photoCredit: "Wikimedia Commons / Babulnath Hilltop Temple",
+        image: "/images/maharashtra/babulnath-temple.jpg",
+        photoCredit: "Virasat Verified Heritage Archive / Babulnath Hilltop Shikhara & Deepstambha",
         summary:
           "Perched on a hill near Marine Drive, dedicated to Lord Shiva. Features an ancient self-manifested (Swayambhu) Shivling consecrated in the 12th century.",
       },

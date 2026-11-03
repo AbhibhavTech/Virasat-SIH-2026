@@ -858,9 +858,9 @@
     "latitude": 18.9566,
     "longitude": 72.8094,
     "rating": 4.8,
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Babulnath_temple_Mumbai.jpg/1280px-Babulnath_temple_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/babulnath-temple.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Babulnath_temple_Mumbai.jpg/1280px-Babulnath_temple_Mumbai.jpg"
+      "/images/maharashtra/babulnath-temple.jpg"
     ],
     "tags": [
       "shiva",

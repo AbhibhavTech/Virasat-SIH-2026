@@ -1248,10 +1248,10 @@ export const MUMBAI_ATTRACTIONS: MumbaiAttraction[] = [
       "lat": 18.9566,
       "lng": 72.8094
     },
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Babulnath_temple_Mumbai.jpg/1280px-Babulnath_temple_Mumbai.jpg",
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Babulnath_temple_Mumbai.jpg/1280px-Babulnath_temple_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/babulnath-temple.jpg",
+    "image_url": "/images/maharashtra/babulnath-temple.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Babulnath_temple_Mumbai.jpg/1280px-Babulnath_temple_Mumbai.jpg"
+      "/images/maharashtra/babulnath-temple.jpg"
     ],
     "section": "religious_cultural",
     "source_url": "https://maharashtratourism.gov.in",

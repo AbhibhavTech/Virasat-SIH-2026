@@ -282,6 +282,12 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'walkeshwar': '/images/maharashtra/banganga-tank.jpg',
   'banganga-walkeshwar': '/images/maharashtra/banganga-tank.jpg',
   'mh-gem-banganga-tank': '/images/maharashtra/banganga-tank.jpg',
+  'IN-MH-MUM-ATT-021': '/images/maharashtra/babulnath-temple.jpg',
+  'mumbai-babulnath-temple': '/images/maharashtra/babulnath-temple.jpg',
+  'babulnath-temple': '/images/maharashtra/babulnath-temple.jpg',
+  'babulnath': '/images/maharashtra/babulnath-temple.jpg',
+  'babulnath-mandir': '/images/maharashtra/babulnath-temple.jpg',
+  'babulnath-mumbai': '/images/maharashtra/babulnath-temple.jpg',
   'mh-csmt': '/images/maharashtra/csmt-mumbai.png',
   'basilica-of-bom-jesus': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/1280px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg',
 
