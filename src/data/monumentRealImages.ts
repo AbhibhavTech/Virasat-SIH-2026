@@ -155,6 +155,12 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'sea-link': '/images/maharashtra/bandra-worli-sea-link.png',
   'bandra-worli-sea-link-mumbai': '/images/maharashtra/bandra-worli-sea-link.png',
   'rajiv-gandhi-sea-link': '/images/maharashtra/bandra-worli-sea-link.png',
+  'IN-MH-MUM-ATT-028': '/images/maharashtra/juhu-beach.png',
+  'mumbai-juhu-beach': '/images/maharashtra/juhu-beach.png',
+  'juhu-beach': '/images/maharashtra/juhu-beach.png',
+  'juhu': '/images/maharashtra/juhu-beach.png',
+  'juhu-beach-mumbai': '/images/maharashtra/juhu-beach.png',
+  'juhu-beach-versova': '/images/maharashtra/juhu-beach.png',
   'mh-csmt': '/images/maharashtra/csmt-mumbai.png',
   'basilica-of-bom-jesus': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/1280px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg',
 

@@ -450,8 +450,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "Open 24 Hours",
         fee: { domestic: "Free", foreign: "Free" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Juhu_Beach_Mumbai.jpg/1280px-Juhu_Beach_Mumbai.jpg",
-        photoCredit: "Wikimedia Commons / Sunset at Juhu Beach Shoreline",
+        image: "/images/maharashtra/juhu-beach.png",
+        photoCredit: "Virasat Verified Heritage Archive / Juhu Beach Golden Hour Coastline",
         summary:
           "Sprawling sandy shores famous for local street food (pav bhaji, bhel puri, sev puri, and kulfi), evening carnival vibes, and spectacular sunsets across the Arabian Sea.",
       },

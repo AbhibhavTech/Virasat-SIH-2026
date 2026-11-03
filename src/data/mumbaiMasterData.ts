@@ -1640,10 +1640,10 @@ export const MUMBAI_ATTRACTIONS: MumbaiAttraction[] = [
       "lat": 19.0988,
       "lng": 72.8264
     },
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Juhu_Beach_Mumbai.jpg/1280px-Juhu_Beach_Mumbai.jpg",
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Juhu_Beach_Mumbai.jpg/1280px-Juhu_Beach_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/juhu-beach.png",
+    "image_url": "/images/maharashtra/juhu-beach.png",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Juhu_Beach_Mumbai.jpg/1280px-Juhu_Beach_Mumbai.jpg"
+      "/images/maharashtra/juhu-beach.png"
     ],
     "section": "nature_parks_zoo",
     "source_url": "https://maharashtratourism.gov.in",

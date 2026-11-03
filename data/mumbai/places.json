@@ -1152,9 +1152,9 @@
     "latitude": 19.0988,
     "longitude": 72.8264,
     "rating": 4.8,
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Juhu_Beach_Mumbai.jpg/1280px-Juhu_Beach_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/juhu-beach.png",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Juhu_Beach_Mumbai.jpg/1280px-Juhu_Beach_Mumbai.jpg"
+      "/images/maharashtra/juhu-beach.png"
     ],
     "tags": [
       "beach",

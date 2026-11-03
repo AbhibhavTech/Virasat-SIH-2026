@@ -2281,12 +2281,12 @@
       "lng": 72.8264
     },
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Juhu_Beach_Mumbai.jpg/1280px-Juhu_Beach_Mumbai.jpg",
-      "attribution": "Wikimedia Commons / Sunset at Juhu Beach Shoreline",
+      "url": "/images/maharashtra/juhu-beach.png",
+      "attribution": "Virasat Verified Heritage Archive / Juhu Beach Golden Hour Coastline",
       "license": "Creative Commons / Unsplash / Public Domain",
-      "source_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Juhu_Beach_Mumbai.jpg/1280px-Juhu_Beach_Mumbai.jpg"
+      "source_url": "/images/maharashtra/juhu-beach.png"
     },
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Juhu_Beach_Mumbai.jpg/1280px-Juhu_Beach_Mumbai.jpg",
+    "thumbnail_url": "/images/maharashtra/juhu-beach.png",
     "verification_status": "VERIFIED",
     "sources": [
       {
