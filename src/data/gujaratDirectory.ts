@@ -335,8 +335,8 @@ export const GUJARAT_DIRECTORY: GujaratCity[] = [
           foreign: 'Free',
         },
         isHiddenGem: false,
-        image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80',
-        photoCredit: 'Discover Bharat Archive / Bhalka Tirth Holy Banyan Shrine',
+        image: '/images/gujarat/bhalka-tirth.jpg',
+        photoCredit: 'Virasat High-Resolution Heritage Archive / Bhalka Tirth Holy Banyan Shrine',
         summary:
           'The sacred banyan tree shrine located 4 km from Somnath where Lord Krishna, resting in meditation, was mistakenly struck in the foot by an arrow released by the hunter Jara, marking the conclusion of the Dvapara Yuga and the start of the Kali Yuga.',
       },
@@ -464,7 +464,7 @@ export const GUJARAT_DIRECTORY: GujaratCity[] = [
           foreign: 'Free',
         },
         isHiddenGem: false,
-        image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80',
+        image: '/images/gujarat/bhalka-tirth.jpg',
         photoCredit: 'Discover Bharat Archive / Nageshwar Jyotirlinga Colossal Shiva',
         summary:
           'One of the 12 sacred Jyotirlingas of Lord Shiva enshrined in underground sanctum vaults, recognized by a colossal 25-meter (82-foot) statue of Lord Shiva sitting in blessing posture against open Gujarat skies.',
@@ -589,7 +589,7 @@ export const GUJARAT_DIRECTORY: GujaratCity[] = [
           foreign: 'INR 50–100',
         },
         isHiddenGem: false,
-        image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=800&auto=format&fit=crop&q=80',
+        image: '/images/gujarat/bhalka-tirth.jpg',
         photoCredit: 'Discover Bharat Archive / Prag Mahal Italian Gothic Palace, Bhuj',
         summary:
           'A royal compound housing the 18th-century Aina Mahal (Palace of Mirrors) created by navigator-architect Ramsingh Malam, and the neighboring 19th-century Italian Gothic Prag Mahal featuring grand Corinthian pillars and an iconic 45-meter clock tower.',
