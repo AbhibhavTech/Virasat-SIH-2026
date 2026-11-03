@@ -259,6 +259,13 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'knesset-eliyahoo': '/images/maharashtra/keneseth-eliyahoo-synagogue.jpg',
   'knesset-eliyahoo-synagogue': '/images/maharashtra/keneseth-eliyahoo-synagogue.jpg',
   'keneseth-eliyahoo-kala-ghoda': '/images/maharashtra/keneseth-eliyahoo-synagogue.jpg',
+  'IN-MH-MUM-ATT-023': '/images/maharashtra/global-vipassana-pagoda.jpg',
+  'mumbai-global-vipassana-pagoda': '/images/maharashtra/global-vipassana-pagoda.jpg',
+  'global-vipassana-pagoda': '/images/maharashtra/global-vipassana-pagoda.jpg',
+  'global-vipassana-pagoda-gorai': '/images/maharashtra/global-vipassana-pagoda.jpg',
+  'vipassana-pagoda': '/images/maharashtra/global-vipassana-pagoda.jpg',
+  'global-pagoda': '/images/maharashtra/global-vipassana-pagoda.jpg',
+  'mh-gem-global-vipassana-pagoda': '/images/maharashtra/global-vipassana-pagoda.jpg',
   'mh-csmt': '/images/maharashtra/csmt-mumbai.png',
   'basilica-of-bom-jesus': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/1280px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg',
 

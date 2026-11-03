@@ -390,8 +390,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "09:00–19:00 (Last entry 17:30)",
         fee: { domestic: "Free (ID card mandatory for entry)", foreign: "Free (Passport mandatory for entry)" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Global_Vipassana_Pagoda.jpg/1280px-Global_Vipassana_Pagoda.jpg",
-        photoCredit: "Wikimedia Commons / Golden Dome of Global Vipassana Pagoda",
+        image: "/images/maharashtra/global-vipassana-pagoda.jpg",
+        photoCredit: "Virasat Verified Heritage Archive / Global Vipassana Pagoda Golden Stupa & Gorai Complex",
         summary:
           "A massive golden stone meditation hall housing authentic relics of Buddha. Features the world's largest stone dome built without supporting pillars, seating 8,000 meditators in pure silence.",
       },

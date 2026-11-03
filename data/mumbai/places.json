@@ -942,9 +942,9 @@
     "latitude": 19.2285,
     "longitude": 72.8058,
     "rating": 4.8,
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Global_Vipassana_Pagoda.jpg/1280px-Global_Vipassana_Pagoda.jpg",
+    "thumbnail_url": "/images/maharashtra/global-vipassana-pagoda.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Global_Vipassana_Pagoda.jpg/1280px-Global_Vipassana_Pagoda.jpg"
+      "/images/maharashtra/global-vipassana-pagoda.jpg"
     ],
     "tags": [
       "meditation",

@@ -1360,10 +1360,10 @@ export const MUMBAI_ATTRACTIONS: MumbaiAttraction[] = [
       "lat": 19.2285,
       "lng": 72.8058
     },
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Global_Vipassana_Pagoda.jpg/1280px-Global_Vipassana_Pagoda.jpg",
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Global_Vipassana_Pagoda.jpg/1280px-Global_Vipassana_Pagoda.jpg",
+    "thumbnail_url": "/images/maharashtra/global-vipassana-pagoda.jpg",
+    "image_url": "/images/maharashtra/global-vipassana-pagoda.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Global_Vipassana_Pagoda.jpg/1280px-Global_Vipassana_Pagoda.jpg"
+      "/images/maharashtra/global-vipassana-pagoda.jpg"
     ],
     "section": "religious_cultural",
     "source_url": "https://maharashtratourism.gov.in",
