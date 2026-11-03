@@ -1009,8 +1009,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "09:00–20:00",
         fee: { domestic: "Free", foreign: "Free" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Arthur%27s_Seat_Mahabaleshwar.jpg/1280px-Arthur%27s_Seat_Mahabaleshwar.jpg",
-        photoCredit: "Wikimedia Commons / Arthur's Seat Point",
+        image: "/images/maharashtra/arthurs-seat.jpg",
+        photoCredit: "Virasat Verified / Authentic Cantilever Viewpoint at Arthur\'s Seat, Mahabaleshwar",
         summary:
           "Known as the 'Queen of all points', perched at an elevation of 1,470 meters. Offers breathtaking vertical sheer drops into the deep valley of the Savitri River on one side and the dense Konkan valleys on the other.",
       },
