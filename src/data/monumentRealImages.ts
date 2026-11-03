@@ -78,6 +78,11 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'mumbai-taj-mahal-palace': '/images/maharashtra/taj-mahal-palace.jpg',
   'taj-mahal-palace': '/images/maharashtra/taj-mahal-palace.jpg',
   'taj-mahal-palace-mumbai': '/images/maharashtra/taj-mahal-palace.jpg',
+  'IN-MH-MUM-ATT-004': '/images/maharashtra/bombay-high-court.png',
+  'mumbai-high-court-rajabai': '/images/maharashtra/bombay-high-court.png',
+  'bombay-high-court': '/images/maharashtra/bombay-high-court.png',
+  'bombay-high-court-rajabai': '/images/maharashtra/bombay-high-court.png',
+  'high-court-mumbai': '/images/maharashtra/bombay-high-court.png',
   'mh-csmt': '/images/maharashtra/csmt-mumbai.png',
   'basilica-of-bom-jesus': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/1280px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg',
 

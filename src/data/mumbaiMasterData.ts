@@ -296,10 +296,10 @@ export const MUMBAI_ATTRACTIONS: MumbaiAttraction[] = [
       "lat": 18.9298,
       "lng": 72.8301
     },
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Rajabai_Clock_Tower_2019.jpg/1280px-Rajabai_Clock_Tower_2019.jpg",
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Rajabai_Clock_Tower_2019.jpg/1280px-Rajabai_Clock_Tower_2019.jpg",
+    "thumbnail_url": "/images/maharashtra/bombay-high-court.png",
+    "image_url": "/images/maharashtra/bombay-high-court.png",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Rajabai_Clock_Tower_2019.jpg/1280px-Rajabai_Clock_Tower_2019.jpg"
+      "/images/maharashtra/bombay-high-court.png"
     ],
     "section": "monuments",
     "source_url": "https://maharashtratourism.gov.in",

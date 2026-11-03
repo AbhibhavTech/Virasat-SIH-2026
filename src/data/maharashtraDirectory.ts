@@ -162,8 +162,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "Court: 10:00–17:00 (Mon–Fri); Tower exterior visible from Oval Maidan 06:00–21:00",
         fee: { domestic: "Free to view from Oval Maidan", foreign: "Free to view from Oval Maidan" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Rajabai_Clock_Tower_2019.jpg/1280px-Rajabai_Clock_Tower_2019.jpg",
-        photoCredit: "Wikimedia Commons / Rajabai Clock Tower & Mumbai University",
+        image: "/images/maharashtra/bombay-high-court.png",
+        photoCredit: "Virasat Verified Heritage Archive / Bombay High Court from Oval Maidan",
         summary:
           "Stunning neo-Gothic structures modeled after London’s Big Ben, flanking the historic Oval Maidan. Part of the UNESCO-inscribed Victorian Gothic and Art Deco Ensembles of Mumbai.",
       },
