@@ -312,9 +312,9 @@
     "latitude": 18.9295,
     "longitude": 72.8318,
     "rating": 4.8,
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Watson%27s_Hotel_Mumbai_2011.jpg/1280px-Watson%27s_Hotel_Mumbai_2011.jpg",
+    "thumbnail_url": "/images/maharashtra/esplanade-mansion.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Watson%27s_Hotel_Mumbai_2011.jpg/1280px-Watson%27s_Hotel_Mumbai_2011.jpg"
+      "/images/maharashtra/esplanade-mansion.jpg"
     ],
     "tags": [
       "cast-iron",

@@ -236,6 +236,13 @@ export const MONUMENT_REAL_IMAGES: Record<string, string> = {
   'mahalaxmi-dhobi-ghat': '/images/maharashtra/dhobi-ghat.jpg',
   'dhobi-ghat-mahalaxmi': '/images/maharashtra/dhobi-ghat.jpg',
   'dhobi-ghat-mumbai': '/images/maharashtra/dhobi-ghat.jpg',
+  'IN-MH-MUM-ATT-008': '/images/maharashtra/esplanade-mansion.jpg',
+  'mumbai-esplanade-mansion': '/images/maharashtra/esplanade-mansion.jpg',
+  'esplanade-mansion': '/images/maharashtra/esplanade-mansion.jpg',
+  'esplanade-mansion-mumbai': '/images/maharashtra/esplanade-mansion.jpg',
+  'watsons-hotel': '/images/maharashtra/esplanade-mansion.jpg',
+  'watson-hotel': '/images/maharashtra/esplanade-mansion.jpg',
+  'watson-hotel-mumbai': '/images/maharashtra/esplanade-mansion.jpg',
   'mh-csmt': '/images/maharashtra/csmt-mumbai.png',
   'basilica-of-bom-jesus': 'https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9e/Front_Elevation_of_Basilica_of_Bom_Jesus.jpg/1280px-Front_Elevation_of_Basilica_of_Bom_Jesus.jpg',
 

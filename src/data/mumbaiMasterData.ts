@@ -520,10 +520,10 @@ export const MUMBAI_ATTRACTIONS: MumbaiAttraction[] = [
       "lat": 18.9295,
       "lng": 72.8318
     },
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Watson%27s_Hotel_Mumbai_2011.jpg/1280px-Watson%27s_Hotel_Mumbai_2011.jpg",
-    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Watson%27s_Hotel_Mumbai_2011.jpg/1280px-Watson%27s_Hotel_Mumbai_2011.jpg",
+    "thumbnail_url": "/images/maharashtra/esplanade-mansion.jpg",
+    "image_url": "/images/maharashtra/esplanade-mansion.jpg",
     "images": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Watson%27s_Hotel_Mumbai_2011.jpg/1280px-Watson%27s_Hotel_Mumbai_2011.jpg"
+      "/images/maharashtra/esplanade-mansion.jpg"
     ],
     "section": "heritage",
     "source_url": "https://maharashtratourism.gov.in",

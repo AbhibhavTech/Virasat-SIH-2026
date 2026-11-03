@@ -1321,12 +1321,12 @@
       "lng": 72.8318
     },
     "image": {
-      "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Watson%27s_Hotel_Mumbai_2011.jpg/1280px-Watson%27s_Hotel_Mumbai_2011.jpg",
-      "attribution": "Wikimedia Commons / Historic Cast-Iron Esplanade Mansion",
+      "url": "/images/maharashtra/esplanade-mansion.jpg",
+      "attribution": "Virasat Verified Heritage Archive / Esplanade Mansion Cast-Iron Structure",
       "license": "Creative Commons / Unsplash / Public Domain",
-      "source_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Watson%27s_Hotel_Mumbai_2011.jpg/1280px-Watson%27s_Hotel_Mumbai_2011.jpg"
+      "source_url": "/images/maharashtra/esplanade-mansion.jpg"
     },
-    "thumbnail_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Watson%27s_Hotel_Mumbai_2011.jpg/1280px-Watson%27s_Hotel_Mumbai_2011.jpg",
+    "thumbnail_url": "/images/maharashtra/esplanade-mansion.jpg",
     "verification_status": "VERIFIED",
     "sources": [
       {

@@ -210,8 +210,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "Daylight hours (Exterior architectural viewing)",
         fee: { domestic: "Free", foreign: "Free" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Watson%27s_Hotel_Mumbai_2011.jpg/1280px-Watson%27s_Hotel_Mumbai_2011.jpg",
-        photoCredit: "Wikimedia Commons / Historic Cast-Iron Esplanade Mansion",
+        image: "/images/maharashtra/esplanade-mansion.jpg",
+        photoCredit: "Virasat Verified Heritage Archive / Esplanade Mansion Cast-Iron Structure",
         summary:
           "India's oldest surviving cast-iron building, where the Lumière brothers first screened cinema in India on July 7, 1896. Prefabricated in England and assembled in 1869 in the heart of South Mumbai.",
       },
