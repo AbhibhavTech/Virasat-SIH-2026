@@ -948,8 +948,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
     tagline: "Rolling strawberry valleys, misty Western Ghats viewpoints & Chhatrapati Shivaji's Pratapgad fort",
     accentColor: "#E11D48",
     bgGradient: "from-rose-50 via-pink-50/40 to-stone-50/30",
-    coverImage: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Venna_Lake_Mahabaleshwar.jpg/1280px-Venna_Lake_Mahabaleshwar.jpg",
-    photoCredit: "Wikimedia Commons / Venna Lake Mahabaleshwar",
+    coverImage: "/images/maharashtra/venna-lake.jpg",
+    photoCredit: "Virasat Verified / Authentic Boating View at Venna Lake, Mahabaleshwar",
     flashcardBlurb:
       "The queen of Maharashtra's hill stations, nestled in the evergreen Western Ghats, celebrated for its strawberry farms, misty viewpoints, and colonial charm.",
     topStays: [
@@ -997,8 +997,8 @@ export const MAHARASHTRA_DIRECTORY: MaharashtraCity[] = [
         timings: "07:00–19:00",
         fee: { domestic: "Free entry (Boating fees ~INR 250–500)", foreign: "Free entry (Boating fees ~INR 250–500)" },
         isHiddenGem: false,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Venna_Lake_Mahabaleshwar.jpg/1280px-Venna_Lake_Mahabaleshwar.jpg",
-        photoCredit: "Wikimedia Commons / Venna Lake",
+        image: "/images/maharashtra/venna-lake.jpg",
+        photoCredit: "Virasat Verified / Authentic Boating View at Venna Lake, Mahabaleshwar",
         summary:
           "Picturesque 28-acre man-made lake built in 1842 by Appasaheb Maharaj. Lined with lush trees, it is a bustling recreational hub offering pedal boats, rowboats, horse riding along the banks, and local food stalls.",
       },
